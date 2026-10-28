@@ -495,12 +495,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -511,11 +516,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -541,12 +541,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -557,11 +562,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -587,12 +587,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -603,11 +608,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -633,12 +633,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -649,11 +654,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -679,12 +679,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -695,11 +700,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -725,12 +725,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -741,11 +746,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -771,12 +771,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -787,11 +792,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -817,12 +817,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -833,11 +838,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -863,12 +863,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -879,11 +884,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -909,12 +909,17 @@
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
                 {
-                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 },
@@ -925,11 +930,6 @@
                 },
                 {
                   "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
-                },
-                {
-                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
                   "campo": "excerpt",
                   "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
                 }
@@ -49692,6 +49692,16 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
                   "linha": "og1-votacao-generalidade-rtp",
                   "campo": "excerpt",
                   "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
@@ -49700,11 +49710,6 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
                 }
               ]
             }
@@ -49728,6 +49733,16 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
                   "linha": "og1-votacao-generalidade-rtp",
                   "campo": "excerpt",
                   "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
@@ -49736,11 +49751,6 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
                 }
               ]
             }
@@ -49748,13 +49758,168 @@
         },
         {
           "caminho": "abertura[0][4]",
-          "pt": ", com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO; a RTP registou a aprovação com os votos do PSD e do CDS e a abstenção do PS, e o resultado oficial da votação ainda não estava publicado quando este item foi reescrito.",
-          "en": ", with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO; RTP recorded the approval with the votes of PSD and CDS and the abstention of PS, and the official record of the vote had not been published when this item was rewritten.",
+          "pt": ", com os votos a favor do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e o excedente de ",
+          "en": ", with PSD and CDS-PP voting in favour and PS, PAN and JPP abstaining, and the surplus of ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO; a RTP registou a aprovação com os votos do PSD e do CDS e a abstenção do PS, e o resultado oficial da votação ainda não estava publicado quando este item foi reescrito.",
-              "en": ", with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO; RTP recorded the approval with the votes of PSD and CDS and the abstention of PS, and the official record of the vote had not been published when this item was rewritten.",
+              "pt": ", com os votos a favor do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e o excedente de ",
+              "en": ", with PSD and CDS-PP voting in favour and PS, PAN and JPP abstaining, and the surplus of ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][5].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][6]",
+          "pt": " do PIB que o Governo prevê para esse ano é, nas contas do Conselho das Finanças Públicas, um défice de ",
+          "en": " of GDP the Government forecasts for that year is, in the Public Finance Council's accounts, a deficit of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " do PIB que o Governo prevê para esse ano é, nas contas do Conselho das Finanças Públicas, um défice de ",
+              "en": " of GDP the Government forecasts for that year is, in the Public Finance Council's accounts, a deficit of ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][7].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][8]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-cfp-saldo-2027",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[1][0]",
+          "pt": "Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o ECO (a RTP registou a aprovação, os votos a favor e a abstenção do PS; o resultado oficial da votação não estava publicado a ",
+          "en": "Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to ECO (RTP recorded the approval, the votes in favour and the PS abstention; the official record of the vote had not been published on ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o ECO (a RTP registou a aprovação, os votos a favor e a abstenção do PS; o resultado oficial da votação não estava publicado a ",
+              "en": "Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to ECO (RTP recorded the approval, the votes in favour and the PS abstention; the official record of the vote had not been published on ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -49774,45 +49939,14 @@
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "abertura[1][0]",
-          "pt": "O combate à fraude nos combustíveis, «",
-          "en": "The fight against fuel fraud, «",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": "O combate à fraude nos combustíveis, «",
-              "en": "The fight against fuel fraud, «",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-p42",
-                  "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
                   "linha": "pm-q3-2-r8-c0",
                   "campo": "excerpt",
                   "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
                 },
                 {
-                  "linha": "pm-q3-3-r37-c3",
+                  "linha": "og1-utao-p42",
                   "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
                 }
               ]
             }
@@ -49820,20 +49954,30 @@
         },
         {
           "caminho": "abertura[1][2]",
-          "pt": "» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, vale ",
-          "en": "» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, is worth ",
+          "pt": "), e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+          "en": "), and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
           "ramo": null,
           "partes": [
             {
-              "pt": "» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, vale ",
-              "en": "» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, is worth ",
+              "pt": "), e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+              "en": "), and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-utao-p42",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -49841,14 +49985,9 @@
                   "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
                 },
                 {
-                  "linha": "pm-q3-3-r37-c3",
+                  "linha": "og1-utao-p42",
                   "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
                 }
               ]
             }
@@ -49867,14 +50006,29 @@
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-utao-p42",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
                   "campo": "excerpt",
                   "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
+                },
+                {
+                  "linha": "og1-utao-p42",
+                  "campo": "excerpt",
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49892,20 +50046,30 @@
         },
         {
           "caminho": "abertura[1][4]",
-          "pt": " em ",
-          "en": " in ",
+          "pt": " do combate à fraude nos combustíveis, «",
+          "en": " of the fight against fuel fraud, «",
           "ramo": null,
           "partes": [
             {
-              "pt": " em ",
-              "en": " in ",
+              "pt": " do combate à fraude nos combustíveis, «",
+              "en": " of the fight against fuel fraud, «",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-utao-p42",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -49913,14 +50077,9 @@
                   "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
                 },
                 {
-                  "linha": "pm-q3-3-r37-c3",
+                  "linha": "og1-utao-p42",
                   "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
                 }
               ]
             }
@@ -49928,20 +50087,30 @@
         },
         {
           "caminho": "abertura[1][6]",
-          "pt": " sem que a UTAO encontre na proposta «",
-          "en": " without the UTAO finding in the proposal «",
+          "pt": "» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, que não encontra na proposta «",
+          "en": "» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, which does not find in the proposal «",
           "ramo": null,
           "partes": [
             {
-              "pt": " sem que a UTAO encontre na proposta «",
-              "en": " without the UTAO finding in the proposal «",
+              "pt": "» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, que não encontra na proposta «",
+              "en": "» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, which does not find in the proposal «",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-utao-p42",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -49949,14 +50118,9 @@
                   "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
                 },
                 {
-                  "linha": "pm-q3-3-r37-c3",
+                  "linha": "og1-utao-p42",
                   "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
                 }
               ]
             }
@@ -49964,20 +50128,30 @@
         },
         {
           "caminho": "abertura[1][8]",
-          "pt": "», e o Conselho das Finanças Públicas, que não a conta na sua projeção, prevê para ",
-          "en": "» (sufficiently detailed information on its content and implementation mechanisms), and the Public Finance Council, which leaves it out of its projection, forecasts for ",
+          "pt": "».",
+          "en": "» (sufficiently detailed information on its content and implementation mechanisms).",
           "ramo": null,
           "partes": [
             {
-              "pt": "», e o Conselho das Finanças Públicas, que não a conta na sua projeção, prevê para ",
-              "en": "» (sufficiently detailed information on its content and implementation mechanisms), and the Public Finance Council, which leaves it out of its projection, forecasts for ",
+              "pt": "».",
+              "en": "» (sufficiently detailed information on its content and implementation mechanisms).",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-utao-p42",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -49985,194 +50159,9 @@
                   "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
                 },
                 {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "abertura[1][10]",
-          "pt": " um défice de ",
-          "en": " a deficit of ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " um défice de ",
-              "en": " a deficit of ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "pm-q3-2-r8-c0",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "abertura[1][11].sufixo",
-          "pt": " %",
-          "en": " %",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " %",
-              "en": " %",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-p42",
-                  "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "pm-q3-2-r8-c0",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "abertura[1][12]",
-          "pt": " do PIB onde o Governo prevê um excedente de ",
-          "en": " of GDP where the Government forecasts a surplus of ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " do PIB onde o Governo prevê um excedente de ",
-              "en": " of GDP where the Government forecasts a surplus of ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-p42",
-                  "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "pm-q3-2-r8-c0",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "abertura[1][13].sufixo",
-          "pt": " %",
-          "en": " %",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " %",
-              "en": " %",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-p42",
-                  "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "pm-q3-2-r8-c0",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "abertura[1][14]",
-          "pt": ".",
-          "en": ".",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": ".",
-              "en": ".",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-p42",
-                  "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "pm-q3-2-r8-c0",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
-                },
-                {
-                  "linha": "pm-q3-3-r37-c3",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-cfp-saldo-2027",
-                  "campo": "excerpt",
-                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
                 }
               ]
             }
@@ -59132,13 +59121,13 @@
         },
         {
           "caminho": "seccoes[2].conteudo[0].paragrafo[2]",
-          "pt": "» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os ",
-          "en": "» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
+          "pt": "» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior das medidas novas de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os ",
+          "en": "» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest new revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
           "ramo": null,
           "partes": [
             {
-              "pt": "» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os ",
-              "en": "» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
+              "pt": "» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior das medidas novas de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os ",
+              "en": "» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest new revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -60587,13 +60576,13 @@
         },
         {
           "caminho": "seccoes[2].conteudo[0].paragrafo[26]",
-          "pt": ", e a diferença está no que o Conselho não conta: as duas medidas que a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
-          "en": ", and the difference lies in what the Council does not count: the two measures the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
+          "pt": ", e a diferença está no que o Conselho não conta: as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
+          "en": ", and the difference lies in what the Council does not count: the two measures that, according to the Council, the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
           "ramo": null,
           "partes": [
             {
-              "pt": ", e a diferença está no que o Conselho não conta: as duas medidas que a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
-              "en": ", and the difference lies in what the Council does not count: the two measures the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
+              "pt": ", e a diferença está no que o Conselho não conta: as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
+              "en": ", and the difference lies in what the Council does not count: the two measures that, according to the Council, the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -61401,13 +61390,13 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[8]",
-          "pt": ", está no que o Conselho não conta, as duas medidas que a proposta não especifica o suficiente, a começar pelos ",
-          "en": ", lies in what the Council does not count, the two measures the proposal does not specify sufficiently, starting with the ",
+          "pt": ", está no que o Conselho não conta, as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pelos ",
+          "en": ", lies in what the Council does not count, the two measures that, according to the Council, the proposal does not specify sufficiently, starting with the ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", está no que o Conselho não conta, as duas medidas que a proposta não especifica o suficiente, a começar pelos ",
-              "en": ", lies in what the Council does not count, the two measures the proposal does not specify sufficiently, starting with the ",
+              "pt": ", está no que o Conselho não conta, as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pelos ",
+              "en": ", lies in what the Council does not count, the two measures that, according to the Council, the proposal does not specify sufficiently, starting with the ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -63889,13 +63878,13 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[22]",
-          "pt": " do PIB pelo mesmo caminho: não conta a medida dos combustíveis nem o resto da receita da venda de imóveis, porque a proposta não as especifica o suficiente, nem o efeito no IRS da redução das retenções na fonte, e diz que, se os contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se existirem os ",
-          "en": " of GDP by the same road: it does not count the fuel measure nor the rest of the revenue from property sales, because the proposal does not specify them sufficiently, nor the effect on personal income tax of the cut in withholding, and says that, if it counted them, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
+          "pt": " do PIB pelo mesmo caminho: não conta a medida dos combustíveis nem o resto da receita da venda de imóveis, porque, diz o Conselho, a proposta não as especifica o suficiente, nem o efeito no IRS da redução das retenções na fonte, e diz que, se os contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se existirem os ",
+          "en": " of GDP by the same road: it does not count the fuel measure nor the rest of the revenue from property sales, because, the Council says, the proposal does not specify them sufficiently, nor the effect on personal income tax of the cut in withholding, and says that, if it counted them, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
           "ramo": null,
           "partes": [
             {
-              "pt": " do PIB pelo mesmo caminho: não conta a medida dos combustíveis nem o resto da receita da venda de imóveis, porque a proposta não as especifica o suficiente, nem o efeito no IRS da redução das retenções na fonte, e diz que, se os contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se existirem os ",
-              "en": " of GDP by the same road: it does not count the fuel measure nor the rest of the revenue from property sales, because the proposal does not specify them sufficiently, nor the effect on personal income tax of the cut in withholding, and says that, if it counted them, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
+              "pt": " do PIB pelo mesmo caminho: não conta a medida dos combustíveis nem o resto da receita da venda de imóveis, porque, diz o Conselho, a proposta não as especifica o suficiente, nem o efeito no IRS da redução das retenções na fonte, e diz que, se os contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se existirem os ",
+              "en": " of GDP by the same road: it does not count the fuel measure nor the rest of the revenue from property sales, because, the Council says, the proposal does not specify them sufficiently, nor the effect on personal income tax of the cut in withholding, and says that, if it counted them, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [

@@ -105,7 +105,7 @@ const ABERTURAS = {
         },
         " na despesa efetiva de ",
         {
-          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
         },
         ", acaba, e a despesa total varia ",
         {
@@ -132,7 +132,7 @@ const ABERTURAS = {
         },
         " of effective expenditure in ",
         {
-          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
         },
         ", ends, and total expenditure changes by ",
         {
