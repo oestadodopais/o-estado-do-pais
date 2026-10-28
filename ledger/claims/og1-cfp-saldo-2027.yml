@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-cfp-saldo-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "0,1"
+unit: "% do PIB"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "CFP"
+document:
+  title: "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "p. 22 PDF (22 impressa)"
+  source_sha256: "4690766e05c1ba7e149e198776ba4b0b59a32cc9d374d471c02a046ae302afc0"
+  page: 22
+  kind: "pdf"
+source_url: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-rel-08-2026_poe2027%5B1%5D.pdf#page=22"
+access_date: "2026-10-28"
+published_at: "2026-10-26"
+afirmacao: true
+reference_date: "2026-10-26"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "CFP"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Défice: o valor é o módulo e o sentido está no excerto, como na linha og1-utao-novas-saldo. A previsão do MF para o mesmo saldo é um excedente de 0,1% do PIB (og1-utao-saldo-2027). · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-cfp-saldo-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-guiao-votacoes-28"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Assembleia da República"
+document:
+  title: "Guião de Votações: votações a efetuar em 28-10-2026, versão 2"
+  edition: "2026-10-28"
+  locator: "p. 1 PDF (1 impressa)"
+  source_sha256: "02f2516f14b61194ce86bfd2b901660c6ef110d2eb826355761cbe6a4e9b3059"
+  page: 1
+  kind: "pdf"
+source_url: "https://app.parlamento.pt/WebUtils/docs/doc.pdf?Path=ph9Ow3e%2b4bnpkJS3xz2nOZtOmLTfMs8PcDQ7oTwRGQI%2fd6KWvRCf%2bpBaMV79iib2GdwfHaNNwkJu2qM8oo3JxM2F%2f%2bnfnwHob0WabTTSrnrvRBUrZX3kMEaSdmRa7wRb%2bCaJ55us20Uy1a2Wq310WgEXnN06Fmprgk%2b5sHEttmEjO%2f8yjEnuqopo%2bgqJUh9LMIMeOFrswF4QugxhESlhPCsIyOw0CZgk0LJJ8FXKdQfws9GYOXOtaoxqSUdkf2JSmfRcPqFb98MfI%2flVewY6kljcNkBuVg5Y6X4jq%2fF6Y2GWdvs%2fD9xmNarDuqpltOtE1xYzmoGtMbB2n2YWJ5evWoXnwyGqU6VewTnI6j3tXUOKzenWFpjIrdl%2b3MKvS8pWlXF1mgrmCAZKtzKtf%2bHfmBPXvXoXvT656ammfAl29yzzheK1LmfKRJ5JtfAHAuTa6dUM8b%2fA0zdwbAxs05L5BQ%3d%3d&Fich=XVII_2_16_2026-10-28_GuiaoVotacoes_2026-10-28+-+vers%c3%a3o+2.pdf&Inline=true"
+access_date: "2026-10-28"
+reference_date: "2026-10-28"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Documento da Divisão de Apoio ao Plenário, criado às 14:25:56 GMT de 28.10.2026 (metadados do PDF), publicado no arquivo de votações do Parlamento como «Guião de Votações (Substituído)», ficheiro XVII_2_16_2026-10-28_GuiaoVotacoes (reunião n.º 16 da 2.ª sessão legislativa). Lista a votação na generalidade; não contém o resultado. O arquivo não tinha o «Resultado das Votações» de 28.10 às 18:58 UTC (arquivo-votacoes-28.html). · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-guiao-votacoes-28."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

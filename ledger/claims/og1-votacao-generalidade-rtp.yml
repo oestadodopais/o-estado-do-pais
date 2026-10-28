@@ -1,0 +1,39 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-votacao-generalidade-rtp"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "RTP"
+document:
+  title: "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se"
+  edition: "2026-10-28"
+  locator: "Corpo da página; entrada «Orçamento do Estado aprovado»; excerto localizado por texto"
+  source_sha256: "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db"
+  kind: "html"
+source_url: "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900"
+access_date: "2026-10-28"
+reference_date: "2026-10-28"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Entrada «Orçamento do Estado aprovado» da página ao minuto da RTP, com a hora 2026-10-28T18:48:39Z (atributo datetime; «18:48, 28 Outubro 2026»). Gémea da linha og1-votacao-generalidade; a RTP não enumera aqui os votos contra. · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-votacao-generalidade-rtp."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

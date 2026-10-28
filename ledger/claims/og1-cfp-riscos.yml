@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-cfp-riscos"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "A previsão orçamental para 2027 encerra riscos descendentes. Entre os riscos identificados destacam-se: (i) um crescimento da massa salarial da economia inferior ao previsto, com reflexo na receita de IRS e de contribuições sociais; (ii) um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto; (iii) a aprovação de medidas de política que possam colocar em causa as metas orçamentais estabelecidas na POE/2027; (iv) a possibilidade de o Fundo de Resolução ter de compensar determinados credores comuns do BES; (v) a materialização de despesa pública associada a passivos contingentes das AP, relacionadas com as pretensões dos parceiros privados no âmbito de parcerias público-privadas (PPP) e com outras decisões judiciais em curso, bem como garantias públicas, designadamente a relativa ao pacote habitação jovem, as concedidas à SATA pelo Governo Regional dos Açores e as associadas a linhas de crédito às empresas privadas."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "CFP"
+document:
+  title: "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "p. 8 PDF (8 impressa)"
+  source_sha256: "4690766e05c1ba7e149e198776ba4b0b59a32cc9d374d471c02a046ae302afc0"
+  page: 8
+  kind: "pdf"
+source_url: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-rel-08-2026_poe2027%5B1%5D.pdf#page=8"
+access_date: "2026-10-28"
+published_at: "2026-10-26"
+afirmacao: true
+reference_date: "2026-10-26"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A previsão orçamental para 2027 encerra riscos descendentes. Entre os riscos identificados destacam-se: (i) um crescimento da massa salarial da economia inferior ao previsto, com reflexo na receita de IRS e de contribuições sociais; (ii) um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto; (iii) a aprovação de medidas de política que possam colocar em causa as metas orçamentais estabelecidas na POE/2027; (iv) a possibilidade de o Fundo de Resolução ter de compensar determinados credores comuns do BES; (v) a materialização de despesa pública associada a passivos contingentes das AP, relacionadas com as pretensões dos parceiros privados no âmbito de parcerias público-privadas (PPP) e com outras decisões judiciais em curso, bem como garantias públicas, designadamente a relativa ao pacote habitação jovem, as concedidas à SATA pelo Governo Regional dos Açores e as associadas a linhas de crédito às empresas privadas."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "CFP"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Sumário executivo. · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-cfp-riscos."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

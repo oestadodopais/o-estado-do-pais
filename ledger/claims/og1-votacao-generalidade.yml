@@ -1,0 +1,39 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-votacao-generalidade"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "ECO"
+document:
+  title: "Orçamento do Estado para 2027 aprovado na generalidade com abstenção do PS"
+  edition: "2026-10-28"
+  locator: "Corpo da página; excerto localizado por texto"
+  source_sha256: "42d687ea3a0d99ca1847081ab7125ce99f323bf4552ebf4f794462e0161b7357"
+  kind: "html"
+source_url: "https://eco.sapo.pt/2026/10/28/orcamento-do-estado-para-2027-aprovado-na-generalidade-com-abstencao-do-ps/"
+access_date: "2026-10-28"
+reference_date: "2026-10-28"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Notícia do ECO, assinada por três jornalistas do ECO, publicada às 18:46:48 UTC de 28.10.2026 (datePublished da página; a página marca «Em atualização»). Os dois espaços antes de vírgulas («generalidade , com» e «do PS , do PAN») vêm de ligações do HTML; a notícia escreve «generalidade, com» e «do PS, do PAN». O registo oficial do resultado e o Diário por alojar. · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-votacao-generalidade."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
