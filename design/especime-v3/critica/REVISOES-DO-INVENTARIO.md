@@ -919,3 +919,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | og1-b0-h | Contraste limitado ao emprego, fecho revisto e opinião mais curta | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-h; leitura curta final reservada à direção. |
 
 | og1-b0-i | Recomendação sobre a estimativa de receita, citação do emprego e risco no fecho | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-i; leitura curta final reservada à direção. |
+
+| fp2-c | A conclusão da Saúde com a frase dos números em primeiro, «excedente» e a glosa da UTAO na conclusão do Orçamento, a moeda no valor das parcerias, nas duas edições; seis linhas vivas reescritas | por ler | O lugar de direção (correção dirigida, 27.10.2026 à noite, depois da leitura a frio do FP2): a leitura cruzada destas linhas é a leitura curta M48 do Codex sobre o diff do FP2-c, antes da aterragem; o resultado fica no relatório do bloco. |

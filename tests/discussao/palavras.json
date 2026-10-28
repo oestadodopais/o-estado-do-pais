@@ -18342,13 +18342,13 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[0]",
-          "pt": "As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto. Para ",
-          "en": "The three claims correspond to different lines of the table and none presents all three measures together. In ",
+          "pt": "Para ",
+          "en": "In ",
           "ramo": null,
           "partes": [
             {
-              "pt": "As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto. Para ",
-              "en": "The three claims correspond to different lines of the table and none presents all three measures together. In ",
+              "pt": "Para ",
+              "en": "In ",
               "classe": "leitura",
               "sobre": "Conclusão editorial sobre os perímetros, composição e insuficiência histórica dos orçamentos iniciais.",
               "apoios": [
@@ -19248,13 +19248,13 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[12]",
-          "pt": " que o PRR deixa. A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem. Desde ",
-          "en": " the RRP leaves. Personnel expenditure rises, while the purchase of goods and services and investment fall. Since ",
+          "pt": " que o PRR deixa. As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto. A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem. Desde ",
+          "en": " the RRP leaves. The three claims correspond to different lines of the table and none presents all three measures together. Personnel expenditure rises, while the purchase of goods and services and investment fall. Since ",
           "ramo": null,
           "partes": [
             {
-              "pt": " que o PRR deixa. A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem. Desde ",
-              "en": " the RRP leaves. Personnel expenditure rises, while the purchase of goods and services and investment fall. Since ",
+              "pt": " que o PRR deixa. As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto. A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem. Desde ",
+              "en": " the RRP leaves. The three claims correspond to different lines of the table and none presents all three measures together. Personnel expenditure rises, while the purchase of goods and services and investment fall. Since ",
               "classe": "leitura",
               "sobre": "Conclusão editorial sobre os perímetros, composição e insuficiência histórica dos orçamentos iniciais.",
               "apoios": [
@@ -31383,13 +31383,13 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[1].sufixo",
-          "pt": " milhões",
-          "en": " million",
+          "pt": " milhões de euros",
+          "en": " million euros",
           "ramo": null,
           "partes": [
             {
-              "pt": " milhões",
-              "en": " million",
+              "pt": " milhões de euros",
+              "en": " million euros",
               "classe": "leitura",
               "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
@@ -39934,13 +39934,13 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[0]",
-          "pt": "A proposta chega ao voto com um saldo de ",
-          "en": "The proposal reaches the vote with a balance of ",
+          "pt": "A proposta chega ao voto com um excedente de ",
+          "en": "The proposal reaches the vote with a surplus of ",
           "ramo": null,
           "partes": [
             {
-              "pt": "A proposta chega ao voto com um saldo de ",
-              "en": "The proposal reaches the vote with a balance of ",
+              "pt": "A proposta chega ao voto com um excedente de ",
+              "en": "The proposal reaches the vote with a surplus of ",
               "classe": "leitura",
               "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
               "apoios": [
@@ -40123,13 +40123,13 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[4]",
-          "pt": " sem a informação que a fundamente, num emprego que a UTAO tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
-          "en": " of revenue without the information to support it, on employment the UTAO finds hard to reconcile with immigration, and on oil whose ",
+          "pt": " sem a informação que a fundamente, num emprego que a UTAO, a unidade técnica de apoio orçamental do Parlamento, tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
+          "en": " of revenue without the information to support it, on employment the UTAO, Parliament's technical budget support unit, finds hard to reconcile with immigration, and on oil whose ",
           "ramo": null,
           "partes": [
             {
-              "pt": " sem a informação que a fundamente, num emprego que a UTAO tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
-              "en": " of revenue without the information to support it, on employment the UTAO finds hard to reconcile with immigration, and on oil whose ",
+              "pt": " sem a informação que a fundamente, num emprego que a UTAO, a unidade técnica de apoio orçamental do Parlamento, tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
+              "en": " of revenue without the information to support it, on employment the UTAO, Parliament's technical budget support unit, finds hard to reconcile with immigration, and on oil whose ",
               "classe": "leitura",
               "sobre": "Leitura editorial corrigida pelo mandato A8, com os apoios dos documentos da frase.",
               "apoios": [

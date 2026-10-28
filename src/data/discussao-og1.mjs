@@ -1049,7 +1049,7 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "A proposta chega ao voto com um saldo de ",
+              "A proposta chega ao voto com um excedente de ",
               {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
@@ -1059,7 +1059,7 @@ export const OG1 = {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " sem a informação que a fundamente, num emprego que a UTAO tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
+              " sem a informação que a fundamente, num emprego que a UTAO, a unidade técnica de apoio orçamental do Parlamento, tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
@@ -1081,7 +1081,7 @@ export const OG1 = {
               " é a generalidade; os números da especialidade vêm depois."
             ],
             "en": [
-              "The proposal reaches the vote with a balance of ",
+              "The proposal reaches the vote with a surplus of ",
               {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
@@ -1091,7 +1091,7 @@ export const OG1 = {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
               },
-              " of revenue without the information to support it, on employment the UTAO finds hard to reconcile with immigration, and on oil whose ",
+              " of revenue without the information to support it, on employment the UTAO, Parliament's technical budget support unit, finds hard to reconcile with immigration, and on oil whose ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },

@@ -36,7 +36,38 @@
   ],
   "simbolos": "por somar no fecho da sessão (a linha de estado do Claude)"
  },
- "leituras": [],
- "corrida_inteira": null,
- "aterragem": null
+ "leituras": [
+  {
+   "nome": "fp2 (leitura a frio)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-27T23:25Z",
+   "fim": "2026-10-27T23:36Z",
+   "segundos": 662,
+   "chamadas_de_ferramenta": 43,
+   "simbolos": 175475,
+   "fonte": "o uso do agente na notificação do lançamento (subagent_tokens, tool_uses, duration_ms)",
+   "plantas": "5 de 5",
+   "achados_reais": "0 Blocking, 2 Major (as frases das conclusões na primeira página), 9 Minor"
+  }
+ ],
+ "corrida_inteira": {
+  "guiao": "conferir-tudo.sh --build",
+  "pasta": "_aterragens/fp2-conferir-2026-10-27",
+  "inicio": "2026-10-27T22:49:00Z",
+  "resumo": "2026-10-27T23:24:01Z",
+  "passos": 53,
+  "vermelhos": 0,
+  "segundos": 2085,
+  "build_segundos": 386,
+  "check_sobreposicao_segundos": 7
+ },
+ "aterragem": null,
+ "correcoes": [
+  {
+   "nome": "FP2-c",
+   "quem": "o lugar de direção (correção dirigida, §1.202 (1))",
+   "o_que": "as frases das conclusões da Saúde, do Orçamento e das parcerias nos dados dos itens",
+   "leitura_curta": "Codex gpt-6-astra por ler.sh (M48), por preencher"
+  }
+ ]
 }
