@@ -1,0 +1,30 @@
+{
+  "linhas_exportadas": 57,
+  "familias_declaradas": 33,
+  "ausentes": [
+    "og1-utao-p16",
+    "og1-utao-p105",
+    "og1-utao-p107",
+    "og1-utao-p111",
+    "og1-cfp-plausivel",
+    "og1-cfp-saldo-2027",
+    "og1-cfp-diferenca-mf",
+    "og1-cfp-combustiveis",
+    "og1-cfp-ac-fss",
+    "og1-cfp-juros",
+    "og1-cfp-riscos",
+    "og1-cfp-emprego",
+    "og1-mf-juros-choque-100pb",
+    "og1-votacao-generalidade",
+    "og1-votacao-generalidade-rtp",
+    "og1-guiao-votacoes-28",
+    "og1-livre-voto",
+    "og1-pan-abstencao",
+    "og1-jpp-abstencao",
+    "og1-chega-voto",
+    "og1-il-voto",
+    "og1-mf-despesa-total-efetiva-nota",
+    "og1-mf-ppp-encargos-receitas",
+    "og1-mf-ppp-receitas-portagem"
+  ]
+}

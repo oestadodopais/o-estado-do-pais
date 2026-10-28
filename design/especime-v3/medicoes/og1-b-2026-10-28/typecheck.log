@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/data/discussao.mjs(299,5): error TS2322: Type '{ pt: (string | { claim?: undefined; sufixo?: undefined; periodo: string; } | { periodo?: undefined; claim: string; sufixo: string; } | { sufixo?: undefined; periodo?: undefined; claim: string; })[]; en: (string | { ...; } | { ...; } | { ...; })[]; }[] | ({ ...; } | { ...; })[]' is not assignable to type 'never[] | { pt: (string | { periodo?: undefined; claim: string; sufixo: string; fragmento?: undefined; campo?: undefined; texto?: undefined; } | { claim?: undefined; sufixo?: undefined; periodo: string; fragmento?: undefined; campo?: undefined; texto?: undefined; } | { ...; })[]; en: (string | ... 2 more ... | { ......'.
+  Type '{ pt: (string | { claim?: undefined; sufixo?: undefined; periodo: string; } | { periodo?: undefined; claim: string; sufixo: string; } | { sufixo?: undefined; periodo?: undefined; claim: string; })[]; en: (string | { ...; } | { ...; } | { ...; })[]; }[]' is not assignable to type 'never[] | { pt: (string | { periodo?: undefined; claim: string; sufixo: string; fragmento?: undefined; campo?: undefined; texto?: undefined; } | { claim?: undefined; sufixo?: undefined; periodo: string; fragmento?: undefined; campo?: undefined; texto?: undefined; } | { ...; })[]; en: (string | ... 2 more ... | { ......'.
+    Type '{ pt: (string | { claim?: undefined; sufixo?: undefined; periodo: string; } | { periodo?: undefined; claim: string; sufixo: string; } | { sufixo?: undefined; periodo?: undefined; claim: string; })[]; en: (string | { ...; } | { ...; } | { ...; })[]; }[]' is not assignable to type 'never[]'.
+      Type '{ pt: (string | { claim?: undefined; sufixo?: undefined; periodo: string; } | { periodo?: undefined; claim: string; sufixo: string; } | { sufixo?: undefined; periodo?: undefined; claim: string; })[]; en: (string | { claim?: undefined; sufixo?: undefined; periodo: string; } | { ...; } | { ...; })[]; }' is not assignable to type 'never'.
+src/data/discussao.mjs(300,5): error TS7053: Element implicitly has an 'any' type because expression of type '"abertura[0]"' can't be used to index type '{ [k: string]: string[]; } | {}'.
+  Property 'abertura[0]' does not exist on type '{ [k: string]: string[]; } | {}'.
+src/data/discussao.mjs(303,19): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+src/data/discussao.mjs(303,22): error TS7053: Element implicitly has an 'any' type because expression of type '"abertura[0]"' can't be used to index type '{ [k: string]: string[]; } | {}'.
+  Property 'abertura[0]' does not exist on type '{ [k: string]: string[]; } | {}'.

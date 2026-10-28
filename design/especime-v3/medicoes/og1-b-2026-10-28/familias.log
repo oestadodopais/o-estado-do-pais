@@ -1,0 +1,54 @@
+file://<worktree>/src/lib/o-que-e-o-numero.mjs:421
+    throw new Error(`o que é cada número: ${erros.length} defeito(s):\n  ${erros.slice(0, 40).join('\n  ')}${erros.length > 40 ? `\n  … e mais ${erros.length - 40}` : ''}\n`);
+          ^
+
+Error: o que é cada número: 48 defeito(s):
+  o que é cada número · og1-cfp-ac-fss · pt: a família «og1-cfp-ac-fss» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-ac-fss · en: a família «og1-cfp-ac-fss» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-combustiveis · pt: a família «og1-cfp-combustiveis» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-combustiveis · en: a família «og1-cfp-combustiveis» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-diferenca-mf · pt: a família «og1-cfp-diferenca-mf» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-diferenca-mf · en: a família «og1-cfp-diferenca-mf» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-emprego · pt: a família «og1-cfp-emprego» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-emprego · en: a família «og1-cfp-emprego» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-juros · pt: a família «og1-cfp-juros» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-juros · en: a família «og1-cfp-juros» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-plausivel · pt: a família «og1-cfp-plausivel» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-plausivel · en: a família «og1-cfp-plausivel» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-riscos · pt: a família «og1-cfp-riscos» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-riscos · en: a família «og1-cfp-riscos» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-saldo-2027 · pt: a família «og1-cfp-saldo» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-cfp-saldo-2027 · en: a família «og1-cfp-saldo» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-chega-voto · pt: a família «og1-chega-voto» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-chega-voto · en: a família «og1-chega-voto» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-guiao-votacoes-28 · pt: a família «og1-guiao-votacoes-28» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-guiao-votacoes-28 · en: a família «og1-guiao-votacoes-28» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-il-voto · pt: a família «og1-il-voto» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-il-voto · en: a família «og1-il-voto» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-jpp-abstencao · pt: a família «og1-jpp-abstencao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-jpp-abstencao · en: a família «og1-jpp-abstencao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-livre-voto · pt: a família «og1-livre-voto» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-livre-voto · en: a família «og1-livre-voto» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-despesa-total-efetiva-nota · pt: a família «og1-mf-despesa-total-efetiva-nota» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-despesa-total-efetiva-nota · en: a família «og1-mf-despesa-total-efetiva-nota» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-juros-choque-100pb · pt: a família «og1-mf-juros-choque-100pb» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-juros-choque-100pb · en: a família «og1-mf-juros-choque-100pb» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-ppp-encargos-receitas · pt: a família «og1-mf-ppp-encargos-receitas» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-ppp-encargos-receitas · en: a família «og1-mf-ppp-encargos-receitas» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-ppp-receitas-portagem · pt: a família «og1-mf-ppp-receitas-portagem» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-mf-ppp-receitas-portagem · en: a família «og1-mf-ppp-receitas-portagem» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-pan-abstencao · pt: a família «og1-pan-abstencao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-pan-abstencao · en: a família «og1-pan-abstencao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-utao-p105 · pt: a família «og1-utao-p105» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-utao-p105 · en: a família «og1-utao-p105» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-utao-p107 · pt: a família «og1-utao-p107» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · og1-utao-p107 · en: a família «og1-utao-p107» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  … e mais 8
+
+    at file://<worktree>/src/lib/o-que-e-o-numero.mjs:421:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:282:26)
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:278:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

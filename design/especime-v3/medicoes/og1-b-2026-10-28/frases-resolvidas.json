@@ -1,0 +1,905 @@
+{
+  "estado": "Resolvidas dos dados; não extraídas de HTML construído.",
+  "frases": [
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "titulo",
+      "texto": "O orçamento da Saúde para 2027: 3,0 % sem PRR ou −1,5 % no total? As duas contas, o que muda por dentro e o que ficou por dizer"
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "abertura[0]",
+      "texto": "Para 2027, a despesa total da Saúde, que no relatório do Orçamento inclui os ativos e passivos financeiros, está orçamentada 267,5 milhões de euros abaixo da estimativa de 2026, e a despesa efetiva, a mesma conta sem esses ativos e passivos, varia −259,3 milhões de euros, porque o PRR acaba."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "abertura[1]",
+      "texto": "Fora do PRR, a despesa efetiva sobe 3,0 %, 511,8 milhões de euros face aos 771,1 que o PRR deixa, e no total varia −1,5 %: as duas contas são verdadeiras e nenhuma mostra sozinha o que muda."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[0].paragrafo",
+      "texto": "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» A 12.10.2026, Paula Santos · PCP disse: «O investimento sofre um corte brutal de 33,7%.»"
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "texto": "O quadro 5.37 do relatório do Orçamento, o programa Saúde, em milhões de euros."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[1].paragrafo",
+      "texto": "A despesa total consolidada passa de 18 125,9 em 2026 para 17 858,4 em 2027, uma variação de −1,5 %. A despesa efetiva consolidada passa de 18 062,4 para 17 803,1, −1,4 %. Sem o PRR, o Plano de Recuperação e Resiliência, a despesa efetiva consolidada passa de 17 291,3 para 17 803,1, 3,0 %. Em 2027 o quadro tem o mesmo valor com e sem o PRR, 17 803,1 milhões de euros: a coluna sem o PRR não retira nada nesse ano."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "texto": "Por dentro, a despesa com o pessoal passa de 7 783,1 para 8 184,3, 5,2 %; a aquisição de bens e serviços, a maior rubrica do programa, passa de 8 832,9 para 8 436,3, −4,5 %; o investimento passa de 1 022,5 para 678,3, −33,7 % com o PRR e 22,2 % sem ele; as outras despesas correntes passam de 32,4 para 303,7, e as transferências de capital de 272,9 para 0,0."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[3].paragrafo",
+      "texto": "O financiamento, na comparação entre os dois orçamentos: as receitas de impostos passam de 15 116,4 para 15 452,2; as receitas próprias de 1 289,5 para 2 017,6, 56,5 %; os fundos europeus de 655,0 para 174,6. As transferências para o Serviço Nacional de Saúde passam de 14 935,8 para 15 539,2, 4,0 %."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[4].paragrafo",
+      "texto": "Desde 2020, a Saúde gastou todos os anos mais do que o orçamento inicial: 11 282,2 orçamentados e 11 731,9 executados em 2020; 16 853,5 e 17 241,5 em 2025; em 2026 o orçamento inicial era 17 300,2 e a estimativa de execução do relatório é 18 125,9, 825,7 acima; a UTAO, que parte de outra base, conta 915 na despesa efetiva."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[5].paragrafo",
+      "texto": "Na execução até agosto de 2026, a despesa efetiva do programa Saúde foi de 11 822,6, 19,9 % acima do mesmo período de 2025, e o Serviço Nacional de Saúde tinha nesses oito meses um saldo de −918,5 milhões de euros, com a despesa a crescer 13,2 %."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[6].paragrafo",
+      "texto": "Na comparação europeia, Portugal gastou em saúde 10,20 % do PIB em 2024, a União 10,16 %; por habitante, em euros correntes e sem correção pelos preços, 2 764,83 euros contra 4 074,88 na União; só nos regimes públicos e nos regimes contributivos obrigatórios, 6,31 % do PIB contra 8,17 %. Portugal tinha 431,35 médicos em exercício por cem mil habitantes em 2024, entre a Bélgica, com o valor mais baixo (334,25), e a Grécia, com o mais alto (626,89), nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[7].paragrafo",
+      "texto": "No serviço, pelos dados abertos do Serviço Nacional de Saúde: em agosto de 2026 havia 1 362 294 utentes elegíveis inscritos sem médico de família atribuído, pela série que começou em julho desse ano e conta só os utentes elegíveis («Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.»), que por isso não se compara com a anterior; a série anterior dava 1 672 130 em junho de 2026 contra 1 669 681 um ano antes. As consultas nos cuidados primários foram 2 577 538 em agosto de 2026, o último mês, provisório na fonte, que diz: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»; 7,7 % acima de agosto de 2025; as cirurgias de janeiro a julho de 2026, 520 373, −4,4 % face a janeiro a julho de 2025; os inscritos para cirurgia, 284 210 em julho de 2026, 5,8 % face a um ano antes; nos três conjuntos, o último mês é provisório na fonte."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[8].paragrafo",
+      "texto": "Os encargos do Serviço Nacional de Saúde com medicamentos, pelo Infarmed, foram de 1 179,3 milhões de euros em ambulatório de janeiro a julho de 2026 e de 1 600,9 em meio hospitalar, 6,1 % acima do mesmo período do ano anterior no conjunto; sobre as contribuições do acordo com a Associação Portuguesa da Indústria Farmacêutica (APIFARMA), o Infarmed avisa que «Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento». A dívida das entidades do Serviço Nacional de Saúde a fornecedores externos era de 1 517,5 milhões de euros em julho de 2026; os pagamentos em atraso das unidades de saúde que são entidades públicas empresariais (EPE), 689,9 milhões em agosto de 2026, pela execução orçamental da Direção-Geral do Orçamento; e as entidades do Serviço Nacional de Saúde regularizaram 1 398,6 milhões de dívidas vencidas a fornecedores até agosto, com contrapartida em reforços de capital pelo Estado."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[9].paragrafo",
+      "texto": "O PRR na saúde, à data de 14.10.2026: 2 011 milhões de euros contratados, 947 milhões pagos, uma execução financeira de 47 %; ficam por pagar 1 064 milhões de euros, 52,9 % do contratado. Dos 37 marcos e metas da componente da saúde no anexo anual de 2025, 24 estão completos, entre eles o contrato de gestão para o Hospital de Lisboa Oriental."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "texto": "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada: −267,5 milhões de euros, −1,5 %. O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %, a mesma que o relatório escreve e que a UTAO, a unidade técnica de apoio orçamental do Parlamento, confirma: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» O número do PCP sobre o investimento coincide com a linha do investimento com o PRR, −33,7 %; sem o PRR, a mesma linha sobe 22,2 %."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[1].paragrafo",
+      "texto": "A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 66,4 % do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[2].paragrafo",
+      "texto": "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[3].paragrafo",
+      "texto": "A redução do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna; e varia −7,8 % nas Finanças, −4,9 % na Economia e −38,2 % na Coesão territorial."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[4].paragrafo",
+      "texto": "O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»"
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[5].paragrafo",
+      "texto": "Posto ao lado do serviço: a compra de bens e serviços desce 396,6 milhões de euros quando os encargos com medicamentos sobem 6,1 % num ano; o investimento cai um terço quando 52,9 % do contratado no PRR na saúde está por pagar; e o pessoal, que sobe 5,2 %, é o lado de um serviço com 1 362 294 utentes elegíveis sem médico de família atribuído e uma lista de espera para cirurgia a crescer 5,8 % num ano."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "texto": "Para 2027, a despesa total da Saúde está orçamentada 267,5 milhões de euros abaixo da estimativa de 2026, e a despesa efetiva varia −259,3 milhões de euros, porque o PRR acaba: fora do PRR, a despesa efetiva sobe 511,8 milhões de euros face aos 771,1 que o PRR deixa. As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto. A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem. Desde 2020 nenhum orçamento inicial da Saúde dos anos com execução concluída chegou ao fim do ano sem ser ultrapassado, e o de 2027 é inferior ao que se estima gastar em 2026. Para quem usa o Serviço Nacional de Saúde, o orçamento de 2027 é mais dinheiro para quem lá trabalha e menos para o que se compra e se constrói, numa altura em que os encargos com medicamentos são maiores do que há um ano, a lista de espera para cirurgia cresceu e cerca de metade do contratado no PRR na saúde está por pagar."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[4].conteudo[0].paragrafo",
+      "texto": "A pergunta útil não é se o orçamento da Saúde sobe ou desce, é se chega: a resposta dos últimos seis anos é que não chegou nenhuma vez, e a execução até agosto de 2026, 19,9 % acima de 2025, reforça o risco de nova insuficiência. Quem acompanhar a Saúde em 2027 olha para a síntese mensal da execução orçamental da Entidade Orçamental e para a eventual necessidade de reforço, não apenas para a aprovação. Também acompanha os dados mensais do Serviço Nacional de Saúde: os utentes sem médico de família, a lista de espera para cirurgia e a dívida a fornecedores dizem mais sobre 2027 do que a votação."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "pt",
+      "caminho": "seccoes[5].conteudo[0].paragrafo",
+      "texto": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda em outras despesas correntes mais 271,3 milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia. Com estes números, a pergunta ao Governo e aos partidos não é «sobe ou desce»: é com que dinheiro se pagam os encargos com medicamentos que aumentaram 6,1 % e como se financia o investimento depois do PRR, com 52,9 % do contratado na saúde ainda por pagar. As afirmações citadas não respondem a essa pergunta."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "titulo",
+      "texto": "As parcerias rodoviárias: o que o Estado paga, o que vai pagar e o que não está no quadro"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "abertura[0]",
+      "texto": "O relatório do Orçamento prevê 889 milhões de euros de encargos líquidos com as parcerias rodoviárias em 2027: «líquidos» quer dizer o que o Estado paga às concessionárias depois de descontadas as receitas que lhe cabem, sobretudo as portagens cobradas nas vias portajadas."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "abertura[1]",
+      "texto": "Os encargos brutos de 2027 são 1 152 milhões de euros e as receitas 263 milhões de euros; o que pode mudar a conta não está no quadro: 2 388,2 milhões de euros de pedidos das concessionárias, dos quais 1 122,5 numa negociação em curso."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[0].paragrafo",
+      "texto": "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026. A 12.10.2026, Paula Santos · PCP: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» A 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "texto": "O quadro 4.25 do relatório do Orçamento, as parcerias público-privadas, 2027, em milhões de euros."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[1].paragrafo",
+      "texto": "Os encargos brutos do setor rodoviário são 1 152; as receitas, 263; os encargos líquidos, 889. As parcerias ferroviárias custam 312 e as da saúde 254, numa linha única cada, sem receitas; os encargos brutos rodoviários mais os encargos ferroviários e da saúde somam 1 718, e o total líquido impresso para todos os setores é 1 438. Previsão, não execução. As linhas setoriais do quadro não somam exatamente o total impresso; o quadro não explica a diferença. O quadro diz que os valores são de caixa e, quando aplicável, incluem o IVA."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "texto": "Os encargos líquidos rodoviários, ano a ano, pelos relatórios do Orçamento: 1 250 em 2021 (execução), 1 192 em 2022, 1 105 em 2023, 1 012 em 2024, 843 em 2025, 942 em 2026 (estimativas) e 889 em 2027 (orçamento)."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[3].paragrafo",
+      "texto": "O relatório projeta 705 em 2028, 648 em 2029, 77 em 2035 e 17 em 2040, o último ano com encargos rodoviários; em 2030 as receitas excedem os encargos e a linha é negativa, −220."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[4].paragrafo",
+      "texto": "Para 2027, o relatório do ano passado previa 774 de encargos líquidos; este prevê 889. Segundo o relatório, a diferença vem dos custos da cobrança das portagens e dos pagamentos ligados ao tráfego, que subiram, e das receitas de portagem, que desceram."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[5].paragrafo",
+      "texto": "Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados reportados a 1.º trimestre de 2026, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que a Infraestruturas de Portugal paga, por decisão provisória, cerca de 1,3 milhões por mês, mais IVA. A UTAO distingue os pedidos dos encargos efetivos: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[6].paragrafo",
+      "texto": "O Instituto da Mobilidade e dos Transportes (IMT) indica para a concessão da Brisa «Período da Concessão: 1972 – 2035»; a minuta do contrato de concessão de 2008 fixa o fim em 31.12.2035. A comissão de negociação, pelo despacho publicado a 27.12.2024, trata dos alargamentos de vias, dos investimentos contratualmente previstos, da reposição do equilíbrio financeiro, dos acertos de comparticipações, da Circular Sul de Braga, de novos investimentos, dos limites da concessão e da qualidade do serviço. O relatório diz que «Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.»"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[7].paragrafo",
+      "texto": "Desde 01.01.2025 a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera (a lista). Em 2023 o Estado limitou a atualização das portagens e paga às concessionárias, por conta do Orçamento do Estado, a diferença para a atualização que o decreto-lei de dezembro de 2022 toma como referência (o artigo retificado); o decreto diz que «O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.», e os encargos são do Orçamento do Estado, pela Direção-Geral do Tesouro e Finanças (a DGTF): «Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.» O relatório do Orçamento de 2027 inclui agora esse apoio nos encargos brutos, e regista uma negociação com a concessionária da Beira Interior na sequência de um pedido ligado à eliminação das portagens."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "texto": "Nenhum dos valores rodoviários do quadro é igual a 1 700 milhões de euros: o número está 548 acima dos encargos brutos e 811 acima dos líquidos."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[1].paragrafo",
+      "texto": "O número aproxima-se da soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde, 1 718, sem que isso demonstre a conta que lhe deu origem; as rodoviárias são 61,82 % do total líquido. O próprio PCP alargou depois o universo referido às parcerias rodoviárias, ferroviárias e da saúde, a 12.10.2026 e a 15.10.2026, com 1 800 milhões de euros e 1 700 milhões de euros."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[2].paragrafo",
+      "texto": "O relatório prevê para as parcerias rodoviárias 889 líquidos em 2027 contra 1 250 executados em 2021, −28,9 %; mas mais do que os 843 estimados para 2025: os encargos brutos descem de 1 234 para 1 152, e as receitas previstas descem mais, de 392 para 263. A projeção tem uma tendência de redução, com oscilações, até 17 em 2040."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[3].paragrafo",
+      "texto": "O número que falta nas três afirmações citadas é o dos pedidos pendentes, 2 388,2, que não está no quadro dos encargos nem nessas afirmações, e que é maior do que os encargos rodoviários brutos e do que o número da primeira afirmação. A negociação da Brisa pode determinar que parte desses pedidos se torna encargo; a concessão termina em 31.12.2035."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "texto": "O relatório prevê 889 milhões de euros líquidos para as parcerias rodoviárias em 2027, −28,9 % face à execução de 2021 mas acima da estimativa para 2025, e o quadro projeta uma tendência de redução, com oscilações, até ao fim dos contratos. O número da primeira afirmação do PCP aproxima-se do custo bruto de todas as parcerias, não do das rodoviárias. E o que pode mudar a conta não está no quadro: 2 388,2 milhões de pedidos das concessionárias, dos quais 1 122,5 numa negociação em curso. Para quem conduz e para quem paga impostos: a lei eliminou portagens desde 01.01.2025; o Estado paga às concessionárias, desde 2023, a diferença entre a atualização limitada das portagens e a de referência do decreto, por conta do Orçamento do Estado, e esse apoio entra agora nos encargos brutos do quadro; a negociação da Brisa abrange investimentos e compensações numa concessão que termina em 31.12.2035; e os pedidos pendentes não são encargos efetivos reconhecidos."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[4].conteudo[0].paragrafo",
+      "texto": "A discussão útil em 2027 é a negociação com a Brisa e os litígios pendentes, além do valor orçamentado dos pagamentos contratados. Quem quiser vigiar as parcerias olha para o capítulo dos riscos do relatório e para o relatório anual da UTAP, a unidade técnica de acompanhamento de projetos, não só para o quadro dos encargos."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "pt",
+      "caminho": "seccoes[5].conteudo[0].paragrafo",
+      "texto": "O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao atribuir às rodoviárias um número que ultrapassa os seus encargos brutos. As parcerias custam ao Estado mais de mil milhões brutos no ano orçamentado; a afirmação posterior já abrange as rodoviárias, as ferroviárias e as da saúde, mas o seu montante, 1 800 milhões de euros, também excede a soma do quadro. O Governo, por sua vez, apresenta um quadro dos pagamentos contratados e remete para um capítulo de riscos os pedidos que podem mudar a conta. Entre os dois, o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo, e o que o pedido da concessionária da Beira Interior ligado à eliminação das portagens, e os que vierem, vão custar: é essa a conta que o Parlamento devia pedir antes de votar."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "titulo",
+      "texto": "O Orçamento de 2027 aprovado na generalidade: os votos de cada partido, o que o Conselho das Finanças Públicas e a UTAO medem e o que fica para a especialidade"
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "abertura[0]",
+      "texto": "O Parlamento aprovou a proposta de Orçamento para 2027 na generalidade a 28.10.2026, com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO e a RTP; o resultado oficial da votação ainda não estava publicado quando este item foi reescrito."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "abertura[1]",
+      "texto": "A maior medida de receita da proposta, o combate à fraude nos combustíveis, vale 300 milhões de euros em 2027 sem que a UTAO, a unidade técnica de apoio orçamental do Parlamento, encontre na proposta «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação», e o Conselho das Finanças Públicas, que não a conta na sua projeção, prevê para 2027 um défice de 0,1 % do PIB onde o Governo prevê um excedente de 0,1 %."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[0].paragrafo",
+      "texto": "Comissão Política Nacional do Partido Socialista, a 22.10.2026, na página do partido: «viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[1].paragrafo",
+      "texto": "Comité Central do PCP, no comunicado de 19.10.2026: «O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.» O comunicado não anuncia o voto."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[2].paragrafo",
+      "texto": "Paulo Raimundo, a 15.10.2026, numa intervenção publicada na página do PCP: «Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.» A intervenção não anuncia o voto."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[3].paragrafo",
+      "texto": "José Manuel Pureza, do Bloco de Esquerda, a 08.10.2026, segundo o Diário de Notícias: «Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro» A notícia relata o voto contra."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[4].paragrafo",
+      "texto": "Mariana Leitão, da Iniciativa Liberal, no título de uma entrevista ao ECO a 06.10.2026: «A prioridade é baixar o IRS e o ISP»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[5].paragrafo",
+      "texto": "Isabel Mendes Lopes, do Livre, a 28.09.2026, antes de a proposta dar entrada, segundo o Correio da Manhã: «dificilmente o acompanharemos, como é óbvio»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[6].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, ministro das Finanças, na audição da comissão de Orçamento a 23.10.2026, segundo a RTP, sobre as previsões das entidades nacionais e internacionais: «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[7].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo a RTP, sobre os 300 milhões de euros do combate à fraude nos combustíveis: «são receita do Estado»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[8].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo a RTP, sobre as medidas da habitação: «foi praticamente tudo feito»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[9].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo o ECO, sobre os juros da dívida: «a nossa subida das taxas de juro é risco de mercado e não risco de país»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[10].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo o Observador, na escolha entre o IRS Jovem e o prémio salarial: «esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[11].paragrafo",
+      "texto": "Jorge Pinto, do Livre, a 28.10.2026, aos jornalistas no Parlamento, segundo a RTP: «Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra». A RTP relata a decisão do partido de votar contra."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[12].paragrafo",
+      "texto": "Inês Sousa Real, do PAN, no debate a 28.10.2026, segundo a RTP: «Este orçamento tem um problema: contas certas, mas prioridades trocadas». A RTP relata a abstenção na generalidade."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[13].paragrafo",
+      "texto": "Filipe Sousa, do JPP, no debate a 28.10.2026, segundo a RTP: «há muito por resolver». A RTP relata a abstenção na generalidade."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[14].paragrafo",
+      "texto": "André Ventura, do Chega, a 28.10.2026, aos jornalistas na Assembleia da República, segundo a RTP, sobre o Governo: «não consegue reconhecer o momento de dificuldade». A RTP relata o anúncio do voto contra."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[0].conteudo[15].paragrafo",
+      "texto": "Mário Amorim Lopes, da Iniciativa Liberal, no encerramento do debate a 28.10.2026, segundo a RTP, sobre a proposta: «moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal». O voto contra consta da notícia da votação."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "texto": "A proposta prevê um crescimento real do PIB de 2,1 % em 2027, depois de 2,3 % em 2026; um saldo orçamental de 0,0 % do PIB em 2026 e de 0,1 % em 2027, que em contabilidade nacional são 275 milhões de euros no relatório da proposta; e uma dívida pública de 87,5 % do PIB em 2026 e 84,5 % em 2027, depois de 89,2 % em 2025, na revisão do Eurostat de 21.10.2026."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[1].paragrafo",
+      "texto": "As medidas já em vigor pesam no saldo de 2027 −5 411 milhões de euros, 1,6 % do PIB. Os juros sobem 23,2 %, para 8,2 mil milhões de euros, e a taxa de juro implícita da dívida passa de 2,4 % para 2,9 %."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "texto": "As medidas novas valem 79 milhões de euros para o saldo. A maior, do lado da receita, é o combate à fraude nos combustíveis, 300 milhões de euros; a UTAO escreve que a proposta «não disponibiliza informação suficientemente detalhada sobre o seu conteúdo» e conta a subexecução entre os riscos."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[3].paragrafo",
+      "texto": "Sobre o emprego, a UTAO escreve que o crescimento de 1,4 % em 2027 «é difícil de conciliar com o abrandamento recente da imigração líquida». Sobre o petróleo, a proposta assume 86,1 dólares por barril em 2027, e a média dos contratos para esse ano, a 16 de outubro, era de cerca de 95 dólares, 11 % acima desse pressuposto."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[4].paragrafo",
+      "texto": "Pela regra europeia da despesa líquida, a Comissão Europeia previa em junho um desvio de 2,1 % do PIB no fim de 2027, acima dos 0,6 % do PIB fixados para aferir o cumprimento da trajetória; os dados do Ministério das Finanças dão 0,9 % antes da flexibilidade para a defesa e 0,5 % depois."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[5].paragrafo",
+      "texto": "O programa da Saúde tem 17 803,1 milhões de euros, −1,4 % face à estimativa de 2026 e 3,0 % sem o PRR: é a conta que o item da Saúde já explica."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[6].paragrafo",
+      "texto": "A votação na generalidade, a 28.10.2026, segundo o ECO: a proposta «foi esta quarta-feira aprovada na generalidade», com «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP», «a abstenção do PS», «do PAN e do JPP» e «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda»; a RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se.» O guião oficial das votações de 28.10.2026 lista a «VOTAÇÃO NA GENERALIDADE» da «Proposta de Lei n.º 110/XVII/2.ª (GOV)»; o resultado oficial e o Diário da sessão não estavam publicados quando este item foi reescrito, e a votação final global está marcada para 24.11.2026."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[7].paragrafo",
+      "texto": "O Conselho das Finanças Públicas, a 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» para 2027: uma diferença de 0,2 p.p. do PIB face à previsão do Ministério das Finanças que, escreve, «não assume uma expressão materialmente significativa». A projeção do Conselho «não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis»; se contasse as medidas que a proposta não especifica, «resultaria um excedente próximo do valor da POE/2027». Sobre os juros, o aumento previsto «sugere uma possível sobrestimação»; sobre o emprego e as remunerações, as previsões do Ministério «são as mais elevadas de entre as instituições de referência»; e o défice da Administração Central sobe «para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico», compensado «sobretudo pelo excedente dos Fundos da Segurança Social»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[8].paragrafo",
+      "texto": "O Conselho conta «riscos descendentes», entre eles «um crescimento da massa salarial da economia inferior ao previsto», «um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto» e «a materialização de despesa pública associada a passivos contingentes das AP», onde entram as parcerias público-privadas."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[1].conteudo[9].paragrafo",
+      "texto": "Sobre os juros, a UTAO escreve que «Persiste o risco de encargos superiores aos projetados» e transcreve as sensibilidades do Ministério: «uma subida de 2 p.p. das taxas de juro de curto prazo reduziria o PIB em cerca de 0,2 p.p. e o saldo em 0,5 p.p. do PIB»; o relatório da proposta diz que «No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente»; e uma despesa com juros abaixo da prevista «constitui um risco ascendente para o saldo orçamental». A 16 de outubro, «o contrato de dezembro do Brent cotava a cerca de 110 USD por barril»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "texto": "As previsões que o ministro diz «perfeitamente alinhadas» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os 300 milhões de euros que o ministro pôs ao lado de «um saldo de 270 milhões» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de 2027 em contabilidade nacional é aí de 275 milhões de euros, e a medida de que falava custa mais do que ele. A subida dos juros, «risco de mercado e não risco de país» para o ministro, é na proposta mais 23,2 % de despesa em 2027, venha de onde vier. Na votação de 28.10.2026, segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega e o Livre o voto contra, nas intervenções aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em 0,2 p.p. do PIB no saldo de 2027, um défice de 0,1 % contra um excedente de 0,1 %, e a diferença está nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pela dos combustíveis; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «choque de 100 pb», 505 milhões de euros em contabilidade nacional."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "texto": "A proposta passou na generalidade a 28.10.2026 com os votos do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e chega à especialidade com um excedente de 0,1 % do PIB nas previsões do Governo e um défice de 0,1 % nas do Conselho das Finanças Públicas: a diferença, 0,2 p.p. do PIB, cabe nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pelos 300 milhões de euros do combate à fraude nos combustíveis. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «choque de 100 pb», 505 milhões de euros em contabilidade nacional. Os números da especialidade vêm depois; a votação final global está marcada para 24.11.2026."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[4].conteudo[0].paragrafo",
+      "texto": "Ao Governo: publicar, antes da votação final global de 24.11.2026, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, 300 milhões de euros de impacto em 2027 que a UTAO não encontra fundamentados e que o Conselho das Finanças Públicas não conta na sua projeção; sem isso, o Parlamento vota um excedente de 275 milhões de euros em contabilidade nacional que depende de uma receita por explicar. Ao Parlamento: na especialidade, pedir essa informação e o cenário em que o emprego cresce menos do que o previsto, porque «Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto», e pedir ao Governo que diga qual das duas leituras dos juros segue, a da UTAO, que vê «o risco de encargos superiores aos projetados», ou a do Conselho, que vê «uma possível sobrestimação»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "pt",
+      "caminho": "seccoes[5].conteudo[0].paragrafo",
+      "texto": "O orçamento passou na generalidade com os votos de dois partidos e a abstenção de três, e tem um excedente de 0,1 % do PIB (275 milhões de euros) em contabilidade nacional, nas previsões do Governo, que assenta em três pressupostos que a UTAO põe em dúvida: uma receita de 300 milhões de euros da medida dos combustíveis sem «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação»; um emprego cuja previsão («O crescimento do emprego de 1,4% em 2027») a UTAO acha «difícil de conciliar com o abrandamento recente da imigração líquida»; e um petróleo a 86,1 dólares por barril, quando os contratos para 2027 estavam 11 % acima a 16 de outubro. O Conselho das Finanças Públicas chega a um défice de 0,1 % do PIB pelo mesmo caminho: não conta a medida dos combustíveis e diz que, se a contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se os 300 milhões de euros existirem. O que está em jogo são os juros: a proposta já os tem a subir 23,2 %, para 8,2 mil milhões de euros; a UTAO vê o risco de encargos acima do previsto, o Conselho vê uma possível sobrestimação, e o relatório da proposta diz que um «choque de 100 pb» são 505 milhões de euros em contabilidade nacional, com o excedente em 275 milhões de euros. Os votos dizem o resto: o PS deixou passar o orçamento, e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra por razões que não coincidem; «um frete ao capital e um desastre para o País», diz o Comité Central do PCP, e isso é um juízo, que não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e que o fio é a receita dos combustíveis e as taxas de juro. O que vigiar até 24.11.2026: a informação sobre a medida dos combustíveis, o cenário do emprego e as taxas das novas emissões de dívida."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "titulo",
+      "texto": "The Health budget for 2027: 3,0 % without the RRP or −1,5 % in total? Both counts, what changes inside it, and what went unsaid"
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "abertura[0]",
+      "texto": "For 2027, total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted 267,5 million euros below the estimate for 2026, and effective expenditure, the same count without those assets and liabilities, changes by −259,3 million euros, because the RRP ends."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "abertura[1]",
+      "texto": "Outside the RRP, effective expenditure rises 3,0 %, 511,8 million euros against the 771,1 the RRP leaves, and in total it changes by −1,5 %: both counts are true and neither shows on its own what changes."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[0].paragrafo",
+      "texto": "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» On 12.10.2026, Paula Santos · PCP said: «O investimento sofre um corte brutal de 33,7%.»"
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "texto": "Table 5.37 of the Budget report, the Health programme, in million euros."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[1].paragrafo",
+      "texto": "Total consolidated expenditure goes from 18 125,9 in 2026 to 17 858,4 in 2027, a change of −1,5 %. Consolidated effective expenditure goes from 18 062,4 to 17 803,1, −1,4 %. Without the RRP, the Recovery and Resilience Plan, consolidated effective expenditure goes from 17 291,3 to 17 803,1, 3,0 %. In 2027 the table has the same value with and without the RRP, 17 803,1 million euros: the column without the RRP takes nothing out in that year."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "texto": "Inside it, personnel expenditure goes from 7 783,1 to 8 184,3, 5,2 %; the purchase of goods and services, the programme's largest line, goes from 8 832,9 to 8 436,3, −4,5 %; investment goes from 1 022,5 to 678,3, −33,7 % with the RRP and 22,2 % without it; other current expenditure goes from 32,4 to 303,7, and capital transfers from 272,9 to 0,0."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[3].paragrafo",
+      "texto": "The financing, comparing the two budgets: tax revenue goes from 15 116,4 to 15 452,2; own revenue from 1 289,5 to 2 017,6, 56,5 %; European funds from 655,0 to 174,6. Transfers to the National Health Service go from 14 935,8 to 15 539,2, 4,0 %."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[4].paragrafo",
+      "texto": "Since 2020, Health has spent more than its initial budget every year: 11 282,2 budgeted and 11 731,9 executed in 2020; 16 853,5 and 17 241,5 in 2025; in 2026 the initial budget was 17 300,2 and the report's execution estimate is 18 125,9, 825,7 above; the UTAO, starting from another base, counts 915 in effective expenditure."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[5].paragrafo",
+      "texto": "In the execution to August 2026, the Health programme's effective expenditure was 11 822,6, 19,9 % above the same period of 2025, and the National Health Service had, in those eight months, a balance of −918,5 million euros, with expenditure growing 13,2 %."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[6].paragrafo",
+      "texto": "In the European comparison, Portugal spent 10,20 % of GDP on health in 2024, the EU 10,16 %; per inhabitant, in current euros and without correction for price levels, 2 764,83 euros against 4 074,88 in the EU; in government schemes and compulsory contributory schemes alone, 6,31 % of GDP against 8,17 %. Portugal had 431,35 practising physicians per hundred thousand inhabitants in 2024, between Belgium, with the lowest value (334,25), and Greece, with the highest (626,89), among the twenty-six member states with 2024 data; Slovakia has none."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[7].paragrafo",
+      "texto": "In the service, by the National Health Service's open data: in August 2026 there were 1 362 294 eligible registered users without an assigned family doctor, by the series that began in July that year and counts only eligible users («Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.»), so it cannot be compared with the earlier series; the earlier series gave 1 672 130 in June 2026 against 1 669 681 a year earlier. Primary-care consultations were 2 577 538 in August 2026, the latest month, provisional in the source, which says: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»; 7,7 % above August 2025; surgeries from January to July 2026, 520 373, −4,4 % against January to July 2025; patients on the surgery waiting list, 284 210 in July 2026, 5,8 % against a year earlier; in all three datasets, the latest month is provisional at the source."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[8].paragrafo",
+      "texto": "National Health Service expenditure on medicines, according to Infarmed, was 1 179,3 million euros in outpatient care from January to July 2026 and 1 600,9 in hospitals, 6,1 % above the same period of the previous year combined; on contributions under the agreement with the Portuguese Pharmaceutical Industry Association (APIFARMA), Infarmed warns that «Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento». National Health Service entities owed external suppliers 1 517,5 million euros in July 2026; overdue payments by health units that are public enterprise entities (EPE) were 689,9 million in August 2026, according to the budget execution reported by the Directorate-General for the Budget; and the National Health Service's entities settled 1 398,6 million of overdue debts to suppliers through August, matched by capital injections from the State."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[9].paragrafo",
+      "texto": "The RRP in health, as of 14.10.2026: 2 011 million euros contracted, 947 million paid, financial execution of 47 %; 1 064 million euros remain unpaid, 52,9 % of the contracted amount. Of the 37 milestones and targets for the health component in the annual annex for 2025, 24 are complete, including the management contract for Hospital de Lisboa Oriental."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "texto": "RTP's figures, the fall, the amount and the difference, match the line for total consolidated expenditure: −267,5 million euros, −1,5 %. The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the one the report writes and the UTAO, Parliament's technical budget support unit, confirms: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» The PCP's figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[1].paragrafo",
+      "texto": "The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 66,4 % of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[2].paragrafo",
+      "texto": "What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[3].paragrafo",
+      "texto": "The reduction in the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security; and changes by −7,8 % in Finance, −4,9 % in Economy and −38,2 % in Territorial cohesion."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[4].paragrafo",
+      "texto": "The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»"
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[5].paragrafo",
+      "texto": "Set beside the service: the purchase of goods and services falls 396,6 million euros while spending on medicines rises 6,1 % in a year; investment falls by a third while 52,9 % of the RRP's contracted health amount is still unpaid; and personnel, up 5,2 %, is one side of a service with 1 362 294 eligible users without an assigned family doctor and a surgery waiting list growing 5,8 % in a year."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "texto": "In 2027, total Health expenditure is budgeted 267,5 million euros below the estimate for 2026, and effective expenditure changes by −259,3 million euros, because the RRP ends: outside the RRP, effective expenditure rises 511,8 million euros against the 771,1 the RRP leaves. The three claims correspond to different lines of the table and none presents all three measures together. Personnel expenditure rises, while the purchase of goods and services and investment fall. Since 2020, no initial Health budget in the years with completed execution has reached the end of the year without being exceeded, and the 2027 one is below what is estimated to be spent in 2026. For those who use the National Health Service, the budget for 2027 is more money for the people who work in it and less for what is bought and built, at a time when expenditure on medicines is higher than a year ago, the surgery waiting list has grown and around half of the contracted RRP health amount is still unpaid."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[4].conteudo[0].paragrafo",
+      "texto": "The useful question is not whether the Health budget rises or falls, but whether it is enough: the answer of the last six years is that it never was, and the execution to August 2026, 19,9 % above 2025, reinforces the risk of another shortfall. Whoever follows Health in 2027 watches the Entidade Orçamental's monthly budget execution summary and the possible need for reinforcement, not just the approval. They also follow the National Health Service's monthly data: users without a family doctor, the surgery waiting list and the debt to suppliers say more about 2027 than the vote."
+    },
+    {
+      "slug": "saude-no-orcamento",
+      "lang": "en",
+      "caminho": "seccoes[5].conteudo[0].paragrafo",
+      "texto": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that holds 271,3 million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed. With these numbers, the question to the Government and the parties is not «up or down»: it is which money pays for medicine expenditure that rose 6,1 % and how investment is financed after the RRP, with 52,9 % of the contracted health amount still unpaid. The quoted statements do not answer that question."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "titulo",
+      "texto": "The road partnerships: what the State pays, what it will pay, and what the table leaves out"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "abertura[0]",
+      "texto": "The Budget report forecasts 889 million euros in net charges for the road partnerships in 2027: «net» means what the State pays the concessionaires after deducting the revenue that falls to it, mostly the tolls collected on tolled roads."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "abertura[1]",
+      "texto": "Gross charges for 2027 are 1 152 million euros and revenue 263 million euros; what could change the bill is not in the table: 2 388,2 million euros in concessionaires' claims, 1 122,5 of them in a negotiation under way."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[0].paragrafo",
+      "texto": "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026. On 12.10.2026, Paula Santos · PCP: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» On 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "texto": "Table 4.25 of the Budget report, the public-private partnerships, 2027, in million euros."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[1].paragrafo",
+      "texto": "Gross charges for the road sector are 1 152; revenue, 263; net charges, 889. Rail partnerships cost 312 and health ones 254, each on a single line, with no revenue; gross road charges plus rail and health charges add up to 1 718, and the printed net total for all sectors is 1 438. Forecast, not outturn. The sector rows in the table do not add up exactly to the printed total; the table does not explain the difference. The table says the values are on a cash basis and, where applicable, include VAT."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "texto": "Net road charges, year by year, in the Budget reports: 1 250 in 2021 (execution), 1 192 in 2022, 1 105 in 2023, 1 012 in 2024, 843 in 2025, 942 in 2026 (estimates) and 889 in 2027 (budget)."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[3].paragrafo",
+      "texto": "The report projects 705 in 2028, 648 in 2029, 77 in 2035 and 17 in 2040, the last year with road charges; in 2030 revenue exceeds charges and the line is negative, −220."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[4].paragrafo",
+      "texto": "For 2027, last year's report forecast 774 in net charges; this one forecasts 889. According to the report, the difference comes from toll collection costs and traffic-linked payments, which rose, and toll revenue, which fell."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[5].paragrafo",
+      "texto": "Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with data referenced to 1st quarter of 2026, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which Infraestruturas de Portugal pays, by provisional decision, around 1,3 million a month, plus VAT. The UTAO distinguishes claims from actual charges: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[6].paragrafo",
+      "texto": "The Institute for Mobility and Transport (IMT) gives the Brisa concession period as «Período da Concessão: 1972 – 2035»; the 2008 draft concession contract sets its end on 31.12.2035. Under the order published on 27.12.2024, the negotiating committee covers lane widening, contractually planned investment, restoring financial balance, contribution adjustments, the Braga southern ring road, new investment, concession boundaries and service quality. The report states that «Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.»"
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[7].paragrafo",
+      "texto": "Since 01.01.2025 the law has abolished tolls on stretches of seven motorways, which it lists (the list). In 2023 the State capped the toll update and pays the concessionaires, charged to the State Budget, the difference to the update that the decree-law of December 2022 takes as its reference (the rectified article); the decree says that «O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.», and the charges fall on the State Budget, through the Directorate-General for Treasury and Finance (the DGTF): «Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.» The 2027 Budget report now includes that support in gross charges, and records a negotiation with the Beira Interior concessionaire following a claim linked to the toll abolition."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "texto": "None of the road figures in the table equals 1 700 million euros: the figure is 548 above gross charges and 811 above net charges."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[1].paragrafo",
+      "texto": "The figure is close to the sum of gross road charges and rail and health charges, 1 718, without that proving the calculation behind it; road partnerships are 61,82 % of the net total. The PCP itself later widened the universe to the road, rail and health partnerships, on 12.10.2026 and on 15.10.2026, with 1 800 million euros and 1 700 million euros."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[2].paragrafo",
+      "texto": "The report forecasts 889 net for the road partnerships in 2027 against 1 250 executed in 2021, −28,9 %; but more than the 843 estimated for 2025: gross charges fall from 1 234 to 1 152, and the forecast revenue falls further, from 392 to 263. The projection has a downward trend, with fluctuations, to 17 in 2040."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[3].paragrafo",
+      "texto": "The figure missing from the three quoted claims is that of the pending demands, 2 388,2, which is absent from the charges table and those claims, and exceeds gross road charges and the figure in the first claim. The Brisa negotiation may determine what part of those claims becomes a charge; the concession ends on 31.12.2035."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "texto": "The report forecasts 889 million euros net for the road partnerships in 2027, −28,9 % against execution in 2021, but above the estimate for 2025, and the table projects a downward trend, with fluctuations, to the end of the contracts. The figure in the PCP's first claim is close to the gross cost of all partnerships, not of the road ones. And what could change the bill is not in the table: 2 388,2 million in concessionaires' claims, 1 122,5 of them in a negotiation under way. For drivers and taxpayers: the law abolished tolls from 01.01.2025; since 2023 the State pays the concessionaires the difference between the capped toll update and the decree's reference update, charged to the State Budget, and that support now enters the table's gross charges; the Brisa negotiation covers investment and compensation in a concession ending on 31.12.2035; and pending claims are not recognised actual charges."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[4].conteudo[0].paragrafo",
+      "texto": "The useful debate in 2027 is the Brisa negotiation and the pending lawsuits, alongside the budgeted figure for contracted payments. Whoever wants to watch the partnerships looks at the report's risks chapter and at the annual report of UTAP, the technical unit for monitoring projects, not only at the table of charges."
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "lang": "en",
+      "caminho": "seccoes[5].conteudo[0].paragrafo",
+      "texto": "The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, 1 800 million euros, also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and what the Beira Interior concessionaire's claim linked to the toll abolition, and those that may follow, will cost: that is the bill Parliament should ask for before voting."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "titulo",
+      "texto": "The 2027 Budget passed at the general vote: how each party voted, what the Public Finance Council and the UTAO measure, and what is left for the detailed stage"
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "abertura[0]",
+      "texto": "Parliament passed the 2027 Budget proposal at the general vote on 28.10.2026, with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO and RTP; the official record of the vote had not been published when this item was rewritten."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "abertura[1]",
+      "texto": "The proposal's largest revenue measure, the fight against fuel fraud, is worth 300 million euros in 2027 without the UTAO, Parliament's technical budget support unit, finding in the proposal «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms), and the Public Finance Council, which leaves it out of its projection, forecasts for 2027 a deficit of 0,1 % of GDP where the Government forecasts a surplus of 0,1 %."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[0].paragrafo",
+      "texto": "Comissão Política Nacional do Partido Socialista, on 22.10.2026, on the party's page: «viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[1].paragrafo",
+      "texto": "Comité Central do PCP, in its communiqué of 19.10.2026: «O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.» The communiqué does not announce the vote."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[2].paragrafo",
+      "texto": "Paulo Raimundo, on 15.10.2026, in a speech published on the PCP's page: «Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.» The speech does not announce the vote."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[3].paragrafo",
+      "texto": "José Manuel Pureza, of Bloco de Esquerda, on 08.10.2026, as reported by Diário de Notícias: «Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro» The report says the party votes against."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[4].paragrafo",
+      "texto": "Mariana Leitão, of Iniciativa Liberal, in the title of an interview with ECO on 06.10.2026: «A prioridade é baixar o IRS e o ISP»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[5].paragrafo",
+      "texto": "Isabel Mendes Lopes, of Livre, on 28.09.2026, before the proposal was tabled, as reported by Correio da Manhã: «dificilmente o acompanharemos, como é óbvio»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[6].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, Finance Minister, at the Budget committee hearing on 23.10.2026, as reported by RTP, on the forecasts of national and international bodies: «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[7].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by RTP, on the 300 million euros from the fight against fuel fraud: «são receita do Estado»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[8].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by RTP, on the housing measures: «foi praticamente tudo feito»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[9].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by ECO, on the interest on the debt: «a nossa subida das taxas de juro é risco de mercado e não risco de país»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[10].paragrafo",
+      "texto": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by Observador, on the choice between the youth income tax and the wage premium: «esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões»."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[11].paragrafo",
+      "texto": "Jorge Pinto, of Livre, on 28.10.2026, to journalists in Parliament, as reported by RTP: «Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra». RTP reports the party's decision to vote against."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[12].paragrafo",
+      "texto": "Inês Sousa Real, of PAN, in the debate on 28.10.2026, as reported by RTP: «Este orçamento tem um problema: contas certas, mas prioridades trocadas». RTP reports the abstention at the general vote."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[13].paragrafo",
+      "texto": "Filipe Sousa, of JPP, in the debate on 28.10.2026, as reported by RTP: «há muito por resolver». RTP reports the abstention at the general vote."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[14].paragrafo",
+      "texto": "André Ventura, of Chega, on 28.10.2026, to journalists at the Assembly of the Republic, as reported by RTP, on the Government: «não consegue reconhecer o momento de dificuldade». RTP reports the announcement of the vote against."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[0].conteudo[15].paragrafo",
+      "texto": "Mário Amorim Lopes, of Iniciativa Liberal, at the close of the debate on 28.10.2026, as reported by RTP, on the proposal: «moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal». The vote against is in the report of the vote."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "texto": "The proposal forecasts real GDP growth of 2,1 % in 2027, after 2,3 % in 2026; a budget balance of 0,0 % of GDP in 2026 and 0,1 % in 2027, which in national accounts is 275 million euros in the proposal's report; and public debt of 87,5 % of GDP in 2026 and 84,5 % in 2027, after 89,2 % in 2025, in Eurostat's revision of 21.10.2026."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[1].paragrafo",
+      "texto": "Measures already in force weigh on the 2027 balance by −5 411 million euros, 1,6 % of GDP. Interest rises 23,2 %, to 8,2 billion euros, and the implicit interest rate on the debt moves from 2,4 % to 2,9 %."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "texto": "New measures are worth 79 million euros to the balance. The largest, on the revenue side, is the fight against fuel fraud, 300 million euros; the UTAO writes that the proposal «não disponibiliza informação suficientemente detalhada sobre o seu conteúdo» and counts under-execution among the risks."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[3].paragrafo",
+      "texto": "On employment, the UTAO writes that growth of 1,4 % in 2027 «é difícil de conciliar com o abrandamento recente da imigração líquida». On oil, the proposal assumes 86,1 dollars a barrel in 2027, and the average of the contracts for that year, on 16 October, was about 95 dollars, 11 % above that assumption."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[4].paragrafo",
+      "texto": "Under the European net expenditure rule, the European Commission forecast in June a deviation of 2,1 % of GDP at the end of 2027, above the 0,6 % of GDP set for assessing compliance with the path; the Finance Ministry's figures give 0,9 % before the defence flexibility and 0,5 % after."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[5].paragrafo",
+      "texto": "The Health programme has 17 803,1 million euros, −1,4 % against the 2026 estimate and 3,0 % without the recovery plan: it is the account the Health item already explains."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[6].paragrafo",
+      "texto": "The general vote, on 28.10.2026, according to ECO: the proposal «foi esta quarta-feira aprovada na generalidade» (was passed at the general vote this Wednesday), with «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP» (the votes in favour of the two parties that support the Government, PSD and CDS-PP), «a abstenção do PS» (the abstention of PS), «do PAN e do JPP» (of PAN and JPP) and «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda» (the vote against of Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda); RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se.» (the State Budget was passed at the general vote with PSD and CDS voting in favour; PS abstains). The official voting guide of 28.10.2026 lists the «VOTAÇÃO NA GENERALIDADE» (general vote) of «Proposta de Lei n.º 110/XVII/2.ª (GOV)»; the official result and the record of the sitting had not been published when this item was rewritten, and the final global vote is scheduled for 24.11.2026."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[7].paragrafo",
+      "texto": "The Public Finance Council, on 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» (now anticipates a budget deficit of 0,1% of GDP) for 2027: a difference of 0,2 p.p. of GDP from the Finance Ministry's forecast which, it writes, «não assume uma expressão materialmente significativa» (is not materially significant). The Council's projection «não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis» (does not, however, consider the impact on VAT revenue of the fuel anti-fraud measure); if it counted the measures the proposal does not specify, «resultaria um excedente próximo do valor da POE/2027» (it would result in a surplus close to the proposal's figure). On interest, the forecast increase «sugere uma possível sobrestimação» (suggests a possible overestimate); on employment and wages, the Ministry's forecasts «são as mais elevadas de entre as instituições de referência» (are the highest among the reference institutions); and the Central Administration deficit rises «para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico» (to 2,8% of GDP, the highest since 2017 excluding the pandemic period), offset «sobretudo pelo excedente dos Fundos da Segurança Social» (mostly by the Social Security Funds' surplus)."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[8].paragrafo",
+      "texto": "The Council counts «riscos descendentes» (downside risks), among them «um crescimento da massa salarial da economia inferior ao previsto» (wage bill growth below forecast), «um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto» (a smaller than forecast impact of the fuel anti-fraud measure) and «a materialização de despesa pública associada a passivos contingentes das AP» (public expenditure arising from the public administrations' contingent liabilities), where the public-private partnerships come in."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[1].conteudo[9].paragrafo",
+      "texto": "On interest, the UTAO writes that «Persiste o risco de encargos superiores aos projetados» (the risk of charges above projection persists) and transcribes the Ministry's sensitivities: «uma subida de 2 p.p. das taxas de juro de curto prazo reduziria o PIB em cerca de 0,2 p.p. e o saldo em 0,5 p.p. do PIB» (a 2 p.p. rise in short-term interest rates would cut GDP by about 0,2 p.p. and the balance by 0,5 p.p. of GDP); the proposal's report says that «No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente» (in a 100 bp shock, interest charges would change by 293 million euros and 505 million euros, in public and national accounts respectively); and interest expenditure below forecast «constitui um risco ascendente para o saldo orçamental» (is an upside risk to the budget balance). On 16 October, «o contrato de dezembro do Brent cotava a cerca de 110 USD por barril» (the December Brent contract traded at about 110 USD a barrel)."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "texto": "The forecasts the minister calls «perfeitamente alinhadas» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The 300 million euros the minister set beside «um saldo de 270 milhões» (a balance of 270 million) fit the account the UTAO transcribes from the proposal's report: the 2027 balance in national accounts is there 275 million euros, and the measure he spoke of costs more than it. The rise in interest, «risco de mercado e não risco de país» (market risk, not country risk) for the minister, is in the proposal 23,2 % more expenditure in 2027, wherever it comes from. At the vote on 28.10.2026, according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega and Livre the vote against, in the statements quoted here. The Public Finance Council and the Government differ by 0,2 p.p. of GDP on the 2027 balance, a deficit of 0,1 % against a surplus of 0,1 %, and the difference lies in the measures the Council does not count because the proposal does not specify them, starting with the fuel one; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «choque de 100 pb» (100 bp shock), 505 million euros in national accounts."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "texto": "The proposal passed at the general vote on 28.10.2026 with the votes of PSD and CDS-PP and the abstention of PS, PAN and JPP, and reaches the detailed stage with a surplus of 0,1 % of GDP in the Government's forecasts and a deficit of 0,1 % in the Public Finance Council's: the difference, 0,2 p.p. of GDP, fits in the measures the Council does not count because the proposal does not specify them, starting with the 300 million euros of the fight against fuel fraud. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «choque de 100 pb» (100 bp shock), 505 million euros in national accounts. The figures of the detailed stage come later; the final global vote is scheduled for 24.11.2026."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[4].conteudo[0].paragrafo",
+      "texto": "To the Government: publish, before the final global vote on 24.11.2026, the content and the mechanisms of the fuel anti-fraud measure, 300 million euros of impact in 2027 that the UTAO does not find substantiated and that the Public Finance Council leaves out of its projection; without it, Parliament votes a surplus of 275 million euros in national accounts that depends on an unexplained revenue. To Parliament: at the detailed stage, ask for that information and for the scenario in which employment grows less than forecast, because «Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast), and ask the Government to say which of the two readings of interest it follows, the UTAO's, which sees «o risco de encargos superiores aos projetados» (the risk of charges above projection), or the Council's, which sees «uma possível sobrestimação» (a possible overestimate)."
+    },
+    {
+      "slug": "orcamento-2027-generalidade",
+      "lang": "en",
+      "caminho": "seccoes[5].conteudo[0].paragrafo",
+      "texto": "The budget passed at the general vote with the votes of two parties and the abstention of three, and has a surplus of 0,1 % of GDP (275 million euros) in national accounts, in the Government's forecasts, resting on three assumptions the UTAO calls into question: 300 million euros of revenue from the fuel measure without «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («O crescimento do emprego de 1,4% em 2027», employment growth in the budget year) the UTAO finds «difícil de conciliar com o abrandamento recente da imigração líquida» (hard to reconcile with the recent slowdown in net immigration); and oil at 86,1 dollars a barrel, when the 2027 contracts stood 11 % above on 16 October. The Public Finance Council reaches a deficit of 0,1 % of GDP by the same road: it does not count the fuel measure and says that, if it did, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the 300 million euros exist. What is at stake is interest: the proposal already has it rising 23,2 %, to 8,2 billion euros; the UTAO sees the risk of charges above forecast, the Council sees a possible overestimate, and the proposal's report says that a «choque de 100 pb» (100 bp shock) is 505 million euros in national accounts, with the surplus at 275 million euros. The votes say the rest: PS let the budget through, and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against for reasons that do not coincide; «um frete ao capital e um desastre para o País» (a gift to capital and a disaster for the country), says the PCP's Central Committee, and that is a judgement, which is not measured. What is measured says this is a budget balanced by a thread, and that the thread is the fuel revenue and interest rates. What to watch until 24.11.2026: the information on the fuel measure, the employment scenario and the rates on new debt issues."
+    }
+  ]
+}
