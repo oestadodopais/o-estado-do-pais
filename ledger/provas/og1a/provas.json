@@ -3529,6 +3529,84 @@
         "sha256": "073a332f1d60e739216e262021a2b9bb22f28b3952dc74a9d6a3bba53ff0854f"
       }
     },
+    "og1-votacao-generalidade-oficial": {
+      "id": "og1-votacao-generalidade-oficial",
+      "value": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP",
+      "unit": "texto",
+      "period": "2026-10-28",
+      "name": null,
+      "name_source": null,
+      "locator": "Página da iniciativa; fase «Votação na generalidade» datada de 2026-10-28; excerto localizado por texto",
+      "excerpt": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP",
+      "document": {
+        "title": "Proposta de Lei 110/XVII/2, Orçamento do Estado para 2027: detalhe da iniciativa",
+        "file": "content/30 Orcamento 2027 Generalidade/source/iniciativa-377352-29.html",
+        "source_sha256": "6f36a581302d32030d5e596e529b4313a240fe71a36c38795a346a1b8555df0c",
+        "locator": "Página da iniciativa; fase «Votação na generalidade» datada de 2026-10-28; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/iniciativa-377352-29.html",
+        "sha256": "6f36a581302d32030d5e596e529b4313a240fe71a36c38795a346a1b8555df0c",
+        "locator": "Página da iniciativa; fase «Votação na generalidade» datada de 2026-10-28; excerto localizado por texto"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-29",
+      "source_url": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352",
+      "source": null,
+      "entity_aliases": {
+        "Assembleia da República": [
+          "Assembleia da República",
+          "AR"
+        ]
+      },
+      "receipt": {
+        "pedido": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352",
+        "endereco_final": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352",
+        "acedido_em": "2026-10-29T15:56:36.078000+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "iniciativa-377352-29.html",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 27.889,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 572550,
+        "sha256": "6f36a581302d32030d5e596e529b4313a240fe71a36c38795a346a1b8555df0c"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "www.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/ar-generalidade.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/ar-oe.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/arquivo-votacoes-28.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/calendario.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/cofap-audicoes.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/cofap-oe2027.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/cofap-reunioes.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/cofap.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/iniciativa-377352-29.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/iniciativa.html.pedido.json",
+            "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/www.parlamento.pt/avaliacao.json",
+        "sha256": "2cf2cd2429bea3c51398f7700338f466abe2b8739fe058a020646697dbc84b80"
+      }
+    },
     "og1-livre-voto": {
       "id": "og1-livre-voto",
       "value": "Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra",

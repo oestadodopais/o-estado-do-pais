@@ -1,0 +1,39 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-votacao-generalidade-oficial"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Assembleia da República"
+document:
+  title: "Proposta de Lei 110/XVII/2, Orçamento do Estado para 2027: detalhe da iniciativa"
+  edition: "2026-10-28"
+  locator: "Página da iniciativa; fase «Votação na generalidade» datada de 2026-10-28; excerto localizado por texto"
+  source_sha256: "6f36a581302d32030d5e596e529b4313a240fe71a36c38795a346a1b8555df0c"
+  kind: "html"
+source_url: "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352"
+access_date: "2026-10-29"
+reference_date: "2026-10-28"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Registo da votação na generalidade na página da iniciativa (BID 377352) do sítio da Assembleia da República: a fase «Votação na generalidade», datada de 2026-10-28, com a reunião, o resultado e o sentido de voto de cada partido; o campo da publicação em Diário está vazio na página. A página foi lida por guião sem a votação às 14:57 UTC e com ela às 15:28 UTC de 29.10.2026 (a vigia da sessão); published_at é o dia dessa leitura, porque a página não diz quando o registo foi acrescentado. Os espaços antes das vírgulas («CH , IL») vêm das etiquetas de itálico da página; a página escreve «CH, IL, L, PCP, BE». O «Resultado das Votações» do arquivo de votações e o Diário da reunião n.º 16 continuam por publicar. Linha oficial da mesma votação que og1-votacao-generalidade (ECO) e og1-votacao-generalidade-rtp (RTP) registam pelas notícias: os sentidos de voto coincidem. · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-votacao-generalidade-oficial."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
