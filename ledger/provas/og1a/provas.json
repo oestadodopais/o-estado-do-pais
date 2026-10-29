@@ -1512,16 +1512,12 @@
         ]
       },
       "atribuicao": {
-        "modo": "passagem",
+        "modo": "documento",
         "aliases": [
           "Comissão Política Nacional do Partido Socialista"
         ],
         "frase": "A Comissão Política Nacional do Partido Socialista confirmou, esta quarta-feira, o consenso em torno da proposta de José Luís Carneiro para viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento, reafirmando, porém, a oposição firme ao Governo.",
-        "passagem": "A Comissão Política Nacional do Partido Socialista confirmou, esta quarta-feira, o consenso em torno da proposta de José Luís Carneiro para viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento, reafirmando, porém, a oposição firme ao Governo.",
-        "blocos": [
-          58,
-          58
-        ]
+        "blocos": 58
       },
       "source_sha256": "62ec78731be0bddee6c55a4d463bb130100dee48e9fdcf129b7d8b4334b75f4f",
       "receipt": {
@@ -1767,7 +1763,8 @@
         "blocos": [
           37,
           37
-        ]
+        ],
+        "bloco_da_citacao": "“Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro”, afirmou José Manuel Pureza, à margem de uma visita ao Mercado D. Pedro V, em Coimbra, para falar com vendedores e clientes sobre o custo de vida."
       },
       "source_sha256": "56f7b281b2e7e99715d301ea511ea195d72435c174ee0a14757f854966414c1f",
       "receipt": {
@@ -1855,7 +1852,8 @@
         "blocos": [
           150,
           152
-        ]
+        ],
+        "bloco_da_citacao": "“A prioridade é baixar o IRS e o ISP” no Orçamento do Estado para 2027 premium"
       },
       "source_sha256": "d4f0c94e2aa70bfa546ea8a41247c17c74f90b4364e6441e5c054c4751ffc3b0",
       "receipt": {
@@ -1946,7 +1944,8 @@
         "blocos": [
           102,
           102
-        ]
+        ],
+        "bloco_da_citacao": "\"Vamos esperar pelo documento do Orçamento, pode ser que venha uma grande surpresa e que de repente o Governo altere completamente a sua política, mas não acreditando nisso dificilmente o acompanharemos, como é óbvio\", afirmou Isabel Mendes Lopes, em declarações à Lusa após uma visita à sede da Acreditar - Associação de Pais e Amigos de Crianças com Cancro, em Lisboa."
       },
       "source_sha256": "34283df7052738118988c360194b50f20a0ae9388959d3ed534040d3727a0cf6",
       "receipt": {
@@ -2035,7 +2034,8 @@
         "blocos": [
           82,
           83
-        ]
+        ],
+        "bloco_da_citacao": "Sobre os 300 milhões da fraude dos combustíveis, declarou ser uma medida aprovada no parlamento, e “são receita do Estado”."
       },
       "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
       "receipt": {
@@ -2116,7 +2116,8 @@
         "blocos": [
           79,
           79
-        ]
+        ],
+        "bloco_da_citacao": "E sobre as revisões das entidades nacionais e internacionais, para a economia nacional, “estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas”. Ainda assim, o ministro das Finanças não esconde que \"há riscos, incluindo geopolíticos, que afetam a economia portuguesa\" e defende prudência orçamental para proteger as contas públicas em 2027."
       },
       "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
       "receipt": {
@@ -2202,7 +2203,8 @@
         "blocos": [
           86,
           88
-        ]
+        ],
+        "bloco_da_citacao": "Sobre a Habitação, “foi praticamente tudo feito”, sustentando-se em três pilares: a construção de casas públicas; a redução dos custos da construção nova; e arrendamento e redução do IRS."
       },
       "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
       "receipt": {
@@ -2283,7 +2285,8 @@
         "blocos": [
           152,
           157
-        ]
+        ],
+        "bloco_da_citacao": "“No caso de Portugal, o nosso spread face à dívida alemã tem se mantido estável, a nossa subida das taxas de juro é risco de mercado e não risco de país . Quando as taxas sobem as nossas também sobem, mas é importante mantermos essa estabilidade”, afirmou na audição na Comissão de Orçamento, Finanças e Administração Pública ( COFAP ) que marca o pontapé de saída da discussão na generalidade da proposta de Orçamento do Estado para 2027 ( OE2027 )."
       },
       "source_sha256": "e3eba71523dc9da26abe80eef7f5cbcf0088572168e56f7d812a51b56fee1fe1",
       "receipt": {
@@ -2369,7 +2372,8 @@
         "blocos": [
           124,
           124
-        ]
+        ],
+        "bloco_da_citacao": "Joaquim Miranda Sarmento alertou ainda sobre o impacto de manter o prémio salarial (devolução das propinas) cumulativamente com o IRS Jovem. Custará, em 2027, 300 milhões de euros em velocidade cruzeiro. Não está expresso na proposta orçamental porque abate à receita, não é despesa. “Decidimos colocar como opção IRS Jovem ou prémio salarial. O Parlamento tomará a decisão mas esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões”, apelando ao PS que cumpra o “compromisso de não desvirtuar o orçamento”."
       },
       "source_sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f",
       "receipt": {
@@ -3567,7 +3571,8 @@
         "blocos": [
           455,
           455
-        ]
+        ],
+        "bloco_da_citacao": "\"Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra\", anunciou Jorge Pinto, em declarações aos jornalistas no parlamento, depois de a Assembleia do Livre - órgão máximo entre congressos - ter reunido na terça-feira à noite e aprovado a decisão por unanimidade."
       },
       "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
@@ -3651,7 +3656,8 @@
         "blocos": [
           259,
           259
-        ]
+        ],
+        "bloco_da_citacao": "\"Este orçamento tem um problema: contas certas, mas prioridades trocadas\", afirmou Inês Sousa Real, declarando ainda que \"o custo de vida das pessoas tem de caber no orçamento\", assim como o \"futuro dos jovens\"."
       },
       "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
@@ -3735,7 +3741,8 @@
         "blocos": [
           267,
           267
-        ]
+        ],
+        "bloco_da_citacao": "Filipe Sousa, do JPP, anunciou que vai abster-se na votação na generalidade da proposta do Orçamento do Estado para 2027, em sinal de colaboração com o Governo. Ainda assim, “há muito por resolver”."
       },
       "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
@@ -3812,14 +3819,16 @@
       "atribuicao": {
         "modo": "passagem",
         "aliases": [
-          "André Ventura"
+          "André Ventura",
+          "o líder do partido"
         ],
         "frase": "O anúncio foi feito por André Ventura em declarações aos jornalistas na Assembleia da República.",
         "passagem": "O Chega vai votar contra o Orçamento do Estado do próximo ano na generalidade, anunciou hoje o líder do partido, argumentando que o Governo \"não consegue reconhecer o momento de dificuldade\" e não apresenta medidas para ajudar os portugueses. O anúncio foi feito por André Ventura em declarações aos jornalistas na Assembleia da República.",
         "blocos": [
           394,
           395
-        ]
+        ],
+        "bloco_da_citacao": "O Chega vai votar contra o Orçamento do Estado do próximo ano na generalidade, anunciou hoje o líder do partido, argumentando que o Governo \"não consegue reconhecer o momento de dificuldade\" e não apresenta medidas para ajudar os portugueses."
       },
       "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
@@ -3903,7 +3912,8 @@
         "blocos": [
           205,
           205
-        ]
+        ],
+        "bloco_da_citacao": "Os portugueses, segundo Mário Amorim Lopes, \"não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor\"."
       },
       "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {

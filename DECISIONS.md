@@ -14316,7 +14316,7 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **Afecta:** metodo
 
-**Texto:** metodo d12253bd3404
+**Texto:** metodo 78272841cbd7
 
 **Data:** 29.10.2026.
 

@@ -2778,6 +2778,7 @@ function verificaTexto({ rota, root, err }) {
  */
 const CAMPOS_DA_LINHA = new Set([
   'atribuicao.frase',
+  'atribuicao.bloco_da_citacao',
   'unit',
   'source',
   /**
@@ -3030,6 +3031,10 @@ const CAMPOS_DA_LINHA_EM_LISTA = new Set(['derived_from']);
  */
 function campoDaLinha(claim, campo, lang) {
   switch (campo) {
+    case 'atribuicao.bloco_da_citacao': {
+      const a=provasOg1[claim.id]?.atribuicao;
+      return a?.modo==='passagem' && a.bloco_da_citacao!==a.frase ? a.bloco_da_citacao ?? null : null;
+    }
     case 'atribuicao.frase':
       return provasOg1[claim.id]?.atribuicao?.frase ?? null;
     case 'document.title':
@@ -6703,6 +6708,10 @@ for (const file of ficheirosHtml(DIST)) {
    * isso um conjunto e não uma condição solta: um `data-linha-campo` noutro
    * ponto do cabeçalho não entra aqui.
    */
+  const ancoraOg1=claimDaPagina ? provasOg1[claimDaPagina.id]?.atribuicao : null;
+  const mostraBlocoOg1=ancoraOg1?.modo==='passagem' && ancoraOg1.bloco_da_citacao && ancoraOg1.bloco_da_citacao!==ancoraOg1.frase;
+  if(body.querySelectorAll('[data-linha-campo="atribuicao.bloco_da_citacao"]').length!==(mostraBlocoOg1?1:0))
+    err('OG1: o bloco da citação só aparece uma vez quando a passagem o separa da frase de atribuição.');
   const noCaminho = new Set(body.querySelectorAll('nav.caminho [data-linha-claim]'));
   const camposRenderizados = new Set();
   for (const el of body.querySelectorAll('[data-linha-claim]')) {

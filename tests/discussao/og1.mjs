@@ -15,6 +15,9 @@ const normal=t=>String(t??'').replace(/\s+/g,' ').trim();
 const candidato=t=>({slug:'ensaio-og1',titulo:{pt:['Ensaio'],en:['Test']},abertura:[],naoDiz:[],seccoes:[{id:'fonte',titulo:{pt:'Fonte',en:'Source'},conteudo:[{paragrafo:{pt:[t],en:[t]}}]}]});
 let checks=0;
 const proofs=JSON.parse(fs.readFileSync('ledger/provas/og1a/provas.json')).rows;
+const citacoesSeparadas=new Set(['og1-governo-rtp-combustiveis','og1-governo-rtp-habitacao','og1-governo-eco-juros','og1-chega-voto']);
+assert.deepEqual(new Set(OG1.afirmacoes.filter(id=>{const a=proofs[id].atribuicao;return a.modo==='passagem'&&a.bloco_da_citacao!==a.frase;})),citacoesSeparadas);checks++;
+
 // O build sem motor relê os excertos selados; com o motor confere-os no corpo alojado.
 if(process.env.RESEARCHHUB_DIR){
  const code="import json; from publisher import oe2027_generalidade as G; print(json.dumps({s['id']:dict(text=G.norm(G.surface(s)[0]),blocks=G.A.html_blocks(G.A.source(s['file'])[0])) for s in G.load(G.STUDY/'extracoes.json')['rows'] if s['group'] in ('partidos','governo')}))";
@@ -25,6 +28,16 @@ if(process.env.RESEARCHHUB_DIR){
   assert(b.blocks.includes(normal(a.frase)),id+': frase não é um bloco');checks++;
   if(a.modo==='documento')assert.equal(b.blocks[a.blocos],normal(a.frase));
   else {assert(b.text.includes(normal(a.passagem)),id+': passagem ausente do corpo');assert.equal(b.blocks.slice(a.blocos[0],a.blocos[1]+1).join(' '),normal(a.passagem));}
+  checks++;
+  if(a.modo==='documento')assert(!Object.hasOwn(a,'bloco_da_citacao'),id+': documento com bloco da citação');
+  else {
+   const start=normal(a.passagem).indexOf(normal(proofs[id].excerpt));let offset=0,quoteBlock;
+   for(const block of b.blocks.slice(a.blocos[0],a.blocos[1]+1)){
+    if(start>=offset&&start<offset+block.length){quoteBlock=block;break;}
+    offset+=block.length+1;
+   }
+   assert.equal(a.bloco_da_citacao,quoteBlock,id+': bloco da citação diferente do corpo');
+  }
   checks++;
  }
  console.log(`OG1: ${OG1.afirmacoes.length} âncoras conferidas no corpo alojado.`);
@@ -57,13 +70,20 @@ const notas={
  entrevista:{pt:'Entrevista: a fonte nomeia quem responde no seu cabeçalho.',en:'Interview: the source names the respondent in its heading.'},
 };
 function conferirAncora(receipt,p,lang){
- const errors=[],a=p.atribuicao,frases=receipt.querySelectorAll('[data-linha-campo="atribuicao.frase"]'),notasHtml=receipt.querySelectorAll('[data-atribuicao-modo]');
- if(!a){if(frases.length||notasHtml.length)errors.push('âncora fora das afirmações');return errors;}
+ const errors=[],a=p.atribuicao,citacoes=receipt.querySelectorAll('[data-linha-campo="atribuicao.bloco_da_citacao"]'),frases=receipt.querySelectorAll('[data-linha-campo="atribuicao.frase"]'),notasHtml=receipt.querySelectorAll('[data-atribuicao-modo]');
+ if(!a){if(frases.length||notasHtml.length||citacoes.length)errors.push('âncora fora das afirmações');return errors;}
  if(frases.length!==1||frases[0].text!==a.frase||frases[0].getAttribute('data-linha-claim')!==p.id)errors.push('frase diferente da prova');
  if(lang==='en'&&frases[0]?.getAttribute('lang')!=='pt-PT')errors.push('língua da frase diferente');
  if(notasHtml.length!==1||notasHtml[0].getAttribute('data-atribuicao-modo')!==a.modo||notasHtml[0].text!==notas[a.modo]?.[lang])errors.push('nota do modo diferente');
  const rotulo=lang==='pt'?'Quem fala, segundo a fonte':'Who speaks, according to the source';
  if(frases[0]?.closest('dd')?.previousElementSibling?.text!==rotulo)errors.push('rótulo da âncora diferente');
+ if(citacoesSeparadas.has(p.id)){
+  if(citacoes.length!==1||citacoes[0].text!==a.bloco_da_citacao||citacoes[0].getAttribute('data-linha-claim')!==p.id)errors.push('bloco da citação diferente da prova');
+  if(lang==='en'&&citacoes[0]?.getAttribute('lang')!=='pt-PT')errors.push('língua do bloco da citação diferente');
+  if(citacoes[0]?.closest('dd')?.previousElementSibling?.text!==(lang==='pt'?'Onde a fonte cita':'Where the source quotes'))errors.push('rótulo do bloco da citação diferente');
+  if(frases[0]?.closest('dd')?.nextElementSibling?.text!==(lang==='pt'?'Onde a fonte cita':'Where the source quotes'))errors.push('bloco da citação fora da ordem');
+ }else if(citacoes.length)errors.push('bloco da citação fora das quatro passagens');
+
  return errors;
 }
 
@@ -92,8 +112,16 @@ for(const[lang,route]of[['pt','o-que-se-discute'],['en','en/under-discussion']])
   assert.deepEqual(conferirAncora(receipt,p,lang),[],id+': âncora impressa');checks++;
   if(id===OG1.afirmacoes[0]){
    const fraseTrocada=parse(receipt.toString());fraseTrocada.querySelector('[data-linha-campo="atribuicao.frase"]').set_content('Frase alterada.');assert(conferirAncora(fraseTrocada,p,lang).includes('frase diferente da prova'));checks++;
-   const modoTrocado=parse(receipt.toString());modoTrocado.querySelector('[data-atribuicao-modo]').set_content(notas.documento[lang]);assert(conferirAncora(modoTrocado,p,lang).includes('nota do modo diferente'));checks++;
+   const modoTrocado=parse(receipt.toString());modoTrocado.querySelector('[data-atribuicao-modo]').set_content(notas[p.atribuicao.modo==='documento'?'passagem':'documento'][lang]);assert(conferirAncora(modoTrocado,p,lang).includes('nota do modo diferente'));checks++;
    console.log(`OG1 ${lang}: planta de frase alterada e planta de nota de modo trocada recusadas.`);
+  }
+  if(OG1.afirmacoes.includes(id)){
+   assert.equal(receipt.querySelectorAll('[data-linha-campo="atribuicao.bloco_da_citacao"]').length,citacoesSeparadas.has(id)?1:0,id+': presença do bloco da citação');checks++;
+  }
+  if(id==='og1-governo-rtp-combustiveis'){
+   const blocoTrocado=parse(receipt.toString());blocoTrocado.querySelector('[data-linha-campo="atribuicao.bloco_da_citacao"]').set_content('Bloco alterado.');
+   assert(conferirAncora(blocoTrocado,p,lang).includes('bloco da citação diferente da prova'));checks++;
+   console.log(`OG1 ${lang}: planta do bloco da citação alterado recusada.`);
   }
   if(!p.name){assert.equal(receipt.querySelector('.linha-nome-da-fonte'),null,id+': título usado como rótulo');checks++;}
   if(lang==='en'&&id.startsWith('og1-utao-')){assert.equal(receipt.querySelector('.linha-excerto [data-linha-campo="excerpt"]')?.getAttribute('lang'),'pt-PT',id+': língua do excerto');checks++;}

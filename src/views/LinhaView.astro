@@ -1868,6 +1868,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             <span data-linha-claim={id} data-linha-campo="atribuicao.frase" lang={lang === 'en' ? 'pt-PT' : undefined}>{ancoraOg1.frase}</span>
             <p class="aparelho-nota" data-atribuicao-modo={ancoraOg1.modo} data-voz>{notasDaAncoraOg1[ancoraOg1.modo][lang]}</p>
           </dd>
+          {ancoraOg1.modo === 'passagem' && ancoraOg1.bloco_da_citacao && ancoraOg1.bloco_da_citacao !== ancoraOg1.frase && <>
+            <dt data-voz>{lang === 'pt' ? 'Onde a fonte cita' : 'Where the source quotes'}</dt>
+            <dd><span data-linha-claim={id} data-linha-campo="atribuicao.bloco_da_citacao" lang={lang === 'en' ? 'pt-PT' : undefined}>{ancoraOg1.bloco_da_citacao}</span></dd>
+          </>}
         </>}
       </dl>
 

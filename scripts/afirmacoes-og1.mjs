@@ -77,18 +77,18 @@ export function conferirOg1(claims,{motor,plantar=true}={}){
  }
  if(plantar){
   const id='og1-pan-abstencao',c=claims.get(id);
-  for(const[nome,mudar]of[
-   ['prova sem atribuição',p=>delete p.atribuicao],
-   ['primeiro alias trocado',p=>p.atribuicao.aliases[0]='Outra pessoa'],
-   ['frase sem alias',p=>p.atribuicao.frase='Uma frase sem quem fala.'],
-   ['passagem sem excerto',p=>p.atribuicao.passagem='Uma passagem sem a citação.'],
-   ['modo inventado',p=>p.atribuicao.modo='inventado'],
+  for(const[nome,mudar,esperada]of[
+   ['prova sem atribuição',p=>delete p.atribuicao,'OG1 âncora: presença diferente da lista de afirmações'],
+   ['primeiro alias trocado',p=>p.atribuicao.aliases[0]='Outra pessoa','OG1 âncora: primeiro alias diferente'],
+   ['frase sem alias',p=>p.atribuicao.frase='Uma frase sem quem fala.','OG1 âncora: frase sem alias'],
+   ['passagem sem excerto',p=>p.atribuicao.passagem='Uma passagem sem a citação.','OG1 âncora: passagem sem frase ou excerto'],
+   ['modo inventado',p=>p.atribuicao.modo='inventado','OG1 âncora: modo inválido'],
   ]){
    const p=structuredClone(proofs[id]);
    const limpo=conferirLinhaOg1(c,p).length===0;
    mudar(p);
-   const mensagem=conferirLinhaOg1(c,p).find(e=>e.startsWith('OG1 âncora:'));
-   plantas.push({nome:'OG1 '+nome,mensagem});if(!limpo||!mensagem)errors.push('OG1 planta não mordeu: '+nome);
+   const mensagem=conferirLinhaOg1(c,p).find(e=>e===esperada);
+   plantas.push({nome:'OG1 '+nome,mensagem,esperada});if(!limpo||mensagem!==esperada)errors.push('OG1 planta não mordeu: '+nome);
   }
  }
  return {errors,checked:Object.values(proofs).filter(p=>p.afirmacao).length,bodies:Object.keys(relidas).length,plantas,ids};
