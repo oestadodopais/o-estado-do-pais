@@ -1136,6 +1136,7 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
   "2026-10-28": null,
+  "2026-10-29": null,
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
   "2026-10-14": null,
   "2026-08": null,

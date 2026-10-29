@@ -88,7 +88,7 @@ export const OG1 = {
         {
           "periodo": "og1-votacao-generalidade-oficial"
         },
-        " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO e a RTP tinham noticiado, e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+        " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO tinha noticiado. A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
         {
           "claim": "pm-q3-2-r8-c0",
           "sufixo": " milhões de euros"
@@ -112,7 +112,7 @@ export const OG1 = {
         {
           "periodo": "og1-votacao-generalidade-oficial"
         },
-        " on the bill's page on Parliament's website, which confirms what ECO and RTP had reported, and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
+        " on the bill's page on Parliament's website, which confirms what ECO had reported. The difference between the Government and the Council lies in what the Council does not count, starting with the ",
         {
           "claim": "pm-q3-2-r8-c0",
           "sufixo": " million euros"
@@ -141,7 +141,6 @@ export const OG1 = {
     ],
     "abertura[1]": [
       "og1-votacao-generalidade",
-      "og1-votacao-generalidade-rtp",
       "og1-votacao-generalidade-oficial"
     ],
     "seccoes[1].conteudo[6].paragrafo": [
@@ -1289,28 +1288,19 @@ export const OG1 = {
               {
                 "periodo": "og1-votacao-generalidade-oficial"
               },
-              ", na página da iniciativa no sítio do Parlamento, dá a votação na «",
+              ", na página da iniciativa no sítio do Parlamento, dá na «",
               {
                 "fragmento": "og1-votacao-generalidade-oficial",
                 "campo": "excerpt",
-                "texto": "Reunião Plenária n.º 16",
-                "glosa": [
-                  "» (plenary sitting no. ",
-                  {
-                    "fragmento": "og1-votacao-generalidade-oficial",
-                    "campo": "excerpt",
-                    "texto": "16"
-                  },
-                  ")"
-                ]
+                "texto": "Reunião Plenária n.º 16"
               },
-              "» como «",
+              "» o resultado «",
               {
                 "fragmento": "og1-votacao-generalidade-oficial",
                 "campo": "excerpt",
                 "texto": "Aprovado"
               },
-              "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que as duas notícias tinham dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
+              "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
               {
                 "periodo": "oe-2027-calendario-final-global"
               },
@@ -1377,28 +1367,19 @@ export const OG1 = {
               {
                 "periodo": "og1-votacao-generalidade-oficial"
               },
-              ", on the bill's page on Parliament's website, gives the vote at the «",
+              ", on the bill's page on Parliament's website, gives at the «",
               {
                 "fragmento": "og1-votacao-generalidade-oficial",
                 "campo": "excerpt",
-                "texto": "Reunião Plenária n.º 16",
-                "glosa": [
-                  "» (plenary sitting no. ",
-                  {
-                    "fragmento": "og1-votacao-generalidade-oficial",
-                    "campo": "excerpt",
-                    "texto": "16"
-                  },
-                  ")"
-                ]
+                "texto": "Reunião Plenária n.º 16"
               },
-              " as «",
+              "» (the sixteenth plenary sitting) the result «",
               {
                 "fragmento": "og1-votacao-generalidade-oficial",
                 "campo": "excerpt",
                 "texto": "Aprovado"
               },
-              "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the same positions the two reports had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
+              "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the positions ECO had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
               {
                 "periodo": "oe-2027-calendario-final-global"
               },
@@ -1896,7 +1877,7 @@ export const OG1 = {
               },
               ", venha de onde vier. Na votação de ",
               {
-                "periodo": "og1-votacao-generalidade-oficial"
+                "periodo": "og1-votacao-generalidade"
               },
               ", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega, o Livre e o Bloco de Esquerda o voto contra, nas intervenções e notícias aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em ",
               {
@@ -1994,7 +1975,7 @@ export const OG1 = {
               },
               ", wherever it comes from. At the vote on ",
               {
-                "periodo": "og1-votacao-generalidade-oficial"
+                "periodo": "og1-votacao-generalidade"
               },
               ", according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega, Livre and Bloco de Esquerda the vote against, in the statements and reports quoted here. The Public Finance Council and the Government differ by ",
               {

@@ -49964,11 +49964,6 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
                   "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
                   "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
@@ -49982,6 +49977,11 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 }
               ]
             }
@@ -49989,13 +49989,13 @@
         },
         {
           "caminho": "abertura[1][2]",
-          "pt": " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO e a RTP tinham noticiado, e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
-          "en": " on the bill's page on Parliament's website, which confirms what ECO and RTP had reported, and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
+          "pt": " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO tinha noticiado. A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+          "en": " on the bill's page on Parliament's website, which confirms what ECO had reported. The difference between the Government and the Council lies in what the Council does not count, starting with the ",
           "ramo": null,
           "partes": [
             {
-              "pt": " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO e a RTP tinham noticiado, e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
-              "en": " on the bill's page on Parliament's website, which confirms what ECO and RTP had reported, and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
+              "pt": " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO tinha noticiado. A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+              "en": " on the bill's page on Parliament's website, which confirms what ECO had reported. The difference between the Government and the Council lies in what the Council does not count, starting with the ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -50003,11 +50003,6 @@
                   "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
-                },
-                {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 },
                 {
                   "linha": "og1-votacao-generalidade-oficial",
@@ -50046,11 +50041,6 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
                   "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
                   "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
@@ -50064,6 +50054,11 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 },
                 {
                   "linha": "og1-guiao-votacoes-28",
@@ -50102,11 +50097,6 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
                   "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
                   "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
@@ -50120,6 +50110,11 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 },
                 {
                   "linha": "og1-guiao-votacoes-28",
@@ -50148,11 +50143,6 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
                   "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
                   "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
@@ -50166,6 +50156,11 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 },
                 {
                   "linha": "og1-guiao-votacoes-28",
@@ -50194,11 +50189,6 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
                   "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
                   "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
@@ -50212,6 +50202,11 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 },
                 {
                   "linha": "og1-guiao-votacoes-28",
@@ -57213,95 +57208,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[22]",
-          "pt": ", na página da iniciativa no sítio do Parlamento, dá a votação na «",
-          "en": ", on the bill's page on Parliament's website, gives the vote at the «",
+          "pt": ", na página da iniciativa no sítio do Parlamento, dá na «",
+          "en": ", on the bill's page on Parliament's website, gives at the «",
           "ramo": null,
           "partes": [
             {
-              "pt": ", na página da iniciativa no sítio do Parlamento, dá a votação na «",
-              "en": ", on the bill's page on Parliament's website, gives the vote at the «",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-votacao-generalidade",
-                  "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
-                },
-                {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
-                },
-                {
-                  "linha": "og1-votacao-generalidade-oficial",
-                  "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
-                },
-                {
-                  "linha": "oe-2027-calendario-final-global",
-                  "campo": "excerpt",
-                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[1].conteudo[6].paragrafo[23].glosa[0]",
-          "pt": "",
-          "en": "» (plenary sitting no. ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": "",
-              "en": "» (plenary sitting no. ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
-              "apoios": [
-                {
-                  "linha": "og1-votacao-generalidade",
-                  "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
-                },
-                {
-                  "linha": "og1-votacao-generalidade-rtp",
-                  "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
-                },
-                {
-                  "linha": "og1-votacao-generalidade-oficial",
-                  "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
-                },
-                {
-                  "linha": "oe-2027-calendario-final-global",
-                  "campo": "excerpt",
-                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[1].conteudo[6].paragrafo[23].glosa[2]",
-          "pt": "",
-          "en": ")",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": "",
-              "en": ")",
+              "pt": ", na página da iniciativa no sítio do Parlamento, dá na «",
+              "en": ", on the bill's page on Parliament's website, gives at the «",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -57336,13 +57249,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[24]",
-          "pt": "» como «",
-          "en": " as «",
+          "pt": "» o resultado «",
+          "en": "» (the sixteenth plenary sitting) the result «",
           "ramo": null,
           "partes": [
             {
-              "pt": "» como «",
-              "en": " as «",
+              "pt": "» o resultado «",
+              "en": "» (the sixteenth plenary sitting) the result «",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -57377,13 +57290,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[26]",
-          "pt": "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que as duas notícias tinham dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
-          "en": "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the same positions the two reports had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
+          "pt": "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
+          "en": "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the positions ECO had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
           "ramo": null,
           "partes": [
             {
-              "pt": "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que as duas notícias tinham dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
-              "en": "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the same positions the two reports had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
+              "pt": "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
+              "en": "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the positions ECO had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
@@ -59310,9 +59223,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59330,9 +59243,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "og1-ps-abstencao",
@@ -59391,9 +59304,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59411,9 +59324,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -59497,9 +59410,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59517,9 +59430,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59568,9 +59481,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59588,9 +59501,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "og1-governo-rtp-combustiveis",
@@ -59649,9 +59562,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59669,9 +59582,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -59755,9 +59668,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59775,9 +59688,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59826,9 +59739,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59846,9 +59759,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59897,9 +59810,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59917,9 +59830,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59968,9 +59881,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -59988,9 +59901,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -60074,9 +59987,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60094,9 +60007,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "og1-governo-rtp-combustiveis",
@@ -60155,9 +60068,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60175,9 +60088,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60226,9 +60139,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60246,9 +60159,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60297,9 +60210,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60317,9 +60230,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -60413,9 +60326,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60433,9 +60346,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60484,9 +60397,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60504,9 +60417,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60555,9 +60468,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60575,9 +60488,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60626,9 +60539,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60646,9 +60559,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60697,9 +60610,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60717,9 +60630,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60768,9 +60681,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60788,9 +60701,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60839,9 +60752,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60859,9 +60772,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60910,9 +60823,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -60930,9 +60843,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60981,9 +60894,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61001,9 +60914,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -61052,9 +60965,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61072,9 +60985,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -61123,9 +61036,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61143,9 +61056,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -61194,9 +61107,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61214,9 +61127,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -61265,9 +61178,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61285,9 +61198,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -61336,9 +61249,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61356,9 +61269,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -61407,9 +61320,9 @@
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-oficial",
+                  "linha": "og1-votacao-generalidade",
                   "campo": "excerpt",
-                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-cfp-diferenca-mf",
@@ -61427,9 +61340,9 @@
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
                 },
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
