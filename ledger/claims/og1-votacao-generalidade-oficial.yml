@@ -13,7 +13,7 @@ unit: "texto"
 source: "Assembleia da República"
 document:
   title: "Proposta de Lei 110/XVII/2, Orçamento do Estado para 2027: detalhe da iniciativa"
-  edition: "2026-10-28"
+  edition: "2026-10-29"
   locator: "Página da iniciativa; fase «Votação na generalidade» datada de 2026-10-28; excerto localizado por texto"
   source_sha256: "6f36a581302d32030d5e596e529b4313a240fe71a36c38795a346a1b8555df0c"
   kind: "html"

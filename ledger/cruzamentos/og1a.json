@@ -628,7 +628,7 @@
     "og1-votacao-generalidade-oficial": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-29",
-      "exported_row_sha256": "9e4baa5c62817860e91c662a761f0f85907b77beb62f631b4e58960b3e7aed19",
+      "exported_row_sha256": "99d135f7acb681035cafb01f92c39f44d4e067b48cb847cdf5928d0e79e5825a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b71f8910e3747fe49cd43e3c27e2e3cbf7b496e36d5e1758a0cd1ec42373026d",
       "rh_id": "og1-votacao-generalidade-oficial",
