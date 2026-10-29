@@ -5166,18 +5166,39 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 
 As frases seguintes pertencem aos registos do estudo, rendidos sob `data-registo-unidade` e conferidos por `check:registo`. São inventariadas aqui como transcrições do registo, fora da classificação da prosa da casa, tal como os restantes parágrafos do estudo. Os valores e os períodos seguem as provas dos registos. Leitura cruzada por fazer no bloco `hb1-e`.
 
-| Secção | Edição | Texto do registo |
-| --- | --- | --- |
-| 6 | pt | A avaliação bancária das casas, feita quando se pede crédito para as comprar, estava em 2 278 euros por metro quadrado em setembro de 2026, 14,2 % acima de um ano antes, pelo INE. |
-| 11 | pt | A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, e a avaliação bancária de setembro de 2026 já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 teve o debate e a votação na generalidade marcados para 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira, e o item do Orçamento em «O que se discute» tem o resultado da votação). |
-| 6 | en | The bank appraisal of homes, made when credit is requested to buy them, stood at 2,278 euros per square metre in September 2026, 14.2 % above a year earlier, by the INE. |
-| 11 | en | The implicit interest rate for September 2026 and the local prices for Q2 2026, which the INE calendar announced for 21.10.2026 and for 23.10.2026, and the bank appraisal for September 2026 are already in this edition (the section «What a home costs, and how much it rose» and the section «Credit»). The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote scheduled for 27 and 28 October (this project's study «O Orçamento de 2027: o que muda e para quem» has the whole account, and the Budget item under «Under discussion» has the result of the vote). |
+| Secção | Edição | Texto do registo | Estado |
+| --- | --- | --- | --- |
+| 6 | pt | A avaliação bancária das casas, feita quando se pede crédito para as comprar, estava em 2 278 euros por metro quadrado em setembro de 2026, 14,2 % acima de um ano antes, pelo INE. | retirada |
+| 11 | pt | A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, e a avaliação bancária de setembro de 2026 já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 teve o debate e a votação na generalidade marcados para 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira, e o item do Orçamento em «O que se discute» tem o resultado da votação). | retirada |
+| 6 | en | The bank appraisal of homes, made when credit is requested to buy them, stood at 2,278 euros per square metre in September 2026, 14.2 % above a year earlier, by the INE. | retirada |
+| 11 | en | The implicit interest rate for September 2026 and the local prices for Q2 2026, which the INE calendar announced for 21.10.2026 and for 23.10.2026, and the bank appraisal for September 2026 are already in this edition (the section «What a home costs, and how much it rose» and the section «Credit»). The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote scheduled for 27 and 28 October (this project's study «O Orçamento de 2027: o que muda e para quem» has the whole account, and the Budget item under «Under discussion» has the result of the vote). | retirada |
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
 | conteudo | 4 140 afirmações · 520 de 4 140 calculadas · 2 767 de 4 140 linhas de concelhos | hb1-e | viva | Contagem recolhida do HTML construído após as duas linhas da avaliação bancária; leitura cruzada pendente. |
 | conteudo | 4 140 claims · 520 of 4 140 calculated · 2 767 of 4 140 municipality rows | hb1-e | viva | Contagem recolhida do HTML construído após as duas linhas da avaliação bancária; leitura cruzada pendente. |
 
+### HB1-e: adendas B e C
+
+As redações anteriores das secções 6 e 11 foram substituídas pelas seguintes. As definições são transcrições das frases compostas das famílias, conferidas pela auditoria dos recibos; os períodos vêm das linhas. Os apoios adicionais das definições foram lidos na página inicial do PDF alojado, no corpo sobre os pedidos de crédito e na comparação com setembro do ano anterior. Leitura cruzada por fazer no bloco `hb1-e`.
+
+| Secção | Edição | Texto do registo | Estado |
+| --- | --- | --- | --- |
+| 6 | pt | O valor mediano da avaliação bancária das casas, a que os bancos fazem quando se pede crédito para as comprar, estava em 2 278 euros por metro quadrado em setembro de 2026, 14,2 % acima de um ano antes, pelo INE. | viva |
+| 11 | pt | A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026 saíram nas datas que o calendário do INE anunciava, 21.10.2026 e 23.10.2026; a avaliação bancária de setembro de 2026 saiu a seguir. São as leituras mais recentes do INE nas secções «Quanto custa uma casa, e quanto subiu» e «O crédito». A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 teve o debate e a votação na generalidade marcados para 27 e 28 de outubro. | viva |
+| 6 | en | The median bank appraisal of homes, the one banks make when credit is requested to buy them, stood at 2,278 euros per square metre in September 2026, 14.2 % above a year earlier, by the INE. | viva |
+| 11 | en | The implicit interest rate for September 2026 and the local prices for Q2 2026 came out on the dates the INE calendar announced, 21.10.2026 and 23.10.2026; the bank appraisal for September 2026 came out after them. They are the INE's most recent readings in the sections «What a home costs, and how much it rose» and «Credit». The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote scheduled for 27 and 28 October. | viva |
+
+| Família | Edição | Definição composta | Estado |
+| --- | --- | --- | --- |
+| `hab-ine-avaliacao-mediana` | pt | A medida mostra valor mediano da avaliação bancária na habitação em setembro de 2026. | retirada |
+| `hab-ine-avaliacao-homologa` | pt | A medida mostra variação homóloga da avaliação bancária na habitação em setembro de 2026. | retirada |
+| `hab-ine-avaliacao-mediana` | en | The measure shows median bank appraisal value of housing in September 2026. | retirada |
+| `hab-ine-avaliacao-homologa` | en | The measure shows year-on-year change in the bank appraisal of housing in September 2026. | retirada |
+| `hab-ine-avaliacao-mediana` | pt | É o valor mediano das avaliações que os bancos fizeram às casas em setembro de 2026 quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado. | viva |
+| `hab-ine-avaliacao-homologa` | pt | É quanto o valor mediano da avaliação bancária das casas de setembro de 2026 subiu face ao mesmo mês do ano anterior, em percentagem. | viva |
+| `hab-ine-avaliacao-mediana` | en | It is the median of the appraisals banks made of homes in September 2026 when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre. | viva |
+| `hab-ine-avaliacao-homologa` | en | It is how much the median bank appraisal of homes for September 2026 rose against the same month of the previous year, in percentage. | viva |
 ## DO1: os assuntos vivos, 29.10.2026
 
 | Classe | Frase | Bloco | Estado | Razão |

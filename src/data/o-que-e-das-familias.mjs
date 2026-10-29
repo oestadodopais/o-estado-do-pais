@@ -22226,26 +22226,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação homóloga da avaliação bancária na habitação"
+        "É quanto o valor mediano da avaliação bancária das casas de "
       ],
       "en": [
-        "The measure shows year-on-year change in the bank appraisal of housing"
+        "It is how much the median bank appraisal of homes for "
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
         {
           "periodo": "hab-ine-avaliacao-homologa"
         },
-        "."
+        " subiu face ao mesmo mês do ano anterior, em percentagem."
       ],
       "en": [
-        " in ",
         {
           "periodo": "hab-ine-avaliacao-homologa"
         },
-        "."
+        " rose against the same month of the previous year, in percentage."
       ]
     }
   },
@@ -22256,26 +22254,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra valor mediano da avaliação bancária na habitação"
+        "É o valor mediano das avaliações que os bancos fizeram às casas em "
       ],
       "en": [
-        "The measure shows median bank appraisal value of housing"
+        "It is the median of the appraisals banks made of homes in "
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
         {
           "periodo": "hab-ine-avaliacao-mediana"
         },
-        "."
+        " quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado."
       ],
       "en": [
-        " in ",
         {
           "periodo": "hab-ine-avaliacao-mediana"
         },
-        "."
+        " when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre."
       ]
     }
   },

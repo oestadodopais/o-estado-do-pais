@@ -4078,21 +4078,21 @@
      "value": "3,194"
     },
     {
-     "end": 419,
+     "end": 452,
      "printed": "2 278",
      "row": "hab-ine-avaliacao-mediana",
      "source_body": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
      "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
-     "start": 414,
+     "start": 447,
      "value": "2 278"
     },
     {
-     "end": 470,
+     "end": 503,
      "printed": "14,2",
      "row": "hab-ine-avaliacao-homologa",
      "source_body": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
      "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
-     "start": 466,
+     "start": 499,
      "value": "14,2"
     }
    ],
@@ -4145,27 +4145,27 @@
      "tipo": "periodo"
     },
     {
-     "fim": 419,
+     "fim": 452,
      "id": "hab-ine-avaliacao-mediana",
-     "inicio": 414,
+     "inicio": 447,
      "livro": "HB",
      "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
      "texto": "2 278",
      "tipo": "valor"
     },
     {
-     "fim": 464,
+     "fim": 497,
      "id": "hab-ine-avaliacao-mediana",
-     "inicio": 448,
+     "inicio": 481,
      "livro": "HB",
      "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
      "texto": "setembro de 2026",
      "tipo": "periodo"
     },
     {
-     "fim": 470,
+     "fim": 503,
      "id": "hab-ine-avaliacao-homologa",
-     "inicio": 466,
+     "inicio": 499,
      "livro": "HB",
      "sha256_linha": "04654f4c440639405da8b01e09daae43cd3bbc988b5f68508e9b5924377ebc2d",
      "texto": "14,2",
@@ -4180,7 +4180,7 @@
     "hab-ine-avaliacao-mediana",
     "hab-ine-avaliacao-homologa"
    ],
-   "text": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões. A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,194 % em setembro de 2026. A avaliação bancária das casas, feita quando se pede crédito para as comprar, estava em 2 278 euros por metro quadrado em setembro de 2026, 14,2 % acima de um ano antes, pelo INE."
+   "text": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões. A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,194 % em setembro de 2026. O valor mediano da avaliação bancária das casas, a que os bancos fazem quando se pede crédito para as comprar, estava em 2 278 euros por metro quadrado em setembro de 2026, 14,2 % acima de um ano antes, pelo INE."
   },
   {
    "figures": [],
@@ -6097,36 +6097,36 @@
      "tipo": "periodo"
     },
     {
-     "fim": 139,
+     "fim": 151,
      "id": "hab-ine-calendario-juro",
-     "inicio": 129,
+     "inicio": 141,
      "livro": "HB",
      "sha256_linha": "be1f6c88124df98c39cfb9b7e2a9f37364ab94c0c35b1244da9cdac15102ed42",
      "texto": "21.10.2026",
      "tipo": "valor"
     },
     {
-     "fim": 157,
+     "fim": 164,
      "id": "hab-ine-calendario-precos-locais",
-     "inicio": 147,
+     "inicio": 154,
      "livro": "HB",
      "sha256_linha": "4a7cbd3b0bedfffe4d96273e5eb3ff388c4cfc87171915ea5c41dbe24bf312f6",
      "texto": "23.10.2026",
      "tipo": "valor"
     },
     {
-     "fim": 201,
+     "fim": 206,
      "id": "hab-ine-avaliacao-mediana",
-     "inicio": 185,
+     "inicio": 190,
      "livro": "HB",
      "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
      "texto": "setembro de 2026",
      "tipo": "periodo"
     },
     {
-     "fim": 447,
+     "fim": 474,
      "id": "oe-2027-calendario-generalidade",
-     "inicio": 429,
+     "inicio": 456,
      "livro": "AN",
      "sha256_linha": "0d05886d85314eed2c5b80e9b41efb8c1c5b5e3779b7d7815604b98242595c31",
      "texto": "27 e 28 de outubro",
@@ -6141,7 +6141,7 @@
     "hab-ine-avaliacao-mediana",
     "oe-2027-calendario-generalidade"
    ],
-   "text": "A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, e a avaliação bancária de setembro de 2026 já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 teve o debate e a votação na generalidade marcados para 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira, e o item do Orçamento em «O que se discute» tem o resultado da votação)."
+   "text": "A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026 saíram nas datas que o calendário do INE anunciava, 21.10.2026 e 23.10.2026; a avaliação bancária de setembro de 2026 saiu a seguir. São as leituras mais recentes do INE nas secções «Quanto custa uma casa, e quanto subiu» e «O crédito». A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 teve o debate e a votação na generalidade marcados para 27 e 28 de outubro."
   }
  ],
  "edition": "A casa em Portugal e na Europa",

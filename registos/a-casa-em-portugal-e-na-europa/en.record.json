@@ -4144,21 +4144,21 @@
      "value": "3,194"
     },
     {
-     "end": 366,
+     "end": 387,
      "printed": "2,278",
      "row": "hab-ine-avaliacao-mediana",
      "source_body": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
      "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
-     "start": 361,
+     "start": 382,
      "value": "2 278"
     },
     {
-     "end": 413,
+     "end": 434,
      "printed": "14.2",
      "row": "hab-ine-avaliacao-homologa",
      "source_body": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
      "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
-     "start": 409,
+     "start": 430,
      "value": "14,2"
     }
    ],
@@ -4211,27 +4211,27 @@
      "tipo": "periodo"
     },
     {
-     "fim": 366,
+     "fim": 387,
      "id": "hab-ine-avaliacao-mediana",
-     "inicio": 361,
+     "inicio": 382,
      "livro": "HB",
      "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
      "texto": "2,278",
      "tipo": "valor"
     },
     {
-     "fim": 407,
+     "fim": 428,
      "id": "hab-ine-avaliacao-mediana",
-     "inicio": 393,
+     "inicio": 414,
      "livro": "HB",
      "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
      "texto": "September 2026",
      "tipo": "periodo"
     },
     {
-     "fim": 413,
+     "fim": 434,
      "id": "hab-ine-avaliacao-homologa",
-     "inicio": 409,
+     "inicio": 430,
      "livro": "HB",
      "sha256_linha": "04654f4c440639405da8b01e09daae43cd3bbc988b5f68508e9b5924377ebc2d",
      "texto": "14.2",
@@ -4246,7 +4246,7 @@
     "hab-ine-avaliacao-mediana",
     "hab-ine-avaliacao-homologa"
    ],
-   "text": "In August 2026 the banks lent 2,553.0 million euros in new housing loans, at a rate of 3.0 %, according to the Bank of Portugal; the stock of households' housing credit was 119,061.6 million. The implicit interest rate on all contracts, by the INE, was 3.194 % in September 2026. The bank appraisal of homes, made when credit is requested to buy them, stood at 2,278 euros per square metre in September 2026, 14.2 % above a year earlier, by the INE."
+   "text": "In August 2026 the banks lent 2,553.0 million euros in new housing loans, at a rate of 3.0 %, according to the Bank of Portugal; the stock of households' housing credit was 119,061.6 million. The implicit interest rate on all contracts, by the INE, was 3.194 % in September 2026. The median bank appraisal of homes, the one banks make when credit is requested to buy them, stood at 2,278 euros per square metre in September 2026, 14.2 % above a year earlier, by the INE."
   },
   {
    "figures": [],
@@ -6163,27 +6163,27 @@
      "tipo": "periodo"
     },
     {
-     "fim": 127,
+     "fim": 139,
      "id": "hab-ine-calendario-juro",
-     "inicio": 117,
+     "inicio": 129,
      "livro": "HB",
      "sha256_linha": "be1f6c88124df98c39cfb9b7e2a9f37364ab94c0c35b1244da9cdac15102ed42",
      "texto": "21.10.2026",
      "tipo": "valor"
     },
     {
-     "fim": 146,
+     "fim": 154,
      "id": "hab-ine-calendario-precos-locais",
-     "inicio": 136,
+     "inicio": 144,
      "livro": "HB",
      "sha256_linha": "4a7cbd3b0bedfffe4d96273e5eb3ff388c4cfc87171915ea5c41dbe24bf312f6",
      "texto": "23.10.2026",
      "tipo": "valor"
     },
     {
-     "fim": 189,
+     "fim": 193,
      "id": "hab-ine-avaliacao-mediana",
-     "inicio": 175,
+     "inicio": 179,
      "livro": "HB",
      "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
      "texto": "September 2026",
@@ -6197,8 +6197,8 @@
        "livro": "AN"
       }
      ],
-     "fim": 432,
-     "inicio": 415,
+     "fim": 459,
+     "inicio": 442,
      "texto": "27 and 28 October",
      "tipo": "literal"
     }
@@ -6211,7 +6211,7 @@
     "hab-ine-avaliacao-mediana",
     "oe-2027-calendario-generalidade"
    ],
-   "text": "The implicit interest rate for September 2026 and the local prices for Q2 2026, which the INE calendar announced for 21.10.2026 and for 23.10.2026, and the bank appraisal for September 2026 are already in this edition (the section «What a home costs, and how much it rose» and the section «Credit»). The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote scheduled for 27 and 28 October (this project's study «O Orçamento de 2027: o que muda e para quem» has the whole account, and the Budget item under «Under discussion» has the result of the vote)."
+   "text": "The implicit interest rate for September 2026 and the local prices for Q2 2026 came out on the dates the INE calendar announced, 21.10.2026 and 23.10.2026; the bank appraisal for September 2026 came out after them. They are the INE's most recent readings in the sections «What a home costs, and how much it rose» and «Credit». The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote scheduled for 27 and 28 October."
   }
  ],
  "edition": "Housing in Portugal and in Europe",
