@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { DOSSIES } from '../src/data/dossies.mjs';
-import { campoDeDossieAdmitido, plantasDossiesHtml } from './dossies-html.mjs';
+import { plantasDossiesHtml } from './dossies-html.mjs';
 
 import { conferirDataEditorial, plantasDatasEditoriais } from './datas-editoriais.mjs';
 plantasDatasEditoriais();
@@ -665,7 +665,7 @@ if (['2', '01.7', '352 472 389 960'].some((c) => !soDeAlgarismos(c)) || ['UE-27'
 }
 plantasDossiesHtml();
 const CADEIAS_HEAD = [
-  ...DOSSIES.flatMap(d => Object.values(d.titulo)),
+  ...DOSSIES.flatMap(d => [...Object.values(d.titulo), ...Object.values(d.ambito)]),
   ...EDITIONS.map((e) => e.title),
   ...TITULOS_DOS_REGISTOS,
   ...Object.values(VERBATIM).map((v) => v.text),
@@ -6806,8 +6806,7 @@ for (const file of ficheirosHtml(DIST)) {
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
     const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || (rota?.key === 'discussao' && fragmentoDoItem(el,id,campo,linguaPagina));
-    const campoDoDossie = campoDeDossieAdmitido(rota, el, id, campo, linguaPagina);
-    if (!campoDoDossie && !fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +

@@ -1,5 +1,5 @@
 /** OG1-B-2: nomes FP2 conservados; «conclusao» nesta API é a primeira frase da abertura.
- * DO1-B: a frase conserva a comparação com o item ligado e ganha o selo local de cada valor. */
+ * DO1-E: a primeira página conserva a prova no item; o dossiê exige também o selo local. */
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
@@ -28,21 +28,22 @@ export function semSelos(el) {
 }
 export function conferirConclusaoDoInicio(a,e,lang,{dist=process.env.OEDP_DIST??'dist',destino}={}) {
   const erros=[],li=a?.parentNode;
+  const dossie=Boolean(li?.closest('[data-dossie-discussao]'));
   const ps=li?.querySelectorAll('p[data-discussao-resumo]')??[],p=ps[0];
-  if(ps.length!==1||p?.parentNode!==li||li.childNodes.indexOf(p)<li.childNodes.indexOf(a)||a?.tagName!=='A'||li?.tagName!=='LI'||!li.closest('[data-discussao-inicio]'))return ['FP2 início: parágrafo ausente ou fora do item'];
+  if(ps.length!==1||p?.parentNode!==li||li.childNodes.indexOf(p)<li.childNodes.indexOf(a)||a?.tagName!=='A'||li?.tagName!=='LI'||(!dossie&&!li.closest('[data-discussao-inicio]')))return ['FP2 início: parágrafo ausente ou fora do item'];
   const times=p.querySelectorAll('time'),time=times[0],frases=p.querySelectorAll('[data-discussao-conclusao]'),frase=frases[0];
   const caixa=a.closest('main')?.querySelector(`[data-novidade="discussao:${e.slug}"] time`);
   if(times.length!==1||time?.parentNode!==p||time?.getAttribute('datetime')!==e.escrita||normal(time?.text)!==dataDaCasa(e.escrita)||time?.getAttribute('data-nonledger')!=='data-editorial'||time?.getAttribute('data-data-origem')!=='escrita.declarada'||(caixa&&(caixa.getAttribute('datetime')!==e.publicado||normal(caixa.text)!==dataDaCasa(e.publicado))))erros.push('FP2 início: data diferente da escrita declarada ou publicação diferente na caixa');
   const conclusao=conclusaoResolvida(e,lang);
   if(!conclusao)return [...erros,'FP2 início: conclusão declarada ausente'];
   const partes=primeirasFrases(conclusao,1),esperado=normal(textoDosPedacosDaExplicacao(partes,lang));
-  if(frases.length!==1||frase?.parentNode!==p||frase?.querySelector('a:not(.src-chip)')||semSelos(frase)!==esperado||!esperado.endsWith('.')||semSelos(p)!==`${dataDaCasa(e.escrita)} · ${esperado}`)erros.push('FP2 início: frase diferente da primeira conclusão');
+  if(frases.length!==1||frase?.parentNode!==p||frase?.querySelector(dossie?'a:not(.src-chip)':'a')||(dossie?semSelos(frase):normal(frase?.text))!==esperado||!esperado.endsWith('.')||(dossie?semSelos(p):normal(p.text))!==`${dataDaCasa(e.escrita)} · ${esperado}`)erros.push('FP2 início: frase diferente da primeira conclusão');
   const original=destino??paragrafoDeDestino(e,lang,dist);
   if(!original||!semSelos(original).startsWith(esperado))erros.push('FP2 início: frase não é prefixo da conclusão construída');
   const valores=partes.filter(x=>typeof x!=='string'&&x.claim),marcas=frase?.querySelectorAll('[data-claim]')??[];
   if(marcas.length!==valores.length||marcas.some((n,i)=>n.getAttribute('data-claim')!==valores[i].claim||normal(n.text)!==normal(textoDosPedacosDaExplicacao([{claim:valores[i].claim}],lang))))erros.push('FP2 início: valor ou linha diferente da conclusão');
-  // DO1-B: cada valor leva agora o seu selo local nas duas superfícies.
-  for(const n of marcas) {
+  // DO1-B: cada valor no dossiê leva o seu selo local.
+  if(dossie)for(const n of marcas) {
     const href=routePath('linha',lang,{slug:n.getAttribute('data-claim')});
     if(!n.parentNode?.querySelectorAll('a.src-chip').some(a=>a.getAttribute('href')===href))erros.push('DO1: valor do resumo sem o seu selo local');
   }

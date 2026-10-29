@@ -15,7 +15,7 @@ const { lang = 'pt', itens = itensResolvidos(lang), dossie = false } = Astro.pro
     if (!conclusao || !e.escrita) throw new Error(`FP2: abertura ou escrita ausente em ${e.slug}`);
     return <li data-discussao-integracao={dossie ? e.slug : undefined} data-discussao-condicao={dossie ? 'pertenca-ao-dossie' : undefined}>
       <a href={portaDoItem(e.slug, lang)} data-discussao-porta={e.slug}><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></a>
-      <p class="explicacao-p" data-discussao-resumo><time datetime={e.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(e.escrita)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 1)} lang={lang} selos={true} /></span></p>
+      <p class={dossie ? "explicacao-p" : undefined} data-discussao-resumo><time datetime={e.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(e.escrita)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 1)} lang={lang} selos={dossie} /></span></p>
     </li>;
   })}</ul>
 </section>

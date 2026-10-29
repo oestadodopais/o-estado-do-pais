@@ -4,7 +4,10 @@ import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
 import { DOSSIES, conferirDossies } from '../../src/data/dossies.mjs';
 import { dossieDaPeca } from '../../src/lib/dossies.mjs';
-import { pecasPublicadas } from '../../src/lib/novidades.mjs';
+import { dossiesDaLista, pecaMaisRecente } from '../../src/lib/dossies-conteudo.mjs';
+import { ITENS } from '../../src/data/discussao.mjs';
+import { NOMES_EO1 } from '../../src/data/nomes-eo1.mjs';
+import { seloDaConclusaoDoInicio, conferirConclusaoDoInicio, semSelos } from '../../scripts/porta-da-conclusao-discussao.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { getClaim } from '../../src/lib/ledger.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
@@ -13,11 +16,12 @@ const normal = t => String(t).replace(/\s+/g,' ').trim();
 let plantas = 0;
 for (const mudar of [
  d => {d[0].slug = 'Slug inválido';},
- d => {d[1].slug = d[0].slug;},
+ d => {d.push(structuredClone(d[0]));},
  d => {d[0].pecas.estudos = ['inexistente'];},
- d => {d[1].pecas = {estudos:[],explicacoes:[],itens:[]};},
- d => {d[1].pecas.estudos.push(d[0].pecas.estudos[0]);},
- d => {d[1].portas = ['inexistente'];},
+ d => {d[0].pecas = {estudos:[],explicacoes:[],itens:[]};},
+ d => {d.push({...structuredClone(d[0]),slug:'outro-assunto'});},
+ d => {d[0].portas = ['inexistente'];},
+ d => {d[0].calendario = ['calendario-inexistente'];},
 ]) {const copia=structuredClone(DOSSIES);mudar(copia);assert.throws(()=>conferirDossies(copia));plantas++;}
 assert.equal(dossieDaPeca('estudo','inexistente'),null);
 function conferir(root,d,lang) {
@@ -33,8 +37,10 @@ function conferir(root,d,lang) {
  assert.equal(main.querySelectorAll('[data-discussao-parte]').length,0,'não repete afirmações');
  const datas=main.querySelectorAll('time[data-data-origem]');
  assert.equal(datas.find(e=>e.getAttribute('data-data-origem')==='escrita.declarada')?.getAttribute('datetime'),d.escrita);
- const recentes=pecasPublicadas(lang).filter(p=>p.dossie?.slug===d.slug).map(p=>p.data).sort();
- assert.equal(datas.find(e=>e.getAttribute('data-data-origem')==='publicacao.declarada')?.getAttribute('datetime'),recentes.at(-1));
+ const recente=dossiesDaLista(lang).find(e=>e.slug===d.slug);
+ const impressa=main.querySelector('[data-dossie-data="recente"]');
+ assert.equal(impressa.getAttribute('datetime'),recente.recente);
+ assert.equal(impressa.getAttribute('data-data-origem'),recente.origemRecente);
  assert.deepEqual(main.querySelectorAll('[data-estudo]').map(e=>e.getAttribute('data-estudo')),d.pecas.estudos);
  assert.deepEqual(main.querySelectorAll('[data-dossie-explicacao]').map(e=>e.getAttribute('data-dossie-explicacao')),d.pecas.explicacoes);
  assert.deepEqual(new Set(main.querySelectorAll('[data-discussao-porta]').map(e=>e.getAttribute('data-discussao-porta'))),new Set(d.pecas.itens));
@@ -45,19 +51,24 @@ function conferir(root,d,lang) {
   if(tipo==='itens') {
    const no=main.querySelector(`[data-discussao-porta="${slug}"]`).closest('li').querySelector('[data-discussao-resumo]');
    const inicio=ler(routePath('home',lang)).querySelector(`[data-discussao-inicio] [data-discussao-porta="${slug}"]`).closest('li').querySelector('[data-discussao-resumo]');
-   assert.equal(no.outerHTML,inicio.outerHTML,'o resumo e a data conservam a forma conferida na primeira página');
+   assert.equal(semSelos(no),semSelos(inicio),'o texto e a data são os mesmos nas duas superfícies');
+   assert.equal(inicio.querySelector('.src-chip'),null,'a primeira página conserva a prova no item');
   }
   const fonte=ler(caminho.split('#')[0]);
   const lugar=tipo==='itens'?fonte.querySelector(`[data-discussao="${slug}"]`):fonte.querySelector('main');
   const link=lugar.querySelector('[data-dossie-ligacao] a');
   assert.equal(link?.getAttribute('href'),rota);
  }
- const origem=ler(routePath('correcoes',lang));
- for(const correcao of main.querySelectorAll('[data-correcao-entrada]')){
-  const id=correcao.getAttribute('data-correcao-entrada'),n=correcao.querySelector('[data-correcao-n]').getAttribute('data-correcao-n');
-  const original=origem.querySelectorAll(`[data-correcao-entrada="${id}"]`).find(e=>e.querySelector(`[data-correcao-n="${n}"]`));
-  assert(original,'correção presente no registo público');
-  assert.equal(normal(correcao.textContent),normal(original.textContent));
+ assert.equal(main.querySelector('#dossie-correcoes'),null);
+ for(const id of d.calendario) {
+  const p=main.querySelector(`[data-dossie-calendario="${id}"]`);
+  assert(p.textContent.includes(NOMES_EO1[id][lang]));
+  assert(!p.querySelector('[data-linha-campo="excerpt"]'));
+ }
+ for(const a of main.querySelectorAll('[data-discussao-porta]')) {
+  const e=ITENS.find(e=>e.slug===a.getAttribute('data-discussao-porta'));
+  assert.deepEqual(conferirConclusaoDoInicio(a,e,lang),[]);
+  for(const valor of a.closest('li').querySelectorAll('[data-discussao-resumo] [data-claim]'))assert(seloDaConclusaoDoInicio(valor,valor.getAttribute('data-claim'),lang,{dist:'dist'}));
  }
  for(const p of main.querySelectorAll('[data-dossie-abertura] [data-de-linha]')){
   const id=p.getAttribute('data-de-linha'), campo=p.getAttribute('data-de-campo');
@@ -65,9 +76,16 @@ function conferir(root,d,lang) {
   assert(p.closest('[data-dossie-abertura]').querySelector(`a.src-chip[href="${routePath('linha',lang,{slug:id})}"]`));
  }
  if(!d.calendario.length)assert.equal(main.querySelector('#dossie-calendario'),null);
- if(d.slug==='a-casa-em-portugal')assert.equal(main.querySelector('#dossie-correcoes'),null);
+
 }
+const datasSinteticas={estudos:[{data:'2026-10-27'}],itens:[{escrita:'2026-10-26'}],explicacoes:[]};
+assert.equal(pecaMaisRecente(datasSinteticas).data,'2026-10-27');
+datasSinteticas.itens[0].escrita='2026-10-28';
+assert.deepEqual(pecaMaisRecente(datasSinteticas),{data:'2026-10-28',origem:'escrita.declarada'});plantas++;
 for(const lang of ['pt','en']) {
+ assert.equal(dossieDaPeca('estudo','a-casa-em-portugal-e-na-europa'),null);
+ assert.equal(ler(routePath('entradaCasa',lang)).querySelector('#dossies-k'),null);
+ assert(!fs.existsSync(`dist${routePath('dossie',lang,{slug:'a-casa-em-portugal'})}/index.html`));
  const lista=ler(routePath('dossies',lang));
  assert.equal(lista.querySelectorAll('[data-dossie-lista]').length,DOSSIES.length);
  const datas=lista.querySelectorAll('[data-dossie-lista] time').map(e=>e.getAttribute('datetime'));
@@ -76,9 +94,12 @@ for(const lang of ['pt','en']) {
   const rota=routePath('dossie',lang,{slug:d.slug}), root=ler(rota);conferir(root,d,lang);
   for(const mudar of [
    r=>r.querySelector('[data-estudo]').remove(),
-   r=>r.querySelector('[data-data-origem="publicacao.declarada"]').setAttribute('datetime','1900-01-01'),
+   r=>r.querySelector('[data-dossie-data="recente"]').setAttribute('datetime','1900-01-01'),
    r=>r.querySelector('main h1').set_content('Título trocado'),
+   r=>r.querySelector('[data-discussao-resumo] .src-chip').remove(),
+   r=>r.querySelector('[data-dossie-calendario] [data-nome]').set_content('Nome trocado'),
+   r=>r.querySelector('[data-dossie-data="recente"]').setAttribute('data-data-origem','publicacao.declarada'),
   ]) {const copia=parse(root.toString());mudar(copia);assert.throws(()=>conferir(copia,d,lang));plantas++;}
  }
 }
-console.log(`DO1: seis páginas, pertenças e datas conferidas nas duas edições; ${plantas} plantas recusadas.`);
+console.log(`DO1: quatro páginas, pertenças e datas conferidas nas duas edições; ${plantas} plantas recusadas.`);

@@ -1752,6 +1752,13 @@ const LADO_ENTRE = 'Portugal está entre os valores de referência da Comissão 
 const DEFINICAO_EDICOES_PT = 'É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado.';
 const DEFINICAO_EDICOES_EN = 'It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately.';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
+  // DO1-G: só as formas completas classificadas no inventário admitem o fragmento retirado.
+  ['estudo ·', new Set(['estudo · Dossiê:'])],
+  ['explicação ·', new Set(['explicação · Dossiê:'])],
+  ['o que se discute ·', new Set(['o que se discute · Dossiê:'])],
+  ['study ·', new Set(['study · Dossier:'])],
+  ['explainer ·', new Set(['explainer · Dossier:'])],
+  ['under discussion ·', new Set(['under discussion · Dossier:'])],
   // EO1: a atualização da contagem faz o índice mostrar a definição desta linha.
   // As antigas portas isoladas continuam proibidas; só se admite a definição inteira.
   ['estudos publicados', new Set([DEFINICAO_EDICOES_PT])],

@@ -1,0 +1,34 @@
+{
+  "base": "71d85e4ce",
+  "comando": "git archive 71d85e4ce; astro build na cópia temporária; extração dos blocos; diff -u",
+  "resultados": [
+    {
+      "pagina": "index.html",
+      "seletor": "[data-discussao-resumo]",
+      "blocos": 3,
+      "diff": 0,
+      "sha256": "841c79b5bad38fe5a3b26f24c8ae2412677ed582eef31d5c251a056c21041839"
+    },
+    {
+      "pagina": "en/index.html",
+      "seletor": "[data-discussao-resumo]",
+      "blocos": 3,
+      "diff": 0,
+      "sha256": "96da460df88ea9ea76d347bb136c28cf955f3a6a4502bcc97f084adfa5ea440a"
+    },
+    {
+      "pagina": "o-que-se-discute/index.html",
+      "seletor": ".discussao-sumario, .discussao-abertura",
+      "blocos": 7,
+      "diff": 0,
+      "sha256": "1ce0151736a1ce8d1b61b3b3af503dff206b8737747dc27c0eac31983b4f84e5"
+    },
+    {
+      "pagina": "en/under-discussion/index.html",
+      "seletor": ".discussao-sumario, .discussao-abertura",
+      "blocos": 7,
+      "diff": 0,
+      "sha256": "cd8c531bb42f52196c11343ca8f0d68c2537a2725faf61cc1eecbd0300cd7a02"
+    }
+  ]
+}

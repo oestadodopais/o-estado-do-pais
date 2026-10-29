@@ -27,3 +27,6 @@
 /* FP2: a conclusão é prosa em fluxo; só a data usa a letra instrumental da caixa. */
 .pp-discussao [data-discussao-resumo] { display: block; margin: 0 0 1rem; font-family: var(--f-prosa); font-size: 1rem; line-height: 1.5; color: var(--ink); }
 .pp-discussao [data-discussao-resumo] time { font-family: var(--f-instr); font-size: 12px; color: var(--muted); }
+
+/* DO1-F: a área de toque dos selos fica dentro do parágrafo do dossiê. */
+[data-dossie-discussao] [data-discussao-resumo] { overflow: clip; }

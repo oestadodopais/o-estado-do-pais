@@ -42,7 +42,6 @@ const paginas = [
   /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026): três famílias interiores novas, com a mesma hierarquia. */
   ['dossies', '/dossies/', '/en/dossiers/'],
   ['dossie', '/dossies/orcamento-2027/', '/en/dossiers/orcamento-2027/'],
-  ['dossie-casa', '/dossies/a-casa-em-portugal/', '/en/dossiers/a-casa-em-portugal/'],
   ['explicacoes', '/explicacoes/', '/en/explainers/'],
   ['semana', '/explicacoes/leitura-da-semana/', '/en/explainers/weekly-reading/'],
   ['discussao', '/o-que-se-discute/', '/en/under-discussion/'],

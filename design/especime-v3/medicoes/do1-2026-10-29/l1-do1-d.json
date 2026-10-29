@@ -1,0 +1,36 @@
+{
+  "base": "02dc6db39",
+  "comando": "AMOSTRA=5000 npm run check:lugar",
+  "antes": 3458,
+  "depois": 3458,
+  "alteracoes": [
+    {
+      "rota": "/dossies/orcamento-2027",
+      "antes": {
+        "destinos": 4,
+        "exemplo": "/livro-razao/pm-q3-3-r37-c3",
+        "vezes": 2
+      },
+      "depois": {
+        "destinos": 3,
+        "exemplo": "/livro-razao/pm-q3-3-r37-c3",
+        "vezes": 2
+      }
+    },
+    {
+      "rota": "/en/dossiers/orcamento-2027",
+      "antes": {
+        "destinos": 4,
+        "exemplo": "/en/ledger/pm-q3-3-r37-c3",
+        "vezes": 2
+      },
+      "depois": {
+        "destinos": 3,
+        "exemplo": "/en/ledger/pm-q3-3-r37-c3",
+        "vezes": 2
+      }
+    }
+  ],
+  "plantas": 6,
+  "razao": "As páginas retiradas da casa não tinham destinos repetidos. Nos dossiês do Orçamento sai a repetição do destino das correções. As restantes páginas conservam a medição anterior."
+}

@@ -27,9 +27,9 @@ export function conferirSuperficieDossies(root,lang,pagina) {
  }
  for(const lista of main.querySelectorAll('[data-dossie-lista]')) {
   const d=DOSSIES.find(d=>d.slug===lista.getAttribute('data-dossie-lista'));
-  const datas=d?[...d.pecas.estudos.map(slug=>{const w=WORKS.find(w=>w.slug===slug);const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return dataPublicacao(w,e);}),...d.pecas.itens.map(slug=>ITENS.find(e=>e.slug===slug).publicado),...d.pecas.explicacoes.map(slug=>EXPLICACOES.find(e=>e.slug===slug).publicado)].filter(Boolean).sort():[];
-  const tempos=lista.querySelectorAll('time'), recente=datas.at(-1);
-  if(tempos.length!==1||!recente||tempos[0].getAttribute('datetime')!==recente||tempos[0].getAttribute('data-data-origem')!=='publicacao.declarada'||tempos[0].textContent!==dataDaCasa(recente))erros.push('DO1: data da lista diferente das publicações');
+  const datas=d?[...d.pecas.estudos.map(slug=>{const w=WORKS.find(w=>w.slug===slug);const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return {data:dataPublicacao(w,e),origem:'publicacao.declarada'};}),...d.pecas.itens.map(slug=>({data:ITENS.find(e=>e.slug===slug).escrita,origem:'escrita.declarada'})),...d.pecas.explicacoes.map(slug=>({data:EXPLICACOES.find(e=>e.slug===slug).publicado,origem:'publicacao.declarada'}))].filter(e=>e.data).sort((a,b)=>b.data.localeCompare(a.data)):[];
+  const tempos=lista.querySelectorAll('time'), recente=datas[0];
+  if(tempos.length!==1||!recente||tempos[0].getAttribute('datetime')!==recente.data||tempos[0].getAttribute('data-data-origem')!==recente.origem||tempos[0].textContent!==dataDaCasa(recente.data))erros.push('DO1: data da lista diferente das publicações');
   else nos.add(tempos[0]);
  }
  const ligacoes=new Set(main.querySelectorAll('[data-dossie-ligacao], .dossie-ligacao'));

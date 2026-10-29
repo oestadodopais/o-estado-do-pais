@@ -22,14 +22,13 @@ import { DOSSIES } from './dossies.mjs';
  *     inteiro (B1c, 22.09.2026). A lista de cada página mostra no máximo oito
  *     mudanças; o que não cabe não desaparece, e esta é a porta para ele.
  */
+const orcamento = DOSSIES.find(d => d.slug === 'orcamento-2027');
+if (!orcamento) throw new Error('DO1: dossiê do Orçamento ausente dos rótulos.');
 export const ROTULOS_B1 = {
   pt: { dossies: 'Dossiês',
-    dossieOrcamentoTitulo: DOSSIES[0].titulo.pt,
-    dossieOrcamentoAmbito: DOSSIES[0].ambito.pt,
-    dossieOrcamentoLigacao: `Dossiê: ${DOSSIES[0].titulo.pt} →`,
-    dossieCasaTitulo: DOSSIES[1].titulo.pt,
-    dossieCasaAmbito: DOSSIES[1].ambito.pt,
-    dossieCasaLigacao: `Dossiê: ${DOSSIES[1].titulo.pt} →`,
+    dossieOrcamentoTitulo: orcamento.titulo.pt,
+    dossieOrcamentoAmbito: orcamento.ambito.pt,
+    dossieOrcamentoLigacao: `Dossiê: ${orcamento.titulo.pt} →`,
     valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', fontes: 'Fontes e verificação',
     fontesDoParagrafo: 'Fontes deste parágrafo',
     edicao: 'Edição tal como foi publicada', edicaoPreparacao: 'Edição em preparação', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
@@ -53,12 +52,9 @@ export const ROTULOS_B1 = {
     estudoDoOrcamento: 'O estudo do Orçamento',
     sucedeA: 'Sucede a', e: 'e' },
   en: { dossies: 'Dossiers',
-    dossieOrcamentoTitulo: DOSSIES[0].titulo.en,
-    dossieOrcamentoAmbito: DOSSIES[0].ambito.en,
-    dossieOrcamentoLigacao: `Dossier: ${DOSSIES[0].titulo.en} →`,
-    dossieCasaTitulo: DOSSIES[1].titulo.en,
-    dossieCasaAmbito: DOSSIES[1].ambito.en,
-    dossieCasaLigacao: `Dossier: ${DOSSIES[1].titulo.en} →`,
+    dossieOrcamentoTitulo: orcamento.titulo.en,
+    dossieOrcamentoAmbito: orcamento.ambito.en,
+    dossieOrcamentoLigacao: `Dossier: ${orcamento.titulo.en} →`,
     valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     fontesDoParagrafo: 'Sources for this paragraph',
     edicao: 'Edition as published', edicaoPreparacao: 'Edition in preparation', publicado: 'published on', estudoPublicado: 'Study published',

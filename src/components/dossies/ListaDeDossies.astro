@@ -13,6 +13,6 @@ const dossies = dossiesDaLista(lang, porta);
   {dossies.map(d => <li data-dossie-lista={d.slug}>
     <Heading><a href={routePath('dossie', lang, {slug: d.slug})}><span data-dossie-campo={`${d.slug}:titulo`}><Frase partes={partesDoDossie(d.titulo[lang])} lang={lang} /></span></a></Heading>
     <p class="explicacao-p" data-dossie-campo={`${d.slug}:ambito`}><Frase partes={partesDoDossie(d.ambito[lang])} lang={lang} /></p>
-    <p class="estudo-meta"><span data-voz>{t(lang).dossies.recente}</span>{' '}<time datetime={d.recente} data-nonledger="data-editorial" data-data-origem="publicacao.declarada">{dataDaCasa(d.recente)}</time></p>
+    <p class="estudo-meta"><span data-voz>{t(lang).dossies.recente}</span>{' '}<time datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></p>
   </li>)}
 </ul>

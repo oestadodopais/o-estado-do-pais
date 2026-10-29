@@ -68,7 +68,7 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
     if(normal(el.querySelector('[data-novidade-porta]')?.textContent ?? '')!==normal(p.titulo)) erros.push('FP1: título da peça diferente da declaração');
     const camada = { estudo: 'estudos', explicacao: 'explicacoes', discussao: 'itens' }[p.tipo];
     const d = camada && DOSSIES.find(d => d.pecas[camada].includes(p.id.split(':')[1]));
-    const tipoEsperado = r[p.tipo] + (d ? ` · ${d.titulo[lang]}` : '');
+    const tipoEsperado = r[p.tipo] + (d ? ` · ${lang==='pt'?'Dossiê: ':'Dossier: '}${d.titulo[lang]}` : '');
     if(normal(el.querySelector('.pp-novidade-tipo')?.textContent ?? '')!==tipoEsperado) erros.push('FP1: tipo diferente');
     const portas = el.querySelectorAll('[data-novidade-dossie]');
     if (portas.length !== (d ? 1 : 0) || (d && (portas[0]?.getAttribute('href') !== routePath('dossie',lang,{slug:d.slug}) || portas[0]?.getAttribute('data-novidade-dossie') !== d.slug))) erros.push('DO1: dossiê diferente da pertença da peça');

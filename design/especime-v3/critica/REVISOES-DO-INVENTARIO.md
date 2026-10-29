@@ -930,3 +930,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | hb1-e | Avaliação bancária nas secções 6 e 11 das duas edições e contagens do livro | por ler | Codex, 29.10.2026: atualização pelo mandato HB1-e e adenda A; leitura cruzada pendente. |
 
 | do1 | Os dois dossiês, o índice e as ligações nas peças, nas duas edições | por ler | Redação do mandato DO1; leitura cruzada reservada ao lugar de direção. |
+
+| do1-d | Um dossiê, sem correções, datas impressas e novidades com o rótulo Dossiê | por ler | Adendas D, E e F; leitura cruzada reservada ao lugar de direção. |

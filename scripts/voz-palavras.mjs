@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { DOSSIES } from '../src/data/dossies.mjs';
 /**
  * ---------------------------------------------------------------------------
  * O PORTÃO DAS PALAVRAS PROIBIDAS · a lista da norma §1.3, sobre o dist/
@@ -292,12 +291,6 @@ export function superficieDe(html, opcoes = {}) {
   const titulos = new Set(WORKS.flatMap(w => w.editions.map(e => e.title)));
   for (const titulo of root.querySelectorAll('[data-nonledger="titulo-de-estudo"]')) {
     if (titulos.has(titulo.textContent)) titulo.remove();
-  }
-  // DO1-A: habitação, apenas nas cadeias integrais declaradas. Nenhuma frase nova sai.
-  const casa = DOSSIES.find(d => d.slug === 'a-casa-em-portugal');
-  const habitacao = new Set([casa.titulo.pt, casa.ambito.pt, `Dossiê: ${casa.titulo.pt} →`, ...casa.abertura.map(p => p.pt.join(''))]);
-  for (const n of root.querySelectorAll('[data-dossie-campo], [data-dossie-ligacao], [data-dossie-abertura]')) {
-    if (habitacao.has(n.textContent.replace(/\s+/g,' ').trim())) n.remove();
   }
   for (const fora of root.querySelectorAll('script, style')) fora.remove();
   // Um valor textual só sai como citação quando é o excerto integral da linha.

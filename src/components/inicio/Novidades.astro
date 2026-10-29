@@ -5,6 +5,7 @@ import Frase from '../Frase.astro';
 import { pecasPublicadas } from '../../lib/novidades.mjs';
 import { carimboDaConstrucao } from '../../lib/construcao.mjs';
 import { VERIFICACAO } from '../../data/verificacao.mjs';
+import { t } from '../../i18n/strings.mjs';
 import { FP1 } from '../../data/rotulos-fp1.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
@@ -22,7 +23,7 @@ const dia = carimbo?.construido_em.slice(0,10);
   <ol class="pp-novidades-lista">
     {pecas.map(e => <li data-novidade={e.id}>
       <time datetime={e.data} data-nonledger="data-editorial" data-data-origem={e.origem}>{dataDaCasa(e.data)}</time>
-      <span class="pp-novidade-tipo"><span data-voz>{r[e.tipo]}</span>{e.dossie && <>{' · '}<a href={routePath('dossie',lang,{slug:e.dossie.slug})} data-novidade-dossie={e.dossie.slug}><span data-dossie-campo={`${e.dossie.slug}:titulo`}><Frase partes={partesDoDossie(e.dossie.titulo[lang])} lang={lang} /></span></a></>}</span>
+      <span class="pp-novidade-tipo"><span data-voz>{r[e.tipo]}</span>{e.dossie && <>{' · '}{t(lang).dossies.ligacao}<a href={routePath('dossie',lang,{slug:e.dossie.slug})} data-novidade-dossie={e.dossie.slug}><span data-dossie-campo={`${e.dossie.slug}:titulo`}><Frase partes={partesDoDossie(e.dossie.titulo[lang])} lang={lang} /></span></a></>}</span>
       {e.atualizacao ? <span data-correcao-entrada={e.atualizacao.claim}><a href={e.rota} data-novidade-porta set:html={htmlDaAtualizacao(e.atualizacao)} />{' '}<Provenance id={e.atualizacao.claim} lang={lang} inline /></span> : <a href={e.rota} data-novidade-porta>{e.edicao ? <TituloDeTrabalho edicao={e.edicao} lang={lang} /> : <FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} />}</a>}
     </li>)}
   </ol>
