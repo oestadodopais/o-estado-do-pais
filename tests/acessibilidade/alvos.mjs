@@ -220,6 +220,9 @@ const FAMILIAS = [
      selo de cada uma) e a primeira explicação (os selos do texto, as figuras das barras e a lista dobrada dos números de
      cada figura), com o axe a zero e os alvos nas larguras desta régua, como as outras páginas do leitor. */
   ['discussao', null],
+  ['dossies', null],
+  ['dossie', { slug: 'orcamento-2027' }],
+  ['dossie', { slug: 'a-casa-em-portugal' }],
   ['explicacoes', null],
   ['leituraDaSemana', null],
   ['explicacao', { slug: 'dinheiro-do-estado-2026' }],

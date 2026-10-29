@@ -1,12 +1,14 @@
+import { dataDoDossiePermitida } from './dossies-html.mjs';
 /** FP1-d: a isenção editorial depende do elemento, da página e da origem. */
 import {ITENS} from '../src/data/discussao.mjs';
 import {dataDaCasa} from '../src/lib/datas.mjs';
 import {eDerivada} from '../src/lib/ledger.mjs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
-export function dataEditorialPermitida(el, rota, claim) {
+export function dataEditorialPermitida(el, rota, claim, lang='pt') {
   if(el.tagName?.toLowerCase()!=='time' || !/^\d{4}-\d{2}-\d{2}$/.test(el.getAttribute('datetime')??''))return false;
   const origem=el.getAttribute('data-data-origem');
+  if(dataDoDossiePermitida(el,rota,lang))return true;
   if(rota==='home') {
     const resumo=el.closest('p[data-discussao-resumo]');
     if(resumo?.closest('[data-discussao-inicio]')) {
@@ -24,8 +26,8 @@ export function dataEditorialPermitida(el, rota, claim) {
   const m=/^verifications\.(\d+)\.date$/.exec(origem??'');
   return Boolean(m&&claim?.verifications?.[Number(m[1])]?.date);
 }
-export function conferirDataEditorial(el, rota, claim, err) {
- if (!dataEditorialPermitida(el,rota,claim)) err('FP1-e: data-editorial fora dos contextos e origens permitidos.');
+export function conferirDataEditorial(el, rota, claim, err, lang='pt') {
+ if (!dataEditorialPermitida(el,rota,claim,lang)) err('FP1-e: data-editorial fora dos contextos e origens permitidos.');
 }
 export function plantasDatasEditoriais() {
  const html='<time datetime="2000-01-01" data-nonledger="data-editorial" data-data-origem="publicacao.gerada">01.01.2000</time>';

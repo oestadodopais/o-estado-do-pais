@@ -5177,3 +5177,69 @@ As frases seguintes pertencem aos registos do estudo, rendidos sob `data-registo
 | --- | --- | --- | --- | --- |
 | conteudo | 4 140 afirmações · 520 de 4 140 calculadas · 2 767 de 4 140 linhas de concelhos | hb1-e | viva | Contagem recolhida do HTML construído após as duas linhas da avaliação bancária; leitura cruzada pendente. |
 | conteudo | 4 140 claims · 520 of 4 140 calculated · 2 767 of 4 140 municipality rows | hb1-e | viva | Contagem recolhida do HTML construído após as duas linhas da avaliação bancária; leitura cruzada pendente. |
+
+## DO1: os assuntos vivos, 29.10.2026
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | estudo · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | explicação · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | o que se discute · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | A peça mais recente é de | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | A proposta de Orçamento do Estado para : o que muda e para quem, para onde vai o dinheiro, o que se discute e o calendário. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | O custo da casa em Portugal e na Europa, quem a paga, quem fica de fora e o que o Estado faz. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Os dossiês | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | Um lugar por assunto vivo, com tudo o que há sobre ele | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | A casa em Portugal | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | A porta «Habitação» tem os números do país; o que se disser a seguir sobre a casa junta-se aqui. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | Escrito a | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | Escrito a · A peça mais recente é de | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | O estudo | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | O estudo lê os preços, as rendas, o crédito e as leis deste ano nos números do Eurostat, do INE e do Banco de Portugal, e cada atualização traz a sua data. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | A explicação | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | A proposta de Orçamento do Estado para , entregue ao Parlamento a , traz, entre os seus mapas, o da classificação funcional das despesas da Administração Central. | do1 | viva | DO1, primeira frase da explicação existente. |
+| conteudo | A proposta de Orçamento do Estado para foi aprovada na generalidade a e segue para a especialidade até à votação final global, marcada para . | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | As correções que tocaram este assunto | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | Os textos abaixo dizem o que a proposta muda e para quem, para onde vai o dinheiro, o que a Saúde e as parcerias rodoviárias recebem, e como cada partido votou e o que disse. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | O Orçamento de | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | O calendário | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · O Parlamento aprovou a proposta de Orçamento para na generalidade a , com os votos a favor do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e o excedente de % do PIB que o Governo prevê para esse ano é, nas contas do Conselho das Finanças Públicas, um défice de % . | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · O relatório do Orçamento prevê milhões de euros de encargos líquidos com as parcerias rodoviárias em : «líquidos» quer dizer os encargos do Estado com estas parcerias depois de descontadas as receitas que lhe cabem, entre elas as portagens cobradas nas vias portajadas. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · Para , a despesa total da Saúde, que no relatório do Orçamento inclui os ativos e passivos financeiros, está orçamentada milhões de euros abaixo da estimativa de , e a despesa efetiva, a mesma conta sem esses ativos e passivos, varia milhões de euros , porque o PRR acaba. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | explainer · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | study · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | under discussion · | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | One place per living subject, with everything there is on it | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The cost of a home in Portugal and in Europe, who pays for it, who is left out and what the State does. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | The dossiers | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The most recent piece is from | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The proposed State Budget for : what changes and for whom, where the money goes, what is under discussion and the calendar. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Housing in Portugal | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The study | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The study reads prices, rents, credit and this year&#39;s laws in Eurostat&#39;s, the INE&#39;s and the Bank of Portugal&#39;s figures, and each update carries its date. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The «Housing» door has the country&#39;s figures; whatever is said next about housing gathers here. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | Written on | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | Written on · The most recent piece is from | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | The Budget | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The State Budget proposal for , delivered to Parliament on , carries, among its maps, the one of the functional classification of central administration expenditure. | do1 | viva | DO1, primeira frase da explicação existente. |
+| conteudo | The calendar | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The corrections that touched this subject | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The explainer | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The texts below say what the proposal changes and for whom, where the money goes, what Health and the road partnerships receive, and how each party voted and what it said. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | The proposed State Budget for passed at the general vote on and goes to the detailed stage until the final global vote, scheduled for . | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · For , total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted million euros below the estimate for , and effective expenditure, the same count without those assets and liabilities, changes by million euros , because the RRP ends. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · Parliament passed the Budget proposal at the general vote on , with PSD and CDS-PP voting in favour and PS, PAN and JPP abstaining, and the surplus of % of GDP the Government forecasts for that year is, in the Public Finance Council&#39;s accounts, a deficit of % . | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| conteudo | · The Budget report forecasts million euros in net charges for the road partnerships in : «net» means the State&#39;s charges on these partnerships after deducting the revenue that falls to it, among them the tolls collected on tolled roads. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Dossier: | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Dossiers | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Dossier: Housing in Portugal → | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Dossiês | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Dossiê: | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+| navegacao | Dossiê: A casa em Portugal → | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
+
+| conteudo | Afirmação: | do1 | viva | Rótulo de CorrecaoDoDossie, com a forma de RegistoCorrecoes. |
+| conteudo | Claim: | do1 | viva | Rótulo de CorrecaoDoDossie, com a forma de RegistoCorrecoes. |
+
+| navegacao | O Orçamento de 2027 | do1 | viva | Título declarado do dossiê na descrição da cabeça. |
+| navegacao | The 2027 Budget | do1 | viva | Título declarado do dossiê na descrição da cabeça. |

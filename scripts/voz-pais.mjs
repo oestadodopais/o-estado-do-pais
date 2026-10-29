@@ -1,3 +1,4 @@
+import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 /** A lista fechada do B1 para o país e os temas. Os blocos de dados são
  * comparados antes de saírem da leitura; uma marca sozinha não basta. */
 import fs from 'node:fs';
@@ -128,7 +129,11 @@ export function verificaVozPais(raiz) {
         erros.push(...conferirSinopse(resumo, w, lang));
         dispensados.add(resumo);
       }
+      const do1 = conferirSuperficieDossies(main, lang, `${rota}/index.html`);
+      erros.push(...do1.erros);
+      for (const no of do1.nos) dispensados.add(no);
       const permitidos = new Set([
+        ...Object.entries(ROTULOS_B1[lang]).filter(([k])=>k.startsWith('dossie')).map(([,v])=>v), s.dossies.recente,
         /* Só os rótulos destas páginas. O olho dos lugares continua declarado,
            mas não pode voltar à página do país. */
         ...['pais', 'temas', 'estudosRecentes', 'mudou', 'publicado', 'estudoPublicado',

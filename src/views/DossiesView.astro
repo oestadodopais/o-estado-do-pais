@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import ListaDeDossies from '../components/dossies/ListaDeDossies.astro';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/explicacoes.css';
+const { lang = 'pt' } = Astro.props;
+const s = t(lang).dossies;
+---
+<Base lang={lang} path={routePath('dossies',lang)} title={s.titulo} description={s.ambito}>
+  <h1 class="explicacoes-titulo">{s.titulo}</h1>
+  <p class="explicacao-p">{s.ambito}</p>
+  <ListaDeDossies lang={lang} nivel={2} />
+</Base>

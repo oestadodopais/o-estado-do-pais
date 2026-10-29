@@ -1,5 +1,5 @@
 /** OG1-B-2: nomes FP2 conservados; «conclusao» nesta API é a primeira frase da abertura.
- * A frase sem selo local só vale com a frase e a prova no item ligado. */
+ * DO1-B: a frase conserva a comparação com o item ligado e ganha o selo local de cada valor. */
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
@@ -36,11 +36,16 @@ export function conferirConclusaoDoInicio(a,e,lang,{dist=process.env.OEDP_DIST??
   const conclusao=conclusaoResolvida(e,lang);
   if(!conclusao)return [...erros,'FP2 início: conclusão declarada ausente'];
   const partes=primeirasFrases(conclusao,1),esperado=normal(textoDosPedacosDaExplicacao(partes,lang));
-  if(frases.length!==1||frase?.parentNode!==p||frase?.querySelector('a')||normal(frase?.text)!==esperado||!esperado.endsWith('.')||normal(p.text)!==`${dataDaCasa(e.escrita)} · ${esperado}`)erros.push('FP2 início: frase diferente da primeira conclusão');
+  if(frases.length!==1||frase?.parentNode!==p||frase?.querySelector('a:not(.src-chip)')||semSelos(frase)!==esperado||!esperado.endsWith('.')||semSelos(p)!==`${dataDaCasa(e.escrita)} · ${esperado}`)erros.push('FP2 início: frase diferente da primeira conclusão');
   const original=destino??paragrafoDeDestino(e,lang,dist);
   if(!original||!semSelos(original).startsWith(esperado))erros.push('FP2 início: frase não é prefixo da conclusão construída');
   const valores=partes.filter(x=>typeof x!=='string'&&x.claim),marcas=frase?.querySelectorAll('[data-claim]')??[];
   if(marcas.length!==valores.length||marcas.some((n,i)=>n.getAttribute('data-claim')!==valores[i].claim||normal(n.text)!==normal(textoDosPedacosDaExplicacao([{claim:valores[i].claim}],lang))))erros.push('FP2 início: valor ou linha diferente da conclusão');
+  // DO1-B: cada valor leva agora o seu selo local nas duas superfícies.
+  for(const n of marcas) {
+    const href=routePath('linha',lang,{slug:n.getAttribute('data-claim')});
+    if(!n.parentNode?.querySelectorAll('a.src-chip').some(a=>a.getAttribute('href')===href))erros.push('DO1: valor do resumo sem o seu selo local');
+  }
   return erros;
 }
 export function seloDaConclusaoDoInicio(el,id,lang,{dist}={}) {

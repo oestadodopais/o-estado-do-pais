@@ -109,6 +109,8 @@ export const PAI_DA_ROTA = {
   privacidade: 'home',
   /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026): a lista é uma página fixa, «Início › Explicações», e a leitura da semana
      e cada explicação são filhas dela, como um estudo é filho da lista dos estudos. */
+  dossies: 'home',
+  dossie: 'dossies',
   explicacoes: 'home',
   discussao: 'home',
   leituraDaSemana: 'explicacoes',
@@ -212,6 +214,7 @@ function etiquetaDaRota(chave, lang) {
     /* A página «Privacidade» chama-se como a porta do rodapé que a abre, e como o seu `<h1>` (bloco H3). */
     privacidade: s.nav.privacidade,
     /* A lista das explicações e a leitura da semana chamam-se pelo seu `<h1>` (bloco EX1). */
+    dossies: s.dossies.plural,
     explicacoes: s.nav.explicacoes,
     discussao: s.nav.discussao,
     leituraDaSemana: s.semana.titulo,

@@ -1,0 +1,11 @@
+---
+import { dossieDaPeca } from '../../lib/dossies.mjs';
+import { partesDoDossie } from '../../lib/dossies-conteudo.mjs';
+import '../../styles/dossies.css';
+import Frase from '../Frase.astro';
+import { routePath } from '../../lib/routes.mjs';
+import { t } from '../../i18n/strings.mjs';
+const { tipo, slug, lang = 'pt' } = Astro.props;
+const d = dossieDaPeca(tipo, slug);
+---
+{d && <p class="regra-portas dossie-ligacao" data-dossie-ligacao={d.slug}><span data-voz>{t(lang).dossies.ligacao}</span><a href={routePath('dossie', lang, {slug: d.slug})}><span data-dossie-campo={`${d.slug}:titulo`}><Frase partes={partesDoDossie(d.titulo[lang])} lang={lang} /></span> →</a></p>}

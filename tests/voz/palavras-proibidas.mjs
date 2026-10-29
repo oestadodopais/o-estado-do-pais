@@ -65,6 +65,13 @@ assert(!superficieDe(`<body><span data-nonledger="titulo-de-estudo">${tituloHB1}
 assert(superficieDe('<body><span data-nonledger="titulo-de-estudo">a casa verifica tudo</span></body>').includes('a casa verifica tudo'));
 assert(superficieDe(`<body><span data-nonledger="titulo-de-estudo">${tituloHB1}</span><p>a casa verifica tudo</p></body>`).includes('a casa verifica tudo'));
 const casa=PALAVRAS_PROIBIDAS.find(p=>p.chave==='a casa').marca;
+// DO1-A: uma cadeia exata não dispensa prosa acrescentada dentro ou fora da marca.
+const dossieCasa='<p data-dossie-campo="a-casa-em-portugal:titulo">A casa em Portugal</p>';
+assert(!casa.test(superficieDe(`<body>${dossieCasa}</body>`)));
+assert(casa.test(superficieDe(`<body>${dossieCasa}<p>A casa verifica tudo.</p></body>`)));
+assert(casa.test(superficieDe('<body><p data-dossie-campo="a-casa-em-portugal:titulo">A casa em Portugal verifica tudo.</p></body>')));
+assert(casa.test(superficieDe('<body><p data-dossie-campo="a-casa-em-portugal:titulo">A casa verifica tudo.</p></body>')));
+
 assert(!casa.test(superficieDe('<body><p>A família média gasta na casa menos rendimento.</p></body>')));
 assert(casa.test(superficieDe('<body><p>A família média gasta na casa menos rendimento; a casa verifica tudo.</p></body>')));
 assert(casa.test(superficieDe('<body><p>Na casa verifica-se tudo.</p></body>')));

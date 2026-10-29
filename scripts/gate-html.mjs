@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { DOSSIES } from '../src/data/dossies.mjs';
+import { campoDeDossieAdmitido, plantasDossiesHtml } from './dossies-html.mjs';
+
 import { conferirDataEditorial, plantasDatasEditoriais } from './datas-editoriais.mjs';
 plantasDatasEditoriais();
 import {fragmentoDoItem} from './fragmento-do-item.mjs';
@@ -660,7 +663,9 @@ if (['2', '01.7', '352 472 389 960'].some((c) => !soDeAlgarismos(c)) || ['UE-27'
   console.error('gate:html · a planta das cadeias só de algarismos na cabeça não mordeu.');
   process.exit(1);
 }
+plantasDossiesHtml();
 const CADEIAS_HEAD = [
+  ...DOSSIES.flatMap(d => Object.values(d.titulo)),
   ...EDITIONS.map((e) => e.title),
   ...TITULOS_DOS_REGISTOS,
   ...Object.values(VERBATIM).map((v) => v.text),
@@ -6801,7 +6806,8 @@ for (const file of ficheirosHtml(DIST)) {
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
     const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || (rota?.key === 'discussao' && fragmentoDoItem(el,id,campo,linguaPagina));
-    if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    const campoDoDossie = campoDeDossieAdmitido(rota, el, id, campo, linguaPagina);
+    if (!campoDoDossie && !fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
@@ -7978,7 +7984,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   for (const el of body.querySelectorAll('[data-nonledger]')) {
     const motivo = el.getAttribute('data-nonledger');
-    if (motivo === 'data-editorial') conferirDataEditorial(el, rota?.key, rota?.key === 'linha' ? claims.get(rota.params?.slug) : null, err);
+    if (motivo === 'data-editorial') conferirDataEditorial(el, rota?.key, rota?.key === 'linha' ? claims.get(rota.params?.slug) : null, err, linguaPagina);
     if (!CONTEXTOS.has(motivo)) {
       err(
         `data-nonledger="${motivo}" não é um motivo declarado. ` +

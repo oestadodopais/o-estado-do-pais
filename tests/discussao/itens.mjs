@@ -1,3 +1,4 @@
+import { conferirSuperficieDossies, dossieDaPagina } from '../../scripts/dossies-superficie.mjs';
 import {dataDaCasa} from '../../src/lib/datas.mjs';
 /** V2-d: leitor independente dos itens, das contas e das portas, com estragos em memória. */
 import fs from 'node:fs';
@@ -231,6 +232,7 @@ export function plantasDoInicio(home,lang,dist) {
   ['duas frases em vez de uma',p=>p.querySelector('[data-discussao-conclusao]').set_content(textoDosPedacosDaExplicacao(resolverExplicacao(e,lang).abertura.flatMap(p=>p.pedacos),lang)),/frase diferente/],
   ['frase de outro item',p=>p.querySelector('[data-discussao-conclusao]').set_content(outra.innerHTML),/frase diferente/],
   ['valor trocado na frase',p=>p.parentNode.querySelector('[data-discussao-conclusao] [data-claim]').set_content('999'),/valor ou linha/],
+  ['selo local em falta',p=>p.querySelector('[data-discussao-conclusao] .src-chip').remove(),/sem o seu selo local/],
   ['parágrafo em falta',p=>p.querySelector('p[data-discussao-resumo]').remove(),/parágrafo ausente/],
  ]) {
   const r=parse(home.toString());mudar(r.querySelector(seletor));
@@ -250,6 +252,8 @@ export function plantasDoInicio(home,lang,dist) {
 }
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=process.env.OEDP_DIST??path.join(raiz,'dist'),recibos=new Map()}={}){
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
+ const superficie=conferirSuperficieDossies(root,lang,pagina);erros.push(...superficie.erros);
+ const dossie=dossieDaPagina(pagina,lang);
  // FP1: as peças publicadas têm outra condição, comprovada pelas datas e destinos.
  const caixa=main.querySelector('[data-novidades]');
  let novidadesConferidas=false;
@@ -264,7 +268,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
   erros.push(...falhas);novidadesConferidas=!falhas.length;
  }
 
- const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
+ const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>![...superficie.nos].some(el=>el===n||el.querySelectorAll('*').includes(n))&&!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
  const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
  const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),registo=/^(?:correcoes|en\/corrections)\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
  for(const n of nos){
@@ -289,12 +293,17 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  }
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
  const estudoEo1=pagina===`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
- const esperados=[...ITENS].sort(compararItens).filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
+ const esperados=[...ITENS].sort(compararItens).filter(e=>dossie?dossie.pecas.itens.includes(e.slug):[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
  for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]')&&!(novidadesConferidas&&a.closest('[data-novidades]')))erros.push('V2B integração: porta sem condição declarada');
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
  for(const e of esperados){
   const p=portas.find(p=>p.getAttribute('data-discussao-integracao')===e.slug),a=p?.querySelector('a');
+  if(dossie){
+   erros.push(...conferirMarcasDoTitulo(a,e,lang,linhas));
+   if(p?.getAttribute('data-discussao-condicao')!=='pertenca-ao-dossie'||!p.closest('[data-dossie-discussao]')||a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==explicacaoPelaCelula(e,lang,linhas).titulo)erros.push('DO1: porta do item diferente da pertença ao dossiê');
+   continue;
+  }
   const tematicaDoItem=tematica&&e.slug==='saude-no-orcamento';
   if(estudoEo1&&PORTAS_EO1[e.slug]){
    if(p?.getAttribute('data-discussao-condicao')!=='estudo-eo1'||a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==PORTAS_EO1[e.slug]?.[lang])
@@ -422,6 +431,23 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   if(forma==='regua')provas.push({nome:'régua sem a linha no recibo',lang,mordeu:mede(area,corpo.replace(/<span data-claim=.*?<\/span>/,'')).some(e=>e.includes('sem a linha comparada'))});
   if(mede(area,corpo).length)erros.push('V2D percurso: cartão com caminho completo recusado');
   for(const [nome,a,c] of [['cartão sem selo para o recibo',area.replace(/<a class="src-chip".*?<\/a>/,''),corpo],['recibo sem porta para o item',area,'<main><section id="prova"></section></main>'],['recibo ausente no percurso',area,null]])provas.push({nome:forma+': '+nome,lang,mordeu:mede(a,c).some(e=>e.startsWith('V2D percurso:'))});
+ }
+ // DO1-A: a pertença é uma condição fechada, não uma dispensa para a página inteira.
+ for(const lang of ['pt','en']) {
+  const prefixo=lang==='pt'?'dossies':'en/dossiers';
+  const orcamento=`${prefixo}/orcamento-2027/index.html`, casa=`${prefixo}/a-casa-em-portugal/index.html`;
+  const html=fs.readFileSync(path.join(dist,orcamento),'utf8');
+  if(conferirIntegracao(parse(html),lang,orcamento).length)erros.push('DO1: controlo íntegro do dossiê recusado');
+  const ausente=parse(html);ausente.querySelector('[data-discussao-integracao]').remove();
+  provas.push({nome:'DO1 porta em falta no dossiê',lang,mordeu:conferirIntegracao(ausente,lang,orcamento).some(e=>e.includes('presença ou ausência errada'))});
+  const alheia=parse(fs.readFileSync(path.join(dist,casa),'utf8'));
+  alheia.querySelector('main').insertAdjacentHTML('beforeend',parse(html).querySelector('[data-discussao-integracao]').outerHTML);
+  provas.push({nome:'DO1 item num dossiê a que não pertence',lang,mordeu:conferirIntegracao(alheia,lang,casa).length>0});
+  const estudo=`${lang==='pt'?'estudos':'en/studies'}/a-casa-em-portugal-e-na-europa/index.html`;
+  const semMarca=parse(fs.readFileSync(path.join(dist,estudo),'utf8'));semMarca.querySelector('[data-dossie-ligacao]').removeAttribute('data-dossie-ligacao');
+  provas.push({nome:'DO1 linha Dossiê sem atributo',lang,mordeu:conferirIntegracao(semMarca,lang,estudo).some(e=>e.includes('porta sem condição declarada'))});
+  const frase=parse(html);frase.querySelector('[data-dossie-campo]').insertAdjacentHTML('beforeend',' texto inventado');
+  provas.push({nome:'DO1 cadeia fechada adulterada',lang,mordeu:conferirIntegracao(frase,lang,orcamento).some(e=>e.includes('cadeia do dossiê diferente'))});
  }
  const semToken=structuredClone(ITENS);semToken[0].seccoes[0].conteudo[0].paragrafo.pt[1]='Citação sem linha';
  provas.push({nome:'declaração sem token',mordeu:conferirDeclaracoes(semToken).some(x=>x.includes('V2B citação'))});

@@ -1,5 +1,6 @@
 /** FP1: datas da publicação e do calendário, relidas das declarações. */
 import fs from 'node:fs';
+import { DOSSIES } from '../../src/data/dossies.mjs';
 import {estadoDoInventario} from '../../scripts/voz.mjs';
 import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 import {metaDoEstudoConferida} from '../../scripts/meta-do-estudo.mjs';
@@ -65,7 +66,12 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
     if(el.querySelector('[data-novidade-porta]')?.getAttribute('href')!==p.rota) erros.push('FP1: entrada sem página declarada');
     if(p.atualizacao&&!conferirAtualizacao(el.querySelector('[data-novidade-porta]'),p.atualizacao))erros.push('FP1-e: atualização sem valores selados');
     if(normal(el.querySelector('[data-novidade-porta]')?.textContent ?? '')!==normal(p.titulo)) erros.push('FP1: título da peça diferente da declaração');
-    if(el.querySelector('.pp-novidade-tipo')?.textContent!==r[p.tipo]) erros.push('FP1: tipo diferente');
+    const camada = { estudo: 'estudos', explicacao: 'explicacoes', discussao: 'itens' }[p.tipo];
+    const d = camada && DOSSIES.find(d => d.pecas[camada].includes(p.id.split(':')[1]));
+    const tipoEsperado = r[p.tipo] + (d ? ` · ${d.titulo[lang]}` : '');
+    if(normal(el.querySelector('.pp-novidade-tipo')?.textContent ?? '')!==tipoEsperado) erros.push('FP1: tipo diferente');
+    const portas = el.querySelectorAll('[data-novidade-dossie]');
+    if (portas.length !== (d ? 1 : 0) || (d && (portas[0]?.getAttribute('href') !== routePath('dossie',lang,{slug:d.slug}) || portas[0]?.getAttribute('data-novidade-dossie') !== d.slug))) erros.push('DO1: dossiê diferente da pertença da peça');
   }
   const linha=caixa.querySelector('[data-atualizacao]');
   if(!linha || normal(linha.textContent)!==`${r.atualizado} ${forma(dia)} · ${r.relidos} ${forma(VERIFICACAO.verificadoEm)}`) erros.push('FP1: linha das duas datas diferente dos ficheiros');
@@ -89,6 +95,8 @@ export function plantasDasNovidades(html,lang,dist) {
 
   const plantas=[
     ['marca novo retirada',r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],
+    ['dossiê da novidade trocado',r=>r.querySelector('[data-novidade-dossie]').setAttribute('href','/dossies/inexistente/'),/dossiê diferente/],
+    ['dossiê da novidade retirado',r=>r.querySelector('[data-novidade-dossie]').remove(),/dossiê diferente/],
     ['título da peça trocado',r=>r.querySelector('[data-novidade-porta]').set_content('Título inventado'),/título da peça/],
     ['entrada sem página',r=>r.querySelector('[data-novidade-porta]').setAttribute('href','/pagina-fp1-inexistente'),/sem página/],
     ['data no futuro',r=>r.querySelector('[data-novidade] time').setAttribute('datetime','9999-12-31'),/futuro/],

@@ -1,4 +1,6 @@
 ---
+import Frase from '../Frase.astro';
+import { partesDoDossie } from '../../lib/dossies-conteudo.mjs';
 /**
  * AS PORTAS DO ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, pontos 1 e 4).
  *
@@ -74,7 +76,7 @@ const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
       <li>
         {p.tipo === 'lugar'
           ? <a class="indice-porta" href={p.href} data-lugar>{p.rotulo}</a>
-          : <a class="indice-porta" href={p.href}>{p.rotulo}</a>}
+          : <a class="indice-porta" href={p.href}>{p.chave === 'dossie' ? <span data-dossie-campo={`${p.href.split('/').filter(Boolean).at(-1)}:titulo`}><Frase partes={partesDoDossie(p.rotulo)} lang={lang} /></span> : p.rotulo}</a>}
         {p.filhos && p.filhos.length > 0 && <Astro.self portas={p.filhos} lang={lang} nivel={nivel + 1} classe={p.colunas ? `indice-lista-em-colunas${p.colunas === 'largas' ? ' indice-lista-em-colunas-largas' : ''}` : null} />}
       </li>
     )

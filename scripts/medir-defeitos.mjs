@@ -439,6 +439,7 @@ const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo', 'linha']);
  * dito, e não é uma surpresa.
  */
 const ROTAS_COM_ORIGEM_LIDA = new Set([
+  'dossies', 'dossie',
   'home',
   'lugares',
   /* AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) entram com elas, pela regra desta lista: são
@@ -474,6 +475,7 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
 ]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
+  'dossies', 'dossie',
   'home', 'temas', 'lugares',
   /* As cinco páginas das entradas por pergunta da vida (bloco PP1, 28.09.2026) entram no commit em que
      nascem, que é a regra desta lista. São páginas do leitor como a dos temas: a Emenda 15 governa-as, e

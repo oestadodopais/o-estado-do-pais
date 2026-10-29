@@ -1,4 +1,5 @@
 ---
+import LigacaoDoDossie from '../components/dossies/LigacaoDoDossie.astro';
 import PortaDoEstudoEO1 from '../components/PortaDoEstudoEO1.astro';
 import Base from '../layouts/Base.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
@@ -22,6 +23,7 @@ const itens = itensResolvidos(lang);
       <div class="discussao-cabecalho" data-discussao-cabecalho>
         <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>
         <span class="discussao-selos-do-titulo" data-discussao-selos-do-titulo>{e.titulo.filter(p => typeof p !== 'string' && p.claim).map(p => <Provenance id={p.claim} lang={lang} />)}</span>
+        <LigacaoDoDossie tipo="discussao" slug={e.slug} lang={lang} />
       </div>
       {e.abertura.map(p => <p class="explicacao-p discussao-abertura" data-discussao-paragrafo={p.caminho}><FraseDaExplicacao partes={p.pedacos} lang={lang} recibos={true} />{(e.recibos[p.caminho] ?? []).map(id => <Provenance id={id} lang={lang} />)}</p>)}
       {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-titulo ${e.slug}-${sec.id}`}>

@@ -122,6 +122,8 @@ export const ROUTES = {
   explicacoes: { pt: '/explicacoes', en: '/en/explainers' },
   leituraDaSemana: { pt: '/explicacoes/leitura-da-semana', en: '/en/explainers/weekly-reading' },
   explicacao: { pt: '/explicacoes/:slug', en: '/en/explainers/:slug' },
+  dossies: { pt: '/dossies', en: '/en/dossiers' },
+  dossie: { pt: '/dossies/:slug', en: '/en/dossiers/:slug' },
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },

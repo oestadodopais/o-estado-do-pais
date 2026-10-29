@@ -1,4 +1,5 @@
 ---
+import LigacaoDoDossie from '../components/dossies/LigacaoDoDossie.astro';
 import PortaDoEstudoEO1 from '../components/PortaDoEstudoEO1.astro';
 /**
  * UMA EXPLICAÇÃO, em `/explicacoes/<slug>` e `/en/explainers/<slug>` (bloco EX1, 05.10.2026, o ponto 3 do mandato).
@@ -38,6 +39,7 @@ const path = routePath('explicacao', lang, { slug });
 <Base lang={lang} path={path} title={`${e.tituloTexto} · ${SITE_NAME}`} description={e.tituloTexto}>
   <article class="explicacao" data-explicacao={slug}>
     <h1 class="explicacao-titulo" data-explicacao-titulo={slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h1>
+    <LigacaoDoDossie tipo="explicacao" slug={slug} lang={lang} />
     {e.abertura.map((p) => (
       <p class="explicacao-p explicacao-abertura" data-explicacao-paragrafo={p.caminho} data-explicacao-declarado><FraseDaExplicacao partes={p.pedacos} lang={lang} /></p>
     ))}

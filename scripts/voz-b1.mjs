@@ -1,3 +1,4 @@
+import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 /** B1: lista fechada em toda a superfície própria do estudo e da lista.
  * O corpo e as marcas dispensadas são conferidos pelos portões de conteúdo.
  * Nenhuma dispensa é feita pelo contentor data-registo-edicao: o índice e
@@ -166,6 +167,9 @@ export function verificaB1(raiz) {
         if (id && normal(el.textContent) === getClaim(id).unit) dispensados.add(el);
         else erros.push(`B1 unidade: ${rota}: unidade sem correspondência na linha ${id}.`);
       }
+      const do1 = conferirSuperficieDossies(main, lang, `${rota}/index.html`);
+      erros.push(...do1.erros);
+      for (const no of do1.nos) dispensados.add(no);
       const anda = (no, tecnico = false) => {
         if (dispensados.has(no)) return;
         if (no.nodeType === NodeType.TEXT_NODE) {

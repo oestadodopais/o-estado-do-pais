@@ -1,3 +1,4 @@
+import { dossieDaPeca } from './dossies.mjs';
 import { dataPublicacao } from './publicacao.mjs';
 import { WORKS } from '../data/studies.mjs';
 import { ITENS } from '../data/discussao.mjs';
@@ -21,6 +22,7 @@ export function pecasPublicadas(lang) {
     if (!e.publicado) continue;
     pecas.push({ id: `${tipo}:${e.slug}`, tipo, data: e.publicado, origem: 'publicacao.declarada', rota: tipo === 'discussao' ? portaDoItem(e.slug,lang) : routePath('explicacao',lang,{slug:e.slug}), titulo: resolverExplicacao(e,lang).titulo });
   }
+  for (const p of pecas) p.dossie = dossieDaPeca(p.tipo, p.id.slice(p.id.indexOf(':') + 1));
   const atualizacao = atualizacaoDaNovidade(mudancasDoRegisto(lang)[0],lang);
   if (atualizacao) pecas.push(atualizacao);
   // Empate: estudo antes das outras peças; depois identidade, para uma ordem estável nas duas línguas.

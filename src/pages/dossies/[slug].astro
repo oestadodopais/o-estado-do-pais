@@ -1,0 +1,7 @@
+---
+import DossieView from '../../views/DossieView.astro';
+import { DOSSIES } from '../../data/dossies.mjs';
+export function getStaticPaths() { return DOSSIES.map(d => ({params: {slug: d.slug}})); }
+const { slug } = Astro.params;
+---
+<DossieView lang="pt" slug={slug} />

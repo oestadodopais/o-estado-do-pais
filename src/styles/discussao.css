@@ -9,7 +9,7 @@
 .discussao-rotulo { font-family: var(--f-instr); font-size: 1rem; line-height: 1.4; margin: 0 0 .5rem; }
 .discussao-seccao[data-discussao-parte="opiniao"] { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
 .discussao-sumario { list-style: none; padding: 0; margin: 0; max-width: var(--measure); }
-.discussao-sumario a { display: block; padding: .75rem 0; min-height: 44px; font-family: var(--f-prosa); font-size: var(--t-leitura); line-height: 1.4; color: inherit; text-underline-offset: 3px; }
+.discussao-sumario > li > a { display: block; padding: .75rem 0; min-height: 44px; font-family: var(--f-prosa); font-size: var(--t-leitura); line-height: 1.4; color: inherit; text-underline-offset: 3px; }
 .discussao-literal { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .pp-discussao { margin-block: 1rem 1.5rem; padding-block: .75rem; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
 .pp-discussao h2 a { color: inherit; }
@@ -18,7 +18,7 @@
 
 /* V2-c: só o resumo da primeira página se torna compacto. */
 .pp-discussao .discussao-sumario { max-width: none; }
-.pp-discussao .discussao-sumario a { padding-block: .5rem; font-size: 1rem; }
+.pp-discussao .discussao-sumario > li > a { padding-block: .5rem; font-size: 1rem; }
 /* Os itens do bloco da primeira página ficam um por linha em todas as larguras, sem separador: o «·» entre itens
    em linha (V2-c) aparecia como uma marca só no segundo quando o primeiro título ocupava a linha inteira (o leitor,
    20.10.2026). Os números dos títulos não ficam a negrito aqui, para os dois títulos terem o mesmo peso. */

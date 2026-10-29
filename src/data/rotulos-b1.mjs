@@ -1,3 +1,4 @@
+import { DOSSIES } from './dossies.mjs';
 /** Lista fechada da superfície B1, estudos e lista, decisão de 17.09.2026.
  * A mobília global e os campos de conferência dentro da dobra mantêm as suas listas.
  */
@@ -22,7 +23,14 @@
  *     mudanças; o que não cabe não desaparece, e esta é a porta para ele.
  */
 export const ROTULOS_B1 = {
-  pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', fontes: 'Fontes e verificação',
+  pt: { dossies: 'Dossiês',
+    dossieOrcamentoTitulo: DOSSIES[0].titulo.pt,
+    dossieOrcamentoAmbito: DOSSIES[0].ambito.pt,
+    dossieOrcamentoLigacao: `Dossiê: ${DOSSIES[0].titulo.pt} →`,
+    dossieCasaTitulo: DOSSIES[1].titulo.pt,
+    dossieCasaAmbito: DOSSIES[1].ambito.pt,
+    dossieCasaLigacao: `Dossiê: ${DOSSIES[1].titulo.pt} →`,
+    valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', fontes: 'Fontes e verificação',
     fontesDoParagrafo: 'Fontes deste parágrafo',
     edicao: 'Edição tal como foi publicada', edicaoPreparacao: 'Edição em preparação', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
     pais: 'Portugal', outraLingua: '(em inglês)', indice: 'Nesta página',
@@ -44,7 +52,14 @@ export const ROTULOS_B1 = {
        aqui para a lista fechada da B1 o conhecer, em vez de escrito à mão na vista. */
     estudoDoOrcamento: 'O estudo do Orçamento',
     sucedeA: 'Sucede a', e: 'e' },
-  en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
+  en: { dossies: 'Dossiers',
+    dossieOrcamentoTitulo: DOSSIES[0].titulo.en,
+    dossieOrcamentoAmbito: DOSSIES[0].ambito.en,
+    dossieOrcamentoLigacao: `Dossier: ${DOSSIES[0].titulo.en} →`,
+    dossieCasaTitulo: DOSSIES[1].titulo.en,
+    dossieCasaAmbito: DOSSIES[1].ambito.en,
+    dossieCasaLigacao: `Dossier: ${DOSSIES[1].titulo.en} →`,
+    valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     fontesDoParagrafo: 'Sources for this paragraph',
     edicao: 'Edition as published', edicaoPreparacao: 'Edition in preparation', publicado: 'published on', estudoPublicado: 'Study published',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',

@@ -1,3 +1,4 @@
+import { DOSSIES } from '../data/dossies.mjs';
 /**
  * ===========================================================================
  * O ÍNDICE · o resolvedor (bloco R3, 04.10.2026, `design/observatorio/BRIEF-R3-o-indice-do-sitio.md`)
@@ -64,6 +65,8 @@ import { slugsDasExplicacoes, explicacaoResolvida } from './explicacoes.mjs';
  */
 export const COMO_ENTRA = {
   discussao: { como: 'porta', razao: 'As afirmações públicas ao lado das fontes, nos itens do V2-b.' },
+  dossies: { como: 'porta', razao: 'DO1: índice dos assuntos vivos.' },
+  dossie: { como: 'lista', razao: 'DO1: os assuntos declarados em DOSSIES.' },
   home: { como: 'porta', razao: 'A primeira página, com o nome que o menu lhe dá.' },
   temas: { como: 'porta', razao: 'O índice dos temas, com os sete por baixo.' },
   entradaDinheiro: { como: 'lista', razao: 'Uma página de tema, das declarações dos temas (`ENTRADAS`).' },
@@ -290,7 +293,7 @@ export function indiceDoSitio(lang) {
   return {
     pais: {
       titulo: s.indice.seccoes.pais,
-      portas: [pagina('home', lang, r.pais), pagina('discussao', lang, s.nav.discussao), pagina('temas', lang, s.nav.temas, temas(lang)), pagina('areas', lang, s.nav.areas, areas, 'largas')],
+      portas: [pagina('home', lang, r.pais), pagina('dossies', lang, s.dossies.titulo, DOSSIES.map(d => ({ tipo: 'pagina', chave: 'dossie', href: routePath('dossie', lang, { slug: d.slug }), rotulo: d.titulo[lang] }))), pagina('discussao', lang, s.nav.discussao), pagina('temas', lang, s.nav.temas, temas(lang)), pagina('areas', lang, s.nav.areas, areas, 'largas')],
     },
     lugares: {
       titulo: s.indice.seccoes.lugares,

@@ -1,4 +1,5 @@
 ---
+import LigacaoDoDossie from '../components/dossies/LigacaoDoDossie.astro';
 /** B1: uma página por estudo, corpo do registo e edição fixada no fim. */
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Base from '../layouts/Base.astro';
@@ -105,6 +106,7 @@ const jsonld = {
     <div class="estudo-b1 texto-corpo" style={`--seccoes: ${seccoes}`} data-seccoes={seccoes}>
       <div id="documento" data-registo-edicao={chave}>
         <div class="estudo-b1-titulo"><PecasDoEstudo pecas={titulo} lang={lang} /></div>
+        <LigacaoDoDossie tipo="estudo" slug={slug} lang={lang} />
         <NotaDoSucessor work={work} lang={lang} />
     {titulos.length > 0 && (
       <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k">
@@ -172,6 +174,7 @@ const jsonld = {
   ) : (
     <div class="estudo-b1">
       <TituloDeTrabalho as="h1" class="estudo-titulo" edicao={principal} lang={lang} />
+      <LigacaoDoDossie tipo="estudo" slug={slug} lang={lang} />
       {/* E1: a página de uma língua sem edição própria diz também que estudo lhe
           sucede e a que estudos ele sucede, como a página com o corpo do registo. */}
       <NotaDoSucessor work={work} lang={lang} />

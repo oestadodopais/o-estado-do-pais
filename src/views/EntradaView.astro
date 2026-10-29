@@ -1,4 +1,6 @@
 ---
+import ListaDeDossies from '../components/dossies/ListaDeDossies.astro';
+import { dossiesDaLista } from '../lib/dossies-conteudo.mjs';
 /** N1: uma página por assunto, com os cartões e os estudos próprios. */
 import Base from '../layouts/Base.astro';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
@@ -52,6 +54,8 @@ const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
       <PortasDaDiscussao lang={lang} linhas={seccao.cartoes} />
     </section>
   ))}
+
+  {dossiesDaLista(lang, entrada.id).length > 0 && <section class="pais-sec" aria-labelledby="dossies-k"><div class="sec-head"><h2 class="eyebrow" id="dossies-k">{s.dossies.plural}</h2></div><ListaDeDossies lang={lang} porta={entrada.id} /></section>}
 
   {estudos.length > 0 && (
     <section class="pais-sec" id="estudos-da-entrada" aria-labelledby="estudos-da-entrada-k">
