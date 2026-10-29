@@ -5,11 +5,11 @@ from pathlib import Path
 import subprocess
 
 
-def git(repo, *args):
+def git(repo, *args, bruto=False):
     r = subprocess.run(['git', '-C', str(repo), *args], capture_output=True, text=True)
     if r.returncode:
         raise ValueError('git ' + args[0] + ' não conseguiu conferir a árvore')
-    return r.stdout.strip()
+    return r.stdout if bruto else r.stdout.strip()
 
 
 def raiz(repo):

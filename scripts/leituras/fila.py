@@ -68,16 +68,19 @@ def conferir(linhas, bloco, hoje=None):
     alvo = next((d for d in linhas if d['Bloco'] == bloco), None)
     if alvo is None:
         raise ValueError('fila: bloco fora da fila: ' + bloco)
+    hoje = hoje or datetime.now(timezone.utc).date()
+    sexta_maquinaria = alvo['Tipo'] == 'maquinaria' and hoje.weekday() == 4
     for d in linhas:
         if d['Ordem'] >= alvo['Ordem']:
+            continue
+        if sexta_maquinaria and d['Tipo'] in ('conteúdo', 'navegação'):
             continue
         if d['Estado'].casefold().startswith('à espera'):
             continue
         if re.search(r'condição:\s*' + re.escape(bloco) + r'(?![\w-])', d['linha']):
             continue
         raise ValueError(f"fila: {bloco} espera por {d['Bloco']}, que está à sua frente")
-    hoje = hoje or datetime.now(timezone.utc).date()
-    if alvo['Tipo'] != 'maquinaria' or hoje.weekday() == 4:
+    if alvo['Tipo'] != 'maquinaria' or sexta_maquinaria:
         return
     for d in linhas:
         estado = d['Estado'].casefold()

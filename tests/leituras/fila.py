@@ -83,10 +83,11 @@ class Fila(unittest.TestCase):
             self.assertEqual(len(saida.getvalue().splitlines()), quantidade)
             self.assertTrue(saida.getvalue().startswith('1 · M1'))
 
-    def test_sexta_nao_dispensa_ordem(self):
+    def test_sexta_maquinaria_passa_conteudo_pronto(self):
         self.p.write_text(self.texto.replace('| 1 |', '| 3 |'))
+        self.conferir(dia=date(2026, 10, 30))
         with self.assertRaisesRegex(ValueError, 'à sua frente'):
-            self.conferir(dia=date(2026, 10, 30))
+            self.conferir(dia=date(2026, 10, 29))
 
     def test_espera_de_fonte_e_condicao_sem_colisao(self):
         self.p.write_text(self.texto.replace('mandato escrito ontem', 'à espera de fonte'))

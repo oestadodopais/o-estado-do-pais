@@ -1,0 +1,51 @@
+{
+  "conferencias": [
+    {
+      "comando": "python3 tests/leituras/pl1.py",
+      "ficheiro_codigo": "pl1-3-pl1-inicial.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/pl1.py",
+      "ficheiro_codigo": "pl1-3-pl1.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/fila.py",
+      "ficheiro_codigo": "pl1-3-fila.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/ferramenta_aterrar.py",
+      "ficheiro_codigo": "pl1-3-aterrar.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/ferramenta_pre_voo.py",
+      "ficheiro_codigo": "pl1-3-pre-voo.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "ficheiro_codigo": "pl1-3-mapa.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 scripts/leituras/conferir-regras.py CLAUDE.md CLAUDE.md --planta",
+      "ficheiro_codigo": "pl1-3-regras.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "npm run check:privacidade",
+      "ficheiro_codigo": "pl1-3-privacidade.codigo",
+      "codigo": 0
+    }
+  ],
+  "corridas_dirigidas": 8,
+  "corridas_inteiras": 0,
+  "nota_corridas": "A suite PL1 foi repetida depois da planta com Git real e da preservação dos espaços nos nomes dos ficheiros.",
+  "arranque_bytes": 2477,
+  "ambiguidade_PL1_1": "À sexta-feira UTC, maquinaria pode ultrapassar conteúdo ou navegação, mesmo pronto; nos outros dias mantém-se a ordem e a condição explícita.",
+  "check_leituras": "pelo lugar de direção, pendente para esta cabeça",
+  "higiene": "Achados 7, 8, 9 e 13 da adenda D, incluindo as passagens do custo por completar pelo lançador."
+}

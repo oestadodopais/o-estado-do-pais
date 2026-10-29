@@ -200,13 +200,25 @@ class Aterragem:
                         conhecidos.add(m.group())
         return conhecidos
 
+    def conferir_ficheiros_registos(self, base):
+        self.exigir(isinstance(base, str) and bool(re.fullmatch(r'[0-9a-f]{40,64}', base)) and base != self.cabeca,
+                    'recibo só de registos sem base de comparação válida')
+        # Sem deteção de renomes: confere tanto a origem como o destino.
+        ficheiros = [f for f in git(self.sitio, 'diff', '--no-renames', '--name-only', '-z',
+                                    base + '...' + self.cabeca, bruto=True).split('\0') if f]
+        fora = [f for f in ficheiros if f != 'DECISIONS.md' and not f.startswith(('design/', 'scripts/leituras/'))]
+        self.exigir(not fora, 'aterragem só de registos muda ficheiros fora do âmbito: ' + ', '.join(fora))
+        self.recibo['base_registos'] = base
+        self.recibo['ficheiros_registos'] = ficheiros
+
     def conferir_blocos(self):
         blocos = os.environ.get('OEDP_BLOCOS', '').split()
         self.exigir(len(set(blocos)) == len(blocos) and
                     all(re.fullmatch(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', b) for b in blocos),
                     'OEDP_BLOCOS tem blocos repetidos ou inválidos')
         self.recibo['blocos'] = blocos
-        if git(self.sitio, 'rev-parse', 'main') == self.cabeca:
+        base = git(self.sitio, 'rev-parse', 'main')
+        if base == self.cabeca:
             provados = [r for r in self.recibos_anteriores() if r.get('cabeca') == self.cabeca and
                         r.get('blocos') == blocos and
                         ((blocos and r.get('custos_por_bloco')) or (not blocos and r.get('so_registos'))) and
@@ -216,6 +228,8 @@ class Aterragem:
             for chave in ('custo', 'custos_por_bloco', 'so_registos', 'sem_custo', 'decisao_do_financiador'):
                 if chave in anterior:
                     self.recibo[chave] = anterior[chave]
+            if self.recibo.get('so_registos'):
+                self.conferir_ficheiros_registos(anterior.get('base_registos'))
             return
         assuntos = git(self.sitio, 'log', '--reverse', '--format=%s', 'main..HEAD').splitlines()
         conhecidos = self.blocos_conhecidos()
@@ -225,6 +239,7 @@ class Aterragem:
         if not blocos:
             self.exigir(bool(assuntos) and registo(assuntos[0]) and all(registo(a) for a in assuntos),
                         'falta OEDP_BLOCOS; só um ramo de registos com prefixo conhecido dispensa blocos')
+            self.conferir_ficheiros_registos(base)
             self.recibo['so_registos'] = True
             self.recibo['custos_por_bloco'] = {}
             return
@@ -307,8 +322,19 @@ class Aterragem:
         self.exigir(set(por_bloco) == set(self.recibo['blocos']) and bool(por_bloco),
                     'falta custo-<data>.json identificado pelo campo bloco para: ' +
                     ' '.join(sorted(set(self.recibo['blocos']) - set(por_bloco))))
-        decisao = os.environ.get('ATERRAR_DECISAO', '').strip() or self.recibo.get('decisao_do_financiador', '')
+        decisao = os.environ.get('ATERRAR_DECISAO', '').strip()
+        anterior = self.recibo.get('decisao_do_financiador')
+        if anterior:
+            self.exigir(decisao == anterior, 'a retoma exige ATERRAR_DECISAO igual à decisão guardada')
         if decisao:
+            data = re.search(r'(?<!\d)(\d{2}\.\d{2}\.\d{4})(?!\d)', decisao)
+            self.exigir(bool(data), 'ATERRAR_DECISAO exige data DD.MM.AAAA')
+            try:
+                datetime.datetime.strptime(data.group(), '%d.%m.%Y')
+            except ValueError:
+                raise Parar(9, 'ATERRAR_DECISAO traz uma data inválida')
+            restante = (decisao[:data.start()] + decisao[data.end():]).strip()
+            self.exigir(len(restante) >= 20, 'ATERRAR_DECISAO exige vinte carateres além da data')
             self.recibo['decisao_do_financiador'] = decisao
         medidas = {}
         def numero(v):

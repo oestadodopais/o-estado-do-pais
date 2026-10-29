@@ -14,6 +14,7 @@ GUIOES = Path(__file__).resolve().parents[2] / 'scripts/leituras'
 sys.path.insert(0, str(GUIOES))
 import aterrar
 import estado
+from apoio_ferramentas import repo, worktree, git as git_ensaio, commit
 
 
 def modulo(nome):
@@ -143,12 +144,69 @@ class Lotes(unittest.TestCase):
 
     def test_so_registos_carrega_custo_de_outro_bloco(self):
         self.custo({'pontos_do_bloco': None})
-        with patch.dict(os.environ, OEDP_BLOCOS='', ATERRAR_SEM_CUSTO='registos de fecho'), patch.object(aterrar, 'git', side_effect=['b' * 40, 'Lote-r: custos e registos']):
+        with patch.dict(os.environ, OEDP_BLOCOS='', ATERRAR_SEM_CUSTO='registos de fecho'), patch.object(aterrar, 'git', side_effect=['b' * 40, 'Lote-r: custos e registos', 'design/custo.json\0scripts/leituras/estado.py\0DECISIONS.md\0']):
             self.a.conferir_blocos()
             self.a.conferir_custo()
         self.assertTrue(self.a.recibo['so_registos'])
         self.assertEqual(self.a.recibo['custos_por_bloco'], {})
         self.assertEqual(self.a.recibo['sem_custo'], 'registos de fecho')
+
+    def test_ramo_de_registos_recusa_src_e_lista_todos_os_ficheiros(self):
+        proibidos = ['src/pagina.astro', 'ledger/linha.yml', 'tests/prova.py', 'public/imagem.svg', 'scripts/outro.py', 'package.json']
+        with patch.dict(os.environ, OEDP_BLOCOS=''), patch.object(aterrar, 'git', side_effect=['b' * 40, 'Lote-r: registos', '\0'.join(proibidos) + '\0']), self.assertRaises(aterrar.Parar) as e:
+            self.a.conferir_blocos()
+        for f in proibidos:
+            self.assertIn(f, e.exception.motivo)
+        self.assertNotIn('so_registos', self.a.recibo)
+
+    def test_ramo_git_de_registos_recusa_src_e_espaco_no_nome(self):
+        principal = repo(self.p / 'git-principal', 'main')
+        ramo = worktree(principal, self.p / 'git-registos', 'A1-r')
+        (ramo / 'design/especime-v3/medicoes/A1').mkdir(parents=True)
+        proibidos = ['src/planta.txt', ' design/fora.txt']
+        for f in proibidos:
+            alvo = ramo / f; alvo.parent.mkdir(parents=True, exist_ok=True); alvo.write_text('planta')
+        git_ensaio(ramo, 'add', '--', *proibidos)
+        commit(ramo, 'A1-r: registos com alterações proibidas')
+        self.a.sitio = ramo; self.a.cabeca = git_ensaio(ramo, 'rev-parse', 'HEAD')
+        with patch.dict(os.environ, OEDP_BLOCOS=''), self.assertRaises(aterrar.Parar) as e:
+            self.a.conferir_blocos()
+        for f in proibidos:
+            self.assertIn(f, e.exception.motivo)
+
+    def test_retoma_de_registos_confere_a_base_original(self):
+        anterior = {'cabeca': self.a.cabeca, 'blocos': [], 'so_registos': True, 'base_registos': 'b' * 40,
+                    'passos': [{'passo': 'fundir-main', 'codigo': 0}]}
+        with patch.dict(os.environ, OEDP_BLOCOS=''), patch.object(aterrar, 'git', side_effect=[self.a.cabeca, 'src/pagina.astro\0']) as g, patch.object(self.a, 'recibos_anteriores', return_value=[anterior]), self.assertRaises(aterrar.Parar) as e:
+            self.a.conferir_blocos()
+        self.assertIn('src/pagina.astro', e.exception.motivo)
+        self.assertIn('--no-renames', g.call_args.args)
+        self.assertEqual(g.call_args.args[-1], 'b' * 40 + '...' + self.a.cabeca)
+
+    def test_decisao_sem_data_ou_curta_recusada(self):
+        f = self.custo({'pontos_do_bloco': 12})
+        for decisao, motivo in [('autorizar este custo pelo motivo escrito', 'data DD.MM.AAAA'),
+                                ('29.10.2026: sim', 'vinte carateres'), ('31.02.2026: autorização escrita com justificação', 'data inválida')]:
+            with patch.dict(os.environ, ATERRAR_DECISAO=decisao), patch.object(aterrar, 'git', return_value=f), self.assertRaises(aterrar.Parar) as e:
+                self.a.conferir_custo()
+            self.assertIn(motivo, e.exception.motivo)
+
+    def test_retoma_exige_repetir_decisao_guardada(self):
+        f = self.custo({'pontos_do_bloco': 12})
+        decisao = '29.10.2026: autorização escrita com justificação'
+        anterior = {'cabeca': self.a.cabeca, 'blocos': ['A1'], 'custo': [f], 'custos_por_bloco': {'A1': f},
+                    'decisao_do_financiador': decisao, 'passos': [{'passo': 'fundir-main', 'codigo': 0}]}
+        for repetida in ('', '29.10.2026: autorização diferente com justificação', decisao):
+            self.a.recibo = {}
+            with patch.dict(os.environ, OEDP_BLOCOS='A1', ATERRAR_DECISAO=repetida), patch.object(aterrar, 'git', return_value=self.a.cabeca), patch.object(self.a, 'recibos_anteriores', return_value=[anterior]):
+                self.a.conferir_blocos()
+                if repetida == decisao:
+                    self.a.conferir_custo()
+                    self.assertEqual(self.a.recibo['decisao_do_financiador'], decisao)
+                else:
+                    with self.assertRaises(aterrar.Parar) as e:
+                        self.a.conferir_custo()
+                    self.assertIn('igual à decisão guardada', e.exception.motivo)
 
     def test_prefixo_de_registos_exige_nome_conhecido_e_caixa(self):
         for assunto in ('Desconhecido-r: registos', 'lote-r: registos', 'registos: fecho', 'Lote-r: fecho\nA1: conteúdo'):
@@ -166,8 +224,8 @@ class Lotes(unittest.TestCase):
 
     def test_retoma_so_de_registos(self):
         anterior = {'cabeca': self.a.cabeca, 'blocos': [], 'so_registos': True, 'sem_custo': 'registos de fecho',
-                    'custos_por_bloco': {}, 'passos': [{'passo': 'fundir-main', 'codigo': 0}]}
-        with patch.dict(os.environ, OEDP_BLOCOS=''), patch.object(aterrar, 'git', return_value=self.a.cabeca), patch.object(self.a, 'recibos_anteriores', return_value=[anterior]):
+                    'custos_por_bloco': {}, 'base_registos': 'b' * 40, 'passos': [{'passo': 'fundir-main', 'codigo': 0}]}
+        with patch.dict(os.environ, OEDP_BLOCOS=''), patch.object(aterrar, 'git', side_effect=[self.a.cabeca, 'design/fecho.md\0']), patch.object(self.a, 'recibos_anteriores', return_value=[anterior]):
             self.a.conferir_blocos(); self.a.conferir_custo()
         self.assertTrue(self.a.recibo['so_registos'])
         self.assertEqual(self.a.recibo['sem_custo'], 'registos de fecho')
