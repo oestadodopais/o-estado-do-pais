@@ -776,3 +776,7 @@ O `scripts/leituras/pre-voo.py:2` («Confere as condições de arranque antes de
 ## OG1-C: a âncora de atribuição, 29.10.2026
 
 As provas em `ledger/provas/og1a/provas.json` guardam `atribuicao` (modo, aliases, frase, passagem quando existe e blocos), com `source_sha256`; `scripts/afirmacoes-og1.mjs` exige-a só para `OG1.afirmacoes`, compara-a com a releitura do motor e planta a sua ausência e adulteração. `tests/discussao/og1.mjs` confere os blocos no corpo alojado e a frase e a nota nas duas edições de `src/views/LinhaView.astro`; `scripts/gate-html.mjs` confere o campo `atribuicao.frase` diretamente contra a prova.
+
+## HB1-e: avaliação bancária de setembro de 2026, 29.10.2026
+
+As linhas `hab-ine-avaliacao-mediana` e `hab-ine-avaliacao-homologa` vêm do destaque do INE de 27.10.2026, pela travessia `ledger/cruzamentos/hb1.json`; as secções 6 e 11 e a data declarada em `src/data/studies.mjs` identificam a edição de 29.10.2026. Os nomes, unidades, lugares e famílias seguem os geradores HB1; a medição da L1 e as plantas estão em `design/especime-v3/medicoes/hb1-e-2026-10-29/medir-l1.mjs`.

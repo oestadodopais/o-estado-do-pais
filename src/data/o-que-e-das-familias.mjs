@@ -22219,6 +22219,66 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "hab-ine-avaliacao-homologa": {
+    "nome": {
+      "pt": "Variação homóloga da avaliação bancária na habitação",
+      "en": "Year-on-year change in the bank appraisal of housing"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra variação homóloga da avaliação bancária na habitação"
+      ],
+      "en": [
+        "The measure shows year-on-year change in the bank appraisal of housing"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-avaliacao-homologa"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-avaliacao-homologa"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ine-avaliacao-mediana": {
+    "nome": {
+      "pt": "Valor mediano da avaliação bancária na habitação",
+      "en": "Median bank appraisal value of housing"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra valor mediano da avaliação bancária na habitação"
+      ],
+      "en": [
+        "The measure shows median bank appraisal value of housing"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-avaliacao-mediana"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-avaliacao-mediana"
+        },
+        "."
+      ]
+    }
+  },
   "hab-ine-calendario-juro": {
     "nome": {
       "pt": "Divulgação do juro implícito na habitação",

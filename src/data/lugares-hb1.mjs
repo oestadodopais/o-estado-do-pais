@@ -6,6 +6,8 @@
  * As observações Eurostat leem a coordenada selada em lugar-da-incorporacao.
  */
 export const LUGARES_HB1 = {
+  "hab-ine-avaliacao-mediana": {"pt": "Portugal", "en": "Portugal"},
+  "hab-ine-avaliacao-homologa": {"pt": "Portugal", "en": "Portugal"},
   /* HB1-b: cada diferença conserva a geografia da única componente Eurostat.
      A definição é metainformação do Eurostat, não uma observação territorial. */
   "der-hab-preco-rendimento-acima-2015-eu-2024": {"pt": "União Europeia", "en": "European Union"},

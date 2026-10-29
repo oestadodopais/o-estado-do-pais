@@ -2884,6 +2884,48 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "hab-ine-avaliacao-homologa": {
+    "pt": [
+      "% de variação homóloga"
+    ],
+    "en": [
+      "% year-on-year change"
+    ],
+    "apoio": [
+      {
+        "campo": "name",
+        "literal": "taxa de variação"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-ine-avaliacao-mediana": {
+    "pt": [
+      "euros por metro quadrado"
+    ],
+    "en": [
+      "euros per square metre"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "€/m2"
+      },
+      {
+        "campo": "name",
+        "literal": "valor mediano de avaliação bancária na habitação"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "hab-ine-calendario-juro": {
     "pt": [
       "data anunciada"

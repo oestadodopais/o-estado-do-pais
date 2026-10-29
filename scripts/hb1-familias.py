@@ -72,6 +72,8 @@ hab-ine-censos-0012517-0|Proporção de alojamentos vagos nos Censos|Share of va
 hab-ine-iphab-homologa|Variação homóloga dos preços da habitação|Annual change in house prices
 hab-ine-censos-0012501-40|Alojamentos vagos para venda ou arrendamento|Dwellings vacant for sale or rent
 hab-ine-censos-0012501-41|Alojamentos vagos por outros motivos|Dwellings vacant for other reasons
+hab-ine-avaliacao-mediana|Valor mediano da avaliação bancária na habitação|Median bank appraisal value of housing
+hab-ine-avaliacao-homologa|Variação homóloga da avaliação bancária na habitação|Year-on-year change in the bank appraisal of housing
 hab-ine-juro-implicito|Taxa de juro implícita no crédito à habitação|Implicit interest rate on housing loans
 hab-oe-oferta-publica|Orçamento da oferta e reabilitação habitacional|Budget for housing supply and rehabilitation
 hab-oe-apoio-arrendamento|Orçamento do acesso à habitação e apoio ao arrendamento|Budget for housing access and rental support

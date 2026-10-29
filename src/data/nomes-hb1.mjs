@@ -596,6 +596,14 @@ export const NOMES_HB1 = {
     "pt": "Taxa de juro implícita no crédito à habitação",
     "en": "Implicit interest rate on housing loans"
   },
+  "hab-ine-avaliacao-mediana": {
+    "pt": "Valor mediano da avaliação bancária na habitação",
+    "en": "Median bank appraisal value of housing"
+  },
+  "hab-ine-avaliacao-homologa": {
+    "pt": "Variação homóloga da avaliação bancária na habitação",
+    "en": "Year-on-year change in the bank appraisal of housing"
+  },
   "hab-oe-oferta-publica": {
     "pt": "Orçamento da oferta e reabilitação habitacional",
     "en": "Budget for housing supply and rehabilitation"

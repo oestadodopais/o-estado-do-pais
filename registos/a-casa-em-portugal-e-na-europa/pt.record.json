@@ -4076,6 +4076,24 @@
      "source_sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa",
      "start": 297,
      "value": "3,194"
+    },
+    {
+     "end": 419,
+     "printed": "2 278",
+     "row": "hab-ine-avaliacao-mediana",
+     "source_body": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
+     "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+     "start": 414,
+     "value": "2 278"
+    },
+    {
+     "end": 470,
+     "printed": "14,2",
+     "row": "hab-ine-avaliacao-homologa",
+     "source_body": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
+     "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+     "start": 466,
+     "value": "14,2"
     }
    ],
    "i": 32,
@@ -4125,15 +4143,44 @@
      "sha256_linha": "1e68adb6a0e0f7990bb04fdf2327bd9908eb55d68ce3fb00c213c77db0d99875",
      "texto": "setembro de 2026",
      "tipo": "periodo"
+    },
+    {
+     "fim": 419,
+     "id": "hab-ine-avaliacao-mediana",
+     "inicio": 414,
+     "livro": "HB",
+     "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
+     "texto": "2 278",
+     "tipo": "valor"
+    },
+    {
+     "fim": 464,
+     "id": "hab-ine-avaliacao-mediana",
+     "inicio": 448,
+     "livro": "HB",
+     "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
+     "texto": "setembro de 2026",
+     "tipo": "periodo"
+    },
+    {
+     "fim": 470,
+     "id": "hab-ine-avaliacao-homologa",
+     "inicio": 466,
+     "livro": "HB",
+     "sha256_linha": "04654f4c440639405da8b01e09daae43cd3bbc988b5f68508e9b5924377ebc2d",
+     "texto": "14,2",
+     "tipo": "valor"
     }
    ],
    "source_rows": [
     "hab-bpstat-12533724",
     "hab-bpstat-12533735",
     "hab-bpstat-12557378",
-    "hab-ine-juro-implicito"
+    "hab-ine-juro-implicito",
+    "hab-ine-avaliacao-mediana",
+    "hab-ine-avaliacao-homologa"
    ],
-   "text": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões. A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,194 % em setembro de 2026."
+   "text": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões. A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,194 % em setembro de 2026. A avaliação bancária das casas, feita quando se pede crédito para as comprar, estava em 2 278 euros por metro quadrado em setembro de 2026, 14,2 % acima de um ano antes, pelo INE."
   },
   {
    "figures": [],
@@ -6068,9 +6115,18 @@
      "tipo": "valor"
     },
     {
-     "fim": 375,
+     "fim": 201,
+     "id": "hab-ine-avaliacao-mediana",
+     "inicio": 185,
+     "livro": "HB",
+     "sha256_linha": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
+     "texto": "setembro de 2026",
+     "tipo": "periodo"
+    },
+    {
+     "fim": 447,
      "id": "oe-2027-calendario-generalidade",
-     "inicio": 357,
+     "inicio": 429,
      "livro": "AN",
      "sha256_linha": "0d05886d85314eed2c5b80e9b41efb8c1c5b5e3779b7d7815604b98242595c31",
      "texto": "27 e 28 de outubro",
@@ -6082,9 +6138,10 @@
     "hab-ine-preco-mediano",
     "hab-ine-calendario-juro",
     "hab-ine-calendario-precos-locais",
+    "hab-ine-avaliacao-mediana",
     "oe-2027-calendario-generalidade"
    ],
-   "text": "A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 é votado na generalidade a 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira)."
+   "text": "A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, e a avaliação bancária de setembro de 2026 já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 teve o debate e a votação na generalidade marcados para 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira, e o item do Orçamento em «O que se discute» tem o resultado da votação)."
   }
  ],
  "edition": "A casa em Portugal e na Europa",
@@ -12239,6 +12296,140 @@
    "unit": "texto",
    "unit_check": null,
    "value": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida."
+  },
+  "hab-ine-avaliacao-homologa": {
+   "access_date": "2026-10-29",
+   "afirmacao": false,
+   "attributed_to": [
+    "INE"
+   ],
+   "document": {
+    "edition": "2026-09",
+    "file": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
+    "kind": "ficheiro",
+    "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+    "page": 1,
+    "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+    "title": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO"
+   },
+   "document_checks": {
+    "published_at": {
+     "locator": 1,
+     "status": "conferido",
+     "text": "27 de outubro de 2026"
+    },
+    "title": {
+     "locator": 1,
+     "status": "conferido",
+     "text": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO"
+    }
+   },
+   "evidence": {
+    "file": "source/hb1e-ine-avaliacao-2026-09.pdf",
+    "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+    "sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560"
+   },
+   "excerpt": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo.",
+   "excerpt_parts": [
+    {
+     "box": [
+      42,
+      243,
+      556,
+      304
+     ],
+     "method": "fitz",
+     "page": 1,
+     "text": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo."
+    }
+   ],
+   "fetched_at": "2026-10-29T07:29:25.216447+00:00",
+   "id": "hab-ine-avaliacao-homologa",
+   "invoca": [],
+   "measure": "taxa de variação",
+   "name": "taxa de variação",
+   "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+   "note": "A taxa de variação homóloga (em termos homólogos, no texto do INE) do valor mediano de avaliação bancária na habitação, setembro de 2026 face a setembro de 2025; destaque de 27 de outubro de 2026.",
+   "period": "2026-09",
+   "published_at": "2026-10-27",
+   "reference_date": "2026-09",
+   "source_excerpt": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo.",
+   "source_type": "government",
+   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=824195206&att_display=n&att_download=y",
+   "source_value": "14,2",
+   "unit": "%",
+   "unit_check": {
+    "text": "%",
+    "unit": "%"
+   },
+   "value": "14,2"
+  },
+  "hab-ine-avaliacao-mediana": {
+   "access_date": "2026-10-29",
+   "afirmacao": false,
+   "attributed_to": [
+    "INE"
+   ],
+   "document": {
+    "edition": "2026-09",
+    "file": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf",
+    "kind": "ficheiro",
+    "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+    "page": 1,
+    "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+    "title": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO"
+   },
+   "document_checks": {
+    "published_at": {
+     "locator": 1,
+     "status": "conferido",
+     "text": "27 de outubro de 2026"
+    },
+    "title": {
+     "locator": 1,
+     "status": "conferido",
+     "text": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO"
+    }
+   },
+   "evidence": {
+    "file": "source/hb1e-ine-avaliacao-2026-09.pdf",
+    "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+    "sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560"
+   },
+   "excerpt": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo.",
+   "excerpt_parts": [
+    {
+     "box": [
+      42,
+      243,
+      556,
+      304
+     ],
+     "method": "fitz",
+     "page": 1,
+     "text": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo."
+    }
+   ],
+   "fetched_at": "2026-10-29T07:29:25.216447+00:00",
+   "id": "hab-ine-avaliacao-mediana",
+   "invoca": [],
+   "measure": "valor mediano de avaliação bancária na habitação",
+   "name": "valor mediano de avaliação bancária na habitação",
+   "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+   "note": "Destaque de 27 de outubro de 2026 (setembro de 2026). O bloco do cabeçalho do PDF imprime o nome do inquérito sem cedilha («HABITACÃO»); a ligação do título faz-se pelo rodapé, que o imprime com cedilha.",
+   "period": "2026-09",
+   "published_at": "2026-10-27",
+   "reference_date": "2026-09",
+   "source_excerpt": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo.",
+   "source_type": "government",
+   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=824195206&att_display=n&att_download=y",
+   "source_value": "2 278",
+   "unit": "€/m2",
+   "unit_check": {
+    "text": "euros por metro quadrado",
+    "unit": "€/m2"
+   },
+   "value": "2 278"
   },
   "hab-ine-calendario-juro": {
    "access_date": "2026-10-19",

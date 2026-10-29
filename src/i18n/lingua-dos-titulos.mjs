@@ -1369,6 +1369,7 @@ export function linguaDoLocalizador(texto, titulo, lang='pt') {
 }
 // HB1: cadeias lidas nos documentos e linhas de origem.
 Object.assign(LINGUA_DOS_TITULOS, {
+  "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO": "pt",
   "House price index, deflated - annual data": "en",
   "House price index - quarterly data": "en",
   "Standardised house price-to-income ratio - annual data": "en",
@@ -1435,6 +1436,8 @@ Object.assign(LINGUA_DOS_TITULOS, {
 
 // HB1: cadeias lidas nos documentos e linhas de origem.
 Object.assign(LINGUA_DOS_ROTULOS, {
+  "taxa de variação": "pt",
+  "valor mediano de avaliação bancária na habitação": "pt",
   "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025": "pt",
   "House price index, deflated, Annual average index, 2015=100, Portugal, 2025": "en",
   "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025": "pt",

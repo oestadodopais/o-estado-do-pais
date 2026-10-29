@@ -42,7 +42,7 @@ for f in sorted(Path('ledger/claims').glob('*.yml')):
  elif u=='Number':par=('pessoas','people') if id.startswith('hab-demo-') else ('alojamentos','dwellings')
  elif u=='%':
   if id=='hab-ine-censos-0012517-0':par=('% dos alojamentos familiares clássicos','% of conventional family dwellings')
-  elif id=='hab-ine-iphab-homologa':par=('% de variação homóloga','% year-on-year change')
+  elif id in {'hab-ine-iphab-homologa','hab-ine-avaliacao-homologa'}:par=('% de variação homóloga','% year-on-year change')
   elif id=='hab-ine-juro-implicito':par=('% de juro','% interest')
   elif id.startswith(('der-hab-inquilinos-','der-hab-proprietarios-')):par=('% da população','% of the population')
   else:raise ValueError(id)
