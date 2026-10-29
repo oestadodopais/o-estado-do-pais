@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T09:57:51+00:00",
+ "copia": "_aterragens/pacote-og1cc-2026-10-29",
+ "plantas": [
+  {
+   "id": "Y1",
+   "ficheiro": "motor/content/30 Orcamento 2027 Generalidade/extracoes.json",
+   "descricao": "a cópia de extracoes.json sela og1-ps-abstencao em modo passagem onde o diff, o livro, a prova e a adenda C dizem documento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "cdb55409484e8d5b9770dcc3a6998fd87b295d8e2c954aa97c68ddb20b90b74a",
+   "sha256_depois": "4737b7230eee391e2c3e72f4b2852addfff50dc600b27b8109d20398f86b70ea",
+   "contexto_antes": "e\": \"órgão do partido\",\n      \"attribution_mode\": \"documento do partido\",\n      \"party\": \"PS\",\n      \"date_anchor\": \"2026-10-22\",\n      \"atribuicao\": {\n        \"modo\": \"documento\",\n        \"aliases\": [\n          \"Comissão Política Nacional do Partido Socialista\"\n        ],\n        \"frase\": \"A Comissão Política Nacional do Partido Socialista confirmou, esta quarta-feira, o consenso em torno da proposta de José Luís Carneiro para ",
+   "contexto_depois": "e\": \"órgão do partido\",\n      \"attribution_mode\": \"documento do partido\",\n      \"party\": \"PS\",\n      \"date_anchor\": \"2026-10-22\",\n      \"atribuicao\": {\n        \"modo\": \"passagem\",\n        \"aliases\": [\n          \"Comissão Política Nacional do Partido Socialista\"\n        ],\n        \"frase\": \"A Comissão Política Nacional do Partido Socialista confirmou, esta quarta-feira, o consenso em torno da proposta de José Luís Carneiro para "
+  },
+  {
+   "id": "Y2",
+   "ficheiro": "built/livro-razao/og1-chega-voto/index.html",
+   "descricao": "a página portuguesa da linha og1-chega-voto imprime «anunciou hoje o presidente do partido» no campo «Onde a fonte cita», onde a prova e a RTP dizem «o líder do partido»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1a6ae7b2663a96173ce89f482af2924550a167cc310efe82c85a12cd7669ecd6",
+   "sha256_depois": "9290302b1acc5188d3da60a029601eb8c3ec3efa7f1651e20018dbc3d380b1b2",
+   "contexto_antes": "data-linha-claim=\"og1-chega-voto\" data-linha-campo=\"atribuicao.bloco_da_citacao\">O Chega vai votar contra o Orçamento do Estado do próximo ano na generalidade, anunciou hoje o líder do partido, argumentando que o Governo &quot;não consegue reconhecer o momento de dificuldade&quot; e não apresenta medidas para ajudar os portugueses.</span></dd></dl><p",
+   "contexto_depois": "data-linha-claim=\"og1-chega-voto\" data-linha-campo=\"atribuicao.bloco_da_citacao\">O Chega vai votar contra o Orçamento do Estado do próximo ano na generalidade, anunciou hoje o presidente do partido, argumentando que o Governo &quot;não consegue reconhecer o momento de dificuldade&quot; e não apresenta medidas para ajudar os portugueses.</span></dd></dl><p"
+  },
+  {
+   "id": "Y3",
+   "ficheiro": "motor/publisher/oe2027_generalidade.py",
+   "descricao": "a cópia de oe2027_generalidade.py aceita a citação um bloco antes da frase sem alias (q>=f-1), ao contrário do diff e da adenda C",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "bdedcbe19a567a067c47cd9e09f77647df84619edfa29bb8a2c53732b4c1b272",
+   "sha256_depois": "110029d4a090afa00d4fcad0eea77c47af33fa236a8cc9ab7dc279e59a200829",
+   "contexto_antes": "        supported=[]\n        for i,j in spans:\n            q=min(q for q in quote_indices if i<=q<=j)\n            if a['modo']=='entrevista' or any(i<=f<=j and (q>=f or any(alias in blocks[q] for alias in aliases)) for f in phrase_indices):\n                supported.append((i,j,q))\n        require(bool(supported),'OG1: a citação começa antes da frase num bloco que não nom",
+   "contexto_depois": "        supported=[]\n        for i,j in spans:\n            q=min(q for q in quote_indices if i<=q<=j)\n            if a['modo']=='entrevista' or any(i<=f<=j and (q>=f-1 or any(alias in blocks[q] for alias in aliases)) for f in phrase_indices):\n                supported.append((i,j,q))\n        require(bool(supported),'OG1: a citação começa antes da frase num bloco que não nom"
+  },
+  {
+   "id": "Y4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «13 `passagem`, 2 `documento` e 1 `entrevista`» onde os registos dizem «12 `passagem`, 3 `documento` e 1 `entrevista`»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2e5b09639badae916f0ffbb5b812f121c182ab182ad481252cacfc59652ed1c0",
+   "sha256_depois": "114aefbd17c67aa10f48a7ae3635cfac7cb805552d75a0fd9885ccffdbe0128c",
+   "contexto_antes": "e dentro de `atribuicao`. Todos os restantes campos permaneceram iguais, incluindo citações, autores, valores e datas.\n\nAs 16 âncoras distribuem-se agora por **12 `passagem`, 3 `documento` e 1 `entrevista`**. O LEIA-ME apresenta essas contagens.\n\nA exportação alterou:\n\n- `ledger/provas/og1a/provas.json`\n- `ledger/cruzamentos/og1a-provas.json`\n- `ledger/cruzamento",
+   "contexto_depois": "e dentro de `atribuicao`. Todos os restantes campos permaneceram iguais, incluindo citações, autores, valores e datas.\n\nAs 16 âncoras distribuem-se agora por **13 `passagem`, 2 `documento` e 1 `entrevista`**. O LEIA-ME apresenta essas contagens.\n\nA exportação alterou:\n\n- `ledger/provas/og1a/provas.json`\n- `ledger/cruzamentos/og1a-provas.json`\n- `ledger/cruzamento"
+  },
+  {
+   "id": "Y5",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a página inglesa do Método diz «in the statements of the 2027 Budget items» (alargando o âmbito a vários itens) onde o ficheiro de dados, a edição portuguesa e a adenda C dizem «the 2027 Budget item»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ec1bcdb4484629f80ac6bc6f43eaa6aeec0f3ca9178cb92fad6f69cbc50670f9",
+   "sha256_depois": "21accd681f2cda8ba95caa1a7a5ad1dba3668e4b97b3921eae4595f8f2f4fc87",
+   "contexto_antes": "finition the source does not give to that measure, a quotation from a person or a party, in the statements of the <span data-nonledger=\"data-de-referencia\">2027</span> Budget item, without the source passage that names the speaker sealed next to it, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers a",
+   "contexto_depois": "finition the source does not give to that measure, a quotation from a person or a party, in the statements of the <span data-nonledger=\"data-de-referencia\">2027</span> Budget items, without the source passage that names the speaker sealed next to it, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers a"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

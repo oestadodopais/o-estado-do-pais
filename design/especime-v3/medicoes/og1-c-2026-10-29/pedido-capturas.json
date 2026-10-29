@@ -1,0 +1,7 @@
+{"cabeca": "c14a571401a48de295626887a61ab46d380a4ae0", "paginas": [
+ {"nome": "linha-il-voto", "pt": "/livro-razao/og1-il-voto/", "en": "/en/ledger/og1-il-voto/", "recortes": [{"nome": "quem-fala", "seletor": "[data-linha-campo=\"atribuicao.frase\"]"}]},
+ {"nome": "linha-chega-voto", "pt": "/livro-razao/og1-chega-voto/", "en": "/en/ledger/og1-chega-voto/", "recortes": [{"nome": "quem-fala", "seletor": "[data-linha-campo=\"atribuicao.frase\"]"}]},
+ {"nome": "linha-pcp-comite", "pt": "/livro-razao/og1-pcp-comite/", "en": "/en/ledger/og1-pcp-comite/", "recortes": [{"nome": "quem-fala", "seletor": "[data-linha-campo=\"atribuicao.frase\"]"}]},
+ {"nome": "linha-il-prioridades", "pt": "/livro-razao/og1-il-prioridades/", "en": "/en/ledger/og1-il-prioridades/", "recortes": [{"nome": "quem-fala", "seletor": "[data-linha-campo=\"atribuicao.frase\"]"}]},
+ {"nome": "metodo", "pt": "/metodo/", "en": "/en/method/", "recortes": []}
+]}

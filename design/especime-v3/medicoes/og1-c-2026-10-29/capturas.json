@@ -1,0 +1,1309 @@
+{
+  "cabeca": "c14a571401a48de295626887a61ab46d380a4ae0",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "linha-il-voto-pt-390.png",
+      "rota": "/livro-razao/og1-il-voto/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3509,
+      "sha256": "40ba4333642f2c19cfc03b31fc4533ad5033985e97bb6cedbdc47bd1788f5f6f",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-pt-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2373,
+            "width": 344,
+            "height": 72
+          },
+          "sha256": "aa412d90133c4a61e5df4bda090d9e11d80f5e4cedf9446c44b57e00198488b7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-pt-768.png",
+      "rota": "/livro-razao/og1-il-voto/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3093,
+      "sha256": "005356734c786981b9b88595832547cc5da180e8a366d618962ce19bac4f9ce5",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-pt-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2090,
+            "width": 706,
+            "height": 35
+          },
+          "sha256": "b0eedf8b09fa7afd2b39c890f3736082d59c337a20231b901af6cbbf0a17ace0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-pt-1024.png",
+      "rota": "/livro-razao/og1-il-voto/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2375,
+      "sha256": "35e3c0710987ab9bb9919194c49ec484e0831a5138a145c5d811c6d081301f7d",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-pt-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-pt-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1371,
+            "width": 294,
+            "height": 72
+          },
+          "sha256": "3a6bbe4f595393960052348d11976cdb7e65307a68096192562449c5daecf4e2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-pt-1280.png",
+      "rota": "/livro-razao/og1-il-voto/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2402,
+      "sha256": "4001a9969cb690314ba6c199df378523c4d27935cb816967bd53ab199c442e66",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-pt-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-pt-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1379,
+            "width": 293,
+            "height": 73
+          },
+          "sha256": "bd19a3fc8a419e979ae6925569b74303a9b401da02857b1541f742e185a0664c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-pt-1600.png",
+      "rota": "/livro-razao/og1-il-voto/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2408,
+      "sha256": "f496ec5121f9e6b5a7bf9d4e4f0cef55cf09913d95e6b8fa451db2083b523ff2",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-pt-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-pt-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1379,
+            "width": 293,
+            "height": 73
+          },
+          "sha256": "c28afad8042f330b7d7a8d0ddb7fa36c293e89ad6e06eb4e4574ce48b2eec30e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-en-390.png",
+      "rota": "/en/ledger/og1-il-voto/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3602,
+      "sha256": "0ce76a82189d17feb415c7bd11608c5d304864d322b8dcdd1c57a348bda582e6",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-en-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2397,
+            "width": 344,
+            "height": 73
+          },
+          "sha256": "9edb77c6587e542caad6f861b2f407f7f2f3ecbbccf8ec0cc828eec26ad11b90"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-en-768.png",
+      "rota": "/en/ledger/og1-il-voto/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3118,
+      "sha256": "474014f149fe0ab88602f4c6b930b61a33844bd4aa592ae74b59f266045b3088",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-en-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2115,
+            "width": 706,
+            "height": 34
+          },
+          "sha256": "d5e1575758d0535fcd1849582fedcafac70601dd4ca9ade0b8c87fb940eb2494"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-en-1024.png",
+      "rota": "/en/ledger/og1-il-voto/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2400,
+      "sha256": "1673f629b47c4bae8d2d82973b958e1282a88e3ea6fb34df30258c57e2a4da54",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-en-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-en-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1395,
+            "width": 294,
+            "height": 73
+          },
+          "sha256": "9e81df9d704fb3dc0c1aca271b2debcd574989b2be1f04c4ba97ad0b693d04d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-en-1280.png",
+      "rota": "/en/ledger/og1-il-voto/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2427,
+      "sha256": "8fc04eef4f028690713c50c2129c29f1e87b3c22a01234165d355ce480351c8c",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-en-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-en-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1404,
+            "width": 293,
+            "height": 72
+          },
+          "sha256": "6dfe9fe21946435168246a3801aa240ee9af7ab5412dc426e28056ae7b50518c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-voto-en-1600.png",
+      "rota": "/en/ledger/og1-il-voto/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2433,
+      "sha256": "61b008f358cbf65302351c09840f47f32608ec0095bad3cae88a45f386c92801",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-voto-en-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-voto-en-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1404,
+            "width": 293,
+            "height": 72
+          },
+          "sha256": "633d2ccfc993a8e8697e4263f01c36de5df00930354f12610afc99bdaa8136bf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-pt-390.png",
+      "rota": "/livro-razao/og1-chega-voto/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3383,
+      "sha256": "4e47584579578a4ee0c62543cbf4f1a6e52cecac131cfc3aa0ae78c55ccd5d52",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-pt-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2283,
+            "width": 332,
+            "height": 35
+          },
+          "sha256": "abcf2c9cb5e2ccd1b62c6aca4b9ccb56e1d6f79e536f6950d1d3297e69ffd4d3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-pt-768.png",
+      "rota": "/livro-razao/og1-chega-voto/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "678c42f7f82789a7a29c12b9347e553c4ddc0021c55fc4077f77b9158c3f89b7",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-pt-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1960,
+            "width": 563,
+            "height": 16
+          },
+          "sha256": "5820728639e8f5bc50ff49ba4d4ca66fcd6577b8ce33a5e9d09e944e614f4724"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-pt-1024.png",
+      "rota": "/livro-razao/og1-chega-voto/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2304,
+      "sha256": "9ac4d8506f16787f5a048b055402a07b5b71c90591136083f7f3ba9b8ee2a576",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-pt-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-pt-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1319,
+            "width": 260,
+            "height": 53
+          },
+          "sha256": "8a7fd36db3abe7cd65502dbf39f04ffa3c49980f86199c2fcee875af95c4e13c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-pt-1280.png",
+      "rota": "/livro-razao/og1-chega-voto/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2331,
+      "sha256": "bffe6b0fee5aebb7fc8811d3158003ad0a0c6fff1e762090ab07d585547fdb8c",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-pt-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-pt-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1328,
+            "width": 259,
+            "height": 53
+          },
+          "sha256": "b84e8366e4d92b2360e210fdd4325a6283900b39a8224773f72a3f68bf79718c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-pt-1600.png",
+      "rota": "/livro-razao/og1-chega-voto/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2338,
+      "sha256": "2a92f8592a447854b8ad597d4584816c2c7aaea46767236b63f0df2969a27217",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-pt-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-pt-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1328,
+            "width": 259,
+            "height": 53
+          },
+          "sha256": "2dac9318f776083cbf1842ea632a7233cd11f263cb8277945e00cc4e107ac018"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-en-390.png",
+      "rota": "/en/ledger/og1-chega-voto/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3451,
+      "sha256": "c323714ac75e575ac40d33b415fac090dc7bc3d2a865a3287961a70727c0362d",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-en-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2283,
+            "width": 332,
+            "height": 35
+          },
+          "sha256": "abcf2c9cb5e2ccd1b62c6aca4b9ccb56e1d6f79e536f6950d1d3297e69ffd4d3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-en-768.png",
+      "rota": "/en/ledger/og1-chega-voto/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "a541af26df27772830e35bd55b3959d002563852d691e2284c6eea3225491df4",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-en-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1960,
+            "width": 563,
+            "height": 16
+          },
+          "sha256": "5820728639e8f5bc50ff49ba4d4ca66fcd6577b8ce33a5e9d09e944e614f4724"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-en-1024.png",
+      "rota": "/en/ledger/og1-chega-voto/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2304,
+      "sha256": "17d4e7fad7ab63a8fdc91bb818c070a183bb22e567f2f7d2fe8ac6e9e3635e16",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-en-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-en-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1319,
+            "width": 260,
+            "height": 53
+          },
+          "sha256": "8a7fd36db3abe7cd65502dbf39f04ffa3c49980f86199c2fcee875af95c4e13c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-en-1280.png",
+      "rota": "/en/ledger/og1-chega-voto/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2331,
+      "sha256": "1cf15c92afd248ed5d820e880417aca9b89d81e1354526e910fb26f3e37606f1",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-en-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-en-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1328,
+            "width": 259,
+            "height": 53
+          },
+          "sha256": "b84e8366e4d92b2360e210fdd4325a6283900b39a8224773f72a3f68bf79718c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-chega-voto-en-1600.png",
+      "rota": "/en/ledger/og1-chega-voto/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2338,
+      "sha256": "96346407ede435102ed864e7f81c0a5392c60ed8581af413d25dcc762ef202e5",
+      "recortes": [
+        {
+          "ficheiro": "linha-chega-voto-en-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-chega-voto-en-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1328,
+            "width": 259,
+            "height": 53
+          },
+          "sha256": "2dac9318f776083cbf1842ea632a7233cd11f263cb8277945e00cc4e107ac018"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-pt-390.png",
+      "rota": "/livro-razao/og1-pcp-comite/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3366,
+      "sha256": "b03a1c181823b50fc1f26d5de14a723abd2e8e3e3f2e290b4efc12e1ad09e267",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-pt-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2247,
+            "width": 354,
+            "height": 35
+          },
+          "sha256": "f9b81f09125ab35814f08064ade3ee2557b4d611a0907481a674940016a6d365"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-pt-768.png",
+      "rota": "/livro-razao/og1-pcp-comite/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3030,
+      "sha256": "b7bd8f2c6ef7e4340bf0d406f147d5ce4e0e2ea29949f047fdecc42f5f264a18",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-pt-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2045,
+            "width": 389,
+            "height": 16
+          },
+          "sha256": "fbabba7ee375ffbb3932449e4b58e316a7ba466aaedee47b99cd09dd9ae82445"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-pt-1024.png",
+      "rota": "/livro-razao/og1-pcp-comite/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2300,
+      "sha256": "ae2fbe4f2cd274341491289233f362ac441641bcef8a759a7c27a7e9d2ea505b",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-pt-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-pt-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1333,
+            "width": 287,
+            "height": 35
+          },
+          "sha256": "a11428851fe97efc7ca4c0bd199d82e3ecfef2f30fd25d79857595bd12376b6f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-pt-1280.png",
+      "rota": "/livro-razao/og1-pcp-comite/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2327,
+      "sha256": "1154104e065c195147f2a9d4b432b356834b9780ef53dd277ad5de182d9e0745",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-pt-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-pt-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1342,
+            "width": 286,
+            "height": 35
+          },
+          "sha256": "bdd65a60940bbe57ca33c77f316ff7dde5dba139a88de70765a73531a411a73d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-pt-1600.png",
+      "rota": "/livro-razao/og1-pcp-comite/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2333,
+      "sha256": "8e9ccf7859843ef130648e85e9ee78691f1e12825210959182a84fc7f10261cd",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-pt-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-pt-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1342,
+            "width": 286,
+            "height": 35
+          },
+          "sha256": "866b723b69eb8f9dcb643dcb6cc4f2535c2dd96cef6f8102d2df904c69afc43a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-en-390.png",
+      "rota": "/en/ledger/og1-pcp-comite/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3394,
+      "sha256": "a2ea1e7c6049a70af72651c4b4bc14e5eee0463146eb024e83fb063f973221f5",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-en-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2247,
+            "width": 354,
+            "height": 35
+          },
+          "sha256": "f9b81f09125ab35814f08064ade3ee2557b4d611a0907481a674940016a6d365"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-en-768.png",
+      "rota": "/en/ledger/og1-pcp-comite/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3030,
+      "sha256": "ec67f3f2e0c3275a56a894b06ebaf19c5ecf21ddfba0177e348a5d1df86db121",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-en-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2045,
+            "width": 389,
+            "height": 16
+          },
+          "sha256": "fbabba7ee375ffbb3932449e4b58e316a7ba466aaedee47b99cd09dd9ae82445"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-en-1024.png",
+      "rota": "/en/ledger/og1-pcp-comite/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2280,
+      "sha256": "87161a7b8d531c1dcc385f0d28f3f89df2b5bac42336f3112801f9e3eb097f60",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-en-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-en-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1333,
+            "width": 287,
+            "height": 35
+          },
+          "sha256": "a11428851fe97efc7ca4c0bd199d82e3ecfef2f30fd25d79857595bd12376b6f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-en-1280.png",
+      "rota": "/en/ledger/og1-pcp-comite/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2307,
+      "sha256": "ebade479dbe7542c25830dd7b49d139acc893c76a963be6e970eebb7ec5e90af",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-en-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-en-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1342,
+            "width": 286,
+            "height": 35
+          },
+          "sha256": "bdd65a60940bbe57ca33c77f316ff7dde5dba139a88de70765a73531a411a73d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-pcp-comite-en-1600.png",
+      "rota": "/en/ledger/og1-pcp-comite/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2313,
+      "sha256": "a984a8dabd6acd40b9ab02ebc7cb2266efd05155559ef577a319e93fd56587c8",
+      "recortes": [
+        {
+          "ficheiro": "linha-pcp-comite-en-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-pcp-comite-en-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1342,
+            "width": 286,
+            "height": 35
+          },
+          "sha256": "866b723b69eb8f9dcb643dcb6cc4f2535c2dd96cef6f8102d2df904c69afc43a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-pt-390.png",
+      "rota": "/livro-razao/og1-il-prioridades/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3338,
+      "sha256": "99927853183fbfd7e337d96448effc4c783ba4bdf191dfbba5419d6bc8a12384",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-pt-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2202,
+            "width": 329,
+            "height": 72
+          },
+          "sha256": "4e5884eafcfecb2582b010acd6fa76fada4ee69694dfd4aea90bfe3b55eaeffb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-pt-768.png",
+      "rota": "/livro-razao/og1-il-prioridades/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2997,
+      "sha256": "ec45354f5fb6d6283c7ecb337886fcef246c5f2265485c5094f9020bb8fc6876",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-pt-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1994,
+            "width": 697,
+            "height": 34
+          },
+          "sha256": "36383cd851d37bef84965cb9f453bdeeb2d2add70118db490d74e224e7039fb4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-pt-1024.png",
+      "rota": "/livro-razao/og1-il-prioridades/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2286,
+      "sha256": "c71ba2556cb4b2730e780bf028de6be288a6fee2bff3bc08a6586cd454708d8b",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-pt-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-pt-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1281,
+            "width": 300,
+            "height": 72
+          },
+          "sha256": "4ac15d37fd58092086a084b63dc2e0d373f9177f324b415327c1df245a291ea2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-pt-1280.png",
+      "rota": "/livro-razao/og1-il-prioridades/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2313,
+      "sha256": "3d18c0c27387beb3dff7293278fa8c3621304e38bf05897d595ca81d4961ee03",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-pt-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-pt-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1290,
+            "width": 299,
+            "height": 72
+          },
+          "sha256": "0e64f8538624d8ecc6cbe037a12121c5a2f96cbe29a1e14350a5d5c9a0f6e024"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-pt-1600.png",
+      "rota": "/livro-razao/og1-il-prioridades/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2319,
+      "sha256": "d0516093dca92846b7a37885eb024dcdc50a2ae65e37aa881d27b60e6937324e",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-pt-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-pt-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1290,
+            "width": 299,
+            "height": 72
+          },
+          "sha256": "1c0a7ad6268a9ddabd30eaf393fdf70c94583e0a4072d7ee0d0490be11b90716"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-en-390.png",
+      "rota": "/en/ledger/og1-il-prioridades/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3362,
+      "sha256": "39af68e80855fcf8f20b81535e088ca739137ea573dc59731e09d66a725fa62d",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-en-390-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2177,
+            "width": 329,
+            "height": 72
+          },
+          "sha256": "e144e66124cdf31d57510641f2a5a1870eccd02c40f42f704768b81112a9bf0c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-en-768.png",
+      "rota": "/en/ledger/og1-il-prioridades/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2997,
+      "sha256": "f688487af4d33068f792bc727e4ecc409ec77ce96e48ddc78c5d1c42784f1bab",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-en-768-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1994,
+            "width": 697,
+            "height": 34
+          },
+          "sha256": "36383cd851d37bef84965cb9f453bdeeb2d2add70118db490d74e224e7039fb4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-en-1024.png",
+      "rota": "/en/ledger/og1-il-prioridades/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2286,
+      "sha256": "3087fb88720d6bf7783d99574e8981c637258d7b59f9b47b29ae1576914749a6",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-en-1024-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-en-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1281,
+            "width": 300,
+            "height": 72
+          },
+          "sha256": "4ac15d37fd58092086a084b63dc2e0d373f9177f324b415327c1df245a291ea2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-en-1280.png",
+      "rota": "/en/ledger/og1-il-prioridades/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2313,
+      "sha256": "40084286ba2d5cd59f5a122230f206c7490fcc6c1c980dbe6bae4f07632962b8",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-en-1280-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-en-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1290,
+            "width": 299,
+            "height": 72
+          },
+          "sha256": "0e64f8538624d8ecc6cbe037a12121c5a2f96cbe29a1e14350a5d5c9a0f6e024"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "linha-il-prioridades-en-1600.png",
+      "rota": "/en/ledger/og1-il-prioridades/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2319,
+      "sha256": "c4426b32e65c0534f83cb13d2bb4812b9a0c0e7f56eb86403a005ffc49301202",
+      "recortes": [
+        {
+          "ficheiro": "linha-il-prioridades-en-1600-quem-fala.png",
+          "seletor": "[data-linha-campo=\"atribuicao.frase\"]",
+          "origem": "linha-il-prioridades-en-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1290,
+            "width": 299,
+            "height": 72
+          },
+          "sha256": "1c0a7ad6268a9ddabd30eaf393fdf70c94583e0a4072d7ee0d0490be11b90716"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-390.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8759,
+      "sha256": "83e485d37969de05062a06c673719fbd1f445b48ac3dc0d8212a82a228a9d37d",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-768.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6545,
+      "sha256": "52a126e05febbff2d32f8b4900b9976bb3d48e79b729fe0d934aa1b8316ff4a5",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1024.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6246,
+      "sha256": "65155dbea393e2c083b45a83a45cc2f9ce79403ce1493ef46947ea0e2c24c030",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1280.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6310,
+      "sha256": "f16b03306713569aeb9c5b86297c66f462a08d23c64679ab98a3382a18235394",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1600.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6316,
+      "sha256": "642b437090c0d305a38d032b4b77d799bc486afe855514ac8bf8b05b5dc17643",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-390.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8681,
+      "sha256": "88550e786c7d3aade7bbabc89f52f3d7dfd43aaafe4692389188ecf113f6c753",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-768.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6467,
+      "sha256": "6eed93c8ac627d8578f24a6976f7d215dfa2863780d53f8712df5eee8a4a4cd9",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6168,
+      "sha256": "93ba3fd044092d324d783f6707c4fdb2307064d992c40a929a79ac183ab7cd1e",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6232,
+      "sha256": "3a3d36dabdfec25effedb9c57f1a9a06e39cf595a173c8cd907ead93b485aa6b",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6238,
+      "sha256": "b4969e57e67e325b4ee77473de0c6437adb8bd0a1995ed9f479c92c8f9a21b69",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "b83ff87bcf2c9a9823657d331eb4c36bbd6edcfadb3fe87ece509b1301c38aa4",
+    "livro-razao/og1-il-voto/index.html": "9209b676bd46472a803afb172878a8c51162dfefad87fffa81ad3a26bb3e11fe",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/linha.DOdCy9TF.css": "99cb640e0f6cafe8bb8b68a992968df0ab42486b4006260f7657bdd3596f0e24",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/ledger/og1-il-voto/index.html": "35f72bbc31e24b51dc63e3c99a94239181e8d3b5e0a09bffea362f8ea16dd393",
+    "livro-razao/og1-chega-voto/index.html": "f44cc9a7a7572d387d2b2d72bd622b9e327de5153ae1017de270d2b593083f28",
+    "en/ledger/og1-chega-voto/index.html": "3c45ab0364f6d00394ddc32c424d4b0b4faefac7ae1527338596088027dc3d8d",
+    "livro-razao/og1-pcp-comite/index.html": "9e602c34cdb4b6b06b7d1169df068027f7d83cf145a017c46e7c4c52cf3f9298",
+    "en/ledger/og1-pcp-comite/index.html": "5814292f525ad45db500b8b11c36c6135fc8a8b0a15435e9d3faa6bba3b55e0d",
+    "livro-razao/og1-il-prioridades/index.html": "949ca8939c562724518203c88249f54d9a7c093914d22db53470fa902aac7cad",
+    "en/ledger/og1-il-prioridades/index.html": "6b40c4a9205fb6a2e32ac22226f3c42c5b9e6b840ebf172999e9381e5c6d65a4",
+    "metodo/index.html": "e2a3f05ac9b9d798900a2d59c66090ff78ea5f83c2659f4e5ec6257afe5e7320",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/method/index.html": "af47b647bcca071b6475ac99f34432343942dca151338751c363694700344189"
+  },
+  "falhas": [],
+  "ok": true
+}

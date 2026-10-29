@@ -1,0 +1,124 @@
+{
+ "bloco": "OG1-C (a âncora de atribuição de cada citação; o motor e o sítio numa passagem)",
+ "data": "2026-10-29",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202, o segundo bloco depois de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "OG1-C (motor e sítio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T07:12Z",
+   "fim": "2026-10-29T08:09:56Z",
+   "pontos": 2.0,
+   "pontos_antes": 6.0,
+   "pontos_depois": 8.0,
+   "turnos": 94,
+   "chamadas_de_ferramenta": 93,
+   "simbolos_entrada": 11841633,
+   "simbolos_cache": 11724544,
+   "simbolos_saida": 46344,
+   "simbolos_raciocinio": 19528,
+   "contexto_medio": 125974,
+   "fonte": "a linha PONTOS do LANCADOR-og1c.log e o relatório do construtor",
+   "paragens": "nenhuma; duas recusas do pré-voo antes do arranque (as caches geradas ausentes na worktree nova do motor; os ficheiros do lançador das retomas do OG1-B na pasta da sessão), corrigidas pelo lugar de direção"
+  },
+  {
+   "nome": "OG1-C-c (a correção depois da leitura a frio, retomada; parou pela regra certa)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T08:55Z",
+   "fim": "2026-10-29T09:01:01Z",
+   "pontos": 0.0,
+   "pontos_antes": 8.0,
+   "pontos_depois": 8.0,
+   "turnos": 6,
+   "chamadas_de_ferramenta": 5,
+   "simbolos_entrada": 1050429,
+   "simbolos_cache": 1032320,
+   "simbolos_saida": 5517,
+   "simbolos_raciocinio": 2358,
+   "contexto_medio": 175071,
+   "fonte": "a linha PONTOS do LANCADOR-og1c-c.log",
+   "paragens": "uma, pelo §7 da adenda C: a regra nova da ordem recusava og1-il-prioridades (a entrevista: o título citado antes do cabeçalho que nomeia quem responde); a adenda D decide (a regra só no modo passagem)"
+  },
+  {
+   "nome": "OG1-C-d (a correção, retomada com a adenda D; OG1-C3 no motor e OG1-C4 no sítio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T09:06Z",
+   "fim": "2026-10-29T09:54:49Z",
+   "pontos": 1.0,
+   "pontos_antes": 8.0,
+   "pontos_depois": 9.0,
+   "turnos": 69,
+   "chamadas_de_ferramenta": 66,
+   "simbolos_entrada": 14833175,
+   "simbolos_cache": 14799872,
+   "simbolos_saida": 32897,
+   "simbolos_raciocinio": 17545,
+   "contexto_medio": 214973,
+   "fonte": "a linha PONTOS do LANCADOR-og1c-d.log e o relatório",
+   "paragens": "um arranque dos portões recusado (código 9) pela alteração por comitar do ARRANQUE.md deixada pelo lugar de direção na worktree; o construtor guardou-a, correu e repô-la (OG1-C-9)"
+  }
+ ],
+ "leituras": [
+  {
+   "nome": "og1-c (leitura a frio)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-29T08:41Z",
+   "fim": "2026-10-29T08:52Z",
+   "segundos": 657,
+   "chamadas_de_ferramenta": 50,
+   "simbolos": 189819,
+   "fonte": "o uso do agente na notificação do lançamento",
+   "plantas": "5 de 5",
+   "achados_reais": "quatro Major (o Método a prometer mais do que a régua faz; a régua a não recusar o erro da IL; a nota do PS ao contrário; quatro páginas com a frase sem a citação) e três Minor (as plantas da régua do sítio sem isolar a cláusula; o relatório sem registos; a ordem do modo documento por qualquer ocorrência)"
+  },
+  {
+   "nome": "og1-c-d (leitura curta M48 da correção)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-29T10:04Z",
+   "fim": "2026-10-29T10:15Z",
+   "segundos": 501,
+   "chamadas_de_ferramenta": 42,
+   "simbolos": 143524,
+   "fonte": "o uso do agente na notificação do lançamento",
+   "plantas": "5 plantadas (Y1 a Y5)",
+   "achados_reais": "as cinco plantas apanhadas (o bloco do Chega com «o presidente do partido» na página portuguesa, a regra afrouxada num bloco na cópia do módulo, o PS de volta a passagem na cópia das especificações, «Budget items» na página inglesa do Método, 13/2/1 no relatório); nenhum Blocking nem Major real; a tabela das citações com as 16 linhas a passar; cinco Minor para a higiene (a adenda D fora do pacote; os espaços da partição no bloco do ECO, «( COFAP )»; só as cinco plantas da âncora com a mensagem exata; os registos dos portões fora do pacote; o portão de HTML sem planta própria do campo novo); o editor imprimia as dezasseis páginas e o Método, o ECO depois dos espaços"
+  }
+ ],
+ "direcao": {
+  "modelo": "Claude Fable 5.1",
+  "commits": [
+   "OG1-C0 (3977db873, a tabela das citações no prompt comum das leituras)",
+   "OG1-C-r (os registos, este ficheiro, o mandato, as adendas, as leituras, as plantas, o pedido das capturas e o manifesto, a linha 0 do ARRANQUE)"
+  ],
+  "simbolos": "a linha de estado do Claude: 41 % da semana às 06:41 UTC; o fecho no prompt da sessão seguinte"
+ },
+ "motor": {
+  "passagens_por_guiao": "nenhuma neste bloco (a medição das 16 âncoras por guião antes do mandato, a zero símbolos de construtor)"
+ },
+ "corrida_inteira": {
+  "pasta": "_aterragens/og1c-conferir-2026-10-29-a",
+  "cabeca": "c14a57140",
+  "inicio": "2026-10-29T08:10:55Z",
+  "fim": "2026-10-29T08:39:51Z",
+  "passos": 52,
+  "vermelhos": 0,
+  "modo": "--sem-build (o dist/ já era da cabeça, construído pelos portões do construtor)",
+  "simbolos_de_modelo": 0
+ },
+ "capturas": {
+  "pasta_local": "/private/tmp/og1-c-capturas (temporária)",
+  "cabeca": "c14a57140",
+  "pedido": "pedido-capturas-og1c.json (5 páginas nas duas edições, 5 larguras, 4 recortes do campo novo)",
+  "capturas": 50,
+  "recortes": 40,
+  "falhas": 0,
+  "drive": "capturas · og1-c-2026-10-29 (90 ficheiros, drive-og1c-capturas.json)",
+  "vistas_pelo_lugar_de_direcao": "o recorte do campo em três linhas nas duas edições e a página inteira da IL a 390 px"
+ },
+ "aterragem": "o motor por merge --ff-only e push depois do commit dos registos; o sítio pelo aterrar.sh; as horas no recibo _aterragens/og1c-aterragem-2026-10-29/aterragem.json"
+}

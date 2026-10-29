@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T08:14:07+00:00",
+ "copia": "_aterragens/pacote-og1c-2026-10-29",
+ "plantas": [
+  {
+   "id": "Z1",
+   "ficheiro": "motor/extracoes.json",
+   "descricao": "a cópia de extracoes.json dá a og1-chega-voto aliases [\"o líder do partido\"] onde o livro, o mandato e a frase da RTP dizem André Ventura",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f0344522fdbcad385752071344b3fdbb6bac45522138f0a700d2c111953b7a1b",
+   "sha256_depois": "3d58f8924afe3b64db59c8cef2f5f077796d4532ccc54a406ea9130ada3c35c9",
+   "contexto_antes": "attribution_mode\": \"pela notícia ao minuto da RTP, de 28 de outubro de 2026\",\n      \"party\": \"Chega\",\n      \"atribuicao\": {\n        \"modo\": \"passagem\",\n        \"aliases\": [\n          \"André Ventura\"\n        ],\n        \"frase\": \"O anúncio foi feito por André Ventura em declarações aos jornalistas na Assembleia da República.\",\n        \"passagem\": \"O Chega vai votar co",
+   "contexto_depois": "attribution_mode\": \"pela notícia ao minuto da RTP, de 28 de outubro de 2026\",\n      \"party\": \"Chega\",\n      \"atribuicao\": {\n        \"modo\": \"passagem\",\n        \"aliases\": [\n          \"o líder do partido\"\n        ],\n        \"frase\": \"O anúncio foi feito por André Ventura em declarações aos jornalistas na Assembleia da República.\",\n        \"passagem\": \"O Chega vai votar co"
+  },
+  {
+   "id": "Z2",
+   "ficheiro": "built/livro-razao/og1-il-voto/index.html",
+   "descricao": "a página portuguesa da linha og1-il-voto imprime «segundo a Iniciativa Liberal» na frase de atribuição onde a prova e a RTP dizem «segundo Mário Amorim Lopes»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9209b676bd46472a803afb172878a8c51162dfefad87fffa81ad3a26bb3e11fe",
+   "sha256_depois": "52ad2dc9cab56358f174476b7c6511198dc1751e088872e0c399274535862a5f",
+   "contexto_antes": "morim Lopes</span></dd><dt data-voz>Quem fala, segundo a fonte</dt><dd><span data-linha-claim=\"og1-il-voto\" data-linha-campo=\"atribuicao.frase\">Os portugueses, segundo Mário Amorim Lopes, &quot;não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor&quot;.</span><p class=\"apa",
+   "contexto_depois": "morim Lopes</span></dd><dt data-voz>Quem fala, segundo a fonte</dt><dd><span data-linha-claim=\"og1-il-voto\" data-linha-campo=\"atribuicao.frase\">Os portugueses, segundo a Iniciativa Liberal, &quot;não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor&quot;.</span><p class=\"apa"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "motor/publisher/oe2027_analise.py",
+   "descricao": "a cópia de oe2027_analise.py parte os blocos sem a etiqueta li, ao contrário do mandato e das contagens de blocos do relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c85c93591ee58a0817161a6473a5076fbd3929e692405ceb7443c7c393c7b124",
+   "sha256_depois": "993abfeb2e92b7546204034c6da34aaf284826c8b7216d20451d00ff43f7a802",
+   "contexto_antes": "<[^>]*>',' ',t)))\ndef html_blocks(raw):\n    t=raw.decode('utf-8-sig')\n    t=re.sub(r'<(script|style|head)\\b.*?</\\1>',' ',t,flags=re.I|re.S)\n    t=re.sub(r'<(/?(p|li|h[1-6]|div|section|article|br|tr|blockquote|figcaption|dd|dt)\\b[^>]*)>','\\n',t,flags=re.I)\n    t=html.unescape(re.sub(r'<[^>]*>',' ',t))\n    return [block for line in",
+   "contexto_depois": "<[^>]*>',' ',t)))\ndef html_blocks(raw):\n    t=raw.decode('utf-8-sig')\n    t=re.sub(r'<(script|style|head)\\b.*?</\\1>',' ',t,flags=re.I|re.S)\n    t=re.sub(r'<(/?(p|h[1-6]|div|section|article|br|tr|blockquote|figcaption|dd|dt)\\b[^>]*)>','\\n',t,flags=re.I)\n    t=html.unescape(re.sub(r'<[^>]*>',' ',t))\n    return [block for line in"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «129 → 187 checks» onde o teste do motor e os registos dizem 178",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "88e9deb72cc77dd33e8cf2753f222d7b65ee2016c53eec1eb625c44d96a5d9fb",
+   "sha256_depois": "aad08f4ae88fa036be371e5f126d986c61b7cbcec0c76264fe5f3be185acb404",
+   "contexto_antes": "**Verificação**\n\n| Comando ou conferência | Corridas | Resultado |\n|---|---:|---|\n| `python3 -m publisher.oe2027_generalidade_test`, incluindo `--record` | 4 | 129 → 178 checks; última saída 0 |\n| Teste OG1 do sítio, versões anterior e nova | 3 | 636 → 786 checks; últimas saídas 0 |\n| `npm run ledger:check` | 2 | Última saída 0 |\n| `n",
+   "contexto_depois": "**Verificação**\n\n| Comando ou conferência | Corridas | Resultado |\n|---|---:|---|\n| `python3 -m publisher.oe2027_generalidade_test`, incluindo `--record` | 4 | 129 → 187 checks; última saída 0 |\n| Teste OG1 do sítio, versões anterior e nova | 3 | 636 → 786 checks; últimas saídas 0 |\n| `npm run ledger:check` | 2 | Última saída 0 |\n| `n"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a página inglesa do Método diz «shown next to it» onde o mandato, a edição portuguesa e o ficheiro de dados dizem «sealed next to it»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "af47b647bcca071b6475ac99f34432343942dca151338751c363694700344189",
+   "sha256_depois": "e3a4b4a19e02afbc6e59e5d9e275cb99a1291ba4f5d535564f29fc717fdbe603",
+   "contexto_antes": "&#39;s, a name or a definition the source does not give to that measure, a quotation from a person or a party without the source passage that names the speaker sealed next to it, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers are kept in an inventory, and on the pages",
+   "contexto_depois": "&#39;s, a name or a definition the source does not give to that measure, a quotation from a person or a party without the source passage that names the speaker shown next to it, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers are kept in an inventory, and on the pages"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}
