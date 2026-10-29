@@ -1,0 +1,13 @@
+# A fila dos blocos (a ordem em vigor, lida pelo lançador a partir do PL1)
+
+*Escrita pelo lugar de direção a 29.10.2026, 12:35 UTC, depois da observação do financiador como leitor (12:23 UTC: o produto é a publicação; a mesma qualidade com mais eficiência; o determinístico por estrutura). Uma linha por bloco, pela ordem em que se lança; o tipo é «conteúdo», «navegação» ou «maquinaria»; a razão diz porque está onde está. O lançador só lança a cabeça da fila; um bloco de maquinaria só fica à frente de um de conteúdo quando o de conteúdo o declara como condição, ou à sexta-feira. Um bloco sai da fila quando aterra; o que se aprende entra no `DECISIONS.md` do dia. Sem travessões.*
+
+| Ordem | Bloco | Tipo | O que o leitor recebe | Estado | Razão da posição |
+| --- | --- | --- | --- | --- | --- |
+| 1 | HB1-e | conteúdo | a avaliação bancária de setembro no estudo da habitação (duas linhas, duas frases, a edição datada) | em construção desde 11:57 UTC | o conteúdo mais barato pronto a lançar; as fontes já alojadas |
+| 2 | DO1 | navegação | os dossiês «O Orçamento de 2027» e «A casa em Portugal»: uma página por assunto com todas as peças e as suas datas; a linha «Dossiê» em cada peça; o nome do dossiê nas novidades | mandato escrito; constrói sobre a cabeça da HB1-e; aterra com ela no lote da noite | o que o leitor tropeça primeiro: o Orçamento espalhado por cinco lugares |
+| 3 | PL1 | maquinaria | nada diretamente; a fila lida pelo lançador, as aterragens em lotes, a via das mudanças pequenas, as horas do mandato ao leitor no `estado.py`, os guiões de medição | mandato por escrever a 29.10; constrói depois do DO1 | a estrutura que impede os ciclos de maquinaria à frente do conteúdo; é pequena (um ponto) e o financiador pediu que não espere pela sexta-feira |
+| 4 | EV2 | conteúdo | a atualização datada do estudo de Évora: as causas como interpretações, o investimento, os contribuintes da quebra (a leitura externa de 25.10) | mandato por escrever | uma correção de conteúdo já identificada e sem fonte nova a esperar |
+| 5 | OG1-B3 | conteúdo | o resultado oficial da votação e os Diários no item do Orçamento, os números do primeiro-ministro ao lado das fontes | à espera do Parlamento (a vigia de meia em meia hora) | não depende de nós; entra na fila no dia em que a fonte sair |
+| 6 | HIG-5 | maquinaria | nada diretamente; os Minor do FP1, do FP2, do OG1-B e do OG1-C, a I275 e a I278 | sexta-feira 30.10, dentro de um ponto | a higiene semanal, no seu dia |
+| 7 | OG1-D | conteúdo | a extensão da âncora de atribuição às afirmações dos outros itens (a I279) e o segundo leitor das citações (a I277), na atualização seguinte de cada item | quando um item com afirmações for atualizado | maquinaria presa a um conteúdo; não anda sozinha |
