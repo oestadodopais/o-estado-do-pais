@@ -54,6 +54,9 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
+import assert from 'node:assert/strict';
+import { DOSSIES } from '../src/data/dossies.mjs';
+import { routePath } from '../src/lib/routes.mjs';
 import { WORKS } from '../src/data/studies.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
@@ -141,6 +144,7 @@ const rotaDe = (f) =>
 
 /* --- as rotas que imprimem datas de edição -------------------------------- */
 
+const DOSSIES_POR_ROTA = new Map(DOSSIES.flatMap(d => ['pt','en'].map(lang => [routePath('dossie',lang,{slug:d.slug}).replace(/\/$/,''), d])));
 const INDICES = new Set(['/estudos', '/en/studies']);
 /* B1, peça 2: a página de um lugar passou a listar os estudos sobre ele, cada um
    com a data em que a sua edição entrou neste repositório. São mais 616 páginas
@@ -185,7 +189,7 @@ const paraPrender = [];
 for (const f of paginas) {
   const cru = fs.readFileSync(f, 'utf8');
   const rota = rotaDe(f);
-  const eIndice = INDICES.has(rota) || ROTA_DO_LUGAR.test(rota) || ['/', '/en'].includes(rota) || INDICES_DO_SITIO.has(rota);
+  const eIndice = DOSSIES_POR_ROTA.has(rota) || INDICES.has(rota) || ROTA_DO_LUGAR.test(rota) || ['/', '/en'].includes(rota) || INDICES_DO_SITIO.has(rota);
   const daEdicao = ROTA_DA_EDICAO.exec(rota);
   /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
      páginas do sítio não a tem nem é uma das rotas que imprimem datas. */
@@ -318,6 +322,15 @@ function orfas(rota, doc, presasAqui) {
 }
 
 /** B1: prender a data à edição escolhida e à porta correspondente. */
+/** DO1-B: a data mantém a origem da edição e só entra no assunto que a declara. */
+function prendeNoDossie(rota, doc) {
+  const d = DOSSIES_POR_ROTA.get(rota);
+  if (!d) return false;
+  const slugs = doc.querySelectorAll('[data-estudo-edicao]').map(n => n.getAttribute('data-estudo-edicao').split('/')[0]);
+  if (JSON.stringify([...slugs].sort()) !== JSON.stringify([...d.pecas.estudos].sort())) falhas.push(`${rota}: estudos diferentes dos declarados no dossiê.`);
+  prendeEdicoesB1(rota, doc, null, d.pecas.estudos.length);
+  return true;
+}
 function prendeNoIndice(rota, doc) {
   prendeEdicoesB1(rota, doc);
 }
@@ -452,7 +465,36 @@ const EDICOES_DAS_ENTRADAS = new Map();
   }
 }
 
+// As plantas exercem o mesmo caminho que prende as datas no portão.
+let plantasDossies = 0;
+for (const [rota] of DOSSIES_POR_ROTA) {
+  const original = paraPrender.find(p => p.rota === rota)?.doc;
+  assert(original, `DO1: dossiê construído ausente: ${rota}`);
+  const medir = doc => {
+    const inicio = falhas.length, antes = lacos, contagens = new Map(presas);
+    assert(prendeNoDossie(rota,doc));
+    const erros = falhas.splice(inicio);
+    lacos = antes; presas.clear(); for (const [k,v] of contagens) presas.set(k,v);
+    return erros;
+  };
+  assert.equal(medir(original).length,0,'DO1: controlo das datas do estudo');
+  for (const mudar of [
+    doc => doc.querySelector(SELETOR).set_content('01.01.1900'),
+    doc => doc.querySelector(SELETOR).remove(),
+    doc => doc.querySelector('[data-estudo-edicao]').setAttribute('data-estudo-edicao','estudo-alheio/pt'),
+  ]) {
+    const copia = parse(original.toString()); mudar(copia);
+    assert(medir(copia).length,'DO1: data ou edição adulterada passou'); plantasDossies++;
+  }
+  assert.equal(prendeNoDossie('/fora-dos-dossies',original),false); plantasDossies++;
+}
+console.log(`DO1: datas dos estudos presas às edições; ${plantasDossies} plantas recusadas.`);
+
 for (const { rota, doc, slug } of paraPrender) {
+  if (prendeNoDossie(rota,doc)) {
+    paginasPrendidas++;
+    continue;
+  }
   if (EDICOES_DAS_ENTRADAS.has(rota)) {
     paginasPrendidas++;
     prendeEdicoesB1(rota, doc, null, EDICOES_DAS_ENTRADAS.get(rota));
