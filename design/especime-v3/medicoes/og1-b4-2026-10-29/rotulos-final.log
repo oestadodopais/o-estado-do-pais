@@ -1,0 +1,22 @@
+
+> o-estado-do-pais@0.1.0 check:rotulos
+> node scripts/inventario-rotulos.mjs --prova
+
+OG1A-unidade · /en/ledger: o índice tem 58 entradas OG1A e deve ter 57
+OG1A-unidade · /livro-razao: o índice tem 58 entradas OG1A e deve ter 57
+OG1A-unidade · o livro tem 58 linhas OG1A e o conjunto fechado declara 57
+OG1A-unidade · pt: 58 recibos conferidos e o conjunto fechado declara 57
+OG1A-unidade · pt: 58 entradas do índice conferidas e o conjunto fechado declara 57
+OG1A-unidade · en: 58 recibos conferidos e o conjunto fechado declara 57
+OG1A-unidade · en: 58 entradas do índice conferidas e o conjunto fechado declara 57
+R2 · o controlo das plantas não passou: oe1-entrada-retirada-do-indice-pt: a página intacta não passa (OG1A-unidade · /livro-razao: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: oe1-entrada-retirada-do-indice-en: a página intacta não passa (OG1A-unidade · /en/ledger: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: jd1-entrada-retirada-do-indice-pt: a página intacta não passa (OG1A-unidade · /livro-razao: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: jd1-entrada-retirada-do-indice-en: a página intacta não passa (OG1A-unidade · /en/ledger: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: ex3-entrada-retirada-pt: a página intacta não passa (OG1A-unidade · /livro-razao: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: ex3-entrada-retirada-en: a página intacta não passa (OG1A-unidade · /en/ledger: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: v2d-entrada-retirada-pt: a página intacta não passa (OG1A-unidade · /livro-razao: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: v2d-entrada-retirada-en: a página intacta não passa (OG1A-unidade · /en/ledger: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: v2e-entrada-retirada-pt: a página intacta não passa (OG1A-unidade · /livro-razao: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · o controlo das plantas não passou: v2e-entrada-retirada-en: a página intacta não passa (OG1A-unidade · /en/ledger: o índice tem 58 entradas OG1A e deve ter 57)
+R2 · rótulos: 9818 página(s) lidas, 706 com cartões, 5674 cartão(ões) (nacional 702, uniao 42, concelho 4928, camaras 2), 760 chave(s); unidades declaradas 1164, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 760 chave(s), 2514 campo(s), 2567 forma(s) com a contagem, 27996 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; JD1: unidades em 15+15 recibos, 15+15 entradas do livro; V2A: unidades em 18+18 recibos, 18+18 entradas do livro; V2D: unidades em 142+142 recibos, 142+142 entradas do livro; V2E: unidades em 177+177 recibos, 177+177 entradas do livro; EX3: unidades em 8+8 recibos, 8+8 entradas do livro; OG1A: unidades em 58+58 recibos, 58+58 entradas do livro; 69 de 69 plantas a morder; 17 erro(s).

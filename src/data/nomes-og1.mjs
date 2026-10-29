@@ -192,6 +192,10 @@ export const NOMES_OG1 = {
     "pt": "Entrada da RTP sobre a aprovação na generalidade",
     "en": "RTP entry on the approval at the general vote"
   },
+  "og1-votacao-generalidade-oficial": {
+    "pt": "Registo oficial da votação na generalidade, na página da iniciativa",
+    "en": "Official record of the general vote, on the bill's page"
+  },
   "og1-guiao-votacoes-28": {
     "pt": "Guião oficial das votações do dia da votação na generalidade",
     "en": "Official voting guide for the day of the general vote"
@@ -899,6 +903,20 @@ export const FAMILIAS_OG1 = {
       ],
       "en": [
         "It is the entry of RTP's live page recording the approval at the general vote, the votes in favour and the abstention."
+      ]
+    }
+  },
+  "og1-votacao-generalidade-oficial": {
+    "nome": {
+      "pt": "Registo oficial da votação na generalidade, na página da iniciativa",
+      "en": "Official record of the general vote, on the bill's page"
+    },
+    "frase": {
+      "pt": [
+        "É o registo da votação na generalidade na página da iniciativa no sítio da Assembleia da República: a reunião, o resultado e o sentido de voto de cada partido."
+      ],
+      "en": [
+        "It is the record of the general vote on the bill's page on the Assembly of the Republic's website: the sitting, the result and each party's vote."
       ]
     }
   },

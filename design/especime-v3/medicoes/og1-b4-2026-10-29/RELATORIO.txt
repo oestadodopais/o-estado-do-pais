@@ -1,0 +1,55 @@
+OG1-B4: registo oficial da votação na generalidade, com as adendas A, B e C
+
+A construção e todas as conferências pedidas passaram com código 0. A redação final da adenda B está nas duas edições; a data de escrita é 2026-10-29 e a publicação continua em 2026-10-27. A entrega é preparada num único commit OG1-B4, com esta pasta de medições; o identificador e o resultado do escrivão são reportados na resposta final da sessão.
+
+Os fragmentos «Reunião Plenária n.º 16» e «Aprovado» foram conferidos no excerto da linha og1-votacao-generalidade-oficial. A glosa inglesa do número da reunião usa um fragmento da mesma linha, sem algarismo solto. O fim inglês original coincidia exatamente com a oração indicada no §3.2. Conservou-se todo o começo do parágrafo até ao fragmento do guião e o resto da abertura. O HTML confirma «na página da iniciativa no sítio do Parlamento» e «on the bill's page on Parliament's website», bem como as duas orações novas da adenda B.
+
+Tokens do §2.1.4 e §2.2: oito, quatro lugares nas duas edições. No item: abertura[0], seccoes[2].conteudo[0].paragrafo (comparação), seccoes[3].conteudo[0].paragrafo (conclusão). No dossiê orcamento-2027: abertura[0]. Todos passaram de og1-votacao-generalidade para og1-votacao-generalidade-oficial. O token do parágrafo das fontes atribuído ao ECO continua na linha do ECO. Os caminhos completos estão em tokens.json.
+
+Listas e declarações atualizadas:
+1. NOMES_OG1 e FAMILIAS_OG1, em src/data/nomes-og1.mjs: nome e frase oficiais do mandato nas duas edições.
+2. src/data/lugar-das-linhas.mjs: og1-votacao-generalidade-oficial em portugal.
+3. documentosOg1, em scripts/check-pais.mjs: content/30 Orcamento 2027 Generalidade/source/iniciativa-377352-29.html com o título declarado pela linha.
+4. familias, em tests/cartao/leituras-provadas.json: folha bilingue, origens vazias e apoio proprio no excerto integral da linha.
+5. tests/discussao/palavras.json: regenerado, 758 folhas; as 76 folhas alteradas na redação ou nos apoios têm o sobre «Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.». O gerador usa a mesma nota para as folhas novas.
+6. SEM_AREA, em src/data/areas.mjs, pela adenda A: votacao-generalidade(?:-rtp|-oficial)?; assunto, motivo e todas as outras entradas intactos.
+7. src/i18n/lingua-dos-titulos.mjs, pela adenda C: «Proposta de Lei 110/XVII/2, Orçamento do Estado para 2027: detalhe da iniciativa» declarado pt. O localizador do recibo inglês tem lang="pt-PT".
+8. LINHAS_ESPERADAS.og1a, em scripts/inventario-rotulos.mjs: 57 para 58, medidos no livro e nos índices. A repetição de check:rotulos passou com as plantas existentes.
+9. scripts/lugar-tetos-b1.json: teto medido 3460 e referência à medição l1-og1b4.json. A regra da L1 foi conservada. O índice do livro passou sem alteração adicional de lista.
+
+Inventário, antes e depois: classificadas 2478 → 2484; vivas 1290 → 1290; retiradas 1186 → 1192. Duas declarações condicionais estão incluídas no total. As quatro redações anteriores e as duas contagens anteriores ficaram retiradas no lugar, com bloco og1-b4. Entraram as quatro redações finais e as duas contagens medidas. A redação intermédia, nunca comitada, foi substituída no lugar. REVISOES-DO-INVENTARIO.md mantém og1-b4 por ler; a leitura curta é do lugar de direção.
+Contagens lidas de contagens-livro.json, extraídas do HTML: 4 141 afirmações · 520 de 4 141 calculadas · 2 767 de 4 141 linhas de concelhos. Edição inglesa: 4 141 claims · 520 of 4 141 calculated · 2 767 of 4 141 municipality rows.
+L1: 3458 → 3460, com 2 páginas novas, os recibos português e inglês da linha oficial. Cada um tem duas portas para o Método. As duas páginas da discussão ganham um destino repetido; as outras páginas conservam a contagem, o destino de exemplo e a multiplicidade da medição DO1. As portas das páginas amostradas só mudam no item, pelos tokens e recibos do mandato. A medição l1-og1b4.json contém a lista completa e 7 plantas recusadas.
+
+Códigos finais, lidos dos respetivos ficheiros .codigo:
+Construção: 0, lido de build-adenda-c.codigo.
+check:discussao: 0, lido de discussao-final.codigo.
+check:cartao: 0, lido de cartao-final.codigo.
+check:datas: 0, lido de datas-final.codigo.
+check:rotulos: 0, lido de rotulos-final2.codigo.
+ledger:check: 0, lido de ledger-final.codigo.
+check:lingua: 0, lido de lingua-final.codigo.
+Inventário das frases (check:voz): 0, lido de inventario-final.codigo.
+L1 (check:lugar): 0, lido de l1-final2.codigo.
+Plantas e medição da L1: 0, lido de l1-planta.codigo.
+tests/livro/indice.mjs --prova: 0, lido de indice-final.codigo.
+
+check:datas aceitou a escrita nova sem alteração de contexto. O registo público das correções, a secção 11 do estudo da habitação, o motor e VOZ-MARCADORES.md ficaram intactos. Não houve capturas, publicação, push nem corrida dos três portões.
+
+Histórico das recusas: os três primeiros builds terminaram com código 1, respetivamente em áreas, voz e língua. As adendas A, B e C resolveram essas recusas. check:rotulos recusou a contagem antiga e passou após a atualização autorizada. A L1 recusou o teto antigo; a medição completa, as plantas e a repetição com o teto medido passaram. A primeira recolha longa da L1 ficou truncada por uma saída canalizada; foi repetida com a saída do processo num ficheiro regular, e a planta exige tantas páginas recolhidas como o total medido. Os registos anteriores foram conservados.
+
+Execução até à preparação deste relatório: 103 chamadas de ferramentas (37 iniciais, 19 na adenda A, 14 na B e 33 na C). As chamadas do commit e da sua verificação são contabilizadas na resposta final da sessão. Quatro builds, com 64 conferências internas; 13 corridas autónomas de conferências, incluindo repetições; uma corrida da medição com plantas da L1. Total de conferências e medição: 78. Quatro corridas do gerador da auditoria das palavras. Zero corridas dos três portões.
+
+Parágrafos copiados do HTML da construção verde. Foram retirados apenas os selos de fonte para transcrever a prosa:
+
+pt: abertura[1]
+Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o registo oficial da votação de 28.10.2026 na página da iniciativa no sítio do Parlamento, que confirma o que o ECO e a RTP tinham noticiado, e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos 300 milhões de euros do combate à fraude nos combustíveis, «a medida de maior dimensão do lado da receita» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, que não encontra na proposta «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação».
+
+pt: seccoes[1].conteudo[6].paragrafo
+A votação na generalidade, a 28.10.2026, segundo o ECO: a proposta «foi esta quarta-feira aprovada na generalidade», com «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP», «a abstenção do PS», «do PAN e do JPP» e «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda»; a RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se.» O guião oficial das votações de 28.10.2026 lista a «VOTAÇÃO NA GENERALIDADE» da «Proposta de Lei n.º 110/XVII/2.ª (GOV)»; o registo oficial da votação de 28.10.2026, na página da iniciativa no sítio do Parlamento, dá a votação na «Reunião Plenária n.º 16» como «Aprovado», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que as duas notícias tinham dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para 24.11.2026.
+
+en: abertura[1]
+Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to the official record of the vote of 28.10.2026 on the bill's page on Parliament's website, which confirms what ECO and RTP had reported, and the difference between the Government and the Council lies in what the Council does not count, starting with the 300 million euros of the fight against fuel fraud, «a medida de maior dimensão do lado da receita» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, which does not find in the proposal «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms).
+
+en: seccoes[1].conteudo[6].paragrafo
+The general vote, on 28.10.2026, according to ECO: the proposal «foi esta quarta-feira aprovada na generalidade» (was passed at the general vote this Wednesday), with «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP» (the votes in favour of the two parties that support the Government, PSD and CDS-PP), «a abstenção do PS» (the abstention of PS), «do PAN e do JPP» (of PAN and JPP) and «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda» (the vote against of Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda); RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se.» (the State Budget was passed at the general vote with PSD and CDS voting in favour; PS abstains). The official voting guide of 28.10.2026 lists the «VOTAÇÃO NA GENERALIDADE» (general vote) of «Proposta de Lei n.º 110/XVII/2.ª (GOV)»; the official record of the vote of 28.10.2026, on the bill's page on Parliament's website, gives the vote at the «Reunião Plenária n.º 16» (plenary sitting no. 16) as «Aprovado» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the same positions the two reports had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for 24.11.2026.

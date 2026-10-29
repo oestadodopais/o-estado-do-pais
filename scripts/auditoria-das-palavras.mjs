@@ -8,7 +8,7 @@ import {folhasDaExplicacao, conferirAuditoriaDasExplicacoes} from '../tests/expl
 const ficheiro='tests/discussao/palavras.json';
 const linhas=loadClaims();
 const anterior=JSON.parse(fs.readFileSync(ficheiro,'utf8'));
-const sobreNovo='Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.';
+const sobreNovo='Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.';
 const ler=(obj,caminho)=>caminho.replace(/\[(\d+)\]/g,'.$1').split('.').reduce((x,k)=>x?.[k],obj);
 function apoiosDoCaminho(item,caminho,antes){
   const base=/^(titulo|abertura\[\d+\]|seccoes\[\d+\]\.conteudo\[\d+\]\.paragrafo|seccoes\[\d+\]|naoDiz\[\d+\])/.exec(caminho)?.[0];

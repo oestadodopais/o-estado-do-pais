@@ -97,7 +97,7 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8, og1a: 57 };
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8, og1a: 58 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
 const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'v2d', 'v2e', 'ex3', 'og1a'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));

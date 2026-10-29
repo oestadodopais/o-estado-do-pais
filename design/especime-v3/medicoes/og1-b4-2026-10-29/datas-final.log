@@ -1,0 +1,37 @@
+
+> o-estado-do-pais@0.1.0 check:datas
+> node tests/inicio/novidades.mjs && node tests/inicio/datas-do-recibo.mjs && node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node tests/hb1/pagina-editada.mjs && node scripts/check-datas.mjs
+
+{"fp1":"verde","plantas":[{"nome":"última publicação não gera atualização","lang":"pt","mordeu":true},{"nome":"correção gera texto selado e recusa selo retirado","lang":"pt","mordeu":true},{"nome":"última publicação não gera atualização","lang":"en","mordeu":true},{"nome":"correção gera texto selado e recusa selo retirado","lang":"en","mordeu":true},{"nome":"condição do inventário limitada aos dois rótulos FP1","mordeu":true},{"nome":"read continua proibido e re-read aprovado não é uma palavra parcial","mordeu":true},{"nome":"marca novo retirada","lang":"pt","mordeu":true},{"nome":"dossiê da novidade trocado","lang":"pt","mordeu":true},{"nome":"dossiê da novidade retirado","lang":"pt","mordeu":true},{"nome":"título da peça trocado","lang":"pt","mordeu":true},{"nome":"entrada sem página","lang":"pt","mordeu":true},{"nome":"data no futuro","lang":"pt","mordeu":true},{"nome":"ordem trocada","lang":"pt","mordeu":true},{"nome":"peça mais recente em falta","lang":"pt","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"pt","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"pt","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"pt","mordeu":true},{"nome":"marca novo retirada","lang":"en","mordeu":true},{"nome":"dossiê da novidade trocado","lang":"en","mordeu":true},{"nome":"dossiê da novidade retirado","lang":"en","mordeu":true},{"nome":"título da peça trocado","lang":"en","mordeu":true},{"nome":"entrada sem página","lang":"en","mordeu":true},{"nome":"data no futuro","lang":"en","mordeu":true},{"nome":"ordem trocada","lang":"en","mordeu":true},{"nome":"peça mais recente em falta","lang":"en","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"en","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"en","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"en","mordeu":true}]}
+{"paginas":8282,"semPeriodo":44,"comPainel":182,"copiasAlojadas":4,"plantas":[{"nome":"undefined contra undefined recusado pela guarda da origem","mordeu":true},{"nome":"próxima leitura indevida derivada","mordeu":true},{"nome":"próxima leitura indevida semReleituras","mordeu":true},{"nome":"alojamento dito leitura (pt)","mordeu":true},{"nome":"alojamento dito leitura (en)","mordeu":true},{"nome":"campo ausente acrescentado","mordeu":true},{"nome":"próxima leitura no passado","mordeu":true},{"nome":"releitura do painel retirada","mordeu":true}],"calendario":"verde","marcaNovo":"verde"}
+HB1 publicação: preparação, aterragem declarada, legado, planta anterior e abertura comum conferidos.
+I9 publicação declarada: dois controlos verdes; sete adulterações recusadas.
+I9 integração: 4 edições reais verdes; 4 páginas sem scripts recusadas.
+PLANTA período: mês trocado, texto divergente recusado
+PLANTA período: trimestre trocado, texto divergente recusado
+PLANTA período: dia inventado num ano, texto divergente recusado
+HB1: períodos dos recibos conferidos nas duas línguas.
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-il-proposta (en): vermelho 1, verde 0
+HB1-g: 2 linhas que só declaram a última edição de uma página, nas duas edições (a descrição, o excerto, o JSON e a atribuição); o controlo hab-ine-iphab-homologa como estava; 20 plantas.
+DO1: datas dos estudos presas às edições; 16 plantas recusadas.
+[90mcheck-datas: história completa · 29 edição(ões) do ficheiro refeitas do `git`.[0m
+[32mcheck-datas[0m · 29 edição(ões) datadas, 130 data(s) impressa(s) em 56 página(s), 130 laço(s) data-edição em 670 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso; 12 nota(s) do sucessor com a frase da reconciliação.

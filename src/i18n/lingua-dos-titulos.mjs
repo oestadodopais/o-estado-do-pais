@@ -46,6 +46,7 @@ export const LINGUA_DOS_TITULOS = {
   "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027": "pt",
   "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se": "pt",
   "Guião de Votações: votações a efetuar em 28-10-2026, versão 2": "pt",
+  "Proposta de Lei 110/XVII/2, Orçamento do Estado para 2027: detalhe da iniciativa": "pt",
   "Orçamento do Estado para 2027 aprovado na generalidade com abstenção do PS": "pt",
 
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.

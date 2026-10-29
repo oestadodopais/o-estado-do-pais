@@ -1,0 +1,17 @@
+file://<worktree>/tests/explicacoes/explicacao.mjs:175
+    if (ka !== kb) throw new Error(`X1 · as duas edições têm pedaços diferentes em ${c} (${ka} / ${kb})`);
+                         ^
+
+Error: X1 · as duas edições têm pedaços diferentes em seccoes[1].conteudo[6].paragrafo[23] (campo,fragmento,texto / campo,fragmento,glosa,texto)
+    at anda (file://<worktree>/tests/explicacoes/explicacao.mjs:175:26)
+    at file://<worktree>/tests/explicacoes/explicacao.mjs:169:16
+    at Array.forEach (<anonymous>)
+    at anda (file://<worktree>/tests/explicacoes/explicacao.mjs:165:9)
+    at file://<worktree>/tests/explicacoes/explicacao.mjs:236:12
+    at Array.forEach (<anonymous>)
+    at file://<worktree>/tests/explicacoes/explicacao.mjs:234:16
+    at Array.forEach (<anonymous>)
+    at folhasDaExplicacao (file://<worktree>/tests/explicacoes/explicacao.mjs:231:13)
+    at file://<worktree>/scripts/auditoria-das-palavras.mjs:44:61
+
+Node.js v22.23.1
