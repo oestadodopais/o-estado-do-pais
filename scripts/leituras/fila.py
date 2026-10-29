@@ -16,10 +16,14 @@ def ler_fila(caminho=FILA):
     ordens, blocos = set(), set()
     for texto in Path(caminho).read_text(encoding='utf-8').splitlines():
         if not texto.startswith('|'):
+            if cabecalho is not None:
+                break
             cabecalho = None
             continue
         celulas = [c.strip() for c in texto.strip().strip('|').split('|')]
         if {'Ordem', 'Bloco', 'Tipo', 'Estado'} <= set(celulas):
+            if cabecalho is not None:
+                break
             cabecalho = celulas
             continue
         if cabecalho is None or all(re.fullmatch(r':?-+:?', c) for c in celulas):
@@ -64,6 +68,14 @@ def conferir(linhas, bloco, hoje=None):
     alvo = next((d for d in linhas if d['Bloco'] == bloco), None)
     if alvo is None:
         raise ValueError('fila: bloco fora da fila: ' + bloco)
+    for d in linhas:
+        if d['Ordem'] >= alvo['Ordem']:
+            continue
+        if d['Estado'].casefold().startswith('à espera'):
+            continue
+        if re.search(r'condição:\s*' + re.escape(bloco) + r'(?![\w-])', d['linha']):
+            continue
+        raise ValueError(f"fila: {bloco} espera por {d['Bloco']}, que está à sua frente")
     hoje = hoje or datetime.now(timezone.utc).date()
     if alvo['Tipo'] != 'maquinaria' or hoje.weekday() == 4:
         return
@@ -80,7 +92,9 @@ def conferir(linhas, bloco, hoje=None):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--lancar')
+    grupo = p.add_mutually_exclusive_group()
+    grupo.add_argument('--lancar')
+    grupo.add_argument('--toda', action='store_true')
     args = p.parse_args()
     try:
         linhas = ler_fila()
@@ -88,6 +102,20 @@ def main():
             conferir(linhas, args.lancar)
             print('fila: pode lançar ' + args.lancar)
         else:
+            if not args.toda:
+                elegiveis = []
+                for d in linhas:
+                    if d['Estado'].casefold().startswith('à espera'):
+                        continue
+                    try:
+                        conferir(linhas, d['Bloco'])
+                        elegiveis.append(d)
+                        break
+                    except ValueError:
+                        pass
+                linhas = elegiveis
+                if not linhas:
+                    raise ValueError('fila: nenhum bloco pode lançar hoje')
             for d in linhas:
                 print(f"{d['Ordem']} · {d['Bloco']} · {d['Tipo']} · {d['Estado']}")
         return 0

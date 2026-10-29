@@ -1,0 +1,45 @@
+{
+  "conferencias": [
+    {
+      "comando": "python3 tests/leituras/pl1.py",
+      "ficheiro_codigo": "pl1.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/fila.py",
+      "ficheiro_codigo": "fila-final.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/ferramenta_pre_voo.py",
+      "ficheiro_codigo": "pre-voo-final.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/ferramenta_aterrar.py",
+      "ficheiro_codigo": "aterrar.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "ficheiro_codigo": "mapa.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 scripts/leituras/conferir-regras.py CLAUDE.md CLAUDE.md --planta",
+      "ficheiro_codigo": "regras.codigo",
+      "codigo": 0
+    },
+    {
+      "comando": "npm run check:privacidade",
+      "ficheiro_codigo": "privacidade.codigo",
+      "codigo": 0
+    }
+  ],
+  "corridas_dirigidas": 9,
+  "corridas_inteiras": 0,
+  "nota_corridas": "Inclui a repetição do pré-voo depois de corrigida a pasta dos relatórios da planta e a repetição da fila depois da planta da interface.",
+  "check_leituras": "pelo lugar de direção, pendente para esta cabeça",
+  "arranque_bytes": 2466,
+  "passagem_atual": "custo pendente do .pontos.json que o lançador escreve no fim"
+}

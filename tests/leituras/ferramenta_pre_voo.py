@@ -100,7 +100,7 @@ class PreVoo(unittest.TestCase):
         self.assertNotIn('INICIO ', r.stdout)
 
     def test_ambos_os_lancadores_exigem_bloco_depois_do_pre_voo(self):
-        prompt = self.p / 'prompt.md'; prompt.write_text('Acrescenta: nenhum\n')
+        prompt = self.p / 'prompt.md'; prompt.write_text('Acrescenta: nada\n')
         env = {k: v for k, v in self.env.items() if k != 'OEDP_BLOCO'}
         for nome, argumentos in (
             ('construir-codex.sh', [str(self.sw), str(prompt), str(self.p / 'relatorio.md')]),
@@ -110,6 +110,26 @@ class PreVoo(unittest.TestCase):
             self.assertEqual(r.returncode, 9, r.stdout + r.stderr)
             self.assertIn('falta OEDP_BLOCO', r.stderr)
             self.assertIn('0 node_modules', r.stdout)
+            self.assertNotIn('INICIO ', r.stdout)
+
+    def test_lancadores_conservam_recusa_e_registo(self):
+        guioes = self.sw / 'scripts/leituras'; guioes.mkdir(parents=True)
+        (guioes / 'fila.py').write_text('print("FILA-VERDE")\n')
+        (guioes / 'pre-mandato.py').write_text('print("PRE-MANDATO-RECUSOU")\nraise SystemExit(7)\n')
+        git(self.sw, 'add', '--', 'scripts/leituras/fila.py', 'scripts/leituras/pre-mandato.py')
+        commit(self.sw, 'guiões de ensaio')
+        prompt = self.p / 'prompt.md'; prompt.write_text('Acrescenta: nada\n')
+        relatorios = self.p / 'relatorios'; relatorios.mkdir()
+        env = dict(self.env, OEDP_BLOCO='C1', TMPDIR=str(self.p))
+        for nome, pasta, argumentos in (
+            ('construir-codex.sh', 'oedp-construtor.*', [str(self.sw), str(prompt), str(relatorios / 'relatorio.md')]),
+            ('retomar-codex.sh', 'oedp-retoma.*', [str(self.sw), 'sessao-sintetica', str(prompt), str(relatorios / 'resposta.md')]),
+        ):
+            r = subprocess.run(['sh', str(GUIOES / nome), *argumentos], env=env, capture_output=True, text=True, timeout=10)
+            self.assertEqual(r.returncode, 7, r.stdout + r.stderr)
+            registo = next(self.p.glob(pasta + '/RELATORIO.pre-mandato.log')).read_text()
+            self.assertIn('FILA-VERDE', registo)
+            self.assertIn('PRE-MANDATO-RECUSOU', registo)
             self.assertNotIn('INICIO ', r.stdout)
 
     def test_lancador_verde_guarda_registos_fora_e_define_trancas(self):
@@ -145,10 +165,10 @@ assert sys.stdin.read()
 Path(sys.argv[sys.argv.index('-o')+1]).write_text('saída sintética')
 ''')
         prompt = self.p / 'prompt.md'
-        prompt.write_text('ensaio')
+        prompt.write_text('Acrescenta: nada\n')
         pasta = self.p / 'relatorio'
         pasta.mkdir()
-        env = dict(self.env, OEDP_BLOCO='C1', OEDP_ACRESCENTA='nenhum', PATH=str(binario) + ':' + os.environ['PATH'], PYTHON_REAL=sys.executable, TMPDIR=str(self.p))
+        env = dict(self.env, OEDP_BLOCO='C1', OEDP_ACRESCENTA='nada', PATH=str(binario) + ':' + os.environ['PATH'], PYTHON_REAL=sys.executable, TMPDIR=str(self.p))
         r = subprocess.run(['sh', str(GUIOES / 'construir-codex.sh'), str(self.sw), str(prompt), str(pasta / 'RELATORIO.md')],
                            env=env, capture_output=True, text=True, timeout=15)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
@@ -156,6 +176,9 @@ Path(sys.argv[sys.argv.index('-o')+1]).write_text('saída sintética')
         self.assertEqual(len(list(pasta.iterdir())), 1)
         self.assertEqual(len(list(self.p.glob('oedp-construtor.*/RELATORIO.escrivao.log'))), 1)
         self.assertEqual(len(list(self.p.glob('oedp-construtor.*/RELATORIO.pontos.json'))), 1)
+        registo = next(self.p.glob('oedp-construtor.*/RELATORIO.pre-mandato.log')).read_text()
+        self.assertIn('pode lançar C1', registo)
+        self.assertIn('não acrescenta linhas nem frases', registo)
 
 
 if __name__ == '__main__':

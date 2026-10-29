@@ -1,6 +1,10 @@
 """PL1: cinco recusas e duas passagens da fila, com calendário fixo."""
 from datetime import date
 import importlib.util
+import io
+import sys
+from contextlib import redirect_stdout
+from unittest.mock import patch
 from pathlib import Path
 import tempfile
 import unittest
@@ -54,6 +58,35 @@ class Fila(unittest.TestCase):
         self.assertEqual(fila.ler_tipos(self.p)['n1'], 'navegação')
         with self.assertRaisesRegex(ValueError, 'fora da fila'):
             self.conferir('N1')
+
+    def test_conteudo_nao_passa_conteudo_pronto(self):
+        self.p.write_text(self.texto.replace('M1', 'C2').replace('maquinaria', 'conteúdo'))
+        with self.assertRaisesRegex(ValueError, 'espera por C2'):
+            self.conferir('C1')
+
+    def test_conteudo_passa_espera_ou_condicao(self):
+        for estado in ('à espera do Parlamento', 'pronto; condição: C1'):
+            self.p.write_text(self.texto.replace('M1', 'C2').replace('maquinaria', 'conteúdo').replace('| pronto |', '| ' + estado + ' |'))
+            self.conferir('C1')
+
+    def test_so_primeira_tabela_ativa(self):
+        self.p.write_text(self.texto + '\n## Outra tabela\n\n' + self.texto)
+        self.assertEqual(len(fila.ler_fila(self.p)), 2)
+
+    def test_cli_cabeca_e_toda(self):
+        self.p.write_text(self.texto.replace('maquinaria', 'conteúdo'))
+        linhas = fila.ler_fila(self.p)
+        for args, quantidade in [([], 1), (['--toda'], 2)]:
+            saida = io.StringIO()
+            with patch.object(fila, 'ler_fila', return_value=linhas), patch.object(sys, 'argv', ['fila.py', *args]), redirect_stdout(saida):
+                self.assertEqual(fila.main(), 0)
+            self.assertEqual(len(saida.getvalue().splitlines()), quantidade)
+            self.assertTrue(saida.getvalue().startswith('1 · M1'))
+
+    def test_sexta_nao_dispensa_ordem(self):
+        self.p.write_text(self.texto.replace('| 1 |', '| 3 |'))
+        with self.assertRaisesRegex(ValueError, 'à sua frente'):
+            self.conferir(dia=date(2026, 10, 30))
 
     def test_espera_de_fonte_e_condicao_sem_colisao(self):
         self.p.write_text(self.texto.replace('mandato escrito ontem', 'à espera de fonte'))

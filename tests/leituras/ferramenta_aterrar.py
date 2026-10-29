@@ -24,7 +24,7 @@ class Aterrar(unittest.TestCase):
         (self.w / 'linha').write_text('cabeça a aterrar\n')
         self.custo = self.w / 'design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'
         self.custo.parent.mkdir(parents=True)
-        self.custo.write_text('{"bloco": "ensaio", "passagens": []}\n')
+        self.custo.write_text('{"bloco": "ensaio", "pontos_do_bloco": 1, "passagens": []}\n')
         git(self.w, 'add', '--', str(self.custo.relative_to(self.w)))  # commit() só adiciona .gitignore e linha
         commit(self.w, 'ensaio: ramo pronto')
         self.cabeca = git(self.w, 'rev-parse', 'HEAD')
@@ -102,13 +102,12 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertIn('custo-<data>.json', recibo['passos'][-1]['motivo'])
         self.assertFalse(any(c[0] == 'git' and c[1] in ('push', 'merge') for c in chamadas))
 
-    def test_ramo_sem_bloco_com_razao_no_recibo(self):
+    def test_sem_custo_nao_dispensa_bloco_declarado(self):
         self.sem_custo()
         self.env['ATERRAR_SEM_CUSTO'] = 'os registos do dia, sem bloco'
         r, recibo, _ = self.correr()
-        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertEqual(recibo['sem_custo'], 'os registos do dia, sem bloco')
-        self.assertNotIn('custo', recibo)
+        self.assertEqual(r.returncode, 9, r.stdout + r.stderr)
+        self.assertIn('só de registos', recibo['passos'][-1]['motivo'])
 
     def test_bloco_com_custo_no_recibo(self):
         r, recibo, _ = self.correr()

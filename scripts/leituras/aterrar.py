@@ -8,6 +8,7 @@ A worktree fica destacada na cabeça aterrada depois de apagar o ramo local.
 """
 import datetime
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -171,32 +172,71 @@ class Aterragem:
         # Partilhada pelas worktrees; o ambiente permite o arquivo noutro volume.
         return Path(os.environ.get('OEDP_ATERRAGENS', self.principal.parent / '_aterragens'))
 
+    def blocos_conhecidos(self):
+        conhecidos = set()
+        fila = self.sitio / 'design/observatorio/FILA.md'
+        if fila.exists():
+            cabecalho = None
+            for linha in fila.read_text().splitlines():
+                if not linha.startswith('|'):
+                    cabecalho = None
+                    continue
+                c = [x.strip() for x in linha.strip().strip('|').split('|')]
+                if 'Bloco' in c and 'Tipo' in c:
+                    cabecalho = c
+                elif cabecalho and len(c) == len(cabecalho):
+                    d = dict(zip(cabecalho, c))
+                    if d['Tipo'] in ('conteúdo', 'navegação', 'maquinaria'):
+                        conhecidos.add(d['Bloco'])
+        for pasta in (self.sitio / 'design/especime-v3/medicoes').glob('*'):
+            if not pasta.is_dir():
+                continue
+            conhecidos.add(re.sub(r'-\d{4}-\d{2}-\d{2}$', '', pasta.name))
+            for f in pasta.glob('custo*.json'):
+                d = json.loads(f.read_text())
+                if isinstance(d, dict) and isinstance(d.get('bloco'), str):
+                    m = re.match(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', d['bloco'])
+                    if m:
+                        conhecidos.add(m.group())
+        return conhecidos
+
     def conferir_blocos(self):
         blocos = os.environ.get('OEDP_BLOCOS', '').split()
-        self.exigir(bool(blocos), 'falta OEDP_BLOCOS="<bloco> <bloco>"')
         self.exigir(len(set(blocos)) == len(blocos) and
                     all(re.fullmatch(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', b) for b in blocos),
                     'OEDP_BLOCOS tem blocos repetidos ou inválidos')
         self.recibo['blocos'] = blocos
-        # Numa retoma depois do avanço de main, só um recibo anterior prova o lote.
         if git(self.sitio, 'rev-parse', 'main') == self.cabeca:
-            anteriores = self.recibos_anteriores()
-            provados = [r for r in anteriores if r.get('cabeca') == self.cabeca and
-                        r.get('blocos') == blocos and r.get('custo') and
+            provados = [r for r in self.recibos_anteriores() if r.get('cabeca') == self.cabeca and
+                        r.get('blocos') == blocos and
+                        ((blocos and r.get('custos_por_bloco')) or (not blocos and r.get('so_registos'))) and
                         any(p.get('passo') == 'fundir-main' and p.get('codigo') == 0 for p in r.get('passos', []))]
-            self.exigir(bool(provados), 'main já está nesta cabeça, mas falta recibo que prove os blocos e o custo')
-            self.recibo['custo'] = provados[-1]['custo']
+            self.exigir(bool(provados), 'main já está nesta cabeça, mas falta recibo que prove os blocos e o custo ou os registos')
+            anterior = max(provados, key=lambda r: r.get('inicio', ''))
+            for chave in ('custo', 'custos_por_bloco', 'so_registos', 'sem_custo', 'decisao_do_financiador'):
+                if chave in anterior:
+                    self.recibo[chave] = anterior[chave]
             return
-        assuntos = git(self.sitio, 'log', '--format=%s', 'main..HEAD').splitlines()
+        assuntos = git(self.sitio, 'log', '--reverse', '--format=%s', 'main..HEAD').splitlines()
+        conhecidos = self.blocos_conhecidos()
+        def registo(assunto):
+            m = re.match(r'^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-r(?=$|[: .])', assunto)
+            return bool(m and m.group(1) in conhecidos)
+        if not blocos:
+            self.exigir(bool(assuntos) and registo(assuntos[0]) and all(registo(a) for a in assuntos),
+                        'falta OEDP_BLOCOS; só um ramo de registos com prefixo conhecido dispensa blocos')
+            self.recibo['so_registos'] = True
+            self.recibo['custos_por_bloco'] = {}
+            return
         encontrados = set()
         for assunto in assuntos:
-            candidatos = [b for b in blocos if re.match(re.escape(b) + r'(?=$|[^A-Za-z0-9]|[ ])', assunto)]
-            if candidatos:
-                encontrados.add(max(candidatos, key=len))
+            if registo(assunto):
                 continue
-            # Registos: prefixo explícito, nunca uma palavra encontrada no corpo.
-            self.exigir(bool(re.match(r'^(?:OG1-C-r|registos|[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-r)(?=$|[: .])', assunto, re.I)),
-                        'commit fora dos blocos declarados: ' + assunto)
+            candidatos = [b for b in blocos if re.match(re.escape(b) + r'(?=$|[^A-Za-z0-9])', assunto)]
+            # Um sufixo -r desconhecido nunca se mascara como commit de conteúdo.
+            self.exigir(not re.match(r'^[^ :]+-r(?=$|[: .])', assunto), 'prefixo de registos desconhecido: ' + assunto)
+            self.exigir(bool(candidatos), 'commit fora dos blocos declarados: ' + assunto)
+            encontrados.add(max(candidatos, key=len))
         self.exigir(encontrados == set(blocos), 'bloco declarado sem commit: ' + ' '.join(sorted(set(blocos) - encontrados)))
 
     def recibos_anteriores(self):
@@ -245,27 +285,60 @@ class Aterragem:
             self.recibo['conferencias']['declaracao'] = dirigida.read_text()
 
     def conferir_custo(self):
-        if 'custo' in self.recibo:
-            return
-        ficheiros = git(self.sitio, 'diff', '--name-only', '--diff-filter=ACMR', 'main...HEAD').splitlines()
-        custos = [f for f in ficheiros if re.fullmatch(r'design/especime-v3/medicoes/[^/]+/custo[^/]*\.json', f)]
-        por_bloco = {}
-        for f in custos:
-            d = json.loads((self.sitio / f).read_text())
-            nome = d.get('bloco', '')
-            for b in self.recibo['blocos']:
-                if re.match(re.escape(b) + r'(?=$|[ :·(])', nome, re.I):
-                    self.exigir(b not in por_bloco, 'mais de um ficheiro de custo para ' + b)
-                    por_bloco[b] = f
         razao = os.environ.get('ATERRAR_SEM_CUSTO', '').strip()
-        if razao and not custos:
-            self.recibo['sem_custo'] = razao
+        so_registos = not self.recibo['blocos'] and self.recibo.get('so_registos') is True
+        self.exigir(not razao or so_registos, 'ATERRAR_SEM_CUSTO só vale para uma aterragem só de registos, sem blocos declarados')
+        if so_registos:
+            if razao:
+                self.recibo['sem_custo'] = razao
+            self.recibo['custos_por_bloco'] = {}
             return
-        self.exigir(set(por_bloco) == set(self.recibo['blocos']),
+        por_bloco = dict(self.recibo.get('custos_por_bloco', {})) if 'custo' in self.recibo else {}
+        if not por_bloco:
+            ficheiros = git(self.sitio, 'diff', '--name-only', '--diff-filter=ACMR', 'main...HEAD').splitlines()
+            custos = [f for f in ficheiros if re.fullmatch(r'design/especime-v3/medicoes/[^/]+/custo[^/]*\.json', f)]
+            for f in custos:
+                d = json.loads((self.sitio / f).read_text())
+                nome = d.get('bloco', '') if isinstance(d, dict) else ''
+                for b in self.recibo['blocos']:
+                    if re.match(re.escape(b) + r'(?=$|[ :·(])', nome):
+                        self.exigir(b not in por_bloco, 'mais de um ficheiro de custo para ' + b)
+                        por_bloco[b] = f
+        self.exigir(set(por_bloco) == set(self.recibo['blocos']) and bool(por_bloco),
                     'falta custo-<data>.json identificado pelo campo bloco para: ' +
                     ' '.join(sorted(set(self.recibo['blocos']) - set(por_bloco))))
+        decisao = os.environ.get('ATERRAR_DECISAO', '').strip() or self.recibo.get('decisao_do_financiador', '')
+        if decisao:
+            self.recibo['decisao_do_financiador'] = decisao
+        medidas = {}
+        def numero(v):
+            return type(v) in (int, float) and math.isfinite(v) and v >= 0
+        for b, f in por_bloco.items():
+            d = json.loads((self.sitio / f).read_text())
+            pontos = d.get('pontos_do_bloco')
+            if pontos is None:
+                passagens = d.get('passagens_codex', [])
+                self.exigir(isinstance(passagens, list), 'passagens_codex inválidas: ' + b)
+                valores = [p.get('pontos') for p in passagens if isinstance(p, dict) and p.get('pontos') is not None]
+                self.exigir(bool(valores) and all(numero(v) for v in valores), 'custo por medir ou pontos inválidos: ' + b)
+                pontos = sum(valores)
+            self.exigir(numero(pontos), 'pontos_do_bloco inválido: ' + b)
+            o = d.get('orcamento')
+            declarado = o.get('pontos_codex_por_bloco') if isinstance(o, dict) else None
+            if declarado is None:
+                limite = 10
+                self.recibo['orcamento_por_omissao'] = limite
+            else:
+                m = re.search(r'\d+', str(declarado))
+                self.exigir(bool(m) and int(m.group()) > 0, 'orçamento sem inteiro positivo: ' + b)
+                limite = int(m.group())
+            medidas[b] = {'pontos': pontos, 'orcamento': limite,
+                          'origem_orcamento': 'por omissão' if declarado is None else 'custo'}
+            self.exigir(pontos < limite or bool(decisao),
+                        f'{b}: {pontos:g} pontos atingem o orçamento de {limite}; falta ATERRAR_DECISAO')
         self.recibo['custo'] = list(por_bloco.values())
         self.recibo['custos_por_bloco'] = por_bloco
+        self.recibo['medidas_de_custo'] = medidas
 
     def github(self):
         for tentativa in range(45):
