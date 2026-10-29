@@ -1,0 +1,11 @@
+# Adenda A ao mandato OG1-B4: a lista dos assuntos das linhas (29.10.2026, 16:26 UTC)
+
+*A mesma sessão, a mesma worktree do sítio (ramo `og1b4-2026-10-29`), nada comitado. Paraste bem: `check:areas`, regra A7, recusou a linha `og1-votacao-generalidade-oficial` porque a lista `SEM_AREA` de `src/data/areas.mjs` (a entrada dos estudos `oe-2027`) não a conhece, e o mandato não nomeou essa lista (a mesma lição da HB1-e e do DO1, a regra 14: as listas fechadas que uma linha nova arrasta). Decisão: a linha entra nessa entrada, conservando o que a regra protege (cada linha do item declara o seu assunto e o motivo de não criar cartão), e tudo o mais do mandato faz-se como lá está.*
+
+## 1 · A lista `SEM_AREA`
+
+Na entrada de `SEM_AREA` com `estudos: ['oe-2027']`, a expressão `id` passa a aceitar `votacao-generalidade-oficial` ao lado de `votacao-generalidade` e `votacao-generalidade-rtp` (a alternativa `votacao-generalidade(?:-rtp)?` passa a `votacao-generalidade(?:-rtp|-oficial)?`, ou a forma equivalente que a expressão já use); o `assunto` e o `motivo` dessa entrada ficam como estão, porque dizem exatamente o que esta linha é (uma posição pública sobre a proposta depois do voto na generalidade: o registo oficial do voto). Nenhuma outra entrada muda. Se `check:areas` tiver uma planta para esta lista, a planta conserva-se; se exigir uma linha nova de prova, diz qual e fá-la pela forma das vizinhas.
+
+## 2 · O resto
+
+Como no mandato: a construção verde (`npm run build`), as conferências do §1 uma de cada vez com os códigos lidos dos ficheiros `.codigo` (`check:discussao`, `check:cartao`, `check:datas`, `check:rotulos`, `ledger:check`, `check:lingua`, o inventário das frases, a L1 com a sua medição em `design/especime-v3/medicoes/og1-b4-2026-10-29/l1-og1b4.json` se mudar, `tests/livro/indice.mjs`), o relatório completo já escrito em `design/especime-v3/medicoes/og1-b4-2026-10-29/RELATORIO.txt` atualizado com os códigos e sem nenhum caminho da máquina (o relatório fica no repositório: nada do diretório pessoal da máquina nem da pasta temporária, só caminhos relativos ao repositório ou «uma pasta temporária»), e o commit «OG1-B4» (um só, com tudo, incluindo a pasta `design/especime-v3/medicoes/og1-b4-2026-10-29/`). As mesmas condições de paragem.

@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T17:46:52+00:00",
+ "copia": "_aterragens/pacote-do1d-2026-10-29",
+ "plantas": [
+  {
+   "id": "V2",
+   "ficheiro": "scripts/medir-defeitos.mjs",
+   "descricao": "a cópia da régua tem cinco correspondências em RETIRADAS_DENTRO_DE_FRASE onde a adenda G autoriza seis (falta «under discussion ·»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "70cfd0509121b354a2aadd95581712bd31a1b42b1c4eebcbedd8d9c3ce465c48",
+   "sha256_depois": "39bd4e481d93858647fb0f11001e72f57c6c263136e0bc749ae1d461a08c6aff",
+   "contexto_antes": "ue se discute ·', new Set(['o que se discute · Dossiê:'])],\n  ['study ·', new Set(['study · Dossier:'])],\n  ['explainer ·', new Set(['explainer · Dossier:'])],\n  ['under discussion ·', new Set(['under discussion · Dossier:'])],\n  // EO1: a atualização da contagem faz o índice mostrar a definição desta linha.\n  // As antigas portas isoladas continuam proibidas; só se admite a definição ",
+   "contexto_depois": "ue se discute ·', new Set(['o que se discute · Dossiê:'])],\n  ['study ·', new Set(['study · Dossier:'])],\n  ['explainer ·', new Set(['explainer · Dossier:'])],\n  // EO1: a atualização da contagem faz o índice mostrar a definição desta linha.\n  // As antigas portas isoladas continuam proibidas; só se admite a definição "
+  },
+  {
+   "id": "V3",
+   "ficheiro": "built/dossies/index.html",
+   "descricao": "o índice português dos dossiês imprime «Um lugar por assunto, com tudo o que há sobre ele» onde o mandato escreve «por assunto vivo»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "be6d290eadc31e10d34ecbe62172fc42387dca057386b27b2366ad3d65868174",
+   "sha256_depois": "36a5286a942e51caf42da8efd0324d54dfa31d297554e1983f805ff554d58260",
+   "contexto_antes": "or inteligência artificial, segundo o <span class=\"rotulo-ia-final\"><a href=\"/metodo\">Método</a>.</span></p></div><h1 class=\"explicacoes-titulo\">Os dossiês</h1><p class=\"explicacao-p\">Um lugar por assunto vivo, com tudo o que há sobre ele</p><ul class=\"dossies-lista\"><li data-dossie-lista=\"orcamento-2027\"><h2><a href=\"/dossies/orcamento-2027\"><span data-dossie-campo=",
+   "contexto_depois": "or inteligência artificial, segundo o <span class=\"rotulo-ia-final\"><a href=\"/metodo\">Método</a>.</span></p></div><h1 class=\"explicacoes-titulo\">Os dossiês</h1><p class=\"explicacao-p\">Um lugar por assunto, com tudo o que há sobre ele</p><ul class=\"dossies-lista\"><li data-dossie-lista=\"orcamento-2027\"><h2><a href=\"/dossies/orcamento-2027\"><span data-dossie-campo="
+  },
+  {
+   "id": "V4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do construtor diz que o índice do sítio ficou em 442 ligações por edição onde a sua própria explicação e o índice dizem 443",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8040e99450acbb5f09bc32ea6f77feb492c911b33bcd75ff45387588fada753d",
+   "sha256_depois": "b36f0c5016751fa41b409a13c70349fe325e82fc9a9892fb05fd36e33f7bb4c7",
+   "contexto_antes": "-main.mjs` extraiu os blocos e executou `diff -u`. Os quatro resultados foram **0**, incluindo depois do commit.\n\n| Contagem | Antes | Depois |\n|---|---:|---:|\n| Ligações do índice, por edição | 444 | **443** |\n| Declarações do inventário | 2478 | 2484 |\n| Frases ativas distintas | 1289 | 1277 |\n| Rótulos B1, por edição | 41 | 38 |\n| Plantas de `check:dossies` | 18 | ",
+   "contexto_depois": "-main.mjs` extraiu os blocos e executou `diff -u`. Os quatro resultados foram **0**, incluindo depois do commit.\n\n| Contagem | Antes | Depois |\n|---|---:|---:|\n| Ligações do índice, por edição | 444 | **442** |\n| Declarações do inventário | 2478 | 2484 |\n| Frases ativas distintas | 1289 | 1277 |\n| Rótulos B1, por edição | 41 | 38 |\n| Plantas de `check:dossies` | 18 | "
+  },
+  {
+   "id": "V5",
+   "ficheiro": "src/components/inicio/Novidades.astro",
+   "descricao": "a cópia da caixa das novidades imprime a palavra «Dossiê» sem os dois pontos (dossies.singular) onde a página construída e a adenda D imprimem «Dossiê: »",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fe9fdf0b588e1ad6feac4e21900703fd23ed57b7a00894dcf16cba8fb4cede84",
+   "sha256_depois": "3243b466cda1c9a9eea85d8baf90c84e5e7e1bc9464b55365c313412561cb8e8",
+   "contexto_antes": "-editorial\" data-data-origem={e.origem}>{dataDaCasa(e.data)}</time>\n      <span class=\"pp-novidade-tipo\"><span data-voz>{r[e.tipo]}</span>{e.dossie && <>{' · '}{t(lang).dossies.ligacao}<a href={routePath('dossie',lang,{slug:e.dossie.slug})} data-novidade-dossie={e.dossie.slug}><span data-dossie-campo={`${e.dossie.slug}:titulo`}><Frase partes={partesD",
+   "contexto_depois": "-editorial\" data-data-origem={e.origem}>{dataDaCasa(e.data)}</time>\n      <span class=\"pp-novidade-tipo\"><span data-voz>{r[e.tipo]}</span>{e.dossie && <>{' · '}{t(lang).dossies.singular}{' '}<a href={routePath('dossie',lang,{slug:e.dossie.slug})} data-novidade-dossie={e.dossie.slug}><span data-dossie-campo={`${e.dossie.slug}:titulo`}><Frase partes={partesD"
+  },
+  {
+   "id": "V1",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "a página portuguesa do dossiê imprime «27.10.2026» como a peça mais recente, por cima de itens datados de 28.10.2026, com o datetime a dizer 28",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "17188917fdeb04929e56a5b3e6c3a44b78808b835587b00bca47e8126423ea8b",
+   "sha256_depois": "fa048ce13abb74cf1ef158d4adc2a7a203ff417d9a199b4b6c5ed7f62cd3649b",
+   "contexto_antes": "\" datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">29.10.2026</time> · <span data-voz>A peça mais recente é de</span> <time data-dossie-data=\"recente\" datetime=\"2026-10-28\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">28.10.2026</time></p><section class=\"explicacao-secao\" aria-labelledby=\"dossie-estudos\"><h2 class=\"explicacao-secao-titulo\" id=\"dossie-estudos\">O estudo</h2><article class=\"estu",
+   "contexto_depois": "\" datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">29.10.2026</time> · <span data-voz>A peça mais recente é de</span> <time data-dossie-data=\"recente\" datetime=\"2026-10-28\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">27.10.2026</time></p><section class=\"explicacao-secao\" aria-labelledby=\"dossie-estudos\"><h2 class=\"explicacao-secao-titulo\" id=\"dossie-estudos\">O estudo</h2><article class=\"estu"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T15:29:58+00:00",
+ "copia": "_aterragens/pacote-hb1ec-2026-10-29",
+ "plantas": [
+  {
+   "id": "Y1",
+   "ficheiro": "built/livro-razao/hab-ine-avaliacao-mediana/index.html",
+   "descricao": "a página portuguesa da linha da mediana define o mediano com «um terço das avaliações ficou acima» onde a adenda e a edição inglesa dizem «metade»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0d9ec669d191312d0c162307cbce5781249e085b4bf5b3481df5dc7cd9334218",
+   "sha256_depois": "db4b9a9849741f46b8f975be4f406ad4bdd581692a9cab58905380644fee25ff",
+   "contexto_antes": "r=\"data-da-linha\" data-de-linha=\"hab-ine-avaliacao-mediana\" data-de-campo=\"reference_date\">setembro de 2026</span> quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado.</p></div><p class=\"linha-valor\"><span data-claim=\"hab-ine-avaliacao-mediana\" class=\"claim-value linha-valor-num\">",
+   "contexto_depois": "r=\"data-da-linha\" data-de-linha=\"hab-ine-avaliacao-mediana\" data-de-campo=\"reference_date\">setembro de 2026</span> quando lhes pediram crédito para as comprar: um terço das avaliações ficou acima deste valor e dois terços abaixo. O INE publica-o em euros por metro quadrado.</p></div><p class=\"linha-valor\"><span data-claim=\"hab-ine-avaliacao-mediana\" class=\"claim-value linha-valor-num\">"
+  },
+  {
+   "id": "Y2",
+   "ficheiro": "built/en/studies/a-casa-em-portugal-e-na-europa/index.html",
+   "descricao": "a página inglesa do estudo diz «The average bank appraisal of homes» onde a adenda, a linha e a edição portuguesa dizem «median»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9fa4d7ae2f300606781173219f65dbfe5022d9fe309ec7a2d95e56d1d12f0968",
+   "sha256_depois": "cc88ef92ed799c77740a6aed7ea6e39f0f07066a6d0e6ce89d32691d011c1113",
+   "contexto_antes": "ata-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">INE</span></span></a> % in September 2026. The median bank appraisal of homes, the one banks make when credit is requested to buy them, stood at <span class=\"texto-figura\" data-registo=\"a-casa-em-portugal-e-na-europa/en#32.4\" data-regist",
+   "contexto_depois": "ata-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">INE</span></span></a> % in September 2026. The average bank appraisal of homes, the one banks make when credit is requested to buy them, stood at <span class=\"texto-figura\" data-registo=\"a-casa-em-portugal-e-na-europa/en#32.4\" data-regist"
+  },
+  {
+   "id": "Y3",
+   "ficheiro": "motor/content/28 Habitacao Estudo/Technical Source/documento.pt.md.tmpl",
+   "descricao": "a cópia do gabarito português diz que a avaliação bancária «saiu antes» dos outros dois destaques, onde a adenda C, as datas das linhas (27.10 depois de 21.10 e 23.10) e o diff dizem «saiu a seguir»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "38d2686aa8cf0f860ea11e35bb1fdef2bcebf0993cfab77be45b931324ab233c",
+   "sha256_depois": "496203cea0b68ce15c6b012763c57d7f69b41ce1efc76d8322fc621c4932174f",
+   "contexto_antes": "lendário do INE anunciava, ⟦HB:hab-ine-calendario-juro⟧ e ⟦HB:hab-ine-calendario-precos-locais⟧; a avaliação bancária de ⟦HB:hab-ine-avaliacao-mediana|periodo⟧ saiu a seguir. São as leituras mais recentes do INE nas secções «Quanto custa uma casa, e quanto subiu» e «O crédito». A reforma do arrendamento segue para a especialidade; ",
+   "contexto_depois": "lendário do INE anunciava, ⟦HB:hab-ine-calendario-juro⟧ e ⟦HB:hab-ine-calendario-precos-locais⟧; a avaliação bancária de ⟦HB:hab-ine-avaliacao-mediana|periodo⟧ saiu antes. São as leituras mais recentes do INE nas secções «Quanto custa uma casa, e quanto subiu» e «O crédito». A reforma do arrendamento segue para a especialidade; "
+  },
+  {
+   "id": "Y4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «189 na travessia» onde os registos dizem «191 na travessia»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "836d9729d993fa712caea1c4e5636d7044407d53fb2436a6f52fd400b63df6ce",
+   "sha256_depois": "95b7c60b297a2b385786d41aa6139110b703ba44d86ffc40a9d249172431bee0",
+   "contexto_antes": " Ambas as worktrees limpas.\n\nAs definições, as secções 6 e 11, a limpeza das auditorias e o inventário foram atualizados. Mantiveram-se **196 linhas no estudo, 191 na travessia e L1 em 3 456**. Nenhum ficheiro de linha mudou.\n\nO [relatório completo](<caminho>",
+   "contexto_depois": " Ambas as worktrees limpas.\n\nAs definições, as secções 6 e 11, a limpeza das auditorias e o inventário foram atualizados. Mantiveram-se **196 linhas no estudo, 189 na travessia e L1 em 3 456**. Nenhum ficheiro de linha mudou.\n\nO [relatório completo](<caminho>"
+  },
+  {
+   "id": "Y5",
+   "ficheiro": "scripts/compor-familias-hb1.mjs",
+   "descricao": "a cópia do compositor das famílias só retira uma auditoria antiga quando todas as suas chaves são HB1 (every), ao contrário do diff e da adenda B §4 (some): uma auditoria com uma chave alheia e chaves HB1 mudadas sobreviveria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c4911b61d0b113f261956826ac74dfdd27fcb3fda641d6cbad6442f16075a06c",
+   "sha256_depois": "3eb68bff93bee5262fb91bc3b03e59c2fb777705811358e1049ba418f5a1f333",
+   "contexto_antes": ",partes:e.partes}]});\n// Uma auditoria HB1 antiga sai por inteiro, mesmo que o conjunto de chaves tenha mudado.\nfunction renovarAuditorias(anteriores, novas) {\n  return [...anteriores.filter(e=>!e.chaves?.some(k=>keys.has(k))), ...novas];\n}\nif(process.argv.includes('--prova')) {\n  const [primeira, segunda]=novasAuditorias;\n  const antiga={chaves:[...primeira.chaves,...segunda.chaves],marca:'anti",
+   "contexto_depois": ",partes:e.partes}]});\n// Uma auditoria HB1 antiga sai por inteiro, mesmo que o conjunto de chaves tenha mudado.\nfunction renovarAuditorias(anteriores, novas) {\n  return [...anteriores.filter(e=>!e.chaves?.every(k=>keys.has(k))), ...novas];\n}\nif(process.argv.includes('--prova')) {\n  const [primeira, segunda]=novasAuditorias;\n  const antiga={chaves:[...primeira.chaves,...segunda.chaves],marca:'anti"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

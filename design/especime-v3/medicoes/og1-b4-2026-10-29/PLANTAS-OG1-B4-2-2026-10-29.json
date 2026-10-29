@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T18:19:15+00:00",
+ "copia": "_aterragens/pacote-og1b4b-2026-10-29",
+ "plantas": [
+  {
+   "id": "U1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a página portuguesa da discussão diz «os sentidos de voto que o ECO e a RTP tinham dado», creditando a RTP com os votos contra que a sua entrada não deu",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "649ce4bc11d048c98096ce2e71aff6aef50ccb55eb3fa1ba5aef49721c7ad814",
+   "sha256_depois": "c3380a6a909192bb4acf4840c39b6f9d760ea359f64f5a9dd021dcfce931c76d",
+   "contexto_antes": "otos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para <a class=\"discussao-periodo\" data-discussao-periodo=",
+   "contexto_depois": "otos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO e a RTP tinham dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para <a class=\"discussao-periodo\" data-discussao-periodo="
+  },
+  {
+   "id": "U2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a página inglesa glosa a Reunião Plenária n.º 16 como «the fifteenth plenary sitting»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "648008f3c231f969a53357745b6e8ed21c7319128212f4b70dac6043a4e19ef1",
+   "sha256_depois": "cc8cea31de1e6b657c2e8fe933216f1fc378d1023c047f03da76ab10ce44bb71",
+   "contexto_antes": "ica\" title=\"Assembleia da República\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Assembleia da República</span></span></a> (the sixteenth plenary sitting) the result «<span class=\"discussao-literal\" data-discussao-fragmento=\"excerpt\"><span data-linha-claim=\"og1-votacao-generalidade-oficial\" data-linha-campo=\"exce",
+   "contexto_depois": "ica\" title=\"Assembleia da República\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Assembleia da República</span></span></a> (the fifteenth plenary sitting) the result «<span class=\"discussao-literal\" data-discussao-fragmento=\"excerpt\"><span data-linha-claim=\"og1-votacao-generalidade-oficial\" data-linha-campo=\"exce"
+  },
+  {
+   "id": "U3",
+   "ficheiro": "src/i18n/lingua-dos-titulos.mjs",
+   "descricao": "a cópia da lista das línguas das edições não tem a entrada 2026-10-29 que a adenda E manda e que a construção exige",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3c4fefe02ecbca5b4f802b5b8a7fcda956557a08901106964cdb49108e1a656e",
+   "sha256_depois": "409be7c8d2bdb29d10b49260b11f3c95b09af57b7b80d186b465a7913fbcb7ca",
+   "contexto_antes": "o o que ela parece.\n */\n\n/** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */\nexport const LINGUA_DAS_EDICOES = {\n  \"2026-10-28\": null,\n  \"2026-10-29\": null,\n  // V2-e: cadeias lidas nos documentos e nas respostas das fontes.\n  \"2026-10-14\": null,\n  \"2026-08\": null,\n  \"2026-01/2026-08\": null,\n  \"2026-01/2026-07\": nul",
+   "contexto_depois": "o o que ela parece.\n */\n\n/** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */\nexport const LINGUA_DAS_EDICOES = {\n  \"2026-10-28\": null,\n  // V2-e: cadeias lidas nos documentos e nas respostas das fontes.\n  \"2026-10-14\": null,\n  \"2026-08\": null,\n  \"2026-01/2026-08\": null,\n  \"2026-01/2026-07\": nul"
+  },
+  {
+   "id": "U4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do construtor diz «Oito tokens» onde a adenda D, o diff e tokens.json têm seis",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "764b3cf365bd3a85d5c6ce92c35fb3d0ea20d2c6caf048abb9a08e486477af90",
+   "sha256_depois": "f90687e9ea9cee4f59ced1da8a79aa6dee9154e34b76cb49c4b1558a549a62a7",
+   "contexto_antes": "Commit **`6cad712e`**, `OG1-B4-2`, concluído e verificado. Worktree limpa.\n\n- Construção e todas as conferências pedidas: **código 0**.\n- Seis tokens; três selos oficiais por edição no parágrafo das fontes.\n- Inventário: **2 484 classificadas, 1 290 vivas, 1 192 retiradas**.\n- L1 mantida em **3 460 páginas**.\n\n[Relatório complet",
+   "contexto_depois": "Commit **`6cad712e`**, `OG1-B4-2`, concluído e verificado. Worktree limpa.\n\n- Construção e todas as conferências pedidas: **código 0**.\n- Oito tokens; três selos oficiais por edição no parágrafo das fontes.\n- Inventário: **2 484 classificadas, 1 290 vivas, 1 192 retiradas**.\n- L1 mantida em **3 460 páginas**.\n\n[Relatório complet"
+  },
+  {
+   "id": "U5",
+   "ficheiro": "src/data/discussao-og1.mjs",
+   "descricao": "a cópia dos dados do item liga a data da comparação portuguesa («segundo o ECO») à linha oficial, contra a adenda D §3; o inglês fica no ECO",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "019a0815f519de5e32e2dc60115c8c522c9e2055753e4cf52fd2a182c41a55f9",
+   "sha256_depois": "a1d9608676d6c2015955a5cb61c2af1d8ee046827db3baccb476554e13676a6f",
+   "contexto_antes": " \"sufixo\": \" %\"\n              },\n              \" de despesa em \",\n              {\n                \"periodo\": \"pm-q3-3-r37-c3\"\n              },\n              \", venha de onde vier. Na votação de \",\n              {\n                \"periodo\": \"og1-votacao-generalidade\"\n              },\n              \", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, ",
+   "contexto_depois": " \"sufixo\": \" %\"\n              },\n              \" de despesa em \",\n              {\n                \"periodo\": \"pm-q3-3-r37-c3\"\n              },\n              \", venha de onde vier. Na votação de \",\n              {\n                \"periodo\": \"og1-votacao-generalidade-oficial\"\n              },\n              \", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, "
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T13:46:12+00:00",
+ "copia": "_aterragens/pacote-hb1e-2026-10-29",
+ "plantas": [
+  {
+   "id": "Z1",
+   "ficheiro": "motor/extracoes-23.json",
+   "descricao": "a cópia de extracoes.json espera «2 287» para hab-ine-avaliacao-mediana onde o PDF do INE, o livro e a prova dizem 2 278",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "278d239cbb49cd59de2ce6be1141b0d2592fbba5a4604cbe7dfe6d1b0bb9ee63",
+   "sha256_depois": "056161a064da88657ea8a815a64891403517e2b0b1589c4dbaa0b905db152897",
+   "contexto_antes": "À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO\"\n        },\n        \"published_at\": {\n          \"page\": 1,\n          \"text\": \"27 de outubro de 2026\"\n        }\n      },\n      \"expected\": \"2 278\",\n      \"pattern\": \"(?<![\\\\d.,])(2 278)(?![\\\\d.,])\",\n      \"unit\": \"€/m2\",\n      \"unit_binding\": {\n        \"text\": \"euros por metro quadrado\",\n        \"unit\": \"",
+   "contexto_depois": "À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO\"\n        },\n        \"published_at\": {\n          \"page\": 1,\n          \"text\": \"27 de outubro de 2026\"\n        }\n      },\n      \"expected\": \"2 287\",\n      \"pattern\": \"(?<![\\\\d.,])(2 278)(?![\\\\d.,])\",\n      \"unit\": \"€/m2\",\n      \"unit_binding\": {\n        \"text\": \"euros por metro quadrado\",\n        \"unit\": \""
+  },
+  {
+   "id": "Z2",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/index.html",
+   "descricao": "a página portuguesa do estudo diz «feita quando se pede crédito para as arrendar» onde o mandato, a edição inglesa e o INE («pedidos de crédito para a aquisição de habitação») dizem «para as comprar»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7b905caeada28f1be00028868cbfd92e84b4abf7c3f6acc8613655743aebfa95",
+   "sha256_depois": "2f1f673e4aabd08f13d07cfd74992175c95bbc5562436dbe35fa513b0b194d4d",
+   "contexto_antes": "NE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a> % em setembro de 2026. A avaliação bancária das casas, feita quando se pede crédito para as comprar, estava em <span class=\"texto-figura\" data-registo=\"a-casa-em-portugal-e-na-europa/pt#32.4\" data-registo-row=\"hab-ine-avaliacao-mediana\">2 278</span><a class=\"",
+   "contexto_depois": "NE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a> % em setembro de 2026. A avaliação bancária das casas, feita quando se pede crédito para as arrendar, estava em <span class=\"texto-figura\" data-registo=\"a-casa-em-portugal-e-na-europa/pt#32.4\" data-registo-row=\"hab-ine-avaliacao-mediana\">2 278</span><a class=\""
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "motor/content/28 Habitacao Estudo/Technical Source/documento.en.md.tmpl",
+   "descricao": "a cópia do gabarito inglês diz «had its first-reading debate and vote held on» (o voto como facto, com o calendário como recibo) onde o mandato, o diff e a edição portuguesa dizem «scheduled for»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1683363edac066406a6897c6cce77d4786f45364831bd51dbf304d357741b614",
+   "sha256_depois": "15ab7fd9a8216915702f70299658b46f6516042c38793f5775f4d79287dc660d",
+   "contexto_antes": "n this edition (the section «What a home costs, and how much it rose» and the section «Credit»). The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote scheduled for ⟦lit:27 and 28 October⟧ (this project's study «O Orçamento de 2027: o que muda e para quem» has the whole account, and the Budget item under «Under discussion»",
+   "contexto_depois": "n this edition (the section «What a home costs, and how much it rose» and the section «Credit»). The rental reform goes to the committee stage; the 2027 Budget had its first-reading debate and vote held on ⟦lit:27 and 28 October⟧ (this project's study «O Orçamento de 2027: o que muda e para quem» has the whole account, and the Budget item under «Under discussion»"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «| 194 | 197 |» onde os registos dizem «| 194 | 196 |»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "36e45c56941f9724de8f6eb3fa51786f8185ed5c4529355c77d20523db5803b9",
+   "sha256_depois": "af518d1ce1465fc422decdac510dad9ed4f4b617633cdb76b0e8d0308de49f78",
+   "contexto_antes": "dida sobre o Orçamento. A edição declara **29.10.2026**, com os recibos das duas linhas novas.\n\n| Contagem | Antes | Depois |\n|---|---:|---:|\n| Livro do estudo | 194 | 196 |\n| Linhas no cruzamento HB1 | 189 | 191 |\n| Famílias HB1 | 192 | 194 |\n| Entradas classificadas do inventário | 2417 | 2419 |\n| L1 | 3452 | 3456 |\n| Provas de r",
+   "contexto_depois": "dida sobre o Orçamento. A edição declara **29.10.2026**, com os recibos das duas linhas novas.\n\n| Contagem | Antes | Depois |\n|---|---:|---:|\n| Livro do estudo | 194 | 197 |\n| Linhas no cruzamento HB1 | 189 | 191 |\n| Famílias HB1 | 192 | 194 |\n| Entradas classificadas do inventário | 2417 | 2419 |\n| L1 | 3452 | 3456 |\n| Provas de r"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "ledger/claims/hab-ine-avaliacao-homologa.yml",
+   "descricao": "a cópia da linha hab-ine-avaliacao-homologa diz published_at 2026-10-24 onde o PDF, o recibo e a prova dizem 2026-10-27",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8db02bb277951c1bb120397e01a750b93e54d125101cbc45e42317dbde3c4cb3",
+   "sha256_depois": "eea6a41ad4c04fda27d1c9883a83bc5701e1743a72315668faeaeda7498d8387",
+   "contexto_antes": "e: 1\n  kind: \"pdf\"\nsource_url: \"https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=824195206&att_display=n&att_download=y\"\naccess_date: \"2026-10-29\"\npublished_at: \"2026-10-27\"\nreference_date: \"2026-09\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"O valor mediano de avaliação bancária na habitação f",
+   "contexto_depois": "e: 1\n  kind: \"pdf\"\nsource_url: \"https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=824195206&att_display=n&att_download=y\"\naccess_date: \"2026-10-29\"\npublished_at: \"2026-10-24\"\nreference_date: \"2026-09\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"O valor mediano de avaliação bancária na habitação f"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

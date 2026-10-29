@@ -1,0 +1,198 @@
+{
+ "bloco": "OG1-B4 (o registo oficial da votação na generalidade no item do Orçamento de 2027)",
+ "data": "2026-10-29",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202)"
+ },
+ "motor": {
+  "passagens_por_guiao": "OG1-B4 (174865e) pelo lugar de direção por guião, a zero símbolos de construtor: a página da iniciativa alojada com recibo (15:54 a 15:57 UTC), a linha og1-votacao-generalidade-oficial, o relatório, o ensaio com três plantas novas (204 conferências), a exportação (58 linhas); OG1-B4-0 no sítio (2918e4c47): as linhas exportadas"
+ },
+ "passagens_codex": [
+  {
+   "nome": "OG1-B4 (parou pela regra certa: check:areas A7, a lista SEM_AREA que o mandato não nomeou)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T16:11Z",
+   "fim": "2026-10-29T16:21:31Z",
+   "pontos": 0.0,
+   "pontos_antes": 18.0,
+   "pontos_depois": 18.0,
+   "turnos": 38,
+   "chamadas_de_ferramenta": 37,
+   "simbolos_entrada": 3035191,
+   "simbolos_cache": 2950912,
+   "simbolos_saida": 13792,
+   "simbolos_raciocinio": 2392,
+   "contexto_medio": 79873,
+   "fonte": "a linha PONTOS do LANCADOR-og1b4.log e o relatório",
+   "paragens": "uma, pelo §4 do mandato: check:areas (regra A7) recusou a linha nova por falta de assunto em SEM_AREA (src/data/areas.mjs), uma lista que o mandato não nomeou; as frases, os tokens, os nomes, o lugar, o documento, a auditoria e o inventário ficaram feitos na worktree; a adenda A decide"
+  },
+  {
+   "nome": "OG1-B4-a (retomada com a adenda A, a lista SEM_AREA; parou pela regra certa: check:voz apanhou «a página» e «the page» como sujeito)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T16:26Z",
+   "fim": "2026-10-29T16:33:58Z",
+   "pontos": 1.0,
+   "pontos_antes": 18.0,
+   "pontos_depois": 19.0,
+   "turnos": 20,
+   "chamadas_de_ferramenta": 19,
+   "simbolos_entrada": 2285173,
+   "simbolos_cache": 2257280,
+   "simbolos_saida": 6424,
+   "simbolos_raciocinio": 2089,
+   "contexto_medio": 114258,
+   "fonte": "a linha PONTOS do LANCADOR-og1b4-a.log e o relatório",
+   "paragens": "uma: check:voz (o marcador de palavra inteira «a página» / «the page», a página como sujeito de uma frase) na última oração do parágrafo das fontes, escrita pelo lugar de direção; a adenda B reescreve a oração sem a página como sujeito; a lista das exceções não se toca"
+  },
+  {
+   "nome": "OG1-B4-b (retomada com a adenda B, a oração sem «a página»; parou pela regra certa: check:lingua, a língua do título do documento novo)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T16:38Z",
+   "fim": "2026-10-29T16:43:17Z",
+   "pontos": 0.0,
+   "pontos_antes": 19.0,
+   "pontos_depois": 19.0,
+   "turnos": 18,
+   "chamadas_de_ferramenta": 14,
+   "simbolos_entrada": 2347229,
+   "simbolos_cache": 2335488,
+   "simbolos_saida": 9422,
+   "simbolos_raciocinio": 2602,
+   "contexto_medio": 130401,
+   "fonte": "a linha PONTOS do LANCADOR-og1b4-b.log e o relatório",
+   "paragens": "uma: check:lingua exige o título do documento novo em src/i18n/lingua-dos-titulos.mjs, lista que o mandato não nomeou; a adenda C acrescenta-a, depois de o lugar de direção enumerar por git grep as listas chaveadas pelo id, pelo ficheiro e pelo título da linha irmã"
+  },
+  {
+   "nome": "OG1-B4-c (retomada com a adenda C, a língua do título; o commit OG1-B4 33977cd47)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T16:46Z",
+   "fim": "2026-10-29T17:02:53Z",
+   "pontos": null,
+   "pontos_antes": 19.0,
+   "pontos_depois": 10.0,
+   "turnos": 39,
+   "chamadas_de_ferramenta": 36,
+   "simbolos_entrada": 5897152,
+   "simbolos_cache": 5875200,
+   "simbolos_saida": 15789,
+   "simbolos_raciocinio": 5098,
+   "contexto_medio": 151209,
+   "fonte": "a linha PONTOS do LANCADOR-og1b4-c.log e o relatório (106 chamadas no total das quatro passagens: 37, 19, 14 e 36)",
+   "paragens": "nenhuma; a construção e as conferências pedidas a 0; oito tokens movidos; o inventário 2 484 classificadas, 1 290 vivas, 1 192 retiradas; a L1 em 3 460 páginas com sete plantas",
+   "nota_do_contador": "o contador do Codex baixou de 19,0 % para 10,0 % no intervalo desta passagem (a diferença −9,0 não mede a passagem; a leitura do uso.py no fecho diz o valor da semana); os pontos desta passagem ficam por medir pelo contador"
+  },
+  {
+   "nome": "OG1-B4-d (retomada com a adenda D, as correções da leitura curta; parou por LINGUA_DAS_EDICOES)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T17:45Z",
+   "fim": "2026-10-29T17:56Z",
+   "pontos": 0.0,
+   "pontos_antes": 11.0,
+   "pontos_depois": 11.0,
+   "turnos": 18,
+   "chamadas_de_ferramenta": 17,
+   "simbolos_entrada": 3314641,
+   "simbolos_cache": 3297536,
+   "simbolos_saida": 10014,
+   "simbolos_raciocinio": 4432,
+   "contexto_medio": null,
+   "fonte": "a linha PONTOS do LANCADOR-og1b4-d.log e o relatório",
+   "paragens": "uma: LINGUA_DAS_EDICOES exige a data de escrita nova 2026-10-29 (uma lista chaveada por data); a adenda E decide"
+  },
+  {
+   "nome": "OG1-B4-e (retomada com a adenda E; o commit OG1-B4-2 6cad712e4)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T17:58Z",
+   "fim": "2026-10-29T18:10Z",
+   "pontos": 1.0,
+   "pontos_antes": 11.0,
+   "pontos_depois": 12.0,
+   "turnos": 26,
+   "chamadas_de_ferramenta": 22,
+   "simbolos_entrada": 5155302,
+   "simbolos_cache": 5145344,
+   "simbolos_saida": 13151,
+   "simbolos_raciocinio": null,
+   "contexto_medio": null,
+   "fonte": "a linha PONTOS do LANCADOR-og1b4-e.log e o relatório (39 chamadas nas duas retomas d e e)",
+   "paragens": "nenhuma; a construção e as conferências a 0; seis tokens na linha oficial; três selos oficiais por edição; o inventário 2 484 classificadas; a L1 em 3 460"
+  }
+ ],
+ "leituras": [
+  {
+   "nome": "og1-b4 (leitura curta M48)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-29T17:12Z",
+   "fim": "2026-10-29T17:22Z",
+   "segundos": 602,
+   "chamadas_de_ferramenta": 52,
+   "simbolos": 183288,
+   "fonte": "o uso do agente na notificação do lançamento",
+   "plantas": "5 de 5",
+   "achados_reais": "um Major na página da linha (a edição do documento a dizer 28.10 onde o registo apareceu a 29.10; corrigido pelo lugar de direção no exportador, OG1-B4-1) e um Major nas frases do lugar de direção (a RTP creditada com os votos contra que não deu); Minor: a frase de noventa palavras da abertura, a glosa inglesa com um selo dentro do parêntese, o token da comparação a ligar ao registo oficial numa frase que atribui ao ECO, a linha em branco na tabela do inventário, a página dos itens sem data, os números do relatório, os caminhos nos relatórios do construtor"
+  },
+  {
+   "nome": "og1-b4-2 (leitura curta M48 da correção)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-29T18:20Z",
+   "fim": "2026-10-29T18:27Z",
+   "segundos": null,
+   "chamadas_de_ferramenta": 40,
+   "simbolos": null,
+   "fonte": "o relatório do leitor (40 chamadas); o uso do agente na notificação",
+   "plantas": "5 de 5",
+   "achados_reais": "nenhum Blocking nem Major; Minor: os números do relatório sem ficheiro e o conferidor a procurar na pasta errada, a auditoria das palavras a conservar a RTP como apoio de palavras que ela não apoia, o ordinal inglês como prosa sem régua, a frase inglesa «gives at the … the result» pouco idiomática e o parágrafo das fontes com 150 palavras, a nota da IL depois da citação da RTP (anterior ao bloco)"
+  }
+ ],
+ "direcao": {
+  "modelo": "Claude Fable 5.1",
+  "commits": [
+   "OG1-B4 no motor (174865e)",
+   "OG1-B4-0 no sítio (2918e4c47)",
+   "OG1-B4-1 no motor (c5439be: a edição do documento de uma votação é published_at)",
+   "OG1-B4-1 no sítio (8235f5be5: a linha reexportada)"
+  ],
+  "simbolos": "a linha de estado do Claude: 49 % da semana às 16:09 UTC"
+ },
+ "corrida_inteira": {
+  "pasta": "_aterragens/lote-conferir-2026-10-29-d",
+  "cabeca": "8d93a0a9e",
+  "inicio": "2026-10-29T18:14Z",
+  "fim": "2026-10-29T18:50:06Z",
+  "passos": 54,
+  "vermelhos": 0,
+  "modo": "--build",
+  "nota": "a corrida inteira do lote (a HB1-e, o DO1 e a OG1-B4 numa cabeça); as corridas anteriores do lote: a (15:23, morta por conflitos de fusão), b (15:23 a 16:00, 53 passos, dois vermelhos corrigidos na DO1-7 e na DO1-8), c (18:12, morta por marcadores de conflito na cabeça)"
+ },
+ "capturas": {
+  "pedido": "pedido-capturas-lote.json",
+  "paginas": 8,
+  "larguras": [
+   390,
+   768,
+   1024,
+   1280,
+   1600
+  ],
+  "edicoes": 2,
+  "cabeca": "8d93a0a9e",
+  "drive": "capturas · lote-2026-10-29 (a pasta das capturas do financiador)",
+  "manifesto": "capturas.json na pasta das medições do DO1"
+ },
+ "aterragem": {
+  "ramo": "do1-2026-10-29 (o lote: a HB1-e, o DO1 e a OG1-B4)",
+  "cabeca_do_conteudo": "8d93a0a9e",
+  "registos": "Lote-r a seguir",
+  "guiao": "aterrar-lote.sh (aterrar.sh): o portão do GitHub, merge --ff-only em main, push, a Vercel vigiada, verify:deploy; o recibo em _aterragens/lote-aterragem-2026-10-29",
+  "motor": "master c5439be (OG1-B4-1), aterrado às 18:01 UTC"
+ },
+ "pontos_do_bloco": 2.0,
+ "passagens": 6,
+ "leituras_opus": 2
+}

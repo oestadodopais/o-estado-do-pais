@@ -1,0 +1,187 @@
+{
+ "bloco": "HB1-e (a avaliação bancária de setembro de 2026 no estudo da habitação)",
+ "data": "2026-10-29",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "HB1-e (parou pela regra certa: o nome da linha homóloga não é literal no excerto)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T11:57Z",
+   "fim": "2026-10-29T12:01:41Z",
+   "pontos": 0.0,
+   "pontos_antes": 9.0,
+   "pontos_depois": 9.0,
+   "turnos": 14,
+   "chamadas_de_ferramenta": 13,
+   "simbolos_entrada": 1107542,
+   "simbolos_cache": 1022464,
+   "simbolos_saida": 7279,
+   "simbolos_raciocinio": 1249,
+   "contexto_medio": 79110,
+   "fonte": "a linha PONTOS do LANCADOR-hb1e.log e o relatório",
+   "paragens": "uma, pelo §5 do mandato: «HAB rubrica: sem apoio hab-ine-avaliacao-homologa»; a caixa do mandato cortava carateres e o construtor mediu [42, 243, 556, 304]; a adenda A decide (o nome literal «taxa de variação», a caixa medida)"
+  },
+  {
+   "nome": "HB1-e-a (retomada com a adenda A; HB1-e1 no motor, HB1-e2 e a correção das omissões no sítio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T12:06Z",
+   "fim": "2026-10-29T13:07:50Z",
+   "pontos": 4.0,
+   "pontos_antes": 9.0,
+   "pontos_depois": 13.0,
+   "turnos": 113,
+   "chamadas_de_ferramenta": 109,
+   "simbolos_entrada": 20050952,
+   "simbolos_cache": 19732352,
+   "simbolos_saida": 52713,
+   "simbolos_raciocinio": 21091,
+   "contexto_medio": 177442,
+   "fonte": "a linha PONTOS do LANCADOR-hb1e-a.log e o relatório",
+   "paragens": "nenhuma; a corrida dos portões pelo escrivão deu verify=1 por duas listas que o mandato não nomeava (as provas dos rótulos de check:rotulos e o índice do livro, tests/livro/indice.mjs), corrigidas na mesma passagem; o compositor das famílias corrigido para ler a declaração JavaScript (HB1-e-3)",
+   "acima_do_reflexo": "4,0 pontos e 109 chamadas numa passagem (o reflexo da §1.202 4: 3 pontos ou 100 chamadas): diagnóstico na GARGALOS"
+  },
+  {
+   "nome": "HB1-e-b (a correção, parou pela condição da adenda B: os tokens do calendário)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T14:49Z",
+   "fim": "2026-10-29T14:57:13Z",
+   "pontos": 0.0,
+   "pontos_antes": 16.0,
+   "pontos_depois": 16.0,
+   "turnos": 11,
+   "chamadas_de_ferramenta": 9,
+   "simbolos_entrada": 759515,
+   "simbolos_cache": 697600,
+   "simbolos_saida": 4261,
+   "simbolos_raciocinio": 898,
+   "contexto_medio": 69046,
+   "fonte": "a linha PONTOS do LANCADOR-hb1e-b.log",
+   "paragens": "uma: retirar os tokens do calendário fazia o compositor tirar três linhas e o exportador recusar a travessia; a adenda C decidiu"
+  },
+  {
+   "nome": "HB1-e-c (a correção com a adenda C; HB1-e3 no motor, HB1-e4 no sítio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T15:01Z",
+   "fim": "2026-10-29T15:21:50Z",
+   "pontos": 1.0,
+   "pontos_antes": 16.0,
+   "pontos_depois": 17.0,
+   "turnos": 47,
+   "chamadas_de_ferramenta": 41,
+   "simbolos_entrada": 4720295,
+   "simbolos_cache": 4665728,
+   "simbolos_saida": 27502,
+   "simbolos_raciocinio": 9324,
+   "contexto_medio": 100431,
+   "fonte": "a linha PONTOS do LANCADOR-hb1e-c.log e o relatório",
+   "paragens": "nenhuma"
+  },
+  {
+   "nome": "HB1-e-d (a definição da mediana pelos três meses apurados pelo INE; HB1-e5 no sítio, pela via das mudanças pequenas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-29T15:43Z",
+   "fim": "2026-10-29T15:44:15Z",
+   "pontos": 0.0,
+   "pontos_antes": 17.0,
+   "pontos_depois": 17.0,
+   "turnos": 10,
+   "chamadas_de_ferramenta": 9,
+   "simbolos_entrada": 1415544,
+   "simbolos_cache": 1406976,
+   "simbolos_saida": 6521,
+   "simbolos_raciocinio": 1976,
+   "contexto_medio": 141554,
+   "fonte": "a linha PONTOS do LANCADOR-hb1e-d.log e o relatório",
+   "paragens": "nenhuma; quatro conferências dirigidas (o compositor, o HTML das famílias, o inventário, a L1), sem portões pelo escrivão: a corrida inteira corre na cabeça do lote"
+  }
+ ],
+ "leituras": [
+  {
+   "nome": "hb1-e (leitura a frio)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-29T13:53Z",
+   "fim": "2026-10-29T14:03Z",
+   "segundos": 568,
+   "chamadas_de_ferramenta": 64,
+   "simbolos": 183669,
+   "fonte": "o uso do agente na notificação do lançamento",
+   "plantas": "5 de 5",
+   "achados_reais": "dois Major nas frases e nas definições do lugar de direção (as definições das duas famílias em tautologia; a frase da secção 6 sem «mediano») e um Major na prova do relatório (os códigos dos portões fora do pacote); onze Minor (a secção 11 a falar da edição e sem o resultado do voto; o compositor sem limpar as entradas antigas; o nome «taxa de variação» sem o qualificativo; as contagens do relatório; a unidade impressa de duas maneiras; a edição anterior sem lugar)"
+  },
+  {
+   "nome": "hb1-e-c (leitura curta M48 da correção)",
+   "leitor": "Claude Opus 5.5 (leitor, xhigh)",
+   "inicio": "2026-10-29T15:32Z",
+   "fim": "2026-10-29T15:39Z",
+   "segundos": 436,
+   "chamadas_de_ferramenta": 39,
+   "simbolos": 132694,
+   "fonte": "o uso do agente na notificação do lançamento",
+   "plantas": "5 de 5",
+   "achados_reais": "um Major do lugar de direção (a definição da mediana a dizer «em setembro de 2026» onde o INE apura o mês de referência e os dois anteriores) e um Major na prova (os códigos dos portões fora do pacote); quatro Minor (a limpeza das auditorias sem o caso da chave renomeada; a parte factual das definições sem apoio conferido; a contagem do inventário do relatório; a frase do Orçamento na secção 11 só com a marcação)"
+  }
+ ],
+ "direcao": {
+  "modelo": "Claude Fable 5.1",
+  "commits": [
+   "HB1-e0 (a7f799a no motor, as fontes alojadas com recibos, o inventário regenerado)",
+   "(a corrida inteira a, 13:08 UTC, na cabeça 5e34c1c9)",
+   "(a conferência das definições impressas contra a adenda D, por guião, 15:45 UTC)"
+  ],
+  "simbolos": "a linha de estado do Claude: 45 % da semana às 11:56 UTC"
+ },
+ "motor": {
+  "passagens_por_guiao": "HB1-e0 pelo lugar de direção (a recolha com recibos, o inventário, os direitos e o manifesto), a zero símbolos de modelo"
+ },
+ "corrida_inteira": {
+  "pasta": "_aterragens/hb1e-conferir-2026-10-29-a",
+  "cabeca": "5e34c1c9",
+  "inicio": "2026-10-29T13:08Z",
+  "fim": "2026-10-29T13:44:16Z",
+  "passos": 53,
+  "vermelhos": 0,
+  "modo": "--build"
+ },
+ "capturas": {
+  "pedido": "pedido-capturas-lote.json",
+  "paginas": 8,
+  "larguras": [
+   390,
+   768,
+   1024,
+   1280,
+   1600
+  ],
+  "edicoes": 2,
+  "cabeca": "8d93a0a9e",
+  "drive": "capturas · lote-2026-10-29 (a pasta das capturas do financiador)",
+  "manifesto": "capturas.json na pasta das medições do DO1"
+ },
+ "aterragem": {
+  "ramo": "do1-2026-10-29 (o lote: a HB1-e, o DO1 e a OG1-B4)",
+  "cabeca_do_conteudo": "8d93a0a9e",
+  "registos": "Lote-r a seguir",
+  "guiao": "aterrar-lote.sh (aterrar.sh): o portão do GitHub, merge --ff-only em main, push, a Vercel vigiada, verify:deploy; o recibo em _aterragens/lote-aterragem-2026-10-29",
+  "motor": "master c5439be (OG1-B4-1), aterrado às 18:01 UTC"
+ },
+ "corrida_inteira_do_lote": {
+  "pasta": "_aterragens/lote-conferir-2026-10-29-d",
+  "cabeca": "8d93a0a9e",
+  "inicio": "2026-10-29T18:14Z",
+  "fim": "2026-10-29T18:50:06Z",
+  "passos": 54,
+  "vermelhos": 0,
+  "modo": "--build",
+  "nota": "a corrida inteira do lote (a HB1-e, o DO1 e a OG1-B4 numa cabeça); as corridas anteriores do lote: a (15:23, morta por conflitos de fusão), b (15:23 a 16:00, 53 passos, dois vermelhos corrigidos na DO1-7 e na DO1-8), c (18:12, morta por marcadores de conflito na cabeça)"
+ },
+ "pontos_do_bloco": 5.0,
+ "passagens": 5,
+ "leituras_opus": 2
+}

@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T16:01:27+00:00",
+ "copia": "_aterragens/pacote-do1-2026-10-29",
+ "plantas": [
+  {
+   "id": "Z2",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "a página portuguesa do dossiê do Orçamento imprime a votação final global «marcada para 26 de novembro» onde a linha oe-2027-calendario-final-global e a edição inglesa dizem 24 de novembro",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ad82d32c54c797ef35e9a1528696f5c561362b756490c3b9fd93d2bc3c9a45fa",
+   "sha256_depois": "f5f7db1f2572841457b45583c5e172fd3bdf1dd3725514f7e368d8ae2f856909",
+   "contexto_antes": "a-linha-claim=\"oe-2027-calendario-final-global\" data-linha-campo=\"excerpt\">Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro</span> <a class=\"src-chip\" href=\"/livro-razao/oe-2027-calendario-final-global\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Assembleia da República\" title",
+   "contexto_depois": "a-linha-claim=\"oe-2027-calendario-final-global\" data-linha-campo=\"excerpt\">Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 26 de novembro</span> <a class=\"src-chip\" href=\"/livro-razao/oe-2027-calendario-final-global\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Assembleia da República\" title"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «| 441 | 445 |» onde os registos dizem «| 441 | 444 |»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b9373ea206a371d6d0f5e1e7c8ae5032941a5e1fd2d6e9b56268a3ebf80995ce",
+   "sha256_depois": "885e4e29786d6ec7b1bfc41d9c39b54d76f92690734d22614d88b089e29d899c",
+   "contexto_antes": "om 16 plantas recusadas. Não repeti os três portões.\n\nContagens medidas:\n\n| Medida | Antes | Depois |\n|---|---:|---:|\n| Ligações no corpo do índice, por edição | 441 | 444 |\n| Declarações do inventário | 2 419 | 2 478 |\n| Frases distintas declaradas | 1 230 | 1 289 |\n| Páginas contadas pela L1 | 3 456 | 3 458 |\n\nAs ambiguidades fic",
+   "contexto_depois": "om 16 plantas recusadas. Não repeti os três portões.\n\nContagens medidas:\n\n| Medida | Antes | Depois |\n|---|---:|---:|\n| Ligações no corpo do índice, por edição | 441 | 445 |\n| Declarações do inventário | 2 419 | 2 478 |\n| Frases distintas declaradas | 1 230 | 1 289 |\n| Páginas contadas pela L1 | 3 456 | 3 458 |\n\nAs ambiguidades fic"
+  },
+  {
+   "id": "Z1",
+   "ficheiro": "src/data/dossies.mjs",
+   "descricao": "a cópia de dossies.mjs tira o item da Saúde do dossiê do Orçamento (a lista fechada do mandato tem três itens; as páginas construídas copiadas continuam a mostrá-lo)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e9ac6ef790a52040bf12b645254fe52bc098525ada055ca30ea30f226979237b",
+   "sha256_depois": "ce4fcf23a23bcab93f4a301d0539ae283db817ee0f5bd5376505f23d19ad1db6",
+   "contexto_antes": "e-economia'],\n    pecas: { estudos: ['orcamento-2027-o-que-muda-e-para-quem'], explicacoes: ['dinheiro-do-estado-2027'], itens: ['orcamento-2027-generalidade', 'saude-no-orcamento', 'parcerias-rodoviarias'] },\n    calendario: ['oe-2027-calendario-final-global'],\n  },\n  {\n    slug: 'a-casa-em-portugal',\n    titulo: { pt: 'A casa em Portugal'",
+   "contexto_depois": "e-economia'],\n    pecas: { estudos: ['orcamento-2027-o-que-muda-e-para-quem'], explicacoes: ['dinheiro-do-estado-2027'], itens: ['orcamento-2027-generalidade', 'parcerias-rodoviarias'] },\n    calendario: ['oe-2027-calendario-final-global'],\n  },\n  {\n    slug: 'a-casa-em-portugal',\n    titulo: { pt: 'A casa em Portugal'"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "src/data/dossies.mjs",
+   "descricao": "a cópia de dossies.mjs desliga a guarda «uma peça em dois dossiês» (if (false && ...)), que o mandato exige na importação",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ce4fcf23a23bcab93f4a301d0539ae283db817ee0f5bd5376505f23d19ad1db6",
+   "sha256_depois": "9748044b5952175ab6db03118e579377d14798924ab6d1ad1d109daabf45f4f0",
+   "contexto_antes": " {\n      if (!origens[tipo].some(e => e.slug === slug)) throw new Error(`DO1: peça inexistente: ${tipo}:${slug}`);\n      const chave = `${tipo}:${slug}`;\n      if (pecas.has(chave)) throw new Error(`DO1: peça repetida: ${chave}`);\n      pecas.add(chave);\n    }\n  }\n}\nconferirDossies(DOSSIES);\n",
+   "contexto_depois": " {\n      if (!origens[tipo].some(e => e.slug === slug)) throw new Error(`DO1: peça inexistente: ${tipo}:${slug}`);\n      const chave = `${tipo}:${slug}`;\n      if (false && pecas.has(chave)) throw new Error(`DO1: peça repetida: ${chave}`);\n      pecas.add(chave);\n    }\n  }\n}\nconferirDossies(DOSSIES);\n"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "built/en/dossiers/index.html",
+   "descricao": "a página inglesa do índice dos dossiês imprime «One place per subject» onde o mandato escreve «One place per living subject» (o título e a descrição da página ficam certos)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "08c308ce11f6406af3f3344a7d3c70c123496101e96deb9239624a8462a99cf4",
+   "sha256_depois": "4bd6a65cf4566e5c97a99fb2fb74a83af6e32e2806bb6eae06ef94a91407f4b1",
+   "contexto_antes": "l intelligence, according to the <span class=\"rotulo-ia-final\"><a href=\"/en/method\">Method</a>.</span></p></div><h1 class=\"explicacoes-titulo\">The dossiers</h1><p class=\"explicacao-p\">One place per living subject, with everything there is on it</p><ul class=\"dossies-lista\"><li data-dossie-lista=\"a-casa-em-portugal\"><h2><a href=\"/en/dossiers/a-casa-em-portugal\"><span dat",
+   "contexto_depois": "l intelligence, according to the <span class=\"rotulo-ia-final\"><a href=\"/en/method\">Method</a>.</span></p></div><h1 class=\"explicacoes-titulo\">The dossiers</h1><p class=\"explicacao-p\">One place per subject, with everything there is on it</p><ul class=\"dossies-lista\"><li data-dossie-lista=\"a-casa-em-portugal\"><h2><a href=\"/en/dossiers/a-casa-em-portugal\"><span dat"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

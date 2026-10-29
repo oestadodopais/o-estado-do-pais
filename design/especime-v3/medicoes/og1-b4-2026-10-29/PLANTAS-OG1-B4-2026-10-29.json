@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-29T17:10:40+00:00",
+ "copia": "_aterragens/pacote-og1b4-2026-10-29",
+ "plantas": [
+  {
+   "id": "W1",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a página inglesa da discussão diz «PS, PAN and IL abstaining» no parágrafo das fontes, onde o registo oficial e o mandato dizem JPP",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f09b11c162277d29253e22aebe77d8746e5cbc557a01b8dbe66e1ddb8689f863",
+   "sha256_depois": "dca082fb8e6e58bbcc43d453650c9176ceda9de990ec318403426cf16bad998c",
+   "contexto_antes": "=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Assembleia da República</span></span></a> (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the same positions the two reports had given; the bill&#39;s file did not yet link the re",
+   "contexto_depois": "=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Assembleia da República</span></span></a> (passed), with PSD and CDS-PP voting in favour, PS, PAN and IL abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the same positions the two reports had given; the bill&#39;s file did not yet link the re"
+  },
+  {
+   "id": "W2",
+   "ficheiro": "ledger/claims/og1-votacao-generalidade-oficial.yml",
+   "descricao": "a cópia da linha do sítio tem «Rejeitado» no campo excerpt onde o valor, a prova e a fonte dizem «Aprovado»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9e4baa5c62817860e91c662a761f0f85907b77beb62f631b4e58960b3e7aed19",
+   "sha256_depois": "1ec72cec34d268c6f5c25102c2146a4422a455ba23f7dd77bc1e5dc559d07dfb",
+   "contexto_antes": "etalheIniciativa.aspx?BID=377352\"\naccess_date: \"2026-10-29\"\nreference_date: \"2026-10-28\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\n",
+   "contexto_depois": "etalheIniciativa.aspx?BID=377352\"\naccess_date: \"2026-10-29\"\nreference_date: \"2026-10-28\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Votação em 2026-10-28 na Reunião Plenária n.º 16 Rejeitado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\n"
+  },
+  {
+   "id": "W3",
+   "ficheiro": "motor/ledger-30.json",
+   "descricao": "a cópia do livro do motor diz que a página foi lida a 28.10.2026 às 15:56 UTC, antes de o registo existir (o recibo e a nota dizem 29.10)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "edf84836103e3f54a964b15737a2291ceea7b4f43968dfeeb6c0f7e6915d8193",
+   "sha256_depois": "d432b4208163de831f779c14e3d2f8a5f203ef4495795acc1e59e3955b0264c4",
+   "contexto_antes": ": PS , PAN , JPP A Favor: PSD , CDS-PP\",\n      \"source_url\": \"https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352\",\n      \"fetched_at\": \"2026-10-29T15:56:36.078000+00:00\",\n      \"source_type\": \"official\",\n      \"status\": \"selado; leitura a frio pendente\",\n      \"value_not_numeric\": true,\n      \"document\": {\n        \"title\": \"Pro",
+   "contexto_depois": ": PS , PAN , JPP A Favor: PSD , CDS-PP\",\n      \"source_url\": \"https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352\",\n      \"fetched_at\": \"2026-10-28T15:56:36.078000+00:00\",\n      \"source_type\": \"official\",\n      \"status\": \"selado; leitura a frio pendente\",\n      \"value_not_numeric\": true,\n      \"document\": {\n        \"title\": \"Pro"
+  },
+  {
+   "id": "W4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do construtor diz «Seis tokens passaram para o registo oficial» onde o diff e o relatório completo têm oito",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "22e7ecf696fa100205c0afae30c0acb8826b420af6412e1dcc8d3372155063cb",
+   "sha256_depois": "3aea161211b2340ab843e1760c1d82193c6ebd8f1e3059c13548f14018581360",
+   "contexto_antes": "Commit **`33977cd4`** concluído pelo escrivão e verificado. Worktree limpa.\n\n- Construção e todas as conferências pedidas: **código 0**.\n- Oito tokens passaram para o registo oficial.\n- Inventário: **2 484 classificadas, 1 290 vivas, 1 192 retiradas**.\n- L1: **3 460 páginas**, com sete plantas verificadas.\n\nO [relatório completo](<caminho>",
+   "contexto_depois": "Commit **`33977cd4`** concluído pelo escrivão e verificado. Worktree limpa.\n\n- Construção e todas as conferências pedidas: **código 0**.\n- Seis tokens passaram para o registo oficial.\n- Inventário: **2 484 classificadas, 1 290 vivas, 1 192 retiradas**.\n- L1: **3 460 páginas**, com sete plantas verificadas.\n\nO [relatório completo](<caminho>"
+  },
+  {
+   "id": "W5",
+   "ficheiro": "src/data/nomes-og1.mjs",
+   "descricao": "a cópia dos nomes diz que a linha oficial regista o sentido de voto de cada deputado, onde a página regista o de cada partido",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "39d52e19bcb5886a046f04728af8b5cbaf1e62a28e6d9b9e016fba16779832f3",
+   "sha256_depois": "88e2b70794f735a36b56071acb1b6bd5a1029a8827380f626176d13ec2012bc0",
+   "contexto_antes": "e bill's page\"\n    },\n    \"frase\": {\n      \"pt\": [\n        \"É o registo da votação na generalidade na página da iniciativa no sítio da Assembleia da República: a reunião, o resultado e o sentido de voto de cada partido.\"\n      ],\n      \"en\": [\n        \"It is the record of the general vote on the bill's page on the Assembly of the Republic's website: the sitting, the result an",
+   "contexto_depois": "e bill's page\"\n    },\n    \"frase\": {\n      \"pt\": [\n        \"É o registo da votação na generalidade na página da iniciativa no sítio da Assembleia da República: a reunião, o resultado e o sentido de voto de cada deputado.\"\n      ],\n      \"en\": [\n        \"It is the record of the general vote on the bill's page on the Assembly of the Republic's website: the sitting, the result an"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}
