@@ -6143,13 +6143,13 @@ export const FAMILIAS_HB1 = [
         {
           "periodo": "hab-ine-avaliacao-mediana"
         },
-        " quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado."
+        " (o mês de referência e os dois anteriores, como o INE apura): metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado."
       ],
       "en": [
         {
           "periodo": "hab-ine-avaliacao-mediana"
         },
-        " when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre."
+        " (the reference month and the two before it, as the INE computes it): half the appraisals were above this value and half below. The INE publishes it in euros per square metre."
       ]
     },
     "chaves": [
@@ -6163,8 +6163,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "É o valor mediano das avaliações que os bancos fizeram às casas em ",
-        "en": "It is the median of the appraisals banks made of homes in ",
+        "pt": "É o valor mediano das avaliações que os bancos fizeram às casas quando lhes pediram crédito para as comprar, nos três meses até ",
+        "en": "It is the median of the appraisals banks made of homes when credit was requested to buy them, over the three months to ",
         "apoios": [
           {
             "linha": "propria",

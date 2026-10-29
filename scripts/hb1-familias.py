@@ -197,8 +197,8 @@ DEFS_E={
 }
 DEFS_AVALIACAO={
  "hab-ine-avaliacao-mediana": {
-  "pt": "É o valor mediano das avaliações que os bancos fizeram às casas em ⟦periodo: hab-ine-avaliacao-mediana⟧ quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado.",
-  "en": "It is the median of the appraisals banks made of homes in ⟦periodo: hab-ine-avaliacao-mediana⟧ when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre."
+  "pt": "É o valor mediano das avaliações que os bancos fizeram às casas quando lhes pediram crédito para as comprar, nos três meses até ⟦periodo: hab-ine-avaliacao-mediana⟧ (o mês de referência e os dois anteriores, como o INE apura): metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado.",
+  "en": "It is the median of the appraisals banks made of homes when credit was requested to buy them, over the three months to ⟦periodo: hab-ine-avaliacao-mediana⟧ (the reference month and the two before it, as the INE computes it): half the appraisals were above this value and half below. The INE publishes it in euros per square metre."
  },
  "hab-ine-avaliacao-homologa": {
   "pt": "É quanto o valor mediano da avaliação bancária das casas de ⟦periodo: hab-ine-avaliacao-homologa⟧ subiu face ao mesmo mês do ano anterior, em percentagem.",
