@@ -74,6 +74,9 @@ done
 registos=$(mktemp -d "${TMPDIR:-/tmp}/oedp-construtor.XXXXXX") || exit 9
 base="$registos/RELATORIO"
 OEDP_RELATORIO="$relatorio" OEDP_LANCADOR_BASE="$base" sh "$aqui/pre-voo.sh" "$sitio" "$motor" || exit 9
+[ -n "${OEDP_BLOCO:-}" ] || { echo '9 fila: falta OEDP_BLOCO=<bloco>' >&2; exit 9; }
+python3 "$sitio/scripts/leituras/fila.py" --lancar "$OEDP_BLOCO" || exit 9
+python3 "$sitio/scripts/leituras/pre-mandato.py" "$sitio" "$prompt" || exit 9
 RESEARCHHUB_DIR="$motor"
 RESEARCHHUB_LOCK_DIR="${RESEARCHHUB_LOCK_DIR:-$registos/trancas-motor}"
 mkdir -p "$RESEARCHHUB_LOCK_DIR" || exit 9

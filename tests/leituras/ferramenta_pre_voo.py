@@ -99,7 +99,29 @@ class PreVoo(unittest.TestCase):
         self.assertIn('9 master antepassado', r.stdout)
         self.assertNotIn('INICIO ', r.stdout)
 
+    def test_ambos_os_lancadores_exigem_bloco_depois_do_pre_voo(self):
+        prompt = self.p / 'prompt.md'; prompt.write_text('Acrescenta: nenhum\n')
+        env = {k: v for k, v in self.env.items() if k != 'OEDP_BLOCO'}
+        for nome, argumentos in (
+            ('construir-codex.sh', [str(self.sw), str(prompt), str(self.p / 'relatorio.md')]),
+            ('retomar-codex.sh', [str(self.sw), 'sessao-sintetica', str(prompt), str(self.p / 'resposta.md')]),
+        ):
+            r = subprocess.run(['sh', str(GUIOES / nome), *argumentos], env=env, capture_output=True, text=True, timeout=10)
+            self.assertEqual(r.returncode, 9, r.stdout + r.stderr)
+            self.assertIn('falta OEDP_BLOCO', r.stderr)
+            self.assertIn('0 node_modules', r.stdout)
+            self.assertNotIn('INICIO ', r.stdout)
+
     def test_lancador_verde_guarda_registos_fora_e_define_trancas(self):
+        guioes = self.sw / 'scripts/leituras'
+        guioes.mkdir(parents=True)
+        for nome in ('fila.py', 'pre-mandato.py'):
+            (guioes / nome).write_bytes((GUIOES / nome).read_bytes())
+        fila = self.sw / 'design/observatorio/FILA.md'
+        fila.parent.mkdir(parents=True)
+        fila.write_text('| Ordem | Bloco | Tipo | Estado |\n| --- | --- | --- | --- |\n| 1 | C1 | conteúdo | pronto |\n')
+        git(self.sw, 'add', '--', 'scripts/leituras/fila.py', 'scripts/leituras/pre-mandato.py', 'design/observatorio/FILA.md')
+        commit(self.sw, 'fila do ensaio')
         binario = self.p / 'bin'
         binario.mkdir()
         # Os serviços do lançador são cópias inertes; o pré-voo é o verdadeiro.
@@ -126,7 +148,7 @@ Path(sys.argv[sys.argv.index('-o')+1]).write_text('saída sintética')
         prompt.write_text('ensaio')
         pasta = self.p / 'relatorio'
         pasta.mkdir()
-        env = dict(self.env, PATH=str(binario) + ':' + os.environ['PATH'], PYTHON_REAL=sys.executable, TMPDIR=str(self.p))
+        env = dict(self.env, OEDP_BLOCO='C1', OEDP_ACRESCENTA='nenhum', PATH=str(binario) + ':' + os.environ['PATH'], PYTHON_REAL=sys.executable, TMPDIR=str(self.p))
         r = subprocess.run(['sh', str(GUIOES / 'construir-codex.sh'), str(self.sw), str(prompt), str(pasta / 'RELATORIO.md')],
                            env=env, capture_output=True, text=True, timeout=15)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)

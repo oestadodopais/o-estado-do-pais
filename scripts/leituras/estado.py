@@ -29,7 +29,7 @@ import re
 import subprocess
 import time
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 SITIO = Path(os.environ.get("OEDP_SITE", Path(__file__).resolve().parents[2]))
@@ -189,6 +189,56 @@ def construtores() -> list[str]:
     return linhas
 
 
+def blocos_da_semana(sitio=SITIO, hoje=None):
+    from fila import ler_tipos
+    import math
+    hoje = hoje or datetime.now(timezone.utc).date()
+    linhas = ['### Os blocos da semana',
+              '| Bloco | Tipo | Horas do mandato ao leitor | Pontos do Codex | Símbolos das leituras | Símbolos por frase |',
+              '| --- | --- | --- | --- | --- | --- |']
+    try:
+        tipos = ler_tipos(sitio / 'design/observatorio/FILA.md')
+    except (OSError, ValueError):
+        tipos = {}
+    def numero(v):
+        return type(v) in (int, float) and math.isfinite(v) and v >= 0
+    def soma(lista, campo):
+        if not isinstance(lista, list) or not lista or not all(isinstance(x, dict) and numero(x.get(campo)) for x in lista):
+            return None
+        return sum(x[campo] for x in lista)
+    def mostrar(v):
+        return f'{v:g}' if numero(v) else 'por medir'
+    for p in sorted((sitio / 'design/especime-v3/medicoes').glob('*/custo-*.json')):
+        try:
+            data = datetime.strptime(p.stem.removeprefix('custo-'), '%Y-%m-%d').date()
+        except ValueError:
+            continue
+        if not hoje - timedelta(days=6) <= data <= hoje:
+            continue
+        try:
+            d = json.loads(p.read_text())
+            bloco = re.match(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', d.get('bloco', ''))
+            bloco = bloco.group() if bloco else p.parent.name
+            horas = None
+            if d.get('mandato_escrito_em') and d.get('no_ar_em'):
+                try:
+                    a, b = [datetime.fromisoformat(d[k].replace('Z', '+00:00')) for k in ('mandato_escrito_em', 'no_ar_em')]
+                    if a.tzinfo and b.tzinfo and b >= a:
+                        horas = (b - a).total_seconds() / 3600
+                except (ValueError, TypeError):
+                    pass
+            pontos = d.get('pontos_do_bloco')
+            if not numero(pontos):
+                pontos = soma(d.get('passagens_codex', d.get('passagens')), 'pontos')
+            simbolos = soma(d.get('leituras'), 'simbolos')
+            frases = d.get('frases_ao_leitor')
+            por_frase = simbolos / frases if numero(simbolos) and type(frases) is int and frases > 0 else None
+            linhas.append(f"| {bloco} | {tipos.get(bloco.casefold(), 'por classificar')} | {mostrar(horas)} | {mostrar(pontos)} | {mostrar(simbolos)} | {mostrar(por_frase)} |")
+        except (OSError, ValueError, AttributeError, TypeError):
+            linhas.append(f'| {p.parent.name} | por classificar | por medir | por medir | por medir | por medir |')
+    return linhas
+
+
 def main(argv: list[str]) -> int:
     rede = "--sem-rede" not in argv
     agora = datetime.now(timezone.utc).strftime("%d.%m.%Y às %H:%M:%S UTC")
@@ -199,6 +249,7 @@ def main(argv: list[str]) -> int:
     if rede:
         bloco += ci() + [""] + no_ar() + [""]
     bloco += git_de(MOTOR, "O motor", "master", rede) + [""]
+    bloco += blocos_da_semana() + [""]
     bloco += uso() + [""] + construtores() + [""]
     if FALHAS:
         bloco.append(f"**{len(FALHAS)} leitura(s) falharam: " + "; ".join(FALHAS) + ".** O guião sai com código 1.")

@@ -46,6 +46,7 @@ def janela(minutos):
 
 
 def claude():
+    print("Claude: não lê o contador semanal «Fable only»; esse contador lê-se no ecrã de uso da aplicação.")
     try:
         dados = json.loads(CLAUDE.read_text(encoding="utf-8"))
     except (OSError, ValueError) as erro:

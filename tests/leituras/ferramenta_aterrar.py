@@ -24,9 +24,9 @@ class Aterrar(unittest.TestCase):
         (self.w / 'linha').write_text('cabeça a aterrar\n')
         self.custo = self.w / 'design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'
         self.custo.parent.mkdir(parents=True)
-        self.custo.write_text('{"passagens": []}\n')
+        self.custo.write_text('{"bloco": "ensaio", "passagens": []}\n')
         git(self.w, 'add', '--', str(self.custo.relative_to(self.w)))  # commit() só adiciona .gitignore e linha
-        commit(self.w, 'ramo pronto')
+        commit(self.w, 'ensaio: ramo pronto')
         self.cabeca = git(self.w, 'rev-parse', 'HEAD')
         self.main_antes = git(self.main, 'rev-parse', 'HEAD')
         self.motor = repo(self.p / 'motor', 'master')
@@ -72,7 +72,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
 ''')
         self.env = dict(os.environ, PATH=str(self.bin) + ':' + os.environ['PATH'], GIT_REAL=shutil.which('git'),
                         CHAMADAS=str(self.chamadas), CABECA=self.cabeca, RESEARCHHUB_DIR=str(self.motor),
-                        OEDP_TRANCA=str(self.p / 'tranca'))
+                        OEDP_TRANCA=str(self.p / 'tranca'), OEDP_BLOCOS='ensaio', OEDP_ATERRAGENS=str(self.p))
         self.saida = self.p / 'saida'
 
     def correr(self, modo='verde', arvore=None):
@@ -90,7 +90,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
     def sem_custo(self):
         # O ramo sem nenhum custo-<data>.json em relação a main (o ficheiro entrou e saiu: o diff main...HEAD não o tem).
         git(self.w, 'rm', '-q', str(self.custo.relative_to(self.w)))
-        commit(self.w, 'sem custo')
+        commit(self.w, 'ensaio: sem custo')
         self.cabeca = git(self.w, 'rev-parse', 'HEAD')
         self.env['CABECA'] = self.cabeca
 

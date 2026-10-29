@@ -234,8 +234,12 @@ def fundir(repo, pedido, bater=None):
         if alvo.exists():
             return {'codigo': 9, 'recusa': 'há uma operação Git em curso'}
     antes = git(repo, 'rev-parse', 'HEAD').stdout.strip()
+    conferir = git(repo, 'diff', '--check', 'HEAD', 'refs/heads/' + ramo)
+    if conferir.returncode:
+        return {'codigo': 9, 'recusa': 'a fusão traz marcadores de conflito ou erros de whitespace',
+                'saida': conferir.stdout + conferir.stderr, 'cabeca_antes': antes, 'cabeca': antes}
     with tempfile.TemporaryFile(mode='w+', encoding='utf-8', errors='replace') as saida_f:
-        processo = subprocess.Popen(['git', '-C', repo, '-c', 'rerere.enabled=false', 'merge', '-m', mensagem, 'refs/heads/' + ramo],
+        processo = subprocess.Popen(['git', '-C', repo, '-c', 'rerere.enabled=false', 'merge', '--no-commit', '-m', mensagem, 'refs/heads/' + ramo],
                                     stdout=saida_f, stderr=subprocess.STDOUT, text=True, start_new_session=True)
         inicio = time.monotonic()
         excedeu = False
@@ -257,16 +261,25 @@ def fundir(repo, pedido, bater=None):
         saida = saida_f.read()
     conflitos = git(repo, 'diff', '--cached', '--name-only', '--diff-filter=U', '-z').stdout.rstrip('\0').split('\0')
     conflitos = [f for f in conflitos if f]
+    codigo = processo.returncode
+    if codigo == 0 and git(repo, 'rev-parse', '--verify', 'MERGE_HEAD').returncode == 0:
+        conferir = git(repo, 'diff', '--cached', '--check')
+        saida += conferir.stdout + conferir.stderr
+        codigo = conferir.returncode
+        if codigo == 0:
+            gravar = git(repo, 'commit', '-m', mensagem)
+            saida += gravar.stdout + gravar.stderr
+            codigo = gravar.returncode
     aborto = None
-    if processo.returncode:
+    if codigo:
         # Só aborta a fusão que este pedido abriu; uma recusa anterior não abre MERGE_HEAD.
         if git(repo, 'rev-parse', '--verify', 'MERGE_HEAD').returncode == 0:
             aborto = git(repo, 'merge', '--abort')
             saida += aborto.stdout + aborto.stderr
     depois = git(repo, 'rev-parse', 'HEAD').stdout.strip()
-    resultado = {'codigo': 1 if conflitos else processo.returncode, 'cabeca': depois,
+    resultado = {'codigo': 1 if conflitos else codigo, 'cabeca': depois,
                  'cabeca_antes': antes, 'conflitos': conflitos, 'saida': saida[-6000:]}
-    if processo.returncode == 0:
+    if codigo == 0:
         alvo = git(repo, 'rev-parse', 'refs/heads/' + ramo).stdout.strip()
         resultado['tipo_fusao'] = ('sem-alteracao' if depois == antes else
                                   'avanco-rapido' if depois == alvo else 'commit-de-fusao')

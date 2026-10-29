@@ -46,6 +46,16 @@ class Fundir(unittest.TestCase):
         self.assertEqual(git(self.w, 'status', '--porcelain'), '?? nao-seguido')
         self.assertFalse(Path(git(self.w, 'rev-parse', '--git-path', 'MERGE_HEAD')).exists())
 
+    def test_marcadores_ja_comitados_recusam_antes_da_fusao(self):
+        (self.main / 'linha').write_text('<' * 7 + ' ramo\ntexto\n' + '=' * 7 + '\noutro\n' + '>' * 7 + ' main\n')
+        commit(self.main, 'marcadores plantados')
+        antes = git(self.w, 'rev-parse', 'HEAD')
+        r = escrivao.fundir(str(self.w), {'ramo': 'main', 'mensagem': MENSAGEM})
+        self.assertEqual(r['codigo'], 9)
+        self.assertIn('marcadores de conflito', r['recusa'])
+        self.assertEqual(antes, git(self.w, 'rev-parse', 'HEAD'))
+        self.assertEqual(git(self.w, 'status', '--porcelain'), '')
+
     def test_suja_e_ramo_arbitrario_recusados(self):
         (self.w / 'linha').write_text('por registar\n')
         self.assertEqual(escrivao.fundir(str(self.w), {'ramo': 'main', 'mensagem': MENSAGEM})['codigo'], 9)

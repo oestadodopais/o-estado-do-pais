@@ -10,7 +10,7 @@
 # EX4-e) e guarda o seu código em `00-build.code`. Toma a tranca da máquina como o portoes.sh (a mesma,
 # /tmp/oedp-construcao.lock; OEDP_TRANCA aponta-a para outro sítio só no ensaio), porque dois verify em
 # paralelo não cabem na máquina.
-# Uso: sh scripts/leituras/conferir-tudo.sh <worktree absoluta> <pasta de saída nova> [--build|--sem-build]
+# Uso: sh scripts/leituras/conferir-tudo.sh <worktree absoluta> <pasta de saída nova> [--build|--sem-build] [--dirigidas "<passos>"]
 # Saídas: 0 todos verdes; 1 algum vermelho; 9 recusa (nenhum passo correu); 130 interrompido. Um --build
 # falhado (M99-b) escreve o resumo só com o passo 00-build, o seu código e a cauda, e sai com o código do build,
 # sem correr os outros passos nem cair na recusa do dist/. Uma pasta de saída relativa é relativa ao sítio de
@@ -22,16 +22,22 @@ if [ "${PRIVACIDADE_PROIBIDOS+x}" != x ] && [ "${GITHUB_ACTIONS+x}" != x ] && [ 
   export PRIVACIDADE_PROIBIDOS
 fi
 aqui="$(cd "$(dirname "$0")" && pwd -P)"
-[ "$#" -ge 2 ] || { echo 'conferir-tudo: uso: conferir-tudo.sh <worktree absoluta> <pasta nova> [--build|--sem-build]' >&2; exit 9; }
+[ "$#" -ge 2 ] || { echo 'conferir-tudo: uso: conferir-tudo.sh <worktree absoluta> <pasta nova> [--build|--sem-build] [--dirigidas "<passos>"]' >&2; exit 9; }
 W="$1"; O="$2"; shift 2
-construir=0; sem_build=0
-for a in "$@"; do
-  case "$a" in
-    --build) construir=1;;
-    --sem-build) sem_build=1;;
-    *) echo "conferir-tudo: opção desconhecida: $a" >&2; exit 9;;
+construir=0; sem_build=0; dirigidas=""
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --build) construir=1; shift;;
+    --sem-build) sem_build=1; shift;;
+    --dirigidas)
+      [ "$#" -ge 2 ] && [ -n "$2" ] && [ -z "$dirigidas" ] || { echo 'conferir-tudo: --dirigidas exige uma lista única de passos' >&2; exit 9; }
+      dirigidas="$2"; shift 2;;
+    *) echo "conferir-tudo: opção desconhecida: $1" >&2; exit 9;;
   esac
 done
+if [ -n "$dirigidas" ]; then
+  [ -n "${OEDP_RAZAO:-}" ] || { echo 'conferir-tudo: --dirigidas exige OEDP_RAZAO' >&2; exit 9; }
+fi
 [ "$construir" -eq 0 ] || [ "$sem_build" -eq 0 ] || { echo 'conferir-tudo: --build e --sem-build não se juntam' >&2; exit 9; }
 case "$W" in /*) ;; *) echo 'conferir-tudo: a worktree tem de ser absoluta' >&2; exit 9;; esac
 # M99-b: a pasta de saída resolve-se antes do cd, contra o sítio de onde o guião foi chamado.
@@ -44,7 +50,7 @@ fi
 mkdir -p "$O" || exit 9
 O="$(cd "$O" && pwd)"
 # Os passos, um por linha, como o package.json os escreve; uma peça que não seja `npm run` recusa.
-python3 - "$W/package.json" > "$O/passos.txt" <<'PY' || { echo 'conferir-tudo: a cadeia do verify não se lê' >&2; exit 9; }
+python3 - "$W/package.json" "$dirigidas" "${OEDP_RAZAO:-}" "$O" > "$O/passos.txt" <<'PY' || { echo 'conferir-tudo: a cadeia do verify não se lê' >&2; exit 9; }
 import json, re, sys
 guioes = json.load(open(sys.argv[1]))['scripts']
 cadeia = guioes['verify']
@@ -56,8 +62,20 @@ if 'typecheck' in guioes and 'npm run typecheck' not in pecas:
 for p in pecas:
     if not re.fullmatch(r'npm run [A-Za-z0-9:._-]+( -- [^&|;<>`$]+)?', p):
         sys.exit(f'peça inesperada: {p!r}')
+nomes = [re.sub(r'[^A-Za-z0-9._-]', '_', p.split()[2]) for p in pecas]
+pedidos = sys.argv[2].split()
+if sys.argv[2]:
+    if not pedidos or len(set(pedidos)) != len(pedidos) or set(pedidos) - set(nomes):
+        sys.exit('passos dirigidos vazios, repetidos ou desconhecidos')
+    if not sys.argv[3].strip():
+        sys.exit('falta OEDP_RAZAO')
+    from pathlib import Path
+    (Path(sys.argv[4]) / 'DIRIGIDAS.txt').write_text('Passos: ' + ' '.join(pedidos) + '\nRazão: ' + sys.argv[3].strip() + '\n')
 print('\n'.join(pecas))
 PY
+if [ -n "$dirigidas" ]; then
+  dirigidas=$(python3 -c 'import sys; print(" ".join(sys.argv[1].split()))' "$dirigidas")
+fi
 tranca="${OEDP_TRANCA:-/tmp/oedp-construcao.lock}"
 idade() {
   python3 -c 'import os,sys,time; print(int(time.time()-os.stat(sys.argv[1]).st_mtime))' "$tranca"
@@ -125,6 +143,7 @@ for l in linhas:
 vermelhos = [p['passo'] for p in passos if p['codigo'] != 0]
 resumo = {'cabeca': (o / 'cabeca').read_text().strip(), 'cabeca_fim': (o / 'cabeca.fim').read_text().strip(),
           'arvore_limpa_no_inicio': (o / 'arvore.inicio').read_text().strip() == '',
+          'modo': 'dirigidas' if (o / 'DIRIGIDAS.txt').exists() else 'inteira',
           'inicio': (o / 'inicio').read_text().strip(), 'fim': (o / 'fim').read_text().strip(),
           'segundos': sum(p['segundos'] for p in passos), 'passos': passos, 'vermelhos': vermelhos}
 (o / 'resumo.json').write_text(json.dumps(resumo, ensure_ascii=False, indent=1) + '\n')
@@ -165,6 +184,9 @@ n=0
 while IFS= read -r comando; do
   n=$((n + 1))
   nome="$(printf '%s' "$comando" | sed -e 's/^npm run //' -e 's/ -- .*//' -e 's/[^A-Za-z0-9._-]/_/g')"
+  if [ -n "$dirigidas" ]; then
+    case " $dirigidas " in *" $nome "*) ;; *) continue;; esac
+  fi
   base="$(printf '%02d' "$n")-$nome"
   t0=$(date +%s)
   correr "$O/$base.log" "$comando" < /dev/null; c=$?

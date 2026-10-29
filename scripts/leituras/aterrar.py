@@ -167,25 +167,105 @@ class Aterragem:
         if hasattr(self, 'cabeca_motor'):
             self.exigir(git(self.motor, 'rev-parse', 'HEAD') == self.cabeca_motor, 'a cabeça do motor mudou durante a aterragem')
 
-    def conferir_custo(self):
-        # A REGRA 3 DO CUSTO (§1.202, 21.10.2026): «a aterragem recusa um bloco sem o seu custo». Até 27.10.2026 nenhuma
-        # linha deste guião o conferia (I269): os blocos aterravam com ou sem o custo-<data>.json ao lado do relatório.
-        # O ramo tem de tocar pelo menos um `design/especime-v3/medicoes/<bloco>/custo*.json` em relação a `main`; um ramo
-        # que não é um bloco (os registos do dia) passa com ATERRAR_SEM_CUSTO="a razão", e a razão fica no recibo.
+    def pasta_aterragens(self):
+        # Partilhada pelas worktrees; o ambiente permite o arquivo noutro volume.
+        return Path(os.environ.get('OEDP_ATERRAGENS', self.principal.parent / '_aterragens'))
+
+    def conferir_blocos(self):
+        blocos = os.environ.get('OEDP_BLOCOS', '').split()
+        self.exigir(bool(blocos), 'falta OEDP_BLOCOS="<bloco> <bloco>"')
+        self.exigir(len(set(blocos)) == len(blocos) and
+                    all(re.fullmatch(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', b) for b in blocos),
+                    'OEDP_BLOCOS tem blocos repetidos ou inválidos')
+        self.recibo['blocos'] = blocos
+        # Numa retoma depois do avanço de main, só um recibo anterior prova o lote.
         if git(self.sitio, 'rev-parse', 'main') == self.cabeca:
-            # main já está nesta cabeça: uma tentativa anterior fundiu-a (e passou por aqui) e parou depois, na Vercel ou no
-            # verify-deploy; o diff main...HEAD é vazio e não diz nada sobre o bloco. Regista-se e segue.
-            self.recibo['custo'] = 'main já está nesta cabeça: a conferência do custo correu na tentativa que a fundiu'
+            anteriores = self.recibos_anteriores()
+            provados = [r for r in anteriores if r.get('cabeca') == self.cabeca and
+                        r.get('blocos') == blocos and r.get('custo') and
+                        any(p.get('passo') == 'fundir-main' and p.get('codigo') == 0 for p in r.get('passos', []))]
+            self.exigir(bool(provados), 'main já está nesta cabeça, mas falta recibo que prove os blocos e o custo')
+            self.recibo['custo'] = provados[-1]['custo']
             return
-        ficheiros = git(self.sitio, 'diff', '--name-only', 'main...HEAD').splitlines()
-        custos = [f for f in ficheiros if re.match(r'design/especime-v3/medicoes/[^/]+/custo[^/]*\.json$', f)]
+        assuntos = git(self.sitio, 'log', '--format=%s', 'main..HEAD').splitlines()
+        encontrados = set()
+        for assunto in assuntos:
+            candidatos = [b for b in blocos if re.match(re.escape(b) + r'(?=$|[^A-Za-z0-9]|[ ])', assunto)]
+            if candidatos:
+                encontrados.add(max(candidatos, key=len))
+                continue
+            # Registos: prefixo explícito, nunca uma palavra encontrada no corpo.
+            self.exigir(bool(re.match(r'^(?:OG1-C-r|registos|[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-r)(?=$|[: .])', assunto, re.I)),
+                        'commit fora dos blocos declarados: ' + assunto)
+        self.exigir(encontrados == set(blocos), 'bloco declarado sem commit: ' + ' '.join(sorted(set(blocos) - encontrados)))
+
+    def recibos_anteriores(self):
+        recibos = []
+        for p in self.pasta_aterragens().glob('*/aterragem.json'):
+            if p.resolve() == (self.saida / 'aterragem.json').resolve():
+                continue
+            d = json.loads(p.read_text())
+            self.exigir(isinstance(d, dict), 'recibo de aterragem ilegível')
+            recibos.append(d)
+        return recibos
+
+    def conferir_limite_diario(self):
+        hoje = datetime.datetime.now(datetime.timezone.utc).date()
+        concluidas = 0
+        for r in self.recibos_anteriores():
+            if r.get('codigo') != 0:
+                continue
+            inicio = datetime.datetime.fromisoformat(r['inicio'].replace('Z', '+00:00'))
+            self.exigir(inicio.tzinfo is not None, 'recibo sem fuso horário')
+            concluidas += inicio.astimezone(datetime.timezone.utc).date() == hoje
+        razao = os.environ.get('ATERRAR_LOTE_EXTRA', '').strip()
+        self.recibo['aterragens_do_dia'] = concluidas
+        if razao:
+            self.recibo['lote_extra'] = razao
+        self.exigir(concluidas < 2 or bool(razao), 'já há duas aterragens concluídas neste dia UTC; falta ATERRAR_LOTE_EXTRA="<razão>"')
+
+    def conferir_corrida(self):
+        candidatas = []
+        for p in self.pasta_aterragens().glob('*conferir*/cabeca'):
+            if p.read_text().strip() == self.cabeca:
+                candidatas.append(p.parent)
+        if not candidatas:
+            self.recibo['conferencias'] = {'modo': 'por medir', 'motivo': 'nenhuma pasta conferir desta cabeça'}
+            return
+        pasta = max(candidatas, key=lambda p: p.stat().st_mtime_ns)
+        resumo = json.loads((pasta / 'resumo.json').read_text())
+        self.exigir(resumo.get('cabeca') == self.cabeca and resumo.get('cabeca_fim') == self.cabeca,
+                    'a corrida de conferências não terminou nesta cabeça')
+        self.exigir(bool(resumo.get('passos')) and all(p.get('codigo') == 0 for p in resumo['passos']),
+                    'a corrida de conferências desta cabeça tem passos vermelhos')
+        dirigida = pasta / 'DIRIGIDAS.txt'
+        self.recibo['conferencias'] = {'modo': 'dirigidas' if dirigida.exists() else 'inteira',
+                                      'pasta': pasta.name, 'passos': [p['passo'] for p in resumo['passos']]}
+        if dirigida.exists():
+            self.recibo['conferencias']['declaracao'] = dirigida.read_text()
+
+    def conferir_custo(self):
+        if 'custo' in self.recibo:
+            return
+        ficheiros = git(self.sitio, 'diff', '--name-only', '--diff-filter=ACMR', 'main...HEAD').splitlines()
+        custos = [f for f in ficheiros if re.fullmatch(r'design/especime-v3/medicoes/[^/]+/custo[^/]*\.json', f)]
+        por_bloco = {}
+        for f in custos:
+            d = json.loads((self.sitio / f).read_text())
+            nome = d.get('bloco', '')
+            for b in self.recibo['blocos']:
+                if re.match(re.escape(b) + r'(?=$|[ :·(])', nome, re.I):
+                    self.exigir(b not in por_bloco, 'mais de um ficheiro de custo para ' + b)
+                    por_bloco[b] = f
         razao = os.environ.get('ATERRAR_SEM_CUSTO', '').strip()
-        if custos:
-            self.recibo['custo'] = custos
-        elif razao:
+        if razao and not custos:
             self.recibo['sem_custo'] = razao
-        self.exigir(bool(custos) or bool(razao), 'o ramo não toca nenhum custo-<data>.json em design/especime-v3/medicoes/ (a regra 3 da §1.202); '
-                    'para um ramo que não é um bloco, ATERRAR_SEM_CUSTO="a razão" fica no recibo')
+            return
+        self.exigir(set(por_bloco) == set(self.recibo['blocos']),
+                    'falta custo-<data>.json identificado pelo campo bloco para: ' +
+                    ' '.join(sorted(set(self.recibo['blocos']) - set(por_bloco))))
+        self.recibo['custo'] = list(por_bloco.values())
+        self.recibo['custos_por_bloco'] = por_bloco
 
     def github(self):
         for tentativa in range(45):
@@ -251,13 +331,18 @@ class Aterragem:
         codigo = 9
         try:
             self.conferir_arvores()
+            self.conferir_blocos()
             self.conferir_custo()
+            self.conferir_limite_diario()
+            self.conferir_corrida()
             self.cabeca_motor = git(self.motor, 'rev-parse', 'HEAD')
             self.recibo['cabeca_motor'] = self.cabeca_motor
             self.registar('condicoes', 0)
             self.correr('publicar-ramo', ['git', 'push', '-u', 'origin', self.ramo])
             self.github()
+            self.conferir_limite_diario()
             self.tomar_tranca()
+            self.conferir_limite_diario()
             self.conferir_arvores()
             self.preparar()
             self.correr('series', ['npm', 'run', 'check:series'])

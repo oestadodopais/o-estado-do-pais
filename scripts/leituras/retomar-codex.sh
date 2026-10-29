@@ -28,9 +28,23 @@ cd "$worktree" || exit 9
 # worktree tem de ter o seu próprio node_modules (nunca uma ligação para fora).
 rede=""
 if [ "${CODEX_REDE:-0}" = 1 ]; then rede="-c sandbox_workspace_write.network_access=true"; fi
-if [ -L "$worktree/node_modules" ]; then echo "node_modules é uma ligação para fora da worktree; corre npm ci dentro dela antes de lançar" >&2; exit 9; fi
-[ -d "$worktree/node_modules" ] || [ ! -f "$worktree/package.json" ] || { echo "falta node_modules na worktree; corre npm ci nela antes de lançar" >&2; exit 9; }
-base="${resposta%.md}"
+sitio="$worktree"
+motor="${RESEARCHHUB_DIR:-}"
+for pasta in "$worktree" "$@"; do
+  if [ -f "$pasta/core/gate.py" ]; then motor="$pasta"; fi
+  if [ -f "$pasta/package.json" ]; then sitio="$pasta"; fi
+done
+[ -n "$motor" ] || { echo '9 pré-voo: falta RESEARCHHUB_DIR ou pasta adicional do motor' >&2; exit 9; }
+registos=$(mktemp -d "${TMPDIR:-/tmp}/oedp-retoma.XXXXXX") || exit 9
+base="$registos/RELATORIO"
+OEDP_RELATORIO="$resposta" OEDP_LANCADOR_BASE="$base" sh "$aqui/pre-voo.sh" "$sitio" "$motor" || exit 9
+[ -n "${OEDP_BLOCO:-}" ] || { echo '9 fila: falta OEDP_BLOCO=<bloco>' >&2; exit 9; }
+python3 "$sitio/scripts/leituras/fila.py" --lancar "$OEDP_BLOCO" || exit 9
+python3 "$sitio/scripts/leituras/pre-mandato.py" "$sitio" "$prompt" || exit 9
+RESEARCHHUB_DIR="$motor"
+RESEARCHHUB_LOCK_DIR="${RESEARCHHUB_LOCK_DIR:-$registos/trancas-motor}"
+mkdir -p "$RESEARCHHUB_LOCK_DIR" || exit 9
+export RESEARCHHUB_DIR RESEARCHHUB_LOCK_DIR
 inicio="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 python3 "$aqui/pontos.py" --antes
 python3 "$aqui/escrivao.py" "$worktree" "$@" > "$base.escrivao.log" 2>&1 &

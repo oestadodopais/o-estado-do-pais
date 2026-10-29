@@ -84,5 +84,12 @@ sh "$ferramenta" "$w5" "$tmp/s5" --build > "$tmp/s5.out" 2>&1; codigo=$?
 python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); b=[p for p in r["passos"] if p["passo"]=="typecheck"][0]; assert r["vermelhos"]==["typecheck"] and any("MARCA-DO-TYPECHECK" in l for l in b["cauda"])' "$tmp/s5/resumo.json" 2>/dev/null \
   || { echo '5 falhou: o resumo não traz o typecheck vermelho com a cauda'; falhas=$((falhas+1)); }
 [ ! -e "$OEDP_TRANCA" ] || { echo '5 falhou: a tranca ficou'; falhas=$((falhas+1)); }
-[ "$falhas" -eq 0 ] && echo "conferir-tudo: 5 ensaios verdes" || { echo "conferir-tudo: $falhas falha(s)"; cat "$tmp"/s*.out; }
+# PL1: dois passos com os números originais, razão obrigatória e nomes conferidos.
+OEDP_RAZAO='ensaio dos dois passos' sh "$ferramenta" "$w" "$tmp/s6" --sem-build --dirigidas 'a check_c' > "$tmp/s6.out" 2>&1; codigo=$?
+[ "$codigo" -eq 0 ] && [ "$(cat "$tmp/s6/01-a.code") $(cat "$tmp/s6/03-check_c.code")" = '0 0' ] && [ ! -e "$tmp/s6/02-b.code" ] && grep -q 'ensaio dos dois passos' "$tmp/s6/DIRIGIDAS.txt" || { echo '6 falhou: seleção, códigos ou razão'; falhas=$((falhas+1)); }
+OEDP_RAZAO='' sh "$ferramenta" "$w" "$tmp/s7" --sem-build --dirigidas a > "$tmp/s7.out" 2>&1; codigo=$?
+[ "$codigo" -eq 9 ] && grep -q OEDP_RAZAO "$tmp/s7.out" || { echo '7 falhou: razão ausente'; falhas=$((falhas+1)); }
+OEDP_RAZAO=ensaio sh "$ferramenta" "$w" "$tmp/s8" --sem-build --dirigidas inventado > "$tmp/s8.out" 2>&1; codigo=$?
+[ "$codigo" -eq 9 ] && [ ! -e "$tmp/s8/01-a.code" ] || { echo '8 falhou: passo inventado'; falhas=$((falhas+1)); }
+[ "$falhas" -eq 0 ] && echo "conferir-tudo: 8 ensaios verdes; dirigidas 01-a=0 03-check_c=0" || { echo "conferir-tudo: $falhas falha(s)"; cat "$tmp"/s*.out; }
 exit "$falhas"
