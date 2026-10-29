@@ -5195,10 +5195,20 @@ As redações anteriores das secções 6 e 11 foram substituídas pelas seguinte
 | `hab-ine-avaliacao-homologa` | pt | A medida mostra variação homóloga da avaliação bancária na habitação em setembro de 2026. | retirada |
 | `hab-ine-avaliacao-mediana` | en | The measure shows median bank appraisal value of housing in September 2026. | retirada |
 | `hab-ine-avaliacao-homologa` | en | The measure shows year-on-year change in the bank appraisal of housing in September 2026. | retirada |
-| `hab-ine-avaliacao-mediana` | pt | É o valor mediano das avaliações que os bancos fizeram às casas em setembro de 2026 quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado. | viva |
+| `hab-ine-avaliacao-mediana` | pt | É o valor mediano das avaliações que os bancos fizeram às casas em setembro de 2026 quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado. | retirada |
 | `hab-ine-avaliacao-homologa` | pt | É quanto o valor mediano da avaliação bancária das casas de setembro de 2026 subiu face ao mesmo mês do ano anterior, em percentagem. | viva |
-| `hab-ine-avaliacao-mediana` | en | It is the median of the appraisals banks made of homes in September 2026 when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre. | viva |
+| `hab-ine-avaliacao-mediana` | en | It is the median of the appraisals banks made of homes in September 2026 when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre. | retirada |
 | `hab-ine-avaliacao-homologa` | en | It is how much the median bank appraisal of homes for September 2026 rose against the same month of the previous year, in percentage. | viva |
+
+### HB1-e: adenda D
+
+A mediana usa as avaliações do mês de referência e dos dois anteriores, segundo a nota metodológica na página seis do PDF alojado. A definição anterior foi retirada nas duas edições. O apoio metodológico selado e a conferência automática da parte factual ficam para a passagem de higiene determinada pelo lugar de direção. Leitura cruzada por fazer.
+
+| Família | Edição | Definição composta | Estado |
+| --- | --- | --- | --- |
+| `hab-ine-avaliacao-mediana` | pt | É o valor mediano das avaliações que os bancos fizeram às casas quando lhes pediram crédito para as comprar, nos três meses até setembro de 2026 (o mês de referência e os dois anteriores, como o INE apura): metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado. | viva |
+| `hab-ine-avaliacao-mediana` | en | It is the median of the appraisals banks made of homes when credit was requested to buy them, over the three months to September 2026 (the reference month and the two before it, as the INE computes it): half the appraisals were above this value and half below. The INE publishes it in euros per square metre. | viva |
+
 ## DO1: os assuntos vivos, 29.10.2026
 
 | Classe | Frase | Bloco | Estado | Razão |

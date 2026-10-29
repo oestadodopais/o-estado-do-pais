@@ -926,7 +926,7 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 
 | og1-c | A âncora de atribuição nos recibos e a cláusula do Método, nas duas edições | por ler | Redação do mandato OG1-C; Método carimbado pela decisão §1.210. |
 
-| hb1-e | Avaliação bancária nas secções 6 e 11 das duas edições e contagens do livro | por ler | Codex, 29.10.2026: mandato HB1-e e adendas A, B e C; redações anteriores retiradas, secções 6 e 11 e definições nas duas edições; leitura cruzada pendente. |
+| hb1-e | Avaliação bancária nas secções 6 e 11 das duas edições e contagens do livro | por ler | Codex, 29.10.2026: mandato HB1-e e adendas A, B, C e D; redações anteriores retiradas, secções 6 e 11 e definições nas duas edições, com os três meses da mediana; leitura cruzada pendente. |
 | hb1-e | Avaliação bancária nas secções 6 e 11 das duas edições e contagens do livro | por ler | Codex, 29.10.2026: atualização pelo mandato HB1-e e adenda A; leitura cruzada pendente. |
 
 | do1 | Os dois dossiês, o índice e as ligações nas peças, nas duas edições | por ler | Redação do mandato DO1; leitura cruzada reservada ao lugar de direção. |
