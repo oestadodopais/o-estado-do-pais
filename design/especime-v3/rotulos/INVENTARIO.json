@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "0b7e58cd2029963316ec74569f5a4f97fd2f3104",
+ "cabeca": "1d2f5e5ccc73c81b64921a907be1340e3fa1507d",
  "contas": {
-  "paginas": 9692,
+  "paginas": 9810,
   "paginas_com_cartoes": 706,
-  "cartoes": 5670,
+  "cartoes": 5674,
   "familias": {
-   "nacional": 698,
+   "nacional": 702,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 594,
+   "projeto": 598,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 1160,
+   "declaradas": 1164,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -115,6 +115,20 @@
    "entradas": {
     "pt": 8,
     "en": 8
+   },
+   "acumuladas": {
+    "pt": 0,
+    "en": 0
+   }
+  },
+  "og1a": {
+   "recibos": {
+    "pt": 57,
+    "en": 57
+   },
+   "entradas": {
+    "pt": 57,
+    "en": 57
    },
    "acumuladas": {
     "pt": 0,
@@ -3101,6 +3115,28 @@
    },
    "unidade": {
     "source text": 1
+   }
+  },
+  "nacional|en|hab-ine-avaliacao-homologa": {
+   "nome": {
+    "Year-on-year change in the bank appraisal of housing": 1
+   },
+   "periodo": {
+    "in September #": 1
+   },
+   "unidade": {
+    "% year-on-year change": 1
+   }
+  },
+  "nacional|en|hab-ine-avaliacao-mediana": {
+   "nome": {
+    "Median bank appraisal value of housing": 1
+   },
+   "periodo": {
+    "in September #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
    }
   },
   "nacional|en|hab-ine-calendario-juro": {
@@ -6968,6 +7004,28 @@
     "texto da fonte": 1
    }
   },
+  "nacional|pt|hab-ine-avaliacao-homologa": {
+   "nome": {
+    "Variação homóloga da avaliação bancária na habitação": 1
+   },
+   "periodo": {
+    "em setembro de #": 1
+   },
+   "unidade": {
+    "% de variação homóloga": 1
+   }
+  },
+  "nacional|pt|hab-ine-avaliacao-mediana": {
+   "nome": {
+    "Valor mediano da avaliação bancária na habitação": 1
+   },
+   "periodo": {
+    "em setembro de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
   "nacional|pt|hab-ine-calendario-juro": {
    "nome": {
     "Divulgação do juro implícito na habitação": 1
@@ -9196,14 +9254,5 @@
     "Percentagem da população dos # aos # anos · #": 1
    }
   }
- },
- "revisao_cr2h": {
-  "razao": "CR2-h, 26.10.2026: a nota de provisório do valor de Portugal de 2024 saiu com a revisão do Eurostat de 17.10.2026",
-  "chaves": [
-   "nacional|pt|divida-das-empresas-2025",
-   "nacional|pt|divida-das-familias-2025",
-   "nacional|en|divida-das-empresas-2025",
-   "nacional|en|divida-das-familias-2025"
-  ]
  }
 }

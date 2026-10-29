@@ -2261,6 +2261,54 @@
         "exported_row_sha256": "072b67f5cf37ee6c129201390b575b9f64bef09fd2bc0f609a1d0507a4aeaa06"
       }
     },
+    "hab-ine-avaliacao-homologa": {
+      "linha": {
+        "id": "hab-ine-avaliacao-homologa",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "taxa de variação",
+        "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+        "document": {
+          "title": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO",
+          "edition": "2026-09",
+          "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+          "page": 1,
+          "kind": "pdf"
+        },
+        "excerpt": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo.",
+        "reference_date": "2026-09"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-ine-avaliacao-homologa",
+        "origin_row_sha256": "04654f4c440639405da8b01e09daae43cd3bbc988b5f68508e9b5924377ebc2d",
+        "exported_row_sha256": "8db02bb277951c1bb120397e01a750b93e54d125101cbc45e42317dbde3c4cb3"
+      }
+    },
+    "hab-ine-avaliacao-mediana": {
+      "linha": {
+        "id": "hab-ine-avaliacao-mediana",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "valor mediano de avaliação bancária na habitação",
+        "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+        "document": {
+          "title": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO",
+          "edition": "2026-09",
+          "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+          "page": 1,
+          "kind": "pdf"
+        },
+        "excerpt": "O valor mediano de avaliação bancária na habitação foi 2 278 euros por metro quadrado em setembro, mais 24 euros que o observado no mês precedente. Em termos homólogos, a taxa de variação fixou-se em 14,2% (14,7% no mês anterior). Refira-se que o número de avaliações bancárias considerado foi cerca de 32,6 mil, o que representa uma descida de 0,2% face ao mês anterior e de 1,2% face ao período homólogo.",
+        "reference_date": "2026-09"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-ine-avaliacao-mediana",
+        "origin_row_sha256": "0babf1762f3bbb6c86da4be05ec2ec63114e45f7c4caa471be51a3fb18525216",
+        "exported_row_sha256": "aba66f05a5dcd9dbee2a05535fadb5c22d6e11da9aa28e23f5cae41d9c2d9bb9"
+      }
+    },
     "hab-ine-calendario-juro": {
       "linha": {
         "id": "hab-ine-calendario-juro",
