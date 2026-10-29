@@ -195,7 +195,21 @@ DEFS_E={
  'hab-oe-apoio-arrendamento':oe('a ação','the action','missao','Promoção do acesso à habitação e apoio ao arrendamento'),
  'hab-oe-licenciamento':oe('a ação','the action','missao','Gestão urbanística e qualidade do edificiado'),
 }
+DEFS_AVALIACAO={
+ "hab-ine-avaliacao-mediana": {
+  "pt": "É o valor mediano das avaliações que os bancos fizeram às casas em ⟦periodo: hab-ine-avaliacao-mediana⟧ quando lhes pediram crédito para as comprar: metade das avaliações ficou acima deste valor e metade abaixo. O INE publica-o em euros por metro quadrado.",
+  "en": "It is the median of the appraisals banks made of homes in ⟦periodo: hab-ine-avaliacao-mediana⟧ when credit was requested to buy them: half the appraisals were above this value and half below. The INE publishes it in euros per square metre."
+ },
+ "hab-ine-avaliacao-homologa": {
+  "pt": "É quanto o valor mediano da avaliação bancária das casas de ⟦periodo: hab-ine-avaliacao-homologa⟧ subiu face ao mesmo mês do ano anterior, em percentagem.",
+  "en": "It is how much the median bank appraisal of homes for ⟦periodo: hab-ine-avaliacao-homologa⟧ rose against the same month of the previous year, in percentage."
+ }
+}
 def definicao(id,r):
+ if id in DEFS_AVALIACAO:
+  token='⟦periodo: '+id+'⟧';d=DEFS_AVALIACAO[id]
+  literal='valor mediano de avaliação bancária na habitação' if id.endswith('mediana') else 'Em termos homólogos, a taxa de variação fixou-se'
+  return d['pt'].split(token)[0],d['en'].split(token)[0],[L('excerpt',literal)],[]
  if id in DEFS_E:
   pt,en,ap,orig,qual,forma=DEFS_E[id];return pt,en,ap,orig
  u=(r.get('coords') or {}).get('unit')
@@ -244,7 +258,10 @@ for r in b:
  elif len(r.get('name',''))>=4:field='name';literal=r[field]
  else:field='document.title';literal=r['document']['title']
  complemento={}
- if id in DEFS_E:
+ if id in DEFS_AVALIACAO:
+  token='⟦periodo: '+id+'⟧'
+  complemento={'complemento':{lang:[{'periodo':id},DEFS_AVALIACAO[id][lang].split(token)[1]] for lang in ['pt','en']}}
+ elif id in DEFS_E:
   _,_,_,_,q,forma=DEFS_E[id];pre='no ' if '-Q' in str(r.get('reference_date','')) else 'em '
   if forma=='data':complemento={'complemento':{'pt':['; aqui, ',{'periodo':id},'.'],'en':['; here, ',{'periodo':id},'.']}}
   else:

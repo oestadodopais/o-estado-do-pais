@@ -32,11 +32,20 @@ const newMap=JSON.stringify(Object.fromEntries([...keys].sort().map(k=>[k,declar
 fs.writeFileSync(file,original+'\n// HB1: declarações acrescentadas pelo compositor próprio.\nObject.assign(FAMILIAS_DAS_LINHAS, '+newMap+');\n');
 const novasAuditorias=[];
 for(const e of FAMILIAS_HB1) novasAuditorias.push({chaves:e.chaves,nome:e.nome,origens:e.origens,...(e.complemento?{complemento:e.complemento}:{}),folhas:[{pt:e.partes.map(p=>p.pt).join(''),en:e.partes.map(p=>p.en).join(''),partes:e.partes}]});
-// Conservar a ordem das auditorias anteriores e acrescentar só as famílias novas.
-for(const e of novasAuditorias) {
-  const i=aud.familias.findIndex(a=>JSON.stringify(a.chaves)===JSON.stringify(e.chaves));
-  if(i<0) aud.familias.push(e); else aud.familias[i]=e;
+// Uma auditoria HB1 antiga sai por inteiro, mesmo que o conjunto de chaves tenha mudado.
+function renovarAuditorias(anteriores, novas) {
+  return [...anteriores.filter(e=>!e.chaves?.some(k=>keys.has(k))), ...novas];
 }
+if(process.argv.includes('--prova')) {
+  const [primeira, segunda]=novasAuditorias;
+  const antiga={chaves:[...primeira.chaves,...segunda.chaves],marca:'antiga'};
+  const outra={chaves:['familia-alheia-hb1'],marca:'conservar'};
+  const resultado=renovarAuditorias([antiga,outra],[primeira,segunda]);
+  assert.deepEqual(resultado,[outra,primeira,segunda]);
+  assert(!resultado.some(e=>e.marca==='antiga'),'auditoria com as chaves antigas sobreviveu');
+  console.log('Planta: família com chaves alteradas, entrada antiga removida e família alheia conservada.');
+}
+aud.familias=renovarAuditorias(aud.familias,novasAuditorias);
 aud.leituras=aud.leituras.filter(l=>!l.o_que.startsWith('Construção HB1:'));
 aud.leituras.push({quem:'Codex gpt-6-astra',quando:'2026-10-20',o_que:'Construção HB1: frases conferidas nas linhas e documentos selados. A leitura a frio pertence à entrega seguinte.'});
 fs.writeFileSync(audFile,JSON.stringify(aud,null,2)+'\n');
