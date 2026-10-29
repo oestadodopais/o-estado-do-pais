@@ -426,6 +426,7 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+const provasOg1 = JSON.parse(fs.readFileSync(path.join(ROOT,'ledger/provas/og1a/provas.json'),'utf8')).rows;
 const livroInteiro = loadClaims({includeWithdrawn:true});
 const ER1_RECIBOS = { comCodigo: 0, semCodigo: 0 };
 /* A JANELA DA LEITURA DA SEMANA (bloco EX1, 05.10.2026): o dia do carimbo da construção, contra o qual a página da
@@ -2776,6 +2777,7 @@ function verificaTexto({ rota, root, err }) {
  * linha seria uma segunda porta para a mesma coisa.
  */
 const CAMPOS_DA_LINHA = new Set([
+  'atribuicao.frase',
   'unit',
   'source',
   /**
@@ -3028,6 +3030,8 @@ const CAMPOS_DA_LINHA_EM_LISTA = new Set(['derived_from']);
  */
 function campoDaLinha(claim, campo, lang) {
   switch (campo) {
+    case 'atribuicao.frase':
+      return provasOg1[claim.id]?.atribuicao?.frase ?? null;
     case 'document.title':
       return claim.document?.title ?? null;
     case 'document.edition':

@@ -1511,6 +1511,19 @@
           "PS"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Comissão Política Nacional do Partido Socialista"
+        ],
+        "frase": "A Comissão Política Nacional do Partido Socialista confirmou, esta quarta-feira, o consenso em torno da proposta de José Luís Carneiro para viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento, reafirmando, porém, a oposição firme ao Governo.",
+        "passagem": "A Comissão Política Nacional do Partido Socialista confirmou, esta quarta-feira, o consenso em torno da proposta de José Luís Carneiro para viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento, reafirmando, porém, a oposição firme ao Governo.",
+        "blocos": [
+          58,
+          58
+        ]
+      },
+      "source_sha256": "62ec78731be0bddee6c55a4d463bb130100dee48e9fdcf129b7d8b4334b75f4f",
       "receipt": {
         "pedido": "https://ps.pt/oe2027-ps-confirma-consenso-na-abstencao-e-reafirma-compromisso-com-a-estabilidade-do-pais/",
         "endereco_final": "https://ps.pt/oe2027-ps-confirma-consenso-na-abstencao-e-reafirma-compromisso-com-a-estabilidade-do-pais/",
@@ -1581,6 +1594,15 @@
           "PCP"
         ]
       },
+      "atribuicao": {
+        "modo": "documento",
+        "aliases": [
+          "Comité Central do PCP"
+        ],
+        "frase": "Comunicado do Comité Central do PCP de 18 e 19 Outubro de 2026",
+        "blocos": 110
+      },
+      "source_sha256": "0edf4b880ff0613e961e22f763e8bbd463d98e577759864319e92fdcddf5519c",
       "receipt": {
         "pedido": "https://pcp.pt/comunicado-do-comite-central-do-pcp-de-18-19-outubro-de-2026",
         "endereco_final": "https://pcp.pt/comunicado-do-comite-central-do-pcp-de-18-19-outubro-de-2026",
@@ -1653,6 +1675,15 @@
           "PCP"
         ]
       },
+      "atribuicao": {
+        "modo": "documento",
+        "aliases": [
+          "Paulo Raimundo"
+        ],
+        "frase": "Intervenção de Paulo Raimundo, Secretário-Geral do PCP, Sessão Pública «Romper com injustiças. Novo rumo para Portugal. Não à degradação, exige-se, no Orçamento do Estado, soluções para uma vida melhor»",
+        "blocos": 109
+      },
+      "source_sha256": "c477f5d594cb3f0e9b89e554ffab84f3f63ff651f5bce0564df4cc38304f8beb",
       "receipt": {
         "pedido": "https://pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-com-esta-politica-abrir-um-novo-rumo-para-portugal",
         "endereco_final": "https://pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-com-esta-politica-abrir-um-novo-rumo-para-portugal",
@@ -1726,6 +1757,19 @@
           "DN"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "José Manuel Pureza"
+        ],
+        "frase": "“Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro”, afirmou José Manuel Pureza, à margem de uma visita ao Mercado D. Pedro V, em Coimbra, para falar com vendedores e clientes sobre o custo de vida.",
+        "passagem": "“Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro”, afirmou José Manuel Pureza, à margem de uma visita ao Mercado D. Pedro V, em Coimbra, para falar com vendedores e clientes sobre o custo de vida.",
+        "blocos": [
+          37,
+          37
+        ]
+      },
+      "source_sha256": "56f7b281b2e7e99715d301ea511ea195d72435c174ee0a14757f854966414c1f",
       "receipt": {
         "pedido": "https://www.dn.pt/pol%C3%ADtica/oe2027-be-recusa-assinar-cheque-da-m-governao-de-montenegro-e-vota-contra-proposta",
         "endereco_final": "https://www.dn.pt/pol%C3%ADtica/oe2027-be-recusa-assinar-cheque-da-m-governao-de-montenegro-e-vota-contra-proposta",
@@ -1801,6 +1845,19 @@
           "ECO"
         ]
       },
+      "atribuicao": {
+        "modo": "entrevista",
+        "aliases": [
+          "Mariana Leitão"
+        ],
+        "frase": "A Iniciativa Liberal vai concentrar a sua intervenção no OE2027 no alívio fiscal sobre famílias e empresas, com propostas para baixar o IRS e o ISP, revela a presidente do partido, Mariana Leitão",
+        "passagem": "“A prioridade é baixar o IRS e o ISP” no Orçamento do Estado para 2027 premium 6 Outubro 2026 A Iniciativa Liberal vai concentrar a sua intervenção no OE2027 no alívio fiscal sobre famílias e empresas, com propostas para baixar o IRS e o ISP, revela a presidente do partido, Mariana Leitão",
+        "blocos": [
+          150,
+          152
+        ]
+      },
+      "source_sha256": "d4f0c94e2aa70bfa546ea8a41247c17c74f90b4364e6441e5c054c4751ffc3b0",
       "receipt": {
         "pedido": "https://eco.sapo.pt/entrevista/a-prioridade-e-baixar-o-irs-e-o-isp-no-orcamento-do-estado-para-2027/",
         "endereco_final": "https://eco.sapo.pt/entrevista/a-prioridade-e-baixar-o-irs-e-o-isp-no-orcamento-do-estado-para-2027/",
@@ -1879,6 +1936,19 @@
           "CM"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Isabel Mendes Lopes"
+        ],
+        "frase": "\"Vamos esperar pelo documento do Orçamento, pode ser que venha uma grande surpresa e que de repente o Governo altere completamente a sua política, mas não acreditando nisso dificilmente o acompanharemos, como é óbvio\", afirmou Isabel Mendes Lopes, em declarações à Lusa após uma visita à sede da Acreditar - Associação de Pais e Amigos de Crianças com Cancro, em Lisboa.",
+        "passagem": "\"Vamos esperar pelo documento do Orçamento, pode ser que venha uma grande surpresa e que de repente o Governo altere completamente a sua política, mas não acreditando nisso dificilmente o acompanharemos, como é óbvio\", afirmou Isabel Mendes Lopes, em declarações à Lusa após uma visita à sede da Acreditar - Associação de Pais e Amigos de Crianças com Cancro, em Lisboa.",
+        "blocos": [
+          102,
+          102
+        ]
+      },
+      "source_sha256": "34283df7052738118988c360194b50f20a0ae9388959d3ed534040d3727a0cf6",
       "receipt": {
         "pedido": "https://www.cmjornal.pt/politica/detalhe/livre-antecipa-que-dificilmente-acompanhara-proposta-de-orcamento-do-estado-para-2027-do-governo",
         "endereco_final": "https://www.cmjornal.pt/politica/detalhe/livre-antecipa-que-dificilmente-acompanhara-proposta-de-orcamento-do-estado-para-2027-do-governo",
@@ -1953,6 +2023,21 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Joaquim Miranda Sarmento",
+          "Miranda Sarmento",
+          "o ministro das Finanças"
+        ],
+        "frase": "Miranda Sarmento defendeu ainda a credibilidade das previsões do Governo, recordando que as estimativas para os últimos dois anos se revelaram mais favoráveis do que as antecipadas por várias instituições nacionais e internacionais.",
+        "passagem": "Miranda Sarmento defendeu ainda a credibilidade das previsões do Governo, recordando que as estimativas para os últimos dois anos se revelaram mais favoráveis do que as antecipadas por várias instituições nacionais e internacionais. Sobre os 300 milhões da fraude dos combustíveis, declarou ser uma medida aprovada no parlamento, e “são receita do Estado”.",
+        "blocos": [
+          82,
+          83
+        ]
+      },
+      "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
         "endereco_final": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
@@ -2019,6 +2104,21 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Joaquim Miranda Sarmento",
+          "Miranda Sarmento",
+          "o ministro das Finanças"
+        ],
+        "frase": "E sobre as revisões das entidades nacionais e internacionais, para a economia nacional, “estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas”. Ainda assim, o ministro das Finanças não esconde que \"há riscos, incluindo geopolíticos, que afetam a economia portuguesa\" e defende prudência orçamental para proteger as contas públicas em 2027.",
+        "passagem": "E sobre as revisões das entidades nacionais e internacionais, para a economia nacional, “estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas”. Ainda assim, o ministro das Finanças não esconde que \"há riscos, incluindo geopolíticos, que afetam a economia portuguesa\" e defende prudência orçamental para proteger as contas públicas em 2027.",
+        "blocos": [
+          79,
+          79
+        ]
+      },
+      "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
         "endereco_final": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
@@ -2090,6 +2190,21 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Joaquim Miranda Sarmento",
+          "Miranda Sarmento",
+          "o ministro das Finanças"
+        ],
+        "frase": "Quanto aos preços dos combustíveis, Miranda Sarmento indicou que o desconto atualmente aplicado ronda os 23 a 24 cêntimos, acrescentando que o Governo acompanha a evolução dos preços semanalmente.",
+        "passagem": "Quanto aos preços dos combustíveis, Miranda Sarmento indicou que o desconto atualmente aplicado ronda os 23 a 24 cêntimos, acrescentando que o Governo acompanha a evolução dos preços semanalmente. “Não deixaremos de acompanhar os preços dos combustíveis e de tomar as decisões que forem necessárias” , afirmou, sem garantir que os preços vão diminuir ou, pelo menos, manter-se. Sobre a Habitação, “foi praticamente tudo feito”, sustentando-se em três pilares: a construção de casas públicas; a redução dos custos da construção nova; e arrendamento e redução do IRS.",
+        "blocos": [
+          86,
+          88
+        ]
+      },
+      "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
         "endereco_final": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
@@ -2156,6 +2271,21 @@
           "ECO"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Joaquim Miranda Sarmento",
+          "Miranda Sarmento",
+          "O ministro das Finanças"
+        ],
+        "frase": "O ministro das Finanças, Joaquim Miranda Sarmento, afirmou esta sexta-feira que, num “ambiente de turbulência dos mercados da dívida pública na Zona Euro, que tem levado a um agravar das taxas de juro”, Portugal tem escapado a esta tendência .",
+        "passagem": "O ministro das Finanças, Joaquim Miranda Sarmento, afirmou esta sexta-feira que, num “ambiente de turbulência dos mercados da dívida pública na Zona Euro, que tem levado a um agravar das taxas de juro”, Portugal tem escapado a esta tendência . Escolha o ECO como fonte preferida no Google Escolher › O responsável das Finanças associou a estabilidade do spread dos juros da dívida nacional a dez anos face à alemã com a mesma maturidade, que serve de métrica de risco no mercado, à trajetória de redução da dívida pública e melhorias de rating da República . “No caso de Portugal, o nosso spread face à dívida alemã tem se mantido estável, a nossa subida das taxas de juro é risco de mercado e não risco de país . Quando as taxas sobem as nossas também sobem, mas é importante mantermos essa estabilidade”, afirmou na audição na Comissão de Orçamento, Finanças e Administração Pública ( COFAP ) que marca o pontapé de saída da discussão na generalidade da proposta de Orçamento do Estado para 2027 ( OE2027 ).",
+        "blocos": [
+          152,
+          157
+        ]
+      },
+      "source_sha256": "e3eba71523dc9da26abe80eef7f5cbcf0088572168e56f7d812a51b56fee1fe1",
       "receipt": {
         "pedido": "https://eco.sapo.pt/2026/10/23/subida-dos-juros-da-divida-e-risco-de-mercado-e-nao-risco-de-pais-diz-miranda-sarmento/",
         "endereco_final": "https://eco.sapo.pt/2026/10/23/subida-dos-juros-da-divida-e-risco-de-mercado-e-nao-risco-de-pais-diz-miranda-sarmento/",
@@ -2228,6 +2358,20 @@
           "Observador"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Joaquim Miranda Sarmento",
+          "Miranda Sarmento"
+        ],
+        "frase": "Joaquim Miranda Sarmento alertou ainda sobre o impacto de manter o prémio salarial (devolução das propinas) cumulativamente com o IRS Jovem. Custará, em 2027, 300 milhões de euros em velocidade cruzeiro. Não está expresso na proposta orçamental porque abate à receita, não é despesa. “Decidimos colocar como opção IRS Jovem ou prémio salarial. O Parlamento tomará a decisão mas esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões”, apelando ao PS que cumpra o “compromisso de não desvirtuar o orçamento”.",
+        "passagem": "Joaquim Miranda Sarmento alertou ainda sobre o impacto de manter o prémio salarial (devolução das propinas) cumulativamente com o IRS Jovem. Custará, em 2027, 300 milhões de euros em velocidade cruzeiro. Não está expresso na proposta orçamental porque abate à receita, não é despesa. “Decidimos colocar como opção IRS Jovem ou prémio salarial. O Parlamento tomará a decisão mas esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões”, apelando ao PS que cumpra o “compromisso de não desvirtuar o orçamento”.",
+        "blocos": [
+          124,
+          124
+        ]
+      },
+      "source_sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f",
       "receipt": {
         "pedido": "https://observador.pt/2026/10/23/em-debate-orcamental-com-habitacao-em-destaque-miranda-sarmento-lembra-caso-robles-e-a-sua-decisao-de-investimento-totalmente-legitima/",
         "endereco_final": "https://observador.pt/2026/10/23/em-debate-orcamental-com-habitacao-em-destaque-miranda-sarmento-lembra-caso-robles-e-a-sua-decisao-de-investimento-totalmente-legitima/",
@@ -3413,6 +3557,19 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Jorge Pinto"
+        ],
+        "frase": "\"Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra\", anunciou Jorge Pinto, em declarações aos jornalistas no parlamento, depois de a Assembleia do Livre - órgão máximo entre congressos - ter reunido na terça-feira à noite e aprovado a decisão por unanimidade.",
+        "passagem": "\"Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra\", anunciou Jorge Pinto, em declarações aos jornalistas no parlamento, depois de a Assembleia do Livre - órgão máximo entre congressos - ter reunido na terça-feira à noite e aprovado a decisão por unanimidade.",
+        "blocos": [
+          455,
+          455
+        ]
+      },
+      "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
         "endereco_final": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
@@ -3484,6 +3641,19 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Inês Sousa Real"
+        ],
+        "frase": "\"Este orçamento tem um problema: contas certas, mas prioridades trocadas\", afirmou Inês Sousa Real, declarando ainda que \"o custo de vida das pessoas tem de caber no orçamento\", assim como o \"futuro dos jovens\".",
+        "passagem": "\"Este orçamento tem um problema: contas certas, mas prioridades trocadas\", afirmou Inês Sousa Real, declarando ainda que \"o custo de vida das pessoas tem de caber no orçamento\", assim como o \"futuro dos jovens\".",
+        "blocos": [
+          259,
+          259
+        ]
+      },
+      "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
         "endereco_final": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
@@ -3555,6 +3725,19 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Filipe Sousa"
+        ],
+        "frase": "Filipe Sousa, do JPP, anunciou que vai abster-se na votação na generalidade da proposta do Orçamento do Estado para 2027, em sinal de colaboração com o Governo. Ainda assim, “há muito por resolver”.",
+        "passagem": "Filipe Sousa, do JPP, anunciou que vai abster-se na votação na generalidade da proposta do Orçamento do Estado para 2027, em sinal de colaboração com o Governo. Ainda assim, “há muito por resolver”.",
+        "blocos": [
+          267,
+          267
+        ]
+      },
+      "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
         "endereco_final": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
@@ -3626,6 +3809,19 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "André Ventura"
+        ],
+        "frase": "O anúncio foi feito por André Ventura em declarações aos jornalistas na Assembleia da República.",
+        "passagem": "O Chega vai votar contra o Orçamento do Estado do próximo ano na generalidade, anunciou hoje o líder do partido, argumentando que o Governo \"não consegue reconhecer o momento de dificuldade\" e não apresenta medidas para ajudar os portugueses. O anúncio foi feito por André Ventura em declarações aos jornalistas na Assembleia da República.",
+        "blocos": [
+          394,
+          395
+        ]
+      },
+      "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
         "endereco_final": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
@@ -3697,6 +3893,19 @@
           "RTP"
         ]
       },
+      "atribuicao": {
+        "modo": "passagem",
+        "aliases": [
+          "Mário Amorim Lopes"
+        ],
+        "frase": "Os portugueses, segundo Mário Amorim Lopes, \"não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor\".",
+        "passagem": "Os portugueses, segundo Mário Amorim Lopes, \"não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor\".",
+        "blocos": [
+          205,
+          205
+        ]
+      },
+      "source_sha256": "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db",
       "receipt": {
         "pedido": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",
         "endereco_final": "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900",

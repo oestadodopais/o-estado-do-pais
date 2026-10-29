@@ -11,14 +11,23 @@ import {resolverExplicacao} from '../../src/lib/explicacoes.mjs';
 import {linhasImpressasOuDerivadas} from './efeitos.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
 const claims=loadClaims();
+const normal=t=>String(t??'').replace(/\s+/g,' ').trim();
 const candidato=t=>({slug:'ensaio-og1',titulo:{pt:['Ensaio'],en:['Test']},abertura:[],naoDiz:[],seccoes:[{id:'fonte',titulo:{pt:'Fonte',en:'Source'},conteudo:[{paragrafo:{pt:[t],en:[t]}}]}]});
 let checks=0;
 const proofs=JSON.parse(fs.readFileSync('ledger/provas/og1a/provas.json')).rows;
 // O build sem motor relê os excertos selados; com o motor confere-os no corpo alojado.
 if(process.env.RESEARCHHUB_DIR){
- const code="import json; from publisher import oe2027_generalidade as G; print(json.dumps({s['id']:G.norm(G.surface(s)[0]) for s in G.load(G.STUDY/'extracoes.json')['rows'] if s['group'] in ('partidos','governo')}))";
+ const code="import json; from publisher import oe2027_generalidade as G; print(json.dumps({s['id']:dict(text=G.norm(G.surface(s)[0]),blocks=G.A.html_blocks(G.A.source(s['file'])[0])) for s in G.load(G.STUDY/'extracoes.json')['rows'] if s['group'] in ('partidos','governo')}))";
  const bodies=JSON.parse(execFileSync('python3',['-c',code],{cwd:process.env.RESEARCHHUB_DIR,encoding:'utf8',maxBuffer:4*1024*1024}));
- for(const [id,p] of Object.entries(proofs))if(p.speaker_label){assert(bodies[id].includes(p.speaker_label.context),id+': rótulo ausente do corpo');checks++;}
+ for(const [id,p] of Object.entries(proofs))if(p.speaker_label){assert(bodies[id].text.includes(p.speaker_label.context),id+': rótulo ausente do corpo');checks++;}
+ for(const id of OG1.afirmacoes){
+  const a=proofs[id].atribuicao,b=bodies[id];
+  assert(b.blocks.includes(normal(a.frase)),id+': frase não é um bloco');checks++;
+  if(a.modo==='documento')assert.equal(b.blocks[a.blocos],normal(a.frase));
+  else {assert(b.text.includes(normal(a.passagem)),id+': passagem ausente do corpo');assert.equal(b.blocks.slice(a.blocos[0],a.blocos[1]+1).join(' '),normal(a.passagem));}
+  checks++;
+ }
+ console.log(`OG1: ${OG1.afirmacoes.length} âncoras conferidas no corpo alojado.`);
 }
 const exists=fs.existsSync;
 try{fs.existsSync=file=>file==='ledger/provas/og1a/provas.json'?false:exists(file);assert(conferirOg1(claims).errors.some(e=>e.includes('provas ausente')));checks++;}finally{fs.existsSync=exists;}
@@ -39,6 +48,22 @@ function conferirDatasERotulos(item,lang){
    if(party&&party!==printed)errors.push(id+': partido diferente da página alojada');
   }else if(/, (?:do|da|of(?: the)?) [^,]+,/.test(prefix))errors.push(id+': partido sem prova');
  }
+ return errors;
+}
+
+const notas={
+ passagem:{pt:'A fonte nomeia quem fala na mesma passagem em que cita.',en:'The source names the speaker in the same passage in which it quotes.'},
+ documento:{pt:'O documento é da própria pessoa ou do próprio órgão que fala.',en:"The document is the speaker's own."},
+ entrevista:{pt:'Entrevista: a fonte nomeia quem responde no seu cabeçalho.',en:'Interview: the source names the respondent in its heading.'},
+};
+function conferirAncora(receipt,p,lang){
+ const errors=[],a=p.atribuicao,frases=receipt.querySelectorAll('[data-linha-campo="atribuicao.frase"]'),notasHtml=receipt.querySelectorAll('[data-atribuicao-modo]');
+ if(!a){if(frases.length||notasHtml.length)errors.push('âncora fora das afirmações');return errors;}
+ if(frases.length!==1||frases[0].text!==a.frase||frases[0].getAttribute('data-linha-claim')!==p.id)errors.push('frase diferente da prova');
+ if(lang==='en'&&frases[0]?.getAttribute('lang')!=='pt-PT')errors.push('língua da frase diferente');
+ if(notasHtml.length!==1||notasHtml[0].getAttribute('data-atribuicao-modo')!==a.modo||notasHtml[0].text!==notas[a.modo]?.[lang])errors.push('nota do modo diferente');
+ const rotulo=lang==='pt'?'Quem fala, segundo a fonte':'Who speaks, according to the source';
+ if(frases[0]?.closest('dd')?.previousElementSibling?.text!==rotulo)errors.push('rótulo da âncora diferente');
  return errors;
 }
 
@@ -64,6 +89,12 @@ for(const[lang,route]of[['pt','o-que-se-discute'],['en','en/under-discussion']])
  console.log(`OG1 ${lang}: planta de data trocada e planta de partido trocado recusadas.`);
  for(const[id,p]of Object.entries(proofs)){
   const receipt=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+  assert.deepEqual(conferirAncora(receipt,p,lang),[],id+': âncora impressa');checks++;
+  if(id===OG1.afirmacoes[0]){
+   const fraseTrocada=parse(receipt.toString());fraseTrocada.querySelector('[data-linha-campo="atribuicao.frase"]').set_content('Frase alterada.');assert(conferirAncora(fraseTrocada,p,lang).includes('frase diferente da prova'));checks++;
+   const modoTrocado=parse(receipt.toString());modoTrocado.querySelector('[data-atribuicao-modo]').set_content(notas.documento[lang]);assert(conferirAncora(modoTrocado,p,lang).includes('nota do modo diferente'));checks++;
+   console.log(`OG1 ${lang}: planta de frase alterada e planta de nota de modo trocada recusadas.`);
+  }
   if(!p.name){assert.equal(receipt.querySelector('.linha-nome-da-fonte'),null,id+': título usado como rótulo');checks++;}
   if(lang==='en'&&id.startsWith('og1-utao-')){assert.equal(receipt.querySelector('.linha-excerto [data-linha-campo="excerpt"]')?.getAttribute('lang'),'pt-PT',id+': língua do excerto');checks++;}
   if(p.entity_aliases){const publisher=Object.keys(p.entity_aliases)[0];assert.equal(claims.get(id).source,publisher);const fontes=receipt.querySelectorAll('[data-linha-campo="source"]');assert(fontes.length>=2,id+': o recibo imprime o publicador em menos de dois lugares');for(const f of fontes){assert.equal(f.text,publisher,id+': publicador diferente num dos lugares do recibo');}if(p.attributed_to?.length){assert(receipt.text.includes(p.attributed_to[0]));}

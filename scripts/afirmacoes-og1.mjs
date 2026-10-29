@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import {OG1} from '../src/data/discussao-og1.mjs';
+const afirmacoes=new Set(OG1.afirmacoes);
 const relatorio='content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf';
 const relatorioCfp='content/30 Orcamento 2027 Generalidade/source/cfp-rel-08-2026.pdf';
 const normal=x=>String(x??'').replace(/\s+/g,' ').trim();
@@ -10,6 +12,17 @@ export function conferirLinhaOg1(c,p,relida){
  const errors=[];
  if(!c||!p)return ['OG1 selo: linha ou prova ausente'];
  const d=p.document,r=p.receipt;
+ const a=p.atribuicao;
+ if(afirmacoes.has(p.id)!==Object.hasOwn(p,'atribuicao'))errors.push('OG1 âncora: presença diferente da lista de afirmações');
+ if(Object.hasOwn(p,'atribuicao')){
+  if(!a||!['passagem','documento','entrevista'].includes(a.modo))errors.push('OG1 âncora: modo inválido');
+  if(!Array.isArray(a?.aliases)||!a.aliases.length||a.aliases.some(v=>typeof v!=='string'||!v.trim())||a.aliases[0]!==p.attributed_to?.[0]||a.aliases[0]!==c.attributed_to?.[0])errors.push('OG1 âncora: primeiro alias diferente');
+  if(typeof a?.frase!=='string'||!a.frase.trim()||!(Array.isArray(a.aliases)&&a.aliases.some(v=>typeof v==='string'&&v.trim()&&normal(a.frase).includes(v))))errors.push('OG1 âncora: frase sem alias');
+  if(['passagem','entrevista'].includes(a?.modo)&&(typeof a.passagem!=='string'||!normal(a.passagem).includes(normal(a.frase))||!normal(a.passagem).includes(normal(c.excerpt))))errors.push('OG1 âncora: passagem sem frase ou excerto');
+  if(a?.modo==='documento'&&Object.hasOwn(a,'passagem'))errors.push('OG1 âncora: documento com passagem');
+  if(p.source_sha256!==d?.source_sha256)errors.push('OG1 âncora: selo diferente do documento');
+ }
+
  if(typeof d?.file!=='string'||!(d.file===relatorio||d.file.startsWith('content/30 Orcamento 2027 Generalidade/source/'))||d.file.split('/').includes('..')||d.file.includes('\\')||!/^\w[\w-]*\.(pdf|html)$/.test(path.basename(d.file))||!/^[a-f0-9]{64}$/.test(d.source_sha256??'')||r?.sha256!==d.source_sha256)errors.push('OG1 selo: referência inválida');
  for(const key of ['value','unit','excerpt'])if((key==='value'?normal(c[key]).replaceAll('−','-'):normal(c[key]))!==(key==='value'?normal(p[key]).replaceAll('−','-'):normal(p[key])))errors.push('OG1 '+key+': diferente da prova');
  for(const key of ['title','locator','source_sha256','page'])if(c.document?.[key]!==d?.[key])errors.push('OG1 documento: '+key+' diferente');
@@ -22,7 +35,7 @@ export function conferirLinhaOg1(c,p,relida){
  // A ligação exportada do CFP abre a página exata do PDF selado.
  if(d.file===relatorioCfp&&Number.isInteger(d.page)&&d.page>0)url.hash='page='+d.page;
  if(c.source_url!==url.href)errors.push('OG1 porta: diferente da origem');
- if(relida)for(const key of ['value','unit','excerpt','period','attributed_to','published_at','document','source','entity_aliases'])if(JSON.stringify(relida[key]??null)!==JSON.stringify(p[key]??null))errors.push('OG1 corpo: '+key+' diferente da releitura');
+ if(relida)for(const key of ['value','unit','excerpt','period','attributed_to','published_at','document','source','entity_aliases','atribuicao'])if(JSON.stringify(relida[key]??null)!==JSON.stringify(p[key]??null))errors.push('OG1 corpo: '+key+' diferente da releitura');
  return errors;
 }
 export function conferirOg1(claims,{motor,plantar=true}={}){
@@ -38,6 +51,7 @@ export function conferirOg1(claims,{motor,plantar=true}={}){
    relidas=JSON.parse(execFileSync('python3',['-c',code],{cwd:motor,encoding:'utf8',maxBuffer:4*1024*1024,stdio:['ignore','pipe','pipe']}));
   }catch{errors.push('OG1 corpo: não foi possível reler as fontes no motor indicado');}
  }
+ for(const id of afirmacoes)if(!proofs[id]?.atribuicao)errors.push(id+': OG1 âncora ausente');
  for(const[id,p]of Object.entries(proofs)){
   const c=claims.get(id);errors.push(...conferirLinhaOg1(c,p,relidas[id]).map(e=>id+': '+e));
   if(motor&&!relidas[id])errors.push(id+': OG1 corpo ausente');
@@ -58,6 +72,22 @@ export function conferirOg1(claims,{motor,plantar=true}={}){
    const limpo=conferirLinhaOg1(c,p,relidas[id]).length===0;
    mudar(alvo==='linha'?c:p);
    const mensagem=conferirLinhaOg1(c,p,relidas[id])[0];
+   plantas.push({nome:'OG1 '+nome,mensagem});if(!limpo||!mensagem)errors.push('OG1 planta não mordeu: '+nome);
+  }
+ }
+ if(plantar){
+  const id='og1-pan-abstencao',c=claims.get(id);
+  for(const[nome,mudar]of[
+   ['prova sem atribuição',p=>delete p.atribuicao],
+   ['primeiro alias trocado',p=>p.atribuicao.aliases[0]='Outra pessoa'],
+   ['frase sem alias',p=>p.atribuicao.frase='Uma frase sem quem fala.'],
+   ['passagem sem excerto',p=>p.atribuicao.passagem='Uma passagem sem a citação.'],
+   ['modo inventado',p=>p.atribuicao.modo='inventado'],
+  ]){
+   const p=structuredClone(proofs[id]);
+   const limpo=conferirLinhaOg1(c,p).length===0;
+   mudar(p);
+   const mensagem=conferirLinhaOg1(c,p).find(e=>e.startsWith('OG1 âncora:'));
    plantas.push({nome:'OG1 '+nome,mensagem});if(!limpo||!mensagem)errors.push('OG1 planta não mordeu: '+nome);
   }
  }

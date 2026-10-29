@@ -923,3 +923,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | fp2-c | A conclusão da Saúde com a frase dos números em primeiro, «excedente» e a glosa da UTAO na conclusão do Orçamento, a moeda no valor das parcerias, nas duas edições; seis linhas vivas reescritas | lida | O lugar de direção escreveu as linhas (correção dirigida, 27.10.2026 à noite, depois da leitura a frio do FP2); a leitura cruzada do diff foi a leitura curta M48 do Codex gpt-6-astra (xhigh, só leitura), 28.10.2026 das 00:16 às 00:21 UTC, `design/especime-v3/medicoes/fp2-2026-10-27/leitura-curta-fp2c-astra.md`: as cinco plantas apanhadas, as seis frases conferidas palavra por palavra nas duas edições contra a página dos itens, nenhum achado nestas linhas. |
 
 | og1-b | O item do Orçamento depois do voto e as aberturas dos três itens, nas duas edições | por ler | redação do mandato OG1-B; a leitura a frio do bloco é do Opus |
+
+| og1-c | A âncora de atribuição nos recibos e a cláusula do Método, nas duas edições | por ler | Redação do mandato OG1-C; Método carimbado pela decisão §1.210. |

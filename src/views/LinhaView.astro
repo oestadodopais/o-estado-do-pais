@@ -44,6 +44,7 @@
  */
 import Base from '../layouts/Base.astro';
 import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
+import provasOg1 from '../../ledger/provas/og1a/provas.json';
 import travessiaV2d from '../../ledger/cruzamentos/v2d.json';
 import travessiaV2e from '../../ledger/cruzamentos/v2e.json';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
@@ -199,6 +200,12 @@ const portugalDoConcelho = linhaDePortugalDaLinha(id);
    «Nenhum rótulo partidário atravessou». A frase falava de uma coisa que não
    estava na página. Volta com o campo, não com uma adivinha. */
 const atribuicao = atribuicaoDaLinha(claim, lang);
+const ancoraOg1 = (provasOg1.rows as Record<string, any>)[id]?.atribuicao;
+const notasDaAncoraOg1: Record<string, {pt:string,en:string}> = {
+  passagem: {pt:'A fonte nomeia quem fala na mesma passagem em que cita.',en:'The source names the speaker in the same passage in which it quotes.'},
+  documento: {pt:'O documento é da própria pessoa ou do próprio órgão que fala.',en:"The document is the speaker's own."},
+  entrevista: {pt:'Entrevista: a fonte nomeia quem responde no seu cabeçalho.',en:'Interview: the source names the respondent in its heading.'},
+};
 const campoDaAtribuicao = lang === 'en' && claim.attributed_to_en ? 'attributed_to_en' : 'attributed_to';
 /* A RESSALVA DE ALCANCE DESTA LINHA, se ela tiver uma (F1.10, §9.2,
    08.09.2026). Declarada na medida do domínio a que a linha pertence, e lida
@@ -1855,6 +1862,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             </>
           )
         }
+        {ancoraOg1 && <>
+          <dt data-voz>{lang === 'pt' ? 'Quem fala, segundo a fonte' : 'Who speaks, according to the source'}</dt>
+          <dd>
+            <span data-linha-claim={id} data-linha-campo="atribuicao.frase" lang={lang === 'en' ? 'pt-PT' : undefined}>{ancoraOg1.frase}</span>
+            <p class="aparelho-nota" data-atribuicao-modo={ancoraOg1.modo} data-voz>{notasDaAncoraOg1[ancoraOg1.modo][lang]}</p>
+          </dd>
+        </>}
       </dl>
 
       {atribuicao && <p class="aparelho-nota">{s.livro.linha.atribuicaoNota}</p>}

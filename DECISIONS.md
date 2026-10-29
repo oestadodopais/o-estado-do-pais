@@ -14311,3 +14311,15 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **A aterragem.** Pelo `aterrar.sh`, lançada depois do commit dos registos; as horas ficam no recibo (`_aterragens/og1b-aterragem-2026-10-28/aterragem.json`) e no prompt da sessão seguinte. O que sobe: a worktree `og1-b-2026-10-28` do sítio (de `main` 52d29e08d), com os commits do construtor e os do lugar de direção, sobre o `master` 882bd72 do motor.
 
 **O que fica para quinta-feira 29.10.** O resultado oficial da votação e o Diário das reuniões n.º 15 e n.º 16 (OG1-B3 do motor e uma atualização datada do item, com a hora própria da votação; as duas vigias por guião não apanharam nenhum dos dois até ao fecho); os números do primeiro-ministro no debate de 27.10 ao lado das fontes, quando o Diário existir; a atualização datada da habitação e a de Évora; a higiene com os Minor do FP1, do FP2 e do OG1-B (`MINOR-para-a-higiene-2026-10-28.md`) e a I275; a revisão de sexta-feira da `GARGALOS.md`.
+
+### 1.210 A âncora de atribuição acompanha cada citação e o Método declara a recusa de citações sem essa prova
+
+**Afecta:** metodo
+
+**Texto:** metodo d12253bd3404
+
+**Data:** 29.10.2026.
+
+**Decisão comunicada no mandato OG1-C pelo lugar de direção.** A atribuição passa a estrutural: cada afirmação dos partidos e do Governo conserva uma âncora com quem fala, conferida pelo gerador no corpo alojado e selada com a citação. A página da linha mostra a frase da fonte e distingue passagem, documento e entrevista. Nas duas edições, o Método acrescenta a cláusula literal do §3.4 do mandato à lista do que as verificações recusam. O inventário identifica esta versão pelo bloco `og1-c` e por esta decisão. Não se promete certeza absoluta nem se constrói nesta passagem o segundo leitor das citações.
+
+Este registo fixa apenas a decisão e o carimbo exigidos pelo §2.3 do mandato; o relato de fecho e a leitura a frio ficam para o lugar de direção.
