@@ -43254,6 +43254,36 @@
     },
     {
       "chaves": [
+        "og1-votacao-generalidade-oficial"
+      ],
+      "nome": {
+        "pt": "Registo oficial da votação na generalidade, na página da iniciativa",
+        "en": "Official record of the general vote, on the bill's page"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o registo da votação na generalidade na página da iniciativa no sítio da Assembleia da República: a reunião, o resultado e o sentido de voto de cada partido.",
+          "en": "It is the record of the general vote on the bill's page on the Assembly of the Republic's website: the sitting, the result and each party's vote.",
+          "partes": [
+            {
+              "pt": "É o registo da votação na generalidade na página da iniciativa no sítio da Assembleia da República: a reunião, o resultado e o sentido de voto de cada partido.",
+              "en": "It is the record of the general vote on the bill's page on the Assembly of the Republic's website: the sitting, the result and each party's vote.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "og1-guiao-votacoes-28"
       ],
       "nome": {

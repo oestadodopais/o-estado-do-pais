@@ -49684,12 +49684,12 @@
               "pt": "O Parlamento aprovou a proposta de Orçamento para ",
               "en": "Parliament passed the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49700,6 +49700,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-votacao-generalidade-rtp",
@@ -49725,12 +49730,12 @@
               "pt": " na generalidade a ",
               "en": " Budget proposal at the general vote on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49741,6 +49746,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-votacao-generalidade-rtp",
@@ -49766,12 +49776,12 @@
               "pt": ", com os votos a favor do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e o excedente de ",
               "en": ", with PSD and CDS-PP voting in favour and PS, PAN and JPP abstaining, and the surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49782,6 +49792,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -49797,12 +49812,12 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49813,6 +49828,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -49828,12 +49848,12 @@
               "pt": " do PIB que o Governo prevê para esse ano é, nas contas do Conselho das Finanças Públicas, um défice de ",
               "en": " of GDP the Government forecasts for that year is, in the Public Finance Council's accounts, a deficit of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49844,6 +49864,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -49859,12 +49884,12 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49875,6 +49900,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -49890,12 +49920,12 @@
               "pt": ".",
               "en": ".",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -49906,6 +49936,11 @@
                   "linha": "og1-cfp-saldo-2027",
                   "campo": "excerpt",
                   "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -49913,15 +49948,15 @@
         },
         {
           "caminho": "abertura[1][0]",
-          "pt": "Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o ECO (a RTP registou a aprovação, os votos a favor e a abstenção do PS; o resultado oficial da votação não estava publicado a ",
-          "en": "Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to ECO (RTP recorded the approval, the votes in favour and the PS abstention; the official record of the vote had not been published on ",
+          "pt": "Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o registo oficial da votação de ",
+          "en": "Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to the official record of the vote of ",
           "ramo": null,
           "partes": [
             {
-              "pt": "Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o ECO (a RTP registou a aprovação, os votos a favor e a abstenção do PS; o resultado oficial da votação não estava publicado a ",
-              "en": "Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to ECO (RTP recorded the approval, the votes in favour and the PS abstention; the official record of the vote had not been published on ",
+              "pt": "Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o registo oficial da votação de ",
+              "en": "Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to the official record of the vote of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -49929,14 +49964,9 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -49947,6 +49977,11 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
                 }
               ]
             }
@@ -49954,15 +49989,15 @@
         },
         {
           "caminho": "abertura[1][2]",
-          "pt": "), e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
-          "en": "), and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
+          "pt": " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO tinha noticiado. A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+          "en": " on the bill's page on Parliament's website, which confirms what ECO had reported. The difference between the Government and the Council lies in what the Council does not count, starting with the ",
           "ramo": null,
           "partes": [
             {
-              "pt": "), e a diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
-              "en": "), and the difference between the Government and the Council lies in what the Council does not count, starting with the ",
+              "pt": " na página da iniciativa no sítio do Parlamento, que confirma o que o ECO tinha noticiado. A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos ",
+              "en": " on the bill's page on Parliament's website, which confirms what ECO had reported. The difference between the Government and the Council lies in what the Council does not count, starting with the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -49970,14 +50005,9 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -50003,7 +50033,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -50011,14 +50041,9 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -50029,6 +50054,16 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -50054,7 +50089,7 @@
               "pt": " do combate à fraude nos combustíveis, «",
               "en": " of the fight against fuel fraud, «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -50062,14 +50097,9 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -50080,6 +50110,16 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 }
               ]
             }
@@ -50095,7 +50135,7 @@
               "pt": "» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, que não encontra na proposta «",
               "en": "» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, which does not find in the proposal «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -50103,14 +50143,9 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -50121,6 +50156,16 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 }
               ]
             }
@@ -50136,7 +50181,7 @@
               "pt": "».",
               "en": "» (sufficiently detailed information on its content and implementation mechanisms).",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -50144,14 +50189,9 @@
                   "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
-                  "linha": "og1-votacao-generalidade-rtp",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
-                },
-                {
-                  "linha": "og1-guiao-votacoes-28",
-                  "campo": "excerpt",
-                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -50162,6 +50202,16 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
                 }
               ]
             }
@@ -51408,7 +51458,7 @@
               "pt": "O que as fontes dizem",
               "en": "What the sources say",
               "classe": "leitura",
-              "sobre": "Título do item que confronta as posições anunciadas com a apreciação técnica.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -51574,6 +51624,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56710,7 +56765,7 @@
               "pt": "A votação na generalidade, a ",
               "en": "The general vote, on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56726,6 +56781,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56746,7 +56806,7 @@
               "pt": ", segundo o ECO: a proposta «",
               "en": ", according to ECO: the proposal «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56762,6 +56822,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56782,7 +56847,7 @@
               "pt": "», com «",
               "en": "» (was passed at the general vote this Wednesday), with «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56798,6 +56863,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56818,7 +56888,7 @@
               "pt": "», «",
               "en": "» (the votes in favour of the two parties that support the Government, PSD and CDS-PP), «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56834,6 +56904,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56854,7 +56929,7 @@
               "pt": "», «",
               "en": "» (the abstention of PS), «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56870,6 +56945,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56890,7 +56970,7 @@
               "pt": "» e «",
               "en": "» (of PAN and JPP) and «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56906,6 +56986,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56926,7 +57011,7 @@
               "pt": "»; a RTP: «",
               "en": "» (the vote against of Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda); RTP: «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56942,6 +57027,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56962,7 +57052,7 @@
               "pt": "» O guião oficial das votações de ",
               "en": "» (the State Budget was passed at the general vote with PSD and CDS voting in favour; PS abstains). The official voting guide of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -56978,6 +57068,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -56998,7 +57093,7 @@
               "pt": " lista a «",
               "en": " lists the «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -57014,6 +57109,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -57034,7 +57134,7 @@
               "pt": "» da «",
               "en": "» (general vote) of «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -57050,6 +57150,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -57062,15 +57167,15 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[20]",
-          "pt": "»; o resultado oficial e o Diário da sessão não estavam publicados quando este item foi reescrito, e a votação final global está marcada para ",
-          "en": "»; the official result and the record of the sitting had not been published when this item was rewritten, and the final global vote is scheduled for ",
+          "pt": "»; o registo oficial da votação de ",
+          "en": "»; the official record of the vote of ",
           "ramo": null,
           "partes": [
             {
-              "pt": "»; o resultado oficial e o Diário da sessão não estavam publicados quando este item foi reescrito, e a votação final global está marcada para ",
-              "en": "»; the official result and the record of the sitting had not been published when this item was rewritten, and the final global vote is scheduled for ",
+              "pt": "»; o registo oficial da votação de ",
+              "en": "»; the official record of the vote of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -57086,6 +57191,11 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -57098,15 +57208,15 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[22]",
-          "pt": ".",
-          "en": ".",
+          "pt": ", na página da iniciativa no sítio do Parlamento, dá na «",
+          "en": ", on the bill's page on Parliament's website, gives at the «",
           "ramo": null,
           "partes": [
             {
-              "pt": ".",
-              "en": ".",
+              "pt": ", na página da iniciativa no sítio do Parlamento, dá na «",
+              "en": ", on the bill's page on Parliament's website, gives at the «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-votacao-generalidade",
@@ -57122,6 +57232,134 @@
                   "linha": "og1-guiao-votacoes-28",
                   "campo": "excerpt",
                   "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                },
+                {
+                  "linha": "oe-2027-calendario-final-global",
+                  "campo": "excerpt",
+                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[6].paragrafo[24]",
+          "pt": "» o resultado «",
+          "en": "» (the sixteenth plenary sitting) the result «",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "» o resultado «",
+              "en": "» (the sixteenth plenary sitting) the result «",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                },
+                {
+                  "linha": "oe-2027-calendario-final-global",
+                  "campo": "excerpt",
+                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[6].paragrafo[26]",
+          "pt": "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
+          "en": "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the positions ECO had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para ",
+              "en": "» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the positions ECO had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
+                },
+                {
+                  "linha": "oe-2027-calendario-final-global",
+                  "campo": "excerpt",
+                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[6].paragrafo[28]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
+              "apoios": [
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-rtp",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                },
+                {
+                  "linha": "og1-guiao-votacoes-28",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-calendario-final-global",
@@ -58952,7 +59190,7 @@
               "pt": "A comparação",
               "en": "The comparison",
               "classe": "leitura",
-              "sobre": "Título do item que confronta as posições anunciadas com a apreciação técnica.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59003,6 +59241,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "og1-ps-abstencao",
@@ -59028,7 +59271,7 @@
               "pt": "As previsões que o ministro diz «",
               "en": "The forecasts the minister calls «",
               "classe": "leitura",
-              "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59079,6 +59322,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -59129,7 +59377,7 @@
               "pt": "» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior das medidas novas de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os ",
               "en": "» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest new revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59180,6 +59428,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59195,7 +59448,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59246,6 +59499,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "og1-governo-rtp-combustiveis",
@@ -59271,7 +59529,7 @@
               "pt": " que o ministro pôs ao lado de «",
               "en": " the minister set beside «",
               "classe": "leitura",
-              "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59322,6 +59580,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -59372,7 +59635,7 @@
               "pt": "",
               "en": "» (a balance of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59423,6 +59686,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59438,7 +59706,7 @@
               "pt": "",
               "en": " million)",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59489,6 +59757,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59504,7 +59777,7 @@
               "pt": "» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de ",
               "en": " fit the account the UTAO transcribes from the proposal's report: the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59555,6 +59828,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59570,7 +59848,7 @@
               "pt": " em contabilidade nacional é aí de ",
               "en": " balance in national accounts is there ",
               "classe": "leitura",
-              "sobre": "Leitura editorial corrigida pelo mandato A8, com os apoios dos documentos da frase.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59621,6 +59899,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -59671,7 +59954,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59722,6 +60005,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "og1-governo-rtp-combustiveis",
@@ -59747,7 +60035,7 @@
               "pt": ", e a medida de que falava custa mais do que ele. A subida dos juros, «",
               "en": ", and the measure he spoke of costs more than it. The rise in interest, «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59798,6 +60086,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59813,7 +60106,7 @@
               "pt": "» para o ministro, é na proposta mais ",
               "en": "» (market risk, not country risk) for the minister, is in the proposal ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59864,6 +60157,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -59879,7 +60177,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -59930,6 +60228,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "oe-2027-cenario-pib-real-crescimento-2027",
@@ -59990,7 +60293,7 @@
               "pt": " de despesa em ",
               "en": " more expenditure in ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60041,6 +60344,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60056,7 +60364,7 @@
               "pt": ", venha de onde vier. Na votação de ",
               "en": ", wherever it comes from. At the vote on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60107,6 +60415,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60122,7 +60435,7 @@
               "pt": ", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega, o Livre e o Bloco de Esquerda o voto contra, nas intervenções e notícias aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em ",
               "en": ", according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega, Livre and Bloco de Esquerda the vote against, in the statements and reports quoted here. The Public Finance Council and the Government differ by ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60173,6 +60486,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60188,7 +60506,7 @@
               "pt": " p.p. do PIB",
               "en": " p.p. of GDP",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60239,6 +60557,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60254,7 +60577,7 @@
               "pt": " no saldo de ",
               "en": " on the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60305,6 +60628,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60320,7 +60648,7 @@
               "pt": ", um défice de ",
               "en": " balance, a deficit of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60371,6 +60699,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60386,7 +60719,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60437,6 +60770,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60452,7 +60790,7 @@
               "pt": " contra um excedente de ",
               "en": " against a surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60503,6 +60841,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60518,7 +60861,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60569,6 +60912,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60584,7 +60932,7 @@
               "pt": ", e a diferença está no que o Conselho não conta: as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
               "en": ", and the difference lies in what the Council does not count: the two measures that, according to the Council, the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60635,6 +60983,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60650,7 +61003,7 @@
               "pt": "",
               "en": "» (",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60701,6 +61054,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60716,7 +61074,7 @@
               "pt": "",
               "en": " bp shock)",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60767,6 +61125,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60782,7 +61145,7 @@
               "pt": "», ",
               "en": ", ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60833,6 +61196,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60848,7 +61216,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60899,6 +61267,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60914,7 +61287,7 @@
               "pt": " em contabilidade nacional.",
               "en": " in national accounts.",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -60965,6 +61338,11 @@
                   "linha": "og1-mf-juros-choque-100pb",
                   "campo": "excerpt",
                   "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                },
+                {
+                  "linha": "og1-votacao-generalidade-oficial",
+                  "campo": "excerpt",
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 }
               ]
             }
@@ -60980,12 +61358,12 @@
               "pt": "A conclusão",
               "en": "The conclusion",
               "classe": "leitura",
-              "sobre": "Título do item que confronta as posições anunciadas com a apreciação técnica.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61016,6 +61394,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 },
                 {
                   "linha": "og1-ps-abstencao",
@@ -61041,12 +61424,12 @@
               "pt": "A proposta passou na generalidade a ",
               "en": "The proposal passed at the general vote on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61077,6 +61460,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61092,12 +61480,12 @@
               "pt": " com os votos do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e chega à especialidade com um excedente de ",
               "en": " with the votes of PSD and CDS-PP and the abstention of PS, PAN and JPP, and reaches the detailed stage with a surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61128,6 +61516,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61143,12 +61536,12 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61179,6 +61572,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61194,12 +61592,12 @@
               "pt": " do PIB nas previsões do Governo e um défice de ",
               "en": " of GDP in the Government's forecasts and a deficit of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61230,6 +61628,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61245,12 +61648,12 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61281,6 +61684,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61296,12 +61704,12 @@
               "pt": " nas do Conselho das Finanças Públicas: a diferença, ",
               "en": " in the Public Finance Council's: the difference, ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61332,6 +61740,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61347,12 +61760,12 @@
               "pt": " p.p. do PIB",
               "en": " p.p. of GDP",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61383,6 +61796,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61398,12 +61816,12 @@
               "pt": ", está no que o Conselho não conta, as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pelos ",
               "en": ", lies in what the Council does not count, the two measures that, according to the Council, the proposal does not specify sufficiently, starting with the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61434,6 +61852,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61449,12 +61872,12 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61485,6 +61908,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61500,12 +61928,12 @@
               "pt": " do combate à fraude nos combustíveis, e o efeito no IRS da redução das retenções na fonte. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
               "en": " of the fight against fuel fraud, and the effect on personal income tax of the cut in withholding. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61536,6 +61964,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61551,12 +61984,12 @@
               "pt": "",
               "en": "» (",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61587,6 +62020,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61602,12 +62040,12 @@
               "pt": "",
               "en": " bp shock)",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61638,6 +62076,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61653,12 +62096,12 @@
               "pt": "», ",
               "en": ", ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61689,6 +62132,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61704,12 +62152,12 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61740,6 +62188,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61755,12 +62208,12 @@
               "pt": " em contabilidade nacional. Os números da especialidade vêm depois; a votação final global está marcada para ",
               "en": " in national accounts. The figures of the detailed stage come later; the final global vote is scheduled for ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61791,6 +62244,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }
@@ -61806,12 +62264,12 @@
               "pt": ".",
               "en": ".",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
+              "sobre": "Redação do mandato OG1-B4, com os apoios das linhas que o parágrafo cita.",
               "apoios": [
                 {
-                  "linha": "og1-votacao-generalidade",
+                  "linha": "og1-votacao-generalidade-oficial",
                   "campo": "excerpt",
-                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                  "literal": "Votação em 2026-10-28 na Reunião Plenária n.º 16 Aprovado Contra: CH , IL , L , PCP , BE Abstenção: PS , PAN , JPP A Favor: PSD , CDS-PP"
                 },
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -61842,6 +62300,11 @@
                   "linha": "oe-2027-calendario-final-global",
                   "campo": "excerpt",
                   "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                },
+                {
+                  "linha": "og1-votacao-generalidade",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
                 }
               ]
             }

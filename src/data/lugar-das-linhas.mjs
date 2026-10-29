@@ -67,6 +67,7 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
   'og1-cfp-riscos': 'portugal',
   'og1-cfp-emprego': 'portugal',
   'og1-mf-juros-choque-100pb': 'portugal',
+  'og1-votacao-generalidade-oficial': 'portugal',
   'og1-votacao-generalidade': 'portugal',
   'og1-votacao-generalidade-rtp': 'portugal',
   'og1-guiao-votacoes-28': 'portugal',

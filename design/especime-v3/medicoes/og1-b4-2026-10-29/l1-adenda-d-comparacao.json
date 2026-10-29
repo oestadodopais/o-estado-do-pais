@@ -1,0 +1,47 @@
+{
+  "base": "design/especime-v3/medicoes/og1-b4-2026-10-29/l1-og1b4.json",
+  "registo": "design/especime-v3/medicoes/og1-b4-2026-10-29/l1-adenda-e.log",
+  "antes": 3460,
+  "depois": 3460,
+  "paginasConferidas": 3460,
+  "paginasIdenticas": true,
+  "mudancasDePortas": [
+    {
+      "rota": "/o-que-se-discute",
+      "destino": "/livro-razao/og1-votacao-generalidade-oficial",
+      "antes": 10,
+      "depois": 9
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "destino": "/livro-razao/og1-votacao-generalidade",
+      "antes": 8,
+      "depois": 9
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "destino": "/livro-razao/og1-votacao-generalidade-rtp",
+      "antes": 3,
+      "depois": 2
+    },
+    {
+      "rota": "/en/under-discussion",
+      "destino": "/en/ledger/og1-votacao-generalidade-oficial",
+      "antes": 11,
+      "depois": 9
+    },
+    {
+      "rota": "/en/under-discussion",
+      "destino": "/en/ledger/og1-votacao-generalidade",
+      "antes": 8,
+      "depois": 9
+    },
+    {
+      "rota": "/en/under-discussion",
+      "destino": "/en/ledger/og1-votacao-generalidade-rtp",
+      "antes": 3,
+      "depois": 2
+    }
+  ],
+  "razao": "As duas datas da comparação voltam ao ECO, o recibo contextual da RTP sai da abertura e a glosa inglesa perde o selo numérico. As contagens, exemplos e multiplicidades da L1 ficam iguais em todas as páginas; apenas as portas descritas mudam nas duas páginas da discussão."
+}

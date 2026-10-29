@@ -1,0 +1,46 @@
+OG1-B4-2: correções da leitura curta, adendas D e E
+
+A construção e todas as conferências pedidas passaram com código 0. As correções da adenda D são entregues juntamente com a declaração autorizada pela adenda E. A entrega é preparada num único commit OG1-B4-2; o resultado do escrivão e o identificador são reportados na resposta final da sessão.
+
+Correções aplicadas:
+1. A abertura atribui a confirmação apenas ao ECO e separa a confirmação do argumento do Conselho em duas frases. O recibo contextual da RTP saiu de abertura[1]. A RTP continua citada no parágrafo das fontes pelo que efetivamente registou. check:discussao aceitou a abertura com duas frases.
+2. O parágrafo das fontes dá o resultado Aprovado na reunião citada e atribui ao ECO os sentidos de voto. A glosa inglesa é «(the sixteenth plenary sitting)», sem algarismo nem fragmento. O HTML tem três selos da linha oficial nesse parágrafo em cada edição.
+3. O periodo da comparação voltou a og1-votacao-generalidade nas duas edições, porque a frase atribui ao ECO. Os tokens movidos para a linha oficial são seis: abertura[0] e seccoes[3].conteudo[0].paragrafo (conclusão), nas duas edições, mais abertura[0] do dossiê orcamento-2027 nas duas edições. São quatro no item e dois no dossiê. tokens.json contém os seis caminhos.
+4. As quatro linhas vivas dos parágrafos no bloco og1-b4 foram reescritas no lugar. A linha em branco que partia a tabela foi retirada. A auditoria das palavras foi regenerada e conferida, com 756 folhas.
+5. Em src/i18n/lingua-dos-titulos.mjs, LINGUA_DAS_EDICOES recebeu apenas "2026-10-29": null, junto da entrada de 2026-10-28, como a adenda E determina. A data é a edição do documento na linha reexportada pelo lugar de direção em 8235f5be5; os ficheiros dessa reexportação não foram alterados nesta passagem.
+
+Os fragmentos «Reunião Plenária n.º 16» e «Aprovado» foram conferidos no excerto da linha oficial. A escrita do item continua em 2026-10-29 e a publicação em 2026-10-27. O dossiê conserva os dois tokens oficiais. O registo público das correções, o motor e a lista de exceções da voz ficaram intactos.
+
+Inventário final: 2484 linhas classificadas, 1290 vivas e 1192 retiradas. Duas declarações condicionais estão incluídas no total. As contagens não mudaram nas adendas D e E: 2484 → 2484, 1290 → 1290 e 1192 → 1192. A base do conjunto OG1-B4 era 2478 classificadas, 1290 vivas e 1186 retiradas. Os quatro esqueletos foram comparados com o HTML e o portão da voz passou. A leitura curta do diff é do lugar de direção.
+L1: 3460 → 3460. A comparação em l1-adenda-d-comparacao.json conferiu as 3460 páginas contra l1-og1b4.json: todas conservam a contagem de destinos repetidos, o destino de exemplo e a multiplicidade. Só mudam seis contagens de portas nas duas páginas da discussão: a data da comparação volta ao ECO, sai o recibo contextual da RTP na abertura e sai o selo numérico da glosa inglesa. O teto e a regra da L1 ficaram intactos.
+
+Códigos finais, lidos dos ficheiros .codigo:
+Auditoria regenerada: 0, lido de auditoria-adenda-d.codigo.
+Diagnóstico da língua da edição: 0, lido de lingua-edicao-e.codigo.
+Construção: 0, lido de build-adenda-e.codigo.
+check:discussao: 0, lido de discussao-adenda-e.codigo.
+check:cartao: 0, lido de cartao-adenda-e.codigo.
+check:datas: 0, lido de datas-adenda-e.codigo.
+check:voz e inventário das frases: 0, lido de voz-adenda-e.codigo.
+check:lingua: 0, lido de lingua-adenda-e.codigo.
+ledger:check: 0, lido de ledger-adenda-e.codigo.
+L1, check:lugar: 0, lido de l1-adenda-e.codigo.
+Comparação completa da L1: 0, lido de l1-comparacao-de.codigo.
+
+A primeira construção da adenda D terminou com código 1 por faltar a edição 2026-10-29 em LINGUA_DAS_EDICOES. A passagem parou; a adenda E autorizou a entrada, a conferência isolada da língua passou e a construção seguinte passou. Os registos anteriores foram conservados. As sete conferências autónomas foram executadas uma de cada vez. Não correram os três portões, nem capturas; não houve publicação nem push.
+
+Execução das adendas D e E até à preparação deste relatório: 36 chamadas de ferramentas (17 na D e 19 na E). As chamadas do commit e da sua verificação são contabilizadas na resposta final. Duas construções, com 17 e 21 conferências internas; oito corridas autónomas (a língua após a declaração da edição e as sete conferências pedidas); uma medição comparativa da L1. Total de conferências e medição: 47. Uma regeneração da auditoria das palavras. As contagens históricas de chamadas sem ficheiro de suporte ficam para a higiene, como decidido no achado 8.
+
+Parágrafos copiados do HTML da construção verde das adendas D e E. Foram retirados apenas os selos de fonte na transcrição:
+
+pt: abertura[1]
+Votaram contra o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda, segundo o registo oficial da votação de 28.10.2026 na página da iniciativa no sítio do Parlamento, que confirma o que o ECO tinha noticiado. A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos 300 milhões de euros do combate à fraude nos combustíveis, «a medida de maior dimensão do lado da receita» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, que não encontra na proposta «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação».
+
+pt: seccoes[1].conteudo[6].paragrafo
+A votação na generalidade, a 28.10.2026, segundo o ECO: a proposta «foi esta quarta-feira aprovada na generalidade», com «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP», «a abstenção do PS», «do PAN e do JPP» e «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda»; a RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se.» O guião oficial das votações de 28.10.2026 lista a «VOTAÇÃO NA GENERALIDADE» da «Proposta de Lei n.º 110/XVII/2.ª (GOV)»; o registo oficial da votação de 28.10.2026, na página da iniciativa no sítio do Parlamento, dá na «Reunião Plenária n.º 16» o resultado «Aprovado», com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, os sentidos de voto que o ECO tinha dado; o processo da iniciativa não ligava ainda o Diário da reunião, e a votação final global está marcada para 24.11.2026.
+
+en: abertura[1]
+Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against, according to the official record of the vote of 28.10.2026 on the bill's page on Parliament's website, which confirms what ECO had reported. The difference between the Government and the Council lies in what the Council does not count, starting with the 300 million euros of the fight against fuel fraud, «a medida de maior dimensão do lado da receita» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, which does not find in the proposal «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms).
+
+en: seccoes[1].conteudo[6].paragrafo
+The general vote, on 28.10.2026, according to ECO: the proposal «foi esta quarta-feira aprovada na generalidade» (was passed at the general vote this Wednesday), with «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP» (the votes in favour of the two parties that support the Government, PSD and CDS-PP), «a abstenção do PS» (the abstention of PS), «do PAN e do JPP» (of PAN and JPP) and «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda» (the vote against of Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda); RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se.» (the State Budget was passed at the general vote with PSD and CDS voting in favour; PS abstains). The official voting guide of 28.10.2026 lists the «VOTAÇÃO NA GENERALIDADE» (general vote) of «Proposta de Lei n.º 110/XVII/2.ª (GOV)»; the official record of the vote of 28.10.2026, on the bill's page on Parliament's website, gives at the «Reunião Plenária n.º 16» (the sixteenth plenary sitting) the result «Aprovado» (passed), with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, the positions ECO had given; the bill's file did not yet link the record of the sitting, and the final global vote is scheduled for 24.11.2026.

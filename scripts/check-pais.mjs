@@ -189,6 +189,7 @@ const provasEfeitos = JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json'
 
 // OG1-A6: documentos nacionais identificados, confrontados com as provas seladas.
 const documentosOg1 = {
+  "content/30 Orcamento 2027 Generalidade/source/iniciativa-377352-29.html": "Proposta de Lei 110/XVII/2, Orçamento do Estado para 2027: detalhe da iniciativa",
   "content/30 Orcamento 2027 Generalidade/source/cfp-rel-08-2026.pdf": "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027",
   "content/30 Orcamento 2027 Generalidade/source/eco-aprovado-generalidade.html": "Orçamento do Estado para 2027 aprovado na generalidade com abstenção do PS",
   "content/30 Orcamento 2027 Generalidade/source/rtp-aominuto-28.html": "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se",

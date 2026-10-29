@@ -932,3 +932,4 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | do1 | Os dois dossiês, o índice e as ligações nas peças, nas duas edições | por ler | Redação do mandato DO1; leitura cruzada reservada ao lugar de direção. |
 
 | do1-d | Um dossiê, sem correções, datas impressas e novidades com o rótulo Dossiê | por ler | Adendas D, E e F; leitura cruzada reservada ao lugar de direção. |
+| og1-b4 | O registo oficial da votação no item do Orçamento, nas duas edições | por ler | Redação do mandato OG1-B4; a leitura curta é do lugar de direção. |
