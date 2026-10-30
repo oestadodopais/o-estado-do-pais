@@ -22,3 +22,5 @@
 /* A seleção do dossiê tem índice próprio, sem o contador do estudo inteiro. */
 .dossie .texto-artigo h2 { padding-top: 0; }
 .dossie .texto-artigo h2::before { content: none; }
+
+.dossie [data-dossie-resto] { display: block; min-height: 44px; padding-block: .5rem; }
