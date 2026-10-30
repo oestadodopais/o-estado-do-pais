@@ -1,0 +1,552 @@
+{
+  "cabeca": "b12e685157a6fa8216bf8ac5a5a237c7b7a7a91e",
+  "capturador_sha256": "684862e5123b392590167897e5ff2b57ae6207d369ab75f4c4f634c3208638a9",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "dossie-orcamento-pt-390.png",
+      "rota": "/dossies/orcamento-2027/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 24213,
+      "sha256": "cb5e159ecda12fc5ab1482667407bd36518dd351296bceb590d6e18bed4af112",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-pt-390-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 938,
+            "width": 354,
+            "height": 75
+          },
+          "sha256": "ca6b10fa5fcebe1b13cd476f31177a89b5984dc6094314c6b3f361bf3ba084d5"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-390-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1052,
+            "width": 354,
+            "height": 2410
+          },
+          "sha256": "0e2e1d5963c775b29de382879953df76895ef9cd67fd071451be58433818a08b"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-390-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 22090,
+            "width": 354,
+            "height": 601
+          },
+          "sha256": "5a7d64f2f342eefa346b9fa22a41d9f95676a61407e624edeb60472c3f8fefc8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-pt-768.png",
+      "rota": "/dossies/orcamento-2027/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 19170,
+      "sha256": "45cf311052dc4e2c98d3006e5aee0574ff7e7997ddff6b7573024d6cf56ff844",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-pt-768-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 778,
+            "width": 529,
+            "height": 56
+          },
+          "sha256": "e1b25a17922be1ba1a21caf266126497d29d97c45fa2ea65b47f825487ddff21"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-768-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 873,
+            "width": 529,
+            "height": 2004
+          },
+          "sha256": "dbd487029b2961ccce064d7a4fd56f7ad803061dbd80c1cac7f0273fc5feea2d"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-768-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 17570,
+            "width": 529,
+            "height": 435
+          },
+          "sha256": "c4d613ed3a21351d1dbafcd1b1bc56fcfee373465180cdf18dfaa50011bbd63f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-pt-1024.png",
+      "rota": "/dossies/orcamento-2027/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 19264,
+      "sha256": "14865046246311afa7ec269e10899b1b2c5374bc5035d795f5276ab494b4cf57",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-pt-1024-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 778,
+            "width": 529,
+            "height": 82
+          },
+          "sha256": "51a7cb324c0272c0275bb981d3497a77d708d7310348ab3f2aa6bc02a48649cd"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-1024-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 899,
+            "width": 529,
+            "height": 2006
+          },
+          "sha256": "96a83dc59427f5b877d9d847537a5c57594d2f92df6dfcc76492e5aab2f31f20"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-1024-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 17699,
+            "width": 529,
+            "height": 441
+          },
+          "sha256": "b388af913e590db2e72510db4c63eced9ce6d35ce34d7119378e7f6c9f9e4f23"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-pt-1280.png",
+      "rota": "/dossies/orcamento-2027/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 19491,
+      "sha256": "5fcf355eed366a8fee2fc2ed40efe13d4d0b1b9c9da9531db8c7267a819bb220",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-pt-1280-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 788,
+            "width": 528,
+            "height": 85
+          },
+          "sha256": "c07a212abaeff0e00f0e3b58ed71cbfead1f6eb0321d21d50b2ee0ed448a05d9"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-1280-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 912,
+            "width": 528,
+            "height": 2015
+          },
+          "sha256": "68392e032fbe127d398eb60ecf7ab21e6884a58a41901cd3e017567dffda6bbb"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-1280-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 17883,
+            "width": 528,
+            "height": 451
+          },
+          "sha256": "2df798f8c89bf2d27bbd546ab7248d3c9403c61caeffbb99a71dd64bba633a73"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-pt-1600.png",
+      "rota": "/dossies/orcamento-2027/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 19543,
+      "sha256": "607ca487dadfd8c8ebe26cbe4952d1687062f585847f46285c0faaa0a50e0921",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-pt-1600-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 791,
+            "width": 528,
+            "height": 85
+          },
+          "sha256": "c07a212abaeff0e00f0e3b58ed71cbfead1f6eb0321d21d50b2ee0ed448a05d9"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-1600-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 915,
+            "width": 528,
+            "height": 2018
+          },
+          "sha256": "bb2c0aef48f416877e9b357ca38c9708b60ed5b93c204e56e82698928be63fc1"
+        },
+        {
+          "ficheiro": "dossie-orcamento-pt-1600-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 17922,
+            "width": 528,
+            "height": 454
+          },
+          "sha256": "b15fd439c3c3e4b30dd064ad26626cd427a340efb089cd3fd7ab0958c917fd62"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-en-390.png",
+      "rota": "/en/dossiers/orcamento-2027/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 24358,
+      "sha256": "fc18a6a46ca9234bb410238ee274015f8415f3072f5429fa07ba990bea02621b",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-en-390-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 965,
+            "width": 354,
+            "height": 76
+          },
+          "sha256": "fb6172fe13948a9373b24a71d7b0fc8e11585420ccaba49c8c35111e4326b15b"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-390-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1080,
+            "width": 354,
+            "height": 2437
+          },
+          "sha256": "c5b8e0da8955eea33a1c4a96a7a0c34142b8e1dd6d3a0a17558c792ad9bc1bbb"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-390-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 22207,
+            "width": 354,
+            "height": 629
+          },
+          "sha256": "a92ca508d1327d89a5fbabe9e48063057f6d83024371590ecde322ace4ba6917"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-en-768.png",
+      "rota": "/en/dossiers/orcamento-2027/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 19039,
+      "sha256": "87235c4ffee5f9ec62b4d6882a6951ea34a33bb03d610be073f635e81ab004e7",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-en-768-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 778,
+            "width": 529,
+            "height": 56
+          },
+          "sha256": "140086b68d3166466ef8b763c8468a81673c4ce1973cb9a6b209ee4fce6f3904"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-768-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 873,
+            "width": 529,
+            "height": 1972
+          },
+          "sha256": "62d31f1bbbb1499360b90af55801a38076b9d58063adab6a974b4df21656b952"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-768-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 17463,
+            "width": 529,
+            "height": 435
+          },
+          "sha256": "9470b6e6a84923377f33aab68aebe21b0eddf37769db714cf1ab5f9f8951f96d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-en-1024.png",
+      "rota": "/en/dossiers/orcamento-2027/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 19157,
+      "sha256": "ae8766c4c9be35a7aa7491d4fefadbf5842a1b8ad8d029ec793ddada6923ee31",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-en-1024-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 778,
+            "width": 529,
+            "height": 82
+          },
+          "sha256": "9aaa5bcf2ec19a3cf736bf2cd7cc32c1ebb485b6eb00a9c7fa8321ed4bea3308"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-1024-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 899,
+            "width": 529,
+            "height": 1975
+          },
+          "sha256": "175a0f527d27dd9709e066e1ef150ce6189ba12435701ce2c50dc7f5581fa953"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-1024-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 17616,
+            "width": 529,
+            "height": 441
+          },
+          "sha256": "dc91b4b4dab3fdb7c294d04ab82793086f8f08efe31b86748f2b1e773a9872a2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-en-1280.png",
+      "rota": "/en/dossiers/orcamento-2027/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 19383,
+      "sha256": "a94b6465fc899c3e6a2c1d5a3774a2c66e804a09bb5433eca45e439f30b90c9a",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-en-1280-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 788,
+            "width": 528,
+            "height": 85
+          },
+          "sha256": "1ee5abfca0cc2b50c671cd4a5cb06790b98e244007c315572553a19b9afd3a9f"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-1280-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 912,
+            "width": 528,
+            "height": 1984
+          },
+          "sha256": "3b04d0613e769b5288b3a877b5ff0db8123d2d2f26634cb4d9ac0d1f65b6e38d"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-1280-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 17799,
+            "width": 528,
+            "height": 451
+          },
+          "sha256": "f5a569b21cb880831cdcfd5d2b079d65c629a25cd8b44e0234a33cd0547e7fad"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dossie-orcamento-en-1600.png",
+      "rota": "/en/dossiers/orcamento-2027/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 19435,
+      "sha256": "c4a9206bf9619fe65745588056be794720bb296168b9c994843607c80721f7d3",
+      "recortes": [
+        {
+          "ficheiro": "dossie-orcamento-en-1600-titulo-estudo.png",
+          "seletor": "[data-dossie-estudo]",
+          "origem": "dossie-orcamento-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 791,
+            "width": 528,
+            "height": 85
+          },
+          "sha256": "1ee5abfca0cc2b50c671cd4a5cb06790b98e244007c315572553a19b9afd3a9f"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-1600-resumo.png",
+          "seletor": "[data-dossie-seccao=\"bloco-2\"]",
+          "origem": "dossie-orcamento-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 915,
+            "width": 528,
+            "height": 1987
+          },
+          "sha256": "d59368722f7fda7cde31644cdf8c6251113c30e1bab9e4268db78b1738f7549f"
+        },
+        {
+          "ficheiro": "dossie-orcamento-en-1600-explicacao-fim.png",
+          "seletor": "[data-dossie-explicacao] [data-explicacao-secao=\"o-que-nao-diz\"]",
+          "origem": "dossie-orcamento-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 17839,
+            "width": 528,
+            "height": 454
+          },
+          "sha256": "fc000d9a0712a35efa34abc3b7a940d2230f4738d6b2a619f3bf832da90c41e9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "f63d7938f98595fb8e2c2d896392562ee3ef2ec2cf229d75c90c4c5b97055a16",
+    "dossies/orcamento-2027/index.html": "be335ac7495492cf77777efc0251ebcd5b6d901bc3d1aba39a1e397ed6833415",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/texto.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/primeira-pagina.CMN2HkuO.css": "0ea169c95e91d0746b201fe5d947c642560f2dac8a6ad57a200e966a61c2c44e",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/dossiers/orcamento-2027/index.html": "20cd78f6a4a1e604bcc411cb9e42c93a824cf0cf91bc1f80d50f740f27213055"
+  },
+  "falhas": [],
+  "ok": true
+}

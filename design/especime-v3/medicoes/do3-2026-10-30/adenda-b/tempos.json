@@ -1,0 +1,24 @@
+{
+  "cabeca": "b12e685157a6fa8216bf8ac5a5a237c7b7a7a91e",
+  "inicio": "2026-10-30T17:58:36.506Z",
+  "fim": "2026-10-30T18:05:25.312Z",
+  "segundos": 408.806,
+  "passos": [
+    {
+      "passo": "npm run check:alvos",
+      "cadeia": "check:alvos",
+      "inicio": "2026-10-30T17:58:36.506+00:00",
+      "fim": "2026-10-30T18:03:45.032+00:00",
+      "segundos": 308.5271425419487,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:frases-compostas",
+      "cadeia": "check:frases-compostas",
+      "inicio": "2026-10-30T18:03:45.167+00:00",
+      "fim": "2026-10-30T18:05:25.312+00:00",
+      "segundos": 100.14517912501469,
+      "codigo": 0
+    }
+  ]
+}
