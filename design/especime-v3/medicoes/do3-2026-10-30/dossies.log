@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:dossies
+> node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs && node tests/dossies/leitura.mjs && node tests/dossies/reguas.mjs
+
+DO1: quatro páginas, pertenças e datas conferidas nas duas edições; 24 plantas recusadas.
+DO2: voz das duas formas conferida; 8 plantas recusadas.
+DO3: ordem e transcrição conferidas; 10 plantas recusadas.
+DO3: superfície, voz e explicação conferidas; 26 plantas recusadas.
