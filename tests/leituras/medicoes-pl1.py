@@ -3,6 +3,7 @@ import importlib.util
 import io
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -17,6 +18,21 @@ def modulo(nome):
     spec = importlib.util.spec_from_file_location(nome, GUIOES / (nome + '.py'))
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
     return m
+
+
+def exigir_ferramentas_pdf(teste):
+    faltam = []
+    try:
+        import fitz
+    except ImportError:
+        faltam.append('fitz')
+    if shutil.which('pdftotext') is None:
+        faltam.append('pdftotext')
+    if faltam:
+        razao = 'falta: ' + ', '.join(faltam)
+        print(f'SALTA medicoes-pl1 · {teste._testMethodName} · {razao}', flush=True)
+        teste.skipTest(razao)
+    return fitz
 
 
 class Medicoes(unittest.TestCase):
@@ -45,7 +61,7 @@ class Medicoes(unittest.TestCase):
         self.assertNotIn('Ignorar', r.stdout)
 
     def test_pdf_fitz_e_layout_reais(self):
-        import fitz
+        fitz = exigir_ferramentas_pdf(self)
         p = self.p / 'ensaio.pdf'
         with fitz.open() as doc:
             pagina = doc.new_page()
@@ -59,6 +75,39 @@ class Medicoes(unittest.TestCase):
         r = subprocess.run([sys.executable, str(GUIOES / 'medir-pdf.py'), str(p), '2', 'Paragrafo'], capture_output=True, text=True)
         self.assertEqual(r.returncode, 9)
         self.assertIn('página fora', r.stderr)
+
+    def test_pdf_sem_ferramentas_salta_com_linha(self):
+        escondidas = self.p / 'ferramentas-escondidas'
+        escondidas.mkdir()
+        (escondidas / 'fitz.py').write_text("raise ImportError('fitz escondido pela planta')\n")
+        ambiente = os.environ.copy()
+        ambiente.update(PATH=str(escondidas), PYTHONPATH=str(escondidas))
+        r = subprocess.run(
+            [sys.executable, str(Path(__file__).resolve()), 'Medicoes.test_pdf_fitz_e_layout_reais'],
+            env=ambiente, capture_output=True, text=True,
+        )
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        linha = 'SALTA medicoes-pl1 · test_pdf_fitz_e_layout_reais · falta: fitz, pdftotext'
+        self.assertIn(linha, r.stdout.splitlines())
+        self.assertIn('test_pdf_fitz_e_layout_reais', r.stderr)
+        self.assertIn("skipped 'falta: fitz, pdftotext'", r.stderr)
+        self.assertIn('Ran 1 test', r.stderr)
+        self.assertIn('OK (skipped=1)', r.stderr)
+        print(r.stdout, end='', flush=True)
+
+    def test_pdf_com_ferramentas_corre_sem_salto(self):
+        exigir_ferramentas_pdf(self)
+        r = subprocess.run(
+            [sys.executable, str(Path(__file__).resolve()), 'Medicoes.test_pdf_fitz_e_layout_reais'],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn('test_pdf_fitz_e_layout_reais', r.stderr)
+        self.assertIn('Ran 1 test', r.stderr)
+        self.assertIn('OK', r.stderr)
+        self.assertNotIn('skipped', r.stderr)
+        self.assertNotIn('SALTA', r.stdout + r.stderr)
+        print('CONFERE medicoes-pl1 · test_pdf_fitz_e_layout_reais · correu sem salto', flush=True)
 
     def test_no_ar_igual_diferente_http_e_caminho(self):
         m = modulo('medir-no-ar')
