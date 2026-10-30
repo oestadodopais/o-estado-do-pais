@@ -23,4 +23,4 @@
 .dossie .texto-artigo h2 { padding-top: 0; }
 .dossie .texto-artigo h2::before { content: none; }
 
-.dossie [data-dossie-resto] { display: block; min-height: 44px; padding-block: .5rem; }
+.dossie [data-dossie-resto] a { display: block; min-height: 44px; padding-block: .5rem; }
