@@ -40,6 +40,7 @@
 | Uma régua do navegador parou a retoma DO1-c | 16:06 a 16:09 UTC, 1,0 ponto, 7 chamadas: o construtor não corre `check:alvos` na sandbox (o navegador) e parou sem comitar; o lugar de direção correu a construção e a régua e comitou DO1-7 | a I282 (o lançador declara as réguas do navegador como réguas do lugar de direção; o mandato não as pede ao construtor) | medido; por fazer |
 | Uma rota nova parou o construtor duas vezes | o DO1 (29.10.2026, 13:46 a 14:48 UTC, três passagens, 3 pontos): `check:discussao` e `check:voz`, depois `gate:html` e `check:datas` | a I281 | medido; por fazer |
 | O custo fixo de cada aterragem | cem minutos por aterragem nos recibos de 28 e 29.10 (o GitHub 27 a 28 minutos, a Vercel 25 a 28, a corrida inteira 29 a 35); uma correção depois de uma leitura custa noventa minutos no mínimo | os lotes (M129), a via das mudanças pequenas e a medida das horas do mandato ao leitor (PL1); a construção dupla da Vercel e as réguas de mobília fora da corrida inteira, por decidir na sexta-feira | medido; por decidir na sexta-feira |
+| Os mandatos e as adendas de um bloco de navegação não nomeiam as réguas da página inteira | o DO2 (30.10.2026): quatro paragens pela regra certa em cinco passagens (o token de contagem e o portão; a lista da voz da primeira página; a regra aplicada só à caixa; a E1), cerca de duas horas de relógio, 4 pontos do Codex | um guião que enumere as réguas que leem uma rota (a I281), lido antes do mandato; as adendas pela forma da adenda D (a regra 4 na condição de paragem) | medido; por fazer |
 
 ## Fechados
 
