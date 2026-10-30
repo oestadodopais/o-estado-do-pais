@@ -1,0 +1,20 @@
+# The cold read of block DO3 (one page for the Budget: the dossier page reads top to bottom), 30.10.2026
+
+Reader: Claude Opus 5.5 (`leitor`). Read `PROMPT-COMUM.md` in this package first and follow it to the letter, including item 10 (the quotations table: the inlined study sections reprint quotations; check each against its ledger row). Then this section. You cannot write files: your whole reading goes in your final answer, in the four sections.
+
+## The block
+
+The funder, as a reader, asked for one page for the 2027 Budget instead of five separate pieces. This block turns the Budget dossier page into that page: the opening, an index «Neste dossiê», the study's sections `bloco-2` («Em resumo»), `bloco-6` («O que este projeto conclui») and the five «O que muda para quem…» sections (`bloco-30`, `bloco-34`, `bloco-37`, `bloco-39`, `bloco-41`), cut from `studies-src` by their `id`; the explainer `dinheiro-do-estado-2027` in full; the three discussion items; the calendar; and a link to the rest of the study. No number is new: everything printed is already published, with its seal, on the pages of the study, the explainer and the items. The mandate is `brief.md`; the builder's report is `relatorio-construtor.md` (the full one, `RELATORIO-COMPLETO.md`). The diff is `diff.patch` (base `__BASE_SITIO__`, the DO2 records head; head `__CABECA_SITIO__`). Built pages under `built/`: the dossier page, the study page and the explainer page (the sources of what the dossier page now prints) and the front page, each in both editions. `CONFERIR-TUDO-a.md` is the director's full run of the `verify` list on this head: two reds, `check:mortos` (an unused `s` in `src/views/ExplicacaoView.astro`) and `check:cartao` K8 («Governo Constitucional» now renders on three Portuguese pages: the inlined `bloco-34` quotes a source sentence about the «XXIV Governo Constitucional», which K8 strips as a citation on the study's route but not yet on the dossier route); a correction pass fixes both, and neither changes what a page says. Say whether you agree.
+
+## The six questions
+
+1. **The order and the parts.** Does the built dossier page, in both editions, follow the mandate's §2.1 order, with the index linking to each section, and with no piece printed twice on the page?
+2. **The same text, the same seals.** Is every inlined study section and the explainer the same text as on its own page, word for word, with every figure keeping its seal and its door (the same `data-registo-row` / `data-claim`, the same destination)? Count the figures and values per section yourself on both pages and compare.
+3. **The gate on the new route.** Does the HTML gate (and any ruler that knew these figures only on the `estudo` or `explicacao` route) now check them on the `dossie` route as strictly as on their own pages, with a plant that bites there (a value swapped in a study figure on the dossier page; a door pointing elsewhere)? Did any ruler that protects a number, a source or a person get weaker?
+4. **The rulers that changed shape.** For each furniture or prose ruler the block changed (`scripts/dossies-superficie.mjs`, the voice and the B1 closed list, `check:datas`, L1, `check:alvos`, `check:frases-compostas`, the sentence inventory, `check:lugar`): does it read the shared function, and does a plant prove it still bites?
+5. **The sentences.** The two new reader sentences of the mandate's §3 (the index title «Neste dossiê» / «In this dossier» and the final link «O resto do estudo: …» / «The rest of the study: …»), word for word in both editions; no sentence about the house; no dash.
+6. **Reading it.** Does a reader understand the 2027 Budget by reading this page top to bottom, without needing another page? Is anything repeated within the page, cut mid-thought by the section cuts, or left referring to a part of the study that is no longer on the page («como se vê acima», a table or a chart number that is not there)?
+
+Then the editor's question: would an editor of a Portuguese daily publish this page, in both editions, as it stands?
+
+Budget: at most 60 tool calls.

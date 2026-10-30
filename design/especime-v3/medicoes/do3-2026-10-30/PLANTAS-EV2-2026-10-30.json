@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T16:24:54+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "V1",
+   "ficheiro": "built/estudos/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a abertura portuguesa imprime «subiu 7,9%» onde a linha invest-var-2024-2025 e a sua conta dão 7,4 (e o parágrafo do investimento diz 7,4)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5db64496088271de07fb38eb5dc3d822d2cf4a370214f80b8fb01e43d374a19a",
+   "sha256_depois": "bb781faaf22f7c52aa9c40659c128ff843e4d598cb97e42f8be81b1e70596426",
+   "contexto_antes": "isto=\"evora-contas-da-camara-2010-2025/pt#7.2\" data-registo-row=\"invest-exec-pct\">21,13</span>%; em valor pago, o investimento subiu <span class=\"texto-figura\" data-registo=\"evora-contas-da-camara-2010-2025/pt#7.3\" data-registo-row=\"invest-var-2024-2025\">7,4</span>% face a 2024. As duas primeiras são contratuais; a terceira é, nesta leitura, a que se adia.</p><p data-registo-bloco=\"8\" data-registo-unidade=\"evora-con",
+   "contexto_depois": "isto=\"evora-contas-da-camara-2010-2025/pt#7.2\" data-registo-row=\"invest-exec-pct\">21,13</span>%; em valor pago, o investimento subiu <span class=\"texto-figura\" data-registo=\"evora-contas-da-camara-2010-2025/pt#7.3\" data-registo-row=\"invest-var-2024-2025\">7,9</span>% face a 2024. As duas primeiras são contratuais; a terceira é, nesta leitura, a que se adia.</p><p data-registo-bloco=\"8\" data-registo-unidade=\"evora-con"
+  },
+  {
+   "id": "V2",
+   "ficheiro": "built/estudos/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a abertura portuguesa volta a dizer a causa como facto («a terceira é a que se adia»), sem «nesta leitura», ao contrário do §2.2 do mandato",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bb781faaf22f7c52aa9c40659c128ff843e4d598cb97e42f8be81b1e70596426",
+   "sha256_depois": "8e538161e5be5193c5a54538b968e951c1d1c97a9f88e4bc644e96bc7462d7ec",
+   "contexto_antes": "ura\" data-registo=\"evora-contas-da-camara-2010-2025/pt#7.3\" data-registo-row=\"invest-var-2024-2025\">7,9</span>% face a 2024. As duas primeiras são contratuais; a terceira é, nesta leitura, a que se adia.</p><p data-registo-bloco=\"8\" data-registo-unidade=\"evora-contas-da-camara-2010-2025/pt#8\">A dívida herdada demorou anos a ser medida: €<span class=\"texto-figu",
+   "contexto_depois": "ura\" data-registo=\"evora-contas-da-camara-2010-2025/pt#7.3\" data-registo-row=\"invest-var-2024-2025\">7,9</span>% face a 2024. As duas primeiras são contratuais; a terceira é a que se adia.</p><p data-registo-bloco=\"8\" data-registo-unidade=\"evora-contas-da-camara-2010-2025/pt#8\">A dívida herdada demorou anos a ser medida: €<span class=\"texto-figu"
+  },
+  {
+   "id": "V3",
+   "ficheiro": "built/en/studies/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a edição inglesa imprime a data da publicação 29.10.2026, onde a adenda C e a edição portuguesa dizem 30.10.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1f25f31af4bbbd764af91a6af7833579c9d5252fed0c93fb6fe774625449ab51",
+   "sha256_depois": "5862bf44a493422c807ef6358dee5c3e6ea7828f36877a594c9d152c5c40463e",
+   "contexto_antes": ">Edition as published</a><span aria-hidden=\"true\"> · </span><span data-voz>published on</span> <time datetime=\"2026-10-30\" data-nonledger=\"data-do-repositorio\">30.10.2026</time></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Footer navigation\"><a href=\"/en\">Home</a> · <a href=\"/en/ledger\">Nu",
+   "contexto_depois": ">Edition as published</a><span aria-hidden=\"true\"> · </span><span data-voz>published on</span> <time datetime=\"2026-10-30\" data-nonledger=\"data-do-repositorio\">29.10.2026</time></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Footer navigation\"><a href=\"/en\">Home</a> · <a href=\"/en/ledger\">Nu"
+  },
+  {
+   "id": "V4",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o diff do motor põe a R7 a esperar 1660 abreviaturas, quatro a mais do que as figuras novas do estudo 16 explicam",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0e3bff1c51683add3f4fe61508f8b102516798e075b7ee2893c1592de0cb6b07",
+   "sha256_depois": "750dcbf1db45d710a3a7b4a9da958fe5f1b6f963ae83623a0719aee2785e567e",
+   "contexto_antes": "em 659 (219 em cada edição do 16, 221 no 17, e nenhuma no\n     #     18 e no 19, cujas linhas de origem não guardam abreviatura).\n-    ABREVIATURAS = 1652\n+    ABREVIATURAS = 1656\n     checks += 1\n     resolvidos = mal = 0\n     for item in X.build_all(X.ROOT):\n@@ -645,7 +646,7 @@ def main(argv: list[str] | None = None) -> int:           ",
+   "contexto_depois": "em 659 (219 em cada edição do 16, 221 no 17, e nenhuma no\n     #     18 e no 19, cujas linhas de origem não guardam abreviatura).\n-    ABREVIATURAS = 1652\n+    ABREVIATURAS = 1660\n     checks += 1\n     resolvidos = mal = 0\n     for item in X.build_all(X.ROOT):\n@@ -645,7 +646,7 @@ def main(argv: list[str] | None = None) -> int:           "
+  },
+  {
+   "id": "V5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que as linhas reativadas do inventário são a 3010 e a 3038, onde o inventário e o diff mostram a 3010 e a 3037",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "df85178970eb20b16bbcfaf219b4b0a6c542407aec353efd43d790b3eec085df",
+   "sha256_depois": "dbfd958b018130d293dc99324df529fa43a75fecc74bc19a6e7b2799959f42e5",
+   "contexto_antes": "**A verificação integral da cabeça final ficou por fazer.**\n\nNo HTML construído:\n\n- PT: **publicado a 30.10.2026**\n- EN: **published on 30.10.2026**\n\nAs linhas **3010 e 3037** passaram de `retirada` a `viva`: ambas regressaram à primeira página do DO2. Nenhuma outra linha viva deixou de aparecer.\n\nCommits: `0271a71d` (data), `518ae99",
+   "contexto_depois": "**A verificação integral da cabeça final ficou por fazer.**\n\nNo HTML construído:\n\n- PT: **publicado a 30.10.2026**\n- EN: **published on 30.10.2026**\n\nAs linhas **3010 e 3038** passaram de `retirada` a `viva`: ambas regressaram à primeira página do DO2. Nenhuma outra linha viva deixou de aparecer.\n\nCommits: `0271a71d` (data), `518ae99"
+  }
+ ]
+}

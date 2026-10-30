@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T18:10:03+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "B1",
+   "ficheiro": "diff.patch",
+   "descricao": "a K8 passa a tirar as citações em todas as rotas menos a do dossiê (!== em vez de ===), ao contrário da adenda A §2",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "691efbfd0fdfd189f1a93e8edbabb92f6a9a8f8d2ec93f4fd05346c6534b8641",
+   "sha256_depois": "c37f962dcca3816ea4894edf2b8324c2eda016061c51cd1fcabc75add025b562",
+   "contexto_antes": "a, rotaCodigo);\n   retirarCitacoesEo1(copia,rotaDoCodigo(rota),linhasK8);\n+  // DO3-A: só os recortes declarados recebem a mesma conferência literal do estudo.\n+  const dossie = rotaCodigo?.key === 'dossie'\n+    ? DOSSIES.find(d => d.slug === rotaCodigo.params.slug && d.pecas.estudos.includes(ESTUDO_EO1)) : null;\n+  if (dossie) for (const sec of dossie.leitura) {\n",
+   "contexto_depois": "a, rotaCodigo);\n   retirarCitacoesEo1(copia,rotaDoCodigo(rota),linhasK8);\n+  // DO3-A: só os recortes declarados recebem a mesma conferência literal do estudo.\n+  const dossie = rotaCodigo?.key !== 'dossie'\n+    ? DOSSIES.find(d => d.slug === rotaCodigo.params.slug && d.pecas.estudos.includes(ESTUDO_EO1)) : null;\n+  if (dossie) for (const sec of dossie.leitura) {\n"
+  },
+  {
+   "id": "B2",
+   "ficheiro": "built/en/dossiers/orcamento-2027/index.html",
+   "descricao": "o título inglês da secção do estudo diz «From this study:» onde a adenda B §1 escreve «From the study:»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "20cd78f6a4a1e604bcc411cb9e42c93a824cf0cf91bc1f80d50f740f27213055",
+   "sha256_depois": "411f1eb3f3e68f53b63c4e19b2820deefa440477ec6cf355b1b6d9b2d220cf83",
+   "contexto_antes": "=\"#dossie-calendario\">The calendar</a></li></ul></details></nav><section aria-labelledby=\"dossie-estudo\"><h2 id=\"dossie-estudo\" class=\"explicacao-secao-titulo\" data-dossie-estudo><a href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\"><span data-voz>From the study:</span> <span data-nonledger=\"titulo-de-estudo\">The 2027 Budget: what changes, and for whom</span></a></h2><div data-dossie-peca=\"estudo:orcamento-2027-o-que-mu",
+   "contexto_depois": "=\"#dossie-calendario\">The calendar</a></li></ul></details></nav><section aria-labelledby=\"dossie-estudo\"><h2 id=\"dossie-estudo\" class=\"explicacao-secao-titulo\" data-dossie-estudo><a href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\"><span data-voz>From this study:</span> <span data-nonledger=\"titulo-de-estudo\">The 2027 Budget: what changes, and for whom</span></a></h2><div data-dossie-peca=\"estudo:orcamento-2027-o-que-mu"
+  },
+  {
+   "id": "B3",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "o título português da secção do estudo liga ao estudo da habitação e não ao do Orçamento, cujo título imprime",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "be335ac7495492cf77777efc0251ebcd5b6d901bc3d1aba39a1e397ed6833415",
+   "sha256_depois": "12ec96124d8a29647d9820f010f8bd3f3a96729ad3b4b56d38540035d8f2630e",
+   "contexto_antes": "=\"#dossie-calendario\">O calendário</a></li></ul></details></nav><section aria-labelledby=\"dossie-estudo\"><h2 id=\"dossie-estudo\" class=\"explicacao-secao-titulo\" data-dossie-estudo><a href=\"/estudos/orcamento-2027-o-que-muda-e-para-quem\"><span data-voz>Do estudo:</span> <span data-nonledger=\"titulo-de-estudo\">O Orçamento de 2027: o que muda e para quem</span></a></h2><div data-dossie-peca=\"estud",
+   "contexto_depois": "=\"#dossie-calendario\">O calendário</a></li></ul></details></nav><section aria-labelledby=\"dossie-estudo\"><h2 id=\"dossie-estudo\" class=\"explicacao-secao-titulo\" data-dossie-estudo><a href=\"/estudos/a-casa-em-portugal-e-na-europa\"><span data-voz>Do estudo:</span> <span data-nonledger=\"titulo-de-estudo\">O Orçamento de 2027: o que muda e para quem</span></a></h2><div data-dossie-peca=\"estud"
+  },
+  {
+   "id": "B4",
+   "ficheiro": "diff.patch",
+   "descricao": "a página do dossiê volta a imprimir as portas do fim da explicação (portas={true}), ao contrário da adenda B §3",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c37f962dcca3816ea4894edf2b8324c2eda016061c51cd1fcabc75add025b562",
+   "sha256_depois": "d2410f2f6dbd14fdfd58e2eda04e06a7f7056cd987bc3e0dbf51b6af90492839",
+   "contexto_antes": "slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>\n-      <CorpoDaExplicacao e={e} lang={lang} nivel={3} />\n+      <CorpoDaExplicacao e={e} lang={lang} nivel={3} portas={false} />\n     </section>)}\n     {d.itens.length > 0 && <BlocoDaDiscussao lang={lang} itens={d.itens} dossie />}\n     {d.calendario.length > 0 && <section class=\"explica",
+   "contexto_depois": "slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>\n-      <CorpoDaExplicacao e={e} lang={lang} nivel={3} />\n+      <CorpoDaExplicacao e={e} lang={lang} nivel={3} portas={true} />\n     </section>)}\n     {d.itens.length > 0 && <BlocoDaDiscussao lang={lang} itens={d.itens} dossie />}\n     {d.calendario.length > 0 && <section class=\"explica"
+  },
+  {
+   "id": "B5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 94 chamadas onde o registo do lançador diz 49",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "37f15117acb9604a1f571abba583bad210a88cffb9303427ba53225127a419bb",
+   "sha256_depois": "60650d240d007a1403ecd06bec5f654fd3e247af512550785578cd696d37393f",
+   "contexto_antes": "\n\nCommits: `923c6e25a`, `c1f7f9234`, `b12e68515`, `fb869d493`. Árvore limpa.\n\n[Relatório e provas](<caminho>). PNG e `alvos.json` locais, por serem ignorados.\n\n49 chamadas; 15 conferências dirigidas, incluindo tentativas corrigidas, e um build integral.\n\ntokens used: 26 007 956, último total acumulado exposto pela sessão.",
+   "contexto_depois": "\n\nCommits: `923c6e25a`, `c1f7f9234`, `b12e68515`, `fb869d493`. Árvore limpa.\n\n[Relatório e provas](<caminho>). PNG e `alvos.json` locais, por serem ignorados.\n\n94 chamadas; 15 conferências dirigidas, incluindo tentativas corrigidas, e um build integral.\n\ntokens used: 26 007 956, último total acumulado exposto pela sessão."
+  }
+ ]
+}
