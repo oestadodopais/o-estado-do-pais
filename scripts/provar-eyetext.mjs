@@ -48,6 +48,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { load, dump } from 'js-yaml';
 
 import {
   registoDoHtml,
@@ -75,14 +76,15 @@ let conferencias = 0;
 /* ========================================================================== */
 
 const manifesto = JSON.parse(fs.readFileSync(path.join(RAIZ, 'registos', 'manifest.json'), 'utf8'));
-const manifestoDosDocumentos = fs.readFileSync(path.join(RAIZ, 'studies-src', 'manifest.yml'), 'utf8');
+const manifestoDosDocumentos = load(
+  fs.readFileSync(path.join(RAIZ, 'studies-src', 'manifest.yml'), 'utf8'),
+);
 
 /** As edições cujos bytes alojados são os do motor: `origin: researchhub`. */
-function bytesDoMotor(slug, lang) {
-  const bloco = manifestoDosDocumentos
-    .split(/\n(?=\s*-\s+slug:)/)
-    .find((b) => new RegExp(`slug:\\s*${slug}\\s*$`, 'm').test(b) && new RegExp(`lang:\\s*${lang}\\s*$`, 'm').test(b));
-  return Boolean(bloco && /^\s*origin:\s*researchhub\s*$/m.test(bloco));
+function bytesDoMotor(slug, lang, documentos = manifestoDosDocumentos) {
+  return documentos.edicoes.some(
+    (e) => e.slug === slug && e.lang === lang && e.origin === 'researchhub',
+  );
 }
 
 /** As unidades de um bloco, em ordem de documento. As duas formas são a mesma. */
@@ -305,12 +307,48 @@ conferencias++;
    0 apagadas (o registo da corrida está em
    design/especime-v3/medicoes/e1-2026-09-30/). */
 const EDICOES_DA_PROVA = 14;
-if (edicoesProvadas !== EDICOES_DA_PROVA) {
-  falhas.push(
-    `esta prova corre sobre ${EDICOES_DA_PROVA} edições (as que têm prova "edicao-html" e bytes ` +
-      `alojados do motor) e correu sobre ${edicoesProvadas}. Se o âmbito mudou, a prova tem de ` +
-      `ser relida.`,
-  );
+function falhaDaContagem(quantidade) {
+  if (quantidade === EDICOES_DA_PROVA) return null;
+  return `esta prova corre sobre ${EDICOES_DA_PROVA} edições (as que têm prova "edicao-html" e bytes ` +
+    `alojados do motor) e correu sobre ${quantidade}. Se o âmbito mudou, a prova tem de ` +
+    `ser relida.`;
+}
+const falhaDeAmbito = falhaDaContagem(edicoesProvadas);
+if (falhaDeAmbito) falhas.push(falhaDeAmbito);
+
+/* EV2-D, 30.10.2026: as aspas de YAML não mudam a origem nem a língua.
+   As plantas percorrem cópias do manifesto real, sem tocar nos ficheiros. */
+{
+  const slug = 'evora-contas-da-camara-2010-2025';
+  const conta = (documentos) => Object.entries(manifesto.registos).filter(([chave, entrada]) => {
+    const separador = chave.lastIndexOf('/');
+    return entrada.prova === 'edicao-html' && bytesDoMotor(
+      chave.slice(0, separador), chave.slice(separador + 1), documentos,
+    );
+  }).length;
+  const quantidadeOriginal = conta(manifestoDosDocumentos);
+  const semAspas = load(dump(manifestoDosDocumentos));
+  const comAspas = load(dump(manifestoDosDocumentos, { forceQuotes: true, quotingType: '"' }));
+  conferencias++;
+  if (![semAspas, comAspas].every((documentos) =>
+    ['pt', 'en'].every((lang) => bytesDoMotor(slug, lang, documentos)) &&
+    conta(documentos) === quantidadeOriginal)) {
+    falhas.push('a planta do manifesto com ou sem aspas não contou as duas edições das contas de Évora');
+  }
+
+  const outraOrigem = structuredClone(comAspas);
+  outraOrigem.edicoes.find((e) => e.slug === slug && e.lang === 'pt').origin = 'outro';
+  const comOutraOrigem = load(dump(outraOrigem));
+  conferencias++;
+  if (bytesDoMotor(slug, 'pt', comOutraOrigem) || conta(comOutraOrigem) !== quantidadeOriginal - 1) {
+    falhas.push('a planta com origin: outro não excluiu exatamente uma edição');
+  }
+
+  conferencias++;
+  if (falhaDaContagem(EDICOES_DA_PROVA) !== null ||
+      !falhaDaContagem(EDICOES_DA_PROVA - 1) || !falhaDaContagem(EDICOES_DA_PROVA + 1)) {
+    falhas.push('a planta da contagem não aceitou 14 edições ou não recusou uma contagem diferente');
+  }
 }
 
 /* ========================================================================== */
