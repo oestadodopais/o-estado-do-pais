@@ -10,26 +10,25 @@
 import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
 import FraseDaSemana from '../explicacoes/FraseDaSemana.astro';
 import { BLOCO_PARA_PERCEBER } from '../../data/primeira-pagina.mjs';
-import { explicacaoMaisRecente, explicacaoResolvida } from '../../lib/explicacoes.mjs';
+import { listagensDoInicio } from '../../lib/listagens-do-inicio.mjs';
+import ListaDeDossies from '../dossies/ListaDeDossies.astro';
 import { leituraDaSemana } from '../../lib/leitura-da-semana.mjs';
 import { routePath } from '../../lib/routes.mjs';
 import { t } from '../../i18n/strings.mjs';
 
-const { lang = 'pt' } = Astro.props;
+const { lang = 'pt', entradas = listagensDoInicio(lang).perceber } = Astro.props;
 const s = t(lang);
-const recente = explicacaoMaisRecente();
-const explicacao = recente ? explicacaoResolvida(recente.slug, lang) : null;
 const leitura = leituraDaSemana();
 const idDoTitulo = `bloco-${BLOCO_PARA_PERCEBER.id}-t`;
 ---
 
-<section class="pp-para-perceber" data-para-perceber aria-labelledby={idDoTitulo}>
+{entradas.length > 0 && <section class="pp-para-perceber" data-para-perceber aria-labelledby={idDoTitulo}>
   <h3 class="pp-para-perceber-titulo" id={idDoTitulo}>{s.primeira.paraPerceber}</h3>
   <ul class="pp-para-perceber-portas">
-    {BLOCO_PARA_PERCEBER.portas.map((porta) => porta === 'explicacao-mais-recente'
-      ? explicacao && (
+    {entradas.map(entrada => entrada.tipo === 'dossie' ? <li><ListaDeDossies lang={lang} entradas={[entrada.dossie]} /></li> : entrada.tipo === 'explicacao'
+      ? (
         <li data-para-perceber-porta="explicacao">
-          <a href={routePath('explicacao', lang, { slug: explicacao.slug })} data-explicacao-porta={explicacao.slug} data-explicacao-declarado><FraseDaExplicacao partes={explicacao.titulo} lang={lang} selos={false} /></a>
+          <a href={routePath('explicacao', lang, { slug: entrada.peca.slug })} data-explicacao-porta={entrada.peca.slug} data-explicacao-declarado><FraseDaExplicacao partes={entrada.peca.titulo} lang={lang} selos={false} /></a>
         </li>
       )
       : (
@@ -38,4 +37,4 @@ const idDoTitulo = `bloco-${BLOCO_PARA_PERCEBER.id}-t`;
         </li>
       ))}
   </ul>
-</section>
+</section>}

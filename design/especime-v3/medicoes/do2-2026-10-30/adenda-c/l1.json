@@ -1,0 +1,33 @@
+{
+  "antes": 3460,
+  "depois": 3460,
+  "alteracoes": [
+    {
+      "rota": "/",
+      "antes": {
+        "destinos": 23,
+        "exemplo": "/estudos/a-casa-em-portugal-e-na-europa",
+        "vezes": 2
+      },
+      "depois": {
+        "destinos": 21,
+        "exemplo": "/estudos/a-casa-em-portugal-e-na-europa",
+        "vezes": 2
+      }
+    },
+    {
+      "rota": "/en",
+      "antes": {
+        "destinos": 23,
+        "exemplo": "/en/studies/a-casa-em-portugal-e-na-europa",
+        "vezes": 2
+      },
+      "depois": {
+        "destinos": 21,
+        "exemplo": "/en/studies/a-casa-em-portugal-e-na-europa",
+        "vezes": 2
+      }
+    }
+  ],
+  "plantas": 5
+}

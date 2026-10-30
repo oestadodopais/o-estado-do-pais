@@ -1,3 +1,5 @@
+import { agruparNovidades } from '../../src/lib/novidades.mjs';
+import { dataDaCasa } from '../../src/lib/datas.mjs';
 /** FP1: datas da publicação e do calendário, relidas das declarações. */
 import fs from 'node:fs';
 import { DOSSIES } from '../../src/data/dossies.mjs';
@@ -35,11 +37,26 @@ export function publicacoesEsperadas(lang) {
   if (ultima?.tipo==='correcao' && ['correcao','atualizacao'].includes(ultima.kind)) saida.push({id:'atualizacao:registo',tipo:'atualizacao',data:ultima.data,origem:'mudancas.ultima',titulo:`${ultima.motivo} ${ultima.antes} → ${ultima.depois}`,atualizacao:ultima,rota:routePath('correcoes',lang)});
   return saida.sort((a,b)=>b.data.localeCompare(a.data)||Number(b.tipo==='estudo')-Number(a.tipo==='estudo')||a.id.localeCompare(b.id));
 }
+/** DO2: conta independente das declarações, sem chamar o compositor da caixa. */
+export function entradasEsperadas(lang, publicacoes=publicacoesEsperadas(lang)) {
+  const entradas=[], vistos=new Set();
+  for(const p of publicacoes) {
+    const camada={estudo:'estudos',explicacao:'explicacoes',discussao:'itens'}[p.tipo];
+    const d=camada&&DOSSIES.find(d=>d.pecas[camada].includes(p.id.split(':')[1]));
+    if(!d){entradas.push(p);continue;}
+    if(vistos.has(d.slug))continue;
+    vistos.add(d.slug);
+    const datas=[...d.pecas.estudos.map(slug=>publicacoes.find(p=>p.id===`estudo:${slug}`)),...d.pecas.explicacoes.map(slug=>publicacoes.find(p=>p.id===`explicacao:${slug}`)),...d.pecas.itens.map(slug=>({data:ITENS.find(e=>e.slug===slug).escrita,origem:'escrita.declarada'}))].filter(Boolean).sort((a,b)=>b.data.localeCompare(a.data));
+    const n=Object.values(d.pecas).reduce((n,a)=>n+a.length,0);
+    entradas.push({id:`dossie:${d.slug}`,tipo:'dossie',dossie:d,n,data:datas[0].data,origem:datas[0].origem,rota:routePath('dossie',lang,{slug:d.slug}),titulo:`${d.titulo[lang]} · ${n} ${lang==='pt'?(n===1?'peça':'peças'):(n===1?'piece':'pieces')}`});
+  }
+  return entradas;
+}
 export function conferirNovidades(root, lang, dist='dist', publicacoes=publicacoesEsperadas(lang)) {
   const erros=[];
   const v=JSON.parse(fs.readFileSync(path.join(dist,'version.json'),'utf8'));
   const dia=v.construido_em.slice(0,10), r=FP1[lang];
-  const todas=publicacoes, esperadas=todas.slice(0,5);
+  const todas=entradasEsperadas(lang,publicacoes), esperadas=todas.slice(0,5);
   const caixas=root.querySelectorAll('[data-novidades]');
   if(caixas.length!==1) return ['FP1: falta a caixa única'];
   const caixa=caixas[0], entradas=caixa.querySelectorAll('[data-novidade]');
@@ -66,12 +83,17 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
     if(el.querySelector('[data-novidade-porta]')?.getAttribute('href')!==p.rota) erros.push('FP1: entrada sem página declarada');
     if(p.atualizacao&&!conferirAtualizacao(el.querySelector('[data-novidade-porta]'),p.atualizacao))erros.push('FP1-e: atualização sem valores selados');
     if(normal(el.querySelector('[data-novidade-porta]')?.textContent ?? '')!==normal(p.titulo)) erros.push('FP1: título da peça diferente da declaração');
-    const camada = { estudo: 'estudos', explicacao: 'explicacoes', discussao: 'itens' }[p.tipo];
-    const d = camada && DOSSIES.find(d => d.pecas[camada].includes(p.id.split(':')[1]));
-    const tipoEsperado = r[p.tipo] + (d ? ` · ${lang==='pt'?'Dossiê: ':'Dossier: '}${d.titulo[lang]}` : '');
-    if(normal(el.querySelector('.pp-novidade-tipo')?.textContent ?? '')!==tipoEsperado) erros.push('FP1: tipo diferente');
-    const portas = el.querySelectorAll('[data-novidade-dossie]');
-    if (portas.length !== (d ? 1 : 0) || (d && (portas[0]?.getAttribute('href') !== routePath('dossie',lang,{slug:d.slug}) || portas[0]?.getAttribute('data-novidade-dossie') !== d.slug))) erros.push('DO1: dossiê diferente da pertença da peça');
+    if(p.dossie) {
+      const d=p.dossie, chave=`dossie_pecas_${d.slug.replace(/-/g,'_')}`;
+      const tokens=el.querySelectorAll('[data-prova]'), portas=el.querySelectorAll('a');
+      if(tokens.length!==1||tokens[0].getAttribute('data-prova')!==chave||tokens[0].text!==String(p.n)||tokens[0].closest('a')!==portas[0])erros.push('DO2: contagem sem token ou diferente das peças');
+      if(portas.length!==1||portas[0].getAttribute('data-novidade-dossie')!==d.slug||portas[0].getAttribute('href')!==p.rota)erros.push('DO2: dossiê diferente da pertença da peça');
+      const cauda=lang==='pt'?(p.n===1?', de ':', a mais recente de '):(p.n===1?', from ':', the most recent from ');
+      if(normal(el.text)!==`${lang==='pt'?'Dossiê':'Dossier'} · ${p.titulo}${cauda}${forma(p.data)}`)erros.push('DO2: frase do dossiê diferente');
+    } else {
+      if(normal(el.querySelector('.pp-novidade-tipo')?.textContent ?? '')!==r[p.tipo])erros.push('FP1: tipo diferente');
+      if(el.querySelector('[data-novidade-dossie]'))erros.push('DO2: dossiê diferente da pertença da peça');
+    }
   }
   const linha=caixa.querySelector('[data-atualizacao]');
   if(!linha || normal(linha.textContent)!==`${r.atualizado} ${forma(dia)} · ${r.relidos} ${forma(VERIFICACAO.verificadoEm)}`) erros.push('FP1: linha das duas datas diferente dos ficheiros');
@@ -94,6 +116,8 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
 export function plantasDasNovidades(html,lang,dist) {
 
   const plantas=[
+    ['contagem sem token',r=>r.querySelector('[data-novidades] [data-prova]').removeAttribute('data-prova'),/contagem sem token/],
+    ['dossiê repetido',r=>r.querySelector('[data-novidades] ol').insertAdjacentHTML('beforeend',r.querySelector('[data-novidade^="dossie:"]').outerHTML),/quantidade|ordem/],
     ['marca novo retirada',r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],
     ['dossiê da novidade trocado',r=>r.querySelector('[data-novidade-dossie]').setAttribute('href','/dossies/inexistente/'),/dossiê diferente/],
     ['dossiê da novidade retirado',r=>r.querySelector('[data-novidade-dossie]').remove(),/dossiê diferente/],
@@ -122,10 +146,18 @@ if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[
     texto.querySelector('[data-correcao-campo="new_value"]').removeAttribute('data-correcao-claim');
     const mordeu=!conferirAtualizacao(texto,correcao);assert(mordeu);plantas.push({nome:'correção gera texto selado e recusa selo retirado',lang,mordeu});
   }
+  const grupo={slug:'ensaio',recente:'2026-10-29',origemRecente:'escrita.declarada'};
+  const fora={id:'estudo:fora',tipo:'estudo',data:'2026-10-28',origem:'publicacao.declarada',rota:'/fora/',titulo:'Fora'};
+  const quatro=Array.from({length:4},(_,i)=>({id:`discussao:${i}`,dossie:grupo,data:'2026-10-27'}));
+  const unidas=agruparNovidades([quatro[0],fora,...quatro.slice(1)],[grupo],'pt');
+  assert.equal(unidas.length,2);assert.equal(unidas[0].data,grupo.recente);assert.equal(unidas[0].origem,grupo.origemRecente);assert.strictEqual(unidas[1],fora);
+  assert.equal(agruparNovidades([...quatro,...Array.from({length:6},(_,i)=>({...fora,id:`fora:${i}`}))],[grupo],'pt').length,5);
+  plantas.push({nome:'quatro peças dão uma entrada, conservam a data e a peça exterior e deixam cinco entradas',mordeu:true});
   assert.equal(estadoDoInventario('condicional-fp1','fp1','update'),'condicional-fp1');
   assert.equal(estadoDoInventario('condicional-fp1','outro','update'),null);
+  for(const tipo of ['o que se discute','under discussion']) {assert.equal(estadoDoInventario('condicional-fp1','fp1',tipo),'condicional-fp1');assert.equal(estadoDoInventario('condicional-fp1','do2',tipo),null);}
   assert.equal(estadoDoInventario('condicional-fp1','fp1','texto arbitrário'),null);
-  plantas.push({nome:'condição do inventário limitada aos dois rótulos FP1',mordeu:true});
+  plantas.push({nome:'condição do inventário limitada aos rótulos condicionais FP1',mordeu:true});
   const palavra=PALAVRAS_PROIBIDAS.find(p=>p.chave==='lido na fonte a');
   assert(palavra.marca.test('read at the source on'));
   assert(!palavra.marca.test(FP1.en.relidos));

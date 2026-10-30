@@ -1,4 +1,7 @@
 /** V2-b: caminhos reais por clique, no telefone, sobre a construção local. */
+import { listagensDoInicio } from '../../src/lib/listagens-do-inicio.mjs';
+import { dossieDaPeca } from '../../src/lib/dossies.mjs';
+import { routePath } from '../../src/lib/routes.mjs';
 export async function conferirToques(abre, origem) {
  const resultados=[];
  for(const lang of ['pt','en']) {
@@ -7,9 +10,36 @@ export async function conferirToques(abre, origem) {
   const explicacao=lang==='pt'?'/explicacoes/dinheiro-do-estado-2026/':'/en/explainers/dinheiro-do-estado-2026/';
   const {ctx,pagina}=await abre(inicio,390);
   try {
-   await pagina.locator('[data-discussao-inicio] h2 a').click();
+   const listas=listagensDoInicio(lang),dossie=dossieDaPeca('discussao','saude-no-orcamento');
+   const seccoes={novidades:'[data-novidades]',discussao:'[data-discussao-inicio]',perceber:'[data-para-perceber]',estudos:'#trabalhos',integracao:'[data-integracao-do-inicio]'};
+   const primeira=dossie&&Object.keys(seccoes).find(s=>listas[s].some(e=>e.tipo==='dossie'&&e.dossie.slug===dossie.slug));
+   if(dossie&&!primeira)throw Error('V2B DO2: o dossiê do item não tem lugar na seleção');
+   const selector=primeira?`${seccoes[primeira]} a[href="${routePath('dossie',lang,{slug:dossie.slug})}"]`:'[data-discussao-inicio] h2 a';
+   const conferirPorta=async()=>{
+    const erros=[];
+    if(await pagina.locator('[data-discussao-inicio]').count()!==Number(listas.discussao.length>0))erros.push('V2B DO2: presença do bloco diferente da seleção');
+    if(await pagina.locator(selector).count()!==1)erros.push('V2B DO2: porta inicial ausente ou repetida');
+    return erros;
+   };
+   const controlo=await conferirPorta();if(controlo.length)throw Error(controlo.join('; '));
+   let plantas=0;
+   // Só a cópia no navegador muda. A presença esperada vem da seleção comum.
+   await pagina.evaluate(presente=>{
+    if(presente)document.querySelector('[data-discussao-inicio]').remove();
+    else document.querySelector('main').insertAdjacentHTML('beforeend','<section data-discussao-inicio></section>');
+   },listas.discussao.length>0);
+   if(!(await conferirPorta()).includes('V2B DO2: presença do bloco diferente da seleção'))throw Error('V2B DO2: a planta da presença do bloco não mordeu');
+   plantas++;
+   await pagina.goto(origem+inicio);
+   await pagina.locator(selector).evaluate(el=>el.remove());
+   if(!(await conferirPorta()).includes('V2B DO2: porta inicial ausente ou repetida'))throw Error('V2B DO2: a planta da porta retirada não mordeu');
+   plantas++;
+   await pagina.goto(origem+inicio);
+   if((await conferirPorta()).length)throw Error('V2B DO2: a página reposta não passou');
+   console.log(`V2B DO2 ${lang}: ${plantas} plantas da presença e da porta recusadas.`);
+   await pagina.locator(selector).click();
    await pagina.locator('.discussao-sumario [data-discussao-porta="saude-no-orcamento"]').click();
-   if(new URL(pagina.url()).hash!=='#saude-no-orcamento')throw Error('V2B toques: a primeira página não chegou ao item');
+   if(new URL(pagina.url()).hash!=='#saude-no-orcamento'||new URL(pagina.url()).pathname.replace(/\/$/,'')!==discussao.replace(/\/$/,''))throw Error('V2B toques: a primeira página não chegou ao item');
    resultados.push({lang,de:'primeira página',para:'saude-no-orcamento',toques:2});
    await pagina.goto(origem+explicacao);
    await pagina.locator('[data-discussao-integracao="saude-no-orcamento"] a').click();

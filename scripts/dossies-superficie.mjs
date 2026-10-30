@@ -1,3 +1,4 @@
+import { t } from '../src/i18n/strings.mjs';
 /** DO1-A: só saem da contagem os nós cuja declaração foi conferida inteira. */
 import { DOSSIES } from '../src/data/dossies.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
@@ -31,6 +32,14 @@ export function conferirSuperficieDossies(root,lang,pagina) {
   const tempos=lista.querySelectorAll('time'), recente=datas[0];
   if(tempos.length!==1||!recente||tempos[0].getAttribute('datetime')!==recente.data||tempos[0].getAttribute('data-data-origem')!==recente.origem||tempos[0].textContent!==dataDaCasa(recente.data))erros.push('DO1: data da lista diferente das publicações');
   else nos.add(tempos[0]);
+  const titulo=lista.querySelector('h2, h3'), links=titulo?.querySelectorAll('a')??[], tokens=lista.querySelectorAll('[data-prova]');
+  const n=d?Object.values(d.pecas).reduce((n,a)=>n+a.length,0):null, s=t(lang).dossies;
+  const chave=d?`dossie_pecas_${d.slug.replace(/-/g,'_')}`:null;
+  const origem=lang==='pt'?'peças na página deste dossiê':'pieces on this dossier’s page';
+  const texto=d&&recente?`${d.titulo[lang]} · ${n} ${n===1?s.peca:s.pecas}${n===1?s.de:s.maisRecenteDe}${dataDaCasa(recente.data)}`:null;
+  if(!d||normal(titulo?.textContent)!==texto||links.length!==1||links[0].getAttribute('href')!==routePath('dossie',lang,{slug:d.slug})||tokens.length!==1||tokens[0].getAttribute('data-prova')!==chave||tokens[0].textContent!==String(n)||tokens[0].closest('a')!==links[0]||tokens[0].getAttribute('title')!==origem)erros.push('DO2: entrada do dossiê com palavras, contagem, token ou destino diferentes');
+  else nos.add(tokens[0]);
+
  }
  const ligacoes=new Set(main.querySelectorAll('[data-dossie-ligacao], .dossie-ligacao'));
  for(const d of DOSSIES) {

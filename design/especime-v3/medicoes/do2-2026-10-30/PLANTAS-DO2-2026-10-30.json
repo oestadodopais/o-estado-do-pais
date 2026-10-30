@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T12:35:37+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "D1",
+   "ficheiro": "built/index.html",
+   "descricao": "a caixa «O que há de novo» da primeira página portuguesa diz «4 peças» no dossiê do Orçamento, onde a página do dossiê, a edição inglesa e DOSSIES dizem 5",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9879e2952f6022e7ae96e009ae4a80da1db333b263f838d5fd144a9e0d764fef",
+   "sha256_depois": "5d77d8d6aa31b828c747777cf7a364cf33fce0bb6d7257c819fcf5f2d8405070",
+   "contexto_antes": "da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span></span> · <span class=\"prova-valor\" data-prova=\"dossie_pecas_orcamento_2027\" title=\"peças na página deste dossiê\" data-astro-cid-4n5gxwsk>5</span> <span data-voz data-astro-cid-4n5gxwsk>peças</span></a><span data-voz data-astro-cid-4n5gxwsk>, a mais recente de </span><time datetime=\"2026-10-29\" data",
+   "contexto_depois": "da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span></span> · <span class=\"prova-valor\" data-prova=\"dossie_pecas_orcamento_2027\" title=\"peças na página deste dossiê\" data-astro-cid-4n5gxwsk>4</span> <span data-voz data-astro-cid-4n5gxwsk>peças</span></a><span data-voz data-astro-cid-4n5gxwsk>, a mais recente de </span><time datetime=\"2026-10-29\" data"
+  },
+  {
+   "id": "D2",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a entrada inglesa do dossiê na caixa diz «the latest from» onde o §3.1 do mandato escreve «the most recent from»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "efbff224c8be9fe92bcbe47e9f0e9fd512ad108738b6acc3576ce445e4a121a6",
+   "sha256_depois": "41f59af6fbe4c4abeaee53819fffa2b7473655f07210933ae886213e1c86dd4c",
+   "contexto_antes": "ieces on this dossier’s page\" data-astro-cid-4n5gxwsk>5</span> <span data-voz data-astro-cid-4n5gxwsk>pieces</span></a><span data-voz data-astro-cid-4n5gxwsk>, the most recent from </span><time datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\" data-astro-cid-4n5gxwsk>29.10.2026</time></span></li><l",
+   "contexto_depois": "ieces on this dossier’s page\" data-astro-cid-4n5gxwsk>5</span> <span data-voz data-astro-cid-4n5gxwsk>pieces</span></a><span data-voz data-astro-cid-4n5gxwsk>, the latest from </span><time datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\" data-astro-cid-4n5gxwsk>29.10.2026</time></span></li><l"
+  },
+  {
+   "id": "D3",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff faz o portão recontar dossie_pecas_* a partir da própria prova e não das marcas data-dossie-peca da página construída: a recontagem nunca pode discordar, ao contrário da adenda A §2",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "63ff41be508a39dae7e8de3bf2cbeb425abd1654c876e8fb2cf22146e9dfa66e",
+   "sha256_depois": "386086b0a3a327dc6ec0f52b7823e7c0c8e7b8ea2266934b4c739766147fea2d",
+   "contexto_antes": "m-se no zero, e é aí que uma área\n        declarada e nunca construída se vê. */\n+    ...DOSSIES.flatMap(d => [\n+      conta(CHAVE_DAS_PECAS_DO_DOSSIE(d.slug), pecasDeDossie.get(`pt:${d.slug}`)?.pecas ?? 0, 'dist'),\n+      conta(CHAVE_DOS_ITENS_DO_DOSSIE(d.slug), pecasDeDossie.get(`pt:${d.slug}`)?.itens ?? 0, 'dist'),\n+    ]),\n     ...AREAS.map((a) =>\n       cont",
+   "contexto_depois": "m-se no zero, e é aí que uma área\n        declarada e nunca construída se vê. */\n+    ...DOSSIES.flatMap(d => [\n+      conta(CHAVE_DAS_PECAS_DO_DOSSIE(d.slug), PROVA[CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)]?.valor ?? 0, 'dist'),\n+      conta(CHAVE_DOS_ITENS_DO_DOSSIE(d.slug), pecasDeDossie.get(`pt:${d.slug}`)?.itens ?? 0, 'dist'),\n+    ]),\n     ...AREAS.map((a) =>\n       cont"
+  },
+  {
+   "id": "D4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 2506 entradas do inventário depois, onde o inventário e os registos dizem 2504",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7c000454ee045f6065ceb28cc7c17f1510ae1faa39fee0b89ce19d7554ff2786",
+   "sha256_depois": "e7667007e15e347568295c83773607214b852622562822f1ae5574cbe7e4b195",
+   "contexto_antes": " · 3 textos em discussão →»\n- EN: «Dossier: The 2027 Budget · 3 texts under discussion →»\n\n| Medida | Antes | Depois |\n|---|---:|---:|\n| Entradas do inventário | 2490 | 2504 |\n| Vivas / condicionais / retiradas | 1278 / 2 / 1210 | 1284 / 4 / 1216 |\n| Frases rendidas | 3736 | 3742 |\n| Destinos repetidos na primeira página, por edição ",
+   "contexto_depois": " · 3 textos em discussão →»\n- EN: «Dossier: The 2027 Budget · 3 texts under discussion →»\n\n| Medida | Antes | Depois |\n|---|---:|---:|\n| Entradas do inventário | 2490 | 2506 |\n| Vivas / condicionais / retiradas | 1278 / 2 / 1210 | 1284 / 4 / 1216 |\n| Frases rendidas | 3736 | 3742 |\n| Destinos repetidos na primeira página, por edição "
+  },
+  {
+   "id": "D5",
+   "ficheiro": "built/estado-e-economia/index.html",
+   "descricao": "a entrada do dossiê na porta portuguesa «Estado e economia» diz «a mais recente de 28.10.2026», onde a caixa da primeira página e a página do dossiê dizem 29.10.2026 (e o datetime diz 2026-10-29)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c7337716362a691ae1e22da08fca1dfb2355b171f8a6f369c1544aff2cd35e63",
+   "sha256_depois": "a57c14623520c68eb75c8e44c13310f84066a535679c68e3743be7efd7e6ce97",
+   "contexto_antes": "ina deste dossiê\">5</span> <span data-voz>peças</span></a><span data-voz>, a mais recente de </span><time datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">29.10.2026</time></h3><p class=\"explicacao-p\" data-dossie-campo=\"orcamento-2027:ambito\">A proposta de Orçamento do Estado para <span class=\"data-da-linha\" data-nonledger=\"data-d",
+   "contexto_depois": "ina deste dossiê\">5</span> <span data-voz>peças</span></a><span data-voz>, a mais recente de </span><time datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">28.10.2026</time></h3><p class=\"explicacao-p\" data-dossie-campo=\"orcamento-2027:ambito\">A proposta de Orçamento do Estado para <span class=\"data-da-linha\" data-nonledger=\"data-d"
+  }
+ ]
+}

@@ -30,6 +30,8 @@ import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
+import { DOSSIES } from '../../src/data/dossies.mjs';
+import { ITENS } from '../../src/data/discussao.mjs';
 import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 
@@ -40,8 +42,16 @@ const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.
 const i = process.argv.indexOf('--json');
 const SAIDA = i > 1 ? process.argv[i + 1] : process.env.OEDP_FRASES_JSON ?? null;
 const barra = (/** @type {string} */ p) => (p.endsWith('/') ? p : `${p}/`);
+// DO2: a presença esperada vem das pertenças, nunca do que sobrou no HTML.
+const paginasDaDiscussao = lang => [
+  ...DOSSIES.filter(d=>d.pecas.itens.length).map(d=>({rota:barra(routePath('dossie',lang,{slug:d.slug})), itens:d.pecas.itens.length})),
+  ...(() => {const itens=ITENS.filter(e=>!DOSSIES.some(d=>d.pecas.itens.includes(e.slug))).length;return itens?[{rota:barra(routePath('home',lang)),itens}]:[];})(),
+];
+const presencaDaDiscussao = () => ({conclusoes:document.querySelectorAll('[data-discussao-conclusao]').length, paragrafos:document.querySelectorAll('[data-discussao-resumo]').length});
+const conferirPresenca = (m, n, rota) => ['conclusoes','paragrafos'].flatMap(k=>m[k]===n?[]:[`FC DO2 · ${rota}: ${k}: esperados ${n}, encontrados ${m[k]}`]);
 const ROTAS = /** @type {const} */ (['pt', 'en']).flatMap((lang) => [
   routePath('home', lang), routePath('discussao', lang), routePath('entradaDinheiro', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),
+  ...DOSSIES.filter(d=>d.pecas.itens.length).map(d=>routePath('dossie',lang,{slug:d.slug})),
   ...EXPLICACOES.map((e) => routePath('explicacao', lang, { slug: e.slug })),
 ].map(barra));
 const LARGURAS = [390, 1280];
@@ -104,6 +114,8 @@ const plantas = [];
 try {
   for (const largura of LARGURAS) for (const rota of ROTAS) {
     const { ctx, pagina } = await abre(rota, largura);
+    const esperada=['pt','en'].flatMap(paginasDaDiscussao).find(p=>p.rota===rota);
+    if(esperada)erros.push(...conferirPresenca(await pagina.evaluate(presencaDaDiscussao),esperada.itens,rota));
     const m = await pagina.evaluate(medir);
     resultados.push({ rota, largura, ...m });
     erros.push(...defeitos(m, rota, largura));
@@ -116,12 +128,11 @@ try {
     for (const [superficie, key, selector] of [
       ['explicações','explicacoes','.explicacoes-item a'],
       ['primeira página','home','[data-bloco-frase]'],
-      ['conclusão da discussão','home','[data-discussao-conclusao]'],
-      ['parágrafo da discussão','home','[data-discussao-resumo]'],
+      ...paginasDaDiscussao(lang).flatMap(({rota})=>[['conclusão da discussão',rota,'[data-discussao-conclusao]'],['parágrafo da discussão',rota,'[data-discussao-resumo]']]),
       ['comparação dos cartões','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="comparacao"]'],
       ['definição dos cartões aberta','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="o-que-e"]'],
     ]) for (const tipo of ['flex','largura']) {
-      const rota=barra(routePath(key,lang));
+      const rota=key.startsWith('/')?key:barra(routePath(key,lang));
       const {ctx,pagina}=await abre(rota,largura);
       const controlo=defeitos(await pagina.evaluate(medir),rota,largura);
       await pagina.evaluate(({selector,tipo}) => {
@@ -129,7 +140,12 @@ try {
         if(!el) throw Error('a planta não encontrou uma frase com pedaços marcados');
         if(tipo==='flex') el.style.display='flex';
         else { el.style.display='block'; el.style.width='2000px'; }
-        if(tipo==='largura') el.style.maxWidth='none';
+        if(tipo==='largura') {
+          el.style.maxWidth='none';
+          // DO2: a cópia tem de extravasar de facto; o resumo real contém os selos com clip.
+          const resumo=el.closest('[data-dossie-discussao] [data-discussao-resumo]');
+          if(resumo)resumo.style.overflow='visible';
+        }
       }, {selector,tipo});
       await pagina.evaluate(doisFotogramas);
       const queixas=defeitos(await pagina.evaluate(medir),rota,largura);
@@ -138,6 +154,15 @@ try {
         mordeu:controlo.length===0&&queixas.some(q=>q.startsWith(mensagem))});
       await ctx.close();
     }
+  }
+  // DO2: retirar uma superfície da cópia no navegador tem de ser uma falha.
+  for(const lang of ['pt','en']) for(const largura of LARGURAS) for(const {rota,itens} of paginasDaDiscussao(lang)) for(const selector of ['[data-discussao-conclusao]','[data-discussao-resumo]']) {
+    const {ctx,pagina}=await abre(rota,largura);
+    const controlo=conferirPresenca(await pagina.evaluate(presencaDaDiscussao),itens,rota);
+    await pagina.evaluate(selector=>document.querySelectorAll(selector).forEach(n=>n.remove()),selector);
+    const queixas=conferirPresenca(await pagina.evaluate(presencaDaDiscussao),itens,rota);
+    plantas.push({nome:`DO2 superfície retirada, ${selector}, ${lang}, ${largura}`,mensagem:'FC DO2',queixas,mordeu:controlo.length===0&&queixas.length>0});
+    await ctx.close();
   }
   // HIG-RP4N-22: mede a palavra na ligação da prova, nas duas edições.
   for (const lang of ['pt','en']) for (const largura of LARGURAS) {

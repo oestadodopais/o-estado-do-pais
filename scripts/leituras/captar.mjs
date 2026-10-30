@@ -16,6 +16,7 @@
  *   por cinco centésimos de unidade do viewBox e à altura do primeiro, e recusa se não acender o segundo; `cartao`, o
  *   seletor da caixa de um cartão com série, toca (com o toque do navegador, que passa pelo teste de alvo) num ponto e
  *   fora dos pontos da mesma caixa, depois da captura, e guarda o que cada toque fez (a etiqueta e a navegação).
+ * `conferirDossies`, por página, exige a régua e a planta da vírgula nas entradas dos dossiês.
  * Não altera dist/. Cada bloco acrescenta as suas réguas de conteúdo; estas
  * capturas comuns não substituem as células nem a leitura visual do bloco.
  */
@@ -25,6 +26,7 @@ import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 import sharp from 'sharp';
+import { conferirDisposicaoDossies } from '../../tests/dossies/disposicao.mjs';
 import { medirMenu } from '../../design/especime-v3/medicoes/v2c-2026-10-19/medir-menu.mjs';
 
 const [pedido, pastaDada, distDado = 'dist'] = process.argv.slice(2);
@@ -90,6 +92,7 @@ try {
       if (resposta?.status() !== 200) throw new Error(`${prefixo}: a página não respondeu a 200`);
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
+      if (p.conferirDossies) medidas.dossies = await conferirDisposicaoDossies(pagina);
       if (p.toque && p.desempate) {
         medidas.desempate = await pagina.evaluate((sel) => {
           const el = document.querySelector(sel);

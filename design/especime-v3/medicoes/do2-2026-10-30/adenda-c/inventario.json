@@ -1,0 +1,25 @@
+{
+  "depois": {
+    "total": 2504,
+    "vivas": 1278,
+    "condicionais_do2": 2,
+    "condicionais_fp1": 4,
+    "retiradas": 1220,
+    "rendidas": 3736,
+    "sem_estado": [],
+    "retiradas_sem_razao": [],
+    "rendidas_nas_isentas": 2571,
+    "vivas_que_nao_rendem": [],
+    "retiradas_que_rendem": []
+  },
+  "antes": {
+    "total": 2504,
+    "vivas": 1284,
+    "condicionais": 4,
+    "retiradas": 1216,
+    "rendidas": 3742,
+    "vivasSemRendicao": 0,
+    "retiradasRendidas": 0,
+    "porClassificar": 0
+  }
+}

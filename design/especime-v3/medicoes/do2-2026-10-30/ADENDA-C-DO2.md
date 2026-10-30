@@ -1,0 +1,25 @@
+# Adenda C ao mandato DO2: as correções da leitura a frio, de uma vez (30.10.2026, 12:51 UTC)
+
+Acrescenta: nada
+
+*A mesma sessão, a mesma worktree (ramo `do2-2026-10-30`, cabeça c33bbb90f, limpa). Escrita pelo lugar de direção do dia (Claude Opus 5.5). A leitura a frio do Gemini 4 Argon (High), das 12:35:52 às 12:49:28 UTC, apanhou as cinco plantas e deixou três achados reais que se corrigem antes de aterrar; a corrida inteira c do lugar de direção (54 passos) deu um vermelho, que é o quarto. Os outros achados ficam para a higiene, pela §1.177. Nenhuma frase nova do leitor.*
+
+## 1 · As oito plantas das conclusões dos itens voltam, na página onde as conclusões estão (o Major 7 da leitura)
+
+Quando as conclusões dos itens saíram da primeira página, `tests/discussao/itens.mjs` apagou as oito plantas de `plantasDoInicio` (as sete «FP2: …», incluindo «FP2: selo recusa linha trocada», e «OG1-B: fragmento inventado na abertura recusado») em vez de as mudar de página. Uma planta que prova que um portão de números e selos morde não se apaga. As oito passam a correr sobre as conclusões e os parágrafos dos itens onde eles se imprimem agora (a página do dossiê do Orçamento, `[data-discussao-resumo]` e `[data-discussao-conclusao]`, nas duas edições), com `seloDaConclusaoDoInicio` e `fragmentoDaConclusaoDoInicio` como antes, e também na primeira página quando ela imprimir um item fora de dossiês (a forma da adenda B §3). Cada planta exige a sua mensagem; uma superfície que não exista onde deve existir é um erro, nunca um salto.
+
+## 2 · Na primeira página, cada dossiê aparece uma vez (o Major 8 da leitura: o editor não a publicava)
+
+A regra do leitor do §2.3 vale para a primeira página inteira, que é uma página de listagem. Medido no HTML construído da cabeça (12:50 UTC): o Orçamento ainda aparece na caixa «O que há de novo» (a entrada do dossiê), no bloco «O que se discute» (a linha do dossiê, logo abaixo, para o mesmo destino), em «Para perceber» (a explicação `dinheiro-do-estado-2027`), em «Estudos recentes» (`#trabalhos`, o estudo `orcamento-2027-o-que-muda-e-para-quem`) e na porta da discussão do fim (`[data-discussao-integracao]`, «O que se discute sobre isto →» para o item da generalidade).
+
+A regra: na primeira página, cada dossiê aparece uma vez, na primeira secção, pela ordem da página, onde apareceria uma das suas peças; nas secções seguintes, as peças desse dossiê não se listam; uma secção que fique vazia não se imprime (a forma das portas). Se a primeira secção onde o dossiê apareceria não for a caixa «O que há de novo», essa secção imprime a entrada do dossiê na forma do §3.3 no lugar da primeira das suas peças. Hoje isto deixa o Orçamento só na caixa «O que há de novo»; o bloco «O que se discute» da primeira página fica sem linhas e não se imprime; «Para perceber» e «Estudos recentes» ficam com as peças fora de dossiês.
+
+A função que decide fica num lugar só (a pertença por `dossieDaPeca`), lida pela primeira página e pelas réguas que a conferem. As listas fechadas que isto arrasta, já medidas: `scripts/voz-pais.mjs`, `scripts/sinais-da-primeira-pagina.mjs`, `tests/inicio/`, `tests/discussao/itens.mjs` (`conferirInicio` e `conferirIntegracao`), `tests/explicacoes/frases-compostas.mjs` (a superfície «primeira página», `[data-bloco-frase]`, se a frase marcada que ela usa estiver numa peça do dossiê: segue-a para a página onde estiver, pela forma da adenda B §3), `check:datas`, a L1, o inventário das frases (as linhas da primeira página que deixam de se render passam a retiradas ou condicionais, nunca apagadas) e a secção DO2 do mapa dos construtores. Decides as ambiguidades pequenas e anota-las. As plantas: uma peça do dossiê listada outra vez numa secção seguinte da primeira página é recusada; uma peça fora de dossiês tirada de «Para perceber» ou de «Estudos recentes» é recusada; com o dossiê fora da caixa (numa cópia dos dados), a primeira secção onde ele apareceria imprime a entrada do dossiê.
+
+## 3 · O vermelho da corrida inteira c
+
+`check:mortos`: `scripts/check-datas.mjs:63` importa `DOMINIO_DAS_MEDIDAS` e não o usa (a DO2-2 trocou a conta por `estudosAvulsosDaEntrada`); tira-se a importação, e o comentário das linhas 445 a 447, que ainda diz que a conta se refaz ali a partir dos dados, passa a dizer o que o código faz.
+
+## 4 · O orçamento, as conferências e o que pára
+
+Setenta e cinco minutos, cento e vinte chamadas. Um commit por secção. Entre commits, as conferências que a mudança toca: `tests/discussao/`, `tests/dossies/`, `tests/inicio/`, `check:voz`, `check:datas`, `check:mortos`, `check:frases-compostas`, `sinais`, a L1 e o inventário; no fim, um `npm run build` inteiro pelo escrivão, que tem de dar 0. Depois, as capturas da primeira página nas cinco larguras e nas duas edições. O relatório diz, das duas edições da primeira página e do HTML construído, que secções se imprimem e o que cada uma lista, e os códigos lidos dos `.codigo`; e cada afirmação de verificação com o comando e a pasta. Paras e dizes só se uma correção pedir enfraquecer uma régua, ou se o `build` final der vermelho por uma régua que esta adenda não nomeia.

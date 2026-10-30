@@ -9,7 +9,7 @@ import CartaoDaMedida from '../components/CartaoDaMedida.astro';
 import ValorIrmao from '../components/ValorIrmao.astro';
 import { medidaPelaChave } from '../data/dominios.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
-import { estudosDaEntrada } from '../lib/primeira-pagina.mjs';
+import { estudosAvulsosDaEntrada } from '../lib/primeira-pagina.mjs';
 import { ENTRADA_DA_ROTA } from '../lib/caminho.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -28,7 +28,9 @@ const path = routePath(chave, lang);
 if (entrada.rota[lang] !== path) {
   throw new Error(`entradas: a declaração diz «${entrada.rota[lang]}» e a tabela das rotas diz «${path}» para ${chave} (${lang}).`);
 }
-const estudos = estudosDaEntrada(entrada.id, lang);
+const dossies = dossiesDaLista(lang, entrada.id);
+const slugsDossies = dossies.map(d => d.slug);
+const estudos = estudosAvulsosDaEntrada(entrada.id, lang);
 const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
 ---
 <Base lang={lang} path={path} title={`${entrada.nome[lang]}${s.primeira.metaCauda}`} description={entrada.linha[lang]}>
@@ -51,11 +53,11 @@ const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
           </div>
         ))}
       </div>
-      <PortasDaDiscussao lang={lang} linhas={seccao.cartoes} />
+      <PortasDaDiscussao lang={lang} linhas={seccao.cartoes} excluirDossies={slugsDossies} />
     </section>
   ))}
 
-  {dossiesDaLista(lang, entrada.id).length > 0 && <section class="pais-sec" aria-labelledby="dossies-k"><div class="sec-head"><h2 class="eyebrow" id="dossies-k">{s.dossies.plural}</h2></div><ListaDeDossies lang={lang} porta={entrada.id} /></section>}
+  {dossies.length > 0 && <section class="pais-sec" aria-labelledby="dossies-k"><div class="sec-head"><h2 class="eyebrow" id="dossies-k">{s.dossies.plural}</h2></div><ListaDeDossies lang={lang} porta={entrada.id} /></section>}
 
   {estudos.length > 0 && (
     <section class="pais-sec" id="estudos-da-entrada" aria-labelledby="estudos-da-entrada-k">

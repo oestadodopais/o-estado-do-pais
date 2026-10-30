@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /** B1, peça 3. Leitor próprio do HTML, da tabela declarada e do livro.
- * Não importa a seleção nem as funções da página que está a conferir. */
+ * A E1 usa a seleção comum das listagens, pela adenda D ao DO2; as contas dos valores continuam independentes. */
 import fs from 'node:fs';
+import { listagensDoInicio } from '../src/lib/listagens-do-inicio.mjs';
 import { conferirLinhaOg1 } from './afirmacoes-og1.mjs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
@@ -531,12 +532,41 @@ for (const lang of ['pt', 'en']) {
         erros.push(`T9 ${lang} ${nome}: ${id} está ${estado} do valor de referência e o cartão não o diz pela cor da página europeia (sq-${estado}, est-${estado}).`);
     }
   }
-  const recentes = WORKS.map((w,i) => {
-    const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
-  }).sort((a,b) => Number(b.emCurso) - Number(a.emCurso) || b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
-  const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
-  if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não têm os em curso à cabeça, seguidos dos mais recentes.`);
+  // DO2-D: a mesma seleção da página, sem repor as peças representadas por um dossiê.
+  let listagens;
+  try { listagens = listagensDoInicio(lang); }
+  catch (e) { erros.push(`E1 ${lang}: a seleção não se resolveu: ${e.message}`); }
+  // Uma declaração inválida continua a fechar a régua; deixa a A3 também dar a sua queixa.
+  if (listagens) {
+    const recentes = listagens.estudos.filter(e => e.tipo === 'estudo').map(e => e.slug);
+    const queixaDosRecentes = `E1 ${lang}: os estudos recentes diferem da seleção e da ordem da primeira página.`;
+    const conferirRecentes = pagina => {
+      const rendidos = pagina.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
+      return JSON.stringify(recentes) === JSON.stringify(rendidos) ? [] : [queixaDosRecentes];
+    };
+    const controloDosRecentes = conferirRecentes(home);
+    erros.push(...controloDosRecentes);
+    const suprimido = listagens.suprimidas.find(e => e.seccao === 'estudos');
+    if (!suprimido || recentes.length < 2) erros.push(`E1 ${lang}: faltam estudos para exercer as três plantas DO2.`);
+    else {
+      const plantas = [
+        ['estudo do dossiê repetido', pagina => pagina.querySelector('#trabalhos').insertAdjacentHTML('beforeend', `<article data-estudo="${suprimido.slug}"></article>`)],
+        ['estudo avulso retirado', pagina => pagina.querySelector('#trabalhos [data-estudo]').remove()],
+        ['ordem trocada', pagina => {
+          const [primeiro, segundo] = pagina.querySelectorAll('#trabalhos [data-estudo]');
+          const copia = segundo.outerHTML;
+          segundo.remove();
+          primeiro.insertAdjacentHTML('beforebegin', copia);
+        }],
+      ];
+      for (const [nome, mudar] of plantas) {
+        const copia = parse(home.toString());
+        mudar(copia);
+        if (controloDosRecentes.length || !conferirRecentes(copia).includes(queixaDosRecentes)) erros.push(`E1 ${lang}: a planta «${nome}» não mordeu com a queixa da seleção.`);
+        else console.log(`E1 DO2 ${lang}: planta «${nome}» recusada pela seleção.`);
+      }
+    }
+  }
   for (const el of home.querySelectorAll('#trabalhos [data-estudo]')) {
     const w = WORKS.find(w => w.slug === el.getAttribute('data-estudo'));
     const marcas = el.querySelectorAll('[data-estudo-em-curso]');

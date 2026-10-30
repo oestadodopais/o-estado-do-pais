@@ -1,0 +1,395 @@
+{
+  "cabecaConstruida": "b0533f7fb497b6dc31910e21fbde1a3c7ce853d2",
+  "paginas": [
+    {
+      "lang": "pt",
+      "seccoes": [
+        "O que há de novo",
+        "O que se passa",
+        "Por onde começar",
+        "Estudos recentes",
+        "Os valores de referência da Comissão Europeia"
+      ],
+      "novidades": [
+        {
+          "peca": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026estudoA casa em Portugal e na Europa",
+          "titulo": "A casa em Portugal e na Europa",
+          "data": "2026-10-29",
+          "destino": "/estudos/a-casa-em-portugal-e-na-europa"
+        },
+        {
+          "peca": "dossie:orcamento-2027",
+          "texto": "Dossiê · O Orçamento de 2027 · 5 peças, a mais recente de 29.10.2026",
+          "titulo": "O Orçamento de 2027 · 5 peças",
+          "data": "2026-10-29",
+          "destino": "/dossies/orcamento-2027"
+        },
+        {
+          "peca": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explicaçãoPara onde vai o dinheiro do Estado em 2026",
+          "titulo": "Para onde vai o dinheiro do Estado em 2026",
+          "data": "2026-10-06",
+          "destino": "/explicacoes/dinheiro-do-estado-2026"
+        },
+        {
+          "peca": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026estudoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "titulo": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "data": "2026-10-01",
+          "destino": "/estudos/evora-2027-capital-europeia-da-cultura"
+        },
+        {
+          "peca": "estudo:evora-contas-da-camara-2010-2025",
+          "texto": "01.10.2026estudoAs contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação",
+          "titulo": "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação",
+          "data": "2026-10-01",
+          "destino": "/estudos/evora-contas-da-camara-2010-2025"
+        }
+      ],
+      "discussao": 0,
+      "blocos": [
+        "Os preços: os combustíveis sobem mais do que o resto",
+        "A habitação: a média engana quem arrenda",
+        "O trabalho: mais emprego, e mais desemprego de longa duração",
+        "As contas do Estado",
+        "Pobreza e desigualdade não são a mesma coisa"
+      ],
+      "paraPerceber": [
+        "Entre 24.10.2026 e 30.10.2026, 90 números foram relidos na fonte, 17 mudaram de valor e 17 mudaram de proveniência."
+      ],
+      "entradas": [
+        "PreçosOs preços dos bens e serviços.",
+        "Salários, pensões e apoiosOs salários, as pensões e os apoios sociais.",
+        "Pobreza e desigualdadeA pobreza, a desigualdade, as dívidas e o crédito das famílias.",
+        "EmpregoO emprego, o desemprego, os jovens e o custo do trabalho.",
+        "HabitaçãoO peso da habitação, as rendas, os preços e a construção.",
+        "Educação e saúdeO abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde.",
+        "Estado e economiaAs contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça.",
+        "LugaresOs concelhos, os distritos, as ilhas e as regiões."
+      ],
+      "estudos": [
+        {
+          "slug": "evora-2027-capital-europeia-da-cultura",
+          "titulo": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "data": "2026-10-01"
+        },
+        {
+          "slug": "a-casa-em-portugal-e-na-europa",
+          "titulo": "A casa em Portugal e na Europa novo",
+          "data": "2026-10-29"
+        }
+      ],
+      "veredicto": [
+        "Dívida pública",
+        "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+        "Preços da habitação, variação anual",
+        "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)",
+        "Dívida das empresas (não financeiras)",
+        "Dívida das famílias",
+        "Fluxo de crédito às empresas (não financeiras)",
+        "Fluxo de crédito às famílias",
+        "Saldo da balança corrente",
+        "Pessoas que trabalham ou procuram trabalho (taxa de atividade)",
+        "Preços face aos parceiros comerciais, com o câmbio (taxa de câmbio efetiva real)",
+        "Taxa de desemprego"
+      ],
+      "portas": [
+        "Todos os temas →",
+        "Números e fontes →",
+        "O que mudou →"
+      ],
+      "integracao": 0,
+      "dossies": [
+        "orcamento-2027"
+      ],
+      "frasesDosBlocos": 5
+    },
+    {
+      "lang": "en",
+      "seccoes": [
+        "What is new",
+        "What is happening",
+        "Where to start",
+        "Recent studies",
+        "The European Commission’s reference values"
+      ],
+      "novidades": [
+        {
+          "peca": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026studyHousing in Portugal and in Europe",
+          "titulo": "Housing in Portugal and in Europe",
+          "data": "2026-10-29",
+          "destino": "/en/studies/a-casa-em-portugal-e-na-europa"
+        },
+        {
+          "peca": "dossie:orcamento-2027",
+          "texto": "Dossier · The 2027 Budget · 5 pieces, the most recent from 29.10.2026",
+          "titulo": "The 2027 Budget · 5 pieces",
+          "data": "2026-10-29",
+          "destino": "/en/dossiers/orcamento-2027"
+        },
+        {
+          "peca": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explainerWhere the State’s money goes in 2026",
+          "titulo": "Where the State’s money goes in 2026",
+          "data": "2026-10-06",
+          "destino": "/en/explainers/dinheiro-do-estado-2026"
+        },
+        {
+          "peca": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026studyÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "titulo": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "data": "2026-10-01",
+          "destino": "/en/studies/evora-2027-capital-europeia-da-cultura"
+        },
+        {
+          "peca": "estudo:evora-contas-da-camara-2010-2025",
+          "texto": "01.10.2026studyThe accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification",
+          "titulo": "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification",
+          "data": "2026-10-01",
+          "destino": "/en/studies/evora-contas-da-camara-2010-2025"
+        }
+      ],
+      "discussao": 0,
+      "blocos": [
+        "Prices: fuel is rising faster than the rest",
+        "Housing: the average hides the renters",
+        "Work: more employment, and more long-term unemployment",
+        "The state’s accounts",
+        "Poverty and inequality are not the same thing"
+      ],
+      "paraPerceber": [
+        "Between 24.10.2026 and 30.10.2026, 90 figures were re-read at the source, 17 changed value and 17 changed provenance."
+      ],
+      "entradas": [
+        "PricesThe prices of goods and services.",
+        "Pay, pensions and benefitsPay, pensions and social benefits.",
+        "Poverty and inequalityPoverty, inequality, household debt and credit.",
+        "EmploymentEmployment, unemployment, young people and labour costs.",
+        "HousingHousing costs, rents, prices and building.",
+        "Education and healthEarly school leaving, digital skills, childcare and access to healthcare.",
+        "State and economyPublic accounts, growth, investment, external accounts, companies and justice.",
+        "PlacesMunicipalities, districts, islands and regions."
+      ],
+      "estudos": [
+        {
+          "slug": "evora-2027-capital-europeia-da-cultura",
+          "titulo": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "data": "2026-10-01"
+        },
+        {
+          "slug": "a-casa-em-portugal-e-na-europa",
+          "titulo": "Housing in Portugal and in Europe new",
+          "data": "2026-10-29"
+        }
+      ],
+      "veredicto": [
+        "Government debt",
+        "What the country owns abroad minus what it owes (net international investment position)",
+        "Labour cost per unit of output (unit labour cost)",
+        "House prices, annual change",
+        "Portugal’s share of advanced economies’ exports (export market share)",
+        "Debt of (non-financial) companies",
+        "Household debt",
+        "Credit flow to (non-financial) companies",
+        "Credit flow to households",
+        "Current account balance",
+        "People who work or are looking for work (activity rate)",
+        "Prices compared with trading partners, including the exchange rate (real effective exchange rate)",
+        "Unemployment rate"
+      ],
+      "portas": [
+        "All themes →",
+        "Numbers and sources →",
+        "What changed →"
+      ],
+      "integracao": 0,
+      "dossies": [
+        "orcamento-2027"
+      ],
+      "frasesDosBlocos": 5
+    }
+  ],
+  "estado": "construção final e conferências dirigidas verdes",
+  "reguasAlteradas": [
+    {
+      "ficheiro": "scripts/check-pais.mjs",
+      "regua": "E1",
+      "mudanca": "A seleção dos estudos vem de listagensDoInicio, sem repor peças representadas por dossiês. A marca em curso continua conferida.",
+      "plantas": 6
+    },
+    {
+      "ficheiro": "tests/discussao/toques.mjs",
+      "regua": "percurso de toque da primeira página até ao item",
+      "mudanca": "A primeira porta vem da secção escolhida por listagensDoInicio. A presença do bloco é conferida, mesmo quando deve estar ausente. O percurso segue pelo dossiê até ao mesmo item.",
+      "plantas": 4
+    }
+  ],
+  "apoio": "Perfil fechado build em portoes-pelo-escrivao.sh e portoes.sh, para executar apenas o npm run build completo. O perfil completo por omissão e as guardas existentes mantêm-se.",
+  "codigos": [
+    {
+      "passo": "pais-inicial",
+      "codigo": 1,
+      "origem": "<temporario>/do2-d-pais.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/pais-inicial.codigo"
+    },
+    {
+      "passo": "pais-corrigido",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-pais-2.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/pais-corrigido.codigo"
+    },
+    {
+      "passo": "capturas",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-capturas.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/capturas.codigo"
+    },
+    {
+      "passo": "perfil-v2c__build",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/build.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__build.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-alvos",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:alvos.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-alvos.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-cabeca",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:cabeca.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-cabeca.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-css",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:css.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-css.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-discussao",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:discussao.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-discussao.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-frases-compostas",
+      "codigo": 1,
+      "origem": "<temporario>/do2-d-final/check:frases-compostas.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-frases-compostas.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-lugar",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:lugar.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-lugar.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-navegacao",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:navegacao.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-navegacao.codigo"
+    },
+    {
+      "passo": "perfil-v2c__check-primeira",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/check:primeira.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__check-primeira.codigo"
+    },
+    {
+      "passo": "perfil-v2c__gate-html",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-final/gate:html.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/perfil-v2c__gate-html.codigo"
+    },
+    {
+      "passo": "toques__check-frases-compostas",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-toques/check:frases-compostas.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/toques__check-frases-compostas.codigo"
+    },
+    {
+      "passo": "toques__check-primeira",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-toques/check:primeira.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/toques__check-primeira.codigo"
+    },
+    {
+      "passo": "build-final__build",
+      "codigo": 0,
+      "origem": "<temporario>/do2-d-build-final/build.codigo",
+      "ficheiro": "design/especime-v3/medicoes/do2-2026-10-30/adenda-d/codigos/build-final__build.codigo"
+    }
+  ],
+  "passosInternosBuild": 26,
+  "comandos": [
+    {
+      "comando": "npm run check:pais",
+      "pasta": "<worktree>",
+      "registos": [
+        "<temporario>/do2-d-pais.log",
+        "<temporario>/do2-d-pais-2.log"
+      ]
+    },
+    {
+      "comando": "sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/do2-d-final v2c",
+      "pasta": "<temporario>/do2-d-final"
+    },
+    {
+      "comando": "sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/do2-d-toques og1-b-navegador",
+      "pasta": "<temporario>/do2-d-toques"
+    },
+    {
+      "comando": "sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/do2-d-build-final build",
+      "pasta": "<temporario>/do2-d-build-final"
+    },
+    {
+      "comando": "sh scripts/leituras/capturar-pelo-escrivao.sh <temporario>/do2-d-pedido-capturas.json <temporario>/do2-d-capturas",
+      "pasta": "<temporario>/do2-d-capturas"
+    }
+  ],
+  "capturas": {
+    "cabeca": "b0533f7fb497b6dc31910e21fbde1a3c7ce853d2",
+    "codigo": 0,
+    "resultados": 10,
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ],
+    "falhas": [],
+    "pngLocais": 40,
+    "pngComitados": false,
+    "motivo": "Os PNG são excluídos pelo repositório; fica comitado o recibo com os resumos criptográficos.",
+    "recortesInspecionados": [
+      "pt-390-novidades",
+      "en-390-novidades",
+      "pt-390-estudos",
+      "en-390-para-perceber",
+      "pt-1280-novidades",
+      "en-1280-estudos"
+    ]
+  },
+  "commits": [
+    "e41177e30",
+    "2c584fea",
+    "b0533f7f"
+  ],
+  "custo": {
+    "chamadasFunctionsExec": 51,
+    "execucoesPrincipaisDeConferenciasEConstrucao": 15,
+    "conferenciasDeSintaxe": 3,
+    "corridasDeCapturas": 1
+  },
+  "falhasCorrigidas": [
+    "A primeira chamada à seleção interrompia a A3 na sua planta de declaração inválida. A E1 passou a registar o erro e a deixar a A3 emitir também a sua recusa; a repetição de check:pais deu zero.",
+    "O primeiro perfil falhou em check:frases-compostas porque a prova de toque procurava o título ausente da discussão. A repetição dirigida deu zero, com as plantas e os caminhos reais."
+  ]
+}

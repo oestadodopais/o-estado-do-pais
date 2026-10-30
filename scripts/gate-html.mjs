@@ -310,7 +310,7 @@ import { REGIOES } from '../src/data/regioes.mjs';
    a lista e o livro-razão. Duas contas de sítios diferentes sobre a mesma
    afirmação, que é a disciplina da §1.24. */
 import { AREAS } from '../src/data/areas.mjs';
-import { CHAVE_DAS_PECAS } from '../src/lib/prova.mjs';
+import { CHAVE_DAS_PECAS, CHAVE_DAS_PECAS_DO_DOSSIE, CHAVE_DOS_ITENS_DO_DOSSIE } from '../src/lib/prova.mjs';
 import { slugDeConcelho } from '../src/lib/inicio.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { conferirAusenciaNosMetadados } from '../tests/cartao/metadados.mjs';
@@ -890,6 +890,7 @@ let estudosComDataPublicada = 0;
  * construção fecha.
  */
 const pecasDeArea = new Map();
+const pecasDeDossie = new Map();
 /** Páginas de linha construídas SEM `noindex`, por edição. */
 const linhasIndexaveis = new Set();
 
@@ -4249,6 +4250,10 @@ function contasDoPortao(claims) {
        página construída conta zero, que é o que a prova também lhe dá quando não
        tem peças: as duas contas encontram-se no zero, e é aí que uma área
        declarada e nunca construída se vê. */
+    ...DOSSIES.flatMap(d => [
+      conta(CHAVE_DAS_PECAS_DO_DOSSIE(d.slug), pecasDeDossie.get(`pt:${d.slug}`)?.pecas ?? 0, 'dist'),
+      conta(CHAVE_DOS_ITENS_DO_DOSSIE(d.slug), pecasDeDossie.get(`pt:${d.slug}`)?.itens ?? 0, 'dist'),
+    ]),
     ...AREAS.map((a) =>
       conta(CHAVE_DAS_PECAS(a.slug), pecasDeArea.get(`pt:${a.slug}`) ?? 0, 'dist'),
     ),
@@ -4702,6 +4707,13 @@ for (const file of ficheirosHtml(DIST)) {
     paginasPorRota.set(chaveDaRota, (paginasPorRota.get(chaveDaRota) ?? 0) + 1);
   }
   if (rota?.key === 'estudo' && rota.lang === 'pt' && root.querySelector('.estudo-publicado time[datetime]')) estudosComDataPublicada++;
+  if (rota?.key === 'dossie') {
+    const pecas = root.querySelectorAll('[data-dossie-peca]');
+    pecasDeDossie.set(`${rota.lang}:${rota.params.slug}`, {
+      pecas: pecas.length,
+      itens: pecas.filter(el => el.getAttribute('data-dossie-peca').startsWith('discussao:')).length,
+    });
+  }
   if (rota?.key === 'area') {
     pecasDeArea.set(
       `${rota.lang}:${rota.params.slug}`,
@@ -8718,6 +8730,10 @@ for (const { rel, chave, destino, caminho, ancora } of ancorasDaProva) {
  * errada, por isso A é dita primeiro e com o seu próprio nome.
  */
 const CONTAS = contasDoPortao(claims);
+for (const d of DOSSIES) for (const [campo, chave] of [['pecas', CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)], ['itens', CHAVE_DOS_ITENS_DO_DOSSIE(d.slug)]]) {
+  const en = pecasDeDossie.get(`en:${d.slug}`)?.[campo] ?? 0;
+  if (en !== CONTAS[chave]) erros.push({rel: routePath('dossie', 'en', {slug:d.slug}), msg: `DO2: ${chave} conta ${en} em inglês e ${CONTAS[chave]} em português.`});
+}
 const provaFinal = {};
 
 for (const [chave, item] of Object.entries(PROVA)) {

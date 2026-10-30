@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T14:44:14+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "C1",
+   "ficheiro": "diff.patch",
+   "descricao": "a planta reposta «OG1-B: fragmento inventado na abertura recusado» passa a morder sempre que a página está limpa (|| em vez de &&): não pode falhar, ao contrário da adenda C §1",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "86ea2e7404e4aa0b9bb48a839f77b75b2eb065c1e464bb7da1f3a63186408674",
+   "sha256_depois": "0a18083ed653c2c1ed4c6f28e88972448ab142497dac7d6a71faec691d022174",
+   "contexto_antes": "span></span>');\n+ const fragmento=frase.querySelector('[data-linha-trecho]');\n+ provas.push({nome:'OG1-B: fragmento inventado na abertura recusado',lang,pagina,mordeu:limpo&&!fragmentoDaConclusaoDoInicio(fragmento,'og1-utao-p42','excerpt',lang,{dist})&&conferir(f).some(x=>/frase diferente/.test(x)),queixa:conferir(f).find(x=>/frase diferente/.test(x))});\n  retur",
+   "contexto_depois": "span></span>');\n+ const fragmento=frase.querySelector('[data-linha-trecho]');\n+ provas.push({nome:'OG1-B: fragmento inventado na abertura recusado',lang,pagina,mordeu:limpo||!fragmentoDaConclusaoDoInicio(fragmento,'og1-utao-p42','excerpt',lang,{dist})&&conferir(f).some(x=>/frase diferente/.test(x)),queixa:conferir(f).find(x=>/frase diferente/.test(x))});\n  retur"
+  },
+  {
+   "id": "C2",
+   "ficheiro": "diff.patch",
+   "descricao": "o perfil novo do escrivão deixa de ser fechado: qualquer seleção com um campo perfil passa a conferência de portoes.sh, ao contrário do commit b0533f7fb e da pergunta 4",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0a18083ed653c2c1ed4c6f28e88972448ab142497dac7d6a71faec691d022174",
+   "sha256_depois": "615021117b2810c1365d8a7149522c45555f327281da9f97d444c47ec4dc10f2",
+   "contexto_antes": "res\"}, {\"perfil\":\"og1-b-navegador\"}); print(r[\"perfil\"])' \"$O/selecao.json\") || exit 9\n+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({\"perfil\":\"build\"}, {\"perfil\":\"v2c\"}, {\"perfil\":\"v2d\"}, {\"perfil\":\"fp2-base\"}, {\"perfil\":\"fp2\"}, {\"perfil\":\"fp2-contadores\"}, {\"perfil\":\"og1-b-navegador\"}); print(r[\"perfil\"])' \"$",
+   "contexto_depois": "res\"}, {\"perfil\":\"og1-b-navegador\"}); print(r[\"perfil\"])' \"$O/selecao.json\") || exit 9\n+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r.get(\"perfil\") or r in ({\"perfil\":\"build\"}, {\"perfil\":\"v2c\"}, {\"perfil\":\"v2d\"}, {\"perfil\":\"fp2-base\"}, {\"perfil\":\"fp2\"}, {\"perfil\":\"fp2-contadores\"}, {\"perfil\":\"og1-b-navegador\"}); print(r[\"perfil\"])' \"$"
+  },
+  {
+   "id": "C3",
+   "ficheiro": "diff.patch",
+   "descricao": "a seleção comum da primeira página toma quatro estudos recentes e não três, ao contrário da E1 e da adenda D §1",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "615021117b2810c1365d8a7149522c45555f327281da9f97d444c47ec4dc10f2",
+   "sha256_depois": "e6b1fee073e63e31e64f50f58e8e1f46c3a9bdd44c80a604f6037a2cca31f604",
+   "contexto_antes": "cente?[{tipo:'explicacao',slug:recente.slug,peca:explicacaoResolvida(recente.slug,lang)}]:[]\n+      : [{tipo:'semana',slug:'semana',peca:null}])),\n+    estudos:estudosRecentes(lang).slice(0,3).map(peca=>({tipo:'estudo',slug:peca.work.slug,peca})),\n+    integracao:itensSobreLinhas(FIGURAS_PDM.map(m=>m.claim),lang).map(peca=>({tipo:'discussao',slug:pec",
+   "contexto_depois": "cente?[{tipo:'explicacao',slug:recente.slug,peca:explicacaoResolvida(recente.slug,lang)}]:[]\n+      : [{tipo:'semana',slug:'semana',peca:null}])),\n+    estudos:estudosRecentes(lang).slice(0,4).map(peca=>({tipo:'estudo',slug:peca.work.slug,peca})),\n+    integracao:itensSobreLinhas(FIGURAS_PDM.map(m=>m.claim),lang).map(peca=>({tipo:'discussao',slug:pec"
+  },
+  {
+   "id": "C4",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a entrada do dossiê na caixa inglesa leva o leitor para a página do estudo e não para a do dossiê, e a contagem fica sem a sua porta",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7a2f06460425aef19aeb5501f1c0a9fdbd9f1a89690c92717af2a4cfc0e70c6f",
+   "sha256_depois": "179ee17d358df17ee21522985895959aa34e84cd48c2b454e09157fa3a762ce2",
+   "contexto_antes": "astro-cid-4n5gxwsk><span class=\"pp-novidade-dossie\" data-astro-cid-4n5gxwsk><span class=\"pp-novidade-tipo\" data-voz data-astro-cid-4n5gxwsk>Dossier</span> · <a href=\"/en/dossiers/orcamento-2027\" data-novidade-porta data-novidade-dossie=\"orcamento-2027\" data-astro-cid-4n5gxwsk><span data-dossie-campo=\"orcamento-2027:titulo\" data-astro-cid-4n5gxwsk>The <span class=\"data-da-",
+   "contexto_depois": "astro-cid-4n5gxwsk><span class=\"pp-novidade-dossie\" data-astro-cid-4n5gxwsk><span class=\"pp-novidade-tipo\" data-voz data-astro-cid-4n5gxwsk>Dossier</span> · <a href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\" data-novidade-porta data-novidade-dossie=\"orcamento-2027\" data-astro-cid-4n5gxwsk><span data-dossie-campo=\"orcamento-2027:titulo\" data-astro-cid-4n5gxwsk>The <span class=\"data-da-"
+  },
+  {
+   "id": "C5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «sete plantas» da E1 onde o relatório completo e os testes têm seis",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "86de316e29b0f6abe0f9a27d09cca94c5b9cc04de6392cd1bc1773b1b5ff02fa",
+   "sha256_depois": "4ff453df9b0560816ca5357f101d51cfb2c183b5340f95244e09e46f6b98027a",
+   "contexto_antes": "as. **A construção final passou com código `0`**, na cabeça `b0533f7fb`, com os 26 passos internos a `0`.\n\nMudaram duas réguas:\n\n- **E1:** usa a seleção comum; seis plantas recusam repetição, omissão e ordem trocada.\n- **Toques:** segue a entrada do dossiê até ao item; quatro plantas recusam alterações indevidas da presença e da p",
+   "contexto_depois": "as. **A construção final passou com código `0`**, na cabeça `b0533f7fb`, com os 26 passos internos a `0`.\n\nMudaram duas réguas:\n\n- **E1:** usa a seleção comum; sete plantas recusam repetição, omissão e ordem trocada.\n- **Toques:** segue a entrada do dossiê até ao item; quatro plantas recusam alterações indevidas da presença e da p"
+  }
+ ]
+}

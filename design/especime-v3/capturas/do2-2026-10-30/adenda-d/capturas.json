@@ -1,0 +1,552 @@
+{
+  "cabeca": "b0533f7fb497b6dc31910e21fbde1a3c7ce853d2",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "primeira-pagina-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8589,
+      "sha256": "f088b567ab427016a27caa96a53e9e2359839c1887ea2499b5f644505bcb3cfb",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 511
+          },
+          "sha256": "cc07ad6ce1ae1dbb784785ccbe980787a49a1336fe3e46f8280a0a543c42b9dd"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-390-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 5131,
+            "width": 354,
+            "height": 139
+          },
+          "sha256": "ad2ced9fea92c0a008cdd2de1438b5ee9ad11a78ff0fc83245aaf2836af1d5b8"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-390-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 6125,
+            "width": 354,
+            "height": 759
+          },
+          "sha256": "89812574c7dfbf99b3c43b47b9772c6ff6cecbe9dbe011573b767e7ca0a027bc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6789,
+      "sha256": "715eb50490a279424b2b41ff9bdf8c6cfceb8c663b26f5ba05d485f5a2590eda",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 488
+          },
+          "sha256": "dfe4951632c76f3bdac10c162f23c18afcd8907e8af3fefbcaef85f401b5d5d2"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-768-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 4265,
+            "width": 708,
+            "height": 112
+          },
+          "sha256": "1e99f8522b9cf80eb06bee33e20998a45a35c53ab464ed9ab5406f9b8da55fd3"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-768-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 4867,
+            "width": 708,
+            "height": 600
+          },
+          "sha256": "7144d6460c0819f188914d8e799283ce2098996fb8619c1d1a942549350d850e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5865,
+      "sha256": "c2ef49f919812e8b1c4443d0b3283709230eab5ffbb987f0b0c7e28ff602ae5c",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 332
+          },
+          "sha256": "50e38aa53ebe76bc14aaed9d21556e9fb95da8158f139ae07972fde0808a8284"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1024-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 3396,
+            "width": 737,
+            "height": 117
+          },
+          "sha256": "8d3e44d65a8523d31b9f190748f186400d64c4c2e1772b40cd95d70ab059a45e"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1024-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 3972,
+            "width": 944,
+            "height": 589
+          },
+          "sha256": "3cf7a8d5af4780642a2b0e2240310f532b7c70fe3247d6b01480a4103b1e97fe"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5776,
+      "sha256": "7ce041a9bccd1a241bb6ab503e7fc1085696ad2561425d39dde82f02515209c6",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "d2f6b10885ffa4962a86699cb1b08994c2addca4b2972fc58a62c031de3ca423"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1280-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 3241,
+            "width": 736,
+            "height": 119
+          },
+          "sha256": "28ea4ad98e5f9e6975a17d34388fa85c2d982e6c8a8033d1bbca4ed6cfc42568"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1280-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 3816,
+            "width": 1092,
+            "height": 599
+          },
+          "sha256": "85e2d46dbb0745266e1fc94989a690ab0f776fc5170fe0258a9e85bd377a12c6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5796,
+      "sha256": "c34208a6ab7965bac51b67c2e1d9c911ba913e758375112ab5e497763a549020",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 343
+          },
+          "sha256": "804c43ec821628297c7a0d98fd0f08ae5dbf15bedd65c02f876d52838312aac0"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1600-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 3247,
+            "width": 736,
+            "height": 119
+          },
+          "sha256": "f9f387f1d421054e78a2222158d76be87f0b3667a3429bebaab4b9e4ec02c96b"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1600-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 3824,
+            "width": 1092,
+            "height": 602
+          },
+          "sha256": "1b6e7320ad85e353387f9c4929a5ead11b470820cc5973d47be7e818330a7339"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8491,
+      "sha256": "00ba77c25a6555b160e1697a9d94cfec3bea93bd55a604116f7bfa30ecadd2f9",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 533
+          },
+          "sha256": "3f9783b60e2a05215bd1f8b330aa59deae2c4e04f65630d2d265c171bb4da6ca"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-390-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 5092,
+            "width": 354,
+            "height": 139
+          },
+          "sha256": "dcf9ff843e1b216920b50f9477f0da4826b16d77a639a16c8b25fbedf24460cd"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-390-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 6023,
+            "width": 354,
+            "height": 759
+          },
+          "sha256": "cb5c72b5d444e1325e76acf877fa76969a950e4419944f80ce3e48f3cb1cbf87"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6838,
+      "sha256": "377fa4ad54fed06aac4dee0a3cfcf7dc2f57dc1306ed78207a2f343f669025c3",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 488
+          },
+          "sha256": "e83a1324f88bd6b2aeab0414763ed67d42ac65423451077f65796bf00e7c80e1"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-768-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 4270,
+            "width": 708,
+            "height": 114
+          },
+          "sha256": "e67c4895414cc0937cd92d680c4c72d745f35b1b777271839aef27fe2b00fa4e"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-768-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 4873,
+            "width": 708,
+            "height": 624
+          },
+          "sha256": "325a3d4949aa7152dc4f2a5525b393b093bc729b95743471fb15e10101554810"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5953,
+      "sha256": "cc58b9c862d66e3057eb9ce884336cb6367c90edaa1d28dbf797f926a9e7ddff",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 355
+          },
+          "sha256": "bf11a8fd675e8660d08716f0ba6cd27d90dde0e5fc341016b75d621656a07d50"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1024-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 3481,
+            "width": 737,
+            "height": 118
+          },
+          "sha256": "6a4a04038a717d5197231c8603fdc2cc4599dcfab094ae50427ae5f4d0ee5442"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1024-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 4036,
+            "width": 944,
+            "height": 613
+          },
+          "sha256": "4179afd7a25005751f63031aafccbdf21bec520f19b049b41bb4219f4cbc6b12"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5810,
+      "sha256": "408565aa4aba4f5fbfdf9b1de92eb39a59f552d8ffc21fddcbd84537a7c85bcc",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "c566bcbbcdcd1eea9e79dc07470959a9f26809f12a594a95d9f5d9db56c3442a"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1280-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 3272,
+            "width": 736,
+            "height": 119
+          },
+          "sha256": "6abf887f3884b26e0dbad4f388332d08ab382a67b330e24d2dcbc64bcd6fa424"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1280-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 3827,
+            "width": 1092,
+            "height": 622
+          },
+          "sha256": "74de141bdfc62829321af3877df8370d53d2a1360fbda4608075eca2a1a7a960"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5806,
+      "sha256": "8e914a035359ad4ae55a86457cf9c9d7e8f8df7bb709769b0a4311bf8432e4d1",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 343
+          },
+          "sha256": "b47544e3744e37e9449725fe6ae0ab4f206db86b0dac9175ab48b65ad6280a0c"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1600-para-perceber.png",
+          "seletor": "[data-para-perceber]",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 3278,
+            "width": 736,
+            "height": 119
+          },
+          "sha256": "b24369070abe8f2dd812966b154504be492d754663a69b179728d7c3fe484f66"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1600-estudos.png",
+          "seletor": "#trabalhos",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 3835,
+            "width": 1092,
+            "height": 624
+          },
+          "sha256": "8ba6b12c834a166de8e7dc9002282e483c275474fde0372b208ab6ff30928afa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "aa52ae8abb3c3bbd817d40967b154552eadb9777e26f942cfa781e1768b1e514",
+    "index.html": "8c938295b7ce3cd93dd15f265beda030b49447a52a9de6266ab5226a1b29a5dc",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/primeira-pagina.CMN2HkuO.css": "0ea169c95e91d0746b201fe5d947c642560f2dac8a6ad57a200e966a61c2c44e",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/index.html": "7a2f06460425aef19aeb5501f1c0a9fdbd9f1a89690c92717af2a4cfc0e70c6f"
+  },
+  "falhas": [],
+  "ok": true
+}

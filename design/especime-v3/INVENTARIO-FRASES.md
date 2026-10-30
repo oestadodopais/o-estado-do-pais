@@ -4555,8 +4555,8 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | conteudo | 3 234 afirmações · 368 de 3 234 calculadas · 2 767 de 3 234 linhas de concelhos | ex3 | retirada | Contagem medida pela função da prova na terceira correção EX3; conferida contra o HTML pelos portões. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 | conteudo | 3 234 claims · 368 of 3 234 calculated · 2 767 of 3 234 municipality rows | ex3 | retirada | Contagem medida pela função da prova na terceira correção EX3; conferida contra o HTML pelos portões. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 
-| navegacao | O que se discute → | v2b | viva | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. |
-| navegacao | Under discussion → | v2b | viva | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. |
+| navegacao | O que se discute → | v2b | condicional-do2 | DO2-C: o título só se rende quando a seleção deixa entradas na discussão; conferirInicio confere a presença, o destino e as peças. |
+| navegacao | Under discussion → | v2b | condicional-do2 | DO2-C: o título só se rende quando a seleção deixa entradas na discussão; conferirInicio confere a presença, o destino e as peças. |
 | navegacao | A Saúde no Orçamento: que despesa se está a comparar? | v2b | retirada | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 | conteudo | A apresentação pública devia dar o mesmo destaque à despesa total consolidada e à despesa efetiva consolidada, com e sem o PRR. Dizer só a conta que sobe, ou só a que desce, é escolher o que o leitor fica a pensar. | v2b | retirada | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 | conteudo | A comparação | v2b | viva | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. |
@@ -5049,14 +5049,14 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | next reading on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | números do painel relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | o que se discute | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | o que se discute | fp1 | condicional-fp1 | DO2: só aparece se houver um item fora dos dossiês na caixa; conferirNovidades verifica a seleção e o texto. |
 | conteudo | próxima leitura a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | publicados pela fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | published by the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | read by this project on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | study | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | under discussion | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | under discussion | fp1 | condicional-fp1 | DO2: só aparece se houver um item fora dos dossiês na caixa; conferirNovidades verifica a seleção e o texto. |
 | conteudo | update | fp1 | condicional-fp1 | FP1-e: rótulo presente só quando a última entrada gera a peça; condição e texto conferidos por novidades.mjs. |
 | conteudo | Os números mais recentes são de | fp1 | viva | Período dos dados, sem repetir a data da construção. |
 | conteudo | The most recent figures are from | fp1 | viva | Período dos dados, sem repetir a data da construção. |
@@ -5277,12 +5277,12 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | estudo · Dossiê: | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
-| conteudo | explicação · Dossiê: | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
-| conteudo | o que se discute · Dossiê: | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
-| conteudo | study · Dossier: | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
-| conteudo | explainer · Dossier: | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
-| conteudo | under discussion · Dossier: | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
+| conteudo | estudo · Dossiê: | do1-d | retirada | DO2: as peças passam a ser representadas pela entrada única do dossiê. |
+| conteudo | explicação · Dossiê: | do1-d | retirada | DO2: as peças passam a ser representadas pela entrada única do dossiê. |
+| conteudo | o que se discute · Dossiê: | do1-d | retirada | DO2: as peças passam a ser representadas pela entrada única do dossiê. |
+| conteudo | study · Dossier: | do1-d | retirada | DO2: as peças passam a ser representadas pela entrada única do dossiê. |
+| conteudo | explainer · Dossier: | do1-d | retirada | DO2: as peças passam a ser representadas pela entrada única do dossiê. |
+| conteudo | under discussion · Dossier: | do1-d | retirada | DO2: as peças passam a ser representadas pela entrada única do dossiê. |
 | conteudo | A proposta de Orçamento do Estado para 2027: o que muda e para quem, para onde vai o dinheiro, o que se discute e o calendário. | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
 | conteudo | The proposed State Budget for 2027: what changes and for whom, where the money goes, what is under discussion and the calendar. | do1-d | viva | Forma construída, com o título ligado conferido pela pertença; leitura cruzada pendente. |
 
@@ -5297,6 +5297,24 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | conteudo | 4 141 afirmações · 520 de 4 141 calculadas · 2 767 de 4 141 linhas de concelhos | og1-b4 | viva | Contagem recolhida do HTML construído com a linha oficial da votação, pela adenda B. |
 | conteudo | 4 141 claims · 520 of 4 141 calculated · 2 767 of 4 141 municipality rows | og1-b4 | viva | Contagem recolhida do HTML construído com a linha oficial da votação, pela adenda B. |
 
+## DO2: uma entrada por dossiê
+
+| Classe | Frase | Bloco | Estado | Razão |
+|---|---|---|---|---|
+| conteudo | , a mais recente de | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | , the most recent from | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | Dossier | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | Dossier · , the most recent from | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | Dossiê | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | Dossiê · , a mais recente de | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | peças | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| navegacao | peças na página deste dossiê | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | pieces | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| navegacao | pieces on this dossier’s page | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| navegacao | textos em discussão na página deste dossiê | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+| conteudo | textos em discussão → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+| navegacao | texts under discussion on this dossier’s page | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+| conteudo | texts under discussion → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
 
 ## EV2: as contas da Câmara de Évora, edição de 29.10.2026
 

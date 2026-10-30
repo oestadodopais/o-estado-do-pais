@@ -2,11 +2,14 @@
 .dossie, .dossies-lista { max-width: var(--measure); }
 .dossies-lista { list-style: none; padding: 0; margin: 1.5rem 0; }
 .dossies-lista > li { border-top: 1px solid var(--rule); padding: 1.25rem 0; }
-.dossies-lista h2, .dossies-lista h3 { font-family: var(--f-prosa); font-size: 1.4rem; margin: 0 0 .65rem; }
+.dossies-lista h2, .dossies-lista h3 { font-family: var(--f-prosa); font-size: 1.4rem; line-height: 2; text-wrap: wrap; margin: 0 0 .65rem; }
 .dossie .estudo-meta, .dossies-lista .estudo-meta { display: block; }
 .dossie .pp-discussao { margin-top: 2rem; }
 .dossie-ligacao { margin: .75rem 0 1.25rem; }
 .discussao-cabecalho .dossie-ligacao { grid-column: 1 / -1; }
 .dossie .claim-sufixo { white-space: pre; }
 
-.dossies-lista h2 a, .dossies-lista h3 a, .dossie .explicacao-secao h3 a { display: block; min-height: 44px; }
+/* DO2-E: a vírgula continua a ligação na mesma linha de texto. O espaço
+   vertical da ligação conserva o alvo de toque também quando o título parte. */
+.dossies-lista h2 a, .dossies-lista h3 a { display: inline; padding-block: 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.dossie .explicacao-secao h3 a { display: block; min-height: 44px; }

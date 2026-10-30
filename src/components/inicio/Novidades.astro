@@ -1,8 +1,8 @@
 ---
-import { routePath } from '../../lib/routes.mjs';
+import { prova, CHAVE_DAS_PECAS_DO_DOSSIE } from '../../lib/prova.mjs';
 import { partesDoDossie } from '../../lib/dossies-conteudo.mjs';
 import Frase from '../Frase.astro';
-import { pecasPublicadas } from '../../lib/novidades.mjs';
+import { entradasDasNovidades } from '../../lib/novidades.mjs';
 import { carimboDaConstrucao } from '../../lib/construcao.mjs';
 import { VERIFICACAO } from '../../data/verificacao.mjs';
 import { t } from '../../i18n/strings.mjs';
@@ -14,7 +14,8 @@ import { htmlDaAtualizacao } from '../../lib/atualizacao-da-novidade.mjs';
 import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
 const { lang = 'pt' } = Astro.props;
 const r = FP1[lang];
-const pecas = pecasPublicadas(lang).slice(0,5);
+const pecas = entradasDasNovidades(lang);
+const provas = prova(lang), s = t(lang).dossies;
 const carimbo = carimboDaConstrucao();
 const dia = carimbo?.construido_em.slice(0,10);
 ---
@@ -22,10 +23,19 @@ const dia = carimbo?.construido_em.slice(0,10);
   <h2 class="pp-sec-k" id="novidades-k" data-voz>{r.titulo}</h2>
   <ol class="pp-novidades-lista">
     {pecas.map(e => <li data-novidade={e.id}>
+      {e.tipo === 'dossie' ? <span class="pp-novidade-dossie">
+        <span class="pp-novidade-tipo" data-voz>{s.singular}</span>{' · '}
+        <a href={e.rota} data-novidade-porta data-novidade-dossie={e.dossie.slug}><span data-dossie-campo={`${e.dossie.slug}:titulo`}><Frase partes={partesDoDossie(e.dossie.titulo[lang])} lang={lang} /></span>{' · '}<span class="prova-valor" data-prova={CHAVE_DAS_PECAS_DO_DOSSIE(e.dossie.slug)} title={provas[CHAVE_DAS_PECAS_DO_DOSSIE(e.dossie.slug)].origem}>{provas[CHAVE_DAS_PECAS_DO_DOSSIE(e.dossie.slug)].valor}</span>{' '}<span data-voz>{provas[CHAVE_DAS_PECAS_DO_DOSSIE(e.dossie.slug)].valor === 1 ? s.peca : s.pecas}</span></a><span data-voz>{provas[CHAVE_DAS_PECAS_DO_DOSSIE(e.dossie.slug)].valor === 1 ? s.de : s.maisRecenteDe}</span><time datetime={e.data} data-nonledger="data-editorial" data-data-origem={e.origem}>{dataDaCasa(e.data)}</time>
+      </span> : <>
       <time datetime={e.data} data-nonledger="data-editorial" data-data-origem={e.origem}>{dataDaCasa(e.data)}</time>
-      <span class="pp-novidade-tipo"><span data-voz>{r[e.tipo]}</span>{e.dossie && <>{' · '}{t(lang).dossies.ligacao}<a href={routePath('dossie',lang,{slug:e.dossie.slug})} data-novidade-dossie={e.dossie.slug}><span data-dossie-campo={`${e.dossie.slug}:titulo`}><Frase partes={partesDoDossie(e.dossie.titulo[lang])} lang={lang} /></span></a></>}</span>
-      {e.atualizacao ? <span data-correcao-entrada={e.atualizacao.claim}><a href={e.rota} data-novidade-porta set:html={htmlDaAtualizacao(e.atualizacao)} />{' '}<Provenance id={e.atualizacao.claim} lang={lang} inline /></span> : <a href={e.rota} data-novidade-porta>{e.edicao ? <TituloDeTrabalho edicao={e.edicao} lang={lang} /> : <FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} />}</a>}
+      <span class="pp-novidade-tipo"><span data-voz>{r[e.tipo]}</span></span>
+      {e.atualizacao ? <span data-correcao-entrada={e.atualizacao.claim}><a href={e.rota} data-novidade-porta set:html={htmlDaAtualizacao(e.atualizacao)} />{' '}<Provenance id={e.atualizacao.claim} lang={lang} inline /></span> : <a href={e.rota} data-novidade-porta>{e.edicao ? <TituloDeTrabalho edicao={e.edicao} lang={lang} /> : <FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} />}</a>}</>}
+
     </li>)}
   </ol>
   <p class="pp-data" data-atualizacao><span data-voz>{r.atualizado}</span>{' '}<time datetime={dia} data-nonledger="data-editorial" data-data-origem="version.construido_em">{dataDaCasa(dia)}</time>{' · '}<span data-voz>{r.relidos}</span>{' '}<time datetime={VERIFICACAO.verificadoEm} data-nonledger="data-editorial" data-data-origem="verificacao.verificadoEm">{dataDaCasa(VERIFICACAO.verificadoEm)}</time></p>
 </section>}
+
+<style>
+  .pp-novidade-dossie { grid-column: 1 / -1; }
+</style>
