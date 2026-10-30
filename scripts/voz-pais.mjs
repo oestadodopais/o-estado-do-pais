@@ -63,7 +63,7 @@ export function conferirSinopse(resumo, w, lang) {
   return !esperado || texto(resumo) !== esperado ? [`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`] : [];
 }
 
-export function verificaVozPais(raiz) {
+export function verificaVozPais(raiz, documentos = new Map()) {
   const erros = [];
   for (const lang of ['pt','en']) {
     /* A LEITURA APROVADA SAIU COM O BLOCO PP1 (28.09.2026): a primeira página deixou de ter a frase
@@ -72,7 +72,7 @@ export function verificaVozPais(raiz) {
        lista depois de a célula da primeira página os conferir, logo abaixo. */
     const s = t(lang);
     for (const rota of lang === 'pt' ? ['', 'temas'] : ['en','en/themes']) {
-      const main = parse(fs.readFileSync(path.join(raiz,'dist',rota,'index.html'),'utf8')).querySelector('main');
+      const main = parse(documentos.get(rota) ?? fs.readFileSync(path.join(raiz,'dist',rota,'index.html'),'utf8')).querySelector('main');
       const primeira = rota === '' || rota === 'en';
       /* N1: o cartão das câmaras vive nos lugares e é conferido pela V2 e pela K17. */
 
@@ -134,6 +134,7 @@ export function verificaVozPais(raiz) {
       for (const no of do1.nos) dispensados.add(no);
       const permitidos = new Set([
         ...Object.entries(ROTULOS_B1[lang]).filter(([k])=>k.startsWith('dossie')).map(([,v])=>v), s.dossies.recente,
+        ...['singular','peca','pecas','de','maisRecenteDe','textoEmDiscussao','textosEmDiscussao'].map(k=>s.dossies[k]),
         /* Só os rótulos destas páginas. O olho dos lugares continua declarado,
            mas não pode voltar à página do país. */
         ...['pais', 'temas', 'estudosRecentes', 'mudou', 'publicado', 'estudoPublicado',

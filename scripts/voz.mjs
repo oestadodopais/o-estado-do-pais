@@ -240,10 +240,10 @@ const CLASSES_DO_INVENTARIO = new Set(['conteudo', 'navegacao', 'autorreferencia
  * fecha na mesma. As linhas `viva` levam `—`.
  */
 const ESTADOS_DO_INVENTARIO = new Set(['viva', 'retirada']);
-// FP1-e: só estes dois rótulos dependem da presença da peça de atualização;
+// FP1-e e DO2: rótulos dependentes da atualização ou de itens fora de dossiês;
 // conferirNovidades verifica a condição, a origem e o texto em cada primeira página.
 export function estadoDoInventario(cru,bloco,texto) {
-  if (cru==='condicional-fp1') return bloco==='fp1' && ['atualização','update'].includes(texto) ? cru : null;
+  if (cru==='condicional-fp1') return bloco==='fp1' && ['atualização','update','o que se discute','under discussion'].includes(texto) ? cru : null;
   return ESTADOS_DO_INVENTARIO.has(cru) ? cru : null;
 }
 

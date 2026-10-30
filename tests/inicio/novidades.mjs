@@ -155,8 +155,9 @@ if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[
   plantas.push({nome:'quatro peças dão uma entrada, conservam a data e a peça exterior e deixam cinco entradas',mordeu:true});
   assert.equal(estadoDoInventario('condicional-fp1','fp1','update'),'condicional-fp1');
   assert.equal(estadoDoInventario('condicional-fp1','outro','update'),null);
+  for(const tipo of ['o que se discute','under discussion']) {assert.equal(estadoDoInventario('condicional-fp1','fp1',tipo),'condicional-fp1');assert.equal(estadoDoInventario('condicional-fp1','do2',tipo),null);}
   assert.equal(estadoDoInventario('condicional-fp1','fp1','texto arbitrário'),null);
-  plantas.push({nome:'condição do inventário limitada aos dois rótulos FP1',mordeu:true});
+  plantas.push({nome:'condição do inventário limitada aos rótulos condicionais FP1',mordeu:true});
   const palavra=PALAVRAS_PROIBIDAS.find(p=>p.chave==='lido na fonte a');
   assert(palavra.marca.test('read at the source on'));
   assert(!palavra.marca.test(FP1.en.relidos));

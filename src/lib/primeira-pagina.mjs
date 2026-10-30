@@ -711,5 +711,5 @@ export function estudosDaEntrada(entrada, lang) {
  * @param {string} entrada @param {'pt'|'en'} lang */
 export function estudosAvulsosDaEntrada(entrada, lang) {
   const dossies = new Set(DOSSIES.filter(d => d.portas.includes(entrada)).map(d => d.slug));
-  return estudosDaEntrada(entrada, lang).filter(e => !dossies.has(dossieDaPeca('estudo', e.work.slug)?.slug));
+  return estudosDaEntrada(entrada, lang).filter(e => {const d = dossieDaPeca('estudo', e.work.slug); return !d || !dossies.has(d.slug);});
 }
