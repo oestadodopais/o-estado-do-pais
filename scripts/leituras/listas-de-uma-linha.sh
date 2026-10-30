@@ -7,10 +7,10 @@ set -u
 W="$1"; ID="$2"; TITULO="${3:-}"; FICHEIRO="${4:-}"
 cd "$W" || exit 9
 excluir='^(ledger/|design/especime-v3/medicoes/|design/especime-v3/critica/|tests/discussao/palavras\.json$)'
-echo "pelo id «$ID»:"; git grep -I -l -F -- "$ID" HEAD -- . | sed 's#^HEAD:##' | grep -v -E "$excluir" | sed 's/^/  /'
-if [ -n "$TITULO" ]; then echo "pelo título «$TITULO»:"; git grep -I -l -F -- "$TITULO" HEAD -- . | sed 's#^HEAD:##' | grep -v -E "$excluir" | sed 's/^/  /'; fi
-if [ -n "$FICHEIRO" ]; then echo "pelo ficheiro «$FICHEIRO»:"; git grep -I -l -F -- "$FICHEIRO" HEAD -- . | sed 's#^HEAD:##' | grep -v -E "$excluir" | sed 's/^/  /'; fi
-echo "as entradas de SEM_AREA (src/data/areas.mjs) cuja expressão apanha «$ID»:"
+echo "pelo id «${ID}»:"; git grep -I -l -F -- "$ID" HEAD -- . | sed 's#^HEAD:##' | grep -v -E "$excluir" | sed 's/^/  /'
+if [ -n "$TITULO" ]; then echo "pelo título «${TITULO}»:"; git grep -I -l -F -- "$TITULO" HEAD -- . | sed 's#^HEAD:##' | grep -v -E "$excluir" | sed 's/^/  /'; fi
+if [ -n "$FICHEIRO" ]; then echo "pelo ficheiro «${FICHEIRO}»:"; git grep -I -l -F -- "$FICHEIRO" HEAD -- . | sed 's#^HEAD:##' | grep -v -E "$excluir" | sed 's/^/  /'; fi
+echo "as entradas de SEM_AREA (src/data/areas.mjs) cuja expressão apanha «${ID}»:"
 node -e '
 const fs=require("fs"); const s=fs.readFileSync("src/data/areas.mjs","utf8"); const id=process.argv[1];
 const re=/id:\s*(\/(?:\\\/|[^\/\n])+\/[a-z]*)/g; let m, n=0;
