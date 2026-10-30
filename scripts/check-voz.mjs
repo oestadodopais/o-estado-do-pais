@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { conferirSuperficieDossies } from './dossies-superficie.mjs';
+import { DOSSIES } from '../src/data/dossies.mjs';
 /**
  * O PORTÃO DA VOZ · «o sítio a explicar-se» deixa de depender de um leitor.
  *
@@ -756,6 +758,7 @@ for (const e of ENTRADAS.filter((x) => !('existente' in x && x.existente))) {
    em que o texto saiu do inventário. Uma página dessas que não exista também fecha: sem ela, a célula não conferiu nada. */
 {
   const paginasEX1 = [
+    ...DOSSIES.flatMap(d=>[['pt',`dossies/${d.slug}/index.html`,'dossie',d.slug],['en',`en/dossiers/${d.slug}/index.html`,'dossie',d.slug]]),
     ['pt', 'index.html', 'home', undefined], ['en', 'en/index.html', 'home', undefined],
     ['pt', 'indice/index.html', 'indice', undefined], ['en', 'en/index/index.html', 'indice', undefined],
     ['pt', 'explicacoes/index.html', 'explicacoes', undefined], ['en', 'en/explainers/index.html', 'explicacoes', undefined],
@@ -768,6 +771,7 @@ for (const e of ENTRADAS.filter((x) => !('existente' in x && x.existente))) {
     if (!fs.existsSync(caminho)) { erros.push(`EX1: a página ${ficheiro} não existe na construção, e a régua das frases tira-lhe as palavras declaradas.`); continue; }
     const raiz = parse(fs.readFileSync(caminho, 'utf8'));
     const l = /** @type {'pt'|'en'} */ (lingua);
+    if(rota==='dossie')erros.push(...conferirSuperficieDossies(raiz,l,String(ficheiro)).erros);
     if (raiz.querySelector('[data-explicacao-declarado]')) for (const x of conferirPalavrasDaExplicacaoNaPagina(raiz, l, String(rota), slug)) erros.push(`as palavras de uma explicação só saem do inventário conferidas, e a célula da explicação recusou-as em ${ficheiro}: ${x}`);
     if (raiz.querySelector('[data-semana-declarado]') || ['indice', 'leituraDaSemana'].includes(String(rota))) for (const x of conferirPalavrasDaSemanaNaPagina(raiz, l, String(rota), DIST)) erros.push(`as frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em ${ficheiro}: ${x}`);
     conferidas++;

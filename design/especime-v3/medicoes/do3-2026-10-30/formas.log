@@ -1,0 +1,21 @@
+
+> o-estado-do-pais@0.1.0 check:formas
+> node scripts/check-formas.mjs
+
+PLANTA edição 2024-02-29: V2A data: dia completo aceite
+PLANTA edição 2026-10-10: V2A data: dia completo aceite
+PLANTA edição 2026-02-29: V2A data: edição não convertida em data
+PLANTA edição 2026-04-31: V2A data: edição não convertida em data
+PLANTA edição 2025-12: V2A data: edição não convertida em data
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+file://<worktree>/scripts/check-formas.mjs:1652
+for (const lang of ['pt', 'en']) if (rota.key==='dossie' || !plantasEX1.some((p) => p.lang === lang && p.de !== 'presenca')) err(`F22 · as plantas das barras das explicações não correram na edição ${lang}: nenhuma figura vista`);
+                                 ^
+
+ReferenceError: rota is not defined
+    at file://<worktree>/scripts/check-formas.mjs:1652:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

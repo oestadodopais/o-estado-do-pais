@@ -1,0 +1,302 @@
+[
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "Em resumo",
+    "palavras": 624,
+    "figuras_com_selo": 23,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 23
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que este projeto conclui",
+    "palavras": 945,
+    "figuras_com_selo": 39,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 39
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que muda para quem trabalha por conta de outrem",
+    "palavras": 999,
+    "figuras_com_selo": 30,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 30
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que muda para quem ganha o salário mínimo e para quem trabalha para o Estado",
+    "palavras": 633,
+    "figuras_com_selo": 11,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 11
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que muda para quem recebe pensão",
+    "palavras": 416,
+    "figuras_com_selo": 4,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 4
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que muda para quem arrenda ou compra casa",
+    "palavras": 391,
+    "figuras_com_selo": 2,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 2
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que muda para as empresas",
+    "palavras": 524,
+    "figuras_com_selo": 9,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 9
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento",
+    "palavras": 795,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 79,
+    "valores": 79,
+    "selos": 59
+  },
+  {
+    "lang": "pt",
+    "grupo": "subsecção da explicação",
+    "titulo": "Por função, como o mapa a escreve",
+    "palavras": 150,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 30,
+    "valores": 30,
+    "selos": 20
+  },
+  {
+    "lang": "pt",
+    "grupo": "subsecção da explicação",
+    "titulo": "Sem as operações relacionadas com a dívida pública",
+    "palavras": 170,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 25,
+    "valores": 25,
+    "selos": 15
+  },
+  {
+    "lang": "pt",
+    "grupo": "subsecção da explicação",
+    "titulo": "O que muda da lei de 2026 para a proposta de 2027",
+    "palavras": 143,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 13,
+    "valores": 13,
+    "selos": 13
+  },
+  {
+    "lang": "pt",
+    "grupo": "subsecção da explicação",
+    "titulo": "A Saúde: a função e o programa",
+    "palavras": 64,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 2,
+    "valores": 2,
+    "selos": 2
+  },
+  {
+    "lang": "pt",
+    "grupo": "subsecção da explicação",
+    "titulo": "O que isto não diz",
+    "palavras": 147,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 1,
+    "valores": 1,
+    "selos": 1
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O que se discute",
+    "palavras": 237,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 5,
+    "valores": 7,
+    "selos": 5
+  },
+  {
+    "lang": "pt",
+    "grupo": "secção",
+    "titulo": "O calendário",
+    "palavras": 6,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 1
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "In brief",
+    "palavras": 602,
+    "figuras_com_selo": 23,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 23
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "What this project concludes",
+    "palavras": 924,
+    "figuras_com_selo": 39,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 39
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "What changes for employees",
+    "palavras": 1040,
+    "figuras_com_selo": 30,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 30
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "What changes for those on the minimum wage and for those who work for the State",
+    "palavras": 629,
+    "figuras_com_selo": 11,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 11
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "What changes for pensioners",
+    "palavras": 410,
+    "figuras_com_selo": 4,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 4
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "What changes for those who rent or buy a home",
+    "palavras": 379,
+    "figuras_com_selo": 2,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 2
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "What changes for companies",
+    "palavras": 535,
+    "figuras_com_selo": 9,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 9
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "Where the State’s money goes in 2027, by the Budget proposal",
+    "palavras": 718,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 79,
+    "valores": 79,
+    "selos": 59
+  },
+  {
+    "lang": "en",
+    "grupo": "subsecção da explicação",
+    "titulo": "By function, as the map writes it",
+    "palavras": 127,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 30,
+    "valores": 30,
+    "selos": 20
+  },
+  {
+    "lang": "en",
+    "grupo": "subsecção da explicação",
+    "titulo": "Without the operations related to public debt",
+    "palavras": 150,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 25,
+    "valores": 25,
+    "selos": 15
+  },
+  {
+    "lang": "en",
+    "grupo": "subsecção da explicação",
+    "titulo": "What changes from the 2026 law to the 2027 proposal",
+    "palavras": 135,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 13,
+    "valores": 13,
+    "selos": 13
+  },
+  {
+    "lang": "en",
+    "grupo": "subsecção da explicação",
+    "titulo": "Health: the function and the programme",
+    "palavras": 59,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 2,
+    "valores": 2,
+    "selos": 2
+  },
+  {
+    "lang": "en",
+    "grupo": "subsecção da explicação",
+    "titulo": "What this does not say",
+    "palavras": 138,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 1,
+    "valores": 1,
+    "selos": 1
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "Under discussion",
+    "palavras": 209,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 5,
+    "valores": 7,
+    "selos": 5
+  },
+  {
+    "lang": "en",
+    "grupo": "secção",
+    "titulo": "The calendar",
+    "palavras": 6,
+    "figuras_com_selo": 0,
+    "valores_com_selo": 0,
+    "valores": 0,
+    "selos": 1
+  }
+]

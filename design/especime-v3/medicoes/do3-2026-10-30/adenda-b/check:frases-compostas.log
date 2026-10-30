@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:frases-compostas
+> node tests/explicacoes/frases-compostas.mjs
+
+V2B DO2 pt: 2 plantas da presença e da porta recusadas.
+V2B DO2 en: 2 plantas da presença e da porta recusadas.
+V2B · 474 caminhos por clique conferidos a 390 px.
+FC · 36 passagem(ns) em 18 páginas, 5344 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela; 76 de 76 plantas no navegador.

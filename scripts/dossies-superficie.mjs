@@ -1,3 +1,4 @@
+import { conferirLeitura } from '../tests/dossies/leitura.mjs';
 import { t } from '../src/i18n/strings.mjs';
 /** DO1-A: só saem da contagem os nós cuja declaração foi conferida inteira. */
 import { DOSSIES } from '../src/data/dossies.mjs';
@@ -17,6 +18,12 @@ export function dossieDaPagina(pagina,lang) {
 export function conferirSuperficieDossies(root,lang,pagina) {
  const erros=[],nos=new Set(), main=root.rawTagName==='main'?root:root.querySelector('main');
  if(!main)return {erros,nos};
+ const dossie=dossieDaPagina(pagina,lang);
+ if(dossie) {
+  const falhas=conferirLeitura(root,dossie,lang);erros.push(...falhas);
+  if(!falhas.length)for(const n of main.querySelectorAll('[data-dossie-indice] li a, [data-dossie-seccao]'))nos.add(n);
+ }
+
  for(const n of main.querySelectorAll('[data-dossie-campo]')) {
   const [slug,campo]=n.getAttribute('data-dossie-campo').split(':');
   const d=DOSSIES.find(d=>d.slug===slug), esperado=d?.[campo]?.[lang];

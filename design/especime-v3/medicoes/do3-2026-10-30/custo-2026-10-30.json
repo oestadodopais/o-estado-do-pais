@@ -1,0 +1,104 @@
+{
+ "bloco": "DO3 (uma página para o Orçamento: a página do dossiê lê-se de cima a baixo)",
+ "data": "2026-10-30",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "DO3 (a página do Orçamento lida de cima a baixo; parou no limite das 120 chamadas com o build inteiro vermelho na discussão, corrigida e repetida a 0)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-30T15:32:38Z",
+   "fim": "2026-10-30T16:46:20Z",
+   "pontos": 3.0,
+   "pontos_antes": 18.0,
+   "pontos_depois": 21.0,
+   "turnos": 123,
+   "chamadas_de_ferramenta": 120,
+   "simbolos_entrada": 17764197,
+   "simbolos_cache": 17557632,
+   "simbolos_saida": 75288,
+   "simbolos_raciocinio": 35599,
+   "contexto_medio": 144424,
+   "fonte": "a linha PONTOS do LANCADOR-do3.log e o relatório RELATORIO-do3.md"
+  },
+  {
+   "nome": "DO3-a (a adenda A: os dois vermelhos da corrida inteira, check:mortos e a K8)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-30T17:25:22Z",
+   "fim": "2026-10-30T17:36:10Z",
+   "pontos": 0.0,
+   "pontos_antes": 21.0,
+   "pontos_depois": 21.0,
+   "turnos": 28,
+   "chamadas_de_ferramenta": 27,
+   "simbolos_entrada": 2231663,
+   "simbolos_cache": 2194304,
+   "simbolos_saida": 10327,
+   "simbolos_raciocinio": 4300,
+   "contexto_medio": 79702,
+   "fonte": "a linha PONTOS do LANCADOR-do3-a.log e o relatório RELATORIO-do3-a.md"
+  },
+  {
+   "nome": "DO3-b (a adenda B: o estudo nomeado, as dobras conferidas, as portas da explicação)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-30T17:40:30Z",
+   "fim": "2026-10-30T18:08:48Z",
+   "pontos": 1.0,
+   "pontos_antes": 21.0,
+   "pontos_depois": 22.0,
+   "turnos": 51,
+   "chamadas_de_ferramenta": 49,
+   "simbolos_entrada": 6946749,
+   "simbolos_cache": 6897024,
+   "simbolos_saida": 30146,
+   "simbolos_raciocinio": 14146,
+   "contexto_medio": 136210,
+   "fonte": "a linha PONTOS do LANCADOR-do3-b.log e o relatório RELATORIO-do3-b.md"
+  }
+ ],
+ "pontos_codex_total": 4.0,
+ "leituras": [
+  {
+   "nome": "DO3 (leitura a frio)",
+   "leitor": "Claude Opus 5.5 (leitor)",
+   "inicio": "2026-10-30T17:26Z",
+   "fim": "2026-10-30T17:39Z",
+   "chamadas_de_ferramenta": 51,
+   "simbolos": 184204,
+   "segundos": 782,
+   "plantas": "5 em 5",
+   "fonte": "a notificação da tarefa do agente"
+  },
+  {
+   "nome": "DO3-b (leitura curta M48 das adendas A e B)",
+   "leitor": "Claude Opus 5.5 (leitor)",
+   "inicio": "2026-10-30T18:09Z",
+   "fim": "2026-10-30T18:18Z",
+   "chamadas_de_ferramenta": 37,
+   "simbolos": 141788,
+   "segundos": 521,
+   "plantas": "5 em 5",
+   "fonte": "a notificação da tarefa do agente"
+  }
+ ],
+ "corrida_inteira": {
+  "pasta": "_aterragens/do3-conferir-2026-10-30-a",
+  "cabeca": "a44c8f5ce",
+  "passos": 54,
+  "vermelhos": 2,
+  "segundos": 2151,
+  "modo": "--build",
+  "nota": "os dois vermelhos (check:mortos, check:cartao K8) corrigidos pela adenda A, com check:mortos, check:cartao e o build inteiro a 0"
+ },
+ "lugar_de_direcao": "Claude Opus 5.5 (o contador «Fable only» acabou às 10:09 UTC)",
+ "conferencia_final": {
+  "comando": "npm run check:cartao",
+  "cabeca": "b12e68515",
+  "codigo": 0,
+  "quem": "o lugar de direção, depois da leitura curta (o seu Minor 8)"
+ }
+}

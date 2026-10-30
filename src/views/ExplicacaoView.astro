@@ -18,20 +18,16 @@ import PortaDoEstudoEO1 from '../components/PortaDoEstudoEO1.astro';
  * autorreferência continua a lê-las. A mobília da página (o título de «O que isto não diz», o da lista dos
  * números de uma figura, a porta) é da casa e está no inventário.
  */
+import CorpoDaExplicacao from '../components/explicacoes/CorpoDaExplicacao.astro';
 import Base from '../layouts/Base.astro';
-import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
 /* EX4-c (21.10.2026): a porta do fim para um estudo leva o título como a casa o dá a um estudo, com a marca e a língua. */
-import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
-import BarrasDoLivro from '../components/formas/BarrasDoLivro.astro';
 import { explicacaoResolvida } from '../lib/explicacoes.mjs';
 import { routePath } from '../lib/routes.mjs';
-import { t } from '../i18n/strings.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 import '../styles/explicacoes.css';
 
 const { slug, lang = 'pt' } = Astro.props;
-const s = t(lang);
 const e = explicacaoResolvida(slug, lang);
 const path = routePath('explicacao', lang, { slug });
 ---
@@ -40,31 +36,7 @@ const path = routePath('explicacao', lang, { slug });
   <article class="explicacao" data-explicacao={slug}>
     <h1 class="explicacao-titulo" data-explicacao-titulo={slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h1>
     <LigacaoDoDossie tipo="explicacao" slug={slug} lang={lang} />
-    {e.abertura.map((p) => (
-      <p class="explicacao-p explicacao-abertura" data-explicacao-paragrafo={p.caminho} data-explicacao-declarado><FraseDaExplicacao partes={p.pedacos} lang={lang} /></p>
-    ))}
-    {e.seccoes.map((sec) => (
-      <section class="explicacao-secao" data-explicacao-secao={sec.id} aria-labelledby={`explicacao-${sec.id}`}>
-        <h2 class="explicacao-secao-titulo" id={`explicacao-${sec.id}`} data-explicacao-declarado><FraseDaExplicacao partes={sec.tituloPedacos} lang={lang} selos={false} /></h2>
-        {sec.blocos.map((b) => b.tipo === 'figura'
-          ? <BarrasDoLivro modelo={b.modelo} lang={lang} explicacao={slug} />
-          : <p class="explicacao-p" data-explicacao-paragrafo={b.caminho} data-explicacao-declarado><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
-        <PortasDaDiscussao lang={lang} linhas={sec.blocos.flatMap(b => b.tipo === 'figura' ? [] : b.pedacos.flatMap(p => typeof p === 'string' ? [] : 'claim' in p ? [p.claim] : 'data' in p ? [p.data.id] : 'literal' in p ? [p.literal.id] : []))} tematica={slug === 'dinheiro-do-estado-2026' && sec.id === 'por-funcao'} />
-      </section>
-    ))}
-    {e.naoDiz.length > 0 && (
-      <section class="explicacao-secao explicacao-nao-diz" data-explicacao-secao="o-que-nao-diz" aria-labelledby="explicacao-o-que-nao-diz">
-        <h2 class="explicacao-secao-titulo" id="explicacao-o-que-nao-diz" data-explicacao-declarado>{s.explicacoes.oQueIstoNaoDiz}</h2>
-        {e.naoDiz.map((p) => (
-          <p class="explicacao-p" data-explicacao-paragrafo={p.caminho} data-explicacao-declarado><FraseDaExplicacao partes={p.pedacos} lang={lang} /></p>
-        ))}
-      </section>
-    )}
-    {/* AS PORTAS DO FIM (EX1-b, 06.10.2026): as que a explicação declara, pela ordem dela; os números e as fontes sempre, e,
-        nesta, a página do tema «Estado e economia» (a decisão do lugar de direção sobre a I212). */}
-    <p class="regra-portas explicacao-portas" data-explicacao-portas>
-      {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.partes ? <FraseDaExplicacao partes={p.partes} lang={lang} selos={false} /> : p.rota === 'estudo' ? <TituloDeTrabalho titulo={p.texto} lang={lang} /> : p.texto} →</a></>)}
-    </p>
+    <CorpoDaExplicacao e={e} lang={lang} />
     {slug === 'dinheiro-do-estado-2026' && <PortaDoEstudoEO1 lang={lang} />}
   </article>
 </Base>

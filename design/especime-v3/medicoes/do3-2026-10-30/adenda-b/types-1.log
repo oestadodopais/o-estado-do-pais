@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/dossie-leitura.mjs(63,78): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/lib/dossie-leitura.mjs(63,137): error TS7006: Parameter '_' implicitly has an 'any' type.
+src/lib/dossie-leitura.mjs(63,139): error TS7006: Parameter 'fim' implicitly has an 'any' type.
+src/lib/dossie-leitura.mjs(63,143): error TS7006: Parameter 'n' implicitly has an 'any' type.

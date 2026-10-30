@@ -1,0 +1,37 @@
+
+> o-estado-do-pais@0.1.0 cartoes
+> node scripts/cartoes.mjs
+
+[90m  cartões · lote 1 de 28 · 200 PNG escritos até aqui[0m
+[90m  cartões · lote 2 de 28 · 400 PNG escritos até aqui[0m
+[90m  cartões · lote 3 de 28 · 600 PNG escritos até aqui[0m
+[90m  cartões · lote 4 de 28 · 800 PNG escritos até aqui[0m
+[90m  cartões · lote 5 de 28 · 1000 PNG escritos até aqui[0m
+[90m  cartões · lote 6 de 28 · 1200 PNG escritos até aqui[0m
+[90m  cartões · lote 7 de 28 · 1400 PNG escritos até aqui[0m
+[90m  cartões · lote 8 de 28 · 1600 PNG escritos até aqui[0m
+[90m  cartões · lote 9 de 28 · 1800 PNG escritos até aqui[0m
+[90m  cartões · lote 10 de 28 · 2000 PNG escritos até aqui[0m
+[90m  cartões · lote 11 de 28 · 2200 PNG escritos até aqui[0m
+[90m  cartões · lote 12 de 28 · 2400 PNG escritos até aqui[0m
+[90m  cartões · lote 13 de 28 · 2600 PNG escritos até aqui[0m
+[90m  cartões · lote 14 de 28 · 2800 PNG escritos até aqui[0m
+[90m  cartões · lote 15 de 28 · 3000 PNG escritos até aqui[0m
+[90m  cartões · lote 16 de 28 · 3200 PNG escritos até aqui[0m
+[90m  cartões · lote 17 de 28 · 3400 PNG escritos até aqui[0m
+[90m  cartões · lote 18 de 28 · 3600 PNG escritos até aqui[0m
+[90m  cartões · lote 19 de 28 · 3800 PNG escritos até aqui[0m
+[90m  cartões · lote 20 de 28 · 4000 PNG escritos até aqui[0m
+[90m  cartões · lote 21 de 28 · 4200 PNG escritos até aqui[0m
+[90m  cartões · lote 22 de 28 · 4400 PNG escritos até aqui[0m
+[90m  cartões · lote 23 de 28 · 4600 PNG escritos até aqui[0m
+[90m  cartões · lote 24 de 28 · 4800 PNG escritos até aqui[0m
+[90m  cartões · lote 25 de 28 · 5000 PNG escritos até aqui[0m
+[90m  cartões · lote 26 de 28 · 5200 PNG escritos até aqui[0m
+[90m  cartões · lote 27 de 28 · 5400 PNG escritos até aqui[0m
+[90m  cartões · lote 28 de 28 · 5504 PNG escritos até aqui[0m
+[90m
+  cartões · 2752 cartões × 2 medidas = 5504 PNG e 5504 registos · 97.11 MB · 20857 medições de texto · 94.0s[0m
+[90m  paleta · 5504 de 5504 PNG em paleta exacta (tipo de cor 3), no máximo 88 cores num cartão · 0 em RGBA[0m
+  [32m✓[0m os cartões estão em dist/cartoes/, e o portão vai conferi-los.
+

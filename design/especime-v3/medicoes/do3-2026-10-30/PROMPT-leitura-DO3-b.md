@@ -1,0 +1,15 @@
+# The short read (M48) of the DO3 corrections, 30.10.2026
+
+Reader: Claude Opus 5.5 (`leitor`). Read `PROMPT-COMUM.md` in this package first and follow it to the letter, including item 10 (the quotations table: these corrections reprint no new quotation; say so in one line). Then this section. This is a short read of two correction passes on block DO3 (the 2027 Budget dossier as one page), after the cold read (`LEITURA-ANTERIOR.md`, five plants in five). The block's mandate is `MANDATO-DO3.md`; the corrections are `ADENDA-A.md` (the two reds of the director's full run: an unused `s` in `src/views/ExplicacaoView.astro`, and the K8 ruler of `tests/cartao/cartao.mjs`, which now strips, on the dossier route, the same literal citations of the study sections it strips on the study route) and `brief.md` (addendum B: the study named before its sections, «Do estudo: ⟦title⟧» / «From the study: ⟦title⟧», with the sections as subsections; the comparison of the inlined sections widened to the whole section, folds included, and the voice rulers dropping only what it compared; the explainer printed on the dossier without its end doors). The builder's final report is `relatorio-construtor.md`. The diff is `diff.patch` (base `__BASE_SITIO__`, the head the cold read saw; head `__CABECA_SITIO__`). Built pages under `built/`: the dossier page, the study page and the explainer page, in both editions.
+
+## The five questions
+
+1. **K8.** Does it still count «Governo Constitucional» / «Constitutional Government» in the house's prose and require exactly 1 per edition, stripping on the dossier route only a citation that is literally equal to its ledger excerpt, and does its plant (the expression outside a checked citation on the dossier page) bite?
+2. **The study named.** Is there, before the first study section, a section title «Do estudo: …» / «From the study: …» with the study's title read from the data (not typed), linked to the study page and listed in the index; are the seven study sections now its subsections, with their text unchanged; does «este estudo» now read as the named study?
+3. **The folds.** Does the comparison of each inlined section now cover the whole section as the study page prints it (blocks and «Fontes deste parágrafo» folds), and do the voice and house-sentence rulers drop from their surface only what that comparison checked? Do the three plants bite (a house sentence in a fold, a swapped fold link, a text node between blocks)? Did any ruler protecting a number, a source or a person get weaker?
+4. **The explainer's end doors.** Are they gone from the dossier page and still on the explainer page?
+5. **Nothing else moved, and the numbers reproduce.** No figure, no study or explainer text, no ledger row; the counts in the report reproduce (say which ones a file backs).
+
+Then the editor's question: would an editor of a Portuguese daily publish the dossier page, in both editions, as it stands now?
+
+Budget: at most 45 tool calls. Write nothing but your report.

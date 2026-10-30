@@ -1,0 +1,21 @@
+{
+  "corridas_dirigidas": 15,
+  "build_integral": 1,
+  "registos": [
+    "explicacoes.codigo",
+    "css.codigo",
+    "lugar.codigo",
+    "html.codigo",
+    "dossies-3.codigo",
+    "types-3.codigo",
+    "discussao.codigo",
+    "dossies-1.codigo",
+    "types-1.codigo",
+    "dossies-4.codigo",
+    "types-2.codigo",
+    "dossies-2.codigo",
+    "voz.codigo",
+    "check:frases-compostas.codigo",
+    "check:alvos.codigo"
+  ]
+}

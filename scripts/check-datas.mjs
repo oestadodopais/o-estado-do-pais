@@ -327,9 +327,11 @@ function orfas(rota, doc, presasAqui) {
 function prendeNoDossie(rota, doc) {
   const d = DOSSIES_POR_ROTA.get(rota);
   if (!d) return false;
-  const slugs = doc.querySelectorAll('[data-estudo-edicao]').map(n => n.getAttribute('data-estudo-edicao').split('/')[0]);
-  if (JSON.stringify([...slugs].sort()) !== JSON.stringify([...d.pecas.estudos].sort())) falhas.push(`${rota}: estudos diferentes dos declarados no dossiê.`);
-  prendeEdicoesB1(rota, doc, null, d.pecas.estudos.length);
+  const lang=rota.startsWith('/en/')?'en':'pt';
+  const edicoes=doc.querySelectorAll('[data-registo-edicao]');
+  if(JSON.stringify(edicoes.map(n=>n.getAttribute('data-registo-edicao')))!==JSON.stringify(d.pecas.estudos.map(s=>`${s}/${lang}`)))falhas.push(`${rota}: edições recortadas diferentes das declaradas.`);
+  // O cartão e a sua data saíram. Uma data de publicação avulsa continua recusada.
+  if(doc.querySelector('[data-estudo-edicao]') || doc.querySelector(SELETOR))falhas.push(`${rota}: data de publicação fora do cartão retirado.`);
   return true;
 }
 function prendeNoIndice(rota, doc) {
@@ -461,10 +463,8 @@ for (const lang of ['pt','en']) {
     return erros;
   };
   assert.equal(medir(original).length,0);
-  const d = DOSSIES.find(d => d.portas.includes('estado-e-economia'));
-  const assunto = paraPrender.find(p => p.rota === routePath('dossie',lang,{slug:d.slug}).replace(/\/$/,''))?.doc;
   for (const mudar of [
-    doc => doc.querySelector('#estudos-da-entrada').insertAdjacentHTML('beforeend', assunto.querySelector('[data-estudo-edicao]').outerHTML),
+    doc => doc.querySelector('#estudos-da-entrada').insertAdjacentHTML('beforeend', parse(fs.readFileSync(path.join(DIST,lang==='pt'?'estudos/index.html':'en/studies/index.html'),'utf8')).querySelector('[data-estudo-edicao]').outerHTML),
     doc => doc.querySelector('#estudos-da-entrada [data-estudo-edicao]').remove(),
   ]) { const copia = parse(original.toString()); mudar(copia); assert(medir(copia).some(e => e.includes('os dados dizem'))); plantasPortasDo2++; }
 }
@@ -484,9 +484,9 @@ for (const [rota] of DOSSIES_POR_ROTA) {
   };
   assert.equal(medir(original).length,0,'DO1: controlo das datas do estudo');
   for (const mudar of [
-    doc => doc.querySelector(SELETOR).set_content('01.01.1900'),
-    doc => doc.querySelector(SELETOR).remove(),
-    doc => doc.querySelector('[data-estudo-edicao]').setAttribute('data-estudo-edicao','estudo-alheio/pt'),
+    doc => doc.querySelector('[data-registo-edicao]').setAttribute('data-registo-edicao','estudo-alheio/pt'),
+    doc => doc.querySelector('[data-registo-edicao]').remove(),
+    doc => doc.querySelector('main').insertAdjacentHTML('beforeend','<div data-estudo-edicao="inexistente/pt"></div>'),
   ]) {
     const copia = parse(original.toString()); mudar(copia);
     assert(medir(copia).length,'DO1: data ou edição adulterada passou'); plantasDossies++;

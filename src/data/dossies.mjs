@@ -16,6 +16,15 @@ export const DOSSIES = [
     ],
     portas: ['estado-e-economia'],
     pecas: { estudos: ['orcamento-2027-o-que-muda-e-para-quem'], explicacoes: ['dinheiro-do-estado-2027'], itens: ['orcamento-2027-generalidade', 'saude-no-orcamento', 'parcerias-rodoviarias'] },
+    leitura: [
+      {id:'bloco-2', pt:'Em resumo', en:'In brief'},
+      {id:'bloco-6', pt:'O que este projeto conclui', en:'What this project concludes'},
+      {id:'bloco-30', pt:'O que muda para quem trabalha por conta de outrem', en:'What changes for employees'},
+      {id:'bloco-34', pt:'O que muda para quem ganha o salário mínimo e para quem trabalha para o Estado', en:'What changes for those on the minimum wage and for those who work for the State'},
+      {id:'bloco-37', pt:'O que muda para quem recebe pensão', en:'What changes for pensioners'},
+      {id:'bloco-39', pt:'O que muda para quem arrenda ou compra casa', en:'What changes for those who rent or buy a home'},
+      {id:'bloco-41', pt:'O que muda para as empresas', en:'What changes for companies'},
+    ],
     calendario: ['oe-2027-calendario-final-global'],
   },
 

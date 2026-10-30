@@ -72,7 +72,7 @@
     "check:graficos": "node tests/graficos/interacao.mjs",
     "graficos:inventario": "node scripts/graficos-inventario.mjs",
     "check:eo1": "node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs && node tests/eo1/metades.mjs && node tests/eo1/definicoes.mjs",
-    "check:dossies": "node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs"
+    "check:dossies": "node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs && node tests/dossies/leitura.mjs && node tests/dossies/reguas.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

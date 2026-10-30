@@ -1,3 +1,4 @@
+import { DOSSIES } from '../../src/data/dossies.mjs';
 /**
  * =============================================================================
  * X · A EXPLICAÇÃO, AUDITADA E RECONTADA (bloco EX1, 05.10.2026, o ponto 3 do mandato)
@@ -854,7 +855,8 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
   const s = t(lang);
   const esperado = explicacaoPelaCelula(e, lang, linhas);
   const main = root.querySelector('main') ?? root;
-  const h1 = main.querySelector('h1');
+  const incorporada = main.hasAttribute('data-dossie-explicacao');
+  const h1 = main.querySelector(incorporada ? 'h2[data-explicacao-titulo]' : 'h1');
   if (!h1 || normal(h1.textContent) !== esperado.titulo) erros.push(`X5 · o título rendido («${normal(h1?.textContent)}») não é o recomposto («${esperado.titulo}»)`);
   const folha = root.querySelector('[data-explicacao-caminho]');
   if (folha && normal(folha.textContent) !== esperado.titulo) erros.push('X5 · a folha do caminho não é o título recomposto');
@@ -870,18 +872,19 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
     erros.push(...conferirPalavrasRendidas(declaracao[lang], texto, lang, linhas, p.caminho));
   }
   erros.push(...conferirContabilidadeDosRamos(main, e, lang, linhas));
-  const titulos = main.querySelectorAll('[data-explicacao-secao] > h2').map((/** @type {any} */ h) => normal(h.textContent));
+  const titulos = main.querySelectorAll(incorporada ? '[data-explicacao-secao] > h3' : '[data-explicacao-secao] > h2').map((/** @type {any} */ h) => normal(h.textContent));
   const deveTitulos = [...e.seccoes.map((/** @type {any} */ x) => (typeof x.titulo[lang] === 'string' ? x.titulo[lang] : textoAqui(x.titulo[lang], lang, linhas))), ...(esperado.paragrafos.some((p) => p.caminho.startsWith('naoDiz')) ? [s.explicacoes.oQueIstoNaoDiz] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`X7 · os títulos das secções (${titulos.join(' | ')}) não são os declarados (${deveTitulos.join(' | ')})`);
   /* As portas do fim (EX1-b): as declaradas, pela ordem, com o destino e o nome de cada uma; a dos números sempre. */
-  const declaradas = Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
+  const declaradas = incorporada ? [] : Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
+  if(incorporada && main.querySelector('[data-explicacao-portas], [data-discussao-integracao]'))erros.push('X8 · a explicação no dossiê não deve trazer portas do fim');
   const esperadas = declaradas.map((/** @type {any} */ d) => {
     if ((d.rota === 'estudo' || d.rota === 'explicacao') && !d.entrada) return portaAqui(d, lang, linhas);
     const entrada = d.entrada ? /** @type {any[]} */ (ENTRADAS).find((x) => x.id === d.entrada) : null;
     return [routePath(d.rota, lang), `${d.entrada ? entrada?.nome?.[lang] : s.nav.livro} →`];
   });
   const lidas = main.querySelectorAll('[data-explicacao-portas] a[href]').map((/** @type {any} */ a) => [a.getAttribute('href'), normal(a.textContent)]);
-  if (!declaradas.some((/** @type {any} */ d) => d.rota === 'livro' && !d.entrada) || !lidas.some((/** @type {any} */ x) => x[0] === routePath('livro', lang))) erros.push('X8 · falta a porta para os números e as fontes no fim');
+  if (!incorporada && (!declaradas.some((/** @type {any} */ d) => d.rota === 'livro' && !d.entrada) || !lidas.some((/** @type {any} */ x) => x[0] === routePath('livro', lang)))) erros.push('X8 · falta a porta para os números e as fontes no fim');
   if (JSON.stringify(lidas) !== JSON.stringify(esperadas)) erros.push(`X8 · as portas do fim (${lidas.map((/** @type {any} */ x) => x.join(' ')).join(' · ') || 'nenhuma'}) não são as declaradas (${esperadas.map((/** @type {any} */ x) => x.join(' ')).join(' · ')})`);
   /* EX4-c (21.10.2026): a porta do fim para um estudo leva o título dentro da marca que a casa dá a um título de estudo
      (`data-nonledger="titulo-de-estudo"`, como `TituloDeTrabalho.astro`), com o título declarado da edição. */
@@ -896,6 +899,11 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
     const id = c.getAttribute('data-claim');
     const selo = c.closest('.claim')?.querySelector('a.src-chip');
     if (!selo || !String(selo.getAttribute('href') ?? '').endsWith(`/${id}`)) erros.push(`X8 · o valor de «${id}» num parágrafo não tem ao lado o selo do seu recibo`);
+  }
+  if(incorporada) {
+    erros.push(...figurasDeclaradasEmFalta(main,slug));
+    for(const instrumento of main.querySelectorAll('[data-instrumento]').filter(x=>x.querySelector('figure[data-forma="barras-do-livro"]')))
+      erros.push(...conferirBarrasDoLivro(instrumento,lang,slug,linhas));
   }
   return erros;
 }
@@ -921,7 +929,11 @@ export function conferirTituloNumaPorta(el, lang, linhas = loadClaims()) {
  */
 export function marcaDaExplicacaoComparada(el, rota, comparados) {
   if (el.hasAttribute('data-explicacao-porta')) return true;
-  if (rota !== 'explicacao') return false;
+  if (rota === 'dossie') {
+    if (!el.closest('[data-dossie-explicacao]')) return false;
+    if (el.hasAttribute('data-explicacao-titulo') && el.rawTagName === 'h2') return true;
+    if (el.rawTagName === 'h3' && el.parentNode?.hasAttribute('data-explicacao-secao')) return true;
+  } else if (rota !== 'explicacao') return false;
   if (el.hasAttribute('data-explicacao-caminho')) return true;
   if (!el.closest('main')) return false;
   const tag = String(el.rawTagName).toLowerCase();
@@ -945,6 +957,15 @@ export function conferirPalavrasDaExplicacaoNaPagina(root, lang, rota, slug) {
   const linhas = loadClaims();
   /** @type {string[]} */
   const erros = [];
+  if (rota === 'dossie') {
+    const d = DOSSIES.find(d=>d.slug===slug);
+    if(!d)return ['DO3: explicação fora de um dossiê declarado'];
+    for(const id of d.pecas.explicacoes) {
+      const e=root.querySelector(`[data-dossie-explicacao="${id}"]`);
+      if(!e)erros.push('DO3: explicação ausente');
+      else erros.push(...conferirPaginaDaExplicacao(e,lang,id,linhas));
+    }
+  }
   if (rota === 'explicacao' && slug) {
     erros.push(...conferirPaginaDaExplicacao(root, lang, slug, linhas));
     /* Os rótulos das barras são nomes declarados das linhas: confere-os a F22, aqui, na mesma corrida; e cada figura
@@ -957,7 +978,8 @@ export function conferirPalavrasDaExplicacaoNaPagina(root, lang, rota, slug) {
   for (const el of root.querySelectorAll('[data-explicacao-porta]')) erros.push(...conferirTituloNumaPorta(el, lang, linhas));
   /* Uma marca fora dos elementos que esta célula compara não sai do inventário: é um erro (EX1-c, o achado 14). */
   const e = rota === 'explicacao' && slug ? /** @type {any} */ (EXPLICACOES.find((x) => x.slug === slug)) : null;
-  const comparados = new Set(e ? explicacaoPelaCelula(e, lang, linhas).paragrafos.map((p) => p.caminho) : []);
+  const declaradas = rota === 'dossie' ? EXPLICACOES.filter(e=>DOSSIES.find(d=>d.slug===slug)?.pecas.explicacoes.includes(e.slug)) : e ? [e] : [];
+  const comparados = new Set(declaradas.flatMap(e=>explicacaoPelaCelula(e, lang, linhas).paragrafos.map(p=>p.caminho)));
   for (const el of root.querySelectorAll('[data-explicacao-declarado]')) {
     if (!marcaDaExplicacaoComparada(el, rota, comparados)) erros.push(`X · a marca das palavras declaradas está num sítio que a célula da explicação não confere (${rota}): <${String(el.rawTagName).toLowerCase()}> «${normal(el.textContent).slice(0, 60)}»`);
   }

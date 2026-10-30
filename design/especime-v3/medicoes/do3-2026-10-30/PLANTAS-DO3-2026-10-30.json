@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T17:24:50+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "O1",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "uma figura do estudo na página portuguesa do dossiê imprime 1 530 onde a linha der-oe2027-juros-variacao-cp, a página do estudo e a edição inglesa dão 1 350",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cf000881aba9b47ef547d8b29e856369aa7bb48c1dab51f530807aa3e1a6a71f",
+   "sha256_depois": "93d6a1519d5a215f40653b243c4437193057fffdc297687c23f0175af640b861",
+   "contexto_antes": "muda nas contas não está no quadro das medidas: os juros da dívida sobem <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#3.2\" data-registo-row=\"der-oe2027-juros-variacao-cp\">1 350</span><a class=\"src-chip\" href=\"/livro-razao/der-oe2027-juros-variacao-cp\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span ",
+   "contexto_depois": "muda nas contas não está no quadro das medidas: os juros da dívida sobem <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#3.2\" data-registo-row=\"der-oe2027-juros-variacao-cp\">1 530</span><a class=\"src-chip\" href=\"/livro-razao/der-oe2027-juros-variacao-cp\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span "
+  },
+  {
+   "id": "O2",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "o título do índice da página portuguesa diz «Nesta página» onde o §3 do mandato escreve «Neste dossiê» (e a raiz «sta página» é um marcador da voz)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "93d6a1519d5a215f40653b243c4437193057fffdc297687c23f0175af640b861",
+   "sha256_depois": "bb4fbe93a3fed69204a7b157a15121d0d62a0401bef3582c419865bacb037fb9",
+   "contexto_antes": "edby=\"texto-indice-k\" data-dossie-indice><details class=\"texto-indice-dobra\"><summary class=\"texto-indice-porta\"><h2 class=\"texto-indice-k\" id=\"texto-indice-k\">Neste dossiê</h2></summary><ul class=\"texto-indice-lista\"><li><a href=\"#bloco-2\">Em resumo</a></li><li><a href=\"#bloco-6\">O que este projeto conclui</a></li><li><a href=\"#b",
+   "contexto_depois": "edby=\"texto-indice-k\" data-dossie-indice><details class=\"texto-indice-dobra\"><summary class=\"texto-indice-porta\"><h2 class=\"texto-indice-k\" id=\"texto-indice-k\">Nesta página</h2></summary><ul class=\"texto-indice-lista\"><li><a href=\"#bloco-2\">Em resumo</a></li><li><a href=\"#bloco-6\">O que este projeto conclui</a></li><li><a href=\"#b"
+  },
+  {
+   "id": "O3",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff faz o portão de HTML conferir a leitura do dossiê numa rota que não existe («dossie-desligado»): as figuras do estudo na página do dossiê deixam de ser conferidas, ao contrário do §2.3",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bd764e1e55aa857aa3eaadf12c3f195904b9a2be4cebd1bc698fe54829bcf5f0",
+   "sha256_depois": "a08ac4edadb174c52b832325977692d96d6b41f548e6fbc3f2b909d733dae824",
+   "contexto_antes": ": identificadores técnicos não são recibos.`);\n@@ -4632,6 +4638,29 @@ for (const file of ficheirosHtml(DIST)) {\n     verificaTexto({ rota, root, err });\n   }\n \n+  if (rota?.key === 'dossie') {\n+    const d = DOSSIES.find(d=>d.slug===rota.params.slug);\n+    if (!d) err('DO3: dossiê não declarado');\n+    else {\n+      for (const e of conferirLeitura(ro",
+   "contexto_depois": ": identificadores técnicos não são recibos.`);\n@@ -4632,6 +4638,29 @@ for (const file of ficheirosHtml(DIST)) {\n     verificaTexto({ rota, root, err });\n   }\n \n+  if (rota?.key === 'dossie-desligado') {\n+    const d = DOSSIES.find(d=>d.slug===rota.params.slug);\n+    if (!d) err('DO3: dossiê não declarado');\n+    else {\n+      for (const e of conferirLeitura(ro"
+  },
+  {
+   "id": "O4",
+   "ficheiro": "built/en/dossiers/orcamento-2027/index.html",
+   "descricao": "a ligação final inglesa diz «The full study:» onde o §3 do mandato escreve «The rest of the study:»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1a1fd76394363111ef11a5bc1f1503c06424c79dc8a33f2bd16addf22dcff72d",
+   "sha256_depois": "efbddff60e2d86db4a41978304ec4f30b753762165bea1e9ed8234187e5241e6",
+   "contexto_antes": "leia da República</span></span></a></p></section><p class=\"regra-portas\" data-dossie-resto><a data-voz href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\">The rest of the study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out →</a></p></article></main><footer class=\"rodape rodape-b1\">",
+   "contexto_depois": "leia da República</span></span></a></p></section><p class=\"regra-portas\" data-dossie-resto><a data-voz href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\">The full study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out →</a></p></article></main><footer class=\"rodape rodape-b1\">"
+  },
+  {
+   "id": "O5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 102 chamadas onde o registo do lançador e o relatório completo dizem 120",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8a9d214c16bb2afcc22e6afdbd1ed17bdc00c65f503a1d9fb8e9491dcd371425",
+   "sha256_depois": "804c01269153969423415b0b0743b241d8ce1f5460bb6b1d3004fd482cdc6db5",
+   "contexto_antes": "design/especime-v3/medicoes/do3-2026-10-30/RELATORIO-DO3.md) contém as contagens por secção das duas edições, os códigos, as réguas alteradas e as pendências.\n\n120 chamadas; 39 conferências dirigidas e um build integral.\n\ntokens used: 17 477 326, último total exposto.",
+   "contexto_depois": "design/especime-v3/medicoes/do3-2026-10-30/RELATORIO-DO3.md) contém as contagens por secção das duas edições, os códigos, as réguas alteradas e as pendências.\n\n102 chamadas; 39 conferências dirigidas e um build integral.\n\ntokens used: 17 477 326, último total exposto."
+  }
+ ]
+}

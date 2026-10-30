@@ -13,3 +13,16 @@
    vertical da ligação conserva o alvo de toque também quando o título parte. */
 .dossies-lista h2 a, .dossies-lista h3 a { display: inline; padding-block: 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .dossie .explicacao-secao h3 a { display: block; min-height: 44px; }
+
+/* DO3: o índice e os textos partilham a coluna de leitura do dossiê. */
+.dossie .texto-indice { position: static; width: 100%; margin: 2rem 0; }
+.dossie-seccao { margin-top: 2.5rem; }
+.dossie .texto-artigo h3 { scroll-margin-top: 2rem; }
+
+/* A seleção do dossiê tem índice próprio, sem o contador do estudo inteiro. */
+.dossie .texto-artigo h3 { padding-top: 0; }
+.dossie .texto-artigo h3::before { content: none; }
+
+.dossie [data-dossie-resto] a { display: block; min-height: 44px; padding-block: .5rem; }
+
+.dossie [data-dossie-estudo] a { display: block; min-height: 44px; padding-block: .5rem; }

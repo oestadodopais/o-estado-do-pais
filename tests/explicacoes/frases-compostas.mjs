@@ -90,9 +90,9 @@ const medir = () => {
   /* O selo dentro de um Claim não é outro pedaço da frase: todos os seus descendentes sobem à mesma caixa que o valor.
      Os pedaços marcados de uma frase: as contagens e as datas da semana, os períodos, os nomes declarados e os valores
      (de um valor conta a caixa do `<Claim>`, que leva o selo: o que tem de ser texto corrido é o pai dessa caixa). */
-  const marcados = [...new Set([...document.querySelectorAll('main [data-semana], main [data-de-linha], main [data-explicacao-nome], main [data-claim], main [data-nonledger], main [data-correcao-campo], main [data-linha-campo]')]
+  const marcados = [...new Set([...document.querySelectorAll('main [data-semana], main [data-de-linha], main [data-explicacao-nome], main [data-claim], main [data-nonledger], main [data-correcao-campo], main [data-linha-campo], main [data-dossie-seccao] [data-registo]')]
     .map((x) => x.closest('.claim') ?? x))]
-    .filter((x) => x.closest('[data-discussao-resumo], [data-discussao-paragrafo], [data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
+    .filter((x) => x.closest('[data-dossie-seccao] p, [data-discussao-resumo], [data-discussao-paragrafo], [data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
   const pais = new Set(marcados.map((x) => /** @type {HTMLElement} */ (x.parentElement)));
   const flex = [...pais].filter((el) => /flex|grid/.test(getComputedStyle(el).display))
     .map((el) => ({ tag: el.tagName.toLowerCase(), classe: String(el.className), display: getComputedStyle(el).display, texto: (el.textContent ?? '').trim().slice(0, 70) }));
@@ -127,6 +127,8 @@ try {
   for (const lang of ['pt','en']) for (const largura of LARGURAS) {
     for (const [superficie, key, selector] of [
       ['explicações','explicacoes','.explicacoes-item a'],
+      ...DOSSIES.map(d=>['estudo no dossiê',barra(routePath('dossie',lang,{slug:d.slug})),'[data-dossie-seccao] p']),
+      ...DOSSIES.map(d=>['explicação no dossiê',barra(routePath('dossie',lang,{slug:d.slug})),'[data-dossie-explicacao] [data-explicacao-paragrafo]']),
       ['primeira página','home','[data-bloco-frase]'],
       ...paginasDaDiscussao(lang).flatMap(({rota})=>[['conclusão da discussão',rota,'[data-discussao-conclusao]'],['parágrafo da discussão',rota,'[data-discussao-resumo]']]),
       ['comparação dos cartões','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="comparacao"]'],
@@ -136,7 +138,7 @@ try {
       const {ctx,pagina}=await abre(rota,largura);
       const controlo=defeitos(await pagina.evaluate(medir),rota,largura);
       await pagina.evaluate(({selector,tipo}) => {
-        const el=[...document.querySelectorAll(selector)].find(e=>e.querySelector('[data-claim], [data-nonledger], [data-de-linha], [data-semana]'));
+        const el=[...document.querySelectorAll(selector)].find(e=>e.querySelector('[data-claim], [data-nonledger], [data-de-linha], [data-semana], [data-registo]'));
         if(!el) throw Error('a planta não encontrou uma frase com pedaços marcados');
         if(tipo==='flex') el.style.display='flex';
         else { el.style.display='block'; el.style.width='2000px'; }

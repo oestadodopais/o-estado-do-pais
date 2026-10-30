@@ -36,6 +36,7 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  *       node scripts/medir-defeitos.mjs --json     (para guardar uma medição)
  */
 
+import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 import fs from 'node:fs';
 import {conferirInicio} from '../tests/discussao/itens.mjs';
 import path from 'node:path';
@@ -717,7 +718,7 @@ const ROTAS_DOS_BLOCOS = new Set(['home']);
  * qualquer outro.
  */
 const EXPLICACAO_DECLARADA = '[data-explicacao-declarado]';
-const ROTAS_DAS_EXPLICACOES = new Set(['explicacao', 'explicacoes', 'indice', 'home']);
+const ROTAS_DAS_EXPLICACOES = new Set(['explicacao', 'explicacoes', 'indice', 'home', 'dossie']);
 const SEMANA_DECLARADA = '[data-semana-declarado]';
 const ROTAS_DA_SEMANA = new Set(['leituraDaSemana', 'explicacoes', 'home', 'indice']);
 /**
@@ -1060,6 +1061,12 @@ function frasesDaCasa(root, rotaKey) {
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
   /* EX1 (05.10.2026): as palavras de uma explicação e as frases da semana, só nas rotas onde as células correm. */
+  if(rotaKey === 'dossie') {
+    const lang=root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
+    const slug=root.querySelector('[data-dossie]')?.getAttribute('data-dossie');
+    const superficie=conferirSuperficieDossies(root,lang,`${lang==='pt'?'dossies':'en/dossiers'}/${slug}/index.html`);
+    if(!superficie.erros.length)for(const el of superficie.nos) {marcados.add(el);for(const n of el.querySelectorAll('*'))marcados.add(n);}
+  }
   if (ROTAS_DAS_EXPLICACOES.has(rotaKey)) for (const el of root.querySelectorAll(EXPLICACAO_DECLARADA)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);

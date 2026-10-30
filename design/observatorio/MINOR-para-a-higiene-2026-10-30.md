@@ -21,3 +21,11 @@
 ## O lugar de direção
 
 11. O guião `plantar.py` continua a escrever o caminho absoluto da cópia em `copia` (a HIG-5 §2.6 corrige-o); as cópias das plantas que entram no repositório limpam-se no guião dos registos.
+
+## As leituras do DO3 (Opus, a frio e curta) e da EV2 (Opus, a frio)
+
+12. O relatório do DO3 cita «dez páginas nas cinco larguras» (são dez capturas de uma página) e «gráficos: 0» sem `.codigo` (a leitura a frio, achado 8).
+13. Repetições dentro da página do Orçamento que vêm do estudo: uma citação impressa duas vezes em parágrafos seguidos da secção `bloco-30`; um título de notícia em «Em resumo» e em «O que este projeto conclui» (achado 10).
+14. O título inglês do item da Saúde com vírgulas decimais portuguesas («3,0 % … −1,5 %»), herdado (achado 11).
+15. Os registos inteiros do `build` e da K8 comitados na pasta das medições do DO3 (18 343, 2 802 e cerca de 18 000 linhas): o guião dos registos guarda o código e as últimas linhas, não o registo inteiro.
+16. A EV2: o caminho `@@derivadas` do compositor imprime o valor do livro sem a conferência do registo selado e as três linhas novas não têm `sanity_min`/`sanity_max`; o leitor por expressão de `scripts/check-registo.mjs:251` lê o manifesto dos documentos como o `provar-eyetext.mjs` lia (os achados 11 da leitura e da adenda D).

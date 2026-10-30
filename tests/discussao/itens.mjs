@@ -285,6 +285,12 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
  const superficie=conferirSuperficieDossies(root,lang,pagina);erros.push(...superficie.erros);
  const dossie=dossieDaPagina(pagina,lang);
+ if(dossie)for(const e of main.querySelectorAll('[data-dossie-explicacao]')) {
+  const slug=e.getAttribute('data-dossie-explicacao');
+  if(!dossie.pecas.explicacoes.includes(slug)){erros.push('DO3: explicação fora da pertença');continue;}
+  if(e.querySelector('[data-discussao-integracao]'))erros.push('DO3: porta da discussão repetida dentro da explicação do dossiê');
+ }
+
  // FP1: as peças publicadas têm outra condição, comprovada pelas datas e destinos.
  const caixa=main.querySelector('[data-novidades]');
  let novidadesConferidas=false;
@@ -488,6 +494,11 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   const orcamento=`${prefixo}/orcamento-2027/index.html`, casa=`${lang==='pt'?'dossies':'en/dossiers'}/index.html`;
   const html=fs.readFileSync(path.join(dist,orcamento),'utf8');
   if(conferirIntegracao(parse(html),lang,orcamento).length)erros.push('DO1: controlo íntegro do dossiê recusado');
+  for(const [nome,alterar] of [
+   ['porta do bloco retirada',r=>r.querySelector('[data-dossie-discussao] [data-discussao-integracao]').remove()],
+   ['porta da discussão dentro da explicação',r=>r.querySelector('[data-dossie-explicacao]').insertAdjacentHTML('beforeend',r.querySelector('[data-dossie-discussao] [data-discussao-integracao]').outerHTML)],
+   ['porta da explicação original reposta',r=>{const original=parse(fs.readFileSync(path.join(dist,routePath('explicacao',lang,{slug:'dinheiro-do-estado-2027'}),'index.html'),'utf8'));r.querySelector('[data-dossie-explicacao]').insertAdjacentHTML('beforeend',original.querySelector('[data-discussao-integracao]').outerHTML);}],
+  ]) {const r=parse(html);alterar(r);provas.push({nome:`DO3 ${nome}`,lang,mordeu:conferirIntegracao(r,lang,orcamento).length>0});}
   const ausente=parse(html);ausente.querySelector('[data-discussao-integracao]').remove();
   provas.push({nome:'DO1 porta em falta no dossiê',lang,mordeu:conferirIntegracao(ausente,lang,orcamento).some(e=>e.includes('presença ou ausência errada'))});
   const alheia=parse(fs.readFileSync(path.join(dist,casa),'utf8'));
