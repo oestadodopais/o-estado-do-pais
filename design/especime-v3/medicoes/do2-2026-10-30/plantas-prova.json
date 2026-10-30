@@ -1,0 +1,41 @@
+{
+  "distOriginalIntacto": true,
+  "resultados": [
+    {
+      "nome": "controlo intacto",
+      "codigo": 0,
+      "chave": null,
+      "recusa": null
+    },
+    {
+      "nome": "peças declaradas a mais",
+      "codigo": 1,
+      "chave": "dossie_pecas_orcamento_2027",
+      "recusa": "✗ a prova diz que \"dossie_pecas_orcamento_2027\" é 6 e o portão conta 5 (vista: dist)."
+    },
+    {
+      "nome": "marca de uma peça retirada",
+      "codigo": 1,
+      "chave": "dossie_pecas_orcamento_2027",
+      "recusa": "✗ DO2: dossie_pecas_orcamento_2027 conta 5 em inglês e 4 em português."
+    },
+    {
+      "nome": "itens declarados a mais",
+      "codigo": 1,
+      "chave": "dossie_itens_orcamento_2027",
+      "recusa": "✗ a prova diz que \"dossie_itens_orcamento_2027\" é 4 e o portão conta 3 (vista: dist)."
+    },
+    {
+      "nome": "contagem com destino trocado",
+      "codigo": 1,
+      "chave": "dossie_pecas_orcamento_2027",
+      "recusa": "✗ o número da prova \"dossie_pecas_orcamento_2027\" aparece sem a sua porta."
+    },
+    {
+      "nome": "contagem fora da ligação",
+      "codigo": 1,
+      "chave": "dossie_pecas_orcamento_2027",
+      "recusa": "✗ o número da prova \"dossie_pecas_orcamento_2027\" aparece sem a sua porta."
+    }
+  ]
+}
