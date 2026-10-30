@@ -1,6 +1,6 @@
 /** DO3: seleção única de secções, com identidade e títulos presos à edição. */
 import fs from 'node:fs';
-import { parse } from 'node-html-parser';
+import { registoDoHtml } from './eyetext.mjs';
 import { registoDaEdicao, manifestoDosRegistos } from './registos.mjs';
 import { pecasDoCorpo } from './registo-html.mjs';
 import { linhaDoSitioDoEstudo } from './cruzamento.mjs';
@@ -28,10 +28,16 @@ export function leituraDoDossie(d, lang) {
   const slug = d.pecas.estudos[0], chave = `${slug}/${lang}`;
   const registo = registoDaEdicao(slug, lang);
   const seccoes = blocosDoDossie(registo, d.leitura, lang);
-  const fonte = parse(fs.readFileSync(`studies-src/${slug}/${lang}.html`, 'utf8'));
-  const titulos = fonte.querySelectorAll('h2').map(n => n.textContent.trim());
-  const registados = registo.blocks.filter(b => b.kind === 'heading' && b.level === 2).map(b => b.text);
-  if (JSON.stringify(titulos) !== JSON.stringify(registados)) throw new Error(`DO3: títulos diferentes do studies-src: ${chave}`);
+  const fonte = registoDoHtml(fs.readFileSync(`studies-src/${slug}/${lang}.html`, 'utf8'));
+  for (const sec of seccoes) for (const bloco of sec.blocos) {
+    const original = fonte[bloco.i];
+    const campos = b => b.kind === 'table' ? {kind:b.kind, rows:b.rows.map(r=>r.map(c=>({text:c.text,header:Boolean(c.header)})))}
+      : b.kind === 'list' ? {kind:b.kind, ordered:b.ordered, items:b.items.map(i=>({text:i.text}))}
+      : b.kind === 'heading' ? {kind:b.kind, level:b.level, text:b.text}
+      : b.kind === 'paragraph' ? {kind:b.kind,text:b.text} : {kind:b.kind};
+    if (!original || JSON.stringify(campos(original)) !== JSON.stringify(campos(bloco)))
+      throw new Error(`DO3: bloco diferente do studies-src: ${chave}#${bloco.i}`);
+  }
   const entrada = manifestoDosRegistos().registos[chave];
   const pecas = pecasDoCorpo({registo, chave, linhaDoSitio:linhaDoSitioDoEstudo(entrada.rh_study, entrada.rh_origens ?? {}), rotuloDaPorta:t(lang).estudos.textoPortaDaLinha});
   // Separar nas fronteiras dos h2 preserva os objetos dos selos, sem os reescrever.
