@@ -153,6 +153,7 @@ import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
 import { FORMAS_DAS_FIGURAS } from '../src/lib/explicacoes.mjs';
+import { DOSSIES } from '../src/data/dossies.mjs';
 import { conferirBarrasDoLivro, plantasDasBarrasDoLivro, figurasDeclaradasEmFalta, plantasDasFigurasDeclaradas } from '../tests/formas/barras-do-livro.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from '../tests/cartao/faixa.mjs';
@@ -721,22 +722,23 @@ for (const ficheiro of paginasDe(DIST)) {
 
   /* F22, EX1 (05.10.2026): cada figura `barras-do-livro` de uma explicação, recomposta da declaração e das linhas no
      seu instrumento; as plantas em memória correm no primeiro instrumento de cada edição. */
-  if (rota?.key === 'explicacao') {
+  for (const slug of rota?.key === 'explicacao' ? [String(rota.params.slug)] : rota?.key === 'dossie' ? DOSSIES.find(d=>d.slug===rota.params.slug)?.pecas.explicacoes ?? [] : []) {
     const lang = rota.lang === 'en' ? 'en' : 'pt';
-    const slug = String(rota.params.slug);
     /* EX1-c (06.10.2026, o achado 15 da leitura a frio): cada figura declarada tem de estar na página, e a planta de uma
        figura tirada corre uma vez por edição. */
-    for (const e of figurasDeclaradasEmFalta(root, slug)) err(`${rel}: ${e}`);
-    if (!plantasEX1.some((p) => p.lang === lang && p.de === 'presenca')) {
-      for (const p of plantasDasFigurasDeclaradas(html, slug)) {
+    const escopo=rota.key==='dossie'?root.querySelector(`[data-dossie-explicacao="${slug}"]`):root;
+    if(!escopo){err(`${rel}: F22 · explicação declarada ausente`);continue;}
+    for (const e of figurasDeclaradasEmFalta(escopo, slug)) err(`${rel}: ${e}`);
+    if (rota.key==='dossie' || !plantasEX1.some((p) => p.lang === lang && p.de === 'presenca')) {
+      for (const p of plantasDasFigurasDeclaradas(escopo.outerHTML, slug)) {
         plantasEX1.push({ lang, de: 'presenca', ...p });
         if (!p.mordeu) err(`${rel}: F22 · planta «${p.nome}» não mordeu: ${p.queixa}`);
       }
     }
-    for (const instrumento of root.querySelectorAll('[data-instrumento]').filter((x) => x.querySelector('figure[data-forma="barras-do-livro"]'))) {
+    for (const instrumento of escopo.querySelectorAll('[data-instrumento]').filter((x) => x.querySelector('figure[data-forma="barras-do-livro"]'))) {
       figurasEX1++;
       for (const e of conferirBarrasDoLivro(instrumento, lang, slug)) err(`${rel}: ${e}`);
-      if (!plantasEX1.some((p) => p.lang === lang && p.de !== 'presenca')) {
+      if (rota.key==='dossie' || !plantasEX1.some((p) => p.lang === lang && p.de !== 'presenca')) {
         for (const p of plantasDasBarrasDoLivro(instrumento.outerHTML, lang, slug)) {
           plantasEX1.push({ lang, ...p });
           if (!p.mordeu) err(`${rel}: F22 · planta «${p.nome}» não mordeu: ${p.queixa}`);

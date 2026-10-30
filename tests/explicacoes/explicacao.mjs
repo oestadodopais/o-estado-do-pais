@@ -899,6 +899,11 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
     const selo = c.closest('.claim')?.querySelector('a.src-chip');
     if (!selo || !String(selo.getAttribute('href') ?? '').endsWith(`/${id}`)) erros.push(`X8 · o valor de «${id}» num parágrafo não tem ao lado o selo do seu recibo`);
   }
+  if(incorporada) {
+    erros.push(...figurasDeclaradasEmFalta(main,slug));
+    for(const instrumento of main.querySelectorAll('[data-instrumento]').filter(x=>x.querySelector('figure[data-forma="barras-do-livro"]')))
+      erros.push(...conferirBarrasDoLivro(instrumento,lang,slug,linhas));
+  }
   return erros;
 }
 

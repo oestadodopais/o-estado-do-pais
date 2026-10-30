@@ -285,6 +285,17 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
  const superficie=conferirSuperficieDossies(root,lang,pagina);erros.push(...superficie.erros);
  const dossie=dossieDaPagina(pagina,lang);
+ const explicacoesConferidas=new Set();
+ if(dossie)for(const e of main.querySelectorAll('[data-dossie-explicacao]')) {
+  const slug=e.getAttribute('data-dossie-explicacao');
+  if(!dossie.pecas.explicacoes.includes(slug)){erros.push('DO3: explicação fora da pertença');continue;}
+  // Cada porta da explicação mantém a condição por linhas, no seu próprio corpo.
+  const copia=parse(`<main>${e.outerHTML}</main>`);
+  const falhas=conferirIntegracao(copia,lang,`dossie-explicacao/${slug}/index.html`,linhas,{dist,recibos});
+  erros.push(...falhas.map(f=>`DO3 explicação: ${f}`));
+  if(!falhas.length)explicacoesConferidas.add(e);
+ }
+
  // FP1: as peças publicadas têm outra condição, comprovada pelas datas e destinos.
  const caixa=main.querySelector('[data-novidades]');
  let novidadesConferidas=false;
@@ -329,7 +340,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const representados=new Set(DOSSIES.filter(d=>d.portas.includes(portaDaPagina)).flatMap(d=>d.pecas.itens));
  if(inicio)for(const d of DOSSIES.filter(d=>listagensDoInicio(lang).dossies.includes(d.slug)))for(const slug of d.pecas.itens)representados.add(slug);
  const esperados=[...ITENS].sort(compararItens).filter(e=>!representados.has(e.slug)).filter(e=>dossie?dossie.pecas.itens.includes(e.slug):[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
- const portas=main.querySelectorAll('[data-discussao-integracao]');
+ const portas=main.querySelectorAll('[data-discussao-integracao]').filter(p=>!explicacoesConferidas.has(p.closest('[data-dossie-explicacao]')));
  for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]')&&!(novidadesConferidas&&a.closest('[data-novidades]')))erros.push('V2B integração: porta sem condição declarada');
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
  for(const e of esperados){
@@ -488,6 +499,11 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   const orcamento=`${prefixo}/orcamento-2027/index.html`, casa=`${lang==='pt'?'dossies':'en/dossiers'}/index.html`;
   const html=fs.readFileSync(path.join(dist,orcamento),'utf8');
   if(conferirIntegracao(parse(html),lang,orcamento).length)erros.push('DO1: controlo íntegro do dossiê recusado');
+  for(const [nome,alterar] of [
+   ['porta do bloco retirada',r=>r.querySelector('[data-dossie-discussao] [data-discussao-integracao]').remove()],
+   ['porta da explicação com outro destino',r=>r.querySelector('[data-dossie-explicacao] [data-discussao-integracao] a').setAttribute('href','/')],
+   ['porta da explicação repetida',r=>{const p=r.querySelector('[data-dossie-explicacao] [data-discussao-integracao]');p.insertAdjacentHTML('afterend',p.outerHTML);}],
+  ]) {const r=parse(html);alterar(r);provas.push({nome:`DO3 ${nome}`,lang,mordeu:conferirIntegracao(r,lang,orcamento).length>0});}
   const ausente=parse(html);ausente.querySelector('[data-discussao-integracao]').remove();
   provas.push({nome:'DO1 porta em falta no dossiê',lang,mordeu:conferirIntegracao(ausente,lang,orcamento).some(e=>e.includes('presença ou ausência errada'))});
   const alheia=parse(fs.readFileSync(path.join(dist,casa),'utf8'));

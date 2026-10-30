@@ -29,6 +29,8 @@ for(const lang of ['pt','en'])for(const d of DOSSIES) {
   [explicacao,r=>r.querySelector('[data-dossie-explicacao] a.src-chip').setAttribute('href','/')],
   [explicacao,r=>r.querySelector('[data-explicacao-paragrafo]').insertAdjacentHTML('beforeend',' Frase inventada.')],
   [explicacao,r=>r.querySelector('[data-explicacao-secao] h3').set_content('Título inventado')],
+  [explicacao,r=>r.querySelector('[data-dossie-explicacao] [data-instrumento]').remove()],
+  [explicacao,r=>r.querySelector('[data-dossie-explicacao] .exp-barra').setAttribute('style','width:999999%')],
  ]) {const r=parse(html);alterar(r);assert(medir(r).length,'DO3: planta não recusada');plantas++;}
 }
 console.log(`DO3: superfície, voz e explicação conferidas; ${plantas} plantas recusadas.`);
