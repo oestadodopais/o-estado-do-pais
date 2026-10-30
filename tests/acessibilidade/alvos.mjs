@@ -432,6 +432,16 @@ const ESTRAGOS = [
     faz: (html) => html.replaceAll('class="pp-frase"', 'class="pp-x"').replaceAll('class="pp-peca"', 'class="pp-y"').replaceAll('class="pp-caixa-texto"', 'class="pp-z"'),
   },
   {
+    nome: 'dossie-porta-final-minima · a porta do resto conserva o alvo de toque',
+    celulas: ['H2'],
+    amostra: '/dossies/orcamento-2027/',
+    faz: html => {
+      const r=parse(html), a=r.querySelector('[data-dossie-resto] a');
+      a.setAttribute('style','display:inline-block!important;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;font-size:1px!important;line-height:1px!important;overflow:hidden!important');
+      return r.toString();
+    },
+  },
+  {
     /* EX1, 05.10.2026: os selos dos parágrafos de uma explicação fora da prosa corrida. Sem a classe, os selos voltam a
        contar como caixas, e a H2 cai: é a classe que os dispensa, e só ela. */
     nome: 'explicacao-sem-classe · os selos dos parágrafos de uma explicação fora da prosa corrida',

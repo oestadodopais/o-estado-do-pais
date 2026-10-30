@@ -26,7 +26,7 @@ import '../styles/lugar.css';
 const { slug, lang = 'pt' } = Astro.props;
 const d = dossieResolvido(slug,lang), s = t(lang).dossies;
 const leitura = leituraDoDossie(d, lang), mobilia = MOBILIA_DO_DOSSIE[lang];
-const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.explicacoes.map(e => ({id:`dossie-${e.slug}`, titulo:e.tituloTexto})), {id:'discussao-inicio', titulo:DISCUSSAO.titulo[lang]}, {id:'dossie-calendario', titulo:s.calendario}];
+const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.explicacoes.map(e => ({id:`dossie-${e.slug}`, titulo:e.tituloTexto, partes:e.titulo})), {id:'discussao-inicio', titulo:DISCUSSAO.titulo[lang]}, {id:'dossie-calendario', titulo:s.calendario}];
 ---
 <Base lang={lang} path={routePath('dossie',lang,{slug})} title={`${d.titulo[lang]} · ${SITE_NAME}`} description={d.ambito[lang]}>
   <article class="dossie" data-dossie={slug}>
@@ -36,7 +36,7 @@ const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.ex
     <p class="estudo-meta"><span data-voz>{s.escrita}</span>{' '}<time data-dossie-data="escrita" datetime={d.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(d.escrita)}</time>{' · '}<span data-voz>{s.recente}</span>{' '}<time data-dossie-data="recente" datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></p>
     <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k" data-dossie-indice>
       <details class="texto-indice-dobra"><summary class="texto-indice-porta"><h2 class="texto-indice-k" id="texto-indice-k">{mobilia.indice}</h2></summary>
-        <ul class="texto-indice-lista">{indice.map(sec => <li><a href={`#${sec.id}`}>{sec.titulo}</a></li>)}</ul>
+        <ul class="texto-indice-lista">{indice.map(sec => <li><a href={`#${sec.id}`}>{sec.partes ? <FraseDaExplicacao partes={sec.partes} lang={lang} selos={false} /> : sec.titulo}</a></li>)}</ul>
       </details>
     </nav>
     <div data-dossie-peca={`estudo:${d.pecas.estudos[0]}`} data-registo-edicao={leitura[0].chave}>
@@ -48,6 +48,6 @@ const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.ex
     </section>)}
     {d.itens.length > 0 && <BlocoDaDiscussao lang={lang} itens={d.itens} dossie />}
     {d.calendario.length > 0 && <section class="explicacao-secao" aria-labelledby="dossie-calendario"><h2 class="explicacao-secao-titulo" id="dossie-calendario">{s.calendario}</h2>{d.calendario.map(l => <p class="explicacao-p" data-dossie-calendario={l.id}><NomeDaMedida linha={l} lang={lang} />{' · '}<DataDaLinha id={l.id} campo="reference_date" valor={l.reference_date} lang={lang} />{' '}<Provenance id={l.id} lang={lang} /></p>)}</section>}
-    <p class="regra-portas" data-dossie-resto><a href={routePath('estudo',lang,{slug:d.pecas.estudos[0]})}>{mobilia.resto}</a></p>
+    <p class="regra-portas" data-dossie-resto><a data-voz href={routePath('estudo',lang,{slug:d.pecas.estudos[0]})}>{mobilia.resto}</a></p>
   </article>
 </Base>

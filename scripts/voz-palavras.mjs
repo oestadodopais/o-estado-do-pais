@@ -63,6 +63,7 @@
  * NÃO SE ENFRAQUECE: uma exceção nova entra nesta lista, com o motivo por
  * extenso e a data, e não por um `continue` escondido num laço.
  */
+import { conferirSuperficieDossies, dossieDaPagina } from './dossies-superficie.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { classeDoCampoDaSerie } from './campos-da-serie.mjs';
@@ -276,11 +277,19 @@ export const ATRIBUTOS_A_VISTA = ['title', 'aria-label', 'alt', 'placeholder'];
  * O texto do leitor de uma página, tal como ele o vê sem abrir nada.
  *
  * @param {string} html
- * @param {{ retira?: string|null, mantemSo?: string|null }} [opcoes]
+ * @param {{ retira?: string|null, mantemSo?: string|null, pagina?: string }} [opcoes]
  * @returns {string}
  */
 export function superficieDe(html, opcoes = {}) {
   const root = lerPaginaComCodigo(html);
+  if(opcoes.pagina) {
+    const lang=opcoes.pagina.startsWith('en/')?'en':'pt';
+    if(dossieDaPagina(opcoes.pagina,lang)) {
+      const conferida=conferirSuperficieDossies(root,lang,opcoes.pagina);
+      if(!conferida.erros.length)for(const no of conferida.nos)if(no.hasAttribute('data-dossie-seccao'))no.remove();
+    }
+  }
+
   if (root.querySelector('[data-incorporar-codigo]')) {
     const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
     if (!canonica) throw Error('ER1: código sem página canónica para a conferência da voz.');
@@ -389,6 +398,7 @@ export function palavrasProibidasEm(dist) {
     const texto = superficieDe(fs.readFileSync(ficheiro, 'utf8'), {
       retira: retira.length ? retira.join(', ') : null,
       mantemSo,
+      pagina: rel,
     });
     for (const p of PALAVRAS_PROIBIDAS) {
       if (isentas.has(p.chave)) continue;

@@ -10,7 +10,7 @@ export const MOBILIA_DO_DOSSIE = {
   en: {indice:'In this dossier', resto:'The rest of the study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out →'},
 };
 /** O id do HTML composto é a coordenada do bloco, conservada no recorte.
- * @param {any} registo @param {any[]} selecao @param {'pt'|'en'} lang */
+ * @param {RegistoDeConteudo} registo @param {any[]} selecao @param {'pt'|'en'} lang */
 export function blocosDoDossie(registo, selecao, lang) {
   const usados = new Set();
   return selecao.map(sec => {
@@ -19,7 +19,7 @@ export function blocosDoDossie(registo, selecao, lang) {
     if (!/^bloco-\d+$/.test(sec.id) || usados.has(i) || !b || b.kind !== 'heading' || b.level !== 2 || b.text !== sec[lang])
       throw new Error(`DO3: secção ausente, repetida ou com título diferente: ${sec.id}/${lang}`);
     usados.add(i);
-    const fim = registo.blocks.find(b => b.i > i && b.kind === 'heading' && b.level <= 2)?.i ?? registo.blocks.length;
+    const fim = registo.blocks.find(b => b.i > i && b.kind === 'heading' && Number(b.level) <= 2)?.i ?? registo.blocks.length;
     return {...sec, titulo:b.text, blocos:registo.blocks.filter(b => b.i >= i && b.i < fim)};
   });
 }
@@ -27,23 +27,25 @@ export function blocosDoDossie(registo, selecao, lang) {
 export function leituraDoDossie(d, lang) {
   const slug = d.pecas.estudos[0], chave = `${slug}/${lang}`;
   const registo = registoDaEdicao(slug, lang);
+  if(!registo)throw new Error(`DO3: registo ausente: ${chave}`);
   const seccoes = blocosDoDossie(registo, d.leitura, lang);
   const fonte = registoDoHtml(fs.readFileSync(`studies-src/${slug}/${lang}.html`, 'utf8'));
   for (const sec of seccoes) for (const bloco of sec.blocos) {
     const original = fonte[bloco.i];
-    const campos = b => b.kind === 'table' ? {kind:b.kind, rows:b.rows.map(r=>r.map(c=>({text:c.text,header:Boolean(c.header)})))}
-      : b.kind === 'list' ? {kind:b.kind, ordered:b.ordered, items:b.items.map(i=>({text:i.text}))}
+    /** @param {any} b */
+    const campos = b => b.kind === 'table' ? {kind:b.kind, rows:b.rows.map((/** @type {any[]} */ r)=>r.map((/** @type {any} */ c)=>({text:c.text,header:Boolean(c.header)})))}
+      : b.kind === 'list' ? {kind:b.kind, ordered:b.ordered, items:b.items.map((/** @type {any} */ i)=>({text:i.text}))}
       : b.kind === 'heading' ? {kind:b.kind, level:b.level, text:b.text}
       : b.kind === 'paragraph' ? {kind:b.kind,text:b.text} : {kind:b.kind};
     if (!original || JSON.stringify(campos(original)) !== JSON.stringify(campos(bloco)))
       throw new Error(`DO3: bloco diferente do studies-src: ${chave}#${bloco.i}`);
   }
-  const entrada = manifestoDosRegistos().registos[chave];
+  const entrada = /** @type {{rh_study:string,rh_origens?:Record<string,string>}} */ (manifestoDosRegistos().registos[chave]);
   const pecas = pecasDoCorpo({registo, chave, linhaDoSitio:linhaDoSitioDoEstudo(entrada.rh_study, entrada.rh_origens ?? {}), rotuloDaPorta:t(lang).estudos.textoPortaDaLinha});
   // Separar nas fronteiras dos h2 preserva os objetos dos selos, sem os reescrever.
   const porSeccao = new Map(); let atual;
   for (const p of pecas) {
-    if (p.selo !== undefined) { if(atual) porSeccao.get(atual).push(p); continue; }
+    if ('selo' in p) { if(atual) porSeccao.get(atual).push(p); continue; }
     for (const html of p.html.split(/(?=<h2 id="bloco-)/)) {
       const id = /^<h2 id="(bloco-\d+)"/.exec(html)?.[1];
       if(id) { atual=id; porSeccao.set(id, []); }

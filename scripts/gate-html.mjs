@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
+import { conferirLeitura } from '../tests/dossies/leitura.mjs';
+import { conferirPaginaDaExplicacao } from '../tests/explicacoes/explicacao.mjs';
 import { DOSSIES } from '../src/data/dossies.mjs';
 import { plantasDossiesHtml } from './dossies-html.mjs';
 
@@ -2104,7 +2107,7 @@ function nomeDoReciboB1(recibo, lang) {
   return util(nome) ? nome : util(recibo.name) ? recibo.name : null;
 }
 
-function verificaTexto({ rota, root, err }) {
+function verificaTexto({ rota, root, err, recorte = null }) {
   const { slug } = rota.params;
   const lang = rota.lang;
   const chave = `${slug}/${lang}`;
@@ -2124,11 +2127,13 @@ function verificaTexto({ rota, root, err }) {
     );
     return;
   }
-  const registo = registoDoPortao(slug, lang);
+  let registo = registoDoPortao(slug, lang);
   if (!registo) {
     err(`L1 ${chave}: o registo de travessia declara esta edição e não consegui ler o seu registo.`);
     return;
   }
+
+  if (recorte) registo = {...registo, blocks:blocosDoDossie(registo, recorte, lang).flatMap(s=>s.blocos)};
 
   const artigos = root.querySelectorAll('[data-registo-edicao]');
   if (artigos.length !== 1) {
@@ -2538,6 +2543,7 @@ function verificaTexto({ rota, root, err }) {
 
   /* L6: só recibos com os quatro campos que «Fontes e verificação» promete.
      O livro é lido pelo portão; nenhum campo é tomado da vista Astro. */
+  if (recorte) return; // DO3: os recibos abrem pelo selo; o índice próprio é conferido por conferirLeitura.
   const seccao = root.querySelector('#linhas-do-documento');
   if (root.querySelector('.texto-dobra [data-nonledger="identificador-tecnico"], .texto-dobra .texto-registo'))
     err(`L6 ${chave}: identificadores técnicos não são recibos.`);
@@ -4630,6 +4636,29 @@ for (const file of ficheirosHtml(DIST)) {
     paginasDeTexto++;
     contaAsMarcasDoTexto(root);
     verificaTexto({ rota, root, err });
+  }
+
+  if (rota?.key === 'dossie') {
+    const d = DOSSIES.find(d=>d.slug===rota.params.slug);
+    if (!d) err('DO3: dossiê não declarado');
+    else {
+      for (const e of conferirLeitura(root,d,rota.lang)) err(e);
+      const medir = r => {const erros=[]; verificaTexto({rota:{...rota,params:{slug:d.pecas.estudos[0]}},root:r,err:e=>erros.push(e),recorte:d.leitura});return erros;};
+      for (const e of medir(root)) err(e);
+      for (const [nome,alterar,esperada] of [
+        ['valor',r=>r.querySelector('[data-registo]').set_content('999999'),/L[24]/],
+        ['porta',r=>r.querySelector('[data-registo-edicao] a.src-chip').setAttribute('href','/'),/L6/],
+        ['bloco',r=>r.querySelector('[data-registo-bloco]').remove(),/L1/],
+      ]) {
+        const copia=parse(root.toString()); alterar(copia);
+        if(!medir(copia).some(e=>esperada.test(e)))err(`DO3: planta ${nome} não recusada`);
+      }
+      for(const slug of d.pecas.explicacoes) {
+        const e=root.querySelector(`[data-dossie-explicacao="${slug}"]`);
+        if(!e)err('DO3: explicação ausente');
+        else for(const erro of conferirPaginaDaExplicacao(e,rota.lang,slug,claims))err(erro);
+      }
+    }
   }
 
   /**
@@ -7381,7 +7410,7 @@ for (const file of ficheirosHtml(DIST)) {
       '[data-registo-linha], [data-registo-conta], [data-registo-indice], [data-registo-posicao]',
   )) {
     aRemover.push(el);
-    if (rota?.key !== 'estudo' || !TRAVESSIA_DOS_REGISTOS?.[`${rota.params.slug}/${rota.lang}`]) {
+    if (!(rota?.key === 'dossie' && DOSSIES.some(d=>d.slug===rota.params.slug) && (el.closest('[data-dossie-seccao]') || el.hasAttribute('data-registo-edicao'))) && (rota?.key !== 'estudo' || !TRAVESSIA_DOS_REGISTOS?.[`${rota.params.slug}/${rota.lang}`])) {
       const qual = ['data-registo-edicao', 'data-registo-bloco', 'data-registo-unidade',
         'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice',
         'data-registo-posicao']

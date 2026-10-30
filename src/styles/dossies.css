@@ -18,3 +18,7 @@
 .dossie .texto-indice { position: static; width: 100%; margin: 2rem 0; }
 .dossie-seccao { margin-top: 2.5rem; }
 .dossie .texto-artigo h2 { scroll-margin-top: 2rem; }
+
+/* A seleção do dossiê tem índice próprio, sem o contador do estudo inteiro. */
+.dossie .texto-artigo h2 { padding-top: 0; }
+.dossie .texto-artigo h2::before { content: none; }

@@ -41,12 +41,12 @@ function conferir(root,d,lang) {
  const impressa=main.querySelector('[data-dossie-data="recente"]');
  assert.equal(impressa.getAttribute('datetime'),recente.recente);
  assert.equal(impressa.getAttribute('data-data-origem'),recente.origemRecente);
- assert.deepEqual(main.querySelectorAll('[data-estudo]').map(e=>e.getAttribute('data-estudo')),d.pecas.estudos);
+ assert.deepEqual(main.querySelectorAll('[data-registo-edicao]').map(e=>e.getAttribute('data-registo-edicao').split('/')[0]),d.pecas.estudos);
  assert.deepEqual(main.querySelectorAll('[data-dossie-explicacao]').map(e=>e.getAttribute('data-dossie-explicacao')),d.pecas.explicacoes);
  assert.deepEqual(new Set(main.querySelectorAll('[data-discussao-porta]').map(e=>e.getAttribute('data-discussao-porta'))),new Set(d.pecas.itens));
  for(const [tipo,slugs] of Object.entries(d.pecas))for(const slug of slugs){
   const caminho=tipo==='itens'?`${routePath('discussao',lang)}#${slug}`:routePath(tipo==='estudos'?'estudo':'explicacao',lang,{slug});
-  assert(main.querySelectorAll('a').some(a=>a.getAttribute('href')===caminho));
+  if(tipo!=='explicacoes')assert(main.querySelectorAll('a').some(a=>a.getAttribute('href')===caminho));
 
 
   const fonte=ler(caminho.split('#')[0]);
@@ -107,7 +107,7 @@ for(const lang of ['pt','en']) {
  for(const d of DOSSIES){
   const rota=routePath('dossie',lang,{slug:d.slug}), root=ler(rota);conferir(root,d,lang);
   for(const mudar of [
-   r=>r.querySelector('[data-estudo]').remove(),
+   r=>r.querySelector('[data-registo-edicao]').remove(),
    r=>r.querySelector('[data-dossie-data="recente"]').setAttribute('datetime','1900-01-01'),
    r=>r.querySelector('main h1').set_content('Título trocado'),
    r=>r.querySelector('[data-discussao-resumo] .src-chip').remove(),

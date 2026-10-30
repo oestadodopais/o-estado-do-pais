@@ -17,6 +17,7 @@ export function conferirLeitura(root,d,lang) {
  for(const a of links)if(a.textContent!==artigo.querySelector(a.getAttribute('href'))?.textContent)erros.push('DO3: título do índice diferente da secção');
  const rendidas=artigo.querySelectorAll('[data-dossie-seccao]');
  if(JSON.stringify(rendidas.map(s=>s.getAttribute('data-dossie-seccao')))!==JSON.stringify(secs.map(s=>s.id)))erros.push('DO3: seleção de secções diferente');
+ if(JSON.stringify(artigo.querySelectorAll('[data-registo-bloco]').map(n=>Number(n.getAttribute('data-registo-bloco'))))!==JSON.stringify(secs.flatMap(s=>s.blocos.map(b=>b.i))))erros.push('DO3: blocos diferentes da seleção');
  const fonte=ler(routePath('estudo',lang,{slug:d.pecas.estudos[0]}));
  for(const s of rendidas)for(const bloco of s.querySelectorAll('[data-registo-bloco]')) {
   const original=fonte.querySelector(`[data-registo-bloco="${bloco.getAttribute('data-registo-bloco')}"]`);
@@ -24,7 +25,7 @@ export function conferirLeitura(root,d,lang) {
   if(normal(bloco)!==normal(original))erros.push('DO3: bloco diferente do estudo publicado');
  }
  const resto=artigo.querySelector('[data-dossie-resto] a');
- if(resto?.textContent!==MOBILIA_DO_DOSSIE[lang].resto||resto?.getAttribute('href')!==routePath('estudo',lang,{slug:d.pecas.estudos[0]}))erros.push('DO3: porta do resto diferente');
+ if(resto?.parentNode.textContent!==MOBILIA_DO_DOSSIE[lang].resto||resto?.textContent!==MOBILIA_DO_DOSSIE[lang].resto||resto?.getAttribute('href')!==routePath('estudo',lang,{slug:d.pecas.estudos[0]}))erros.push('DO3: porta do resto diferente');
  if(artigo.querySelectorAll('[data-dossie-peca]').length!==Object.values(d.pecas).flat().length)erros.push('DO3: pertenças diferentes');
  return erros;
 }

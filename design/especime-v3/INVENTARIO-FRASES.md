@@ -5225,10 +5225,7 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | conteudo | A porta «Habitação» tem os números do país; o que se disser a seguir sobre a casa junta-se aqui. | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
 | conteudo | Escrito a | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | Escrito a · A peça mais recente é de | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
-| conteudo | O estudo | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | O estudo lê os preços, as rendas, o crédito e as leis deste ano nos números do Eurostat, do INE e do Banco de Portugal, e cada atualização traz a sua data. | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
-| conteudo | A explicação | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
-| conteudo | A proposta de Orçamento do Estado para , entregue ao Parlamento a , traz, entre os seus mapas, o da classificação funcional das despesas da Administração Central. | do1 | viva | DO1, primeira frase da explicação existente. |
 | conteudo | A proposta de Orçamento do Estado para foi aprovada na generalidade a e segue para a especialidade até à votação final global, marcada para . | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | As correções que tocaram este assunto | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
 | conteudo | Os textos abaixo dizem o que a proposta muda e para quem, para onde vai o dinheiro, o que a Saúde e as parcerias rodoviárias recebem, e como cada partido votou e o que disse. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
@@ -5247,16 +5244,13 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | conteudo | The most recent piece is from | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | The proposed State Budget for : what changes and for whom, where the money goes, what is under discussion and the calendar. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | navegacao | Housing in Portugal | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
-| conteudo | The study | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | The study reads prices, rents, credit and this year&#39;s laws in Eurostat&#39;s, the INE&#39;s and the Bank of Portugal&#39;s figures, and each update carries its date. | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
 | conteudo | The «Housing» door has the country&#39;s figures; whatever is said next about housing gathers here. | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
 | conteudo | Written on | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | Written on · The most recent piece is from | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | navegacao | The Budget | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
-| conteudo | The State Budget proposal for , delivered to Parliament on , carries, among its maps, the one of the functional classification of central administration expenditure. | do1 | viva | DO1, primeira frase da explicação existente. |
 | conteudo | The calendar | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | The corrections that touched this subject | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
-| conteudo | The explainer | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | The texts below say what the proposal changes and for whom, where the money goes, what Health and the road partnerships receive, and how each party voted and what it said. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | The proposed State Budget for passed at the general vote on and goes to the detailed stage until the final global vote, scheduled for . | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | conteudo | · For , total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted million euros below the estimate for , and effective expenditure, the same count without those assets and liabilities, changes by million euros , because the RRP ends. | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
@@ -5315,3 +5309,12 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | conteudo | textos em discussão → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
 | navegacao | texts under discussion on this dossier’s page | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
 | conteudo | texts under discussion → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+
+## DO3: leitura inteira no dossiê
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Neste dossiê | do3 | viva | Frase do mandato DO3, índice conferido contra as secções. |
+| navegacao | In this dossier | do3 | viva | Frase do mandato DO3, índice conferido contra as secções. |
+| navegacao | O resto do estudo: as contas em dois perímetros, as medidas, a dívida, os riscos e o que as afirmações deixam de fora → | do3 | viva | Frase do mandato DO3, destino conferido. |
+| navegacao | The rest of the study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out → | do3 | viva | Frase do mandato DO3, destino conferido. |
