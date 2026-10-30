@@ -144,6 +144,11 @@ export function verificaB1(raiz) {
       for (const el of main.querySelectorAll('[data-nonledger]')) {
         const motivo = el.getAttribute('data-nonledger');
         if (motivo === 'data-do-repositorio' && (el.closest('[data-estudo-edicao]') || el.closest('[data-sucessor-edicao]'))) dispensados.add(el);
+        if (motivo === 'data-editorial' && el.hasAttribute('data-estudo-atualizacao')) {
+          const [slug, lingua] = (el.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao') ?? '').split('/');
+          const atualizada = WORKS.find(w => w.slug === slug)?.editions.find(e => e.lang === lingua)?.updated;
+          if (atualizada && el.getAttribute('datetime') === atualizada && el.textContent.trim() === atualizada.split('-').reverse().join('.')) dispensados.add(el);
+        }
         if (motivo === 'identificador-tecnico' && el.closest('.texto-dobra')) dispensados.add(el);
       }
       /* NA LISTA, CADA SINOPSE CONFERE-SE INTEIRA (bloco R1, 23.09.2026). Desde

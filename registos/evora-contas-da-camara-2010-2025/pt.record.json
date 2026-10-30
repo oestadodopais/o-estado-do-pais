@@ -183,73 +183,73 @@
      "value": "61.44"
     },
     {
-     "end": 449,
+     "end": 487,
      "markers": "†",
      "printed": "9 500 000",
      "row": "gop26-rossio-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 440,
+     "start": 478,
      "value": "9 500 000†"
     },
     {
-     "end": 477,
+     "end": 515,
      "markers": "†",
      "printed": "2 350 000",
      "row": "gop26-rossio-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 468,
+     "start": 506,
      "value": "2 350 000†"
     }
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "O orçamento não é o dinheiro. A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e o mecanismo está nas próprias contas: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra. O plano de 2026 volta a fazê-lo: a maior dotação recuperada dos seus anexos, a do Rossio de São Brás, leva €9 500 000† para o ano, com €2 350 000† de financiamento definido."
+   "text": "O orçamento não é o dinheiro. A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra. O plano de 2026 volta a fazê-lo: a maior dotação recuperada dos seus anexos, a do Rossio de São Brás, leva €9 500 000† para o ano, com €2 350 000† de financiamento definido."
   },
   {
    "figures": [
     {
-     "end": 104,
+     "end": 142,
      "printed": "96,55",
      "row": "pessoal-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 99,
+     "start": 137,
      "value": "96.55"
     },
     {
-     "end": 145,
+     "end": 183,
      "printed": "93,64",
      "row": "amortizacoes-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 140,
+     "start": 178,
      "value": "93.64"
     },
     {
-     "end": 171,
+     "end": 209,
      "printed": "21,13",
      "row": "invest-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 166,
+     "start": 204,
      "value": "21.13"
     },
     {
-     "end": 213,
+     "end": 251,
      "printed": "7,4",
      "row": "invest-var-2024-2025",
      "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/PRESTACAO_CONTAS_2025.pdf",
      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
      "source_sha256_prefix": "e63102753216d573",
-     "start": 210,
+     "start": 248,
      "value": "7,4"
     }
    ],
    "i": 7,
    "kind": "paragraph",
-   "text": "Quando a receita desilude, é o investimento que cede. Em 2025 as despesas com pessoal executaram a 96,55%, as amortizações de empréstimos a 93,64% e o investimento a 21,13%; em valor pago, o investimento subiu 7,4% face a 2024. As duas primeiras são contratuais; a terceira é, nesta leitura, a que se adia."
+   "text": "Nesta leitura das contas, quando a receita desilude, é a execução do investimento que cede. Em 2025 as despesas com pessoal executaram a 96,55%, as amortizações de empréstimos a 93,64% e o investimento a 21,13%; em valor pago, o investimento subiu 7,4% face ao valor de 2024 que o relatório de 2025 imprime como comparativo, porque as contas de 2024 nunca foram certificadas. As duas primeiras são contratuais; a terceira pode adiar-se."
   },
   {
    "figures": [
@@ -1343,27 +1343,27 @@
      "value": "155 573"
     },
     {
-     "end": 277,
+     "end": 329,
      "printed": "45,6",
      "row": "outras-rec-correntes-quota-falta",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 273,
+     "start": 325,
      "value": "45,6"
     },
     {
-     "end": 293,
+     "end": 345,
      "printed": "42 220 018",
      "row": "receita-falta-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 283,
+     "start": 335,
      "value": "42 220 018"
     }
    ],
    "i": 42,
    "kind": "paragraph",
-   "text": "A linha «outras receitas correntes» é onde o fosso entre orçamento e dinheiro é mais extremo: orçamentaram-se aí €19 427 778 e chegaram €155 573 — o relatório explica a linha como o lugar onde a dívida herdada teve de ser acomodada na aritmética do orçamento. Essa linha é 45,6% dos 42 220 018 euros que faltaram à receita de 2025 face ao orçamento corrigido."
+   "text": "A linha «outras receitas correntes» é onde o fosso entre orçamento e dinheiro é mais extremo: orçamentaram-se aí €19 427 778 e chegaram €155 573 — o relatório explica a linha como o lugar onde a dívida herdada teve de ser acomodada na aritmética do orçamento. A diferença entre o que se orçou e o que se cobrou nessa linha é 45,6% dos 42 220 018 euros que faltaram à receita de 2025 face ao orçamento corrigido, que é o orçamento municipal depois das modificações que a prestação de contas resume."
   },
   {
    "figures": [
@@ -1621,9 +1621,9 @@
   {
    "emphasis": [
     {
-     "end": 811,
+     "end": 885,
      "kind": "strong",
-     "start": 748
+     "start": 822
     }
    ],
    "figures": [
@@ -1676,37 +1676,37 @@
      "value": "21.13"
     },
     {
-     "end": 431,
+     "end": 505,
      "printed": "4 308 783",
      "row": "amortizacoes-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 422,
+     "start": 496,
      "value": "4 308 783"
     },
     {
-     "end": 471,
+     "end": 545,
      "printed": "93,64",
      "row": "amortizacoes-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 466,
+     "start": 540,
      "value": "93.64"
     },
     {
-     "end": 644,
+     "end": 718,
      "printed": "7,4",
      "row": "invest-var-2024-2025",
      "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/PRESTACAO_CONTAS_2025.pdf",
      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
      "source_sha256_prefix": "e63102753216d573",
-     "start": 641,
+     "start": 715,
      "value": "7,4"
     }
    ],
    "i": 48,
    "kind": "paragraph",
-   "text": "A despesa de capital foi de €10 989 664 — uma execução de 34,10% — e a sua composição é o facto mais afiado das contas: de €24 159 745 orçamentados para investimento propriamente dito, o município conseguiu pagar €5 104 307 — uma execução de 21,13%. O relatório atribui a execução a atrasos em projetos que esperavam PRR e a concursos públicos que ficaram desertos; é a explicação do próprio relatório. Entretanto saíram €4 308 783 em amortizações de empréstimos, a 93,64% dessa linha orçamental — a dívida foi servida quase exatamente como planeado enquanto o investimento correu a um quinto do seu plano, embora em valor pago tenha subido 7,4% face a 2024. A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar)."
+   "text": "A despesa de capital foi de €10 989 664 — uma execução de 34,10% — e a sua composição é o facto mais afiado das contas: de €24 159 745 orçamentados para investimento propriamente dito, o município conseguiu pagar €5 104 307 — uma execução de 21,13%. O relatório diz que essa execução é influenciada negativamente pelo atraso dos projetos orçamentados à espera de financiamento do PRR, e que a dificuldade em adjudicar obras cujos concursos ficaram desertos a explica em parte. Entretanto saíram €4 308 783 em amortizações de empréstimos, a 93,64% dessa linha orçamental — a dívida foi servida quase exatamente como planeado enquanto o investimento correu a um quinto do seu plano, embora em valor pago tenha subido 7,4% face a 2024. A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar)."
   },
   {
    "figures": [

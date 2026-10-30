@@ -347,6 +347,20 @@ function prendeNaPaginaDoLugar(rota, doc) {
 function prendeNaPaginaDoTrabalho(rota, slug, doc) {
   prendeEdicoesB1(rota, doc, slug);
 }
+/** EV2-F: a atualização pertence ao campo updated da edição, separado da publicação. */
+function confereAtualizacao(bloco, esperada) {
+  const marcas = bloco.querySelectorAll('[data-estudo-atualizacao]');
+  if (!esperada) return marcas.length === 0;
+  return marcas.length === 1 && marcas[0].getAttribute('datetime') === esperada &&
+    marcas[0].textContent.trim() === naFormaDaCasa(esperada);
+}
+for (const [html, esperada, aceite] of [
+  ['<p><time data-estudo-atualizacao datetime="2026-10-30">30.10.2026</time></p>', '2026-10-30', true],
+  ['<p><time data-estudo-atualizacao datetime="2026-10-01">01.10.2026</time></p>', '2026-10-30', false],
+  ['<p></p>', '2026-10-30', false],
+  ['<p><time data-estudo-atualizacao datetime="2026-10-30">30.10.2026</time></p>', null, false],
+]) assert.equal(confereAtualizacao(parse(html), esperada), aceite, 'EV2: atualização presa à edição');
+
 function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
   const presasAqui = new Set();
   const blocos = doc.querySelectorAll('[data-estudo-edicao]');
@@ -371,6 +385,9 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
     if (!work || principal?.lang !== lang || (slugDaPagina && slug !== slugDaPagina)) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
+    }
+    if (slugDaPagina && !confereAtualizacao(bloco, principal.updated)) {
+      falhas.push(`${rota}: a atualização impressa diverge de updated em ${slug}/${lang}.`);
     }
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina

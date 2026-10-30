@@ -24,7 +24,12 @@ export function conferirPublicacaoDeclaradaNoHtml(work, edition, entrada, html) 
   if(erros.length)return erros;
   const faixa=root.querySelector(`[data-estudo-edicao="${work.slug}/${edition.lang}"]`);
   if(!faixa)return ['falta a faixa da edição declarada'];
-  const datas=faixa.querySelectorAll('time');
+  const datas=faixa.querySelectorAll('time:not([data-estudo-atualizacao])');
+  const atualizacoes=faixa.querySelectorAll('[data-estudo-atualizacao]');
+  if(edition.updated) {
+    const iso=edition.updated,forma=`${iso.slice(8)}.${iso.slice(5,7)}.${iso.slice(0,4)}`;
+    if(atualizacoes.length!==1||atualizacoes[0]?.getAttribute('datetime')!==iso||atualizacoes[0]?.textContent.trim()!==forma)erros.push('a atualização impressa não é a declarada');
+  } else if(atualizacoes.length)erros.push('a edição imprime uma atualização não declarada');
   let artigos=[];
   try {
     const juntar=x=>{if(Array.isArray(x))return x.flatMap(juntar);if(x?.['@graph'])return juntar(x['@graph']);return [x];};

@@ -63,6 +63,14 @@ if(process.argv.includes('--html-construido')) {
   assert.match(String(entrada),/^\d{4}-\d{2}-\d{2}$/,`${work.slug}/${edition.lang}: sem data de entrada em ${FICHEIRO_DAS_DATAS}`);
   // O argumento é pag.html, exatamente como na célula I9, antes da peneira da prosa.
   assert.deepEqual(conferirPublicacaoDeclaradaNoHtml(work,edition,entrada,pag.html),[]);
+  if(edition.updated) {
+   const semAtualizacao=parse(pag.html);
+   semAtualizacao.querySelector('[data-estudo-atualizacao]').remove();
+   assert(conferirPublicacaoDeclaradaNoHtml(work,edition,entrada,semAtualizacao.toString()).some(e=>e.includes('atualização')),'EV2: atualização ausente passou');
+   const dataTrocada=parse(pag.html);
+   dataTrocada.querySelector('[data-estudo-atualizacao]').setAttribute('datetime',edition.date);
+   assert(conferirPublicacaoDeclaradaNoHtml(work,edition,entrada,dataTrocada.toString()).some(e=>e.includes('atualização')),'EV2: publicação no lugar da atualização passou');
+  }
   if(planta&&edition.date){
    // A planta: a mesma página com uma entrada um dia depois da data declarada tem de ser recusada por esta régua.
    const depois=new Date(edition.date+'T00:00:00Z');depois.setUTCDate(depois.getUTCDate()+1);

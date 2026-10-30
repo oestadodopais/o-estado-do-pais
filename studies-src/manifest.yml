@@ -312,24 +312,24 @@ edicoes:
     lang: "pt"
     title: "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação"
     origin: "researchhub"
-    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ 48ee167e8953d2b6dade32f5e0b111a8f83a42a4"
+    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ 7185a3f0481fc3ed5f489f1a179727b0349df4f2"
     raw_file: "_raw/evora-contas-da-camara-2010-2025.pt.html"
-    fetched_utc: "2026-10-30T14:07:33Z"
-    bytes_raw: 61103
-    bytes_normalized: 61103
-    sha256_raw: "c49333da7401ed2f55e9ae71fca67c80cd58e3031790178a2812e9d19857bd52"
-    sha256_normalized: "c49333da7401ed2f55e9ae71fca67c80cd58e3031790178a2812e9d19857bd52"
+    fetched_utc: "2026-10-30T20:04:35Z"
+    bytes_raw: 61490
+    bytes_normalized: 61490
+    sha256_raw: "2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247"
+    sha256_normalized: "2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247"
   - slug: evora-contas-da-camara-2010-2025
     lang: "en"
     title: "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification"
     origin: "researchhub"
-    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ 48ee167e8953d2b6dade32f5e0b111a8f83a42a4"
+    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ 7185a3f0481fc3ed5f489f1a179727b0349df4f2"
     raw_file: "_raw/evora-contas-da-camara-2010-2025.en.html"
-    fetched_utc: "2026-10-30T14:07:33Z"
-    bytes_raw: 58298
-    bytes_normalized: 58298
-    sha256_raw: "e7639116967b1f3c4c38aaa4f772ddf999079e7e533865be57748bcebc717709"
-    sha256_normalized: "e7639116967b1f3c4c38aaa4f772ddf999079e7e533865be57748bcebc717709"
+    fetched_utc: "2026-10-30T20:04:35Z"
+    bytes_raw: 58663
+    bytes_normalized: 58663
+    sha256_raw: "c19dcffa6012c2ea03a9eecad9b4c3a0e8de233b3bcf41bd75add6622ab6a1e8"
+    sha256_normalized: "c19dcffa6012c2ea03a9eecad9b4c3a0e8de233b3bcf41bd75add6622ab6a1e8"
   - slug: evora-quem-governou-a-camara-2009-2025
     lang: pt
     title: "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões"
