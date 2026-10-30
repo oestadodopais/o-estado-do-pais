@@ -1,10 +1,11 @@
 ---
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
 import PecasDoEstudo from '../components/PecasDoEstudo.astro';
 import CorpoDaExplicacao from '../components/explicacoes/CorpoDaExplicacao.astro';
-import { leituraDoDossie, MOBILIA_DO_DOSSIE } from '../lib/dossie-leitura.mjs';
+import { leituraDoDossie, estudoDoDossie, MOBILIA_DO_DOSSIE } from '../lib/dossie-leitura.mjs';
 import { DISCUSSAO } from '../data/discussao.mjs';
 import '../styles/texto.css';
 import BlocoDaDiscussao from '../components/discussao/BlocoDaDiscussao.astro';
@@ -26,7 +27,8 @@ import '../styles/lugar.css';
 const { slug, lang = 'pt' } = Astro.props;
 const d = dossieResolvido(slug,lang), s = t(lang).dossies;
 const leitura = leituraDoDossie(d, lang), mobilia = MOBILIA_DO_DOSSIE[lang];
-const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.explicacoes.map(e => ({id:`dossie-${e.slug}`, titulo:e.tituloTexto, partes:e.titulo})), {id:'discussao-inicio', titulo:DISCUSSAO.titulo[lang]}, {id:'dossie-calendario', titulo:s.calendario}];
+const estudo = estudoDoDossie(d,lang);
+const indice = [{id:"dossie-estudo", titulo:`${mobilia.doEstudo} ${estudo.edicao.title}`, estudo:true},...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.explicacoes.map(e => ({id:`dossie-${e.slug}`, titulo:e.tituloTexto, partes:e.titulo})), {id:'discussao-inicio', titulo:DISCUSSAO.titulo[lang]}, {id:'dossie-calendario', titulo:s.calendario}];
 ---
 <Base lang={lang} path={routePath('dossie',lang,{slug})} title={`${d.titulo[lang]} · ${SITE_NAME}`} description={d.ambito[lang]}>
   <article class="dossie" data-dossie={slug}>
@@ -36,12 +38,15 @@ const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.ex
     <p class="estudo-meta"><span data-voz>{s.escrita}</span>{' '}<time data-dossie-data="escrita" datetime={d.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(d.escrita)}</time>{' · '}<span data-voz>{s.recente}</span>{' '}<time data-dossie-data="recente" datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></p>
     <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k" data-dossie-indice>
       <details class="texto-indice-dobra"><summary class="texto-indice-porta"><h2 class="texto-indice-k" id="texto-indice-k">{mobilia.indice}</h2></summary>
-        <ul class="texto-indice-lista">{indice.map(sec => <li><a href={`#${sec.id}`}>{sec.partes ? <FraseDaExplicacao partes={sec.partes} lang={lang} selos={false} /> : sec.titulo}</a></li>)}</ul>
+        <ul class="texto-indice-lista">{indice.map(sec => <li><a href={`#${sec.id}`}>{sec.estudo ? <><span data-voz>{mobilia.doEstudo}</span>{' '}<TituloDeTrabalho edicao={estudo.edicao} lang={lang} /></> : sec.partes ? <FraseDaExplicacao partes={sec.partes} lang={lang} selos={false} /> : sec.titulo}</a></li>)}</ul>
       </details>
     </nav>
+    <section aria-labelledby="dossie-estudo">
+    <h2 id="dossie-estudo" class="explicacao-secao-titulo" data-dossie-estudo><a href={estudo.rota}><span data-voz>{mobilia.doEstudo}</span>{' '}<TituloDeTrabalho edicao={estudo.edicao} lang={lang} /></a></h2>
     <div data-dossie-peca={`estudo:${d.pecas.estudos[0]}`} data-registo-edicao={leitura[0].chave}>
       {leitura.map(sec => <section class="texto-artigo dossie-seccao" data-dossie-seccao={sec.id} aria-labelledby={sec.id}><PecasDoEstudo pecas={sec.pecas} lang={lang} /></section>)}
     </div>
+    </section>
     {d.explicacoes.map(e => <section class="explicacao-secao" data-dossie-explicacao={e.slug} data-dossie-peca={`explicacao:${e.slug}`} data-explicacao={e.slug} aria-labelledby={`dossie-${e.slug}`}>
       <h2 class="explicacao-secao-titulo" id={`dossie-${e.slug}`} data-explicacao-titulo={e.slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>
       <CorpoDaExplicacao e={e} lang={lang} nivel={3} />

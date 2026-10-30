@@ -5318,3 +5318,6 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | navegacao | In this dossier | do3 | viva | Frase do mandato DO3, índice conferido contra as secções. |
 | navegacao | O resto do estudo: as contas em dois perímetros, as medidas, a dívida, os riscos e o que as afirmações deixam de fora → | do3 | viva | Frase do mandato DO3, destino conferido. |
 | navegacao | The rest of the study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out → | do3 | viva | Frase do mandato DO3, destino conferido. |
+
+| navegacao | Do estudo: | do3 | viva | Adenda B, título lido dos dados do estudo. |
+| navegacao | From the study: | do3 | viva | Adenda B, título lido dos dados do estudo. |

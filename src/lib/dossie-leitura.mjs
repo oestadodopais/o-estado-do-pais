@@ -1,14 +1,22 @@
 /** DO3: seleção única de secções, com identidade e títulos presos à edição. */
 import fs from 'node:fs';
+import { WORKS } from '../data/studies.mjs';
+import { fichaDoEstudo } from './estudos-b1.mjs';
 import { registoDoHtml } from './eyetext.mjs';
 import { registoDaEdicao, manifestoDosRegistos } from './registos.mjs';
 import { pecasDoCorpo } from './registo-html.mjs';
 import { linhaDoSitioDoEstudo } from './cruzamento.mjs';
 import { t } from '../i18n/strings.mjs';
 export const MOBILIA_DO_DOSSIE = {
-  pt: {indice:'Neste dossiê', resto:'O resto do estudo: as contas em dois perímetros, as medidas, a dívida, os riscos e o que as afirmações deixam de fora →'},
-  en: {indice:'In this dossier', resto:'The rest of the study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out →'},
+  pt: {doEstudo:'Do estudo:', indice:'Neste dossiê', resto:'O resto do estudo: as contas em dois perímetros, as medidas, a dívida, os riscos e o que as afirmações deixam de fora →'},
+  en: {doEstudo:'From the study:', indice:'In this dossier', resto:'The rest of the study: the accounts in two perimeters, the measures, the debt, the risks and what the statements leave out →'},
 };
+/** @param {any} d @param {'pt'|'en'} lang */
+export function estudoDoDossie(d,lang) {
+  const w=WORKS.find(w=>w.slug===d.pecas.estudos[0]);
+  if(!w)throw new Error('DO3: estudo ausente do dossiê');
+  return fichaDoEstudo(w,lang);
+}
 /** O id do HTML composto é a coordenada do bloco, conservada no recorte.
  * @param {RegistoDeConteudo} registo @param {any[]} selecao @param {'pt'|'en'} lang */
 export function blocosDoDossie(registo, selecao, lang) {
@@ -52,5 +60,5 @@ export function leituraDoDossie(d, lang) {
       if(atual) porSeccao.get(atual).push({html});
     }
   }
-  return seccoes.map(sec => ({...sec, chave, pecas:porSeccao.get(sec.id)}));
+  return seccoes.map(sec => ({...sec, chave, pecas:porSeccao.get(sec.id).map((/** @type {any} */ p)=>'html' in p ? {html:String(p.html).replace(/<(\/?)h([2-5])\b/g,(_,fim,n)=>`<${fim}h${Number(n)+1}`)} : p)}));
 }

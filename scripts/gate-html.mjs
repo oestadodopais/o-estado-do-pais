@@ -2184,7 +2184,7 @@ function verificaTexto({ rota, root, err, recorte = null }) {
     }
     const esperada =
       bloco.kind === 'heading'
-        ? `h${bloco.level}`
+        ? `h${Number(bloco.level) + (recorte ? 1 : 0)}`
         : bloco.kind === 'list'
           ? bloco.ordered
             ? 'ol'

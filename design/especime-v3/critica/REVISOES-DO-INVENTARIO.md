@@ -936,4 +936,4 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 
 | do2 | As entradas únicas dos dossiês, as contagens e as suas origens, nas duas edições | por ler | Adenda C: quatro frases retiradas; os dois títulos da discussão em v2b ficam condicionais à seleção conferida. Correções da leitura a frio por conferir pelo lugar de direção. |
 
-| do3 | Índice e porta final do dossiê, nas duas edições | por ler | Frases do mandato DO3. Saem as seis entradas dos cartões, cujos fragmentos continuam no corpo transcrito e são conferidos na origem; leitura cruzada reservada ao lugar de direção. |
+| do3 | Índice, identificação do estudo e porta final do dossiê, nas duas edições | por ler | Frases do mandato DO3 e da adenda B. Saem as seis entradas dos cartões, cujos fragmentos continuam no corpo transcrito e são conferidos na origem; leitura cruzada reservada ao lugar de direção. |
