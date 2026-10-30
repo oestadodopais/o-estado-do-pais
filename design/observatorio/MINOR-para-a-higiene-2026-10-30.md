@@ -29,3 +29,25 @@
 14. O título inglês do item da Saúde com vírgulas decimais portuguesas («3,0 % … −1,5 %»), herdado (achado 11).
 15. Os registos inteiros do `build` e da K8 comitados na pasta das medições do DO3 (18 343, 2 802 e cerca de 18 000 linhas): o guião dos registos guarda o código e as últimas linhas, não o registo inteiro.
 16. A EV2: o caminho `@@derivadas` do compositor imprime o valor do livro sem a conferência do registo selado e as três linhas novas não têm `sanity_min`/`sanity_max`; o leitor por expressão de `scripts/check-registo.mjs:251` lê o manifesto dos documentos como o `provar-eyetext.mjs` lia (os achados 11 da leitura e da adenda D).
+
+## A leitura a frio do DO4 (Opus, 30.10.2026)
+
+17. **Primeiro da higiene:** a medida da disposição (`tests/inicio/novidades-disposicao.mjs`) lança quando a caixa não tem a entrada do dossiê, e o `check:alvos` chama-a em todas as primeiras páginas: quando cinco peças mais novas tirarem o dossiê da caixa, o `check:alvos` fica vermelho num conteúdo que nada tem com a caixa (achado 8).
+18. Duas plantas da disposição mordem por outra razão que não a que dizem provar: a da letra da contagem muda a família, o peso e o fio juntos; a do alvo de toque põe `pointer-events:none` e morde a todas as larguras, sem planta própria para os 44 px entre 641 e 1 023 px (achado 6).
+19. A grelha à largura de computador só compara a ordem da esquerda para a direita, e passaria uma ligação empurrada para uma segunda linha na coluna 3; não compara as colunas da linha do dossiê com as das outras linhas (achado 7).
+20. A voz dispensa todos os `[data-dossie-lista] h2, h3`, em todas as rotas, quando `conferirSuperficieDossies` não devolve erros; as plantas das listas só estão no Temas, nenhuma nas portas nem no índice (achado 9).
+21. A sentinela dos rótulos retirados «Dossiê»/«Dossier» compara só o nó inteiro, com maiúsculas, sem planta que mostre que ainda apanha o rótulo antigo (achado 10).
+22. No bloco `do4` do inventário entraram só os dois tipos; a forma da coluna do título e o singular «peça»/«piece» ficaram em prosa por baixo da tabela (achado 11).
+23. O relatório do construtor do DO4 não conferia nenhum número com ficheiro (sete), resumia os códigos em prosa e nomeava «datas» entre as réguas mudadas (achado 12).
+24. O perfil `do4-alvos` do escrivão pode registar um verde numa cabeça cujo `dist/` não foi construído (achado 13).
+25. A medida das capturas é opcional e sem documentação no cabeçalho de `captar.mjs`, e o `check:alvos` deita fora as medidas que devolve (achado 14).
+
+## A leitura curta da EV2 (Opus, 30.10.2026)
+
+26. A primeira página não diz que o estudo das contas de Évora foi atualizado: na caixa fica em quinto a 01.10.2026, e saiu dos cartões dos estudos recentes; a regra da caixa para uma edição com `updated` só está no mapa; «Edição tal como foi publicada» liga a um documento cujo texto este ramo substituiu (a leitura curta da EV2, achado 12).
+27. O componente da edição passa a imprimir «atualizado a» em todas as edições que declaram `updated` (pelo menos quatro outras obras, uma com `date: null`), sem que essas páginas tenham sido vistas (achado 13).
+28. A planta «com aspas» da prova do texto lido não pode falhar (o `load` de um `dump` com aspas dá os mesmos objetos); morde só a contagem dos 18; a mensagem ainda diz «14 edições» (achado 14).
+29. Nenhuma planta da data de atualização cobre só o texto errado com o `datetime` certo, embora o código o confira (achado 15).
+30. O relatório do construtor da EV2 não conferia nenhum número com ficheiro, e a sua corrida integral vermelha (build 1, verify 125) não se repetiu; a corrida verde é a do lugar de direção (achado 16).
+31. As duas linhas da passagem 5 no inventário das frases ficam fora da tabela, depois de linhas em branco (achado 17).
+32. O pacote de uma leitura que leve o corpo alojado de um documento anterior à M83 copia o recibo do pedido que existir no motor (para o relatório de contas de 2025 de Évora, `content/07 …/raw/pdf_manifest.json`); o `ev2b-pacote.sh` não o copiou (achado 6).

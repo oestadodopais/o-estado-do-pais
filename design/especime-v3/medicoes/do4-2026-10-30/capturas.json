@@ -1,0 +1,877 @@
+{
+  "cabeca": "e5f4aab360ab00114890789ae8cfb429bd6e4a8c",
+  "capturador_sha256": "05f6cf3510b92ad67b4f9e72a327d845be5b3a38878aafeacf62b0b71dd53d1d",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "primeira-pagina-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8584,
+      "sha256": "4b5e97f2670e50c74b5e7ecd8cc20d56b5fa5690ec165f72627030d74bb05cfa",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 505
+          },
+          "sha256": "d9204736889d2dd5153c54b83af65f286a64dc2507032ad5ed25f2f6b53daa0b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6738,
+      "sha256": "23210b5cc4790f3e009e9f17c4ed7e5b483f0e37bfdc7c972e59d2dd2a1335ae",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 437
+          },
+          "sha256": "ae1363b185bd1c5d6400941427560051a48501528c0301d3f8b471838cb1f56d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5838,
+      "sha256": "94d4f0044d67fff85949e575b684ca867d47776a73e4edb5c9a75f8828ab9c2a",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 329
+          },
+          "sha256": "893c51b5df787d8119f020fc9ae94a3e65399021c53cb722ce5bb609b5e8ac4f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5773,
+      "sha256": "9d23bfc0f714ded03fbc0d3d7e0ea62e5d81b304d45a93752fe047ca23a6249a",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 337
+          },
+          "sha256": "5f5e840f7725361682388ed8b1fd15094976caf0c999878dea17408279ea1a28"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5793,
+      "sha256": "55161379249d4d11d69f23a5799a989d60ac601da2d4b8495ff853f672bbcdaf",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "7e51fb977a32c6af7e98b2ca3a3b3875fde3865fff86bde198b45dea20af96b8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8485,
+      "sha256": "5e672e3418a017a645585b2f9c8eaa9df7ada872bba485792e0631ff36394df1",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 528
+          },
+          "sha256": "d7d495284646cb2e2c73373d96c518550b6112c007ba775c6b5574d68450a278"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6787,
+      "sha256": "af7f624db1f0df28ff897174878784ea9d76cd0ac5d99f2dcc258b2a6925c214",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 437
+          },
+          "sha256": "819ac1e966d1bfd3df4608ec5d5697c20188fbc6f70dccef3a2742a52126a5e9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5950,
+      "sha256": "30be342dc9d4a9265194e5e67ab53d42d1cf4296d07f6e0699979d565c96cf31",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 351
+          },
+          "sha256": "5df5234bae01006fdbf016cfb61aef59b15197b7cc619f334fca547a4c387cf6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5783,
+      "sha256": "db8728c48d20e5b93419fdc7296a481e435fe01c644c91ead96cd678d12f5b3d",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 337
+          },
+          "sha256": "580b600f50f1539a2ddfb805ef3c2e2ea8ccd27c06d7e2f8bdd051534bd558d3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5827,
+      "sha256": "77c03b9bd33504073e55915c7a7e7f54f229dfea8642e371b605e2439817c4aa",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "8550fb82bed3f500cc2916ab29e4418836fcf1b4db30faadddc9ee05b0b0559a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-pt-390.png",
+      "rota": "/temas/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2541,
+      "sha256": "b513ecceed9393f27880240f25112fb7de83cb2c387cf5410178713eabd68c5d",
+      "recortes": [
+        {
+          "ficheiro": "temas-pt-390-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1968,
+            "width": 354,
+            "height": 219
+          },
+          "sha256": "8b55f58a0e6d4ed0c59d0120046a4f8ec3b8d4d8ff245440a0cdb257536f8833"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-pt-768.png",
+      "rota": "/temas/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 1694,
+      "sha256": "3b34244ccf0bb2e834dd0faefe5115c97aa9971dac0ccd569ce713b97968bf4c",
+      "recortes": [
+        {
+          "ficheiro": "temas-pt-768-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1243,
+            "width": 529,
+            "height": 193
+          },
+          "sha256": "6c62773485a08df2e17e1899c7f31b156357b8391778f928abc8766a06155220"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-pt-1024.png",
+      "rota": "/temas/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1480,
+      "sha256": "38cd06bbf4b7666daa700afe135cac78a305af6334ae37b271006fa146422431",
+      "recortes": [
+        {
+          "ficheiro": "temas-pt-1024-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1085,
+            "width": 529,
+            "height": 193
+          },
+          "sha256": "45672345171c73b06ed3ce2f62a9192d843a6b60819ef01852f20dd6b7d8ca18"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-pt-1280.png",
+      "rota": "/temas/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1495,
+      "sha256": "3b897ae5df25bed6db3491e7b11f2ceb2ba5f859b0bbb300e67e638d7d1fe5b6",
+      "recortes": [
+        {
+          "ficheiro": "temas-pt-1280-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1082,
+            "width": 528,
+            "height": 194
+          },
+          "sha256": "8b696c3c2509060aa7baa584ab95d58b6bcf969297e23516fb694fca86785162"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-pt-1600.png",
+      "rota": "/temas/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1504,
+      "sha256": "f4a1981858ac64a7a507e8e17fdb68efa7c49bee0cd64630d58c41c0737facdb",
+      "recortes": [
+        {
+          "ficheiro": "temas-pt-1600-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1085,
+            "width": 528,
+            "height": 194
+          },
+          "sha256": "7eb2b94a9dd177506183fa28687585a1fe1b962ef6114c6cf3eaa1021d62d582"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-en-390.png",
+      "rota": "/en/themes/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2526,
+      "sha256": "75845b0771bb7807842ed50416bb7615d4af40c44a46a12500fa1b798d33e0d4",
+      "recortes": [
+        {
+          "ficheiro": "temas-en-390-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1905,
+            "width": 354,
+            "height": 219
+          },
+          "sha256": "64601e330c10f46771de42d61524c283626816f73f2eeb19e65a6226b4ae8995"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-en-768.png",
+      "rota": "/en/themes/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 1689,
+      "sha256": "a080931d78668094499fbe15fc4179b44002331ef0a2b11f865ac5516e851605",
+      "recortes": [
+        {
+          "ficheiro": "temas-en-768-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1239,
+            "width": 529,
+            "height": 193
+          },
+          "sha256": "bd20d62c64cf7a54a469f88295e0309756ab0267bfd15197281934b787aa4004"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-en-1024.png",
+      "rota": "/en/themes/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1480,
+      "sha256": "58c1b413a306846c15a0c3839e33b3b05d248bb207093fff2f487bb755abb5f2",
+      "recortes": [
+        {
+          "ficheiro": "temas-en-1024-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1085,
+            "width": 529,
+            "height": 193
+          },
+          "sha256": "94027fd3d6d1cdde07eaff92388e44b9dfe30e5ced8fb4c4c1260d8c07eedbc2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-en-1280.png",
+      "rota": "/en/themes/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1490,
+      "sha256": "f973a60c224f4a28ff271d66e924c50e4b4c14391d68895d83914441b25b3da7",
+      "recortes": [
+        {
+          "ficheiro": "temas-en-1280-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1078,
+            "width": 528,
+            "height": 193
+          },
+          "sha256": "5c74e90917885488f2bd1acd16f7a08b487c2aaa4d00ce53ce458d6dcf9acfef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "temas-en-1600.png",
+      "rota": "/en/themes/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1500,
+      "sha256": "c0bbd48acabae6682cc400e814bdbb773a5027c662c1bc3d4c17e9007186a88a",
+      "recortes": [
+        {
+          "ficheiro": "temas-en-1600-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "temas-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1081,
+            "width": 528,
+            "height": 193
+          },
+          "sha256": "5c74e90917885488f2bd1acd16f7a08b487c2aaa4d00ce53ce458d6dcf9acfef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-pt-390.png",
+      "rota": "/estado-e-economia/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6445,
+      "sha256": "750b94ce9bb08f6880373623c6ebc5fb7e5e3db136545a191dd1d1523d286556",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-pt-390-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 5310,
+            "width": 354,
+            "height": 219
+          },
+          "sha256": "c437727b26cce4384052baebc7fe3908e27db0d6d862d3910b423f6e4fe46c1a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-pt-768.png",
+      "rota": "/estado-e-economia/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4639,
+      "sha256": "c511ab31958ce1d2b7ec59222d8e255b67bedfc802f7160b659d0c0265aa751a",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-pt-768-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 3669,
+            "width": 529,
+            "height": 194
+          },
+          "sha256": "40765861981575c8076310169999cff5e44b67bf53ac7ec537ab8ef117d34e3b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-pt-1024.png",
+      "rota": "/estado-e-economia/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4132,
+      "sha256": "6cdde99a9ee9c418f5bad9d0bcf0950a64c1a16ef0bcf61bd887b31b10c99cdf",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-pt-1024-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 3234,
+            "width": 529,
+            "height": 193
+          },
+          "sha256": "e93407897259552f840144368c5fac5b9884067bf4c7567bfe99d63e38a0505b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-pt-1280.png",
+      "rota": "/estado-e-economia/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4019,
+      "sha256": "5644ea29c28eb35a4cd1de6e0917c7a4e9dd3409404946454b4c49041ca415eb",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-pt-1280-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 3100,
+            "width": 528,
+            "height": 193
+          },
+          "sha256": "e2ab7dbd96ad5836b1952d4c3aa4d1a46f5ecae0b441e716732c0584d0d0976b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-pt-1600.png",
+      "rota": "/estado-e-economia/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4028,
+      "sha256": "ff09fa8dad829bae8c17c1b14b50d0c2528ab2f598b46ff99a33159f3ebab6ff",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-pt-1600-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 3077,
+            "width": 528,
+            "height": 193
+          },
+          "sha256": "e1b04b3e39d34828b5e06c17dacd4576ebc9066bf7aeb8410a6ef8b6c50ab67b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-en-390.png",
+      "rota": "/en/state-and-economy/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6225,
+      "sha256": "da2f4bcf021d4d22d451990c004c5a55659537be659ddd221f052f26305ca592",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-en-390-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 5042,
+            "width": 354,
+            "height": 218
+          },
+          "sha256": "9c4e877edbccda0bddd66cb24b0bce7fa06e86160c1d49a1c67b3c38226a9df8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-en-768.png",
+      "rota": "/en/state-and-economy/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4576,
+      "sha256": "c05ff410dbd564cdc9f48f6ae6c09279b06e2ef50cfc90448400577a400377ed",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-en-768-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 3607,
+            "width": 529,
+            "height": 193
+          },
+          "sha256": "7798ee60acc23bb5a1fad8dd649d338410767cd3f573537c8b37be56f59a49c3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-en-1024.png",
+      "rota": "/en/state-and-economy/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4092,
+      "sha256": "89e792b5eeffc671241920a35c0698884315aabd0649c08b3b809a1ed4afca9f",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-en-1024-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 3169,
+            "width": 529,
+            "height": 194
+          },
+          "sha256": "e7592e42f5b8c09400ac87e7eec902b240fe0f240a07de818ac5f758cdb35df4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-en-1280.png",
+      "rota": "/en/state-and-economy/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3918,
+      "sha256": "ab8b9d56b19727f58877507cbcd1817158fce5e2b02c10a95436f44ebbe6177d",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-en-1280-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 2999,
+            "width": 528,
+            "height": 194
+          },
+          "sha256": "811e94549a4f04556774c44e5424f5c65ed9d37870183b6b915d854048d83149"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "porta-estado-e-economia-en-1600.png",
+      "rota": "/en/state-and-economy/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3967,
+      "sha256": "9d65e20259981bfc334d9a79b1c94a2a3159cc86c0d704f6aa25b7cbfce0f529",
+      "recortes": [
+        {
+          "ficheiro": "porta-estado-e-economia-en-1600-dossies.png",
+          "seletor": "[data-dossie-lista]",
+          "origem": "porta-estado-e-economia-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 2991,
+            "width": 528,
+            "height": 194
+          },
+          "sha256": "811e94549a4f04556774c44e5424f5c65ed9d37870183b6b915d854048d83149"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "8d3fddafab60158d6f7a2d205670aeeda73f0131618684b4c8bab0a925e8a872",
+    "index.html": "b176883921680d9684cf2e6ef86bb41f977d9a772921d1a68b10e563cee27fa1",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/primeira-pagina.Bbca7kUf.css": "b49e7691562c3cafe127e26a0ff26ac57523e22c00a51c834af70ab5b9b974d9",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/index.html": "5ad468937f7f14d178ef846f44a3b1fd0f1a5bdc1c4242cb5c3058d46b265b74",
+    "temas/index.html": "503e317dbd9a335b9c47b9770ceb366a500475c16ab33265579b74e3cd3b7352",
+    "en/themes/index.html": "dcdfce37bc1440e9c77b3c5e10f5b641c2d82487bcb42d74314d300fe806e743",
+    "estado-e-economia/index.html": "9bb532085a6d2cb7a79ffa008f6c182f07b7b6d4fe31f68bad799d9942d54ab4",
+    "_astro/cartao-medida.DfTv6Oc1.css": "979cfb4fcb2cc4fe4cf2128ec4fa5e1bf71fc56fbaf091639cd7c17ab4d361d1",
+    "en/state-and-economy/index.html": "e33c249096543b8f2d75789b41709365f1053d1d4d0a5c25952e8a607d64aed6"
+  },
+  "falhas": [],
+  "ok": true
+}

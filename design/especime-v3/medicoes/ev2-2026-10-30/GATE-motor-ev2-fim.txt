@@ -1,0 +1,15 @@
+2026-10-30T21:45:39Z
+cabeça 7185a3f0481fc3ed5f489f1a179727b0349df4f2
+…
+GATE  editions evora-contas-camara-pt-md-html ok
+GATE  editions evora-contas-camara-en-md-html ok
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+core.gate exit 0
+2026-10-30T22:03:14Z

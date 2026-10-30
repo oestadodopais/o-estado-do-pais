@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T21:31:52+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "E1",
+   "ficheiro": "built/estudos/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a página portuguesa perde o «em parte» da fonte (p. 122): os concursos desertos passam a explicar a execução inteira",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5468bd0e486846d3fa3dec61ef5a96e698df42f5ecc091ea941e6a63e5481c2d",
+   "sha256_depois": "c5d218ac4bbcf7f77f05c6e64b27076bd7ec07ffb9f29898ed34e8906fd47138",
+   "contexto_antes": "z que essa execução é influenciada negativamente pelo atraso dos projetos orçamentados à espera de financiamento do PRR, e que a dificuldade em adjudicar obras cujos concursos ficaram desertos a explica em parte. Entretanto saíram €<span class=\"texto-figura\" data-registo=\"evora-contas-da-camara-2010-2025/pt#48.5\" data-registo-row=\"amortizacoes-2025\">4 308 783</span> em ",
+   "contexto_depois": "z que essa execução é influenciada negativamente pelo atraso dos projetos orçamentados à espera de financiamento do PRR, e que a dificuldade em adjudicar obras cujos concursos ficaram desertos a explica. Entretanto saíram €<span class=\"texto-figura\" data-registo=\"evora-contas-da-camara-2010-2025/pt#48.5\" data-registo-row=\"amortizacoes-2025\">4 308 783</span> em "
+  },
+  {
+   "id": "E2",
+   "ficheiro": "built/en/studies/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a página inglesa perde a ressalva do valor de 2024 ao lado dos 7.4 % (o achado 6 da leitura a frio volta)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "815d151adf71d9f81792dcd3fc5981856a7cda7c082912eecafc76b5d6ad62fc",
+   "sha256_depois": "5e1e69e8683bccb1b9db6d86b855120cefa033625c736560216223e89b6ff77b",
+   "contexto_antes": "money paid, investment rose <span class=\"texto-figura\" data-registo=\"evora-contas-da-camara-2010-2025/en#7.3\" data-registo-row=\"invest-var-2024-2025\">7.4</span>% on the 2024 value that the 2025 report prints as a comparative, because the 2024 accounts were never certified. The first two are contractual; the third can be postponed.</p><p data-registo-bloco=\"8\" data-registo-unidade=\"evora-contas-da-camara-2010-2025/en#8\">The inherited debt took ",
+   "contexto_depois": "money paid, investment rose <span class=\"texto-figura\" data-registo=\"evora-contas-da-camara-2010-2025/en#7.3\" data-registo-row=\"invest-var-2024-2025\">7.4</span>% on 2024. The first two are contractual; the third can be postponed.</p><p data-registo-bloco=\"8\" data-registo-unidade=\"evora-contas-da-camara-2010-2025/en#8\">The inherited debt took "
+  },
+  {
+   "id": "E3",
+   "ficheiro": "fontes/PRESTACAO_CONTAS_2025-paginas-110-113-122-124.txt",
+   "descricao": "o texto da p. 110 dá à linha «Outras Receitas Correntes» uma dotação corrigida diferente da inicial, ao contrário do PDF",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cc20872543869a8cc573f27af06b33cf10d194b8c4b315a0fff655580202e1e9",
+   "sha256_depois": "44d1e14c1e79c921369278271780c0569448aafe9c4c91619297ba5e3f3ae884",
+   "contexto_antes": "00\n                Venda de Bens e Serviços        8 323 100,00    8 323 100,00   Juros e outros encargos          1 555 925,00    2 060 925,00\n                Outras Receitas Correntes      19 427 778,00   19 427 778,00\n                   Total Receitas Correntes    86 209 991,00   86 209 991,00     Total Despesas Correntes      71 056 035,00   77 255 309,95\n                Ve",
+   "contexto_depois": "00\n                Venda de Bens e Serviços        8 323 100,00    8 323 100,00   Juros e outros encargos          1 555 925,00    2 060 925,00\n                Outras Receitas Correntes      19 427 778,00   21 427 778,00\n                   Total Receitas Correntes    86 209 991,00   86 209 991,00     Total Despesas Correntes      71 056 035,00   77 255 309,95\n                Ve"
+  },
+  {
+   "id": "E4",
+   "ficheiro": "motor/content/16 Évora Contas da Câmara/Technical Source/documento.pt.md.tmpl",
+   "descricao": "o gabarito português volta a dizer «no seu quadro 5», o número escrito à mão que a adenda G tirou",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "304b4088658347b1275a16d7d7375cb34774faf8ea5d7f216bf394a85dc6171e",
+   "sha256_depois": "84c85a495fa3b791c22323fd8577c34323e4b4dff7a535115937ff4c1d080813",
+   "contexto_antes": "quota-falta⟧% dos ⟦16:receita-falta-2025⟧ euros que faltaram à receita de 2025 face ao orçamento corrigido, que é o orçamento municipal depois das modificações que a prestação de contas resume.\n@@bloco 07 27\n@@sai 07 28: um filete entre duas secções que passaram a subsecções\n@@bloco 07 29 nivel=3\n@@bloco 07 30-32\n@@bloco 07 33\n@@  troca: O relatório c",
+   "contexto_depois": "quota-falta⟧% dos ⟦16:receita-falta-2025⟧ euros que faltaram à receita de 2025 face ao orçamento corrigido, que é o orçamento municipal depois das modificações que a prestação de contas resume no seu quadro 5.\n@@bloco 07 27\n@@sai 07 28: um filete entre duas secções que passaram a subsecções\n@@bloco 07 29 nivel=3\n@@bloco 07 30-32\n@@bloco 07 33\n@@  troca: O relatório c"
+  },
+  {
+   "id": "E5",
+   "ficheiro": "built/estudos/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a página portuguesa imprime a primeira publicação como 29.10.2026 sob datetime 2026-10-01",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c5d218ac4bbcf7f77f05c6e64b27076bd7ec07ffb9f29898ed34e8906fd47138",
+   "sha256_depois": "dc0018bdd3c90dcbd2df228f529c522c1d08bc6949f476edb27065ebcbb7ee4f",
+   "contexto_antes": "010-2025/pt\"><a href=\"/estudos/evora-contas-da-camara-2010-2025/documento\" hreflang=\"pt-PT\">Edição tal como foi publicada</a><span aria-hidden=\"true\"> · </span><span data-voz>publicado a</span> <time datetime=\"2026-10-01\" data-nonledger=\"data-do-repositorio\">01.10.2026</time><span aria-hidden=\"true\"> · </span><span data-voz>atualizado a</span> <time datetime=\"2026-10-30\" data-estudo-atualizacao data-nonledger=\"data-editorial\" data-d",
+   "contexto_depois": "010-2025/pt\"><a href=\"/estudos/evora-contas-da-camara-2010-2025/documento\" hreflang=\"pt-PT\">Edição tal como foi publicada</a><span aria-hidden=\"true\"> · </span><span data-voz>publicado a</span> <time datetime=\"2026-10-01\" data-nonledger=\"data-do-repositorio\">29.10.2026</time><span aria-hidden=\"true\"> · </span><span data-voz>atualizado a</span> <time datetime=\"2026-10-30\" data-estudo-atualizacao data-nonledger=\"data-editorial\" data-d"
+  }
+ ]
+}

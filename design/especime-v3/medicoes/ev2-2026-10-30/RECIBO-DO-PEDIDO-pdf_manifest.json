@@ -1,0 +1,38 @@
+{
+ "fetched_at": "2026-08-10T09:05:14+00:00",
+ "fetched_with": "curl -sSL (system trust store)",
+ "source_type": "government",
+ "publisher": "Câmara Municipal de Évora — cm-evora.pt",
+ "files": [
+  {
+   "key": "prestacao_2025",
+   "title": "Prestação de Contas 2025 — Município de Évora",
+   "file": "PRESTACAO_CONTAS_2025.pdf",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+   "listing_page": "https://www.cm-evora.pt/municipe/camara-municipal/relatorios-de-gestao-e-prestacao-de-contas/2025-2/",
+   "bytes": 17137578,
+   "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+   "pages": 458
+  },
+  {
+   "key": "clc_2025",
+   "title": "Certificação Legal das Contas 2025 — Município de Évora",
+   "file": "Municipio-Evora-CLC-2025.pdf",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/Municipio-Evora-CLC-2025.pdf",
+   "listing_page": "https://www.cm-evora.pt/municipe/camara-municipal/relatorios-de-gestao-e-prestacao-de-contas/2025-2/",
+   "bytes": 384656,
+   "sha256": "31c53c32cb43439c3e93c6cf6245b1cbdec783366f090fefe4b6aba494fd83c5",
+   "pages": 4
+  },
+  {
+   "key": "gop_2026",
+   "title": "Grandes Opções do Plano e Orçamento 2026 — Município de Évora",
+   "file": "Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+   "listing_page": "https://www.cm-evora.pt/municipe/camara-municipal/plano-e-orcamento/",
+   "bytes": 31049815,
+   "sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04",
+   "pages": 130
+  }
+ ]
+}

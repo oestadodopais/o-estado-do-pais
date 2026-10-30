@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-30T20:47:15+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "C1",
+   "ficheiro": "built/index.html",
+   "descricao": "a data impressa na linha do dossiê diz 28.10.2026 onde o datetime e a peça mais recente dizem 29.10.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b176883921680d9684cf2e6ef86bb41f977d9a772921d1a68b10e563cee27fa1",
+   "sha256_depois": "84b1d8eb3c455b27d54b9152ebd9ba829a0d2dc3b8ef295650c82ec410a97912",
+   "contexto_antes": "-de-estudo\">A casa em Portugal e na Europa</span></a></li><li data-novidade=\"dossie:orcamento-2027\"><time datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">29.10.2026</time><span class=\"pp-novidade-tipo\"><span data-voz>dossiê</span></span><a href=\"/dossies/orcamento-2027\" data-novidade-porta data-novidade-dossie=\"orcamento-2027\"><span data-dossie-campo=\"orcamento-2027:titulo\">O Orçamento d",
+   "contexto_depois": "-de-estudo\">A casa em Portugal e na Europa</span></a></li><li data-novidade=\"dossie:orcamento-2027\"><time datetime=\"2026-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">28.10.2026</time><span class=\"pp-novidade-tipo\"><span data-voz>dossiê</span></span><a href=\"/dossies/orcamento-2027\" data-novidade-porta data-novidade-dossie=\"orcamento-2027\"><span data-dossie-campo=\"orcamento-2027:titulo\">O Orçamento d"
+  },
+  {
+   "id": "C2",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a edição inglesa diz «5 piece» (o singular com cinco peças)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5ad468937f7f14d178ef846f44a3b1fd0f1a5bdc1c4242cb5c3058d46b265b74",
+   "sha256_depois": "83bb0662bdfcccd03842983dec53c8f2107f8daf7597119f6572236941940ba1",
+   "contexto_antes": "a-de-campo=\"reference_date\">2027</span> Budget</span> · <span class=\"prova-valor\" data-prova=\"dossie_pecas_orcamento_2027\" title=\"pieces on this dossier’s page\">5</span> <span data-voz>pieces</span></a></li><li data-novidade=\"explicacao:dinheiro-do-estado-2026\"><time datetime=\"2026-10-06\" data-nonledger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">",
+   "contexto_depois": "a-de-campo=\"reference_date\">2027</span> Budget</span> · <span class=\"prova-valor\" data-prova=\"dossie_pecas_orcamento_2027\" title=\"pieces on this dossier’s page\">5</span> <span data-voz>piece</span></a></li><li data-novidade=\"explicacao:dinheiro-do-estado-2026\"><time datetime=\"2026-10-06\" data-nonledger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">"
+  },
+  {
+   "id": "C3",
+   "ficheiro": "diff.patch",
+   "descricao": "a contagem conserva um sublinhado pontilhado próprio, ao contrário do mandato (a letra do título)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "549060bb9002d789d169b59a1edc130c0edaa88546f6a455e57f97c11ac0b4a3",
+   "sha256_depois": "bda6b89f5212adfbc47d927a48e5abcfd9fc045ad344a310452c249ed9b3dd8f",
+   "contexto_antes": ": 1.4; }\n+/* DO4: a contagem partilha a letra e o sublinhado da ligação do título. */\n+.pp-novidades-lista [data-novidade-dossie] .prova-valor { font: inherit; font-variant-numeric: inherit; color: inherit; border-bottom: 0; }\n @media (max-width: 600px) { .pp-novidades-lista li { grid-template-columns: auto 1fr; } .pp-novidades-lista a { grid-column: 1 / -1; } }\n \n .pp-barra-periodo ",
+   "contexto_depois": ": 1.4; }\n+/* DO4: a contagem partilha a letra e o sublinhado da ligação do título. */\n+.pp-novidades-lista [data-novidade-dossie] .prova-valor { font: inherit; font-variant-numeric: inherit; color: inherit; border-bottom: 1px dotted; }\n @media (max-width: 600px) { .pp-novidades-lista li { grid-template-columns: auto 1fr; } .pp-novidades-lista a { grid-column: 1 / -1; } }\n \n .pp-barra-periodo "
+  },
+  {
+   "id": "C4",
+   "ficheiro": "built/index.html",
+   "descricao": "a ligação da linha do dossiê vai para a página do estudo do Orçamento e não para a do dossiê",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "84b1d8eb3c455b27d54b9152ebd9ba829a0d2dc3b8ef295650c82ec410a97912",
+   "sha256_depois": "8111771397268900983dc8fd3753153d42e0e2000db299d4cb0333b8cc6f70aa",
+   "contexto_antes": "-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">28.10.2026</time><span class=\"pp-novidade-tipo\"><span data-voz>dossiê</span></span><a href=\"/dossies/orcamento-2027\" data-novidade-porta data-novidade-dossie=\"orcamento-2027\"><span data-dossie-campo=\"orcamento-2027:titulo\">O Orçamento de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de",
+   "contexto_depois": "-10-29\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">28.10.2026</time><span class=\"pp-novidade-tipo\"><span data-voz>dossiê</span></span><a href=\"/estudos/orcamento-2027-o-que-muda-e-para-quem\" data-novidade-porta data-novidade-dossie=\"orcamento-2027\"><span data-dossie-campo=\"orcamento-2027:titulo\">O Orçamento de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de"
+  },
+  {
+   "id": "C5",
+   "ficheiro": "diff.patch",
+   "descricao": "a planta da grelha põe a ligação na coluna 3, onde ela já está, e não morde à largura de computador",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bda6b89f5212adfbc47d927a48e5abcfd9fc045ad344a310452c249ed9b3dd8f",
+   "sha256_depois": "88272981085dbb9b0b3f0fea74b0bec5d83dd1e3d9539d03f8fdd9403678b709",
+   "contexto_antes": "tor,estilo]of [\n+   ['letra da contagem','.prova-valor','font-family:monospace!important;font-weight:900!important;border-bottom:1px solid red!important'],\n+   ['grelha','a[data-novidade-dossie]','grid-column:1 / -1!important'],\n+   ...[['alvo de toque','a[data-novidade-dossie]','display:block!important;min-height:0!important;height:1px!important;width:1px!important;padding:0!important",
+   "contexto_depois": "tor,estilo]of [\n+   ['letra da contagem','.prova-valor','font-family:monospace!important;font-weight:900!important;border-bottom:1px solid red!important'],\n+   ['grelha','a[data-novidade-dossie]','grid-column:3!important'],\n+   ...[['alvo de toque','a[data-novidade-dossie]','display:block!important;min-height:0!important;height:1px!important;width:1px!important;padding:0!important"
+  }
+ ]
+}

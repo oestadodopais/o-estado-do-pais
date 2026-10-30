@@ -1,0 +1,957 @@
+{
+  "cabeca": "13f29b0cd0f437aec0321fc893ee3291a885f615",
+  "capturador_sha256": "684862e5123b392590167897e5ff2b57ae6207d369ab75f4c4f634c3208638a9",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "estudo-evora-contas-pt-390.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 42946,
+      "sha256": "c43b8e20b1cd41f77aa87e452f9518f0c20e1470fc7e19a8853251e338086298",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-pt-390-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2140,
+            "width": 354,
+            "height": 309
+          },
+          "sha256": "b351f960a591083f85f4bdedd6e602dff05b75c1d1da6a35b6a29261afa21782"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-390-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 9917,
+            "width": 354,
+            "height": 365
+          },
+          "sha256": "0ddd4c076fddd2acb4066c889f34c7bbdfd4064646470b4470a50c07e872d2f2"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-390-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 11152,
+            "width": 354,
+            "height": 645
+          },
+          "sha256": "4a2d0452a086aa2cc426b9859ececca5de010f6e4ee1a7febf814f9e44be8670"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-390-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 42533,
+            "width": 354,
+            "height": 59
+          },
+          "sha256": "3260a214058d40ac8b59fe86af8356081cfa2754f5de4031377ec6f80959bc60"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-pt-768.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 35460,
+      "sha256": "4dacd88011dbf0f82299637358f7ba00ddb98cf36b9ac0c39eee3d2f6bbb3bfc",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-pt-768-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1852,
+            "width": 545,
+            "height": 247
+          },
+          "sha256": "457f80a7b3c81e0a9aee94da4d88d7f86f12f5e1ff557623533f38d1b46bdceb"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-768-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 8319,
+            "width": 545,
+            "height": 277
+          },
+          "sha256": "732dec7744f77ac66b9dfcaa9aa3fa800e2e4a9d47f35cfda85f5adad63fd7e4"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-768-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 9354,
+            "width": 545,
+            "height": 495
+          },
+          "sha256": "fdf90e5de7a4f93089be2fee17adda48721c8e90cbce46597c73b6a183a999cc"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-768-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 35165,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "c3645d6b512e2f47118b46355e9f528a22747c5ab1711a3c7aed14ada14a829e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-pt-1024.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 34291,
+      "sha256": "838532bc5cd090434f74ed5aefea543b884b6eec05a6889d04ee3c2fc4afb0b0",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-pt-1024-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1838,
+            "width": 545,
+            "height": 247
+          },
+          "sha256": "d452b806c670dbd8f00cd4f0d265dba0670bea45768df3beb6c6ce4e36105a3e"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1024-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 8123,
+            "width": 545,
+            "height": 276
+          },
+          "sha256": "6b380c46fa1166fa4a6a28a6eb34475262a81194cc236d7350b93255abb6e327"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1024-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 9157,
+            "width": 545,
+            "height": 495
+          },
+          "sha256": "8480f8386cea9675fdd49b5d037239b5d145f012b2d326956b510ae9bf2811ec"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1024-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 34052,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "52cb3891404b72f79003a6a79703adfd820601442bb97dd99e4ff2a5231cbad2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-pt-1280.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 34441,
+      "sha256": "6111c5da5ed072a112bca506e959a22538ca24cacb14b09ae15c665700c77290",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-pt-1280-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1852,
+            "width": 544,
+            "height": 247
+          },
+          "sha256": "9a2567c8eeff577decf9c640b229836c37433817a213b06b7cfe3b2e50309c69"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1280-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 8161,
+            "width": 544,
+            "height": 277
+          },
+          "sha256": "948881b062863f7853f7ec41252e36ccabd2bd45756cb3af19cbaad3f963e229"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1280-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 9195,
+            "width": 544,
+            "height": 496
+          },
+          "sha256": "ded1f5643e116de5edc28753550c57f73e35bd87878c986ff34fe66894fc8d20"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1280-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 34184,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "5a4d49f5cb6a74275ab65f9709d9fcd7d241ffba7646c1504e78d4da02ffc10d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-pt-1600.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 34447,
+      "sha256": "62237824c1d8dc21d0a6490e9ba267d699e4dee9458bebb24e78c949787854ad",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-pt-1600-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1852,
+            "width": 544,
+            "height": 247
+          },
+          "sha256": "9a2567c8eeff577decf9c640b229836c37433817a213b06b7cfe3b2e50309c69"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1600-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 8161,
+            "width": 544,
+            "height": 277
+          },
+          "sha256": "948881b062863f7853f7ec41252e36ccabd2bd45756cb3af19cbaad3f963e229"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1600-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 9195,
+            "width": 544,
+            "height": 496
+          },
+          "sha256": "ded1f5643e116de5edc28753550c57f73e35bd87878c986ff34fe66894fc8d20"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-pt-1600-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 34184,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "5a4d49f5cb6a74275ab65f9709d9fcd7d241ffba7646c1504e78d4da02ffc10d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-en-390.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41308,
+      "sha256": "c41b20f261e6703f789702fbade3618c304dafd0becc6ea977080e961e313578",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-en-390-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2198,
+            "width": 354,
+            "height": 281
+          },
+          "sha256": "18093c33f66423450a37216c6754eedead6eda723be9c049aa76f9022d9be7c3"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-390-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 9583,
+            "width": 354,
+            "height": 337
+          },
+          "sha256": "34777c3516d272447484cd9a0dcdabea0d836c60b668904a0b2ca0269ee62a26"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-390-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 10743,
+            "width": 354,
+            "height": 533
+          },
+          "sha256": "bf79a341d42c81d1b81d0dcfd3a7254140e4dc2b8f99b4842dd514dbf6966e64"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-390-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 40847,
+            "width": 354,
+            "height": 59
+          },
+          "sha256": "e2f9aab04572b940dd601667aaaf908a13fe07f4cbef0e9ad3901c0bff928322"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-en-768.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 34455,
+      "sha256": "4b5c05f7ef89bc0d661570d6e577e10b3828c4c5d097dd4eaf5ddb8efd392366",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-en-768-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1935,
+            "width": 545,
+            "height": 215
+          },
+          "sha256": "aa4ac38ae87da4cc5ba6c76a49847366a059214ac9d6c9b4115da0977b192d66"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-768-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 8189,
+            "width": 545,
+            "height": 277
+          },
+          "sha256": "cc69e4842fa78824247ec2c26c4d3413500d3f86e30c35ddac229d29a6bf4aaa"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-768-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 9192,
+            "width": 545,
+            "height": 434
+          },
+          "sha256": "d168d6bdd1466573478b09b43ced59345900bb9789804e74f72a6778d997a9f6"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-768-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 34160,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "accadcf98da10e41c5eed113ccf4757b0271a5fd702ff65d973160c255c4d880"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-en-1024.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 33278,
+      "sha256": "7d52b45781dcbb86e4fa89e518f3fd769e78ae83d9739da5591138b7b8be008c",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-en-1024-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1913,
+            "width": 545,
+            "height": 216
+          },
+          "sha256": "3c08af059be38202ef091895248b7555190804daa09b767af87d6af6569fe640"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1024-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 7984,
+            "width": 545,
+            "height": 278
+          },
+          "sha256": "c5f152db5e0f0d4b4c55ca36b979352641960d5a3aa5799f4d73e930643d9eac"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1024-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 8988,
+            "width": 545,
+            "height": 433
+          },
+          "sha256": "18261d29dfe33c5d6bda5991eb8d4da899e64d252d92c27340ff1b34d238a83c"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1024-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 33040,
+            "width": 545,
+            "height": 37
+          },
+          "sha256": "e79937ce8376ca60b633ea8174de50712b8235ad75fcc24d6558efda6f971673"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-en-1280.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 33429,
+      "sha256": "b6cc173dabf4895aeb1fed1922581b8a600700716ad37a9a1a077bbd8ad3425d",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-en-1280-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1927,
+            "width": 544,
+            "height": 216
+          },
+          "sha256": "4c679b850b3f3489a1bfe55d58223e7233f6d221f5e6808a11853594b6a3d83c"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1280-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 8023,
+            "width": 544,
+            "height": 277
+          },
+          "sha256": "2e06f9415165d027de29107c36b6aecb34b075fd9ded48eed2f4f02e374d7460"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1280-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 9026,
+            "width": 544,
+            "height": 434
+          },
+          "sha256": "d4cc10aeba7ad9d18a472ad62fdb4f989a069f9b2747c6bfd53b52e5928c3096"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1280-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 33172,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "7facf6dbfe2b26f0bd51b74d5b2f25f1a525ea6ba7845b69f2758c96416519a6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-evora-contas-en-1600.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 33435,
+      "sha256": "77a141daf65582969ddca71059311d8d06fa4d4af8db8c35da086aa100970b29",
+      "recortes": [
+        {
+          "ficheiro": "estudo-evora-contas-en-1600-passagem-7.png",
+          "seletor": "[data-registo-bloco=\"7\"]",
+          "origem": "estudo-evora-contas-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1927,
+            "width": 544,
+            "height": 216
+          },
+          "sha256": "4c679b850b3f3489a1bfe55d58223e7233f6d221f5e6808a11853594b6a3d83c"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1600-passagem-42.png",
+          "seletor": "[data-registo-bloco=\"42\"]",
+          "origem": "estudo-evora-contas-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 8023,
+            "width": 544,
+            "height": 277
+          },
+          "sha256": "2e06f9415165d027de29107c36b6aecb34b075fd9ded48eed2f4f02e374d7460"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1600-passagem-48.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "origem": "estudo-evora-contas-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 9026,
+            "width": 544,
+            "height": 434
+          },
+          "sha256": "d4cc10aeba7ad9d18a472ad62fdb4f989a069f9b2747c6bfd53b52e5928c3096"
+        },
+        {
+          "ficheiro": "estudo-evora-contas-en-1600-datas.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "estudo-evora-contas-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 33172,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "7facf6dbfe2b26f0bd51b74d5b2f25f1a525ea6ba7845b69f2758c96416519a6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8589,
+      "sha256": "f088b567ab427016a27caa96a53e9e2359839c1887ea2499b5f644505bcb3cfb",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 511
+          },
+          "sha256": "cc07ad6ce1ae1dbb784785ccbe980787a49a1336fe3e46f8280a0a543c42b9dd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6789,
+      "sha256": "715eb50490a279424b2b41ff9bdf8c6cfceb8c663b26f5ba05d485f5a2590eda",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 488
+          },
+          "sha256": "dfe4951632c76f3bdac10c162f23c18afcd8907e8af3fefbcaef85f401b5d5d2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5841,
+      "sha256": "c2ef49f919812e8b1c4443d0b3283709230eab5ffbb987f0b0c7e28ff602ae5c",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 332
+          },
+          "sha256": "50e38aa53ebe76bc14aaed9d21556e9fb95da8158f139ae07972fde0808a8284"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5776,
+      "sha256": "7ce041a9bccd1a241bb6ab503e7fc1085696ad2561425d39dde82f02515209c6",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "d2f6b10885ffa4962a86699cb1b08994c2addca4b2972fc58a62c031de3ca423"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5796,
+      "sha256": "c34208a6ab7965bac51b67c2e1d9c911ba913e758375112ab5e497763a549020",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 343
+          },
+          "sha256": "804c43ec821628297c7a0d98fd0f08ae5dbf15bedd65c02f876d52838312aac0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8491,
+      "sha256": "00ba77c25a6555b160e1697a9d94cfec3bea93bd55a604116f7bfa30ecadd2f9",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 533
+          },
+          "sha256": "3f9783b60e2a05215bd1f8b330aa59deae2c4e04f65630d2d265c171bb4da6ca"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6838,
+      "sha256": "377fa4ad54fed06aac4dee0a3cfcf7dc2f57dc1306ed78207a2f343f669025c3",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 488
+          },
+          "sha256": "e83a1324f88bd6b2aeab0414763ed67d42ac65423451077f65796bf00e7c80e1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5953,
+      "sha256": "cc58b9c862d66e3057eb9ce884336cb6367c90edaa1d28dbf797f926a9e7ddff",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 355
+          },
+          "sha256": "bf11a8fd675e8660d08716f0ba6cd27d90dde0e5fc341016b75d621656a07d50"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5810,
+      "sha256": "408565aa4aba4f5fbfdf9b1de92eb39a59f552d8ffc21fddcbd84537a7c85bcc",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "c566bcbbcdcd1eea9e79dc07470959a9f26809f12a594a95d9f5d9db56c3442a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5830,
+      "sha256": "8e914a035359ad4ae55a86457cf9c9d7e8f8df7bb709769b0a4311bf8432e4d1",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 343
+          },
+          "sha256": "b47544e3744e37e9449725fe6ae0ab4f206db86b0dac9175ab48b65ad6280a0c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "2b64a724417de34614897a1accb2732f95757e416afa5f6c0c305f6343be8185",
+    "estudos/evora-contas-da-camara-2010-2025/index.html": "5468bd0e486846d3fa3dec61ef5a96e698df42f5ecc091ea941e6a63e5481c2d",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/texto.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/studies/evora-contas-da-camara-2010-2025/index.html": "815d151adf71d9f81792dcd3fc5981856a7cda7c082912eecafc76b5d6ad62fc",
+    "index.html": "96b311b93c5524aec3a2832cfaea4b6b0ccf21466f9e2934b2e6bd336bc02429",
+    "_astro/primeira-pagina.CMN2HkuO.css": "0ea169c95e91d0746b201fe5d947c642560f2dac8a6ad57a200e966a61c2c44e",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "en/index.html": "b8a9e6cad4e01764f13e0a73b0776742e587929150b50cc835dc62868d4ba60e"
+  },
+  "falhas": [],
+  "ok": true
+}

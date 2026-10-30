@@ -1,0 +1,56 @@
+{
+ "bloco": "DO4 (a linha do dossiê na caixa «O que há de novo» nas três colunas da caixa)",
+ "data": "2026-10-30",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "DO4 (a entrada do dossiê com os três filhos das outras, a contagem na letra do título, as réguas da caixa)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-30T19:44:56Z",
+   "fim": "2026-10-30T20:06:40Z",
+   "pontos": 1.0,
+   "pontos_antes": 22.0,
+   "pontos_depois": 23.0,
+   "turnos": 77,
+   "chamadas_de_ferramenta": 76,
+   "simbolos_entrada": 8245967,
+   "simbolos_cache": 8099072,
+   "simbolos_saida": 30423,
+   "simbolos_raciocinio": 12228,
+   "contexto_medio": 107090,
+   "fonte": "a linha PONTOS do LANCADOR-do4.log e o relatório RELATORIO-do4.md"
+  }
+ ],
+ "pontos_codex_total": 1.0,
+ "leituras": [
+  {
+   "nome": "DO4 (leitura a frio)",
+   "leitor": "Claude Opus 5.5 (leitor)",
+   "inicio": "2026-10-30T20:47Z",
+   "fim": "2026-10-30T20:57Z",
+   "chamadas_de_ferramenta": 41,
+   "simbolos": 141269,
+   "segundos": 592,
+   "plantas": "5 em 5",
+   "achados_reais": "0 Blocking, 0 Major, 9 Minor",
+   "fonte": "a notificação da tarefa do agente"
+  }
+ ],
+ "corrida_inteira": {
+  "pasta": "_aterragens/do4-conferir-2026-10-30-a",
+  "cabeca": "e5f4aab36",
+  "passos": 54,
+  "vermelhos": 0,
+  "segundos": 2266,
+  "modo": "--build"
+ },
+ "capturas": {
+  "paginas": "a primeira página, o Temas e a porta do Estado e da economia, nas cinco larguras e nas duas edições, com os recortes da caixa e das listas dos dossiês",
+  "ficheiros": 60,
+  "pasta_do_drive": "capturas · DO4-2026-10-30"
+ },
+ "lugar_de_direcao": "Claude Opus 5.5 (o contador «Fable only» acabou às 10:09 UTC)"
+}
