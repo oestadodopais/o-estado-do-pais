@@ -235,11 +235,21 @@
      "source_sha256": null,
      "start": 138,
      "value": "21.13"
+    },
+    {
+     "end": 180,
+     "printed": "7.4",
+     "row": "invest-var-2024-2025",
+     "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/PRESTACAO_CONTAS_2025.pdf",
+     "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+     "source_sha256_prefix": "e63102753216d573",
+     "start": 177,
+     "value": "7,4"
     }
    ],
    "i": 7,
    "kind": "paragraph",
-   "text": "When revenue disappoints, investment is what gives. In 2025 staff costs executed at 96.55%, loan amortisation at 93.64% and investment at 21.13%. The first two are contractual; the third is the one that gets postponed."
+   "text": "When revenue disappoints, investment is what gives. In 2025 staff costs executed at 96.55%, loan amortisation at 93.64% and investment at 21.13%; in money paid, investment rose 7.4% on 2024. The first two are contractual; the third is, in this reading, the one that gets postponed."
   },
   {
    "figures": [
@@ -323,7 +333,7 @@
    "figures": [],
    "i": 12,
    "kind": "paragraph",
-   "text": "Budgeting as revenue the outside money that is already committed, or writing beside each line how much of it is secured: that gap is what explains the fall in execution. Publishing the 2024 accounts, or saying publicly why they do not exist. Publishing the annexes of the plan and the budget as text, not as images, so that each project's lines can be read. And the municipality and the regulator explaining the difference between the two debt series from 2020 to 2023."
+   "text": "Budgeting as revenue the outside money that is already committed, or writing beside each line how much of it is secured: that gap is what, in this reading, explains the fall in execution. Publishing the 2024 accounts, or saying publicly why they do not exist. Publishing the annexes of the plan and the budget as text, not as images, so that each project's lines can be read. And the municipality and the regulator explaining the difference between the two debt series from 2020 to 2023."
   },
   {
    "emphasis": [
@@ -1331,11 +1341,29 @@
      "source_sha256": null,
      "start": 123,
      "value": "155 573"
+    },
+    {
+     "end": 272,
+     "printed": "45.6",
+     "row": "outras-rec-correntes-quota-falta",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 268,
+     "value": "45,6"
+    },
+    {
+     "end": 291,
+     "printed": "42 220 018",
+     "row": "receita-falta-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 281,
+     "value": "42 220 018"
     }
    ],
    "i": 42,
    "kind": "paragraph",
-   "text": "The \"other current revenue\" line is where the budget-versus-money gap is most extreme: €19 427 778 was budgeted there and €155 573 arrived — the report explains the line as the place where inherited debt had to be accommodated in the budget's arithmetic."
+   "text": "The \"other current revenue\" line is where the budget-versus-money gap is most extreme: €19 427 778 was budgeted there and €155 573 arrived — the report explains the line as the place where inherited debt had to be accommodated in the budget's arithmetic. That line is 45.6% of the 42 220 018 euros that 2025 revenue fell short of the corrected budget."
   },
   {
    "figures": [
@@ -1593,9 +1621,9 @@
   {
    "emphasis": [
     {
-     "end": 644,
+     "end": 751,
      "kind": "strong",
-     "start": 580
+     "start": 687
     }
    ],
    "figures": [
@@ -1648,27 +1676,37 @@
      "value": "21.13"
     },
     {
-     "end": 357,
+     "end": 419,
      "printed": "4 308 783",
      "row": "amortizacoes-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 348,
+     "start": 410,
      "value": "4 308 783"
     },
     {
-     "end": 395,
+     "end": 457,
      "printed": "93.64",
      "row": "amortizacoes-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 390,
+     "start": 452,
      "value": "93.64"
+    },
+    {
+     "end": 608,
+     "printed": "7.4",
+     "row": "invest-var-2024-2025",
+     "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/PRESTACAO_CONTAS_2025.pdf",
+     "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+     "source_sha256_prefix": "e63102753216d573",
+     "start": 605,
+     "value": "7,4"
     }
    ],
    "i": 48,
    "kind": "paragraph",
-   "text": "Capital spending was €10 989 664 — an execution of 34.10% — and its composition is the sharpest single fact in the accounts: of €24 159 745 budgeted for investment proper, the municipality managed to pay €5 104 307 — an execution of 21.13%. The report blames delays in PRR-expected projects and public tenders that attracted no bidders. Meanwhile €4 308 783 went out in loan repayments, at 93.64% of that budget line — the debt was serviced almost exactly as planned while investment ran at a fifth of its plan. Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them)."
+   "text": "Capital spending was €10 989 664 — an execution of 34.10% — and its composition is the sharpest single fact in the accounts: of €24 159 745 budgeted for investment proper, the municipality managed to pay €5 104 307 — an execution of 21.13%. The report attributes the execution to delays in PRR-expected projects and to public tenders that attracted no bidders; that is the report's own explanation. Meanwhile €4 308 783 went out in loan repayments, at 93.64% of that budget line — the debt was serviced almost exactly as planned while investment ran at a fifth of its plan, although in money paid it rose 7.4% on 2024. Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them)."
   },
   {
    "figures": [

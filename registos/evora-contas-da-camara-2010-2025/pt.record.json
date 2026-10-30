@@ -235,11 +235,21 @@
      "source_sha256": null,
      "start": 166,
      "value": "21.13"
+    },
+    {
+     "end": 213,
+     "printed": "7,4",
+     "row": "invest-var-2024-2025",
+     "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/PRESTACAO_CONTAS_2025.pdf",
+     "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+     "source_sha256_prefix": "e63102753216d573",
+     "start": 210,
+     "value": "7,4"
     }
    ],
    "i": 7,
    "kind": "paragraph",
-   "text": "Quando a receita desilude, é o investimento que cede. Em 2025 as despesas com pessoal executaram a 96,55%, as amortizações de empréstimos a 93,64% e o investimento a 21,13%. As duas primeiras são contratuais; a terceira é a que se adia."
+   "text": "Quando a receita desilude, é o investimento que cede. Em 2025 as despesas com pessoal executaram a 96,55%, as amortizações de empréstimos a 93,64% e o investimento a 21,13%; em valor pago, o investimento subiu 7,4% face a 2024. As duas primeiras são contratuais; a terceira é, nesta leitura, a que se adia."
   },
   {
    "figures": [
@@ -323,7 +333,7 @@
    "figures": [],
    "i": 12,
    "kind": "paragraph",
-   "text": "Orçamentar como receita o dinheiro de fora que já esteja comprometido, ou escrever ao lado de cada linha quanto dele está garantido: é essa distância que explica a queda da execução. Publicar as contas de 2024, ou dizer publicamente porque não existem. Publicar os anexos do plano e do orçamento em texto, e não em imagem, para que as linhas de cada projeto se possam ler. E o município e o regulador explicarem a diferença entre as duas séries da dívida de 2020 a 2023."
+   "text": "Orçamentar como receita o dinheiro de fora que já esteja comprometido, ou escrever ao lado de cada linha quanto dele está garantido: é essa distância que, nesta leitura, explica a queda da execução. Publicar as contas de 2024, ou dizer publicamente porque não existem. Publicar os anexos do plano e do orçamento em texto, e não em imagem, para que as linhas de cada projeto se possam ler. E o município e o regulador explicarem a diferença entre as duas séries da dívida de 2020 a 2023."
   },
   {
    "emphasis": [
@@ -1331,11 +1341,29 @@
      "source_sha256": null,
      "start": 137,
      "value": "155 573"
+    },
+    {
+     "end": 277,
+     "printed": "45,6",
+     "row": "outras-rec-correntes-quota-falta",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 273,
+     "value": "45,6"
+    },
+    {
+     "end": 293,
+     "printed": "42 220 018",
+     "row": "receita-falta-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 283,
+     "value": "42 220 018"
     }
    ],
    "i": 42,
    "kind": "paragraph",
-   "text": "A linha «outras receitas correntes» é onde o fosso entre orçamento e dinheiro é mais extremo: orçamentaram-se aí €19 427 778 e chegaram €155 573 — o relatório explica a linha como o lugar onde a dívida herdada teve de ser acomodada na aritmética do orçamento."
+   "text": "A linha «outras receitas correntes» é onde o fosso entre orçamento e dinheiro é mais extremo: orçamentaram-se aí €19 427 778 e chegaram €155 573 — o relatório explica a linha como o lugar onde a dívida herdada teve de ser acomodada na aritmética do orçamento. Essa linha é 45,6% dos 42 220 018 euros que faltaram à receita de 2025 face ao orçamento corrigido."
   },
   {
    "figures": [
@@ -1593,9 +1621,9 @@
   {
    "emphasis": [
     {
-     "end": 705,
+     "end": 811,
      "kind": "strong",
-     "start": 642
+     "start": 748
     }
    ],
    "figures": [
@@ -1648,27 +1676,37 @@
      "value": "21.13"
     },
     {
-     "end": 377,
+     "end": 431,
      "printed": "4 308 783",
      "row": "amortizacoes-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 368,
+     "start": 422,
      "value": "4 308 783"
     },
     {
-     "end": 417,
+     "end": 471,
      "printed": "93,64",
      "row": "amortizacoes-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 412,
+     "start": 466,
      "value": "93.64"
+    },
+    {
+     "end": 644,
+     "printed": "7,4",
+     "row": "invest-var-2024-2025",
+     "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/PRESTACAO_CONTAS_2025.pdf",
+     "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+     "source_sha256_prefix": "e63102753216d573",
+     "start": 641,
+     "value": "7,4"
     }
    ],
    "i": 48,
    "kind": "paragraph",
-   "text": "A despesa de capital foi de €10 989 664 — uma execução de 34,10% — e a sua composição é o facto mais afiado das contas: de €24 159 745 orçamentados para investimento propriamente dito, o município conseguiu pagar €5 104 307 — uma execução de 21,13%. O relatório culpa atrasos em projetos que esperavam PRR e concursos públicos que ficaram desertos. Entretanto saíram €4 308 783 em amortizações de empréstimos, a 93,64% dessa linha orçamental — a dívida foi servida quase exatamente como planeado enquanto o investimento correu a um quinto do seu plano. A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar)."
+   "text": "A despesa de capital foi de €10 989 664 — uma execução de 34,10% — e a sua composição é o facto mais afiado das contas: de €24 159 745 orçamentados para investimento propriamente dito, o município conseguiu pagar €5 104 307 — uma execução de 21,13%. O relatório atribui a execução a atrasos em projetos que esperavam PRR e a concursos públicos que ficaram desertos; é a explicação do próprio relatório. Entretanto saíram €4 308 783 em amortizações de empréstimos, a 93,64% dessa linha orçamental — a dívida foi servida quase exatamente como planeado enquanto o investimento correu a um quinto do seu plano, embora em valor pago tenha subido 7,4% face a 2024. A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar)."
   },
   {
    "figures": [

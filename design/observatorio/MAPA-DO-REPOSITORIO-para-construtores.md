@@ -805,3 +805,10 @@ As linhas `hab-ine-avaliacao-mediana` e `hab-ine-avaliacao-homologa` vêm do des
 - `scripts/leituras/medir-no-ar.py <dist> <caminho> [<caminho>...]` compara texto do corpo HTML, com contexto; não executa JavaScript nem CSS. `OEDP_ORIGEM` permite outra origem HTTP(S). Os três medidores só leem e imprimem; saídas 0 para sucesso, 1 para diferença ou frase HTML ausente, 9 para erro de leitura, 2 para uso incompleto.
 - A fusão pelo `scripts/leituras/escrivao.py`, chamada por `scripts/leituras/fundir.sh`, confere `git diff --check` antes de fundir e o índice antes do commit; aborta uma fusão recusada. `scripts/leituras/uso.py` declara que não lê o contador Fable only.
 - As provas PL1 vivem em `tests/leituras/fila.py`, `tests/leituras/pl1.py`, `tests/leituras/medicoes-pl1.py` e nos ensaios de aterragem, fusão e conferir-tudo; entram por `check:leituras`.
+
+
+## EV2: as contas da Câmara de Évora, 30.10.2026
+
+O estudo 16 declara três linhas locais em `Technical Source/ajustes.json`, campo `derivadas`, compostas por `@@derivadas 16` em `core/compor.py`. Cada uma tem componentes, conta e explicação; a variação do investimento conserva a ressalva da coluna comparativa de 2024. `publisher/ev2_test.py` reconta as expressões e planta valores de origem trocados. Os blocos 26 e 33 do estudo 07 recebem emendas só nos gabaritos do 16, sem alterar o estudo de origem.
+
+As linhas seguem os registos, como as irmãs, sem novas entradas em `ledger/`. As duas edições usam a data declarada de 29.10.2026 em `src/data/studies.mjs`, pelo mecanismo existente de publicação declarada. O bloco `ev2` do inventário conserva as quatro passagens nas duas línguas; a entrada em `tests/cartao/leituras-provadas.json` declara por que não mudam as folhas dos cartões.
