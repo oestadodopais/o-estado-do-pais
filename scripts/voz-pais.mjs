@@ -114,6 +114,7 @@ export function verificaVozPais(raiz, documentos = new Map()) {
         erros.push(...conferirListagens(main.parentNode,lang));
         const novas = conferirNovidades(main.parentNode, lang, path.join(raiz,'dist'));
         erros.push(...novas);
+        // DO4: só os três filhos conferidos saem; nenhum invólucro da entrada é dispensado.
         if (!novas.length) for (const no of main.querySelectorAll('[data-novidades] h2, [data-novidades] time, [data-novidades] .pp-novidade-tipo, [data-novidades] [data-novidade-porta], [data-atualizacao]')) dispensados.add(no);
         const queixas = conferirInicio(main.parentNode, lang);
         erros.push(...queixas);
@@ -134,9 +135,11 @@ export function verificaVozPais(raiz, documentos = new Map()) {
       const do1 = conferirSuperficieDossies(main, lang, `${rota}/index.html`);
       erros.push(...do1.erros);
       for (const no of do1.nos) dispensados.add(no);
+      // DO4: a forma das listas conserva-se; só sai depois da comparação integral do título.
+      if(!do1.erros.length)for(const no of main.querySelectorAll('[data-dossie-lista] h2, [data-dossie-lista] h3'))dispensados.add(no);
       const permitidos = new Set([
         ...Object.entries(ROTULOS_B1[lang]).filter(([k])=>k.startsWith('dossie')).map(([,v])=>v), s.dossies.recente,
-        ...['singular','peca','pecas','de','maisRecenteDe','textoEmDiscussao','textosEmDiscussao'].map(k=>s.dossies[k]),
+        // DO4: rótulos e caudas dos dossiês só saem nos nós conferidos, nunca pela lista geral.
         /* Só os rótulos destas páginas. O olho dos lugares continua declarado,
            mas não pode voltar à página do país. */
         ...['pais', 'temas', 'estudosRecentes', 'mudou', 'publicado', 'estudoPublicado',

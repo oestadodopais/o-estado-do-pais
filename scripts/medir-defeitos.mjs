@@ -1786,6 +1786,8 @@ const RETIRADAS_DENTRO_DE_FRASE = new Map([
   ],
 ]);
 function ondeVolta(frase) {
+  // DO4: estes rótulos autónomos foram substituídos por minúsculas; a palavra continua na prosa das listas.
+  if(['Dossiê','Dossier'].includes(frase))return rendidas.has(frase)?frase:null;
   const re = new RegExp(`(?<![\\p{L}\\p{N}])${escapaParaRe(frase)}(?![\\p{L}\\p{N}])`, 'iu');
   const admitidas = RETIRADAS_DENTRO_DE_FRASE.get(frase) ?? new Set();
   for (const t of rendidas) if (re.test(t) && !admitidas.has(t)) return t;

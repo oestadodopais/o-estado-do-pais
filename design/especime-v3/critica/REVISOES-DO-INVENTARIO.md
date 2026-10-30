@@ -939,3 +939,4 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | do3 | Índice, identificação do estudo e porta final do dossiê, nas duas edições | por ler | Frases do mandato DO3 e da adenda B. Saem as seis entradas dos cartões, cujos fragmentos continuam no corpo transcrito e são conferidos na origem; leitura cruzada reservada ao lugar de direção. |
 
 | ev2 | Frases das contas de Évora e rótulos da atualização, nas duas edições | por ler | Adendas F e G: correções da leitura a frio, primeira publicação reposta e atualização separada; leitura curta reservada ao lugar de direção. |
+| do4 | Data, tipo em minúsculas e título com contagem nas novidades, nas duas edições | por ler | Frases do mandato DO4; leitura cruzada reservada ao lugar de direção. |

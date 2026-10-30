@@ -52,6 +52,15 @@ export function entradasEsperadas(lang, publicacoes=publicacoesEsperadas(lang)) 
   }
   return entradas;
 }
+/** DO4: a L1 conserva a porta do dossiê na conta, uma vez na caixa inteira. */
+export function conferirPortasDasNovidades(root) {
+ const erros=[];
+ for(const li of root.querySelectorAll('[data-novidade^="dossie:"]')) {
+  const a=li.querySelector('[data-novidade-dossie]'),href=a?.getAttribute('href');
+  if(!href||li.querySelectorAll('a').length!==1||root.querySelectorAll('[data-novidades] a').filter(n=>n.getAttribute('href')===href).length!==1)erros.push('L1 DO4: porta do dossiê ausente ou repetida');
+ }
+ return erros;
+}
 export function conferirNovidades(root, lang, dist='dist', publicacoes=publicacoesEsperadas(lang)) {
   const erros=[];
   const v=JSON.parse(fs.readFileSync(path.join(dist,'version.json'),'utf8'));
@@ -78,6 +87,7 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
     const p=todas.find(p=>p.id===el.getAttribute('data-novidade'));
     if(!p) {erros.push('FP1: peça sem declaração'); continue;}
     const data=el.querySelector('time[data-data-origem]');
+    if(data?.getAttribute('data-nonledger')!=='data-editorial')erros.push('DO4: data sem marca editorial');
     if(!data || data.getAttribute('datetime')!==p.data || data.getAttribute('data-data-origem')!==p.origem || data.textContent!==forma(p.data)) erros.push('FP1: data escrita à mão ou diferente da declaração');
     if(data?.getAttribute('datetime')>dia) erros.push('FP1: data no futuro');
     if(el.querySelector('[data-novidade-porta]')?.getAttribute('href')!==p.rota) erros.push('FP1: entrada sem página declarada');
@@ -88,8 +98,11 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
       const tokens=el.querySelectorAll('[data-prova]'), portas=el.querySelectorAll('a');
       if(tokens.length!==1||tokens[0].getAttribute('data-prova')!==chave||tokens[0].text!==String(p.n)||tokens[0].closest('a')!==portas[0])erros.push('DO2: contagem sem token ou diferente das peças');
       if(portas.length!==1||portas[0].getAttribute('data-novidade-dossie')!==d.slug||portas[0].getAttribute('href')!==p.rota)erros.push('DO2: dossiê diferente da pertença da peça');
-      const cauda=lang==='pt'?(p.n===1?', de ':', a mais recente de '):(p.n===1?', from ':', the most recent from ');
-      if(normal(el.text)!==`${lang==='pt'?'Dossiê':'Dossier'} · ${p.titulo}${cauda}${forma(p.data)}`)erros.push('DO2: frase do dossiê diferente');
+      const filhos=el.children;
+      if(filhos.length!==3||filhos[0]!==data||!filhos[1]?.matches('.pp-novidade-tipo')||filhos[2]!==portas[0])erros.push('DO4: três colunas fora de ordem');
+      if(normal(filhos[1]?.text??'')!==(lang==='pt'?'dossiê':'dossier'))erros.push('DO4: tipo do dossiê diferente');
+      if(el.childNodes.some(n=>n.nodeType===3&&normal(n.text)))erros.push('DO4: texto fora das colunas');
+      if(el.querySelector('.pp-novidade-dossie'))erros.push('DO4: forma antiga do dossiê');
     } else {
       if(normal(el.querySelector('.pp-novidade-tipo')?.textContent ?? '')!==r[p.tipo])erros.push('FP1: tipo diferente');
       if(el.querySelector('[data-novidade-dossie]'))erros.push('DO2: dossiê diferente da pertença da peça');
@@ -116,6 +129,10 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
 export function plantasDasNovidades(html,lang,dist) {
 
   const plantas=[
+    ['DO4 data na última coluna',r=>{const li=r.querySelector('[data-novidade^="dossie:"]'),t=li.querySelector('time');const h=t.outerHTML;t.remove();li.insertAdjacentHTML('beforeend',h);},/três colunas/],
+    ['DO4 tipo em maiúscula',r=>r.querySelector('[data-novidade^="dossie:"] .pp-novidade-tipo').set_content('Dossier'),/tipo do dossiê/],
+    ['DO4 cauda antiga',r=>r.querySelector('[data-novidade^="dossie:"]').insertAdjacentHTML('beforeend',', a mais recente de'),/texto fora/],
+    ['DO4 marca editorial retirada',r=>r.querySelector('[data-novidade^="dossie:"] time').removeAttribute('data-nonledger'),/marca editorial/],
     ['contagem sem token',r=>r.querySelector('[data-novidades] [data-prova]').removeAttribute('data-prova'),/contagem sem token/],
     ['dossiê repetido',r=>r.querySelector('[data-novidades] ol').insertAdjacentHTML('beforeend',r.querySelector('[data-novidade^="dossie:"]').outerHTML),/quantidade|ordem/],
     ['marca novo retirada',r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],
@@ -166,6 +183,9 @@ if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[
     const html=fs.readFileSync(path.join(dist,lang==='en'?'en':'','index.html'),'utf8');
     assert.deepEqual(conferirNovidades(parse(html),lang,dist),[]);
     plantas.push(...plantasDasNovidades(html,lang,dist));
+    const l1=parse(html);assert.deepEqual(conferirPortasDasNovidades(l1),[]);
+    const a=l1.querySelector('[data-novidade-dossie]');a.insertAdjacentHTML('afterend',a.outerHTML);
+    assert(conferirPortasDasNovidades(l1).length);plantas.push({nome:'DO4 L1 porta do dossiê duplicada',lang,mordeu:true});
     const arquivo=parse(fs.readFileSync(path.join(dist,routePath('estudos',lang),'index.html'),'utf8'));
     const meta=arquivo.querySelector('[data-estudo-em-curso]')?.closest('.estudo-meta');
     assert(metaDoEstudoConferida(meta,lang),'FP1-d: estado declarado no arquivo');

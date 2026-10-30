@@ -19,8 +19,17 @@ export async function conferirToques(abre, origem) {
     const erros=[];
     if(await pagina.locator('[data-discussao-inicio]').count()!==Number(listas.discussao.length>0))erros.push('V2B DO2: presença do bloco diferente da seleção');
     if(await pagina.locator(selector).count()!==1)erros.push('V2B DO2: porta inicial ausente ou repetida');
+    if(primeira==='novidades'&&await pagina.locator(selector).count()===1) {
+     const forma=await pagina.locator(selector).evaluate(a=>a.parentElement.children.length===3&&a.parentElement.children[2]===a&&a.parentElement.children[0].tagName==='TIME'&&a.querySelectorAll('[data-prova]').length===1);
+     if(!forma)erros.push('DO4: a porta tocada não é a terceira coluna com contagem');
+    }
     return erros;
    };
+   if(primeira==='novidades') {
+    await pagina.locator(selector).evaluate(a=>a.querySelector('[data-prova]').remove());
+    if(!(await conferirPorta()).some(e=>e.startsWith('DO4:')))throw Error('DO4: planta da porta sem contagem não mordeu');
+    await pagina.goto(origem+inicio);
+   }
    const controlo=await conferirPorta();if(controlo.length)throw Error(controlo.join('; '));
    let plantas=0;
    // Só a cópia no navegador muda. A presença esperada vem da seleção comum.
