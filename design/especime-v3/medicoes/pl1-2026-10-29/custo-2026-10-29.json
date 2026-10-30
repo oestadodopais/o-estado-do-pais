@@ -56,6 +56,24 @@
     "total": 430913
    },
    "fonte": "_aterragens/lancador-pl1/RELATORIO-pl1-b.pontos.json"
+  },
+  {
+   "nome": "pl1-e",
+   "inicio": "2026-10-30T10:00:05+00:00",
+   "fim": "2026-10-30T10:03:43+00:00",
+   "pontos_antes": 13.0,
+   "pontos_depois": 13.0,
+   "turnos": 8,
+   "pontos": 0.0,
+   "simbolos": {
+    "entrada": 344278,
+    "cache": 306432,
+    "saida": 2414,
+    "raciocinio": 439,
+    "total": 389808
+   },
+   "fonte": "_aterragens/lancador-pl1/RELATORIO-pl1-e.pontos.json",
+   "nota": "a PL1-4 (adenda E), depois da aterragem recusada pelo portão do GitHub a 30.10.2026"
   }
  ],
  "leituras": [
