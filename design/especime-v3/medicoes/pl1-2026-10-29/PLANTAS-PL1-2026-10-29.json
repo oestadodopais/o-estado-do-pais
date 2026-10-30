@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-29T20:57:49+00:00",
+ "copia": "<caminho>
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "scripts/leituras/fila.py",
+   "descricao": "a cópia de fila.py deixa passar um bloco de maquinaria à frente do conteúdo em qualquer dia (a condição invertida)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "daa5998e7d7db266f8873e9c89ca4588bbf451bec4670928a052155ee516883c",
+   "sha256_depois": "9e4007f9365d08b3efcebc3e5ec72fa72f0bba178e0d4a99085732a28eeb2f97",
+   "contexto_antes": "] == bloco), None)\n    if alvo is None:\n        raise ValueError('fila: bloco fora da fila: ' + bloco)\n    hoje = hoje or datetime.now(timezone.utc).date()\n    if alvo['Tipo'] != 'maquinaria' or hoje.weekday() == 4:\n        return\n    for d in linhas:\n        estado = d['Estado'].casefold()\n        if d['Tipo'] == 'maquinaria' or estado.startswith('à espera'):\n            ",
+   "contexto_depois": "] == bloco), None)\n    if alvo is None:\n        raise ValueError('fila: bloco fora da fila: ' + bloco)\n    hoje = hoje or datetime.now(timezone.utc).date()\n    if alvo['Tipo'] == 'maquinaria' or hoje.weekday() == 4:\n        return\n    for d in linhas:\n        estado = d['Estado'].casefold()\n        if d['Tipo'] == 'maquinaria' or estado.startswith('à espera'):\n            "
+  },
+  {
+   "id": "T2",
+   "ficheiro": "scripts/leituras/uso.py",
+   "descricao": "a cópia de uso.py não avisa que não lê o contador «Fable only»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "801acd8b5274d18eb79ec10cc08f6e6d5bd3060537b9ee8ceff48228952dd4ec",
+   "sha256_depois": "0a35621063907576498edf49b7549d7893de7a48d0b4bdfca43030b277e19320",
+   "contexto_antes": " f\"janela de {dias} dias\"\n    if minutos % 60 == 0:\n        return f\"janela de {minutos // 60} horas\"\n    return f\"janela de {minutos} minutos\"\n\n\ndef claude():\n    print(\"Claude: não lê o contador semanal «Fable only»; esse contador lê-se no ecrã de uso da aplicação.\")\n    try:\n        dados = json.loads(CLAUDE.read_text(encoding=\"utf-8\"))\n    except (OSError, ValueError) as erro:\n        print(f\"Claude: não se leu {CLAUDE} ({",
+   "contexto_depois": " f\"janela de {dias} dias\"\n    if minutos % 60 == 0:\n        return f\"janela de {minutos // 60} horas\"\n    return f\"janela de {minutos} minutos\"\n\n\ndef claude():\n    try:\n        dados = json.loads(CLAUDE.read_text(encoding=\"utf-8\"))\n    except (OSError, ValueError) as erro:\n        print(f\"Claude: não se leu {CLAUDE} ({"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "scripts/leituras/aterrar.py",
+   "descricao": "a cópia de aterrar.py admite três aterragens por dia onde o mandato e a mensagem dizem duas",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d2a285f82530a00632718a809e89fb8a901f8879b976f927999edba30c6c6f7f",
+   "sha256_depois": "5439f6479148021e1d5b9c089f1bbf2a85ea1a8591f305a9b7da42e0d854e381",
+   "contexto_antes": "'ATERRAR_LOTE_EXTRA', '').strip()\n        self.recibo['aterragens_do_dia'] = concluidas\n        if razao:\n            self.recibo['lote_extra'] = razao\n        self.exigir(concluidas < 2 or bool(razao), 'já há duas aterragens concluídas neste dia UTC; falta ATERRAR_LOTE_EXTRA=\"<razão>\"')\n\n    def conferir_corrida(self):\n        candidatas = []\n        for p in",
+   "contexto_depois": "'ATERRAR_LOTE_EXTRA', '').strip()\n        self.recibo['aterragens_do_dia'] = concluidas\n        if razao:\n            self.recibo['lote_extra'] = razao\n        self.exigir(concluidas < 3 or bool(razao), 'já há duas aterragens concluídas neste dia UTC; falta ATERRAR_LOTE_EXTRA=\"<razão>\"')\n\n    def conferir_corrida(self):\n        candidatas = []\n        for p in"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do construtor diz verify.codigo 1 onde o ficheiro e as outras linhas dizem 0",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "76d82422f6a04783f883dda83a9c13664dfbace1f2a4d200324b5aa0b2ccf02f",
+   "sha256_depois": "597563cc66d8069eb9ceb5d9e6becd9cc1deccbcec77e639698fcdf19196aee3",
+   "contexto_antes": "o_em`, `no_ar_em` e `frases_ao_leitor`; as medições ainda desconhecidas ficaram ausentes ou a `null`.\n\n| Validação | Código |\n|---|---:|\n| `build.codigo` | 0 |\n| `verify.codigo` | 0 |\n| `typecheck.codigo` | 0 |\n| `check_leituras.code`, pelo lugar de direção | 0 |\n| Privacidade, dentro dos portões | 0 |\n| Regras e mapa, na passagem anterior |",
+   "contexto_depois": "o_em`, `no_ar_em` e `frases_ao_leitor`; as medições ainda desconhecidas ficaram ausentes ou a `null`.\n\n| Validação | Código |\n|---|---:|\n| `build.codigo` | 0 |\n| `verify.codigo` | 1 |\n| `typecheck.codigo` | 0 |\n| `check_leituras.code`, pelo lugar de direção | 0 |\n| Privacidade, dentro dos portões | 0 |\n| Regras e mapa, na passagem anterior |"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "design/observatorio/ARRANQUE.md",
+   "descricao": "a cópia do ARRANQUE.md deixa de dizer que o lançador lê a fila (a palavra trocada por «lista»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c56c08e430592c606f499f7696bf49861cf7a050771b8225df58017419164f48",
+   "sha256_depois": "1064962a77a13024404312d2f0df6199418ccc05995011ccd38f03bcd7f62038",
+   "contexto_antes": "bloco mede-se (custo-<data>.json) com alvo abaixo de 10 pontos do Codex, depois 5; acima pára e vai ao financiador; uso.py antes de cada lançamento (§1.202 3).\n5. A ordem: CLAUDE.md, prompt anterior, estado.py e uso.py, GARGALOS.md, vigilância; a fila lida pelo lançador; as aterragens em lotes, duas por dia. Mandato, construção, leitura a frio por outra família, correções relidas, aterragem por guião. Corrida inteira antes da leitura de blocos com linhas novas ou portões; conferir a página no HTML construído da cabeça.\n",
+   "contexto_depois": "bloco mede-se (custo-<data>.json) com alvo abaixo de 10 pontos do Codex, depois 5; acima pára e vai ao financiador; uso.py antes de cada lançamento (§1.202 3).\n5. A ordem: CLAUDE.md, prompt anterior, estado.py e uso.py, GARGALOS.md, vigilância; a lista lida pelo lançador; as aterragens em lotes, duas por dia. Mandato, construção, leitura a frio por outra família, correções relidas, aterragem por guião. Corrida inteira antes da leitura de blocos com linhas novas ou portões; conferir a página no HTML construído da cabeça.\n"
+  }
+ ]
+}

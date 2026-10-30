@@ -1,0 +1,15 @@
+# A leitura a frio do bloco PL1 (a estrutura da eficiência), 29.10.2026
+
+Reader: Claude Opus 5.5 (`leitor`). Read `PROMPT-COMUM.md` in this package first and follow it to the letter, including item 10 (the quotations table: this block touches no reader page, so the table is empty and you say so in one line). Then this section. This is a machinery block: the package's diff runs from `main` 93e92db48 to the block's head (site `__CABECA_SITIO__`); there is no engine side and no reader page changes. `brief.md` is the mandate (its closing addendum of 29.10 at night is part of it), `ADENDA-A.md` the one addendum (the check the builder's sandbox could not run, run green by the editorial seat), `relatorio-construtor.md` the builder's final report and `RELATORIO-PARAGEM.md` the stop.
+
+## The five questions of this block
+
+1. **The queue is read by the launchers, not by memory.** `scripts/leituras/fila.py` reads `design/observatorio/FILA.md` and returns the head of the queue; `construir-codex.sh` and `retomar-codex.sh` refuse to launch a block that is not at the head unless the mandate declares the condition the mandate's §2 allows, and refuse a machinery block ahead of a content block outside Friday; do the plants prove each refusal (test them yourself from the copied files where you can)?
+2. **Before a mandate: the two scripts.** `pre-mandato.py` (or the name the diff uses) runs `listas-de-uma-linha.sh` and `voz-do-mandato.py` and the measurements the mandate's §2 lists, and the launcher requires its output in the launch record for a block that adds rows or reader sentences; is the requirement real (a launch without it refused) and proven?
+3. **Batches and costs in the landing.** `aterrar.py` accepts a declared list of blocks (`OEDP_BLOCOS` or the form the diff uses), refuses a landing without each block's `custo-<data>.json` or above the budget unless a written decision of the financier is cited, limits landings to two per day, and names in the receipt the checks the change touched; `conferir-tudo.sh --dirigidas` runs only the named steps; do the receipts' new fields (`blocos`, `custos_por_bloco`, `aterragens_do_dia`, `conferencias`) reproduce from the copied code, and are the plants in place?
+4. **The measures.** `estado.py` prints the week's blocks with hours from mandate to reader and symbols per sentence; the three measurers (`medir-*.py`) read only files the machine wrote; `uso.py` says in one line that it does not read the «Fable only» meter; the merge guard refuses a commit with conflict markers; reproduce each count the report gives.
+5. **Nothing else moved.** No reader page, no ledger row, no `CLAUDE.md` change; the builders' map and `ARRANQUE.md` say what the diff does; no machine path or user name in any file of the diff; the report's codes backed by files in the package.
+
+Then the editor's question does not apply to a machinery block; instead answer: would a builder reading `MAPA-DO-REPOSITORIO-para-construtores.md` and `ARRANQUE.md` after this block know, without being told, that the queue and the two pre-mandate scripts bind them?
+
+Budget: at most 50 tool calls. Write nothing but your report.

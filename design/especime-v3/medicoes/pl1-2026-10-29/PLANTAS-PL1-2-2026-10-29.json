@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-29T22:00:35+00:00",
+ "copia": "<caminho>
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "scripts/leituras/aterrar.py",
+   "descricao": "a cópia de aterrar.py inventa uma decisão do financiador por omissão, e um bloco acima do orçamento aterra sempre",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4e6cc4981d5abb81da4ae4b1f059f93a1e6fcb49fed50dd965530861510a3b64",
+   "sha256_depois": "caa20369322e02e71240e546e0f487d2afbc0d23be7739207df53888510f1551",
+   "contexto_antes": "    'falta custo-<data>.json identificado pelo campo bloco para: ' +\n                    ' '.join(sorted(set(self.recibo['blocos']) - set(por_bloco))))\n        decisao = os.environ.get('ATERRAR_DECISAO', '').strip() or self.recibo.get('decisao_do_financiador', '')\n        if decisao:\n            self.recibo['decisao_do_financiador'] = decisao\n        medidas = {}\n        def numero(v):\n            return type(v) in (int,",
+   "contexto_depois": "    'falta custo-<data>.json identificado pelo campo bloco para: ' +\n                    ' '.join(sorted(set(self.recibo['blocos']) - set(por_bloco))))\n        decisao = os.environ.get('ATERRAR_DECISAO', '').strip() or self.recibo.get('decisao_do_financiador', '') or 'decisão do financiador por omissão'\n        if decisao:\n            self.recibo['decisao_do_financiador'] = decisao\n        medidas = {}\n        def numero(v):\n            return type(v) in (int,"
+  },
+  {
+   "id": "R4",
+   "ficheiro": "scripts/leituras/aterrar.py",
+   "descricao": "a cópia de aterrar.py volta a aceitar qualquer palavra terminada em -r, sem distinguir maiúsculas, como prefixo de registos",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "caa20369322e02e71240e546e0f487d2afbc0d23be7739207df53888510f1551",
+   "sha256_depois": "1c4eb6931b160314df0f305f102aa9a5b10c2ee4f6424d593aa4280783fce8e9",
+   "contexto_antes": "lf.sitio, 'log', '--reverse', '--format=%s', 'main..HEAD').splitlines()\n        conhecidos = self.blocos_conhecidos()\n        def registo(assunto):\n            m = re.match(r'^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-r(?=$|[: .])', assunto)\n            return bool(m and m.group(1) in conhecidos)\n        if not blocos:\n            self.exigir(bool(assuntos) and registo(assuntos[0]) and all(registo(",
+   "contexto_depois": "lf.sitio, 'log', '--reverse', '--format=%s', 'main..HEAD').splitlines()\n        conhecidos = self.blocos_conhecidos()\n        def registo(assunto):\n            m = re.match(r'^([^ :]+)-r(?=$|[: .])', assunto, re.I)\n            return bool(m and m.group(1) in conhecidos)\n        if not blocos:\n            self.exigir(bool(assuntos) and registo(assuntos[0]) and all(registo("
+  },
+  {
+   "id": "R5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do construtor diz aterrar.codigo 1 onde o ficheiro e as outras linhas dizem 0",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "851abce42bb03aaee6f6e976fd151c8ac3631b1ba383def8d122492f6c2e9599",
+   "sha256_depois": "a8439853606b94f9575368565f1fbd214925513ecc91b15c26b37c2c3e23b747",
+   "contexto_antes": "a_pre_voo.py` |\n\nCódigos lidos dos ficheiros:\n\n| Ficheiro | Código |\n|---|---:|\n| `pl1.codigo` | 0 |\n| `fila-final.codigo` | 0 |\n| `pre-voo-final.codigo` | 0 |\n| `aterrar.codigo` | 0 |\n| `mapa.codigo` | 0 |\n| `regras.codigo` | 0 |\n| `privacidade.codigo` | 0 |\n\nAs provas ficaram em `design/especime-v3/medicoes/pl1-2026-10-29/provas-pl1-2.json`",
+   "contexto_depois": "a_pre_voo.py` |\n\nCódigos lidos dos ficheiros:\n\n| Ficheiro | Código |\n|---|---:|\n| `pl1.codigo` | 0 |\n| `fila-final.codigo` | 0 |\n| `pre-voo-final.codigo` | 0 |\n| `aterrar.codigo` | 1 |\n| `mapa.codigo` | 0 |\n| `regras.codigo` | 0 |\n| `privacidade.codigo` | 0 |\n\nAs provas ficaram em `design/especime-v3/medicoes/pl1-2026-10-29/provas-pl1-2.json`"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "scripts/leituras/pre-mandato.py",
+   "descricao": "a cópia de pre-mandato.py aceita um mandato sem cabeçalho Acrescenta (só recusa quando há mais de um ou um modo inválido)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5fe2873e24bdb162f0e44cb7f380de34906e21e7b89fa5a0e0045e7ce4d12ae1",
+   "sha256_depois": "f1415199e2e13f2fbcc14c6c8a0e1d430d3be7b3801fe42b96ecbda47f404de8",
+   "contexto_antes": "s': {'linhas'}, 'frases': {'frases'}, 'linhas e frases': {'linhas', 'frases'}}\n        cabecalhos = re.findall(r'^Acrescenta:[ \\t]*(.*)$', texto, re.M)\n        if len(cabecalhos) != 1 or cabecalhos[0].strip() not in modos:\n            raise ValueError('falta um cabeçalho Acrescenta: válido e único no mandato')\n        exigencias = modos[cabecalhos[0].strip()]\n        if 'OEDP_ACR",
+   "contexto_depois": "s': {'linhas'}, 'frases': {'frases'}, 'linhas e frases': {'linhas', 'frases'}}\n        cabecalhos = re.findall(r'^Acrescenta:[ \\t]*(.*)$', texto, re.M)\n        if len(cabecalhos) > 1 or (cabecalhos and cabecalhos[0].strip() not in modos):\n            raise ValueError('falta um cabeçalho Acrescenta: válido e único no mandato')\n        exigencias = modos[cabecalhos[0].strip()]\n        if 'OEDP_ACR"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "scripts/leituras/fila.py",
+   "descricao": "a cópia de fila.py inverte a opção --toda: sem argumentos imprime a fila inteira e com --toda imprime só a cabeça",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2db20856585b40c570d938ad9be1ff020760c480f0a37b68e1d583cbb22377e5",
+   "sha256_depois": "964f2480e03a58f4c61cdd6c888bba6660e6dda38a4d8ac85a80353c8bbd1476",
+   "contexto_antes": " = ler_fila()\n        if args.lancar:\n            conferir(linhas, args.lancar)\n            print('fila: pode lançar ' + args.lancar)\n        else:\n            if not args.toda:\n                elegiveis = []\n                for d in linhas:\n                    if d['Estado'].casefold().startswith('à espera'):\n                        c",
+   "contexto_depois": " = ler_fila()\n        if args.lancar:\n            conferir(linhas, args.lancar)\n            print('fila: pode lançar ' + args.lancar)\n        else:\n            if args.toda:\n                elegiveis = []\n                for d in linhas:\n                    if d['Estado'].casefold().startswith('à espera'):\n                        c"
+  }
+ ]
+}

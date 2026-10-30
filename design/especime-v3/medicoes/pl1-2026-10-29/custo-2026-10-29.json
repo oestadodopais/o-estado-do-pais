@@ -1,67 +1,97 @@
 {
-  "bloco": "PL1",
-  "data": "2026-10-29",
-  "mandato_escrito_em": "2026-10-29T20:25:00Z",
-  "no_ar_em": null,
-  "frases_ao_leitor": 0,
-  "pontos_do_bloco": 0.0,
-  "passagens_codex": [
-    {
-      "nome": "PL1 inicial",
-      "inicio": "2026-10-29T20:26:00+00:00",
-      "fim": "2026-10-29T20:36:28+00:00",
-      "pontos_antes": 12.0,
-      "pontos_depois": 12.0,
-      "turnos": 26,
-      "pontos": 0.0,
-      "simbolos": {
-        "entrada": 2236248,
-        "cache": 2150144,
-        "saida": 26674,
-        "raciocinio": 4276,
-        "total": 2262922
-      },
-      "fonte": "<temporario>/RELATORIO.pontos.json"
-    },
-    {
-      "nome": "pl1-a",
-      "inicio": "2026-10-29T20:39:20+00:00",
-      "fim": "2026-10-29T20:55:43+00:00",
-      "pontos_antes": 12.0,
-      "pontos_depois": 12.0,
-      "turnos": 27,
-      "pontos": 0.0,
-      "simbolos": {
-        "entrada": 3524106,
-        "cache": 3511168,
-        "saida": 9005,
-        "raciocinio": 3671,
-        "total": 3533111
-      },
-      "fonte": "_aterragens/lancador-pl1/RELATORIO-pl1-a.pontos.json"
-    },
-    {
-      "nome": "pl1-b",
-      "inicio": "2026-10-29T21:08:34+00:00",
-      "fim": "2026-10-29T21:09:11+00:00",
-      "pontos_antes": 12.0,
-      "pontos_depois": 12.0,
-      "turnos": 3,
-      "pontos": 0.0,
-      "simbolos": {
-        "entrada": 429950,
-        "cache": 424064,
-        "saida": 963,
-        "raciocinio": 145,
-        "total": 430913
-      },
-      "fonte": "_aterragens/lancador-pl1/RELATORIO-pl1-b.pontos.json"
-    }
-  ],
-  "leituras": [],
-  "nota": "o contador não mediu nenhuma das passagens",
-  "orcamento": {
-    "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202)"
+ "bloco": "PL1",
+ "data": "2026-10-29",
+ "mandato_escrito_em": "2026-10-29T20:25:00Z",
+ "no_ar_em": null,
+ "frases_ao_leitor": 0,
+ "pontos_do_bloco": 0.0,
+ "passagens_codex": [
+  {
+   "nome": "PL1 inicial",
+   "inicio": "2026-10-29T20:26:00+00:00",
+   "fim": "2026-10-29T20:36:28+00:00",
+   "pontos_antes": 12.0,
+   "pontos_depois": 12.0,
+   "turnos": 26,
+   "pontos": 0.0,
+   "simbolos": {
+    "entrada": 2236248,
+    "cache": 2150144,
+    "saida": 26674,
+    "raciocinio": 4276,
+    "total": 2262922
+   },
+   "fonte": "<temporario>/RELATORIO.pontos.json"
   },
-  "por_completar": "A passagem da adenda C entra quando o lançador escrever o seu .pontos.json; no_ar_em vem do fim do recibo da aterragem."
+  {
+   "nome": "pl1-a",
+   "inicio": "2026-10-29T20:39:20+00:00",
+   "fim": "2026-10-29T20:55:43+00:00",
+   "pontos_antes": 12.0,
+   "pontos_depois": 12.0,
+   "turnos": 27,
+   "pontos": 0.0,
+   "simbolos": {
+    "entrada": 3524106,
+    "cache": 3511168,
+    "saida": 9005,
+    "raciocinio": 3671,
+    "total": 3533111
+   },
+   "fonte": "_aterragens/lancador-pl1/RELATORIO-pl1-a.pontos.json"
+  },
+  {
+   "nome": "pl1-b",
+   "inicio": "2026-10-29T21:08:34+00:00",
+   "fim": "2026-10-29T21:09:11+00:00",
+   "pontos_antes": 12.0,
+   "pontos_depois": 12.0,
+   "turnos": 3,
+   "pontos": 0.0,
+   "simbolos": {
+    "entrada": 429950,
+    "cache": 424064,
+    "saida": 963,
+    "raciocinio": 145,
+    "total": 430913
+   },
+   "fonte": "_aterragens/lancador-pl1/RELATORIO-pl1-b.pontos.json"
+  }
+ ],
+ "leituras": [
+  {
+   "nome": "pl1 (leitura a frio)",
+   "leitor": "Claude Opus 5.5 (leitor, high)",
+   "inicio": "2026-10-29T20:58Z",
+   "fim": "2026-10-29T21:06Z",
+   "chamadas_de_ferramenta": 31,
+   "simbolos": 148313,
+   "plantas": "5 de 5",
+   "achados_reais": "a aterragem sem recusa acima do orçamento; a exigência dos guiões dependente da declaração do lançador; só a maquinaria presa à fila; a saída dos guiões fora do registo; as aterragens só de registos"
+  },
+  {
+   "nome": "pl1-2 (leitura curta M48)",
+   "leitor": "Claude Opus 5.5 (leitor, high)",
+   "inicio": "2026-10-29T22:01Z",
+   "fim": "2026-10-29T22:07Z",
+   "chamadas_de_ferramenta": 21,
+   "simbolos": 118152,
+   "plantas": "5 de 5",
+   "achados_reais": "quatro Minor fechados na PL1-3 (os registos só mudam registos; a decisão com data; a sexta-feira; o ARRANQUE com o cabeçalho)"
+  }
+ ],
+ "nota": "o contador não mediu nenhuma das passagens",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 10 (a escada da §1.202)"
+ },
+ "por_completar": "A passagem da adenda C entra quando o lançador escrever o seu .pontos.json; no_ar_em vem do fim do recibo da aterragem.",
+ "corrida_inteira": {
+  "pasta": "_aterragens/pl1-conferir-2026-10-29-c",
+  "cabeca": "d741f03ef",
+  "inicio": "2026-10-29T22:17Z",
+  "fim": "2026-10-29T22:54:03Z",
+  "passos": 54,
+  "vermelhos": 0,
+  "modo": "--build"
+ }
 }
