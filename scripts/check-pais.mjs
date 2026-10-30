@@ -3,6 +3,7 @@
  * A E1 usa a seleção comum das listagens, pela adenda D ao DO2; as contas dos valores continuam independentes. */
 import fs from 'node:fs';
 import { listagensDoInicio } from '../src/lib/listagens-do-inicio.mjs';
+import { dossieDaPeca } from '../src/lib/dossies.mjs';
 import { conferirLinhaOg1 } from './afirmacoes-og1.mjs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
@@ -546,7 +547,10 @@ for (const lang of ['pt', 'en']) {
     };
     const controloDosRecentes = conferirRecentes(home);
     erros.push(...controloDosRecentes);
-    const suprimido = listagens.suprimidas.find(e => e.seccao === 'estudos');
+    // EV2-C: pode não haver estudos suprimidos entre as candidatas do dia.
+    // A planta usa então uma peça declarada de um dossiê já representado na página.
+    const suprimido = listagens.suprimidas.find(e => e.seccao === 'estudos')
+      ?? WORKS.find(w => listagens.dossies.includes(dossieDaPeca('estudo', w.slug)?.slug));
     if (!suprimido || recentes.length < 2) erros.push(`E1 ${lang}: faltam estudos para exercer as três plantas DO2.`);
     else {
       const plantas = [
