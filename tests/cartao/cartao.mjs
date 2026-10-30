@@ -219,7 +219,9 @@ import {portaHb1Valida,plantasDasPortasHb1} from './portas-hb1.mjs';
 import './registo-leituras.mjs';
 import { retirarCitacoesEo1 } from '../../scripts/citacoes-eo1-do-portao.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
-import { matchPath as rotaDoCodigo } from '../../src/lib/routes.mjs';
+import { matchPath as rotaDoCodigo, routePath } from '../../src/lib/routes.mjs';
+import { DOSSIES } from '../../src/data/dossies.mjs';
+import { ESTUDO_EO1 } from '../../src/data/portas-eo1.mjs';
 import { FAMILIAS_DAS_LINHAS } from '../../src/data/o-que-e-das-familias.mjs';
 import fs from 'node:fs';
 import { documentoDosAssuntos } from '../inicio/paginas-dos-assuntos.mjs';
@@ -400,6 +402,13 @@ function textoDaCasaK8(root, rota) {
   if (codigo && rotaCodigo?.key === 'linha' && rotaCodigo.params.slug === codigo.getAttribute('data-incorporar-codigo'))
     tirarCodigoConferido(copia, rotaCodigo);
   retirarCitacoesEo1(copia,rotaDoCodigo(rota),linhasK8);
+  // DO3-A: só os recortes declarados recebem a mesma conferência literal do estudo.
+  const dossie = rotaCodigo?.key === 'dossie'
+    ? DOSSIES.find(d => d.slug === rotaCodigo.params.slug && d.pecas.estudos.includes(ESTUDO_EO1)) : null;
+  if (dossie) for (const sec of dossie.leitura) {
+    for (const trecho of copia.querySelectorAll(`[data-dossie="${dossie.slug}"] [data-dossie-seccao="${sec.id}"]`))
+      retirarCitacoesEo1(trecho, {key:'estudo', lang:rotaCodigo.lang, params:{slug:ESTUDO_EO1}}, linhasK8);
+  }
   for(const el of copia.querySelectorAll('[data-linha-campo="excerpt"][data-linha-claim], [data-claim]')) {
     const c=linhasK8.get(el.getAttribute('data-linha-claim') ?? el.getAttribute('data-claim'));
     if(c && (el.getAttribute('data-linha-campo') === 'excerpt' || (['texto','afirmação'].includes(c.unit) && c.value === c.excerpt)) && ([`/livro-razao/${c.id}`, `/en/ledger/${c.id}`].includes(rota.replace(/\/$/, '')) || (el.hasAttribute('data-claim') && c.value === c.excerpt && ['/livro-razao','/en/ledger'].includes(rota.replace(/\/$/, '')))) &&
@@ -2030,6 +2039,38 @@ r.contas.medidas_com_nome_oficial = comNomeOficial;
 
 /* K8 mantém uma ocorrência da casa por edição; as citações literais são conferidas acima. */
 r.erros.push(...errosGovernosK8(r.contas.governo_constitucional_pt,r.contas.governo_constitucional_en));
+if (PROVA) for (const d of DOSSIES.filter(d => d.pecas.estudos.includes(ESTUDO_EO1))) for (const lang of ['pt','en']) {
+  const rota = routePath('dossie',lang,{slug:d.slug});
+  const html = fs.readFileSync(path.join(DIST,rota.slice(1),'index.html'),'utf8');
+  const real = parse(html);
+  const unidade = real.querySelectorAll('[data-dossie-seccao] [data-registo-unidade]')
+    .find(el => el.text.includes('Governo Constitucional'));
+  if (!unidade || textoDaCasaK8(real,rota).includes('Governo Constitucional')) {
+    r.erros.push(`K8: controlo da citação literal do dossiê falhou: ${lang}`);
+    continue;
+  }
+  const chave = unidade.getAttribute('data-registo-unidade');
+  const record = JSON.parse(fs.readFileSync(new URL(`../../registos/${ESTUDO_EO1}/${lang}.record.json`,import.meta.url),'utf8'));
+  const prova = record.blocks.find(b => `${ESTUDO_EO1}/${lang}#${b.i}` === chave)?.proofs
+    ?.find(q => q.tipo === 'excerto' && q.texto.includes('Governo Constitucional'));
+  const linha = prova && linhasK8.get(prova.id);
+  if (!linha) { r.erros.push(`K8: falta a linha da citação do dossiê: ${lang}`); continue; }
+  for (const [nome,altera,lingua] of [
+    ['prosa da casa em português',t=>t.querySelector('main').insertAdjacentHTML('beforeend','<p>Governo Constitucional</p>'),'pt'],
+    ['prosa da casa em inglês',t=>t.querySelector('main').insertAdjacentHTML('beforeend','<p>Constitutional Government</p>'),'en'],
+    ['parágrafo alterado',t=>{const el=t.querySelector(`[data-registo-unidade="${chave}"]`);el.set_content(el.innerHTML+' Palavra alterada.');},'pt'],
+    ['excerto diferente da linha',()=>linhasK8.set(prova.id,{...linha,excerpt:linha.excerpt+' Palavra alterada.'}),'pt'],
+  ]) {
+    try {
+      const plantada=parse(html);altera(plantada);
+      const texto=textoDaCasaK8(plantada,rota);
+      const queixas=errosGovernosK8(1+Number(texto.includes('Governo Constitucional')),1+Number(texto.includes('Constitutional Government')));
+      const esperada=errosGovernosK8(lingua==='pt'?2:1,lingua==='en'?2:1)[0];
+      if (!queixas.includes(esperada)) r.erros.push(`K8: planta do dossiê não mordida: ${lang}, ${nome}`);
+      else console.log(`PLANTA K8 dossiê ${lang}, ${nome}: ${esperada}`);
+    } finally { linhasK8.set(prova.id,linha); }
+  }
+}
 if(PROVA) {
   const id='oe-2027-cenario-pib-real-crescimento-2027';
   const real=parse(fs.readFileSync(path.join(DIST,'livro-razao',id,'index.html'),'utf8'));
