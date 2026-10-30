@@ -1,0 +1,414 @@
+{
+  "cabecaConstruida": "7b22879712be98b6454d8d184237f967c08adc5d",
+  "paginas": [
+    {
+      "lang": "pt",
+      "seccoes": [
+        "O que há de novo",
+        "O que se passa",
+        "Por onde começar",
+        "Estudos recentes",
+        "Os valores de referência da Comissão Europeia"
+      ],
+      "novidades": [
+        {
+          "peca": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026estudoA casa em Portugal e na Europa",
+          "titulo": "A casa em Portugal e na Europa",
+          "data": "2026-10-29",
+          "destino": "/estudos/a-casa-em-portugal-e-na-europa"
+        },
+        {
+          "peca": "dossie:orcamento-2027",
+          "texto": "Dossiê · O Orçamento de 2027 · 5 peças, a mais recente de 29.10.2026",
+          "titulo": "O Orçamento de 2027 · 5 peças",
+          "data": "2026-10-29",
+          "destino": "/dossies/orcamento-2027"
+        },
+        {
+          "peca": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explicaçãoPara onde vai o dinheiro do Estado em 2026",
+          "titulo": "Para onde vai o dinheiro do Estado em 2026",
+          "data": "2026-10-06",
+          "destino": "/explicacoes/dinheiro-do-estado-2026"
+        },
+        {
+          "peca": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026estudoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "titulo": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "data": "2026-10-01",
+          "destino": "/estudos/evora-2027-capital-europeia-da-cultura"
+        },
+        {
+          "peca": "estudo:evora-contas-da-camara-2010-2025",
+          "texto": "01.10.2026estudoAs contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação",
+          "titulo": "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação",
+          "data": "2026-10-01",
+          "destino": "/estudos/evora-contas-da-camara-2010-2025"
+        }
+      ],
+      "discussao": 0,
+      "blocos": [
+        "Os preços: os combustíveis sobem mais do que o resto",
+        "A habitação: a média engana quem arrenda",
+        "O trabalho: mais emprego, e mais desemprego de longa duração",
+        "As contas do Estado",
+        "Pobreza e desigualdade não são a mesma coisa"
+      ],
+      "paraPerceber": [
+        "Entre 24.10.2026 e 30.10.2026, 90 números foram relidos na fonte, 17 mudaram de valor e 17 mudaram de proveniência."
+      ],
+      "entradas": [
+        "PreçosOs preços dos bens e serviços.",
+        "Salários, pensões e apoiosOs salários, as pensões e os apoios sociais.",
+        "Pobreza e desigualdadeA pobreza, a desigualdade, as dívidas e o crédito das famílias.",
+        "EmpregoO emprego, o desemprego, os jovens e o custo do trabalho.",
+        "HabitaçãoO peso da habitação, as rendas, os preços e a construção.",
+        "Educação e saúdeO abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde.",
+        "Estado e economiaAs contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça.",
+        "LugaresOs concelhos, os distritos, as ilhas e as regiões."
+      ],
+      "estudos": [
+        {
+          "slug": "evora-2027-capital-europeia-da-cultura",
+          "titulo": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "data": "2026-10-01"
+        },
+        {
+          "slug": "a-casa-em-portugal-e-na-europa",
+          "titulo": "A casa em Portugal e na Europa novo",
+          "data": "2026-10-29"
+        }
+      ],
+      "veredicto": [
+        "Dívida pública",
+        "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+        "Preços da habitação, variação anual",
+        "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)",
+        "Dívida das empresas (não financeiras)",
+        "Dívida das famílias",
+        "Fluxo de crédito às empresas (não financeiras)",
+        "Fluxo de crédito às famílias",
+        "Saldo da balança corrente",
+        "Pessoas que trabalham ou procuram trabalho (taxa de atividade)",
+        "Preços face aos parceiros comerciais, com o câmbio (taxa de câmbio efetiva real)",
+        "Taxa de desemprego"
+      ],
+      "portas": [
+        "Todos os temas →",
+        "Números e fontes →",
+        "O que mudou →"
+      ],
+      "integracao": 0,
+      "dossies": [
+        "orcamento-2027"
+      ],
+      "frasesDosBlocos": 5
+    },
+    {
+      "lang": "en",
+      "seccoes": [
+        "What is new",
+        "What is happening",
+        "Where to start",
+        "Recent studies",
+        "The European Commission’s reference values"
+      ],
+      "novidades": [
+        {
+          "peca": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026studyHousing in Portugal and in Europe",
+          "titulo": "Housing in Portugal and in Europe",
+          "data": "2026-10-29",
+          "destino": "/en/studies/a-casa-em-portugal-e-na-europa"
+        },
+        {
+          "peca": "dossie:orcamento-2027",
+          "texto": "Dossier · The 2027 Budget · 5 pieces, the most recent from 29.10.2026",
+          "titulo": "The 2027 Budget · 5 pieces",
+          "data": "2026-10-29",
+          "destino": "/en/dossiers/orcamento-2027"
+        },
+        {
+          "peca": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explainerWhere the State’s money goes in 2026",
+          "titulo": "Where the State’s money goes in 2026",
+          "data": "2026-10-06",
+          "destino": "/en/explainers/dinheiro-do-estado-2026"
+        },
+        {
+          "peca": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026studyÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "titulo": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "data": "2026-10-01",
+          "destino": "/en/studies/evora-2027-capital-europeia-da-cultura"
+        },
+        {
+          "peca": "estudo:evora-contas-da-camara-2010-2025",
+          "texto": "01.10.2026studyThe accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification",
+          "titulo": "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification",
+          "data": "2026-10-01",
+          "destino": "/en/studies/evora-contas-da-camara-2010-2025"
+        }
+      ],
+      "discussao": 0,
+      "blocos": [
+        "Prices: fuel is rising faster than the rest",
+        "Housing: the average hides the renters",
+        "Work: more employment, and more long-term unemployment",
+        "The state’s accounts",
+        "Poverty and inequality are not the same thing"
+      ],
+      "paraPerceber": [
+        "Between 24.10.2026 and 30.10.2026, 90 figures were re-read at the source, 17 changed value and 17 changed provenance."
+      ],
+      "entradas": [
+        "PricesThe prices of goods and services.",
+        "Pay, pensions and benefitsPay, pensions and social benefits.",
+        "Poverty and inequalityPoverty, inequality, household debt and credit.",
+        "EmploymentEmployment, unemployment, young people and labour costs.",
+        "HousingHousing costs, rents, prices and building.",
+        "Education and healthEarly school leaving, digital skills, childcare and access to healthcare.",
+        "State and economyPublic accounts, growth, investment, external accounts, companies and justice.",
+        "PlacesMunicipalities, districts, islands and regions."
+      ],
+      "estudos": [
+        {
+          "slug": "evora-2027-capital-europeia-da-cultura",
+          "titulo": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "data": "2026-10-01"
+        },
+        {
+          "slug": "a-casa-em-portugal-e-na-europa",
+          "titulo": "Housing in Portugal and in Europe new",
+          "data": "2026-10-29"
+        }
+      ],
+      "veredicto": [
+        "Government debt",
+        "What the country owns abroad minus what it owes (net international investment position)",
+        "Labour cost per unit of output (unit labour cost)",
+        "House prices, annual change",
+        "Portugal’s share of advanced economies’ exports (export market share)",
+        "Debt of (non-financial) companies",
+        "Household debt",
+        "Credit flow to (non-financial) companies",
+        "Credit flow to households",
+        "Current account balance",
+        "People who work or are looking for work (activity rate)",
+        "Prices compared with trading partners, including the exchange rate (real effective exchange rate)",
+        "Unemployment rate"
+      ],
+      "portas": [
+        "All themes →",
+        "Numbers and sources →",
+        "What changed →"
+      ],
+      "integracao": 0,
+      "dossies": [
+        "orcamento-2027"
+      ],
+      "frasesDosBlocos": 5
+    }
+  ],
+  "codigos": {
+    "build": 1,
+    "check:alvos": 125,
+    "check:cabeca": 125,
+    "check:css": 125,
+    "check:discussao": 125,
+    "check:frases-compostas": 125,
+    "check:lugar": 125,
+    "check:navegacao": 125,
+    "check:primeira": 125,
+    "gate:html": 125
+  },
+  "estado": "paragem pelo §4 da adenda C",
+  "motivo": "O build final recusou a seleção em check:pais, E1, uma régua não nomeada na adenda C. A E1 reconta os três estudos sem excluir os representados pelo dossiê.",
+  "comandoFinal": "sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/do2-c-final v2c",
+  "pastaFinal": "<temporario>/do2-c-final",
+  "capturas": "Não executadas: a construção completa terminou com código 1.",
+  "commits": [
+    "8dddb512e",
+    "53e49f1ac",
+    "7b2287971"
+  ],
+  "ambiguidades": [
+    "As listas candidatas mantêm os limites atuais, sem preencher lugares retirados com peças mais antigas.",
+    "Os cinco blocos de O que se passa permanecem na primeira página: não são peças de dossiês e conservam data-bloco-frase."
+  ],
+  "custo": {
+    "chamadasFunctionsExec": 44,
+    "conferenciasDirigidasIncluindoRepeticoes": 23,
+    "passosPreparacao": 4,
+    "buildFinalTentado": 1,
+    "passosDoPerfilNaoExecutados": 9,
+    "capturas": 0
+  },
+  "execucoesDirigidas": [
+    {
+      "comando": "npm run check:discussao",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-conclusoes.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "npm run check:discussao",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-conclusoes-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:mortos",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-mortos.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npx astro build",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-astro.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-inicio.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:discussao",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-discussao.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "npm run check:datas",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-datas.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "npm run check:voz",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-voz.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "npm run typecheck",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-tipos.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "npm run stamp:version",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-carimbo.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "node scripts/stamp-version.mjs --preparar && npx astro build && npm run stamp:version",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-astro-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run typecheck",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-tipos-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run cartoes",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-cartoes.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:datas",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-datas-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:discussao",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-discussao-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:voz",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-voz-2.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "OEDP_LUGAR_AMOSTRA=5000 npm run check:lugar",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-l1.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-inicio-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:dossies",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-dossies.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:voz",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-voz-3.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run sinais",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-sinais.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "AMOSTRA=5000 npm run check:lugar",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-l1-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "node tests/inicio/dossie-fora-das-novidades.mjs <temporario>/do2-c-fallback.json",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-fallback.log",
+      "codigoObservadoNaFerramenta": 1
+    },
+    {
+      "comando": "node tests/inicio/dossie-fora-das-novidades.mjs <temporario>/do2-c-fallback.json",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-fallback-2.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "node scripts/medir-defeitos.mjs --json",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-inventario.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "node tests/dossies/do2-l1.mjs <temporario>/do2-b-l1-final.log <temporario>/do2-c-l1-2.log <temporario>/do2-c-l1.json 2",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-l1-plantas.log",
+      "codigoObservadoNaFerramenta": 0
+    },
+    {
+      "comando": "npm run check:mortos",
+      "pasta": "<worktree>",
+      "registo": "<temporario>/do2-c-mortos-2.log",
+      "codigoObservadoNaFerramenta": 0
+    }
+  ],
+  "falhasIntermedias": "Uma rota de teste sem separador; preparação incompleta da construção e um carimbo de outra cabeça; três erros de tipos; seis estados do inventário por atualizar; caminho inicial do executável Astro na cópia. Corrigidos e repetidos pelos comandos dirigidos registados. A medição L1 completa usa AMOSTRA=5000."
+}
