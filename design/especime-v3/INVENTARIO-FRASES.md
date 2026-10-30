@@ -5316,7 +5316,7 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | navegacao | texts under discussion on this dossier’s page | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
 | conteudo | texts under discussion → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
 
-## EV2: as contas da Câmara de Évora, edição de 29.10.2026
+## EV2: as contas da Câmara de Évora, edição de 30.10.2026
 
 As quatro passagens nas duas edições são transcrições dos registos do estudo 16, conferidas por `check:registo` e rendidas sob `data-registo-unidade`. Ficam fora da classificação da prosa da casa. Os travessões das citações já pertenciam ao texto anterior. Bloco `ev2`; leitura cruzada por fazer.
 
