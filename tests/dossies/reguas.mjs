@@ -20,6 +20,9 @@ for(const lang of ['pt','en'])for(const d of DOSSIES) {
  const explicacao=r=>conferirPalavrasDaExplicacaoNaPagina(r,lang,'dossie',d.slug);
  for(const medir of [superficie,explicacao])assert.deepEqual(medir(parse(html)),[]);
  for(const [medir,alterar] of [
+  [superficie,r=>r.querySelector('details.texto-fontes').insertAdjacentHTML('beforeend','<p>Frase da casa plantada.</p>')],
+  [superficie,r=>r.querySelector('details.texto-fontes a').setAttribute('href','/')],
+  [superficie,r=>r.querySelector('[data-dossie-seccao] [data-registo-unidade]').insertAdjacentHTML('afterend',' Texto plantado entre blocos. ')],
   [superficie,r=>r.querySelector('[data-dossie-indice] a').set_content('Título inventado')],
   [superficie,r=>r.querySelector('[data-dossie-resto] a').setAttribute('href','/')],
   [superficie,r=>r.querySelector('[data-registo-unidade]').set_content('Prosa inventada')],

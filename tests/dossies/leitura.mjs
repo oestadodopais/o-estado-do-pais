@@ -22,11 +22,20 @@ export function conferirLeitura(root,d,lang) {
  if(JSON.stringify(rendidas.map(s=>s.getAttribute('data-dossie-seccao')))!==JSON.stringify(secs.map(s=>s.id)))erros.push('DO3: seleção de secções diferente');
  if(JSON.stringify(artigo.querySelectorAll('[data-registo-bloco]').map(n=>Number(n.getAttribute('data-registo-bloco'))))!==JSON.stringify(secs.flatMap(s=>s.blocos.map(b=>b.i))))erros.push('DO3: blocos diferentes da seleção');
  const fonte=ler(routePath('estudo',lang,{slug:d.pecas.estudos[0]}));
- for(const s of rendidas)for(const bloco of s.querySelectorAll('[data-registo-bloco]')) {
-  const original=fonte.querySelector(`[data-registo-bloco="${bloco.getAttribute('data-registo-bloco')}"]`);
-  const normal=n=>{const c=parse(n?.outerHTML??'');c.querySelectorAll('[aria-labelledby]').forEach(x=>x.removeAttribute('aria-labelledby'));return c.toString();};
-  const origem=parse(original?.outerHTML.replace(/<(\/?)h([2-5])\b/g,(_,fim,n)=>`<${fim}h${Number(n)+1}`)??'');
-  if(normal(bloco)!==normal(origem))erros.push('DO3: bloco diferente do estudo publicado');
+ // A comparação cobre todos os nós do recorte, incluindo dobras e texto solto.
+ // Só a origem perde a mobília do índice do estudo, que fica fora destes recortes.
+ const normal=html=>{const c=parse(html);c.querySelectorAll('[aria-labelledby]').forEach(x=>x.removeAttribute('aria-labelledby'));return c.toString().replace(/\s+/g,' ').trim();};
+ for(const sec of rendidas) {
+  const id=sec.getAttribute('data-dossie-seccao'), inicio=fonte.querySelector(`h2#${id}`);
+  const partes=[];
+  for(let n=inicio;n;n=n.nextSibling) {
+   if(n!==inicio && n.rawTagName==='h2')break;
+   if(n.rawTagName==='a' && n.getAttribute('class')==='texto-secao-topo' && n.getAttribute('href')==='#texto-indice')continue;
+   if(n.rawTagName==='span' && n.hasAttribute('data-registo-posicao') && n.getAttribute('class')==='vh')continue;
+   partes.push(n.outerHTML ?? n.toString());
+  }
+  const original=partes.join('').replace(/<(\/?)h([2-5])\b/g,(_,fim,n)=>`<${fim}h${Number(n)+1}`);
+  if(!inicio||normal(sec.innerHTML)!==normal(original))erros.push(`DO3: secção inteira diferente do estudo publicado: ${id}`);
  }
  const resto=artigo.querySelector('[data-dossie-resto] a');
  if(resto?.parentNode.textContent!==MOBILIA_DO_DOSSIE[lang].resto||resto?.textContent!==MOBILIA_DO_DOSSIE[lang].resto||resto?.getAttribute('href')!==routePath('estudo',lang,{slug:d.pecas.estudos[0]}))erros.push('DO3: porta do resto diferente');
@@ -39,7 +48,7 @@ if(process.argv[1]?.endsWith('/leitura.mjs')) {
   const r=registoDaEdicao(d.pecas.estudos[0],lang);
   for(const selecao of [[{...d.leitura[0],id:'bloco-99999'}],[{...d.leitura[0],[lang]:'Título alterado'}]]) {assert.throws(()=>blocosDoDossie(r,selecao,lang));plantas++;}
   const root=ler(routePath('dossie',lang,{slug:d.slug}));assert.deepEqual(conferirLeitura(root,d,lang),[]);
-  for(const altera of [r=>r.querySelector('[data-dossie-estudo] a').setAttribute('href','/'),r=>r.querySelector('[data-dossie-estudo] [data-nonledger]').set_content('Título alterado'),r=>r.querySelector('[data-dossie-indice] a').setAttribute('href','#bloco-6'),r=>r.querySelector('[data-dossie-resto] a').set_content('Outra frase'),r=>r.querySelector('[data-registo]').set_content('999999')]) {
+  for(const altera of [r=>r.querySelector('details.texto-fontes').insertAdjacentHTML('beforeend','<p>Frase da casa plantada.</p>'),r=>r.querySelector('details.texto-fontes a').setAttribute('href','/'),r=>r.querySelector('[data-dossie-seccao] [data-registo-unidade]').insertAdjacentHTML('afterend',' Texto plantado entre blocos. '),r=>r.querySelector('[data-dossie-estudo] a').setAttribute('href','/'),r=>r.querySelector('[data-dossie-estudo] [data-nonledger]').set_content('Título alterado'),r=>r.querySelector('[data-dossie-indice] a').setAttribute('href','#bloco-6'),r=>r.querySelector('[data-dossie-resto] a').set_content('Outra frase'),r=>r.querySelector('[data-registo]').set_content('999999')]) {
    const copia=parse(root.toString());altera(copia);assert(conferirLeitura(copia,d,lang).length);plantas++;
   }
  }
