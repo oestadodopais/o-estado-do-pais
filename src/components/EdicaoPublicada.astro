@@ -15,5 +15,5 @@ if (!documento) throw new Error(`Edição sem documento ou data: ${work.slug}/${
   {data && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
   <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time></>}
   {principal.updated && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.atualizado}</span>{' '}
-  <time datetime={principal.updated} data-estudo-atualizacao data-nonledger="data-editorial">{dataDaCasa(principal.updated)}</time></>}
+  <time datetime={principal.updated} data-estudo-atualizacao data-nonledger="data-editorial" data-data-origem="edicao.updated">{dataDaCasa(principal.updated)}</time></>}
 </p>
