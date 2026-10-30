@@ -47,6 +47,7 @@
  * Uso:  node scripts/check-datas.mjs
  */
 
+import { listagensDoInicio } from '../src/lib/listagens-do-inicio.mjs';
 import { estudosAvulsosDaEntrada } from '../src/lib/primeira-pagina.mjs';
 import { conferirDataDeclarada } from './publicacao-declarada.mjs';
 import fs from 'node:fs';
@@ -506,7 +507,7 @@ for (const { rota, doc, slug } of paraPrender) {
   }
   if (['/', '/en'].includes(rota)) {
     paginasPrendidas++;
-    prendeEdicoesB1(rota, doc, null, Math.min(3, WORKS.length));
+    prendeEdicoesB1(rota, doc, null, listagensDoInicio(rota==='/'?'pt':'en').estudos.filter(e=>e.tipo==='estudo').length);
     continue;
   }
   if (ROTA_DO_LUGAR.test(rota)) {

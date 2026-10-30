@@ -51,7 +51,8 @@ import { sinalDaLeitura } from '../lib/leitura-da-medida.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { prova } from '../lib/prova.mjs';
-import { estudosRecentes } from '../lib/pais.mjs';
+import { listagensDoInicio } from '../lib/listagens-do-inicio.mjs';
+import ListaDeDossies from '../components/dossies/ListaDeDossies.astro';
 import { idsDosBlocos, blocosDaPagina, periodoDosNumerosMaisRecentes } from '../lib/primeira-pagina.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -66,7 +67,8 @@ const s = t(lang);
 
 const r = ROTULOS_B1[lang];
 const path = routePath('home', lang);
-const recentes = estudosRecentes(lang).slice(0, 3);
+const listas = listagensDoInicio(lang);
+const recentes = listas.estudos;
 const p = prova(lang);
 const medidasDoPainel = FIGURAS_PDM.map(f => {
   const linha = getClaim(f.claim);
@@ -116,7 +118,7 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
   <Masthead slot="masthead" lang={lang} path={path} />
 
   <Novidades lang={lang} />
-  <BlocoDaDiscussao lang={lang} />
+  <BlocoDaDiscussao lang={lang} entradasDoInicio={listas.discussao} />
 
   <section class="pp-o-que-se-passa" data-o-que-se-passa aria-labelledby="o-que-se-passa-k">
     <h2 class="pp-o-que-se-passa-k" id="o-que-se-passa-k">{s.primeira.oQueSePassa}</h2>
@@ -128,7 +130,7 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
     </div>
     {/* «PARA PERCEBER» (bloco EX1, 05.10.2026): fecha «O que se passa», com a porta da explicação mais recente e a da
         leitura da semana. Fica fora da lista dos cinco blocos, que tem a gramática e a célula deles. */}
-    <ParaPerceber lang={lang} />
+    <ParaPerceber lang={lang} entradas={listas.perceber} />
   </section>
 
   <section class="pp-entradas" data-entradas aria-labelledby="entradas-k">
@@ -136,10 +138,10 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
     <IndiceDosAssuntos lang={lang} />
   </section>
 
-  <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
+  {recentes.length > 0 && <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
     <div class="sec-head"><h2 class="eyebrow" id="estudos-k">{r.estudosRecentes}</h2></div>
-    {recentes.map((e) => <EstudoDaLista e={e} lang={lang} mostrarEmCurso />)}
-  </section>
+    {recentes.map(e => e.tipo === 'dossie' ? <ListaDeDossies lang={lang} entradas={[e.dossie]} /> : <EstudoDaLista e={e.peca} lang={lang} mostrarEmCurso />)}
+  </section>}
 
   {/* O VEREDICTO DOS VALORES DE REFERÊNCIA DA COMISSÃO EUROPEIA: o parágrafo calculado de antes
       (B2), com um título seu e a porta da página da União. A V1 do `check:pais` reconta-o. */}
@@ -183,5 +185,5 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
     <p class="regra-portas"><a href={routePath('livro', lang)}>{s.nav.livro} →</a></p>
     <p class="regra-portas"><a href={routePath('correcoes', lang)}>{r.mudou} →</a></p>
   </div>
-  <PortasDaDiscussao lang={lang} linhas={medidasDoPainel.map(m => m.claim)} />
+  {listas.integracao.length > 0 && <div data-integracao-do-inicio>{listas.integracao.map(e => e.tipo === 'dossie' ? <ListaDeDossies lang={lang} entradas={[e.dossie]} /> : <PortasDaDiscussao lang={lang} entradas={[e.peca]} />)}</div>}
 </Base>

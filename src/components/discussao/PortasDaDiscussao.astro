@@ -4,8 +4,8 @@ import { dossieDaPeca } from '../../lib/dossies.mjs';
 import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
 import { DISCUSSAO } from '../../data/discussao.mjs';
 import { itensSobreLinhas, portaDoItem } from '../../lib/discussao.mjs';
-interface Props { linhas?: string[]; lang?: 'pt' | 'en'; tematica?: boolean; excluirDossies?: string[]; }
-const { linhas = [], lang = 'pt', tematica = false, excluirDossies = [] } = Astro.props;
-const itens = itensSobreLinhas(linhas, lang, tematica).filter(e => !excluirDossies.includes(dossieDaPeca('discussao',e.slug)?.slug));
+interface Props { linhas?: string[]; lang?: 'pt' | 'en'; tematica?: boolean; excluirDossies?: string[]; entradas?: ReturnType<typeof itensSobreLinhas>; }
+const { linhas = [], lang = 'pt', tematica = false, excluirDossies = [], entradas } = Astro.props;
+const itens = (entradas ?? itensSobreLinhas(linhas, lang, tematica)).filter(e => !excluirDossies.includes(dossieDaPeca('discussao',e.slug)?.slug));
 ---
 {itens.map(e => <p class="regra-portas discussao-porta" data-discussao-integracao={e.slug} data-discussao-condicao={tematica && e.slug === 'saude-no-orcamento' ? 'tematica' : 'linhas'}><a href={portaDoItem(e.slug, lang)} data-voz>{DISCUSSAO.porta[lang]} <span><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></span></a></p>)}

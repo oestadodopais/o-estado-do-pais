@@ -1,3 +1,4 @@
+import { listagensDoInicio, candidatasDoInicio } from '../../src/lib/listagens-do-inicio.mjs';
 import { DOSSIES } from '../../src/data/dossies.mjs';
 import { conferirSuperficieDossies, dossieDaPagina } from '../../scripts/dossies-superficie.mjs';
 import {dataDaCasa} from '../../src/lib/datas.mjs';
@@ -208,30 +209,35 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
  }
  return erros;
 }
-export function conferirInicio(root,lang,dist=process.env.OEDP_DIST??path.join(raiz,'dist')){
- const erros=[];const bloco=root.querySelector('[data-discussao-inicio]');
- if(!bloco)return ['V2B início: bloco ausente'];
- const links=bloco.querySelectorAll('[data-discussao-porta]');
- const soltos=ITENS.filter(e=>!DOSSIES.some(d=>d.pecas.itens.includes(e.slug)));
- const dossies=DOSSIES.filter(d=>d.pecas.itens.some(slug=>ITENS.some(e=>e.slug===slug)));
- if(links.length!==soltos.length||bloco.querySelectorAll('li').length!==soltos.length+dossies.length)erros.push('V2B início: títulos em falta ou a mais');
- for(const d of dossies) {
-  const entradas=bloco.querySelectorAll(`[data-discussao-dossie="${d.slug}"]`), n=d.pecas.itens.length, chave=`dossie_itens_${d.slug.replace(/-/g,'_')}`;
-  const a=entradas[0]?.querySelector('a'), token=a?.querySelector('[data-prova]');
-  const texto=`${lang==='pt'?'Dossiê':'Dossier'}: ${d.titulo[lang]} · ${n} ${lang==='pt'?(n===1?'texto em discussão':'textos em discussão'):(n===1?'text under discussion':'texts under discussion')} →`;
-  if(entradas.length!==1||normal(entradas[0]?.text)!==texto||a?.getAttribute('href')!==routePath('dossie',lang,{slug:d.slug})||entradas[0]?.querySelectorAll('a').length!==1)erros.push('DO2 início: destino ou título do dossiê errado');
-  if(token?.getAttribute('data-prova')!==chave||token?.text!==String(n))erros.push('DO2 início: contagem sem token ou diferente dos itens');
- }
- for(const [i,e] of [...soltos].sort(compararItens).entries()){erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');erros.push(...conferirConclusaoDoInicio(links[i],e,lang,{dist}));}
- const content=root.querySelector('main')?.innerHTML??'';
- const marcas=['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
- if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');
+export function conferirInicio(root,lang,dist=process.env.OEDP_DIST??path.join(raiz,'dist'),listas=listagensDoInicio(lang)){
+ const erros=[],blocos=root.querySelectorAll('[data-discussao-inicio]'),bloco=blocos[0];
+ const entradas=listas.discussao;
+ if(blocos.length!==Number(entradas.length>0))return ['V2B início: presença do bloco diferente da seleção'];
  const seccoes=root.querySelectorAll('main > section');
- if(root.querySelectorAll('[data-discussao-inicio]').length!==1||!seccoes[0]?.hasAttribute('data-novidades')||seccoes[1]!==bloco)erros.push('V2C início: discussão não é a secção única imediatamente depois das novidades');
- if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang))erros.push('V2C início: destino do título errado');
+ if(!seccoes[0]?.hasAttribute('data-novidades'))erros.push('V2C início: novidades fora do primeiro lugar');
+ const content=root.querySelector('main')?.innerHTML??'';
+ const marcas=['data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
+ if(marcas.some(n=>n<0)||marcas[0]>=marcas[1])erros.push('V2C início: marca ausente ou bloco fora do lugar');
+ if(!bloco)return erros;
+ if(seccoes[1]!==bloco)erros.push('V2C início: discussão não é a secção única imediatamente depois das novidades');
+ if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang)||normal(bloco.querySelector('h2 a')?.text)!==`${DISCUSSAO.titulo[lang]} →`)erros.push('V2C início: destino do título errado');
+ const soltos=entradas.filter(e=>e.tipo==='discussao').map(e=>ITENS.find(x=>x.slug===e.slug));
+ const dossies=entradas.filter(e=>e.tipo==='dossie').map(e=>e.dossie);
+ const links=bloco.querySelectorAll('[data-discussao-porta]');
+ if(links.length!==soltos.length||bloco.querySelectorAll('[data-dossie-lista]').length!==dossies.length)erros.push('V2B início: títulos em falta ou a mais');
+ for(const d of dossies){
+  const entradas=bloco.querySelectorAll(`[data-dossie-lista="${d.slug}"]`),a=entradas[0]?.querySelector('a');
+  if(entradas.length!==1||a?.getAttribute('href')!==routePath('dossie',lang,{slug:d.slug}))erros.push('DO2 início: destino ou título do dossiê errado');
+ }
+ erros.push(...conferirSuperficieDossies(root,lang,lang==='pt'?'index.html':'en/index.html').erros);
+ for(const [i,e] of soltos.entries()){
+  erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));
+  if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');
+  erros.push(...conferirConclusaoDoInicio(links[i],e,lang,{dist}));
+ }
  return erros;
 }
-export function plantasDoInicio(home,lang,dist) {
+export function plantasDoInicio(home,lang,dist,listas=listagensDoInicio(lang)) {
  const provas=[];
  for(const [nome,mudar] of [
   ['dossiê repetido',r=>r.querySelector('[data-discussao-inicio] ul').insertAdjacentHTML('beforeend',r.querySelector('[data-discussao-dossie]').outerHTML)],
@@ -239,7 +245,7 @@ export function plantasDoInicio(home,lang,dist) {
   ['contagem alterada',r=>r.querySelector('[data-discussao-dossie] [data-prova]').set_content('99')],
   ['destino trocado',r=>r.querySelector('[data-discussao-dossie] a').setAttribute('href','/errado/')],
   ['título trocado',r=>r.querySelector('[data-discussao-dossie] [data-dossie-campo]').set_content('Título inventado')],
- ]) {const r=parse(home.toString());mudar(r);provas.push({nome:`DO2: ${nome}`,lang,mordeu:conferirInicio(r,lang,dist).length>0});}
+ ]) {const r=parse(home.toString());mudar(r);provas.push({nome:`DO2: ${nome}`,lang,mordeu:conferirInicio(r,lang,dist,listas).length>0});}
  return provas;
 }
 
@@ -319,7 +325,9 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
  const estudoEo1=pagina===`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
  const portaDaPagina=pagina===routePath('entradaEstado',lang).slice(1)+'index.html'?'estado-e-economia':pagina===routePath('entradaCasa',lang).slice(1)+'index.html'?'habitacao':null;
+ const inicio=['index.html','en/index.html'].includes(pagina);
  const representados=new Set(DOSSIES.filter(d=>d.portas.includes(portaDaPagina)).flatMap(d=>d.pecas.itens));
+ if(inicio)for(const d of DOSSIES.filter(d=>listagensDoInicio(lang).dossies.includes(d.slug)))for(const slug of d.pecas.itens)representados.add(slug);
  const esperados=[...ITENS].sort(compararItens).filter(e=>!representados.has(e.slug)).filter(e=>dossie?dossie.pecas.itens.includes(e.slug):[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
  for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]')&&!(novidadesConferidas&&a.closest('[data-novidades]')))erros.push('V2B integração: porta sem condição declarada');
@@ -397,7 +405,14 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
   const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang,loadClaims(),dist));provas.push(...plantas(html,lang));
   const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang,dist));
-  provas.push(...plantasDoInicio(home,lang,dist));
+  const candidatas=candidatasDoInicio(lang);candidatas.novidades=candidatas.novidades.filter(e=>e.tipo!=='dossie');
+  const listas=listagensDoInicio(lang,candidatas),ensaio=parse(home.toString());
+  const indice=parse(fs.readFileSync(path.join(dist,routePath('dossies',lang),'index.html'),'utf8'));
+  if(!ensaio.querySelector('[data-discussao-inicio]'))ensaio.querySelector('[data-novidades]').insertAdjacentHTML('afterend',`<section data-discussao-inicio><h2><a href="${routePath('discussao',lang)}">${DISCUSSAO.titulo[lang]} →</a></h2><ul>${listas.discussao.filter(e=>e.tipo==='dossie').map(e=>`<li data-discussao-dossie="${e.dossie.slug}"><ul>${indice.querySelector(`[data-dossie-lista="${e.dossie.slug}"]`).outerHTML}</ul></li>`).join('')}</ul></section>`);
+  if(conferirInicio(ensaio,lang,dist,listas).length)erros.push('DO2: controlo da discussão fora das novidades recusado');
+  provas.push(...plantasDoInicio(ensaio,lang,dist,listas));
+  if(!listagensDoInicio(lang).discussao.length){const r=parse(home.toString());r.querySelector('[data-novidades]').insertAdjacentHTML('afterend',ensaio.querySelector('[data-discussao-inicio]').outerHTML);provas.push({nome:'DO2 bloco vazio reaparece',lang,mordeu:conferirInicio(r,lang,dist).some(e=>e.includes('presença do bloco'))});}
+
   const superficies=DOSSIES.filter(d=>d.pecas.itens.length).map(d=>({pagina:routePath('dossie',lang,{slug:d.slug}).replace(/^\//,'').replace(/\/$/,'')+'/index.html',itens:ITENS.filter(e=>d.pecas.itens.includes(e.slug))}));
   const avulsos=ITENS.filter(e=>!DOSSIES.some(d=>d.pecas.itens.includes(e.slug)));
   if(avulsos.length)superficies.push({pagina:lang==='pt'?'index.html':'en/index.html',itens:avulsos});
@@ -406,20 +421,20 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
    provas.push(...plantasDasConclusoes(r,lang,dist,itens,pagina));
   }
 
-  for(const [nome,mut] of [['título da porta alterado',p=>p.querySelector('a').set_content('Outro título')],['destino da porta alterado',p=>p.querySelector('a').setAttribute('href','#errado')]]){const r=parse(home.toString());mut(r.querySelector('[data-discussao-dossie]'));provas.push({nome:'DO2 primeira página: '+nome,lang,mordeu:conferirInicio(r,lang,dist).length>0});}
+  for(const [nome,mut] of [['título da porta alterado',p=>p.querySelector('a').set_content('Outro título')],['destino da porta alterado',p=>p.querySelector('a').setAttribute('href','#errado')]]){const r=parse(ensaio.toString());mut(r.querySelector('[data-discussao-dossie]'));provas.push({nome:'DO2 primeira página: '+nome,lang,mordeu:conferirInicio(r,lang,dist,listas).length>0});}
   for(const [nome,estraga] of [
    ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
    ...['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>['marca ausente: '+m,r=>r.querySelector('['+m+']').removeAttribute(m)]),
    ['bloco duplicado',r=>r.querySelector('main').insertAdjacentHTML('beforeend',r.querySelector('[data-discussao-inicio]').toString())],
    ['novidades retiradas do primeiro lugar',r=>r.querySelector('[data-novidades]').remove()],
    ['destino do título errado',r=>r.querySelector('[data-discussao-inicio] h2 a').setAttribute('href','#errado')]
-  ]){const r=parse(home.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang).length>0});}
+  ]){const r=parse(ensaio.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang,dist,listas).length>0});}
   for(const [nome,mudar] of [
    ['data da peça alterada',r=>r.querySelector('[data-novidade] time').setAttribute('datetime','9999-12-31')],
    ['título da peça alterado',r=>r.querySelector('[data-novidade^="dossie:"] [data-novidade-porta]').set_content('Outro título')],
    ['porta da peça fora da caixa',r=>r.querySelector('[data-novidade^="dossie:"] [data-novidade-porta]').remove()],
   ]){const r=parse(home.toString());mudar(r);provas.push({nome:'FP1: '+nome,lang,mordeu:conferirIntegracao(r,lang,lang==='pt'?'index.html':'en/index.html').length>0});}
-  const broken=parse(home.toString());broken.querySelector('[data-discussao-dossie] a')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang).some(x=>x.includes('destino'))});
+  const broken=parse(ensaio.toString());broken.querySelector('[data-discussao-dossie] a')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang,dist,listas).some(x=>x.includes('destino'))});
  }
  const idsDosItens=[...new Set(ITENS.flatMap(e=>[...linhasImpressasOuDerivadas(e,loadClaims())]))];
  const walk=p=>{for(const f of fs.readdirSync(p,{withFileTypes:true})){const n=path.join(p,f.name);if(f.isDirectory())walk(n);else if(f.name==='index.html'){

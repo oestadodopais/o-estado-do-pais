@@ -15,6 +15,8 @@
  * Uso: node tests/inicio/primeira-pagina.mjs [--prova] [--json saída]   (OEDP_DIST aponta outra construção)
  */
 import fs from 'node:fs';
+import { conferirListagens, plantasDasListagens } from './listagens.mjs';
+import { routePath } from '../../src/lib/routes.mjs';
 import { conferirSerieDoBloco, plantasDaSerieDoBloco } from './serie-do-bloco.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -51,6 +53,8 @@ for (const p of paginas) {
   erros.push(...r.erros);
   if (p.primeira) {
     const html = fs.readFileSync(f, 'utf8');
+    erros.push(...conferirListagens(parse(html),p.lang));
+    if(process.argv.includes('--prova'))for(const planta of plantasDasListagens(html,p.lang,fs.readFileSync(path.join(DIST,routePath('dossies',p.lang),'index.html'),'utf8'))){relatorio.plantas.push(planta);if(!planta.mordeu)erros.push(`DO2 NÃO MORDEU ${planta.nome}: ${planta.queixa}`);}
     erros.push(...conferirSerieDoBloco(parse(html), p.lang));
     if (process.argv.includes('--prova')) for (const x of plantasDaSerieDoBloco(html, p.lang)) {
       relatorio.plantas.push(x);

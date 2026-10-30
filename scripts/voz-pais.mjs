@@ -4,6 +4,7 @@ import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 import fs from 'node:fs';
 import { conferirNovidades } from '../tests/inicio/novidades.mjs';
 import { FP1 } from '../src/data/rotulos-fp1.mjs';
+import { conferirListagens } from '../tests/inicio/listagens.mjs';
 import { conferirInicio, conferirIntegracao } from '../tests/discussao/itens.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -110,6 +111,7 @@ export function verificaVozPais(raiz, documentos = new Map()) {
         else for (const el of portas) dispensados.add(el);
       }
       if (primeira) {
+        erros.push(...conferirListagens(main.parentNode,lang));
         const novas = conferirNovidades(main.parentNode, lang, path.join(raiz,'dist'));
         erros.push(...novas);
         if (!novas.length) for (const no of main.querySelectorAll('[data-novidades] h2, [data-novidades] time, [data-novidades] .pp-novidade-tipo, [data-novidades] [data-novidade-porta], [data-atualizacao]')) dispensados.add(no);

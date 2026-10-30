@@ -243,6 +243,7 @@ const ESTADOS_DO_INVENTARIO = new Set(['viva', 'retirada']);
 // FP1-e e DO2: rótulos dependentes da atualização ou de itens fora de dossiês;
 // conferirNovidades verifica a condição, a origem e o texto em cada primeira página.
 export function estadoDoInventario(cru,bloco,texto) {
+  if (cru==='condicional-do2') return bloco==='v2b' && ['O que se discute →','Under discussion →'].includes(texto) ? cru : null;
   if (cru==='condicional-fp1') return bloco==='fp1' && ['atualização','update','o que se discute','under discussion'].includes(texto) ? cru : null;
   return ESTADOS_DO_INVENTARIO.has(cru) ? cru : null;
 }

@@ -6,9 +6,9 @@ import { t } from '../../i18n/strings.mjs';
 import Frase from '../Frase.astro';
 import { prova, CHAVE_DAS_PECAS_DO_DOSSIE } from '../../lib/prova.mjs';
 import '../../styles/dossies.css';
-const { lang = 'pt', porta, nivel = 3 } = Astro.props;
+const { lang = 'pt', porta, nivel = 3, entradas } = Astro.props;
 const Heading = nivel === 2 ? 'h2' : 'h3';
-const dossies = dossiesDaLista(lang, porta);
+const dossies = entradas ?? dossiesDaLista(lang, porta);
 const provas = prova(lang), s = t(lang).dossies;
 ---
 <ul class="dossies-lista">

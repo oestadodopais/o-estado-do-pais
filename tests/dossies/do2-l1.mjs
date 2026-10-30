@@ -1,4 +1,4 @@
-/** DO2: a L1 só perde um destino repetido em cada primeira página. */
+/** DO2: só as duas primeiras páginas perdem destinos repetidos, pela redução medida. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const [antes,depois,saida]=process.argv.slice(2);
@@ -8,8 +8,9 @@ function ler(f){
  const paginas=Object.fromEntries([...s.matchAll(/^      · (\/\S*) · (\d+) destinos repetidos \(ex\.: (\S+) ×(\d+)\)/gm)].map(m=>[m[1],{destinos:+m[2],exemplo:m[3],vezes:+m[4]}]));
  assert.equal(Object.keys(paginas).length,total);return {total,paginas};
 }
-const a=ler(antes),b=ler(depois),esperada=structuredClone(a);
-for(const rota of ['/','/en'])esperada.paginas[rota].destinos--;
+const a=ler(antes),b=ler(depois),esperada=structuredClone(a),reducao=Number(process.argv[5]??1);
+assert(Number.isInteger(reducao)&&reducao>0,'A redução medida tem de ser um inteiro positivo');
+for(const rota of ['/','/en'])esperada.paginas[rota].destinos-=reducao;
 const conferir=m=>assert.deepEqual(m,esperada,'DO2: mudança da L1 fora das duas primeiras páginas');
 conferir(b);
 let plantas=0;

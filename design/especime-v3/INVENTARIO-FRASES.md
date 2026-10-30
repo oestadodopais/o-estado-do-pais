@@ -4555,8 +4555,8 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | conteudo | 3 234 afirmações · 368 de 3 234 calculadas · 2 767 de 3 234 linhas de concelhos | ex3 | retirada | Contagem medida pela função da prova na terceira correção EX3; conferida contra o HTML pelos portões. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 | conteudo | 3 234 claims · 368 of 3 234 calculated · 2 767 of 3 234 municipality rows | ex3 | retirada | Contagem medida pela função da prova na terceira correção EX3; conferida contra o HTML pelos portões. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 
-| navegacao | O que se discute → | v2b | viva | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. |
-| navegacao | Under discussion → | v2b | viva | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. |
+| navegacao | O que se discute → | v2b | condicional-do2 | DO2-C: o título só se rende quando a seleção deixa entradas na discussão; conferirInicio confere a presença, o destino e as peças. |
+| navegacao | Under discussion → | v2b | condicional-do2 | DO2-C: o título só se rende quando a seleção deixa entradas na discussão; conferirInicio confere a presença, o destino e as peças. |
 | navegacao | A Saúde no Orçamento: que despesa se está a comparar? | v2b | retirada | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 | conteudo | A apresentação pública devia dar o mesmo destaque à despesa total consolidada e à despesa efetiva consolidada, com e sem o PRR. Dizer só a conta que sobe, ou só a que desce, é escolher o que o leitor fica a pensar. | v2b | retirada | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. Substituída no V2-d pela análise ou pela contagem atual do livro. |
 | conteudo | A comparação | v2b | viva | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. |
@@ -5311,7 +5311,7 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | navegacao | peças na página deste dossiê | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
 | conteudo | pieces | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
 | navegacao | pieces on this dossier’s page | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| navegacao | textos em discussão na página deste dossiê | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| conteudo | textos em discussão → | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| navegacao | texts under discussion on this dossier’s page | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| conteudo | texts under discussion → | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| navegacao | textos em discussão na página deste dossiê | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+| conteudo | textos em discussão → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+| navegacao | texts under discussion on this dossier’s page | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |
+| conteudo | texts under discussion → | do2 | retirada | DO2-C: o dossiê aparece uma vez na primeira página; fora das novidades usa a forma da lista, com a contagem de peças. |

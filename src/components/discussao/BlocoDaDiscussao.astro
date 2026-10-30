@@ -1,31 +1,20 @@
 ---
-import { dossieDaPeca } from '../../lib/dossies.mjs';
-import { partesDoDossie } from '../../lib/dossies-conteudo.mjs';
-import { prova, CHAVE_DOS_ITENS_DO_DOSSIE } from '../../lib/prova.mjs';
-import { t } from '../../i18n/strings.mjs';
-import Frase from '../Frase.astro';
+import ListaDeDossies from '../dossies/ListaDeDossies.astro';
+import { listagensDoInicio } from '../../lib/listagens-do-inicio.mjs';
 import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
 import { DISCUSSAO } from '../../data/discussao.mjs';
 import { itensResolvidos, portaDoItem } from '../../lib/discussao.mjs';
 import { primeirasFrases } from '../../lib/estudos-b1.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import { routePath } from '../../lib/routes.mjs';
-interface Props { lang?: 'pt' | 'en'; itens?: ReturnType<typeof itensResolvidos>; dossie?: boolean; }
-const { lang = 'pt', itens = itensResolvidos(lang), dossie = false } = Astro.props;
-const vistos = new Set();
-const entradas = itens.flatMap(e => {
-  const d = !dossie && dossieDaPeca('discussao',e.slug);
-  if (!d) return [{item:e, grupo:null}];
-  if (vistos.has(d.slug)) return [];
-  vistos.add(d.slug);
-  return [{item:null, grupo:d}];
-});
-const provas = prova(lang), s = t(lang).dossies;
+interface Props { lang?: 'pt' | 'en'; itens?: ReturnType<typeof itensResolvidos>; dossie?: boolean; entradasDoInicio?: any[]; }
+const { lang = 'pt', itens = itensResolvidos(lang), dossie = false, entradasDoInicio = listagensDoInicio(lang).discussao } = Astro.props;
+const entradas = dossie ? itens.map(item=>({item,grupo:null})) : entradasDoInicio.map(e=>({item:e.tipo==='dossie'?null:e.peca,grupo:e.tipo==='dossie'?e.dossie:null}));
 ---
-<section class="pp-discussao" data-discussao-inicio={dossie ? undefined : true} data-dossie-discussao={dossie || undefined} aria-labelledby="discussao-inicio">
+{entradas.length > 0 && <section class="pp-discussao" data-discussao-inicio={dossie ? undefined : true} data-dossie-discussao={dossie || undefined} aria-labelledby="discussao-inicio">
   <h2 class="pp-sec-k" id="discussao-inicio">{dossie ? DISCUSSAO.titulo[lang] : <a href={routePath('discussao', lang)} data-voz>{DISCUSSAO.titulo[lang]} →</a>}</h2>
   <ul class="discussao-sumario">{entradas.map(({item:e, grupo:d}) => {
-    if (d) return <li data-discussao-dossie={d.slug}>{s.ligacao}<a href={routePath('dossie',lang,{slug:d.slug})}><span data-dossie-campo={`${d.slug}:titulo`}><Frase partes={partesDoDossie(d.titulo[lang])} lang={lang} /></span>{' · '}<span class="prova-valor" data-prova={CHAVE_DOS_ITENS_DO_DOSSIE(d.slug)} title={provas[CHAVE_DOS_ITENS_DO_DOSSIE(d.slug)].origem}>{provas[CHAVE_DOS_ITENS_DO_DOSSIE(d.slug)].valor}</span>{' '}<span data-voz>{provas[CHAVE_DOS_ITENS_DO_DOSSIE(d.slug)].valor === 1 ? s.textoEmDiscussao : s.textosEmDiscussao} →</span></a></li>;
+    if (d) return <li data-discussao-dossie={d.slug}><ListaDeDossies lang={lang} entradas={[d]} /></li>;
     if (!e) return null;
     const conclusao = e.abertura[0];
     if (!conclusao || !e.escrita) throw new Error(`FP2: abertura ou escrita ausente em ${e.slug}`);
@@ -34,4 +23,4 @@ const provas = prova(lang), s = t(lang).dossies;
       <p class={dossie ? "explicacao-p" : undefined} data-discussao-resumo><time datetime={e.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(e.escrita)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 1)} lang={lang} selos={dossie} /></span></p>
     </li>;
   })}</ul>
-</section>
+</section>}

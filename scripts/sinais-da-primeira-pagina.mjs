@@ -32,6 +32,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { listagensDoInicio } from '../src/lib/listagens-do-inicio.mjs';
 import { sinaisDaPrimeiraPagina } from '../src/lib/primeira-pagina.mjs';
 import { sinaisDasExplicacoes } from '../src/lib/explicacoes.mjs';
 
@@ -54,6 +55,7 @@ const registo = {
   minimo: MINIMO_DE_BLOCOS,
   saidas,
   blocos: sinais,
+  listagens: Object.fromEntries(['pt','en'].map(lang=>[lang,listagensDoInicio(lang).suprimidas])),
 };
 fs.mkdirSync(path.dirname(ALVO), { recursive: true });
 fs.writeFileSync(ALVO, JSON.stringify(registo, null, 2) + '\n');

@@ -1,5 +1,6 @@
 /** DO1-B: campos e datas de um assunto declarado, sem desligar a auditoria dos valores. */
 import assert from 'node:assert/strict';
+import { listagensDoInicio } from '../src/lib/listagens-do-inicio.mjs';
 import { parse } from 'node-html-parser';
 import { DOSSIES } from '../src/data/dossies.mjs';
 import { WORKS } from '../src/data/studies.mjs';
@@ -20,7 +21,9 @@ export function dataDoDossiePermitida(el,rota,lang='pt') {
  let data;
  if(lista) {
   const porta={entradaCasa:'habitacao',entradaEstado:'estado-e-economia'}[rota];
-  if(!(novidade&&rota==='home')&&!['dossies','temas'].includes(rota)&&!d.portas.includes(porta))return false;
+  const seccao=lista.closest('[data-discussao-inicio]')?'discussao':lista.closest('[data-para-perceber]')?'perceber':lista.closest('#trabalhos')?'estudos':lista.closest('[data-integracao-do-inicio]')?'integracao':null;
+  const inicio=rota==='home'&&(novidade||seccao&&listagensDoInicio(lang)[seccao].some(e=>e.tipo==='dossie'&&e.dossie.slug===d.slug));
+  if(!inicio&&!['dossies','temas'].includes(rota)&&!d.portas.includes(porta))return false;
   const ultima=recente(d,lang);
   if(origem!==ultima.origem)return false;
   data=ultima.data;
