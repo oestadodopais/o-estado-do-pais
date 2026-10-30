@@ -305,8 +305,20 @@ conferencias++;
    §1.145). A prova foi relida sobre as sete edições novas: 1 141 blocos lidos
    contra 1 141 no registo, 5 980 unidades iguais carácter a carácter, 0 isentas e
    0 apagadas (o registo da corrida está em
-   design/especime-v3/medicoes/e1-2026-09-30/). */
-const EDICOES_DA_PROVA = 14;
+   design/especime-v3/medicoes/e1-2026-09-30/).
+   O ÂMBITO SOBE DE 14 PARA 18 a 30.10.2026, com o leitor de YAML (EV2-E).
+   Entram as quatro edições da habitação e do Orçamento que o leitor antigo
+   excluía por as entradas estarem entre aspas; voltam as duas edições das
+   contas de Évora. A prova foi relida sobre as seis, com estas medidas da saída:
+   habitação pt: 52 blocos lidos contra 52 no registo, 52 unidades iguais;
+   habitação en: 52 blocos lidos contra 52 no registo, 52 unidades iguais;
+   Orçamento pt: 57 blocos lidos contra 57 no registo, 57 unidades iguais;
+   Orçamento en: 57 blocos lidos contra 57 no registo, 57 unidades iguais;
+   contas de Évora pt: 172 blocos lidos contra 172 no registo, 703 unidades iguais;
+   contas de Évora en: 171 blocos lidos contra 171 no registo, 702 unidades iguais.
+   As unidades são iguais carácter a carácter; nas seis edições há 0 isentas,
+   0 blocos editados e 0 apagados. */
+const EDICOES_DA_PROVA = 18;
 function falhaDaContagem(quantidade) {
   if (quantidade === EDICOES_DA_PROVA) return null;
   return `esta prova corre sobre ${EDICOES_DA_PROVA} edições (as que têm prova "edicao-html" e bytes ` +
