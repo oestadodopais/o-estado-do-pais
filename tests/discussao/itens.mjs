@@ -243,6 +243,38 @@ export function plantasDoInicio(home,lang,dist) {
  return provas;
 }
 
+export function plantasDasConclusoes(home,lang,dist,itens,pagina) {
+ const conferir=root=>itens.flatMap(e=>conferirConclusaoDoInicio(root.querySelector(`[data-discussao-porta="${e.slug}"]`),e,lang,{dist}));
+ const provas=[],limpo=conferir(home).length===0;
+ if(!limpo)throw new Error(`DO2 conclusões: superfície ausente ou inválida em ${pagina}: ${conferir(home).join('; ')}`);
+ const e=ITENS.find(e=>e.slug===home.querySelector('[data-discussao-porta]')?.getAttribute('data-discussao-porta'));
+ const seletor=`li:has([data-discussao-porta="${e.slug}"])`;
+ const outro=ITENS.find(x=>x.slug!==e.slug);
+ const outra={innerHTML:textoDosPedacosDaExplicacao(primeirasFrases(conclusaoResolvida(outro,lang),1),lang)};
+ for(const [nome,mudar,padrao] of [
+  ['data diferente de escrita',p=>p.querySelector('time').setAttribute('datetime','9999-12-31'),/data diferente/],
+  ['publicação no lugar da escrita',p=>{const t=p.querySelector('time');t.setAttribute('datetime',e.publicado);t.set_content(dataDaCasa(e.publicado));},/data diferente/],
+  ['duas frases em vez de uma',p=>p.querySelector('[data-discussao-conclusao]').set_content(textoDosPedacosDaExplicacao(resolverExplicacao(e,lang).abertura.flatMap(p=>p.pedacos),lang)),/frase diferente/],
+  ['frase de outro item',p=>p.querySelector('[data-discussao-conclusao]').set_content(outra.innerHTML),/frase diferente/],
+  ['valor trocado na frase',p=>p.parentNode.querySelector('[data-discussao-conclusao] [data-claim]').set_content('999'),/valor ou linha/],
+  ['parágrafo em falta',p=>p.querySelector('p[data-discussao-resumo]').remove(),/parágrafo ausente/],
+ ]) {
+  const r=parse(home.toString());mudar(r.querySelector(seletor));
+  const erros=conferir(r);
+  provas.push({nome:'FP2: '+nome,lang,pagina,mordeu:limpo&&r.toString()!==home.toString()&&erros.some(x=>padrao.test(x)),queixa:erros.find(x=>padrao.test(x))??null});
+ }
+ // A dispensa do selo também tem de recusar uma linha trocada, mesmo com o texto intacto.
+ const r=parse(home.toString()),n=r.querySelector('[data-discussao-conclusao] [data-claim]'),id=n.getAttribute('data-claim');
+ const antes=seloDaConclusaoDoInicio(n,id,lang,{dist});n.setAttribute('data-claim','linha-inventada');
+ provas.push({nome:'FP2: selo recusa linha trocada',lang,pagina,mordeu:limpo&&antes&&!seloDaConclusaoDoInicio(n,'linha-inventada',lang,{dist})&&conferir(r).some(x=>/valor ou linha/.test(x)),queixa:conferir(r).find(x=>/valor ou linha/.test(x))});
+ // As aberturas atuais não têm fragmentos na primeira frase. Uma marca inventada não ganha dispensa.
+ const f=parse(home.toString()),frase=f.querySelector('[data-discussao-conclusao]');
+ frase.insertAdjacentHTML('beforeend','<span data-discussao-fragmento="excerpt"><span data-linha-claim="og1-utao-p42" data-linha-campo="excerpt" data-linha-trecho="trecho inventado">trecho inventado</span></span>');
+ const fragmento=frase.querySelector('[data-linha-trecho]');
+ provas.push({nome:'OG1-B: fragmento inventado na abertura recusado',lang,pagina,mordeu:limpo&&!fragmentoDaConclusaoDoInicio(fragmento,'og1-utao-p42','excerpt',lang,{dist})&&conferir(f).some(x=>/frase diferente/.test(x)),queixa:conferir(f).find(x=>/frase diferente/.test(x))});
+ return provas;
+}
+
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=process.env.OEDP_DIST??path.join(raiz,'dist'),recibos=new Map()}={}){
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
  const superficie=conferirSuperficieDossies(root,lang,pagina);erros.push(...superficie.erros);
@@ -366,6 +398,14 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang,loadClaims(),dist));provas.push(...plantas(html,lang));
   const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang,dist));
   provas.push(...plantasDoInicio(home,lang,dist));
+  const superficies=DOSSIES.filter(d=>d.pecas.itens.length).map(d=>({pagina:routePath('dossie',lang,{slug:d.slug}).replace(/^\//,'').replace(/\/$/,'')+'/index.html',itens:ITENS.filter(e=>d.pecas.itens.includes(e.slug))}));
+  const avulsos=ITENS.filter(e=>!DOSSIES.some(d=>d.pecas.itens.includes(e.slug)));
+  if(avulsos.length)superficies.push({pagina:lang==='pt'?'index.html':'en/index.html',itens:avulsos});
+  for(const {pagina,itens} of superficies){
+   const r=parse(fs.readFileSync(path.join(dist,pagina),'utf8'));
+   provas.push(...plantasDasConclusoes(r,lang,dist,itens,pagina));
+  }
+
   for(const [nome,mut] of [['título da porta alterado',p=>p.querySelector('a').set_content('Outro título')],['destino da porta alterado',p=>p.querySelector('a').setAttribute('href','#errado')]]){const r=parse(home.toString());mut(r.querySelector('[data-discussao-dossie]'));provas.push({nome:'DO2 primeira página: '+nome,lang,mordeu:conferirInicio(r,lang,dist).length>0});}
   for(const [nome,estraga] of [
    ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
