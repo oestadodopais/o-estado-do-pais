@@ -12,7 +12,7 @@
 
 export const STRINGS = {
   pt: {
-    dossies: {"singular": "Dossiê", "plural": "Dossiês", "ligacao": "Dossiê: ", "escrita": "Escrito a", "recente": "A peça mais recente é de", "estudo": "O estudo", "estudos": "Os estudos", "explicacao": "A explicação", "discussao": "O que se discute", "calendario": "O calendário", "titulo": "Os dossiês", "ambito": "Um lugar por assunto vivo, com tudo o que há sobre ele"},
+    dossies: {"peca": "peça", "pecas": "peças", "de": ", de ", "maisRecenteDe": ", a mais recente de ", "textoEmDiscussao": "texto em discussão", "textosEmDiscussao": "textos em discussão", "singular": "Dossiê", "plural": "Dossiês", "ligacao": "Dossiê: ", "escrita": "Escrito a", "recente": "A peça mais recente é de", "estudo": "O estudo", "estudos": "Os estudos", "explicacao": "A explicação", "discussao": "O que se discute", "calendario": "O calendário", "titulo": "Os dossiês", "ambito": "Um lugar por assunto vivo, com tudo o que há sobre ele"},
     lang: 'pt-PT',
     langNome: 'Português',
     incorporar: {
@@ -3203,7 +3203,7 @@ export const STRINGS = {
   },
 
   en: {
-    dossies: {"singular": "Dossier", "plural": "Dossiers", "ligacao": "Dossier: ", "escrita": "Written on", "recente": "The most recent piece is from", "estudo": "The study", "estudos": "The studies", "explicacao": "The explainer", "discussao": "Under discussion", "calendario": "The calendar", "titulo": "The dossiers", "ambito": "One place per living subject, with everything there is on it"},
+    dossies: {"peca": "piece", "pecas": "pieces", "de": ", from ", "maisRecenteDe": ", the most recent from ", "textoEmDiscussao": "text under discussion", "textosEmDiscussao": "texts under discussion", "singular": "Dossier", "plural": "Dossiers", "ligacao": "Dossier: ", "escrita": "Written on", "recente": "The most recent piece is from", "estudo": "The study", "estudos": "The studies", "explicacao": "The explainer", "discussao": "Under discussion", "calendario": "The calendar", "titulo": "The dossiers", "ambito": "One place per living subject, with everything there is on it"},
     lang: 'en',
     langNome: 'English',
     incorporar: {

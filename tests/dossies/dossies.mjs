@@ -48,17 +48,13 @@ function conferir(root,d,lang) {
   const caminho=tipo==='itens'?`${routePath('discussao',lang)}#${slug}`:routePath(tipo==='estudos'?'estudo':'explicacao',lang,{slug});
   assert(main.querySelectorAll('a').some(a=>a.getAttribute('href')===caminho));
 
-  if(tipo==='itens') {
-   const no=main.querySelector(`[data-discussao-porta="${slug}"]`).closest('li').querySelector('[data-discussao-resumo]');
-   const inicio=ler(routePath('home',lang)).querySelector(`[data-discussao-inicio] [data-discussao-porta="${slug}"]`).closest('li').querySelector('[data-discussao-resumo]');
-   assert.equal(semSelos(no),semSelos(inicio),'o texto e a data são os mesmos nas duas superfícies');
-   assert.equal(inicio.querySelector('.src-chip'),null,'a primeira página conserva a prova no item');
-  }
+
   const fonte=ler(caminho.split('#')[0]);
   const lugar=tipo==='itens'?fonte.querySelector(`[data-discussao="${slug}"]`):fonte.querySelector('main');
   const link=lugar.querySelector('[data-dossie-ligacao] a');
   assert.equal(link?.getAttribute('href'),rota);
  }
+ assert.deepEqual(main.querySelectorAll('[data-dossie-peca]').map(n=>n.getAttribute('data-dossie-peca')).sort(),Object.entries(d.pecas).flatMap(([tipo,slugs])=>slugs.map(slug=>`${{estudos:'estudo',explicacoes:'explicacao',itens:'discussao'}[tipo]}:${slug}`)).sort());
  assert.equal(main.querySelector('#dossie-correcoes'),null);
  for(const id of d.calendario) {
   const p=main.querySelector(`[data-dossie-calendario="${id}"]`);
@@ -82,8 +78,26 @@ const datasSinteticas={estudos:[{data:'2026-10-27'}],itens:[{escrita:'2026-10-26
 assert.equal(pecaMaisRecente(datasSinteticas).data,'2026-10-27');
 datasSinteticas.itens[0].escrita='2026-10-28';
 assert.deepEqual(pecaMaisRecente(datasSinteticas),{data:'2026-10-28',origem:'escrita.declarada'});plantas++;
+function conferirPorta(root,lang,porta) {
+ const dossies=DOSSIES.filter(d=>d.portas.includes(porta)), main=root.querySelector('main');
+ for(const d of dossies) {
+  assert.equal(main.querySelectorAll(`[data-dossie-lista="${d.slug}"]`).length,1);
+  for(const [tipo,slugs] of Object.entries(d.pecas)) for(const slug of slugs) {
+   const rota=tipo==='itens'?`${routePath('discussao',lang)}#${slug}`:routePath(tipo==='estudos'?'estudo':'explicacao',lang,{slug});
+   assert(!main.querySelectorAll('a').some(a=>a.getAttribute('href')===rota),'DO2: peça do dossiê repetida na porta');
+  }
+ }
+ if(porta==='habitacao')assert(main.querySelector('[data-estudo="a-casa-em-portugal-e-na-europa"]'),'DO2: peça fora de dossiê ausente');
+}
 for(const lang of ['pt','en']) {
  assert.equal(dossieDaPeca('estudo','a-casa-em-portugal-e-na-europa'),null);
+ for(const [chave,porta] of [['entradaEstado','estado-e-economia'],['entradaCasa','habitacao']]) {
+  const root=ler(routePath(chave,lang));conferirPorta(root,lang,porta);
+  const copia=parse(root.toString());
+  if(porta==='habitacao')copia.querySelector('[data-estudo="a-casa-em-portugal-e-na-europa"]').remove();
+  else copia.querySelector('main').insertAdjacentHTML('beforeend',`<a href="${routePath('estudo',lang,{slug:DOSSIES[0].pecas.estudos[0]})}">Repetição</a>`);
+  assert.throws(()=>conferirPorta(copia,lang,porta));plantas++;
+ }
  assert.equal(ler(routePath('entradaCasa',lang)).querySelector('#dossies-k'),null);
  assert(!fs.existsSync(`dist${routePath('dossie',lang,{slug:'a-casa-em-portugal'})}/index.html`));
  const lista=ler(routePath('dossies',lang));

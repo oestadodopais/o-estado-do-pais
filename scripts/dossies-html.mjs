@@ -13,13 +13,14 @@ function recente(d,lang) {
 export function dataDoDossiePermitida(el,rota,lang='pt') {
  const origem=el.getAttribute('data-data-origem');
  if(!['publicacao.declarada','escrita.declarada'].includes(origem))return false;
- const lista=el.closest('[data-dossie-lista]'), artigo=el.closest('[data-dossie]');
- const d=DOSSIES.find(d=>d.slug===(lista??artigo)?.getAttribute(lista?'data-dossie-lista':'data-dossie'));
+ const novidade=el.closest('[data-novidade^="dossie:"]');
+ const lista=el.closest('[data-dossie-lista]')??novidade, artigo=el.closest('[data-dossie]');
+ const d=DOSSIES.find(d=>d.slug===(novidade?novidade.getAttribute('data-novidade').slice(7):(lista??artigo)?.getAttribute(lista?'data-dossie-lista':'data-dossie')));
  if(!d)return false;
  let data;
  if(lista) {
   const porta={entradaCasa:'habitacao',entradaEstado:'estado-e-economia'}[rota];
-  if(!['dossies','temas'].includes(rota)&&!d.portas.includes(porta))return false;
+  if(!(novidade&&rota==='home')&&!['dossies','temas'].includes(rota)&&!d.portas.includes(porta))return false;
   const ultima=recente(d,lang);
   if(origem!==ultima.origem)return false;
   data=ultima.data;

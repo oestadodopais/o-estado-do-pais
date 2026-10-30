@@ -4,15 +4,16 @@ import { routePath } from '../../lib/routes.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import { t } from '../../i18n/strings.mjs';
 import Frase from '../Frase.astro';
+import { prova, CHAVE_DAS_PECAS_DO_DOSSIE } from '../../lib/prova.mjs';
 import '../../styles/dossies.css';
 const { lang = 'pt', porta, nivel = 3 } = Astro.props;
 const Heading = nivel === 2 ? 'h2' : 'h3';
 const dossies = dossiesDaLista(lang, porta);
+const provas = prova(lang), s = t(lang).dossies;
 ---
 <ul class="dossies-lista">
   {dossies.map(d => <li data-dossie-lista={d.slug}>
-    <Heading><a href={routePath('dossie', lang, {slug: d.slug})}><span data-dossie-campo={`${d.slug}:titulo`}><Frase partes={partesDoDossie(d.titulo[lang])} lang={lang} /></span></a></Heading>
+    <Heading><a href={routePath('dossie', lang, {slug: d.slug})}><span data-dossie-campo={`${d.slug}:titulo`}><Frase partes={partesDoDossie(d.titulo[lang])} lang={lang} /></span>{' · '}<span class="prova-valor" data-prova={CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)} title={provas[CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)].origem}>{provas[CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)].valor}</span>{' '}<span data-voz>{provas[CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)].valor === 1 ? s.peca : s.pecas}</span></a><span data-voz>{provas[CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)].valor === 1 ? s.de : s.maisRecenteDe}</span><time datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></Heading>
     <p class="explicacao-p" data-dossie-campo={`${d.slug}:ambito`}><Frase partes={partesDoDossie(d.ambito[lang])} lang={lang} /></p>
-    <p class="estudo-meta"><span data-voz>{t(lang).dossies.recente}</span>{' '}<time datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></p>
   </li>)}
 </ul>

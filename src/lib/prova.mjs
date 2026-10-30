@@ -38,6 +38,7 @@
  *          desenho, na legenda de portas do instrumento).
  */
 
+import { DOSSIES } from '../data/dossies.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -681,6 +682,15 @@ for (const u of unidadesDoMapa()) {
 /** @param {string} slug */
 export const CHAVE_DAS_PECAS = (slug) => `areas_pecas_${slug.replace(/-/g, '_')}`;
 
+/** DO2: a mesma identidade de uma chave em cada edição. @param {string} slug */
+export const CHAVE_DAS_PECAS_DO_DOSSIE = slug => `dossie_pecas_${slug.replace(/-/g, '_')}`;
+/** @param {string} slug */
+export const CHAVE_DOS_ITENS_DO_DOSSIE = slug => `dossie_itens_${slug.replace(/-/g, '_')}`;
+for (const d of DOSSIES) {
+  FRASES[CHAVE_DAS_PECAS_DO_DOSSIE(d.slug)] = { pt: 'peças na página deste dossiê', en: 'pieces on this dossier’s page' };
+  FRASES[CHAVE_DOS_ITENS_DO_DOSSIE(d.slug)] = { pt: 'textos em discussão na página deste dossiê', en: 'texts under discussion on this dossier’s page' };
+}
+
 /* A FRASE É A MESMA PARA TODAS AS ÁREAS, e é uma escolha e não uma preguiça. A
    dica de uma chave da prova é prosa da casa e entra no inventário; uma frase
    composta com o nome de cada área punha lá dezasseis linhas que são a lista dos
@@ -832,6 +842,11 @@ export function prova(lang = 'pt') {
       livro,
     ),
 
+    // DO2: os dados contam as peças; o portão reconta as marcas nas duas páginas.
+    ...Object.fromEntries(DOSSIES.flatMap(d => [
+      [CHAVE_DAS_PECAS_DO_DOSSIE(d.slug), k(CHAVE_DAS_PECAS_DO_DOSSIE(d.slug), Object.values(d.pecas).reduce((n, pecas) => n + pecas.length, 0), routePath('dossie', lang, {slug:d.slug}))],
+      [CHAVE_DOS_ITENS_DO_DOSSIE(d.slug), k(CHAVE_DOS_ITENS_DO_DOSSIE(d.slug), d.pecas.itens.length, routePath('dossie', lang, {slug:d.slug}))],
+    ])),
     /* ---- o arquivo ---- */
     // B1: cada contagem abre a secção que contém os estudos desse lugar.
     ...Object.fromEntries(Object.keys(SUBJECTS).map(lugar => [`estudos_lugar_${lugar}`, {
