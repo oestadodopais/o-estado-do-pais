@@ -26,6 +26,7 @@ import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 import sharp from 'sharp';
+import { conferirDisposicaoNovidades } from '../../tests/inicio/novidades-disposicao.mjs';
 import { conferirDisposicaoDossies } from '../../tests/dossies/disposicao.mjs';
 import { medirMenu } from '../../design/especime-v3/medicoes/v2c-2026-10-19/medir-menu.mjs';
 
@@ -92,6 +93,7 @@ try {
       if (resposta?.status() !== 200) throw new Error(`${prefixo}: a página não respondeu a 200`);
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
+      if (p.conferirNovidades) medidas.novidades = await conferirDisposicaoNovidades(pagina);
       if (p.conferirDossies) medidas.dossies = await conferirDisposicaoDossies(pagina);
       if (p.toque && p.desempate) {
         medidas.desempate = await pagina.evaluate((sel) => {

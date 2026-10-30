@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { conferirPortasDasNovidades } from '../tests/inicio/novidades.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 import { portasObrigatoriasEo1 } from './portas-eo1-do-portao.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
@@ -1144,6 +1145,7 @@ for (const ficheiro of paginas) {
   }
 
   /* -------------------------------------------------------------------- L1 */
+  if(chaveDaRota==='home')falhas.push(...conferirPortasDasNovidades(raiz));
   /* B2: as contagens provadas têm portas obrigatórias e cada nome do
      veredicto abre a medida que nomeia. V1 e V2 conferem primeiro os blocos
      inteiros, incluindo cada porta e a sua multiplicidade. Só os nós exatos

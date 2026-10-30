@@ -18,6 +18,8 @@ export function dataDoDossiePermitida(el,rota,lang='pt') {
  const lista=el.closest('[data-dossie-lista]')??novidade, artigo=el.closest('[data-dossie]');
  const d=DOSSIES.find(d=>d.slug===(novidade?novidade.getAttribute('data-novidade').slice(7):(lista??artigo)?.getAttribute(lista?'data-dossie-lista':'data-dossie')));
  if(!d)return false;
+ // DO4: na caixa, a data é o primeiro filho direto, com a marca editorial.
+ if(novidade&&(el.parentNode!==novidade||novidade.children[0]!==el||el.getAttribute('data-nonledger')!=='data-editorial'))return false;
  let data;
  if(lista) {
   const porta={entradaCasa:'habitacao',entradaEstado:'estado-e-economia'}[rota];
@@ -45,5 +47,13 @@ export function plantasDossiesHtml() {
  data.setAttribute('data-data-origem','origem-inventada');assert(!dataDoDossiePermitida(data,'dossie'));
  data.setAttribute('data-data-origem','escrita.declarada');assert(!dataDoDossiePermitida(data,'home'));
  data.setAttribute('datetime','1900-01-01');assert(!dataDoDossiePermitida(data,'dossie'));
+ for(const lang of ['pt','en']) {
+  const ultima=recente(d,lang);
+  const li=parse(`<li data-novidade="dossie:${d.slug}"><time data-nonledger="data-editorial" data-data-origem="${ultima.origem}" datetime="${ultima.data}">${dataDaCasa(ultima.data)}</time><span>dossiê</span><a>Título</a></li>`).querySelector('li');
+  const t=li.querySelector('time');assert(dataDoDossiePermitida(t,'home',lang));
+  t.setAttribute('data-data-origem','origem-inventada');assert(!dataDoDossiePermitida(t,'home',lang));
+  t.setAttribute('data-data-origem',ultima.origem);t.removeAttribute('data-nonledger');assert(!dataDoDossiePermitida(t,'home',lang));
+  t.setAttribute('data-nonledger','data-editorial');const html=t.outerHTML;t.remove();li.insertAdjacentHTML('beforeend',html);assert(!dataDoDossiePermitida(li.querySelector('time'),'home',lang));
+ }
  console.log('DO1-B: datas conferidas; origem, data e rota indevidas recusadas.');
 }

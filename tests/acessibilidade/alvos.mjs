@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { conferirDisposicaoNovidades } from '../inicio/novidades-disposicao.mjs';
 /**
  * =============================================================================
  * A RÉGUA DOS ALVOS E DA ACESSIBILIDADE · bloco F1.7, 04.09.2026
@@ -1697,6 +1698,7 @@ async function passagem() {
       const ctx = await nav.newContext({ viewport: { width: largura, height: 900 } });
       const pagina = await ctx.newPage();
       await abrirPaginaPronta(pagina, r.rota);
+      if(r.familia==='home')await conferirDisposicaoNovidades(pagina);
       /* O AXE NAS DUAS LARGURAS DA CASA, e não nas cinco: as três do meio
          existem para o buraco dos alvos (I104), e o axe não muda com elas
          (medido). Correr o axe cinco vezes por rota triplicava o custo do

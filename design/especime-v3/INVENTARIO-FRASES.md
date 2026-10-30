@@ -5297,10 +5297,10 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 |---|---|---|---|---|
 | conteudo | , a mais recente de | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
 | conteudo | , the most recent from | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| conteudo | Dossier | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| conteudo | Dossier · , the most recent from | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| conteudo | Dossiê | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
-| conteudo | Dossiê · , a mais recente de | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
+| conteudo | Dossier | do2 | retirada | DO4: a caixa passa a data, tipo em minúsculas e título com contagem; as listas conservam a sua forma. |
+| conteudo | Dossier · , the most recent from | do2 | retirada | DO4: a caixa passa a data, tipo em minúsculas e título com contagem; as listas conservam a sua forma. |
+| conteudo | Dossiê | do2 | retirada | DO4: a caixa passa a data, tipo em minúsculas e título com contagem; as listas conservam a sua forma. |
+| conteudo | Dossiê · , a mais recente de | do2 | retirada | DO4: a caixa passa a data, tipo em minúsculas e título com contagem; as listas conservam a sua forma. |
 | conteudo | peças | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
 | navegacao | peças na página deste dossiê | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
 | conteudo | pieces | do2 | viva | Mandato DO2 e adendas A e B; forma rendida e conferida, leitura cruzada pendente. |
@@ -5321,3 +5321,12 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 
 | navegacao | Do estudo: | do3 | viva | Adenda B, título lido dos dados do estudo. |
 | navegacao | From the study: | do3 | viva | Adenda B, título lido dos dados do estudo. |
+
+## DO4: as três colunas das novidades
+
+| Classe | Frase | Bloco | Estado | Razão |
+|---|---|---|---|---|
+| conteudo | dossiê | do4 | viva | Rótulo do tipo no mandato DO4; título e contagem conferidos por conferirNovidades. |
+| conteudo | dossier | do4 | viva | Rótulo do tipo no mandato DO4; título e contagem conferidos por conferirNovidades. |
+
+A ligação tem a forma «⟦título do dossiê⟧ · ⟦n⟧ peças» ou «⟦title⟧ · ⟦n⟧ pieces», com «1 peça» ou «1 piece». Os títulos vêm das declarações e a contagem da prova; não são números fixos do inventário. «peças» e «pieces» conservam as entradas do bloco do2, pois também se rendem nas listas.
