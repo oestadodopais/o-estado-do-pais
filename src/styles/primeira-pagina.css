@@ -423,6 +423,8 @@
 .pp-novidades-lista li { display: grid; grid-template-columns: 7.5em 8.5em minmax(0, 1fr); gap: 4px 12px; padding: 8px 0; border-top: 1px solid var(--rule); align-items: baseline; }
 .pp-novidades-lista time, .pp-novidade-tipo { font-family: var(--f-instr); font-size: 12px; color: var(--muted); }
 .pp-novidades-lista a { font-family: var(--f-prosa); font-size: 16px; line-height: 1.4; }
+/* DO4: a contagem partilha a letra e o sublinhado da ligação do título. */
+.pp-novidades-lista [data-novidade-dossie] .prova-valor { font: inherit; font-variant-numeric: inherit; color: inherit; border-bottom: 0; }
 @media (max-width: 600px) { .pp-novidades-lista li { grid-template-columns: auto 1fr; } .pp-novidades-lista a { grid-column: 1 / -1; } }
 
 .pp-barra-periodo { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
