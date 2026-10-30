@@ -4,7 +4,7 @@ import PortasDaDiscussao from '../discussao/PortasDaDiscussao.astro';
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
 import BarrasDoLivro from '../formas/BarrasDoLivro.astro';
 import { t } from '../../i18n/strings.mjs';
-const { e, lang = 'pt', nivel = 2 } = Astro.props;
+const { e, lang = 'pt', nivel = 2, portas = true } = Astro.props;
 const slug = e.slug, s = t(lang), Titulo = nivel === 3 ? 'h3' : 'h2';
 ---
     {e.abertura.map((p) => (
@@ -16,7 +16,7 @@ const slug = e.slug, s = t(lang), Titulo = nivel === 3 ? 'h3' : 'h2';
         {sec.blocos.map((b) => b.tipo === 'figura'
           ? <BarrasDoLivro modelo={b.modelo} lang={lang} explicacao={slug} />
           : <p class="explicacao-p" data-explicacao-paragrafo={b.caminho} data-explicacao-declarado><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
-        <PortasDaDiscussao lang={lang} linhas={sec.blocos.flatMap(b => b.tipo === 'figura' ? [] : b.pedacos.flatMap(p => typeof p === 'string' ? [] : 'claim' in p ? [p.claim] : 'data' in p ? [p.data.id] : 'literal' in p ? [p.literal.id] : []))} tematica={slug === 'dinheiro-do-estado-2026' && sec.id === 'por-funcao'} />
+        {portas && <PortasDaDiscussao lang={lang} linhas={sec.blocos.flatMap(b => b.tipo === 'figura' ? [] : b.pedacos.flatMap(p => typeof p === 'string' ? [] : 'claim' in p ? [p.claim] : 'data' in p ? [p.data.id] : 'literal' in p ? [p.literal.id] : []))} tematica={slug === 'dinheiro-do-estado-2026' && sec.id === 'por-funcao'} />}
       </section>
     ))}
     {e.naoDiz.length > 0 && (
@@ -27,8 +27,8 @@ const slug = e.slug, s = t(lang), Titulo = nivel === 3 ? 'h3' : 'h2';
         ))}
       </section>
     )}
-    {/* AS PORTAS DO FIM (EX1-b, 06.10.2026): as que a explicação declara, pela ordem dela; os números e as fontes sempre, e,
+    {/* AS PORTAS DO FIM (EX1-b, 06.10.2026): as que a explicação declara, pela ordem dela, na sua página própria; os números e as fontes, e,
         nesta, a página do tema «Estado e economia» (a decisão do lugar de direção sobre a I212). */}
-    <p class="regra-portas explicacao-portas" data-explicacao-portas>
+    {portas && <p class="regra-portas explicacao-portas" data-explicacao-portas>
       {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.partes ? <FraseDaExplicacao partes={p.partes} lang={lang} selos={false} /> : p.rota === 'estudo' ? <TituloDeTrabalho titulo={p.texto} lang={lang} /> : p.texto} →</a></>)}
-    </p>
+    </p>}

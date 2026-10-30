@@ -876,14 +876,15 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
   const deveTitulos = [...e.seccoes.map((/** @type {any} */ x) => (typeof x.titulo[lang] === 'string' ? x.titulo[lang] : textoAqui(x.titulo[lang], lang, linhas))), ...(esperado.paragrafos.some((p) => p.caminho.startsWith('naoDiz')) ? [s.explicacoes.oQueIstoNaoDiz] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`X7 · os títulos das secções (${titulos.join(' | ')}) não são os declarados (${deveTitulos.join(' | ')})`);
   /* As portas do fim (EX1-b): as declaradas, pela ordem, com o destino e o nome de cada uma; a dos números sempre. */
-  const declaradas = Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
+  const declaradas = incorporada ? [] : Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
+  if(incorporada && main.querySelector('[data-explicacao-portas], [data-discussao-integracao]'))erros.push('X8 · a explicação no dossiê não deve trazer portas do fim');
   const esperadas = declaradas.map((/** @type {any} */ d) => {
     if ((d.rota === 'estudo' || d.rota === 'explicacao') && !d.entrada) return portaAqui(d, lang, linhas);
     const entrada = d.entrada ? /** @type {any[]} */ (ENTRADAS).find((x) => x.id === d.entrada) : null;
     return [routePath(d.rota, lang), `${d.entrada ? entrada?.nome?.[lang] : s.nav.livro} →`];
   });
   const lidas = main.querySelectorAll('[data-explicacao-portas] a[href]').map((/** @type {any} */ a) => [a.getAttribute('href'), normal(a.textContent)]);
-  if (!declaradas.some((/** @type {any} */ d) => d.rota === 'livro' && !d.entrada) || !lidas.some((/** @type {any} */ x) => x[0] === routePath('livro', lang))) erros.push('X8 · falta a porta para os números e as fontes no fim');
+  if (!incorporada && (!declaradas.some((/** @type {any} */ d) => d.rota === 'livro' && !d.entrada) || !lidas.some((/** @type {any} */ x) => x[0] === routePath('livro', lang)))) erros.push('X8 · falta a porta para os números e as fontes no fim');
   if (JSON.stringify(lidas) !== JSON.stringify(esperadas)) erros.push(`X8 · as portas do fim (${lidas.map((/** @type {any} */ x) => x.join(' ')).join(' · ') || 'nenhuma'}) não são as declaradas (${esperadas.map((/** @type {any} */ x) => x.join(' ')).join(' · ')})`);
   /* EX4-c (21.10.2026): a porta do fim para um estudo leva o título dentro da marca que a casa dá a um título de estudo
      (`data-nonledger="titulo-de-estudo"`, como `TituloDeTrabalho.astro`), com o título declarado da edição. */

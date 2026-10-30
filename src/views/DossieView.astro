@@ -49,7 +49,7 @@ const indice = [{id:"dossie-estudo", titulo:`${mobilia.doEstudo} ${estudo.edicao
     </section>
     {d.explicacoes.map(e => <section class="explicacao-secao" data-dossie-explicacao={e.slug} data-dossie-peca={`explicacao:${e.slug}`} data-explicacao={e.slug} aria-labelledby={`dossie-${e.slug}`}>
       <h2 class="explicacao-secao-titulo" id={`dossie-${e.slug}`} data-explicacao-titulo={e.slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>
-      <CorpoDaExplicacao e={e} lang={lang} nivel={3} />
+      <CorpoDaExplicacao e={e} lang={lang} nivel={3} portas={false} />
     </section>)}
     {d.itens.length > 0 && <BlocoDaDiscussao lang={lang} itens={d.itens} dossie />}
     {d.calendario.length > 0 && <section class="explicacao-secao" aria-labelledby="dossie-calendario"><h2 class="explicacao-secao-titulo" id="dossie-calendario">{s.calendario}</h2>{d.calendario.map(l => <p class="explicacao-p" data-dossie-calendario={l.id}><NomeDaMedida linha={l} lang={lang} />{' · '}<DataDaLinha id={l.id} campo="reference_date" valor={l.reference_date} lang={lang} />{' '}<Provenance id={l.id} lang={lang} /></p>)}</section>}
