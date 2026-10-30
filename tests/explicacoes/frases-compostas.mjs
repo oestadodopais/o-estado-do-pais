@@ -140,7 +140,12 @@ try {
         if(!el) throw Error('a planta não encontrou uma frase com pedaços marcados');
         if(tipo==='flex') el.style.display='flex';
         else { el.style.display='block'; el.style.width='2000px'; }
-        if(tipo==='largura') el.style.maxWidth='none';
+        if(tipo==='largura') {
+          el.style.maxWidth='none';
+          // DO2: a cópia tem de extravasar de facto; o resumo real contém os selos com clip.
+          const resumo=el.closest('[data-dossie-discussao] [data-discussao-resumo]');
+          if(resumo)resumo.style.overflow='visible';
+        }
       }, {selector,tipo});
       await pagina.evaluate(doisFotogramas);
       const queixas=defeitos(await pagina.evaluate(medir),rota,largura);
