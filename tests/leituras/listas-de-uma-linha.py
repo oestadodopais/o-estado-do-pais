@@ -15,7 +15,7 @@ def correr(guiao):
     ambiente.update(LANG='en_GB.UTF-8', LC_ALL='')
     return subprocess.run(
         ['/bin/sh', str(guiao), str(RAIZ), 'invest-exec-pct'],
-        cwd=RAIZ, env=ambiente, capture_output=True, text=True,
+        cwd=RAIZ, env=ambiente, capture_output=True, text=True, errors='replace',
     )
 
 
