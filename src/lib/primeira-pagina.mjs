@@ -1,3 +1,5 @@
+import { DOSSIES } from '../data/dossies.mjs';
+import { dossieDaPeca } from './dossies.mjs';
 /**
  * ===========================================================================
  * A PRIMEIRA PÁGINA DE UM LEITOR COMUM · o resolvedor (bloco PP1, 28.09.2026)
@@ -704,3 +706,10 @@ export function estudosDaEntrada(entrada, lang) {
   return estudosRecentes(lang).filter((e) => doPais.has(e.work.slug));
 }
 
+
+/** DO2: os estudos de um dossiê desta porta aparecem na página do dossiê.
+ * @param {string} entrada @param {'pt'|'en'} lang */
+export function estudosAvulsosDaEntrada(entrada, lang) {
+  const dossies = new Set(DOSSIES.filter(d => d.portas.includes(entrada)).map(d => d.slug));
+  return estudosDaEntrada(entrada, lang).filter(e => !dossies.has(dossieDaPeca('estudo', e.work.slug)?.slug));
+}

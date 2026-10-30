@@ -47,6 +47,7 @@
  * Uso:  node scripts/check-datas.mjs
  */
 
+import { estudosAvulsosDaEntrada } from '../src/lib/primeira-pagina.mjs';
 import { conferirDataDeclarada } from './publicacao-declarada.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -444,26 +445,31 @@ function prendeSucessor(rota, doc, slugDaPagina, presasAqui) {
    a data de publicação de cada um. Quantas edições se esperam reconta-se aqui, dos dados e não da vista:
    cada tema pertence à entrada que tem mais cartões dele (num empate, a primeira declarada), e uma
    entrada leva os estudos do país (sem lugar declarado) desses temas. */
-const EDICOES_DAS_ENTRADAS = new Map();
-{
-  const donos = new Map();
-  for (const e of ENTRADAS) for (const id of e.seccoes.flatMap((x) => x.cartoes)) {
-    const tema = DOMINIO_DAS_MEDIDAS[id];
-    if (!tema) continue;
-    if (!donos.has(tema)) donos.set(tema, new Map());
-    donos.get(tema).set(e.id, (donos.get(tema).get(e.id) ?? 0) + 1);
-  }
-  for (const e of ENTRADAS) {
-    if ('existente' in e && e.existente) continue;
-    const temas = [...donos].filter(([, m]) => {
-      let dona = null, mais = -1;
-      for (const x of ENTRADAS) { const n = m.get(x.id) ?? 0; if (n > mais) { mais = n; dona = x.id; } }
-      return dona === e.id;
-    }).map(([t]) => t);
-    const n = WORKS.filter((w) => typeof w.subject !== 'string' && temas.includes(w.tema)).length;
-    for (const lang of ['pt', 'en']) EDICOES_DAS_ENTRADAS.set(e.rota[lang].replace(/\/$/, ''), n);
-  }
+const EDICOES_DAS_ENTRADAS = new Map(ENTRADAS.filter(e => !('existente' in e && e.existente)).flatMap(e =>
+  ['pt','en'].map(lang => [e.rota[lang].replace(/\/$/, ''), estudosAvulsosDaEntrada(e.id, lang).length])));
+
+// DO2: as duas adulterações percorrem a mesma conferência das páginas reais.
+let plantasPortasDo2 = 0;
+for (const lang of ['pt','en']) {
+  const rota = routePath('entradaEstado',lang).replace(/\/$/,'');
+  const original = paraPrender.find(p => p.rota === rota)?.doc;
+  assert(original, 'DO2: porta do Estado ausente');
+  const medir = doc => {
+    const inicio = falhas.length, antes = lacos, contagens = new Map(presas);
+    prendeEdicoesB1(rota, doc, null, EDICOES_DAS_ENTRADAS.get(rota));
+    const erros = falhas.splice(inicio);
+    lacos = antes; presas.clear(); for (const [k,v] of contagens) presas.set(k,v);
+    return erros;
+  };
+  assert.equal(medir(original).length,0);
+  const d = DOSSIES.find(d => d.portas.includes('estado-e-economia'));
+  const assunto = paraPrender.find(p => p.rota === routePath('dossie',lang,{slug:d.slug}).replace(/\/$/,''))?.doc;
+  for (const mudar of [
+    doc => doc.querySelector('#estudos-da-entrada').insertAdjacentHTML('beforeend', assunto.querySelector('[data-estudo-edicao]').outerHTML),
+    doc => doc.querySelector('#estudos-da-entrada [data-estudo-edicao]').remove(),
+  ]) { const copia = parse(original.toString()); mudar(copia); assert(medir(copia).some(e => e.includes('os dados dizem'))); plantasPortasDo2++; }
 }
+console.log(`DO2: estudos avulsos conferidos; ${plantasPortasDo2} plantas das portas recusadas.`);
 
 // As plantas exercem o mesmo caminho que prende as datas no portão.
 let plantasDossies = 0;

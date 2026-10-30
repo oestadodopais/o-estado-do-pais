@@ -1,5 +1,4 @@
 ---
-import { dossieDaPeca } from '../lib/dossies.mjs';
 import ListaDeDossies from '../components/dossies/ListaDeDossies.astro';
 import { dossiesDaLista } from '../lib/dossies-conteudo.mjs';
 /** N1: uma página por assunto, com os cartões e os estudos próprios. */
@@ -10,7 +9,7 @@ import CartaoDaMedida from '../components/CartaoDaMedida.astro';
 import ValorIrmao from '../components/ValorIrmao.astro';
 import { medidaPelaChave } from '../data/dominios.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
-import { estudosDaEntrada } from '../lib/primeira-pagina.mjs';
+import { estudosAvulsosDaEntrada } from '../lib/primeira-pagina.mjs';
 import { ENTRADA_DA_ROTA } from '../lib/caminho.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -31,7 +30,7 @@ if (entrada.rota[lang] !== path) {
 }
 const dossies = dossiesDaLista(lang, entrada.id);
 const slugsDossies = dossies.map(d => d.slug);
-const estudos = estudosDaEntrada(entrada.id, lang).filter(e => !slugsDossies.includes(dossieDaPeca('estudo',e.work.slug)?.slug));
+const estudos = estudosAvulsosDaEntrada(entrada.id, lang);
 const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
 ---
 <Base lang={lang} path={path} title={`${entrada.nome[lang]}${s.primeira.metaCauda}`} description={entrada.linha[lang]}>
