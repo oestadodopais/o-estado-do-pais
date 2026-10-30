@@ -60,7 +60,6 @@ import { DOSSIES } from '../src/data/dossies.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 import { WORKS } from '../src/data/studies.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
-import { DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -441,10 +440,9 @@ function prendeSucessor(rota, doc, slugDaPagina, presasAqui) {
   }
 }
 
-/* AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) têm os estudos do país sobre os seus temas, com
-   a data de publicação de cada um. Quantas edições se esperam reconta-se aqui, dos dados e não da vista:
-   cada tema pertence à entrada que tem mais cartões dele (num empate, a primeira declarada), e uma
-   entrada leva os estudos do país (sem lugar declarado) desses temas. */
+/* AS CINCO PÁGINAS DAS ENTRADAS usam o mesmo resolvedor da vista para contar as edições:
+   estudosAvulsosDaEntrada escolhe os estudos dos temas da porta e exclui os que já estão
+   representados por um dossiê dessa porta. A conferência compara essa conta com o HTML. */
 const EDICOES_DAS_ENTRADAS = new Map(ENTRADAS.filter(e => !('existente' in e && e.existente)).flatMap(e =>
   ['pt','en'].map(lang => [e.rota[lang].replace(/\/$/, ''), estudosAvulsosDaEntrada(e.id, lang).length])));
 
