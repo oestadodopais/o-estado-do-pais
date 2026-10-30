@@ -2,13 +2,16 @@
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
-import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
+import PecasDoEstudo from '../components/PecasDoEstudo.astro';
+import CorpoDaExplicacao from '../components/explicacoes/CorpoDaExplicacao.astro';
+import { leituraDoDossie, MOBILIA_DO_DOSSIE } from '../lib/dossie-leitura.mjs';
+import { DISCUSSAO } from '../data/discussao.mjs';
+import '../styles/texto.css';
 import BlocoDaDiscussao from '../components/discussao/BlocoDaDiscussao.astro';
 import Provenance from '../components/Provenance.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import { dossieResolvido, partesDoDossie } from '../lib/dossies-conteudo.mjs';
 import { routePath } from '../lib/routes.mjs';
-import { primeirasFrases } from '../lib/estudos-b1.mjs';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import { SITE_NAME } from '../../site.config.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -22,6 +25,8 @@ import '../styles/leitura.css';
 import '../styles/lugar.css';
 const { slug, lang = 'pt' } = Astro.props;
 const d = dossieResolvido(slug,lang), s = t(lang).dossies;
+const leitura = leituraDoDossie(d, lang), mobilia = MOBILIA_DO_DOSSIE[lang];
+const indice = [...leitura.map(sec => ({id:sec.id, titulo:sec.titulo})), ...d.explicacoes.map(e => ({id:`dossie-${e.slug}`, titulo:e.tituloTexto})), {id:'discussao-inicio', titulo:DISCUSSAO.titulo[lang]}, {id:'dossie-calendario', titulo:s.calendario}];
 ---
 <Base lang={lang} path={routePath('dossie',lang,{slug})} title={`${d.titulo[lang]} · ${SITE_NAME}`} description={d.ambito[lang]}>
   <article class="dossie" data-dossie={slug}>
@@ -29,9 +34,20 @@ const d = dossieResolvido(slug,lang), s = t(lang).dossies;
     <p class="explicacao-p dossie-ambito" data-dossie-campo={`${slug}:ambito`}><Frase partes={partesDoDossie(d.ambito[lang])} lang={lang} /></p>
     {d.abertura.map(p => <p class="explicacao-p" data-dossie-abertura={p.caminho}><Frase partes={p.pedacos} lang={lang} selos />{p.pedacos.filter(p => typeof p !== 'string' && p.data).map(p => <>{' '}<Provenance id={p.data.id} lang={lang} /></>)}</p>)}
     <p class="estudo-meta"><span data-voz>{s.escrita}</span>{' '}<time data-dossie-data="escrita" datetime={d.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(d.escrita)}</time>{' · '}<span data-voz>{s.recente}</span>{' '}<time data-dossie-data="recente" datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></p>
-    {d.estudos.length > 0 && <section class="explicacao-secao" aria-labelledby="dossie-estudos"><h2 class="explicacao-secao-titulo" id="dossie-estudos">{d.estudos.length > 1 ? s.estudos : s.estudo}</h2>{d.estudos.map(e => <div data-dossie-peca={`estudo:${e.work.slug}`}><EstudoDaLista e={e} lang={lang} /></div>)}</section>}
-    {d.explicacoes.length > 0 && <section class="explicacao-secao" aria-labelledby="dossie-explicacoes"><h2 class="explicacao-secao-titulo" id="dossie-explicacoes">{s.explicacao}</h2>{d.explicacoes.map(e => <div data-dossie-explicacao={e.slug} data-dossie-peca={`explicacao:${e.slug}`}><h3><a href={routePath('explicacao',lang,{slug:e.slug})}><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></a></h3><p class="estudo-meta"><time datetime={e.data} data-nonledger="data-editorial" data-data-origem="publicacao.declarada">{dataDaCasa(e.data)}</time></p><p class="explicacao-p"><FraseDaExplicacao partes={primeirasFrases(e.abertura[0].pedacos, 1)} lang={lang} /></p></div>)}</section>}
+    <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k" data-dossie-indice>
+      <details class="texto-indice-dobra"><summary class="texto-indice-porta"><h2 class="texto-indice-k" id="texto-indice-k">{mobilia.indice}</h2></summary>
+        <ul class="texto-indice-lista">{indice.map(sec => <li><a href={`#${sec.id}`}>{sec.titulo}</a></li>)}</ul>
+      </details>
+    </nav>
+    <div data-dossie-peca={`estudo:${d.pecas.estudos[0]}`} data-registo-edicao={leitura[0].chave}>
+      {leitura.map(sec => <section class="texto-artigo dossie-seccao" data-dossie-seccao={sec.id} aria-labelledby={sec.id}><PecasDoEstudo pecas={sec.pecas} lang={lang} /></section>)}
+    </div>
+    {d.explicacoes.map(e => <section class="explicacao-secao" data-dossie-explicacao={e.slug} data-dossie-peca={`explicacao:${e.slug}`} data-explicacao={e.slug} aria-labelledby={`dossie-${e.slug}`}>
+      <h2 class="explicacao-secao-titulo" id={`dossie-${e.slug}`} data-explicacao-titulo={e.slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>
+      <CorpoDaExplicacao e={e} lang={lang} nivel={3} />
+    </section>)}
     {d.itens.length > 0 && <BlocoDaDiscussao lang={lang} itens={d.itens} dossie />}
     {d.calendario.length > 0 && <section class="explicacao-secao" aria-labelledby="dossie-calendario"><h2 class="explicacao-secao-titulo" id="dossie-calendario">{s.calendario}</h2>{d.calendario.map(l => <p class="explicacao-p" data-dossie-calendario={l.id}><NomeDaMedida linha={l} lang={lang} />{' · '}<DataDaLinha id={l.id} campo="reference_date" valor={l.reference_date} lang={lang} />{' '}<Provenance id={l.id} lang={lang} /></p>)}</section>}
+    <p class="regra-portas" data-dossie-resto><a href={routePath('estudo',lang,{slug:d.pecas.estudos[0]})}>{mobilia.resto}</a></p>
   </article>
 </Base>
