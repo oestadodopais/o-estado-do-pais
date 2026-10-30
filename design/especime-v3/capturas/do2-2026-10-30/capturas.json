@@ -1,0 +1,432 @@
+{
+  "cabeca": "d57d58b20fa08f065b4bbcddbdbcd6b5ce1234fc",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "primeira-pagina-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9215,
+      "sha256": "efaf03c00a678c4cb3f9676a3c2af71a6e6c4cfd7e5f94bb0f3f1b9a5adf620f",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 511
+          },
+          "sha256": "cc07ad6ce1ae1dbb784785ccbe980787a49a1336fe3e46f8280a0a543c42b9dd"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-390-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 814,
+            "width": 354,
+            "height": 121
+          },
+          "sha256": "7e87d91fe76d56832d19d876e9ecb0c91bf96178d1989ec1a32580a3c24f28d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7293,
+      "sha256": "0f59abacca489815da54e2b8d1cb134e8bdb083ed313ccfea9e40ad2e248a131",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 488
+          },
+          "sha256": "dfe4951632c76f3bdac10c162f23c18afcd8907e8af3fefbcaef85f401b5d5d2"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-768-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 777,
+            "width": 708,
+            "height": 121
+          },
+          "sha256": "6b3ff16d28a8f1c1be8541fc27a9837b481fe178f667e934f63a8cfd33809a8c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6349,
+      "sha256": "750bf26b2e34790293da8f17e62988b4dceceb084adfd99fdeec71ae0398723a",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 332
+          },
+          "sha256": "50e38aa53ebe76bc14aaed9d21556e9fb95da8158f139ae07972fde0808a8284"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1024-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 602,
+            "width": 944,
+            "height": 121
+          },
+          "sha256": "766be29308095062e8646497ee9212961094d68ac3e46c300efa8c73bb226c9e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6260,
+      "sha256": "8ffce052598e839dd54fdbc37ccf85633227961fe1b6bf8226a652ab53cc97b7",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "d2f6b10885ffa4962a86699cb1b08994c2addca4b2972fc58a62c031de3ca423"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1280-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 615,
+            "width": 1092,
+            "height": 121
+          },
+          "sha256": "f7c73e556438b460b8d5b5805c632ce6f702e5f061156b074a338939febacf9a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6280,
+      "sha256": "5eeaa16efedb782be361db1d8fcad3bb03e8660a698e3094d63757a231a70298",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-pt-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 343
+          },
+          "sha256": "804c43ec821628297c7a0d98fd0f08ae5dbf15bedd65c02f876d52838312aac0"
+        },
+        {
+          "ficheiro": "primeira-pagina-pt-1600-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 618,
+            "width": 1092,
+            "height": 121
+          },
+          "sha256": "f7c73e556438b460b8d5b5805c632ce6f702e5f061156b074a338939febacf9a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9117,
+      "sha256": "69aac40ac79015267280cf05c87b6d49b4fdfebba06c9623c836a229b3bab231",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-390-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 533
+          },
+          "sha256": "3f9783b60e2a05215bd1f8b330aa59deae2c4e04f65630d2d265c171bb4da6ca"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-390-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 836,
+            "width": 354,
+            "height": 121
+          },
+          "sha256": "1d87eb26e746087280dbff7db35f2cceb84370b913e214d06cb4cf1318de54ad"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7365,
+      "sha256": "a52c86a9eae3482cafcc3fbef24ef943372214de131019212340f99d45e0a33e",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-768-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 488
+          },
+          "sha256": "e83a1324f88bd6b2aeab0414763ed67d42ac65423451077f65796bf00e7c80e1"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-768-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 777,
+            "width": 708,
+            "height": 121
+          },
+          "sha256": "c742bfd3c8489dc04bb49926d6e59bbfae19781e4025188b0552db84379dbe6b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6460,
+      "sha256": "c2c98c34a35ee9fce23aa1dd001312f6b5bb526f1b9234a6c6dd204ee470cce0",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1024-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 355
+          },
+          "sha256": "bf11a8fd675e8660d08716f0ba6cd27d90dde0e5fc341016b75d621656a07d50"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1024-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 625,
+            "width": 944,
+            "height": 121
+          },
+          "sha256": "9a6fc73f532bdbc873dfbc81e1cfcb334961d54f8cd77379d6e6fabfb7215593"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6293,
+      "sha256": "45edfe40268f3b6a31c9fe07e66b5085e42d244cf2b11e963435ff0d58ed9343",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1280-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "c566bcbbcdcd1eea9e79dc07470959a9f26809f12a594a95d9f5d9db56c3442a"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1280-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 615,
+            "width": 1092,
+            "height": 121
+          },
+          "sha256": "333db49217029079fdc6b0dfb1dc7b75cfbf9741fedec9182863073633dfaca9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pagina-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6337,
+      "sha256": "c862d47ce748f70848bdc8f5bda7cd4c8eae147f4e7f5ac707a0f84b5051ac18",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pagina-en-1600-novidades.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 343
+          },
+          "sha256": "b47544e3744e37e9449725fe6ae0ab4f206db86b0dac9175ab48b65ad6280a0c"
+        },
+        {
+          "ficheiro": "primeira-pagina-en-1600-discussao.png",
+          "seletor": "[data-discussao-inicio]",
+          "origem": "primeira-pagina-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 618,
+            "width": 1092,
+            "height": 121
+          },
+          "sha256": "333db49217029079fdc6b0dfb1dc7b75cfbf9741fedec9182863073633dfaca9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "7fa0ce20e59db6ee291caa7976bc30396cab012dd8c2db11d461a28c8bddc593",
+    "index.html": "9879e2952f6022e7ae96e009ae4a80da1db333b263f838d5fd144a9e0d764fef",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/primeira-pagina.CMN2HkuO.css": "0ea169c95e91d0746b201fe5d947c642560f2dac8a6ad57a200e966a61c2c44e",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/index.html": "efbff224c8be9fe92bcbe47e9f0e9fd512ad108738b6acc3576ce445e4a121a6"
+  },
+  "falhas": [],
+  "ok": true
+}

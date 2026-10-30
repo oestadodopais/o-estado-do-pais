@@ -112,7 +112,9 @@
     "tipos-final": 0,
     "prova": 0,
     "l1-plantas": 0,
-    "inventario-final": 0
+    "inventario-final": 0,
+    "l1-final": 0,
+    "l1-final-plantas": 0
   },
   "l1": {
     "antes": 3460,
@@ -145,8 +147,46 @@
         }
       }
     ],
-    "plantas": 5
+    "plantas": 5,
+    "reconfirmadaNaConstrucaoFinal": true
   },
-  "buildFinal": "por correr pelo escrivão",
-  "leituraFria": "reservada ao lugar de direção após a corrida inteira"
+  "buildFinal": {
+    "codigo": 0,
+    "cabeca": "d57d58b20fa08f065b4bbcddbdbcd6b5ce1234fc"
+  },
+  "leituraFria": "reservada ao lugar de direção após a corrida inteira",
+  "cabecaDaReguaCorrigida": "64443cbbad31fe6f7aedb22332d9d475e73025f9",
+  "perfilEscrivao": {
+    "build": 0,
+    "check:alvos": 0,
+    "check:cabeca": 0,
+    "check:css": 0,
+    "check:discussao": 0,
+    "check:frases-compostas": 1,
+    "check:lugar": 0,
+    "check:navegacao": 0,
+    "check:primeira": 0,
+    "gate:html": 0
+  },
+  "repeticaoDirigida": {
+    "check:frases-compostas": 0,
+    "check:primeira": 0
+  },
+  "razaoDaRepeticao": "O clip do resumo continha a largura artificial. A planta passou a tornar visível o extravasamento apenas na cópia; a página real não mudou.",
+  "capturas": {
+    "codigo": 0,
+    "recibo": "design/especime-v3/capturas/do2-2026-10-30/capturas.json",
+    "cabeca": "d57d58b20fa08f065b4bbcddbdbcd6b5ce1234fc",
+    "paginas": 10,
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ],
+    "falhas": [],
+    "ficheirosConferidosPorSha256": true,
+    "png": "Locais, ignorados pelo repositório; recibo e hashes comitados."
+  }
 }
