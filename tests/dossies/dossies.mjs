@@ -42,6 +42,7 @@ function conferir(root,d,lang) {
   const copia=parse(p.outerHTML);copia.querySelectorAll('.src-chip').forEach(n=>n.remove());
   const esperado=d.abertura[i][lang].map(t=>typeof t==='string'?t:dataDaCasa(getClaim(t.periodo).reference_date,lang)).join('');
   assert.equal(normal(copia.text),normal(esperado),'abertura integral com os tokens');
+  assert(!/\s$/.test(p.innerHTML),'SEL1-F5: espaços de enchimento na abertura');
  }
 
  assert.equal(main.querySelectorAll('[data-discussao-parte]').length,0,'não repete afirmações');
@@ -114,6 +115,7 @@ for(const lang of ['pt','en']) {
   const rota=routePath('dossie',lang,{slug:d.slug}), root=ler(rota);conferir(root,d,lang);
   for(const mudar of [
    r=>r.querySelector('[data-registo-edicao]').remove(),
+   r=>r.querySelector('[data-dossie-abertura]').insertAdjacentHTML('beforeend','   '),
    r=>r.querySelector('[data-dossie-abertura] a.src-chip').setAttribute('href','/livro-razao/outra'),
    r=>r.querySelector('[data-dossie-abertura] [data-de-linha]').insertAdjacentHTML('afterend','<a class="src-chip" href="/livro-razao/ano">fonte</a>'),
    r=>r.querySelector('[data-dossie-data="recente"]').setAttribute('datetime','1900-01-01'),
