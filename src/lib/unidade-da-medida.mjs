@@ -4,6 +4,7 @@ export const UNIDADES_DA_MEDIDA = Object.freeze([
   'pontos percentuais', 'mil milhões', 'milhões', 'euros', '%', 'p.p.', 'pontos', 'dias',
   'billion euros', 'million euros', 'thousand euros', '% of GDP',
   'percentage points', 'billion', 'million', 'points', 'days',
+  'anos', 'ano', 'vezes', 'vez', 'years', 'year', 'times', 'time',
 ].sort((a, b) => b.length - a.length));
 
 /** Só o início deste nó de texto, com no máximo um espaço normal ou fino.
