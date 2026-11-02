@@ -310,6 +310,11 @@ edicoes:
     sha256_normalized: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
   - slug: evora-contas-da-camara-2010-2025
     lang: "pt"
+    primeira_edicao:
+      file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html
+      sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839
+      date: "2026-10-01"
+      commit: c2aa011f1
     title: "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação"
     origin: "researchhub"
     origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ 7185a3f0481fc3ed5f489f1a179727b0349df4f2"
@@ -321,6 +326,11 @@ edicoes:
     sha256_normalized: "2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247"
   - slug: evora-contas-da-camara-2010-2025
     lang: "en"
+    primeira_edicao:
+      file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-01.html
+      sha256: edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87
+      date: "2026-10-01"
+      commit: c2aa011f1
     title: "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification"
     origin: "researchhub"
     origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ 7185a3f0481fc3ed5f489f1a179727b0349df4f2"
@@ -387,6 +397,11 @@ edicoes:
     sha256_normalized: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "pt"
+    primeira_edicao:
+      file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html
+      sha256: 97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a
+      date: "2026-10-21"
+      commit: c2aa011f1
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
     origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 7cefce181f04c6e7617f5a44784b7636e1cca6b6"
@@ -398,6 +413,11 @@ edicoes:
     sha256_normalized: "42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
+    primeira_edicao:
+      file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html
+      sha256: eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979
+      date: "2026-10-21"
+      commit: c2aa011f1
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
     origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 7cefce181f04c6e7617f5a44784b7636e1cca6b6"
@@ -409,6 +429,11 @@ edicoes:
     sha256_normalized: "0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a"
   - slug: a-casa-em-portugal-e-na-europa
     lang: "pt"
+    primeira_edicao:
+      file: _edicoes/a-casa-em-portugal-e-na-europa.pt.2026-10-29.html
+      sha256: 1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9
+      date: "2026-10-29"
+      commit: c2aa011f1
     title: "A casa em Portugal e na Europa"
     origin: "researchhub"
     origin_ref: "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ 571aecafb6cda8244d721c90aa3b6b8ee5a3fbca"
@@ -420,6 +445,11 @@ edicoes:
     sha256_normalized: "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9"
   - slug: a-casa-em-portugal-e-na-europa
     lang: "en"
+    primeira_edicao:
+      file: _edicoes/a-casa-em-portugal-e-na-europa.en.2026-10-29.html
+      sha256: b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74
+      date: "2026-10-29"
+      commit: c2aa011f1
     title: "Housing in Portugal and in Europe"
     origin: "researchhub"
     origin_ref: "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 571aecafb6cda8244d721c90aa3b6b8ee5a3fbca"

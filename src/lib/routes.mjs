@@ -10,7 +10,7 @@
 
 /**
  * @typedef {{ lang: Lingua, hreflang: string, path: string }} Alternativa
- * @typedef {{ key: ChaveDeRota, lang: Lingua, params: { slug?: string } }} Rota
+ * @typedef {{ key: ChaveDeRota, lang: Lingua, params: { slug?: string, date?: string } }} Rota
  */
 
 export const LANGS = /** @type {const} */ (['pt', 'en']);
@@ -456,6 +456,9 @@ function padraoDe(template) {
  */
 export function matchPath(path) {
   const target = normalizePath(path);
+  const primeira = target.match(/^\/(estudos|en\/studies)\/([^/]+)\/(documento|document)\/(\d{4}-\d{2}-\d{2})$/);
+  if (primeira && ((primeira[1] === 'estudos') === (primeira[3] === 'documento')))
+    return {key: 'documento', lang: primeira[1] === 'estudos' ? 'pt' : 'en', params: {slug: primeira[2], date: primeira[4]}};
   // Primeiro os caminhos literais, depois os que têm parâmetro:
   // /estudos tem de ganhar a /estudos/:slug.
   for (const pass of [0, 1]) {
