@@ -9,6 +9,8 @@ import {t} from '../../src/i18n/strings.mjs';
 import {revisoesPeloLivro,conferirRevisoes} from '../../scripts/revisoes-da-semana.mjs';
 import {contasDaSemanaNoPortao,conferirMarcaDaSemana} from '../../scripts/explicacoes-do-portao.mjs';
 import {semanaPelaCelula,primeiraFrasePelaCelula,conferirPaginaDaSemana,marcaComparada} from './semana.mjs';
+import {conferirOQueENasMudancas} from './o-que-e.mjs';
+import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
 import {analisa,leMarcadores} from '../../scripts/voz.mjs';
 const linhas=loadClaims(), dist=process.env.OEDP_DIST||'dist';
 const data=s=>s.replace(/^(\d{4})-(\d{2})-(\d{2})$/,'$3.$2.$1');
@@ -29,9 +31,31 @@ for(const lang of ['pt','en']) {
     });
   }
   if(datas) continue;
+  prova(`definições dos recibos (${lang})`,()=>assert.deepEqual(conferirOQueENasMudancas(root,lang,'leituraDaSemana',dist),[]));
+  if(pendentes.length) prova(`definição trocada recusada (${lang})`,()=>{
+    const r=copia();r.querySelector('[data-semana-revisao] [data-o-que-e]').set_content('Definição trocada.');
+    assert.ok(conferirOQueENasMudancas(r,lang,'leituraDaSemana',dist).some(e=>e.includes('a frase mostrada não é a do recibo')));
+  });
+  prova(`contagens no fim da página recusadas (${lang})`,()=>{
+    const r=copia(),frase=r.querySelector('[data-semana-frase]'),pai=frase.parentNode;
+    frase.remove();pai.appendChild(frase);
+    assert.ok(conferirPaginaDaSemana(r,lang,[fim],linhas).some(e=>e.includes('não abre a página')));
+  });
   const conta=semanaPelaCelula(linhas,fim), pagina=leituraDaSemana({fim});
   prova(`contagens independentes (${lang})`,()=>assert.deepEqual(pagina.contagens,conta.contagens));
   prova(`frase e secção conferidas (${lang})`,()=>assert.deepEqual(conferirPaginaDaSemana(root,lang,[fim],linhas),[]));
+  if(pendentes.length && lang==='en') {
+    prova('pontos decimais nas entradas inglesas',()=>assert.deepEqual(conferirFormatoDaPagina(original,rota).desvios,[]));
+    for(const seletor of ['[data-claim]','[data-linha-campo$=".found"]']) prova(`vírgula inglesa recusada (${seletor})`,()=>{
+      const r=copia(),el=r.querySelector(`[data-semana-revisao] ${seletor}`);el.set_content(el.textContent.replace('.',','));
+      assert.ok(conferirRevisoes(r,lang,linhas,inicio,fim).length);
+    });
+    prova('ponto fora da lista continua recusado',()=>{
+      const r=copia(),el=r.querySelector('[data-semana-revisao] [data-claim]');
+      r.querySelector('main').insertAdjacentHTML('beforeend',el.outerHTML);
+      assert.ok(conferirFormatoDaPagina(r.toString(),rota).desvios.some(e=>e.regra==='F2'));
+    });
+  }
   if(pendentes.length) {
     prova(`divergência omitida da frase (${lang})`,()=>{
       const r=copia();r.querySelector('[data-semana="revisoes"]').set_content(String(pendentes.length-1));
@@ -63,6 +87,16 @@ for(const lang of ['pt','en']) {
     const voz=leMarcadores(process.cwd()), c=t(lang).semana;
     for(const frase of [c.fonteReviu+c.umaRevisao,c.fonteReviu+c.variasRevisoes,c.revisoesK,c.publicado+c.fonteAgora+c.naReleitura]) assert.deepEqual(analisa(frase,rota,voz),[]);
     assert.ok(analisa(`${c.revisoesK} ${voz.marcadores[0].marcador}`,rota,voz).length);
+  });
+  prova(`linha reunida entra na contagem e na lista (${lang})`,()=>{
+    const l=structuredClone(linhas.get('taxa-de-desemprego-2025'));
+    l.corrections=[];l.verifications=[{date:fim,result:'diverge',found:'6.0'}];
+    const livro=new Map([[l.id,l]]), r=leituraDaSemana({fim,linhas:livro.values()});
+    assert.equal(r.contagens.relidas,1);assert.equal(r.contagens.revisoes,1);
+    assert.deepEqual(r.revisoes.map(x=>x.linha),[l.id]);
+    assert.equal(semanaPelaCelula(livro,fim).contagens.relidas,1);
+    assert.deepEqual(revisoesPeloLivro(livro,inicio,fim).map(x=>x.linha),[l.id]);
+    assert.equal(contasDaSemanaNoPortao(livro,inicio,fim).relidas,1);
   });
   // Cada cenário parte de uma cópia da mesma linha, sem história anterior.
   const base=structuredClone(linhas.get('desempenho-das-exportacoes-2024'));

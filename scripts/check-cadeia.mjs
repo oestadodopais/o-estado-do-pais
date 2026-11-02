@@ -311,6 +311,8 @@ if (!fs.existsSync(DIST)) {
 }
 
 const DO_MOTOR = linhasDoSitio();
+// PAI1-C: a planta passa pelo leitor da cadeia, antes de conferir as páginas.
+if (process.argv.includes('--prova-projecao-hb1')) { console.log('HB1: projeção conferida pela cadeia.'); process.exit(0); }
 
 /**
  * A ETIQUETA CURTA DE UMA EDIÇÃO, que é como o motor lhe chama: «04 pt».

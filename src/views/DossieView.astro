@@ -34,7 +34,7 @@ const indice = [{id:"dossie-estudo", titulo:`${mobilia.doEstudo} ${estudo.edicao
   <article class="dossie" data-dossie={slug}>
     <h1 class="explicacao-titulo" data-dossie-campo={`${slug}:titulo`}><Frase partes={partesDoDossie(d.titulo[lang])} lang={lang} /></h1>
     <p class="explicacao-p dossie-ambito" data-dossie-campo={`${slug}:ambito`}><Frase partes={partesDoDossie(d.ambito[lang])} lang={lang} /></p>
-    {d.abertura.map(p => <p class="explicacao-p" data-dossie-abertura={p.caminho}><Frase partes={p.pedacos} lang={lang} selos datasSeladas />{' '.repeat(p.pedacos.filter(p => typeof p !== 'string' && p.data).length)}</p>)}
+    {d.abertura.map(p => <p class="explicacao-p" data-dossie-abertura={p.caminho}><Frase partes={p.pedacos} lang={lang} selos datasSeladas /></p>)}
     <p class="estudo-meta"><span data-voz>{s.escrita}</span>{' '}<time data-dossie-data="escrita" datetime={d.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(d.escrita)}</time>{' · '}<span data-voz>{s.recente}</span>{' '}<time data-dossie-data="recente" datetime={d.recente} data-nonledger="data-editorial" data-data-origem={d.origemRecente}>{dataDaCasa(d.recente)}</time></p>
     <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k" data-dossie-indice>
       <details class="texto-indice-dobra"><summary class="texto-indice-porta"><h2 class="texto-indice-k" id="texto-indice-k">{mobilia.indice}</h2></summary>

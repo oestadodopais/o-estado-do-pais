@@ -7,7 +7,7 @@ import {dataDeCalendarioConferida,textoDaHabitacao} from '../src/lib/historia-do
  *
  * LEITOR PRÓPRIO. Não importa o resolvedor das explicações nem o da leitura da semana (`src/lib/explicacoes.mjs`,
  * `src/lib/leitura-da-semana.mjs`): uma conferência que usasse o código das páginas confirmava-se a si própria. Lê
- * as declarações das explicações (`src/data/explicacoes/`), a declaração da medida reunida (`MEDIDA_REUNIDA`) e as
+ * as declarações das explicações (`src/data/explicacoes/`) e as
  * linhas do livro-razão pelo mapa que o portão já carregou, e refaz as contas por si.
  *
  * TRÊS COISAS:
@@ -33,7 +33,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { EXPLICACOES } from '../src/data/explicacoes/index.mjs';
-import { MEDIDA_REUNIDA } from '../src/lib/pais.mjs';
 import { textoDocumentalConferido } from '../src/lib/prova-efeitos.mjs';
 
 /** O estudo das contagens do próprio projeto, fora do âmbito da leitura. */
@@ -90,7 +89,7 @@ export function contasDaSemanaNoPortao(claims, inicio, fim) {
   /** @type {Set<string>} */
   const proveniencia = new Set();
   for (const [id, l] of claims) {
-    if (!l || l.study === ESTUDO_DO_PROJETO || Object.hasOwn(MEDIDA_REUNIDA, id)) continue;
+    if (!l || l.study === ESTUDO_DO_PROJETO) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas += 1;
     /** @type {{ c: any, n: number }[]} */
     const deValor = [];

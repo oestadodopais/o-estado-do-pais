@@ -6,6 +6,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { confereFicheirosNaOrigem } from '../../scripts/check-cruzamento.mjs';
 import { projecaoLinha } from '../../src/lib/projecao-linha.mjs';
 
 const raiz = fileURLToPath(new URL('../../', import.meta.url));
@@ -93,9 +94,10 @@ try {
     fs.copyFileSync(path.join(raiz, 'scripts', f), path.join(copia, 'scripts', f));
   fs.mkdirSync(path.join(copia, 'ledger/claims'), { recursive: true });
   for (const e of fs.readdirSync(path.join(raiz, 'ledger'))) {
-    if (e === 'claims') continue;
+    if (e === 'claims' || e === 'cruzamentos') continue;
     fs.symlinkSync(path.join(raiz, 'ledger', e), path.join(copia, 'ledger', e));
   }
+  fs.cpSync(path.join(raiz,'ledger/cruzamentos'),path.join(copia,'ledger/cruzamentos'),{recursive:true});
   const rp4n = JSON.parse(fs.readFileSync(path.join(raiz, 'ledger/cruzamentos/pensao-rp4n.json')));
   const nomes = Object.entries(rp4n.files).filter(([, r]) => r.destino === 'ledger/claims').map(([nome]) => nome);
   for (const f of fs.readdirSync(path.join(raiz, 'ledger/claims'))) {
@@ -113,6 +115,7 @@ try {
     for (const [planta, alterada, codigo] of [
       ['valor', original.replace(/^value:.*$/m, 'value: "0"'), 1],
       ['fonte', original.replace(/^source_url:.*$/m, 'source_url: "https://example.invalid/planta"'), 1],
+      ['rótulo', original.replace(/^name:(.*)$/m, 'name:$1 alterado'), 1],
       ['releitura', original.replace(/^verifications:[^\n]*\n(?:[ \t]+[^\n]*\n)*/m, releitura), 0],
     ]) {
       assert.notEqual(alterada, original, nome + ': ' + planta);
@@ -124,6 +127,35 @@ try {
       fs.writeFileSync(ficheiro, original);
     }
   }
+  const ficheiroRegisto=path.join(copia,'ledger/cruzamentos/pensao-rp4n.json');
+  const integral=structuredClone(rp4n);
+  for(const nome of nomes) integral.files[nome].origin_sha256=integral.files[nome].exported_sha256=sha(fs.readFileSync(path.join(copia,'ledger/claims',nome)));
+  fs.writeFileSync(ficheiroRegisto,JSON.stringify(integral));
+  const legado=conferirTravessia();assert.equal(legado.status,0,legado.stdout+legado.stderr);
+  const fIntegral=path.join(copia,'ledger/claims',nomes[0]), bytesIntegrais=fs.readFileSync(fIntegral);
+  fs.writeFileSync(fIntegral,bytesIntegrais.toString().replace(/^value:.*$/m,'value: "0"'));
+  const legadoAlterado=conferirTravessia();assert.equal(legadoAlterado.status,1);assert.match(legadoAlterado.stderr,/os bytes em disco já não são os que atravessaram/);
+  fs.writeFileSync(fIntegral,bytesIntegrais);fs.writeFileSync(ficheiroRegisto,JSON.stringify(rp4n));
+  const divergente=structuredClone(rp4n);
+  divergente.files[nomes[0]].origin_sha256='0'.repeat(64);
+  fs.writeFileSync(ficheiroRegisto,JSON.stringify(divergente));
+  const recusada=conferirTravessia();
+  assert.equal(recusada.status,1);assert.match(recusada.stderr,/as projeções do motor e do sítio divergem/);
+  fs.writeFileSync(ficheiroRegisto,JSON.stringify(rp4n));
+  const motor=path.join(tmp,'motor');
+  const regs=[{ficheiro:'pensao-rp4n.json',dados:{files:{}}}];
+  for(const nome of nomes) {
+    const e=rp4n.files[nome], bytes=fs.readFileSync(path.join(raiz,'ledger/claims',nome));
+    const f=path.join(motor,e.origin_path);fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,bytes);
+    for(const digest of [sha(bytes),sha(projecaoLinha(bytes))]) {
+      regs[0].dados.files={[nome]:{...e,origin_sha256:digest}};
+      const erros=[];confereFicheirosNaOrigem(regs,motor,erros);assert.deepEqual(erros,[]);
+    }
+    fs.writeFileSync(f,Buffer.from(bytes.toString().replace(/^value:.*$/m,'value: "0"')));
+    const erros=[];confereFicheirosNaOrigem(regs,motor,erros);assert.ok(erros.length);
+  }
+  console.log('RP4-n: rótulo e projeções divergentes recusados; travessia integral e projetada conferidas.');
+
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });
 }

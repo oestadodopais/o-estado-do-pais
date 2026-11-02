@@ -15,3 +15,8 @@ const titulo=()=>parse('<h2 data-discussao-titulo aria-label="O orçamento: 79 m
 assert(nomeAcessivelDoTitulo(titulo()));
 for(const nome of ['O orçamento: 78 milhões de euros','Outro orçamento: 79 milhões de euros','O orçamento; 79 milhões de euros']){const t=titulo();t.setAttribute('aria-label',nome);assert(!nomeAcessivelDoTitulo(t));}
 console.log('SEL1: inventário conserva palavras, números, nomes e pontuação; nome acessível conferido integralmente.');
+
+assert.equal(normal('(a balance of % of GDP )'),normal('(a balance of % of GDP)'));
+assert.notEqual(normal('(a balance of % of GNI )'),normal('(a balance of % of GDP)'));
+assert.notEqual(normal('(a balance of % of GDP ]'),normal('(a balance of % of GDP)'));
+assert.notEqual(normal('(1 )'),normal('(1)'));

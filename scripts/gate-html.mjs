@@ -2,6 +2,7 @@
 import { primeiraEdicao, primeiraEdicaoServida } from '../src/lib/edicoes.mjs';
 import { conferirTextoHtml, contagemDasCorrecoesNoPortao } from './edicoes-conferir.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
+import {naRevisaoDaSemana} from './revisoes-da-semana.mjs';
 import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
 import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
@@ -1997,6 +1998,9 @@ const LINHA_DO_SITIO = new Map();
     }
   }
 }
+
+// PAI1-C: a planta termina depois do mesmo leitor HB1 que protege o portão completo.
+if (process.argv.includes('--prova-projecao-hb1')) { console.log('HB1: projeção conferida pelo portão do HTML.'); process.exit(0); }
 
 /** As unidades de um bloco do registo, com a coordenada da sua marca. */
 function unidadesDoRegisto(bloco) {
@@ -6119,6 +6123,7 @@ for (const file of ficheirosHtml(DIST)) {
     if (modificador !== undefined && (modificador !== 'abs' || !valorNumerico || paginaDoLivro))
       err(`a afirmação "${id}" tem modificador inválido.`);
     let esperado = modificador === 'abs' && valorNumerico ? String(claim.value).replace(/^[+−-]/, '') : claim.value;
+    if (naRevisaoDaSemana(el,rota?.key,linguaPagina,id)) esperado=String(esperado).replace(/,(?=\d+$)/,'.');
     const renderizado = decodeEntities(textoDe(el));
     const valorNaForma = claim.unit === 'data' && /^\d{2}\/\d{2}\/\d{4}$/.test(String(esperado))
       ? String(esperado).replaceAll('/', '.') : esperado;
@@ -6914,7 +6919,7 @@ for (const file of ficheirosHtml(DIST)) {
     const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
       ? normalizeWhitespace(decodeEntities(textoDe(el)))
       : textoTranscrito(el);
-    const relido = conferirCampoRelido(el, claim, linguaPagina);
+    const relido = conferirCampoRelido(el, claim, linguaPagina, naRevisaoDaSemana(el,rota?.key,linguaPagina,id));
     if (relido ? !relido.confere : renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +

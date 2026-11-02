@@ -1,4 +1,4 @@
-import { irmaoDepoisDaMedida } from '../../src/lib/posicao-do-selo.mjs';
+import { irmaoDepoisDaMedida, anoDentroDoNome } from '../../src/lib/posicao-do-selo.mjs';
 /** DO1: pertenças, datas e peças conferidas nas duas edições, com estragos plantados. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -25,6 +25,15 @@ for (const mudar of [
  d => {d[0].calendario = ['calendario-inexistente'];},
 ]) {const copia=structuredClone(DOSSIES);mudar(copia);assert.throws(()=>conferirDossies(copia));plantas++;}
 assert.equal(dossieDaPeca('estudo','inexistente'),null);
+function conferirDatasDaAbertura(main,lang) {
+ for(const p of main.querySelectorAll('[data-dossie-abertura] [data-de-linha]')){
+  const id=p.getAttribute('data-de-linha'), campo=p.getAttribute('data-de-campo');
+  assert.equal(p.textContent,dataDaCasa(getClaim(id)[campo],lang));
+  const selo=irmaoDepoisDaMedida(p).irmao;
+  if(anoDentroDoNome(p.previousSibling?.textContent??'',p.textContent))assert(!selo?.matches('a.src-chip'),'SEL1: ano do nome com selo');
+  else assert.equal(selo?.getAttribute('href'),routePath('linha',lang,{slug:id}),'SEL1: fonte da data trocada');
+ }
+}
 function conferir(root,d,lang) {
  const main=root.querySelector('main'), rota=routePath('dossie',lang,{slug:d.slug});
  assert.equal(normal(main.querySelector('h1').textContent),d.titulo[lang]);
@@ -33,6 +42,7 @@ function conferir(root,d,lang) {
   const copia=parse(p.outerHTML);copia.querySelectorAll('.src-chip').forEach(n=>n.remove());
   const esperado=d.abertura[i][lang].map(t=>typeof t==='string'?t:dataDaCasa(getClaim(t.periodo).reference_date,lang)).join('');
   assert.equal(normal(copia.text),normal(esperado),'abertura integral com os tokens');
+  assert(!/\s$/.test(p.innerHTML),'SEL1-F5: espaços de enchimento na abertura');
  }
 
  assert.equal(main.querySelectorAll('[data-discussao-parte]').length,0,'não repete afirmações');
@@ -67,13 +77,7 @@ function conferir(root,d,lang) {
   assert.deepEqual(conferirConclusaoDoInicio(a,e,lang),[]);
   for(const valor of a.closest('li').querySelectorAll('[data-discussao-resumo] [data-claim]'))assert(seloDaConclusaoDoInicio(valor,valor.getAttribute('data-claim'),lang,{dist:'dist'}));
  }
- for(const p of main.querySelectorAll('[data-dossie-abertura] [data-de-linha]')){
-  const id=p.getAttribute('data-de-linha'), campo=p.getAttribute('data-de-campo');
-  assert.equal(p.textContent,dataDaCasa(getClaim(id)[campo],lang));
-  const selo=irmaoDepoisDaMedida(p).irmao;
-  if(/^\d{4}$/.test(p.textContent))assert(!selo?.matches('a.src-chip'),'SEL1: ano do nome com selo');
-  else assert.equal(selo?.getAttribute('href'),routePath('linha',lang,{slug:id}),'SEL1: fonte da data trocada');
- }
+ conferirDatasDaAbertura(main,lang);
  if(!d.calendario.length)assert.equal(main.querySelector('#dossie-calendario'),null);
 
 }
@@ -111,6 +115,7 @@ for(const lang of ['pt','en']) {
   const rota=routePath('dossie',lang,{slug:d.slug}), root=ler(rota);conferir(root,d,lang);
   for(const mudar of [
    r=>r.querySelector('[data-registo-edicao]').remove(),
+   r=>r.querySelector('[data-dossie-abertura]').insertAdjacentHTML('beforeend','   '),
    r=>r.querySelector('[data-dossie-abertura] a.src-chip').setAttribute('href','/livro-razao/outra'),
    r=>r.querySelector('[data-dossie-abertura] [data-de-linha]').insertAdjacentHTML('afterend','<a class="src-chip" href="/livro-razao/ano">fonte</a>'),
    r=>r.querySelector('[data-dossie-data="recente"]').setAttribute('datetime','1900-01-01'),
@@ -122,3 +127,11 @@ for(const lang of ['pt','en']) {
  }
 }
 console.log(`DO1: quatro páginas, pertenças e datas conferidas nas duas edições; ${plantas} plantas recusadas.`);
+
+for(const lang of ['pt','en']) {
+ const id='pm-q3-3-r37-c3',data=`<span data-de-linha="${id}" data-de-campo="reference_date">2027</span>`,selo=`<a class="src-chip" href="${routePath('linha',lang,{slug:id})}">fonte</a>`;
+ const copia=parse(`<main><p data-dossie-abertura>${lang==='pt'?'Em ':'In '}${data}${selo}.</p></main>`);
+ conferirDatasDaAbertura(copia,lang);
+ copia.querySelector('.src-chip').remove();assert.throws(()=>conferirDatasDaAbertura(copia,lang));
+}
+console.log('SEL1-F4: anos fora do nome conservam a fonte; a sua retirada é recusada.');

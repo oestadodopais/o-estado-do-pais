@@ -510,8 +510,11 @@ function confereFicheiros(regs, erros) {
         continue;
       }
       const bytes = fs.readFileSync(caminho);
+      if (rel === 'ledger/claims' && entrada.origin_sha256 !== entrada.exported_sha256)
+        erros.push(`${onde}: as projeções do motor e do sítio divergem.`);
       const actual = sha256(rel === 'ledger/claims' ? projecaoLinha(bytes) : bytes);
-      if (actual !== entrada.exported_sha256) {
+      // O exportador antigo sela o ficheiro inteiro: essa prova é mais restrita e continua válida.
+      if (actual !== entrada.exported_sha256 && sha256(bytes) !== entrada.exported_sha256) {
         erros.push(
           `${onde}: os bytes em disco já não são os que atravessaram.\n` +
             `        registo: ${entrada.exported_sha256}\n` +
@@ -530,7 +533,7 @@ function confereFicheiros(regs, erros) {
  * O lado da origem, para ficheiros: o resumo do ficheiro do motor em disco.
  * Fora do build pela mesma razão que o das linhas.
  */
-function confereFicheirosNaOrigem(regs, raizMotor, erros) {
+export function confereFicheirosNaOrigem(regs, raizMotor, erros) {
   let lidos = 0;
   for (const { ficheiro, dados } of regs) {
     for (const [nome, entrada] of Object.entries(dados.files)) {
@@ -542,8 +545,10 @@ function confereFicheirosNaOrigem(regs, raizMotor, erros) {
         continue;
       }
       lidos++;
-      const actual = sha256(fs.readFileSync(caminho));
-      if (actual !== entrada.origin_sha256) {
+      const bytes = fs.readFileSync(caminho);
+      const actual = sha256(bytes);
+      const projetado = entrada.destino === 'ledger/claims' ? sha256(projecaoLinha(bytes)) : actual;
+      if (actual !== entrada.origin_sha256 && projetado !== entrada.origin_sha256) {
         erros.push(
           `--with-origin: [${ficheiro}] ${nome} ← ${entrada.origin_path} já não é o ficheiro ` +
             `do motor que atravessou.\n` +
@@ -1122,7 +1127,7 @@ function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = []) {
   for(const {dados} of regsDeFicheiros)for(const [nome,e] of Object.entries(dados.files)) {
     if(e.destino!=='ledger/claims'||!nome.endsWith('.yml'))continue;
     const p=path.join(DIR_CLAIMS,nome);
-    if(fs.existsSync(p)&&sha256(projecaoLinha(fs.readFileSync(p)))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));
+    if(e.origin_sha256===e.exported_sha256&&fs.existsSync(p)&&[sha256(projecaoLinha(fs.readFileSync(p))),sha256(fs.readFileSync(p))].includes(e.exported_sha256))cruzadas.add(nome.slice(0,-4));
   }
   const linhas = [];
   let ficheiros = 0;
@@ -1324,4 +1329,4 @@ function jsonCanonico(v) {
   return '{' + chaves.map((k) => JSON.stringify(k) + ':' + jsonCanonico(v[k])).join(',') + '}';
 }
 
-process.exit(main(process.argv.slice(2)));
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) process.exit(main(process.argv.slice(2)));

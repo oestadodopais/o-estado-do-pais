@@ -96,7 +96,7 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
               {n.nome.qualificador === 'ue' && <span class="pp-numero-onde" data-voz>{s.cartao.uniaoEuropeia}</span>}
             </span>
             <span class="pp-numero-valor"><Claim id={n.linha} lang={lang} chip sufixo={n.sufixo} /></span>
-            <span class="pp-numero-periodo"><DataDaLinha id={n.linha} campo="reference_date" valor={String(getClaim(n.linha).reference_date)} lang={lang} /></span>
+            <div class="pp-numero-periodo"><DataDaLinha id={n.linha} campo="reference_date" valor={String(getClaim(n.linha).reference_date)} lang={lang} /></div>
           </li>
         ))}
       </ul>

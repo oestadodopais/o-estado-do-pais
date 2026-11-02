@@ -10,6 +10,16 @@ const plantas=[
  ['estudo-pt','estudos/prova/index.html',`<p><span>79</span>${selo} milhões</p>`,'unidade'],
  ['estudo-en','en/studies/prova/index.html',`<p><span>4</span>${selo}%</p>`,'unidade'],
  ['dossie','dossies/prova/index.html',`<p>Calendário.${selo} , ${selo}</p>`,'consecutivos'],
+ ['dois-espacos','estudos/prova/index.html','unidade'],
+ ['quebra','estudos/prova/index.html',`<p>79${selo}\n    milhões</p>`,'unidade'],
+ ['sem-quebra','estudos/prova/index.html',`<p>79${selo}&nbsp;&thinsp;milhões</p>`,'unidade'],
+ ['pib','estudos/prova/index.html',`<p>4 pontos${selo} do PIB</p>`,'unidade'],
+ ['mensal','estudos/prova/index.html',`<p>79 euros${selo} por mês</p>`,'unidade'],
+ ['data-pt','estudos/prova/index.html',`<p>16${selo} de outubro</p>`,'unidade'],
+ ['data-en','en/studies/prova/index.html',`<p>16${selo} October</p>`,'unidade'],
+ ['taxa-nova','estudos/prova/index.html',`<p>79 euros${selo} por hectare</p>`,'forma nova'],
+ ['tempo-novo','en/studies/prova/index.html',`<p>79 euros${selo} a decade</p>`,'forma nova'],
+ ['prosa','estudos/prova/index.html',`<p>79 milhões de euros${selo} a favor do saldo</p>`,null],
  ['controlo','estudos/prova/index.html',`<p><span>79</span> milhões de euros${selo}</p>`,null],
 ];
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'sel1-plantas-'));
@@ -22,7 +32,8 @@ try {
   const medida=spawnSync(process.execPath,['scripts/check-selos.mjs','--dist',dir,'--medir'],{encoding:'utf8'});
   assert.equal(medida.status,0,nome+' modo de medida');
  }
- for(const html of [`<p>${selo}</p><p>${selo}</p>`,`<p>79${selo} milhõesimo</p>`,`<p>79${selo}  milhões</p>`,`<p>79${selo} e ${selo}</p>`])assert.equal(medirPagina(html).erros.length,0);
+ for(const html of [`<p>${selo}</p><p>${selo}</p>`,`<p>79${selo} milhõesimo</p>`,`<p>79${selo} e ${selo}</p>`])assert.equal(medirPagina(html).erros.length,0);
  assert.equal(medirPagina(`<p>79${selo}<em> milhões</em></p>`).erros[0].unidade,'milhões');
- console.log('SEL1: três plantas recusadas, controlo aceite, modo de medida e fronteiras conferidos.');
+ assert.match(JSON.parse(fs.readFileSync('package.json','utf8')).scripts.build,/npm run check:selos/);
+ console.log(`SEL1: ${plantas.length} cópias conferidas, formas novas recusadas pelo comando do build.`);
 } finally {fs.rmSync(tmp,{recursive:true,force:true});}

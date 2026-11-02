@@ -25,7 +25,7 @@ import {dataDeCalendarioConferida,textoDaHabitacao} from '../../src/lib/historia
  *     para a página da semana.
  *
  * O ÂMBITO é o do resolvedor, escrito aqui outra vez: fora as contagens do próprio projeto (o estudo `o-estado-do-pais`)
- * e a linha que a casa declara a mesma medida de outra (`MEDIDA_REUNIDA`).
+ * cada linha relida conta, incluindo as reunidas num cartão (PAI1-C).
  *
  * EX1-c (06.10.2026, os achados 5 e 14 da leitura a frio): UMA MUDANÇA DE VALOR É UMA MUDANÇA DO NÚMERO. Uma linha em
  * que só o literal mudou (o mesmo número, escrito de outra maneira) conta-se à parte, tem a sua lista e a sua planta na
@@ -38,7 +38,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { loadClaims, entradasDoRegisto } from '../../src/lib/ledger.mjs';
-import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../../src/data/primeira-pagina.mjs';
 import { limiarDaLinha, nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
 import { leituraDaSemana, primeiraFraseDaSemana, nomeNaSemana } from '../../src/lib/leitura-da-semana.mjs';
@@ -81,7 +80,7 @@ export function semanaPelaCelula(linhas, fim) {
   /** @type {{ linha: string, antes: { n: number, valor: string }, depois: { n: number, valor: string, data: string } }[]} */
   const formas = [];
   for (const [id, l] of linhas) {
-    if (!l || l.study === ESTUDO_DO_PROJETO || Object.hasOwn(MEDIDA_REUNIDA, id)) continue;
+    if (!l || l.study === ESTUDO_DO_PROJETO) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas += 1;
     const doDia = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ c, n })).filter((/** @type {any} */ x) => dentro(x.c?.date));
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
@@ -201,7 +200,7 @@ export function provaNaCopiaPlantada(fim) {
   if (JSON.stringify(r0.formas.map((m) => [m.linha, m.antes.valor, m.depois.valor])) !== JSON.stringify(c0.formas.map((m) => [m.linha, m.antes.valor, m.depois.valor]))) erros.push('W1 · no livro sem plantas, o resolvedor e esta célula discordam nas mudanças só da forma de escrever');
   const inicio = menosDias(fim, 6);
   /* As linhas das plantas: do âmbito, com valor numérico, sem entrada nenhuma na janela. */
-  const livres = [...base].filter(([id, l]) => l && l.study !== ESTUDO_DO_PROJETO && !Object.hasOwn(MEDIDA_REUNIDA, id) && numero(l.value) !== null &&
+  const livres = [...base].filter(([id, l]) => l && l.study !== ESTUDO_DO_PROJETO && numero(l.value) !== null &&
     !(l.corrections ?? []).some((/** @type {any} */ c) => c?.date >= inicio && c?.date <= fim) && !(l.verifications ?? []).some((/** @type {any} */ v) => v?.date >= inicio && v?.date <= fim)).map(([id]) => id).sort();
   if (livres.length < 4) return { erros: [...erros, 'W1 · não há quatro linhas livres para as plantas'], plantas: [] };
   const [la, lb, lc, ld] = livres;
@@ -412,7 +411,7 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   erros.push(...conferirRevisoes(root,lang,linhas,m[1],m[2]));
   const esperada = primeiraFrasePelaCelula(s, lang);
   if (normal(frase.textContent) !== esperada) erros.push(`W2 · a frase das contagens difere da conta desta célula.\n      esperada: ${esperada}\n      rendida:  ${normal(frase.textContent)}`);
-  if(frase.parentNode?.lastChild!==frase && frase.parentNode?.children?.at(-1)!==frase) erros.push('W2 · a frase das contagens não fecha a página');
+  if(frase.parentNode?.children?.[0]?.rawTagName!=='h1' || frase.parentNode?.children?.[1]!==frase) erros.push('W2 · a frase das contagens não abre a página depois do título');
   const entradas = root.querySelectorAll('main [data-semana-mudancas] > [data-semana-mudanca]');
   if (JSON.stringify(entradas.map((e) => e.getAttribute('data-semana-mudanca'))) !== JSON.stringify(s.mudancas.map((x) => x.linha))) {
     erros.push(`W2 · as mudanças da página (${entradas.length}) não são, pela ordem, as que esta célula conta (${s.mudancas.length}): da mudança mais recente para a mais antiga`);
@@ -634,7 +633,7 @@ export function plantasDaPassagemB(dist) {
       ['um resumo declarado fora da lista',r=>{const e=r.querySelector('[data-semana-mudanca]');r.querySelector('main').insertAdjacentHTML('beforeend',`<li data-semana-mudanca="${e.getAttribute('data-semana-mudanca')}">${e.querySelector('[data-semana-resumo]').outerHTML}</li>`);},'W · a marca das frases compostas da semana está num sítio que esta célula não confere'],
     ];
     if(rota==='leituraDaSemana') casos.push(
-      ['as contagens à cabeça da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina] h1').insertAdjacentHTML('afterend',p.outerHTML);},'a frase das contagens não fecha a página'],
+      ['as contagens no fim da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina]').insertAdjacentHTML('beforeend',p.outerHTML);},'a frase das contagens não abre a página'],
       ['a frase de nenhuma mudança da primeira página retirada',r=>r.querySelector('[data-semana-primeira="nenhuma"]')?.remove(),'nenhuma frase da primeira página mudou, e a página não o diz assim']);
     for(const [nome,estraga,mensagem] of casos) {
       const aplicavel=nome.startsWith('as contagens') || (nome.startsWith('a frase de nenhuma') ? raiz.querySelector('[data-semana-primeira="nenhuma"]') : nome.startsWith('o qualificador') ? daUniao && raiz.querySelector(`[data-semana-mudanca="${daUniao}"] .semana-onde`) : raiz.querySelector('[data-semana-mudanca]'));

@@ -18,9 +18,8 @@ import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mj
  *
  * O ÂMBITO SÃO OS NÚMEROS DO PAÍS. As contagens do próprio projeto (o estudo `o-estado-do-pais`: as
  * correções publicadas, os estudos e as edições do arquivo) ficam fora, porque a leitura não fala da casa
- * (o ponto 2 do mandato do brief); e a linha que a casa declara a mesma medida de outra
- * (`MEDIDA_REUNIDA`, `src/lib/pais.mjs`) entra pela que fica, como no índice: duas frases iguais para o
- * mesmo número diriam duas vezes a mesma coisa.
+ * (o ponto 2 do mandato do brief). PAI1-C: cada linha relida conta, mesmo quando a sua medida
+ * está reunida com outra num cartão.
  *
  *   · RELIDAS: as linhas do âmbito com pelo menos uma entrada em `verifications` dentro da janela;
  *   · MUDARAM DE VALOR: as linhas do âmbito com entradas `correcao` ou `atualizacao` em que o NÚMERO mudou, do
@@ -46,7 +45,6 @@ import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mj
 
 import { allClaims, getClaim, hasClaim, parsePtNumber } from './ledger.mjs';
 import { textoDocumentalConferido } from './prova-efeitos.mjs';
-import { MEDIDA_REUNIDA } from './pais.mjs';
 import { nomeDaLinhaDerivada, nomeDoCartao } from './nomes.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../data/primeira-pagina.mjs';
 import { limiarDaLinha, nomeNaLista } from './primeira-pagina.mjs';
@@ -80,7 +78,7 @@ export function janelaQueAcabaEm(fim) {
 
 /** Se uma linha está no âmbito da leitura. @param {any} l */
 export function linhaDoAmbito(l) {
-  return l && l.study !== ESTUDO_DO_PROJETO && !Object.hasOwn(MEDIDA_REUNIDA, String(l.id));
+  return l && l.study !== ESTUDO_DO_PROJETO;
 }
 
 /**

@@ -57,6 +57,8 @@
  *
  * Uso: node tests/inicio/formato-dos-numeros.mjs [--prova] [--json <ficheiro>]   (OEDP_DIST mede outra construção)
  */
+import {parse} from 'node-html-parser';
+import {naRevisaoDaSemana} from '../../scripts/revisoes-da-semana.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -91,6 +93,12 @@ const daCasa = (t) => /^\u2212?\d{1,3}(?:\u00a0\d{3})*(?:,\d+)?$/.test(t) || /^\
 export function conferirFormatoDaPagina(html, rel) {
   /** @type {{ regra: string, rel: string, valor: string, contexto: string }[]} */
   const desvios = [];
+  const pontosSemanais = new Set();
+  if(rel === 'en/explainers/weekly-reading/index.html') {
+    const root=parse(html);
+    for(const el of root.querySelectorAll('[data-claim]'))
+      if(naRevisaoDaSemana(el,'leituraDaSemana','en',el.getAttribute('data-claim'))) pontosSemanais.add(el.range[0]);
+  }
   const contas = { valores: 0, simbolos: 0, nao_numericos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { depois: 0, antes: 0 } } };
   for (const m of html.matchAll(ELEMENTO)) {
     const [inteiro, , atributos, marca, chave, cru] = m;
@@ -121,9 +129,12 @@ export function conferirFormatoDaPagina(html, rel) {
     if (!eNumero(numero)) { contas.nao_numericos++; continue; }
     if (deValor) {
       contas.valores++;
-      if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
-      else if (/\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
-      else if (!daCasa(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
+      const pontoSemanal=pontosSemanais.has(m.index);
+      const forma=pontoSemanal?numero.replace('.',','):numero;
+      if(pontoSemanal && numero.includes(',')) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
+      else if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
+      else if (!pontoSemanal && /\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
+      else if (!daCasa(forma)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }
     /* F4: o primeiro carácter visível depois do elemento, saltando a etiqueta do sufixo do `Claim` e as do fecho. */
     contas.simbolos++;
