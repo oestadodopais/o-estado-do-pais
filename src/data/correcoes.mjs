@@ -27,7 +27,9 @@
  * livro-razão falha o build.
  */
 
-export const KINDS = /** @type {const} */ (['correcao', 'atualizacao', 'proveniencia']);
+export const KINDS_DO_LIVRO = /** @type {const} */ (['correcao', 'atualizacao', 'proveniencia']);
+
+export const KINDS = /** @type {const} */ ([...KINDS_DO_LIVRO, 'texto']);
 
 /** As naturezas que o registo do Método lista uma a uma. Ver RegistoCorrecoes. */
 export const KINDS_NO_REGISTO = ['correcao', 'atualizacao'];
@@ -77,7 +79,7 @@ export const CORRECOES_TEXTO = [
     en: "Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government's communication and by the party's web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP's data.",
   } },
   { kind: 'texto', slug: 'a-casa-em-portugal-e-na-europa', data: '2026-11-02', frase: {
-    pt: 'As citações passaram a declarar se reproduzem palavras ou um relato, com a atribuição conferida na página de leitura. O texto do documento alojado foi conservado.',
-    en: 'Quotations now declare whether they reproduce words or an account, with attribution checked on the reading page. The text of the hosted document was preserved.',
+    pt: 'As citações passaram a declarar se reproduzem palavras ou um relato, e a identificar a atribuição na página de leitura. O texto do documento alojado foi conservado.',
+    en: 'Quotations now declare whether they reproduce words or an account, and identify attribution on the reading page. The text of the hosted document was preserved.',
   } },
 ];

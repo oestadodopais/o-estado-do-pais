@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { primeiraEdicao } from '../src/lib/edicoes.mjs';
 /**
  * O PORTÃO DAS DATAS DE PUBLICAÇÃO · três contas, e nenhuma confia na anterior.
  *
@@ -391,7 +392,7 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
     }
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina
-      ? (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`)
+      ? (principal.updated && primeiraEdicao(slug, lang)?.rota || (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`))
       : (linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`);
     if (porta.replace(/\/$/, '') !== esperada) falhas.push(`${rota}: a data de ${slug}/${lang} está junto da porta errada: ${porta}.`);
     const marcas = marcasDeData(bloco);
@@ -486,6 +487,25 @@ for (const lang of ['pt','en']) {
   ]) { const copia = parse(original.toString()); mudar(copia); assert(medir(copia).some(e => e.includes('os dados dizem'))); plantasPortasDo2++; }
 }
 console.log(`DO2: estudos avulsos conferidos; ${plantasPortasDo2} plantas das portas recusadas.`);
+
+// ED1: uma porta da primeira edição que volte ao documento atual fecha a mesma conferência.
+for (const w of WORKS) for (const e of w.editions.filter(e => e.updated && primeiraEdicao(w.slug,e.lang))) {
+  const rota = `${e.lang === 'pt' ? '/estudos' : '/en/studies'}/${w.slug}`;
+  const original = paraPrender.find(p => p.rota === rota)?.doc;
+  assert(original, `ED1: página ausente ${rota}`);
+  const medir = doc => {
+    const inicio = falhas.length, antes = lacos, contagens = new Map(presas);
+    prendeEdicoesB1(rota, doc, w.slug);
+    const erros = falhas.splice(inicio);
+    lacos = antes; presas.clear(); for (const [k,v] of contagens) presas.set(k,v);
+    return erros;
+  };
+  assert.deepEqual(medir(parse(original.toString())),[]);
+  const copia = parse(original.toString());
+  copia.querySelector('[data-estudo-edicao] a').setAttribute('href',`${rota}/${e.lang==='pt'?'documento':'document'}`);
+  assert(medir(copia).some(e=>e.includes('porta errada')),`ED1: porta atual aceite ${rota}`);
+}
+console.log('ED1: plantas das portas históricas nas datas recusadas.');
 
 // As plantas exercem o mesmo caminho que prende as datas no portão.
 let plantasDossies = 0;

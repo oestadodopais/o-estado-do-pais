@@ -21,7 +21,7 @@ import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
 import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS, WORKS, edicaoPublicada } from '../data/studies.mjs';
-import { KINDS, CAMPOS_DE_PROVENIENCIA, CORRECOES_TEXTO } from '../data/correcoes.mjs';
+import { KINDS_DO_LIVRO as KINDS, CAMPOS_DE_PROVENIENCIA, CORRECOES_TEXTO } from '../data/correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
 import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
 import {

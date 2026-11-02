@@ -1,3 +1,4 @@
+import { CORRECOES_TEXTO } from '../../src/data/correcoes.mjs';
 /** E0, §1.146: as linhas do projeto, a precisão publicada e a história selada.
  * As plantas chamam os portões reais em processos isolados e só mudam memória. */
 import fs from 'node:fs';
@@ -27,7 +28,7 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
   const medidas = { linhas: [], registos: [], nomes: [], valores_visiveis: [] };
   const historias = JSON.parse(fs.readFileSync('ledger/historias-valores.json', 'utf8'));
   const livros = fs.readdirSync('ledger/claims').filter(f => f.endsWith('.yml')).map(f => lerLinha(f.slice(0, -4)));
-  const contadas = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao').length, 0);
+  const contadas = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao').length, CORRECOES_TEXTO.length);
   for (const id of ids) {
     const c = lerLinha(id);
     const entradas = c.corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind));

@@ -322,7 +322,7 @@ const FACTOS = [
     id: 'correcoes',
     nome: 'correções publicadas',
     palavras: ['correções publicadas', 'correções'],
-    fonte: "ledger/claims/*.yml · corrections[].kind == 'correcao'",
+    fonte: "ledger/claims/*.yml · corrections[].kind == 'correcao' + src/data/correcoes.mjs · CORRECOES_TEXTO",
     comando:
       "node -e \"import('./src/lib/ledger.mjs').then(m=>console.log(m.contagensDoRegisto().correcoes_publicadas))\"",
     valor: contagens.correcoes_publicadas,

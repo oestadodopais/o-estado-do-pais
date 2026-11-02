@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 /** B1, peça 3. Leitor próprio do HTML, da tabela declarada e do livro.
  * A E1 usa a seleção comum das listagens, pela adenda D ao DO2; as contas dos valores continuam independentes. */
 import fs from 'node:fs';
@@ -442,10 +443,12 @@ function chaveDaMudanca(li) {
     const par = li.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '';
     return { tipo, chave: `publicacao|${par.split('/')[0]}`, claim: null, slug: par.split('/')[0], edicao: par.split('/')[1] };
   }
+  if (tipo === 'texto') return {tipo, chave: `texto|${li.getAttribute('data-texto-estudo')}|${li.getAttribute('data-texto-data')}`, slug: li.getAttribute('data-texto-estudo'), claim: null};
   if (tipo === 'projeto') return { tipo, chave: `projeto|${li.getAttribute('data-mudanca-id')}`, claim: null };
   return { tipo: null, chave: null, claim: null };
 }
 const chavesDoRegisto = new Set([
+  ...CORRECOES_TEXTO.map(c => `texto|${c.slug}|${c.data}`),
   ...chavesDoLivro,
   ...PUBLISHED_WORKS.map(w => `publicacao|${w.slug}`),
   ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
@@ -863,7 +866,7 @@ function anda(dir) {
       for (const li of itens) {
         const { tipo, claim, slug, edicao: edLang } = chaveDaMudanca(li);
         const chave = tipo === 'correcao' ? claim && lugarDaLinha(claim)
-          : tipo === 'publicacao' ? (WORKS.find(w => w.slug === slug)?.subject ?? PAIS)
+          : (tipo === 'publicacao' || tipo === 'texto') ? (WORKS.find(w => w.slug === slug)?.subject ?? PAIS)
           : PAIS;
         const porta = li.querySelector('.registo-lugar');
         const nome = chave && nomeDoLugar(chave, lang);

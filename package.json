@@ -10,7 +10,7 @@
   "scripts": {
     "check:ressalvas": "OEDP_MEDICOES=design/especime-v3/medicoes/oe1-2026-10-04 node tests/pais/portoes.mjs --prefixo oe1e-",
     "dev": "astro dev",
-    "build": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && node scripts/stamp-version.mjs --preparar && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:selos && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao",
+    "build": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && node scripts/stamp-version.mjs --preparar && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:edicoes && npm run check:selos && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao",
     "preview": "astro preview",
     "astro": "astro",
     "check:forma-citacao": "node tests/og1e/forma-da-citacao.mjs && node tests/og1e/reguas.mjs",
@@ -76,7 +76,7 @@
     "check:eo1": "node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs && node tests/eo1/metades.mjs && node tests/eo1/definicoes.mjs",
     "check:dossies": "node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs && node tests/dossies/leitura.mjs && node tests/dossies/reguas.mjs",
     "check:selos": "node tests/selos/unidades.mjs && node tests/selos/plantas.mjs && node tests/selos/renderizacao.mjs && node tests/selos/inventario.mjs && node tests/selos/cadeia.mjs && node scripts/check-selos.mjs",
-    "check:edicoes": "node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs"
+    "check:edicoes": "node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs && node tests/edicoes/reguas.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

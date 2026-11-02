@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { primeirasEdicoes } from '../src/lib/edicoes.mjs';
 /**
  * As duas provas da leitura do olho do lado do sítio (`src/lib/eyetext.mjs`).
  *
@@ -76,6 +77,8 @@ let conferencias = 0;
 /* ========================================================================== */
 
 const manifesto = JSON.parse(fs.readFileSync(path.join(RAIZ, 'registos', 'manifest.json'), 'utf8'));
+// ED1: o texto lido prova o documento atual. Cada primeira edição fica nomeada fora desse âmbito.
+for (const e of primeirasEdicoes()) console.log(`EYETEXT fora do âmbito: ${e.slug}/${e.lang}/${e.date}: primeira edição guardada; bytes conferidos por check:edicoes e gate:html.`);
 const manifestoDosDocumentos = load(
   fs.readFileSync(path.join(RAIZ, 'studies-src', 'manifest.yml'), 'utf8'),
 );
@@ -83,7 +86,7 @@ const manifestoDosDocumentos = load(
 /** As edições cujos bytes alojados são os do motor: `origin: researchhub`. */
 function bytesDoMotor(slug, lang, documentos = manifestoDosDocumentos) {
   return documentos.edicoes.some(
-    (e) => e.slug === slug && e.lang === lang && e.origin === 'researchhub',
+    (e) => e.slug === slug && e.lang === lang && e.origin === 'researchhub' && typeof e.sha256_normalized === 'string' && !e.file?.startsWith('_edicoes/'),
   );
 }
 
@@ -318,6 +321,12 @@ conferencias++;
    contas de Évora en: 171 blocos lidos contra 171 no registo, 702 unidades iguais.
    As unidades são iguais carácter a carácter; nas seis edições há 0 isentas,
    0 blocos editados e 0 apagados. */
+// ED1: cópia da declaração histórica no lugar da atual não entra na prova do texto lido.
+for (const e of primeirasEdicoes()) {
+  const historica = {slug:e.slug,lang:e.lang,origin:'researchhub',file:e.file,sha256:e.sha256};
+  if (bytesDoMotor(e.slug,e.lang,{edicoes:[historica]})) falhas.push(`ED1: primeira edição entrou no texto atual: ${e.slug}/${e.lang}`);
+  if (!bytesDoMotor(e.slug,e.lang)) falhas.push(`ED1: documento atual saiu da prova: ${e.slug}/${e.lang}`);
+}
 const EDICOES_DA_PROVA = 18;
 function falhaDaContagem(quantidade) {
   if (quantidade === EDICOES_DA_PROVA) return null;

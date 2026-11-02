@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { primeiraEdicao, primeiraEdicaoServida } from '../src/lib/edicoes.mjs';
+import { conferirTextoHtml } from './edicoes-conferir.mjs';
+import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
 import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
@@ -291,7 +294,7 @@ import {
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES } from '../src/data/figuras.mjs';
 import { UNIDADES_DOS_CARTOES } from '../src/data/unidades-dos-cartoes.mjs';
-import { PUBLISHED_EDITIONS, EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
+import { WORKS, PUBLISHED_EDITIONS, EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
@@ -1543,7 +1546,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
     err(`documento de um estudo que não existe no arquivo: "${slug}".`);
     return;
   }
-  const origem = documentoDaEdicao(slug, lang);
+  const origem = rota.params.date ? primeiraEdicao(slug, lang) : documentoDaEdicao(slug, lang);
   if (!origem) {
     err(
       `há um documento construído para "${slug}" (${lang}), mas não há ficheiro de origem em ` +
@@ -1555,7 +1558,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   /* 4 — o construído é a origem mais a faixa, e nada mais. */
   let esperado;
   try {
-    esperado = documentoServido(slug, lang);
+    esperado = rota.params.date ? primeiraEdicaoServida(slug, lang, rota.params.date) : documentoServido(slug, lang);
   } catch (e) {
     err(`não foi possível reconstruir o documento "${slug}" (${lang}): ${e.message}`);
     return;
@@ -6059,6 +6062,16 @@ for (const file of ficheirosHtml(DIST)) {
      isto recusava o registo inteiro. Uma marca destas em qualquer outra rota
      continua a fechar a construção, e a planta que o prova está em
      `tests/pais/portoes.mjs`. */
+  // ED1: só campos comparados com a entrada bilingue saem do varrimento numérico.
+  if (body.querySelector('[data-texto-estudo], [data-texto-campo]')) {
+    if (rota?.key !== 'correcoes') err('ED1 texto: campo fora do registo');
+    else {
+      const manifestoEdicoes = load(fs.readFileSync(path.join(ROOT, 'studies-src/manifest.yml'), 'utf8'));
+      const texto = conferirTextoHtml(body, rota.lang, WORKS, CORRECOES_TEXTO, manifestoEdicoes);
+      for (const e of texto.erros) err(e);
+      aRemover.push(...texto.campos);
+    }
+  }
   const ROTAS_DAS_MUDANCAS = ['home', 'correcoes'];
   for (const el of body.querySelectorAll('[data-mudanca-campo], [data-publicacao-estudo]')) {
     if (!ROTAS_DAS_MUDANCAS.includes(rota?.key)) { err('B1 mudança: campo fora da página do país e do registo.'); continue; }
