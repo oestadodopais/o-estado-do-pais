@@ -112,6 +112,7 @@ import { TERMOS_DOS_CARTOES } from '../data/termos-dos-cartoes.mjs';
 /* `termo` (passagem R2-b, 04.10.2026): a página de área pede, no primeiro cartão de cada termo declarado em
    `TERMOS_DOS_CARTOES`, a explicação do termo em palavras comuns, dentro da dobra. */
 const { linha: c, lang = 'pt', leitura: comLeitura = false, referencia: comReferencia = false, termo = null, ...resto } = Astro.props;
+if (c.unit === 'afirmação') throw new Error('OG1-E: uma citação não é um cartão de medida: '+c.id);
 const s = t(lang);
 
 const unidade = unidadeDaLinha(c.unit, lang, c.value);
