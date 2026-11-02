@@ -411,7 +411,7 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   erros.push(...conferirRevisoes(root,lang,linhas,m[1],m[2]));
   const esperada = primeiraFrasePelaCelula(s, lang);
   if (normal(frase.textContent) !== esperada) erros.push(`W2 · a frase das contagens difere da conta desta célula.\n      esperada: ${esperada}\n      rendida:  ${normal(frase.textContent)}`);
-  if(frase.parentNode?.lastChild!==frase && frase.parentNode?.children?.at(-1)!==frase) erros.push('W2 · a frase das contagens não fecha a página');
+  if(frase.parentNode?.children?.[0]?.rawTagName!=='h1' || frase.parentNode?.children?.[1]!==frase) erros.push('W2 · a frase das contagens não abre a página depois do título');
   const entradas = root.querySelectorAll('main [data-semana-mudancas] > [data-semana-mudanca]');
   if (JSON.stringify(entradas.map((e) => e.getAttribute('data-semana-mudanca'))) !== JSON.stringify(s.mudancas.map((x) => x.linha))) {
     erros.push(`W2 · as mudanças da página (${entradas.length}) não são, pela ordem, as que esta célula conta (${s.mudancas.length}): da mudança mais recente para a mais antiga`);

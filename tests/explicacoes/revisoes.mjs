@@ -35,6 +35,11 @@ for(const lang of ['pt','en']) {
     const r=copia();r.querySelector('[data-semana-revisao] [data-o-que-e]').set_content('Definição trocada.');
     assert.ok(conferirOQueENasMudancas(r,lang,'leituraDaSemana',dist).some(e=>e.includes('a frase mostrada não é a do recibo')));
   });
+  prova(`contagens no fim da página recusadas (${lang})`,()=>{
+    const r=copia(),frase=r.querySelector('[data-semana-frase]'),pai=frase.parentNode;
+    frase.remove();pai.appendChild(frase);
+    assert.ok(conferirPaginaDaSemana(r,lang,[fim],linhas).some(e=>e.includes('não abre a página')));
+  });
   const conta=semanaPelaCelula(linhas,fim), pagina=leituraDaSemana({fim});
   prova(`contagens independentes (${lang})`,()=>assert.deepEqual(pagina.contagens,conta.contagens));
   prova(`frase e secção conferidas (${lang})`,()=>assert.deepEqual(conferirPaginaDaSemana(root,lang,[fim],linhas),[]));

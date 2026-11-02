@@ -4,7 +4,7 @@
  * 05.10.2026, o ponto 2 do mandato).
  *
  * Gera-se em cada construção a partir do registo das correções e das releituras do livro-razão
- * (`leituraDaSemana()`, `src/lib/leitura-da-semana.mjs`). Abre com as mudanças de valor e fecha com a janela e as
+ * (`leituraDaSemana()`, `src/lib/leitura-da-semana.mjs`). Abre com a janela e as
  * contagens. Cada mudança diz a revisão da fonte, com o nome da medida, o período, a unidade, os valores e o dia.
  * As linhas consecutivas da mesma medida partilham a definição e os sinais dos seus recibos no fim do grupo.
  *
@@ -59,6 +59,7 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
 <Base lang={lang} path={path} title={`${s.semana.titulo} · ${SITE_NAME}`} description={s.semana.metaDescription}>
   <article class="semana" data-semana-pagina>
     <h1 class="semana-titulo">{s.semana.titulo}</h1>
+    <p class="semana-abertura" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado><FraseDaSemana lang={lang} leitura={leitura} /></p>
 
 
     {revisoes.length > 0 && (
@@ -140,7 +141,6 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
     )}
 
     <p class="regra-portas semana-portas"><a href={routePath('correcoes', lang)}>{ROTULOS_B1[lang].todasAsMudancas} →</a></p>
-    <p class="semana-fecho" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado><FraseDaSemana lang={lang} leitura={leitura} /></p>
   </article>
   <PortasDaDiscussao lang={lang} linhas={[...ids, ...formas.map(f => f.linha.id)]} />
 </Base>

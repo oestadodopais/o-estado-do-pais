@@ -41,7 +41,7 @@
 /* ── a prosa ─────────────────────────────────────────────────── */
 
 .explicacao-p,
-.semana-fecho,
+.semana-abertura,
 .semana-p,
 .explicacoes-semana-frase {
   font-family: var(--f-prosa);
@@ -154,4 +154,4 @@
 .semana-frase { font-family: var(--f-prosa); font-size: 16px; line-height: 1.5; }
 .semana-frase-bloco { font-weight: 600; }
 
-.semana-fecho { margin-top: 26px; font-size: 16px; }
+.semana-abertura { margin-top: 26px; font-size: 16px; }
