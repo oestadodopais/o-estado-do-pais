@@ -54,6 +54,8 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  * aberta esquecida, e fecha a construção como uma violação fecharia.
  */
 import fs from 'node:fs';
+import {primeirasEdicoes} from '../src/lib/edicoes.mjs';
+import {conferirPortasDaEdicao,conferirColecoes} from './lugar-edicoes.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -1060,7 +1062,8 @@ const medidas = {
 };
 /** Quantas superfícies de estudo a régua viu (regra 14: zero defeitos sobre
     zero páginas não prova nada). */
-const vistas = { estudo: 0, texto: 0, indice: 0, edicoes: 0, linhas: 0 };
+const historicas = primeirasEdicoes();
+const vistas = { estudo: 0, texto: 0, indice: 0, edicoes: 0, primeiras_edicoes: 0, documentos_historicos: 0, linhas: 0 };
 /** Quantos parágrafos de definição de painel a régua viu (regra 14: uma
     contagem de zero sobre uma coleção vazia não prova nada). */
 let definicoesVistas = 0;
@@ -1125,6 +1128,10 @@ for (const ficheiro of paginas) {
   const { rel, url, rota } = rotaDe(ficheiro);
   if (FICHEIROS_SEM_ROTA.has(rel)) continue;
   const chaveDaRota = rota?.key ?? null;
+  if(chaveDaRota==='documento' && rota.params.date) {
+    if(historicas.some(e=>e.rota===url))vistas.documentos_historicos++;
+    else falhas.push(`ED1: documento histórico não declarado: ${url}`);
+  }
   const lang = rota?.lang ?? (rel.startsWith('en/') ? 'en' : 'pt');
   /* As duas famílias de transcrição saem por nome, com a razão no cabeçalho. */
   const transcricao = chaveDaRota !== null && ROTAS_DE_TRANSCRICAO.has(chaveDaRota);
@@ -1815,11 +1822,11 @@ for (const ficheiro of paginas) {
     const edicao = work?.editions.find(e => e.lang === lang) ?? work?.editions[0];
     const documento = documentosDoEstudo(slug).find(d => d.lang === edicao?.lang);
     const portas = corpo.querySelectorAll('.estudo-publicado a[href]');
-    vistas.edicoes += portas.length;
-    if (portas.length !== 1 || portas[0]?.getAttribute('href') !== documento?.rota) {
-      medidas.d86_estudos_forma++;
-      anota('d86_estudos_forma', `${url} · falta a porta da edição fixada correspondente`);
-    }
+    const primeira=edicao?.updated ? historicas.find(e=>e.slug===slug&&e.lang===edicao.lang) : null;
+    const prova=conferirPortasDaEdicao(portas.map(p=>p.getAttribute('href')),documento?.rota,primeira?.rota);
+    vistas.edicoes+=prova.edicoes;
+    vistas.primeiras_edicoes+=prova.primeiras_edicoes;
+    for(const erro of prova.erros){medidas.d86_estudos_forma++;anota('d86_estudos_forma',`${url} · ${erro}`);}
     if (temRegisto(slug, lang)) {
       vistas.texto++;
       if (corpo.querySelector('[data-registo-edicao]')?.getAttribute('data-registo-edicao') !== `${slug}/${lang}`) {
@@ -2280,6 +2287,8 @@ const COLECOES_DOS_ESTUDOS = {
   texto: WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
   indice: LANGS.length,
   edicoes: WORKS.length * LANGS.length,
+  primeiras_edicoes: historicas.length,
+  documentos_historicos: historicas.length,
   /* E1 (01.10.2026): a lista traz os estudos sem sucessor; um estudo com
      sucessor continua a ter a sua página (estudo, edições), mas a sua linha da
      lista passou a ser a do estudo que lhe sucede. */
@@ -2312,15 +2321,7 @@ console.log(
       .map(([k, n]) => `${k} ${n}`)
       .join(' · '),
 );
-for (const [nome, n] of Object.entries(vistas)) {
-  const esperado = COLECOES_DOS_ESTUDOS[nome];
-  if (n === esperado) continue;
-  falhas.push(
-    `§7.4 e 8.6 · a régua viu ${n} «${nome}» em dist/, e o registo dos estudos diz ` +
-      `${esperado}. Uma coleção mais pequena do que os dados é uma família de páginas ` +
-      `que desapareceu em silêncio; uma maior é uma segunda apresentação da mesma coisa.`,
-  );
-}
+falhas.push(...conferirColecoes(vistas,COLECOES_DOS_ESTUDOS));
 
 /* ---------------------------------------------------------------------------
  * O RELATÓRIO

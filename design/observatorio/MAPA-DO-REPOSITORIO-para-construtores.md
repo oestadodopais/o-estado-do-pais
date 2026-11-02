@@ -845,6 +845,9 @@ As linhas seguem os registos, como as irmãs, sem novas entradas em `ledger/`. A
 
 ## ED1: primeira edição e correção de texto
 
+ED1, adenda D: `check:lugar` distingue as edições atuais, as portas das primeiras edições e os documentos históricos declarados, por `primeirasEdicoes()`. `tests/edicoes/lugar.mjs` recusa uma cópia adicional de um estudo, uma porta histórica em falta e destinos trocados. O teto L1 sobe apenas pelas duas páginas históricas de Évora, com a medição e a razão em `design/especime-v3/medicoes/ed1-2026-11-02/l1-ed1.json`. `src/lib/leis-da-edicao.mjs` usa `partesProvadas()` para marcar nomes portugueses de diplomas no HTML histórico inglês. A prova independente só retira esses invólucros exatos e compara todos os bytes com o original; as plantas alteram o número do diploma, a língua, o texto e a cauda. Os ficheiros guardados e os seus resumos permanecem intactos. H9 e a L3 não mudam.
+
+
 `studies-src/manifest.yml` declara `primeira_edicao: {file, sha256, date, commit}` em cada edição atualizada. Os ficheiros de `_edicoes/` são cópias dos bytes históricos de `_raw/`. `src/lib/edicoes.mjs` confere o resumo antes de servir cada documento, na rota do documento seguida da data. `matchPath` conserva a família `documento` e acrescenta `params.date`; a faixa e a prova independente dos bytes continuam obrigatórias no portão do HTML.
 
 `CORRECOES_TEXTO`, em `src/data/correcoes.mjs`, contém as entradas de natureza `texto`. Cada entrada tem estudo, data e frase nas duas línguas. As duas portas vêm do manifesto e da rota do documento atual. Esta natureza conta nas correções publicadas; as naturezas das linhas do livro continuam numa lista própria. A recontagem atualiza a linha `correcoes-publicadas` e preserva a sua história selada.

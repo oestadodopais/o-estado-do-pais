@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { provaDosBytesDaEdicao } from '../src/lib/leis-da-edicao.mjs';
 import { primeiraEdicao, primeiraEdicaoServida } from '../src/lib/edicoes.mjs';
 import { conferirTextoHtml, contagemDasCorrecoesNoPortao } from './edicoes-conferir.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
@@ -1588,7 +1589,9 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
    * construído a única marca dos robôs tem de devolver, entre o `<head>` e o
    * `<body>`, os bytes do original entre os seus.
    */
-  const falhaDosBytes = provaDosBytes(fs.readFileSync(origem.ficheiro, 'utf8'), html);
+  const falhaDosBytes = rota.params.date
+    ? provaDosBytesDaEdicao(fs.readFileSync(origem.ficheiro, 'utf8'), html, lang)
+    : provaDosBytes(fs.readFileSync(origem.ficheiro, 'utf8'), html);
   if (falhaDosBytes) {
     err(
       `o documento construído não preserva os bytes do original.\n` +

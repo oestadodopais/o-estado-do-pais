@@ -1,9 +1,10 @@
 /** ED1: as primeiras edições são documentos históricos, separados do texto atual. */
 import fs from 'node:fs';
+import {marcarLeisDaEdicao,provaDosBytesDaEdicao} from './leis-da-edicao.mjs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { load } from 'js-yaml';
-import { STUDIES_SRC_DIR, comFaixa, comMarcasDaCasa, provaDosBytes } from './documentos.mjs';
+import { STUDIES_SRC_DIR, comFaixa, comMarcasDaCasa } from './documentos.mjs';
 /** @param {Buffer|string} bytes */
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 export function primeirasEdicoes() {
@@ -30,8 +31,8 @@ export function primeiraEdicaoServida(slug, lang, date) {
   if (sha256(bytes) !== e.sha256) throw new Error(`ED1: sha256 da primeira edição diverge: ${slug}/${lang}`);
   const bruto = bytes.toString('utf8');
   if (!Buffer.from(bruto).equals(bytes)) throw new Error('ED1: primeira edição não preserva UTF-8');
-  const servido = comFaixa(comMarcasDaCasa(bruto, {slug, lang}), {slug, lang});
-  const falha = provaDosBytes(bruto, servido);
+  const servido = marcarLeisDaEdicao(comFaixa(comMarcasDaCasa(bruto, {slug, lang}), {slug, lang}),lang);
+  const falha = provaDosBytesDaEdicao(bruto, servido, lang);
   if (falha) throw new Error(`ED1: ${falha}`);
   return servido;
 }

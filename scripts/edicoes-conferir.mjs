@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { parse } from 'node-html-parser';
-import { provaDosBytes } from '../src/lib/documentos.mjs';
+import { provaDosBytesDaEdicao } from '../src/lib/leis-da-edicao.mjs';
 export const EXCECOES_EDICOES = [
   ['evora-quinze-anos-cinco-mandatos', 'pt', '2026-08-20'],
   ['evora-orcamentado-pago-devido-2025', 'pt', '2026-08-20'],
@@ -32,7 +32,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
     if (!correcoes.some(c => c.kind === 'texto' && c.slug === w.slug && c.data === d.updated)) erros.push(`ED1 entrada: ${chave} sem correção na data ${d.updated}`);
     if (paginas) {
       const html = paginas.get(rotaPrimeira(e));
-      if (!html || !fs.existsSync(file) || provaDosBytes(fs.readFileSync(file,'utf8'),html)) erros.push(`ED1 servido: ${chave} diverge da primeira edição`);
+      if (!html || !fs.existsSync(file) || provaDosBytesDaEdicao(fs.readFileSync(file,'utf8'),html,d.lang)) erros.push(`ED1 servido: ${chave} diverge da primeira edição`);
       const pagina = paginas.get(`${d.lang === 'pt' ? '/estudos' : '/en/studies'}/${w.slug}`);
       const faixa = pagina && parse(pagina).querySelector(`[data-estudo-edicao="${chave}"]`);
       const links = faixa?.querySelectorAll('a[href]') ?? [];
