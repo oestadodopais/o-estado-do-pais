@@ -16,7 +16,7 @@ name_source: "HTML; início literal único"
 measure: "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "manifestantes"
+source: "RTP"
 document:
   title: "Manifestantes pela habitação no Porto justificam protesto por \"desespero político\""
   edition: "2026-10-14"
@@ -49,4 +49,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] Só em imprensa. Atribuição por confirmar na fonte primária; não tratar a transcrição do jornal como documento da pessoa ou entidade. Não harmonizar contagens. Data conferida no elemento time de publicação do artigo. Comunicado reproduzido pela agência Lusa e publicado pela RTP; por confirmar na fonte primária. · Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-acampados."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: manifestantes
+  new_value: RTP
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

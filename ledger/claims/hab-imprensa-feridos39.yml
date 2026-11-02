@@ -16,7 +16,7 @@ name_source: "HTML; início literal único"
 measure: "39 feridos, dois deles graves"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "organização"
+source: "Diário de Notícias"
 document:
   title: "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte"
   edition: "2026-10-15"
@@ -51,4 +51,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] Só em imprensa. Atribuição por confirmar na fonte primária; não tratar a transcrição do jornal como documento da pessoa ou entidade. Não harmonizar contagens. · Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-feridos39."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: organização
+  new_value: Diário de Notícias
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

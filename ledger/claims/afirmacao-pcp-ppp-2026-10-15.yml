@@ -10,7 +10,7 @@ value: "1 700"
 unit: "milhões de euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Paulo Raimundo"
+source: "Partido Comunista Português"
 document:
   title: "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal"
   edition: "2026-10-15"
@@ -43,4 +43,13 @@ study: "oe-2027"
 note: "[note do motor] Documento primário de uma posição partidária. O valor é uma afirmação atribuída, não uma medição validada da execução ou do Orçamento. Nesta intervenção de 15 de outubro, a referência é às PPP sem delimitação ao setor rodoviário. Não substitui nem altera a afirmação rodoviária de 9 de outubro, já selada em content/15. A expressão mais de é preservada no excerto. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · afirmacao-pcp-ppp-2026-10-15."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: Paulo Raimundo
+  new_value: Partido Comunista Português
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

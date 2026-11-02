@@ -1,0 +1,2698 @@
+{
+  "schema": "oedp/publicadores/1",
+  "publicadores": [
+    {
+      "nome": "AT",
+      "aliases": [],
+      "dominios": [
+        "info.portaldasfinancas.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "irs-2026-escalao-1-limite",
+          "documento": "Artigo 68.º Taxas gerais",
+          "endereco": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Assembleia da República",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt",
+        "files.diariodarepublica.pt",
+        "www.parlamento.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "diploma-irc-artigo3",
+          "documento": "Lei n.º 64/2025, de 7 de novembro",
+          "endereco": "https://files.diariodarepublica.pt/1s/2025/11/21600/0000200003.pdf#page=1",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Banco de Portugal",
+      "aliases": [],
+      "dominios": [
+        "bpstat.bportugal.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-bpstat-12533724",
+          "documento": "Montante de novas operações de empréstimos à habitação",
+          "endereco": "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/07d36f662cea4b19f4b2c2cf5435771d/?lang=PT&series_ids=12533724&observation_date=2026-08-31",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Bloco de Esquerda",
+      "aliases": [],
+      "dominios": [
+        "bloco.org"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-be-despejos",
+          "documento": "Defender a maioria que vive do seu salário contra os ataques da direita",
+          "endereco": "https://bloco.org/sites/default/files/2026-03/20260328resolmn.pdf#page=2",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Boletín Oficial del Estado",
+      "aliases": [],
+      "dominios": [
+        "www.boe.es"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "smi-espanha-2026",
+          "documento": "Real Decreto 126/2026, de 18 de febrero, por el que se fija el salario mínimo interprofesional para 2026.",
+          "endereco": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-3815",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "CICF/IPCA — Anuário Financeiro dos Municípios Portugueses",
+      "aliases": [],
+      "dominios": [
+        "www.occ.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "indice-de-divida-limite-legal",
+          "documento": "Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões",
+          "endereco": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Chega",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-chega-reinvestimento",
+          "documento": "Altera o regime de tributação das mais-valias imobiliárias, em caso de reinvestimento",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=GdHrgDO6SMir8yv4xE%252fOSEV4FRZez3R8DDwnK6viH6WUlbR%252f4Nu6ogEEHTngPOtwE3KKKdiDW6ujlbDWdENvwNp%252bj0veys9oVgFDkM3FtVYM3Bw9M%252bPFlbXhchtImYwpYpBOqqVcgvtwIY3G1AA4kzsnJkh5zjaDH9PW0HhqEleZMgwkCy%252b%252bNWqK5ZYJ6wEEwFXL9CdxuwAN%252fJphyyfvFeYSuClyA%252bACHE%252fgh%252fJ6KzycLCU25NGwX14GbGdcHmpk68BFch7nWe%252bBEDQt5zlxAB28yWg6YT4Ds3byEAlBZjxQ%252bSsDKrf0RHF83DumExV1XEw9QYmLuRy7mfjd1k7FqdcM%252bFOX2fSyBfNsJibFZAEnYpzMECCh%252blF16RTadmbs&fich=e23a2255-4241-4d36-be4b-6f5bfc9c5f20.docx&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Conselho das Finanças Públicas",
+      "aliases": [
+        "CFP"
+      ],
+      "dominios": [
+        "www.cfp.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "cfp-comparabilidade",
+          "documento": "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027",
+          "endereco": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf#page=14",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Conselho de Ministros",
+      "aliases": [],
+      "dominios": [
+        "portugal.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-governo-arrendamento",
+          "documento": "Comunicado do Conselho de Ministros de 9 de julho de 2026",
+          "endereco": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Correio da Manhã",
+      "aliases": [],
+      "dominios": [
+        "www.cmjornal.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "og1-livre-posicao",
+          "documento": "Livre antecipa que \"dificilmente acompanhará\" proposta de Orçamento do Estado para 2027 do Governo",
+          "endereco": "https://www.cmjornal.pt/politica/detalhe/livre-antecipa-que-dificilmente-acompanhara-proposta-de-orcamento-do-estado-para-2027-do-governo",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "DNOTICIAS.PT",
+      "aliases": [],
+      "dominios": [
+        "www.dnoticias.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-imprensa-amorim",
+          "documento": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
+          "endereco": "https://www.dnoticias.pt/2026/10/16/509246-habitacao-governo-avisa-que-nao-vai-ceder-aos-gritos-que-vem-da-rua/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-1.html",
+          "sha256": "f4c32b6e977d07cc217f9bbfaef00c6513455b139fddb067849a15c5a9c22f0c",
+          "campo": "og:site_name",
+          "valor": "DNOTICIAS.PT"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/jpp-irs9.html",
+          "sha256": "2c40b80d1daf15fcdf47911323f862c535224a1f9c69cc27fb5fdd26238c1fda",
+          "campo": "og:site_name",
+          "valor": "DNOTICIAS.PT"
+        }
+      ]
+    },
+    {
+      "nome": "Direção Regional de Qualificação Profissional e Emprego (DRQPE)",
+      "aliases": [],
+      "dominios": [
+        "emprego.azores.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "angra-do-heroismo-desemprego-registado-2025-12",
+          "documento": "Resumo - Desemprego registado nos Açores",
+          "endereco": "https://emprego.azores.gov.pt/wp-content/uploads/2026/02/02_DESEMPREGO_REGISTADO_DEZEMBRO_2025.pdf#page=1",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Direção-Geral das Autarquias Locais (DGAL)",
+      "aliases": [],
+      "dominios": [
+        "portalautarquico.dgal.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "abrantes-divida-dgal-2024",
+          "documento": "Evolução do endividamento total, por município - prestação de contas 2024",
+          "endereco": "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=b968cb93-065b-4076-96bd-ee3919432585&content_id=47E7F1B2-F35F-4A27-9850-3BAF922FC36F&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2025-12-18180039",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Direção-Geral do Território (DGT)",
+      "aliases": [],
+      "dominios": [
+        "geo2.dgterritorio.gov.pt",
+        "www.dgterritorio.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "municipios-acores-caop-2025",
+          "documento": "Carta Administrativa Oficial de Portugal (CAOP)",
+          "endereco": "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAA_2025-gpkg.zip",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Diário da República",
+      "aliases": [],
+      "dominios": [
+        "dre.pt",
+        "files.diariodarepublica.pt",
+        "files.dre.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "pe-despacho-alargamentos",
+          "documento": "Despacho n.º 15154/2024",
+          "endereco": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf#page=1",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Diário de Notícias",
+      "aliases": [],
+      "dominios": [
+        "www.dn.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-imprensa-feridos35",
+          "documento": "Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos",
+          "endereco": "https://www.dn.pt/sociedade/confrontos-nos-protestos-pela-habitao-no-porto-manifestantes-denunciam-37-feridos",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-2.html",
+          "sha256": "0bd1b5c1d2eeb426a87b8960d5e8338586bde369730037c49518ff614e9e63d2",
+          "campo": "og:site_name",
+          "valor": "Diário de Notícias"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-3.html",
+          "sha256": "5bc230f214d9e5196f2ce1c480d0e6eb23d0eb1d73a45dd7452d4cb73cb057b0",
+          "campo": "og:site_name",
+          "valor": "Diário de Notícias"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-9.html",
+          "sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8",
+          "campo": "og:site_name",
+          "valor": "Diário de Notícias"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-8.html",
+          "sha256": "b91b5eb99d5e016890e7acfa8cbb47b1ab80ca0487a1d6b4e8647f43c0636087",
+          "campo": "og:site_name",
+          "valor": "Diário de Notícias"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-4.html",
+          "sha256": "14c6e8795eea3e4b99495c604e4108e50b5283a965ebed1960ee613375061d72",
+          "campo": "og:site_name",
+          "valor": "Diário de Notícias"
+        }
+      ]
+    },
+    {
+      "nome": "ECO",
+      "aliases": [],
+      "dominios": [
+        "eco.sapo.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "og1-governo-eco-juros",
+          "documento": "Subida dos juros da dívida “é risco de mercado e não risco de país”, diz Miranda Sarmento",
+          "endereco": "https://eco.sapo.pt/2026/10/23/subida-dos-juros-da-divida-e-risco-de-mercado-e-nao-risco-de-pais-diz-miranda-sarmento/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "ERSAR",
+      "aliases": [],
+      "dominios": [
+        "ersarwebsitedocsstorage.blob.core.windows.net"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "agua-nao-faturada-portugal-2024",
+          "documento": "RASARP 2025, volume 1",
+          "endereco": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf#page=106",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Entidade Orçamental",
+      "aliases": [],
+      "dominios": [
+        "dados.gov.pt",
+        "www.eo.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "dgo-2026-08-saude-efetiva-jan-ago-2025",
+          "documento": "Síntese da execução orçamental, agosto de 2026",
+          "endereco": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Estrutura de Missão Recuperar Portugal",
+      "aliases": [],
+      "dominios": [
+        "dados.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "evora-prr-aprovado-2026",
+          "documento": "Listagem de entidades PRR",
+          "endereco": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Euronews",
+      "aliases": [],
+      "dominios": [
+        "pt.euronews.com"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-imprensa-manif-euronews",
+          "documento": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+          "endereco": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "European Commission",
+      "aliases": [],
+      "dominios": [
+        "economy-finance.ec.europa.eu"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ce-primavera-2026-divida-2026",
+          "documento": "European Economic Forecast Spring 2026",
+          "endereco": "https://economy-finance.ec.europa.eu/document/download/3360898c-cd40-46c0-b170-7adfcb993add_en?filename=ip341_en.pdf#page=143",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Eurostat",
+      "aliases": [],
+      "dominios": [
+        "ec.europa.eu"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "abandono-escolar-precoce-2024",
+          "documento": "Early leavers from education and training by labour status",
+          "endereco": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=PT&sex=T&wstatus=POP",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Folha Nacional",
+      "aliases": [],
+      "dominios": [
+        "folhanacional.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "posicao-chega-habitacao",
+          "documento": "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”",
+          "endereco": "https://folhanacional.pt/2026/10/19/ventura-acusa-ps-de-hipocrisia-na-habitacao-montenegro-falhou-brutalmente-mas-os-socialistas-fizeram-pior/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Governo",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt",
+        "portugal.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-arrendamento-exposicao",
+          "documento": "Proposta de Lei n.º 103/XVII",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Grupo de Trabalho para a Reforma da Segurança Social",
+      "aliases": [],
+      "dominios": [
+        "www.dgcp.mtsss.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "factor-sustentabilidade-2026",
+          "documento": "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações",
+          "endereco": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=265",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "IGCP",
+      "aliases": [],
+      "dominios": [
+        "www.igcp.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+          "documento": "Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025",
+          "endereco": "https://www.igcp.pt/sites/default/files/2026-08/RA2025_signed.pdf#page=45",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "INFARMED",
+      "aliases": [],
+      "dominios": [
+        "www.infarmed.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+          "documento": "Monitorização da despesa com medicamentos | Ambulatório | Julho de 2026",
+          "endereco": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Iniciativa Liberal",
+      "aliases": [],
+      "dominios": [
+        "iniciativaliberal.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-il-proposta",
+          "documento": "Habitação Já",
+          "endereco": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Instituto Nacional de Estatística",
+      "aliases": [
+        "INE"
+      ],
+      "dominios": [
+        "www.ine.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "abrantes-empresas-2024",
+          "documento": "Empresas (N.º) por Localização geográfica (NUTS - 2024) e Dimensão; Anual - INE, Sistema de contas integradas das empresas",
+          "endereco": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014061&Dim1=S7A2024&lang=PT",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Instituto da Mobilidade e dos Transportes",
+      "aliases": [],
+      "dominios": [
+        "www.imt-ip.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "pe-brisa-minuta-ano",
+          "documento": "Resolução do Conselho de Ministros n.º 198-B/2008",
+          "endereco": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Instituto de Emprego da Madeira, IP-RAM (IEM)",
+      "aliases": [],
+      "dominios": [
+        "www.iem.madeira.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "calheta-desemprego-registado-2025-12",
+          "documento": "Boletim Mensal por Concelhos",
+          "endereco": "https://www.iem.madeira.gov.pt/wp-content/uploads/recursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf#page=3",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Instituto do Emprego e Formação Profissional (IEFP)",
+      "aliases": [],
+      "dominios": [
+        "www.iefp.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "abrantes-desemprego-registado-2025-12",
+          "documento": "SIE - Desemprego registado por concelhos",
+          "endereco": "https://www.iefp.pt/documents/10181/13014940/SIE+-+Desemprego+registado+por+concelhos+dezembro+2025.ods/e6d88643-cc12-41ae-990e-61bdbb296dd4",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "LIVRE",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-livre-reinvestimento",
+          "documento": "Projeto de Lei",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=H3IrR81fN9VFZrsCQTkTN5AkghiceZuLiS1BHt0rQRiRm%252brftgJqna3ABc3tQfSjxEfdODQstenjg%252bXz4PnfjZHLyGLvuwlJ%252fYVLdL5ZGHKXsQFqgHY6z15G3PUcVDRuX6BvxTEFoOFaK%252fOPQJIuOGUM%252f9oD5pECtQr0FElbK%252fxgjaPdG26iuVmKfSBbO%252f%252ba0NytZQKFXXwZvY4%252bb%252fVSrNc%252fL%252bwm5JGbgzP7UaaCzHAZWk6hXYjhU1QZa2gPSs5e9PbLU0FxXakzKZyn0GhTxNA8q1zWWn6MNOXefwJn%252fctNxq%252bk2WsmiFpEAyU%252bjZ3%252f8%252fq1xwgqZA6mfYVdNDviKKSgWZ2R8Jgt6UkKLac8SWKrajCIJzlmvqnqVw7oiZiP&fich=d607abf1-e8a6-4b65-984c-885fee6bc75e.pdf&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Marques, Cruz & Associados",
+      "aliases": [],
+      "dominios": [
+        "www.cm-evora.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "evora-contas-2024-votos-contra",
+          "documento": "Certificação Legal das Contas",
+          "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/05/Municipio-Evora-CLC-2025.pdf#page=2",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Ministério das Finanças",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt",
+        "portugal.gov.pt",
+        "www.eo.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "oe-2027-ambiente-e-energia-efetiva-2026",
+          "documento": "Orçamento do Estado para 2027",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Ministério das Finanças / Entidade Orçamental (MF/EO)",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt",
+        "www.eo.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "oe-2026-despesa-funcao-01-mapa",
+          "documento": "Mapa relativo à classificação funcional das despesas do subsetor da Administração Central",
+          "endereco": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc03_Mapa02.pdf#page=1",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Município de Évora",
+      "aliases": [],
+      "dominios": [
+        "www.cm-evora.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "evora-despesa-paga-2025",
+          "documento": "Prestação de Contas 2025",
+          "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=119",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "NATO",
+      "aliases": [],
+      "dominios": [
+        "www.nato.int"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "nato-cimeira-haia-2025",
+          "documento": "Defence investment and NATO's 5% commitment",
+          "endereco": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Notícias ao Minuto",
+      "aliases": [],
+      "dominios": [
+        "m.noticiasaominuto.com"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "posicao-psd-impostos",
+          "documento": "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição",
+          "endereco": "https://m.noticiasaominuto.com/politica/3063997/ao-minuto-debate-quinzenal-ja-comecou-oe2027-em-analise",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "O Estado do País",
+      "aliases": [],
+      "dominios": [],
+      "provas": []
+    },
+    {
+      "nome": "Observador",
+      "aliases": [],
+      "dominios": [
+        "observador.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "og1-governo-observador-saldo",
+          "documento": "Em debate orçamental com habitação em destaque, Miranda Sarmento lembra caso Robles e a sua \"decisão de investimento, totalmente legítima\"",
+          "endereco": "https://observador.pt/2026/10/23/em-debate-orcamental-com-habitacao-em-destaque-miranda-sarmento-lembra-caso-robles-e-a-sua-decisao-de-investimento-totalmente-legitima/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "PAN",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-pan-caucoes",
+          "documento": "Projeto de Resolução n.º 1272/XVII/2ª",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf",
+          "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b",
+          "campo": "emissor no PDF",
+          "valor": "o PAN propõe"
+        }
+      ]
+    },
+    {
+      "nome": "PORDATA",
+      "aliases": [],
+      "dominios": [],
+      "provas": []
+    },
+    {
+      "nome": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+      "aliases": [],
+      "dominios": [
+        "files.diariodarepublica.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "diploma-habitacao-artigo10",
+          "documento": "Decreto-Lei n.º 97/2026, de 20 de maio",
+          "endereco": "https://files.diariodarepublica.pt/1s/2026/05/09700/0001400040.pdf#page=12",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Partido Comunista Português",
+      "aliases": [
+        "PCP"
+      ],
+      "dominios": [
+        "pcp.pt",
+        "www.pcp.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+          "documento": "Sobre o Orçamento do Estado para 2027",
+          "endereco": "https://www.pcp.pt/sobre-orcamento-do-estado-para-2027",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/pcp-pt-18.html",
+          "sha256": "7cb2ccb342cb008a13616d7ef3fa08c6cb57223a6a7ab1aa98462397b18f0841",
+          "campo": "og:site_name",
+          "valor": "Partido Comunista Português"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+          "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d",
+          "campo": "og:site_name",
+          "valor": "Partido Comunista Português"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/24 Orcamento 2027 Analise/source/debate/pcp-raimundo-2026-10-15.html",
+          "sha256": "8cce188d5cad10909dbf424c4fb543a6b83aa49f4be1ee9f1f7418492c350c51",
+          "campo": "og:site_name",
+          "valor": "Partido Comunista Português"
+        }
+      ]
+    },
+    {
+      "nome": "Partido Socialista",
+      "aliases": [],
+      "dominios": [
+        "ps.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-ps-mais-valias",
+          "documento": "Habitação: o que propusemos e o que vamos propor",
+          "endereco": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/ps-pt-14.html",
+          "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d",
+          "campo": "og:site_name",
+          "valor": "Site oficial do PS - Partido Socialista"
+        }
+      ]
+    },
+    {
+      "nome": "Postal",
+      "aliases": [],
+      "dominios": [
+        "postal.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-imprensa-manif-lusa-organizacoes",
+          "documento": "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”",
+          "endereco": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Presidência do Conselho de Ministros",
+      "aliases": [],
+      "dominios": [
+        "app.parlamento.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-arrendamento-exposicao-vagos",
+          "documento": "Proposta de Lei n.º 103/XVII",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "RTP",
+      "aliases": [],
+      "dominios": [
+        "www.rtp.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+          "documento": "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega",
+          "endereco": "https://www.rtp.pt/noticias/politica/leitao-amaro-reitera-que-os-portugueses-tem-mais-dinheiro-no-bolso-e-apela-a-responsabilidade-de-ps-e-chega_n1770773",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-debate-quinzenal.html",
+          "sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d",
+          "campo": "publisher dos microdados, itemprop=name",
+          "valor": "RTP"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-5.html",
+          "sha256": "43349a8cafe3dc16df098e9f28cdc1211dfe2883cc45083f9d36bf37129f93bf",
+          "campo": "publisher dos microdados, itemprop=name",
+          "valor": "RTP"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-7.html",
+          "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559",
+          "campo": "publisher dos microdados, itemprop=name",
+          "valor": "RTP"
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/imprensa-6.html",
+          "sha256": "3db4c92b85aff4e6bf445060c7c460f41504e0b3578b0a238e1a68ff83106dcd",
+          "campo": "publisher dos microdados, itemprop=name",
+          "valor": "RTP"
+        }
+      ]
+    },
+    {
+      "nome": "Recuperar Portugal",
+      "aliases": [],
+      "dominios": [
+        "recuperarportugal.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "prr-complemento-p3-1-24-estado",
+          "documento": "Anexo III - Listagem de Marcos e Metas",
+          "endereco": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf#page=3",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Secretaria-Geral do Ministério da Administração Interna (SGMAI)",
+      "aliases": [],
+      "dominios": [
+        "www.eleicoes.mai.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "evora-camara-lugares",
+          "documento": "Autárquicas 2025 — resultados oficiais por território",
+          "endereco": "https://www.eleicoes.mai.gov.pt/autarquicas2025/assets/static/result/territory-electionId=1-territoryId=1267-organId=4.json",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Serviço Nacional de Saúde",
+      "aliases": [],
+      "dominios": [
+        "transparencia.sns.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "sns-catalogo-acumulados",
+          "documento": "Intervenções Cirúrgicas nos Cuidados de Saúde Hospitalares",
+          "endereco": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Sindicato da Hotelaria do Sul",
+      "aliases": [],
+      "dominios": [
+        "sindicatos.cgtp.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-cgtp-convocatoria",
+          "documento": "MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO",
+          "endereco": "https://sindicatos.cgtp.pt/hotelaria-sul/2026/09/15/manifestacao-nacional-dia-17-de-outubro/",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/cgtp-convocatoria.html",
+          "sha256": "6b0691041e034d039facd8e4beed2c471b25d9e1ef4ea804c3699037b9874070",
+          "campo": "og:site_name",
+          "valor": "Sindicato da Hotelaria do Sul"
+        }
+      ]
+    },
+    {
+      "nome": "TV RECORD EUROPA",
+      "aliases": [],
+      "dominios": [
+        "recordeuropa.com"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "posicao-be-rendimentos",
+          "documento": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
+          "endereco": "https://recordeuropa.com/noticias/portugal/oe2027-be-diz-que-orcamento-da-migalhas-a-quem-trabalha-e-beneficia-os-mais-ricos-09-10-2026-361432",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Tribunal de Contas",
+      "aliases": [],
+      "dominios": [
+        "www.tcontas.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "pe-tc15-acordos",
+          "documento": "AUDITORIA AO MODELO DE GESTÃO, FINANCIAMENTO E REGULAÇÃO DO SETOR RODOVIÁRIO",
+          "endereco": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf#page=21",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "Unidade Técnica de Apoio Orçamental",
+      "aliases": [
+        "UTAO"
+      ],
+      "dominios": [
+        "app.parlamento.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "og1-utao-brent-contratos-2027",
+          "documento": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+          "endereco": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        }
+      ]
+    },
+    {
+      "nome": "eventos.coletivos.org",
+      "aliases": [],
+      "dominios": [
+        "eventos.coletivos.org"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "hab-plataforma-reivindicacoes",
+          "documento": "Manifestação - Já não dá mais para viver assim!",
+          "endereco": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+          "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "documento-alojado",
+          "arquivo": "content/23 Habitacao/source/eventos-coletivos-org-1.html",
+          "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127",
+          "campo": "og:site_name",
+          "valor": "eventos.coletivos.org"
+        }
+      ]
+    }
+  ],
+  "documentos": [
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho10?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+      "titulo": "House price index, deflated - annual data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-tipsho10-a-i15-a-avg-pt-2025": "Eurostat",
+        "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": "Eurostat",
+        "hab-tipsho10-a-i15-a-avg-fi-2025": "Eurostat",
+        "hab-tipsho10-a-i15-a-avg-pt-2020": "Eurostat",
+        "hab-tipsho10-a-rch-a-avg-pt-2025": "Eurostat",
+        "hab-tipsho10-a-rch-a-avg-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
+      "arquivo": "content/23 Habitacao/source/eurostat/tipsho10.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&purchase=TOTAL&unit=RCH_A&unit=RCH_Q&unit=I15_Q",
+      "titulo": "House price index - quarterly data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": "Eurostat",
+        "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": "Eurostat",
+        "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2": "Eurostat",
+        "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2": "Eurostat",
+        "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2": "Eurostat",
+        "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2": "Eurostat",
+        "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2": "Eurostat"
+      },
+      "sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
+      "arquivo": "content/23 Habitacao/source/eurostat/prc_hpi_q.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho60?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+      "titulo": "Standardised house price-to-income ratio - annual data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-tipsho60-a-ptir-i15-pt-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-i15-eu27_2020-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-i15-ro-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-i15-pt-2019": "Eurostat",
+        "hab-tipsho60-a-ptir-lt-avg-pt-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-lt-avg-ro-2024": "Eurostat"
+      },
+      "sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
+      "arquivo": "content/23 Habitacao/source/eurostat/tipsho60.json"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=823114096&att_display=n&att_download=y",
+      "titulo": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-preco-mediano": "INE",
+        "hab-ine-preco-lisboa": "INE"
+      },
+      "sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
+      "arquivo": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=823114337&att_display=n&att_download=y",
+      "titulo": "Valor mediano das vendas por m² de alojamentos familiares",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-preco-porto": "INE"
+      },
+      "sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330",
+      "arquivo": "content/23 Habitacao/source/hb1d-ine-precos-q2.zip"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=817240652&att_display=n&att_download=y",
+      "titulo": "ESTATÍSTICAS DE RENDAS DA HABITAÇÃO AO NÍVEL LOCAL",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-renda-portugal": "INE",
+        "hab-ine-renda-lisboa": "INE"
+      },
+      "sha256": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84",
+      "arquivo": "content/23 Habitacao/source/ine-retoma-pt-30-2.pdf"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=817241613&att_display=n&att_download=y",
+      "titulo": "Valor mediano das rendas por m2 de novos contratos de arrendamento de alojamentos familiares (€)",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-renda-porto": "INE"
+      },
+      "sha256": "0d0f452c8fadef57404d12f2723435b1566d190f3f5ac547e3f0fb4605eb8cea",
+      "arquivo": "content/23 Habitacao/source/ine-retoma-pt-30-6.zip"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_mded01?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&hhcomp=TOTAL&rskpovth=TOTAL",
+      "titulo": "Share of housing costs in disposable household income, by type of household and income group",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-mded01-a-total-total-pc-pt-2025": "Eurostat",
+        "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": "Eurostat",
+        "hab-ilc-mded01-a-total-total-pc-cy-2025": "Eurostat",
+        "hab-ilc-mded01-a-total-total-pc-el-2025": "Eurostat",
+        "hab-ilc-mded01-a-total-total-pc-pt-2015": "Eurostat"
+      },
+      "sha256": "a865dd0b743d2d6e037f1d56977583cbad9288fc155d8dacea06e512b2a0e44b",
+      "arquivo": "content/23 Habitacao/source/eurostat/ilc_mded01.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07c?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&untilTimePeriod=2025",
+      "titulo": "Housing cost overburden rate by tenure status",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvho07c-a-pc-total-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-pt-2015": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-l-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-cy-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-el-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025": "Eurostat"
+      },
+      "sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+      "arquivo": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho02?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&hhcomp=TOTAL&tenure=OWN_L&tenure=OWN_NL&tenure=RENT_MKT&tenure=RENT_FR",
+      "titulo": "Distribution of population by tenure status, type of household and income group",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020": "Eurostat",
+        "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020": "Eurostat"
+      },
+      "sha256": "ea4dcaa450b9a2b599d456b0bcbb6c5ebd0c6faaf90116762aaa74f59d0b3894",
+      "arquivo": "content/23 Habitacao/source/eurostat/ilc_lvho02.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/yth_demo_030?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&sex=T",
+      "titulo": "Estimated average age of young persons leaving the parental household",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-yth-demo-030-a-avg-t-pt-2025": "Eurostat",
+        "hab-yth-demo-030-a-avg-t-eu27_2020-2025": "Eurostat",
+        "hab-yth-demo-030-a-avg-t-pt-2015": "Eurostat",
+        "hab-yth-demo-030-a-avg-t-fi-2025": "Eurostat",
+        "hab-yth-demo-030-a-avg-t-hr-2025": "Eurostat"
+      },
+      "sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b",
+      "arquivo": "content/23 Habitacao/source/eurostat/yth_demo_030.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvps08?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&sex=T&age=Y25-34&age=Y18-34",
+      "titulo": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": "Eurostat",
+        "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": "Eurostat",
+        "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": "Eurostat",
+        "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": "Eurostat",
+        "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": "Eurostat",
+        "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": "Eurostat",
+        "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
+      "arquivo": "content/23 Habitacao/source/eurostat/ilc_lvps08.json"
+    },
+    {
+      "url": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
+      "titulo": "Proposta de Lei 103/XVII/1 Autoriza o Governo a alterar o Novo Regime do Arrendamento Urbano, aprovado pela Lei n.º 6/2006, de 27 de fevereiro, o Código Civil, o Código de Processo Civil, o Decreto-Lei n.º 157/2006, de 8 de agosto, que aprova o regime jurídico das obras em prédios arrendados, e legislação conexa",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "hab-votacao-arrendamento": "Assembleia da República"
+      },
+      "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-7.html"
+    },
+    {
+      "url": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+      "titulo": "Comunicado do Conselho de Ministros de 9 de julho de 2026",
+      "nome": "Conselho de Ministros",
+      "rotulos": {
+        "hab-governo-feh": "Conselho de Ministros",
+        "hab-governo-arrendamento": "Conselho de Ministros"
+      },
+      "sha256": "2e944e4fd1db3b94cfc743712e719f59d06c7be9c46b547c4619749b82bf705d",
+      "arquivo": "content/23 Habitacao/source/portugal-gov-pt-6.html"
+    },
+    {
+      "url": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+      "titulo": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+      "nome": "Euronews",
+      "rotulos": {
+        "hab-imprensa-manif-euronews": "Euronews",
+        "hab-imprensa-renda-metade": "Euronews"
+      },
+      "sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6",
+      "arquivo": "content/23 Habitacao/source/hb1-euronews.html"
+    },
+    {
+      "url": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+      "titulo": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+      "nome": "RTP",
+      "rotulos": {
+        "hab-imprensa-feridos37": "RTP",
+        "hab-imprensa-assistidos": "RTP",
+        "hab-imprensa-hospital": "RTP"
+      },
+      "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559",
+      "arquivo": "content/23 Habitacao/source/imprensa-7.html"
+    },
+    {
+      "url": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+      "titulo": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+      "nome": "Diário de Notícias",
+      "rotulos": {
+        "hab-imprensa-feridos39": "Diário de Notícias",
+        "hab-imprensa-psp-ferido": "Diário de Notícias"
+      },
+      "sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8",
+      "arquivo": "content/23 Habitacao/source/imprensa-9.html"
+    },
+    {
+      "url": "https://www.dn.pt/sociedade/confrontos-nos-protestos-pela-habitao-no-porto-manifestantes-denunciam-37-feridos",
+      "titulo": "Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos",
+      "nome": "Diário de Notícias",
+      "rotulos": {
+        "hab-imprensa-feridos35": "Diário de Notícias"
+      },
+      "sha256": "b91b5eb99d5e016890e7acfa8cbb47b1ab80ca0487a1d6b4e8647f43c0636087",
+      "arquivo": "content/23 Habitacao/source/imprensa-8.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "titulo": "RELATÓRIO",
+      "nome": "Governo",
+      "rotulos": {
+        "hab-oe-habitacao-orcamento": "Governo",
+        "hab-oe-iva-impacto": "Governo",
+        "hab-oe-irs-rendas-impacto": "Governo",
+        "hab-oe-oferta-publica": "Governo",
+        "hab-oe-apoio-arrendamento": "Governo",
+        "hab-oe-licenciamento": "Governo",
+        "hab-oe-apoios-jovens": "Governo",
+        "hab-oe-fiscal": "Governo",
+        "hab-oe-oferta": "Governo",
+        "hab-oe-legenda-invariante": "Governo"
+      },
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "arquivo": "content/23 Habitacao/source/oe-relatorio.pdf"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&coicop18=CP041&unit=I25&unit=RCH_A",
+      "titulo": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": "Eurostat",
+        "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": "Eurostat"
+      },
+      "sha256": "bd654062c2749aec3ad455ed1eab8ea3a1234caa73f45dd5a51890e883d68c70",
+      "arquivo": "content/23 Habitacao/source/eurostat/prc_hicp_minr.json"
+    },
+    {
+      "url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012517&Dim1=S7A2021&Dim2=PT&lang=PT",
+      "titulo": "Proporção de alojamentos familiares clássicos vagos (%) por Localização geográfica à data dos Censos [2021] (NUTS - 2024); Decenal - INE, Recenseamento da população e habitação - Censos 2021",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-censos-0012517-0": "INE"
+      },
+      "sha256": "9b4a971bfa569a02314680134b0be2d3c87c30948f29a3066178fabe140d0393",
+      "arquivo": "content/23 Habitacao/source/ine-retoma-0012517.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_cobp_a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&indic_bt=BPRM_DW&unit=THS",
+      "titulo": "Building permits by type of building - annual data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025": "Eurostat",
+        "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "b6f60f12c1659d0fd20116684a4a7a2d27d3652905f4ccb05337fcf750ddadc5",
+      "arquivo": "content/23 Habitacao/source/eurostat/sts_cobp_a.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?format=JSON&lang=EN&sex=T&age=TOTAL&geo=PT&geo=EU27_2020&time=2025",
+      "titulo": "Population on 1 January by age and sex",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-demo-pjan-pt-2025": "Eurostat",
+        "hab-demo-pjan-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "97874be712f01ac14016be55748ca0f46f587d771b24f08709909a8061f5444d",
+      "arquivo": "content/23 Habitacao/source/eurostat/hb1-populacao.json"
+    },
+    {
+      "url": "https://www.ine.pt/ine_novidades/semin/INEWS60/82-83/",
+      "titulo": "Revista Eletrónica do INE - agosto de 2024",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-vagos-total": "INE"
+      },
+      "sha256": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d",
+      "arquivo": "content/23 Habitacao/source/ine-casas-vagas.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+      "titulo": "Proposta de Lei n.º 103/XVII",
+      "nome": "Presidência do Conselho de Ministros",
+      "rotulos": {
+        "hab-arrendamento-exposicao-vagos": "Presidência do Conselho de Ministros",
+        "hab-arrendamento-exposicao": "Governo"
+      },
+      "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-7-texto.pdf"
+    },
+    {
+      "url": "https://www.rtp.pt/noticias/pais/igai-abre-processo-sobre-carga-policial-contra-protesto-pela-habitacao-no-porto_n1772069",
+      "titulo": "IGAI abre processo sobre carga policial contra protesto pela habitação no Porto",
+      "nome": "RTP",
+      "rotulos": {
+        "hab-imprensa-igai": "RTP"
+      },
+      "sha256": "43349a8cafe3dc16df098e9f28cdc1211dfe2883cc45083f9d36bf37129f93bf",
+      "arquivo": "content/23 Habitacao/source/imprensa-5.html"
+    },
+    {
+      "url": "https://bloco.org/sites/default/files/2026-03/20260328resolmn.pdf",
+      "titulo": "Defender a maioria que vive do seu salário contra os ataques da direita",
+      "nome": "Bloco de Esquerda",
+      "rotulos": {
+        "hab-be-despejos": "Bloco de Esquerda"
+      },
+      "sha256": "576f73d110bda4d4b06804929b3f831732a95bab496918ceb4bbe3d716999b72",
+      "arquivo": "content/23 Habitacao/source/bloco-resolucao.pdf"
+    },
+    {
+      "url": "https://portugal.gov.pt/gc25/comunicacao/noticias/conselho-de-ministros-aprova-medidas-no-ambito-da-habitacao",
+      "titulo": "Construir Portugal - Arrendamento e simplificação",
+      "nome": "Conselho de Ministros",
+      "rotulos": {
+        "hab-governo-construir": "Conselho de Ministros"
+      },
+      "sha256": "a5e849583f565981009c3261d2ae05b14145f6dad64cb3ed809de15445da212d",
+      "arquivo": "content/23 Habitacao/source/portugal-gov-pt-8.html"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816018846&att_display=n&att_download=y",
+      "titulo": "ÍNDICE DE PREÇOS DA HABITAÇÃO",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-iphab-homologa": "INE"
+      },
+      "sha256": "0b62da6080c26c7f9431e2955303673666a4b9cf3b2175fad7feec94d3aa1445",
+      "arquivo": "content/23 Habitacao/source/ine-retoma-pt-29-2.pdf"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_ainr?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&coicop18=CP041&unit=INX_A_AVG&unit=RCH_A_AVG",
+      "titulo": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025": "Eurostat",
+        "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": "Eurostat",
+        "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025": "Eurostat",
+        "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025": "Eurostat"
+      },
+      "sha256": "d6efc260f9bdafbf8735892de911eb1edd08bb49b072f94bc894f1ac455ae92b",
+      "arquivo": "content/23 Habitacao/source/eurostat/prc_hicp_ainr.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&untilTimePeriod=2025",
+      "titulo": "Housing cost overburden rate",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-tespm140-a-pc-pt-2025": "Eurostat",
+        "hab-tespm140-a-pc-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+      "arquivo": "content/23 Habitacao/source/eurostat/hb1b-tespm140.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&sex=T&age=Y16-29",
+      "titulo": "Housing cost overburden rate by age, sex and poverty status",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": "Eurostat",
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": "Eurostat"
+      },
+      "sha256": "2d38a6468f55fbafc82b398efb9b1c0ee38a2d2f59cfe63b51b3078f076ea8fc",
+      "arquivo": "content/23 Habitacao/source/eurostat/ilc_lvho07a.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho05a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&sex=T&age=TOTAL&age=Y16-29",
+      "titulo": "Overcrowding rate by age, sex and poverty status - total population",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025": "Eurostat",
+        "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025": "Eurostat",
+        "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025": "Eurostat",
+        "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": "Eurostat",
+        "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "4f8cba37ae6ea1d3989fa7da451ae9190d156340fd2378f6fcb1b5739ec24787",
+      "arquivo": "content/23 Habitacao/source/eurostat/ilc_lvho05a.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_housing_deprivation_rate",
+      "titulo": "Glossary:Severe housing deprivation rate",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-eurostat-privacao-severa-definicao": "Eurostat"
+      },
+      "sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de",
+      "arquivo": "content/23 Habitacao/source/eurostat/hb1b-severe-housing-deprivation.html"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_mdho06a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&sex=T&age=TOTAL&age=Y16-29",
+      "titulo": "Severe housing deprivation rate by age, sex and poverty status",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": "Eurostat",
+        "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023": "Eurostat",
+        "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023": "Eurostat",
+        "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023": "Eurostat",
+        "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": "Eurostat",
+        "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": "Eurostat"
+      },
+      "sha256": "544c66b6bd4f777e550507bb8bfa0eb4d565ee662600aefcd05eb638bd7b242b",
+      "arquivo": "content/23 Habitacao/source/eurostat/ilc_mdho06a.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/cens_21dwob_r3?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&housing=DW&building=TOTAL&unit=NR",
+      "titulo": "Conventional dwellings by occupancy status, type of building and NUTS 3 region",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": "Eurostat"
+      },
+      "sha256": "3b8a8a43c5efb268288395bcad8b63ee8ae7756d109ee1a9bbb7bbd7b0068b9e",
+      "arquivo": "content/23 Habitacao/source/eurostat/cens_21dwob_r3.json"
+    },
+    {
+      "url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012501&Dim1=S7A2021&Dim2=PT&lang=PT",
+      "titulo": "Alojamentos familiares clássicos (N.º) por Localização geográfica à data dos Censos [2021] (NUTS - 2024), Forma de ocupação e Época de construção; Decenal - INE, Recenseamento da população e habitação - Censos 2021",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-censos-0012501-40": "INE",
+        "hab-ine-censos-0012501-41": "INE"
+      },
+      "sha256": "8f6e960ea840db86360754149e0fb1229fd92f7cd26116db0bc24ba1ff7db042",
+      "arquivo": "content/23 Habitacao/source/ine-retoma-0012501.json"
+    },
+    {
+      "url": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+      "titulo": "Habitação: o que propusemos e o que vamos propor",
+      "nome": "Partido Socialista",
+      "rotulos": {
+        "hab-ps-vazias": "Partido Socialista",
+        "hab-ps-mais-valias": "Partido Socialista",
+        "hab-ps-rendas": "Partido Socialista"
+      },
+      "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d",
+      "arquivo": "content/23 Habitacao/source/ps-pt-14.html"
+    },
+    {
+      "url": "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/07d36f662cea4b19f4b2c2cf5435771d/?lang=PT&series_ids=12533724&observation_date=2026-08-31",
+      "titulo": "Montante de novas operações de empréstimos à habitação",
+      "nome": "Banco de Portugal",
+      "rotulos": {
+        "hab-bpstat-12533724": "Banco de Portugal"
+      },
+      "sha256": "310879ddfe1c89bdb360cc3d6e9250c1b1a351472e77c454b9bce7526d500f43",
+      "arquivo": "content/23 Habitacao/source/bpstat-bportugal-pt-39.json"
+    },
+    {
+      "url": "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/6eaa8db94523f54733dddc22479c11a4/?lang=PT&series_ids=12533735&observation_date=2026-08-31",
+      "titulo": "Taxa de juro (TAA) de novas operações de empréstimos à habitação",
+      "nome": "Banco de Portugal",
+      "rotulos": {
+        "hab-bpstat-12533735": "Banco de Portugal"
+      },
+      "sha256": "7be14fc3b6246343514b5f725129e8f93b76bb77642437d6f191d3f42c6b0cb1",
+      "arquivo": "content/23 Habitacao/source/bpstat-bportugal-pt-38.json"
+    },
+    {
+      "url": "https://bpstat.bportugal.pt/data/v1/domains/19/datasets/28b6a921e1a4a9e326e724ab3e043d97/?lang=PT&series_ids=12557378&observation_date=2026-08-31",
+      "titulo": "Empréstimos-Particulares-PRT-Habitação-M€ (OIFM)",
+      "nome": "Banco de Portugal",
+      "rotulos": {
+        "hab-bpstat-12557378": "Banco de Portugal"
+      },
+      "sha256": "de51b03e684e9a03e4e7ec26afd53d3aacc57e3f57d5edb025126f4c5e0c2614",
+      "arquivo": "content/23 Habitacao/source/bpstat-bportugal-pt-40.json"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=822585037&att_display=n&att_download=y",
+      "titulo": "TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-juro-implicito": "INE"
+      },
+      "sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa",
+      "arquivo": "content/23 Habitacao/source/hb1d-ine-juro-2026-09.pdf"
+    },
+    {
+      "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=824195206&att_display=n&att_download=y",
+      "titulo": "INQUÉRITO À AVALIAÇÃO BANCÁRIA NA HABITAÇÃO",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-avaliacao-mediana": "INE",
+        "hab-ine-avaliacao-homologa": "INE"
+      },
+      "sha256": "666bcd2f371e6312f49d92d1034e8bbdd73a9294893bcfd85ed8883905932560",
+      "arquivo": "content/23 Habitacao/source/hb1e-ine-avaliacao-2026-09.pdf"
+    },
+    {
+      "url": "https://files.diariodarepublica.pt/1s/2026/05/09700/0001400040.pdf",
+      "titulo": "Decreto-Lei n.º 97/2026, de 20 de maio",
+      "nome": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+      "rotulos": {
+        "hab-dl97-irs": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+        "hab-dl97-deducao": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+        "hab-dl97-deducao-2027": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+        "diploma-habitacao-preambulo": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+        "diploma-habitacao-artigo8": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+        "diploma-habitacao-artigo10": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+        "diploma-habitacao-artigo18": "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+      },
+      "sha256": "a8ce8d796015f06ec247113a4184af61280940b473eda8f367cbff9666b5e32a",
+      "arquivo": "content/23 Habitacao/source/dr-97-2026.pdf"
+    },
+    {
+      "url": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+      "titulo": "Habitação: o que propusemos e o que vamos propor",
+      "nome": "Partido Socialista",
+      "rotulos": {
+        "posicao-ps-rendas": "Partido Socialista"
+      },
+      "sha256": "9d5a4c543d4c6264ad453691a14593f1f07c401fe2d8f4cd4f966f270afec06e",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/ps-habitacao19.html"
+    },
+    {
+      "url": "https://www.pcp.pt/rendas-despejos-governo-quer-ainda-mais-selvajaria-pcp-quer-defender-tua-seguranca-estabilidade",
+      "titulo": "Rendas e despejos: o governo quer ainda mais selvajaria, o PCP quer defender a tua segurança e estabilidade",
+      "nome": "Partido Comunista Português",
+      "rotulos": {
+        "hab-pcp-rendas": "Partido Comunista Português"
+      },
+      "sha256": "7cb2ccb342cb008a13616d7ef3fa08c6cb57223a6a7ab1aa98462397b18f0841",
+      "arquivo": "content/23 Habitacao/source/pcp-pt-18.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+      "titulo": "Projeto de Resolução n.º 1272/XVII/2ª",
+      "nome": "PAN",
+      "rotulos": {
+        "hab-pan-controlo": "PAN",
+        "hab-pan-caucoes": "PAN",
+        "hab-pan-tetos": "PAN"
+      },
+      "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf"
+    },
+    {
+      "url": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377267",
+      "titulo": "Projeto de Resolução 1272/XVII/2 Por uma política de arrendamento que sirva à classe média e às famílias mais vulneráveis",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "hab-votacao-pan": "Assembleia da República"
+      },
+      "sha256": "a8741cafc63a011759ab05ddd5fb9a910333c13efd6bf9cfdb42ca7a7ca22b7d",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-20.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=H3IrR81fN9VFZrsCQTkTN5AkghiceZuLiS1BHt0rQRiRm%252brftgJqna3ABc3tQfSjxEfdODQstenjg%252bXz4PnfjZHLyGLvuwlJ%252fYVLdL5ZGHKXsQFqgHY6z15G3PUcVDRuX6BvxTEFoOFaK%252fOPQJIuOGUM%252f9oD5pECtQr0FElbK%252fxgjaPdG26iuVmKfSBbO%252f%252ba0NytZQKFXXwZvY4%252bb%252fVSrNc%252fL%252bwm5JGbgzP7UaaCzHAZWk6hXYjhU1QZa2gPSs5e9PbLU0FxXakzKZyn0GhTxNA8q1zWWn6MNOXefwJn%252fctNxq%252bk2WsmiFpEAyU%252bjZ3%252f8%252fq1xwgqZA6mfYVdNDviKKSgWZ2R8Jgt6UkKLac8SWKrajCIJzlmvqnqVw7oiZiP&fich=d607abf1-e8a6-4b65-984c-885fee6bc75e.pdf&Inline=true",
+      "titulo": "Projeto de Lei",
+      "nome": "LIVRE",
+      "rotulos": {
+        "hab-livre-reinvestimento": "LIVRE"
+      },
+      "sha256": "e3ea510aea165b6eb9363e71dd1d34adc08a2099510d56e9f58d9b493db9f009",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-21-texto.pdf"
+    },
+    {
+      "url": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377309",
+      "titulo": "Projeto de Lei 793/XVII/2 Isenta de mais valia o investimento em habitação em cooperativa de propriedade coletiva",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "hab-votacao-livre": "Assembleia da República"
+      },
+      "sha256": "e6643de3eaa367ebc7303db9681df0351a4f72191877261a1b990f252c71ec6d",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-21.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=GdHrgDO6SMir8yv4xE%252fOSEV4FRZez3R8DDwnK6viH6WUlbR%252f4Nu6ogEEHTngPOtwE3KKKdiDW6ujlbDWdENvwNp%252bj0veys9oVgFDkM3FtVYM3Bw9M%252bPFlbXhchtImYwpYpBOqqVcgvtwIY3G1AA4kzsnJkh5zjaDH9PW0HhqEleZMgwkCy%252b%252bNWqK5ZYJ6wEEwFXL9CdxuwAN%252fJphyyfvFeYSuClyA%252bACHE%252fgh%252fJ6KzycLCU25NGwX14GbGdcHmpk68BFch7nWe%252bBEDQt5zlxAB28yWg6YT4Ds3byEAlBZjxQ%252bSsDKrf0RHF83DumExV1XEw9QYmLuRy7mfjd1k7FqdcM%252bFOX2fSyBfNsJibFZAEnYpzMECCh%252blF16RTadmbs&fich=e23a2255-4241-4d36-be4b-6f5bfc9c5f20.docx&Inline=true",
+      "titulo": "Altera o regime de tributação das mais-valias imobiliárias, em caso de reinvestimento",
+      "nome": "Chega",
+      "rotulos": {
+        "hab-chega-reinvestimento": "Chega"
+      },
+      "sha256": "41407449c007c49095ed5845ab5961acc9ec01f0f668dbb2225f099d9f52aae9",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-16-texto.pdf"
+    },
+    {
+      "url": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377303",
+      "titulo": "Projeto de Lei 788/XVII/2 Altera o regime de tributação das mais-valias imobiliárias, em caso de reinvestimento",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "hab-votacao-chega": "Assembleia da República"
+      },
+      "sha256": "6d48e1cf0ff0305c28e26f972733ce8b31c48b0d9434c5ec542cfb10460a711c",
+      "arquivo": "content/23 Habitacao/source/parlamento-pt-16.html"
+    },
+    {
+      "url": "https://folhanacional.pt/2026/10/19/ventura-acusa-ps-de-hipocrisia-na-habitacao-montenegro-falhou-brutalmente-mas-os-socialistas-fizeram-pior/",
+      "titulo": "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”",
+      "nome": "Folha Nacional",
+      "rotulos": {
+        "posicao-chega-habitacao": "Folha Nacional"
+      },
+      "sha256": "eb89d16a5837c718866280139fdf6695b4eb6271ccf644694a4732793ec00dea",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/chega-habitacao19.html"
+    },
+    {
+      "url": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+      "titulo": "Habitação Já",
+      "nome": "Iniciativa Liberal",
+      "rotulos": {
+        "hab-il-proposta": "Iniciativa Liberal"
+      },
+      "sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
+      "arquivo": "content/23 Habitacao/source/iniciativaliberal-pt-26.html"
+    },
+    {
+      "url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+      "titulo": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+      "nome": "RTP",
+      "rotulos": {
+        "hab-imprensa-manif-rtp": "RTP",
+        "hab-imprensa-tendas": "RTP"
+      },
+      "sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81",
+      "arquivo": "content/23 Habitacao/source/hb1-rtp-tendas.html"
+    },
+    {
+      "url": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+      "titulo": "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”",
+      "nome": "Postal",
+      "rotulos": {
+        "hab-imprensa-manif-lusa": "Postal",
+        "hab-imprensa-manif-lusa-organizacoes": "Postal"
+      },
+      "sha256": "46ccb73acbe599d698cd3909de0d820432b31d99fb8367052fd2f5115f097bdb",
+      "arquivo": "content/23 Habitacao/source/hb1-postal-lusa.html"
+    },
+    {
+      "url": "https://sindicatos.cgtp.pt/hotelaria-sul/2026/09/15/manifestacao-nacional-dia-17-de-outubro/",
+      "titulo": "MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO",
+      "nome": "Sindicato da Hotelaria do Sul",
+      "rotulos": {
+        "hab-cgtp-convocatoria": "Sindicato da Hotelaria do Sul"
+      },
+      "sha256": "6b0691041e034d039facd8e4beed2c471b25d9e1ef4ea804c3699037b9874070",
+      "arquivo": "content/23 Habitacao/source/cgtp-convocatoria.html"
+    },
+    {
+      "url": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+      "titulo": "Manifestação - Já não dá mais para viver assim!",
+      "nome": "eventos.coletivos.org",
+      "rotulos": {
+        "hab-plataforma-reivindicacoes": "eventos.coletivos.org"
+      },
+      "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127",
+      "arquivo": "content/23 Habitacao/source/eventos-coletivos-org-1.html"
+    },
+    {
+      "url": "https://www.rtp.pt/noticias/economia/manifestantes-pela-habitacao-no-porto-justificam-protesto-por-desespero-politico_n1771701",
+      "titulo": "Manifestantes pela habitação no Porto justificam protesto por \"desespero político\"",
+      "nome": "RTP",
+      "rotulos": {
+        "hab-imprensa-acampados": "RTP"
+      },
+      "sha256": "3db4c92b85aff4e6bf445060c7c460f41504e0b3578b0a238e1a68ff83106dcd",
+      "arquivo": "content/23 Habitacao/source/imprensa-6.html"
+    },
+    {
+      "url": "https://www.dn.pt/sociedade/montenegro-defende-foras-policiais-e-pede-a-manifestantes-que-no-sejam-egostas",
+      "titulo": "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas",
+      "nome": "Diário de Notícias",
+      "rotulos": {
+        "hab-imprensa-pm-15": "Diário de Notícias"
+      },
+      "sha256": "0bd1b5c1d2eeb426a87b8960d5e8338586bde369730037c49518ff614e9e63d2",
+      "arquivo": "content/23 Habitacao/source/imprensa-2.html"
+    },
+    {
+      "url": "https://www.dn.pt/política/lus-montenegro-nega-ter-acusado-manifestantes-de-egosmo-dirigi-me-a-partidos-polticos",
+      "titulo": "Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)",
+      "nome": "Diário de Notícias",
+      "rotulos": {
+        "hab-imprensa-pm-16": "Diário de Notícias"
+      },
+      "sha256": "5bc230f214d9e5196f2ce1c480d0e6eb23d0eb1d73a45dd7452d4cb73cb057b0",
+      "arquivo": "content/23 Habitacao/source/imprensa-3.html"
+    },
+    {
+      "url": "https://www.dn.pt/política/ministro-da-administrao-interna-diz-que-interveno-policial-no-porto-foi-legtima",
+      "titulo": "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima",
+      "nome": "Diário de Notícias",
+      "rotulos": {
+        "hab-imprensa-mai": "Diário de Notícias"
+      },
+      "sha256": "14c6e8795eea3e4b99495c604e4108e50b5283a965ebed1960ee613375061d72",
+      "arquivo": "content/23 Habitacao/source/imprensa-4.html"
+    },
+    {
+      "url": "https://www.dnoticias.pt/2026/10/16/509246-habitacao-governo-avisa-que-nao-vai-ceder-aos-gritos-que-vem-da-rua/",
+      "titulo": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
+      "nome": "DNOTICIAS.PT",
+      "rotulos": {
+        "hab-imprensa-amorim": "DNOTICIAS.PT"
+      },
+      "sha256": "f4c32b6e977d07cc217f9bbfaef00c6513455b139fddb067849a15c5a9c22f0c",
+      "arquivo": "content/23 Habitacao/source/imprensa-1.html"
+    },
+    {
+      "url": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+      "titulo": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
+      "nome": "RTP",
+      "rotulos": {
+        "hab-imprensa-debate-custos": "RTP",
+        "hab-imprensa-debate-protecao": "RTP"
+      },
+      "sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d",
+      "arquivo": "content/23 Habitacao/source/imprensa-debate-quinzenal.html"
+    },
+    {
+      "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_dispinfest&xlang=pt",
+      "titulo": "Portal Oficial - Instituto Nacional de Estatística",
+      "nome": "INE",
+      "rotulos": {
+        "hab-ine-calendario-juro": "INE",
+        "hab-ine-calendario-precos-locais": "INE"
+      },
+      "sha256": "74e73ab3b837f46944c24b048b8458dd457734002bb8244150c8726c77d32134",
+      "arquivo": "content/23 Habitacao/source/ine-retoma-pt-36.html"
+    },
+    {
+      "url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
+      "titulo": "Orçamento do Estado para 2027",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "oe-2027-calendario-generalidade": "Assembleia da República",
+        "oe-2027-calendario-entrega": "Assembleia da República",
+        "oe-2027-calendario-especialidade": "Assembleia da República",
+        "oe-2027-calendario-final-global": "Assembleia da República"
+      },
+      "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
+      "arquivo": "content/23 Habitacao/source/ar-oe2027.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "titulo": "Orçamento do Estado 2027 RELATÓRIO",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "oe-2027-prr-fim-investimento": "Ministério das Finanças",
+        "pm-q3-2-r8-c0": "Ministério das Finanças",
+        "pm-q3-2-r13-c0": "Ministério das Finanças",
+        "pm-q3-2-r25-c0": "Ministério das Finanças",
+        "pm-q3-2-r7-c0": "Ministério das Finanças",
+        "pm-q3-2-r10-c0": "Ministério das Finanças",
+        "pm-q3-2-r11-c0": "Ministério das Finanças",
+        "pm-q3-2-r12-c0": "Ministério das Finanças",
+        "pm-q3-2-r15-c0": "Ministério das Finanças",
+        "pm-q3-2-r16-c0": "Ministério das Finanças",
+        "pm-q3-2-r18-c0": "Ministério das Finanças",
+        "pm-q3-2-r21-c0": "Ministério das Finanças",
+        "pm-q3-2-r22-c0": "Ministério das Finanças",
+        "pm-q3-2-r23-c0": "Ministério das Finanças",
+        "oe-2027-quadro-3-2-nota-i": "Ministério das Finanças",
+        "pm-q4-1-r21-c1": "Ministério das Finanças",
+        "pm-q4-1-r21-c0": "Ministério das Finanças",
+        "pm-q4-1-r27-c1": "Ministério das Finanças",
+        "pm-q4-1-r27-c0": "Ministério das Finanças",
+        "pm-pensoes-atualizacao": "Ministério das Finanças",
+        "oe-2027-remuneracoes-atualizacao-pct": "Ministério das Finanças",
+        "pm-q2-3-r19-c2": "Ministério das Finanças",
+        "oe-2027-rmmg-2027": "Ministério das Finanças",
+        "oe-2027-csi-aumento-2027": "Ministério das Finanças",
+        "oe-2027-csi-referencia-2027": "Ministério das Finanças",
+        "pm-q3-6-r42-c2": "Ministério das Finanças",
+        "pm-q3-6-r42-c3": "Ministério das Finanças",
+        "pm-q3-6-r43-c3": "Ministério das Finanças",
+        "pm-q3-6-r50-c2": "Ministério das Finanças",
+        "pm-q3-6-r50-c3": "Ministério das Finanças",
+        "pm-q3-6-r44-c3": "Ministério das Finanças",
+        "pm-q3-6-r44-c2": "Ministério das Finanças",
+        "pm-q3-6-r45-c3": "Ministério das Finanças",
+        "pm-q3-6-r45-c2": "Ministério das Finanças",
+        "pm-q4-1-r32-c1": "Ministério das Finanças",
+        "pm-q4-1-r32-c4": "Ministério das Finanças",
+        "pm-q4-1-r32-c0": "Ministério das Finanças",
+        "pm-q3-3-r27-c1": "Ministério das Finanças",
+        "pm-q3-3-r37-c1": "Ministério das Finanças",
+        "pm-q3-3-r37-c3": "Ministério das Finanças",
+        "pm-q3-1-r51-c1": "Ministério das Finanças",
+        "pm-q3-1-r50-c1": "Ministério das Finanças",
+        "pm-q3-1-r22-c1": "Ministério das Finanças",
+        "pm-q3-1-r51-c2": "Ministério das Finanças",
+        "pm-q3-1-r23-c2": "Ministério das Finanças",
+        "pm-q3-1-r23-c1": "Ministério das Finanças",
+        "pm-q3-1-r52-c2": "Ministério das Finanças",
+        "pm-q3-1-r52-c1": "Ministério das Finanças",
+        "pm-q4-1-r27-c2": "Ministério das Finanças",
+        "pm-q4-1-r21-c2": "Ministério das Finanças",
+        "pm-q4-1-r31-c2": "Ministério das Finanças",
+        "pm-q4-1-r19-c2": "Ministério das Finanças",
+        "pm-q3-1-r36-c2": "Ministério das Finanças",
+        "pm-q3-1-r36-c1": "Ministério das Finanças",
+        "pm-q3-2-r26-c0": "Ministério das Finanças",
+        "pm-q2-3-r8-c2": "Ministério das Finanças",
+        "pm-q4-1-r17-c0": "Ministério das Finanças",
+        "pm-q4-1-r17-c1": "Ministério das Finanças",
+        "pm-q4-1-r17-c2": "Ministério das Finanças",
+        "pm-q4-1-r31-c0": "Ministério das Finanças",
+        "pm-q4-1-r31-c1": "Ministério das Finanças",
+        "pm-q4-1-r32-c3": "Ministério das Finanças",
+        "pm-q4-1-r19-c0": "Ministério das Finanças",
+        "pm-q4-1-r19-c1": "Ministério das Finanças",
+        "pm-q4-1-r22-c1": "Ministério das Finanças",
+        "pm-q4-1-r22-c2": "Ministério das Finanças",
+        "pm-q4-1-r11-c2": "Ministério das Finanças",
+        "pm-q4-1-r11-c1": "Ministério das Finanças",
+        "pm-q4-1-r12-c2": "Ministério das Finanças",
+        "pm-q4-1-r12-c1": "Ministério das Finanças",
+        "pm-q4-1-r13-c2": "Ministério das Finanças",
+        "pm-q4-1-r13-c1": "Ministério das Finanças",
+        "pm-q3-1-r21-c1": "Ministério das Finanças",
+        "pm-q3-1-r21-c4": "Ministério das Finanças",
+        "pm-q3-1-r21-c2": "Ministério das Finanças",
+        "pm-q3-1-r21-c5": "Ministério das Finanças",
+        "pm-q3-1-r50-c4": "Ministério das Finanças",
+        "pm-q3-1-r50-c2": "Ministério das Finanças",
+        "pm-q3-1-r50-c5": "Ministério das Finanças",
+        "pm-q3-1-r22-c2": "Ministério das Finanças",
+        "pm-q3-1-r36-c5": "Ministério das Finanças",
+        "pm-q3-1-r54-c1": "Ministério das Finanças",
+        "pm-q3-1-r54-c4": "Ministério das Finanças",
+        "pm-q3-1-r54-c2": "Ministério das Finanças",
+        "pm-q3-1-r54-c5": "Ministério das Finanças",
+        "pm-q3-3-r37-c0": "Ministério das Finanças",
+        "pm-q3-3-r33-c1": "Ministério das Finanças",
+        "pm-q3-3-r34-c1": "Ministério das Finanças",
+        "pm-q3-3-r31-c1": "Ministério das Finanças",
+        "pm-q3-3-r26-c1": "Ministério das Finanças",
+        "pm-q3-3-r25-c1": "Ministério das Finanças",
+        "pm-q3-3-r24-c1": "Ministério das Finanças",
+        "pm-q2-3-r8-c1": "Ministério das Finanças",
+        "pm-q2-3-r9-c2": "Ministério das Finanças",
+        "pm-q2-3-r11-c1": "Ministério das Finanças",
+        "pm-q2-3-r11-c2": "Ministério das Finanças",
+        "pm-q2-3-r19-c1": "Ministério das Finanças",
+        "pm-q2-3-r21-c2": "Ministério das Finanças",
+        "pm-q2-3-r22-c2": "Ministério das Finanças",
+        "pm-q2-3-r24-c2": "Ministério das Finanças",
+        "pm-q3-2-r5-c0": "Ministério das Finanças",
+        "pm-q3-2-r19-c0": "Ministério das Finanças",
+        "pm-q3-2-r6-c0": "Ministério das Finanças",
+        "pm-q3-2-r9-c0": "Ministério das Finanças",
+        "pm-q3-2-r14-c0": "Ministério das Finanças",
+        "pm-q3-2-r17-c0": "Ministério das Finanças",
+        "pm-q3-2-r20-c0": "Ministério das Finanças",
+        "pm-q3-2-r24-c0": "Ministério das Finanças",
+        "oe-2027-irs-sexta-reducao": "Ministério das Finanças",
+        "pm-salario-minimo": "Ministério das Finanças",
+        "oe-2027-rmmg-2024": "Ministério das Finanças",
+        "pm-remuneracoes-atualizacao": "Ministério das Finanças",
+        "pm-pensoes-capitulo3": "Ministério das Finanças",
+        "pm-csi-referencia-2027": "Ministério das Finanças",
+        "oe-2027-csi-referencia-2029": "Ministério das Finanças",
+        "pm-trajetoria-divida-2026-2027": "Ministério das Finanças",
+        "pm-objetivo-divida-final-decada": "Ministério das Finanças",
+        "pm-q3-6-r42-c1": "Ministério das Finanças",
+        "pm-q3-6-r43-c2": "Ministério das Finanças",
+        "pm-q3-6-r46-c3": "Ministério das Finanças",
+        "pm-q3-6-r47-c3": "Ministério das Finanças",
+        "pm-grafico-3-5-poenmp-2027": "Ministério das Finanças"
+      },
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "arquivo": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf"
+    },
+    {
+      "url": "https://files.diariodarepublica.pt/1s/2025/11/21600/0000200003.pdf",
+      "titulo": "Lei n.º 64/2025, de 7 de novembro",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "diploma-irc-artigo3": "Assembleia da República",
+        "irc-taxa-2027": "Assembleia da República",
+        "irc-taxa-2026": "Assembleia da República"
+      },
+      "sha256": "e510a3391c016e2282ceae7eaaa49f5e4fc3199871b5ffa8c410587c8cfebbbd",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/diplomas/lei-64-2025-irc.pdf"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
+      "titulo": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+      "nome": "Unidade Técnica de Apoio Orçamental",
+      "rotulos": {
+        "utao-novas-medidas": "Unidade Técnica de Apoio Orçamental",
+        "utao-divida-ajustamento": "Unidade Técnica de Apoio Orçamental",
+        "utao-novas-saldo": "Unidade Técnica de Apoio Orçamental",
+        "utao-juros-variacao-pct": "Unidade Técnica de Apoio Orçamental",
+        "utao-taxa-implicita-2026": "Unidade Técnica de Apoio Orçamental",
+        "utao-taxa-implicita-2027": "Unidade Técnica de Apoio Orçamental",
+        "utao-salarios": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-emprego": "Unidade Técnica de Apoio Orçamental",
+        "utao-salarios-valor": "Unidade Técnica de Apoio Orçamental",
+        "utao-salarios-irs": "Unidade Técnica de Apoio Orçamental",
+        "utao-salarios-cs": "Unidade Técnica de Apoio Orçamental",
+        "utao-pessoal-variacao-cn": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-pib": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-fraude": "Unidade Técnica de Apoio Orçamental",
+        "utao-saldo": "Unidade Técnica de Apoio Orçamental",
+        "utao-revisao-saldo": "Unidade Técnica de Apoio Orçamental",
+        "utao-politicas-saldo": "Unidade Técnica de Apoio Orçamental",
+        "utao-politicas-revisao": "Unidade Técnica de Apoio Orçamental",
+        "utao-divida-efeitos": "Unidade Técnica de Apoio Orçamental",
+        "utao-divida-stock-2026": "Unidade Técnica de Apoio Orçamental",
+        "utao-divida-stock-2027": "Unidade Técnica de Apoio Orçamental",
+        "utao-divida-acrescimo-2026": "Unidade Técnica de Apoio Orçamental",
+        "utao-divida-acrescimo-2027": "Unidade Técnica de Apoio Orçamental",
+        "utao-juros": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-sns": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-juros": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-contingencias": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-mercados": "Unidade Técnica de Apoio Orçamental",
+        "utao-risco-fenomenos": "Unidade Técnica de Apoio Orçamental"
+      },
+      "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=KDlw1Jsr0M2KCE53Cyqt55iWdA9aUQ6zoXsHh1coKqUdFWpiOlsrtYkciq3oH3vbZx58K5MWyhyOsJ507OUPF1%252bt7vse5McVlueuY02f4%252bQSmcHB%252bESiXJj6IYlF%252fASuXTUqcKte4AmJOhIpKBDEs3CbXPF2POrJvWfjcZSCZvl3FmFqc32W4nlcrFtphyN4GYvN4jtHgVHEmdzIg4NlicfkxJV2HalKo6o6%252f6s5aOnw6inlTXcQTTfOX%252bx%252fsHp4Go1rb1ySCOp4uE3z6zKcsmGWAUUh6DY2PmPuYf%252fnzPwUh7SXAv6ACfxUoUxuO2Lpe2EFq0bKtYr0x6FICq%252b9DmUa70MKgO6%252bUcUsevnJxos%253d&fich=a4964881-2005-4b3c-8691-2fb725dd2ba9.docx&Inline=true",
+      "titulo": "Proposta de Lei n.º 110/XVII/2.ª Orçamento do Estado para 2027",
+      "nome": "Presidência do Conselho de Ministros",
+      "rotulos": {
+        "irs-escalao-1-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-escalao-9-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-1-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-2-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-2-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-3-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-3-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-4-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-4-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-5-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-5-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-6-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-6-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-7-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-7-limite": "Presidência do Conselho de Ministros",
+        "irs-escalao-8-taxa-normal": "Presidência do Conselho de Ministros",
+        "irs-2027-escalao-8-limite": "Presidência do Conselho de Ministros"
+      },
+      "sha256": "36ca176bb1da31981fa0b5968cb16123817c4a6622711ca9776574d0f16a9ddf",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/diplomas/oe2027-articulado.pdf"
+    },
+    {
+      "url": "https://observador.pt/2026/10/13/miranda-sarmento-divida-publica-abaixo-dos-85-do-pib-em-2027-e-a-principal-preocupacao-do-governo/",
+      "titulo": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
+      "nome": "Observador",
+      "rotulos": {
+        "posicao-governo-divida85-citacao": "Observador",
+        "posicao-governo-divida85": "Observador"
+      },
+      "sha256": "7493205656f39b6465b14612fe7b420e974f042545e2e353845a4cd9ed08aaf1",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/sarmento-85.html"
+    },
+    {
+      "url": "https://economy-finance.ec.europa.eu/document/download/3360898c-cd40-46c0-b170-7adfcb993add_en?filename=ip341_en.pdf",
+      "titulo": "European Economic Forecast Spring 2026",
+      "nome": "European Commission",
+      "rotulos": {
+        "ce-primavera-2026-divida-2027": "European Commission",
+        "ce-primavera-2026-pib-2027": "European Commission",
+        "ce-primavera-2026-saldo-2027": "European Commission",
+        "ce-primavera-2026-divida-2026": "European Commission",
+        "ce-primavera-2026-divida-texto-divergente": "European Commission"
+      },
+      "sha256": "6d6dac3c4f1cecfa7c1b8e518eef22828a55f64d41264500026cbc0bb77da4e5",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/europa/ce-primavera-2026.pdf"
+    },
+    {
+      "url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf",
+      "titulo": "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027",
+      "nome": "Conselho das Finanças Públicas",
+      "rotulos": {
+        "cfp-riscos": "Conselho das Finanças Públicas",
+        "cfp-reembolsos": "Conselho das Finanças Públicas",
+        "cfp-comparabilidade": "Conselho das Finanças Públicas",
+        "cfp-pensoes-irs": "Conselho das Finanças Públicas",
+        "cfp-emprego-receita": "Conselho das Finanças Públicas",
+        "cfp-medidas": "Conselho das Finanças Públicas"
+      },
+      "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb",
+      "arquivo": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf"
+    },
+    {
+      "url": "https://www.dn.pt/economia/primeiro-ministro-rejeita-totalmente-descer-o-iva-dos-atuais-23-para-21",
+      "titulo": "Primeiro-ministro rejeita totalmente descer o IVA dos atuais 23% para 21%",
+      "nome": "Diário de Notícias",
+      "rotulos": {
+        "posicao-livre-iva": "Diário de Notícias"
+      },
+      "sha256": "90f77c6f36491c3be5c5cf543a2a3724431b882e2a67443a8d7c65e77fa568a5",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/dn-iva-livre.html"
+    },
+    {
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+      "titulo": "Artigo 68.º Taxas gerais",
+      "nome": "AT",
+      "rotulos": {
+        "irs-2026-escalao-1-taxa-normal": "AT",
+        "irs-2026-escalao-2-taxa-normal": "AT",
+        "irs-2026-escalao-3-taxa-normal": "AT",
+        "irs-2026-escalao-4-taxa-normal": "AT",
+        "irs-2026-escalao-5-taxa-normal": "AT",
+        "irs-2026-escalao-6-taxa-normal": "AT",
+        "irs-2026-escalao-1-limite": "AT",
+        "irs-2026-escalao-2-limite": "AT",
+        "irs-2026-escalao-3-limite": "AT",
+        "irs-2026-escalao-4-limite": "AT",
+        "irs-2026-escalao-5-limite": "AT",
+        "irs-2026-escalao-6-limite": "AT",
+        "irs-2026-escalao-7-limite": "AT",
+        "irs-2026-escalao-8-limite": "AT"
+      },
+      "sha256": "7093cbd6c3364fb695032cb8674804163d844cc8eddc1b504a36ae3da32fe738",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/diplomas/cirs-artigo-68-2026.html"
+    },
+    {
+      "url": "https://portugal.gov.pt/gc25/comunicacao/noticias/orcamento-do-estado-reforca-valorizacao-dos-rendimentos-e-apoios-as-familias-e-empresas",
+      "titulo": "Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas",
+      "nome": "Governo",
+      "rotulos": {
+        "posicao-governo-irs": "Governo",
+        "posicao-governo-csi-pensoes": "Governo",
+        "posicao-governo-irc": "Governo"
+      },
+      "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html"
+    },
+    {
+      "url": "https://www.dnoticias.pt/2026/10/9/508362-jpp-pede-maior-proteccao-das-familias-nao-abrangidas-pela-descida-de-irs/",
+      "titulo": "JPP pede maior protecção das famílias não abrangidas pela descida de IRS",
+      "nome": "DNOTICIAS.PT",
+      "rotulos": {
+        "posicao-jpp-irs": "DNOTICIAS.PT"
+      },
+      "sha256": "2c40b80d1daf15fcdf47911323f862c535224a1f9c69cc27fb5fdd26238c1fda",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/jpp-irs9.html"
+    },
+    {
+      "url": "https://recordeuropa.com/noticias/portugal/oe2027-be-diz-que-orcamento-da-migalhas-a-quem-trabalha-e-beneficia-os-mais-ricos-09-10-2026-361432",
+      "titulo": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
+      "nome": "TV RECORD EUROPA",
+      "rotulos": {
+        "posicao-be-rendimentos": "TV RECORD EUROPA"
+      },
+      "sha256": "238ee6aebf1b46e1b6ccbf19fd839f29e514322c9c0ddc6c9f467b22838bba5c",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/be-record.html"
+    },
+    {
+      "url": "https://www.pcp.pt/sobre-orcamento-do-estado-para-2027",
+      "titulo": "Sobre o Orçamento do Estado para 2027",
+      "nome": "Partido Comunista Português",
+      "rotulos": {
+        "posicao-pcp-irs-rendas": "Partido Comunista Português",
+        "posicao-pcp-smn": "Partido Comunista Português",
+        "posicao-pcp-salarios": "Partido Comunista Português",
+        "posicao-pcp-pensoes": "Partido Comunista Português",
+        "posicao-pcp-habitacao": "Partido Comunista Português",
+        "posicao-pcp-irc": "Partido Comunista Português",
+        "afirmacao-pcp-paula-ppp-2026-10-12": "Partido Comunista Português",
+        "afirmacao-pcp-paula-investimento-saude-2026-10-12": "Partido Comunista Português"
+      },
+      "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html"
+    },
+    {
+      "url": "https://files.diariodarepublica.pt/1s/2025/12/24900/0001400016.pdf",
+      "titulo": "Decreto-Lei n.º 139/2025, de 29 de dezembro",
+      "nome": "PRESIDÊNCIA DO CONSELHO DE MINISTROS",
+      "rotulos": {
+        "rmmg-2026": "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+      },
+      "sha256": "e9e6da9ad45ffb70cb0a19a755fd31e4da9934174a3885edaacf7523c842c64f",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/diplomas/rmmg-2026.pdf"
+    },
+    {
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-3815",
+      "titulo": "Real Decreto 126/2026, de 18 de febrero, por el que se fija el salario mínimo interprofesional para 2026.",
+      "nome": "Boletín Oficial del Estado",
+      "rotulos": {
+        "smi-espanha-2026": "Boletín Oficial del Estado"
+      },
+      "sha256": "f6ee7e98dfb20f41b5235b852af6424196d405692b6cb2bdfb559b2996d40519",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/diplomas/smi-espanha-2026.html"
+    },
+    {
+      "url": "https://ps.pt/oe2027-ps-leva-propostas-a-especialidade-para-responder-ao-custo-de-vida/",
+      "titulo": "OE2027: PS leva propostas à especialidade para responder ao custo de vida",
+      "nome": "Partido Socialista",
+      "rotulos": {
+        "posicao-ps-pensoes": "Partido Socialista",
+        "posicao-ps-irc": "Partido Socialista"
+      },
+      "sha256": "aaada6556fd3b6c5b286267736981a873e9b30630f55d51bf53e7e83e8a688d5",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/ps-oe14.html"
+    },
+    {
+      "url": "https://m.noticiasaominuto.com/politica/3063997/ao-minuto-debate-quinzenal-ja-comecou-oe2027-em-analise",
+      "titulo": "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição",
+      "nome": "Notícias ao Minuto",
+      "rotulos": {
+        "posicao-psd-impostos": "Notícias ao Minuto"
+      },
+      "sha256": "22c7b74a496bf7501d0dfd83d6b123aec3c0e56a79e585ff9b96525f6dc47db2",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/quinzenal9.html"
+    },
+    {
+      "url": "https://www.rtp.pt/noticias/especiais/temos-um-bom-orcamento-para-2027-garante-o-cds-pp_e1770634",
+      "titulo": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
+      "nome": "RTP",
+      "rotulos": {
+        "posicao-cds-orcamento": "RTP"
+      },
+      "sha256": "3adc1b6717102cdbadf00a19c0b0e7cd2f2dfe5cb6b943c1175dba5b9d4b2b23",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/posicoes/cds-rtp.html"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10dd_edpt1?lang=EN&freq=A&unit=PC_GDP&sector=S13&na_item=GD&sinceTimePeriod=2020",
+      "titulo": "Government deficit/surplus, debt and associated data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "europa-divida-pt-2025": "Eurostat",
+        "europa-divida-eu27_2020-2025": "Eurostat",
+        "europa-divida-ee-2025": "Eurostat",
+        "europa-divida-el-2025": "Eurostat",
+        "europa-divida-es-2025": "Eurostat"
+      },
+      "sha256": "93840cb5e23289f2051dbc289c048146f5b1d66138f0f5a5a1373b1b3e96a153",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/europa/divida.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?lang=EN&freq=A&unit=PC_GDP&sector=S13&na_item=B9&sinceTimePeriod=2020",
+      "titulo": "Government revenue, expenditure and main aggregates",
+      "nome": "Eurostat",
+      "rotulos": {
+        "europa-saldo-pt-2025": "Eurostat",
+        "europa-saldo-eu27_2020-2025": "Eurostat",
+        "europa-saldo-ro-2025": "Eurostat",
+        "europa-saldo-cy-2025": "Eurostat"
+      },
+      "sha256": "9de28176be043c9e211df61cb5f541f35476edf5a37291417fa23f1848d524e5",
+      "arquivo": "content/25 Orcamento 2027 Medidas/source/europa/saldo.json"
+    },
+    {
+      "url": "https://www.pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-com-esta-politica-abrir-um-novo-rumo-para-portugal",
+      "titulo": "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal",
+      "nome": "Partido Comunista Português",
+      "rotulos": {
+        "afirmacao-pcp-ppp-2026-10-15": "Partido Comunista Português"
+      },
+      "sha256": "8cce188d5cad10909dbf424c4fb543a6b83aa49f4be1ee9f1f7418492c350c51",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/debate/pcp-raimundo-2026-10-15.html"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
+      "titulo": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+      "nome": "UTAO",
+      "rotulos": {
+        "utao-saude-sem-prr-2027": "UTAO",
+        "utao-risco-execucao-sns-2027": "UTAO",
+        "utao-ppp-contingencias-natureza-2026": "UTAO",
+        "utao-saude-efetiva-2026-orcamento": "Ministério das Finanças",
+        "utao-saude-efetiva-2026-estimativa": "Ministério das Finanças"
+      },
+      "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_sha11_hf?format=JSON&lang=EN&freq=A&unit=PC_GDP&unit=EUR_HAB&icha11_hf=TOT_HF&icha11_hf=HF1&sinceTimePeriod=2020&geo=EU27_2020&geo=AT&geo=BE&geo=BG&geo=HR&geo=CY&geo=CZ&geo=DK&geo=EE&geo=FI&geo=FR&geo=DE&geo=EL&geo=HU&geo=IE&geo=IT&geo=LV&geo=LT&geo=LU&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SK&geo=SI&geo=ES&geo=SE",
+      "titulo": "Health care expenditure by financing scheme",
+      "nome": "Eurostat",
+      "rotulos": {
+        "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024": "Eurostat",
+        "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024": "Eurostat",
+        "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024": "Eurostat",
+        "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024": "Eurostat",
+        "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024": "Eurostat",
+        "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024": "Eurostat"
+      },
+      "sha256": "4b3a217450fa452c209d904ecef6cb5a5cfc83285d5c9ce8725b00bfbbfa1d11",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/eurostat/hlth_sha11_hf-2020-latest.json"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2022/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2022_1_Relatorio.pdf",
+      "titulo": "Orçamento do Estado 2022 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "ppp-oe2022-liquidos-2021": "Ministério das Finanças",
+        "saude-total-2022-orcamento-oe2022": "Ministério das Finanças"
+      },
+      "sha256": "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2022.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2023/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2023_doc16_Relatorio.pdf",
+      "titulo": "Orçamento do Estado 2023 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "ppp-oe2023-liquidos-2022": "Ministério das Finanças",
+        "saude-total-2023-orcamento-oe2023": "Ministério das Finanças"
+      },
+      "sha256": "c7fbb54aa43f14efc646852babac436267b768a6f24042f26cf478c6d80a90fc",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2023.pdf"
+    },
+    {
+      "url": "https://portugal.gov.pt/api/media/edge/Project/Portal-do-Governo/Portal-do-Governo/gc23/Files/Documentos/relatorio-do-orcamento-do-estado-2024/relatorio_do_orcamento_do_estado_2024.pdf",
+      "titulo": "Orçamento do Estado 2024 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "ppp-oe2024-liquidos-2023": "Ministério das Finanças",
+        "saude-total-2024-orcamento-oe2024": "Ministério das Finanças"
+      },
+      "sha256": "59fa52aa5264d68eac642a0fa4b7f4c399a25c0ce6ea011553eb9fc7ba7bcf67",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2024.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2025/Proposta%20Orcamento/Documentos%20do%20OE/OE2025_doc16_Relatorio.pdf",
+      "titulo": "Orçamento do Estado 2025 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "ppp-oe2025-liquidos-2024": "Ministério das Finanças",
+        "saude-total-2025-orcamento-oe2025": "Ministério das Finanças"
+      },
+      "sha256": "67420242cef230c10e7d1bfecd01191f1e9a60fb30f81116f208bf335561b33a",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2025.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/OE2026_doc16_Relatorio.pdf",
+      "titulo": "Orçamento do Estado 2026 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "ppp-oe2026-liquidos-2025": "Ministério das Finanças",
+        "ppp-oe2026-brutos-2025": "Ministério das Finanças",
+        "ppp-oe2026-receitas-2025": "Ministério das Finanças",
+        "saude-total-2026-orcamento-oe2026": "Ministério das Finanças"
+      },
+      "sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "titulo": "Orçamento do Estado 2027 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "ppp-oe2027-liquidos-2026": "Ministério das Finanças",
+        "ppp-oe2027-liquidos-2028": "Ministério das Finanças",
+        "ppp-oe2027-liquidos-2029": "Ministério das Finanças",
+        "ppp-oe2027-liquidos-2030": "Ministério das Finanças",
+        "ppp-oe2027-liquidos-2035": "Ministério das Finanças",
+        "ppp-oe2027-brutos-2027": "Ministério das Finanças",
+        "ppp-oe2027-receitas-2027": "Ministério das Finanças",
+        "ppp-oe2027-liquidos-2040": "Ministério das Finanças",
+        "ppp-oe2027-liquidos-2027-previsao-oe2026": "Ministério das Finanças",
+        "oe-2027-outras-despesas-dotacoes-execucao": "Ministério das Finanças",
+        "oe-2027-saude-dotacao-reforco-contratos-programa": "Ministério das Finanças",
+        "oe-2027-saude-contrato-programa-acss": "Ministério das Finanças"
+      },
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "arquivo": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf"
+    },
+    {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "titulo": "Orçamento do Estado para 2027",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "oe-2027-financas-efetiva-2026": "Ministério das Finanças",
+        "oe-2027-financas-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-financas-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-economia-efetiva-2026": "Ministério das Finanças",
+        "oe-2027-economia-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-economia-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-coesao-territorial-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-coesao-territorial-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-infraestruturas-e-habitacao-efetiva-2026": "Ministério das Finanças",
+        "oe-2027-infraestruturas-e-habitacao-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-infraestruturas-e-habitacao-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-justica-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-justica-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-seguranca-interna-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-seguranca-interna-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-educacao-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-educacao-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027": "Ministério das Finanças",
+        "oe-2027-ambiente-e-energia-efetiva-2026": "Ministério das Finanças",
+        "oe-2027-ambiente-e-energia-sem-prr-2026": "Ministério das Finanças",
+        "oe-2027-saude-pessoal-2026": "Ministério das Finanças",
+        "oe-2027-saude-pessoal-2027": "Ministério das Finanças",
+        "oe-2027-saude-pessoal-variacao": "Ministério das Finanças",
+        "oe-2027-saude-bens-servicos-2026": "Ministério das Finanças",
+        "oe-2027-saude-bens-servicos-2027": "Ministério das Finanças",
+        "oe-2027-saude-bens-servicos-variacao": "Ministério das Finanças",
+        "oe-2027-saude-investimento-2026": "Ministério das Finanças",
+        "oe-2027-saude-investimento-2027": "Ministério das Finanças",
+        "oe-2027-saude-investimento-variacao": "Ministério das Finanças",
+        "oe-2027-saude-outras-correntes-2026": "Ministério das Finanças",
+        "oe-2027-saude-outras-correntes-2027": "Ministério das Finanças",
+        "oe-2027-saude-transferencias-capital-2026": "Ministério das Finanças",
+        "oe-2027-saude-transferencias-capital-2027": "Ministério das Finanças",
+        "oe-2027-saude-investimento-variacao-sem-prr": "Ministério das Finanças",
+        "oe-2027-saude-fonte-impostos-2026": "Ministério das Finanças",
+        "oe-2027-saude-fonte-impostos-2027": "Ministério das Finanças",
+        "oe-2027-saude-fonte-receitas-proprias-2026": "Ministério das Finanças",
+        "oe-2027-saude-fonte-receitas-proprias-2027": "Ministério das Finanças",
+        "oe-2027-saude-fonte-fundos-europeus-2026": "Ministério das Finanças",
+        "oe-2027-saude-fonte-fundos-europeus-2027": "Ministério das Finanças",
+        "oe-2027-saude-transferencias-sns-2026": "Ministério das Finanças",
+        "oe-2027-saude-transferencias-sns-2027": "Ministério das Finanças",
+        "oe-2027-saude-transferencias-sns-variacao": "Ministério das Finanças",
+        "ppp-oe2027-ferroviario-2027": "Ministério das Finanças",
+        "ppp-oe2027-saude-2027": "Ministério das Finanças",
+        "ppp-oe2027-riscos-pedidos-rodoviarios": "Ministério das Finanças",
+        "ppp-oe2027-riscos-acrescimo": "Ministério das Finanças",
+        "ppp-oe2027-riscos-brisa": "Ministério das Finanças",
+        "ppp-oe2027-riscos-rotas-algarve-principal": "Ministério das Finanças",
+        "ppp-oe2027-riscos-rotas-algarve-mensal": "Ministério das Finanças"
+      },
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "arquivo": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2020/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2020_1_Rel-2020.pdf",
+      "titulo": "Orçamento do Estado 2020 · Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2020-orcamento-oe2020": "Ministério das Finanças"
+      },
+      "sha256": "6b4c6d70dc7ffb3d511afc7e0657a005b0c166d57114cee9d9b0765c71339ec0",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2020.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2021/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2021_Relatorio.pdf",
+      "titulo": "Orçamento do Estado 2021 · Proposta de Lei e Relatório",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2021-orcamento-oe2021": "Ministério das Finanças"
+      },
+      "sha256": "331c64486bb738e8f642cce674a9db2dfef000a9b3577d5d670c30af4b382082",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/oe-2021-eo.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/2020/CGE%202020%20vol1tomo01.pdf",
+      "titulo": "Conta Geral do Estado 2020 · Relatório de Análise Global e Conta da Segurança Social",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2020-execucao-cge2020": "Ministério das Finanças"
+      },
+      "sha256": "7914e8afd405bca672015b7f6c2d6c663f870ad015431e7189885cf158e08ace",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/cge-2020.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/2021/CGE%202021%20vol1tomo01.pdf",
+      "titulo": "Conta Geral do Estado 2021 · Relatório de Análise Global e Conta da Segurança Social",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2021-execucao-cge2021": "Ministério das Finanças"
+      },
+      "sha256": "30e1e9add47f385de43accead03a2ce0b67e3a4470c498dad63a3a059b5c6794",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/cge-2021.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/2022/CGE%202022%20vol1tomo01.pdf",
+      "titulo": "Conta Geral do Estado 2022 · Relatório de Análise Global e Conta da Segurança Social",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2022-execucao-cge2022": "Ministério das Finanças"
+      },
+      "sha256": "2d34e7f87d70afad287af8b09af06fbb9e0ab41561d47327686fae5fa41ee618",
+      "arquivo": "content/22 TAP/source/cge-2022.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/2023/CGE_2023_vol1tomo01.pdf",
+      "titulo": "Conta Geral do Estado 2023 · Relatório de Análise Global e Conta da Segurança Social",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2023-execucao-cge2023": "Ministério das Finanças"
+      },
+      "sha256": "63b1af4397fac148d6acc72007432938f8a95d5c295db197e013ef54fdeb1aa3",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/cge-2023.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/01_CGE2024_Relatorio_AnaliseGlobal_ContaSS.pdf",
+      "titulo": "Conta Geral do Estado 2024 · Relatório de Análise Global e Conta da Segurança Social",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2024-execucao-cge2024": "Ministério das Finanças"
+      },
+      "sha256": "385f3ccd4b1823a992959e29b7fb3fa1f56890c026dc10778f00438b077abafb",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/cge-2024.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/01_CGE2025_Relatorio_AnaliseGlobal_ContaSS.pdf",
+      "titulo": "Conta Geral do Estado 2025 · Relatório de Análise Global e Conta da Segurança Social",
+      "nome": "Ministério das Finanças",
+      "rotulos": {
+        "saude-total-2025-execucao-cge2025": "Ministério das Finanças"
+      },
+      "sha256": "d15f18e91b23ed9f987f605a4b72d45532f84e677048ffc3ca68b2b95d1ac415",
+      "arquivo": "content/24 Orcamento 2027 Analise/source/cge-2025.pdf"
+    },
+    {
+      "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx",
+      "titulo": "Síntese da execução orçamental, agosto de 2026",
+      "nome": "Entidade Orçamental",
+      "rotulos": {
+        "dgo-2026-08-saude-efetiva-jan-ago-2025": "Entidade Orçamental",
+        "dgo-2026-08-saude-efetiva-jan-ago-2026": "Entidade Orçamental",
+        "dgo-2026-08-saude-efetiva-variacao-homologa": "Entidade Orçamental",
+        "dgo-2026-08-sns-saldo-jan-ago-2026": "Entidade Orçamental",
+        "dgo-2026-08-sns-despesa-variacao-homologa": "Entidade Orçamental"
+      },
+      "sha256": "448789ab49c7d764afe8f4f89dfa3385f1ec22ccf2d40ef6e2f677af14c96b2c",
+      "arquivo": "content/20 Orcamento do Estado/source/eo-anexo-agosto.xlsx"
+    }
+  ],
+  "correcoes": [
+    {
+      "id": "hab-imprensa-pm-15",
+      "anterior": "Luís Montenegro",
+      "nome": "Diário de Notícias",
+      "documento": "content/23 Habitacao/source/imprensa-2.html",
+      "sha256": "0bd1b5c1d2eeb426a87b8960d5e8338586bde369730037c49518ff614e9e63d2"
+    },
+    {
+      "id": "hab-imprensa-pm-16",
+      "anterior": "Luís Montenegro",
+      "nome": "Diário de Notícias",
+      "documento": "content/23 Habitacao/source/imprensa-3.html",
+      "sha256": "5bc230f214d9e5196f2ce1c480d0e6eb23d0eb1d73a45dd7452d4cb73cb057b0"
+    },
+    {
+      "id": "hab-imprensa-psp-ferido",
+      "anterior": "PSP",
+      "nome": "Diário de Notícias",
+      "documento": "content/23 Habitacao/source/imprensa-9.html",
+      "sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8"
+    },
+    {
+      "id": "hab-imprensa-feridos39",
+      "anterior": "organização",
+      "nome": "Diário de Notícias",
+      "documento": "content/23 Habitacao/source/imprensa-9.html",
+      "sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8"
+    },
+    {
+      "id": "hab-imprensa-feridos35",
+      "anterior": "José Soeiro, dirigente nacional do BE",
+      "nome": "Diário de Notícias",
+      "documento": "content/23 Habitacao/source/imprensa-8.html",
+      "sha256": "b91b5eb99d5e016890e7acfa8cbb47b1ab80ca0487a1d6b4e8647f43c0636087"
+    },
+    {
+      "id": "hab-imprensa-mai",
+      "anterior": "Luís Neves",
+      "nome": "Diário de Notícias",
+      "documento": "content/23 Habitacao/source/imprensa-4.html",
+      "sha256": "14c6e8795eea3e4b99495c604e4108e50b5283a965ebed1960ee613375061d72"
+    },
+    {
+      "id": "hab-imprensa-debate-custos",
+      "anterior": "Luís Montenegro",
+      "nome": "RTP",
+      "documento": "content/23 Habitacao/source/imprensa-debate-quinzenal.html",
+      "sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d"
+    },
+    {
+      "id": "hab-imprensa-debate-protecao",
+      "anterior": "Luís Montenegro",
+      "nome": "RTP",
+      "documento": "content/23 Habitacao/source/imprensa-debate-quinzenal.html",
+      "sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d"
+    },
+    {
+      "id": "hab-imprensa-igai",
+      "anterior": "IGAI",
+      "nome": "RTP",
+      "documento": "content/23 Habitacao/source/imprensa-5.html",
+      "sha256": "43349a8cafe3dc16df098e9f28cdc1211dfe2883cc45083f9d36bf37129f93bf"
+    },
+    {
+      "id": "hab-imprensa-assistidos",
+      "anterior": "Luís Silva, comandante dos Bombeiros Voluntários do Porto",
+      "nome": "RTP",
+      "documento": "content/23 Habitacao/source/imprensa-7.html",
+      "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559"
+    },
+    {
+      "id": "hab-imprensa-feridos37",
+      "anterior": "Movimento pela Habitação",
+      "nome": "RTP",
+      "documento": "content/23 Habitacao/source/imprensa-7.html",
+      "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559"
+    },
+    {
+      "id": "hab-imprensa-acampados",
+      "anterior": "manifestantes",
+      "nome": "RTP",
+      "documento": "content/23 Habitacao/source/imprensa-6.html",
+      "sha256": "3db4c92b85aff4e6bf445060c7c460f41504e0b3578b0a238e1a68ff83106dcd"
+    },
+    {
+      "id": "hab-imprensa-amorim",
+      "anterior": "Carlos Abreu Amorim",
+      "nome": "DNOTICIAS.PT",
+      "documento": "content/23 Habitacao/source/imprensa-1.html",
+      "sha256": "f4c32b6e977d07cc217f9bbfaef00c6513455b139fddb067849a15c5a9c22f0c"
+    },
+    {
+      "id": "posicao-jpp-irs",
+      "anterior": "Diário de Notícias",
+      "nome": "DNOTICIAS.PT",
+      "documento": "content/25 Orcamento 2027 Medidas/source/posicoes/jpp-irs9.html",
+      "sha256": "2c40b80d1daf15fcdf47911323f862c535224a1f9c69cc27fb5fdd26238c1fda"
+    },
+    {
+      "id": "hab-pcp-rendas",
+      "anterior": "Paula Santos",
+      "nome": "Partido Comunista Português",
+      "documento": "content/23 Habitacao/source/pcp-pt-18.html",
+      "sha256": "7cb2ccb342cb008a13616d7ef3fa08c6cb57223a6a7ab1aa98462397b18f0841"
+    },
+    {
+      "id": "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+      "anterior": "Paula Santos",
+      "nome": "Partido Comunista Português",
+      "documento": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+      "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+    },
+    {
+      "id": "afirmacao-pcp-paula-ppp-2026-10-12",
+      "anterior": "Paula Santos",
+      "nome": "Partido Comunista Português",
+      "documento": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+      "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+    },
+    {
+      "id": "afirmacao-pcp-ppp-2026-10-15",
+      "anterior": "Paulo Raimundo",
+      "nome": "Partido Comunista Português",
+      "documento": "content/24 Orcamento 2027 Analise/source/debate/pcp-raimundo-2026-10-15.html",
+      "sha256": "8cce188d5cad10909dbf424c4fb543a6b83aa49f4be1ee9f1f7418492c350c51"
+    },
+    {
+      "id": "hab-ps-mais-valias",
+      "anterior": "José Luís Carneiro",
+      "nome": "Partido Socialista",
+      "documento": "content/23 Habitacao/source/ps-pt-14.html",
+      "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+    },
+    {
+      "id": "hab-ps-rendas",
+      "anterior": "José Luís Carneiro",
+      "nome": "Partido Socialista",
+      "documento": "content/23 Habitacao/source/ps-pt-14.html",
+      "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+    },
+    {
+      "id": "hab-ps-vazias",
+      "anterior": "José Luís Carneiro",
+      "nome": "Partido Socialista",
+      "documento": "content/23 Habitacao/source/ps-pt-14.html",
+      "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+    },
+    {
+      "id": "hab-pan-caucoes",
+      "anterior": "Inês de Sousa Real",
+      "nome": "PAN",
+      "documento": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf",
+      "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b"
+    },
+    {
+      "id": "hab-pan-controlo",
+      "anterior": "Inês de Sousa Real",
+      "nome": "PAN",
+      "documento": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf",
+      "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b"
+    },
+    {
+      "id": "hab-pan-tetos",
+      "anterior": "Inês de Sousa Real",
+      "nome": "PAN",
+      "documento": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf",
+      "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b"
+    },
+    {
+      "id": "hab-cgtp-convocatoria",
+      "anterior": "hotelariasul",
+      "nome": "Sindicato da Hotelaria do Sul",
+      "documento": "content/23 Habitacao/source/cgtp-convocatoria.html",
+      "sha256": "6b0691041e034d039facd8e4beed2c471b25d9e1ef4ea804c3699037b9874070"
+    },
+    {
+      "id": "hab-plataforma-reivindicacoes",
+      "anterior": "Não dá mais para viver assim",
+      "nome": "eventos.coletivos.org",
+      "documento": "content/23 Habitacao/source/eventos-coletivos-org-1.html",
+      "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127"
+    }
+  ]
+}

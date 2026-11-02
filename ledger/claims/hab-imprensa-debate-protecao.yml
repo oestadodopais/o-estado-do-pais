@@ -16,7 +16,7 @@ name_source: "HTML; cobertura do debate quinzenal; início literal único"
 measure: "vão proteger as pessoas"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Luís Montenegro"
+source: "RTP"
 document:
   title: "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal"
   edition: "2026-10-09"
@@ -49,4 +49,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] Só em imprensa. Atribuição e data da sessão por confirmar na fonte primária. A data não se infere do dia da semana. O número citado não foi validado. Data conferida no elemento time do artigo; a publicação em pub-data e a atualização têm o mesmo dia. O debate noticiado é de 9 de outubro de 2026, não de 15 ou 16 de outubro. · Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-debate-protecao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: Luís Montenegro
+  new_value: RTP
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

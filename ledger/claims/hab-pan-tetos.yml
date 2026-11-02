@@ -16,7 +16,7 @@ name_source: "PDF p. 4; parágrafo identificado pelo início; área física decl
 measure: "Por fim, urge travar, a curto prazo, o aumento do valor das rendas. Por isso, o PAN propõe a criação de um projeto piloto de aplicação de tetos às rendas. Este deve ser considerado para pessoas e famílias em situação económica desfavorável e a requerimento das mesmas. Esta medida deverá ser temporária e excecional, de forma a resolver os problemas com a subida do valor das rendas a curto prazo mas sem levar a efeitos perversos que se poderão revelar com a manutenção desta medida a longo prazo e de forma generalizada."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Inês de Sousa Real"
+source: "PAN"
 document:
   title: "Projeto de Resolução n.º 1272/XVII/2ª"
   edition: "2026-09-19"
@@ -50,4 +50,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor]  Frase ou parágrafo completo, conferido por duas extrações. · Cruzado de ResearchHub content/23 Habitacao · hab-pan-tetos."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: Inês de Sousa Real
+  new_value: PAN
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

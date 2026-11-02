@@ -12,6 +12,7 @@
  */
 
 import crypto from 'node:crypto';
+import { errosDoPublicador } from './publicadores.mjs';
 import { errosDaFormaDaLinha } from './forma-da-citacao.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -1622,6 +1623,7 @@ export function validateLedger() {
   for (const [id, c] of claims) {
     const onde = `[${c.__file}]`;
     const doc = documentoDaLinha(c);
+    errors.push(...errosDoPublicador(c));
     // V2-a, §1.181: as palavras atribuídas a quem o documento identifica.
     if (c.afirmacao !== undefined && c.afirmacao !== true) errors.push(`${onde} afirmacao só aceita true ou a ausência do campo`);
     if(c.texto_documental!==undefined&&!textoDocumentalConferido(c))errors.push(`${onde} V2E texto documental: valor, excerto ou proveniência diferente da prova selada`);

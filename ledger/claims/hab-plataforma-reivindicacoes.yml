@@ -16,7 +16,7 @@ name_source: "HTML; início literal único"
 measure: "Manifestação - Já não dá mais para viver assim!"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Não dá mais para viver assim"
+source: "eventos.coletivos.org"
 document:
   title: "Manifestação - Já não dá mais para viver assim!"
   edition: "2026-10-10"
@@ -46,4 +46,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "Cruzado de ResearchHub content/23 Habitacao · hab-plataforma-reivindicacoes."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: Não dá mais para viver assim
+  new_value: eventos.coletivos.org
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

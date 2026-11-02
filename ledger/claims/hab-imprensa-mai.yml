@@ -16,7 +16,7 @@ name_source: "HTML; início literal único"
 measure: "há lei e ordem que têm de ser cumpridas"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Luís Neves"
+source: "Diário de Notícias"
 document:
   title: "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima"
   edition: "2026-10-15"
@@ -49,4 +49,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] Só em imprensa. Atribuição por confirmar na fonte primária; não tratar a transcrição do jornal como documento da pessoa ou entidade. Não harmonizar contagens. · Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-mai."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: Luís Neves
+  new_value: Diário de Notícias
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.

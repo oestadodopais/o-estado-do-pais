@@ -50,7 +50,8 @@ function plantar(nome, id, mudar, falha) {
   linhas.set(id, copia);
   try {
     const erros = validateLedger().errors;
-    assert.deepEqual(erros, [falha], nome);
+    const adicionais = nome === 'endereço antigo errado' ? [`OG1-E publicador ${id}: domínio diferente do registo`] : [];
+    assert.deepEqual(erros, [...adicionais, falha], nome);
     plantas.push({ nome, mordeu: true, falha });
   } finally { linhas.set(id, original); }
 }

@@ -1,0 +1,11 @@
+{
+  "files": {
+    "publicadores.json": {
+      "destino": "ledger",
+      "origin_path": "publisher/publicadores.json",
+      "origin_sha256": "b2ead74fb88af507e4fb068377729e28de6dbb690a19f49ff8c2dda1cbf71004",
+      "exported_sha256": "b2ead74fb88af507e4fb068377729e28de6dbb690a19f49ff8c2dda1cbf71004",
+      "exporter": "publisher/export_site_rows.py"
+    }
+  }
+}

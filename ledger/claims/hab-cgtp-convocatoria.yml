@@ -16,7 +16,7 @@ name_source: "HTML; início literal único"
 measure: "CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "hotelariasul"
+source: "Sindicato da Hotelaria do Sul"
 document:
   title: "MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO"
   edition: "2026-09-15"
@@ -49,4 +49,13 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] Canal do Sindicato da Hotelaria do Sul, filiado na CGTP; convocatória para Lisboa. · Cruzado de ResearchHub content/23 Habitacao · hab-cgtp-convocatoria."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-02'
+  kind: proveniencia
+  field: source
+  old_value: hotelariasul
+  new_value: Sindicato da Hotelaria do Sul
+  reason: O campo Publicado por não dizia quem publicou o documento; passou a dizer
+    o nome que o próprio documento dá a quem o publica.
+  reason_en: The Published by field did not name who published the document; it now
+    gives the name the document itself gives its publisher.
