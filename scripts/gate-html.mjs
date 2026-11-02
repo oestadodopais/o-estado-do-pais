@@ -275,6 +275,7 @@ const semOLugar = (t) => t.replace(/ (?:em|in) Portugal\b/, '');
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import {conferirTitulosPublicados} from './titulos-publicados.mjs';
 import { conferirFormaDasCitacoes } from './forma-da-citacao.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -4574,7 +4575,8 @@ for (const file of ficheirosHtml(DIST)) {
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
   // OG1-E: antes das saídas antecipadas, em todas as páginas e documentos.
-  for (const falta of conferirFormaDasCitacoes(root, rota, claims)) err(falta);
+  for (const falta of conferirFormaDasCitacoes(root, rota, claims, {html})) err(falta);
+  for(const falta of conferirTitulosPublicados(root))err(falta);
   if (rota?.key === 'linha') ER1_RECIBOS[root.querySelector('[data-incorporar-aviso]') ? 'semCodigo' : 'comCodigo']++;
   try { tirarCodigoConferido(root, rota); } catch (e) { err(e.message); }
 

@@ -27,7 +27,7 @@ import ValorDaProva from '../components/ValorDaProva.astro';
 import Marcador from '../components/Marcador.astro';
 import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import CampoDeBusca from '../components/inicio/CampoDeBusca.astro';
-import { allClaims, provenienciaIncompleta, ressalvaDaLinha } from '../lib/ledger.mjs';
+import { allClaims, provenienciaIncompleta, ressalvaDaLinha, atribuicaoDaLinha } from '../lib/ledger.mjs';
 import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -35,7 +35,7 @@ import { t } from '../i18n/strings.mjs';
 import { nomeDaMedida } from '../lib/nomes.mjs';
 import { semAcentos } from '../lib/inicio.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { linguaDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 import { prova } from '../lib/prova.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
@@ -311,6 +311,8 @@ const p = prova(lang);
                     />
                   </span>
                 )}
+                {c.forma_da_citacao === 'relato' && <span class="livro-item-campo"><span class="livro-item-k">{s.prov.documento}</span>{' '}<CampoDaLinha id={c.id} campo="document.title" valor={c.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(c.document.title, lang)} /></span>}
+                {c.forma_da_citacao && atribuicaoDaLinha(c, lang) && <span class="livro-item-campo"><span class="livro-item-k">{s.prov.atribuicao}</span>{' '}<CampoDaLinha id={c.id} campo={lang === 'en' && c.attributed_to_en ? 'attributed_to_en' : 'attributed_to'} valor={atribuicaoDaLinha(c, lang)} lang={lang} /></span>}
                 {c.access_date !== null && c.access_date !== undefined && (
                   <span class="livro-item-campo">
                     <span class="livro-item-k">{c.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</span>{' '}

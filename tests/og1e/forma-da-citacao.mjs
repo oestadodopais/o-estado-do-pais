@@ -13,7 +13,7 @@ const q=`«${esc(base.excerpt)}»`,doc=`«${esc(base.document.title)}»`;
 let count=0;
 for(const lang of ['pt','en']) {
  const intro=lang==='pt'?'pela notícia':'by the report';
- for(const key of ['estudo','documento','texto','dossie','discussao','explicacao','explicacoes','linha','metodo','rota-nova',undefined]) {
+ for(const key of ['estudo','documento','texto','dossie','discussao','explicacao','explicacoes','metodo','rota-nova',undefined]) {
   for(const [name,text,code] of [['pessoa',`A pessoa: ${q}`,1],['antes',`A pessoa, ${intro} ${doc}: ${q}`,0],['depois',`${q}, ${intro} ${doc}.`,0],['outra frase',`${doc}. A pessoa: ${q}`,1]]) {
    const html=parse(`<main><p>${text}</p></main>`);
    const errors=conferirFormaDasCitacoes(html,{key,lang},new Map([[base.id,base]]));

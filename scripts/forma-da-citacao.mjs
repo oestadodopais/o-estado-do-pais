@@ -1,3 +1,8 @@
+import fs from 'node:fs';
+import {edicoesGuardadas,sha256} from '../src/lib/edicoes.mjs';
+import {provaDosBytesDaEdicao} from '../src/lib/leis-da-edicao.mjs';
+import {errosDoPublicador} from '../src/lib/publicadores.mjs';
+import {atribuicaoDaLinha} from '../src/lib/ledger.mjs';
 /** A frase é lida no HTML de todas as famílias editoriais, nas duas edições. */
 const normal = s => String(s??'').replace(/\s+/gu,' ').trim();
 const escape = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
@@ -56,7 +61,45 @@ export function unidadesDaForma(root) {
   }
   visit(root);flush();return result;
 }
-export function conferirFormaDasCitacoes(root, rota, rows) {
+const guardadas=edicoesGuardadas();
+export function conferirEdicaoGuardada(rota,html) {
+  const e=guardadas.find(e=>rota?.key==='documento'&&rota.params?.slug===e.slug&&rota.lang===e.lang&&rota.params?.date===e.data);
+  if(!e)return null;
+  const bytes=fs.readFileSync(e.ficheiro);
+  const erro=sha256(bytes)!==e.sha256?'sha256 diferente da lista':typeof html!=='string'?'HTML por conferir':provaDosBytesDaEdicao(bytes.toString('utf8'),html,e.lang);
+  return {sha256:e.sha256,erro:erro||null};
+}
+export function conferirCartoesDeCitacao(root,rows) {
+  return root.querySelectorAll('.cartao-medida, [data-cartao-medida], [data-linha-sem-nome]').flatMap(card=>{
+    const ids=[card.getAttribute('data-cartao-medida'),card.getAttribute('data-linha-sem-nome'),...card.querySelectorAll('[data-claim]').map(el=>el.getAttribute('data-claim'))];
+    return [...new Set(ids)].filter(id=>rows.get(id)?.unit==='afirmação').map(id=>`OG1-E ${id}: citação num cartão de medida`);
+  });
+}
+export function conferirRegistoDaCitacao(root,row,lang) {
+  const errors=errosDoPublicador(row);
+  const campo=(name)=>root.querySelectorAll('[data-linha-claim][data-linha-campo]').filter(el=>el.getAttribute('data-linha-claim')===row.id&&el.getAttribute('data-linha-campo')===name);
+  const exige=(name,value)=>{if(!value||!campo(name).some(el=>normal(el.textContent)===normal(value)))errors.push(`OG1-E ${row.id}: registo sem ${name} conferido`);};
+  exige('source',row.source);
+  if(row.forma_da_citacao==='relato')exige('document.title',row.document?.title);
+  exige(lang==='en'&&row.attributed_to_en?'attributed_to_en':'attributed_to',atribuicaoDaLinha(row,lang));
+  return errors;
+}
+export function conferirFormaDasCitacoes(root, rota, rows, {html}={}) {
   const lang=rota?.lang??(root.querySelector('html')?.getAttribute('lang')?.startsWith('en')?'en':'pt');
-  return unidadesDaForma(root).flatMap(text=>errosDaFormaNoTexto(text,rows,lang));
+  const cards=conferirCartoesDeCitacao(root,rows);
+  const archive=conferirEdicaoGuardada(rota,html);
+  if(archive&&!archive.erro)return cards;
+  const errors=archive?.erro?[`OG1-E edição guardada: ${archive.erro}`]:[];
+  if(rota?.key==='linha') {
+    const row=rows.get(rota.params?.slug);
+    return [...cards,...errors,...(row?.forma_da_citacao?conferirRegistoDaCitacao(root,row,lang):[])];
+  }
+  if(rota?.key==='livro') {
+    for(const item of root.querySelectorAll('[data-linha-id]')) {
+      const row=rows.get(item.getAttribute('data-linha-id'));
+      if(row?.forma_da_citacao)errors.push(...conferirRegistoDaCitacao(item,row,lang));
+    }
+    return [...cards,...errors];
+  }
+  return [...cards,...errors,...unidadesDaForma(root).flatMap(text=>errosDaFormaNoTexto(text,rows,lang))];
 }
