@@ -54,7 +54,7 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  * aberta esquecida, e fecha a construção como uma violação fecharia.
  */
 import fs from 'node:fs';
-import {primeirasEdicoes} from '../src/lib/edicoes.mjs';
+import {primeirasEdicoes,edicoesGuardadas} from '../src/lib/edicoes.mjs';
 import {conferirPortasDaEdicao,conferirColecoes} from './lugar-edicoes.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
@@ -1129,7 +1129,7 @@ for (const ficheiro of paginas) {
   if (FICHEIROS_SEM_ROTA.has(rel)) continue;
   const chaveDaRota = rota?.key ?? null;
   if(chaveDaRota==='documento' && rota.params.date) {
-    if(historicas.some(e=>e.rota===url))vistas.documentos_historicos++;
+    if(edicoesGuardadas().some(e=>e.rota===url))vistas.documentos_historicos++;
     else falhas.push(`ED1: documento histórico não declarado: ${url}`);
   }
   const lang = rota?.lang ?? (rel.startsWith('en/') ? 'en' : 'pt');
@@ -2288,7 +2288,7 @@ const COLECOES_DOS_ESTUDOS = {
   indice: LANGS.length,
   edicoes: WORKS.length * LANGS.length,
   primeiras_edicoes: historicas.length,
-  documentos_historicos: historicas.length,
+  documentos_historicos: edicoesGuardadas().length,
   /* E1 (01.10.2026): a lista traz os estudos sem sucessor; um estudo com
      sucessor continua a ter a sua página (estudo, edições), mas a sua linha da
      lista passou a ser a do estudo que lhe sucede. */

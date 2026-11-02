@@ -1,5 +1,5 @@
 import { CORRECOES_TEXTO } from '../data/correcoes.mjs';
-import { primeiraEdicao } from './edicoes.mjs';
+import { portasDaCorrecao } from './edicoes.mjs';
 import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mjs';
 /**
  * «O QUE MUDOU» NO SEU LUGAR (B1c, 22.09.2026).
@@ -368,10 +368,10 @@ function correcoesDosTextos(lang) {
   return CORRECOES_TEXTO.map(e => {
     const work = WORKS.find(w => w.slug === e.slug);
     const edicao = work?.editions.find(d => d.lang === lang);
-    const primeira = primeiraEdicao(e.slug, lang);
-    if (!work || !edicao || !primeira) throw new Error(`ED1: correção sem edição: ${e.slug}/${lang}`);
+    const portas = portasDaCorrecao(e.slug, lang, e.data);
+    if (!work || !edicao || !portas) throw new Error(`ED1: correção sem edição: ${e.slug}/${lang}`);
     return {...e, tipo: /** @type {const} */ ('texto'), titulo: edicao.title,
-      primeira: primeira.rota, atual: routePath('documento', lang, {slug: e.slug}),
+      primeira: portas.antes.rota, atual: portas.depois.rota, rotuloPrimeira: portas.rotuloAntes, rotuloAtual: portas.rotuloDepois,
       lugar: lugarPorChave(typeof work.subject === 'string' ? work.subject : PORTUGAL, lang),
       chaveDaMudanca: `texto|${e.slug}|${e.data}`};
   });

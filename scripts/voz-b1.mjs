@@ -1,3 +1,5 @@
+import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
+import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 /** B1: lista fechada em toda a superfície própria do estudo e da lista.
  * O corpo e as marcas dispensadas são conferidos pelos portões de conteúdo.
@@ -146,7 +148,8 @@ export function verificaB1(raiz) {
         if (motivo === 'data-do-repositorio' && (el.closest('[data-estudo-edicao]') || el.closest('[data-sucessor-edicao]'))) dispensados.add(el);
         if (motivo === 'data-editorial' && el.hasAttribute('data-estudo-atualizacao')) {
           const [slug, lingua] = (el.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao') ?? '').split('/');
-          const atualizada = WORKS.find(w => w.slug === slug)?.editions.find(e => e.lang === lingua)?.updated;
+          const work=WORKS.find(w=>w.slug===slug),edicao=work?.editions.find(e=>e.lang===lingua);
+          const atualizada=work&&edicao?dataAtualizacaoDaEdicao(slug,lingua,publicacaoEd1(work,edicao)):null;
           if (atualizada && el.getAttribute('datetime') === atualizada && el.textContent.trim() === atualizada.split('-').reverse().join('.')) dispensados.add(el);
         }
         if (motivo === 'identificador-tecnico' && el.closest('.texto-dobra')) dispensados.add(el);

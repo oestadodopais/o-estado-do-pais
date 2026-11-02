@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
+import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { primeiraEdicao } from '../src/lib/edicoes.mjs';
 /**
  * O PORTÃO DAS DATAS DE PUBLICAÇÃO · três contas, e nenhuma confia na anterior.
@@ -387,12 +389,13 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
     }
-    if (slugDaPagina && !confereAtualizacao(bloco, principal.updated)) {
+    const atualizada=dataAtualizacaoDaEdicao(slug,lang,publicacaoEd1(work,principal));
+    if (slugDaPagina && !confereAtualizacao(bloco, atualizada)) {
       falhas.push(`${rota}: a atualização impressa diverge de updated em ${slug}/${lang}.`);
     }
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina
-      ? (principal.updated && primeiraEdicao(slug, lang)?.rota || (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`))
+      ? (atualizada && primeiraEdicao(slug, lang)?.rota || (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`))
       : (linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`);
     if (porta.replace(/\/$/, '') !== esperada) falhas.push(`${rota}: a data de ${slug}/${lang} está junto da porta errada: ${porta}.`);
     const marcas = marcasDeData(bloco);

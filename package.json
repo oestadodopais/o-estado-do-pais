@@ -77,7 +77,7 @@
     "check:eo1": "node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs && node tests/eo1/metades.mjs && node tests/eo1/definicoes.mjs",
     "check:dossies": "node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs && node tests/dossies/leitura.mjs && node tests/dossies/reguas.mjs",
     "check:selos": "node tests/selos/unidades.mjs && node tests/selos/plantas.mjs && node tests/selos/renderizacao.mjs && node tests/selos/inventario.mjs && node tests/selos/apoios.mjs && node tests/selos/cadeia.mjs && node scripts/check-selos.mjs",
-    "check:edicoes": "node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs && node tests/edicoes/reguas.mjs && node tests/edicoes/contagem.mjs && node tests/edicoes/leis.mjs && node tests/edicoes/historia.mjs"
+    "check:edicoes": "node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs && node tests/edicoes/reguas.mjs && node tests/edicoes/contagem.mjs && node tests/edicoes/leis.mjs && node tests/edicoes/historia.mjs && node tests/edicoes/faixas.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

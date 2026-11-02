@@ -76,7 +76,11 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto) {
       if (els.length !== 1 || normal(els[0].textContent) !== normal(valor) || (campo === 'data' && els[0].getAttribute('datetime') !== data)) erros.push(`ED1 texto: ${slug} campo ${campo}`);
       else campos.push(els[0]);
     }
-    for (const [porta,rota,label] of [['primeira',rotaPrimeira(e),lang==='pt'?'Primeira edição':'First edition'],['atual',rotaAtual(slug,lang),lang==='pt'?'Edição atual':'Current edition']]) {
+    const vs=e.edicoes,i=vs.findIndex(v=>v.data===data);
+    if(i<1){erros.push(`ED1 texto: ${slug} sem par de versões`);continue;}
+    const rotaDaVersao=n=>n===vs.length-1?rotaAtual(slug,lang):`${rotaAtual(slug,lang)}/${vs[n].data}`;
+    const rotuloDaVersao=n=>n===0?(lang==='pt'?'Primeira edição':'First edition'):n===vs.length-1?(lang==='pt'?'Edição atual':'Current edition'):(lang==='pt'?'Edição de ':'Edition of ')+vs[n].data.split('-').reverse().join('.');
+    for (const [porta,rota,label] of [['primeira',rotaDaVersao(i-1),rotuloDaVersao(i-1)],['atual',rotaDaVersao(i),rotuloDaVersao(i)]]) {
       const links = li.querySelectorAll(`[data-texto-porta="${porta}"]`);
       if (links.length !== 1 || links[0].getAttribute('href') !== rota || normal(links[0].textContent) !== label) erros.push(`ED1 texto: ${slug} porta ${porta}`);
     }

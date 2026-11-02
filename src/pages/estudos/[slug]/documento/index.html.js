@@ -1,3 +1,4 @@
+import {documentoDaHistoriaServido} from '../../../../lib/edicoes.mjs';
 /**
  * `/estudos/<slug>/documento` — o estudo original, alojado tal como foi publicado.
  *
@@ -15,7 +16,7 @@ export function getStaticPaths() {
 }
 
 export function GET({ params }) {
-  return new Response(documentoServido(params.slug, 'pt'), {
+  return new Response(documentoDaHistoriaServido(params.slug, 'pt'), {
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
   });
 }

@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
+import {manifestoDasEdicoes} from '../src/lib/edicoes.mjs';
 import { provaDosBytesDaEdicao } from '../src/lib/leis-da-edicao.mjs';
-import { primeiraEdicao, primeiraEdicaoServida } from '../src/lib/edicoes.mjs';
+import { primeiraEdicao, primeiraEdicaoServida, documentoDaHistoriaServido, edicoesGuardadas } from '../src/lib/edicoes.mjs';
 import { conferirTextoHtml, contagemDasCorrecoesNoPortao } from './edicoes-conferir.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 import {naRevisaoDaSemana} from './revisoes-da-semana.mjs';
@@ -1548,7 +1550,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
     err(`documento de um estudo que não existe no arquivo: "${slug}".`);
     return;
   }
-  const origem = rota.params.date ? primeiraEdicao(slug, lang) : documentoDaEdicao(slug, lang);
+  const origem = rota.params.date ? edicoesGuardadas().find(e=>e.slug===slug&&e.lang===lang&&e.data===rota.params.date) : documentoDaEdicao(slug, lang);
   if (!origem) {
     err(
       `há um documento construído para "${slug}" (${lang}), mas não há ficheiro de origem em ` +
@@ -1560,7 +1562,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   /* 4 — o construído é a origem mais a faixa, e nada mais. */
   let esperado;
   try {
-    esperado = rota.params.date ? primeiraEdicaoServida(slug, lang, rota.params.date) : documentoServido(slug, lang);
+    esperado = rota.params.date ? primeiraEdicaoServida(slug, lang, rota.params.date) : documentoDaHistoriaServido(slug, lang);
   } catch (e) {
     err(`não foi possível reconstruir o documento "${slug}" (${lang}): ${e.message}`);
     return;
@@ -1599,6 +1601,8 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
         `      origem: ${path.relative(ROOT, origem.ficheiro)}`,
     );
   }
+
+  for(const erro of conferirFaixaDaVersao(root,manifestoDasEdicoes(),slug,lang,rota.params.date??null))err(erro);
 
   /* 5 — a faixa: uma só, a ligar para a página do estudo, sem algarismos. */
   const faixas = root.querySelectorAll('[data-oedp-faixa]');

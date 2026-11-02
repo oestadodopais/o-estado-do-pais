@@ -1,3 +1,5 @@
+import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
+import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 /** Régua independente do resolvedor da vista. */
 import { parse } from 'node-html-parser';
 export function conferirDataDeclarada(work, edition, entrada) {
@@ -26,8 +28,10 @@ export function conferirPublicacaoDeclaradaNoHtml(work, edition, entrada, html) 
   if(!faixa)return ['falta a faixa da edição declarada'];
   const datas=faixa.querySelectorAll('time:not([data-estudo-atualizacao])');
   const atualizacoes=faixa.querySelectorAll('[data-estudo-atualizacao]');
-  if(edition.updated) {
-    const iso=edition.updated,forma=`${iso.slice(8)}.${iso.slice(5,7)}.${iso.slice(0,4)}`;
+  const atualizada=dataAtualizacaoDaEdicao(work.slug,edition.lang,edition.date);
+  if(edition.updated&&edition.updated!==atualizada)erros.push('updated diverge da história publicada');
+  if(atualizada) {
+    const iso=atualizada,forma=`${iso.slice(8)}.${iso.slice(5,7)}.${iso.slice(0,4)}`;
     if(atualizacoes.length!==1||atualizacoes[0]?.getAttribute('datetime')!==iso||atualizacoes[0]?.textContent.trim()!==forma)erros.push('a atualização impressa não é a declarada');
   } else if(atualizacoes.length)erros.push('a edição imprime uma atualização não declarada');
   let artigos=[];

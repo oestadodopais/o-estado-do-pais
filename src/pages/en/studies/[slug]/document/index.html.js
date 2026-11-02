@@ -1,3 +1,4 @@
+import {documentoDaHistoriaServido} from '../../../../../lib/edicoes.mjs';
 /**
  * `/en/studies/<slug>/document` — a edição inglesa do documento original.
  * Espelho exacto da rota portuguesa. Ver src/lib/documentos.mjs.
@@ -11,7 +12,7 @@ export function getStaticPaths() {
 }
 
 export function GET({ params }) {
-  return new Response(documentoServido(params.slug, 'en'), {
+  return new Response(documentoDaHistoriaServido(params.slug, 'en'), {
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
   });
 }
