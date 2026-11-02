@@ -296,7 +296,7 @@ export function leInventario(raiz) {
 /** SEL1: a separação de nós pelo selo não cria espaços antes da pontuação.
  * Só se normaliza depois de letras ou fechos, nunca entre algarismos. */
 export function normalizaFraseDoInventario(texto) {
-  return texto.replace(/(?<=[\p{L}%»\)\]])\s+(?=[,.;:!?])/gu, '');
+  return texto.replace(/(?<=[\p{L}%»\)\]])\s+(?=[,.;:!?)])/gu, '');
 }
 
 /** Um nome acessível composto só repete o título se todos os caracteres coincidem. */
