@@ -1,4 +1,5 @@
 ---
+import { primeiraEdicao } from '../lib/edicoes.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
 import { dataPublicacao } from '../lib/publicacao.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -6,12 +7,14 @@ import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 const { work, lang } = Astro.props;
 const principal = work.editions.find(e => e.lang === lang) ?? work.editions[0];
 const documento = documentosDoEstudo(work.slug).find(d => d.lang === principal.lang);
+const primeira = primeiraEdicao(work.slug, principal.lang);
 const data = dataPublicacao(work, principal);
 const rotulos = ROTULOS_B1[lang];
 if (!documento) throw new Error(`Edição sem documento ou data: ${work.slug}/${principal.lang}`);
 ---
 <p class="estudo-publicado" data-estudo-edicao={`${work.slug}/${principal.lang}`}>
-  <a href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>
+  {principal.updated && primeira && <><a href={primeira.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{rotulos.primeiraEdicao}</a><span aria-hidden="true"> · </span></>}
+  <a href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{principal.updated ? rotulos.edicaoAtual : data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>
   {data && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
   <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time></>}
   {principal.updated && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.atualizado}</span>{' '}
