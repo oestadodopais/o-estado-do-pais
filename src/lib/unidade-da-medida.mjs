@@ -1,11 +1,16 @@
 /** SEL1: uma só lista, com a correspondência mais longa primeiro. */
-export const UNIDADES_DA_MEDIDA = Object.freeze([
-  'mil milhões de euros', 'milhões de euros', 'mil euros', '% do PIB',
-  'pontos percentuais', 'mil milhões', 'milhões', 'euros', '%', 'p.p.', 'pontos', 'dias',
-  'billion euros', 'million euros', 'thousand euros', '% of GDP',
-  'percentage points', 'billion', 'million', 'points', 'days',
-  'anos', 'ano', 'vezes', 'vez', 'years', 'year', 'times', 'time',
-].sort((a, b) => b.length - a.length));
+const grandezasPt = ['mil', 'milhão', 'milhões', 'mil milhões'];
+const grandezasEn = ['thousand', 'million', 'billion', 'thousand million'];
+export const UNIDADES_DA_MEDIDA = Object.freeze([...new Set([
+  ...grandezasPt.flatMap(g => [g, g + ' de euros']),
+  ...grandezasEn.flatMap(g => [g, g + ' euros', g + ' of euros']),
+  'mil euros', 'euros', 'euro', '% do PIB', '% of GDP', '%',
+  'pontos percentuais', 'ponto percentual', 'percentage points', 'percentage point',
+  'p.p.', 'pontos', 'ponto', 'points', 'point',
+  'vezes', 'vez', 'times', 'time',
+  'dias', 'dia', 'semanas', 'semana', 'meses', 'mês', 'anos', 'ano', 'horas', 'hora',
+  'days', 'day', 'weeks', 'week', 'months', 'month', 'years', 'year', 'hours', 'hour',
+])].sort((a, b) => b.length - a.length));
 
 /** Só o início deste nó de texto, com no máximo um espaço normal ou fino.
  * @param {string} texto
