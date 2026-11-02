@@ -37,7 +37,9 @@ const complementos = COMPLEMENTOS_DA_MEDIDA.map(unidade=>({unidade,re:new RegExp
 export function unidadeDaMedida(texto) {
   const forma=formas.find(f=>f.re.test(texto));
   if(!forma)return null;
-  let fim=forma.re.exec(texto)[0].length, unidade=forma.unidade;
+  const inicio=forma.re.exec(texto);
+  if(!inicio)return null;
+  let fim=inicio[0].length, unidade=forma.unidade;
   if(MESES_DA_MEDIDA.some(m=>unidade.toLowerCase()===m.toLowerCase()||unidade.toLowerCase()==='de '+m.toLowerCase())) {
     const ano=new RegExp('^'+espaco+'+(?:de'+espaco+'+)?[0-9]{4}(?![0-9])','iu').exec(texto.slice(fim));
     if(ano){fim+=ano[0].length;unidade+=ano[0].replace(/\s+/gu,' ');}
@@ -49,7 +51,9 @@ export function unidadeDaMedida(texto) {
     }
     const c=complementos.find(f=>f.re.test(texto.slice(fim)));
     if(!c)break;
-    fim+=c.re.exec(texto.slice(fim))[0].length;unidade+=' '+c.unidade;
+    const trecho=c.re.exec(texto.slice(fim));
+    if(!trecho)break;
+    fim+=trecho[0].length;unidade+=' '+c.unidade;
   }
   return {unidade,texto:texto.slice(0,fim)};
 }
