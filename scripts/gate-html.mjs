@@ -1,5 +1,5 @@
-import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 #!/usr/bin/env node
+import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
 import { conferirLeitura } from '../tests/dossies/leitura.mjs';
 import { conferirPaginaDaExplicacao } from '../tests/explicacoes/explicacao.mjs';

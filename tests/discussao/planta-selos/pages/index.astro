@@ -1,12 +1,13 @@
 ---
+import { UNIDADES_DA_MEDIDA } from '../../../../src/lib/unidade-da-medida.mjs';
 import Frase from '../../../../src/components/explicacoes/FraseDaExplicacao.astro';
 import { ITENS } from '../../../../src/data/discussao.mjs';
 import { resolverExplicacao } from '../../../../src/lib/explicacoes.mjs';
 
-// A planta altera os dados antes de construir: nunca fabrica a marcação do selo.
+// SEL1: ambas as formas dos dados constroem a medida inteira; a planta desloca o selo numa cópia do HTML.
 const casos = [];
 for (const lang of ['pt', 'en']) {
-  for (const unidade of ['milhões de euros', 'mil milhões de euros', 'milhões', 'euros', '%', 'pontos percentuais', 'p.p.', 'million euros', 'billion euros', 'million', 'percentage points']) {
+  for (const unidade of UNIDADES_DA_MEDIDA) {
     for (const plantada of [false, true]) {
       const itens = structuredClone(ITENS);
       const item = itens[0];

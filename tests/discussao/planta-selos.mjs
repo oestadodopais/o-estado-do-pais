@@ -1,3 +1,4 @@
+import { UNIDADES_DA_MEDIDA } from '../../src/lib/unidade-da-medida.mjs';
 /** Constrói cópias dos itens pelo Astro e mede o HTML com a régua dos selos. */
 import fs from 'node:fs';
 import os from 'node:os';
@@ -17,9 +18,18 @@ export async function plantasDosSelosConstruidos(saida, unidadesDepoisDoSelo) {
     const html = fs.readFileSync(path.join(temporario, 'dist/index.html'), 'utf8');
     const root = parse(html), plantas = [], controlos = [];
     for (const caso of root.querySelectorAll('[data-planta]')) {
-      const desvios = unidadesDepoisDoSelo(caso);
       const plantada = caso.getAttribute('data-planta') === 'true';
       const linha = caso.getAttribute('data-linha');
+      const copia = parse(caso.outerHTML);
+      assert.equal(unidadesDepoisDoSelo(copia).length,0,'SEL1: o renderizador não compôs a medida');
+      if (plantada) {
+        const selo=copia.querySelectorAll('a.src-chip').find(s=>s.getAttribute('href').endsWith('/'+linha));
+        const unidade=selo.previousSibling;
+        assert.equal(unidade.nodeType,3,'SEL1: falta a unidade no nó de texto');
+        assert.equal(unidade.text,' '+caso.getAttribute('data-unidade'));
+        const texto=unidade.toString();unidade.remove();selo.insertAdjacentHTML('afterend',texto);
+      }
+      const desvios = unidadesDepoisDoSelo(copia);
       const codigo = desvios.length ? 1 : 0;
       const r = {lang: caso.getAttribute('data-lingua'), unidade: caso.getAttribute('data-unidade'), linha, codigo, desvios};
       if (plantada) {
@@ -31,8 +41,8 @@ export async function plantasDosSelosConstruidos(saida, unidadesDepoisDoSelo) {
         controlos.push(r);
       }
     }
-    assert.equal(plantas.length, 22);
-    assert.equal(controlos.length, 22);
+    assert.equal(plantas.length, UNIDADES_DA_MEDIDA.length * 2);
+    assert.equal(controlos.length, UNIDADES_DA_MEDIDA.length * 2);
     const r = {html_sha256: createHash('sha256').update(html).digest('hex'), controlos, plantas};
     if (saida) {
       fs.writeFileSync(saida, JSON.stringify(r, null, 2) + '\n');
