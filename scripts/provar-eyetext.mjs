@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { primeirasEdicoes } from '../src/lib/edicoes.mjs';
+import { edicoesGuardadas } from '../src/lib/edicoes.mjs';
 /**
  * As duas provas da leitura do olho do lado do sítio (`src/lib/eyetext.mjs`).
  *
@@ -78,7 +78,7 @@ let conferencias = 0;
 
 const manifesto = JSON.parse(fs.readFileSync(path.join(RAIZ, 'registos', 'manifest.json'), 'utf8'));
 // ED1: o texto lido prova o documento atual. Cada primeira edição fica nomeada fora desse âmbito.
-for (const e of primeirasEdicoes()) console.log(`EYETEXT fora do âmbito: ${e.slug}/${e.lang}/${e.date}: primeira edição guardada; bytes conferidos por check:edicoes e gate:html.`);
+for (const e of edicoesGuardadas()) console.log(`EYETEXT fora do âmbito: ${e.slug}/${e.lang}/${e.date}: primeira edição guardada; bytes conferidos por check:edicoes e gate:html.`);
 const manifestoDosDocumentos = load(
   fs.readFileSync(path.join(RAIZ, 'studies-src', 'manifest.yml'), 'utf8'),
 );
@@ -322,8 +322,12 @@ conferencias++;
    As unidades são iguais carácter a carácter; nas seis edições há 0 isentas,
    0 blocos editados e 0 apagados. */
 // ED1: cópia da declaração histórica no lugar da atual não entra na prova do texto lido.
-for (const e of primeirasEdicoes()) {
-  const historica = {slug:e.slug,lang:e.lang,origin:'researchhub',file:e.file,sha256:e.sha256};
+for (const e of edicoesGuardadas()) {
+  const atual=manifestoDosDocumentos.edicoes.find(d=>d.slug===e.slug&&d.lang===e.lang);
+  const historica = {...structuredClone(atual),file:e.file,sha256_normalized:e.sha256};
+  if(typeof historica.sha256_normalized!=='string'||historica.origin!=='researchhub')falhas.push('ED1: planta não chegou à cláusula do ficheiro');
+  const semFicheiro={...historica};delete semFicheiro.file;
+  if(!bytesDoMotor(e.slug,e.lang,{edicoes:[semFicheiro]}))falhas.push('ED1: controlo da cláusula do ficheiro falhou');
   if (bytesDoMotor(e.slug,e.lang,{edicoes:[historica]})) falhas.push(`ED1: primeira edição entrou no texto atual: ${e.slug}/${e.lang}`);
   if (!bytesDoMotor(e.slug,e.lang)) falhas.push(`ED1: documento atual saiu da prova: ${e.slug}/${e.lang}`);
 }

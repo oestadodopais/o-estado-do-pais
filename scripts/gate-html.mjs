@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
 import {manifestoDasEdicoes} from '../src/lib/edicoes.mjs';
 import { provaDosBytesDaEdicao } from '../src/lib/leis-da-edicao.mjs';
@@ -1068,18 +1069,6 @@ function textoTranscrito(el) {
  * @param {Map<string, any>} claims
  * @returns {string|null}
  */
-function textoDaMudancaGate(texto, claims) {
-  if (typeof texto === 'string') return texto;
-  if (!Array.isArray(texto)) return null;
-  let saida = '';
-  for (const p of texto) {
-    if (typeof p === 'string') { saida += p; continue; }
-    const linha = p && typeof p.claim === 'string' ? claims.get(p.claim) : null;
-    if (!linha) return null;
-    saida += String(linha.value) + (typeof p.sufixo === 'string' ? p.sufixo : '');
-  }
-  return saida;
-}
 
 /**
  * O texto transcrito de um elemento SEM os selos que ele leve (bloco R1). O selo

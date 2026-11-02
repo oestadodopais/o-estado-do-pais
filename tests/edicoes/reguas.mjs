@@ -34,7 +34,7 @@ const declarada=t=>inventario.linhas.some(l=>l.bloco==='ed1'&&l.estado==='viva'&
 for(const rota of ['correcoes','en/corrections']) {
  const root=parse(fs.readFileSync(`${process.env.OEDP_DIST??'dist'}/${rota}/index.html`,'utf8'));
  for(const el of root.querySelectorAll('[data-texto-campo="frase"]')) {
-  const paragrafo=el.closest('p');assert(declarada(paragrafo.rawText),'ED1: bloco rendido sem declaração inteira');
+  const paragrafo=parse(el.closest('p').outerHTML);for(const selo of paragrafo.querySelectorAll('.src-chip'))selo.remove();assert(declarada(paragrafo.rawText),'ED1: bloco rendido sem declaração inteira');
   const copia=parse(paragrafo.outerHTML);copia.querySelector('[data-texto-campo="frase"]').set_content('Uma frase diferente.');
   assert(!declarada(copia.rawText),'ED1: bloco alterado passou pelo inventário');plantas++;
  }

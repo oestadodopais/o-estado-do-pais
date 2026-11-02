@@ -1,4 +1,7 @@
 import fs from 'node:fs';
+import {loadClaims} from '../src/lib/ledger.mjs';
+import {partesDaCorrecao} from '../src/lib/texto-correcao.mjs';
+import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
 import {conferirHistoria} from './historia-edicoes-conferir.mjs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -62,7 +65,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
 }
 
 /** Cada campo visível tem comparação própria. O portão só dispensa algarismos depois dela. */
-export function conferirTextoHtml(root, lang, works, correcoes, manifesto) {
+export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claims=loadClaims()) {
   const erros = [], campos = [];
   for (const li of root.querySelectorAll('[data-texto-estudo]')) {
     const slug = li.getAttribute('data-texto-estudo'), data = li.getAttribute('data-texto-data');
@@ -70,11 +73,13 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto) {
     const e = manifesto.edicoes.find(e => e.slug === slug && e.lang === lang);
     const titulo = w?.editions.find(d => d.lang === lang)?.title;
     if (!c || !titulo || !e?.primeira_edicao) {erros.push(`ED1 texto: entrada desconhecida ${slug}`);continue;}
-    const valores = {data: data.split('-').reverse().join('.'), titulo, frase:c.frase[lang], kind:lang === 'pt' ? 'Estudo corrigido' : 'Study corrected'};
+    const partes=partesDaCorrecao(c,lang),frase=textoDaMudancaGate(partes,claims,true);
+    if(frase===null||frase!==c.frase[lang])erros.push(`ED1 números: ${slug} frase sem origem selada`);
+    const valores = {data: data.split('-').reverse().join('.'), titulo, frase:frase??c.frase[lang], kind:lang === 'pt' ? 'Estudo corrigido' : 'Study corrected'};
     for (const [campo,valor] of Object.entries(valores)) {
       const els = li.querySelectorAll(`[data-texto-campo="${campo}"]`);
-      if (els.length !== 1 || normal(els[0].textContent) !== normal(valor) || (campo === 'data' && els[0].getAttribute('datetime') !== data)) erros.push(`ED1 texto: ${slug} campo ${campo}`);
-      else campos.push(els[0]);
+      if (els.length !== 1 || normal(textoSemPortas(els[0])) !== normal(valor) || (campo === 'data' && els[0].getAttribute('datetime') !== data)) erros.push(`ED1 texto: ${slug} campo ${campo}`);
+      else {if(campo==='frase')erros.push(...conferirNumerosDaCorrecao(els[0],claims,lang));campos.push(els[0]);}
     }
     const vs=e.edicoes,i=vs.findIndex(v=>v.data===data);
     if(i<1){erros.push(`ED1 texto: ${slug} sem par de versões`);continue;}
@@ -93,4 +98,28 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto) {
 /** A segunda conta usa as naturezas das entradas, sem chamar a contagem da vista. */
 export function contagemDasCorrecoesNoPortao(correcoesDoLivro, textos) {
   return correcoesDoLivro + textos.filter(e => e.kind === 'texto').length;
+}
+
+function textoSemPortas(el){const copia=parse(el.outerHTML);for(const p of copia.querySelectorAll('.src-chip'))p.remove();return copia.textContent;}
+export function conferirNumerosDaCorrecao(el,claims,lang){
+ const copia=parse(el.outerHTML),erros=[];
+ const prefixo=lang==='pt'?'/livro-razao/':'/en/ledger/';
+ const datas=copia.querySelectorAll('[data-nonledger="data-da-linha"]');
+ for(const id of new Set(datas.map(d=>d.getAttribute('data-de-linha')))){
+  if(copia.querySelectorAll(`a.src-chip[href="${prefixo}${id}"]`).length<datas.filter(d=>d.getAttribute('data-de-linha')===id).length)erros.push('ED1 números: cada data exige o seu selo');
+ }
+ for(const data of datas){
+  const id=data.getAttribute('data-de-linha'),campo=data.getAttribute('data-de-campo'),linha=claims.get(id);
+  if(campo!=='reference_date'||!linha||data.textContent.trim()!==linha.reference_date||!copia.querySelector(`a.src-chip[href="${prefixo}${id}"]`))erros.push('ED1 números: data sem campo e selo correspondentes');
+  else data.remove();
+ }
+ for(const valor of copia.querySelectorAll('[data-claim]')){
+  const id=valor.getAttribute('data-claim'),linha=claims.get(id);
+  if(!linha||normal(valor.textContent)!==normal(String(linha.value))||!copia.querySelector(`a.src-chip[href="${prefixo}${id}"]`))erros.push('ED1 números: valor sem linha e selo correspondentes');
+  else valor.remove();
+ }
+ for(const selo of copia.querySelectorAll('.src-chip'))selo.remove();
+ if(/\d/.test(copia.textContent))erros.push('ED1 números: algarismo sem valor ou data selada');
+ if(lang==='en')for(const nome of ['Partido Socialista','Unidade Técnica de Apoio Orçamental'])if(el.textContent.includes(nome)&&!el.querySelectorAll('[lang="pt-PT"]').some(n=>n.textContent===nome))erros.push('ED1 língua: nome português sem marca');
+ return erros;
 }

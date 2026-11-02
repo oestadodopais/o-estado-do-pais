@@ -25,12 +25,12 @@ export function conferirHistoria({works,manifesto,correcoes,raiz}) {
  for(const c of correcoes)if(!manifesto.edicoes.some(e=>e.slug===c.slug&&e.edicoes?.slice(1).some(v=>v.data===c.data)))erros.push(`ED1 órfã: ${c.slug}|${c.data}`);
  return erros;
 }
-export function conferirTestemunhas(manifesto, ler){
+export function conferirTestemunhas(manifesto, ler, {permitirAusencia=false}={}){
  const erros=[],avisos=[];
  for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao)){
   const p=e.primeira_edicao;
   if(!/^[a-f0-9]{7,40}$/.test(p.commit??'')){erros.push(`ED1 história: referência inválida ${e.slug}/${e.lang}`);continue;}
-  let bytes;try{bytes=ler(p.commit,`studies-src/${e.raw_file}`);}catch{avisos.push(`ED1 história indisponível: ${e.slug}/${e.lang}; a lista e os bytes guardados foram conferidos sem Git.`);continue;}
+  let bytes;try{bytes=ler(p.commit,`studies-src/${e.raw_file}`);}catch{const mensagem=`ED1 história indisponível: ${e.slug}/${e.lang}; a lista e os bytes guardados foram conferidos sem Git.`;if(permitirAusencia)avisos.push(mensagem);else erros.push(mensagem);continue;}
   if(sha(bytes)!==p.sha256)erros.push(`ED1 história: ${e.slug}/${e.lang}`);
  }
  return {erros,avisos};

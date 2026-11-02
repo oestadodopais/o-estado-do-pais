@@ -5398,3 +5398,17 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 
 | conteudo | As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos. | ed1 | viva | ED1-E §4.6: texto da conta. |
 | conteudo | The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies. | ed1 | viva | ED1-E §4.6: texto da conta. |
+
+
+## ED1-E: identificação dos documentos
+
+| Tipo | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 30.10.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | Edição atual, de 30.10.2026. A primeira edição é de 01.10.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | First edition, published on 01.10.2026. The current edition is from 30.10.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | Current edition, from 30.10.2026. The first edition is from 01.10.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | Primeira edição, publicada a 21.10.2026. A edição atual é de 02.11.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | Edição atual, de 02.11.2026. A primeira edição é de 21.10.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | First edition, published on 21.10.2026. The current edition is from 02.11.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |
+| conteudo | Current edition, from 02.11.2026. The first edition is from 21.10.2026. | ed1 | viva | ED1-E §2: datas conferidas na lista de versões. |

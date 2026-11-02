@@ -845,6 +845,11 @@ As linhas seguem os registos, como as irmãs, sem novas entradas em `ledger/`. A
 
 ## ED1: primeira edição e correção de texto
 
+ED1-E: cada edição do manifesto tem `edicoes: [{data, sha256, file}]`, por ordem de publicação. A última aponta para o documento atual; as anteriores são documentos guardados. `historia_edicoes_base` declara o início do registo para as listas com uma só versão. `scripts/historia-edicoes-conferir.mjs` confere todos os bytes, datas e correspondências com as entradas `texto`; uma atualização posterior conserva as entradas anteriores. A testemunha do Git é adicional e a sua indisponibilidade fica escrita no passo. `versoesDaEdicao()` e `portasDaCorrecao()` governam as rotas, as datas da faixa e o par anterior/posterior de cada entrada. As páginas dizem qual versão mostram, com uma conferência independente em `scripts/documento-edicao-conferir.mjs`.
+
+`textoDaMudancaGate()`, em `scripts/texto-mudanca-gate.mjs`, recompõe também as frases das correções. Nessas frases recusa algarismos em pedaços de texto livre; valores e datas têm de corresponder às linhas declaradas, com os selos. As datas de referência usam `DataDaLinha`, com comparação do campo do livro. Os nomes portugueses na edição inglesa usam a marca de língua. A planta do texto lido conserva `sha256_normalized` para chegar à cláusula do ficheiro histórico. A prova da habitação contra `main` corre por `node design/especime-v3/medicoes/ed1-2026-11-02/provar-habitacao-main.mjs`; os resultados e o relatório da passagem ficam nessa pasta.
+
+
 ED1, adenda D: `check:lugar` distingue as edições atuais, as portas das primeiras edições e os documentos históricos declarados, por `primeirasEdicoes()`. `tests/edicoes/lugar.mjs` recusa uma cópia adicional de um estudo, uma porta histórica em falta e destinos trocados. O teto L1 sobe apenas pelas duas páginas históricas de Évora, com a medição e a razão em `design/especime-v3/medicoes/ed1-2026-11-02/l1-ed1.json`. `src/lib/leis-da-edicao.mjs` usa `partesProvadas()` para marcar nomes portugueses de diplomas no HTML histórico inglês. A prova independente só retira esses invólucros exatos e compara todos os bytes com o original; as plantas alteram o número do diploma, a língua, o texto e a cauda. Os ficheiros guardados e os seus resumos permanecem intactos. H9 e a L3 não mudam.
 
 

@@ -31,7 +31,8 @@ for(const [nome,mudar,erro] of [
  }finally{fs.rmSync(raiz,{recursive:true,force:true});}
 }
 const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===4);plantas++;
-const ausente=conferirTestemunhas(manifesto,()=>{throw Error('sem Git');});assert.equal(ausente.avisos.length,4);assert.deepEqual(ausente.erros,[]);plantas++;
+assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,4);plantas++;
+const ausente=conferirTestemunhas(manifesto,()=>{throw Error('sem Git');},{permitirAusencia:true});assert.equal(ausente.avisos.length,4);assert.deepEqual(ausente.erros,[]);plantas++;
 const args={works:WORKS,manifesto,correcoes:CORRECOES_TEXTO,raiz:'studies-src'};
 const alvo=manifesto.edicoes.find(e=>e.primeira_edicao);
 const paginas=new Map([['/uma-pagina-fora-dos-estudos',`<a href="${rotaAtual(alvo.slug,alvo.lang)}">Primeira edição, tal como foi publicada</a>`]]);

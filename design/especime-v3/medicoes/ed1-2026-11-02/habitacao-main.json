@@ -1,0 +1,22 @@
+{
+  "comando": "node design/especime-v3/medicoes/ed1-2026-11-02/provar-habitacao-main.mjs",
+  "main": "46ee13d182e8081f1960cc18c7f15464be224abf",
+  "resultados": [
+    {
+      "lang": "pt",
+      "blocos": 52,
+      "unidades": 52,
+      "mudancas": 0,
+      "sha256_texto": "909e369725fdae28bd7ce4e3296e2f2ee6cba00af902ef9ac8eb98e153c75ac9",
+      "planta": "um carácter alterado detetado"
+    },
+    {
+      "lang": "en",
+      "blocos": 52,
+      "unidades": 52,
+      "mudancas": 0,
+      "sha256_texto": "bda472e5055e6c1c054bb0fa3820d199b94064df232170b22dfcb117434f5c94",
+      "planta": "um carácter alterado detetado"
+    }
+  ]
+}
