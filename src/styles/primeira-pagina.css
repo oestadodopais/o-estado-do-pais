@@ -60,6 +60,9 @@
   align-items: baseline;
   white-space: nowrap;
 }
+/* SEL1-E1: a medida acompanha a linha de prosa, incluindo a unidade que
+   precede o selo. Uma caixa flexível separava as suas linhas tipográficas. */
+.pp-frase .claim-com-chip { display: inline; }
 .pp-frase .claim-value, .pp-frase .claim-sufixo,
 .pp-peca .claim-value, .pp-peca .claim-sufixo,
 .pp-caixa .claim-value, .pp-caixa .claim-sufixo {
