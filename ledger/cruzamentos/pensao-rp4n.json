@@ -10,14 +10,14 @@
     "penalizacao-antecipacao-um-ano-neutra.yml": {
       "destino": "ledger/claims",
       "origin_path": "publisher/recortes/penalizacao-antecipacao-um-ano-neutra.yml",
-      "origin_sha256": "261e267e415860bf2a4d8b7e80688dae781b9aa500fe74f718a1213aecfdf220",
+      "origin_sha256": "d202e640f8653aa4a027ce7986f240170daf06fd8009e9c472af52117d680370",
       "exported_sha256": "d202e640f8653aa4a027ce7986f240170daf06fd8009e9c472af52117d680370",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     },
     "penalizacao-legal-um-ano-antecipacao-2026.yml": {
       "destino": "ledger/claims",
       "origin_path": "publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml",
-      "origin_sha256": "47e45757e6bbc0f9d3012eb24b7d4320080e9dfec2fb100c7ef4389c293cc5dd",
+      "origin_sha256": "8a31011eee0bb1c4d08015817466bd12d4e2daa350e77227895922d8071ecc9b",
       "exported_sha256": "8a31011eee0bb1c4d08015817466bd12d4e2daa350e77227895922d8071ecc9b",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     },
