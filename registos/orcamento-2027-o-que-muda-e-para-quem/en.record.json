@@ -463,7 +463,7 @@
      "id": "posicao-governo-divida85",
      "inicio": 180,
      "livro": "PM",
-     "sha256_linha": "3c017dc7a2e25369638c8519f8e7df33e40aa9c6b1e10692b09147a5882c3a05",
+     "sha256_linha": "3a1465aa9cc3839530cc1e5a149a89eea8ac298c1f9a7104e7f8fc318047e8c1",
      "texto": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
      "tipo": "documento"
     },
@@ -1391,7 +1391,7 @@
      "id": "posicao-governo-divida85",
      "inicio": 148,
      "livro": "PM",
-     "sha256_linha": "3c017dc7a2e25369638c8519f8e7df33e40aa9c6b1e10692b09147a5882c3a05",
+     "sha256_linha": "3a1465aa9cc3839530cc1e5a149a89eea8ac298c1f9a7104e7f8fc318047e8c1",
      "texto": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
      "tipo": "documento"
     },
@@ -1400,7 +1400,7 @@
      "id": "posicao-governo-divida85-citacao",
      "inicio": 253,
      "livro": "PM",
-     "sha256_linha": "398cbbec761a0a45496c7b30f63967a2018d86f2cf55f6459274b33e3aab91c9",
+     "sha256_linha": "52521b46984b8274bf0d42ad44f18ea7b3dc9b77c1024b3761f2a7c4dac4e90c",
      "texto": "A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027",
      "tipo": "excerto"
     },
@@ -4022,7 +4022,7 @@
      "id": "posicao-livre-iva",
      "inicio": 35,
      "livro": "PM",
-     "sha256_linha": "bcf427a6553ce9e448f8a78756adfcbca97c1f8b36f3b2bbe0b84d139eb8d0c8",
+     "sha256_linha": "e89f0b53da1d28c2456650a2bd3cb98b52a4e1e78b8e01068dc1cca322d4ec38",
      "texto": "Primeiro-ministro rejeita totalmente descer o IVA dos atuais 23% para 21%",
      "tipo": "documento"
     },
@@ -4031,7 +4031,7 @@
      "id": "posicao-livre-iva",
      "inicio": 112,
      "livro": "PM",
-     "sha256_linha": "bcf427a6553ce9e448f8a78756adfcbca97c1f8b36f3b2bbe0b84d139eb8d0c8",
+     "sha256_linha": "e89f0b53da1d28c2456650a2bd3cb98b52a4e1e78b8e01068dc1cca322d4ec38",
      "texto": "Assim, a deputada disse que o seu partido \"apresentará esta descida já para o Orçamento do Estado 2027, de forma progressiva\".",
      "tipo": "excerto"
     }
@@ -4825,21 +4825,21 @@
   {
    "figures": [
     {
-     "end": 674,
+     "end": 764,
      "printed": "477",
      "row": "pm-q3-2-r9-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 671,
+     "start": 761,
      "value": "-477"
     },
     {
-     "end": 719,
+     "end": 809,
      "printed": "284",
      "row": "pm-q3-2-r12-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 716,
+     "start": 806,
      "value": "284"
     }
    ],
@@ -4856,6 +4856,15 @@
      "tipo": "excerto"
     },
     {
+     "fim": 481,
+     "id": "posicao-governo-irs",
+     "inicio": 394,
+     "livro": "PM",
+     "sha256_linha": "ef0aa66f82d596906045f5c5b2e1da3e284fb286553200c7a71c0613521342aa",
+     "texto": "Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas",
+     "tipo": "documento"
+    },
+    {
      "apoios": [
       {
        "campo": "published_at",
@@ -4863,25 +4872,25 @@
        "livro": "PM"
       }
      ],
-     "fim": 405,
-     "inicio": 396,
+     "fim": 495,
+     "inicio": 486,
      "origem": "9 de outubro",
      "texto": "9 October",
      "tipo": "literal"
     },
     {
-     "fim": 590,
+     "fim": 680,
      "id": "posicao-governo-irs",
-     "inicio": 408,
+     "inicio": 498,
      "livro": "PM",
-     "sha256_linha": "f5035936d19cb80a248a2dc579c8b7537cdd120039f4071193685b9a815d16b8",
+     "sha256_linha": "ef0aa66f82d596906045f5c5b2e1da3e284fb286553200c7a71c0613521342aa",
      "texto": "Na área fiscal, Luís Montenegro destacou as seis descidas consecutivas do IRS, num valor global de 2 800 milhões de euros, e o impacto de 700 milhões de euros associado ao IRS Jovem.",
      "tipo": "excerto"
     },
     {
-     "fim": 674,
+     "fim": 764,
      "id": "pm-q3-2-r9-c0",
-     "inicio": 671,
+     "inicio": 761,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "4b9df836ca146bf20674572fc84f9644740ab3f304b0050181ef7985abc49359",
@@ -4889,27 +4898,27 @@
      "tipo": "valor"
     },
     {
-     "fim": 719,
+     "fim": 809,
      "id": "pm-q3-2-r12-c0",
-     "inicio": 716,
+     "inicio": 806,
      "livro": "PM",
      "sha256_linha": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
      "texto": "284",
      "tipo": "valor"
     },
     {
-     "fim": 1141,
+     "fim": 1231,
      "id": "cfp-reembolsos",
-     "inicio": 837,
+     "inicio": 927,
      "livro": "PM",
      "sha256_linha": "a013ce2f2ba279bcaff8a9e86b61bb7473810cc680aec1c637362fd523223566",
      "texto": "Por outro lado, o desfasamento entre os ajustamentos das tabelas de retenção na fonte e as alterações legislativas em sede de IRS tem sido significativo, introduzindo incerteza quanto à evolução dos reembolsos e das notas de cobrança e, por essa via, quanto ao rendimento disponível das famílias em 2027.",
      "tipo": "excerto"
     },
     {
-     "fim": 1354,
+     "fim": 1444,
      "id": "cfp-comparabilidade",
-     "inicio": 1179,
+     "inicio": 1269,
      "livro": "PM",
      "sha256_linha": "1d20a058f95e53db5c94f94abd2b41de744e2d15178f18a090b4a7947d708c7b",
      "texto": "Ainda assim, face à reduzida dimensão das medidas de política comunicadas ao CFP para 2027 – inferior a 0,1% do PIB – o seu impacto não se afigura relevante para a comparação.",
@@ -4924,7 +4933,7 @@
     "cfp-reembolsos",
     "cfp-comparabilidade"
    ],
-   "text": "The report counts this Budget as «O Orçamento do Estado para 2027 apresentará a sexta redução generalizada de IRS, considerando a redução das taxas em junho de 2024, junho de 2025, no Orçamento do Estado para 2026 e em setembro de 2026, a que acresce a atualização dos respetivos escalões nos Orçamentos do Estado para 2025, 2026 e 2027.» The Prime Minister, in the Government's communication of 9 October: «Na área fiscal, Luís Montenegro destacou as seis descidas consecutivas do IRS, num valor global de 2 800 milhões de euros, e o impacto de 700 milhões de euros associado ao IRS Jovem.» The 2027 account is smaller than the sum of the six: personal income tax loses 477 million euros in 2027 after counting the 284 million of new revenue that wage growth brings. The Public Finance Council, on what this does to disposable income: «Por outro lado, o desfasamento entre os ajustamentos das tabelas de retenção na fonte e as alterações legislativas em sede de IRS tem sido significativo, introduzindo incerteza quanto à evolução dos reembolsos e das notas de cobrança e, por essa via, quanto ao rendimento disponível das famílias em 2027.» And on the weight of the measures: «Ainda assim, face à reduzida dimensão das medidas de política comunicadas ao CFP para 2027 – inferior a 0,1% do PIB – o seu impacto não se afigura relevante para a comparação.»"
+   "text": "The report counts this Budget as «O Orçamento do Estado para 2027 apresentará a sexta redução generalizada de IRS, considerando a redução das taxas em junho de 2024, junho de 2025, no Orçamento do Estado para 2026 e em setembro de 2026, a que acresce a atualização dos respetivos escalões nos Orçamentos do Estado para 2025, 2026 e 2027.» The Prime Minister, in the Government's communication «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas» of 9 October: «Na área fiscal, Luís Montenegro destacou as seis descidas consecutivas do IRS, num valor global de 2 800 milhões de euros, e o impacto de 700 milhões de euros associado ao IRS Jovem.» The 2027 account is smaller than the sum of the six: personal income tax loses 477 million euros in 2027 after counting the 284 million of new revenue that wage growth brings. The Public Finance Council, on what this does to disposable income: «Por outro lado, o desfasamento entre os ajustamentos das tabelas de retenção na fonte e as alterações legislativas em sede de IRS tem sido significativo, introduzindo incerteza quanto à evolução dos reembolsos e das notas de cobrança e, por essa via, quanto ao rendimento disponível das famílias em 2027.» And on the weight of the measures: «Ainda assim, face à reduzida dimensão das medidas de política comunicadas ao CFP para 2027 – inferior a 0,1% do PIB – o seu impacto não se afigura relevante para a comparação.»"
   },
   {
    "figures": [],
@@ -4936,7 +4945,7 @@
      "id": "posicao-jpp-irs",
      "inicio": 62,
      "livro": "PM",
-     "sha256_linha": "5b5c15c8a97dead46e263ffa0374d309c787076f4cdda4a7681cbc110411db8b",
+     "sha256_linha": "e41b68d4671c9ee2b2d44cdc15a01942b520f75dc3d7fea19caf2fcfad97257f",
      "texto": "JPP pede maior protecção das famílias não abrangidas pela descida de IRS",
      "tipo": "excerto"
     },
@@ -4945,7 +4954,7 @@
      "id": "posicao-be-rendimentos",
      "inicio": 243,
      "livro": "PM",
-     "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
+     "sha256_linha": "283255103e04992272e33838550719ce9abda8479fd1cc5b6e07947dfbf43e74",
      "texto": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
      "tipo": "documento"
     },
@@ -4954,7 +4963,7 @@
      "id": "posicao-be-rendimentos",
      "inicio": 331,
      "livro": "PM",
-     "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
+     "sha256_linha": "283255103e04992272e33838550719ce9abda8479fd1cc5b6e07947dfbf43e74",
      "texto": "José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.",
      "tipo": "excerto"
     },
@@ -4963,7 +4972,7 @@
      "id": "posicao-pcp-irs-rendas",
      "inicio": 563,
      "livro": "PM",
-     "sha256_linha": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
+     "sha256_linha": "5c8555b4d6127914070adf9401e101e14cbc3961a92c61edd5d2e87c3f6f640b",
      "texto": "Paula Santos",
      "tipo": "atribuicao"
     },
@@ -4986,7 +4995,7 @@
      "id": "posicao-pcp-irs-rendas",
      "inicio": 592,
      "livro": "PM",
-     "sha256_linha": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
+     "sha256_linha": "5c8555b4d6127914070adf9401e101e14cbc3961a92c61edd5d2e87c3f6f640b",
      "texto": "Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.",
      "tipo": "excerto"
     }
@@ -5126,7 +5135,7 @@
      "id": "posicao-pcp-smn",
      "inicio": 649,
      "livro": "PM",
-     "sha256_linha": "6c7068d99fa79da3e3b7aac38a8e1f479dcc98e1bef84a71d8decf55fd188816",
+     "sha256_linha": "4db9c4e9ef2f8fb8d243b2f64bc046c24d0256a7911d752a35f6af292a3cdbf5",
      "texto": "Paula Santos",
      "tipo": "atribuicao"
     },
@@ -5135,7 +5144,7 @@
      "id": "posicao-pcp-smn",
      "inicio": 664,
      "livro": "PM",
-     "sha256_linha": "6c7068d99fa79da3e3b7aac38a8e1f479dcc98e1bef84a71d8decf55fd188816",
+     "sha256_linha": "4db9c4e9ef2f8fb8d243b2f64bc046c24d0256a7911d752a35f6af292a3cdbf5",
      "texto": "O Governo quer limitar o SMN aos 970€ em 2027, quando em Espanha esse valor ultrapassou os 1220€ em 2026.",
      "tipo": "excerto"
     },
@@ -5244,7 +5253,7 @@
      "id": "posicao-pcp-salarios",
      "inicio": 877,
      "livro": "PM",
-     "sha256_linha": "e365316883360ad4eb8ef1e14ecd74f42d2ecb0df6d0e80f0c76845d3defea2b",
+     "sha256_linha": "8392b47ebf846288cb48668f88902d1545fe982cacb916be31e2fb2b02142974",
      "texto": "Em relação aos trabalhadores da Administração Pública, prevê-se uma atualização nos salários de 2,3%, valor que poderá ficar abaixo da inflação, não permitindo a valorização do poder de compra, e um aumento de apenas 15 cêntimos no valor do subsídio de alimentação.",
      "tipo": "excerto"
     },
@@ -5294,9 +5303,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 2388,
+     "fim": 2298,
      "id": "utao-risco-emprego",
-     "inicio": 1828,
+     "inicio": 1738,
      "livro": "PM",
      "sha256_linha": "c71b678307d9dbe51d99898da8e7e781456d3b5893efe4b645399ce8e84195cf",
      "texto": "O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).",
@@ -5315,7 +5324,7 @@
     "der-salarios-publicos-retorno-pct",
     "utao-risco-emprego"
    ],
-   "text": "For those who work for the State, the report: «Ao nível da despesa, destaca-se a massa salarial dos trabalhadores da Administração Pública (948 milhões de euros), que inclui uma atualização das remunerações em 2,3%, e o reforço do CSI, com um impacto de 100 milhões de euros.» The inflation the same report forecasts for 2027 is 2.3 %: the general update and forecast inflation are the same number; career progression, promotions and career agreements rise above it. The Public Finance Council: «Ponderados os riscos, o cenário macroeconómico subjacente à POE/2027 afigura-se globalmente como estatisticamente provável. Ainda assim, como fundamentado no presente Parecer, é de notar a existência de riscos descendentes para a previsão de crescimento do PIB real em 2027. No que respeita à inflação, destaca-se uma potencial subestimação tanto em 2026, como em 2027.» The PCP: «Em relação aos trabalhadores da Administração Pública, prevê-se uma atualização nos salários de 2,3%, valor que poderá ficar abaixo da inflação, não permitindo a valorização do poder de compra, e um aumento de apenas 15 cêntimos no valor do subsídio de alimentação.» The UTAO measures the cost and the return: «A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.» That is, of 1,231 million euros of update, 590 million come back in income tax and 471 million in contributions, 86.2 % of the total. And on public employment, using data from the Directorate-General for Administration and Public Employment (DGAEP): «O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).»"
+   "text": "For those who work for the State, the report: «Ao nível da despesa, destaca-se a massa salarial dos trabalhadores da Administração Pública (948 milhões de euros), que inclui uma atualização das remunerações em 2,3%, e o reforço do CSI, com um impacto de 100 milhões de euros.» The inflation the same report forecasts for 2027 is 2.3 %: the general update and forecast inflation are the same number; career progression, promotions and career agreements rise above it. The Public Finance Council: «Ponderados os riscos, o cenário macroeconómico subjacente à POE/2027 afigura-se globalmente como estatisticamente provável. Ainda assim, como fundamentado no presente Parecer, é de notar a existência de riscos descendentes para a previsão de crescimento do PIB real em 2027. No que respeita à inflação, destaca-se uma potencial subestimação tanto em 2026, como em 2027.» The PCP: «Em relação aos trabalhadores da Administração Pública, prevê-se uma atualização nos salários de 2,3%, valor que poderá ficar abaixo da inflação, não permitindo a valorização do poder de compra, e um aumento de apenas 15 cêntimos no valor do subsídio de alimentação.» The UTAO measures the cost and the return: «A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.» That is, of 1,231 million euros of update, 590 million come back in income tax and 471 million in contributions, 86.2 % of the total. And on public employment: «O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).»"
   },
   {
    "figures": [],
@@ -5441,20 +5450,29 @@
      "tipo": "excerto"
     },
     {
-     "fim": 1609,
+     "fim": 1508,
      "id": "posicao-governo-csi-pensoes",
-     "inicio": 1387,
+     "inicio": 1421,
      "livro": "PM",
-     "sha256_linha": "6fc7484ae9136b300ae302f4ffe144e453f923b93d9b3b5e1e60cb351cce8b66",
+     "sha256_linha": "51310a68d6fd5945d9b6e13885678f1db8265d5ab9c9a25d80dd0ef9e0895837",
+     "texto": "Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas",
+     "tipo": "documento"
+    },
+    {
+     "fim": 1734,
+     "id": "posicao-governo-csi-pensoes",
+     "inicio": 1512,
+     "livro": "PM",
+     "sha256_linha": "51310a68d6fd5945d9b6e13885678f1db8265d5ab9c9a25d80dd0ef9e0895837",
      "texto": "Entre as medidas dirigidas às famílias, salientou o aumento de 50 euros no Complemento Solidário para Idosos, o complemento extraordinário das pensões e a atualização dos limites dos escalões de IRS e das deduções fiscais.",
      "tipo": "excerto"
     },
     {
-     "fim": 1678,
+     "fim": 1803,
      "id": "posicao-ps-pensoes",
-     "inicio": 1660,
+     "inicio": 1785,
      "livro": "PM",
-     "sha256_linha": "1cf35a359f9c82138cc7955b73f43be15c63abc14def7e2af0eab015e3f97a6c",
+     "sha256_linha": "981e0cc5b184f65ed959243d0541692c8380653ae55e4574265792f7fbd8bd29",
      "texto": "José Luís Carneiro",
      "tipo": "atribuicao"
     },
@@ -5466,27 +5484,36 @@
        "livro": "PM"
       }
      ],
-     "fim": 1693,
-     "inicio": 1683,
+     "fim": 1818,
+     "inicio": 1808,
      "origem": "14 de outubro",
      "texto": "14 October",
      "tipo": "literal"
     },
     {
-     "fim": 1869,
+     "fim": 1918,
      "id": "posicao-ps-pensoes",
-     "inicio": 1696,
+     "inicio": 1845,
      "livro": "PM",
-     "sha256_linha": "1cf35a359f9c82138cc7955b73f43be15c63abc14def7e2af0eab015e3f97a6c",
+     "sha256_linha": "981e0cc5b184f65ed959243d0541692c8380653ae55e4574265792f7fbd8bd29",
+     "texto": "OE2027: PS leva propostas à especialidade para responder ao custo de vida",
+     "tipo": "documento"
+    },
+    {
+     "fim": 2095,
+     "id": "posicao-ps-pensoes",
+     "inicio": 1922,
+     "livro": "PM",
+     "sha256_linha": "981e0cc5b184f65ed959243d0541692c8380653ae55e4574265792f7fbd8bd29",
      "texto": "Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas.",
      "tipo": "excerto"
     },
     {
-     "fim": 2078,
+     "fim": 2304,
      "id": "posicao-pcp-pensoes",
-     "inicio": 1881,
+     "inicio": 2107,
      "livro": "PM",
-     "sha256_linha": "04f4dfe2b783ea34e06468045326c45f1dd3b1580c28ac3187837915edc719bb",
+     "sha256_linha": "af8add97cfa7711bd6d6739b7af464239029fc2dd4b07d9fb75dd5e3d0e12c50",
      "texto": "São dados que confirmam as possibilidades para um aumento significativo de pensões e prestações sociais que o Governo continua a recusar, e não a mera atualização que decorre do cumprimento da lei.",
      "tipo": "excerto"
     }
@@ -5504,7 +5531,7 @@
     "posicao-ps-pensoes",
     "posicao-pcp-pensoes"
    ],
-   "text": "The report does not write the 2027 pension update rate: «Na estimativa de despesa com pensões considerou-se a atualização regular nos termos da Lei.» Social benefit expenditure grows thus: «Prestações sociais (3,8%), refletindo nomeadamente a estimativa da atualização regular das pensões, o reforço anual do complemento solidário para idosos que tem ocorrido desde 2024 e a atualização dos valores de referência das outras prestações sociais.» The new measure is the Solidarity Supplement for the Elderly: «A despesa com a prestação do CSI deverá atingir o montante de 709,7 milhões de euros, uma variação anual de 15,6% face a 2026, refletindo principalmente o aumento do valor de referência em 50 euros/mês em 2027, para 720 euros, no âmbito da sua trajetória de convergência para 870 euros em 2029.» The reference amount therefore goes from 670 euros to 720 euros a month, on the way to 870 euros in 2029, at a cost of 100 million euros in the table of measures. The extraordinary pension supplement and the cut of the income-tax rates up to the sixth bracket belong to 2026, not to 2027, and the Public Finance Council estimates them thus: «O MF estima um valor de 400 M€ quer para o suplemento extraordinário para pensionistas quer para a redução das taxas de IRS até ao 6.º escalão, com efeitos retroativos a janeiro (cerca de 0,25% do PIB no seu conjunto).» The Prime Minister: «Entre as medidas dirigidas às famílias, salientou o aumento de 50 euros no Complemento Solidário para Idosos, o complemento extraordinário das pensões e a atualização dos limites dos escalões de IRS e das deduções fiscais.» The Socialist Party (Partido Socialista, PS), by José Luís Carneiro, on 14 October: «Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas.» The PCP: «São dados que confirmam as possibilidades para um aumento significativo de pensões e prestações sociais que o Governo continua a recusar, e não a mera atualização que decorre do cumprimento da lei.»"
+   "text": "The report does not write the 2027 pension update rate: «Na estimativa de despesa com pensões considerou-se a atualização regular nos termos da Lei.» Social benefit expenditure grows thus: «Prestações sociais (3,8%), refletindo nomeadamente a estimativa da atualização regular das pensões, o reforço anual do complemento solidário para idosos que tem ocorrido desde 2024 e a atualização dos valores de referência das outras prestações sociais.» The new measure is the Solidarity Supplement for the Elderly: «A despesa com a prestação do CSI deverá atingir o montante de 709,7 milhões de euros, uma variação anual de 15,6% face a 2026, refletindo principalmente o aumento do valor de referência em 50 euros/mês em 2027, para 720 euros, no âmbito da sua trajetória de convergência para 870 euros em 2029.» The reference amount therefore goes from 670 euros to 720 euros a month, on the way to 870 euros in 2029, at a cost of 100 million euros in the table of measures. The extraordinary pension supplement and the cut of the income-tax rates up to the sixth bracket belong to 2026, not to 2027, and the Public Finance Council estimates them thus: «O MF estima um valor de 400 M€ quer para o suplemento extraordinário para pensionistas quer para a redução das taxas de IRS até ao 6.º escalão, com efeitos retroativos a janeiro (cerca de 0,25% do PIB no seu conjunto).» The Prime Minister, in the Government's communication «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas»: «Entre as medidas dirigidas às famílias, salientou o aumento de 50 euros no Complemento Solidário para Idosos, o complemento extraordinário das pensões e a atualização dos limites dos escalões de IRS e das deduções fiscais.» The Socialist Party (Partido Socialista, PS), by José Luís Carneiro, on 14 October, in the party's web page «OE2027: PS leva propostas à especialidade para responder ao custo de vida»: «Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas.» The PCP: «São dados que confirmam as possibilidades para um aumento significativo de pensões e prestações sociais que o Governo continua a recusar, e não a mera atualização que decorre do cumprimento da lei.»"
   },
   {
    "figures": [],
@@ -5674,7 +5701,7 @@
      "id": "posicao-ps-rendas",
      "inicio": 1327,
      "livro": "PM",
-     "sha256_linha": "e92635b7f82b3b6c4d45a7cdf7d052862857b6d6dac347265eb697aa891ada17",
+     "sha256_linha": "a87cf5fa93ce3657a9e8dbfaaa187b1510e6c8ccfc5e7fbd3902c607aa3b85be",
      "texto": "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.",
      "tipo": "excerto"
     },
@@ -5702,7 +5729,7 @@
      "id": "posicao-chega-habitacao",
      "inicio": 1456,
      "livro": "PM",
-     "sha256_linha": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
+     "sha256_linha": "c18f9f15f178754f3aee1d3d5094af4c9b8b06ef51ac302210e3ccf3661ef92c",
      "texto": "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”",
      "tipo": "documento"
     },
@@ -5711,7 +5738,7 @@
      "id": "posicao-chega-habitacao",
      "inicio": 1569,
      "livro": "PM",
-     "sha256_linha": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
+     "sha256_linha": "c18f9f15f178754f3aee1d3d5094af4c9b8b06ef51ac302210e3ccf3661ef92c",
      "texto": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
      "tipo": "excerto"
     },
@@ -5720,7 +5747,7 @@
      "id": "posicao-pcp-habitacao",
      "inicio": 1687,
      "livro": "PM",
-     "sha256_linha": "63b148edfc0e4437f39749ce27b7e04b47a1f58e39cb47ad331c0baab00b0f58",
+     "sha256_linha": "7c2686fc0db7a1ec2e48b3022e8b9a6354ee0ff624b1757dea5b85ab2641f09b",
      "texto": "Na habitação, reduz-se em 6% o investimento em relação ao orçamentado no ano passado, num contexto em que a habituação pública continua degradada e a ser residual.",
      "tipo": "excerto"
     }
@@ -5795,39 +5822,39 @@
      "value": "-176"
     },
     {
-     "end": 2317,
+     "end": 2543,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2314,
+     "start": 2540,
      "value": "300"
     },
     {
-     "end": 2382,
+     "end": 2608,
      "printed": "284",
      "row": "pm-q3-2-r12-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2379,
+     "start": 2605,
      "value": "284"
     },
     {
-     "end": 2417,
+     "end": 2643,
      "printed": "363",
      "row": "pm-q3-2-r18-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2414,
+     "start": 2640,
      "value": "363"
     },
     {
-     "end": 2463,
+     "end": 2689,
      "printed": "124",
      "row": "pm-q3-2-r16-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2460,
+     "start": 2686,
      "value": "124"
     }
    ],
@@ -5900,99 +5927,117 @@
      "tipo": "valor"
     },
     {
-     "fim": 1150,
+     "fim": 1133,
      "id": "posicao-governo-irc",
-     "inicio": 1012,
+     "inicio": 1046,
      "livro": "PM",
-     "sha256_linha": "6d0dd4d4434b5424d856f596d99aeb3af6b5fabaa3133622465037f9670f664d",
+     "sha256_linha": "a208e446b8569e47e206a31968bf733189bf4821f6ac8e2e269a6ffc51521576",
+     "texto": "Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas",
+     "tipo": "documento"
+    },
+    {
+     "fim": 1275,
+     "id": "posicao-governo-irc",
+     "inicio": 1137,
+     "livro": "PM",
+     "sha256_linha": "a208e446b8569e47e206a31968bf733189bf4821f6ac8e2e269a6ffc51521576",
      "texto": "Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.",
      "tipo": "excerto"
     },
     {
-     "fim": 1406,
+     "fim": 1531,
      "id": "posicao-psd-impostos",
-     "inicio": 1338,
+     "inicio": 1463,
      "livro": "PM",
-     "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
+     "sha256_linha": "b106441d31775bb9ddd45e3c936a1f2971ea330d21979b08737b489189c599b4",
      "texto": "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição",
      "tipo": "documento"
     },
     {
-     "fim": 1552,
+     "fim": 1677,
      "id": "posicao-psd-impostos",
-     "inicio": 1410,
+     "inicio": 1535,
      "livro": "PM",
-     "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
+     "sha256_linha": "b106441d31775bb9ddd45e3c936a1f2971ea330d21979b08737b489189c599b4",
      "texto": "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".",
      "tipo": "excerto"
     },
     {
-     "fim": 1583,
+     "fim": 1708,
      "id": "posicao-ps-irc",
-     "inicio": 1565,
+     "inicio": 1690,
      "livro": "PM",
-     "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
+     "sha256_linha": "ac759c7159cc8485071df9413afa7a01d7185c48feb4fedb3b8c065971bf05a5",
      "texto": "José Luís Carneiro",
      "tipo": "atribuicao"
     },
     {
-     "fim": 1719,
+     "fim": 1808,
      "id": "posicao-ps-irc",
-     "inicio": 1586,
+     "inicio": 1735,
      "livro": "PM",
-     "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
+     "sha256_linha": "ac759c7159cc8485071df9413afa7a01d7185c48feb4fedb3b8c065971bf05a5",
+     "texto": "OE2027: PS leva propostas à especialidade para responder ao custo de vida",
+     "tipo": "documento"
+    },
+    {
+     "fim": 1945,
+     "id": "posicao-ps-irc",
+     "inicio": 1812,
+     "livro": "PM",
+     "sha256_linha": "ac759c7159cc8485071df9413afa7a01d7185c48feb4fedb3b8c065971bf05a5",
      "texto": "Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.",
      "tipo": "excerto"
     },
     {
-     "fim": 2080,
+     "fim": 2306,
      "id": "posicao-pcp-irc",
-     "inicio": 1731,
+     "inicio": 1957,
      "livro": "PM",
-     "sha256_linha": "568d1dcfc99b15122172c12c0a5ee8d6f32f73fcd6b2cdb10d0e897441b61a71",
+     "sha256_linha": "0bc7fabdb3693861bd485d0812eef06515a444fd66a0ae753d015bd773cacc80",
      "texto": "O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).",
      "tipo": "excerto"
     },
     {
-     "fim": 2184,
+     "fim": 2410,
      "id": "posicao-cds-orcamento",
-     "inicio": 2132,
+     "inicio": 2358,
      "livro": "PM",
-     "sha256_linha": "8ba4d7a046f9d493c5d583bbbc1192a43728b61077211ee217ea0e50075543b6",
+     "sha256_linha": "360cdea87f03cae51c6807637a9f95d74f0c43ab53b1fd11f1be8938acdfef6f",
      "texto": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
      "tipo": "excerto"
     },
     {
-     "fim": 2317,
+     "fim": 2543,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 2314,
+     "inicio": 2540,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
      "tipo": "valor"
     },
     {
-     "fim": 2382,
+     "fim": 2608,
      "id": "pm-q3-2-r12-c0",
-     "inicio": 2379,
+     "inicio": 2605,
      "livro": "PM",
      "sha256_linha": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
      "texto": "284",
      "tipo": "valor"
     },
     {
-     "fim": 2417,
+     "fim": 2643,
      "id": "pm-q3-2-r18-c0",
-     "inicio": 2414,
+     "inicio": 2640,
      "livro": "PM",
      "sha256_linha": "f4bb472f00bbc10ac91c4a820df70fd2d3ee4580bf15377b0245f49b0ad226d2",
      "texto": "363",
      "tipo": "valor"
     },
     {
-     "fim": 2463,
+     "fim": 2689,
      "id": "pm-q3-2-r16-c0",
-     "inicio": 2460,
+     "inicio": 2686,
      "livro": "PM",
      "sha256_linha": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
      "texto": "124",
@@ -6015,7 +6060,7 @@
     "pm-q3-2-r12-c0",
     "pm-q3-2-r18-c0"
    ],
-   "text": "The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect SIFIDE, 124 million, for a total of 176 million. The Prime Minister: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report on the Budget in the Assembly of the Republic (Assembleia da República, AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase."
+   "text": "The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect SIFIDE, 124 million, for a total of 176 million. The Prime Minister, in the Government's communication «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas»: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report on the Budget in the Assembly of the Republic (Assembleia da República, AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro, in the party's web page «OE2027: PS leva propostas à especialidade para responder ao custo de vida»: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase."
   },
   {
    "figures": [],
@@ -6116,6 +6161,11 @@
     {
      "apoios": [
       {
+       "campo": "locator",
+       "id": "posicao-governo-divida85",
+       "livro": "PM"
+      },
+      {
        "campo": "published_at",
        "id": "posicao-governo-divida85",
        "livro": "PM"
@@ -6142,7 +6192,7 @@
      "id": "posicao-governo-divida85",
      "inicio": 347,
      "livro": "PM",
-     "sha256_linha": "3c017dc7a2e25369638c8519f8e7df33e40aa9c6b1e10692b09147a5882c3a05",
+     "sha256_linha": "3a1465aa9cc3839530cc1e5a149a89eea8ac298c1f9a7104e7f8fc318047e8c1",
      "texto": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
      "tipo": "documento"
     },
@@ -6151,7 +6201,7 @@
      "id": "posicao-governo-divida85-citacao",
      "inicio": 452,
      "livro": "PM",
-     "sha256_linha": "398cbbec761a0a45496c7b30f63967a2018d86f2cf55f6459274b33e3aab91c9",
+     "sha256_linha": "52521b46984b8274bf0d42ad44f18ea7b3dc9b77c1024b3761f2a7c4dac4e90c",
      "texto": "A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027",
      "tipo": "excerto"
     },
@@ -7156,7 +7206,7 @@
      "id": "posicao-be-rendimentos",
      "inicio": 201,
      "livro": "PM",
-     "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
+     "sha256_linha": "283255103e04992272e33838550719ce9abda8479fd1cc5b6e07947dfbf43e74",
      "texto": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
      "tipo": "documento"
     },
@@ -16903,6 +16953,7 @@
    },
    "excerpt": "José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.",
    "fetched_at": "2026-10-20T13:19:39.744187+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-be-rendimentos",
    "locator": "Abertura editorial integral; data editorial 09/10/2026 - 10:09",
@@ -16948,6 +16999,7 @@
    },
    "excerpt": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
    "fetched_at": "2026-10-20T13:14:10.425876+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-cds-orcamento",
    "locator": "Título h1 integral da notícia; data editorial identificada no documento",
@@ -16994,6 +17046,7 @@
    },
    "excerpt": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
    "fetched_at": "2026-10-20T13:14:09.568925+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-chega-habitacao",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17039,6 +17092,7 @@
    },
    "excerpt": "Entre as medidas dirigidas às famílias, salientou o aumento de 50 euros no Complemento Solidário para Idosos, o complemento extraordinário das pensões e a atualização dos limites dos escalões de IRS e das deduções fiscais.",
    "fetched_at": "2026-10-19T22:22:59.372727+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-governo-csi-pensoes",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17084,6 +17138,7 @@
    },
    "excerpt": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
    "fetched_at": "2026-10-20T13:11:57.715449+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-governo-divida85",
    "locator": "Título h1 integral da notícia; publicação no metadado 2026-10-13T21:22:56+01:00",
@@ -17130,6 +17185,7 @@
    },
    "excerpt": "A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027",
    "fetched_at": "2026-10-20T13:11:57.715449+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-governo-divida85-citacao",
    "locator": "Citação direta no corpo da notícia; 13 de outubro de 2026",
@@ -17176,6 +17232,7 @@
    },
    "excerpt": "Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.",
    "fetched_at": "2026-10-19T22:22:59.372727+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-governo-irc",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17221,6 +17278,7 @@
    },
    "excerpt": "Na área fiscal, Luís Montenegro destacou as seis descidas consecutivas do IRS, num valor global de 2 800 milhões de euros, e o impacto de 700 milhões de euros associado ao IRS Jovem.",
    "fetched_at": "2026-10-19T22:22:59.372727+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-governo-irs",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17266,6 +17324,7 @@
    },
    "excerpt": "JPP pede maior protecção das famílias não abrangidas pela descida de IRS",
    "fetched_at": "2026-10-20T13:20:19.510950+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-jpp-irs",
    "locator": "Título h1 integral da notícia; data editorial identificada no documento",
@@ -17312,6 +17371,7 @@
    },
    "excerpt": "Assim, a deputada disse que o seu partido \"apresentará esta descida já para o Orçamento do Estado 2027, de forma progressiva\".",
    "fetched_at": "2026-10-20T13:14:10.239377+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-livre-iva",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17357,6 +17417,7 @@
    },
    "excerpt": "Na habitação, reduz-se em 6% o investimento em relação ao orçamentado no ano passado, num contexto em que a habituação pública continua degradada e a ser residual.",
    "fetched_at": "2026-10-19T22:25:05.611925+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-pcp-habitacao",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17402,6 +17463,7 @@
    },
    "excerpt": "O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).",
    "fetched_at": "2026-10-19T22:25:05.611925+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-pcp-irc",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17447,6 +17509,7 @@
    },
    "excerpt": "Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.",
    "fetched_at": "2026-10-19T22:25:05.611925+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-pcp-irs-rendas",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17492,6 +17555,7 @@
    },
    "excerpt": "São dados que confirmam as possibilidades para um aumento significativo de pensões e prestações sociais que o Governo continua a recusar, e não a mera atualização que decorre do cumprimento da lei.",
    "fetched_at": "2026-10-19T22:25:05.611925+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-pcp-pensoes",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17537,6 +17601,7 @@
    },
    "excerpt": "Em relação aos trabalhadores da Administração Pública, prevê-se uma atualização nos salários de 2,3%, valor que poderá ficar abaixo da inflação, não permitindo a valorização do poder de compra, e um aumento de apenas 15 cêntimos no valor do subsídio de alimentação.",
    "fetched_at": "2026-10-19T22:25:05.611925+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-pcp-salarios",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17582,6 +17647,7 @@
    },
    "excerpt": "O Governo quer limitar o SMN aos 970€ em 2027, quando em Espanha esse valor ultrapassou os 1220€ em 2026.",
    "fetched_at": "2026-10-19T22:25:05.611925+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-pcp-smn",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17627,6 +17693,7 @@
    },
    "excerpt": "Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.",
    "fetched_at": "2026-10-20T13:13:00.287501+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-ps-irc",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17672,6 +17739,7 @@
    },
    "excerpt": "Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas.",
    "fetched_at": "2026-10-20T13:13:00.287501+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-ps-pensoes",
    "locator": "Secção «Pensões com atualização regular e justiça social»; frase completa",
@@ -17727,6 +17795,7 @@
     ]
    },
    "fetched_at": "2026-10-20T13:13:00.287694+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-ps-rendas",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -17772,6 +17841,7 @@
    },
    "excerpt": "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".",
    "fetched_at": "2026-10-20T13:14:09.819738+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-psd-impostos",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",

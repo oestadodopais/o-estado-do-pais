@@ -21,6 +21,7 @@ source_url: "https://www.pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-c
 access_date: "2026-10-19"
 published_at: "2026-10-15"
 afirmacao: true
+forma_da_citacao: "palavras"
 reference_date: "2026-10-15"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.

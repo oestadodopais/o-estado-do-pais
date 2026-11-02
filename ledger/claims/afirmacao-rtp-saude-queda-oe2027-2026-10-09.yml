@@ -28,6 +28,7 @@ source_url: "https://www.rtp.pt/noticias/economia/oe2027-verbas-para-a-saude-com
 access_date: "2026-10-13"
 published_at: "2026-10-09"
 afirmacao: true
+forma_da_citacao: "palavras"
 reference_date: "2026-10-09"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.

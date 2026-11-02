@@ -1388,7 +1388,7 @@
      "id": "hab-imprensa-feridos37",
      "inicio": 415,
      "livro": "HB",
-     "sha256_linha": "92de92ef35ee2792043a57f726143360f4b5f3415a007f099e0957a598ef3995",
+     "sha256_linha": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
      "texto": "37 feridos, dois em estado grave",
      "tipo": "excerto"
     },
@@ -1397,7 +1397,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 471,
      "livro": "HB",
-     "sha256_linha": "fcc3408d26aaa193d8805759f6a7a3447dad39e0da5159943ea0a9f77ae167bb",
+     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
      "texto": "39 feridos, dois deles graves",
      "tipo": "excerto"
     },
@@ -1406,7 +1406,7 @@
      "id": "hab-imprensa-feridos35",
      "inicio": 527,
      "livro": "HB",
-     "sha256_linha": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "35 feridos, pelo menos",
      "tipo": "excerto"
     },
@@ -1415,7 +1415,7 @@
      "id": "hab-imprensa-feridos35",
      "inicio": 559,
      "livro": "HB",
-     "sha256_linha": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "José Soeiro, dirigente nacional do BE",
      "tipo": "atribuicao"
     },
@@ -1424,7 +1424,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 631,
      "livro": "HB",
-     "sha256_linha": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
+     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
      "texto": "um polícia ficou ferido",
      "tipo": "excerto"
     }
@@ -4428,7 +4428,7 @@
      "id": "hab-governo-construir",
      "inicio": 513,
      "livro": "HB",
-     "sha256_linha": "7f0b5d23924e43bad037d2aa53e968f015a06f5b152ef1425145a7e49700b186",
+     "sha256_linha": "8692440237260316a0e28fae7ceb3892ec7f9ef18528a8c15c3aa6ce2bf0494b",
      "texto": "Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.",
      "tipo": "excerto"
     }
@@ -4479,7 +4479,7 @@
      "id": "posicao-ps-rendas",
      "inicio": 950,
      "livro": "PM",
-     "sha256_linha": "e92635b7f82b3b6c4d45a7cdf7d052862857b6d6dac347265eb697aa891ada17",
+     "sha256_linha": "a87cf5fa93ce3657a9e8dbfaaa187b1510e6c8ccfc5e7fbd3902c607aa3b85be",
      "texto": "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.",
      "tipo": "excerto"
     }
@@ -4502,7 +4502,7 @@
      "id": "hab-governo-arrendamento",
      "inicio": 88,
      "livro": "HB",
-     "sha256_linha": "900786295af0e6657f7dcd209037a3742def62cb56a7d36e9d7815e674817f82",
+     "sha256_linha": "1454bb189c721f09647f281f72447540b42e09418d7c517e8e48d696a31079d2",
      "texto": "A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade.",
      "tipo": "excerto"
     },
@@ -4511,7 +4511,7 @@
      "id": "hab-governo-feh",
      "inicio": 453,
      "livro": "HB",
-     "sha256_linha": "e2789c3a3122c3232e96fdefc47851027317e23067aa30d690300ca47eb5a2ca",
+     "sha256_linha": "33ad7ee0ea459c80659df4e50f069437b7f965128e65967e24af078e39f6c42e",
      "texto": "2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional.",
      "tipo": "excerto"
     },
@@ -4575,7 +4575,7 @@
      "id": "hab-ps-vazias",
      "inicio": 10,
      "livro": "HB",
-     "sha256_linha": "440141ea2c05d99c424df73040c80407e6966d0bcedd12d78f8f8e749cb38b55",
+     "sha256_linha": "576289d8c62fd2473dee6a1511ae637022594fa2138807d1b0f3b00b6e40f9ba",
      "texto": "José Luís Carneiro",
      "tipo": "atribuicao"
     },
@@ -4622,7 +4622,7 @@
      "id": "hab-ps-vazias",
      "inicio": 59,
      "livro": "HB",
-     "sha256_linha": "440141ea2c05d99c424df73040c80407e6966d0bcedd12d78f8f8e749cb38b55",
+     "sha256_linha": "576289d8c62fd2473dee6a1511ae637022594fa2138807d1b0f3b00b6e40f9ba",
      "texto": "centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:",
      "tipo": "excerto"
     },
@@ -4631,7 +4631,7 @@
      "id": "hab-ps-mais-valias",
      "inicio": 226,
      "livro": "HB",
-     "sha256_linha": "716187edb6bc8911b072f19663cf6d9110b29d6dfd533179e1e9e47cc90e6502",
+     "sha256_linha": "4967f25ffb905de8a8e6f58e288a946029c72202abbd1fe68913435dc33fc248",
      "texto": "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros.",
      "tipo": "excerto"
     },
@@ -4640,7 +4640,7 @@
      "id": "hab-ps-rendas",
      "inicio": 376,
      "livro": "HB",
-     "sha256_linha": "8e07a6ae26e88674c0de1f1e7848b4e7aa13374c7ae42e1149b98055673cd25e",
+     "sha256_linha": "12e30a15fc63da43414abd0a6af9ec86b39f9bdd7c799cb8af36faa3158b403f",
      "texto": "Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento.",
      "tipo": "excerto"
     }
@@ -4662,7 +4662,7 @@
      "id": "hab-pcp-rendas",
      "inicio": 11,
      "livro": "HB",
-     "sha256_linha": "c2a8a06499c9826f9b2ab0d8c28426fb07341b256445173a6b9c0ed3d6b3d0b9",
+     "sha256_linha": "da18615e30b27d371916bee0a160d9f59344a96c3dd69ae1653cfc21b6becd25",
      "texto": "Paula Santos",
      "tipo": "atribuicao"
     },
@@ -4671,7 +4671,7 @@
      "id": "hab-pcp-rendas",
      "inicio": 50,
      "livro": "HB",
-     "sha256_linha": "c2a8a06499c9826f9b2ab0d8c28426fb07341b256445173a6b9c0ed3d6b3d0b9",
+     "sha256_linha": "da18615e30b27d371916bee0a160d9f59344a96c3dd69ae1653cfc21b6becd25",
      "texto": "Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período.",
      "tipo": "excerto"
     },
@@ -4680,7 +4680,7 @@
      "id": "hab-be-despejos",
      "inicio": 391,
      "livro": "HB",
-     "sha256_linha": "6adfd620520f4367b7c5e349b72d03d5c4ac6f8625d190e96fac8979c6b8804d",
+     "sha256_linha": "e17399260f7506e5f9116b0ac947f2391768500bb561511f17c7132ef48de965",
      "texto": "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.",
      "tipo": "excerto"
     }
@@ -4701,7 +4701,7 @@
      "id": "hab-pan-controlo",
      "inicio": 11,
      "livro": "HB",
-     "sha256_linha": "4453c8eda0c3a402fdaf1b1eabbc5eb1d36d4da9de8f70603299aab4db0e52bf",
+     "sha256_linha": "062d06fd18e056295d3c25d45adc89333221f818975b029bd383a9a47fbe3c11",
      "texto": "Inês de Sousa Real",
      "tipo": "atribuicao"
     },
@@ -4710,7 +4710,7 @@
      "id": "hab-pan-controlo",
      "inicio": 57,
      "livro": "HB",
-     "sha256_linha": "4453c8eda0c3a402fdaf1b1eabbc5eb1d36d4da9de8f70603299aab4db0e52bf",
+     "sha256_linha": "062d06fd18e056295d3c25d45adc89333221f818975b029bd383a9a47fbe3c11",
      "texto": "Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar.",
      "tipo": "excerto"
     },
@@ -4719,7 +4719,7 @@
      "id": "hab-pan-caucoes",
      "inicio": 426,
      "livro": "HB",
-     "sha256_linha": "e4cacc6343ce5107aac9e5f47cb98975ffb4a04ae54e884cacc1f9296765e82a",
+     "sha256_linha": "cace621efdb916e56bd1b2130010b1561f9a6ff86da6add06cb1fd60ffc1a9af",
      "texto": "Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares.",
      "tipo": "excerto"
     },
@@ -4728,7 +4728,7 @@
      "id": "hab-pan-tetos",
      "inicio": 796,
      "livro": "HB",
-     "sha256_linha": "241d1ba13f4d67ed08f79136947f07d2a717f8d38a6f2a000d51e705c08de704",
+     "sha256_linha": "e012e1cecfff519c6a1b1f08b56d57daa1662fb4fceedac1ca3a2c529816f073",
      "texto": "Por fim, urge travar, a curto prazo, o aumento do valor das rendas. Por isso, o PAN propõe a criação de um projeto piloto de aplicação de tetos às rendas. Este deve ser considerado para pessoas e famílias em situação económica desfavorável e a requerimento das mesmas. Esta medida deverá ser temporária e excecional, de forma a resolver os problemas com a subida do valor das rendas a curto prazo mas sem levar a efeitos perversos que se poderão revelar com a manutenção desta medida a longo prazo e de forma generalizada.",
      "tipo": "excerto"
     },
@@ -4774,7 +4774,7 @@
      "id": "hab-livre-reinvestimento",
      "inicio": 50,
      "livro": "HB",
-     "sha256_linha": "bacbe58e2669059cf5f42c411b37d1ac4e003b234500209d13e6f536417a640b",
+     "sha256_linha": "fe8e1adf00b990b12eb83b3482455a0226f5f4af03f16cb56b22480672c7f4be",
      "texto": "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente.",
      "tipo": "excerto"
     },
@@ -4821,7 +4821,7 @@
      "id": "hab-chega-reinvestimento",
      "inicio": 841,
      "livro": "HB",
-     "sha256_linha": "8ad58464ec9ab1a9422617a5535841ec8abe7d7ffd9a8d1f6168f3fcd796a87f",
+     "sha256_linha": "6353a1084fdefd806a24b7fe8e942839c1d6e75580b9cd5093274151a846a715",
      "texto": "O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir.",
      "tipo": "excerto"
     },
@@ -4868,7 +4868,7 @@
      "id": "posicao-chega-habitacao",
      "inicio": 1256,
      "livro": "PM",
-     "sha256_linha": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
+     "sha256_linha": "c18f9f15f178754f3aee1d3d5094af4c9b8b06ef51ac302210e3ccf3661ef92c",
      "texto": "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”",
      "tipo": "documento"
     },
@@ -4877,7 +4877,7 @@
      "id": "posicao-chega-habitacao",
      "inicio": 1369,
      "livro": "PM",
-     "sha256_linha": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
+     "sha256_linha": "c18f9f15f178754f3aee1d3d5094af4c9b8b06ef51ac302210e3ccf3661ef92c",
      "texto": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
      "tipo": "excerto"
     }
@@ -4919,7 +4919,7 @@
      "id": "hab-il-proposta",
      "inicio": 129,
      "livro": "HB",
-     "sha256_linha": "61c9e1913b4d7b1b05623f8a5c31310e9cfd011c539c29cd707d03eee24e4b78",
+     "sha256_linha": "bad6292546edbb81294866e96bc527f81eaf082f227034f52c8ef1528c478845",
      "texto": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
      "tipo": "excerto"
     }
@@ -5092,7 +5092,7 @@
      "id": "hab-cgtp-convocatoria",
      "inicio": 868,
      "livro": "HB",
-     "sha256_linha": "d43cc8b3956bbd0e8bafffc42131cf2ab94e941f91a84d9323aeb03faa93a460",
+     "sha256_linha": "e6fff68ce39d2b9ef11c60f5047e5d5872f558b908f613921c993a92470ea26c",
      "texto": "MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO",
      "tipo": "documento"
     },
@@ -5119,7 +5119,7 @@
      "id": "hab-cgtp-convocatoria",
      "inicio": 996,
      "livro": "HB",
-     "sha256_linha": "d43cc8b3956bbd0e8bafffc42131cf2ab94e941f91a84d9323aeb03faa93a460",
+     "sha256_linha": "e6fff68ce39d2b9ef11c60f5047e5d5872f558b908f613921c993a92470ea26c",
      "texto": "CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO",
      "tipo": "excerto"
     },
@@ -5245,7 +5245,7 @@
      "id": "hab-imprensa-acampados",
      "inicio": 355,
      "livro": "HB",
-     "sha256_linha": "3cba17a054af3c36d0d0139f3aeb2015eca84456067b0689972941fc57eaccba",
+     "sha256_linha": "2533d6d1e63de3a640f4581c04d06f972665403c586c2e69965580713919a6f6",
      "texto": "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político",
      "tipo": "excerto"
     },
@@ -5342,7 +5342,7 @@
      "id": "hab-imprensa-feridos37",
      "inicio": 498,
      "livro": "HB",
-     "sha256_linha": "92de92ef35ee2792043a57f726143360f4b5f3415a007f099e0957a598ef3995",
+     "sha256_linha": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
      "texto": "37 feridos, dois em estado grave",
      "tipo": "excerto"
     },
@@ -5351,7 +5351,7 @@
      "id": "hab-imprensa-feridos37",
      "inicio": 543,
      "livro": "HB",
-     "sha256_linha": "92de92ef35ee2792043a57f726143360f4b5f3415a007f099e0957a598ef3995",
+     "sha256_linha": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
      "texto": "Movimento pela Habitação",
      "tipo": "atribuicao"
     },
@@ -5360,7 +5360,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 570,
      "livro": "HB",
-     "sha256_linha": "fcc3408d26aaa193d8805759f6a7a3447dad39e0da5159943ea0a9f77ae167bb",
+     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
      "texto": "39 feridos, dois deles graves",
      "tipo": "excerto"
     },
@@ -5369,7 +5369,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 612,
      "livro": "HB",
-     "sha256_linha": "fcc3408d26aaa193d8805759f6a7a3447dad39e0da5159943ea0a9f77ae167bb",
+     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
      "texto": "organização",
      "tipo": "atribuicao"
     },
@@ -5378,7 +5378,7 @@
      "id": "hab-imprensa-feridos35",
      "inicio": 626,
      "livro": "HB",
-     "sha256_linha": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "35 feridos, pelo menos",
      "tipo": "excerto"
     },
@@ -5387,7 +5387,7 @@
      "id": "hab-imprensa-feridos35",
      "inicio": 659,
      "livro": "HB",
-     "sha256_linha": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "José Soeiro, dirigente nacional do BE",
      "tipo": "atribuicao"
     },
@@ -5396,7 +5396,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 699,
      "livro": "HB",
-     "sha256_linha": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
+     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
      "texto": "um polícia ficou ferido",
      "tipo": "excerto"
     },
@@ -5405,7 +5405,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 735,
      "livro": "HB",
-     "sha256_linha": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
+     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
      "texto": "PSP",
      "tipo": "atribuicao"
     },
@@ -5414,7 +5414,7 @@
      "id": "hab-imprensa-assistidos",
      "inicio": 741,
      "livro": "HB",
-     "sha256_linha": "1dbc88395420b5cdb47b687973df1dd2888497214a591c4f92d5d5ab2fced012",
+     "sha256_linha": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
      "texto": "oito pessoas foram assistidas no seu quartel",
      "tipo": "excerto"
     },
@@ -5423,7 +5423,7 @@
      "id": "hab-imprensa-assistidos",
      "inicio": 796,
      "livro": "HB",
-     "sha256_linha": "1dbc88395420b5cdb47b687973df1dd2888497214a591c4f92d5d5ab2fced012",
+     "sha256_linha": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
      "texto": "Luís Silva, comandante dos Bombeiros Voluntários do Porto",
      "tipo": "atribuicao"
     },
@@ -5432,7 +5432,7 @@
      "id": "hab-imprensa-hospital",
      "inicio": 856,
      "livro": "HB",
-     "sha256_linha": "369452af95b248b1816a951a9c54508d30d0fc51a772bf7928eb1f89c9035f09",
+     "sha256_linha": "bc67bdb3d5a40731a17c525c6850d60cd7ee50287762d5b83e08601db9ec6d11",
      "texto": "Duas pessoas foram encaminhadas para o hospital.",
      "tipo": "excerto"
     },
@@ -5441,7 +5441,7 @@
      "id": "hab-imprensa-hospital",
      "inicio": 917,
      "livro": "HB",
-     "sha256_linha": "369452af95b248b1816a951a9c54508d30d0fc51a772bf7928eb1f89c9035f09",
+     "sha256_linha": "bc67bdb3d5a40731a17c525c6850d60cd7ee50287762d5b83e08601db9ec6d11",
      "texto": "RTP",
      "tipo": "atribuicao"
     },
@@ -5488,7 +5488,7 @@
      "id": "hab-imprensa-igai",
      "inicio": 1051,
      "livro": "HB",
-     "sha256_linha": "5c4f0cf1a0521eb08c063dd37dbddc0cec37502ef2ec21b4aba6a6a79d43e2be",
+     "sha256_linha": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
      "texto": "a IGAI abriu um processo administrativo, com solicitação de informações à PSP",
      "tipo": "excerto"
     },
@@ -5497,7 +5497,7 @@
      "id": "hab-imprensa-igai",
      "inicio": 1145,
      "livro": "HB",
-     "sha256_linha": "5c4f0cf1a0521eb08c063dd37dbddc0cec37502ef2ec21b4aba6a6a79d43e2be",
+     "sha256_linha": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
      "texto": "IGAI abre processo sobre carga policial contra protesto pela habitação no Porto",
      "tipo": "documento"
     },
@@ -5594,7 +5594,7 @@
      "id": "hab-imprensa-pm-15",
      "inicio": 1279,
      "livro": "HB",
-     "sha256_linha": "08eaee941ad15e25245e9d02e8dcdf679b532c2cb782c5d755c5f1c4b23ac0ef",
+     "sha256_linha": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
      "texto": "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas",
      "tipo": "documento"
     },
@@ -5603,7 +5603,7 @@
      "id": "hab-imprensa-pm-15",
      "inicio": 1364,
      "livro": "HB",
-     "sha256_linha": "08eaee941ad15e25245e9d02e8dcdf679b532c2cb782c5d755c5f1c4b23ac0ef",
+     "sha256_linha": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
      "texto": "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.",
      "tipo": "excerto"
     },
@@ -5612,7 +5612,7 @@
      "id": "hab-imprensa-pm-16",
      "inicio": 1681,
      "livro": "HB",
-     "sha256_linha": "ec7991af2d83c379775378290bfe610d3254288bb6019253bcaf8043ae1e9c4a",
+     "sha256_linha": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
      "texto": "Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)",
      "tipo": "documento"
     },
@@ -5621,7 +5621,7 @@
      "id": "hab-imprensa-pm-16",
      "inicio": 1783,
      "livro": "HB",
-     "sha256_linha": "ec7991af2d83c379775378290bfe610d3254288bb6019253bcaf8043ae1e9c4a",
+     "sha256_linha": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
      "texto": "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.",
      "tipo": "excerto"
     },
@@ -5630,7 +5630,7 @@
      "id": "hab-imprensa-mai",
      "inicio": 1950,
      "livro": "HB",
-     "sha256_linha": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
+     "sha256_linha": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
      "texto": "Luís Neves",
      "tipo": "atribuicao"
     },
@@ -5639,7 +5639,7 @@
      "id": "hab-imprensa-mai",
      "inicio": 1976,
      "livro": "HB",
-     "sha256_linha": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
+     "sha256_linha": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
      "texto": "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima",
      "tipo": "documento"
     },
@@ -5736,7 +5736,7 @@
      "id": "hab-imprensa-mai",
      "inicio": 2081,
      "livro": "HB",
-     "sha256_linha": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
+     "sha256_linha": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
      "texto": "há lei e ordem que têm de ser cumpridas",
      "tipo": "excerto"
     },
@@ -5745,7 +5745,7 @@
      "id": "hab-imprensa-amorim",
      "inicio": 2162,
      "livro": "HB",
-     "sha256_linha": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
+     "sha256_linha": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
      "texto": "Carlos Abreu Amorim",
      "tipo": "atribuicao"
     },
@@ -5754,7 +5754,7 @@
      "id": "hab-imprensa-amorim",
      "inicio": 2197,
      "livro": "HB",
-     "sha256_linha": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
+     "sha256_linha": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
      "texto": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
      "tipo": "documento"
     },
@@ -5801,7 +5801,7 @@
      "id": "hab-imprensa-amorim",
      "inicio": 2320,
      "livro": "HB",
-     "sha256_linha": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
+     "sha256_linha": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
      "texto": "o Governo \"não vai ceder aos gritos que vêm da rua\".",
      "tipo": "excerto"
     },
@@ -5838,7 +5838,7 @@
      "id": "hab-imprensa-debate-custos",
      "inicio": 2443,
      "livro": "HB",
-     "sha256_linha": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
+     "sha256_linha": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
      "texto": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
      "tipo": "excerto"
     },
@@ -5847,7 +5847,7 @@
      "id": "hab-imprensa-debate-protecao",
      "inicio": 2568,
      "livro": "HB",
-     "sha256_linha": "7c158cdf31aad80dbad95ccc8927a4598328f6773fc5114f0d9069fd3de08573",
+     "sha256_linha": "3057bdcaed4e4b37b36a5f1b749dfee754564458e397cc4f5736d7e4f8449d52",
      "texto": "vão proteger as pessoas",
      "tipo": "excerto"
     },
@@ -5856,7 +5856,7 @@
      "id": "hab-imprensa-debate-custos",
      "inicio": 2608,
      "livro": "HB",
-     "sha256_linha": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
+     "sha256_linha": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
      "texto": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
      "tipo": "documento"
     }
@@ -5954,7 +5954,7 @@
      "id": "hab-imprensa-debate-custos",
      "inicio": 300,
      "livro": "HB",
-     "sha256_linha": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
+     "sha256_linha": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
      "texto": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
      "tipo": "excerto"
     },
@@ -6020,7 +6020,7 @@
      "id": "hab-be-despejos",
      "inicio": 999,
      "livro": "HB",
-     "sha256_linha": "6adfd620520f4367b7c5e349b72d03d5c4ac6f8625d190e96fac8979c6b8804d",
+     "sha256_linha": "e17399260f7506e5f9116b0ac947f2391768500bb561511f17c7132ef48de965",
      "texto": "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.",
      "tipo": "excerto"
     },
@@ -6843,6 +6843,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:43:34.415280+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-be-despejos",
    "invoca": [],
    "measure": "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.",
@@ -7134,6 +7135,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:44:07.960811+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-cgtp-convocatoria",
    "invoca": [],
    "measure": "CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO",
@@ -7208,6 +7210,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:42:49.867270+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-chega-reinvestimento",
    "invoca": [],
    "measure": "O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir.",
@@ -7649,6 +7652,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:38:50.670699+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-governo-arrendamento",
    "invoca": [],
    "measure": "A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade.",
@@ -7715,6 +7719,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:39:00.548783+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-governo-construir",
    "invoca": [],
    "measure": "Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.",
@@ -7781,6 +7786,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:38:50.670699+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-governo-feh",
    "invoca": [],
    "measure": "2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional.",
@@ -7850,6 +7856,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:39:30.428953+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-il-proposta",
    "invoca": [],
    "measure": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
@@ -11016,6 +11023,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.008862+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-acampados",
    "invoca": [],
    "measure": "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político",
@@ -11084,6 +11092,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:06.422628+00:00",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-amorim",
    "invoca": [],
    "measure": "o Governo \"não vai ceder aos gritos que vêm da rua\".",
@@ -11153,6 +11162,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.352610+00:00",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-assistidos",
    "invoca": [],
    "measure": "oito pessoas foram assistidas no seu quartel",
@@ -11219,6 +11229,7 @@
     }
    ],
    "fetched_at": "2026-10-19T14:01:20.091116+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-debate-custos",
    "invoca": [],
    "measure": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
@@ -11285,6 +11296,7 @@
     }
    ],
    "fetched_at": "2026-10-19T14:01:20.091116+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-debate-protecao",
    "invoca": [],
    "measure": "vão proteger as pessoas",
@@ -11356,6 +11368,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.697591+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-feridos35",
    "invoca": [],
    "measure": "Feridos segundo um dirigente do BE, pela imprensa",
@@ -11423,6 +11436,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.352610+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-feridos37",
    "invoca": [],
    "measure": "37 feridos, dois em estado grave",
@@ -11494,6 +11508,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.960374+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-feridos39",
    "invoca": [],
    "measure": "39 feridos, dois deles graves",
@@ -11563,6 +11578,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.352610+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-hospital",
    "invoca": [],
    "measure": "Duas pessoas foram encaminhadas para o hospital.",
@@ -11629,6 +11645,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:07.633696+00:00",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-igai",
    "invoca": [],
    "measure": "a IGAI abriu um processo administrativo, com solicitação de informações à PSP",
@@ -11697,6 +11714,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:07.422462+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-mai",
    "invoca": [],
    "measure": "há lei e ordem que têm de ser cumpridas",
@@ -12014,6 +12032,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:06.788404+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-pm-15",
    "invoca": [],
    "measure": "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.",
@@ -12082,6 +12101,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:07.192381+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-pm-16",
    "invoca": [],
    "measure": "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.",
@@ -12153,6 +12173,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.960374+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-imprensa-psp-ferido",
    "invoca": [],
    "measure": "um polícia ficou ferido",
@@ -13267,6 +13288,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:43:24.820263+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-livre-reinvestimento",
    "invoca": [],
    "measure": "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente.",
@@ -14088,6 +14110,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:42:58.075122+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-pan-caucoes",
    "invoca": [],
    "measure": "Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares.",
@@ -14162,6 +14185,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:42:58.075122+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-pan-controlo",
    "invoca": [],
    "measure": "Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar.",
@@ -14236,6 +14260,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:42:58.075122+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-pan-tetos",
    "invoca": [],
    "measure": "Por fim, urge travar, a curto prazo, o aumento do valor das rendas. Por isso, o PAN propõe a criação de um projeto piloto de aplicação de tetos às rendas. Este deve ser considerado para pessoas e famílias em situação económica desfavorável e a requerimento das mesmas. Esta medida deverá ser temporária e excecional, de forma a resolver os problemas com a subida do valor das rendas a curto prazo mas sem levar a efeitos perversos que se poderão revelar com a manutenção desta medida a longo prazo e de forma generalizada.",
@@ -14304,6 +14329,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:39:12.382412+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-pcp-rendas",
    "invoca": [],
    "measure": "Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período.",
@@ -15113,6 +15139,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:39:04.344437+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-ps-mais-valias",
    "invoca": [],
    "measure": "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros.",
@@ -15181,6 +15208,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:39:04.344437+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-ps-rendas",
    "invoca": [],
    "measure": "Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento.",
@@ -15249,6 +15277,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:39:04.344437+00:00",
+   "forma_da_citacao": "palavras",
    "id": "hab-ps-vazias",
    "invoca": [],
    "measure": "centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:",
@@ -16687,6 +16716,7 @@
    },
    "excerpt": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
    "fetched_at": "2026-10-20T13:14:09.568925+00:00",
+   "forma_da_citacao": "relato",
    "group": "posicoes",
    "id": "posicao-chega-habitacao",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
@@ -16741,6 +16771,7 @@
     ]
    },
    "fetched_at": "2026-10-20T13:13:00.287694+00:00",
+   "forma_da_citacao": "palavras",
    "group": "posicoes",
    "id": "posicao-ps-rendas",
    "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",

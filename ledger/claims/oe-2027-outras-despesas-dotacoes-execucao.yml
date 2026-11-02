@@ -22,6 +22,7 @@ source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LN
 access_date: "2026-10-13"
 published_at: "2026-10-08"
 afirmacao: true
+forma_da_citacao: "palavras"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.

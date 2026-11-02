@@ -21,6 +21,7 @@ source_url: "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalida
 access_date: "2026-10-28"
 published_at: "2026-10-28"
 afirmacao: true
+forma_da_citacao: "palavras"
 reference_date: "2026-10-28"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.

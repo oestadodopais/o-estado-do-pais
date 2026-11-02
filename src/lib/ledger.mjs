@@ -12,6 +12,7 @@
  */
 
 import crypto from 'node:crypto';
+import { errosDaFormaDaLinha } from './forma-da-citacao.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -346,6 +347,7 @@ export const CAMPOS = /** @type {const} */ ([
   'check',
   'attributed_to',
   'afirmacao',
+  'forma_da_citacao',
   'texto_documental',
   'study',
   'note',
@@ -1625,6 +1627,7 @@ export function validateLedger() {
     if(c.texto_documental!==undefined&&!textoDocumentalConferido(c))errors.push(`${onde} V2E texto documental: valor, excerto ou proveniência diferente da prova selada`);
     if (id.startsWith('afirmacao-') && c.afirmacao !== true) errors.push(`${onde} a família afirmacao exige afirmacao: true`);
     if (c.afirmacao === true) {
+      errors.push(...errosDaFormaDaLinha(c).map(e=>`${onde} ${e}`));
       if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
       if (!['html', 'pdf'].includes(String(doc?.kind))) errors.push(`${onde} V2A documento: exige html ou pdf`);
       const textoDoOrcamento = doc?.title === 'Orçamento do Estado 2027 · Relatório' && c.unit === 'afirmação';

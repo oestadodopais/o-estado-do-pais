@@ -267,6 +267,7 @@ const semOLugar = (t) => t.replace(/ (?:em|in) Portugal\b/, '');
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import { conferirFormaDasCitacoes } from './forma-da-citacao.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
@@ -5979,6 +5980,7 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
+  for (const falta of conferirFormaDasCitacoes(body0, rota, claims)) err(falta);
   const body = body0;
   for (const el of body.querySelectorAll('script, style')) el.remove();
 

@@ -389,24 +389,24 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 56628b4193ad04db434581e69ced564c3fa3aa0e"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 7cefce181f04c6e7617f5a44784b7636e1cca6b6"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-21T08:18:39Z"
-    bytes_raw: 47326
-    bytes_normalized: 47326
-    sha256_raw: "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a"
-    sha256_normalized: "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a"
+    fetched_utc: "2026-11-02T16:34:54Z"
+    bytes_raw: 47808
+    bytes_normalized: 47808
+    sha256_raw: "42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94"
+    sha256_normalized: "42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ b7da85cc843d3ce00f69ff43bd666fda100992ce"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 7cefce181f04c6e7617f5a44784b7636e1cca6b6"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-21T08:18:39Z"
-    bytes_raw: 46763
-    bytes_normalized: 46763
-    sha256_raw: "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979"
-    sha256_normalized: "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979"
+    fetched_utc: "2026-11-02T16:34:54Z"
+    bytes_raw: 47245
+    bytes_normalized: 47245
+    sha256_raw: "0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a"
+    sha256_normalized: "0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a"
   - slug: a-casa-em-portugal-e-na-europa
     lang: "pt"
     title: "A casa em Portugal e na Europa"

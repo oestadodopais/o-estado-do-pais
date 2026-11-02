@@ -1,0 +1,11 @@
+{
+  "files": {
+    "marcadores-do-relato.json": {
+      "destino": "ledger",
+      "origin_path": "core/marcadores-do-relato.json",
+      "origin_sha256": "12beb1c1c302d8be6dc5d089361968e9a7d9d828302c5fe98a46bf108bf8a22d",
+      "exported_sha256": "12beb1c1c302d8be6dc5d089361968e9a7d9d828302c5fe98a46bf108bf8a22d",
+      "exporter": "publisher/export_site_rows.py"
+    }
+  }
+}

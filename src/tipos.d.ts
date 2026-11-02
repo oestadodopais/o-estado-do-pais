@@ -192,6 +192,7 @@ interface CorrecaoDaLinha {
  */
 interface Linha {
   afirmacao?: unknown;
+  forma_da_citacao?: 'palavras' | 'relato';
   texto_documental?: unknown;
   publication?: unknown;
   definition_sources?: unknown;
