@@ -513,7 +513,8 @@ function confereFicheiros(regs, erros) {
       if (rel === 'ledger/claims' && entrada.origin_sha256 !== entrada.exported_sha256)
         erros.push(`${onde}: as projeções do motor e do sítio divergem.`);
       const actual = sha256(rel === 'ledger/claims' ? projecaoLinha(bytes) : bytes);
-      if (actual !== entrada.exported_sha256) {
+      // O exportador antigo sela o ficheiro inteiro: essa prova é mais restrita e continua válida.
+      if (actual !== entrada.exported_sha256 && sha256(bytes) !== entrada.exported_sha256) {
         erros.push(
           `${onde}: os bytes em disco já não são os que atravessaram.\n` +
             `        registo: ${entrada.exported_sha256}\n` +
@@ -1126,7 +1127,7 @@ function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = []) {
   for(const {dados} of regsDeFicheiros)for(const [nome,e] of Object.entries(dados.files)) {
     if(e.destino!=='ledger/claims'||!nome.endsWith('.yml'))continue;
     const p=path.join(DIR_CLAIMS,nome);
-    if(e.origin_sha256===e.exported_sha256&&fs.existsSync(p)&&sha256(projecaoLinha(fs.readFileSync(p)))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));
+    if(e.origin_sha256===e.exported_sha256&&fs.existsSync(p)&&[sha256(projecaoLinha(fs.readFileSync(p))),sha256(fs.readFileSync(p))].includes(e.exported_sha256))cruzadas.add(nome.slice(0,-4));
   }
   const linhas = [];
   let ficheiros = 0;

@@ -128,6 +128,14 @@ try {
     }
   }
   const ficheiroRegisto=path.join(copia,'ledger/cruzamentos/pensao-rp4n.json');
+  const integral=structuredClone(rp4n);
+  for(const nome of nomes) integral.files[nome].origin_sha256=integral.files[nome].exported_sha256=sha(fs.readFileSync(path.join(copia,'ledger/claims',nome)));
+  fs.writeFileSync(ficheiroRegisto,JSON.stringify(integral));
+  const legado=conferirTravessia();assert.equal(legado.status,0,legado.stdout+legado.stderr);
+  const fIntegral=path.join(copia,'ledger/claims',nomes[0]), bytesIntegrais=fs.readFileSync(fIntegral);
+  fs.writeFileSync(fIntegral,bytesIntegrais.toString().replace(/^value:.*$/m,'value: "0"'));
+  const legadoAlterado=conferirTravessia();assert.equal(legadoAlterado.status,1);assert.match(legadoAlterado.stderr,/os bytes em disco já não são os que atravessaram/);
+  fs.writeFileSync(fIntegral,bytesIntegrais);fs.writeFileSync(ficheiroRegisto,JSON.stringify(rp4n));
   const divergente=structuredClone(rp4n);
   divergente.files[nomes[0]].origin_sha256='0'.repeat(64);
   fs.writeFileSync(ficheiroRegisto,JSON.stringify(divergente));
@@ -146,7 +154,7 @@ try {
     fs.writeFileSync(f,Buffer.from(bytes.toString().replace(/^value:.*$/m,'value: "0"')));
     const erros=[];confereFicheirosNaOrigem(regs,motor,erros);assert.ok(erros.length);
   }
-  console.log('RP4-n: rótulo e projeções divergentes recusados; origem inteira ou projetada conferida.');
+  console.log('RP4-n: rótulo e projeções divergentes recusados; travessia integral e projetada conferidas.');
 
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });
