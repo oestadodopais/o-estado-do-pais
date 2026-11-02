@@ -10,5 +10,10 @@
     "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29"
   ],
   "base": "design/especime-v3/medicoes/ed1-2026-11-02/l1-ed1.json",
-  "reconferencia": "pendente"
+  "reconferencia": {
+    "codigo": 0,
+    "l1_paginas": 3464,
+    "l3": 0,
+    "cabeca": "c5630d4b70895386b3da9b11039e90e5d653c5d1"
+  }
 }

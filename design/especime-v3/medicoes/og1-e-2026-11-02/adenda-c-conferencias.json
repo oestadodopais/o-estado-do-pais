@@ -1,0 +1,378 @@
+{
+  "chamadas_ate_este_registo": 98,
+  "corridas_com_registo": 40,
+  "corridas_de_conferencias": 39,
+  "verificacoes_de_sintaxe": 2,
+  "core_gate": {
+    "corridas": 2,
+    "codigos": [
+      1,
+      0
+    ],
+    "motivo_da_repeticao": "O teste novo passou 130 controlos, mas a saída não tinha PASS com a contagem. O gancho recusou o primeiro pedido; corrigida a saída, passou."
+  },
+  "build_inteiro": {
+    "corridas": 1,
+    "codigo": 1,
+    "pedido_previo_sem_execucao": 9
+  },
+  "codigos_lidos": {
+    "build": 1,
+    "html": 0,
+    "voz": 1,
+    "lugar": 0,
+    "lingua": 0,
+    "typecheck": 0,
+    "plantas": 0,
+    "areas-edicoes": 0,
+    "auditoria": 0
+  },
+  "conferencias": [
+    {
+      "registo": "<temporario>/og1ec-areas-edicoes-conferido.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-auditoria-conferido.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-auditoria-final.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-export-test.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-final-tipos.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-fontes-tipos.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-forma.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-gate-conferido.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-historia.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-ledger.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-ledger2.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-ledger3.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-lingua-final.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-lugar-antes.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-lugar-final.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-marcas-corrigidas.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-marcas.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-medir.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-migracao-prova.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-motor-plantas-final.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-motor-pre.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-motor-pre2.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-nomes-pre.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-plantas-final.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-plantas.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-plantas2.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-plantas3.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-plantas4.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-recompor-html.log",
+      "codigo": 0,
+      "tipo": "recomposicao-html"
+    },
+    {
+      "registo": "<temporario>/og1ec-registo.log",
+      "codigo": null,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-tipos-final.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-travessia.log",
+      "codigo": null,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-types.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-types2.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-types3.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-types4.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-types5.log",
+      "codigo": 0,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-voz-conferido.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-voz-final.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    },
+    {
+      "registo": "<temporario>/og1ec-voz-politica.log",
+      "codigo": 1,
+      "tipo": "conferencia"
+    }
+  ],
+  "antes": {
+    "paginas": 9823,
+    "rotas_com_recusa": 44,
+    "recusas": 206
+  },
+  "depois": {
+    "paginas": 9823,
+    "rotas_com_recusa": 0,
+    "recusas": 0,
+    "edicoes_guardadas": 6,
+    "recusas_conservadas": 14
+  },
+  "voz_pendente": [
+    "Edições",
+    "Editions",
+    "publicado a ·",
+    "published on ·"
+  ],
+  "motor": "6b1b38cf8c5e6fc8809959e23f3536eb41b15ca5",
+  "commits_do_codigo_do_sitio": [
+    "61170e0cd0647a5b557c852bb26582f072e692aa",
+    "ccb3485e7f17916a9e873dbd750fbfdfd1de6e38",
+    "3b515a3f2c52cb69ec84408074f55d57c2b3b166",
+    "3f6ccbcdaca2f1954968b0fa9f77a9b405c62b0d",
+    "c5630d4b70895386b3da9b11039e90e5d653c5d1",
+    "f1d9fa949f0e26bd6d4477138c6ff6354422f9e8"
+  ],
+  "inventario": {
+    "retiradas_por_substituicao": 2,
+    "declaracoes_sem_superficie_removidas": [
+      {
+        "linha": 535,
+        "texto": "An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed:"
+      },
+      {
+        "linha": 560,
+        "texto": "Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam:"
+      },
+      {
+        "linha": 5376,
+        "texto": "Quatro passagens diziam como facto causas que o relatório de contas de 2025 da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 é o que o relatório de 2025 imprime como comparativo, porque as contas de 2024 nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano."
+      },
+      {
+        "linha": 5377,
+        "texto": "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação : Quatro passagens diziam como facto causas que o relatório de contas de 2025 da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 é o que o relatório de 2025 imprime como comparativo, porque as contas de 2024 nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano. Primeira edição · Edição atual"
+      },
+      {
+        "linha": 5378,
+        "texto": "Four passages stated as fact causes that the Câmara&#39;s 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 investment value is the one the 2025 report prints as a comparative, because the 2024 accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications."
+      },
+      {
+        "linha": 5379,
+        "texto": "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification : Four passages stated as fact causes that the Câmara&#39;s 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 investment value is the one the 2025 report prints as a comparative, because the 2024 accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications. First edition · Current edition"
+      },
+      {
+        "linha": 5381,
+        "texto": "O Orçamento de 2027: o que muda e para quem : Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP). Primeira edição · Edição atual"
+      },
+      {
+        "linha": 5382,
+        "texto": "Five quotations presented the Prime Minister and the Socialist Party (Partido Socialista, PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP)."
+      },
+      {
+        "linha": 5383,
+        "texto": "The 2027 Budget: what changes, and for whom : Five quotations presented the Prime Minister and the Socialist Party (Partido Socialista, PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP). First edition · Current edition"
+      },
+      {
+        "linha": 5390,
+        "texto": "Uma entrada do registo guarda, para um número, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas edições."
+      },
+      {
+        "linha": 5391,
+        "texto": "São quatro naturezas, e não se misturam:"
+      },
+      {
+        "linha": 5393,
+        "texto": "An entry in the register holds, for a figure, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and the two editions."
+      },
+      {
+        "linha": 5394,
+        "texto": "There are four kinds, and they are not mixed:"
+      },
+      {
+        "linha": 5407,
+        "texto": "Primeira edição, publicada a 01.10.2026. A edição atual é de 30.10.2026."
+      },
+      {
+        "linha": 5408,
+        "texto": "Edição atual, de 30.10.2026. A primeira edição é de 01.10.2026."
+      },
+      {
+        "linha": 5409,
+        "texto": "First edition, published on 01.10.2026. The current edition is from 30.10.2026."
+      },
+      {
+        "linha": 5410,
+        "texto": "Current edition, from 30.10.2026. The first edition is from 01.10.2026."
+      },
+      {
+        "linha": 5411,
+        "texto": "Primeira edição, publicada a 21.10.2026. A edição atual é de 02.11.2026."
+      },
+      {
+        "linha": 5412,
+        "texto": "Edição atual, de 02.11.2026. A primeira edição é de 21.10.2026."
+      },
+      {
+        "linha": 5413,
+        "texto": "First edition, published on 21.10.2026. The current edition is from 02.11.2026."
+      },
+      {
+        "linha": 5414,
+        "texto": "Current edition, from 02.11.2026. The first edition is from 21.10.2026."
+      },
+      {
+        "linha": 5422,
+        "texto": "A casa em Portugal e na Europa: Duas contagens da imprensa sobre os feridos da intervenção policial no Porto apareciam entre aspas como palavras da organização e da Polícia de Segurança Pública (PSP); são o relato de uma notícia, e a frase passou a nomeá-la. Primeira edição · Edição atual"
+      },
+      {
+        "linha": 5424,
+        "texto": "Housing in Portugal and in Europe: Two press counts of the injured in the Porto police intervention appeared in quotation marks as the words of the organisers and of the Public Security Police (PSP); they are a news report&#39;s account, and the sentence now names it. First edition · Current edition"
+      }
+    ],
+    "formas_rendidas_acrescentadas": [
+      {
+        "rota": "/correcoes",
+        "texto": "132 revisões de proveniência"
+      },
+      {
+        "rota": "/correcoes",
+        "texto": "Quatro passagens diziam como facto causas que o relatório de contas de 2025 fonte · Município de Évora da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 fonte · Marques, Cruz &amp; Associados é o que o relatório de 2025 fonte · Município de Évora imprime como comparativo, porque as contas de 2024 fonte · Marques, Cruz &amp; Associados nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano."
+      },
+      {
+        "rota": "/en/corrections",
+        "texto": "132 provenance revisions"
+      },
+      {
+        "rota": "/en/corrections",
+        "texto": "Five quotations presented the Prime Minister and the Socialist Party ( Partido Socialista , PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP)."
+      },
+      {
+        "rota": "/en/corrections",
+        "texto": "Four passages stated as fact causes that the Câmara&#39;s 2025 source · Município de Évora accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 source · Marques, Cruz &amp; Associados investment value is the one the 2025 source · Município de Évora report prints as a comparative, because the 2024 source · Marques, Cruz &amp; Associados accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications."
+      }
+    ]
+  }
+}

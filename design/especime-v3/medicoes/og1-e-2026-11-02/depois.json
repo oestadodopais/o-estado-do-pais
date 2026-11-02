@@ -1,452 +1,7 @@
 {
   "paginas": 9823,
-  "recusas": [
-    {
-      "rota": "/areas/infraestruturas-e-habitacao",
-      "erros": [
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/areas/infraestruturas-e-habitacao",
-      "erros": [
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/hab-imprensa-amorim",
-      "erros": [
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/hab-imprensa-assistidos",
-      "erros": [
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/hab-imprensa-feridos39",
-      "erros": [
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/hab-imprensa-igai",
-      "erros": [
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/hab-imprensa-psp-ferido",
-      "erros": [
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger",
-      "erros": [
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-livre-iva: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-psd-impostos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-be-rendimentos",
-      "erros": [
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-cds-orcamento",
-      "erros": [
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-chega-habitacao",
-      "erros": [
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-governo-csi-pensoes",
-      "erros": [
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-governo-divida85",
-      "erros": [
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-governo-divida85-citacao",
-      "erros": [
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-governo-irc",
-      "erros": [
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-governo-irs",
-      "erros": [
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-jpp-irs",
-      "erros": [
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-livre-iva",
-      "erros": [
-        "OG1-E posicao-livre-iva: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-livre-iva: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-ps-irc",
-      "erros": [
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-ps-pensoes",
-      "erros": [
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/ledger/posicao-psd-impostos",
-      "erros": [
-        "OG1-E posicao-psd-impostos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-psd-impostos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
-      "erros": [
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
-      "erros": [
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
-      "erros": [
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
-      "erros": [
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/hab-imprensa-amorim",
-      "erros": [
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/hab-imprensa-assistidos",
-      "erros": [
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/hab-imprensa-feridos39",
-      "erros": [
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/hab-imprensa-igai",
-      "erros": [
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/hab-imprensa-psp-ferido",
-      "erros": [
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao",
-      "erros": [
-        "OG1-E hab-imprensa-amorim: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-assistidos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-feridos39: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-igai: relato sem documento ou atribuição na mesma frase",
-        "OG1-E hab-imprensa-psp-ferido: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-livre-iva: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-psd-impostos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-be-rendimentos",
-      "erros": [
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-be-rendimentos: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-cds-orcamento",
-      "erros": [
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-cds-orcamento: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-chega-habitacao",
-      "erros": [
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-chega-habitacao: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-governo-csi-pensoes",
-      "erros": [
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-governo-divida85",
-      "erros": [
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-governo-divida85-citacao",
-      "erros": [
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-divida85: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-governo-irc",
-      "erros": [
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-governo-irs",
-      "erros": [
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-jpp-irs",
-      "erros": [
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-jpp-irs: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-livre-iva",
-      "erros": [
-        "OG1-E posicao-livre-iva: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-livre-iva: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-ps-irc",
-      "erros": [
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-ps-pensoes",
-      "erros": [
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase"
-      ]
-    },
-    {
-      "rota": "/livro-razao/posicao-psd-impostos",
-      "erros": [
-        "OG1-E posicao-psd-impostos: relato sem documento ou atribuição na mesma frase",
-        "OG1-E posicao-psd-impostos: relato sem documento ou atribuição na mesma frase"
-      ]
-    }
-  ],
-  "linhas": [
-    "hab-imprensa-amorim",
-    "hab-imprensa-assistidos",
-    "hab-imprensa-feridos39",
-    "hab-imprensa-igai",
-    "hab-imprensa-psp-ferido",
-    "posicao-be-rendimentos",
-    "posicao-cds-orcamento",
-    "posicao-chega-habitacao",
-    "posicao-governo-csi-pensoes",
-    "posicao-governo-divida85",
-    "posicao-governo-irc",
-    "posicao-governo-irs",
-    "posicao-jpp-irs",
-    "posicao-livre-iva",
-    "posicao-ps-irc",
-    "posicao-ps-pensoes",
-    "posicao-psd-impostos"
-  ],
+  "recusas": [],
+  "linhas": [],
   "por_pagina": [
     {
       "rota": "/404.html",
@@ -486,7 +41,7 @@
     },
     {
       "rota": "/areas/infraestruturas-e-habitacao",
-      "recusas": 5
+      "recusas": 0
     },
     {
       "rota": "/areas/justica",
@@ -674,7 +229,7 @@
     },
     {
       "rota": "/en/areas/infraestruturas-e-habitacao",
-      "recusas": 5
+      "recusas": 0
     },
     {
       "rota": "/en/areas/justica",
@@ -6822,11 +6377,11 @@
     },
     {
       "rota": "/en/ledger/hab-imprensa-amorim",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/hab-imprensa-assistidos",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/hab-imprensa-debate-custos",
@@ -6846,7 +6401,7 @@
     },
     {
       "rota": "/en/ledger/hab-imprensa-feridos39",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/hab-imprensa-hospital",
@@ -6854,7 +6409,7 @@
     },
     {
       "rota": "/en/ledger/hab-imprensa-igai",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/hab-imprensa-mai",
@@ -6886,7 +6441,7 @@
     },
     {
       "rota": "/en/ledger/hab-imprensa-psp-ferido",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/hab-imprensa-renda-metade",
@@ -7326,7 +6881,7 @@
     },
     {
       "rota": "/en/ledger",
-      "recusas": 17
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/indice-de-divida-limite-legal",
@@ -14262,15 +13817,15 @@
     },
     {
       "rota": "/en/ledger/posicao-be-rendimentos",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-cds-orcamento",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-chega-habitacao",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-de-investimento-internacional-2024",
@@ -14282,31 +13837,31 @@
     },
     {
       "rota": "/en/ledger/posicao-governo-csi-pensoes",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-governo-divida85",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-governo-divida85-citacao",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-governo-irc",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-governo-irs",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-jpp-irs",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-livre-iva",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-pcp-habitacao",
@@ -14334,11 +13889,11 @@
     },
     {
       "rota": "/en/ledger/posicao-ps-irc",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-ps-pensoes",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/posicao-ps-rendas",
@@ -14346,7 +13901,7 @@
     },
     {
       "rota": "/en/ledger/posicao-psd-impostos",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/en/ledger/povoa-de-lanhoso-desemprego-registado-2025-12",
@@ -20102,7 +19657,7 @@
     },
     {
       "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
@@ -20218,7 +19773,7 @@
     },
     {
       "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
-      "recusas": 5
+      "recusas": 0
     },
     {
       "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document",
@@ -20278,7 +19833,7 @@
     },
     {
       "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
@@ -20414,7 +19969,7 @@
     },
     {
       "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
-      "recusas": 5
+      "recusas": 0
     },
     {
       "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento",
@@ -27666,11 +27221,11 @@
     },
     {
       "rota": "/livro-razao/hab-imprensa-amorim",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/hab-imprensa-assistidos",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/hab-imprensa-debate-custos",
@@ -27690,7 +27245,7 @@
     },
     {
       "rota": "/livro-razao/hab-imprensa-feridos39",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/hab-imprensa-hospital",
@@ -27698,7 +27253,7 @@
     },
     {
       "rota": "/livro-razao/hab-imprensa-igai",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/hab-imprensa-mai",
@@ -27730,7 +27285,7 @@
     },
     {
       "rota": "/livro-razao/hab-imprensa-psp-ferido",
-      "recusas": 6
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/hab-imprensa-renda-metade",
@@ -28170,7 +27725,7 @@
     },
     {
       "rota": "/livro-razao",
-      "recusas": 17
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/indice-de-divida-limite-legal",
@@ -33870,15 +33425,15 @@
     },
     {
       "rota": "/livro-razao/posicao-be-rendimentos",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-cds-orcamento",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-chega-habitacao",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-de-investimento-internacional-2024",
@@ -33890,31 +33445,31 @@
     },
     {
       "rota": "/livro-razao/posicao-governo-csi-pensoes",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-governo-divida85",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-governo-divida85-citacao",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-governo-irc",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-governo-irs",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-jpp-irs",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-livre-iva",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-pcp-habitacao",
@@ -33942,11 +33497,11 @@
     },
     {
       "rota": "/livro-razao/posicao-ps-irc",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-ps-pensoes",
-      "recusas": 4
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/posicao-ps-rendas",
@@ -33954,7 +33509,7 @@
     },
     {
       "rota": "/livro-razao/posicao-psd-impostos",
-      "recusas": 2
+      "recusas": 0
     },
     {
       "rota": "/livro-razao/povoa-de-lanhoso-desemprego-registado-2025-12",
@@ -39739,6 +39294,38 @@
     {
       "rota": "/uniao-europeia",
       "recusas": 0
+    }
+  ],
+  "edicoes_guardadas": [
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
+      "sha256": "b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74",
+      "recusas_conservadas": 2
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01",
+      "sha256": "edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87",
+      "recusas_conservadas": 0
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
+      "sha256": "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979",
+      "recusas_conservadas": 5
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
+      "sha256": "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9",
+      "recusas_conservadas": 2
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01",
+      "sha256": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+      "recusas_conservadas": 0
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
+      "sha256": "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a",
+      "recusas_conservadas": 5
     }
   ]
 }
