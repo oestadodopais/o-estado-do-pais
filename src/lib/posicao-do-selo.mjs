@@ -104,3 +104,9 @@ export function partesComRecibos(partes,ids,lang,contexto='') {
   }
   return copia;
 }
+
+/** F4: só o ano que integra o nome do orçamento dispensa o selo visível.
+ * @param {string} antes @param {string} valor */
+export function anoDentroDoNome(antes,valor) {
+  return /^\d{4}$/.test(valor) && /(?:Orçamento(?: do Estado)? para|State Budget for)\s*$/u.test(antes);
+}
