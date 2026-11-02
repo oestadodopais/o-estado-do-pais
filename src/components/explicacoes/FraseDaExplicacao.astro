@@ -17,8 +17,8 @@ import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
 import DataDaLinha from '../DataDaLinha.astro';
 
-const { partes: partesOriginais, lang = 'pt', selos = true, recibos = false, fontes = [] } = Astro.props;
-const comRecibos = partesComRecibos(partesOriginais, fontes, lang);
+const { partes: partesOriginais, lang = 'pt', selos = true, recibos = false, fontes = [], contexto = '' } = Astro.props;
+const comRecibos = partesComRecibos(partesOriginais, fontes, lang, contexto);
 const partes = selos ? partesComMedida(comRecibos) : comRecibos;
 // O fecho pertence à citação; a porta para a prova vem depois dele.
 const renderizadas = partes.map((/** @type {any} */ p, /** @type {number} */ i) => {

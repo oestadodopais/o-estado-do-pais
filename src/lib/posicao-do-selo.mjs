@@ -78,20 +78,25 @@ export function irmaoDepoisDaMedida(el) {
 const ANCORAS = {
   'og1-votacao-generalidade': {pt:'o ECO tinha noticiado',en:'ECO had reported'},
   'og1-mf-despesa-total-efetiva-nota': {pt:'inclui os ativos e passivos financeiros',en:'includes financial assets and liabilities'},
-  'oe-2027-saude-dotacao-reforco-contratos-programa': {pt:'sem dizer quanto',en:'without saying how much'},
-  'oe-2027-saude-contrato-programa-acss': {pt:'contratos-programa ainda por fechar',en:'contract-programmes still to be closed'},
+  'oe-2027-saude-dotacao-reforco-contratos-programa': {pt:'a dotação para reforçar os contratos-programa ainda por fechar',en:'the provision to reinforce the contract-programmes still to be closed'},
+  'oe-2027-saude-contrato-programa-acss': {pt:'os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde',en:"the agreements between the Central Administration of the Health System and the National Health Service's entities"},
   'og1-mf-ppp-encargos-receitas': {pt:'receitas que lhe cabem',en:'revenue that falls to it'},
   'og1-mf-ppp-receitas-portagem': {pt:'vias portajadas',en:'tolled roads'},
   'pe-oe-beira-abolicao': {pt:'eliminação das portagens',en:'toll abolition'},
 };
-/** @param {any[]} partes @param {string[]} ids @param {'pt'|'en'} lang */
-export function partesComRecibos(partes,ids,lang) {
+const ANCORAS_DA_CONCLUSAO = {
+  'oe-2027-saude-dotacao-reforco-contratos-programa': {pt:'sem dizer quanto',en:'without saying how much'},
+  'oe-2027-saude-contrato-programa-acss': {pt:'contratos-programa',en:'contract-programmes'},
+};
+/** @param {any[]} partes @param {string[]} ids @param {'pt'|'en'} lang @param {string} [contexto] */
+export function partesComRecibos(partes,ids,lang,contexto='') {
   let copia=partes.map(p=>typeof p==='string'?p:{...p});
   for(const id of ids) {
     if(copia.some(p=>p?.literal?.id===id||p?.claim===id||p?.selo===id))continue;
     const data=copia.find(p=>p?.data?.id===id);
     if(data){data.selarData=true;continue;}
-    const ancora=/** @type {Record<string,{pt:string,en:string}>} */(ANCORAS)[id]?.[lang];
+    const tabela=contexto==='seccoes[5].conteudo[0].paragrafo' ? {...ANCORAS,...ANCORAS_DA_CONCLUSAO} : ANCORAS;
+    const ancora=/** @type {Record<string,{pt:string,en:string}>} */(tabela)[id]?.[lang];
     const i=ancora?copia.findIndex(p=>typeof p==='string'&&p.includes(ancora)):-1;
     if(i<0)throw new Error('SEL1: apoio sem passagem declarada: '+id);
     const texto=copia[i], fim=texto.indexOf(ancora)+ancora.length;
