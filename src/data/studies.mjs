@@ -100,13 +100,13 @@ export const WORKS = [
       lang: 'pt',
       title: "O Orçamento de 2027: o que muda e para quem",
       date: '2026-10-21',
-      updated: null
+      updated: '2026-11-02'
     },
     {
       lang: 'en',
       title: "The 2027 Budget: what changes, and for whom",
       date: '2026-10-21',
-      updated: null
+      updated: '2026-11-02'
     }
   ],
   pergunta: {
@@ -132,13 +132,13 @@ export const WORKS = [
       lang: 'pt',
       title: 'A casa em Portugal e na Europa',
       date: '2026-10-29',
-      updated: null
+      updated: '2026-11-02'
     },
     {
       lang: 'en',
       title: 'Housing in Portugal and in Europe',
       date: '2026-10-29',
-      updated: null
+      updated: '2026-11-02'
     }
   ],
   pergunta: {

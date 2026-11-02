@@ -4,7 +4,7 @@ const normal = s => String(s ?? '').replace(/\s+/g,' ').trim();
 const records = Object.fromEntries(['pt','en'].map(lang => [lang,
   JSON.parse(fs.readFileSync(new URL(`../registos/${ESTUDO_EO1}/${lang}.record.json`, import.meta.url),'utf8'))]));
 
-/** Retira apenas os excertos de terceiros de unidades inteiramente conferidas. */
+/** Retira excertos e títulos documentais de unidades inteiramente conferidas. */
 export function retirarCitacoesEo1(root, rota, claims) {
   if (rota?.params?.slug !== ESTUDO_EO1 || !['estudo','documento'].includes(rota.key)) return;
   const record = records[rota.lang];
@@ -18,7 +18,9 @@ export function retirarCitacoesEo1(root, rota, claims) {
     let text = normal(el.textContent);
     if (text !== normal(block.text)) continue;
     for (const q of block.proofs ?? []) {
-      if (q.tipo !== 'excerto' || normal(claims.get(q.id)?.excerpt) !== normal(q.texto)) continue;
+      const linha=claims.get(q.id);
+      const esperado=q.tipo==='excerto'?linha?.excerpt:q.tipo==='documento'?linha?.document?.title:null;
+      if (esperado===null || normal(esperado) !== normal(q.texto)) continue;
       text = text.replace(normal(q.texto),'');
     }
     el.set_content(text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'));

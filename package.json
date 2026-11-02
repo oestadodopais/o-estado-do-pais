@@ -13,7 +13,7 @@
     "build": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && node scripts/stamp-version.mjs --preparar && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:selos && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao",
     "preview": "astro preview",
     "astro": "astro",
-    "check:forma-citacao": "node tests/og1e/forma-da-citacao.mjs",
+    "check:forma-citacao": "node tests/og1e/forma-da-citacao.mjs && node tests/og1e/reguas.mjs",
     "ledger:check": "node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/hb1/bilingue.mjs && node tests/hb1/data-sem-publicacao.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs",
     "check:registo": "node scripts/check-registo.mjs && python3 scripts/check-conflitos.py --prova && node tests/hb1/edicoes.mjs && node tests/incorporar/dados.mjs && node tests/hb1/portas.mjs",
     "cartoes": "node scripts/cartoes.mjs",

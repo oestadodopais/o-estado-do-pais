@@ -1,0 +1,89 @@
+{
+  "cabeca_inicial": "59abbb9cbc75bc03e5c9c6468dd93df9905ce79a",
+  "metodo": "Leitura dos documentos alojados e dos blocos selecionados para o dossiê antes da travessia. As rotas de documento e texto usam a mesma edição de origem.",
+  "afirmacoes": 92,
+  "relato": 15,
+  "palavras": 77,
+  "antes": [
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/texto",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/text",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/dossies/orcamento-2027",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    },
+    {
+      "rota": "/en/dossiers/orcamento-2027",
+      "errors": [
+        "OG1-E posicao-governo-irs: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-csi-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-pensoes: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-governo-irc: relato sem documento ou atribuição na mesma frase",
+        "OG1-E posicao-ps-irc: relato sem documento ou atribuição na mesma frase"
+      ]
+    }
+  ]
+}
