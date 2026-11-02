@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {retirarTitulosConferidos} from './titulos-publicados.mjs';
-import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental} from './voz-edicoes.mjs';
+import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
@@ -85,18 +85,6 @@ function ficheirosHtml(dir) {
   return out.sort();
 }
 
-function texto(no) {
-  const partes = [];
-  const anda = (n) => {
-    if (!n) return;
-    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
-    const tag = String(n.rawTagName ?? '').toLowerCase();
-    if (tag === 'script' || tag === 'style') return;
-    for (const f of n.childNodes ?? []) anda(f);
-  };
-  anda(no);
-  return partes.join(' ');
-}
 
 const norm = (s) => String(s).replace(/\s+/g, ' ').trim();
 

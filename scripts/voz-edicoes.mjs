@@ -22,3 +22,18 @@ export function frasesDaFaixaDocumental(root) {
  }
  return [...new Set(frases)];
 }
+
+/** A extração comum da voz conserva os nós de selos e as marcas de língua.
+ * @param {any} no */
+export function textoDaVoz(no) {
+  const partes = /** @type {string[]} */ ([]);
+  const anda = (/** @type {any} */ n) => {
+    if (!n) return;
+    if (n.nodeType === 3) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style') return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(no);
+  return partes.join(' ');
+}
