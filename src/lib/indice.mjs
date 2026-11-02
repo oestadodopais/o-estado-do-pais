@@ -1,3 +1,4 @@
+import { partesDoDossie } from './dossies-conteudo.mjs';
 import { DOSSIES } from '../data/dossies.mjs';
 /**
  * ===========================================================================
@@ -324,4 +325,27 @@ export function indiceDoSitio(lang) {
     },
     mudou: { titulo: r.mudou, mudancas: mudancasDoIndice(lang) },
   };
+}
+
+
+/** ED1-A: também as linhas impressas nas portas participam na discussão.
+ * @param {Porta[]} portas @returns {string[]} */
+export function linhasDasPortasDoIndice(portas) {
+  const ids = new Set();
+  /** @param {any[]} partes */
+  const frase = partes => { for (const p of partes) {
+    if (!p || typeof p !== 'object') continue;
+    const id = p.claim ?? p.data?.id ?? p.nome?.id ?? p.literal?.id;
+    if (id) ids.add(id);
+  }};
+  for (const p of portas) {
+    if (p.tipo === 'explicacao') frase(p.titulo);
+    if (p.tipo === 'serie' && p.eixo !== 'periodo') {
+      if (!p.linha) throw new Error(`ED1: série sem linha impressa: ${p.id}`);
+      ids.add(p.linha.id);
+    }
+    if ('chave' in p && p.chave === 'dossie' && 'rotulo' in p) frase(partesDoDossie(p.rotulo));
+    if ('filhos' in p && p.filhos) for (const id of linhasDasPortasDoIndice(p.filhos)) ids.add(id);
+  }
+  return [...ids];
 }

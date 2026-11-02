@@ -294,9 +294,9 @@ const palavraRevisoes =
             ) : e.tipo === 'texto' ? (
               <div class="registo-mudanca-corpo">
                 <p><span data-texto-campo="kind">{r.estudoCorrigido}</span></p>
-                <p><span data-texto-campo="titulo">{e.titulo}</span>: <span data-texto-campo="frase">{e.frase[lang]}</span>{' '}
-                  <a data-texto-porta="primeira" href={e.primeira}>{r.primeiraCurta}</a>{' · '}
-                  <a data-texto-porta="atual" href={e.atual}>{r.edicaoAtual}</a>
+                <p><span data-texto-campo="titulo">{e.titulo}</span>: <span data-texto-campo="frase" data-voz>{e.frase[lang]}</span>{' '}
+                  <a data-texto-porta="primeira" data-voz href={e.primeira}>{r.primeiraCurta}</a>{' · '}
+                  <a data-texto-porta="atual" data-voz href={e.atual}>{r.edicaoAtual}</a>
                 </p>
               </div>
             ) : e.tipo === 'publicacao' ? (

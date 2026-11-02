@@ -32,7 +32,8 @@ import ResumoDaMudanca from '../components/explicacoes/ResumoDaMudanca.astro';
 import { grupoQueFecha } from '../lib/leitura-da-semana.mjs';
 import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
 import { parsePtNumber } from '../lib/ledger.mjs';
-import { indiceDoSitio } from '../lib/indice.mjs';
+import { nomeNaLista } from '../lib/primeira-pagina.mjs';
+import { indiceDoSitio, linhasDasPortasDoIndice } from '../lib/indice.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 /* As listas e as gavetas são as da página dos lugares, e as linhas de «O que mudou» as da página
@@ -54,6 +55,8 @@ const mudancas = indice.mudou.mudancas.map(e => ({
 const ids = mudancas.map(e => e.claim);
 /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026) entram a seguir aos estudos. */
 const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'explicacoes', 'numeros', 'projeto']);
+const idsDaDiscussao = [...new Set([...ids, ...ids.map(id => nomeNaLista(id, lang).linha),
+  ...linhasDasPortasDoIndice(seccoes.flatMap(s => indice[s].portas))])];
 ---
 
 <Base lang={lang} path={path} title={s.indice.metaTitle} description={s.indice.metaDescription}>
@@ -102,5 +105,5 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'e
       </div>
     </section>
   )}
-  <PortasDaDiscussao lang={lang} linhas={ids} />
+  <PortasDaDiscussao lang={lang} linhas={idsDaDiscussao} />
 </Base>

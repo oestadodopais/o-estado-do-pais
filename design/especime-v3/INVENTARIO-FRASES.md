@@ -5359,21 +5359,25 @@ A ligação tem a forma «⟦título do dossiê⟧ · ⟦n⟧ peças» ou «⟦t
 
 ## ED1: primeiras edições e correções dos estudos
 
-Rotas: páginas dos estudos atualizados, `/correcoes` e `/en/corrections`. Os títulos vêm de `studies.mjs`; cada frase do registo vem de `CORRECOES_TEXTO` e é comparada pelo portão do HTML.
+Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as frases isoladas têm `data-voz`; o parágrafo completo também é inventariado. Cada campo é comparado pelo portão do HTML.
 
-| Classe | Texto | Bloco |
-| --- | --- | --- |
-| navegacao | Primeira edição, tal como foi publicada | ed1 |
-| navegacao | First edition, as published | ed1 |
-| navegacao | Edição atual | ed1 |
-| navegacao | Current edition | ed1 |
-| navegacao | Primeira edição | ed1 |
-| navegacao | First edition | ed1 |
-| conteudo | Estudo corrigido | ed1 |
-| conteudo | Study corrected | ed1 |
-| conteudo | Quatro passagens diziam como facto causas que o relatório de contas de 2025 do município apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva do valor de 2024 e com o orçamento corrigido explicado. | ed1 |
-| conteudo | Four passages stated as fact causes that the municipality's 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat on the 2024 value and with the corrected budget explained. | ed1 |
-| conteudo | Cinco citações apresentavam o primeiro-ministro e o PS a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a UTAO com os dados da DGAEP. | ed1 |
-| conteudo | Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government's communication and by the party's web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP's data. | ed1 |
-| conteudo | As citações passaram a declarar se reproduzem palavras ou um relato, e a identificar a atribuição na página de leitura. O texto do documento alojado foi conservado. | ed1 |
-| conteudo | Quotations now declare whether they reproduce words or an account, and identify attribution on the reading page. The text of the hosted document was preserved. | ed1 |
+| Classe | Texto | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Primeira edição, tal como foi publicada | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | First edition, as published | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | Edição atual | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | Current edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | Primeira edição | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | First edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Estudo corrigido | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Study corrected | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | fonte · Registo de correções | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | source · Registo de correções | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Quatro passagens diziam como facto causas que o relatório de contas de 2025 do município apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva do valor de 2024 e com o orçamento da comparação explicado. | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação : Quatro passagens diziam como facto causas que o relatório de contas de 2025 do município apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva do valor de 2024 e com o orçamento da comparação explicado. Primeira edição · Edição atual | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Four passages stated as fact causes that the municipality&#39;s 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat on the 2024 value and with the budget used in the comparison explained. | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification : Four passages stated as fact causes that the municipality&#39;s 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat on the 2024 value and with the budget used in the comparison explained. First edition · Current edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Cinco citações apresentavam o primeiro-ministro e o PS a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a UTAO com os dados da DGAEP. | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | O Orçamento de 2027: o que muda e para quem : Cinco citações apresentavam o primeiro-ministro e o PS a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a UTAO com os dados da DGAEP. Primeira edição · Edição atual | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP&#39;s data. | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | The 2027 Budget: what changes, and for whom : Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP&#39;s data. First edition · Current edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |

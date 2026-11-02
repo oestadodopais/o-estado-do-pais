@@ -13,8 +13,8 @@ const rotulos = ROTULOS_B1[lang];
 if (!documento) throw new Error(`Edição sem documento ou data: ${work.slug}/${principal.lang}`);
 ---
 <p class="estudo-publicado" data-estudo-edicao={`${work.slug}/${principal.lang}`}>
-  {principal.updated && primeira && <><a href={primeira.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{rotulos.primeiraEdicao}</a><span aria-hidden="true"> · </span></>}
-  <a href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{principal.updated ? rotulos.edicaoAtual : data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>
+  {principal.updated && primeira && <><a data-voz href={primeira.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{rotulos.primeiraEdicao}</a>{' '}</>}
+  <a data-voz={principal.updated ? true : undefined} href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{principal.updated ? rotulos.edicaoAtual : data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>
   {data && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
   <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time></>}
   {principal.updated && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.atualizado}</span>{' '}

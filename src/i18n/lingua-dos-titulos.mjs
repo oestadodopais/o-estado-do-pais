@@ -1241,15 +1241,9 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* A recontagem de Correções publicadas usa a data da edição, sem língua.
-     A edição passou de 02.10.2026 para 20.10.2026 na correção V2-d-b, e para
-     21.10.2026 com a recontagem que está no ar; as duas contagens do arquivo
-     passaram a 26.10.2026 com a publicação do estudo da habitação (HB1-d), e a
-     data delas entra pela tabela gerada abaixo; a de 21.10.2026 é a chave da
-     EO1-e, logo abaixo, uma só vez (a corrida portão de 26.10 recusou a
-     chave repetida no typecheck). */
-  // EO1-e: edição da contagem refeita das correções, uma data sem língua.
-  '21.10.2026': null,
+  /* ED1-A: a edição da contagem das correções passou a 02.11.2026.
+     É uma data sem língua; a edição anterior já não é usada pelas linhas. */
+  '02.11.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
@@ -1764,7 +1758,7 @@ Object.assign(LINGUA_DAS_EDICOES, {
   "2026-09-15": null,
   "2026-10-14": null,
   "2026-10-09": null,
-  "21.10.2026": null,
+  "02.11.2026": null,
   "26.10.2026": null,
   "01.10.2026": null,
   "12.08.2026": null,

@@ -941,4 +941,4 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | ev2 | Frases das contas de Évora e rótulos da atualização, nas duas edições | por ler | Adendas F e G: correções da leitura a frio, primeira publicação reposta e atualização separada; leitura curta reservada ao lugar de direção. |
 | do4 | Data, tipo em minúsculas e título com contagem nas novidades, nas duas edições | por ler | Frases do mandato DO4; leitura cruzada reservada ao lugar de direção. |
 
-| ed1 | Primeiras edições, portas e correções dos estudos, nas duas línguas | por ler | Frases do mandato ED1; a habitação também tem atualização declarada na OG1-E. Leitura cruzada reservada ao lugar de direção. |
+| ed1 | Primeiras edições, portas e correções dos estudos, nas duas línguas | por ler | Frases do mandato ED1 e da adenda A; a atualização indevida da habitação foi retirada após comparação do texto lido. Leitura cruzada reservada ao lugar de direção. |

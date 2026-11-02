@@ -452,6 +452,18 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   erros.push(...conferirIntegracao(root,lang,rel,loadClaims(),{dist}));
   for(const p of root.querySelectorAll('[data-discussao-integracao]'))integracoes.push({pagina:rel,item:p.getAttribute('data-discussao-integracao'),condicao:p.getAttribute('data-discussao-condicao')});
  }};};walk(dist);
+ // ED1-A: a seleção das mudanças não pode esconder as linhas nomeadas no índice.
+ for(const lang of ['pt','en']) {
+  const pagina=lang==='pt'?'indice/index.html':'en/index/index.html';
+  const html=fs.readFileSync(path.join(dist,pagina),'utf8');
+  const controlo=parse(html);const limpo=conferirIntegracao(controlo,lang,pagina).length===0;
+  const porta=controlo.querySelector('[data-discussao-integracao="orcamento-2027-generalidade"]');
+  if(!porta) {erros.push(`ED1-A: porta da discussão ausente no índice ${lang}`);continue;}
+  for(const [nome,muda] of [
+   ['porta retirada',r=>r.querySelector('[data-discussao-integracao="orcamento-2027-generalidade"]').remove()],
+   ['destino trocado',r=>r.querySelector('[data-discussao-integracao="orcamento-2027-generalidade"] a').setAttribute('href','/errado')],
+  ]) {const copia=parse(html);muda(copia);provas.push({nome:`ED1-A índice: ${nome}`,lang,mordeu:limpo&&conferirIntegracao(copia,lang,pagina).length>0});}
+ }
  const demo=ITENS[0], id=demo.afirmacoes[0];
  const intacta=`<main><section><span data-claim="${id}"></span><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,'pt')}">${DISCUSSAO.porta.pt} ${tituloDeEnsaio(demo,'pt',loadClaims())}</a></p></section></main>`;
  if(conferirIntegracao(parse(intacta),'pt','exemplo').length)erros.push('V2B integração: conhecido positivo recusado');
