@@ -868,7 +868,8 @@ caso(
    menos. */
 /* HB1-m (22.10.2026): a fusão junta as duas listas, a de main (com published_at_kind) e a do HB1-b (com
    measure, measure_en e attributed_to_en); quarenta campos, e o conjunto explícito abaixo leva os dois lados. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 40, 'os campos anteriores, o estado da proveniência, o tipo da data de publicação e os campos da habitação (HB1-b).');
+caso('CAMPOS/tamanho', true, CAMPOS.length === 41, 'os campos anteriores, o estado da proveniência, o tipo da data de publicação e os campos da habitação (HB1-b).');
+caso('CAMPOS/forma-retirada', false, CAMPOS.filter(c=>c!=='forma_da_citacao').includes('forma_da_citacao'), 'A declaração da forma pertence ao formato.');
 caso('CAMPOS/texto-documental', true, CAMPOS.includes('texto_documental'), 'O texto documental pertence ao formato conferido.');
 /** @param {readonly string[]} campos */
 const estadoNoFormato = campos => campos.filter(c => c === 'status').length === 1;
@@ -886,7 +887,7 @@ caso('CAMPOS/nome-ingles-duplicado', false, nomeInglesNoFormato([...CAMPOS, 'nam
   'Acrescentar uma segunda ocorrência do campo inglês tem de ser recusado.');
 /* HB1-b acrescenta os nomes e as medidas nas duas línguas e a atribuição inglesa.
    O conjunto é explícito: trocar um campo sem alterar o tamanho também falha. */
-const CAMPOS_ESPERADOS = ["id", "status", "texto_documental", "value", "unit", "name", "name_source", "name_source_en", "name_en", "measure", "measure_en", "attributed_to_en", "source", "document", "source_url", "access_date", "access_date_kind", "published_at", "published_at_kind", "reference_date", "serie", "period", "excerpt", "source_flag", "source_flag_note", "source_flag_note_en", "ressalva", "ressalva_en", "derivation", "derivation_en", "derived_from", "check", "attributed_to", "afirmacao", "study", "note", "publication", "definition_sources", "corrections", "verifications"];
+const CAMPOS_ESPERADOS = ["id", "status", "texto_documental", "value", "unit", "name", "name_source", "name_source_en", "name_en", "measure", "measure_en", "attributed_to_en", "source", "document", "source_url", "access_date", "access_date_kind", "published_at", "published_at_kind", "reference_date", "serie", "period", "excerpt", "source_flag", "source_flag_note", "source_flag_note_en", "ressalva", "ressalva_en", "derivation", "derivation_en", "derived_from", "check", "attributed_to", "afirmacao", 'forma_da_citacao', "study", "note", "publication", "definition_sources", "corrections", "verifications"];
 /** @param {readonly string[]} campos */
 function camposConferidos(campos) {
   return campos.length === CAMPOS_ESPERADOS.length && CAMPOS_ESPERADOS.every(campo => campos.includes(campo));

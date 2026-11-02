@@ -89,6 +89,12 @@ export function prove(record,lang){
 const plantaLiteral = {proof_rows:{apoio:{locator:'Artigo 18.º'}},blocks:[{text:'8.º',source_rows:['apoio'],proofs:[{tipo:'literal',inicio:0,fim:3,texto:'8.º',apoios:[{id:'apoio',campo:'locator'}]}],figures:[]}]};
 assert.throws(()=>prove(plantaLiteral,'pt'),/literal sem prova inteira/);
 const literalCorreto=structuredClone(plantaLiteral);literalCorreto.proof_rows.apoio.locator='Artigo 8.º';prove(literalCorreto,'pt');
+// OG1-E: a data inteira no localizador ISO, com três alterações recusadas.
+const dataNoLocalizador={locator:'Publicação: 2026-10-13T21:22:56+01:00'};
+assert(apoioLiteralEo1(dataNoLocalizador,'locator','13 de outubro'));
+assert(!apoioLiteralEo1(dataNoLocalizador,'locator','3 de outubro'));
+assert(!apoioLiteralEo1(dataNoLocalizador,'locator','13 de outubro de 2025'));
+assert(!apoioLiteralEo1({locator:'Publicação: 12026-10-13'},'locator','13 de outubro'));
 const dist=process.env.OEDP_DIST??'dist';let units=0;
 for(const lang of ['pt','en']){
  const recordBytes=fs.readFileSync(`registos/${slug}/${lang}.record.json`,'utf8');const record=JSON.parse(recordBytes);numberShape=JSON.parse(recordBytes,(k,v,c)=>typeof v==='number'?{rawNumber:c.source}:v).proof_rows;prove(record,lang);
