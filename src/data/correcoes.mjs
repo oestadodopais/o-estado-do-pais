@@ -70,12 +70,12 @@ export function renderizacoesAceites(kind) {
 
 /** Correções do texto dos estudos. Uma entrada por estudo e data, com as duas línguas. */
 export const CORRECOES_TEXTO = [
-  { kind: 'texto', slug: 'evora-contas-da-camara-2010-2025', data: '2026-10-30', frase: {
-    pt: 'Quatro passagens diziam como facto causas que o relatório de contas de 2025 da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva do valor de 2024 e com o orçamento da comparação explicado.',
-    en: "Four passages stated as fact causes that the Câmara's 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat on the 2024 value and with the budget used in the comparison explained.",
+  { kind: 'texto', slug: 'evora-contas-da-camara-2010-2025', data: '2026-10-30', datas: {'2025':'evora-receita-cobrada-2025','2024':'evora-contas-2024-votos-contra'}, frase: {
+    pt: "Quatro passagens diziam como facto causas que o relatório de contas de 2025 da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 é o que o relatório de 2025 imprime como comparativo, porque as contas de 2024 nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano.",
+    en: "Four passages stated as fact causes that the Câmara's 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 investment value is the one the 2025 report prints as a comparative, because the 2024 accounts were never certified, and with the explanation that revenue is compared with the budget after the year's modifications.",
   } },
   { kind: 'texto', slug: 'orcamento-2027-o-que-muda-e-para-quem', data: '2026-11-02', frase: {
-    pt: 'Cinco citações apresentavam o primeiro-ministro e o PS a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a UTAO com os dados da DGAEP.',
-    en: "Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government's communication and by the party's web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP's data.",
+    pt: "Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP).",
+    en: "Five quotations presented the Prime Minister and the Socialist Party (Partido Socialista, PS) as saying words that are the account given by the Government's communication and by the party's web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP).",
   } },
 ];

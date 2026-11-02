@@ -11968,30 +11968,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de correções publicadas nas linhas do livro-razão e nos textos dos estudos; as atualizações não contam, porque uma atualização não é um erro admitido.",
-          "en": "It is the number of corrections published in the ledger rows and in the texts of studies; updates do not count, because an update is not an admitted error.",
+          "pt": "As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos.",
+          "en": "The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies.",
           "partes": [
             {
-              "pt": "É o número de correções publicadas nas linhas do livro-razão e nos textos dos estudos",
-              "en": "It is the number of corrections published in the ledger rows and in the texts of studies",
+              "pt": "As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos.",
+              "en": "The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão, mais as entradas de natureza «texto» no registo dos estudos."
-                }
-              ]
-            },
-            {
-              "pt": "; as atualizações não contam, porque uma atualização não é um erro admitido.",
-              "en": "; updates do not count, because an update is not an admitted error.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "As atualizações não contam: uma atualização não é um erro admitido"
+                  "literal": "As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos."
                 }
               ]
             }

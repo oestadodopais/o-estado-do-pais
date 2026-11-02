@@ -1,0 +1,8 @@
+---
+import {partesDaCorrecao} from '../lib/texto-correcao.mjs';
+import Frase from './Frase.astro';
+import DataDaLinha from './DataDaLinha.astro';
+import Provenance from './Provenance.astro';
+const {entrada,lang}=Astro.props;
+---
+{partesDaCorrecao(entrada,lang).map(p=>typeof p!=='string'&&p.data ? <><DataDaLinha id={p.data.id} campo={p.data.campo} valor={p.data.valor} lang={lang}/><Provenance id={p.data.id} lang={lang}/></> : <Frase partes={[p]} lang={lang} selos />)}
