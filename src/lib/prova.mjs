@@ -1,3 +1,4 @@
+import { CORRECOES_TEXTO } from '../data/correcoes.mjs';
 /**
  * A prova viva: os números que o sítio diz sobre si próprio.
  *
@@ -1047,7 +1048,7 @@ export function prova(lang = 'pt') {
     ),
 
     /* ---- o registo ---- */
-    correcoes: k('correcoes', entradasDoRegisto('correcao').length, routePath('correcoes', lang)),
+    correcoes: k('correcoes', entradasDoRegisto('correcao').length + CORRECOES_TEXTO.length, routePath('correcoes', lang)),
     atualizacoes: k(
       'atualizacoes',
       entradasDoRegisto('atualizacao').length,

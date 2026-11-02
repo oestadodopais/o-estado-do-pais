@@ -21,7 +21,7 @@ import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
 import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS, WORKS, edicaoPublicada } from '../data/studies.mjs';
-import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
+import { KINDS, CAMPOS_DE_PROVENIENCIA, CORRECOES_TEXTO } from '../data/correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
 import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
 import {
@@ -1545,7 +1545,7 @@ export function contagensDoRegisto(claims = loadClaims()) {
     }
   }
   return {
-    correcoes_publicadas: correcoes,
+    correcoes_publicadas: correcoes + CORRECOES_TEXTO.length,
     atualizacoes_publicadas: atualizacoes,
     revisoes_de_proveniencia: revisoes,
   };

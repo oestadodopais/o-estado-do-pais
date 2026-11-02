@@ -1,3 +1,5 @@
+import { CORRECOES_TEXTO } from '../data/correcoes.mjs';
+import { primeiraEdicao } from './edicoes.mjs';
 import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mjs';
 /**
  * «O QUE MUDOU» NO SEU LUGAR (B1c, 22.09.2026).
@@ -166,7 +168,7 @@ function lugarDaLinha(id, lang) {
 
 /**
  * @typedef {object} MudancaDoRegisto
- * @property {'projeto'|'publicacao'|'correcao'} tipo
+ * @property {'projeto'|'publicacao'|'correcao'|'texto'} tipo
  * @property {string} data
  * @property {{ chave: string, nome: string, rota: string }} lugar
  * @property {string} chaveDaMudanca a identidade da linha, que o portão reconstrói
@@ -260,7 +262,7 @@ function correcoesDasLinhas(lang) {
  * dentro da mesma linha, pelo número da entrada, do maior para o menor; as linhas diferentes ficam na
  * ordem de antes. (O número compara-se como número: na identidade era texto, e «10» vinha antes de «2».) */
 /** @type {Record<string, number>} */
-const ORDEM_DAS_CLASSES = { projeto: 0, publicacao: 1, correcao: 2 };
+const ORDEM_DAS_CLASSES = { texto: 3, projeto: 0, publicacao: 1, correcao: 2 };
 /** @param {MudancaDoRegisto} a @param {MudancaDoRegisto} b */
 function porData(a, b) {
   return (
@@ -279,7 +281,7 @@ function porData(a, b) {
  * @param {'pt'|'en'} lang
  */
 export function mudancasDoRegisto(lang) {
-  return [...mudancasDeclaradas(lang), ...publicacoes(lang), ...correcoesDasLinhas(lang)].sort(porData);
+  return [...mudancasDeclaradas(lang), ...publicacoes(lang), ...correcoesDasLinhas(lang), ...correcoesDosTextos(lang)].sort(porData);
 }
 
 /* ----------------------------------------------------------------- os âmbitos */
@@ -358,4 +360,19 @@ export function mudancasDoIndice(lang) {
     if (!atual || m.data > atual.data || (m.data === atual.data && m.n > atual.n)) maisRecente.set(m.claim, m);
   }
   return [...maisRecente.values()].sort(porData).slice(0, TETO_DAS_MUDANCAS);
+}
+
+/** As duas portas vêm dos documentos da edição, nunca de endereços escritos à mão.
+ * @param {'pt'|'en'} lang */
+function correcoesDosTextos(lang) {
+  return CORRECOES_TEXTO.map(e => {
+    const work = WORKS.find(w => w.slug === e.slug);
+    const edicao = work?.editions.find(d => d.lang === lang);
+    const primeira = primeiraEdicao(e.slug, lang);
+    if (!work || !edicao || !primeira) throw new Error(`ED1: correção sem edição: ${e.slug}/${lang}`);
+    return {...e, tipo: /** @type {const} */ ('texto'), titulo: edicao.title,
+      primeira: primeira.rota, atual: routePath('documento', lang, {slug: e.slug}),
+      lugar: lugarPorChave(typeof work.subject === 'string' ? work.subject : PORTUGAL, lang),
+      chaveDaMudanca: `texto|${e.slug}|${e.data}`};
+  });
 }

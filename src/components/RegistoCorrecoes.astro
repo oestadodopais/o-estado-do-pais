@@ -85,7 +85,7 @@ import { mudancasDoRegisto } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { textoDocumentalConferido } from '../lib/prova-efeitos.mjs';
 import { textoDaHabitacao } from '../lib/historia-do-valor.mjs';
-import { KIND_LABELS } from '../data/correcoes.mjs';
+import { KIND_LABELS, CORRECOES_TEXTO } from '../data/correcoes.mjs';
 import PortasDaDiscussao from './discussao/PortasDaDiscussao.astro';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
@@ -111,7 +111,7 @@ const linhasDasMudancas = mudancas.flatMap(e => {
 });
 /* A contagem das correções continua a ser a linha do livro-razão, e conta só as
    de natureza «correção»: é a confissão, e é o número que a política promete. */
-const correcoes = entradasDoRegisto('correcao');
+const correcoes = [...entradasDoRegisto('correcao'), ...CORRECOES_TEXTO];
 /* As revisões de proveniência entram como contagem e como caminho, não como
    lista: ver o cabeçalho deste ficheiro. */
 const revisoes = entradasDoRegisto('proveniencia');
@@ -161,6 +161,8 @@ const palavraRevisoes =
           <li
             class="registo-mudanca"
             data-mudanca={e.tipo}
+            data-texto-estudo={e.tipo === 'texto' ? e.slug : undefined}
+            data-texto-data={e.tipo === 'texto' ? e.data : undefined}
             data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined}
             data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}
           >
@@ -186,6 +188,8 @@ const palavraRevisoes =
               >
                 {dataDaCasa(e.data)}
               </time>
+            ) : e.tipo === 'texto' ? (
+              <time class="log-data" datetime={e.data} data-texto-campo="data">{dataDaCasa(e.data)}</time>
             ) : (
               <time class="log-data" datetime={e.data} data-mudanca-campo="data">
                 {dataDaCasa(e.data)}
@@ -285,6 +289,14 @@ const palavraRevisoes =
                   >
                     {e.claim}
                   </code>
+                </p>
+              </div>
+            ) : e.tipo === 'texto' ? (
+              <div class="registo-mudanca-corpo">
+                <p><span data-texto-campo="kind">{r.estudoCorrigido}</span></p>
+                <p><span data-texto-campo="titulo">{e.titulo}</span>: <span data-texto-campo="frase">{e.frase[lang]}</span>{' '}
+                  <a data-texto-porta="primeira" href={e.primeira}>{r.primeiraCurta}</a>{' · '}
+                  <a data-texto-porta="atual" href={e.atual}>{r.edicaoAtual}</a>
                 </p>
               </div>
             ) : e.tipo === 'publicacao' ? (
