@@ -639,14 +639,14 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
       <div class="mun-tempo-notas">
         <p class="mun-distancia-legenda">
           <span class="mun-tempo-nota-k">{s.municipio.tempoExcessoK}</span>{' · '}
-          <Claim id={m.tempo.excesso.de} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(m.tempo.excesso.de).unit, lang).texto} />{' '}
-          <span data-nonledger="data-de-referencia">
+          <Claim id={m.tempo.excesso.de} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(m.tempo.excesso.de).unit, lang).texto}>
+          <span slot="cauda" data-nonledger="data-de-referencia">{' '}
             {lang === 'pt' ? m.tempo.excesso.deRef : m.tempo.excesso.deRefEn}
-          </span>{' → '}
-          <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(m.tempo.excesso.ate).unit, lang).texto} />{' '}
-          <span data-nonledger="data-de-referencia">
+          </span></Claim>{' → '}
+          <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(m.tempo.excesso.ate).unit, lang).texto}>
+          <span slot="cauda" data-nonledger="data-de-referencia">{' '}
             {lang === 'pt' ? m.tempo.excesso.ateRef : m.tempo.excesso.ateRefEn}
-          </span>.
+          </span></Claim>.
         </p>
         <p class="mun-distancia-legenda">{s.municipio.tempoExcessoV}</p>
         <p class="mun-distancia-legenda">{s.municipio.tempoPelourosNota}</p>

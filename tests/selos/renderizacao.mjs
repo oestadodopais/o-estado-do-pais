@@ -7,7 +7,7 @@ import {pecasDoCorpo} from '../../src/lib/registo-html.mjs';
 import {linhaDoSitioDoEstudo} from '../../src/lib/cruzamento.mjs';
 const chip=id=>`<a class="src-chip" href="/livro-razao/${id}">fonte</a>`;
 const html=ps=>ps.map(p=>p.html??chip(p.selo)).join('');
-for(const depois of [' milhões de euros.', '</strong> milhões.', ' para a escola.', '  milhões.']) {
+for(const depois of [' milhões de euros.', '</strong> milhões.', ' para a escola.', '  milhões.', ' euros por mês.', ' pontos do PIB.', ' de outubro de 2026.']) {
  const antes=[{html:'<p><strong><span data-registo="figura">79</span>'},{selo:'linha'},{html:depois+'</p>'}];
  const novas=selosDepoisDaMedida(antes);
  assert.equal(novas.filter(p=>'html'in p).map(p=>p.html).join(''),antes.filter(p=>'html'in p).map(p=>p.html).join(''));
@@ -30,3 +30,8 @@ for(const [chave,entrada] of Object.entries(manifestoDosRegistos().registos)){
  assert.equal(erros.length,0,chave+': '+JSON.stringify(erros.slice(0,2)));edicoes++;
 }
 console.log(`SEL1: ${edicoes} edições sem medidas partidas; texto, fontes e posições conferidos.`);
+
+for(const cauda of [' de outubro de 2026',' October 2026']) {
+ const p=[{literal:{id:'dia',fragmento:true,texto:'16'}},cauda+'.'];
+ assert.deepEqual(partesComMedida(p),[{...p[0],cauda},'.']);
+}

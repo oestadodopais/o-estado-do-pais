@@ -26,8 +26,8 @@ export function partesComMedida(partes) {
   const copia=partes.map(p=>typeof p==='string'?p:{...p});
   for(let i=0;i<copia.length-1;i++) {
     const p=copia[i], seguinte=copia[i+1];
-    if(!p?.claim || typeof seguinte!=='string')continue;
-    const prefixo=p.sufixo??'';
+    if(!(p?.claim || p?.literal?.fragmento && /[0-9]/.test(p.literal.texto)) || typeof seguinte!=='string')continue;
+    const prefixo=p.sufixo??p.literal?.sufixo??'';
     const inteira=prefixo?unidadeDaMedida(prefixo+seguinte):null;
     const unidade=unidadeDaMedida(seguinte);
     const cauda=inteira && inteira.texto.length>prefixo.length ? inteira.texto.slice(prefixo.length) : unidade?.texto;

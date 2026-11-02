@@ -268,6 +268,7 @@ const estilo = escala
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
       {provisorio && <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>}
       {cauda && <Fragment set:text={cauda} />}
+      <slot name="cauda" />
       <Provenance id={id} lang={lang} />
     </span>
   ) : sufixo ? (
