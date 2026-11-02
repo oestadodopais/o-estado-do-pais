@@ -55,3 +55,37 @@ COMMITS POR SECÇÃO
 CUSTO OBSERVADO ATÉ À ESCRITA
 49 chamadas de ferramentas; 27 invocações dirigidas por curto.sh, incluindo medições e plantas, mais um build inteiro.
 tokens used: 35452264 (contador acumulado da sessão observado antes do fecho).
+
+
+ADENDA F: POLÍTICA, INVENTÁRIO E VOZ
+Data da passagem: 02.11.2026. Base: 630c6ecf4, depois da OG1-E C. Cabeça do código conferida: bb1de64843901cae6d28cffe17a17d6060c7058f.
+
+RESULTADO
+A política diz «as duas versões do texto» e «both versions of the text». As restantes frases autorizadas foram conservadas. A política anterior não ficou declarada viva. Nenhuma linha retirada foi modificada, apagada ou reativada: comparação literal com o inventário da base.
+A voz terminou com zero retiradas que voltaram, zero vivas não encontradas e zero blocos por classificar. A L3 terminou a zero. O build final pelo escrivão terminou a zero.
+
+O QUE FOI CONFERIDO
+A medição inicial encontrou 4 retiradas que voltaram, 0 vivas não encontradas e 0 blocos por classificar. A OG1-E C já tinha reconciliado as entradas com selos e marcas de língua; essas unidades foram preservadas.
+As formas novas «· · publicado a · atualizado a» e «· · published on · updated on» foram inventariadas. Só as formas integrais, antigas e novas, admitem os fragmentos retirados. Os fragmentos isolados continuam proibidos.
+Os avisos da casa no topo dos documentos passaram a entrar no inventário, na procura das retiradas e na varredura lexical. O corpo da obra continua documental. Foram medidos 12 avisos; o inventário recebeu 14 unidades novas, incluindo as duas formas da faixa.
+A planta nova teve 18 controlos e 30 recusas: fragmentos isolados, texto acrescentado à faixa, aviso documental alterado e frase nova sem declaração. A oração da política passou pela voz e pelas palavras proibidas da L3 nas duas línguas.
+A planta antiga de tests/edicoes/reguas.mjs exigia a frase sem selos e o bloco editorial ed1, embora a voz leia a unidade com selos e marcas de língua. Passou a chamar a mesma extração de texto da voz. Conserva as recusas da ausência de frase, da ausência de estado e da alteração do texto, exige classe de conteúdo e conta todas as entradas nas duas línguas. As 26 plantas dessa conferência passaram. A extração geral do texto manteve o comportamento anterior.
+
+COMANDOS E CÓDIGOS
+sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/ed1f/build build: build.codigo = 1. Parou em check:edicoes, na planta antiga do inventário; gate:html tinha passado. O erro foi diagnosticado por npm run check:edicoes, sem usar a corrida completa dos três portões.
+sh scripts/leituras/curto.sh <temporario>/ed1f/edicoes.log npm run check:edicoes: edicoes.codigo = 0.
+sh scripts/leituras/curto.sh <temporario>/ed1f/voz-final.log npm run check:voz: voz.codigo = 0.
+sh scripts/leituras/curto.sh <temporario>/ed1f/lugar.log npm run check:lugar: lugar.codigo = 0; L3 = 0; 20 plantas recusadas.
+A medição por scripts/medir-defeitos.mjs --json: medicao.codigo = 0; as três listas de falhas ficaram vazias.
+Os dois typecheck, a política e a planta nova da voz terminaram a zero. A primeira apresentação resumida da medição deu TypeError por tratar o mapa de rotas como uma lista; o JSON integral tinha sido guardado e foi lido, e a apresentação foi corrigida antes da medição final.
+sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/ed1f/build-final build: build.codigo = 0, lido do ficheiro. Foi repetido apenas o perfil build, após o diagnóstico dirigido e o commit da planta corrigida, para cumprir o build verde pedido no §3. Não correu a cadeia dos três portões nem o verify, e não houve capturas.
+
+COMMITS
+bb1de6484 ED1-F §2: alinhar a planta do inventário com a unidade lida pela voz
+07e17827c ED1-F §2: conferir a voz das faixas e inventariar os avisos das versões
+e443e4d77 ED1-F §1: nomear as versões do texto na política das correções
+O §2 precisou de um commit adicional para corrigir a planta antiga descoberta pelo primeiro build. O relatório é acrescentado ao da adenda E, sem apagar a paragem e as provas anteriores.
+
+CUSTO OBSERVADO ATÉ À ESCRITA
+50 chamadas de ferramentas; 9 invocações dirigidas por curto.sh, incluindo medições e plantas, mais dois builds pelo escrivão. A primeira medição resumida e o primeiro build vermelhos estão incluídos.
+tokens used: 40087486 (contador acumulado da sessão observado antes do fecho).
