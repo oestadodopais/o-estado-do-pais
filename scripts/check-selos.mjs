@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {parse} from 'node-html-parser';
-import {unidadeDaMedida,formaNovaDaMedida} from '../src/lib/unidade-da-medida.mjs';
+import {unidadeDaMedida,formaNovaDaMedida,parentesesDaMedida} from '../src/lib/unidade-da-medida.mjs';
 
 const BLOCOS = new Set(['p','div','section','article','header','footer','nav','aside','main','li','td','th','tr','h1','h2','h3','h4','h5','h6','br','hr']);
 /** Uma página de cada vez; as fronteiras de bloco não juntam frases distintas. */
@@ -27,7 +27,10 @@ export function medirPagina(html, lang='pt') {
     if (t.selo) {
       let cauda='';
       for(let j=i+1;fluxo[j]?.texto!==undefined;j++)cauda+=fluxo[j].texto;
-      const unidade=unidadeDaMedida(cauda);
+      let antes='';
+      for(let j=i-1;fluxo[j]?.texto!==undefined;j--)antes=fluxo[j].texto+antes;
+      const parenteses=parentesesDaMedida(antes,cauda);
+      const unidade=unidadeDaMedida(cauda)??(parenteses?{unidade:parenteses.trim()}:null);
       const nova=formaNovaDaMedida(cauda,lang);
       const palavra=cauda.match(/^\s*([^\s,.;:!?]+(?:\s+[^\s,.;:!?]+)?)/u)?.[1]?.replace(/\s+/gu,' ');
       if(palavra) seguintes[palavra]=(seguintes[palavra]??0)+1;

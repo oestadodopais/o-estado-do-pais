@@ -12,3 +12,8 @@ for(const texto of [' milhões de euros por mês', ' pontos do PIB', ' % do prod
  assert.equal(unidadeDaMedida(texto+', fim').texto,texto);
 }
 assert.equal(unidadeDaMedida('pXpX'),null);
+
+for(const t of [' % of gross domestic product (GDP)', ' ao ano', ' ao mês', ' mil alojamentos', ' alojamentos por mil habitantes', ' médicos em exercício por cem mil habitantes', ' vacant'])assert.equal(unidadeDaMedida(t+'.').texto,t);
+for(const a of ['a year','a month','a day'])for(const b of ['earlier','ago','before','after','later'])assert.equal(unidadeDaMedida(' '+a+' '+b),null);
+for(const a of ['ao ano','ao mês','por dia'])for(const b of ['antes','depois','atrás'])assert.equal(unidadeDaMedida(' '+a+' '+b),null);
+assert.equal(unidadeDaMedida(' million euros a year earlier').texto,' million euros');

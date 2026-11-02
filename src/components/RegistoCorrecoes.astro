@@ -89,7 +89,6 @@ import { KIND_LABELS } from '../data/correcoes.mjs';
 import PortasDaDiscussao from './discussao/PortasDaDiscussao.astro';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
-import Claim from './Claim.astro';
 import Frase from './Frase.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import Provenance from './Provenance.astro';
@@ -147,7 +146,7 @@ const palavraRevisoes =
     <div class="registo-cabeca">
       <h3 class="registo-titulo" id="registo-mudancas">{s.correcoes.registoMudancasK}</h3>
       <p class="registo-conta">
-        <Claim id="correcoes-publicadas" lang={lang} chip={true} /> {palavraConta}
+        <Frase partes={[{claim:"correcoes-publicadas"}, " " + palavraConta]} lang={lang} selos />
       </p>
     </div>
     {/* A NOTA DA LISTA SAIU a 22.09.2026, na passagem de correção: «Todas as
