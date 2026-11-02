@@ -222,10 +222,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "correcoes-publicadas": {
     "frase": {
       "pt": [
-        "É o número de entradas do registo de correções que são correções, em todas as linhas do livro-razão; as atualizações não contam, porque uma atualização não é um erro admitido."
+        "É o número de correções publicadas nas linhas do livro-razão e nos textos dos estudos; as atualizações não contam, porque uma atualização não é um erro admitido."
       ],
       "en": [
-        "It is the number of entries in the corrections log that are corrections, across all the ledger rows; updates do not count, because an update is not an admitted error."
+        "It is the number of corrections published in the ledger rows and in the texts of studies; updates do not count, because an update is not an admitted error."
       ]
     }
   },

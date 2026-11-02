@@ -11968,18 +11968,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de entradas do registo de correções que são correções, em todas as linhas do livro-razão; as atualizações não contam, porque uma atualização não é um erro admitido.",
-          "en": "It is the number of entries in the corrections log that are corrections, across all the ledger rows; updates do not count, because an update is not an admitted error.",
+          "pt": "É o número de correções publicadas nas linhas do livro-razão e nos textos dos estudos; as atualizações não contam, porque uma atualização não é um erro admitido.",
+          "en": "It is the number of corrections published in the ledger rows and in the texts of studies; updates do not count, because an update is not an admitted error.",
           "partes": [
             {
-              "pt": "É o número de entradas do registo de correções que são correções, em todas as linhas do livro-razão",
-              "en": "It is the number of entries in the corrections log that are corrections, across all the ledger rows",
+              "pt": "É o número de correções publicadas nas linhas do livro-razão e nos textos dos estudos",
+              "en": "It is the number of corrections published in the ledger rows and in the texts of studies",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão."
+                  "literal": "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão, mais as entradas de natureza «texto» no registo dos estudos."
                 }
               ]
             },
