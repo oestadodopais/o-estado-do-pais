@@ -300,7 +300,7 @@ const p = prova(lang);
                 )}
                 {c.source !== null && c.source !== undefined && (
                   <span class="livro-item-campo">
-                    <span class="livro-item-k">{s.prov.fonte}</span>{' '}
+                    <span class="livro-item-k">{c.forma_da_citacao ? s.livro.linha.publicadoPor : s.prov.fonte}</span>{' '}
                     {/* O NOME DO ORGANISMO É UM NOME (I97, 29.08.2026). */}
                     <CampoDaLinha
                       id={c.id}

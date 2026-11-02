@@ -24,6 +24,7 @@ for(const lang of ['pt','en']){
  prova(`título publicado/${lang}`,conferirTitulosPublicados(root),0);retirarTitulosConferidos(root);assert.equal(root.textContent,'');assert.equal(fraseRetiradaNoTexto(root.textContent,'A casa em Portugal'),false);
  const falso=parse(`<span data-titulo-publicado="${lang}">A casa em Portugal</span>`);
  prova(`título inventado/${lang}`,conferirTitulosPublicados(falso),1);retirarTitulosConferidos(falso);assert.equal(falso.textContent,'A casa em Portugal');
+ prova(`marca antiga sem título conferido/${lang}`,conferirTitulosPublicados(parse('<span data-nonledger="titulo-de-estudo">A casa em Portugal</span>')),1);
  const fora=parse('<p>A casa em Portugal</p>');retirarTitulosConferidos(fora);assert.equal(fraseRetiradaNoTexto(fora.textContent,'A casa em Portugal'),true);count++;
 }
 for(const e of edicoesGuardadas()) {
