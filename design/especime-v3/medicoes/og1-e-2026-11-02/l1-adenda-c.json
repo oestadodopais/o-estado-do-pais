@@ -1,0 +1,14 @@
+{
+  "comando": "check:lugar; contagem da adenda B e reconferência da adenda C",
+  "antes": 3462,
+  "contagens": {
+    "estudos": 3464
+  },
+  "razao": "As duas páginas da primeira edição guardada da habitação, de 29.10.2026, uma por língua.",
+  "novas": [
+    "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
+    "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29"
+  ],
+  "base": "design/especime-v3/medicoes/ed1-2026-11-02/l1-ed1.json",
+  "reconferencia": "pendente"
+}

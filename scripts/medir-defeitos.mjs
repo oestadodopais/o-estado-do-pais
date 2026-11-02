@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {retirarTitulosConferidos,fraseRetiradaNoTexto} from './titulos-publicados.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
@@ -1299,6 +1300,7 @@ function frasesDaAplicacao(root) {
   return out;
 }
 
+const rendidasParaRetiradas = new Set();
 const frasesPorRota = new Map(); // rota → Map(texto → ocorrências)
 const frasesDaVozPorRota = new Map(); // rota → Set(texto), a varredura do tripwire
 /* A CHAVE DA ROTA DE CADA CAMINHO, para as dispensas com rotas (X3). Uma família
@@ -1370,6 +1372,8 @@ for (const file of ficheiros) {
       if (nome) descricao = norm(descricao.split(nome).join('<nome>'));
     }
     if (descricao) conta.set(descricao, (conta.get(descricao) ?? 0) + 1);
+    const semTitulos=retirarTitulosConferidos(lerPaginaComCodigo(root.toString(), {comment:false,blockTextElements:{script:true,style:true}}));
+    for(const f of [...frasesDaCasa(semTitulos,rota.key),...frasesDaVoz(semTitulos),...dicasDaCasa(semTitulos),...frasesDaAplicacao(semTitulos),descricao])if(f)rendidasParaRetiradas.add(f);
     frasesPorRota.set(chave, conta);
     const daVoz = frasesDaVozPorRota.get(chave) ?? new Set();
     for (const f of frasesDaVoz(root)) daVoz.add(f);
@@ -1791,10 +1795,9 @@ const RETIRADAS_DENTRO_DE_FRASE = new Map([
 ]);
 function ondeVolta(frase) {
   // DO4: estes rótulos autónomos foram substituídos por minúsculas; a palavra continua na prosa das listas.
-  if(['Dossiê','Dossier'].includes(frase))return rendidas.has(frase)?frase:null;
-  const re = new RegExp(`(?<![\\p{L}\\p{N}])${escapaParaRe(frase)}(?![\\p{L}\\p{N}])`, 'iu');
+  if(['Dossiê','Dossier'].includes(frase))return rendidasParaRetiradas.has(frase)?frase:null;
   const admitidas = RETIRADAS_DENTRO_DE_FRASE.get(frase) ?? new Set();
-  for (const t of rendidas) if (re.test(t) && !admitidas.has(t)) return t;
+  for (const t of rendidasParaRetiradas) if (fraseRetiradaNoTexto(t,frase) && !admitidas.has(t)) return t;
   return null;
 }
 

@@ -53,4 +53,4 @@ if (doArquivo?.titleUnverified === true) {
 }
 ---
 
-<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>
+<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto} data-titulo-publicado={doArquivo?.lang ?? lang}>{titulo}</Tag>

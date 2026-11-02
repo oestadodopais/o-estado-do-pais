@@ -1010,6 +1010,10 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  'DNOTICIAS.PT': 'pt',
+  'PAN': 'pt',
+  'Sindicato da Hotelaria do Sul': 'pt',
+  'eventos.coletivos.org': 'pt',
   "CFP": "pt",
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
   "Recuperar Portugal": "pt",
@@ -1035,8 +1039,7 @@ export const LINGUA_DAS_FONTES = {
   "Boletín Oficial del Estado": "es",
   "Unidade Técnica de Apoio Orçamental": "pt",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
-  "Paula Santos": "pt",
-  "Paulo Raimundo": "pt",
+
   "UTAO": "pt",
 
   'NATO': 'en',
@@ -1699,31 +1702,21 @@ Object.assign(LINGUA_DAS_FONTES, {
   "Assembleia da República": "pt",
   "Conselho de Ministros": "pt",
   "Euronews": "pt",
-  "Movimento pela Habitação": "pt",
-  "organização": "pt",
-  "José Soeiro, dirigente nacional do BE": "pt",
+
   "Governo": "pt",
   "Presidência do Conselho de Ministros": "pt",
-  "IGAI": "pt",
-  "PSP": "pt",
+
   "Bloco de Esquerda": "pt",
-  "José Luís Carneiro": "pt",
+
   "Banco de Portugal": "pt",
   "PRESIDÊNCIA DO CONSELHO DE MINISTROS": "pt",
-  "Paula Santos": "pt",
-  "Inês de Sousa Real": "pt",
+
   "LIVRE": "pt",
   "Chega": "pt",
   "Iniciativa Liberal": "pt",
   "RTP": "pt",
   "Postal": "pt",
-  "hotelariasul": "pt",
-  "Não dá mais para viver assim": "pt",
-  "manifestantes": "pt",
-  "Luís Silva, comandante dos Bombeiros Voluntários do Porto": "pt",
-  "Luís Montenegro": "pt",
-  "Luís Neves": "pt",
-  "Carlos Abreu Amorim": "pt"
+
 });
 
 // HB1: cadeias lidas nos documentos e linhas de origem.

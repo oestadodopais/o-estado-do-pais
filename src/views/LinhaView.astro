@@ -655,6 +655,7 @@ const unidadeNoValor = valorImpressoDoPainelConferido(id, claim.value);
  * legível. Cada peça que sobra é um `CampoDaLinha`, e por isso é conferida
  * contra o livro-razão carácter a carácter.
  */
+// OG1-E C: uma citação imprime o publicador do registo, com o campo conferido.
 const publicacaoV2aEn = lang === 'en' && id.startsWith('oe-2027-') && claim.source === 'Ministério das Finanças';
 const apoioPublicacaoV2a = id.startsWith('oe-2027-saude-') ? 'v2a-saude-consolidada' : 'v2a-ppp-setores';
 const atribuicaoPecas = [
@@ -968,7 +969,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         temFraseDeAtribuicao && (
           <p class="linha-atribuicao">
             {publicacaoV2aEn ? <>
-              {'Published by the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-publicador_en`}]} lang={lang} />{claim.study !== 'orcamento-2027-o-que-muda-e-para-quem' && <>{', in «'}
+              {claim.forma_da_citacao ? <>{'Published by '}<CampoDaLinha id={id} campo="source" valor={claim.source} lang={lang} lingua="pt-PT" /></> : <>{'Published by the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-publicador_en`}]} lang={lang} /></>}{claim.study !== 'orcamento-2027-o-que-muda-e-para-quem' && <>{', in «'}
               <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua="pt-PT" /></a>
               {'» (the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-documento_en`}]} lang={lang} />{')'}</>}
             </> : atribuicaoPecas.map((peca, i) => (
