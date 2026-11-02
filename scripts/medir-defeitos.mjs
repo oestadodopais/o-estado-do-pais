@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import {retirarTitulosConferidos,fraseRetiradaNoTexto} from './titulos-publicados.mjs';
+import {retirarTitulosConferidos} from './titulos-publicados.mjs';
+import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental} from './voz-edicoes.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
@@ -1323,7 +1324,18 @@ for (const file of ficheiros) {
   const rel = path.relative(DIST, file);
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
-  if (rota?.key === 'documento') continue; // Obra citada; redirecionamentos B1 não produzem HTML.
+  if (rota?.key === 'documento') {
+    // ED1-F: só o aviso da casa entra; o texto da obra continua documental.
+    const root=lerPaginaComCodigo(fs.readFileSync(file,'utf8'),{comment:false});
+    const frases=frasesDaFaixaDocumental(root);
+    if(frases.length){
+      frasesPorRota.set(caminho,new Map(frases.map(t=>[t,1])));
+      frasesDaVozPorRota.set(caminho,new Set(frases));
+      chaveDaRotaPorCaminho.set(caminho,'documento');
+      for(const t of frases)rendidasParaRetiradas.add(t);
+    }
+    continue;
+  }
   paginas++;
 
   const html = fs.readFileSync(file, 'utf8');
@@ -1767,9 +1779,8 @@ const LADO_ENTRE = 'Portugal está entre os valores de referência da Comissão 
 const DEFINICAO_EDICOES_PT = 'É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado.';
 const DEFINICAO_EDICOES_EN = 'It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately.';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
-  // EV2-F: o separador pertence agora à faixa com publicação e atualização conferidas.
-  ['publicado a ·', new Set(['· publicado a · atualizado a'])],
-  ['published on ·', new Set(['· published on · updated on'])],
+  // EV2-F e ED1-F: formas integrais, com planta dos fragmentos isolados.
+  ...FAIXAS_DE_EDICAO,
   // DO1-G: só as formas completas classificadas no inventário admitem o fragmento retirado.
   ['estudo ·', new Set(['estudo · Dossiê:'])],
   ['explicação ·', new Set(['explicação · Dossiê:'])],
@@ -1797,7 +1808,7 @@ function ondeVolta(frase) {
   // DO4: estes rótulos autónomos foram substituídos por minúsculas; a palavra continua na prosa das listas.
   if(['Dossiê','Dossier'].includes(frase))return rendidasParaRetiradas.has(frase)?frase:null;
   const admitidas = RETIRADAS_DENTRO_DE_FRASE.get(frase) ?? new Set();
-  for (const t of rendidasParaRetiradas) if (fraseRetiradaNoTexto(t,frase) && !admitidas.has(t)) return t;
+  for (const t of rendidasParaRetiradas) if (retiradaForaDaFrase(t,frase,admitidas)) return t;
   return null;
 }
 

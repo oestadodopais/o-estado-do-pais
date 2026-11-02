@@ -5380,8 +5380,8 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | --- | --- | --- | --- | --- |
 | conteudo | Estudo corrigido. O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque. | ed1 | viva | ED1-E §3 e §4: política declarada. |
 | conteudo | Study corrected. The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away. | ed1 | viva | ED1-E §3 e §4: política declarada. |
-| conteudo | Uma entrada do registo guarda, para um número, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas edições. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São quatro naturezas, e não se misturam: | ed1 | viva | ED1-E: parágrafo rendido da política. |
-| conteudo | An entry in the register holds, for a figure, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and the two editions. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are four kinds, and they are not mixed: | ed1 | viva | ED1-E: parágrafo rendido da política. |
+| conteudo | Uma entrada do registo guarda, para um número, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São quatro naturezas, e não se misturam: | ed1 | viva | ED1-E: parágrafo rendido da política. |
+| conteudo | An entry in the register holds, for a figure, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are four kinds, and they are not mixed: | ed1 | viva | ED1-E: parágrafo rendido da política. |
 
 | conteudo | As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos. | ed1 | viva | ED1-E §4.6: texto da conta. |
 | conteudo | The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies. | ed1 | viva | ED1-E §4.6: texto da conta. |
@@ -5409,3 +5409,25 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | conteudo | 132 provenance revisions | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 | conteudo | Five quotations presented the Prime Minister and the Socialist Party ( Partido Socialista , PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP). | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 | conteudo | Four passages stated as fact causes that the Câmara&#39;s 2025 source · Município de Évora accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 source · Marques, Cruz &amp; Associados investment value is the one the 2025 source · Município de Évora report prints as a comparative, because the 2024 source · Marques, Cruz &amp; Associados accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications. | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
+
+
+## ED1-F: a faixa e os avisos das versões
+
+O corpo documental permanece fora da voz. Os avisos da casa, com as datas conferidas pelo portão documental, entram na classificação e na procura das retiradas. A faixa dos estudos admite apenas a forma integral; o fragmento isolado continua proibido.
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | · · publicado a · atualizado a | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | · · published on · updated on | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 30.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Edição atual, de 30.10.2026. A primeira edição é de 01.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | First edition, published on 01.10.2026. The current edition is from 30.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Current edition, from 30.10.2026. The first edition is from 01.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Primeira edição, publicada a 21.10.2026. A edição atual é de 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Edição atual, de 02.11.2026. A primeira edição é de 21.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | First edition, published on 21.10.2026. The current edition is from 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Current edition, from 02.11.2026. The first edition is from 21.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Primeira edição, publicada a 29.10.2026. A edição atual é de 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Edição atual, de 02.11.2026. A primeira edição é de 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | First edition, published on 29.10.2026. The current edition is from 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Current edition, from 02.11.2026. The first edition is from 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |

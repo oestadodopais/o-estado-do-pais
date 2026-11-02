@@ -35,7 +35,7 @@
     "check:alvos": "node tests/acessibilidade/alvos.mjs",
     "check:cabeca": "node tests/inicio/hierarquia-b2.mjs",
     "check:cadeia": "node scripts/check-cadeia.mjs",
-    "check:voz": "node tests/hb1/voz-portas.mjs && node scripts/check-voz.mjs",
+    "check:voz": "node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node scripts/check-voz.mjs",
     "check:lugar": "node scripts/check-lugar.mjs && node tests/edicoes/lugar.mjs",
     "check:lingua": "node tests/edicoes/lingua.mjs && node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs",
     "check:alcance": "node tests/dominio/alcance.mjs",
