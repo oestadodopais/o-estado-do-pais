@@ -2040,23 +2040,6 @@ function pedacosDaUnidade(el) {
   return { pedacos, elementos };
 }
 
-/** O nó de elemento seguinte, sem saltar por cima de texto: é a regra do colado. */
-function irmaoColado(el) {
-  const pai = el.parentNode;
-  if (!pai) return { irmao: null, texto: null };
-  const filhos = pai.childNodes ?? [];
-  const i = filhos.indexOf(el);
-  for (let k = i + 1; k < filhos.length; k++) {
-    const n = filhos[k];
-    if (n.nodeType === NodeType.TEXT_NODE) {
-      if (n.rawText === '') continue;
-      return { irmao: null, texto: n.rawText };
-    }
-    if (n.nodeType === NodeType.ELEMENT_NODE) return { irmao: n, texto: null };
-  }
-  return { irmao: null, texto: null };
-}
-
 /** As classes de um elemento, como lista. */
 const classesDe = (n) => String(n?.getAttribute?.('class') ?? '').split(/\s+/);
 

@@ -241,11 +241,6 @@ function textoImpresso(el) {
   return saida;
 }
 
-/** O nó de elemento seguinte, sem saltar por cima de texto: a regra do colado. */
-function irmaoColado(el) {
-  return irmaosColados(el)[0] ?? null;
-}
-
 /**
  * Os elementos irmãos COLADOS a este, em ordem, até ao primeiro nó de texto.
  *
