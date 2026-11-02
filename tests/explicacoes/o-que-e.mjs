@@ -10,6 +10,7 @@ import { loadClaims } from '../../src/lib/ledger.mjs';
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const numero = s => Number(normal(s).replaceAll(' ', '').replace('−','-').replace(',','.'));
 export const MARCAS_O_QUE_E = '[data-o-que-e], [data-o-que-e-por-confirmar]';
+const idDaEntrada = e => e.getAttribute('data-correcao-entrada') ?? e.getAttribute('data-semana-revisao');
 let auditoria;
 function estado() { return auditoria ??= conferirAuditoriaDasFamilias(); }
 
@@ -17,8 +18,8 @@ function estado() { return auditoria ??= conferirAuditoriaDasFamilias(); }
 function gruposDasEntradas(entradas, lang) {
   const grupos=[];
   for (const e of entradas) {
-    const id=e.getAttribute('data-correcao-entrada'), nome=nomeNaLista(id,lang);
-    const chave=JSON.stringify(nome);
+    const id=idDaEntrada(e), nome=nomeNaLista(id,lang);
+    const chave=e.hasAttribute('data-semana-revisao') ? id : JSON.stringify(nome);
     if(grupos.at(-1)?.chave===chave) grupos.at(-1).entradas.push(e);
     else grupos.push({chave,entradas:[e]});
   }
@@ -29,13 +30,13 @@ function gruposDasEntradas(entradas, lang) {
 export function contarFrasesDasMudancas(root, rota, lang = root.querySelector('html')?.getAttribute('lang')?.startsWith('en') ? 'en' : 'pt') {
   if (!['leituraDaSemana','indice'].includes(rota)) return {erros:[], entradas:[], grupos:[], frases:0, ausencias:0};
   const candidatas = root.querySelectorAll(rota === 'leituraDaSemana'
-    ? 'main [data-semana-mudancas] > [data-semana-mudanca]'
+    ? 'main [data-semana-mudancas] > [data-semana-mudanca], main [data-semana-revisoes] > [data-semana-revisao]'
     : 'main [data-mudou-ambito="indice"] > [data-correcao-entrada]');
   const entradas = candidatas.filter(e => rota === 'leituraDaSemana' || numero(e.querySelector('[data-correcao-campo="old_value"]')?.textContent) !== numero(e.querySelector('[data-correcao-campo="new_value"]')?.textContent));
   const erros = [], vistos = new Set(), grupos=gruposDasEntradas(entradas,lang);
   let frases=0, ausencias=0;
   for (const grupo of grupos) {
-    const ultima=grupo.entradas.at(-1), id=ultima.getAttribute('data-correcao-entrada');
+    const ultima=grupo.entradas.at(-1), id=idDaEntrada(ultima);
     const marcas=grupo.entradas.flatMap(e=>e.querySelectorAll(MARCAS_O_QUE_E));
     if (marcas.length!==1) erros.push(`EX2 · ${id}: o grupo tem ${marcas.length} frases ou ausências; exige uma por grupo, sob a última mudança`);
     for (const m of marcas) {
@@ -54,17 +55,17 @@ export function contarFrasesDasMudancas(root, rota, lang = root.querySelector('h
 /** Uma marca só sai do inventário onde a W4 confere a frase inteira. */
 export function marcaOQueEComparada(el, rota) {
   if (!['indice','leituraDaSemana'].includes(rota) || !el.matches(MARCAS_O_QUE_E+', [data-o-que-e-sinal]') || el.rawTagName!=='p') return false;
-  const e=el.closest('[data-correcao-entrada]');
-  return el.parentNode===e && Boolean(e?.parentNode?.matches(rota==='indice'?'main [data-mudou-ambito="indice"]':'main [data-semana-mudancas]'));
+  const e=el.closest('[data-correcao-entrada], [data-semana-revisao]');
+  return el.parentNode===e && Boolean(e?.parentNode?.matches(rota==='indice'?'main [data-mudou-ambito="indice"]':'main [data-semana-mudancas], main [data-semana-revisoes]'));
 }
 
 /** Um valor da definição só reutiliza o selo visível do resumo da própria mudança. */
 export function seloDaDefinicaoNaMudanca(el, id, rota, alvo) {
   const p=el.closest('p[data-o-que-e]');
   if (!p || !marcaOQueEComparada(p,rota) || p.getAttribute('data-o-que-e')!==id || p.hasAttribute('data-o-que-e-por-confirmar')) return false;
-  const entrada=p.closest('[data-correcao-entrada]');
-  if (entrada.getAttribute('data-correcao-entrada')!==id) return false;
-  const resumo=entrada.querySelector(rota==='leituraDaSemana'?'p[data-semana-resumo]':'p.lugar-mudou-o-que');
+  const entrada=p.closest('[data-correcao-entrada], [data-semana-revisao]');
+  if (idDaEntrada(entrada)!==id) return false;
+  const resumo=entrada.querySelector(rota==='leituraDaSemana'?'p[data-semana-resumo], p[data-semana-revisao-resumo]':'p.lugar-mudou-o-que');
   return Boolean(resumo?.querySelectorAll('a.src-chip').some(a=>a.getAttribute('href')===alvo));
 }
 
@@ -109,7 +110,7 @@ export function conferirOQueENasMudancas(root, lang, rota, dist, prova = estado(
     const e=grupo.entradas.at(-1), sinaisEsperados=[];
     const frase=e.querySelector('[data-o-que-e]'), ausencia=e.querySelector('[data-o-que-e-por-confirmar]');
     for(const entrada of grupo.entradas) {
-      const id=entrada.getAttribute('data-correcao-entrada');
+      const id=idDaEntrada(entrada);
       if (prova.porConfirmar.has(id)) {
         if(frase || !ausencia || normal(ausencia.textContent)!==t(lang).semana.oQueEPorConfirmar) erros.push(`W4 · ${id}: a frase está por confirmar na fonte; exige a ausência e recusa a frase`);
       } else {

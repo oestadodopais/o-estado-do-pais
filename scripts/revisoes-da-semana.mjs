@@ -41,7 +41,8 @@ export function conferirRevisoes(root,lang,linhas,inicio,fim) {
     const nomeTexto=(nomeDaLinhaDerivada(base,lang) ?? nomeDoCartao(base,lang))?.texto;
     const u=unidadeDaLinha(l.unit,lang);
     const esperado=`${nomeTexto}${nome.qualificador==='ue'?c.virgula+t(lang).cartao.uniaoEuropeia:''}${c.virgula}${data(String(l.reference_date))}${c.publicado}${l.value} ${u.texto}${c.fonteAgora}${relido(r.found)}${c.naReleitura}${data(r.data)}.`;
-    const copia=parse(e.outerHTML); copia.querySelectorAll('.src-chip,.claim-provisorio-chip').forEach(n=>n.remove());
+    const resumo=e.querySelector('[data-semana-revisao-resumo]');
+    const copia=parse(resumo?.outerHTML ?? ''); copia.querySelectorAll('.src-chip,.claim-provisorio-chip').forEach(n=>n.remove());
     if(normal(copia.textContent)!==normal(esperado)) erros.push(`PAI1-B: frase da revisão difere do livro (${r.linha})`);
     const campo=e.querySelector('[data-linha-campo="unit"]');
     if(campo?.getAttribute('data-linha-claim')!==r.linha||normal(campo?.textContent)!==normal(u.texto)) erros.push(`PAI1-B: unidade de outra linha (${r.linha})`);

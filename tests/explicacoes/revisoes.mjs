@@ -9,6 +9,7 @@ import {t} from '../../src/i18n/strings.mjs';
 import {revisoesPeloLivro,conferirRevisoes} from '../../scripts/revisoes-da-semana.mjs';
 import {contasDaSemanaNoPortao,conferirMarcaDaSemana} from '../../scripts/explicacoes-do-portao.mjs';
 import {semanaPelaCelula,primeiraFrasePelaCelula,conferirPaginaDaSemana,marcaComparada} from './semana.mjs';
+import {conferirOQueENasMudancas} from './o-que-e.mjs';
 import {analisa,leMarcadores} from '../../scripts/voz.mjs';
 const linhas=loadClaims(), dist=process.env.OEDP_DIST||'dist';
 const data=s=>s.replace(/^(\d{4})-(\d{2})-(\d{2})$/,'$3.$2.$1');
@@ -29,6 +30,11 @@ for(const lang of ['pt','en']) {
     });
   }
   if(datas) continue;
+  prova(`definições dos recibos (${lang})`,()=>assert.deepEqual(conferirOQueENasMudancas(root,lang,'leituraDaSemana',dist),[]));
+  if(pendentes.length) prova(`definição trocada recusada (${lang})`,()=>{
+    const r=copia();r.querySelector('[data-semana-revisao] [data-o-que-e]').set_content('Definição trocada.');
+    assert.ok(conferirOQueENasMudancas(r,lang,'leituraDaSemana',dist).some(e=>e.includes('a frase mostrada não é a do recibo')));
+  });
   const conta=semanaPelaCelula(linhas,fim), pagina=leituraDaSemana({fim});
   prova(`contagens independentes (${lang})`,()=>assert.deepEqual(pagina.contagens,conta.contagens));
   prova(`frase e secção conferidas (${lang})`,()=>assert.deepEqual(conferirPaginaDaSemana(root,lang,[fim],linhas),[]));
