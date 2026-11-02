@@ -106,11 +106,20 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
   const mudancas = [];
   /** @type {FormaDaSemana[]} */
   const formas = [];
+  /** @type {{ linha: string, n: number, data: string, found: string }[]} */
+  const revisoes = [];
   /** @type {Map<string, number>} */
   const valoresAntes = new Map();
   for (const l of linhas) {
     if (!linhaDoAmbito(l)) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas++;
+    // PAI1-B: a última releitura da janela continua pendente até uma correção posterior.
+    const ultimaLeitura = (l.verifications ?? []).map((v, n) => ({ ...v, n }))
+      .filter(v => dentro(v.date)).sort((a, b) => a.date.localeCompare(b.date) || a.n - b.n).at(-1);
+    if (ultimaLeitura?.result === 'diverge' && !(l.corrections ?? []).some(c =>
+      NATUREZAS_DE_VALOR.includes(c.kind) && c.date > ultimaLeitura.date)) {
+      revisoes.push({ linha: String(l.id), n: ultimaLeitura.n, data: ultimaLeitura.date, found: String(ultimaLeitura.found ?? '') });
+    }
     const entradas = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ ...c, n })).filter((/** @type {any} */ c) => dentro(c.date));
     if (entradas.some((/** @type {any} */ c) => c.kind === 'proveniencia')) deProveniencia.add(String(l.id));
     // Uma correção de uma frase continua no registo e no recibo. Só os valores
@@ -148,11 +157,13 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
   }
   mudancas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
   formas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
+  revisoes.sort((a, b) => b.data.localeCompare(a.data) || a.linha.localeCompare(b.linha));
   return {
     janela,
-    contagens: { relidas, valor: deValor.size, forma: formas.length, proveniencia: deProveniencia.size },
+    contagens: { relidas, valor: deValor.size, forma: formas.length, proveniencia: deProveniencia.size, revisoes: revisoes.length },
     mudancas,
     formas,
+    revisoes,
     primeira: frasesDaPrimeiraQueMudaram(valoresAntes),
   };
 }
@@ -251,7 +262,7 @@ export function nomeNaSemana(id, lang) {
 }
 
 /**
- * @typedef {string | { semana: 'inicio'|'fim'|'relidas'|'valor'|'forma'|'proveniencia', texto: string }} PedacoDaSemana
+ * @typedef {string | { semana: 'inicio'|'fim'|'relidas'|'valor'|'forma'|'proveniencia'|'revisoes', texto: string }} PedacoDaSemana
  */
 
 /**
@@ -282,6 +293,8 @@ export function primeiraFraseDaSemana(leitura, s, data, contagem) {
     if (proveniencia === 0) p.push(s.nenhumDeProveniencia);
     else p.push({ semana: 'proveniencia', texto: contagem(proveniencia) }, proveniencia === 1 ? s.umDeProveniencia : s.variosDeProveniencia);
   }
+  const revisoes = leitura.contagens.revisoes ?? 0;
+  if (revisoes > 0) p.push(s.fonteReviu, { semana: 'revisoes', texto: contagem(revisoes) }, revisoes === 1 ? s.umaRevisao : s.variasRevisoes);
   p.push(s.ponto);
   /* Os pedaços de texto seguidos juntam-se num só. */
   /** @type {PedacoDaSemana[]} */

@@ -28,6 +28,9 @@ import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
 import Frase from '../components/Frase.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
+import Claim from '../components/Claim.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Provenance from '../components/Provenance.astro';
 import { leituraDaSemana, grupoQueFecha } from '../lib/leitura-da-semana.mjs';
 import { nomeNaLista, blocoResolvido } from '../lib/primeira-pagina.mjs';
@@ -49,6 +52,7 @@ const mudancas = leitura.mudancas;
 const ids = mudancas.map(m => m.linha);
 /* AS QUE MUDARAM SÓ NA FORMA DE ESCREVER (EX1-c, 06.10.2026, o achado 5 da leitura a frio): o mesmo número com outro
    literal, numa secção própria, cada uma dita pelo que é («a fonte passou a escrever 3,0, onde escrevia 3»). */
+const revisoes = leitura.revisoes.map(r => ({ ...r, linha: getClaim(r.linha), nome: nomeNaLista(r.linha, lang) }));
 const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome: nomeNaLista(f.linha, lang) }));
 ---
 
@@ -56,6 +60,25 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
   <article class="semana" data-semana-pagina>
     <h1 class="semana-titulo">{s.semana.titulo}</h1>
 
+
+    {revisoes.length > 0 && (
+      <section class="semana-secao" aria-labelledby="semana-revisoes" data-semana-seccao="revisoes">
+        <h2 class="semana-secao-titulo" id="semana-revisoes" data-semana-declarado>{s.semana.revisoesK}</h2>
+        <ol class="semana-mudancas" data-semana-revisoes>
+          {revisoes.map(r => {
+            const unidade = unidadeDaLinha(r.linha.unit, lang);
+            return <li class="semana-mudanca" data-semana-revisao={r.linha.id} data-semana-declarado>
+              <NomeDaMedida linha={getClaim(r.nome.linha)} lang={lang} escada="semana" class="semana-nome" />
+              {r.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
+              {s.semana.virgula}<DataDaLinha id={r.linha.id} campo="reference_date" valor={String(r.linha.reference_date)} lang={lang} />
+              {s.semana.publicado}<span><Claim id={r.linha.id} lang={lang} plano />{' '}<CampoDaLinha id={r.linha.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} />{' '}<Provenance id={r.linha.id} lang={lang} /></span>
+              {s.semana.fonteAgora}<CampoDaLinha id={r.linha.id} campo={`verifications.${r.n}.found`} valor={r.found} lang={lang} />
+              {s.semana.naReleitura}<DataDaLinha id={r.linha.id} campo={`verifications.${r.n}.date`} valor={r.data} lang={lang} />{s.semana.ponto}
+            </li>;
+          })}
+        </ol>
+      </section>
+    )}
 
     {mudancas.length > 0 && (
       <section class="semana-secao" aria-labelledby="semana-mudancas" data-semana-seccao="mudancas">
