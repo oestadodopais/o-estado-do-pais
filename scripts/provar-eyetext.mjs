@@ -402,6 +402,12 @@ caso('o título do ficheiro não é um bloco', '<title>T</title><p>a</p>', ['a']
 caso('a declaração de tipo não é um bloco', '<!doctype html><p>a</p>', ['a']);
 
 /* A extensão declarada, e é a única: o selo sai inteiro, sem deixar fronteira. */
+for (const [antes, depois] of [['79', ' milhões de euros'], ['4', '% do PIB']]) {
+  const selo = '<a class="src-chip" href="/livro-razao/sel1">fonte</a>';
+  caso('SEL1: selo depois da medida', `<p>${antes}${depois}${selo}.</p>`, [antes + depois + '.']);
+  caso('SEL1: posição antiga tem o mesmo texto', `<p>${antes}${selo}${depois}.</p>`, [antes + depois + '.']);
+}
+
 caso(
   'o selo sai inteiro e não deixa marca',
   '<p>de <span>€167 372 756</span><a class="src-chip" href="/livro-razao/x">' +

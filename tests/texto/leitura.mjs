@@ -23,6 +23,7 @@
  *
  *   node tests/texto/leitura.mjs
  */
+import { unidadeDaMedida } from '../../src/lib/unidade-da-medida.mjs';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -182,10 +183,10 @@ console.log('');
       mesmaLinha: Math.abs(a.top - b.top) < 6,
       alvo: Math.round(alvo.height),
       dentroDeAlvo: Boolean(selo.closest('a:not(.src-chip), button')),
-      semTextoPeloMeio: fig.nextSibling === selo,
+      textoPeloMeio: fig.nextSibling === selo ? '' : fig.nextSibling?.textContent,
     };
   });
-  conta('o selo entra colado à figura, sem um nó de texto pelo meio', m.semTextoPeloMeio, `${m.distancia}px de afastamento, dado pela folha`);
+  conta('SEL1: o selo segue a figura ou a unidade inteira', m.textoPeloMeio === '' || unidadeDaMedida(m.textoPeloMeio ?? '')?.texto === m.textoPeloMeio, `${m.distancia}px de afastamento, dado pela folha`);
   conta('o selo senta-se na linha da figura', m.mesmaLinha, `altura visível ${m.alvo}px`);
   conta('o selo nunca fica aninhado dentro de outro alvo (Emenda 2)', !m.dentroDeAlvo);
   await p.__contexto.close();

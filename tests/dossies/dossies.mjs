@@ -1,3 +1,4 @@
+import { irmaoDepoisDaMedida } from '../../src/lib/posicao-do-selo.mjs';
 /** DO1: pertenças, datas e peças conferidas nas duas edições, com estragos plantados. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -69,7 +70,9 @@ function conferir(root,d,lang) {
  for(const p of main.querySelectorAll('[data-dossie-abertura] [data-de-linha]')){
   const id=p.getAttribute('data-de-linha'), campo=p.getAttribute('data-de-campo');
   assert.equal(p.textContent,dataDaCasa(getClaim(id)[campo],lang));
-  assert(p.closest('[data-dossie-abertura]').querySelector(`a.src-chip[href="${routePath('linha',lang,{slug:id})}"]`));
+  const selo=irmaoDepoisDaMedida(p).irmao;
+  if(/^\d{4}$/.test(p.textContent))assert(!selo?.matches('a.src-chip'),'SEL1: ano do nome com selo');
+  else assert.equal(selo?.getAttribute('href'),routePath('linha',lang,{slug:id}),'SEL1: fonte da data trocada');
  }
  if(!d.calendario.length)assert.equal(main.querySelector('#dossie-calendario'),null);
 
@@ -108,6 +111,8 @@ for(const lang of ['pt','en']) {
   const rota=routePath('dossie',lang,{slug:d.slug}), root=ler(rota);conferir(root,d,lang);
   for(const mudar of [
    r=>r.querySelector('[data-registo-edicao]').remove(),
+   r=>r.querySelector('[data-dossie-abertura] a.src-chip').setAttribute('href','/livro-razao/outra'),
+   r=>r.querySelector('[data-dossie-abertura] [data-de-linha]').insertAdjacentHTML('afterend','<a class="src-chip" href="/livro-razao/ano">fonte</a>'),
    r=>r.querySelector('[data-dossie-data="recente"]').setAttribute('datetime','1900-01-01'),
    r=>r.querySelector('main h1').set_content('Título trocado'),
    r=>r.querySelector('[data-discussao-resumo] .src-chip').remove(),

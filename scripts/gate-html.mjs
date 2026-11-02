@@ -1,3 +1,4 @@
+import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 #!/usr/bin/env node
 import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
 import { conferirLeitura } from '../tests/dossies/leitura.mjs';
@@ -2492,7 +2493,7 @@ function verificaTexto({ rota, root, err, recorte = null }) {
           irmao = irmaos[k] ?? null;
           textoColado = irmao === null ? texto : null;
         } else {
-          ({ irmao, texto: textoColado } = irmaoColado(rendida.el));
+          ({ irmao, texto: textoColado } = irmaoDepoisDaMedida(rendida.el));
         }
 
         if (siteId) {
@@ -4648,6 +4649,7 @@ for (const file of ficheirosHtml(DIST)) {
       for (const [nome,alterar,esperada] of [
         ['valor',r=>r.querySelector('[data-registo]').set_content('999999'),/L[24]/],
         ['porta',r=>r.querySelector('[data-registo-edicao] a.src-chip').setAttribute('href','/'),/L6/],
+        ['SEL1 fonte trocada depois da medida',r=>{const f=r.querySelectorAll('[data-registo]').find(f=>f.nextSibling?.nodeType===3 && irmaoDepoisDaMedida(f).irmao?.matches('a.src-chip'));irmaoDepoisDaMedida(f).irmao.setAttribute('href','/livro-razao/linha-errada');},/L6/],
         ['bloco',r=>r.querySelector('[data-registo-bloco]').remove(),/L1/],
       ]) {
         const copia=parse(root.toString()); alterar(copia);

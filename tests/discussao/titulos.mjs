@@ -13,7 +13,7 @@ export function conferirMarcasDoTitulo(el,e,lang,linhas){
   else if(m.getAttribute('data-nonledger')!=='data-da-linha'||m.getAttribute('data-de-linha')!==id||m.getAttribute('data-de-campo')!=='reference_date'||normal(m.text)!==String(linhas.get(id)?.reference_date))erros.push('V2D título: período fora da linha ou da ordem declarada');
  });
  if(el?.hasAttribute('data-discussao-titulo')){
-  if(el.querySelector('.src-chip'))erros.push('V2D título: selo dentro do cabeçalho acessível');
+
   for(const m of marcas.filter(m=>m.hasAttribute('data-claim')))if(!seloDoTituloDaDiscussao(m,m.getAttribute('data-claim'),lang,linhas))erros.push('V2D título: selo fora da faixa própria ou sem origem');
  }
  return erros;
@@ -32,7 +32,8 @@ export function plantasDosTitulos(linhas){
  for(const lang of ['pt','en']){
   const href=(lang==='pt'?'/o-que-se-discute/':'/en/under-discussion/')+'#'+e.slug;
   const selos=e.titulo[lang].filter(t=>t?.claim).map(t=>`<a class="src-chip" href="${lang==='pt'?'/livro-razao/':'/en/ledger/'}${t.claim}">fonte</a>`).join('');
-  const html=`<a data-discussao-porta="${e.slug}" href="${href}">${tituloDeEnsaio(e,lang,linhas)}</a><article data-discussao="${e.slug}"><div data-discussao-cabecalho><h2 data-discussao-titulo>${tituloDeEnsaio(e,lang,linhas)}</h2><span data-discussao-selos-do-titulo>${selos}</span></div></article>`;
+  const nome=e.titulo[lang].map(t=>typeof t==='string'?t:t.claim?linhas.get(t.claim)?.value+(t.sufixo??''):linhas.get(t.periodo)?.reference_date).join('');
+  const html=`<a data-discussao-porta="${e.slug}" href="${href}">${tituloDeEnsaio(e,lang,linhas)}</a><article data-discussao="${e.slug}"><div data-discussao-cabecalho><h2 data-discussao-titulo aria-label="${esc(nome)}">${tituloDeEnsaio(e,lang,linhas,true)}</h2></div></article>`;
   const julga=r=>portaDoTituloDaDiscussao(r.querySelector('[data-claim]'),e.titulo[lang].find(x=>x?.claim).claim,lang,linhas,{destino:r.querySelector('h2')});
   out.push({nome:'título completo com destino selado aceite',lang,mordeu:julga(parse(html))});
   for(const [nome,estraga] of [
@@ -42,9 +43,11 @@ export function plantasDosTitulos(linhas){
    ['valor do título alterado',r=>r.querySelector('a [data-claim]').set_content('42')],
    ['destino do título trocado',r=>r.querySelector('a').setAttribute('href','#outro')],
    ['ano sem origem no título de destino',r=>r.querySelector('h2 [data-de-linha]').removeAttribute('data-de-linha')],
-   ['selo ausente no título de destino',r=>r.querySelector('[data-discussao-selos-do-titulo] .src-chip').remove()],
-   ['selo dentro do título de destino',r=>{const s=r.querySelector('[data-discussao-selos-do-titulo] .src-chip');const html=s.toString();s.remove();r.querySelector('h2').insertAdjacentHTML('beforeend',html);}],
-   ['selo deslocado para a secção',r=>{const s=r.querySelector('[data-discussao-selos-do-titulo]');const html=s.toString();s.remove();r.querySelector('article').insertAdjacentHTML('beforeend',html);}],
+   ['selo ausente no título de destino',r=>r.querySelector('h2 .src-chip').remove()],
+   ['selo separado da medida no fim do título',r=>{const s=r.querySelector('h2 .src-chip');const html=s.toString();s.remove();r.querySelector('h2').insertAdjacentHTML('beforeend',html);}],
+   ['selo deslocado para a secção',r=>{const s=r.querySelector('h2 .src-chip');const html=s.toString();s.remove();r.querySelector('article').insertAdjacentHTML('beforeend',html);}],
+   ['SEL1 fonte trocada',r=>r.querySelector('h2 .src-chip').setAttribute('href','/livro-razao/outra')],
+   ['SEL1 nome acessível alterado',r=>r.querySelector('h2').setAttribute('aria-label','Outro título')],
   ]){const r=parse(html);estraga(r);out.push({nome,lang,mordeu:!julga(r)});}
  }
  return out;
