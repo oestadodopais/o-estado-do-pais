@@ -6,7 +6,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { confereFicheirosNaOrigem } from '../../scripts/check-cruzamento.mjs';
+import { confereFicheirosNaOrigem, confereRotulos } from '../../scripts/check-cruzamento.mjs';
 import { projecaoLinha } from '../../src/lib/projecao-linha.mjs';
 
 const raiz = fileURLToPath(new URL('../../', import.meta.url));
@@ -142,6 +142,18 @@ try {
   const recusada=conferirTravessia();
   assert.equal(recusada.status,1);assert.match(recusada.stderr,/as projeções do motor e do sítio divergem/);
   fs.writeFileSync(ficheiroRegisto,JSON.stringify(rp4n));
+  // Só a igualdade entre origem e exportação pode recusar esta cópia.
+  const dirRotulo=path.join(tmp,'rotulo');fs.mkdirSync(dirRotulo);
+  const nomeRotulo=nomes[0], bytesRotulo=fs.readFileSync(path.join(raiz,'ledger/claims',nomeRotulo));
+  fs.writeFileSync(path.join(dirRotulo,nomeRotulo),bytesRotulo);
+  const digestRotulo=sha(projecaoLinha(bytesRotulo));
+  const regRotulo=[{dados:{files:{[nomeRotulo]:{...rp4n.files[nomeRotulo],origin_sha256:digestRotulo,exported_sha256:digestRotulo}}}}];
+  const errosRotulo=[];confereRotulos([],errosRotulo,regRotulo,dirRotulo);assert.deepEqual(errosRotulo,[]);
+  regRotulo[0].dados.files[nomeRotulo].origin_sha256='0'.repeat(64);
+  assert.equal(sha(projecaoLinha(fs.readFileSync(path.join(dirRotulo,nomeRotulo)))),regRotulo[0].dados.files[nomeRotulo].exported_sha256);
+  const origemDiferente=[];confereRotulos([],origemDiferente,regRotulo,dirRotulo);
+  assert.equal(origemDiferente.length,1);assert.match(origemDiferente[0],/name.*não atravessaram/);
+  console.log('SEL1-J: confereRotulos recusa só pela origem diferente, com a projeção exportada intacta.');
   const motor=path.join(tmp,'motor');
   const regs=[{ficheiro:'pensao-rp4n.json',dados:{files:{}}}];
   for(const nome of nomes) {
