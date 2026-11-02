@@ -1,0 +1,135 @@
+{
+  "conferencias_dirigidas": 22,
+  "comandos_dirigidos": 30,
+  "corridas_da_auditoria": 3,
+  "corridas_do_build_pelo_escrivao": 1,
+  "corridas_do_core_gate": 1,
+  "plantas_motor": 34,
+  "plantas_sitio": 152,
+  "formas": {
+    "afirmacoes": 92,
+    "relato": 17,
+    "palavras": 75
+  },
+  "conferencias": [
+    {
+      "registo": "<temporario>/og1eb-site-forma1.log",
+      "codigo": 1,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-motor-forma1.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-site-forma2.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-motor-testes.log",
+      "codigo": 0,
+      "comandos": 3
+    },
+    {
+      "registo": "<temporario>/og1eb-migracao-teste.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-site-forma3.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-typecheck1.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-guardas.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-site-forma4.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-ledger-pre.log",
+      "codigo": 1,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-historia-valor.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-ledger2.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-edicoes-fontes.log",
+      "codigo": 0,
+      "comandos": 5
+    },
+    {
+      "registo": "<temporario>/og1eb-cruzamento-final.log",
+      "codigo": 0,
+      "comandos": 3
+    },
+    {
+      "registo": "<temporario>/og1eb-voz-final.log",
+      "codigo": 1,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-lugar-final.log",
+      "codigo": 1,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-edicoes-final.log",
+      "codigo": 1,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-lingua-final.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-eo1-final.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-frases-final.log",
+      "codigo": 1,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-edicoes2.log",
+      "codigo": 0,
+      "comandos": 1
+    },
+    {
+      "registo": "<temporario>/og1eb-voz2.log",
+      "codigo": 1,
+      "comandos": 1
+    }
+  ],
+  "build_codigo": 1,
+  "core_gate_codigo": 0,
+  "L3": 0,
+  "L1": {
+    "medido": 3464,
+    "teto_conservado": 3462
+  },
+  "sem_execucao_completa": "check:frases-compostas: Error: listen EPERM: operation not permitted 127.0.0.1",
+  "chamadas_de_ferramentas": 72
+}
