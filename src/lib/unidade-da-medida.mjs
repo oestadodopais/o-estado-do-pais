@@ -4,7 +4,7 @@ const grandezasEn = ['thousand', 'thousands', 'million', 'millions', 'billion', 
 export const UNIDADES_DA_MEDIDA = Object.freeze([...new Set([
   ...grandezasPt.flatMap(g => [g, g + ' de euros']),
   ...grandezasEn.flatMap(g => [g, g + ' euros', g + ' of euros']),
-  'mil euros', 'euros', 'euro', '% do PIB', '% of GDP', '%',
+  'mil euros', 'euros', 'euro', '€', '% do PIB', '% of GDP', '%',
   'pontos percentuais', 'ponto percentual', 'percentage points', 'percentage point',
   'p.p.', 'pontos', 'ponto', 'points', 'point',
   'vezes', 'vez', 'times', 'time',
@@ -20,9 +20,9 @@ export function unidadeDaMedida(texto) {
   const espaco = /^[ \u2009\u202f]/u.test(texto) ? texto[0] : '';
   const resto = texto.slice(espaco.length);
   for (const unidade of UNIDADES_DA_MEDIDA) {
-    if (!resto.startsWith(unidade)) continue;
+    if (!resto.toLowerCase().startsWith(unidade.toLowerCase())) continue;
     if (/[\p{L}\p{N}_]/u.test(resto.slice(unidade.length, unidade.length + 1))) continue;
-    return { unidade, texto: espaco + unidade };
+    return { unidade, texto: texto.slice(0, espaco.length + unidade.length) };
   }
   return null;
 }

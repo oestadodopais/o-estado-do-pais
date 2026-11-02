@@ -1,3 +1,4 @@
+import { UNIDADES_DA_MEDIDA as UNIDADES_DO_MANDATO, unidadeDaMedida } from '../../src/lib/unidade-da-medida.mjs';
 import { listagensDoInicio, candidatasDoInicio } from '../../src/lib/listagens-do-inicio.mjs';
 import { DOSSIES } from '../../src/data/dossies.mjs';
 import { conferirSuperficieDossies, dossieDaPagina } from '../../scripts/dossies-superficie.mjs';
@@ -48,7 +49,7 @@ export function unidadesDepoisDoSelo(root){
    if(!s.selo)continue;
    let depois='';
    for(const seguinte of segmentos.slice(i+1)){if(seguinte.selo)break;depois+=seguinte.texto??'';if(depois.length>160)break;}
-   if(/^\s*(?:(?:mil\s+)?milh(?:ão|ões)(?=\s|[,.;:]|$)|pontos\s+percentuais(?=\s|[,.;:]|$)|p\.p\.|percentage\s+points(?=\s|[,.;:]|$)|billions?(?=\s|[,.;:]|$)|millions?(?=\s|[,.;:]|$)|euros?(?=\s|[,.;:]|$)|[%€])/iu.test(depois)){
+   if(unidadeDaMedida(depois)){
     desvios.push({paragrafo:p.getAttribute('data-discussao-paragrafo'),recibo:s.selo.getAttribute('href'),depois:normal(depois)});
    }
   }
@@ -80,14 +81,14 @@ export function conferirSelosInline(root,lang,linhas=loadClaims()){
  }
  return erros;
 }
-const UNIDADES_DO_MANDATO=['milhões de euros','mil milhões de euros','milhões','euros','%','pontos percentuais','p.p.','million euros','billion euros','million','percentage points'];
+
 export function conferirUnidadesNosDados(itens=ITENS){
  const erros=[];
  for(const item of itens)for(const sec of item.seccoes)for(const b of sec.conteudo)for(const lang of ['pt','en']){
   const tokens=b.paragrafo?.[lang]??[];
   for(const [i,t] of tokens.entries())if(t?.claim&&!t.sufixo&&typeof tokens[i+1]==='string'){
    const seguinte=tokens[i+1].trimStart();
-   if(UNIDADES_DO_MANDATO.some(u=>seguinte===u||seguinte.startsWith(u+' ')||seguinte.startsWith(u+',')||seguinte.startsWith(u+';')||seguinte.startsWith(u+'.')))
+   if(unidadeDaMedida(seguinte))
     erros.push(`V2E unidade fora do token: ${lang} ${t.claim}`);
   }
  }
