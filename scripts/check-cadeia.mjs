@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {irmaoDepoisDaMedida} from '../src/lib/posicao-do-selo.mjs';
 import {createHash} from 'node:crypto';
 /**
  * A cadeia de cada algarismo de uma página de leitura, percorrida até onde ela
@@ -85,7 +86,7 @@ import { routePath } from '../src/lib/routes.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..');
-const DIST = path.join(RAIZ, 'dist');
+const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 const REGISTOS = process.env.OEDP_REGISTOS_DIR ?? path.join(RAIZ, 'registos');
 const CRUZAMENTOS = path.join(RAIZ, 'ledger', 'cruzamentos');
 const CLAIMS = path.join(RAIZ, 'ledger', 'claims');
@@ -585,7 +586,7 @@ for (const chave of chaves) {
           const k = naLigacao.indexOf(el);
           irmao = irmaosColados(dentroDeLigacao)[k] ?? null;
         } else {
-          irmao = irmaoColado(el);
+          irmao = irmaoDepoisDaMedida(el).irmao;
         }
         if (siteId) {
           if (!eSelo(irmao)) {

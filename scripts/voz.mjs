@@ -272,7 +272,7 @@ export function leInventario(raiz) {
   for (let i = 0; i < cru.length; i++) {
     const cel = celulas(cru[i]);
     if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
-    const [classe, texto] = cel;
+    const classe = cel[0], texto = normalizaFraseDoInventario(cel[1]);
     const bloco = cel.length >= 3 ? cel[2] : null;
     /* O estado só se lê quando é um dos nomes reconhecidos, incluindo a condição
        estreita dos dois rótulos FP1: uma célula com outra coisa
@@ -291,4 +291,18 @@ export function leInventario(raiz) {
     linhas.push({ n: i + 1, classe, texto, bloco, estado, razao, cru4 });
   }
   return { mapa, linhas, ficheiro, existe: true, cabeca };
+}
+
+/** SEL1: a separação de nós pelo selo não cria espaços antes da pontuação.
+ * Só se normaliza depois de letras ou fechos, nunca entre algarismos. */
+export function normalizaFraseDoInventario(texto) {
+  return texto.replace(/(?<=[\p{L}%»\)\]])\s+(?=[,.;:!?])/gu, '');
+}
+
+/** Um nome acessível composto só repete o título se todos os caracteres coincidem. */
+export function nomeAcessivelDoTitulo(el) {
+  if (!el.hasAttribute('data-discussao-titulo')) return false;
+  const norm=s=>s.replace(/\s+/g,' ').trim();
+  const texto=n=>n.classList?.contains('src-chip')?'':n.nodeType===3?n.text:(n.childNodes??[]).map(texto).join('');
+  return norm(el.getAttribute('aria-label')??'')===norm(texto(el));
 }

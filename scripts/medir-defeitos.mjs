@@ -61,7 +61,7 @@ import { NOMES_DAS_SERIES } from '../src/data/series-no-tempo.mjs';
 import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS } from '../src/data/o-que-e-das-familias.mjs';
 import { marcaComparada } from '../tests/explicacoes/semana.mjs';
 import { metaDoEstudoConferida } from './meta-do-estudo.mjs';
-import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
+import { normalizaFraseDoInventario, nomeAcessivelDoTitulo, leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 /* `OEDP_DIST` aponta outra construção (bloco PP1, 28.09.2026): as plantas da régua das frases
@@ -1020,7 +1020,7 @@ function frasesDaVoz(root) {
     const t = norm(texto(el));
     if (t) out.push(t);
   }
-  return out;
+  return out.map(normalizaFraseDoInventario);
 }
 
 function frasesDaCasa(root, rotaKey) {
@@ -1179,7 +1179,7 @@ function frasesDaCasa(root, rotaKey) {
     const t = norm(texto(el));
     if (t) out.push(t);
   }
-  return out;
+  return out.map(normalizaFraseDoInventario);
 }
 
 /**
@@ -1246,10 +1246,11 @@ function dicasDaCasa(root) {
       const v = norm(el.getAttribute(at) ?? '');
       if (!v) continue;
       if (dados.includes(v)) continue;
+      if (at === 'aria-label' && nomeAcessivelDoTitulo(el)) continue;
       out.push(v);
     }
   }
-  return out;
+  return out.map(normalizaFraseDoInventario);
 }
 
 /**
