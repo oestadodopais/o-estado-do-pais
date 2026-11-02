@@ -14458,9 +14458,9 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 ### 1.216 Segunda-feira 02.11.2026: a auditoria do trabalho de 30.10, as correções do sítio inteiro por régua (a SEL1 e a PAI1 no ar; a OG1-E e a ED1 por ler), e a decisão do financiador sobre o custo da SEL1
 
-**Afecta:** o `CLAUDE.md` (a regra 15 das que não se quebram)
+**Afecta:** nenhum
 
-**Toca:** §1.215 (o lote de 30.10), §1.214 (a I288), §1.202 (o custo e a escada), §1.172 (as regras), §1.143 (o Temas como índice), I66 (o selo da nona origem), I233 (as revisões da fonte).
+**Toca:** o `CLAUDE.md` (a regra 15 das que não se quebram), §1.215 (o lote de 30.10), §1.214 (a I288), §1.202 (o custo e a escada), §1.172 (as regras), §1.143 (o Temas como índice), I66 (o selo da nona origem), I233 (as revisões da fonte).
 
 **Data:** 02.11.2026, 10:10 UTC (o pedido de auditoria do financiador) a 21:21 UTC (o commit dos registos do lote 1).
 
