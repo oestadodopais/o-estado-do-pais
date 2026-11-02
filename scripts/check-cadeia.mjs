@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import {irmaoDepoisDaMedida} from '../src/lib/posicao-do-selo.mjs';
 import {createHash} from 'node:crypto';
+import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
 /**
  * A cadeia de cada algarismo de uma página de leitura, percorrida até onde ela
  * chega, e recusada quando não chega a lado nenhum.
@@ -178,7 +179,7 @@ function linhasDoSitio() {
     if (proof.rh_study !== '28 Habitacao Estudo') throw new Error('HB1: estudo da cópia divergente');
     for (const [id, r] of Object.entries(proof.rows)) {
       if (!/^[a-z0-9-]+$/.test(id) || r.file !== `ledger/claims/${id}.yml`) throw new Error('HB1: caminho inválido');
-      const digest = createHash('sha256').update(fs.readFileSync(path.join(CLAIMS, `${id}.yml`))).digest('hex');
+      const digest = createHash('sha256').update(projecaoLinha(fs.readFileSync(path.join(CLAIMS, `${id}.yml`)))).digest('hex');
       if (digest !== r.sha256) throw new Error('HB1: a linha mudou sem recompor o documento: '+id);
       mapa.set(`${proof.rh_study} ${id}`, id);
     }

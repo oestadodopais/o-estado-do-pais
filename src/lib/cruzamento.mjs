@@ -1,4 +1,5 @@
 import crypto from 'node:crypto';
+import { projecaoLinha } from './projecao-linha.mjs';
 /**
  * O registo de travessia das LINHAS, lido ao contrário: da linha do motor para
  * a linha do livro-razão deste sítio.
@@ -102,7 +103,7 @@ function mapa() {
     }
   }
   // HB1: estas quatro linhas partiram do próprio sítio. A cópia só resolve
-  // enquanto os bytes do recibo continuarem iguais aos que o motor compôs.
+  // enquanto o conteúdo, fora da história das releituras, continuar igual.
   const prova = path.join(dir, '..', 'provas', 'hb1', 'series.json');
   if (fs.existsSync(prova)) {
     const p = JSON.parse(fs.readFileSync(prova, 'utf8'));
@@ -111,7 +112,7 @@ function mapa() {
       const r = /** @type {{file:string,sha256:string}} */ (item);
       if (!/^[a-z0-9-]+$/.test(id) || r.file !== `ledger/claims/${id}.yml`) throw new Error('HB1: caminho de série inválido');
       const bytes = fs.readFileSync(path.join(dir, '..', 'claims', `${id}.yml`));
-      if (crypto.createHash('sha256').update(bytes).digest('hex') !== r.sha256) throw new Error('HB1: recompor a série alterada '+id);
+      if (crypto.createHash('sha256').update(projecaoLinha(bytes)).digest('hex') !== r.sha256) throw new Error('HB1: recompor a série alterada '+id);
       CACHE.set(`${p.rh_study}\0${id}`, id);
     }
   }

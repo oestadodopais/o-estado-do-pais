@@ -25,7 +25,7 @@
     "mapa:unidades": "node scripts/mapa-unidades.mjs",
     "check:regioes": "node scripts/check-regioes.mjs",
     "check:areas": "node scripts/check-areas.mjs",
-    "check:cruzamento": "node scripts/check-cruzamento.mjs",
+    "check:cruzamento": "node tests/hb1/projecao-linha.mjs && node scripts/check-cruzamento.mjs",
     "check:documentos": "node scripts/check-documentos.mjs",
     "check:briefs": "python3 scripts/check-briefs.py",
     "check:leituras": "python3 scripts/check-leituras.py",

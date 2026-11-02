@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
 import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
 import { conferirLeitura } from '../tests/dossies/leitura.mjs';
@@ -1986,7 +1987,7 @@ const LINHA_DO_SITIO = new Map();
       if (!/^[a-z0-9-]+$/.test(id) || item.file !== `ledger/claims/${id}.yml`)
         throw Error('HB1: caminho de série inválido');
       const bytes = fs.readFileSync(path.join(ROOT, item.file));
-      if (crypto.createHash('sha256').update(bytes).digest('hex') !== item.sha256)
+      if (crypto.createHash('sha256').update(projecaoLinha(bytes)).digest('hex') !== item.sha256)
         throw Error(`HB1: resumo da série divergente: ${id}`);
       LINHA_DO_SITIO.set(`${prova.rh_study} ${id}`, id);
     }

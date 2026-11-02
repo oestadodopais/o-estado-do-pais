@@ -80,6 +80,7 @@
  */
 
 import { correcoesNoRegisto } from './contagem-do-cruzamento.mjs';
+import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -508,7 +509,8 @@ function confereFicheiros(regs, erros) {
         );
         continue;
       }
-      const actual = sha256(fs.readFileSync(caminho));
+      const bytes = fs.readFileSync(caminho);
+      const actual = sha256(rel === 'ledger/claims' ? projecaoLinha(bytes) : bytes);
       if (actual !== entrada.exported_sha256) {
         erros.push(
           `${onde}: os bytes em disco já não são os que atravessaram.\n` +
@@ -1116,11 +1118,11 @@ function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = []) {
   }
 
   const cruzadas = idsQueAtravessaram(regsDeLinhas);
-  // Um YAML inteiro atravessado e conferido pelos bytes também transporta o rótulo.
+  // Um YAML atravessado, conferido fora das releituras, também transporta o rótulo.
   for(const {dados} of regsDeFicheiros)for(const [nome,e] of Object.entries(dados.files)) {
     if(e.destino!=='ledger/claims'||!nome.endsWith('.yml'))continue;
     const p=path.join(DIR_CLAIMS,nome);
-    if(fs.existsSync(p)&&e.origin_sha256===e.exported_sha256&&sha256(fs.readFileSync(p))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));
+    if(fs.existsSync(p)&&sha256(projecaoLinha(fs.readFileSync(p)))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));
   }
   const linhas = [];
   let ficheiros = 0;

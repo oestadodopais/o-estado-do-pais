@@ -1,7 +1,30 @@
 """Prepara as provas públicas HB1 sem copiar os corpos integrais das fontes."""
-import argparse,json,hashlib
+import argparse,json,hashlib,subprocess
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('motor',type=Path);a=p.parse_args()
+from projecao_linha import projecao_linha
+
+p=argparse.ArgumentParser()
+p.add_argument('motor',type=Path,nargs='?')
+p.add_argument('--series-main',action='store_true',help='Migra só os resumos das séries, conferindo os bytes de main contra a prova existente.')
+a=p.parse_args()
+if a.series_main:
+ prova=Path('ledger/provas/hb1/series.json')
+ dados=json.loads(prova.read_text())
+ for id,r in dados['rows'].items():
+  if r['file'] != f'ledger/claims/{id}.yml' or '/' in id or '..' in id:
+   raise ValueError('HB1: caminho de série inválido')
+  raw=subprocess.check_output(['git','show','main:'+r['file']])
+  projetado=projecao_linha(raw)
+  antigo=r['sha256'];novo=hashlib.sha256(projetado).hexdigest()
+  if antigo not in (hashlib.sha256(raw).hexdigest(),novo):
+   raise ValueError(f'{id}: main diverge da prova existente')
+  if projecao_linha(Path(r['file']).read_bytes()) != projetado:
+   raise ValueError(f'{id}: a worktree diverge de main fora das releituras')
+  r['sha256']=novo
+  print(id,antigo,'->',novo)
+ prova.write_text(json.dumps(dados,ensure_ascii=False,indent=2)+'\n')
+ raise SystemExit(0)
+if a.motor is None:p.error('indica o motor ou --series-main')
 b=json.loads((a.motor/'content/28 Habitacao Estudo/ledger.json').read_text())['claims'];rows={}
 # HB1-c: uma linha que outra travessia do sítio prende (as três linhas partilhadas
 # com o estudo do Orçamento) prova-se pela conferência dessa travessia, na versão
@@ -38,7 +61,10 @@ rows={}
 origin=a.motor/'content/28 Habitacao Estudo/Technical Source/series-do-sitio/ledger.json'
 snapshot={r['id']:r for r in json.loads(origin.read_text())['claims']}
 for id,r in snapshot.items():
- f=Path('ledger/claims')/(id+'.yml');raw=f.read_bytes();assert yaml.safe_load(raw)==r,(id,'a cópia diverge do sítio')
- rows[id]={'file':f.as_posix(),'sha256':hashlib.sha256(raw).hexdigest(),'study':r['study']}
+ f=Path('ledger/claims')/(id+'.yml');raw=f.read_bytes()
+ atual=yaml.safe_load(raw);composto=dict(r)
+ atual.pop('verifications',None);composto.pop('verifications',None)
+ assert atual==composto,(id,'a cópia diverge do sítio fora das releituras')
+ rows[id]={'file':f.as_posix(),'sha256':hashlib.sha256(projecao_linha(raw)).hexdigest(),'study':r['study']}
 (p/'series.json').write_text(json.dumps({'rh_study':'28 Habitacao Estudo','snapshot':'content/28 Habitacao Estudo/Technical Source/series-do-sitio/ledger.json','rows':rows},ensure_ascii=False,indent=2)+'\n')
 print(len(rows),'linhas do sítio conferidas contra a cópia composta')
