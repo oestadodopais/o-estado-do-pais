@@ -1,0 +1,8 @@
+{
+ "bloco": "painel (o painel semanal de 02.11.2026: as 91 afirmações relidas na fonte pelo guião, sem modelo)",
+ "data": "2026-11-02",
+ "orcamento": {"pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"},
+ "pontos_do_bloco": 0,
+ "passagens_codex": [],
+ "nota": "O painel corre por guião às segundas-feiras na árvore principal (09:32 UTC de 02.11); nenhum modelo. As três divergências (desempenho-das-exportacoes-2024 17,1 para 17.0, desempenho-das-exportacoes-2025 8,2 para 8.0, sobrecarga-do-custo-da-habitacao-2025-ue 7,7 para 7.6) são revisões da fonte, conferidas pelo lugar de direção na API do Eurostat a 02.11.2026: os dois conjuntos (tipsbp60 e tespm140) foram atualizados a 29.10.2026 às 22:00 UTC. As linhas ficam com o valor selado e a reconferência «diverge» até ao bloco das revisões (a I233), como no painel de 26.10."
+}
