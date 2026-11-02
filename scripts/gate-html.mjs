@@ -6815,6 +6815,9 @@ for (const file of ficheirosHtml(DIST)) {
        entra pela mesma porta, só dentro dessa lista e só na página da semana; a comparação literal do campo e a
        auditoria dos selos continuam a correr, e a planta `ex1-unidade-de-outra-linha` (`tests/pais/portoes.mjs`) troca
        a unidade de uma entrada pela de outra linha. */
+    const campoDaRevisaoSemanal = rota?.key === 'leituraDaSemana' && (campo === 'unit' || /^verifications\.\d+\.found$/.test(campo)) &&
+      el.closest('[data-semana-revisao]')?.getAttribute('data-semana-revisao') === id &&
+      el.closest('[data-semana-revisoes]') !== null;
     const unidadeDeCorrecaoDoPais = (['home', 'correcoes'].includes(rota?.key) ||
       (rota?.key === 'indice' && el.closest('[data-mudou-ambito="indice"]') !== null) ||
       (rota?.key === 'leituraDaSemana' && el.closest('[data-semana-mudancas]') !== null)) && campo === 'unit' &&
@@ -6833,7 +6836,7 @@ for (const file of ficheirosHtml(DIST)) {
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
     const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || (rota?.key === 'discussao' && fragmentoDoItem(el,id,campo,linguaPagina));
-    if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !(unidadeDeCorrecaoDoPais || campoDaRevisaoSemanal) && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +

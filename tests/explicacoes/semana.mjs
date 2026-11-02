@@ -1,3 +1,4 @@
+import {revisoesPeloLivro,conferirRevisoes} from '../../scripts/revisoes-da-semana.mjs';
 import {dataDeCalendarioConferida,textoDaHabitacao} from '../../src/lib/historia-do-valor.mjs';
 /**
  * =============================================================================
@@ -100,12 +101,13 @@ export function semanaPelaCelula(linhas, fim) {
   }
   mudancas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
   formas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
-  return { janela: { inicio, fim }, contagens: { relidas, valor: mudancas.length, forma: formas.length, proveniencia }, mudancas, formas };
+  const revisoes=revisoesPeloLivro(linhas,inicio,fim);
+  return { revisoes, janela: { inicio, fim }, contagens: { relidas, valor: mudancas.length, forma: formas.length, proveniencia, revisoes: revisoes.length }, mudancas, formas };
 }
 
 /**
  * A PRIMEIRA FRASE, pela composição desta célula, com as cadeias da casa.
- * @param {{ janela: { inicio: string, fim: string }, contagens: { relidas: number, valor: number, forma?: number, proveniencia: number } }} s
+ * @param {{ janela: { inicio: string, fim: string }, contagens: { relidas: number, valor: number, forma?: number, proveniencia: number, revisoes?: number } }} s
  * @param {'pt'|'en'} lang
  */
 export function primeiraFrasePelaCelula(s, lang) {
@@ -120,6 +122,8 @@ export function primeiraFrasePelaCelula(s, lang) {
     if (forma > 0) f += `${c.virgula}${milharesAqui(forma)}${forma === 1 ? c.umDeForma : c.variosDeForma}`;
     f += c.e + (proveniencia === 0 ? c.nenhumDeProveniencia : `${milharesAqui(proveniencia)}${proveniencia === 1 ? c.umDeProveniencia : c.variosDeProveniencia}`);
   }
+  const revisoes=s.contagens.revisoes ?? 0;
+  if(revisoes) f+=c.fonteReviu+milharesAqui(revisoes)+(revisoes===1?c.umaRevisao:c.variasRevisoes);
   return normal(f + c.ponto);
 }
 
@@ -250,7 +254,7 @@ export function provaNaCopiaPlantada(fim) {
       if (Array.isArray(l.verifications)) l.verifications = l.verifications.filter((/** @type {any} */ v) => !(v?.date >= inicio && v?.date <= fim));
     }
     const r = doResolvedor(m), c = semanaPelaCelula(m, fim);
-    const zero = JSON.stringify({ relidas: 0, valor: 0, forma: 0, proveniencia: 0 });
+    const zero = JSON.stringify({ relidas: 0, valor: 0, forma: 0, proveniencia: 0, revisoes: 0 });
     /** @type {string[]} */
     const frases = [];
     let iguais = true;
@@ -405,6 +409,7 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   if (!aceites.includes(m[2])) erros.push(`W2 · a janela acaba a ${m[2]}, e o carimbo da construção é de ${aceites.join(' ou ')}`);
   const s = semanaPelaCelula(linhas, m[2]);
   if (s.janela.inicio !== m[1]) erros.push(`W2 · a janela começa a ${m[1]} e sete dias até ${m[2]} começam a ${s.janela.inicio}`);
+  erros.push(...conferirRevisoes(root,lang,linhas,m[1],m[2]));
   const esperada = primeiraFrasePelaCelula(s, lang);
   if (normal(frase.textContent) !== esperada) erros.push(`W2 · a frase das contagens difere da conta desta célula.\n      esperada: ${esperada}\n      rendida:  ${normal(frase.textContent)}`);
   if(frase.parentNode?.lastChild!==frase && frase.parentNode?.children?.at(-1)!==frase) erros.push('W2 · a frase das contagens não fecha a página');
@@ -446,7 +451,7 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   /* Os títulos das secções: o das mudanças de valor e o da primeira página quando algum valor mudou, e o das formas
      quando alguma mudou; são as cadeias da casa. */
   const titulos = root.querySelectorAll('main [data-semana-seccao] > h2').map((h) => normal(h.textContent));
-  const deveTitulos = [...(s.mudancas.length ? [normal(c.mudancasK)] : []), ...(s.formas.length ? [normal(c.formasK)] : []), ...(s.mudancas.length ? [normal(c.primeiraK)] : [])];
+  const deveTitulos = [...(s.revisoes.length ? [normal(c.revisoesK)] : []),...(s.mudancas.length ? [normal(c.mudancasK)] : []), ...(s.formas.length ? [normal(c.formasK)] : []), ...(s.mudancas.length ? [normal(c.primeiraK)] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`W2 · os títulos das secções (${titulos.join(' | ') || 'nenhum'}) não são os que a conta pede (${deveTitulos.join(' | ') || 'nenhum'})`);
   const mudaramP = root.querySelector('main [data-semana-primeira="mudaram"]');
   if (mudaramP && normal(mudaramP.textContent) !== normal(c.primeiraMudaram)) erros.push('W2 · a frase das frases da primeira página que mudaram não é a cadeia da casa');
@@ -524,6 +529,7 @@ export function marcaComparada(el, rota) {
   if (rota !== 'leituraDaSemana') return el.hasAttribute('data-semana-frase');
   if (!el.closest('main')) return false;
   if (el.hasAttribute('data-semana-frase')) return true;
+  if (el.hasAttribute('data-semana-revisao')) return el.parentNode?.hasAttribute?.('data-semana-revisoes') === true;
   if (el.hasAttribute('data-semana-forma')) return el.parentNode?.hasAttribute?.('data-semana-formas') === true;
   if (String(el.rawTagName).toLowerCase() === 'h2') return el.parentNode?.hasAttribute?.('data-semana-seccao') === true;
   if (el.hasAttribute('data-semana-primeira')) return ['nenhuma', 'mudaram'].includes(String(el.getAttribute('data-semana-primeira')));

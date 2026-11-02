@@ -1,3 +1,4 @@
+import {revisoesPeloLivro,conferirRevisoes} from './revisoes-da-semana.mjs';
 import {dataDeCalendarioConferida,textoDaHabitacao} from '../src/lib/historia-do-valor.mjs';
 /**
  * ===========================================================================
@@ -41,7 +42,7 @@ const NATUREZAS_DE_VALOR = new Set(['correcao', 'atualizacao']);
 const DIAS = 7;
 const DIA = /^\d{4}-\d{2}-\d{2}$/;
 /** As chaves da marca, e mais nenhuma. */
-export const CHAVES_DA_SEMANA = ['inicio', 'fim', 'relidas', 'valor', 'forma', 'proveniencia'];
+export const CHAVES_DA_SEMANA = ['inicio', 'fim', 'relidas', 'valor', 'forma', 'proveniencia', 'revisoes'];
 /** Um valor publicado como número, pela leitura do portão (os espaços dos milhares, a vírgula e o sinal da casa). @param {unknown} v */
 const numeroDoPortao = (v) => {
   const t = String(v ?? '').replace(/[\s\u00a0\u202f]/g, '').replace(/−/g, '-').replace(',', '.');
@@ -106,7 +107,7 @@ export function contasDaSemanaNoPortao(claims, inicio, fim) {
     if (a === null || b === null || a !== b) valor.add(id);
     else if (String(antes) !== String(depois)) forma.add(id);
   }
-  return { relidas, valor: valor.size, forma: forma.size, proveniencia: proveniencia.size, linhasDeValor: valor, linhasDeForma: forma };
+  return { relidas, revisoes: revisoesPeloLivro(claims,inicio,fim).length, valor: valor.size, forma: forma.size, proveniencia: proveniencia.size, linhasDeValor: valor, linhasDeForma: forma };
 }
 
 /** A janela declarada no antepassado mais próximo de um elemento, ou `null`. @param {any} el */
@@ -171,6 +172,7 @@ export function conferirPaginaDaSemana(dist, ficheiro, claims, aceites) {
   const m = /^(\d{4}-\d{2}-\d{2})\/(\d{4}-\d{2}-\d{2})$/.exec(janela);
   if (!m) return [...erros, `${ficheiro}: a primeira frase não declara a janela.`];
   if (!aceites.includes(m[2])) erros.push(`${ficheiro}: a janela acaba a ${m[2]}, e a construção é de ${aceites.join(' ou ')}.`);
+  erros.push(...conferirRevisoes(root, ficheiro.startsWith('en/') ? 'en' : 'pt', claims, m[1], m[2]));
   const contas = contasDaSemanaNoPortao(claims, m[1], m[2]);
   const entradas = root.querySelectorAll('main [data-semana-mudancas] [data-semana-mudanca]');
   const ids = entradas.map((e) => e.getAttribute('data-semana-mudanca') ?? '');
