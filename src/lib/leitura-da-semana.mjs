@@ -114,9 +114,9 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     if (!linhaDoAmbito(l)) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas++;
     // PAI1-B: a última releitura da janela continua pendente até uma correção posterior.
-    const ultimaLeitura = (l.verifications ?? []).map((v, n) => ({ ...v, n }))
-      .filter(v => dentro(v.date)).sort((a, b) => a.date.localeCompare(b.date) || a.n - b.n).at(-1);
-    if (ultimaLeitura?.result === 'diverge' && !(l.corrections ?? []).some(c =>
+    const ultimaLeitura = (l.verifications ?? []).map((/** @type {any} */ v, /** @type {number} */ n) => ({ ...v, n }))
+      .filter((/** @type {any} */ v) => dentro(v.date)).sort((/** @type {any} */ a, /** @type {any} */ b) => a.date.localeCompare(b.date) || a.n - b.n).at(-1);
+    if (ultimaLeitura?.result === 'diverge' && !(l.corrections ?? []).some((/** @type {any} */ c) =>
       NATUREZAS_DE_VALOR.includes(c.kind) && c.date > ultimaLeitura.date)) {
       revisoes.push({ linha: String(l.id), n: ultimaLeitura.n, data: ultimaLeitura.date, found: String(ultimaLeitura.found ?? '') });
     }
