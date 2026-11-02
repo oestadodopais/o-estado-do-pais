@@ -130,6 +130,7 @@ const {
   escala = false,
   abs = false,
   sufixo = '',
+  cauda = '', // SEL1: texto que já seguia a nota da fonte; só o selo muda de sítio.
   // C1: a unidade do cartão conserva um separador no texto da página.
   separarUnidade = false,
   style,
@@ -264,6 +265,7 @@ const estilo = escala
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
       {provisorio && <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>}
+      {cauda && <Fragment set:text={cauda} />}
       <Provenance id={id} lang={lang} />
     </span>
   ) : sufixo ? (

@@ -498,7 +498,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                         )}
                         {mandato.herdou.map((v) => (
                           <>
-                            <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                            <Frase partes={[{claim:v.claim}, ` ${v.texto[lang]}`]} lang={lang} selos />{' '}
                           </>
                         ))}
                       </>
@@ -526,7 +526,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                         {mandato.decidiu ? (
                           mandato.decidiu.map((v) => (
                             <>
-                              <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                              <Frase partes={[{claim:v.claim}, ` ${v.texto[lang]}`]} lang={lang} selos />{' '}
                             </>
                           ))
                         ) : (
@@ -547,7 +547,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                         )}
                         {mandato.deixou.map((v) => (
                           <>
-                            <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                            <Frase partes={[{claim:v.claim}, ` ${v.texto[lang]}`]} lang={lang} selos />{' '}
                           </>
                         ))}
                       </>

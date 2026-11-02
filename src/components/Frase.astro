@@ -58,6 +58,8 @@
  *                                   O marcador fica sempre em português, como
  *                                   na origem; na edição inglesa leva glosa.
  */
+import { partesComMedida } from '../lib/posicao-do-selo.mjs';
+import Provenance from './Provenance.astro';
 import Claim from './Claim.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import {getClaim} from '../lib/ledger.mjs';
@@ -78,7 +80,8 @@ import { VERBATIM } from '../data/verbatim.mjs';
  * 15.08.2026 não o fazem e não se reescrevem aqui; tudo o que este bloco
  * constrói passa `selos`.
  */
-const { partes, lang = 'pt', selos = false, provas = null, periodos = false } = Astro.props;
+const { partes: partesOriginais, lang = 'pt', selos = false, provas = null, periodos = false, datasSeladas = false } = Astro.props;
+const partes = selos ? partesComMedida(partesOriginais) : partesOriginais;
 const s = t(lang);
 /* O ITEM DE UMA CHAVE DA PROVA DENTRO DE TEXTO CORRIDO (bloco ME1, 15.10.2026). O texto governado
    do Método escreve só a chave, porque `src/data/metodo.mjs` não pode importar a prova (a prova
@@ -99,7 +102,7 @@ const itemDaProva = (parte) => {
     if (parte.claim) {
       const periodo = getClaim(parte.claim).reference_date;
       const junto = periodos && periodo && !partes.some(p => p?.data?.campo === 'reference_date' && p.data.valor === periodo);
-      return <><Claim id={parte.claim} lang={lang} chip={selos} abs={parte.abs === true} sufixo={parte.sufixo ?? ''} />{junto && <span class="pp-periodo-inline" data-fp1-periodo={parte.claim}>{' ('}<DataDaLinha id={parte.claim} campo="reference_date" valor={periodo} lang={lang} />{')'}</span>}</>;
+      return <><Claim id={parte.claim} lang={lang} chip={selos} abs={parte.abs === true} sufixo={parte.sufixo ?? ''} cauda={parte.cauda ?? ''} />{junto && <span class="pp-periodo-inline" data-fp1-periodo={parte.claim}>{' ('}<DataDaLinha id={parte.claim} campo="reference_date" valor={periodo} lang={lang} />{')'}</span>}</>;
     }
     if (parte.ponto)
       return (
@@ -119,7 +122,7 @@ const itemDaProva = (parte) => {
         conferidas e não dispensas: o `check:formas` vai buscar a data ao campo
         da linha que ela nomeia, e o período ao ficheiro que a série nomeia. */}
     if (parte.data)
-      return <DataDaLinha id={parte.data.id} campo={parte.data.campo} valor={parte.data.valor} lang={lang} />;
+      return <><DataDaLinha id={parte.data.id} campo={parte.data.campo} valor={parte.data.valor} lang={lang} />{datasSeladas && !/^\d{4}$/.test(parte.data.valor) && <Provenance id={parte.data.id} lang={lang} />}</>;
     {/* UMA CHAVE DA PROVA DENTRO DE UMA FRASE (bloco L1, 24.09.2026). A leitura
         do cartão das câmaras diz as suas contagens, e cada uma é a mesma chave
         que o cartão já rende, com a mesma porta comum: o portão de HTML reconta

@@ -1,3 +1,4 @@
+import { selosDepoisDaMedida } from './posicao-do-selo.mjs';
 import { hasSerie, getSerie, allSeries } from './series.mjs';
 import rotulosDasSeries from '../data/rotulos-das-series.json' with { type: 'json' };
 import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
@@ -16,6 +17,10 @@ import { ESTUDO_EO1, PORTAS_EO1 } from '../data/portas-eo1.mjs';
  *   `data-registo-bloco="<b>"`                   em cada elemento de bloco
  *   `data-registo-unidade="<slug>/<lingua>#<b>[.<i>|.<r>.<c>]"`   em cada unidade
  *   `data-registo="<slug>/<lingua>#<b>[…].<f>"`  à volta dos caracteres de uma figura
+ *
+ * SEL1 (02.11.2026): o selo segue a medida inteira, pela lista partilhada,
+ * sem deslocar caracteres do documento. A figura conserva data-registo e
+ * data-registo-row; é por eles que o L6 exige a fonte da mesma figura. Fecha I66.
  *
  * A PÁGINA DE LEITURA É UMA TRANSCRIÇÃO, e é daqui que isso se vê no código:
  * nada é reformatado. O texto sai como o registo o guarda, os algarismos saem
@@ -684,5 +689,5 @@ export function pecasDoCorpo({
      para disparar o fecho de dentro do laço. */
   fechaSeccaoEmFluxo();
 
-  return saida.pecas;
+  return selosDepoisDaMedida(saida.pecas);
 }

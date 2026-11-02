@@ -1,6 +1,6 @@
 /** SEL1: uma só lista, com a correspondência mais longa primeiro. */
 const grandezasPt = ['mil', 'milhão', 'milhões', 'mil milhões'];
-const grandezasEn = ['thousand', 'million', 'billion', 'thousand million'];
+const grandezasEn = ['thousand', 'thousands', 'million', 'millions', 'billion', 'billions', 'thousand million'];
 export const UNIDADES_DA_MEDIDA = Object.freeze([...new Set([
   ...grandezasPt.flatMap(g => [g, g + ' de euros']),
   ...grandezasEn.flatMap(g => [g, g + ' euros', g + ' of euros']),
