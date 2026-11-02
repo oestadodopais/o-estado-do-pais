@@ -5426,6 +5426,21 @@ a.marcador::after {
  * `tests/inicio/correcoes-a.mjs`, que exige 44 px a cada `a.src-chip` da
  * primeira página, mede exactamente esses e não muda.
  */
+/* SEL1-D: os selos em linha precisam de espaço na composição, para que a
+   área de toque não invada a linha vizinha nem corte a porta do algarismo.
+   O algarismo conserva a altura da sua linha; o selo reserva a caixa de toque. */
+h1[data-citadas]:not([data-citadas='1']) > a.claim-value {
+  display: inline-block;
+  min-width: 44px;
+}
+h1[data-citadas]:not([data-citadas='1']) > a.src-chip {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  vertical-align: middle;
+}
+
 .manchete-selos a.src-chip::after {
   min-width: 0;
   width: 100%;
