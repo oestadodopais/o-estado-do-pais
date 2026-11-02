@@ -73,17 +73,20 @@
  * nome em silêncio.
  */
 import Claim from './Claim.astro';
+import { partesComMedida } from '../lib/posicao-do-selo.mjs';
 import Provenance from './Provenance.astro';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 
-const { partes, lang, as: Tag = 'h1', class: klass = '', id = 'manchete' } = Astro.props;
+const { partes: originais, lang, as: Tag = 'h1', class: klass = '', id = 'manchete' } = Astro.props;
 
 if (!lang) throw new Error('<Manchete> sem "lang". A língua é obrigatória, como em <Claim>.');
 
 /* A LISTA DOS PEDAÇOS, cada um com o seu `id`, pela ordem da frase. É desta
    lista que sai o `aria-labelledby`, e é ela que garante que o nome tem a frase
    inteira: um pedaço que se render e não entre aqui desaparece do nome. */
+const emLinha = new Set(originais.filter(p=>p?.claim).map(p=>p.claim)).size > 1;
+const partes = emLinha ? partesComMedida(originais) : originais;
 let n = 0;
 const chave = () => `${id}-${n++}`;
 /** @type {{ ref: string, parte: unknown }[]} */
@@ -108,8 +111,9 @@ for (const parte of partes) {
     }
     const refValor = chave();
     const refSufixo = parte.sufixo ? chave() : null;
+    const refCauda = parte.cauda ? chave() : null;
     if (!citadas.includes(parte.claim)) citadas.push(parte.claim);
-    pecas.push({ ref: refValor, parte, refSufixo });
+    pecas.push({ ref: refValor, parte, refSufixo, refCauda });
     continue;
   }
   pecas.push({ ref: chave(), parte });
@@ -118,7 +122,7 @@ for (const parte of partes) {
 /* O `aria-labelledby` é a frase, e mais nada: os selos ficam no `<h1>` (o
    portão exige-os lá) e fora desta lista (o nome não os quer). */
 const nomeDoTitulo = pecas
-  .flatMap((p) => [p.ref, p.refSufixo])
+  .flatMap((p) => [p.ref, p.refSufixo, p.refCauda])
   .filter((r) => r !== null && r !== undefined)
   .join(' ');
 ---
@@ -148,7 +152,7 @@ const nomeDoTitulo = pecas
     --------------------------------------------------------------------------- */}
 <Tag class={klass} aria-labelledby={nomeDoTitulo} data-citadas={String(citadas.length)}>
   {
-    pecas.map(({ ref, parte, refSufixo }) => {
+    pecas.map(({ ref, parte, refSufixo, refCauda }) => {
       if (typeof parte === 'string') return <span id={ref} set:text={parte} />;
       /* O NOME DO LUGAR, transcrito, com a marca que o tira do inventário das
          frases da casa. É o primeiro pedaço da manchete de um concelho. */
@@ -167,6 +171,8 @@ const nomeDoTitulo = pecas
               sufixoId={refSufixo}
               porta={routePath('linha', lang, { slug: parte.claim })}
             />
+            {parte.cauda && <span id={refCauda} set:text={parte.cauda} />}
+            {emLinha && <Provenance id={parte.claim} lang={lang} />}
           </>
         );
       if (parte.ref) return <span id={ref} data-nonledger="data-de-referencia">{parte.ref}</span>;
@@ -203,7 +209,7 @@ const nomeDoTitulo = pecas
       única coisa que o construtor pode dar-lhe: a medida.
       ---------------------------------------------------------------------- */}
   {
-    citadas.length > 0 && (
+    !emLinha && citadas.length > 0 && (
       <span class="manchete-selos">
         {citadas.map((c) => (
           <Provenance id={c} lang={lang} />

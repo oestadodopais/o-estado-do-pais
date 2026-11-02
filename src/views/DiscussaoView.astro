@@ -3,6 +3,7 @@ import LigacaoDoDossie from '../components/dossies/LigacaoDoDossie.astro';
 import PortaDoEstudoEO1 from '../components/PortaDoEstudoEO1.astro';
 import Base from '../layouts/Base.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
+import { textoDosPedacosDaExplicacao } from '../lib/explicacoes.mjs';
 import Provenance from '../components/Provenance.astro';
 import { DISCUSSAO } from '../data/discussao.mjs';
 import { itensResolvidos, portaDoItem } from '../lib/discussao.mjs';
@@ -21,14 +22,13 @@ const itens = itensResolvidos(lang);
     <ul class="discussao-sumario">{itens.map(e => <li><a href={portaDoItem(e.slug,lang)} data-discussao-porta={e.slug}><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></a></li>)}</ul>
     {itens.map(e => <article class="discussao-item" id={e.slug} data-discussao={e.slug}>
       <div class="discussao-cabecalho" data-discussao-cabecalho>
-        <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>
-        <span class="discussao-selos-do-titulo" data-discussao-selos-do-titulo>{e.titulo.filter(p => typeof p !== 'string' && p.claim).map(p => <Provenance id={p.claim} lang={lang} />)}</span>
+        <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo aria-label={textoDosPedacosDaExplicacao(e.titulo, lang)}><FraseDaExplicacao partes={e.titulo} lang={lang} /></h2>
         <LigacaoDoDossie tipo="discussao" slug={e.slug} lang={lang} />
       </div>
-      {e.abertura.map(p => <p class="explicacao-p discussao-abertura" data-discussao-paragrafo={p.caminho}><FraseDaExplicacao partes={p.pedacos} lang={lang} recibos={true} />{(e.recibos[p.caminho] ?? []).map(id => <Provenance id={id} lang={lang} />)}</p>)}
+      {e.abertura.map(p => <p class="explicacao-p discussao-abertura" data-discussao-paragrafo={p.caminho}><FraseDaExplicacao partes={p.pedacos} lang={lang} recibos={true} fontes={e.recibos[p.caminho] ?? []} /></p>)}
       {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-titulo ${e.slug}-${sec.id}`}>
         <h3 class="discussao-rotulo" id={`${e.slug}-${sec.id}`}>{sec.titulo}</h3>
-        {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} recibos={true} />{(e.recibos[b.caminho] ?? []).map(id => <Provenance id={id} lang={lang} />)}</p>)}
+        {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} recibos={true} fontes={e.recibos[b.caminho] ?? []} /></p>)}
         {e.slug === 'orcamento-2027-generalidade' && sec.id === 'fontes' && <p class="regra-portas discussao-porta"><a data-discussao-saude data-voz href={portaDoItem('saude-no-orcamento',lang)}>{lang === 'pt' ? 'O orçamento da Saúde →' : 'The Health budget →'}</a></p>}
         {e.slug === 'saude-no-orcamento' && sec.id === 'fontes' && <p class="regra-portas discussao-porta"><a data-discussao-explicacao data-voz href={lang === 'pt' ? '/explicacoes/dinheiro-do-estado-2026/' : '/en/explainers/dinheiro-do-estado-2026/'}>{lang === 'pt' ? 'O que é a despesa efetiva consolidada →' : 'What consolidated effective expenditure is →'}</a></p>}
       </section>)}
