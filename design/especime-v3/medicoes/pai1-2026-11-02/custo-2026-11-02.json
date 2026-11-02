@@ -1,0 +1,51 @@
+{
+ "bloco": "PAI1 (as provas das linhas do livro sem partir com a releitura semanal; a leitura da semana com as revisões por aplicar; o painel de 02.11)",
+ "data": "2026-11-02",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "PAI1 (a projeção e o painel; a linha PONTOS mede a sessão da SEL1, a I294)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T12:41:07Z",
+   "fim": "2026-11-02T13:03:18Z",
+   "pontos": 0.0,
+   "pontos_antes": 26.0,
+   "pontos_depois": 26.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 4,
+   "fonte": "a linha PONTOS do LANCADOR-pai1.log"
+  },
+  {
+   "nome": "PAI1-b (a leitura da semana; na sessão da SEL1)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T14:18:30Z",
+   "fim": "2026-11-02T15:04:06Z",
+   "pontos": 0.0,
+   "pontos_antes": 27.0,
+   "pontos_depois": 27.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 63,
+   "fonte": "a linha PONTOS do LANCADOR-pai1-b.log"
+  },
+  {
+   "nome": "PAI1-c (as correções da leitura a frio; com a OG1-E ao lado)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T16:08:44Z",
+   "fim": "2026-11-02T17:01:14Z",
+   "pontos": 3.0,
+   "pontos_antes": 28.0,
+   "pontos_depois": 31.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 51,
+   "fonte": "a linha PONTOS do LANCADOR-pai1-c.log"
+  }
+ ],
+ "pontos_codex_total": 3.0,
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros: quando duas passagens de blocos diferentes correm ao mesmo tempo, a subida do intervalo conta nas duas. A semana passou de 24 % (10:54 UTC) a 36 % (20:04 UTC) no dia, com a SEL1, a PAI1, a OG1-E, a ED1 e uma pesquisa só de leitura.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador às 10:48 UTC)"
+}

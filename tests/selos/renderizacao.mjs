@@ -7,7 +7,7 @@ import {pecasDoCorpo} from '../../src/lib/registo-html.mjs';
 import {linhaDoSitioDoEstudo} from '../../src/lib/cruzamento.mjs';
 const chip=id=>`<a class="src-chip" href="/livro-razao/${id}">fonte</a>`;
 const html=ps=>ps.map(p=>p.html??chip(p.selo)).join('');
-for(const depois of [' milhões de euros.', '</strong> milhões.', ' para a escola.', '  milhões.', ' euros por mês.', ' pontos do PIB.', ' de outubro de 2026.']) {
+for(const depois of [' milhões de euros.', '</strong> milhões.', ' para a escola.', '  milhões.', ' euros por mês.', ' pontos do PIB.', ' de outubro de 2026.', ' % of gross domestic product (GDP).', ' mil alojamentos por mil habitantes.', ' vagas.', ' vacant.', ' a year earlier.']) {
  const antes=[{html:'<p><strong><span data-registo="figura">79</span>'},{selo:'linha'},{html:depois+'</p>'}];
  const novas=selosDepoisDaMedida(antes);
  assert.equal(novas.filter(p=>'html'in p).map(p=>p.html).join(''),antes.filter(p=>'html'in p).map(p=>p.html).join(''));

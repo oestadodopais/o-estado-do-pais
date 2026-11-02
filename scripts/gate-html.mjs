@@ -7,7 +7,7 @@ import { primeiraEdicao, primeiraEdicaoServida, documentoDaHistoriaServido, edic
 import { conferirTextoHtml, contagemDasCorrecoesNoPortao } from './edicoes-conferir.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 import {naRevisaoDaSemana} from './revisoes-da-semana.mjs';
-import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
+import { conferirProjecaoHb1Html } from './projecao-hb1-portoes.mjs';
 import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
 import { blocosDoDossie } from '../src/lib/dossie-leitura.mjs';
 import { conferirLeitura } from '../tests/dossies/leitura.mjs';
@@ -1979,24 +1979,8 @@ const LINHA_DO_SITIO = new Map();
       }
     }
   }
-  // As séries HB1 partiram do sítio: resolver só os recibos presos pelo resumo.
-  const ficheiro = path.join(ROOT, 'ledger/provas/hb1/series.json');
-  if (fs.existsSync(ficheiro)) {
-    const prova = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
-    if (prova.rh_study !== '28 Habitacao Estudo') throw Error('HB1: origem de série inesperada');
-    for (const [id, item] of Object.entries(prova.rows)) {
-      if (!/^[a-z0-9-]+$/.test(id) || item.file !== `ledger/claims/${id}.yml`)
-        throw Error('HB1: caminho de série inválido');
-      const bytes = fs.readFileSync(path.join(ROOT, item.file));
-      if (crypto.createHash('sha256').update(projecaoLinha(bytes)).digest('hex') !== item.sha256)
-        throw Error(`HB1: resumo da série divergente: ${id}`);
-      LINHA_DO_SITIO.set(`${prova.rh_study} ${id}`, id);
-    }
-  }
+  for(const [chave,id] of conferirProjecaoHb1Html(ROOT)) LINHA_DO_SITIO.set(chave,id);
 }
-
-// PAI1-C: a planta termina depois do mesmo leitor HB1 que protege o portão completo.
-if (process.argv.includes('--prova-projecao-hb1')) { console.log('HB1: projeção conferida pelo portão do HTML.'); process.exit(0); }
 
 /** As unidades de um bloco do registo, com a coordenada da sua marca. */
 function unidadesDoRegisto(bloco) {

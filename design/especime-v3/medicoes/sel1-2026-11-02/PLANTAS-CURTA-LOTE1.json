@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-02T18:45:36+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "na página do dossiê, o selo dos 150 euros volta a ficar entre «euros» e «por mês»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4b6c1578b8ebc4c55965b40d14ace9cfaeac7efeed056cc5a7de1f508d7dfb4c",
+   "sha256_depois": "4515ce8e5556e12b0b13fd02d1ba5844b63f3eeb4c57abeb91eec1c7ccf29afe",
+   "contexto_antes": "ucional, em 2024, ano em que a RMMG se cifrava nos 820 euros.» São mais <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#35.0\" data-registo-row=\"der-rmmg-2024-2027-abs\">150</span> euros por mês<a class=\"src-chip\" href=\"/livro-razao/der-rmmg-2024-2027-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a",
+   "contexto_depois": "ucional, em 2024, ano em que a RMMG se cifrava nos 820 euros.» São mais <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#35.0\" data-registo-row=\"der-rmmg-2024-2027-abs\">150</span> euros<a class=\"src-chip\" href=\"/livro-razao/der-rmmg-2024-2027-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+   "descricao": "a frase portuguesa diz 90 linhas relidas, quando o painel releu 91",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a908483b550edeacd09ca0f5fc9bb004a3b3e017122dee0d7f30b4b64a4f6743",
+   "sha256_depois": "5a6486df72151ca2ad021512754abc1592a887ffc83c18d2ee1753f931ec600c",
+   "contexto_antes": "tre <span class=\"prova-valor\" data-semana=\"inicio\">27.10.2026</span> e <span class=\"prova-valor\" data-semana=\"fim\">02.11.2026</span>, <span class=\"prova-valor\" data-semana=\"relidas\">91</span> números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu <span class=\"prova-valor\" data-semana=\"revisoes\">3</span> deles, que",
+   "contexto_depois": "tre <span class=\"prova-valor\" data-semana=\"inicio\">27.10.2026</span> e <span class=\"prova-valor\" data-semana=\"fim\">02.11.2026</span>, <span class=\"prova-valor\" data-semana=\"relidas\">90</span> números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu <span class=\"prova-valor\" data-semana=\"revisoes\">3</span> deles, que"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/en/explainers/weekly-reading/index.html",
+   "descricao": "a entrada inglesa das exportações de 2024 volta à vírgula decimal",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5e489a95be4e0457124e5b24ae917553be2f6fa6ea6002b166063992fce87b3b",
+   "sha256_depois": "26d0993f881386b10c76848c0522dba00639614bc76fda56a0f401b7fa2ad97d",
+   "contexto_antes": "· <span>Eurostat</span></span></a></span>; the source now writes <span class=\"campo-valor\" data-linha-claim=\"desempenho-das-exportacoes-2024\" data-linha-campo=\"verifications.6.found\">17.0</span>, in the re-reading of <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"desempenho-das-exportacoes-2024\" data-de-campo=\"verificat",
+   "contexto_depois": "· <span>Eurostat</span></span></a></span>; the source now writes <span class=\"campo-valor\" data-linha-claim=\"desempenho-das-exportacoes-2024\" data-linha-campo=\"verifications.6.found\">17,0</span>, in the re-reading of <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"desempenho-das-exportacoes-2024\" data-de-campo=\"verificat"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "diff.patch",
+   "descricao": "no parágrafo da Saúde, o selo da ACSS fica depois da frase dos contratos por fechar (a troca de volta)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "adda7a90ec4775bd1f9eed3f9e933c3aada3f9c7a5fca58088b87a05ec217bd5",
+   "sha256_depois": "796b667ad5e002dde26b0cd07daf6755ad9e5cf67d512b40c466250a575166f0",
+   "contexto_antes": "os-programa': {pt:'a dotação para reforçar os contratos-programa ainda por fechar',en:'the provision to reinforce the contract-programmes still to be closed'},\n+  'oe-2027-saude-contrato-programa-acss': {pt:'os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde',en:\"the agreements between the Central Administration of the Health System and the National Health Service's entities\"},\n   'og1-mf-ppp-encargos-receitas': {pt:",
+   "contexto_depois": "os-programa': {pt:'a dotação para reforçar os contratos-programa ainda por fechar',en:'the provision to reinforce the contract-programmes still to be closed'},\n+  'oe-2027-saude-contrato-programa-acss': {pt:'a dotação para reforçar os contratos-programa ainda por fechar',en:\"the agreements between the Central Administration of the Health System and the National Health Service's entities\"},\n   'og1-mf-ppp-encargos-receitas': {pt:"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "confereRotulos volta a aceitar um rótulo sem a igualdade das projeções do motor e do sítio",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "796b667ad5e002dde26b0cd07daf6755ad9e5cf67d512b40c466250a575166f0",
+   "sha256_depois": "db4534507b17f6cbcc1177491a513c6ea7075b5947a798ba36f3a0c4cd50019d",
+   "contexto_antes": "    const p=path.join(DIR_CLAIMS,nome);\n-    if(fs.existsSync(p)&&sha256(projecaoLinha(fs.readFileSync(p)))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));\n+    if(e.origin_sha256===e.exported_sha256&&fs.existsSync(p)&&[sha256(projecaoLinha(fs.readFileSync(p))),sha256(fs.readFileSync(p))].includes(e.exported_sha256))cruzadas.add(nome.slice(0,-4));\n   }\n   const linhas = [];\n",
+   "contexto_depois": "    const p=path.join(DIR_CLAIMS,nome);\n-    if(fs.existsSync(p)&&sha256(projecaoLinha(fs.readFileSync(p)))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));\n+    if(fs.existsSync(p)&&[sha256(projecaoLinha(fs.readFileSync(p))),sha256(fs.readFileSync(p))].includes(e.exported_sha256))cruzadas.add(nome.slice(0,-4));\n   }\n   const linhas = [];\n"
+  }
+ ]
+}

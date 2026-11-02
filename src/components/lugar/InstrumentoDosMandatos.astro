@@ -579,8 +579,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                   <dd>
                     {mandato.pelouros ? (
                       <>
-                        <Claim id={mandato.pelouros.total} lang={lang} chip={true} />{' '}
-                        {mandato.pelouros.texto[lang]}
+                        <Frase partes={[{claim:mandato.pelouros.total}, " " + mandato.pelouros.texto[lang]]} lang={lang} selos />
                         {mandato.pelouros.partes.map((p, i) => (
                           <>
                             {i > 0 ? ' · ' : ''}
@@ -599,8 +598,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                       <dt>{s.municipio.tempoContas}</dt>
                       <dd>
                         <Claim id={mandato.contasVotadas.favor} lang={lang} chip={true} />{' / '}
-                        <Claim id={mandato.contasVotadas.contra} lang={lang} chip={true} />{' '}
-                        {mandato.contasVotadas.texto[lang]}
+                        <Frase partes={[{claim:mandato.contasVotadas.contra}, " " + mandato.contasVotadas.texto[lang]]} lang={lang} selos />
                       </dd>
                     </>
                   )}

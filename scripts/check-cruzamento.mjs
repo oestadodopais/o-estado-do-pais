@@ -1102,7 +1102,7 @@ function rotulosSemTravessia(linhas, cruzadas) {
   return linhas.filter((l) => l.temRotulo && !cruzadas.has(l.id)).map((l) => l.id);
 }
 
-function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = []) {
+export function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = [], dirClaims = DIR_CLAIMS) {
   /* A PLANTA, ANTES DE QUALQUER CONTAGEM. Três casos: uma linha com rótulo que
      atravessou (verde), uma com rótulo que não atravessou (vermelho), e uma sem
      rótulo que não atravessou (verde, que é o estado de 1 049 linhas da casa e
@@ -1126,17 +1126,17 @@ function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = []) {
   // Um YAML atravessado, conferido fora das releituras, também transporta o rótulo.
   for(const {dados} of regsDeFicheiros)for(const [nome,e] of Object.entries(dados.files)) {
     if(e.destino!=='ledger/claims'||!nome.endsWith('.yml'))continue;
-    const p=path.join(DIR_CLAIMS,nome);
+    const p=path.join(dirClaims,nome);
     if(e.origin_sha256===e.exported_sha256&&fs.existsSync(p)&&[sha256(projecaoLinha(fs.readFileSync(p))),sha256(fs.readFileSync(p))].includes(e.exported_sha256))cruzadas.add(nome.slice(0,-4));
   }
   const linhas = [];
   let ficheiros = 0;
-  for (const nome of fs.readdirSync(DIR_CLAIMS).sort()) {
+  for (const nome of fs.readdirSync(dirClaims).sort()) {
     if (!nome.endsWith('.yml')) continue;
     ficheiros++;
     let doc;
     try {
-      doc = load(fs.readFileSync(path.join(DIR_CLAIMS, nome), 'utf8'));
+      doc = load(fs.readFileSync(path.join(dirClaims, nome), 'utf8'));
     } catch {
       /* Um YAML inválido é defeito de outra régua (`npm run ledger:check`), e
          dizê-lo duas vezes só faz duas mensagens para um erro. */

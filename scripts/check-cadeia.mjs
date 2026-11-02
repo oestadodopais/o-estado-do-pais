@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import {irmaoDepoisDaMedida} from '../src/lib/posicao-do-selo.mjs';
-import {createHash} from 'node:crypto';
-import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
+import { conferirProjecaoHb1Cadeia } from './projecao-hb1-portoes.mjs';
 /**
  * A cadeia de cada algarismo de uma página de leitura, percorrida até onde ela
  * chega, e recusada quando não chega a lado nenhum.
@@ -173,17 +172,7 @@ function linhasDoSitio() {
       if (linha?.rh_study && linha?.rh_id) mapa.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
     }
   }
-  const file = path.join(RAIZ, 'ledger/provas/hb1/series.json');
-  if (fs.existsSync(file)) {
-    const proof = leJson(file, 'séries HB1');
-    if (proof.rh_study !== '28 Habitacao Estudo') throw new Error('HB1: estudo da cópia divergente');
-    for (const [id, r] of Object.entries(proof.rows)) {
-      if (!/^[a-z0-9-]+$/.test(id) || r.file !== `ledger/claims/${id}.yml`) throw new Error('HB1: caminho inválido');
-      const digest = createHash('sha256').update(projecaoLinha(fs.readFileSync(path.join(CLAIMS, `${id}.yml`)))).digest('hex');
-      if (digest !== r.sha256) throw new Error('HB1: a linha mudou sem recompor o documento: '+id);
-      mapa.set(`${proof.rh_study} ${id}`, id);
-    }
-  }
+  for(const [chave,id] of conferirProjecaoHb1Cadeia(RAIZ)) mapa.set(chave,id);
   return mapa;
 }
 
@@ -311,8 +300,6 @@ if (!fs.existsSync(DIST)) {
 }
 
 const DO_MOTOR = linhasDoSitio();
-// PAI1-C: a planta passa pelo leitor da cadeia, antes de conferir as páginas.
-if (process.argv.includes('--prova-projecao-hb1')) { console.log('HB1: projeção conferida pela cadeia.'); process.exit(0); }
 
 /**
  * A ETIQUETA CURTA DE UMA EDIÇÃO, que é como o motor lhe chama: «04 pt».

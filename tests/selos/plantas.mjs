@@ -10,7 +10,7 @@ const plantas=[
  ['estudo-pt','estudos/prova/index.html',`<p><span>79</span>${selo} milhões</p>`,'unidade'],
  ['estudo-en','en/studies/prova/index.html',`<p><span>4</span>${selo}%</p>`,'unidade'],
  ['dossie','dossies/prova/index.html',`<p>Calendário.${selo} , ${selo}</p>`,'consecutivos'],
- ['dois-espacos','estudos/prova/index.html','unidade'],
+ ['dois-espacos','estudos/prova/index.html',`<p>79${selo}  milhões</p>`,'unidade'],
  ['quebra','estudos/prova/index.html',`<p>79${selo}\n    milhões</p>`,'unidade'],
  ['sem-quebra','estudos/prova/index.html',`<p>79${selo}&nbsp;&thinsp;milhões</p>`,'unidade'],
  ['pib','estudos/prova/index.html',`<p>4 pontos${selo} do PIB</p>`,'unidade'],
@@ -20,6 +20,10 @@ const plantas=[
  ['taxa-nova','estudos/prova/index.html',`<p>79 euros${selo} por hectare</p>`,'forma nova'],
  ['tempo-novo','en/studies/prova/index.html',`<p>79 euros${selo} a decade</p>`,'forma nova'],
  ['prosa','estudos/prova/index.html',`<p>79 milhões de euros${selo} a favor do saldo</p>`,null],
+ ['tempo-relativo','en/studies/prova/index.html',`<p>1669681${selo} a year earlier</p>`,null],
+ ['nome-contado','estudos/prova/index.html',`<p>40,9 mil${selo} alojamentos</p>`,'unidade'],
+ ['elipse','en/studies/prova/index.html',`<p>723,215${selo} vacant</p>`,'unidade'],
+ ['parenteses','en/studies/prova/index.html',`<p>87.5 % of gross domestic product${selo} (GDP)</p>`,'unidade'],
  ['controlo','estudos/prova/index.html',`<p><span>79</span> milhões de euros${selo}</p>`,null],
 ];
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'sel1-plantas-'));
