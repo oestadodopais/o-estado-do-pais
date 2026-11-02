@@ -78,8 +78,8 @@ export function irmaoDepoisDaMedida(el) {
 const ANCORAS = {
   'og1-votacao-generalidade': {pt:'o ECO tinha noticiado',en:'ECO had reported'},
   'og1-mf-despesa-total-efetiva-nota': {pt:'inclui os ativos e passivos financeiros',en:'includes financial assets and liabilities'},
-  'oe-2027-saude-dotacao-reforco-contratos-programa': {pt:'sem dizer quanto',en:'without saying how much'},
-  'oe-2027-saude-contrato-programa-acss': {pt:'contratos-programa ainda por fechar',en:'contract-programmes still to be closed'},
+  'oe-2027-saude-dotacao-reforco-contratos-programa': {pt:'a dotação para reforçar os contratos-programa ainda por fechar',en:'the provision to reinforce the contract-programmes still to be closed'},
+  'oe-2027-saude-contrato-programa-acss': {pt:'os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde',en:"the agreements between the Central Administration of the Health System and the National Health Service's entities"},
   'og1-mf-ppp-encargos-receitas': {pt:'receitas que lhe cabem',en:'revenue that falls to it'},
   'og1-mf-ppp-receitas-portagem': {pt:'vias portajadas',en:'tolled roads'},
   'pe-oe-beira-abolicao': {pt:'eliminação das portagens',en:'toll abolition'},
