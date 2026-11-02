@@ -83,3 +83,8 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto) {
   for(const el of root.querySelectorAll('[data-texto-campo]')) if(!el.closest('[data-texto-estudo]')) erros.push('ED1 texto: campo sem entrada');
   return {erros,campos};
 }
+
+/** A segunda conta usa as naturezas das entradas, sem chamar a contagem da vista. */
+export function contagemDasCorrecoesNoPortao(correcoesDoLivro, textos) {
+  return correcoesDoLivro + textos.filter(e => e.kind === 'texto').length;
+}

@@ -1,3 +1,4 @@
+import {contagemDasCorrecoesNoPortao} from '../../scripts/edicoes-conferir.mjs';
 import assert from 'node:assert/strict';
 import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';
 import {contagensDoRegisto,loadClaims,validateLedger} from '../../src/lib/ledger.mjs';
@@ -6,6 +7,9 @@ import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 let plantas=0;
 const linhas=loadClaims(),conta=linhas.get('correcoes-publicadas');
 assert.equal(Number(conta.value),contagensDoRegisto().correcoes_publicadas);
+const livro = [...linhas.values()].reduce((n,c)=>n+(c.corrections??[]).filter(e=>e.kind==='correcao').length,0);
+assert.equal(contagemDasCorrecoesNoPortao(livro,CORRECOES_TEXTO),Number(conta.value));
+assert.notEqual(contagemDasCorrecoesNoPortao(livro,CORRECOES_TEXTO.slice(1)),Number(conta.value));plantas++;
 const anterior=conta.value;conta.value=String(Number(anterior)-1);
 try {assert(validateLedger().errors.some(e=>e.includes('correcoes-publicadas')));plantas++;}finally{conta.value=anterior;}
 const inventario=leInventario(process.cwd());

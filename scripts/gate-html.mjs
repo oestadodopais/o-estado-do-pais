@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { primeiraEdicao, primeiraEdicaoServida } from '../src/lib/edicoes.mjs';
-import { conferirTextoHtml } from './edicoes-conferir.mjs';
+import { conferirTextoHtml, contagemDasCorrecoesNoPortao } from './edicoes-conferir.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 import { projecaoLinha } from '../src/lib/projecao-linha.mjs';
 import { irmaoDepoisDaMedida } from '../src/lib/posicao-do-selo.mjs';
@@ -4310,7 +4310,7 @@ function contasDoPortao(claims) {
         conta('linhas_atrasadas', atrasadas.length, 'ledger'),
       ];
     })(),
-    conta('correcoes', porNatureza.correcao, 'ledger'),
+    conta('correcoes', contagemDasCorrecoesNoPortao(porNatureza.correcao, CORRECOES_TEXTO), 'ledger e texto'),
     conta('atualizacoes', porNatureza.atualizacao, 'ledger'),
     conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
     conta('endereco_correcoes', ENDERECO_CORRECOES, 'modulo'),
