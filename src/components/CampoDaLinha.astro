@@ -42,6 +42,7 @@ const {
   class: klass = '',
   lingua = null,
   quebras = false,
+  decimal = false,
   leis = false,
 } = Astro.props;
 /**
@@ -60,7 +61,8 @@ const {
  * O corte guarda a barra do lado esquerdo (`(?<=\/)`), que é onde a leitura a
  * quer: a linha acaba em «…/» e a seguinte começa no segmento novo.
  */
-const apresentado = /^verifications\.\d+\.found$/.test(campo) ? valorDaReleitura(valor, lang) : valor;
+const transcrito = /^verifications\.\d+\.found$/.test(campo) ? valorDaReleitura(valor, lang) : valor;
+const apresentado = decimal && lang === 'en' ? String(transcrito).replace(/,(?=\d+$)/, '.') : transcrito;
 const pedacos = quebras ? String(valor).split(/(?<=\/)/) : null;
 const s = t(lang);
 const porVerificar = valor === POR_VERIFICAR;

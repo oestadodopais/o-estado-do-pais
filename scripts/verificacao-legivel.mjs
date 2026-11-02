@@ -6,11 +6,12 @@ export function valorRelidoAqui(valor, lang) {
 }
 
 /** A comparação do campo encontrado, partilhada pelo portão e pelas plantas de página. */
-export function conferirCampoRelido(el, linha, lang) {
+export function conferirCampoRelido(el, linha, lang, decimal = false) {
   const m = /^verifications\.(\d+)\.found$/.exec(el.getAttribute('data-linha-campo') ?? '');
   if (!m) return null;
   const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
-  const esperado = normal(valorRelidoAqui(linha.verifications?.[Number(m[1])]?.found, lang));
+  const valor = normal(valorRelidoAqui(linha.verifications?.[Number(m[1])]?.found, lang));
+  const esperado = decimal && lang === 'en' ? valor.replace(/,(?=\d+$)/,'.') : valor;
   const renderizado = normal(el.textContent);
   return { esperado, renderizado, confere: renderizado === esperado };
 }

@@ -10,6 +10,7 @@ import {revisoesPeloLivro,conferirRevisoes} from '../../scripts/revisoes-da-sema
 import {contasDaSemanaNoPortao,conferirMarcaDaSemana} from '../../scripts/explicacoes-do-portao.mjs';
 import {semanaPelaCelula,primeiraFrasePelaCelula,conferirPaginaDaSemana,marcaComparada} from './semana.mjs';
 import {conferirOQueENasMudancas} from './o-que-e.mjs';
+import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
 import {analisa,leMarcadores} from '../../scripts/voz.mjs';
 const linhas=loadClaims(), dist=process.env.OEDP_DIST||'dist';
 const data=s=>s.replace(/^(\d{4})-(\d{2})-(\d{2})$/,'$3.$2.$1');
@@ -43,6 +44,18 @@ for(const lang of ['pt','en']) {
   const conta=semanaPelaCelula(linhas,fim), pagina=leituraDaSemana({fim});
   prova(`contagens independentes (${lang})`,()=>assert.deepEqual(pagina.contagens,conta.contagens));
   prova(`frase e secção conferidas (${lang})`,()=>assert.deepEqual(conferirPaginaDaSemana(root,lang,[fim],linhas),[]));
+  if(pendentes.length && lang==='en') {
+    prova('pontos decimais nas entradas inglesas',()=>assert.deepEqual(conferirFormatoDaPagina(original,rota).desvios,[]));
+    for(const seletor of ['[data-claim]','[data-linha-campo$=".found"]']) prova(`vírgula inglesa recusada (${seletor})`,()=>{
+      const r=copia(),el=r.querySelector(`[data-semana-revisao] ${seletor}`);el.set_content(el.textContent.replace('.',','));
+      assert.ok(conferirRevisoes(r,lang,linhas,inicio,fim).length);
+    });
+    prova('ponto fora da lista continua recusado',()=>{
+      const r=copia(),el=r.querySelector('[data-semana-revisao] [data-claim]');
+      r.querySelector('main').insertAdjacentHTML('beforeend',el.outerHTML);
+      assert.ok(conferirFormatoDaPagina(r.toString(),rota).desvios.some(e=>e.regra==='F2'));
+    });
+  }
   if(pendentes.length) {
     prova(`divergência omitida da frase (${lang})`,()=>{
       const r=copia();r.querySelector('[data-semana="revisoes"]').set_content(String(pendentes.length-1));

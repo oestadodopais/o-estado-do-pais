@@ -73,8 +73,8 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
               <NomeDaMedida linha={getClaim(r.nome.linha)} lang={lang} escada="semana" class="semana-nome" />
               {r.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
               {s.semana.virgula}<DataDaLinha id={r.linha.id} campo="reference_date" valor={String(r.linha.reference_date)} lang={lang} />
-              {s.semana.publicado}<span><Claim id={r.linha.id} lang={lang} plano />{' '}<CampoDaLinha id={r.linha.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /><Provenance id={r.linha.id} lang={lang} /></span>
-              {s.semana.fonteAgora}<CampoDaLinha id={r.linha.id} campo={`verifications.${r.n}.found`} valor={r.found} lang={lang} />
+              {s.semana.publicado}<span><Claim id={r.linha.id} lang={lang} plano decimal={lang === 'en'} />{' '}<CampoDaLinha id={r.linha.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /><Provenance id={r.linha.id} lang={lang} /></span>
+              {s.semana.fonteAgora}<CampoDaLinha id={r.linha.id} campo={`verifications.${r.n}.found`} valor={r.found} lang={lang} decimal={lang === 'en'} />
               {s.semana.naReleitura}<DataDaLinha id={r.linha.id} campo={`verifications.${r.n}.date`} valor={r.data} lang={lang} />{s.semana.ponto}</p>
               <OQueENaMudanca ids={[r.linha.id]} lang={lang} />
             </li>;

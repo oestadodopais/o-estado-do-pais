@@ -633,7 +633,7 @@ export function plantasDaPassagemB(dist) {
       ['um resumo declarado fora da lista',r=>{const e=r.querySelector('[data-semana-mudanca]');r.querySelector('main').insertAdjacentHTML('beforeend',`<li data-semana-mudanca="${e.getAttribute('data-semana-mudanca')}">${e.querySelector('[data-semana-resumo]').outerHTML}</li>`);},'W · a marca das frases compostas da semana está num sítio que esta célula não confere'],
     ];
     if(rota==='leituraDaSemana') casos.push(
-      ['as contagens à cabeça da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina] h1').insertAdjacentHTML('afterend',p.outerHTML);},'a frase das contagens não fecha a página'],
+      ['as contagens no fim da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina]').insertAdjacentHTML('beforeend',p.outerHTML);},'a frase das contagens não abre a página'],
       ['a frase de nenhuma mudança da primeira página retirada',r=>r.querySelector('[data-semana-primeira="nenhuma"]')?.remove(),'nenhuma frase da primeira página mudou, e a página não o diz assim']);
     for(const [nome,estraga,mensagem] of casos) {
       const aplicavel=nome.startsWith('as contagens') || (nome.startsWith('a frase de nenhuma') ? raiz.querySelector('[data-semana-primeira="nenhuma"]') : nome.startsWith('o qualificador') ? daUniao && raiz.querySelector(`[data-semana-mudanca="${daUniao}"] .semana-onde`) : raiz.querySelector('[data-semana-mudanca]'));

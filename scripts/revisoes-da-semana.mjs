@@ -28,6 +28,12 @@ export function revisoesPeloLivro(linhas,inicio,fim) {
   }
   return pendentes.sort((a,b)=>b.data.localeCompare(a.data)||a.linha.localeCompare(b.linha));
 }
+/** A forma inglesa só pertence ao valor ou campo da própria entrada semanal. */
+export function naRevisaoDaSemana(el,rota,lang,id) {
+  return rota==='leituraDaSemana' && lang==='en' &&
+    el.closest('[data-semana-revisao]')?.getAttribute('data-semana-revisao')===id &&
+    Boolean(el.closest('main [data-semana-revisoes] [data-semana-revisao-resumo]'));
+}
 export function conferirRevisoes(root,lang,linhas,inicio,fim) {
   const erros=[], esperadas=revisoesPeloLivro(linhas,inicio,fim), c=t(lang).semana;
   const entradas=root.querySelectorAll('main [data-semana-revisoes] > [data-semana-revisao]');
@@ -40,14 +46,16 @@ export function conferirRevisoes(root,lang,linhas,inicio,fim) {
     const l=linhas.get(r.linha), nome=nomeNaLista(r.linha,lang), base=linhas.get(nome.linha);
     const nomeTexto=(nomeDaLinhaDerivada(base,lang) ?? nomeDoCartao(base,lang))?.texto;
     const u=unidadeDaLinha(l.unit,lang);
-    const esperado=`${nomeTexto}${nome.qualificador==='ue'?c.virgula+t(lang).cartao.uniaoEuropeia:''}${c.virgula}${data(String(l.reference_date))}${c.publicado}${l.value} ${u.texto}${c.fonteAgora}${relido(r.found)}${c.naReleitura}${data(r.data)}.`;
+    const publicado=lang==='en'?String(l.value).replace(/,(?=\d+$)/,'.'):l.value;
+    const encontrado=lang==='en'?relido(r.found).replace(/,(?=\d+$)/,'.'):relido(r.found);
+    const esperado=`${nomeTexto}${nome.qualificador==='ue'?c.virgula+t(lang).cartao.uniaoEuropeia:''}${c.virgula}${data(String(l.reference_date))}${c.publicado}${publicado} ${u.texto}${c.fonteAgora}${encontrado}${c.naReleitura}${data(r.data)}.`;
     const resumo=e.querySelector('[data-semana-revisao-resumo]');
     const copia=parse(resumo?.outerHTML ?? ''); copia.querySelectorAll('.src-chip,.claim-provisorio-chip').forEach(n=>n.remove());
     if(normal(copia.textContent)!==normal(esperado)) erros.push(`PAI1-B: frase da revisão difere do livro (${r.linha})`);
     const campo=e.querySelector('[data-linha-campo="unit"]');
     if(campo?.getAttribute('data-linha-claim')!==r.linha||normal(campo?.textContent)!==normal(u.texto)) erros.push(`PAI1-B: unidade de outra linha (${r.linha})`);
     const found=e.querySelector(`[data-linha-campo="verifications.${r.n}.found"]`);
-    if(found?.getAttribute('data-linha-claim')!==r.linha||normal(found?.textContent)!==normal(relido(r.found))) erros.push(`PAI1-B: valor relido de outra entrada (${r.linha})`);
+    if(found?.getAttribute('data-linha-claim')!==r.linha||normal(found?.textContent)!==normal(encontrado)) erros.push(`PAI1-B: valor relido de outra entrada (${r.linha})`);
     const dia=e.querySelector(`[data-de-campo="verifications.${r.n}.date"]`);
     if(dia?.getAttribute('data-de-linha')!==r.linha||normal(dia?.textContent)!==data(r.data)) erros.push(`PAI1-B: data da releitura errada (${r.linha})`);
   }

@@ -129,6 +129,7 @@ const {
   as = 'span',
   escala = false,
   abs = false,
+  decimal = false, // PAI1-C: ponto apenas nas entradas da semana inglesa.
   sufixo = '',
   cauda = '', // SEL1: texto que já seguia a nota da fonte; só o selo muda de sítio.
   // C1: a unidade do cartão conserva um separador no texto da página.
@@ -203,7 +204,8 @@ const TagDoValor = porta && plano && !chip ? 'a' : Tag;
    separador dos milhares deixa de admitir uma quebra. */
 if (abs && !/^[+−-]?[\d\s\u00a0\u202f]+(?:,\d+)?$/.test(String(claim.value)))
   throw new Error(`Claim ${id}: abs exige valor numérico.`);
-const valorComSinal = valorNaLingua(claim, lang);
+const valorPublicado = valorNaLingua(claim, lang);
+const valorComSinal = decimal && lang === 'en' ? valorPublicado.replace(/,(?=\d+$)/, '.') : valorPublicado;
 const valor = (abs ? valorComSinal.replace(/^[+−-]/, '') : valorComSinal).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
 
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
