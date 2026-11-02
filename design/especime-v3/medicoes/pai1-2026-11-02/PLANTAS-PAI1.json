@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-02T15:55:22+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "diff.patch",
+   "descricao": "a projeção em JavaScript deixa também o source_url fora do hash",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f73cee13bda1a2b177ebd2009ecbd4723cd507a15da9826e9c0d706dc700e61c",
+   "sha256_depois": "85f834bdc15eaaaeaa77f6e26ce45a7aa52918d5ac2cc5fefb2cd3303db4d9e4",
+   "contexto_antes": "to = bytes.toString('latin1');\n+  const partes = [];\n+  let omitir = false;\n+  let inicio = 0;\n+  for (const linha of texto.match(/[^\\n]*\\n|[^\\n]+$/g) ?? []) {\n+    if (/^verifications[ \\t]*:/.test(linha)) omitir = true;\n+    else if (/^(?:[A-Za-z_][\\w-]*|\"[^\"\\r\\n]+\"|'[^'\\r\\n]+')[ \\t]*:/.test(linha)) omitir = false;\n+    if (!omitir) partes.push(bytes.subarray(inicio, inicio + ",
+   "contexto_depois": "to = bytes.toString('latin1');\n+  const partes = [];\n+  let omitir = false;\n+  let inicio = 0;\n+  for (const linha of texto.match(/[^\\n]*\\n|[^\\n]+$/g) ?? []) {\n+    if (/^(verifications|source_url)[ \\t]*:/.test(linha)) omitir = true;\n+    else if (/^(?:[A-Za-z_][\\w-]*|\"[^\"\\r\\n]+\"|'[^'\\r\\n]+')[ \\t]*:/.test(linha)) omitir = false;\n+    if (!omitir) partes.push(bytes.subarray(inicio, inicio + "
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+   "descricao": "a frase portuguesa diz que a fonte reviu 2, quando as divergências por aplicar são 3",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cccbda38f0750d8454ef1be29371a651643fc87cacab1fc7d15e7b9b2199a0e6",
+   "sha256_depois": "ce4dbf4d4ab9bf97e7b080f6ec4a3a03257e897dfb476b3983aae6fb97fdd2ac",
+   "contexto_antes": "ova-valor\" data-semana=\"relidas\">90</span> números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu <span class=\"prova-valor\" data-semana=\"revisoes\">3</span> deles, que aqui ainda têm o valor anterior.</p></article></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\"",
+   "contexto_depois": "ova-valor\" data-semana=\"relidas\">90</span> números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu <span class=\"prova-valor\" data-semana=\"revisoes\">2</span> deles, que aqui ainda têm o valor anterior.</p></article></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\""
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "built/en/explainers/weekly-reading/index.html",
+   "descricao": "a entrada inglesa das exportações de 2025 diz que a fonte escreve agora 8,2, o valor publicado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "83d9f4f3bcc03b04a126f76f33251c755251f27e005b062152a07ea84ff596f7",
+   "sha256_depois": "3f894181341ab87149ce49146dc6b7e2766cc7b64972d9ce027adbdaf7c0d844",
+   "contexto_antes": "urostat\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span>Eurostat</span></span></a></span>; the source now writes <span class=\"campo-valor\" data-linha-claim=\"desempenho-das-exportacoes-2025\" data-linha-campo=\"verifications.6.found\">8,0</span>, in the re-reading of <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"desempenho-das-exportacoes-2025\" data-de-campo=\"verifications.6",
+   "contexto_depois": "urostat\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span>Eurostat</span></span></a></span>; the source now writes <span class=\"campo-valor\" data-linha-claim=\"desempenho-das-exportacoes-2025\" data-linha-campo=\"verifications.6.found\">8,2</span>, in the re-reading of <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"desempenho-das-exportacoes-2025\" data-de-campo=\"verifications.6"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "ledger/provas/hb1/series.json",
+   "descricao": "o sha256 novo da linha sobrecarga-do-custo-da-habitacao-2025 com o último carácter trocado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "865fbefb9b60cd179b0d14af592017d4c31faa3aa926a732f95cef7533cb4933",
+   "sha256_depois": "ea51270030fbc2639d762afbda861856a6b5e79206a70e80cd25e9928df428af",
+   "contexto_antes": "ger.json\",\n  \"rows\": {\n    \"sobrecarga-do-custo-da-habitacao-2025\": {\n      \"file\": \"ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml\",\n      \"sha256\": \"ac205a12d255022ff44013282f07ca29cf6d0797ace09f28c5b359d62cebcd9b\",\n      \"study\": \"quadro-institucional\"\n    },\n    \"sobrecarga-do-custo-da-habitacao-2025-ue\": {\n      \"file\": \"ledger/claims/sobrecarga-do-custo-da-habitacao-",
+   "contexto_depois": "ger.json\",\n  \"rows\": {\n    \"sobrecarga-do-custo-da-habitacao-2025\": {\n      \"file\": \"ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml\",\n      \"sha256\": \"ac205a12d255022ff44013282f07ca29cf6d0797ace09f28c5b359d62cebcd9c\",\n      \"study\": \"quadro-institucional\"\n    },\n    \"sobrecarga-do-custo-da-habitacao-2025-ue\": {\n      \"file\": \"ledger/claims/sobrecarga-do-custo-da-habitacao-"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "src/data/verificacao.mjs",
+   "descricao": "o carimbo diz zero alarmes, com três divergências no painel",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "02dd7d690b955cc2efc8941808be5ff29f60aea9731b2b943d9313a8fc374df0",
+   "sha256_depois": "20b10b60c3ad2dfcb9a18993c7ff7258a2d3947b2cd07fcd2146ecbb6939598a",
+   "contexto_antes": "e da máquina de uma pessoa não entra num repositório\n * público por omissão.\n */\nexport const VERIFICACAO = {\n  verificadoEm: '2026-11-02',\n  afirmacoes: 91,\n  alarmes: 3,\n  validadeDias: 45,\n};\n",
+   "contexto_depois": "e da máquina de uma pessoa não entra num repositório\n * público por omissão.\n */\nexport const VERIFICACAO = {\n  verificadoEm: '2026-11-02',\n  afirmacoes: 91,\n  alarmes: 0,\n  validadeDias: 45,\n};\n"
+  }
+ ]
+}

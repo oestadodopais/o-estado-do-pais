@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-02T15:55:11+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "S1",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "na página do dossiê, o selo dos 79 volta a ficar entre o número e «milhões de euros»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "97b5c89e0ffc1598274a70e732c8c58d9efebb297a914021fb7716b813b79b85",
+   "sha256_depois": "e4ad5b5d125472a754d3232fb868826309eee0d5414da9745cfd1a621a89e954",
+   "contexto_antes": "ngulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#3.0\" data-registo-row=\"der-oe2027-medidas-novas-saldo\">79</span> milhões de euros<a class=\"src-chip\" href=\"/livro-razao/der-oe2027-medidas-novas-saldo\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a> a favor do saldo. O que pesa no saldo de 2027, <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#3.1\" data-registo-row=\"der-oe2",
+   "contexto_depois": "ngulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#3.0\" data-registo-row=\"der-oe2027-medidas-novas-saldo\">79</span><a class=\"src-chip\" href=\"/livro-razao/der-oe2027-medidas-novas-saldo\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a> milhões de euros a favor do saldo. O que pesa no saldo de 2027, <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/pt#3.1\" data-registo-row=\"der-oe2"
+  },
+  {
+   "id": "S2",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html",
+   "descricao": "no estudo inglês, o selo das medidas novas aponta para a linha dos juros",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "dd7ea9750ee8dc66213f58296217e12824c29be1b801a775ca83f7c79b22e8dd",
+   "sha256_depois": "7c77470b869abc7fd631e681fe32567d222d1f0f86d89d053dde512e19a586cd",
+   "contexto_antes": "ng>The 2027 Budget is a continuation budget.</strong> The new measures are worth <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/en#7.0\" data-registo-row=\"der-oe2027-medidas-novas-saldo\">79</span> million euros<a class=\"src-chip\" href=\"/en/ledger/der-oe2027-medidas-novas-saldo\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span",
+   "contexto_depois": "ng>The 2027 Budget is a continuation budget.</strong> The new measures are worth <span class=\"texto-figura\" data-registo=\"orcamento-2027-o-que-muda-e-para-quem/en#7.0\" data-registo-row=\"der-oe2027-medidas-novas-saldo\">79</span> million euros<a class=\"src-chip\" href=\"/en/ledger/der-oe2027-juros-variacao-cp\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span"
+  },
+  {
+   "id": "S3",
+   "ficheiro": "built/dossies/orcamento-2027/index.html",
+   "descricao": "na abertura do dossiê, o ano 2027 do nome do orçamento ganha um selo visível",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e4ad5b5d125472a754d3232fb868826309eee0d5414da9745cfd1a621a89e954",
+   "sha256_depois": "9544dc31b14e12361d800da0cade3a822912f8b2ab5a365a1a726405343d6781",
+   "contexto_antes": "-dossie-abertura=\"abertura[0]\">A proposta de Orçamento do Estado para <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span> foi aprovada na generalidade a <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"og1-votacao-generalidade-oficial\" data-de-campo=\"reference_date\">28",
+   "contexto_depois": "-dossie-abertura=\"abertura[0]\">A proposta de Orçamento do Estado para <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span><a class=\"src-chip\" href=\"/livro-razao/pm-q3-3-r37-c3\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a> foi aprovada na generalidade a <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"og1-votacao-generalidade-oficial\" data-de-campo=\"reference_date\">28"
+  },
+  {
+   "id": "S4",
+   "ficheiro": "diff.patch",
+   "descricao": "a lista partilhada perde «milhões» nas grandezas portuguesas",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6b8580f04f0fd3b03f16203e2d055e0191ffb843853e7e13bbf302ebbc590c48",
+   "sha256_depois": "8c6e1c3e1cbaa0cd007023b2b8e261bc08dee54338e6a37fae9e86340536b981",
+   "contexto_antes": " 000000000..e01c3228e\n--- /dev/null\n+++ b/src/lib/unidade-da-medida.mjs\n@@ -0,0 +1,28 @@\n+/** SEL1: uma só lista, com a correspondência mais longa primeiro. */\n+const grandezasPt = ['mil', 'milhão', 'milhões', 'mil milhões'];\n+const grandezasEn = ['thousand', 'thousands', 'million', 'millions', 'billion', 'billions', 'thousand million'];\n+export const UNIDADES_DA_MEDIDA = Object.fre",
+   "contexto_depois": " 000000000..e01c3228e\n--- /dev/null\n+++ b/src/lib/unidade-da-medida.mjs\n@@ -0,0 +1,28 @@\n+/** SEL1: uma só lista, com a correspondência mais longa primeiro. */\n+const grandezasPt = ['mil', 'milhão', 'mil milhões'];\n+const grandezasEn = ['thousand', 'thousands', 'million', 'millions', 'billion', 'billions', 'thousand million'];\n+export const UNIDADES_DA_MEDIDA = Object.fre"
+  },
+  {
+   "id": "S5",
+   "ficheiro": "diff.patch",
+   "descricao": "uma das cadeias do verify deixa de correr check:selos",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8c6e1c3e1cbaa0cd007023b2b8e261bc08dee54338e6a37fae9e86340536b981",
+   "sha256_depois": "0fd0aa7b57f8b51e67a9324a23f4a559527618472d2db080a3594478bb17b005",
+   "contexto_antes": "heck:dossies\",\n+    \"verify\": \"npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run check:leituras && npm run gate:html && npm run check:selos && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:sobreposicao && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run",
+   "contexto_depois": "heck:dossies\",\n+    \"verify\": \"npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run check:leituras && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:sobreposicao && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run"
+  }
+ ]
+}
