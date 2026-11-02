@@ -272,7 +272,7 @@ export function leInventario(raiz) {
   for (let i = 0; i < cru.length; i++) {
     const cel = celulas(cru[i]);
     if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
-    const classe = cel[0], texto = normalizaFraseDoInventario(cel[1]);
+    const [classe, texto] = cel;
     const bloco = cel.length >= 3 ? cel[2] : null;
     /* O estado só se lê quando é um dos nomes reconhecidos, incluindo a condição
        estreita dos dois rótulos FP1: uma célula com outra coisa

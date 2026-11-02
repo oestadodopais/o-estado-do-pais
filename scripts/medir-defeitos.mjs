@@ -1020,7 +1020,7 @@ function frasesDaVoz(root) {
     const t = norm(texto(el));
     if (t) out.push(t);
   }
-  return out.map(normalizaFraseDoInventario);
+  return out;
 }
 
 function frasesDaCasa(root, rotaKey) {
@@ -1179,7 +1179,7 @@ function frasesDaCasa(root, rotaKey) {
     const t = norm(texto(el));
     if (t) out.push(t);
   }
-  return out.map(normalizaFraseDoInventario);
+  return out;
 }
 
 /**
@@ -1250,7 +1250,7 @@ function dicasDaCasa(root) {
       out.push(v);
     }
   }
-  return out.map(normalizaFraseDoInventario);
+  return out;
 }
 
 /**
@@ -1620,6 +1620,9 @@ const achadosDaVoz = [];
 const frasesVarridas = new Set();
 let ocorrenciasVarridas = 0;
 
+// SEL1: só a classificação e a presença das vivas normalizam a separação de nós.
+// As retiradas conservam a comparação original, com o texto original.
+const classesNormalizadas = new Map([...INVENTARIO.mapa].map(([t,c])=>[normalizaFraseDoInventario(t),c]));
 const frasesDaCasaPorRota = {};
 for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
   const porClasse = Object.fromEntries(CLASSES.map((c) => [c, 0]));
@@ -1627,7 +1630,7 @@ for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
   let total = 0;
   for (const [t, n] of conta) {
     total += n;
-    const classe = INVENTARIO.mapa.get(t);
+    const classe = classesNormalizadas.get(normalizaFraseDoInventario(t));
     if (classe) porClasse[classe] += n;
     else naoClassificados.push(t);
   }
@@ -1644,10 +1647,10 @@ for (const [rota, frases] of [...frasesDaVozPorRota.entries()].sort()) {
   for (const t of frases) {
     frasesVarridas.add(t);
     ocorrenciasVarridas++;
-    if (INVENTARIO.mapa.get(t) === 'autorreferencia') continue;
+    if (classesNormalizadas.get(normalizaFraseDoInventario(t)) === 'autorreferencia') continue;
     const mordeu = analisa(t, rota, VOZ, chaveDaRotaPorCaminho.get(rota) ?? null);
     if (mordeu.length) {
-      achadosDaVoz.push({ rota, marcadores: mordeu, classe: INVENTARIO.mapa.get(t) ?? null, texto: t });
+      achadosDaVoz.push({ rota, marcadores: mordeu, classe: classesNormalizadas.get(normalizaFraseDoInventario(t)) ?? null, texto: t });
     }
   }
 }
@@ -1795,6 +1798,7 @@ function ondeVolta(frase) {
   return null;
 }
 
+const rendidasNormalizadas = new Set([...rendidas, ...rendidasNasIsentas].map(normalizaFraseDoInventario));
 const declaracoes = {
   total: INVENTARIO.linhas.length,
   vivas: INVENTARIO.linhas.filter((l) => l.estado === 'viva').length,
@@ -1816,7 +1820,7 @@ const declaracoes = {
      da contagem (o Método e o Sobre): uma linha declarada para uma frase que só
      lá vive rende-se, e a lista não está a mentir sobre o sítio. */
   vivas_que_nao_rendem: INVENTARIO.linhas
-    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-fp1' && l.estado !== 'condicional-do2' && !rendidas.has(l.texto) && !rendidasNasIsentas.has(l.texto))
+    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-fp1' && l.estado !== 'condicional-do2' && !rendidasNormalizadas.has(normalizaFraseDoInventario(l.texto)))
     .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
   retiradas_que_rendem: INVENTARIO.linhas
     .filter((l) => l.estado === 'retirada')
