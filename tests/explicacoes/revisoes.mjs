@@ -64,6 +64,16 @@ for(const lang of ['pt','en']) {
     for(const frase of [c.fonteReviu+c.umaRevisao,c.fonteReviu+c.variasRevisoes,c.revisoesK,c.publicado+c.fonteAgora+c.naReleitura]) assert.deepEqual(analisa(frase,rota,voz),[]);
     assert.ok(analisa(`${c.revisoesK} ${voz.marcadores[0].marcador}`,rota,voz).length);
   });
+  prova(`linha reunida entra na contagem e na lista (${lang})`,()=>{
+    const l=structuredClone(linhas.get('taxa-de-desemprego-2025'));
+    l.corrections=[];l.verifications=[{date:fim,result:'diverge',found:'6.0'}];
+    const livro=new Map([[l.id,l]]), r=leituraDaSemana({fim,linhas:livro.values()});
+    assert.equal(r.contagens.relidas,1);assert.equal(r.contagens.revisoes,1);
+    assert.deepEqual(r.revisoes.map(x=>x.linha),[l.id]);
+    assert.equal(semanaPelaCelula(livro,fim).contagens.relidas,1);
+    assert.deepEqual(revisoesPeloLivro(livro,inicio,fim).map(x=>x.linha),[l.id]);
+    assert.equal(contasDaSemanaNoPortao(livro,inicio,fim).relidas,1);
+  });
   // Cada cenário parte de uma cópia da mesma linha, sem história anterior.
   const base=structuredClone(linhas.get('desempenho-das-exportacoes-2024'));
   base.corrections=[];base.verifications=[{date:inicio,result:'diverge',found:'17.0'}];

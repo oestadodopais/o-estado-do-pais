@@ -25,7 +25,7 @@ import {dataDeCalendarioConferida,textoDaHabitacao} from '../../src/lib/historia
  *     para a página da semana.
  *
  * O ÂMBITO é o do resolvedor, escrito aqui outra vez: fora as contagens do próprio projeto (o estudo `o-estado-do-pais`)
- * e a linha que a casa declara a mesma medida de outra (`MEDIDA_REUNIDA`).
+ * cada linha relida conta, incluindo as reunidas num cartão (PAI1-C).
  *
  * EX1-c (06.10.2026, os achados 5 e 14 da leitura a frio): UMA MUDANÇA DE VALOR É UMA MUDANÇA DO NÚMERO. Uma linha em
  * que só o literal mudou (o mesmo número, escrito de outra maneira) conta-se à parte, tem a sua lista e a sua planta na
@@ -38,7 +38,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { loadClaims, entradasDoRegisto } from '../../src/lib/ledger.mjs';
-import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../../src/data/primeira-pagina.mjs';
 import { limiarDaLinha, nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
 import { leituraDaSemana, primeiraFraseDaSemana, nomeNaSemana } from '../../src/lib/leitura-da-semana.mjs';
@@ -81,7 +80,7 @@ export function semanaPelaCelula(linhas, fim) {
   /** @type {{ linha: string, antes: { n: number, valor: string }, depois: { n: number, valor: string, data: string } }[]} */
   const formas = [];
   for (const [id, l] of linhas) {
-    if (!l || l.study === ESTUDO_DO_PROJETO || Object.hasOwn(MEDIDA_REUNIDA, id)) continue;
+    if (!l || l.study === ESTUDO_DO_PROJETO) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas += 1;
     const doDia = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ c, n })).filter((/** @type {any} */ x) => dentro(x.c?.date));
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
@@ -201,7 +200,7 @@ export function provaNaCopiaPlantada(fim) {
   if (JSON.stringify(r0.formas.map((m) => [m.linha, m.antes.valor, m.depois.valor])) !== JSON.stringify(c0.formas.map((m) => [m.linha, m.antes.valor, m.depois.valor]))) erros.push('W1 · no livro sem plantas, o resolvedor e esta célula discordam nas mudanças só da forma de escrever');
   const inicio = menosDias(fim, 6);
   /* As linhas das plantas: do âmbito, com valor numérico, sem entrada nenhuma na janela. */
-  const livres = [...base].filter(([id, l]) => l && l.study !== ESTUDO_DO_PROJETO && !Object.hasOwn(MEDIDA_REUNIDA, id) && numero(l.value) !== null &&
+  const livres = [...base].filter(([id, l]) => l && l.study !== ESTUDO_DO_PROJETO && numero(l.value) !== null &&
     !(l.corrections ?? []).some((/** @type {any} */ c) => c?.date >= inicio && c?.date <= fim) && !(l.verifications ?? []).some((/** @type {any} */ v) => v?.date >= inicio && v?.date <= fim)).map(([id]) => id).sort();
   if (livres.length < 4) return { erros: [...erros, 'W1 · não há quatro linhas livres para as plantas'], plantas: [] };
   const [la, lb, lc, ld] = livres;

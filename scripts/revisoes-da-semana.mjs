@@ -1,6 +1,5 @@
 /** PAI1-B: leitor independente do resolvedor para as revisões ainda por aplicar. */
 import {parse} from 'node-html-parser';
-import {MEDIDA_REUNIDA} from '../src/lib/pais.mjs';
 import {nomeNaLista} from '../src/lib/primeira-pagina.mjs';
 import {nomeDaLinhaDerivada,nomeDoCartao} from '../src/lib/nomes.mjs';
 import {unidadeDaLinha} from '../src/i18n/unidades.mjs';
@@ -16,7 +15,7 @@ const relido = s => {
 export function revisoesPeloLivro(linhas,inicio,fim) {
   const pendentes=[];
   for(const [id,l] of linhas) {
-    if(!l || l.study==='o-estado-do-pais' || Object.hasOwn(MEDIDA_REUNIDA,id)) continue;
+    if(!l || l.study==='o-estado-do-pais') continue;
     let ultima=null;
     for(let n=0;n<(l.verifications??[]).length;n++) {
       const v=l.verifications[n];
