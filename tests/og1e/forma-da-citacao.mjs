@@ -13,13 +13,36 @@ const q=`«${esc(base.excerpt)}»`,doc=`«${esc(base.document.title)}»`;
 let count=0;
 for(const lang of ['pt','en']) {
  const intro=lang==='pt'?'pela notícia':'by the report';
- for(const key of ['estudo','documento','texto','dossie','discussao','explicacao','explicacoes']) {
+ for(const key of ['estudo','documento','texto','dossie','discussao','explicacao','explicacoes','linha','metodo','rota-nova',undefined]) {
   for(const [name,text,code] of [['pessoa',`A pessoa: ${q}`,1],['antes',`A pessoa, ${intro} ${doc}: ${q}`,0],['depois',`${q}, ${intro} ${doc}.`,0],['outra frase',`${doc}. A pessoa: ${q}`,1]]) {
    const html=parse(`<main><p>${text}</p></main>`);
    const errors=conferirFormaDasCitacoes(html,{key,lang},new Map([[base.id,base]]));
    assert.equal(errors.length?1:0,code,`${key}/${lang}/${name}: ${errors}`);count++;
   }
  }
+}
+// Elementos e texto próprio do li que antes ficavam fora da leitura.
+for(const lang of ['pt','en'])for(const tag of ['figcaption','dd','h5','h6','summary','li','div']) {
+ for(const [suffix,code] of [['',1],[`<p>Outro parágrafo.</p>`,1]]) {
+  const html=parse(`<${tag}>A pessoa: ${q}${suffix}</${tag}>`);
+  assert(conferirFormaDasCitacoes(html,{lang},new Map([[base.id,base]])).length,`${tag}/${lang}`);count++;
+ }
+}
+for(const lang of ['pt','en'])for(const id of ['posicao-governo-divida85','posicao-jpp-irs','posicao-cds-orcamento']) {
+ const row=loadClaims().get(id),title=esc(row.document.title),headline=lang==='pt'?'pelo título da notícia':'in the news headline';
+ for(const [text,code] of [[`A pessoa: «${title}»`,1],[`A pessoa, ${headline}: «${title}»`,0]]) {
+  assert.equal(conferirFormaDasCitacoes(parse(`<dd>${text}</dd>`),{lang},new Map([[id,row]])).length?1:0,code,`${id}/${lang}`);count++;
+ }
+}
+// A rota desconhecida lê a língua do HTML; um documento noutro parágrafo não apoia a fala.
+for(const lang of ['pt','en']) {
+ const intro=lang==='pt'?'pela notícia':'by the report';
+ const docAfter=parse(`<html lang="${lang}"><body><figcaption>${q}, ${intro} ${doc}.</figcaption></body></html>`);
+ assert.deepEqual(conferirFormaDasCitacoes(docAfter,null,new Map([[base.id,base]])),[]);count++;
+ const split=parse(`<li>A pessoa: ${q}<p>${intro} ${doc}</p></li>`);
+ assert(conferirFormaDasCitacoes(split,{lang},new Map([[base.id,base]])).length);count++;
+ const wrong=parse(`<summary>A pessoa, ${intro} «Outro documento»: ${q}</summary>`);
+ assert(conferirFormaDasCitacoes(wrong,{lang},new Map([[base.id,base]])).length);count++;
 }
 // Cópias isoladas atravessam validateLedger, a mesma entrada do ledger:check.
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'og1e-'));

@@ -869,7 +869,6 @@ caso(
 /* HB1-m (22.10.2026): a fusão junta as duas listas, a de main (com published_at_kind) e a do HB1-b (com
    measure, measure_en e attributed_to_en); quarenta campos, e o conjunto explícito abaixo leva os dois lados. */
 caso('CAMPOS/tamanho', true, CAMPOS.length === 41, 'os campos anteriores, o estado da proveniência, o tipo da data de publicação e os campos da habitação (HB1-b).');
-caso('CAMPOS/forma-retirada', false, CAMPOS.filter(c=>c!=='forma_da_citacao').includes('forma_da_citacao'), 'A declaração da forma pertence ao formato.');
 caso('CAMPOS/texto-documental', true, CAMPOS.includes('texto_documental'), 'O texto documental pertence ao formato conferido.');
 /** @param {readonly string[]} campos */
 const estadoNoFormato = campos => campos.filter(c => c === 'status').length === 1;
@@ -892,6 +891,8 @@ const CAMPOS_ESPERADOS = ["id", "status", "texto_documental", "value", "unit", "
 function camposConferidos(campos) {
   return campos.length === CAMPOS_ESPERADOS.length && CAMPOS_ESPERADOS.every(campo => campos.includes(campo));
 }
+caso('CAMPOS/forma-presente', true, camposConferidos(CAMPOS), 'O formato real inclui a declaração da forma.');
+caso('CAMPOS/forma-retirada', false, camposConferidos(CAMPOS.filter(c=>c!=='forma_da_citacao')), 'Retirar a forma da cópia é recusado pelo mesmo validador.');
 caso('CAMPOS/conjunto', true, camposConferidos(CAMPOS), 'o conjunto completo inclui name_en, measure, measure_en e attributed_to_en.');
 caso('CAMPOS/planta-campo-omitido', false, camposConferidos(CAMPOS.filter(campo => campo !== 'name_en')), 'a ausência do nome inglês é recusada.');
 caso('CAMPOS/planta-campo-trocado', false, camposConferidos(CAMPOS.map(campo => campo === 'attributed_to_en' ? 'campo_inventado' : campo)), 'um campo trocado é recusado mesmo conservando o tamanho.');

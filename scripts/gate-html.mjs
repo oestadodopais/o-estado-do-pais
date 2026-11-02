@@ -4589,6 +4589,8 @@ for (const file of ficheirosHtml(DIST)) {
 
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
+  // OG1-E: antes das saídas antecipadas, em todas as páginas e documentos.
+  for (const falta of conferirFormaDasCitacoes(root, rota, claims)) err(falta);
   if (rota?.key === 'linha') ER1_RECIBOS[root.querySelector('[data-incorporar-aviso]') ? 'semCodigo' : 'comCodigo']++;
   try { tirarCodigoConferido(root, rota); } catch (e) { err(e.message); }
 
@@ -5983,7 +5985,6 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
-  for (const falta of conferirFormaDasCitacoes(body0, rota, claims)) err(falta);
   const body = body0;
   for (const el of body.querySelectorAll('script, style')) el.remove();
 

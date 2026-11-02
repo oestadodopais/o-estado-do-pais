@@ -7,12 +7,13 @@ import {matchPath} from '../src/lib/routes.mjs';
 import {conferirFormaDasCitacoes} from './forma-da-citacao.mjs';
 const dist=process.env.OEDP_DIST??'dist', rows=loadClaims();
 function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(path.join(dir,e.name)):e.name.endsWith('.html')?[path.join(dir,e.name)]:[]);}
-const result={paginas:0,recusas:[],linhas:[]};
+const result={paginas:0,recusas:[],linhas:[],por_pagina:[]};
 for(const file of files(dist)) {
  const rel=path.relative(dist,file).split(path.sep).join('/');
  const route='/'+rel.replace(/(?:^|\/)index\.html$/,'/').replace(/\/$/,'');
  const rota=matchPath(route||'/');result.paginas++;
  const errors=conferirFormaDasCitacoes(parse(fs.readFileSync(file,'utf8')),rota,rows);
+ result.por_pagina.push({rota:route||'/',recusas:errors.length});
  if(errors.length)result.recusas.push({rota:route,erros:errors});
 }
 result.linhas=[...new Set(result.recusas.flatMap(r=>r.erros.map(e=>e.split(' ')[1].replace(/:$/,''))))];
