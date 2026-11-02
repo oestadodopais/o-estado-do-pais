@@ -1393,38 +1393,47 @@
      "tipo": "excerto"
     },
     {
-     "fim": 500,
-     "id": "hab-imprensa-feridos39",
-     "inicio": 471,
-     "livro": "HB",
-     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
-     "texto": "39 feridos, dois deles graves",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 549,
+     "fim": 493,
      "id": "hab-imprensa-feridos35",
-     "inicio": 527,
+     "inicio": 471,
      "livro": "HB",
      "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "35 feridos, pelo menos",
      "tipo": "excerto"
     },
     {
-     "fim": 596,
+     "fim": 540,
      "id": "hab-imprensa-feridos35",
-     "inicio": 559,
+     "inicio": 503,
      "livro": "HB",
      "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "José Soeiro, dirigente nacional do BE",
      "tipo": "atribuicao"
     },
     {
-     "fim": 654,
-     "id": "hab-imprensa-psp-ferido",
-     "inicio": 631,
+     "fim": 663,
+     "id": "hab-imprensa-feridos39",
+     "inicio": 586,
      "livro": "HB",
-     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
+     "texto": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+     "tipo": "documento"
+    },
+    {
+     "fim": 696,
+     "id": "hab-imprensa-feridos39",
+     "inicio": 667,
+     "livro": "HB",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
+     "texto": "39 feridos, dois deles graves",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 760,
+     "id": "hab-imprensa-psp-ferido",
+     "inicio": 737,
+     "livro": "HB",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "um polícia ficou ferido",
      "tipo": "excerto"
     }
@@ -1435,11 +1444,11 @@
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
     "hab-ilc-lvho07c-a-pc-total-pt-2025",
     "hab-imprensa-feridos37",
-    "hab-imprensa-feridos39",
     "hab-imprensa-feridos35",
+    "hab-imprensa-feridos39",
     "hab-imprensa-psp-ferido"
    ],
-   "text": "6. A rua e os números. A plataforma que convocou as manifestações de outubro diz que «a renda consome metade do salário»; os números deste estudo não medem a renda face ao salário: medem quantos gastam mais de quarenta por cento do rendimento do agregado em toda a despesa com a casa, e são 27,2 % dos inquilinos a preços de mercado, contra 6,2 % da população toda. Os feridos da intervenção policial no Porto são «37 feridos, dois em estado grave» segundo o movimento, «39 feridos, dois deles graves» segundo a organização e «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda, o BE), com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo. Este estudo não soma nem escolhe uma contagem."
+   "text": "6. A rua e os números. A plataforma que convocou as manifestações de outubro diz que «a renda consome metade do salário»; os números deste estudo não medem a renda face ao salário: medem quantos gastam mais de quarenta por cento do rendimento do agregado em toda a despesa com a casa, e são 27,2 % dos inquilinos a preços de mercado, contra 6,2 % da população toda. Os feridos da intervenção policial no Porto são «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda, o BE) e, pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo. Este estudo não soma nem escolhe uma contagem."
   },
   {
    "emphasis": [
@@ -5360,7 +5369,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 570,
      "livro": "HB",
-     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
      "texto": "39 feridos, dois deles graves",
      "tipo": "excerto"
     },
@@ -5369,7 +5378,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 612,
      "livro": "HB",
-     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
      "texto": "organização",
      "tipo": "atribuicao"
     },
@@ -5396,7 +5405,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 699,
      "livro": "HB",
-     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "um polícia ficou ferido",
      "tipo": "excerto"
     },
@@ -5405,7 +5414,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 735,
      "livro": "HB",
-     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "PSP",
      "tipo": "atribuicao"
     },
@@ -11508,7 +11517,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.960374+00:00",
-   "forma_da_citacao": "palavras",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-feridos39",
    "invoca": [],
    "measure": "39 feridos, dois deles graves",
@@ -12173,7 +12182,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.960374+00:00",
-   "forma_da_citacao": "palavras",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-psp-ferido",
    "invoca": [],
    "measure": "um polícia ficou ferido",

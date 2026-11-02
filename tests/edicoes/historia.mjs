@@ -30,9 +30,11 @@ for(const [nome,mudar,erro] of [
   mudar(c);const erros=conferirHistoria(c);if(erro)assert(erros.some(e=>e.startsWith(erro)),nome+': '+erros);else assert.deepEqual(erros,[],nome);plantas++;
  }finally{fs.rmSync(raiz,{recursive:true,force:true});}
 }
-const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===4);plantas++;
-assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,4);plantas++;
-const ausente=conferirTestemunhas(manifesto,()=>{throw Error('sem Git');},{permitirAusencia:true});assert.equal(ausente.avisos.length,4);assert.deepEqual(ausente.erros,[]);plantas++;
+const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang));
+assert.deepEqual(manifesto.edicoes.filter(e=>e.primeira_edicao).map(e=>e.slug+'/'+e.lang).sort(),testemunhas.sort());
+const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===testemunhas.length);plantas++;
+assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,testemunhas.length);plantas++;
+const ausente=conferirTestemunhas(manifesto,()=>{throw Error('sem Git');},{permitirAusencia:true});assert.equal(ausente.avisos.length,testemunhas.length);assert.deepEqual(ausente.erros,[]);plantas++;
 const args={works:WORKS,manifesto,correcoes:CORRECOES_TEXTO,raiz:'studies-src'};
 const alvo=manifesto.edicoes.find(e=>e.primeira_edicao);
 const paginas=new Map([['/uma-pagina-fora-dos-estudos',`<a href="${rotaAtual(alvo.slug,alvo.lang)}">Primeira edição, tal como foi publicada</a>`]]);

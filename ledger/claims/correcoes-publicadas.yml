@@ -4,7 +4,7 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "14"
+value: "15"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -73,3 +73,9 @@ corrections:
     new_value: "14"
     reason: "As correções dos estudos das contas de Évora e do Orçamento entram no registo. A recontagem não é uma correção adicional."
     reason_en: "The corrections to the studies of Évora's accounts and the Budget enter the log. The recount is not an additional correction."
+  - date: "2026-11-02"
+    kind: "atualizacao"
+    old_value: "14"
+    new_value: "15"
+    reason: "A correção do texto do estudo da habitação entra no registo. A recontagem não é uma correção adicional."
+    reason_en: "The correction to the text of the housing study enters the register. The recount is not an additional correction."

@@ -1419,38 +1419,47 @@
      "tipo": "excerto"
     },
     {
-     "fim": 538,
-     "id": "hab-imprensa-feridos39",
-     "inicio": 509,
-     "livro": "HB",
-     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
-     "texto": "39 feridos, dois deles graves",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 595,
+     "fim": 531,
      "id": "hab-imprensa-feridos35",
-     "inicio": 573,
+     "inicio": 509,
      "livro": "HB",
      "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "35 feridos, pelo menos",
      "tipo": "excerto"
     },
     {
-     "fim": 661,
+     "fim": 597,
      "id": "hab-imprensa-feridos35",
-     "inicio": 610,
+     "inicio": 546,
      "livro": "HB",
      "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
      "texto": "José Soeiro, of the Left Bloc's national leadership",
      "tipo": "atribuicao"
     },
     {
-     "fim": 712,
-     "id": "hab-imprensa-psp-ferido",
-     "inicio": 689,
+     "fim": 715,
+     "id": "hab-imprensa-feridos39",
+     "inicio": 638,
      "livro": "HB",
-     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
+     "texto": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+     "tipo": "documento"
+    },
+    {
+     "fim": 748,
+     "id": "hab-imprensa-feridos39",
+     "inicio": 719,
+     "livro": "HB",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
+     "texto": "39 feridos, dois deles graves",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 805,
+     "id": "hab-imprensa-psp-ferido",
+     "inicio": 782,
+     "livro": "HB",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "um polícia ficou ferido",
      "tipo": "excerto"
     }
@@ -1461,11 +1470,11 @@
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
     "hab-ilc-lvho07c-a-pc-total-pt-2025",
     "hab-imprensa-feridos37",
-    "hab-imprensa-feridos39",
     "hab-imprensa-feridos35",
+    "hab-imprensa-feridos39",
     "hab-imprensa-psp-ferido"
    ],
-   "text": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); this study's numbers do not measure rent against wages: they measure how many spend more than forty percent of household income on all housing costs, and those are 27.2 % of tenants at market rents, against 6.2 % of the whole population. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «39 feridos, dois deles graves» according to the organisers and «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership (the Left Bloc, BE), with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
+   "text": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); this study's numbers do not measure rent against wages: they measure how many spend more than forty percent of household income on all housing costs, and those are 27.2 % of tenants at market rents, against 6.2 % of the whole population. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership (the Left Bloc, BE) and, by the report «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
   },
   {
    "emphasis": [
@@ -5426,7 +5435,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 646,
      "livro": "HB",
-     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
      "texto": "39 feridos, dois deles graves",
      "tipo": "excerto"
     },
@@ -5435,7 +5444,7 @@
      "id": "hab-imprensa-feridos39",
      "inicio": 691,
      "livro": "HB",
-     "sha256_linha": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
      "texto": "the organisers",
      "tipo": "atribuicao"
     },
@@ -5462,7 +5471,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 800,
      "livro": "HB",
-     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "um polícia ficou ferido",
      "tipo": "excerto"
     },
@@ -5471,7 +5480,7 @@
      "id": "hab-imprensa-psp-ferido",
      "inicio": 839,
      "livro": "HB",
-     "sha256_linha": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "the PSP",
      "tipo": "atribuicao"
     },
@@ -11578,7 +11587,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.960374+00:00",
-   "forma_da_citacao": "palavras",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-feridos39",
    "invoca": [],
    "measure": "39 feridos, dois deles graves",
@@ -12243,7 +12252,7 @@
     }
    ],
    "fetched_at": "2026-10-19T13:45:08.960374+00:00",
-   "forma_da_citacao": "palavras",
+   "forma_da_citacao": "relato",
    "id": "hab-imprensa-psp-ferido",
    "invoca": [],
    "measure": "um polícia ficou ferido",

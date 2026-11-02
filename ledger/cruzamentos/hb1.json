@@ -247,7 +247,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e17399260f7506e5f9116b0ac947f2391768500bb561511f17c7132ef48de965",
       "rh_id": "hab-be-despejos",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -302,7 +302,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e6fff68ce39d2b9ef11c60f5047e5d5872f558b908f613921c993a92470ea26c",
       "rh_id": "hab-cgtp-convocatoria",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -313,7 +313,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6353a1084fdefd806a24b7fe8e942839c1d6e75580b9cd5093274151a846a715",
       "rh_id": "hab-chega-reinvestimento",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -390,7 +390,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1454bb189c721f09647f281f72447540b42e09418d7c517e8e48d696a31079d2",
       "rh_id": "hab-governo-arrendamento",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -401,7 +401,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8692440237260316a0e28fae7ceb3892ec7f9ef18528a8c15c3aa6ce2bf0494b",
       "rh_id": "hab-governo-construir",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -412,7 +412,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "33ad7ee0ea459c80659df4e50f069437b7f965128e65967e24af078e39f6c42e",
       "rh_id": "hab-governo-feh",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -423,7 +423,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bad6292546edbb81294866e96bc527f81eaf082f227034f52c8ef1528c478845",
       "rh_id": "hab-il-proposta",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1083,7 +1083,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2533d6d1e63de3a640f4581c04d06f972665403c586c2e69965580713919a6f6",
       "rh_id": "hab-imprensa-acampados",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1094,7 +1094,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
       "rh_id": "hab-imprensa-amorim",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1105,7 +1105,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
       "rh_id": "hab-imprensa-assistidos",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1116,7 +1116,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
       "rh_id": "hab-imprensa-debate-custos",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1127,7 +1127,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3057bdcaed4e4b37b36a5f1b749dfee754564458e397cc4f5736d7e4f8449d52",
       "rh_id": "hab-imprensa-debate-protecao",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1138,7 +1138,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
       "rh_id": "hab-imprensa-feridos35",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1149,18 +1149,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
       "rh_id": "hab-imprensa-feridos37",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
     "hab-imprensa-feridos39": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "f8e422720991109d16d683a70a34fee7ca0a843c79ad98b2282e6671b2b3cc7c",
+      "exported_row_sha256": "8c382c697050cb3237440845bcc165f14d061be9975b8d3496b5a6b45a0cfe96",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "21636958f8bc6b3f694676e784f562fedf2e1c8ca4f303ad4dae6893bcbdb790",
+      "origin_row_sha256": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
       "rh_id": "hab-imprensa-feridos39",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1171,7 +1171,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bc67bdb3d5a40731a17c525c6850d60cd7ee50287762d5b83e08601db9ec6d11",
       "rh_id": "hab-imprensa-hospital",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1182,7 +1182,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
       "rh_id": "hab-imprensa-igai",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1193,7 +1193,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
       "rh_id": "hab-imprensa-mai",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1248,7 +1248,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
       "rh_id": "hab-imprensa-pm-15",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1259,18 +1259,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
       "rh_id": "hab-imprensa-pm-16",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
     "hab-imprensa-psp-ferido": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "11684088e4039964636253574e518760350a0353b9882c2b81d5cb35222cc17a",
+      "exported_row_sha256": "8f703c66a34fceeb41c807a97958154d458744eeaa309283bd004c0e3e0ab840",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "917db5060be5e9ad5e2a523d475269b11e751c25477660b6cc9d009dea8074cb",
+      "origin_row_sha256": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
       "rh_id": "hab-imprensa-psp-ferido",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1479,7 +1479,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fe8e1adf00b990b12eb83b3482455a0226f5f4af03f16cb56b22480672c7f4be",
       "rh_id": "hab-livre-reinvestimento",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1600,7 +1600,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cace621efdb916e56bd1b2130010b1561f9a6ff86da6add06cb1fd60ffc1a9af",
       "rh_id": "hab-pan-caucoes",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1611,7 +1611,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "062d06fd18e056295d3c25d45adc89333221f818975b029bd383a9a47fbe3c11",
       "rh_id": "hab-pan-controlo",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1622,7 +1622,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e012e1cecfff519c6a1b1f08b56d57daa1662fb4fceedac1ca3a2c529816f073",
       "rh_id": "hab-pan-tetos",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1633,7 +1633,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da18615e30b27d371916bee0a160d9f59344a96c3dd69ae1653cfc21b6becd25",
       "rh_id": "hab-pcp-rendas",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1798,7 +1798,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4967f25ffb905de8a8e6f58e288a946029c72202abbd1fe68913435dc33fc248",
       "rh_id": "hab-ps-mais-valias",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1809,7 +1809,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "12e30a15fc63da43414abd0a6af9ec86b39f9bdd7c799cb8af36faa3158b403f",
       "rh_id": "hab-ps-rendas",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
@@ -1820,7 +1820,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "576289d8c62fd2473dee6a1511ae637022594fa2138807d1b0f3b00b6e40f9ba",
       "rh_id": "hab-ps-vazias",
-      "rh_ledger_sha256": "d1891bd9a4910d47d929be17e46739fc7dd6433e60a2058d35300f4fb6d89d32",
+      "rh_ledger_sha256": "95508e6d37b4546033d629a2793ba59cbb8ef6e3b1af9154a1c69a6199a25577",
       "rh_study": "23 Habitacao",
       "verifications_at_export": 0
     },
