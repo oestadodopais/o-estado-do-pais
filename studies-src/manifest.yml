@@ -58,12 +58,17 @@
 #        scripts/extract-from-transcript.mjs. O portão nomeia estas linhas em
 #        voz alta a cada construção.
 
+historia_edicoes_base: '2026-11-02'
 edicoes:
   # Republicado a 2026-08-20 do motor, e deixou de ser artefacto: a cópia que
   # este sítio servia era a do artefacto de 12.08, com os excertos que o
   # extractor de largura fixa cortava a meio. Ver DECISIONS §1.49.
   - slug: evora-quinze-anos-cinco-mandatos
     lang: pt
+    edicoes:
+      - data: '2026-08-20'
+        sha256: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
+        file: evora-quinze-anos-cinco-mandatos/pt.html
     title: "Évora — Quinze Anos, Cinco Mandatos"
     origin: researchhub
     origin_ref: "content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
@@ -79,6 +84,10 @@ edicoes:
   # amarrar o registo de conteúdo aos bytes alojados.
   - slug: evora-economia-investidores-portas-abertas-2026
     lang: pt
+    edicoes:
+      - data: '2026-08-12'
+        sha256: 10b0adc0633cfda598a7261519ef5d12bf712beeee3cccb5da8d784cb5ceebc7
+        file: evora-economia-investidores-portas-abertas-2026/pt.html
     title: "Évora — Economia, Investidores, Portas Abertas 2026"
     origin: researchhub
     origin_ref: "content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5"
@@ -92,6 +101,10 @@ edicoes:
   # razão da linha do 08. Ver DECISIONS §1.49.
   - slug: evora-orcamentado-pago-devido-2025
     lang: pt
+    edicoes:
+      - data: '2026-08-20'
+        sha256: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
+        file: evora-orcamentado-pago-devido-2025/pt.html
     title: "Évora — Orçamentado, Pago, Devido 2025"
     origin: researchhub
     origin_ref: "content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
@@ -103,6 +116,10 @@ edicoes:
     sha256_normalized: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
   - slug: evora-orcamentado-pago-devido-2025
     lang: en
+    edicoes:
+      - data: '2026-08-20'
+        sha256: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
+        file: evora-orcamentado-pago-devido-2025/en.html
     title: "Évora — Budgeted, Paid, Owed 2025"
     origin: researchhub
     origin_ref: "content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
@@ -114,6 +131,10 @@ edicoes:
     sha256_normalized: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
   - slug: onde-esta-a-agua
     lang: pt
+    edicoes:
+      - data: '2026-08-12'
+        sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
+        file: onde-esta-a-agua/pt.html
     title: "Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia"
     artifact_url: https://claude.ai/code/artifact/8cd298f4-908e-4e84-8849-2ea03a3778d0
     raw_file: _raw/onde-esta-a-agua.pt.html
@@ -125,6 +146,10 @@ edicoes:
     sha256_normalized: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
   - slug: onde-esta-a-agua
     lang: en
+    edicoes:
+      - data: '2026-08-12'
+        sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
+        file: onde-esta-a-agua/en.html
     title: "Onde está a água? — Portugal's water, where it comes from, and what autonomy would take"
     artifact_url: https://claude.ai/code/artifact/59c36e54-f400-4bed-b532-3b390695cd71
     raw_file: _raw/onde-esta-a-agua.en.html
@@ -136,6 +161,10 @@ edicoes:
     sha256_normalized: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
   - slug: agua-nao-faturada
     lang: pt
+    edicoes:
+      - data: '2026-08-12'
+        sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
+        file: agua-nao-faturada/pt.html
     title: "Água Não Faturada — a água que Portugal perde e a que nunca mediu"
     artifact_url: https://claude.ai/code/artifact/5cc977d1-a577-488e-8867-c027c3d7fa09
     raw_file: _raw/agua-nao-faturada.pt.html
@@ -147,6 +176,10 @@ edicoes:
     sha256_normalized: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
   - slug: agua-nao-faturada
     lang: en
+    edicoes:
+      - data: '2026-08-12'
+        sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
+        file: agua-nao-faturada/en.html
     title: "Água Não Faturada — Portugal's water, what leaks and what was never measured"
     artifact_url: https://claude.ai/code/artifact/f19de77e-ce10-4cca-b040-07e345258227
     raw_file: _raw/agua-nao-faturada.en.html
@@ -158,6 +191,10 @@ edicoes:
     sha256_normalized: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
   - slug: avaliacao-economica-regional-de-portugal-2026
     lang: pt
+    edicoes:
+      - data: '2026-08-12'
+        sha256: fbb9d960ed183c77b7f45d90d449fcaa115f19d37a7b4cc0606880f18d6f7e7a
+        file: avaliacao-economica-regional-de-portugal-2026/pt.html
     title: "Avaliação Económica Regional de Portugal 2026"
     artifact_url: https://claude.ai/code/artifact/ec1cdb39-5e38-4f98-8387-d7965f9bfc81
     raw_file: _raw/avaliacao-economica-regional-de-portugal-2026.pt.html
@@ -169,6 +206,10 @@ edicoes:
     sha256_normalized: fbb9d960ed183c77b7f45d90d449fcaa115f19d37a7b4cc0606880f18d6f7e7a
   - slug: which-door-is-yours
     lang: en
+    edicoes:
+      - data: '2026-08-12'
+        sha256: e84c4047bca3f6782566052dbd42bc98e720d2ab615b96bd5e7063b1cc51ccb9
+        file: which-door-is-yours/en.html
     title: "Which Door Is Yours — public funding in Portugal, August 2026"
     artifact_url: https://claude.ai/code/artifact/4ec7056e-bca1-4219-9e1f-03e4f85af81e
     raw_file: _raw/which-door-is-yours.en.html
@@ -187,6 +228,10 @@ edicoes:
   # commit cec84d3c.
   - slug: alentejo-algarve
     lang: en
+    edicoes:
+      - data: '2026-08-12'
+        sha256: 836d148abee1612413fc2bd7f5728b5777e8eb563e4258a304c1493d92cbb2e0
+        file: alentejo-algarve/en.html
     title: "Alentejo & Algarve — Economy, Society, Strategy"
     artifact_url: https://claude.ai/code/artifact/bc6cb6de-4fa7-4b1f-a67c-733e02f8966a
     raw_file: _raw/alentejo-algarve.en.html
@@ -198,6 +243,10 @@ edicoes:
     sha256_normalized: 836d148abee1612413fc2bd7f5728b5777e8eb563e4258a304c1493d92cbb2e0
   - slug: evolucao-de-portugal-desde-1981
     lang: pt
+    edicoes:
+      - data: '2026-08-12'
+        sha256: 65e8f398951b27277d90c495b46a99c3097b539e71d2ad89d61c67f6b65de801
+        file: evolucao-de-portugal-desde-1981/pt.html
     title: "Evolução de Portugal desde 1981"
     artifact_url: https://claude.ai/code/artifact/193481f2-6224-468a-b496-b32c1ca970d8
     raw_file: _raw/evolucao-de-portugal-desde-1981.pt.html
@@ -214,6 +263,10 @@ edicoes:
   # resumos são iguais porque os bytes são os mesmos.
   - slug: evora-os-pelouros-quem-os-teve-o-que-fizeram
     lang: pt
+    edicoes:
+      - data: '2026-08-12'
+        sha256: 5b7706fd9f2a0cb05000472c554fc323e6222b9eb591c81918bc4ed91c935725
+        file: evora-os-pelouros-quem-os-teve-o-que-fizeram/pt.html
     title: "Évora — Os Pelouros, Quem Os Teve, O Que Fizeram"
     origin: researchhub
     origin_ref: "content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022"
@@ -229,6 +282,10 @@ edicoes:
   # são iguais porque os bytes são os mesmos.
   - slug: evora-prometido-pago-auditado-2026
     lang: pt
+    edicoes:
+      - data: '2026-08-20'
+        sha256: ca5841258e2e9d630f0f2ffb1e737f2a611f38db540947675d2531bdc937f5cd
+        file: evora-prometido-pago-auditado-2026/pt.html
     title: "Évora — Prometido, Pago, Auditado 2026"
     origin: researchhub
     origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84"
@@ -240,6 +297,10 @@ edicoes:
     sha256_normalized: ca5841258e2e9d630f0f2ffb1e737f2a611f38db540947675d2531bdc937f5cd
   - slug: evora-prometido-pago-auditado-2026
     lang: en
+    edicoes:
+      - data: '2026-08-20'
+        sha256: 6315e7b2e3b9da32cfcdc69b92ab7d1877fd63b1d800483190ba1da0c250dfc8
+        file: evora-prometido-pago-auditado-2026/en.html
     title: "Évora — Promised, Paid, Audited 2026"
     origin: researchhub
     origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84"
@@ -251,6 +312,10 @@ edicoes:
     sha256_normalized: 6315e7b2e3b9da32cfcdc69b92ab7d1877fd63b1d800483190ba1da0c250dfc8
   - slug: penalizacoes-por-reforma-antecipada-2026
     lang: pt
+    edicoes:
+      - data: '2026-09-23'
+        sha256: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
+        file: penalizacoes-por-reforma-antecipada-2026/pt.html
     title: "Penalizações por Reforma Antecipada em Portugal"
     origin: researchhub
     origin_ref: "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2"
@@ -288,6 +353,10 @@ edicoes:
   # os dois `.record.json` do motor têm o mesmo resumo de antes.
   - slug: evora-2027-prometido-painel-dinheiro
     lang: pt
+    edicoes:
+      - data: '2026-09-16'
+        sha256: 5e2f9a1cdd9bdddc49b1230aad858d0a00bb4df218cc1bb2d0cbba11d89f563d
+        file: evora-2027-prometido-painel-dinheiro/pt.html
     title: "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas"
     origin: researchhub
     origin_ref: "content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b"
@@ -299,6 +368,10 @@ edicoes:
     sha256_normalized: 5e2f9a1cdd9bdddc49b1230aad858d0a00bb4df218cc1bb2d0cbba11d89f563d
   - slug: evora-2027-prometido-painel-dinheiro
     lang: en
+    edicoes:
+      - data: '2026-09-16'
+        sha256: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
+        file: evora-2027-prometido-painel-dinheiro/en.html
     title: "Évora 2027: what was promised, what the panel wrote, and the money line by line"
     origin: researchhub
     origin_ref: "content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b"
@@ -310,6 +383,13 @@ edicoes:
     sha256_normalized: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
   - slug: evora-contas-da-camara-2010-2025
     lang: "pt"
+    edicoes:
+      - data: '2026-10-01'
+        sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839
+        file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html
+      - data: '2026-10-30'
+        sha256: 2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247
+        file: evora-contas-da-camara-2010-2025/pt.html
     primeira_edicao:
       file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html
       sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839
@@ -326,6 +406,13 @@ edicoes:
     sha256_normalized: "2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247"
   - slug: evora-contas-da-camara-2010-2025
     lang: "en"
+    edicoes:
+      - data: '2026-10-01'
+        sha256: edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87
+        file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-01.html
+      - data: '2026-10-30'
+        sha256: c19dcffa6012c2ea03a9eecad9b4c3a0e8de233b3bcf41bd75add6622ab6a1e8
+        file: evora-contas-da-camara-2010-2025/en.html
     primeira_edicao:
       file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-01.html
       sha256: edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87
@@ -342,6 +429,10 @@ edicoes:
     sha256_normalized: "c19dcffa6012c2ea03a9eecad9b4c3a0e8de233b3bcf41bd75add6622ab6a1e8"
   - slug: evora-quem-governou-a-camara-2009-2025
     lang: pt
+    edicoes:
+      - data: '2026-10-01'
+        sha256: f65b11cc5c0501d31c1ada5a884cc6e001ba1e2d521558dc88893e67b8ba0d1b
+        file: evora-quem-governou-a-camara-2009-2025/pt.html
     title: "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões"
     origin: researchhub
     origin_ref: "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087"
@@ -353,6 +444,10 @@ edicoes:
     sha256_normalized: f65b11cc5c0501d31c1ada5a884cc6e001ba1e2d521558dc88893e67b8ba0d1b
   - slug: evora-economia-e-dinheiro-publico-de-fora-da-camara
     lang: pt
+    edicoes:
+      - data: '2026-10-01'
+        sha256: 0d905c1f545e05f85a9d0128666781d05fec684d653c1ca3d0d584a71457384d
+        file: evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html
     title: "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara"
     origin: researchhub
     origin_ref: "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087"
@@ -364,6 +459,10 @@ edicoes:
     sha256_normalized: 0d905c1f545e05f85a9d0128666781d05fec684d653c1ca3d0d584a71457384d
   - slug: evora-economia-e-dinheiro-publico-de-fora-da-camara
     lang: en
+    edicoes:
+      - data: '2026-10-01'
+        sha256: 29d030c203705f9559cb2aa6af9399086f5c379f23d6189fe2bfe6facac0dd5d
+        file: evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html
     title: "The economy of Évora and the public money that reaches the municipality outside the council"
     origin: researchhub
     origin_ref: "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087"
@@ -375,6 +474,10 @@ edicoes:
     sha256_normalized: 29d030c203705f9559cb2aa6af9399086f5c379f23d6189fe2bfe6facac0dd5d
   - slug: evora-2027-capital-europeia-da-cultura
     lang: pt
+    edicoes:
+      - data: '2026-10-01'
+        sha256: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
+        file: evora-2027-capital-europeia-da-cultura/pt.html
     title: "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos"
     origin: researchhub
     origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4"
@@ -386,6 +489,10 @@ edicoes:
     sha256_normalized: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
   - slug: evora-2027-capital-europeia-da-cultura
     lang: en
+    edicoes:
+      - data: '2026-10-01'
+        sha256: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
+        file: evora-2027-capital-europeia-da-cultura/en.html
     title: "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts"
     origin: researchhub
     origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4"
@@ -397,6 +504,13 @@ edicoes:
     sha256_normalized: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "pt"
+    edicoes:
+      - data: '2026-10-21'
+        sha256: 97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a
+        file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html
+      - data: '2026-11-02'
+        sha256: 42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94
+        file: orcamento-2027-o-que-muda-e-para-quem/pt.html
     primeira_edicao:
       file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html
       sha256: 97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a
@@ -413,6 +527,13 @@ edicoes:
     sha256_normalized: "42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
+    edicoes:
+      - data: '2026-10-21'
+        sha256: eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979
+        file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html
+      - data: '2026-11-02'
+        sha256: 0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a
+        file: orcamento-2027-o-que-muda-e-para-quem/en.html
     primeira_edicao:
       file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html
       sha256: eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979
@@ -429,6 +550,10 @@ edicoes:
     sha256_normalized: "0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a"
   - slug: a-casa-em-portugal-e-na-europa
     lang: "pt"
+    edicoes:
+      - data: '2026-10-29'
+        sha256: 1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9
+        file: a-casa-em-portugal-e-na-europa/pt.html
     title: "A casa em Portugal e na Europa"
     origin: "researchhub"
     origin_ref: "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ 571aecafb6cda8244d721c90aa3b6b8ee5a3fbca"
@@ -440,6 +565,10 @@ edicoes:
     sha256_normalized: "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9"
   - slug: a-casa-em-portugal-e-na-europa
     lang: "en"
+    edicoes:
+      - data: '2026-10-29'
+        sha256: b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74
+        file: a-casa-em-portugal-e-na-europa/en.html
     title: "Housing in Portugal and in Europe"
     origin: "researchhub"
     origin_ref: "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 571aecafb6cda8244d721c90aa3b6b8ee5a3fbca"

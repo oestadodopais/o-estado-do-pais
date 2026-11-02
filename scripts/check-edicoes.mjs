@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {conferirTestemunhas} from './historia-edicoes-conferir.mjs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { load } from 'js-yaml';
@@ -14,11 +15,9 @@ if (!process.argv.includes('--fontes')) {
   ler(dist);
 }
 const erros = conferirEdicoes({works:WORKS,manifesto,correcoes:CORRECOES_TEXTO,raiz:'studies-src',paginas:process.argv.includes('--fontes')?null:paginas});
-for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao)) {
-  const p=e.primeira_edicao;
-  try {const original=execFileSync('git',['show',`${p.commit}:${'studies-src/'+e.raw_file}`]); if(sha256(original)!==p.sha256)erros.push(`ED1 história: ${e.slug}/${e.lang}`);}
-  catch {erros.push(`ED1 história indisponível: ${e.slug}/${e.lang}`);}
-}
+const testemunhas=conferirTestemunhas(manifesto,(commit,file)=>execFileSync('git',['show',`${commit}:${file}`],{stdio:['ignore','pipe','ignore']}));
+erros.push(...testemunhas.erros);
+for(const aviso of testemunhas.avisos)console.log(aviso);
 for(const lang of ['pt','en']) {
   const html=paginas.get(lang==='pt'?'/correcoes':'/en/corrections');
   if(!html && !process.argv.includes('--fontes')) erros.push(`ED1 registo ausente: ${lang}`);

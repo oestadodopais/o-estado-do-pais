@@ -29,6 +29,7 @@ for(const [nome,muda,erro] of [
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ed1-planta-'));
  try {
   fs.cpSync('studies-src/_edicoes',path.join(dir,'_edicoes'),{recursive:true});
+  for(const e of manifesto.edicoes){const file=e.edicoes.at(-1).file;fs.mkdirSync(path.dirname(path.join(dir,file)),{recursive:true});fs.copyFileSync(path.join('studies-src',file),path.join(dir,file));}
   const c={works:structuredClone(WORKS),manifesto:structuredClone(manifesto),correcoes:structuredClone(CORRECOES_TEXTO),raiz:dir,paginas:new Map(paginas)};
   muda(c);const erros=conferirEdicoes(c);
   if(erro)assert(erros.some(e=>e.startsWith(erro)),`${nome}: ${erros.join('; ')}`);else assert.deepEqual(erros,[]);

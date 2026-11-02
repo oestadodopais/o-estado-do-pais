@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {conferirHistoria} from './historia-edicoes-conferir.mjs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { parse } from 'node-html-parser';
@@ -15,24 +16,27 @@ export const EXCECOES_EDICOES = [
 const sha = b => createHash('sha256').update(b).digest('hex');
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 export const rotaAtual = (slug, lang) => `${lang === 'pt' ? '/estudos' : '/en/studies'}/${slug}/${lang === 'pt' ? 'documento' : 'document'}`;
-export const rotaPrimeira = (e) => `${rotaAtual(e.slug,e.lang)}/${e.primeira_edicao.date}`;
+export const rotaPrimeira = (e) => `${rotaAtual(e.slug,e.lang)}/${e.edicoes?.[0]?.data ?? e.primeira_edicao.date}`;
 export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = null}) {
-  const erros = [], vistas = new Set();
+  const erros = conferirHistoria({works,manifesto,correcoes,raiz}), vistas = new Set();
   for (const w of works) for (const d of w.editions) {
-    if (!d.updated) continue;
+    const declaracao=manifesto.edicoes.find(e=>e.slug===w.slug&&e.lang===d.lang);
+    if ((declaracao?.edicoes?.length??0)<2) continue;
     const chave = `${w.slug}/${d.lang}`;
     const excecao = EXCECOES_EDICOES.find(e => e.slug === w.slug && e.lang === d.lang && e.updated === d.updated);
-    if (excecao) continue;
+
     const e = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === d.lang), p = e?.primeira_edicao;
     if (!p || !p.file?.startsWith('_edicoes/') || p.file.includes('..') || p.date !== d.date || !/^[a-f0-9]{64}$/.test(p.sha256 ?? '')) {
       erros.push(`ED1 arquivo: ${chave} sem primeira edição válida`); continue;
     }
     const file = path.join(raiz,p.file);
     if (!fs.existsSync(file) || sha(fs.readFileSync(file)) !== p.sha256) erros.push(`ED1 sha256: ${chave}`);
-    if (!correcoes.some(c => c.kind === 'texto' && c.slug === w.slug && c.data === d.updated)) erros.push(`ED1 entrada: ${chave} sem correção na data ${d.updated}`);
+    if (!correcoes.some(c => c.kind === 'texto' && c.slug === w.slug && c.data === declaracao.edicoes.at(-1).data)) erros.push(`ED1 entrada: ${chave} sem correção na data ${d.updated}`);
     if (paginas) {
-      const html = paginas.get(rotaPrimeira(e));
-      if (!html || !fs.existsSync(file) || provaDosBytesDaEdicao(fs.readFileSync(file,'utf8'),html,d.lang)) erros.push(`ED1 servido: ${chave} diverge da primeira edição`);
+      for(const v of e.edicoes.slice(0,-1)){
+        const html=paginas.get(`${rotaAtual(e.slug,e.lang)}/${v.data}`),arquivo=path.join(raiz,v.file);
+        if(!html||!fs.existsSync(arquivo)||provaDosBytesDaEdicao(fs.readFileSync(arquivo,'utf8'),html,d.lang))erros.push(`ED1 servido: ${chave}/${v.data} diverge da edição guardada`);
+      }
       const pagina = paginas.get(`${d.lang === 'pt' ? '/estudos' : '/en/studies'}/${w.slug}`);
       const faixa = pagina && parse(pagina).querySelector(`[data-estudo-edicao="${chave}"]`);
       const links = faixa?.querySelectorAll('a[href]') ?? [];
@@ -42,18 +46,16 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
   }
   for (const c of correcoes) {
     const chave = `${c.slug}|${c.data}`, w = works.find(w => w.slug === c.slug);
-    if (c.kind !== 'texto' || !w || !w.editions.some(d => d.updated === c.data) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
+    if (c.kind !== 'texto' || !w || !manifesto.edicoes.some(e=>e.slug===c.slug&&e.edicoes?.slice(1).some(v=>v.data===c.data)) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
     vistas.add(chave);
   }
   if (paginas) for (const [rota,html] of paginas) {
     const root = parse(html);
     for (const a of root.querySelectorAll('a[href]')) {
       if (!['Edição tal como foi publicada','Edition as published','Primeira edição, tal como foi publicada','First edition, as published'].includes(normal(a.textContent))) continue;
-      const par = a.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao');
-      const e = manifesto.edicoes.find(e => `${e.slug}/${e.lang}` === par);
-      const w = works.find(w => w.slug === e?.slug), d = w?.editions.find(d => d.lang === e.lang);
-      const destino = a.getAttribute('href')?.replace(/\/$/,'');
-      if (!e || destino !== (d?.updated ? (e.primeira_edicao ? rotaPrimeira(e) : null) : rotaAtual(e.slug,e.lang))) erros.push(`ED1 rótulo: ${rota} liga a ${destino}`);
+      const destino=a.getAttribute('href')?.replace(/\/$/,'');
+      const e=manifesto.edicoes.find(e=>destino===(e.edicoes?.length>1?rotaPrimeira(e):rotaAtual(e.slug,e.lang)));
+      if(!e)erros.push(`ED1 rótulo: ${rota} liga a ${destino}`);
     }
   }
   return erros;
