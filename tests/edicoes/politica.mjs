@@ -1,0 +1,3 @@
+import assert from 'node:assert/strict';import {t} from '../../src/i18n/strings.mjs';
+for(const lang of ['pt','en']){const r=t(lang).correcoes;assert(r,'política ausente');assert.equal(r.naturezas.length,4);assert(r.politicaV.includes(lang==='pt'?'São quatro naturezas':'There are four kinds'));assert(r.politicaV.includes(lang==='pt'?'Nada é removido:':'Nothing is removed:'));assert.equal(r.naturezas.at(-1).k,lang==='pt'?'Estudo corrigido.':'Study corrected.');}
+console.log('ED1-E política: quatro naturezas nas duas línguas; conservação da história declarada.');

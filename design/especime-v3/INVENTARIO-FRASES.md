@@ -5381,3 +5381,17 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | conteudo | O Orçamento de 2027: o que muda e para quem : Cinco citações apresentavam o primeiro-ministro e o PS a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a UTAO com os dados da DGAEP. Primeira edição · Edição atual | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | conteudo | Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP&#39;s data. | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | conteudo | The 2027 Budget: what changes, and for whom : Five quotations presented the Prime Minister and the PS as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the UTAO as using the DGAEP&#39;s data. First edition · Current edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+
+
+## ED1-E: política das quatro naturezas
+
+| Tipo | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Uma entrada do registo guarda, para um número, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas edições. | ed1 | viva | ED1-E §3 e §4: política declarada. |
+| conteudo | São quatro naturezas, e não se misturam: | ed1 | viva | ED1-E §3 e §4: política declarada. |
+| conteudo | Estudo corrigido. O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque. | ed1 | viva | ED1-E §3 e §4: política declarada. |
+| conteudo | An entry in the register holds, for a figure, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and the two editions. | ed1 | viva | ED1-E §3 e §4: política declarada. |
+| conteudo | There are four kinds, and they are not mixed: | ed1 | viva | ED1-E §3 e §4: política declarada. |
+| conteudo | Study corrected. The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away. | ed1 | viva | ED1-E §3 e §4: política declarada. |
+| conteudo | Uma entrada do registo guarda, para um número, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas edições. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São quatro naturezas, e não se misturam: | ed1 | viva | ED1-E: parágrafo rendido da política. |
+| conteudo | An entry in the register holds, for a figure, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and the two editions. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are four kinds, and they are not mixed: | ed1 | viva | ED1-E: parágrafo rendido da política. |
