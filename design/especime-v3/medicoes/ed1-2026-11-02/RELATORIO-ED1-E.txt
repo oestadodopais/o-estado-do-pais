@@ -1,0 +1,57 @@
+ED1, Adenda E, 02.11.2026
+
+PARAGEM EXIGIDA PELO §6
+O build completo chegou à voz e terminou com código 1. A política do §4.4 contém «as duas edições» e «the two editions». A voz procura as frases retiradas «Edições» e «Editions» também dentro de frases, sem distinguir maiúsculas. A única exceção é a definição integral da contagem de edições. A nova política não é essa definição. A proibição está em design/especime-v3/INVENTARIO-FRASES.md, linhas 2968 e 2969, e a procura e a exceção em scripts/medir-defeitos.mjs, RETIRADAS_DENTRO_DE_FRASE e ondeVolta. Não se alterou a lista nem se reformularam as frases do mandato. É necessária outra frase para a política antes de prosseguir.
+
+ESTADO E ÂMBITO
+As cinco secções têm commits separados. O trabalho não está pronto para aterragem: o build ficou vermelho na voz. O HTML construído corresponde à cabeça de código indicada abaixo. O relatório é acrescentado depois da paragem; não muda o código construído. Não houve verify inteiro, corrida dos três portões, capturas ou push.
+
+§1 HISTÓRIA DAS EDIÇÕES
+As 29 edições alojadas têm listas ordenadas de versões. Há 25 listas com a versão atual e quatro com primeira edição guardada e versão atual. historia_edicoes_base declara 02.11.2026 para o início do registo das listas com uma versão. Os bytes atuais foram conferidos contra sha256_normalized antes de escrever as listas; as datas vêm das declarações de publicação e atualização existentes.
+A régua confere os ficheiros atuais e históricos, a ordem e validade das datas, os resumos, a igualdade de updated quando declarado, a correspondência de cada versão posterior à primeira com uma entrada texto e a correspondência inversa. A faixa deriva a atualização da lista. As entradas antigas não dependem de serem ainda o último updated.
+A testemunha do Git é adicional: numa cópia completa, uma referência indisponível ou divergente é recusada. Numa cópia rasa ou sem Git, a indisponibilidade fica explícita no passo; as listas e os bytes continuam obrigatórios. O varrimento dos rótulos inclui todos os ficheiros HTML, também fora dos estudos.
+Plantas: texto atual alterado sem versão; versão sem entrada; segunda atualização de Évora que mantém 30.10; arquivo com um byte alterado; entrada sem data na lista; primeira edição ausente e inválida; testemunha divergente e indisponível; ausência do Git explicitamente declarada; rótulo indevido fora dos estudos; controlo intacto. O comando tests/edicoes/historia.mjs passou com 12 controlos e plantas. As 31 provas e plantas anteriores das edições também passaram.
+
+§2 FAIXAS E PORTAS
+As faixas do estudo têm o separador « · » entre a primeira edição e a atual. Os documentos de Évora e do Orçamento dizem no topo se são a primeira edição ou a atual, com as datas e as portas do mandato. A forma intermédia está implementada e tem um controlo específico. As rotas históricas incluem todas as versões anteriores à última. Cada entrada do registo calcula as portas das versões imediatamente anterior e posterior à sua data, e usa uma data no rótulo quando a versão já é intermédia.
+A conferência independente compara frase, língua, datas, posição e porta. Passaram os controlos das primeiras edições, das atuais e da intermédia, e 32 plantas de faixa retirada, data trocada, destino trocado e frase alterada. As datas da faixa são lidas da lista também nas réguas de datas, publicação e voz.
+
+§3 POLÍTICA
+A política foi alterada para quatro naturezas, com a descrição de Estudo corrigido. A frase Nada é removido e a correspondente inglesa foram conservadas. A procura encontrou as frases da política no catálogo src/i18n/strings.mjs, usado pelas páginas, e uma descrição antiga num comentário de PortaDeCorreccoes.astro, que também foi atualizada. O controlo das quatro naturezas nas duas línguas passou. A política colide com as frases retiradas descritas no início deste relatório.
+
+§4 FRASES
+As quatro frases das entradas foram comparadas exatamente com o texto do mandato. As referências a Partido Socialista e Unidade Técnica de Apoio Orçamental recebem lang="pt-PT" na edição inglesa. A explicação da conta de correcoes-publicadas foi substituída nas duas línguas, assim como a definição que a imprime e o respetivo apoio literal da auditoria. O valor continua em 14. A prova da definição e do apoio literal passou, incluindo as três plantas já existentes. Nenhum marcador lexical inicial nem palavra do vocabulário da L3 recusou as frases; a colisão posterior é com as declarações de frases retiradas do inventário.
+
+§5 NÚMEROS, TEXTO LIDO E HABITAÇÃO
+textoDaMudancaGate foi separado num módulo e é a mesma recomposição usada pelas mudanças do projeto e pelas entradas. Nas entradas recusa algarismos em pedaços de texto livre. Valores referenciam linhas do livro; anos de referência usam o campo reference_date, por DataDaLinha, com selo e comparação independente. Na frase de Évora, 2025 vem de evora-receita-cobrada-2025 e 2024 de evora-contas-2024-votos-contra. Isto prova a origem dos anos; as afirmações e as contagens escritas por extenso são as frases autorizadas no mandato, cuja medição é declarada no §0.
+As 14 plantas recusaram números livres, datas com origem inexistente, datas alteradas e selos retirados. A retirada de um selo inicialmente passou porque havia outro selo da mesma linha; a régua foi corrigida para exigir a quantidade de selos correspondente às ocorrências, e a planta passou a ser recusada.
+A planta do texto lido agora conserva origin e sha256_normalized. O controlo sem file entra na prova; o mesmo objeto com file histórico é excluído. Assim a planta chega à cláusula que pretende provar. Passou provar:eyetext, com 18 edições e 623 conferências.
+
+PROVA REPRODUZÍVEL DA HABITAÇÃO
+Comando: node design/especime-v3/medicoes/ed1-2026-11-02/provar-habitacao-main.mjs
+O comando compara a projeção dos blocos e unidades do texto lido de main com a árvore atual, nas duas línguas, compara também os documentos alojados e exige a igualdade entre registo e documento. A projeção contém texto e estrutura, sem os selos. Uma cópia com um carácter alterado é detetada em cada língua.
+main conferido: 46ee13d182e8081f1960cc18c7f15464be224abf
+pt: 52 blocos, 52 unidades, 0 mudanças; sha256 da projeção 909e369725fdae28bd7ce4e3296e2f2ee6cba00af902ef9ac8eb98e153c75ac9.
+en: 52 blocos, 52 unidades, 0 mudanças; sha256 da projeção bda472e5055e6c1c054bb0fa3820d199b94064df232170b22dfcb117434f5c94.
+Resultado guardado: habitacao-main.json. O comando está guardado na mesma pasta deste relatório.
+
+CONFERÊNCIAS E CÓDIGOS
+Cabeça de código construída: 7701af46e2059a3d72ef57925e76ec26a3919052
+build/build.codigo = 1; lugar.codigo = 0 (ambos lidos em <temporario>/ed1e).
+Passaram as conferências dirigidas da história, documentos, faixas, política, números, contagem, livro-razão, typecheck e texto lido. No build passaram o portão HTML, check:edicoes e as suas plantas, selos, datas, cadeia, dados, mapa, regiões, áreas, formas, lugares e país antes da recusa da voz. As verificações posteriores à voz na cadeia do build não chegaram a correr. check:lugar foi corrido separadamente sobre o HTML reconstruído: passou, com L3 a zero, 38 edições atuais, quatro primeiras edições e quatro documentos históricos. O teto L1 permanece em 3462.
+Houve erros de preparação e conferências dirigidas antes das correções: a inserção das listas encontrou diferenças de aspas e ordem dos campos do manifesto; a auditoria da definição ainda citava a derivação antiga; faltavam tipos nos parâmetros do novo módulo; a primeira planta de retirada de selo revelou a falha corrigida acima. Não se apresentam essas tentativas como resultados verdes.
+
+O QUE FICOU POR RESOLVER
+Além da política, o novo separador faz a extração da faixa voltar a conter «publicado a ·» e «published on ·» fora da forma integral admitida. Há também unidades do inventário que não correspondem ao que a voz lê: frases com selos, espaços introduzidos pela marca do nome português, a política antiga ainda declarada viva, fragmentos da política nova declarados isoladamente e as faixas dos documentos declaradas vivas mas fora da recolha atual. Não se mudou a régua nem o inventário para encobrir estas diferenças. A paragem do §6 impede continuar a reparação nesta passagem.
+A saída da voz contém 4 declarações retiradas que voltaram, 20 linhas vivas não encontradas e 4 blocos por classificar.
+
+COMMITS POR SECÇÃO
+7701af46e ED1-E §5: conferir números, provar o âmbito do texto lido e medir a habitação
+7cb581c20 ED1-E §4: publicar as frases completas e abrir os nomes nas duas línguas
+53f36a5e4 ED1-E §3: declarar as quatro naturezas na política das correções
+957b4106f ED1-E §2: identificar cada versão e ligar as correções às duas edições
+7a28497b5 ED1-E §1: guardar a história ordenada e recusar alterações sem versão
+
+CUSTO OBSERVADO ATÉ À ESCRITA
+49 chamadas de ferramentas; 27 invocações dirigidas por curto.sh, incluindo medições e plantas, mais um build inteiro.
+tokens used: 35452264 (contador acumulado da sessão observado antes do fecho).
