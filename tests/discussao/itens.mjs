@@ -88,7 +88,10 @@ export function conferirUnidadesNosDados(itens=ITENS){
   const tokens=b.paragrafo?.[lang]??[];
   for(const [i,t] of tokens.entries())if(t?.claim&&!t.sufixo&&typeof tokens[i+1]==='string'){
    const seguinte=tokens[i+1].trimStart();
-   if(unidadeDaMedida(seguinte))
+   const medida=unidadeDaMedida(seguinte);
+   // F/H: o contrato dos dados exige as unidades no token. Os complementos
+   // e as datas são compostos pelo renderizador e conferidos no HTML.
+   if(medida && UNIDADES_DO_MANDATO.some(u=>medida.unidade===u||medida.unidade.startsWith(u+' ')))
     erros.push(`V2E unidade fora do token: ${lang} ${t.claim}`);
   }
  }
