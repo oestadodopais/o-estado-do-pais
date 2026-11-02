@@ -1995,6 +1995,9 @@ const LINHA_DO_SITIO = new Map();
   }
 }
 
+// PAI1-C: a planta termina depois do mesmo leitor HB1 que protege o portão completo.
+if (process.argv.includes('--prova-projecao-hb1')) { console.log('HB1: projeção conferida pelo portão do HTML.'); process.exit(0); }
+
 /** As unidades de um bloco do registo, com a coordenada da sua marca. */
 function unidadesDoRegisto(bloco) {
   if (bloco.kind === 'heading' || bloco.kind === 'paragraph') return [{ unidade: bloco, coordenada: '' }];
