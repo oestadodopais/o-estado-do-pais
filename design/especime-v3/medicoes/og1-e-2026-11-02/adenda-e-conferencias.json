@@ -1,0 +1,98 @@
+{
+  "chamadas_ate_redacao": 40,
+  "comandos_de_conferencia_dirigidos": 22,
+  "compilacoes_parciais": 2,
+  "operacoes_do_inventario": 3,
+  "build": {
+    "corridas": 1,
+    "cabeca": "c2e4a92f",
+    "codigo_lido": 1,
+    "ficheiro": "<temporario>/og1ee-portoes/build.codigo"
+  },
+  "fecho_codigos_lidos": {
+    "og1ee-check-discussao.codigo": 0,
+    "og1ee-check-formato.codigo": 0,
+    "og1ee-check-rotulos.codigo": 0,
+    "og1ee-check-navegacao.codigo": 0,
+    "og1ee-sinais.codigo": 0,
+    "og1ee-check-nomes.codigo": 0,
+    "og1ee-check-mortos.codigo": 0,
+    "og1ee-check-indice-do-sitio.codigo": 0,
+    "og1ee-check-voz.codigo": 0,
+    "og1ee-check-lingua.codigo": 0
+  },
+  "execucoes": [
+    {
+      "registo": "<temporario>/og1ee-fecho.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-html.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-indice-antes.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ee-indice.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-mortos.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ee-mortos2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-pais.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ee-pre-html.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ee-pre-html2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-rotulos-antes.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-rotulos-escrever.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-rotulos-escrever2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-rotulos.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-semana.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ee-semana2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-tipos.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ee-voz.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ee-voz2.log",
+      "codigo": 1
+    }
+  ]
+}

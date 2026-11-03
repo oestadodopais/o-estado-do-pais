@@ -11,9 +11,9 @@ const lingua=k=>e.field==='source'?linguaDaFonte(e[k].valor,lang):e.field==='doc
 ---
 <p class="lugar-mudou-o-que">
   <NomeDaMedida linha={linha} lang={lang} escada="semana" />{' '}
-  <time datetime={e.data} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="date">{dataDaCasa(e.data)}</time>{' · '}
-  <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="field">{s.livro.linha.camposHistorico[e.field]}</span>{': '}
-  <s lang={lingua('antes')} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">{valor('antes')}</s>{' → '}
+  <time datetime={e.data} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="date">{dataDaCasa(e.data)}</time>{' '}
+  <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="field">{s.livro.linha.camposHistorico[e.field]}</span>{' '}
+  <s lang={lingua('antes')} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">{valor('antes')}</s>{' '}
   <span lang={lingua('depois')} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="new_value">{valor('depois')}</span>{' '}
   <code data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="id">{e.claim}</code>{' '}
   <Provenance id={e.claim} lang={lang} />
