@@ -1,0 +1,1554 @@
+{
+ "paginas": 37,
+ "familias": 78,
+ "resultados": [
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/alentejo-algarve/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+   "largura": 390,
+   "sw": 1243,
+   "causas": [
+    [
+     "td. <  [normal]",
+     93
+    ],
+    [
+     "a. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     8
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 390,
+   "sw": 1243,
+   "causas": [
+    [
+     "td. <  [normal]",
+     93
+    ],
+    [
+     "a. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     8
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+   "largura": 390,
+   "sw": 1243,
+   "causas": [
+    [
+     "td. <  [normal]",
+     93
+    ],
+    [
+     "a. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     8
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+   "largura": 390,
+   "sw": 597,
+   "causas": [
+    [
+     "td. <  [normal]",
+     64
+    ],
+    [
+     "th. <  [normal]",
+     4
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+   "largura": 390,
+   "sw": 597,
+   "causas": [
+    [
+     "td. <  [normal]",
+     64
+    ],
+    [
+     "th. <  [normal]",
+     4
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+   "largura": 390,
+   "sw": 543,
+   "causas": [
+    [
+     "td. <  [normal]",
+     74
+    ],
+    [
+     "th. <  [normal]",
+     7
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+   "largura": 390,
+   "sw": 615,
+   "causas": [
+    [
+     "span.idxmark < num [nowrap]",
+     11
+    ],
+    [
+     "span.rcpt < idxval [nowrap]",
+     11
+    ],
+    [
+     "span.idxbar < num [nowrap]",
+     8
+    ],
+    [
+     "span.rcpt < num [nowrap]",
+     7
+    ],
+    [
+     "th. <  [nowrap]",
+     4
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-prometido-pago-auditado-2026/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/onde-esta-a-agua/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/which-door-is-yours/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evolucao-de-portugal-desde-1981/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+   "largura": 390,
+   "sw": 1240,
+   "causas": [
+    [
+     "td. <  [normal]",
+     101
+    ],
+    [
+     "a. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     14
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 390,
+   "sw": 1240,
+   "causas": [
+    [
+     "td. <  [normal]",
+     101
+    ],
+    [
+     "a. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     14
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+   "largura": 390,
+   "sw": 1240,
+   "causas": [
+    [
+     "td. <  [normal]",
+     101
+    ],
+    [
+     "a. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     14
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "largura": 390,
+   "sw": 610,
+   "causas": [
+    [
+     "td. <  [normal]",
+     64
+    ],
+    [
+     "th. <  [normal]",
+     4
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+   "largura": 390,
+   "sw": 610,
+   "causas": [
+    [
+     "td. <  [normal]",
+     64
+    ],
+    [
+     "th. <  [normal]",
+     4
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+   "largura": 390,
+   "sw": 581,
+   "causas": [
+    [
+     "td. <  [normal]",
+     90
+    ],
+    [
+     "th. <  [normal]",
+     9
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+   "largura": 390,
+   "sw": 654,
+   "causas": [
+    [
+     "span.rcpt < num [nowrap]",
+     11
+    ],
+    [
+     "span.idxmark < num [nowrap]",
+     11
+    ],
+    [
+     "span.rcpt < idxval [nowrap]",
+     11
+    ],
+    [
+     "span.idxbar < num [nowrap]",
+     9
+    ],
+    [
+     "th. <  [nowrap]",
+     7
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-prometido-pago-auditado-2026/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+   "largura": 390,
+   "sw": 551,
+   "causas": [
+    [
+     "td. <  [normal]",
+     223
+    ],
+    [
+     "th. <  [normal]",
+     29
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/onde-esta-a-agua/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/",
+   "largura": 390,
+   "sw": 474,
+   "causas": [
+    [
+     "td. <  [normal]",
+     5
+    ],
+    [
+     "caption. <  [normal]",
+     1
+    ],
+    [
+     "th. <  [normal]",
+     1
+    ],
+    [
+     "td.medida < destaque [normal]",
+     1
+    ],
+    [
+     "code. <  [normal]",
+     1
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/alentejo-algarve/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+   "largura": 768,
+   "sw": 1243,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     27
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 768,
+   "sw": 1243,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     27
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+   "largura": 768,
+   "sw": 1243,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     27
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-prometido-pago-auditado-2026/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/onde-esta-a-agua/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/which-door-is-yours/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evolucao-de-portugal-desde-1981/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+   "largura": 768,
+   "sw": 1240,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     27
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 768,
+   "sw": 1240,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     27
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+   "largura": 768,
+   "sw": 1240,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     27
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-prometido-pago-auditado-2026/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/onde-esta-a-agua/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/alentejo-algarve/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+   "largura": 1024,
+   "sw": 1303,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     8
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 1024,
+   "sw": 1303,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     8
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+   "largura": 1024,
+   "sw": 1303,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     8
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-prometido-pago-auditado-2026/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/onde-esta-a-agua/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/which-door-is-yours/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evolucao-de-portugal-desde-1981/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+   "largura": 1024,
+   "sw": 1300,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     8
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 1024,
+   "sw": 1300,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     8
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+   "largura": 1024,
+   "sw": 1300,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "a. <  [normal]",
+     8
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-prometido-pago-auditado-2026/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/onde-esta-a-agua/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/alentejo-algarve/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+   "largura": 1280,
+   "sw": 1431,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ],
+    [
+     "a. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 1280,
+   "sw": 1431,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ],
+    [
+     "a. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+   "largura": 1280,
+   "sw": 1431,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ],
+    [
+     "a. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-prometido-pago-auditado-2026/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/onde-esta-a-agua/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/which-door-is-yours/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evolucao-de-portugal-desde-1981/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+   "largura": 1280,
+   "sw": 1428,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ],
+    [
+     "a. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 1280,
+   "sw": 1428,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ],
+    [
+     "a. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+   "largura": 1280,
+   "sw": 1428,
+   "causas": [
+    [
+     "td. <  [normal]",
+     53
+    ],
+    [
+     "th. <  [normal]",
+     2
+    ],
+    [
+     "a. <  [normal]",
+     2
+    ]
+   ]
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-prometido-pago-auditado-2026/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/onde-esta-a-agua/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/alentejo-algarve/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-prometido-pago-auditado-2026/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/onde-esta-a-agua/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/which-door-is-yours/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evolucao-de-portugal-desde-1981/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-prometido-pago-auditado-2026/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/onde-esta-a-agua/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  }
+ ]
+}
