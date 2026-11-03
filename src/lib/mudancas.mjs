@@ -353,9 +353,10 @@ export function mudancasDoIndice(lang) {
   /** @type {Map<string, ReturnType<typeof correcoesDasLinhas>[number]>} */
   const maisRecente = new Map();
   for (const m of mudancasDoRegisto(lang)) {
-    if (m.tipo !== 'correcao' || m.field || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
-    // O resumo do índice compara valores numéricos. As frases corrigidas
-    // conservam a entrada completa no registo e a história no recibo.
+    if (m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
+    // O índice lê as correções do registo; os campos têm apresentação própria,
+    // sem comparação numérica. As frases corrigidas conservam a entrada
+    // completa no registo e a história no recibo.
     const linha = getClaim(m.claim);
     if ((linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha) || dataDeCalendarioConferida(linha) || textoDaHabitacao(linha)) continue;
     const atual = maisRecente.get(m.claim);

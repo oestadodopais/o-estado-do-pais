@@ -474,6 +474,11 @@ export function conferirMudancasDoIndice(root, lang, linhas=loadClaims()) {
   const erros=[];
   for(const e of root.querySelectorAll('main [data-mudou-ambito="indice"] > [data-correcao-entrada]')) {
     const id=e.getAttribute('data-correcao-entrada'), l=linhas.get(id);
+    const n=Number(e.querySelector('[data-correcao-n]')?.getAttribute('data-correcao-n'));
+    if (l?.corrections?.[n]?.field) {
+      if(e.hasAttribute('data-semana-mudanca')) erros.push(`W2 · ${id}: correção de campo apresentada como mudança numérica`);
+      continue;
+    }
     const cs=(l?.corrections ?? []).map((c,n)=>({...c,n})).filter(c=>!Object.hasOwn(c,'field')&&['correcao','atualizacao'].includes(c.kind)).sort((a,b)=>b.date.localeCompare(a.date)||b.n-a.n);
     const c=cs[0];
     if(!c) {erros.push(`W2 · ${id}: o índice mostra uma mudança sem entrada no livro`);continue;}

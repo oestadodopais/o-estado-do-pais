@@ -32,7 +32,12 @@ export function contarFrasesDasMudancas(root, rota, lang = root.querySelector('h
   const candidatas = root.querySelectorAll(rota === 'leituraDaSemana'
     ? 'main [data-semana-mudancas] > [data-semana-mudanca], main [data-semana-revisoes] > [data-semana-revisao]'
     : 'main [data-mudou-ambito="indice"] > [data-correcao-entrada]');
-  const entradas = candidatas.filter(e => rota === 'leituraDaSemana' || numero(e.querySelector('[data-correcao-campo="old_value"]')?.textContent) !== numero(e.querySelector('[data-correcao-campo="new_value"]')?.textContent));
+  const entradas = candidatas.filter(e => {
+    if (rota === 'leituraDaSemana') return true;
+    const id=idDaEntrada(e), n=Number(e.querySelector('[data-correcao-n]')?.getAttribute('data-correcao-n'));
+    if (loadClaims().get(id)?.corrections?.[n]?.field) return false;
+    return numero(e.querySelector('[data-correcao-campo="old_value"]')?.textContent) !== numero(e.querySelector('[data-correcao-campo="new_value"]')?.textContent);
+  });
   const erros = [], vistos = new Set(), grupos=gruposDasEntradas(entradas,lang);
   let frases=0, ausencias=0;
   for (const grupo of grupos) {

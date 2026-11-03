@@ -28,6 +28,7 @@ import Base from '../layouts/Base.astro';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Gaveta from '../components/inicio/Gaveta.astro';
 import PortasDoIndice from '../components/indice/PortasDoIndice.astro';
+import CorrecaoDeCampo from '../components/indice/CorrecaoDeCampo.astro';
 import ResumoDaMudanca from '../components/explicacoes/ResumoDaMudanca.astro';
 import { grupoQueFecha } from '../lib/leitura-da-semana.mjs';
 import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
@@ -50,12 +51,13 @@ const indice = indiceDoSitio(lang);
 const mudancas = indice.mudou.mudancas.map(e => ({
   ...e, linha: e.claim,
   antes: {n: e.n, valor: e.antes}, depois: {n: e.n, valor: e.depois, data: e.data},
-  palavra: parsePtNumber(e.depois) > parsePtNumber(e.antes) ? 'subiu' : parsePtNumber(e.depois) < parsePtNumber(e.antes) ? 'desceu' : 'naoMudou',
+  palavra: e.field ? undefined : parsePtNumber(e.depois) > parsePtNumber(e.antes) ? 'subiu' : parsePtNumber(e.depois) < parsePtNumber(e.antes) ? 'desceu' : 'naoMudou',
 }));
-const ids = mudancas.map(e => e.claim);
+const ids = mudancas.filter(e => !e.field).map(e => e.claim);
 /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026) entram a seguir aos estudos. */
 const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'explicacoes', 'numeros', 'projeto']);
-const idsDaDiscussao = [...new Set([...ids, ...ids.map(id => nomeNaLista(id, lang).linha),
+const todasAsLinhas = mudancas.map(e => e.claim);
+const idsDaDiscussao = [...new Set([...todasAsLinhas, ...todasAsLinhas.map(id => nomeNaLista(id, lang).linha),
   ...linhasDasPortasDoIndice(seccoes.flatMap(s => indice[s].portas))])];
 ---
 
@@ -94,11 +96,11 @@ const idsDaDiscussao = [...new Set([...ids, ...ids.map(id => nomeNaLista(id, lan
       <h2 class="indice-secao-titulo" id="indice-mudou">{indice.mudou.titulo}</h2>
       <div class="indice-corpo">
         <ol class="semana-mudancas indice-mudou" data-mudou-ambito="indice" data-semana-mudancas>
-          {mudancas.map((e, i) => (
-            <li class="semana-mudanca" data-mudanca="correcao" data-correcao-entrada={e.claim} data-semana-mudanca={e.claim} data-semana-palavra={e.palavra}>
+          {mudancas.map((e) => (
+            <li class="semana-mudanca" data-mudanca="correcao" data-correcao-entrada={e.claim} data-semana-mudanca={e.field ? undefined : e.claim} data-semana-palavra={e.field ? undefined : e.palavra}>
               <span class="indice-mudou-lugar">{e.lugar.nome}</span>
-              <ResumoDaMudanca mudanca={e} lang={lang} indice />
-              {e.palavra !== 'naoMudou' && <OQueENaMudanca ids={grupoQueFecha(ids, i, lang)} lang={lang} />}
+              <>{e.field ? <CorrecaoDeCampo entrada={e} lang={lang} /> : <ResumoDaMudanca mudanca={e} lang={lang} indice />}</>
+              {!e.field && e.palavra !== 'naoMudou' && <OQueENaMudanca ids={grupoQueFecha(ids, ids.indexOf(e.claim), lang)} lang={lang} />}
             </li>
           ))}
         </ol>
