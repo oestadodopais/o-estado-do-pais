@@ -40,12 +40,19 @@ export async function medirPagina(page, origem, rota, largura, planta=false) {
     if (!longo || longo.textContent.trim().length<100) throw Error('Planta sem valor textual longo real');
     longo.style.setProperty('white-space','nowrap','important');
   });
-  return page.evaluate(({rota,largura})=>{
+  const medida = await page.evaluate(({rota,largura})=>{
     const sw=document.documentElement.scrollWidth;
     const causas=sw>largura ? [...document.querySelectorAll('body *')].filter(el=>el.children.length===0 && el.getBoundingClientRect().right>largura).slice(0,12).map(el=>({elemento:el.tagName.toLowerCase(),classe:el.getAttribute('class')??'',whiteSpace:getComputedStyle(el).whiteSpace})) : [];
     const tabelas=[...document.querySelectorAll('[data-oedp-moldura] table')].filter(el=>el.scrollWidth>el.clientWidth+1).map(el=>({largura:el.clientWidth,conteudo:el.scrollWidth,overflow:getComputedStyle(el).overflowX}));
-    return {pagina:rota,largura,sw,causas,tabelas};
+    const ocultos=[...document.querySelectorAll('.registo-mudanca .vh')];
+    const textoOculto={quantidade:ocultos.length,whiteSpace:[...new Set(ocultos.map(el=>getComputedStyle(el).whiteSpace))]};
+    return {pagina:rota,largura,sw,causas,tabelas,textoOculto};
   },{rota,largura});
+  if (['/correcoes/','/en/corrections/'].includes(rota)) {
+    assert(medida.textoOculto.quantidade>0,`${rota}: falta texto oculto no registo`);
+    assert.deepEqual(medida.textoOculto.whiteSpace,['nowrap'],`${rota}: o texto oculto perdeu o nowrap`);
+  }
+  return medida;
 }
 async function correr() {
   const inicio=performance.now(), args=process.argv.slice(2);
@@ -97,6 +104,7 @@ async function correr() {
         assert(vermelha.sw>390,`A planta nowrap não foi detetada: ${rota}`);
         const verde=await medirPagina(page,origem,rota,390);
         assert(verde.sw===390,`O controlo sem planta não ficou verde: ${rota}`);
+        console.log(JSON.stringify({pagina:rota,largura:390,documento:verde.sw,textoOculto:verde.textoOculto}));
       }
       await contexto.close();
       console.log('PLANTA: nowrap num valor longo real recusado nas duas línguas; releitura sem planta verde.');

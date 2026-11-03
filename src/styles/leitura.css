@@ -146,8 +146,7 @@
   font-weight: 400;
 }
 .registo-mudanca [data-correcao-campo='old_value'],
-.registo-mudanca [data-correcao-campo='new_value'],
-.registo-mudanca .vh {
+.registo-mudanca [data-correcao-campo='new_value'] {
   white-space: normal;
   overflow-wrap: anywhere;
 }
