@@ -1,6 +1,6 @@
 /** EV3: prova independente dos invólucros de língua da edição inglesa. */
 import {NodeType} from 'node-html-parser';
-const nomes=new Set(['Câmara','Assembleia Municipal','Tribunal de Contas','Laboratório Floresta Nómada','Floresta Nómada']);
+const nomes=new Set(['Câmara','Assembleia Municipal','Tribunal de Contas','Fundo Ambiental','Laboratório Floresta Nómada','Floresta Nómada']);
 /** @param {any} el @param {string} edicao */
 export function marcaDeLinguaEv3Valida(el,edicao){
  if(edicao!=='evora-2027-capital-europeia-da-cultura/en'||el.rawTagName!=='span')return false;

@@ -1,6 +1,6 @@
 /** EV3: marcas reversíveis dos nomes portugueses, sem alterar o texto alojado. */
 import {parse,NodeType} from 'node-html-parser';
-export const NOMES_EV3=['Laboratório Floresta Nómada','Assembleia Municipal','Tribunal de Contas','Floresta Nómada','Câmara'];
+export const NOMES_EV3=['Laboratório Floresta Nómada','Assembleia Municipal','Tribunal de Contas','Fundo Ambiental','Floresta Nómada','Câmara'];
 const re=new RegExp(NOMES_EV3.join('|'),'g');
 /** @param {string} html */
 export function marcarNomesEv3(html){

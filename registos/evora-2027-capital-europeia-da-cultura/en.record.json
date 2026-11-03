@@ -1628,24 +1628,20 @@
    "figures": [
     {
      "end": 58,
+     "others": [
+      "ev3-data-noticia-rossio-en",
+      "ev3-data-noticia-rossio-longa",
+      "ev3-data-noticia-rossio-longa-n0"
+     ],
      "printed": "23",
-     "row": "ev3-data-noticia-rossio-n0",
+     "row": "ev3-data-noticia-rossio-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
      "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
      "start": 56,
      "value": "23"
     },
     {
-     "end": 61,
-     "printed": "10",
-     "row": "ev3-data-noticia-rossio-n1",
-     "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-     "start": 59,
-     "value": "10"
-    },
-    {
-     "end": 66,
+     "end": 71,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
@@ -1653,46 +1649,19 @@
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-en-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-rossio-prevista-n0",
-      "ev3-ultima-noticia-n2"
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-en-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
-     "row": "ev3-data-noticia-rossio-n2",
+     "row": "ev3-data-noticia-rossio-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
      "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-     "start": 62,
+     "start": 67,
      "value": "2026"
     },
     {
-     "end": 136,
-     "printed": "100",
-     "row": "ev3-rossio-fundo-ambiental-n0",
-     "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-     "start": 133,
-     "value": "100"
-    },
-    {
-     "end": 212,
-     "others": [
-      "ev3-data-am-22-10-en-n1",
-      "ev3-data-am-22-10-n1",
-      "ev3-data-cm-15-10-en-n1",
-      "ev3-data-cm-15-10-n1",
-      "ev3-data-cm-29-10-en-n1",
-      "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-ultima-noticia-n2"
-     ],
-     "printed": "2026",
-     "row": "ev3-rossio-prevista-n0",
-     "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-     "start": 208,
-     "value": "2026"
-    },
-    {
-     "end": 579,
+     "end": 721,
      "others": [
       "ev3-am-rossio-favor",
       "ev3-data-cm-15-10-en",
@@ -1702,30 +1671,31 @@
      "row": "ev3-data-cm-15-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 577,
+     "start": 719,
      "value": "15"
     },
     {
-     "end": 592,
+     "end": 734,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-en-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-rossio-prevista-n0",
-      "ev3-ultima-noticia-n2"
+      "ev3-data-noticia-rossio-en-n1",
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-en-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
      "row": "ev3-data-cm-15-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 588,
+     "start": 730,
      "value": "2026"
     },
     {
-     "end": 656,
+     "end": 798,
      "others": [
       "ev3-data-am-22-10-en",
       "ev3-data-am-22-10-n0"
@@ -1734,30 +1704,31 @@
      "row": "ev3-data-am-22-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 654,
+     "start": 796,
      "value": "22"
     },
     {
-     "end": 669,
+     "end": 811,
      "others": [
       "ev3-data-am-22-10-n1",
       "ev3-data-cm-15-10-en-n1",
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-en-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-rossio-prevista-n0",
-      "ev3-ultima-noticia-n2"
+      "ev3-data-noticia-rossio-en-n1",
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-en-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
      "row": "ev3-data-am-22-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 665,
+     "start": 807,
      "value": "2026"
     },
     {
-     "end": 678,
+     "end": 835,
      "others": [
       "ev3-data-cm-15-10-en",
       "ev3-data-cm-15-10-en-n0",
@@ -1767,20 +1738,20 @@
      "row": "ev3-am-rossio-favor",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 676,
+     "start": 833,
      "value": "15"
     },
     {
-     "end": 701,
+     "end": 858,
      "printed": "18",
      "row": "ev3-am-rossio-abstencoes",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 699,
+     "start": 856,
      "value": "18"
     },
     {
-     "end": 720,
+     "end": 877,
      "others": [
       "painel-equipa",
       "ev3-data-cm-29-10-en",
@@ -1790,39 +1761,31 @@
      "row": "ev3-data-cm-29-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf",
      "source_sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
-     "start": 718,
+     "start": 875,
      "value": "29"
     },
     {
-     "end": 733,
+     "end": 890,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
       "ev3-data-cm-15-10-en-n1",
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-rossio-prevista-n0",
-      "ev3-ultima-noticia-n2"
+      "ev3-data-noticia-rossio-en-n1",
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-en-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
      "row": "ev3-data-cm-29-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf",
      "source_sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
-     "start": 729,
+     "start": 886,
      "value": "2026"
     },
     {
-     "end": 907,
-     "printed": "60",
-     "row": "ev3-rossio-1fase-dias",
-     "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
-     "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 905,
-     "value": "60"
-    },
-    {
-     "end": 923,
+     "end": 1028,
      "others": [
       "ev3-am-rossio-favor",
       "ev3-data-cm-15-10-en",
@@ -1832,32 +1795,42 @@
      "row": "ev3-data-cm-15-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 921,
+     "start": 1026,
      "value": "15"
     },
     {
-     "end": 936,
+     "end": 1041,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-en-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-rossio-prevista-n0",
-      "ev3-ultima-noticia-n2"
+      "ev3-data-noticia-rossio-en-n1",
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-en-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
      "row": "ev3-data-cm-15-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 932,
+     "start": 1037,
      "value": "2026"
+    },
+    {
+     "end": 1062,
+     "printed": "60",
+     "row": "ev3-rossio-1fase-dias",
+     "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
+     "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
+     "start": 1060,
+     "value": "60"
     }
    ],
    "i": 49,
    "kind": "paragraph",
-   "text": "In October the Rossio de São Brás timetable changed. On 23/10/2026 the Câmara wrote that the second part of the works, «financiada a 100% pelo Fundo Ambiental», «estava prevista ser concluída até ao final de 2026», and that «a obra não poderá ser concluída nesse prazo», because of the public procurement deadlines and the prior review by the Tribunal de Contas, and that the reprogramming ties it to the Floresta Nómada artistic project of the European Capital of Culture programme. The amendment to the multi-year investment plan for the Rossio was approved by the Câmara on 15 October 2026, with the CDU abstaining, and by the Assembleia Municipal on 22 October 2026, with 15 votes in favour and 18 abstentions. On 29 October 2026 the Câmara approved awarding the Rossio works, Laboratório Floresta Nómada, to DECOVERDI, S.A., with the AD councillors abstaining; the first phase had already been given 60 more days on 15 October 2026."
+   "text": "In October the Rossio de São Brás timetable changed. On 23 October 2026 the Câmara wrote that the second part of the works, fully funded by the Fundo Ambiental, was due to be finished by the end of the year but cannot be finished in time («a obra não poderá ser concluída nesse prazo»), because of the public procurement deadlines and the prior review by the Tribunal de Contas. According to the mayor, quoted in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the Floresta Nómada artistic project, part of the European Capital of Culture programme. The amendment to the multi-year investment plan for the Rossio was approved by the Câmara on 15 October 2026, with the CDU abstaining, and by the Assembleia Municipal on 22 October 2026, by a majority, with 15 votes in favour and 18 abstentions. On 29 October 2026 the Câmara approved awarding the Rossio works, Laboratório Floresta Nómada, to DECOVERDI, S.A., with the AD councillors abstaining; on 15 October 2026 it had ratified a 60-day extension of the first phase's deadline."
   },
   {
    "figures": [
@@ -1883,9 +1856,10 @@
       "ev3-data-cm-15-10-en-n1",
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-rossio-prevista-n0",
-      "ev3-ultima-noticia-n2"
+      "ev3-data-noticia-rossio-en-n1",
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-en-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
      "row": "ev3-data-cm-29-10-en-n1",
@@ -1924,7 +1898,7 @@
    ],
    "i": 50,
    "kind": "paragraph",
-   "text": "On 29 October 2026 the Câmara also ratified a licence for conservation works requested by the association itself, for «Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora.»; the notice does not say what the building is or what the works cost. The activity plan quoted above refers to the works on the bid's venues."
+   "text": "On 29 October 2026 the Câmara also ratified a licence for conservation works requested by the association itself, for «Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6», in Évora; the notice does not say what the building is or what the works cost. The activity plan quoted above refers to the works on the bid's venues."
   },
   {
    "figures": [],
@@ -2136,9 +2110,6 @@
        },
        {
         "end": 119,
-        "others": [
-         "ev3-ultima-noticia-n1"
-        ],
         "printed": "8",
         "row": "painel-interno",
         "source_digest_kind": "pdf-sem-resumo",
@@ -2159,28 +2130,21 @@
   {
    "figures": [
     {
-     "end": 217,
+     "end": 191,
+     "others": [
+      "ev3-ultima-noticia-en",
+      "ev3-ultima-noticia-longa",
+      "ev3-ultima-noticia-longa-n0"
+     ],
      "printed": "11",
-     "row": "ev3-ultima-noticia-n0",
+     "row": "ev3-ultima-noticia-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
      "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
-     "start": 215,
+     "start": 189,
      "value": "11"
     },
     {
-     "end": 220,
-     "others": [
-      "painel-interno"
-     ],
-     "printed": "08",
-     "row": "ev3-ultima-noticia-n1",
-     "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
-     "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
-     "start": 218,
-     "value": "08"
-    },
-    {
-     "end": 225,
+     "end": 203,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
@@ -2188,20 +2152,21 @@
       "ev3-data-cm-15-10-n1",
       "ev3-data-cm-29-10-en-n1",
       "ev3-data-cm-29-10-n1",
-      "ev3-data-noticia-rossio-n2",
-      "ev3-rossio-prevista-n0"
+      "ev3-data-noticia-rossio-en-n1",
+      "ev3-data-noticia-rossio-longa-n1",
+      "ev3-ultima-noticia-longa-n1"
      ],
      "printed": "2026",
-     "row": "ev3-ultima-noticia-n2",
+     "row": "ev3-ultima-noticia-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
      "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
-     "start": 221,
+     "start": 199,
      "value": "2026"
     }
    ],
    "i": 57,
    "kind": "paragraph",
-   "text": "The address of the programming document the association publishes writes «31MAR26», and the document covers the year 2026, not 2027. In this update, the association's latest published news item was still the one of 11/08/2026, which does not announce the European Capital of Culture programme."
+   "text": "The address of the programming document the association publishes writes «31MAR26», and the document covers the year 2026, not 2027. The association's latest published news item dates from 11 August 2026 and does not announce the European Capital of Culture programme."
   },
   {
    "figures": [],
@@ -7929,7 +7894,7 @@
    "unit": "algarismo do documento",
    "value": "2026"
   },
-  "ev3-data-noticia-rossio": {
+  "ev3-data-noticia-rossio-en": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Câmara Municipal de Évora"
@@ -7941,6 +7906,7 @@
     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
     "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
    },
+   "documentary_date_lang": "en",
    "documentary_form": true,
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
@@ -7948,13 +7914,14 @@
    },
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-data-noticia-rossio",
+   "id": "ev3-data-noticia-rossio-en",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
-   "unit": "texto",
-   "value": "23/10/2026"
+   "source_value": "23/10/2026",
+   "unit": "data",
+   "value": "23 October 2026"
   },
-  "ev3-data-noticia-rossio-n0": {
+  "ev3-data-noticia-rossio-en-n0": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Câmara Municipal de Évora"
@@ -7966,20 +7933,21 @@
     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
     "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
    },
-   "documentary_parent": "ev3-data-noticia-rossio",
+   "documentary_date_lang": "en",
+   "documentary_parent": "ev3-data-noticia-rossio-en",
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
     "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
    },
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-data-noticia-rossio-n0",
+   "id": "ev3-data-noticia-rossio-en-n0",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
    "value": "23"
   },
-  "ev3-data-noticia-rossio-n1": {
+  "ev3-data-noticia-rossio-en-n1": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Câmara Municipal de Évora"
@@ -7991,20 +7959,21 @@
     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
     "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
    },
-   "documentary_parent": "ev3-data-noticia-rossio",
+   "documentary_date_lang": "en",
+   "documentary_parent": "ev3-data-noticia-rossio-en",
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
     "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
    },
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-data-noticia-rossio-n1",
+   "id": "ev3-data-noticia-rossio-en-n1",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
-   "value": "10"
+   "value": "2026"
   },
-  "ev3-data-noticia-rossio-n2": {
+  "ev3-data-noticia-rossio-longa": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Câmara Municipal de Évora"
@@ -8016,14 +7985,68 @@
     "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
     "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
    },
-   "documentary_parent": "ev3-data-noticia-rossio",
+   "documentary_date_lang": "pt",
+   "documentary_form": true,
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
     "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
    },
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-data-noticia-rossio-n2",
+   "id": "ev3-data-noticia-rossio-longa",
+   "source_type": "government",
+   "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
+   "source_value": "23/10/2026",
+   "unit": "data",
+   "value": "23 de outubro de 2026"
+  },
+  "ev3-data-noticia-rossio-longa-n0": {
+   "access_date": "2026-11-03",
+   "attributed_to": [
+    "Câmara Municipal de Évora"
+   ],
+   "derivation": "transcrito",
+   "document": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
+    "locator": "corpo da página",
+    "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
+    "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
+   },
+   "documentary_date_lang": "pt",
+   "documentary_parent": "ev3-data-noticia-rossio-longa",
+   "evidence": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
+    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
+   },
+   "excerpt": "Atualizado em 23/10/2026",
+   "fetched_at": "2026-11-03T11:10:05.208914+00:00",
+   "id": "ev3-data-noticia-rossio-longa-n0",
+   "source_type": "government",
+   "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
+   "unit": "algarismo do documento",
+   "value": "23"
+  },
+  "ev3-data-noticia-rossio-longa-n1": {
+   "access_date": "2026-11-03",
+   "attributed_to": [
+    "Câmara Municipal de Évora"
+   ],
+   "derivation": "transcrito",
+   "document": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
+    "locator": "corpo da página",
+    "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
+    "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
+   },
+   "documentary_date_lang": "pt",
+   "documentary_parent": "ev3-data-noticia-rossio-longa",
+   "evidence": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
+    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
+   },
+   "excerpt": "Atualizado em 23/10/2026",
+   "fetched_at": "2026-11-03T11:10:05.208914+00:00",
+   "id": "ev3-data-noticia-rossio-longa-n1",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
@@ -8052,7 +8075,7 @@
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "texto",
-   "value": "Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora."
+   "value": "Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6"
   },
   "ev3-licenca-associacao-n0": {
    "access_date": "2026-11-03",
@@ -8154,56 +8177,6 @@
    "unit": "dias",
    "value": "60"
   },
-  "ev3-rossio-fundo-ambiental": {
-   "access_date": "2026-11-03",
-   "attributed_to": [
-    "Câmara Municipal de Évora"
-   ],
-   "derivation": "transcrito",
-   "document": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "locator": "corpo da página",
-    "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-    "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
-   },
-   "documentary_form": true,
-   "evidence": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
-   },
-   "excerpt": "financiada a 100% pelo Fundo Ambiental",
-   "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-rossio-fundo-ambiental",
-   "source_type": "government",
-   "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
-   "unit": "texto",
-   "value": "financiada a 100% pelo Fundo Ambiental"
-  },
-  "ev3-rossio-fundo-ambiental-n0": {
-   "access_date": "2026-11-03",
-   "attributed_to": [
-    "Câmara Municipal de Évora"
-   ],
-   "derivation": "transcrito",
-   "document": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "locator": "corpo da página",
-    "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-    "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
-   },
-   "documentary_parent": "ev3-rossio-fundo-ambiental",
-   "evidence": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
-   },
-   "excerpt": "financiada a 100% pelo Fundo Ambiental",
-   "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-rossio-fundo-ambiental-n0",
-   "source_type": "government",
-   "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
-   "unit": "algarismo do documento",
-   "value": "100"
-  },
   "ev3-rossio-nao-concluida": {
    "access_date": "2026-11-03",
    "attributed_to": [
@@ -8229,57 +8202,7 @@
    "unit": "texto",
    "value": "a obra não poderá ser concluída nesse prazo"
   },
-  "ev3-rossio-prevista": {
-   "access_date": "2026-11-03",
-   "attributed_to": [
-    "Câmara Municipal de Évora"
-   ],
-   "derivation": "transcrito",
-   "document": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "locator": "corpo da página",
-    "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-    "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
-   },
-   "documentary_form": true,
-   "evidence": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
-   },
-   "excerpt": "estava prevista ser concluída até ao final de 2026",
-   "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-rossio-prevista",
-   "source_type": "government",
-   "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
-   "unit": "texto",
-   "value": "estava prevista ser concluída até ao final de 2026"
-  },
-  "ev3-rossio-prevista-n0": {
-   "access_date": "2026-11-03",
-   "attributed_to": [
-    "Câmara Municipal de Évora"
-   ],
-   "derivation": "transcrito",
-   "document": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "locator": "corpo da página",
-    "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
-    "title": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás"
-   },
-   "documentary_parent": "ev3-rossio-prevista",
-   "evidence": {
-    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
-    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8"
-   },
-   "excerpt": "estava prevista ser concluída até ao final de 2026",
-   "fetched_at": "2026-11-03T11:10:05.208914+00:00",
-   "id": "ev3-rossio-prevista-n0",
-   "source_type": "government",
-   "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
-   "unit": "algarismo do documento",
-   "value": "2026"
-  },
-  "ev3-ultima-noticia": {
+  "ev3-ultima-noticia-en": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Associação Évora 2027"
@@ -8291,6 +8214,7 @@
     "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
     "title": "Notícias"
    },
+   "documentary_date_lang": "en",
    "documentary_form": true,
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
@@ -8298,13 +8222,14 @@
    },
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
-   "id": "ev3-ultima-noticia",
+   "id": "ev3-ultima-noticia-en",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
-   "unit": "texto",
-   "value": "11/08/2026"
+   "source_value": "11/08/2026",
+   "unit": "data",
+   "value": "11 August 2026"
   },
-  "ev3-ultima-noticia-n0": {
+  "ev3-ultima-noticia-en-n0": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Associação Évora 2027"
@@ -8316,20 +8241,21 @@
     "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
     "title": "Notícias"
    },
-   "documentary_parent": "ev3-ultima-noticia",
+   "documentary_date_lang": "en",
+   "documentary_parent": "ev3-ultima-noticia-en",
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
     "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
    },
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
-   "id": "ev3-ultima-noticia-n0",
+   "id": "ev3-ultima-noticia-en-n0",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",
    "value": "11"
   },
-  "ev3-ultima-noticia-n1": {
+  "ev3-ultima-noticia-en-n1": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Associação Évora 2027"
@@ -8341,20 +8267,21 @@
     "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
     "title": "Notícias"
    },
-   "documentary_parent": "ev3-ultima-noticia",
+   "documentary_date_lang": "en",
+   "documentary_parent": "ev3-ultima-noticia-en",
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
     "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
    },
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
-   "id": "ev3-ultima-noticia-n1",
+   "id": "ev3-ultima-noticia-en-n1",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",
-   "value": "08"
+   "value": "2026"
   },
-  "ev3-ultima-noticia-n2": {
+  "ev3-ultima-noticia-longa": {
    "access_date": "2026-11-03",
    "attributed_to": [
     "Associação Évora 2027"
@@ -8366,14 +8293,68 @@
     "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
     "title": "Notícias"
    },
-   "documentary_parent": "ev3-ultima-noticia",
+   "documentary_date_lang": "pt",
+   "documentary_form": true,
    "evidence": {
     "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
     "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
    },
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
-   "id": "ev3-ultima-noticia-n2",
+   "id": "ev3-ultima-noticia-longa",
+   "source_type": "other",
+   "source_url": "https://www.evora2027.com/noticias",
+   "source_value": "11/08/2026",
+   "unit": "data",
+   "value": "11 de agosto de 2026"
+  },
+  "ev3-ultima-noticia-longa-n0": {
+   "access_date": "2026-11-03",
+   "attributed_to": [
+    "Associação Évora 2027"
+   ],
+   "derivation": "transcrito",
+   "document": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
+    "locator": "corpo da página",
+    "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+    "title": "Notícias"
+   },
+   "documentary_date_lang": "pt",
+   "documentary_parent": "ev3-ultima-noticia-longa",
+   "evidence": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
+    "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   },
+   "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
+   "fetched_at": "2026-11-03T11:10:08.339505+00:00",
+   "id": "ev3-ultima-noticia-longa-n0",
+   "source_type": "other",
+   "source_url": "https://www.evora2027.com/noticias",
+   "unit": "algarismo do documento",
+   "value": "11"
+  },
+  "ev3-ultima-noticia-longa-n1": {
+   "access_date": "2026-11-03",
+   "attributed_to": [
+    "Associação Évora 2027"
+   ],
+   "derivation": "transcrito",
+   "document": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
+    "locator": "corpo da página",
+    "source_sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+    "title": "Notícias"
+   },
+   "documentary_date_lang": "pt",
+   "documentary_parent": "ev3-ultima-noticia-longa",
+   "evidence": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
+    "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   },
+   "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
+   "fetched_at": "2026-11-03T11:10:08.339505+00:00",
+   "id": "ev3-ultima-noticia-longa-n1",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",
