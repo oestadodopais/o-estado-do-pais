@@ -211,7 +211,7 @@ function pecasDaArea(area, claims) {
       conjuntos.set(c.study, p);
       continue;
     }
-    if (c.unit !== 'afirmação') medidas.push({ id, materia: m.materia, linhas: [id] });
+    if (!['afirmação','texto'].includes(c.unit)) medidas.push({ id, materia: m.materia, linhas: [id] });
     const w = WORKS.find((x) => x.id === c.study);
     if (w) {
       const p = trabalhos.get(w.id) ?? { id: w.id, slug: w.slug, materias: new Set(), linhas: [] };
