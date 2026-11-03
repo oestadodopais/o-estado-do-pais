@@ -1,0 +1,27 @@
+{
+  "cabeca": "f438cc041f8eccf051d928b2a8a41fa1f87ff39c",
+  "paginas": [
+    {
+      "nome": "correcoes",
+      "pt": "/correcoes/",
+      "en": "/en/corrections/",
+      "recortes": [
+        {
+          "nome": "registo",
+          "seletor": ".registo-mudancas"
+        }
+      ]
+    },
+    {
+      "nome": "evora-guardada",
+      "pt": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "en": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "recortes": [
+        {
+          "nome": "tabela",
+          "seletor": "table:first-of-type"
+        }
+      ]
+    }
+  ]
+}

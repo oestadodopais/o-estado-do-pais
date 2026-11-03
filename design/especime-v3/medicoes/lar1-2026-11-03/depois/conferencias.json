@@ -1,0 +1,111 @@
+{
+  "corridas": [
+    {
+      "fase": "inicial",
+      "conferencia": "build",
+      "codigo": 0,
+      "segundos": 602.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:alvos",
+      "codigo": 0,
+      "segundos": 429.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:capturas-largura",
+      "codigo": 0,
+      "segundos": 2.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:css",
+      "codigo": 0,
+      "segundos": 7.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:largura",
+      "codigo": 1,
+      "segundos": 19.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:largura:planta",
+      "codigo": 1,
+      "segundos": 2.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:moldura",
+      "codigo": 0,
+      "segundos": 156.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "check:sobreposicao",
+      "codigo": 0,
+      "segundos": 10.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "lar1:medir",
+      "codigo": 1,
+      "segundos": 42.0
+    },
+    {
+      "fase": "inicial",
+      "conferencia": "typecheck",
+      "codigo": 0,
+      "segundos": 1.0
+    },
+    {
+      "fase": "build-final",
+      "conferencia": "build",
+      "codigo": 0,
+      "segundos": 658.0
+    },
+    {
+      "fase": "largura-final",
+      "conferencia": "check:capturas-largura",
+      "codigo": 0,
+      "segundos": 1.0
+    },
+    {
+      "fase": "largura-final",
+      "conferencia": "check:largura",
+      "codigo": 0,
+      "segundos": 11.0
+    },
+    {
+      "fase": "largura-final",
+      "conferencia": "check:largura:planta",
+      "codigo": 1,
+      "segundos": 1.0
+    },
+    {
+      "fase": "largura-final",
+      "conferencia": "lar1:medir",
+      "codigo": 0,
+      "segundos": 37.0
+    }
+  ],
+  "testes_locais": [
+    {
+      "comando": "node tests/largura/amostra.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "python3 tests/leituras/portoes.py",
+      "codigo": 0,
+      "segundos": 15
+    }
+  ],
+  "capturas": {
+    "codigo": 0,
+    "capturas": 20
+  },
+  "chamadas_ate_a_escrita_deste_relatorio": 50,
+  "corridas_integrais_dos_tres_portoes": 0
+}

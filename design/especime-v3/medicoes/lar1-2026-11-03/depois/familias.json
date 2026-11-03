@@ -1,0 +1,3006 @@
+{
+ "paginas": 100,
+ "familias": 78,
+ "resultados": [
+  {
+   "pagina": "/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/a-verificar/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/agenda/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/administracao-interna/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/ambiente-e-energia/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/correcoes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/aveiro/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/beja/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/orcamento-2027/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/educacao-e-saude/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/emprego/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/404/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/about/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/agenda/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/administracao-interna/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/ambiente-e-energia/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/corrections/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/aveiro/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/beja/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/orcamento-2027/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/education-and-health/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/employment/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/european-union/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2026/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2027/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/housing/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/index/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2024/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2025/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/abrantes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/agueda/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/method/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/abrantes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/agueda/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/pay-pensions-and-benefits/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/places/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/poverty-and-inequality/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/prices/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/privacy/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/acores/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/alentejo/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/state-and-economy/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/empty/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/limit/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/themes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/to-verify/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/en/under-discussion/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estado-e-economia/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2026/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2027/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/habitacao/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/indice/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2024/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2025/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/abrantes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/agueda/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/lugares/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/metodo/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/abrantes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/agueda/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/o-que-se-discute/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/pobreza-e-desigualdade/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/precos/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/privacidade/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/acores/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/alentejo/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/salarios-pensoes-e-apoios/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/sobre/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/limite/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/nao-chegou/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/temas/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/uniao-europeia/",
+   "largura": 390,
+   "sw": 390,
+   "causas": []
+  },
+  {
+   "pagina": "/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/a-verificar/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/agenda/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/administracao-interna/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/ambiente-e-energia/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/correcoes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/aveiro/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/beja/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/orcamento-2027/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/educacao-e-saude/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/emprego/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/404/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/about/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/agenda/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/administracao-interna/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/ambiente-e-energia/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/corrections/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/aveiro/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/beja/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/orcamento-2027/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/education-and-health/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/employment/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/european-union/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2026/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2027/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/housing/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/index/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2024/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2025/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/abrantes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/agueda/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/method/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/abrantes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/agueda/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/pay-pensions-and-benefits/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/places/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/poverty-and-inequality/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/prices/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/privacy/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/acores/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/alentejo/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/state-and-economy/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/empty/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/limit/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/themes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/to-verify/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/en/under-discussion/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estado-e-economia/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2026/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2027/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/habitacao/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/indice/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2024/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2025/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/abrantes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/agueda/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/lugares/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/metodo/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/abrantes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/agueda/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/o-que-se-discute/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/pobreza-e-desigualdade/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/precos/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/privacidade/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/acores/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/alentejo/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/salarios-pensoes-e-apoios/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/sobre/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/limite/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/nao-chegou/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/temas/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/uniao-europeia/",
+   "largura": 768,
+   "sw": 768,
+   "causas": []
+  },
+  {
+   "pagina": "/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/a-verificar/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/agenda/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/administracao-interna/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/ambiente-e-energia/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/correcoes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/aveiro/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/beja/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/orcamento-2027/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/educacao-e-saude/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/emprego/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/404/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/about/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/agenda/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/administracao-interna/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/ambiente-e-energia/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/corrections/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/aveiro/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/beja/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/orcamento-2027/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/education-and-health/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/employment/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/european-union/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2026/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2027/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/housing/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/index/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2024/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2025/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/abrantes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/agueda/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/method/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/abrantes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/agueda/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/pay-pensions-and-benefits/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/places/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/poverty-and-inequality/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/prices/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/privacy/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/acores/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/alentejo/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/state-and-economy/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/empty/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/limit/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/themes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/to-verify/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/en/under-discussion/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estado-e-economia/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2026/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2027/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/habitacao/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/indice/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2024/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2025/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/abrantes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/agueda/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/lugares/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/metodo/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/abrantes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/agueda/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/o-que-se-discute/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/pobreza-e-desigualdade/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/precos/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/privacidade/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/acores/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/alentejo/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/salarios-pensoes-e-apoios/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/sobre/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/limite/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/nao-chegou/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/temas/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/uniao-europeia/",
+   "largura": 1024,
+   "sw": 1024,
+   "causas": []
+  },
+  {
+   "pagina": "/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/a-verificar/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/agenda/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/administracao-interna/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/ambiente-e-energia/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/correcoes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/aveiro/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/beja/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/orcamento-2027/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/educacao-e-saude/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/emprego/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/404/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/about/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/agenda/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/administracao-interna/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/ambiente-e-energia/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/corrections/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/aveiro/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/beja/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/orcamento-2027/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/education-and-health/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/employment/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/european-union/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2026/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2027/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/housing/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/index/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2024/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2025/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/abrantes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/agueda/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/method/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/abrantes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/agueda/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/pay-pensions-and-benefits/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/places/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/poverty-and-inequality/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/prices/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/privacy/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/acores/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/alentejo/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/state-and-economy/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/empty/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/limit/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/themes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/to-verify/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/en/under-discussion/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estado-e-economia/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2026/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2027/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/habitacao/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/indice/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2024/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2025/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/abrantes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/agueda/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/lugares/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/metodo/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/abrantes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/agueda/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/o-que-se-discute/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/pobreza-e-desigualdade/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/precos/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/privacidade/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/acores/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/alentejo/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/salarios-pensoes-e-apoios/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/sobre/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/limite/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/nao-chegou/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/temas/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/uniao-europeia/",
+   "largura": 1280,
+   "sw": 1280,
+   "causas": []
+  },
+  {
+   "pagina": "/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/a-verificar/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/agenda/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/administracao-interna/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/areas/ambiente-e-energia/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/correcoes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/aveiro/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/distritos/beja/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/dossies/orcamento-2027/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/educacao-e-saude/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/emprego/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/404/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/about/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/agenda/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/administracao-interna/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/areas/ambiente-e-energia/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/corrections/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/aveiro/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/districts/beja/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/dossiers/orcamento-2027/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/education-and-health/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/employment/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/european-union/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2026/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/explainers/dinheiro-do-estado-2027/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/housing/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/index/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2024/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/abandono-escolar-precoce-2025/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/abrantes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/ledger/municipalities/agueda/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/method/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/abrantes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/municipalities/agueda/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/pay-pensions-and-benefits/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/places/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/poverty-and-inequality/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/prices/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/privacy/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/acores/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/regions/alentejo/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/state-and-economy/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/agua-nao-faturada/document/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/empty/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/suggestions/limit/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/themes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/to-verify/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/en/under-discussion/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estado-e-economia/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/agua-nao-faturada/documento/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2026/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/explicacoes/dinheiro-do-estado-2027/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/habitacao/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/indice/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2024/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/abandono-escolar-precoce-2025/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/abrantes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/livro-razao/concelhos/agueda/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/lugares/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/metodo/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/abrantes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/municipios/agueda/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/o-que-se-discute/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/pobreza-e-desigualdade/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/precos/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/privacidade/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/acores/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/regioes/alentejo/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/salarios-pensoes-e-apoios/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/sobre/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/limite/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/sugestoes/nao-chegou/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/temas/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  },
+  {
+   "pagina": "/uniao-europeia/",
+   "largura": 1600,
+   "sw": 1600,
+   "causas": []
+  }
+ ]
+}

@@ -1,0 +1,591 @@
+{
+  "cabeca": "f438cc041f8eccf051d928b2a8a41fa1f87ff39c",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "correcoes-pt-390.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 38255,
+      "sha256": "29680aa68fc142d1d05cd556b4b9f75a6468c1c0aaf056931933fff66d7b3897",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-390-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-pt-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 1745,
+            "width": 333,
+            "height": 34052
+          },
+          "sha256": "c10a7f722b7d853f77a8a803a746844c94e7373f669e9ab7c8eb32267ac6f5ab"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-768.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 37497,
+      "sha256": "e2e462df001d77969d0ff5e695d9d570d0959e653e6819632a2044f83ce32162",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-768-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-pt-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 1493,
+            "width": 524,
+            "height": 34381
+          },
+          "sha256": "342aa24835d2a2971dc54c261e38c86ca0a48163c5d20b0762a86b8bcff1b7ae"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1024.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 38137,
+      "sha256": "73c7ffe84feae8f21456f3c1ba4528e0198e4ac3d2387e12f9c3436098b8ff09",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1024-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-pt-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 1422,
+            "width": 524,
+            "height": 35137
+          },
+          "sha256": "1b4d0435e172f03aa87e8e45f2e373c97fcabb264ab450ebc59c1b5270ee1d4d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1280.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 38925,
+      "sha256": "222591348cd9fa481fba87659633bf27e3948ad91bd10e9ef98a0ea405b2fb4c",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1280-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-pt-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 1435,
+            "width": 523,
+            "height": 35884
+          },
+          "sha256": "382afde024827252195502a3520b06f638383c4f96d4dc405cc1d3b741871971"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1600.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 38934,
+      "sha256": "abcf143f44f5f4636b058ac5d848f8e822c318aa47619ec65e40b4815581ae43",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1600-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-pt-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 1435,
+            "width": 523,
+            "height": 35884
+          },
+          "sha256": "c37fb7c1018e3c98731ad28d1e994fa629aacbee729d6aeb6b5f4c267c266ae9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-390.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 37867,
+      "sha256": "0db988540720f8b3c09d659656e396a8be1440cfdd4a2a4f5cd52d679dee07a4",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-390-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-en-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 1724,
+            "width": 333,
+            "height": 33627
+          },
+          "sha256": "e38403e24566228af84460e1c83b11de05b99ff62e7531a27996dad51e77b7a5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-768.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 36942,
+      "sha256": "2b4535a9bb9188a23c02f89bc7247707af999ec7651a6d0ca6502e6eaac7b6e5",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-768-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-en-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 1493,
+            "width": 524,
+            "height": 33826
+          },
+          "sha256": "19c9e955fb9269fceb886561045426d38b86d9d3977dcf8b0df6bf297794f93e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1024.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 37611,
+      "sha256": "65e7f14be214ac6ad1d6dbd79a4f244cfe605f149f83cdfddb92e53e9d5724ae",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1024-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-en-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 1422,
+            "width": 524,
+            "height": 34611
+          },
+          "sha256": "24fc677bb3bdc7f0891bf9c89d843ab330e7d87a59aeec303295034289510359"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1280.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 38713,
+      "sha256": "48f1fc118442389ba93c1c62733dcf2c148752aec832fe711be3e3476d2abaa3",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1280-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-en-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 1435,
+            "width": 523,
+            "height": 35673
+          },
+          "sha256": "e6b5eae7c92a380bd8170bf0de3bca7267e07713a7b2c283528e9bd208a65986"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1600.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 38723,
+      "sha256": "a7a445862be40e2745d52b13a4c9c2969f5e9357f7a5c1f2b5c619b054b7f711",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1600-registo.png",
+          "seletor": ".registo-mudancas",
+          "origem": "correcoes-en-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 1435,
+            "width": 523,
+            "height": 35673
+          },
+          "sha256": "e6b5eae7c92a380bd8170bf0de3bca7267e07713a7b2c283528e9bd208a65986"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41967,
+      "sha256": "9d335b17726dd2bab29f9bf3049d0d34fc74df8b94560efeddb747cbe5c058d1",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-pt-390-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 5722,
+            "width": 350,
+            "height": 2429
+          },
+          "sha256": "e28d6ffff79588aff2ad233955019246bee5077c5a234db3a89b353ae8a7379a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-pt-768.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 25572,
+      "sha256": "bdbd66a0cc6077d4a884e72401221fa3373beed72c7afa00ff568708e7f93a28",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-pt-768-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-pt-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 3195,
+            "width": 728,
+            "height": 1233
+          },
+          "sha256": "c040e6f9c4917f75e8353eb4f85b8fa290141e08f1a1cc688fdfe46b8cb41e01"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-pt-1024.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 23665,
+      "sha256": "f187ae0ab244c4b031fe944d49edce0f6fc6dde2c0926765e5792e425d9e8f5f",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-pt-1024-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-pt-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 2854,
+            "width": 864,
+            "height": 1107
+          },
+          "sha256": "91a7bc96febc8e50e13e8afc3386b893a9557263071ab9dff5cbce0d833e22a2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-pt-1280.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 23665,
+      "sha256": "652a61574919e192d698e92c99aaa3f49bbfaf361a9a861437ae7d77fc54d32e",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-pt-1280-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-pt-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 2854,
+            "width": 864,
+            "height": 1107
+          },
+          "sha256": "91a7bc96febc8e50e13e8afc3386b893a9557263071ab9dff5cbce0d833e22a2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-pt-1600.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 23665,
+      "sha256": "cd6eb2f62befe124c1607188718e6e9f51c05cb8f40f6ec45cb18a690d5e6bed",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-pt-1600-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-pt-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 2854,
+            "width": 864,
+            "height": 1107
+          },
+          "sha256": "91a7bc96febc8e50e13e8afc3386b893a9557263071ab9dff5cbce0d833e22a2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 40927,
+      "sha256": "914598f61f25dc055ac65c5ad89d9e0f0d0b8574e7795e7742edf78112f329bc",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-en-390-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 5676,
+            "width": 350,
+            "height": 2199
+          },
+          "sha256": "b8d10588ebcb961156498765171e9acc1a13d04acc3607120c0f5784e10616d0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-en-768.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 24791,
+      "sha256": "d0fa0ff8c46795db72e46de860eb9e1dc6202025f7d6f27d7a43d68c98240d17",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-en-768-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-en-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 3105,
+            "width": 728,
+            "height": 1296
+          },
+          "sha256": "35e8be233a8754b485543c7450b629157b36530fda174a058ce139f3cf4e6430"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-en-1024.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 23005,
+      "sha256": "db426470d551487ac79704f9a19c192e72111c31796c01ba05fcdeb7293f26ac",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-en-1024-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-en-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 2802,
+            "width": 864,
+            "height": 1086
+          },
+          "sha256": "170122fa34faf8867c01fc294fb31a51da1f49417c3d057b0ff9e1ab9267bc1b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-en-1280.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 23005,
+      "sha256": "2fa7bd1c34ef9339206e0d88dd6bc1f23e00384d78f43c266c073e67da5c360d",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-en-1280-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-en-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 2802,
+            "width": 864,
+            "height": 1086
+          },
+          "sha256": "170122fa34faf8867c01fc294fb31a51da1f49417c3d057b0ff9e1ab9267bc1b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-guardada-en-1600.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 23005,
+      "sha256": "19e1f29165f5460a890c9d6b53ae264ae31ff2cddb20e58723706990088e97c1",
+      "recortes": [
+        {
+          "ficheiro": "evora-guardada-en-1600-tabela.png",
+          "seletor": "table:first-of-type",
+          "origem": "evora-guardada-en-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 2802,
+            "width": 864,
+            "height": 1086
+          },
+          "sha256": "170122fa34faf8867c01fc294fb31a51da1f49417c3d057b0ff9e1ab9267bc1b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "aaf170b91017b379e0fe30f8c491bde28d729e16c1347287faf56351bae7ad16",
+    "correcoes/index.html": "c469f24ed01d75e4e5654da5f857970dccf587d8bd7686d663551350f53493b8",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BBmD8dBL.css": "6c3a0096dce764b4755e511729cd0f216fecb77acf7d9e6bf3b4a1ff3ae76a21",
+    "js/correcoes.js": "48c514d7ead045fff64051c2837ad4ec695ed3ab379c6447a54468f82dc0e69a",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/corrections/index.html": "4af394449d3f07c33b574f0259d585fdd1b0a5c4233ea47237ac80a73f285aa3",
+    "estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/index.html": "abbdcd44f2d1db23af47505224857d61f9f193d3d6732fa4375a11d5a811a7bd",
+    "en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/index.html": "4535f975d3612fb973b8487dbcb4cc225e79adffed5bb4ab25d7b4383754d9b1"
+  },
+  "falhas": [],
+  "ok": true
+}

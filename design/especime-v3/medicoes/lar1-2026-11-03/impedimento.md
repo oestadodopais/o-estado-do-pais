@@ -1,5 +1,7 @@
 # LAR1: paragem pela preservação do HTML servido
 
+Estado: impedimento resolvido pela Adenda A. Ver [resultado verificado](relatorio-adenda-a.md). O diagnóstico abaixo conserva a decisão anterior.
+
 A condição de paragem do §2 verifica-se antes de qualquer alteração ao código. A correção das tabelas exige alterar o HTML servido das edições guardadas, contrariando o §1.2.
 
 ## Prova

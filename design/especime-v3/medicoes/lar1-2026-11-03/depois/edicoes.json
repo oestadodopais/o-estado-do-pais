@@ -1,0 +1,168 @@
+{
+  "edicoes": [
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01",
+      "original": "evora-contas-da-camara-2010-2025.pt.2026-10-01.html",
+      "original_sha256": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+      "html_sha256": "e5a064cf02aaef521539b97137469797781ec4875323979948f37d009e7c9126",
+      "texto_sha256": "120d25e3a91a4134f487cf3caa459f0b351404b6aff1b565c4f7fabb2291a948",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01",
+      "original": "evora-contas-da-camara-2010-2025.en.2026-10-01.html",
+      "original_sha256": "edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87",
+      "html_sha256": "7b8125d08bee775c85be8242c5b1d84e01c1ef6aa6f475295eb90efc0bb5da80",
+      "texto_sha256": "272d15e330ebeef66c87f8b5d45975740b42fbdd62ce60264cdd2e8c02b0da7f",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01",
+      "original": "evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html",
+      "original_sha256": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+      "html_sha256": "abbdcd44f2d1db23af47505224857d61f9f193d3d6732fa4375a11d5a811a7bd",
+      "texto_sha256": "0f6daf68a369b9e3066d5a4ec3201880ad66a31911c9751fb821af5f929dc2d3",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01",
+      "original": "evora-2027-capital-europeia-da-cultura.en.2026-10-01.html",
+      "original_sha256": "515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291",
+      "html_sha256": "4535f975d3612fb973b8487dbcb4cc225e79adffed5bb4ab25d7b4383754d9b1",
+      "texto_sha256": "8d016e641cb4b6c896959cd5949d491af472e4302a19c884de3bfd95482a922a",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
+      "original": "orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html",
+      "original_sha256": "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a",
+      "html_sha256": "188d93c246d7b8eb18b4325abb18b1c44b20304836a2a8d2b4381403a59b8e8b",
+      "texto_sha256": "03319e7f8be6b469c7e337fcdee26dba4de2eccf29a8b30652721631fa8d47f4",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
+      "original": "orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html",
+      "original_sha256": "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979",
+      "html_sha256": "acb60a7649950ffb91424e033da8daa5d060efc90faa869881b4596246d296d2",
+      "texto_sha256": "f8745f6ab86fbb43111e3197df545347180610a26a5a23912d244319ccf390d2",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
+      "original": "a-casa-em-portugal-e-na-europa.pt.2026-10-29.html",
+      "original_sha256": "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9",
+      "html_sha256": "7fb070c558254b4c7db0a6a9cbaa50445a430e4c3e05ffad13939e093bdac01a",
+      "texto_sha256": "4bdded41c5de5a4be2ec592e7060feca648b3df980f9bd63611555ac7e2c40af",
+      "prova_dos_bytes": null
+    },
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
+      "original": "a-casa-em-portugal-e-na-europa.en.2026-10-29.html",
+      "original_sha256": "b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74",
+      "html_sha256": "b95d74cf5ce6706eaf4c6e2d33d93431f784cd8fff2148b9d68d4d28273876e7",
+      "texto_sha256": "998b36fc6c89c081b57b74cd3fe64a5780976a6d716af73f0034a2a08f3d99f7",
+      "prova_dos_bytes": null
+    }
+  ],
+  "originais": {
+    "a-casa-em-portugal-e-na-europa.en.2026-10-29.html": "b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74",
+    "a-casa-em-portugal-e-na-europa.pt.2026-10-29.html": "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9",
+    "evora-2027-capital-europeia-da-cultura.en.2026-10-01.html": "515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291",
+    "evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+    "evora-contas-da-camara-2010-2025.en.2026-10-01.html": "edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87",
+    "evora-contas-da-camara-2010-2025.pt.2026-10-01.html": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+    "orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html": "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979",
+    "orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html": "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a"
+  },
+  "comparacao": [
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01",
+      "html_antes": "8b0b80099251e514496870d07cb9a7ad00c0ba6f68c1208a27dbe8be7cbe280f",
+      "html_depois": "e5a064cf02aaef521539b97137469797781ec4875323979948f37d009e7c9126",
+      "html_mudou": true,
+      "original_sha256": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+      "original_igual": true,
+      "texto_sha256": "120d25e3a91a4134f487cf3caa459f0b351404b6aff1b565c4f7fabb2291a948",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01",
+      "html_antes": "3fb0b8796b8b72bfced91ff4d565f32e16311f70af68276e08af5b2261aea33a",
+      "html_depois": "7b8125d08bee775c85be8242c5b1d84e01c1ef6aa6f475295eb90efc0bb5da80",
+      "html_mudou": true,
+      "original_sha256": "edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87",
+      "original_igual": true,
+      "texto_sha256": "272d15e330ebeef66c87f8b5d45975740b42fbdd62ce60264cdd2e8c02b0da7f",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01",
+      "html_antes": "9d5f7e106f68ddb5426b5a293da8b1e030d8b34f24f1e0dcfaf6ada19533a9b6",
+      "html_depois": "abbdcd44f2d1db23af47505224857d61f9f193d3d6732fa4375a11d5a811a7bd",
+      "html_mudou": true,
+      "original_sha256": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+      "original_igual": true,
+      "texto_sha256": "0f6daf68a369b9e3066d5a4ec3201880ad66a31911c9751fb821af5f929dc2d3",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01",
+      "html_antes": "0000698843d2e6a3dc85eb3e8c9e6ecf39d60b3c568136efc6f2e5bd04b4b4c4",
+      "html_depois": "4535f975d3612fb973b8487dbcb4cc225e79adffed5bb4ab25d7b4383754d9b1",
+      "html_mudou": true,
+      "original_sha256": "515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291",
+      "original_igual": true,
+      "texto_sha256": "8d016e641cb4b6c896959cd5949d491af472e4302a19c884de3bfd95482a922a",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
+      "html_antes": "6053eaab8fa1e89136e705cf9c18cd45d3976d28cc832c550be361ad8323c76a",
+      "html_depois": "188d93c246d7b8eb18b4325abb18b1c44b20304836a2a8d2b4381403a59b8e8b",
+      "html_mudou": true,
+      "original_sha256": "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a",
+      "original_igual": true,
+      "texto_sha256": "03319e7f8be6b469c7e337fcdee26dba4de2eccf29a8b30652721631fa8d47f4",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
+      "html_antes": "8d6011067be9dd3ba9a7d1df96dafdad50831056ddad4133edd70a18b0cf94d3",
+      "html_depois": "acb60a7649950ffb91424e033da8daa5d060efc90faa869881b4596246d296d2",
+      "html_mudou": true,
+      "original_sha256": "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979",
+      "original_igual": true,
+      "texto_sha256": "f8745f6ab86fbb43111e3197df545347180610a26a5a23912d244319ccf390d2",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
+      "html_antes": "8094804b50d12c9a100e3e8446350177774e96824b166e030e4914edee2dd2f4",
+      "html_depois": "7fb070c558254b4c7db0a6a9cbaa50445a430e4c3e05ffad13939e093bdac01a",
+      "html_mudou": true,
+      "original_sha256": "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9",
+      "original_igual": true,
+      "texto_sha256": "4bdded41c5de5a4be2ec592e7060feca648b3df980f9bd63611555ac7e2c40af",
+      "texto_igual": true,
+      "prova_igual": true
+    },
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
+      "html_antes": "3978b043121fffc6abf506c42f7cc24af98ee98f7f6ddbbb95e4d725a8d8a8da",
+      "html_depois": "b95d74cf5ce6706eaf4c6e2d33d93431f784cd8fff2148b9d68d4d28273876e7",
+      "html_mudou": true,
+      "original_sha256": "b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74",
+      "original_igual": true,
+      "texto_sha256": "998b36fc6c89c081b57b74cd3fe64a5780976a6d716af73f0034a2a08f3d99f7",
+      "texto_igual": true,
+      "prova_igual": true
+    }
+  ]
+}

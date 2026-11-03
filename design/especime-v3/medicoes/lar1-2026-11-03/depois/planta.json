@@ -1,0 +1,580 @@
+{
+  "ok": false,
+  "planta": true,
+  "segundos": 0.641,
+  "familias": 78,
+  "documentos": 37,
+  "paginas": 2,
+  "medidas": 2,
+  "amostra": {
+    "familias": {
+      "/": [
+        "/"
+      ],
+      "/en": [
+        "/en/"
+      ],
+      "a-verificar": [
+        "/a-verificar/"
+      ],
+      "agenda": [
+        "/agenda/"
+      ],
+      "areas": [
+        "/areas/"
+      ],
+      "areas/*": [
+        "/areas/administracao-interna/",
+        "/areas/ambiente-e-energia/"
+      ],
+      "correcoes": [
+        "/correcoes/"
+      ],
+      "distritos/*": [
+        "/distritos/aveiro/",
+        "/distritos/beja/"
+      ],
+      "dossies": [
+        "/dossies/"
+      ],
+      "dossies/*": [
+        "/dossies/orcamento-2027/"
+      ],
+      "educacao-e-saude": [
+        "/educacao-e-saude/"
+      ],
+      "emprego": [
+        "/emprego/"
+      ],
+      "en": [
+        "/en/"
+      ],
+      "en/404": [
+        "/en/404/"
+      ],
+      "en/about": [
+        "/en/about/"
+      ],
+      "en/agenda": [
+        "/en/agenda/"
+      ],
+      "en/areas": [
+        "/en/areas/"
+      ],
+      "en/areas/*": [
+        "/en/areas/administracao-interna/",
+        "/en/areas/ambiente-e-energia/"
+      ],
+      "en/corrections": [
+        "/en/corrections/"
+      ],
+      "en/districts/*": [
+        "/en/districts/aveiro/",
+        "/en/districts/beja/"
+      ],
+      "en/dossiers": [
+        "/en/dossiers/"
+      ],
+      "en/dossiers/*": [
+        "/en/dossiers/orcamento-2027/"
+      ],
+      "en/education-and-health": [
+        "/en/education-and-health/"
+      ],
+      "en/employment": [
+        "/en/employment/"
+      ],
+      "en/european-union": [
+        "/en/european-union/"
+      ],
+      "en/explainers": [
+        "/en/explainers/"
+      ],
+      "en/explainers/*": [
+        "/en/explainers/dinheiro-do-estado-2026/",
+        "/en/explainers/dinheiro-do-estado-2027/"
+      ],
+      "en/housing": [
+        "/en/housing/"
+      ],
+      "en/index": [
+        "/en/index/"
+      ],
+      "en/ledger": [
+        "/en/ledger/"
+      ],
+      "en/ledger/*": [
+        "/en/ledger/abandono-escolar-precoce-2024/",
+        "/en/ledger/abandono-escolar-precoce-2025/"
+      ],
+      "en/ledger/*/*": [
+        "/en/ledger/municipalities/abrantes/",
+        "/en/ledger/municipalities/agueda/"
+      ],
+      "en/method": [
+        "/en/method/"
+      ],
+      "en/municipalities/*": [
+        "/en/municipalities/abrantes/",
+        "/en/municipalities/agueda/"
+      ],
+      "en/pay-pensions-and-benefits": [
+        "/en/pay-pensions-and-benefits/"
+      ],
+      "en/places": [
+        "/en/places/"
+      ],
+      "en/poverty-and-inequality": [
+        "/en/poverty-and-inequality/"
+      ],
+      "en/prices": [
+        "/en/prices/"
+      ],
+      "en/privacy": [
+        "/en/privacy/"
+      ],
+      "en/regions": [
+        "/en/regions/"
+      ],
+      "en/regions/*": [
+        "/en/regions/acores/",
+        "/en/regions/alentejo/"
+      ],
+      "en/state-and-economy": [
+        "/en/state-and-economy/"
+      ],
+      "en/studies": [
+        "/en/studies/"
+      ],
+      "en/studies/*": [
+        "/en/studies/a-casa-em-portugal-e-na-europa/",
+        "/en/studies/agua-nao-faturada/"
+      ],
+      "en/studies/*/*": [
+        "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+        "/en/studies/agua-nao-faturada/document/"
+      ],
+      "en/studies/*/*/*": [
+        "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+        "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/"
+      ],
+      "en/suggestions": [
+        "/en/suggestions/"
+      ],
+      "en/suggestions/*": [
+        "/en/suggestions/empty/",
+        "/en/suggestions/limit/"
+      ],
+      "en/themes": [
+        "/en/themes/"
+      ],
+      "en/to-verify": [
+        "/en/to-verify/"
+      ],
+      "en/under-discussion": [
+        "/en/under-discussion/"
+      ],
+      "estado-e-economia": [
+        "/estado-e-economia/"
+      ],
+      "estudos": [
+        "/estudos/"
+      ],
+      "estudos/*": [
+        "/estudos/a-casa-em-portugal-e-na-europa/",
+        "/estudos/agua-nao-faturada/"
+      ],
+      "estudos/*/*": [
+        "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+        "/estudos/agua-nao-faturada/documento/"
+      ],
+      "estudos/*/*/*": [
+        "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+        "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/"
+      ],
+      "explicacoes": [
+        "/explicacoes/"
+      ],
+      "explicacoes/*": [
+        "/explicacoes/dinheiro-do-estado-2026/",
+        "/explicacoes/dinheiro-do-estado-2027/"
+      ],
+      "habitacao": [
+        "/habitacao/"
+      ],
+      "indice": [
+        "/indice/"
+      ],
+      "livro-razao": [
+        "/livro-razao/"
+      ],
+      "livro-razao/*": [
+        "/livro-razao/abandono-escolar-precoce-2024/",
+        "/livro-razao/abandono-escolar-precoce-2025/"
+      ],
+      "livro-razao/*/*": [
+        "/livro-razao/concelhos/abrantes/",
+        "/livro-razao/concelhos/agueda/"
+      ],
+      "lugares": [
+        "/lugares/"
+      ],
+      "metodo": [
+        "/metodo/"
+      ],
+      "municipios/*": [
+        "/municipios/abrantes/",
+        "/municipios/agueda/"
+      ],
+      "o-que-se-discute": [
+        "/o-que-se-discute/"
+      ],
+      "pobreza-e-desigualdade": [
+        "/pobreza-e-desigualdade/"
+      ],
+      "precos": [
+        "/precos/"
+      ],
+      "privacidade": [
+        "/privacidade/"
+      ],
+      "regioes": [
+        "/regioes/"
+      ],
+      "regioes/*": [
+        "/regioes/acores/",
+        "/regioes/alentejo/"
+      ],
+      "salarios-pensoes-e-apoios": [
+        "/salarios-pensoes-e-apoios/"
+      ],
+      "sobre": [
+        "/sobre/"
+      ],
+      "sugestoes": [
+        "/sugestoes/"
+      ],
+      "sugestoes/*": [
+        "/sugestoes/limite/",
+        "/sugestoes/nao-chegou/"
+      ],
+      "temas": [
+        "/temas/"
+      ],
+      "uniao-europeia": [
+        "/uniao-europeia/"
+      ]
+    },
+    "documentos": [
+      "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+      "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+      "/en/studies/agua-nao-faturada/document/",
+      "/en/studies/alentejo-algarve/document/",
+      "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+      "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+      "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+      "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+      "/en/studies/evora-prometido-pago-auditado-2026/document/",
+      "/en/studies/onde-esta-a-agua/document/",
+      "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+      "/en/studies/which-door-is-yours/document/",
+      "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+      "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+      "/estudos/agua-nao-faturada/documento/",
+      "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+      "/estudos/evolucao-de-portugal-desde-1981/documento/",
+      "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+      "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+      "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+      "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+      "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+      "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+      "/estudos/evora-prometido-pago-auditado-2026/documento/",
+      "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+      "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "/estudos/onde-esta-a-agua/documento/",
+      "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+      "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/"
+    ],
+    "paginas": [
+      "/",
+      "/en/",
+      "/a-verificar/",
+      "/agenda/",
+      "/areas/",
+      "/areas/administracao-interna/",
+      "/areas/ambiente-e-energia/",
+      "/correcoes/",
+      "/distritos/aveiro/",
+      "/distritos/beja/",
+      "/dossies/",
+      "/dossies/orcamento-2027/",
+      "/educacao-e-saude/",
+      "/emprego/",
+      "/en/404/",
+      "/en/about/",
+      "/en/agenda/",
+      "/en/areas/",
+      "/en/areas/administracao-interna/",
+      "/en/areas/ambiente-e-energia/",
+      "/en/corrections/",
+      "/en/districts/aveiro/",
+      "/en/districts/beja/",
+      "/en/dossiers/",
+      "/en/dossiers/orcamento-2027/",
+      "/en/education-and-health/",
+      "/en/employment/",
+      "/en/european-union/",
+      "/en/explainers/",
+      "/en/explainers/dinheiro-do-estado-2026/",
+      "/en/explainers/dinheiro-do-estado-2027/",
+      "/en/housing/",
+      "/en/index/",
+      "/en/ledger/",
+      "/en/ledger/abandono-escolar-precoce-2024/",
+      "/en/ledger/abandono-escolar-precoce-2025/",
+      "/en/ledger/municipalities/abrantes/",
+      "/en/ledger/municipalities/agueda/",
+      "/en/method/",
+      "/en/municipalities/abrantes/",
+      "/en/municipalities/agueda/",
+      "/en/pay-pensions-and-benefits/",
+      "/en/places/",
+      "/en/poverty-and-inequality/",
+      "/en/prices/",
+      "/en/privacy/",
+      "/en/regions/",
+      "/en/regions/acores/",
+      "/en/regions/alentejo/",
+      "/en/state-and-economy/",
+      "/en/studies/",
+      "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "/en/studies/agua-nao-faturada/",
+      "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+      "/en/studies/agua-nao-faturada/document/",
+      "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+      "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "/en/suggestions/",
+      "/en/suggestions/empty/",
+      "/en/suggestions/limit/",
+      "/en/themes/",
+      "/en/to-verify/",
+      "/en/under-discussion/",
+      "/estado-e-economia/",
+      "/estudos/",
+      "/estudos/a-casa-em-portugal-e-na-europa/",
+      "/estudos/agua-nao-faturada/",
+      "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+      "/estudos/agua-nao-faturada/documento/",
+      "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+      "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "/explicacoes/",
+      "/explicacoes/dinheiro-do-estado-2026/",
+      "/explicacoes/dinheiro-do-estado-2027/",
+      "/habitacao/",
+      "/indice/",
+      "/livro-razao/",
+      "/livro-razao/abandono-escolar-precoce-2024/",
+      "/livro-razao/abandono-escolar-precoce-2025/",
+      "/livro-razao/concelhos/abrantes/",
+      "/livro-razao/concelhos/agueda/",
+      "/lugares/",
+      "/metodo/",
+      "/municipios/abrantes/",
+      "/municipios/agueda/",
+      "/o-que-se-discute/",
+      "/pobreza-e-desigualdade/",
+      "/precos/",
+      "/privacidade/",
+      "/regioes/",
+      "/regioes/acores/",
+      "/regioes/alentejo/",
+      "/salarios-pensoes-e-apoios/",
+      "/sobre/",
+      "/sugestoes/",
+      "/sugestoes/limite/",
+      "/sugestoes/nao-chegou/",
+      "/temas/",
+      "/uniao-europeia/",
+      "/en/studies/alentejo-algarve/document/",
+      "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "/en/studies/evora-2027-prometido-painel-dinheiro/document/",
+      "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+      "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+      "/en/studies/evora-orcamentado-pago-devido-2025/document/",
+      "/en/studies/evora-prometido-pago-auditado-2026/document/",
+      "/en/studies/onde-esta-a-agua/document/",
+      "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+      "/en/studies/which-door-is-yours/document/",
+      "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/",
+      "/estudos/evolucao-de-portugal-desde-1981/documento/",
+      "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "/estudos/evora-2027-prometido-painel-dinheiro/documento/",
+      "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+      "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+      "/estudos/evora-economia-investidores-portas-abertas-2026/documento/",
+      "/estudos/evora-orcamentado-pago-devido-2025/documento/",
+      "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/",
+      "/estudos/evora-prometido-pago-auditado-2026/documento/",
+      "/estudos/evora-quem-governou-a-camara-2009-2025/documento/",
+      "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "/estudos/onde-esta-a-agua/documento/",
+      "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+      "/estudos/penalizacoes-por-reforma-antecipada-2026/documento/"
+    ]
+  },
+  "resultados": [
+    {
+      "pagina": "/correcoes/",
+      "largura": 390,
+      "sw": 3427,
+      "causas": [
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "s",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "tabelas": []
+    },
+    {
+      "pagina": "/en/corrections/",
+      "largura": 390,
+      "sw": 3427,
+      "causas": [
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "s",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "elemento": "span",
+          "classe": "",
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "tabelas": []
+    }
+  ],
+  "falhas": [
+    "/en/corrections/: 3427 > 390",
+    "/correcoes/: 3427 > 390"
+  ]
+}
