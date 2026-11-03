@@ -1,3 +1,4 @@
+import {corpoDocumentalConferido} from '../../scripts/corpo-documental-conferir.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import {spawnSync} from 'node:child_process';import {parse} from 'node-html-parser';
 import {manifestoDosRegistos} from '../../src/lib/registos.mjs';import {routePath} from '../../src/lib/routes.mjs';import {irmaoDepoisDaMedida} from '../../src/lib/posicao-do-selo.mjs';
@@ -15,3 +16,16 @@ try {
  const planta=correr();assert.equal(planta.status,1);assert.match(planta.stdout+planta.stderr,/C6 .*fonte-trocada/);
  console.log('SEL1: C6 aceita a medida inteira e recusa uma fonte trocada na cópia do estudo.');
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}
+
+// C1: os dois formatos guardam a mesma prova; mudar o caminho ou o resumo fecha.
+const figura={row:'planta',source_body:'content/planta/documento.pdf',source_sha256:'a'.repeat(64)};
+for(const campo of ['proof_rows','documentary_rows']){
+ const registo={[campo]:{planta:{document:{file:figura.source_body,source_sha256:figura.source_sha256}}}};
+ assert(corpoDocumentalConferido(registo,figura));
+ for(const alterada of [{...figura,source_body:'content/planta/outro.pdf'},{...figura,source_sha256:'b'.repeat(64)},{...figura,row:'ausente'}])assert(!corpoDocumentalConferido(registo,alterada));
+ for(const file of ['content/../documento.pdf','fora/documento.pdf']){
+  const alterado=structuredClone(registo);alterado[campo].planta.document.file=file;
+  assert(!corpoDocumentalConferido(alterado,{...figura,source_body:file}));
+ }
+}
+console.log('C1: dois formatos de origem conferidos e dez adulterações recusadas.');
