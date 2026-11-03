@@ -951,3 +951,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 
 | og1-e-f | Correção da cronologia da habitação nas duas línguas | por ler | Codex, 03.11.2026: frase autorizada no §6; a prova compara a primeira edição guardada e a versão atual. Leitura cruzada reservada ao lugar de direção. |
 | og1-e-h | Qualificação da contagem do movimento e atribuição das frases da habitação | por ler | Codex, 03.11.2026: frase autorizada no §3; a prova compara a primeira edição guardada e a versão atual. Leitura cruzada reservada ao lugar de direção. |
+
+| ev3 | Natureza de atualização, entrada do registo e faixas das edições, nas duas línguas | por ler | Codex, 03.11.2026: frases do mandato EV3 e adendas; formas rendidas e datas conferidas no manifesto. Leitura cruzada reservada ao lugar de direção. |
