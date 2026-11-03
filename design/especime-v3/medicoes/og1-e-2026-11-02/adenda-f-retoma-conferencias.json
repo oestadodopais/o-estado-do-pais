@@ -1,0 +1,217 @@
+{
+  "chamadas_ate_ao_relatorio": 88,
+  "corridas_com_registo": 30,
+  "corridas_de_conferencias_com_registo": 24,
+  "core_gate": {
+    "corridas": 1,
+    "codigo": 0
+  },
+  "build_inteiro": {
+    "corridas": 1,
+    "codigo": 1
+  },
+  "perfil_dirigido": {
+    "pedido_recusado_antes_de_executar": 9,
+    "frases_compostas": 0,
+    "primeira": 0
+  },
+  "codigos_lidos": {
+    "build": 1,
+    "check:frases-compostas": 0,
+    "check:primeira": 0
+  },
+  "conferencias": [
+    {
+      "registo": "<temporario>/og1ef2-compor.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-compor-b.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-motor-plantas.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-hb-build.log",
+      "codigo": 0,
+      "tipo": "geração ou travessia"
+    },
+    {
+      "registo": "<temporario>/og1ef2-formas.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-publicadores.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-mortos.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-publicadores-b.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-formas-b.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-publicadores-c.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-travessia.log",
+      "codigo": 0,
+      "tipo": "geração ou travessia"
+    },
+    {
+      "registo": "<temporario>/og1ef2-edicoes-fontes.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-precompilar.log",
+      "codigo": 1,
+      "tipo": "geração ou travessia"
+    },
+    {
+      "registo": "<temporario>/og1ef2-precompilar-b.log",
+      "codigo": 0,
+      "tipo": "geração ou travessia"
+    },
+    {
+      "registo": "<temporario>/og1ef2-rotulos-medicao.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-voz.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-conferencias.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-rotulos-medicao-b.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-rotulos-escrever.log",
+      "codigo": 0,
+      "tipo": "geração ou travessia"
+    },
+    {
+      "registo": "<temporario>/og1ef2-lugar.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-html.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-conferencias-b.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-voz-b.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-conferencias-c.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-auditoria.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-linhas-repor.log",
+      "codigo": 0,
+      "tipo": "geração ou travessia"
+    },
+    {
+      "registo": "<temporario>/og1ef2-conferencias-d.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-restantes.log",
+      "codigo": 1,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-restantes-b.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    },
+    {
+      "registo": "<temporario>/og1ef2-fecho-build.log",
+      "codigo": 0,
+      "tipo": "conferência ou medição"
+    }
+  ],
+  "paginas": 9823,
+  "recusas_atuais": 0,
+  "edicoes_guardadas": [
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
+      "sha256": "b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74",
+      "recusas_conservadas": 5
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01",
+      "sha256": "edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87",
+      "recusas_conservadas": 0
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
+      "sha256": "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979",
+      "recusas_conservadas": 5
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
+      "sha256": "1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9",
+      "recusas_conservadas": 5
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01",
+      "sha256": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+      "recusas_conservadas": 0
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
+      "sha256": "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a",
+      "recusas_conservadas": 5
+    }
+  ],
+  "motor": "373d234b",
+  "commits": [
+    "e9b2e8fbe OG1-E F: recontar as áreas sem cartões de texto",
+    "9a3cf5c78 OG1-E F: retirar os textos das grelhas de medidas",
+    "96af34ea9 OG1-E F: dizer a recontagem do projeto e corrigir as definições inglesas",
+    "3650082c2 OG1-E F: exigir documentos e conferir todos os publicadores do recibo",
+    "49511b79f OG1-E F: recompor a habitação e conservar a primeira edição"
+  ]
+}
