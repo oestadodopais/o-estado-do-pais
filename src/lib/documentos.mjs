@@ -1,3 +1,4 @@
+import {marcarNomesEv3,retirarNomesEv3} from './nomes-ev3.mjs';
 /**
  * Os documentos dos estudos: obras já publicadas, alojadas aqui INTACTAS.
  *
@@ -900,7 +901,8 @@ export function comMarcasDaCasa(bruto, { slug, lang }) {
   const onde = charset
     ? cabeca.fim + /** @type {number} */ (charset.index) + charset[0].length
     : cabeca.fim;
-  return saida.slice(0, onde) + MARCA_DOS_ROBOS + saida.slice(onde);
+  const marcado = saida.slice(0, onde) + MARCA_DOS_ROBOS + saida.slice(onde);
+  return slug === 'evora-2027-capital-europeia-da-cultura' && lang === 'en' ? marcarNomesEv3(marcado) : marcado;
 }
 
 /**
@@ -1557,6 +1559,7 @@ function guiaoDaMoldura(lang) {
  * @returns {string | null}
  */
 export function provaDosBytes(bruto, construido) {
+  construido = retirarNomesEv3(construido);
   const bufO = Buffer.from(bruto, 'utf8');
   const bufC = Buffer.from(construido, 'utf8');
   /**

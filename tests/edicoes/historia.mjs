@@ -30,7 +30,7 @@ for(const [nome,mudar,erro] of [
   mudar(c);const erros=conferirHistoria(c);if(erro)assert(erros.some(e=>e.startsWith(erro)),nome+': '+erros);else assert.deepEqual(erros,[],nome);plantas++;
  }finally{fs.rmSync(raiz,{recursive:true,force:true});}
 }
-const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang));
+const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-2027-capital-europeia-da-cultura'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang));
 assert.deepEqual(manifesto.edicoes.filter(e=>e.primeira_edicao).map(e=>e.slug+'/'+e.lang).sort(),testemunhas.sort());
 const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===testemunhas.length);plantas++;
 assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,testemunhas.length);plantas++;

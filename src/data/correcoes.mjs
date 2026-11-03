@@ -29,7 +29,7 @@
 
 export const KINDS_DO_LIVRO = /** @type {const} */ (['correcao', 'atualizacao', 'proveniencia']);
 
-export const KINDS = /** @type {const} */ ([...KINDS_DO_LIVRO, 'texto']);
+export const KINDS = /** @type {const} */ ([...KINDS_DO_LIVRO, 'texto', 'texto_atualizado']);
 
 /** As naturezas que o registo do Método lista uma a uma. Ver RegistoCorrecoes. */
 export const KINDS_NO_REGISTO = ['correcao', 'atualizacao'];
@@ -51,6 +51,7 @@ export const CAMPOS_DE_PROVENIENCIA = /** @type {const} */ ([
 
 /** @type {Record<string, ParDeLinguas>} */
 export const KIND_LABELS = {
+  texto_atualizado: { pt: 'Estudo atualizado', en: 'Study updated' },
   texto: { pt: 'Estudo corrigido', en: 'Study corrected' },
   correcao: { pt: 'correção', en: 'correction' },
   atualizacao: { pt: 'atualização', en: 'update' },
@@ -81,5 +82,9 @@ export const CORRECOES_TEXTO = [
   { kind: 'texto', slug: 'a-casa-em-portugal-e-na-europa', data: '2026-11-03', frase: {
     pt: "Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.",
     en: "Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade's commander, the movement's count appeared without the «pelo menos» (at least) with which the report gives it, and a sentence said the campers had written what a news report attributes to them; they are news reports' accounts, and the sentences now name them.",
+  } },
+  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-03', frase: {
+    pt: 'Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação.',
+    en: "The October decisions of Évora's Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added.",
   } },
 ];

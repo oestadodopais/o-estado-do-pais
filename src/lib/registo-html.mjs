@@ -1,3 +1,4 @@
+import {marcarNomesEv3} from './nomes-ev3.mjs';
 import { selosDepoisDaMedida } from './posicao-do-selo.mjs';
 import { hasSerie, getSerie, allSeries } from './series.mjs';
 import rotulosDasSeries from '../data/rotulos-das-series.json' with { type: 'json' };
@@ -689,5 +690,6 @@ export function pecasDoCorpo({
      para disparar o fecho de dentro do laço. */
   fechaSeccaoEmFluxo();
 
-  return selosDepoisDaMedida(saida.pecas);
+  const pecas = selosDepoisDaMedida(saida.pecas);
+  return chave === 'evora-2027-capital-europeia-da-cultura/en' ? pecas.map(p => 'html' in p ? {...p, html: marcarNomesEv3(p.html)} : p) : pecas;
 }

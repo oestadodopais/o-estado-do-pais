@@ -475,33 +475,51 @@ edicoes:
   - slug: evora-2027-capital-europeia-da-cultura
     lang: pt
     edicoes:
-      - data: '2026-10-01'
-        sha256: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
-        file: evora-2027-capital-europeia-da-cultura/pt.html
-    title: "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos"
+    - data: '2026-10-01'
+      sha256: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
+      file: _edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html
+    - data: '2026-11-03'
+      sha256: 65dc46c530bbbe435a017ddf7629ac77fe29cc49e7a39562d475789ede63178f
+      file: evora-2027-capital-europeia-da-cultura/pt.html
+      natureza: atualizacao
+    title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos'
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4"
+    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 4f1de166fd5692550a41ea266accabd0dc668732
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.pt.html
-    fetched_utc: 2026-10-01T05:41:12Z
-    bytes_raw: 71339
-    bytes_normalized: 71339
-    sha256_raw: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
-    sha256_normalized: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
+    fetched_utc: '2026-11-03T12:11:13.016949+00:00'
+    bytes_raw: 72745
+    bytes_normalized: 72745
+    sha256_raw: 65dc46c530bbbe435a017ddf7629ac77fe29cc49e7a39562d475789ede63178f
+    sha256_normalized: 65dc46c530bbbe435a017ddf7629ac77fe29cc49e7a39562d475789ede63178f
+    primeira_edicao:
+      date: '2026-10-01'
+      sha256: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
+      file: _edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html
+      commit: 6dc972e6afd7ef07c744c15f698f11a996664650
   - slug: evora-2027-capital-europeia-da-cultura
     lang: en
     edicoes:
-      - data: '2026-10-01'
-        sha256: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
-        file: evora-2027-capital-europeia-da-cultura/en.html
-    title: "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts"
+    - data: '2026-10-01'
+      sha256: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
+      file: _edicoes/evora-2027-capital-europeia-da-cultura.en.2026-10-01.html
+    - data: '2026-11-03'
+      sha256: ee6b6937917c37baf01ac3b10609a42fe07417e8013154c9efc8893c65fada40
+      file: evora-2027-capital-europeia-da-cultura/en.html
+      natureza: atualizacao
+    title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts'
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4"
+    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 4f1de166fd5692550a41ea266accabd0dc668732
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.en.html
-    fetched_utc: 2026-10-01T05:41:12Z
-    bytes_raw: 69408
-    bytes_normalized: 69408
-    sha256_raw: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
-    sha256_normalized: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
+    fetched_utc: '2026-11-03T12:11:13.024592+00:00'
+    bytes_raw: 70735
+    bytes_normalized: 70735
+    sha256_raw: ee6b6937917c37baf01ac3b10609a42fe07417e8013154c9efc8893c65fada40
+    sha256_normalized: ee6b6937917c37baf01ac3b10609a42fe07417e8013154c9efc8893c65fada40
+    primeira_edicao:
+      date: '2026-10-01'
+      sha256: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
+      file: _edicoes/evora-2027-capital-europeia-da-cultura.en.2026-10-01.html
+      commit: 6dc972e6afd7ef07c744c15f698f11a996664650
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "pt"
     edicoes:

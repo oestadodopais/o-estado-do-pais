@@ -1053,6 +1053,38 @@
           "valor": "eventos.coletivos.org"
         }
       ]
+    },
+    {
+      "nome": "Assembleia Municipal de Évora",
+      "aliases": [],
+      "dominios": [
+        "www.cm-evora.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ev3-data-am-22-10",
+          "documento": "EDITAL",
+          "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
+          "origem": "Cabeçalho do edital: PRESIDENTE DA ASSEMBLEIA MUNICIPAL DE ÉVORA."
+        }
+      ]
+    },
+    {
+      "nome": "Évora 2027",
+      "aliases": [],
+      "dominios": [
+        "www.evora2027.com"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ev3-ultima-noticia",
+          "documento": "Notícias",
+          "endereco": "https://www.evora2027.com/noticias",
+          "origem": "Nome Évora 2027 no cabeçalho e no rodapé da página Notícias."
+        }
+      ]
     }
   ],
   "documentos": [
@@ -2509,6 +2541,46 @@
       },
       "sha256": "448789ab49c7d764afe8f4f89dfa3385f1ec22ccf2d40ef6e2f677af14c96b2c",
       "arquivo": "content/20 Orcamento do Estado/source/eo-anexo-agosto.xlsx"
+    },
+    {
+      "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
+      "titulo": "EDITAL",
+      "nome": "Município de Évora",
+      "rotulos": {},
+      "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf"
+    },
+    {
+      "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
+      "titulo": "EDITAL",
+      "nome": "Assembleia Municipal de Évora",
+      "rotulos": {},
+      "sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf"
+    },
+    {
+      "url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
+      "titulo": "EDITAL",
+      "nome": "Município de Évora",
+      "rotulos": {},
+      "sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf"
+    },
+    {
+      "url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
+      "titulo": "Assembleia Municipal de Évora aprovou medidas de reprogramação orçamental na Empreitada de Requalificação e Renaturalização do Rossio de S. Brás",
+      "nome": "Município de Évora",
+      "rotulos": {},
+      "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html"
+    },
+    {
+      "url": "https://www.evora2027.com/noticias",
+      "titulo": "Notícias",
+      "nome": "Évora 2027",
+      "rotulos": {},
+      "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html"
     }
   ],
   "correcoes": [

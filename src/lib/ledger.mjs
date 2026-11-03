@@ -1546,7 +1546,7 @@ export function contagensDoRegisto(claims = loadClaims()) {
     }
   }
   return {
-    correcoes_publicadas: correcoes + CORRECOES_TEXTO.length,
+    correcoes_publicadas: correcoes + CORRECOES_TEXTO.filter(e => e.kind === 'texto').length,
     atualizacoes_publicadas: atualizacoes,
     revisoes_de_proveniencia: revisoes,
   };

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {KIND_LABELS} from '../src/data/correcoes.mjs';
 import {loadClaims} from '../src/lib/ledger.mjs';
 import {partesDaCorrecao} from '../src/lib/texto-correcao.mjs';
 import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
@@ -33,7 +34,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
     }
     const file = path.join(raiz,p.file);
     if (!fs.existsSync(file) || sha(fs.readFileSync(file)) !== p.sha256) erros.push(`ED1 sha256: ${chave}`);
-    if (!correcoes.some(c => c.kind === 'texto' && c.slug === w.slug && c.data === declaracao.edicoes.at(-1).data)) erros.push(`ED1 entrada: ${chave} sem correção na data ${d.updated}`);
+    if (!correcoes.some(c => ['texto','texto_atualizado'].includes(c.kind) && c.slug === w.slug && c.data === declaracao.edicoes.at(-1).data)) erros.push(`ED1 entrada: ${chave} sem correção na data ${d.updated}`);
     if (paginas) {
       for(const v of e.edicoes.slice(0,-1)){
         const html=paginas.get(`${rotaAtual(e.slug,e.lang)}/${v.data}`),arquivo=path.join(raiz,v.file);
@@ -48,7 +49,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
   }
   for (const c of correcoes) {
     const chave = `${c.slug}|${c.data}`, w = works.find(w => w.slug === c.slug);
-    if (c.kind !== 'texto' || !w || !manifesto.edicoes.some(e=>e.slug===c.slug&&e.edicoes?.slice(1).some(v=>v.data===c.data)) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
+    if (!['texto','texto_atualizado'].includes(c.kind) || !w || !manifesto.edicoes.some(e=>e.slug===c.slug&&e.edicoes?.slice(1).some(v=>v.data===c.data)) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
     vistas.add(chave);
   }
   if (paginas) for (const [rota,html] of paginas) {
@@ -74,7 +75,7 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claim
     if (!c || !titulo || !e?.primeira_edicao) {erros.push(`ED1 texto: entrada desconhecida ${slug}`);continue;}
     const partes=partesDaCorrecao(c,lang),frase=textoDaMudancaGate(partes,claims,true);
     if(frase===null||frase!==c.frase[lang])erros.push(`ED1 números: ${slug} frase sem origem selada`);
-    const valores = {data: data.split('-').reverse().join('.'), titulo, frase:frase??c.frase[lang], kind:lang === 'pt' ? 'Estudo corrigido' : 'Study corrected'};
+    const valores = {data: data.split('-').reverse().join('.'), titulo, frase:frase??c.frase[lang], kind:KIND_LABELS[c.kind]?.[lang]};
     for (const [campo,valor] of Object.entries(valores)) {
       const els = li.querySelectorAll(`[data-texto-campo="${campo}"]`);
       if (els.length !== 1 || normal(textoSemPortas(els[0])) !== normal(valor) || (campo === 'data' && els[0].getAttribute('datetime') !== data)) erros.push(`ED1 texto: ${slug} campo ${campo}`);

@@ -1048,7 +1048,7 @@ export function prova(lang = 'pt') {
     ),
 
     /* ---- o registo ---- */
-    correcoes: k('correcoes', entradasDoRegisto('correcao').length + CORRECOES_TEXTO.length, routePath('correcoes', lang)),
+    correcoes: k('correcoes', entradasDoRegisto('correcao').length + CORRECOES_TEXTO.filter(e => e.kind === 'texto').length, routePath('correcoes', lang)),
     atualizacoes: k(
       'atualizacoes',
       entradasDoRegisto('atualizacao').length,

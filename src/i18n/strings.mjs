@@ -2004,11 +2004,12 @@ export const STRINGS = {
       lede: 'Corrigir em silêncio é a forma mais barata de mentir.',
       politicaK: 'A política',
       politicaV:
-        'Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São quatro naturezas, e não se misturam:',
+        'Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São cinco naturezas, e não se misturam:',
       naturezas: [
         { k: 'Correção.', v: 'O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir.' },
         { k: 'Atualização.', v: 'O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro.' },
         { k: 'Revisão de proveniência.', v: 'O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização.' },
+        { k: "Estudo atualizado.", v: "O texto de um estudo ganhou documentos novos, sem que o que dizia estivesse errado; a entrada diz o que entrou, e a edição anterior fica a um toque." },
         { k: "Estudo corrigido.", v: "O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque." },
       ],
       enderecoA: 'Quem encontrar um erro escreve para ',
@@ -4013,11 +4014,12 @@ export const STRINGS = {
       lede: 'Correcting in silence is the cheapest way of lying.',
       politicaK: 'The policy',
       politicaV:
-        'An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are four kinds, and they are not mixed:',
+        'An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are five kinds, and they are not mixed:',
       naturezas: [
         { k: 'Correction.', v: 'What was published was wrong: a value, or a field of the receipt, such as the name of the document\'s publisher or the address of the source. It is a confession, and it is the reason the register exists.' },
         { k: 'Update.', v: 'The value was right and stopped being so, because what it measures changed. It is not an error.' },
         { k: 'Provenance revision.', v: 'The value did not change; the route to the source did, an address for example. It is neither an error nor an update.' },
+        { k: "Study updated.", v: "The text of a study gained new documents, and nothing it said was wrong; the entry says what came in, and the previous edition stays one tap away." },
         { k: "Study corrected.", v: "The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away." },
       ],
       enderecoA: 'Anyone who finds an error writes to ',

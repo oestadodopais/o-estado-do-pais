@@ -17,7 +17,7 @@ export function conferirHistoria({works,manifesto,correcoes,raiz}) {
    const f=path.join(raiz,file);
    if(!fs.existsSync(f)||sha(fs.readFileSync(f))!==v.sha256)erros.push(`ED1 sha256: ${chave}/${v.data}`);
    if(atual&&v.sha256!==e.sha256_normalized)erros.push(`ED1 atual: ${chave} diverge da última versão`);
-   if(i>0&&!correcoes.some(c=>c.kind==='texto'&&c.slug===e.slug&&c.data===v.data))erros.push(`ED1 entrada: ${chave}/${v.data}`);
+   if(i>0&&!correcoes.some(c=>c.kind===(v.natureza==='atualizacao'?'texto_atualizado':'texto')&&c.slug===e.slug&&c.data===v.data))erros.push(`ED1 entrada: ${chave}/${v.data}`);
   }
   if(d?.updated&&d.updated!==vs.at(-1).data)erros.push(`ED1 updated: ${chave}`);
   if(vs.length>1){const p=e.primeira_edicao,v=vs[0];if(!p||p.file!==v.file||p.sha256!==v.sha256||p.date!==v.data||!/^[a-f0-9]{7,40}$/.test(p.commit??''))erros.push(`ED1 arquivo: ${chave} primeira edição em falta ou inválida`);}
