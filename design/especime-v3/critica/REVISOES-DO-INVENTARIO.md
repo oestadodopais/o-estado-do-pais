@@ -955,3 +955,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | ev3 | Natureza de atualização, entrada do registo e faixas das edições, nas duas línguas | por ler | Codex, 03.11.2026: frases do mandato EV3 e adendas; formas rendidas e datas conferidas no manifesto. Leitura cruzada reservada ao lugar de direção. |
 
 | ev3-g | Política e descrição das correções; saída da lede, da lista de naturezas e da entrada do registo nas novidades | por ler | Codex, 03.11.2026: frases da adenda G e formas conservadas; leitura cruzada reservada ao lugar de direção. |
+
+| fp3 | 2 novas | por ler | Codex, 03.11.2026: «estudo atualizado» e «study updated», pedidos no mandato FP3 e conferidos contra a edição atual do manifesto nas duas línguas. Leitura cruzada reservada ao lugar de direção. |
