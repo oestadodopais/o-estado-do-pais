@@ -40,6 +40,7 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  */
 
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
+import { superficieDoQuadro } from './check-quadro.mjs';
 import fs from 'node:fs';
 import {conferirInicio} from '../tests/discussao/itens.mjs';
 import path from 'node:path';
@@ -242,6 +243,8 @@ function temProvaDoB2(no, marcados) {
 function blocosDe(root) {
   const out = [];
   const marcados = new Set();
+  const pai2 = superficieDoQuadro(root, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt');
+  if (!pai2.erros.length) for (const no of pai2.nos) { marcados.add(no); for (const filho of no.querySelectorAll('*')) marcados.add(filho); }
   for (const el of root.querySelectorAll(ORIGEM_DECLARADA)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
@@ -999,6 +1002,8 @@ function frasesDaVoz(root) {
     ',' +
     NOME_DECLARADO;
   const marcados = new Set();
+  const pai2 = superficieDoQuadro(root, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt');
+  if (!pai2.erros.length) for (const no of pai2.nos) { marcados.add(no); for (const filho of no.querySelectorAll('*')) marcados.add(filho); }
   for (const el of root.querySelectorAll(DECLARADO)) marcados.add(el);
   for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
     if (el.querySelector(BLOCOS_DA_VOZ)) continue;
@@ -1018,6 +1023,8 @@ function frasesDaCasa(root, rotaKey) {
   const leOrigem = ROTAS_COM_ORIGEM_LIDA.has(rotaKey);
   const out = [];
   const marcados = new Set();
+  const pai2 = superficieDoQuadro(root, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt');
+  if (!pai2.erros.length) for (const no of pai2.nos) { marcados.add(no); for (const filho of no.querySelectorAll('*')) marcados.add(filho); }
   const DECLARADO =
     ORIGEM_DECLARADA +
     ',' +

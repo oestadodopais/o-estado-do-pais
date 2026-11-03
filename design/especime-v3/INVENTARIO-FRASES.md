@@ -5462,3 +5462,19 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 | conteudo | O registo das correções e das atualizações de O Estado do País: o que estava publicado, o que ficou, a data e o motivo. | ev3-g | viva | Redação prescrita na adenda G. |
 | conteudo | When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents. | ev3-g | viva | Redação prescrita na adenda G. |
 | conteudo | The register of the corrections and updates of O Estado do País: what was published, what it became, the date and the reason. | ev3-g | viva | Redação prescrita na adenda G. |
+
+## PAI2: o quadro do país e a revisão da fonte
+
+Os títulos, cabeçalhos e ausências do quadro são declarados em `src/data/quadro-do-pais.mjs`.
+A forma compacta é conferida por `scripts/check-quadro.mjs`, linha a linha, contra os cartões e o livro.
+A voz e o inventário só retiram os nós depois dessa conferência, pela função `superficieDoQuadro`.
+As palavras continuam sujeitas à varredura lexical.
+
+- PT: «As medidas do país»; «Medida», «Portugal», «Antes», «União Europeia», «Referência da Comissão»; «sem anterior».
+- EN: «The country's measures»; «Measure», «Portugal», «Before», «European Union», «Commission reference»; «no previous».
+- PT: «A fonte reviu este número para ⟦found⟧ na releitura de ⟦data⟧; o valor acima é o publicado até a revisão se aplicar.»
+- EN: «The source revised this figure to ⟦found⟧ in the re-reading of ⟦date⟧; the value above is the one published until the revision is applied.»
+
+Os campos variáveis são transcritos da última reconferência sem correção ou atualização de valor posterior.
+A frase inteira, o índice da reconferência, os campos e a porta do recibo são conferidos na mesma função
+que as plantas da voz, da data e da L1 chamam. A ausência de anterior só aparece quando falta a comparação.

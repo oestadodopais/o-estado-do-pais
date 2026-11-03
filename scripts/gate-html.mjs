@@ -33,6 +33,7 @@ import { plantasDosMarcadores } from '../tests/cartao/rp4nb.mjs';
 const PLANTAS_RP4N = plantasDosMarcadores();
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
+import { campoDoAviso } from './check-quadro.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
@@ -6684,7 +6685,7 @@ for (const file of ficheirosHtml(DIST)) {
       el.closest?.('[data-faixa-paises]')?.getAttribute('data-faixa-paises') === serieDaUnidade;
     if (serieDaUnidade !== null && !naFaixaDaSuaSerie) {
       err(`R2-b: a unidade da casa de "${id}" diz ser da faixa «${serieDaUnidade}», e não está na faixa da série dessa linha.`);
-    } else if (serieDaUnidade === null && el.closest?.('[data-cartao-medida]')?.getAttribute('data-cartao-medida') !== id) {
+    } else if (serieDaUnidade === null && el.closest?.('[data-cartao-medida]')?.getAttribute('data-cartao-medida') !== id && !(rota?.key === 'temas' && el.closest('[data-quadro-medida]')?.getAttribute('data-quadro-medida') === id)) {
       err(`K2-c: a unidade da casa de "${id}" está fora do cartão da sua linha: só a linha do valor desse cartão a pode mostrar.`);
     }
     if (naFaixaDaSuaSerie) UNIDADES_DA_CASA.naFaixa++;
@@ -6822,6 +6823,8 @@ for (const file of ficheirosHtml(DIST)) {
        entra pela mesma porta, só dentro dessa lista e só na página da semana; a comparação literal do campo e a
        auditoria dos selos continuam a correr, e a planta `ex1-unidade-de-outra-linha` (`tests/pais/portoes.mjs`) troca
        a unidade de uma entrada pela de outra linha. */
+    const avisoDaRevisao = campoDoAviso(el, linguaPagina);
+    const campoDoQuadro = rota?.key === 'temas' && campo === 'unit' && el.closest('[data-quadro-valor]')?.getAttribute('data-quadro-valor') === id;
     const campoDaRevisaoSemanal = rota?.key === 'leituraDaSemana' && (campo === 'unit' || /^verifications\.\d+\.found$/.test(campo)) &&
       el.closest('[data-semana-revisao]')?.getAttribute('data-semana-revisao') === id &&
       el.closest('[data-semana-revisoes]') !== null;
@@ -6843,7 +6846,7 @@ for (const file of ficheirosHtml(DIST)) {
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
     const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || (rota?.key === 'discussao' && fragmentoDoItem(el,id,campo,linguaPagina));
-    if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !(unidadeDeCorrecaoDoPais || campoDaRevisaoSemanal) && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    if (!avisoDaRevisao && !campoDoQuadro && !fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !(unidadeDeCorrecaoDoPais || campoDaRevisaoSemanal) && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
@@ -6851,7 +6854,7 @@ for (const file of ficheirosHtml(DIST)) {
       );
       continue;
     }
-    if (claimDaPagina && id !== claimDaPagina.id) {
+    if (claimDaPagina && id !== claimDaPagina.id && !avisoDaRevisao) {
       err(
         `a página da linha "${claimDaPagina.id}" renderiza o campo "${campo}" da linha "${id}". ` +
           `Uma página de linha só mostra os campos da sua própria linha.`,
@@ -6906,7 +6909,7 @@ for (const file of ficheirosHtml(DIST)) {
     const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
       ? normalizeWhitespace(decodeEntities(textoDe(el)))
       : textoTranscrito(el);
-    const relido = conferirCampoRelido(el, claim, linguaPagina, naRevisaoDaSemana(el,rota?.key,linguaPagina,id));
+    const relido = conferirCampoRelido(el, claim, linguaPagina, avisoDaRevisao || naRevisaoDaSemana(el,rota?.key,linguaPagina,id));
     if (relido ? !relido.confere : renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +

@@ -870,3 +870,22 @@ A porta da discussão no índice depende das linhas impressas nas mudanças, dos
 - **Proteções conservadas.** O L6 do HTML usa `irmaoDepoisDaMedida` e planta uma fonte errada depois da unidade. A régua dos títulos da discussão exige o texto integral, o nome acessível, as marcas de cada figura e o seu selo local; as plantas recusam fonte trocada, selo ausente, deslocado ou separado da medida e nome acessível alterado. A régua do dossiê planta fonte da data trocada, selo indevido no ano do nome, retirada de selo num ano fora do nome e espaços de enchimento no fim da abertura. A prova do texto lido confere as posições antiga e nova com o mesmo texto; a medição visual da leitura reconhece a mesma unidade partilhada. A C6 da cadeia usa a mesma função e `tests/selos/cadeia.mjs` troca uma fonte numa cópia do estudo. Na classificação e na presença das frases vivas, o inventário normaliza apenas espaços de separação de nós antes de pontuação, depois de letras ou fechos, nunca entre algarismos. A recusa das frases retiradas conserva o texto e a comparação originais; `tests/selos/inventario.mjs` prova que palavras, números, nomes e pontuação diferentes continuam diferentes. O nome acessível do título só se considera repetido quando coincide integralmente com o texto rendido sem os selos. As réguas do cartão e K8 continuam a conferir os seus textos e origens.
 
 - **Projeções HB1 e origem RP4-n.** `scripts/projecao-hb1-portoes.mjs` contém as funções chamadas pelo HTML e pela cadeia, sem opção de saída antecipada nos comandos. `tests/hb1/projecao-portoes.mjs` planta valores alterados nas cópias dessas funções. `tests/hb1/projecao-linha.mjs` chama também `confereRotulos` numa cópia cuja projeção exportada confere, mas cuja origem difere; só a igualdade entre origem e exportação recusa essa planta.
+
+### PAI2: o quadro do país e os avisos da revisão (03.11.2026)
+
+`QuadroDoPais.astro` acrescenta a Temas uma tabela por porta, pela ordem das `ENTRADAS`.
+`ValorDoQuadro.astro` usa os mesmos valores, unidades e períodos, com o selo depois da medida inteira.
+Abaixo de 600 px, cada linha empilha as células com os rótulos. A tabela desliza na sua caixa.
+Os cartões inteiros continuam nas portas; `tests/quadro/forma.mjs` planta um cartão em Temas
+nas duas edições e chama a N1C sem alterar a regra.
+
+`revisao-da-fonte.mjs` lê a última reconferência, ordenada por data e posição, e só mostra uma divergência
+sem correção ou atualização de valor posterior. `AvisoDaRevisao.astro` transcreve o valor encontrado e a data,
+com a frase do mandato e a porta do recibo. As formas que mostram o valor chamam o mesmo componente;
+os valores selados não mudam. A média europeia e o anterior podem ter avisos próprios.
+
+`check:quadro`, no `verify`, e a conferência de `gate:html` chamam `scripts/check-quadro.mjs`.
+A segunda leitura carrega os YAML diretamente: recompõe as divergências sem chamar o resolvedor da vista,
+varre todas as páginas com valores pendentes, compara o quadro com o cartão e com o livro, e recusa ausências
+indevidas. As plantas são cópias independentes do HTML, incluindo valor, período, selo, frase, aviso e N1C.
+`superficieDoQuadro` é a função comum da voz, do inventário e da L1: só devolve nós e portas depois da prova.

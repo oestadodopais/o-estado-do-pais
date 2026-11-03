@@ -98,7 +98,7 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"build"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"build"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
@@ -112,6 +112,9 @@ if [ "${perfil:-}" = build ]; then
 elif [ "${perfil:-}" = lar1-b ]; then
   portoes="build check:largura"
   export OEDP_LARGURA_JSON="$O/largura.json"
+elif [ "${perfil:-}" = pai2 ] || [ "${perfil:-}" = pai2-navegador ]; then
+  portoes="check:alvos check:sobreposicao check:largura"
+  if [ "$perfil" = pai2 ]; then portoes="build check:quadro check:cartao check:css check:lugar $portoes typecheck"; fi
 elif [ "${perfil:-}" = lar1 ] || [ "${perfil:-}" = lar1-largura ]; then
   portoes="check:largura check:largura:planta check:capturas-largura lar1:medir"
   if [ "$perfil" = lar1 ]; then

@@ -10,5 +10,5 @@ const revisoes = [...new Set(ids)].map(id => ({ id, v: revisaoDaFonte(id) })).fi
 </span>)}
 <style>
   .aviso-revisao { display: block; flex-basis: 100%; min-width: 0; max-width: 65ch; margin-block: .5rem; font-size: .875rem; line-height: 1.5; font-weight: 400; }
-  .aviso-revisao a { display: block; min-height: 44px; color: inherit; text-decoration: underline; text-underline-offset: .18em; overflow-wrap: anywhere; }
+  .aviso-revisao a { position: relative; z-index: 2; display: block; min-height: 44px; color: inherit; text-decoration: underline; text-underline-offset: .18em; overflow-wrap: anywhere; }
 </style>

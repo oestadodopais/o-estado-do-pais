@@ -1,3 +1,4 @@
+import { superficieDoQuadro } from './check-quadro.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 /** A lista fechada do B1 para o país e os temas. Os blocos de dados são
  * comparados antes de saírem da leitura; uma marca sozinha não basta. */
@@ -97,6 +98,9 @@ export function verificaVozPais(raiz, documentos = new Map()) {
          em «Lugares», e as suas marcas deixaram de ser dispensas nestas páginas. Entra a menção da fonte do
          sinal da porta dos lugares, e só quando o texto é, carácter a carácter, o do manifesto. */
       const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"], [data-nonledger="data-da-linha"]'));
+      const pai2 = superficieDoQuadro(main.parentNode, lang, {dist:path.join(raiz,'dist')});
+      erros.push(...pai2.erros);
+      for (const no of pai2.nos) dispensados.add(no);
       for (const m of main.querySelectorAll('[data-fonte-do-sinal]')) if (texto(m) === FONTE_DA_CARTA) dispensados.add(m);
       if (blocosConferidos) for (const b of main.querySelectorAll('[data-bloco]')) dispensados.add(b);
       /* «PARA PERCEBER» (bloco EX1, 05.10.2026): o título é a cadeia da casa, na lista abaixo; as duas portas (o título da

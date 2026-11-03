@@ -53,6 +53,7 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  * pelo menos uma vez no `dist/`: uma exceção que já não é precisa é uma porta
  * aberta esquecida, e fecha a construção como uma violação fecharia.
  */
+import { superficieDoQuadro } from './check-quadro.mjs';
 import fs from 'node:fs';
 import {primeirasEdicoes,edicoesGuardadas} from '../src/lib/edicoes.mjs';
 import {conferirPortasDaEdicao,conferirColecoes} from './lugar-edicoes.mjs';
@@ -1170,9 +1171,11 @@ for (const ficheiro of paginas) {
   for (const erro of eo1.erros) falhas.push(`L1 ${erro}`);
   const do3 = chaveDaRota === 'dossie' ? conferirSuperficieDossies(raiz,lang,rel) : {erros:[],nos:new Set()};
   falhas.push(...do3.erros);
+  const pai2 = superficieDoQuadro(raiz, lang, {dist:DIST});
+  falhas.push(...pai2.erros.map(e => `L1 PAI2 ${url}: ${e}`));
   const destinos = new Map();
   for (const a of corpo.querySelectorAll('a[href]')) {
-    if (daMobilia.has(a) || b2.portas.has(a) || eo1.portas.has(a) || ((chaveDaRota === 'estudo' || do3.nos.has(a.closest('[data-dossie-seccao]'))) && a.closest('[data-registo-unidade]'))) continue;
+    if (pai2.portas.has(a) || daMobilia.has(a) || b2.portas.has(a) || eo1.portas.has(a) || ((chaveDaRota === 'estudo' || do3.nos.has(a.closest('[data-dossie-seccao]'))) && a.closest('[data-registo-unidade]'))) continue;
     const href = a.getAttribute('href') ?? '';
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
     /* O marcador de um campo não confirmado é obrigatório em cada cartão.
