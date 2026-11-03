@@ -51,7 +51,7 @@ note: "Cruzado de ResearchHub content/23 Habitacao · hab-pcp-rendas."
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: Paula Santos
   new_value: Partido Comunista Português

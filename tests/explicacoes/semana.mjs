@@ -86,7 +86,7 @@ export function semanaPelaCelula(linhas, fim) {
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
     // A secção compara números; a correção textual permanece no registo.
     if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l) || textoDaHabitacao(l)) continue;
-    const deValor = doDia.filter((/** @type {any} */ x) => x.c.kind === 'correcao' || x.c.kind === 'atualizacao').sort((/** @type {any} */ a, /** @type {any} */ b) => a.c.date.localeCompare(b.c.date) || a.n - b.n);
+    const deValor = doDia.filter((/** @type {any} */ x) => !Object.hasOwn(x.c, 'field') && (x.c.kind === 'correcao' || x.c.kind === 'atualizacao')).sort((/** @type {any} */ a, /** @type {any} */ b) => a.c.date.localeCompare(b.c.date) || a.n - b.n);
     if (!deValor.length) continue;
     const p = deValor[0], u = deValor[deValor.length - 1];
     const a = numero(p.c.old_value), b = numero(u.c.new_value);
@@ -287,7 +287,7 @@ export function provaNaCopiaPlantada(fim) {
     }
     for(const lang of ['pt','en']){
       const indice=mudancasDoIndice(lang),registo=mudancasDoRegisto(lang);
-      const ids=[...base.values()].filter(l=>((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l)||textoDaHabitacao(l))&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
+      const ids=[...base.values()].filter(l=>((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l)||textoDaHabitacao(l))&&(l.corrections??[]).some(c=>!Object.hasOwn(c,'field')&&['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
       const preservadas=ids.every(id=>registo.some(e=>e.tipo==='correcao'&&e.claim===id));
       const excluidas=ids.every(id=>!indice.some(e=>e.claim===id));
       plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
@@ -474,7 +474,7 @@ export function conferirMudancasDoIndice(root, lang, linhas=loadClaims()) {
   const erros=[];
   for(const e of root.querySelectorAll('main [data-mudou-ambito="indice"] > [data-correcao-entrada]')) {
     const id=e.getAttribute('data-correcao-entrada'), l=linhas.get(id);
-    const cs=(l?.corrections ?? []).map((c,n)=>({...c,n})).filter(c=>['correcao','atualizacao'].includes(c.kind)).sort((a,b)=>b.date.localeCompare(a.date)||b.n-a.n);
+    const cs=(l?.corrections ?? []).map((c,n)=>({...c,n})).filter(c=>!Object.hasOwn(c,'field')&&['correcao','atualizacao'].includes(c.kind)).sort((a,b)=>b.date.localeCompare(a.date)||b.n-a.n);
     const c=cs[0];
     if(!c) {erros.push(`W2 · ${id}: o índice mostra uma mudança sem entrada no livro`);continue;}
     const a=numero(c.old_value), b=numero(c.new_value);

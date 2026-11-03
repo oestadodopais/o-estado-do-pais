@@ -51,7 +51,7 @@ note: "[note do motor] Só em imprensa. Atribuição por confirmar na fonte prim
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: Luís Montenegro
   new_value: Diário de Notícias

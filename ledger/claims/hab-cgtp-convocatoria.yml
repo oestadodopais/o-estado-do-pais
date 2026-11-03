@@ -51,7 +51,7 @@ note: "[note do motor] Canal do Sindicato da Hotelaria do Sul, filiado na CGTP; 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: hotelariasul
   new_value: Sindicato da Hotelaria do Sul

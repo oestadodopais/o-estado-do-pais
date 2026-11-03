@@ -34,7 +34,7 @@ export function dadosEsperados(c, lang) {
   const lugar = lugarDaIncorporacao(c, lang);
   let mudanca = '';
   for (const entrada of c.corrections ?? []) {
-    if (entrada.kind !== 'proveniencia' && entrada.new_value === c.value && entrada.date > mudanca) mudanca = entrada.date;
+    if (!Object.hasOwn(entrada, 'field') && entrada.kind !== 'proveniencia' && entrada.new_value === c.value && entrada.date > mudanca) mudanca = entrada.date;
   }
   let dia = /^\d{4}-\d{2}-\d{2}$/.test(c.access_date ?? '') ? c.access_date : '';
   for (const entrada of c.verifications ?? []) {

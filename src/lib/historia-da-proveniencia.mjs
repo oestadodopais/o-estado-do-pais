@@ -23,7 +23,7 @@ export function historiaDaProveniencia(linha, campo, onde, erros) {
   /** @type {any[]} */
   const historia = Array.isArray(linha.corrections) ? linha.corrections : [];
   const entradas = historia
-    .filter((c) => c && c.kind === 'proveniencia' && c.field === campo)
+    .filter((c) => c && ['proveniencia', 'correcao'].includes(c.kind) && c.field === campo)
     .slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const forma = campo === 'access_date' ? /^\d{4}-\d{2}-\d{2}$/ : campo === 'source_url' ? /^https?:\/\// : /\S/;
   let anterior = entradas.length ? entradas[0].old_value : atual;

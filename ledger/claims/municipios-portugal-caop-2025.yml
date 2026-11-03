@@ -36,7 +36,7 @@ note: "O total dos municípios de Portugal segundo a CAOP 2025. Linha derivada: 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
   - date: "2026-08-15"
-    kind: "proveniencia"
+    kind: "correcao"
     field: "source_url"
     old_value: "https://geo2.dgterritorio.gov.pt/caop/"
     new_value: "https://www.dgterritorio.gov.pt/cartografia/cartografia-tematica/caop"

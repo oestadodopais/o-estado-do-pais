@@ -647,7 +647,11 @@ for (const lang of ['pt', 'en']) {
  *      o registo rende também o motivo, a natureza e o id, e por isso a conta
  *      passa a ser «os três obrigatórios, nenhum repetido, nenhum de fora».
  */
-const CAMPOS_DO_REGISTO = new Set(['date', 'old_value', 'new_value', 'reason', 'kind', 'id']);
+function lugarDaEntrada(el,id) {
+  const n=Number(el.querySelector('[data-correcao-n]')?.getAttribute('data-correcao-n'));
+  return linha(id)?.corrections?.[n]?.field ? 'o-estado-do-pais' : lugarDaLinha(id);
+}
+const CAMPOS_DO_REGISTO = new Set(['date', 'old_value', 'new_value', 'reason', 'kind', 'id', 'field']);
 function confereCorrecoes(lista, onde) {
   const entradas = lista.querySelectorAll('[data-correcao-entrada]');
   const chaves = entradas.map(e => `${e.getAttribute('data-correcao-entrada')}|${e.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n')}|${e.querySelector('[data-correcao-campo="date"]')?.getAttribute('datetime')}`);
@@ -663,6 +667,10 @@ function confereCorrecoes(lista, onde) {
     const antes = e.querySelector('[data-correcao-campo="old_value"]');
     const depois = e.querySelector('[data-correcao-campo="new_value"]');
     const quando = e.querySelector('[data-correcao-campo="date"][datetime]');
+    if (correcao?.field && onde.includes('corre')) {
+      const campo=e.querySelector('[data-correcao-campo="field"]');
+      if (!campo) erros.push(`M3: ${onde}: ${id} omite o campo corrigido.`);
+    }
     if (marcas.length < 3 || new Set(ns).size !== 1 || !correcao ||
         campos.some(c => !CAMPOS_DO_REGISTO.has(c)) || new Set(campos).size !== campos.length ||
         !['date', 'old_value', 'new_value'].every(c => campos.includes(c)) ||
@@ -812,7 +820,7 @@ function anda(dir) {
         }
         if (!chavesDoRegisto.has(chave))
           erros.push(`A1: ${onde}: a linha ${chave} não é do livro, do arquivo nem das mudanças declaradas.`);
-        const doLugar = claim ? lugarDaLinha(claim) : null;
+        const doLugar = claim ? lugarDaEntrada(li,claim) : null;
         /* A página do país mostra o que mudou NO PAÍS: as correções das suas
            linhas e as mudanças declaradas do projeto. Uma PUBLICAÇÃO nesta
            página fecha a construção desde 22.09.2026, pela leitura do lugar de
@@ -865,7 +873,7 @@ function anda(dir) {
          da vista. */
       for (const li of itens) {
         const { tipo, claim, slug, edicao: edLang } = chaveDaMudanca(li);
-        const chave = tipo === 'correcao' ? claim && lugarDaLinha(claim)
+        const chave = tipo === 'correcao' ? claim && lugarDaEntrada(li,claim)
           : (tipo === 'publicacao' || tipo === 'texto') ? (WORKS.find(w => w.slug === slug)?.subject ?? PAIS)
           : PAIS;
         const porta = li.querySelector('.registo-lugar');

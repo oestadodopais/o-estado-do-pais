@@ -46,7 +46,7 @@ note: "A contagem passou a ser feita sobre o ficheiro alojado em public/dados/ca
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
   - date: "2026-08-15"
-    kind: "proveniencia"
+    kind: "correcao"
     field: "source_url"
     old_value: "https://geo2.dgterritorio.gov.pt/caop/"
     new_value: "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAM_2025-gpkg.zip"

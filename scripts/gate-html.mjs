@@ -6509,7 +6509,7 @@ for (const file of ficheirosHtml(DIST)) {
     /* Um endereço é texto, não uma sequência de algarismos. Só access_date
        muda para a forma da casa, reconstituída pela conferência independente;
        os outros campos continuam comparados carácter a carácter. */
-    if (corr.kind === 'proveniencia' && (campo === 'old_value' || campo === 'new_value')) {
+    if (corr.field && (campo === 'old_value' || campo === 'new_value')) {
       const valor = conferirValorDeProveniencia(corr, campo, renderizado);
       if (!valor.confere) {
         err(

@@ -52,7 +52,7 @@ note: "[note do motor]  Frase ou parágrafo completo, conferido por duas extraç
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: Inês de Sousa Real
   new_value: PAN

@@ -46,7 +46,7 @@ note: "[note do motor] Documento primário de uma posição partidária. O valor
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: Paula Santos
   new_value: Partido Comunista Português

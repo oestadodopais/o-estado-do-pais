@@ -2355,7 +2355,7 @@
     "posicao-jpp-irs": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "fdc5f7d2bb0a7ff1839e96dc32da1d744c4dbdab3c1e84495424870f99d8e2ca",
+      "exported_row_sha256": "5dc59a0d434f0d2b7f9bbae74e88367d4ef8b891dd53ff11e09c5ca3e55e034f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e41b68d4671c9ee2b2d44cdc15a01942b520f75dc3d7fea19caf2fcfad97257f",
       "rh_id": "posicao-jpp-irs",

@@ -39,7 +39,7 @@ export function dadosDaIncorporacao(c, lang) {
   const unidade = unidadeDaLinha(c.unit, lang);
   const unidadeNoValor = valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c);
   const correcoes = (c.corrections ?? []).filter((/** @type {any} */ x) =>
-    x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));
+    !Object.hasOwn(x, 'field') && x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));
   const atualizada = correcoes[0]?.date ?? '';
   /* Uma tentativa sem resposta não confirma o número. Uma confirmação anterior
      à última mudança de valor também não confirma o número de agora. */

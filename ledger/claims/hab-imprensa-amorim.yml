@@ -51,7 +51,7 @@ note: "[note do motor] Só em imprensa (Lusa reproduzida pelo DNoticias). Por co
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: Carlos Abreu Amorim
   new_value: DNOTICIAS.PT

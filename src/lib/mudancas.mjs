@@ -221,7 +221,8 @@ function correcoesDasLinhas(lang) {
     .map((e) => {
       if (!e.date) throw new Error(`Correção sem data: ${e.claimId}, entrada ${e.n}.`);
       const linha = getClaim(e.claimId);
-      const lugar = lugarDaLinha(e.claimId, lang);
+      // O erro de um campo é do recibo publicado pelo projeto, não da medida territorial.
+      const lugar = e.field ? lugarPorChave('o-estado-do-pais', lang) : lugarDaLinha(e.claimId, lang);
       if (!lugar) {
         throw new Error(
           `mudancas: a linha "${e.claimId}" mudou e nenhuma declaração diz de que lugar é. ` +
@@ -240,9 +241,10 @@ function correcoesDasLinhas(lang) {
            o título do documento diria «Arquivo de estudos». Sem nome declarado,
            usa o nome do recibo e conserva a família que o fundamenta. */
         nome: nome?.fonte ? nome : nomeNoRecibo(linha.id, lang),
+        field: e.field,
         antes: e.old_value,
         depois: e.new_value,
-        unidade: typeof linha.unit === 'string' ? linha.unit : null,
+        unidade: !e.field && typeof linha.unit === 'string' ? linha.unit : null,
         motivo: motivoDaEntrada(e, lang),
         lugar,
         chaveDaMudanca: `correcao|${e.claimId}|${e.n}`,
@@ -351,7 +353,7 @@ export function mudancasDoIndice(lang) {
   /** @type {Map<string, ReturnType<typeof correcoesDasLinhas>[number]>} */
   const maisRecente = new Map();
   for (const m of mudancasDoRegisto(lang)) {
-    if (m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
+    if (m.tipo !== 'correcao' || m.field || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
     // O resumo do índice compara valores numéricos. As frases corrigidas
     // conservam a entrada completa no registo e a história no recibo.
     const linha = getClaim(m.claim);

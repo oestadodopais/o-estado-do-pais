@@ -115,7 +115,7 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     const ultimaLeitura = (l.verifications ?? []).map((/** @type {any} */ v, /** @type {number} */ n) => ({ ...v, n }))
       .filter((/** @type {any} */ v) => dentro(v.date)).sort((/** @type {any} */ a, /** @type {any} */ b) => a.date.localeCompare(b.date) || a.n - b.n).at(-1);
     if (ultimaLeitura?.result === 'diverge' && !(l.corrections ?? []).some((/** @type {any} */ c) =>
-      NATUREZAS_DE_VALOR.includes(c.kind) && c.date > ultimaLeitura.date)) {
+      !Object.hasOwn(c, 'field') && NATUREZAS_DE_VALOR.includes(c.kind) && c.date > ultimaLeitura.date)) {
       revisoes.push({ linha: String(l.id), n: ultimaLeitura.n, data: ultimaLeitura.date, found: String(ultimaLeitura.found ?? '') });
     }
     const entradas = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ ...c, n })).filter((/** @type {any} */ c) => dentro(c.date));
@@ -123,7 +123,7 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     // Uma correção de uma frase continua no registo e no recibo. Só os valores
     // numéricos entram nas comparações «subiu», «desceu» e «mesmo número».
     if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l) || textoDaHabitacao(l)) continue;
-    const deValorAqui = entradas.filter((/** @type {any} */ c) => NATUREZAS_DE_VALOR.includes(c.kind))
+    const deValorAqui = entradas.filter((/** @type {any} */ c) => !Object.hasOwn(c, 'field') && NATUREZAS_DE_VALOR.includes(c.kind))
       .sort((/** @type {any} */ a, /** @type {any} */ b) => a.date.localeCompare(b.date) || a.n - b.n);
     if (!deValorAqui.length) continue;
     const primeira = deValorAqui[0];

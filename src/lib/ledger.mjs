@@ -2633,18 +2633,18 @@ export function validateLedger() {
           return;
         }
         const aceites =
-          corr.kind === 'proveniencia' ? CAMPOS_CORRECAO_PROVENIENCIA : CAMPOS_CORRECAO;
+          ['proveniencia', 'correcao'].includes(String(corr.kind)) ? CAMPOS_CORRECAO_PROVENIENCIA : CAMPOS_CORRECAO;
         for (const k of Object.keys(corr)) {
           if (!aceites.includes(k)) {
             errors.push(
               `${rot}: campo desconhecido "${k}". Aceites: ${aceites.join(', ')}` +
-                (k === 'field' ? ' — "field" só existe numa entrada "proveniencia".' : '.'),
+                (k === 'field' ? ' field só existe numa correção ou revisão de proveniência.' : '.'),
             );
           }
         }
         /* A revisão de proveniência tem de dizer QUAL o campo que mudou, e o
            campo tem de ser um dos que a proveniência tem. */
-        if (corr.kind === 'proveniencia') {
+        if (corr.kind === 'proveniencia' || Object.hasOwn(corr, 'field')) {
           if (ausente(corr.field)) {
             errors.push(
               `${rot}: uma entrada "proveniencia" tem de trazer "field" — qual o campo de ` +
@@ -2656,6 +2656,12 @@ export function validateLedger() {
                 `${CAMPOS_DE_PROVENIENCIA.map((k) => `"${k}"`).join(', ')}.`,
             );
           }
+        }
+        if (corr.field === 'source' && corr.kind !== 'correcao') errors.push(`${rot}: source exige correcao, nunca proveniencia.`);
+        if (corr.kind === 'correcao' && Object.hasOwn(corr, 'field')) {
+          const atual = String(corr.field).split('.').reduce((/** @type {any} */ valor, chave) => valor?.[chave], c);
+          if (corr.new_value !== atual) errors.push(`${rot}: a correção de campo não termina no valor atual de ${corr.field}.`);
+          if (corr.old_value === corr.new_value) errors.push(`${rot}: uma correção de campo exige valores diferentes.`);
         }
         for (const campo of ['date', 'kind', 'old_value', 'new_value', 'reason']) {
           if (ausente(corr[campo])) errors.push(`${rot}: falta "${campo}".`);

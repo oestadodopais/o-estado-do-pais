@@ -34,13 +34,13 @@ for (const entrada of entradas) {
     g[0].reason === entrada.reason && g[0].reason_en === entrada.reason_en);
   if (igual) igual.push(entrada); else grupos.push([entrada]);
 }
-const linguaDoValor = (e, valor) => ((claim.afirmacao === true && claim.unit === 'afirmação') || textoDocumentalConferido(claim) || textoDaHabitacao(claim)) && ['correcao','atualizacao'].includes(e.kind)
+const linguaDoValor = (e, valor) => !e.field && ((claim.afirmacao === true && claim.unit === 'afirmação') || textoDocumentalConferido(claim) || textoDaHabitacao(claim)) && ['correcao','atualizacao'].includes(e.kind)
   ? linguaDoTituloDoDocumento(claim.document?.title, lang)
   : e.field === 'source' ? linguaDaFonte(valor, lang)
   : e.field === 'document.title' ? linguaDoTituloDoDocumento(valor, lang)
   : e.field === 'document.edition' ? linguaDaEdicao(valor, lang)
   : ['document.locator', 'excerpt'].includes(e.field) ? linguaDoTituloDoDocumento(claim.document?.title, lang) : undefined;
-const valor = (e, k) => e.kind === 'proveniencia' && e.field === 'access_date' ? dataDaCasa(e[k]) : e[k];
+const valor = (e, k) => e.field === 'access_date' ? dataDaCasa(e[k]) : e[k];
 
 const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
 ---
@@ -58,10 +58,10 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
             <span class="log-data" data-correcao-claim={claim.id} data-correcao-n={String(e.n)} data-correcao-grupo={indices} data-correcao-campo="date">{dataDaCasa(e.date)}</span>
             <span class:list={['etiqueta-kind', e.kind === 'correcao' && 'etiqueta-correcao']} data-correcao-claim={claim.id} data-correcao-n={String(e.n)} data-correcao-grupo={indices} data-correcao-campo="kind">{rotulo(e.kind)}</span>
             {grupo.map((item, i) => <span class="registo-salto" id={i ? `alteracao-${item.n}` : undefined}>
-              {item.kind === 'proveniencia' && <><span class="historico-campo" data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="field">{s.livro.linha.camposHistorico[item.field]}</span>{': '}</>}
-              <span class="log-valor log-valor-antigo" lang={linguaDoValor(item, item.old_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="old_value">{item.kind === 'proveniencia' && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'old_value')}</q> : valor(item,'old_value')}</span>
+              {item.field && <><span class="historico-campo" data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="field">{s.livro.linha.camposHistorico[item.field]}</span>{': '}</>}
+              <span class="log-valor log-valor-antigo" lang={linguaDoValor(item, item.old_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="old_value">{item.field && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'old_value')}</q> : valor(item,'old_value')}</span>
               <span aria-hidden="true"> → </span>
-              <span class="log-valor" lang={linguaDoValor(item, item.new_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="new_value">{item.kind === 'proveniencia' && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'new_value')}</q> : valor(item,'new_value')}</span>
+              <span class="log-valor" lang={linguaDoValor(item, item.new_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="new_value">{item.field && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'new_value')}</q> : valor(item,'new_value')}</span>
             </span>)}
           </div>
           <p class="log-motivo" data-correcao-claim={claim.id} data-correcao-n={String(e.n)} data-correcao-grupo={indices} data-correcao-campo="reason">{motivoDaEntrada(e, lang)}</p>

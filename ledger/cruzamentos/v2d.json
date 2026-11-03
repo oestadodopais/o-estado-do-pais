@@ -12,7 +12,7 @@
     "afirmacao-pcp-paula-investimento-saude-2026-10-12": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "36b41842b28b9982a5f0f62abf55a6d9dced7b0e6947e33dd0387e60db2f4bd9",
+      "exported_row_sha256": "77a2ce485698ae18bbbc0d9f452126a43a674adaa5bcceae834971a51ea7c407",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "48111df6983d1294de1d3d96b98a7a6acd9b7d50f263d4d332d246ce63bb9086",
       "rh_id": "afirmacao-pcp-paula-investimento-saude-2026-10-12",
@@ -23,7 +23,7 @@
     "afirmacao-pcp-paula-ppp-2026-10-12": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "702aa8dda30d53f77703e9a0197ebac27812c00202ee487bbf301d15a189eca1",
+      "exported_row_sha256": "f2311a5139c375133deadb49146e349c4ddb7ae0492d8ae0d48df567d732ebfd",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "403dc301a4898dec1b1217ca8e69fd2dcdff16a098968666b8b06a368907a27c",
       "rh_id": "afirmacao-pcp-paula-ppp-2026-10-12",
@@ -34,7 +34,7 @@
     "afirmacao-pcp-ppp-2026-10-15": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-19",
-      "exported_row_sha256": "8a3a6c5dabff03c12b4887c83ade9290998d604a4095b9a09e96a297face04c4",
+      "exported_row_sha256": "c6d03940bbc2c1795ed5c980bbd22d28ac4239594dcd66a2939805bd4ba33ba6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8cd04e06880d6d78acc25fef329ac807589efb750e6471e6fc5bc6ca31e9803d",
       "rh_id": "afirmacao-pcp-ppp-2026-10-15",

@@ -232,13 +232,14 @@ const palavraRevisoes =
                     />
                   )}
                   <span class="registo-mudanca-par">
+                    {e.field && <><span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="field">{s.livro.linha.camposHistorico[e.field]}</span>{': '}</>}
                     <s
                       lang={linguaDaCorrecaoTextual(e.claim)}
                       data-correcao-claim={e.claim}
                       data-correcao-n={String(e.n)}
                       data-correcao-campo="old_value"
                     >
-                      {e.antes}
+                      {e.field === 'access_date' ? dataDaCasa(e.antes) : e.antes}
                     </s>
                     {' → '}
                     <span
@@ -247,7 +248,7 @@ const palavraRevisoes =
                       data-correcao-n={String(e.n)}
                       data-correcao-campo="new_value"
                     >
-                      {e.depois}
+                      {e.field === 'access_date' ? dataDaCasa(e.depois) : e.depois}
                     </span>
                     {' '}
                     {e.unidade && (

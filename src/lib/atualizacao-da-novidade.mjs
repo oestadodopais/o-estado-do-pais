@@ -10,7 +10,7 @@ export function htmlDaAtualizacao(m) {
 /** Uma publicação ou mudança editorial não é uma atualização de valor.
  * @param {any} m @param {'pt'|'en'} lang */
 export function atualizacaoDaNovidade(m,lang) {
-  if (m?.tipo!=='correcao' || !['correcao','atualizacao'].includes(m.kind)) return null;
+  if (m?.field || m?.tipo!=='correcao' || !['correcao','atualizacao'].includes(m.kind)) return null;
   return {id:'atualizacao:registo',tipo:'atualizacao',data:m.data,origem:'mudancas.ultima',rota:routePath('correcoes',lang),atualizacao:m};
 }
 /** Mesma comparação usada na caixa e na planta: todos os valores e marcas são obrigatórios.

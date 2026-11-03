@@ -1,7 +1,7 @@
 /** A história do número, distinta da história da sua proveniência. */
 import {textoDocumentalConferido} from './prova-efeitos.mjs';
 /** @param {Record<string, any>} linha */
-export const entradasDoValor = (linha) => (Array.isArray(linha.corrections) ? linha.corrections : []).filter((c) => c && ['correcao', 'atualizacao'].includes(c.kind));
+export const entradasDoValor = (linha) => (Array.isArray(linha.corrections) ? linha.corrections : []).filter((c) => c && !Object.hasOwn(c, 'field') && ['correcao', 'atualizacao'].includes(c.kind));
 /** @param {Record<string, any>} c */
 export const assinaturaDoValor = (c) => ({ date: c.date, kind: c.kind, old_value: c.old_value, new_value: c.new_value });
 

@@ -298,7 +298,7 @@
     "hab-cgtp-convocatoria": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "8ee9c070320ad02ccd20d14f8c4c225b8a1ac2d95172dcd5198cc04987ced9bc",
+      "exported_row_sha256": "c4a7b3b075dfe682bf417c5412b80205f4e5bc4c0808338de9193335e1c8d8c7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e6fff68ce39d2b9ef11c60f5047e5d5872f558b908f613921c993a92470ea26c",
       "rh_id": "hab-cgtp-convocatoria",
@@ -1079,7 +1079,7 @@
     "hab-imprensa-acampados": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "132675e683406be41d66cce38cb43a90687a9325e0df56d4de23f73211819c2d",
+      "exported_row_sha256": "d5fbe406228d940427ba6b431b72a9a72afba0d0f56658a62d54856b04256b34",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2533d6d1e63de3a640f4581c04d06f972665403c586c2e69965580713919a6f6",
       "rh_id": "hab-imprensa-acampados",
@@ -1090,7 +1090,7 @@
     "hab-imprensa-amorim": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a0db046483251d98e7c9c33478a29fe34c42c686c53f6b4e14e9337cb9b4d7ad",
+      "exported_row_sha256": "5310e0392cebd7c6e75564c765987b5b9cd86ca0ff6da45a01d89a1cd99efa00",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
       "rh_id": "hab-imprensa-amorim",
@@ -1101,7 +1101,7 @@
     "hab-imprensa-assistidos": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "65687e5881255824223cab52c4f865f079747767a8c7f7482df758dbdacccf12",
+      "exported_row_sha256": "fc11f114823f2c0058b45daf9efd2d5a2f9d682a7331ec9584959e8533d1c6d8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
       "rh_id": "hab-imprensa-assistidos",
@@ -1112,7 +1112,7 @@
     "hab-imprensa-debate-custos": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "78298c7d8cd717aecd96bd42428999c6a4267f3114727d37a4dcf0beec52fcaa",
+      "exported_row_sha256": "6b2af7b1bf6443cebc29874a541a6b53a9c3ade679f71e9d4e797f539285a7fd",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
       "rh_id": "hab-imprensa-debate-custos",
@@ -1123,7 +1123,7 @@
     "hab-imprensa-debate-protecao": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "5b62ed985212f8265d4cd27467b19952e70506904c775dc257c891e7f4315252",
+      "exported_row_sha256": "121a4d8ff7843085c4305a67a25945721e6e6733868fe668c5bab6eef74b5da3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3057bdcaed4e4b37b36a5f1b749dfee754564458e397cc4f5736d7e4f8449d52",
       "rh_id": "hab-imprensa-debate-protecao",
@@ -1134,7 +1134,7 @@
     "hab-imprensa-feridos35": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "31c0e6338a406881f170099d1794e1e5c7bd21a3451727cdb6a6f7285a86a12b",
+      "exported_row_sha256": "80aab784800c19fafbff083c53cd1a347156263e24b9eba37dc93823435b00f7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
       "rh_id": "hab-imprensa-feridos35",
@@ -1145,7 +1145,7 @@
     "hab-imprensa-feridos37": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "84aa86eb337e3629ed93a7ce446d45b63c7cf8027ba868579c057928d6d80644",
+      "exported_row_sha256": "bb1d77e29bbff2a3e3572dccea08f8f39d14ebc843e30e838b4f5fc0524b95cf",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
       "rh_id": "hab-imprensa-feridos37",
@@ -1156,7 +1156,7 @@
     "hab-imprensa-feridos39": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "bb25ed920791d7810c213bb25e4590600a0e1bf16c393f00e9a8a2e659157e51",
+      "exported_row_sha256": "e7cac215f8613465b9b40364d23c738811f42e6da72d2a09626192c5e05a4d38",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
       "rh_id": "hab-imprensa-feridos39",
@@ -1178,7 +1178,7 @@
     "hab-imprensa-igai": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "b5a2b10cd832bc47e0179da8cd7b9a3385dcc48f70d3df9c9660bd5fe548fd57",
+      "exported_row_sha256": "21a3d2d1ab4d0bd51ce7a92cb2659aab14570ddc882bf263213a543beea4ba91",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
       "rh_id": "hab-imprensa-igai",
@@ -1189,7 +1189,7 @@
     "hab-imprensa-mai": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "97d22629ce9ebedf1cc924e1e6bb3268fe1251ebe783dd1a0883e89a5a45e429",
+      "exported_row_sha256": "84dd17055c14ac8e6a3b388b41388db414f4e28400ce030cd1c8ac6827e428ac",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
       "rh_id": "hab-imprensa-mai",
@@ -1244,7 +1244,7 @@
     "hab-imprensa-pm-15": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "b2c872f9dbfafc66eaf04e10270785bc415c26b54f916ed3861b61856653c892",
+      "exported_row_sha256": "f48e8d004844803e3c41b40e84307f1ede8390a929b82e68fb4d39f1a3f81314",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
       "rh_id": "hab-imprensa-pm-15",
@@ -1255,7 +1255,7 @@
     "hab-imprensa-pm-16": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "05d292de3293e6322af90e789be8e1b90d05a51ca1c20a8ebcd13ab131d80dcc",
+      "exported_row_sha256": "2121d46dfc423036a56eb48a03bfaa746a93fde77e05debd9c96b03744aa50a6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
       "rh_id": "hab-imprensa-pm-16",
@@ -1266,7 +1266,7 @@
     "hab-imprensa-psp-ferido": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0f810b2722ac4c455c565615448ede04fb20a5f8a2df8d81ef3cf58b81d90a4d",
+      "exported_row_sha256": "e96fc92e82503a4460a32dfba4c9a2b5b2063e3b46c11a49327351ec8c1e1eb3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
       "rh_id": "hab-imprensa-psp-ferido",
@@ -1596,7 +1596,7 @@
     "hab-pan-caucoes": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "360d3219816df4d2e9fba4049dc3d6c359163f373dddb2d7165fb3bdd70e26b3",
+      "exported_row_sha256": "2a86067f2d34109856d4666488f08e5db6cdc3ca1893b54cccb63bbee6928b16",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cace621efdb916e56bd1b2130010b1561f9a6ff86da6add06cb1fd60ffc1a9af",
       "rh_id": "hab-pan-caucoes",
@@ -1607,7 +1607,7 @@
     "hab-pan-controlo": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "59cae322ab61b9faebffea4d45b5a7d28f0e68ef95a5366903b9bcf0363817b9",
+      "exported_row_sha256": "aa2440754639b8cb571f73c9b7aff35f9726da3dde5790a307a5b65872e2f187",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "062d06fd18e056295d3c25d45adc89333221f818975b029bd383a9a47fbe3c11",
       "rh_id": "hab-pan-controlo",
@@ -1618,7 +1618,7 @@
     "hab-pan-tetos": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "dbcfa6bd17d1adc0936edfea4c3ac34e1c684efea596d7b365801490764840e1",
+      "exported_row_sha256": "2ea413c92a41214960da7e1270b7d416000f91974b36735cce4da94f4883e22b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e012e1cecfff519c6a1b1f08b56d57daa1662fb4fceedac1ca3a2c529816f073",
       "rh_id": "hab-pan-tetos",
@@ -1629,7 +1629,7 @@
     "hab-pcp-rendas": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "dbe90c2aa8209405083b5cbb1b9ea76f7791ca06d324983b31896b6bebfa00b4",
+      "exported_row_sha256": "b2433d8ab23326dbbb58e8ed556a29b01d86fd3d958c934234231c10bf0060f5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da18615e30b27d371916bee0a160d9f59344a96c3dd69ae1653cfc21b6becd25",
       "rh_id": "hab-pcp-rendas",
@@ -1640,7 +1640,7 @@
     "hab-plataforma-reivindicacoes": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0a103aa582900b4c6cb7b15350bab01af0add8e46a2f7a993eed68c6d12de959",
+      "exported_row_sha256": "eeb24d9874554012f0b4d2c9449afe22251a1f3346975095e406d8b9b7efb5f9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c23831518b750011097f031421cebd3176f9a6690e7d1f15aefdd5678c59f893",
       "rh_id": "hab-plataforma-reivindicacoes",
@@ -1794,7 +1794,7 @@
     "hab-ps-mais-valias": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "6023b04cc2dca2b3bb868e29cd63902a230ca39a519444082e220ec71a9cf13c",
+      "exported_row_sha256": "a068d3223d2fcebdeaf2d7c0ef0b8750d7bfa2c0f4eeb508604acb99e4469b0d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4967f25ffb905de8a8e6f58e288a946029c72202abbd1fe68913435dc33fc248",
       "rh_id": "hab-ps-mais-valias",
@@ -1805,7 +1805,7 @@
     "hab-ps-rendas": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "9d94774c99b6e65aa6e7d38f26638fea5699d9c2d998c8e6a4ec73ded6e30b6b",
+      "exported_row_sha256": "0c7544c1819c242f4cae1b4ebe35828fe2f022000db810ebdbcb9be6c8689ade",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "12e30a15fc63da43414abd0a6af9ec86b39f9bdd7c799cb8af36faa3158b403f",
       "rh_id": "hab-ps-rendas",
@@ -1816,7 +1816,7 @@
     "hab-ps-vazias": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "81c87e00dbf655e5350170d2edf0c0079e69d8d55517ff48faff400a52a9465e",
+      "exported_row_sha256": "dfaf21331a7e4f40abdd386256897a394be501822803f91cdfde5e982cfab3a0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "576289d8c62fd2473dee6a1511ae637022594fa2138807d1b0f3b00b6e40f9ba",
       "rh_id": "hab-ps-vazias",

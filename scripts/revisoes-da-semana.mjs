@@ -23,7 +23,7 @@ export function revisoesPeloLivro(linhas,inicio,fim) {
       if(!ultima||v.date>=ultima.data) ultima={linha:id,n,data:v.date,found:String(v.found??''),result:v.result};
     }
     if(!ultima||ultima.result!=='diverge') continue;
-    if((l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind)&&c.date>ultima.data)) continue;
+    if((l.corrections??[]).some(c=>!Object.hasOwn(c,'field')&&['correcao','atualizacao'].includes(c.kind)&&c.date>ultima.data)) continue;
     pendentes.push(ultima);
   }
   return pendentes.sort((a,b)=>b.data.localeCompare(a.data)||a.linha.localeCompare(b.linha));

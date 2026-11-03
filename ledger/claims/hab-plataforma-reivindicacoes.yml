@@ -48,7 +48,7 @@ note: "Cruzado de ResearchHub content/23 Habitacao · hab-plataforma-reivindicac
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: Não dá mais para viver assim
   new_value: eventos.coletivos.org

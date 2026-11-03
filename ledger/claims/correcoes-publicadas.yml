@@ -4,30 +4,30 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "15"
+value: "45"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Registo de correções"
-  edition: "02.11.2026"
+  edition: "03.11.2026"
 source_url: null
-access_date: "2026-11-02"
-reference_date: "2026-11-02"
+access_date: "2026-11-03"
+reference_date: "2026-11-03"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos."
-derivation_en: "The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies."
+derivation: "As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos."
+derivation_en: "The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: "correcoes_publicadas"
 
 study: "o-estado-do-pais"
-note: "Recontagem de 02.11.2026, com as correções do texto dos estudos. O valor é reavaliado a cada construção; a recontagem não é uma correção adicional."
+note: "Recontagem de 03.11.2026, com as correções dos campos dos recibos e do texto dos estudos. O valor é reavaliado a cada construção; a recontagem não é uma correção adicional."
 
 # Correções datadas. As entradas anteriores conservam-se.
 corrections:
@@ -79,3 +79,10 @@ corrections:
     new_value: "15"
     reason: "A correção do texto do estudo da habitação entra no registo. A recontagem não é uma correção adicional."
     reason_en: "The correction to the text of the housing study enters the register. The recount is not an additional correction."
+
+  - date: '2026-11-03'
+    kind: atualizacao
+    old_value: '15'
+    new_value: '45'
+    reason: As correções dos campos dos recibos passam a integrar o registo e a sua contagem. A recontagem não é uma correção adicional.
+    reason_en: Corrections to receipt fields now enter the register and its count. The recount is not an additional correction.

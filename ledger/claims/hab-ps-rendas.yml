@@ -51,7 +51,7 @@ note: "[note do motor] Data visível do artigo; o carimbo de maio junto ao perfi
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
 - date: '2026-11-02'
-  kind: proveniencia
+  kind: correcao
   field: source
   old_value: José Luís Carneiro
   new_value: Partido Socialista
