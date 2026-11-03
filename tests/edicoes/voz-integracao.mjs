@@ -68,7 +68,8 @@ try{
  const entradas=['pt','en'].map(lang=>{
   const l=retiradas.find(l=>l.bloco==='og1-e-f'&&l.texto.startsWith(lang==='pt'?'Três contagens':'Three press counts'));assert(l);return l;
  });
- const lei=retiradas.find(l=>l.n===916);assert(lei?.texto.includes('Lei n.º 73/2013 : one'));
+ const leis=retiradas.filter(l=>l.bloco==='b1-peca2' && l.texto==='The limit is set by article 52.º of Lei n.º 73/2013 : one and a half times the three-year average of net current revenue.');
+ assert.equal(leis.length,1,'a frase histórica da lei tem de existir uma só vez no bloco');const lei=leis[0];
  executar('quatro plantas em páginas distintas',()=>{
   const root=parse(originais.get(rotas[2])),p=root.querySelectorAll('p').find(p=>p.textContent.startsWith('The council’s debt that counts towards the legal limit'));
   assert(p,'definição atual da dívida ausente');p.set_content(nova(dgal.texto));escrever(rotas[2],root.toString());

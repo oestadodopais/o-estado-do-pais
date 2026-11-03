@@ -170,8 +170,6 @@ export const MARCADORES = {
   },
 };
 
-const M = MARCADORES;
-
 /** As secções 2 a 8, pela ordem da página; a primeira é a da política e a nona é o `FECHO`. */
 export const SECOES = [
   {

@@ -1465,10 +1465,9 @@ ${tabelaTipos}
     'um valor marcado provisório pela fonte',
   );
   const provisorio = peca(ondeProvisorio, '.claim-com-provisorio');
-  /* O MARCADOR É UMA ÂNCORA, E NÃO UM `span`, desde que passou a ser a porta da
-     sua própria página (`CampoDaLinha.astro`, bloco B, item B5). A marca e a
-     classe são as mesmas; o que mudou foi o elemento. */
-  const marcador = peca('a-verificar/index.html', 'a.marcador');
+  // VOZ-1: a amostra vem de um campo real; a página do marcador saiu.
+  const ondeAusencia = ondeHa('a.marcador', paginasComAClasse('marcador').filter(r => !r.startsWith('en/')), 'a ausência com porta para o Método');
+  const marcador = peca(ondeAusencia, 'a.marcador');
   /* A LINHA DE UMA CORREÇÃO MUDOU DE FORMA, E O FEIXE SEGUE-A (B1c,
      22.09.2026). O registo tinha duas listas e uma tabela de quatro colunas
      (`.log-linha`); passou a ser uma lista só, por data, com as três classes de
@@ -1533,10 +1532,10 @@ ${tabelaTipos}
   </section>
 
   <section class="ds-bloco">
-    <h2>O marcador de incerteza, e é um só</h2>
+    <h2>A ausência por confirmar na fonte</h2>
     <div class="ds-mostra"><p style="margin:0">${marcador}</p></div>
-    ${citar(REGRA('Um marcador: **`[a verificar]`**'))}
-    <p class="ds-nota">Tirado de <code class="ds-mono">dist/a-verificar/index.html</code>, que é a página que o explica. A palavra do estado é outra coisa: «${escapa(PT.estado.porConfirmar)}» / «${escapa(EN.estado.porConfirmar)}».</p>
+    <p class="ds-nota">VOZ-1: o campo diz a ausência e a porta leva ao Método.</p>
+    <p class="ds-nota">Tirado de <code class="ds-mono">dist/${escapa(ondeAusencia)}</code>, no campo em que falta confirmação. A palavra do estado é outra coisa: «${escapa(PT.estado.porConfirmar)}» / «${escapa(EN.estado.porConfirmar)}».</p>
   </section>
 
   <section class="ds-bloco">
@@ -2402,6 +2401,10 @@ function confere(ficheiro, html) {
   if (!RE_MARCA.test(primeira)) falhas.push('a primeira linha não é a marca @dsCard');
 
   const root = parse(html, { comment: true });
+  if (ficheiro === '03-selo-e-marcador.html') {
+    const portas = root.querySelectorAll('a.marcador');
+    if (portas.length !== 1 || portas[0].textContent.trim() !== 'por confirmar na fonte' || new URL(portas[0].getAttribute('href'), `https://${SITE_HOST_DISPLAY}`).href !== new URL('/metodo', `https://${SITE_HOST_DISPLAY}`).href) falhas.push('ausência sem forma e porta únicas para o Método');
+  }
 
   for (const etiqueta of ETIQUETAS_QUE_BUSCAM) {
     const n = root.querySelectorAll(etiqueta).length;
@@ -2477,6 +2480,14 @@ function confere(ficheiro, html) {
 const resultados = cartoes.map((c) => ({ ...confere(c.ficheiro, c.html), grupo: c.grupo }));
 
 if (process.argv.includes('--prova')) {
+  const ausencia = cartoes.find(c => c.ficheiro === '03-selo-e-marcador.html');
+  if (!ausencia || confere(ausencia.ficheiro, ausencia.html).falhas.length) morre('A planta da ausência exige um cartão limpo.');
+  for (const dano of ['porta', 'texto']) {
+    const doc = parse(ausencia.html, {comment:true}), el = doc.querySelector('a.marcador');
+    if (dano === 'porta') el.setAttribute('href', '/a-verificar'); else el.set_content('[a verificar]');
+    if (!confere(ausencia.ficheiro, doc.toString()).falhas.some(f => f.includes('ausência sem forma'))) morre(`A planta da ausência não mordeu: ${dano}.`);
+    console.log(`  mordeu · feixe · ausência: ${dano}`);
+  }
   const amostra = cartoes.find((c) => c.ficheiro === '15-pagina-lugares.html');
   if (!amostra || confere(amostra.ficheiro, amostra.html).falhas.length || !amostra.html.includes('data-ds-recorte')) morre('A prova do recorte não tem conhecido-positivo limpo.');
   const plantas = [

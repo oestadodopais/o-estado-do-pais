@@ -14560,3 +14560,11 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **Decisão:** mandato VOZ-1 do lugar de direção, recebido nesta passagem. O campo em falta diz «por confirmar na fonte» ou «to be confirmed at the source». A definição do marcador sai da superfície, e os antigos endereços do marcador redirecionam para o Método. O selo tracejado, a indicação do campo em falta e a exclusão dos recibos incompletos dos motores de busca conservam-se. O Método passa a descrever esta apresentação.
 
 A agenda e o calendário conservam os dados internos nos ficheiros públicos; a superfície mostra os campos definidos no mandato. A narração da própria peça ganha uma régua no build e uma pergunta na leitura a frio, com a isenção dos documentos dos estudos, datada de 03.11.2026, até à VOZ-2. Esta entrada regista a decisão e o texto, não uma publicação.
+
+### 1.220 VOZ-1, adenda A, 03.11.2026: retirar o alias sem uso do Método
+
+**Afecta:** metodo
+
+**Texto:** metodo b1499ed402c7
+
+**Decisão:** a adenda A manda retirar o código sem uso deixado pela saída do marcador. Sai o alias local `M`, que deixou de ter consumidores. O objeto exportado e a prosa do Método conservam-se. A amarra mede o ficheiro inteiro, pelo que esta limpeza técnica exige este novo resumo.

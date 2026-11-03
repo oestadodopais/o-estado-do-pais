@@ -175,8 +175,15 @@ function periodoEsperado(valor, lang) {
   const dia = /^(\d{4})-(\d{2})-(\d{2})$/.exec(bruto);
   return dia ? `${dia[3]}.${dia[2]}.${dia[1]}` : bruto;
 }
-/** As duas páginas do marcador, uma por edição. */
-const PORTA_DO_MARCADOR = { pt: '/a-verificar', en: '/en/to-verify' };
+// VOZ-1: a ausência tem uma porta por edição, o Método.
+const PORTA_DO_MARCADOR = { pt: '/metodo', en: '/en/method' };
+const TEXTO_DA_AUSENCIA = { pt: 'por confirmar na fonte', en: 'to be confirmed at the source' };
+function conferirPortaDaAusencia(el, lang) {
+  const falhas = [];
+  if (texto(el) !== TEXTO_DA_AUSENCIA[lang]) falhas.push('ausência fora da forma da edição');
+  if (el.getAttribute('href') !== PORTA_DO_MARCADOR[lang]) falhas.push('ausência sem porta para o Método');
+  return falhas;
+}
 /** A forma de um identificador de linha: minúsculas, algarismos e hífenes. */
 const FORMA_DE_SLUG = /^[a-z0-9]+(?:-[a-z0-9.]+)+$/;
 /**
@@ -1141,6 +1148,22 @@ celula('I5', 'as contagens do índice com denominador', (falhas) => {
   return 'as duas parcelas dizem de que total saem, nas duas edições';
 });
 
+if (process.argv.includes('--prova')) celula('I6p', 'a ausência conserva a porta e a forma', falhas => {
+  let plantas = 0;
+  for (const lang of ['pt', 'en']) {
+    const pag = paginas.find(p => p.lang === lang && dom(p).querySelector('a.marcador'));
+    const original = pag && dom(pag).querySelector('a.marcador');
+    if (!original || conferirPortaDaAusencia(original, lang).length) { falhas.push(`I6p ${lang}: controlo da ausência inválido`); continue; }
+    for (const [campo, valor] of [['href',lang === 'pt' ? '/a-verificar' : '/en/to-verify'],['href','/sobre'],['texto','[a verificar]']]) {
+      const el = parse(original.outerHTML).querySelector('a');
+      if (campo === 'texto') el.set_content(valor); else el.setAttribute(campo, valor);
+      plantas++;
+      if (!conferirPortaDaAusencia(el, lang).length) falhas.push(`I6p ${lang}: planta ${campo} passou`);
+    }
+  }
+  return `${plantas} plantas da ausência recusadas nas duas edições`;
+});
+
 /* --------------------------------------------------------------------- I6 */
 celula('I6', 'o marcador com um destino só', (falhas) => {
   /** @type {Record<'pt'|'en', Map<string, number>>} */
@@ -1159,6 +1182,7 @@ celula('I6', 'o marcador com um destino só', (falhas) => {
     for (const el of raiz.querySelectorAll('.marcador')) {
       const tag = String(el.rawTagName ?? '').toLowerCase();
       if (tag === 'a') {
+        falhas.push(...conferirPortaDaAusencia(el, pag.lang).map(f => `${pag.rota}: ${f}`));
         const href = el.getAttribute('href') ?? '(sem href)';
         destinos[pag.lang].set(href, (destinos[pag.lang].get(href) ?? 0) + 1);
         continue;

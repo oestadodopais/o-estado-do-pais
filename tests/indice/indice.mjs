@@ -187,9 +187,9 @@ const ler = (caminho) => {
 /**
  * TODAS AS CONFERÊNCIAS, sobre o que lhe derem: as páginas do índice já lidas, o mapa e as páginas
  * construídas. As plantas chamam esta função com cópias estragadas.
- * @param {{ indice: Record<string, string>, mapa: Set<string>, paginas: string[], existe?: (f: string) => boolean, lerPagina?: (caminho: string) => string | null }} entrada
+ * @param {{ indice: Record<string, string>, mapa: Set<string>, paginas: string[], existe?: (f: string) => boolean, lerPagina?: (caminho: string) => string | null, redirecoes?: Array<any> }} entrada
  */
-export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler }) {
+export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler, redirecoes = JSON.parse(fs.readFileSync('vercel.json', 'utf8')).routes }) {
   const erros = [];
   const contas = {};
   /* I2 · O MAPA SÓ TEM ROTAS DA TABELA (a passagem R3-b): um endereço que a tabela não reconhece era
@@ -214,6 +214,10 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler 
     const { portas, todas, entradas, seccoes } = portasDoIndice(doc, lang);
     const destinos = portas.map((a) => destino(a.getAttribute('href')));
     const noIndice = new Set(destinos);
+    const retirada = lang === 'pt' ? '/a-verificar' : '/en/to-verify';
+    const redirecao = redirecoes.find(r => r.src === `${retirada}/?`);
+    if (redirecao?.status !== 308 || redirecao?.headers?.Location !== (lang === 'pt' ? '/metodo' : '/en/method')) erros.push(`I7 ${lang}: endereço retirado sem redireção permanente para o Método.`);
+    if (mapa.has(retirada) || paginas.includes(retirada) || noIndice.has(retirada)) erros.push(`I7 ${lang}: página retirada ${retirada} reposta no índice, no mapa ou na construção.`);
     contas[lang] = { portas: portas.length, destinos: noIndice.size, seccoes };
 
     /* I1 · cada porta resolve, pela regra da Vercel. */
@@ -439,6 +443,22 @@ export function plantasDoIndice(base) {
     .querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]')
     .find((li) => afirmacaoTextual(li.getAttribute('data-correcao-entrada')));
   const casos = [
+    ...LANGS.flatMap(lang => {
+      const retirada = lang === 'pt' ? '/a-verificar' : '/en/to-verify';
+      const muda = lang === 'pt' ? comPt : comEn;
+      return [
+        ...['retirada','destino','estado'].map(dano => [`voz1a-${lang}-redirecao-${dano}`, () => {
+          let redirecoes = JSON.parse(fs.readFileSync('vercel.json','utf8')).routes;
+          if (dano === 'retirada') redirecoes = redirecoes.filter(r => r.src !== `${retirada}/?`);
+          else { const r = redirecoes.find(r => r.src === `${retirada}/?`); if (dano === 'destino') r.headers.Location = '/sobre'; else r.status = 200; }
+          return {...base, redirecoes};
+        }, [new RegExp(`I7 ${lang}: endereço retirado sem redireção`)]]),
+        [`voz1a-${lang}-metodo-duplicado`, () => muda(d => d.querySelector('main [data-indice-seccao="projeto"] ul').insertAdjacentHTML('beforeend', `<li><a href="${routePath('metodo',lang)}">Método</a></li>`)), [new RegExp(`I7 ${lang}: 1 destino`)]],
+        [`voz1a-${lang}-pagina-no-mapa`, () => ({...base,mapa:new Set([...base.mapa,retirada])}), [new RegExp(`I7 ${lang}: página retirada`)]],
+        [`voz1a-${lang}-pagina-construida`, () => ({...base,paginas:[...base.paginas,retirada]}), [new RegExp(`I7 ${lang}: página retirada`)]],
+        [`voz1a-${lang}-pagina-no-indice`, () => muda(d => d.querySelector('main [data-indice-seccao="projeto"] ul').insertAdjacentHTML('beforeend', `<li><a href="${retirada}">Ausência</a></li>`)), [new RegExp(`I7 ${lang}: página retirada`)]],
+      ];
+    }),
     ['hb1b-celula-correcao-textual-no-indice', () => comPt((d) => {
       const primeira = d.querySelector('main [data-mudou-ambito="indice"] li');
       if (!correcaoTextual || !primeira) throw new Error('A planta HB1-b precisa de uma correção textual no registo e de uma linha no índice.');

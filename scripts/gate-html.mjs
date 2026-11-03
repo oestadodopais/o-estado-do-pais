@@ -3398,56 +3398,10 @@ function valoresDoLivroEmProsa(texto, chave, idsDaPagina) {
   return achados;
 }
 
-/**
- * Os campos que a página TEM de renderizar de um item, lidos do registo.
- *
- * Não é uma lista escrita à mão: sai do próprio item, campo a campo, e cresce
- * com ele. Os campos de cada critério e de cada entrada do histórico saíram
- * daqui para as duas funções abaixo, porque a exigência mudou de sítio: não
- * basta que a chave esteja NA PÁGINA, tem de estar DENTRO do critério ou da
- * entrada a que pertence. Esvaziar um critério e deixar a marca passava
- * (revisão cruzada 2, #5).
- */
+/** VOZ-1: título, estado, data e pergunta são os campos públicos da agenda. */
 function camposObrigatoriosDoItem(item) {
   return [`${item.id}.titulo`, `${item.id}.estado`, `${item.id}.ultima_alteracao`, ...(item.pergunta ? [`${item.id}.pergunta`] : [])];
 }
-
-/** O que um critério tem de mostrar, dentro do seu próprio elemento. */
-function camposDoCriterio(item, n, criterio) {
-  const chaves = [];
-  if (criterio?.quadro) chaves.push(`${item.id}.criterios[${n}].quadro`);
-  if (criterio?.limiar) {
-    chaves.push(`${item.id}.criterios[${n}].limiar.valor`);
-    chaves.push(`${item.id}.criterios[${n}].limiar.unidade`);
-  }
-  if (criterio?.tipo === 'calendario_das_fontes' && criterio?.evento) {
-    chaves.push(`evento:${criterio.evento}.titulo`);
-  }
-  if (criterio?.nota) chaves.push(`${item.id}.criterios[${n}].nota`);
-  return chaves;
-}
-
-/** O que uma entrada do histórico tem de mostrar, dentro do seu elemento. */
-function camposDaEntrada(item, n, entrada) {
-  const chaves = [`${item.id}.historico[${n}].data`];
-  if (entrada?.motivo) chaves.push(`${item.id}.historico[${n}].motivo`);
-  return chaves;
-}
-
-/**
- * As frases da casa que dizem um ESTADO do registo, e que o registo não escreve.
- *
- * Terceira cópia da mesma disciplina de `ROTULO_DO_ESTADO`: se o portão lesse
- * estas frases do gabarito, confirmava o gabarito. Assim confirma o registo, e
- * trocar «iniciado» por «selado», ou «não foi lida» por «não publica data»,
- * fecha a construção.
- */
-const ROTULO_DO_REGISTO_PREVIO = {
-  pt: { iniciado: 'Registo prévio iniciado a', selado: 'Registo prévio selado a' },
-  en: { iniciado: 'Pre-registration started on', selado: 'Pre-registration sealed on' },
-};
-
-const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
 
 /**
  * AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026), pela chave da rota. Escritas aqui, e não lidas
@@ -3455,24 +3409,6 @@ const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
  */
 const ROTAS_DAS_ENTRADAS = ['entradaDinheiro', 'entradaSalarios', 'entradaPobreza', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado'];
 for (const chave of ROTAS_DAS_ENTRADAS) routePath(/** @type {any} */ (chave), 'pt');
-
-/**
- * E a frase da entrada que NÃO é uma transição: sai de um estado e chega ao
- * mesmo. Uma `alteracao` de mesmo estado regista uma decisão sem mover o item,
- * e escrita com a seta («Em curso → Em curso») anunciava uma mudança que não
- * houve. Cópia do portão, como as outras: se lesse a cadeia do gabarito,
- * confirmava o gabarito.
- *
- * A primeira redacção era «mantém-se em Em curso», e lia-se mal: o rótulo do
- * estado já é um nome, e a preposição punha duas coisas a concordar que não
- * concordam. «Estado mantido: Em curso» diz o mesmo e lê-se de uma vez.
- */
-const PREFIXO_DE_MANUTENCAO = { pt: 'estado mantido:', en: 'state unchanged:' };
-
-const MOTIVO_SEM_DATA_RENDIDO = {
-  pt: { nao_publica: 'a fonte não publica data', nao_lida: 'a fonte não foi lida' },
-  en: { nao_publica: 'the source publishes no date', nao_lida: 'the source was not read' },
-};
 
 /**
  * ---------------------------------------------------------------------------

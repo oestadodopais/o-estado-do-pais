@@ -91,7 +91,7 @@ export const COMO_ENTRA = {
   livroConcelhos: { como: 'porta', razao: 'O índice dos concelhos do livro-razão.' },
   serie: { como: 'lista', razao: 'As séries, de `allSeries()`.' },
   correcoes: { como: 'porta', razao: 'O registo das correções e de tudo o que mudou («O que foi corrigido, e o que mudou»).' },
-  marcador: { como: 'porta', razao: 'A página que diz o que quer dizer o marcador da incerteza.' },
+  marcador: { como: 'fora', razao: 'VOZ-1: a página saiu; a ausência remete para o Método, que já tem porta no índice.' },
   sobre: { como: 'porta', razao: 'O Sobre.' },
   metodo: { como: 'porta', razao: 'O Método.' },
   agenda: { como: 'porta', razao: 'A agenda.' },
@@ -310,11 +310,6 @@ export function indiceDoSitio(lang) {
       portas: [
         pagina('livro', lang, s.nav.livro, [pagina('livroConcelhos', lang, s.nav.municipios), ...series(lang)]),
         pagina('correcoes', lang, s.nav.correcoes),
-        /* A PÁGINA DO MARCADOR chama-se pelo seu `<h1>`, como no caminho do cabeçalho. A cadeia do
-           marcador não entra na porta: escrita sem a sua marca, é o que a I6 do `check:indice`
-           recusa (um marcador, uma forma, uma porta), e com a marca seria uma segunda porta para a
-           mesma página no mesmo ecrã. */
-        pagina('marcador', lang, s.marcador.h1),
       ],
     },
     projeto: {
