@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "ed90e035c71f8ff0f817532c7d5a3ab149fa3851",
+ "cabeca": "36291e4f0605d826e11089f4c777d797728a2d19",
  "contas": {
   "paginas": 9822,
   "paginas_com_cartoes": 706,
-  "cartoes": 5616,
+  "cartoes": 5574,
   "familias": {
-   "nacional": 644,
+   "nacional": 602,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 540,
+   "projeto": 498,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 1106,
+   "declaradas": 1064,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -2037,28 +2037,6 @@
     "euros per month": 2
    }
   },
-  "nacional|en|hab-arrendamento-exposicao": {
-   "nome": {
-    "Explanatory memorandum of rental reform": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-arrendamento-exposicao-vagos": {
-   "nome": {
-    "Government estimate of vacant dwellings in good condition": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
   "nacional|en|hab-bpstat-12533724": {
    "nome": {
     "New housing loans": 1
@@ -2123,50 +2101,6 @@
    },
    "unidade": {
     "people": 1
-   }
-  },
-  "nacional|en|hab-dl97-deducao": {
-   "nome": {
-    "Transitional rule for the rent deduction": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-dl97-deducao-2027": {
-   "nome": {
-    "Limit on the rent deduction": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-dl97-irs": {
-   "nome": {
-    "Income tax rate on rents": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-eurostat-privacao-severa-definicao": {
-   "nome": {
-    "Definition of severe housing deprivation": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
    }
   },
   "nacional|en|hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
@@ -2818,72 +2752,6 @@
     "% of people aged 16 to 29": 1
    }
   },
-  "nacional|en|hab-imprensa-manif-euronews": {
-   "nome": {
-    "Platform organisations, reported by Euronews": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-imprensa-manif-lusa": {
-   "nome": {
-    "Demonstrators in Lisbon, reported in an article citing Lusa": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-imprensa-manif-lusa-organizacoes": {
-   "nome": {
-    "Platform organisations, reported in an article citing Lusa": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-imprensa-manif-rtp": {
-   "nome": {
-    "Demonstrators in Porto, reported by RTP": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-imprensa-renda-metade": {
-   "nome": {
-    "Platform statement on rent and pay, reported by the press": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-imprensa-tendas": {
-   "nome": {
-    "Removal of tents, reported by RTP": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
   "nacional|en|hab-ine-avaliacao-homologa": {
    "nome": {
     "Year-on-year change in the bank appraisal of housing": 1
@@ -3071,28 +2939,6 @@
     "million euros": 1
    }
   },
-  "nacional|en|hab-oe-apoios-jovens": {
-   "nome": {
-    "Budget support for young people's housing": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-oe-fiscal": {
-   "nome": {
-    "Housing tax measures in the Budget": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
   "nacional|en|hab-oe-habitacao-orcamento": {
    "nome": {
     "Housing programme budget": 1
@@ -3126,17 +2972,6 @@
     "million euros": 1
    }
   },
-  "nacional|en|hab-oe-legenda-invariante": {
-   "nome": {
-    "Budget table legend for unchanged measures": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
   "nacional|en|hab-oe-licenciamento": {
    "nome": {
     "Budget for urban management and building quality": 1
@@ -3148,17 +2983,6 @@
     "million euros": 1
    }
   },
-  "nacional|en|hab-oe-oferta": {
-   "nome": {
-    "Housing supply in the Budget": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
   "nacional|en|hab-oe-oferta-publica": {
    "nome": {
     "Budget for housing supply and rehabilitation": 1
@@ -3168,17 +2992,6 @@
    },
    "unidade": {
     "million euros": 1
-   }
-  },
-  "nacional|en|hab-plataforma-reivindicacoes": {
-   "nome": {
-    "Platform demands": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
    }
   },
   "nacional|en|hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
@@ -3509,50 +3322,6 @@
    },
    "unidade": {
     "price-to-income ratio relative to its long-term average": 1
-   }
-  },
-  "nacional|en|hab-votacao-arrendamento": {
-   "nome": {
-    "Vote on rental reform": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-votacao-chega": {
-   "nome": {
-    "Vote on the Chega proposal": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-votacao-livre": {
-   "nome": {
-    "Vote on the Livre proposal": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
-  "nacional|en|hab-votacao-pan": {
-   "nome": {
-    "Vote on the PAN proposal": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
    }
   },
   "nacional|en|hab-yth-demo-030-a-avg-t-eu27_2020-2025": {
@@ -5603,28 +5372,6 @@
     "euros por mês": 2
    }
   },
-  "nacional|pt|hab-arrendamento-exposicao": {
-   "nome": {
-    "Exposição de motivos da reforma do arrendamento": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-arrendamento-exposicao-vagos": {
-   "nome": {
-    "Estimativa do Governo de alojamentos vagos em boas condições": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
   "nacional|pt|hab-bpstat-12533724": {
    "nome": {
     "Novas operações de crédito à habitação": 1
@@ -5689,50 +5436,6 @@
    },
    "unidade": {
     "pessoas": 1
-   }
-  },
-  "nacional|pt|hab-dl97-deducao": {
-   "nome": {
-    "Norma transitória da dedução das rendas": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-dl97-deducao-2027": {
-   "nome": {
-    "Limite da dedução das rendas": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-dl97-irs": {
-   "nome": {
-    "Taxa de IRS das rendas": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-eurostat-privacao-severa-definicao": {
-   "nome": {
-    "Definição de privação severa da habitação": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
    }
   },
   "nacional|pt|hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
@@ -6384,72 +6087,6 @@
     "% das pessoas dos 16 aos 29 anos": 1
    }
   },
-  "nacional|pt|hab-imprensa-manif-euronews": {
-   "nome": {
-    "Organizações da plataforma, pela Euronews": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-imprensa-manif-lusa": {
-   "nome": {
-    "Manifestantes em Lisboa, pela notícia que cita a Lusa": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-imprensa-manif-lusa-organizacoes": {
-   "nome": {
-    "Organizações da plataforma, pela notícia que cita a Lusa": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-imprensa-manif-rtp": {
-   "nome": {
-    "Manifestantes no Porto, pela RTP": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-imprensa-renda-metade": {
-   "nome": {
-    "Afirmação da plataforma sobre renda e salário, pela imprensa": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-imprensa-tendas": {
-   "nome": {
-    "Retirada das tendas, pela RTP": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
   "nacional|pt|hab-ine-avaliacao-homologa": {
    "nome": {
     "Variação homóloga da avaliação bancária na habitação": 1
@@ -6637,28 +6274,6 @@
     "milhões de euros": 1
    }
   },
-  "nacional|pt|hab-oe-apoios-jovens": {
-   "nome": {
-    "Apoios à habitação dos jovens no Orçamento": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-oe-fiscal": {
-   "nome": {
-    "Medidas fiscais da habitação no Orçamento": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
   "nacional|pt|hab-oe-habitacao-orcamento": {
    "nome": {
     "Orçamento do programa Habitação": 1
@@ -6692,17 +6307,6 @@
     "milhões de euros": 1
    }
   },
-  "nacional|pt|hab-oe-legenda-invariante": {
-   "nome": {
-    "Legenda das medidas invariantes do Orçamento": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
   "nacional|pt|hab-oe-licenciamento": {
    "nome": {
     "Orçamento da gestão urbanística e qualidade do edificado": 1
@@ -6714,17 +6318,6 @@
     "milhões de euros": 1
    }
   },
-  "nacional|pt|hab-oe-oferta": {
-   "nome": {
-    "Oferta de habitação no Orçamento": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
   "nacional|pt|hab-oe-oferta-publica": {
    "nome": {
     "Orçamento da oferta e reabilitação habitacional": 1
@@ -6734,17 +6327,6 @@
    },
    "unidade": {
     "milhões de euros": 1
-   }
-  },
-  "nacional|pt|hab-plataforma-reivindicacoes": {
-   "nome": {
-    "Reivindicações da plataforma": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
    }
   },
   "nacional|pt|hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
@@ -7075,50 +6657,6 @@
    },
    "unidade": {
     "rácio preços/rendimento face à média de longo prazo": 1
-   }
-  },
-  "nacional|pt|hab-votacao-arrendamento": {
-   "nome": {
-    "Votação da reforma do arrendamento": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-votacao-chega": {
-   "nome": {
-    "Votação da proposta do Chega": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-votacao-livre": {
-   "nome": {
-    "Votação da proposta do Livre": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
-  "nacional|pt|hab-votacao-pan": {
-   "nome": {
-    "Votação da proposta do PAN": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
    }
   },
   "nacional|pt|hab-yth-demo-030-a-avg-t-eu27_2020-2025": {
