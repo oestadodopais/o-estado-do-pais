@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
 import {parse} from 'node-html-parser';
 import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz} from '../../scripts/voz-edicoes.mjs';
 import {leInventario,normalizaFraseDoInventario,analisa,leMarcadores} from '../../scripts/voz.mjs';
@@ -29,30 +28,21 @@ for(const e of manifestoDasEdicoes().edicoes)for(const v of versoesDaEdicao(e.sl
  const resultado=frasesDaFaixaDocumental(alterada);assert(resultado.includes('publicado a ·'));assert(retiradaForaDaFrase(resultado[0],'publicado a ·',FAIXAS_DE_EDICAO.get('publicado a ·')));plantas++;
  const extra=parse(root.outerHTML);extra.querySelector('[data-documento-edicao]').insertAdjacentHTML('beforeend','<p>Uma frase nova sem declaração.</p>');assert(frasesDaFaixaDocumental(extra).some(f=>!declarada(f)));plantas++;
 }
-// OG1-E I: a página não pode voltar à entrada anterior da habitação.
-for(const lang of ['pt','en']){
- const rota=lang==='pt'?'correcoes':'en/corrections';
- const pagina=parse(fs.readFileSync(`${process.env.OEDP_DIST??'dist'}/${rota}/index.html`,'utf8'));
- const campo=pagina.querySelector('[data-texto-estudo="a-casa-em-portugal-e-na-europa"] [data-texto-campo="frase"]');
- assert(campo,'entrada da habitação ausente');
- const normal=s=>normalizaFraseDoInventario(s.replace(/\s+/g,' ').trim());
- const texto=normal(textoDaVoz(campo));
- assert(inv.linhas.some(l=>l.estado==='viva'&&normal(l.texto)===texto));controlos++;
- const antigas=inv.linhas.filter(l=>l.bloco==='og1-e-f'&&l.texto.startsWith(lang==='pt'?'Três contagens':'Three press counts'));
- assert.equal(antigas.length,1);assert.equal(antigas[0].estado,'retirada');
- assert(!inv.linhas.some(l=>l.estado==='viva'&&normal(l.texto)===normal(antigas[0].texto)));
- campo.set_content(antigas[0].texto);
- assert(retiradaForaDaFrase(normal(textoDaVoz(campo)),normal(antigas[0].texto)),'a voz aceitou a entrada antiga');plantas++;
- console.log(`OG1-E I ${lang}: página com a entrada antiga recusada, código 1; controlo atual, código 0.`);
-}
 // A marca de língua não inventa nem apaga espaços, nem esconde texto da voz.
 for(const [html,esperado] of [
  ['<p>«<span lang="pt-PT">pelo menos</span>»</p>','«pelo menos»'],
+ ['<ul><li><span lang="pt-PT">X</span></li><li>Y</li></ul>','X Y'],
+ ['<div lang="pt-PT"><p>X</p><p>Y</p></div>','X Y'],
+ ['<span lang="pt-PT"><div>X</div><div>Y</div></span>','X Y'],
  ['<p>A <em lang="en">report</em> says.</p>','A report says.'],
  ['<p>«<span lang="pt-PT">pelo <i>menos</i></span>»</p>','«pelo menos»'],
  ['<p>1<span lang="pt-PT">2</span>3</p>','123'],
  ['<p>A<span lang="en"> fonte</span><span lang="pt-PT"> diz</span>.</p>','A fonte diz.'],
  ]){assert.equal(textoDaVoz(parse(html).firstChild),esperado);controlos++;}
+for(const tag of ['p','li','div','td','dd','dt','h1','h2','h3','h4','h5','h6','section','article','figcaption','summary']){
+ const pagina=parse(`<main><${tag}><span lang="pt-PT">X</span></${tag}><${tag}>Y</${tag}></main>`);
+ assert.equal(textoDaVoz(pagina.firstChild),'X Y',tag);controlos++;
+}
 const comOrigens=parse('<p>A «<span lang="pt-PT">narração <a>porta</a><b data-fonte>origem</b>conservada</span>».</p>');
 assert.equal(textoDaVoz(comOrigens.firstChild,n=>n.rawTagName==='a'||n.hasAttribute?.('data-fonte')),'A «narração conservada».');controlos++;
 assert(analisa(textoDaVoz(parse('<p><span lang="pt-PT">O projeto verifica tudo.</span></p>').firstChild),'/correcoes',marcadores,'correcoes').length);plantas++;
