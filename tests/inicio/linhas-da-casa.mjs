@@ -1,4 +1,5 @@
 import { CORRECOES_TEXTO } from '../../src/data/correcoes.mjs';
+import { contarCorrecoesPublicadas } from '../../src/lib/contagem-correcoes.mjs';
 /** E0, §1.146: as linhas do projeto, a precisão publicada e a história selada.
  * As plantas chamam os portões reais em processos isolados e só mudam memória. */
 import fs from 'node:fs';
@@ -28,7 +29,8 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
   const medidas = { linhas: [], registos: [], nomes: [], valores_visiveis: [] };
   const historias = JSON.parse(fs.readFileSync('ledger/historias-valores.json', 'utf8'));
   const livros = fs.readdirSync('ledger/claims').filter(f => f.endsWith('.yml')).map(f => lerLinha(f.slice(0, -4)));
-  const contadas = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao').length, CORRECOES_TEXTO.length);
+  const correcoesDoLivro = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao').length, 0);
+  const contadas = contarCorrecoesPublicadas(correcoesDoLivro, CORRECOES_TEXTO);
   for (const id of ids) {
     const c = lerLinha(id);
     const entradas = c.corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind));
@@ -132,6 +134,24 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
   executar('declaração falsa de Portugal',
     'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; lugares["correcoes-publicadas"]="portugal"; await import("./scripts/check-pais.mjs");',
     /A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»/)];
+  plantas.push(executar('atualização de estudo contada como correção',
+    `import fs from 'node:fs';
+     import {load,dump} from 'js-yaml';
+     import {CORRECOES_TEXTO} from './src/data/correcoes.mjs';
+     const atualizacoes=CORRECOES_TEXTO.filter(e=>e.kind==='texto_atualizado').length;
+     if(!atualizacoes)throw Error('A planta exige uma atualização de estudo.');
+     const ler=fs.readFileSync;
+     fs.readFileSync=function(f,...a){
+       const b=ler.call(this,f,...a);
+       if(!String(f).endsWith('ledger/claims/correcoes-publicadas.yml'))return b;
+       const linha=load(String(b));linha.value=String(Number(linha.value)+atualizacoes);
+       return dump(linha);
+     };
+     const {conferirLinhasDaCasa}=await import('./tests/inicio/linhas-da-casa.mjs');
+     const r=conferirLinhasDaCasa(process.env.OEDP_DIST);
+     for(const e of r.erros)console.log(e);
+     if(r.erros.some(e=>e.startsWith('E0 contagem:')))process.exitCode=1;`,
+    /E0 contagem: o contador não coincide com as correções do livro/));
   plantas.push(executar('data antiga do contador',
     'import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); return String(f).endsWith("ledger/claims/correcoes-publicadas.yml") ? String(b).replace(/reference_date: "[^"]+"/, "reference_date: \\"2026-08-12\\"") : b;}; const {conferirLinhasDaCasa}=await import("./tests/inicio/linhas-da-casa.mjs"); const r=conferirLinhasDaCasa(process.env.OEDP_DIST); for(const e of r.erros) console.log(e); if(r.erros.some(e=>e.startsWith("E0b datas:"))) process.exitCode=1;',
     /E0b datas: o contador tem uma data anterior/));

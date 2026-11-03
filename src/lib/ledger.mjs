@@ -23,6 +23,7 @@ import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferi
 
 import { STUDY_IDS, COUNTS, WORKS, edicaoPublicada } from '../data/studies.mjs';
 import { KINDS_DO_LIVRO as KINDS, CAMPOS_DE_PROVENIENCIA, CORRECOES_TEXTO } from '../data/correcoes.mjs';
+import { contarCorrecoesPublicadas } from './contagem-correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
 import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
 import {
@@ -1546,7 +1547,7 @@ export function contagensDoRegisto(claims = loadClaims()) {
     }
   }
   return {
-    correcoes_publicadas: correcoes + CORRECOES_TEXTO.filter(e => e.kind === 'texto').length,
+    correcoes_publicadas: contarCorrecoesPublicadas(correcoes, CORRECOES_TEXTO),
     atualizacoes_publicadas: atualizacoes,
     revisoes_de_proveniencia: revisoes,
   };
