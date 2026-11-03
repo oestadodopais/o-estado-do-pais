@@ -21991,7 +21991,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O excerto reproduz o documento indicado sobre afirmação do primeiro-ministro sobre os preços, pela imprensa."
       ],
       "en": [
-        "The excerpt reproduces the indicated document about prime Minister's statement on prices, reported by the press."
+        "The excerpt reproduces the indicated document about the Prime Minister's statement on prices, reported by the press."
       ]
     }
   },
@@ -22005,7 +22005,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O excerto reproduz o documento indicado sobre afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa."
       ],
       "en": [
-        "The excerpt reproduces the indicated document about prime Minister's statement on tenant protection, reported by the press."
+        "The excerpt reproduces the indicated document about the Prime Minister's statement on tenant protection, reported by the press."
       ]
     }
   },
@@ -22159,7 +22159,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O excerto reproduz o documento indicado sobre declaração do primeiro-ministro após a intervenção, pela imprensa."
       ],
       "en": [
-        "The excerpt reproduces the indicated document about prime Minister's statement after the intervention, reported by the press."
+        "The excerpt reproduces the indicated document about the Prime Minister's statement after the intervention, reported by the press."
       ]
     }
   },
@@ -22173,7 +22173,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O excerto reproduz o documento indicado sobre declaração posterior do primeiro-ministro, pela imprensa."
       ],
       "en": [
-        "The excerpt reproduces the indicated document about prime Minister's subsequent statement, reported by the press."
+        "The excerpt reproduces the indicated document about the Prime Minister's subsequent statement, reported by the press."
       ]
     }
   },

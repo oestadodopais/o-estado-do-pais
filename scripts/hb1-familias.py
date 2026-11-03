@@ -244,7 +244,7 @@ for r in b:
  names[id]=dict(zip(['pt','en'],pair))
  origens=[];d=None
  if r.get('unit') in ['texto','afirmação']:
-  pt='O excerto reproduz o documento indicado sobre '+pair[0][0].lower()+pair[0][1:]+'.';en='The excerpt reproduces the indicated document about '+pair[1][0].lower()+pair[1][1:]+'.'
+  pt='O excerto reproduz o documento indicado sobre '+pair[0][0].lower()+pair[0][1:]+'.';en='The excerpt reproduces the indicated document about '+('the '+pair[1] if pair[1].startswith("Prime Minister's") else pair[1][0].lower()+pair[1][1:])+'.'
  elif r.get('derivation'):
   what=next((v for k,v in DER_WHAT.items() if id.startswith('der-hab-'+k)),None);assert what,id
   pt,en=what

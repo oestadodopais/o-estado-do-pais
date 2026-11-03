@@ -20,7 +20,7 @@ const unidade = unidadeDaLinha(linha.unit, lang), s = t(lang);
   {s.semana.virgula}<CampoDaLinha id={linha.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} class="semana-unidade" />
   {s.semana.deAntes}<span class="semana-valor" data-correcao-claim={linha.id} data-correcao-n={String(m.antes.n)} data-correcao-campo="old_value">{m.antes.valor}</span>
   {s.semana.para}<span class="semana-valor" data-correcao-claim={linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="new_value">{m.depois.valor}</span>
-  {s.semana[m.palavra]}
+  {linha.source === 'O Estado do País' ? s.semana.recontado : s.semana[m.palavra]}
   {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
   {' '}<Provenance id={linha.id} lang={lang} />
 </p>

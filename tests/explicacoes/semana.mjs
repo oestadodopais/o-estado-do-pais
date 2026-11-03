@@ -385,7 +385,7 @@ export function conferirResumoDaMudanca(e, x, lang, linhas) {
   const nome=nomeNaSemana(x.linha,lang);
   const onde=nomeNaLista(x.linha,lang).qualificador === 'ue';
   const u=unidadeDaLinha(l.unit,lang);
-  const esperado=normal(`${nome?.texto ?? ''}${onde ? c.virgula+t(lang).cartao.uniaoEuropeia : ''}${c.virgula}${dataDaCasa(String(l.reference_date),lang)}${c.virgula}${u.texto}${c.deAntes}${x.antes.valor}${c.para}${x.depois.valor}${c[x.palavra]}${c.em}${dataAqui(x.depois.data)}${c.ponto}`);
+  const esperado=normal(`${nome?.texto ?? ''}${onde ? c.virgula+t(lang).cartao.uniaoEuropeia : ''}${c.virgula}${dataDaCasa(String(l.reference_date),lang)}${c.virgula}${u.texto}${c.deAntes}${x.antes.valor}${c.para}${x.depois.valor}${l.source==='O Estado do País'?c.recontado:c[x.palavra]}${c.em}${dataAqui(x.depois.data)}${c.ponto}`);
   const erros=[];
   if(!p || textoSemSelosAqui(p)!==esperado) erros.push(`W2 · ${x.linha}: a frase da mudança ou a unidade antes dos valores difere da composição declarada`);
   const unidades=p?.querySelectorAll('[data-linha-campo="unit"]') ?? [];
@@ -426,7 +426,7 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
     if (marca('new_value')?.getAttribute('data-correcao-n') !== String(x.depois.n) || normal(marca('new_value')?.textContent) !== normal(x.depois.valor)) erros.push(`W2 · ${x.linha}: o valor de agora não é o da última mudança da janela (${x.depois.valor}, entrada ${x.depois.n})`);
     if (normal(marca('date')?.textContent) !== dataAqui(x.depois.data)) erros.push(`W2 · ${x.linha}: o dia não é o da última mudança (${dataAqui(x.depois.data)})`);
     const textoResumo = normal(e.querySelector('[data-semana-resumo]')?.textContent);
-    const palavra = PALAVRA[/** @type {'subiu'|'desceu'|'naoMudou'} */ (x.palavra)];
+    const palavra = linhas.get(x.linha)?.source==='O Estado do País'?c.recontado:PALAVRA[/** @type {'subiu'|'desceu'|'naoMudou'} */ (x.palavra)];
     if (e.getAttribute('data-semana-palavra') !== x.palavra || !palavra || !textoResumo.includes(normal(palavra))) erros.push(`W2 · ${x.linha}: a palavra do lado não é a da conta («${x.palavra}»)`);
     for (const [k, w] of Object.entries(PALAVRA)) if (k !== x.palavra && textoResumo.includes(normal(w).replace(/^,\s*/, ', '))) erros.push(`W2 · ${x.linha}: a entrada traz a palavra de um ramo que a conta não escolheu («${w}»)`);
   }
@@ -634,9 +634,11 @@ export function plantasDaPassagemB(dist) {
       ['a unidade colada ao número',r=>{const e=r.querySelector('[data-semana-mudanca]'),u=e.querySelector('[data-linha-campo="unit"]'),v=e.querySelector('[data-correcao-campo="new_value"]');u.remove();v.insertAdjacentHTML('afterend',u.outerHTML);},'a frase da mudança ou a unidade antes dos valores'],
       ['o qualificador da União Europeia retirado',r=>r.querySelector(`[data-semana-mudanca="${daUniao}"] .semana-onde`).remove(),'a frase da mudança ou a unidade antes dos valores'],
       ['o nome da fonte em vez do nome da medida',r=>r.querySelector('[data-semana-mudanca] .semana-nome').set_content('Nominal unit labour cost per hour worked'),'a frase da mudança ou a unidade antes dos valores'],
-      ['a palavra da revisão trocada por movimento da economia',r=>{const e=r.querySelector('[data-semana-mudanca]'),p=e.querySelector('[data-semana-resumo]');p.set_content(p.innerHTML.replace(t(lang).semana[e.getAttribute('data-semana-palavra')],lang==='pt'?', subiu':', rose'));},'a frase da mudança ou a unidade antes dos valores'],
+      ['a palavra da revisão trocada por movimento da economia',r=>{const e=r.querySelector('[data-semana-mudanca]'),p=e.querySelector('[data-semana-resumo]');p.set_content(p.innerHTML.replace(loadClaims().get(e.getAttribute('data-semana-mudanca'))?.source==='O Estado do País'?t(lang).semana.recontado:t(lang).semana[e.getAttribute('data-semana-palavra')],lang==='pt'?', subiu':', rose'));},'a frase da mudança ou a unidade antes dos valores'],
       ['um resumo declarado fora da lista',r=>{const e=r.querySelector('[data-semana-mudanca]');r.querySelector('main').insertAdjacentHTML('beforeend',`<li data-semana-mudanca="${e.getAttribute('data-semana-mudanca')}">${e.querySelector('[data-semana-resumo]').outerHTML}</li>`);},'W · a marca das frases compostas da semana está num sítio que esta célula não confere'],
     ];
+    const projeto=raiz.querySelectorAll('[data-semana-mudanca]').find(e=>loadClaims().get(e.getAttribute('data-semana-mudanca'))?.source==='O Estado do País');
+    if(projeto)casos.push(['recontagem do projeto como revisão da fonte',r=>{const e=r.querySelector(`[data-semana-mudanca="${projeto.getAttribute('data-semana-mudanca')}"]`),p=e.querySelector('[data-semana-resumo]');p.set_content(p.innerHTML.replace(t(lang).semana.recontado,t(lang).semana[e.getAttribute('data-semana-palavra')]));},'a frase da mudança ou a unidade antes dos valores']);
     if(rota==='leituraDaSemana') casos.push(
       ['as contagens no fim da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina]').insertAdjacentHTML('beforeend',p.outerHTML);},'a frase das contagens não abre a página'],
       ['a frase de nenhuma mudança da primeira página retirada',r=>r.querySelector('[data-semana-primeira="nenhuma"]')?.remove(),'nenhuma frase da primeira página mudou, e a página não o diz assim']);
