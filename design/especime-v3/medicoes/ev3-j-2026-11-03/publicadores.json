@@ -1,0 +1,31 @@
+{
+  "editais": [
+    {
+      "ficheiro": "15.pdf",
+      "publicador": "Câmara Municipal de Évora",
+      "linha_pdftotext_layout": 289,
+      "texto": "Câmara Municipal de Évora, 15 de outubro de 2026.",
+      "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
+      "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf"
+    },
+    {
+      "ficheiro": "29.pdf",
+      "publicador": "Câmara Municipal de Évora",
+      "linha_pdftotext_layout": 617,
+      "texto": "Câmara Municipal de Évora, 29 de outubro de 2026.",
+      "sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
+      "url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf"
+    }
+  ],
+  "atribuicoes_corrigidas": [
+    "ev3-data-cm-15-10",
+    "ev3-data-cm-15-10-en",
+    "ev3-rossio-1fase-dias",
+    "ev3-data-cm-15-10-n0",
+    "ev3-data-cm-15-10-n1",
+    "ev3-data-cm-15-10-en-n0",
+    "ev3-data-cm-15-10-en-n1"
+  ]
+}

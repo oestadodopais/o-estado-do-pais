@@ -1,0 +1,14 @@
+[
+  {
+    "ficheiro": "concurso-rossio.html",
+    "seletor": ".con-002_title-inner",
+    "prr": 1,
+    "fundo_ambiental": 0
+  },
+  {
+    "ficheiro": "23.html",
+    "seletor": ".con-002_title-inner",
+    "prr": 0,
+    "fundo_ambiental": 1
+  }
+]
