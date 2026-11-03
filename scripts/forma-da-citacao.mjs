@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import {edicoesGuardadas,sha256} from '../src/lib/edicoes.mjs';
 import {provaDosBytesDaEdicao} from '../src/lib/leis-da-edicao.mjs';
 import {errosDoPublicador} from '../src/lib/publicadores.mjs';
+import {t} from '../src/i18n/strings.mjs';
 import {atribuicaoDaLinha} from '../src/lib/ledger.mjs';
 /** A frase é lida no HTML de todas as famílias editoriais, nas duas edições. */
 const normal = s => String(s??'').replace(/\s+/gu,' ').trim();
@@ -9,12 +10,14 @@ const escape = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const listas=new WeakMap();
 export function errosDaFormaNoTexto(text, rows, lang) {
   text=normal(text);
-  if(!listas.has(rows))listas.set(rows,[...rows.values()].filter(r=>r.afirmacao===true));
+  if(!listas.has(rows)) {
+    const documentos=new Set([...rows.values()].filter(r=>r.forma_da_citacao==='relato').map(r=>r.document?.source_sha256).filter(Boolean));
+    listas.set(rows,[...rows.values()].filter(r=>r.afirmacao===true||documentos.has(r.document?.source_sha256)));
+  }
   const afirma=listas.get(rows);
   if(!afirma.some(r=>r.forma_da_citacao==='relato'&&normal(r.excerpt)&&text.includes(normal(r.excerpt))))return [];
   const provas=[];
   for (const row of afirma) {
-    if (row.afirmacao!==true) continue;
     const speaker=lang==='en'?(row.attributed_to_en??row.attributed_to):row.attributed_to;
     for (const [tipo,value] of [['excerto',row.excerpt],['documento',row.document?.title],['atribuicao',Array.isArray(speaker)?speaker.join(', '):speaker]]) {
       const texto=normal(value);if(!texto)continue;
@@ -31,18 +34,16 @@ export function errosDaFormaNoTexto(text, rows, lang) {
       // Um nome dentro da transcrição não transforma a sua voz.
       if(p!==q && p.inicio>=q.inicio && p.fim<=q.fim)continue;
       mask.fill('X',p.inicio,p.fim);
-      if(p!==q&&p.tipo==='excerto'&&/[.!?]$/.test(p.texto))mask[p.fim-1]='.';
+      if(p!==q&&p.tipo==='excerto'&&/[.!?]$/.test(p.texto)&&!/^»[,;:]/.test(text.slice(p.fim)))mask[p.fim-1]='.';
     }
     const cuts=[...mask.join('').matchAll(/[.!?](?=\s|»|$)/g)].map(m=>m.index);
     const a=Math.max(0,...cuts.filter(i=>i<q.inicio).map(i=>i+1));
     const b=Math.min(text.length,...cuts.filter(i=>i>=q.fim));
-    const doc=provas.some(p=>p.texto===normal(row.document?.title)&&p.tipo==='documento'&&p.inicio>=a&&p.fim<=b&&(p.fim<=q.inicio||p.inicio>=q.fim));
+    const doc=provas.some(p=>p.texto===normal(row.document?.title)&&p.tipo==='documento'&&(p.id===q.id||(row.document?.source_sha256&&rows.get(p.id)?.document?.source_sha256===row.document.source_sha256))&&p.inicio>=a&&p.fim<=b&&(p.fim<=q.inicio||p.inicio>=q.fim));
     const headline=lang==='pt'?'pelo título da notícia':'in the news headline';
     const heading=q.texto===normal(row.document?.title)&&new RegExp(escape(headline)+':?\\s*«?$').test(text.slice(a,q.inicio));
     const named=q.texto===normal(row.document?.title)&&/(?:pela notícia|pelo documento|pela comunicação do Governo|pela página do partido|by the report|by the news report|in the news report|in the Government's communication|in the party's web page)\s*«?$/.test(text.slice(a,q.inicio));
-    const prefix=new RegExp('^»?, '+(lang==='pt'?'segundo (?:[oa] )?':'according to (?:the )?')+'$');
-    const speaker=provas.some(p=>p.id===q.id&&p.tipo==='atribuicao'&&p.inicio>=q.fim&&p.fim<=b&&prefix.test(text.slice(q.fim,p.inicio)));
-    if(!doc&&!heading&&!named&&!speaker)errors.push(`OG1-E ${q.id}: relato sem documento ou atribuição na mesma frase`);
+    if(!doc&&!heading&&!named)errors.push(`OG1-E ${q.id}: relato sem documento na mesma frase`);
   }
   return errors;
 }
@@ -72,14 +73,24 @@ export function conferirEdicaoGuardada(rota,html) {
 export function conferirCartoesDeCitacao(root,rows) {
   return root.querySelectorAll('.cartao-medida, [data-cartao-medida], [data-linha-sem-nome]').flatMap(card=>{
     const ids=[card.getAttribute('data-cartao-medida'),card.getAttribute('data-linha-sem-nome'),...card.querySelectorAll('[data-claim]').map(el=>el.getAttribute('data-claim'))];
-    return [...new Set(ids)].filter(id=>rows.get(id)?.unit==='afirmação').map(id=>`OG1-E ${id}: citação num cartão de medida`);
+    return [...new Set(ids)].filter(id=>['afirmação','texto'].includes(rows.get(id)?.unit)).map(id=>`OG1-E ${id}: texto ou citação num cartão de medida`);
   });
 }
 export function conferirRegistoDaCitacao(root,row,lang) {
   const errors=errosDoPublicador(row);
   const campo=(name)=>root.querySelectorAll('[data-linha-claim][data-linha-campo]').filter(el=>el.getAttribute('data-linha-claim')===row.id&&el.getAttribute('data-linha-campo')===name);
-  const exige=(name,value)=>{if(!value||!campo(name).some(el=>normal(el.textContent)===normal(value)))errors.push(`OG1-E ${row.id}: registo sem ${name} conferido`);};
+  const exige=(name,value)=>{if(!value||!campo(name).length||campo(name).some(el=>normal(el.textContent)!==normal(value)))errors.push(`OG1-E ${row.id}: registo sem ${name} conferido`);};
   exige('source',row.source);
+  const fontes=root.querySelectorAll('[data-linha-campo="source"]');
+  for(const el of fontes)if(normal(el.textContent)!==normal(row.source))errors.push(`OG1-E ${row.id}: publicador divergente no recibo`);
+  const textos=[...unidadesDaForma(root),...root.querySelectorAll('meta[content]').map(el=>el.getAttribute('content'))];
+  const rotuloDaData=normal(t(lang).livro.linha.publicadoEmK);
+  const motivos=new Set((row.corrections??[]).map(c=>normal(lang==='en'?c.reason_en:c.reason)).filter(Boolean));
+  for(const texto of textos.filter(texto=>normal(texto)!==rotuloDaData&&!motivos.has(normal(texto))))for(const m of normal(texto).matchAll(/(?:Publicado por|Published by):?\s+/g)) {
+    const resto=normal(texto).slice(m.index+m[0].length),fonte=normal(row.source);
+    if(!resto.startsWith(fonte)||!/^($|[,.;(·]|Atribuído a|Attributed to|Documento |Document )/.test(resto.slice(fonte.length).trimStart()))errors.push(`OG1-E ${row.id}: Publicado por diverge do registo`);
+  }
+
   if(row.forma_da_citacao==='relato')exige('document.title',row.document?.title);
   exige(lang==='en'&&row.attributed_to_en?'attributed_to_en':'attributed_to',atribuicaoDaLinha(row,lang));
   return errors;

@@ -17,6 +17,18 @@ for(const lang of ['pt','en'])for(const key of ['linha','livro']){
  const rota={key,lang,params:{slug:base.id}};
  for(const [nome,source,title,code] of [['intacto',base.source,base.document.title,0],['pessoa',base.attributed_to[0],base.document.title,1],['sem título',base.source,null,1]])prova(`${key}/${lang}/${nome}`,conferirFormaDasCitacoes(parse(registo(base,lang,source,title)),rota,rows),code);
 }
+for(const lang of ['pt','en']) {
+ const rota={key:'linha',lang,params:{slug:base.id}},label=lang==='pt'?'Publicado por':'Published by';
+ for(const [nome,extra] of [
+  ['dois campos',`<span data-linha-claim="${base.id}" data-linha-campo="source">${base.attributed_to[0]}</span>`],
+  ['frase errada',`<p>${label} ${base.attributed_to[0]}, em documento.</p>`],
+  ['meta errada',`<meta name="description" content="${label}: ${base.attributed_to[0]} · documento">`],
+ ]) prova(`${nome}/${lang}`,conferirFormaDasCitacoes(parse(registo(base,lang)+extra),rota,rows),1);
+ prova(`meta intacta/${lang}`,conferirFormaDasCitacoes(parse(registo(base,lang)+`<meta name="description" content="${label}: ${base.source} · documento">`),rota,rows),0);
+ prova(`motivo da correção/${lang}`,conferirFormaDasCitacoes(parse(registo(base,lang)+`<p>${lang==='pt'?base.corrections.at(-1).reason:base.corrections.at(-1).reason_en}</p>`),rota,rows),0);
+ const text=[...rows.values()].find(r=>r.unit==='texto');
+ prova(`cartão de texto/${lang}`,conferirCartoesDeCitacao(parse(`<article class="cartao-medida"><span data-claim="${text.id}">texto</span></article>`),rows),1);
+}
 for(const lang of ['pt','en']){
  prova(`cartão de citação/${lang}`,conferirCartoesDeCitacao(parse(`<article class="cartao-medida"><span data-claim="${base.id}">um polícia</span></article>`),rows),1);
  const e=WORKS.find(w=>w.slug==='a-casa-em-portugal-e-na-europa').editions.find(e=>e.lang===lang);
@@ -38,9 +50,15 @@ const registry=JSON.parse(fs.readFileSync('ledger/publicadores.json','utf8'));
 for(const c of registry.correcoes){const row=rows.get(c.id),fix=row.corrections.at(-1);assert.equal(row.source,c.nome);assert.equal(fix.old_value,c.anterior);assert.equal(fix.new_value,c.nome);assert.equal(fix.field,'source');count++;}
 const area=areasComPecas().find(a=>a.slug==='infraestruturas-e-habitacao');
 const habitacao=area.pecas.trabalhos.find(t=>t.id==='a-casa-em-portugal-e-na-europa');
+const textos=[...rows.values()].filter(r=>r.study===habitacao.id&&r.unit==='texto');
+for(const lang of ['pt','en']) {
+ const record=JSON.parse(fs.readFileSync(`registos/${habitacao.id}/${lang}.record.json`,'utf8'));
+ for(const row of textos){assert(JSON.stringify(record.blocks).includes('"'+row.id+'"'));assert(habitacao.linhas.includes(row.id));assert(!area.pecas.medidas.some(m=>m.id===row.id));count++;}
+}
+console.log(`OG1-E F alcance: ${textos.length} linhas de texto alcançáveis nos dois estudos e fora da grelha.`);
 const citacoes=[...rows.values()].filter(r=>r.study===habitacao.id&&r.unit==='afirmação');
 assert.equal(citacoes.length,29);
 for(const row of citacoes){assert(habitacao.linhas.includes(row.id));assert(!area.pecas.medidas.some(m=>m.id===row.id));count++;}
-for(const a of areasComPecas())for(const m of a.pecas.medidas)assert.notEqual(rows.get(m.id).unit,'afirmação');
+for(const a of areasComPecas())for(const m of a.pecas.medidas)assert(!['afirmação','texto'].includes(rows.get(m.id).unit));
 console.log('OG1-E C alcance: as 29 citações da habitação conservam o estudo na área; nenhuma citação entra nas medidas de qualquer área.');
 console.log(`OG1-E C: ${count} plantas e controlos conferidos.`);

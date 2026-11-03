@@ -44,6 +44,18 @@ for(const lang of ['pt','en']) {
  const wrong=parse(`<summary>A pessoa, ${intro} «Outro documento»: ${q}</summary>`);
  assert(conferirFormaDasCitacoes(wrong,{lang},new Map([[base.id,base]])).length);count++;
 }
+// A cronologia antiga falha; a continuação de uma citação mantém a frase.
+for(const lang of ['pt','en']) {
+ const rows=loadClaims(),r=rows.get('hab-imprensa-assistidos'),shared=rows.get('hab-imprensa-feridos37'),hospital=rows.get('hab-imprensa-hospital');
+ assert.equal(r.document.source_sha256,shared.document.source_sha256);
+ const intro=lang==='pt'?'pela notícia':'by the report',after=lang==='pt'?'segundo':'according to';
+ for(const [nome,txt,code] of [
+  ['cronologia antiga',`«${r.excerpt}», ${after} ${r.attributed_to.join(', ')}.`,1],
+  ['documento partilhado',`${intro} «${shared.document.title}»: «${hospital.excerpt}», e «${r.excerpt}».`,0],
+  ['outro documento',`${intro} «${base.document.title}»: «${r.excerpt}».`,1],
+  ['outra frase',`${intro} «${shared.document.title}»: «${hospital.excerpt}» Outra frase: «${r.excerpt}».`,1],
+ ]) {assert.equal(conferirFormaDasCitacoes(parse(`<p>${esc(txt)}</p>`),{lang,key:'estudo'},rows).length?1:0,code,`${nome}/${lang}`);count++;console.log(`OG1-E F ${nome}/${lang}: código ${code}`);}
+}
 // Cópias isoladas atravessam validateLedger, a mesma entrada do ledger:check.
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'og1e-'));
 try {
