@@ -13,3 +13,16 @@
 9. As plantas da HB1 provam as funções extraídas e não os portões (a curta J/K, 6); a exceção do tempo sem planta de recusa (a curta J/K, 7).
 10. As páginas que a J e a K mudaram fora do pacote (a curta J/K, 9); a prova da renderização mede as edições inglesas com a língua portuguesa (a curta J/K, 10).
 11. O pacote do lote empilhado copiava os ficheiros da cabeça do diff e não os dos `EXTRAS`, e procurava as adendas pelo nome do bloco com hífen (corrigido no guião da sessão; a passar para `scripts/leituras/`).
+
+## As leituras do lote 2 (03.11.2026)
+
+12. O domínio `app.parlamento.pt` partilhado por nove publicadores: a régua do sítio confere o domínio e não o documento (a leitura curta do lote 2, 8).
+13. «hotelariasul» e «Não dá mais para viver assim» como atribuição (a mesma, 13).
+14. As docstrings do motor depois das importações novas em `hb1_export.py`, `eo1_export.py` e `v2d_export.py` (a mesma, 15).
+15. Os números dos relatórios do construtor sem ficheiro por trás (as leituras curtas do lote 2, 16, da H, 9).
+16. A régua do recibo só nas linhas com `forma_da_citacao` e fora dos selos (a leitura da F, 10).
+17. As linhas da imprensa sem `atribuicao.frase` nem `atribuicao.passagem` (as leituras do lote 2, 10, e da H, 11; a I277 e a I279).
+18. O pacote acrescentado à mão pelo lugar de direção sem o recibo do pedido (a leitura da H, 7; corrigido na da I).
+19. As três retiradas parametrizadas (887, 1269, 1270) conferidas em memória contra si próprias, e fora da prova pela voz verdadeira (a leitura da K e da L, 6).
+20. Os registos das corridas do construtor fora do repositório, e as chamadas sem registo (a mesma, 7).
+21. A prova pela voz verdadeira confere intactos só os quatro ficheiros plantados do `dist/` (a mesma, 8).

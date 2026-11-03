@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T08:17:00+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T2",
+   "ficheiro": "scripts/voz-edicoes.mjs",
+   "descricao": "a cópia da extração junta os pedaços sem espaço, diferente da de antes da I",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7d34a5e343b84a7c0a79a6baebe34b120b3f275d3b77e3d703669de99c5d5926",
+   "sha256_depois": "474592933bc591210ada927c65fa1744c8381e8949729e0a01fa54d9524be0fb",
+   "contexto_antes": "tring(n.rawTagName ?? '').toLowerCase();\n    if (tag === 'script' || tag === 'style') return;\n    for (const f of n.childNodes ?? []) anda(f);\n  };\n  anda(no);\n  return partes.join(' ');\n}\n",
+   "contexto_depois": "tring(n.rawTagName ?? '').toLowerCase();\n    if (tag === 'script' || tag === 'style') return;\n    for (const f of n.childNodes ?? []) anda(f);\n  };\n  anda(no);\n  return partes.join('');\n}\n"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/en/municipalities/abrantes/index.html",
+   "descricao": "a página inglesa de Abrantes volta à definição retirada da dívida da DGAL",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "17b133b1b27e458f1ac7a8eca8259d3c5d585724ae861131034fd99c0bad1428",
+   "sha256_depois": "f0792e478211ed3fa94922aa01caa72e94b58b2ef1fb18ee71f5e17698cfec40",
+   "contexto_antes": "n></summary><p class=\"cartao-medida-frase\">The council’s debt that counts towards the legal limit at year end (DGAL’s “<span lang=\"pt-PT\">dívida total</span>”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “<span lang=\"pt-PT\">Fundo de Apoio Municipal</span>”).</p></details></article><article class=\"cartao-medida\" data-cartao-medida=\"abrantes-prazo-medio-de-pagamento-2025-12\" data-medida-chave=\"pmp\" data-estado=\"completa\"",
+   "contexto_depois": "n></summary><p class=\"cartao-medida-frase\">The council’s debt that counts towards the legal limit at year end (DGAL’s “<span lang=\"pt-PT\">dívida total</span>”, without non-budget debts and the exceptions in the law).</p></details></article><article class=\"cartao-medida\" data-cartao-medida=\"abrantes-prazo-medio-de-pagamento-2025-12\" data-medida-chave=\"pmp\" data-estado=\"completa\""
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada portuguesa da habitação volta a não dizer que a contagem do movimento perdera o «pelo menos»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4cb400db2e71d70a17665ee78da76fd281e6bc845dca505ae208fc67045d72b7",
+   "sha256_depois": "3e65b20ecb63e39265c1a6aa6e537ae95b84fcc5cd0c427d73c379de6fd2e7c3",
+   "contexto_antes": "\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.</span> <a data-texto-porta=\"primeir",
+   "contexto_depois": "\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.</span> <a data-texto-porta=\"primeir"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "a planta conjunta deixa de exigir a linha da lei com o espaço antes da pontuação",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2e2d50656fb544b4dde15e0ec2789e6543186f19d5770f4b80df14a2f222d14c",
+   "sha256_depois": "fd625613ac1553d4460470af059803f7094d0b07c2fd5cd8c32ab7f82f371a87",
+   "contexto_antes": "/\\s+/gu,' ').trim(),lei.texto);\n+  pagina.querySelector('main').insertAdjacentHTML('beforeend',`<p data-voz>${html}</p>`);escrever(rotas[3],pagina.toString());\n+ },1,[dgal.n,...entradas.map(l=>l.n),lei.n]);\n  for(const [r,s] of originais)assert.equal(sha(fs.readFileSync(path.join(raiz,'dist',r))),sha(s),'dist original alterado');\n  const relatorio={retiradas:retir",
+   "contexto_depois": "/\\s+/gu,' ').trim(),lei.texto);\n+  pagina.querySelector('main').insertAdjacentHTML('beforeend',`<p data-voz>${html}</p>`);escrever(rotas[3],pagina.toString());\n+ },1,[dgal.n,...entradas.map(l=>l.n)]);\n  for(const [r,s] of originais)assert.equal(sha(fs.readFileSync(path.join(raiz,'dist',r))),sha(s),'dist original alterado');\n  const relatorio={retiradas:retir"
+  },
+  {
+   "id": "T1",
+   "ficheiro": "scripts/medir-defeitos.mjs",
+   "descricao": "a extração das origens deixa de saltar os elementos marcados (o texto das origens passa a contar como frase da voz)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "32ad00ebb9752a9a01bd16ee3c5593f320641114e1ee26725035fd3a50c1a153",
+   "sha256_depois": "25f93e5a1dced31237fcf4a07b01ce280f5d2105b206e4d46c2fe48343818677",
+   "contexto_antes": "h(n.rawText);\n    const tag = String(n.rawTagName ?? '').toLowerCase();\n    if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;\n    if (marcados.has(n)) return;\n    for (const f of n.childNodes ?? []) anda(f);\n  };\n  anda(no);\n  return partes.join(' ');\n}\n\nfunction frasesDaVoz(root) {\n  const out = [];\n  const DECLARAD",
+   "contexto_depois": "h(n.rawText);\n    const tag = String(n.rawTagName ?? '').toLowerCase();\n    if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;\n    // os marcados contam como os outros\n    for (const f of n.childNodes ?? []) anda(f);\n  };\n  anda(no);\n  return partes.join(' ');\n}\n\nfunction frasesDaVoz(root) {\n  const out = [];\n  const DECLARAD"
+  }
+ ]
+}

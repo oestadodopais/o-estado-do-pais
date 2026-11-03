@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T01:40:11+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "built/livro-razao/hab-imprensa-pm-16/index.html",
+   "descricao": "o recibo volta a dizer que o primeiro-ministro publicou o artigo do Diário de Notícias",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6a9164613519bc3ea033e60bc56a5e1c97cf6a5588804dc44ea7a5536dba1dac",
+   "sha256_depois": "2fb116e738b88f515bbfb11d203e82e73a2ede38760833478129c2f9789ad50f",
+   "contexto_antes": "po=\"id\">hab-imprensa-pm-16</code></p></div><div class=\"linha\"><!-- ================================================= corpo: a prova --><div class=\"linha-corpo\"><p class=\"linha-atribuicao\">Publicado por <span class=\"campo-valor\" data-linha-claim=\"hab-imprensa-pm-16\" data-linha-campo=\"source\">Diário de Notícias</span>, em <span class=\"campo-valor\" data-linha-claim=\"hab-imprensa-pm-16\" data-linha-campo=\"document.title\">Montenegro nega ter acusado manifestantes de egoísmo e re",
+   "contexto_depois": "po=\"id\">hab-imprensa-pm-16</code></p></div><div class=\"linha\"><!-- ================================================= corpo: a prova --><div class=\"linha-corpo\"><p class=\"linha-atribuicao\">Publicado por <span class=\"campo-valor\" data-linha-claim=\"hab-imprensa-pm-16\" data-linha-campo=\"source\">Luís Montenegro</span>, em <span class=\"campo-valor\" data-linha-claim=\"hab-imprensa-pm-16\" data-linha-campo=\"document.title\">Montenegro nega ter acusado manifestantes de egoísmo e re"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada do registo da linha do JPP dá como publicador novo um nome que o documento não escreve",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5b0ca092f8d1d5ca02960bb3390208a499eb151b306f21f042db1dea9bf66e0b",
+   "sha256_depois": "50a9d1627343bcd29fa59f87a7564efa22a249c262fefcc31cf5a31ad577e9f6",
+   "contexto_antes": "ao-campo=\"field\">publicador</span>: <s data-correcao-claim=\"posicao-jpp-irs\" data-correcao-n=\"0\" data-correcao-campo=\"old_value\">Diário de Notícias</s> → <span data-correcao-claim=\"posicao-jpp-irs\" data-correcao-n=\"0\" data-correcao-campo=\"new_value\">DNOTICIAS.PT</span> <a class=\"src-chip\" href=\"/livro-razao/posicao-jpp-irs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"DNOTICIAS.PT\" title=\"DNOTICIAS.PT\"><span class=\"src-c",
+   "contexto_depois": "ao-campo=\"field\">publicador</span>: <s data-correcao-claim=\"posicao-jpp-irs\" data-correcao-n=\"0\" data-correcao-campo=\"old_value\">Diário de Notícias</s> → <span data-correcao-claim=\"posicao-jpp-irs\" data-correcao-n=\"0\" data-correcao-campo=\"new_value\">Diário de Notícias da Madeira</span> <a class=\"src-chip\" href=\"/livro-razao/posicao-jpp-irs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"DNOTICIAS.PT\" title=\"DNOTICIAS.PT\"><span class=\"src-c"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/index.html",
+   "descricao": "a contagem dos 39 feridos volta a ser dita como palavra da organização, sem a notícia que a relata",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e5b17bbe614e6a303782452e310f6c118037d313bd3ac62f3a7282de8440f4db",
+   "sha256_depois": "89aaa16678b179a7d1ba26a69ab24eea7c07c95a0e0ff6e961630f2e807b446d",
+   "contexto_antes": " são «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda, o BE) e, pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um p",
+   "contexto_depois": " são «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda, o BE) e «39 feridos, dois deles graves» segundo a organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um p"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a contagem das correções publicadas diz 44 em vez de 45",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "50a9d1627343bcd29fa59f87a7564efa22a249c262fefcc31cf5a31ad577e9f6",
+   "sha256_depois": "72178b10f780c49da9778f5925ca55e0c8744eec56dbc4644c5b0d500797642f",
+   "contexto_antes": "v class=\"registo-cabeca\"><h3 class=\"registo-titulo\" id=\"registo-mudancas\">As mudanças, por data</h3><p class=\"registo-conta\"><span class=\"claim claim-com-chip\"><span data-claim=\"correcoes-publicadas\" class=\"claim-value\">45</span> correções publicadas<a class=\"src-chip\" href=\"/livro-razao/correcoes-publicadas\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"O Estado do País\" title=\"O Estado do País\"><span ",
+   "contexto_depois": "v class=\"registo-cabeca\"><h3 class=\"registo-titulo\" id=\"registo-mudancas\">As mudanças, por data</h3><p class=\"registo-conta\"><span class=\"claim claim-com-chip\"><span data-claim=\"correcoes-publicadas\" class=\"claim-value\">44</span> correções publicadas<a class=\"src-chip\" href=\"/livro-razao/correcoes-publicadas\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"O Estado do País\" title=\"O Estado do País\"><span "
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua deixa passar uma revisão de proveniência sobre o publicador (só recusa uma atualização)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e09ae2c207220ce523699342a7888cfcf0bef6b2366f1b31f9018cb79ce6c805",
+   "sha256_depois": "7d0431cb2562f040bf85e675b2c7c005ce94fa9ea746962afc69ac9e06cfc666",
+   "contexto_antes": "da \"proveniencia\" tem de trazer \"field\" — qual o campo de ` +\n@@ -2655,6 +2657,12 @@ export function validateLedger() {\n             );\n           }\n         }\n+        if (corr.field === 'source' && corr.kind !== 'correcao') errors.push(`${rot}: source exige correcao, nunca proveniencia.`);\n+        if (corr.kind === 'correcao' && Object.hasOwn(corr, 'field')) {\n+          const atual = String(",
+   "contexto_depois": "da \"proveniencia\" tem de trazer \"field\" — qual o campo de ` +\n@@ -2655,6 +2657,12 @@ export function validateLedger() {\n             );\n           }\n         }\n+        if (corr.field === 'source' && corr.kind === 'atualizacao') errors.push(`${rot}: source exige correcao, nunca proveniencia.`);\n+        if (corr.kind === 'correcao' && Object.hasOwn(corr, 'field')) {\n+          const atual = String("
+  }
+ ]
+}

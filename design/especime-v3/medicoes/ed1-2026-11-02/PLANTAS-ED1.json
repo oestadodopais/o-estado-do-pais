@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-02T19:35:13+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "V1",
+   "ficheiro": "built/estudos/evora-contas-da-camara-2010-2025/index.html",
+   "descricao": "a ligação da primeira edição portuguesa de Évora abre o documento atual",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b0999433f74003a8a96dca09d3cb0f9f4ed2241ddedfdd3f4c08e43d62759f69",
+   "sha256_depois": "543b157996d1d29d40163cde53b01cbe8334952518297114d1b889eb450f628d",
+   "contexto_antes": "a — Orçamentado, Pago, Devido 2025</span></a><span>.</span></p><p class=\"estudo-publicado\" data-estudo-edicao=\"evora-contas-da-camara-2010-2025/pt\"><a data-voz href=\"/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01\" hreflang=\"pt-PT\">Primeira edição, tal como foi publicada</a> <a data-voz=\"true\" href=\"/estudos/evora-contas-da-camara-2010-2025/documento\" hreflang=\"pt-PT\">Edição atual</a><span aria-hidden=\"t",
+   "contexto_depois": "a — Orçamentado, Pago, Devido 2025</span></a><span>.</span></p><p class=\"estudo-publicado\" data-estudo-edicao=\"evora-contas-da-camara-2010-2025/pt\"><a data-voz href=\"/estudos/evora-contas-da-camara-2010-2025/documento\" hreflang=\"pt-PT\">Primeira edição, tal como foi publicada</a> <a data-voz=\"true\" href=\"/estudos/evora-contas-da-camara-2010-2025/documento\" hreflang=\"pt-PT\">Edição atual</a><span aria-hidden=\"t"
+  },
+  {
+   "id": "V2",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada de Évora no registo português com a data 29.10.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7594700b88a46edc9351740a26b0d4b9fce0ee030d773a7b555b0081cdd23a4b",
+   "sha256_depois": "50aab2a1a56e21eb6faa534b1273e4fe84bdcc166de8874d1eff79657a8eb89a",
+   "contexto_antes": "=\"texto\" data-texto-estudo=\"evora-contas-da-camara-2010-2025\" data-texto-data=\"2026-10-30\"><time class=\"log-data\" datetime=\"2026-10-30\" data-texto-campo=\"data\">30.10.2026</time><a class=\"registo-lugar\" href=\"/municipios/evora\">Évora</a><div class=\"registo-mudanca-corpo\"><p><span data-texto-campo=\"kind\">Estudo corrigido</span></p><p><span data-texto-campo=\"titulo\">As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação</span>: <span data-t",
+   "contexto_depois": "=\"texto\" data-texto-estudo=\"evora-contas-da-camara-2010-2025\" data-texto-data=\"2026-10-30\"><time class=\"log-data\" datetime=\"2026-10-30\" data-texto-campo=\"data\">29.10.2026</time><a class=\"registo-lugar\" href=\"/municipios/evora\">Évora</a><div class=\"registo-mudanca-corpo\"><p><span data-texto-campo=\"kind\">Estudo corrigido</span></p><p><span data-texto-campo=\"titulo\">As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação</span>: <span data-t"
+  },
+  {
+   "id": "V3",
+   "ficheiro": "studies-src/_edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html",
+   "descricao": "a primeira edição guardada de Évora com o texto de 30.10 numa frase",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+   "sha256_depois": "0bc7ee4546dd4608b8b3a36f8acc2f7643e21c7c075a898762d3c47089bd4fbc",
+   "contexto_antes": "está a ser tirada à paciência dos fornecedores do presente.</p>\n<p>O orçamento não é o dinheiro. A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e o mecanismo está nas próprias contas: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hos",
+   "contexto_depois": "está a ser tirada à paciência dos fornecedores do presente.</p>\n<p>O orçamento não é o dinheiro. A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hos"
+  },
+  {
+   "id": "V4",
+   "ficheiro": "studies-src/manifest.yml",
+   "descricao": "o sha256 da primeira edição portuguesa de Évora com um carácter trocado no manifesto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fa4e7403a9db5b00840ee72c425dcda1c6ca94ef9188d1076d25c6266dff4ee3",
+   "sha256_depois": "361b2ce6571c4087444c2a4e0d1bdd4fddc628b1ad7003a1539f7b4a04aca3d1",
+   "contexto_antes": "7\n  - slug: evora-contas-da-camara-2010-2025\n    lang: \"pt\"\n    primeira_edicao:\n      file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html\n      sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839\n      date: \"2026-10-01\"\n      commit: c2aa011f1\n    title: \"As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação\"\n   ",
+   "contexto_depois": "7\n  - slug: evora-contas-da-camara-2010-2025\n    lang: \"pt\"\n    primeira_edicao:\n      file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html\n      sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7838\n      date: \"2026-10-01\"\n      commit: c2aa011f1\n    title: \"As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação\"\n   "
+  },
+  {
+   "id": "V5",
+   "ficheiro": "built/en/corrections/index.html",
+   "descricao": "a entrada inglesa de Évora fala da ressalva do valor de 2025",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4171d6df62e4da3dc9869d6df0c41452142bcb64d7c456df056f6442b2ee880e",
+   "sha256_depois": "ce3a3b1d9da70cb73716d6587eb4dfd23c9d9f31c9a0a2624504a0944e890745",
+   "contexto_antes": "ur passages stated as fact causes that the municipality&#39;s 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat on the 2024 value and with the budget used in the comparison explained.</span> <a data-texto-porta=\"primeira\" data-voz href=\"/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01\">First edition</a> · <a data-texto-porta=",
+   "contexto_depois": "ur passages stated as fact causes that the municipality&#39;s 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat on the 2025 value and with the budget used in the comparison explained.</span> <a data-texto-porta=\"primeira\" data-voz href=\"/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01\">First edition</a> · <a data-texto-porta="
+  }
+ ]
+}

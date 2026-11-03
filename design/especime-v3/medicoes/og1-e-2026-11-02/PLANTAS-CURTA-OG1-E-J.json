@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T06:40:23+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "diff.patch",
+   "descricao": "a normalização das retiradas deixa de tirar o espaço antes das aspas de fecho",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f74677dd16aced17dc419a7ad869b75ad5a822f01dac63d6b4d7981c232b1934",
+   "sha256_depois": "8e2b06c403fd1c8d4a6c8ce5025484fb1c226d661d00a30e4e5b3d7d3f71b7cd",
+   "contexto_antes": " retiradas da voz. */\n+/** A normalização acrescenta formas à retirada; a comparação original mantém-se. */\n+export function normalizaEspacosDaRetirada(texto){\n+ return texto.replace(/([«“])\\s+/gu,'$1').replace(/\\s+([»”])/gu,'$1').replace(/\\s+/gu,' ').trim();\n+}\n+const padroesRetirados=new Map();\n+const textosNormalizados=new Map();\n export function fraseRetiradaNoTexto(texto,frase){\n-  const escaped=frase.replace(/",
+   "contexto_depois": " retiradas da voz. */\n+/** A normalização acrescenta formas à retirada; a comparação original mantém-se. */\n+export function normalizaEspacosDaRetirada(texto){\n+ return texto.replace(/([«“])\\s+/gu,'$1').replace(/\\s+/gu,' ').trim();\n+}\n+const padroesRetirados=new Map();\n+const textosNormalizados=new Map();\n export function fraseRetiradaNoTexto(texto,frase){\n-  const escaped=frase.replace(/"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "diff.patch",
+   "descricao": "a extração volta a juntar palavras entre itens de lista",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8e2b06c403fd1c8d4a6c8ce5025484fb1c226d661d00a30e4e5b3d7d3f71b7cd",
+   "sha256_depois": "1078ee999d4d2a0bf009cd6ac688d7c8b0b7e8e853511ff677e2526121b05133",
+   "contexto_antes": "g(n.rawTagName ?? '').toLowerCase())) return '';\n-    return (n.childNodes ?? []).map(textoLiteral).join('');\n-  };\n-  const anda = (/** @type {any} */ n) => {\n+  const blocos=new Set(['p','li','div','td','dd','dt','h1','h2','h3','h4','h5','h6','section','article','figcaption','summary']);\n+  const partes = /** @type {{texto:string, lingua:boolean, bloco:num",
+   "contexto_depois": "g(n.rawTagName ?? '').toLowerCase())) return '';\n-    return (n.childNodes ?? []).map(textoLiteral).join('');\n-  };\n-  const anda = (/** @type {any} */ n) => {\n+  const blocos=new Set(['p','div','td','dd','dt','h1','h2','h3','h4','h5','h6','section','article','figcaption','summary']);\n+  const partes = /** @type {{texto:string, lingua:boolean, bloco:num"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/en/municipalities/abrantes/index.html",
+   "descricao": "a página inglesa de Abrantes volta à definição retirada da dívida da DGAL",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "17b133b1b27e458f1ac7a8eca8259d3c5d585724ae861131034fd99c0bad1428",
+   "sha256_depois": "f0792e478211ed3fa94922aa01caa72e94b58b2ef1fb18ee71f5e17698cfec40",
+   "contexto_antes": "n></summary><p class=\"cartao-medida-frase\">The council’s debt that counts towards the legal limit at year end (DGAL’s “<span lang=\"pt-PT\">dívida total</span>”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “<span lang=\"pt-PT\">Fundo de Apoio Municipal</span>”).</p></details></article><article class=\"cartao-medida\" data-cartao-medida=\"abrantes-prazo-medio-de-pagamento-2025-12\" data-medida-chave=\"pmp\" data-estado=\"completa\"",
+   "contexto_depois": "n></summary><p class=\"cartao-medida-frase\">The council’s debt that counts towards the legal limit at year end (DGAL’s “<span lang=\"pt-PT\">dívida total</span>”, without non-budget debts and the exceptions in the law).</p></details></article><article class=\"cartao-medida\" data-cartao-medida=\"abrantes-prazo-medio-de-pagamento-2025-12\" data-medida-chave=\"pmp\" data-estado=\"completa\""
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/en/corrections/index.html",
+   "descricao": "a entrada inglesa da habitação deixa de dizer que a contagem do movimento perdera o «pelo menos»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1a29819a9ae34f84b56d0f89e6924e7a8118f5b32625d44fb71df1db59e99ecf",
+   "sha256_depois": "575d22e6de87c311d86149b3a45187abff2b5e07e01da7555ace0f4214cf45b9",
+   "contexto_antes": "ree press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade&#39;s commander, the movement&#39;s count appeared without the «<span lang=\"pt-PT\">pelo menos</span>» (at least) with which the report gives it, and a sentence said the campers had written what a news report attributes to them; they are news reports&#39; accounts, and the sentences now name them.</span> <a data-texto-porta",
+   "contexto_depois": "ree press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade&#39;s commander, and a sentence said the campers had written what a news report attributes to them; they are news reports&#39; accounts, and the sentences now name them.</span> <a data-texto-porta"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "a planta integral da definição da DGAL passa a esperar o código 0",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1078ee999d4d2a0bf009cd6ac688d7c8b0b7e8e853511ff677e2526121b05133",
+   "sha256_depois": "cdfd9d94e9d95f747be1b6577dd06e9bfcf7fdebd773dd1af5b8daf7a7b894ba",
+   "contexto_antes": "bt that counts towards the legal limit'));\n+  assert(p,'definição atual da dívida ausente');p.set_content(nova(dgal.texto));escrever(rotas[2],root.toString());\n+ },1,[dgal.n]);\n+ for(const [lang,rota] of [['pt',rotas[0]],['en',rotas[1]]]){\n+  const l=retiradas.find(l=>l.bloco==='og1-e-f'&&l.texto.startsWith(lang==='pt'?'Três contagens",
+   "contexto_depois": "bt that counts towards the legal limit'));\n+  assert(p,'definição atual da dívida ausente');p.set_content(nova(dgal.texto));escrever(rotas[2],root.toString());\n+ },0,[dgal.n]);\n+ for(const [lang,rota] of [['pt',rotas[0]],['en',rotas[1]]]){\n+  const l=retiradas.find(l=>l.bloco==='og1-e-f'&&l.texto.startsWith(lang==='pt'?'Três contagens"
+  }
+ ]
+}

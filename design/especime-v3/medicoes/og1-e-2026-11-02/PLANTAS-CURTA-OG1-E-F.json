@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T04:02:22+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "built/en/studies/a-casa-em-portugal-e-na-europa/document/index.html",
+   "descricao": "na cronologia inglesa, o relato da RTP volta a ser dito como palavras do comandante dos bombeiros",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "37c9758d839bb76cf4d9b72fd4a130185db63fbccf978e9c8aa90d9e58b95dcc",
+   "sha256_depois": "08423f452b809f88873a66ddacbe7da336a12ec06304e6689523e741adb952c1",
+   "contexto_antes": "o Porto», «37 feridos, dois em estado grave», according to a statement by the Movimento pela Habitação, and «Duas pessoas foram encaminhadas para o hospital.», and the same report writes that the commander of the Porto Volunteer Firefighters confirmed to RTP that «oito pessoas foram assistidas no seu quartel»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo menos», according to José Soeiro, of t",
+   "contexto_depois": "o Porto», «37 feridos, dois em estado grave», according to a statement by the Movimento pela Habitação, and «Duas pessoas foram encaminhadas para o hospital.», and the commander of the Porto Volunteer Firefighters said «oito pessoas foram assistidas no seu quartel»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo menos», according to José Soeiro, of t"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/livro-razao/hab-imprensa-pm-16/index.html",
+   "descricao": "a meta descrição do recibo volta a dar o primeiro-ministro como publicador",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6a9164613519bc3ea033e60bc56a5e1c97cf6a5588804dc44ea7a5536dba1dac",
+   "sha256_depois": "25f579042c0405df83fb42f842f8181481ca7b075d3c177fb1ad003edbeb6ab8",
+   "contexto_antes": "ort\" content=\"width=device-width, initial-scale=1\"><title>Declaração posterior do primeiro-ministro, pela imprensa · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão hab-imprensa-pm-16 · Declaração posterior do primeiro-ministro, pela imprensa · Publicado por: Diário de Notícias · Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo) (2026-10-16) · Lido na fonte a 2026-10-19 · Dados de 2026-",
+   "contexto_depois": "ort\" content=\"width=device-width, initial-scale=1\"><title>Declaração posterior do primeiro-ministro, pela imprensa · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão hab-imprensa-pm-16 · Declaração posterior do primeiro-ministro, pela imprensa · Publicado por: Luís Montenegro · Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo) (2026-10-16) · Lido na fonte a 2026-10-19 · Dados de 2026-"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/indice/index.html",
+   "descricao": "o índice volta a dizer que a fonte reviu a recontagem do projeto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5d5b15dc990e25b7a8364fb946ea955b7e86d22538906d6171ca83bd8d240ffa",
+   "sha256_depois": "dffe4e7634a7115bed08c955acc24ce5fdf3acf33ef9e163c2d7fa3d939688d4",
+   "contexto_antes": "s\" data-correcao-n=\"8\" data-correcao-campo=\"old_value\">15</span> para <span class=\"semana-valor\" data-correcao-claim=\"correcoes-publicadas\" data-correcao-n=\"8\" data-correcao-campo=\"new_value\">45</span>, recontado por este projeto, em <time class=\"semana-data\" datetime=\"2026-11-03\" data-correcao-claim=\"correcoes-publicadas\" data-correcao-n=\"8\" data-correcao-campo=\"date\">03.11.2026</time>. <a",
+   "contexto_depois": "s\" data-correcao-n=\"8\" data-correcao-campo=\"old_value\">15</span> para <span class=\"semana-valor\" data-correcao-claim=\"correcoes-publicadas\" data-correcao-n=\"8\" data-correcao-campo=\"new_value\">45</span>, a fonte reviu para cima, em <time class=\"semana-data\" datetime=\"2026-11-03\" data-correcao-claim=\"correcoes-publicadas\" data-correcao-n=\"8\" data-correcao-campo=\"date\">03.11.2026</time>. <a"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada da habitação no registo diz 02.11.2026, um dia antes da edição a que pertence",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3e65b20ecb63e39265c1a6aa6e537ae95b84fcc5cd0c427d73c379de6fd2e7c3",
+   "sha256_depois": "aa45390364afa85cfbf1e213a0a7cae05b696dcf59df3b771a6b87dda094df42",
+   "contexto_antes": "isto-mudanca\" data-mudanca=\"texto\" data-texto-estudo=\"a-casa-em-portugal-e-na-europa\" data-texto-data=\"2026-11-03\"><time class=\"log-data\" datetime=\"2026-11-03\" data-texto-campo=\"data\">03.11.2026</time><a class=\"registo-lugar\" href=\"/\">Portugal</a><div class=\"registo-mudanca-corpo\"><p><span data-texto-campo=\"kind\">Estudo corrigido</span></p><p><span data-nonledger=\"titulo-de-estudo\" data-texto-campo=\"titulo\" data-titulo-publicado=\"pt\">A casa em Portugal e na Europa</span>: <span data-texto-campo=\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organiz",
+   "contexto_depois": "isto-mudanca\" data-mudanca=\"texto\" data-texto-estudo=\"a-casa-em-portugal-e-na-europa\" data-texto-data=\"2026-11-03\"><time class=\"log-data\" datetime=\"2026-11-03\" data-texto-campo=\"data\">02.11.2026</time><a class=\"registo-lugar\" href=\"/\">Portugal</a><div class=\"registo-mudanca-corpo\"><p><span data-texto-campo=\"kind\">Estudo corrigido</span></p><p><span data-nonledger=\"titulo-de-estudo\" data-texto-campo=\"titulo\" data-titulo-publicado=\"pt\">A casa em Portugal e na Europa</span>: <span data-texto-campo=\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organiz"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua dos relatos volta a aceitar a atribuição sozinha",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3a8d1f71181eec3ff0ebd3fc14e6280eeb0139bfd53ae186eaeb0566b6c66f14",
+   "sha256_depois": "f5b6d89927ac6d43d0b9c04d22a0cf7314958c5164d9508cfc79e1e7b1e50fe5",
+   "contexto_antes": "ix.test(text.slice(q.fim,p.inicio)));\n-    if(!doc&&!heading&&!named&&!speaker)errors.push(`OG1-E ${q.id}: relato sem documento ou atribuição na mesma frase`);\n+    if(!doc&&!heading&&!named)errors.push(`OG1-E ${q.id}: relato sem documento na mesma frase`);\n   }\n   return errors;\n }\n@@ -72,14 +73,24 @@ export function conferirEdicaoGuardada(rota,html) {\n export function conferirCartoesDeCitacao(root,rows) {\n   ret",
+   "contexto_depois": "ix.test(text.slice(q.fim,p.inicio)));\n-    if(!doc&&!heading&&!named&&!speaker)errors.push(`OG1-E ${q.id}: relato sem documento ou atribuição na mesma frase`);\n+    if(!doc&&!heading&&!named&&!q.atribuicao)errors.push(`OG1-E ${q.id}: relato sem documento na mesma frase`);\n   }\n   return errors;\n }\n@@ -72,14 +73,24 @@ export function conferirEdicaoGuardada(rota,html) {\n export function conferirCartoesDeCitacao(root,rows) {\n   ret"
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "bloco": "ED1 (a história das edições de um estudo e a sua entrada no registo público das correções)",
+ "data": "2026-11-03",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "ED1 (o mandato: a primeira edição guardada e a entrada do texto no registo)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": null,
+   "fim": "2026-11-02T17:33:00Z",
+   "pontos": 2.0,
+   "pontos_antes": 31.0,
+   "pontos_depois": 33.0,
+   "outras_sessoes_no_intervalo": 2,
+   "turnos": 1,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1.log"
+  },
+  {
+   "nome": "ED1-a (a frase de Évora, a habitação sem atualização, os três vermelhos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T17:39:39Z",
+   "fim": "2026-11-02T18:15:37Z",
+   "pontos": 2.0,
+   "pontos_antes": 33.0,
+   "pontos_depois": 35.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 58,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1-a.log"
+  },
+  {
+   "nome": "ED1-b (a fusão do lote 1; parou: a caixa de areia não funde)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T18:45:00Z",
+   "fim": "2026-11-02T18:46:01Z",
+   "pontos": 0.0,
+   "pontos_antes": 35.0,
+   "pontos_depois": 35.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 5,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1-b.log"
+  },
+  {
+   "nome": "ED1-c (os dois vermelhos da corrida inteira do lote 2)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T19:32:52Z",
+   "fim": "2026-11-02T19:34:25Z",
+   "pontos": 0.0,
+   "pontos_antes": 35.0,
+   "pontos_depois": 35.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 5,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1-c.log"
+  },
+  {
+   "nome": "ED1-d (da Câmara em vez de do município, e o resto da adenda C)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T19:34:57Z",
+   "fim": "2026-11-02T20:10:38Z",
+   "pontos": 2.0,
+   "pontos_antes": 35.0,
+   "pontos_depois": 37.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 57,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1-d.log"
+  },
+  {
+   "nome": "ED1-e (a história das edições por régua, as páginas das edições, a política, as frases)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T20:39:40Z",
+   "fim": "2026-11-02T21:16:57Z",
+   "pontos": 1.0,
+   "pontos_antes": 37.0,
+   "pontos_depois": 38.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 52,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1-e.log"
+  },
+  {
+   "nome": "ED1-f (a frase da política e o inventário das frases)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-02T23:40:09Z",
+   "fim": "2026-11-02T23:57:24Z",
+   "pontos": 1.0,
+   "pontos_antes": 40.0,
+   "pontos_depois": 41.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 3,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ed1-f.log"
+  }
+ ],
+ "pontos_codex_total": 8.0,
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros: quando passagens de blocos diferentes correm ao mesmo tempo, a subida do intervalo conta nas duas. O registo do lançador aponta por vezes a sessão de outro bloco que partilha a worktree (a I294); os pontos lêem-se do contador da conta, não da sessão.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "decisao_do_financiador": "03.11.2026, 05:32 UTC: o financiador confirmou aterrar o lote 2 (a OG1-E e a ED1) com o custo medido de cerca de 10 pontos do Codex na OG1-E e 8 na ED1 (a primeira aprovação, às 04:31 UTC, foi para cerca de 7 a 8 na OG1-E, antes das adendas H e I); às 05:56 UTC aprovou mais uma passagem, estimada em 1 a 2 pontos (a OG1-E em cerca de 11 a 12), para repor a régua das frases retiradas que a adenda I enfraqueceu; às 07:37 UTC aprovou mais uma, cerca de 1 ponto (a OG1-E em cerca de 12), para repor a extração da voz de antes da I, acima da escada de menos de 5, à pergunta do lugar de direção (as causas: o defeito dos publicadores achado no ar e corrigido no sítio inteiro, três leituras com achados reais, e duas passagens perdidas por erros deste lugar)."
+}

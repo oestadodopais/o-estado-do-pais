@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T05:47:58+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/documento/index.html",
+   "descricao": "a frase do hospital volta à forma ambígua no documento português",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "55afe64b296fbc61a61cc3c446a3d9b8c59ba96b9b05440cac00de810a2f2800",
+   "sha256_depois": "fccc6b1615a983fcdb9021c803e787524eb9d505aef0c71596ceb20122d95490",
+   "contexto_antes": "ado do Movimento pela Habitação; a mesma notícia escreve que o comandante dos Bombeiros Voluntários do Porto confirmou à RTP que «oito pessoas foram assistidas no seu quartel», e escreve depois, na sua própria narração, que «Duas pessoas foram encaminhadas para o hospital.»; pela notícia «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo me",
+   "contexto_depois": "ado do Movimento pela Habitação; a mesma notícia escreve que o comandante dos Bombeiros Voluntários do Porto confirmou à RTP que «oito pessoas foram assistidas no seu quartel», e que «Duas pessoas foram encaminhadas para o hospital.»; pela notícia «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo me"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/en/studies/a-casa-em-portugal-e-na-europa/index.html",
+   "descricao": "na página inglesa do estudo, a frase do hospital passa a ser dita pelo comandante",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a465b0034710d4db98eb2a413d25ab1b462e5a47f147aca8e21e6f131e92956d",
+   "sha256_depois": "eec82324306e3868900727b5bde8d5e0da355d6ec4a6c7a3ee0e7f4c8c4c8baf",
+   "contexto_antes": "he Movimento pela Habitação; the same report writes that the commander of the Porto Volunteer Firefighters confirmed to RTP that «oito pessoas foram assistidas no seu quartel», and then writes, in its own narration, that «Duas pessoas foram encaminhadas para o hospital.»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo m",
+   "contexto_depois": "he Movimento pela Habitação; the same report writes that the commander of the Porto Volunteer Firefighters confirmed to RTP that «oito pessoas foram assistidas no seu quartel», and that the commander added «Duas pessoas foram encaminhadas para o hospital.»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo m"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/index.html",
+   "descricao": "no ponto 6 da página portuguesa do estudo, os 39 feridos voltam a ser dados como palavra da organização",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0d73a893f05bcafe95682670ea2b60e3154591579fdc19f476cdf77f0f88c551",
+   "sha256_depois": "19430b568c9d107b1a9900036e47b00c16e5e389059856fe0e117690a89413ba",
+   "contexto_antes": "pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um proce",
+   "contexto_depois": "pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» segundo a organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um proce"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada portuguesa da habitação volta a não dizer que a contagem do movimento perdera o «pelo menos»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4cb400db2e71d70a17665ee78da76fd281e6bc845dca505ae208fc67045d72b7",
+   "sha256_depois": "3e65b20ecb63e39265c1a6aa6e537ae95b84fcc5cd0c427d73c379de6fd2e7c3",
+   "contexto_antes": "\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.</span> <a data-texto-porta=\"primeir",
+   "contexto_depois": "\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.</span> <a data-texto-porta=\"primeir"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "a planta da voz deixa de exigir que a entrada antiga esteja retirada no inventário",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a7dc135e52071d06e03e7025f4fd3477aecc7c60ae061649de57c9fbbe1b6d7f",
+   "sha256_depois": "d1449df97088ab64fa5fad3f5ba72c8a2971120b64d24ab2f7f7eabeed3f2cf9",
+   "contexto_antes": "texto)===texto));controlos++;\n+ const antigas=inv.linhas.filter(l=>l.bloco==='og1-e-f'&&l.texto.startsWith(lang==='pt'?'Três contagens':'Three press counts'));\n+ assert.equal(antigas.length,1);assert.equal(antigas[0].estado,'retirada');\n+ assert(!inv.linhas.some(l=>l.estado==='viva'&&normal(l.texto)===normal(antigas[0].texto)));\n+ campo.set_content(antigas[0].texto);\n+ assert(retiradaForaDaFra",
+   "contexto_depois": "texto)===texto));controlos++;\n+ const antigas=inv.linhas.filter(l=>l.bloco==='og1-e-f'&&l.texto.startsWith(lang==='pt'?'Três contagens':'Three press counts'));\n+ assert.equal(antigas.length,1);\n+ assert(!inv.linhas.some(l=>l.estado==='viva'&&normal(l.texto)===normal(antigas[0].texto)));\n+ campo.set_content(antigas[0].texto);\n+ assert(retiradaForaDaFra"
+  }
+ ]
+}

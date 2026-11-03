@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-02T19:35:13+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "U1",
+   "ficheiro": "built/estudos/orcamento-2027-o-que-muda-e-para-quem/index.html",
+   "descricao": "a citação da CSI e das pensões volta a «O primeiro-ministro:» sem o documento",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bbf4309ee0b28e20b3d553e21591ab340cfc75442019f9ed7b486a98cb15f5b7",
+   "sha256_depois": "576144aa0130b4bd4e9e23dc2a7e10adee3947dfe8563a48e897753ac2c73c14",
+   "contexto_antes": "rdinário para pensionistas quer para a redução das taxas de IRS até ao 6.º escalão, com efeitos retroativos a janeiro (cerca de 0,25% do PIB no seu conjunto).» O primeiro-ministro, pela comunicação do Governo «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas»: «Entre as medidas dirigidas às famílias, salientou o aumento de 50 euros no Complemento Solidário para Idosos, o complemento extraordinário das pensões e a atualização dos limites ",
+   "contexto_depois": "rdinário para pensionistas quer para a redução das taxas de IRS até ao 6.º escalão, com efeitos retroativos a janeiro (cerca de 0,25% do PIB no seu conjunto).» O primeiro-ministro: «Entre as medidas dirigidas às famílias, salientou o aumento de 50 euros no Complemento Solidário para Idosos, o complemento extraordinário das pensões e a atualização dos limites "
+  },
+  {
+   "id": "U2",
+   "ficheiro": "ledger/claims/posicao-ps-irc.yml",
+   "descricao": "a linha do PS sobre o IRC declarada palavras, com «Para o líder do PS» no excerto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f59d046d25e9203c1e64498a1ab0e6859c5e1534f2315d0a6ab0bb4394911e9f",
+   "sha256_depois": "3f7a1fedf8a2539461fac488b37b38eb4da9f8e6b532ef48afab0415e3c58fde",
+   "contexto_antes": " \"https://ps.pt/oe2027-ps-leva-propostas-a-especialidade-para-responder-ao-custo-de-vida/\"\naccess_date: \"2026-10-20\"\npublished_at: \"2026-10-14\"\nafirmacao: true\nforma_da_citacao: \"relato\"\nreference_date: \"2026-10-14\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Para o líder do PS, a redução deste imposto deve ",
+   "contexto_depois": " \"https://ps.pt/oe2027-ps-leva-propostas-a-especialidade-para-responder-ao-custo-de-vida/\"\naccess_date: \"2026-10-20\"\npublished_at: \"2026-10-14\"\nafirmacao: true\nforma_da_citacao: \"palavras\"\nreference_date: \"2026-10-14\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Para o líder do PS, a redução deste imposto deve "
+  },
+  {
+   "id": "U3",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html",
+   "descricao": "a citação inglesa das pensões do PS perde o documento",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ab57167840cbafcad3d19655abab001e620725b938855a67cc159552cd612296",
+   "sha256_depois": "7cf44a6331ba5d1d769d911905d03b3250bebaa176606d4c663417a9ed2caf5e",
+   "contexto_antes": "es e a atualização dos limites dos escalões de IRS e das deduções fiscais.» The Socialist Party (Partido Socialista, PS), by José Luís Carneiro, on 14 October, in the party's web page «OE2027: PS leva propostas à especialidade para responder ao custo de vida»: «Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas.» The ",
+   "contexto_depois": "es e a atualização dos limites dos escalões de IRS e das deduções fiscais.» The Socialist Party (Partido Socialista, PS), by José Luís Carneiro, on 14 October, : «Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas.» The "
+  },
+  {
+   "id": "U4",
+   "ficheiro": "diff.patch",
+   "descricao": "a lista dos marcadores do relato perde «salientou»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5b73fe0b479508a00757b0afdf3f63b380348e0df708bf5e1fc4de4d9fb58df6",
+   "sha256_depois": "a3cc08feb1a32c36041fa6ff48fb2652fb538410a8f456cc622dfcb6e2474b55",
+   "contexto_antes": "son b/ledger/marcadores-do-relato.json\nnew file mode 100644\nindex 000000000..a152039d2\n--- /dev/null\n+++ b/ledger/marcadores-do-relato.json\n@@ -0,0 +1,29 @@\n+[\n+  \"salientou\",\n+  \"sublinhou\",\n+  \"destacou\",\n+  \"defendeu\",\n+  \"afirmou\",\n+  \"disse\",\n+  \"considerou\",\n+  \"garantiu\",\n+  \"acrescentou\",\n+  \"referiu\",\n+  \"explicou\",\n+  \"lembr",
+   "contexto_depois": "son b/ledger/marcadores-do-relato.json\nnew file mode 100644\nindex 000000000..a152039d2\n--- /dev/null\n+++ b/ledger/marcadores-do-relato.json\n@@ -0,0 +1,29 @@\n+[\n+  \"sublinhou\",\n+  \"destacou\",\n+  \"defendeu\",\n+  \"afirmou\",\n+  \"disse\",\n+  \"considerou\",\n+  \"garantiu\",\n+  \"acrescentou\",\n+  \"referiu\",\n+  \"explicou\",\n+  \"lembr"
+  },
+  {
+   "id": "U5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 47 plantas no sítio onde o registo diz 74",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5c91cf97afc39ccd73493b48600912b66fc733c1b7ff4317e0a2f62995e9dba8",
+   "sha256_depois": "2eda5305c6fa3debd40f53754782b24715819eb580d75125bebefd45dd333170",
+   "contexto_antes": "** construídas.\n- **Livro:** 92 afirmações declaradas, 15 `relato` e 77 `palavras`. Nenhuma das 77 contém os marcadores proibidos.\n- **Plantas:** 18 no motor e 74 no sítio. As formas indevidas são recusadas; os controlos passam, incluindo o documento depois da citação. Códigos esperados: recusa `1`, controlo `0`.\n- **Portões:** `",
+   "contexto_depois": "** construídas.\n- **Livro:** 92 afirmações declaradas, 15 `relato` e 77 `palavras`. Nenhuma das 77 contém os marcadores proibidos.\n- **Plantas:** 18 no motor e 47 no sítio. As formas indevidas são recusadas; os controlos passam, incluindo o documento depois da citação. Códigos esperados: recusa `1`, controlo `0`.\n- **Portões:** `"
+  }
+ ]
+}

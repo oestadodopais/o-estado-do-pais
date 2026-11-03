@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T04:55:59+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/index.html",
+   "descricao": "o ponto 6 da página do estudo volta a perder o «pelo menos» dos 37",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "80573636bf19c92d7f3b0bf628bb7141d8304be4e16a00b9f43aaae658e8769b",
+   "sha256_depois": "39efb72a38207db5f4ff35199121d3fe16481497c5547dfa9efa65cb6a69f827",
+   "contexto_antes": "\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a> da população toda. Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes pela habitação voltam à Pra",
+   "contexto_depois": "\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a> da população toda. Os feridos da intervenção policial no Porto são «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes pela habitação voltam à Pra"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/en/studies/a-casa-em-portugal-e-na-europa/document/index.html",
+   "descricao": "a frase do hospital volta a juntar-se ao comunicado do movimento na cronologia inglesa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "131ff2a858062a5d72aaa0eb41da606a047e2311f753c343902e9fd518f9c74f",
+   "sha256_depois": "db244c3e098624ebdd66e677f37a9128a81b536ab8d95c4e4fe0290fae02e193",
+   "contexto_antes": "ontenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto», at least «37 feridos, dois em estado grave», according to a statement by the Movimento pela Habitação; the same report writes that the commander of the Porto Volunteer Firefighters confirmed to RTP that «oito pessoas foram assistidas no seu quartel», and that «Duas pessoas foram encaminhadas para o hospital.»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo menos», according to José Soeiro, of th",
+   "contexto_depois": "ontenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto», at least «37 feridos, dois em estado grave», according to a statement by the Movimento pela Habitação, and «Duas pessoas foram encaminhadas para o hospital.», and the same report writes that the commander of the Porto Volunteer Firefighters confirmed to RTP that «oito pessoas foram assistidas no seu quartel»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo menos», according to José Soeiro, of th"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/en/ledger/hab-imprensa-feridos35/index.html",
+   "descricao": "o recibo inglês volta à atribuição antiga, a que deixava a sigla ler-se como «national leadership»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d31ed8bf0620aece2f7aa5f04f1c9129052e15981095ea17e0b5b42e4812fe5d",
+   "sha256_depois": "1e22282eb291ca5d5c5d77186e77d69f09b7bd88db2750588ed286a9f03dcfc6",
+   "contexto_antes": " data-titulo-publicado=\"en\">Housing in Portugal and in Europe</dd><dt>Attributed to</dt><dd><span class=\"campo-valor\" data-linha-claim=\"hab-imprensa-feridos35\" data-linha-campo=\"attributed_to_en\">José Soeiro, of the national leadership of the Left Bloc</span></dd></dl><p class=\"aparelho-nota\">As the document records it.</p><div class=\"aparelho-estado\"><span class=\"linha-campo-k\">Provenance</span><p class=\"aparelho-n",
+   "contexto_depois": " data-titulo-publicado=\"en\">Housing in Portugal and in Europe</dd><dt>Attributed to</dt><dd><span class=\"campo-valor\" data-linha-claim=\"hab-imprensa-feridos35\" data-linha-campo=\"attributed_to_en\">José Soeiro, of the Left Bloc's national leadership</span></dd></dl><p class=\"aparelho-nota\">As the document records it.</p><div class=\"aparelho-estado\"><span class=\"linha-campo-k\">Provenance</span><p class=\"aparelho-n"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada portuguesa da habitação no registo deixa de dizer que a contagem do movimento perdera o «pelo menos»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4cb400db2e71d70a17665ee78da76fd281e6bc845dca505ae208fc67045d72b7",
+   "sha256_depois": "3e65b20ecb63e39265c1a6aa6e537ae95b84fcc5cd0c427d73c379de6fd2e7c3",
+   "contexto_antes": "\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.</span> <a data-texto-porta=\"primeir",
+   "contexto_depois": "\"frase\" data-voz>Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.</span> <a data-texto-porta=\"primeir"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua das siglas volta a aceitar «national leadership» entre a expansão e a sigla",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bbefcc5927cdf63ed4c6d5c5a100a2080a0eb938a418317c1ae94e254b40f936",
+   "sha256_depois": "9e5ed3d7cf6331e1ada3d031961d6941d09646e6c9d787e02d0be5eac59e19ea",
+   "contexto_antes": "rn=new RegExp(escape(expansao)+`(?:'s(?: national leadership)?)?\\\\s*[, (]+(?:(?:o|a|the)\\\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\\\w-])`,'g');\n+  const expansionPattern=new RegExp(escape(expansao)+`(?:'s)?\\\\s*[, (]+(?:(?:o|a|the)\\\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\\\w-])`,'g');\n   const glosaExplicita=new RegExp(`\\\\(${sigla==='BE'?'o ':''}${",
+   "contexto_depois": "rn=new RegExp(escape(expansao)+`(?:'s(?: national leadership)?)?\\\\s*[, (]+(?:(?:o|a|the)\\\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\\\w-])`,'g');\n+  const expansionPattern=new RegExp(escape(expansao)+`(?:'s(?: national leadership)?)?\\\\s*[, (]+(?:(?:o|a|the)\\\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\\\w-])`,'g');\n   const glosaExplicita=new RegExp(`\\\\(${sigla==='BE'?'o ':''}${"
+  }
+ ]
+}
