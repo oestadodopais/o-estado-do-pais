@@ -5367,8 +5367,8 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | navegacao | First edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | conteudo | Estudo corrigido | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | conteudo | Study corrected | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| conteudo | fonte · Registo de correções | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| conteudo | source · Registo de correções | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | fonte · Registo de correções | ed1 | retirada | EV3-G: o selo saiu com a entrada do registo na caixa de novidades. |
+| conteudo | source · Registo de correções | ed1 | retirada | EV3-G: o selo saiu com a entrada do registo na caixa de novidades. |
 | conteudo | Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP). | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 
 

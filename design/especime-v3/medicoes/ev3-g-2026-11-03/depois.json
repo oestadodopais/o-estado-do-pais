@@ -1,0 +1,171 @@
+{
+  "fase": "depois",
+  "criterio_ledes": "Elemento seguinte ao h1 com lede como palavra na classe, segundo o DOM lido por node-html-parser.",
+  "paginas": 9825,
+  "ledes": [
+    {
+      "rota": "/404.html",
+      "texto": "A ligação pode estar errada, ou a página pode ter mudado de sítio.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/404",
+      "texto": "The link may be wrong, or the page may have moved.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/european-union",
+      "texto": "Outside the Commission reference value: government debt, what the country owns abroad minus what it owes (net international investment position), three-year change in unit labour cost and annual change in house prices, in 2025.",
+      "classe": "cabeca-lede"
+    },
+    {
+      "rota": "/en/method",
+      "texto": "How these pages are made, checked and corrected, for anyone who wants to know whether a number can be trusted and what to do on finding a wrong one.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/regions",
+      "texto": "Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/empty",
+      "texto": "The suggestion was empty. Write in at least one of the three boxes.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions",
+      "texto": "What did you look for here and not find? Which study would you like to read? Write it down. Suggestions are not published: the project's direction reads them and decides what enters the plan. To correct a number or a sentence, the door is another one: the corrections page.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/limit",
+      "texto": "Five suggestions arrived from this address within one hour. Please come back later.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/not-received",
+      "texto": "The box could not keep the suggestion. Please try again later.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/thank-you",
+      "texto": "Thank you. The suggestion arrived. It is not published and a reply is not guaranteed; what enters the plan appears on these pages.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/metodo",
+      "texto": "Como estas páginas são feitas, conferidas e corrigidas, para quem quer saber se pode confiar num número e o que fazer se encontrar um errado.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/regioes",
+      "texto": "O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes",
+      "texto": "O que procurou aqui e não encontrou? Que estudo gostava de ler? Escreva. As sugestões não se publicam: lê-as a direção do projeto e decide o que entra no plano. Para corrigir um número ou uma frase, a porta é outra: a página das correções.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/limite",
+      "texto": "Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/nao-chegou",
+      "texto": "A caixa não conseguiu guardar a sugestão. Volte a tentar mais tarde.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/obrigado",
+      "texto": "Obrigado. A sugestão chegou. Não se publica e não tem resposta garantida; o que entrar no plano aparece nestas páginas.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/vazia",
+      "texto": "A sugestão vinha vazia. Escreva pelo menos numa das três caixas.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/uniao-europeia",
+      "texto": "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025.",
+      "classe": "cabeca-lede"
+    }
+  ],
+  "correcoes": [
+    {
+      "rota": "/correcoes",
+      "lede": 0,
+      "politica": "A políticaQuando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos.Quem encontrar um erro escreve para correcoes@oestadodopais.pt. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.Quem for nomeado pode responder para o mesmo endereço das correções: a resposta publica-se ao lado da peça, sem edição.A regra, no Método →",
+      "naturezas": 0,
+      "meta": "O registo das correções e das atualizações de O Estado do País: o que estava publicado, o que ficou, a data e o motivo."
+    },
+    {
+      "rota": "/en/corrections",
+      "lede": 0,
+      "politica": "The policyWhen something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents.Anyone who finds an error writes to correcoes@oestadodopais.pt. A confirmed error enters the register with credit to whoever found it, if they wish.Anyone named may reply to the same address as the corrections: the reply is published beside the piece, unedited.The rule, in the Method →",
+      "naturezas": 0,
+      "meta": "The register of the corrections and updates of O Estado do País: what was published, what it became, the date and the reason."
+    }
+  ],
+  "inicio": [
+    {
+      "rota": "/en",
+      "entradas": [
+        {
+          "id": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026studyHousing in Portugal and in Europe"
+        },
+        {
+          "id": "dossie:orcamento-2027",
+          "texto": "29.10.2026dossierThe 2027 Budget · 5 pieces"
+        },
+        {
+          "id": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explainerWhere the State’s money goes in 2026"
+        },
+        {
+          "id": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026studyÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts"
+        },
+        {
+          "id": "estudo:evora-contas-da-camara-2010-2025",
+          "texto": "01.10.2026studyThe accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification"
+        }
+      ],
+      "entradas_do_registo": 0,
+      "marcas_do_registo": [],
+      "portas_registo_fora_da_caixa": 2
+    },
+    {
+      "rota": "/",
+      "entradas": [
+        {
+          "id": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026estudoA casa em Portugal e na Europa"
+        },
+        {
+          "id": "dossie:orcamento-2027",
+          "texto": "29.10.2026dossiêO Orçamento de 2027 · 5 peças"
+        },
+        {
+          "id": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explicaçãoPara onde vai o dinheiro do Estado em 2026"
+        },
+        {
+          "id": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026estudoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos"
+        },
+        {
+          "id": "estudo:evora-contas-da-camara-2010-2025",
+          "texto": "01.10.2026estudoAs contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação"
+        }
+      ],
+      "entradas_do_registo": 0,
+      "marcas_do_registo": [],
+      "portas_registo_fora_da_caixa": 2
+    }
+  ]
+}
