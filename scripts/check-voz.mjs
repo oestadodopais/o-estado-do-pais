@@ -110,6 +110,13 @@ const saida = execFileSync(process.execPath, [path.join(RAIZ, 'scripts', 'medir-
   maxBuffer: 128 * 1024 * 1024,
 });
 const medicao = JSON.parse(saida);
+// Provas de integração guardam a medição realmente consumida pelo portão.
+const indiceMedicao=process.argv.indexOf('--medicao');
+if(indiceMedicao>=0){
+ const destino=process.argv[indiceMedicao+1];
+ if(!destino)throw Error('--medicao exige um ficheiro');
+ fs.writeFileSync(destino,JSON.stringify(medicao));
+}
 const voz = medicao.voz;
 const casa = medicao.frases_da_casa;
 const rotas = Object.entries(casa.por_rota);
