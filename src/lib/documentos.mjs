@@ -1072,6 +1072,9 @@ function estiloDaMoldura() {
        documento original fica intacto; não se corta conteúdo no corpo. */
     `[data-oedp-moldura] table{display:block;max-width:100%;overflow-x:auto}`,
     `[data-oedp-moldura] :has(>table){min-width:0}`,
+    /* O identificador da fonte no método também tem de caber: quebra visual,
+       sem inserir espaços nem alterar os caracteres do código publicado. */
+    `[data-oedp-moldura] .metodo code{overflow-wrap:anywhere}`,
     /* A grelha das tabelas e a caixa que envolve uma tabela. O `:has()` fica em
        regra própria de propósito: num motor que não o conheça, a regra cai
        sozinha e a grelha continua corrigida, em vez de levar as duas atrás. */
