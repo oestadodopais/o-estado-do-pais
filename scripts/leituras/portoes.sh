@@ -98,7 +98,7 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"build"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"build"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
@@ -109,6 +109,13 @@ fi
 # DO2-D: repetir apenas a construção completa, sem os restantes portões.
 if [ "${perfil:-}" = build ]; then
   portoes="build"
+elif [ "${perfil:-}" = lar1 ] || [ "${perfil:-}" = lar1-largura ]; then
+  portoes="check:largura check:largura:planta check:capturas-largura lar1:medir"
+  if [ "$perfil" = lar1 ]; then
+    portoes="build check:css check:moldura check:sobreposicao check:alvos $portoes typecheck"
+  fi
+  export OEDP_LARGURA_JSON="$O/largura.json"
+  export OEDP_LAR1_DIR="$O/depois"
 elif [ "${perfil:-}" = do4-alvos ]; then
   portoes="check:alvos"
 elif [ "${perfil:-}" = do3-navegador ]; then
@@ -155,6 +162,9 @@ for g in $portoes; do
   elif [ "$g" = check:sobreposicao-planta ]; then
     correr "$O/$g.log" npm run check:sobreposicao -- --planta --rotas /estudos/a-casa-em-portugal-e-na-europa,/en/studies/a-casa-em-portugal-e-na-europa --json "$O/sobreposicao-planta.json"
     codigo=$?
+  elif [ "$g" = check:largura:planta ]; then
+    correr "$O/$g.log" npm run "$g" -- --json "$O/largura-planta.json"
+    codigo=$?
   elif [ "$g" = verify ]; then
     if [ "$(cat "$O/build.codigo")" -ne 0 ]; then
       echo 'verify: não correu; o build não ficou verde e não pode pagar passos da união' > "$O/verify.log"
@@ -196,6 +206,7 @@ done
 for g in $portoes; do
   esperado=0
   [ "$g" != check:sobreposicao-planta ] || esperado=1
+  [ "$g" != check:largura:planta ] || esperado=1
   [ "$(cat "$O/$g.codigo")" -eq "$esperado" ] || exit 1
 done
 if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then

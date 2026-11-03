@@ -1068,6 +1068,10 @@ function estiloDaMoldura() {
   const tinta = `var(--oedp-${FICHA_DA_TINTA})`;
 
   const regras = [
+    /* LAR1: a tabela é a sua própria caixa de deslocamento. O HTML do
+       documento original fica intacto; não se corta conteúdo no corpo. */
+    `[data-oedp-moldura] table{display:block;max-width:100%;overflow-x:auto}`,
+    `[data-oedp-moldura] :has(>table){min-width:0}`,
     /* A grelha das tabelas e a caixa que envolve uma tabela. O `:has()` fica em
        regra própria de propósito: num motor que não o conheça, a regra cai
        sozinha e a grelha continua corrigida, em vez de levar as duas atrás. */

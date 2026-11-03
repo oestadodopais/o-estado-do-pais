@@ -93,6 +93,10 @@ try {
       if (resposta?.status() !== 200) throw new Error(`${prefixo}: a página não respondeu a 200`);
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
+      if (medidas.documento > largura) {
+        resultados.push({rota,lingua,largura,...medidas,recusada:true,externos,erros,recusados});
+        throw new Error(`${prefixo}: largura do documento ${medidas.documento} excede ${largura}`);
+      }
       if (p.conferirNovidades) medidas.novidades = await conferirDisposicaoNovidades(pagina);
       if (p.conferirDossies) medidas.dossies = await conferirDisposicaoDossies(pagina);
       if (p.toque && p.desempate) {

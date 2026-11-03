@@ -40,17 +40,27 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert r.returncode == 9 and 'árvore suja' in r.stderr
     assert not (p / 'suja/build.codigo').exists() and not (comum / 'oedp-construcao.lock').exists()
     casos.append({'planta': 'árvore suja recusada antes da tranca e dos portões', 'codigo': r.returncode, 'mensagem': r.stderr.strip()})
-    for nome, conteudo, esperado in [('v2d', {'perfil': 'v2d'}, 1), ('v2c', {'perfil': 'v2c'}, 1), ('perfil-invalido', {'perfil': 'outro'}, 9)]:
+    for nome, conteudo, esperado in [('lar1', {'perfil': 'lar1'}, 1), ('v2d', {'perfil': 'v2d'}, 1), ('v2c', {'perfil': 'v2c'}, 1), ('perfil-invalido', {'perfil': 'outro'}, 9)]:
         (p / nome).mkdir()
         (p / nome / 'selecao.json').write_text(json.dumps(conteudo))
         r = correr(nome)
         assert r.returncode == esperado
         assert not (p / nome / 'verify.codigo').exists()
         assert not (p / nome / 'motor.codigo').exists()
-        if nome in ('v2c', 'v2d'):
+        if nome in ('v2c', 'v2d', 'lar1'):
             assert (p / nome / 'build.codigo').read_text().strip() == '7'
-            assert (p / nome / 'check:discussao.codigo').read_text().strip() == '125'
+            assert (p / nome / ('check:largura.codigo' if nome == 'lar1' else 'check:discussao.codigo')).read_text().strip() == '125'
         casos.append({'planta': nome, 'codigo': r.returncode})
+    comando('npm', 'echo "$*" >> "$CHAMADAS"\n')
+    comando('npm', 'echo "$*" >> "$CHAMADAS"\n[ "$2" != check:largura:planta ] || exit 1\n')
+    (p / 'lar1-verde').mkdir()
+    (p / 'lar1-verde/selecao.json').write_text(json.dumps({'perfil': 'lar1'}))
+    r = correr('lar1-verde')
+    assert r.returncode == 0
+    assert (p / 'lar1-verde/check:largura:planta.codigo').read_text().strip() == '1'
+    assert not (p / 'lar1-verde/verify.codigo').exists()
+    assert {f.stem for f in (p / 'lar1-verde').glob('*.codigo')} == {'build','check:css','check:moldura','check:sobreposicao','check:alvos','check:largura','check:largura:planta','check:capturas-largura','lar1:medir','typecheck'}
+    casos.append({'planta': 'LAR1 verde com planta vermelha esperada e sem verify', 'codigo': r.returncode})
     comando('npm', 'echo "$*" >> "$CHAMADAS"\n')
     (p / 'v2c-verde').mkdir()
     (p / 'v2c-verde/selecao.json').write_text(json.dumps({'perfil': 'v2c'}))
