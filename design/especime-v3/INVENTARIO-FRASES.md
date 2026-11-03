@@ -4200,7 +4200,7 @@ apenas depois de conferido. A célula ER1 confere a porta e esta entrada.
 
 As frases das mudanças no índice passam pela mesma auditoria `data-semana-declarado` da leitura da semana.
 As palavras «a fonte reviu para cima» e «a fonte reviu para baixo» e as gémeas inglesas vêm de `strings.mjs`,
-chave `semana`; a W recompõe a frase inteira com o livro e `nomeNaSemana`. Só sai do inventário um resumo cuja
+chave `semana`; quando a fonte é O Estado do País, a frase diz «recontado por este projeto» ou «recounted by this project». A W recompõe a frase inteira com o livro e `nomeNaSemana`. Só sai do inventário um resumo cuja
 entrada esteja diretamente dentro da lista conferida. A W4 compara a definição de cada grupo e os sinais com
 os recibos da mesma edição. As plantas retiram o qualificador da União Europeia, colam a unidade ao valor no
 índice e declaram um resumo fora da lista. Os títulos dos estudos conservam o nome publicado, sem marcador.
@@ -5397,8 +5397,8 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 
 | Tipo | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Duas contagens da imprensa sobre os feridos da intervenção policial no Porto apareciam entre aspas como palavras da organização e da Polícia de Segurança Pública (PSP); são o relato de uma notícia, e a frase passou a nomeá-la. | ed1 | viva | OG1-E B: frase autorizada e datas da história da habitação. |
-| conteudo | Two press counts of the injured in the Porto police intervention appeared in quotation marks as the words of the organisers and of the Public Security Police (PSP); they are a news report&#39;s account, and the sentence now names it. | ed1 | viva | OG1-E B: frase autorizada e datas da história da habitação. |
+| conteudo | Duas contagens da imprensa sobre os feridos da intervenção policial no Porto apareciam entre aspas como palavras da organização e da Polícia de Segurança Pública (PSP); são o relato de uma notícia, e a frase passou a nomeá-la. | ed1 | retirada | OG1-E F: a edição ainda não publicada absorve a correção da cronologia. |
+| conteudo | Two press counts of the injured in the Porto police intervention appeared in quotation marks as the words of the organisers and of the Public Security Police (PSP); they are a news report&#39;s account, and the sentence now names it. | ed1 | retirada | OG1-E F: a edição ainda não publicada absorve a correção da cronologia. |
 
 ## OG1-E C: publicadores e títulos conferidos, 02.11.2026
 
@@ -5425,7 +5425,14 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 | conteudo | Edição atual, de 02.11.2026. A primeira edição é de 21.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
 | conteudo | First edition, published on 21.10.2026. The current edition is from 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
 | conteudo | Current edition, from 02.11.2026. The first edition is from 21.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Primeira edição, publicada a 29.10.2026. A edição atual é de 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Edição atual, de 02.11.2026. A primeira edição é de 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | First edition, published on 29.10.2026. The current edition is from 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Current edition, from 02.11.2026. The first edition is from 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Primeira edição, publicada a 29.10.2026. A edição atual é de 03.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Edição atual, de 03.11.2026. A primeira edição é de 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | First edition, published on 29.10.2026. The current edition is from 03.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Current edition, from 03.11.2026. The first edition is from 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+
+## OG1-E F: relatos da cronologia, 03.11.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las. | og1-e-f | viva | OG1-E F: frase autorizada no §6 e conferida com as duas versões. |
+| conteudo | Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade&#39;s commander, and a sentence said the campers had written what a news report attributes to them; they are news reports&#39; accounts, and the sentences now name them. | og1-e-f | viva | OG1-E F: frase autorizada no §6 e conferida com as duas versões. |

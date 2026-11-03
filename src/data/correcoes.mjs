@@ -78,8 +78,8 @@ export const CORRECOES_TEXTO = [
     pt: "Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP).",
     en: "Five quotations presented the Prime Minister and the Socialist Party (Partido Socialista, PS) as saying words that are the account given by the Government's communication and by the party's web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP).",
   } },
-  { kind: 'texto', slug: 'a-casa-em-portugal-e-na-europa', data: '2026-11-02', frase: {
-    pt: "Duas contagens da imprensa sobre os feridos da intervenção policial no Porto apareciam entre aspas como palavras da organização e da Polícia de Segurança Pública (PSP); são o relato de uma notícia, e a frase passou a nomeá-la.",
-    en: "Two press counts of the injured in the Porto police intervention appeared in quotation marks as the words of the organisers and of the Public Security Police (PSP); they are a news report's account, and the sentence now names it.",
+  { kind: 'texto', slug: 'a-casa-em-portugal-e-na-europa', data: '2026-11-03', frase: {
+    pt: "Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.",
+    en: "Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade's commander, and a sentence said the campers had written what a news report attributes to them; they are news reports' accounts, and the sentences now name them.",
   } },
 ];

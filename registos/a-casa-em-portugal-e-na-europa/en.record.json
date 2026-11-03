@@ -1437,27 +1437,27 @@
      "tipo": "atribuicao"
     },
     {
-     "fim": 715,
+     "fim": 700,
      "id": "hab-imprensa-feridos39",
-     "inicio": 638,
+     "inicio": 623,
      "livro": "HB",
      "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
      "texto": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
      "tipo": "documento"
     },
     {
-     "fim": 748,
+     "fim": 733,
      "id": "hab-imprensa-feridos39",
-     "inicio": 719,
+     "inicio": 704,
      "livro": "HB",
      "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
      "texto": "39 feridos, dois deles graves",
      "tipo": "excerto"
     },
     {
-     "fim": 805,
+     "fim": 790,
      "id": "hab-imprensa-psp-ferido",
-     "inicio": 782,
+     "inicio": 767,
      "livro": "HB",
      "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
      "texto": "um polícia ficou ferido",
@@ -1474,7 +1474,7 @@
     "hab-imprensa-feridos39",
     "hab-imprensa-psp-ferido"
    ],
-   "text": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); this study's numbers do not measure rent against wages: they measure how many spend more than forty percent of household income on all housing costs, and those are 27.2 % of tenants at market rents, against 6.2 % of the whole population. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership (the Left Bloc, BE) and, by the report «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
+   "text": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); this study's numbers do not measure rent against wages: they measure how many spend more than forty percent of household income on all housing costs, and those are 27.2 % of tenants at market rents, against 6.2 % of the whole population. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership (BE) and, by the report «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
   },
   {
    "emphasis": [
@@ -5310,15 +5310,24 @@
        "livro": "HB"
       }
      ],
-     "fim": 399,
-     "inicio": 389,
+     "fim": 381,
+     "inicio": 371,
      "texto": "14 October",
      "tipo": "literal"
     },
     {
-     "fim": 503,
+     "fim": 477,
      "id": "hab-imprensa-acampados",
-     "inicio": 422,
+     "inicio": 395,
+     "livro": "HB",
+     "sha256_linha": "2533d6d1e63de3a640f4581c04d06f972665403c586c2e69965580713919a6f6",
+     "texto": "Manifestantes pela habitação no Porto justificam protesto por \"desespero político\"",
+     "tipo": "documento"
+    },
+    {
+     "fim": 595,
+     "id": "hab-imprensa-acampados",
+     "inicio": 514,
      "livro": "HB",
      "sha256_linha": "2533d6d1e63de3a640f4581c04d06f972665403c586c2e69965580713919a6f6",
      "texto": "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político",
@@ -5338,32 +5347,12 @@
       },
       {
        "campo": "reference_date",
-       "id": "hab-imprensa-feridos39",
+       "id": "hab-imprensa-hospital",
        "livro": "HB"
       },
       {
        "campo": "published_at",
-       "id": "hab-imprensa-feridos39",
-       "livro": "HB"
-      },
-      {
-       "campo": "reference_date",
-       "id": "hab-imprensa-feridos35",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-imprensa-feridos35",
-       "livro": "HB"
-      },
-      {
-       "campo": "reference_date",
-       "id": "hab-imprensa-psp-ferido",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-imprensa-psp-ferido",
+       "id": "hab-imprensa-hospital",
        "livro": "HB"
       },
       {
@@ -5378,12 +5367,32 @@
       },
       {
        "campo": "reference_date",
-       "id": "hab-imprensa-hospital",
+       "id": "hab-imprensa-feridos35",
        "livro": "HB"
       },
       {
        "campo": "published_at",
-       "id": "hab-imprensa-hospital",
+       "id": "hab-imprensa-feridos35",
+       "livro": "HB"
+      },
+      {
+       "campo": "reference_date",
+       "id": "hab-imprensa-feridos39",
+       "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-imprensa-feridos39",
+       "livro": "HB"
+      },
+      {
+       "campo": "reference_date",
+       "id": "hab-imprensa-psp-ferido",
+       "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-imprensa-psp-ferido",
        "livro": "HB"
       },
       {
@@ -5407,118 +5416,109 @@
        "livro": "HB"
       }
      ],
-     "fim": 519,
-     "inicio": 509,
+     "fim": 611,
+     "inicio": 601,
      "texto": "15 October",
      "tipo": "literal"
     },
     {
-     "fim": 599,
+     "fim": 829,
      "id": "hab-imprensa-feridos37",
-     "inicio": 567,
+     "inicio": 716,
+     "livro": "HB",
+     "sha256_linha": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
+     "texto": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+     "tipo": "documento"
+    },
+    {
+     "fim": 865,
+     "id": "hab-imprensa-feridos37",
+     "inicio": 833,
      "livro": "HB",
      "sha256_linha": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
      "texto": "37 feridos, dois em estado grave",
      "tipo": "excerto"
     },
     {
-     "fim": 643,
+     "fim": 924,
      "id": "hab-imprensa-feridos37",
-     "inicio": 619,
+     "inicio": 900,
      "livro": "HB",
      "sha256_linha": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
      "texto": "Movimento pela Habitação",
      "tipo": "atribuicao"
     },
     {
-     "fim": 675,
-     "id": "hab-imprensa-feridos39",
-     "inicio": 646,
-     "livro": "HB",
-     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
-     "texto": "39 feridos, dois deles graves",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 705,
-     "id": "hab-imprensa-feridos39",
-     "inicio": 691,
-     "livro": "HB",
-     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
-     "texto": "the organisers",
-     "tipo": "atribuicao"
-    },
-    {
-     "fim": 730,
-     "id": "hab-imprensa-feridos35",
-     "inicio": 708,
-     "livro": "HB",
-     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
-     "texto": "35 feridos, pelo menos",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 797,
-     "id": "hab-imprensa-feridos35",
-     "inicio": 746,
-     "livro": "HB",
-     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
-     "texto": "José Soeiro, of the Left Bloc's national leadership",
-     "tipo": "atribuicao"
-    },
-    {
-     "fim": 823,
-     "id": "hab-imprensa-psp-ferido",
-     "inicio": 800,
-     "livro": "HB",
-     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
-     "texto": "um polícia ficou ferido",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 846,
-     "id": "hab-imprensa-psp-ferido",
-     "inicio": 839,
-     "livro": "HB",
-     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
-     "texto": "the PSP",
-     "tipo": "atribuicao"
-    },
-    {
-     "fim": 893,
-     "id": "hab-imprensa-assistidos",
-     "inicio": 849,
-     "livro": "HB",
-     "sha256_linha": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
-     "texto": "oito pessoas foram assistidas no seu quartel",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 966,
-     "id": "hab-imprensa-assistidos",
-     "inicio": 909,
-     "livro": "HB",
-     "sha256_linha": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
-     "texto": "Luís Silva, commander of the Porto volunteer firefighters",
-     "tipo": "atribuicao"
-    },
-    {
-     "fim": 1017,
+     "fim": 979,
      "id": "hab-imprensa-hospital",
-     "inicio": 969,
+     "inicio": 931,
      "livro": "HB",
      "sha256_linha": "bc67bdb3d5a40731a17c525c6850d60cd7ee50287762d5b83e08601db9ec6d11",
      "texto": "Duas pessoas foram encaminhadas para o hospital.",
      "tipo": "excerto"
     },
     {
-     "fim": 1036,
-     "id": "hab-imprensa-hospital",
-     "inicio": 1033,
+     "fim": 1131,
+     "id": "hab-imprensa-assistidos",
+     "inicio": 1087,
      "livro": "HB",
-     "sha256_linha": "bc67bdb3d5a40731a17c525c6850d60cd7ee50287762d5b83e08601db9ec6d11",
-     "texto": "RTP",
+     "sha256_linha": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
+     "texto": "oito pessoas foram assistidas no seu quartel",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 1233,
+     "id": "hab-imprensa-feridos35",
+     "inicio": 1149,
+     "livro": "HB",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
+     "texto": "Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos",
+     "tipo": "documento"
+    },
+    {
+     "fim": 1259,
+     "id": "hab-imprensa-feridos35",
+     "inicio": 1237,
+     "livro": "HB",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
+     "texto": "35 feridos, pelo menos",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 1326,
+     "id": "hab-imprensa-feridos35",
+     "inicio": 1275,
+     "livro": "HB",
+     "sha256_linha": "a8b7c0478d8973f7b51e2717acf322052e9da6f2571f3a2542a2b9d581734f74",
+     "texto": "José Soeiro, of the Left Bloc's national leadership",
      "tipo": "atribuicao"
+    },
+    {
+     "fim": 1443,
+     "id": "hab-imprensa-feridos39",
+     "inicio": 1366,
+     "livro": "HB",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
+     "texto": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+     "tipo": "documento"
+    },
+    {
+     "fim": 1476,
+     "id": "hab-imprensa-feridos39",
+     "inicio": 1447,
+     "livro": "HB",
+     "sha256_linha": "88e58fe16787a08ba55c326fbecf00a9bc29ff658365a784d0f55a99c6664bef",
+     "texto": "39 feridos, dois deles graves",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 1532,
+     "id": "hab-imprensa-psp-ferido",
+     "inicio": 1509,
+     "livro": "HB",
+     "sha256_linha": "5758ea66e7dc2c4e59c14779806451b72e3e6e355ec1d3df2c4da5a36f62819e",
+     "texto": "um polícia ficou ferido",
+     "tipo": "excerto"
     },
     {
      "apoios": [
@@ -5553,24 +5553,24 @@
        "livro": "HB"
       }
      ],
-     "fim": 1168,
-     "inicio": 1158,
+     "fim": 1664,
+     "inicio": 1654,
      "texto": "16 October",
      "tipo": "literal"
     },
     {
-     "fim": 1248,
+     "fim": 1744,
      "id": "hab-imprensa-igai",
-     "inicio": 1171,
+     "inicio": 1667,
      "livro": "HB",
      "sha256_linha": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
      "texto": "a IGAI abriu um processo administrativo, com solicitação de informações à PSP",
      "tipo": "excerto"
     },
     {
-     "fim": 1345,
+     "fim": 1841,
      "id": "hab-imprensa-igai",
-     "inicio": 1266,
+     "inicio": 1762,
      "livro": "HB",
      "sha256_linha": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
      "texto": "IGAI abre processo sobre carga policial contra protesto pela habitação no Porto",
@@ -5590,32 +5590,12 @@
       },
       {
        "campo": "reference_date",
-       "id": "hab-imprensa-feridos39",
+       "id": "hab-imprensa-hospital",
        "livro": "HB"
       },
       {
        "campo": "published_at",
-       "id": "hab-imprensa-feridos39",
-       "livro": "HB"
-      },
-      {
-       "campo": "reference_date",
-       "id": "hab-imprensa-feridos35",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-imprensa-feridos35",
-       "livro": "HB"
-      },
-      {
-       "campo": "reference_date",
-       "id": "hab-imprensa-psp-ferido",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-imprensa-psp-ferido",
+       "id": "hab-imprensa-hospital",
        "livro": "HB"
       },
       {
@@ -5630,12 +5610,32 @@
       },
       {
        "campo": "reference_date",
-       "id": "hab-imprensa-hospital",
+       "id": "hab-imprensa-feridos35",
        "livro": "HB"
       },
       {
        "campo": "published_at",
-       "id": "hab-imprensa-hospital",
+       "id": "hab-imprensa-feridos35",
+       "livro": "HB"
+      },
+      {
+       "campo": "reference_date",
+       "id": "hab-imprensa-feridos39",
+       "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-imprensa-feridos39",
+       "livro": "HB"
+      },
+      {
+       "campo": "reference_date",
+       "id": "hab-imprensa-psp-ferido",
+       "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-imprensa-psp-ferido",
        "livro": "HB"
       },
       {
@@ -5659,60 +5659,60 @@
        "livro": "HB"
       }
      ],
-     "fim": 1381,
-     "inicio": 1371,
+     "fim": 1877,
+     "inicio": 1867,
      "texto": "15 October",
      "tipo": "literal"
     },
     {
-     "fim": 1479,
+     "fim": 1975,
      "id": "hab-imprensa-pm-15",
-     "inicio": 1398,
+     "inicio": 1894,
      "livro": "HB",
      "sha256_linha": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
      "texto": "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas",
      "tipo": "documento"
     },
     {
-     "fim": 1767,
+     "fim": 2263,
      "id": "hab-imprensa-pm-15",
-     "inicio": 1483,
+     "inicio": 1979,
      "livro": "HB",
      "sha256_linha": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
      "texto": "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.",
      "tipo": "excerto"
     },
     {
-     "fim": 1896,
+     "fim": 2392,
      "id": "hab-imprensa-pm-16",
-     "inicio": 1798,
+     "inicio": 2294,
      "livro": "HB",
      "sha256_linha": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
      "texto": "Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)",
      "tipo": "documento"
     },
     {
-     "fim": 2028,
+     "fim": 2524,
      "id": "hab-imprensa-pm-16",
-     "inicio": 1900,
+     "inicio": 2396,
      "livro": "HB",
      "sha256_linha": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
      "texto": "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.",
      "tipo": "excerto"
     },
     {
-     "fim": 2070,
+     "fim": 2566,
      "id": "hab-imprensa-mai",
-     "inicio": 2060,
+     "inicio": 2556,
      "livro": "HB",
      "sha256_linha": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
      "texto": "Luís Neves",
      "tipo": "atribuicao"
     },
     {
-     "fim": 2171,
+     "fim": 2667,
      "id": "hab-imprensa-mai",
-     "inicio": 2087,
+     "inicio": 2583,
      "livro": "HB",
      "sha256_linha": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
      "texto": "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima",
@@ -5732,32 +5732,12 @@
       },
       {
        "campo": "reference_date",
-       "id": "hab-imprensa-feridos39",
+       "id": "hab-imprensa-hospital",
        "livro": "HB"
       },
       {
        "campo": "published_at",
-       "id": "hab-imprensa-feridos39",
-       "livro": "HB"
-      },
-      {
-       "campo": "reference_date",
-       "id": "hab-imprensa-feridos35",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-imprensa-feridos35",
-       "livro": "HB"
-      },
-      {
-       "campo": "reference_date",
-       "id": "hab-imprensa-psp-ferido",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-imprensa-psp-ferido",
+       "id": "hab-imprensa-hospital",
        "livro": "HB"
       },
       {
@@ -5772,12 +5752,32 @@
       },
       {
        "campo": "reference_date",
-       "id": "hab-imprensa-hospital",
+       "id": "hab-imprensa-feridos35",
        "livro": "HB"
       },
       {
        "campo": "published_at",
-       "id": "hab-imprensa-hospital",
+       "id": "hab-imprensa-feridos35",
+       "livro": "HB"
+      },
+      {
+       "campo": "reference_date",
+       "id": "hab-imprensa-feridos39",
+       "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-imprensa-feridos39",
+       "livro": "HB"
+      },
+      {
+       "campo": "reference_date",
+       "id": "hab-imprensa-psp-ferido",
+       "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-imprensa-psp-ferido",
        "livro": "HB"
       },
       {
@@ -5801,33 +5801,33 @@
        "livro": "HB"
       }
      ],
-     "fim": 2186,
-     "inicio": 2176,
+     "fim": 2682,
+     "inicio": 2672,
      "texto": "15 October",
      "tipo": "literal"
     },
     {
-     "fim": 2228,
+     "fim": 2724,
      "id": "hab-imprensa-mai",
-     "inicio": 2189,
+     "inicio": 2685,
      "livro": "HB",
      "sha256_linha": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
      "texto": "há lei e ordem que têm de ser cumpridas",
      "tipo": "excerto"
     },
     {
-     "fim": 2290,
+     "fim": 2786,
      "id": "hab-imprensa-amorim",
-     "inicio": 2271,
+     "inicio": 2767,
      "livro": "HB",
      "sha256_linha": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
      "texto": "Carlos Abreu Amorim",
      "tipo": "atribuicao"
     },
     {
-     "fim": 2377,
+     "fim": 2873,
      "id": "hab-imprensa-amorim",
-     "inicio": 2307,
+     "inicio": 2803,
      "livro": "HB",
      "sha256_linha": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
      "texto": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
@@ -5866,15 +5866,15 @@
        "livro": "HB"
       }
      ],
-     "fim": 2392,
-     "inicio": 2382,
+     "fim": 2888,
+     "inicio": 2878,
      "texto": "16 October",
      "tipo": "literal"
     },
     {
-     "fim": 2483,
+     "fim": 2979,
      "id": "hab-imprensa-amorim",
-     "inicio": 2431,
+     "inicio": 2927,
      "livro": "HB",
      "sha256_linha": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
      "texto": "o Governo \"não vai ceder aos gritos que vêm da rua\".",
@@ -5903,33 +5903,33 @@
        "livro": "HB"
       }
      ],
-     "fim": 2594,
-     "inicio": 2585,
+     "fim": 3090,
+     "inicio": 3081,
      "texto": "9 October",
      "tipo": "literal"
     },
     {
-     "fim": 2731,
+     "fim": 3227,
      "id": "hab-imprensa-debate-custos",
-     "inicio": 2626,
+     "inicio": 3122,
      "livro": "HB",
      "sha256_linha": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
      "texto": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
      "tipo": "excerto"
     },
     {
-     "fim": 2779,
+     "fim": 3275,
      "id": "hab-imprensa-debate-protecao",
-     "inicio": 2756,
+     "inicio": 3252,
      "livro": "HB",
      "sha256_linha": "3057bdcaed4e4b37b36a5f1b749dfee754564458e397cc4f5736d7e4f8449d52",
      "texto": "vão proteger as pessoas",
      "tipo": "excerto"
     },
     {
-     "fim": 2890,
+     "fim": 3386,
      "id": "hab-imprensa-debate-custos",
-     "inicio": 2797,
+     "inicio": 3293,
      "livro": "HB",
      "sha256_linha": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
      "texto": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
@@ -5940,11 +5940,11 @@
     "hab-imprensa-tendas",
     "hab-imprensa-acampados",
     "hab-imprensa-feridos37",
-    "hab-imprensa-feridos39",
-    "hab-imprensa-feridos35",
-    "hab-imprensa-psp-ferido",
-    "hab-imprensa-assistidos",
     "hab-imprensa-hospital",
+    "hab-imprensa-assistidos",
+    "hab-imprensa-feridos35",
+    "hab-imprensa-feridos39",
+    "hab-imprensa-psp-ferido",
     "hab-imprensa-igai",
     "hab-imprensa-pm-15",
     "hab-imprensa-pm-16",
@@ -5953,7 +5953,7 @@
     "hab-imprensa-debate-custos",
     "hab-imprensa-debate-protecao"
    ],
-   "text": "In Porto, the encampment in Praça de D. João I had stood «desde sábado» (since Saturday), the day of the demonstrations, and «Foram retiradas, ao início da manhã desta segunda-feira, as tendas» (the tents were removed early on Monday morning), 12 October, by the RTP report «\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto» of that day; the campers wrote on 14 October that they were there «não como uma escolha de lazer, ou de campismo, mas como ato de desespero político»; on 15 October, the police intervention left injured people: «37 feridos, dois em estado grave», according to the Movimento pela Habitação; «39 feridos, dois deles graves», according to the organisers; «35 feridos, pelo menos», according to José Soeiro, of the Left Bloc's national leadership; «um polícia ficou ferido», according to the PSP; «oito pessoas foram assistidas no seu quartel», according to Luís Silva, commander of the Porto volunteer firefighters; «Duas pessoas foram encaminhadas para o hospital.», according to RTP. None of these counts comes from a statement by the PSP, the IGAI or the campers: all come from the newspapers cited. On 16 October, «a IGAI abriu um processo administrativo, com solicitação de informações à PSP», by the report «IGAI abre processo sobre carga policial contra protesto pela habitação no Porto». The Prime Minister, on 15 October, by the report «Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas»: «Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.» The next day, by the report «Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)»: «Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.» The Minister of Home Affairs, Luís Neves, by the report «Ministro da Administração Interna diz que intervenção policial no Porto foi legítima» of 15 October: «há lei e ordem que têm de ser cumpridas». The Minister for Parliamentary Affairs, Carlos Abreu Amorim, by the report «Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"» of 16 October, from Lusa in DNotícias, warned that «o Governo \"não vai ceder aos gritos que vêm da rua\".» (the Government \"will not give in to the shouting from the street\"). In the parliamentary debate of 9 October, the Prime Minister said that «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades» and that the measures «vão proteger as pessoas», by the report «Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal»."
+   "text": "In Porto, the encampment in Praça de D. João I had stood «desde sábado» (since Saturday), the day of the demonstrations, and «Foram retiradas, ao início da manhã desta segunda-feira, as tendas» (the tents were removed early on Monday morning), 12 October, by the RTP report «\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto» of that day; on 14 October, the report «Manifestantes pela habitação no Porto justificam protesto por \"desespero político\"» wrote that the campers were there «não como uma escolha de lazer, ou de campismo, mas como ato de desespero político»; on 15 October, the police intervention left injured people, and the counts came through the press: by the RTP report «Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto», «37 feridos, dois em estado grave», according to a statement by the Movimento pela Habitação, and «Duas pessoas foram encaminhadas para o hospital.», and the same report writes that the commander of the Porto Volunteer Firefighters confirmed to RTP that «oito pessoas foram assistidas no seu quartel»; by the report «Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos», «35 feridos, pelo menos», according to José Soeiro, of the Left Bloc's national leadership; and by the Diário de Notícias report «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» by the organisers' count, and «um polícia ficou ferido» according to the PSP. None of these counts comes from a document of the PSP or the IGAI: all came through the press. On 16 October, «a IGAI abriu um processo administrativo, com solicitação de informações à PSP», by the report «IGAI abre processo sobre carga policial contra protesto pela habitação no Porto». The Prime Minister, on 15 October, by the report «Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas»: «Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.» The next day, by the report «Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)»: «Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.» The Minister of Home Affairs, Luís Neves, by the report «Ministro da Administração Interna diz que intervenção policial no Porto foi legítima» of 15 October: «há lei e ordem que têm de ser cumpridas». The Minister for Parliamentary Affairs, Carlos Abreu Amorim, by the report «Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"» of 16 October, from Lusa in DNotícias, warned that «o Governo \"não vai ceder aos gritos que vêm da rua\".» (the Government \"will not give in to the shouting from the street\"). In the parliamentary debate of 9 October, the Prime Minister said that «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades» and that the measures «vão proteger as pessoas», by the report «Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal»."
   },
   {
    "figures": [],

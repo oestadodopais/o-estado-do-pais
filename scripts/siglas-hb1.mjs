@@ -33,12 +33,13 @@ export function conferirSiglasHb1(frases,lingua) {
   const texto=frases[bloco],posicao=texto.search(pattern),prosa=maskQuotes(texto),inicio=prosa.lastIndexOf(expansao,posicao);
   // HB1-c2: o primeiro uso pode vir de um texto copiado da fonte (a atribuição
   // «dirigente nacional do BE»); vale então a glosa logo a seguir, entre
-  // parênteses, «BE (o Bloco de Esquerda, o BE)». Sem uma das duas, recusa.
-  const depois=prosa.indexOf(expansao,posicao),glosa=depois>posicao&&/^\s*\((?:(?:o|a|the)\s+)?$/.test(prosa.slice(posicao+sigla.length,depois));
+  // parênteses, «BE (o BE é o Bloco de Esquerda)». Sem uma das duas, recusa.
+  const depois=prosa.indexOf(expansao,posicao),glosa=depois>posicao&&new RegExp(`^\\s*\\((?:(?:o|a|the)\\s+)?(?:${escape(sigla)} é (?:o|a) )?$`).test(prosa.slice(posicao+sigla.length,depois));
   assert((inicio>=0&&inicio<posicao&&posicao-inicio<expansao.length+35)||glosa,`${lingua}: ${sigla} não expandida ao primeiro uso`);
   // Uma citação literal pode repetir a forma longa. Só a prosa é editável.
-  const expansionPattern=new RegExp(escape(expansao)+`(?:'s)?\\s*[, (]+(?:(?:o|a|the)\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\w-])`,'g');
-  const vezes=frases.reduce((n,t)=>n+[...maskQuotes(t).matchAll(expansionPattern)].length,0);
+  const expansionPattern=new RegExp(escape(expansao)+`(?:'s(?: national leadership)?)?\\s*[, (]+(?:(?:o|a|the)\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\w-])`,'g');
+  const glosaExplicita=new RegExp(`\\(${sigla==='BE'?'o ':''}${escape(sigla)} é (?:o|a) ${escape(expansao)}\\)`,'g');
+  const vezes=frases.reduce((n,t)=>n+[...maskQuotes(t).matchAll(expansionPattern)].length+[...maskQuotes(t).matchAll(glosaExplicita)].length,0);
   assert.equal(vezes,1,`${lingua}: expansão ${sigla} repetida ou sem a forma declarada`);
   return {sigla,expansao,bloco,seletor:`[data-registo-bloco="${bloco}"]`,contexto:glosa&&!(inicio>=0&&inicio<posicao)?texto.slice(posicao,depois+expansao.length):texto.slice(inicio,posicao+sigla.length),expansoes_na_prosa:vezes};
  });

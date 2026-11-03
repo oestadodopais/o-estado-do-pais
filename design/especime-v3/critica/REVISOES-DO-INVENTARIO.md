@@ -948,3 +948,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | ed1-f | Política com versões do texto, faixa com separador e avisos documentais | por ler | Codex, 02.11.2026: frases autorizadas nas adendas E e F; unidades rendidas e plantas dos fragmentos isolados. Leitura cruzada reservada ao lugar de direção. |
 
 | og1-e-d | Política, natureza da correção, definição da contagem e contagem das revisões nas duas línguas | por ler | Codex, 03.11.2026: frases autorizadas pela adenda D; trinta erros de campos passam a correções. Leitura cruzada reservada ao lugar de direção. |
+
+| og1-e-f | Correção da cronologia da habitação nas duas línguas | por ler | Codex, 03.11.2026: frase autorizada no §6; a prova compara a primeira edição guardada e a versão atual. Leitura cruzada reservada ao lugar de direção. |

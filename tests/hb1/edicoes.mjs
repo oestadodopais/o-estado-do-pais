@@ -16,7 +16,7 @@ for(const lang of ['pt','en']) {
  // HB1-c2: a glosa logo a seguir ao primeiro uso vale (a atribuição copiada da fonte diz «do BE»);
  // sem a glosa, ou com ela afastada do primeiro uso, a sigla continua recusada.
  if(lang==='pt') {
-  const g='(o Bloco de Esquerda, o BE)';assert(phrases.some(x=>x.includes(g)),'a glosa do BE não está na edição');
+  const g='(o BE é o Bloco de Esquerda)';assert(phrases.some(x=>x.includes(g)),'a glosa do BE não está na edição');
   for(const [nome,f] of [['sem a glosa',phrases.map(x=>x.replace(' '+g,''))],['glosa afastada',phrases.map(x=>x.includes(g)?x.replace(' '+g,'')+' '+g:x)]]) {
    let erro=null;try{conferirSiglasHb1(f,'pt');}catch(e){erro=String(e.message);}
    assert(erro&&erro.includes('BE não expandida ao primeiro uso'),'planta da sigla ('+nome+') passou');plantas++;
