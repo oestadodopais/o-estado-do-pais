@@ -55,6 +55,7 @@ import PontoDaSerie from '../components/serie/PontoDaSerie.astro';
 import NomeDoPais from '../components/serie/NomeDoPais.astro';
 import CampoDaSerie from '../components/serie/CampoDaSerie.astro';
 import DataDaSerie from '../components/serie/DataDaSerie.astro';
+import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
 import { getClaim } from '../lib/ledger.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import Frase from '../components/Frase.astro';
@@ -199,6 +200,7 @@ const descricao = `${s.livro.serie.eyebrow} · ${nome.texto} ${s.livro.serie.nos
           )
         }
         </div>
+        <AvisoDaRevisao ids={[linhaPt.id, linhaUe.id]} lang={lang} />
       </section>
 
       <section class="linha-bloco serie-prova" aria-labelledby="prova-k" id="prova">

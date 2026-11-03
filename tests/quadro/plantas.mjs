@@ -30,6 +30,13 @@ for(const lang of ['pt','en']){
   ['frase da revisão trocada',r=>r.querySelector('[data-aviso-revisao] a').insertAdjacentHTML('beforeend',' Texto inventado.'),/Q4/],
  ]){const copia=parse(card);mudar(copia);assert(conferirAvisos(copia,lang).erros.some(e=>mordida.test(e)),nome);conta++;console.log(`PAI2 ${lang}: ${nome} recusado.`);}
 }
+for(const lang of ['pt','en'])for(const rota of [lang==='pt'?'uniao-europeia':'en/european-union',`${lang==='pt'?'livro-razao':'en/ledger'}/series/sobrecarga-do-custo-da-habitacao-2025-paises`]){
+ const html=fs.readFileSync(path.join(dist,rota,'index.html'),'utf8'),root=parse(html);
+ assert.deepEqual(conferirAvisos(root,lang).erros,[]);
+ const aviso=root.querySelector('[data-aviso-revisao="sobrecarga-do-custo-da-habitacao-2025-ue"]');
+ assert(aviso);aviso.remove();assert(conferirAvisos(root,lang).erros.some(e=>e.startsWith('Q3')));conta++;
+ console.log(`PAI2 ${lang}: aviso retirado da série recusado.`);
+}
 // A ordem do vetor não substitui a data; uma correção de outro campo não aplica a revisão.
 const id=[...revisoesPorAplicar().keys()][0],original=livroDoQuadro().get(id);
 const v=revisoesPorAplicar().get(id);

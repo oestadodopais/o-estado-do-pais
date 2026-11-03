@@ -889,3 +889,7 @@ A segunda leitura carrega os YAML diretamente: recompõe as divergências sem ch
 varre todas as páginas com valores pendentes, compara o quadro com o cartão e com o livro, e recusa ausências
 indevidas. As plantas são cópias independentes do HTML, incluindo valor, período, selo, frase, aviso e N1C.
 `superficieDoQuadro` é a função comum da voz, do inventário e da L1: só devolve nós e portas depois da prova.
+
+A varredura inclui também os pontos PT e UE das séries de países, pelas ligações explícitas
+`linha_de_portugal` e `linha_da_uniao` do YAML. O aviso acompanha a faixa europeia e a tabela
+do recibo da série; as plantas retiram-no de cada forma, nas duas edições.

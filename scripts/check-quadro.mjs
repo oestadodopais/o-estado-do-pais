@@ -11,7 +11,18 @@ import {dataDaCasa} from '../src/lib/datas.mjs';
 import {unidadeDaLinha} from '../src/i18n/unidades.mjs';
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 const numero=s=>Number(normal(s).replace(/\s/g,'').replace('−','-').replace(',','.'));
-let livro;
+let livro, pontos;
+export function linhasDosPontos() {
+ if(pontos)return pontos;
+ pontos=new Map();
+ for(const f of fs.readdirSync('ledger/series').filter(f=>f.endsWith('.yml'))){
+  const s=load(fs.readFileSync(path.join('ledger/series',f),'utf8'));
+  if(s.eixo!=='pais')continue;
+  if(s.linha_de_portugal)pontos.set(`${s.id}#PT`,s.linha_de_portugal);
+  if(s.linha_da_uniao)pontos.set(`${s.id}#EU27_2020`,s.linha_da_uniao);
+ }
+ return pontos;
+}
 export function livroDoQuadro() {
   return livro??=new Map(fs.readdirSync('ledger/claims').filter(f=>f.endsWith('.yml')).map(f=>{
     const c=load(fs.readFileSync(path.join('ledger/claims',f),'utf8'));return [c.id,c];
@@ -37,7 +48,7 @@ const textoAviso=(v,lang)=>{
 const caminho=(id,lang)=>`${lang==='en'?'/en/ledger/':'/livro-razao/'}${id}`;
 /** Cada forma tem uma caixa própria; um aviso no rodapé não cobre o cartão. */
 export function caixaDaMedida(el) {
-  return el.closest('[data-quadro-medida], [data-cartao-medida], [data-bloco], [data-estudo], .livro-item, .cartao, [data-semana-revisao]')
+  return el.closest('[data-faixa-paises], .serie-pontos, [data-quadro-medida], [data-cartao-medida], [data-bloco], [data-estudo], .livro-item, .cartao, [data-semana-revisao]')
     ?? (el.closest('.linha-valor')?.parentNode)
     ?? el.closest('dd, p, li, td, figure') ?? el.parentNode;
 }
@@ -51,8 +62,8 @@ export function conferirAvisos(root,lang,{exigir=true,pendentes=revisoesPorAplic
     if(!v || texto!==normal(textoAviso(v,lang)) || aviso.getAttribute('data-revisao-indice')!==String(v?.n) || !found || !data || a?.getAttribute('href')!==caminho(id,lang))erros.push(`Q4 ${id}: aviso sem divergência ou frase, origem, data ou recibo diferente.`);
     else {nos.add(aviso);portas.add(a);}
   }
-  if(exigir)for(const el of root.querySelectorAll('main [data-claim]')){
-    const id=el.getAttribute('data-claim');if(!pendentes.has(id))continue;
+  if(exigir)for(const el of root.querySelectorAll('[data-claim], [data-ponto], [data-faixa-marca]')){
+    const id=el.getAttribute('data-claim')??linhasDosPontos().get(el.getAttribute('data-ponto')??el.getAttribute('data-faixa-marca'));if(!pendentes.has(id))continue;
     const caixa=caixaDaMedida(el);
     if(!caixa?.querySelectorAll(`[data-aviso-revisao="${id}"]`).some(a=>nos.has(a)))erros.push(`Q3 ${id}: divergência por aplicar sem aviso na forma ${caixa?.tagName}.`);
   }
@@ -130,9 +141,10 @@ export function* paginas(dir,prefix=''){
 }
 export function conferirDist(dist='dist'){
  const erros=[],pendentes=revisoesPorAplicar();let avisos=0,formas=0;
+ const pontosPendentes=[...linhasDosPontos()].filter(([,id])=>pendentes.has(id)).map(([chave])=>chave);
  for(const rel of paginas(dist)){
   const html=fs.readFileSync(path.join(dist,rel),'utf8');
-  if(!html.includes('data-aviso-revisao')&&!html.includes('data-quadro-pais')&&![...pendentes.keys()].some(id=>html.includes(`data-claim="${id}"`)))continue;
+  if(!html.includes('data-aviso-revisao')&&!html.includes('data-quadro-pais')&&![...pendentes.keys()].some(id=>html.includes(`data-claim="${id}"`))&&!pontosPendentes.some(p=>html.includes(p)))continue;
   const root=parse(html),lang=rel.startsWith('en/')?'en':'pt';
   if(['temas/index.html','en/themes/index.html'].includes(rel))erros.push(...conferirQuadro(root,lang,{dist}).erros.map(e=>`${rel}: ${e}`));
   const r=conferirAvisos(root,lang,{pendentes});erros.push(...r.erros.map(e=>`${rel}: ${e}`));avisos+=r.nos.size;formas++;

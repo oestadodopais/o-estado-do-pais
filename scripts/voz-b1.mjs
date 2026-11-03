@@ -1,3 +1,4 @@
+import { superficieDoQuadro } from './check-quadro.mjs';
 import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
 import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
@@ -104,6 +105,9 @@ export function verificaB1(raiz) {
       // Os nomes das portas HB1 são comparados à declaração por medir-defeitos.
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim], .texto-fontes [data-nome]';
       const dispensados = new Set(main.querySelectorAll(verificados));
+      const pai2 = superficieDoQuadro(main.parentNode, lang, {dist:path.join(raiz,'dist')});
+      erros.push(...pai2.erros);
+      for (const no of pai2.nos) dispensados.add(no);
       // OG1-A6: a porta viva tem título e destino conferidos fora do corpo fixo.
       for(const el of main.querySelectorAll('[data-discussao-integracao="orcamento-2027-generalidade"]')){
         const slug=el.getAttribute('data-discussao-integracao'),item=ITENS.find(e=>e.slug===slug),a=el.querySelector('a');

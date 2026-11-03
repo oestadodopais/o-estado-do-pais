@@ -25,7 +25,7 @@ async function medir(page){
   if(document.documentElement.scrollWidth>innerWidth+1)erros.push('página mais larga');
   const alvos=[...document.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a')];
   for(const el of alvos){
-   el.scrollIntoView({block:'center',inline:'nearest'});
+   el.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
    const r=el.getBoundingClientRect();
    if(modo==='alvos'&&(r.height<43.9||r.width<43.9))erros.push('alvo pequeno');
    if(modo==='alvos')for(const [x,y] of [[r.x+r.width/2,r.y+r.height/2],[r.x+r.width/2,r.y+Math.min(20,r.height/2)]]){
@@ -48,7 +48,7 @@ async function medir(page){
 }
 let combinacoes=0,plantas=0;
 try{
- for(const largura of [390,768,1024,1280,1600])for(const rota of ['/temas/','/en/themes/','/estado-e-economia/','/en/state-and-economy/','/uniao-europeia/','/en/european-union/','/livro-razao/','/en/ledger/','/','/en/','/estudos/','/en/studies/']){
+ for(const largura of [390,768,1024,1280,1600])for(const rota of ['/temas/','/en/themes/','/estado-e-economia/','/en/state-and-economy/','/uniao-europeia/','/en/european-union/','/livro-razao/','/en/ledger/','/','/en/','/estudos/','/en/studies/','/livro-razao/series/sobrecarga-do-custo-da-habitacao-2025-paises','/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises']){
   const page=await browser.newPage({viewport:{width:largura,height:1000}});
   await page.goto(url+rota);await page.evaluate(()=>document.fonts.ready);
   const r=await medir(page);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert(r.alvos>0);combinacoes++;

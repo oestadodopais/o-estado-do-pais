@@ -48,6 +48,7 @@ import Frase from './Frase.astro';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
 import { getSerie, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
+import AvisoDaRevisao from './AvisoDaRevisao.astro';
 import { getClaim } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { unidadeDoCartao } from '../data/unidades-dos-cartoes.mjs';
@@ -194,6 +195,7 @@ const definicao = (declarada.serie ?? declarada)[lang];
       ressalva da Comissão vai com ela, no mesmo bloco, como no cartão e nos recibos. */}
   {ressalva && <p class="paises-ressalva" data-ressalva-da-uniao={idDaLinha}>{ressalva}</p>}
 
+  <AvisoDaRevisao ids={[String(serie.linha_de_portugal), String(serie.linha_da_uniao)]} lang={lang} />
   <details class="paises-lista" data-lista-paises={f.serie}>
     <summary class="paises-lista-abrir">
       <span class="paises-lista-seta" aria-hidden="true"></span>
