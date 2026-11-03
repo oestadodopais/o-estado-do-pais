@@ -9,7 +9,7 @@ const normal=x=>String(x??'').replace(/\s+/g,' ').trim();
 export function conferirHistoriaTextual(root,linha,lang){
  const erros=[],lingua=LINGUA_DOS_TITULOS[linha.document?.title];
  for(const [n,c] of (linha.corrections??[]).entries()){
-  if(!['correcao','atualizacao'].includes(c.kind))continue;
+  if(Object.hasOwn(c,'field')||!['correcao','atualizacao'].includes(c.kind))continue;
   for(const campo of ['old_value','new_value']){
    const no=root.querySelector(`[data-correcao-claim="${linha.id}"][data-correcao-n="${n}"][data-correcao-campo="${campo}"]`);
    if(!no||no.text!==c[campo])erros.push('V2D história textual: correção ausente ou texto diferente do registo');
@@ -33,7 +33,7 @@ export function conferirRecibosCorrigidos(dist,linhas){
  erros.push(...v2eb.erros);plantas.push(...v2eb.plantas);
  for(const lang of ['pt','en'])for(const [id,l] of linhas){
   const risco=id.startsWith('ppp-oe2027-riscos-'),serie=/^ppp-oe20\d\d-liquidos-\d{4}$/.test(id)||id.startsWith('saude-total-');
-  const textual=((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l))&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind));
+  const textual=((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l))&&(l.corrections??[]).some(c=>!Object.hasOwn(c,'field')&&['correcao','atualizacao'].includes(c.kind));
   if(!risco&&!serie&&!textual)continue;
   const ficheiro=path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html');
   if(!fs.existsSync(ficheiro)){erros.push(`V2D recibo: recibo corrigido ausente ${id} (${lang})`);continue;}

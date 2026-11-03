@@ -1244,9 +1244,9 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* ED1-A: a edição da contagem das correções passou a 02.11.2026.
+  /* OG1-E D: a edição da contagem das correções passou a 03.11.2026.
      É uma data sem língua; a edição anterior já não é usada pelas linhas. */
-  '02.11.2026': null,
+  '03.11.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
@@ -1751,7 +1751,6 @@ Object.assign(LINGUA_DAS_EDICOES, {
   "2026-09-15": null,
   "2026-10-14": null,
   "2026-10-09": null,
-  "02.11.2026": null,
   "26.10.2026": null,
   "01.10.2026": null,
   "12.08.2026": null,
