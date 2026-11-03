@@ -1,0 +1,129 @@
+{
+  "origem": "HTML devolvido pela mesma função usada pelos endpoints das edições guardadas, sem alterações ao código",
+  "edicoes": [
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01",
+      "sha256_html_servido": "8b0b80099251e514496870d07cb9a7ad00c0ba6f68c1208a27dbe8be7cbe280f",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [
+        {
+          "largura": 390,
+          "scrollWidth": 610
+        }
+      ],
+      "sha256_dist": "8b0b80099251e514496870d07cb9a7ad00c0ba6f68c1208a27dbe8be7cbe280f",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01",
+      "sha256_html_servido": "3fb0b8796b8b72bfced91ff4d565f32e16311f70af68276e08af5b2261aea33a",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [
+        {
+          "largura": 390,
+          "scrollWidth": 597
+        }
+      ],
+      "sha256_dist": "3fb0b8796b8b72bfced91ff4d565f32e16311f70af68276e08af5b2261aea33a",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01",
+      "sha256_html_servido": "9d5f7e106f68ddb5426b5a293da8b1e030d8b34f24f1e0dcfaf6ada19533a9b6",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [
+        {
+          "largura": 390,
+          "scrollWidth": 1240
+        },
+        {
+          "largura": 768,
+          "scrollWidth": 1240
+        },
+        {
+          "largura": 1024,
+          "scrollWidth": 1300
+        },
+        {
+          "largura": 1280,
+          "scrollWidth": 1428
+        }
+      ],
+      "sha256_dist": "9d5f7e106f68ddb5426b5a293da8b1e030d8b34f24f1e0dcfaf6ada19533a9b6",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01",
+      "sha256_html_servido": "0000698843d2e6a3dc85eb3e8c9e6ecf39d60b3c568136efc6f2e5bd04b4b4c4",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [
+        {
+          "largura": 390,
+          "scrollWidth": 1243
+        },
+        {
+          "largura": 768,
+          "scrollWidth": 1243
+        },
+        {
+          "largura": 1024,
+          "scrollWidth": 1303
+        },
+        {
+          "largura": 1280,
+          "scrollWidth": 1431
+        }
+      ],
+      "sha256_dist": "0000698843d2e6a3dc85eb3e8c9e6ecf39d60b3c568136efc6f2e5bd04b4b4c4",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
+      "sha256_html_servido": "6053eaab8fa1e89136e705cf9c18cd45d3976d28cc832c550be361ad8323c76a",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [],
+      "sha256_dist": "6053eaab8fa1e89136e705cf9c18cd45d3976d28cc832c550be361ad8323c76a",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
+      "sha256_html_servido": "8d6011067be9dd3ba9a7d1df96dafdad50831056ddad4133edd70a18b0cf94d3",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [],
+      "sha256_dist": "8d6011067be9dd3ba9a7d1df96dafdad50831056ddad4133edd70a18b0cf94d3",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29",
+      "sha256_html_servido": "8094804b50d12c9a100e3e8446350177774e96824b166e030e4914edee2dd2f4",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [],
+      "sha256_dist": "8094804b50d12c9a100e3e8446350177774e96824b166e030e4914edee2dd2f4",
+      "dist_igual_ao_endpoint": true
+    },
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29",
+      "sha256_html_servido": "3978b043121fffc6abf506c42f7cc24af98ee98f7f6ddbbb95e4d725a8d8a8da",
+      "folhas_externas": [],
+      "importacoes_css": [],
+      "estilos_embutidos": 3,
+      "larguras_com_excesso_na_medicao_recebida": [],
+      "sha256_dist": "3978b043121fffc6abf506c42f7cc24af98ee98f7f6ddbbb95e4d725a8d8a8da",
+      "dist_igual_ao_endpoint": true
+    }
+  ]
+}

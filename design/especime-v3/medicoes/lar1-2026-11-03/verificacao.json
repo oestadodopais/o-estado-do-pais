@@ -1,0 +1,17 @@
+{
+  "build": {
+    "comando": "npm run build",
+    "executor": "scripts/leituras/curto.sh",
+    "codigo": 0,
+    "duracao_segundos": 554,
+    "cabeca_construida": "93e36694091f53376f1890201e9972bbc5ed7364",
+    "ambito": "versão de partida, sem alterações ao código"
+  },
+  "corridas_de_construcao": 1,
+  "corridas_integrais_dos_tres_portoes": 0,
+  "conferencias_avulsas": 0,
+  "check_largura": "não implementada: paragem pelo §2",
+  "capturas": "não executadas: paragem pelo §2",
+  "chamadas_de_ferramentas_ate_ao_resultado_do_build": 29,
+  "contagem": "chamadas functions.exec e functions.wait; os passos internos do build pertencem à única corrida de construção"
+}
