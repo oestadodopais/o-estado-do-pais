@@ -1,0 +1,66 @@
+{
+  "chamadas_ate_este_registo": 39,
+  "corridas_dirigidas_com_registo": 6,
+  "conferencias": [
+    {
+      "registo": "<temporario>/og1ej-dirigidas.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ej-integracao-b.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ej-integracao-c.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ej-integracao.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ej-tipos-mortos.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ej-unidades.log",
+      "codigo": 0
+    }
+  ],
+  "voz_real": {
+    "execucoes": 12,
+    "primeira_corrida": {
+      "retiradas": 1228,
+      "codigos": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "corrida_definitiva": {
+      "retiradas": 1238,
+      "codigos": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "build": {
+    "corridas": 0,
+    "codigo": null,
+    "estado": "Pendente por limite de trinta minutos da passagem."
+  },
+  "commits_do_codigo": [
+    "6d761241cec57a350da8d0e31b8a3f321695baa8",
+    "239ec1fd1fed5d8a6c344c04079a59709789561b",
+    "21495185c4734f6c791c261963e462faa6df9c10"
+  ],
+  "motor_alterado": false
+}
