@@ -24,16 +24,27 @@ export function frasesDaFaixaDocumental(root) {
 }
 
 /** A extração comum da voz conserva os nós de selos e as marcas de língua.
- * @param {any} no */
-export function textoDaVoz(no) {
-  const partes = /** @type {string[]} */ ([]);
+ * @param {any} no
+ * @param {(no:any)=>boolean} excluir */
+export function textoDaVoz(no, excluir = () => false) {
+  const partes = /** @type {{texto:string, lingua:boolean}[]} */ ([]);
+  const textoLiteral = (/** @type {any} */ n) => {
+    if (!n || excluir(n)) return '';
+    if (n.nodeType === 3) return n.rawText;
+    if (['script','style'].includes(String(n.rawTagName ?? '').toLowerCase())) return '';
+    return (n.childNodes ?? []).map(textoLiteral).join('');
+  };
   const anda = (/** @type {any} */ n) => {
-    if (!n) return;
-    if (n.nodeType === 3) return void partes.push(n.rawText);
+    if (!n || excluir(n)) return;
+    if (n.nodeType === 3) return void partes.push({texto:n.rawText,lingua:false});
     const tag = String(n.rawTagName ?? '').toLowerCase();
     if (tag === 'script' || tag === 'style') return;
+    // A marca de língua é inline: conserva os espaços escritos nos nós vizinhos.
+    if (['span','em','i','strong','b','abbr','a'].includes(tag) && n.hasAttribute('lang')) {
+      partes.push({texto:textoLiteral(n),lingua:true});return;
+    }
     for (const f of n.childNodes ?? []) anda(f);
   };
   anda(no);
-  return partes.join(' ');
+  return partes.map((p,i)=>(i && !p.lingua && !partes[i-1].lingua ? ' ' : '')+p.texto).join('');
 }
