@@ -136,7 +136,7 @@ function pecasDaArea(area, claims) {
       continue;
     }
 
-    if (!['afirmação','texto'].includes(c.unit)) medidas.push({ id, estudo: c.study, materia: m.materia, artigo: m.artigo, razao: m.razao });
+    if (typeof c.unit !== 'string' || !['afirmação','texto'].includes(c.unit)) medidas.push({ id, estudo: c.study, materia: m.materia, artigo: m.artigo, razao: m.razao });
 
     const w = WORKS.find((x) => x.id === c.study);
     if (w) {
