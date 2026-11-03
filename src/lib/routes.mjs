@@ -56,7 +56,7 @@ export const ROUTES = {
   metodo: { pt: '/metodo', en: '/en/method' },
   /**
    * O registo de correções, que vivia dentro do Método. Uma política tem uma
-   * casa só: a política em três naturezas, o registo lido do livro-razão e a
+   * casa só: a política, as naturezas nos rótulos do registo lido do livro-razão e a
    * caixa para escrever. `/metodo#correcoes` continua a existir e aponta para
    * aqui — as páginas que estiveram no ar ganham reencaminhamento, não
    * apagamento (§1.29).

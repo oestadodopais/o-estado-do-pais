@@ -5,10 +5,13 @@ import { WORKS } from '../data/studies.mjs';
 import { ITENS } from '../data/discussao.mjs';
 import { EXPLICACOES } from '../data/explicacoes/index.mjs';
 import { resolverExplicacao } from './explicacoes.mjs';
-import { mudancasDoRegisto } from './mudancas.mjs';
 import { routePath } from './routes.mjs';
 import { portaDoItem } from './discussao.mjs';
-import { atualizacaoDaNovidade } from './atualizacao-da-novidade.mjs';
+export const TIPOS_DAS_NOVIDADES = Object.freeze(['estudo','discussao','explicacao','dossie']);
+/** @param {any[]} pecas */
+export function conferirTiposDasNovidades(pecas) {
+  for (const p of pecas) if (!TIPOS_DAS_NOVIDADES.includes(p.tipo)) throw new Error(`EV3-G: tipo fora das novidades: ${p.tipo}`);
+}
 /** @param {'pt'|'en'} lang */
 export function pecasPublicadas(lang) {
   /** @type {any[]} */
@@ -24,8 +27,6 @@ export function pecasPublicadas(lang) {
     pecas.push({ id: `${tipo}:${e.slug}`, tipo, data: e.publicado, origem: 'publicacao.declarada', rota: tipo === 'discussao' ? portaDoItem(e.slug,lang) : routePath('explicacao',lang,{slug:e.slug}), titulo: resolverExplicacao(e,lang).titulo });
   }
   for (const p of pecas) p.dossie = dossieDaPeca(p.tipo, p.id.slice(p.id.indexOf(':') + 1));
-  const atualizacao = atualizacaoDaNovidade(mudancasDoRegisto(lang)[0],lang);
-  if (atualizacao) pecas.push(atualizacao);
   // Empate: estudo antes das outras peças; depois identidade, para uma ordem estável nas duas línguas.
   return pecas.sort((a,b) => b.data.localeCompare(a.data) || Number(b.tipo==='estudo')-Number(a.tipo==='estudo') || a.id.localeCompare(b.id));
 }
@@ -33,6 +34,7 @@ export function pecasPublicadas(lang) {
 /** DO2: a posição segue a publicação; a data segue o bloco da peça mais recente.
  * @param {any[]} pecas @param {any[]} dossies @param {'pt'|'en'} lang */
 export function agruparNovidades(pecas, dossies, lang) {
+  conferirTiposDasNovidades(pecas);
   const vistos = new Set(), entradas = [];
   for (const peca of pecas) {
     if (!peca.dossie) { entradas.push(peca); continue; }
@@ -43,6 +45,7 @@ export function agruparNovidades(pecas, dossies, lang) {
     if (!d) throw new Error(`DO2: dossiê sem composição: ${slug}`);
     entradas.push({id:`dossie:${slug}`, tipo:'dossie', dossie:d, data:d.recente, origem:d.origemRecente, rota:routePath('dossie',lang,{slug})});
   }
+  conferirTiposDasNovidades(entradas);
   return entradas.slice(0,5);
 }
 /** @param {'pt'|'en'} lang */

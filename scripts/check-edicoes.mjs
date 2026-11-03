@@ -1,3 +1,4 @@
+import {conferirSuperficieCorrecoes} from './correcoes-superficie-conferir.mjs';
 import fs from 'node:fs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
 import {matchPath} from '../src/lib/routes.mjs';
@@ -25,7 +26,7 @@ for(const lang of ['pt','en']) {
   const html=paginas.get(lang==='pt'?'/correcoes':'/en/corrections');
   if(!html && !process.argv.includes('--fontes')) erros.push(`ED1 registo ausente: ${lang}`);
   if(html) {
-    const root=parse(html);erros.push(...conferirTextoHtml(root,lang,WORKS,CORRECOES_TEXTO,manifesto).erros);
+    const root=parse(html);erros.push(...conferirSuperficieCorrecoes(root,lang));erros.push(...conferirTextoHtml(root,lang,WORKS,CORRECOES_TEXTO,manifesto).erros);
     const entradas=root.querySelectorAll('[data-texto-estudo]');
     for(const c of CORRECOES_TEXTO)if(entradas.filter(e=>e.getAttribute('data-texto-estudo')===c.slug&&e.getAttribute('data-texto-data')===c.data).length!==1)erros.push(`ED1 registo: ${c.slug}/${lang}`);
   }

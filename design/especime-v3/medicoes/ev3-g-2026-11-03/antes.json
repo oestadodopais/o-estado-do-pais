@@ -1,0 +1,215 @@
+{
+  "fase": "antes",
+  "paginas": 9825,
+  "ledes": [
+    {
+      "rota": "/404.html",
+      "texto": "A ligação pode estar errada, ou a página pode ter mudado de sítio.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/correcoes",
+      "texto": "Corrigir em silêncio é a forma mais barata de mentir.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/404",
+      "texto": "The link may be wrong, or the page may have moved.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/corrections",
+      "texto": "Correcting in silence is the cheapest way of lying.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/european-union",
+      "texto": "Outside the Commission reference value: government debt, what the country owns abroad minus what it owes (net international investment position), three-year change in unit labour cost and annual change in house prices, in 2025.",
+      "classe": "cabeca-lede"
+    },
+    {
+      "rota": "/en/method",
+      "texto": "How these pages are made, checked and corrected, for anyone who wants to know whether a number can be trusted and what to do on finding a wrong one.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/regions",
+      "texto": "Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/empty",
+      "texto": "The suggestion was empty. Write in at least one of the three boxes.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions",
+      "texto": "What did you look for here and not find? Which study would you like to read? Write it down. Suggestions are not published: the project's direction reads them and decides what enters the plan. To correct a number or a sentence, the door is another one: the corrections page.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/limit",
+      "texto": "Five suggestions arrived from this address within one hour. Please come back later.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/not-received",
+      "texto": "The box could not keep the suggestion. Please try again later.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/en/suggestions/thank-you",
+      "texto": "Thank you. The suggestion arrived. It is not published and a reply is not guaranteed; what enters the plan appears on these pages.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/metodo",
+      "texto": "Como estas páginas são feitas, conferidas e corrigidas, para quem quer saber se pode confiar num número e o que fazer se encontrar um errado.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/regioes",
+      "texto": "O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes",
+      "texto": "O que procurou aqui e não encontrou? Que estudo gostava de ler? Escreva. As sugestões não se publicam: lê-as a direção do projeto e decide o que entra no plano. Para corrigir um número ou uma frase, a porta é outra: a página das correções.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/limite",
+      "texto": "Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/nao-chegou",
+      "texto": "A caixa não conseguiu guardar a sugestão. Volte a tentar mais tarde.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/obrigado",
+      "texto": "Obrigado. A sugestão chegou. Não se publica e não tem resposta garantida; o que entrar no plano aparece nestas páginas.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/sugestoes/vazia",
+      "texto": "A sugestão vinha vazia. Escreva pelo menos numa das três caixas.",
+      "classe": "lede"
+    },
+    {
+      "rota": "/uniao-europeia",
+      "texto": "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025.",
+      "classe": "cabeca-lede"
+    }
+  ],
+  "correcoes": [
+    {
+      "rota": "/correcoes",
+      "lede": 1,
+      "politica": "A políticaUma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São cinco naturezas, e não se misturam:Correção. O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir.Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro.Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização.Estudo atualizado. O texto de um estudo ganhou documentos novos, sem que o que dizia estivesse errado; a entrada diz o que entrou, e a edição anterior fica a um toque.Estudo corrigido. O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque.Quem encontrar um erro escreve para correcoes@oestadodopais.pt. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.Quem for nomeado pode responder para o mesmo endereço das correções: a resposta publica-se ao lado da peça, sem edição.A regra, no Método →",
+      "naturezas": 5,
+      "meta": "A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado."
+    },
+    {
+      "rota": "/en/corrections",
+      "lede": 1,
+      "politica": "The policyAn entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are five kinds, and they are not mixed:Correction. What was published was wrong: a value, or a field of the receipt, such as the name of the document's publisher or the address of the source. It is a confession, and it is the reason the register exists.Update. The value was right and stopped being so, because what it measures changed. It is not an error.Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update.Study updated. The text of a study gained new documents, and nothing it said was wrong; the entry says what came in, and the previous edition stays one tap away.Study corrected. The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away.Anyone who finds an error writes to correcoes@oestadodopais.pt. A confirmed error enters the register with credit to whoever found it, if they wish.Anyone named may reply to the same address as the corrections: the reply is published beside the piece, unedited.The rule, in the Method →",
+      "naturezas": 5,
+      "meta": "The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted."
+    }
+  ],
+  "inicio": [
+    {
+      "rota": "/en",
+      "entradas": [
+        {
+          "id": "atualizacao:registo",
+          "texto": "03.11.2026updateCorrections to receipt fields now enter the register and its count. The recount is not an additional correction. 15 → 45 row · O Estado do País"
+        },
+        {
+          "id": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026studyHousing in Portugal and in Europe"
+        },
+        {
+          "id": "dossie:orcamento-2027",
+          "texto": "29.10.2026dossierThe 2027 Budget · 5 pieces"
+        },
+        {
+          "id": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explainerWhere the State’s money goes in 2026"
+        },
+        {
+          "id": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026studyÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts"
+        }
+      ],
+      "entradas_do_registo": 1,
+      "marcas_do_registo": [
+        {
+          "marca": "correcoes-publicadas",
+          "na_caixa": true
+        },
+        {
+          "marca": "reason",
+          "na_caixa": true
+        },
+        {
+          "marca": "old_value",
+          "na_caixa": true
+        },
+        {
+          "marca": "new_value",
+          "na_caixa": true
+        }
+      ],
+      "portas_registo_fora_da_caixa": 2
+    },
+    {
+      "rota": "/",
+      "entradas": [
+        {
+          "id": "atualizacao:registo",
+          "texto": "03.11.2026atualizaçãoAs correções dos campos dos recibos passam a integrar o registo e a sua contagem. A recontagem não é uma correção adicional. 15 → 45 linha · O Estado do País"
+        },
+        {
+          "id": "estudo:a-casa-em-portugal-e-na-europa",
+          "texto": "29.10.2026estudoA casa em Portugal e na Europa"
+        },
+        {
+          "id": "dossie:orcamento-2027",
+          "texto": "29.10.2026dossiêO Orçamento de 2027 · 5 peças"
+        },
+        {
+          "id": "explicacao:dinheiro-do-estado-2026",
+          "texto": "06.10.2026explicaçãoPara onde vai o dinheiro do Estado em 2026"
+        },
+        {
+          "id": "estudo:evora-2027-capital-europeia-da-cultura",
+          "texto": "01.10.2026estudoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos"
+        }
+      ],
+      "entradas_do_registo": 1,
+      "marcas_do_registo": [
+        {
+          "marca": "correcoes-publicadas",
+          "na_caixa": true
+        },
+        {
+          "marca": "reason",
+          "na_caixa": true
+        },
+        {
+          "marca": "old_value",
+          "na_caixa": true
+        },
+        {
+          "marca": "new_value",
+          "na_caixa": true
+        }
+      ],
+      "portas_registo_fora_da_caixa": 2
+    }
+  ],
+  "criterio_ledes": "Elemento seguinte ao h1 com lede como palavra na classe, segundo o DOM lido por node-html-parser."
+}

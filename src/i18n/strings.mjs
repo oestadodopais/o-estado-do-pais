@@ -451,7 +451,7 @@ export const STRINGS = {
      * política vive em /correcoes.» A frase que saiu — «Um erro confirmado entra
      * no registo de correções e na própria linha, com o valor antigo à vista.
      * Nada é apagado.» — era a política do sítio dita em 307 páginas, e a página
-     * das correções di-la inteira, com as três naturezas e o registo.
+     * das correções guarda a política e o registo; cada entrada leva o rótulo da sua natureza.
      */
     porta: {
       k: 'Encontrou um erro?',
@@ -1998,13 +1998,12 @@ export const STRINGS = {
     correcoes: {
       metaTitle: 'Correções · O Estado do País',
       metaDescription:
-        'A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado.',
+        "O registo das correções e das atualizações de O Estado do País: o que estava publicado, o que ficou, a data e o motivo.",
       eyebrow: 'Correções',
       h1: 'O que foi corrigido, e o que mudou',
-      lede: 'Corrigir em silêncio é a forma mais barata de mentir.',
       politicaK: 'A política',
       politicaV:
-        'Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São cinco naturezas, e não se misturam:',
+        "Quando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos.",
       naturezas: [
         { k: 'Correção.', v: 'O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir.' },
         { k: 'Atualização.', v: 'O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro.' },
@@ -2028,8 +2027,8 @@ export const STRINGS = {
 
       /* B1c, 22.09.2026: as duas listas (as correções e as atualizações) deram
          lugar a uma só, com as três classes de mudança por data e o lugar de
-         cada linha. As naturezas continuam ditas na política, acima, e em cada
-         linha da lista. */
+         cada linha. As naturezas ficam nos dados e no rótulo de cada entrada
+         da lista. */
       registoMudancasK: 'As mudanças, por data',
       registoConta: 'correções publicadas',
       registoContaSing: 'correção publicada',
@@ -4008,13 +4007,12 @@ export const STRINGS = {
     correcoes: {
       metaTitle: 'Corrections · O Estado do País',
       metaDescription:
-        'The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted.',
+        "The register of the corrections and updates of O Estado do País: what was published, what it became, the date and the reason.",
       eyebrow: 'Corrections',
       h1: 'What was corrected, and what changed',
-      lede: 'Correcting in silence is the cheapest way of lying.',
       politicaK: 'The policy',
       politicaV:
-        'An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are five kinds, and they are not mixed:',
+        "When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents.",
       naturezas: [
         { k: 'Correction.', v: 'What was published was wrong: a value, or a field of the receipt, such as the name of the document\'s publisher or the address of the source. It is a confession, and it is the reason the register exists.' },
         { k: 'Update.', v: 'The value was right and stopped being so, because what it measures changed. It is not an error.' },

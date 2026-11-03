@@ -4,7 +4,7 @@
  *
  * A casa única da política. Estava dentro do Método, misturada com tudo o
  * resto; o Método guarda agora a regra 7 e a porta, e o que está aqui é o
- * aparelho: a política nas suas três naturezas, a caixa para escrever, e o
+ * registo: a política, a caixa para escrever, e o
  * registo lido do livro-razão.
  *
  * DISPOSIÇÃO A (IDENTIDADE §3): rótulo e corpo, como o Método e a página do
@@ -55,7 +55,6 @@ const destinoDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURICompo
   <div style="padding-top:clamp(20px,3vw,34px)">
     <span class="eyebrow">{s.correcoes.eyebrow}</span>
     <h1 style="margin-top:12px">{s.correcoes.h1}</h1>
-    <p class="lede" style="margin-top:14px">{s.correcoes.lede}</p>
   </div>
 
   <!-- ======================================= a política, dita uma vez -->
@@ -63,15 +62,6 @@ const destinoDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURICompo
     <div><h2>{s.correcoes.politicaK}</h2></div>
     <div class="metodo-corpo">
       <p class="metodo-p">{s.correcoes.politicaV}</p>
-      <ul class="metodo-lista">
-        {
-          s.correcoes.naturezas.map((n) => (
-            <li>
-              <strong>{n.k}</strong> {n.v}
-            </li>
-          ))
-        }
-      </ul>
       <p class="metodo-p">
         <Frase
           partes={[s.correcoes.enderecoA, { email: ENDERECO_CORRECOES }, s.correcoes.enderecoB]}

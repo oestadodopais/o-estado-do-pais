@@ -531,32 +531,32 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | 26 provenance revisions | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
 | conteudo | 26 revisões de proveniência | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
 | conteudo | A política | até 2026-08-26 | viva | — |
-| conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 | viva | — |
+| conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. | até 2026-08-26 | viva | — |
-| conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. | até 2026-08-26 | viva | — |
-| conteudo | Correcting in silence is the cheapest way of lying. | até 2026-08-26 | viva | — |
-| conteudo | Correction. What was published was wrong: a value, or a field of the receipt, such as the name of the document&#39;s publisher or the address of the source. It is a confession, and it is the reason the register exists. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
+| conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
+| conteudo | Correcting in silence is the cheapest way of lying. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
+| conteudo | Correction. What was published was wrong: a value, or a field of the receipt, such as the name of the document&#39;s publisher or the address of the source. It is a confession, and it is the reason the register exists. | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Corrections | até 2026-08-26 | viva | — |
-| conteudo | Correção. O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
+| conteudo | Correção. O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir. | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Correções | até 2026-08-26 | viva | — |
-| conteudo | Corrigir em silêncio é a forma mais barata de mentir. | até 2026-08-26 | viva | — |
+| conteudo | Corrigir em silêncio é a forma mais barata de mentir. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. | até 2026-08-26 | viva | — |
 | conteudo | Escrever uma correção | até 2026-08-26 | viva | — |
 | navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. | até 2026-08-26 | viva | — |
 | conteudo | O que foi corrigido, e o que mudou | até 2026-08-26 | viva | — |
 | conteudo | O registo | até 2026-08-26 | viva | — |
 | conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | até 2026-08-26 | viva | — |
-| conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. | até 2026-08-26 | viva | — |
+| conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Provenance revisions | até 2026-08-26 | viva | — |
 | conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | até 2026-08-26 | viva | — |
-| conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. | até 2026-08-26 | viva | — |
+| conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Revisões de proveniência | até 2026-08-26 | viva | — |
 | navegacao | Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever. | até 2026-08-26 | viva | — |
-| conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. | até 2026-08-26 | viva | — |
+| conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | The policy | até 2026-08-26 | viva | — |
 | conteudo | The register | até 2026-08-26 | viva | — |
 | conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. | até 2026-08-26 | viva | — |
-| conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. | até 2026-08-26 | viva | — |
+| conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
 | conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
 | conteudo | Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
@@ -5034,7 +5034,6 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | Updated on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | Updated on · panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | What is new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | atualização | fp1 | condicional-fp1 | FP1-e: rótulo presente só quando a última entrada gera a peça; condição e texto conferidos por novidades.mjs. |
 | conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | data from | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
@@ -5055,7 +5054,6 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | study | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | under discussion | fp1 | condicional-fp1 | DO2: só aparece se houver um item fora dos dossiês na caixa; conferirNovidades verifica a seleção e o texto. |
-| conteudo | update | fp1 | condicional-fp1 | FP1-e: rótulo presente só quando a última entrada gera a peça; condição e texto conferidos por novidades.mjs. |
 | conteudo | Os números mais recentes são de | fp1 | viva | Período dos dados, sem repetir a data da construção. |
 | conteudo | The most recent figures are from | fp1 | viva | Período dos dados, sem repetir a data da construção. |
 
@@ -5378,10 +5376,10 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 
 | Tipo | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Estudo corrigido. O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque. | ed1 | viva | ED1-E §3 e §4: política declarada. |
-| conteudo | Study corrected. The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away. | ed1 | viva | ED1-E §3 e §4: política declarada. |
-| conteudo | Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São cinco naturezas, e não se misturam: | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
-| conteudo | An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are five kinds, and they are not mixed: | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
+| conteudo | Estudo corrigido. O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque. | ed1 | retirada | EV3-G: a frase saiu da página das correções. |
+| conteudo | Study corrected. The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away. | ed1 | retirada | EV3-G: a frase saiu da página das correções. |
+| conteudo | Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São cinco naturezas, e não se misturam: | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
+| conteudo | An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are five kinds, and they are not mixed: | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
 
 | conteudo | As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
 | conteudo | The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
@@ -5445,11 +5443,20 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 | --- | --- | --- | --- | --- |
 | conteudo | Estudo atualizado | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
 | conteudo | Study updated | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
-| conteudo | Estudo atualizado. O texto de um estudo ganhou documentos novos, sem que o que dizia estivesse errado; a entrada diz o que entrou, e a edição anterior fica a um toque. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
-| conteudo | Study updated. The text of a study gained new documents, and nothing it said was wrong; the entry says what came in, and the previous edition stays one tap away. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
+| conteudo | Estudo atualizado. O texto de um estudo ganhou documentos novos, sem que o que dizia estivesse errado; a entrada diz o que entrou, e a edição anterior fica a um toque. | ev3 | retirada | EV3-G: a frase saiu da página das correções. |
+| conteudo | Study updated. The text of a study gained new documents, and nothing it said was wrong; the entry says what came in, and the previous edition stays one tap away. | ev3 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
 | conteudo | The October decisions of Évora&#39;s Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
 | conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 03.11.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
 | conteudo | Edição atual, de 03.11.2026. A primeira edição é de 01.10.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
 | conteudo | First edition, published on 01.10.2026. The current edition is from 03.11.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
 | conteudo | Current edition, from 03.11.2026. The first edition is from 01.10.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
+
+## EV3-G: correções e novidades
+
+| Classe | Texto | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos. | ev3-g | viva | Redação prescrita na adenda G. |
+| conteudo | O registo das correções e das atualizações de O Estado do País: o que estava publicado, o que ficou, a data e o motivo. | ev3-g | viva | Redação prescrita na adenda G. |
+| conteudo | When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents. | ev3-g | viva | Redação prescrita na adenda G. |
+| conteudo | The register of the corrections and updates of O Estado do País: what was published, what it became, the date and the reason. | ev3-g | viva | Redação prescrita na adenda G. |
