@@ -28,23 +28,23 @@ for(const e of manifestoDasEdicoes().edicoes)for(const v of versoesDaEdicao(e.sl
  const resultado=frasesDaFaixaDocumental(alterada);assert(resultado.includes('publicado a ·'));assert(retiradaForaDaFrase(resultado[0],'publicado a ·',FAIXAS_DE_EDICAO.get('publicado a ·')));plantas++;
  const extra=parse(root.outerHTML);extra.querySelector('[data-documento-edicao]').insertAdjacentHTML('beforeend','<p>Uma frase nova sem declaração.</p>');assert(frasesDaFaixaDocumental(extra).some(f=>!declarada(f)));plantas++;
 }
-// A marca de língua não inventa nem apaga espaços, nem esconde texto da voz.
+// A extração histórica separa todos os nós de texto, também nas marcas de língua.
 for(const [html,esperado] of [
- ['<p>«<span lang="pt-PT">pelo menos</span>»</p>','«pelo menos»'],
+ ['<p>«<span lang="pt-PT">pelo menos</span>»</p>','« pelo menos »'],
  ['<ul><li><span lang="pt-PT">X</span></li><li>Y</li></ul>','X Y'],
  ['<div lang="pt-PT"><p>X</p><p>Y</p></div>','X Y'],
  ['<span lang="pt-PT"><div>X</div><div>Y</div></span>','X Y'],
- ['<p>A <em lang="en">report</em> says.</p>','A report says.'],
- ['<p>«<span lang="pt-PT">pelo <i>menos</i></span>»</p>','«pelo menos»'],
- ['<p>1<span lang="pt-PT">2</span>3</p>','123'],
- ['<p>A<span lang="en"> fonte</span><span lang="pt-PT"> diz</span>.</p>','A fonte diz.'],
+ ['<p>A <em lang="en">report</em> says.</p>','A  report  says.'],
+ ['<p>«<span lang="pt-PT">pelo <i>menos</i></span>»</p>','« pelo  menos »'],
+ ['<p>1<span lang="pt-PT">2</span>3</p>','1 2 3'],
+ ['<p>A<span lang="en"> fonte</span><span lang="pt-PT"> diz</span>.</p>','A  fonte  diz .'],
  ]){assert.equal(textoDaVoz(parse(html).firstChild),esperado);controlos++;}
 for(const tag of ['p','li','div','td','dd','dt','h1','h2','h3','h4','h5','h6','section','article','figcaption','summary']){
  const pagina=parse(`<main><${tag}><span lang="pt-PT">X</span></${tag}><${tag}>Y</${tag}></main>`);
  assert.equal(textoDaVoz(pagina.firstChild),'X Y',tag);controlos++;
 }
 const comOrigens=parse('<p>A «<span lang="pt-PT">narração <a>porta</a><b data-fonte>origem</b>conservada</span>».</p>');
-assert.equal(textoDaVoz(comOrigens.firstChild,n=>n.rawTagName==='a'||n.hasAttribute?.('data-fonte')),'A «narração conservada».');controlos++;
+assert.equal(textoDaVoz(comOrigens.firstChild),'A « narração  porta origem conservada ».');controlos++;
 assert(analisa(textoDaVoz(parse('<p><span lang="pt-PT">O projeto verifica tudo.</span></p>').firstChild),'/correcoes',marcadores,'correcoes').length);plantas++;
 assert(documentos>0);
 console.log(JSON.stringify({controlos,plantas,documentos,retiradas_isoladas_recusadas:true,politica_voz_e_L3:0}));

@@ -44,6 +44,7 @@ import fs from 'node:fs';
 import {conferirInicio} from '../tests/discussao/itens.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { NodeType } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
 import { matchPath, routePath } from '../src/lib/routes.mjs';
@@ -941,7 +942,16 @@ const INVENTARIO = leInventario(RAIZ);
  */
 /** O texto de um elemento, sem o que está dentro de `<a>` e de `<button>`. */
 function textoForaDeComandos(no) {
-  return texto(no,n=>['a','button'].includes(String(n.rawTagName ?? '').toLowerCase()));
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(no);
+  return partes.join(' ');
 }
 
 /**
@@ -963,7 +973,17 @@ function textoForaDeComandos(no) {
  * que a medida 8 já escreve: um destino não é uma frase.
  */
 function textoForaDasOrigens(no, marcados) {
-  return texto(no,n=>marcados.has(n)||['a','button'].includes(String(n.rawTagName ?? '').toLowerCase()));
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;
+    if (marcados.has(n)) return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(no);
+  return partes.join(' ');
 }
 
 function frasesDaVoz(root) {
