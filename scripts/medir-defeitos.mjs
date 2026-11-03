@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {normalizaEspacosDaRetirada} from './titulos-publicados.mjs';
 import {retirarTitulosConferidos} from './titulos-publicados.mjs';
 import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
@@ -1775,7 +1776,12 @@ function ondeVolta(frase) {
   // DO4: estes rótulos autónomos foram substituídos por minúsculas; a palavra continua na prosa das listas.
   if(['Dossiê','Dossier'].includes(frase))return rendidasParaRetiradas.has(frase)?frase:null;
   const admitidas = RETIRADAS_DENTRO_DE_FRASE.get(frase) ?? new Set();
-  for (const t of rendidasParaRetiradas) if (retiradaForaDaFrase(t,frase,admitidas)) return t;
+  const comparacao=normalizaEspacosDaRetirada(frase);
+  for (const t of rendidasParaRetiradas) {
+    if(retiradaForaDaFrase(t,frase,admitidas))return t;
+    // Não alarga as dispensas: só a frase original pode estar admitida.
+    if(!admitidas.has(t)&&retiradaForaDaFrase(normalizaEspacosDaRetirada(t),comparacao))return t;
+  }
   return null;
 }
 

@@ -269,8 +269,16 @@ export function leInventario(raiz) {
       }
     }
   }
+  let blocoDaTabela=null;
   for (let i = 0; i < cru.length; i++) {
+    if(/^## /.test(cru[i]))blocoDaTabela=cru[i].match(/^## ([A-Za-z0-9]+(?:-[A-Za-z0-9]+)+)\b/)?.[1]?.toLowerCase()??null;
     const cel = celulas(cru[i]);
+    // As tabelas de transcrições ficam fora das classes vivas, mas uma retirada
+    // nelas declarada continua a proibir o regresso da frase.
+    if(cel?.length===4 && ['pt','en'].includes(cel[1]) && cel[3]==='retirada'){
+      linhas.push({n:i+1,classe:'conteudo',texto:cel[2],bloco:blocoDaTabela,estado:'retirada',razao:'Retirada declarada na tabela de transcrições ou definições do inventário.',cru4:'retirada'});
+      continue;
+    }
     if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
     const [classe, texto] = cel;
     const bloco = cel.length >= 3 ? cel[2] : null;
