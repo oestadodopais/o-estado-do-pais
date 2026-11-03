@@ -1,3 +1,4 @@
+import { conferirQuadro } from '../../scripts/check-quadro.mjs';
 import { UNIDADES_DA_MEDIDA as UNIDADES_DO_MANDATO, unidadeDaMedida } from '../../src/lib/unidade-da-medida.mjs';
 import { listagensDoInicio, candidatasDoInicio } from '../../src/lib/listagens-do-inicio.mjs';
 import { DOSSIES } from '../../src/data/dossies.mjs';
@@ -309,7 +310,9 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
   erros.push(...falhas);novidadesConferidas=!falhas.length;
  }
 
- const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>![...superficie.nos].some(el=>el===n||el.querySelectorAll('*').includes(n))&&!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
+ const quadroPai2=['temas/index.html','en/themes/index.html'].includes(pagina)&&main.querySelector('[data-quadro-pais]') ? conferirQuadro(root,lang,{dist}) : null;
+ if(quadroPai2)erros.push(...quadroPai2.erros);
+ const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!(quadroPai2&&!quadroPai2.erros.length&&n.closest('[data-quadro-pais]'))&&![...superficie.nos].some(el=>el===n||el.querySelectorAll('*').includes(n))&&!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
  const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
  const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),registo=/^(?:correcoes|en\/corrections)\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
  for(const n of nos){

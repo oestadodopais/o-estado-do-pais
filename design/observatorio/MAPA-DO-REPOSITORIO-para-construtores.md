@@ -893,3 +893,7 @@ indevidas. As plantas são cópias independentes do HTML, incluindo valor, perí
 A varredura inclui também os pontos PT e UE das séries de países, pelas ligações explícitas
 `linha_de_portugal` e `linha_da_uniao` do YAML. O aviso acompanha a faixa europeia e a tabela
 do recibo da série; as plantas retiram-no de cada forma, nas duas edições.
+
+A integração da discussão confere o quadro de Temas antes de tratar os seus números como remissões
+para os cartões. As portas da discussão continuam nas páginas dos assuntos. Uma planta retira uma
+medida do quadro e exige a recusa pela mesma conferência da integração.

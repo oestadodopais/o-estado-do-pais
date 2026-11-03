@@ -1,3 +1,4 @@
+import { conferirIntegracao } from '../discussao/itens.mjs';
 /** PAI2: as réguas existentes chamam a mesma conferência das formas novas. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -21,6 +22,8 @@ for(const lang of ['pt','en']){
   assert(conferirQuadro(r,lang).erros.some(e=>e.includes('selo interrompe')));
   assert(medirPagina(r.toString(),lang).erros.length>0);
  }else if(modo==='voz'){
+  assert.deepEqual(conferirIntegracao(root,lang,`${rel}/index.html`),[]);
+  const integra=parse(html);integra.querySelector('[data-quadro-medida]').remove();assert(conferirIntegracao(integra,lang,`${rel}/index.html`).some(e=>e.startsWith('Q1')));
   const r=parse(html);r.querySelector('[data-quadro-coluna="portugal"]').insertAdjacentHTML('beforeend',' Texto acrescentado.');
   const alterada=superficieDoQuadro(r,lang);assert(alterada.erros.some(e=>e.includes('texto extra')));assert.equal(alterada.nos.size,0);
  }else{
