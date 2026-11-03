@@ -1,6 +1,6 @@
 {
-  "chamadas_ate_esta_medicao": 77,
-  "invocacoes_por_curto": 34,
+  "chamadas_ate_esta_medicao": 105,
+  "invocacoes_por_curto": 41,
   "corridas": [
     {
       "registo": "<temporario>/voz1-antes.log",
@@ -20,7 +20,7 @@
     },
     {
       "registo": "<temporario>/voz1-rp4nb.log",
-      "comando": "node 'tests/cartao/rp4nb.mjs"
+      "comando": "node tests/cartao/rp4nb.mjs; sed -n '65,79p' scripts/sem-marcadores.mjs; rg -n 'marcador.*marcador|faltou.*id|camposDoRegisto|reason.*id' scripts/gate-html.mjs | head -10; sed -n '1,30p' scripts/voz-autorreferencia.mjs"
     },
     {
       "registo": "<temporario>/voz1-medir-intermedio.log",
@@ -111,6 +111,10 @@
       "comando": "npm run check:explicacoes"
     },
     {
+      "registo": "<temporario>/voz1-medicao5.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir <temporario>/voz1-medicao5.json"
+    },
+    {
       "registo": "<temporario>/voz1-build3.log",
       "comando": "npm run build"
     },
@@ -137,14 +141,40 @@
     {
       "registo": "<temporario>/voz1-lugar.log",
       "comando": "npm run check:lugar"
+    },
+    {
+      "registo": "<temporario>/voz1-rp4nh.log",
+      "comando": "node tests/cartao/rp4nh.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-plantas5.log",
+      "comando": "node tests/voz/voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-voz4.log",
+      "comando": "npm run check:voz"
+    },
+    {
+      "registo": "<temporario>/voz1-build4.log",
+      "comando": "npm run build"
+    },
+    {
+      "registo": "<temporario>/voz1-voz-final.log",
+      "comando": "sh -c 'node tests/voz/voz1.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs'"
+    },
+    {
+      "registo": "<temporario>/voz1-build-restantes.log",
+      "comando": "sh -c 'npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao'"
     }
   ],
   "tokens_observados": {
-    "input_tokens": 10828871,
-    "cached_input_tokens": 10663040,
+    "input_tokens": 15878173,
+    "cached_input_tokens": 15678080,
     "cache_write_input_tokens": 0,
-    "output_tokens": 47578,
-    "reasoning_output_tokens": 18615,
-    "total_tokens": 10876449
-  }
+    "output_tokens": 71098,
+    "reasoning_output_tokens": 34393,
+    "total_tokens": 15949271
+  },
+  "construcoes_completas_pelo_escrivao": 1,
+  "conferencias_navegador_pelo_escrivao": 2
 }

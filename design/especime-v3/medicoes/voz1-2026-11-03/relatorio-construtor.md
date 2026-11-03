@@ -67,7 +67,7 @@ A régua encontrou ainda duas formulações de autoria na explicação de 2027. 
 
 ## Conferências
 
-As conferências específicas de explicações, selos, edições, documentos, lugar, livro e tipos passaram com código 0. A conferência RP4N-h passou as 37 plantas. A régua final da VOZ-1 passou 28 plantas, e as seis plantas da agenda e do calendário passaram. O build completo e a conferência de navegador ficam por fechar neste registo intermédio.
+As conferências específicas de explicações, selos, edições, documentos, lugar, livro e tipos passaram com código 0. A conferência RP4N-h passou as 37 plantas. A régua final da VOZ-1 passou 28 plantas, e as seis plantas da agenda e do calendário passaram. O build completo passou com código 0 na cabeça `09dd82a65e1b43d1592401ff8c5c6f5d9b6ea7e6`. As conferências de navegador `check:alvos` e `check:frases-compostas` passaram ambas com código 0. O primeiro confirmou 70 combinações e recusou duas plantas; o segundo confirmou 36 passagens em 18 páginas, 474 caminhos por clique e 76 plantas. Os códigos e as últimas linhas estão em `conferencias-finais.json`.
 
 As 28 plantas de `tests/voz/voz1.mjs` incluem a frase de 2026 reposta, a lede «Corrigir em silêncio é a forma mais barata de mentir.», o marcador reposto nas duas edições, a glosa sem classe, o tracejado retirado, o `noindex` retirado, o recibo incompleto reposto no sitemap, a alteração indevida de uma palavra histórica e o pré-mandato com «Esta explicação não diz…». Os controlos mantêm factos negativos sobre fontes. As seis plantas da agenda e do calendário recusam campos públicos apagados e campos internos repostos.
 
@@ -75,7 +75,9 @@ Não se correu a bateria inteira dos três portões nem se fizeram capturas. O p
 
 ## Execução
 
-A contagem intermédia do registo da sessão está em `custo-provisorio.json`. A contagem final será registada depois das conferências de navegador.
+Até à medição de fecho: 105 chamadas de ferramentas. Foram identificadas 41 invocações por `curto.sh`, incluindo medições, construções e conferências, mais uma construção completa pelo escrivão e duas conferências de navegador pelo escrivão. A unidade de contagem é a invocação registada, não cada comando interno do build. O pedido recusado por árvore suja não executou conferências. `custo.json` conserva a lista e a leitura de tokens desse momento; as chamadas de escrita, commit e confirmação posteriores não estão incluídas nessa medição.
+
+tokens used: 15 949 271 na última leitura de fecho (inclui 15 678 080 tokens de entrada em cache; saída: 71 098).
 
 O inventário substitui os rótulos genéricos pelos rótulos completos. As declarações antigas de palavras contidas nas formas novas saem da tabela: o estado da agenda continua conferido por correspondência exata, e uma forma antiga reposta falha essa comparação.
 
