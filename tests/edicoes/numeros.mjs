@@ -4,6 +4,11 @@ for(const c of CORRECOES_TEXTO)for(const lang of ['pt','en']){
  const partes=partesDaCorrecao(c,lang);assert.equal(textoDaMudancaGate(partes,claims,true),c.frase[lang]);
  assert.equal(textoDaMudancaGate([...partes,' 999'],claims,true),null);plantas++;
  const root=parse(`<span>${fraseHtml(c,lang)}</span>`);assert.deepEqual(conferirNumerosDaCorrecao(root,claims,lang),[]);
+ if(lang==='en'&&c.slug==='a-casa-em-portugal-e-na-europa'){
+  assert(root.querySelectorAll('[lang="pt-PT"]').some(el=>el.textContent==='pelo menos'),'qualificação portuguesa sem língua marcada');
+  const semLingua=parse(root.toString());semLingua.querySelectorAll('[lang="pt-PT"]').find(el=>el.textContent==='pelo menos').removeAttribute('lang');
+  assert(conferirNumerosDaCorrecao(semLingua,claims,lang).includes('ED1 língua: nome português sem marca'));plantas++;
+ }
  const comNumero=parse(root.toString()+'999');assert(conferirNumerosDaCorrecao(comNumero,claims,lang).length);plantas++;
  if(c.datas){for(const muda of [r=>r.querySelector('.src-chip').remove(),r=>r.querySelector('[data-de-linha]').setAttribute('data-de-linha','nao-existe'),r=>r.querySelector('[data-de-linha]').set_content('999')]){const copia=parse(root.toString());muda(copia);assert(conferirNumerosDaCorrecao(copia,claims,lang).length);plantas++;}}
 }

@@ -119,6 +119,6 @@ export function conferirNumerosDaCorrecao(el,claims,lang){
  }
  for(const selo of copia.querySelectorAll('.src-chip'))selo.remove();
  if(/\d/.test(copia.textContent))erros.push('ED1 números: algarismo sem valor ou data selada');
- if(lang==='en')for(const nome of ['Partido Socialista','Unidade Técnica de Apoio Orçamental'])if(el.textContent.includes(nome)&&!el.querySelectorAll('[lang="pt-PT"]').some(n=>n.textContent===nome))erros.push('ED1 língua: nome português sem marca');
+ if(lang==='en')for(const nome of ['Partido Socialista','Unidade Técnica de Apoio Orçamental','pelo menos'])if(el.textContent.includes(nome)&&!el.querySelectorAll('[lang="pt-PT"]').some(n=>n.textContent===nome))erros.push('ED1 língua: nome português sem marca');
  return erros;
 }

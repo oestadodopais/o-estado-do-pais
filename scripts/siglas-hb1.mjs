@@ -37,7 +37,7 @@ export function conferirSiglasHb1(frases,lingua) {
   const depois=prosa.indexOf(expansao,posicao),glosa=depois>posicao&&new RegExp(`^\\s*\\((?:(?:o|a|the)\\s+)?(?:${escape(sigla)} é (?:o|a) )?$`).test(prosa.slice(posicao+sigla.length,depois));
   assert((inicio>=0&&inicio<posicao&&posicao-inicio<expansao.length+35)||glosa,`${lingua}: ${sigla} não expandida ao primeiro uso`);
   // Uma citação literal pode repetir a forma longa. Só a prosa é editável.
-  const expansionPattern=new RegExp(escape(expansao)+`(?:'s(?: national leadership)?)?\\s*[, (]+(?:(?:o|a|the)\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\w-])`,'g');
+  const expansionPattern=new RegExp(escape(expansao)+`(?:'s)?\\s*[, (]+(?:(?:o|a|the)\\s+)?${sigla==='IVA'?'(?:VAT, )?':''}${escape(sigla)}(?![\\w-])`,'g');
   const glosaExplicita=new RegExp(`\\(${sigla==='BE'?'o ':''}${escape(sigla)} é (?:o|a) ${escape(expansao)}\\)`,'g');
   const vezes=frases.reduce((n,t)=>n+[...maskQuotes(t).matchAll(expansionPattern)].length+[...maskQuotes(t).matchAll(glosaExplicita)].length,0);
   assert.equal(vezes,1,`${lingua}: expansão ${sigla} repetida ou sem a forma declarada`);

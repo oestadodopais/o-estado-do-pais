@@ -22,6 +22,12 @@ for(const lang of ['pt','en']) {
    assert(erro&&erro.includes('BE não expandida ao primeiro uso'),'planta da sigla ('+nome+') passou');plantas++;
   }
  }
+ if(lang==='en') {
+  const bad=phrases.map(x=>x.replaceAll('of the national leadership of the Left Bloc (BE)',"of the Left Bloc's national leadership (BE)"));
+  assert.notDeepEqual(bad,phrases,'planta BE não mudou a atribuição');
+  assert.throws(()=>conferirSiglasHb1(bad,lang),/BE/, 'a sigla afastada do nome do partido passou');plantas++;
+  console.log('PLANTA en: BE depois de national leadership, vermelho 1, verde 0');
+ }
  if(motor) {
   const rows=JSON.parse(fs.readFileSync(path.join(motor,'content/23 Habitacao/ledger.json'),'utf8')).claims;
   const template=fs.readFileSync(path.join(motor,`content/28 Habitacao Estudo/Technical Source/documento.${lang}.md.tmpl`),'utf8');

@@ -2,8 +2,8 @@
 /** @param {{frase:Record<string,string>,datas?:Record<string,string>,partes?:Record<string,any[]>}} entrada @param {string} lang */
 export function partesDaCorrecao(entrada,lang){
  if(entrada.partes?.[lang])return entrada.partes[lang];
- const partes=[],nomes=lang==='en'?['Partido Socialista','Unidade Técnica de Apoio Orçamental']:[];
- const re=/\d+|Partido Socialista|Unidade Técnica de Apoio Orçamental/g;let inicio=0;
+ const partes=[],nomes=lang==='en'?['Partido Socialista','Unidade Técnica de Apoio Orçamental','pelo menos']:[];
+ const re=/\d+|Partido Socialista|Unidade Técnica de Apoio Orçamental|pelo menos/g;let inicio=0;
  for(const m of entrada.frase[lang].matchAll(re)){
   if(m.index>inicio)partes.push(entrada.frase[lang].slice(inicio,m.index));
   const id=entrada.datas?.[m[0]];
