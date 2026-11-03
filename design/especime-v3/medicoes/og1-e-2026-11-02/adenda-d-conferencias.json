@@ -1,0 +1,128 @@
+{
+  "adenda": "D",
+  "chamadas_ate_redacao": 68,
+  "corridas_dirigidas_com_registo": 22,
+  "compilacoes_parciais": 3,
+  "core_gate": {
+    "corridas": 1,
+    "codigo": 0,
+    "commit": "17238399"
+  },
+  "build": {
+    "corridas": 1,
+    "codigo_lido": 1,
+    "ficheiro": "<temporario>/og1ed-portoes/build.codigo",
+    "cabeca": "2cceecd08",
+    "causa": "Declaração da língua da edição da recontagem desatualizada."
+  },
+  "conferencias": [
+    {
+      "registo": "<temporario>/og1ed-cruzamento.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-discussao.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-html.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-ledger-inicial.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-ledger2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-ledger3.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-lingua.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-lingua2.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-lingua3.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-lugar.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-motor-plantas.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-pais.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-plantas.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-plantas2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-pre-html.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-pre-html2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-pre-html3.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-registo.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-restantes.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-semana.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-semana2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-tipos.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-tipos2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ed-voz.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ed-voz2.log",
+      "codigo": 0
+    }
+  ],
+  "continuacao_do_build": {
+    "check:lingua": 0,
+    "check:formato": 0,
+    "check:navegacao": 0,
+    "sinais": 0,
+    "check:discussao": 0,
+    "nota": "As três etapas intermédias concluíram antes de check:discussao, numa cadeia com &&. Língua e discussão foram corrigidas e repetidas isoladamente."
+  }
+}

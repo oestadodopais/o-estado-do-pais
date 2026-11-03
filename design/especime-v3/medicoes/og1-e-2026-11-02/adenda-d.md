@@ -1,0 +1,19 @@
+# OG1-E, adenda D: correções dos campos do recibo
+
+As trinta entradas pedidas passaram a correção: vinte e seis publicadores e quatro endereços da CAOP de 15.08.2026. A comparação da migração conservou a data, o campo, os valores e os motivos nas duas línguas. A contagem medida da cabeça inicial foi de 132 revisões de proveniência, não 94; as outras 102 ficaram intactas, não 64.
+
+O modelo aceita field numa correção apenas para os campos de proveniência, exige que o valor novo seja o campo atual e que o antigo seja diferente, e recusa source como revisão. As correções sem field mantêm a história do valor selada. Os consumidores de mudanças numéricas, incluindo a leitura semanal e o índice, distinguem os erros dos campos. O motor aceita e conserva esta natureza na exportação e exige-a para o publicador.
+
+O registo mostra as trinta entradas individualmente em cada língua, com o campo antes dos valores, o anterior riscado, a seta, o novo e a porta do recibo. A conferência do HTML compara os campos literalmente; access_date mantém a forma de data da casa. As correções dos campos pertencem ao recibo do projeto; a régua dos lugares das medidas conserva-se.
+
+O guião recontou correcoes-publicadas de 15 para 45. Acrescentou uma atualização de 03.11.2026 e conservou as oito entradas anteriores da história. A definição foi trocada nas duas línguas e conferida pela origem no recibo e pela prova do texto lido. As frases da política e da natureza da correção são as do §2. A política de proveniência ficou intacta. Não se encontrou uma contagem de correções escrita à mão numa página.
+
+Plantas: campo cujo valor novo difere do atual, proveniência sobre source, campo sem mudança, campo fora da lista e história numérica partida, todas recusadas com código 1. O conjunto, incluindo o controlo válido e as trinta entradas atuais, passou com código 0, 37 plantas e controlos. O motor passou os 134 controlos e plantas. As conferências da leitura semanal passaram 23 plantas na cópia do livro e 71 na página; dezasseis não se aplicavam à janela medida, sem mudanças numéricas.
+
+Os ensaios iniciais encontraram e corrigiram a contagem antiga escrita nos testes, a leitura de campos como mudanças numéricas e a prova antiga da definição. O inventário inglês precisou da entidade HTML do apóstrofo que a régua lê. Isto foi uma diferença de representação, não uma recusa lexical. A voz passou com código 0 e a L3 mediu zero. A pré-conferência do HTML saiu a 1 por faltar a etapa dos cartões de partilha na compilação parcial; a construção integral inclui essa etapa. Nenhuma régua de número, fonte ou pessoa foi enfraquecida.
+
+Commits de implementação: motor 17238399; sítio bcdaea94b (§1) e 2cceecd08 (§2). Os códigos e as corridas estão em adenda-d-conferencias.json. Não houve publicação, capturas ou verify integral.
+
+Fecho da construção: o único build inteiro saiu a 1, lido de build.codigo. Passou todas as etapas até à língua, incluindo HTML, país, voz e nomes. Faltava declarar a edição de 03.11.2026 e retirar duas declarações da data anterior. A planta passou a ler a edição atual da linha em vez de fixar uma data. A língua passou depois a 0. Formato, navegação e sinais passaram na continuação dirigida. A discussão encontrou a mesma distinção entre história do valor textual e história de um campo; corrigida essa seleção, passou a 0, com 1042 plantas V2B e 859 conferências OG1. O commit de fecho é b9ce6d772. O build não foi repetido, pelo limite de uma corrida: não se declara build.codigo igual a zero. Não existem verify.codigo ou typecheck.codigo desta corrida; o typecheck dirigido passou a 0.
+
+Custo até à redação: 68 chamadas de ferramentas; 22 execuções dirigidas de conferências com registo, uma delas reunindo quatro comandos em cadeia; três pré-compilações do HTML; um core.gate no commit do motor e um build inteiro pelo escrivão. O JSON enumera também as falhas intermédias.
