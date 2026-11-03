@@ -946,3 +946,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | og1-e-c | 5 formas rendidas; 2 contagens substituídas; 23 declarações sem superfície removidas | por ler | Codex, 02.11.2026: publicadores corrigidos, contagem medida de 132 revisões e títulos como dados conferidos. As proibições da ED1 ficam conservadas; leitura cruzada pendente antes da fusão. |
 
 | ed1-f | Política com versões do texto, faixa com separador e avisos documentais | por ler | Codex, 02.11.2026: frases autorizadas nas adendas E e F; unidades rendidas e plantas dos fragmentos isolados. Leitura cruzada reservada ao lugar de direção. |
+
+| og1-e-d | Política, natureza da correção, definição da contagem e contagem das revisões nas duas línguas | por ler | Codex, 03.11.2026: frases autorizadas pela adenda D; trinta erros de campos passam a correções. Leitura cruzada reservada ao lugar de direção. |

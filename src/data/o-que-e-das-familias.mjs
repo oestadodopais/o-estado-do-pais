@@ -222,10 +222,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "correcoes-publicadas": {
     "frase": {
       "pt": [
-        "As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos."
+        "As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos."
       ],
       "en": [
-        "The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies."
+        "The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies."
       ]
     }
   },

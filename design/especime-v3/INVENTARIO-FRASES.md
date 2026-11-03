@@ -535,9 +535,9 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. | até 2026-08-26 | viva | — |
 | conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. | até 2026-08-26 | viva | — |
 | conteudo | Correcting in silence is the cheapest way of lying. | até 2026-08-26 | viva | — |
-| conteudo | Correction. The published value was wrong. It is a confession, and it is the reason the register exists. | até 2026-08-26 | viva | — |
+| conteudo | Correction. What was published was wrong: a value, or a field of the receipt, such as the name of the document&#39;s publisher or the address of the source. It is a confession, and it is the reason the register exists. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
 | conteudo | Corrections | até 2026-08-26 | viva | — |
-| conteudo | Correção. O valor publicado estava errado. É uma confissão, e é a razão de o registo existir. | até 2026-08-26 | viva | — |
+| conteudo | Correção. O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
 | conteudo | Correções | até 2026-08-26 | viva | — |
 | conteudo | Corrigir em silêncio é a forma mais barata de mentir. | até 2026-08-26 | viva | — |
 | navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. | até 2026-08-26 | viva | — |
@@ -4889,8 +4889,8 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 102 revisões de proveniência | cr2 | retirada | UE1-c (26.10.2026): substituída pela contagem de 106 depois das duas linhas da dívida de 2025. Contagem medida em /correcoes/: as 72 anteriores mais duas entradas por cada uma das quinze linhas atualizadas. |
-| conteudo | 102 provenance revisions | cr2 | retirada | UE1-c (26.10.2026): substituída pela contagem de 106 depois das duas linhas da dívida de 2025. A mesma contagem medida em /en/corrections/, na edição inglesa. |
+| conteudo | 102 revisões de proveniência | og1-e-d | viva | OG1-E D: contagem do livro depois de reclassificar trinta erros como correções. |
+| conteudo | 102 provenance revisions | og1-e-d | viva | OG1-E D: contagem do livro depois de reclassificar trinta erros como correções. |
 
 ## HB1: o estudo da habitação
 
@@ -5380,11 +5380,11 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | --- | --- | --- | --- | --- |
 | conteudo | Estudo corrigido. O texto de um estudo dizia uma coisa que não devia; a entrada diz o que mudou, e a edição anterior fica a um toque. | ed1 | viva | ED1-E §3 e §4: política declarada. |
 | conteudo | Study corrected. The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away. | ed1 | viva | ED1-E §3 e §4: política declarada. |
-| conteudo | Uma entrada do registo guarda, para um número, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São quatro naturezas, e não se misturam: | ed1 | viva | ED1-E: parágrafo rendido da política. |
-| conteudo | An entry in the register holds, for a figure, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are four kinds, and they are not mixed: | ed1 | viva | ED1-E: parágrafo rendido da política. |
+| conteudo | Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São quatro naturezas, e não se misturam: | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
+| conteudo | An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are four kinds, and they are not mixed: | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
 
-| conteudo | As correções publicadas no registo: as correções de valores das linhas do livro e as correções do texto dos estudos. | ed1 | viva | ED1-E §4.6: texto da conta. |
-| conteudo | The corrections published in the register: the corrections of ledger row values and the corrections of the text of studies. | ed1 | viva | ED1-E §4.6: texto da conta. |
+| conteudo | As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
+| conteudo | The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
 
 
 ## ED1-E: identificação dos documentos
@@ -5404,9 +5404,7 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 132 revisões de proveniência | og1-e-c | viva | Forma lida em /correcoes; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 | conteudo | Quatro passagens diziam como facto causas que o relatório de contas de 2025 fonte · Município de Évora da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 fonte · Marques, Cruz &amp; Associados é o que o relatório de 2025 fonte · Município de Évora imprime como comparativo, porque as contas de 2024 fonte · Marques, Cruz &amp; Associados nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano. | og1-e-c | viva | Forma lida em /correcoes; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
-| conteudo | 132 provenance revisions | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 | conteudo | Five quotations presented the Prime Minister and the Socialist Party ( Partido Socialista , PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP). | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 | conteudo | Four passages stated as fact causes that the Câmara&#39;s 2025 source · Município de Évora accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 source · Marques, Cruz &amp; Associados investment value is the one the 2025 source · Município de Évora report prints as a comparative, because the 2024 source · Marques, Cruz &amp; Associados accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications. | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 
