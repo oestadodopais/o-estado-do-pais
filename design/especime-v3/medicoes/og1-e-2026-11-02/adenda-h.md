@@ -1,0 +1,13 @@
+# OG1-E H, 03.11.2026
+
+A corrida inteira de build terminou a 1: a conferência ED1 do inventário lia « pelo menos » com espaços na fronteira da marca de língua, enquanto a declaração dizia «pelo menos». A declaração foi alinhada com a extração existente, sem alterar a frase publicada nem a régua. As 18 etapas desde check:edicoes até check:discussao passaram depois numa corrida dirigida, código 0. O build inteiro não foi repetido. Falta uma corrida inteira verde na aterragem.
+
+O motor ficou em 6a54fc69, com um core.gate pelo gancho, código 0. O sítio recebeu a recomposição em 6642a816. Os dois gabaritos passaram sem recusa de tokens. A contagem do movimento tem «pelo menos» ou «at least» nos dois locais; a frase do hospital ficou separada do comunicado. Só attributed_to_en de hab-imprensa-feridos35 mudou nos livros e na prova da origem; os valores e a atribuição portuguesa ficaram iguais. A régua inglesa das siglas voltou à expressão anterior.
+
+A prova compara a primeira edição de 29.10.2026 e a atual de 03.11.2026: 52 blocos por língua, alterações apenas nos blocos 12 e 47. Os hashes das primeiras edições permanecem iguais. A entrada texto continua única, na mesma data, com as frases autorizadas. O HTML inglês marca «pelo menos» com lang="pt-PT".
+
+Formas: 138 plantas e 14 controlos associados, código 0. Siglas: 41 expansões e 11 plantas, código 0; a forma antiga com national leadership antes de (BE) é recusada. A prova da marca de língua acrescenta a recusa da sua remoção. Livro, registo, cruzamento, documentos, edições, voz, HTML, L3 e typecheck passaram. Nenhuma frase foi apanhada pelos marcadores da voz ou pela L3, e nenhuma proteção de números, fontes ou pessoas foi enfraquecida.
+
+A travessia inicial foi recusada porque o commit do motor ainda estava em curso; repetida depois do commit, passou. A preparação da prova usou primeiro um módulo YAML ausente e foi corrigida para o módulo instalado. A conferência inicial do livro encontrou a atribuição antiga na prova pública; o gerador atualizou apenas essa atribuição. Uma inspeção ad hoc do HTML procurou marcas de blocos na rota do documento original; a inspeção dos parágrafos dessa rota confirmou depois as duas qualificações e a sigla. Estes ensaios não alteraram as regras.
+
+Custo até à escrita deste relatório: 60 chamadas de ferramentas; 15 corridas registadas por curto.sh, sendo 11 de conferência ou medição e 4 de geração ou travessia. Acrescem um core.gate e uma corrida inteira de build. Os grupos podem conter vários comandos; as inspeções curtas sem registo não entram na contagem de corridas. Os códigos estão em adenda-h-conferencias.json e o código lido do build em adenda-h-build.codigo.

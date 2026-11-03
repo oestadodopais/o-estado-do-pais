@@ -1,0 +1,101 @@
+{
+  "chamadas_ate_ao_relatorio": 60,
+  "corridas_com_registo": 15,
+  "conferencias_ou_medicoes_por_curto": 11,
+  "geracoes_ou_travessias_por_curto": 4,
+  "core_gate": {
+    "corridas": 1,
+    "codigo": 0
+  },
+  "build_inteiro": {
+    "corridas": 1,
+    "codigo": 1
+  },
+  "etapas_dirigidas": {
+    "codigo": 0,
+    "etapas": [
+      "check:edicoes",
+      "check:selos",
+      "check:datas",
+      "check:cadeia",
+      "check:dados",
+      "check:mapa",
+      "check:regioes",
+      "check:areas",
+      "check:formas",
+      "check:lugares",
+      "check:pais",
+      "check:voz",
+      "check:nomes",
+      "check:lingua",
+      "check:formato",
+      "check:navegacao",
+      "sinais",
+      "check:discussao"
+    ]
+  },
+  "motor": "6a54fc69",
+  "sitio": "6642a816",
+  "registos": [
+    {
+      "registo": "<temporario>/og1eh-composicao.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-numeros.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-travessia.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1eh-formas.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-numeros-b.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-typecheck.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-travessia-b.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-prova.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1eh-siglas.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-prova-b.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-preflight.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1eh-provas-origem.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-preflight-b.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-lugar.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1eh-fecho-build.log",
+      "codigo": 0
+    }
+  ]
+}
