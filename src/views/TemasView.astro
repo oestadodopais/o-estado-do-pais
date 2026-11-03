@@ -1,6 +1,7 @@
 ---
 import ListaDeDossies from '../components/dossies/ListaDeDossies.astro';
 import Base from '../layouts/Base.astro';
+import QuadroDoPais from '../components/QuadroDoPais.astro';
 import TemasDoPais from '../components/TemasDoPais.astro';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -13,5 +14,6 @@ const s = t(lang);
 <Base lang={lang} path={routePath('temas', lang)} title={s.temas.metaTitle} description={s.temas.metaDescription}>
   <h1 class="temas-titulo">{r.temas}</h1>
   <TemasDoPais lang={lang} />
+  <QuadroDoPais lang={lang} />
   <section class="pais-sec" aria-labelledby="dossies-k"><h2 class="eyebrow" id="dossies-k">{s.dossies.plural}</h2><ListaDeDossies lang={lang} /></section>
 </Base>

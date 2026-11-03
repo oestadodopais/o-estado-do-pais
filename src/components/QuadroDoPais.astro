@@ -1,0 +1,58 @@
+---
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
+import { QUADRO } from '../data/quadro-do-pais.mjs';
+import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { reguaDoCartao } from '../lib/enquadramento.mjs';
+import { unidadeDoCartao } from '../data/unidades-dos-cartoes.mjs';
+import { t } from '../i18n/strings.mjs';
+import NomeDaMedida from './NomeDaMedida.astro';
+import VeredictoDaReferencia from './VeredictoDaReferencia.astro';
+import ValorDoQuadro from './ValorDoQuadro.astro';
+const { lang = 'pt' } = Astro.props;
+const q = QUADRO[lang], s = t(lang);
+---
+<section class="quadro-pais" data-quadro-pais aria-labelledby="quadro-titulo">
+  <h2 id="quadro-titulo">{q.titulo}</h2>
+  {ENTRADAS.filter(e => e.seccoes.some(s => s.cartoes.length)).map(e => (
+    <section class="quadro-tema" data-quadro-porta={e.id} aria-labelledby={`quadro-${e.id}`}>
+      <h3 id={`quadro-${e.id}`}>{e.nome[lang]}</h3>
+      <div class="quadro-caixa">
+        <table>
+          <thead><tr>{q.colunas.map(c => <th scope="col">{c}</th>)}</tr></thead>
+          <tbody>{e.seccoes.flatMap(s => s.cartoes).map(id => {
+            const c = getClaim(id), r = reguaDoCartao(id), ref = REFERENCIAS_DAS_MEDIDAS.get(id);
+            return <tr data-quadro-medida={id}>
+              <th scope="row" data-quadro-coluna="nome"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[0]}</span><a data-quadro-destino href={`${e.rota[lang]}#m-${id}`}><NomeDaMedida linha={c} lang={lang} escada={unidadeDoCartao(id, lang) ? 'cartao-com-unidade' : 'cartao'} /></a></th>
+              <td data-quadro-coluna="portugal"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[1]}</span><ValorDoQuadro id={id} lang={lang} principal /></td>
+              <td data-quadro-coluna="anterior"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[2]}</span>{r.anterior ? <ValorDoQuadro id={r.anterior.id} lang={lang} /> : <span data-quadro-sem-anterior>{q.semAnterior}</span>}</td>
+              <td data-quadro-coluna="ue"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[3]}</span>{r.ue && <ValorDoQuadro id={r.ue.id} lang={lang} />}</td>
+              <td data-quadro-coluna="referencia"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[4]}</span>{ref?.limiar && <VeredictoDaReferencia linha={c} limiar={ref.limiar} dono={ref.limiarFixadoPor} s={s} />}</td>
+            </tr>;
+          })}</tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+</section>
+<style>
+  .quadro-pais { margin-block: 3rem; min-width: 0; }
+  .quadro-pais h2 { font-family: var(--serif); margin-bottom: 2rem; }
+  .quadro-tema { min-width: 0; margin-block: 2.5rem; }
+  .quadro-tema h3 { margin-bottom: 1rem; }
+  .quadro-caixa { max-width: 100%; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .9375rem; line-height: 1.5; }
+  th, td { padding: .875rem .75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  thead th { font-size: .8125rem; font-weight: 600; }
+  tbody th { width: 28%; font-weight: 500; }
+  [data-quadro-destino] { display: flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
+  .quadro-rotulo { display: none; }
+  @media (max-width: 599px) {
+    table, tbody, tr, th, td { display: block; width: 100%; box-sizing: border-box; }
+    thead { display: none; }
+    tr { padding-block: .75rem; border-bottom: 1px solid var(--rule); }
+    th, td { border: 0; padding: .5rem 0; }
+    tbody th { width: 100%; }
+    .quadro-rotulo { display: block; color: var(--muted); font-size: .75rem; margin-bottom: .25rem; }
+  }
+</style>
