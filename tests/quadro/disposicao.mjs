@@ -10,7 +10,7 @@ const dist=path.resolve(process.env.OEDP_DIST??'dist');
 const server=http.createServer((req,res)=>{
  try{
   let file=path.resolve(dist,'.'+decodeURIComponent(new URL(req.url,'http://local').pathname));
-  if(!file.startsWith(dist+path.sep))throw Error('fora');
+  if(file!==dist&&!file.startsWith(dist+path.sep))throw Error('fora');
   if(fs.statSync(file).isDirectory())file=path.join(file,'index.html');
   const tipo={'.html':'text/html','.css':'text/css','.js':'text/javascript','.woff2':'font/woff2'}[path.extname(file)];
   if(tipo)res.setHeader('Content-Type',tipo);res.end(fs.readFileSync(file));
@@ -50,12 +50,12 @@ let combinacoes=0,plantas=0;
 try{
  for(const largura of [390,768,1024,1280,1600])for(const rota of ['/temas/','/en/themes/','/estado-e-economia/','/en/state-and-economy/','/uniao-europeia/','/en/european-union/','/livro-razao/','/en/ledger/','/','/en/','/estudos/','/en/studies/','/livro-razao/series/sobrecarga-do-custo-da-habitacao-2025-paises','/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises']){
   const page=await browser.newPage({viewport:{width:largura,height:1000}});
-  await page.goto(url+rota);await page.evaluate(()=>document.fonts.ready);
-  const r=await medir(page);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert(r.alvos>0);combinacoes++;
+  assert.equal((await page.goto(url+rota)).status(),200,`página da prova ausente: ${rota}`);await page.evaluate(()=>document.fonts.ready);
+  const r=await medir(page);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert(r.alvos>0,`sem alvos: ${rota} a ${largura}`);combinacoes++;
   await page.close();
  }
  for(const rota of ['/temas/','/en/themes/']){
-  const page=await browser.newPage({viewport:{width:390,height:1000}});await page.goto(url+rota);await page.evaluate(()=>document.fonts.ready);
+  const page=await browser.newPage({viewport:{width:390,height:1000}});assert.equal((await page.goto(url+rota)).status(),200,`página da prova ausente: ${rota}`);await page.evaluate(()=>document.fonts.ready);
   assert.deepEqual((await medir(page)).erros,[]);
   if(modo==='alvos'){
    await page.addStyleTag({content:'[data-quadro-destino] { min-height: 1px !important; height: 8px !important; font-size: 6px !important; overflow: hidden !important; }'});
@@ -64,6 +64,8 @@ try{
    await page.addStyleTag({content:'[data-quadro-medida] { position: relative !important; } [data-quadro-coluna="anterior"] { position: absolute !important; inset: 0 !important; }'});
    assert((await medir(page)).erros.includes('células sobrepostas'));
   }
+  await page.reload();await page.evaluate(()=>document.fonts.ready);
+  const reposta=await medir(page);assert(reposta.alvos>0);assert.deepEqual(reposta.erros,[],'controlo reposto');
   plantas++;await page.close();
  }
  console.log(`PAI2 ${modo}: ${combinacoes} combinações verdes; ${plantas} plantas recusadas; sem capturas.`);

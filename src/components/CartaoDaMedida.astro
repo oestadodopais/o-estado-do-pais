@@ -77,6 +77,7 @@
  * pela marca `data-cartao-definicao`.
  */
 import AvisoDaRevisao from './AvisoDaRevisao.astro';
+import { revisaoDaFonte } from '../lib/revisao-da-fonte.mjs';
 import Claim from './Claim.astro';
 import { routePath } from '../lib/routes.mjs';
 import SerieDoPais from './formas/SerieDoPais.astro';
@@ -357,7 +358,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       )}
 
       <ReguaDoCartao id={c.id} lang={lang} s={s} />
-      <AvisoDaRevisao ids={[c.id, regua.anterior?.id, regua.ue?.id].filter(Boolean)} lang={lang} />
+      {[c.id, regua.anterior?.id, regua.ue?.id].filter(Boolean).some(id => revisaoDaFonte(id)) && <div class="cartao-medida-revisao" data-cartao-revisao={c.id}><AvisoDaRevisao ids={[c.id, regua.anterior?.id, regua.ue?.id].filter(Boolean)} lang={lang} /></div>}
 
       {/* A FAIXA DA UNIÃO (bloco UE1, 29.09.2026): onde Portugal fica entre os
           27, por baixo do número e da régua, só nos cartões nacionais (os que

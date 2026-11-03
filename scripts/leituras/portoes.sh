@@ -113,7 +113,7 @@ elif [ "${perfil:-}" = lar1-b ]; then
   portoes="build check:largura"
   export OEDP_LARGURA_JSON="$O/largura.json"
 elif [ "${perfil:-}" = pai2 ] || [ "${perfil:-}" = pai2-navegador ]; then
-  portoes="check:alvos check:sobreposicao check:largura"
+  portoes="check:alvos check:sobreposicao check:frases-compostas check:largura"
   if [ "$perfil" = pai2 ]; then portoes="build check:quadro check:cartao check:css check:lugar $portoes typecheck"; fi
 elif [ "${perfil:-}" = lar1 ] || [ "${perfil:-}" = lar1-largura ]; then
   portoes="check:largura check:largura:planta check:capturas-largura lar1:medir"

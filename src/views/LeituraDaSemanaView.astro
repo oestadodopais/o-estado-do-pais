@@ -146,3 +146,8 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
   </article>
   <PortasDaDiscussao lang={lang} linhas={[...ids, ...formas.map(f => f.linha.id)]} />
 </Base>
+
+<style>
+  /* O selo conserva a sua área de toque antes da ligação do aviso. */
+  [data-semana-revisao-resumo] { padding-bottom: 1rem; }
+</style>

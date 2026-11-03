@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import {portaHb1Valida,plantasDasPortasHb1} from './portas-hb1.mjs';
+import {conferirRevisaoDoCartao,plantasDaRevisao} from './revisao.mjs';
 /**
  * =============================================================================
  * A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2, item 7 (15.09.2026)
@@ -627,6 +628,8 @@ function corre(dist) {
         contas[langPagina === 'en' ? 'cartoes_en' : 'cartoes_pt']++;
 
         /* ------------------------------------------------------------ K1 */
+        const revisao = conferirRevisaoDoCartao(cartao,langPagina);
+        erros.push(...revisao.erros.map(e => `K1 · ${rota} · ${id}: ${e}`));
         /** @type {string[]} */
         const classes = [];
         /* K2: o que está dentro da dobra conta como se estivesse ao primeiro nível, menos a linha que a abre. */
@@ -635,7 +638,7 @@ function corre(dist) {
         for (const filho of [...cartao.childNodes, ...filhosDaDobra]) {
           const el = /** @type {any} */ (filho);
           if (!el.tagName) continue;
-          if (portaHb1Valida(el,id,langPagina)) continue;
+          if (portaHb1Valida(el,id,langPagina) || el === revisao.bloco) continue;
           const classe = (el.getAttribute?.('class') ?? '').split(/\s+/).filter(Boolean);
           const conhecida = classe.find((c) => PECAS_PERMITIDAS.has(c));
           if (!conhecida) {
@@ -1852,6 +1855,7 @@ if (!fs.existsSync(DIST)) {
 }
 
 const r = corre(DIST);
+if (PROVA) { const revisao=plantasDaRevisao(rel=>fs.readFileSync(path.join(DIST,rel),'utf8'),conferirOrdemDaPagina);console.log(`PAI2-B: ${revisao.controlos} controlos verdes e ${revisao.plantas} plantas recusadas.`); }
 if (PROVA) { const hb1=plantasDasPortasHb1(rel=>fs.readFileSync(path.join(DIST,rel),'utf8'));r.erros.push(...hb1.erros);console.log(`HB1: ${hb1.controlos} portas e ${hb1.plantas} plantas.`); }
     if (PROVA) for (const lang of ['pt', 'en']) for (const planta of plantasDaFaixa(documentoDosAssuntos(DIST, lang).outerHTML, lang, `assuntos-${lang}`, { series: SERIES_DA_K18, paises: PAISES_DA_K18 })) {
   r.contas.plantas_k18++;

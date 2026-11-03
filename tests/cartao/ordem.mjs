@@ -28,6 +28,7 @@
  * construída, uma por regra, e cada uma tem de morder com a queixa da sua regra.
  */
 import {portaHb1Valida} from './portas-hb1.mjs';
+import {conferirRevisaoDoCartao} from './revisao.mjs';
 import { parse } from 'node-html-parser';
 import { t } from '../../src/i18n/strings.mjs';
 
@@ -65,7 +66,9 @@ export function conferirOrdemDaPagina(root, lang, rota) {
     const id = cartao.getAttribute('data-cartao-medida') ?? (cartao.hasAttribute('data-cartao-camaras') ? 'camaras' : '?');
     const falha = (/** @type {string} */ m) => erros.push(`K19 · ${rota} · ${id}: ${m}`);
     contas.cartoes++;
-    const pecas = cartao.childNodes.filter((n) => /** @type {any} */ (n).tagName).map((n) => pecaDoCartao(n));
+    const revisao=conferirRevisaoDoCartao(cartao,lang);
+    revisao.erros.forEach(e=>falha(`O2 · ${e}`));
+    const pecas = cartao.childNodes.filter((n) => /** @type {any} */ (n).tagName).map((n) => n===revisao.bloco ? 'comparacao' : pecaDoCartao(n));
     if (pecas[0] !== 'nome' || pecas[1] !== 'valor') falha(`O1 · o cartão não abre pelo nome e pela linha do valor (${pecas.slice(0, 2).join(', ')})`);
     const dobras = pecas.filter((p) => p === 'dobra').length;
     if (dobras > 1) falha(`O2 · o cartão tem ${dobras} dobras`);
