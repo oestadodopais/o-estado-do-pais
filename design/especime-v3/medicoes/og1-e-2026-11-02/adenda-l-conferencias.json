@@ -1,0 +1,50 @@
+{
+  "chamadas_ate_este_registo": 25,
+  "corridas_dirigidas": 5,
+  "conferencias": [
+    {
+      "registo": "<temporario>/og1el-lingua.log",
+      "codigo": 0,
+      "segundos": 42
+    },
+    {
+      "registo": "<temporario>/og1el-registo.log",
+      "codigo": 0,
+      "segundos": 5
+    },
+    {
+      "registo": "<temporario>/og1el-retiradas.log",
+      "codigo": 0,
+      "segundos": 239
+    },
+    {
+      "registo": "<temporario>/og1el-tipos.log",
+      "codigo": 0,
+      "segundos": 1
+    },
+    {
+      "registo": "<temporario>/og1el-voz.log",
+      "codigo": 0,
+      "segundos": 120
+    }
+  ],
+  "build": {
+    "corridas": 1,
+    "codigo": 0,
+    "segundos": 492,
+    "cabeca": "04c2eb9f5b5044b5e6f89fc75cdfaf832feb2fda"
+  },
+  "commits": [
+    "04c2eb9f5b5044b5e6f89fc75cdfaf832feb2fda",
+    "d21fd6aa3d904ee9a47e21c0cda63565afafa14d",
+    "aa9e3a135c653ae4b7657a1e52469dbd3047d55b"
+  ],
+  "retiradas": 1238,
+  "linhas_vivas_repostas": [
+    3902,
+    3947,
+    5408
+  ],
+  "retiradas_alteradas": 0,
+  "motor_alterado": false
+}
