@@ -1,3 +1,4 @@
+import {apresentarAusencias,retirarAusencias} from './ausencias-voz1.mjs';
 import {marcarNomesEv3,retirarNomesEv3} from './nomes-ev3.mjs';
 /**
  * Os documentos dos estudos: obras já publicadas, alojadas aqui INTACTAS.
@@ -1566,7 +1567,7 @@ function guiaoDaMoldura(lang) {
  * @returns {string | null}
  */
 export function provaDosBytes(bruto, construido) {
-  construido = retirarNomesEv3(construido);
+  construido = retirarAusencias(retirarNomesEv3(construido));
   const bufO = Buffer.from(bruto, 'utf8');
   const bufC = Buffer.from(construido, 'utf8');
   /**
@@ -1738,7 +1739,7 @@ export function documentoServido(slug, lang) {
     );
   }
 
-  const construido = comFaixa(comMarcasDaCasa(bruto, { slug, lang }), { slug, lang });
+  const construido = apresentarAusencias(comFaixa(comMarcasDaCasa(bruto, { slug, lang }), { slug, lang }), lang);
 
   const falha = provaDosBytes(bruto, construido);
   if (falha) {

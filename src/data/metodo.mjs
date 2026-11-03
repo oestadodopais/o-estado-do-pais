@@ -327,18 +327,17 @@ export const SECOES = [
       {
         pt: [
           'Quando um campo da origem de um número não pôde ser confirmado na fonte, o recibo diz o que falta e marca esse campo com ',
-          M.mencaoVerificar,
+          'por confirmar na fonte',
           '; a página do número não o esconde, e a entrada fica fora dos motores de busca até estar completa. Quando a fonte marca um valor como provisório, a página di-lo por palavras. Quando a fonte já publicou um período mais recente do que o que estas páginas mostram, a página do número di-lo também.',
         ],
         en: [
           "When a field in a number's origin could not be confirmed at the source, the receipt says what is missing and marks that field with ",
-          M.mencaoVerificar,
+          'to be confirmed at the source',
           "; the number's page does not hide it, and the entry stays out of search engines until it is complete. When the source marks a value as provisional, the page says so in words. When the source has already published a more recent period than the one these pages show, the number's page says so too.",
         ],
       },
     ],
     ligacoes: [
-      { rota: 'marcador', rotulo: { pt: 'O que quer dizer este marcador', en: 'What this marker means' } },
     ],
   },
   {

@@ -1,0 +1,221 @@
+{
+  "paginasMedidas": 9825,
+  "marcador": [
+    "/a-verificar",
+    "/agenda",
+    "/areas/economia-e-coesao-territorial",
+    "/areas/infraestruturas-e-habitacao",
+    "/correcoes",
+    "/en/agenda",
+    "/en/areas/economia-e-coesao-territorial",
+    "/en/areas/infraestruturas-e-habitacao",
+    "/en/corrections",
+    "/en/ledger/evora-prr-aprovado-2026",
+    "/en/ledger/evora-prr-pago-2026",
+    "/en/ledger/evora-prr-vencido-aprovado-2026",
+    "/en/ledger/hab-ine-calendario-juro",
+    "/en/ledger/hab-ine-calendario-precos-locais",
+    "/en/ledger",
+    "/en/ledger/saldo-natural-portugal-2025",
+    "/en/method",
+    "/en/municipalities/evora",
+    "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "/en/studies/evora-prometido-pago-auditado-2026",
+    "/en/to-verify",
+    "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "/estudos/evora-prometido-pago-auditado-2026",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/documento",
+    "/estudos/evora-quem-governou-a-camara-2009-2025",
+    "/livro-razao/evora-prr-aprovado-2026",
+    "/livro-razao/evora-prr-pago-2026",
+    "/livro-razao/evora-prr-vencido-aprovado-2026",
+    "/livro-razao/hab-ine-calendario-juro",
+    "/livro-razao/hab-ine-calendario-precos-locais",
+    "/livro-razao",
+    "/livro-razao/saldo-natural-portugal-2025",
+    "/metodo",
+    "/municipios/evora"
+  ],
+  "frasesPorPagina": {
+    "/agenda": {
+      "frases": [
+        "A média europeia deste indicador deixou de se mostrar ao lado do valor português a 23.09.2026, e por isso a comparação com ela não é feita aqui.",
+        "Calendário das fontesFicheiro «Evolução endividamento total 2025» no Portal Autárquico [a verificar] a fonte não publica dataO acontecimento no calendário regista que a página não anuncia data nenhuma: onze ficheiros anuais estão lá sem data, e a procura por «calend» não dá nada.",
+        "O sítio não tinha página para nenhum concelho; Évora era o único com material verificado suficiente para uma, e é o tipo de página que os outros vão herdar.",
+        "O trabalho foi proposto, decidido, construído e publicado a 2026-08-15, antes de esta agenda existir, e é registado a 2026-08-16, que é o dia em que a agenda foi criada.",
+        "Sem critério dos quatro tipos: veio de uma decisão de direção sobre o que o sítio não tinha, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção.",
+        "O valor que o sítio publica sai do quadro do Eurostat, que sai depois: ver eurostat-pde-notificacao-outubro-2026.",
+        "Nenhuma linha do sítio depende destes dados: as linhas do produto interno bruto por habitante que o sítio publica vêm do quadro regional do Eurostat, e a ligação ao quadro do Eurostat não foi lida na fonte."
+      ]
+    },
+    "/correcoes": {
+      "frases": [
+        "Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções."
+      ]
+    },
+    "/dossies/orcamento-2027": {
+      "frases": [
+        "Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
+        "A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela.",
+        "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta."
+      ]
+    },
+    "/en/agenda": {
+      "frases": [
+        "The European average of this indicator stopped being shown beside the Portuguese value on 23.09.2026, so the comparison with it is not made here.",
+        "The work was proposed, decided, built and published on 2026-08-15, before this agenda existed, and it is recorded on 2026-08-16, which is the day the agenda was created."
+      ]
+    },
+    "/en/corrections": {
+      "frases": [
+        "They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections."
+      ]
+    },
+    "/en/dossiers/orcamento-2027": {
+      "frases": [
+        "This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
+        "The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it.",
+        "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation."
+      ]
+    },
+    "/en/explainers/dinheiro-do-estado-2026": {
+      "frases": [
+        "This page shows both measures, each with its definition, and neither adds them up nor corrects either.",
+        "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above."
+      ]
+    },
+    "/en/explainers/dinheiro-do-estado-2027": {
+      "frases": [
+        "This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
+        "The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it.",
+        "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation."
+      ]
+    },
+    "/explicacoes/dinheiro-do-estado-2026": {
+      "frases": [
+        "Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.",
+        "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima."
+      ]
+    },
+    "/explicacoes/dinheiro-do-estado-2027": {
+      "frases": [
+        "Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
+        "A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela.",
+        "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta."
+      ]
+    },
+    "/explicacoes": {
+      "frases": [
+        "Entre 28.10.2026 e 03.11.2026, 91 números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu 3 deles, que aqui ainda têm o valor anterior."
+      ]
+    },
+    "/explicacoes/leitura-da-semana": {
+      "frases": [
+        "Entre 28.10.2026 e 03.11.2026, 91 números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu 3 deles, que aqui ainda têm o valor anterior.",
+        "Os números que a fonte reviu e que aqui ainda têm o valor anterior"
+      ]
+    },
+    "/": {
+      "frases": [
+        "Entre 28.10.2026 e 03.11.2026, 91 números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu 3 deles, que aqui ainda têm o valor anterior."
+      ]
+    }
+  },
+  "ledes": {
+    "/404.html": [
+      "A ligação pode estar errada, ou a página pode ter mudado de sítio."
+    ],
+    "/a-verificar": [
+      "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+    ],
+    "/areas": [
+      "Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos."
+    ],
+    "/dossies": [
+      "Um lugar por assunto vivo, com tudo o que há sobre ele"
+    ],
+    "/educacao-e-saude": [
+      "Os números de Portugal sobre o abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde."
+    ],
+    "/emprego": [
+      "Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho."
+    ],
+    "/en/404": [
+      "The link may be wrong, or the page may have moved."
+    ],
+    "/en/areas": [
+      "A government area is a ministry; a domain is a subject from the content charter."
+    ],
+    "/en/dossiers": [
+      "One place per living subject, with everything there is on it"
+    ],
+    "/en/education-and-health": [
+      "Portugal’s figures on early school leaving, digital skills, childcare and access to healthcare."
+    ],
+    "/en/employment": [
+      "Portugal’s figures on employment, unemployment, young people and labour costs."
+    ],
+    "/en/european-union": [
+      "Outside the Commission reference value: government debt, what the country owns abroad minus what it owes (net international investment position), three-year change in unit labour cost and annual change in house prices, in 2025."
+    ],
+    "/en/housing": [
+      "Portugal’s figures on housing costs, rents, prices and building."
+    ],
+    "/en/pay-pensions-and-benefits": [
+      "Portugal’s figures on pay, pensions and social benefits."
+    ],
+    "/en/places": [
+      "Portugal’s figures on municipalities, districts, islands and regions."
+    ],
+    "/en/poverty-and-inequality": [
+      "Portugal’s figures on poverty, inequality, household debt and credit."
+    ],
+    "/en/prices": [
+      "Portugal’s figures on the prices of goods and services."
+    ],
+    "/en/regions": [
+      "Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average."
+    ],
+    "/en/state-and-economy": [
+      "Portugal’s figures on public accounts, growth, investment, external accounts, companies and justice."
+    ],
+    "/en/to-verify": [
+      "[to verify] · a field not confirmed against the source, not a doubt about what is published"
+    ],
+    "/en/under-discussion": [
+      "Public statements, next to what the sources say."
+    ],
+    "/estado-e-economia": [
+      "Os números de Portugal sobre as contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça."
+    ],
+    "/habitacao": [
+      "Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção."
+    ],
+    "/lugares": [
+      "Os números de Portugal sobre os concelhos, os distritos, as ilhas e as regiões."
+    ],
+    "/o-que-se-discute": [
+      "As afirmações públicas, ao lado do que as fontes dizem."
+    ],
+    "/pobreza-e-desigualdade": [
+      "Os números de Portugal sobre a pobreza, a desigualdade, as dívidas e o crédito das famílias."
+    ],
+    "/precos": [
+      "Os números de Portugal sobre os preços dos bens e serviços."
+    ],
+    "/regioes": [
+      "O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27."
+    ],
+    "/salarios-pensoes-e-apoios": [
+      "Os números de Portugal sobre os salários, as pensões e os apoios sociais."
+    ],
+    "/uniao-europeia": [
+      "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025."
+    ]
+  },
+  "totais": {
+    "marcador": 34,
+    "frases": 31,
+    "ledes": 30
+  }
+}

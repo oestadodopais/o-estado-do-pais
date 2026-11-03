@@ -330,7 +330,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 "claim": "despesa-por-funcao-2024-gf02-pt",
                 "sufixo": " %"
               },
-              ". Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma."
+              "."
             ],
             "en": [
               "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for ",
@@ -410,7 +410,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 "claim": "despesa-por-funcao-2024-gf02-pt",
                 "sufixo": " %"
               },
-              ". This page shows both measures, each with its definition, and neither adds them up nor corrects either."
+              "."
             ]
           }
         },
@@ -585,16 +585,16 @@ export const DINHEIRO_DO_ESTADO_2026 = {
       ],
     },
   ],
-  /** «O que isto não diz», a secção que fecha (o §5, ponto 3, do brief); o título é a cadeia da casa. */
+  /** «Como ler estes números», a secção que fecha (o §5, ponto 3, do brief); o título é a cadeia da casa. */
   naoDiz: [
     {
       pt: [
-        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.'] },
+        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto está acima.'] },
         { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida.'] },
         ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',
       ],
       en: [
-        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.'] },
+        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is shown above.'] },
         { se: [SEM_LINHAS_DOS_JUROS], partes: [' These figures do not isolate the cost of the interest on the debt.'] },
         ' The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.',
       ],

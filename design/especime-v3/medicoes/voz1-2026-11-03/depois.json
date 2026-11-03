@@ -1,0 +1,99 @@
+{
+  "paginasMedidas": 9823,
+  "marcador": [],
+  "frasesPorPagina": {},
+  "ledes": {
+    "/404.html": [
+      "A ligação pode estar errada, ou a página pode ter mudado de sítio."
+    ],
+    "/areas": [
+      "Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos."
+    ],
+    "/dossies": [
+      "Um lugar por assunto vivo, com tudo o que há sobre ele"
+    ],
+    "/educacao-e-saude": [
+      "Os números de Portugal sobre o abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde."
+    ],
+    "/emprego": [
+      "Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho."
+    ],
+    "/en/404": [
+      "The link may be wrong, or the page may have moved."
+    ],
+    "/en/areas": [
+      "A government area is a ministry; a domain is a subject from the content charter."
+    ],
+    "/en/dossiers": [
+      "One place per living subject, with everything there is on it"
+    ],
+    "/en/education-and-health": [
+      "Portugal’s figures on early school leaving, digital skills, childcare and access to healthcare."
+    ],
+    "/en/employment": [
+      "Portugal’s figures on employment, unemployment, young people and labour costs."
+    ],
+    "/en/european-union": [
+      "Outside the Commission reference value: government debt, what the country owns abroad minus what it owes (net international investment position), three-year change in unit labour cost and annual change in house prices, in 2025."
+    ],
+    "/en/housing": [
+      "Portugal’s figures on housing costs, rents, prices and building."
+    ],
+    "/en/pay-pensions-and-benefits": [
+      "Portugal’s figures on pay, pensions and social benefits."
+    ],
+    "/en/places": [
+      "Portugal’s figures on municipalities, districts, islands and regions."
+    ],
+    "/en/poverty-and-inequality": [
+      "Portugal’s figures on poverty, inequality, household debt and credit."
+    ],
+    "/en/prices": [
+      "Portugal’s figures on the prices of goods and services."
+    ],
+    "/en/regions": [
+      "Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average."
+    ],
+    "/en/state-and-economy": [
+      "Portugal’s figures on public accounts, growth, investment, external accounts, companies and justice."
+    ],
+    "/en/under-discussion": [
+      "Public statements, next to what the sources say."
+    ],
+    "/estado-e-economia": [
+      "Os números de Portugal sobre as contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça."
+    ],
+    "/habitacao": [
+      "Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção."
+    ],
+    "/lugares": [
+      "Os números de Portugal sobre os concelhos, os distritos, as ilhas e as regiões."
+    ],
+    "/o-que-se-discute": [
+      "As afirmações públicas, ao lado do que as fontes dizem."
+    ],
+    "/pobreza-e-desigualdade": [
+      "Os números de Portugal sobre a pobreza, a desigualdade, as dívidas e o crédito das famílias."
+    ],
+    "/precos": [
+      "Os números de Portugal sobre os preços dos bens e serviços."
+    ],
+    "/regioes": [
+      "O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27."
+    ],
+    "/salarios-pensoes-e-apoios": [
+      "Os números de Portugal sobre os salários, as pensões e os apoios sociais."
+    ],
+    "/uniao-europeia": [
+      "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025."
+    ]
+  },
+  "totais": {
+    "paginas": 9823,
+    "marcador": 0,
+    "protecao": 0,
+    "frases": 0,
+    "ledesNovas": 0,
+    "ledes": 28
+  }
+}

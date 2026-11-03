@@ -358,11 +358,8 @@ export const ROUTES = {
    * primeira página, como a qualquer rota sem cartão.
    */
   serie: { pt: '/livro-razao/series/:slug', en: '/en/ledger/series/:slug' },
-  /**
-   * A página do marcador. IDENTIDADE §6 promete «uma página que o explica» e
-   * ela não existia; a explicação vivia numa oração do Método.
-   */
-  marcador: { pt: '/a-verificar', en: '/en/to-verify' },
+  /** VOZ-1: alias interno para o Método; os dois endereços antigos redirecionam em vercel.json. */
+  marcador: { pt: '/metodo', en: '/en/method' },
   /**
    * O ÍNDICE (bloco R3, 04.10.2026, pela ideia do diretor dessa madrugada): uma
    * página onde o leitor vê tudo o que o sítio tem, por secção, com uma porta

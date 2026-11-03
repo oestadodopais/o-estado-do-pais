@@ -226,7 +226,7 @@ const linguaDoPublicador = conhecido ? linguaDaFonte(publicador, lang) : null;
   {!porConfirmar && (
     <span class="vh"> · {conhecido ? <>{derivada && `${s.prov.calculado} · `}<span lang={linguaDoPublicador}>{publicador}</span></> : s.prov.calculado}</span>
   )}
-  {incompleta && <span class="marcador">{s.prov.marcadorDoSelo}</span>}
+  {incompleta && <>{" · "}<span class="marcador">{s.prov.marcadorDoSelo}</span></>}
 </a>
 {/* A DEFINIÇÃO FICA FORA DO SELO, E É A CONSTITUIÇÃO QUE O MANDA (§5.4 e a
     Emenda 2): a unidade inteira é a porta, um só `<a>` com o quadrado, a palavra

@@ -545,7 +545,7 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. | até 2026-08-26 | viva | — |
 | conteudo | O que foi corrigido, e o que mudou | até 2026-08-26 | viva | — |
 | conteudo | O registo | até 2026-08-26 | viva | — |
-| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | até 2026-08-26 | viva | — |
+| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 | conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Provenance revisions | até 2026-08-26 | viva | — |
 | conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | até 2026-08-26 | viva | — |
@@ -555,7 +555,7 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | The policy | até 2026-08-26 | viva | — |
 | conteudo | The register | até 2026-08-26 | viva | — |
-| conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. | até 2026-08-26 | viva | — |
+| conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 | conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
 | conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
@@ -587,18 +587,14 @@ página» é o rótulo do sumário, e é navegação: leva a outro sítio da pá
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A pergunta | até 2026-08-26 | viva | — |
 | conteudo | A seguir | até 2026-08-26 | viva | — |
 | conteudo | Com data publicada pela fonte | até 2026-08-26 | viva | — |
-| conteudo | Concluded | até 2026-08-26 | viva | — |
-| conteudo | Concluído | até 2026-08-26 | viva | — |
-| conteudo | Criteria | até 2026-08-26 | viva | — |
-| conteudo | Critérios | até 2026-08-26 | viva | — |
+| conteudo | Criteria | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| conteudo | Critérios | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | Em curso | até 2026-08-26 | viva | — |
 | conteudo | Nenhum até hoje. | até 2026-08-26 | viva | — |
 | navegacao | Nesta página | até 2026-08-26 | viva | — |
-| conteudo | Next | até 2026-08-26 | viva | — |
-| conteudo | No criterion. | até 2026-08-26 | viva | — |
+| conteudo | No criterion. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | None to date. | até 2026-08-26 | viva | — |
 | conteudo | O calendário das fontes | até 2026-08-26 | viva | — |
 | conteudo | O calendário, no tempo | até 2026-08-26 | viva | — |
@@ -606,21 +602,18 @@ página» é o rótulo do sumário, e é navegação: leva a outro sítio da pá
 | conteudo | O que mudou | até 2026-08-26 | viva | — |
 | conteudo | O que se mede a seguir | até 2026-08-26 | viva | — |
 | navegacao | On this page | até 2026-08-26 | viva | — |
-| conteudo | Porquê | até 2026-08-26 | viva | — |
-| conteudo | Retirado | até 2026-08-26 | viva | — |
-| conteudo | Sem critério. | até 2026-08-26 | viva | — |
-| conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 | viva | — |
+| conteudo | Porquê | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| conteudo | Sem critério. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 | conteudo | The calendar, in time | até 2026-08-26 | viva | — |
-| conteudo | The question | até 2026-08-26 | viva | — |
 | conteudo | The source calendar | até 2026-08-26 | viva | — |
 | conteudo | Under way | até 2026-08-26 | viva | — |
 | conteudo | What changed | até 2026-08-26 | viva | — |
 | conteudo | What gets measured next | até 2026-08-26 | viva | — |
 | conteudo | What is in each state | até 2026-08-26 | viva | — |
-| conteudo | Why | até 2026-08-26 | viva | — |
+| conteudo | Why | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | With a date the source publishes | até 2026-08-26 | viva | — |
-| conteudo | With no date, because the source publishes none | até 2026-08-26 | viva | — |
-| conteudo | Withdrawn | até 2026-08-26 | viva | — |
+| conteudo | With no date, because the source publishes none | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 
 ## `/estudos` · `/en/studies` e as páginas de trabalho (etapa 4, subetapa 4e)
 
@@ -1092,8 +1085,8 @@ os dois estados vazios encolhem para a ausência em duas palavras.
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta. | grelha-da-voz | viva | — |
-| conteudo | The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question. | grelha-da-voz | viva | — |
+| conteudo | A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta. | grelha-da-voz | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| conteudo | The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question. | grelha-da-voz | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | grelha-da-voz | viva | — |
 | conteudo | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | grelha-da-voz | viva | — |
 | conteudo | O que as fontes citadas publicam a seguir. | grelha-da-voz | viva | — |
@@ -2672,8 +2665,8 @@ diz qual delas a pôs aqui.*
 | navegacao | The head measures of each domain, the search and the map of the municipalities, and the doors to the studies and to the numbers with their sources. | b1-peca3-correcao2 | retirada | descrição substituída pelo guião da segunda correção, 22.09.2026; a página passou a abrir com a leitura do país e os temas. |
 | navegacao | Without scripting, the button leads to the full list of municipalities, grouped by district and island. | p3 | retirada | ver a razão na gémea portuguesa |
 | navegacao | Without scripting, the list shows every study. | p3 | retirada | ver a razão na gémea portuguesa |
-| navegacao | · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | lugar | viva | achado 4 da leitura cruzada do inventário (Codex, 14.09.2026): é a LEGENDA de uma marca, e `VOZ-MARCADORES.md` não dá classe a legendas: dá ao próprio marcador a razão por que a raiz «verific» não morde nele («é o marcador de incerteza do sítio, com página própria em `/a-verificar`: diz que falta um campo de proveniência»). Sem classe escrita para a legenda, fica `navegacao`, que é a classe desta lista para «a descrição acessível de um instrumento»: a frase não diz nada sobre o país, diz o que a marca ao lado quer dizer a quem a encontra |
-| navegacao | · a field not confirmed against the source, not a doubt about what is published | lugar | viva | ver a razão na gémea portuguesa (achado 4, 14.09.2026) |
+| navegacao | · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | lugar | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| navegacao | · a field not confirmed against the source, not a doubt about what is published | lugar | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | navegacao | [a verificar] · a field not confirmed against the source, not a doubt about what is published | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ## Bloco F1.10 · segunda passagem · as duas leituras do Codex de 14.09.2026
@@ -3034,8 +3027,8 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | published on · | b1-peca3-correcao | retirada | O rótulo ficava sem data; a linha de mudança passa a dizer que se publicou um estudo. |
 | conteudo | Évora Economy and public finances published on | hb1d | retirada | EV2-F, 30.10.2026: a primeira publicação voltou a 01.10.2026; updated declara a atualização e não ordena os estudos recentes, de cuja lista esta edição saiu. |
 | conteudo | → | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
-| conteudo | → · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
-| conteudo | → · a field not confirmed against the source, not a doubt about what is published | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
+| conteudo | → · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | b1-peca3 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| conteudo | → · a field not confirmed against the source, not a doubt about what is published | b1-peca3 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 
 ## B1, peça 3: correção dos olhos e das publicações, 22.09.2026
 
@@ -4494,7 +4487,7 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | autorreferencia | Antes de uma mudança chegar a estas páginas, as mesmas verificações recusam, entre outras coisas, uma frase copiada de uma fonte que não seja igual à da fonte, um nome ou uma definição que a fonte não dá a essa medida, e qualquer dado pessoal, segredo ou caminho de uma máquina. As frases que este projeto escreve sobre si e sobre os números estão num inventário, e nas páginas que ele cobre, que são quase todas, uma frase nova que não esteja lá trava a publicação; o texto desta página e o da página «Sobre» só mudam com uma decisão registada que carimbe a versão nova. E cada trabalho novo, uma página, uma regra, um texto, é lido antes de se publicar por um sistema de outra família, com cinco erros plantados de propósito que tem de encontrar todos; o que ele encontra que mude um número ou uma frase corrige-se antes de publicar, e os reparos pequenos juntam-se numa passagem semanal. | me1 | retirada | Substituída no bloco og1-c pela versão carimbada na decisão §1.210 (29.10.2026). |
 | autorreferencia | Estas verificações provam que o que a página mostra é o que a lista guarda; a releitura na fonte prova que a lista diz o que a fonte imprimiu; nenhuma prova que a fonte esteja certa, nem que as conclusões deste projeto o estejam. Cada recibo diz se o seu número já foi relido na fonte por um caminho diferente e por um sistema que não o publicou, em que data e com que resultado. O painel europeu, na página «Portugal na União Europeia», é reconferido contra a fonte todas as semanas, e essa página diz quando foi a última vez. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
 | autorreferencia | Hoje entradas têm pelo menos uma reconferência escrita, em reconferências; em a fonte dizia outra coisa. Quando a fonte diz outra coisa, o valor novo não entra sozinho: espera a decisão da direção e, quando entra, fica no registo das correções com o valor anterior à vista. A última reconferência do painel europeu foi a . | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
-| autorreferencia | Quando um campo da origem de um número não pôde ser confirmado na fonte, o recibo diz o que falta e marca esse campo com [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado ; a página do número não o esconde, e a entrada fica fora dos motores de busca até estar completa. Quando a fonte marca um valor como provisório, a página di-lo por palavras. Quando a fonte já publicou um período mais recente do que o que estas páginas mostram, a página do número di-lo também. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
+| autorreferencia | Quando um campo da origem de um número não pôde ser confirmado na fonte, o recibo diz o que falta e marca esse campo com [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado ; a página do número não o esconde, e a entrada fica fora dos motores de busca até estar completa. Quando a fonte marca um valor como provisório, a página di-lo por palavras. Quando a fonte já publicou um período mais recente do que o que estas páginas mostram, a página do número di-lo também. | me1 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | autorreferencia | O registo público das correções distingue três tipos de alteração: a correção, quando um valor estava errado; a atualização, quando um valor estava certo e ficou desatualizado; a revisão de proveniência, quando o valor se mantém e muda a documentação da sua origem. Cada alteração é datada e permanente, com o valor anterior à vista. Até hoje: correções, atualizações e revisões de proveniência. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
 | autorreferencia | Quem encontrar um erro escreve para correcoes@oestadodopais.pt ; há em todas as páginas uma ligação para o fazer. Quem for nomeado numa página pode responder para o mesmo endereço, e a resposta publica-se ao lado do texto em causa, sem edição. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
 | autorreferencia | O que se mede a seguir decide-se por critérios declarados: os problemas que as instituições identificam ao avaliar Portugal, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide, e a agenda mostra, item a item, o critério, quem propôs, quem decidiu e cada mudança de estado com a sua data. A pergunta de um estudo fixa-se e guarda-se antes de se recolherem os dados. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
@@ -4526,7 +4519,7 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | autorreferencia | Before a change reaches these pages, the same checks refuse, among other things, a sentence copied from a source that is not identical to the source&#39;s, a name or a definition the source does not give to that measure, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers are kept in an inventory, and on the pages it covers, which are nearly all of them, a new sentence that is not in it stops publication; the text of this page and of the «About» page changes only with a recorded decision that stamps the new version. And every new piece of work, a page, a rule, a text, is read before publication by a system from another family, with five errors planted on purpose that it must find, all of them; whatever it finds that changes a number or a sentence is corrected before publishing, and the small repairs are gathered into a weekly pass. | me1 | retirada | Substituída no bloco og1-c pela versão carimbada na decisão §1.210 (29.10.2026). |
 | autorreferencia | These checks prove that what the page shows is what the list holds; the re-reading at the source proves that the list says what the source printed; neither proves that the source is right, nor that this project&#39;s conclusions are. Each receipt says whether its number has been read again at the source by a different route and by a system that did not publish it, on what date and with what result. The European panel, on the page «Portugal in the European Union», is re-checked against the source every week, and that page says when the last time was. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
 | autorreferencia | Today entries have at least one re-check written, in re-checks; in the source said something else. When the source says something else, the new value does not enter on its own: it waits for direction&#39;s decision and, when it enters, it goes into the corrections register with the previous value in plain sight. The European panel was last re-checked on . | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
-| autorreferencia | When a field in a number&#39;s origin could not be confirmed at the source, the receipt says what is missing and marks that field with [to verify] · a field not confirmed against the source, not a doubt about what is published ; the number&#39;s page does not hide it, and the entry stays out of search engines until it is complete. When the source marks a value as provisional, the page says so in words. When the source has already published a more recent period than the one these pages show, the number&#39;s page says so too. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
+| autorreferencia | When a field in a number&#39;s origin could not be confirmed at the source, the receipt says what is missing and marks that field with [to verify] · a field not confirmed against the source, not a doubt about what is published ; the number&#39;s page does not hide it, and the entry stays out of search engines until it is complete. When the source marks a value as provisional, the page says so in words. When the source has already published a more recent period than the one these pages show, the number&#39;s page says so too. | me1 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | autorreferencia | The public register of corrections distinguishes three types of change: a correction, when a value was wrong; an update, when a value was right and became outdated; a provenance revision, when the value stays the same and the documentation of its origin changes. Each change is dated and permanent, with the previous value in plain sight. So far: corrections, updates and provenance revisions. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
 | autorreferencia | Anyone who finds an error writes to correcoes@oestadodopais.pt ; every page has a link for doing so. Anyone named on a page may reply to the same address, and the reply is published alongside the text in question, unedited. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
 | autorreferencia | What gets measured next is decided by declared criteria: the problems institutions identify when assessing Portugal, what the official sources will publish, what readers ask about or correct. Direction decides, and the agenda shows, item by item, the criterion, who proposed, who decided and every change of state with its date. The question of a study is fixed and stored before the data are collected. | me1 | viva | O Método para o leitor (o mandato ME1, palavra por palavra). |
@@ -5261,8 +5254,8 @@ A mediana usa as avaliações do mês de referência e dos dois anteriores, segu
 | navegacao | Dossiê: | do1 | viva | DO1, texto rendido nas duas edições; leitura cruzada pendente. |
 | navegacao | Dossiê: A casa em Portugal → | do1-d | retirada | DO1-D: forma retirada pela decisão do lugar de direção. |
 
-| conteudo | Afirmação: | do1 | viva | DO1-D: cadeia ainda usada noutras superfícies. |
-| conteudo | Claim: | do1 | viva | DO1-D: cadeia ainda usada noutras superfícies. |
+| conteudo | Afirmação: | do1 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
+| conteudo | Claim: | do1 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 
 
 ## DO1-D: formas depois da leitura a frio
@@ -5478,3 +5471,19 @@ As palavras continuam sujeitas à varredura lexical.
 Os campos variáveis são transcritos da última reconferência sem correção ou atualização de valor posterior.
 A frase inteira, o índice da reconferência, os campos e a porta do recibo são conferidos na mesma função
 que as plantas da voz, da data e da L1 chamam. A ausência de anterior só aparece quando falta a comparação.
+
+## VOZ-1, 03.11.2026: campos públicos e ausência exata
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Item retirado | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Item withdrawn | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | No announced date | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Pergunta por registar | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Question not recorded | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Sem data anunciada | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | The value did not change; the way to find it did: a source that moves address, for example. Each row below leads to its own history, where the revision is written out in full. | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Trabalho concluído | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Up next | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Work concluded | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |

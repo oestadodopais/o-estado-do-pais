@@ -1237,41 +1237,13 @@ for (const ficheiro of paginas) {
   }
 
   /* ------------------------------------------------------------------ §7.10 */
-  /* «[a verificar]» COM A SUA DEFINIÇÃO AO PÉ DA PRIMEIRA OCORRÊNCIA (o último
-     dos cinco pequenos, 14.09.2026). A régua lê a ORDEM DO DOCUMENTO: percorre o
-     corpo uma vez, anota por que ordem aparecem os marcadores e as definições, e
-     exige que a página com marcador tenha uma definição só e que ela venha LOGO
-     A SEGUIR ao primeiro. É esta célula que sustenta a promessa que
-     `src/lib/uma-vez-por-pagina.mjs` faz: a ordem por que o Astro rende a árvore
-     não é um contrato, e o que se mede é o documento construído. */
-  /* AS DUAS FAMÍLIAS DE TRANSCRIÇÃO FICAM DE FORA, pelo §3 do brief e pela mesma
-     razão que tira a definição de lá: numa página de texto transcrito o marcador
-     aparece dentro de uma unidade do registo, e a casa não edita o que
-     transcreve. Quem leva a definição é o primeiro marcador FORA da
-     transcrição, e uma página que só tenha marcadores dentro dela não leva
-     nenhuma. */
-  const ordemDoMarcador = [];
-  const percorreOMarcador = (no) => {
-    for (const filho of no.childNodes ?? []) {
-      if (!filho.tagName || filho.hasAttribute('data-registo-unidade')) continue;
-      const classes = (filho.getAttribute('class') ?? '').split(/\s+/);
-      if (classes.includes('marcador')) ordemDoMarcador.push('m');
-      else if (classes.includes('marcador-definicao')) ordemDoMarcador.push('d');
-      percorreOMarcador(filho);
-    }
-  };
-  if (!transcricao) percorreOMarcador(corpo);
-  const quantasDefinicoes = ordemDoMarcador.filter((x) => x === 'd').length;
-  const temMarcador = ordemDoMarcador.includes('m');
-  const aoPeDoPrimeiro =
-    ordemDoMarcador[0] === 'm' && ordemDoMarcador[1] === 'd' && quantasDefinicoes === 1;
-  if ((temMarcador && !aoPeDoPrimeiro) || (!temMarcador && quantasDefinicoes > 0)) {
+  /* VOZ-1, 03.11.2026: a ausência é dita no campo; a antiga glosa não se imprime.
+     O tracejado, os campos e a indexação continuam medidos no portão de HTML
+     e em voz-autorreferencia.mjs, com plantas próprias. */
+  const quantasDefinicoes = corpo.querySelectorAll('.marcador-definicao').length;
+  if (quantasDefinicoes > 0) {
     medidas.d710_definicao_do_marcador++;
-    anota(
-      'd710_definicao_do_marcador',
-      `${url} · ${ordemDoMarcador.filter((x) => x === 'm').length} marcador(es), ` +
-        `${quantasDefinicoes} definição(ões), ordem «${ordemDoMarcador.slice(0, 4).join('')}»`,
-    );
+    anota('d710_definicao_do_marcador', `${url} · ${quantasDefinicoes} definição(ões) retirada(s) reposta(s)`);
   }
 
   /* OS RÓTULOS DOS DESENHOS, TAMBÉM COMO TEXTO POR BAIXO (o penúltimo dos cinco
@@ -2346,7 +2318,7 @@ const NOMES = {
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
   d811_leituras_na_cabeca: '8.11 · leituras de aparelho no cabeçalho',
   d84_definicoes_fora: '8.4 · definições de painel fora da declaração',
-  d710_definicao_do_marcador: '§7.10 · «[a verificar]» sem definição ao pé do primeiro',
+  d710_definicao_do_marcador: 'VOZ-1 · definição retirada do marcador reposta',
   d710_rotulos_por_baixo: '§7.10 · valores desenhados sem o seu texto na legenda',
   d86_estudos_forma: '§7.4 e 8.6 · estudos fora da forma única',
 };

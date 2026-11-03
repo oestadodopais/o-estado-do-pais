@@ -1,0 +1,40 @@
+{
+  "pt": {
+    "2026": {
+      "titulo": "Como ler estes números",
+      "paragrafos": [
+        "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto está acima. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque."
+      ]
+    },
+    "2027": {
+      "titulo": "Como ler estes números",
+      "paragrafos": [
+        "É o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução. O mapa cobre só o subsetor da Administração Central; a Segurança Social, com as pensões, não está nele. Os valores não são consolidados, porque contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, 259 633 860 562 euros em 2027. A conta sem as operações relacionadas com a dívida pública calcula-se a partir do mapa, que só dá o nome a essa subfunção, sem dizer o que entra nela. A despesa efetiva consolidada por função dos dados abertos, a base da leitura de 2026, ainda não está publicada para 2027."
+      ]
+    },
+    "semana": [
+      "Entre 28.10.2026 e 03.11.2026, 91 números foram relidos na fonte, e nenhum mudou de valor nem de proveniência; a fonte reviu 3 deles, ainda com o valor de antes da revisão."
+    ],
+    "ausencia": "por confirmar na fonte",
+    "revisoesK": "Os números que a fonte reviu, ainda com o valor de antes da revisão"
+  },
+  "en": {
+    "2026": {
+      "titulo": "How to read these figures",
+      "paragrafos": [
+        "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is shown above. The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away."
+      ]
+    },
+    "2027": {
+      "titulo": "How to read these figures",
+      "paragrafos": [
+        "This is the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution. The map covers only the central administration subsector; Social Security, with pensions, is not in it. The values are unconsolidated because they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, 259 633 860 562 euros in 2027. The calculation excluding operations related to public debt is derived from the map, which only names that subfunction, without saying what it includes. Consolidated effective expenditure by function from the open data, the basis of the reading for 2026, has not yet been published for 2027."
+      ]
+    },
+    "semana": [
+      "Between 28.10.2026 and 03.11.2026, 91 figures were re-read at the source, and none changed value or provenance; the source revised 3 of them, still showing the value from before the revision."
+    ],
+    "ausencia": "to be confirmed at the source",
+    "revisoesK": "The numbers the source revised, still showing the value from before the revision"
+  }
+}

@@ -100,6 +100,46 @@ Três modos de correspondência, todos sem sensibilidade a maiúsculas:
 | raiz | avaliáve | «O mandato mais recente não é avaliável» era o título de uma ressalva retirada: é um juízo sobre o que a casa consegue fazer, e não sobre o que a fonte publica. |
 | raiz | assessable | A mesma, na edição inglesa. |
 
+<!-- VOZ-1, 03.11.2026: sujeitos da negação e da narração editorial. -->
+| raiz | o sítio não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | o sítio mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the site does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the site shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | a página não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | a página mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the page does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the page shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | a peça não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | a peça mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the piece does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the piece shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | a explicação não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | a explicação mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the explainer does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the explainer shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | o estudo não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | o estudo mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the study does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the study shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | o projeto não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | o projeto mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the project does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | the project shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | esta explicação não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | esta explicação mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | this explainer does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | this explainer shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | este estudo não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | este estudo mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | this study does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | this study shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | este projeto não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | este projeto mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | this project does not | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | this project shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |
+| raiz | aqui não | VOZ-1: negação do que a casa faz neste lugar da página. |
+| raiz | que aqui ainda | VOZ-1: narração da atualização da própria página. |
+
 ## As exceções
 
 *A forma é a do `ledger/allowlist.yml`: cada exceção diz porquê, e uma exceção

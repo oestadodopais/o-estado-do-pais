@@ -1,0 +1,38 @@
+PLANTA reconferência anterior à criação: RP4N-h: reconferência anterior à criação da linha legal
+PLANTA data local sem prova: a data local não tem prova de leitura ou alojamento
+PLANTA data local trocada: a data local não tem prova de leitura ou alojamento
+PLANTA manifesto local sem commit: a data de alojamento não aponta para o manifesto do commit
+PLANTA tipo da data local inventado: a data local não distingue alojamento de leitura
+PLANTA localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, name_source): RP4N-h: localizador fora da língua da edição (pt, name_source)
+PLANTA localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, document.locator): RP4N-h: localizador fora da língua da edição (pt, document.locator)
+PLANTA alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, pt): RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt)
+PLANTA localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, pt, name_source): RP4N-h: localizador fora da língua da edição (pt, name_source)
+PLANTA localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, pt, document.locator): RP4N-h: localizador fora da língua da edição (pt, document.locator)
+PLANTA alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, pt): RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt)
+PLANTA glosa a meio da K2 (pt): RP4N-h: a glosa interrompe a frase K2
+PLANTA marca traduzida incorretamente (pt, selo): RP4N-h: marca fora da língua da edição (pt, texto)
+PLANTA marca traduzida incorretamente (pt, campo): RP4N-h: marca fora da língua da edição (pt, texto)
+PLANTA marca traduzida incorretamente (pt, frase): RP4N-h: marca fora da língua da edição (pt, texto fora do componente)
+PLANTA marca traduzida incorretamente (pt, marca de água): RP4N-h: marca fora da língua da edição (pt, marca de água)
+PLANTA marca traduzida incorretamente (pt, title): RP4N-i: marca fora da língua da edição (pt, atributo title)
+PLANTA marca traduzida incorretamente (pt, aria-label): RP4N-i: marca fora da língua da edição (pt, atributo aria-label)
+PLANTA marca traduzida incorretamente (pt, alt): RP4N-i: marca fora da língua da edição (pt, atributo alt)
+PLANTA marca traduzida incorretamente (pt, data-prova): RP4N-i: marca fora da língua da edição (pt, atributo data-prova)
+PLANTA marca traduzida incorretamente (pt, content): RP4N-i: marca fora da língua da edição (pt, atributo content)
+PLANTA localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, name_source): RP4N-h: localizador fora da língua da edição (en, name_source)
+PLANTA localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, document.locator): RP4N-h: localizador fora da língua da edição (en, document.locator)
+PLANTA alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, en): RP4N-h: o recibo não distingue alojamento de leitura na fonte (en)
+PLANTA localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, en, name_source): RP4N-h: localizador fora da língua da edição (en, name_source)
+PLANTA localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, en, document.locator): RP4N-h: localizador fora da língua da edição (en, document.locator)
+PLANTA alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, en): RP4N-h: o recibo não distingue alojamento de leitura na fonte (en)
+PLANTA glosa a meio da K2 (en): RP4N-h: a glosa interrompe a frase K2
+PLANTA marca traduzida incorretamente (en, selo): RP4N-h: marca fora da língua da edição (en, texto)
+PLANTA marca traduzida incorretamente (en, campo): RP4N-h: marca fora da língua da edição (en, texto)
+PLANTA marca traduzida incorretamente (en, frase): RP4N-h: marca fora da língua da edição (en, texto fora do componente)
+PLANTA marca traduzida incorretamente (en, marca de água): RP4N-h: marca fora da língua da edição (en, marca de água)
+PLANTA marca traduzida incorretamente (en, title): RP4N-i: marca fora da língua da edição (en, atributo title)
+PLANTA marca traduzida incorretamente (en, aria-label): RP4N-i: marca fora da língua da edição (en, atributo aria-label)
+PLANTA marca traduzida incorretamente (en, alt): RP4N-i: marca fora da língua da edição (en, atributo alt)
+PLANTA marca traduzida incorretamente (en, data-prova): RP4N-i: marca fora da língua da edição (en, atributo data-prova)
+PLANTA marca traduzida incorretamente (en, content): RP4N-i: marca fora da língua da edição (en, atributo content)
+RP4N-h: PASS, 37 plantas

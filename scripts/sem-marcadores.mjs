@@ -1,3 +1,4 @@
+import {parse} from 'node-html-parser';
 import { createHash } from 'node:crypto';
 import { provenienciaIncompleta } from '../src/lib/ledger.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
@@ -106,6 +107,13 @@ function aceite(n, {rota, claims, municipios = []}) {
  * Classes vazias e declarações sem texto também fecham a porta, sem duplicar a marca textual.
  */
 export function inventariarMarcadores(raiz, contexto = {}) {
+  raiz = parse(raiz.toString());
+  // VOZ-1: só a apresentação exata é reconduzida ao valor interno, para conferir
+  // os mesmos campos e as mesmas proteções. A régua VOZ-1 recusa a marca antiga.
+  const interna = t => t === 'por confirmar na fonte' ? '[a verificar]' : t === 'to be confirmed at the source' ? '[to verify]' : t;
+  for (const n of raiz.querySelectorAll('.marcador')) if (interna(n.textContent) !== n.textContent) n.set_content(interna(n.textContent));
+  for (const n of raiz.querySelectorAll('[data-marca]')) n.setAttribute('data-marca', interna(n.getAttribute('data-marca')));
+
   const folhas = [];
   let cadeia = '';
   function andar(n) {

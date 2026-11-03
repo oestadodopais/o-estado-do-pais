@@ -14550,3 +14550,13 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **O que ficou aberto.** A PAI2 construída com três vermelhos do navegador (cartão, alvos, sobreposição), na adenda B; a EV3-p, a AT1 e a MET1 no lote 4; os Minor 35 a 39 da higiene; os identificadores «Afirmação: …» do registo na VOZ-1.
 
 **Os códigos dos portões.** A corrida inteira em 9056b204d (`lote3-conferir-2026-11-03-a`, com o `build`): 62 passos, 0 vermelhos, 3 070 s, com a `check:largura` (11 s) e a `check:capturas-largura` (1 s). A adenda B da LAR1 (c9b6d2cea, só CSS): o `build` e a `check:largura` verdes, com a planta. As capturas do lote: 40, quatro páginas nas duas edições e nas cinco larguras, cada uma medida na largura pedida. A aterragem escreve o seu recibo.
+
+### 1.220 VOZ-1, 03.11.2026: a ausência dita no campo e a voz das páginas do leitor
+
+**Afecta:** metodo
+
+**Texto:** metodo be877315f63b
+
+**Decisão:** mandato VOZ-1 do lugar de direção, recebido nesta passagem. O campo em falta diz «por confirmar na fonte» ou «to be confirmed at the source». A definição do marcador sai da superfície, e os antigos endereços do marcador redirecionam para o Método. O selo tracejado, a indicação do campo em falta e a exclusão dos recibos incompletos dos motores de busca conservam-se. O Método passa a descrever esta apresentação.
+
+A agenda e o calendário conservam os dados internos nos ficheiros públicos; a superfície mostra os campos definidos no mandato. A narração da própria peça ganha uma régua no build e uma pergunta na leitura a frio, com a isenção dos documentos dos estudos, datada de 03.11.2026, até à VOZ-2. Esta entrada regista a decisão e o texto, não uma publicação.

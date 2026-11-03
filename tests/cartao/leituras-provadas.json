@@ -52156,9 +52156,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52234,9 +52234,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52333,9 +52333,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52426,9 +52426,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52519,9 +52519,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52612,9 +52612,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52667,9 +52667,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52722,9 +52722,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52820,9 +52820,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -52942,9 +52942,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -53015,9 +53015,9 @@
               ]
             },
             {
-              "classe": "liga",
               "pt": ".",
-              "en": "."
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -54873,46 +54873,13 @@
         },
         {
           "caminho": "seccoes[0].conteudo[3].paragrafo[33]",
-          "pt": ". Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.",
-          "en": ". This page shows both measures, each with its definition, and neither adds them up nor corrects either.",
+          "pt": ".",
+          "en": ".",
           "partes": [
             {
-              "pt": ". Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.",
-              "en": ". This page shows both measures, each with its definition, and neither adds them up nor corrects either.",
-              "classe": "leitura",
-              "sobre": "A declaração apresenta as duas medidas e não contém tokens de soma ou correção entre elas.",
-              "apoios": [
-                {
-                  "linha": "despesa-por-funcao-2024-gf02-pt",
-                  "campo": "ressalva",
-                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
-                },
-                {
-                  "linha": "despesa-por-funcao-2024-gf02-pt",
-                  "campo": "unit",
-                  "literal": "% do PIB"
-                },
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "documento",
-                  "literal": "General government expenditure by function (COFOG)"
-                },
-                {
-                  "linha": "nato-defesa-portugal-pib-2024",
-                  "campo": "excerpt",
-                  "literal": "Based on 2021 prices"
-                },
-                {
-                  "origem": "nato-definicao-despesa-defesa",
-                  "campo": "excertoEn",
-                  "literal": "Defence expenditure is defined by NATO as payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of (1) its own armed forces, (2) those of other Allies or (3) the needs of the Alliance as a whole."
-                },
-                {
-                  "origem": "nato-definicao-despesa-defesa",
-                  "campo": "excertoEn",
-                  "literal": "Retirement pensions payments made directly by the government to retired military and civilian employees of military departments and for active personnel is included in the NATO defence expenditure definition."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         },
@@ -57036,8 +57003,8 @@
         },
         {
           "caminho": "naoDiz[0][0].se[0]",
-          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.",
-          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.",
+          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto está acima.",
+          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is shown above.",
           "partes": [
             {
               "pt": "O orçamento é uma previsão",
@@ -57093,8 +57060,8 @@
               ]
             },
             {
-              "pt": " é a que esta explicação mostra acima.",
-              "en": " is the one this explainer shows above.",
+              "pt": " está acima.",
+              "en": " is shown above.",
               "classe": "aponta",
               "secao": "execucao"
             }
@@ -57927,12 +57894,12 @@
         },
         {
           "caminho": "seccoes[1].conteudo[0].figura.titulo",
-          "pt": "As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)",
-          "en": "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)",
+          "pt": "As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública",
+          "en": "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt",
           "partes": [
             {
-              "pt": "As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)",
-              "en": "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)",
+              "pt": "As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública",
+              "en": "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt",
               "classe": "diz",
               "apoios": [
                 {
@@ -57956,12 +57923,12 @@
         },
         {
           "caminho": "seccoes[1].conteudo[1].paragrafo[0]",
-          "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A ",
-          "en": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. ",
+          "pt": "A conta usa a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A ",
+          "en": "The calculation uses the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. ",
           "partes": [
             {
-              "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública",
-              "en": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt",
+              "pt": "A conta usa a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública",
+              "en": "The calculation uses the map’s total expenditure minus the subfunction of the operations related to public debt",
               "classe": "leitura",
               "sobre": "que a despesa sem a subfunção das operações relacionadas com a dívida pública é uma conta derivada pelo projeto, e não um valor que o mapa imprime",
               "apoios": [
@@ -59003,12 +58970,12 @@
         },
         {
           "caminho": "naoDiz[0][0]",
-          "pt": "Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
-          "en": "This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
+          "pt": "É o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
+          "en": "This is the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
           "partes": [
             {
-              "pt": "Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
-              "en": "This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
+              "pt": "É o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
+              "en": "This is the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
               "classe": "leitura",
               "sobre": "que a proposta não é a lei aprovada nem a despesa executada",
               "apoios": [
@@ -59038,12 +59005,12 @@
         },
         {
           "caminho": "naoDiz[0][1]",
-          "pt": " O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, não está nele.",
-          "en": " The map is only the central administration subsector: Social Security, with pensions, is not in it.",
+          "pt": " O mapa cobre só o subsetor da Administração Central; a Segurança Social, com as pensões, não está nele.",
+          "en": " The map covers only the central administration subsector; Social Security, with pensions, is not in it.",
           "partes": [
             {
-              "pt": " O mapa é só o subsetor da Administração Central:",
-              "en": " The map is only the central administration subsector:",
+              "pt": " O mapa cobre só o subsetor da Administração Central;",
+              "en": " The map covers only the central administration subsector;",
               "classe": "diz",
               "apoios": [
                 {
@@ -59070,12 +59037,12 @@
         },
         {
           "caminho": "naoDiz[0][2].se[0]",
-          "pt": " Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ",
-          "en": " The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ",
+          "pt": " Os valores não são consolidados, porque contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ",
+          "en": " The values are unconsolidated because they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ",
           "partes": [
             {
-              "pt": " Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ",
-              "en": " The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ",
+              "pt": " Os valores não são consolidados, porque contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ",
+              "en": " The values are unconsolidated because they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ",
               "classe": "leitura",
               "sobre": "porque a despesa total do mapa é maior do que a consolidada",
               "apoios": [
@@ -59143,12 +59110,12 @@
         },
         {
           "caminho": "naoDiz[0][3]",
-          "pt": " A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A base da explicação de ",
-          "en": " The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the ",
+          "pt": " A conta sem as operações relacionadas com a dívida pública calcula-se a partir do mapa, que só dá o nome a essa subfunção, sem dizer o que entra nela. A despesa efetiva consolidada por função dos dados abertos, a base da leitura de ",
+          "en": " The calculation excluding operations related to public debt is derived from the map, which only names that subfunction, without saying what it includes. Consolidated effective expenditure by function from the open data, the basis of the reading for ",
           "partes": [
             {
-              "pt": " A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha;",
-              "en": " The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt;",
+              "pt": " A conta sem as operações relacionadas com a dívida pública calcula-se a partir do mapa,",
+              "en": " The calculation excluding operations related to public debt is derived from the map,",
               "classe": "leitura",
               "sobre": "que as linhas sem a subfunção 01.7 são derivadas pelo projeto",
               "apoios": [
@@ -59160,8 +59127,8 @@
               ]
             },
             {
-              "pt": " o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela.",
-              "en": " the map only names that subfunction, and this explainer does not say what goes into it.",
+              "pt": " que só dá o nome a essa subfunção, sem dizer o que entra nela.",
+              "en": " which only names that subfunction, without saying what it includes.",
               "classe": "diz",
               "apoios": [
                 {
@@ -59172,8 +59139,8 @@
               ]
             },
             {
-              "pt": " A base da explicação de ",
-              "en": " The basis of the ",
+              "pt": " A despesa efetiva consolidada por função dos dados abertos, a base da leitura de ",
+              "en": " Consolidated effective expenditure by function from the open data, the basis of the reading for ",
               "classe": "diz",
               "apoios": [
                 {
@@ -59187,12 +59154,12 @@
         },
         {
           "caminho": "naoDiz[0][5]",
-          "pt": ", a despesa efetiva consolidada por função dos dados abertos, ainda não existe para ",
-          "en": " explainer, consolidated effective expenditure by function from the open data, does not yet exist for ",
+          "pt": ", ainda não está publicada para ",
+          "en": ", has not yet been published for ",
           "partes": [
             {
-              "pt": ", a despesa efetiva consolidada por função dos dados abertos, ainda não existe para ",
-              "en": " explainer, consolidated effective expenditure by function from the open data, does not yet exist for ",
+              "pt": ", ainda não está publicada para ",
+              "en": ", has not yet been published for ",
               "classe": "diz",
               "apoios": [
                 {
@@ -59211,21 +59178,13 @@
         },
         {
           "caminho": "naoDiz[0][7]",
-          "pt": "; quando existir, esta explicação passa a essa base.",
-          "en": "; when it does, this explainer moves to that basis.",
+          "pt": ".",
+          "en": ".",
           "partes": [
             {
-              "pt": "; quando existir, esta explicação passa a essa base.",
-              "en": "; when it does, this explainer moves to that basis.",
-              "classe": "leitura",
-              "sobre": "quando a base dos dados abertos de 2027 pode existir",
-              "apoios": [
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "após a aprovação do OE na Assembleia da República"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }

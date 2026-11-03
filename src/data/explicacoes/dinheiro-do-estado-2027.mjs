@@ -108,16 +108,16 @@ export const DINHEIRO_DO_ESTADO_2027 = {
       id: 'sem-a-divida',
       titulo: { pt: 'Sem as operações relacionadas com a dívida pública', en: 'Without the operations related to public debt' },
       conteudo: [
-        { figura: { forma: 'barras-do-livro', id: 'funcoes-sem-divida', linhas: N10.map(S27), titulo: { pt: 'As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)', en: 'The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)' } } },
+        { figura: { forma: 'barras-do-livro', id: 'funcoes-sem-divida', linhas: N10.map(S27), titulo: { pt: 'As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública', en: 'The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt' } } },
         {
           paragrafo: {
             pt: [
-              'Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A ',
+              'A conta usa a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A ',
               { nome: S27('03') }, ' leva ', { claim: S27('03') }, ' de cada cem euros, a ', { nome: S27('02') }, ' ', { claim: S27('02') }, ', a ', { nome: S27('06') }, ' ', { claim: S27('06') },
               ', a ', { nome: S27('05') }, ' ', { claim: S27('05') }, ' e o ', { nome: S27('08') }, ' ', { claim: S27('08') }, '.',
             ],
             en: [
-              'This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. ',
+              'The calculation uses the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. ',
               { nome: S27('03'), inicial: true }, ' takes ', { claim: S27('03') }, ' of every hundred euros, ', { nome: S27('02') }, ' ', { claim: S27('02') }, ', ', { nome: S27('06') }, ' ', { claim: S27('06') },
               ', ', { nome: S27('05') }, ' ', { claim: S27('05') }, ' and ', { nome: S27('08') }, ' ', { claim: S27('08') }, '.',
             ],
@@ -182,24 +182,24 @@ export const DINHEIRO_DO_ESTADO_2027 = {
   naoDiz: [
     {
       pt: [
-        'Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.',
-        ' O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, não está nele.',
+        'É o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.',
+        ' O mapa cobre só o subsetor da Administração Central; a Segurança Social, com as pensões, não está nele.',
         { se: [O_TOTAL_ACIMA_DO_CONSOLIDADO], partes: [
-          ' Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ',
+          ' Os valores não são consolidados, porque contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ',
           { claim: CONS27, sufixo: EUR }, ' em ', { periodo: CONS27 }, '.',
         ] },
-        ' A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A base da explicação de ',
-        { periodo: BASE_DE_2026 }, ', a despesa efetiva consolidada por função dos dados abertos, ainda não existe para ', { periodo: F27('01') }, '; quando existir, esta explicação passa a essa base.',
+        ' A conta sem as operações relacionadas com a dívida pública calcula-se a partir do mapa, que só dá o nome a essa subfunção, sem dizer o que entra nela. A despesa efetiva consolidada por função dos dados abertos, a base da leitura de ',
+        { periodo: BASE_DE_2026 }, ', ainda não está publicada para ', { periodo: F27('01') }, '.',
       ],
       en: [
-        'This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.',
-        ' The map is only the central administration subsector: Social Security, with pensions, is not in it.',
+        'This is the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.',
+        ' The map covers only the central administration subsector; Social Security, with pensions, is not in it.',
         { se: [O_TOTAL_ACIMA_DO_CONSOLIDADO], partes: [
-          ' The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ',
+          ' The values are unconsolidated because they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ',
           { claim: CONS27, sufixo: EUR }, ' in ', { periodo: CONS27 }, '.',
         ] },
-        ' The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the ',
-        { periodo: BASE_DE_2026 }, ' explainer, consolidated effective expenditure by function from the open data, does not yet exist for ', { periodo: F27('01') }, '; when it does, this explainer moves to that basis.',
+        ' The calculation excluding operations related to public debt is derived from the map, which only names that subfunction, without saying what it includes. Consolidated effective expenditure by function from the open data, the basis of the reading for ',
+        { periodo: BASE_DE_2026 }, ', has not yet been published for ', { periodo: F27('01') }, '.',
       ],
     },
   ],

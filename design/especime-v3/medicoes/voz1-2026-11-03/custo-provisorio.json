@@ -1,0 +1,150 @@
+{
+  "chamadas_ate_esta_medicao": 77,
+  "invocacoes_por_curto": 34,
+  "corridas": [
+    {
+      "registo": "<temporario>/voz1-antes.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir design/especime-v3/medicoes/voz1-2026-11-03/antes.json"
+    },
+    {
+      "registo": "<temporario>/voz1-antes2.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir design/especime-v3/medicoes/voz1-2026-11-03/antes.json"
+    },
+    {
+      "registo": "<temporario>/voz1-build.log",
+      "comando": "npm run build"
+    },
+    {
+      "registo": "<temporario>/voz1-explicacoes.log",
+      "comando": "npm run check:explicacoes"
+    },
+    {
+      "registo": "<temporario>/voz1-rp4nb.log",
+      "comando": "node 'tests/cartao/rp4nb.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-medir-intermedio.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir <temporario>/voz1-intermedio.json"
+    },
+    {
+      "registo": "<temporario>/voz1-gate.log",
+      "comando": "npm run gate:html"
+    },
+    {
+      "registo": "<temporario>/voz1-voz.log",
+      "comando": "npm run check:voz"
+    },
+    {
+      "registo": "<temporario>/voz1-plantas.log",
+      "comando": "node tests/voz/voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-gate2.log",
+      "comando": "npm run gate:html"
+    },
+    {
+      "registo": "<temporario>/voz1-typecheck.log",
+      "comando": "npm run typecheck"
+    },
+    {
+      "registo": "<temporario>/voz1-medir3.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir <temporario>/voz1-intermedio3.json"
+    },
+    {
+      "registo": "<temporario>/voz1-astro2.log",
+      "comando": "npm run astro -- build"
+    },
+    {
+      "registo": "<temporario>/voz1-typecheck2.log",
+      "comando": "npm run typecheck"
+    },
+    {
+      "registo": "<temporario>/voz1-superficie.log",
+      "comando": "node tests/voz/agenda-voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-medir-final-pre.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir <temporario>/voz1-final-pre.json"
+    },
+    {
+      "registo": "<temporario>/voz1-voz2.log",
+      "comando": "npm run check:voz"
+    },
+    {
+      "registo": "<temporario>/voz1-selos.log",
+      "comando": "npm run check:selos"
+    },
+    {
+      "registo": "<temporario>/voz1-superficie2.log",
+      "comando": "node tests/voz/agenda-voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-build-final.log",
+      "comando": "npm run build"
+    },
+    {
+      "registo": "<temporario>/voz1-integridade.log",
+      "comando": "sh -c 'npm run check:documentos && npm run check:edicoes && npm run check:frases-compostas && npm run typecheck'"
+    },
+    {
+      "registo": "<temporario>/voz1-stamp.log",
+      "comando": "npm run stamp:version"
+    },
+    {
+      "registo": "<temporario>/voz1-voz3.log",
+      "comando": "npm run check:voz"
+    },
+    {
+      "registo": "<temporario>/voz1-ledger.log",
+      "comando": "npm run ledger:check"
+    },
+    {
+      "registo": "<temporario>/voz1-medir4.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir <temporario>/voz1-medida4.json"
+    },
+    {
+      "registo": "<temporario>/voz1-plantas2.log",
+      "comando": "node tests/voz/voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-explicacoes2.log",
+      "comando": "npm run check:explicacoes"
+    },
+    {
+      "registo": "<temporario>/voz1-build3.log",
+      "comando": "npm run build"
+    },
+    {
+      "registo": "<temporario>/voz1-plantas3.log",
+      "comando": "node tests/voz/voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-plantas4.log",
+      "comando": "node tests/voz/voz1.mjs"
+    },
+    {
+      "registo": "<temporario>/voz1-explicacoes3.log",
+      "comando": "npm run check:explicacoes"
+    },
+    {
+      "registo": "<temporario>/voz1-typecheck3.log",
+      "comando": "npm run typecheck"
+    },
+    {
+      "registo": "<temporario>/voz1-depois.log",
+      "comando": "node scripts/voz-autorreferencia.mjs --medir <temporario>/voz1-depois.json"
+    },
+    {
+      "registo": "<temporario>/voz1-lugar.log",
+      "comando": "npm run check:lugar"
+    }
+  ],
+  "tokens_observados": {
+    "input_tokens": 10828871,
+    "cached_input_tokens": 10663040,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 47578,
+    "reasoning_output_tokens": 18615,
+    "total_tokens": 10876449
+  }
+}

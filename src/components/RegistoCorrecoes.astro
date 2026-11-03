@@ -282,14 +282,6 @@ const palavraRevisoes =
                     {rotulo(e.kind)}
                   </span>
                   {' '}
-                  {s.correcoes.colunaAfirmacao}:{' '}
-                  <code
-                    data-correcao-claim={e.claim}
-                    data-correcao-n={String(e.n)}
-                    data-correcao-campo="id"
-                  >
-                    {e.claim}
-                  </code>
                 </p>
               </div>
             ) : e.tipo === 'texto' ? (

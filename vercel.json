@@ -11,6 +11,20 @@
   },
   "routes": [
     {
+      "src": "/a-verificar/?",
+      "status": 308,
+      "headers": {
+        "Location": "/metodo"
+      }
+    },
+    {
+      "src": "/en/to-verify/?",
+      "status": 308,
+      "headers": {
+        "Location": "/en/method"
+      }
+    },
+    {
       "src": "/(.*)",
       "headers": {
         "X-Content-Type-Options": "nosniff",

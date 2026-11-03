@@ -388,18 +388,6 @@ const p = prova(lang);
     <aside class="aparelho">
       <LegendaDaMarca s={s} />
 
-      {/* O MARCADOR: a marca, e a porta da sua página. A frase que a explicava
-          saiu (Emenda 15): dizia «É o único marcador de incerteza deste sítio…»,
-          que é o sítio a falar de si. O que a marca quer dizer continua escrito,
-          por extenso, na página que existe para isso, e a porta é esta. */}
-      <div class="aparelho-bloco">
-        <span class="linha-campo-k">{s.livro.marcadorK}</span>
-        <p class="aparelho-nota">
-          <Marcador lang={lang} />
-
-        </p>
-        <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
-      </div>
 
       {
         /**

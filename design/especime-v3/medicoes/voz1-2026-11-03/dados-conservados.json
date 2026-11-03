@@ -1,0 +1,10 @@
+{
+  "src/data/agenda.json": {
+    "igual_a_HEAD": true,
+    "sha256": "34ac1cc25d8e9f714073bba6cf794b1ab25970d6def5f9065680910b9b6848dc"
+  },
+  "src/data/calendario.json": {
+    "igual_a_HEAD": true,
+    "sha256": "a1ea6604f7055f42dd4fdf950bdae3cc1cb861a4bb21d51abbf2cf4373f62fcc"
+  }
+}

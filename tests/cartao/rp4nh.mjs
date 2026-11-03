@@ -17,7 +17,7 @@ assert.deepEqual(historia(linhas.get(ids[1])),[]);
 const le=f=>parse(fs.readFileSync(f,'utf8'));
 const normal=s=>s.replace(/\s+/g,' ').trim();
 export function lingua(root,lang) {
- const esperado=lang==='pt'?'[a verificar]':'[to verify]';
+ const esperado=lang==='pt'?'por confirmar na fonte':'to be confirmed at the source';
  const erros=[];
  for(const e of root.querySelectorAll('.marcador'))if(normal(e.textContent)!==esperado)erros.push('RP4N-h: marca fora da língua da edição ('+lang+', texto)');
  for(const e of root.querySelectorAll('[data-marca]'))if(e.getAttribute('data-marca')!==esperado)erros.push('RP4N-h: marca fora da língua da edição ('+lang+', marca de água)');

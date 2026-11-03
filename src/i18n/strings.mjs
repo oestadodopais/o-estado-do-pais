@@ -321,7 +321,7 @@ export const STRINGS = {
       passagemDe: 'Passagem de:',
       paginaDaDefinicao: 'página',
       dataOriginalAusente: 'Data do pedido original por confirmar.',
-      marcadorDoSelo: '[a verificar]',
+      marcadorDoSelo: 'por confirmar na fonte',
       /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
          um título de estudo em cinzento. */
@@ -496,8 +496,8 @@ export const STRINGS = {
       estados: {
         em_curso: 'Em curso',
         a_seguir: 'A seguir',
-        concluido: 'Concluído',
-        retirado: 'Retirado',
+        concluido: 'Trabalho concluído',
+        retirado: 'Item retirado',
       },
       /* O quadro de estados (IDENTIDADE.md §7). Quatro colunas, uma por estado,
          cada uma com a sua contagem por `data-prova` e a âncora da sua secção
@@ -578,7 +578,7 @@ export const STRINGS = {
       eixoK: 'O calendário, no tempo',
       eixoLegendaK: 'Abrir cada acontecimento',
       datadosK: 'Com data publicada pela fonte',
-      semDataK: 'Sem data, porque a fonte não publica nenhuma',
+      semDataK: 'Sem data anunciada',
       fonteK: 'Fonte',
       janelaEntre: 'entre',
       janelaE: 'e',
@@ -1821,7 +1821,7 @@ export const STRINGS = {
     explicacoes: {
       metaDescription: 'O que mudou nos números do país na última semana, e explicações em português corrente de como os números se ligam.',
       listaK: 'As explicações',
-      oQueIstoNaoDiz: 'O que isto não diz',
+      oQueIstoNaoDiz: 'Como ler estes números',
       numerosDaFigura: 'Os números desta figura',
     },
     semana: {
@@ -1844,9 +1844,9 @@ export const STRINGS = {
       variosDeForma: ' mudaram só na forma de escrever',
       formasK: 'Os números que mudaram só na forma de escrever',
       fonteReviu: '; a fonte reviu ',
-      umaRevisao: ' deles, que aqui ainda tem o valor anterior',
-      variasRevisoes: ' deles, que aqui ainda têm o valor anterior',
-      revisoesK: 'Os números que a fonte reviu e que aqui ainda têm o valor anterior',
+      umaRevisao: ' deles, ainda com o valor de antes da revisão',
+      variasRevisoes: ' deles, ainda com o valor de antes da revisão',
+      revisoesK: 'Os números que a fonte reviu, ainda com o valor de antes da revisão',
       publicado: ': publicado ',
       fonteAgora: '; a fonte escreve agora ',
       naReleitura: ', na releitura de ',
@@ -2036,7 +2036,7 @@ export const STRINGS = {
       registoProvenienciaConta: 'revisões de proveniência',
       registoProvenienciaContaSing: 'revisão de proveniência',
       registoProvenienciaNota:
-        'O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
+        'O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
       /* OS DOIS PREFIXOS QUE SÓ UM LEITOR DE ECRÃ OUVIA saíram a 22.09.2026
          (B1c), com a tabela de quatro colunas que os pedia. Existiam porque ali
          os dois valores viviam em células separadas, sem nada entre eles, e um
@@ -3316,7 +3316,7 @@ export const STRINGS = {
       passagemDe: 'Passage from:',
       paginaDaDefinicao: 'page',
       dataOriginalAusente: 'Original request date to be confirmed.',
-      marcadorDoSelo: '[to verify]',
+      marcadorDoSelo: 'to be confirmed at the source',
       selo: 'source',
       seloDaCasa: 'row',
       provisorio: 'provisional',
@@ -3390,9 +3390,9 @@ export const STRINGS = {
       h1: 'What gets measured next',
       estados: {
         em_curso: 'Under way',
-        a_seguir: 'Next',
-        concluido: 'Concluded',
-        retirado: 'Withdrawn',
+        a_seguir: 'Up next',
+        concluido: 'Work concluded',
+        retirado: 'Item withdrawn',
       },
       quadroDeEstadosK: 'What is in each state',
       semRegisto: 'no record',
@@ -3444,7 +3444,7 @@ export const STRINGS = {
       eixoK: 'The calendar, in time',
       eixoLegendaK: 'Open each event',
       datadosK: 'With a date the source publishes',
-      semDataK: 'With no date, because the source publishes none',
+      semDataK: 'No announced date',
       fonteK: 'Source',
       janelaEntre: 'between',
       janelaE: 'and',
@@ -3856,7 +3856,7 @@ export const STRINGS = {
     explicacoes: {
       metaDescription: 'What changed in the country’s figures over the last week, and explainers in everyday words on how the figures fit together.',
       listaK: 'The explainers',
-      oQueIstoNaoDiz: 'What this does not say',
+      oQueIstoNaoDiz: 'How to read these figures',
       numerosDaFigura: 'The figures in this chart',
     },
     semana: {
@@ -3879,9 +3879,9 @@ export const STRINGS = {
       variosDeForma: ' changed only in how they are written',
       formasK: 'The figures that changed only in how they are written',
       fonteReviu: '; the source revised ',
-      umaRevisao: ' of them, which still carries the previous value here',
-      variasRevisoes: ' of them, which still carry the previous value here',
-      revisoesK: 'The numbers the source revised that still carry the previous value here',
+      umaRevisao: ' of them, still showing the value from before the revision',
+      variasRevisoes: ' of them, still showing the value from before the revision',
+      revisoesK: 'The numbers the source revised, still showing the value from before the revision',
       publicado: ': published ',
       fonteAgora: '; the source now writes ',
       naReleitura: ', in the re-reading of ',
@@ -4037,7 +4037,7 @@ export const STRINGS = {
       registoProvenienciaConta: 'provenance revisions',
       registoProvenienciaContaSing: 'provenance revision',
       registoProvenienciaNota:
-        'The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
+        'The value did not change; the way to find it did: a source that moves address, for example. Each row below leads to its own history, where the revision is written out in full.',
       /* Ver a razão na edição portuguesa (B1c, 22.09.2026). */
       colunaAfirmacao: 'Claim',
 

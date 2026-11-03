@@ -442,8 +442,8 @@ const FRASES = {
     en: 'rows with no provenance field left to confirm',
   },
   divida: {
-    pt: 'linhas com pelo menos um campo marcado [a verificar]',
-    en: 'rows with at least one field marked [to verify]',
+    pt: 'linhas com pelo menos um campo por confirmar na fonte',
+    en: 'rows with at least one field to be confirmed at the source',
   },
   derivadas: {
     pt: 'linhas calculadas',

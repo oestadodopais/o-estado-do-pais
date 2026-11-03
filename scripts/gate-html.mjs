@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {retirarAusencias} from '../src/lib/ausencias-voz1.mjs';
 import {marcaDeLinguaEv3Valida} from './ev3-lingua-conferir.mjs';
 import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
@@ -2083,6 +2084,7 @@ function nomeDoReciboB1(recibo, lang) {
 }
 
 function verificaTexto({ rota, root, err, recorte = null }) {
+  root = parse(retirarAusencias(root.toString()));
   const { slug } = rota.params;
   const lang = rota.lang;
   const chave = `${slug}/${lang}`;
@@ -3204,8 +3206,8 @@ const EVENTOS_DO_CALENDARIO = new Map(
  * Trocar «Em curso» por «A seguir» no gabarito pára a construção.
  */
 const ROTULO_DO_ESTADO = {
-  pt: { em_curso: 'Em curso', a_seguir: 'A seguir', concluido: 'Concluído', retirado: 'Retirado' },
-  en: { em_curso: 'Under way', a_seguir: 'Next', concluido: 'Concluded', retirado: 'Withdrawn' },
+  pt: { em_curso: 'Em curso', a_seguir: 'A seguir', concluido: 'Trabalho concluído', retirado: 'Item retirado' },
+  en: { em_curso: 'Under way', a_seguir: 'Up next', concluido: 'Work concluded', retirado: 'Item withdrawn' },
 };
 
 /** O separador com que a página escreve uma lista de linhas afectadas. */
@@ -3407,19 +3409,7 @@ function valoresDoLivroEmProsa(texto, chave, idsDaPagina) {
  * (revisão cruzada 2, #5).
  */
 function camposObrigatoriosDoItem(item) {
-  const id = item.id;
-  const chaves = [
-    `${id}.titulo`,
-    `${id}.estado`,
-    `${id}.porque`,
-    `${id}.proposto_em`,
-    `${id}.entrada`,
-    `${id}.ultima_alteracao`,
-  ];
-  if (item.pergunta) chaves.push(`${id}.pergunta`);
-  if (item.registo_previo_estado) chaves.push(`${id}.registo_previo_em`);
-  if (item.decidido_em) chaves.push(`${id}.decidido_em`);
-  return chaves;
+  return [`${item.id}.titulo`, `${item.id}.estado`, `${item.id}.ultima_alteracao`, ...(item.pergunta ? [`${item.id}.pergunta`] : [])];
 }
 
 /** O que um critério tem de mostrar, dentro do seu próprio elemento. */
@@ -3789,7 +3779,7 @@ function seloDaLinha(id, lang) {
   const calculado = eDerivada(claim) ? `${s.prov.calculado} · ` : '';
   /* Sem espaço antes do marcador: o gabarito põe-no no elemento a seguir e o
      DOM não traz espaço nenhum entre os dois, e é o DOM que o leitor vê. */
-  const marcador = provenienciaIncompleta(claim) ? s.prov.marcadorDoSelo : '';
+  const marcador = provenienciaIncompleta(claim) ? ` · ${s.prov.marcadorDoSelo}` : '';
   const etiqueta = normalizeWhitespace(
     conhecido ? `${calculado}${publicador}` : porConfirmar ? s.prov.marcadorDoSelo : s.prov.calculado,
   );
@@ -6896,7 +6886,7 @@ for (const file of ficheirosHtml(DIST)) {
     if (trecho!==undefined && trecho!==null && (!fragmentoDeclarado || typeof bruto!=='string' || !trecho.trim() || !bruto.includes(trecho))) {
       err(`fragmento de "${id}" não corresponde ao campo e à declaração do item.`); continue;
     }
-    const esperado = fragmentoDeclarado ? trecho : bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
+    const esperado = fragmentoDeclarado ? trecho : bruto === POR_VERIFICAR ? (linguaPagina === 'en' ? 'to be confirmed at the source' : 'por confirmar na fonte') : bruto;
     if (esperado === null || esperado === undefined) {
       err(
         `a página renderiza o campo "${campo}" de "${id}", mas a linha não tem esse campo` +
@@ -7465,7 +7455,7 @@ for (const file of ficheirosHtml(DIST)) {
 
     const renderizado = textoTranscrito(el);
     const bruto = normalizeWhitespace(String(resolvido.texto));
-    const esperado = bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
+    const esperado = bruto === POR_VERIFICAR ? (chave.startsWith('evento:') && chave.endsWith('.marcador') ? (linguaPagina === 'en' ? 'no announced date' : 'sem data anunciada') : (linguaPagina === 'en' ? 'to be confirmed at the source' : 'por confirmar na fonte')) : bruto;
     /**
      * UM CAMPO QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
      * 04.09.2026).
@@ -7610,105 +7600,9 @@ for (const file of ficheirosHtml(DIST)) {
         );
       }
 
-      /* Os critérios: um elemento por critério, e cada um com o que é SEU. */
-      const elementosDeCriterio = artigo.querySelectorAll('[data-agenda-criterio]');
-      const esperadosCriterios = (item.criterios ?? []).length;
-      if (elementosDeCriterio.length !== esperadosCriterios) {
-        err(
-          `o item "${id}" rende ${elementosDeCriterio.length} critério(s) e o registo tem ` +
-            `${esperadosCriterios}.`,
-        );
-      }
-      for (const [n, criterio] of (item.criterios ?? []).entries()) {
-        const elemento = elementosDeCriterio.find(
-          (e) => e.getAttribute('data-agenda-criterio') === String(n),
-        );
-        if (!elemento) {
-          err(`o item "${id}" não rende o critério ${n} do registo.`);
-          continue;
-        }
-        const dentro = chavesDe(elemento);
-        for (const chave of camposDoCriterio(item, n, criterio)) {
-          if (!dentro.has(chave)) {
-            err(
-              `o critério ${n} de "${id}" não rende "${chave}", que o registo tem.\n` +
-                `      A conferência é DENTRO do critério: um critério esvaziado com a marca ` +
-                `intacta contava como presente.`,
-            );
-          }
-        }
-      }
-
-      /* O estado do registo prévio: a marca contra o registo, e a frase visível
-         contra a cópia do portão. */
-      if (item.registo_previo_estado) {
-        const marca = artigo.querySelector('[data-agenda-registo-previo]');
-        const lido = marca?.getAttribute('data-agenda-registo-previo') ?? null;
-        if (lido !== item.registo_previo_estado) {
-          err(
-            `o item "${id}" rende o registo prévio como "${lido ?? '(nada)'}" e o registo diz ` +
-              `"${item.registo_previo_estado}".`,
-          );
-        } else {
-          const esperado = ROTULO_DO_REGISTO_PREVIO[lingua][item.registo_previo_estado];
-          if (!textoTranscrito(marca).startsWith(esperado)) {
-            err(
-              `o item "${id}" diz o registo prévio com "${textoTranscrito(marca).slice(0, 60)}" ` +
-                `e o estado "${item.registo_previo_estado}" escreve-se "${esperado}".\n` +
-                `      Um registo por selar anunciado como selado é a promessa que a página não ` +
-                `pode fazer.`,
-            );
-          }
-        }
-      }
-
-      /* O histórico: uma entrada por entrada, com a sua transição e o seu motivo. */
-      const entradas = artigo.querySelectorAll('[data-agenda-historico]');
-      const esperadasEntradas = (item.historico ?? []).length;
-      if (entradas.length !== esperadasEntradas) {
-        err(
-          `o item "${id}" rende ${entradas.length} entrada(s) de histórico e o registo tem ` +
-            `${esperadasEntradas}.`,
-        );
-      }
-      for (const [n, entrada] of (item.historico ?? []).entries()) {
-        const elemento = entradas.find(
-          (e) => e.getAttribute('data-agenda-historico') === String(n),
-        );
-        if (!elemento) {
-          err(`o item "${id}" não rende a entrada ${n} do histórico.`);
-          continue;
-        }
-        const dentro = chavesDe(elemento);
-        for (const chave of camposDaEntrada(item, n, entrada)) {
-          if (!dentro.has(chave)) {
-            err(`a entrada ${n} do histórico de "${id}" não rende "${chave}".`);
-          }
-        }
-        const marca = elemento.querySelector('[data-agenda-transicao]');
-        const esperadaMarca = `${entrada.de ?? ''}>${entrada.para}`;
-        const lidaMarca = marca?.getAttribute('data-agenda-transicao') ?? null;
-        if (lidaMarca !== esperadaMarca) {
-          err(
-            `a entrada ${n} do histórico de "${id}" rende a transição "${lidaMarca ?? '(nada)'}" ` +
-              `e o registo diz "${esperadaMarca}".`,
-          );
-          continue;
-        }
-        const esperadaFrase = !entrada.de
-          ? `${PREFIXO_DA_TRANSICAO[lingua]} ${rotulos[entrada.para]}`
-          : entrada.de === entrada.para
-            ? `${PREFIXO_DE_MANUTENCAO[lingua]} ${rotulos[entrada.para]}`
-            : `${rotulos[entrada.de]} → ${rotulos[entrada.para]}`;
-        const lidaFrase = normalizeWhitespace(textoTranscrito(marca));
-        if (lidaFrase !== esperadaFrase) {
-          err(
-            `a entrada ${n} do histórico de "${id}" escreve a transição "${lidaFrase}" e o ` +
-              `registo leva-a de "${entrada.de ?? '(nada)'}" a "${entrada.para}", que se ` +
-              `escreve "${esperadaFrase}".`,
-          );
-        }
-      }
+      // VOZ-1: a maquinaria conserva-se nos dados e não se imprime.
+      const permitidos = new Set(camposObrigatoriosDoItem(item));
+      for (const chave of chavesDe(artigo)) if (!permitidos.has(chave)) err(`VOZ-1: campo interno da agenda impresso: ${chave}`);
 
       /* E cada campo que a página existe para mostrar. */
       const rendidos = chavesDe(artigo);
@@ -7749,7 +7643,7 @@ for (const file of ficheirosHtml(DIST)) {
         );
         continue;
       }
-      const esperado = MOTIVO_SEM_DATA_RENDIDO[lingua][motivo];
+      const esperado = lingua === 'en' ? 'no announced date' : 'sem data anunciada';
       if (!esperado) {
         err(`o acontecimento "${ident}" traz motivo_sem_data "${motivo}", que não é um dos dois.`);
         continue;

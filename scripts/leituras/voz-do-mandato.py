@@ -8,7 +8,7 @@ from pathlib import Path
 W = Path(sys.argv[1]); tabela = (W / 'design/especime-v3/VOZ-MARCADORES.md').read_text(encoding='utf-8')
 marcadores = []
 for linha in tabela.splitlines():
-    m = re.match(r'^\|\s*(raiz|palavra)\s*\|\s*([^|]+?)\s*\|', linha)
+    m = re.match(r'^\|\s*(raiz|prefixo|palavra)\s*\|\s*([^|]+?)\s*\|', linha)
     if m: marcadores.append((m.group(1), m.group(2)))
 if not marcadores: sys.exit('nenhum marcador lido da tabela')
 total = 0
@@ -23,6 +23,8 @@ for caminho in sys.argv[2:]:
             marca_baixa = marca.lower()
             if tipo == 'raiz':
                 bate = marca_baixa in baixo
+            elif tipo == 'prefixo':
+                bate = re.search(r'(?<![\wÀ-ÿ])' + re.escape(marca_baixa), baixo) is not None
             else:
                 bate = re.search(r'(?<![\wÀ-ÿ])' + re.escape(marca_baixa) + r'(?![\wÀ-ÿ])', baixo) is not None
             if bate: achados.append((tipo, marca, f[:110]))
