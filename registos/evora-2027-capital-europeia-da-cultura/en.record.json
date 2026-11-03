@@ -1830,7 +1830,7 @@
    ],
    "i": 49,
    "kind": "paragraph",
-   "text": "In October the Rossio de São Brás timetable changed. On 23 October 2026 the Câmara wrote that the second part of the works, fully funded by the Fundo Ambiental, was due to be finished by the end of the year but cannot be finished in time («a obra não poderá ser concluída nesse prazo»), because of the public procurement deadlines and the prior review by the Tribunal de Contas. According to the mayor, quoted in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the Floresta Nómada artistic project, part of the European Capital of Culture programme. The amendment to the multi-year investment plan for the Rossio was approved by the Câmara on 15 October 2026, with the CDU abstaining, and by the Assembleia Municipal on 22 October 2026, by a majority, with 15 votes in favour and 18 abstentions. On 29 October 2026 the Câmara approved awarding the Rossio works, Laboratório Floresta Nómada, to DECOVERDI, S.A., with the AD councillors abstaining; on 15 October 2026 it had ratified a 60-day extension of the first phase's deadline."
+   "text": "In October the Rossio de São Brás timetable changed. On 23 October 2026 the Câmara wrote that the second part of the works, fully funded by the Fundo Ambiental, was due to be finished by the end of the year but cannot be finished in time («a obra não poderá ser concluída nesse prazo»), because of the public procurement deadlines and the prior review by the Tribunal de Contas. According to the mayor, quoted in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the Floresta Nómada artistic project, part of the European Capital of Culture programme. The amendment to the multi-year investment plan for the Rossio was approved by the Câmara on 15 October 2026, with the CDU abstaining, and by the Assembleia Municipal on 22 October 2026, by a majority, with 15 votes in favour and 18 abstentions. On 29 October 2026 the Câmara approved awarding the Rossio works, Laboratório Floresta Nómada, to DECOVERDI, S.A., with the AD councillors abstaining; on 15 October 2026 it had ratified a 60-day extension of the first phase's deadline. In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the second part is the one funded by the Fundo Ambiental."
   },
   {
    "figures": [
@@ -7411,6 +7411,7 @@
    "excerpt": "Aprovado por maioria, com 15 votos a favor (13 do PS, 1 do MCE e 1 do MICAZA) e 18 abstenções",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-am-rossio-abstencoes",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "abstenções",
@@ -7436,6 +7437,7 @@
    "excerpt": "Aprovado por maioria, com 15 votos a favor (13 do PS, 1 do MCE e 1 do MICAZA) e 18 abstenções",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-am-rossio-favor",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "votos",
@@ -7461,6 +7463,7 @@
    "excerpt": "Sessão Extraordinária realizada no dia 22 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-data-am-22-10",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "texto",
@@ -7486,6 +7489,7 @@
    "excerpt": "Sessão Extraordinária realizada no dia 22 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-data-am-22-10-en",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "source_value": "22 de outubro de 2026",
@@ -7512,6 +7516,7 @@
    "excerpt": "Sessão Extraordinária realizada no dia 22 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-data-am-22-10-en-n0",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "algarismo do documento",
@@ -7537,6 +7542,7 @@
    "excerpt": "Sessão Extraordinária realizada no dia 22 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-data-am-22-10-en-n1",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "algarismo do documento",
@@ -7562,6 +7568,7 @@
    "excerpt": "Sessão Extraordinária realizada no dia 22 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-data-am-22-10-n0",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "algarismo do documento",
@@ -7587,6 +7594,7 @@
    "excerpt": "Sessão Extraordinária realizada no dia 22 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.182237+00:00",
    "id": "ev3-data-am-22-10-n1",
+   "publisher": "Assembleia Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
    "unit": "algarismo do documento",
@@ -7595,7 +7603,7 @@
   "ev3-data-cm-15-10": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7612,6 +7620,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "texto",
@@ -7620,7 +7629,7 @@
   "ev3-data-cm-15-10-en": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7637,6 +7646,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-en",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "source_value": "15 de outubro de 2026",
@@ -7646,7 +7656,7 @@
   "ev3-data-cm-15-10-en-n0": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7663,6 +7673,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-en-n0",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7671,7 +7682,7 @@
   "ev3-data-cm-15-10-en-n1": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7688,6 +7699,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-en-n1",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7696,7 +7708,7 @@
   "ev3-data-cm-15-10-n0": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7713,6 +7725,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-n0",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7721,7 +7734,7 @@
   "ev3-data-cm-15-10-n1": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7738,6 +7751,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-n1",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7763,6 +7777,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "texto",
@@ -7788,6 +7803,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-en",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "source_value": "29 de outubro de 2026",
@@ -7814,6 +7830,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-en-n0",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7839,6 +7856,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-en-n1",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7864,6 +7882,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-n0",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7889,6 +7908,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-n1",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7915,6 +7935,7 @@
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-data-noticia-rossio-en",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "source_value": "23/10/2026",
@@ -7942,6 +7963,7 @@
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-data-noticia-rossio-en-n0",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
@@ -7968,6 +7990,7 @@
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-data-noticia-rossio-en-n1",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
@@ -7994,6 +8017,7 @@
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-data-noticia-rossio-longa",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "source_value": "23/10/2026",
@@ -8021,6 +8045,7 @@
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-data-noticia-rossio-longa-n0",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
@@ -8047,6 +8072,7 @@
    "excerpt": "Atualizado em 23/10/2026",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-data-noticia-rossio-longa-n1",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "algarismo do documento",
@@ -8072,6 +8098,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "texto",
@@ -8097,6 +8124,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao-n0",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8122,6 +8150,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao-n1",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8147,6 +8176,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao-n2",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8155,7 +8185,7 @@
   "ev3-rossio-1fase-dias": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Câmara Municipal de Évora"
+    "Presidente da Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -8172,6 +8202,7 @@
    "excerpt": "Prorrogação graciosa de prazo, por mais 60 dias, referente à Empreitada de Requalificação do Rossio de S. Brás, ia fase",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-rossio-1fase-dias",
+   "publisher": "Presidente da Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "dias",
@@ -8197,10 +8228,37 @@
    "excerpt": "a obra não poderá ser concluída nesse prazo",
    "fetched_at": "2026-11-03T11:10:05.208914+00:00",
    "id": "ev3-rossio-nao-concluida",
+   "publisher": "Município de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
    "unit": "texto",
    "value": "a obra não poderá ser concluída nesse prazo"
+  },
+  "ev3-rossio-prr": {
+   "access_date": "2026-11-03",
+   "attributed_to": [
+    "Câmara Municipal de Évora"
+   ],
+   "derivation": "transcrito",
+   "document": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html",
+    "locator": "corpo da página",
+    "source_sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03",
+    "title": "Aberto concurso de requalificação do Rossio de São Brás"
+   },
+   "documentary_form": true,
+   "evidence": {
+    "file": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html",
+    "sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03"
+   },
+   "excerpt": "apoiada por financiamento do Plano de Recuperação e Resiliência",
+   "fetched_at": "2026-11-03T16:03:55.050705+00:00",
+   "id": "ev3-rossio-prr",
+   "publisher": "Município de Évora",
+   "source_type": "government",
+   "source_url": "https://www.cm-evora.pt/aberto-concurso-de-requalificacao-do-rossio-de-sao-bras/",
+   "unit": "texto",
+   "value": "apoiada por financiamento do Plano de Recuperação e Resiliência"
   },
   "ev3-ultima-noticia-en": {
    "access_date": "2026-11-03",
@@ -8223,6 +8281,7 @@
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
    "id": "ev3-ultima-noticia-en",
+   "publisher": "Associação Évora 2027",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "source_value": "11/08/2026",
@@ -8250,6 +8309,7 @@
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
    "id": "ev3-ultima-noticia-en-n0",
+   "publisher": "Associação Évora 2027",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",
@@ -8276,6 +8336,7 @@
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
    "id": "ev3-ultima-noticia-en-n1",
+   "publisher": "Associação Évora 2027",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",
@@ -8302,6 +8363,7 @@
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
    "id": "ev3-ultima-noticia-longa",
+   "publisher": "Associação Évora 2027",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "source_value": "11/08/2026",
@@ -8329,6 +8391,7 @@
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
    "id": "ev3-ultima-noticia-longa-n0",
+   "publisher": "Associação Évora 2027",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",
@@ -8355,6 +8418,7 @@
    "excerpt": "Évora_27 apresenta o Coro do Vagar, o coro comunitário do Alentejo Central 11/08/2026 12:29",
    "fetched_at": "2026-11-03T11:10:08.339505+00:00",
    "id": "ev3-ultima-noticia-longa-n1",
+   "publisher": "Associação Évora 2027",
    "source_type": "other",
    "source_url": "https://www.evora2027.com/noticias",
    "unit": "algarismo do documento",

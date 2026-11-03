@@ -1,0 +1,56 @@
+[
+  {
+    "ficheiro": "15.pdf",
+    "publicador": "Presidente da Câmara Municipal de Évora",
+    "ocorrencias": 1,
+    "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
+    "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
+    "metodo": "Texto normalizado; contagem sem distinção de maiúsculas."
+  },
+  {
+    "ficheiro": "22.pdf",
+    "publicador": "Assembleia Municipal de Évora",
+    "ocorrencias": 3,
+    "sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital_de_Deliberacoes_2026_10_22_extra.pdf",
+    "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
+    "metodo": "Texto normalizado; contagem sem distinção de maiúsculas."
+  },
+  {
+    "ficheiro": "29.pdf",
+    "publicador": "Município de Évora",
+    "ocorrencias": 1,
+    "sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
+    "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf",
+    "metodo": "Texto normalizado; contagem sem distinção de maiúsculas."
+  },
+  {
+    "ficheiro": "23.html",
+    "publicador": "Município de Évora",
+    "ocorrencias": 15,
+    "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
+    "url": "https://www.cm-evora.pt/assembleia-municipal-de-evora-aprovou-medidas-de-reprogramacao-orcamental-na-empreitada-de-requalificacao-e-renaturalizacao-do-rossio-de-s-bras/",
+    "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
+    "metodo": "Texto normalizado; contagem sem distinção de maiúsculas."
+  },
+  {
+    "ficheiro": "noticias.html",
+    "publicador": "Associação Évora 2027",
+    "ocorrencias": 19,
+    "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+    "url": "https://www.evora2027.com/noticias",
+    "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
+    "metodo": "Texto normalizado; contagem sem distinção de maiúsculas."
+  },
+  {
+    "ficheiro": "concurso-rossio.html",
+    "publicador": "Município de Évora",
+    "ocorrencias": 15,
+    "sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03",
+    "url": "https://www.cm-evora.pt/aberto-concurso-de-requalificacao-do-rossio-de-sao-bras/",
+    "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html",
+    "metodo": "Texto normalizado; contagem sem distinção de maiúsculas."
+  }
+]

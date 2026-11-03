@@ -1085,6 +1085,38 @@
           "origem": "Nome Évora 2027 no cabeçalho e no rodapé da página Notícias."
         }
       ]
+    },
+    {
+      "nome": "Presidente da Câmara Municipal de Évora",
+      "aliases": [],
+      "dominios": [
+        "www.cm-evora.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ev3-data-cm-15-10",
+          "documento": "EDITAL",
+          "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
+          "origem": "Nome no texto alojado; 1 ocorrências, conferidas pelo guião EV3-I."
+        }
+      ]
+    },
+    {
+      "nome": "Associação Évora 2027",
+      "aliases": [],
+      "dominios": [
+        "www.evora2027.com"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ev3-ultima-noticia",
+          "documento": "Notícias",
+          "endereco": "https://www.evora2027.com/noticias",
+          "origem": "Nome no texto alojado; 19 ocorrências, conferidas pelo guião EV3-I."
+        }
+      ]
     }
   ],
   "documentos": [
@@ -2545,7 +2577,7 @@
     {
       "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
       "titulo": "EDITAL",
-      "nome": "Município de Évora",
+      "nome": "Presidente da Câmara Municipal de Évora",
       "rotulos": {},
       "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
       "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf"
@@ -2577,10 +2609,18 @@
     {
       "url": "https://www.evora2027.com/noticias",
       "titulo": "Notícias",
-      "nome": "Évora 2027",
+      "nome": "Associação Évora 2027",
       "rotulos": {},
       "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
       "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html"
+    },
+    {
+      "url": "https://www.cm-evora.pt/aberto-concurso-de-requalificacao-do-rossio-de-sao-bras/",
+      "titulo": "Aberto concurso de requalificação do Rossio de São Brás",
+      "nome": "Município de Évora",
+      "rotulos": {},
+      "sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03",
+      "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html"
     }
   ],
   "correcoes": [

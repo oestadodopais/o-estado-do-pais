@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const req=createRequire(path.join(process.cwd(),'package.json'));const {parse}=req('node-html-parser');const {edicoesGuardadas,primeiraEdicaoServida}=await import(pathToFileURL(path.join(process.cwd(),'src/lib/edicoes.mjs')));
+const pasta='design/especime-v3/medicoes/ev3-i-2026-11-03';const fase=process.argv[2];const lista=[];
+for(const e of edicoesGuardadas().filter(e=>e.slug==='evora-2027-capital-europeia-da-cultura')){const html=['antes','dist'].includes(fase)?fs.readFileSync('dist'+e.rota+'/index.html','utf8'):primeiraEdicaoServida(e.slug,e.lang,e.data);const root=parse(html);const txt=root.text;lista.push({rota:e.rota,marcas:root.querySelectorAll('[data-ev3-nome]').length,texto_sha256:createHash('sha256').update(txt).digest('hex')});}
+assert.equal(lista.length,2);if(fase!=='antes'){const antes=JSON.parse(fs.readFileSync(pasta+'/edicoes-antes.json'));for(const e of lista){assert.equal(e.marcas,0);assert.equal(e.texto_sha256,antes.find(a=>a.rota===e.rota).texto_sha256);}}
+fs.writeFileSync(pasta+'/edicoes-'+fase+'.json',JSON.stringify(lista,null,2)+'\n');console.log(JSON.stringify(lista));
