@@ -1,0 +1,29 @@
+{
+  "retiradas": 1238,
+  "com_espacos_dentro_de_aspas": 84,
+  "com_texto_dentro_dessas_aspas": 1,
+  "casos": [
+    {
+      "nome": "controlo atual",
+      "codigo": 0,
+      "duracao_segundos": 132.57,
+      "retiradas_exigidas": 0,
+      "retiradas_recusadas": 0,
+      "linhas": []
+    },
+    {
+      "nome": "quatro plantas em páginas distintas",
+      "codigo": 1,
+      "duracao_segundos": 94.171,
+      "retiradas_exigidas": 4,
+      "retiradas_recusadas": 4,
+      "linhas": [
+        3900,
+        5437,
+        5438,
+        916
+      ]
+    }
+  ],
+  "originais_intactos": true
+}
