@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T17:08:24+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "J1",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a oposição dos financiamentos reposta (pt)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a8f105d4f4d5ea982fb26a792dc30756cd19a99c9c22e0aaf995d491a9987b1f",
+   "sha256_depois": "c41360cb640336ae405d25754820f475e2e7ab11a07369ae020c827015167d3b",
+   "contexto_antes": "a em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas diz como os dois financiamentos se relacionam.</p><p data-registo-bloco=\"51\" data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/pt#51\">A <span class=\"texto-figura\" data-registo=\"evora-2027-capita",
+   "contexto_depois": "a em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a segunda parte é a do Fundo Ambiental.</p><p data-registo-bloco=\"51\" data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/pt#51\">A <span class=\"texto-figura\" data-registo=\"evora-2027-capita"
+  },
+  {
+   "id": "J2",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "as propostas sem antecedente (en)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cd14a2c92ba1762fbc788b1134eab9cbb723b02c2f4cb97e6f901d140ff2523a",
+   "sha256_depois": "7cf3ffd2fe55ba47aadbbc62cc771802dc88765034b560aa4267d727e574339f",
+   "contexto_antes": "rocurement deadlines and the prior review by the <span data-ev3-nome lang=\"pt-PT\">Tribunal de Contas</span>. According to the mayor, quoted in the same notice, the two budget adjustment proposals made for that reason avoid losing the funds for the works and give the flexibility to carry them out in step with the <span data-ev3-nome lang=\"pt-PT\">Floresta Nómada</span> artist",
+   "contexto_depois": "rocurement deadlines and the prior review by the <span data-ev3-nome lang=\"pt-PT\">Tribunal de Contas</span>. According to the mayor, quoted in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the <span data-ev3-nome lang=\"pt-PT\">Floresta Nómada</span> artist"
+  },
+  {
+   "id": "J3",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a abstenção de 15.10 dada ao PS em vez da CDU (pt)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c41360cb640336ae405d25754820f475e2e7ab11a07369ae020c827015167d3b",
+   "sha256_depois": "7bcf401e54dd207ae4e9b654a3ff0a17a2933efd89f7465466bf744fae202d9f",
+   "contexto_antes": "an> de outubro de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#50.1\" data-registo-row=\"ev3-data-cm-15-10-n1\">2026</span>, com a abstenção da CDU, e pela Assembleia Municipal a <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#50.2\" data-registo-row=\"ev3-data-am-22-10-n0\"",
+   "contexto_depois": "an> de outubro de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#50.1\" data-registo-row=\"ev3-data-cm-15-10-n1\">2026</span>, com a abstenção do PS, e pela Assembleia Municipal a <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#50.2\" data-registo-row=\"ev3-data-am-22-10-n0\""
+  },
+  {
+   "id": "J4",
+   "ficheiro": "ledger/publicadores.json",
+   "descricao": "o edital de 29.10 de volta a Município de Évora",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2ec03053eea2835da98ca43cdb12eca11b1cf383283002c6aaa5a9a20d89e667",
+   "sha256_depois": "3b3975582e10826ade81f2042b95800930a643bd7abcda65fad616ecf0bf0ac9",
+   "contexto_antes": "2ea5fe3098f2dbae782c81a5079e\",\n      \"arquivo\": \"content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf\"\n    },\n    {\n      \"url\": \"https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf\",\n      \"titulo\": \"EDITAL\",\n      \"nome\": \"Câmara Municipal de Évora\",\n      \"rotulos\": {},\n      \"sha256\": \"77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9\",\n      \"arquivo\": \"content/19 Évora 2027 Capital Europe",
+   "contexto_depois": "2ea5fe3098f2dbae782c81a5079e\",\n      \"arquivo\": \"content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf\"\n    },\n    {\n      \"url\": \"https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf\",\n      \"titulo\": \"EDITAL\",\n      \"nome\": \"Município de Évora\",\n      \"rotulos\": {},\n      \"sha256\": \"77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9\",\n      \"arquivo\": \"content/19 Évora 2027 Capital Europe"
+  },
+  {
+   "id": "J5",
+   "ficheiro": "motor/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/ledger.json",
+   "descricao": "a atribuição da prorrogação de volta ao presidente no livro do estudo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb",
+   "sha256_depois": "07916a226b0f6dffed35bb5813fd4bc6a01099864330cabe83102a17edfa19c2",
+   "contexto_antes": "da Cultura/Technical Source/outubro-2026/raw/22.pdf\",\n        \"sha256\": \"b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e\"\n      }\n    },\n    {\n      \"id\": \"ev3-rossio-1fase-dias\",\n      \"value\": \"60\",\n      \"publisher\": \"Câmara Municipal de Évora\",\n      \"unit\": \"dias\",\n      \"source_url\": \"https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf\",\n      \"fetched_at\": \"2026-11-03T11:09:48.806630+00:00\",\n      \"access_date\": \"2026-11-03\",\n      \"excerpt\": \"Prorrogação graciosa de prazo, por mais 60 dias, referente à Empreitada de Requalificação do Rossio de S. Brás, ia fase\",\n      \"source_type\": \"government\",\n      \"attributed_to\": [\n        \"Câmara Municipal de Évora\"\n      ],\n      \"derivation\": \"transcrito\",\n      \"documentary_form\": true,\n      \"document\": {\n        \"title\": \"EDITAL\",\n        \"file\": \"content/19 Évora 202",
+   "contexto_depois": "da Cultura/Technical Source/outubro-2026/raw/22.pdf\",\n        \"sha256\": \"b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e\"\n      }\n    },\n    {\n      \"id\": \"ev3-rossio-1fase-dias\",\n      \"value\": \"60\",\n      \"publisher\": \"Câmara Municipal de Évora\",\n      \"unit\": \"dias\",\n      \"source_url\": \"https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf\",\n      \"fetched_at\": \"2026-11-03T11:09:48.806630+00:00\",\n      \"access_date\": \"2026-11-03\",\n      \"excerpt\": \"Prorrogação graciosa de prazo, por mais 60 dias, referente à Empreitada de Requalificação do Rossio de S. Brás, ia fase\",\n      \"source_type\": \"government\",\n      \"attributed_to\": [\n        \"Presidente da Câmara Municipal de Évora\"\n      ],\n      \"derivation\": \"transcrito\",\n      \"documentary_form\": true,\n      \"document\": {\n        \"title\": \"EDITAL\",\n        \"file\": \"content/19 Évora 202"
+  }
+ ]
+}

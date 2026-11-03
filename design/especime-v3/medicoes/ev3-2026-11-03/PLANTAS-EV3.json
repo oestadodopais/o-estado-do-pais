@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T15:14:30+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/documento/index.html",
+   "descricao": "os votos da Assembleia Municipal trocados na edição portuguesa (18 a favor e 15 abstenções)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3e477e8401c43fb0f8813aadaa378506a702e4ad862bbc4291a3d400adf7f136",
+   "sha256_depois": "2ed096f6228918dc77202acae8057c9075f9f481215b263ff8f55c08cb6feced",
+   "contexto_antes": "l de investimentos para o Rossio foi aprovada pela Câmara a 15 de outubro de 2026, com a abstenção da CDU, e pela Assembleia Municipal a 22 de outubro de 2026, com 15 votos a favor e 18 abstenções. A 29 de outubro de 2026, a Câmara aprovou a adjudicação da empreitada do Rossio, Laboratório Floresta Nómada, à DECOVERDI, S.A., com a abstenção das vereadora",
+   "contexto_depois": "l de investimentos para o Rossio foi aprovada pela Câmara a 15 de outubro de 2026, com a abstenção da CDU, e pela Assembleia Municipal a 22 de outubro de 2026, com 18 votos a favor e 15 abstenções. A 29 de outubro de 2026, a Câmara aprovou a adjudicação da empreitada do Rossio, Laboratório Floresta Nómada, à DECOVERDI, S.A., com a abstenção das vereadora"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/document/index.html",
+   "descricao": "os dias de prazo da primeira fase passam a 90 na edição inglesa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "fd1e2a65e95266c608dc89f6e1b381ceaefd044a747e0d2b55a493c2598fd372",
+   "sha256_depois": "775953c4bdf4a4bac9d72deb9eaf2bf0e980994d18fa7cce48b06f024cac1caf",
+   "contexto_antes": "n data-ev3-nome lang=\"pt-PT\">Laboratório Floresta Nómada</span>, to DECOVERDI, S.A., with the AD councillors abstaining; the first phase had already been given 60 more days on 15 October 2026.</p>\n<p>On 29 October 2026 the <span data-ev3-nome lang=\"pt-PT\">Câmara</span> also ratified a licence for conservation works requested by th",
+   "contexto_depois": "n data-ev3-nome lang=\"pt-PT\">Laboratório Floresta Nómada</span>, to DECOVERDI, S.A., with the AD councillors abstaining; the first phase had already been given 90 more days on 15 October 2026.</p>\n<p>On 29 October 2026 the <span data-ev3-nome lang=\"pt-PT\">Câmara</span> also ratified a licence for conservation works requested by th"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "src/data/correcoes.mjs",
+   "descricao": "a entrada de Évora 2027 passa à natureza texto: conta como correção e diz Estudo corrigido",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "50d3c5b14bd15d83fb162d081b7479f661709e547f7d8c29610914202d12ddd7",
+   "sha256_depois": "25e99832f25fa5b39f053c4fec7c4e7b5dfa0fc4026eb8300d437fb9c98f09d7",
+   "contexto_antes": "and a sentence said the campers had written what a news report attributes to them; they are news reports' accounts, and the sentences now name them.\",\n  } },\n  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-03', frase: {\n    pt: 'Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciame",
+   "contexto_depois": "and a sentence said the campers had written what a news report attributes to them; they are news reports' accounts, and the sentences now name them.\",\n  } },\n  { kind: 'texto', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-03', frase: {\n    pt: 'Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciame"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "built/en/corrections/index.html",
+   "descricao": "a lede antiga reposta na página inglesa das correções",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5fc924f6268a5641884e7dad4534f5bf3a209a91bb4bf4ea5837a37ffd3032f3",
+   "sha256_depois": "5cb8c565490f1a22a066afefccf5b78230c90268d21cb1f353811149911675c6",
+   "contexto_antes": " class=\"rotulo-ia-final\"><a href=\"/en/method\">Method</a>.</span></p></div><div style=\"padding-top:clamp(20px,3vw,34px)\"><span class=\"eyebrow\">Corrections</span><h1 style=\"margin-top:12px\">What was corrected, and what changed</h1></div><section class=\"metodo-secao\" id=\"politica\"><div><h2>The policy</h2></div><div class=\"metodo-corpo\"><p class=\"metodo-p\">When something published here is w",
+   "contexto_depois": " class=\"rotulo-ia-final\"><a href=\"/en/method\">Method</a>.</span></p></div><div style=\"padding-top:clamp(20px,3vw,34px)\"><span class=\"eyebrow\">Corrections</span><h1 style=\"margin-top:12px\">What was corrected, and what changed</h1><p class=\"lede\">Correcting in silence is the cheapest way of lying.</p></div><section class=\"metodo-secao\" id=\"politica\"><div><h2>The policy</h2></div><div class=\"metodo-corpo\"><p class=\"metodo-p\">When something published here is w"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/documento/index.html",
+   "descricao": "a abstenção na adjudicação atribuída às vereadoras do PS em vez das da AD",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2ed096f6228918dc77202acae8057c9075f9f481215b263ff8f55c08cb6feced",
+   "sha256_depois": "14893f404be69a9949e70a4bef912a55ae9f9ce400a978b2aa9e8dd2a21430d7",
+   "contexto_antes": "votos a favor e 15 abstenções. A 29 de outubro de 2026, a Câmara aprovou a adjudicação da empreitada do Rossio, Laboratório Floresta Nómada, à DECOVERDI, S.A., com a abstenção das vereadoras da AD; a primeira fase já tinha recebido, a 15 de outubro de 2026, mais 60 dias de prazo.</p>\n<p>A 29 de outubro de 2026, a Câmara ratificou também um licenciamento ",
+   "contexto_depois": "votos a favor e 15 abstenções. A 29 de outubro de 2026, a Câmara aprovou a adjudicação da empreitada do Rossio, Laboratório Floresta Nómada, à DECOVERDI, S.A., com a abstenção das vereadoras do PS; a primeira fase já tinha recebido, a 15 de outubro de 2026, mais 60 dias de prazo.</p>\n<p>A 29 de outubro de 2026, a Câmara ratificou também um licenciamento "
+  }
+ ]
+}

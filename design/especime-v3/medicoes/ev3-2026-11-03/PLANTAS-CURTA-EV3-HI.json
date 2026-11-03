@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T16:24:47+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "S1",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a votação da Assembleia dita por unanimidade (pt)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "35e4e131683bf2e7f60942deef7eae6dfec7ac74dfa410d477e6a5eb9a9c3b49",
+   "sha256_depois": "d3a677757f6761f597f2c07bc3bce54260bc76758ae690303137fc174247093e",
+   "contexto_antes": "span> de outubro de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.5\" data-registo-row=\"ev3-data-am-22-10-n1\">2026</span>, por maioria, com <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.6\" data-registo-row=\"ev3-am-rossio-favor\">15</span> votos a favor e <span ",
+   "contexto_depois": "span> de outubro de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.5\" data-registo-row=\"ev3-data-am-22-10-n1\">2026</span>, por unanimidade, com <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.6\" data-registo-row=\"ev3-am-rossio-favor\">15</span> votos a favor e <span "
+  },
+  {
+   "id": "S2",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a finalidade das propostas atribuída à Câmara em vez do presidente (en)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c3daff7398c8a21f6c5cebbe537bb07efaf774feebb6269a28882fe9aadd3636",
+   "sha256_depois": "7842797e48fc89c0dbd68e6024e4db8868e5af9babda16f4f8e35bc6335f06ca",
+   "contexto_antes": "er concluída nesse prazo»), because of the public procurement deadlines and the prior review by the <span data-ev3-nome lang=\"pt-PT\">Tribunal de Contas</span>. According to the mayor, quoted in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the <span data-ev3-nome lang=\"pt-PT\">Floresta Nómad",
+   "contexto_depois": "er concluída nesse prazo»), because of the public procurement deadlines and the prior review by the <span data-ev3-nome lang=\"pt-PT\">Tribunal de Contas</span>. According to the Câmara, in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the <span data-ev3-nome lang=\"pt-PT\">Floresta Nómad"
+  },
+  {
+   "id": "S3",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a citação da nota do concurso alterada: financiada a 100% pelo PRR (pt)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d3a677757f6761f597f2c07bc3bce54260bc76758ae690303137fc174247093e",
+   "sha256_depois": "39c52aea57d72815a81ffcff88c94be301dbb6afea2fe18fa17d694b171bdd0c",
+   "contexto_antes": "ossio-1fase-dias\">60</span> dias do prazo da primeira fase. Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a segunda parte é a do Fundo Ambiental.</p><p data-registo-bloco=\"50\" data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/pt#50\">A <span class=\"text",
+   "contexto_depois": "ossio-1fase-dias\">60</span> dias do prazo da primeira fase. Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «financiada a 100% pelo Plano de Recuperação e Resiliência»; a segunda parte é a do Fundo Ambiental.</p><p data-registo-bloco=\"50\" data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/pt#50\">A <span class=\"text"
+  },
+  {
+   "id": "S4",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a prorrogação dada como concedida a 15.10 em vez de ratificada (pt)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "39c52aea57d72815a81ffcff88c94be301dbb6afea2fe18fa17d694b171bdd0c",
+   "sha256_depois": "e34c85e828348416951ce34c960feeb2769677907952e28d93f201dc95256fdd",
+   "contexto_antes": "n> de outubro de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.11\" data-registo-row=\"ev3-data-cm-15-10-n1\">2026</span>, tinha ratificado uma prorrogação de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.12\" data-registo-row=\"ev3-rossio-1fase-dias\">60</span> dias do prazo d",
+   "contexto_depois": "n> de outubro de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.11\" data-registo-row=\"ev3-data-cm-15-10-n1\">2026</span>, tinha concedido uma prorrogação de <span class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#49.12\" data-registo-row=\"ev3-rossio-1fase-dias\">60</span> dias do prazo d"
+  },
+  {
+   "id": "S5",
+   "ficheiro": "ledger/publicadores.json",
+   "descricao": "o edital de 15.10 volta a Município de Évora no registo dos documentos",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "92f6117c45434007ea3aeee49fad81a952accd71fd6b052a108838b90494948f",
+   "sha256_depois": "7390ceb35e00736acdf8acda865f14cb822e9902486bd650f9346feaefbd8869",
+   "contexto_antes": " Estado/source/eo-anexo-agosto.xlsx\"\n    },\n    {\n      \"url\": \"https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf\",\n      \"titulo\": \"EDITAL\",\n      \"nome\": \"Presidente da Câmara Municipal de Évora\",\n      \"rotulos\": {},\n      \"sha256\": \"dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9\",\n      \"arquivo\": \"content/19 Évora 2027 Capital Europe",
+   "contexto_depois": " Estado/source/eo-anexo-agosto.xlsx\"\n    },\n    {\n      \"url\": \"https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf\",\n      \"titulo\": \"EDITAL\",\n      \"nome\": \"Município de Évora\",\n      \"rotulos\": {},\n      \"sha256\": \"dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9\",\n      \"arquivo\": \"content/19 Évora 2027 Capital Europe"
+  }
+ ]
+}

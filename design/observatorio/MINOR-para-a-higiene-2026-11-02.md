@@ -26,3 +26,13 @@
 19. As três retiradas parametrizadas (887, 1269, 1270) conferidas em memória contra si próprias, e fora da prova pela voz verdadeira (a leitura da K e da L, 6).
 20. Os registos das corridas do construtor fora do repositório, e as chamadas sem registo (a mesma, 7).
 21. A prova pela voz verdadeira confere intactos só os quatro ficheiros plantados do `dist/` (a mesma, 8).
+24. O pacote da leitura sem a declaração dos corpos alojados quando as linhas estão no livro de um estudo do motor (`pacote.sh` contou zero corpos; a mesma, 14).
+25. A régua da superfície das correções confere a página contra as cadeias que ela própria renderiza; só a política está fixada à letra (a mesma, 15). A régua da VOZ-1 substitui-a.
+26. A regra de que uma atualização não é correção codificada em quatro sítios, sem planta sobre a função partilhada (a mesma, 16); e a fronteira entre atualização e correção assente em duas declarações à mão (a natureza do manifesto e o `kind` da entrada), sem conferir que uma edição de atualização só acrescenta texto (a mesma, 17).
+27. Os números do relatório do construtor por reconciliar (as 30 e as 20 ledes, o conferir-relatorio sem ficheiros; a mesma, 18).
+29. As paráfrases de factos de uma fonte («inteiramente financiada pelo Fundo Ambiental», «prevista para o fim do ano») sem recibo que o leitor alcance: as linhas da prova ficam no livro do estudo sem referência no registo servido (a leitura curta da EV3, 10).
+30. Na edição inglesa, as citações portuguesas sem `lang="pt-PT"`, quando os nomes portugueses o levam (a mesma, 12).
+31. O acabamento de uma passagem pelo lugar de direção por guião sem relatório no pacote da leitura seguinte (a mesma, 14).
+32. A base do portão do motor para o estudo de Évora 2027: nove números casados a menos para quatro números a menos no total, sem explicação no pacote (a mesma, 15).
+33. O guião dos publicadores da EV3-I conta uma ocorrência do nome em qualquer sítio do texto (o edital de 29.10 passou com «Município de Évora», escrito só como destinatário de uma doação); a medida certa é o nome na posição de quem publica (o cabeçalho, o fecho, o rodapé) (a mesma, 26).
+34. A entrada «Presidente da Câmara Municipal de Évora» no registo dos publicadores ficou sem documento, com as provas a apontar o edital de 15.10, que o registo dá agora à Câmara (a leitura curta da adenda J da EV3, 7).
