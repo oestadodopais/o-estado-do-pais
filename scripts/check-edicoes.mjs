@@ -8,7 +8,6 @@ import { load } from 'js-yaml';
 import { parse } from 'node-html-parser';
 import { WORKS } from '../src/data/studies.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
-import { sha256 } from '../src/lib/edicoes.mjs';
 import { conferirEdicoes, conferirTextoHtml } from './edicoes-conferir.mjs';
 const manifesto = load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const paginas = new Map(), dist = process.env.OEDP_DIST ?? 'dist';

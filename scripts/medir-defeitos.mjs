@@ -1720,7 +1720,6 @@ for (const frases of frasesDaVozPorRota.values()) for (const t of frases) rendid
  * mesma expressão do modo `palavra` de `voz.mjs`, com a frase inteira no lugar do
  * marcador.
  */
-const escapaParaRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
  * UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloco S1, 02.10.2026; o texto da passagem S1-c,
  * 03.10.2026; desde a passagem de higiene H3, 05.10.2026, o texto inglês da página «Privacidade»).

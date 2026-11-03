@@ -3,7 +3,7 @@ import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
 import {manifestoDasEdicoes} from '../src/lib/edicoes.mjs';
 import { provaDosBytesDaEdicao } from '../src/lib/leis-da-edicao.mjs';
-import { primeiraEdicao, primeiraEdicaoServida, documentoDaHistoriaServido, edicoesGuardadas } from '../src/lib/edicoes.mjs';
+import { primeiraEdicaoServida, documentoDaHistoriaServido, edicoesGuardadas } from '../src/lib/edicoes.mjs';
 import { conferirTextoHtml, contagemDasCorrecoesNoPortao } from './edicoes-conferir.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 import {naRevisaoDaSemana} from './revisoes-da-semana.mjs';
@@ -338,7 +338,6 @@ import {
 } from '../src/lib/cartoes.mjs';
 import {
   documentoDaEdicao,
-  documentoServido,
   provaDosBytes,
   regiaoDaCabeca,
   MARCA_DOS_ROBOS,
@@ -1569,7 +1568,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   /**
    * 4b — A PROVA DOS BYTES, INDEPENDENTE DO TRANSFORMADOR (segunda passagem).
    *
-   * O ponto 4 acima compara o construído com `documentoServido()` e prova uma
+   * O ponto 4 acima compara o construído com `documentoDaHistoriaServido()` e prova uma
    * coisa mais estreita do que a primeira passagem escreveu: prova que o
    * transformador é DETERMINÍSTICO. Se ele corromper um documento, corrompe os
    * dois lados da igualdade, e a comparação continua verde. Foi o que a leitura
@@ -1682,7 +1681,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   /**
    * 9 · A MOLDURA, E O MARCO PRINCIPAL A UM (bloco F1.8, 03.09.2026).
    *
-   * O ponto 4 compara o construído com `documentoServido()` e por isso não
+   * O ponto 4 compara o construído com `documentoDaHistoriaServido()` e por isso não
    * prova nada sobre a moldura: uma moldura tirada do módulo desaparecia dos
    * dois lados da igualdade e passava em silêncio, que é exactamente a falha
    * que o F0.7 encontrou nas três marcas da casa. Estas conferências leem o

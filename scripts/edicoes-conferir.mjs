@@ -26,7 +26,6 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
     const declaracao=manifesto.edicoes.find(e=>e.slug===w.slug&&e.lang===d.lang);
     if ((declaracao?.edicoes?.length??0)<2) continue;
     const chave = `${w.slug}/${d.lang}`;
-    const excecao = EXCECOES_EDICOES.find(e => e.slug === w.slug && e.lang === d.lang && e.updated === d.updated);
 
     const e = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === d.lang), p = e?.primeira_edicao;
     if (!p || !p.file?.startsWith('_edicoes/') || p.file.includes('..') || p.date !== d.date || !/^[a-f0-9]{64}$/.test(p.sha256 ?? '')) {

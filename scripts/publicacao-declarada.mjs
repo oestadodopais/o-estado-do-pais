@@ -1,5 +1,4 @@
 import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
-import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 /** Régua independente do resolvedor da vista. */
 import { parse } from 'node-html-parser';
 export function conferirDataDeclarada(work, edition, entrada) {
