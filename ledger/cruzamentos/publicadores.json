@@ -3,8 +3,8 @@
     "publicadores.json": {
       "destino": "ledger",
       "origin_path": "publisher/publicadores.json",
-      "origin_sha256": "92f6117c45434007ea3aeee49fad81a952accd71fd6b052a108838b90494948f",
-      "exported_sha256": "92f6117c45434007ea3aeee49fad81a952accd71fd6b052a108838b90494948f",
+      "origin_sha256": "2ec03053eea2835da98ca43cdb12eca11b1cf383283002c6aaa5a9a20d89e667",
+      "exported_sha256": "2ec03053eea2835da98ca43cdb12eca11b1cf383283002c6aaa5a9a20d89e667",
       "exporter": "publisher/export_site_rows.py"
     }
   }

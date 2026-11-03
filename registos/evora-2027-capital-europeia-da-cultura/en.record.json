@@ -1659,9 +1659,16 @@
      "source_sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
      "start": 67,
      "value": "2026"
-    },
+    }
+   ],
+   "i": 49,
+   "kind": "paragraph",
+   "text": "In October the Rossio de São Brás timetable changed. On 23 October 2026 the Câmara wrote that the second part of the works, fully funded by the Fundo Ambiental, was due to be finished by the end of the year but cannot be finished in time («a obra não poderá ser concluída nesse prazo»), because of the public procurement deadlines and the prior review by the Tribunal de Contas. According to the mayor, quoted in the same notice, the two budget adjustment proposals made for that reason avoid losing the funds for the works and give the flexibility to carry them out in step with the Floresta Nómada artistic project, part of the European Capital of Culture programme."
+  },
+  {
+   "figures": [
     {
-     "end": 721,
+     "end": 95,
      "others": [
       "ev3-am-rossio-favor",
       "ev3-data-cm-15-10-en",
@@ -1671,11 +1678,11 @@
      "row": "ev3-data-cm-15-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 719,
+     "start": 93,
      "value": "15"
     },
     {
-     "end": 734,
+     "end": 108,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
@@ -1691,11 +1698,11 @@
      "row": "ev3-data-cm-15-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 730,
+     "start": 104,
      "value": "2026"
     },
     {
-     "end": 798,
+     "end": 172,
      "others": [
       "ev3-data-am-22-10-en",
       "ev3-data-am-22-10-n0"
@@ -1704,11 +1711,11 @@
      "row": "ev3-data-am-22-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 796,
+     "start": 170,
      "value": "22"
     },
     {
-     "end": 811,
+     "end": 185,
      "others": [
       "ev3-data-am-22-10-n1",
       "ev3-data-cm-15-10-en-n1",
@@ -1724,11 +1731,11 @@
      "row": "ev3-data-am-22-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 807,
+     "start": 181,
      "value": "2026"
     },
     {
-     "end": 835,
+     "end": 209,
      "others": [
       "ev3-data-cm-15-10-en",
       "ev3-data-cm-15-10-en-n0",
@@ -1738,20 +1745,20 @@
      "row": "ev3-am-rossio-favor",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 833,
+     "start": 207,
      "value": "15"
     },
     {
-     "end": 858,
+     "end": 232,
      "printed": "18",
      "row": "ev3-am-rossio-abstencoes",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
      "source_sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
-     "start": 856,
+     "start": 230,
      "value": "18"
     },
     {
-     "end": 877,
+     "end": 251,
      "others": [
       "painel-equipa",
       "ev3-data-cm-29-10-en",
@@ -1761,11 +1768,11 @@
      "row": "ev3-data-cm-29-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf",
      "source_sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
-     "start": 875,
+     "start": 249,
      "value": "29"
     },
     {
-     "end": 890,
+     "end": 264,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
@@ -1781,11 +1788,11 @@
      "row": "ev3-data-cm-29-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf",
      "source_sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
-     "start": 886,
+     "start": 260,
      "value": "2026"
     },
     {
-     "end": 1028,
+     "end": 402,
      "others": [
       "ev3-am-rossio-favor",
       "ev3-data-cm-15-10-en",
@@ -1795,11 +1802,11 @@
      "row": "ev3-data-cm-15-10-en-n0",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 1026,
+     "start": 400,
      "value": "15"
     },
     {
-     "end": 1041,
+     "end": 415,
      "others": [
       "ev3-data-am-22-10-en-n1",
       "ev3-data-am-22-10-n1",
@@ -1815,22 +1822,22 @@
      "row": "ev3-data-cm-15-10-en-n1",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 1037,
+     "start": 411,
      "value": "2026"
     },
     {
-     "end": 1062,
+     "end": 436,
      "printed": "60",
      "row": "ev3-rossio-1fase-dias",
      "source_body": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
      "source_sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
-     "start": 1060,
+     "start": 434,
      "value": "60"
     }
    ],
-   "i": 49,
+   "i": 50,
    "kind": "paragraph",
-   "text": "In October the Rossio de São Brás timetable changed. On 23 October 2026 the Câmara wrote that the second part of the works, fully funded by the Fundo Ambiental, was due to be finished by the end of the year but cannot be finished in time («a obra não poderá ser concluída nesse prazo»), because of the public procurement deadlines and the prior review by the Tribunal de Contas. According to the mayor, quoted in the same notice, the proposals avoid losing the funds for the works and give the flexibility to carry them out in step with the Floresta Nómada artistic project, part of the European Capital of Culture programme. The amendment to the multi-year investment plan for the Rossio was approved by the Câmara on 15 October 2026, with the CDU abstaining, and by the Assembleia Municipal on 22 October 2026, by a majority, with 15 votes in favour and 18 abstentions. On 29 October 2026 the Câmara approved awarding the Rossio works, Laboratório Floresta Nómada, to DECOVERDI, S.A., with the AD councillors abstaining; on 15 October 2026 it had ratified a 60-day extension of the first phase's deadline. In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the second part is the one funded by the Fundo Ambiental."
+   "text": "The amendment to the multi-year investment plan for the Rossio was approved by the Câmara on 15 October 2026, with the CDU abstaining, and by the Assembleia Municipal on 22 October 2026, by a majority, with 15 votes in favour and 18 abstentions. On 29 October 2026 the Câmara approved awarding the Rossio works, Laboratório Floresta Nómada, to DECOVERDI, S.A., with the AD councillors abstaining; on 15 October 2026 it had ratified a 60-day extension of the first phase's deadline. In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the Fundo Ambiental, and neither says how the two sources of funding relate."
   },
   {
    "figures": [
@@ -1896,19 +1903,19 @@
      "value": "6"
     }
    ],
-   "i": 50,
+   "i": 51,
    "kind": "paragraph",
    "text": "On 29 October 2026 the Câmara also ratified a licence for conservation works requested by the association itself, for «Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6», in Évora; the notice does not say what the building is or what the works cost. The activity plan quoted above refers to the works on the bid's venues."
   },
   {
    "figures": [],
-   "i": 51,
+   "i": 52,
    "kind": "heading",
    "level": 3,
    "text": "The team"
   },
   {
-   "i": 52,
+   "i": 53,
    "kind": "table",
    "rows": [
     [
@@ -1989,25 +1996,25 @@
      "value": "2 227 710,81"
     }
    ],
-   "i": 53,
+   "i": 54,
    "kind": "paragraph",
    "text": "The 2026 activity plan budgets 54 posts, with 2 227 710,81 € of staff costs."
   },
   {
    "figures": [],
-   "i": 54,
+   "i": 55,
    "kind": "paragraph",
    "text": "The municipality wrote, in its 2025 budget document, what it lost when the association took the project over: «A perda da Equipa de Missão coloca preocupações e questões que exigem um acompanhamento permanente da Câmara Municipal.»"
   },
   {
    "figures": [],
-   "i": 55,
+   "i": 56,
    "kind": "heading",
    "level": 3,
    "text": "Contracting and the programme"
   },
   {
-   "i": 56,
+   "i": 57,
    "kind": "table",
    "rows": [
     [
@@ -2164,19 +2171,19 @@
      "value": "2026"
     }
    ],
-   "i": 57,
+   "i": 58,
    "kind": "paragraph",
    "text": "The address of the programming document the association publishes writes «31MAR26», and the document covers the year 2026, not 2027. The association's latest published news item dates from 11 August 2026 and does not announce the European Capital of Culture programme."
   },
   {
    "figures": [],
-   "i": 58,
+   "i": 59,
    "kind": "heading",
    "level": 3,
    "text": "The Melina Mercouri Prize"
   },
   {
-   "i": 59,
+   "i": 60,
    "kind": "table",
    "rows": [
     [
@@ -2249,48 +2256,48 @@
      "value": "1.500.000"
     }
    ],
-   "i": 60,
+   "i": 61,
    "kind": "paragraph",
    "text": "The association writes in its 2026 plan: «no último trimestre de 2026, em data a definir, será elaborado um último relatório de monitorização e progresso, a entregar ao painel de peritos, fundamental, e requisito, para a decisão de atribuição a Évora_2027 do prémio Melina Mercouri, no valor de 1.500.000€.» No line of the 2026 revenue tables carries it, which is consistent with the payment being deferred, and the 2025 report and accounts does not mention it."
   },
   {
-   "i": 61,
+   "i": 62,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 62,
+   "i": 63,
    "kind": "heading",
    "level": 2,
    "text": "The money, line by line"
   },
   {
    "figures": [],
-   "i": 63,
+   "i": 64,
    "kind": "paragraph",
    "text": "One table per document, and never a table that merges documents. Each line is a value exactly as its own document writes it, with the page where it was read."
   },
   {
    "figures": [],
-   "i": 64,
+   "i": 65,
    "kind": "heading",
    "level": 3,
    "text": "The bid book, selection stage"
   },
   {
    "figures": [],
-   "i": 65,
+   "i": 66,
    "kind": "paragraph",
    "text": "The bid book is laid out as double-page spreads: every PDF sheet prints two pages, each with its own number beneath it. The page cited on each line is the half of the sheet where the value is written. On the sheets whose even page opens a section, the bid book prints it no number, and the line cites the PDF sheet, which is what was read."
   },
   {
    "figures": [],
-   "i": 66,
+   "i": 67,
    "kind": "paragraph",
    "text": "Revenue to cover operating expenditure:"
   },
   {
-   "i": 67,
+   "i": 68,
    "kind": "table",
    "rows": [
     [
@@ -2491,12 +2498,12 @@
   },
   {
    "figures": [],
-   "i": 68,
+   "i": 69,
    "kind": "paragraph",
    "text": "Operating expenditure:"
   },
   {
-   "i": 69,
+   "i": 70,
    "kind": "table",
    "rows": [
     [
@@ -2643,12 +2650,12 @@
   },
   {
    "figures": [],
-   "i": 70,
+   "i": 71,
    "kind": "paragraph",
    "text": "Public-sector revenue for capital expenditure:"
   },
   {
-   "i": 71,
+   "i": 72,
    "kind": "table",
    "rows": [
     [
@@ -2819,12 +2826,12 @@
   },
   {
    "figures": [],
-   "i": 72,
+   "i": 73,
    "kind": "paragraph",
    "text": "The works in the cultural infrastructure table, with the estimated cost the bid book gives them:"
   },
   {
-   "i": 73,
+   "i": 74,
    "kind": "table",
    "rows": [
     [
@@ -3059,13 +3066,13 @@
   },
   {
    "figures": [],
-   "i": 74,
+   "i": 75,
    "kind": "heading",
    "level": 3,
    "text": "The bid book, pre-selection stage"
   },
   {
-   "i": 75,
+   "i": 76,
    "kind": "table",
    "rows": [
     [
@@ -3171,13 +3178,13 @@
      "value": "1 587 603,10"
     }
    ],
-   "i": 76,
+   "i": 77,
    "kind": "paragraph",
    "text": "The selection bid book says what changed between the two: «Relativamente às receitas totais para cobertura de despesas operacionais propostas no bid book de pré-seleção, verifica-se um acréscimo de 1 587 603,10€, que se deve a:» The difference between the two totals written above is not the difference that sentence declares, and neither document explains the distance. It is recorded as it stands."
   },
   {
    "figures": [],
-   "i": 77,
+   "i": 78,
    "kind": "heading",
    "level": 3,
    "text": "Council of Ministers resolution 203/2023"
@@ -3198,12 +3205,12 @@
      "value": "15 000 000"
     }
    ],
-   "i": 78,
+   "i": 79,
    "kind": "paragraph",
    "text": "What it authorises, and the five ceilings it fixes, are all on the same page, p. 86: «1 — Autorizar o Gabinete de Estratégia, Planeamento e Avaliação Culturais (GEPAC) a realizar a despesa relativa à contribuição financeira do Estado para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027, no âmbito da programação cultural, até ao montante global de 15 000 000 EUR.»"
   },
   {
-   "i": 79,
+   "i": 80,
    "kind": "table",
    "rows": [
     [
@@ -3338,20 +3345,20 @@
   },
   {
    "figures": [],
-   "i": 80,
+   "i": 81,
    "kind": "paragraph",
    "text": "The preamble of the same resolution is where the cooperation protocol appears with its date: «foi assinado, em 21 de junho de 2023, um protocolo de cooperação entre as áreas governativas das finanças, da economia e do mar, da cultura e da coesão territorial e o Município de Évora,»"
   },
   {
    "figures": [],
-   "i": 81,
+   "i": 82,
    "kind": "heading",
    "level": 3,
    "text": "Decree-law 124/2023"
   },
   {
    "figures": [],
-   "i": 82,
+   "i": 83,
    "kind": "paragraph",
    "text": "The association's purposes, on p. 69 of Decree-law 124/2023: «A Associação tem como fins o planeamento, promoção, desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027.»"
   },
@@ -3384,37 +3391,37 @@
      "value": "2 000 000"
     }
    ],
-   "i": 83,
+   "i": 84,
    "kind": "paragraph",
    "text": "The only sum Decree-law 124/2023 fixes, on p. 70: «concorre para a constituição do património social da Associação uma contribuição inicial por parte do Estado, a prestar pelo Gabinete de Estratégia, Planeamento e Avaliação Culturais, no valor de € 2 000 000 a pagar em 2024.», that is, 2 000 000 €. All the rest of the State funding points to the protocol, on the same page: «protocolo de cooperação celebrado entre as áreas governativas das finanças, da economia e mar, da cultura, da coesão territorial e o Município de Évora.»"
   },
   {
    "figures": [],
-   "i": 84,
+   "i": 85,
    "kind": "paragraph",
    "text": "The same decree-law obliges the association to publish «A identidade e os elementos curriculares de todos os membros dos seus órgãos sociais, designadamente do órgão de administração, bem como as respetivas remunerações e outros benefícios.». No document read carries them."
   },
   {
    "figures": [],
-   "i": 85,
+   "i": 86,
    "kind": "paragraph",
    "text": "Decree-law 47/2025 added public-interest status to it, with an end date: «é atribuído o estatuto de utilidade pública à Associação até dia 31 de dezembro de 2028.»"
   },
   {
    "figures": [],
-   "i": 86,
+   "i": 87,
    "kind": "heading",
    "level": 3,
    "text": "The association's 2026 activity plan and budget"
   },
   {
    "figures": [],
-   "i": 87,
+   "i": 88,
    "kind": "paragraph",
    "text": "Forecast revenue, by source:"
   },
   {
-   "i": 88,
+   "i": 89,
    "kind": "table",
    "rows": [
     [
@@ -3774,12 +3781,12 @@
   },
   {
    "figures": [],
-   "i": 89,
+   "i": 90,
    "kind": "paragraph",
    "text": "The split of the June 2023 protocol, as this plan writes it:"
   },
   {
-   "i": 90,
+   "i": 91,
    "kind": "table",
    "rows": [
     [
@@ -4028,7 +4035,7 @@
      "value": "1,5"
     }
    ],
-   "i": 91,
+   "i": 92,
    "kind": "paragraph",
    "text": "The same plan writes the execution it expects in 2026 from each of these sources. From Alentejo 2030 it expects 6.500.000 €; from sponsors, 300.000 €. And it writes an additional funding commitment secured from the Government, of 1,5 million euros in total, which it calls Linha do Vagar."
   },
@@ -4064,18 +4071,18 @@
      "value": "2.000.000,00"
     }
    ],
-   "i": 92,
+   "i": 93,
    "kind": "paragraph",
    "text": "A mismatch inside a single paragraph, recorded without correction. The plan writes: «A candidatura para o programa geral de Évora_27 foi aprovada pelo Programa Regional do Alentejo 2030 (ALENTEJO 2030), com um montante global de financiamento de 11.764.710,00€ (quinze milhões de euros)» The figure and the words do not say the same thing. Two lines below, the same paragraph writes «Ações Coletivas – Internacionalização – dotação de 2.000.000,00€ (dois milhões e quinhentos mil euros).», with the same kind of mismatch."
   },
   {
    "figures": [],
-   "i": 93,
+   "i": 94,
    "kind": "paragraph",
    "text": "The balances carried over from 2025, and the expenditure forecast for 2026:"
   },
   {
-   "i": 94,
+   "i": 95,
    "kind": "table",
    "rows": [
     [
@@ -4345,12 +4352,12 @@
   },
   {
    "figures": [],
-   "i": 95,
+   "i": 96,
    "kind": "paragraph",
    "text": "The seven Recovery and Resilience Plan works the same plan lists, with the promoter it gives each of them:"
   },
   {
-   "i": 96,
+   "i": 97,
    "kind": "table",
    "rows": [
     [
@@ -4613,19 +4620,19 @@
   },
   {
    "figures": [],
-   "i": 97,
+   "i": 98,
    "kind": "heading",
    "level": 3,
    "text": "The Mosteiro de São Bento de Cástris, in three documents"
   },
   {
    "figures": [],
-   "i": 98,
+   "i": 99,
    "kind": "paragraph",
    "text": "The same building, São Bento de Cástris (a monastery in the bid, a convent in the association's plan), has a value in each of three documents, and none of them measures the works the same way. The register's value is read in the economy study, and is not repeated here:"
   },
   {
-   "i": 99,
+   "i": 100,
    "kind": "table",
    "rows": [
     [
@@ -4721,19 +4728,19 @@
   },
   {
    "figures": [],
-   "i": 100,
+   "i": 101,
    "kind": "paragraph",
    "text": "Whether the three cover the same works with the same scope is left unknown: the bid estimates, the register approves and the association writes the value of an intervention that is not its own, and no document read relates them."
   },
   {
    "figures": [],
-   "i": 101,
+   "i": 102,
    "kind": "heading",
    "level": 3,
    "text": "The association's 2025 activity report and accounts"
   },
   {
-   "i": 102,
+   "i": 103,
    "kind": "table",
    "rows": [
     [
@@ -4977,7 +4984,7 @@
      "value": "0,01"
     }
    ],
-   "i": 103,
+   "i": 104,
    "kind": "paragraph",
    "text": "The association writes where the money came from: «As Receitas foram provenientes de uma única origem: tendo como base o Protocolo celebrado com o GEPAC - Gabinete de Estratégia, Planeamento e Avaliação Culturais, refletindo a contribuição financeira relativa à área governativa da Cultura, para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura, assim como os apoios referentes à contratação de pessoas através do IEFP.» The revenue-source table, on the same page, writes 1 841 566,89 € from the Ministry of Culture's office, 31 949,23 € from IEFP hiring support and 0,01 € on the line «Outras Receitas». The remaining sources, among them the municipality, CIMAC, Turismo de Portugal and Alentejo 2030, carry «- €», which is not zero: it is a line with no value."
   },
@@ -5018,19 +5025,19 @@
      "value": "449 608,80"
     }
    ],
-   "i": 104,
+   "i": 105,
    "kind": "paragraph",
    "text": "A second mismatch, on the same page. The prose writes «As principais rúbricas de Fornecimentos e Serviços Externos foram os Subcontratos e Trabalhos especializados, com o montante de 449 609,80 € e 277 220,46 € respetivamente, referente á contratação de projetos inscritos no Bidbook, livro de candidatura Évora_27.» and the table just below writes 449 608,80 € on the subcontracts line. The two values are not the same. Both stay."
   },
   {
    "figures": [],
-   "i": 105,
+   "i": 106,
    "kind": "heading",
    "level": 3,
    "text": "The municipality's budget documents"
   },
   {
-   "i": 106,
+   "i": 107,
    "kind": "table",
    "rows": [
     [
@@ -5201,7 +5208,7 @@
   },
   {
    "figures": [],
-   "i": 107,
+   "i": 108,
    "kind": "paragraph",
    "links": [
     {
@@ -5214,13 +5221,13 @@
   },
   {
    "figures": [],
-   "i": 108,
+   "i": 109,
    "kind": "heading",
    "level": 3,
    "text": "The two approved European operations"
   },
   {
-   "i": 109,
+   "i": 110,
    "kind": "table",
    "rows": [
     [
@@ -5431,7 +5438,7 @@
      "value": "2500359.28"
     }
    ],
-   "i": 110,
+   "i": 111,
    "kind": "paragraph",
    "text": "The managing authority's list, reported to June 2026, writes for the same two operations, with no thousands separator and a dot as the decimal separator where there are cents, a total cost of 11764778 and 2941599.16, an eligible cost of 3755424 for the first, and an approved fund of 1750000 and 2500359.28. The list's amounts and the published sheets' amounts say the same thing."
   },
@@ -5466,25 +5473,25 @@
      "value": "11.764.778,00"
     }
    ],
-   "i": 111,
+   "i": 112,
    "kind": "paragraph",
    "text": "A third mismatch, between documents. For the same application, the 2026 activity plan writes 11.764.710,00 € where the operation sheet and the managing authority's list write 11.764.778,00 €. The two figures are not the same, and no document explains the difference. Both stay."
   },
   {
    "figures": [],
-   "i": 112,
+   "i": 113,
    "kind": "paragraph",
    "text": "Percentages do not enter. The VAGAR operation sheet writes one co-financing rate and the managing authority's list writes another for the same operation, and neither document says on what base it is computed."
   },
   {
    "figures": [],
-   "i": 113,
+   "i": 114,
    "kind": "heading",
    "level": 3,
    "text": "The three aggregates, side by side"
   },
   {
-   "i": 114,
+   "i": 115,
    "kind": "table",
    "rows": [
     [
@@ -5661,29 +5668,29 @@
     }
    ],
    "figures": [],
-   "i": 115,
+   "i": 116,
    "kind": "paragraph",
    "text": "No document read bridges these three aggregates. They are built in different ways, they use different reference years, and the document that could link them, the cooperation protocol of June 2023, is not published. This project neither adds them nor chooses between them."
   },
   {
-   "i": 116,
+   "i": 117,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 117,
+   "i": 118,
    "kind": "heading",
    "level": 2,
    "text": "What was not found"
   },
   {
    "figures": [],
-   "i": 118,
+   "i": 119,
    "kind": "paragraph",
    "text": "An absence is content. Each line says what was looked for, where, and what came back."
   },
   {
-   "i": 119,
+   "i": 120,
    "kind": "table",
    "rows": [
     [
@@ -5846,29 +5853,29 @@
   },
   {
    "figures": [],
-   "i": 120,
+   "i": 121,
    "kind": "paragraph",
    "text": "Two readings were not made, and are stated here: the Union decision governing the European Capitals of Culture returned an empty body on all three paths attempted, and the mid-term evaluation of the European Capitals of Culture action was not opened at source. What is known of the decision's content comes from how the panel's report and the competition rules quote it, both official documents, but the legal text itself remains unconfirmed."
   },
   {
-   "i": 121,
+   "i": 122,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 122,
+   "i": 123,
    "kind": "heading",
    "level": 2,
    "text": "What changed"
   },
   {
    "figures": [],
-   "i": 123,
+   "i": 124,
    "kind": "paragraph",
    "text": "One entry per new official document, with the document's date and the date it was read."
   },
   {
-   "i": 124,
+   "i": 125,
    "kind": "table",
    "rows": [
     [
@@ -5918,35 +5925,35 @@
     }
    ],
    "figures": [],
-   "i": 125,
+   "i": 126,
    "kind": "paragraph",
    "text": "The first expected event, and its date: the panel's third monitoring report, set by the panel itself for the autumn of 2026, whose page today answers that it does not exist; and with it, the recommendation on the Melina Mercouri Prize, which the selection report sets for the end of 2026."
   },
   {
-   "i": 126,
+   "i": 127,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 127,
+   "i": 128,
    "kind": "heading",
    "level": 2,
    "text": "Who runs the association"
   },
   {
    "figures": [],
-   "i": 128,
+   "i": 129,
    "kind": "paragraph",
    "text": "It is the decree-law creating the association that fixes these offices, in its article 10 (p. 70): «São órgãos sociais da Associação a assembleia geral, a direção e o fiscal único.» The board is made up of «Um presidente, nomeado por acordo entre o Estado e o Município de Évora, ouvida a assembleia geral;» and of «Uma comissão executiva, composta por quatro membros nomeados nos termos a definir nos Estatutos.»"
   },
   {
    "figures": [],
-   "i": 129,
+   "i": 130,
    "kind": "paragraph",
    "text": "The offices and the names, as the association's «Quem Somos» page writes them, the offices in Portuguese as on the page:"
   },
   {
-   "i": 130,
+   "i": 131,
    "kind": "table",
    "rows": [
     [
@@ -6015,29 +6022,29 @@
   },
   {
    "figures": [],
-   "i": 131,
+   "i": 132,
    "kind": "paragraph",
    "text": "The decree-law that creates the association obliges it to publish the identity of the members of its governing bodies, and this page is that publication. The remuneration, which the same rule obliges it to publish, is in no document read."
   },
   {
-   "i": 132,
+   "i": 133,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 133,
+   "i": 134,
    "kind": "heading",
    "level": 2,
    "text": "The sources"
   },
   {
    "figures": [],
-   "i": 134,
+   "i": 135,
    "kind": "paragraph",
    "text": "The closed list of the reads of 2026-09-15. The sha256 digest, the byte count and the content type of every response are in the manifest of the copies, which travels with this study. The copies are archived outside any public repository."
   },
   {
-   "i": 135,
+   "i": 136,
    "kind": "table",
    "rows": [
     [
@@ -7603,7 +7610,7 @@
   "ev3-data-cm-15-10": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7620,7 +7627,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "texto",
@@ -7629,7 +7636,7 @@
   "ev3-data-cm-15-10-en": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7646,7 +7653,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-en",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "source_value": "15 de outubro de 2026",
@@ -7656,7 +7663,7 @@
   "ev3-data-cm-15-10-en-n0": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7673,7 +7680,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-en-n0",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7682,7 +7689,7 @@
   "ev3-data-cm-15-10-en-n1": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7699,7 +7706,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-en-n1",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7708,7 +7715,7 @@
   "ev3-data-cm-15-10-n0": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7725,7 +7732,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-n0",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7734,7 +7741,7 @@
   "ev3-data-cm-15-10-n1": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -7751,7 +7758,7 @@
    "excerpt": "na Reunião Pública de Câmara de 15 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-data-cm-15-10-n1",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "algarismo do documento",
@@ -7777,7 +7784,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "texto",
@@ -7803,7 +7810,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-en",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "source_value": "29 de outubro de 2026",
@@ -7830,7 +7837,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-en-n0",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7856,7 +7863,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-en-n1",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7882,7 +7889,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-n0",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -7908,7 +7915,7 @@
    "excerpt": "na Reunião Pública de Câmara de 29 de outubro de 2026",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-data-cm-29-10-n1",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8098,7 +8105,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "texto",
@@ -8124,7 +8131,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao-n0",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8150,7 +8157,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao-n1",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8176,7 +8183,7 @@
    "excerpt": "Licenciamento de obras de conservação e deliberação final/Rua da República, n.ºs 131 a 139 e Rua do Cicioso, n.º 6, em Evora. Req: Associação Evora 2027. Processo 1.1388.",
    "fetched_at": "2026-11-03T11:09:49.616183+00:00",
    "id": "ev3-licenca-associacao-n2",
-   "publisher": "Município de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
    "unit": "algarismo do documento",
@@ -8185,7 +8192,7 @@
   "ev3-rossio-1fase-dias": {
    "access_date": "2026-11-03",
    "attributed_to": [
-    "Presidente da Câmara Municipal de Évora"
+    "Câmara Municipal de Évora"
    ],
    "derivation": "transcrito",
    "document": {
@@ -8202,7 +8209,7 @@
    "excerpt": "Prorrogação graciosa de prazo, por mais 60 dias, referente à Empreitada de Requalificação do Rossio de S. Brás, ia fase",
    "fetched_at": "2026-11-03T11:09:48.806630+00:00",
    "id": "ev3-rossio-1fase-dias",
-   "publisher": "Presidente da Câmara Municipal de Évora",
+   "publisher": "Câmara Municipal de Évora",
    "source_type": "government",
    "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
    "unit": "dias",

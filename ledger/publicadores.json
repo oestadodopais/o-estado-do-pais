@@ -1117,6 +1117,29 @@
           "origem": "Nome no texto alojado; 19 ocorrências, conferidas pelo guião EV3-I."
         }
       ]
+    },
+    {
+      "nome": "Câmara Municipal de Évora",
+      "aliases": [],
+      "dominios": [
+        "www.cm-evora.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ev3-data-cm-15-10",
+          "documento": "EDITAL",
+          "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
+          "origem": "Fecho do documento alojado, linha 289 de pdftotext -layout: Câmara Municipal de Évora, 15 de outubro de 2026."
+        },
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "ev3-data-cm-29-10",
+          "documento": "EDITAL",
+          "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
+          "origem": "Fecho do documento alojado, linha 617 de pdftotext -layout: Câmara Municipal de Évora, 29 de outubro de 2026."
+        }
+      ]
     }
   ],
   "documentos": [
@@ -2577,7 +2600,7 @@
     {
       "url": "https://www.cm-evora.pt/wp-content/uploads/2026/10/Edital-RPC-15-de-outubro-de-2026.pdf",
       "titulo": "EDITAL",
-      "nome": "Presidente da Câmara Municipal de Évora",
+      "nome": "Câmara Municipal de Évora",
       "rotulos": {},
       "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
       "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf"
@@ -2593,7 +2616,7 @@
     {
       "url": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
       "titulo": "EDITAL",
-      "nome": "Município de Évora",
+      "nome": "Câmara Municipal de Évora",
       "rotulos": {},
       "sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
       "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf"
