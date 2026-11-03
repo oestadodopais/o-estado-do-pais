@@ -14525,3 +14525,28 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **O que ficou aberto.** A frase dos financiamentos («os dois financiamentos» conta dois que nenhum documento conta), uma mudança pequena no lote seguinte (a EV3-p); a página das correções desliza para o lado (3 427 px a 390, 4 045 px a 1 280, no ar desde as correções de texto; as capturas não mediam a largura), a LAR1 à cabeça da fila; a caixa da primeira página não diz que um estudo foi atualizado (a FP3); os Minor 29 a 34 da lista da higiene; os gargalos do escrivão sem `OEDP_GATE=adiado` e do pacote que não conhece os livros dos estudos; uma operação do FEDER com o nome do Rossio por medir; a VOZ-1, a VOZ-2 e a MET1 à cabeça da fila.
 
 **Os códigos dos portões.** A corrida inteira em f6c598258 (`ev3-conferir-2026-11-03-h`, sobre o `dist/` construído nessa cabeça em `ev3-conferir-2026-11-03-g`, `build` 0): 59 passos, 0 vermelhos, 2 231 s. O `core.gate` do motor em c9a7a06: um vermelho, `publisher.voz_test` (os blocos de cada edição de Évora 2027 passaram de 136 a 137 com o parágrafo partido pela adenda J, e a contagem esperada não o somava); a adenda K soma-o. As capturas: 50, cinco páginas nas duas edições e nas cinco larguras, no Drive do financiador; o manifesto ao lado deste registo. A aterragem escreve o seu recibo.
+
+### 1.219 Terça-feira 03.11.2026 à noite: a LAR1 (nenhuma página desliza para o lado) e a FP3 (a caixa diz que um estudo foi atualizado), e a ordem da noite
+
+**Afecta:** nenhum
+
+**Toca:** §1.218 (a EV3; as observações do financiador), §1.202 (o custo), a regra 8 (a tranca da máquina), a regra 15 (a classe no sítio inteiro), a regra 4 (as réguas de mobília mudam de forma com planta).
+
+**Data:** 03.11.2026, 18:21 UTC (a pergunta do financiador) ao commit dos registos do lote 3.
+
+**O lugar de direção.** O Claude Opus 5.5, pela palavra do financiador de 02.11.2026 às 10:48 UTC. O Codex `gpt-6-astra` (`high`) construiu a LAR1 em três passagens e a FP3 numa; o Opus `leitor` leu o lote a frio (cinco plantas em cinco), retomado com o manifesto dos estudos que faltava no pacote.
+
+**O que o leitor recebe.** Nenhuma página do sítio mais larga do que o ecrã, nas cinco larguras: o registo das correções parte os valores longos (antes, 3 427 px a 390 e 4 045 px a 1 280), e as tabelas dos documentos dos estudos deslizam dentro da sua caixa (antes, dezasseis documentos deslizavam); nas edições guardadas muda só a moldura, e o original e o texto ficam iguais. A caixa «O que há de novo» diz «estudo atualizado» com a data da edição atual quando um estudo é atualizado, e só então (Évora 2027 a 03.11.2026).
+
+**As decisões da noite.**
+1. *18:21 e 18:47 UTC, o financiador:* começar já o resto do trabalho, e a aterragem demorada no GitHub e na Vercel. Decisão: o lote 3 (a LAR1, a EV3-p e a FP3) construído esta noite e aterrado depois das 00:00 UTC; a AT1 à frente da MET1. A EV3-p parou na ED1 (duas edições do mesmo estudo no mesmo dia não se admitem): a regra fica, e a edição de uma correção tem a data do dia em que fica no ar, por isso a EV3-p constrói-se depois das 00:00 UTC.
+2. *18:23 e 18:44 UTC, o financiador:* o Método como página de usar, sem autorreferência. O mandato da MET1 escrito e revisto por este lugar em quatro sítios (sem lede; sem a contagem das entradas; o recibo mostrado em vez de descrito; a secção das mudanças numa linha); as frases do financiamento e do jornalismo passam ao Sobre palavra por palavra, porque são do financiador.
+3. *19:04 e 19:05 UTC, o financiador:* porque esta cadência. Decisão: a tranca passa a proteger só o `build`, a corrida inteira, os portões e a aterragem (na AT1, com medida e planta), e a cadência de duas aterragens por dia cai depois da AT1 medida; a leitura por outra família fica. O financiador às 19:07 UTC: «do as you see fit».
+4. *A fila:* recusou a AT1 à frente da PAI2, que tem o mandato escrito desde 02.11 e não depende dela (o conteúdo pronto passa à frente da maquinaria fora da sexta-feira). A regra seguiu-se: a PAI2 primeiro, depois a AT1, que é condição real da MET1 (a isenção do Método e do Sobre no `voz-do-mandato.py`, acrescentada ao mandato da AT1).
+5. *A LAR1:* parou bem na moldura das edições guardadas; a adenda A deixou mudar só o CSS da moldura, com o original e o texto iguais. A leitura a frio mostrou que o `.vh` do registo (o padrão do texto só para leitores de ecrã, `src/styles/site.css:80`) perdera o `nowrap` sem que a largura o pedisse; a adenda B repôs-lho. A regra `.metodo code` na moldura foi ratificada.
+
+**O custo.** A LAR1 3 pontos pelo contador (1, 2, 0) e a FP3 2, os dois abaixo do degrau de 5. O Codex a 89 % da semana no fecho do lote 3, com o financiador avisado de que a passagem seguinte passa dos 90 %.
+
+**O que ficou aberto.** A PAI2 construída com três vermelhos do navegador (cartão, alvos, sobreposição), na adenda B; a EV3-p, a AT1 e a MET1 no lote 4; os Minor 35 a 39 da higiene; os identificadores «Afirmação: …» do registo na VOZ-1.
+
+**Os códigos dos portões.** A corrida inteira em 9056b204d (`lote3-conferir-2026-11-03-a`, com o `build`): 62 passos, 0 vermelhos, 3 070 s, com a `check:largura` (11 s) e a `check:capturas-largura` (1 s). A adenda B da LAR1 (c9b6d2cea, só CSS): o `build` e a `check:largura` verdes, com a planta. As capturas do lote: 40, quatro páginas nas duas edições e nas cinco larguras, cada uma medida na largura pedida. A aterragem escreve o seu recibo.

@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-03T20:28:49+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "L1",
+   "ficheiro": "src/styles/leitura.css",
+   "descricao": "os valores do registo voltam a uma só linha",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "af3f73548f802966ddbbbb4f1e737f022e92950294ce45619a0dc3b5bec0f836",
+   "sha256_depois": "fcc9191cb842c81a8cf1cfe55fa71e53d1a1a76b01fdee4e1026ab2655bddf87",
+   "contexto_antes": "r .src-chip {\n  margin-left: 8px;\n  font-weight: 400;\n}\n.registo-mudanca [data-correcao-campo='old_value'],\n.registo-mudanca [data-correcao-campo='new_value'],\n.registo-mudanca .vh {\n  white-space: normal;\n  overflow-wrap: anywhere;\n}\n@media (width <= 560px) {\n  .registo-mudanca {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* ==============================",
+   "contexto_depois": "r .src-chip {\n  margin-left: 8px;\n  font-weight: 400;\n}\n.registo-mudanca [data-correcao-campo='old_value'],\n.registo-mudanca [data-correcao-campo='new_value'],\n.registo-mudanca .vh {\n  white-space: nowrap;\n  overflow-wrap: anywhere;\n}\n@media (width <= 560px) {\n  .registo-mudanca {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* =============================="
+  },
+  {
+   "id": "L2",
+   "ficheiro": "tests/largura/largura.mjs",
+   "descricao": "a régua da largura aceita 64 px a mais",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fa1343697d9c12d62b547d34d779db3ed8952d58bae62739df1fba49dd985e73",
+   "sha256_depois": "451cf06c4e827f85e6cfee61d864ea4419932949faa7c92ce6712fb039d51a5d",
+   "contexto_antes": "page.setViewportSize({width:largura,height:900});\n          const r=await medirPagina(page,origem,rota,largura,planta);\n          resultados.push(r);\n          if(r.sw>largura) falhas.push(`${rota}: ${r.sw} > ${largura}`);\n        } catch(e) {\n          resultados.push({pagina:rota,largura,erro:e.message.replaceAll(dist,'<dist>').replaceAll(origem",
+   "contexto_depois": "page.setViewportSize({width:largura,height:900});\n          const r=await medirPagina(page,origem,rota,largura,planta);\n          resultados.push(r);\n          if(r.sw>largura+64) falhas.push(`${rota}: ${r.sw} > ${largura}`);\n        } catch(e) {\n          resultados.push({pagina:rota,largura,erro:e.message.replaceAll(dist,'<dist>').replaceAll(origem"
+  },
+  {
+   "id": "L3",
+   "ficheiro": "src/lib/novidades.mjs",
+   "descricao": "a caixa dá também os estudos corrigidos como atualizados",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2ee3341cef3baeb9b7b16c554fa1b9fe5f79a3192a902c2761a34218b7e8f801",
+   "sha256_depois": "b9add164e7153f9653705498d51d372f278f2828030d77fb0bc66f72968cdd15",
+   "contexto_antes": ".localeCompare(dataPublicacao(w,a) ?? ''))[0];\n    const atual = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === edicao?.lang)?.edicoes.at(-1);\n    const atualizacao = atual?.natureza === 'atualizacao';\n    const data = atualizacao ? atual.data : edicao && dataPublicacao(w,edicao);\n    if (!data) continue;\n    pecas.push({ id: `estudo:${w.slug}`, tipo: atualiz",
+   "contexto_depois": ".localeCompare(dataPublicacao(w,a) ?? ''))[0];\n    const atual = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === edicao?.lang)?.edicoes.at(-1);\n    const atualizacao = ['atualizacao','correcao'].includes(atual?.natureza);\n    const data = atualizacao ? atual.data : edicao && dataPublicacao(w,edicao);\n    if (!data) continue;\n    pecas.push({ id: `estudo:${w.slug}`, tipo: atualiz"
+  },
+  {
+   "id": "L4",
+   "ficheiro": "built/index.html",
+   "descricao": "a data da atualização de Évora 2027 na caixa diferente do manifesto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d74093f1e58bca1bc7f12ee9fed5b87b11a755fdd7834e3fc038449ddf109e12",
+   "sha256_depois": "b2f718d25cca21349105a34085d341f3370caa24f1768fa3a1eaedfde6fa16ab",
+   "contexto_antes": "h2><ol class=\"pp-novidades-lista\"><li data-novidade=\"estudo:evora-2027-capital-europeia-da-cultura\"><time datetime=\"2026-11-03\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.11.2026</time><span class=\"pp-novidade-tipo\"><span data-voz>estudo atualizado</span></span><a href=\"/estudos/evora-2027-capital-europeia-da-cultura\" data-novidade-porta><span",
+   "contexto_depois": "h2><ol class=\"pp-novidades-lista\"><li data-novidade=\"estudo:evora-2027-capital-europeia-da-cultura\"><time datetime=\"2026-11-03\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">02.11.2026</time><span class=\"pp-novidade-tipo\"><span data-voz>estudo atualizado</span></span><a href=\"/estudos/evora-2027-capital-europeia-da-cultura\" data-novidade-porta><span"
+  },
+  {
+   "id": "L5",
+   "ficheiro": "studies-src/_edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html",
+   "descricao": "o original guardado da primeira edição de Évora 2027 com uma frase mudada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+   "sha256_depois": "371b3fcc923f51ca4869a2bd8b04be8b112b08624ce5bdf0e843803d8c92fa56",
+   "contexto_antes": "blica escreve «31MAR26», e o documento cobre o ano de 2026, não o de 2027. À data desta leitura, a última notícia publicada pela associação é de agosto de 2026 e não anuncia o programa de 2027.</p>\n<h3>O prémio Melina Mercouri</h3>\n<table><thead><tr><th>o que a candidatura escreveu​</th><th>onde​</th><th>o que o painel escreveu​</th><th>onde​</th></t",
+   "contexto_depois": "blica escreve «31MAR26», e o documento cobre o ano de 2026, não o de 2027. À data desta leitura, a última notícia publicada pela associação é de agosto de 2026 e já anuncia o programa de 2027.</p>\n<h3>O prémio Melina Mercouri</h3>\n<table><thead><tr><th>o que a candidatura escreveu​</th><th>onde​</th><th>o que o painel escreveu​</th><th>onde​</th></t"
+  }
+ ]
+}

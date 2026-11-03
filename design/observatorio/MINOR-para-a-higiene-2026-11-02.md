@@ -36,3 +36,8 @@
 32. A base do portão do motor para o estudo de Évora 2027: nove números casados a menos para quatro números a menos no total, sem explicação no pacote (a mesma, 15).
 33. O guião dos publicadores da EV3-I conta uma ocorrência do nome em qualquer sítio do texto (o edital de 29.10 passou com «Município de Évora», escrito só como destinatário de uma doação); a medida certa é o nome na posição de quem publica (o cabeçalho, o fecho, o rodapé) (a mesma, 26).
 34. A entrada «Presidente da Câmara Municipal de Évora» no registo dos publicadores ficou sem documento, com as provas a apontar o edital de 15.10, que o registo dá agora à Câmara (a leitura curta da adenda J da EV3, 7).
+35. A `check:largura` mede duas páginas por família, só os `index.html` e fora de `registos/`, e só no carregamento, sem os estados depois de uma interação (a leitura do lote 3, 7).
+36. O passo da planta da largura no `portoes.sh` conta qualquer saída 1 como mordida, incluindo uma falha do guião (a mesma, 8).
+37. O par «15 → 45 correções» do registo pode partir-se no fim de uma linha (a mesma, 10).
+38. Uma entrada da FP3 dada como planta é um `mordeu:true` escrito à mão depois das asserções (a mesma, 11); a ordem da caixa pode sair da data se um estudo de um dossiê for atualizado (a mesma, 12); «78 famílias» conta `/en/` duas vezes (a mesma, 13); números do relatório sem ficheiro (a mesma, 14).
+39. O `table{display:block}` da moldura pode tirar a semântica de tabela a alguns leitores de ecrã (a mesma, 16, inferido; por medir com um leitor de ecrã).

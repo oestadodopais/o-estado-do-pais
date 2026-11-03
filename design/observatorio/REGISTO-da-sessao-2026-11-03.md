@@ -155,3 +155,91 @@
 - As capturas da EV3: 50 PNG, captar 0, manifesto ok sem falhas, enviadas para o Drive (drive exit 0, 50 ficheiros, subpasta "capturas · EV3-2026-11-03"). Lidas por este lugar: as correções sem lede nem lista, a caixa da primeira página com cinco peças.
 - Achado nas capturas, no ar e anterior à EV3: a página das correções desliza para o lado (3 427 px a 390, 4 045 px a 1 280; as capturas do lote 2 já o mostravam). Medido num navegador sobre o dist/: 44 elementos (pt) e 49 (en) para lá do ecrã a 390, 6 a 1 280; os valores de .registo-mudanca-par e os nomes de .vh com white-space: nowrap. A LAR1 à cabeça da fila; a FP3 (a caixa diz a data da edição atual de um estudo atualizado); GARGALOS: as capturas não medem a largura.
 - O core.gate do motor em c9a7a06 (17:20 a 17:32 UTC): um vermelho, publisher.voz_test (blocos_antes 2922 e blocos_depois 2819 contra 2920 e 2817). Medido: os blocos de cada edição de Évora 2027 passaram de 136 (bf6b88a) a 137 (c9a7a06), o parágrafo partido pela J; as referências iguais. A adenda K (a parcela da EV3 nos blocos de + 4 a + 6, com o comentário) lançada com OEDP_GATE=adiado; o core.gate corre depois, por este lugar; a leitura curta do diff pelo leitor da J.
+
+### 17:51 UTC · a corrida inteira verde, a adenda K, os registos e a leitura curta da K
+
+- A corrida inteira em f6c598258 (ev3-conferir-2026-11-03-h): 59 passos, 0 vermelhos, 2 231 s (17:08 a 17:45 UTC).
+- A adenda K recusada no pré-voo às 17:33 (a tranca da máquina ocupada pela corrida inteira; 0 pontos) e relançada às 17:46: motor 26d24d5, só publisher/voz_test.py (+ 4 → + 6 nos blocos, com o comentário); 1 ponto (78 → 79 %, sem outras sessões); voz_test 0. O custo da EV3 pelo contador: 13 pontos em 12 passagens.
+- Os registos da EV3 comitados no ramo (93e366940): a §1.218, o custo, o mandato e as adendas A a K, as três leituras e as plantas, os relatórios sem caminhos, os resumos das corridas, o manifesto das capturas, a fila com a AT1 do ramo, os gargalos, a higiene, as melhorias e o registo da tarde; 48 ficheiros, todos em design/ e no DECISIONS.md; a procura de caminhos com positivo conhecido, zero. A árvore principal reposta (as quatro cópias iguais às do ramo, salvo a linha da AT1, que fica a do ramo).
+- O core.gate do motor relançado em 26d24d5. A leitura curta do diff da K (o leitor da J): o +2 é exatamente o parágrafo partido pela J; o Major 1 era do pacote (o voz_test.py fora dele); acrescentados o ficheiro antes e depois e o diff da K, e o leitor retomado.
+
+### 18:02 UTC · a leitura curta da K limpa, o motor aterrado, a aterragem do sítio lançada
+
+- A leitura curta da K, retomada com o voz_test.py antes e depois e o diff da K no pacote: nenhum Blocking, nenhum Major; a K muda só as duas linhas (os blobs conferidos), a comparação continua a igualdade exata do dicionário inteiro, e um bloco a mais ou a menos falha; o Minor (os 218 vêm do ciclo das provas seladas, que a K não toca, e não se contam no pacote) fica como está.
+- O core.gate do motor em 26d24d5: PASS (17:50 a 18:02 UTC).
+- O motor aterrado (aterrar-motor-ev3.sh, 18:02:37 UTC): master 26d24d5 = origin/master; a worktree das aterragens do motor avançada para 26d24d5.
+- A aterragem do sítio lançada (aterrar-ev3.sh, ev3-aterragem-2026-11-03), com a decisão do financiador de 16:41:41 UTC em ATERRAR_DECISAO; a segunda do dia UTC.
+
+### 18:26 UTC · "can we start the rest of the work" e "are we adding or changing the metodo now" (o financiador, 18:21 e 18:23 UTC)
+
+- A medição da LAR1 por este lugar, num navegador, no dist/ da EV3: 78 famílias (100 páginas, 500 medidas): 18 mais largas do que o ecrã, em quatro páginas (as correções nas duas edições, em todas as larguras; a edição guardada de Évora 2027, de 390 a 1 280). Os 37 documentos dos estudos: 16 deslizam (os de Évora 2027 e os de Évora 2027, o que foi prometido, até 1 280; seis outros a 390). Causas: o nowrap de .registo-mudanca-par e de .vh; as tabelas dos documentos. Positivo conhecido: as correções na amostra.
+- Decisão: o lote 3 (a LAR1, a EV3-p e a FP3) construído esta noite numa worktree que parte da cabeça da EV3 (lote3-2026-11-03, 93e366940), e aterrado depois das 00:00 UTC; a MET1 sobe para a frente da VOZ-1: o Método atual tem 1 777 palavras em dez secções, com "O que este projeto não faz" e "A forma"; passa a uma página de usar (conferir um número num recibo verdadeiro; o caminho de um número com as conferências e as contagens vivas; as marcas; quando os números mudam), sem as frases sobre o próprio projeto, com os factos que a lei pede ditos uma vez. O mandato esta noite, a construção amanhã; o Codex a 80 % (repõe a 04.11 às 18:48 UTC), a avisar o financiador antes dos 90 %.
+- O mandato da LAR1 escrito e conferido (voz 0; pre-mandato: não acrescenta; a fila: pode lançar LAR1). Lançada às 18:26 UTC.
+
+### 18:29 UTC · os mandatos da EV3-p, da FP3 e da MET1 escritos
+
+- A EV3-p (a frase dos financiamentos; uma correção do texto publicado: a edição de 03.11 guardada e a entrada «Estudo corrigido»), a FP3 (a caixa diz «estudo atualizado» com a data da edição atual quando a natureza é atualização) e a MET1 (o Método em quatro secções de usar; o marcador «[a verificar]» passa a «por confirmar na fonte» no sítio inteiro; as frases do financiamento e do jornalismo passam ao Sobre, palavra por palavra, porque são do financiador). Conferidas a EV3-p e a FP3 (voz 0, algarismos fora de token 0). A MET1 fica para amanhã: o voz-do-mandato não tem isenção para o Método, e as frases do Método disparam os marcadores (decidir a forma antes de lançar). Duas frases da MET1 corrigidas por este lugar antes de as dar por boas: sem «todos os dias» (a vigilância não tem agendamento diário) e sem «todas as semanas» (a releitura diz a última data pelo token painel_reconferido_em).
+
+### 18:37 UTC · a LAR1 parada pelo §2 e a adenda A
+
+- A LAR1 (1 ponto, 80 → 81 %, 2 outras sessões; 32 turnos): parou, bem, sem mudar código: o comFaixa insere o CSS da moldura no HTML servido de cada edição guardada; corrigir as tabelas muda os bytes servidos de quatro edições guardadas (Évora 2027 e as contas da Câmara, 01.10, nas duas línguas). Diagnóstico em 84e70e27a.
+- As medidas de partida comitadas por este lugar (LAR1-0).
+- Decisão: o que uma edição guardada garante é o texto tal como foi publicado (a prova das edições confere o texto); a moldura pode mudar, o ficheiro original em studies-src/_edicoes não (sha256 igual), a prova do texto igual, e o relatório diz o sha256 servido antes e depois. A adenda A lançada.
+
+### 18:54 UTC · a aterragem da EV3 no teto dos 50 minutos, e a AT1 à frente da MET1
+
+- A aterragem (ev3-aterragem-2026-11-03) saiu com 124 às 18:53:52 UTC: o teto de 50 minutos do comando externo, à espera da corrida portão do GitHub (41690029789, desde 18:02:53). Medido no GitHub: o build do passo 8 de 18:02 a 18:25 (cerca de 23 minutos), o verify desde 18:25 (28 minutos às 18:53, contra 1 131 s no lote 1). Relançada numa pasta nova (ev3-aterragem-2026-11-03-b), que retoma a mesma corrida.
+- Decisão, à pergunta do financiador (18:47 UTC, "what about the issues we saw with the time for deployment in github and vercel, is that work also being done"): a AT1 (aprovada pelo financiador a 03.11) sobe para a frente da MET1, a construir amanhã de manhã depois do lote 3, porque encurta todas as aterragens seguintes, e a MET1 fica para depois da reposição do Codex (04.11, 18:48 UTC). A medida de antes: esta aterragem.
+- A revisão do texto do Método pedida pelo financiador (18:44 UTC): o atual é autorreferência na maior parte; o mandato da MET1 corrigido em quatro sítios (sem lede; sem a contagem das entradas; o recibo mostrado em vez de descrito; a secção 4 numa linha e a frase da inteligência artificial sem "segundo as regras desta página").
+
+### 19:17 UTC · a LAR1 construída, a EV3-p lançada
+
+- O financiador às 19:07 UTC: "do as you see fit". Decisão deste lugar: a tranca estreita (só o build, a corrida inteira, os portões e a aterragem) entra na AT1, com medida antes e depois e planta; a cadência de duas aterragens por dia cai depois da AT1 medida; a leitura por outra família fica.
+- A LAR1 com a adenda A: 2 pontos (81 → 83 %, 3 outras sessões), 58 turnos; 95667784c, f438cc041, ea084d7c2. Build verde; check:largura 640 medidas, zero excessos, 10,4 s, com planta vermelha; o guião de antes repetido: zero excessos nas 100 páginas e nos 37 documentos; os oito originais e os textos servidos iguais, os sha256 servidos antes e depois registados; o captar recusa páginas largas.
+- A fila: a LAR1 à espera da leitura a frio do lote 3 (LAR1-f); a EV3-p lançada (Codex 83 %).
+
+### 19:20 UTC · a EV3-p parada pela ED1, a FP3 lançada
+
+- A EV3-p parou, bem (0 pontos, 7 chamadas, nada mudado): a ED1 não admite duas edições do mesmo estudo na mesma data, e a de 03.11.2026 é a da EV3. Decisão: a regra fica; a edição de uma correção tem a data do dia em que fica no ar; a EV3-p constrói-se depois das 00:00 UTC, com a data de 04.11.2026, e vai com a AT1 e a MET1 no lote seguinte. O lote 3 passa a ser a LAR1 e a FP3. A fila (EV3-p-f) e o mandato da FP3 acertados.
+- A FP3 lançada.
+
+### 19:35 UTC · a FP3 construída; a EV3 na Vercel; a corrida inteira do lote 3
+
+- A FP3: 2 pontos (83 → 85 %, 3 outras sessões), 8 turnos; 77be4183b, 9056b204d. Build 0; datas e novidades (com as plantas da FP1 e da FP3) 0; voz 0; disposição e alvos 0; tipos 0; a planta de uma atualização com data divergente do manifesto 1, como se espera. A caixa portuguesa: Évora 2027 a 03.11.2026, "estudo atualizado", à cabeça.
+- A aterragem da EV3 (b): o GitHub verde às 18:56:44 (a corrida começou às 18:02:53: cerca de 54 minutos); a tranca às 19:01:45 (esperou pela construção da LAR1); séries e cruzamento 0; main fundido e empurrado às 19:02:00 (origin/main 93e366940); a Vercel a construir desde as 19:02 (33 minutos às 19:34).
+- Lançada a corrida inteira do lote 3 (a LAR1 e a FP3), com build (lote3-conferir-2026-11-03-a).
+
+### 19:41 UTC · a EV3 no ar
+
+- A aterragem (b) acabou às 19:41:06 UTC, todos os passos a 0: o GitHub verde às 18:56:44 (cerca de 54 minutos de corrida), main empurrado às 19:02:00, a Vercel pronta e o verify:deploy a 0 às 19:41:03 (cerca de 39 minutos de Vercel), o ramo remoto e o local apagados, a worktree destacada. Do publicar-ramo da primeira tentativa (18:02:46) ao ar: 98 minutos.
+- Conferido no ar por este lugar (curl, 200 nas quatro páginas): as frases das adendas H e J nas duas edições (por maioria; tinha ratificado; a do presidente; a dos financiamentos; a última notícia); as correções com a política nova, sem a lede, sem a lista das naturezas, com a entrada "Estudo atualizado"; a primeira página sem a recontagem.
+- A worktree da EV3 do sítio removida; a árvore principal em 93e366940. O motor da EV3 fica para a EV3-p.
+- Para a AT1, a medida de antes: 54 minutos de GitHub e 39 de Vercel nesta aterragem.
+
+### 20:29 UTC · a corrida inteira do lote 3 verde; a leitura a frio do lote 3; a PAI2 antes da AT1
+
+- A corrida inteira do lote 3 em 9056b204d (lote3-conferir-2026-11-03-a, com build): 62 passos, 0 vermelhos, 3 070 s (19:35 a 20:26 UTC); check:largura 11 s, check:capturas-largura 1 s.
+- O pacote do lote 3 (pacote-lote3-2026-11-03, 69 ficheiros, 93e366940..9056b204d) com os originais das edições guardadas; cinco plantas: L1 os valores do registo de volta a nowrap (leitura.css, num hunk), L2 a régua da largura com 64 px de folga (largura.mjs, num hunk), L3 os estudos corrigidos dados como atualizados (novidades.mjs, num hunk), L4 a data da atualização na caixa diferente do manifesto (index.html), L5 uma frase mudada no original guardado de Évora 2027 (studies-src/_edicoes). A leitura lançada (Opus 5.5, leitor, xhigh, 40 chamadas).
+- A fila do lote 4 recusou a AT1: a regra da fila põe o conteúdo pronto à frente da maquinaria (fora da sexta-feira) salvo quando o bloco a nomeia como condição; a PAI2 tem o mandato escrito desde 02.11 e não depende da AT1. Decisão: segue-se a regra; a PAI2 primeiro (com uma nota de 03.11: a worktree, as medidas a reconferir, a check:largura), depois a AT1, que é condição real da MET1 (a isenção do Método no voz-do-mandato, o §1.5 da AT1, acrescentado esta noite). A fila do lote 4 comitada (AT1-f). A PAI2 lançada.
+
+### 20:30 UTC · a PAI2 parada pelo §4 e a adenda A
+
+- A PAI2 (1 ponto, 86 → 87 %, 1 outra sessão; 8 turnos): parou, bem, sem mudar nada: ganho-medio-mensal-2024 e retribuicao-minima-mensal-garantida-continente-2026 sem linha de período anterior no livro (anterior: null); a worktree sem dist/.
+- Decisão: a ausência em duas palavras (pt «sem anterior», en «no previous»), só nas medidas com anterior null, conferida pela check:quadro com planta; a construção da cabeça primeiro, para conferir as contagens do §0. A adenda A lançada (Codex 87 %).
+
+### 20:40 UTC · a leitura a frio do lote 3
+
+- A leitura (Opus 5.5, leitor, xhigh; 33 chamadas, 150 031 símbolos): cinco plantas em cinco (L5 = 1, L4 = 2, L3 = 3, L1 = 4, L2 = 5). Real: o Major 6 era do pacote (o studies-src/manifest.yml fora dele); acrescentado e o leitor retomado para as perguntas 2 e 5. Minor: 7 (a amostra de duas páginas por família, as páginas fora de index.html e de registos/, os estados depois de uma interação), 8 (o passo da planta no portoes.sh conta qualquer saída 1), 9 (a regra .metodo code na moldura das edições guardadas, além das tabelas), 10 (o par «15 → 45» pode partir-se), 11 a 14, 15 (a caixa da FP3 sem capturas), 16 (o .vh do registo e o display:block das tabelas, por conferir), 17 (os identificadores «Afirmação: …» no fim de cada entrada do registo, que um editor cortava).
+- Decisões: o 9 ratificado (CSS da moldura, sem mudar o texto, para o identificador longo do Método não deslizar; o mesmo objetivo da adenda A); o 17 entra na VOZ-1 (a página do leitor sem a maquinaria do registo); o 15 corrigido já (as capturas do lote 3); os outros Minor para a higiene de sexta-feira.
+- As capturas do lote 3 lançadas (quatro páginas, duas edições, cinco larguras, com a recusa nova das páginas largas).
+
+### 20:43 UTC · a retoma da leitura do lote 3 e a adenda B da LAR1
+
+- O leitor, com o manifesto no pacote: o 6 retirado; sete dos oito originais iguais ao manifesto, o oitavo é a planta L5; Évora 2027 com 2026-11-03 natureza atualizacao nas duas línguas; nenhuma edição declarada correcao no manifesto (uma correção não leva natureza), por isso a planta L3 seria latente; o 16 reescrito: o .vh não alarga a página, e a regra da LAR1 tira-lhe o nowrap.
+- Conferido por este lugar: src/styles/site.css:80, .vh com position absolute, 1 px, overflow hidden, clip e white-space nowrap (o padrão dos leitores de ecrã). Decisão: a adenda B da LAR1 tira .registo-mudanca .vh da regra; mudança pequena de CSS (sem número, frase nem portão): build, check:largura e o white-space calculado do .vh, sem leitura curta. Corre depois da PAI2 (uma construção de cada vez).
+
+### 21:32 UTC · a PAI2 construída com três vermelhos; a LAR1 B; o Codex nos 89 %
+
+- A PAI2 com a adenda A: 3 pontos (86 → 89 %, 1 outra sessão), 138 turnos; 201a1a2f4 a a8986c38e. Feito: o quadro com 47 medidas por edição (6, 7, 4, 7, 6, 4, 13), 45 anteriores, 27 comparações com a União, as duas células «sem anterior», os avisos das três revisões pendentes (54 avisos em 30 páginas). Vermelhos no navegador: cartão (K1 e K19 recusam o aviso como bloco), alvos (H2), sobreposição (a planta nova sem alvos). Parou no limite das chamadas.
+- Decisão: a adenda B da PAI2 (o aviso aceite no cartão como bloco definido, com plantas; o H2 corrigido na causa; a planta da sobreposição a morder), depois da LAR1 B (uma construção de cada vez).
+- A LAR1 B lançada. O Codex a 89 %: o financiador avisado, pela regra do arranque, de que a passagem seguinte passa dos 90 % e de que o plano da noite pede a reposição gratuita.
