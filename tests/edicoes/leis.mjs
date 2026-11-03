@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {NOME_DE_LEI} from '../../src/i18n/nomes-de-lei.mjs';
 import {parse} from 'node-html-parser';
 import {primeirasEdicoes,primeiraEdicaoServida} from '../../src/lib/edicoes.mjs';
 import {marcarLeisDaEdicao,provaDosBytesDaEdicao} from '../../src/lib/leis-da-edicao.mjs';
@@ -8,7 +9,9 @@ for(const e of primeirasEdicoes()) {
  const bruto=fs.readFileSync(e.ficheiro,'utf8'),servido=primeiraEdicaoServida(e.slug,e.lang,e.date);
  assert.equal(provaDosBytesDaEdicao(bruto,servido,e.lang),null);
  const nomes=parse(servido).querySelectorAll('[data-edicao-lei]');
- assert.equal(nomes.length,e.lang==='en'?1:0);
+ const evora=e.slug==='evora-2027-capital-europeia-da-cultura';
+ if(evora&&e.lang==='en')assert(!NOME_DE_LEI.test(parse(bruto).querySelector('body').text),'EV3: a edição guardada não cita nomes de diploma');
+ assert.equal(nomes.length,e.lang==='en'&&!evora?1:0);
  for(const n of nomes){
   assert.equal(n.getAttribute('lang'),'pt-PT');
   for(const alterado of [servido.replace(n.outerHTML,n.outerHTML.replace(/\d/,d=>String((Number(d)+1)%10))),servido.replace(n.outerHTML,n.outerHTML.replace('pt-PT','en')),servido.replace(n.outerHTML,'<span data-edicao-lei lang="pt-PT">Outra frase</span>')]){

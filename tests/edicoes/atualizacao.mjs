@@ -1,3 +1,4 @@
+import {marcaDeLinguaEv3Valida} from '../../scripts/ev3-lingua-conferir.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {load} from 'js-yaml';
@@ -23,3 +24,23 @@ assert.equal(parse(servido).querySelectorAll('[data-ev3-nome][lang="pt-PT"]').le
 assert.notEqual(retirarNomesEv3(servido.replace('Câmara','Outra pessoa')),bruto);
 assert.notEqual(retirarNomesEv3(servido.replace('lang="pt-PT"','lang="en"')),bruto);
 console.log('EV3: 8 controlos e plantas da natureza, contagem, língua e integridade dos nomes.');
+
+const edicao='evora-2027-capital-europeia-da-cultura/en';
+const marcas=parse(servido).querySelectorAll('[data-ev3-nome]');
+for(const el of marcas)assert(marcaDeLinguaEv3Valida(el,edicao));
+const original=marcas[0].outerHTML;
+const adulteradas=[
+ original.replace('pt-PT','en'),
+ original.replace('data-ev3-nome','data-outra-marca'),
+ original.replace('data-ev3-nome','data-ev3-nome="outro"'),
+ original.replace('<span','<span class="src-chip"'),
+ original.replace('<span','<span hidden'),
+ original.replace('<span','<span data-registo="inventado"'),
+ original.replace('Laboratório Floresta Nómada','Outra pessoa'),
+ original.replace('Laboratório Floresta Nómada','2027'),
+ original.replace('Laboratório Floresta Nómada','<em>Laboratório Floresta Nómada</em>'),
+ original.replaceAll('span','em'),
+];
+for(const html of adulteradas)assert(!marcaDeLinguaEv3Valida(parse(html).firstChild,edicao));
+for(const outra of ['evora-2027-capital-europeia-da-cultura/pt','outro-estudo/en'])assert(!marcaDeLinguaEv3Valida(marcas[0],outra));
+console.log(`EV3 língua: ${marcas.length} marcas válidas; ${adulteradas.length+2} adulterações recusadas.`);

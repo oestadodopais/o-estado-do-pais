@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {marcaDeLinguaEv3Valida} from './ev3-lingua-conferir.mjs';
 import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
 import {manifestoDasEdicoes} from '../src/lib/edicoes.mjs';
@@ -2287,8 +2288,8 @@ function verificaTexto({ rota, root, err, recorte = null }) {
         e.fim > e.inicio ? texto.intervaloDePedacos(e.inicio, e.fim) : [null, null];
 
       /* ------------------------------------------------- L3, L4, L6 ---
-         Cada elemento dentro da unidade é uma de três coisas: uma figura, um
-         intervalo de ênfase, ou uma ligação do documento. Mais nada nossa
+         Cada elemento dentro da unidade é uma figura, um intervalo de ênfase,
+         uma ligação do documento ou uma marca de língua provada. Mais nada nossa
          entra numa unidade: o único elemento com texto próprio permitido é o
          selo, e o passeio salta-o por regra declarada. */
       const enfaseRendida = [];
@@ -2311,6 +2312,10 @@ function verificaTexto({ rota, root, err, recorte = null }) {
           portasRendidas.push({ ...e, href: decodeEntities(e.el.getAttribute('href') ?? '') });
           continue;
         }
+        /* EV3: um invólucro de língua não acrescenta texto nem uma figura.
+           A comparação integral com o registo acima mantém-se; esta prova
+           fechada recusa conteúdo, atributos, nomes e edições diferentes. */
+        if (marcaDeLinguaEv3Valida(e.el, chave)) continue;
         const marcaDaFigura = decodeEntities(e.el.getAttribute('data-registo') ?? '');
         if (marcaDaFigura) {
           figurasRendidas.push({ ...e, marca: marcaDaFigura });
