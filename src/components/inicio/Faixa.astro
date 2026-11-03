@@ -95,6 +95,7 @@
  * uma contagem, uma percentagem nem uma distância: a faixa é uma segunda vista
  * das mesmas linhas, e não uma segunda conta.
  */
+import AvisoDaRevisao from '../AvisoDaRevisao.astro';
 import Claim from '../Claim.astro';
 import VeredictoDaReferencia from '../VeredictoDaReferencia.astro';
 import { REFERENCIAS_DAS_MEDIDAS } from '../../data/referencias-das-medidas.mjs';
@@ -377,6 +378,7 @@ const palavraDoCartao = (c) =>
                 item A10) recusa. É a etiqueta do destino, e quem a lê já está
                 dentro do alvo que a cumpre. */}
             {c.destinoRotulo && <span class="cartao-destino">{c.destinoRotulo}</span>}
+            <AvisoDaRevisao ids={[c.id]} lang={lang} />
           </li>
         );
       })

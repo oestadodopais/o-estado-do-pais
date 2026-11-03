@@ -87,6 +87,7 @@
  * português, com glosa inglesa e com a porta para a página do marcador), e uma
  * quarta cópia escrita à mão teria de se lembrar disso.
  */
+import AvisoDaRevisao from './AvisoDaRevisao.astro';
 import Claim from './Claim.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
@@ -182,6 +183,7 @@ const ressalva = ressalvaDaLinha(c, lang);
         </span>
       )}
     </div>
+    <AvisoDaRevisao ids={[c.id]} lang={lang} />
     {ressalva && (
       <details>
         <summary>{s.prov.ressalva}</summary>

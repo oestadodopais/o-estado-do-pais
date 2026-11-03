@@ -28,6 +28,7 @@ import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
 import Frase from '../components/Frase.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
+import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
@@ -76,6 +77,7 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
               {s.semana.publicado}<span><Claim id={r.linha.id} lang={lang} plano decimal={lang === 'en'} />{' '}<CampoDaLinha id={r.linha.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /><Provenance id={r.linha.id} lang={lang} /></span>
               {s.semana.fonteAgora}<CampoDaLinha id={r.linha.id} campo={`verifications.${r.n}.found`} valor={r.found} lang={lang} decimal={lang === 'en'} />
               {s.semana.naReleitura}<DataDaLinha id={r.linha.id} campo={`verifications.${r.n}.date`} valor={r.data} lang={lang} />{s.semana.ponto}</p>
+              <AvisoDaRevisao ids={[r.linha.id]} lang={lang} />
               <OQueENaMudanca ids={[r.linha.id]} lang={lang} />
             </li>;
           })}

@@ -48,6 +48,7 @@ import provasOg1 from '../../ledger/provas/og1a/provas.json';
 import travessiaV2d from '../../ledger/cruzamentos/v2d.json';
 import travessiaV2e from '../../ledger/cruzamentos/v2e.json';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
+import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
@@ -852,6 +853,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     </p>
     {/* O NOME DO ORÇAMENTO POR BAIXO DO VALOR SAIU (bloco R4, 05.10.2026): era o nome do projeto da linha, e passou a
         ser o título do recibo, por cima de tudo. */}
+    <AvisoDaRevisao ids={[id]} lang={lang} />
     <div class="linha-datas" data-recibo-datas>
       {!paginaEditada && periodoDoRecibo && <p><span data-voz>{fp1.dados}</span>{' '}<DataDaLinha id={id} campo={periodoDoRecibo.campo} valor={periodoDoRecibo.valor} lang={lang} /></p>}
       {presente(claim.published_at) && <p><span data-voz>{paginaEditada ? s.livro.linha.editadoEmK : fp1.publicados}</span>{' '}<CampoDaLinha id={id} campo="published_at" valor={claim.published_at} lang={lang} /></p>}
@@ -1471,6 +1473,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   <dt>{s.livro.linha.enquadramentoAnterior}</dt>
                   <dd>
                     <Claim id={enquadramento.anterior.id} lang={lang} as="span" chip={true} />
+                    <AvisoDaRevisao ids={[enquadramento.anterior.id]} lang={lang} />
                     {enquadramento.anterior.periodo && (
                       <>
                         {' · '}
@@ -1490,6 +1493,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   <dt>{s.livro.linha.enquadramentoUe}</dt>
                   <dd>
                     <Claim id={enquadramento.ue.id} lang={lang} as="span" chip={true} />
+                    <AvisoDaRevisao ids={[enquadramento.ue.id]} lang={lang} />
                   </dd>
                 </>
               )}

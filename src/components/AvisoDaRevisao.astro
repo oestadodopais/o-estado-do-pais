@@ -1,0 +1,14 @@
+---
+import { revisaoDaFonte } from '../lib/revisao-da-fonte.mjs';
+import { routePath } from '../lib/routes.mjs';
+import CampoDaLinha from './CampoDaLinha.astro';
+const { ids, lang = 'pt' } = Astro.props;
+const revisoes = [...new Set(ids)].map(id => ({ id, v: revisaoDaFonte(id) })).filter(r => r.v);
+---
+{revisoes.map(({ id, v }) => <span class="aviso-revisao" data-aviso-revisao={id} data-revisao-indice={v.n}>
+  <a href={routePath('linha', lang, { slug: id })}>{lang === 'pt' ? 'A fonte reviu este número para ' : 'The source revised this figure to '}<CampoDaLinha id={id} campo={`verifications.${v.n}.found`} valor={v.found} lang={lang} decimal={lang === 'en'} />{lang === 'pt' ? ' na releitura de ' : ' in the re-reading of '}<CampoDaLinha id={id} campo={`verifications.${v.n}.date`} valor={v.date} lang={lang} />{lang === 'pt' ? '; o valor acima é o publicado até a revisão se aplicar.' : '; the value above is the one published until the revision is applied.'}</a>
+</span>)}
+<style>
+  .aviso-revisao { display: block; flex-basis: 100%; min-width: 0; max-width: 65ch; margin-block: .5rem; font-size: .875rem; line-height: 1.5; font-weight: 400; }
+  .aviso-revisao a { display: block; min-height: 44px; color: inherit; text-decoration: underline; text-underline-offset: .18em; overflow-wrap: anywhere; }
+</style>

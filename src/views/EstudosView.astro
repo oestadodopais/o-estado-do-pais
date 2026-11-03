@@ -1,6 +1,8 @@
 ---
 import { t } from '../i18n/strings.mjs';
 import Base from '../layouts/Base.astro';
+import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
+import { linhasDosPedacos } from '../lib/revisao-da-fonte.mjs';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { todosOsEstudos } from '../lib/estudos-b1.mjs';
@@ -41,7 +43,8 @@ for (const e of trabalhos) {
         <p class="arquivo-desc estudo-resumo" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}>
           <Frase partes={e.resumo} lang={lang} selos={true} />
         </p>
-      </article>
+      <AvisoDaRevisao ids={linhasDosPedacos(e.resumo)} lang={lang} />
+</article>
     ))}
   </div>
 </Base>

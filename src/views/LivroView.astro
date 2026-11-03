@@ -20,6 +20,7 @@
  */
 import Base from '../layouts/Base.astro';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
+import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
@@ -280,6 +281,7 @@ const p = prova(lang);
                   da fonte, o título do documento. O identificador desce ao
                   metadado, com a mesma classe e a mesma marca de campo. */}
               <NomeDaMedida linha={c} lang={lang} />
+              <AvisoDaRevisao ids={[c.id]} lang={lang} />
               <div class="livro-item-meta">
                 <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
                   {c.id}

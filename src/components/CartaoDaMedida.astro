@@ -76,6 +76,7 @@
  * contra a declaração pela régua do bloco (`tests/cartao/cartao.mjs`, célula K6),
  * pela marca `data-cartao-definicao`.
  */
+import AvisoDaRevisao from './AvisoDaRevisao.astro';
 import Claim from './Claim.astro';
 import { routePath } from '../lib/routes.mjs';
 import SerieDoPais from './formas/SerieDoPais.astro';
@@ -356,6 +357,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       )}
 
       <ReguaDoCartao id={c.id} lang={lang} s={s} />
+      <AvisoDaRevisao ids={[c.id, regua.anterior?.id, regua.ue?.id].filter(Boolean)} lang={lang} />
 
       {/* A FAIXA DA UNIÃO (bloco UE1, 29.09.2026): onde Portugal fica entre os
           27, por baixo do número e da régua, só nos cartões nacionais (os que

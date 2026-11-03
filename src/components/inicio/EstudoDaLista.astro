@@ -7,6 +7,8 @@
  */
 import { estudoNovo, carimboDaConstrucao } from '../../lib/construcao.mjs';
 import { FP1 } from '../../data/rotulos-fp1.mjs';
+import AvisoDaRevisao from '../AvisoDaRevisao.astro';
+import { linhasDosPedacos } from '../../lib/revisao-da-fonte.mjs';
 import Frase from '../Frase.astro';
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
 import { dataDaCasa } from '../../lib/datas.mjs';
@@ -23,4 +25,5 @@ const r = ROTULOS_B1[lang];
   </h3>
   <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{e.data ? <>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></> : r.edicaoPreparacao}</span>{mostrarEmCurso && e.work.emCurso && <span data-estudo-em-curso>{t(lang).primeira.emCurso.replace('{ano}', e.work.emCurso.ate?.slice(0, 4) ?? '[verify]')}</span>}</p>
   <p class="estudo-resumo lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}><Frase partes={e.resumo} lang={lang} selos /></p>
+<AvisoDaRevisao ids={linhasDosPedacos(e.resumo)} lang={lang} />
 </article>

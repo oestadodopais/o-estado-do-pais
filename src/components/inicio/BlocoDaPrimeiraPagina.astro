@@ -32,6 +32,7 @@ import { unidadeDoCartao } from '../../data/unidades-dos-cartoes.mjs';
 import NomeDaSerie from '../serie/NomeDaSerie.astro';
 import SerieDoPais from '../formas/SerieDoPais.astro';
 import { routePath } from '../../lib/routes.mjs';
+import AvisoDaRevisao from '../AvisoDaRevisao.astro';
 import Frase from '../Frase.astro';
 import Claim from '../Claim.astro';
 import CampoDaLinha from '../CampoDaLinha.astro';
@@ -86,6 +87,7 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
         </span>
       ))}
     </p>
+    <AvisoDaRevisao ids={b.numeros.map(n => n.linha)} lang={lang} />
     <details class="pp-numeros" data-legenda-selos>
       <summary>{s.primeira.numerosDoBloco}</summary>
       <ul class="pp-numeros-lista" data-bloco-declarado>
