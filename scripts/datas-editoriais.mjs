@@ -1,4 +1,4 @@
-import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
+import {dataAtualizacaoDaEdicao,versoesDaEdicao} from '../src/lib/edicoes.mjs';
 import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { dataDoDossiePermitida } from './dossies-html.mjs';
 /** FP1-d: a isenção editorial depende do elemento, da página e da origem. */
@@ -28,7 +28,15 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt') {
       return Boolean(item && origem==='escrita.declarada' && el.parentNode===resumo && el.getAttribute('datetime')===item.escrita && el.text.trim()===dataDaCasa(item.escrita));
     }
     if(el.closest('[data-atualizacao]')?.closest('[data-novidades]'))return ['verificacao.verificadoEm','version.construido_em'].includes(origem);
-    return Boolean(el.closest('[data-novidades] [data-novidade]')) && ['publicacao.declarada','publicacao.gerada'].includes(origem);
+    const novidade=el.closest('[data-novidades] [data-novidade]');
+    if(novidade && origem==='edicoes.data') {
+      const id=novidade.getAttribute('data-novidade');
+      const work=WORKS.find(w=>id===`estudo:${w.slug}`);
+      const edicao=work?.editions.find(e=>e.lang===lang)??work?.editions.slice().sort((a,b)=>(publicacaoEd1(work,b)??'').localeCompare(publicacaoEd1(work,a)??''))[0];
+      const atual=work&&edicao?versoesDaEdicao(work.slug,edicao.lang).at(-1):null;
+      return Boolean(atual?.natureza==='atualizacao' && el.getAttribute('datetime')===atual.data && el.text.trim()===dataDaCasa(atual.data));
+    }
+    return Boolean(novidade) && ['publicacao.declarada','publicacao.gerada'].includes(origem);
   }
   if(rota!=='linha'||!el.closest('[data-recibo-datas]'))return false;
   if(origem==='calendario.proxima-segunda')return !eDerivada(claim) && Boolean(claim?.verifications?.some(v=>v.by==='painel-semanal'));

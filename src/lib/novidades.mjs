@@ -1,3 +1,4 @@
+import { manifestoDasEdicoes } from './edicoes.mjs';
 import { dossiesDaLista } from './dossies-conteudo.mjs';
 import { dossieDaPeca } from './dossies.mjs';
 import { dataPublicacao } from './publicacao.mjs';
@@ -7,28 +8,30 @@ import { EXPLICACOES } from '../data/explicacoes/index.mjs';
 import { resolverExplicacao } from './explicacoes.mjs';
 import { routePath } from './routes.mjs';
 import { portaDoItem } from './discussao.mjs';
-export const TIPOS_DAS_NOVIDADES = Object.freeze(['estudo','discussao','explicacao','dossie']);
+export const TIPOS_DAS_NOVIDADES = Object.freeze(['estudo','estudo-atualizado','discussao','explicacao','dossie']);
 /** @param {any[]} pecas */
 export function conferirTiposDasNovidades(pecas) {
   for (const p of pecas) if (!TIPOS_DAS_NOVIDADES.includes(p.tipo)) throw new Error(`EV3-G: tipo fora das novidades: ${p.tipo}`);
 }
-/** @param {'pt'|'en'} lang */
-export function pecasPublicadas(lang) {
+/** @param {'pt'|'en'} lang @param {ReturnType<typeof manifestoDasEdicoes>} [manifesto] */
+export function pecasPublicadas(lang, manifesto=manifestoDasEdicoes()) {
   /** @type {any[]} */
   const pecas = [];
   for (const w of WORKS) {
     const edicao = w.editions.find(e => e.lang === lang) ?? [...w.editions].sort((a,b) => (dataPublicacao(w,b) ?? '').localeCompare(dataPublicacao(w,a) ?? ''))[0];
-    const data = edicao && dataPublicacao(w,edicao);
+    const atual = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === edicao?.lang)?.edicoes.at(-1);
+    const atualizacao = atual?.natureza === 'atualizacao';
+    const data = atualizacao ? atual.data : edicao && dataPublicacao(w,edicao);
     if (!data) continue;
-    pecas.push({ id: `estudo:${w.slug}`, tipo: 'estudo', data, origem: w.publication === 'declared' ? 'publicacao.declarada' : 'publicacao.gerada', rota: routePath('estudo', lang, {slug:w.slug}), edicao });
+    pecas.push({ id: `estudo:${w.slug}`, tipo: atualizacao ? 'estudo-atualizado' : 'estudo', data, origem: atualizacao ? 'edicoes.data' : w.publication === 'declared' ? 'publicacao.declarada' : 'publicacao.gerada', rota: routePath('estudo', lang, {slug:w.slug}), edicao });
   }
   for (const [tipo, lista] of [['discussao', ITENS], ['explicacao', EXPLICACOES]]) for (const e of /** @type {any[]} */ (lista)) {
     if (!e.publicado) continue;
     pecas.push({ id: `${tipo}:${e.slug}`, tipo, data: e.publicado, origem: 'publicacao.declarada', rota: tipo === 'discussao' ? portaDoItem(e.slug,lang) : routePath('explicacao',lang,{slug:e.slug}), titulo: resolverExplicacao(e,lang).titulo });
   }
-  for (const p of pecas) p.dossie = dossieDaPeca(p.tipo, p.id.slice(p.id.indexOf(':') + 1));
+  for (const p of pecas) p.dossie = dossieDaPeca(p.id.split(':')[0], p.id.slice(p.id.indexOf(':') + 1));
   // Empate: estudo antes das outras peças; depois identidade, para uma ordem estável nas duas línguas.
-  return pecas.sort((a,b) => b.data.localeCompare(a.data) || Number(b.tipo==='estudo')-Number(a.tipo==='estudo') || a.id.localeCompare(b.id));
+  return pecas.sort((a,b) => b.data.localeCompare(a.data) || Number(b.id.startsWith('estudo:'))-Number(a.id.startsWith('estudo:')) || a.id.localeCompare(b.id));
 }
 
 /** DO2: a posição segue a publicação; a data segue o bloco da peça mais recente.

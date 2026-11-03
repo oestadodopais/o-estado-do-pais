@@ -1,17 +1,18 @@
 /** DO4: a mesma medida nas capturas e na régua dos alvos, com plantas locais. */
 export async function conferirDisposicaoNovidades(pagina, plantas=true) {
- const entradas=pagina.locator('[data-novidade^="dossie:"]');
- if(!await entradas.count())throw Error('DO4: falta a entrada do dossiê para medir');
+ if(!await pagina.locator('[data-novidade^="dossie:"]').count())throw Error('DO4: falta a entrada do dossiê para medir');
+ const entradas=pagina.locator('[data-novidade]');
  const resultados=[];
  for(let i=0;i<await entradas.count();i++) {
   const li=entradas.nth(i);await li.scrollIntoViewIfNeeded();
   const medir=()=>li.evaluate(el=>{
    const erros=[],[data,tipo,a]=el.children;
-   if(el.children.length!==3||data.tagName!=='TIME'||!tipo.matches('.pp-novidade-tipo')||!a.matches('a[data-novidade-dossie]'))return {erros:['colunas']};
+   if(el.children.length!==3||data.tagName!=='TIME'||!tipo.matches('.pp-novidade-tipo')||!a.matches('a[data-novidade-porta]'))return {erros:['colunas']};
    const n=a.querySelector('.prova-valor'),s=getComputedStyle(a),v=n&&getComputedStyle(n);
-   if(!v||['fontFamily','fontSize','fontWeight','color','fontVariantNumeric'].some(k=>s[k]!==v[k])||parseFloat(v.borderBottomWidth)!==0)erros.push('letra da contagem');
+   if(a.hasAttribute('data-novidade-dossie')&&(!v||['fontFamily','fontSize','fontWeight','color','fontVariantNumeric'].some(k=>s[k]!==v[k])||parseFloat(v.borderBottomWidth)!==0))erros.push('letra da contagem');
    const d=data.getBoundingClientRect(),t=tipo.getBoundingClientRect(),b=a.getBoundingClientRect();
    if(innerWidth>600?!(d.x<t.x&&t.x<b.x):!(b.y>=Math.max(d.bottom,t.bottom)-1))erros.push('grelha');
+   if(data.scrollWidth>data.clientWidth+1||tipo.scrollWidth>tipo.clientWidth+1||a.scrollWidth>a.clientWidth+1)erros.push('conteúdo fora da coluna');
    // A H2 exige 44 px na faixa intermédia; no texto em linha conserva-se a regra geral dos alvos.
    const tamanho=innerWidth>=641&&innerWidth<1024?44:0;
    const toca=(x,y)=>{const alvo=document.elementFromPoint(x,y);return alvo===a||a.contains(alvo);};
@@ -23,7 +24,7 @@ export async function conferirDisposicaoNovidades(pagina, plantas=true) {
   });
   const controlo=await medir();if(controlo.erros.length)throw Error(`DO4: ${JSON.stringify(controlo)}`);
   const recusadas=[];
-  if(plantas)for(const [nome,seletor,estilo]of [
+  if(plantas&&await li.locator('[data-novidade-dossie]').count())for(const [nome,seletor,estilo]of [
    ['letra da contagem','.prova-valor','font-family:monospace!important;font-weight:900!important;border-bottom:1px solid red!important'],
    ['grelha','a[data-novidade-dossie]','grid-column:1 / -1!important'],
    ...[['alvo de toque','a[data-novidade-dossie]','display:block!important;min-height:0!important;height:1px!important;width:1px!important;padding:0!important;overflow:hidden!important;pointer-events:none!important']],

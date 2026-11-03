@@ -5,7 +5,7 @@ import {STUDIES_SRC_DIR,comFaixa,comMarcasDaCasa,documentoServido} from './docum
 import {dataDaCasa} from './datas.mjs';
 /** @param {Buffer|string} bytes */
 export const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
-/** @typedef {{data:string,sha256:string,file:string}} Versao */
+/** @typedef {{data:string,sha256:string,file:string,natureza?:string}} Versao */
 /** @typedef {{slug:string,lang:Lingua,edicoes:Versao[],primeira_edicao?:{commit:string}}} Declaracao */
 export function manifestoDasEdicoes(){
  if(!STUDIES_SRC_DIR)throw Error('ED1: pasta dos estudos ausente');
