@@ -44,3 +44,7 @@ const adulteradas=[
 for(const html of adulteradas)assert(!marcaDeLinguaEv3Valida(parse(html).firstChild,edicao));
 for(const outra of ['evora-2027-capital-europeia-da-cultura/pt','outro-estudo/en'])assert(!marcaDeLinguaEv3Valida(marcas[0],outra));
 console.log(`EV3 língua: ${marcas.length} marcas válidas; ${adulteradas.length+2} adulterações recusadas.`);
+
+const {edicoesGuardadas,primeiraEdicaoServida}=await import('../../src/lib/edicoes.mjs');
+for(const e of edicoesGuardadas().filter(e=>e.slug==='evora-2027-capital-europeia-da-cultura'))assert.equal(parse(primeiraEdicaoServida(e.slug,e.lang,e.data)).querySelectorAll('[data-ev3-nome]').length,0);
+console.log('EV3-I: edições guardadas sem marcas de nomes da atualização.');

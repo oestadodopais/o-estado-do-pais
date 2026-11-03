@@ -822,9 +822,9 @@ function recusa(slug, lang, porque) {
  * qual vale seria a casa a decidir uma coisa do autor.
  *
  * @param {string} bruto o ficheiro tal como está em studies-src/
- * @param {{ slug: string, lang: Lingua }} onde
+ * @param {{ slug: string, lang: Lingua, guardada?: boolean }} onde
  */
-export function comMarcasDaCasa(bruto, { slug, lang }) {
+export function comMarcasDaCasa(bruto, { slug, lang, guardada = false }) {
   const s = t(lang);
   const zonas = zonasOpacas(bruto);
   const corpo = etiquetaReal(bruto, 'body', zonas);
@@ -902,7 +902,7 @@ export function comMarcasDaCasa(bruto, { slug, lang }) {
     ? cabeca.fim + /** @type {number} */ (charset.index) + charset[0].length
     : cabeca.fim;
   const marcado = saida.slice(0, onde) + MARCA_DOS_ROBOS + saida.slice(onde);
-  return slug === 'evora-2027-capital-europeia-da-cultura' && lang === 'en' ? marcarNomesEv3(marcado) : marcado;
+  return !guardada && slug === 'evora-2027-capital-europeia-da-cultura' && lang === 'en' ? marcarNomesEv3(marcado) : marcado;
 }
 
 /**

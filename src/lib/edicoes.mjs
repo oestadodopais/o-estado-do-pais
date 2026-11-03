@@ -48,7 +48,7 @@ export function primeiraEdicaoServida(slug,lang,date){
  const e=edicoesGuardadas().find(e=>e.slug===slug&&e.lang===lang&&e.data===date);if(!e)throw Error(`ED1: edição guardada desconhecida: ${slug}/${lang}/${date}`);
  const bytes=fs.readFileSync(e.ficheiro);if(sha256(bytes)!==e.sha256)throw Error(`ED1: sha256 da edição guardada diverge: ${slug}/${lang}`);
  const bruto=bytes.toString('utf8');if(!Buffer.from(bruto).equals(bytes))throw Error('ED1: edição não preserva UTF-8');
- const servido=comFaixaDaVersao(marcarLeisDaEdicao(comFaixa(comMarcasDaCasa(bruto,{slug,lang}),{slug,lang}),lang),slug,lang,date);
+ const servido=comFaixaDaVersao(marcarLeisDaEdicao(comFaixa(comMarcasDaCasa(bruto,{slug,lang,guardada:true}),{slug,lang}),lang),slug,lang,date);
  const falha=provaDosBytesDaEdicao(bruto,servido,lang);if(falha)throw Error(`ED1: ${falha}`);return servido;
 }
 /** @param {string} slug @param {Lingua} lang */
