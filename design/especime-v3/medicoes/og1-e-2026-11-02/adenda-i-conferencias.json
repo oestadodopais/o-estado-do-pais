@@ -1,0 +1,74 @@
+{
+  "chamadas_ate_ao_relatorio": 39,
+  "corridas_por_curto": 14,
+  "conferencias_ou_medicoes": 12,
+  "geracao_ou_travessia": 2,
+  "core_gate": {
+    "corridas": 1,
+    "codigo": 0
+  },
+  "build": {
+    "corridas": 1,
+    "codigo": 0
+  },
+  "motor": "ccc647cb",
+  "sitio": "390bab58",
+  "registos": [
+    {
+      "registo": "<temporario>/og1ei-composicao.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-extracao.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ei-plantas-voz.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-extracao-b.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ei-tipos-formas.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-tipos.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-extracao-c.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-mortos.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ei-mortos-b.log",
+      "codigo": 1
+    },
+    {
+      "registo": "<temporario>/og1ei-mortos-c.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-travessia.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-prova.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-preflight.log",
+      "codigo": 0
+    },
+    {
+      "registo": "<temporario>/og1ei-lugar.log",
+      "codigo": 0
+    }
+  ]
+}
