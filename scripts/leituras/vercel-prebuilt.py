@@ -33,6 +33,37 @@ def inventario(pasta):
     return resultado
 
 
+def regioes_funcoes(w, completar=False):
+    regioes = ler(w / 'vercel.json').get('regions')
+    exigir(isinstance(regioes, list) and bool(regioes)
+           and all(isinstance(r, str) and bool(r.strip()) for r in regioes),
+           'vercel.json sem regions válidas')
+    pastas = sorted((w / '.vercel/output/functions').rglob('*.func'))
+    exigir(bool(pastas), 'nenhuma função empacotada')
+    configuracoes = []
+    for pasta in pastas:
+        vc = pasta / '.vc-config.json'
+        nome = vc.relative_to(w / '.vercel/output').as_posix()
+        exigir(vc.is_file(), 'falta ' + nome)
+        config = ler(vc)
+        exigir(('regions' not in config and completar) or config.get('regions') == regioes,
+               'região da função diferente do vercel.json: ' + nome)
+        configuracoes.append((vc, config))
+    # Só completa ausências, depois de recusar qualquer divergência.
+    for vc, config in configuracoes:
+        if 'regions' not in config:
+            config['regions'] = regioes
+            vc.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n')
+    return regioes
+
+
+def conferir_arvore(w):
+    estado = subprocess.check_output(
+        ['git', 'status', '--porcelain=v1', '--untracked-files=all', '--ignore-submodules=none'],
+        cwd=w, text=True).strip()
+    exigir(not estado, 'árvore diferente da cabeça; ficheiros alterados: ' + estado)
+
+
 def conferir_regras(w):
     origem = ler(w / 'vercel.json')
     saida = w / '.vercel/output'
@@ -60,8 +91,7 @@ def conferir_regras(w):
     exigir(f['launcherType'] == 'Nodejs', 'launcherType diferente de Nodejs')
     handler = (pasta / f['handler']).resolve()
     exigir(handler.is_relative_to(pasta.resolve()) and handler.is_file(), 'handler ausente ou fora da função')
-    regioes = f.get('regions', config.get('regions'))
-    exigir(regioes == origem.get('regions'), 'região da função diferente do vercel.json')
+    regioes = regioes_funcoes(w)
     return {'regras': len(origem['routes']), 'funcoes': len(funcoes), 'regioes': regioes}
 
 
@@ -74,6 +104,7 @@ def conferir(w):
 
 
 def trocar(w):
+    regioes_funcoes(w, completar=True)
     conferir_regras(w)
     inventario(w / 'dist')
     alvo = w / '.vercel/output/static'
@@ -85,6 +116,7 @@ def trocar(w):
 
 
 def preparar(w):
+    conferir_arvore(w)
     cabeca = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=w, text=True).strip()
     for nome in ('version.json', 'prova.json'):
         exigir(ler(w / 'dist' / nome).get('commit') == cabeca, 'dist não é da cabeça: ' + nome)
@@ -100,6 +132,7 @@ def preparar(w):
             if (w / 'dist').exists():
                 shutil.rmtree(w / 'dist')
             shutil.copytree(copia, w / 'dist', copy_function=shutil.copy2)
+            conferir_arvore(w)
         exigir(inventario(w / 'dist') == antes, 'dist mudou durante a preparação')
     exigir(subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=w, text=True).strip() == cabeca, 'a cabeça mudou durante a preparação')
     prova = trocar(w)

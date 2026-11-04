@@ -10,6 +10,7 @@ import tempfile
 import time
 import unittest
 from unittest.mock import patch
+from apoio_ferramentas import git, commit
 
 RAIZ = Path(__file__).resolve().parents[2]
 GUIOES = RAIZ / 'scripts/leituras'
@@ -59,7 +60,7 @@ class Prebuilt(unittest.TestCase):
         pb.conferir(self.w)
 
     def test_funcao_campos_regiao_e_handler(self):
-        for campo in ('runtime', 'handler', 'launcherType', 'regions'):
+        for campo in ('runtime', 'handler', 'launcherType'):
             with self.subTest(campo=campo):
                 anterior = self.vc.pop(campo)
                 self.escrever()
@@ -80,6 +81,104 @@ class Prebuilt(unittest.TestCase):
         self.escrever()
         with self.assertRaisesRegex(ValueError, 'região'):
             pb.trocar(self.w)
+
+    def test_regioes_ausentes_completadas_em_cada_funcao(self):
+        self.vc.pop('regions')
+        self.escrever()
+        outra = self.output / 'functions/extra.func'
+        outra.mkdir()
+        (outra / '.vc-config.json').write_text(json.dumps(self.vc))
+        with self.assertRaisesRegex(ValueError, 'região'):
+            pb.conferir_regras(self.w)
+        pb.trocar(self.w)
+        for pasta in (self.func, outra):
+            config = json.loads((pasta / '.vc-config.json').read_text())
+            self.assertEqual(config['regions'], ['dub1'])
+            self.assertEqual({k: v for k, v in config.items() if k != 'regions'}, self.vc)
+        config['regions'] = ['iad1']
+        (outra / '.vc-config.json').write_text(json.dumps(config))
+        with self.assertRaisesRegex(ValueError, 'extra.func'):
+            pb.trocar(self.w)
+        self.assertEqual(json.loads((outra / '.vc-config.json').read_text())['regions'], ['iad1'])
+
+    def test_origem_sem_regioes_recusada(self):
+        self.origem.pop('regions')
+        self.vc.pop('regions')
+        self.escrever()
+        for conferir in (pb.trocar, pb.conferir_regras):
+            with self.assertRaisesRegex(ValueError, 'vercel.json sem regions'):
+                conferir(self.w)
+        self.assertNotIn('regions', json.loads((self.func / '.vc-config.json').read_text()))
+
+    def iniciar_git(self):
+        git(self.w, 'init', '-q')
+        git(self.w, 'config', 'core.hooksPath', os.devnull)
+        (self.w / '.gitignore').write_text('dist/\n.vercel/\n')
+        (self.w / 'linha').write_text('base\n')
+        (self.w / 'package-lock.json').write_text('{}\n')
+        git(self.w, 'add', '--', 'api/sugestoes.js', 'vercel.json', 'package-lock.json')
+        commit(self.w, 'ensaio: cabeça conferida')
+        head = git(self.w, 'rev-parse', 'HEAD')
+        for nome in ('version.json', 'prova.json'):
+            (self.w / 'dist' / nome).write_text(json.dumps({'commit': head}))
+
+    def test_build_altera_lock_e_nao_prepara_pacote(self):
+        self.iniciar_git()
+        self.vc.pop('regions')
+        self.escrever()
+        real_run = subprocess.run
+        def executar(args, **kwargs):
+            if args[0] != 'vercel':
+                return real_run(args, **kwargs)
+            if args[1] == 'build':
+                (self.w / 'package-lock.json').write_text('{"mudou":true}\n')
+                (self.w / 'dist/index.html').write_text('outra construção')
+            return subprocess.CompletedProcess(args, 0)
+        with patch.object(pb.subprocess, 'run', side_effect=executar):
+            with self.assertRaisesRegex(ValueError, 'ficheiros alterados:.*package-lock.json'):
+                pb.preparar(self.w)
+        self.assertEqual((self.w / 'dist/index.html').read_text(), 'cópia conferida')
+        self.assertFalse((self.output / 'static').exists())
+        self.assertNotIn('regions', json.loads((self.func / '.vc-config.json').read_text()))
+        self.assertIn('mudou', (self.w / 'package-lock.json').read_text())
+
+    def test_build_limpo_completa_regiao_e_conserva_handler(self):
+        self.iniciar_git()
+        self.vc.pop('regions')
+        self.escrever()
+        real_run = subprocess.run
+        comandos = []
+        def executar(args, **kwargs):
+            if args[0] != 'vercel':
+                return real_run(args, **kwargs)
+            comandos.append(args)
+            if args[1] == 'build':
+                (self.w / 'dist/index.html').write_text('outra construção')
+            return subprocess.CompletedProcess(args, 0)
+        with patch.object(pb.subprocess, 'run', side_effect=executar):
+            prova = pb.preparar(self.w)
+        self.assertEqual(len(comandos), 2)
+        self.assertEqual(prova['regioes'], ['dub1'])
+        self.assertEqual(json.loads((self.func / '.vc-config.json').read_text()), {**self.vc, 'regions': ['dub1']})
+        self.assertEqual((self.output / 'static/index.html').read_text(), 'cópia conferida')
+        pb.conferir_arvore(self.w)
+
+    def test_arvore_limpa_ignorados_nao_seguidos_e_indice(self):
+        self.iniciar_git()
+        (self.w / '.vercel/artefacto').write_text('ignorado')
+        pb.conferir_arvore(self.w)
+        novo = self.w / 'novo.txt'
+        novo.write_text('não ignorado')
+        with self.assertRaisesRegex(ValueError, 'novo.txt'):
+            pb.conferir_arvore(self.w)
+        novo.unlink()
+        (self.w / 'linha').unlink()
+        with self.assertRaisesRegex(ValueError, 'linha'):
+            pb.conferir_arvore(self.w)
+        (self.w / 'linha').write_text('outra versão\n')
+        git(self.w, 'add', '--', 'linha')
+        with self.assertRaisesRegex(ValueError, 'linha'):
+            pb.conferir_arvore(self.w)
 
     def test_sha256_lista_e_ligacoes(self):
         for modo in ('bytes', 'extra', 'falta', 'ligacao'):
@@ -103,11 +202,11 @@ class Prebuilt(unittest.TestCase):
             comandos.append(args)
             if args[:2] == ['vercel', 'build']:
                 (self.w / 'dist/index.html').write_text('outra construção')
-        with patch.object(pb.subprocess, 'check_output', return_value='c' * 40), patch.object(pb.subprocess, 'run', side_effect=executar):
+        with patch.object(pb.subprocess, 'check_output', side_effect=lambda args, **kw: '' if args[1] == 'status' else 'c' * 40), patch.object(pb.subprocess, 'run', side_effect=executar):
             pb.preparar(self.w)
         self.assertEqual(comandos, [['vercel', 'pull', '--yes', '--environment=production'], ['vercel', 'build', '--prod']])
         self.assertEqual((self.output / 'static/index.html').read_text(), 'cópia conferida')
-        with patch.object(pb.subprocess, 'check_output', return_value='c' * 40), patch.object(pb.subprocess, 'run', side_effect=OSError('ensaio')):
+        with patch.object(pb.subprocess, 'check_output', side_effect=lambda args, **kw: '' if args[1] == 'status' else 'c' * 40), patch.object(pb.subprocess, 'run', side_effect=OSError('ensaio')):
             with self.assertRaises(OSError):
                 pb.preparar(self.w)
         self.assertEqual((self.w / 'dist/index.html').read_text(), 'cópia conferida')
