@@ -63,3 +63,6 @@ design/especime-v3/medicoes/**/alvos.json
 # de `design/marca/`, `design/tipografia/`, `design/especime-v3/maquetas/` e `critica/` não se tocam.
 design/especime-v3/capturas/**/*.png
 design/especime-v3/medicoes/**/*.png
+
+# Manifesto transitório da construção partilhada pelo GitHub (AT1).
+at1-build.json

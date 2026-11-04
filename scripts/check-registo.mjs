@@ -232,7 +232,7 @@ function contaFicheirosDoLivro() {
 
 function passosDaConstrucao() {
   const pkg = JSON.parse(fs.readFileSync(path.join(RAIZ, 'package.json'), 'utf8'));
-  return (pkg.scripts?.build ?? '').split('&&').map((s) => s.trim()).filter(Boolean).length;
+  return (pkg.scripts?.['build:conteudo'] ?? pkg.scripts?.build ?? '').split('&&').map((s) => s.trim()).filter(Boolean).length;
 }
 
 function paginasDeLeitura() {
@@ -332,8 +332,8 @@ const FACTOS = [
     id: 'passos',
     nome: 'passos da construção',
     palavras: ['passos encadeados', 'passos'],
-    fonte: 'package.json · scripts.build',
-    comando: "node -e \"console.log(require('./package.json').scripts.build.split('&&').length)\"",
+    fonte: 'package.json · scripts.build:conteudo',
+    comando: "node -e \"console.log(require('./package.json').scripts['build:conteudo'].split('&&').length)\"",
     valor: passosDaConstrucao(),
     /* uma só fonte: contar a mesma cadeia outra vez não é medir duas vezes */
   },

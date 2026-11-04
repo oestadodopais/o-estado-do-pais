@@ -85,12 +85,14 @@ while ! (set -C; printf '%s %s pid=%s conferir-tudo\n' "$(date -u +%Y-%m-%dT%H:%
   [ -f "$tranca" ] || { echo 'conferir-tudo: não foi possível tomar a tranca; nenhum passo correu' >&2; exit 9; }
   if [ "$(idade)" -gt 2400 ]; then
     python3 "$aqui/tranca.py" "$tranca" || exit 9
+    [ ! -f "$tranca" ] || sleep 10
     continue
   fi
   [ "$esperou" -ne 0 ] || echo "à espera da tranca da máquina: $(cat "$tranca")" >&2
   esperou=1; sleep 10
 done
 dono="$(cat "$tranca")"
+OEDP_TRANCA_DONO="$dono"; export OEDP_TRANCA_DONO
 filho=""
 soltar_a_tranca() {
   resultado=$?

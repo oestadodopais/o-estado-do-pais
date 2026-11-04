@@ -10,7 +10,7 @@
   "scripts": {
     "check:ressalvas": "OEDP_MEDICOES=design/especime-v3/medicoes/oe1-2026-10-04 node tests/pais/portoes.mjs --prefixo oe1e-",
     "dev": "astro dev",
-    "build": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && node scripts/stamp-version.mjs --preparar && astro build && node scripts/calendario-paginas.mjs && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:edicoes && npm run check:selos && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao",
+    "build": "python3 scripts/leituras/com-tranca.py npm run build:conteudo",
     "preview": "astro preview",
     "astro": "astro",
     "check:forma-citacao": "node tests/og1e/forma-da-citacao.mjs && node tests/og1e/reguas.mjs",
@@ -85,7 +85,8 @@
     "check:largura": "node tests/largura/amostra.mjs && node tests/largura/largura.mjs --prova",
     "check:largura:planta": "node tests/largura/largura.mjs --planta",
     "check:capturas-largura": "node tests/largura/capturas.mjs",
-    "lar1:medir": "node tests/largura/medir-lar1.mjs"
+    "lar1:medir": "node tests/largura/medir-lar1.mjs",
+    "build:conteudo": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && node scripts/stamp-version.mjs --preparar && astro build && node scripts/calendario-paginas.mjs && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:edicoes && npm run check:selos && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

@@ -48,12 +48,14 @@ while ! (set -C; printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "
   [ -f "$tranca" ] || { echo 'portoes: não foi possível tomar a tranca; nenhum portão correu' >&2; exit 9; }
   if [ "$(idade)" -gt 2400 ]; then
     python3 "$W/scripts/leituras/tranca.py" "$tranca" || exit 9
+    [ ! -f "$tranca" ] || sleep 10
     continue
   fi
   [ "$esperou" -ne 0 ] || echo "à espera da tranca da máquina: $(cat "$tranca")" >&2
   esperou=1; sleep 10
 done
 dono="$(cat "$tranca")"
+OEDP_TRANCA_DONO="$dono"; export OEDP_TRANCA_DONO
 filho=""
 mediu=0
 soltar_a_tranca() {

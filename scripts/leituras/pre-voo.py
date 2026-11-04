@@ -4,7 +4,7 @@
 Uso: pre-voo.sh <worktree do sítio> <worktree do motor>.
 OEDP_RELATORIO e OEDP_LANCADOR_BASE permitem conferir os destinos antes de
 existirem. Sem eles, procura os ficheiros do lançador nas pastas de relatórios.
-Não copia caches nem resolve uma árvore suja ou uma tranca ocupada.
+Não copia caches nem resolve uma árvore suja.
 """
 import os
 from pathlib import Path
@@ -60,7 +60,7 @@ def conferir(sitio, motor):
     tranca = Path(os.environ.get('OEDP_TRANCA', '/tmp/oedp-construcao.lock'))
     try:
         dono = tranca.read_text().strip()
-        linha('tranca da máquina', False, 'ocupada por ' + dono)
+        linha('tranca da máquina', True, 'ocupada por ' + dono + '; só as corridas esperam')
     except FileNotFoundError:
         linha('tranca da máquina', True, 'livre')
     except OSError:

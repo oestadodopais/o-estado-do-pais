@@ -5,6 +5,8 @@ import subprocess
 import tempfile
 import unittest
 import sys
+import time
+import json
 from apoio_ferramentas import GUIOES, comando, commit, git, repo, worktree
 
 
@@ -31,6 +33,18 @@ class PreVoo(unittest.TestCase):
         self.assertIn('vai ser definido', r.stdout)
         self.assertTrue(all(l.startswith('0 ') for l in r.stdout.splitlines()))
         self.assertNotIn(str(self.p), r.stdout)
+
+    def test_arranque_com_e_sem_tranca(self):
+        medidas = {}
+        for ocupada in (False, True):
+            if ocupada:
+                (self.p / 'tranca').write_text('pid=123 ensaio de outra worktree')
+            inicio = time.monotonic()
+            r = self.correr()
+            medidas['ocupada' if ocupada else 'livre'] = time.monotonic() - inicio
+            self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertTrue((self.p / 'tranca').exists())
+        print(json.dumps({'pre_voo_segundos': medidas}))
 
     def test_node_modules_ausente_e_ligado(self):
         (self.sw / 'node_modules').rmdir()
@@ -62,7 +76,9 @@ class PreVoo(unittest.TestCase):
         self.assertEqual(self.correr().returncode, 9)
         (self.sw / 'linha').write_text('base\n')
         (self.p / 'tranca').write_text('pid=123 ensaio')
-        self.assertIn('ocupada por pid=123 ensaio', self.correr().stdout)
+        r = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn('ocupada por pid=123 ensaio', r.stdout)
         (self.p / 'tranca').unlink()
         pasta = self.sw / 'design/especime-v3/medicoes/bloco'
         pasta.mkdir(parents=True)

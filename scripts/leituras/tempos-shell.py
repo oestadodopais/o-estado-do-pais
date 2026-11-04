@@ -24,13 +24,15 @@ def agora():
 def main():
     argumentos = sys.argv[1:]
     evento = os.environ.get('npm_lifecycle_event', '')
+    if evento == 'build' and argumentos and argumentos[-1].startswith('python3 scripts/leituras/com-tranca.py '):
+        os.execv('/bin/sh', ['/bin/sh', *argumentos])
     pasta = os.environ.get('OEDP_TEMPOS_DIR')
     if not pasta or len(argumentos) != 2 or argumentos[0] != '-c':
         os.execv('/bin/sh', ['/bin/sh', *argumentos])
     cadeia = os.environ.get('OEDP_CADEIA', evento)
     # Os scripts internos do npm ficam dentro do passo que os chamou. Assim
     # conta-se cada conferência uma vez, e mede-se também o astro sem npm.
-    decompor = evento in ('build', 'verify')
+    decompor = evento in ('build', 'build:conteudo', 'verify')
     if os.environ.get('OEDP_TEMPOS_PASSO') and not decompor:
         os.execv('/bin/sh', ['/bin/sh', *argumentos])
     inicio_cadeia, relogio_cadeia = agora(), time.monotonic()
@@ -54,7 +56,7 @@ def main():
             break
     if decompor:
         (dir_tempos / (str(uuid.uuid4()) + '.json')).write_text(json.dumps({
-            'passo': 'cadeia:' + evento, 'cadeia': cadeia, 'inicio': inicio_cadeia, 'fim': agora(),
+            'passo': 'cadeia:' + ('build' if evento == 'build:conteudo' else evento), 'cadeia': cadeia, 'inicio': inicio_cadeia, 'fim': agora(),
             'segundos': time.monotonic() - relogio_cadeia, 'codigo': codigo,
         }) + '\n')
     return codigo

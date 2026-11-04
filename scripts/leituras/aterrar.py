@@ -2,8 +2,8 @@
 """Aterragem pela regra 7, com cada recusa e código no recibo.
 
 A direção chama esta ferramenta depois dos portões locais e da leitura a frio.
-Não cria lançamentos: espera a integração da Vercel, limitada a 45 consultas.
-Os comandos externos têm um teto de 50 minutos; as consultas, de dois minutos.
+Prepara uma produção sem domínio em paralelo com o portão do GitHub.
+Os comandos externos têm um teto de 90 minutos; as consultas, de dois minutos.
 A worktree fica destacada na cabeça aterrada depois de apagar o ramo local.
 """
 import datetime
@@ -47,6 +47,10 @@ class Aterragem:
         self.recibo = {'cabeca': self.cabeca, 'ramo': self.ramo, 'inicio': agora(), 'passos': []}
         self.tranca = Path(os.environ.get('OEDP_TRANCA', '/tmp/oedp-construcao.lock'))
         self.dono = None
+        config = json.loads((self.sitio / 'vercel.json').read_text()) if (self.sitio / 'vercel.json').exists() else {}
+        self.recurso = os.environ.get('OEDP_ATERRAR_RECURSO') == '1'
+        self.preconstruido = config.get('git', {}).get('deploymentEnabled', {}).get('main') is False
+        self.novo_fluxo = self.preconstruido or self.recurso
         self.guardar()
 
     def escrever(self, nome, texto):
@@ -95,13 +99,15 @@ class Aterragem:
                     raise Parar(75, 'esgotado o teto de espera pela tranca')
                 if time.time() - self.tranca.stat().st_mtime > 2400:
                     expirar(self.tranca)
+                    if self.tranca.exists():
+                        time.sleep(min(10, max(0, teto - (time.monotonic() - inicio))))
                 else:
                     if agora_mono >= aviso:
                         texto = f'à espera da tranca (teto {teto} segundos, 60 minutos por omissão): {dono}'
                         print(higienizar(texto, self.sitio, self.motor), flush=True)
                         aviso = agora_mono + 300
                     time.sleep(min(10, max(0, teto - (time.monotonic() - inicio))))
-        self.registar('tranca', 0)
+        self.registar('tranca', 0, espera_segundos=time.monotonic() - inicio)
 
     def largar_tranca(self):
         # A I238: a tranca só durante os passos que tocam a máquina (as conferências com o motor e a fusão),
@@ -112,8 +118,9 @@ class Aterragem:
         self.dono = None
         self.registar('tranca-largada', 0)
 
-    def correr(self, nome, args, cwd=None, teto=3000):
+    def correr(self, nome, args, cwd=None, teto=5400):
         inicio = agora()
+        relogio = time.monotonic()
         falha = None
         codigo = 9
         # A saída bruta só vive num temporário anónimo; nunca entra no relatório.
@@ -121,7 +128,7 @@ class Aterragem:
             p = None
             try:
                 p = subprocess.Popen(args, cwd=cwd or self.sitio, stdout=f, stderr=subprocess.STDOUT,
-                                     env={**os.environ, 'NO_COLOR': '1'}, start_new_session=True)
+                                     env={**os.environ, 'NO_COLOR': '1', **({'OEDP_TRANCA_DONO': self.dono.strip()} if self.dono else {})}, start_new_session=True)
                 limite = time.monotonic() + teto
                 while p.poll() is None:
                     self.pulsar()
@@ -147,7 +154,7 @@ class Aterragem:
         self.escrever(nome + '.codigo', str(codigo) + '\n')
         # O passo seguinte depende do código relido, não do sucesso de lançar o processo.
         codigo = int((self.saida / (nome + '.codigo')).read_text())
-        self.registar(nome, codigo, inicio=inicio, comando=args)
+        self.registar(nome, codigo, inicio=inicio, segundos=time.monotonic() - relogio, teto_segundos=teto, comando=args)
         if falha:
             raise falha
         if codigo:
@@ -416,11 +423,27 @@ class Aterragem:
                 raise Parar(1, 'o lançamento desta cabeça falhou na Vercel')
         raise Parar(124, 'a Vercel não mostrou esta cabeça pronta em 45 consultas')
 
+    def preparar_envio(self):
+        self.preparar()
+        if not self.recurso:
+            self.correr('vercel-prebuilt', ['sh', 'scripts/leituras/vercel-prebuilt.sh', str(self.sitio)])
+        args = ['vercel', 'deploy', '--prod', '--skip-domain', '--yes', '--meta', 'githubCommitSha=' + self.cabeca]
+        if not self.recurso:
+            args.insert(2, '--prebuilt')
+        texto = self.correr('vercel-preparado', args)
+        texto = re.sub(r'\x1b\[[0-9;]*m', '', texto)
+        urls = re.findall(r'https://[a-zA-Z0-9-]+\.vercel\.app(?=\s|$)', texto)
+        self.exigir(bool(urls) and len(set(urls)) == 1, 'o envio não devolveu um endereço único da Vercel')
+        self.recibo['vercel_preparado'] = urls[0]
+        self.recibo['recurso'] = self.recurso
+        self.escrever('vercel.url', urls[0] + '\n')
+        self.guardar()
+
     def preparar(self):
         # A PREPARAÇÃO DA WORKTREE (21.10.2026, I250): as conferências locais precisam do `node_modules` e do `dist/`
         # da própria worktree; uma worktree nova não os tem, e três aterragens caíram por isso. Os dois são ignorados
         # pelo git, pelo que a árvore continua limpa. Prepara-se, não se recusa; corre dentro da tranca, depois da
-        # corrida do GitHub verde, para não construir o que o GitHub recusou.
+        # corrida do GitHub verde no fluxo antigo; no preparado, em paralelo com ela.
         if not (Path(self.sitio) / 'node_modules').is_dir():
             self.correr('preparar-dependencias', ['npm', 'ci', '--no-audit', '--no-fund'])
         if not (Path(self.sitio) / 'dist' / 'version.json').is_file():
@@ -438,6 +461,11 @@ class Aterragem:
             self.recibo['cabeca_motor'] = self.cabeca_motor
             self.registar('condicoes', 0)
             self.correr('publicar-ramo', ['git', 'push', '-u', 'origin', self.ramo])
+            if self.novo_fluxo:
+                self.tomar_tranca()
+                self.conferir_arvores()
+                self.preparar_envio()
+                self.largar_tranca()
             self.github()
             self.conferir_limite_diario()
             self.tomar_tranca()
@@ -450,9 +478,14 @@ class Aterragem:
             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)
             self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')
             self.correr('publicar-main', ['git', 'push', 'origin', 'main'], cwd=self.principal)
-            self.largar_tranca()
-            self.vercel()
+            if self.novo_fluxo:
+                self.correr('vercel-promover', ['vercel', 'promote', self.recibo['vercel_preparado'], '--yes'])
+            else:
+                self.largar_tranca()
+                self.vercel()
             self.correr('verify-deploy', ['npm', 'run', 'verify:deploy'], cwd=self.principal)
+            if self.novo_fluxo:
+                self.largar_tranca()
             self.conferir_arvores()
             self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main mudou depois do lançamento')
             remoto = self.correr('conferir-ramo-remoto', ['git', 'ls-remote', '--exit-code', 'origin', 'refs/heads/' + self.ramo])

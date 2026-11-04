@@ -125,7 +125,7 @@ if (process.argv.includes('--prova') && !process.env.OEDP_SINAIS_PLANTA) {
      por `NODE_OPTIONS` em todos os processos do passo), sai com 1. `OEDP_SINAIS_PLANTA` impede o passo de
      correr as plantas outra vez. */
   const pacote = JSON.parse(fs.readFileSync(path.join(RAIZ, 'package.json'), 'utf8'));
-  const passos = String(pacote.scripts?.build ?? '').split('&&').map((x) => x.trim());
+  const passos = String(pacote.scripts?.['build:conteudo'] ?? pacote.scripts?.build ?? '').split('&&').map((x) => x.trim());
   const naCadeia = passos.indexOf('astro build') >= 0 && passos.lastIndexOf('npm run sinais') > passos.indexOf('astro build');
   const registo = `import { register } from 'node:module'; register('data:text/javascript,' + encodeURIComponent(${JSON.stringify(gancho)}));`;
   const passo = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['run', '-s', 'sinais'], {

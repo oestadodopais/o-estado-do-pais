@@ -136,7 +136,7 @@ export function passosDe(cadeia) {
 
 /** Os passos do `verify` que não são, carácter a carácter, um passo do `build`. */
 export function restantesDoVerify(scripts) {
-  const doBuild = new Set(passosDe(scripts.build));
+  const doBuild = new Set(passosDe(scripts['build:conteudo'] ?? scripts.build));
   return passosDe(scripts.verify).filter((p) => !doBuild.has(p));
 }
 
@@ -164,11 +164,12 @@ function ordemDeArranque(restantes, depoisDoGrupo = DEPOIS_DO_GRUPO) {
 export function celulaDaUniao(scripts, corridos) {
   const parte = (s) => String(s ?? '').split(/\s*&&\s*/).map((x) => x.trim()).filter((x) => x.length > 0);
   const verify = parte(scripts.verify);
-  const build = new Set(parte(scripts.build));
+  const build = new Set(parte(scripts['build:conteudo'] ?? scripts.build));
   /* A contagem por outra via: tantos passos quantos `&&` mais um. Um leitor
      que perdesse um passo pelo caminho não passa daqui. */
   const esperados = (String(scripts.verify ?? '').match(/&&/g) ?? []).length + 1;
   const falhas = [];
+  if (scripts['build:conteudo'] !== undefined && scripts.build !== 'python3 scripts/leituras/com-tranca.py npm run build:conteudo') falhas.push('U: o build não executa a cadeia declarada sob a tranca');
   if (verify.length === 0) falhas.push('U: o verify do package.json não tem passos');
   if (verify.length !== esperados) falhas.push(`U: o verify tem ${esperados} passos pelos &&, e o leitor leu ${verify.length}`);
   const verdes = new Set(corridos.filter((c) => c.codigo === 0).map((c) => c.passo));

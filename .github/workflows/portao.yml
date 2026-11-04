@@ -14,34 +14,6 @@
 # casa (os três portões a 0 em cada commit) continua a ser da casa: a CI garante
 # que o que chega a `main` foi conferido, não que cada passo do caminho o foi.
 #
-# CADA CONFERÊNCIA UMA VEZ, AS LENTAS LADO A LADO (bloco CI1, 28.09.2026, pela
-# pergunta do diretor desse dia). Até aqui a corrida fazia o `npm run build` e
-# depois o `npm run verify` inteiro, e 17 dos 33 passos do `verify` eram
-# exatamente os mesmos comandos que o `build` acabara de correr sobre o mesmo
-# `dist/`: na corrida de `main` de 28.09.2026 (a 36412381787) eram 3,0 minutos
-# a conferir outra vez o que já estava conferido, e as três conferências mais
-# lentas (os alvos, as palavras e a moldura, 9,7 minutos) corriam em série.
-# Agora, depois do `build`, corre `scripts/verify-depois-do-build.mjs`: lê as
-# duas cadeias do `package.json`, corre os passos do `verify` que o `build` não
-# correu, lado a lado (as que escrevem na árvore depois, sozinhas), e fecha com
-# a célula U (cada passo do `verify` é um passo do `build` ou correu ali e saiu
-# com 0), a D (nenhuma conferência escreveu, nem que fosse para repor, num
-# ficheiro do `dist/` ou da árvore que as outras liam) e a C (o `dist/` e os
-# dois ficheiros de prova são desta cabeça e desta construção). Nenhuma
-# conferência sai, nenhuma se salta, e nenhum resultado passa de uma corrida
-# para outra. O `npm run verify` que se corre à mão não muda.
-#
-# O trabalho chama-se `portao` de propósito: é esse o nome do contexto que o
-# diretor exige em `main` nas definições do repositório (Settings → Branches →
-# Require status checks to pass → `portao`). Mudar o identificador do trabalho
-# parte a exigência em silêncio.
-#
-# As ações de terceiros estão presas ao resumo completo do commit, com a etiqueta
-# ao lado em comentário: uma etiqueta é um ponteiro que quem a publica pode mover,
-# um resumo não é. As etiquetas foram lidas na fonte a 02.09.2026 com
-# `gh release view --repo <r>` e os resumos com
-# `gh api repos/<r>/git/ref/tags/<etiqueta>`.
-
 name: portão
 
 on:
@@ -51,6 +23,7 @@ on:
 # Nada mais do que ler a árvore. Sem escrita, sem pacotes, sem `id-token`.
 permissions:
   contents: read
+  actions: read
 
 # Uma corrida por referência. O push de um ramo e o pedido de integração desse
 # ramo já correm em referências distintas (`refs/heads/<ramo>` e
@@ -65,53 +38,20 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
+# AT1: o contexto obrigatório portao só fica verde depois de todas as partes.
 jobs:
-  portao:
-    # RH1: os nomes privados vêm do segredo, mesmo após a reescrita do Git.
-    # Sem o segredo ou com a lista vazia, a conferência fica vermelha.
+  construir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
     env:
       PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
-    # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a
-    # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem
-    # (`Image: ubuntu-24.04`, lido no passo «Set up job» da corrida 33593721414),
-    # mas resolve sozinho para a seguinte no dia em que o GitHub a mudar, e um
-    # commit que estava verde passaria a correr noutro sistema sem ninguém
-    # decidir nada. QUANDO MUDAR: por decisão registada, quando a casa quiser o
-    # maior seguinte, e nunca a meio de um bloco; a par com o `.nvmrc`.
-    runs-on: ubuntu-24.04
-    # 45 desde 04.09.2026: a corrida chegou a 28 m 58 s de trabalho (npm ci 5 m 50 s,
-    # build 12 m 25 s, verify 9 m 54 s com check:alvos, check:indice e check:moldura)
-    # contra os 30 de teto, medido pelo construtor do F1.1b; 62 segundos de folga
-    # não são folga. O teto sobe; o que entra no verify a seguir mede o seu custo.
-    # 26.10.2026 (§1.205): a corrida do ramo do CR2 levou 44 min 15 s e a de main sobre o mesmo
-    # commit 46 min, cancelada pelo teto de 45; o teto sobe para 90, com a mesma lista de
-    # conferências, e a GARGALOS mede o que fazer com o tempo (os passos em paralelo).
-    timeout-minutes: 90
+      GH_TOKEN: ${{ github.token }}
     steps:
-      # `fetch-depth: 0` E NÃO A CÓPIA RASA (bloco F1.4, segunda passagem,
-      # 04.09.2026). A data de publicação de cada edição de um trabalho é o dia
-      # em que o ficheiro `studies-src/<slug>/<lang>.html` entrou neste
-      # repositório, lida na construção com
-      # `git log --diff-filter=A --format=%ad --date=short -- <ficheiro>`. O
-      # `actions/checkout` traz, por omissão, um só commit: com essa cópia o
-      # comando devolve vazio, `src/lib/datas-do-repositorio.mjs` devolve `null` e
-      # as dezasseis edições voltavam ao marcador — sem erro nenhum, que é o pior
-      # modo de falhar. A régua do bloco (`tests/livro/indice.mjs`, célula I9)
-      # refaz a leitura por conta própria e fecha a construção se a página e o
-      # `git` discordarem, e é ela que torna esta linha visível quando alguém a
-      # tirar.
       - name: A árvore
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
-      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node
-      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e não
-      # se toca; o `.nvmrc` diz a versão exata em que a casa desenvolve, com o
-      # remendo e tudo (`22.23.1`, o `node -v` do portátil), e não um `22` que
-      # flutua por todos os remendos do maior. QUANDO MUDAR: quando o portátil
-      # mudar de Node, na mesma passagem e com o número medido, nunca por
-      # omissão.
       - name: O Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
@@ -121,87 +61,113 @@ jobs:
       - name: npm ci
         run: npm ci
 
-      # O BINÁRIO DO CHROMIUM NÃO VEM DO `npm ci` (bloco F1.8, segunda
-      # passagem, 03.09.2026). `npm ci` só instala o pacote `playwright`, a
-      # biblioteca; o motor que ela pilota é outro descarregamento, à parte, e
-      # sem ele `chromium.launch()` morre com «Executable doesn't exist»
-      # (medido na corrida 33802765663: o primeiro portão desta árvore a abrir
-      # um navegador, porque as réguas anteriores que usam Playwright,
-      # `tests/inicio/*.mjs`, nunca entraram num portão automático, e por isso
-      # o buraco nunca se via aqui). `--with-deps` instala também as
-      # bibliotecas do sistema que a imagem do Ubuntu não traz de origem.
       - name: O Chromium do Playwright
         run: npx playwright install --with-deps chromium
-      # O ZSH, PARA A PLANTA DA ATERRAGEM (M-A, 06.10.2026, a segunda leitura, achado 8): o `check:leituras` corre
-      # `tests/leituras/aterrar.py`, que exercita o `scripts/aterrar.sh` (um guião zsh) com os comandos substituídos; a imagem
-      # ubuntu-24.04 não traz zsh, e a primeira corrida com o passo novo caiu em «No such file or directory: 'zsh'»,
-      # a fechar bem. Instala-se o interpretador em vez de mudar o guião, para a planta provar o guião que aterra.
       - name: O zsh, para a planta da aterragem
         run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
-      # O PYYAML, PARA O PACOTE DAS LEITURAS (M83, 14.10.2026): `scripts/leituras/pacote.py` lê de cada linha do livro-razão
-      # mudada o `document.source_sha256` com o PyYAML, e recusa o pacote quando o módulo falta, em vez de ler menos; a
-      # planta `tests/leituras/pacote.py` do `check:leituras` exercita-o. Quando a imagem do runner já o traz, este passo não faz nada.
       - name: O PyYAML, para o pacote das leituras
         run: python3 -c "import yaml" 2>/dev/null || sudo apt-get install -y -qq python3-yaml
 
-      # Os três portões, um passo cada um, para o registo dizer qual caiu sem
-      # ninguém ter de ler as 11 577 linhas de saída de uma corrida verde
-      # (medido: `gh run view 33592347822 --log | wc -l`). Um vermelho num destes
-      # passos salta os seguintes, e é o desenho: o primeiro portão que cai é o
-      # que se conserta.
-      - name: npm run build
-        run: npm run build
-
-      # O `verify` SEM REPETIR O QUE O `build` JÁ CORREU (bloco CI1). Este passo
-      # só corre se o `build` passou (o `if: success()` por omissão de cada
-      # passo), e é isso que deixa a célula U contar como conferidos os passos
-      # do `verify` que são passos do `build`: o `build` correu-os aqui, sobre
-      # este `dist/`, e parou no primeiro que caísse. O guião começa pelas suas
-      # próprias plantas (uma conferência nova só no `verify` corre; uma
-      # tirada da escolha, uma vermelha, uma que escreva no `dist/` ou num
-      # ficheiro da árvore, mesmo repondo os bytes, e um `dist/` ou um ficheiro
-      # de prova de outra construção fecham a corrida; uma que escreva na
-      # árvore corre sozinha depois do grupo) e só depois lança as conferências,
-      # tantas ao mesmo tempo quantos os núcleos do anfitrião, as mais lentas
-      # primeiro, e o `design:feixe`, que refaz `design-system/`, no fim.
-      # Cada uma escreve a sua saída inteira quando acaba, num grupo que se abre
-      # no registo; uma vermelha fica aberta, com a anotação de erro.
-      - name: npm run verify, sem repetir o build
-        run: npm run verify:depois-do-build
-
-      - name: npm run typecheck
-        run: npm run typecheck
-
-      # A prova: `dist/prova.json` (escrito pelo `gate:html`) e `dist/cadeia.json`
-      # (escrito pelo `check:cadeia`). Desde o bloco CI1 os dois são os que o
-      # `build` escreveu, porque o `verify` desta corrida já não torna a correr
-      # esses dois portões sobre o mesmo `dist/`; a célula D do passo anterior
-      # prova que nenhuma conferência lhes mexeu, e a C que são desta cabeça. O
-      # que sobe continua a ser o estado de uma corrida em que os três portões
-      # passaram, porque este passo só corre depois deles.
-      #
-      # Este passo existe porque o `if-no-files-found: error` do passo seguinte
-      # só falha quando NENHUM dos caminhos casa: com um ficheiro presente e o
-      # outro ausente, a subida passava e a prova ficava meia (leitura a frio do
-      # Codex, achado 4). O `test -f` de cada um fecha esse buraco.
-      - name: Os dois ficheiros da prova existem
-        if: success()
+      - name: Construção e typecheck
         run: |
+          npm run build
+          npm run typecheck
+          node scripts/verify-partes.mjs planear
+          tar -cpf /tmp/dist.tar dist at1-build.json
+      - name: Dist para as conferências
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: dist-${{ github.sha }}
+          path: /tmp/dist.tar
+          retention-days: 1
+          if-no-files-found: error
+  conferir:
+    needs: construir
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [0, 1, 2, 3, 4, 5]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: A árvore
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: O Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
+
+      - name: O Chromium do Playwright
+        run: npx playwright install --with-deps chromium
+      - name: O zsh, para a planta da aterragem
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
+      - name: O PyYAML, para o pacote das leituras
+        run: python3 -c "import yaml" 2>/dev/null || sudo apt-get install -y -qq python3-yaml
+
+      - name: O dist desta corrida, com as datas intactas
+        run: |
+          gh run download "$GITHUB_RUN_ID" --name dist-${{ github.sha }} --dir /tmp/at1-dist
+          tar -xpf /tmp/at1-dist/dist.tar
+      - name: A parte, com as provas U, D e C
+        run: node scripts/verify-partes.mjs parte ${{ matrix.parte }} /tmp/parte-${{ matrix.parte }}.json
+      - name: Prova da parte verde
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: parte-${{ matrix.parte }}-${{ github.sha }}
+          path: /tmp/parte-${{ matrix.parte }}.json
+          retention-days: 14
+          if-no-files-found: error
+  portao:
+    needs: [construir, conferir]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Todas as tarefas passaram
+        run: test '${{ needs.construir.result }}' = success && test '${{ needs.conferir.result }}' = success
+      - name: A árvore
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: O Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: O dist desta corrida, com as datas intactas
+        run: |
+          gh run download "$GITHUB_RUN_ID" --name dist-${{ github.sha }} --dir /tmp/at1-dist
+          tar -xpf /tmp/at1-dist/dist.tar
+      - name: Reunir as provas e conferir a união inteira
+        run: |
+          for i in 0 1 2 3 4 5; do
+            gh run download "$GITHUB_RUN_ID" --name parte-$i-${{ github.sha }} --dir /tmp/at1-partes
+          done
+          node scripts/verify-partes.mjs juntar /tmp/at1-partes /tmp/uniao.json
           test -f dist/prova.json
           test -f dist/cadeia.json
-
-      # `if: success()` e não `always()`: o artefacto é a prova de uma corrida
-      # VERDE, não de uma construção que a seguir caiu no `verify` ou no
-      # `typecheck` (leitura a frio do Codex, achado 5). Uma corrida vermelha não
-      # deixa artefacto nenhum, e é assim que se quer: a prova de uma corrida que
-      # falhou é o registo, não um ficheiro que parece um selo.
+          mkdir /tmp/at1-prova
+          cp dist/prova.json dist/cadeia.json /tmp/uniao.json /tmp/at1-prova/
       - name: A prova desta corrida
         if: success()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: prova-${{ github.sha }}
-          path: |
-            dist/prova.json
-            dist/cadeia.json
+          path: /tmp/at1-prova/
           retention-days: 14
           if-no-files-found: error

@@ -38,6 +38,6 @@ try {
  }
  for(const html of [`<p>${selo}</p><p>${selo}</p>`,`<p>79${selo} milhõesimo</p>`,`<p>79${selo} e ${selo}</p>`])assert.equal(medirPagina(html).erros.length,0);
  assert.equal(medirPagina(`<p>79${selo}<em> milhões</em></p>`).erros[0].unidade,'milhões');
- assert.match(JSON.parse(fs.readFileSync('package.json','utf8')).scripts.build,/npm run check:selos/);
+ assert.match(JSON.parse(fs.readFileSync('package.json','utf8')).scripts['build:conteudo'],/npm run check:selos/);
  console.log(`SEL1: ${plantas.length} cópias conferidas, formas novas recusadas pelo comando do build.`);
 } finally {fs.rmSync(tmp,{recursive:true,force:true});}

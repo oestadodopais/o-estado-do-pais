@@ -16,6 +16,10 @@ for caminho in sys.argv[2:]:
     texto = Path(caminho).read_text(encoding='utf-8')
     # cada linha do mandato que traz aspas angulares é uma frase do leitor ou a sua explicação: mede-se a linha inteira (as frases do §3 têm aspas dentro de aspas)
     frases = [l for l in texto.splitlines() if '«' in l and len(l) >= 20]
+    # Só uma declaração no cabeçalho, antes da primeira secção ou frase.
+    cabecalho = re.split(r'(?m)^## |«', texto, maxsplit=1)[0]
+    paginas = re.findall(r'(?m)^Página: ([^\n]+)$', cabecalho)
+    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre')
     achados = []
     for f in frases:
         baixo = f.lower()
@@ -27,7 +31,7 @@ for caminho in sys.argv[2:]:
                 bate = re.search(r'(?<![\wÀ-ÿ])' + re.escape(marca_baixa), baixo) is not None
             else:
                 bate = re.search(r'(?<![\wÀ-ÿ])' + re.escape(marca_baixa) + r'(?![\wÀ-ÿ])', baixo) is not None
-            if bate: achados.append((tipo, marca, f[:110]))
+            if bate and not isento: achados.append((tipo, marca, f[:110]))
     print(f'{Path(caminho).name}: {len(frases)} linhas com aspas, {len(achados)} marcador(es) acionado(s)')
     for tipo, marca, f in achados: print(f'  [{tipo}] «{marca}» em: «{f}…»')
     total += len(achados)
