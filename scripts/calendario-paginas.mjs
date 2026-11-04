@@ -27,7 +27,7 @@ for(const lang of ['pt','en']){
   if(!e)throw new Error('Calendário: acontecimento desconhecido');
   const portas=[...new Map((e.afecta_linhas??[]).flatMap(id=>indice[lang].get(id)??[]).map(p=>[p.rota,p])).values()].sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
   if(!portas.length){alvo.remove();continue;}
-  alvo.set_content((lang==='pt'?'Atualiza: ':'Updates: ')+portas.map(p=>`<a data-calendario-pagina="${esc(p.rota)}" href="${esc(p.rota)}">${esc(p.titulo)}</a>`).join(' · '));
+  alvo.set_content((lang==='pt'?'Atualiza: ':'Updates: ')+portas.map(p=>`<a style="display:inline-block;min-height:44px;max-width:100%;padding-block:10px;vertical-align:middle" data-calendario-pagina="${esc(p.rota)}" href="${esc(p.rota)}">${esc(p.titulo)}</a>`).join(' · '));
  }
  fs.writeFileSync(arquivo,doc.toString());
  const registo=path.join(dist,lang==='pt'?'correcoes':'en/corrections','index.html');const correcoes=parse(fs.readFileSync(registo,'utf8'));
