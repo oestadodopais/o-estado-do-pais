@@ -17,23 +17,21 @@ function andar(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');
  if(!titulo)continue;
  const ids=new Set((main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(r=>r?.key==='linha').map(r=>r.params.slug));
- for(const id of ids)if(linhas.has(id)){if(!indice[hit.lang].has(id))indice[hit.lang].set(id,[]);indice[hit.lang].get(id).push({rota:rota+'/',titulo});}
+ for(const id of ids)if(linhas.has(id)){if(!indice[hit.lang].has(id))indice[hit.lang].set(id,[]);indice[hit.lang].get(id).push({rota,titulo});}
 }}
 andar(dist);
 for(const lang of ['pt','en']){
  const arquivo=path.join(dist,lang==='pt'?'agenda':'en/agenda','index.html');const doc=parse(fs.readFileSync(arquivo,'utf8'));
+ // A grafia vem do menu desta página; as outras portas conservam a rota encontrada.
+ const menu=new Map(doc.querySelectorAll('#nav-principal a[href]').map(a=>{
+  const href=a.getAttribute('href');return [href.replace(/\/$/,''),href];
+ }));
  for(const alvo of doc.querySelectorAll('[data-calendario-alvos]')){
   const e=calendario.eventos.find(e=>e.id===alvo.getAttribute('data-calendario-alvos'));
   if(!e)throw new Error('Calendário: acontecimento desconhecido');
   const portas=[...new Map((e.afecta_linhas??[]).flatMap(id=>indice[lang].get(id)??[]).map(p=>[p.rota,p])).values()].sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
   if(!portas.length){alvo.remove();continue;}
-  alvo.set_content((lang==='pt'?'Atualiza: ':'Updates: ')+portas.map(p=>`<a data-calendario-pagina="${esc(p.rota)}" href="${esc(p.rota)}">${esc(p.titulo)}</a>`).join(' · '));
- }
- // A porta do menu para uma página citada usa a mesma grafia com barra final.
- const destinos=new Set(doc.querySelectorAll('[data-calendario-pagina]').map(a=>a.getAttribute('href')));
- for(const a of doc.querySelectorAll('#nav-principal a[href]')){
-  const href=a.getAttribute('href');const canonico=href.replace(/\/$/,'')+'/';
-  if(destinos.has(canonico))a.setAttribute('href',canonico);
+  alvo.set_content((lang==='pt'?'Atualiza: ':'Updates: ')+portas.map(p=>{const href=menu.get(p.rota)??p.rota;return `<a data-calendario-pagina="${esc(href)}" href="${esc(href)}">${esc(p.titulo)}</a>`;}).join(' · '));
  }
  fs.writeFileSync(arquivo,doc.toString());
  const registo=path.join(dist,lang==='pt'?'correcoes':'en/corrections','index.html');const correcoes=parse(fs.readFileSync(registo,'utf8'));

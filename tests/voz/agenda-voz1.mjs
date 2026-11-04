@@ -1,5 +1,6 @@
 /** VOZ-1 B: dados conservados, futuro exato, ausência distinta e portas verificadas. */
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {parse} from 'node-html-parser';
+import {spawnSync} from 'node:child_process';
 import {matchPath,routePath} from '../../src/lib/routes.mjs';
 import {conferirTitulosCopiados} from '../../scripts/titulos-copiados.mjs';
 import {calendarioFuturo} from '../../src/lib/agenda.mjs';
@@ -13,11 +14,12 @@ function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');if(!titulo)continue;
  const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
- leitores[hit.lang].push({rota:rota+'/',titulo,refs});
+ leitores[hit.lang].push({rota,titulo,refs});
 }}
 anda('dist');
 export function conferir(root,lang,registo=calendario,hoje=dia){
  const erros=[];
+ const grafia=rota=>root.querySelectorAll('#nav-principal a[href]').find(a=>a.getAttribute('href').replace(/\/$/,'')===rota)?.getAttribute('href')??rota;
  if(root.querySelector('[data-agenda-item], [data-agenda-seccao], .quadro-estados'))erros.push('trabalho interno visível');
  if(root.querySelector('[data-calendario-dia]')?.getAttribute('data-calendario-dia')!==hoje)erros.push('dia da construção diferente');
  const esperados=registo.eventos.filter(e=>!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=hoje);
@@ -35,9 +37,8 @@ export function conferir(root,lang,registo=calendario,hoje=dia){
    if(!esperado || item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==esperado)erros.push('motivo de ausência diferente');
   }
   const portas=item.querySelectorAll('[data-calendario-pagina]');
-  const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id))).sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
+  const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id))).map(p=>({...p,rota:grafia(p.rota)})).sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
   if(portas.some(a=>a.hasAttribute('style')))erros.push('estilo em atributo');
-  if(portas.some(a=>!a.getAttribute('href')?.endsWith('/')))erros.push('porta sem barra final');
   if(portas.some(a=>['home','temas','indice','estudos','discussao','leituraDaSemana','areas'].includes(matchPath(a.getAttribute('href'))?.key)))erros.push('página de entrada no calendário');
   if(portas.map(a=>a.getAttribute('href')).join('|')!==atualizam.map(p=>p.rota).join('|'))erros.push('ordem das páginas diferente');
   if(portas.length!==atualizam.length)erros.push('páginas afetadas diferentes');
@@ -52,7 +53,7 @@ for(const lang of ['pt','en']){
  morde('título copiado fora da rota',conferirTitulosCopiados(root,{key:'explicacao',lang}).erros.length>0);
  const falso=parse(texto);falso.querySelector('[data-calendario-pagina]').set_content('Título inventado');morde('título falso não é transcrição',conferirTitulosCopiados(falso,{key:'agenda',lang}).erros.length>0);
  for(const [nome,muda,queixa] of [
-  ['barra final retirada',r=>{const a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',a.getAttribute('href').replace(/\/$/,''));},'porta sem barra final'],
+  ['grafia trocada',r=>{const a=r.querySelector('[data-calendario-pagina]'),href=a.getAttribute('href');a.setAttribute('href',href.endsWith('/')?href.slice(0,-1):href+'/');},'página afetada sem título e porta certos'],
   ['estilo em atributo',r=>r.querySelector('[data-calendario-pagina]').setAttribute('style','min-height:44px'),'estilo em atributo'],
   ['trabalho interno',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<article data-agenda-item="planta">Trabalho interno</article>'),'trabalho interno visível'],
   ['fonte retirada',r=>r.querySelector('.agenda-evento-fonte').remove(),'campo público ausente'],
@@ -74,3 +75,36 @@ const c={eventos:[{id:'antes',data:'2026-11-03'},{id:'hoje',data:'2026-11-04'},{
 assert.deepEqual(calendarioFuturo(c,'2026-11-04').eventos.map(e=>e.id),['hoje','depois','janela','sem']);
 assert.throws(()=>calendarioFuturo({eventos:[{id:'sem-motivo'}]},'2026-11-04'),/motivo/);plantas++;
 console.log(`VOZ-1 B: calendário nas duas edições; ${plantas} plantas recusadas; dia atual e intervalo aberto incluídos; títulos dos recibos conferidos.`);
+
+// As réguas leem cópias em memória, só no processo filho; dist/ conserva os seus bytes.
+for(const [regua,seletor,queixa] of [
+ ['lugar','[data-calendario-pagina]','porta repetida com duas grafias entre o menu e o corpo'],
+ ['pais','#nav-principal a[href]','N1: menu de oito errado em'],
+]){
+ const copias=[];
+ for(const rel of ['agenda/index.html','en/agenda/index.html']){
+  const root=parse(fs.readFileSync(path.join('dist',rel),'utf8'));
+  const menu=new Set(root.querySelectorAll('#nav-principal a[href]').map(a=>a.getAttribute('href')));
+  const porta=root.querySelectorAll('[data-calendario-pagina]').find(a=>menu.has(a.getAttribute('href')));
+  assert(porta,`porta do calendário também no menu: ${rel}`);
+  const href=porta.getAttribute('href');
+  const alvo=root.querySelectorAll(seletor).find(a=>a.getAttribute('href')===href);
+  alvo.setAttribute('href',href.endsWith('/')?href.slice(0,-1):href+'/');
+  copias.push([path.resolve('dist',rel),root.toString()]);
+ }
+ for(const alterada of [false,true]){
+  const codigo=`import fs from 'node:fs';import path from 'node:path';
+const copias=new Map(${JSON.stringify(copias)});const ler=fs.readFileSync;
+fs.readFileSync=function(f,...args){const copia=typeof f==='string'&&copias.get(path.resolve(f));return copia!==undefined&&${alterada}?copia:ler.call(this,f,...args);};
+await import('./scripts/check-${regua}.mjs');`;
+  const r=spawnSync(process.execPath,['--input-type=module','-e',codigo],{encoding:'utf8',maxBuffer:16*1024*1024});
+  assert.equal(r.status,alterada?1:0,`${regua}: código inesperado; ${r.stderr}`);
+  if(alterada){
+   for(const rel of ['agenda/index.html','en/agenda/index.html']){
+    const rota=regua==='lugar'?'/'+rel.replace('index.html',''):rel;
+    morde(`${regua}: ${rel}; ${r.stderr}`, (r.stdout+r.stderr).split('\n').some(l=>l.includes(queixa)&&l.includes(regua==='lugar'?`L1 · ${rota}:`:`em ${rota}.`)));
+   }
+  }
+  console.log(`VOZ-1 D ${regua}: ${alterada?'planta recusada nas duas edições':'controlo intacto'}; código ${r.status}.`);
+ }
+}
