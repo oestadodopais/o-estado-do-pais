@@ -9,6 +9,9 @@ import {reguaDoCartao} from '../src/lib/enquadramento.mjs';
 import {QUADRO} from '../src/data/quadro-do-pais.mjs';
 import {dataDaCasa} from '../src/lib/datas.mjs';
 import {unidadeDaLinha} from '../src/i18n/unidades.mjs';
+import {unidadeDoCartao} from '../src/data/unidades-dos-cartoes.mjs';
+import {nomeDoCartao,nomeDoCartaoComAUnidade} from '../src/lib/nomes.mjs';
+import {contextoDaRevisao} from '../src/lib/contexto-da-revisao.mjs';
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 const numero=s=>Number(normal(s).replace(/\s/g,'').replace('−','-').replace(',','.'));
 let livro, pontos;
@@ -40,11 +43,31 @@ export function revisoesPorAplicar(linhas=livroDoQuadro()) {
   }
   return resultado;
 }
-const textoAviso=(v,lang)=>{
-  const encontrado=String(v.found).replace(/[\s\u202f]/g,'').replace(/[.,](?=\d+$)/,lang==='en'?'.':',');
-  const data=v.date.slice(0,10).split('-').reverse().join('.');
-  return lang==='pt'?`A fonte reviu este número para ${encontrado} na releitura de ${data}; o valor acima é o publicado até a revisão se aplicar.`:`The source revised this figure to ${encontrado} in the re-reading of ${data}; the value above is the one published until the revision is applied.`;
+const nomeDoAviso=(id,lang)=>{
+ const contexto=contextoDaRevisao(id),c=livroDoQuadro().get(contexto.medida),linha=livroDoQuadro().get(id);
+ const nome=(unidadeDoCartao(c.id,lang)?nomeDoCartaoComAUnidade(c,lang):nomeDoCartao(c,lang))?.texto;
+ return `${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}, ${dataDaCasa(linha.reference_date,lang)}`;
 };
+const textoAviso=(id,v,lang)=>{
+ const encontrado=String(v.found).replace(/[\s\u202f]/g,'').replace(/[.,](?=\d+$)/,',');
+ const data=v.date.slice(0,10).split('-').reverse().join('.');
+ const nome=nomeDoAviso(id,lang);
+ return lang==='pt'?`A fonte reviu ${nome} para ${encontrado} na releitura de ${data}; o valor publicado aqui é o de antes da revisão.`:`The source revised ${nome} to ${encontrado} in the re-reading of ${data}; the value published here is the one from before the revision.`;
+};
+/** A unidade comum não pode esconder outra unidade ou população da fonte. */
+export function conferirUnidadeDaComparacao(principal,comparacao){
+ const erros=[];
+ if(principal.unit!==comparacao.unit)erros.push('unidade do livro diferente');
+ const coordenadas=c=>{
+  const u=new URL(c.source_url);
+  for(const k of ['geo','time','time_period','sinceTimePeriod','lastTimePeriod','lang','format'])u.searchParams.delete(k);
+  u.searchParams.sort();return u.toString();
+ };
+ if(principal.source_url?.includes('ec.europa.eu/eurostat')&&coordenadas(principal)!==coordenadas(comparacao))erros.push('série ou população da fonte diferente');
+ const idade=c=>String(c.excerpt??'').match(/Age class:\s*([^;\n\u2014]+)/)?.[1];
+ if(idade(principal)!==idade(comparacao))erros.push('população do excerto diferente');
+ return erros;
+}
 const caminho=(id,lang)=>`${lang==='en'?'/en/ledger/':'/livro-razao/'}${id}`;
 /** Cada forma tem uma caixa própria; um aviso no rodapé não cobre o cartão. */
 export function caixaDaMedida(el) {
@@ -59,7 +82,8 @@ export function conferirAvisos(root,lang,{exigir=true,pendentes=revisoesPorAplic
     const texto=normal(aviso.textContent);
     const found=aviso.querySelector(`[data-linha-claim="${id}"][data-linha-campo="verifications.${v?.n}.found"]`);
     const data=aviso.querySelector(`[data-de-linha="${id}"][data-de-campo="verifications.${v?.n}.date"]`);
-    if(!v || texto!==normal(textoAviso(v,lang)) || aviso.getAttribute('data-revisao-indice')!==String(v?.n) || !found || !data || a?.getAttribute('href')!==caminho(id,lang))erros.push(`Q4 ${id}: aviso sem divergência ou frase, origem, data ou recibo diferente.`);
+    const nome=aviso.querySelector(`[data-revisao-nome="${id}"]`);
+    if(!v || !nome || normal(nome.textContent)!==normal(nomeDoAviso(id,lang)) || texto!==normal(textoAviso(id,v,lang)) || aviso.getAttribute('data-revisao-indice')!==String(v?.n) || !found || !data || a?.getAttribute('href')!==caminho(id,lang))erros.push(`Q4 ${id}: aviso sem divergência ou frase, origem, data ou recibo diferente.`);
     else {nos.add(aviso);portas.add(a);}
   }
   if(exigir)for(const el of root.querySelectorAll('[data-claim], [data-ponto], [data-faixa-marca]')){
@@ -122,7 +146,11 @@ export function conferirQuadro(root,lang,{dist=process.env.OEDP_DIST??'dist',car
         const periodo=cell.querySelector(`[data-de-linha="${esperado}"][data-de-campo="reference_date"]`);
         if(!periodo||normal(periodo.textContent)!==normal(dataDaCasa(c.reference_date,lang)))erros.push(`Q2 ${id} ${col}: período difere do livro.`);
         const unidade=cell.querySelector('[data-unidade-da-casa], [data-linha-campo="unit"]');
-        const u=col==='portugal'?cartao.querySelector('.cartao-medida-quantidade [data-unidade-da-casa], .cartao-medida-quantidade [data-linha-campo="unit"]')?.textContent:unidadeDaLinha(c.unit,lang,c.value).texto;
+        const principal=livroDoQuadro().get(id);
+        if(col!=='portugal')erros.push(...conferirUnidadeDaComparacao(principal,c).map(e=>`Q6 ${id} ${col} ${esperado}: ${e}`));
+        const declarada=unidadeDoCartao(id,lang);
+        const u=declarada?declarada.map(p=>typeof p==='string'?p:p.nl).join(''):unidadeDaLinha(c.unit,lang,c.value).texto;
+        if(declarada && unidade?.getAttribute('data-unidade-da-casa')!==id)erros.push(`Q2 ${id} ${col}: unidade de outra medida.`);
         if(normal(unidade?.textContent)!==normal(u))erros.push(`Q2 ${id} ${col}: unidade diferente.`);
         const selo=cell.querySelector('.src-chip');
         if(selo?.getAttribute('href')!==caminho(esperado,lang)||cell.querySelectorAll('.src-chip').length!==1)erros.push(`Q2 ${id} ${col}: selo diferente.`);

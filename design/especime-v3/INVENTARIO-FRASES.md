@@ -5463,14 +5463,16 @@ A forma compacta é conferida por `scripts/check-quadro.mjs`, linha a linha, con
 A voz e o inventário só retiram os nós depois dessa conferência, pela função `superficieDoQuadro`.
 As palavras continuam sujeitas à varredura lexical.
 
-- PT: «As medidas do país»; «Medida», «Portugal», «Antes», «União Europeia», «Referência da Comissão»; «sem anterior».
-- EN: «The country's measures»; «Measure», «Portugal», «Before», «European Union», «Commission reference»; «no previous».
-- PT: «A fonte reviu este número para ⟦found⟧ na releitura de ⟦data⟧; o valor acima é o publicado até a revisão se aplicar.»
-- EN: «The source revised this figure to ⟦found⟧ in the re-reading of ⟦date⟧; the value above is the one published until the revision is applied.»
+- PT: «As medidas do país»; «Medida», «Portugal», «Antes», «União Europeia», «Valor de referência»; «sem anterior».
+- EN: «The country's measures»; «Measure», «Portugal», «Before», «European Union», «Reference value»; «no previous».
+- PT: «A fonte reviu ⟦nome da medida⟧ para ⟦found⟧ na releitura de ⟦data⟧; o valor publicado aqui é o de antes da revisão.»
+- EN: «The source revised ⟦measure name⟧ to ⟦found⟧ in the re-reading of ⟦date⟧; the value published here is the one from before the revision.»
 
 Os campos variáveis são transcritos da última reconferência sem correção ou atualização de valor posterior.
 A frase inteira, o índice da reconferência, os campos e a porta do recibo são conferidos na mesma função
 que as plantas da voz, da data e da L1 chamam. A ausência de anterior só aparece quando falta a comparação.
+
+A adenda C nomeia a medida, a União quando aplicável e o período da linha revista. O valor relido usa vírgula decimal nas duas edições. As comparações usam a unidade aprovada da medida, depois de conferidas a unidade e a população das linhas.
 
 ## VOZ-1, 03.11.2026: campos públicos e ausência exata
 

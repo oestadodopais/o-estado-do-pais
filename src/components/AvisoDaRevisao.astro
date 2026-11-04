@@ -2,11 +2,15 @@
 import { revisaoDaFonte } from '../lib/revisao-da-fonte.mjs';
 import { routePath } from '../lib/routes.mjs';
 import CampoDaLinha from './CampoDaLinha.astro';
+import NomeDaMedida from './NomeDaMedida.astro';
+import {contextoDaRevisao} from '../lib/contexto-da-revisao.mjs';
+import {getClaim} from '../lib/ledger.mjs';
+import {unidadeDoCartao} from '../data/unidades-dos-cartoes.mjs';
 const { ids, lang = 'pt' } = Astro.props;
-const revisoes = [...new Set(ids)].map(id => ({ id, v: revisaoDaFonte(id) })).filter(r => r.v);
+const revisoes = [...new Set(ids)].map(id => ({ id, v: revisaoDaFonte(id), contexto: contextoDaRevisao(id) })).filter(r => r.v);
 ---
-{revisoes.map(({ id, v }) => <span class="aviso-revisao" data-aviso-revisao={id} data-revisao-indice={v.n}>
-  <a href={routePath('linha', lang, { slug: id })}>{lang === 'pt' ? 'A fonte reviu este número para ' : 'The source revised this figure to '}<CampoDaLinha id={id} campo={`verifications.${v.n}.found`} valor={v.found} lang={lang} decimal={lang === 'en'} />{lang === 'pt' ? ' na releitura de ' : ' in the re-reading of '}<CampoDaLinha id={id} campo={`verifications.${v.n}.date`} valor={v.date} lang={lang} />{lang === 'pt' ? '; o valor acima é o publicado até a revisão se aplicar.' : '; the value above is the one published until the revision is applied.'}</a>
+{revisoes.map(({ id, v, contexto }) => <span class="aviso-revisao" data-aviso-revisao={id} data-revisao-indice={v.n}>
+  <a href={routePath('linha', lang, { slug: id })}>{lang === 'pt' ? 'A fonte reviu ' : 'The source revised '}<span data-revisao-nome={id}><NomeDaMedida linha={getClaim(contexto.medida)} lang={lang} escada={unidadeDoCartao(contexto.medida,lang) ? 'cartao-com-unidade' : 'cartao'} />{contexto.uniao && (lang === 'pt' ? ' na União Europeia' : ' in the European Union')}{', '}<CampoDaLinha id={id} campo="reference_date" valor={getClaim(id).reference_date} lang={lang} /></span>{lang === 'pt' ? ' para ' : ' to '}<CampoDaLinha id={id} campo={`verifications.${v.n}.found`} valor={v.found} lang={lang} />{lang === 'pt' ? ' na releitura de ' : ' in the re-reading of '}<CampoDaLinha id={id} campo={`verifications.${v.n}.date`} valor={v.date} lang={lang} />{lang === 'pt' ? '; o valor publicado aqui é o de antes da revisão.' : '; the value published here is the one from before the revision.'}</a>
 </span>)}
 <style>
   .aviso-revisao { display: block; flex-basis: 100%; min-width: 0; max-width: 65ch; margin-block: .5rem; font-size: .875rem; line-height: 1.5; font-weight: 400; }

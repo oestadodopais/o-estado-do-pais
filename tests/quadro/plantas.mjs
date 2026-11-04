@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
-import {conferirQuadro,conferirAvisos,revisoesPorAplicar,livroDoQuadro,superficieDoQuadro} from '../../scripts/check-quadro.mjs';
+import {conferirQuadro,conferirAvisos,revisoesPorAplicar,livroDoQuadro,superficieDoQuadro,conferirUnidadeDaComparacao} from '../../scripts/check-quadro.mjs';
 const dist=process.env.OEDP_DIST??'dist';
 let conta=0;
 for(const lang of ['pt','en']){
@@ -17,6 +17,8 @@ for(const lang of ['pt','en']){
   ['período trocado',r=>r.querySelector('[data-quadro-coluna="portugal"] [data-de-campo="reference_date"]').set_content('1900'),/Q2/],
   ['selo antes do período',r=>{const n=r.querySelector('[data-quadro-coluna="portugal"] .src-chip'),p=n.parentNode; n.remove();p.insertAdjacentHTML('afterbegin',n.outerHTML);},/selo interrompe/],
   ['prosa acrescentada',r=>r.querySelector('[data-quadro-coluna="portugal"]').insertAdjacentHTML('beforeend',' Prosa inventada.'),/texto extra/],
+  ['unidade da comparação trocada',r=>r.querySelector('[data-quadro-coluna="ue"] [data-unidade-da-casa], [data-quadro-coluna="ue"] [data-linha-campo="unit"]').set_content('unidade indevida'),/unidade diferente/],
+  ['cabeçalho da referência trocado',r=>r.querySelector('thead tr').lastElementChild.set_content('Comissão'),/colunas diferentes/],
   ['nome trocado',r=>r.querySelector('[data-quadro-destino]').set_content('Nome indevido'),/nome ou destino/],
  ];
  for(const [nome,mudar,mordida] of plantas){const copia=parse(html);mudar(copia);assert(medir(copia).some(e=>mordida.test(e)),`${lang} ${nome}`);assert.equal(superficieDoQuadro(copia,lang,{dist}).portas.size,0,`${nome}: L1 não dispensa forma estragada`);conta++;console.log(`PAI2 ${lang}: ${nome} recusado.`);}
@@ -27,6 +29,7 @@ for(const lang of ['pt','en']){
   ['divergência sem aviso',r=>r.querySelector('[data-aviso-revisao]').remove(),/Q3/],
   ['aviso sem divergência',r=>r.querySelector('[data-aviso-revisao]').setAttribute('data-aviso-revisao','divida-publica-2025'),/Q4/],
   ['data da revisão trocada',r=>r.querySelector('[data-aviso-revisao] [data-de-campo]').set_content('01.01.1900'),/Q4/],
+  ['nome da revisão trocado',r=>r.querySelector('[data-revisao-nome]').set_content('Outra medida, 1900'),/Q4/],
   ['frase da revisão trocada',r=>r.querySelector('[data-aviso-revisao] a').insertAdjacentHTML('beforeend',' Texto inventado.'),/Q4/],
  ]){const copia=parse(card);mudar(copia);assert(conferirAvisos(copia,lang).erros.some(e=>mordida.test(e)),nome);conta++;console.log(`PAI2 ${lang}: ${nome} recusado.`);}
 }
@@ -48,3 +51,11 @@ for(const [nome,editar,esperado] of [
  ['releitura antiga no fim',c=>c.verifications.push({date:'1900-01-01',result:'igual'}),true],
  ]){const copia=structuredClone(original);editar(copia);assert.equal(revisoesPorAplicar(new Map([[id,copia]])).has(id),esperado,nome);conta++;}
 console.log(`PAI2: ${conta} plantas, controlos intactos nas duas edições.`);
+
+const principal=livroDoQuadro().get('taxa-de-emprego-2025'),comparacao=livroDoQuadro().get('taxa-de-emprego-2025-ue');
+assert.deepEqual(conferirUnidadeDaComparacao(principal,comparacao),[]);
+for(const mudar of [c=>c.unit='pessoas',c=>c.source_url+='&age=Y15-74',c=>c.excerpt=c.excerpt.replace('From 20 to 64 years','From 15 to 74 years')]){
+ const copia=structuredClone(comparacao);mudar(copia);assert(conferirUnidadeDaComparacao(principal,copia).length);conta++;
+}
+assert.deepEqual(conferirUnidadeDaComparacao(principal,comparacao),[]);
+console.log(`PAI2-C: ${conta} plantas no total; unidade, coordenadas e população incompatíveis recusadas, controlo reposto verde.`);

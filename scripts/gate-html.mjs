@@ -6835,7 +6835,7 @@ for (const file of ficheirosHtml(DIST)) {
     const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
       ? normalizeWhitespace(decodeEntities(textoDe(el)))
       : textoTranscrito(el);
-    const relido = conferirCampoRelido(el, claim, linguaPagina, avisoDaRevisao || naRevisaoDaSemana(el,rota?.key,linguaPagina,id));
+    const relido = conferirCampoRelido(el, claim, linguaPagina, !avisoDaRevisao && naRevisaoDaSemana(el,rota?.key,linguaPagina,id));
     if (relido ? !relido.confere : renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +

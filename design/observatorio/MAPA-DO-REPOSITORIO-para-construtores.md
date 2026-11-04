@@ -876,11 +876,13 @@ A porta da discussão no índice depende das linhas impressas nas mudanças, dos
 `QuadroDoPais.astro` acrescenta a Temas uma tabela por porta, pela ordem das `ENTRADAS`.
 `ValorDoQuadro.astro` usa os mesmos valores, unidades e períodos, com o selo depois da medida inteira.
 Abaixo de 600 px, cada linha empilha as células com os rótulos. A tabela desliza na sua caixa.
+A unidade de cada comparação é a da medida, depois de conferidas a unidade, as coordenadas da fonte e a população; as plantas recusam diferenças nesses três campos.
 Os cartões inteiros continuam nas portas; `tests/quadro/forma.mjs` planta um cartão em Temas
 nas duas edições e chama a N1C sem alterar a regra.
 
 `revisao-da-fonte.mjs` lê a última reconferência, ordenada por data e posição, e só mostra uma divergência
-sem correção ou atualização de valor posterior. `AvisoDaRevisao.astro` transcreve o valor encontrado e a data,
+sem correção ou atualização de valor posterior. `contexto-da-revisao.mjs` identifica a medida da linha revista.
+`AvisoDaRevisao.astro` nomeia essa medida, a União quando aplicável e o período, e transcreve o valor encontrado e a data,
 com a frase do mandato e a porta do recibo. As formas que mostram o valor chamam o mesmo componente;
 os valores selados não mudam. A média europeia e o anterior podem ter avisos próprios.
 

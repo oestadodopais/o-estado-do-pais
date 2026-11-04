@@ -6,14 +6,14 @@ import Frase from './Frase.astro';
 import { getClaim } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { unidadeDoCartao } from '../data/unidades-dos-cartoes.mjs';
-const { id, lang, principal = false } = Astro.props;
+const { id, lang, medida = id } = Astro.props;
 const c = getClaim(id);
 const unidade = unidadeDaLinha(c.unit, lang, c.value);
-const propria = principal ? unidadeDoCartao(id, lang) : null;
+const propria = unidadeDoCartao(medida, lang);
 ---
 <span data-quadro-valor={id}>
   <Claim id={id} lang={lang} chip>
-    <Fragment slot="cauda">{' '}{propria ? <span data-unidade-da-casa={id}><Frase partes={propria} lang={lang} /></span> : <CampoDaLinha id={id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} />}{c.reference_date && <>{' · '}<CampoDaLinha id={id} campo="reference_date" valor={c.reference_date} lang={lang} /></>}</Fragment>
+    <Fragment slot="cauda">{' '}{propria ? <span data-unidade-da-casa={medida}><Frase partes={propria} lang={lang} /></span> : <CampoDaLinha id={id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} />}{c.reference_date && <>{' · '}<CampoDaLinha id={id} campo="reference_date" valor={c.reference_date} lang={lang} /></>}</Fragment>
   </Claim>
   <AvisoDaRevisao ids={[id]} lang={lang} />
 </span>

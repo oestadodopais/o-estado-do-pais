@@ -24,9 +24,9 @@ const q = QUADRO[lang], s = t(lang);
             const c = getClaim(id), r = reguaDoCartao(id), ref = REFERENCIAS_DAS_MEDIDAS.get(id);
             return <tr role="row" data-quadro-medida={id}>
               <th role="rowheader" scope="row" data-quadro-coluna="nome"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[0]}</span><a data-quadro-destino href={`${e.rota[lang]}#m-${id}`}><NomeDaMedida linha={c} lang={lang} escada={unidadeDoCartao(id, lang) ? 'cartao-com-unidade' : 'cartao'} /></a></th>
-              <td role="cell" data-quadro-coluna="portugal"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[1]}</span><ValorDoQuadro id={id} lang={lang} principal /></td>
-              <td role="cell" data-quadro-coluna="anterior"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[2]}</span>{r.anterior ? <ValorDoQuadro id={r.anterior.id} lang={lang} /> : <span data-quadro-sem-anterior>{q.semAnterior}</span>}</td>
-              <td role="cell" data-quadro-coluna="ue"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[3]}</span>{r.ue && <ValorDoQuadro id={r.ue.id} lang={lang} />}</td>
+              <td role="cell" data-quadro-coluna="portugal"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[1]}</span><ValorDoQuadro id={id} lang={lang} medida={id} /></td>
+              <td role="cell" data-quadro-coluna="anterior"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[2]}</span>{r.anterior ? <ValorDoQuadro id={r.anterior.id} lang={lang} medida={id} /> : <span data-quadro-sem-anterior>{q.semAnterior}</span>}</td>
+              <td role="cell" data-quadro-coluna="ue"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[3]}</span>{r.ue && <ValorDoQuadro id={r.ue.id} lang={lang} medida={id} />}</td>
               <td role="cell" data-quadro-coluna="referencia"><span class="quadro-rotulo" aria-hidden="true">{q.colunas[4]}</span>{ref?.limiar && <VeredictoDaReferencia linha={c} limiar={ref.limiar} dono={ref.limiarFixadoPor} s={s} />}</td>
             </tr>;
           })}</tbody>
