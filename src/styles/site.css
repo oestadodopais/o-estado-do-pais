@@ -4352,6 +4352,14 @@ a.quadro-estados-col:hover .quadro-estados-e {
   display: grid;
   gap: 7px;
 }
+/* VOZ-1 C: portas do calendário com a mesma área de toque nas duas edições. */
+.agenda-calendario [data-calendario-pagina] {
+  display: inline-block;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: 10px;
+  vertical-align: middle;
+}
 .agenda-evento-cabeca {
   display: flex;
   flex-wrap: wrap;

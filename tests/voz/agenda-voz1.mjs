@@ -7,13 +7,13 @@ const calendario=JSON.parse(fs.readFileSync('src/data/calendario.json'));
 const dia=process.env.OEDP_DIA_DA_CONSTRUCAO??JSON.parse(fs.readFileSync('dist/version.json')).construido_em.slice(0,10);
 const normal=s=>s.replace(/\s+/gu,' ').trim();
 const leitores={pt:[],en:[]};
-const fora=new Set(['linha','livro','livroConcelho','livroConcelhos','serie','metodo','sobre','privacidade','agenda','correcoes','documento','texto']);
+const fora=new Set(['linha','livro','livroConcelho','livroConcelhos','serie','metodo','sobre','privacidade','agenda','correcoes','documento','texto','home','temas','indice','estudos','discussao','leituraDaSemana','areas']);
 function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const f=path.join(dir,e.name);if(e.isDirectory()){anda(f);continue;}if(e.name!=='index.html')continue;
  const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');if(!titulo)continue;
  const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
- leitores[hit.lang].push({rota,titulo,refs});
+ leitores[hit.lang].push({rota:rota+'/',titulo,refs});
 }}
 anda('dist');
 export function conferir(root,lang,registo=calendario,hoje=dia){
@@ -35,7 +35,11 @@ export function conferir(root,lang,registo=calendario,hoje=dia){
    if(!esperado || item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==esperado)erros.push('motivo de ausência diferente');
   }
   const portas=item.querySelectorAll('[data-calendario-pagina]');
-  const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id)));
+  const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id))).sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
+  if(portas.some(a=>a.hasAttribute('style')))erros.push('estilo em atributo');
+  if(portas.some(a=>!a.getAttribute('href')?.endsWith('/')))erros.push('porta sem barra final');
+  if(portas.some(a=>['home','temas','indice','estudos','discussao','leituraDaSemana','areas'].includes(matchPath(a.getAttribute('href'))?.key)))erros.push('página de entrada no calendário');
+  if(portas.map(a=>a.getAttribute('href')).join('|')!==atualizam.map(p=>p.rota).join('|'))erros.push('ordem das páginas diferente');
   if(portas.length!==atualizam.length)erros.push('páginas afetadas diferentes');
   for(const p of atualizam){const a=portas.find(a=>a.getAttribute('href')===p.rota);if(!a||normal(a.textContent)!==p.titulo||a.getAttribute('data-calendario-pagina')!==p.rota)erros.push('página afetada sem título e porta certos');}
  }
@@ -48,6 +52,8 @@ for(const lang of ['pt','en']){
  morde('título copiado fora da rota',conferirTitulosCopiados(root,{key:'explicacao',lang}).erros.length>0);
  const falso=parse(texto);falso.querySelector('[data-calendario-pagina]').set_content('Título inventado');morde('título falso não é transcrição',conferirTitulosCopiados(falso,{key:'agenda',lang}).erros.length>0);
  for(const [nome,muda,queixa] of [
+  ['barra final retirada',r=>{const a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',a.getAttribute('href').replace(/\/$/,''));},'porta sem barra final'],
+  ['estilo em atributo',r=>r.querySelector('[data-calendario-pagina]').setAttribute('style','min-height:44px'),'estilo em atributo'],
   ['trabalho interno',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<article data-agenda-item="planta">Trabalho interno</article>'),'trabalho interno visível'],
   ['fonte retirada',r=>r.querySelector('.agenda-evento-fonte').remove(),'campo público ausente'],
   ['ausência trocada',r=>r.querySelector('[data-agenda-sem-data="nao_lida"] [data-agenda]').set_content(lang==='pt'?'sem data anunciada':'no announced date'),'motivo de ausência diferente'],
@@ -55,6 +61,10 @@ for(const lang of ['pt','en']){
   ['porta trocada',r=>r.querySelector('[data-calendario-pagina]').setAttribute('href','/livro-razao/taxa-de-desemprego-2025'),'página afetada sem título e porta certos'],
   ['página retirada',r=>r.querySelector('[data-calendario-pagina]').remove(),'páginas afetadas diferentes'],
  ]){const r=parse(texto);muda(r);morde(nome,conferir(r,lang).includes(queixa));}
+ for(const key of ['home','temas','indice','estudos','discussao','leituraDaSemana','areas']){
+  const r=parse(texto);const a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',routePath(key,lang));
+  morde(`entrada ${key} reposta`,conferir(r,lang).includes('página de entrada no calendário'));
+ }
  const passado=structuredClone(calendario);const atual=root.querySelector('[data-calendario-evento]').getAttribute('data-calendario-evento');passado.eventos.find(e=>e.id===atual).data='1900-01-01';morde('passado visível',conferir(root,lang,passado).includes('acontecimento passado visível'));
  const correcoes=parse(fs.readFileSync(`dist/${lang==='pt'?'correcoes':'en/corrections'}/index.html`,'utf8'));
  const titulos=correcoes.querySelectorAll('[data-correcao-titulo]');assert(titulos.length>0);
