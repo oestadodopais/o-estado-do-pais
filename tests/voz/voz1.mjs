@@ -36,6 +36,12 @@ morde('recibo incompleto reposto no sitemap',conferirMapa('<urlset><url><loc>htt
 morde('isentar uma explicação como se fosse documento de estudo',medirPagina('<main><div class="texto-artigo estudo-leitura"><p>Esta explicação não diz o que aconteceu.</p></div></main>','/explicacoes/dinheiro-do-estado-2026').frases.length===1);
 assert.equal(medirPagina('<main><p data-registo-unidade="orcamento/pt#1">Este estudo não confirmou a taxa.</p></main>','/dossies/orcamento-2027').frases.length,0,'VOZ-2: documento transcrito no dossiê');
 morde('unidade documental falsa numa explicação',medirPagina('<main><p data-registo-unidade="orcamento/pt#1">Esta explicação não diz o que aconteceu.</p></main>','/explicacoes/dinheiro-do-estado-2026').frases.length===1);
+for(const f of ['Não se conclui isso nesta leitura, aqui.', 'Nenhum destes resultados é uma inferência.', 'Esta explicação, depois das contas, não prova isso.', 'This document gives no judgement here.']) morde(f,medirPagina(`<main><p>${f}</p></main>`,'/explicacoes/dinheiro-do-estado-2026').frases.includes(f));
+morde('citação não é isenção da régua larga',medirPagina('<main><p data-verbatim="planta">Esta explicação não mostra o resultado.</p></main>','/explicacoes/dinheiro-do-estado-2026').frases.length===1);
+const autorizada=JSON.parse(fs.readFileSync('scripts/voz-excecoes.json','utf8'))[0];
+assert.equal(medirPagina(`<main><p>${autorizada.frase}</p></main>`,autorizada.rota).frases.length,0);
+morde('exceção fora da rota',medirPagina(`<main><p>${autorizada.frase}</p></main>`,'/explicacoes/dinheiro-do-estado-2026').frases.length===1);
+morde('exceção alterada',medirPagina(`<main><p>${autorizada.frase} Este projeto não explica.</p></main>`,autorizada.rota).frases.length===1);
 for(const fonte of ['O INE não publica uma data.','O mapa não inclui a Segurança Social.'])assert(!CLASSE.test(fonte));
 const dir=fs.mkdtempSync(path.join(os.tmpdir(),'voz1-mandato-'));
 try{const f=path.join(dir,'mandato.md');fs.writeFileSync(f,'Frase do leitor: «Esta explicação não diz o que aconteceu.»\n');const r=spawnSync('python3',['scripts/leituras/voz-do-mandato.py','.',f],{encoding:'utf8'});assert.equal(r.status,1,r.stderr);morde('pré-mandato',r.stdout.includes('esta explicação não'));}finally{fs.rmSync(dir,{recursive:true,force:true});}

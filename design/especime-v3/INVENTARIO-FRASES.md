@@ -587,32 +587,29 @@ página» é o rótulo do sumário, e é navegação: leva a outro sítio da pá
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A seguir | até 2026-08-26 | viva | — |
-| conteudo | Com data publicada pela fonte | até 2026-08-26 | viva | — |
+| conteudo | Com data publicada pela fonte | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Criteria | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | Critérios | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
-| conteudo | Em curso | até 2026-08-26 | viva | — |
-| conteudo | Nenhum até hoje. | até 2026-08-26 | viva | — |
+| conteudo | Nenhum até hoje. | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | navegacao | Nesta página | até 2026-08-26 | viva | — |
 | conteudo | No criterion. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
-| conteudo | None to date. | até 2026-08-26 | viva | — |
+| conteudo | None to date. | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | O calendário das fontes | até 2026-08-26 | viva | — |
 | conteudo | O calendário, no tempo | até 2026-08-26 | viva | — |
-| conteudo | O que está em cada estado | até 2026-08-26 | viva | — |
+| conteudo | O que está em cada estado | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | O que mudou | até 2026-08-26 | viva | — |
-| conteudo | O que se mede a seguir | até 2026-08-26 | viva | — |
+| conteudo | O que se mede a seguir | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | navegacao | On this page | até 2026-08-26 | viva | — |
 | conteudo | Porquê | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | Sem critério. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 | conteudo | The calendar, in time | até 2026-08-26 | viva | — |
 | conteudo | The source calendar | até 2026-08-26 | viva | — |
-| conteudo | Under way | até 2026-08-26 | viva | — |
 | conteudo | What changed | até 2026-08-26 | viva | — |
-| conteudo | What gets measured next | até 2026-08-26 | viva | — |
-| conteudo | What is in each state | até 2026-08-26 | viva | — |
+| conteudo | What gets measured next | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | What is in each state | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Why | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
-| conteudo | With a date the source publishes | até 2026-08-26 | viva | — |
+| conteudo | With a date the source publishes | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | With no date, because the source publishes none | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 
 ## `/estudos` · `/en/studies` e as páginas de trabalho (etapa 4, subetapa 4e)
@@ -1087,8 +1084,8 @@ os dois estados vazios encolhem para a ausência em duas palavras.
 | --- | --- | --- | --- | --- |
 | conteudo | A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta. | grelha-da-voz | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question. | grelha-da-voz | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
-| conteudo | O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | grelha-da-voz | viva | — |
-| conteudo | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | grelha-da-voz | viva | — |
+| conteudo | O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | grelha-da-voz | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | grelha-da-voz | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | O que as fontes citadas publicam a seguir. | grelha-da-voz | viva | — |
 | conteudo | What the cited sources publish next. | grelha-da-voz | viva | — |
 | conteudo | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
@@ -1262,7 +1259,7 @@ página do leitor.*
 | navegacao | engine row: <linha> | pequenas-3 | retirada | o rótulo de acessibilidade da porta de uma figura nomeava a chave interna da linha do motor e não o que a porta abre (I83, 28.08.2026); a chave ficou só no `href`, o rótulo passou a «a linha desta figura» e «this figure’s row», e a normalização que punha `<linha>` no lugar do identificador saiu da régua com ela |
 | navegacao | linha do motor: <linha> | pequenas-3 | retirada | o rótulo de acessibilidade da porta de uma figura nomeava a chave interna da linha do motor e não o que a porta abre (I83, 28.08.2026); a chave ficou só no `href`, o rótulo passou a «a linha desta figura» e «this figure’s row», e a normalização que punha `<linha>` no lugar do identificador saiu da régua com ela |
 | navegacao | Índice de dívida, do primeiro ao último ano da série da Direção-Geral das Autarquias Locais | grelha-2 | viva | — |
-| conteudo | agenda items | grelha-2 | viva | — |
+| conteudo | agenda items | grelha-2 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | calculated rows | grelha-2 | viva | — |
 | conteudo | concelhos com pelo menos uma linha desse estudo | grelha-2 | viva | — |
 | conteudo | concelhos in the coordinates file of the official administrative map | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
@@ -1273,7 +1270,7 @@ página do leitor.*
 | conteudo | edições no arquivo | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 | conteudo | entradas de natureza revisão de proveniência no livro-razão | grelha-2 | viva | — |
 | conteudo | entries of kind provenance revision in the ledger | grelha-2 | viva | — |
-| conteudo | itens da agenda | grelha-2 | viva | — |
+| conteudo | itens da agenda | grelha-2 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | ledger rows | grelha-2 | viva | — |
 | conteudo | ledger rows of the municipalities study | grelha-2 | viva | — |
 | conteudo | linhas calculadas | grelha-2 | viva | — |
@@ -1347,8 +1344,8 @@ lhes mexeu no número.*
 | conteudo | As medidas | regioes | viva | — |
 | navegacao | O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho. | lugar | viva | achado 11 da leitura cruzada do inventário (Codex, 14.09.2026), e a classe FICA: a frase diz como este sítio organiza o território (é a frase de hierarquia do §2.2 do brief, a mesma nos cinco índices, e o que ela faz é dizer a quem lê por onde pode entrar). A única afirmação sobre o país que ela traz («as regiões não contêm distritos inteiros») foi conferida nos dados da CAOP antes de se escrever, e saiu da frase quando a conferência a dispensou |
 | navegacao | The country is read at four levels: country, NUTS II region, district or island, municipality. | lugar | viva | ver a razão na gémea portuguesa (achado 11, 14.09.2026) |
-| navegacao | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | lugar | viva | — |
-| navegacao | A government area is a ministry; a domain is a subject from the content charter. | lugar | viva | — |
+| navegacao | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | lugar | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| navegacao | A government area is a ministry; a domain is a subject from the content charter. | lugar | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | A leitura de cada medida | lugar | viva | — |
 | conteudo | The reading of each measure | lugar | viva | — |
 | conteudo | The measures | regioes | viva | — |
@@ -5478,14 +5475,25 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Item retirado | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Item withdrawn | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | No announced date | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Item retirado | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | Item withdrawn | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | No announced date | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Pergunta por registar | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Question not recorded | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Sem data anunciada | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Pergunta por registar | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | Question not recorded | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | Sem data anunciada | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | The value did not change; the way to find it did: a source that moves address, for example. Each row below leads to its own history, where the revision is written out in full. | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Trabalho concluído | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Up next | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
-| conteudo | Work concluded | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | Trabalho concluído | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | Up next | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+| conteudo | Work concluded | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
+
+### VOZ-1 B, 04.11.2026: calendário e definições públicas
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As próximas publicações das fontes e as suas datas anunciadas. | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
+| conteudo | Upcoming source publications and their announced dates. | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
+| conteudo | Atualiza: | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
+| conteudo | Updates: | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
+| conteudo | Uma área de governo é um ministério; um domínio é um tema, como os preços ou o emprego. | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
+| conteudo | A government area is a ministry; a domain is a topic, such as prices or employment. | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |

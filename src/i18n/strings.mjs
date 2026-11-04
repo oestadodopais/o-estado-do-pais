@@ -109,8 +109,8 @@ export const STRINGS = {
      */
     hierarquia: {
       territorio: 'O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho.',
-      dominio: 'Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério.',
-      area: 'Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos.',
+      dominio: 'Um domínio é um tema, como os preços ou o emprego; uma área de governo é um ministério.',
+      area: 'Uma área de governo é um ministério; um domínio é um tema, como os preços ou o emprego.',
     },
 
     /* -----------------------------------------------------------------------
@@ -481,11 +481,11 @@ export const STRINGS = {
      * marcado `data-agenda` para o portão o comparar carácter a carácter.
      */
     agenda: {
-      metaTitle: 'Agenda · O Estado do País',
+      metaTitle: 'O calendário das fontes · O Estado do País',
       metaDescription:
-        'O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir.',
+        'As próximas publicações das fontes e as suas datas anunciadas.',
       eyebrow: 'Agenda',
-      h1: 'O que se mede a seguir',
+      h1: 'O calendário das fontes',
       /* A LEDE E A NOTA DE ORIGEM SAÍRAM (subetapa 4c, a regra da direção de
          21.08.2026). A lede descrevia o aparelho da própria página («cada item
          traz o critério… e traz o registo de cada mudança de estado») e fechava
@@ -1833,7 +1833,7 @@ export const STRINGS = {
       nenhumRelido: 'nenhum número foi relido na fonte',
       umRelido: ' número foi relido na fonte',
       variosRelidos: ' números foram relidos na fonte',
-      nenhumDeValor: 'nenhum mudou de valor',
+      nenhumDeValor: 'nenhum valor publicado mudou',
       umDeValor: ' mudou de valor',
       variosDeValor: ' mudaram de valor',
       nenhumDeProveniencia: 'nenhum mudou de proveniência',
@@ -1843,16 +1843,16 @@ export const STRINGS = {
       umDeForma: ' mudou só na forma de escrever',
       variosDeForma: ' mudaram só na forma de escrever',
       formasK: 'Os números que mudaram só na forma de escrever',
-      fonteReviu: '; a fonte reviu ',
-      umaRevisao: ' deles, ainda com o valor de antes da revisão',
-      variasRevisoes: ' deles, ainda com o valor de antes da revisão',
+      fonteReviu: ', e a fonte reviu ',
+      umaRevisao: ', ainda com o valor de antes da revisão',
+      variasRevisoes: ', ainda com o valor de antes da revisão',
       revisoesK: 'Os números que a fonte reviu, ainda com o valor de antes da revisão',
       publicado: ': publicado ',
       fonteAgora: '; a fonte escreve agora ',
       naReleitura: ', na releitura de ',
       passouAEscrever: ': a fonte passou a escrever ',
       ondeEscrevia: ', onde escrevia ',
-      nenhumMudou: ', e nenhum mudou de valor nem de proveniência',
+      nenhumMudou: ': nenhum valor publicado mudou',
       ponto: '.',
       mudancasK: 'Os números que mudaram de valor',
       /* EX2: a unidade precede os dois pontos e os valores. A frase sem apoio fica ausente. */
@@ -3237,8 +3237,8 @@ export const STRINGS = {
        tirou a segunda oração da frase do território, na edição portuguesa. */
     hierarquia: {
       territorio: 'The country is read at four levels: country, NUTS II region, district or island, municipality.',
-      dominio: 'A domain is a subject from the content charter; a government area is a ministry.',
-      area: 'A government area is a ministry; a domain is a subject from the content charter.',
+      dominio: 'A domain is a topic, such as prices or employment; a government area is a ministry.',
+      area: 'A government area is a ministry; a domain is a topic, such as prices or employment.',
     },
 
     /* Os títulos das duas secções de medidas. Ver a razão na edição portuguesa. */
@@ -3383,11 +3383,11 @@ export const STRINGS = {
     },
 
     agenda: {
-      metaTitle: 'Agenda · O Estado do País',
+      metaTitle: 'The source calendar · O Estado do País',
       metaDescription:
-        'What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next.',
+        'Upcoming source publications and their announced dates.',
       eyebrow: 'Agenda',
-      h1: 'What gets measured next',
+      h1: 'The source calendar',
       estados: {
         em_curso: 'Under way',
         a_seguir: 'Up next',
@@ -3868,7 +3868,7 @@ export const STRINGS = {
       nenhumRelido: 'no figure was re-read at the source',
       umRelido: ' figure was re-read at the source',
       variosRelidos: ' figures were re-read at the source',
-      nenhumDeValor: 'none changed value',
+      nenhumDeValor: 'no published value changed',
       umDeValor: ' changed value',
       variosDeValor: ' changed value',
       nenhumDeProveniencia: 'none changed provenance',
@@ -3878,16 +3878,16 @@ export const STRINGS = {
       umDeForma: ' changed only in how it is written',
       variosDeForma: ' changed only in how they are written',
       formasK: 'The figures that changed only in how they are written',
-      fonteReviu: '; the source revised ',
-      umaRevisao: ' of them, still showing the value from before the revision',
-      variasRevisoes: ' of them, still showing the value from before the revision',
+      fonteReviu: ', and the source revised ',
+      umaRevisao: ', still showing the value from before the revision',
+      variasRevisoes: ', still showing the value from before the revision',
       revisoesK: 'The numbers the source revised, still showing the value from before the revision',
       publicado: ': published ',
       fonteAgora: '; the source now writes ',
       naReleitura: ', in the re-reading of ',
       passouAEscrever: ': the source now writes ',
       ondeEscrevia: ', where it wrote ',
-      nenhumMudou: ', and none changed value or provenance',
+      nenhumMudou: ': no published value changed',
       ponto: '.',
       mudancasK: 'The figures that changed value',
       oQueEPorConfirmar: 'What this number is remains to be confirmed at the source.',

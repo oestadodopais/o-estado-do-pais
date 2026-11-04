@@ -961,3 +961,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | pai2 | Títulos, cabeçalhos, ausência de anterior e aviso da revisão nas duas edições | por ler | Frases do mandato PAI2 e das adendas A e C, conferidas na forma rendida; leitura cruzada reservada ao lugar de direção. |
 
 | voz1 | 11 novas; retiradas assinaladas no inventário | por ler | Codex, 03.11.2026: mandato VOZ-1; leitura a frio pendente. |
+
+| voz1b | Calendário público, títulos das páginas afetadas e definição de área e domínio | por ler | Codex, 04.11.2026: frases da adenda B; leitura cruzada reservada ao lugar de direção. |

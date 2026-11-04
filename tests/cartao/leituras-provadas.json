@@ -57003,8 +57003,8 @@
         },
         {
           "caminho": "naoDiz[0][0].se[0]",
-          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto está acima.",
-          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is shown above.",
+          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês.",
+          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month.",
           "partes": [
             {
               "pt": "O orçamento é uma previsão",
@@ -57036,8 +57036,8 @@
               ]
             },
             {
-              "pt": ", mês a mês",
-              "en": ", month by month",
+              "pt": ", mês a mês.",
+              "en": ", month by month.",
               "classe": "diz",
               "apoios": [
                 {
@@ -57046,24 +57046,6 @@
                   "literal": "Síntese da Execução Orçamental | agosto 2026"
                 }
               ]
-            },
-            {
-              "pt": ", e a execução até agosto",
-              "en": ", and the execution to August",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
-                  "campo": "unit",
-                  "literal": "acumulados de janeiro a agosto"
-                }
-              ]
-            },
-            {
-              "pt": " está acima.",
-              "en": " is shown above.",
-              "classe": "aponta",
-              "secao": "execucao"
             }
           ]
         },

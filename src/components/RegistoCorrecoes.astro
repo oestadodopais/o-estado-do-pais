@@ -344,13 +344,7 @@ const palavraRevisoes =
         <ul class="registo-proveniencia-linhas">
           {primeiraPorLinha.map((e) => (
             <li data-correcao-entrada={e.claimId}>
-              <code
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="id"
-              >
-                {e.claimId}
-              </code>{' '}
+              <span data-correcao-titulo={e.claimId}></span>{' '}
               <Provenance id={e.claimId} lang={lang} />
             </li>
           ))}

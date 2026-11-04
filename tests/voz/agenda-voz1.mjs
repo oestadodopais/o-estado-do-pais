@@ -1,41 +1,66 @@
-/** VOZ-1: campos públicos completos e campos internos ausentes, nas duas edições. */
-import fs from 'node:fs';
-import assert from 'node:assert/strict';
-import {parse} from 'node-html-parser';
-const agenda=JSON.parse(fs.readFileSync('src/data/agenda.json'));
+/** VOZ-1 B: dados conservados, futuro exato, ausência distinta e portas verificadas. */
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {parse} from 'node-html-parser';
+import {matchPath,routePath} from '../../src/lib/routes.mjs';
+import {conferirTitulosCopiados} from '../../scripts/titulos-copiados.mjs';
+import {calendarioFuturo} from '../../src/lib/agenda.mjs';
 const calendario=JSON.parse(fs.readFileSync('src/data/calendario.json'));
-export function conferir(root,lang){
+const dia=process.env.OEDP_DIA_DA_CONSTRUCAO??JSON.parse(fs.readFileSync('dist/version.json')).construido_em.slice(0,10);
+const normal=s=>s.replace(/\s+/gu,' ').trim();
+const leitores={pt:[],en:[]};
+const fora=new Set(['linha','livro','livroConcelho','livroConcelhos','serie','metodo','sobre','privacidade','agenda','correcoes','documento','texto']);
+function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
+ const f=path.join(dir,e.name);if(e.isDirectory()){anda(f);continue;}if(e.name!=='index.html')continue;
+ const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
+ const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');if(!titulo)continue;
+ const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
+ leitores[hit.lang].push({rota,titulo,refs});
+}}
+anda('dist');
+export function conferir(root,lang,registo=calendario,hoje=dia){
  const erros=[];
- for(const item of agenda.itens){
-  const artigo=root.querySelector(`[data-agenda-item="${item.id}"]`);
-  if(!artigo){erros.push(`item ausente: ${item.id}`);continue;}
-  const esperados=['titulo','estado','ultima_alteracao',...(item.pergunta?['pergunta']:[])];
-  for(const campo of esperados)if(!artigo.querySelector(`[data-agenda="${item.id}.${campo}"]`))erros.push(`campo público ausente: ${campo}`);
-  for(const el of artigo.querySelectorAll('[data-agenda]'))if(!esperados.includes(el.getAttribute('data-agenda').slice(item.id.length+1)))erros.push('campo interno da agenda');
-  if(!item.pergunta && artigo.querySelector('[data-agenda-pergunta-ausente]')?.textContent!==(lang==='pt'?'Pergunta por registar':'Question not recorded'))erros.push('pergunta ausente sem indicação');
-  const estado=artigo.querySelector(`[data-agenda="${item.id}.estado"]`)?.textContent.trim();
-  if(estado?.split(/\s+/).length!==2)erros.push('estado fora das duas palavras');
- }
- for(const e of calendario.eventos){
-  const fonte=root.querySelector(`.agenda-evento [data-agenda="evento:${e.id}.fonte"]`);const item=fonte?.closest('.agenda-evento');
-  if(!item){erros.push(`acontecimento ausente: ${e.id}`);continue;}
-  const campos=['titulo','fonte',...(e.data?['data']:e.janela?['janela.inicio','janela.fim']:['marcador']),...((e.afecta_linhas??[]).length?['afecta_linhas']:[])];
-  for(const campo of campos)if(!item.querySelector(`[data-agenda="evento:${e.id}.${campo}"]`))erros.push(`campo público do calendário ausente: ${campo}`);
-  if(!e.data&&!e.janela&&item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==(lang==='pt'?'sem data anunciada':'no announced date'))erros.push('ausência de data alterada');
-  for(const el of item.querySelectorAll('[data-agenda]'))if(!campos.includes(el.getAttribute('data-agenda').slice(e.id.length+8)))erros.push('campo interno do calendário');
+ if(root.querySelector('[data-agenda-item], [data-agenda-seccao], .quadro-estados'))erros.push('trabalho interno visível');
+ if(root.querySelector('[data-calendario-dia]')?.getAttribute('data-calendario-dia')!==hoje)erros.push('dia da construção diferente');
+ const esperados=registo.eventos.filter(e=>!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=hoje);
+ const artigos=root.querySelectorAll('[data-calendario-evento]');
+ if(artigos.length!==esperados.length)erros.push('conjunto futuro diferente');
+ for(const e of registo.eventos){
+  const item=root.querySelector(`[data-calendario-evento="${e.id}"]`);
+  if(!esperados.includes(e)){if(item)erros.push('acontecimento passado visível');continue;}
+  if(!item){erros.push('acontecimento futuro ausente');continue;}
+  const campos=['titulo','fonte',...(e.data?['data']:e.janela?['janela.inicio','janela.fim']:['marcador'])];
+  for(const campo of campos)if(!item.querySelector(`[data-agenda="evento:${e.id}.${campo}"]`))erros.push('campo público ausente');
+  for(const el of item.querySelectorAll('[data-agenda]'))if(!campos.includes(el.getAttribute('data-agenda').slice(e.id.length+8)))erros.push('campo interno visível');
+  if(!e.data&&!e.janela){
+   const esperado={pt:{nao_publica:'sem data anunciada',nao_lida:'data por confirmar na fonte'},en:{nao_publica:'no announced date',nao_lida:'date to be confirmed at the source'}}[lang][e.motivo_sem_data];
+   if(!esperado || item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==esperado)erros.push('motivo de ausência diferente');
+  }
+  const portas=item.querySelectorAll('[data-calendario-pagina]');
+  const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id)));
+  if(portas.length!==atualizam.length)erros.push('páginas afetadas diferentes');
+  for(const p of atualizam){const a=portas.find(a=>a.getAttribute('href')===p.rota);if(!a||normal(a.textContent)!==p.titulo||a.getAttribute('data-calendario-pagina')!==p.rota)erros.push('página afetada sem título e porta certos');}
  }
  return erros;
 }
+let plantas=0;const morde=(nome,cond)=>{assert(cond,nome);plantas++;};
 for(const lang of ['pt','en']){
- const root=parse(fs.readFileSync(`dist/${lang==='pt'?'agenda':'en/agenda'}/index.html`,'utf8'));
- assert.deepEqual(conferir(root,lang),[]);
- const item=root.querySelector('[data-agenda-item]');
- item.querySelector('h3').remove();assert(conferir(root,lang).some(e=>e.includes('titulo')));
- item.insertAdjacentHTML('beforeend',`<p data-agenda="${item.getAttribute('data-agenda-item')}.porque">Nota interna</p>`);assert(conferir(root,lang).includes('campo interno da agenda'));
- const evento=root.querySelector('.agenda-evento');evento.querySelector('.agenda-evento-fonte').remove();assert(conferir(root,lang).some(e=>e.includes('acontecimento ausente')));
+ const texto=fs.readFileSync(`dist/${lang==='pt'?'agenda':'en/agenda'}/index.html`,'utf8');const root=parse(texto);assert.deepEqual(conferir(root,lang),[]);
+ assert.deepEqual(conferirTitulosCopiados(root,{key:'agenda',lang}).erros,[]);
+ morde('título copiado fora da rota',conferirTitulosCopiados(root,{key:'explicacao',lang}).erros.length>0);
+ const falso=parse(texto);falso.querySelector('[data-calendario-pagina]').set_content('Título inventado');morde('título falso não é transcrição',conferirTitulosCopiados(falso,{key:'agenda',lang}).erros.length>0);
+ for(const [nome,muda,queixa] of [
+  ['trabalho interno',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<article data-agenda-item="planta">Trabalho interno</article>'),'trabalho interno visível'],
+  ['fonte retirada',r=>r.querySelector('.agenda-evento-fonte').remove(),'campo público ausente'],
+  ['ausência trocada',r=>r.querySelector('[data-agenda-sem-data="nao_lida"] [data-agenda]').set_content(lang==='pt'?'sem data anunciada':'no announced date'),'motivo de ausência diferente'],
+  ['título trocado',r=>r.querySelector('[data-calendario-pagina]').set_content('Título trocado'),'página afetada sem título e porta certos'],
+  ['porta trocada',r=>r.querySelector('[data-calendario-pagina]').setAttribute('href','/livro-razao/taxa-de-desemprego-2025'),'página afetada sem título e porta certos'],
+  ['página retirada',r=>r.querySelector('[data-calendario-pagina]').remove(),'páginas afetadas diferentes'],
+ ]){const r=parse(texto);muda(r);morde(nome,conferir(r,lang).includes(queixa));}
+ const passado=structuredClone(calendario);const atual=root.querySelector('[data-calendario-evento]').getAttribute('data-calendario-evento');passado.eventos.find(e=>e.id===atual).data='1900-01-01';morde('passado visível',conferir(root,lang,passado).includes('acontecimento passado visível'));
  const correcoes=parse(fs.readFileSync(`dist/${lang==='pt'?'correcoes':'en/corrections'}/index.html`,'utf8'));
- assert.equal(correcoes.querySelectorAll('.log-afirmacao code').length,0);
- assert(correcoes.querySelectorAll('.registo-mudanca[data-correcao-entrada]').length>0);
- for(const entrada of correcoes.querySelectorAll('.registo-mudanca[data-correcao-entrada]'))assert(entrada.querySelector('a.src-chip'),'porta da linha retirada');
+ const titulos=correcoes.querySelectorAll('[data-correcao-titulo]');assert(titulos.length>0);
+ for(const el of titulos){const id=el.getAttribute('data-correcao-titulo'),r=parse(fs.readFileSync(path.join('dist',routePath('linha',lang,{slug:id}),'index.html'),'utf8'));assert.equal(normal(el.textContent),normal(r.querySelector('h1').textContent));assert(el.closest('li').querySelector('a.src-chip'));assert.notEqual(el.textContent,id);}
 }
-console.log('VOZ-1: agenda e calendário completos nas duas edições; 6 plantas recusadas; identificadores fora do texto das correções.');
+const c={eventos:[{id:'antes',data:'2026-11-03'},{id:'hoje',data:'2026-11-04'},{id:'depois',data:'2026-11-05'},{id:'janela',janela:{inicio:'2026-11-01',fim:'2026-11-04'}},{id:'sem',motivo_sem_data:'nao_lida'}]};
+assert.deepEqual(calendarioFuturo(c,'2026-11-04').eventos.map(e=>e.id),['hoje','depois','janela','sem']);
+assert.throws(()=>calendarioFuturo({eventos:[{id:'sem-motivo'}]},'2026-11-04'),/motivo/);plantas++;
+console.log(`VOZ-1 B: calendário nas duas edições; ${plantas} plantas recusadas; dia atual e intervalo aberto incluídos; títulos dos recibos conferidos.`);

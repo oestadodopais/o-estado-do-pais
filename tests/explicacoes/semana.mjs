@@ -117,7 +117,7 @@ export function primeiraFrasePelaCelula(s, lang) {
   f += relidas === 0 ? c.nenhumRelido : `${milharesAqui(relidas)}${relidas === 1 ? c.umRelido : c.variosRelidos}`;
   if (valor === 0 && proveniencia === 0 && forma === 0) f += c.nenhumMudou;
   else {
-    f += c.virgula + (valor === 0 ? c.nenhumDeValor : `${milharesAqui(valor)}${valor === 1 ? c.umDeValor : c.variosDeValor}`);
+    f += ': ' + (valor === 0 ? c.nenhumDeValor : `${milharesAqui(valor)}${valor === 1 ? c.umDeValor : c.variosDeValor}`);
     if (forma > 0) f += `${c.virgula}${milharesAqui(forma)}${forma === 1 ? c.umDeForma : c.variosDeForma}`;
     f += c.e + (proveniencia === 0 ? c.nenhumDeProveniencia : `${milharesAqui(proveniencia)}${proveniencia === 1 ? c.umDeProveniencia : c.variosDeProveniencia}`);
   }

@@ -1,11 +1,11 @@
 {
   "/404.html": "A ligação pode estar errada, ou a página pode ter mudado de sítio.",
-  "/areas": "Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos.",
+  "/areas": "Uma área de governo é um ministério; um domínio é um tema, como os preços ou o emprego.",
   "/dossies": "Um lugar por assunto vivo, com tudo o que há sobre ele",
   "/educacao-e-saude": "Os números de Portugal sobre o abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde.",
   "/emprego": "Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho.",
   "/en/404": "The link may be wrong, or the page may have moved.",
-  "/en/areas": "A government area is a ministry; a domain is a subject from the content charter.",
+  "/en/areas": "A government area is a ministry; a domain is a topic, such as prices or employment.",
   "/en/dossiers": "One place per living subject, with everything there is on it",
   "/en/education-and-health": "Portugal’s figures on early school leaving, digital skills, childcare and access to healthcare.",
   "/en/employment": "Portugal’s figures on employment, unemployment, young people and labour costs.",
@@ -26,5 +26,7 @@
   "/precos": "Os números de Portugal sobre os preços dos bens e serviços.",
   "/regioes": "O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27.",
   "/salarios-pensoes-e-apoios": "Os números de Portugal sobre os salários, as pensões e os apoios sociais.",
-  "/uniao-europeia": "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025."
+  "/uniao-europeia": "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025.",
+  "/agenda": "O que as fontes citadas publicam a seguir.",
+  "/en/agenda": "What the cited sources publish next."
 }

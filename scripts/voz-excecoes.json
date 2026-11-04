@@ -1,0 +1,80 @@
+[
+  {
+    "rota": "/correcoes",
+    "frase": "Quando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga.",
+    "classe": "natureza do registo",
+    "razao": "Define os campos e a conservação das entradas do registo público de correções."
+  },
+  {
+    "rota": "/correcoes",
+    "frase": "Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia.",
+    "classe": "informação funcional",
+    "razao": "Explica o envio pela caixa de correções ou pede ao utilizador a informação necessária à sugestão."
+  },
+  {
+    "rota": "/correcoes",
+    "frase": "É o primeiro que não veio de um anfitrião de artefactos: foi produzido no motor de investigação deste projeto e atravessou como ficheiro, com as duas edições.",
+    "classe": "facto de uma fonte",
+    "razao": "Entrada histórica sobre a origem e o formato do documento do estudo; conserva o facto de proveniência do ficheiro."
+  },
+  {
+    "rota": "/en/corrections",
+    "frase": "When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted.",
+    "classe": "natureza do registo",
+    "razao": "Define os campos e a conservação das entradas do registo público de correções."
+  },
+  {
+    "rota": "/en/corrections",
+    "frase": "Nothing is sent from this site: the message leaves from you, so you keep a copy of it.",
+    "classe": "informação funcional",
+    "razao": "Explica o envio pela caixa de correções ou pede ao utilizador a informação necessária à sugestão."
+  },
+  {
+    "rota": "/en/corrections",
+    "frase": "It is the first that did not come from an artifact host: it was produced by this project’s research engine and crossed over as a file, with both editions.",
+    "classe": "facto de uma fonte",
+    "razao": "Entrada histórica sobre a origem e o formato do documento do estudo; conserva o facto de proveniência do ficheiro."
+  },
+  {
+    "rota": "/en/suggestions",
+    "frase": "What did you look for here and not find?",
+    "classe": "informação funcional",
+    "razao": "Explica o envio pela caixa de correções ou pede ao utilizador a informação necessária à sugestão."
+  },
+  {
+    "rota": "/en/under-discussion",
+    "frase": "The votes say the rest: PS let the budget through, and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against for reasons that do not coincide; «um frete ao capital e um desastre para o País»source · PCP (a gift to capital and a disaster for the country), says the PCP's Central Committee, and that is a judgement, which is not measured.",
+    "classe": "facto de uma fonte",
+    "razao": "Distingue a citação atribuída ao PCP da medida numérica e conserva o registo dos votos e da posição dessa fonte."
+  },
+  {
+    "rota": "/explicacoes/dinheiro-do-estado-2026",
+    "frase": "3,25fonte · calculado de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública.",
+    "classe": "facto de uma fonte",
+    "razao": "Define o subconjunto e a medida da despesa usados na comparação, com o valor selado e a exclusão das transferências."
+  },
+  {
+    "rota": "/o-que-se-discute",
+    "frase": "Os votos dizem o resto: o PS deixou passar o orçamento, e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra por razões que não coincidem; «um frete ao capital e um desastre para o País»fonte · PCP, diz o Comité Central do PCP, e isso é um juízo, que não se mede.",
+    "classe": "facto de uma fonte",
+    "razao": "Distingue a citação atribuída ao PCP da medida numérica e conserva o registo dos votos e da posição dessa fonte."
+  },
+  {
+    "rota": "/sugestoes",
+    "frase": "O que procurou aqui e não encontrou?",
+    "classe": "informação funcional",
+    "razao": "Explica o envio pela caixa de correções ou pede ao utilizador a informação necessária à sugestão."
+  },
+  {
+    "rota": "/en/under-discussion",
+    "frase": "Primary-care consultations were 2 577 538source · Serviço Nacional de Saúde in August 2026, the latest month, provisional in the source, which says: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas.",
+    "classe": "facto de uma fonte",
+    "razao": "A nota do Serviço Nacional de Saúde exclui as consultas registadas no Vitacare desta métrica. A frase conserva o âmbito e a natureza provisória publicados pela fonte."
+  },
+  {
+    "rota": "/o-que-se-discute",
+    "frase": "As consultas nos cuidados primários foram 2 577 538fonte · Serviço Nacional de Saúde em agosto de 2026, o último mês, provisório na fonte, que diz: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas.",
+    "classe": "facto de uma fonte",
+    "razao": "A nota do Serviço Nacional de Saúde exclui as consultas registadas no Vitacare desta métrica. A frase conserva o âmbito e a natureza provisória publicados pela fonte."
+  }
+]

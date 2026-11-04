@@ -589,12 +589,12 @@ export const DINHEIRO_DO_ESTADO_2026 = {
   naoDiz: [
     {
       pt: [
-        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto está acima.'] },
+        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês.'] },
         { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida.'] },
         ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',
       ],
       en: [
-        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is shown above.'] },
+        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month.'] },
         { se: [SEM_LINHAS_DOS_JUROS], partes: [' These figures do not isolate the cost of the interest on the debt.'] },
         ' The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.',
       ],

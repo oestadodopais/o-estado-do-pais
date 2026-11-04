@@ -8,10 +8,18 @@ import {pathToFileURL} from 'node:url';
 import {parse} from 'node-html-parser';
 import {loadClaims,provenienciaIncompleta} from '../src/lib/ledger.mjs';
 import {matchPath} from '../src/lib/routes.mjs';
-export const ISENCAO_VOZ2 = {nome:'documentos dos estudos', data:'2026-11-03', retirar:'VOZ-2', rotas:['documento','texto'], transcricoes:['estudo: unidades e índice','dossie: unidades com data-registo-unidade, conferidas pelo portão de HTML']};
+export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2', rotas:['documento','texto'], transcricoes:['estudo: unidades e índice, .texto-artigo.estudo-leitura, .texto-sumario e .estudo-sumario','dossie: unidades e índices com data-registo-unidade e data-registo-indice, conferidos pelo portão de HTML']};
+export const ISENCAO_RECIBOS = {nome:'recibos do livro-razão e séries',rotas:['linha','livro','livroConcelho','livroConcelhos','serie']};
 const claims=loadClaims();
 const normal = s => s.replace(/\s+/g,' ').trim();
-export const CLASSE = /\b(?:(?:est[ae]|[oa])\s+(?:sítio|página|peça|explicação|estudo|projeto|trabalho)|(?:this|the)\s+(?:site|page|piece|explainer|explanation|study|project|work))\s+(?:(?:ainda|também|só|apenas|still|also|only)\s+)?(?:não\b|nunca\b|é(?![A-Za-zÀ-ÿ])|foi\b|mostra\b|lê(?![A-Za-zÀ-ÿ])|diz\b|conta\b|apresenta\b|publica\b|reúne\b|compara\b|explica\b|is\b|was\b|does\b|doesn’t\b|doesn't\b|shows?\b|reads?\b|says?\b|presents?\b|compares?\b|explains?\b)|(?<![\p{L}])é\s+deste\s+projeto\b|\bis this project[’']s\b|\b(?:aqui\s+(?:(?:ainda|também|só)\s+)?(?:não|ainda|mostra|tem|têm|lê|diz|publica)|(?:não|nunca)[^.!?;]{0,65}\baqui|(?:not|never)[^.!?;]{0,65}\bhere)\b/iu;
+const CLASSE_ANTERIOR = /\b(?:(?:est[ae]|[oa])\s+(?:sítio|página|peça|explicação|estudo|projeto|trabalho)|(?:this|the)\s+(?:site|page|piece|explainer|explanation|study|project|work))\s+(?:(?:ainda|também|só|apenas|still|also|only)\s+)?(?:não\b|nunca\b|é(?![A-Za-zÀ-ÿ])|foi\b|mostra\b|lê(?![A-Za-zÀ-ÿ])|diz\b|conta\b|apresenta\b|publica\b|reúne\b|compara\b|explica\b|is\b|was\b|does\b|doesn’t\b|doesn't\b|shows?\b|reads?\b|says?\b|presents?\b|compares?\b|explains?\b)|(?<![\p{L}])é\s+deste\s+projeto\b|\bis this project[’']s\b|\b(?:aqui\s+(?:(?:ainda|também|só)\s+)?(?:não|ainda|mostra|tem|têm|lê|diz|publica)|(?:não|nunca)[^.!?;]{0,65}\baqui|(?:not|never)[^.!?;]{0,65}\bhere)\b/iu;
+// VOZ-1 B: a negação e a marca podem estar em qualquer ordem na mesma frase.
+const NEGACAO = /(?<![\p{L}])(?:não|nem|nenhum[ao]?|nunca|nada|not|no|neither|none|never|nothing|doesn[’']t|isn[’']t)(?![\p{L}])/iu;
+const PROPRIA = /(?<![\p{L}])(?:d?este projeto|d?esta página|d?esta explicação|d?este estudo|d?este documento|d?esta leitura|aqui|não entram?|não se lê|inferências?|juízos?|this project|this site|this page|this explainer|this explanation|this study|this document|this reading|here|does not enter|is not read|inference|judgement|judgment|deste sítio|from this site)(?![\p{L}])/iu;
+export const CLASSE = {test: frase => (NEGACAO.test(frase) && PROPRIA.test(frase)) || CLASSE_ANTERIOR.test(frase)};
+export const EXCECOES = JSON.parse(fs.readFileSync(new URL('./voz-excecoes.json',import.meta.url),'utf8'));
+const RAZOES = new Set(['facto de uma fonte','informação funcional','natureza do registo']);
+if(EXCECOES.some(e=>!e.rota||!e.frase||!e.razao||!RAZOES.has(e.classe)) || new Set(EXCECOES.map(e=>e.rota+'|'+e.frase)).size!==EXCECOES.length) throw new Error('VOZ-1: lista de exceções inválida');
 export function conferirProtecoes(root,rota,livro=claims) {
  const erros=[]; const hit=matchPath(rota);const lang=rota.startsWith('/en/')?'en':'pt';
  const ausencia=lang==='en'?'to be confirmed at the source':'por confirmar na fonte';
@@ -36,25 +44,26 @@ export function medirPagina(html, rota, ledes = {}) {
  const protecao=conferirProtecoes(root,rota,claims);
  const marca=/\[\s*(?:a\s+verificar|to\s+verify)\s*\]/iu.test(corpo.textContent + ' ' + root.querySelectorAll('[data-marca], [aria-label], [title]').map(n=>[n.getAttribute('data-marca'),n.getAttribute('aria-label'),n.getAttribute('title')].join(' ')).join(' '));
  const hit=matchPath(rota);
- if(['metodo','sobre','linha','livro','serie','privacidade',...ISENCAO_VOZ2.rotas].includes(hit?.key)) return {marca,protecao,frases:[],ledes:[],isenta:true};
+ if(['metodo','sobre','privacidade',...ISENCAO_RECIBOS.rotas,...ISENCAO_VOZ2.rotas].includes(hit?.key)) return {marca,protecao,frases:[],ledes:[],isenta:true};
  const h1=corpo.querySelector('h1');
  const imediato = h1?.nextElementSibling?.tagName === 'P' ? h1.nextElementSibling : h1?.parentNode?.nextElementSibling?.tagName === 'P' ? h1.parentNode.nextElementSibling : null;
  const lede=imediato ? normal(imediato.textContent) : null;
  // Só transcrições explicitamente atribuídas: dados da agenda e frases das explicações entram.
- corpo.querySelectorAll('[data-verbatim]').forEach(n=>n.remove());
  if(hit?.key==='dossie') corpo.querySelectorAll('[data-registo-unidade], [data-registo-indice]').forEach(n=>n.remove());
  if(hit?.key==='estudo') corpo.querySelectorAll('[data-registo-unidade], .texto-artigo.estudo-leitura, .estudo-indice, .texto-sumario, .estudo-sumario, [data-registo-indice]').forEach(n=>n.remove());
- const candidatas=corpo.querySelectorAll('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,summary,div,section,article');
+ const candidatas=corpo.querySelectorAll('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,div,section,article');
  const frases=[];
  for(const n of candidatas){
-  if(n.querySelector('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,summary,div,section,article'))continue;
+  if(n.querySelector('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,div,section,article'))continue;
   const texto=normal(n.textContent);
-  if(CLASSE.test(texto) && !(n===imediato && ledes[rota]===texto)) frases.push(...frasesDoTexto(texto));
+  if(CLASSE.test(texto)) frases.push(...frasesDoTexto(texto));
  }
  // As ledes editoriais são fechadas por rota e texto. Os campos calculados continuam conferidos pelas suas réguas.
  const ledesEncontradas=lede && !['data-explicacao-paragrafo','data-semana-frase','data-leitura-do-lugar','data-serie-o-que-conta','data-dossie-campo','data-dossie-ligacao','data-sugestoes-resultado','data-sugestoes-paragrafo','data-sucessor-edicao','data-verbatim'].some(k=>imediato.hasAttribute(k)) && !/^(?:lugar-leitura|serie-|livro-contas|estudo-descricao)/.test(imediato.classNames) ? [lede] : [];
  const ledesNovas=ledesEncontradas.filter(t=>ledes[rota]!==t);
- return {marca,protecao,frases:[...new Set(frases)],ledes:ledesEncontradas,ledesNovas};
+ const captadas=[...new Set(frases)];
+ const permitidas=captadas.filter(f=>EXCECOES.some(e=>e.rota===rota && e.frase===f));
+ return {marca,protecao,captadas,permitidas,frases:captadas.filter(f=>!permitidas.includes(f)),ledes:ledesEncontradas,ledesNovas};
 }
 export function conferirMapa(xml,livro=claims) {
  const erros=[];
@@ -77,7 +86,7 @@ export function medirDist(dist='dist', ledes={}) {
 if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href){
  const lista=JSON.parse(fs.readFileSync('scripts/voz-ledes.json','utf8'));
  const paginas=medirDist(process.env.OEDP_DIST ?? 'dist',lista);
- const relatorio={isencao:ISENCAO_VOZ2,paginas,totais:{paginas:Object.keys(paginas).length,marcador:Object.values(paginas).filter(p=>p.marca).length,protecao:Object.values(paginas).reduce((s,p)=>s+p.protecao.length,0),frases:Object.values(paginas).reduce((s,p)=>s+p.frases.length,0),ledesNovas:Object.values(paginas).reduce((s,p)=>s+(p.ledesNovas?.length??0),0)}};
+ const relatorio={isencao:ISENCAO_VOZ2,recibos:ISENCAO_RECIBOS,paginas,totais:{paginas:Object.keys(paginas).length,marcador:Object.values(paginas).filter(p=>p.marca).length,protecao:Object.values(paginas).reduce((s,p)=>s+p.protecao.length,0),captadas:Object.values(paginas).reduce((s,p)=>s+(p.captadas?.length??0),0),permitidas:Object.values(paginas).reduce((s,p)=>s+(p.permitidas?.length??0),0),frases:Object.values(paginas).reduce((s,p)=>s+p.frases.length,0),ledesNovas:Object.values(paginas).reduce((s,p)=>s+(p.ledesNovas?.length??0),0)}};
  const destino=process.argv.indexOf('--medir');if(destino>=0)fs.writeFileSync(process.argv[destino+1],JSON.stringify(relatorio,null,2)+'\n');
  console.log(JSON.stringify(relatorio.totais));
  if(destino<0){for(const [r,p] of Object.entries(paginas)) for(const f of [...p.frases,...(p.ledesNovas??[]),...p.protecao])console.error(`${r}: ${f}`);if(relatorio.totais.protecao||relatorio.totais.frases||relatorio.totais.ledesNovas||relatorio.totais.marcador)process.exitCode=1;}

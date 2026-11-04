@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 import {normalizaEspacosDaRetirada} from './titulos-publicados.mjs';
 import {retirarTitulosConferidos} from './titulos-publicados.mjs';
 import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
@@ -1337,6 +1338,10 @@ for (const file of ficheiros) {
   const html = fs.readFileSync(file, 'utf8');
   const root = lerPaginaComCodigo(html, { comment: false, blockTextElements: { script: true, style: true } });
   tirarCodigoConferido(root, rota);
+  const titulosCopiados=conferirTitulosCopiados(root,rota,DIST);
+  if(titulosCopiados.erros.length)throw new Error(titulosCopiados.erros.join('; '));
+  for(const el of titulosCopiados.elementos)el.set_content('');
+  for(const el of root.querySelectorAll('[data-calendario-alvos]')) if(/^(Atualiza:|Updates:)[\s·]*$/u.test(el.textContent))el.set_content(el.textContent.startsWith('Atualiza:')?'Atualiza:':'Updates:');
 
   /* 1 — a porta de correcções */
   const portas = root.querySelectorAll('[data-porta-correccoes]');

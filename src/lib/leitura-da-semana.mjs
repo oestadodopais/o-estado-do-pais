@@ -282,7 +282,7 @@ export function primeiraFraseDaSemana(leitura, s, data, contagem) {
   else p.push({ semana: 'relidas', texto: contagem(relidas) }, relidas === 1 ? s.umRelido : s.variosRelidos);
   if (valor === 0 && proveniencia === 0 && forma === 0) p.push(s.nenhumMudou);
   else {
-    p.push(s.virgula);
+    p.push(': ');
     if (valor === 0) p.push(s.nenhumDeValor);
     else p.push({ semana: 'valor', texto: contagem(valor) }, valor === 1 ? s.umDeValor : s.variosDeValor);
     /* As que mudaram só na forma de escrever (EX1-c) só se nomeiam quando há alguma. */

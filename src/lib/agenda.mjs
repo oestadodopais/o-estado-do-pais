@@ -132,6 +132,22 @@ export function eventosOrdenados(calendario = calendarioCruzado()) {
   return { datados, semData };
 }
 
+/** VOZ-1 B: intervalos ainda abertos ficam; os dados originais conservam-se.
+ * @param {RegistoDoCalendario | null} calendario
+ * @param {string} dia
+ */
+export function calendarioFuturo(calendario, dia) {
+  if (!calendario) return null;
+  for (const e of calendario?.eventos ?? []) if (!e.data && !e.janela && !['nao_publica','nao_lida'].includes(String(e.motivo_sem_data))) throw new Error(`Calendário: motivo em falta para ${e.id}`);
+  return {...calendario, eventos:(calendario?.eventos ?? []).filter(e => {const fim=e.data??e.janela?.fim;return !fim || fim >= dia;})};
+}
+/** @param {'nao_publica'|'nao_lida'} motivo @param {'pt'|'en'} lang */
+export function ausenciaDaData(motivo, lang) {
+  const formas = {pt:{nao_publica:'sem data anunciada',nao_lida:'data por confirmar na fonte'},en:{nao_publica:'no announced date',nao_lida:'date to be confirmed at the source'}};
+  if (!formas[lang]?.[motivo]) throw new Error('Calendário: motivo de ausência desconhecido');
+  return formas[lang][motivo];
+}
+
 /**
  * A âncora de um acontecimento dentro da página.
  *

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {conferirTitulosCopiados} from './titulos-copiados.mjs';
+const TITULOS_COPIADOS_CONFERIDOS = new WeakSet();
 import {retirarAusencias} from '../src/lib/ausencias-voz1.mjs';
 import {marcaDeLinguaEv3Valida} from './ev3-lingua-conferir.mjs';
 import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
@@ -1279,6 +1281,7 @@ const NONLEDGER_CITADO = new Set([
 ]);
 
 function eCitado(no) {
+  if(TITULOS_COPIADOS_CONFERIDOS.has(no)) return true;
   const tag = String(no.rawTagName ?? '').toLowerCase();
   if (TAGS_CITADAS.has(tag)) return true;
   const attrs = no.attributes ?? {};
@@ -3398,11 +3401,6 @@ function valoresDoLivroEmProsa(texto, chave, idsDaPagina) {
   return achados;
 }
 
-/** VOZ-1: título, estado, data e pergunta são os campos públicos da agenda. */
-function camposObrigatoriosDoItem(item) {
-  return [`${item.id}.titulo`, `${item.id}.estado`, `${item.id}.ultima_alteracao`, ...(item.pergunta ? [`${item.id}.pergunta`] : [])];
-}
-
 /**
  * AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026), pela chave da rota. Escritas aqui, e não lidas
  * da vista, como as outras listas deste portão; a tabela das rotas confere que existem.
@@ -4505,6 +4503,9 @@ for (const file of ficheirosHtml(DIST)) {
 
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
+  const titulosCopiados=conferirTitulosCopiados(root,rota,DIST);
+  for(const erro of titulosCopiados.erros)err(erro);
+  for(const el of titulosCopiados.elementos)TITULOS_COPIADOS_CONFERIDOS.add(el);
   // OG1-E: antes das saídas antecipadas, em todas as páginas e documentos.
   for (const falta of conferirFormaDasCitacoes(root, rota, claims, {html})) err(falta);
   for(const falta of conferirTitulosPublicados(root))err(falta);
@@ -7362,6 +7363,18 @@ for (const file of ficheirosHtml(DIST)) {
     })) err(`EX1 · ${msg}`);
   }
 
+  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-titulo]')) {
+    const id=el.getAttribute('data-correcao-titulo');
+    const destino=id?routePath('linha',linguaPagina??'pt',{slug:id}):el.getAttribute('data-calendario-pagina');
+    try {
+      const alvo=parse(fs.readFileSync(path.join(DIST,destino,'index.html'),'utf8'));
+      if(textoTranscrito(el)!==textoTranscrito(alvo.querySelector('h1')))err('VOZ-1 B: título diferente da página de destino');
+      if(!id && el.getAttribute('href')!==destino)err('VOZ-1 B: porta do calendário diferente do título');
+      if(id && el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada')!==id)err('VOZ-1 B: título de outra linha na revisão');
+    }catch{err('VOZ-1 B: página do título ausente');}
+    aRemover.push(el);
+  }
+
   /* --- os campos do registo da agenda, na página da agenda (origem 8) --- */
   for (const el of body.querySelectorAll('[data-agenda]')) {
     const chave = el.getAttribute('data-agenda');
@@ -7391,7 +7404,7 @@ for (const file of ficheirosHtml(DIST)) {
 
     const renderizado = textoTranscrito(el);
     const bruto = normalizeWhitespace(String(resolvido.texto));
-    const esperado = bruto === POR_VERIFICAR ? (chave.startsWith('evento:') && chave.endsWith('.marcador') ? (linguaPagina === 'en' ? 'no announced date' : 'sem data anunciada') : (linguaPagina === 'en' ? 'to be confirmed at the source' : 'por confirmar na fonte')) : bruto;
+    const esperado = bruto === POR_VERIFICAR ? (chave.startsWith('evento:') && chave.endsWith('.marcador') ? ({pt:{nao_publica:'sem data anunciada',nao_lida:'data por confirmar na fonte'},en:{nao_publica:'no announced date',nao_lida:'date to be confirmed at the source'}}[linguaPagina ?? 'pt'][EVENTOS_DO_CALENDARIO.get(chave.slice(7).split('.')[0])?.motivo_sem_data]) : (linguaPagina === 'en' ? 'to be confirmed at the source' : 'por confirmar na fonte')) : bruto;
     /**
      * UM CAMPO QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
      * 04.09.2026).
@@ -7473,91 +7486,7 @@ for (const file of ficheirosHtml(DIST)) {
    */
   if (rota?.key === 'agenda' && AGENDA_REGISTO) {
     const lingua = linguaPagina ?? 'pt';
-    const rotulos = ROTULO_DO_ESTADO[lingua];
-    const chavesDe = (no) =>
-      new Set(no.querySelectorAll('[data-agenda]').map((e) => e.getAttribute('data-agenda')));
-
-    /* As quatro secções, e o cabeçalho de cada uma. A marca dizia o estado e a
-       frase visível podia dizer outro: trocar «Em curso» por «A seguir» no
-       cabeçalho passava (revisão cruzada 2, #5). */
-    const seccoes = body.querySelectorAll('[data-agenda-seccao]');
-    const estadosVistos = new Set();
-    for (const seccao of seccoes) {
-      const estado = seccao.getAttribute('data-agenda-seccao');
-      estadosVistos.add(estado);
-      const esperado = rotulos[estado];
-      if (!esperado) {
-        err(`data-agenda-seccao="${estado}" não é um dos quatro estados da agenda.`);
-        continue;
-      }
-      const cabeca = seccao.querySelector('h2');
-      const lido = cabeca ? textoTranscrito(cabeca) : null;
-      if (lido !== esperado) {
-        err(
-          `a secção "${estado}" tem o cabeçalho "${lido ?? '(nenhum)'}" e o estado que ela ` +
-            `guarda escreve-se "${esperado}".\n      O cabeçalho é o que o leitor lê como ` +
-            `estado: a marca e a frase dizem a mesma coisa, ou a página mente a uma delas.`,
-        );
-      }
-    }
-    for (const estado of Object.keys(rotulos)) {
-      if (!estadosVistos.has(estado)) {
-        err(`a página da agenda não tem secção para o estado "${estado}".`);
-      }
-    }
-
-    const artigos = body.querySelectorAll('[data-agenda-item]');
-    const itensRendidos = new Set();
-    for (const artigo of artigos) {
-      const id = artigo.getAttribute('data-agenda-item');
-      const item = ITENS_DA_AGENDA.get(id);
-      if (!item) {
-        err(`a página rende um item "${id}" que não está em src/data/agenda.json.`);
-        continue;
-      }
-      itensRendidos.add(id);
-
-      /* A secção, lida a subir no DOM. */
-      let seccao = null;
-      for (let no = artigo.parentNode; no; no = no.parentNode) {
-        const estadoDaSeccao = (no.attributes ?? {})['data-agenda-seccao'];
-        if (estadoDaSeccao) {
-          seccao = estadoDaSeccao;
-          break;
-        }
-      }
-      if (seccao === null) {
-        err(`o item "${id}" não está dentro de nenhuma secção de estado da agenda.`);
-      } else if (seccao !== item.estado) {
-        err(
-          `o item "${id}" está na secção "${seccao}" e o registo põe-no em "${item.estado}".\n` +
-            `      A secção é lida do DOM, não do registo: um item debaixo do cabeçalho errado ` +
-            `com o rótulo certo é exactamente o defeito que isto fecha.`,
-        );
-      }
-
-      // VOZ-1: a maquinaria conserva-se nos dados e não se imprime.
-      const permitidos = new Set(camposObrigatoriosDoItem(item));
-      for (const chave of chavesDe(artigo)) if (!permitidos.has(chave)) err(`VOZ-1: campo interno da agenda impresso: ${chave}`);
-
-      /* E cada campo que a página existe para mostrar. */
-      const rendidos = chavesDe(artigo);
-      for (const chave of camposObrigatoriosDoItem(item)) {
-        if (!rendidos.has(chave)) {
-          err(
-            `o item "${id}" não rende "${chave}", que o registo tem.\n` +
-              `      A página mostra o item inteiro, ou o que ela mostra deixa de ser o registo.`,
-          );
-        }
-      }
-    }
-
-    for (const id of ITENS_DA_AGENDA.keys()) {
-      if (!itensRendidos.has(id)) {
-        err(`o item "${id}" está no registo e a página não o rende.`);
-      }
-    }
-
+    if(body.querySelector('[data-agenda-item], [data-agenda-seccao], .quadro-estados')) err('VOZ-1 B: trabalho interno reposto no calendário');
     /* A razão de um acontecimento não ter data: a marca contra o registo, e a
        frase visível contra a cópia do portão. Uma fonte que não respondeu e uma
        fonte que não publica calendário são factos diferentes, e trocar um pelo
@@ -7579,7 +7508,7 @@ for (const file of ficheirosHtml(DIST)) {
         );
         continue;
       }
-      const esperado = lingua === 'en' ? 'no announced date' : 'sem data anunciada';
+      const esperado = {pt:{nao_publica:'sem data anunciada',nao_lida:'data por confirmar na fonte'},en:{nao_publica:'no announced date',nao_lida:'date to be confirmed at the source'}}[lingua][motivo];
       if (!esperado) {
         err(`o acontecimento "${ident}" traz motivo_sem_data "${motivo}", que não é um dos dois.`);
         continue;
@@ -8512,65 +8441,14 @@ for (const { rel, chave, destino, caminho, ancora } of ancorasDaProva) {
   }
 
   if (registoDaTravessia?.counts && paginasDaAgenda.length) {
-    const esperadoItens = Number(registoDaTravessia.counts.itens);
-    const esperadoEventos = Number(registoDaTravessia.counts.eventos);
-    const porEstado = registoDaTravessia.counts.itens_por_estado ?? {};
-
-    for (const [rel, visto] of paginasDaAgenda) {
-      if (visto.itens.size !== esperadoItens) {
-        erros.push({
-          rel,
-          msg:
-            `a página rende ${visto.itens.size} item(ns) da agenda e o registo da travessia ` +
-            `conta ${esperadoItens}.\n` +
-            `      O registo é ledger/cruzamentos/agenda.json, e as suas contagens estão lá ` +
-            `para serem comparadas com o que a página conta.`,
-        });
-      }
-      if (visto.eventos.size !== esperadoEventos) {
-        erros.push({
-          rel,
-          msg:
-            `a página rende ${visto.eventos.size} acontecimento(s) do calendário e o registo ` +
-            `da travessia conta ${esperadoEventos}.`,
-        });
-      }
-      /* Cada item do registo, nomeado. Uma contagem certa com o item errado
-         passaria; isto não. */
-      for (const id of ITENS_DA_AGENDA.keys()) {
-        if (!visto.itens.has(id)) {
-          erros.push({
-            rel,
-            msg:
-              `o item "${id}" está no registo da agenda e não está nesta página.\n` +
-              `      A página rende todos, ou o que ela mostra deixa de ser a agenda.`,
-          });
-        }
-      }
-      for (const id of EVENTOS_DO_CALENDARIO.keys()) {
-        if (!visto.eventos.has(id)) {
-          erros.push({
-            rel,
-            msg: `o acontecimento "${id}" está no calendário das fontes e não está nesta página.`,
-          });
-        }
-      }
-      /* E os quatro estados, um a um: o registo diz quantos itens estão em
-         cada um, e a página põe cada item na sua secção. */
-      const lingua = visto.lang === 'en' ? 'en' : 'pt';
-      for (const [estado, quantos] of Object.entries(porEstado)) {
-        const naPagina = [...visto.itens].filter(
-          (id) => ITENS_DA_AGENDA.get(id)?.estado === estado,
-        ).length;
-        if (naPagina !== Number(quantos)) {
-          erros.push({
-            rel,
-            msg:
-              `a página rende ${naPagina} item(ns) em "${ROTULO_DO_ESTADO[lingua][estado] ?? estado}" ` +
-              `e o registo da travessia conta ${quantos}.`,
-          });
-        }
-      }
+    // O recibo da travessia continua a conferir o conjunto inteiro nos dados.
+    if(Number(registoDaTravessia.counts.itens)!==ITENS_DA_AGENDA.size || Number(registoDaTravessia.counts.eventos)!==EVENTOS_DO_CALENDARIO.size) erros.push({rel:'dados',msg:'VOZ-1 B: contagens da travessia diferentes dos dados'});
+    for(const [estado,n] of Object.entries(registoDaTravessia.counts.itens_por_estado??{})) if([...ITENS_DA_AGENDA.values()].filter(i=>i.estado===estado).length!==n) erros.push({rel:'dados',msg:'VOZ-1 B: estado diferente da travessia'});
+    const dia=process.env.OEDP_DIA_DA_CONSTRUCAO || JSON.parse(fs.readFileSync(path.join(DIST,'version.json'),'utf8')).construido_em.slice(0,10);
+    const esperados=new Set([...EVENTOS_DO_CALENDARIO.values()].filter(e=>!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=dia).map(e=>e.id));
+    for(const [rel,visto] of paginasDaAgenda){
+      if(visto.itens.size)erros.push({rel,msg:'VOZ-1 B: itens internos visíveis'});
+      for(const id of new Set([...esperados,...visto.eventos]))if(esperados.has(id)!==visto.eventos.has(id))erros.push({rel,msg:`VOZ-1 B: acontecimento ${id} fora do conjunto futuro esperado`});
     }
   }
 }
