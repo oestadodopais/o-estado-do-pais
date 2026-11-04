@@ -46,7 +46,7 @@ export function revisoesPorAplicar(linhas=livroDoQuadro()) {
 const nomeDoAviso=(id,lang,comPeriodo=true)=>{
  const contexto=contextoDaRevisao(id),c=livroDoQuadro().get(contexto.medida),linha=livroDoQuadro().get(id);
  const nome=(unidadeDoCartao(c.id,lang)?nomeDoCartaoComAUnidade(c,lang):nomeDoCartao(c,lang))?.texto;
- return `${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}, ${dataDaCasa(linha.reference_date,lang)}`;
+ return `${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}${comPeriodo?`, ${dataDaCasa(linha.reference_date,lang)}`:''}`;
 };
 const textoAviso=(id,v,lang,comPeriodo=true)=>{
  const encontrado=String(v.found).replace(/[\s\u202f]/g,'').replace(/[.,](?=\d+$)/,',');
