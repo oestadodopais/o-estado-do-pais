@@ -1,0 +1,39 @@
+{
+  "chamadas_ate_esta_medicao": 35,
+  "conferencias_preliminares": [
+    {
+      "registo": "voz1a-feixe-pre",
+      "codigo": 0
+    },
+    {
+      "registo": "voz1a-i6-pre",
+      "codigo": 0
+    },
+    {
+      "registo": "voz1a-ledger-pre",
+      "codigo": 0
+    },
+    {
+      "registo": "voz1a-mortos-pre",
+      "codigo": 1
+    },
+    {
+      "registo": "voz1a-mortos2",
+      "codigo": 0
+    },
+    {
+      "registo": "voz1a-voz-pre",
+      "codigo": 0
+    }
+  ],
+  "conferencias_finais": 7,
+  "total_invocacoes_conferencia": 13,
+  "tokens_observados": {
+    "input_tokens": 19231907,
+    "cached_input_tokens": 18966912,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 88853,
+    "reasoning_output_tokens": 40752,
+    "total_tokens": 19320760
+  }
+}

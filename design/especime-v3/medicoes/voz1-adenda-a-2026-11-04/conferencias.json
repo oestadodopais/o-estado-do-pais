@@ -1,0 +1,41 @@
+{
+  "cabeca_conferida": "79f932a4ac1769e69414a1ad22f10ed8c2e04d4b",
+  "conferencias": {
+    "build": {
+      "codigo": 0,
+      "ultimas_linhas": "sinais · 5 de 5 blocos na primeira página, 1 saída(s); o registo está em .sinais/primeira-pagina.json.\n  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (17 casam)\nsinais · 2 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.\n  mordeu · uma condição falsa numa cópia das declarações (código 0)\n  mordeu · um resolvedor que recusa tudo (código 1)\n  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)\n\n> o-estado-do-pais@0.1.0 check:discussao\n> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs\n\nPASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.\nV2B · 0 erro(s), 1042 de 1042 plantas, 770 portas de integração.\nOG1: 16 âncoras conferidas no corpo alojado.\nOG1 pt: planta de data trocada e planta de partido trocado recusadas.\nOG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.\nOG1 pt: planta do bloco da citação alterado recusada.\nOG1 en: planta de data trocada e planta de partido trocado recusadas.\nOG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.\nOG1 en: planta do bloco da citação alterado recusada.\nPASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições."
+    },
+    "check:indice-do-sitio": {
+      "codigo": 0,
+      "ultimas_linhas": "\n> o-estado-do-pais@0.1.0 check:indice-do-sitio\n> node tests/indice/indice.mjs --prova\n\ncheck:indice-do-sitio pt: 435 portas (432 destinos), 426 endereços do mapa conferidos, 34 rotas de leitor, 308 concelhos em 29 gavetas, 13 estudos, 8 linhas de «O que mudou».\ncheck:indice-do-sitio en: 435 portas (432 destinos), 426 endereços do mapa conferidos, 34 rotas de leitor, 308 concelhos em 29 gavetas, 13 estudos, 8 linhas de «O que mudou».\ncheck:indice-do-sitio: 40 de 40 plantas morderam.\ncheck:indice-do-sitio: todas as conferências a 0."
+    },
+    "check:indice": {
+      "codigo": 0,
+      "ultimas_linhas": "        12 ligação(ões) em «pt» e 12 em «en», uma página cada · 90 marcador(es) dentro de um selo (excepção da Emenda 2) · 0 cadeia(s) dentro de documentos alojados, que são o texto do documento\n  ✓ I8 · a página de uma unidade da Carta\n        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada\n  ✓ I9 · as datas dos trabalhos, e o marcador que resta\n        26 linha(s) de trabalho · 0 marcador(es) ao todo, 0 linha(s) com um e nenhuma com dois · 29 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 29 de 29 linha(s) de src/data/datas-de-publicacao.json refeitas do git\n  ✓ I10 · nenhum número novo\n        4141 linha(s) citada(s) em 33513 ocorrência(s) · 20 motivo(s) declarado(s)\n  ✓ I1p · as plantas dos localizadores recusam a origem desconhecida\n        28 plantas dos localizadores com queixa própria de I1 e o degrau conferido por I3; uma planta do nome do projeto com queixas de I3; 19 formatos anteriores conferidos.\n  ✓ I2pp · as plantas do período recusam a falta e a troca da data\n        4 de 4 plantas dos períodos a morder, em cópias dos índices construídos\n  ✓ ER1 · o código só sai da prosa depois de conferido\n        A mesma leitura do índice recusa o campo alterado, o comentário e a marca fora dele.\n  ✓ I3b · a busca filtra o livro-razão inteiro, no navegador\n        /livro-razao: 1374 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0\n  ✓ I7 · sem transbordo a 390 nas páginas de linha\n        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)\n  ✓ I11 · o espaço entre o número e a palavra, a 390\n        /lugares/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 1 de 1 apanhada(s) · /en/places/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 1 de 1 apanhada(s)\n"
+    },
+    "check:mortos": {
+      "codigo": 0,
+      "ultimas_linhas": "\n> o-estado-do-pais@0.1.0 check:mortos\n> node scripts/check-mortos.mjs --prova\n\n  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.\n\n  ✓ identificadores · 505 ficheiro(s) lidos, nenhuma declaração morta\n"
+    },
+    "check:voz-retiradas": {
+      "codigo": 0,
+      "ultimas_linhas": "\n> o-estado-do-pais@0.1.0 check:voz-retiradas\n> node tests/edicoes/voz-integracao.mjs\n\n1276 retiradas conferidas em memória com a extração histórica.\ncontrolo atual: código lido 0; 0 retiradas conferidas; 100.378 s.\nquatro plantas em páginas distintas: código lido 1; 4 retiradas conferidas; 98.151 s.\nOG1-E K: 1276 retiradas em memória, 2 execuções reais da voz, originais intactos."
+    },
+    "design:feixe": {
+      "codigo": 0,
+      "ultimas_linhas": "  12-pagina-linha-livro-razao.html  Páginas       237173  ✓\n  13-pagina-livro-razao.html        Páginas       242459  ✓\n  14-pagina-municipio.html          Páginas       298624  ✓\n  15-pagina-lugares.html            Páginas       487440  ✓\n  16-pagina-metodo.html             Páginas       223915  ✓\n  17-pagina-agenda.html             Páginas       241259  ✓\n  18-pagina-estudos.html            Páginas       216649  ✓\n  19-pagina-sobre.html              Páginas       195902  ✓\n  20-pagina-correcoes.html          Páginas       437568  ✓\n  21-pagina-404.html                Páginas       194706  ✓\n  30-regras.html                    Fundamentos   236795  ✓\n\n  6772.6 KiB de cartões · maior cartão 629.2 KiB · tecto 657.4697265625 KiB\n  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto\n  ligações internas absolutas em https://oestadodopaís.pt · 8 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)\n  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida\n\n  9823 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.\n  ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.\n"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "ultimas_linhas": "\n> o-estado-do-pais@0.1.0 typecheck\n> tsc -p tsconfig.check.json\n"
+    }
+  },
+  "plantas_i6": [
+    "  ✓ I6p · a ausência conserva a porta e a forma",
+    "        6 plantas da ausência recusadas nas duas edições"
+  ],
+  "plantas_feixe": [
+    "  mordeu · feixe · ausência: porta",
+    "  mordeu · feixe · ausência: texto"
+  ]
+}
