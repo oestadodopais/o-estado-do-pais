@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Conserva o dist conferido; a Vercel empacota as funções e as rotas.
 
-Sem --trocar ou --conferir faz pull e build, com rede e conta da direção.
-As duas opções locais permitem provar a cópia e todas as recusas sem rede.
+Por omissão faz pull e build, com rede e conta da direção.
+--trocar e --conferir provam a cópia sem rede; --ligar só prepara a ligação.
+--ensaio envia uma produção preparada e comprimida, sem promoção.
 """
 import argparse
 import hashlib
@@ -64,6 +65,42 @@ def conferir_arvore(w):
     exigir(not estado, 'árvore diferente da cabeça; ficheiros alterados: ' + estado)
 
 
+def identidade_projeto(p, lugar):
+    exigir(p.is_file(), lugar + ' sem ligação à Vercel')
+    config = ler(p)
+    exigir(isinstance(config, dict) and all(isinstance(config.get(k), str) and config[k].strip()
+           for k in ('projectId', 'projectName', 'orgId')), lugar + ' com ligação incompleta à Vercel')
+    return config
+
+
+def ligar_projeto(w):
+    comum = Path(subprocess.check_output(['git', 'rev-parse', '--git-common-dir'], cwd=w, text=True).strip())
+    principal = (w / comum).resolve().parent
+    origem = principal / '.vercel/project.json'
+    projeto = identidade_projeto(origem, 'árvore principal')
+    pasta = w / '.vercel'
+    pasta.mkdir(exist_ok=True)
+    alvo = pasta / 'project.json'
+    # Substitui também ligações antigas a projetos criados com o nome da worktree.
+    if alvo.resolve() != origem.resolve():
+        alvo.unlink(missing_ok=True)
+        alvo.write_bytes(origem.read_bytes())
+    (pasta / '.env.production.local').unlink(missing_ok=True)
+    conferir_projeto(w, projeto)
+    return projeto
+
+
+def conferir_projeto(w, esperado):
+    atual = identidade_projeto(w / '.vercel/project.json', 'worktree')
+    for chave in ('projectId', 'projectName', 'orgId'):
+        exigir(atual[chave] == esperado[chave], 'ligação da worktree difere da árvore principal: ' + chave)
+
+
+def enviar_ensaio(w):
+    preparar(w)
+    subprocess.run(['vercel', 'deploy', '--prebuilt', '--prod', '--skip-domain', '--archive=tgz', '--yes'], cwd=w, check=True)
+
+
 def conferir_regras(w):
     origem = ler(w / 'vercel.json')
     saida = w / '.vercel/output'
@@ -120,6 +157,7 @@ def preparar(w):
     cabeca = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=w, text=True).strip()
     for nome in ('version.json', 'prova.json'):
         exigir(ler(w / 'dist' / nome).get('commit') == cabeca, 'dist não é da cabeça: ' + nome)
+    projeto = ligar_projeto(w)
     antes = inventario(w / 'dist')
     (w / '.vercel').mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='at1-dist-', dir=w / '.vercel') as tmp:
@@ -127,6 +165,7 @@ def preparar(w):
         shutil.copytree(w / 'dist', copia, copy_function=shutil.copy2)
         try:
             subprocess.run(['vercel', 'pull', '--yes', '--environment=production'], cwd=w, check=True)
+            conferir_projeto(w, projeto)
             subprocess.run(['vercel', 'build', '--prod'], cwd=w, check=True)
         finally:
             if (w / 'dist').exists():
@@ -134,6 +173,7 @@ def preparar(w):
             shutil.copytree(copia, w / 'dist', copy_function=shutil.copy2)
             conferir_arvore(w)
         exigir(inventario(w / 'dist') == antes, 'dist mudou durante a preparação')
+    conferir_projeto(w, projeto)
     exigir(subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=w, text=True).strip() == cabeca, 'a cabeça mudou durante a preparação')
     prova = trocar(w)
     prova['cabeca'] = cabeca
@@ -146,9 +186,17 @@ def main():
     modo = p.add_mutually_exclusive_group()
     modo.add_argument('--trocar', action='store_true')
     modo.add_argument('--conferir', action='store_true')
+    modo.add_argument('--ligar', action='store_true')
+    modo.add_argument('--ensaio', action='store_true')
     a = p.parse_args()
     w = a.worktree.resolve()
     try:
+        if a.ligar:
+            ligar_projeto(w)
+            return 0
+        if a.ensaio:
+            enviar_ensaio(w)
+            return 0
         prova = conferir(w) if a.conferir else trocar(w) if a.trocar else preparar(w)
         (w / '.vercel/at1-prova.json').write_text(json.dumps(prova, ensure_ascii=False, indent=2) + '\n')
         print(json.dumps({k: v for k, v in prova.items() if k != 'sha256'}, ensure_ascii=False))

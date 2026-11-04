@@ -1,5 +1,6 @@
 """AT1: o envio preparado nunca promove antes do portão e de main."""
 import json
+import subprocess
 from pathlib import Path
 import sys
 import unittest
@@ -19,7 +20,8 @@ class Preparada(unittest.TestCase):
 [ "${MODO:-}" != prebuilt-falha ] || exit 8
 printf '%s\\n' 'preparação de ensaio'
 ''')
-        git(b.w, 'add', '--', 'vercel.json', 'scripts/leituras/vercel-prebuilt.sh')
+        (pasta / 'vercel-prebuilt.py').write_text('import sys\nassert sys.argv[-1] == \"--ligar\"\n')
+        git(b.w, 'add', '--', 'vercel.json', 'scripts/leituras/vercel-prebuilt.sh', 'scripts/leituras/vercel-prebuilt.py')
         commit(b.w, 'ensaio: preparação AT1')
         b.cabeca = git(b.w, 'rev-parse', 'HEAD'); b.env['CABECA'] = b.cabeca
         comando(b.bin, 'vercel', '''import json,os,sys
@@ -29,6 +31,7 @@ with open(os.environ['CHAMADAS'],'a') as f: f.write(json.dumps({'cmd':['vercel',
 modo=os.environ.get('MODO','verde')
 if a[0]=='deploy':
     assert '--prod' in a and '--skip-domain' in a
+    assert '--archive=tgz' in a
     assert ('--prebuilt' in a) == (os.environ.get('OEDP_ATERRAR_RECURSO')!='1')
     if modo=='envio-falha': sys.exit(7)
     print('https://ensaio-at1.vercel.app')
@@ -49,6 +52,14 @@ else: sys.exit(88)
             if 'comando' in p:
                 self.assertIn('inicio',p); self.assertIn('hora',p); self.assertGreaterEqual(p['segundos'],0)
         self.assertEqual(git(self.b.main,'rev-parse','HEAD'),self.b.cabeca)
+
+    def test_planta_envio_sem_archive_recusado(self):
+        args = [str(self.b.bin / 'vercel'), 'deploy', '--prebuilt', '--prod', '--skip-domain']
+        r = subprocess.run(args, cwd=self.b.w, env=self.b.env, capture_output=True, text=True)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn('AssertionError', r.stderr)
+        r = subprocess.run([*args, '--archive=tgz'], cwd=self.b.w, env=self.b.env, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
 
     def test_github_vermelho_nao_promove_nem_funde(self):
         r, recibo, chamadas=self.b.correr('vermelho')

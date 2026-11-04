@@ -427,7 +427,9 @@ class Aterragem:
         self.preparar()
         if not self.recurso:
             self.correr('vercel-prebuilt', ['sh', 'scripts/leituras/vercel-prebuilt.sh', str(self.sitio)])
-        args = ['vercel', 'deploy', '--prod', '--skip-domain', '--yes', '--meta', 'githubCommitSha=' + self.cabeca]
+        else:
+            self.correr('vercel-ligar', ['python3', 'scripts/leituras/vercel-prebuilt.py', str(self.sitio), '--ligar'])
+        args = ['vercel', 'deploy', '--archive=tgz', '--prod', '--skip-domain', '--yes', '--meta', 'githubCommitSha=' + self.cabeca]
         if not self.recurso:
             args.insert(2, '--prebuilt')
         texto = self.correr('vercel-preparado', args)

@@ -10,7 +10,7 @@ import tempfile
 import time
 import unittest
 from unittest.mock import patch
-from apoio_ferramentas import git, commit
+from apoio_ferramentas import git, commit, worktree
 
 RAIZ = Path(__file__).resolve().parents[2]
 GUIOES = RAIZ / 'scripts/leituras'
@@ -118,6 +118,8 @@ class Prebuilt(unittest.TestCase):
         (self.w / 'package-lock.json').write_text('{}\n')
         git(self.w, 'add', '--', 'api/sugestoes.js', 'vercel.json', 'package-lock.json')
         commit(self.w, 'ensaio: cabeça conferida')
+        self.projeto = {'projectId': 'projeto-de-ensaio', 'projectName': 'sitio-de-ensaio', 'orgId': 'equipa-de-ensaio'}
+        (self.w / '.vercel/project.json').write_text(json.dumps(self.projeto))
         head = git(self.w, 'rev-parse', 'HEAD')
         for nome in ('version.json', 'prova.json'):
             (self.w / 'dist' / nome).write_text(json.dumps({'commit': head}))
@@ -197,19 +199,97 @@ class Prebuilt(unittest.TestCase):
                 pb.conferir(self.w)
 
     def test_build_reconstroi_mas_copia_conferida_sobrevive(self):
+        self.iniciar_git()
+        real_run = subprocess.run
         comandos = []
         def executar(args, **kwargs):
+            if args[0] != 'vercel':
+                return real_run(args, **kwargs)
             comandos.append(args)
             if args[:2] == ['vercel', 'build']:
                 (self.w / 'dist/index.html').write_text('outra construção')
-        with patch.object(pb.subprocess, 'check_output', side_effect=lambda args, **kw: '' if args[1] == 'status' else 'c' * 40), patch.object(pb.subprocess, 'run', side_effect=executar):
+        with patch.object(pb.subprocess, 'run', side_effect=executar):
             pb.preparar(self.w)
         self.assertEqual(comandos, [['vercel', 'pull', '--yes', '--environment=production'], ['vercel', 'build', '--prod']])
         self.assertEqual((self.output / 'static/index.html').read_text(), 'cópia conferida')
-        with patch.object(pb.subprocess, 'check_output', side_effect=lambda args, **kw: '' if args[1] == 'status' else 'c' * 40), patch.object(pb.subprocess, 'run', side_effect=OSError('ensaio')):
+        def falhar(args, **kwargs):
+            if args[0] != 'vercel':
+                return real_run(args, **kwargs)
+            raise OSError('ensaio')
+        with patch.object(pb.subprocess, 'run', side_effect=falhar):
             with self.assertRaises(OSError):
                 pb.preparar(self.w)
         self.assertEqual((self.w / 'dist/index.html').read_text(), 'cópia conferida')
+
+    def test_sem_ligacao_principal_recusa_antes_da_rede(self):
+        self.iniciar_git()
+        projeto = self.w / '.vercel/project.json'
+        real_run = subprocess.run
+        def executar(args, **kwargs):
+            self.assertNotEqual(args[0], 'vercel', 'não pode haver rede sem ligação')
+            return real_run(args, **kwargs)
+        for valor in (None, {}, {'projectId': 'incompleto'}):
+            with self.subTest(valor=valor):
+                projeto.unlink(missing_ok=True)
+                if valor is not None:
+                    projeto.write_text(json.dumps(valor))
+                with patch.object(pb.subprocess, 'run', side_effect=executar):
+                    with self.assertRaisesRegex(ValueError, 'árvore principal.*ligação'):
+                        pb.preparar(self.w)
+
+    def test_ligacao_da_principal_substitui_antiga_e_apaga_ambiente(self):
+        self.iniciar_git()
+        destino = self.w / '.vercel/worktree'
+        worktree(self.w, destino)
+        (destino / '.vercel').mkdir()
+        projeto = destino / '.vercel/project.json'
+        ambiente = destino / '.vercel/.env.production.local'
+        for ligada in (False, True):
+            with self.subTest(ligada=ligada):
+                projeto.unlink(missing_ok=True)
+                if ligada:
+                    projeto.write_text(json.dumps({**self.projeto, 'projectId': 'outro'}))
+                ambiente.write_text('ambiente de ensaio antigo')
+                self.assertEqual(pb.ligar_projeto(destino), self.projeto)
+                self.assertEqual(projeto.read_bytes(), (self.w / '.vercel/project.json').read_bytes())
+                self.assertFalse(ambiente.exists())
+
+    def test_pull_troca_identidade_recusa_antes_do_build(self):
+        self.iniciar_git()
+        real_run = subprocess.run
+        for chave in ('projectId', 'projectName', 'orgId'):
+            with self.subTest(chave=chave):
+                (self.w / '.vercel/project.json').write_text(json.dumps(self.projeto))
+                comandos = []
+                def executar(args, **kwargs):
+                    if args[0] != 'vercel':
+                        return real_run(args, **kwargs)
+                    comandos.append(args[1])
+                    self.assertEqual(args[1], 'pull', 'build proibido com outro projeto')
+                    (self.w / '.vercel/project.json').write_text(json.dumps({**self.projeto, chave: 'outro'}))
+                with patch.object(pb.subprocess, 'run', side_effect=executar):
+                    with self.assertRaisesRegex(ValueError, 'difere da árvore principal: ' + chave):
+                        pb.preparar(self.w)
+                self.assertEqual(comandos, ['pull'])
+
+    def test_ensaio_envia_comprimido_e_sem_promocao(self):
+        self.iniciar_git()
+        real_run = subprocess.run
+        comandos = []
+        def executar(args, **kwargs):
+            if args[0] != 'vercel':
+                return real_run(args, **kwargs)
+            comandos.append(args)
+            if args[1] == 'deploy':
+                self.assertIn('--archive=tgz', args)
+                self.assertIn('--prebuilt', args)
+                self.assertIn('--prod', args)
+                self.assertIn('--skip-domain', args)
+                pb.conferir_projeto(self.w, self.projeto)
+                pb.conferir(self.w)
+        with patch.object(pb.subprocess, 'run', side_effect=executar):
+            pb.enviar_ensaio(self.w)
+        self.assertEqual([c[1] for c in comandos], ['pull', 'build', 'deploy'])
 
 
 class Voz(unittest.TestCase):
