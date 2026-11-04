@@ -183,7 +183,7 @@ const ressalva = ressalvaDaLinha(c, lang);
         </span>
       )}
     </div>
-    <AvisoDaRevisao ids={[c.id]} lang={lang} />
+    <AvisoDaRevisao ids={[c.id]} lang={lang} comPeriodo={!referencia || c.reference_date === null || c.reference_date === undefined} />
     {ressalva && (
       <details>
         <summary>{s.prov.ressalva}</summary>

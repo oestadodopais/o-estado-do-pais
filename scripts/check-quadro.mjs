@@ -43,15 +43,15 @@ export function revisoesPorAplicar(linhas=livroDoQuadro()) {
   }
   return resultado;
 }
-const nomeDoAviso=(id,lang)=>{
+const nomeDoAviso=(id,lang,comPeriodo=true)=>{
  const contexto=contextoDaRevisao(id),c=livroDoQuadro().get(contexto.medida),linha=livroDoQuadro().get(id);
  const nome=(unidadeDoCartao(c.id,lang)?nomeDoCartaoComAUnidade(c,lang):nomeDoCartao(c,lang))?.texto;
  return `${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}, ${dataDaCasa(linha.reference_date,lang)}`;
 };
-const textoAviso=(id,v,lang)=>{
+const textoAviso=(id,v,lang,comPeriodo=true)=>{
  const encontrado=String(v.found).replace(/[\s\u202f]/g,'').replace(/[.,](?=\d+$)/,',');
  const data=v.date.slice(0,10).split('-').reverse().join('.');
- const nome=nomeDoAviso(id,lang);
+ const nome=nomeDoAviso(id,lang,comPeriodo);
  return lang==='pt'?`A fonte reviu ${nome} para ${encontrado} na releitura de ${data}; o valor publicado aqui é o de antes da revisão.`:`The source revised ${nome} to ${encontrado} in the re-reading of ${data}; the value published here is the one from before the revision.`;
 };
 /** A unidade comum não pode esconder outra unidade ou população da fonte. */
@@ -82,8 +82,11 @@ export function conferirAvisos(root,lang,{exigir=true,pendentes=revisoesPorAplic
     const texto=normal(aviso.textContent);
     const found=aviso.querySelector(`[data-linha-claim="${id}"][data-linha-campo="verifications.${v?.n}.found"]`);
     const data=aviso.querySelector(`[data-de-linha="${id}"][data-de-campo="verifications.${v?.n}.date"]`);
+    const item=aviso.closest('.livro-item[data-linha-id]');
+    const periodoNaEntrada=item?.getAttribute('data-linha-id')===id && item.querySelectorAll(`[data-de-linha="${id}"][data-de-campo="reference_date"], [data-linha-claim="${id}"][data-linha-campo="reference_date"]`).some(n=>!n.closest('[data-aviso-revisao]'));
+    const comPeriodo=!periodoNaEntrada;
     const nome=aviso.querySelector(`[data-revisao-nome="${id}"]`);
-    if(!v || !nome || normal(nome.textContent)!==normal(nomeDoAviso(id,lang)) || texto!==normal(textoAviso(id,v,lang)) || aviso.getAttribute('data-revisao-indice')!==String(v?.n) || !found || !data || a?.getAttribute('href')!==caminho(id,lang))erros.push(`Q4 ${id}: aviso sem divergência ou frase, origem, data ou recibo diferente.`);
+    if(!v || !nome || normal(nome.textContent)!==normal(nomeDoAviso(id,lang,comPeriodo)) || texto!==normal(textoAviso(id,v,lang,comPeriodo)) || aviso.getAttribute('data-revisao-indice')!==String(v?.n) || !found || !data || a?.getAttribute('href')!==caminho(id,lang))erros.push(`Q4 ${id}: aviso sem divergência ou frase, origem, data ou recibo diferente.`);
     else {nos.add(aviso);portas.add(a);}
   }
   if(exigir)for(const el of root.querySelectorAll('[data-claim], [data-ponto], [data-faixa-marca]')){
@@ -196,5 +199,5 @@ export function superficieDoQuadro(root,lang,opcoes={}) {
 export function campoDoAviso(el,lang) {
  const aviso=el.closest('[data-aviso-revisao]');
  if(!aviso || aviso.getAttribute('data-aviso-revisao')!==el.getAttribute('data-linha-claim'))return false;
- return conferirAvisos(parse(aviso.outerHTML),lang,{exigir:false}).erros.length===0;
+ return conferirAvisos(parse((aviso.closest('.livro-item')??aviso).outerHTML),lang,{exigir:false}).erros.length===0;
 }

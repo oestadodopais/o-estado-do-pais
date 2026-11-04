@@ -2311,19 +2311,22 @@ function provaPeriodos() {
         falhas.push(`O índice ${lang} não passa o controlo dos períodos: ${intacta[0]}`);
         continue;
       }
-      for (const estrago of ['retirado', 'trocado']) {
+      for (const estrago of ['retirado', 'trocado', 'aviso-com-periodo']) {
         const copia = parse(pag.html);
-        const id = 'despesa-por-funcao-2024-gf01-pt';
+        const id = estrago === 'aviso-com-periodo' ? 'desempenho-das-exportacoes-2024' : 'despesa-por-funcao-2024-gf01-pt';
         const campo = copia.querySelector(`.livro-item[data-linha-id="${id}"] [data-de-campo="reference_date"]`);
         if (!campo) {
           falhas.push(`A planta do período ${estrago} não encontrou a data da linha ${id} em ${lang}.`);
           continue;
         }
         if (estrago === 'retirado') campo.remove();
+        else if (estrago === 'aviso-com-periodo') copia.querySelector(`.livro-item[data-linha-id="${id}"] [data-revisao-nome]`).insertAdjacentHTML('beforeend', ', '+campo.outerHTML);
         else campo.set_content('2026');
         const queixas = [];
         conferirPeriodosDoIndice(copia, pag, queixas);
-        const esperada = estrago === 'retirado'
+        const esperada = estrago === 'aviso-com-periodo'
+          ? `${pag.rota}: ${id}: a entrada tem 2 campos de período e deve ter um.`
+          : estrago === 'retirado'
           ? `${pag.rota}: ${id}: a entrada tem 0 campos de período e deve ter um.`
           : `${pag.rota}: ${id}: o período diz «2026» e a linha exige «2024», com a marca da própria linha.`;
         const mordeu = queixas.includes(esperada);

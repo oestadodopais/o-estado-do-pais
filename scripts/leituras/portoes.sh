@@ -98,7 +98,7 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"build"}, {"perfil":"voz1a"}, {"perfil":"voz1b"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"build"}, {"perfil":"voz1a"}, {"perfil":"voz1b"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2-d"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
@@ -116,6 +116,8 @@ elif [ "${perfil:-}" = voz1b ]; then
   portoes="build check:voz-retiradas check:mortos check:indice-do-sitio check:explicacoes design:feixe check:alvos check:frases-compostas typecheck"
 elif [ "${perfil:-}" = voz1a ]; then
   portoes="build check:voz-retiradas check:mortos check:indice design:feixe check:indice-do-sitio typecheck"
+elif [ "${perfil:-}" = pai2-d ]; then
+  portoes="build:pai2-d check:indice check:quadro check:cartao"
 elif [ "${perfil:-}" = pai2 ] || [ "${perfil:-}" = pai2-navegador ]; then
   portoes="check:alvos check:sobreposicao check:frases-compostas check:largura"
   if [ "$perfil" = pai2 ]; then portoes="build check:quadro check:cartao check:css check:lugar $portoes typecheck"; fi

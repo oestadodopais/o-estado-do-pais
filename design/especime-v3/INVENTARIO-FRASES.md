@@ -5469,7 +5469,7 @@ Os campos variáveis são transcritos da última reconferência sem correção o
 A frase inteira, o índice da reconferência, os campos e a porta do recibo são conferidos na mesma função
 que as plantas da voz, da data e da L1 chamam. A ausência de anterior só aparece quando falta a comparação.
 
-A adenda C nomeia a medida, a União quando aplicável e o período da linha revista. O valor relido usa vírgula decimal nas duas edições. As comparações usam a unidade aprovada da medida, depois de conferidas a unidade e a população das linhas.
+A adenda C nomeia a medida, a União quando aplicável e o período da linha revista. A adenda D omite o período do aviso nas entradas do índice que já o mostram, conservando o nome e a União quando aplicável. O valor relido usa vírgula decimal nas duas edições. As comparações usam a unidade aprovada da medida, depois de conferidas a unidade e a população das linhas.
 
 ## VOZ-1, 03.11.2026: campos públicos e ausência exata
 
