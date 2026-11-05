@@ -69,7 +69,7 @@ export const METODO = {
         "A direção escreve o que muda e as frases que o leitor vai ler, conferidas na fonte."
       ],
       "en": [
-        "Direction writes what changes and the sentences the reader will read, checked against the source."
+        "The directing model writes what changes and the sentences the reader will read, checked against the source."
       ]
     },
     {

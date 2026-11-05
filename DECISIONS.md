@@ -14613,3 +14613,11 @@ A agenda e o calendário conservam os dados internos nos ficheiros públicos; a 
 **Texto:** metodo 339a23421557 · sobre c40ac112e11c
 
 **Decisão:** mandato MET1 recebido do lugar de direção nesta passagem. O Método passa às quatro secções e às frases do §2, sem lede. O recibo de exemplo usa a linha `divida-publica-2025`. As frases sobre classificação partidária, financiamento, publicidade, dinheiro de entidades medidas, jornalismo e dados pessoais passam para o Sobre, palavra por palavra. O percurso usa papéis genéricos e as contagens são tokens recontados; a lista fechada tem oráculo independente e plantas no build. As antigas âncoras úteis conservam-se, e a redireção do marcador aponta para as marcas. Esta entrada regista a execução do mandato, não uma publicação.
+
+### 1.222 MET1, adenda A, 05.11.2026: língua do publicador e passo inglês
+
+**Afecta:** metodo
+
+**Texto:** metodo 7ab7835f93ff
+
+**Decisão:** adenda A recebida do lugar de direção nesta passagem. O passo inglês passa a identificar o modelo que dirige, na redação literal do mandato, e o oráculo acompanha. O publicador do recibo de exemplo recebe a língua declarada pelo registo dos organismos, através da mesma função usada no recibo de cada linha. Nenhuma régua é alterada.

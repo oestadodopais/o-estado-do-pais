@@ -1,0 +1,48 @@
+{
+  "base": "e66dcbb860fc91dbc4e1e83b6730187b9183d85d",
+  "codigos": {
+    "build": 1,
+    "lingua": 0,
+    "plantas": 0,
+    "construido": 0,
+    "discussao": 1
+  },
+  "publicador": {
+    "pt": {
+      "texto": "Eurostat",
+      "lingua": "en"
+    },
+    "en": {
+      "texto": "Eurostat",
+      "lingua": "en"
+    }
+  },
+  "passo_4": {
+    "pt": "A direção escreve o que muda e as frases que o leitor vai ler, conferidas na fonte.",
+    "en": "The directing model writes what changes and the sentences the reader will read, checked against the source."
+  },
+  "metodo": {
+    "conferencias_da_corrida": 62,
+    "plantas": 44,
+    "edicoes": {
+      "pt": {
+        "seccoes": 4,
+        "passos": 10,
+        "palavras": 460
+      },
+      "en": {
+        "seccoes": 4,
+        "passos": 10,
+        "palavras": 450
+      }
+    },
+    "marcador": {
+      "pt": 0,
+      "en": 0
+    },
+    "paginas": {
+      "pt": 4914,
+      "en": 4909
+    }
+  }
+}
