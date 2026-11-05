@@ -91,6 +91,9 @@ import PortasDaDiscussao from './discussao/PortasDaDiscussao.astro';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
 import Frase from './Frase.astro';
+import NomeDaMedida from './NomeDaMedida.astro';
+import {contextoDaRevisao} from '../lib/contexto-da-revisao.mjs';
+import {unidadeDoCartao} from '../data/unidades-dos-cartoes.mjs';
 import CampoDaLinha from './CampoDaLinha.astro';
 import Provenance from './Provenance.astro';
 import TituloDeTrabalho from './TituloDeTrabalho.astro';
@@ -342,12 +345,14 @@ const palavraRevisoes =
           {palavraRevisoes}
         </p>
         <ul class="registo-proveniencia-linhas">
-          {primeiraPorLinha.map((e) => (
+          {primeiraPorLinha.map((e) => {
+            const contexto=contextoDaRevisao(e.claimId);
+            return (
             <li data-correcao-entrada={e.claimId}>
-              <span data-correcao-titulo={e.claimId}></span>{' '}
+              <span data-correcao-titulo={e.claimId}><NomeDaMedida linha={getClaim(contexto.medida)} lang={lang} escada={unidadeDoCartao(contexto.medida,lang) ? 'cartao-com-unidade' : 'cartao'} />{contexto.uniao && (lang === 'pt' ? ' na União Europeia' : ' in the European Union')}{', '}<CampoDaLinha id={e.claimId} campo="reference_date" valor={getClaim(e.claimId).reference_date} lang={lang} /></span>{' '}
               <Provenance id={e.claimId} lang={lang} />
             </li>
-          ))}
+          );})}
         </ul>
       </section>
     )

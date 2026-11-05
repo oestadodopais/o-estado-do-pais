@@ -1,5 +1,7 @@
 /** VOZ-1 B: dados conservados, futuro exato, ausência distinta e portas verificadas. */
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {parse} from 'node-html-parser';
+import {WORKS} from '../../src/data/studies.mjs';
+import {conferirRevisoesNoRegisto,campoDoNomeDaRevisao} from '../../scripts/revisoes-no-registo.mjs';
 import {spawnSync} from 'node:child_process';
 import {matchPath,routePath} from '../../src/lib/routes.mjs';
 import {conferirTitulosCopiados} from '../../scripts/titulos-copiados.mjs';
@@ -7,13 +9,14 @@ import {calendarioFuturo} from '../../src/lib/agenda.mjs';
 const calendario=JSON.parse(fs.readFileSync('src/data/calendario.json'));
 const dia=process.env.OEDP_DIA_DA_CONSTRUCAO??JSON.parse(fs.readFileSync('dist/version.json')).construido_em.slice(0,10);
 const normal=s=>s.replace(/\s+/gu,' ').trim();
-const leitores={pt:[],en:[]};
+const leitores={pt:[],en:[]},datadas={pt:[],en:[]};
 const fora=new Set(['linha','livro','livroConcelho','livroConcelhos','serie','metodo','sobre','privacidade','agenda','correcoes','documento','texto','home','temas','indice','estudos','discussao','leituraDaSemana','areas']);
 function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const f=path.join(dir,e.name);if(e.isDirectory()){anda(f);continue;}if(e.name!=='index.html')continue;
  const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');if(!titulo)continue;
  const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
+ if(hit.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.sucedidoPor){datadas[hit.lang].push({rota,titulo,refs});continue;}
  leitores[hit.lang].push({rota,titulo,refs});
 }}
 anda('dist');
@@ -37,6 +40,7 @@ export function conferir(root,lang,registo=calendario,hoje=dia){
    if(!esperado || item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==esperado)erros.push('motivo de ausência diferente');
   }
   const portas=item.querySelectorAll('[data-calendario-pagina]');
+  if(portas.some(a=>{const hit=matchPath(a.getAttribute('href'));return hit?.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.sucedidoPor;}))erros.push('edição datada no calendário');
   const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id))).map(p=>({...p,rota:grafia(p.rota)})).sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
   if(portas.some(a=>a.hasAttribute('style')))erros.push('estilo em atributo');
   if(portas.some(a=>['home','temas','indice','estudos','discussao','leituraDaSemana','areas'].includes(matchPath(a.getAttribute('href'))?.key)))erros.push('página de entrada no calendário');
@@ -66,15 +70,32 @@ for(const lang of ['pt','en']){
   const r=parse(texto);const a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',routePath(key,lang));
   morde(`entrada ${key} reposta`,conferir(r,lang).includes('página de entrada no calendário'));
  }
+ assert(datadas[lang].length>0,'edições datadas disponíveis para a planta');
+ for(const p of datadas[lang]){const r=parse(texto),a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',p.rota);a.setAttribute('data-calendario-pagina',p.rota);a.set_content(p.titulo);morde(`edição datada ${p.rota}`,conferir(r,lang).includes('edição datada no calendário'));}
  const passado=structuredClone(calendario);const atual=root.querySelector('[data-calendario-evento]').getAttribute('data-calendario-evento');passado.eventos.find(e=>e.id===atual).data='1900-01-01';morde('passado visível',conferir(root,lang,passado).includes('acontecimento passado visível'));
  const correcoes=parse(fs.readFileSync(`dist/${lang==='pt'?'correcoes':'en/corrections'}/index.html`,'utf8'));
  const titulos=correcoes.querySelectorAll('[data-correcao-titulo]');assert(titulos.length>0);
- for(const el of titulos){const id=el.getAttribute('data-correcao-titulo'),r=parse(fs.readFileSync(path.join('dist',routePath('linha',lang,{slug:id}),'index.html'),'utf8'));assert.equal(normal(el.textContent),normal(r.querySelector('h1').textContent));assert(el.closest('li').querySelector('a.src-chip'));assert.notEqual(el.textContent,id);}
+ assert.deepEqual(conferirTitulosCopiados(correcoes,{key:'correcoes',lang}).erros,[]);
+ for(const el of titulos){const id=el.getAttribute('data-correcao-titulo');assert(el.closest('li').querySelector('a.src-chip'));assert.notEqual(el.textContent,id);}
+ const campo=correcoes.querySelector('[data-correcao-titulo] [data-linha-claim]');assert(campo);
+ assert(campoDoNomeDaRevisao('correcoes',campo));
+ morde('campo do nome fora do registo',!campoDoNomeDaRevisao('agenda',campo));
+ for(const atributo of ['data-linha-campo','data-linha-claim']){const r=parse(correcoes.toString()),el=r.querySelector('[data-correcao-titulo] [data-linha-claim]');el.setAttribute(atributo,atributo==='data-linha-campo'?'value':'taxa-de-desemprego-2025');morde('campo ou linha indevidos no nome',!campoDoNomeDaRevisao('correcoes',el));}
+ const duplicada=parse(correcoes.toString()),nomes=duplicada.querySelectorAll('[data-correcao-titulo]');
+ nomes[1].set_content(nomes[0].innerHTML);
+ morde('duas linhas iguais no registo',conferirTitulosCopiados(duplicada,{key:'correcoes',lang}).erros.some(e=>e.includes('linha repetida')));
+ for(const [nome,muda] of [
+  ['período retirado',r=>{const el=r.querySelector('[data-correcao-titulo]');el.set_content(el.textContent.replace(/, [^,]+$/,''));}],
+  ['contexto europeu retirado',r=>{const el=r.querySelectorAll('[data-correcao-titulo]').find(e=>e.textContent.includes(lang==='pt'?' na União Europeia':' in the European Union'));assert(el);el.set_content(el.textContent.replace(lang==='pt'?' na União Europeia':' in the European Union',''));}],
+  ['nome trocado',r=>r.querySelector('[data-correcao-titulo]').set_content('Outro nome, 2025')],
+  ['porta trocada',r=>r.querySelector('.registo-proveniencia-linhas a.src-chip').setAttribute('href','/')],
+ ]){const r=parse(correcoes.toString());muda(r);morde(nome,conferirRevisoesNoRegisto(r,lang).erros.length>0);}
+
 }
 const c={eventos:[{id:'antes',data:'2026-11-03'},{id:'hoje',data:'2026-11-04'},{id:'depois',data:'2026-11-05'},{id:'janela',janela:{inicio:'2026-11-01',fim:'2026-11-04'}},{id:'sem',motivo_sem_data:'nao_lida'}]};
 assert.deepEqual(calendarioFuturo(c,'2026-11-04').eventos.map(e=>e.id),['hoje','depois','janela','sem']);
 assert.throws(()=>calendarioFuturo({eventos:[{id:'sem-motivo'}]},'2026-11-04'),/motivo/);plantas++;
-console.log(`VOZ-1 B: calendário nas duas edições; ${plantas} plantas recusadas; dia atual e intervalo aberto incluídos; títulos dos recibos conferidos.`);
+console.log(`VOZ-1 B: calendário nas duas edições; ${plantas} plantas recusadas; dia atual e intervalo aberto incluídos; nomes, contextos e períodos das revisões conferidos.`);
 
 // As réguas leem cópias em memória, só no processo filho; dist/ conserva os seus bytes.
 for(const [regua,seletor,queixa] of [

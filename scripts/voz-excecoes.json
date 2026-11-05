@@ -12,12 +12,6 @@
     "razao": "Explica o envio pela caixa de correções ou pede ao utilizador a informação necessária à sugestão."
   },
   {
-    "rota": "/correcoes",
-    "frase": "É o primeiro que não veio de um anfitrião de artefactos: foi produzido no motor de investigação deste projeto e atravessou como ficheiro, com as duas edições.",
-    "classe": "facto de uma fonte",
-    "razao": "Entrada histórica sobre a origem e o formato do documento do estudo; conserva o facto de proveniência do ficheiro."
-  },
-  {
     "rota": "/en/corrections",
     "frase": "When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted.",
     "classe": "natureza do registo",
@@ -28,12 +22,6 @@
     "frase": "Nothing is sent from this site: the message leaves from you, so you keep a copy of it.",
     "classe": "informação funcional",
     "razao": "Explica o envio pela caixa de correções ou pede ao utilizador a informação necessária à sugestão."
-  },
-  {
-    "rota": "/en/corrections",
-    "frase": "It is the first that did not come from an artifact host: it was produced by this project’s research engine and crossed over as a file, with both editions.",
-    "classe": "facto de uma fonte",
-    "razao": "Entrada histórica sobre a origem e o formato do documento do estudo; conserva o facto de proveniência do ficheiro."
   },
   {
     "rota": "/en/suggestions",
