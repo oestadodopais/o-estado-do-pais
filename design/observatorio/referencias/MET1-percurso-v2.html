@@ -1,0 +1,1558 @@
+<title>How It Works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Spectral+SC:wght@500;600&display=swap">
+<style>
+/* Layout: a plain technical walkthrough in the observatory's own identity. A stepper on top, the stage
+   (one step at a time) beside the explanation. Colour only for state (cobalt = checked and passed,
+   amber = stopped); the three kinds of actor are told apart by shape: a square for a script, a filled
+   disc with a star for a model, a figure for the person. */
+:root{
+  --paper:#f6f7f4; --ink:#17191b;
+  --g1:#585d5b; --g2:#7f8681; --g3:#d9ddd8;
+  --amber:#e0a21a; --ochre:#7a5300; --cobalt:#1f4e8c; --cobalt-word:#1f4e8c;
+  --on-amber:#17191b;
+  --wash:rgba(23,25,27,.055);
+  --f-prose:'Spectral', Georgia, 'Times New Roman', serif;
+  --f-data:'Bitter', Rockwell, 'Roboto Slab', Georgia, serif;
+  --f-sc:'Spectral SC', 'Spectral', Georgia, serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15171a; --ink:#eceeea;
+    --g1:#b9beba; --g2:#8e948f; --g3:#3a3f3c;
+    --amber:#e0a21a; --ochre:#e0a21a; --cobalt:#1f4e8c; --cobalt-word:#7fa6dc;
+    --wash:rgba(236,238,234,.06);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15171a; --ink:#eceeea;
+  --g1:#b9beba; --g2:#8e948f; --g3:#3a3f3c;
+  --amber:#e0a21a; --ochre:#e0a21a; --cobalt:#1f4e8c; --cobalt-word:#7fa6dc;
+  --wash:rgba(236,238,234,.06);
+  color-scheme:dark;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-prose);font-size:17px;line-height:1.5}
+svg [hidden]{display:none}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:grid;gap:20px}
+.wrap>*{min-width:0}
+
+/* masthead */
+.mast{display:grid;gap:6px}
+.eyebrow{font-family:var(--f-sc);font-weight:500;letter-spacing:.07em;color:var(--g1);font-size:15px;margin:0}
+h1{font-family:var(--f-prose);font-weight:500;font-size:clamp(32px,5.2vw,56px);line-height:1.04;letter-spacing:-.012em;margin:0;text-wrap:balance}
+.lede{max-width:62ch;color:var(--g1);font-size:clamp(16px,1.8vw,18.5px);margin:4px 0 0;text-wrap:pretty}
+
+/* main grid */
+.main{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+@media (min-width:1000px){.main{grid-template-columns:minmax(0,1.32fr) minmax(0,1fr)}}
+.stagecol{display:grid;gap:12px;min-width:0}
+.stage{border:1px solid var(--g3);border-radius:10px;background:var(--paper);overflow:hidden}
+.stage svg{display:block;width:100%;height:auto}
+@media (max-width:520px){.stage{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)) + 6px);border-radius:8px}}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{font:500 15px/1 var(--f-prose);color:var(--ink);background:transparent;border:1px solid var(--g2);border-radius:999px;padding:10px 16px;cursor:pointer;min-height:42px;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--wash)}
+.btn:focus-visible,.chip:focus-visible,.jump:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn[disabled]{opacity:.4;cursor:default;background:transparent}
+.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.primary:hover{opacity:.9}
+.spacer{flex:1}
+.prog{height:2px;background:var(--g3);border-radius:2px;overflow:hidden}
+.prog span{display:block;height:100%;width:0;background:var(--ink)}
+
+/* key: the three actors, then the three states */
+.key{display:grid;gap:10px;border-top:1px solid var(--g3);border-bottom:1px solid var(--g3);padding:10px 0}
+.key ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.key li{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.35;color:var(--g1)}
+.key li b{font-family:var(--f-sc);font-weight:600;letter-spacing:.05em;color:var(--ink)}
+.mk{width:18px;height:18px;flex:none;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--g1);margin:0}
+.legend i{display:inline-block;width:11px;height:11px;border:1.2px solid var(--ink);vertical-align:-1px;margin-right:6px}
+.legend .k-cob{background:var(--cobalt)} .legend .k-amb{background:var(--amber)} .legend .k-dash{border-style:dashed}
+
+/* route chips */
+.route-wrap{overflow-x:auto;scrollbar-width:thin;margin-inline:-4px;padding:2px 4px 6px}
+.route{display:flex;gap:6px;list-style:none;margin:0;padding:0;width:max-content}
+.chip{font:500 14px/1 var(--f-prose);color:var(--g1);background:transparent;border:1px solid var(--g3);border-radius:6px;padding:8px 10px;cursor:pointer;white-space:nowrap}
+.chip.partstart{margin-left:10px}
+.chip b{font:600 12px/1 var(--f-data);margin-right:6px;color:var(--g2);font-variant-numeric:tabular-nums}
+.chip:hover{border-color:var(--g2);color:var(--ink)}
+.chip[aria-current="step"]{border-color:var(--ink);color:var(--ink);background:var(--wash)}
+.chip[aria-current="step"] b{color:var(--ink)}
+
+/* copy */
+.copy{min-width:0}
+.copy-scene{display:grid;gap:14px}
+.copy-scene h2{font-family:var(--f-prose);font-weight:500;font-size:clamp(25px,2.8vw,32px);line-height:1.12;margin:0;text-wrap:balance}
+.analogy{margin:0;font-size:clamp(17px,1.7vw,19px);max-width:62ch;text-wrap:pretty}
+.guard{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0}
+.guard .gl{font-family:var(--f-sc);font-weight:600;letter-spacing:.07em;font-size:14px;color:var(--g1);margin-right:4px}
+.guard .gc{font-size:14.5px;line-height:1.3;border:1px solid var(--g3);border-radius:6px;padding:5px 9px;background:var(--paper)}
+.guard .gc b{font:600 15px/1 var(--f-data);font-variant-numeric:tabular-nums lining-nums;margin-right:3px}
+.who{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.who li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;font-size:15.5px;line-height:1.5;max-width:66ch;text-wrap:pretty}
+.who li .mk{margin-top:3px}
+.who li b{font-family:var(--f-sc);font-weight:600;letter-spacing:.05em;font-size:15px}
+.who li.off{color:var(--g1)}
+.lanes{display:grid;gap:8px;margin:0}
+.lanes>div{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;font-size:15.5px;line-height:1.55}
+.lanes>div .mk{margin-top:3px}
+.lanes b{font-family:var(--f-sc);font-weight:600;letter-spacing:.05em;margin-right:6px}
+.jump{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--g2);text-underline-offset:3px}
+.jump:hover{text-decoration-color:var(--ink)}
+.real{border-top:1px solid var(--g3);padding-top:12px}
+.real h3{font-family:var(--f-sc);font-weight:600;font-size:15px;letter-spacing:.07em;color:var(--g1);margin:0 0 8px}
+.real ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.real li{font-size:15.5px;line-height:1.55;padding-left:16px;position:relative;max-width:66ch;text-wrap:pretty}
+.real li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border:1.2px solid var(--g2)}
+code{font-family:var(--f-data);font-size:.9em;background:var(--wash);padding:1px 5px;border-radius:3px;overflow-wrap:anywhere}
+.num{font-family:var(--f-data);font-variant-numeric:tabular-nums lining-nums;font-weight:500;white-space:nowrap}
+.story{background:var(--wash);border-radius:8px;padding:12px 14px;font-size:15.5px;line-height:1.55;margin:0;max-width:66ch}
+.story strong{font-family:var(--f-sc);font-weight:600;letter-spacing:.05em;font-size:14px;color:var(--ink);display:block;margin-bottom:2px}
+.note{font-size:14px;color:var(--g1);margin:0;max-width:72ch;line-height:1.55}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--g3);border:1px solid var(--g3);border-radius:8px;overflow:hidden}
+.tile{background:var(--paper);padding:12px 14px;display:grid;gap:2px;align-content:start}
+.tile .v{font:600 clamp(22px,2.6vw,30px)/1.1 var(--f-data);font-variant-numeric:tabular-nums lining-nums}
+.tile .l{font-size:14.5px;color:var(--g1);line-height:1.4}
+
+/* SVG vocabulary */
+#stage text{font-kerning:normal}
+.sc{font-family:var(--f-sc);font-weight:500;fill:var(--g1);letter-spacing:.04em}
+.dt{font-family:var(--f-data);font-weight:600;fill:var(--ink);font-variant-numeric:tabular-nums lining-nums}
+.pr{font-family:var(--f-prose);fill:var(--ink)}
+.it{font-family:var(--f-prose);font-style:italic;fill:var(--g1)}
+.mid{text-anchor:middle} .end{text-anchor:end}
+.c-g1{fill:var(--g1)} .c-g2{fill:var(--g2)} .c-cob{fill:var(--cobalt-word)} .on-amb{fill:var(--on-amber)}
+.f-paper{fill:var(--paper)} .f-ink{fill:var(--ink)} .f-g3{fill:var(--g3)} .f-wash{fill:var(--wash)} .f-cob{fill:var(--cobalt)} .f-amb{fill:var(--amber)} .f-none{fill:none}
+.ln{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.lg{fill:none;stroke:var(--g2);stroke-width:1.4;stroke-linecap:round}
+.lg3{fill:none;stroke:var(--g3);stroke-width:1.6;stroke-linecap:round}
+.lcob{fill:none;stroke:var(--cobalt-word);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.o-ink{stroke:var(--ink);stroke-width:1.5}
+.dot{fill:var(--paper);stroke:var(--ink);stroke-width:1.8}
+.pill{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}
+.pill-x{fill:var(--paper);stroke:var(--ink);stroke-width:1.6;stroke-dasharray:5 4}
+.pp{fill:var(--cobalt);stroke:var(--ink);stroke-width:1.2}
+.lane{fill:var(--wash)}
+.nS,.nP{fill:var(--paper);stroke:var(--ink);stroke-width:1.4}
+.nX{fill:var(--paper);stroke:var(--ink);stroke-width:1.4;stroke-dasharray:5 4}
+.nM{fill:var(--ink);stroke:var(--ink);stroke-width:1.4}
+.nt{font-family:var(--f-data);font-weight:600;font-size:10.5px;fill:var(--ink);text-anchor:middle}
+.nx{font-family:var(--f-prose);font-style:italic;font-size:10px;fill:var(--g1);text-anchor:middle}
+.M .nt,.M .nx{fill:var(--paper)}
+.node{cursor:pointer}
+.node:hover .nS,.node:hover .nX,.node:hover .nP{fill:var(--wash)}
+.node.M:hover .nM{opacity:.86}
+
+/* animation: every element's resting style IS its final state; .play replays the arrival */
+.a-draw{stroke-dasharray:var(--len)}
+.a-pop,.a-stamp,.a-grow,.ripple,.a-rise{transform-box:fill-box;transform-origin:center}
+.a-grow{transform-origin:left center;transform:scaleX(var(--s,1))}
+.a-rise{transform-origin:center bottom}
+.a-stamp{transform:rotate(var(--r,0deg))}
+.walk,.ripple,.flowdot{opacity:0}
+.scene.play .a-fade{animation:fade .7s ease var(--d,0s) both}
+.scene.play .a-pop{animation:pop .55s cubic-bezier(.2,1.35,.4,1) var(--d,0s) both}
+.scene.play .a-draw{animation:draw 1.3s ease-in-out var(--d,0s) both}
+.scene.play .a-move{animation:moveIn var(--t,1.2s) cubic-bezier(.3,.7,.2,1) var(--d,0s) both}
+.scene.play .a-grow{animation:grow 1.1s cubic-bezier(.3,.8,.2,1) var(--d,0s) both}
+.scene.play .a-stamp{animation:stamp .5s cubic-bezier(.3,.6,.3,1) var(--d,0s) both}
+.scene.play .a-lamp{animation:lamp .3s ease var(--d,0s) both}
+.scene.play .a-rise{animation:rise .9s cubic-bezier(.3,.8,.2,1) var(--d,0s) both}
+.scene.play .walk{animation:walk 3.4s linear var(--d,0s) both}
+.scene.play .lamp2{animation:lamp2 5s linear 0s both}
+.scene.play .belt{animation:belt 6s linear infinite}
+.scene.play .ripple{animation:ping .9s ease-out var(--d,0s) 2 both}
+.scene.play .cursor{animation:cursor 1.1s cubic-bezier(.3,.7,.2,1) var(--d,0s) both}
+.scene.play .scanv{animation:scanv 6s ease-in-out .3s infinite}
+.scene.play .scan2{animation:scan2 7s ease-in-out .8s both}
+.scanx{opacity:0}
+.scene.play .scanx{opacity:.35;animation:scanx 5s ease-in-out 1s infinite}
+.scene.play .flowdot{opacity:1}
+@keyframes fade{from{opacity:0}}
+@keyframes pop{from{opacity:0;transform:scale(.35)}}
+@keyframes draw{from{stroke-dashoffset:var(--len)}}
+@keyframes moveIn{from{opacity:0;transform:translate(var(--fx,0px),var(--fy,0px))}}
+@keyframes grow{from{transform:scaleX(0)}}
+@keyframes stamp{0%{opacity:0;transform:rotate(var(--r,0deg)) scale(2.1)}65%{opacity:1;transform:rotate(var(--r,0deg)) scale(.93)}100%{opacity:1;transform:rotate(var(--r,0deg)) scale(1)}}
+@keyframes lamp{from{fill:var(--g3)}}
+@keyframes walk{0%{transform:translateX(-100px);opacity:0}6%{opacity:1}92%{opacity:1}100%{transform:translateX(760px);opacity:0}}
+@keyframes lamp2{0%{fill:var(--g3)}27%{fill:var(--cobalt)}98%{fill:var(--cobalt)}100%{fill:var(--amber)}}
+@keyframes rise{from{transform:scaleY(0)}}
+@keyframes belt{from{transform:translateX(-260px)}to{transform:translateX(0)}}
+@keyframes ping{0%{opacity:.75;transform:scale(.4)}100%{opacity:0;transform:scale(2.8)}}
+@keyframes cursor{from{opacity:0;transform:translate(90px,150px)}25%{opacity:1}}
+@keyframes scanv{0%,8%{transform:translateY(0)}20%,28%{transform:translateY(54px)}40%,48%{transform:translateY(108px)}60%,68%{transform:translateY(162px)}80%,88%{transform:translateY(216px)}100%{transform:translateY(270px)}}
+@keyframes scan2{0%{transform:translate(0,0)}10%,16%{transform:translate(-10px,-242px)}24%,30%{transform:translate(-10px,-196px)}38%,44%{transform:translate(16px,-196px)}52%,58%{transform:translate(-10px,-150px)}66%,72%{transform:translate(-10px,-104px)}80%,88%{transform:translate(16px,-104px)}100%{transform:translate(0,0)}}
+@keyframes scanx{0%{transform:translateX(0)}50%{transform:translateX(660px)}100%{transform:translateX(0)}}
+
+/* stepper */
+.stepper{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 16px;align-items:end;border-top:2px solid var(--ink);padding-top:12px}
+.step-num{font:600 clamp(42px,6vw,66px)/.9 var(--f-data);font-variant-numeric:tabular-nums lining-nums;grid-row:span 2;letter-spacing:-.02em}
+.step-part{font-family:var(--f-sc);font-weight:500;letter-spacing:.07em;color:var(--g1);font-size:14.5px}
+.step-title{font-family:var(--f-prose);font-weight:500;font-size:clamp(21px,2.7vw,29px);line-height:1.12}
+.rail{grid-column:1/-1;display:flex;gap:3px;list-style:none;margin:10px 0 0;padding:0}
+.rail li{flex:1;height:4px;background:var(--g3);border-radius:2px;transition:background .3s}
+.rail li.on{background:var(--ink)}
+.rail li.gap{margin-left:9px}
+.stepper.swap .step-num,.stepper.swap .step-meta{animation:swap .45s cubic-bezier(.3,.7,.2,1) both}
+@keyframes swap{from{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion: reduce){.stepper.swap .step-num,.stepper.swap .step-meta{animation:none}.rail li{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">O Estado do País · the machinery, measured 03.11.2026</p>
+    <h1>How O Estado do País works</h1>
+    <p class="lede">Everything that happens from the moment the daily watch starts until a piece of work goes live: every check, gate and read, which parts are scripts, which are AI models and which is a person. Seventeen steps in three parts.</p>
+  </header>
+
+  <div class="stepper" id="stepper" aria-live="polite">
+    <div class="step-num" id="stepNum">01</div>
+    <div class="step-meta"><div class="step-part" id="stepPart">Overview</div><div class="step-title" id="stepTitle">Who does what</div></div>
+    <ol class="rail" id="rail" aria-hidden="true"></ol>
+  </div>
+
+  <div class="main">
+    <div class="stagecol">
+      <div class="stage">
+<svg id="stage" viewBox="0 0 720 460" role="img" aria-label="Who does what">
+<defs>
+  <symbol id="mk-s" viewBox="-8 -8 16 16"><rect x="-6.5" y="-6.5" width="13" height="13" rx="2" style="fill:var(--paper);stroke:var(--ink);stroke-width:1.4"/><path d="M-3.4-2.6-.8 0-3.4 2.6M.6 3.1h3" style="fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round"/></symbol>
+  <symbol id="mk-x" viewBox="-8 -8 16 16"><rect x="-6.5" y="-6.5" width="13" height="13" rx="2" style="fill:var(--paper);stroke:var(--ink);stroke-width:1.4;stroke-dasharray:2.6 1.8"/><path d="M-3.4-2.6-.8 0-3.4 2.6M.6 3.1h3" style="fill:none;stroke:var(--g2);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round"/></symbol>
+  <symbol id="mk-m" viewBox="-8 -8 16 16"><circle r="7" style="fill:var(--ink);stroke:var(--paper);stroke-width:1.4"/><path d="M0-4.8 1.3-1.3 4.8 0 1.3 1.3 0 4.8-1.3 1.3-4.8 0-1.3-1.3Z" style="fill:var(--paper)"/></symbol>
+  <symbol id="mk-p" viewBox="-8 -8 16 16"><circle r="7" style="fill:var(--paper);stroke:var(--ink);stroke-width:1.4"/><circle cy="-1.7" r="2.1" style="fill:var(--ink)"/><path d="M-3.9 4.6Q0 .3 3.9 4.6" style="fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round"/></symbol>
+  <pattern id="pc" width="18" height="18" patternUnits="userSpaceOnUse"><rect x="1" y="1" width="14" height="14" rx="2" style="fill:var(--paper);stroke:var(--ink);stroke-width:1.2"/></pattern>
+  <pattern id="pa" width="14" height="16" patternUnits="userSpaceOnUse"><rect x="1" y="2" width="11" height="12" rx="2" style="fill:var(--amber);stroke:var(--ink);stroke-width:1"/></pattern>
+  <pattern id="pb" width="14" height="16" patternUnits="userSpaceOnUse"><rect x="1" y="2" width="11" height="12" rx="2" style="fill:var(--cobalt);stroke:var(--ink);stroke-width:1"/></pattern>
+  <pattern id="pq" width="16" height="16" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="12" height="12" rx="2" style="fill:var(--cobalt);stroke:var(--ink);stroke-width:1"/></pattern>
+  <pattern id="pr" width="16" height="16" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="12" height="12" rx="2" style="fill:var(--amber);stroke:var(--ink);stroke-width:1"/></pattern>
+  <pattern id="rg" width="24" height="16" patternUnits="userSpaceOnUse"><rect x="1" y="1" width="16" height="14" rx="2" style="fill:var(--paper);stroke:var(--ink);stroke-width:1.2"/></pattern>
+  <pattern id="rv" width="11.4" height="16" patternUnits="userSpaceOnUse"><rect x=".7" y="1" width="7" height="14" rx="1.5" style="fill:var(--paper);stroke:var(--ink);stroke-width:1"/></pattern>
+  <pattern id="pg" width="20" height="26" patternUnits="userSpaceOnUse"><path d="M2 2h11l4 4v18H2z" style="fill:var(--paper);stroke:var(--g2);stroke-width:1"/></pattern>
+  <clipPath id="beltclip"><rect x="508" y="350" width="204" height="40"/></clipPath>
+  <clipPath id="stripclip"><rect x="20" y="426" width="680" height="26"/></clipPath>
+</defs>
+
+<!-- 01 WHO DOES WHAT: three lanes, from the watch to the live page -->
+<g class="scene" data-scene="map">
+  <g class="a-fade" style="--d:.05s">
+    <rect class="lane" x="4" y="44" width="712" height="80" rx="8"/>
+    <rect class="lane" x="4" y="132" width="712" height="96" rx="8"/>
+    <rect class="lane" x="4" y="236" width="712" height="182" rx="8"/>
+    <use href="#mk-p" x="12" y="54" width="16" height="16"/><text class="sc" x="32" y="66" font-size="12">person</text><text class="it" x="12" y="88" font-size="11.5">the funder</text>
+    <use href="#mk-m" x="12" y="142" width="16" height="16"/><text class="sc" x="32" y="154" font-size="12">model</text><text class="it" x="12" y="176" font-size="11.5">a judgment</text>
+    <use href="#mk-s" x="12" y="246" width="16" height="16"/><text class="sc" x="32" y="258" font-size="12">script</text><text class="it" x="12" y="280" font-size="11.5">same result</text><text class="it" x="12" y="294" font-size="11.5">every time</text>
+    <g class="sc mid" font-size="11.5"><text x="120" y="32">watch</text><text x="190" y="32">research</text><text x="260" y="32">mandate</text><text x="330" y="32">build</text><text x="400" y="32">checks</text><text x="470" y="32">cold read</text><text x="540" y="32">fixes</text><text x="610" y="32">landing</text><text x="680" y="32">live</text></g>
+    <text class="it" x="100" y="80" font-size="12">also keeps money, legal exposure and anything sent out in the project’s name</text>
+    <path class="lcob" d="M100 99h24"/><text class="it" x="132" y="103" font-size="12">a model’s output, checked by a script or by planted faults</text>
+  </g>
+  <path id="m-flow" class="lg a-draw" style="--len:1600;--d:.3s" d="M120 270V180C120 226 190 226 190 270H260V180H330C330 226 400 226 400 270H470V180H540V270H610V326H680V270V84"/>
+  <path class="lg" d="M120 290V306M120 346V362M330 290V306M330 346V362M470 290V306"/>
+  <path class="lg" style="stroke-dasharray:3 4" d="M610 346V362M610 250V104"/>
+  <text class="it" x="616" y="148" font-size="11">if over</text><text class="it" x="616" y="161" font-size="11">budget</text>
+  <g class="a-fade" style="--d:1.5s">
+    <path class="lcob" d="M330 180C330 226 400 226 400 270M400 290V306M470 270V180M540 180V270"/>
+  </g>
+  <g class="flowdot"><circle class="f-ink" r="5"><animateMotion begin="indefinite" data-at="1.6" dur="11s" repeatCount="indefinite"><mpath href="#m-flow"/></animateMotion></circle></g>
+
+  <g class="a-fade" style="--d:.5s">
+    <g class="node M" data-go="watch"><rect class="nM" x="88" y="160" width="64" height="40" rx="12"/><text class="nt" x="120" y="176">sweep</text><text class="nx" x="120" y="191">a model</text><use href="#mk-m" x="81" y="153" width="14" height="14"/></g>
+    <g class="node M" data-go="mandate"><rect class="nM" x="228" y="160" width="64" height="40" rx="12"/><text class="nt" x="260" y="176">mandate</text><text class="nx" x="260" y="191">director</text><use href="#mk-m" x="221" y="153" width="14" height="14"/></g>
+    <g class="node M" data-go="builder"><rect class="nM" x="298" y="160" width="64" height="40" rx="12"/><text class="nt" x="330" y="176">build</text><text class="nx" x="330" y="191">the builder</text><use href="#mk-m" x="291" y="153" width="14" height="14"/></g>
+    <g class="node M" data-go="coldread"><rect class="nM" x="438" y="160" width="64" height="40" rx="12"/><text class="nt" x="470" y="176">cold read</text><text class="nx" x="470" y="191">other family</text><use href="#mk-m" x="431" y="153" width="14" height="14"/></g>
+    <g class="node M" data-go="coldread"><rect class="nM" x="508" y="160" width="64" height="40" rx="12"/><text class="nt" x="540" y="176">fix</text><text class="nx" x="540" y="191">short read</text><use href="#mk-m" x="501" y="153" width="14" height="14"/></g>
+  </g>
+  <g class="a-fade" style="--d:.8s">
+    <g class="node" data-go="landing"><rect class="nP" x="578" y="64" width="64" height="40" rx="12"/><text class="nt" x="610" y="80">budget?</text><text class="nx" x="610" y="95">decides</text><use href="#mk-p" x="572" y="57" width="14" height="14"/></g>
+    <g class="node" data-go="live"><rect class="nP" x="648" y="64" width="64" height="40" rx="12"/><text class="nt" x="680" y="80">captures</text><text class="nx" x="680" y="95">reads them</text><use href="#mk-p" x="642" y="57" width="14" height="14"/></g>
+  </g>
+  <g class="a-fade" style="--d:.2s">
+    <g class="node" data-go="watch"><rect class="nX" x="88" y="250" width="64" height="40" rx="3"/><text class="nt" x="120" y="266">news feeds</text><text class="nx" x="120" y="281">planned</text><use href="#mk-x" x="81" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="research"><rect class="nS" x="158" y="250" width="64" height="40" rx="3"/><text class="nt" x="190" y="266">host docs</text><text class="nx" x="190" y="281">SHA-256</text><use href="#mk-s" x="151" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="mandate"><rect class="nS" x="228" y="250" width="64" height="40" rx="3"/><text class="nt" x="260" y="266">measure</text><text class="nx" x="260" y="281">count, date</text><use href="#mk-s" x="221" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="builder"><rect class="nS" x="298" y="250" width="64" height="40" rx="3"/><text class="nt" x="330" y="266">launcher</text><text class="nx" x="330" y="281">75 min · 120</text><use href="#mk-s" x="291" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="gates"><rect class="nS" x="368" y="250" width="64" height="40" rx="3"/><text class="nt" x="400" y="266">build</text><text class="nx" x="400" y="281">28 steps</text><use href="#mk-s" x="361" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="coldread"><rect class="nS" x="438" y="250" width="64" height="40" rx="3"/><text class="nt" x="470" y="266">plant</text><text class="nx" x="470" y="281">5 faults</text><use href="#mk-s" x="431" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="coldread"><rect class="nS" x="508" y="250" width="64" height="40" rx="3"/><text class="nt" x="540" y="266">targeted</text><text class="nx" x="540" y="281">checks</text><use href="#mk-s" x="501" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="landing"><rect class="nS" x="578" y="250" width="64" height="40" rx="3"/><text class="nt" x="610" y="266">full check</text><text class="nx" x="610" y="281">independent</text><use href="#mk-s" x="571" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="live"><rect class="nS" x="648" y="250" width="64" height="40" rx="3"/><text class="nt" x="680" y="266">verify</text><text class="nx" x="680" y="281">live site</text><use href="#mk-s" x="641" y="243" width="14" height="14"/></g>
+    <g class="node" data-go="watch"><rect class="nS" x="88" y="306" width="64" height="40" rx="3"/><text class="nt" x="120" y="322">Évora 2027</text><text class="nx" x="120" y="337">every 2 h</text><use href="#mk-s" x="81" y="299" width="14" height="14"/></g>
+    <g class="node" data-go="builder"><rect class="nS" x="298" y="306" width="64" height="40" rx="3"/><text class="nt" x="330" y="322">lock</text><text class="nx" x="330" y="337">one at a time</text><use href="#mk-s" x="291" y="299" width="14" height="14"/></g>
+    <g class="node" data-go="gates"><rect class="nS" x="368" y="306" width="64" height="40" rx="3"/><text class="nt" x="400" y="322">verify</text><text class="nx" x="400" y="337">58 + 1 steps</text><use href="#mk-s" x="361" y="299" width="14" height="14"/></g>
+    <g class="node" data-go="coldread"><rect class="nS" x="438" y="306" width="64" height="40" rx="3"/><text class="nt" x="470" y="322">package</text><text class="nx" x="470" y="337">docs present</text><use href="#mk-s" x="431" y="299" width="14" height="14"/></g>
+    <g class="node" data-go="landing"><rect class="nS" x="578" y="306" width="64" height="40" rx="3"/><text class="nt" x="610" y="322">to main</text><text class="nx" x="610" y="337">merge, push</text><use href="#mk-s" x="571" y="299" width="14" height="14"/></g>
+    <g class="node" data-go="live"><rect class="nS" x="648" y="306" width="64" height="40" rx="3"/><text class="nt" x="680" y="322">publish</text><text class="nx" x="680" y="337">about 33 min</text><use href="#mk-s" x="641" y="299" width="14" height="14"/></g>
+    <g class="node" data-go="watch"><rect class="nX" x="88" y="362" width="64" height="40" rx="3"/><text class="nt" x="120" y="378">Parliament</text><text class="nx" x="120" y="393">and DR · off</text><use href="#mk-x" x="81" y="355" width="14" height="14"/></g>
+    <g class="node" data-go="landing"><rect class="nS" x="298" y="362" width="64" height="40" rx="3"/><text class="nt" x="330" y="378">cost</text><text class="nx" x="330" y="393">per block</text><use href="#mk-s" x="291" y="355" width="14" height="14"/></g>
+    <g class="node" data-go="live"><rect class="nX" x="578" y="362" width="64" height="40" rx="3"/><text class="nt" x="610" y="378">upload</text><text class="nx" x="610" y="393">next</text><use href="#mk-x" x="571" y="355" width="14" height="14"/></g>
+  </g>
+  <g class="a-fade" style="--d:1.1s">
+    <text class="sc" x="12" y="445" font-size="12">indicators</text>
+    <g class="node" data-go="rechecks"><rect class="nS" x="100" y="428" width="230" height="26" rx="3"/><text class="pr" x="112" y="446" font-size="12">weekly panel re-reads 91 lines</text><use href="#mk-s" x="93" y="421" width="14" height="14"/></g>
+    <g class="node" data-go="rechecks"><rect class="nX" x="346" y="428" width="366" height="26" rx="3"/><text class="pr c-g1" x="358" y="446" font-size="12">daily re-check of every source · 06:10 UTC · switched off</text><use href="#mk-x" x="339" y="421" width="14" height="14"/></g>
+  </g>
+</g>
+
+<!-- 02 SOURCES AND PUBLISHERS -->
+<g class="scene" data-scene="sources" hidden>
+  <g class="a-fade" style="--d:.1s"><use href="#mk-s" x="24" y="22" width="16" height="16"/><text class="sc" x="46" y="35" font-size="14">read in the document</text></g>
+  <g class="a-fade" style="--d:.2s">
+    <rect class="pill" x="24" y="56" width="72" height="54" rx="3"/><path class="lg" d="M24 68h72M32 80h52M32 90h40M32 100h48"/>
+    <text class="dt" x="108" y="78" font-size="12.5">og:site_name</text><text class="it" x="108" y="96" font-size="12">a web page</text>
+  </g>
+  <g class="a-fade" style="--d:.35s">
+    <rect class="pill" x="24" y="126" width="72" height="54" rx="3"/><text class="dt c-g1" x="34" y="150" font-size="12">{ "@</text><text class="dt c-g1" x="50" y="168" font-size="12">… }</text>
+    <text class="dt" x="108" y="148" font-size="12.5">JSON-LD</text><text class="it" x="108" y="166" font-size="12">structured data</text>
+  </g>
+  <g class="a-fade" style="--d:.5s">
+    <path class="pill" d="M24 196h56l16 16v38H24z"/><path class="lg" d="M80 196v16h16"/><text class="dt" x="34" y="238" font-size="12">PDF</text>
+    <text class="dt" x="108" y="218" font-size="12.5">issuer</text><text class="it" x="108" y="236" font-size="12">of a PDF</text>
+  </g>
+  <path class="lg a-draw" style="--len:260;--d:.8s" d="M206 84C232 84 236 150 254 150M206 154H254M206 224C232 224 236 150 254 150"/>
+  <g class="a-fade" style="--d:.6s">
+    <text class="sc" x="262" y="35" font-size="14">closed register</text>
+    <text class="dt" x="262" y="76" font-size="30">58</text><text class="it" x="302" y="76" font-size="15">publishing bodies</text>
+  </g>
+  <g transform="translate(262 96)">
+    <rect class="a-grow" style="--d:.8s" width="180" height="90" fill="url(#pc)"/>
+    <rect class="a-grow" style="--d:1.0s" y="90" width="144" height="18" fill="url(#pc)"/>
+    <rect class="f-ink a-pop" style="--d:1.5s" x="163" y="19" width="14" height="14" rx="2"/>
+  </g>
+  <g class="a-fade" style="--d:.9s"><use href="#mk-s" x="470" y="22" width="16" height="16"/><text class="sc" x="492" y="35" font-size="14">the register check</text></g>
+  <path class="lcob a-draw" style="--len:40;--d:1.7s" d="M440 122H470"/>
+  <g class="a-fade" style="--d:1.3s">
+    <rect class="pill" x="470" y="70" width="230" height="104" rx="6"/>
+    <text class="sc" x="484" y="92" font-size="12">publicado por</text>
+    <text class="dt" x="484" y="124" font-size="20">RTP</text>
+    <text class="it" x="484" y="146" font-size="12.5">in the register</text>
+    <text class="it" x="484" y="163" font-size="12.5">domain matches: rtp.pt</text>
+  </g>
+  <path class="lcob a-pop" style="--d:2.0s" d="M660 118l7 7 14-16"/>
+  <g class="a-fade" style="--d:2.3s">
+    <rect class="pill" x="470" y="196" width="230" height="104" rx="6"/>
+    <text class="sc" x="484" y="218" font-size="12">publicado por</text>
+    <text class="pr" x="484" y="250" font-size="18" font-style="italic">Primeiro-Ministro</text>
+    <text class="it" x="484" y="272" font-size="12.5">the person quoted in the article</text>
+    <text class="it" x="484" y="289" font-size="12.5">is not a publishing body</text>
+  </g>
+  <g class="a-pop" style="--d:2.9s"><rect class="f-amb o-ink" x="612" y="204" width="80" height="24" rx="4"/><text class="dt mid on-amb" x="652" y="221" font-size="12" font-weight="700">REFUSED</text></g>
+  <g class="a-fade" style="--d:3.2s"><text class="sc" x="24" y="336" font-size="13">02.11.2026 · the same fault on 26 receipts</text></g>
+  <g transform="translate(24 346)">
+    <rect class="a-fade" style="--d:3.3s" width="364" height="16" fill="url(#pa)"/>
+    <rect class="a-grow" style="--d:3.9s" width="364" height="16" fill="url(#pb)"/>
+  </g>
+  <text class="it a-fade" style="--d:4.6s" x="400" y="359" font-size="13">all fixed site-wide, listed as corrections</text>
+  <g class="a-fade" style="--d:5.0s">
+    <use href="#mk-s" x="24" y="386" width="16" height="16"/>
+    <text class="pr" x="48" y="399" font-size="14.5">a script now refuses the whole class, on every receipt</text>
+    <text class="sc" x="24" y="434" font-size="13">rule 15 · a defect a reader can see is fixed for its whole class</text>
+  </g>
+</g>
+
+<!-- 03 THE LEDGER: one file per figure -->
+<g class="scene" data-scene="ledger" hidden>
+  <rect class="pill a-fade" style="--d:.1s" x="24" y="30" width="508" height="408" rx="8"/>
+  <path class="f-wash" d="M32 30h492a8 8 0 0 1 8 8v26H24V38a8 8 0 0 1 8-8z"/>
+  <text class="dt c-g1" x="40" y="52" font-size="12.5" font-weight="500">ledger/claims/evora-populacao-2025.yml</text>
+  <use href="#mk-s" x="374" y="40" width="14" height="14"/><text class="sc" x="394" y="52" font-size="11.5">engine · not by hand</text>
+  <g class="a-fade" style="--d:.2s">
+    <text class="sc" x="556" y="42" font-size="13">one file per figure</text>
+    <text class="dt" x="556" y="68" font-size="24">4 144</text>
+    <rect class="f-ink" x="556" y="78" width="131.2" height="8"/>
+    <rect x="687.2" y="78" width="18.8" height="8" style="fill:var(--paper);stroke:var(--ink);stroke-width:1;stroke-dasharray:2 2"/>
+    <text class="sc" x="556" y="101" font-size="11.5">519 calculated</text>
+  </g>
+  <text class="dt a-fade" style="--d:0.40s" x="40" y="92" font-size="13" font-weight="500"><tspan class="c-g1">id:</tspan> "evora-populacao-2025"</text>
+  <text class="dt a-fade" style="--d:0.56s" x="40" y="116.5" font-size="13" font-weight="500"><tspan class="c-g1">value:</tspan> "58 567"</text>
+  <g class="a-pop" style="--d:3.02s"><line class="lg" x1="540" y1="125" x2="552" y2="125"/><text class="sc" x="558" y="129" font-size="12.5">value as published</text></g>
+  <text class="dt a-fade" style="--d:0.72s" x="40" y="141" font-size="13" font-weight="500"><tspan class="c-g1">unit:</tspan> "pessoas"</text>
+  <text class="dt a-fade" style="--d:0.88s" x="40" y="165.5" font-size="13" font-weight="500"><tspan class="c-g1">source:</tspan> "INE"</text>
+  <g class="a-pop" style="--d:3.26s"><line class="lg" x1="540" y1="161.5" x2="552" y2="161.5"/><text class="sc" x="558" y="165.5" font-size="12.5">who published it</text></g>
+  <text class="dt a-fade" style="--d:1.04s" x="40" y="190" font-size="13" font-weight="500"><tspan class="c-g1">document:</tspan></text>
+  <text class="dt a-fade" style="--d:1.20s" x="40" y="214.5" font-size="13" font-weight="500"><tspan class="c-g1">  edition:</tspan> "indicador 0012918"</text>
+  <text class="dt a-fade" style="--d:1.36s" x="40" y="239" font-size="13" font-weight="500"><tspan class="c-g1">source_url:</tspan> "https://www.ine.pt/ine/json_indicador/…"</text>
+  <g class="a-pop" style="--d:3.62s"><line class="lg" x1="540" y1="235" x2="552" y2="235"/><text class="sc" x="558" y="239" font-size="12.5">where, exactly</text></g>
+  <text class="dt a-fade" style="--d:1.52s" x="40" y="263.5" font-size="13" font-weight="500"><tspan class="c-g1">access_date:</tspan> "2026-08-10"</text>
+  <g class="a-pop" style="--d:3.74s"><line class="lg" x1="540" y1="259.5" x2="552" y2="259.5"/><text class="sc" x="558" y="263.5" font-size="12.5">when it was read</text></g>
+  <text class="dt a-fade" style="--d:1.68s" x="40" y="288" font-size="13" font-weight="500"><tspan class="c-g1">reference_date:</tspan> "2025"</text>
+  <text class="dt a-fade" style="--d:1.84s" x="40" y="312.5" font-size="13" font-weight="500"><tspan class="c-g1">excerpt:</tspan> "Dados[\"2025\"], geocod 1C40705, valor 58567"</text>
+  <g class="a-pop" style="--d:3.98s"><line class="lg" x1="540" y1="308.5" x2="552" y2="308.5"/><text class="sc" x="558" y="312.5" font-size="12.5">the exact words</text></g>
+  <text class="dt a-fade" style="--d:2.00s" x="40" y="337" font-size="13" font-weight="500"><tspan class="c-g1">check:</tspan> null</text>
+  <g class="a-pop" style="--d:4.10s"><line class="lg" x1="540" y1="333" x2="552" y2="333"/><text class="sc" x="558" y="337" font-size="12.5">its formula, if any</text></g>
+  <text class="dt a-fade" style="--d:2.16s" x="40" y="361.5" font-size="13" font-weight="500"><tspan class="c-g1">verifications:</tspan></text>
+  <g class="a-pop" style="--d:4.22s"><line class="lg" x1="540" y1="357.5" x2="552" y2="357.5"/><text class="sc" x="558" y="361.5" font-size="12.5">re-checks, appended</text></g>
+  <text class="dt a-fade c-cob" style="--d:2.32s" x="40" y="386" font-size="13" font-weight="500"><tspan class="c-g1">  - date:</tspan> 2026-08-15, result: igual, by: leitura-independente</text>
+  <text class="dt a-fade c-cob" style="--d:2.48s" x="40" y="410.5" font-size="13" font-weight="500"><tspan class="c-g1">  - date:</tspan> 2026-09-01, result: igual, by: corredor-diario</text>
+</g>
+
+<!-- 04 RESEARCH AND HOSTED DOCUMENTS -->
+<g class="scene" data-scene="research" hidden>
+  <g class="a-fade" style="--d:.1s">
+    <path class="pill" d="M30 70h72l20 20v104H30z"/><path class="lg" d="M102 70v20h20M42 108h64M42 120h52M42 132h68M42 144h44M42 156h60M42 168h48"/>
+    <text class="sc" x="30" y="220" font-size="13">the publisher’s</text><text class="sc" x="30" y="236" font-size="13">document</text>
+  </g>
+  <path class="ln a-draw" style="--len:60;--d:.5s" d="M134 132H172M164 126l8 6-8 6"/>
+  <g class="a-fade" style="--d:.7s">
+    <rect class="pill" x="182" y="56" width="176" height="156" rx="6"/>
+    <path class="f-wash" d="M188 56h164a6 6 0 0 1 6 6v22H182V62a6 6 0 0 1 6-6z"/>
+    <text class="sc" x="196" y="76" font-size="13">hosted copy</text>
+    <use href="#mk-s" x="334" y="62" width="16" height="16"/>
+    <path class="lg" d="M196 104h120M196 116h100M196 128h132M196 140h88M196 152h112"/>
+    <text class="sc" x="196" y="178" font-size="11">sha-256 fingerprint</text>
+  </g>
+  <line class="a-grow" style="--d:1.1s;stroke:var(--ink);stroke-width:12;stroke-dasharray:2 1 4 2 1 3 2 2 3 1 1 2" x1="196" y1="196" x2="344" y2="196"/>
+  <path class="lg a-draw" style="--len:50;--d:1.4s" d="M358 105H392"/>
+  <g class="a-fade" style="--d:1.5s">
+    <rect class="nM" x="392" y="80" width="128" height="50" rx="12"/>
+    <text class="dt mid" x="456" y="102" font-size="13" style="fill:var(--paper)">fact sheet</text>
+    <text class="it mid" x="456" y="120" font-size="12" style="fill:var(--paper)">a model</text>
+    <use href="#mk-m" x="384" y="72" width="16" height="16"/>
+  </g>
+  <g class="a-fade" style="--d:1.9s">
+    <use href="#mk-s" x="30" y="262" width="16" height="16"/>
+    <text class="sc" x="54" y="275" font-size="13.5">measured on the hosted copy, before the mandate is written</text>
+  </g>
+  <g class="a-fade" style="--d:2.2s"><path class="lcob" d="M32 302l5 5 10-12"/><text class="dt" x="58" y="308" font-size="14">count</text><text class="it" x="130" y="308" font-size="13.5">how many, counted in the document</text></g>
+  <g class="a-fade" style="--d:2.5s"><path class="lcob" d="M32 336l5 5 10-12"/><text class="dt" x="58" y="342" font-size="14">rank</text><text class="it" x="130" y="342" font-size="13.5">first, largest, last: measured, never recalled</text></g>
+  <g class="a-fade" style="--d:2.8s"><path class="lcob" d="M32 370l5 5 10-12"/><text class="dt" x="58" y="376" font-size="14">date</text><text class="it" x="130" y="376" font-size="13.5">read from the document itself</text></g>
+  <g class="a-fade" style="--d:3.1s"><rect class="pill" x="33" y="401" width="12" height="12" rx="2"/><text class="dt" x="58" y="412" font-size="14">cause</text><text class="it" x="130" y="412" font-size="13.5">said as interpretation until the source shows the mechanism</text></g>
+  <g class="a-fade" style="--d:3.4s">
+    <rect class="pill" x="548" y="56" width="160" height="236" rx="6"/>
+    <use href="#mk-s" x="560" y="68" width="14" height="14"/><text class="sc" x="580" y="80" font-size="13">the package</text>
+    <path class="pill" d="M562 100h14l5 5v17h-19z"/><text class="dt" x="590" y="117" font-size="12" font-weight="500">document</text>
+    <path class="pill" d="M562 138h14l5 5v17h-19z"/><text class="dt" x="590" y="155" font-size="12" font-weight="500">document</text>
+    <path class="pill-x" d="M562 176h14l5 5v17h-19z"/><text class="it" x="590" y="193" font-size="12.5">missing</text>
+  </g>
+  <path class="lcob a-pop" style="--d:3.7s" d="M676 108l5 5 10-12M676 146l5 5 10-12"/>
+  <g class="a-pop" style="--d:4.2s"><rect class="f-amb o-ink" x="556" y="226" width="144" height="54" rx="4"/><text class="dt mid on-amb" x="628" y="248" font-size="12.5" font-weight="700">PACKAGE REFUSED</text><text class="pr mid on-amb" x="628" y="267" font-size="11.5" font-style="italic">a hosted document is missing</text></g>
+  <g class="a-fade" style="--d:4.5s"><text class="it" x="548" y="324" font-size="12.5">the cold reader gets the same</text><text class="it" x="548" y="340" font-size="12.5">copies, checked by fingerprint</text></g>
+</g>
+
+<!-- 05 RE-CHECKS: keeping indicators up to date -->
+<g class="scene" data-scene="rechecks" hidden>
+  <g class="a-fade" style="--d:.1s">
+    <circle class="pill" cx="84" cy="120" r="36"/><text class="dt mid" x="84" y="126" font-size="18">INE</text>
+    <text class="sc mid" x="84" y="178" font-size="14">the source</text>
+    <rect class="pill" x="560" y="88" width="136" height="64" rx="6"/><text class="dt mid" x="628" y="127" font-size="22">58 567</text>
+    <text class="sc mid" x="628" y="178" font-size="14">the ledger row</text>
+    <use href="#mk-s" x="290" y="20" width="16" height="16"/><text class="sc" x="312" y="33" font-size="12.5">a script asks again</text>
+  </g>
+  <path id="r-loop" class="lg a-draw" style="--len:1100;--d:.3s" d="M560 104C460 30 220 30 120 100M120 140C220 210 460 210 560 136"/>
+  <path id="r-trip" fill="none" stroke="none" d="M560 104C460 30 220 30 120 100L120 140C220 210 460 210 560 136"/>
+  <g class="flowdot"><circle class="f-ink" r="5.5"><animateMotion begin="indefinite" data-at="1.0" dur="5s" repeatCount="indefinite"><mpath href="#r-trip"/></animateMotion></circle></g>
+  <g class="a-fade" style="--d:1.2s">
+    <rect class="pill" x="204" y="84" width="316" height="80" rx="6"/>
+    <text class="sc" x="220" y="106" font-size="12.5">source on 01.09</text>
+    <text class="dt" x="220" y="142" font-size="21">58 567</text>
+    <text class="sc" x="350" y="106" font-size="12.5">ledger row</text>
+    <text class="dt" x="350" y="142" font-size="21">58 567</text>
+  </g>
+  <g transform="translate(476 126)"><g class="a-stamp" style="--r:-5deg;--d:2.0s">
+    <rect x="-38" y="-19" width="76" height="38" rx="5" fill="none" stroke="var(--cobalt-word)" stroke-width="2.2"/>
+    <text class="dt mid c-cob" x="0" y="6" font-size="17" font-weight="700">IGUAL</text>
+  </g></g>
+  <g class="a-fade" style="--d:2.4s">
+    <text class="sc" x="40" y="236" font-size="13.5">weekly panel · 02.11.2026</text>
+    <text class="dt" x="40" y="258" font-size="13" font-weight="500">91 lines re-read</text>
+  </g>
+  <g transform="translate(40 270)">
+    <rect class="a-grow" style="--d:2.6s" width="208" height="96" fill="url(#pq)"/>
+    <rect class="a-grow" style="--d:2.9s" y="96" width="160" height="16" fill="url(#pq)"/>
+    <rect class="a-pop" style="--d:3.3s" x="160" y="96" width="48" height="16" fill="url(#pr)"/>
+  </g>
+  <g class="a-fade" style="--d:3.5s">
+    <rect class="f-cob o-ink" x="40" y="398" width="11" height="11"/><text class="dt" x="58" y="409" font-size="13" font-weight="500">88 unchanged</text>
+    <rect class="f-amb o-ink" x="150" y="398" width="11" height="11"/><text class="dt" x="168" y="409" font-size="13" font-weight="500">3 revised by Eurostat</text>
+  </g>
+  <g class="a-fade" style="--d:3.3s">
+    <circle class="lg" cx="346" cy="306" r="32" style="stroke-dasharray:4 4"/>
+    <line class="ln" x1="346" y1="306" x2="344.4" y2="323.9"/><line class="ln" x1="346" y1="306" x2="368.5" y2="293"/>
+    <text class="sc mid" x="346" y="362" font-size="13">daily · 06:10 utc</text>
+    <text class="it mid" x="346" y="380" font-size="13">built, switched off</text>
+  </g>
+  <g class="a-fade" style="--d:3.8s">
+    <text class="sc" x="452" y="236" font-size="13.5">all re-checks so far</text>
+    <rect class="f-cob o-ink" x="452" y="263" width="12" height="12"/><text class="dt" x="474" y="275" font-size="19">4 102</text><text class="sc" x="546" y="275" font-size="14">igual</text>
+    <rect class="f-amb o-ink" x="452" y="297" width="12" height="12"/><text class="dt" x="474" y="309" font-size="19">42</text><text class="sc" x="546" y="309" font-size="14">diverge</text>
+    <rect class="f-paper o-ink" x="452" y="331" width="12" height="12"/><text class="dt" x="474" y="343" font-size="19">5</text><text class="sc" x="546" y="343" font-size="14">inacessível</text>
+    <text class="it" x="452" y="376" font-size="13">across 2 636 rows</text>
+  </g>
+  <text class="it mid a-fade" style="--d:4.2s" x="360" y="446" font-size="15">a change is appended and listed, never written in silently</text>
+</g>
+
+<!-- 06 THE WATCH -->
+<g class="scene" data-scene="watch" hidden>
+  <text class="sc a-fade" style="--d:.1s" x="30" y="40" font-size="14">what is read</text>
+  <rect class="f-wash scanv" x="26" y="52" width="308" height="48" rx="7"/>
+  <g class="a-fade" style="--d:0.20s"><rect class="pill-x" x="30" y="56" width="300" height="40" rx="6"/><use href="#mk-x" x="40" y="68" width="16" height="16"/><text class="pr" x="64" y="82" font-size="14.5">Parliament</text><text class="sc end" x="318" y="82" font-size="12">auto · off</text></g>
+  <g class="a-fade" style="--d:0.35s"><rect class="pill-x" x="30" y="110" width="300" height="40" rx="6"/><use href="#mk-x" x="40" y="122" width="16" height="16"/><text class="pr" x="64" y="136" font-size="14.5">Diário da República</text><text class="sc end" x="318" y="136" font-size="12">auto · off</text></g>
+  <g class="a-fade" style="--d:0.50s"><rect class="pill" x="30" y="164" width="300" height="40" rx="6"/><use href="#mk-m" x="40" y="176" width="16" height="16"/><text class="pr" x="64" y="190" font-size="14.5">the news</text><text class="sc end" x="318" y="190" font-size="12">each session</text></g>
+  <g class="a-fade" style="--d:0.65s"><rect class="pill" x="30" y="218" width="300" height="40" rx="6"/><use href="#mk-m" x="40" y="230" width="16" height="16"/><text class="pr" x="64" y="244" font-size="14.5">parties and politicians</text><text class="sc end" x="318" y="244" font-size="12">each session</text></g>
+  <g class="a-fade" style="--d:0.80s"><rect class="pill" x="30" y="272" width="300" height="40" rx="6"/><use href="#mk-m" x="40" y="284" width="16" height="16"/><text class="pr" x="64" y="298" font-size="14.5">reference studies</text><text class="sc end" x="318" y="298" font-size="12">each session</text></g>
+  <g class="a-fade" style="--d:0.95s"><rect class="pill" x="30" y="326" width="300" height="40" rx="6"/><use href="#mk-s" x="40" y="338" width="16" height="16"/><text class="pr" x="64" y="352" font-size="14.5">Évora 2027 pages</text><text class="sc end" x="318" y="352" font-size="12">every 2 hours</text></g>
+  <path class="ln a-fade" style="--d:1.2s" d="M338 90H364M356 84l8 6-8 6"/>
+  <g class="a-fade" style="--d:1.3s">
+    <rect class="nM" x="372" y="64" width="186" height="52" rx="12"/>
+    <text class="dt mid" x="465" y="86" font-size="13" style="fill:var(--paper)">sweep and sort</text>
+    <text class="it mid" x="465" y="104" font-size="12" style="fill:var(--paper)">a model, each session</text>
+    <use href="#mk-m" x="364" y="56" width="16" height="16"/>
+  </g>
+  <path class="ln a-fade" style="--d:1.5s" d="M465 118V132M459 125l6 7 6-7"/>
+  <g class="a-fade" style="--d:1.6s">
+    <rect class="pill" x="372" y="136" width="186" height="226" rx="6"/>
+    <text class="sc" x="386" y="160" font-size="14">shortlist, per item</text>
+    <line class="lg3" x1="372" y1="174" x2="558" y2="174"/>
+  </g>
+  <g class="pr" font-size="12.5">
+    <g class="a-fade" style="--d:1.9s"><rect class="f-ink" x="386" y="194" width="6" height="6"/><text x="400" y="201">the claim and who made it</text></g>
+    <g class="a-fade" style="--d:2.2s"><rect class="f-ink" x="386" y="228" width="6" height="6"/><text x="400" y="235">the numbers at stake</text></g>
+    <g class="a-fade" style="--d:2.5s"><rect class="f-ink" x="386" y="262" width="6" height="6"/><text x="400" y="269">the primary sources</text></g>
+    <g class="a-fade" style="--d:2.8s"><rect class="f-ink" x="386" y="296" width="6" height="6"/><text x="400" y="303">the layer it deserves</text></g>
+    <g class="a-fade" style="--d:3.1s"><rect class="f-ink" x="386" y="330" width="6" height="6"/><text x="400" y="337">the estimated cost</text></g>
+  </g>
+  <g class="a-fade" style="--d:.4s">
+    <rect class="pill" x="576" y="80" width="134" height="52" rx="6"/><text class="sc" x="588" y="111" font-size="13">panel item</text>
+    <rect class="pill" x="576" y="150" width="134" height="72" rx="6"/><text class="sc" x="588" y="181" font-size="13">article</text>
+    <rect class="pill" x="576" y="240" width="134" height="100" rx="6"/><text class="sc" x="588" y="271" font-size="13">study</text>
+  </g>
+  <rect class="f-ink a-move" style="--fx:-160px;--fy:101px;--d:3.5s;--t:1.2s" x="684" y="99" width="20" height="14" rx="7"/>
+  <rect class="f-ink a-move" style="--fx:-160px;--fy:21px;--d:4.0s;--t:1.2s" x="684" y="186" width="20" height="14" rx="7"/>
+  <rect class="f-ink a-move" style="--fx:-160px;--fy:-83px;--d:4.5s;--t:1.3s" x="684" y="310" width="20" height="14" rx="7"/>
+  <use href="#mk-m" x="196" y="374" width="16" height="16"/>
+  <text class="it" x="220" y="387" font-size="15">the director picks the layer for each item</text>
+  <text class="sc mid" x="360" y="416" font-size="13">dashed: built, switched off · news feeds by script: planned</text>
+</g>
+
+<!-- 07 FACT-CHECK -->
+<g class="scene" data-scene="factcheck" hidden>
+  <text class="sc a-fade" style="--d:.1s" x="20" y="34" font-size="14">what was said</text>
+  <g class="a-move" style="--fx:-40px;--fy:0px;--d:.2s">
+    <rect class="pill" x="20" y="46" width="232" height="104" rx="6"/>
+    <text class="sc" x="32" y="64" font-size="11.5">minister · rtp · 09.10.2026</text>
+    <text class="it" x="32" y="80" font-size="11.5">own words («palavras»)</text>
+    <text class="pr" x="32" y="104" font-size="13.5" font-style="italic">«… Se retirarmos isso, o orçamento</text>
+    <text class="pr" x="32" y="124" font-size="13.5" font-style="italic">da Saúde sobre 3%»</text>
+    <use href="#mk-s" x="232" y="52" width="14" height="14"/>
+  </g>
+  <g class="a-move" style="--fx:-40px;--fy:0px;--d:.6s">
+    <rect class="pill" x="20" y="160" width="232" height="112" rx="6"/>
+    <text class="sc" x="32" y="178" font-size="11.5">rtp · 09.10.2026</text>
+    <text class="it" x="32" y="194" font-size="11.5">own words («palavras»)</text>
+    <text class="pr" x="32" y="216" font-size="13.5" font-style="italic">«O orçamento para Saúde sofre</text>
+    <text class="pr" x="32" y="236" font-size="13.5" font-style="italic">um corte em 2027. Cai 1,5 por</text>
+    <text class="pr" x="32" y="256" font-size="13.5" font-style="italic">cento. …»</text>
+    <use href="#mk-s" x="232" y="166" width="14" height="14"/>
+  </g>
+  <g class="a-move" style="--fx:-40px;--fy:0px;--d:1.0s">
+    <rect class="pill" x="20" y="282" width="232" height="86" rx="6"/>
+    <text class="sc" x="32" y="300" font-size="11.5">pcp · 12.10.2026</text>
+    <text class="it" x="32" y="316" font-size="11.5">own words («palavras»)</text>
+    <text class="pr" x="32" y="338" font-size="13.5" font-style="italic">«O investimento sofre um corte</text>
+    <text class="pr" x="32" y="358" font-size="13.5" font-style="italic">brutal de 33,7%.»</text>
+  </g>
+  <g class="a-fade" style="--d:1.3s">
+    <text class="sc" x="282" y="34" font-size="14">the official document</text>
+    <rect class="pill" x="282" y="46" width="186" height="322" rx="6"/>
+    <text class="sc" x="294" y="68" font-size="11.5">oe 2027 · quadro 5.37</text>
+    <line class="lg3" x1="282" y1="80" x2="468" y2="80"/>
+    <text class="sc" x="294" y="104" font-size="11.5">total spending</text>
+    <text class="dt" x="294" y="132" font-size="22">−1,5 %</text>
+    <line class="lg3" x1="282" y1="148" x2="468" y2="148"/>
+    <text class="sc" x="294" y="170" font-size="11.5">effective, without prr</text>
+    <text class="dt" x="294" y="198" font-size="22">3,0 %</text>
+    <line class="lg3" x1="282" y1="214" x2="468" y2="214"/>
+    <text class="sc" x="294" y="236" font-size="11.5">investment, with prr</text>
+    <text class="dt" x="294" y="264" font-size="22">−33,7 %</text>
+    <text class="sc" x="294" y="294" font-size="11.5">investment, without prr</text>
+    <text class="dt" x="294" y="322" font-size="22">22,2 %</text>
+  </g>
+  <path class="lcob a-draw" style="--len:160;--d:1.9s" d="M252 104C270 104 266 190 282 190"/>
+  <path class="lcob a-draw" style="--len:160;--d:2.4s" d="M252 226C270 226 266 124 282 124"/>
+  <path class="lcob a-draw" style="--len:120;--d:2.9s" d="M252 336C270 336 266 256 282 256"/>
+  <path class="lcob a-pop" style="--d:2.3s" d="M438 188l5 5 10-12"/>
+  <path class="lcob a-pop" style="--d:2.8s" d="M438 122l5 5 10-12"/>
+  <path class="lcob a-pop" style="--d:3.3s" d="M438 256l5 5 10-12"/>
+  <g class="a-fade" style="--d:3.6s">
+    <text class="sc" x="488" y="34" font-size="14">the finding</text>
+    <rect class="pill" x="488" y="46" width="212" height="322" rx="6"/>
+    <use href="#mk-m" x="680" y="52" width="14" height="14"/>
+    <text class="dt" x="500" y="70" font-size="12.5">O orçamento da Saúde</text>
+    <text class="dt" x="500" y="88" font-size="12.5">para 2027: 3,0 % sem PRR</text>
+    <text class="dt" x="500" y="106" font-size="12.5">ou −1,5 % no total?</text>
+    <line class="lg3" x1="488" y1="120" x2="700" y2="120"/>
+  </g>
+  <g class="pr" font-size="13">
+    <g class="a-fade" style="--d:4.0s"><rect class="f-ink" x="500" y="134" width="7" height="7"/><text x="514" y="142">as it was said</text></g>
+    <g class="a-fade" style="--d:4.3s"><rect class="f-ink" x="500" y="160" width="7" height="7"/><text x="514" y="168">what the sources say</text></g>
+    <g class="a-fade" style="--d:4.6s"><rect class="f-ink" x="500" y="186" width="7" height="7"/><text x="514" y="194">the comparison</text></g>
+    <g class="a-fade" style="--d:4.9s"><rect class="f-ink" x="500" y="212" width="7" height="7"/><text x="514" y="220">the conclusion</text></g>
+    <g class="a-fade" style="--d:5.2s"><rect class="f-ink" x="500" y="238" width="7" height="7"/><text x="514" y="246">the recommendation</text></g>
+    <g class="a-fade" style="--d:5.5s"><rect class="f-paper o-ink" x="500" y="264" width="7" height="7"/><text x="514" y="272">the director’s opinion</text></g>
+  </g>
+  <g class="a-fade" style="--d:5.9s">
+    <text class="it" x="500" y="318" font-size="12">each claim matches a different</text>
+    <text class="it" x="500" y="334" font-size="12">line; none shows all three</text>
+  </g>
+  <g class="pr" font-size="12.5">
+    <g class="a-pop" style="--d:6.4s"><rect class="pill" x="20" y="384" width="222" height="30" rx="15"/><use href="#mk-s" x="28" y="392" width="14" height="14"/><text class="mid" x="137" y="403">quotes printed from rows</text></g>
+    <g class="a-pop" style="--d:6.6s"><rect class="pill" x="249" y="384" width="222" height="30" rx="15"/><use href="#mk-s" x="257" y="392" width="14" height="14"/><text class="mid" x="366" y="403">every number sealed</text></g>
+    <g class="a-pop" style="--d:6.8s"><rect class="pill" x="478" y="384" width="222" height="30" rx="15"/><use href="#mk-m" x="486" y="392" width="14" height="14"/><text class="mid" x="595" y="403">each sentence by its excerpt</text></g>
+    <g class="a-pop" style="--d:7.0s"><rect class="pill" x="20" y="422" width="222" height="30" rx="15"/><use href="#mk-s" x="28" y="430" width="14" height="14"/><text class="mid" x="137" y="441">counts and dates measured</text></g>
+    <g class="a-pop" style="--d:7.2s"><rect class="pill" x="249" y="422" width="222" height="30" rx="15"/><use href="#mk-m" x="257" y="430" width="14" height="14"/><text class="mid" x="366" y="441">read cold by another family</text></g>
+    <g class="a-pop" style="--d:7.4s"><rect class="pill" x="478" y="422" width="222" height="30" rx="15"/><use href="#mk-m" x="486" y="430" width="14" height="14"/><text class="mid" x="595" y="441">would a daily print it?</text></g>
+  </g>
+</g>
+
+<!-- 08 QUOTATIONS AND THE SEAL -->
+<g class="scene" data-scene="quotes" hidden>
+  <text class="sc a-fade" style="--d:.1s" x="20" y="32" font-size="14">every quotation declares its form</text>
+  <g class="a-pop" style="--d:.3s"><rect class="pill" x="20" y="44" width="196" height="32" rx="16"/><text class="pr mid" x="118" y="65" font-size="14">an assertion</text></g>
+  <g class="a-pop" style="--d:.5s"><rect class="pill" x="228" y="44" width="220" height="32" rx="16"/><text class="pr mid" x="338" y="65" font-size="14">the person’s own words</text></g>
+  <g class="a-pop" style="--d:.7s"><rect class="pill" x="460" y="44" width="240" height="32" rx="16"/><text class="pr mid" x="580" y="65" font-size="14">a press report · «relato»</text></g>
+  <g class="a-fade" style="--d:1.0s">
+    <use href="#mk-s" x="20" y="98" width="16" height="16"/>
+    <rect class="pill" x="44" y="94" width="112" height="24" rx="4"/><text class="dt" x="54" y="111" font-size="12.5">Segundo a RTP,</text>
+    <rect class="f-g3" x="164" y="102" width="70" height="9" rx="2"/><rect class="f-g3" x="240" y="102" width="44" height="9" rx="2"/><text class="pr" x="292" y="111" font-size="14" font-style="italic">«…»</text>
+  </g>
+  <path class="lcob a-pop" style="--d:1.4s" d="M384 104l5 5 10-12"/>
+  <text class="it a-fade" style="--d:1.4s" x="408" y="111" font-size="13.5">the report is named in the same sentence</text>
+  <g class="a-fade" style="--d:1.8s">
+    <use href="#mk-s" x="20" y="136" width="16" height="16"/>
+    <rect class="f-g3" x="48" y="140" width="96" height="9" rx="2"/><rect class="f-g3" x="150" y="140" width="60" height="9" rx="2"/><text class="pr" x="218" y="149" font-size="14" font-style="italic">«…»</text>
+  </g>
+  <rect class="f-amb o-ink a-pop" style="--d:2.2s" x="384" y="135" width="16" height="16" rx="2"/>
+  <text class="it a-fade" style="--d:2.2s" x="408" y="149" font-size="13.5">a press report that names no report: refused</text>
+  <g class="a-fade" style="--d:2.6s">
+    <use href="#mk-s" x="20" y="174" width="16" height="16"/>
+    <rect class="pill" x="44" y="170" width="84" height="24" rx="12"/><text class="pr mid" x="86" y="187" font-size="12.5">own words</text>
+    <text class="pr" x="138" y="187" font-size="14" font-style="italic">terá dito «…»</text>
+  </g>
+  <rect class="f-amb o-ink a-pop" style="--d:3.0s" x="384" y="173" width="16" height="16" rx="2"/>
+  <text class="it a-fade" style="--d:3.0s" x="408" y="187" font-size="13.5">own words framed as a report: refused</text>
+  <line class="lg3" x1="20" y1="218" x2="700" y2="218"/>
+  <text class="sc a-fade" style="--d:3.3s" x="20" y="246" font-size="14">where the «fonte» seal sits</text>
+  <g class="a-fade" style="--d:3.5s"><text class="dt" x="44" y="286" font-size="18">79 milhões de euros<tspan class="f-ink" dx="8">■</tspan><tspan class="pr" dx="4" font-size="15" font-weight="400" text-decoration="underline">fonte</tspan></text></g>
+  <path class="lcob a-pop" style="--d:3.9s" d="M384 278l5 5 10-12"/>
+  <text class="it a-fade" style="--d:3.9s" x="408" y="286" font-size="13.5">after the whole measure</text>
+  <g class="a-fade" style="--d:4.2s"><text class="dt" x="44" y="330" font-size="18">79<tspan class="f-ink" dx="8">■</tspan><tspan class="pr" dx="4" font-size="15" font-weight="400" text-decoration="underline">fonte</tspan><tspan dx="8">milhões</tspan></text></g>
+  <rect class="f-amb o-ink a-pop" style="--d:4.6s" x="384" y="316" width="16" height="16" rx="2"/>
+  <text class="it a-fade" style="--d:4.6s" x="408" y="330" font-size="13.5">inside the measure: refused</text>
+  <g class="a-fade" style="--d:4.9s"><text class="dt" x="44" y="374" font-size="18">79 milhões de euros<tspan class="f-ink" dx="8">■</tspan><tspan class="pr" dx="4" font-size="15" font-weight="400" text-decoration="underline">fonte</tspan><tspan class="f-ink" dx="6">■</tspan><tspan class="pr" dx="4" font-size="15" font-weight="400" text-decoration="underline">fonte</tspan></text></g>
+  <rect class="f-amb o-ink a-pop" style="--d:5.3s" x="384" y="360" width="16" height="16" rx="2"/>
+  <text class="it a-fade" style="--d:5.3s" x="408" y="374" font-size="13.5">two seals side by side: refused</text>
+  <g clip-path="url(#stripclip)">
+    <rect class="a-fade" style="--d:5.6s" x="20" y="426" width="680" height="26" fill="url(#pg)"/>
+    <rect class="scanx" x="20" y="424" width="24" height="30" style="fill:var(--cobalt)"/>
+  </g>
+  <g class="a-fade" style="--d:5.6s"><use href="#mk-s" x="20" y="400" width="16" height="16"/><text class="pr" x="44" y="413" font-size="14">a script reads the rendered text of all 9 823 pages</text></g>
+</g>
+
+<!-- 09 THE DIRECTOR AND THE MANDATE -->
+<g class="scene" data-scene="mandate" hidden>
+  <g class="a-fade" style="--d:.1s">
+    <rect class="pill" x="20" y="80" width="196" height="276" rx="10"/>
+    <use href="#mk-m" x="12" y="72" width="18" height="18"/>
+    <text class="sc mid" x="118" y="110" font-size="15">the director</text>
+    <text class="dt mid" x="118" y="134" font-size="16">a top-tier model</text>
+    <text class="it mid" x="118" y="152" font-size="13">the same role, always</text>
+    <line class="lg3" x1="20" y1="166" x2="216" y2="166"/>
+    <text class="it" x="36" y="192" font-size="14">decides what to cover</text>
+    <text class="it" x="36" y="216" font-size="14">writes the mandate</text>
+    <text class="it" x="36" y="240" font-size="14">writes the sentences</text>
+    <text class="it" x="36" y="264" font-size="14">reads them in both languages</text>
+    <line class="lg3" x1="20" y1="282" x2="216" y2="282"/>
+    <text class="sc" x="36" y="304" font-size="11.5">which model, today</text>
+    <text class="it" x="36" y="322" font-size="12.5">listed on the site’s</text><text class="it" x="36" y="340" font-size="12.5">AI policy page</text>
+  </g>
+  <line class="lg a-draw" style="--len:20;--d:.5s;stroke-dasharray:4 5" x1="216" y1="150" x2="232" y2="150"/>
+  <g class="a-fade" style="--d:.5s">
+    <rect class="pill" x="232" y="60" width="270" height="330" rx="8"/>
+    <text class="sc" x="252" y="94" font-size="17">mandate</text>
+    <text class="it" x="252" y="116" font-size="15">what to build, sentence by sentence</text>
+    <use href="#mk-s" x="412" y="124" width="14" height="14"/><text class="sc" x="430" y="135" font-size="11">measured</text>
+  </g>
+  <g class="f-g3">
+    <rect class="a-grow" style="--d:.9s" x="252" y="150" width="150" height="10" rx="2"/>
+    <rect class="a-grow" style="--d:1.2s" x="252" y="190" width="120" height="10" rx="2"/>
+    <rect class="a-grow" style="--d:1.5s" x="252" y="230" width="140" height="10" rx="2"/>
+    <rect class="a-grow" style="--d:1.8s" x="252" y="270" width="100" height="10" rx="2"/>
+    <rect class="a-grow" style="--d:2.1s" x="252" y="310" width="140" height="10" rx="2"/>
+    <rect class="a-grow" style="--d:2.4s" x="252" y="350" width="90" height="10" rx="2"/>
+  </g>
+  <g class="a-fade" style="--d:1s">
+    <use href="#mk-s" x="418" y="148" width="14" height="14"/><use href="#mk-s" x="418" y="188" width="14" height="14"/><use href="#mk-s" x="418" y="228" width="14" height="14"/>
+    <use href="#mk-s" x="418" y="268" width="14" height="14"/><use href="#mk-s" x="418" y="308" width="14" height="14"/><use href="#mk-s" x="418" y="348" width="14" height="14"/>
+  </g>
+  <path class="lcob a-pop" style="--d:1.3s" d="M452 156l6 6 12-14"/>
+  <path class="lcob a-pop" style="--d:1.6s" d="M452 196l6 6 12-14"/>
+  <path class="lcob a-pop" style="--d:1.9s" d="M452 236l6 6 12-14"/>
+  <rect class="f-amb o-ink a-pop" style="--d:2.2s" x="454" y="267" width="14" height="14" rx="2"/>
+  <path class="lcob a-pop" style="--d:2.5s" d="M452 316l6 6 12-14"/>
+  <path class="lcob a-pop" style="--d:2.8s" d="M452 356l6 6 12-14"/>
+  <text class="it a-fade" style="--d:2.3s" x="252" y="298" font-size="12">objected to by the builder: rewritten first</text>
+  <g class="a-fade" style="--d:3.2s">
+    <path class="ln" d="M540 430H632M622 423l10 7-10 7"/>
+    <text class="sc mid" x="586" y="414" font-size="15">to the builder</text>
+  </g>
+  <g class="a-fade" style="--d:3.6s">
+    <circle class="dot" cx="620" cy="196" r="22"/>
+    <path class="ln" d="M578 268Q620 220 662 268"/>
+    <use href="#mk-p" x="652" y="168" width="18" height="18"/>
+    <text class="sc mid" x="620" y="296" font-size="17">first reader</text>
+    <text class="it mid" x="620" y="318" font-size="15">the funder</text>
+  </g>
+  <g class="a-pop" style="--d:4.2s">
+    <path class="pill" d="M536 76h168a10 10 0 0 1 10 10v36a10 10 0 0 1-10 10h-74l-10 16-10-16h-74a10 10 0 0 1-10-10v-36a10 10 0 0 1 10-10z"/>
+    <text class="pr mid" x="620" y="110" font-size="16" font-style="italic">What was hard to read?</text>
+  </g>
+</g>
+
+<!-- 10 THE BUILDER -->
+<g class="scene" data-scene="builder" hidden>
+  <g class="a-fade" style="--d:.1s">
+    <rect class="pill" x="24" y="40" width="452" height="380" rx="8"/>
+    <path class="f-wash" d="M32 40h436a8 8 0 0 1 8 8v58H24V48a8 8 0 0 1 8-8z"/>
+    <use href="#mk-m" x="16" y="32" width="18" height="18"/>
+    <text class="sc" x="42" y="66" font-size="14">own worktree · own branch</text>
+    <text class="dt" x="42" y="92" font-size="17">the builder · a model</text>
+    <text class="it end" x="458" y="92" font-size="13">with a backup builder</text>
+  </g>
+  <rect class="f-g3 a-grow" style="--d:0.60s" x="60" y="129" width="260" height="10" rx="2"/>
+  <text class="dt a-fade" style="--d:0.82s" x="40" y="160" font-size="14">+</text>
+  <rect class="f-g3 a-grow" style="--d:0.82s;fill:var(--g1)" x="60" y="151" width="180" height="10" rx="2"/>
+  <text class="dt a-fade" style="--d:1.04s" x="40" y="182" font-size="14">+</text>
+  <rect class="a-grow" style="--d:1.04s;fill:var(--g1)" x="60" y="173" width="320" height="10" rx="2"/>
+  <rect class="f-g3 a-grow" style="--d:1.26s" x="60" y="195" width="220" height="10" rx="2"/>
+  <text class="dt c-g2 a-fade" style="--d:1.48s" x="40" y="226" font-size="14">−</text>
+  <rect class="a-grow" style="--d:1.48s;fill:var(--g2)" x="60" y="217" width="140" height="10" rx="2"/>
+  <text class="dt a-fade" style="--d:1.70s" x="40" y="248" font-size="14">+</text>
+  <rect class="a-grow" style="--d:1.70s;fill:var(--g1)" x="60" y="239" width="300" height="10" rx="2"/>
+  <text class="dt a-fade" style="--d:1.92s" x="40" y="270" font-size="14">+</text>
+  <rect class="a-grow" style="--d:1.92s;fill:var(--g1)" x="60" y="261" width="240" height="10" rx="2"/>
+  <rect class="f-g3 a-grow" style="--d:2.14s" x="60" y="283" width="190" height="10" rx="2"/>
+  <text class="dt a-fade" style="--d:2.36s" x="40" y="314" font-size="14">+</text>
+  <rect class="a-grow" style="--d:2.36s;fill:var(--g1)" x="60" y="305" width="350" height="10" rx="2"/>
+  <text class="dt a-fade" style="--d:2.58s" x="40" y="336" font-size="14">+</text>
+  <rect class="a-grow" style="--d:2.58s;fill:var(--g1)" x="60" y="327" width="160" height="10" rx="2"/>
+  <text class="dt c-g2 a-fade" style="--d:2.80s" x="40" y="358" font-size="14">−</text>
+  <rect class="a-grow" style="--d:2.80s;fill:var(--g2)" x="60" y="349" width="280" height="10" rx="2"/>
+  <rect class="f-g3 a-grow" style="--d:3.02s" x="60" y="371" width="210" height="10" rx="2"/>
+  <g class="a-fade" style="--d:.5s">
+    <use href="#mk-s" x="520" y="56" width="16" height="16"/><text class="sc" x="542" y="69" font-size="15">budget per pass</text>
+    <rect class="lg" x="520" y="82" width="190" height="16" rx="2"/>
+    <rect class="lg" x="520" y="132" width="190" height="16" rx="2"/>
+    <path class="ln" d="M710 76v28M710 126v28"/>
+    <text class="dt" x="520" y="120" font-size="14" font-weight="500">time · stops at 75 min</text>
+    <text class="dt" x="520" y="170" font-size="14" font-weight="500">calls · stops at 120</text>
+    <text class="it" x="520" y="188" font-size="12">a pass in progress</text>
+  </g>
+  <rect class="f-ink a-grow" style="--s:.62;--d:1s" x="520" y="82" width="190" height="16" rx="2"/>
+  <rect class="f-ink a-grow" style="--s:.48;--d:1.3s" x="520" y="132" width="190" height="16" rx="2"/>
+  <g class="a-fade" style="--d:1.8s">
+    <rect class="pill" x="520" y="208" width="18" height="15" rx="3"/><path class="ln" d="M523 208v-5a6 6 0 0 1 12 0v5"/>
+    <text class="sc" x="546" y="221" font-size="14">one build at a time</text>
+  </g>
+  <g class="a-fade" style="--d:2.2s">
+    <use href="#mk-m" x="520" y="246" width="16" height="16"/><text class="sc" x="542" y="259" font-size="15">models in 5 places</text>
+    <text class="it" x="520" y="282" font-size="12.5">watch · mandate · build · read · fix</text>
+    <use href="#mk-s" x="520" y="322" width="16" height="16"/><text class="sc" x="542" y="335" font-size="15">scripts · no model</text>
+  </g>
+  <g class="a-fade" style="--d:2.4s">
+    <line class="lg" x1="508" y1="390" x2="712" y2="390"/>
+    <g class="lg3"><circle cx="522" cy="400" r="6"/><circle cx="562" cy="400" r="6"/><circle cx="602" cy="400" r="6"/><circle cx="642" cy="400" r="6"/><circle cx="682" cy="400" r="6"/></g>
+    <line class="lg" x1="508" y1="410" x2="712" y2="410"/>
+    <g clip-path="url(#beltclip)"><g class="belt">
+      <g class="pr" font-size="11">
+        <rect class="pill" x="512" y="362" width="46" height="24" rx="3"/><text class="mid" x="535" y="378">seal</text>
+        <rect class="pill" x="564" y="362" width="46" height="24" rx="3"/><text class="mid" x="587" y="378">compose</text>
+        <rect class="pill" x="616" y="362" width="46" height="24" rx="3"/><text class="mid" x="639" y="378">check</text>
+        <rect class="pill" x="668" y="362" width="46" height="24" rx="3"/><text class="mid" x="691" y="378">capture</text>
+        <rect class="pill" x="720" y="362" width="46" height="24" rx="3"/><text class="mid" x="743" y="378">land</text>
+        <rect class="pill" x="772" y="362" width="46" height="24" rx="3"/><text class="mid" x="795" y="378">seal</text>
+        <rect class="pill" x="824" y="362" width="46" height="24" rx="3"/><text class="mid" x="847" y="378">compose</text>
+        <rect class="pill" x="876" y="362" width="46" height="24" rx="3"/><text class="mid" x="899" y="378">check</text>
+        <rect class="pill" x="928" y="362" width="46" height="24" rx="3"/><text class="mid" x="951" y="378">capture</text>
+        <rect class="pill" x="980" y="362" width="46" height="24" rx="3"/><text class="mid" x="1003" y="378">land</text>
+      </g>
+    </g></g>
+  </g>
+</g>
+
+<!-- 11 THE COLD READ -->
+<g class="scene" data-scene="coldread" hidden>
+  <g class="a-fade" style="--d:.1s">
+    <rect class="pill" x="24" y="40" width="440" height="330" rx="8"/>
+    <path class="f-wash" d="M32 40h424a8 8 0 0 1 8 8v32H24V48a8 8 0 0 1 8-8z"/>
+    <text class="sc" x="42" y="66" font-size="14">review package</text>
+    <use href="#mk-s" x="300" y="54" width="14" height="14"/><text class="sc" x="320" y="66" font-size="11.5">assembled by script</text>
+  </g>
+  <g class="a-fade" style="--d:0.30s"><path class="pill" d="M44 102h10l5 5v15H44z"/><text class="dt" x="70" y="117" font-size="14" font-weight="500">brief.md</text><text class="it" x="272" y="117" font-size="12">the mandate</text></g>
+  <g class="a-fade" style="--d:0.42s"><path class="pill" d="M44 148h10l5 5v15H44z"/><text class="dt" x="70" y="163" font-size="14" font-weight="500">relatorio-construtor.md</text><text class="it" x="272" y="163" font-size="12">the builder’s report</text></g>
+  <g class="a-fade" style="--d:0.54s"><path class="pill" d="M44 194h10l5 5v15H44z"/><text class="dt" x="70" y="209" font-size="14" font-weight="500">diff.patch</text><text class="it" x="272" y="209" font-size="12">base to head</text></g>
+  <g class="a-fade" style="--d:0.66s"><path class="pill" d="M44 240h10l5 5v15H44z"/><text class="dt" x="70" y="255" font-size="14" font-weight="500">changed files/</text><text class="it" x="272" y="255" font-size="12">code and checks</text></g>
+  <g class="a-fade" style="--d:0.78s"><path class="pill" d="M44 286h10l5 5v15H44z"/><text class="dt" x="70" y="301" font-size="14" font-weight="500">built/</text><text class="it" x="272" y="301" font-size="12">the built pages</text></g>
+  <g class="a-fade" style="--d:0.90s"><path class="pill" d="M44 332h10l5 5v15H44z"/><text class="dt" x="70" y="347" font-size="14" font-weight="500">hosted documents/</text><text class="it" x="272" y="347" font-size="12">by fingerprint</text></g>
+  <g class="a-pop" style="--d:1.6s"><circle class="dot" cx="410" cy="158" r="10"/><text class="dt mid" x="410" y="162" font-size="11">1</text></g>
+  <g class="a-pop" style="--d:2.55s"><circle class="dot" cx="410" cy="204" r="10"/><text class="dt mid" x="410" y="208" font-size="11">2</text></g>
+  <g class="a-pop" style="--d:3.5s"><circle class="dot" cx="436" cy="204" r="10"/><text class="dt mid" x="436" y="208" font-size="11">3</text></g>
+  <g class="a-pop" style="--d:4.5s"><circle class="dot" cx="410" cy="250" r="10"/><text class="dt mid" x="410" y="254" font-size="11">4</text></g>
+  <g class="a-pop" style="--d:5.5s"><circle class="dot" cx="410" cy="296" r="10"/><text class="dt mid" x="410" y="300" font-size="11">5</text></g>
+  <g class="a-pop" style="--d:6.45s"><rect class="f-amb o-ink" x="428" y="288" width="16" height="16" transform="rotate(45 436 296)"/></g>
+  <text class="sc a-fade" style="--d:6.5s" x="44" y="396" font-size="11.5">numbered: planted faults · diamond: a real one</text>
+  <g class="a-fade" style="--d:.8s"><use href="#mk-m" x="40" y="414" width="16" height="16"/><text class="it" x="64" y="424" font-size="12.5">after a correction that changes a sentence,</text><text class="it" x="64" y="440" font-size="12.5">a number or a check: a short read</text></g>
+  <g class="scan2">
+    <circle cx="420" cy="400" r="22" fill="var(--wash)" stroke="var(--ink)" stroke-width="2.2"/>
+    <line x1="436" y1="416" x2="452" y2="432" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g class="a-fade" style="--d:.4s">
+    <rect class="pill" x="490" y="40" width="90" height="56" rx="4"/><path class="ln" d="M490 40l45 32 45-32"/>
+    <use href="#mk-s" x="574" y="32" width="14" height="14"/>
+    <text class="dt" x="596" y="62" font-size="12" font-weight="500">plantas.json</text>
+    <text class="sc" x="596" y="80" font-size="11.5">5 faults · sha256</text>
+    <use href="#mk-m" x="490" y="112" width="16" height="16"/><text class="sc" x="512" y="125" font-size="15">the reader</text>
+    <text class="pr" x="490" y="148" font-size="13">always from a different</text>
+    <text class="pr" x="490" y="168" font-size="13">model family than the</text>
+    <text class="pr" x="490" y="186" font-size="13">builder, and read-only</text>
+    <text class="sc" x="490" y="216" font-size="13">planted faults found</text>
+  </g>
+  <text class="dt" id="found" x="490" y="252" font-size="34" font-weight="700">5 / 5</text>
+  <g class="a-fade" style="--d:.6s">
+    <text class="sc" x="490" y="284" font-size="13">findings</text>
+    <text class="dt" x="490" y="306" font-size="13" font-weight="500">Blocking · Major</text><text class="it" x="490" y="323" font-size="12.5">fixed before release</text>
+    <text class="dt" x="490" y="346" font-size="13" font-weight="500">Minor</text><text class="it" x="490" y="363" font-size="12.5">the Friday clean-up</text>
+  </g>
+  <g class="a-pop" style="--d:7s">
+    <rect class="f-amb o-ink" x="490" y="380" width="220" height="66" rx="4"/>
+    <text class="dt on-amb" x="502" y="398" font-size="12" font-weight="700">NEVER LANDS</text>
+    <text class="pr on-amb" x="502" y="416" font-size="12" font-style="italic">a finding about a person, a false</text>
+    <text class="pr on-amb" x="502" y="433" font-size="12" font-style="italic">sentence, a cause stated as fact</text>
+  </g>
+</g>
+
+<!-- 12 BUILD GATES -->
+<g class="scene" data-scene="gates" hidden>
+  <g class="a-fade" style="--d:.05s">
+    <use href="#mk-s" x="20" y="20" width="16" height="16"/>
+    <text class="sc" x="42" y="33" font-size="14">build · 28 chained steps</text>
+    <text class="sc end" x="700" y="33" font-size="12">the first red step stops everything</text>
+  </g>
+  <g transform="translate(20 44)">
+    <rect class="a-grow" style="--d:.2s" width="672" height="16" fill="url(#rg)"/>
+    <g class="f-ink a-fade" style="--d:1s"><rect x="25" y="1" width="16" height="14" rx="2"/><rect x="49" y="1" width="16" height="14" rx="2"/><rect x="97" y="1" width="16" height="14" rx="2"/><rect x="217" y="1" width="16" height="14" rx="2"/><rect x="313" y="1" width="16" height="14" rx="2"/></g>
+  </g>
+  <text class="it a-fade" style="--d:1s" x="20" y="80" font-size="12">filled: the five drawn below</text>
+  <g class="a-fade" style="--d:.5s">
+    <text class="sc" x="42" y="104" font-size="14">full verification · 58 steps + type check</text>
+    <use href="#mk-s" x="20" y="91" width="16" height="16"/>
+  </g>
+  <g transform="translate(20 114)">
+    <rect class="a-grow" style="--d:.6s" width="661.2" height="16" fill="url(#rv)"/>
+    <rect class="f-ink a-pop" style="--d:1.4s" x="664" y="1" width="10" height="14" rx="1.5"/>
+  </g>
+  <line class="lg" x1="20" y1="330" x2="700" y2="330"/>
+  <g class="ln">
+    <path d="M90 330V200H130V330"/><path d="M210 330V200H250V330"/><path d="M330 330V200H370V330"/><path d="M450 330V200H490V330"/><path d="M570 330V200H610V330"/>
+  </g>
+  <circle class="f-cob o-ink a-lamp" style="--d:.87s" cx="110" cy="184" r="9"/>
+  <circle class="f-amb o-ink lamp2" cx="230" cy="184" r="9"/>
+  <circle class="f-cob o-ink a-lamp" style="--d:1.82s" cx="350" cy="184" r="9"/>
+  <circle class="f-cob o-ink a-lamp" style="--d:2.29s" cx="470" cy="184" r="9"/>
+  <circle class="f-cob o-ink a-lamp" style="--d:2.77s" cx="590" cy="184" r="9"/>
+  <text class="dt mid" x="110" y="350" font-size="11.5" font-weight="500">ledger:check</text><text class="sc mid" x="110" y="366" font-size="12">rows complete</text>
+  <text class="dt mid" x="230" y="350" font-size="11.5" font-weight="500">check:registo</text><text class="sc mid" x="230" y="366" font-size="12">docs are true</text>
+  <text class="dt mid" x="350" y="350" font-size="11.5" font-weight="500">check:documentos</text><text class="sc mid" x="350" y="366" font-size="12">studies intact</text>
+  <text class="dt mid" x="470" y="350" font-size="11.5" font-weight="500">gate:html</text><text class="sc mid" x="470" y="366" font-size="12">every digit</text>
+  <text class="dt mid" x="590" y="350" font-size="11.5" font-weight="500">check:cadeia</text><text class="sc mid" x="590" y="366" font-size="12">digit chains</text>
+  <g class="walk" style="--d:.2s"><rect class="pill" x="0" y="212" width="86" height="30" rx="15"/><text class="dt" x="10" y="233" font-size="14">58 567</text><rect class="pp" x="66" y="218" width="11" height="17" rx="2"/></g>
+  <g class="walk" style="--d:.8s"><rect class="pill" x="0" y="296" width="86" height="30" rx="15"/><text class="dt" x="12" y="317" font-size="14">3,0 %</text><rect class="pp" x="66" y="302" width="11" height="17" rx="2"/></g>
+  <g class="walk" style="--d:1.4s"><rect class="pill" x="0" y="254" width="86" height="30" rx="15"/><text class="dt" x="8" y="275" font-size="14">−33,7 %</text><rect class="pp" x="68" y="260" width="11" height="17" rx="2"/></g>
+  <g class="a-move" style="--fx:-220px;--fy:0px;--d:3.4s;--t:1.6s"><rect class="pill-x" x="134" y="254" width="72" height="30" rx="15"/><text class="dt" x="145" y="275" font-size="14">53 011</text></g>
+  <rect class="f-amb o-ink a-pop" style="--d:5.0s" x="206" y="263" width="48" height="9" rx="2"/>
+  <g class="a-pop" style="--d:5.3s">
+    <rect class="f-amb o-ink" x="200" y="384" width="320" height="62" rx="5"/>
+    <text class="dt mid on-amb" x="360" y="412" font-size="24" font-weight="700">BUILD FAILED</text>
+    <text class="pr mid on-amb" x="360" y="434" font-size="14" font-style="italic">nothing is published until it passes</text>
+  </g>
+</g>
+
+<!-- 13 LANDING IN BATCHES, AND COST -->
+<g class="scene" data-scene="landing" hidden>
+  <text class="sc a-fade" style="--d:.1s" x="24" y="36" font-size="14">one day · at most two batches</text>
+  <g class="a-fade" style="--d:.2s">
+    <line class="lg" x1="24" y1="150" x2="410" y2="150"/>
+    <rect class="pill" x="150" y="62" width="100" height="76" rx="6"/><text class="sc mid" x="200" y="82" font-size="11">first batch</text>
+    <rect class="pill" x="300" y="62" width="100" height="76" rx="6"/><text class="sc mid" x="350" y="82" font-size="11">second batch</text>
+    <path class="lg" d="M200 138v12M350 138v12"/>
+  </g>
+  <rect class="f-ink a-move" style="--fx:-150px;--fy:0px;--d:.6s" x="166" y="96" width="18" height="18" rx="3"/>
+  <rect class="f-ink a-move" style="--fx:-150px;--fy:0px;--d:.9s" x="191" y="96" width="18" height="18" rx="3"/>
+  <rect class="f-ink a-move" style="--fx:-150px;--fy:0px;--d:1.2s" x="216" y="96" width="18" height="18" rx="3"/>
+  <rect class="f-ink a-move" style="--fx:-300px;--fy:0px;--d:1.6s" x="328" y="96" width="18" height="18" rx="3"/>
+  <rect class="f-ink a-move" style="--fx:-300px;--fy:0px;--d:1.9s" x="354" y="96" width="18" height="18" rx="3"/>
+  <text class="it a-fade" style="--d:.3s" x="24" y="108" font-size="12.5">finished</text><text class="it a-fade" style="--d:.3s" x="24" y="124" font-size="12.5">blocks wait</text>
+  <g class="a-fade" style="--d:2.2s">
+    <use href="#mk-s" x="24" y="180" width="16" height="16"/>
+    <text class="sc" x="46" y="193" font-size="13">independent full check, on the exact version</text>
+    <rect class="lg" x="24" y="204" width="386" height="18" rx="3"/>
+  </g>
+  <rect class="f-cob a-grow" style="--d:2.4s" x="24" y="204" width="386" height="18" rx="3"/>
+  <text class="it a-fade" style="--d:2.6s" x="24" y="242" font-size="12.5">33 to 50 minutes on 02 and 03.11.2026</text>
+  <g class="a-fade" style="--d:3s">
+    <use href="#mk-s" x="24" y="266" width="16" height="16"/>
+    <text class="sc" x="46" y="279" font-size="13">then, on the machine</text>
+    <rect class="pill" x="24" y="292" width="118" height="38" rx="6"/><text class="pr mid" x="83" y="316" font-size="13">machine checks</text>
+    <path class="ln" d="M146 311H160M154 306l6 5-6 5"/>
+    <rect class="pill" x="164" y="292" width="118" height="38" rx="6"/><text class="pr mid" x="223" y="316" font-size="13">merge into main</text>
+    <path class="ln" d="M286 311H300M294 306l6 5-6 5"/>
+    <rect class="pill" x="304" y="292" width="106" height="38" rx="6"/><text class="pr mid" x="357" y="316" font-size="13">push</text>
+  </g>
+  <circle class="f-cob o-ink a-lamp" style="--d:3.3s" cx="83" cy="292" r="5"/><circle class="f-cob o-ink a-lamp" style="--d:3.6s" cx="223" cy="292" r="5"/><circle class="f-cob o-ink a-lamp" style="--d:3.9s" cx="357" cy="292" r="5"/>
+  <g class="a-fade" style="--d:4.4s">
+    <use href="#mk-p" x="24" y="372" width="18" height="18"/>
+    <text class="pr" x="50" y="386" font-size="14.5">a block over budget stops</text>
+    <text class="pr" x="50" y="406" font-size="14.5">and goes to the funder</text>
+  </g>
+  <g class="a-fade" style="--d:.4s">
+    <use href="#mk-s" x="450" y="22" width="16" height="16"/>
+    <text class="sc" x="472" y="35" font-size="14">model cost per block</text>
+    <text class="it" x="450" y="56" font-size="12.5">measured and committed · 03.11.2026</text>
+    <line class="ln" x1="450" y1="410" x2="700" y2="410"/>
+  </g>
+  <rect class="f-amb o-ink a-rise" style="--d:1.2s" x="540" y="168" width="60" height="242"/>
+  <rect class="f-amb o-ink a-rise" style="--d:1.5s" x="630" y="234" width="60" height="176"/>
+  <g class="a-fade" style="--d:2.0s">
+    <text class="dt mid" x="570" y="158" font-size="20">11</text>
+    <text class="dt mid" x="660" y="224" font-size="20">8</text>
+    <text class="sc mid" x="615" y="430" font-size="12">points per block</text>
+  </g>
+  <line class="lcob a-draw" style="--len:260;--d:2.4s" x1="450" y1="300" x2="700" y2="300"/>
+  <g class="a-fade" style="--d:2.6s">
+    <text class="sc c-cob" x="450" y="292" font-size="11.5">target:</text><text class="sc c-cob" x="450" y="318" font-size="11.5">fewer than 5</text>
+  </g>
+  <g class="a-pop" style="--d:3.2s"><use href="#mk-p" x="584" y="142" width="16" height="16"/></g>
+  <g class="a-pop" style="--d:3.4s"><use href="#mk-p" x="670" y="208" width="16" height="16"/></g>
+  <g class="a-fade" style="--d:3.6s">
+    <text class="it" x="450" y="84" font-size="12.5">the funder approved both,</text>
+    <text class="it" x="450" y="100" font-size="12.5">each time the director asked</text>
+  </g>
+</g>
+
+<!-- 14 LIVE, AND CHECKED LIVE -->
+<g class="scene" data-scene="live" hidden>
+  <g class="a-fade" style="--d:0.20s"><rect class="pill" x="20" y="110" width="100" height="44" rx="8"/><text class="pr mid" x="70" y="137" font-size="14">branch</text><text class="sc mid" x="70" y="176" font-size="11">the work</text></g>
+  <circle class="f-cob o-ink a-lamp" style="--d:0.8s" cx="70" cy="90" r="8"/>
+  <path class="lg" d="M120 132H134"/>
+  <g class="a-fade" style="--d:0.30s"><rect class="pill" x="136" y="110" width="100" height="44" rx="8"/><text class="pr mid" x="186" y="137" font-size="14">check run</text><text class="sc mid" x="186" y="176" font-size="11">full check</text></g>
+  <circle class="f-cob o-ink a-lamp" style="--d:1.4s" cx="186" cy="90" r="8"/>
+  <path class="lg" d="M236 132H250"/>
+  <g class="a-fade" style="--d:0.40s"><rect class="pill" x="252" y="110" width="100" height="44" rx="8"/><text class="pr mid" x="302" y="137" font-size="14">machine</text><text class="sc mid" x="302" y="176" font-size="11">checks</text></g>
+  <circle class="f-cob o-ink a-lamp" style="--d:2.0s" cx="302" cy="90" r="8"/>
+  <path class="lg" d="M352 132H366"/>
+  <g class="a-fade" style="--d:0.50s"><rect class="pill" x="368" y="110" width="100" height="44" rx="8"/><text class="pr mid" x="418" y="137" font-size="14">main</text><text class="sc mid" x="418" y="176" font-size="11">merge, push</text></g>
+  <circle class="f-cob o-ink a-lamp" style="--d:2.6s" cx="418" cy="90" r="8"/>
+  <path class="lg" d="M468 132H482"/>
+  <g class="a-fade" style="--d:0.60s"><rect class="pill" x="484" y="110" width="100" height="44" rx="8"/><text class="pr mid" x="534" y="137" font-size="14">publishing</text><text class="sc mid" x="534" y="176" font-size="11">about 33 min</text></g>
+  <circle class="f-cob o-ink a-lamp" style="--d:3.2s" cx="534" cy="90" r="8"/>
+  <path class="lg" d="M584 132H598"/>
+  <g class="a-fade" style="--d:0.70s"><rect class="pill" x="600" y="110" width="100" height="44" rx="8"/><text class="pr mid" x="650" y="137" font-size="14">live</text><text class="sc mid" x="650" y="176" font-size="11">oestadodopaís.pt</text></g>
+  <circle class="f-cob o-ink a-lamp" style="--d:3.8s" cx="650" cy="90" r="8"/>
+  <g class="a-fade" style="--d:.9s"><use href="#mk-s" x="20" y="22" width="16" height="16"/><text class="sc" x="42" y="35" font-size="13">every box is a script</text></g>
+  <path class="lg a-draw" style="--len:300;--d:4.2s;stroke-dasharray:5 4" d="M418 80C430 44 638 44 650 80"/>
+  <g class="a-fade" style="--d:4.4s"><use href="#mk-x" x="440" y="22" width="14" height="14"/><text class="sc" x="460" y="33" font-size="11.5">next: upload the checked build,</text><text class="sc" x="460" y="48" font-size="11.5">promote it when the check is green</text></g>
+  <g class="flowdot"><circle class="f-ink" r="5"><animateMotion begin="indefinite" data-at="0" dur="3.6s" fill="freeze" path="M70 132H650"/><animate attributeName="opacity" begin="indefinite" data-at="0" dur="3.6s" fill="freeze" values="1;1;0" keyTimes="0;.92;1"/></circle></g>
+  <g class="a-fade" style="--d:4.6s"><use href="#mk-s" x="28" y="224" width="16" height="16"/><text class="sc" x="50" y="237" font-size="13.5">then verify:deploy asks the live site</text></g>
+  <path class="lcob a-pop" style="--d:4.9s" d="M32 263l5 5 10-12"/><text class="pr a-fade" style="--d:4.8s" x="56" y="268" font-size="14">is the version on air the one on main?</text>
+  <path class="lcob a-pop" style="--d:5.2s" d="M32 291l5 5 10-12"/><text class="pr a-fade" style="--d:5.1s" x="56" y="296" font-size="14">are the security headers there?</text>
+  <path class="lcob a-pop" style="--d:5.5s" d="M32 319l5 5 10-12"/><text class="pr a-fade" style="--d:5.4s" x="56" y="324" font-size="14">do the other addresses redirect?</text>
+  <path class="lcob a-pop" style="--d:5.8s" d="M32 347l5 5 10-12"/><text class="pr a-fade" style="--d:5.7s" x="56" y="352" font-size="14">its own «not found» page per language?</text>
+  <g class="a-fade" style="--d:5.9s"><use href="#mk-s" x="369" y="224" width="16" height="16"/><text class="sc" x="391" y="237" font-size="13">captures · five widths · both languages</text></g>
+  <g class="a-pop" style="--d:6.1s"><rect class="pill" x="369.3" y="278" width="23.4" height="52" rx="3"/><text class="dt mid" x="381" y="348" font-size="12" font-weight="500">390</text></g>
+  <g class="a-pop" style="--d:6.3s"><rect class="pill" x="400.7" y="290" width="46.1" height="40" rx="3"/></g>
+  <g class="a-pop" style="--d:6.5s"><rect class="pill" x="454.8" y="290" width="61.4" height="40" rx="3"/></g>
+  <g class="a-pop" style="--d:6.7s"><rect class="pill" x="524.2" y="290" width="76.8" height="40" rx="3"/></g>
+  <g class="a-pop" style="--d:6.9s"><rect class="pill" x="609" y="290" width="96" height="40" rx="3"/><text class="dt mid" x="657" y="348" font-size="12" font-weight="500">1 600 px</text></g>
+  <g class="a-fade" style="--d:7.2s"><use href="#mk-p" x="369" y="366" width="18" height="18"/><text class="pr" x="395" y="380" font-size="14">to the funder, who reads them as a reader</text></g>
+  <text class="it mid a-fade" style="--d:7.4s" x="360" y="436" font-size="15">nothing red reaches main; what is live is checked, not assumed</text>
+</g>
+
+<!-- 15 THE PAGE -->
+<g class="scene" data-scene="page" hidden>
+  <g class="a-fade" style="--d:.1s">
+    <rect class="pill" x="24" y="40" width="380" height="330" rx="10"/>
+    <line class="lg" x1="24" y1="74" x2="404" y2="74"/>
+    <circle class="f-g3" cx="42" cy="57" r="4" style="fill:var(--g2)"/><circle cx="56" cy="57" r="4" style="fill:var(--g2)"/><circle cx="70" cy="57" r="4" style="fill:var(--g2)"/>
+    <text class="dt c-g1" x="88" y="62" font-size="13" font-weight="500">oestadodopaís.pt/municipios/evora</text>
+    <text class="sc" x="52" y="124" font-size="15">évora · população residente, 2025</text>
+  </g>
+  <g class="a-fade" style="--d:.5s">
+    <text class="dt" x="52" y="206" font-size="64">58 567</text>
+    <text class="it" x="52" y="238" font-size="20">pessoas</text>
+  </g>
+  <g class="a-pop" style="--d:.9s">
+    <rect class="f-ink" x="294" y="178" width="13" height="13"/>
+    <text class="pr" x="313" y="191" font-size="18">fonte</text>
+    <line class="ln" x1="313" y1="196" x2="355" y2="196" stroke-width="1"/>
+  </g>
+  <circle class="ripple ln" style="--d:2.4s" cx="300" cy="184" r="16"/>
+  <path class="cursor" style="--d:1.3s;fill:var(--paper);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round" d="M318 196l0 26 6-6 5 11 5-2-5-11 9 0z"/>
+  <g class="a-move" style="--fx:-60px;--fy:0px;--d:2.6s;--t:.9s">
+    <rect class="pill" x="430" y="40" width="270" height="186" rx="8"/>
+    <text class="sc" x="448" y="70" font-size="15">ledger row</text>
+    <text class="dt" x="448" y="98" font-size="14" font-weight="500">evora-populacao-2025</text>
+    <text class="dt" x="448" y="122" font-size="14" font-weight="500">INE · indicador 0012918</text>
+    <text class="dt" x="448" y="146" font-size="14" font-weight="500">accessed 2026-08-10</text>
+    <text class="dt c-g1" x="448" y="172" font-size="12.5" font-weight="500">Dados["2025"], geocod</text>
+    <text class="dt c-g1" x="448" y="190" font-size="12.5" font-weight="500">1C40705, valor 58567</text>
+    <text class="it" x="448" y="214" font-size="13">re-checked twice: igual</text>
+  </g>
+  <g class="a-pop" style="--d:3.6s">
+    <rect class="pill" x="24" y="384" width="168" height="32" rx="16"/>
+    <text class="dt" x="38" y="405" font-size="12" font-weight="600">PT <tspan font-weight="500" class="c-g1">/municipios/evora</tspan></text>
+  </g>
+  <g class="a-pop" style="--d:3.9s">
+    <rect class="pill" x="198" y="384" width="212" height="32" rx="16"/>
+    <text class="dt" x="212" y="405" font-size="12" font-weight="600">EN <tspan font-weight="500" class="c-g1">/en/municipalities/evora</tspan></text>
+  </g>
+  <g class="a-fade" style="--d:4.4s">
+    <rect class="pill" x="430" y="246" width="270" height="170" rx="8"/>
+    <use href="#mk-s" x="680" y="254" width="14" height="14"/>
+    <text class="sc" x="448" y="276" font-size="15">one build, two editions</text>
+    <text class="dt" x="448" y="322" font-size="34">9 823</text>
+    <text class="it" x="448" y="346" font-size="15">built pages</text>
+    <text class="it" x="448" y="374" font-size="13">the seal’s place is checked</text>
+    <text class="it" x="448" y="392" font-size="13">on every one of them</text>
+  </g>
+</g>
+
+<!-- 16 EDITION HISTORY AND CORRECTIONS -->
+<g class="scene" data-scene="editions" hidden>
+  <text class="sc a-fade" style="--d:.1s" x="20" y="34" font-size="14">a study’s editions</text>
+  <g class="a-fade" style="--d:.2s">
+    <rect class="pill" x="20" y="50" width="150" height="128" rx="6"/>
+    <use href="#mk-s" x="150" y="56" width="14" height="14"/>
+    <text class="sc" x="34" y="74" font-size="13">first edition</text>
+    <rect class="pill" x="34" y="88" width="14" height="11" rx="2"/><path class="ln" d="M37 88v-4a4 4 0 0 1 8 0v4"/>
+    <text class="it" x="56" y="98" font-size="12.5">kept untouched</text>
+    <path class="lg" d="M34 116h100M34 126h84M34 136h108"/>
+  </g>
+  <line class="a-grow" style="--d:.6s;stroke:var(--ink);stroke-width:10;stroke-dasharray:2 1 4 2 1 3 2 2 3 1 1 2" x1="34" y1="160" x2="150" y2="160"/>
+  <path class="ln a-draw" style="--len:50;--d:1s" d="M172 100H200M192 94l8 6-8 6"/>
+  <g class="a-fade" style="--d:1.2s">
+    <rect class="pill-x" x="204" y="50" width="150" height="128" rx="6"/>
+    <text class="sc" x="218" y="74" font-size="13">text changed</text>
+    <text class="it" x="218" y="96" font-size="12.5">without a new</text>
+    <text class="it" x="218" y="112" font-size="12.5">version</text>
+  </g>
+  <g class="a-pop" style="--d:1.7s"><rect class="f-amb o-ink" x="216" y="134" width="126" height="30" rx="4"/><text class="dt mid on-amb" x="279" y="154" font-size="13" font-weight="700">BUILD FAILS</text></g>
+  <path class="ln a-draw" style="--len:420;--d:2.1s" d="M95 180C95 214 455 214 455 182M448 189l7-7 7 7"/>
+  <g class="a-fade" style="--d:2.5s">
+    <rect class="pill" x="380" y="50" width="150" height="128" rx="6"/>
+    <use href="#mk-s" x="510" y="56" width="14" height="14"/>
+    <text class="sc" x="394" y="74" font-size="13">new version</text>
+    <text class="it" x="394" y="96" font-size="12.5">its own fingerprint</text>
+    <path class="lg" d="M394 116h100M394 126h84M394 136h108"/>
+  </g>
+  <line class="a-grow" style="--d:2.8s;stroke:var(--ink);stroke-width:10;stroke-dasharray:1 2 3 1 2 4 1 1 3 2 2 1" x1="394" y1="160" x2="510" y2="160"/>
+  <path class="ln a-draw" style="--len:50;--d:3.1s" d="M532 100H554M546 94l8 6-8 6"/>
+  <g class="a-fade" style="--d:3.3s">
+    <rect class="pill" x="558" y="50" width="142" height="128" rx="6"/>
+    <text class="sc" x="570" y="74" font-size="12">corrections</text>
+    <text class="sc" x="570" y="90" font-size="12">register</text>
+    <text class="it" x="570" y="116" font-size="12.5">a dated entry</text>
+    <text class="it" x="570" y="134" font-size="12.5">for every change</text>
+    <text class="it" x="570" y="152" font-size="12.5">of text</text>
+  </g>
+  <path class="lcob a-pop" style="--d:3.7s" d="M668 158l5 5 10-12"/>
+  <line class="lg3" x1="20" y1="232" x2="700" y2="232"/>
+  <g class="a-fade" style="--d:3.9s">
+    <text class="sc" x="20" y="260" font-size="14">four kinds of correction</text>
+    <text class="dt end" x="700" y="262" font-size="20">45 <tspan class="sc" font-size="13" font-weight="500">published</tspan></text>
+  </g>
+  <g class="a-pop" style="--d:4.2s">
+    <rect class="pill" x="20" y="276" width="160" height="166" rx="6"/>
+    <rect class="f-amb o-ink" x="34" y="290" width="10" height="10" rx="1"/>
+    <text class="sc" x="52" y="300" font-size="13">correção</text>
+    <text class="it" x="34" y="326" font-size="12.5">a value, or a receipt</text>
+    <text class="it" x="34" y="343" font-size="12.5">field, was wrong when</text>
+    <text class="it" x="34" y="360" font-size="12.5">it was published</text>
+  </g>
+  <g class="a-pop" style="--d:4.4s">
+    <rect class="pill" x="193" y="276" width="160" height="166" rx="6"/>
+    <text class="sc" x="207" y="300" font-size="13">atualização</text>
+    <text class="it" x="207" y="326" font-size="12.5">it was right, and what</text>
+    <text class="it" x="207" y="343" font-size="12.5">it measures changed</text>
+  </g>
+  <g class="a-pop" style="--d:4.6s">
+    <rect class="pill" x="366" y="276" width="160" height="166" rx="6"/>
+    <text class="sc" x="380" y="300" font-size="13">revisão de</text>
+    <text class="sc" x="380" y="316" font-size="13">proveniência</text>
+    <text class="it" x="380" y="342" font-size="12.5">the path to the source</text>
+    <text class="it" x="380" y="359" font-size="12.5">changed later; this is</text>
+    <text class="it" x="380" y="376" font-size="12.5">not an error</text>
+  </g>
+  <g class="a-pop" style="--d:4.8s">
+    <rect class="pill" x="539" y="276" width="161" height="166" rx="6"/>
+    <text class="sc" x="553" y="300" font-size="13">estudo corrigido</text>
+    <text class="it" x="553" y="326" font-size="12.5">a study’s text was</text>
+    <text class="it" x="553" y="343" font-size="12.5">corrected; both versions</text>
+    <text class="it" x="553" y="360" font-size="12.5">are one tap away</text>
+  </g>
+</g>
+
+<!-- 17 IN NUMBERS -->
+<g class="scene" data-scene="size" hidden>
+  <text class="dt" id="bignum" x="24" y="96" font-size="64" font-weight="700">9 823</text>
+  <text class="it" x="24" y="128" font-size="19">built pages, Portuguese and English, from one build</text>
+  <g class="a-fade" style="--d:.4s">
+    <text class="sc" x="24" y="172" font-size="14">4 187 commits</text>
+  </g>
+  <rect class="f-ink a-grow" style="--d:.6s" x="24" y="182" width="544.6" height="40"/>
+  <rect class="f-wash a-grow" style="--d:1.0s;stroke:var(--ink);stroke-width:1.4" x="568.6" y="182" width="127.4" height="40"/>
+  <g class="a-fade" style="--d:1.4s">
+    <text class="dt" x="28" y="244" font-size="15" font-weight="500">3 393 <tspan class="sc" font-size="13">the site</tspan></text>
+    <text class="dt end" x="696" y="244" font-size="15" font-weight="500">794 <tspan class="sc" font-size="13">the engine</tspan></text>
+  </g>
+  <g class="a-fade" style="--d:1.8s"><text class="sc" x="24" y="290" font-size="14">4 144 ledger rows</text></g>
+  <rect class="f-ink a-grow" style="--d:2.0s" x="24" y="300" width="587.8" height="40"/>
+  <rect class="a-grow" style="--d:2.4s;fill:var(--paper);stroke:var(--ink);stroke-width:1.4;stroke-dasharray:4 3" x="611.8" y="300" width="84.2" height="40"/>
+  <text class="dt end a-fade" style="--d:2.6s" x="696" y="362" font-size="15" font-weight="500">519 <tspan class="sc" font-size="13">calculated from other rows</tspan></text>
+  <g class="a-fade" style="--d:3.0s">
+    <text class="pr" x="24" y="404" font-size="17">217 decisions · 58 publishers · 45 corrections · 28 + 59 steps</text>
+    <text class="it" x="24" y="436" font-size="15">measured 03.11.2026 · bars drawn to scale</text>
+  </g>
+</g>
+</svg>
+      </div>
+      <div class="prog" aria-hidden="true"><span id="prog"></span></div>
+      <div class="controls">
+        <button class="btn" id="back" type="button" aria-label="Previous step">‹ Back</button>
+        <button class="btn primary" id="play" type="button">Play all steps</button>
+        <button class="btn" id="next" type="button" aria-label="Next step">Next ›</button>
+        <span class="spacer"></span>
+        <button class="btn" id="replay" type="button">Replay step</button>
+      </div>
+      <div class="key">
+        <ul aria-label="Who does each part">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> deterministic: the same result every time</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> an AI judgment</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-p" width="16" height="16"/></svg><span><b>Person</b> the funder</span></li>
+        </ul>
+        <p class="legend"><span><i class="k-cob"></i>passed, or checked</span><span><i class="k-amb"></i>failed or stopped</span><span><i class="k-dash"></i>dashed: switched off, or planned</span></p>
+      </div>
+      <div class="route-wrap"><ol class="route" id="route"></ol></div>
+    </div>
+
+    <div class="copy" aria-live="polite">
+      <section class="copy-scene" data-scene="map">
+        <h2>Models judge in five places; scripts do everything around them</h2>
+        <p class="analogy">This map follows one piece of work from the morning watch to the live page. Every box is done by one of three kinds of actor: a script, which gives the same result every time; a model, which makes a judgment; or the funder, the one person in the loop. Judgment sits in five places: the watch, the mandate, the build, the cold read and the fixes.</p>
+        <p class="guard"><span class="gl">checks on the way</span><span class="gc"><b>28</b> build steps</span><span class="gc"><b>58 + 1</b> verification steps</span><span class="gc"><b>5</b> planted faults per cold read</span></p>
+        <div class="lanes">
+          <div><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><p style="margin:0"><b>Model</b><button class="jump" type="button" data-jump="watch">the sweep</button> · <button class="jump" type="button" data-jump="mandate">mandate</button> · <button class="jump" type="button" data-jump="builder">build</button> · <button class="jump" type="button" data-jump="coldread">cold read</button> · <button class="jump" type="button" data-jump="coldread">fixes and short reads</button></p></div>
+          <div><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><p style="margin:0"><b>Script</b><button class="jump" type="button" data-jump="watch">the Évora watch</button> · <button class="jump" type="button" data-jump="research">hosted documents</button> · <button class="jump" type="button" data-jump="mandate">facts measured</button> · <button class="jump" type="button" data-jump="builder">the budget and the lock</button> · <button class="jump" type="button" data-jump="gates">build and verification</button> · <button class="jump" type="button" data-jump="coldread">the package and its planted faults</button> · <button class="jump" type="button" data-jump="landing">the full check, merge, push, cost</button> · <button class="jump" type="button" data-jump="live">publishing, the live check, captures</button> · <button class="jump" type="button" data-jump="rechecks">re-checks</button></p></div>
+          <div><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-p" width="16" height="16"/></svg><p style="margin:0"><b>Person</b><button class="jump" type="button" data-jump="landing">decides on a block over budget</button> · <button class="jump" type="button" data-jump="live">reads the captures</button></p></div>
+        </div>
+        <div class="real"><h3>Details</h3><ul>
+          <li>The rule throughout: models write and judge, scripts do the rest. Where a model’s output is then checked by a script or by planted faults, the map draws the link in cobalt: the build is checked by the build and verification chains, the cold reader is tested by five planted faults, and each fix is checked again.</li>
+          <li>Dashed boxes are switched off or not yet built: the automatic watch of Parliament and the Diário da República and the daily re-check of every source (built, switched off), and the news feeds read by script and the upload of an already-checked build (planned).</li>
+          <li>Three parts follow: the data (publishers, the ledger, research, re-checks), the content (watch, fact-check, quotations, mandate, build, cold read) and publishing (gates, landing, the live check, the page, corrections).</li>
+          <li>The roles are named here, not the models: which model holds each role today is listed on the site’s AI policy page. The same goes for the services: an independent check service runs the full check, and a publishing service puts the site online.</li>
+          <li>Tap any box to open its step, or press play to go through all seventeen.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="sources" hidden>
+        <h2>Every figure comes from a public body’s own publication</h2>
+        <p class="analogy">Statistics offices, ministries, Parliament, the official journal and the press publish the documents. Who published each one is never typed by hand: a script measures the name in the hosted document itself, and the name must belong to a closed register of <span class="num">58</span> publishing bodies.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>1</b> register check on every receipt</span><span class="gc"><b>58</b> bodies in the register</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> reads the publisher’s name in the hosted source document: <code>og:site_name</code> on a web page, JSON-LD, the issuer of a PDF.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> refuses any receipt whose «Publicado por» is not in the register or does not match the document’s domain, so a person can never appear as a publisher.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> chooses which documents a piece of work needs, in the mandate. It does not decide who published them.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>The person quoted and the publisher are different fields. In the health budget case (step 07), the minister’s words were published by RTP, so RTP is the publisher.</li>
+          <li>Rows calculated from other rows have no single publisher; they name the rows they come from (step 03).</li>
+        </ul></div>
+        <p class="story"><strong>Found on 02.11.2026</strong><span class="num">26</span> receipts named the person quoted as the publisher. A newspaper article quoting someone, for example the Prime Minister, was credited to that person instead of the newspaper. All <span class="num">26</span> were fixed on every page of the site and listed as corrections, and the register check now refuses the whole class. The same day, rule <span class="num">15</span> was adopted: a defect a reader can see is fixed for its whole class, on every page, current and future, by a check with a planted fault that proves it bites. It is not fixed only on the page where it was found.</p>
+      </section>
+
+      <section class="copy-scene" data-scene="ledger" hidden>
+        <h2>One file per figure, and per quote</h2>
+        <p class="analogy">Nothing reaches a page as a typed number. Each figure, and each quote, is a small file in the ledger with its value, unit, source, document, link, the date it was read and the exact words it came from. Pages cite the file’s id, and the build fills in the value.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc">inside the <b>28</b> build steps</span><span class="gc">see step 12</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> the engine writes each row; the file itself says it is not edited by hand. Re-checks are written by the engine too.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> every build refuses a digit on a page that has no row, and recomputes every calculated value; a result that differs fails the build.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the mandate picks the figures a page needs, by id. Values reach the sentences as fields filled in by a script, never typed.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li><span class="num">4 144</span> files, measured 03.11.2026. The one on the left is real: Évora’s resident population in <span class="num">2025</span>, from INE indicator <span class="num">0012918</span>.</li>
+          <li><span class="num">519</span> rows have no single source because they are calculated from other rows. Each names the rows it comes from and carries its formula.</li>
+          <li>A page cites a row by its id, as <code>&lt;Claim id="…" /&gt;</code>. A number typed straight into a page fails the build.</li>
+          <li>The excerpt is copied word for word. What could not be confirmed at the source is never filled with a plausible value; the page says what is missing.</li>
+          <li>Re-checks are appended under <code>verifications</code>, never overwritten. Both re-checks of this row returned «igual» (unchanged).</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="research" hidden>
+        <h2>Every source document is kept, fingerprinted and measured</h2>
+        <p class="analogy">Research starts by hosting the documents. A copy of each is kept with its SHA-256 fingerprint, so anyone can later prove the copy is the one that was read. The facts the work depends on are then measured on that copy by a script, before any model writes about them.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc">a fingerprint on every hosted document</span><span class="gc">a package refused if one is missing</span><span class="gc">counts, ranks, causes and dates measured first</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> hosts each source document with its SHA-256 fingerprint.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> measures any count, rank, cause or date in a mandate on the hosted document, before the mandate is written.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> refuses a cold-read package when a hosted document is missing.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> a model prepares fact sheets. The director decides what they mean, and states a cause as interpretation until the source shows the mechanism.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>A conclusion keeps the measure, the definition and the qualification of every number it uses.</li>
+          <li>Saying a document is silent on something requires a full search of it, recorded in the mandate.</li>
+          <li>The cold reader works from the same hosted copies, checked by fingerprint, so the writer and the reader read the same text.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="rechecks" hidden>
+        <h2>Published values are checked again against their source</h2>
+        <p class="analogy">Sources revise their figures, so a published value can go stale. A script asks the source again and appends the answer to the row. A change is appended and listed, never written in silently.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>91</b> lines re-read every week</span><span class="gc">daily re-check: built, switched off</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> a weekly panel re-reads <span class="num">91</span> lines against their sources.</span></li>
+          <li class="off"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-x" width="16" height="16"/></svg><span><b>Script, switched off</b> the <i>corredor diário</i>, the daily re-check of every source at <span class="num">06:10</span> UTC, is built but not running.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>Every re-check is appended to its row, never overwritten. Totals so far: <span class="num">4 102</span> «igual» (unchanged), <span class="num">42</span> «diverge» (changed) and <span class="num">5</span> «inacessível» (unreachable), across <span class="num">2 636</span> rows.</li>
+          <li>The <i>corredor diário</i> is built to ask every source each morning and to download only what changed, using the publisher’s own «not modified» answer or a digital fingerprint, so a quiet day costs almost nothing.</li>
+        </ul></div>
+        <p class="story"><strong>Where it stands (measured 03.11.2026)</strong>On 02.11.2026 the weekly panel re-read <span class="num">91</span> lines: <span class="num">88</span> were unchanged and <span class="num">3</span> had been revised by Eurostat. The site lists the <span class="num">3</span> with their definitions until they are applied. The daily re-check is still switched off.</p>
+      </section>
+
+      <section class="copy-scene" data-scene="watch" hidden>
+        <h2>Each working session starts by reading the country</h2>
+        <p class="analogy">Before anything is built, a model reads the news, what parties and politicians say, and new reference studies, and sorts what it finds into a short list. The director chooses the layer each item deserves: a panel item, an article or a study. Reading the news feeds by script, with the model only sorting, is planned and not yet built.</p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> does the sweep at the start of each session: the news, the parties, the reference studies.</span></li>
+          <li class="off"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-x" width="16" height="16"/></svg><span><b>Script, planned</b> reading the news feeds by script, so that the model only sorts, is not yet built.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> runs specific watches when something is due, for example every two hours for the Évora <span class="num">2027</span> European Capital of Culture pages.</span></li>
+          <li class="off"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-x" width="16" height="16"/></svg><span><b>Script, switched off</b> the automatic daily watch of Parliament and the Diário da República is built but not running.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> an inexpensive model is meant to do this daily, and one is on trial for it.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the director picks the layer for each item.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>Each item on the list carries the claim and who made it, the numbers at stake, the primary sources, the layer it deserves and the estimated cost.</li>
+          <li>The sweep also collects public figures that quote one of the site’s measures with a different value, for a comparison note.</li>
+          <li>The session’s first block of content comes out of this list.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="factcheck" hidden>
+        <h2>A claim, set beside the document that measures it</h2>
+        <p class="analogy">This is what the project is for. A claim goes next to the official document that measures the same thing. The page then explains what each side shows, what it leaves out, what it means for people, and who is right and why. It ends with a conclusion, a recommendation and an opinion signed as the director’s.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc">every number sealed</span><span class="gc"><b>5</b> planted faults in the cold read</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the director writes the analysis: as it was said, what the sources say, the comparison, the conclusion, the recommendation and the director’s opinion.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> prints each quote from its ledger row, in its declared form, with its publisher.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> seals every number in the analysis like any other figure, and measures any count, rank, cause or date first.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> another model family reads the page cold and answers one question: would the editor of a Portuguese daily print it as it is?</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>A person is named only beside something they said or did in public, with the document a tap away, next to what the sources say about the same measure, period and population. The numbers judge, without adjectives; when the sources show a claim is false, the page says so.</li>
+          <li>The director writes each sentence of the analysis with the source excerpt beside it, and a sentence may say only what the sealed rows and the source say.</li>
+        </ul></div>
+        <p class="story"><strong>A real case, live on «O que se discute»</strong>The <span class="num">2027</span> health budget. The minister said the health budget rises <span class="num">3</span>% once the PRR recovery money is set aside; RTP reported a cut of <span class="num">1,5</span> per cent; the PCP said investment is cut by <span class="num">33,7</span>%. All three figures are in the same budget table (Quadro <span class="num">5.37</span>), each on a different line: spending without the PRR, total spending, and investment with the PRR. None of the three shows the lines together. Set the PRR aside and investment rises <span class="num">22,2</span> %. All three quotes are declared as the speakers’ own words, and the minister’s «sobre» stays as RTP published it.</p>
+      </section>
+
+      <section class="copy-scene" data-scene="quotes" hidden>
+        <h2>Every quotation keeps its form, and every seal keeps its place</h2>
+        <p class="analogy">Each quotation declares what it is: an assertion, the person’s own words, or a press report («relato»). Scripts hold each form to its rule, and check where every «fonte» seal sits on all <span class="num">9 823</span> built pages.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>2</b> script checks</span><span class="gc"><b>9 823</b> pages read</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> refuses a press report that does not name the report in the same sentence.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> refuses a person’s own words framed as anything else.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> reads the rendered text of all <span class="num">9 823</span> pages: the seal sits after the whole measure, and two seals never sit side by side.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the director writes the sentence around each quotation in the mandate; the scripts check its form.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>«<span class="num">79</span> milhões de euros ■ fonte» is right. «<span class="num">79</span> ■ fonte milhões» is refused: the seal must follow the whole measure, unit included.</li>
+          <li>Quotations and source texts are never drawn as number cards.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="mandate" hidden>
+        <h2>One model decides, and writes the sentences</h2>
+        <p class="analogy">The director decides what the site says, what gets built next and when it goes live. For each block of work it writes a mandate that includes the exact sentences readers will see.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc">every count, rank, cause and date measured by script first</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the director is a top-tier model. The roles never change; which model holds each one today is listed on the site’s AI policy page, updated in the same change as the roles.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> measures every count, rank, cause or date in the mandate on the hosted document, before the sentence is written.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the builder may object to a sentence; it is not printed until the director rewrites it.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-p" width="16" height="16"/></svg><span><b>Person</b> the funder reads the finished work as a reader and says what was hard to read. Money, legal exposure and anything sent out in the project’s name stay with the funder.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>The director reads the built sentences in both languages before the cold read starts.</li>
+          <li>Source identifiers (pages, tables, figures) reach the sentences as fields checked by a script, never typed by hand.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="builder" hidden>
+        <h2>Another model builds, alone and on a budget</h2>
+        <p class="analogy">A builder model builds each block from the mandate, in its own copy of the code, under a fixed budget. Anything a script can do more exactly than a model is done by a script.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>75</b> minutes per pass</span><span class="gc"><b>120</b> calls per pass</span><span class="gc">one build at a time</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the builder works in its own copy of the code (a git worktree), so its work cannot disturb anyone else’s. A second model is the backup builder.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> the launcher enforces each pass’s budget: <span class="num">75</span> minutes and <span class="num">120</span> calls.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> a lock allows one build at a time on the machine.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> sealing rows, composing pages, checking, capturing and landing are scripts, at zero model cost.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>The rule: models write and judge, scripts do the rest. Models are used in five places only: the daily watch, the mandate, a short build, the cold read and a targeted fix.</li>
+          <li>The builder decides small ambiguities itself and notes them in its report.</li>
+          <li>Each block’s model cost is measured and committed with it (step 13).</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="coldread" hidden>
+        <h2>A different model family reads it cold, with five planted faults</h2>
+        <p class="analogy">Before anything goes live, a model from a different family reads the change without having seen it built. It gets a package in which five faults were planted on purpose. If it misses one, its «all clear» means little.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>5</b> planted faults per read</span><span class="gc">a short read after every correction that changes a sentence, a number or a check</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> assembles the package (the mandate, the builder’s report, the diff, the changed files, the built pages and the hosted documents) and refuses it if a hosted document is missing.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> plants five faults in the reader’s copy only, each recorded by its fingerprint. The reader is never told where.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> whoever builds never verifies: the reader is always from a different model family than the builder, and can only read.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-m" width="16" height="16"/></svg><span><b>Model</b> the fixes: Blocking and Major findings are fixed before release, and a short read follows every correction that changes a sentence, a number or a check. Minor ones go to the Friday clean-up.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>A finding about a person, a false sentence or a cause stated as fact never lets a block land.</li>
+          <li>The reader also answers one question: would the editor of a Portuguese daily print this page as it is?</li>
+          <li>It is not a guarantee. The made-up <span class="num">53 011</span> slipped past readers who had found every planted fault. That is why the build checks exist as well.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="gates" hidden>
+        <h2>Any red step stops everything</h2>
+        <p class="analogy">Every build runs a chain of <span class="num">28</span> steps, and the first failure stops it. The full verification runs <span class="num">58</span> steps plus a type check. Nothing new is published until every step passes.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>28</b> build steps</span><span class="gc"><b>58</b> verification steps</span><span class="gc"><b>1</b> type check</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> every step in both chains is a script: the same input gives the same result.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> a defect a reader can see becomes a check for its whole class, with a planted fault that proves it bites (rule <span class="num">15</span>).</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>In the build, among others: every row is complete (<code>ledger:check</code>); the files every session reads first are true (<code>check:registo</code>); hosted studies are byte for byte the original, proved by SHA-256 (<code>check:documentos</code>); every digit on every page has a row (<code>gate:html</code>); a study’s text cannot change without a new edition (<code>check:edicoes</code>); no seal sits inside a measure or beside another seal (<code>check:selos</code>).</li>
+          <li>The full verification adds, among others, the publisher register (<code>check:publicadores</code>) and the quotation forms (<code>check:forma-citacao</code>).</li>
+          <li>A check that protects a number, a source or a person is never weakened. If it changes shape, a planted fault proves it still bites.</li>
+        </ul></div>
+        <p class="story"><strong>This really happened</strong>A made-up population for Évora, <span class="num">53 011</span>, appeared in a builder’s report, slipped past the cold readers and was copied into the file every session reads first. The website never showed it: its pages said <span class="num">58 567</span>. But no check read that file, so a new one was built (<code>check:registo</code>). It now refuses that number: wrong value, and no ledger id.</p>
+      </section>
+
+      <section class="copy-scene" data-scene="landing" hidden>
+        <h2>Finished work lands in batches, and every block has a cost</h2>
+        <p class="analogy">Finished blocks wait and land together, at most two batches a day. Each block’s model cost is measured and committed with it, against a target of fewer than <span class="num">5</span> points per block. A block over budget stops and goes to the funder.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc">the independent full check on the exact version</span><span class="gc">the machine checks</span><span class="gc">at most <b>2</b> batches a day</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> an independent check service must run the full check green on the exact version that lands. On 02 and 03.11.2026 it took <span class="num">33</span> to <span class="num">50</span> minutes.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> then the machine checks run, and the version is merged into main and pushed.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> measures each block’s model cost and commits it.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-p" width="16" height="16"/></svg><span><b>Person</b> decides on any block over budget. On 03.11.2026 the funder approved two blocks, at <span class="num">11</span> and <span class="num">8</span> points, each time the director asked.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>Nothing red reaches main. The merge only moves main forward to the exact version that passed.</li>
+          <li>The landing refuses a block without its cost, or over budget, unless the funder decides otherwise in writing.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="live" hidden>
+        <h2>Published, then questioned live</h2>
+        <p class="analogy">Once main moves, the publishing service rebuilds the site and publishes it, in about <span class="num">33</span> minutes. A script then questions the live site to confirm that what is online is what was approved, and the captures go to the funder.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><code>verify:deploy</code> on the live site</span><span class="gc">captures at <b>5</b> widths, in both languages</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> the publishing service rebuilds and publishes the pushed version.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> <code>verify:deploy</code> asks the live site: is the version on air the one on main? Are the security headers there? Do the other addresses redirect? Does each language get its own «not found» page?</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> captures each finished block at five widths, from <span class="num">390</span> to <span class="num">1 600</span> px, in both languages.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-p" width="16" height="16"/></svg><span><b>Person</b> the captures go to the funder, who reads them as a reader.</span></li>
+          <li class="off"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-x" width="16" height="16"/></svg><span><b>Next</b> decided on 03.11.2026: upload the already-checked build instead of rebuilding it, and promote it when the independent check turns green.</span></li>
+        </ul>
+      </section>
+
+      <section class="copy-scene" data-scene="page" hidden>
+        <h2>Every value opens its own source</h2>
+        <p class="analogy">On the page, each measured value carries a seal that opens its ledger row. Both languages come from one build: <span class="num">9 823</span> pages in Portuguese and English.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc">the seal checked on all <b>9 823</b> pages</span><span class="gc">one build, two languages</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> one build makes both editions, Portuguese at <code>/</code> and English at <code>/en/</code>. The two languages must have the same set of texts, or the build fails.</span></li>
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> checks the seal’s place in the rendered text of every page.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li>Beside every measured value sits a seal: a small square and the word «fonte». Tap it to open the row: the source, the document, the date it was read, the exact excerpt and every re-check.</li>
+          <li>The Évora page shows <span class="num">58 567</span>, the value in its row. The made-up <span class="num">53 011</span> never reached it.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="editions" hidden>
+        <h2>A study keeps its first edition, and every change is dated in public</h2>
+        <p class="analogy">Each study keeps its first edition untouched, identified by its fingerprint. Text that changes without a new version fails the build, and every change of text has a dated entry in the public corrections register.</p>
+        <p class="guard"><span class="gl">checks here</span><span class="gc"><b>1</b> build step: <code>check:edicoes</code></span><span class="gc"><b>4</b> kinds of correction</span><span class="gc"><b>45</b> published</span></p>
+        <ul class="who">
+          <li><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><use href="#mk-s" width="16" height="16"/></svg><span><b>Script</b> keeps each study’s first edition identified by its fingerprint, and fails the build when text changes without a new version.</span></li>
+        </ul>
+        <div class="real"><h3>Details</h3><ul>
+          <li><b>Correção</b>: a value, or a receipt field, was wrong when it was published.</li>
+          <li><b>Atualização</b>: it was right, and what it measures changed.</li>
+          <li><b>Revisão de proveniência</b>: the path to the source changed later. This is not an error.</li>
+          <li><b>Estudo corrigido</b>: a study’s text was corrected, with both versions one tap away.</li>
+          <li><span class="num">45</span> corrections are published.</li>
+        </ul></div>
+      </section>
+
+      <section class="copy-scene" data-scene="size" hidden>
+        <h2>How big this is</h2>
+        <p class="analogy">For a project run by one funder and a handful of AI models, this is large. These are the counts of what the machinery handles, measured on the same day as everything above.</p>
+        <div class="tiles">
+          <div class="tile"><span class="v">9 823</span><span class="l">built pages, Portuguese and English, from one build</span></div>
+          <div class="tile"><span class="v">4 144</span><span class="l">ledger rows, one per figure or quote (519 calculated)</span></div>
+          <div class="tile"><span class="v">28 · 59</span><span class="l">build steps · verification steps, with the type check</span></div>
+          <div class="tile"><span class="v">58</span><span class="l">publishing bodies in the closed register</span></div>
+          <div class="tile"><span class="v">2 636</span><span class="l">rows re-checked at least once</span></div>
+          <div class="tile"><span class="v">45</span><span class="l">corrections published</span></div>
+          <div class="tile"><span class="v">217</span><span class="l">numbered decisions</span></div>
+          <div class="tile"><span class="v">4 187</span><span class="l">commits: 3 393 on the site, 794 on the engine</span></div>
+        </div>
+        <p class="note">Measured 03.11.2026.</p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // name, number, part, title, autoplay dwell (ms), chip label, what the drawing shows
+  const META = [
+    ['map','01','Overview','Who does what',16000,'Who does what','Three lanes, person, model and script, with the journey from the watch to the live page drawn through them. Model boxes: sweep, mandate, build, cold read, fix. Person boxes: the budget decision and the captures. Every other box is a script.'],
+    ['sources','02','Part 1 · The data','Sources and publishers',13000,'Publishers','The publisher name read from a web page, structured data or a PDF; a register of 58 bodies; a receipt from RTP accepted and one naming the Prime Minister refused; 26 receipts turning from amber to cobalt.'],
+    ['ledger','03','Part 1 · The data','The ledger',13000,'Ledger','The real ledger file for Évora’s 2025 population, field by field, beside the total of 4 144 rows, 519 of them calculated.'],
+    ['research','04','Part 1 · The data','Research and hosted documents',13000,'Research','A publisher’s document copied into a hosted copy with a fingerprint; a fact sheet by a model; counts, ranks and dates measured by script; a package refused because a document is missing.'],
+    ['rechecks','05','Part 1 · The data','Keeping indicators up to date',14000,'Re-checks','A script asks INE again and the value matches. The weekly panel of 91 lines: 88 unchanged, 3 revised by Eurostat. The daily re-check drawn dashed. Totals: 4 102 igual, 42 diverge, 5 inacessível.'],
+    ['watch','06','Part 2 · The content','The daily watch',13000,'Watch','Six sources: two dashed because they are switched off, three read by a model each session, and the Évora pages by script; a shortlist; the director sends each item to a panel item, an article or a study.'],
+    ['factcheck','07','Part 2 · The content','Fact-check and analysis',18000,'Fact-check','Three quotes on the 2027 health budget, each matched to a different line of Quadro 5.37, and the finding with its six parts.'],
+    ['quotes','08','Part 2 · The content','Quotations and the seal',15000,'Quotes & seal','Three quotation forms; a press report that names its report passes, one that names none is refused; the seal after the whole measure passes, inside the measure or doubled is refused.'],
+    ['mandate','09','Part 2 · The content','The director and the mandate',12000,'Mandate','The director’s card, a mandate whose lines are each measured by script, one line objected to and rewritten, and the funder as first reader.'],
+    ['builder','10','Part 2 · The content','The builder',12000,'Builder','The builder writing a diff in its own worktree, two budget gauges that stop at 75 minutes and 120 calls, a lock, and a belt of scripted steps.'],
+    ['coldread','11','Part 2 · The content','The cold read',14000,'Cold read','A review package searched by a magnifier that finds five planted faults and one real one; who reads whom; how findings are sorted; what never lands.'],
+    ['gates','12','Part 3 · Publishing','Build gates',13000,'Gates','A rail of 28 build steps and a rail of 58 verification steps plus a type check; five gates; the made-up 53 011 stopped at check:registo; build failed.'],
+    ['landing','13','Part 3 · Publishing','Landing in batches, and cost',13000,'Landing','Blocks waiting for one of two daily batches; the independent full check; machine checks, merge and push; two blocks at 11 and 8 points against a target of 5, each approved by the funder.'],
+    ['live','14','Part 3 · Publishing','Live, and checked live',13000,'Live','The chain from branch to live with a dashed shortcut planned next; verify:deploy’s four questions; captures from 390 to 1 600 px sent to the funder.'],
+    ['page','15','Part 3 · Publishing','The page',12000,'The page','The Évora page with 58 567 and its seal; a tap opens the ledger row; the Portuguese and English addresses; 9 823 built pages.'],
+    ['editions','16','Part 3 · Publishing','Edition history and corrections',13000,'Corrections','A study’s first edition kept by fingerprint; changed text without a new version fails the build; a new version gets a dated register entry. The four kinds of correction; 45 published.'],
+    ['size','17','In numbers','How big it is',14000,'In numbers','9 823 built pages; 4 187 commits split 3 393 site and 794 engine; 4 144 ledger rows with 519 calculated; 217 decisions, 58 publishers, 45 corrections.']
+  ];
+  const PARTSTART = new Set([1, 5, 11, 16]);
+  const $ = (id) => document.getElementById(id);
+  const svg = $('stage');
+  const svgScenes = {}, copyScenes = {};
+  svg.querySelectorAll('.scene').forEach(g => { svgScenes[g.dataset.scene] = g; });
+  document.querySelectorAll('.copy-scene').forEach(s => { copyScenes[s.dataset.scene] = s; });
+
+  const rail = $('rail');
+  META.forEach((m, i) => { const li = document.createElement('li'); if (PARTSTART.has(i)) li.className = 'gap'; rail.appendChild(li); });
+  const segs = rail.querySelectorAll('li');
+  const route = $('route');
+  META.forEach((m, i) => {
+    const li = document.createElement('li');
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip' + (PARTSTART.has(i) ? ' partstart' : ''); b.innerHTML = '<b>' + m[1] + '</b>' + m[5];
+    b.addEventListener('click', () => go(i));
+    li.appendChild(b); route.appendChild(li);
+  });
+  const chips = route.querySelectorAll('.chip');
+
+  let idx = 0, playing = false, advT = null, hookTs = [], rafId = 0;
+  function clearHooks() { hookTs.forEach(clearTimeout); hookTs = []; cancelAnimationFrame(rafId); }
+  function smil(g, start) {
+    g.querySelectorAll('animate, animateMotion').forEach(a => {
+      try { a.endElement(); } catch (e) {}
+      if (start) { try { a.beginElementAt(parseFloat(a.dataset.at || '0')); } catch (e) {} }
+    });
+  }
+  const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  const HOOKS = {
+    coldread() {
+      const el = $('found'); el.textContent = '0 / 5';
+      [1600, 2550, 3500, 4500, 5500].forEach((t, i) => hookTs.push(setTimeout(() => { el.textContent = (i + 1) + ' / 5'; }, t)));
+    },
+    size() {
+      const el = $('bignum'), end = 9823, t0 = performance.now(), dur = 1500;
+      const step = now => {
+        const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(Math.round(end * e));
+        if (p < 1) rafId = requestAnimationFrame(step);
+      };
+      rafId = requestAnimationFrame(step);
+    }
+  };
+  function playScene(name) {
+    const g = svgScenes[name];
+    g.classList.remove('play'); void g.getBoundingClientRect();
+    if (reduce) return;
+    g.classList.add('play'); smil(g, true);
+    if (HOOKS[name]) HOOKS[name]();
+  }
+  function go(i) {
+    idx = Math.max(0, Math.min(META.length - 1, i));
+    const m = META[idx], name = m[0];
+    clearHooks();
+    $('found').textContent = '5 / 5';
+    $('bignum').textContent = '9 823';
+    Object.keys(svgScenes).forEach(k => {
+      const g = svgScenes[k];
+      if (k === name) g.removeAttribute('hidden');
+      else { g.setAttribute('hidden', ''); g.classList.remove('play'); smil(g, false); }
+    });
+    Object.keys(copyScenes).forEach(k => { copyScenes[k].hidden = (k !== name); });
+    chips.forEach((c, j) => { if (j === idx) c.setAttribute('aria-current', 'step'); else c.removeAttribute('aria-current'); });
+    segs.forEach((s, j) => s.classList.toggle('on', j <= idx));
+    const chip = chips[idx], wrap = chip.closest('.route-wrap');
+    if (wrap) { const dx = chip.getBoundingClientRect().left - wrap.getBoundingClientRect().left + wrap.scrollLeft - 24; wrap.scrollTo({ left: Math.max(0, dx), behavior: reduce ? 'auto' : 'smooth' }); }
+    $('stepNum').textContent = m[1]; $('stepPart').textContent = m[2]; $('stepTitle').textContent = m[3];
+    const st = $('stepper'); st.classList.remove('swap'); void st.offsetWidth; st.classList.add('swap');
+    svg.setAttribute('aria-label', m[3] + '. ' + m[6]);
+    playScene(name);
+    $('back').disabled = idx === 0;
+    $('next').disabled = idx === META.length - 1;
+    if (playing) schedule();
+  }
+  function schedule() {
+    clearTimeout(advT);
+    const dur = META[idx][4], bar = $('prog');
+    bar.style.transition = 'none'; bar.style.width = '0'; void bar.offsetWidth;
+    if (!reduce) { bar.style.transition = 'width ' + dur + 'ms linear'; bar.style.width = '100%'; }
+    advT = setTimeout(() => { if (idx < META.length - 1) go(idx + 1); else setPlaying(false); }, dur);
+  }
+  function setPlaying(p) {
+    playing = p;
+    $('play').textContent = p ? 'Pause' : 'Play all steps';
+    if (p) { if (idx === META.length - 1) go(0); else schedule(); }
+    else { clearTimeout(advT); const bar = $('prog'); bar.style.transition = 'none'; bar.style.width = '0'; }
+  }
+  const jumpTo = name => { const j = META.findIndex(m => m[0] === name); if (j >= 0) { if (playing) setPlaying(false); go(j); } };
+  $('play').addEventListener('click', () => setPlaying(!playing));
+  $('next').addEventListener('click', () => go(idx + 1));
+  $('back').addEventListener('click', () => go(idx - 1));
+  $('replay').addEventListener('click', () => go(idx));
+  svg.querySelectorAll('.node').forEach(n => n.addEventListener('click', () => jumpTo(n.dataset.go)));
+  document.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => jumpTo(b.dataset.jump)));
+  document.addEventListener('keydown', e => {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    const t = e.target; if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) return;
+    if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
+  });
+  const start = Math.max(0, META.findIndex(m => m[0] === location.hash.slice(1)));
+  go(start);
+})();
+</script>
