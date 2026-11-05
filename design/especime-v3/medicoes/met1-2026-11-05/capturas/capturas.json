@@ -1,0 +1,428 @@
+{
+  "cabeca": "6f93372ae16e2abc103f972a7bb4fbc02818889c",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "metodo-pt-390.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4048,
+      "sha256": "1fc920c680aca32543da977437a846dd075087f82953d717961e657cc1c9f94f",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-390-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 508,
+            "width": 354,
+            "height": 653
+          },
+          "sha256": "ecca24389c0327977d27105ac8298bde0f3086ad2488530510e16c67a09b1f97"
+        },
+        {
+          "ficheiro": "metodo-pt-390-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1307,
+            "width": 354,
+            "height": 1438
+          },
+          "sha256": "4f09d31e84300f3132b10b489071a5c7f863d4684493ae87400e3b1927c286f1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-768.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3797,
+      "sha256": "f373c042733cccee82e51d2a201f266729bafb9bbeb5f13fd8f0e289fda5bb53",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-768-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 476,
+            "width": 545,
+            "height": 652
+          },
+          "sha256": "35575113ac165e4602099ee9a0fa672a878d3e1a7e8d26bcebe243dc8a084e63"
+        },
+        {
+          "ficheiro": "metodo-pt-768-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1247,
+            "width": 708,
+            "height": 1446
+          },
+          "sha256": "891be41f3f909705c1b22483f1dc7ff947a01d2ba3b4f09601f0c86b2f66269a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1024.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3689,
+      "sha256": "63f383c0c5b92c2560f9d8c1f3f1d7d0df8ae2de27859646295aa63208a76c2f",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1024-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-pt-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 449,
+            "width": 545,
+            "height": 671
+          },
+          "sha256": "338151d8d9b81c4bdceab7436e24322fefd27a5021272e3cef380095c6525181"
+        },
+        {
+          "ficheiro": "metodo-pt-1024-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1247,
+            "width": 944,
+            "height": 1429
+          },
+          "sha256": "9186067075f82156a789ec64f595500f12b7293e93333eafa9bffd24b7f0427c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1280.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3730,
+      "sha256": "8d621906fd79a19509cb3e0c3622bc8269c05b83c4635f323e54841132b02439",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1280-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-pt-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 465,
+            "width": 544,
+            "height": 671
+          },
+          "sha256": "1d54018606a5e7308146794694d061c7d38c04d7553e14803585ca1f57b7bcb4"
+        },
+        {
+          "ficheiro": "metodo-pt-1280-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1264,
+            "width": 1092,
+            "height": 1431
+          },
+          "sha256": "3257580631a14762cde789b69aa0fd9e64cd257107337a843e88dd780cb53c83"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1600.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3737,
+      "sha256": "a9eda663c5f6c0cf5345b42f32e67433f70dcc6d9d8a05df2e8f9559e6924c25",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1600-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-pt-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 465,
+            "width": 544,
+            "height": 671
+          },
+          "sha256": "1d54018606a5e7308146794694d061c7d38c04d7553e14803585ca1f57b7bcb4"
+        },
+        {
+          "ficheiro": "metodo-pt-1600-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1264,
+            "width": 1092,
+            "height": 1431
+          },
+          "sha256": "3257580631a14762cde789b69aa0fd9e64cd257107337a843e88dd780cb53c83"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-390.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4149,
+      "sha256": "3282c74d2f1f93dce9a265c6de63b6256d450a4ac6439490bc56e70a31907357",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-390-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 508,
+            "width": 354,
+            "height": 653
+          },
+          "sha256": "e8b4ae98c52922093e50123e4335276d1ec1d9bfbb0ce1337754430178116650"
+        },
+        {
+          "ficheiro": "metodo-en-390-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1307,
+            "width": 354,
+            "height": 1413
+          },
+          "sha256": "64f60bab7010c3ba00dd7b4e05a212315f9c0cd64e22c6fbc5612dbe9a5ed3fd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-768.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3797,
+      "sha256": "dfb40bc3191a17521ae83ee77a1cde8bf7a55c404fcb1eead27ff22596adb201",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-768-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 476,
+            "width": 545,
+            "height": 652
+          },
+          "sha256": "2670f64625fe41d13d3684c3ded24ad5e7ca8fc1e95b171e935c7d2cf9f72f65"
+        },
+        {
+          "ficheiro": "metodo-en-768-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1247,
+            "width": 708,
+            "height": 1446
+          },
+          "sha256": "a3a0bd84713fb831ef787fdd2104c6505df03dd65c3b3ac99092ed70d4919bba"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3689,
+      "sha256": "bdcde2f0d4919a0a574151ae62a78ef55d6e4e4de075dad4f253339b46be4842",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1024-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-en-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 449,
+            "width": 545,
+            "height": 671
+          },
+          "sha256": "7c5a4a412f26a5a7f49207d04255249f3e5f72d937e69d5754fc0a6535cc655c"
+        },
+        {
+          "ficheiro": "metodo-en-1024-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1247,
+            "width": 944,
+            "height": 1429
+          },
+          "sha256": "d102be0701a4fda011cb31377a4552c1d3fa1f821f73b743f724611159fbdbcd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3730,
+      "sha256": "a6a7122cc5d042acfd4f13e737ae9b1cfe061bd980c19a9695741beca4f9fb3c",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1280-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-en-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 465,
+            "width": 544,
+            "height": 671
+          },
+          "sha256": "146c2049715752b632822a4e9c34e05d7ffb3af4966597df25d615e6267964e4"
+        },
+        {
+          "ficheiro": "metodo-en-1280-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1264,
+            "width": 1092,
+            "height": 1431
+          },
+          "sha256": "d91fb356dae37748d7eb758e83d9fefd91be9092459641c7d905c978bb923eae"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3737,
+      "sha256": "e344330652c0de6025683977403b22012c243ec1c9c5c0823f7ee001c55a48ff",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1600-recibo.png",
+          "seletor": ".met1-recibo",
+          "origem": "metodo-en-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 465,
+            "width": 544,
+            "height": 671
+          },
+          "sha256": "146c2049715752b632822a4e9c34e05d7ffb3af4966597df25d615e6267964e4"
+        },
+        {
+          "ficheiro": "metodo-en-1600-percurso.png",
+          "seletor": "#percurso",
+          "origem": "metodo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1264,
+            "width": 1092,
+            "height": 1431
+          },
+          "sha256": "d91fb356dae37748d7eb758e83d9fefd91be9092459641c7d905c978bb923eae"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "d845090222eb1a9a195896e39988280692cda87d686dd5c5404f6d58ff9ff039",
+    "metodo/index.html": "f50b932ebaa60ce1c0d1e9ee3683eace5e2da54296025c5140942ab92f3f45e0",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BWFC6hW5.css": "a5b5c68831d20e48f9d39a8b5387fccccffc022d56f2a7b17e2b8efe88b5d220",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/method/index.html": "3d572a3585a9cba4a276aaa779d0e8fb6e4ed9c1d0d4128e051e2ea2e6a5faff"
+  },
+  "falhas": [],
+  "ok": true
+}

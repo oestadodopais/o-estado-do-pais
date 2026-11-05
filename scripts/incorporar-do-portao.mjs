@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { SECOES } from '../src/data/metodo.mjs';
+import { APROVADO as MET1 } from './metodo-do-portao.mjs';
 import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
 import { leituraDaIncorporacao, conferirDataDaIncorporacao } from '../src/lib/leitura-da-incorporacao.mjs';
 /* Leitura do ER1 pelos portões. Partilha a regra da leitura, mas não o
@@ -79,8 +79,7 @@ export function conferirInventarioIncorporacao(texto) {
   const cadeias = Object.entries(t('pt').incorporar).map(([chave, pt]) =>
     ['incorporar.'+chave, pt, t('en').incorporar[chave]]);
   // ME1 (15.10.2026): a porta do recibo de exemplo vive na secção do recibo de cada número.
-  const exemplo = SECOES.find(r => r.id === 'livro-razao').ligacoes.find(l => l.rota === 'linha');
-  cadeias.push(['metodo.exemplo', exemplo.rotulo.pt, exemplo.rotulo.en]);
+  cadeias.push(['metodo.exemplo', MET1.recibo.nome.pt, MET1.recibo.nome.en]);
   for (const [chave, pt, en] of cadeias) {
     const linha = '| `' + chave + '` | ' + pt + ' | ' + en + ' |';
     if (!texto.split('\n').some(l => l.startsWith(linha)))
@@ -93,8 +92,8 @@ const errosDoInventario = conferirInventarioIncorporacao(fs.readFileSync(new URL
 export function conferirExemploNoMetodo(root, lang) {
   const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'divida-publica-2025';
   // ME1 (15.10.2026): as palavras da porta são as do mandato do bloco, escritas aqui e não importadas.
-  const texto = lang === 'en' ? 'See an example receipt' : 'Ver um recibo de exemplo';
-  return root.querySelectorAll('#livro-razao a').some(a => a.getAttribute('href') === href && a.textContent.trim() === texto + ' →')
+  const texto = lang === 'en' ? 'source' : 'fonte';
+  return root.querySelectorAll('#livro-razao a.src-chip').some(a => a.getAttribute('href') === href && a.querySelector('.src-chip-texto')?.textContent.trim() === texto)
     ? [] : ['ER1 Método: falta a porta para o recibo de exemplo da edição.'];
 }
 

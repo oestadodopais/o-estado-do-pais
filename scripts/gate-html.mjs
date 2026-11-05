@@ -29,7 +29,8 @@ import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
-import { conferirLugaresIA, PLANTAS_DO_METODO } from './lugares-ia-do-portao.mjs';
+import { conferirLugaresIA, APROVADO as MET1, recontarConferencias, campoDoReciboMet1, conferirLimitesSobre } from './metodo-do-portao.mjs';
+import { PLANTAS_DO_METODO } from '../tests/metodo/plantas.mjs';
 import { inventariarMarcadores, resumirMarcadores } from './sem-marcadores.mjs';
 const MARCAS_RP4N = [];
 import { plantasDosMarcadores } from '../tests/cartao/rp4nb.mjs';
@@ -4101,6 +4102,7 @@ function contasDoPortao(claims) {
     conta('camaras_acima_do_limite', camaras.acima, 'ledger'),
     conta('camaras_dentro_do_limite', camaras.dentro, 'ledger'),
     conta('camaras_sem_valor', camaras.sem, 'ledger'),
+    conta('conferencias_da_corrida', recontarConferencias(), 'lista de conferir-tudo.sh'),
     conta('afirmacoes', paginasDeLinhaPt, 'dist'),
     conta('indexaveis', indexaveisPt, 'dist'),
     conta('divida', paginasDeLinhaPt - indexaveisPt, 'dist'),
@@ -5768,6 +5770,7 @@ for (const file of ficheirosHtml(DIST)) {
     /* A régua dos nomes recebe também o HTML da página (a leitura a frio do Codex, 15.10.2026, o achado 9): a árvore
        deste varrimento deita fora o conteúdo de `noscript`, que quem lê sem JavaScript vê. */
     if (rota?.key === 'metodo') for (const e of conferirLugaresIA(root, linguaPagina, html)) err(e);
+    if (rota?.key === 'sobre') for (const e of conferirLimitesSobre(root, linguaPagina)) err(e);
     const frases = root.querySelectorAll('[data-frase-da-politica]');
     ROTULO_DE_IA.frase += frases.length;
     /* A FRASE DA POLÍTICA FICOU SÓ NO MÉTODO (P1, item 3, 15.09.2026). Era do
@@ -5791,7 +5794,7 @@ for (const file of ficheirosHtml(DIST)) {
         );
       }
       const t = decodeEntities(textoDe(frases[0], { semEstilo: true, separador: '' }));
-      const esperada = TEXTOS_APROVADOS.frase[linguaPagina];
+      const esperada = MET1.autoria[linguaPagina].join('');
       if (t !== esperada) {
         err(
           `a frase da política não é o texto aprovado.\n` +
@@ -6773,7 +6776,7 @@ for (const file of ficheirosHtml(DIST)) {
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
     const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || (rota?.key === 'discussao' && fragmentoDoItem(el,id,campo,linguaPagina));
-    if (!avisoDaRevisao && !campoDoQuadro && !fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !(unidadeDeCorrecaoDoPais || campoDaRevisaoSemanal) && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    if (!campoDoReciboMet1(rota?.key, el, id, campo) && !avisoDaRevisao && !campoDoQuadro && !fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !(unidadeDeCorrecaoDoPais || campoDaRevisaoSemanal) && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
@@ -9034,7 +9037,7 @@ if (paginasDoLivro !== LANGS.length) {
 }
 
 console.log(`  RP4N: ${PLANTAS_RP4N.length} plantas com mensagem e contagem afirmadas`);
-console.log(`  ME1: ${PLANTAS_DO_METODO.length} plantas do Método (os papéis, as famílias, a porta e os nomes de modelos), cada uma com a queixa esperada`);
+console.log(`  MET1: ${PLANTAS_DO_METODO.length} plantas do Método (lista fechada, recibo, contagem e portas), cada uma com a queixa esperada`);
 for (const [estado, tipos] of Object.entries(resumirMarcadores(MARCAS_RP4N))) {
   for (const [tipo, dados] of Object.entries(tipos)) {
     console.log(`  RP4N ${estado} · ${tipo}: ${dados.ocorrencias} ocorrência(s)`);

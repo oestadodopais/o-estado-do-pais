@@ -1,0 +1,33 @@
+/* MET1: papel, traço e máquinas do percurso de referência, sem dependência de JavaScript. */
+.met1-cabeca { padding-top: clamp(20px, 3vw, 34px); margin-bottom: clamp(24px, 4vw, 48px); }
+.met1 .metodo-corpo { min-width: 0; }
+.met1-recibo { border: 1px solid var(--rule); padding: clamp(16px, 3vw, 28px); margin: 24px 0; }
+.met1-medida { margin: 0; font-weight: 600; }
+.met1-valor { margin: 12px 0 24px; font-size: clamp(24px, 4vw, 36px); }
+.met1-recibo dl { margin: 0; }
+.met1-recibo dl > div { padding: 14px 0; border-top: 1px solid var(--rule); }
+.met1-recibo dt { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+.met1-recibo dd { margin: 0; overflow-wrap: anywhere; }
+.met1-recibo blockquote { margin: 0; padding: 0; border: 0; font-size: inherit; }
+.met1-percurso { list-style: none; padding: 0; margin: 0; }
+.met1-passo { position: relative; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.met1-passo:first-child { padding-top: 0; }
+.met1-passo:last-child { border-bottom: 0; padding-bottom: 0; }
+.met1-passo p { margin: 0; max-width: 55ch; }
+.met1-maquina { width: 100%; height: auto; fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.met1-trilho { stroke: var(--muted); }
+.met1-conferencia { fill: var(--paper); }
+.met1-visto { stroke-width: 2; }
+.met1-sinal { fill: var(--ink); stroke: none; animation: met1-percorrer 2.8s ease-in-out 1 both; }
+.met1-marcas { list-style: none; margin: 0; padding: 0; }
+.met1-marcas li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.met1-marcas li:first-child { padding-top: 0; }
+.met1-marcas li:last-child { border-bottom: 0; }
+.met1-portas { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 24px 0 0; }
+.met1-portas a { min-height: 44px; display: inline-flex; align-items: center; }
+@keyframes met1-percorrer { from { transform: translateX(0); } to { transform: translateX(140px); } }
+@media (max-width: 600px) {
+  .met1-passo { grid-template-columns: 76px minmax(0, 1fr); gap: 12px; align-items: start; }
+  .met1-maquina { margin-top: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { .met1-sinal { animation: none; } }

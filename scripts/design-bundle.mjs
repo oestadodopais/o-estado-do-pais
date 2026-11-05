@@ -1285,7 +1285,7 @@ ${amostras}
   <section class="ds-bloco">
     <h2>O que o Método diz ao leitor</h2>
     <div class="ds-mostra">${aCor}</div>
-    <p class="ds-nota">Tirado de <code class="ds-mono">dist/metodo/index.html</code>, a entrada de fecho <code class="ds-mono">#a-cor</code>. É texto governado: a amarra das decisões prende-o a <code class="ds-mono">src/data/metodo.mjs</code>, carácter a carácter.</p>
+    <p class="ds-nota">Tirado de <code class="ds-mono">dist/metodo/index.html</code>, a legenda das marcas <code class="ds-mono">#a-cor</code>. É texto governado: a amarra das decisões prende-o a <code class="ds-mono">src/data/metodo.mjs</code>, carácter a carácter.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1316,7 +1316,6 @@ ${amostras}
   const ondeAntetitulo = ondeHa('span.eyebrow', CANDIDATAS_DO_ANTETITULO, 'um antetítulo em `span`');
   const antetitulo = peca(ondeAntetitulo, 'span.eyebrow');
   const navegacao = peca('index.html', '#nav-principal');
-  const aLetra = peca('metodo/index.html', '#a-letra');
 
   const fontFaces = (() => {
     const blocos = [...css.tokens.matchAll(/@font-face\s*\{[\s\S]*?\}/g)].map((m) => m[0]);
@@ -1391,8 +1390,6 @@ ${['| **Spectral** |', '| **Bitter** |', '| **Spectral SC** |']
 
   <section class="ds-bloco">
     <h2>Alojados aqui, sem anfitriões de terceiros</h2>
-    <div class="ds-mostra">${aLetra}</div>
-    <p class="ds-nota">Tirado de <code class="ds-mono">dist/metodo/index.html</code>, a entrada de fecho <code class="ds-mono">#a-letra</code>: é a frase governada que o Método diz ao leitor, e a amarra das decisões prende-a a <code class="ds-mono">src/data/metodo.mjs</code>.</p>
     ${citar(REGRA('**Só tipos alojados aqui.**'))}
     <table class="ds-tabela">
       <thead><tr><th>Ficheiro, ao lado deste cartão</th><th>Bytes</th><th>SHA-256 (TIPOS.md)</th></tr></thead>

@@ -55,8 +55,8 @@
  * dois textos governados pela amarra das decisões.
  */
 import Base from '../layouts/Base.astro';
-import { SOBRE } from '../data/sobre.mjs';
-import { CONTACTO, O_PROJETO, POLITICA, portaDaPolitica } from '../data/politica-ia.mjs';
+import { SOBRE, LIMITES } from '../data/sobre.mjs';
+import { CONTACTO, O_PROJETO, portaDaPolitica } from '../data/politica-ia.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { ROTAS_SOBRE, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 import { routePath, otherLanguagePath } from '../lib/routes.mjs';
@@ -109,8 +109,12 @@ const politica = portaDaPolitica(lang);
           compara-a carácter a carácter com `src/data/sobre.mjs`. */}
       {/* A regra dos nomes saiu desta página a 05.10.2026 (§1.163): fica no Método e na política. */}
 
+      <div class="sobre-limites">
+        {LIMITES.map(frase => <p class="metodo-p" data-sobre-limite={lang}>{frase[lang]}</p>)}
+      </div>
+
       <p class="sobre-porta">
-        <a href={politica}>→ {POLITICA.titulo[lang]}</a>
+        <a href={politica}>→ {s.nav.metodo}</a>
       </p>
 
       <nav class="sobre-portas" aria-label={s.nav.sobre}>

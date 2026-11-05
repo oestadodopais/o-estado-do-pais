@@ -14,14 +14,14 @@
       "src": "/a-verificar/?",
       "status": 308,
       "headers": {
-        "Location": "/metodo"
+        "Location": "/metodo#marcas"
       }
     },
     {
       "src": "/en/to-verify/?",
       "status": 308,
       "headers": {
-        "Location": "/en/method"
+        "Location": "/en/method#marcas"
       }
     },
     {

@@ -76,3 +76,27 @@ export function textoDoSobre(lang) {
 export function regraDosNomes(lang) {
   return SOBRE[lang]?.nomes ?? null;
 }
+
+/** MET1: transferidas do Método palavra por palavra. */
+export const LIMITES = [
+  {
+    "pt": "Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo.",
+    "en": "It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record."
+  },
+  {
+    "pt": "É financiado em privado, sem publicidade nem dinheiro de instituições.",
+    "en": "It is privately funded, with no advertising and no money from institutions."
+  },
+  {
+    "pt": "Este projeto não aceita dinheiro de nenhuma entidade que mede.",
+    "en": "This project takes no money from any entity it measures."
+  },
+  {
+    "pt": "Este projeto não chama jornalista à inteligência artificial e não se diz jornalístico.",
+    "en": "This project does not call artificial intelligence a journalist and does not call itself journalism."
+  },
+  {
+    "pt": "Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim que a página «Privacidade» diz, e nunca os põe no repositório.",
+    "en": "This project keeps personal data only of those who use the suggestions box, for the time and the purpose that the Privacy page states, and never puts it in the repository."
+  }
+];

@@ -1,163 +1,77 @@
 ---
-/**
- * Método: nove secções em palavras correntes (bloco ME1, 15.10.2026).
- *
- * ---------------------------------------------------------------------------
- * A ORDEM DA PÁGINA
- * ---------------------------------------------------------------------------
- * O título, a linha de abertura, o sumário «Nesta página» e as nove secções do
- * mandato `design/observatorio/mandatos/MANDATO-ME1-2026-10-15.md` (§2): quem
- * escreve estas páginas, de onde vêm os números, o recibo de cada número, como se
- * confere, o que está por confirmar, as correções, o que se mede e quem decide, o
- * que este projeto não faz, e a forma. A primeira secção é a da política, e é a
- * que o rótulo de todas as páginas promete: o rótulo abre o Método pelo
- * princípio, e a secção leva o `id` antigo (`politica-de-ia`) para as ligações
- * que estiveram no ar.
- *
- * DISPOSIÇÃO A (IDENTIDADE §3), a mesma que a página sempre teve: o título de cada
- * secção na coluna de rótulo, o corpo a 68ch. Sem dobras, sem o número da regra,
- * sem as linhas «Mecanismo», «O que isto não apanha» e «Prova», e sem o desenho do
- * mecanismo: o que a página diz, diz-se em parágrafos, e as portas de cada secção
- * ficam no fim dela, com a seta.
- *
- * ESTA VISTA COMPÕE E NÃO ESCREVE. O texto das secções 2 a 8 e o da forma vêm de
- * `src/data/metodo.mjs`, que é o texto governado pela amarra das decisões; o da
- * primeira secção e as cinco recusas vêm de `src/data/politica-ia.mjs`, que é o
- * texto da política. A frase da política leva a marca `data-frase-da-politica`,
- * que o portão compara carácter a carácter com o oráculo; os papéis e as famílias
- * levam `data-papeis` e `data-familias`, que a cópia do lado do portão
- * (`scripts/lugares-ia-do-portao.mjs`) compara com a redação decidida.
- *
- * NENHUM NÚMERO ESCRITO À MÃO. Os números deste projeto sobre si próprio entram na
- * prosa pelos tokens da prova, que o `Frase` rende pelo `ValorDaProva`, marcados
- * `data-prova` e dentro da sua porta, e o portão reconta cada um.
- *
- * O REGISTO DE CORREÇÕES NÃO ESTÁ AQUI. Vive em `/correcoes`; a âncora
- * `#correcoes` fica nesta página, na secção das correções, com a porta para lá.
- */
+/** MET1: quatro secções, recibo real e percurso legível sem JavaScript. */
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
-import { SECOES, ABERTURA, FECHO } from '../data/metodo.mjs';
-import { DOCUMENTO_DA_POLITICA, FRASE, ID_DA_SECCAO_DA_POLITICA, POLITICA } from '../data/politica-ia.mjs';
-import { prova, CAMINHO_DA_PROVA } from '../lib/prova.mjs';
+import Claim from '../components/Claim.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import { METODO as m } from '../data/metodo.mjs';
+import { DOCUMENTO_DA_POLITICA } from '../data/politica-ia.mjs';
+import { prova } from '../lib/prova.mjs';
+import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
-import '../styles/leitura.css';
-
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import '../styles/metodo.css';
 const { lang = 'pt' } = Astro.props;
-const s = t(lang);
-const path = routePath('metodo', lang);
-/* A prova calcula-se uma vez por página, e cada token da prosa lê a sua chave daqui. */
-const p = prova(lang);
-
-const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang, l.params ?? {}));
-/* O sumário diz as nove secções pela ordem da página, sem números: a primeira é a da política,
-   as sete seguintes são as de `SECOES`, e a última é a forma. */
-const sumario = [
-  { id: ID_DA_SECCAO_DA_POLITICA, titulo: POLITICA.titulo },
-  ...SECOES.map((x) => ({ id: x.id, titulo: x.titulo })),
-  { id: FECHO.id, titulo: FECHO.titulo },
-];
-const familias = POLITICA.familias[lang];
+const s = t(lang), p = prova(lang), c = getClaim(m.recibo.id);
+const unidade = unidadeDaLinha(c.unit, lang);
+const ids = ['conferir-um-numero', 'percurso', 'marcas', 'correcoes'];
+const tipos = ['modelo', 'programa', 'documento', 'modelo', 'modelo', 'programa', 'leitura', 'leitura', 'programa', 'documento'];
 ---
-
-<Base lang={lang} path={path} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>
-  <div style="padding-top:clamp(20px,3vw,34px)">
-    <h1>{s.metodo.h1}</h1>
-    <p class="lede" style="margin-top:14px">{ABERTURA[lang]}</p>
-  </div>
-
-  {/* ===================================== o sumário: o índice desta página */}
-  <nav class="metodo-sumario" aria-labelledby="sumario" style="margin-top:clamp(22px,3vw,32px)">
-    {/* A MESMA CADEIA que a Agenda e a página de leitura imprimem para o mesmo sumário. */}
-    <h2 class="metodo-sumario-k" id="sumario">{s.leitura.sumarioK}</h2>
-    <ol class="metodo-sumario-lista">
-      {sumario.map((x) => (
-        <li>
-          <a href={`#${x.id}`}>{x.titulo[lang]}</a>
-        </li>
-      ))}
-    </ol>
-  </nav>
-
-  <div style="margin-top:clamp(24px,3vw,36px)">
-    {/* ===================================== 1 · quem escreve estas páginas
-        A secção que a divulgação obriga (o artigo 50.º, n.º 4 do Regulamento (UE)
-        2024/1689): o rótulo de todas as páginas diz o que o texto é e liga para aqui.
-        Não tem portas; a ligação ao documento público da política vive dentro da
-        frase das famílias, e é a única ligação para fora desta página. */}
-    <section class="metodo-secao" id={ID_DA_SECCAO_DA_POLITICA}>
-      <div class="regra-cabeca">
-        <h2>{POLITICA.titulo[lang]}</h2>
-      </div>
+<Base lang={lang} path={routePath('metodo', lang)} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>
+  <div class="met1-cabeca"><h1>{s.metodo.h1}</h1></div>
+  <div class="met1">
+    <section class="metodo-secao" id={ids[0]}>
+      <div class="regra-cabeca"><h2>{m.titulos[lang][0]}</h2></div>
       <div class="metodo-corpo">
-        <p class="metodo-p" data-frase-da-politica={lang}>{FRASE[lang]}</p>
-        <p class="metodo-p" data-papeis={lang}>{POLITICA.papeis[lang]}</p>
-        <p class="metodo-p" data-familias={lang}>{familias.antes}<a href={DOCUMENTO_DA_POLITICA}>{familias.ligacao}</a>{familias.depois}</p>
-        <p class="metodo-p">{POLITICA.publicacao[lang]}</p>
+        <p class="metodo-p" data-met1="abrir"><Frase partes={m.abrir[lang]} lang={lang} provas={p} /></p>
+        <div class="met1-recibo" data-met1-recibo={c.id} id="livro-razao">
+          <p class="met1-medida"><span data-met1="recibo-nome">{m.recibo.nome[lang]}</span>{' · '}<CampoDaLinha id={c.id} campo="reference_date" valor={c.reference_date} lang={lang} /></p>
+          <p class="met1-valor"><Claim id={c.id} lang={lang} chip={true}><span slot="cauda">{' '}<CampoDaLinha id={c.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /></span></Claim></p>
+          <dl>
+            <div><dt data-met1="campo-0">{m.campos[lang][0]}</dt><dd><a href={c.source_url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} /></a></dd></div>
+            <div><dt data-met1="campo-1">{m.campos[lang][1]}</dt><dd><a href={c.document.url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="document.title" valor={c.document.title} lang={lang} lingua="en" /></a></dd></div>
+            <div><dt data-met1="campo-2">{m.campos[lang][2]}</dt><dd><a href={c.source_url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="document.edition" valor={c.document.edition} lang={lang} /></a>{' · '}<CampoDaLinha id={c.id} campo="reference_date" valor={c.reference_date} lang={lang} /></dd></div>
+            <div><dt data-met1="campo-3">{m.campos[lang][3]}</dt><dd><blockquote><CampoDaLinha id={c.id} campo="excerpt" valor={c.excerpt} lang={lang} lingua="en" /></blockquote></dd></div>
+            <div><dt data-met1="campo-4">{m.campos[lang][4]}</dt><dd><CampoDaLinha id={c.id} campo="access_date" valor={c.access_date} lang={lang} /></dd></div>
+          </dl>
+        </div>
+        <p class="metodo-p" data-met1="divida"><Frase partes={m.divida[lang]} lang={lang} provas={p} /></p>
       </div>
     </section>
-
-    {/* ===================================== 2 a 8 · as secções do texto governado */}
-    {
-      SECOES.map((sec) => (
-        <section class="metodo-secao" id={sec.id}>
-          <div class="regra-cabeca">
-            <h2>{sec.titulo[lang]}</h2>
-          </div>
-          <div class="metodo-corpo">
-            {sec.paragrafos.map((par) => (
-              <p class="metodo-p" id={par.id}>
-                <Frase partes={par[lang]} lang={lang} provas={p} />
-              </p>
-            ))}
-            {sec.depois === 'recusas' && (
-              <ul class="politica-recusas">
-                {POLITICA.recusas.itens.map((r) => <li>{r[lang]}</li>)}
-              </ul>
-            )}
-            {sec.ligacoes.length > 0 && (
-              <p class="regra-portas">
-                {sec.ligacoes.map((l) => (
-                  <a href={destino(l)}>{l.rotulo[lang]} →</a>
-                ))}
-              </p>
-            )}
-          </div>
-        </section>
-      ))
-    }
+    <section class="metodo-secao" id={ids[1]}>
+      <div class="regra-cabeca"><h2>{m.titulos[lang][1]}</h2></div>
+      <div class="metodo-corpo" id="releitura">
+        <ol class="met1-percurso">
+          {m.passos.map((passo, i) => (
+            <li class={`met1-passo met1-${tipos[i]}`}>
+              <svg class="met1-maquina" viewBox="0 0 160 100" aria-hidden="true" focusable="false">
+                <path class="met1-trilho" d="M0 50H22M118 50H160" />
+                <rect class="met1-no" x="22" y="20" width="96" height="60" rx={tipos[i] === 'modelo' || tipos[i] === 'leitura' ? '18' : '3'} />
+                {tipos[i] === 'programa' ? <><path d="m53 36-12 14 12 14m34-28 12 14-12 14m-22 5 10-38" /></> : tipos[i] === 'modelo' ? <><circle cx="53" cy="43" r="4" /><circle cx="85" cy="43" r="4" /><path d="M49 59Q69 72 89 59" /></> : tipos[i] === 'leitura' ? <><circle cx="64" cy="46" r="14" /><path d="m74 57 16 15M57 46l5 5 10-11" /></> : <><path d="M49 32h31l10 10v27H49ZM80 32v11h10M56 51h26M56 59h26" /></>}
+                <circle class="met1-conferencia" cx="118" cy="76" r="12" />
+                <path class="met1-visto" d="m112 76 4 4 8-9" />
+                <circle class="met1-sinal" cx="8" cy="50" r="3" style={`animation-delay:${i * 0.12}s`} />
+              </svg>
+              <p data-met1={`passo-${i}`}><Frase partes={passo[lang]} lang={lang} provas={p} /></p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+    <section class="metodo-secao" id={ids[2]}>
+      <div class="regra-cabeca"><h2>{m.titulos[lang][2]}</h2></div>
+      <div class="metodo-corpo" id="por-confirmar">
+        <ul class="met1-marcas">{m.marcas.map((marca,i) => <li id={i === 4 ? 'a-cor' : undefined} data-met1={`marca-${i}`}><Frase partes={marca[lang]} lang={lang} provas={p} /></li>)}</ul>
+      </div>
+    </section>
+    <section class="metodo-secao" id={ids[3]}>
+      <div class="regra-cabeca"><h2>{m.titulos[lang][3]}</h2></div>
+      <div class="metodo-corpo" id="politica-de-ia">
+        <p class="metodo-p" data-met1="mudanca"><a href={routePath('correcoes',lang)}><Frase partes={m.mudanca[lang]} lang={lang} provas={p} /></a></p>
+        <p class="metodo-p" data-met1="autoria" data-frase-da-politica={lang}><Frase partes={m.autoria[lang]} lang={lang} provas={p} /></p>
+        <p class="met1-portas"><a data-met1="ligacao-0" href={routePath('agenda',lang)}>{m.ligacoes[lang][0]}</a>{' '}<a data-met1="ligacao-1" href={DOCUMENTO_DA_POLITICA}>{m.ligacoes[lang][1]}</a></p>
+      </div>
+    </section>
   </div>
-
-  {/* ===================================== 9 · a forma
-      As linhas rotuladas que o diretor aprovou a 20.08.2026 (decisões g e h), e a da
-      escala, que veio com o F1.10. O texto vem de `src/data/metodo.mjs` e a forma é a de
-      antes do bloco ME1, sem mudar um carácter: é texto governado, e o feixe do desenho
-      tira daqui `#a-cor` e `#a-letra`. */}
-  <section class="metodo-secao metodo-fecho" id={FECHO.id}>
-    <div class="regra-cabeca">
-      <h2>{FECHO.titulo[lang]}</h2>
-    </div>
-    <div class="metodo-corpo">
-      {
-        FECHO.entradas.map((e) => (
-          <div class="regra-linha" id={e.id}>
-            <span class="regra-k">{e.titulo[lang]}</span>
-            <div class="regra-v">
-              <p class="metodo-p">
-                <Frase partes={e.texto[lang]} lang={lang} />
-              </p>
-              {e.ligacoes.length > 0 && (
-                <p class="regra-portas">
-                  {e.ligacoes.map((l) => (
-                    <a href={destino(l)}>{l.rotulo[lang]} →</a>
-                  ))}
-                </p>
-              )}
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </section>
 </Base>

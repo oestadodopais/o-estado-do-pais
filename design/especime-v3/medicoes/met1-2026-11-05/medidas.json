@@ -1,0 +1,24 @@
+{
+  "conferencias_da_corrida": 62,
+  "plantas": 44,
+  "edicoes": {
+    "pt": {
+      "seccoes": 4,
+      "passos": 10,
+      "palavras": 460
+    },
+    "en": {
+      "seccoes": 4,
+      "passos": 10,
+      "palavras": 448
+    }
+  },
+  "marcador": {
+    "pt": 0,
+    "en": 0
+  },
+  "paginas": {
+    "pt": 4914,
+    "en": 4909
+  }
+}

@@ -1,3 +1,4 @@
+import { passosDaCorrida } from './conferencias-da-corrida.mjs';
 import { CORRECOES_TEXTO } from '../data/correcoes.mjs';
 /**
  * A prova viva: os números que o sítio diz sobre si próprio.
@@ -413,6 +414,7 @@ function portaDaAgenda(lang, estado = null) {
  */
 /** @type {Record<string, ParDeLinguas>} */
 const FRASES = {
+  conferencias_da_corrida: { pt: 'conferências da corrida inteira', en: 'checks in the full run' },
   fontes: {
     pt: 'organismos distintos no campo da fonte das linhas do livro-razão',
     en: 'distinct bodies in the source field of the ledger rows',
@@ -798,6 +800,7 @@ export function prova(lang = 'pt') {
 
   return {
     /* ---- o livro-razão ---- */
+    conferencias_da_corrida: k('conferencias_da_corrida', passosDaCorrida().length, CAMINHO_DA_PROVA),
     afirmacoes: k('afirmacoes', claims.size, livro),
     indexaveis: k('indexaveis', claims.size - divida, livro),
     divida: k('divida', divida, livro),

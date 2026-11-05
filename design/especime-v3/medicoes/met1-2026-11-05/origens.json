@@ -1,0 +1,11 @@
+{
+  "cabeca_da_construcao": "6f93372ae16e2abc103f972a7bb4fbc02818889c",
+  "origens": {
+    "src/data/metodo.mjs": "339a23421557a2d53de5151ec6702651255336169868d561fc2c98c7f1f1c98b",
+    "src/data/sobre.mjs": "c40ac112e11c83a7731ab14308b834b85847004d860a1125968bee3f287d7b43",
+    "scripts/metodo-aprovado.json": "a31bb77c2937b24183872f66813d16b0171406c7407f71e9f18891c32ea3c391",
+    "scripts/sobre-limites-aprovados.json": "4c24b4daa16aebd4a2faaaa4eb88163c84b6851fd99d994587b3efd28aa63316",
+    "design/especime-v3/medicoes/met1-2026-11-05/metodo-pt.html": "9b0f079b94aac1cd5e6d9598bb43c4a97216fb127273012bbe062aa4a4e9fdcd",
+    "design/especime-v3/medicoes/met1-2026-11-05/metodo-en.html": "318743180c085156564a84153e6e0e04783f527ba43140ca17c37c29762209af"
+  }
+}

@@ -140,15 +140,7 @@ cada par que a folha de facto usa, nos dois temas; um par que não esteja na sua
 lista é um par que ninguém mediu. Os números de hoje estão em
 `design/especime-v3/notas/stage-1.md`, os da v2 em `DECISIONS.md` §1.43.
 
-**A regra que esta secção é, o Método diz-a ao leitor na sua entrada de fecho**, e
-diz as duas metades de uma vez, o valor de referência e a correção: *«A cor
-aparece só onde a fonte publica um valor de referência: âmbar quando o valor está
-fora dele, cobalto quando está dentro. Tudo o resto é tinta e cinzento, e uma
-correção diz-se pela forma, com o valor antigo riscado e o novo ao lado, nunca por
-uma cor.»* (`metodo`) A frase é
-pública e esta secção é a sua forma; a amarra das decisões prende uma à outra,
-palavra por palavra contra `src/data/metodo.mjs`, para que a citação não possa
-envelhecer calada no dia em que o Método mudar (§8).
+**A regra da cor lê-se nas marcas do Método:** *«Âmbar: o valor está fora do valor de referência que a fonte publica. Cobalto: está dentro. Uma medida sem valor de referência não leva cor.»* (`metodo`) A amarra das decisões confere a citação palavra por palavra contra `src/data/metodo.mjs`. A forma das correções conserva-se como definida nesta secção.
 
 ---
 
@@ -208,9 +200,7 @@ tem.
 
 ## 5. O selo de proveniência
 
-O Método promete, nas duas línguas, na secção do recibo de cada número: *«Ao lado
-de cada medição há um selo que abre a sua entrada, o recibo do número: cheio quando
-a origem está completa, a tracejado quando falta um campo.»* (`metodo`) Então:
+O Método diz, nas duas línguas, na secção de conferir um número: *«Toque em «fonte», ao lado de um número, para abrir o seu recibo.»* (`metodo`) A origem incompleta conserva o selo a tracejado. Então:
 
 1. **O selo é sempre uma ligação** para a linha do livro-razão. Um selo que não
    liga a lado nenhum não é um selo: é uma legenda, e a promessa fica falsa.
