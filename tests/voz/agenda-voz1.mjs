@@ -95,14 +95,17 @@ for(const [regua,seletor,queixa] of [
  for(const alterada of [false,true]){
   const codigo=`import fs from 'node:fs';import path from 'node:path';
 const copias=new Map(${JSON.stringify(copias)});const ler=fs.readFileSync;
-fs.readFileSync=function(f,...args){const copia=typeof f==='string'&&copias.get(path.resolve(f));return copia!==undefined&&${alterada}?copia:ler.call(this,f,...args);};
+// As leituras por URL e os ficheiros fora da planta seguem para a função original.
+fs.readFileSync=function(f,...args){const copia=typeof f==='string'?copias.get(path.resolve(f)):undefined;return copia!==undefined&&${alterada}?copia:ler.call(this,f,...args);};
 await import('./scripts/check-${regua}.mjs');`;
   const r=spawnSync(process.execPath,['--input-type=module','-e',codigo],{encoding:'utf8',maxBuffer:16*1024*1024});
   assert.equal(r.status,alterada?1:0,`${regua}: código inesperado; ${r.stderr}`);
   if(alterada){
    for(const rel of ['agenda/index.html','en/agenda/index.html']){
-    const rota=regua==='lugar'?'/'+rel.replace('index.html',''):rel;
-    morde(`${regua}: ${rel}; ${r.stderr}`, (r.stdout+r.stderr).split('\n').some(l=>l.includes(queixa)&&l.includes(regua==='lugar'?`L1 · ${rota}:`:`em ${rota}.`)));
+    const rota=regua==='lugar'?'/'+rel.replace('/index.html',''):rel;
+    const mensagem=(r.stdout+r.stderr).split('\n').find(l=>l.includes(queixa)&&l.includes(regua==='lugar'?`L1 · ${rota}:`:`em ${rota}.`));
+    morde(`${regua}: ${rel}; ${r.stderr}`,mensagem);
+    console.log(mensagem.trim());
    }
   }
   console.log(`VOZ-1 D ${regua}: ${alterada?'planta recusada nas duas edições':'controlo intacto'}; código ${r.status}.`);
