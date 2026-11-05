@@ -1,7 +1,8 @@
 /** VOZ-1 B: dados conservados, futuro exato, ausência distinta e portas verificadas. */
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {parse} from 'node-html-parser';
 import {WORKS} from '../../src/data/studies.mjs';
-import {conferirRevisoesNoRegisto,campoDoNomeDaRevisao} from '../../scripts/revisoes-no-registo.mjs';
+import {contextoDaRevisao} from '../../src/lib/contexto-da-revisao.mjs';
+import {conferirRevisoesNoRegisto} from '../../scripts/revisoes-no-registo.mjs';
 import {spawnSync} from 'node:child_process';
 import {matchPath,routePath} from '../../src/lib/routes.mjs';
 import {conferirTitulosCopiados} from '../../scripts/titulos-copiados.mjs';
@@ -77,19 +78,19 @@ for(const lang of ['pt','en']){
  const titulos=correcoes.querySelectorAll('[data-correcao-titulo]');assert(titulos.length>0);
  assert.deepEqual(conferirTitulosCopiados(correcoes,{key:'correcoes',lang}).erros,[]);
  for(const el of titulos){const id=el.getAttribute('data-correcao-titulo');assert(el.closest('li').querySelector('a.src-chip'));assert.notEqual(el.textContent,id);}
- const campo=correcoes.querySelector('[data-correcao-titulo] [data-linha-claim]');assert(campo);
- assert(campoDoNomeDaRevisao('correcoes',campo));
- morde('campo do nome fora do registo',!campoDoNomeDaRevisao('agenda',campo));
- for(const atributo of ['data-linha-campo','data-linha-claim']){const r=parse(correcoes.toString()),el=r.querySelector('[data-correcao-titulo] [data-linha-claim]');el.setAttribute(atributo,atributo==='data-linha-campo'?'value':'taxa-de-desemprego-2025');morde('campo ou linha indevidos no nome',!campoDoNomeDaRevisao('correcoes',el));}
+ const copiados=conferirTitulosCopiados(correcoes,{key:'correcoes',lang}).elementos;
+ assert(copiados.every(el=>el.hasAttribute('data-correcao-nome')));
+ morde('composição fora da isenção do título',titulos.every(el=>!copiados.includes(el)));
  const duplicada=parse(correcoes.toString()),nomes=duplicada.querySelectorAll('[data-correcao-titulo]');
  nomes[1].set_content(nomes[0].innerHTML);
  morde('duas linhas iguais no registo',conferirTitulosCopiados(duplicada,{key:'correcoes',lang}).erros.some(e=>e.includes('linha repetida')));
  for(const [nome,muda] of [
-  ['período retirado',r=>{const el=r.querySelector('[data-correcao-titulo]');el.set_content(el.textContent.replace(/, [^,]+$/,''));}],
-  ['contexto europeu retirado',r=>{const el=r.querySelectorAll('[data-correcao-titulo]').find(e=>e.textContent.includes(lang==='pt'?' na União Europeia':' in the European Union'));assert(el);el.set_content(el.textContent.replace(lang==='pt'?' na União Europeia':' in the European Union',''));}],
-  ['nome trocado',r=>r.querySelector('[data-correcao-titulo]').set_content('Outro nome, 2025')],
+  ['período retirado',r=>{r.querySelector('[data-correcao-periodo]').remove();}],
+  ['contexto europeu retirado',r=>{const el=r.querySelectorAll('[data-correcao-titulo]').find(e=>contextoDaRevisao(e.getAttribute('data-correcao-titulo')).uniao);assert(el);el.set_content(el.innerHTML.replace(lang==='pt'?'</span> na União Europeia<span':'</span> in the European Union<span','</span><span'));}],
+  ['título diferente do recibo',r=>r.querySelector('[data-correcao-nome]').set_content('Outro nome')],
+  ['período repetido',r=>{const el=r.querySelector('[data-correcao-titulo="evora-prr-vencido-aprovado-2026"]');assert(el);el.insertAdjacentHTML('beforeend',', 19.08.2026');}],
   ['porta trocada',r=>r.querySelector('.registo-proveniencia-linhas a.src-chip').setAttribute('href','/')],
- ]){const r=parse(correcoes.toString());muda(r);morde(nome,conferirRevisoesNoRegisto(r,lang).erros.length>0);}
+ ]){const r=parse(correcoes.toString());muda(r);const erros=conferirRevisoesNoRegisto(r,lang).erros;morde(nome,erros.some(e=>e.includes(nome==='título diferente do recibo'?'título diferente do recibo':nome==='porta trocada'?'porta do recibo diferente':'contexto ou período diferente')));if(['título diferente do recibo','período repetido'].includes(nome))console.log(`VOZ-1 F: ${lang}, ${nome}: recusado`);}
 
 }
 const c={eventos:[{id:'antes',data:'2026-11-03'},{id:'hoje',data:'2026-11-04'},{id:'depois',data:'2026-11-05'},{id:'janela',janela:{inicio:'2026-11-01',fim:'2026-11-04'}},{id:'sem',motivo_sem_data:'nao_lida'}]};

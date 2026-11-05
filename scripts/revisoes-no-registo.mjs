@@ -1,21 +1,26 @@
 /** VOZ-1 E: cada revisão identifica a medida, o contexto e o período da sua linha. */
 import {getClaim} from '../src/lib/ledger.mjs';
 import {contextoDaRevisao} from '../src/lib/contexto-da-revisao.mjs';
-import {nomeDoCartao,nomeDoCartaoComAUnidade} from '../src/lib/nomes.mjs';
-import {unidadeDoCartao} from '../src/data/unidades-dos-cartoes.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+import {parse} from 'node-html-parser';
 import {dataDaCasa} from '../src/lib/datas.mjs';
 import {routePath} from '../src/lib/routes.mjs';
 const normal=s=>s.replace(/\s+/gu,' ').trim();
-export function conferirRevisoesNoRegisto(root,lang){
+export function conferirRevisoesNoRegisto(root,lang,dist='dist'){
  const erros=[],elementos=[];
  for(const el of root.querySelectorAll('[data-correcao-titulo]')){
   const id=el.getAttribute('data-correcao-titulo');
   try{
-   const contexto=contextoDaRevisao(id),linha=getClaim(id),medida=getClaim(contexto.medida);
-   const nome=(unidadeDoCartao(medida.id,lang)?nomeDoCartaoComAUnidade(medida,lang):nomeDoCartao(medida,lang))?.texto;
+   const contexto=contextoDaRevisao(id),linha=getClaim(id);
+   const recibo=parse(fs.readFileSync(path.join(dist,routePath('linha',lang,{slug:id}),'index.html'),'utf8'));
+   const nome=normal(recibo.querySelector('main h1')?.textContent??'');
+   const copiados=el.querySelectorAll('[data-correcao-nome]'),copiado=copiados[0];
    if(!nome||!linha.reference_date)throw Error('nome ou período ausente');
-   const esperado=`${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}, ${dataDaCasa(linha.reference_date,lang)}`;
-   if(normal(el.textContent)!==normal(esperado))throw Error('nome, contexto ou período diferente da linha');
+   if(copiados.length!==1||copiado.getAttribute('data-correcao-nome')!==id||copiado.getAttribute('data-de-linha')!==id||normal(copiado.textContent)!==nome)throw Error('título diferente do recibo');
+   const periodo=dataDaCasa(linha.reference_date,lang);
+   const esperado=`${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}${nome.includes(periodo)?'':', '+periodo}`;
+   if(normal(el.textContent)!==normal(esperado))throw Error('contexto ou período diferente do recibo e da linha');
    const item=el.closest('[data-correcao-entrada]');
    if(item?.getAttribute('data-correcao-entrada')!==id)throw Error('linha diferente');
    if(!item.querySelectorAll('a.src-chip').some(a=>a.getAttribute('href')===routePath('linha',lang,{slug:id})))throw Error('porta do recibo diferente');
@@ -31,12 +36,4 @@ export function conferirRevisoesNoRegisto(root,lang){
   }
  }
  return {erros,elementos};
-}
-
-/** Só os campos do nome da medida, dentro da revisão identificada. */
-export function campoDoNomeDaRevisao(rota,el){
- const titulo=el.closest('[data-correcao-titulo]'),id=titulo?.getAttribute('data-correcao-titulo');
- return rota==='correcoes'&&!!id&&['name','document.title'].includes(el.getAttribute('data-linha-campo'))&&
-  titulo.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada')===id&&
-  el.getAttribute('data-linha-claim')===contextoDaRevisao(id).medida;
 }

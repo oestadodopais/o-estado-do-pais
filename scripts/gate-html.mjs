@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import {campoDoNomeDaRevisao} from './revisoes-no-registo.mjs';
 import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 const TITULOS_COPIADOS_CONFERIDOS = new WeakSet();
 import {retirarAusencias} from '../src/lib/ausencias-voz1.mjs';
@@ -6763,8 +6762,7 @@ for (const file of ficheirosHtml(DIST)) {
     /* E0b: o registo nomeia também a medida pelo campo da fonte. Só o nome,
        só nesta entrada da própria linha; a comparação literal abaixo e a
        auditoria dos selos continuam ativas. A célula E0 planta o campo value. */
-    const nomeDeCorrecao = nomeNoRegistoAdmitido(rota?.key, el, id, campo) ||
-      (TITULOS_COPIADOS_CONFERIDOS.has(el.closest('[data-correcao-titulo]')) && campoDoNomeDaRevisao(rota?.key,el));
+    const nomeDeCorrecao = nomeNoRegistoAdmitido(rota?.key, el, id, campo);
     /* N1c: a unidade comum das linhas municipais, só no cabeçalho da tabela
        ou na legenda do mapa dos lugares. A linha tem de estar nessa tabela;
        a comparação literal do campo e a auditoria dos selos mantêm-se. */
@@ -7365,10 +7363,10 @@ for (const file of ficheirosHtml(DIST)) {
     })) err(`EX1 · ${msg}`);
   }
 
-  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-titulo]')) {
-    const id=el.getAttribute('data-correcao-titulo');
+  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-nome]')) {
+    const id=el.getAttribute('data-correcao-nome');
     if(id){
-      // A composição e a porta já foram conferidas contra a linha, acima.
+      // Só o título copiado sai; o contexto e o período conservam as suas conferências.
       if(!TITULOS_COPIADOS_CONFERIDOS.has(el))err('VOZ-1 E: nome da revisão não conferido');
       aRemover.push(el);continue;
     }

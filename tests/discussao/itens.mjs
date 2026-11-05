@@ -317,14 +317,10 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!(quadroPai2&&!quadroPai2.erros.length&&n.closest('[data-quadro-pais]'))&&![...superficie.nos].some(el=>el===n||el.querySelectorAll('*').includes(n))&&!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
  const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
  const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),registo=/^(?:correcoes|en\/corrections)\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
- const revisoes=registo?conferirRevisoesNoRegisto(root,lang):{erros:[],elementos:[]};
- erros.push(...revisoes.erros);const nomesDasRevisoes=new Set(revisoes.elementos);
+ const revisoes=registo?conferirRevisoesNoRegisto(root,lang,dist):{erros:[],elementos:[]};
+ erros.push(...revisoes.erros);
  for(const n of nos){
-  const titulo=n.closest('[data-correcao-titulo]'),original=idDoNo(n);
-  const nomeDaRevisao=nomesDasRevisoes.has(titulo)&&!n.hasAttribute('data-claim')&&
-   (n.hasAttribute('data-nome')||['name','document.title'].includes(n.getAttribute('data-linha-campo')))&&
-   original===contextoDaRevisao(titulo.getAttribute('data-correcao-titulo')).medida;
-  const id=nomeDaRevisao?titulo.getAttribute('data-correcao-titulo'):original,cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):registo?n.closest('[data-mudou-registo] li[data-mudanca="correcao"][data-correcao-entrada], ul.registo-proveniencia-linhas li[data-correcao-entrada]'):null;
+  const id=idDoNo(n),cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):registo?n.closest('[data-mudou-registo] li[data-mudanca="correcao"][data-correcao-entrada], ul.registo-proveniencia-linhas li[data-correcao-entrada]'):null;
   const dono=cartao?.getAttribute('data-cartao-medida')??cartao?.getAttribute('data-linha-sem-nome')??cartao?.getAttribute('data-correcao-entrada');
   const remissao=n.closest('[data-regua][data-selo-em]');
   if(!cartao||(dono!==id&&remissao?.getAttribute('data-selo-em')!==dono)){ids.add(id);continue;}
@@ -529,12 +525,13 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   const falhas=conferirIntegracao(root,lang,pagina,loadClaims(),{dist,recibos:new Map([[lang+':'+id,documento]])});
   const queixa=falhas.find(e=>e.startsWith(`V2D percurso: recibo de ${id} sem porta completa`));
   provas.push({nome:'VOZ-1 E: revisão de proveniência sem porta no recibo',lang,linha:id,mordeu:limpo&&portas.length>0&&!!queixa,queixa:queixa??null});
-  const nome=root.querySelectorAll('[data-correcao-titulo] [data-nome][data-de-linha]').find(n=>n.getAttribute('data-de-linha')!==n.closest('[data-correcao-titulo]').getAttribute('data-correcao-titulo')&&ITENS.some(e=>linhasImpressasOuDerivadas(e,loadClaims()).has(n.getAttribute('data-de-linha'))));
+  const nome=root.querySelectorAll('[data-correcao-nome]').find(n=>contextoDaRevisao(n.getAttribute('data-correcao-nome')).medida!==n.getAttribute('data-correcao-nome')&&ITENS.some(e=>linhasImpressasOuDerivadas(e,loadClaims()).has(contextoDaRevisao(n.getAttribute('data-correcao-nome')).medida)));
   if(!nome){erros.push('VOZ-1 E: nenhum nome de outra linha com discussão para a planta');continue;}
+  const adicional=contextoDaRevisao(nome.getAttribute('data-correcao-nome')).medida;
   for(const fora of [false,true]){
    const copia=parse(root.toString());
-   if(fora)copia.querySelector('main').insertAdjacentHTML('beforeend',nome.outerHTML);
-   else copia.querySelector(`[data-correcao-titulo="${nome.closest('[data-correcao-titulo]').getAttribute('data-correcao-titulo')}"]`).insertAdjacentHTML('beforeend',`<span data-claim="${nome.getAttribute('data-de-linha')}"></span>`);
+   if(fora)copia.querySelector('main').insertAdjacentHTML('beforeend',`<span data-de-linha="${adicional}">${nome.textContent}</span>`);
+   else copia.querySelector(`[data-correcao-titulo="${nome.closest('[data-correcao-titulo]').getAttribute('data-correcao-titulo')}"]`).insertAdjacentHTML('beforeend',`<span data-claim="${adicional}"></span>`);
    const falhas=conferirIntegracao(copia,lang,pagina,loadClaims(),{dist});
    provas.push({nome:'VOZ-1 E: '+(fora?'nome fora da revisão':'medida adicional na revisão'),lang,mordeu:limpo&&falhas.some(e=>e.startsWith('V2B integração:')),queixa:falhas.find(e=>e.startsWith('V2B integração:'))??null});
   }

@@ -7,7 +7,7 @@ export function conferirTitulosCopiados(root,rota,dist='dist'){
  const erros=[],elementos=[];const lang=rota?.lang??'pt';
  if(root.querySelector('[data-correcao-titulo]')){
   if(rota?.key!=='correcoes')erros.push('VOZ-1 E: revisão fora do registo');
-  else {const revisoes=conferirRevisoesNoRegisto(root,lang);erros.push(...revisoes.erros);elementos.push(...revisoes.elementos);}
+  else {const revisoes=conferirRevisoesNoRegisto(root,lang,dist);erros.push(...revisoes.erros);elementos.push(...revisoes.elementos.map(el=>el.querySelector('[data-correcao-nome]')));}
  }
  for(const el of root.querySelectorAll('[data-calendario-pagina]')){
   const destino=el.getAttribute('data-calendario-pagina');

@@ -3,7 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
 import {WORKS} from '../src/data/studies.mjs';
-import {matchPath} from '../src/lib/routes.mjs';
+import {getClaim} from '../src/lib/ledger.mjs';
+import {dataDaCasa} from '../src/lib/datas.mjs';
+import {routePath,matchPath} from '../src/lib/routes.mjs';
 const dist=process.env.OEDP_DIST??'dist';
 const calendario=JSON.parse(fs.readFileSync('src/data/calendario.json','utf8'));
 const linhas=new Set(calendario.eventos.flatMap(e=>e.afecta_linhas??[]));
@@ -35,6 +37,18 @@ for(const lang of ['pt','en']){
   alvo.set_content((lang==='pt'?'Atualiza: ':'Updates: ')+portas.map(p=>{const href=menu.get(p.rota)??p.rota;return `<a data-calendario-pagina="${esc(href)}" href="${esc(href)}">${esc(p.titulo)}</a>`;}).join(' · '));
  }
  fs.writeFileSync(arquivo,doc.toString());
+ const registo=path.join(dist,lang==='pt'?'correcoes':'en/corrections','index.html');
+ const correcoes=parse(fs.readFileSync(registo,'utf8'));
+ for(const el of correcoes.querySelectorAll('[data-correcao-titulo]')){
+  const id=el.getAttribute('data-correcao-titulo');
+  const recibo=parse(fs.readFileSync(path.join(dist,routePath('linha',lang,{slug:id}),'index.html'),'utf8'));
+  const titulo=normal(recibo.querySelector('main h1')?.textContent??'');
+  if(!titulo)throw Error(`Revisão sem título no recibo: ${id}`);
+  el.querySelector('[data-correcao-nome]').set_content(esc(titulo));
+  const periodo=dataDaCasa(getClaim(id).reference_date,lang);
+  if(titulo.includes(periodo))el.querySelector('[data-correcao-periodo]')?.remove();
+ }
+ fs.writeFileSync(registo,correcoes.toString());
 
 }
 console.log('VOZ-1 B: portas do calendário conferíveis no HTML das páginas atuais.');
