@@ -1,0 +1,91 @@
+{
+  "base": "14df684f9dfccead6aa68509521b022aac88d185",
+  "linha": "retribuicao-minima-mensal-garantida-continente-2026",
+  "codigos": {
+    "build": 0,
+    "discussao": 0,
+    "lingua": 0,
+    "plantas": 0,
+    "construido": 0
+  },
+  "recibos": {
+    "pt": {
+      "texto": "Retribuição mínima mensal garantida no continente · 2026\n920,00 euros por mêsfonte · Diário da República\nquem o publicou\nDiário da República\no documento\nDecreto-Lei n.º 139/2025, de 29 de dezembro\nonde está no documento\nDiário da República, 1.ª série, n.º 249, de 29-12-2025 · 2026\no excerto, como a fonte o escreveu\nO valor da RMMG a que se refere o n.º 1 do artigo 273.º do Código do Trabalho, aprovado em anexo à Lei n.º 7/2009, de 12 de fevereiro, na sua redação atual, é de € 920,00.\na data em que foi lido\n01.09.2026",
+      "campos": [
+        {
+          "legenda": "quem o publicou",
+          "valor": "Diário da República"
+        },
+        {
+          "legenda": "o documento",
+          "valor": "Decreto-Lei n.º 139/2025, de 29 de dezembro"
+        },
+        {
+          "legenda": "onde está no documento",
+          "valor": "Diário da República, 1.ª série, n.º 249, de 29-12-2025 · 2026"
+        },
+        {
+          "legenda": "o excerto, como a fonte o escreveu",
+          "valor": "O valor da RMMG a que se refere o n.º 1 do artigo 273.º do Código do Trabalho, aprovado em anexo à Lei n.º 7/2009, de 12 de fevereiro, na sua redação atual, é de € 920,00."
+        },
+        {
+          "legenda": "a data em que foi lido",
+          "valor": "01.09.2026"
+        }
+      ],
+      "fonte": "https://dre.pt/application/conteudo/992879809",
+      "selo": "/livro-razao/retribuicao-minima-mensal-garantida-continente-2026"
+    },
+    "en": {
+      "texto": "Guaranteed minimum monthly wage in mainland Portugal · 2026\n920,00 euros per monthsource · Diário da República\nwho published it\nDiário da República\nthe document\nDecreto-Lei n.º 139/2025, de 29 de dezembro\nwhere it is in the document\nDiário da República, 1.ª série, n.º 249, de 29-12-2025 · 2026\nthe excerpt, as the source wrote it\nO valor da RMMG a que se refere o n.º 1 do artigo 273.º do Código do Trabalho, aprovado em anexo à Lei n.º 7/2009, de 12 de fevereiro, na sua redação atual, é de € 920,00.\nthe date it was read\n01.09.2026",
+      "campos": [
+        {
+          "legenda": "who published it",
+          "valor": "Diário da República"
+        },
+        {
+          "legenda": "the document",
+          "valor": "Decreto-Lei n.º 139/2025, de 29 de dezembro"
+        },
+        {
+          "legenda": "where it is in the document",
+          "valor": "Diário da República, 1.ª série, n.º 249, de 29-12-2025 · 2026"
+        },
+        {
+          "legenda": "the excerpt, as the source wrote it",
+          "valor": "O valor da RMMG a que se refere o n.º 1 do artigo 273.º do Código do Trabalho, aprovado em anexo à Lei n.º 7/2009, de 12 de fevereiro, na sua redação atual, é de € 920,00."
+        },
+        {
+          "legenda": "the date it was read",
+          "valor": "01.09.2026"
+        }
+      ],
+      "fonte": "https://dre.pt/application/conteudo/992879809",
+      "selo": "/en/ledger/retribuicao-minima-mensal-garantida-continente-2026"
+    }
+  },
+  "metodo": {
+    "conferencias_da_corrida": 62,
+    "plantas": 44,
+    "edicoes": {
+      "pt": {
+        "seccoes": 4,
+        "passos": 10,
+        "palavras": 488
+      },
+      "en": {
+        "seccoes": 4,
+        "passos": 10,
+        "palavras": 479
+      }
+    },
+    "marcador": {
+      "pt": 0,
+      "en": 0
+    },
+    "paginas": {
+      "pt": 4914,
+      "en": 4909
+    }
+  }
+}

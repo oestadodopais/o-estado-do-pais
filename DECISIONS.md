@@ -14621,3 +14621,11 @@ A agenda e o calendário conservam os dados internos nos ficheiros públicos; a 
 **Texto:** metodo 7ab7835f93ff
 
 **Decisão:** adenda A recebida do lugar de direção nesta passagem. O passo inglês passa a identificar o modelo que dirige, na redação literal do mandato, e o oráculo acompanha. O publicador do recibo de exemplo recebe a língua declarada pelo registo dos organismos, através da mesma função usada no recibo de cada linha. Nenhuma régua é alterada.
+
+### 1.223 MET1, adenda B, 05.11.2026: recibo da retribuição mínima
+
+**Afecta:** metodo
+
+**Texto:** metodo 23054cf90062
+
+**Decisão:** o recibo de exemplo passa à linha `retribuicao-minima-mensal-garantida-continente-2026`, conforme a adenda B. Os campos continuam a vir do livro-razão e as línguas dos campos usam as funções já existentes. O título não recebe uma ligação quando a linha não declara `document.url`; a fonte e o selo continuam a abrir os destinos declarados. A lista fechada e o inventário acompanham a linha e o nome do exemplo. A conferência da incorporação conserva a obrigação do selo e atualiza apenas o identificador literal esperado. Nenhuma condição de validação muda e nenhuma porta da discussão é acrescentada.

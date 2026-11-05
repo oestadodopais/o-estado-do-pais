@@ -4170,7 +4170,7 @@ apenas depois de conferido. A célula ER1 confere a porta e esta entrada.
 
 | chave | português | inglês | classe |
 | --- | --- | --- | --- |
-| `metodo.exemplo` | Dívida pública | Public debt | navegação, texto governado |
+| `metodo.exemplo` | Retribuição mínima mensal garantida no continente | Guaranteed minimum monthly wage in mainland Portugal | navegação, texto governado |
 | `incorporar.indisponivel` | Este número ainda não se pode incorporar: um campo da sua proveniência está por confirmar na fonte. | This number cannot be embedded yet: one field of its provenance is still to be confirmed at the source. | conteúdo |
 | `incorporar.titulo` | Incorporar este número | Embed this number | navegação |
 | `incorporar.copiar` | Copiar | Copy | navegação |

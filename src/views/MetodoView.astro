@@ -11,11 +11,12 @@ import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { linguaDaFonte, linguaDoTituloDoDocumento, linguaDaEdicao } from '../i18n/lingua-dos-titulos.mjs';
 import '../styles/metodo.css';
 const { lang = 'pt' } = Astro.props;
 const s = t(lang), p = prova(lang), c = getClaim(m.recibo.id);
 const unidade = unidadeDaLinha(c.unit, lang);
+const Documento = c.document.url ? 'a' : 'span';
 const ids = ['conferir-um-numero', 'percurso', 'marcas', 'correcoes'];
 const tipos = ['modelo', 'programa', 'documento', 'modelo', 'modelo', 'programa', 'leitura', 'leitura', 'programa', 'documento'];
 ---
@@ -31,9 +32,9 @@ const tipos = ['modelo', 'programa', 'documento', 'modelo', 'modelo', 'programa'
           <p class="met1-valor"><Claim id={c.id} lang={lang} chip={true}><span slot="cauda">{' '}<CampoDaLinha id={c.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /></span></Claim></p>
           <dl>
             <div><dt data-met1="campo-0">{m.campos[lang][0]}</dt><dd><a href={c.source_url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} lingua={linguaDaFonte(c.source, lang)} /></a></dd></div>
-            <div><dt data-met1="campo-1">{m.campos[lang][1]}</dt><dd><a href={c.document.url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="document.title" valor={c.document.title} lang={lang} lingua="en" /></a></dd></div>
-            <div><dt data-met1="campo-2">{m.campos[lang][2]}</dt><dd><a href={c.source_url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="document.edition" valor={c.document.edition} lang={lang} /></a>{' · '}<CampoDaLinha id={c.id} campo="reference_date" valor={c.reference_date} lang={lang} /></dd></div>
-            <div><dt data-met1="campo-3">{m.campos[lang][3]}</dt><dd><blockquote><CampoDaLinha id={c.id} campo="excerpt" valor={c.excerpt} lang={lang} lingua="en" /></blockquote></dd></div>
+            <div><dt data-met1="campo-1">{m.campos[lang][1]}</dt><dd><Documento href={c.document.url} rel={c.document.url ? "noopener noreferrer external" : undefined}><CampoDaLinha id={c.id} campo="document.title" valor={c.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(c.document.title, lang)} /></Documento></dd></div>
+            <div><dt data-met1="campo-2">{m.campos[lang][2]}</dt><dd><a href={c.source_url} rel="noopener noreferrer external"><CampoDaLinha id={c.id} campo="document.edition" valor={c.document.edition} lang={lang} lingua={linguaDaEdicao(c.document.edition, lang)} /></a>{' · '}<CampoDaLinha id={c.id} campo="reference_date" valor={c.reference_date} lang={lang} /></dd></div>
+            <div><dt data-met1="campo-3">{m.campos[lang][3]}</dt><dd><blockquote><CampoDaLinha id={c.id} campo="excerpt" valor={c.excerpt} lang={lang} lingua={linguaDoTituloDoDocumento(c.document.title, lang)} /></blockquote></dd></div>
             <div><dt data-met1="campo-4">{m.campos[lang][4]}</dt><dd><CampoDaLinha id={c.id} campo="access_date" valor={c.access_date} lang={lang} /></dd></div>
           </dl>
         </div>

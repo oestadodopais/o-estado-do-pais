@@ -90,7 +90,7 @@ export function conferirInventarioIncorporacao(texto) {
 const errosDoInventario = conferirInventarioIncorporacao(fs.readFileSync(new URL('../design/especime-v3/INVENTARIO-FRASES.md', import.meta.url), 'utf8'));
 
 export function conferirExemploNoMetodo(root, lang) {
-  const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'divida-publica-2025';
+  const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'retribuicao-minima-mensal-garantida-continente-2026';
   // ME1 (15.10.2026): as palavras da porta são as do mandato do bloco, escritas aqui e não importadas.
   const texto = lang === 'en' ? 'source' : 'fonte';
   return root.querySelectorAll('#livro-razao a.src-chip').some(a => a.getAttribute('href') === href && a.querySelector('.src-chip-texto')?.textContent.trim() === texto)

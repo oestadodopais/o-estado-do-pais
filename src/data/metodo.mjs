@@ -220,10 +220,10 @@ export const METODO = {
     ]
   },
   "recibo": {
-    "id": "divida-publica-2025",
+    "id": "retribuicao-minima-mensal-garantida-continente-2026",
     "nome": {
-      "pt": "Dívida pública",
-      "en": "Public debt"
+      "pt": "Retribuição mínima mensal garantida no continente",
+      "en": "Guaranteed minimum monthly wage in mainland Portugal"
     }
   },
   "ligacoes": {
