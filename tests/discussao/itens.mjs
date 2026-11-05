@@ -1,3 +1,5 @@
+import {conferirRevisoesNoRegisto} from '../../scripts/revisoes-no-registo.mjs';
+import {contextoDaRevisao} from '../../src/lib/contexto-da-revisao.mjs';
 import { conferirQuadro } from '../../scripts/check-quadro.mjs';
 import { UNIDADES_DA_MEDIDA as UNIDADES_DO_MANDATO, unidadeDaMedida } from '../../src/lib/unidade-da-medida.mjs';
 import { listagensDoInicio, candidatasDoInicio } from '../../src/lib/listagens-do-inicio.mjs';
@@ -315,8 +317,14 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!(quadroPai2&&!quadroPai2.erros.length&&n.closest('[data-quadro-pais]'))&&![...superficie.nos].some(el=>el===n||el.querySelectorAll('*').includes(n))&&!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
  const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
  const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),registo=/^(?:correcoes|en\/corrections)\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
+ const revisoes=registo?conferirRevisoesNoRegisto(root,lang):{erros:[],elementos:[]};
+ erros.push(...revisoes.erros);const nomesDasRevisoes=new Set(revisoes.elementos);
  for(const n of nos){
-  const id=idDoNo(n),cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):registo?n.closest('[data-mudou-registo] li[data-mudanca="correcao"][data-correcao-entrada]'):null;
+  const titulo=n.closest('[data-correcao-titulo]'),original=idDoNo(n);
+  const nomeDaRevisao=nomesDasRevisoes.has(titulo)&&!n.hasAttribute('data-claim')&&
+   (n.hasAttribute('data-nome')||['name','document.title'].includes(n.getAttribute('data-linha-campo')))&&
+   original===contextoDaRevisao(titulo.getAttribute('data-correcao-titulo')).medida;
+  const id=nomeDaRevisao?titulo.getAttribute('data-correcao-titulo'):original,cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):registo?n.closest('[data-mudou-registo] li[data-mudanca="correcao"][data-correcao-entrada], ul.registo-proveniencia-linhas li[data-correcao-entrada]'):null;
   const dono=cartao?.getAttribute('data-cartao-medida')??cartao?.getAttribute('data-linha-sem-nome')??cartao?.getAttribute('data-correcao-entrada');
   const remissao=n.closest('[data-regua][data-selo-em]');
   if(!cartao||(dono!==id&&remissao?.getAttribute('data-selo-em')!==dono)){ids.add(id);continue;}
@@ -507,6 +515,30 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   if(mede(area,corpo).length)erros.push('V2D percurso: cartão com caminho completo recusado');
   for(const [nome,a,c] of [['cartão sem selo para o recibo',area.replace(/<a class="src-chip".*?<\/a>/,''),corpo],['recibo sem porta para o item',area,'<main><section id="prova"></section></main>'],['recibo ausente no percurso',area,null]])provas.push({nome:forma+': '+nome,lang,mordeu:mede(a,c).some(e=>e.startsWith('V2D percurso:'))});
  }
+ // VOZ-1 E: a revisão de proveniência chega à discussão pelo mesmo recibo.
+ for(const lang of ['pt','en']){
+  const pagina=(lang==='pt'?'correcoes':'en/corrections')+'/index.html';
+  const root=parse(fs.readFileSync(path.join(dist,pagina),'utf8'));
+  const limpo=conferirIntegracao(root,lang,pagina,loadClaims(),{dist}).length===0;
+  const entrada=root.querySelectorAll('ul.registo-proveniencia-linhas li[data-correcao-entrada]').find(n=>ITENS.some(e=>linhasImpressasOuDerivadas(e,loadClaims()).has(n.getAttribute('data-correcao-entrada'))));
+  const id=entrada?.getAttribute('data-correcao-entrada');
+  if(!id){erros.push('VOZ-1 E: nenhuma revisão de proveniência com discussão para a planta');continue;}
+  const documento=parse(fs.readFileSync(path.join(dist,recibo(id,lang),'index.html'),'utf8'));
+  const portas=documento.querySelectorAll('#prova [data-discussao-integracao]');
+  for(const porta of portas)porta.remove();
+  const falhas=conferirIntegracao(root,lang,pagina,loadClaims(),{dist,recibos:new Map([[lang+':'+id,documento]])});
+  const queixa=falhas.find(e=>e.startsWith(`V2D percurso: recibo de ${id} sem porta completa`));
+  provas.push({nome:'VOZ-1 E: revisão de proveniência sem porta no recibo',lang,linha:id,mordeu:limpo&&portas.length>0&&!!queixa,queixa:queixa??null});
+  const nome=root.querySelectorAll('[data-correcao-titulo] [data-nome][data-de-linha]').find(n=>n.getAttribute('data-de-linha')!==n.closest('[data-correcao-titulo]').getAttribute('data-correcao-titulo')&&ITENS.some(e=>linhasImpressasOuDerivadas(e,loadClaims()).has(n.getAttribute('data-de-linha'))));
+  if(!nome){erros.push('VOZ-1 E: nenhum nome de outra linha com discussão para a planta');continue;}
+  for(const fora of [false,true]){
+   const copia=parse(root.toString());
+   if(fora)copia.querySelector('main').insertAdjacentHTML('beforeend',nome.outerHTML);
+   else copia.querySelector(`[data-correcao-titulo="${nome.closest('[data-correcao-titulo]').getAttribute('data-correcao-titulo')}"]`).insertAdjacentHTML('beforeend',`<span data-claim="${nome.getAttribute('data-de-linha')}"></span>`);
+   const falhas=conferirIntegracao(copia,lang,pagina,loadClaims(),{dist});
+   provas.push({nome:'VOZ-1 E: '+(fora?'nome fora da revisão':'medida adicional na revisão'),lang,mordeu:limpo&&falhas.some(e=>e.startsWith('V2B integração:')),queixa:falhas.find(e=>e.startsWith('V2B integração:'))??null});
+  }
+ }
  // DO1-A: a pertença é uma condição fechada, não uma dispensa para a página inteira.
  for(const lang of ['pt','en']) {
   const prefixo=lang==='pt'?'dossies':'en/dossiers';
@@ -542,6 +574,7 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
  }
  const out=process.argv.indexOf('--json');if(out>=0)fs.writeFileSync(process.argv[out+1],JSON.stringify(r,null,2)+'\n');
  console.log(`V2B · ${r.erros.length} erro(s), ${r.plantas?.filter(p=>p.mordeu).length??0} de ${r.plantas?.length??0} plantas, ${r.integracoes?.length??0} portas de integração.`);
+ for(const p of r.plantas??[])if(p.nome.startsWith('VOZ-1 E:'))console.log(`${p.nome} (${p.lang}): ${p.mordeu?'recusada':'não recusada'}; ${p.queixa}`);
  for(const erro of r.erros)console.error(erro);
  process.exitCode=r.erros.length?1:0;
 }
