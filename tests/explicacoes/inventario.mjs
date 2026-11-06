@@ -13,6 +13,7 @@ export function plantasDoInventarioDaSemana(dist) {
     return JSON.parse(saida.slice(saida.indexOf('{'))).frases_da_casa.por_rota;
   };
   try {
+    fs.copyFileSync(path.join(dist,'version.json'),path.join(tmp,'version.json'));
     for(const rota of rotas) {fs.mkdirSync(path.join(tmp,rota),{recursive:true});fs.copyFileSync(path.join(dist,rota,'index.html'),path.join(tmp,rota,'index.html'));}
     const controlo=mede();
     for(const rota of rotas) {
