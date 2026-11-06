@@ -2553,8 +2553,8 @@ export const STRINGS = {
            qualificador vai a seguir à data. */
         semRespostaK: 'Sem resposta a',
         respondeuComErroK: 'Respondeu com erro a',
-        aEstaMaquinaK: 'a esta máquina',
-        aoCorredorK: 'à conferência automática',
+        aEstaMaquinaK: 'nesta máquina',
+        aoCorredorK: 'na conferência automática',
         /* O ATRASO DE UMA SÉRIE, DITO AO PÉ DO VALOR (bloco F1.6, 04.09.2026;
            DECISIONS §1.98, decisão (2)). Três rótulos e três valores lidos, e
            nenhum algarismo nesta cadeia: o período da fonte vem de
@@ -4287,8 +4287,8 @@ export const STRINGS = {
         enquadramentoPortugal: 'Portugal, same period',
         semRespostaK: 'No answer on',
         respondeuComErroK: 'Answered with an error on',
-        aEstaMaquinaK: 'to this machine',
-        aoCorredorK: 'to the automated check',
+        aEstaMaquinaK: 'on this machine',
+        aoCorredorK: 'in the automated check',
         periodoDaFonteK: 'Latest period published by the source:',
         periodoDestaLinhaK: 'this row:',
         periodoLidoK: 'read on',

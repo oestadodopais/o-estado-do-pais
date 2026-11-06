@@ -78,15 +78,15 @@ const ROTULOS = {
     rota: (id) => path.join('livro-razao', id),
     'sem-resposta': 'Sem resposta a',
     'respondeu-com-erro': 'Respondeu com erro a',
-    aoCorredor: 'à conferência automática',
-    aEstaMaquina: 'a esta máquina',
+    aoCorredor: 'na conferência automática',
+    aEstaMaquina: 'nesta máquina',
   },
   en: {
     rota: (id) => path.join('en', 'ledger', id),
     'sem-resposta': 'No answer on',
     'respondeu-com-erro': 'Answered with an error on',
-    aoCorredor: 'to the automated check',
-    aEstaMaquina: 'to this machine',
+    aoCorredor: 'in the automated check',
+    aEstaMaquina: 'on this machine',
   },
 };
 
