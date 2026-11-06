@@ -7,7 +7,7 @@ import { dadosDaIncorporacao, codigoDaIncorporacao, podeIncorporar } from '../..
 import { lugarDaIncorporacao } from '../../src/lib/lugar-da-incorporacao.mjs';
 import { allClaims, eDerivada, camposPorVerificar, documentoDaLinha } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
-import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson, codigoEsperado } from '../../scripts/incorporar-do-portao.mjs';
+import { LINHA_DO_EXEMPLO_METODO, conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson, codigoEsperado } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
 const linhas = allClaims();
 const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, semCodigo: 0, comCodigo: 0, json: 0, plantas: [] };
@@ -217,7 +217,7 @@ for (const lang of ['pt','en']) {
   const caminho = routePath('metodo',lang);
   const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminho}/index.html`,'utf8'));
   assert.deepEqual(conferirExemploNoMetodo(root,lang), []);
-  const porta = root.querySelectorAll('#livro-razao a').find(a => a.getAttribute('href').endsWith('/divida-publica-2025'));
+  const porta = root.querySelectorAll('#livro-razao a').find(a => a.getAttribute('href') === routePath('linha',lang,{slug:LINHA_DO_EXEMPLO_METODO}));
   porta.remove();
   const mensagem = 'ER1 Método: falta a porta para o recibo de exemplo da edição.';
   assert(conferirCodigo(root,matchPath(caminho)).includes(mensagem));

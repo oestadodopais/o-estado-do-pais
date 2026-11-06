@@ -1,0 +1,85 @@
+{
+  "base": "7c5d95c806c2b63b7472c869d206fb91b8325bdc",
+  "codigos": {
+    "build": 0,
+    "indice": 0,
+    "incorporar-documental": 0,
+    "explicacoes": 0
+  },
+  "check_incorporar_completo": {
+    "codigo": null,
+    "motivo": "Não executado: inclui tests/incorporar/navegador.mjs; o navegador é proibido dentro da sandbox e o escrivão não oferece conferências isoladas."
+  },
+  "indice": {
+    "plantas": 42,
+    "morderam": 42,
+    "novas": [
+      {
+        "nome": "voz1a-pt-redirecao-ancora",
+        "mordeu": true,
+        "queixas": [
+          "I7 pt: endereço retirado sem redireção permanente para o Método."
+        ]
+      },
+      {
+        "nome": "voz1a-en-redirecao-ancora",
+        "mordeu": true,
+        "queixas": [
+          "I7 en: endereço retirado sem redireção permanente para o Método."
+        ]
+      }
+    ]
+  },
+  "incorporar": {
+    "recibos": 8282,
+    "json": 4141,
+    "plantas": 108,
+    "exemplo": [
+      {
+        "nome": "metodo-sem-exemplo-pt",
+        "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+        "mordeu": true
+      },
+      {
+        "nome": "metodo-sem-exemplo-en",
+        "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+        "mordeu": true
+      }
+    ]
+  },
+  "procura": {
+    "comando": "rg -n 'divida-publica-2025|/metodo|/en/method' tests scripts --glob '*.{mjs,js,json,sh,py}'",
+    "antes": 184,
+    "depois": 182,
+    "ficheiros_antes": 49,
+    "ficheiros_depois": 47,
+    "redirecoes_candidatas": 28,
+    "identificador_novo": [
+      "scripts/metodo-aprovado.json:221:    \"id\": \"retribuicao-minima-mensal-garantida-continente-2026\",",
+      "scripts/inventario-rotulos.mjs:941:  planta('r2b-ressalva-escrita-a-mao', 'ressalva', 'livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html', (r) => {",
+      "scripts/inventario-rotulos.mjs:946:  }, /^R2-ressalva · \\/livro-razao\\/retribuicao-minima-mensal-garantida-continente-2026 · retribuicao-minima-mensal-garantida-continente-2026: a ressalva do recibo diz «Este valor é o do território continental\\. Os Açores e a Madeira fixam/);",
+      "tests/pais/portoes.mjs:363: ['livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href=\"https://dre.pt/application/conteudo/992879809\">Decreto-Lei n.º 139/2025</a></p>')]",
+      "tests/inicio/n1c.mjs:25:    const correto = irmao?.closest('[data-caixa-cartao]')?.getAttribute('data-caixa-cartao') === 'retribuicao-minima-mensal-garantida-continente-2026' && normal(irmao.querySelector('[data-nome]')?.textContent) === normal(nomeDoCartao(linha, lang)?.texto) && normal(irmao.querySelector('.claim-sufixo')?.textContent) === unidade && normal(irmao.querySelector('[data-claim]')?.textContent) === normal(linha.value) && irmao.textContent.includes(base) && normal(irmao.querySelector('[data-base-doze-meses]')?.textContent) === explicacao;",
+      "tests/cartao/perguntas-provadas.json:2339:      \"id\": \"retribuicao-minima-mensal-garantida-continente-2026\",",
+      "tests/cartao/perguntas-provadas.json:2393:              \"linha\": \"retribuicao-minima-mensal-garantida-continente-2026\",",
+      "tests/cartao/leituras-provadas.json:3088:      \"id\": \"retribuicao-minima-mensal-garantida-continente-2026\","
+    ],
+    "achados_desatualizados": [
+      {
+        "ficheiro": "tests/indice/indice.mjs",
+        "quantidade": 1,
+        "acao": "Validar 308, caminho da mesma edição e id existente quando há âncora."
+      },
+      {
+        "ficheiro": "tests/incorporar/conferir.mjs",
+        "quantidade": 1,
+        "acao": "Ler LINHA_DO_EXEMPLO_METODO exportada pela régua, em vez de escrever a dívida pública."
+      }
+    ],
+    "centralizacao": {
+      "ficheiro": "scripts/incorporar-do-portao.mjs",
+      "quantidade": 1,
+      "acao": "Exportar a linha do oráculo MET1.recibo.id e usá-la na conferência e na planta."
+    }
+  }
+}

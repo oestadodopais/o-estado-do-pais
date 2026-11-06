@@ -216,7 +216,20 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler,
     const noIndice = new Set(destinos);
     const retirada = lang === 'pt' ? '/a-verificar' : '/en/to-verify';
     const redirecao = redirecoes.find(r => r.src === `${retirada}/?`);
-    if (redirecao?.status !== 308 || redirecao?.headers?.Location !== (lang === 'pt' ? '/metodo' : '/en/method')) erros.push(`I7 ${lang}: endereço retirado sem redireção permanente para o Método.`);
+    const metodo = normalizePath(routePath('metodo', lang));
+    const alvo = redirecao?.headers?.Location;
+    let destinoValido = false;
+    if (typeof alvo === 'string') {
+      const hash = alvo.indexOf('#');
+      destinoValido = (hash < 0 ? alvo : alvo.slice(0, hash)) === metodo;
+      if (destinoValido && hash >= 0) {
+        try {
+          const id = decodeURIComponent(alvo.slice(hash + 1));
+          destinoValido = !!id && parse(lerPagina(metodo) ?? '').querySelectorAll('[id]').some(n => n.id === id);
+        } catch { destinoValido = false; }
+      }
+    }
+    if (redirecao?.status !== 308 || !destinoValido) erros.push(`I7 ${lang}: endereço retirado sem redireção permanente para o Método.`);
     if (mapa.has(retirada) || paginas.includes(retirada) || noIndice.has(retirada)) erros.push(`I7 ${lang}: página retirada ${retirada} reposta no índice, no mapa ou na construção.`);
     contas[lang] = { portas: portas.length, destinos: noIndice.size, seccoes };
 
@@ -447,10 +460,10 @@ export function plantasDoIndice(base) {
       const retirada = lang === 'pt' ? '/a-verificar' : '/en/to-verify';
       const muda = lang === 'pt' ? comPt : comEn;
       return [
-        ...['retirada','destino','estado'].map(dano => [`voz1a-${lang}-redirecao-${dano}`, () => {
+        ...['retirada','destino','estado','ancora'].map(dano => [`voz1a-${lang}-redirecao-${dano}`, () => {
           let redirecoes = JSON.parse(fs.readFileSync('vercel.json','utf8')).routes;
           if (dano === 'retirada') redirecoes = redirecoes.filter(r => r.src !== `${retirada}/?`);
-          else { const r = redirecoes.find(r => r.src === `${retirada}/?`); if (dano === 'destino') r.headers.Location = '/sobre'; else r.status = 200; }
+          else { const r = redirecoes.find(r => r.src === `${retirada}/?`); if (dano === 'destino') r.headers.Location = '/sobre'; else if (dano === 'ancora') r.headers.Location = normalizePath(routePath('metodo',lang)) + '#met1-ancora-inexistente'; else r.status = 200; }
           return {...base, redirecoes};
         }, [new RegExp(`I7 ${lang}: endereço retirado sem redireção`)]]),
         [`voz1a-${lang}-metodo-duplicado`, () => muda(d => d.querySelector('main [data-indice-seccao="projeto"] ul').insertAdjacentHTML('beforeend', `<li><a href="${routePath('metodo',lang)}">Método</a></li>`)), [new RegExp(`I7 ${lang}: 1 destino`)]],
