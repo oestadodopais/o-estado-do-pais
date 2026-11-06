@@ -306,7 +306,8 @@ class PreMandato(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr)
 
     def test_grafia_exata_grupos_decimais_e_limites_dos_anos(self):
-        valores = ['123', '1234', '1 234', '1\u202f234', '1 234,50', '0,5', '1899', '2100']
+        valores = ['123', '1234', '1 234', '1\u202f234', '1 234,50', '0,5', '1899', '2100',
+                   '1\u00a0234', '1.234', '12.345.678', '12.5', '123.4', '1.234,5']
         texto = 'Acrescenta: nada\nMedidas: medidas.json\n## §0 Medido\n' + '\n'.join(v + ' linhas' for v in valores)
         medidas = {str(i): {'valor': v, 'comando': 'medir amostra'} for i, v in enumerate(valores)}
         p = self.p / 'medidas.json'; p.write_text(json.dumps(medidas))
@@ -318,6 +319,42 @@ class PreMandato(unittest.TestCase):
         self.assertEqual(r.returncode, 9)
         for valor in valores:
             self.assertIn(valor, r.stderr)
+
+    def test_adenda_c_oito_linhas_do_zero(self):
+        extrair = modulo('pre-mandato').numeros_do_zero
+        casos = [
+            ('prova o limite em 4321.', ['4321']),
+            ('São 1 234.', ['1 234']),
+            ('1.234 linhas', ['1.234']),
+            ('12.5 por cento e 123.4 também', ['12.5', '123.4']),
+            ('1.234,5 euros', ['1.234,5']),
+            ('1\u00a0234 casos', ['1\u00a0234']),
+            ('4321 casos', ['4321']),
+            ('o Claude Sonnet 5.5 e o `aterrar.py:274`, a 06.11.2026 às 16:41:50, e 2026.', []),
+        ]
+        for texto, esperado in casos:
+            with self.subTest(texto=texto):
+                mandato = 'Acrescenta: nada\n## §0 Medido\n' + texto
+                recebido = extrair(mandato)
+                self.assertEqual(recebido, esperado)
+                self.assertEqual(self.correr(mandato).returncode, 9 if esperado else 0)
+                print('HIG-5 C: ' + json.dumps({'texto': texto, 'devolve': recebido}, ensure_ascii=False))
+
+    def test_adenda_c_pontuacao_e_excecoes(self):
+        extrair = modulo('pre-mandato').numeros_do_zero
+        for numero in ('4321', '1.234', '12.5', '1\u00a0234'):
+            for pontuacao in ('.', ',', ';', ':'):
+                for fim in ('', ' texto', '\ntexto'):
+                    texto = '## §0 Medido\n' + numero + pontuacao + fim
+                    self.assertEqual(extrair(texto), [numero], texto)
+        for texto in ('06.11', '06.11.2026', '2026-11-06', '16:41', '16:41:50', '2026.',
+                      '§1.234', 'a regra 1234.', 'as regras 1234.', '`1.234`', '«1.234»',
+                      'A1.234', '1.234A', 'x-1.234', '1.234-x', 'x_1.234', '1.234_x', '5.5'):
+            self.assertEqual(extrair('## §0 Medido\n' + texto), [], texto)
+        p = self.p / 'medidas.json'
+        p.write_text('{"a": {"valor": "1 234", "comando": "medir amostra"}}')
+        r = self.correr('Acrescenta: nada\nMedidas: medidas.json\n## §0 Medido\n1\u00a0234 casos.')
+        self.assertEqual(r.returncode, 9); self.assertIn('1\u00a0234', r.stderr)
 
     def test_medidas_no_corpo_nao_substitui_cabecalho(self):
         (self.p / 'medidas.json').write_text('{"a": {"valor": "1234", "comando": "wc -l"}}')

@@ -21,18 +21,28 @@ def numeros_do_zero(texto):
     for secao in secoes:
         # Mascara as citações e o código antes de procurar números.
         secao = re.sub(r'(`+).*?\1|«[^»]*»', lambda m: ' ' * len(m.group()), secao, flags=re.S)
-        # As fronteiras evitam consumir a contagem que vem depois de uma data
-        # ou identificador. Não se aceita um fragmento de um decimal ou grupo.
-        padrao = (r'(?<![\w.:\-])(?<!\d,)\d+(?:[ \u202f]\d{3}(?!\d))*'
-                  r'(?:,\d+)?(?![\w.:\-]|,\d|[ \u202f]\d{3}(?!\d))')
+        # As datas têm precedência sobre os decimais. A máscara impede também
+        # que uma data ou referência absorva a contagem que se lhe segue.
+        excecoes = (r'(?<![\w.])(?:\d{4}-\d{2}-\d{2}|\d{2}\.\d{2}(?:\.\d{4})?'
+                    r'|\d{2}:\d{2}(?::\d{2})?|§\s*\d+(?:\.\d+)*)'
+                    r'(?!\w|[.,:]\d)')
+        secao = re.sub(excecoes, lambda m: ' ' * len(m.group()), secao)
+        # Consome o candidato inteiro antes de conferir a forma e a fronteira;
+        # nunca aproveita só um fragmento de um número colado a uma letra.
+        padrao = r'(?<![\w.,:;\-])\d+(?:[.,:]\d+|[ \u00a0\u202f]\d{3}(?!\d))*'
+        forma = r'(?:\d+(?:[ \u00a0\u202f]\d{3}|\.\d{3})*(?:,\d+)?|\d+\.\d+)'
         for m in re.finditer(padrao, secao):
             valor = m.group()
-            antes = secao[:m.start()]
+            antes, depois = secao[:m.start()], secao[m.end():]
+            if not re.fullmatch(forma, valor) or re.match(r'[\w\-]', depois):
+                continue
+            if depois[:1] in ('.', ',', ';', ':') and len(depois) > 1 and not depois[1].isspace():
+                continue
             if re.search(r'(?:§\s*|\bregra(?:s)?\s+)$', antes, re.I):
                 continue
-            algarismos = re.sub(r'[ \u202f]', '', valor)
+            algarismos = re.sub(r'\D', '', valor)
             if ',' not in valor and (len(algarismos) < 3 or
-                                      (len(valor) == 4 and 1900 <= int(valor) <= 2099)):
+                                      (valor.isdigit() and len(valor) == 4 and 1900 <= int(valor) <= 2099)):
                 continue
             if valor not in numeros:
                 numeros.append(valor)

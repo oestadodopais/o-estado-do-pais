@@ -84,11 +84,19 @@ assert(conferirFrequencias({...regresso, construidoEm: '2026-10-19T00:00:00Z'}).
 assert(conferirFrequencias({...regresso, construidoEm: '2026-11-04T00:00:00Z'}).some(e => /2026-10-20 a 2026-11-04: 15 dias, limite 14/.test(e)));
 
 for (const [palavra, periodo] of [['diária', 1], ['semanalmente', 7], ['quinzenais', 14], ['mensais', 30],
-  ['trimestrais', 91], ['semestrais', 182], ['annually', 365], ['bi-weekly', 14]]) {
+  ['trimestrais', 91], ['semestrais', 182], ['annually', 365], ['bi-weekly', 14],
+  ['mensalmente', 30], ['anualmente', 365], ['trimestralmente', 91], ['quinzenalmente', 14], ['semestralmente', 182],
+  ['cada dia', 1], ['cada semana', 7], ['cada mês', 30], ['todos os meses', 30], ['cada ano', 365], ['todos os anos', 365],
+  ['each week', 7], ['every month', 30], ['each month', 30], ['every year', 365], ['each year', 365],
+  ['semi-annual', 182], ['semi-annually', 182], ['half-yearly', 182], ['biannual', 182],
+  ['todos\u00a0os\u00a0dias', 1], ['bi\u2011weekly', 14], ['semi\u2010annual', 182], ['half\u2011yearly', 182]]) {
   const caso = {rotulos: {pt: {autor: palavra}}, frequencias: {autor: periodo}, construidoEm: '2026-11-06T00:00:00Z',
     linhas: [{verifications: [{by: 'autor', date: '2026-11-06'}]}]};
   assert.deepEqual(conferirFrequencias(caso), [], palavra);
   assert(conferirFrequencias({...caso, frequencias: {autor: periodo + 1}}).some(e => /mas o declarado/.test(e)), palavra);
+  assert(conferirFrequencias({...caso, frequencias: {}}).some(e => /sem período declarado/.test(e)), palavra);
+  if (periodo === 182)
+    assert(conferirFrequencias({...caso, frequencias: {autor: 365}}).some(e => /diz período 182, mas o declarado é 365/.test(e)), palavra);
 }
 
 // Executa o ponto real de chamada do gate, com uma cópia da tabela de produção.

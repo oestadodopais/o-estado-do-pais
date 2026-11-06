@@ -1,19 +1,20 @@
 /** REL1: uma frequência no rótulo tem de ser sustentada pelos dias observados. */
 const PALAVRAS_POR_PERIODO = [
   [1, 'diari[oa]s?|diariamente|todos os dias|cada dia|dail(?:y|ies)|every day|each day'],
-  [7, 'semana(?:l|is)|semanalmente|todas as semanas|weekl(?:y|ies)|every week'],
-  [14, 'quinzena(?:l|is)|fortnightl(?:y|ies)|bi-?weekl(?:y|ies)'],
-  [30, 'mensa(?:l|is)|monthl(?:y|ies)'],
-  [91, 'trimestra(?:l|is)|quarterl(?:y|ies)'],
-  [182, 'semestra(?:l|is)'],
-  [365, 'anua(?:l|is)|yearl(?:y|ies)|annuals?|annually'],
+  [7, 'semana(?:l|is)|semanalmente|todas as semanas|cada semana|weekl(?:y|ies)|every week|each week'],
+  [14, 'quinzena(?:l|is)|quinzenalmente|fortnightl(?:y|ies)|bi-?weekl(?:y|ies)'],
+  [30, 'mensa(?:l|is)|mensalmente|cada mes|todos os meses|monthl(?:y|ies)|every month|each month'],
+  [91, 'trimestra(?:l|is)|trimestralmente|quarterl(?:y|ies)'],
+  [182, 'semestra(?:l|is)|semestralmente|semi-annual(?:ly)?|half-yearly|biannual'],
+  [365, 'anua(?:l|is)|anualmente|cada ano|todos os anos|yearl(?:y|ies)|annuals?|annually|every year|each year'],
 ];
 const FREQUENCIAS = new RegExp(`(?<![\\p{L}\\p{N}_])(?:${PALAVRAS_POR_PERIODO
   .map(([periodo, palavras]) => `(?<p${periodo}>${palavras})`).join('|')})(?![\\p{L}\\p{N}_])`, 'gu');
 
 function periodosDoRotulo(rotulo) {
-  const normalizado = rotulo.normalize('NFC').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
-  // Uma expressão inteira consome bi-weekly antes de poder ler weekly outra vez.
+  const normalizado = rotulo.normalize('NFC').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+    .replace(/\u00a0/g, ' ').replace(/[\u2010\u2011]/g, '-');
+  // Consome bi-weekly e semi-annually inteiros, antes da leitura semanal ou anual.
   return [...new Set([...normalizado.matchAll(FREQUENCIAS)].map(m =>
     Number(Object.keys(m.groups).find(chave => m.groups[chave]).slice(1))))];
 }
