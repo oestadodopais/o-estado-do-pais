@@ -87,4 +87,8 @@ export const CORRECOES_TEXTO = [
     pt: 'Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação.',
     en: "The October decisions of Évora's Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added.",
   } },
+  { kind: 'texto', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-06', frase: {
+    pt: 'A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.',
+    en: "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names.",
+  } },
 ];

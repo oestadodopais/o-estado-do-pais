@@ -1,0 +1,34 @@
+
+> o-estado-do-pais@0.1.0 check:edicoes
+> node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs && node tests/edicoes/reguas.mjs && node tests/edicoes/contagem.mjs && node tests/edicoes/leis.mjs && node tests/edicoes/historia.mjs && node tests/edicoes/faixas.mjs && node tests/edicoes/politica.mjs && node tests/edicoes/numeros.mjs && node tests/edicoes/atualizacao.mjs
+
+ED1: 8 primeiras edições; 5 correções; 0 falhas.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'ED1 servido: evora-2027-capital-europeia-da-cultura/pt/2026-11-03 diverge da edição guardada',
++   'ED1 servido: evora-2027-capital-europeia-da-cultura/en/2026-11-03 diverge da edição guardada'
++ ]
+- []
+
+    at file://<worktree>/tests/edicoes/plantas.mjs:37:96
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'ED1 servido: evora-2027-capital-europeia-da-cultura/pt/2026-11-03 diverge da edição guardada',
+    'ED1 servido: evora-2027-capital-europeia-da-cultura/en/2026-11-03 diverge da edição guardada'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

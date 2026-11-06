@@ -8,12 +8,12 @@ import {load} from 'js-yaml';
 import {parse} from 'node-html-parser';
 import {WORKS} from '../../src/data/studies.mjs';
 import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';
-import {primeiraEdicaoServida} from '../../src/lib/edicoes.mjs';
+import {primeiraEdicaoServida,portasDaCorrecao} from '../../src/lib/edicoes.mjs';
 import {conferirEdicoes,conferirTextoHtml,rotaPrimeira,rotaAtual} from '../../scripts/edicoes-conferir.mjs';
 const manifesto=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const paginas=new Map();
 for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao)) {
- paginas.set(rotaPrimeira(e),primeiraEdicaoServida(e.slug,e.lang,e.primeira_edicao.date));
+ for(const v of e.edicoes.slice(0,-1)) paginas.set(rotaAtual(e.slug,e.lang)+'/'+v.data,primeiraEdicaoServida(e.slug,e.lang,v.data));
  const labels=e.lang==='pt'?['Primeira edição, tal como foi publicada','Edição atual']:['First edition, as published','Current edition'];
  paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}"><a href="${rotaPrimeira(e)}">${labels[0]}</a><a href="${rotaAtual(e.slug,e.lang)}">${labels[1]}</a></p>`);
 }
@@ -41,7 +41,8 @@ for(const [nome,muda,erro] of [
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 for(const lang of ['pt','en'])for(const c of CORRECOES_TEXTO) {
  const e=manifesto.edicoes.find(e=>e.slug===c.slug&&e.lang===lang),w=WORKS.find(w=>w.slug===c.slug);
- const html=`<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><span data-texto-campo="titulo">${esc(w.editions.find(e=>e.lang===lang).title)}</span><span data-texto-campo="frase">${fraseHtml(c,lang)}</span><a data-texto-porta="primeira" href="${rotaPrimeira(e)}">${lang==='pt'?'Primeira edição':'First edition'}</a><a data-texto-porta="atual" href="${rotaAtual(c.slug,lang)}">${lang==='pt'?'Edição atual':'Current edition'}</a></li>`;
+ const portas=portasDaCorrecao(c.slug,lang,c.data);
+ const html=`<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><span data-texto-campo="titulo">${esc(w.editions.find(e=>e.lang===lang).title)}</span><span data-texto-campo="frase">${fraseHtml(c,lang)}</span><a data-texto-porta="primeira" href="${portas.antes.rota}">${portas.rotuloAntes}</a><a data-texto-porta="atual" href="${portas.depois.rota}">${portas.rotuloDepois}</a></li>`;
  assert.deepEqual(conferirTextoHtml(parse(html),lang,WORKS,CORRECOES_TEXTO,manifesto).erros,[]);conta++;
  for(const campo of ['data','kind','titulo','frase']) {
   const copia=parse(html);copia.querySelector(`[data-texto-campo="${campo}"]`).set_content('Outra frase 999');

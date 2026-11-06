@@ -1,0 +1,62 @@
+{
+  "pt-PT": {
+    "blocos_antes": 137,
+    "blocos_conferidos": 137,
+    "blocos_depois": 137,
+    "com_palavra": 0,
+    "cortes": 0,
+    "estratos": {
+      "S1·aprovado": 0,
+      "S2·L1·regra-aprovada": 0,
+      "S2·inventário-cego·aprovado-24.08": 0,
+      "S3·famílias-leituras·aprovado-24.08": 0,
+      "S4·coerência·aprovado-24.08": 0,
+      "S5·segunda-voz·proposta-27.08": 0,
+      "S6·terceira-voz·proposta-27.08": 0
+    },
+    "excecoes_R6": 0,
+    "ficheiro": "Évora 2027, Capital Europeia da Cultura (pt-PT).cortes.json",
+    "figuras_caidas": 0,
+    "figuras_caidas_linhas": [],
+    "frases_depois": 1022,
+    "italicos_conferidos": 0,
+    "nenhuma": 0,
+    "offsets_conferidos": 270,
+    "operacoes": 0,
+    "operacoes_sha256": "919bf583785cbc8da661d27f6137cb9399c0c88f3fa2945bd4711e91691ae3f5",
+    "refs_antes": 196,
+    "refs_depois": 196,
+    "substituicoes": 0,
+    "titulos_novos": 0
+  },
+  "en": {
+    "blocos_antes": 137,
+    "blocos_conferidos": 137,
+    "blocos_depois": 137,
+    "com_palavra": 0,
+    "cortes": 0,
+    "estratos": {
+      "S1·aprovado": 0,
+      "S2·L1·regra-aprovada": 0,
+      "S2·inventário-cego·aprovado-24.08": 0,
+      "S3·famílias-leituras·aprovado-24.08": 0,
+      "S4·coerência·aprovado-24.08": 0,
+      "S5·segunda-voz·proposta-27.08": 0,
+      "S6·terceira-voz·proposta-27.08": 0
+    },
+    "excecoes_R6": 0,
+    "ficheiro": "Évora 2027, European Capital of Culture.cortes.json",
+    "figuras_caidas": 0,
+    "figuras_caidas_linhas": [],
+    "frases_depois": 1022,
+    "italicos_conferidos": 0,
+    "nenhuma": 0,
+    "offsets_conferidos": 270,
+    "operacoes": 0,
+    "operacoes_sha256": "7d23221605b8cd2a7bdf5aa1d6b0dd0efa12046faa8c65a978b2b29aaf8794ef",
+    "refs_antes": 196,
+    "refs_depois": 196,
+    "substituicoes": 0,
+    "titulos_novos": 0
+  }
+}

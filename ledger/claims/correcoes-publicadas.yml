@@ -4,17 +4,17 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "45"
+value: "46"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Registo de correções"
-  edition: "03.11.2026"
+  edition: "06.11.2026"
 source_url: null
-access_date: "2026-11-03"
-reference_date: "2026-11-03"
+access_date: "2026-11-06"
+reference_date: "2026-11-06"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
@@ -27,7 +27,7 @@ derived_from: []
 check: "correcoes_publicadas"
 
 study: "o-estado-do-pais"
-note: "Recontagem de 03.11.2026, com as correções dos campos dos recibos e do texto dos estudos. O valor é reavaliado a cada construção; a recontagem não é uma correção adicional."
+note: "Recontagem de 06.11.2026, com a correção da frase dos financiamentos do Rossio no estudo de Évora 2027. O valor é reavaliado a cada construção; a recontagem não é uma correção adicional."
 
 # Correções datadas. As entradas anteriores conservam-se.
 corrections:
@@ -86,3 +86,9 @@ corrections:
     new_value: '45'
     reason: As correções dos campos dos recibos passam a integrar o registo e a sua contagem. A recontagem não é uma correção adicional.
     reason_en: Corrections to receipt fields now enter the register and its count. The recount is not an additional correction.
+  - date: '2026-11-06'
+    kind: atualizacao
+    old_value: '45'
+    new_value: '46'
+    reason: A correção da frase dos financiamentos do Rossio no estudo de Évora 2027 entra no registo. A recontagem não é uma correção adicional.
+    reason_en: The correction to the Rossio funding sentence in the Évora 2027 study enters the register. The recount is not an additional correction.

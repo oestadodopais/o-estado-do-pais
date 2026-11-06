@@ -1,0 +1,21 @@
+{
+  "contagem": 46,
+  "textos": [
+    {
+      "lang": "pt",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas menciona o financiamento que a outra nomeia.",
+      "entrada": "A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.",
+      "natureza": "Estudo corrigido",
+      "arquivo_sha256": "3547e5fd2933eba9dd05c3c7ce0ca24b370181c73663a2235a65629e4a938b09"
+    },
+    {
+      "lang": "en",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the Fundo Ambiental, and neither mentions the funding the other names.",
+      "entrada": "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names.",
+      "natureza": "Study corrected",
+      "arquivo_sha256": "81e1c0d262cd4066d7d79b4350a0941394b256f096176b3da90bcee89cd243f1"
+    }
+  ]
+}

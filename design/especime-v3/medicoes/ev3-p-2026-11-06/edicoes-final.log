@@ -1,0 +1,31 @@
+
+> o-estado-do-pais@0.1.0 check:edicoes
+> node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs && node tests/edicoes/reguas.mjs && node tests/edicoes/contagem.mjs && node tests/edicoes/leis.mjs && node tests/edicoes/historia.mjs && node tests/edicoes/faixas.mjs && node tests/edicoes/politica.mjs && node tests/edicoes/numeros.mjs && node tests/edicoes/atualizacao.mjs
+
+ED1: 8 primeiras edições; 5 correções; 0 falhas.
+ED1 planta: controlo: passou
+ED1 planta: edição sem entrada: passou
+ED1 planta: primeira porta para o documento atual: passou
+ED1 planta: um byte da primeira edição: passou
+ED1 planta: entrada sem estudo: passou
+ED1 planta: entrada com outra data: passou
+ED1 planta: bytes servidos mudados: passou
+ED1: 67 controlos e plantas.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: ED1: unidade rendida sem declaração inteira
+    at file://<worktree>/tests/edicoes/reguas.mjs:35:30
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
