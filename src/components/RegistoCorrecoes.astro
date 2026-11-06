@@ -80,6 +80,7 @@
  * que o portão continue a comparar só o valor com o do livro-razão.
  */
 import TextoDaCorrecao from './TextoDaCorrecao.astro';
+import PortaDaEdicao from './PortaDaEdicao.astro';
 import TextoDoNome from './TextoDoNome.astro';
 import { entradasDoRegisto, getClaim } from '../lib/ledger.mjs';
 import { mudancasDoRegisto } from '../lib/mudancas.mjs';
@@ -289,8 +290,8 @@ const palavraRevisoes =
               <div class="registo-mudanca-corpo">
                 <p><span data-texto-campo="kind">{rotulo(e.kind)}</span></p>
                 <p><TituloDeTrabalho titulo={e.titulo} lang={lang} data-texto-campo="titulo" />: <span data-texto-campo="frase" data-voz><TextoDaCorrecao entrada={e} lang={lang}/></span>{' '}
-                  <a data-texto-porta="primeira" data-voz href={e.primeira}>{e.rotuloPrimeira}</a>{' · '}
-                  <a data-texto-porta="atual" data-voz href={e.atual}>{e.rotuloAtual}</a>
+                  <PortaDaEdicao porta="primeira" rota={e.primeira} rotulo={e.rotuloPrimeira} data={e.dataPrimeira} />{' · '}
+                  <PortaDaEdicao porta="atual" rota={e.atual} rotulo={e.rotuloAtual} data={e.dataAtual} />
                 </p>
               </div>
             ) : e.tipo === 'publicacao' ? (

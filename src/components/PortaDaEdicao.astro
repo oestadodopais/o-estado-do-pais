@@ -1,0 +1,8 @@
+---
+import { dataDaCasa } from '../lib/datas.mjs';
+interface Props { rota: string; rotulo: string; data: string; porta: string; }
+const { rota, rotulo, data, porta } = Astro.props;
+const dataVisivel = dataDaCasa(data);
+const temData = rotulo.endsWith(dataVisivel);
+---
+<a data-texto-porta={porta} data-voz href={rota}>{temData ? <>{rotulo.slice(0, -dataVisivel.length)}<time datetime={data} data-nonledger="data-do-repositorio">{dataVisivel}</time></> : rotulo}</a>

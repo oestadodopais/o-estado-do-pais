@@ -1,0 +1,65 @@
+{
+  "correcoes": 46,
+  "resultados": [
+    {
+      "lang": "pt",
+      "frase": "Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas menciona o financiamento que a outra nomeia.",
+      "entrada": "A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.",
+      "natureza": "Estudo corrigido",
+      "portas": [
+        {
+          "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03",
+          "rotulo": "Edição de 03.11.2026",
+          "datas_marcadas": 1
+        },
+        {
+          "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+          "rotulo": "Edição atual",
+          "datas_marcadas": 0
+        },
+        {
+          "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01",
+          "rotulo": "Primeira edição",
+          "datas_marcadas": 0
+        },
+        {
+          "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03",
+          "rotulo": "Edição de 03.11.2026",
+          "datas_marcadas": 1
+        }
+      ],
+      "arquivo_sha256": "3547e5fd2933eba9dd05c3c7ce0ca24b370181c73663a2235a65629e4a938b09",
+      "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 983b19eee29d4653730a62e9ee1d9674345db308"
+    },
+    {
+      "lang": "en",
+      "frase": "In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the Fundo Ambiental, and neither mentions the funding the other names.",
+      "entrada": "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names.",
+      "natureza": "Study corrected",
+      "portas": [
+        {
+          "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03",
+          "rotulo": "Edition of 03.11.2026",
+          "datas_marcadas": 1
+        },
+        {
+          "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+          "rotulo": "Current edition",
+          "datas_marcadas": 0
+        },
+        {
+          "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01",
+          "rotulo": "First edition",
+          "datas_marcadas": 0
+        },
+        {
+          "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03",
+          "rotulo": "Edition of 03.11.2026",
+          "datas_marcadas": 1
+        }
+      ],
+      "arquivo_sha256": "81e1c0d262cd4066d7d79b4350a0941394b256f096176b3da90bcee89cd243f1",
+      "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 983b19eee29d4653730a62e9ee1d9674345db308"
+    }
+  ]
+}

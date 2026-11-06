@@ -375,6 +375,7 @@ function correcoesDosTextos(lang) {
     if (!work || !edicao || !portas) throw new Error(`ED1: correção sem edição: ${e.slug}/${lang}`);
     return {...e, tipo: /** @type {const} */ ('texto'), titulo: edicao.title,
       primeira: portas.antes.rota, atual: portas.depois.rota, rotuloPrimeira: portas.rotuloAntes, rotuloAtual: portas.rotuloDepois,
+      dataPrimeira: portas.antes.data, dataAtual: portas.depois.data,
       lugar: lugarPorChave(typeof work.subject === 'string' ? work.subject : PORTUGAL, lang),
       chaveDaMudanca: `texto|${e.slug}|${e.data}`};
   });

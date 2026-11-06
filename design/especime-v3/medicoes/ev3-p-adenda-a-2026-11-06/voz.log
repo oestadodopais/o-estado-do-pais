@@ -1,0 +1,23 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs
+
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":49,"plantas":43,"documentos":18,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-06.
+  FP1 en: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-06.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 5 problema(s)
+[0m
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5030: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «estudo atualizado»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5031: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «study updated»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5505: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada po»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5513: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and R»
+[31m    · [0mo bloco «ev3-p» tem linhas no inventário e não tem entrada em design/especime-v3/critica/REVISOES-DO-INVENTARIO.md. Uma linha nova do inventário pede a leitura cruzada do seu diff.
+

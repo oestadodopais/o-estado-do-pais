@@ -1,0 +1,20 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs
+
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":49,"plantas":43,"documentos":18,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-06.
+  FP1 en: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-06.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 2 problema(s)
+[0m
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5030: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: EV3-p: a edição atual passou a correção; nenhuma atualização ocupa agora a caixa das novidades.
+      «estudo atualizado»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5031: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: EV3-p: a edição atual passou a correção; nenhuma atualização ocupa agora a caixa das novidades.
+      «study updated»
+

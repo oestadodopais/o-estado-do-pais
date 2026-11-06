@@ -1,0 +1,84 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs
+
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":49,"plantas":43,"documentos":18,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>/scripts/medir-defeitos.mjs:1345:19 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'
+}
+
+Node.js v22.23.1
+node:internal/errors:983
+  const err = new Error(message);
+              ^
+
+Error: Command failed: <ambiente> <worktree>/scripts/medir-defeitos.mjs --json
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>/scripts/medir-defeitos.mjs:1345:19 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'
+}
+
+Node.js v22.23.1
+
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:916:11)
+    at execFileSync (node:child_process:952:15)
+    at file://<worktree>/scripts/check-voz.mjs:108:15 {
+  status: 1,
+  signal: null,
+  output: [
+    null,
+    '',
+    'node:fs:440\n' +
+      '    return binding.readFileUtf8(path, stringToFlags(options.flag));\n' +
+      '                   ^\n' +
+      '\n' +
+      "Error: ENOENT: no such file or directory, open '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'\n" +
+      '    at Object.readFileSync (node:fs:440:20)\n' +
+      '    at file://<worktree>/scripts/medir-defeitos.mjs:1345:19 {\n' +
+      '  errno: -2,\n' +
+      "  code: 'ENOENT',\n" +
+      "  syscall: 'open',\n" +
+      "  path: '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'\n" +
+      '}\n' +
+      '\n' +
+      'Node.js v22.23.1\n'
+  ],
+  pid: 77595,
+  stdout: '',
+  stderr: 'node:fs:440\n' +
+    '    return binding.readFileUtf8(path, stringToFlags(options.flag));\n' +
+    '                   ^\n' +
+    '\n' +
+    "Error: ENOENT: no such file or directory, open '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'\n" +
+    '    at Object.readFileSync (node:fs:440:20)\n' +
+    '    at file://<worktree>/scripts/medir-defeitos.mjs:1345:19 {\n' +
+    '  errno: -2,\n' +
+    "  code: 'ENOENT',\n" +
+    "  syscall: 'open',\n" +
+    "  path: '<worktree>/dist/livro-razao/vouzela-divida-dgal-2024/index.html'\n" +
+    '}\n' +
+    '\n' +
+    'Node.js v22.23.1\n'
+}
+
+Node.js v22.23.1

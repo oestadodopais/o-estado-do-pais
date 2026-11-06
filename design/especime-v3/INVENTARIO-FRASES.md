@@ -5027,8 +5027,8 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | data from | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | estudo atualizado | fp3 | viva | Tipo da novidade quando a edição atual do manifesto declara uma atualização. |
-| conteudo | study updated | fp3 | viva | Tipo da novidade quando a edição atual do manifesto declara uma atualização. |
+| conteudo | estudo atualizado | fp3 | retirada | EV3-p: a edição atual passou a correção; nenhuma atualização ocupa agora a caixa das novidades. |
+| conteudo | study updated | fp3 | retirada | EV3-p: a edição atual passou a correção; nenhuma atualização ocupa agora a caixa das novidades. |
 | conteudo | explainer | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | explicação | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
@@ -5439,10 +5439,10 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 | conteudo | Study updated. The text of a study gained new documents, and nothing it said was wrong; the entry says what came in, and the previous edition stays one tap away. | ev3 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
 | conteudo | The October decisions of Évora&#39;s Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
-| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 03.11.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
-| conteudo | Edição atual, de 03.11.2026. A primeira edição é de 01.10.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
-| conteudo | First edition, published on 01.10.2026. The current edition is from 03.11.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
-| conteudo | Current edition, from 03.11.2026. The first edition is from 01.10.2026. | ev3 | viva | Faixa da edição, medida no HTML a partir das datas do manifesto. |
+| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 03.11.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
+| conteudo | Edição atual, de 03.11.2026. A primeira edição é de 01.10.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
+| conteudo | First edition, published on 01.10.2026. The current edition is from 03.11.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
+| conteudo | Current edition, from 03.11.2026. The first edition is from 01.10.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
 
 ## EV3-G: correções e novidades
 
@@ -5497,3 +5497,29 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 | conteudo | Updates: | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
 | conteudo | Uma área de governo é um ministério; um domínio é um tema, como os preços ou o emprego. | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
 | conteudo | A government area is a ministry; a domain is a topic, such as prices or employment. | voz1b | viva | VOZ-1 B: descrição do calendário, porta para as páginas afetadas ou definição pública de área e domínio. |
+
+## EV3-p: correção da frase do Rossio e portas das edições
+
+| Classe | Texto | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edição de 03.11.2026 | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edição atual | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Primeira edição | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edição de 03.11.2026. A edição atual é de 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edição atual, de 06.11.2026. A primeira edição é de 01.10.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara &#39;s notes names. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edition of 03.11.2026 | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Current edition | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | First edition | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | First edition, published on 01.10.2026. The current edition is from 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edition of 03.11.2026. The current edition is from 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Current edition, from 06.11.2026. The first edition is from 01.10.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+
+### Frases autorizadas no documento
+
+| Passagem | Língua | Frase | Estado |
+| --- | --- | --- | --- |
+| Rossio | pt | Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas menciona o financiamento que a outra nomeia. | viva |
+| Rossio | en | In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the Fundo Ambiental , and neither mentions the funding the other names. | viva |

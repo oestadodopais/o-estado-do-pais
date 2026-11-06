@@ -1,0 +1,22 @@
+VOZ-1 H pt, 2026-11-05: controlo a 0; marca retirada recusada: FP1: marca novo diferente da data impressa; voz exige o rótulo.
+VOZ-1 H pt, 2026-11-06: controlo a 0; marca indevida recusada: FP1: marca novo diferente da data impressa; voz não exige o rótulo.
+VOZ-1 H en, 2026-11-05: controlo a 0; marca retirada recusada: FP1: marca novo diferente da data impressa; voz exige o rótulo.
+VOZ-1 H en, 2026-11-06: controlo a 0; marca indevida recusada: FP1: marca novo diferente da data impressa; voz não exige o rótulo.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: FP3: falta a atualização na caixa
+    at file://<worktree>/tests/inicio/novidades.mjs:184:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
