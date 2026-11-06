@@ -1,0 +1,98 @@
+{
+ "bloco": "MET1 (o Método como página de usar: quatro secções, o percurso desenhado, as marcas, quando um número muda; as frases do financiador no Sobre)",
+ "data": "2026-11-05",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "MET1 (o mandato; parou no limite das chamadas, a língua de um publicador)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": null,
+   "fim": "2026-11-05T20:43:22Z",
+   "pontos": 11.0,
+   "pontos_antes": 2.0,
+   "pontos_depois": 13.0,
+   "outras_sessoes_no_intervalo": 8,
+   "turnos": 85,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-met1.log",
+   "pontos_atribuidos": 2.66,
+   "nota_da_atribuicao": "O contador subiu 11 pontos (2 % → 13 %) com 8 outras sessões do Codex abertas no intervalo (a VOZ-1-E e as de outro projeto). Pela ponderação dos símbolos de cada sessão no intervalo (entrada não guardada 1, guardada 0,125, saída e raciocínio 8), esta passagem é 24,1 %, cerca de 2,66 pontos."
+  },
+  {
+   "nome": "MET1-a (adenda A: a língua do publicador e o passo 4 em inglês)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-05T22:40:23Z",
+   "fim": "2026-11-05T22:56:48Z",
+   "pontos": 1.0,
+   "pontos_antes": 16.0,
+   "pontos_depois": 17.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": 23,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-met1-a.log",
+   "pontos_atribuidos": 0.88,
+   "nota_da_atribuicao": "O contador subiu 1 ponto (16 % → 17 %) com 1 outra sessão aberta no intervalo (a VOZ-1-F). Pela mesma ponderação, esta passagem é 88,4 %, cerca de 0,88 ponto."
+  },
+  {
+   "nome": "MET1-b (adenda B: o recibo de exemplo na retribuição mínima)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-05T23:21:27Z",
+   "fim": "2026-11-05T23:43:01Z",
+   "pontos": 1.0,
+   "pontos_antes": 17.0,
+   "pontos_depois": 18.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 25,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-met1-b.log"
+  },
+  {
+   "nome": "MET1-c (adenda C: as duas réguas de outras páginas que ainda escreviam o Método antigo, depois da corrida inteira do lote 5)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T10:39:03Z",
+   "fim": "2026-11-06T10:51:53Z",
+   "pontos": 0.0,
+   "pontos_antes": 23.0,
+   "pontos_depois": 23.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": null,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-met1-c.log"
+  },
+  {
+   "nome": "MET1-d (adenda D: o recibo de exemplo com os campos do seu recibo e a frase das conferências exata, depois da leitura a frio do lote 5)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T11:24:55Z",
+   "fim": "2026-11-06T11:38:28Z",
+   "pontos": 1.0,
+   "pontos_antes": 23.0,
+   "pontos_depois": 24.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": null,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-met1-d.log"
+  },
+  {
+   "nome": "MET1-e (adenda E: o passo 2 sem a cópia que a maioria dos números não tem, depois da leitura curta da D)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T12:46:25Z",
+   "fim": "2026-11-06T12:58:36Z",
+   "pontos": 0.0,
+   "pontos_antes": 24.0,
+   "pontos_depois": 24.0,
+   "outras_sessoes_no_intervalo": 1,
+   "turnos": null,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-met1-e.log"
+  }
+ ],
+ "pontos_codex_total": 5.5,
+ "pontos_do_bloco": 5.5,
+ "pontos_brutos_do_contador": 14.0,
+ "nota_do_ponto_do_bloco": "pontos_do_bloco soma os pontos atribuídos onde o intervalo foi partilhado com outras sessões (pontos_atribuidos, com a nota de cada atribuição) e os da linha PONTOS nas outras passagens; pontos_brutos_do_contador soma as subidas do contador sem atribuição, e conta nas várias sessões a mesma subida.",
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros: quando passagens de blocos diferentes correm ao mesmo tempo, a subida do intervalo conta nas duas. O registo do lançador aponta por vezes a sessão de outro bloco que partilha a worktree (a I294); os pontos lêem-se do contador da conta, não da sessão.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "leituras": "Claude Opus 5.5 (leitor, xhigh): a leitura a frio do lote 5 e as leituras curtas das correções; fora do contador do Codex."
+}

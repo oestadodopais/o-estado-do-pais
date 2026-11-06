@@ -1,0 +1,91 @@
+{
+ "bloco": "EV3-p (no estudo de Évora 2027, a frase dos financiamentos do Rossio; uma correção do texto publicado, com a edição de 06.11.2026)",
+ "data": "2026-11-06",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "EV3-p (03.11.2026; parou pela ED1, duas edições no mesmo dia)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": null,
+   "fim": "2026-11-03T19:19:20Z",
+   "pontos": 0.0,
+   "pontos_antes": 83.0,
+   "pontos_depois": 83.0,
+   "outras_sessoes_no_intervalo": 3,
+   "turnos": 4,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ev3p.log"
+  },
+  {
+   "nome": "EV3-p (06.11.2026; parou no limite das chamadas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": null,
+   "fim": "2026-11-06T07:04:54Z",
+   "pontos": 1.0,
+   "pontos_antes": 19.0,
+   "pontos_depois": 20.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 41,
+   "fonte": "a linha PONTOS n.º 2 do LANCADOR-ev3p.log"
+  },
+  {
+   "nome": "EV3-p-a (adenda A: as datas das portas das edições, o inventário, a unidade da ED1)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T07:06:32Z",
+   "fim": "2026-11-06T07:21:32Z",
+   "pontos": 0.0,
+   "pontos_antes": 20.0,
+   "pontos_depois": 20.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 33,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ev3p-a.log"
+  },
+  {
+   "nome": "EV3-p-b (adenda B: a caixa das novidades depois de uma correção)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T07:23:05Z",
+   "fim": "2026-11-06T07:48:46Z",
+   "pontos": 2.0,
+   "pontos_antes": 20.0,
+   "pontos_depois": 22.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 33,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ev3p-b.log"
+  },
+  {
+   "nome": "EV3-p-c (adenda C: o teto da L1 com as duas edições guardadas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T07:50:58Z",
+   "fim": "2026-11-06T08:09:31Z",
+   "pontos": 0.0,
+   "pontos_antes": 22.0,
+   "pontos_depois": 22.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 22,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ev3p-c.log"
+  },
+  {
+   "nome": "EV3-p-d (adenda D: a língua da edição de 06.11.2026)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T08:10:15Z",
+   "fim": "2026-11-06T08:26:20Z",
+   "pontos": 1.0,
+   "pontos_antes": 22.0,
+   "pontos_depois": 23.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 20,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-ev3p-d.log"
+  }
+ ],
+ "pontos_codex_total": 4.0,
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros: quando passagens de blocos diferentes correm ao mesmo tempo, a subida do intervalo conta nas duas. O registo do lançador aponta por vezes a sessão de outro bloco que partilha a worktree (a I294); os pontos lêem-se do contador da conta, não da sessão.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "leituras": "Claude Opus 5.5 (leitor, xhigh): a leitura a frio do lote 5 e as leituras curtas das correções; fora do contador do Codex."
+}

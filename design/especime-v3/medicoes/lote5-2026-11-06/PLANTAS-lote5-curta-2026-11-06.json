@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-06T12:03:30+00:00",
+ "copia": "pacote-lote5-curta-2026-11-06",
+ "plantas": [
+  {
+   "id": "C1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "o campo onde está no documento do Método pt volta a imprimir a edição do Diário da República em vez do localizador",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d5fff352ab0da18102e0825b9f60e5229fe5de6b9f3eea5043a8d8a5aaa2b364",
+   "sha256_depois": "5b5e99e1a38211906f83f900df8b7414335ac2bafea0da02cbe2130b4f889898",
+   "contexto_antes": " está no documento</dt><dd><span class=\"campo-valor\" data-linha-claim=\"retribuicao-minima-mensal-garantida-continente-2026\" data-linha-campo=\"document.locator\">artigo 3.º (o valor) e artigo 2.º, «Âmbito territorial» («O presente decreto-lei é aplicável a todo o território continental»), p. 2</span></dd></div><div><dt data-met1=\"campo-3\">o excerto, como a fonte o escreveu</dt><dd><blockquote><span class=\"campo-valor\" data-linha-claim=\"retribuicao-mi",
+   "contexto_depois": " está no documento</dt><dd><span class=\"campo-valor\" data-linha-claim=\"retribuicao-minima-mensal-garantida-continente-2026\" data-linha-campo=\"document.locator\">Diário da República, 1.ª série, n.º 249, de 29-12-2025</span></dd></div><div><dt data-met1=\"campo-3\">o excerto, como a fonte o escreveu</dt><dd><blockquote><span class=\"campo-valor\" data-linha-claim=\"retribuicao-mi"
+  },
+  {
+   "id": "C3",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "o nome do recibo de exemplo no Método pt deixa de ser o título do recibo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5b5e99e1a38211906f83f900df8b7414335ac2bafea0da02cbe2130b4f889898",
+   "sha256_depois": "a3661e01cf9a7845c5043238fa357211d4a2c9d3558575b3c0726adef1a1b491",
+   "contexto_antes": "lass=\"met1-recibo\" data-met1-recibo=\"retribuicao-minima-mensal-garantida-continente-2026\" id=\"livro-razao\"><p class=\"met1-medida\"><span data-met1=\"recibo-nome\">Salário mínimo mensal (continente)</span> · <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"retribuicao-minima-mensal-garantida-continente-2026\" data-de-cam",
+   "contexto_depois": "lass=\"met1-recibo\" data-met1-recibo=\"retribuicao-minima-mensal-garantida-continente-2026\" id=\"livro-razao\"><p class=\"met1-medida\"><span data-met1=\"recibo-nome\">Salário mínimo nacional (continente)</span> · <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"retribuicao-minima-mensal-garantida-continente-2026\" data-de-cam"
+  },
+  {
+   "id": "C4",
+   "ficheiro": "scripts/metodo-do-portao.mjs",
+   "descricao": "a régua do Método deixa de comparar o valor do localizador com o da linha",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "34f4e8fa756fe5bc0bb91a28c396e091e1a729fca62179e8b9313516f7311780",
+   "sha256_depois": "3d48d8b3f3eea9ee1d677c17ac0b7519f7d2ef8c08a36850fb72372def2a31c2",
+   "contexto_antes": "alizador = linhaLocalizador.document[campoLocalizador.split('.')[1]];\n  const noLocalizador = main.querySelector(`[data-linha-campo=\"${campoLocalizador}\"]`);\n  if (!valorLocalizador || normal(noLocalizador?.textContent ?? '') !== normal(valorLocalizador) || !noLocalizador?.closest('dd')?.parentNode.querySelector('dt[data-met1=\"campo-2\"]')) erros.push('MET1: localizador ausente, trocado ou fora do campo.');\n  // In",
+   "contexto_depois": "alizador = linhaLocalizador.document[campoLocalizador.split('.')[1]];\n  const noLocalizador = main.querySelector(`[data-linha-campo=\"${campoLocalizador}\"]`);\n  if (!valorLocalizador || !noLocalizador || !noLocalizador?.closest('dd')?.parentNode.querySelector('dt[data-met1=\"campo-2\"]')) erros.push('MET1: localizador ausente, trocado ou fora do campo.');\n  // In"
+  },
+  {
+   "id": "C5",
+   "ficheiro": "src/data/metodo.mjs",
+   "descricao": "a frase pt do passo 6 na fonte diz depois em vez de antes",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1f6a0cd0424ecfa0da74f79e529141199ebbdbb5191f5daef7e3f50081c04138",
+   "sha256_depois": "6ce2f798a12ed36ccc57d2d93e0ec560418fbf4031d56e17da77f0d6e5018992",
+   "contexto_antes": " {\n      \"pt\": [\n        \"Um modelo constrói a mudança.\"\n      ],\n      \"en\": [\n        \"A model builds the change.\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"Antes de cada mudança ir para o ar, correm \",\n        {\n          \"prova\": \"conferencias_da_corrida\"\n        },\n        \" conferências automáticas: um algarismo sem linha no livro-razão, ou com outro valor",
+   "contexto_depois": " {\n      \"pt\": [\n        \"Um modelo constrói a mudança.\"\n      ],\n      \"en\": [\n        \"A model builds the change.\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"Depois de cada mudança ir para o ar, correm \",\n        {\n          \"prova\": \"conferencias_da_corrida\"\n        },\n        \" conferências automáticas: um algarismo sem linha no livro-razão, ou com outro valor"
+  },
+  {
+   "id": "C2",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a contagem do passo 6 no Método inglês diz 61 em vez da recontagem (62)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "af66df4e778b3a7b70cf2b57f38309da1cb293641cc96368f2c12bfc01e5d6d6",
+   "sha256_depois": "67ebe2d7842abc7d80e113b18cfd9d3291a27621c2ab0e38a3ab14c0e135d62b",
+   "contexto_antes": "-delay:0.6s\"></circle></svg><p data-met1=\"passo-5\">Before each change goes live, <a class=\"prova-valor\" href=\"/prova.json\" data-prova=\"conferencias_da_corrida\" title=\"checks in the full run\">62</a> automated checks run: a digit without a ledger row, or with a different value, stops publication.</p></li><li class=\"met1-passo met1-leitura\"><svg class=\"met1-maquina\" viewBox=\"0 0",
+   "contexto_depois": "-delay:0.6s\"></circle></svg><p data-met1=\"passo-5\">Before each change goes live, <a class=\"prova-valor\" href=\"/prova.json\" data-prova=\"conferencias_da_corrida\" title=\"checks in the full run\">61</a> automated checks run: a digit without a ledger row, or with a different value, stops publication.</p></li><li class=\"met1-passo met1-leitura\"><svg class=\"met1-maquina\" viewBox=\"0 0"
+  }
+ ]
+}

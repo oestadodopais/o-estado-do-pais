@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-06T11:07:54+00:00",
+ "copia": "pacote-lote5-2026-11-06",
+ "plantas": [
+  {
+   "id": "L5-P1",
+   "ficheiro": "scripts/leituras/aterrar.py",
+   "descricao": "a aterragem pelo caminho novo deixa de correr o verify:deploy depois de promover",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "91f0868090f12db595de3bb30d05a2dd3c63bface981fa7f08201869a9cadd67",
+   "sha256_depois": "0b698d9586103208dba96af9884851037dbab728df5d9cc4c68669c86dd9c90a",
+   "contexto_antes": "romover', ['vercel', 'promote', self.recibo['vercel_preparado'], '--yes'])\n            else:\n                self.largar_tranca()\n                self.vercel()\n            self.correr('verify-deploy', ['npm', 'run', 'verify:deploy'], cwd=self.principal)\n            if self.novo_fluxo:\n                self.largar_tranca()\n            self.conferir_arvores()\n            self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main mudou depois do lançamento')\n       ",
+   "contexto_depois": "romover', ['vercel', 'promote', self.recibo['vercel_preparado'], '--yes'])\n            else:\n                self.largar_tranca()\n                self.vercel()\n            if not self.novo_fluxo:\n                self.correr('verify-deploy', ['npm', 'run', 'verify:deploy'], cwd=self.principal)\n            if self.novo_fluxo:\n                self.largar_tranca()\n            self.conferir_arvores()\n            self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main mudou depois do lançamento')\n       "
+  },
+  {
+   "id": "L5-P2",
+   "ficheiro": "tests/indice/indice.mjs",
+   "descricao": "a I7 aceita qualquer âncora não vazia, exista ou não no Método construído",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d80ee41b07a8d7cdc7d630afd7e6cc65b03e16274b58b6640c7623d30aa1f1a8",
+   "sha256_depois": "ffc0f9f9fc1eed879dcba3c90aace92ef5523ed4a7f2014ce5d7503e7f9114f3",
+   "contexto_antes": "alvo.slice(0, hash)) === metodo;\n      if (destinoValido && hash >= 0) {\n        try {\n          const id = decodeURIComponent(alvo.slice(hash + 1));\n          destinoValido = !!id && parse(lerPagina(metodo) ?? '').querySelectorAll('[id]').some(n => n.id === id);\n        } catch { destinoValido = false; }\n      }\n    }\n    if (redirecao?.status !== 308 || !destinoV",
+   "contexto_depois": "alvo.slice(0, hash)) === metodo;\n      if (destinoValido && hash >= 0) {\n        try {\n          const id = decodeURIComponent(alvo.slice(hash + 1));\n          destinoValido = !!id || parse(lerPagina(metodo) ?? '').querySelectorAll('[id]').some(n => n.id === id);\n        } catch { destinoValido = false; }\n      }\n    }\n    if (redirecao?.status !== 308 || !destinoV"
+  },
+  {
+   "id": "L5-P3",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a frase da marca fonte no Método diz página em vez de recibo (§2 do mandato)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6e015994230adfd91b534aeea22d4eb21641f4c9a08d85508ad773d605774cac",
+   "sha256_depois": "2ba468064c55fc50433416c4cf1f222eb2c894e980e7eb777996e11f42425a22",
+   "contexto_antes": "=\"marcas\"><div class=\"regra-cabeca\"><h2>As marcas</h2></div><div class=\"metodo-corpo\" id=\"por-confirmar\"><ul class=\"met1-marcas\"><li data-met1=\"marca-0\">fonte: abre o recibo do número.</li><li data-met1=\"marca-1\">dado provisório: a fonte diz que o valor ainda pode mudar.</li><li data-met1=\"marca-2\">calculado: o número foi calculado a partir ",
+   "contexto_depois": "=\"marcas\"><div class=\"regra-cabeca\"><h2>As marcas</h2></div><div class=\"metodo-corpo\" id=\"por-confirmar\"><ul class=\"met1-marcas\"><li data-met1=\"marca-0\">fonte: abre a página do número.</li><li data-met1=\"marca-1\">dado provisório: a fonte diz que o valor ainda pode mudar.</li><li data-met1=\"marca-2\">calculado: o número foi calculado a partir "
+  },
+  {
+   "id": "L5-P4",
+   "ficheiro": "built/en/about/index.html",
+   "descricao": "uma frase do financiador movida para o Sobre inglês deixa de estar palavra por palavra (almost)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "856ee1e3fef6574b86916b94c2a2dbf6fdffe6c26b874c7f2ff6100aa033652d",
+   "sha256_depois": "441f2c5e6bf0901cd87f6b30180da3ae64cbc58f49ebccd388e92ee3c27da16e",
+   "contexto_antes": "happened, with the name as the document gives it and the party label as a fact of record.</p><p class=\"metodo-p\" data-sobre-limite=\"en\">It is privately funded, with no advertising and no money from institutions.</p><p class=\"metodo-p\" data-sobre-limite=\"en\">This project takes no money from any entity it measures.</p><p class=\"metodo-p\" data-sobre-limite=\"en\">This proj",
+   "contexto_depois": "happened, with the name as the document gives it and the party label as a fact of record.</p><p class=\"metodo-p\" data-sobre-limite=\"en\">It is privately funded, with no advertising and almost no money from institutions.</p><p class=\"metodo-p\" data-sobre-limite=\"en\">This project takes no money from any entity it measures.</p><p class=\"metodo-p\" data-sobre-limite=\"en\">This proj"
+  },
+  {
+   "id": "L5-P5",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "a frase corrigida do Rossio volta a contar dois financiamentos (o texto que a EV3-p corrige)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b0f7c1317d1345023d9456174c310f3d8c32b444663951780ab44104a6e7742f",
+   "sha256_depois": "b07a5ad2d52ec723e67d3c7f912e1633c2507cdd32864704cd76a7b0a8cf5a4a",
+   "contexto_antes": "(«apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the <span data-ev3-nome lang=\"pt-PT\">Fundo Ambiental</span>, and neither mentions the funding the other names.</p><p data-registo-bloco=\"51\" data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/en#51\">On <span class=\"texto-figura\" data-registo=\"evora-2027-capit",
+   "contexto_depois": "(«apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the <span data-ev3-nome lang=\"pt-PT\">Fundo Ambiental</span>, and neither says how the two financings relate.</p><p data-registo-bloco=\"51\" data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/en#51\">On <span class=\"texto-figura\" data-registo=\"evora-2027-capit"
+  }
+ ]
+}

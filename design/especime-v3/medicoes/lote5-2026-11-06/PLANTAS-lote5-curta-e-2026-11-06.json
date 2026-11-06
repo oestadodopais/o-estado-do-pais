@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-06T13:22:14+00:00",
+ "copia": "pacote-lote5-curta-e-2026-11-06",
+ "plantas": [
+  {
+   "id": "E1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "o passo 2 do Método pt volta a prometer a cópia",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4cdeb435bb4a180a40bfb0633c46f8bef471ab10bff70bc4e263d4a65755fe47",
+   "sha256_depois": "bbd0dc4886b61860374aab6ae1b8a249efabfd710271bd87229e2b348230190f",
+   "contexto_antes": "ass=\"met1-visto\" d=\"m112 76 4 4 8-9\"></path><circle class=\"met1-sinal\" cx=\"8\" cy=\"50\" r=\"3\" style=\"animation-delay:0.12s\"></circle></svg><p data-met1=\"passo-1\">Um programa descarrega o documento da fonte e mede o número no próprio documento.</p></li><li class=\"met1-passo met1-documento\"><svg class=\"met1-maquina\" viewBox=\"0 0 160 100\" aria-hidden=\"true\" focusable=\"false\"><path class=\"met1-trilho\" d=",
+   "contexto_depois": "ass=\"met1-visto\" d=\"m112 76 4 4 8-9\"></path><circle class=\"met1-sinal\" cx=\"8\" cy=\"50\" r=\"3\" style=\"animation-delay:0.12s\"></circle></svg><p data-met1=\"passo-1\">Um programa descarrega o documento da fonte, guarda uma cópia e mede o número no próprio documento.</p></li><li class=\"met1-passo met1-documento\"><svg class=\"met1-maquina\" viewBox=\"0 0 160 100\" aria-hidden=\"true\" focusable=\"false\"><path class=\"met1-trilho\" d="
+  },
+  {
+   "id": "E2",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "o passo 2 do Método en diz que o número se estima",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "fae5fe8d7037db497f959812b1dd9e3308808a6697e36fbe309c21c8b6adfad8",
+   "sha256_depois": "51f433759286c94754a65f9214700f9fbb6462b725fef53a3ebc402a578d8fe4",
+   "contexto_antes": "ass=\"met1-visto\" d=\"m112 76 4 4 8-9\"></path><circle class=\"met1-sinal\" cx=\"8\" cy=\"50\" r=\"3\" style=\"animation-delay:0.12s\"></circle></svg><p data-met1=\"passo-1\">A program downloads the source document and measures the number in the document itself.</p></li><li class=\"met1-passo met1-documento\"><svg class=\"met1-maquina\" viewBox=\"0 0 160 100\" aria-hidden=\"true\" focusable=\"false\"><path class=\"met1-trilho\" d=",
+   "contexto_depois": "ass=\"met1-visto\" d=\"m112 76 4 4 8-9\"></path><circle class=\"met1-sinal\" cx=\"8\" cy=\"50\" r=\"3\" style=\"animation-delay:0.12s\"></circle></svg><p data-met1=\"passo-1\">A program downloads the source document and estimates the number from the document itself.</p></li><li class=\"met1-passo met1-documento\"><svg class=\"met1-maquina\" viewBox=\"0 0 160 100\" aria-hidden=\"true\" focusable=\"false\"><path class=\"met1-trilho\" d="
+  },
+  {
+   "id": "E3",
+   "ficheiro": "src/data/metodo.mjs",
+   "descricao": "a frase pt do passo 2 na fonte diz o documento do organismo em vez do documento da fonte",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b6c4b835945bbc936ad3e6b2d23c4ca7385af21525228a6307ca51d5727e9232",
+   "sha256_depois": "9925275f8e0c3ef6f80b075a0400b38a6747979be03bb97dcd608a536984ef07",
+   "contexto_antes": "cial intelligence model reads the news, source calendars and what parties publish, and identifies what has changed.\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"Um programa descarrega o documento da fonte e mede o número no próprio documento.\"\n      ],\n      \"en\": [\n        \"A program downloads the source document and measures the number in the document itself.\"\n      ]\n    },\n    {\n      \"pt\": [\n   ",
+   "contexto_depois": "cial intelligence model reads the news, source calendars and what parties publish, and identifies what has changed.\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"Um programa descarrega o documento do organismo e mede o número no próprio documento.\"\n      ],\n      \"en\": [\n        \"A program downloads the source document and measures the number in the document itself.\"\n      ]\n    },\n    {\n      \"pt\": [\n   "
+  },
+  {
+   "id": "E5",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "o passo 3 do Método pt perde o excerto (frase fora do diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bbd0dc4886b61860374aab6ae1b8a249efabfd710271bd87229e2b348230190f",
+   "sha256_depois": "e78a895799712df2b78c05424643c231bb83da27c1af175e116e7ac4aed27d97",
+   "contexto_antes": "ass=\"met1-visto\" d=\"m112 76 4 4 8-9\"></path><circle class=\"met1-sinal\" cx=\"8\" cy=\"50\" r=\"3\" style=\"animation-delay:0.24s\"></circle></svg><p data-met1=\"passo-2\">O número entra no livro-razão com a fonte, o documento, o excerto e a data.</p></li><li class=\"met1-passo met1-modelo\"><svg class=\"met1-maquina\" viewBox=\"0 0 160 100\" aria-hidden=\"true\" focusable=\"false\"><path class=\"met1-trilho\" d=\"M0",
+   "contexto_depois": "ass=\"met1-visto\" d=\"m112 76 4 4 8-9\"></path><circle class=\"met1-sinal\" cx=\"8\" cy=\"50\" r=\"3\" style=\"animation-delay:0.24s\"></circle></svg><p data-met1=\"passo-2\">O número entra no livro-razão com a fonte, o documento e a data.</p></li><li class=\"met1-passo met1-modelo\"><svg class=\"met1-maquina\" viewBox=\"0 0 160 100\" aria-hidden=\"true\" focusable=\"false\"><path class=\"met1-trilho\" d=\"M0"
+  },
+  {
+   "id": "E4",
+   "ficheiro": "scripts/metodo-aprovado.json",
+   "descricao": "a frase en do passo 2 na lista fechada perde «itself»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d3574bc99cd87772ba680a73b95bd6158468ef35a17c6e36bbd6bedef5613796",
+   "sha256_depois": "c967579951ae47122a40366823ff54541a4e721409fd23bc75116d6429057e5a",
+   "contexto_antes": "\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"Um programa descarrega o documento da fonte e mede o número no próprio documento.\"\n      ],\n      \"en\": [\n        \"A program downloads the source document and measures the number in the document itself.\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"O número entra no livro-razão com a fonte, o documento, o excerto e a data.\"\n      ],\n      \"en\": [\n        \"The nu",
+   "contexto_depois": "\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"Um programa descarrega o documento da fonte e mede o número no próprio documento.\"\n      ],\n      \"en\": [\n        \"A program downloads the source document and measures the number in the document.\"\n      ]\n    },\n    {\n      \"pt\": [\n        \"O número entra no livro-razão com a fonte, o documento, o excerto e a data.\"\n      ],\n      \"en\": [\n        \"The nu"
+  }
+ ]
+}

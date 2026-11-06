@@ -1,0 +1,65 @@
+{
+ "bloco": "AT1 (a aterragem mais curta: o envio pré-construído para a Vercel, o GitHub em paralelo, a tranca só onde é precisa, a isenção do Método e do Sobre)",
+ "data": "2026-11-04",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "AT1 (o mandato; parou: a função da caixa das sugestões)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": null,
+   "fim": "2026-11-04T01:03:50Z",
+   "pontos": 0.0,
+   "pontos_antes": 91.0,
+   "pontos_depois": 91.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 7,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-at1.log"
+  },
+  {
+   "nome": "AT1-a (adenda A: o .vercel/output pelo vercel build, a troca do static pelo dist conferido)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-04T01:05:12Z",
+   "fim": "2026-11-04T01:29:23Z",
+   "pontos": 1.0,
+   "pontos_antes": 91.0,
+   "pontos_depois": 92.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 46,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-at1-a.log"
+  },
+  {
+   "nome": "AT1-b (adenda B: a região da função e a árvore inalterada)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-04T03:00:52Z",
+   "fim": "2026-11-04T03:08:04Z",
+   "pontos": 0.0,
+   "pontos_antes": 94.0,
+   "pontos_depois": 94.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 11,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-at1-b.log"
+  },
+  {
+   "nome": "AT1-c (adenda C: o projeto certo e o envio comprimido)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-04T08:06:48Z",
+   "fim": "2026-11-04T08:14:43Z",
+   "pontos": 0.0,
+   "pontos_antes": 95.0,
+   "pontos_depois": 95.0,
+   "outras_sessoes_no_intervalo": 0,
+   "turnos": 18,
+   "fonte": "a linha PONTOS n.º 1 do LANCADOR-at1-c.log"
+  }
+ ],
+ "pontos_codex_total": 1.0,
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros: quando passagens de blocos diferentes correm ao mesmo tempo, a subida do intervalo conta nas duas. O registo do lançador aponta por vezes a sessão de outro bloco que partilha a worktree (a I294); os pontos lêem-se do contador da conta, não da sessão.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "leituras": "Claude Opus 5.5 (leitor, xhigh): a leitura a frio do lote 5 e as leituras curtas das correções; fora do contador do Codex."
+}
