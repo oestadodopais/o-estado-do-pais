@@ -74,6 +74,12 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
    (`tests/inicio/regua-das-frases.mjs`) correm-na sobre uma construção pequena, copiada e estragada fora
    da árvore. Sem a variável, é o `dist/` da árvore, como sempre. */
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
+const ficheiroDaData=path.join(DIST,'version.json');
+if(!fs.existsSync(ficheiroDaData))throw new Error('Falta a data da construção: version.json ausente.');
+const carimboDaData=JSON.parse(fs.readFileSync(ficheiroDaData,'utf8')).construido_em;
+if(typeof carimboDaData!=='string'||!/^\d{4}-\d{2}-\d{2}T/.test(carimboDaData)||Number.isNaN(Date.parse(carimboDaData)))throw new Error('Falta uma data válida da construção em version.json.');
+const diaDaMarcaNovo=carimboDaData.slice(0,10);
+
 
 const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -1819,7 +1825,7 @@ function ondeVolta(frase) {
 }
 
 const rendidasNormalizadas = new Set([...rendidas, ...rendidasNasIsentas].map(normalizaFraseDoInventario));
-const diaDaMarcaNovo=JSON.parse(fs.readFileSync(path.join(DIST,'version.json'),'utf8')).construido_em.slice(0,10);
+
 const marcasNovo=Object.fromEntries(['pt','en'].map(lang=>[lang,exigeRotuloNovo(lang,diaDaMarcaNovo)]));
 const declaracoes = {
   marcas_novo: {dia:diaDaMarcaNovo,exigidas:marcasNovo},

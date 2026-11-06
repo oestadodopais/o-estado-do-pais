@@ -17,7 +17,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -38,6 +38,7 @@ const comValor = (frase) => frase.replace('com um valor ao lado', 'com um valor 
 export function plantasDaReguaDasFrases(dist) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-regua-das-frases-'));
   try {
+    fs.copyFileSync(path.join(dist, 'version.json'), path.join(tmp, 'version.json'));
     /** @param {string} rel @param {(h: string) => string} estraga */
     const copia = (rel, estraga) => {
       const f = path.join(tmp, rel, 'index.html');
@@ -66,7 +67,13 @@ export function plantasDaReguaDasFrases(dist) {
     const naoClassificados = (rota) => /** @type {string[]} */ (porRota[rota]?.nao_classificados ?? []);
     const rotaDoConcelho = `/municipios/${concelho.name}`;
     const lidas = Object.keys(porRota).length;
+    fs.unlinkSync(path.join(tmp, 'version.json'));
+    const semData=spawnSync(process.execPath,[path.join(RAIZ,'scripts','medir-defeitos.mjs'),'--json'],{
+      cwd:RAIZ,env:{...process.env,OEDP_DIST:tmp},encoding:'utf8',
+    });
+    const queixaDaData='Falta a data da construção: version.json ausente.';
     return [
+      {nome:'construção sem version.json recusada com a razão da data',mordeu:semData.status!==0&&semData.stderr.includes(queixaDaData),queixa:semData.stderr.includes(queixaDaData)?queixaDaData:'a régua não explicou a falta da data'},
       { nome: 'uma frase com um valor fora dos cartões de uma entrada fica por classificar', mordeu: naoClassificados('/precos').includes(FORA), queixa: naoClassificados('/precos').includes(FORA) ? `bloco por classificar em /precos: «${FORA}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       { nome: 'a marca dos blocos numa página de concelho não tira nada do inventário', mordeu: naoClassificados(rotaDoConcelho).includes(MARCADA_NO_CONCELHO), queixa: naoClassificados(rotaDoConcelho).includes(MARCADA_NO_CONCELHO) ? `bloco por classificar em ${rotaDoConcelho}: «${MARCADA_NO_CONCELHO}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       /* A frase do veredicto só sai do inventário na primeira página, onde a V1 a confere. */
