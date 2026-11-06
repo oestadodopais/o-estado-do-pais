@@ -1,0 +1,25 @@
+check:lugar, controlo: código 0; L1 3468; teto 3468.
+terceira página adicional: código 1; L1 NaN; teto 3468.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+NaN !== 3469
+
+    at correr (file://<worktree>/tests/edicoes/ev3-p-l1.mjs:16:58)
+    at file://<worktree>/tests/edicoes/ev3-p-l1.mjs:26:18
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: NaN,
+  expected: 3469,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 0.00011899997480213642, "execucao_segundos": 75.05816237488762, "codigo": 1}

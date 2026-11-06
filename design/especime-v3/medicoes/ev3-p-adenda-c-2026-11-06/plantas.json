@@ -1,0 +1,18 @@
+{
+  "resultados": [
+    {
+      "nome": "check:lugar, controlo",
+      "codigo": 0,
+      "contagem": 3468,
+      "teto": 3468
+    },
+    {
+      "nome": "terceira página adicional",
+      "codigo": 1,
+      "contagem": 3469,
+      "teto": 3468
+    }
+  ],
+  "planta_retirada": true,
+  "original_preservado": true
+}
