@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-05T19:40:45+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/en/themes/index.html",
+   "descricao": "en/themes: o valor revisto do aviso da sobrecarga na UE escrito 7.6 em vez de 7,6 (a forma dos números da edição; PAI2 C §1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "73d2bfd4fdd54ec8a604b89e3693551a8cddc99695cf9ca7b97d267134364794",
+   "sha256_depois": "18ad31d822d7d739560beef82558cae866557e7a93776464a005f4d0d396c2ee",
+   "contexto_antes": "a-habitacao-2025-ue\" data-de-campo=\"reference_date\">2025</span></span> to <span class=\"campo-valor\" data-linha-claim=\"sobrecarga-do-custo-da-habitacao-2025-ue\" data-linha-campo=\"verifications.6.found\">7,6</span> in the re-reading of <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"sobrecarga-do-custo-da-habitacao-2025-ue\" data-de-ca",
+   "contexto_depois": "a-habitacao-2025-ue\" data-de-campo=\"reference_date\">2025</span></span> to <span class=\"campo-valor\" data-linha-claim=\"sobrecarga-do-custo-da-habitacao-2025-ue\" data-linha-campo=\"verifications.6.found\">7.6</span> in the re-reading of <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"sobrecarga-do-custo-da-habitacao-2025-ue\" data-de-ca"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/livro-razao/index.html",
+   "descricao": "livro-razao: o aviso da entrada desempenho-das-exportacoes-2024 volta a repetir o período («, 2024,») que a entrada já mostra (ADENDA-D-PAI2)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1baf360d4473c6286b276320e6d58b41ed09955a348b619fb75dc4c7bb403a8d",
+   "sha256_depois": "cc5931a12dc3213191e92ad02d56f67be1e4fb62492f7e78fc782b0a31f6e825",
+   "contexto_antes": "data-nome=\"figuras\" data-de-linha=\"desempenho-das-exportacoes-2025\">Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)</span></span> para <span class=\"campo-valor\" data-linha-claim=\"desempenho-das-exportacoes-2024\" data-linha-campo=\"verifications.6.found\">17,0</span> na releitura de <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"dese",
+   "contexto_depois": "data-nome=\"figuras\" data-de-linha=\"desempenho-das-exportacoes-2025\">Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)</span></span>, 2024, para <span class=\"campo-valor\" data-linha-claim=\"desempenho-das-exportacoes-2024\" data-linha-campo=\"verifications.6.found\">17,0</span> na releitura de <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"dese"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "explicação de 2026: a frase volta a dizer «e a execução até agosto está acima», que a ADENDA-B-VOZ1 §4.1 tirou",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d1b7eb48ecde0255c7c91917a1e559fdc1dceb8ea927d03bb43aa445e056987b",
+   "sha256_depois": "f6436ea5a6ea98c229b9c7edf841ec1f4a79ecc15a109965b1cc377d44832805",
+   "contexto_antes": "r estes números</h2><p class=\"explicacao-p\" data-explicacao-paragrafo=\"naoDiz[0]\" data-explicacao-declarado>O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.</p></section><p class=\"regra-portas explicacao-port",
+   "contexto_depois": "r estes números</h2><p class=\"explicacao-p\" data-explicacao-paragrafo=\"naoDiz[0]\" data-explicacao-declarado>O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto está acima. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.</p></section><p class=\"regra-portas explicacao-port"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/agenda/index.html",
+   "descricao": "agenda: a primeira ligação do calendário à União Europeia escrita /uniao-europeia/, quando o menu da mesma página a escreve /uniao-europeia (brief-VOZ-1-D)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "622e361010ffa7fde126f154df9475122e96f455902e4c2310f7780c876d8665",
+   "sha256_depois": "7faa03752c4cacf037fef3a499bd3790f007f58d65d1de72336a77610a351915",
+   "contexto_antes": "\"/habitacao\">Habitação</a> · <a data-calendario-pagina=\"/areas/infraestruturas-e-habitacao\" href=\"/areas/infraestruturas-e-habitacao\">Infraestruturas e Habitação</a> · <a data-calendario-pagina=\"/pobreza-e-desigualdade\" href=\"/pobreza-e-desigualdade\">Pobreza e desigualdade</a> · <a data-calendario-pagina=\"/uniao-europeia\" href=\"/uniao-europeia\">Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.</a> · <a data-calendario-pagina=\"/areas/saude\" href=\"/area",
+   "contexto_depois": "\"/habitacao\">Habitação</a> · <a data-calendario-pagina=\"/areas/infraestruturas-e-habitacao\" href=\"/areas/infraestruturas-e-habitacao\">Infraestruturas e Habitação</a> · <a data-calendario-pagina=\"/pobreza-e-desigualdade\" href=\"/pobreza-e-desigualdade\">Pobreza e desigualdade</a> · <a data-calendario-pagina=\"/uniao-europeia\" href=\"/uniao-europeia/\">Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.</a> · <a data-calendario-pagina=\"/areas/saude\" href=\"/area"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, scripts/voz-autorreferencia.mjs: a expressão larga PROPRIA perde «aqui», que a ADENDA-B-VOZ1 §5.1 nomeia (uma régua enfraquecida)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f93a08099a79b2e6417c4524495566447bdd78c2349de62712318fe1a37a52ba",
+   "sha256_depois": "956c5344fe4b83a195fe1a8b78f6996cb1735b0099bb0ac0055ae6268bd93783",
+   "contexto_antes": "never|nothing|doesn[’']t|isn[’']t)(?![\\p{L}])/iu;\n+const PROPRIA = /(?<![\\p{L}])(?:d?este projeto|d?esta página|d?esta explicação|d?este estudo|d?este documento|d?esta leitura|aqui|não entram?|não se lê|inferências?|juízos?|this project|this site|this page|this explainer|this explanation|this study|this document|this reading|here|does not enter|is not",
+   "contexto_depois": "never|nothing|doesn[’']t|isn[’']t)(?![\\p{L}])/iu;\n+const PROPRIA = /(?<![\\p{L}])(?:d?este projeto|d?esta página|d?esta explicação|d?este estudo|d?este documento|d?esta leitura|não entram?|não se lê|inferências?|juízos?|this project|this site|this page|this explainer|this explanation|this study|this document|this reading|here|does not enter|is not"
+  }
+ ]
+}

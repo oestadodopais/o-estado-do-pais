@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-05T22:20:15+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "E1",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "correcoes: a nota de 2026-08-15 volta a ter a frase da maquinaria («É o primeiro que não veio de um anfitrião de artefactos…»), que a adenda D §1.1 tira",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2f5ef5210d4a681ebb1e408362f4491e5f5a103cd3ff6c3f5356ac422b5405b7",
+   "sha256_depois": "98013ab38f04615c0431b1fa97d826d69dfb2e0845b400c4b3354142f8a66324",
+   "contexto_antes": "vo\" data-correcao-claim=\"estudos-evora-publicados\" data-correcao-n=\"2\" data-correcao-campo=\"reason\">Entrou no arquivo «Évora — Prometido, Pago, Auditado 2026», o quinto trabalho cujo objeto é o município de Évora.</p><p class=\"log-afirmacao\"><span class=\"etiqueta-kind etiqueta-correcao\" data-correcao-claim=\"estudos-evora-publicados\" data-correcao-n=\"2\" data-correcao-campo=\"k",
+   "contexto_depois": "vo\" data-correcao-claim=\"estudos-evora-publicados\" data-correcao-n=\"2\" data-correcao-campo=\"reason\">Entrou no arquivo «Évora — Prometido, Pago, Auditado 2026», o quinto trabalho cujo objeto é o município de Évora. É o primeiro que não veio de um anfitrião de artefactos: foi produzido no motor de investigação deste projeto e atravessou como ficheiro, com as duas edições.</p><p class=\"log-afirmacao\"><span class=\"etiqueta-kind etiqueta-correcao\" data-correcao-claim=\"estudos-evora-publicados\" data-correcao-n=\"2\" data-correcao-campo=\"k"
+  },
+  {
+   "id": "E2",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "correcoes: a linha de proveniência de divida-publica-2024 com o período 2025, igual à de divida-publica-2025 (período errado e linha repetida; adenda D §1.3)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "98013ab38f04615c0431b1fa97d826d69dfb2e0845b400c4b3354142f8a66324",
+   "sha256_depois": "0e75cf0190b82c4aca8f86d73fff7e227062fbd53dcca31bd3f0c3a1212d1e73",
+   "contexto_antes": "tem-nome\" data-nome=\"figuras\" data-de-linha=\"divida-publica-2025\">Dívida pública</span>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-publica-2024\" data-de-campo=\"reference_date\">2024</span></span> <a class=\"src-chip\" href=\"/livro-razao/divida-publica-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"sr",
+   "contexto_depois": "tem-nome\" data-nome=\"figuras\" data-de-linha=\"divida-publica-2025\">Dívida pública</span>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-publica-2024\" data-de-campo=\"reference_date\">2025</span></span> <a class=\"src-chip\" href=\"/livro-razao/divida-publica-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"sr"
+  },
+  {
+   "id": "E3",
+   "ficheiro": "built/en/corrections/index.html",
+   "descricao": "en/corrections: a linha de divida-das-familias-2025-ue sem «in the European Union», igual à de divida-das-familias-2025 (adenda D §1.3)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "625ef4457be30a5ef01c787f58ff5c2cee1365ad946a2bb862a4c615059d140a",
+   "sha256_depois": "52d610ccced846927b382a0cc7f887dc6bbf79daab1e1bfa8574dcacf4905fd8",
+   "contexto_antes": "proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span>Eurostat</span></span></a></li><li data-correcao-entrada=\"divida-das-familias-2025-ue\"><span data-correcao-titulo=\"divida-das-familias-2025-ue\"><span class=\"livro-item-nome\" data-nome=\"figuras\" data-de-linha=\"divida-das-familias-2025\">Household debt</span> in the European Union, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2025-ue\" data-de-campo=\"reference_date\">2025</span></s",
+   "contexto_depois": "proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span>Eurostat</span></span></a></li><li data-correcao-entrada=\"divida-das-familias-2025-ue\"><span data-correcao-titulo=\"divida-das-familias-2025-ue\"><span class=\"livro-item-nome\" data-nome=\"figuras\" data-de-linha=\"divida-das-familias-2025\">Household debt</span>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2025-ue\" data-de-campo=\"reference_date\">2025</span></s"
+  },
+  {
+   "id": "E4",
+   "ficheiro": "built/agenda/index.html",
+   "descricao": "agenda: a segunda porta para «A economia de Évora e o dinheiro público…» aponta a edição datada evora-economia-investidores-portas-abertas-2026 (sucedida; adenda D §1.2)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "82009ad5424d853e0614728fbeabfa33500063dc94285e1bb0cd8118d011e68b",
+   "sha256_depois": "0586e4b1330fbeeba16199ada210f48fd2d693c69165ccc1d2d67c0ebfa580a7",
+   "contexto_antes": "ta-agenda=\"evento:ine-estimativas-populacao-residente.titulo\">Estimativas Anuais da População Residente</p><p class=\"agenda-nota\" data-calendario-alvos=\"ine-estimativas-populacao-residente\">Atualiza: <a data-calendario-pagina=\"/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara\" href=\"/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara\">A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara</a> · <a data-calendario-pagina=\"/municipios/evora\" href=\"/municipios/evora\">É",
+   "contexto_depois": "ta-agenda=\"evento:ine-estimativas-populacao-residente.titulo\">Estimativas Anuais da População Residente</p><p class=\"agenda-nota\" data-calendario-alvos=\"ine-estimativas-populacao-residente\">Atualiza: <a data-calendario-pagina=\"/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara\" href=\"/estudos/evora-economia-investidores-portas-abertas-2026\">A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara</a> · <a data-calendario-pagina=\"/municipios/evora\" href=\"/municipios/evora\">É"
+  },
+  {
+   "id": "E5",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, scripts/revisoes-no-registo.mjs: a régua das linhas repetidas compara o texto com o identificador colado, e nunca encontra duas iguais (uma régua enfraquecida; adenda D §1.3)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a9801348d06f0effabcd437385f6ca8a460d33948d11bebb519cfdd395b1f561",
+   "sha256_depois": "f6e06869d84a0eed798857293ff2c859036b3ae7def864edc4536a27523bbdfb",
+   "contexto_antes": "sta of root.querySelectorAll('.registo-proveniencia-linhas')){\n+  const vistos=new Set();\n+  for(const el of lista.querySelectorAll('[data-correcao-titulo]')){\n+   const texto=normal(el.textContent);\n+   if(vistos.has(texto))erros.push(`VOZ-1 E: linha repetida na lista de revisões: ${texto}`);\n+   vistos.add(texto);\n+  }\n+ }\n+ return {erros,elementos};\n+}\n+\n+/** Só os campos do nome",
+   "contexto_depois": "sta of root.querySelectorAll('.registo-proveniencia-linhas')){\n+  const vistos=new Set();\n+  for(const el of lista.querySelectorAll('[data-correcao-titulo]')){\n+   const texto=normal(el.textContent)+el.getAttribute('data-correcao-titulo');\n+   if(vistos.has(texto))erros.push(`VOZ-1 E: linha repetida na lista de revisões: ${texto}`);\n+   vistos.add(texto);\n+  }\n+ }\n+ return {erros,elementos};\n+}\n+\n+/** Só os campos do nome"
+  }
+ ]
+}

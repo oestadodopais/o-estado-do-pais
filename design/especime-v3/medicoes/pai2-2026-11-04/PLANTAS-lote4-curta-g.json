@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-06T06:43:25+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "G1",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "correcoes: a linha de divida-publica-2025-ue volta a dizer a União duas vezes (adenda G §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4536b6090fdc501cd1d6715e5e2c18449ddacbf8cfe68acf3b5a32b7066bb481",
+   "sha256_depois": "1be9a5c7e7a0f2df775626827dc8f3a06dc3701668948b6d29acbf7a3def63ef",
+   "contexto_antes": "a></li><li data-correcao-entrada=\"divida-publica-2025-ue\"><span data-correcao-titulo=\"divida-publica-2025-ue\"><span data-correcao-nome=\"divida-publica-2025-ue\" data-de-linha=\"divida-publica-2025-ue\">Dívida pública na União Europeia</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-publica-2025-ue\" data-de-campo=\"reference_date\">2025</span></span",
+   "contexto_depois": "a></li><li data-correcao-entrada=\"divida-publica-2025-ue\"><span data-correcao-titulo=\"divida-publica-2025-ue\"><span data-correcao-nome=\"divida-publica-2025-ue\" data-de-linha=\"divida-publica-2025-ue\">Dívida pública na União Europeia</span><span data-correcao-uniao> na União Europeia</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-publica-2025-ue\" data-de-campo=\"reference_date\">2025</span></span"
+  },
+  {
+   "id": "G2",
+   "ficheiro": "built/en/corrections/index.html",
+   "descricao": "en/corrections: a linha de divida-das-familias-2025-ue sem a União, igual à de divida-das-familias-2025 (adenda G §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "63207ad59d1cdf13e47687c203ed4efb5e45b7409a126341b33136f9727e8776",
+   "sha256_depois": "3eb3e5db33997b6285c387376633e025468a333f2db959ce019a9078f8d58f2b",
+   "contexto_antes": "-correcao-entrada=\"divida-das-familias-2025-ue\"><span data-correcao-titulo=\"divida-das-familias-2025-ue\"><span data-correcao-nome=\"divida-das-familias-2025-ue\" data-de-linha=\"divida-das-familias-2025-ue\">Household debt</span><span data-correcao-uniao> in the European Union</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2025-ue\" data-de-campo=\"",
+   "contexto_depois": "-correcao-entrada=\"divida-das-familias-2025-ue\"><span data-correcao-titulo=\"divida-das-familias-2025-ue\"><span data-correcao-nome=\"divida-das-familias-2025-ue\" data-de-linha=\"divida-das-familias-2025-ue\">Household debt</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2025-ue\" data-de-campo=\""
+  },
+  {
+   "id": "G3",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, scripts/marca-novo.mjs: a janela da marca nova passa a 0 a 8 dias na conferência das marcas (uma régua de data enfraquecida; adenda H §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "48086d30e26e963b2aa5b5a68aae65d0ff4e01c314fae5e0402488848c58d452",
+   "sha256_depois": "bd6287405f2dfd827b3066bbebee960bff00be0f9dadbcbf3e429f2d3b03f4a1",
+   "contexto_antes": "a-estudo]')){\n+  const data=estudo.querySelector('.estudo-meta time')?.getAttribute('datetime');\n+  const dias=(Date.parse(dia)-Date.parse(data??''))/86400000;\n+  if(estudo.querySelectorAll('[data-estudo-novo]').length!==Number(dias>=0&&dias<=7))erros.push('FP1: marca novo diferente da data impressa');\n+ }\n+ return erros;\n+}\n+export function exigeRotuloNovo(lang,dia){\n+ return listagensDoInicio(lang).es",
+   "contexto_depois": "a-estudo]')){\n+  const data=estudo.querySelector('.estudo-meta time')?.getAttribute('datetime');\n+  const dias=(Date.parse(dia)-Date.parse(data??''))/86400000;\n+  if(estudo.querySelectorAll('[data-estudo-novo]').length!==Number(dias>=0&&dias<=8))erros.push('FP1: marca novo diferente da data impressa');\n+ }\n+ return erros;\n+}\n+export function exigeRotuloNovo(lang,dia){\n+ return listagensDoInicio(lang).es"
+  },
+  {
+   "id": "G4",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, scripts/medir-defeitos.mjs: sem version.json, o guião usa a data de hoje em vez de falhar (adenda I §1.2)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bd6287405f2dfd827b3066bbebee960bff00be0f9dadbcbf3e429f2d3b03f4a1",
+   "sha256_depois": "988fc91df10bfee2f33f78bd0bad6c1ad856e70afee3ed83e5bb55bdd1ea10ae",
+   "contexto_antes": ". */\n const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');\n+const ficheiroDaData=path.join(DIST,'version.json');\n+if(!fs.existsSync(ficheiroDaData))throw new Error('Falta a data da construção: version.json ausente.');\n+const carimboDaData=JSON.parse(fs.readFileSync(ficheiroDaData,'utf8')).construido_em;\n+if(typeof carimboDaData!=='string'||!/^\\d{4}-\\d{2}-\\d{2}T/.test(carimboDaData)||Number.isNaN(Date.parse(carimboDaData)))throw new Error('Falta uma data válida",
+   "contexto_depois": ". */\n const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');\n+const ficheiroDaData=path.join(DIST,'version.json');\n+const carimboDaData=fs.existsSync(ficheiroDaData)?JSON.parse(fs.readFileSync(ficheiroDaData,'utf8')).construido_em:new Date().toISOString();\n+if(typeof carimboDaData!=='string'||!/^\\d{4}-\\d{2}-\\d{2}T/.test(carimboDaData)||Number.isNaN(Date.parse(carimboDaData)))throw new Error('Falta uma data válida"
+  },
+  {
+   "id": "G5",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, tests/inicio/novidades.mjs: a planta da marca num dia sem estudo novo deixa de pôr a marca indevida (só a forma da marca retirada morde; adenda H §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "988fc91df10bfee2f33f78bd0bad6c1ad856e70afee3ed83e5bb55bdd1ea10ae",
+   "sha256_depois": "41e3a87ecd28db0c10e333503829061af9aac60d1efdf31cfdfbf99b949d27a1",
+   "contexto_antes": ",r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],\n+    ['marca novo retirada ou indevida',r=>{const marca=r.querySelector('[data-estudo-novo]');if(marca)marca.remove();else {const estudo=r.querySelector('#trabalhos [data-estudo]');assert(estudo);estudo.insertAdjacentHTML('beforeend',`<span data-estudo-novo>${FP1[lang].novo}</span>`)",
+   "contexto_depois": ",r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],\n+    ['marca novo retirada ou indevida',r=>{const marca=r.querySelector('[data-estudo-novo]');if(marca)marca.remove();else if(false){const estudo=r.querySelector('#trabalhos [data-estudo]');assert(estudo);estudo.insertAdjacentHTML('beforeend',`<span data-estudo-novo>${FP1[lang].novo}</span>`)"
+  }
+ ]
+}

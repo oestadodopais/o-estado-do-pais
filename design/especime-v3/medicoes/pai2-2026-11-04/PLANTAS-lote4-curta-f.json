@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-05T23:22:57+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "F1",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "correcoes: a linha de credito-malparado-2024 volta ao título inglês do conjunto de dados da fonte (adenda F §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8da41e3e8d637d2f61c1f87bf32084b088096898d4ad6e56262aa0a27024a929",
+   "sha256_depois": "ce533ab503858df21953d8192a127ec6717279b61d0b761150ab4ca086445dcd",
+   "contexto_antes": "inhas\"><li data-correcao-entrada=\"credito-malparado-2024\"><span data-correcao-titulo=\"credito-malparado-2024\"><span data-correcao-nome=\"credito-malparado-2024\" data-de-linha=\"credito-malparado-2024\">Crédito malparado</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"credito-malparado-2024\" data-de-campo=\"refer",
+   "contexto_depois": "inhas\"><li data-correcao-entrada=\"credito-malparado-2024\"><span data-correcao-titulo=\"credito-malparado-2024\"><span data-correcao-nome=\"credito-malparado-2024\" data-de-linha=\"credito-malparado-2024\"><span lang=\"en\">Gross non-performing loans, domestic and foreign entities - % of gross loans</span></span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"credito-malparado-2024\" data-de-campo=\"refer"
+  },
+  {
+   "id": "F2",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "correcoes: a linha de divida-das-familias-2024 com o nome «Dívida pública», que não é o título do seu recibo (adenda F §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ce533ab503858df21953d8192a127ec6717279b61d0b761150ab4ca086445dcd",
+   "sha256_depois": "76466dc434f59a084e8684d5ba84ce4521e21b01bf8aea279d5f2dada252030a",
+   "contexto_antes": "><li data-correcao-entrada=\"divida-das-familias-2024\"><span data-correcao-titulo=\"divida-das-familias-2024\"><span data-correcao-nome=\"divida-das-familias-2024\" data-de-linha=\"divida-das-familias-2024\">Dívida das famílias</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2024\" data-de-campo=\"ref",
+   "contexto_depois": "><li data-correcao-entrada=\"divida-das-familias-2024\"><span data-correcao-titulo=\"divida-das-familias-2024\"><span data-correcao-nome=\"divida-das-familias-2024\" data-de-linha=\"divida-das-familias-2024\">Dívida pública</span><span data-correcao-periodo>, <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2024\" data-de-campo=\"ref"
+  },
+  {
+   "id": "F3",
+   "ficheiro": "built/en/corrections/index.html",
+   "descricao": "en/corrections: a linha de evora-prr-vencido-aprovado-2026 volta a repetir a data («…of 19.08.2026, 19.08.2026») (adenda F §1.1)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d86adb79862c9f65559964e6576762e5b930c875e7372cfbf4cadbc1586744c4",
+   "sha256_depois": "fa459d8a7f99b3d7fdf544f231cf5a69c4653f4a58aeacc19d2df63be306e4aa",
+   "contexto_antes": "ed by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026</span></span> <a class=\"src-chip is-unverified\" href=\"/en/ledger/evora-prr-vencido-aprovado-2026\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Estrutura de Missão Recuperar Portugal\" title=\"Estrutura de Missão Recuperar Portugal\"><span class=\"src-chip-",
+   "contexto_depois": "ed by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026</span>, 19.08.2026</span> <a class=\"src-chip is-unverified\" href=\"/en/ledger/evora-prr-vencido-aprovado-2026\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Estrutura de Missão Recuperar Portugal\" title=\"Estrutura de Missão Recuperar Portugal\"><span class=\"src-chip-"
+  },
+  {
+   "id": "F4",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, scripts/revisoes-no-registo.mjs: a régua do nome compara só o comprimento do título com o do recibo (uma régua enfraquecida; adenda F §1.2)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1524e3f1d47cda1ba9495a44ad30d9d5e2bd74831436a22e2afd6b53448ce74f",
+   "sha256_depois": "b0575070f321a46273209a52a9bb9f6fd21b72622d07e0183052af5ec054daa2",
+   "contexto_antes": "texto ou período diferente da linha');\n+   if(copiados.length!==1||copiado.getAttribute('data-correcao-nome')!==id||copiado.getAttribute('data-de-linha')!==id||normal(copiado.textContent)!==nome)throw Error('título diferente do recibo');\n+   const periodo=dataDaCasa(linha.reference_date,lang);\n+   const esperado=`${nome}${contexto.uniao?(lang==='pt'?' n",
+   "contexto_depois": "texto ou período diferente da linha');\n+   if(copiados.length!==1||copiado.getAttribute('data-correcao-nome')!==id||copiado.getAttribute('data-de-linha')!==id||normal(copiado.textContent).length!==nome.length)throw Error('título diferente do recibo');\n+   const periodo=dataDaCasa(linha.reference_date,lang);\n+   const esperado=`${nome}${contexto.uniao?(lang==='pt'?' n"
+  },
+  {
+   "id": "F5",
+   "ficheiro": "diff.patch",
+   "descricao": "diff.patch, scripts/gate-html.mjs: a isenção dos títulos copiados volta a tirar o [data-correcao-titulo] inteiro, com as palavras da casa (adenda F §1.3)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b0575070f321a46273209a52a9bb9f6fd21b72622d07e0183052af5ec054daa2",
+   "sha256_depois": "8430c16509e6bd86e38fafe9ce210548d459e741f046be1a85bae478bf8769f1",
+   "contexto_antes": ";\n   }\n \n-  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-titulo]')) {\n-    const id=el.getAttribute('data-correcao-titulo');\n+  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-nome]')) {\n+    const id=el.getAttribute('data-correcao-nome');\n     if(id){\n-      // A composição e a porta já foram conferidas contra a linha, acima.\n+      // Só o título copiado sai; o contexto e o período conservam as",
+   "contexto_depois": ";\n   }\n \n-  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-titulo]')) {\n-    const id=el.getAttribute('data-correcao-titulo');\n+  for(const el of body.querySelectorAll('[data-calendario-pagina], [data-correcao-titulo]')) {\n+    const id=el.getAttribute('data-correcao-titulo');\n     if(id){\n-      // A composição e a porta já foram conferidas contra a linha, acima.\n+      // Só o título copiado sai; o contexto e o período conservam as"
+  }
+ ]
+}

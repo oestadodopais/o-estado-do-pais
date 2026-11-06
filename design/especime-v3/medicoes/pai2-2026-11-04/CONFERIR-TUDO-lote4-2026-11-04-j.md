@@ -1,0 +1,15 @@
+# conferir-tudo · c0e2a3d4c · 13 passos · 0 vermelhos · 1724 s
+
+- 00 `npm run build`: 0 (667 s)
+- 05 `npm run ledger:check`: 0 (17 s)
+- 06 `npm run check:registo`: 0 (2 s)
+- 11 `npm run gate:html`: 0 (69 s)
+- 18 `npm run check:alvos`: 0 (329 s)
+- 32 `npm run check:voz`: 0 (233 s)
+- 33 `npm run check:voz-retiradas`: 0 (219 s)
+- 34 `npm run check:lingua`: 0 (26 s)
+- 45 `npm run check:nomes`: 0 (4 s)
+- 54 `npm run check:frases-compostas`: 0 (101 s)
+- 56 `npm run check:discussao`: 0 (47 s)
+- 60 `npm run check:largura`: 0 (10 s)
+- 62 `npm run typecheck`: 0 (0 s)

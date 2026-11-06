@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-04T01:00:55+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "Q2",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "a dívida pública de 2025 no quadro diferente do cartão",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "df8a8f12a6493d25dc05e3c0dca619116d991f6e4ed11647243a9dd0ccc50417",
+   "sha256_depois": "c1e4b1c0f71099576c60a5e48bda77dfb495127253a62698d2ff609f877adf82",
+   "contexto_antes": "quadro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>Portugal</span><span data-quadro-valor=\"divida-publica-2025\"><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value\">89,2</span> <span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"divida-publica-2025\" data-linha-campo=\"unit\">% do PIB</span> · <span class=\"data-da-linha campo-",
+   "contexto_depois": "quadro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>Portugal</span><span data-quadro-valor=\"divida-publica-2025\"><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value\">88,2</span> <span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"divida-publica-2025\" data-linha-campo=\"unit\">% do PIB</span> · <span class=\"data-da-linha campo-"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2027/index.html",
+   "descricao": "a explicação de 2027 volta a falar de si",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a4636ece78ddc45bf719064cc7b85a4eb1f5dcef0d99ce2beea4070fb8fd8bd8",
+   "sha256_depois": "fb67220bd9ddd7ad897aa5d26e1311700bfb7a236e53eab7b183932035b5868b",
+   "contexto_antes": "-campo=\"reference_date\">2027</span>. A conta sem as operações relacionadas com a dívida pública calcula-se a partir do mapa, que só dá o nome a essa subfunção, sem dizer o que entra nela. A despesa efetiva consolidada por função dos dados abertos, a base da leitura de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-",
+   "contexto_depois": "-campo=\"reference_date\">2027</span>. A conta sem as operações relacionadas com a dívida pública calcula-se a partir do mapa, que só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A despesa efetiva consolidada por função dos dados abertos, a base da leitura de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "built/agenda/index.html",
+   "descricao": "o marcador antigo de volta num acontecimento do calendário",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "598304733af6b1cc3f2ae571b46fb0fe54571a1fbcabc5f4e3d18469fd8514ae",
+   "sha256_depois": "5795d43c40972f0d7ab7dcd1240d9f9bff065ada136491dfcdabf982d09b3795",
+   "contexto_antes": "-ce-relatorio-conjunto-emprego-2027\"><p class=\"agenda-evento-cabeca\"><span class=\"agenda-sem-data\" data-agenda-sem-data=\"nao_publica\"><span data-agenda=\"evento:ce-relatorio-conjunto-emprego-2027.marcador\">sem data anunciada</span></span><span class=\"agenda-evento-fonte\" data-agenda=\"evento:ce-relatorio-conjunto-emprego-2027.fonte\">Comissão Europeia</span></p><p class=\"agenda-evento",
+   "contexto_depois": "-ce-relatorio-conjunto-emprego-2027\"><p class=\"agenda-evento-cabeca\"><span class=\"agenda-sem-data\" data-agenda-sem-data=\"nao_publica\"><span data-agenda=\"evento:ce-relatorio-conjunto-emprego-2027.marcador\">[a verificar] a fonte não publica data</span></span><span class=\"agenda-evento-fonte\" data-agenda=\"evento:ce-relatorio-conjunto-emprego-2027.fonte\">Comissão Europeia</span></p><p class=\"agenda-evento"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "design/especime-v3/VOZ-MARCADORES.md",
+   "descricao": "a régua da voz perde o marcador da explicação como sujeito de uma negação",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "cd0a9d1b3868838aea8e7cb779bde02dc21dd8680ddbd9299bef8ad6ce71bd36",
+   "sha256_depois": "efe25ada913f1f18f2d4d9a38d9f62c359ca4075750f821898bd11a7230b3499",
+   "contexto_antes": "em vez de um facto da fonte. |\n| raiz | the project shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |\n| raiz | esta explicação não | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |\n| raiz | esta explicação mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |\n| raiz | this explainer do",
+   "contexto_depois": "em vez de um facto da fonte. |\n| raiz | the project shows | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |\n| raiz | esta explicação mostra | VOZ-1: a peça como sujeito de uma negação ou da narração do que faz, em vez de um facto da fonte. |\n| raiz | this explainer do"
+  },
+  {
+   "id": "Q1",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "a célula sem anterior do ganho médio mensal com um traço sozinho no quadro",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c1e4b1c0f71099576c60a5e48bda77dfb495127253a62698d2ff609f877adf82",
+   "sha256_depois": "bd8ffd0a61c86a0240d0aa6dd209a366796411f46cfceb85a9cae326379f85b1",
+   "contexto_antes": "ro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>Portugal</span><span data-quadro-valor=\"ganho-medio-mensal-2024\"><span class=\"claim claim-com-chip\"><span data-claim=\"ganho-medio-mensal-2024\" class=\"claim-value\">1 576,0</span> <span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"ganho-medio-mensal-2024\" data-linha-campo=\"unit\">euros por mês</span> · <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"ganho-medio-mensal-2024\" data-de-campo=\"reference_date\">2024</span><a class=\"src-chip\" href=\"/livro-razao/ganho-medio-mensal-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a></span></span></td><td role=\"cell\" data-quadro-coluna=\"anterior\" data-astro-cid-fop5mxja><span class=\"quadro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>Antes</span><span data-quadro-sem-anterior data-astro-cid-fop5mxja>sem anterior</span></td><td role=\"cell\" data-quadro-coluna=\"ue\" data-astro-cid-fop5mxja><span class=\"quadro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>União Europeia",
+   "contexto_depois": "ro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>Portugal</span><span data-quadro-valor=\"ganho-medio-mensal-2024\"><span class=\"claim claim-com-chip\"><span data-claim=\"ganho-medio-mensal-2024\" class=\"claim-value\">1 576,0</span> <span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"ganho-medio-mensal-2024\" data-linha-campo=\"unit\">euros por mês</span> · <span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"ganho-medio-mensal-2024\" data-de-campo=\"reference_date\">2024</span><a class=\"src-chip\" href=\"/livro-razao/ganho-medio-mensal-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a></span></span></td><td role=\"cell\" data-quadro-coluna=\"anterior\" data-astro-cid-fop5mxja><span class=\"quadro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>Antes</span><span data-quadro-sem-anterior data-astro-cid-fop5mxja>—</span></td><td role=\"cell\" data-quadro-coluna=\"ue\" data-astro-cid-fop5mxja><span class=\"quadro-rotulo\" aria-hidden=\"true\" data-astro-cid-fop5mxja>União Europeia"
+  }
+ ]
+}
