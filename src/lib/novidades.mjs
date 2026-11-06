@@ -19,7 +19,7 @@ export function pecasPublicadas(lang, manifesto=manifestoDasEdicoes()) {
   const pecas = [];
   for (const w of WORKS) {
     const edicao = w.editions.find(e => e.lang === lang) ?? [...w.editions].sort((a,b) => (dataPublicacao(w,b) ?? '').localeCompare(dataPublicacao(w,a) ?? ''))[0];
-    const atual = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === edicao?.lang)?.edicoes.at(-1);
+    const atual = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === edicao?.lang)?.edicoes.slice(1).findLast(e => e.natureza === 'atualizacao');
     const atualizacao = atual?.natureza === 'atualizacao';
     const data = atualizacao ? atual.data : edicao && dataPublicacao(w,edicao);
     if (!data) continue;

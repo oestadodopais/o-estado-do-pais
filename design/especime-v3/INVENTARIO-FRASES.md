@@ -5027,8 +5027,8 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | data from | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | estudo atualizado | fp3 | retirada | EV3-p: a edição atual passou a correção; nenhuma atualização ocupa agora a caixa das novidades. |
-| conteudo | study updated | fp3 | retirada | EV3-p: a edição atual passou a correção; nenhuma atualização ocupa agora a caixa das novidades. |
+| conteudo | estudo atualizado | fp3 | viva | EV3-p, adenda B: a última atualização conserva o lugar e a data na caixa, mesmo com correção posterior. |
+| conteudo | study updated | fp3 | viva | EV3-p, adenda B: a última atualização conserva o lugar e a data na caixa, mesmo com correção posterior. |
 | conteudo | explainer | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | explicação | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |

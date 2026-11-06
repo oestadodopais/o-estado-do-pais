@@ -8,7 +8,7 @@ import {dataDaCasa} from '../src/lib/datas.mjs';
 import {eDerivada} from '../src/lib/ledger.mjs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
-export function dataEditorialPermitida(el, rota, claim, lang='pt') {
+export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=null) {
   if(el.tagName?.toLowerCase()!=='time' || !/^\d{4}-\d{2}-\d{2}$/.test(el.getAttribute('datetime')??''))return false;
   const origem=el.getAttribute('data-data-origem');
   if(dataDoDossiePermitida(el,rota,lang))return true;
@@ -18,6 +18,15 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt') {
     const edicao=work?.editions.find(e=>e.lang===lang)??work?.editions[0];
     const atualizada=work&&edicao?dataAtualizacaoDaEdicao(slug,edicao.lang,publicacaoEd1(work,edicao)):null;
     return Boolean(atualizada && edicao.lang===lingua && el.getAttribute('datetime')===atualizada && el.text.trim()===dataDaCasa(atualizada));
+  }
+  if(rota==='correcoes' && origem==='edicoes.data') {
+    const entrada=el.closest('[data-texto-estudo]'),porta=el.parentNode;
+    const slug=entrada?.getAttribute('data-texto-estudo'),data=entrada?.getAttribute('data-texto-data');
+    const vs=slug?versoesDaEdicao(slug,lang):[],i=vs.findIndex(v=>v.data===data);
+    const lado=porta?.getAttribute('data-texto-porta');
+    if(i<1||!['primeira','atual'].includes(lado)||porta.rawTagName!=='a')return false;
+    const v=vs[lado==='primeira'?i-1:i];
+    return Boolean(v.indice>0&&!v.atual&&porta.getAttribute('href')===v.rota&&porta.querySelectorAll('time').length===1&&el.getAttribute('data-nonledger')==='data-editorial'&&el.getAttribute('datetime')===v.data&&el.text.trim()===dataDaCasa(v.data));
   }
   if(rota==='home') {
     const resumo=el.closest('p[data-discussao-resumo]');
@@ -33,7 +42,8 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt') {
       const id=novidade.getAttribute('data-novidade');
       const work=WORKS.find(w=>id===`estudo:${w.slug}`);
       const edicao=work?.editions.find(e=>e.lang===lang)??work?.editions.slice().sort((a,b)=>(publicacaoEd1(work,b)??'').localeCompare(publicacaoEd1(work,a)??''))[0];
-      const atual=work&&edicao?versoesDaEdicao(work.slug,edicao.lang).at(-1):null;
+      const versoes=work&&edicao?(manifesto?.edicoes.find(e=>e.slug===work.slug&&e.lang===edicao.lang)?.edicoes??versoesDaEdicao(work.slug,edicao.lang)):[];
+      const atual=versoes.slice(1).findLast(e=>e.natureza==='atualizacao');
       return Boolean(atual?.natureza==='atualizacao' && el.getAttribute('datetime')===atual.data && el.text.trim()===dataDaCasa(atual.data));
     }
     return Boolean(novidade) && ['publicacao.declarada','publicacao.gerada'].includes(origem);
@@ -48,6 +58,24 @@ export function conferirDataEditorial(el, rota, claim, err, lang='pt') {
  if (!dataEditorialPermitida(el,rota,claim,lang)) err('FP1-e: data-editorial fora dos contextos e origens permitidos.');
 }
 export function plantasDatasEditoriais() {
+ let plantasPortas=0;
+ for(const lang of ['pt','en']) {
+  const slug='evora-2027-capital-europeia-da-cultura',vs=versoesDaEdicao(slug,lang),v=vs[1];
+  const html=`<li data-texto-estudo="${slug}" data-texto-data="${vs[2].data}"><a data-texto-porta="primeira" href="${v.rota}"><time datetime="${v.data}" data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(v.data)}</time></a></li>`;
+  const controlo=parse(html).querySelector('time');
+  assert.equal(dataEditorialPermitida(controlo,'correcoes',null,lang),true);
+  for(const mudar of [
+   t=>{t.setAttribute('datetime',vs[0].data);t.set_content(dataDaCasa(vs[0].data));},
+   t=>t.parentNode.setAttribute('href',vs[0].rota),
+   t=>t.setAttribute('data-data-origem','origem-inventada'),
+   t=>t.closest('li').setAttribute('data-texto-estudo','estudo-inexistente'),
+   t=>t.parentNode.setAttribute('data-texto-porta','atual'),
+   t=>t.parentNode.insertAdjacentHTML('beforeend',t.outerHTML),
+  ]) {const t=parse(html).querySelector('time');mudar(t);const erros=[];conferirDataEditorial(t,'correcoes',null,e=>erros.push(e),lang);assert.equal(erros.length,1);plantasPortas++;}
+  assert.equal(dataEditorialPermitida(parse(controlo.outerHTML).querySelector('time'),'correcoes',null,lang),false);plantasPortas++;
+ }
+ console.log(`EV3-p: datas das portas conferidas nas duas línguas; ${plantasPortas} adulterações recusadas.`);
+
  const work=WORKS.find(w=>w.slug==='evora-contas-da-camara-2010-2025');
  for(const lang of ['pt','en']) {
   const edicao=work.editions.find(e=>e.lang===lang);
