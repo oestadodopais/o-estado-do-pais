@@ -50,10 +50,10 @@ export const METODO = {
     },
     {
       "pt": [
-        "Um programa descarrega o documento da fonte, guarda uma cópia com o recibo do pedido e mede o número no próprio documento."
+        "Um programa descarrega o documento da fonte e mede o número no próprio documento."
       ],
       "en": [
-        "A program downloads the source document, saves a copy with the request receipt and measures the number in the document itself."
+        "A program downloads the source document and measures the number in the document itself."
       ]
     },
     {

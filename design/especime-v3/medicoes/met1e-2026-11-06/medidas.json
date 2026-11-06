@@ -1,0 +1,36 @@
+{
+  "base": "330fd7500ee13e317556c8521fdd7955187fd444",
+  "codigos": {
+    "build": 0,
+    "plantas": 0,
+    "construido": 0
+  },
+  "passo_2": {
+    "pt": "Um programa descarrega o documento da fonte e mede o número no próprio documento.",
+    "en": "A program downloads the source document and measures the number in the document itself."
+  },
+  "metodo": {
+    "conferencias_da_corrida": 62,
+    "plantas": 50,
+    "edicoes": {
+      "pt": {
+        "seccoes": 4,
+        "passos": 10,
+        "palavras": 489
+      },
+      "en": {
+        "seccoes": 4,
+        "passos": 10,
+        "palavras": 480
+      }
+    },
+    "marcador": {
+      "pt": 0,
+      "en": 0
+    },
+    "paginas": {
+      "pt": 4915,
+      "en": 4910
+    }
+  }
+}

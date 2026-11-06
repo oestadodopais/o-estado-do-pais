@@ -14637,3 +14637,11 @@ A agenda e o calendário conservam os dados internos nos ficheiros públicos; a 
 **Texto:** metodo 1f6a0cd0424e
 
 **Decisão:** executar a adenda D. O exemplo usa o mesmo resolvedor do título e a mesma escolha de localizador e língua do recibo completo. A edição e a repetição da referência saem do campo do localizador. O passo seis passa à frase literal sobre as conferências antes de cada mudança ir para o ar. O oráculo acompanha e as plantas recusam a edição no localizador e o nome diferente do recibo.
+
+### 1.226 MET1 E, 06.11.2026: passo dois sem promessa de cópia
+
+**Afecta:** metodo
+
+**Texto:** metodo b6c4b835945b
+
+**Decisão:** aplicar a redação literal da adenda E ao passo dois, nas duas edições e no oráculo. A frase deixa de afirmar a guarda de uma cópia e do recibo do pedido. Nenhuma outra frase, desenho ou régua muda.
