@@ -46,7 +46,7 @@ def ler_fila(caminho=FILA):
     return sorted(linhas, key=lambda d: d['Ordem'])
 
 
-def ler_tipos(caminho=FILA):
+def ler_tipos(caminho=FILA, preservar_caixa=False):
     """Inclui os blocos já aterrados que a fila conserva noutra tabela."""
     tipos = {}
     cabecalho = None
@@ -60,7 +60,8 @@ def ler_tipos(caminho=FILA):
         elif cabecalho and len(c) == len(cabecalho):
             d = dict(zip(cabecalho, c))
             if d['Tipo'] in TIPOS:
-                tipos[d['Bloco'].casefold()] = d['Tipo']
+                bloco = d['Bloco'] if preservar_caixa else d['Bloco'].casefold()
+                tipos[bloco] = d['Tipo']
     return tipos
 
 

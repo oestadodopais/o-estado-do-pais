@@ -25,6 +25,10 @@ class Aterrar(unittest.TestCase):
         self.custo = self.w / 'design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'
         self.custo.parent.mkdir(parents=True)
         self.custo.write_text('{"bloco": "ensaio", "pontos_do_bloco": 1, "passagens": []}\n')
+        fila = self.w / 'design/observatorio/FILA.md'
+        fila.parent.mkdir(parents=True)
+        fila.write_text('| Ordem | Bloco | Tipo | Estado |\n| --- | --- | --- | --- |\n| 1 | ensaio | maquinaria | pronto |\n')
+        git(self.w, 'add', '--', 'design/observatorio/FILA.md')
         git(self.w, 'add', '--', str(self.custo.relative_to(self.w)))  # commit() só adiciona .gitignore e linha
         commit(self.w, 'ensaio: ramo pronto')
         self.cabeca = git(self.w, 'rev-parse', 'HEAD')
@@ -190,6 +194,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn(['npm', 'ci', '--no-audit', '--no-fund'], chamadas)
         self.assertIn(['npm', 'run', 'build'], chamadas)
+        self.assertEqual(recibo['preparar_dist'], {'motivo': 'em falta'})
         passos = [p['passo'] for p in recibo['passos']]
         self.assertLess(passos.index('github'), passos.index('preparar-dependencias'))
         self.assertLess(passos.index('preparar-dist'), passos.index('series'))
@@ -198,11 +203,44 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         (self.main / '.git' / 'info' / 'exclude').write_text('node_modules\ndist\n')
         (self.w / 'node_modules').mkdir()
         (self.w / 'dist').mkdir()
-        (self.w / 'dist' / 'version.json').write_text('{}')
+        (self.w / 'dist' / 'version.json').write_text(json.dumps({'commit': self.cabeca}))
         r, recibo, chamadas = self.correr()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertNotIn(['npm', 'ci', '--no-audit', '--no-fund'], chamadas)
         self.assertNotIn(['npm', 'run', 'build'], chamadas)
+        self.assertNotIn('preparar_dist', recibo)
+
+    def test_dist_de_outra_cabeca_constroi_e_regista(self):
+        (self.main / '.git' / 'info' / 'exclude').write_text('node_modules\ndist\n')
+        (self.w / 'node_modules').mkdir()
+        (self.w / 'dist').mkdir()
+        (self.w / 'dist/version.json').write_text(json.dumps({'commit': self.main_antes}))
+        r, recibo, chamadas = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn(['npm', 'run', 'build'], chamadas)
+        self.assertEqual(recibo['preparar_dist'], {'motivo': 'de outra cabeça', 'commit': self.main_antes})
+
+    def test_terceira_aterragem_passou_e_ficou_contada(self):
+        from datetime import datetime, timezone
+        for n in range(2):
+            anterior = self.p / f'anterior-{n}'
+            anterior.mkdir()
+            (anterior / 'aterragem.json').write_text(json.dumps({'inicio': datetime.now(timezone.utc).isoformat(), 'codigo': 0}))
+        self.env.pop('ATERRAR_LOTE_EXTRA', None)
+        r, recibo, _ = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(recibo['aterragens_do_dia'], 2)
+
+    def test_fila_da_cabeca_invalida_recusa_antes_de_publicar(self):
+        fila = self.w / 'design/observatorio/FILA.md'
+        fila.write_text(fila.read_text().replace('maquinaria', 'exatidão'))
+        git(self.w, 'add', '--', 'design/observatorio/FILA.md')
+        commit(self.w, 'ensaio: tipo inválido')
+        self.env['CABECA'] = git(self.w, 'rev-parse', 'HEAD')
+        r, recibo, chamadas = self.correr()
+        self.assertEqual(r.returncode, 9, r.stdout + r.stderr)
+        self.assertEqual(recibo['passos'][-1]['motivo'], 'fila: tipo inválido: exatidão')
+        self.assertFalse(any(c[0] == 'git' and c[1] in ('push', 'merge') for c in chamadas))
 
     def test_verde_ordem_codigos_e_limpeza(self):
         r, recibo, chamadas = self.correr()

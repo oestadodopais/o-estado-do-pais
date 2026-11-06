@@ -1,5 +1,22 @@
 /** REL1: uma frequência no rótulo tem de ser sustentada pelos dias observados. */
-const PALAVRA_DE_FREQUENCIA = /(?<![\p{L}\p{N}_])(?:diári[oa]s?|semana(?:l|is)|mensa(?:l|is)|anua(?:l|is)|daily|weekly|monthly|yearly|annual)(?![\p{L}\p{N}_])/iu;
+const PALAVRAS_POR_PERIODO = [
+  [1, 'diari[oa]s?|diariamente|todos os dias|cada dia|dail(?:y|ies)|every day|each day'],
+  [7, 'semana(?:l|is)|semanalmente|todas as semanas|weekl(?:y|ies)|every week'],
+  [14, 'quinzena(?:l|is)|fortnightl(?:y|ies)|bi-?weekl(?:y|ies)'],
+  [30, 'mensa(?:l|is)|monthl(?:y|ies)'],
+  [91, 'trimestra(?:l|is)|quarterl(?:y|ies)'],
+  [182, 'semestra(?:l|is)'],
+  [365, 'anua(?:l|is)|yearl(?:y|ies)|annuals?|annually'],
+];
+const FREQUENCIAS = new RegExp(`(?<![\\p{L}\\p{N}_])(?:${PALAVRAS_POR_PERIODO
+  .map(([periodo, palavras]) => `(?<p${periodo}>${palavras})`).join('|')})(?![\\p{L}\\p{N}_])`, 'gu');
+
+function periodosDoRotulo(rotulo) {
+  const normalizado = rotulo.normalize('NFC').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+  // Uma expressão inteira consome bi-weekly antes de poder ler weekly outra vez.
+  return [...new Set([...normalizado.matchAll(FREQUENCIAS)].map(m =>
+    Number(Object.keys(m.groups).find(chave => m.groups[chave]).slice(1))))];
+}
 const MILISSEGUNDOS_POR_DIA = 86400000;
 
 function instanteDoDia(dia) {
@@ -15,8 +32,13 @@ export function conferirFrequencias({rotulos, frequencias, linhas, construidoEm}
   if (!Number.isFinite(construcao)) erros.push('REL1: construido_em ausente ou inválido em dist/version.json.');
   for (const [lingua, autores] of Object.entries(rotulos)) {
     for (const [autor, rotulo] of Object.entries(autores)) {
-      if (PALAVRA_DE_FREQUENCIA.test(rotulo) && !Object.hasOwn(frequencias, autor))
+      const periodos = periodosDoRotulo(rotulo);
+      if (periodos.length && !Object.hasOwn(frequencias, autor))
         erros.push(`REL1: ${autor} (${lingua}), rótulo «${rotulo}» nomeia uma frequência sem período declarado.`);
+      else for (const periodo of periodos) {
+        if (periodo !== frequencias[autor])
+          erros.push(`REL1: ${autor} (${lingua}), rótulo «${rotulo}» diz período ${periodo}, mas o declarado é ${frequencias[autor]}.`);
+      }
     }
   }
   for (const [autor, periodo] of Object.entries(frequencias)) {
@@ -31,7 +53,11 @@ export function conferirFrequencias({rotulos, frequencias, linhas, construidoEm}
       erros.push(`REL1: ${autor}, dias observados ausentes ou inválidos; ${rotulo}.`);
       continue;
     }
-    const intervalos = dias.slice(1).map((dia, i) => [dias[i], dia]);
+    // Só o extremo mais recente do par decide se a falha ainda está na janela.
+    // O intervalo até à construção fica sempre sujeito ao mesmo limite.
+    const inicioDaJanela = construcao - 4 * periodo * MILISSEGUNDOS_POR_DIA;
+    const intervalos = dias.slice(1).flatMap((dia, i) =>
+      instanteDoDia(dia) >= inicioDaJanela ? [[dias[i], dia]] : []);
     if (Number.isFinite(construcao)) intervalos.push([dias.at(-1), diaDaConstrucao]);
     for (const [de, ate] of intervalos) {
       const intervalo = (instanteDoDia(ate) - instanteDoDia(de)) / MILISSEGUNDOS_POR_DIA;

@@ -63,8 +63,12 @@
     "npm run check:dossies": 8,
     "npm run check:largura": 11,
     "npm run check:capturas-largura": 1,
-    "npm run typecheck": 0
+    "npm run typecheck": 0,
+    "npm run check:metodo-construido": 4.737
   },
   "partes": 6,
-  "nota": "Tempos locais em série; a transferência e os anfitriões do GitHub ainda não foram medidos."
+  "nota": "Tempos locais em série; a transferência e os anfitriões do GitHub ainda não foram medidos.",
+  "fontes_adicionais": {
+    "npm run check:metodo-construido": "HIG-5 A, 06.11.2026: tempo monotónico de npm run check:metodo-construido, código 0"
+  }
 }

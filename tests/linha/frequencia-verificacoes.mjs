@@ -67,9 +67,55 @@ for (const [dia, falha] of [['2026-10-19', false], ['2026-10-18', true]]) {
   linhas[0].verifications.push({by: 'painel-semanal', date: dia});
   assert.equal(conferirFrequencias({...exemplo, linhas}).some(e => /dias, limite 14/.test(e)), falha);
 }
-for (const palavra of ['diário', 'diária', 'diários', 'diárias', 'semanal', 'semanais', 'mensal', 'mensais', 'anual', 'anuais', 'daily', 'weekly', 'monthly', 'yearly', 'annual']) {
+for (const palavra of ['diário', 'diária', 'diários', 'diárias', 'semanal', 'semanais', 'mensal', 'mensais', 'anual', 'anuais', 'daily', 'weekly', 'monthly', 'yearly', 'annual',
+  'diariamente', 'semanalmente', 'quinzenal', 'quinzenais', 'trimestral', 'trimestrais', 'semestral', 'semestrais',
+  'todos os dias', 'cada dia', 'todas as semanas', 'every day', 'each day', 'every week', 'fortnightly', 'quarterly', 'annually', 'biweekly', 'bi-weekly',
+  'dailies', 'weeklies', 'fortnightlies', 'monthlies', 'quarterlies', 'yearlies', 'annuals', 'biweeklies', 'bi-weeklies', 'Diária'.normalize('NFD')]) {
   assert(conferirFrequencias({...original, rotulos: {pt: {extra: palavra}}}).some(e => /extra.*sem período declarado/.test(e)), palavra);
 }
+
+// O painel regressa após três semanas. O limite continua a ser catorze dias.
+const regresso = {...original, linhas: [{verifications: ['2026-09-01', '2026-09-22', '2026-09-29', '2026-10-06', '2026-10-13', '2026-10-20']
+  .map(date => ({by: 'painel-semanal', date}))}]};
+assert(conferirFrequencias({...regresso, construidoEm: '2026-10-20T00:00:00Z'}).some(e => /2026-09-01 a 2026-09-22: 21 dias, limite 14/.test(e)));
+assert.deepEqual(conferirFrequencias({...regresso, construidoEm: '2026-10-21T00:00:00Z'}), []);
+// A janela depende do extremo mais recente, mesmo que o primeiro seja anterior.
+assert(conferirFrequencias({...regresso, construidoEm: '2026-10-19T00:00:00Z'}).some(e => /21 dias, limite 14/.test(e)));
+assert(conferirFrequencias({...regresso, construidoEm: '2026-11-04T00:00:00Z'}).some(e => /2026-10-20 a 2026-11-04: 15 dias, limite 14/.test(e)));
+
+for (const [palavra, periodo] of [['diária', 1], ['semanalmente', 7], ['quinzenais', 14], ['mensais', 30],
+  ['trimestrais', 91], ['semestrais', 182], ['annually', 365], ['bi-weekly', 14]]) {
+  const caso = {rotulos: {pt: {autor: palavra}}, frequencias: {autor: periodo}, construidoEm: '2026-11-06T00:00:00Z',
+    linhas: [{verifications: [{by: 'autor', date: '2026-11-06'}]}]};
+  assert.deepEqual(conferirFrequencias(caso), [], palavra);
+  assert(conferirFrequencias({...caso, frequencias: {autor: periodo + 1}}).some(e => /mas o declarado/.test(e)), palavra);
+}
+
+// Executa o ponto real de chamada do gate, com uma cópia da tabela de produção.
+// Assim, desligar a régua dessa tabela também faz esta planta falhar.
+const inicioDaChamada = gate.indexOf('\n{\n  let construidoEm;');
+const fimDaChamada = gate.indexOf('\nconst ROTULO_DO_RESULTADO', inicioDaChamada);
+assert(inicioDaChamada > 0 && fimDaChamada > inicioDaChamada);
+function errosDaChamada(rotulos) {
+  const erros = [];
+  vm.runInNewContext(gate.slice(inicioDaChamada, fimDaChamada), {
+    fs, path: {join: (...partes) => partes.join('/')}, DIST: fileURLToPath(new URL('../../dist', import.meta.url)),
+    ROTULO_DE_QUEM_RELEU: original.rotulos, FREQUENCIA_DE_QUEM_RELEU: original.frequencias,
+    t: lang => ({livro: {linha: {verificacaoPor: rotulos[lang]}}}),
+    livroInteiro: new Map(original.linhas.map((linha, i) => [i, linha])), conferirFrequencias, erros,
+  });
+  return erros;
+}
+assert.deepEqual(errosDaChamada(producao), []);
+for (const palavra of ['diária', 'Diária'.normalize('NFD')]) {
+  const copia = structuredClone(producao);
+  copia.pt['painel-semanal'] = `comparação ${palavra} com a fonte`;
+  assert(errosDaChamada(copia).some(e => e.rel === 'frequência das verificações (produção)' &&
+    /painel-semanal.*diz período 1, mas o declarado é 7/.test(e.msg)), palavra);
+}
+const foraDaTabela = structuredClone(producao);
+foraDaTabela.pt.extra = 'conferência semanalmente';
+assert(errosDaChamada(foraDaTabela).some(e => /extra.*sem período declarado/.test(e.msg)));
 assert(conferirFrequencias({...original, construidoEm: undefined}).some(e => /construido_em/.test(e)));
 assert.deepEqual(conferirFrequencias(original), [], 'As plantas não alteram as tabelas nem as linhas originais');
-console.log('REL1: tabelas reais, três plantas, vocabulário e limites de catorze dias conferidos.');
+console.log('HIG-5 A: janela, regresso, vocabulário, períodos e chamada de produção do gate conferidos.');

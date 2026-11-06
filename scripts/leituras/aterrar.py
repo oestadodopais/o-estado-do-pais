@@ -19,6 +19,7 @@ import tempfile
 import time
 from arvores import antepassado, git, higienizar, limpa, principal, raiz
 from tranca import expirar
+from fila import ler_fila, ler_tipos
 
 
 def agora():
@@ -180,21 +181,13 @@ class Aterragem:
         return Path(os.environ.get('OEDP_ATERRAGENS', self.principal.parent / '_aterragens'))
 
     def blocos_conhecidos(self):
-        conhecidos = set()
         fila = self.sitio / 'design/observatorio/FILA.md'
-        if fila.exists():
-            cabecalho = None
-            for linha in fila.read_text().splitlines():
-                if not linha.startswith('|'):
-                    cabecalho = None
-                    continue
-                c = [x.strip() for x in linha.strip().strip('|').split('|')]
-                if 'Bloco' in c and 'Tipo' in c:
-                    cabecalho = c
-                elif cabecalho and len(c) == len(cabecalho):
-                    d = dict(zip(cabecalho, c))
-                    if d['Tipo'] in ('conteúdo', 'navegação', 'maquinaria'):
-                        conhecidos.add(d['Bloco'])
+        try:
+            conhecidos = {d['Bloco'] for d in ler_fila(fila)}
+            # O arquivo conserva nomes com a caixa original, usada nos assuntos.
+            conhecidos.update(ler_tipos(fila, preservar_caixa=True))
+        except (OSError, ValueError) as e:
+            raise Parar(9, str(e) if isinstance(e, ValueError) else 'fila: ficheiro ilegível') from e
         for pasta in (self.sitio / 'design/especime-v3/medicoes').glob('*'):
             if not pasta.is_dir():
                 continue
@@ -219,6 +212,7 @@ class Aterragem:
         self.recibo['ficheiros_registos'] = ficheiros
 
     def conferir_blocos(self):
+        conhecidos = self.blocos_conhecidos()
         blocos = os.environ.get('OEDP_BLOCOS', '').split()
         self.exigir(len(set(blocos)) == len(blocos) and
                     all(re.fullmatch(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', b) for b in blocos),
@@ -239,7 +233,6 @@ class Aterragem:
                 self.conferir_ficheiros_registos(anterior.get('base_registos'))
             return
         assuntos = git(self.sitio, 'log', '--reverse', '--format=%s', 'main..HEAD').splitlines()
-        conhecidos = self.blocos_conhecidos()
         def registo(assunto):
             m = re.match(r'^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-r(?=$|[: .])', assunto)
             return bool(m and m.group(1) in conhecidos)
@@ -284,7 +277,7 @@ class Aterragem:
         self.recibo['aterragens_do_dia'] = concluidas
         if razao:
             self.recibo['lote_extra'] = razao
-        self.exigir(concluidas < 2 or bool(razao), 'já há duas aterragens concluídas neste dia UTC; falta ATERRAR_LOTE_EXTRA="<razão>"')
+        self.guardar()
 
     def conferir_corrida(self):
         candidatas = []
@@ -448,7 +441,20 @@ class Aterragem:
         # corrida do GitHub verde no fluxo antigo; no preparado, em paralelo com ela.
         if not (Path(self.sitio) / 'node_modules').is_dir():
             self.correr('preparar-dependencias', ['npm', 'ci', '--no-audit', '--no-fund'])
-        if not (Path(self.sitio) / 'dist' / 'version.json').is_file():
+        versao = Path(self.sitio) / 'dist' / 'version.json'
+        motivo = None
+        if not versao.is_file():
+            motivo = {'motivo': 'em falta'}
+        else:
+            try:
+                commit = json.loads(versao.read_text(encoding='utf-8')).get('commit')
+            except (OSError, ValueError, AttributeError) as e:
+                raise Parar(9, 'dist/version.json ilegível') from e
+            if commit != self.cabeca:
+                motivo = {'motivo': 'de outra cabeça', 'commit': commit}
+        if motivo:
+            self.recibo['preparar_dist'] = motivo
+            self.guardar()
             self.correr('preparar-dist', ['npm', 'run', 'build'])
 
     def executar(self):

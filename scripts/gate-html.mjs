@@ -2951,7 +2951,10 @@ const ROTULO_DE_QUEM_RELEU = {
 /* REL1, regra 15: só os autores cujo rótulo nomeia uma frequência.
  * Se o painel não correr a 09.11 nem a 16.11.2026, a construção fica vermelha
  * a partir de 17.11: o último dia observado é 02.11 e o limite é catorze dias.
- * O remédio é o painel correr, ou o rótulo mudar por mandato, nunca subir o limite.
+ * O remédio é o painel correr: os intervalos entre observações contam quando
+ * o dia mais recente cai nos últimos quatro períodos antes da construção.
+ * A falha deixa de pesar quando sai dessa janela; o último dia até à construção
+ * conta sempre. O rótulo pode mudar por mandato; nunca se sobe o limite.
  */
 const FREQUENCIA_DE_QUEM_RELEU = {
   'painel-semanal': 7,

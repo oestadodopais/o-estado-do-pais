@@ -29,13 +29,25 @@ class Lotes(unittest.TestCase):
         self.p = Path(self.t.name)
         self.a = object.__new__(aterrar.Aterragem)
         self.a.sitio = self.p; self.a.principal = self.p / 'principal'
-        self.a.saida = self.p / 'saida'; self.a.cabeca = 'a' * 40
+        self.a.saida = self.p / 'saida'; self.a.saida.mkdir(); self.a.cabeca = 'a' * 40
+        self.a.motor = None
         self.a.recibo = {}; self.arquivo = self.p / '_aterragens'; self.arquivo.mkdir()
         self.ambiente = patch.dict(os.environ, {'OEDP_ATERRAGENS': str(self.arquivo), 'OEDP_BLOCOS': 'A1 B1',
                                                'ATERRAR_LOTE_EXTRA': '', 'ATERRAR_SEM_CUSTO': '', 'ATERRAR_DECISAO': ''})
         self.ambiente.start(); self.addCleanup(self.ambiente.stop)
         for nome in ('A1', 'B1', 'Lote'):
             (self.p / 'design/especime-v3/medicoes' / nome).mkdir(parents=True)
+        self.fila = self.p / 'design/observatorio/FILA.md'
+        self.fila.parent.mkdir(parents=True)
+        self.fila.write_text('| Ordem | Bloco | Tipo | Estado |\n| --- | --- | --- | --- |\n| 1 | A1 | conteúdo | pronto |\n')
+
+    def test_fila_invalida_recusada_tambem_na_retoma(self):
+        self.fila.write_text(self.fila.read_text().replace('conteúdo', 'exatidão'))
+        for base in ('b' * 40, self.a.cabeca):
+            with patch.object(aterrar, 'git', return_value=base), self.assertRaises(aterrar.Parar) as e:
+                self.a.conferir_blocos()
+            self.assertEqual(e.exception.codigo, 9)
+            self.assertEqual(e.exception.motivo, 'fila: tipo inválido: exatidão')
 
     def test_blocos_prefixos_e_ausencias(self):
         with patch.object(aterrar, 'git', side_effect=['b' * 40, 'A1-1: conteúdo\nB1: conteúdo\nLote-r: registos']):
@@ -64,13 +76,12 @@ class Lotes(unittest.TestCase):
             self.a.conferir_custo()
         self.assertIn('B1', e.exception.motivo)
 
-    def test_limite_diario_e_excecao(self):
+    def test_terceira_aterragem_contada_sem_excecao(self):
         for n in range(2):
             p = self.arquivo / str(n); p.mkdir()
             (p / 'aterragem.json').write_text(json.dumps({'inicio': datetime.now(timezone.utc).isoformat(), 'codigo': 0}))
-        with self.assertRaises(aterrar.Parar) as e:
-            self.a.conferir_limite_diario()
-        self.assertIn('duas aterragens', e.exception.motivo)
+        self.a.conferir_limite_diario()
+        self.assertEqual(json.loads((self.a.saida / 'aterragem.json').read_text())['aterragens_do_dia'], 2)
         with patch.dict(os.environ, ATERRAR_LOTE_EXTRA='fonte urgente'):
             self.a.conferir_limite_diario()
         self.assertEqual(self.a.recibo['lote_extra'], 'fonte urgente')
@@ -163,10 +174,12 @@ class Lotes(unittest.TestCase):
         principal = repo(self.p / 'git-principal', 'main')
         ramo = worktree(principal, self.p / 'git-registos', 'A1-r')
         (ramo / 'design/especime-v3/medicoes/A1').mkdir(parents=True)
+        (ramo / 'design/observatorio').mkdir()
+        (ramo / 'design/observatorio/FILA.md').write_text(self.fila.read_text())
         proibidos = ['src/planta.txt', ' design/fora.txt']
         for f in proibidos:
             alvo = ramo / f; alvo.parent.mkdir(parents=True, exist_ok=True); alvo.write_text('planta')
-        git_ensaio(ramo, 'add', '--', *proibidos)
+        git_ensaio(ramo, 'add', '--', *proibidos, 'design/observatorio/FILA.md')
         commit(ramo, 'A1-r: registos com alterações proibidas')
         self.a.sitio = ramo; self.a.cabeca = git_ensaio(ramo, 'rev-parse', 'HEAD')
         with patch.dict(os.environ, OEDP_BLOCOS=''), self.assertRaises(aterrar.Parar) as e:
@@ -254,6 +267,71 @@ class PreMandato(unittest.TestCase):
         self.assertEqual(r.returncode, 9); self.assertIn('cabeçalho', r.stderr)
         r = self.correr('Acrescenta: nada\n', OEDP_ACRESCENTA='')
         self.assertEqual(r.returncode, 9); self.assertIn('declaração ausente', r.stderr)
+
+    def test_contagens_do_zero_exigem_medidas_antes_de_sair(self):
+        medidas = self.p / 'medidas.json'
+        medidas.write_text(json.dumps({'linhas': {'valor': '1234', 'comando': 'wc -l amostra.txt'}}))
+        for modo in ('nada', 'linhas', 'frases', 'linhas e frases'):
+            with self.subTest(modo=modo):
+                texto = f'# Mandato\nAcrescenta: {modo}\nMedidas: medidas.json\n\n## §0 Medido\nHá 1234 linhas\n'
+                r = self.correr(texto)
+                self.assertEqual(r.returncode, 0, r.stderr)
+                r = self.correr(texto + 'E 5678 contagens sem origem\n')
+                self.assertEqual(r.returncode, 9); self.assertIn('5678', r.stderr)
+                self.assertNotIn('EXECUTADA', r.stdout)
+                r = self.correr(texto.replace('Medidas: medidas.json\n', ''))
+                self.assertEqual(r.returncode, 9); self.assertIn('1234', r.stderr)
+        medidas.write_text(json.dumps({'linhas': {'valor': '1234'}}))
+        r = self.correr(texto)
+        self.assertEqual(r.returncode, 9); self.assertIn('linhas: falta comando', r.stderr)
+
+    def test_medidas_ilegivel_ou_entrada_incompleta_recusadas(self):
+        texto = 'Acrescenta: nada\nMedidas: medidas.json\n## §0 Medido\nHá 1234 linhas\n'
+        r = self.correr(texto)
+        self.assertEqual(r.returncode, 9); self.assertIn('ilegível', r.stderr)
+        for dados in ('{', '[]', '{"a": null}', '{"a": {"valor": "", "comando": "wc -l"}}',
+                      '{"a": {"valor": "1234", "comando": " "}}'):
+            (self.p / 'medidas.json').write_text(dados)
+            r = self.correr(texto)
+            self.assertEqual(r.returncode, 9, dados)
+
+    def test_datas_identificadores_e_citacoes_nao_sao_contagens(self):
+        r = self.correr('Acrescenta: nada\n## §0 Medido (06.11.2026)\n'
+                        '06.11 06.11.2026 2026-11-06 09:30 09:30:15 2026 §1.219 a regra 14 o lote 5\n'
+                        '`aterrar.py:274` «ÉVORA 114 129»\n'
+                        'A1234 1234A x-1234 1234-x x_1234 1234_x x.1234 1234.x x:1234 1234:x\n'
+                        'A123,456 123,456A 123 456A\n'
+                        '§1234 regra 1234 regras 5678\n'
+                        '## §1 Fora do zero\nHá 9876 linhas\n')
+        self.assertEqual(r.returncode, 0, r.stderr)
+
+    def test_grafia_exata_grupos_decimais_e_limites_dos_anos(self):
+        valores = ['123', '1234', '1 234', '1\u202f234', '1 234,50', '0,5', '1899', '2100']
+        texto = 'Acrescenta: nada\nMedidas: medidas.json\n## §0 Medido\n' + '\n'.join(v + ' linhas' for v in valores)
+        medidas = {str(i): {'valor': v, 'comando': 'medir amostra'} for i, v in enumerate(valores)}
+        p = self.p / 'medidas.json'; p.write_text(json.dumps(medidas))
+        self.assertEqual(self.correr(texto).returncode, 0)
+        medidas['3']['valor'] = '1 234'; p.write_text(json.dumps(medidas))
+        r = self.correr(texto)
+        self.assertEqual(r.returncode, 9); self.assertIn('1\u202f234', r.stderr)
+        r = self.correr(texto.replace('Medidas: medidas.json\n', ''))
+        self.assertEqual(r.returncode, 9)
+        for valor in valores:
+            self.assertIn(valor, r.stderr)
+
+    def test_medidas_no_corpo_nao_substitui_cabecalho(self):
+        (self.p / 'medidas.json').write_text('{"a": {"valor": "1234", "comando": "wc -l"}}')
+        r = self.correr('Acrescenta: nada\n## §0 Medido\nMedidas: medidas.json\nHá 1234 linhas\n')
+        self.assertEqual(r.returncode, 9); self.assertIn('Medidas:', r.stderr)
+
+    def test_excecoes_vizinhas_nao_escondem_uma_contagem(self):
+        for prefixo in ('2026-11-06 ', '06.11.2026 ', '09:30:15 ', '§1.219 ', 'aterrar.py:274 ',
+                        '«citação»', '`código`', ''):
+            r = self.correr('Acrescenta: nada\n## §0 Medido\n' + prefixo + '123 linhas\n')
+            self.assertEqual(r.returncode, 9, prefixo)
+            self.assertIn('123', r.stderr)
+        r = self.correr('Acrescenta: nada\n## §0 As 1234 linhas medidas\n')
+        self.assertEqual(r.returncode, 9); self.assertIn('1234', r.stderr)
 
     def test_variavel_so_aperta(self):
         r = self.correr('Acrescenta: linhas\n', OEDP_ACRESCENTA='nada')

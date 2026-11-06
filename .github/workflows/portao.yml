@@ -38,7 +38,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
-# AT1: o contexto obrigatório portao só fica verde depois de todas as partes.
+# AT1: o nome do trabalho `portao` é o contexto obrigatório da proteção de main.
+# Só fica verde depois de todas as partes; renomeá-lo exige atualizar essa proteção.
 jobs:
   construir:
     runs-on: ubuntu-24.04
@@ -75,7 +76,7 @@ jobs:
           node scripts/verify-partes.mjs planear
           tar -cpf /tmp/dist.tar dist at1-build.json
       - name: Dist para as conferências
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: dist-${{ github.sha }}
           path: /tmp/dist.tar
@@ -121,7 +122,7 @@ jobs:
       - name: A parte, com as provas U, D e C
         run: node scripts/verify-partes.mjs parte ${{ matrix.parte }} /tmp/parte-${{ matrix.parte }}.json
       - name: Prova da parte verde
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: parte-${{ matrix.parte }}-${{ github.sha }}
           path: /tmp/parte-${{ matrix.parte }}.json
@@ -165,7 +166,7 @@ jobs:
           cp dist/prova.json dist/cadeia.json /tmp/uniao.json /tmp/at1-prova/
       - name: A prova desta corrida
         if: success()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: prova-${{ github.sha }}
           path: /tmp/at1-prova/
