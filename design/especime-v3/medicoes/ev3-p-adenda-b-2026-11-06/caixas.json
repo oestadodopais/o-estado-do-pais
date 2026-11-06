@@ -1,0 +1,97 @@
+{
+  "resultados": [
+    {
+      "lang": "pt",
+      "caixa": "O que há de novo03.11.2026estudo atualizadoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos29.10.2026estudoA casa em Portugal e na Europa29.10.2026dossiêO Orçamento de 2027 · 5 peças06.10.2026explicaçãoPara onde vai o dinheiro do Estado em 202601.10.2026estudoAs contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificaçãoAtualizado a 06.11.2026 · números do painel relidos na fonte a 02.11.2026",
+      "entradas": [
+        {
+          "id": "estudo:evora-2027-capital-europeia-da-cultura",
+          "data": "2026-11-03",
+          "data_impressa": "03.11.2026",
+          "tipo": "estudo atualizado",
+          "titulo": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "rota": "/estudos/evora-2027-capital-europeia-da-cultura"
+        },
+        {
+          "id": "estudo:a-casa-em-portugal-e-na-europa",
+          "data": "2026-10-29",
+          "data_impressa": "29.10.2026",
+          "tipo": "estudo",
+          "titulo": "A casa em Portugal e na Europa",
+          "rota": "/estudos/a-casa-em-portugal-e-na-europa"
+        },
+        {
+          "id": "dossie:orcamento-2027",
+          "data": "2026-10-29",
+          "data_impressa": "29.10.2026",
+          "tipo": "dossiê",
+          "titulo": "O Orçamento de 2027 · 5 peças",
+          "rota": "/dossies/orcamento-2027"
+        },
+        {
+          "id": "explicacao:dinheiro-do-estado-2026",
+          "data": "2026-10-06",
+          "data_impressa": "06.10.2026",
+          "tipo": "explicação",
+          "titulo": "Para onde vai o dinheiro do Estado em 2026",
+          "rota": "/explicacoes/dinheiro-do-estado-2026"
+        },
+        {
+          "id": "estudo:evora-contas-da-camara-2010-2025",
+          "data": "2026-10-01",
+          "data_impressa": "01.10.2026",
+          "tipo": "estudo",
+          "titulo": "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação",
+          "rota": "/estudos/evora-contas-da-camara-2010-2025"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "caixa": "What is new03.11.2026study updatedÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts29.10.2026studyHousing in Portugal and in Europe29.10.2026dossierThe 2027 Budget · 5 pieces06.10.2026explainerWhere the State’s money goes in 202601.10.2026studyThe accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certificationUpdated on 06.11.2026 · panel figures re-read at the source on 02.11.2026",
+      "entradas": [
+        {
+          "id": "estudo:evora-2027-capital-europeia-da-cultura",
+          "data": "2026-11-03",
+          "data_impressa": "03.11.2026",
+          "tipo": "study updated",
+          "titulo": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "rota": "/en/studies/evora-2027-capital-europeia-da-cultura"
+        },
+        {
+          "id": "estudo:a-casa-em-portugal-e-na-europa",
+          "data": "2026-10-29",
+          "data_impressa": "29.10.2026",
+          "tipo": "study",
+          "titulo": "Housing in Portugal and in Europe",
+          "rota": "/en/studies/a-casa-em-portugal-e-na-europa"
+        },
+        {
+          "id": "dossie:orcamento-2027",
+          "data": "2026-10-29",
+          "data_impressa": "29.10.2026",
+          "tipo": "dossier",
+          "titulo": "The 2027 Budget · 5 pieces",
+          "rota": "/en/dossiers/orcamento-2027"
+        },
+        {
+          "id": "explicacao:dinheiro-do-estado-2026",
+          "data": "2026-10-06",
+          "data_impressa": "06.10.2026",
+          "tipo": "explainer",
+          "titulo": "Where the State’s money goes in 2026",
+          "rota": "/en/explainers/dinheiro-do-estado-2026"
+        },
+        {
+          "id": "estudo:evora-contas-da-camara-2010-2025",
+          "data": "2026-10-01",
+          "data_impressa": "01.10.2026",
+          "tipo": "study",
+          "titulo": "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification",
+          "rota": "/en/studies/evora-contas-da-camara-2010-2025"
+        }
+      ]
+    }
+  ],
+  "correcoes": 46
+}

@@ -1,0 +1,325 @@
+{
+  "fp1": "verde",
+  "plantas": [
+    {
+      "nome": "quatro peças dão uma entrada, conservam a data e a peça exterior e deixam cinco entradas",
+      "mordeu": true
+    },
+    {
+      "nome": "entrada do registo empurrada para as novidades",
+      "mordeu": true
+    },
+    {
+      "nome": "condição do inventário limitada aos rótulos condicionais FP1",
+      "mordeu": true
+    },
+    {
+      "nome": "read continua proibido e re-read aprovado não é uma palavra parcial",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 correção conserva publicação, tipo, ligação e desempate",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 data de atualização diferente do manifesto",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 origem de atualização trocada",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 tipo de atualização trocado",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "entrada do registo na caixa",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 data na última coluna",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 tipo em maiúscula",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 cauda antiga",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 marca editorial retirada",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem sem token",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "dossiê repetido",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "marca novo retirada ou indevida",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "dossiê da novidade trocado",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "dossiê da novidade retirado",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "título da peça trocado",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "entrada sem página",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "data no futuro",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "ordem trocada",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "peça mais recente em falta",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "data escrita à mão no HTML",
+      "lang": "pt",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "estudo com data gerada recente ausente",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 data de atualização diferente do manifesto",
+      "lang": "pt",
+      "cenario": "planta",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 origem de atualização trocada",
+      "lang": "pt",
+      "cenario": "planta",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 tipo de atualização trocado",
+      "lang": "pt",
+      "cenario": "planta",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 L1 porta do dossiê duplicada",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "estado em curso trocado no arquivo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 correção conserva publicação, tipo, ligação e desempate",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 data de atualização diferente do manifesto",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 origem de atualização trocada",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 tipo de atualização trocado",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "entrada do registo na caixa",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 data na última coluna",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 tipo em maiúscula",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 cauda antiga",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 marca editorial retirada",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem sem token",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "dossiê repetido",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "marca novo retirada ou indevida",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "dossiê da novidade trocado",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "dossiê da novidade retirado",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "título da peça trocado",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "entrada sem página",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "data no futuro",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "ordem trocada",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "peça mais recente em falta",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "data escrita à mão no HTML",
+      "lang": "en",
+      "cenario": "real",
+      "mordeu": true
+    },
+    {
+      "nome": "estudo com data gerada recente ausente",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 data de atualização diferente do manifesto",
+      "lang": "en",
+      "cenario": "planta",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 origem de atualização trocada",
+      "lang": "en",
+      "cenario": "planta",
+      "mordeu": true
+    },
+    {
+      "nome": "FP3 tipo de atualização trocado",
+      "lang": "en",
+      "cenario": "planta",
+      "mordeu": true
+    },
+    {
+      "nome": "DO4 L1 porta do dossiê duplicada",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "estado em curso trocado no arquivo",
+      "lang": "en",
+      "mordeu": true
+    }
+  ]
+}
