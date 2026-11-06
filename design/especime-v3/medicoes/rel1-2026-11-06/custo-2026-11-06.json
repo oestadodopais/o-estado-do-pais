@@ -1,0 +1,45 @@
+{
+ "bloco": "REL1 (no recibo de cada linha, o rótulo da conferência automática do ficheiro sem a frequência que as datas desmentem, a fonte sem resposta como uma observação datada, e a régua das frequências; com a REL1 0, a isenção do recibo no pré-mandato)",
+ "data": "2026-11-06",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "REL1 (recusada pela fila às 16:46:48 UTC: o tipo «exatidão» fora da lista fechada; e pelo pré-mandato às 16:47:29 UTC: oito marcadores da voz em frases do recibo)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T16:46:47Z",
+   "fim": "2026-11-06T16:47:29Z",
+   "pontos": 0.0,
+   "fonte": "o LANCADOR-rel1.log: nenhuma sessão do Codex arrancou"
+  },
+  {
+   "nome": "REL1 0 (a isenção do recibo no voz-do-mandato.py, com a sua planta)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T16:47:30Z",
+   "fim": "2026-11-06T16:52:26Z",
+   "pontos": 0.0,
+   "pontos_antes": 24.0,
+   "pontos_depois": 24.0,
+   "fonte": "a linha PONTOS do LANCADOR-rel1-0.log"
+  },
+  {
+   "nome": "REL1 (as frases do recibo, as cópias das réguas e a régua das frequências, com três plantas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T16:52:28Z",
+   "fim": "2026-11-06T17:09:13Z",
+   "pontos": 1.0,
+   "pontos_antes": 24.0,
+   "pontos_depois": 25.0,
+   "outras_sessoes_no_intervalo": 1,
+   "fonte": "a linha PONTOS do LANCADOR-rel1.log; a outra sessão no intervalo é a da REL1 0 (a atribuição por símbolos ponderados de 16:47:30 a 17:09:20 UTC dá 87,45 % à sessão da REL1 e 12,55 % à da REL1 0, as duas deste bloco)"
+  }
+ ],
+ "pontos_codex_total": 1.0,
+ "nota_dos_pontos": "As duas linhas PONTOS trazem os mesmos turnos e símbolos (o gargalo «A linha PONTOS lê o registo de outra sessão»); o ponto do bloco lê-se da subida do contador, de 24,0 % a 25,0 %, e as duas sessões do intervalo são deste bloco.",
+ "leituras": "Claude Opus 5.5 (leitor): a leitura a frio do lote 6; fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)"
+}

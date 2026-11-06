@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-06T17:51:20+00:00",
+ "copia": "pacote-lote6-2026-11-06",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "built/livro-razao/factor-sustentabilidade-2026/index.html",
+   "descricao": "no recibo do fator de sustentabilidade, a fonte sem resposta muda de dia no bloco do selo (01.09 para 03.09); o fontes.mjs e o §0 dizem 01.09",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "79247d67e68f64483b40799c65e9c07e8e02bb826c0e8655ba58524cdb29aeb9",
+   "sha256_depois": "90e25b1d2dbbd64c68f70364ad8e8fe2c2f1b54fa9b71b456c3c2f92c14bd6be",
+   "contexto_antes": "data-nonledger=\"data-da-linha\" data-de-linha=\"factor-sustentabilidade-2026\" data-de-campo=\"access_date\">24.08.2026</span></p></div><p class=\"linha-selo-estado\"><span class=\"linha-campo-k\">Sem resposta a</span> <span data-nonledger=\"data-da-conferencia\">01.09.2026</span> · <span data-nonledger=\"data-da-conferencia\">à conferência automática</span></p><p class=\"linha-id\"><span class=\"linha-id-k\">identificador</span> <code data-li",
+   "contexto_depois": "data-nonledger=\"data-da-linha\" data-de-linha=\"factor-sustentabilidade-2026\" data-de-campo=\"access_date\">24.08.2026</span></p></div><p class=\"linha-selo-estado\"><span class=\"linha-campo-k\">Sem resposta a</span> <span data-nonledger=\"data-da-conferencia\">03.09.2026</span> · <span data-nonledger=\"data-da-conferencia\">à conferência automática</span></p><p class=\"linha-id\"><span class=\"linha-id-k\">identificador</span> <code data-li"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "built/livro-razao/evora-prazo-medio-de-pagamento-2025-12/index.html",
+   "descricao": "no recibo do prazo médio de Évora, a conferência de 03.09 volta a dizer-se diária",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ce8bb15a6beae78ec6550124e7b0c47561a880fcadf684d66e07e34204f7cd80",
+   "sha256_depois": "45ed2189786fbcc9d77ddd6ea97262ef22816559c1b67c06912c8892b3fdc42e",
+   "contexto_antes": "or-diario\" data-resultado=\"igual\"><span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"evora-prazo-medio-de-pagamento-2025-12\" data-de-campo=\"verifications.1.date\">03.09.2026</span>, <span data-linha-verificacao-resultado>igual à fonte</span> · <span data-linha-verificacao-por>conferência automática do ficheiro da fonte</span>  </dd><dt>Ficheiro da fonte relido a</dt><dd class=\"linha-verificacao\" data-linha-verificacao=\"0\" data-por=\"corredor-diario\" data-resultado=\"igual\"><span class",
+   "contexto_depois": "or-diario\" data-resultado=\"igual\"><span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"evora-prazo-medio-de-pagamento-2025-12\" data-de-campo=\"verifications.1.date\">03.09.2026</span>, <span data-linha-verificacao-resultado>igual à fonte</span> · <span data-linha-verificacao-por>conferência automática diária do ficheiro da fonte</span>  </dd><dt>Ficheiro da fonte relido a</dt><dd class=\"linha-verificacao\" data-linha-verificacao=\"0\" data-por=\"corredor-diario\" data-resultado=\"igual\"><span class"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua das frequências aceita o triplo do período em vez do dobro (a mensagem continua a dizer o dobro)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a2a838a303217b19b8fe768e35ec3f1c6b4cc017d2e39b4724116cf3c547b325",
+   "sha256_depois": "d6b2690963ab7ddd5106883b864748c7d51436f5e216b5a5c912aafaa1057e5f",
+   "contexto_antes": "t(-1), diaDaConstrucao]);\n+    for (const [de, ate] of intervalos) {\n+      const intervalo = (instanteDoDia(ate) - instanteDoDia(de)) / MILISSEGUNDOS_POR_DIA;\n+      if (intervalo > 2 * periodo || intervalo < 0)\n+        erros.push(`REL1: ${autor}, ${de} a ${ate}: ${intervalo} dias, limite ${2 * periodo}; ${rotulo}.`);\n+    }\n+  }\n+  return erros;\n+}\ndiff --git a/scrip",
+   "contexto_depois": "t(-1), diaDaConstrucao]);\n+    for (const [de, ate] of intervalos) {\n+      const intervalo = (instanteDoDia(ate) - instanteDoDia(de)) / MILISSEGUNDOS_POR_DIA;\n+      if (intervalo > 3 * periodo || intervalo < 0)\n+        erros.push(`REL1: ${autor}, ${de} a ${ate}: ${intervalo} dias, limite ${2 * periodo}; ${rotulo}.`);\n+    }\n+  }\n+  return erros;\n+}\ndiff --git a/scrip"
+  },
+  {
+   "id": "R4",
+   "ficheiro": "diff.patch",
+   "descricao": "a lista das palavras de frequência perde «weekly»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d6b2690963ab7ddd5106883b864748c7d51436f5e216b5a5c912aafaa1057e5f",
+   "sha256_depois": "d52575182fce4dc17fc5305ceeab2618001eb40e7d71d13a6044e1b800f9dfc2",
+   "contexto_antes": "ótulo tem de ser sustentada pelos dias observados. */\n+const PALAVRA_DE_FREQUENCIA = /(?<![\\p{L}\\p{N}_])(?:diári[oa]s?|semana(?:l|is)|mensa(?:l|is)|anua(?:l|is)|daily|weekly|monthly|yearly|annual)(?![\\p{L}\\p{N}_])/iu;\n+const MILISSEGUNDOS_POR_DIA = 86400000;\n+\n+function instanteDoDia(dia) {\n+  if (typeof dia !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(di",
+   "contexto_depois": "ótulo tem de ser sustentada pelos dias observados. */\n+const PALAVRA_DE_FREQUENCIA = /(?<![\\p{L}\\p{N}_])(?:diári[oa]s?|semana(?:l|is)|mensa(?:l|is)|anua(?:l|is)|daily|monthly|yearly|annual)(?![\\p{L}\\p{N}_])/iu;\n+const MILISSEGUNDOS_POR_DIA = 86400000;\n+\n+function instanteDoDia(dia) {\n+  if (typeof dia !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(di"
+  },
+  {
+   "id": "R5",
+   "ficheiro": "diff.patch",
+   "descricao": "a isenção do pré-mandato alarga-se à página de um estudo, além do recibo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d52575182fce4dc17fc5305ceeab2618001eb40e7d71d13a6044e1b800f9dfc2",
+   "sha256_depois": "2182a398506c1418c5fe85671753ef6b9704d57a9d53d61e2c920107b0698d26",
+   "contexto_antes": "o)\n-    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre')\n+    # A Emenda 15 isenta o recibo; o inventário da voz não mede a rota linha.\n+    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre', 'linha')\n     achados = []\n     for f in frases:\n         baixo = f.lower()\ndiff --git a/src/i18n/strings.mjs b/src/i18n/strings.mjs\nindex 7ca65f0e0..d1ea54aa0 100644\n-",
+   "contexto_depois": "o)\n-    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre')\n+    # A Emenda 15 isenta o recibo; o inventário da voz não mede a rota linha.\n+    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre', 'linha', 'estudo')\n     achados = []\n     for f in frases:\n         baixo = f.lower()\ndiff --git a/src/i18n/strings.mjs b/src/i18n/strings.mjs\nindex 7ca65f0e0..d1ea54aa0 100644\n-"
+  }
+ ]
+}
