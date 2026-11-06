@@ -45,6 +45,7 @@ for(const lang of ['pt','en']){
   const titulo=normal(recibo.querySelector('main h1')?.textContent??'');
   if(!titulo)throw Error(`Revisão sem título no recibo: ${id}`);
   el.querySelector('[data-correcao-nome]').set_content(esc(titulo));
+  if(titulo.includes(lang==='pt'?'União Europeia':'European Union'))el.querySelector('[data-correcao-uniao]')?.remove();
   const periodo=dataDaCasa(getClaim(id).reference_date,lang);
   if(titulo.includes(periodo))el.querySelector('[data-correcao-periodo]')?.remove();
  }

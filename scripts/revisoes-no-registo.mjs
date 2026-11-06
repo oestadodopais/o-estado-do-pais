@@ -13,13 +13,17 @@ export function conferirRevisoesNoRegisto(root,lang,dist='dist'){
   const id=el.getAttribute('data-correcao-titulo');
   try{
    const contexto=contextoDaRevisao(id),linha=getClaim(id);
+   const uniao=lang==='pt'?'União Europeia':'European Union';
+   const ocorrencias=normal(el.textContent).split(uniao).length-1;
+   if(ocorrencias>1)throw Error('União repetida na linha');
+   if(contexto.uniao&&ocorrencias!==1)throw Error('União em falta na linha da União');
    const recibo=parse(fs.readFileSync(path.join(dist,routePath('linha',lang,{slug:id}),'index.html'),'utf8'));
    const nome=normal(recibo.querySelector('main h1')?.textContent??'');
    const copiados=el.querySelectorAll('[data-correcao-nome]'),copiado=copiados[0];
    if(!nome||!linha.reference_date)throw Error('nome ou período ausente');
    if(copiados.length!==1||copiado.getAttribute('data-correcao-nome')!==id||copiado.getAttribute('data-de-linha')!==id||normal(copiado.textContent)!==nome)throw Error('título diferente do recibo');
    const periodo=dataDaCasa(linha.reference_date,lang);
-   const esperado=`${nome}${contexto.uniao?(lang==='pt'?' na União Europeia':' in the European Union'):''}${nome.includes(periodo)?'':', '+periodo}`;
+   const esperado=`${nome}${contexto.uniao&&!nome.includes(uniao)?(lang==='pt'?' na União Europeia':' in the European Union'):''}${nome.includes(periodo)?'':', '+periodo}`;
    if(normal(el.textContent)!==normal(esperado))throw Error('contexto ou período diferente do recibo e da linha');
    const item=el.closest('[data-correcao-entrada]');
    if(item?.getAttribute('data-correcao-entrada')!==id)throw Error('linha diferente');

@@ -86,11 +86,12 @@ for(const lang of ['pt','en']){
  morde('duas linhas iguais no registo',conferirTitulosCopiados(duplicada,{key:'correcoes',lang}).erros.some(e=>e.includes('linha repetida')));
  for(const [nome,muda] of [
   ['período retirado',r=>{r.querySelector('[data-correcao-periodo]').remove();}],
-  ['contexto europeu retirado',r=>{const el=r.querySelectorAll('[data-correcao-titulo]').find(e=>contextoDaRevisao(e.getAttribute('data-correcao-titulo')).uniao);assert(el);el.set_content(el.innerHTML.replace(lang==='pt'?'</span> na União Europeia<span':'</span> in the European Union<span','</span><span'));}],
+  ['União em falta',r=>{const el=r.querySelector('[data-correcao-uniao]');assert(el);el.remove();}],
+  ['União repetida',r=>{const el=r.querySelectorAll('[data-correcao-titulo]').find(e=>contextoDaRevisao(e.getAttribute('data-correcao-titulo')).uniao);assert(el);el.insertAdjacentHTML('beforeend',lang==='pt'?' na União Europeia':' in the European Union');}],
   ['título diferente do recibo',r=>r.querySelector('[data-correcao-nome]').set_content('Outro nome')],
   ['período repetido',r=>{const el=r.querySelector('[data-correcao-titulo="evora-prr-vencido-aprovado-2026"]');assert(el);el.insertAdjacentHTML('beforeend',', 19.08.2026');}],
   ['porta trocada',r=>r.querySelector('.registo-proveniencia-linhas a.src-chip').setAttribute('href','/')],
- ]){const r=parse(correcoes.toString());muda(r);const erros=conferirRevisoesNoRegisto(r,lang).erros;morde(nome,erros.some(e=>e.includes(nome==='título diferente do recibo'?'título diferente do recibo':nome==='porta trocada'?'porta do recibo diferente':'contexto ou período diferente')));if(['título diferente do recibo','período repetido'].includes(nome))console.log(`VOZ-1 F: ${lang}, ${nome}: recusado`);}
+ ]){const r=parse(correcoes.toString());muda(r);const erros=conferirRevisoesNoRegisto(r,lang).erros;morde(nome,erros.some(e=>e.includes(nome.startsWith('União')?nome:nome==='título diferente do recibo'?'título diferente do recibo':nome==='porta trocada'?'porta do recibo diferente':'contexto ou período diferente')));if(['título diferente do recibo','período repetido','União em falta','União repetida'].includes(nome))console.log(`VOZ-1 G: ${lang}, ${nome}: recusado`);}
 
 }
 const c={eventos:[{id:'antes',data:'2026-11-03'},{id:'hoje',data:'2026-11-04'},{id:'depois',data:'2026-11-05'},{id:'janela',janela:{inicio:'2026-11-01',fim:'2026-11-04'}},{id:'sem',motivo_sem_data:'nao_lida'}]};
