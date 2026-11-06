@@ -19,7 +19,8 @@ for caminho in sys.argv[2:]:
     # Só uma declaração no cabeçalho, antes da primeira secção ou frase.
     cabecalho = re.split(r'(?m)^## |«', texto, maxsplit=1)[0]
     paginas = re.findall(r'(?m)^Página: ([^\n]+)$', cabecalho)
-    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre')
+    # A Emenda 15 isenta o recibo; o inventário da voz não mede a rota linha.
+    isento = len(paginas) == 1 and paginas[0].strip() in ('metodo', 'sobre', 'linha')
     achados = []
     for f in frases:
         baixo = f.lower()

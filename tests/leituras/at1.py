@@ -296,8 +296,9 @@ class Voz(unittest.TestCase):
     def test_isencoes_so_no_cabecalho(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp) / 'mandato.md'
-            for cabecalho, esperado in [('Página: metodo\n', 0), ('Página: sobre\n', 0),
-                                       ('Página: inicio\n', 1), ('', 1), ('Página: metodo\nPágina: inicio\n', 1)]:
+            for cabecalho, esperado in [('Página: metodo\n', 0), ('Página: sobre\n', 0), ('Página: linha\n', 0),
+                                       ('Página: inicio\n', 1), ('', 1), ('Página: metodo\nPágina: inicio\n', 1),
+                                       ('Página: linha\nPágina: inicio\n', 1)]:
                 p.write_text('# Ensaio\n' + cabecalho + '\n## Frase\n«A página explica as conferências ao leitor.»\n')
                 r = subprocess.run([sys.executable, str(GUIOES / 'voz-do-mandato.py'), str(RAIZ), str(p)], capture_output=True)
                 self.assertEqual(r.returncode, esperado, r.stdout)
