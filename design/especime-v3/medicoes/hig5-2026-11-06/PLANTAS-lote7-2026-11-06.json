@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-06T20:13:20+00:00",
+ "copia": "pacote-lote7-2026-11-06",
+ "plantas": [
+  {
+   "id": "H1",
+   "ficheiro": "diff.patch",
+   "descricao": "a aterragem só reconstrói o dist/ quando o version.json não diz commit nenhum, e envia o de outra cabeça",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f72d85b87c6b30fb71ca76ab45f3d539d05152d9324f56f71acffa1cbeb0a641",
+   "sha256_depois": "bc5d3b4c00d0b65a80f599e4c967b327e0e28176bb29637ae203590f3fc0219e",
+   "contexto_antes": "ng='utf-8')).get('commit')\n+            except (OSError, ValueError, AttributeError) as e:\n+                raise Parar(9, 'dist/version.json ilegível') from e\n+            if commit != self.cabeca:\n+                motivo = {'motivo': 'de outra cabeça', 'commit': commit}\n+        if motivo:\n+            self.recibo['preparar_dist'] = motivo\n+            s",
+   "contexto_depois": "ng='utf-8')).get('commit')\n+            except (OSError, ValueError, AttributeError) as e:\n+                raise Parar(9, 'dist/version.json ilegível') from e\n+            if commit is None:\n+                motivo = {'motivo': 'de outra cabeça', 'commit': commit}\n+        if motivo:\n+            self.recibo['preparar_dist'] = motivo\n+            s"
+  },
+  {
+   "id": "H2",
+   "ficheiro": "diff.patch",
+   "descricao": "a janela da régua das frequências passa a oito períodos em vez de quatro",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bc5d3b4c00d0b65a80f599e4c967b327e0e28176bb29637ae203590f3fc0219e",
+   "sha256_depois": "ecd936db109193564008758e69a486ab1efcbe6210b2712c4f0471ae7d1bdf06",
+   "contexto_antes": "a]);\n+    // Só o extremo mais recente do par decide se a falha ainda está na janela.\n+    // O intervalo até à construção fica sempre sujeito ao mesmo limite.\n+    const inicioDaJanela = construcao - 4 * periodo * MILISSEGUNDOS_POR_DIA;\n+    const intervalos = dias.slice(1).flatMap((dia, i) =>\n+      instanteDoDia(dia) >= inicioDaJanela ? [[dias[i], dia]] : []);\n     if (Number.isFinite(constr",
+   "contexto_depois": "a]);\n+    // Só o extremo mais recente do par decide se a falha ainda está na janela.\n+    // O intervalo até à construção fica sempre sujeito ao mesmo limite.\n+    const inicioDaJanela = construcao - 8 * periodo * MILISSEGUNDOS_POR_DIA;\n+    const intervalos = dias.slice(1).flatMap((dia, i) =>\n+      instanteDoDia(dia) >= inicioDaJanela ? [[dias[i], dia]] : []);\n     if (Number.isFinite(constr"
+  },
+  {
+   "id": "H3",
+   "ficheiro": "diff.patch",
+   "descricao": "a lista das palavras de frequência perde «semanalmente»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ecd936db109193564008758e69a486ab1efcbe6210b2712c4f0471ae7d1bdf06",
+   "sha256_depois": "ee17795b27bb6ba2eecf3ffe31b1782214775db28da34a447348fc11acae6263",
+   "contexto_antes": "annual)(?![\\p{L}\\p{N}_])/iu;\n+const PALAVRAS_POR_PERIODO = [\n+  [1, 'diari[oa]s?|diariamente|todos os dias|cada dia|dail(?:y|ies)|every day|each day'],\n+  [7, 'semana(?:l|is)|semanalmente|todas as semanas|weekl(?:y|ies)|every week'],\n+  [14, 'quinzena(?:l|is)|fortnightl(?:y|ies)|bi-?weekl(?:y|ies)'],\n+  [30, 'mensa(?:l|is)|monthl(?:y|ies)'],\n+  [91, 'trimestra(?",
+   "contexto_depois": "annual)(?![\\p{L}\\p{N}_])/iu;\n+const PALAVRAS_POR_PERIODO = [\n+  [1, 'diari[oa]s?|diariamente|todos os dias|cada dia|dail(?:y|ies)|every day|each day'],\n+  [7, 'semana(?:l|is)|todas as semanas|weekl(?:y|ies)|every week'],\n+  [14, 'quinzena(?:l|is)|fortnightl(?:y|ies)|bi-?weekl(?:y|ies)'],\n+  [30, 'mensa(?:l|is)|monthl(?:y|ies)'],\n+  [91, 'trimestra(?"
+  },
+  {
+   "id": "H4",
+   "ficheiro": "diff.patch",
+   "descricao": "o pré-mandato deixa passar as contagens de três algarismos",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ee17795b27bb6ba2eecf3ffe31b1782214775db28da34a447348fc11acae6263",
+   "sha256_depois": "63a6514a111fd62b3dd55e8691d4eacbb79219e2926f5a3bd5822626c0f197db",
+   "contexto_antes": "\\s*|\\bregra(?:s)?\\s+)$', antes, re.I):\n+                continue\n+            algarismos = re.sub(r'[ \\u202f]', '', valor)\n+            if ',' not in valor and (len(algarismos) < 3 or\n+                                      (len(valor) == 4 and 1900 <= int(valor) <= 2099)):\n+                continue\n+            if valor not in numeros:\n+    ",
+   "contexto_depois": "\\s*|\\bregra(?:s)?\\s+)$', antes, re.I):\n+                continue\n+            algarismos = re.sub(r'[ \\u202f]', '', valor)\n+            if ',' not in valor and (len(algarismos) < 4 or\n+                                      (len(valor) == 4 and 1900 <= int(valor) <= 2099)):\n+                continue\n+            if valor not in numeros:\n+    "
+  },
+  {
+   "id": "H5",
+   "ficheiro": "built/livro-razao/penalizacao-antecipacao-um-ano-neutra/index.html",
+   "descricao": "o recibo português volta a dizer «à conferência automática» no bloco do selo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "08a4b8f6974ac6542b56efdeadbefa64abb76709349775054d1bf00f32c7c79c",
+   "sha256_depois": "66a7481e8d171a74cd32bc1ae16505ec650ad1ff75031c0e93ed7cd018704713",
+   "contexto_antes": "onledger=\"data-da-linha\" data-de-linha=\"penalizacao-antecipacao-um-ano-neutra\" data-de-campo=\"reference_date\">2026</span></p></div><p class=\"linha-selo-estado\"><span class=\"linha-campo-k\">Sem resposta a</span> <span data-nonledger=\"data-da-conferencia\">01.09.2026</span> · <span data-nonledger=\"data-da-conferencia\">na conferência automática</span></p><p class=\"linha-id\"><span class=\"linha-id-k\">identificador</span> <code data-linha-claim=\"penalizacao-antecipacao-um-ano-neutra\" data-linha-campo=\"id\">penal",
+   "contexto_depois": "onledger=\"data-da-linha\" data-de-linha=\"penalizacao-antecipacao-um-ano-neutra\" data-de-campo=\"reference_date\">2026</span></p></div><p class=\"linha-selo-estado\"><span class=\"linha-campo-k\">Sem resposta a</span> <span data-nonledger=\"data-da-conferencia\">01.09.2026</span> · <span data-nonledger=\"data-da-conferencia\">à conferência automática</span></p><p class=\"linha-id\"><span class=\"linha-id-k\">identificador</span> <code data-linha-claim=\"penalizacao-antecipacao-um-ano-neutra\" data-linha-campo=\"id\">penal"
+  }
+ ]
+}

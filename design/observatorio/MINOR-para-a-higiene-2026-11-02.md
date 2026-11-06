@@ -72,3 +72,10 @@
 68. «pela lista anual da DGAL» / «from its annual list» no recibo do prazo médio de pagamento, quando o título do documento nomeia um mês (a leitura a frio do lote 6, 16); medir com o ND1.
 69. «corredor diário» nos comentários do código, e a unidade «factor» na edição portuguesa do recibo do fator de sustentabilidade de 2026 (a leitura a frio do lote 6, 19).
 70. O `version.json` do sítio no ar diz `env: local` e o ramo do lote (`lote5c-2026-11-06`), porque o `dist/` se constrói na máquina pelo caminho da AT1 (o lote 5).
+71. `aterragens_do_dia` conta as aterragens concluídas antes desta, e o nome não o diz (a leitura a frio do lote 7, 9).
+72. Os números dos relatórios do construtor da HIG-5 sem comando que os prove, com o `conferir-relatorio.py` a sair a 1 (a leitura a frio do lote 7, 11).
+73. A `check:fontes` confere o rótulo, a data e o qualificador do estado sem resposta em separado, sem a ordem, o separador nem a ausência da forma antiga no mesmo bloco (a leitura a frio do lote 7, 12).
+74. No recibo, «Sem resposta a 01.09.2026 · na conferência automática» e logo a seguir «Releitura tentada a 01.09.2026, sem valor lido · conferência automática do ficheiro da fonte» contam a mesma tentativa duas vezes; juntar numa linha (a leitura a frio do lote 7, 13; com o Minor 65).
+75. As vírgulas decimais portuguesas na prosa das páginas inglesas («0,8237 factor», «8,2 %»), a mesma classe do Minor 60; medir a classe e decidir a convenção (a leitura a frio do lote 7, 14).
+
+Feitos na HIG-5 (06.11.2026, f75fc7a0a, 777d906a1 e a adenda C): 56, 58, 62, 63, 64 e 66.

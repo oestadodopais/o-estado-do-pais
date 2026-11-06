@@ -1,0 +1,49 @@
+{
+ "bloco": "HIG-5 (a higiene de sexta-feira: a cadência das aterragens, o dist/ da cabeça, a fila na aterragem, os números do §0 no pré-mandato, a janela e as palavras da régua das frequências, o construido.mjs no verify, o portao.yml; e o estado da fonte sem resposta numa frase que se lê bem)",
+ "data": "2026-11-06",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "HIG-5 A (a maquinaria)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T18:42:40Z",
+   "fim": "2026-11-06T19:00:04Z",
+   "pontos": 1.0,
+   "pontos_antes": 25.0,
+   "pontos_depois": 26.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig5a.log"
+  },
+  {
+   "nome": "HIG-5 B (a frase do estado sem resposta)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T19:00:06Z",
+   "fim": "2026-11-06T19:14:00Z",
+   "pontos": 0.0,
+   "pontos_antes": 26.0,
+   "pontos_depois": 26.0,
+   "outras_sessoes_no_intervalo": 1,
+   "fonte": "a linha PONTOS do LANCADOR-hig5b.log"
+  },
+  {
+   "nome": "HIG-5 C (adenda C: as contagens do §0 com pontuação e separadores, e as formas de frequência que faltavam; a leitura a frio do lote 7, 6 a 8)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-06T20:24:51Z",
+   "fim": "2026-11-06T20:29:10Z",
+   "pontos": 0.0,
+   "pontos_antes": 26.0,
+   "pontos_depois": 26.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig5-c.log"
+  }
+ ],
+ "pontos_codex_total": 1.0,
+ "leituras": "Claude Opus 5.5 (leitor): a leitura a frio do lote 7; fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros; o ponto do bloco lê-se da subida do contador, de 25,0 % a 26,0 %."
+}
