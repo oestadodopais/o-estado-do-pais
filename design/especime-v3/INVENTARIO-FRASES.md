@@ -5034,9 +5034,9 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | lidos por este projeto a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | new | fp1 | condicional-novo | Só se rende quando a lista da primeira página tem um estudo publicado há 0 a 7 dias da construção; FP1 confere cada marca contra a data impressa. |
 | conteudo | next reading on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | novo | fp1 | condicional-novo | Só se rende quando a lista da primeira página tem um estudo publicado há 0 a 7 dias da construção; FP1 confere cada marca contra a data impressa. |
 | conteudo | números do painel relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | o que se discute | fp1 | condicional-fp1 | DO2: só aparece se houver um item fora dos dossiês na caixa; conferirNovidades verifica a seleção e o texto. |
 | conteudo | próxima leitura a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |

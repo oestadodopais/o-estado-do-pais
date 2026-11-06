@@ -246,6 +246,7 @@ if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
       `a régua não devolveu o estado das declarações do inventário, e é o que a I74 fecha.`,
     );
   } else {
+    for(const [lang,exigida] of Object.entries(d.marcas_novo?.exigidas??{}))console.log(`  FP1 ${lang}: marca novo ${exigida?'exigida, há estudo com 0 a 7 dias':'não exigida, nenhum estudo da lista tem 0 a 7 dias'} em ${d.marcas_novo.dia}.`);
     for (const l of d.sem_estado) {
       erros.push(
         `${casa.inventario}:${l.n}: a linha não diz o seu estado` +

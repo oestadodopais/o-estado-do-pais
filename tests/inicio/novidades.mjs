@@ -1,3 +1,5 @@
+import {conferirMarcasNovo} from '../../scripts/marca-novo.mjs';
+import {provarDatasDaMarcaNovo} from './marca-novo.mjs';
 import { agruparNovidades, pecasPublicadas, TIPOS_DAS_NOVIDADES } from '../../src/lib/novidades.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 /** FP1: datas da publicação e do calendário, relidas das declarações. */
@@ -120,12 +122,7 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
   }
   if(linha?.querySelectorAll('time[data-data-origem]').length!==2) erros.push('FP1: faltam as duas origens');
   if(root.querySelectorAll('[data-data-origem="version.construido_em"]').length!==1) erros.push('FP1: carimbo repetido ou ausente');
-  for(const estudo of root.querySelectorAll('#trabalhos [data-estudo]')) {
-    const data=estudo.querySelector('.estudo-meta time')?.getAttribute('datetime');
-    const dias=(Date.parse(dia)-Date.parse(data??''))/86400000;
-    const esperado=Number(dias>=0&&dias<=7);
-    if(estudo.querySelectorAll('[data-estudo-novo]').length!==esperado)erros.push('FP1: marca novo diferente da data impressa');
-  }
+  erros.push(...conferirMarcasNovo(root,dia));
   return erros;
 }
 export function plantasDasNovidades(html,lang,dist) {
@@ -141,7 +138,7 @@ export function plantasDasNovidades(html,lang,dist) {
     ['DO4 marca editorial retirada',r=>r.querySelector('[data-novidade^="dossie:"] time').removeAttribute('data-nonledger'),/marca editorial/],
     ['contagem sem token',r=>r.querySelector('[data-novidades] [data-prova]').removeAttribute('data-prova'),/contagem sem token/],
     ['dossiê repetido',r=>r.querySelector('[data-novidades] ol').insertAdjacentHTML('beforeend',r.querySelector('[data-novidade^="dossie:"]').outerHTML),/quantidade|ordem/],
-    ['marca novo retirada',r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],
+    ['marca novo retirada ou indevida',r=>{const marca=r.querySelector('[data-estudo-novo]');if(marca)marca.remove();else {const estudo=r.querySelector('#trabalhos [data-estudo]');assert(estudo);estudo.insertAdjacentHTML('beforeend',`<span data-estudo-novo>${FP1[lang].novo}</span>`);}},/FP1: marca novo diferente da data impressa/],
     ['dossiê da novidade trocado',r=>r.querySelector('[data-novidade-dossie]').setAttribute('href','/dossies/inexistente/'),/dossiê diferente/],
     ['dossiê da novidade retirado',r=>r.querySelector('[data-novidade-dossie]').remove(),/dossiê diferente/],
     ['título da peça trocado',r=>r.querySelector('[data-novidade-porta]').set_content('Título inventado'),/título da peça/],
@@ -160,6 +157,7 @@ export function plantasDasNovidades(html,lang,dist) {
   return resultado;
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href) {
+  provarDatasDaMarcaNovo();
   const dist=process.env.OEDP_DIST ?? 'dist'; const plantas=[];
   const grupo={slug:'ensaio',recente:'2026-10-29',origemRecente:'escrita.declarada'};
   const fora={id:'estudo:fora',tipo:'estudo',data:'2026-10-28',origem:'publicacao.declarada',rota:'/fora/',titulo:'Fora'};

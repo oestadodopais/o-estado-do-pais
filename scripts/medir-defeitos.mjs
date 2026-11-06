@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {exigeRotuloNovo} from './marca-novo.mjs';
 import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 import {normalizaEspacosDaRetirada} from './titulos-publicados.mjs';
 import {retirarTitulosConferidos} from './titulos-publicados.mjs';
@@ -1818,7 +1819,10 @@ function ondeVolta(frase) {
 }
 
 const rendidasNormalizadas = new Set([...rendidas, ...rendidasNasIsentas].map(normalizaFraseDoInventario));
+const diaDaMarcaNovo=JSON.parse(fs.readFileSync(path.join(DIST,'version.json'),'utf8')).construido_em.slice(0,10);
+const marcasNovo=Object.fromEntries(['pt','en'].map(lang=>[lang,exigeRotuloNovo(lang,diaDaMarcaNovo)]));
 const declaracoes = {
+  marcas_novo: {dia:diaDaMarcaNovo,exigidas:marcasNovo},
   total: INVENTARIO.linhas.length,
   vivas: INVENTARIO.linhas.filter((l) => l.estado === 'viva').length,
   condicionais_do2: INVENTARIO.linhas.filter(l=>l.estado==='condicional-do2').length,
@@ -1839,7 +1843,7 @@ const declaracoes = {
      da contagem (o Método e o Sobre): uma linha declarada para uma frase que só
      lá vive rende-se, e a lista não está a mentir sobre o sítio. */
   vivas_que_nao_rendem: INVENTARIO.linhas
-    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-fp1' && l.estado !== 'condicional-do2' && !rendidasNormalizadas.has(normalizaFraseDoInventario(l.texto)))
+    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-fp1' && l.estado !== 'condicional-do2' && (l.estado !== 'condicional-novo' || marcasNovo[l.texto==='novo'?'pt':'en']) && !rendidasNormalizadas.has(normalizaFraseDoInventario(l.texto)))
     .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
   retiradas_que_rendem: INVENTARIO.linhas
     .filter((l) => l.estado === 'retirada')
