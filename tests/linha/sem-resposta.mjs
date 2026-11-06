@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * =============================================================================
- * «SEM RESPOSTA DESDE dd.mm.aaaa» · a régua do estado da fonte no recibo
+ * «SEM RESPOSTA A dd.mm.aaaa» · a régua do estado da fonte no recibo
  * =============================================================================
  *
  *   node tests/linha/sem-resposta.mjs            mede o `dist/` que já existe
@@ -16,7 +16,7 @@
  * O QUE ELA MEDE, e porque é que são duas leituras e não uma
  * ---------------------------------------------------------------------------
  *
- * O corredor diário escreve dois blocos em `src/data/fontes.mjs`:
+ * O corredor escreve dois blocos em `src/data/fontes.mjs`:
  *
  *   `FONTES_SEM_RESPOSTA`      por ENDEREÇO. Uma linha cujo endereço não foi
  *                              pedido na última corrida não tem lá entrada.
@@ -76,13 +76,17 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 const ROTULOS = {
   pt: {
     rota: (id) => path.join('livro-razao', id),
-    'sem-resposta': 'Sem resposta desde',
-    'respondeu-com-erro': 'Respondeu com erro desde',
+    'sem-resposta': 'Sem resposta a',
+    'respondeu-com-erro': 'Respondeu com erro a',
+    aoCorredor: 'à conferência automática',
+    aEstaMaquina: 'a esta máquina',
   },
   en: {
     rota: (id) => path.join('en', 'ledger', id),
-    'sem-resposta': 'No answer since',
-    'respondeu-com-erro': 'Answering with an error since',
+    'sem-resposta': 'No answer on',
+    'respondeu-com-erro': 'Answered with an error on',
+    aoCorredor: 'to the automated check',
+    aEstaMaquina: 'to this machine',
   },
 };
 
@@ -187,7 +191,7 @@ function estadoEsperado(claim) {
   const pedido = u.split('#')[0];
   const doEndereco = FONTES_SEM_RESPOSTA?.[pedido];
   if (doEndereco) {
-    return { estado: doEndereco.estado ?? 'sem-resposta', desde: doEndereco.desde };
+    return { estado: doEndereco.estado ?? 'sem-resposta', desde: doEndereco.desde, maquina: doEndereco.maquina };
   }
   let anfitriao;
   try {
@@ -197,7 +201,7 @@ function estadoEsperado(claim) {
   }
   const doAnfitriao = ANFITRIOES_SEM_RESPOSTA?.[anfitriao];
   return doAnfitriao
-    ? { estado: doAnfitriao.estado ?? 'sem-resposta', desde: doAnfitriao.desde }
+    ? { estado: doAnfitriao.estado ?? 'sem-resposta', desde: doAnfitriao.desde, maquina: doAnfitriao.maquina }
     : null;
 }
 
@@ -268,11 +272,13 @@ for (const claim of claims) {
             `O estado é «${esperado.estado}». Rendido: ${bloco}`,
         );
       }
-      for (const outro of Object.keys(ROTULOS[lang])) {
+      const quem = esperado.maquina ? `${rot.aEstaMaquina}: ${esperado.maquina}` : rot.aoCorredor;
+      if (!bloco.includes(quem)) falhas.push(`${claim.id} (${lang}): ${onde} não escreve «${quem}».`);
+      for (const outro of ['sem-resposta', 'respondeu-com-erro']) {
         /* E NÃO ESCREVE O OUTRO. Chamar «sem resposta» a um 404 é a metade do
            defeito que uma régua distraída não vê: o rótulo certo está lá, e o
            errado também. */
-        if (outro === 'rota' || outro === esperado.estado) continue;
+        if (outro === esperado.estado) continue;
         if (bloco.includes(rot[outro])) {
           falhas.push(
             `${claim.id} (${lang}): ${onde} escreve «${rot[outro]}» e o estado é ` +

@@ -464,7 +464,7 @@ const atraso = atrasoDaLinha(claim);
 /**
  * O RÓTULO DO ESTADO, e é um de dois (03.09.2026, segunda passagem, Major 4).
  *
- * «Sem resposta desde» é a fonte que não atendeu; «Respondeu com erro desde» é
+ * «Sem resposta a» é a fonte que não atendeu; «Respondeu com erro a» é
  * a fonte que atendeu e cuja resposta não é 2xx nem 304. Chamar «sem resposta»
  * a um 404 diria ao leitor que a fonte se calou, quando o que ela fez foi mudar
  * o endereço. O ficheiro gerado traz o estado por palavra (`estado`); as
@@ -1612,11 +1612,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               dia escrito sem dizer quem o anunciou. */}
           {/* -------------------------------------- o estado da fonte, quando há
 
-              «Sem resposta desde dd.mm.aaaa». É uma DATA e não um adjectivo, e
-              é o que impede a página de dizer «hoje» sobre uma linha cuja fonte
-              deixou de atender (§1 do desenho: «uma fonte que não responde é um
-              estado, com a data em que deixou de responder»). Não se desenha
-              quando a fonte responde.
+              «Sem resposta a dd.mm.aaaa». É o dia da primeira falha observada,
+              guardado em `desde`, sem afirmar que a falha continua hoje.
+              Só se desenha quando o registo da fonte traz essa observação.
               ------------------------------------------------------------ */}
           {fonteSemResposta && (
             <>

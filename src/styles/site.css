@@ -2561,8 +2561,8 @@ a.badge-porta:hover {
 .linha-selo {
   margin-top: -2px;
 }
-/* O ESTADO DA FONTE AO PÉ DO SELO (bloco F0.11, 03.09.2026): «Sem resposta desde
-   dd.mm.aaaa», e só quando a fonte deixou de atender.
+/* O ESTADO DA FONTE AO PÉ DO SELO (bloco F0.11, 03.09.2026): «Sem resposta a
+   dd.mm.aaaa», o dia da falha observada na conferência.
 
    SEM COR NOVA, e a razão é constitucional: a `IDENTIDADE.md` §2 reserva a cor
    para os limiares de uma medida, e um estado de fonte não é um limiar. O que o

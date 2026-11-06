@@ -39,6 +39,7 @@ import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { campoDoAviso } from './check-quadro.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
+import { conferirFrequencias } from './frequencia-verificacoes.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -2933,19 +2934,41 @@ const ROTULO_DE_QUEM_RELEU = {
     'leitura-independente': 'leitura independente',
     'painel-semanal': 'comparação semanal com a fonte',
     'revisao-cruzada': 'comparação numa segunda revisão',
-    /* O corredor diário confere o FICHEIRO da fonte, não o valor: o rótulo
+    /* O corredor confere o FICHEIRO da fonte, não o valor: o rótulo
        di-lo, para que uma reconferência dele não se leia como uma releitura do
        número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. Esta tabela é a
        cópia do portão: se ele lesse a do gabarito, confirmava o gabarito. */
-    'corredor-diario': 'conferência diária do ficheiro da fonte',
+    'corredor-diario': 'conferência automática do ficheiro da fonte',
   },
   en: {
     'leitura-independente': 'independent reading',
     'painel-semanal': 'weekly comparison with the source',
     'revisao-cruzada': 'comparison in a second review',
-    'corredor-diario': 'daily check of the source file',
+    'corredor-diario': 'automated check of the source file',
   },
 };
+
+/* REL1, regra 15: só os autores cujo rótulo nomeia uma frequência.
+ * Se o painel não correr a 09.11 nem a 16.11.2026, a construção fica vermelha
+ * a partir de 17.11: o último dia observado é 02.11 e o limite é catorze dias.
+ * O remédio é o painel correr, ou o rótulo mudar por mandato, nunca subir o limite.
+ */
+const FREQUENCIA_DE_QUEM_RELEU = {
+  'painel-semanal': 7,
+};
+
+{
+  let construidoEm;
+  try { construidoEm = JSON.parse(fs.readFileSync(path.join(DIST, 'version.json'), 'utf8')).construido_em; }
+  catch { /* A régua recusa a falta da data, sem recorrer ao relógio da máquina. */ }
+  for (const [origem, rotulos] of [
+    ['portão', ROTULO_DE_QUEM_RELEU],
+    ['produção', Object.fromEntries(['pt', 'en'].map(lang => [lang, t(lang).livro.linha.verificacaoPor]))],
+  ]) {
+    for (const msg of conferirFrequencias({rotulos, frequencias: FREQUENCIA_DE_QUEM_RELEU,
+      linhas: [...livroInteiro.values()], construidoEm})) erros.push({rel: `frequência das verificações (${origem})`, msg});
+  }
+}
 
 const ROTULO_DO_RESULTADO = {
   pt: {

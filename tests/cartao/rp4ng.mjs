@@ -103,7 +103,7 @@ for(const lang of ['pt','en']) {
  const root=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/penalizacao-antecipacao-um-ano-neutra/index.html`,'utf8'));
  assert.equal(root.querySelectorAll('[data-def-lido]').length,4);
  assert.equal(root.querySelectorAll('[data-def-sem-data]').length,0);
- assert(root.textContent.includes(lang==='pt'?'Sem resposta desde 01.09.2026':'No answer since 01.09.2026'));
+ assert(root.textContent.includes(lang==='pt'?'Sem resposta a 01.09.2026':'No answer on 01.09.2026'));
 }
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);

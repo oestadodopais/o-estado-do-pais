@@ -2534,7 +2534,7 @@ export const STRINGS = {
         enquadramentoPortugal: 'Portugal, no mesmo período',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
-           não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
+           não um adjetivo: o que a casa sabe é o dia da falha observada. E é uma de duas
            coisas, que não se parecem:
 
              `semRespostaK`         a fonte não atendeu de todo: tempo esgotado,
@@ -2551,10 +2551,10 @@ export const STRINGS = {
            é verdade: o mesmo endereço responde ao portátil do diretor e não
            responde ao IP do runner do GitHub (medido a 01.09.2026). O
            qualificador vai a seguir à data. */
-        semRespostaK: 'Sem resposta desde',
-        respondeuComErroK: 'Respondeu com erro desde',
+        semRespostaK: 'Sem resposta a',
+        respondeuComErroK: 'Respondeu com erro a',
         aEstaMaquinaK: 'a esta máquina',
-        aoCorredorK: 'ao corredor',
+        aoCorredorK: 'à conferência automática',
         /* O ATRASO DE UMA SÉRIE, DITO AO PÉ DO VALOR (bloco F1.6, 04.09.2026;
            DECISIONS §1.98, decisão (2)). Três rótulos e três valores lidos, e
            nenhum algarismo nesta cadeia: o período da fonte vem de
@@ -2589,7 +2589,7 @@ export const STRINGS = {
           /* O corredor confere o FICHEIRO, não o valor: o rótulo di-lo, para
              que uma reconferência dele não se leia como uma releitura do
              número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. */
-          'corredor-diario': 'conferência diária do ficheiro da fonte',
+          'corredor-diario': 'conferência automática do ficheiro da fonte',
         },
         verificacaoResultado: {
           igual: 'igual à fonte',
@@ -4285,10 +4285,10 @@ export const STRINGS = {
         enquadramentoPaises: 'EU countries',
         /* L2b: see the Portuguese edition. */
         enquadramentoPortugal: 'Portugal, same period',
-        semRespostaK: 'No answer since',
-        respondeuComErroK: 'Answering with an error since',
+        semRespostaK: 'No answer on',
+        respondeuComErroK: 'Answered with an error on',
         aEstaMaquinaK: 'to this machine',
-        aoCorredorK: 'to the runner',
+        aoCorredorK: 'to the automated check',
         periodoDaFonteK: 'Latest period published by the source:',
         periodoDestaLinhaK: 'this row:',
         periodoLidoK: 'read on',
@@ -4297,7 +4297,7 @@ export const STRINGS = {
           'leitura-independente': 'independent reading',
           'painel-semanal': 'weekly comparison with the source',
           'revisao-cruzada': 'comparison in a second review',
-          'corredor-diario': 'daily check of the source file',
+          'corredor-diario': 'automated check of the source file',
         },
         verificacaoResultado: {
           igual: 'matches the source',
