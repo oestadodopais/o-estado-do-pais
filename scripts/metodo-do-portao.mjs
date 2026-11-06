@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { getClaim } from '../src/lib/ledger.mjs';
+import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 export const APROVADO = JSON.parse(fs.readFileSync(new URL('./metodo-aprovado.json', import.meta.url), 'utf8'));
 export const DOCUMENTO_DA_POLITICA_DO_PORTAO = 'https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md';
@@ -16,7 +17,7 @@ export function unidades(lang) {
     ...a.marcas.map((p,i) => [`marca-${i}`, partes(p[lang])]),
     ...a.campos[lang].map((p,i) => [`campo-${i}`,p]),
     ...a.ligacoes[lang].map((p,i) => [`ligacao-${i}`,p]),
-    ['recibo-nome',a.recibo.nome[lang]],
+    ['recibo-nome',nomeNoRecibo(a.recibo.id, lang).texto],
   ]);
 }
 /** Reconta independente, pela mesma lista declarada que o guião shell lê. */
@@ -33,14 +34,20 @@ export function conferirContagemDaCorrida(root, scripts) {
  const nos=root.querySelectorAll('[data-prova="conferencias_da_corrida"]');
  return nos.length===1 && normal(nos[0].textContent)===String(recontarConferencias(scripts)) ? [] : ['MET1: contagem das conferências diferente da lista executada.'];
 }
-const CAMPOS = ['reference_date','unit','source','document.title','document.edition','reference_date','excerpt','access_date'];
+const CAMPOS = ['reference_date','unit','source','document.title','excerpt','access_date'];
+export const campoLocalizadorMet1 = lang => lang === 'en' && getClaim(APROVADO.recibo.id).document.locator_en ? 'document.locator_en' : 'document.locator';
 export function campoDoReciboMet1(rota, el, id, campo) {
-  return rota === 'metodo' && id === APROVADO.recibo.id && CAMPOS.includes(campo) && el.closest('[data-met1-recibo]')?.getAttribute('data-met1-recibo') === id;
+  return rota === 'metodo' && id === APROVADO.recibo.id && [...CAMPOS,'document.locator','document.locator_en'].includes(campo) && el.closest('[data-met1-recibo]')?.getAttribute('data-met1-recibo') === id;
 }
 export function conferirLugaresIA(_root, lang, html = null) {
   const root = parse(html ?? _root.toString(), {comment:false,blockTextElements:{script:true,style:true}});
   const erros = [...conferirContagemDaCorrida(root)], u = unidades(lang), main = root.querySelector('main');
   if (!main) return ['MET1: falta main.'];
+  const campoLocalizador = campoLocalizadorMet1(lang);
+  const linhaLocalizador = getClaim(APROVADO.recibo.id);
+  const valorLocalizador = linhaLocalizador.document[campoLocalizador.split('.')[1]];
+  const noLocalizador = main.querySelector(`[data-linha-campo="${campoLocalizador}"]`);
+  if (!valorLocalizador || normal(noLocalizador?.textContent ?? '') !== normal(valorLocalizador) || !noLocalizador?.closest('dd')?.parentNode.querySelector('dt[data-met1="campo-2"]')) erros.push('MET1: localizador ausente, trocado ou fora do campo.');
   // Inclui noscript: a prosa de quem não usa JavaScript também é conferida.
   for (const n of root.querySelectorAll('script,style,template')) n.remove();
   if (NOMES_DE_MODELOS.test(root.textContent)) erros.push('MET1 nomes: nome de modelo ou fornecedor.');
@@ -71,9 +78,9 @@ export function conferirLugaresIA(_root, lang, html = null) {
   const campos = main.querySelectorAll('[data-linha-claim],[data-de-linha]');
   const idDoCampo = n => n.getAttribute('data-linha-claim') ?? n.getAttribute('data-de-linha');
   const nomeDoCampo = n => n.getAttribute('data-linha-campo') ?? n.getAttribute('data-de-campo');
-  if (campos.map(nomeDoCampo).sort().join('|') !== [...CAMPOS].sort().join('|') || campos.some(n=>!campoDoReciboMet1('metodo',n,idDoCampo(n),nomeDoCampo(n)))) erros.push('MET1: campos do recibo incompletos ou fora do exemplo.');
+  if (campos.map(nomeDoCampo).sort().join('|') !== [...CAMPOS,campoLocalizador].sort().join('|') || campos.some(n=>!campoDoReciboMet1('metodo',n,idDoCampo(n),nomeDoCampo(n)))) erros.push('MET1: campos do recibo incompletos ou fora do exemplo.');
   const linha = getClaim(APROVADO.recibo.id);
-  for (const [campo,href] of [['source',linha.source_url],['document.title',linha.document.url],['document.edition',linha.source_url]]) {
+  for (const [campo,href] of [['source',linha.source_url],['document.title',linha.document.url]]) {
     if (main.querySelector(`[data-linha-campo="${campo}"]`)?.closest('a')?.getAttribute('href') !== href) erros.push(`MET1: ligação do recibo alterada (${campo}).`);
   }
   const valores = main.querySelectorAll('[data-claim]');

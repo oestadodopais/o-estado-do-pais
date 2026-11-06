@@ -4,10 +4,17 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
 import {conferirLugaresIA,conferirLimitesSobre,recontarConferencias} from '../../scripts/metodo-do-portao.mjs';
+import {APROVADO,campoLocalizadorMet1} from '../../scripts/metodo-do-portao.mjs';
 import {PLANTAS_DO_METODO} from './plantas.mjs';
 const medidas={conferencias_da_corrida:recontarConferencias(),plantas:PLANTAS_DO_METODO.length,edicoes:{},marcador:{pt:0,en:0},paginas:{pt:0,en:0}};
 for(const [lang,f,sobre] of [['pt','metodo/index.html','sobre/index.html'],['en','en/method/index.html','en/about/index.html']]) {
  const html=fs.readFileSync(path.join('dist',f),'utf8'),r=parse(html);
+ const recibo=parse(fs.readFileSync(path.join('dist',lang==='pt'?'livro-razao':'en/ledger',APROVADO.recibo.id,'index.html'),'utf8'));
+ assert.equal(r.querySelector('[data-met1="recibo-nome"]').textContent.trim(),recibo.querySelector('h1').textContent.trim());
+ const campo=campoLocalizadorMet1(lang),exemplo=r.querySelector(`[data-linha-campo="${campo}"]`),original=recibo.querySelector(`[data-linha-campo="${campo}"]`);
+ assert.equal(exemplo.textContent,original.textContent);
+ assert.equal(exemplo.closest('[lang]').getAttribute('lang'),original.closest('[lang]').getAttribute('lang'));
+ assert.equal(r.querySelectorAll('[data-linha-campo="document.edition"]').length,0);
  assert.deepEqual(conferirLugaresIA(r,lang,html),[]);
  assert.deepEqual(conferirLimitesSobre(parse(fs.readFileSync(path.join('dist',sobre),'utf8')),lang),[]);
  assert(conferirLugaresIA(r,lang,html.replace('</main>','<p>Frase acrescentada.</p></main>')).length);

@@ -82,18 +82,18 @@ export const METODO = {
     },
     {
       "pt": [
-        "A cada construção correm ",
+        "Antes de cada mudança ir para o ar, correm ",
         {
           "prova": "conferencias_da_corrida"
         },
-        " conferências automáticas sobre todas as páginas: um algarismo sem linha no livro-razão, ou com outro valor, trava a publicação."
+        " conferências automáticas: um algarismo sem linha no livro-razão, ou com outro valor, trava a publicação."
       ],
       "en": [
-        "Each build runs ",
+        "Before each change goes live, ",
         {
           "prova": "conferencias_da_corrida"
         },
-        " automated checks across all pages: a digit without a ledger row, or with a different value, stops publication."
+        " automated checks run: a digit without a ledger row, or with a different value, stops publication."
       ]
     },
     {
@@ -220,11 +220,7 @@ export const METODO = {
     ]
   },
   "recibo": {
-    "id": "retribuicao-minima-mensal-garantida-continente-2026",
-    "nome": {
-      "pt": "Retribuição mínima mensal garantida no continente",
-      "en": "Guaranteed minimum monthly wage in mainland Portugal"
-    }
+    "id": "retribuicao-minima-mensal-garantida-continente-2026"
   },
   "ligacoes": {
     "pt": [

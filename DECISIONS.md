@@ -14629,3 +14629,11 @@ A agenda e o calendário conservam os dados internos nos ficheiros públicos; a 
 **Texto:** metodo 23054cf90062
 
 **Decisão:** o recibo de exemplo passa à linha `retribuicao-minima-mensal-garantida-continente-2026`, conforme a adenda B. Os campos continuam a vir do livro-razão e as línguas dos campos usam as funções já existentes. O título não recebe uma ligação quando a linha não declara `document.url`; a fonte e o selo continuam a abrir os destinos declarados. A lista fechada e o inventário acompanham a linha e o nome do exemplo. A conferência da incorporação conserva a obrigação do selo e atualiza apenas o identificador literal esperado. Nenhuma condição de validação muda e nenhuma porta da discussão é acrescentada.
+
+### 1.225 MET1 D, 06.11.2026: localizador, nome e conferências
+
+**Afecta:** metodo
+
+**Texto:** metodo 1f6a0cd0424e
+
+**Decisão:** executar a adenda D. O exemplo usa o mesmo resolvedor do título e a mesma escolha de localizador e língua do recibo completo. A edição e a repetição da referência saem do campo do localizador. O passo seis passa à frase literal sobre as conferências antes de cada mudança ir para o ar. O oráculo acompanha e as plantas recusam a edição no localizador e o nome diferente do recibo.

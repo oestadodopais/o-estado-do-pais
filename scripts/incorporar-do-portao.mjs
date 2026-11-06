@@ -79,7 +79,7 @@ export function conferirInventarioIncorporacao(texto) {
   const cadeias = Object.entries(t('pt').incorporar).map(([chave, pt]) =>
     ['incorporar.'+chave, pt, t('en').incorporar[chave]]);
   // ME1 (15.10.2026): a porta do recibo de exemplo vive na secção do recibo de cada número.
-  cadeias.push(['metodo.exemplo', MET1.recibo.nome.pt, MET1.recibo.nome.en]);
+  cadeias.push(['metodo.exemplo', nomeNoRecibo(MET1.recibo.id,'pt').texto, nomeNoRecibo(MET1.recibo.id,'en').texto]);
   for (const [chave, pt, en] of cadeias) {
     const linha = '| `' + chave + '` | ' + pt + ' | ' + en + ' |';
     if (!texto.split('\n').some(l => l.startsWith(linha)))

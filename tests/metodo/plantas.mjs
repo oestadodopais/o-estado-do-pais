@@ -4,23 +4,24 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
-import {conferirLimitesSobre, APROVADO, unidades, conferirLugaresIA, recontarConferencias, DOCUMENTO_DA_POLITICA_DO_PORTAO as politica, campoDoReciboMet1} from '../../scripts/metodo-do-portao.mjs';
+import {campoLocalizadorMet1, conferirLimitesSobre, APROVADO, unidades, conferirLugaresIA, recontarConferencias, DOCUMENTO_DA_POLITICA_DO_PORTAO as politica, campoDoReciboMet1} from '../../scripts/metodo-do-portao.mjs';
 import {passosDaCorrida} from '../../src/lib/conferencias-da-corrida.mjs';
 import {getClaim} from '../../src/lib/ledger.mjs';
 import {routePath} from '../../src/lib/routes.mjs';
 const esc = s => s.replaceAll('&','&amp;').replaceAll('<','&lt;');
 export const PLANTAS_DO_METODO = [];
+const uNome=lang=>unidades(lang)['recibo-nome'];
 const planta=(nome,cond)=>{assert(cond,nome);PLANTAS_DO_METODO.push({nome});};
 function pagina(lang) {
  const u=unidades(lang), id=APROVADO.recibo.id;
  const texto=(k)=>`<p data-met1="${k}">${esc(u[k]).replace(/\{prova:([^}]+)\}/g,(_,chave)=>`<a data-prova="${chave}">${chave==='conferencias_da_corrida'?recontarConferencias():'valor'}</a>`)}</p>`;
  const linha=getClaim(id);
- const campo=k=>{const href=k==='document.title'?linha.document.url:['source','document.edition'].includes(k)?linha.source_url:null;const span=['reference_date','access_date'].includes(k)?`<span data-nonledger="data-da-linha" data-de-linha="${id}" data-de-campo="${k}">2025</span>`:`<span data-linha-claim="${id}" data-linha-campo="${k}">campo</span>`;return href?`<a href="${href}">${span}</a>`:span;};
+ const campo=k=>{if(k===campoLocalizadorMet1(lang))return `<div><dt data-met1="campo-2">${esc(u['campo-2'])}</dt><dd><span data-linha-claim="${id}" data-linha-campo="${k}">${esc(linha.document[k.split('.')[1]])}</span></dd></div>`;const href=k==='document.title'?linha.document.url:['source','document.edition'].includes(k)?linha.source_url:null;const span=['reference_date','access_date'].includes(k)?`<span data-nonledger="data-da-linha" data-de-linha="${id}" data-de-campo="${k}">2025</span>`:`<span data-linha-claim="${id}" data-linha-campo="${k}">campo</span>`;return href?`<a href="${href}">${span}</a>`:span;};
  return `<main><h1>${lang === 'pt' ? 'Método' : 'Method'}</h1><div class="met1">`+['conferir-um-numero','percurso','marcas','correcoes'].map((sec,i)=>`<section id="${sec}"><h2>${APROVADO.titulos[lang][i]}</h2></section>`).join('')+
  `<ol class="met1-percurso">${APROVADO.passos.map((_,i)=>`<li>${texto(`passo-${i}`)}</li>`).join('')}</ol>`+
- Object.keys(u).filter(k=>!k.startsWith('passo-')&&!k.startsWith('ligacao-')&&k!=='mudanca').map(texto).join('')+
+ Object.keys(u).filter(k=>!k.startsWith('passo-')&&!k.startsWith('ligacao-')&&k!=='mudanca'&&k!=='campo-2').map(texto).join('')+
  `<p data-met1="mudanca"><a href="${routePath('correcoes',lang)}">${u.mudanca}</a></p><a data-met1="ligacao-0" href="${routePath('agenda',lang)}">${u['ligacao-0']}</a><a data-met1="ligacao-1" href="${politica}">${u['ligacao-1']}</a>`+
- `<div data-met1-recibo="${id}">${['reference_date','unit','source','document.title','document.edition','reference_date','excerpt','access_date'].map(campo).join('')}<span data-claim="${id}">89,2</span></div></div></main>`;
+ `<div data-met1-recibo="${id}">${['reference_date','unit','source','document.title',campoLocalizadorMet1(lang),'excerpt','access_date'].map(campo).join('')}<span data-claim="${id}">89,2</span></div></div></main>`;
 }
 for(const lang of ['pt','en']) {
  const html=pagina(lang), conf=s=>conferirLugaresIA(parse(s),lang,s);
@@ -38,6 +39,9 @@ for(const lang of ['pt','en']) {
   ['porta correções',s=>s.replace(routePath('correcoes',lang),'/outra')],
   ['ligação da fonte trocada',s=>s.replace(getClaim(APROVADO.recibo.id).source_url,'/outra-fonte')],
   ['recibo trocado',s=>s.replaceAll(APROVADO.recibo.id,'outra-linha')],
+  ['edição no lugar do localizador',s=>s.replace(`data-linha-campo="${campoLocalizadorMet1(lang)}"`,'data-linha-campo="document.edition"')],
+  ['texto da edição sob marca do localizador',s=>s.replace(esc(getClaim(APROVADO.recibo.id).document[campoLocalizadorMet1(lang).split('.')[1]]),esc(getClaim(APROVADO.recibo.id).document.edition))],
+  ['nome diferente do recibo',s=>s.replace(esc(uNome(lang)),'Nome trocado')],
   ['campo incompleto',s=>s.replace('data-linha-campo="excerpt"','data-linha-campo="unit"')],
   ['contagem aumentada',s=>s.replace(`>${recontarConferencias()}</a>`,`>${recontarConferencias()+1}</a>`)],
   ['contagem com zero à esquerda',s=>s.replace(`>${recontarConferencias()}</a>`,`>0${recontarConferencias()}</a>`)],
