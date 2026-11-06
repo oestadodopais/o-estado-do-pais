@@ -1244,9 +1244,9 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* OG1-E D: a edição da contagem das correções passou a 03.11.2026.
+  /* EV3-p D: a edição da contagem das correções passou a 06.11.2026.
      É uma data sem língua; a edição anterior já não é usada pelas linhas. */
-  '03.11.2026': null,
+  '06.11.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
