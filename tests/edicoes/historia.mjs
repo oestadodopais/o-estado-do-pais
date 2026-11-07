@@ -12,14 +12,15 @@ for(const [nome,mudar,erro] of [
  ['primeira ausente',c=>delete c.alvo.primeira_edicao,'ED1 arquivo:'],
  ['primeira inválida',c=>c.alvo.primeira_edicao.sha256='0'.repeat(64),'ED1 arquivo:'],
  ['segunda atualização conserva a primeira',c=>{
+  const dataNova=new Date(Date.parse(c.alvo.edicoes.at(-1).data)+86400000).toISOString().slice(0,10);
   for(const e of c.manifesto.edicoes.filter(e=>e.slug===c.alvo.slug)){
    const anterior=e.edicoes.at(-1),file=`_edicoes/${e.slug}.${e.lang}.${anterior.data}.html`,atual=anterior.file;
    fs.copyFileSync(path.join(c.raiz,atual),path.join(c.raiz,file));anterior.file=file;
    fs.appendFileSync(path.join(c.raiz,atual),'\n');const digest=sha(fs.readFileSync(path.join(c.raiz,atual)));
-   e.edicoes.push({data:'2026-11-03',sha256:digest,file:atual});e.sha256_normalized=digest;
-   c.works.find(w=>w.slug===e.slug).editions.find(d=>d.lang===e.lang).updated='2026-11-03';
+   e.edicoes.push({data:dataNova,sha256:digest,file:atual});e.sha256_normalized=digest;
+   c.works.find(w=>w.slug===e.slug).editions.find(d=>d.lang===e.lang).updated=dataNova;
   }
-  c.correcoes.push({...structuredClone(c.correcoes[0]),data:'2026-11-03'});
+  c.correcoes.push({...structuredClone(c.correcoes[0]),data:dataNova});
   assert(c.correcoes.some(e=>e.data==='2026-10-30'));
  },null],
 ]){
@@ -30,7 +31,7 @@ for(const [nome,mudar,erro] of [
   mudar(c);const erros=conferirHistoria(c);if(erro)assert(erros.some(e=>e.startsWith(erro)),nome+': '+erros);else assert.deepEqual(erros,[],nome);plantas++;
  }finally{fs.rmSync(raiz,{recursive:true,force:true});}
 }
-const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-2027-capital-europeia-da-cultura'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang));
+const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-2027-capital-europeia-da-cultura','evora-prometido-pago-auditado-2026','evora-orcamentado-pago-devido-2025','evora-2027-prometido-painel-dinheiro','evora-economia-e-dinheiro-publico-de-fora-da-camara'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang)).concat('evora-economia-investidores-portas-abertas-2026/pt');
 assert.deepEqual(manifesto.edicoes.filter(e=>e.primeira_edicao).map(e=>e.slug+'/'+e.lang).sort(),testemunhas.sort());
 const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===testemunhas.length);plantas++;
 assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,testemunhas.length);plantas++;

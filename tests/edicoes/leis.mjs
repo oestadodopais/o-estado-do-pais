@@ -11,7 +11,9 @@ for(const e of primeirasEdicoes()) {
  const nomes=parse(servido).querySelectorAll('[data-edicao-lei]');
  const evora=e.slug==='evora-2027-capital-europeia-da-cultura';
  if(evora&&e.lang==='en')assert(!NOME_DE_LEI.test(parse(bruto).querySelector('body').text),'EV3: a edição guardada não cita nomes de diploma');
- assert.equal(nomes.length,e.lang==='en'&&!evora?1:0);
+ const fonte=parse(bruto);fonte.querySelectorAll('script,style,[lang="pt-PT"]').forEach(n=>n.remove());
+ const esperados=e.lang==='en'?[...fonte.querySelector('body').textContent.matchAll(new RegExp(NOME_DE_LEI.source,'gu'))].length:0;
+ assert.equal(nomes.length,esperados,'Cada nome de diploma na fonte exige a sua marca');
  for(const n of nomes){
   assert.equal(n.getAttribute('lang'),'pt-PT');
   for(const alterado of [servido.replace(n.outerHTML,n.outerHTML.replace(/\d/,d=>String((Number(d)+1)%10))),servido.replace(n.outerHTML,n.outerHTML.replace('pt-PT','en')),servido.replace(n.outerHTML,'<span data-edicao-lei lang="pt-PT">Outra frase</span>')]){

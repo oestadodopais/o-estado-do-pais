@@ -25,13 +25,18 @@
    "i": 2,
    "kind": "heading",
    "level": 2,
-   "text": "Os limites"
+   "text": "O que fica por saber"
   },
   {
    "i": 3,
    "items": [
     {
      "emphasis": [
+      {
+       "end": 28,
+       "kind": "strong",
+       "start": 3
+      },
       {
        "end": 209,
        "kind": "strong",
@@ -1524,7 +1529,7 @@
    ],
    "i": 24,
    "kind": "paragraph",
-   "text": "Cultura. Évora foi recomendada Capital Europeia da Cultura 2027 a 7 de dezembro de 2022. O Decreto-Lei n.º 124/2023 criou a Associação Évora 2027 com uma contribuição inicial do Estado de 2 000 000 euros; o programa Alentejo 2030 abriu um aviso exclusivamente destinado à associação com uma dotação indicativa de 1 750 000 euros; o comunicado do Governo na fase de candidatura situou o envelope para a cidade vencedora em 25 milhões de euros. Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa."
+   "text": "Cultura. Évora foi recomendada Capital Europeia da Cultura 2027 a 7 de dezembro de 2022. O Decreto-Lei n.º 124/2023 criou a Associação Évora 2027 com uma contribuição inicial do Estado de 2 000 000 euros; o programa Alentejo 2030 abriu um aviso exclusivamente destinado à associação com uma dotação indicativa de 1 750 000 euros; o comunicado do Governo na fase de candidatura situou o envelope para a cidade vencedora em 25 milhões de euros. Não existe nenhum orçamento consolidado oficial da Évora 2027; circulam totais maiores na imprensa."
   },
   {
    "emphasis": [
@@ -1899,45 +1904,45 @@
    ],
    "figures": [
     {
-     "end": 154,
+     "end": 153,
      "printed": "80",
      "row": "door-qualificacao-pct",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 152,
+     "start": 151,
      "value": "80"
     },
     {
-     "end": 199,
+     "end": 198,
      "printed": "3 000 000",
      "row": "door-qualificacao-max",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 190,
+     "start": 189,
      "value": "3 000 000"
     },
     {
-     "end": 275,
+     "end": 274,
      "printed": "30 000 000",
      "row": "door-crescer-eur",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 265,
+     "start": 264,
      "value": "30 000 000"
     },
     {
-     "end": 406,
+     "end": 405,
      "printed": "30 000",
      "row": "door-microcredito-max",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 400,
+     "start": 399,
      "value": "30 000"
     }
    ],
    "i": 36,
    "kind": "paragraph",
-   "text": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade."
+   "text": "Para uma empresa de turismo, o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade. Se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial."
   },
   {
    "emphasis": [

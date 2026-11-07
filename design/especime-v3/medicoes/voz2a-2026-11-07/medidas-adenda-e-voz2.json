@@ -136,28 +136,6 @@
             "2030"
           ]
         },
-        "composto_de": {
-          "antes": [
-            {
-              "pasta": "14 Évora 2027",
-              "ledger_sha256": "f2077836a4f943578c54460830d55533b4c3ffd444ce6def0245744790683aaa"
-            },
-            {
-              "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
-              "ledger_sha256": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb"
-            }
-          ],
-          "depois": [
-            {
-              "pasta": "14 Évora 2027",
-              "ledger_sha256": "307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b"
-            },
-            {
-              "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
-              "ledger_sha256": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb"
-            }
-          ]
-        },
         "assertions": {
           "antes": [
             {
@@ -697,6 +675,28 @@
                 "the October notice names only the Fundo Ambiental, and neither mentions the funding the other names"
               ],
               "review": "Âmbito fechado: o corpo .con-002_title-inner das cópias concurso-rossio.html e 23.html. A nota do concurso menciona Recuperação e Resiliência uma vez e Fundo Ambiental zero; a de outubro menciona Fundo Ambiental uma vez e Recuperação e Resiliência zero. Lidos os dois corpos, nenhuma nota menciona o financiamento que a outra nomeia. A medição não permite contar dois financiamentos distintos. Medição reproduzida em design/especime-v3/medicoes/ev3-j-2026-11-03/medir.mjs no sítio."
+            }
+          ]
+        },
+        "composto_de": {
+          "antes": [
+            {
+              "pasta": "14 Évora 2027",
+              "ledger_sha256": "f2077836a4f943578c54460830d55533b4c3ffd444ce6def0245744790683aaa"
+            },
+            {
+              "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
+              "ledger_sha256": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb"
+            }
+          ],
+          "depois": [
+            {
+              "pasta": "14 Évora 2027",
+              "ledger_sha256": "307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b"
+            },
+            {
+              "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
+              "ledger_sha256": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb"
             }
           ]
         }

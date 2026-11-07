@@ -181,8 +181,10 @@ export function verificaB1(raiz) {
       for(const linha of main.querySelectorAll('[data-edicoes-linha]')){
         const cabecalho=linha.closest('[data-estudo-edicao]');
         const [slug,lingua]=(cabecalho?.getAttribute('data-estudo-edicao')??'').split('/');
-        const queixas=conferirLinhaDasEdicoes(cabecalho,manifestoEd2,slug,lingua);
-        if(!cabecalho||lingua!==lang||queixas.length)erros.push(`B1 ED3: ${rota}: linha de edições não conferida. ${queixas.join('; ')}`);
+        const queixas=conferirLinhaDasEdicoes(cabecalho,manifestoEd2,slug,lingua,null,lang);
+        const edicoes=manifestoEd2.edicoes.filter(e=>e.slug===slug);
+        const linguaValida=lingua===lang || (edicoes.length===1&&edicoes[0].lang===lingua);
+        if(!cabecalho||!linguaValida||queixas.length)erros.push(`B1 ED3: ${rota}: linha de edições não conferida. ${queixas.join('; ')}`);
         else dispensados.add(linha);
       }
       const anda = (no, tecnico = false) => {

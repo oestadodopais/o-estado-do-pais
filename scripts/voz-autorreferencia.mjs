@@ -1,5 +1,5 @@
 /** VOZ-1, 03.11.2026. A narração da própria peça não é um facto da fonte.
- * Isenção VOZ-2: documentos dos estudos, até à passagem VOZ-2, que a retira.
+ * Isenção VOZ-2: onze estudos aguardam a VOZ-2B; edições datadas são arquivo.
  * A lista de ledes é fechada por rota e texto, nunca por classe de CSS.
  */
 import fs from 'node:fs';
@@ -8,8 +8,9 @@ import {pathToFileURL} from 'node:url';
 import {parse} from 'node-html-parser';
 import {loadClaims,provenienciaIncompleta} from '../src/lib/ledger.mjs';
 import {matchPath} from '../src/lib/routes.mjs';
-export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2', rotas:['documento','texto'], transcricoes:['estudo: unidades e índice, .texto-artigo.estudo-leitura, .texto-sumario e .estudo-sumario','dossie: unidades e índices com data-registo-unidade e data-registo-indice, conferidos pelo portão de HTML']};
+export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2B', estudos:["a-casa-em-portugal-e-na-europa", "agua-nao-faturada", "alentejo-algarve", "avaliacao-economica-regional-de-portugal-2026", "evolucao-de-portugal-desde-1981", "evora-os-pelouros-quem-os-teve-o-que-fizeram", "evora-quem-governou-a-camara-2009-2025", "evora-quinze-anos-cinco-mandatos", "onde-esta-a-agua", "orcamento-2027-o-que-muda-e-para-quem", "which-door-is-yours"], rotas:['documento','texto'], transcricoes:['estudo: unidades e índice, .texto-artigo.estudo-leitura, .texto-sumario e .estudo-sumario','dossie: unidades e índices com data-registo-unidade e data-registo-indice, conferidos pelo portão de HTML']};
 export const ISENCAO_RECIBOS = {nome:'recibos do livro-razão e séries',rotas:['linha','livro','livroConcelho','livroConcelhos','serie']};
+const isentaVoz2 = hit => (hit?.key==='documento' && Boolean(hit?.params.date)) || ISENCAO_VOZ2.estudos.includes(hit?.params.slug);
 const claims=loadClaims();
 const normal = s => s.replace(/\s+/g,' ').trim();
 const CLASSE_ANTERIOR = /\b(?:(?:est[ae]|[oa])\s+(?:sítio|página|peça|explicação|estudo|projeto|trabalho)|(?:this|the)\s+(?:site|page|piece|explainer|explanation|study|project|work))\s+(?:(?:ainda|também|só|apenas|still|also|only)\s+)?(?:não\b|nunca\b|é(?![A-Za-zÀ-ÿ])|foi\b|mostra\b|lê(?![A-Za-zÀ-ÿ])|diz\b|conta\b|apresenta\b|publica\b|reúne\b|compara\b|explica\b|is\b|was\b|does\b|doesn’t\b|doesn't\b|shows?\b|reads?\b|says?\b|presents?\b|compares?\b|explains?\b)|(?<![\p{L}])é\s+deste\s+projeto\b|\bis this project[’']s\b|\b(?:aqui\s+(?:(?:ainda|também|só)\s+)?(?:não|ainda|mostra|tem|têm|lê|diz|publica)|(?:não|nunca)[^.!?;]{0,65}\baqui|(?:not|never)[^.!?;]{0,65}\bhere)\b/iu;
@@ -22,6 +23,7 @@ const RAZOES = new Set(['facto de uma fonte','informação funcional','natureza 
 if(EXCECOES.some(e=>!e.rota||!e.frase||!e.razao||!RAZOES.has(e.classe)) || new Set(EXCECOES.map(e=>e.rota+'|'+e.frase)).size!==EXCECOES.length) throw new Error('VOZ-1: lista de exceções inválida');
 export function conferirProtecoes(root,rota,livro=claims) {
  const erros=[]; const hit=matchPath(rota);const lang=rota.startsWith('/en/')?'en':'pt';
+ if(!(ISENCAO_VOZ2.rotas.includes(hit?.key) && isentaVoz2(hit)) && /\bResearch\s*Hub\b/i.test(root.textContent)) erros.push('VOZ-2: nome do motor no texto do leitor');
  const ausencia=lang==='en'?'to be confirmed at the source':'por confirmar na fonte';
  if(root.querySelector('.marcador-definicao') || /um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado|a field not confirmed against the source, not a doubt about what is published/.test(root.textContent))erros.push('VOZ-1: definição do marcador reposta');
  for(const n of root.querySelectorAll('.marcador'))if(normal(n.textContent)!==ausencia)erros.push('VOZ-1: ausência fora da forma da edição');
@@ -44,13 +46,15 @@ export function medirPagina(html, rota, ledes = {}) {
  const protecao=conferirProtecoes(root,rota,claims);
  const marca=/\[\s*(?:a\s+verificar|to\s+verify)\s*\]/iu.test(corpo.textContent + ' ' + root.querySelectorAll('[data-marca], [aria-label], [title]').map(n=>[n.getAttribute('data-marca'),n.getAttribute('aria-label'),n.getAttribute('title')].join(' ')).join(' '));
  const hit=matchPath(rota);
- if(['metodo','sobre','privacidade',...ISENCAO_RECIBOS.rotas,...ISENCAO_VOZ2.rotas].includes(hit?.key)) return {marca,protecao,frases:[],ledes:[],isenta:true};
+ if(['metodo','sobre','privacidade',...ISENCAO_RECIBOS.rotas].includes(hit?.key) || (ISENCAO_VOZ2.rotas.includes(hit?.key) && isentaVoz2(hit))) return {marca,protecao,frases:[],ledes:[],isenta:true};
  const h1=corpo.querySelector('h1');
  const imediato = h1?.nextElementSibling?.tagName === 'P' ? h1.nextElementSibling : h1?.parentNode?.nextElementSibling?.tagName === 'P' ? h1.parentNode.nextElementSibling : null;
  const lede=imediato ? normal(imediato.textContent) : null;
  // Só transcrições explicitamente atribuídas: dados da agenda e frases das explicações entram.
  if(hit?.key==='dossie') corpo.querySelectorAll('[data-registo-unidade], [data-registo-indice]').forEach(n=>n.remove());
- if(hit?.key==='estudo') corpo.querySelectorAll('[data-registo-unidade], .texto-artigo.estudo-leitura, .estudo-indice, .texto-sumario, .estudo-sumario, [data-registo-indice]').forEach(n=>n.remove());
+ // As unidades transcritas e os índices continuam conferidos pela composição e pelo portão de HTML.
+ if(hit?.key==='estudo') corpo.querySelectorAll('[data-registo-unidade], .estudo-indice, [data-registo-indice]').filter(n=>!n.closest('.texto-artigo.estudo-leitura, .texto-sumario, .estudo-sumario')).forEach(n=>n.remove());
+ if(hit?.key==='estudo' && isentaVoz2(hit)) corpo.querySelectorAll('.texto-artigo.estudo-leitura, .texto-sumario, .estudo-sumario').forEach(n=>n.remove());
  const candidatas=corpo.querySelectorAll('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,div,section,article');
  const frases=[];
  for(const n of candidatas){
@@ -59,7 +63,7 @@ export function medirPagina(html, rota, ledes = {}) {
   if(CLASSE.test(texto)) frases.push(...frasesDoTexto(texto));
  }
  // As ledes editoriais são fechadas por rota e texto. Os campos calculados continuam conferidos pelas suas réguas.
- const ledesEncontradas=lede && !['data-explicacao-paragrafo','data-semana-frase','data-leitura-do-lugar','data-serie-o-que-conta','data-dossie-campo','data-dossie-ligacao','data-sugestoes-resultado','data-sugestoes-paragrafo','data-sucessor-edicao','data-verbatim'].some(k=>imediato.hasAttribute(k)) && !/^(?:lugar-leitura|serie-|livro-contas|estudo-descricao)/.test(imediato.classNames) ? [lede] : [];
+ const ledesEncontradas=lede && !ISENCAO_VOZ2.rotas.includes(hit?.key) && !['data-explicacao-paragrafo','data-semana-frase','data-leitura-do-lugar','data-serie-o-que-conta','data-dossie-campo','data-dossie-ligacao','data-sugestoes-resultado','data-sugestoes-paragrafo','data-sucessor-edicao','data-verbatim'].some(k=>imediato.hasAttribute(k)) && !/^(?:lugar-leitura|serie-|livro-contas|estudo-descricao)/.test(imediato.classNames) ? [lede] : [];
  const ledesNovas=ledesEncontradas.filter(t=>ledes[rota]!==t);
  const captadas=[...new Set(frases)];
  const permitidas=captadas.filter(f=>EXCECOES.some(e=>e.rota===rota && e.frase===f));

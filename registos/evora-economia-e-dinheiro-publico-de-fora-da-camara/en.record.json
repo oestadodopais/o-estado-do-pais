@@ -444,6 +444,13 @@
    "text": "The contracts section is an upper bound on a truncated window. Portal BASE holds 24 436 contracts for the concelho of Évora. 600 of them are the most recently published ones, spanning 2026-05-08 to 2026-08-04. A contract carried out across several municipalities is returned by each of their filters at its full value, so a concelho contract total is an upper bound and concelho totals must never be added together."
   },
   {
+   "emphasis": [
+    {
+     "end": 41,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [],
    "i": 18,
    "kind": "paragraph",
@@ -6830,7 +6837,7 @@
    "figures": [],
    "i": 93,
    "kind": "paragraph",
-   "text": "Portal BASE is Portugal's public contracts register. Recovery-plan grants and contract prices are different quantities."
+   "text": "Portal BASE is Portugal's public contracts register. Recovery-plan grants and contract prices are different quantities, and not a second measure of the same money."
   },
   {
    "i": 94,
@@ -7599,7 +7606,7 @@
      "value": "735 681"
     },
     {
-     "end": 466,
+     "end": 381,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -7610,13 +7617,13 @@
      "row": "base-multi-spelling-entities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 465,
+     "start": 380,
      "value": "5"
     }
    ],
    "i": 102,
    "kind": "paragraph",
-   "text": "The grouping rule is not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. The rule under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. Nothing available can distinguish an acronym prefix from a genuinely different body. So 5 is a floor on how many bodies file under more than one name, not a count. That is the shape of this whole register: a per-string count looks like a per-entity count and is not one."
+   "text": "The grouping rule is not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. The rule under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. So 5 is a floor on how many bodies file under more than one name, not a count. That is the shape of this whole register: a per-string count looks like a per-entity count and is not one."
   },
   {
    "emphasis": [
@@ -7626,9 +7633,9 @@
      "start": 236
     },
     {
-     "end": 571,
+     "end": 494,
      "kind": "em",
-     "start": 396
+     "start": 483
     }
    ],
    "figures": [
@@ -7653,7 +7660,7 @@
    ],
    "i": 103,
    "kind": "paragraph",
-   "text": "Across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity)."
+   "text": "Across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. The two registers use different names, and neither source states that they are the same entity. The contract objects themselves show that they are one body (inference)."
   },
   {
    "i": 104,
@@ -8319,7 +8326,7 @@
    "figures": [],
    "i": 110,
    "kind": "paragraph",
-   "text": "The one municipal document is not filed among the Tribunal's audit reports at all: its product family is Relatórios de Verificação Interna de Contas, the internal verification of a body's accounts for one financial year. Its subject is «Município de Évora - Gerência de 2016». The catalogue records the family and the title, and nothing more."
+   "text": "The one municipal document is not filed among the Tribunal's audit reports at all: its product family is Relatórios de Verificação Interna de Contas, the internal verification of a body's accounts for one financial year. Its subject is «Município de Évora - Gerência de 2016». The catalogue records the family and the title of that instrument, and nothing more: what it concludes, and how it differs in depth from an audit, is not recorded."
   },
   {
    "emphasis": [
@@ -8349,7 +8356,7 @@
    "i": 112,
    "kind": "heading",
    "level": 3,
-   "text": "Why a silence here is not a silence"
+   "text": "What remains unknown"
   },
   {
    "figures": [],
@@ -8473,20 +8480,27 @@
    "text": "The catalogue indexes abstracts, not report bodies. A thematic audit of how mainland municipalities fund their fire brigades carries no mention of Évora in its catalogue entry at all — and names the concelho 13 times in its own text, including its position in the Tribunal's own tables."
   },
   {
+   "emphasis": [
+    {
+     "end": 98,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [
     {
-     "end": 50,
+     "end": 60,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 46,
+     "start": 56,
      "value": "2019"
     }
    ],
    "i": 118,
    "kind": "paragraph",
-   "text": "In the four families, nothing published after 2019 names Évora in its title or abstract."
+   "text": "In the four families consulted, nothing published after 2019 names Évora in its title or abstract."
   },
   {
    "emphasis": [
@@ -8998,7 +9012,7 @@
    ],
    "i": 124,
    "kind": "paragraph",
-   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result means \"not found in the catalogue\", never \"not audited\"."
+   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result means \"not found in the catalogue\", not \"not audited\"."
   },
   {
    "emphasis": [
@@ -9973,18 +9987,18 @@
      "value": "111.5"
     },
     {
-     "end": 499,
+     "end": 426,
      "printed": "9 106",
      "row": "uevora-students",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 494,
+     "start": 421,
      "value": "9 106"
     }
    ],
    "i": 155,
    "kind": "paragraph",
-   "text": "6. The productivity gap is the compound finding. GVA per worker of €23 004 against €31 900 nationally, wages €1 282 against €1 362 (2022), a micro-enterprise base of 7 605 firms — and, at the same time, an above-average purchasing-power index of 111.5. The two measures are of different populations, and this study does not measure what explains the distance between them. The doors that act on the production side — innovation and qualification calls, research money through a university with 9 106 students, guarantee-backed investment credit — are the ones that are open."
+   "text": "6. The productivity gap is the compound finding. GVA per worker of €23 004 against €31 900 nationally, wages €1 282 against €1 362 (2022), a micro-enterprise base of 7 605 firms — and, at the same time, an above-average purchasing-power index of 111.5. The two measures are of different populations. The doors that act on the production side — innovation and qualification calls, research money through a university with 9 106 students, guarantee-backed investment credit — are the ones that are open."
   },
   {
    "figures": [],

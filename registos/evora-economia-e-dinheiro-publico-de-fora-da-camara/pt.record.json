@@ -309,6 +309,11 @@
     {
      "emphasis": [
       {
+       "end": 25,
+       "kind": "strong",
+       "start": 0
+      },
+      {
        "end": 206,
        "kind": "strong",
        "start": 198
@@ -395,7 +400,7 @@
   {
    "figures": [
     {
-     "end": 50,
+     "end": 51,
      "others": [
       "comp-c08-locations"
      ],
@@ -403,13 +408,13 @@
      "row": "tc-families",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 49,
+     "start": 50,
      "value": "4"
     }
    ],
    "i": 16,
    "kind": "paragraph",
-   "text": "O catálogo do Tribunal de Contas lido aqui cobre 4 das famílias de produtos do Tribunal, e não a totalidade delas."
+   "text": "O catálogo consultado do Tribunal de Contas cobre 4 das famílias de produtos do Tribunal, e não a totalidade delas."
   },
   {
    "emphasis": [
@@ -444,6 +449,13 @@
    "text": "A secção de contratos é um limite superior sobre uma janela truncada. O Portal BASE tem 24 436 contratos para o concelho de Évora. 600 deles são os publicados mais recentemente, entre 2026-05-08 e 2026-08-04. Um contrato executado em vários municípios é devolvido pelo filtro de cada um deles pelo seu valor integral, pelo que um total de contratos por concelho é um limite superior e os totais por concelho nunca podem ser somados entre si."
   },
   {
+   "emphasis": [
+    {
+     "end": 44,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [],
    "i": 18,
    "kind": "paragraph",
@@ -6830,7 +6842,7 @@
    "figures": [],
    "i": 93,
    "kind": "paragraph",
-   "text": "O Portal BASE é o registo de contratos públicos de Portugal. Os apoios do plano de recuperação e os preços de contratos são quantidades diferentes."
+   "text": "O Portal BASE é o registo de contratos públicos de Portugal. Os apoios do plano de recuperação e os preços de contratos são quantidades diferentes, e não uma segunda medida do mesmo dinheiro."
   },
   {
    "i": 94,
@@ -7599,7 +7611,7 @@
      "value": "735 681"
     },
     {
-     "end": 512,
+     "end": 401,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -7610,13 +7622,13 @@
      "row": "base-multi-spelling-entities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 511,
+     "start": 400,
      "value": "5"
     }
    ],
    "i": 102,
    "kind": "paragraph",
-   "text": "A regra de agrupamento não é do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. A regra funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. Nada do que está disponível consegue distinguir um prefixo de acrónimo de um organismo genuinamente diferente. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. É essa a forma deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é."
+   "text": "A regra de agrupamento não é do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. A regra funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. É essa a forma deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é."
   },
   {
    "emphasis": [
@@ -7626,9 +7638,9 @@
      "start": 229
     },
     {
-     "end": 588,
+     "end": 493,
      "kind": "em",
-     "start": 392
+     "start": 481
     }
    ],
    "figures": [
@@ -7653,7 +7665,7 @@
    ],
    "i": 103,
    "kind": "paragraph",
-   "text": "As duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., com €7 746 863 contratados e €563 527 pagos. Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade)."
+   "text": "As duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., com €7 746 863 contratados e €563 527 pagos. Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência)."
   },
   {
    "i": 104,
@@ -8319,7 +8331,7 @@
    "figures": [],
    "i": 110,
    "kind": "paragraph",
-   "text": "O documento municipal não está sequer arquivado entre os relatórios de auditoria do Tribunal: a sua família de produto é Relatórios de Verificação Interna de Contas, a verificação interna das contas de um organismo relativas a um ano económico. O seu assunto é «Município de Évora - Gerência de 2016». O catálogo regista a família e o título, e nada além disso."
+   "text": "O documento municipal não está sequer arquivado entre os relatórios de auditoria do Tribunal: a sua família de produto é Relatórios de Verificação Interna de Contas, a verificação interna das contas de um organismo relativas a um ano económico. O seu assunto é «Município de Évora - Gerência de 2016». O catálogo regista a família e o título desse instrumento, e nada além disso: o que ele conclui, e em que medida difere em profundidade de uma auditoria, não consta."
   },
   {
    "emphasis": [
@@ -8349,13 +8361,7 @@
    "i": 112,
    "kind": "heading",
    "level": 3,
-   "text": "Porque é que um silêncio aqui não é um silêncio"
-  },
-  {
-   "figures": [],
-   "i": 113,
-   "kind": "paragraph",
-   "text": "Dois pontos cegos."
+   "text": "O que fica por saber"
   },
   {
    "emphasis": [
@@ -8398,12 +8404,12 @@
      "value": "2"
     }
    ],
-   "i": 114,
+   "i": 113,
    "kind": "paragraph",
    "text": "As quatro famílias não são a produção do Tribunal. São quatro das famílias de produtos que ele publica. Uma quinta — Relatórios de Apuramento de Responsabilidades, 192 documentos — contém 2 relatórios cujo assunto é o próprio Município de Évora:"
   },
   {
-   "i": 115,
+   "i": 114,
    "items": [
     {
      "figures": [],
@@ -8433,7 +8439,7 @@
   },
   {
    "figures": [],
-   "i": 116,
+   "i": 115,
    "kind": "paragraph",
    "text": "Portanto, a verdadeira contagem de documentos catalogados do Tribunal sobre este município é de pelo menos três, e não de um, e a pesquisa por quatro famílias não consegue ver dois deles."
   },
@@ -8461,7 +8467,7 @@
      "value": "13"
     }
    ],
-   "i": 117,
+   "i": 116,
    "kind": "paragraph",
    "links": [
     {
@@ -8473,20 +8479,27 @@
    "text": "O catálogo indexa resumos, não os corpos dos relatórios. Uma auditoria temática sobre a forma como os municípios do continente financiam os seus corpos de bombeiros não traz qualquer menção a Évora na sua entrada de catálogo — e nomeia o concelho 13 vezes no seu próprio texto, incluindo a sua posição nas tabelas do próprio Tribunal."
   },
   {
+   "emphasis": [
+    {
+     "end": 99,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [
     {
-     "end": 50,
+     "end": 62,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 46,
+     "start": 58,
      "value": "2019"
     }
    ],
-   "i": 118,
+   "i": 117,
    "kind": "paragraph",
-   "text": "Nas quatro famílias, nada publicado depois de 2019 nomeia Évora no título ou no resumo."
+   "text": "Nas quatro famílias consultadas, nada publicado depois de 2019 nomeia Évora no título ou no resumo."
   },
   {
    "emphasis": [
@@ -8534,25 +8547,25 @@
      "value": "308"
     }
    ],
-   "i": 119,
+   "i": 118,
    "kind": "paragraph",
    "text": "Évora é um nome invulgarmente limpo para pesquisar: 0 riscos estruturais contra ele, isto é, sem risco estrutural de sobre-correspondência. Não é um dos dois nomes de município portugueses que pertencem a dois lugares ao mesmo tempo, e não é uma palavra inteira dentro do nome de um município mais longo. O repertório é a lista viva do próprio INE, com 308 municípios. Nomes que falham esses testes comportam-se de forma muito diferente — uma pesquisa por «Guarda» neste catálogo devolve a guarda nacional, e não a cidade."
   },
   {
    "figures": [],
-   "i": 120,
+   "i": 119,
    "kind": "heading",
    "level": 3,
    "text": "Os nomes do lado do dinheiro, no catálogo de auditorias"
   },
   {
    "figures": [],
-   "i": 121,
+   "i": 120,
    "kind": "paragraph",
    "text": "A única junção que a fonte permite é uma junção sobre palavras."
   },
   {
-   "i": 122,
+   "i": 121,
    "kind": "table",
    "rows": [
     [
@@ -8926,7 +8939,7 @@
      "value": "2"
     }
    ],
-   "i": 123,
+   "i": 122,
    "kind": "paragraph",
    "text": "O instituto da habitação está duas vezes nessa tabela. Sob o nome que o registo do plano de recuperação lhe dá, o catálogo devolve 0. Sob o seu acrónimo o catálogo devolve 2 — o Tribunal escreve Instituto de Habitação e Reabilitação Urbana, sem os dois «da» que o outro registo usa, pelo que uma correspondência exata de símbolos vê dois organismos diferentes. O primeiro número é um zero falso. A mesma fragilidade corre em sentido contrário na tabela acima: o resumo de 2008 do próprio Tribunal escreve «Universidade do Évora», que o nome correto da universidade não faz corresponder, pelo que a contagem de 2 da universidade fica ela própria uma unidade abaixo dos documentos que a nomeiam."
   },
@@ -8996,9 +9009,9 @@
      "value": "1"
     }
    ],
-   "i": 124,
+   "i": 123,
    "kind": "paragraph",
-   "text": "Um zero nessa tabela é, por isso, um sinal fraco, e por três razões. Um nome pode estar escrito de outra forma, como aqui. O resumo pode simplesmente não nomear o organismo mesmo quando o relatório é sobre ele, e as próprias bibliotecas reportam ter mais itens do que a interface devolve — 10 linhas ao todo: 2 na biblioteca de relatórios de auditoria, 7 na verificação externa de contas e 1 na verificação interna, sem causa estabelecida e com a paginação a não as recuperar. Um resultado nulo significa «não encontrado no catálogo», nunca «não auditado»."
+   "text": "Um zero nessa tabela é, por isso, um sinal fraco, e por três razões. Um nome pode estar escrito de outra forma, como aqui. O resumo pode simplesmente não nomear o organismo mesmo quando o relatório é sobre ele, e as próprias bibliotecas reportam ter mais itens do que a interface devolve — 10 linhas ao todo: 2 na biblioteca de relatórios de auditoria, 7 na verificação externa de contas e 1 na verificação interna, sem causa estabelecida e com a paginação a não as recuperar. Um resultado nulo significa «não encontrado no catálogo», não «não auditado»."
   },
   {
    "emphasis": [
@@ -9036,24 +9049,24 @@
      "value": "7"
     }
    ],
-   "i": 125,
+   "i": 124,
    "kind": "paragraph",
    "text": "O fragmento de nome do hospital «Espírito Santo» devolve 8 documentos, dos quais 7 nomeiam o Hospital Divino Espírito Santo de Ponta Delgada — um hospital diferente, nos Açores. As palavras corresponderam; o assunto não. Só um dos oito é o hospital de Évora."
   },
   {
-   "i": 126,
+   "i": 125,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 127,
+   "i": 126,
    "kind": "heading",
    "level": 2,
    "text": "O que os dados da UE não conseguem dizer"
   },
   {
    "figures": [],
-   "i": 128,
+   "i": 127,
    "kind": "paragraph",
    "text": "Não existe um valor da UE para o concelho de Évora. A granularidade não existe na fonte."
   },
@@ -9084,7 +9097,7 @@
      "value": "2 569"
     }
    ],
-   "i": 129,
+   "i": 128,
    "kind": "paragraph",
    "text": "O conjunto de dados da UE ao nível de projeto coloca 2 569 projetos na região NUTS3 que contém Évora, à qual chama Alentejo Central. Os 2 569 carregam, sem exceção, o período de programação 2014-2020 — um ciclo de financiamento anterior, e um instrumento diferente do plano de recuperação. Pôr os dois lado a lado seria comparar coisas diferentes. O conjunto de dados não tem campo de concelho e, para Portugal, o código postal está vazio em cada linha."
   },
@@ -9106,7 +9119,7 @@
      "value": "14"
     }
    ],
-   "i": 130,
+   "i": 129,
    "kind": "paragraph",
    "text": "O tamanho do problema de agregação é o que está em causa. O Alentejo Central contém 14 municípios, segundo a própria dimensão geográfica do INE: Alandroal, Arraiolos, Borba, Estremoz, Montemor-o-Novo, Mora, Mourão, Portel, Redondo, Reguengos de Monsaraz, Vendas Novas, Viana do Alentejo, Vila Viçosa, Évora. Um valor para essa região é um valor para todos eles."
   },
@@ -9125,36 +9138,36 @@
      "value": "25"
     }
    ],
-   "i": 131,
+   "i": 130,
    "kind": "paragraph",
    "text": "O PRR publica a versão mais antiga da NUTS — a mesma dimensão traz 25 entradas NUTS3 — enquanto os dados de projetos da UE usam uma versão mais recente. Ambos chamam à região Alentejo Central; os códigos não são intermutáveis, e passar um ao outro devolve zero linhas com um estado HTTP perfeitamente saudável."
   },
   {
-   "i": 132,
+   "i": 131,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 133,
+   "i": 132,
    "kind": "heading",
    "level": 2,
    "text": "As portas de financiamento, a 2026-08-10"
   },
   {
    "figures": [],
-   "i": 134,
+   "i": 133,
    "kind": "paragraph",
    "text": "Este anexo é o retrato de um dia, 2026-08-10, e não foi relido. À data desta edição, 2026-09-30, os prazos citados até 2026-09-09 já passaram; os outros ficam como as fontes os escreviam nesse dia."
   },
   {
    "figures": [],
-   "i": 135,
+   "i": 134,
    "kind": "paragraph",
    "text": "Em todos os sistemas ao alcance de um ator de Évora, a 2026-08-10."
   },
   {
    "figures": [],
-   "i": 136,
+   "i": 135,
    "kind": "heading",
    "level": 3,
    "text": "Portugal 2030"
@@ -9356,13 +9369,13 @@
      "value": "1"
     }
    ],
-   "i": 137,
+   "i": 136,
    "kind": "paragraph",
    "text": "204 avisos estavam abertos a nível nacional; 72 deles — com 1 156 524 348 euros de dotação, contando nos concursos multirregião apenas as fatias que os seus programas alcançáveis reservam — pertencem a programas ao alcance de um ator de Évora (limite 2: um teto). 28 são avisos próprios do programa regional do Alentejo, com 186 749 100 euros; concursos nacionais multirregião reservam fatias alentejanas adicionais. Desde o retrato do registo de 2026-08-08, 7 dos seus concursos já não estão abertos — 5 deles removidos da listagem do portal antes das datas de fecho publicadas — e 0 abriram. Por classe de quem-pode-candidatar-se, dos avisos alcançáveis: municípios e autarquias podem candidatar-se a 32, associações e entidades sem fins lucrativos a 39, empresas a 16, universidades e entidades de I&D a 13 — e pessoas singulares a 1. Os prazos mais próximos entre os avisos alcançáveis: «Capacitação de Atores e Redes – Parcerias para a Coesão não Urbanas - Alentejo» fecha a 2026-08-14, «RAM - Medidas de adaptação às alterações climáticas - 5.º Aviso» a 2026-08-19, «Reabilitação da aerogare do aeródromo de São Jorge» a 2026-08-20."
   },
   {
    "figures": [],
-   "i": 138,
+   "i": 137,
    "kind": "heading",
    "level": 3,
    "text": "Os sistemas que o Portugal 2030 não cobre"
@@ -9394,7 +9407,7 @@
      "value": "44"
     }
    ],
-   "i": 139,
+   "i": 138,
    "kind": "paragraph",
    "text": "60 instrumentos no PEPAC/IFAP, PRR, IEFP, Turismo de Portugal, Banco Português de Fomento, FCT, DGArtes e nos programas diretos da UE; 44 estavam abertos ou em contínuo a 2026-08-10. O que sobressai, por ator:"
   },
@@ -9422,7 +9435,7 @@
      "value": "6"
     }
    ],
-   "i": 140,
+   "i": 139,
    "kind": "paragraph",
    "text": "Para um agricultor ou proprietário — as janelas do PEPAC atualmente abertas são todas de florestas, organizações de produtores ou fitossanidade (6); nenhuma janela de investimento produtivo agrícola estava aberta, e o período dos jovens agricultores fechou em dezembro de 2025. O Pedido Único anual de pagamentos diretos corre no seu próprio calendário, e o dinheiro LEADER flui através do GAL de cada território."
   },
@@ -9460,7 +9473,7 @@
      "value": "0"
     }
    ],
-   "i": 141,
+   "i": 140,
    "kind": "paragraph",
    "text": "Para uma empresa — as janelas concorrenciais do PRR estão na prática encerradas: 0 avisos comprovadamente abertos a novas candidaturas, segundo o próprio plano de avisos de 2026 do programa. O que as substitui é crédito e garantias: as linhas em contínuo do Banco Português de Fomento (garantias InvestEU, crédito de resiliência energética até 2026-12-31, descarbonização, e a linha de garantias PT2030 que antecipa parte de um incentivo aprovado), mais os avisos para empresas do Portugal 2030 acima."
   },
@@ -9474,7 +9487,7 @@
    ],
    "figures": [
     {
-     "end": 154,
+     "end": 153,
      "others": [
       "comp-c16-locations"
      ],
@@ -9482,40 +9495,40 @@
      "row": "door-qualificacao-pct",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 152,
+     "start": 151,
      "value": "80"
     },
     {
-     "end": 199,
+     "end": 198,
      "printed": "3 000 000",
      "row": "door-qualificacao-max",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 190,
+     "start": 189,
      "value": "3 000 000"
     },
     {
-     "end": 275,
+     "end": 274,
      "printed": "30 000 000",
      "row": "door-crescer-eur",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 265,
+     "start": 264,
      "value": "30 000 000"
     },
     {
-     "end": 406,
+     "end": 405,
      "printed": "30 000",
      "row": "door-microcredito-max",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 400,
+     "start": 399,
      "value": "30 000"
     }
    ],
-   "i": 142,
+   "i": 141,
    "kind": "paragraph",
-   "text": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade."
+   "text": "Para uma empresa de turismo, o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade. Se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial."
   },
   {
    "emphasis": [
@@ -9548,7 +9561,7 @@
      "value": "537.13"
     }
    ],
-   "i": 143,
+   "i": 142,
    "kind": "paragraph",
    "text": "Para um empregador — a medida +Emprego do IEFP paga 12 vezes o IAS (2026: 537,13 euros) com majorações por contratações sem termo de desempregados inscritos; as candidaturas correm até 2026-12-15, e a própria oferta de emprego tem de ser comunicada ao IEFP até 2026-12-02. As janelas de estágios de 2026 (INICIAR, +Talento) fecharam em julho e reabrem no calendário do próximo ano; os estágios de inserção para pessoas com deficiência e o apoio à mobilidade geográfica estão abertos todo o ano."
   },
@@ -9613,7 +9626,7 @@
      "value": "12 500 000"
     }
    ],
-   "i": 144,
+   "i": 143,
    "kind": "paragraph",
    "text": "Para quem começa sozinho — a quase-ausência de pessoas singulares do Portugal 2030 (1 aviso alcançável) é estrutural, não um lapso. As portas do indivíduo são as medidas de criação do próprio emprego do IEFP apoiadas na linha Fomento MicroInvest (crédito até 20 000 euros, Invest+ até 100 000 euros) e, para entidades da economia social, a linha Social Investe de 12 500 000 euros."
   },
@@ -9645,7 +9658,7 @@
      "value": "399"
     }
    ],
-   "i": 145,
+   "i": 144,
    "kind": "paragraph",
    "text": "Para a universidade e investigadores — a FCT tinha seis concursos abertos a 2026-08-10 (mobilidade bilateral com a Alemanha e a França, computação avançada, um prémio de saúde, colocações em Berkeley) com as grandes portas anuais (bolsas de doutoramento, emprego científico, projetos IC&DT) em calendários publicados de 2026-2027; a ERC Starting Grant 2027 fecha a 2026-10-14 (até 1,5 milhões de euros); o concurso de pós-doutoramento MSCA (399 milhões de euros) fecha a 2026-09-09."
   },
@@ -9673,7 +9686,7 @@
      "value": "1 620 000"
     }
    ],
-   "i": 146,
+   "i": 145,
    "kind": "paragraph",
    "text": "Para a cultura — o ecossistema Évora 2027 — a DGArtes tem um concurso aberto até 2026-09-09 para criar e fazer funcionar a Orquestra Regional do Alentejo: 1 620 000 euros ao longo de dois anos, restrito a associações culturais sem fins lucrativos com sede no Alentejo. O Europa Criativa e os avisos de cultura do ALT2030 são as portas contínuas."
   },
@@ -9686,20 +9699,20 @@
     }
    ],
    "figures": [],
-   "i": 147,
+   "i": 146,
    "kind": "paragraph",
    "text": "UE direta — os cut-offs restantes de 2026 do EIC Accelerator (setembro e novembro), os concursos abertos do Interreg Sudoe sobre fogos rurais e envelhecimento, os concursos LIFE de 2026, o Erasmus+, e a rede de incubação da ESA para start-ups de tecnologia espacial — um encaixe natural para uma cidade cujas exportações são um terço peças de aeronaves — são todas portas vivas; o detalhe por concurso vive nos portais da UE."
   },
   {
    "figures": [],
-   "i": 148,
+   "i": 147,
    "kind": "heading",
    "level": 2,
    "text": "Onde está a margem por explorar"
   },
   {
    "figures": [],
-   "i": 149,
+   "i": 148,
    "kind": "paragraph",
    "text": "As portas de financiamento que esta secção cita são as do anexo, lidas a 2026-08-10; os prazos até 2026-09-09 já passaram, como o anexo diz."
   },
@@ -9758,7 +9771,7 @@
      "value": "21.5"
     }
    ],
-   "i": 150,
+   "i": 149,
    "kind": "paragraph",
    "text": "1. O polo aeroespacial exporta muito mais do que alimenta localmente. Só o capítulo 88 exporta 199 951 040 euros, mas a divisão 30 mostra 24 573 447 euros de VAB e 914 postos de trabalho, e quatro empresas detêm 21,5% de todo o VAB empresarial. A distância entre um número de exportação à escala mundial e um valor acrescentado local modesto é o retrato de uma base de fornecedores fina: maquinação, tratamento, ferramentas, logística e serviços de certificação em torno de três fábricas-âncora são os pontos de entrada clássicos, e a geometria do financiamento encaixa — as linhas de garantia do BPF estão em contínuo, os avisos para empresas do PT2030 estão abertos, e a incubação ESA BIC existe exatamente para essa adjacência. A última âncora contratada pelo Estado tem uma década; a segunda linha de fornecedores nunca foi contratada."
   },
@@ -9799,7 +9812,7 @@
      "value": "3 000 000"
     }
    ],
-   "i": 151,
+   "i": 150,
    "kind": "paragraph",
    "text": "2. O estrangulamento do turismo é a estadia curta, e o ano de Capital da Cultura vai testar capacidade que o setor não construiu. A intensidade já corre bem acima da média nacional, mas o hóspede médio fica 1,7 noites e os proveitos totais do alojamento são 53 779 000 euros — um perfil de passagem, com 2027 prestes a multiplicar procura em cima dele. As portas estão abertas agora — Qualificação da Oferta até 3 000 000 euros por projeto, Crescer com o Turismo até ao fim de 2026 — e fecham antes de o pico de procura chegar. O investimento em capacidade e em alongamento da estadia feito em 2026 chega ao teste de 2027; o decidido em 2027 não."
   },
@@ -9822,7 +9835,7 @@
      "value": "1 620 000"
     }
    ],
-   "i": 152,
+   "i": 151,
    "kind": "paragraph",
    "links": [
     {
@@ -9861,7 +9874,7 @@
      "value": "65 103 634"
     }
    ],
-   "i": 153,
+   "i": 152,
    "kind": "paragraph",
    "text": "4. A porta do campo não está onde está o seu dinheiro. A agricultura gera 45 228 740 euros de VAB empresarial e 65 103 634 euros de exportações de animais vivos, mas as janelas abertas do PEPAC são só de florestas e o Portugal 2030 exclui estruturalmente os agricultores. A 2026-08-10, as janelas abertas a um proprietário de Évora eram os seis concursos florestais e de ecossistemas com prazos entre agosto e setembro de 2026, e esses prazos já passaram; era dinheiro para o montado, não para o efetivo. Quem espera pela próxima janela de investimento produtivo ou de jovens agricultores espera pelo calendário do IFAP, não pelo do Portugal 2030."
   },
@@ -9902,7 +9915,7 @@
      "value": "2 106"
     }
    ],
-   "i": 154,
+   "i": 153,
    "kind": "paragraph",
    "text": "5. A execução da própria cidade é o estrangulamento silencioso. 102 624 704 euros de PRR atribuídos a Évora estão, no instantâneo de 2026-08-19, em localizações fora de prazo enquanto a secção da construção já gera 49 641 927 euros de VAB com 2 106 trabalhadores. Os prazos (o PRR fecha em 2026) transformam aprovações por construir em dinheiro perdido; a capacidade de execução — gestão de projeto, empreiteiros licenciados, fiscalização de obra — é ela própria um mercado em Évora exatamente enquanto o atraso existir."
   },
@@ -9973,28 +9986,28 @@
      "value": "111.5"
     },
     {
-     "end": 532,
+     "end": 471,
      "printed": "9 106",
      "row": "uevora-students",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 527,
+     "start": 466,
      "value": "9 106"
     }
    ],
-   "i": 155,
+   "i": 154,
    "kind": "paragraph",
-   "text": "6. O défice de produtividade é a conclusão composta. VAB por trabalhador de 23 004 euros contra 31 900 euros a nível nacional, salários de 1 282 euros contra 1 362 euros (2022), uma base de 7 605 microempresas — e, ao mesmo tempo, um índice de poder de compra acima da média, de 111,5. As duas medidas são de populações diferentes, e este estudo não mede o que explica a distância entre elas. As portas que atuam do lado da produção — avisos de inovação e qualificação, dinheiro de investigação através de uma universidade com 9 106 estudantes, crédito de investimento com garantia — são as que estão abertas."
+   "text": "6. O défice de produtividade é a conclusão composta. VAB por trabalhador de 23 004 euros contra 31 900 euros a nível nacional, salários de 1 282 euros contra 1 362 euros (2022), uma base de 7 605 microempresas — e, ao mesmo tempo, um índice de poder de compra acima da média, de 111,5. As duas medidas são de populações diferentes. As portas que atuam do lado da produção — avisos de inovação e qualificação, dinheiro de investigação através de uma universidade com 9 106 estudantes, crédito de investimento com garantia — são as que estão abertas."
   },
   {
    "figures": [],
-   "i": 156,
+   "i": 155,
    "kind": "heading",
    "level": 2,
    "text": "Fontes"
   },
   {
-   "i": 157,
+   "i": 156,
    "kind": "table",
    "rows": [
     [
@@ -10164,7 +10177,7 @@
    ]
   },
   {
-   "i": 158,
+   "i": 157,
    "items": [
     {
      "emphasis": [
@@ -10182,7 +10195,7 @@
    "ordered": false
   },
   {
-   "i": 159,
+   "i": 158,
    "items": [
     {
      "emphasis": [
@@ -10201,7 +10214,7 @@
   },
   {
    "figures": [],
-   "i": 160,
+   "i": 159,
    "kind": "paragraph",
    "text": "Lacunas das séries. As séries municipais de população e de dormidas não existem antes de 2011."
   }

@@ -135,7 +135,7 @@
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "The programme is behind what the team told the panel. In mid 2025 there were still 85% of the projects to be contracted, and the team promised every contract by September 2025 and the full programme announced in September 2026. At the date of this reading, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026."
+   "text": "The programme is behind what the team told the panel. In mid 2025 there were still 85% of the projects to be contracted, and the team promised every contract by September 2025 and the full programme announced in September 2026. At the date of access, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026."
   },
   {
    "emphasis": [
@@ -219,17 +219,10 @@
    "text": "This document puts three things side by side: what Évora's bid for European Capital of Culture said it would do, what the European Commission's expert panel wrote about it and on what date, and what money is written into public acts, by whom and for what."
   },
   {
-   "emphasis": [
-    {
-     "end": 40,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [],
    "i": 14,
    "kind": "paragraph",
-   "text": "The panel judges, this project does not. The expert panel has a published mandate and writes dated reports; O Estado do País quotes them. There is no delivery status here, no colours, no tally of promises kept against promises broken. Every cell names the document, the page and the date."
+   "text": "The expert panel has a published mandate and writes dated reports; O Estado do País quotes them. Every cell names the document, the page and the date."
   },
   {
    "emphasis": [
@@ -242,7 +235,7 @@
    "figures": [],
    "i": 15,
    "kind": "paragraph",
-   "text": "Only a commitment carrying a figure or a deadline enters as a promise. A commitment with no value and no date cannot be checked, and this document says so rather than turning it into a judgement."
+   "text": "Only a commitment carrying a figure or a deadline enters as a promise."
   },
   {
    "emphasis": [
@@ -255,7 +248,7 @@
    "figures": [],
    "i": 16,
    "kind": "paragraph",
-   "text": "The three cost aggregates do not agree, and no document bridges them. The panel writes one overall budget; the bid book writes another; the cooperation protocol of June 2023, as the association's activity plan splits it, writes a third. Each enters this document with the construction its own source declares, and never added together. Adding items from different documents would manufacture a figure: the sources overlap, they use different reference years, and they mix what is planned with what is paid."
+   "text": "The three cost aggregates do not agree, and no document bridges them. The panel writes one overall budget; the bid book writes another; the cooperation protocol of June 2023, as the association's activity plan splits it, writes a third. Each figure has the construction its own source declares. Adding items from different documents would manufacture a figure: the sources overlap, they use different reference years, and they mix what is planned with what is paid."
   },
   {
    "emphasis": [
@@ -268,7 +261,7 @@
    "figures": [],
    "i": 17,
    "kind": "paragraph",
-   "text": "Every figure is written the way its own document writes it. That is why two thousands separators and two spellings of the same value appear: the bid book writes a space, the association's activity plan writes a dot, and this document standardises neither. Where an official document contradicts itself, both readings stay, side by side, with no choice made between them."
+   "text": "Every figure is written the way its own document writes it. That is why two thousands separators and two spellings of the same value appear: the bid book writes a space, the association's activity plan writes a dot. Where an official document contradicts itself, both readings stay, side by side, with no choice made between them."
   },
   {
    "emphasis": [
@@ -291,20 +284,20 @@
      "start": 0
     },
     {
-     "end": 413,
+     "end": 389,
      "kind": "strong",
-     "start": 321
+     "start": 297
     }
    ],
    "figures": [],
    "i": 19,
    "kind": "paragraph",
-   "text": "The sources are closed. Everything here comes from the 53 reads registered on 2026-09-15 and listed one by one at the end; 43 answered and 10 did not. Nothing else was read and nothing else is quoted: no press, no encyclopaedias, no site outside that list. What is missing is stated in the section on what was not found. Quotations stay in the language the source wrote them in, in both editions of this document: the European panel writes in English and the acts of the Portuguese State write in Portuguese, and translating either would be rewriting it."
+   "text": "The sources are closed. Of the 53 reads registered on 2026-09-15 and listed one by one at the end, 43 answered and 10 did not. Nothing else was read and nothing else is quoted: no press, no encyclopaedias, no site outside that list. What is missing is stated in the section on what was not found. Quotations stay in the language the source wrote them in, in both editions of this document: the European panel writes in English and the acts of the Portuguese State write in Portuguese, and translating either would be rewriting it."
   },
   {
    "emphasis": [
     {
-     "end": 35,
+     "end": 24,
      "kind": "strong",
      "start": 0
     }
@@ -312,7 +305,7 @@
    "figures": [],
    "i": 20,
    "kind": "paragraph",
-   "text": "What this document does not answer. What Évora 2027 has cost in total. What contracts the association signed and with whom. How much the municipality actually transferred. What the 2027 programme is. Whether the Melina Mercouri Prize will be paid. None of these has an answer in the documents read, and each one carries its reason further down."
+   "text": "What remains unanswered. What Évora 2027 has cost in total. What contracts the association signed and with whom. How much the municipality actually transferred. What the 2027 programme is. Whether the Melina Mercouri Prize will be paid. None of these has an answer in the documents read, and each one carries its reason further down."
   },
   {
    "i": 21,
@@ -745,7 +738,7 @@
    "figures": [],
    "i": 29,
    "kind": "paragraph",
-   "text": "A promise is matched to a judgement here only by the object both documents name: a venue, a budget line, the team, contracting, the overall budget, the prize. Nothing is inferred. Where the panel wrote nothing about an object, the cell says so; where the panel's judgement has no matching promise, the bid cell says which pages were searched."
+   "text": "A promise is matched to a judgement here only by the object both documents name: a venue, a budget line, the team, contracting, the overall budget, the prize. Nothing is inferred."
   },
   {
    "figures": [],
@@ -1981,7 +1974,7 @@
    "figures": [],
    "i": 55,
    "kind": "paragraph",
-   "text": "The address of the programming document the association publishes writes «31MAR26», and the document covers the year 2026, not 2027. At the date of this reading, the association's most recent published news item is from August 2026 and does not announce the 2027 programme."
+   "text": "The address of the programming document the association publishes writes «31MAR26», and the document covers the year 2026, not 2027. At the date of access, the association's most recent published news item is from August 2026 and does not announce the 2027 programme."
   },
   {
    "figures": [],
@@ -5435,7 +5428,7 @@
    "figures": [],
    "i": 109,
    "kind": "paragraph",
-   "text": "No document read bridges these three aggregates. They are built in different ways, they use different reference years, and the document that could link them, the cooperation protocol of June 2023, is not published. This project neither adds them nor chooses between them."
+   "text": "No document read bridges these three aggregates. They are built in different ways, they use different reference years, and the document that could link them, the cooperation protocol of June 2023, is not published."
   },
   {
    "i": 110,
@@ -5467,7 +5460,7 @@
      {
       "figures": [],
       "header": true,
-      "text": "why it has no answer here"
+      "text": "why there is no answer"
      }
     ],
     [
@@ -5477,7 +5470,7 @@
      },
      {
       "figures": [],
-      "text": "Portal BASE refused all three requests of this reading, each time with the same firewall page, and no document read here lists contracts, contractors or values. An earlier reading of this project, in the study «Évora — Prometido, Pago, Auditado 2026», managed to read the portal and counts the association's contracts in its window; the crossing of the two readings is left to the contracts block"
+      "text": "Portal BASE refused all three requests, each time with the same firewall page, and none of the documents read lists contracts, contractors or values. An earlier reading of this project, in the study «Évora — Prometido, Pago, Auditado 2026», managed to read the portal and counts the association's contracts in its window; the crossing of the two readings is left to the contracts block"
      }
     ],
     [
@@ -5507,7 +5500,7 @@
      },
      {
       "figures": [],
-      "text": "The 2025 report and accounts writes «- €» on the municipality's line, which is a line with no value, and the 2026 plan writes that there are no confirmed values. The municipal documents read are forecasts; the execution accounts did not enter this reading"
+      "text": "The 2025 report and accounts writes «- €» on the municipality's line, which is a line with no value, and the 2026 plan writes that there are no confirmed values. The municipal documents read are forecasts; none of them is an execution account"
      }
     ],
     [
@@ -5537,7 +5530,7 @@
      },
      {
       "figures": [],
-      "text": "It is not published at the date of this reading. The programming document available is the 2026 one"
+      "text": "It is not published at the date of access. The programming document available is the 2026 one"
      }
     ],
     [
@@ -5587,7 +5580,7 @@
      },
      {
       "figures": [],
-      "text": "Possible in principle, because the published notices give the direction of the vote, but it requires reading the council minutes and notices, which this reading did not do"
+      "text": "Possible in principle, because the published notices give the direction of the vote, but it requires reading the council minutes and notices"
      }
     ],
     [
@@ -5606,7 +5599,7 @@
    "figures": [],
    "i": 114,
    "kind": "paragraph",
-   "text": "Two readings were not made, and are stated here: the Union decision governing the European Capitals of Culture returned an empty body on all three paths attempted, and the mid-term evaluation of the European Capitals of Culture action was not opened at source. What is known of the decision's content comes from how the panel's report and the competition rules quote it, both official documents, but the legal text itself remains unconfirmed."
+   "text": "The Union decision governing the European Capitals of Culture returned an empty body on all three paths attempted. What is known of the decision's content comes from how the panel's report and the competition rules quote it, both official documents, but the legal text itself remains unconfirmed."
   },
   {
    "i": 115,
@@ -5775,7 +5768,7 @@
    "figures": [],
    "i": 125,
    "kind": "paragraph",
-   "text": "The decree-law that creates the association obliges it to publish the identity of the members of its governing bodies, and this page is that publication. The remuneration, which the same rule obliges it to publish, is in no document read."
+   "text": "The decree-law that creates the association obliges it to publish the identity of the members of its governing bodies. The remuneration, which the same rule obliges it to publish, is in no document read."
   },
   {
    "i": 126,
@@ -5792,7 +5785,7 @@
    "figures": [],
    "i": 128,
    "kind": "paragraph",
-   "text": "The closed list of the reads of 2026-09-15. The sha256 digest, the byte count and the content type of every response are in the manifest of the copies, which travels with this study. The copies are archived outside any public repository."
+   "text": "The closed list of the reads of 2026-09-15. The copies are archived outside any public repository."
   },
   {
    "i": 129,

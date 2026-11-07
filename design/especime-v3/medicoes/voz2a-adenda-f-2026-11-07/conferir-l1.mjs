@@ -1,0 +1,46 @@
+/** VOZ-2A F: base corrigida pela MET1 D, seguida das treze novas rotas de arquivo. */
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+import {parse} from 'node-html-parser';
+import {load} from 'js-yaml';
+const pasta='design/especime-v3/medicoes/voz2a-adenda-f-2026-11-07';
+const origem='design/especime-v3/medicoes/ev3-p-adenda-c-2026-11-06/l1.json';
+const antiga=JSON.parse(fs.readFileSync(origem));
+const lerGit=(ref,f)=>execFileSync('git',['show',ref+':'+f],{encoding:'utf8'});
+const texto=fs.readFileSync(process.argv[2],'utf8').replace(/\x1b\[[0-9;]*m/g,'');
+const paginas=Object.fromEntries([...texto.matchAll(/^ {6}· (\/\S*) · (\d+) destinos repetidos \(ex\.: (\S+) ×(\d+)\)/gm)].map(m=>[m[1],{destinos:+m[2],exemplo:m[3],vezes:+m[4]}]));
+const novas=Object.keys(paginas).filter(r=>!Object.hasOwn(antiga.paginas,r)).sort();
+const retiradas=Object.keys(antiga.paginas).filter(r=>!Object.hasOwn(paginas,r)).sort();
+const antes=load(lerGit('14f931195','studies-src/manifest.yml'));
+const depois=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
+const esperadas=depois.edicoes.flatMap(e=>{
+ const anterior=antes.edicoes.find(a=>a.slug===e.slug&&a.lang===e.lang);
+ if(e.edicoes.at(-1).data===anterior.edicoes.at(-1).data)return [];
+ const v=anterior.edicoes.at(-1);
+ return [(e.lang==='pt'?'/estudos/':'/en/studies/')+e.slug+(e.lang==='pt'?'/documento/':'/document/')+v.data];
+}).sort();
+assert.deepEqual(novas,esperadas);assert.equal(novas.length,13);
+assert.deepEqual(retiradas,['/en/method','/metodo']);
+const metodo='src/views/MetodoView.astro', livro='ledger/claims/retribuicao-minima-mensal-garantida-continente-2026.yml';
+for(const f of [metodo,livro])assert.equal(fs.readFileSync(f,'utf8'),lerGit('14f931195',f),'A VOZ-2A não altera '+f);
+const antesMet1=lerGit('330fd7500^',metodo),depoisMet1=lerGit('330fd7500',metodo);
+assert.equal((antesMet1.match(/href=\{c.source_url\}/g)||[]).length,2);
+assert.equal((depoisMet1.match(/href=\{c.source_url\}/g)||[]).length,1);
+assert(antesMet1.includes('campo="document.edition"'));assert(depoisMet1.includes('campo={campoLocalizador}'));
+const parteL1=s=>s.slice(s.indexOf('  /* -------------------------------------------------------------------- L1 */'),s.indexOf('  /* ------------------------------------------------------------------ §7.10 */'));
+assert.equal(parteL1(fs.readFileSync('scripts/check-lugar.mjs','utf8')),parteL1(lerGit('14f931195','scripts/check-lugar.mjs')),'A régua L1 não muda');
+const url=load(fs.readFileSync(livro,'utf8')).source_url;
+const metodoMedido=retiradas.map(rota=>{
+ const root=parse(fs.readFileSync('dist'+rota+'/index.html','utf8'));
+ const portas=root.querySelectorAll('[data-met1-recibo] a[href]').filter(a=>a.getAttribute('href')===url);
+ assert.equal(portas.length,1);
+ assert(root.querySelector('[data-met1="campo-2"]').parentNode.querySelector('[data-linha-campo="document.locator"]'));
+ return {rota,antes:antiga.paginas[rota].vezes,depois:portas.length,destino:url};
+});
+const base=Object.keys(antiga.paginas).length-retiradas.length,total=Object.keys(paginas).length;
+assert.equal(total,base+novas.length);
+const resultado={origem,contagens:{teto_anterior:antiga.contagens.estudos,retiradas_anteriores:retiradas.length,base_efetiva:base,novas:novas.length,estudos:total},metodo:{commit:'330fd7500ee13e317556c8521fdd7955187fd444',regra:'scripts/check-lugar.mjs:1234, destinos com multiplicidade maior que um',paginas:metodoMedido},novas,retiradas,paginas};
+fs.writeFileSync(pasta+'/l1.json',JSON.stringify(resultado,null,2)+'\n');
+if(process.argv.includes('--escrever'))fs.writeFileSync('scripts/lugar-tetos-b1.json',JSON.stringify({l1_paginas:total,medicao:pasta+'/l1.json',razao:'VOZ-2A F: a MET1 D (330fd7500) já retirara a ligação repetida nas duas páginas do Método, corrigindo a base de 3468 para 3466. Acrescem exatamente as treze rotas de arquivo guardadas em 07.11.2026, listadas na medição: 3466 + 13 = 3479. A régua L1 e as suas exclusões não mudam.'},null,2)+'\n');
+console.log(JSON.stringify({contagens:resultado.contagens,novas,retiradas,metodo:resultado.metodo}));

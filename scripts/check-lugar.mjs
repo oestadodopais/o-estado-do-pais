@@ -2263,7 +2263,7 @@ const COLECOES_DOS_ESTUDOS = {
   texto: WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
   indice: LANGS.length,
   edicoes: WORKS.length * LANGS.length,
-  primeiras_edicoes: historicas.length,
+  primeiras_edicoes: WORKS.reduce((n,w)=>n+['pt','en'].filter(lang=>{const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return e.updated&&historicas.some(h=>h.slug===w.slug&&h.lang===e.lang);}).length,0),
   documentos_historicos: edicoesGuardadas().length,
   /* E1 (01.10.2026): a lista traz os estudos sem sucessor; um estudo com
      sucessor continua a ter a sua página (estudo, edições), mas a sua linha da

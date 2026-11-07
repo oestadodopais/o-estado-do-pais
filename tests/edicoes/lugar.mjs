@@ -8,7 +8,7 @@ import {documentosDoEstudo} from '../../src/lib/documentos.mjs';
 import {conferirPortasDaEdicao,conferirColecoes} from '../../scripts/lugar-edicoes.mjs';
 const historicas=primeirasEdicoes(),vistas={estudo:0,edicoes:0,primeiras_edicoes:0};let plantas=0;
 const amostras=[];
-const esperadas={estudo:WORKS.length*2,edicoes:WORKS.length*2,primeiras_edicoes:historicas.length};
+const esperadas={estudo:WORKS.length*2,edicoes:WORKS.length*2,primeiras_edicoes:WORKS.reduce((n,w)=>n+['pt','en'].filter(lang=>{const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return e.updated&&historicas.some(h=>h.slug===w.slug&&h.lang===e.lang);}).length,0)};
 for(const w of WORKS)for(const lang of ['pt','en']) {
  const e=w.editions.find(e=>e.lang===lang)??w.editions[0],atual=documentosDoEstudo(w.slug).find(d=>d.lang===e.lang).rota;
  const primeira=e.updated?historicas.find(h=>h.slug===w.slug&&h.lang===e.lang)?.rota:undefined;

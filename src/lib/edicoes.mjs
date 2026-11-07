@@ -36,9 +36,9 @@ export function mudancasDaEdicao(slug,lang,publicada=null){
 }
 /** @param {string} slug @param {string} lang */
 export function dataAtualizacaoDaEdicao(slug,lang){return mudancasDaEdicao(slug,lang).find(v=>v.natureza==='atualizacao')?.data??null;}
-/** @param {string} slug @param {Lingua} lang @param {string|null} data */
-export function linhaDasEdicoes(slug,lang,data=null){
- const vs=versoesDaEdicao(slug,lang),pt=lang==='pt';if(vs.length<2)return '';
+/** @param {string} slug @param {Lingua} lang @param {string|null} data @param {Lingua} linguaPagina */
+export function linhaDasEdicoes(slug,lang,data=null,linguaPagina=lang){
+ const vs=versoesDaEdicao(slug,lang),pt=linguaPagina==='pt';if(vs.length<2)return '';
  const work=WORKS.find(w=>w.slug===slug),edicao=work?.editions.find(e=>e.lang===lang);
  if(!work||!edicao)throw Error('ED3: estudo sem publicação');
  const publicada=dataPublicacao(work,edicao);if(!publicada)throw Error('ED3: falta a publicação');
@@ -49,7 +49,7 @@ export function linhaDasEdicoes(slug,lang,data=null){
   const rotulo=v.indice===0?(v.data===publicada?(pt?'publicado a':'published on'):(pt?'primeira edição guardada a':'first edition kept on')):v.natureza==='atualizacao'?(pt?'atualizado a':'updated on'):(pt?'corrigido a':'corrected on');
   const marcas=mudancas.filter(m=>m.data===v.data).map(m=>m.natureza==='atualizacao'?'data-estudo-atualizacao':'data-estudo-correcao').join(' ');
   const dia=tempo(v.data,`data-edicao-lista-data ${marcas}`);
-  const porta=data===v.data?`<span aria-current="page">${dia}</span>`:`<a data-edicao-porta href="${v.rota}" hreflang="${pt?'pt-PT':'en'}">${dia}</a>`;
+  const porta=data===v.data?`<span aria-current="page">${dia}</span>`:`<a data-edicao-porta href="${v.rota}" hreflang="${lang==='pt'?'pt-PT':'en'}">${dia}</a>`;
   const estado=v.atual?(data===v.data?(pt?' (atual, esta edição)':' (current, this edition)'):(pt?' (atual)':' (current)')):data===v.data?(pt?' (esta edição)':' (this edition)'):'';
   return `<span data-edicoes-item><span data-voz>${rotulo}</span> ${porta}${estado?` <span data-voz>${estado.trim()}</span>`:''}</span>`;
  });
@@ -58,7 +58,9 @@ export function linhaDasEdicoes(slug,lang,data=null){
 }
 /** @param {string} slug @param {Lingua} lang @param {string} data */
 export function portasDaCorrecao(slug,lang,data){
- const vs=versoesDaEdicao(slug,lang),i=vs.findIndex(v=>v.data===data);
+ const work=WORKS.find(w=>w.slug===slug);
+ const linguaEdicao=work?.editions.find(e=>e.lang===lang)?.lang ?? (work?.editions.length===1?work.editions[0].lang:lang);
+ const vs=versoesDaEdicao(slug,linguaEdicao),i=vs.findIndex(v=>v.data===data);
  if(i<1)throw Error(`ED1: correção sem par de versões: ${slug}/${lang}/${data}`);
  const label=(/** @type {number} */ n)=>n===0?(lang==='pt'?'Primeira edição':'First edition'):n===vs.length-1?(lang==='pt'?'Edição atual':'Current edition'):(lang==='pt'?'Edição de ':'Edition of ')+dataDaCasa(vs[n].data);
  return {antes:vs[i-1],depois:vs[i],rotuloAntes:label(i-1),rotuloDepois:label(i)};

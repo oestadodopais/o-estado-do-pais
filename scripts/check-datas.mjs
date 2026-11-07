@@ -375,7 +375,7 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
     }
-    if(slugDaPagina)falhas.push(...conferirLinhaDasEdicoes(bloco,manifestoEd2,slug,lang).map(e=>`${rota}: ${e}`));
+    if(slugDaPagina)falhas.push(...conferirLinhaDasEdicoes(bloco,manifestoEd2,slug,lang,null,linguaDaPagina).map(e=>`${rota}: ${e}`));
     if(slugDaPagina)falhas.push(...conferirMudancasDoCabecalho(bloco,slug,lang,manifestoEd2,linguaDaPagina).map(e=>`${rota}: ${e}`));
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina

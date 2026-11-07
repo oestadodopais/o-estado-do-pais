@@ -70,8 +70,10 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claim
   for (const li of root.querySelectorAll('[data-texto-estudo]')) {
     const slug = li.getAttribute('data-texto-estudo'), data = li.getAttribute('data-texto-data');
     const c = correcoes.find(c => c.slug === slug && c.data === data), w = works.find(w => w.slug === slug);
-    const e = manifesto.edicoes.find(e => e.slug === slug && e.lang === lang);
-    const titulo = w?.editions.find(d => d.lang === lang)?.title;
+    const edicao = w?.editions.find(d => d.lang === lang) ?? (w?.editions.length === 1 ? w.editions[0] : undefined);
+    const linguaEdicao = edicao?.lang;
+    const e = manifesto.edicoes.find(e => e.slug === slug && e.lang === linguaEdicao);
+    const titulo = edicao?.title;
     if (!c || !titulo || !e?.primeira_edicao) {erros.push(`ED1 texto: entrada desconhecida ${slug}`);continue;}
     const partes=partesDaCorrecao(c,lang),frase=textoDaMudancaGate(partes,claims,true);
     if(frase===null||frase!==c.frase[lang])erros.push(`ED1 números: ${slug} frase sem origem selada`);
@@ -83,7 +85,7 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claim
     }
     const vs=e.edicoes,i=vs.findIndex(v=>v.data===data);
     if(i<1){erros.push(`ED1 texto: ${slug} sem par de versões`);continue;}
-    const rotaDaVersao=n=>n===vs.length-1?rotaAtual(slug,lang):`${rotaAtual(slug,lang)}/${vs[n].data}`;
+    const rotaDaVersao=n=>n===vs.length-1?rotaAtual(slug,linguaEdicao):`${rotaAtual(slug,linguaEdicao)}/${vs[n].data}`;
     const rotuloDaVersao=n=>n===0?(lang==='pt'?'Primeira edição':'First edition'):n===vs.length-1?(lang==='pt'?'Edição atual':'Current edition'):(lang==='pt'?'Edição de ':'Edition of ')+vs[n].data.split('-').reverse().join('.');
     for (const [porta,rota,label] of [['primeira',rotaDaVersao(i-1),rotuloDaVersao(i-1)],['atual',rotaDaVersao(i),rotuloDaVersao(i)]]) {
       const links = li.querySelectorAll(`[data-texto-porta="${porta}"]`);

@@ -5,6 +5,8 @@ import {repertorioDaVozDasEdicoes,classeDaVozDaEdicao,conferirVozDaLinha,retirad
 const pedida=process.argv.includes('--planta-outra-palavra');let controlos=0,plantas=0;
 for(const lang of ['pt','en']){
  const manifesto=structuredClone(manifestoEd2),slug='evora-2027-capital-europeia-da-cultura',e=manifesto.edicoes.find(e=>e.slug===slug&&e.lang===lang);
+ // Planta de quatro versões, independente das atualizações posteriores.
+ e.edicoes=e.edicoes.slice(0,3);
  e.edicoes.push({...e.edicoes.at(-1),data:'2026-11-07'});
  const pt=lang==='pt',labels=pt?['publicado a','atualizado a','corrigido a','corrigido a']:['published on','updated on','corrected on','corrected on'];
  const base=`${pt?'/estudos':'/en/studies'}/${slug}/${pt?'documento':'document'}`;

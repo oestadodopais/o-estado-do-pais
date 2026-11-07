@@ -126,15 +126,27 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
   erros.push(...conferirMarcasNovo(root,dia));
   return erros;
 }
-export function cenarioFp3(html,lang,dist,semAtualizacao=false) {
- const manifesto=structuredClone(lerManifesto());
- const root=parse(html),esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
- const render=publicacoes=>{
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+function renderNovidades(root,lang,publicacoes) {
   root.querySelector('[data-novidades] ol').set_content(entradasEsperadas(lang,publicacoes).slice(0,5).map(p=>{
    const texto=p.dossie?`${esc(p.titulo.slice(0,p.titulo.lastIndexOf(' · ')))} · <span data-prova="dossie_pecas_${p.dossie.slug.replace(/-/g,'_')}">${p.n}</span> ${lang==='pt'?(p.n===1?'peça':'peças'):(p.n===1?'piece':'pieces')}`:esc(p.titulo);
    return `<li data-novidade="${p.id}"><time datetime="${p.data}" data-nonledger="data-editorial" data-data-origem="${p.origem}">${forma(p.data)}</time><span class="pp-novidade-tipo">${p.dossie?(lang==='pt'?'dossiê':'dossier'):FP1[lang][p.tipo]}</span><a href="${p.rota}" data-novidade-porta ${p.dossie?`data-novidade-dossie="${p.dossie.slug}"`:''}>${texto}</a></li>`;
   }).join(''));
- };
+}
+
+function cenarioDossie(html,lang,dist) {
+ const root=parse(html), manifesto=structuredClone(lerManifesto());
+ for(const e of manifesto.edicoes)for(const v of e.edicoes)if(v.natureza==='atualizacao')v.natureza='correcao';
+ const publicacoes=publicacoesEsperadas(lang,manifesto);
+ renderNovidades(root,lang,publicacoes);
+ assert(root.querySelector('[data-novidade-dossie]'),'DO4: cenário com dossiê');
+ assert.deepEqual(conferirNovidades(root,lang,dist,publicacoes),[]);
+ return {html:root.outerHTML,publicacoes};
+}
+export function cenarioFp3(html,lang,dist,semAtualizacao=false) {
+ const manifesto=structuredClone(lerManifesto());
+ const root=parse(html);
+ const render=publicacoes=>renderNovidades(root,lang,publicacoes);
  if(semAtualizacao){
   for(const e of manifesto.edicoes)for(const v of e.edicoes)if(v.natureza==='atualizacao')v.natureza='correcao';
   const sem=publicacoesEsperadas(lang,manifesto);render(sem);
@@ -158,6 +170,7 @@ export function cenarioFp3(html,lang,dist,semAtualizacao=false) {
 }
 export function plantasDasNovidades(html,lang,dist,apenasFp3=false,semAtualizacao=false) {
  const cenario=cenarioFp3(html,lang,dist,semAtualizacao);
+ const dossie=apenasFp3?null:cenarioDossie(html,lang,dist);
 
 
   const plantas=[
@@ -181,12 +194,12 @@ export function plantasDasNovidades(html,lang,dist,apenasFp3=false,semAtualizaca
     ['peça mais recente em falta',r=>r.querySelector('[data-novidade]').remove(),/mais recente/],
     ['data escrita à mão no HTML',r=>{const t=r.querySelector('[data-novidade] time');t.replaceWith(t.textContent);},/escrita à mão/],
   ];
-  const resultado=(apenasFp3?plantas.slice(0,3):plantas).map(([nome,mudar,queixa],i)=>{const fp3=i<3,r=parse(fp3?cenario.html:html);mudar(r);const erros=conferirNovidades(r,lang,dist,fp3?cenario.publicacoes:publicacoesEsperadas(lang));return {nome,lang,cenario:fp3?(cenario.sintetica?'planta':'real'):'real',mordeu:erros.some(e=>queixa.test(e))};});
+  const resultado=(apenasFp3?plantas.slice(0,3):plantas).map(([nome,mudar,queixa],i)=>{const fp3=i<3,do4=/DO4|dossiê|contagem sem token/.test(nome),base=fp3?cenario:do4?dossie:null,r=parse(base?.html??html);mudar(r);const erros=conferirNovidades(r,lang,dist,base?.publicacoes??publicacoesEsperadas(lang));return {nome,lang,cenario:do4?'planta':fp3?(cenario.sintetica?'planta':'real'):'real',mordeu:erros.some(e=>queixa.test(e))};});
   if(apenasFp3)return resultado;
-  const todas=publicacoesEsperadas(lang), gerada=todas.find(p=>p.origem==='publicacao.gerada');assert(gerada);
+  const todas=dossie.publicacoes, gerada=todas.find(p=>p.origem==='publicacao.gerada');assert(gerada);
   const fonte=todas.map(p=>p.id===gerada.id?{...p,data:todas[1].data}:p).sort((a,b)=>b.data.localeCompare(a.data)||Number(b.id.startsWith('estudo:'))-Number(a.id.startsWith('estudo:'))||a.id.localeCompare(b.id));
   assert(fonte.slice(0,5).some(p=>p.id===gerada.id));
-  const erros=conferirNovidades(parse(html),lang,dist,fonte);
+  const erros=conferirNovidades(parse(dossie.html),lang,dist,fonte);
   resultado.push({nome:'estudo com data gerada recente ausente',lang,mordeu:erros.some(e=>/seleção/.test(e))});
   return resultado;
 }
@@ -221,7 +234,7 @@ if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[
     const manifesto=cenario.manifesto, publicadas=pecasPublicadas(lang,manifesto);
     assert.deepEqual(TIPOS_DAS_NOVIDADES,['estudo','estudo-atualizado','discussao','explicacao','dossie']);
     for(const p of publicadas.filter(p=>p.tipo==='estudo-atualizado')) {
-      const w=WORKS.find(w=>p.id===`estudo:${w.slug}`), e=w.editions.find(e=>e.lang===lang);
+      const w=WORKS.find(w=>p.id===`estudo:${w.slug}`), e=w.editions.find(e=>e.lang===lang)??(w.editions.length===1?w.editions[0]:null);assert(e);
       const copia=structuredClone(manifesto), atual=copia.edicoes.find(d=>d.slug===w.slug&&d.lang===e.lang).edicoes.slice(1).findLast(v=>v.natureza==='atualizacao');
       const comCorrecao=structuredClone(manifesto);
       comCorrecao.edicoes.find(d=>d.slug===w.slug&&d.lang===e.lang).edicoes.push({...atual,natureza:'correcao'});
@@ -246,7 +259,7 @@ if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[
     plantas.push({nome:'FP3 correção conserva publicação, tipo, ligação e desempate',lang,mordeu:true});
     plantas.push(...plantasDasNovidades(html,lang,dist));
     plantas.push(...plantasDasNovidades(html,lang,dist,true,true));
-    const l1=parse(html);assert.deepEqual(conferirPortasDasNovidades(l1),[]);
+    const l1=parse(cenarioDossie(html,lang,dist).html);assert.deepEqual(conferirPortasDasNovidades(l1),[]);
     const a=l1.querySelector('[data-novidade-dossie]');a.insertAdjacentHTML('afterend',a.outerHTML);
     assert(conferirPortasDasNovidades(l1).length);plantas.push({nome:'DO4 L1 porta do dossiê duplicada',lang,mordeu:true});
     const arquivo=parse(fs.readFileSync(path.join(dist,routePath('estudos',lang),'index.html'),'utf8'));

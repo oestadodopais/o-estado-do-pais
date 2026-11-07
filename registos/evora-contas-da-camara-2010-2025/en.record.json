@@ -18,7 +18,7 @@
    "figures": [],
    "i": 2,
    "kind": "paragraph",
-   "text": "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is? This study reads the municipality's accounts from 2010 to 2025 in three voices: the municipality's own reports, the auditor's signed opinion and the independent debt series the regulator publishes."
+   "text": "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is? Three sources cover the municipality's accounts from 2010 to 2025: the municipality's own reports, the auditor's signed opinion and the independent debt series the regulator publishes."
   },
   {
    "figures": [
@@ -183,29 +183,29 @@
      "value": "61.44"
     },
     {
-     "end": 488,
+     "end": 497,
      "markers": "†",
      "printed": "9 500 000",
      "row": "gop26-rossio-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 479,
+     "start": 488,
      "value": "9 500 000†"
     },
     {
-     "end": 519,
+     "end": 528,
      "markers": "†",
      "printed": "2 350 000",
      "row": "gop26-rossio-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 510,
+     "start": 519,
      "value": "2 350 000†"
     }
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "A budget is not money. Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show the pattern that, in this reading, explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in. The 2026 plan does it again: the largest allocation recovered from its annexes, the Rossio de São Brás, carries €9 500 000† for the year, with €2 350 000† of defined financing."
+   "text": "A budget is not money. Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show a pattern: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in. That this pattern explains the fall is an inference. The 2026 plan does it again: the largest allocation recovered from its annexes, the Rossio de São Brás, carries €9 500 000† for the year, with €2 350 000† of defined financing."
   },
   {
    "figures": [
@@ -494,12 +494,12 @@
    "kind": "paragraph",
    "links": [
     {
-     "end": 375,
+     "end": 139,
      "href": "/en/studies/evora-quem-governou-a-camara-2009-2025",
-     "start": 329
+     "start": 93
     }
    ],
-   "text": "This study shows the accounts and the series, and attributes them to nobody: the adjustment programme, the pandemic, the transfer of powers to municipalities and the national economic cycle move the indices whoever sits in the council. The decisions with an author, and the elections that decided who took them, are in the study Who governed the Câmara de Évora, 2009 to 2025."
+   "text": "The decisions with an author, and the elections that decided who took them, are in the study Who governed the Câmara de Évora, 2009 to 2025."
   },
   {
    "i": 25,
@@ -7636,7 +7636,7 @@
      "start": 326
     }
    ],
-   "text": "The documents record the vote and do not say why each member voted as they did. There are two readings of it, and neither is a fact: the vote took place about five months before the October 2025 local elections; and the 2 votes in favour match the seats of the president's list in the council elected in 2021, which the study Who governed the Câmara de Évora, 2009 to 2025 counts. No 2024 accounts document was ever published, and every 2024 figure in this study is a comparative column of the 2025 report."
+   "text": "The documents record the vote and do not say why each member voted as they did. There are two readings of it, and neither is a fact: the vote took place about five months before the October 2025 local elections; and the 2 votes in favour match the seats of the president's list in the council elected in 2021, which the study Who governed the Câmara de Évora, 2009 to 2025 counts. No 2024 accounts document was ever published, and every 2024 figure is a comparative column of the 2025 report."
   },
   {
    "i": 131,

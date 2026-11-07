@@ -83,6 +83,13 @@
    "text": "A secção de contratos é um limite superior sobre uma janela truncada. O Portal BASE tem 24 436 contratos para o concelho de Évora. 600 deles são os publicados mais recentemente, entre 2026-05-08 e 2026-08-04. Um contrato executado em vários municípios é devolvido pelo filtro de cada um deles pelo seu valor integral, pelo que um total de contratos por concelho é um limite superior e os totais por concelho nunca podem ser somados entre si."
   },
   {
+   "emphasis": [
+    {
+     "end": 44,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [
     {
      "end": 145,
@@ -3797,7 +3804,7 @@
    "figures": [],
    "i": 45,
    "kind": "paragraph",
-   "text": "O Portal BASE é o registo de contratos públicos de Portugal. Os apoios do plano de recuperação e os preços de contratos são quantidades diferentes."
+   "text": "O Portal BASE é o registo de contratos públicos de Portugal. Os apoios do plano de recuperação e os preços de contratos são quantidades diferentes, e não uma segunda medida do mesmo dinheiro."
   },
   {
    "i": 46,
@@ -4547,7 +4554,7 @@
      "value": "735 681"
     },
     {
-     "end": 512,
+     "end": 401,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -4557,13 +4564,13 @@
      "row": "base-multi-spelling-entities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 511,
+     "start": 400,
      "value": "5"
     }
    ],
    "i": 54,
    "kind": "paragraph",
-   "text": "A regra de agrupamento não é do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. A regra funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. Nada do que está disponível consegue distinguir um prefixo de acrónimo de um organismo genuinamente diferente. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. É essa a forma deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é."
+   "text": "A regra de agrupamento não é do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. A regra funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. É essa a forma deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é."
   },
   {
    "emphasis": [
@@ -4573,9 +4580,9 @@
      "start": 229
     },
     {
-     "end": 588,
+     "end": 493,
      "kind": "em",
-     "start": 392
+     "start": 481
     }
    ],
    "figures": [
@@ -4600,7 +4607,7 @@
    ],
    "i": 55,
    "kind": "paragraph",
-   "text": "As duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., com €7 746 863 contratados e €563 527 pagos. Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade)."
+   "text": "As duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., com €7 746 863 contratados e €563 527 pagos. Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência)."
   },
   {
    "i": 56,
@@ -5345,7 +5352,7 @@
    "figures": [],
    "i": 62,
    "kind": "paragraph",
-   "text": "O documento municipal não está sequer arquivado entre os relatórios de auditoria do Tribunal: a sua família de produto é Relatórios de Verificação Interna de Contas, a verificação interna das contas de um organismo relativas a um ano económico. O seu assunto é «Município de Évora - Gerência de 2016». O catálogo regista a família e o título, e nada além disso."
+   "text": "O documento municipal não está sequer arquivado entre os relatórios de auditoria do Tribunal: a sua família de produto é Relatórios de Verificação Interna de Contas, a verificação interna das contas de um organismo relativas a um ano económico. O seu assunto é «Município de Évora - Gerência de 2016». O catálogo regista a família e o título desse instrumento, e nada além disso: o que ele conclui, e em que medida difere em profundidade de uma auditoria, não consta."
   },
   {
    "emphasis": [
@@ -5375,13 +5382,7 @@
    "i": 64,
    "kind": "heading",
    "level": 3,
-   "text": "Porque é que um silêncio aqui não é um silêncio"
-  },
-  {
-   "figures": [],
-   "i": 65,
-   "kind": "paragraph",
-   "text": "Dois pontos cegos."
+   "text": "O que fica por saber"
   },
   {
    "emphasis": [
@@ -5424,12 +5425,12 @@
      "value": "2"
     }
    ],
-   "i": 66,
+   "i": 65,
    "kind": "paragraph",
    "text": "As quatro famílias não são a produção do Tribunal. São quatro das famílias de produtos que ele publica. Uma quinta — Relatórios de Apuramento de Responsabilidades, 192 documentos — contém 2 relatórios cujo assunto é o próprio Município de Évora:"
   },
   {
-   "i": 67,
+   "i": 66,
    "items": [
     {
      "figures": [
@@ -5542,7 +5543,7 @@
   },
   {
    "figures": [],
-   "i": 68,
+   "i": 67,
    "kind": "paragraph",
    "text": "Portanto, a verdadeira contagem de documentos catalogados do Tribunal sobre este município é de pelo menos três, e não de um, e a pesquisa por quatro famílias não consegue ver dois deles."
   },
@@ -5569,7 +5570,7 @@
      "value": "13"
     }
    ],
-   "i": 69,
+   "i": 68,
    "kind": "paragraph",
    "links": [
     {
@@ -5581,20 +5582,27 @@
    "text": "O catálogo indexa resumos, não os corpos dos relatórios. Uma auditoria temática sobre a forma como os municípios do continente financiam os seus corpos de bombeiros não traz qualquer menção a Évora na sua entrada de catálogo — e nomeia o concelho 13 vezes no seu próprio texto, incluindo a sua posição nas tabelas do próprio Tribunal."
   },
   {
+   "emphasis": [
+    {
+     "end": 99,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [
     {
-     "end": 50,
+     "end": 62,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 46,
+     "start": 58,
      "value": "2019"
     }
    ],
-   "i": 70,
+   "i": 69,
    "kind": "paragraph",
-   "text": "Nas quatro famílias, nada publicado depois de 2019 nomeia Évora no título ou no resumo."
+   "text": "Nas quatro famílias consultadas, nada publicado depois de 2019 nomeia Évora no título ou no resumo."
   },
   {
    "emphasis": [
@@ -5640,25 +5648,25 @@
      "value": "308"
     }
    ],
-   "i": 71,
+   "i": 70,
    "kind": "paragraph",
    "text": "Évora é um nome invulgarmente limpo para pesquisar: 0 riscos estruturais contra ele, isto é, sem risco estrutural de sobre-correspondência. Não é um dos dois nomes de município portugueses que pertencem a dois lugares ao mesmo tempo, e não é uma palavra inteira dentro do nome de um município mais longo. O repertório é a lista viva do próprio INE, com 308 municípios. Nomes que falham esses testes comportam-se de forma muito diferente — uma pesquisa por «Guarda» neste catálogo devolve a guarda nacional, e não a cidade."
   },
   {
    "figures": [],
-   "i": 72,
+   "i": 71,
    "kind": "heading",
    "level": 3,
    "text": "Os nomes do lado do dinheiro, no catálogo de auditorias"
   },
   {
    "figures": [],
-   "i": 73,
+   "i": 72,
    "kind": "paragraph",
    "text": "A única junção que a fonte permite é uma junção sobre palavras."
   },
   {
-   "i": 74,
+   "i": 73,
    "kind": "table",
    "rows": [
     [
@@ -6023,7 +6031,7 @@
      "value": "2"
     }
    ],
-   "i": 75,
+   "i": 74,
    "kind": "paragraph",
    "text": "O instituto da habitação está duas vezes nessa tabela. Sob o nome que o registo do plano de recuperação lhe dá, o catálogo devolve 0. Sob o seu acrónimo o catálogo devolve 2 — o Tribunal escreve Instituto de Habitação e Reabilitação Urbana, sem os dois «da» que o outro registo usa, pelo que uma correspondência exata de símbolos vê dois organismos diferentes. O primeiro número é um zero falso. A mesma fragilidade corre em sentido contrário na tabela acima: o resumo de 2008 do próprio Tribunal escreve «Universidade do Évora», que o nome correto da universidade não faz corresponder, pelo que a contagem de 2 da universidade fica ela própria uma unidade abaixo dos documentos que a nomeiam."
   },
@@ -6091,9 +6099,9 @@
      "value": "1"
     }
    ],
-   "i": 76,
+   "i": 75,
    "kind": "paragraph",
-   "text": "Um zero nessa tabela é, por isso, um sinal fraco, e por três razões. Um nome pode estar escrito de outra forma, como aqui. O resumo pode simplesmente não nomear o organismo mesmo quando o relatório é sobre ele, e as próprias bibliotecas reportam ter mais itens do que a interface devolve — 10 linhas ao todo: 2 na biblioteca de relatórios de auditoria, 7 na verificação externa de contas e 1 na verificação interna, sem causa estabelecida e com a paginação a não as recuperar. Um resultado nulo significa «não encontrado no catálogo», nunca «não auditado»."
+   "text": "Um zero nessa tabela é, por isso, um sinal fraco, e por três razões. Um nome pode estar escrito de outra forma, como aqui. O resumo pode simplesmente não nomear o organismo mesmo quando o relatório é sobre ele, e as próprias bibliotecas reportam ter mais itens do que a interface devolve — 10 linhas ao todo: 2 na biblioteca de relatórios de auditoria, 7 na verificação externa de contas e 1 na verificação interna, sem causa estabelecida e com a paginação a não as recuperar. Um resultado nulo significa «não encontrado no catálogo», não «não auditado»."
   },
   {
    "emphasis": [
@@ -6129,24 +6137,24 @@
      "value": "7"
     }
    ],
-   "i": 77,
+   "i": 76,
    "kind": "paragraph",
    "text": "O fragmento de nome do hospital «Espírito Santo» devolve 8 documentos, dos quais 7 nomeiam o Hospital Divino Espírito Santo de Ponta Delgada — um hospital diferente, nos Açores. As palavras corresponderam; o assunto não. Só um dos oito é o hospital de Évora."
   },
   {
-   "i": 78,
+   "i": 77,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 79,
+   "i": 78,
    "kind": "heading",
    "level": 2,
    "text": "O que os dados da UE não conseguem dizer"
   },
   {
    "figures": [],
-   "i": 80,
+   "i": 79,
    "kind": "paragraph",
    "text": "Não existe um valor da UE para o concelho de Évora. A granularidade não existe na fonte."
   },
@@ -6194,7 +6202,7 @@
      "value": "2 569"
     }
    ],
-   "i": 81,
+   "i": 80,
    "kind": "paragraph",
    "text": "O conjunto de dados da UE ao nível de projeto coloca 2 569 projetos na região NUTS3 que contém Évora, à qual chama Alentejo Central. Os 2 569 carregam, sem exceção, o período de programação 2014-2020 — um ciclo de financiamento anterior, e um instrumento diferente do plano de recuperação. Pôr os dois lado a lado seria comparar coisas diferentes. O conjunto de dados não tem campo de concelho e, para Portugal, o código postal está vazio em cada linha."
   },
@@ -6215,7 +6223,7 @@
      "value": "14"
     }
    ],
-   "i": 82,
+   "i": 81,
    "kind": "paragraph",
    "text": "O tamanho do problema de agregação é o que está em causa. O Alentejo Central contém 14 municípios, segundo a própria dimensão geográfica do INE: Alandroal, Arraiolos, Borba, Estremoz, Montemor-o-Novo, Mora, Mourão, Portel, Redondo, Reguengos de Monsaraz, Vendas Novas, Viana do Alentejo, Vila Viçosa, Évora. Um valor para essa região é um valor para todos eles."
   },
@@ -6248,17 +6256,17 @@
      "value": "3"
     }
    ],
-   "i": 83,
+   "i": 82,
    "kind": "paragraph",
    "text": "O PRR publica a versão mais antiga da NUTS — a mesma dimensão traz 25 entradas NUTS3 — enquanto os dados de projetos da UE usam uma versão mais recente. Ambos chamam à região Alentejo Central; os códigos não são intermutáveis, e passar um ao outro devolve zero linhas com um estado HTTP perfeitamente saudável."
   },
   {
-   "i": 84,
+   "i": 83,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 85,
+   "i": 84,
    "kind": "heading",
    "level": 2,
    "text": "O que concluir disto"
@@ -6293,7 +6301,7 @@
      "value": "1 445"
     }
    ],
-   "i": 86,
+   "i": 85,
    "kind": "paragraph",
    "text": "As localizações de projeto vencidas transportam 61,32 % de tudo o que foi aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo caem exatamente na data prevista. Uma data destas é um toque de teclado; um desembolso é uma transação."
   },
@@ -6352,7 +6360,7 @@
      "value": "5 314 868"
     }
    ],
-   "i": 87,
+   "i": 86,
    "kind": "paragraph",
    "text": "Duas promessas em particular têm a forma de um problema. A residência de estudantes e a aquisição de equipamento hospitalar estão entre as cinco maiores localizações de projeto do concelho, ambas com a data prevista já passada, e ambas paradas em €0 pagos contra €7 483 162 e €5 314 868 aprovados. São estes os sinais de alarme credíveis, porque a coluna dos pagamentos — o campo mais duro — é a que diz que nada se moveu (inferência)."
   },
@@ -6392,7 +6400,7 @@
      "value": "12 069 013"
     }
    ],
-   "i": 88,
+   "i": 87,
    "kind": "paragraph",
    "text": "O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho. As tabelas de beneficiários acima já o dizem: a universidade detém €38 596 976 contratados contra €12 069 013 do município, e a camada que administra o dinheiro é feita de agências nacionais. Um leitor que queira ver este total explicado deve dirigir as suas perguntas aos organismos nacionais e à universidade mais vezes do que à câmara (inferência)."
   },
@@ -6441,7 +6449,7 @@
      "value": "29 580 141"
     }
    ],
-   "i": 89,
+   "i": 88,
    "kind": "paragraph",
    "text": "Os registos são individualmente abertos e coletivamente impossíveis de juntar. Dentro de um registo, um grupo hospitalar precisou de 3 grafias fundidas antes de aparecer como 282 contratos no valor de €29 580 141; entre registos, o mesmo organismo surge sob nomes que uma junção perderia, e uma pesquisa pelo instituto da habitação devolveu um zero. A culpa não está em identificadores em falta — o registo da recuperação transporta um número fiscal nas suas linhas de entidades, e o registo de contratos entrega um contrato a contrato — mas em onde eles estão: a pesquisa de contratos devolve nomes sem o número, e o catálogo de auditorias não tem campo de entidade de todo. O trabalho de seguir o dinheiro falha por isso nas costuras entre as fontes antes de falhar dentro de qualquer uma delas (inferência)."
   },
@@ -6486,7 +6494,7 @@
      "value": "2"
     }
    ],
-   "i": 90,
+   "i": 89,
    "kind": "paragraph",
    "text": "O rasto de auditoria pesquisável é mais fino exatamente onde o dinheiro é mais espesso. Nas quatro famílias, nada publicado depois de 2019 nomeia Évora no título ou no resumo — e esses são os anos em que o dinheiro da recuperação se moveu. O catálogo não vê o interior dos relatórios, e uma quinta família guarda 2 relatórios sobre o município que a pesquisa por quatro famílias não consegue alcançar. O que sobrevive é o ponto prático: um cidadão que vá à procura de um exame desses anos não o encontrará pela pesquisa deste catálogo, o que quer que de facto tenha sido examinado (inferência)."
   },
@@ -6509,23 +6517,23 @@
      "value": "2019"
     }
    ],
-   "i": 91,
+   "i": 90,
    "kind": "paragraph",
    "text": "Os dados apontam à saúde. O equipamento para o novo hospital central do Alentejo está aprovado e por desembolsar, com a data já passada. Na janela de contratos, o grupo da saúde fica como a mais ativa entidade adjudicante da janela depois de fundidas as suas grafias. Na tabela de auditorias acima, os cuidados hospitalares do concelho aparecem pela última vez através de um relatório de 2019 sobre remunerações de dirigentes. Dinheiro, risco de entrega e um rasto pesquisável fino concentram-se no mesmo canto da mesma cidade (inferência)."
   },
   {
-   "i": 92,
+   "i": 91,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 93,
+   "i": 92,
    "kind": "heading",
    "level": 2,
    "text": "Fontes"
   },
   {
-   "i": 94,
+   "i": 93,
    "kind": "table",
    "rows": [
     [

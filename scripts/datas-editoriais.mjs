@@ -16,7 +16,9 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=nul
   if(origem==='edicoes.data' && el.hasAttribute('data-edicao-lista-data')) {
     const bloco=el.closest('[data-estudo-edicao], [data-documento-edicao]');
     const [slug,lingua,data]=(bloco?.getAttribute('data-estudo-edicao')??bloco?.getAttribute('data-documento-edicao')??'').split('/');
-    return Boolean(bloco&&el.closest('[data-edicoes-linha]')&&lingua===lang&&((rota==='estudo'&&!data)||(rota==='documento'&&data))&&!conferirLinhaDasEdicoes(bloco,manifesto??manifestoEd2,slug,lang,data??null).length);
+    const edicoes=WORKS.find(w=>w.slug===slug)?.editions;
+    const linguaValida=lingua===lang || (rota==='estudo'&&edicoes?.length===1&&edicoes[0].lang===lingua);
+    return Boolean(bloco&&el.closest('[data-edicoes-linha]')&&linguaValida&&((rota==='estudo'&&!data)||(rota==='documento'&&data))&&!conferirLinhaDasEdicoes(bloco,manifesto??manifestoEd2,slug,lingua,data??null,lang).length);
   }
   if(rota==='estudo' && origem==='edicoes.data' && (el.hasAttribute('data-estudo-atualizacao')||el.hasAttribute('data-estudo-correcao'))) {
     const [slug,lingua]=(el.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao')??'').split('/');
@@ -85,15 +87,16 @@ export function plantasDatasEditoriais() {
  const work=WORKS.find(w=>w.slug==='evora-contas-da-camara-2010-2025');
  for(const lang of ['pt','en']) {
   const edicao=work.editions.find(e=>e.lang===lang);
-  const html=`<p data-estudo-edicao="${work.slug}/${lang}"><time data-estudo-correcao datetime="${edicao.updated}" data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(edicao.updated)}</time></p>`;
+  const dataCorrigida=mudancasNoManifesto(work.slug,lang).find(m=>m.natureza==='correcao').data;
+  const html=`<p data-estudo-edicao="${work.slug}/${lang}"><time data-estudo-correcao datetime="${dataCorrigida}" data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(dataCorrigida)}</time></p>`;
   const el=parse(html).querySelector('time');
   assert.equal(dataEditorialPermitida(el,'estudo',null,lang),true);
   assert.equal(dataEditorialPermitida(el,'home',null,lang),false);
   el.setAttribute('datetime',edicao.date);assert.equal(dataEditorialPermitida(el,'estudo',null,lang),false);
-  el.setAttribute('datetime',edicao.updated);el.setAttribute('data-data-origem','origem-inventada');assert.equal(dataEditorialPermitida(el,'estudo',null,lang),false);
+  el.setAttribute('datetime',dataCorrigida);el.setAttribute('data-data-origem','origem-inventada');assert.equal(dataEditorialPermitida(el,'estudo',null,lang),false);
   const fora=parse(el.outerHTML).querySelector('time');fora.setAttribute('data-data-origem','edicoes.data');assert.equal(dataEditorialPermitida(fora,'estudo',null,lang),false);
  }
- console.log('EV2: atualização conferida; página, data, origem e edição ausente recusadas nas duas línguas.');
+ console.log('EV2: correção histórica conferida; página, data, origem e edição ausente recusadas nas duas línguas.');
  const html='<time datetime="2000-01-01" data-nonledger="data-editorial" data-data-origem="publicacao.gerada">01.01.2000</time>';
  const fora=parse('<main>'+html+'</main>').querySelector('time');
  const erros=[];conferirDataEditorial(fora,'home',null,e=>erros.push(e));

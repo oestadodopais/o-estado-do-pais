@@ -7,7 +7,7 @@ import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 const { work, lang } = Astro.props;
 const principal = work.editions.find(e => e.lang === lang) ?? work.editions[0];
 const documento = documentosDoEstudo(work.slug).find(d => d.lang === principal.lang);
-const linha = linhaDasEdicoes(work.slug, principal.lang);
+const linha = linhaDasEdicoes(work.slug, principal.lang, null, lang);
 const data = dataPublicacao(work, principal);
 const mudancas = mudancasDaEdicao(work.slug, principal.lang, data);
 const rotulos = ROTULOS_B1[lang];

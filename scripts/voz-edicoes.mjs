@@ -9,7 +9,7 @@ export function repertorioDaVozDasEdicoes(manifesto=manifestoEd2){
   const pt=lang==='pt',vs=e.edicoes,mudancas=mudancasNoManifesto(e.slug,e.lang,manifesto);
   if(vs.length>1){
    for(const data of [null,...vs.map(v=>v.data)]){
-    const itens=elementosDaLinha(manifesto,e.slug,lang,data);
+    const itens=elementosDaLinha(manifesto,e.slug,e.lang,data,lang);
     const forma=itens.map(i=>i.rotulo+i.estado).join(' · ');
     porLingua[lang].add(forma);frases.add(forma);
     frases.add(itens.map(i=>`${i.rotulo} ${i.data.split('-').reverse().join('.')}${i.estado}`).join(' · '));
@@ -30,7 +30,7 @@ export function repertorioDaVozDasEdicoes(manifesto=manifestoEd2){
 const repertorio=repertorioDaVozDasEdicoes();
 export const FAIXAS_DE_EDICAO=repertorio.faixas;
 export function classeDaVozDaEdicao(texto,prova=repertorio){return prova.frases.has(texto)?'conteudo':null;}
-export function conferirVozDaLinha(root,manifesto,slug,lang,data=null){return conferirLinhaDasEdicoes(root,manifesto,slug,lang,data);}
+export function conferirVozDaLinha(root,manifesto,slug,lang,data=null,linguaPagina=lang){return conferirLinhaDasEdicoes(root,manifesto,slug,lang,data,linguaPagina);}
 /** @param {string} texto @param {string} frase @param {Set<string>} admitidas */
 export function retiradaForaDaFrase(texto,frase,admitidas=new Set()) {
  return fraseRetiradaNoTexto(texto,frase)&&!admitidas.has(texto);

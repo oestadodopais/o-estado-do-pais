@@ -973,3 +973,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | ed3 | Linha única de publicação e edições, estados da edição e retirada das frases redundantes | por ler | Codex, 07.11.2026: formas do mandato ED3 §1, conferidas contra o manifesto, a publicação declarada e o HTML construído. Leitura cruzada reservada ao lugar de direção. |
 
 | nd1-b | Duas frases para a ausência numa linha calculada | por ler | Codex, 07.11.2026: frases literais da adenda B à ND1, conferidas pela natureza da linha no livro-razão. Leitura cruzada reservada ao lugar de direção. |
+
+| voz-2a | Duas frases do registo e quatro portas datadas; seis rótulos sem superfície retirados da lista viva | por ler | Codex, 07.11.2026: texto do mandato e datas do manifesto conferidos no dist; as novas atualizações preenchem a caixa de novidades. Leitura cruzada reservada ao lugar de direção. |

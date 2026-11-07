@@ -5026,11 +5026,8 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | What is new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | data from | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | estudo atualizado | fp3 | viva | EV3-p, adenda B: a última atualização conserva o lugar e a data na caixa, mesmo com correção posterior. |
 | conteudo | study updated | fp3 | viva | EV3-p, adenda B: a última atualização conserva o lugar e a data na caixa, mesmo com correção posterior. |
-| conteudo | explainer | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | explicação | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | lidos por este projeto a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
@@ -5044,7 +5041,6 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | published by the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | read by this project on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | study | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | under discussion | fp1 | condicional-fp1 | DO2: só aparece se houver um item fora dos dossiês na caixa; conferirNovidades verifica a seleção e o texto. |
 | conteudo | Os números mais recentes são de | fp1 | viva | Período dos dados, sem repetir a data da construção. |
 | conteudo | The most recent figures are from | fp1 | viva | Período dos dados, sem repetir a data da construção. |
@@ -5339,8 +5335,6 @@ As cinco passagens nas duas edições são transcrições dos registos do estudo
 
 | Classe | Frase | Bloco | Estado | Razão |
 |---|---|---|---|---|
-| conteudo | dossiê | do4 | viva | Rótulo do tipo no mandato DO4; título e contagem conferidos por conferirNovidades. |
-| conteudo | dossier | do4 | viva | Rótulo do tipo no mandato DO4; título e contagem conferidos por conferirNovidades. |
 
 A ligação tem a forma «⟦título do dossiê⟧ · ⟦n⟧ peças» ou «⟦title⟧ · ⟦n⟧ pieces», com «1 peça» ou «1 piece». Os títulos vêm das declarações e a contagem da prova; não são números fixos do inventário. «peças» e «pieces» conservam as entradas do bloco do2, pois também se rendem nas listas.
 
@@ -5575,3 +5569,14 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 | --- | --- | --- | --- | --- |
 | conteudo | Não se calcula: a fonte publica «N.d.» nos valores de que depende. | nd1-b | viva | Adenda B à ND1, §1: frase literal para uma marca numa linha com `derived_from`. |
 | conteudo | Not calculated: the source publishes « N.d. » for the values it depends on. | nd1-b | viva | Adenda B à ND1, §1, na forma lida pela régua segundo a adenda A e a convenção `pequenas-5`. A página conserva a marca colada às aspas e em português. |
+
+## VOZ-2A: atualização dos sete estudos
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou. | voz-2a | viva | Texto literal do mandato, com natureza de atualização pela adenda E. |
+| conteudo | The sentences in which the study talked about itself came out; no number and no conclusion changed. | voz-2a | viva | Texto literal do mandato, com natureza de atualização pela adenda E. |
+| conteudo | Edição de 06.11.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Edição de 30.10.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Edition of 06.11.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Edition of 30.10.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |

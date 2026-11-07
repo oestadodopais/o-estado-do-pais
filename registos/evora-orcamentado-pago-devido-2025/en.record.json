@@ -2844,6 +2844,13 @@
    "text": "The recovery-plan register, on 2026-08-04, says: approved money attributed to the concelho of Évora, €167 372 756; paid, €86 944 669. That register republishes daily with no history, so those figures are that snapshot's."
   },
   {
+   "emphasis": [
+    {
+     "end": 385,
+     "kind": "strong",
+     "start": 374
+    }
+   ],
    "figures": [
     {
      "end": 82,
@@ -2857,7 +2864,7 @@
    ],
    "i": 72,
    "kind": "paragraph",
-   "text": "Set against them, from these accounts: the municipality itself received €1 087 287 in co-financed capital transfers in all of 2025. The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality — the university, the health service, housing bodies, national agencies — and the part that is the Câmara's to spend has, so far, mostly not arrived (inference)."
+   "text": "Set against them, from these accounts: the municipality itself received €1 087 287 in co-financed capital transfers in all of 2025. The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality (the university, the health service, housing bodies, national agencies), and most of the part that is the Câmara's to spend has yet to arrive (inference)."
   },
   {
    "i": 73,

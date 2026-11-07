@@ -1348,7 +1348,7 @@ for (const file of ficheiros) {
   tirarCodigoConferido(root, rota);
   if(rota?.key==='estudo')for(const cabecalho of root.querySelectorAll('[data-estudo-edicao]')){
     const [slug,lang]=cabecalho.getAttribute('data-estudo-edicao').split('/');
-    const erros=conferirVozDaLinha(cabecalho,manifestoEd2,slug,lang);
+    const erros=conferirVozDaLinha(cabecalho,manifestoEd2,slug,lang,null,rota.lang);
     if(erros.length)throw Error(erros.join('; '));
   }
   const titulosCopiados=conferirTitulosCopiados(root,rota,DIST);

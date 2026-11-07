@@ -83,6 +83,13 @@
    "text": "The contracts section is an upper bound on a truncated window. Portal BASE holds 24 436 contracts for the concelho of Évora. 600 of them are the most recently published ones, spanning 2026-05-08 to 2026-08-04. A contract carried out across several municipalities is returned by each of their filters at its full value, so a concelho contract total is an upper bound and concelho totals must never be added together."
   },
   {
+   "emphasis": [
+    {
+     "end": 41,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [
     {
      "end": 124,
@@ -3797,7 +3804,7 @@
    "figures": [],
    "i": 45,
    "kind": "paragraph",
-   "text": "Portal BASE is Portugal's public contracts register. Recovery-plan grants and contract prices are different quantities."
+   "text": "Portal BASE is Portugal's public contracts register. Recovery-plan grants and contract prices are different quantities, and not a second measure of the same money."
   },
   {
    "i": 46,
@@ -4547,7 +4554,7 @@
      "value": "735 681"
     },
     {
-     "end": 466,
+     "end": 381,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -4557,13 +4564,13 @@
      "row": "base-multi-spelling-entities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 465,
+     "start": 380,
      "value": "5"
     }
    ],
    "i": 54,
    "kind": "paragraph",
-   "text": "The grouping rule is not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. The rule under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. Nothing available can distinguish an acronym prefix from a genuinely different body. So 5 is a floor on how many bodies file under more than one name, not a count. That is the shape of this whole register: a per-string count looks like a per-entity count and is not one."
+   "text": "The grouping rule is not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. The rule under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. So 5 is a floor on how many bodies file under more than one name, not a count. That is the shape of this whole register: a per-string count looks like a per-entity count and is not one."
   },
   {
    "emphasis": [
@@ -4573,9 +4580,9 @@
      "start": 236
     },
     {
-     "end": 571,
+     "end": 494,
      "kind": "em",
-     "start": 396
+     "start": 483
     }
    ],
    "figures": [
@@ -4600,7 +4607,7 @@
    ],
    "i": 55,
    "kind": "paragraph",
-   "text": "Across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity)."
+   "text": "Across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. The two registers use different names, and neither source states that they are the same entity. The contract objects themselves show that they are one body (inference)."
   },
   {
    "i": 56,
@@ -5345,7 +5352,7 @@
    "figures": [],
    "i": 62,
    "kind": "paragraph",
-   "text": "The one municipal document is not filed among the Tribunal's audit reports at all: its product family is Relatórios de Verificação Interna de Contas, the internal verification of a body's accounts for one financial year. Its subject is «Município de Évora - Gerência de 2016». The catalogue records the family and the title, and nothing more."
+   "text": "The one municipal document is not filed among the Tribunal's audit reports at all: its product family is Relatórios de Verificação Interna de Contas, the internal verification of a body's accounts for one financial year. Its subject is «Município de Évora - Gerência de 2016». The catalogue records the family and the title of that instrument, and nothing more: what it concludes, and how it differs in depth from an audit, is not recorded."
   },
   {
    "emphasis": [
@@ -5375,7 +5382,7 @@
    "i": 64,
    "kind": "heading",
    "level": 3,
-   "text": "Why a silence here is not a silence"
+   "text": "What remains unknown"
   },
   {
    "figures": [],
@@ -5581,20 +5588,27 @@
    "text": "The catalogue indexes abstracts, not report bodies. A thematic audit of how mainland municipalities fund their fire brigades carries no mention of Évora in its catalogue entry at all — and names the concelho 13 times in its own text, including its position in the Tribunal's own tables."
   },
   {
+   "emphasis": [
+    {
+     "end": 98,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
    "figures": [
     {
-     "end": 50,
+     "end": 60,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 46,
+     "start": 56,
      "value": "2019"
     }
    ],
    "i": 70,
    "kind": "paragraph",
-   "text": "In the four families, nothing published after 2019 names Évora in its title or abstract."
+   "text": "In the four families consulted, nothing published after 2019 names Évora in its title or abstract."
   },
   {
    "emphasis": [
@@ -6093,7 +6107,7 @@
    ],
    "i": 76,
    "kind": "paragraph",
-   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result means \"not found in the catalogue\", never \"not audited\"."
+   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result means \"not found in the catalogue\", not \"not audited\"."
   },
   {
    "emphasis": [

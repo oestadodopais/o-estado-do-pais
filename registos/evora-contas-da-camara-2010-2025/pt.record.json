@@ -18,7 +18,7 @@
    "figures": [],
    "i": 2,
    "kind": "paragraph",
-   "text": "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate? Este estudo lê as contas do município de 2010 a 2025 em três vozes: os relatórios do próprio município, a opinião assinada do auditor e a série independente de dívida que o regulador publica."
+   "text": "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate? Três fontes cobrem as contas do município de 2010 a 2025: os relatórios do próprio município, a opinião assinada do auditor e a série independente de dívida que o regulador publica."
   },
   {
    "figures": [
@@ -183,29 +183,29 @@
      "value": "61.44"
     },
     {
-     "end": 487,
+     "end": 505,
      "markers": "†",
      "printed": "9 500 000",
      "row": "gop26-rossio-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 478,
+     "start": 496,
      "value": "9 500 000†"
     },
     {
-     "end": 515,
+     "end": 533,
      "markers": "†",
      "printed": "2 350 000",
      "row": "gop26-rossio-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 506,
+     "start": 524,
      "value": "2 350 000†"
     }
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "O orçamento não é o dinheiro. A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra. O plano de 2026 volta a fazê-lo: a maior dotação recuperada dos seus anexos, a do Rossio de São Brás, leva €9 500 000† para o ano, com €2 350 000† de financiamento definido."
+   "text": "O orçamento não é o dinheiro. A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram um padrão: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não é recebido. Que este padrão explique a queda é uma inferência. O plano de 2026 volta a fazê-lo: a maior dotação recuperada dos seus anexos, a do Rossio de São Brás, leva €9 500 000† para o ano, com €2 350 000† de financiamento definido."
   },
   {
    "figures": [
@@ -494,12 +494,12 @@
    "kind": "paragraph",
    "links": [
     {
-     "end": 367,
+     "end": 126,
      "href": "/estudos/evora-quem-governou-a-camara-2009-2025",
-     "start": 323
+     "start": 82
     }
    ],
-   "text": "Este estudo mostra as contas e as séries, e não as atribui a ninguém: o programa de ajustamento, a pandemia, a transferência de competências para os municípios e o ciclo económico nacional mexem nos índices seja quem for que ocupe a câmara. As decisões com autor, e as eleições que decidiram quem as tomou, estão no estudo Quem governou a Câmara de Évora, 2009 a 2025."
+   "text": "As decisões com autor, e as eleições que decidiram quem as tomou, estão no estudo Quem governou a Câmara de Évora, 2009 a 2025."
   },
   {
    "i": 25,
@@ -7364,7 +7364,7 @@
    "figures": [],
    "i": 121,
    "kind": "paragraph",
-   "text": "Nenhum documento lido explica a distância de 2020 a 2023: nem os relatórios nem o ficheiro do regulador dizem de onde vêm os quatro a cinco milhões de euros que separam as duas séries nesses anos. Fica por saber, e é por isso que este estudo diz sempre de que série fala quando diz que a dívida sobe ou desce."
+   "text": "Nenhum documento lido explica a distância de 2020 a 2023: nem os relatórios nem o ficheiro do regulador dizem de onde vêm os quatro a cinco milhões de euros que separam as duas séries nesses anos. Fica por saber."
   },
   {
    "figures": [

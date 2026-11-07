@@ -5,7 +5,7 @@
  "estado": "FIXADO. Cinco estratos, todos com a palavra do diretor de 24.08: os cortes e as substituições de S1; as reescritas L1 sob a regra aprovada; as propostas do inventário cego; as famílias C1 a C5 das duas leituras cruzadas do Codex, com as emendas do assento; e as quatro operações de coerência da revisão do delta, aprovadas sobre o delta consolidado. Este ficheiro é o operativo: vive ao lado do registo que descreve, e o manifesto do estudo nomeia-o pelo seu resumo.",
  "operacoes": [
   {
-   "antes_no_registo": "API JSON do INE (códigos de indicador e URLs exatos no livro-razão ao lado deste documento), lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR através do servidor `pt-public-money` deste repositório, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento — cada uma com URL, data de acesso e excerto verbatim no `ledger.json`.",
+   "antes_no_registo": "API JSON do INE, lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento.",
    "b": 52,
    "b_no_registo": 52,
    "estrato": "S1·aprovado",
@@ -15,7 +15,7 @@
    "figuras": [],
    "frases_no_registo": 1,
    "op": "corte",
-   "texto": "API JSON do INE (códigos de indicador e URLs exatos no livro-razão ao lado deste documento), lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR através do servidor `pt-public-money` deste repositório, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento — cada uma com URL, data de acesso e excerto verbatim no `ledger.json`.",
+   "texto": "API JSON do INE, lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento.",
    "unidade": null
   },
   {
@@ -62,23 +62,6 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "Cada número desta página é substituído a partir de um livro-razão de afirmações no momento da construção — nenhum número foi escrito à mão.",
-   "b": 1,
-   "b_no_registo": 1,
-   "estrato": "S2·inventário-cego·aprovado-24.08",
-   "f": 3,
-   "f_no_registo": 3,
-   "familia": "inventario-cego",
-   "figuras": [],
-   "frases_no_registo": 1,
-   "op": "corte",
-   "origem": "inventario-cego-S2",
-   "pendente": "aprovado pelo diretor a 24.08",
-   "razao": "diligência de construção; escapou à rede por dizer «livro-razão de afirmações» sem «ledger.json»",
-   "texto": "Cada número desta página é substituído a partir de um livro-razão de afirmações no momento da construção — nenhum número foi escrito à mão.",
-   "unidade": null
-  },
-  {
    "antes_no_registo": "A leitura completa promessa-versus-pagamento, incluindo porque é que «em prazo» nesse registo é pouco exigente, é o documento companheiro Évora — Prometido, Pago, Auditado 2026 neste repositório.",
    "b": 27,
    "b_no_registo": 27,
@@ -115,24 +98,6 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "O que este documento pode e não pode dizer",
-   "b": 2,
-   "b_no_registo": 2,
-   "depois": "Os limites",
-   "estrato": "S5·segunda-voz·proposta-27.08",
-   "f": 0,
-   "f_no_registo": 0,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "06-titulo-limites",
-   "op": "substituicao",
-   "origem": "registo de hoje b2 f0",
-   "pendente": "diretor",
-   "razao": "o título dizia o que o documento pode e não pode; fica o nome do que a secção é, da palavra que o próprio documento usa nos limites 1 e 2",
-   "texto": "O que este documento pode e não pode dizer",
-   "unidade": null
-  },
-  {
    "antes_no_registo": "Leia primeiro estes limites; dois deles decidem se uma frase é verdadeira.",
    "b": 3,
    "b_no_registo": 3,
@@ -148,24 +113,6 @@
    "razao": "instrução de leitura, e o documento a dizer o que decide a verdade das suas frases",
    "texto": "Leia primeiro estes limites; dois deles decidem se uma frase é verdadeira.",
    "unidade": null
-  },
-  {
-   "antes_no_registo": "Não existe PIB da cidade, e nenhum é inventado aqui.",
-   "b": 4,
-   "b_no_registo": 4,
-   "depois": "Não existe PIB da cidade.",
-   "estrato": "S5·segunda-voz·proposta-27.08",
-   "f": 1,
-   "f_no_registo": 1,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "06-nenhum-inventado",
-   "op": "substituicao",
-   "origem": "registo de hoje b4 item 0 f1",
-   "pendente": "diretor",
-   "razao": "o documento a dizer o que não faz; a ausência fica",
-   "texto": "Não existe PIB da cidade, e nenhum é inventado aqui.",
-   "unidade": 0
   },
   {
    "antes_no_registo": "As classes de quem-pode-candidatar-se vêm das secções de elegibilidade verbatim extraídas em 2026-08-08 pelo Registo de Acesso a Fundos ao lado desta pasta.",
@@ -261,30 +208,6 @@
     "razao": "a casa a dizer que conferiu; as contagens ficam"
    },
    "texto": "60 instrumentos foram verificados no PEPAC/IFAP, PRR, IEFP, Turismo de Portugal, Banco Português de Fomento, FCT, DGArtes e nos programas diretos da UE; 44 estavam abertos ou em contínuo à data da leitura.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade — se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial, e não é afirmado aqui.",
-   "b": 37,
-   "b_no_registo": 37,
-   "depois": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade.",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 0,
-   "f_no_registo": 0,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "06-baixa-densidade-verificar",
-   "op": "substituicao",
-   "origem": "registo de hoje b37 f0",
-   "pendente": "diretor",
-   "razao": "«tem de ser verificado» é o que o documento não fez; a porta e o seu valor ficam, e a condição continua escrita na própria frase, «para territórios de baixa densidade»",
-   "reve": {
-    "estrato": "S5·segunda-voz·proposta-27.08",
-    "op": "substituicao",
-    "pendente": "diretor",
-    "razao": "o documento a dizer o que não afirma"
-   },
-   "texto": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade — se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial, e não é afirmado aqui.",
    "unidade": null
   },
   {
@@ -498,24 +421,6 @@
    "pendente": "diretor",
    "razao": "a instrução de leitura sai e a ressalva fica com o SCIE por sujeito; o «1» de «limite 1» fica impresso carácter a carácter, e com ele a ocorrência que o reconciliador ali bate",
    "texto": "Leia-se ao lado do limite 1: o SCIE atribui pela sede e pela atividade principal da empresa, e um retrato ao nível da fábrica é exatamente o que um registo empresarial municipal não pode prometer.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa, e deliberadamente não são impressos aqui.",
-   "b": 24,
-   "b_no_registo": 25,
-   "depois": "Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa.",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 3,
-   "f_no_registo": 3,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "06-nao-impressos-aqui",
-   "op": "substituicao",
-   "origem": "registo de 27.08 b24 f3",
-   "pendente": "diretor",
-   "razao": "a decisão de não imprimir é do documento; o facto e a ressalva sobre a imprensa ficam",
-   "texto": "Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa, e deliberadamente não são impressos aqui.",
    "unidade": null
   },
   {

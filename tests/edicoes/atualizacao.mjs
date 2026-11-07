@@ -48,3 +48,17 @@ console.log(`EV3 língua: ${marcas.length} marcas válidas; ${adulteradas.length
 const {edicoesGuardadas,primeiraEdicaoServida}=await import('../../src/lib/edicoes.mjs');
 for(const e of edicoesGuardadas().filter(e=>e.slug==='evora-2027-capital-europeia-da-cultura'))assert.equal(parse(primeiraEdicaoServida(e.slug,e.lang,e.data)).querySelectorAll('[data-ev3-nome]').length,0);
 console.log('EV3-I: edições guardadas sem marcas de nomes da atualização.');
+
+// A língua da página muda os rótulos, sem inventar uma edição do documento.
+const {linhaDasEdicoes,portasDaCorrecao}=await import('../../src/lib/edicoes.mjs');
+const {conferirLinhaDasEdicoes}=await import('../../scripts/edicoes-linha-conferir.mjs');
+const soPt='evora-economia-investidores-portas-abertas-2026';
+const cabecalho=linhaDasEdicoes(soPt,'pt',null,'en');
+const conferirEmprestada=html=>conferirLinhaDasEdicoes(parse('<p>'+html+'</p>'),manifesto,soPt,'pt',null,'en');
+assert.deepEqual(conferirEmprestada(cabecalho),[]);
+assert(conferirEmprestada(cabecalho.replace('updated on','atualizado a')).length);
+assert(conferirEmprestada(cabecalho.replaceAll('/estudos/','/en/studies/')).length);
+assert(conferirEmprestada(cabecalho.replaceAll('hreflang="pt-PT"','hreflang="en"')).length);
+const portasPt=portasDaCorrecao(soPt,'en','2026-11-07');
+assert.equal(portasPt.rotuloDepois,'Current edition');assert(portasPt.depois.rota.startsWith('/estudos/'));
+console.log('VOZ-2A: cabeçalho inglês e portas portuguesas conferidos; língua dos rótulos, rota e hreflang trocados recusados.');

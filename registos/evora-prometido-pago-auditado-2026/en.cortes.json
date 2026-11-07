@@ -5,26 +5,12 @@
  "estado": "FIXADO. Cinco estratos, todos com a palavra do diretor de 24.08: os cortes e as substituições de S1; as reescritas L1 sob a regra aprovada; as propostas do inventário cego; as famílias C1 a C5 das duas leituras cruzadas do Codex, com as emendas do assento; e as quatro operações de coerência da revisão do delta, aprovadas sobre o delta consolidado. Este ficheiro é o operativo: vive ao lado do registo que descreve, e o manifesto do estudo nomeia-o pelo seu resumo.",
  "operacoes": [
   {
-   "antes_no_registo": "Research Hub.",
-   "b": 1,
-   "b_no_registo": 1,
-   "estrato": "S1·aprovado",
-   "f": 0,
-   "f_no_registo": 0,
-   "familia": "F1",
-   "figuras": [],
-   "frases_no_registo": 1,
-   "op": "corte",
-   "texto": "*Research Hub.",
-   "unidade": null
-  },
-  {
    "antes_no_registo": "Every figure below has a row in ledger.json beside this file, with its source URL, its fetch timestamp and the exact text it was read from, or, for a sum computed over a file, the file, its snapshot date and digest and the arithmetic.",
    "b": 1,
    "b_no_registo": 1,
    "estrato": "S1·aprovado",
    "f": 2,
-   "f_no_registo": 2,
+   "f_no_registo": 1,
    "familia": "F2",
    "figuras": [],
    "frases_no_registo": 1,
@@ -140,26 +126,12 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "This document was written under the Research Hub deliverable rule: a claims ledger before prose, mechanical reconciliation of every printed figure against it, an attribution check that a figure is credited to the institution its row names, an assertion check on quantified claims, and refutation-framed verification by agents that did not write it.",
-   "b": 105,
-   "b_no_registo": 104,
-   "estrato": "S1·aprovado",
-   "f": 0,
-   "f_no_registo": 0,
-   "familia": "F7",
-   "figuras": [],
-   "frases_no_registo": 1,
-   "op": "corte",
-   "texto": "This document was written under the Research Hub deliverable rule: a claims ledger before prose, mechanical reconciliation of every printed figure against it, an attribution check that a figure is credited to the institution its row names, an assertion check on quantified claims, and refutation-framed verification by agents that did not write it.",
-   "unidade": null
-  },
-  {
    "antes_no_registo": "The record of what ran and what it found is in Technical Source/VERIFICATION.md.",
    "b": 105,
    "b_no_registo": 104,
    "estrato": "S1·aprovado",
    "f": 1,
-   "f_no_registo": 1,
+   "f_no_registo": 0,
    "familia": "F4",
    "figuras": [],
    "frases_no_registo": 1,
@@ -168,37 +140,12 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "The script reports that shape rather than merging it, because nothing available here can distinguish an acronym prefix from a genuinely different body.",
-   "b": 56,
-   "b_no_registo": 56,
-   "depois": "Nothing available can distinguish an acronym prefix from a genuinely different body.",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 4,
-   "f_no_registo": 4,
-   "familia": "F1",
-   "figuras": [],
-   "frases_no_registo": 1,
-   "gemea": "04-fica-reportada-em-vez-de-fundida",
-   "op": "substituicao",
-   "origem": "inventario-cego-S2",
-   "pendente": "diretor",
-   "razao": "«fica reportada em vez de fundida» é o ato do documento; a razão, que é o que as fontes não conseguem distinguir, fica",
-   "reve": {
-    "estrato": "S2·inventário-cego·aprovado-24.08",
-    "op": "substituicao",
-    "pendente": "aprovado pelo diretor a 24.08",
-    "razao": "fica o limite dos dados (prefixo de acrónimo indistinguível); sai o script"
-   },
-   "texto": "The script reports that shape rather than merging it, because nothing available here can distinguish an acronym prefix from a genuinely different body.",
-   "unidade": null
-  },
-  {
    "antes_no_registo": "An independent verifier found the third.",
    "b": 56,
    "b_no_registo": 56,
    "estrato": "S2·inventário-cego·aprovado-24.08",
    "f": 7,
-   "f_no_registo": 7,
+   "f_no_registo": 6,
    "familia": "inventario-cego",
    "figuras": [],
    "frases_no_registo": 1,
@@ -478,7 +425,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "It is not enough to say what the Tribunal concluded — the findings, the recommendations and the euro amounts are inside the PDFs, and nothing here opens one.",
+   "antes_no_registo": "The findings, the recommendations and the euro amounts of what the Tribunal concluded are inside the PDFs.",
    "b": 5,
    "b_no_registo": 5,
    "estrato": "S5·segunda-voz·proposta-27.08",
@@ -491,7 +438,7 @@
    "origem": "registo de hoje b5 f3",
    "pendente": "diretor",
    "razao": "o documento a dizer o que não faz; o facto fica no bloco 60",
-   "texto": "It is not enough to say what the Tribunal concluded — the findings, the recommendations and the euro amounts are inside the PDFs, and nothing here opens one.",
+   "texto": "The findings, the recommendations and the euro amounts of what the Tribunal concluded are inside the PDFs.",
    "unidade": null
   },
   {
@@ -582,24 +529,6 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "It does not reconcile to project totals and its location column means something different, so it is not used here.",
-   "b": 35,
-   "b_no_registo": 35,
-   "depois": "It does not reconcile to project totals and its location column means something different.",
-   "estrato": "S5·segunda-voz·proposta-27.08",
-   "f": 1,
-   "f_no_registo": 1,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "04-terceira-camada",
-   "op": "substituicao",
-   "origem": "registo de hoje b35 f1",
-   "pendente": "diretor",
-   "razao": "o documento a dizer o que não usa; o facto da terceira camada fica",
-   "texto": "It does not reconcile to project totals and its location column means something different, so it is not used here.",
-   "unidade": null
-  },
-  {
    "antes_no_registo": "Now the caveat that has to travel with the first row of that table.",
    "b": 40,
    "b_no_registo": 40,
@@ -649,24 +578,6 @@
    "pendente": "diretor",
    "razao": "a razão editorial de mostrar sai; a medida fica",
    "texto": "Public contracts, as context",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "It is included here as context on the same territory, not as a second measure of the same money: recovery-plan grants and contract prices are different quantities, and this document never adds them.",
-   "b": 47,
-   "b_no_registo": 47,
-   "depois": "Recovery-plan grants and contract prices are different quantities.",
-   "estrato": "S5·segunda-voz·proposta-27.08",
-   "f": 1,
-   "f_no_registo": 1,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "04-esta-aqui-como-contexto",
-   "op": "substituicao",
-   "origem": "registo de hoje b47 f1",
-   "pendente": "diretor",
-   "razao": "a moldura editorial sai e fica o facto que muda a leitura: são quantidades diferentes",
-   "texto": "It is included here as context on the same territory, not as a second measure of the same money: recovery-plan grants and contract prices are different quantities, and this document never adds them.",
    "unidade": null
   },
   {
@@ -738,7 +649,7 @@
     "razao": "A frase conta a história de um rascunho anterior deste próprio documento. O 270 que cai é a única ocorrência da linha base-ulsac-combined-contracts, que fica sem referência nenhuma: a fase 2 tem de a declarar no `ignore` do livro-razão do 04 ou o portão dos órfãos pára a construção."
    },
    "f": 6,
-   "f_no_registo": 6,
+   "f_no_registo": 5,
    "familia": "F1",
    "frases_no_registo": 1,
    "gemea": "04-rascunho-anterior",
@@ -756,7 +667,7 @@
    "depois": "That is the shape of this whole register: a per-string count looks like a per-entity count and is not one.",
    "estrato": "S5·segunda-voz·proposta-27.08",
    "f": 8,
-   "f_no_registo": 8,
+   "f_no_registo": 7,
    "familia": "F1",
    "frases_no_registo": 1,
    "gemea": "04-forma-honesta",
@@ -799,24 +710,6 @@
    "pendente": "diretor",
    "razao": "o documento a dizer o que não faz",
    "texto": "It does not say what the Tribunal found.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "Those 4 are not everything the Tribunal publishes — a limit this document measures rather than mentions, below.",
-   "b": 60,
-   "b_no_registo": 60,
-   "depois": "Those 4 are not everything the Tribunal publishes.",
-   "estrato": "S5·segunda-voz·proposta-27.08",
-   "f": 4,
-   "f_no_registo": 4,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "04-essas-quatro",
-   "op": "substituicao",
-   "origem": "registo de hoje b60 f4",
-   "pendente": "diretor",
-   "razao": "o documento a medir-se a si próprio; o facto fica",
-   "texto": "Those 4 are not everything the Tribunal publishes — a limit this document measures rather than mentions, below.",
    "unidade": null
   },
   {
@@ -870,24 +763,6 @@
    "pendente": "diretor",
    "razao": "o documento a defender o seu próprio aparelho, e a ferramenta como sujeito; fica o que os níveis dizem, com os algarismos",
    "texto": "The tiers are not decoration. The matcher distinguishes four of them, and these matches fall into two of the four confidence tiers: 1 document where the name follows a municipal designator such as Município de, and 5 where it is a bare mention.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "What that instrument concludes, and how it differs in depth from an audit, is not something this document can tell you — the catalogue records the family and the title, and nothing more.",
-   "b": 64,
-   "b_no_registo": 64,
-   "depois": "The catalogue records the family and the title, and nothing more.",
-   "estrato": "S5·segunda-voz·proposta-27.08",
-   "f": 2,
-   "f_no_registo": 2,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "04-esse-instrumento",
-   "op": "substituicao",
-   "origem": "registo de hoje b64 f2",
-   "pendente": "diretor",
-   "razao": "a fonte fica por sujeito",
-   "texto": "What that instrument concludes, and how it differs in depth from an audit, is not something this document can tell you — the catalogue records the family and the title, and nothing more.",
    "unidade": null
   },
   {
@@ -963,30 +838,6 @@
    "pendente": "diretor",
    "razao": "a pesquisa da casa; o limite da fonte fica dito no bloco 71",
    "texto": "That report sits inside a family this document searched. The search still could not find it.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "The honest statement is therefore narrow: in the four families this document reads, nothing published after 2019 names Évora in its title or abstract.",
-   "b": 72,
-   "b_no_registo": 72,
-   "depois": "In the four families, nothing published after 2019 names Évora in its title or abstract.",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 0,
-   "f_no_registo": 0,
-   "familia": "F1",
-   "frases_no_registo": 1,
-   "gemea": "04-quatro-familias-lidas-1",
-   "op": "substituicao",
-   "origem": "registo de hoje b72 f0",
-   "pendente": "diretor",
-   "razao": "«lidas» é o ato do documento; as quatro famílias e o 2019 ficam",
-   "reve": {
-    "estrato": "S5·segunda-voz·proposta-27.08",
-    "op": "substituicao",
-    "pendente": "diretor",
-    "razao": "a honestidade reclamada sai; a mesma frase, com as palavras que o próprio documento usa no bloco 93, fica"
-   },
-   "texto": "The honest statement is therefore narrow: in the four families this document reads, nothing published after 2019 names Évora in its title or abstract.",
    "unidade": null
   },
   {
@@ -1078,7 +929,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same (inference) label the rest of the document uses. It stays on this side of the line the first section draws — where the money and the risk sit is a reading of registers; whether anyone managed well or badly would need the audits this document does not open.",
+   "antes_no_registo": "Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same (inference) label the rest of the document uses.",
    "b": 88,
    "b_no_registo": 88,
    "condicao": "A divulgação de autoria por IA e a leitura do marcador «(inferência)» vivem na regra 9 do Método do sítio e no Sobre (site d6d2564, DECISIONS §1.63). Se saírem de lá, esta frase volta ao documento.",
@@ -1086,13 +937,13 @@
    "f": 0,
    "f_no_registo": 0,
    "familia": "F1",
-   "frases_no_registo": 3,
+   "frases_no_registo": 2,
    "gemea": "04-autoria-ia",
    "op": "corte",
    "origem": "registo de hoje b88 f0",
    "pendente": "diretor",
    "razao": "a divulgação de autoria por IA vive no Sobre e na regra 9 do Método do sítio desde 27.08 (site d6d2564), que era a condição escrita a 24.08",
-   "texto": "Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same (inference) label the rest of the document uses. It stays on this side of the line the first section draws — where the money and the risk sit is a reading of registers; whether anyone managed well or badly would need the audits this document does not open.",
+   "texto": "Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same (inference) label the rest of the document uses.",
    "unidade": null
   },
   {
@@ -1167,24 +1018,24 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "What would turn this reading into knowledge is short and concrete. Read the Tribunal PDFs this document links, which is where conclusions actually live; put the council's own accounts against DGAL's municipal-finance data, which the next section names as the missing source; and keep the daily snapshots, because the register erases its own history and a trend will exist where these observations accumulate. Until then the honest landing is the one this section has tried to give: not a verdict, but a map of where verdicts should be sought first (inference).",
+   "antes_no_registo": "What would turn this reading into knowledge is short and concrete. Read the Tribunal PDFs this document links, which is where conclusions actually live; put the council's own accounts against DGAL's municipal-finance data, which the next section names as the missing source; and keep the daily snapshots, because the register erases its own history and a trend will exist where these observations accumulate.",
    "b": 95,
    "b_no_registo": 95,
    "estrato": "S5·segunda-voz·proposta-27.08",
    "f": 0,
    "f_no_registo": 0,
    "familia": "F4",
-   "frases_no_registo": 3,
+   "frases_no_registo": 2,
    "gemea": "04-transformar-conhecimento",
    "op": "corte",
    "origem": "registo de hoje b95 f0",
    "pendente": "diretor",
    "razao": "a agenda do próprio documento, e o que ele não faz",
-   "texto": "What would turn this reading into knowledge is short and concrete. Read the Tribunal PDFs this document links, which is where conclusions actually live; put the council's own accounts against DGAL's municipal-finance data, which the next section names as the missing source; and keep the daily snapshots, because the register erases its own history and a trend will exist where these observations accumulate. Until then the honest landing is the one this section has tried to give: not a verdict, but a map of where verdicts should be sought first (inference).",
+   "texto": "What would turn this reading into knowledge is short and concrete. Read the Tribunal PDFs this document links, which is where conclusions actually live; put the council's own accounts against DGAL's municipal-finance data, which the next section names as the missing source; and keep the daily snapshots, because the register erases its own history and a trend will exist where these observations accumulate.",
    "unidade": null
   },
   {
-   "antes_no_registo": "What this document does not answer",
+   "antes_no_registo": "What remains unanswered",
    "b": 97,
    "b_no_registo": 97,
    "estrato": "S5·segunda-voz·proposta-27.08",
@@ -1197,28 +1048,28 @@
    "origem": "registo de hoje b97 f0",
    "pendente": "diretor",
    "razao": "a secção inteira é o documento a dizer o que não faz; cada ressalva dela que muda a leitura de um algarismo vive ao lado do algarismo",
-   "texto": "What this document does not answer",
+   "texto": "What remains unanswered",
    "unidade": null
   },
   {
-   "antes_no_registo": "Whether Évora's public money was well spent. Nothing here reads an audit's findings. The Tribunal's conclusions exist; they were not fetched.",
+   "antes_no_registo": "Whether Évora's public money was well spent. The Tribunal's conclusions exist; they were not fetched.",
    "b": 98,
    "b_no_registo": 98,
    "estrato": "S5·segunda-voz·proposta-27.08",
    "f": 0,
    "f_no_registo": 0,
    "familia": "F4",
-   "frases_no_registo": 3,
+   "frases_no_registo": 2,
    "gemea": "04-nao-responde-1",
    "op": "corte",
    "origem": "registo de hoje b98 item 0 f0",
    "pendente": "diretor",
    "razao": "a secção inteira é o documento a dizer o que não faz; cada ressalva dela que muda a leitura de um algarismo vive ao lado do algarismo",
-   "texto": "Whether Évora's public money was well spent. Nothing here reads an audit's findings. The Tribunal's conclusions exist; they were not fetched.",
+   "texto": "Whether Évora's public money was well spent. The Tribunal's conclusions exist; they were not fetched.",
    "unidade": 0
   },
   {
-   "antes_no_registo": "How much the Tribunal has examined Évora. This document searched four product families by title and abstract, and can name a floor, not a total. Two of its own probes show the floor is well below the truth.",
+   "antes_no_registo": "How much the Tribunal has examined Évora. Searching four product families by title and abstract yields a floor, not a total. Two of its own probes show the floor is well below the truth.",
    "b": 98,
    "b_no_registo": 98,
    "estrato": "S5·segunda-voz·proposta-27.08",
@@ -1231,7 +1082,7 @@
    "origem": "registo de hoje b98 item 1 f0",
    "pendente": "diretor",
    "razao": "a secção inteira é o documento a dizer o que não faz; cada ressalva dela que muda a leitura de um algarismo vive ao lado do algarismo",
-   "texto": "How much the Tribunal has examined Évora. This document searched four product families by title and abstract, and can name a floor, not a total. Two of its own probes show the floor is well below the truth.",
+   "texto": "How much the Tribunal has examined Évora. Searching four product families by title and abstract yields a floor, not a total. Two of its own probes show the floor is well below the truth.",
    "unidade": 1
   },
   {
@@ -1252,7 +1103,7 @@
    "unidade": 2
   },
   {
-   "antes_no_registo": "What the council itself did. Most of this money moves through national agencies and other public bodies. A council-level accounting question needs DGAL's municipal finance data, which this document does not use.",
+   "antes_no_registo": "What the council itself did. Most of this money moves through national agencies and other public bodies. A council-level accounting question needs DGAL's municipal finance data.",
    "b": 98,
    "b_no_registo": 98,
    "estrato": "S5·segunda-voz·proposta-27.08",
@@ -1265,7 +1116,7 @@
    "origem": "registo de hoje b98 item 3 f0",
    "pendente": "diretor",
    "razao": "a secção inteira é o documento a dizer o que não faz; cada ressalva dela que muda a leitura de um algarismo vive ao lado do algarismo",
-   "texto": "What the council itself did. Most of this money moves through national agencies and other public bodies. A council-level accounting question needs DGAL's municipal finance data, which this document does not use.",
+   "texto": "What the council itself did. Most of this money moves through national agencies and other public bodies. A council-level accounting question needs DGAL's municipal finance data.",
    "unidade": 3
   },
   {
@@ -1370,24 +1221,6 @@
    "pendente": "diretor",
    "razao": "o que o documento não leu; a janela lida fica dita na frase anterior, com o 600 e as duas datas",
    "texto": "The rest were not read.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "There is no EU figure for a municipality, and this document does not manufacture one.",
-   "b": 6,
-   "b_no_registo": 7,
-   "depois": "There is no EU figure for a municipality.",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 0,
-   "f_no_registo": 0,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "04-nao-fabrica-um-valor",
-   "op": "substituicao",
-   "origem": "registo de 27.08 b6 f0",
-   "pendente": "diretor",
-   "razao": "«este documento não o fabrica» é o documento a garantir-se; o nulo fica",
-   "texto": "There is no EU figure for a municipality, and this document does not manufacture one.",
    "unidade": null
   },
   {
@@ -1513,24 +1346,6 @@
    "pendente": "diretor",
    "razao": "«é julgado» é a regra do documento; o estado fica na data da fonte, que é o que a frase serve para dizer",
    "texto": "Status is judged against the snapshot's own reference date, not today's, because that is the date the source speaks for.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "Nothing here says Évora reports differently from anywhere else; it says the register's completion dates cannot be read as observed delivery anywhere.",
-   "b": 39,
-   "b_no_registo": 41,
-   "depois": "The register's completion dates cannot be read as observed delivery anywhere.",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 5,
-   "f_no_registo": 5,
-   "familia": "F4",
-   "frases_no_registo": 1,
-   "gemea": "04-nada-aqui-diz",
-   "op": "substituicao",
-   "origem": "registo de 27.08 b39 f5",
-   "pendente": "diretor",
-   "razao": "«Nada aqui diz» é o documento por sujeito; a ressalva fica com as datas de conclusão do registo por sujeito, e o padrão nacional já está medido acima",
-   "texto": "Nothing here says Évora reports differently from anywhere else; it says the register's completion dates cannot be read as observed delivery anywhere.",
    "unidade": null
   },
   {
@@ -1781,24 +1596,6 @@
    "pendente": "diretor",
    "razao": "«Pesquisado» é o ato do documento; o catálogo passa a sujeito e o 2 fica, com a razão da grafia",
    "texto": "Searched under its acronym it returns 2 — the Tribunal writes Instituto de Habitação e Reabilitação Urbana, without the two «da»s the other register uses, so an exact-token match sees two different bodies.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "A nil result here means \"not found in the catalogue by this method\", never \"not audited\".",
-   "b": 76,
-   "b_no_registo": 78,
-   "depois": "A nil result means \"not found in the catalogue\", never \"not audited\".",
-   "estrato": "S6·terceira-voz·proposta-27.08",
-   "f": 3,
-   "f_no_registo": 3,
-   "familia": "F1",
-   "frases_no_registo": 1,
-   "gemea": "04-por-este-metodo",
-   "op": "substituicao",
-   "origem": "registo de 27.08 b76 f3",
-   "pendente": "diretor",
-   "razao": "«aqui» e «por este método» são o documento; a ressalva que impede ler um zero como «não auditado» fica",
-   "texto": "A nil result here means \"not found in the catalogue by this method\", never \"not audited\".",
    "unidade": null
   },
   {

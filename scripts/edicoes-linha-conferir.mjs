@@ -22,8 +22,8 @@ export function mudancasNoManifesto(slug,lang,manifesto=manifestoEd2){
  return ['atualizacao','correcao'].flatMap(n=>{const v=vs.findLast(v=>n==='atualizacao'?v.natureza==='atualizacao':v.natureza===undefined);return v?[{data:v.data,natureza:n}]:[];}).sort((a,b)=>a.data.localeCompare(b.data));
 }
 /** ED3: a publicação e as versões definem os elementos, sem usar a vista. */
-export function elementosDaLinha(manifesto,slug,lang,data=null){
- const vs=versoesNoManifesto(slug,lang,manifesto),publicada=publicacaoNoPortao(slug,lang),pt=lang==='pt';
+export function elementosDaLinha(manifesto,slug,lang,data=null,linguaPagina=lang){
+ const vs=versoesNoManifesto(slug,lang,manifesto),publicada=publicacaoNoPortao(slug,lang),pt=linguaPagina==='pt';
  const rotas=rotasNoManifesto(slug,lang,manifesto);
  const itens=vs.map((v,i)=>({data:v.data,edicao:true,rota:rotas[i],
   rotulo:i===0?(v.data===publicada?(pt?'publicado a':'published on'):(pt?'primeira edição guardada a':'first edition kept on')):v.natureza==='atualizacao'?(pt?'atualizado a':'updated on'):(pt?'corrigido a':'corrected on'),
@@ -31,12 +31,12 @@ export function elementosDaLinha(manifesto,slug,lang,data=null){
  if(vs[0]?.data!==publicada)itens.unshift({data:publicada,edicao:false,rotulo:pt?'publicado a':'published on',estado:''});
  return itens;
 }
-export function conferirLinhaDasEdicoes(root,manifesto,slug,lang,data=null){
+export function conferirLinhaDasEdicoes(root,manifesto,slug,lang,data=null,linguaPagina=lang){
  const vs=versoesNoManifesto(slug,lang,manifesto),linhas=root?.querySelectorAll('[data-edicoes-linha]')??[],erros=[];
  if(vs.length<2)return linhas.length||root?.querySelector('[data-edicao-lista-data]')?['ED2 linha: edição única com linha']:[];
  if(linhas.length!==1)return ['ED3 linha: falta a linha completa'];
  const linha=linhas[0],itens=linha.querySelectorAll('[data-edicoes-item]'),publicada=publicacaoNoPortao(slug,lang);
- const esperados=elementosDaLinha(manifesto,slug,lang,data),mudancas=mudancasNoManifesto(slug,lang,manifesto);
+ const esperados=elementosDaLinha(manifesto,slug,lang,data,linguaPagina),mudancas=mudancasNoManifesto(slug,lang,manifesto);
  const texto=e=>`${e.rotulo} ${e.data?forma(e.data):'[ausente]'}${e.estado}`;
  if(!publicada)erros.push('ED3 linha: falta a publicação declarada');
  if(data&&!vs.some(v=>v.data===data))erros.push('ED3 linha: edição corrente desconhecida');

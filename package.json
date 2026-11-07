@@ -38,7 +38,7 @@
     "check:cabeca": "node tests/inicio/hierarquia-b2.mjs",
     "check:cadeia": "node scripts/check-cadeia.mjs",
     "check:voz-retiradas": "node tests/edicoes/voz-integracao.mjs",
-    "check:voz": "node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs",
+    "check:voz": "node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/voz2a.mjs && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs",
     "check:lugar": "node scripts/check-lugar.mjs && node tests/edicoes/lugar.mjs && node tests/quadro/reguas.mjs l1",
     "check:lingua": "node tests/edicoes/lingua.mjs && node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs",
     "check:alcance": "node tests/dominio/alcance.mjs",

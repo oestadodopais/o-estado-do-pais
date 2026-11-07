@@ -448,8 +448,8 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   ]){const r=parse(ensaio.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang,dist,listas).length>0});}
   for(const [nome,mudar] of [
    ['data da peça alterada',r=>r.querySelector('[data-novidade] time').setAttribute('datetime','9999-12-31')],
-   ['título da peça alterado',r=>r.querySelector('[data-novidade^="dossie:"] [data-novidade-porta]').set_content('Outro título')],
-   ['porta da peça fora da caixa',r=>r.querySelector('[data-novidade^="dossie:"] [data-novidade-porta]').remove()],
+   ['título da peça alterado',r=>r.querySelector('[data-novidade] [data-novidade-porta]').set_content('Outro título')],
+   ['porta da peça fora da caixa',r=>r.querySelector('[data-novidade] [data-novidade-porta]').remove()],
   ]){const r=parse(home.toString());mudar(r);provas.push({nome:'FP1: '+nome,lang,mordeu:conferirIntegracao(r,lang,lang==='pt'?'index.html':'en/index.html').length>0});}
   const broken=parse(ensaio.toString());broken.querySelector('[data-discussao-dossie] a')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang,dist,listas).some(x=>x.includes('destino'))});
  }
