@@ -1,0 +1,706 @@
+{
+  "fonte14": {
+    "unica_mudanca": "assertions.base-sem-contratos.quotes",
+    "linhas_identicas": true,
+    "sha256_antes": "f2077836a4f943578c54460830d55533b4c3ffd444ce6def0245744790683aaa",
+    "sha256_depois": "307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b"
+  },
+  "estudos": [
+    {
+      "estudo": "16 Évora Contas da Câmara",
+      "linhas_identicas": true,
+      "linhas": 399,
+      "campos_diferentes": []
+    },
+    {
+      "estudo": "18 Évora Economia e Dinheiro de Fora",
+      "linhas_identicas": true,
+      "linhas": 494,
+      "campos_diferentes": []
+    },
+    {
+      "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+      "linhas_identicas": true,
+      "linhas": 161,
+      "campos_diferentes": [
+        "assertions",
+        "composto_de",
+        "ignore"
+      ],
+      "campos_fora_da_autorizacao": [],
+      "base_sem_contratos": {
+        "importada_identica_a_fonte": true,
+        "id_e_review_conservados": true,
+        "quotes": [
+          "nenhum dos documentos lidos lista contratos, adjudicatários ou valores",
+          "none of the documents read lists contracts, contractors or values"
+        ],
+        "prosa": {
+          "pt": true,
+          "en": true
+        }
+      },
+      "diferencas": {
+        "ignore": {
+          "antes": [
+            "1",
+            "4",
+            "7",
+            "10",
+            "14",
+            "19",
+            "21",
+            "26",
+            "27",
+            "31",
+            "35",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "52",
+            "53",
+            "55",
+            "66",
+            "67",
+            "69",
+            "70",
+            "86",
+            "87",
+            "88",
+            "89",
+            "108",
+            "109",
+            "124",
+            "145",
+            "156",
+            "203",
+            "247",
+            "256",
+            "2010",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2027",
+            "2028",
+            "2030"
+          ],
+          "depois": [
+            "1",
+            "4",
+            "7",
+            "10",
+            "14",
+            "19",
+            "21",
+            "26",
+            "27",
+            "31",
+            "35",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "52",
+            "53",
+            "55",
+            "66",
+            "67",
+            "69",
+            "70",
+            "86",
+            "87",
+            "88",
+            "89",
+            "108",
+            "109",
+            "124",
+            "145",
+            "156",
+            "203",
+            "247",
+            "2010",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2027",
+            "2028",
+            "2030"
+          ]
+        },
+        "composto_de": {
+          "antes": [
+            {
+              "pasta": "14 Évora 2027",
+              "ledger_sha256": "f2077836a4f943578c54460830d55533b4c3ffd444ce6def0245744790683aaa"
+            },
+            {
+              "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
+              "ledger_sha256": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb"
+            }
+          ],
+          "depois": [
+            {
+              "pasta": "14 Évora 2027",
+              "ledger_sha256": "307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b"
+            },
+            {
+              "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
+              "ledger_sha256": "ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb"
+            }
+          ]
+        },
+        "assertions": {
+          "antes": [
+            {
+              "id": "so-promessa-com-numero",
+              "quotes": [
+                "Só entra como promessa o que tem número ou prazo",
+                "Only a commitment carrying a figure or a deadline enters as a promise"
+              ],
+              "review": "regra de método do próprio documento, declarada antes dos dados; não é uma quantificação sobre um conjunto medido"
+            },
+            {
+              "id": "so-pelo-objeto-nomeado",
+              "quotes": [
+                "faz-se aqui só pelo objeto nomeado nos dois documentos",
+                "is matched to a judgement here only by the object both documents name"
+              ],
+              "review": "regra de método do próprio documento"
+            },
+            {
+              "id": "nenhum-uniformiza",
+              "quotes": [
+                "este documento não uniformiza nenhum dos dois",
+                "this document standardises neither"
+              ],
+              "review": "regra de método do próprio documento"
+            },
+            {
+              "id": "agregados-sem-ponte",
+              "quotes": [
+                "Os três agregados do custo não fecham, e nenhum documento faz a ponte entre eles",
+                "The three cost aggregates do not agree, and no document bridges them",
+                "Nenhum documento lido faz a ponte entre estes três agregados",
+                "No document read bridges these three aggregates",
+                "São construídos de maneira diferente e nenhum documento explica a ponte",
+                "They are built differently and no document explains the bridge"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "taxas-sem-base",
+              "quotes": [
+                "nenhum dos dois documentos diz sobre que base a calcula",
+                "neither document says on what base it is computed"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "fontes-fechadas",
+              "quotes": [
+                "Não se leu nem se cita mais nada",
+                "Nothing else was read and nothing else is quoted"
+              ],
+              "review": "declaração do método sobre as próprias fontes; a lista fechada está impressa no fim do documento e em raw/manifest.json"
+            },
+            {
+              "id": "perguntas-sem-resposta",
+              "quotes": [
+                "Nenhuma destas perguntas tem resposta nos documentos lidos",
+                "None of these has an answer in the documents read"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "dois-agregados-sem-explicacao",
+              "quotes": [
+                "para a mesma coisa, e nenhum deles explica o outro",
+                "for the same thing, and neither explains the other"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "premio-nao-inscrito",
+              "quotes": [
+                "Nenhuma linha das tabelas de receita de 2026 o inscreve",
+                "No line of the 2026 revenue tables carries it"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "acrescimo-sem-explicacao",
+              "quotes": [
+                "e nenhum dos dois documentos explica a distância",
+                "and neither document explains the distance"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "unica-verba-do-decreto",
+              "quotes": [
+                "A única verba que o Decreto-Lei n.º 124/2023 fixa",
+                "The only sum Decree-law 124/2023 fixes"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "remuneracoes-ausentes",
+              "quotes": [
+                "Nenhum documento lido as traz",
+                "No document read carries them"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "mapas-ilegiveis",
+              "quotes": [
+                "e nenhuma delas é o nome que a câmara imprimiu",
+                "and neither is the name the council printed"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "terceiro-desencontro",
+              "quotes": [
+                "e nenhum dos documentos explica a diferença",
+                "and no document explains the difference"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "base-sem-contratos",
+              "quotes": [
+                "nenhum documento aqui lido lista contratos, adjudicatários ou valores",
+                "no document read here lists contracts, contractors or values"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "protocolo-nao-publicado",
+              "quotes": [
+                "Não está publicado em nenhum dos sítios oficiais lidos",
+                "It is published on none of the official sites read",
+                "Três documentos oficiais remetem para ele e nenhum o reproduz",
+                "Three official documents point to it and none reproduces it"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "ato-de-designacao-nao-encontrado",
+              "quotes": [
+                "não se encontrou nenhum ato publicado",
+                "no published act was found"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "so-previsionais",
+              "quotes": [
+                "Pela mesma razão: só se leram documentos previsionais",
+                "For the same reason: only forecast documents were read"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "sem-soma-total",
+              "quotes": [
+                "Não existe nenhum documento que some as parcelas",
+                "There is no document that adds the items up"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "visitantes-sem-estudo",
+              "quotes": [
+                "A única referência lida é uma afirmação em reunião de câmara",
+                "The only reference read is a statement at a council meeting",
+                "Nenhum estudo foi identificado e nenhum número foi publicado",
+                "No study was identified and no figure was published"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "remuneracoes-em-nenhum-documento",
+              "quotes": [
+                "que a mesma norma obriga a divulgar, não estão em nenhum documento lido",
+                "which the same rule obliges it to publish, is in no document read"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "abertura-operacional-so-em-2024",
+              "quotes": [
+                "A associação só ficou plenamente operacional em outubro de 2024",
+                "The association only became fully operational in October 2024"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-sem-documento-que-concilie",
+              "quotes": [
+                "nenhum documento que os concilie",
+                "no document that reconciles them"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-nenhum-euro-do-municipio",
+              "quotes": [
+                "as contas de 2025 não registam nenhum euro dessa origem",
+                "the 2025 accounts record not one euro from that source"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-todos-os-contratos",
+              "quotes": [
+                "a equipa prometeu todos os contratos até setembro de 2025",
+                "the team promised every contract by September 2025"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-unico-documento-que-liga",
+              "quotes": [
+                "que é o único documento que liga os três totais",
+                "the only document that ties the three totals together"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-planos-de-todos-os-anos",
+              "quotes": [
+                "os planos de todos os anos",
+                "the plans of every year"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-so-destes-documentos",
+              "quotes": [
+                "a partir dos documentos deste estudo, e só deles",
+                "from the documents of this study, and from them alone"
+              ],
+              "review": "declaração do âmbito da própria leitura de abertura"
+            },
+            {
+              "id": "e1-castris-tres-medidas",
+              "quotes": [
+                "e nenhum deles mede a obra da mesma maneira",
+                "and none of them measures the works the same way"
+              ],
+              "review": "os três valores são uma estimativa da candidatura, um valor aprovado no registo do plano de recuperação (lido no estudo da economia) e o valor de uma intervenção no plano da associação; a tabela diz o que é cada um"
+            },
+            {
+              "id": "e1-castris-sete-intervencoes",
+              "quotes": [
+                "uma das sete intervenções do plano de recuperação",
+                "one of the seven recovery-plan interventions"
+              ],
+              "review": "a tabela das sete intervenções do plano de atividades de 2026, na secção «O plano de atividades e orçamento de 2026 da associação»"
+            },
+            {
+              "id": "e1-castris-nenhum-relaciona",
+              "quotes": [
+                "e nenhum documento lido os relaciona",
+                "and no document read relates them"
+              ],
+              "review": "as fontes do estudo são fechadas; nenhuma das 53 leituras de 2026-09-15 relaciona os três valores, e o registo do plano de recuperação não nomeia a candidatura"
+            },
+            {
+              "id": "e1-ligacoes-nao-entram",
+              "quotes": [
+                "e nada do que eles leram entra nos valores deste",
+                "and nothing they read enters the values of this one"
+              ],
+              "review": "o estudo 19 compõe-se só do registo do 14 (origem-das-linhas.json tem uma fonte, a 14); as ligações para os estudos 16 e 18 não trazem valores, e a conferência dos números em dois estudos novos confirma-o"
+            },
+            {
+              "id": "ev3-j-financiamentos-nao-relacionados",
+              "quotes": [
+                "a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas menciona o financiamento que a outra nomeia",
+                "the October notice names only the Fundo Ambiental, and neither mentions the funding the other names"
+              ],
+              "review": "Âmbito fechado: o corpo .con-002_title-inner das cópias concurso-rossio.html e 23.html. A nota do concurso menciona Recuperação e Resiliência uma vez e Fundo Ambiental zero; a de outubro menciona Fundo Ambiental uma vez e Recuperação e Resiliência zero. Lidos os dois corpos, nenhuma nota menciona o financiamento que a outra nomeia. A medição não permite contar dois financiamentos distintos. Medição reproduzida em design/especime-v3/medicoes/ev3-j-2026-11-03/medir.mjs no sítio."
+            }
+          ],
+          "depois": [
+            {
+              "id": "so-promessa-com-numero",
+              "quotes": [
+                "Só entra como promessa o que tem número ou prazo",
+                "Only a commitment carrying a figure or a deadline enters as a promise"
+              ],
+              "review": "regra de método do próprio documento, declarada antes dos dados; não é uma quantificação sobre um conjunto medido"
+            },
+            {
+              "id": "so-pelo-objeto-nomeado",
+              "quotes": [
+                "faz-se aqui só pelo objeto nomeado nos dois documentos",
+                "is matched to a judgement here only by the object both documents name"
+              ],
+              "review": "regra de método do próprio documento"
+            },
+            {
+              "id": "agregados-sem-ponte",
+              "quotes": [
+                "Os três agregados do custo não fecham, e nenhum documento faz a ponte entre eles",
+                "The three cost aggregates do not agree, and no document bridges them",
+                "Nenhum documento lido faz a ponte entre estes três agregados",
+                "No document read bridges these three aggregates",
+                "São construídos de maneira diferente e nenhum documento explica a ponte",
+                "They are built differently and no document explains the bridge"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "taxas-sem-base",
+              "quotes": [
+                "nenhum dos dois documentos diz sobre que base a calcula",
+                "neither document says on what base it is computed"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "fontes-fechadas",
+              "quotes": [
+                "Não se leu nem se cita mais nada",
+                "Nothing else was read and nothing else is quoted"
+              ],
+              "review": "declaração do método sobre as próprias fontes; a lista fechada está impressa no fim do documento e em raw/manifest.json"
+            },
+            {
+              "id": "perguntas-sem-resposta",
+              "quotes": [
+                "Nenhuma destas perguntas tem resposta nos documentos lidos",
+                "None of these has an answer in the documents read"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "dois-agregados-sem-explicacao",
+              "quotes": [
+                "para a mesma coisa, e nenhum deles explica o outro",
+                "for the same thing, and neither explains the other"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "premio-nao-inscrito",
+              "quotes": [
+                "Nenhuma linha das tabelas de receita de 2026 o inscreve",
+                "No line of the 2026 revenue tables carries it"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "acrescimo-sem-explicacao",
+              "quotes": [
+                "e nenhum dos dois documentos explica a distância",
+                "and neither document explains the distance"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "unica-verba-do-decreto",
+              "quotes": [
+                "A única verba que o Decreto-Lei n.º 124/2023 fixa",
+                "The only sum Decree-law 124/2023 fixes"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "remuneracoes-ausentes",
+              "quotes": [
+                "Nenhum documento lido as traz",
+                "No document read carries them"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "mapas-ilegiveis",
+              "quotes": [
+                "e nenhuma delas é o nome que a câmara imprimiu",
+                "and neither is the name the council printed"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "terceiro-desencontro",
+              "quotes": [
+                "e nenhum dos documentos explica a diferença",
+                "and no document explains the difference"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "base-sem-contratos",
+              "quotes": [
+                "nenhum dos documentos lidos lista contratos, adjudicatários ou valores",
+                "none of the documents read lists contracts, contractors or values"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "protocolo-nao-publicado",
+              "quotes": [
+                "Não está publicado em nenhum dos sítios oficiais lidos",
+                "It is published on none of the official sites read",
+                "Três documentos oficiais remetem para ele e nenhum o reproduz",
+                "Three official documents point to it and none reproduces it"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "ato-de-designacao-nao-encontrado",
+              "quotes": [
+                "não se encontrou nenhum ato publicado",
+                "no published act was found"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "so-previsionais",
+              "quotes": [
+                "Pela mesma razão: só se leram documentos previsionais",
+                "For the same reason: only forecast documents were read"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "sem-soma-total",
+              "quotes": [
+                "Não existe nenhum documento que some as parcelas",
+                "There is no document that adds the items up"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "visitantes-sem-estudo",
+              "quotes": [
+                "A única referência lida é uma afirmação em reunião de câmara",
+                "The only reference read is a statement at a council meeting",
+                "Nenhum estudo foi identificado e nenhum número foi publicado",
+                "No study was identified and no figure was published"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "remuneracoes-em-nenhum-documento",
+              "quotes": [
+                "que a mesma norma obriga a divulgar, não estão em nenhum documento lido",
+                "which the same rule obliges it to publish, is in no document read"
+              ],
+              "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+            },
+            {
+              "id": "abertura-operacional-so-em-2024",
+              "quotes": [
+                "A associação só ficou plenamente operacional em outubro de 2024",
+                "The association only became fully operational in October 2024"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-sem-documento-que-concilie",
+              "quotes": [
+                "nenhum documento que os concilie",
+                "no document that reconciles them"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-nenhum-euro-do-municipio",
+              "quotes": [
+                "as contas de 2025 não registam nenhum euro dessa origem",
+                "the 2025 accounts record not one euro from that source"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-todos-os-contratos",
+              "quotes": [
+                "a equipa prometeu todos os contratos até setembro de 2025",
+                "the team promised every contract by September 2025"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-unico-documento-que-liga",
+              "quotes": [
+                "que é o único documento que liga os três totais",
+                "the only document that ties the three totals together"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-planos-de-todos-os-anos",
+              "quotes": [
+                "os planos de todos os anos",
+                "the plans of every year"
+              ],
+              "review": "frase da leitura de abertura, que quantifica sobre o mesmo corpus fechado (as 53 respostas do registo de 15.09.2026, 43 com corpo) e remete para a secção do documento onde o facto está com o documento e a página"
+            },
+            {
+              "id": "abertura-so-destes-documentos",
+              "quotes": [
+                "a partir dos documentos deste estudo, e só deles",
+                "from the documents of this study, and from them alone"
+              ],
+              "review": "declaração do âmbito da própria leitura de abertura"
+            },
+            {
+              "id": "e1-castris-tres-medidas",
+              "quotes": [
+                "e nenhum deles mede a obra da mesma maneira",
+                "and none of them measures the works the same way"
+              ],
+              "review": "os três valores são uma estimativa da candidatura, um valor aprovado no registo do plano de recuperação (lido no estudo da economia) e o valor de uma intervenção no plano da associação; a tabela diz o que é cada um"
+            },
+            {
+              "id": "e1-castris-sete-intervencoes",
+              "quotes": [
+                "uma das sete intervenções do plano de recuperação",
+                "one of the seven recovery-plan interventions"
+              ],
+              "review": "a tabela das sete intervenções do plano de atividades de 2026, na secção «O plano de atividades e orçamento de 2026 da associação»"
+            },
+            {
+              "id": "e1-castris-nenhum-relaciona",
+              "quotes": [
+                "e nenhum documento lido os relaciona",
+                "and no document read relates them"
+              ],
+              "review": "as fontes do estudo são fechadas; nenhuma das 53 leituras de 2026-09-15 relaciona os três valores, e o registo do plano de recuperação não nomeia a candidatura"
+            },
+            {
+              "id": "e1-ligacoes-nao-entram",
+              "quotes": [
+                "e nada do que eles leram entra nos valores deste",
+                "and nothing they read enters the values of this one"
+              ],
+              "review": "o estudo 19 compõe-se só do registo do 14 (origem-das-linhas.json tem uma fonte, a 14); as ligações para os estudos 16 e 18 não trazem valores, e a conferência dos números em dois estudos novos confirma-o"
+            },
+            {
+              "id": "ev3-j-financiamentos-nao-relacionados",
+              "quotes": [
+                "a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas menciona o financiamento que a outra nomeia",
+                "the October notice names only the Fundo Ambiental, and neither mentions the funding the other names"
+              ],
+              "review": "Âmbito fechado: o corpo .con-002_title-inner das cópias concurso-rossio.html e 23.html. A nota do concurso menciona Recuperação e Resiliência uma vez e Fundo Ambiental zero; a de outubro menciona Fundo Ambiental uma vez e Recuperação e Resiliência zero. Lidos os dois corpos, nenhuma nota menciona o financiamento que a outra nomeia. A medição não permite contar dois financiamentos distintos. Medição reproduzida em design/especime-v3/medicoes/ev3-j-2026-11-03/medir.mjs no sítio."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

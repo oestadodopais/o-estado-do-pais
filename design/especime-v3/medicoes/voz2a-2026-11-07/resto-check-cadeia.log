@@ -1,0 +1,41 @@
+
+> o-estado-do-pais@0.1.0 check:cadeia
+> node scripts/check-cadeia.mjs
+
+
+  28 en · 52 blocos · 198 algarismos · 198 completas · 0 do motor · 0 por resolver · 166 com resumo de origem · 32 com motivo
+  28 pt · 52 blocos · 198 algarismos · 198 completas · 0 do motor · 0 por resolver · 166 com resumo de origem · 32 com motivo
+  03 pt · 53 blocos · 411 algarismos · 0 completas · 411 do motor · 0 por resolver · 0 com resumo de origem · 411 com motivo
+  19 en · 137 blocos · 196 algarismos · 0 completas · 196 do motor · 0 por resolver · 20 com resumo de origem · 176 com motivo
+  19 pt · 137 blocos · 196 algarismos · 0 completas · 196 do motor · 0 por resolver · 20 com resumo de origem · 176 com motivo
+  14 en · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo
+  14 pt · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo
+  16 en · 171 blocos · 490 algarismos · 82 completas · 408 do motor · 0 por resolver · 221 com resumo de origem · 269 com motivo
+  16 pt · 172 blocos · 490 algarismos · 82 completas · 408 do motor · 0 por resolver · 221 com resumo de origem · 269 com motivo
+  18 en · 161 blocos · 530 algarismos · 37 completas · 493 do motor · 0 por resolver · 0 com resumo de origem · 530 com motivo
+  18 pt · 160 blocos · 530 algarismos · 37 completas · 493 do motor · 0 por resolver · 0 com resumo de origem · 530 com motivo
+  06 pt · 49 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver · 0 com resumo de origem · 171 com motivo
+  07 en · 87 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo
+  07 pt · 88 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo
+  09 pt · 138 blocos · 296 algarismos · 10 completas · 286 do motor · 0 por resolver · 208 com resumo de origem · 88 com motivo
+  04 en · 95 blocos · 324 algarismos · 11 completas · 313 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo
+  04 pt · 94 blocos · 324 algarismos · 12 completas · 312 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo
+  17 pt · 211 blocos · 484 algarismos · 39 completas · 445 do motor · 0 por resolver · 221 com resumo de origem · 263 com motivo
+  08 pt · 173 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo
+  27 en · 57 blocos · 267 algarismos · 267 completas · 0 do motor · 0 por resolver · 235 com resumo de origem · 32 com motivo
+  27 pt · 57 blocos · 267 algarismos · 267 completas · 0 do motor · 0 por resolver · 235 com resumo de origem · 32 com motivo
+
+  as oito chaves da prova, contadas aqui:
+    registos_edicoes                   21
+    registos_blocos                  2404
+    registos_algarismos              6822
+    registos_resolvidos              6822
+    registos_por_resolver               0
+    registos_com_linha_do_sitio      1403
+    registos_com_resumo_de_origem    2015
+    registos_sem_resumo_de_origem    4807
+
+  das 1403 figuras com linha do sítio, 600 imprimem o valor que a linha guarda e 803 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).
+
+  ✓ cada algarismo das páginas de leitura chega ao fim da sua cadeia: 1403 até ao selo, 5419 conferidos na transcrição, sem recibo do sítio.
+

@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 check:regioes
+> node scripts/check-regioes.mjs
+
+
+  ✓ R1 · cada região com linhas tem página, e nenhuma outra tem
+  ✓ R2 · cada página de região cita as suas linhas, com selo
+  ✓ R3 · a régua imprime só valores com linha, e um por leitura
+  ✓ R4 · a neutralidade: um só estilo de barra, e o contorno da página
+  ✓ R5 · as duas contagens, de três pontos de observação
+
+  regiões · 9 declarada(s), 9 com linhas · 18 página(s) de região construída(s) · 10 leitura(s) na régua
+

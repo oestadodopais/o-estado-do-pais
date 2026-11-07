@@ -1,0 +1,9 @@
+16: linhas idênticas: True ; linhas: 399
+18: linhas idênticas: True ; linhas: 494
+19: campos diferentes: assertions, composto_de, ignore
+19: campos fora da autorização: 
+19: base-sem-contratos importada da fonte, com id e review conservados; citações presentes em pt e en.
+19: ignore: 45 -> 44 ; sai 256
+19: composto_de: {"antes": {"pasta": "14 Évora 2027", "ledger_sha256": "f2077836a4f943578c54460830d55533b4c3ffd444ce6def0245744790683aaa"}, "depois": {"pasta": "14 Évora 2027", "ledger_sha256": "307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b"}}
+19: assertions: 33 -> 32 ; sai nenhum-uniformiza; mudam só as duas citações de base-sem-contratos
+19: linhas idênticas: True ; linhas: 161
