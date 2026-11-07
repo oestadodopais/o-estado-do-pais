@@ -342,7 +342,7 @@
   "classe": "REESCREVE",
   "frase": "Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show the pattern that, in this reading, explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in.",
   "razao": "decisão do lugar de direção, 06.11.2026: a causa fica como inferência, sem «nesta leitura»",
-  "nova": "Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show the pattern that explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in (inference)."
+  "nova": "Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show a pattern: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in. That this pattern explains the fall is an inference."
  },
  {
   "id": "V044",
@@ -457,7 +457,7 @@
   "classe": "REESCREVE",
   "frase": "Revenue execution fell from 96%source · Município de Évora in 2021 to 61.44%source · Município de Évora in 2025, and the accounts themselves show the pattern that, in this reading, explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in.",
   "razao": "decisão do lugar de direção, 06.11.2026: como 43, com as etiquetas de fonte preservadas",
-  "nova": "Revenue execution fell from 96%source · Município de Évora in 2021 to 61.44%source · Município de Évora in 2025, and the accounts themselves show the pattern that explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in (inference)."
+  "nova": "Revenue execution fell from 96%source · Município de Évora in 2021 to 61.44%source · Município de Évora in 2025, and the accounts themselves show a pattern: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in. That this pattern explains the fall is an inference."
  },
  {
   "id": "V054",
@@ -506,7 +506,7 @@
   "classe": "REESCREVE",
   "frase": "A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity).",
   "razao": "ficam os factos dos registos; tira a técnica de junção do projeto",
-  "nova": "The two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity (inference)."
+  "nova": "The two registers use different names, and neither source states that they are the same entity. The contract objects themselves show that they are one body (inference)."
  },
  {
   "id": "V058",
@@ -589,7 +589,7 @@
   "classe": "REESCREVE",
   "frase": "The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality — the university, the health service, housing bodies, national agencies — and the part that is the Câmara's to spend has, so far, mostly not arrived (inference; each figure is sourced above, the join is ours).",
   "razao": "tira «a junção é nossa»; fica o rótulo de inferência",
-  "nova": "The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality (the university, the health service, housing bodies, national agencies) and the part that is the Câmara's to spend has, so far, mostly not arrived (inference)."
+  "nova": "The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality (the university, the health service, housing bodies, national agencies), and most of the part that is the Câmara's to spend has yet to arrive (inference)."
  },
  {
   "id": "V065",
@@ -1201,7 +1201,7 @@
   "classe": "REESCREVE",
   "frase": "A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra.",
   "razao": "decisão do lugar de direção, 06.11.2026: a causa fica como inferência, sem «nesta leitura»",
-  "nova": "A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram o padrão que explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra (inferência)."
+  "nova": "A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram um padrão: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não é recebido. Que este padrão explique a queda é uma inferência."
  },
  {
   "id": "V165",
@@ -1341,7 +1341,7 @@
   "classe": "REESCREVE",
   "frase": "A execução da receita caiu de 96%fonte · Município de Évora em 2021 para 61,44%fonte · Município de Évora em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra.",
   "razao": "decisão do lugar de direção, 06.11.2026: como 164, com as etiquetas de fonte preservadas",
-  "nova": "A execução da receita caiu de 96%fonte · Município de Évora em 2021 para 61,44%fonte · Município de Évora em 2025, e as próprias contas mostram o padrão que explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra (inferência)."
+  "nova": "A execução da receita caiu de 96%fonte · Município de Évora em 2021 para 61,44%fonte · Município de Évora em 2025, e as próprias contas mostram um padrão: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não é recebido. Que este padrão explique a queda é uma inferência."
  },
  {
   "id": "V177",
@@ -1414,7 +1414,7 @@
   "classe": "REESCREVE",
   "frase": "Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade).",
   "razao": "ficam os factos dos registos; tira a técnica de junção do projeto",
-  "nova": "Os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade (inferência)."
+  "nova": "Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência)."
  },
  {
   "id": "V183",
@@ -1554,7 +1554,7 @@
   "classe": "REESCREVE",
   "frase": "O companheiro chega a 2015 e encontra aí 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência; o valor é do próprio relatório de 2015).",
   "razao": "fica o valor do relatório de 2015 (como na 168); tira «o companheiro»",
-  "nova": "O relatório de 2015 traz 48,1%, um fundo mais fundo, no ano a seguir às tranches do resgate, pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência; o valor é do próprio relatório de 2015)."
+  "nova": "O relatório de 2015 traz 48,1%, um fundo mais fundo, um ano depois das tranches do resgate, pelo que os colapsos de execução já seguiram antes as crises de dívida de Évora (inferência)."
  },
  {
   "id": "V195",
@@ -1566,7 +1566,7 @@
   "classe": "REESCREVE",
   "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números deste documento: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência; a tabela é da fonte, a ligação é nossa).",
   "razao": "tira «a ligação é nossa» e «deste documento»",
-  "nova": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência; a tabela é da fonte)."
+  "nova": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
  },
  {
   "id": "V196",
@@ -1578,7 +1578,7 @@
   "classe": "REESCREVE",
   "frase": "O dinheiro do PRR atribuído a Évora flui esmagadoramente através de entidades que não o município — a universidade, o serviço de saúde, organismos de habitação, agências nacionais — e a parte que cabe à Câmara gastar, até agora, na sua maior parte não chegou (inferência; cada valor está fundamentado acima, a junção é nossa).",
   "razao": "tira «a junção é nossa»; fica o rótulo de inferência; sem travessões",
-  "nova": "O dinheiro do PRR atribuído a Évora flui esmagadoramente através de entidades que não o município (a universidade, o serviço de saúde, organismos de habitação, agências nacionais) e a parte que cabe à Câmara gastar, até agora, na sua maior parte não chegou (inferência)."
+  "nova": "O dinheiro do PRR atribuído a Évora flui esmagadoramente através de entidades distintas do município (a universidade, o serviço de saúde, organismos de habitação, agências nacionais), e a maior parte do que cabe à Câmara gastar ainda está por chegar (inferência)."
  },
  {
   "id": "V197",
