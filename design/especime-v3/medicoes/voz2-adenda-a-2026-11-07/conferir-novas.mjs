@@ -25,6 +25,27 @@ const plantas = [
   'Iniciativa Liberal, updated on 8 June 2026 (the page does not say when it was published).'
 ];
 const mordem = plantas.filter(recusa).length;
+// Os números: o gerador do motor recusa um documento cujas duas línguas não tenham os mesmos números; por estudo, o que as frases tiram (SAI inteira; REESCREVE a diferença) tem de ser o mesmo nas duas línguas, nos estudos que têm as duas.
+const numeros = s => (s.match(/(?<![\p{L}\d])\d+(?:[.,]\d+)*/gu) ?? []).map(n => n.replace(',', '.'));
+const tirados = new Map();
+for (const [b, nome] of [['voz2a-2026-11-07', 'FRASES-VOZ-2A.json'], ['voz2b-2026-11-07', 'FRASES-VOZ-2B.json']]) {
+  for (const f of JSON.parse(fs.readFileSync(path.join(medicoes, b, nome), 'utf8'))) {
+    if (f.classe === 'FICA') continue;
+    const fica = f.classe === 'REESCREVE' ? numeros(f.nova) : [];
+    const lista = numeros(f.frase);
+    for (const n of fica) { const i = lista.indexOf(n); if (i >= 0) lista.splice(i, 1); else lista.push('+' + n); }
+    const chave = f.estudo + '|' + f.lingua;
+    tirados.set(chave, [...(tirados.get(chave) ?? []), ...lista]);
+  }
+}
+const desequilibrios = [];
+for (const chave of tirados.keys()) {
+  const [estudo, lingua] = chave.split('|');
+  if (lingua !== 'pt' || !fs.existsSync(path.join(medicoes, '../../../studies-src', estudo, 'en.html'))) continue;
+  const pt = (tirados.get(chave) ?? []).sort().join(' '), en = (tirados.get(estudo + '|en') ?? []).sort().join(' ');
+  if (pt !== en) desequilibrios.push(`${estudo}: pt [${pt}] en [${en}]`);
+}
+console.log(`estudos com números tirados de forma diferente nas duas línguas: ${desequilibrios.length}${desequilibrios.length ? '\n  ' + desequilibrios.join('\n  ') : ''}`);
 console.log(`campos nova: ${total}; reescritos nesta adenda: ${reescritas.length}; recusados pela régua: ${vermelhas.length}${vermelhas.length ? ' (' + vermelhas.join(', ') + ')' : ''}`);
 console.log(`plantas das formas antigas que mordem: ${mordem} de ${plantas.length}`);
-process.exitCode = vermelhas.length || mordem !== plantas.length ? 1 : 0;
+process.exitCode = vermelhas.length || desequilibrios.length || mordem !== plantas.length ? 1 : 0;
