@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T03:13:22+00:00",
+ "copia": "<caminho>/_aterragens/pacote-lote8-curta-b-2026-11-07",
+ "plantas": [
+  {
+   "id": "F1",
+   "ficheiro": "diff.patch",
+   "descricao": "o renderizador só dá a data de atualização a um estudo de uma só edição se a edição for anterior à publicação",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "14daa5a439faf990e44b0290c1bdb2cfdd481a1f98fa00b2a022edd4a834ef3d",
+   "sha256_depois": "6f2cd209defa3f6da2818cb0c5ab352d8764c73a3d17d282e4633dcd4ded6612",
+   "contexto_antes": "g,lang).slice(1);\n+/** @param {string} slug @param {string} lang @param {string|null} publicada */\n+export function mudancasDaEdicao(slug,lang,publicada=null){\n+ const todas=versoesDaEdicao(slug,lang);\n+ if(todas.length===1&&publicada&&todas[0].data>publicada)return [{data:todas[0].data,natureza:'atualizacao'}];\n+ const vs=todas.slice(1);\n  return ['atualizacao','correcao'].flatMap(natureza=>{\n   const v=vs.findLast(",
+   "contexto_depois": "g,lang).slice(1);\n+/** @param {string} slug @param {string} lang @param {string|null} publicada */\n+export function mudancasDaEdicao(slug,lang,publicada=null){\n+ const todas=versoesDaEdicao(slug,lang);\n+ if(todas.length===1&&publicada&&todas[0].data<publicada)return [{data:todas[0].data,natureza:'atualizacao'}];\n+ const vs=todas.slice(1);\n  return ['atualizacao','correcao'].flatMap(natureza=>{\n   const v=vs.findLast("
+  },
+  {
+   "id": "F2",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua da porta de uma edição única espera «Edição tal como foi publicada» num estudo atualizado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6f2cd209defa3f6da2818cb0c5ab352d8764c73a3d17d282e4633dcd4ded6612",
+   "sha256_depois": "9576315f05b98ccacd5ef2c8a6e3be7bf56fce56ab321cc49928c920af616d74",
+   "contexto_antes": "lug,lang,manifesto);\n+ if(vs.length===1){\n+  const portas=root?.querySelectorAll('a[href]')??[],publicada=publicacaoNoPortao(slug,lang),pt=linguaPagina==='pt';\n+  const rotulo=esperadas.length?(pt?'Edição atual':'Current edition'):publicada?(pt?'Edição tal como foi publicada':'Edition as published'):(pt?'Edição em preparação':'Edition in preparation');\n+  if(portas.length!==1||portas[0].",
+   "contexto_depois": "lug,lang,manifesto);\n+ if(vs.length===1){\n+  const portas=root?.querySelectorAll('a[href]')??[],publicada=publicacaoNoPortao(slug,lang),pt=linguaPagina==='pt';\n+  const rotulo=esperadas.length?(pt?'Edição tal como foi publicada':'Edition as published'):publicada?(pt?'Edição tal como foi publicada':'Edition as published'):(pt?'Edição em preparação':'Edition in preparation');\n+  if(portas.length!==1||portas[0]."
+  },
+  {
+   "id": "F3",
+   "ficheiro": "diff.patch",
+   "descricao": "a voz da linha das edições aceita qualquer texto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9576315f05b98ccacd5ef2c8a6e3be7bf56fce56ab321cc49928c920af616d74",
+   "sha256_depois": "70013ec3622dd87de3fb645b457b729f9cbe90fb7d72f2c8f99a10007067ba70",
+   "contexto_antes": "rLingua.en].filter(t=>t.startsWith('Editions:'))])],\n+ ])};\n+}\n+const repertorio=repertorioDaVozDasEdicoes();\n+export const FAIXAS_DE_EDICAO=repertorio.faixas;\n+export function classeDaVozDaEdicao(texto,prova=repertorio){return prova.frases.has(texto)?'conteudo':null;}\n+export function conferirVozDaLinha(root,manifesto,slug,lang,data=null){return conferirLinhaDasEdicoes(root,manifesto,slug,lang,data);}\n /** @param {string} te",
+   "contexto_depois": "rLingua.en].filter(t=>t.startsWith('Editions:'))])],\n+ ])};\n+}\n+const repertorio=repertorioDaVozDasEdicoes();\n+export const FAIXAS_DE_EDICAO=repertorio.faixas;\n+export function classeDaVozDaEdicao(texto,prova=repertorio){return 'conteudo';}\n+export function conferirVozDaLinha(root,manifesto,slug,lang,data=null){return conferirLinhaDasEdicoes(root,manifesto,slug,lang,data);}\n /** @param {string} te"
+  },
+  {
+   "id": "F4",
+   "ficheiro": "built/estudos/evora-orcamentado-pago-devido-2025/index.html",
+   "descricao": "o cabeçalho português do orçamentado, pago e devido perde a data de atualização de 20.08.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4f4ced7296eb92949b7a167aa46547bbd86f7da712a28b791ab8578919bd696e",
+   "sha256_depois": "e8b5890fb3f9109b389576f43ff605ceca014b53109f987129ed3a2224106bb7",
+   "contexto_antes": "atual</a><span aria-hidden=\"true\"> · </span><span data-voz>publicado a</span> <time datetime=\"2026-08-12\" data-nonledger=\"data-do-repositorio\">12.08.2026</time><span aria-hidden=\"true\"> · </span><span data-voz>atualizado a</span> <time datetime=\"2026-08-20\" data-estudo-atualizacao=\"true\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">20.08.2026</time></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livro-razao\">Númer",
+   "contexto_depois": "atual</a><span aria-hidden=\"true\"> · </span><span data-voz>publicado a</span> <time datetime=\"2026-08-12\" data-nonledger=\"data-do-repositorio\">12.08.2026</time></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livro-razao\">Númer"
+  },
+  {
+   "id": "F5",
+   "ficheiro": "built/en/studies/evora-prometido-pago-auditado-2026/index.html",
+   "descricao": "a porta inglesa do prometido, pago e auditado diz «Edition as published» sobre a edição atualizada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8a503919462534b71ad63128be797f14959c174645428fd43bc45f6fb91d2051",
+   "sha256_depois": "19653823070bc3c0872fd3f8273c3eaf594a013388dfcd72a649e801143ce0fa",
+   "contexto_antes": "\"estudo-publicado\" data-estudo-edicao=\"evora-prometido-pago-auditado-2026/en\"><a data-voz=\"true\" href=\"/en/studies/evora-prometido-pago-auditado-2026/document\" hreflang=\"en\">Current edition</a><span aria-hidden=\"true\"> · </span><span data-voz>published on</span> <time datetime=\"2026-08-15\" data-nonledger=\"data-do-repositorio\">15.08.2026</time><span ar",
+   "contexto_depois": "\"estudo-publicado\" data-estudo-edicao=\"evora-prometido-pago-auditado-2026/en\"><a data-voz=\"true\" href=\"/en/studies/evora-prometido-pago-auditado-2026/document\" hreflang=\"en\">Edition as published</a><span aria-hidden=\"true\"> · </span><span data-voz>published on</span> <time datetime=\"2026-08-15\" data-nonledger=\"data-do-repositorio\">15.08.2026</time><span ar"
+  }
+ ]
+}

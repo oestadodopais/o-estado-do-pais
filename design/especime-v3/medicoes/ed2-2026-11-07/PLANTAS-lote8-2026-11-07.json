@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T02:19:18+00:00",
+ "copia": "<caminho>/_aterragens/pacote-lote8-2026-11-07",
+ "plantas": [
+  {
+   "id": "E1",
+   "ficheiro": "diff.patch",
+   "descricao": "a linha das edições troca as naturezas: uma atualização diz «correção» e uma correção diz «atualização»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8ad1326cf7d7640517d671a0ff542bf7fdae53d2db14f27a8509ab97a6b7c7fa",
+   "sha256_depois": "d5e32e2f17fa3c588e46f81a08fea0c24680bfa62e31ed8febca0aec43a126fd",
+   "contexto_antes": "'Edições:':'Editions:'}</span> `+vs.map(v=>{\n+  if(v.natureza!==undefined&&v.natureza!=='atualizacao')throw Error(`ED2: natureza desconhecida: ${v.natureza}`);\n+  const natureza=v.indice===0?(pt?'primeira':'first'):v.natureza==='atualizacao'?(pt?'atualização':'update'):(pt?'correção':'correction');\n+  const dia=`<time datetime=\"${v.data}\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">${dataDaCasa(v.data)}</time>`;\n",
+   "contexto_depois": "'Edições:':'Editions:'}</span> `+vs.map(v=>{\n+  if(v.natureza!==undefined&&v.natureza!=='atualizacao')throw Error(`ED2: natureza desconhecida: ${v.natureza}`);\n+  const natureza=v.indice===0?(pt?'primeira':'first'):v.natureza==='atualizacao'?(pt?'correção':'correction'):(pt?'atualização':'update');\n+  const dia=`<time datetime=\"${v.data}\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">${dataDaCasa(v.data)}</time>`;\n"
+  },
+  {
+   "id": "E2",
+   "ficheiro": "diff.patch",
+   "descricao": "uma versão sem natureza volta a contar como atualização no cabeçalho, o defeito que a ED2 corrige",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d5e32e2f17fa3c588e46f81a08fea0c24680bfa62e31ed8febca0aec43a126fd",
+   "sha256_depois": "feca718557e6708802cefb464f6f5d90e24343d1c17b07a990f284c3369c171c",
+   "contexto_antes": "} lang */\n+export function mudancasDaEdicao(slug,lang){\n+ const vs=versoesDaEdicao(slug,lang).slice(1);\n+ return ['atualizacao','correcao'].flatMap(natureza=>{\n+  const v=vs.findLast(v=>(v.natureza??'correcao')===natureza);\n+  return v?[{data:v.data,natureza}]:[];\n+ }).sort((a,b)=>a.data.localeCompare(b.data));\n+}\n+/** @param {string} slug @param {string} lang */\n+export function ",
+   "contexto_depois": "} lang */\n+export function mudancasDaEdicao(slug,lang){\n+ const vs=versoesDaEdicao(slug,lang).slice(1);\n+ return ['atualizacao','correcao'].flatMap(natureza=>{\n+  const v=vs.findLast(v=>(v.natureza??'atualizacao')===natureza);\n+  return v?[{data:v.data,natureza}]:[];\n+ }).sort((a,b)=>a.data.localeCompare(b.data));\n+}\n+/** @param {string} slug @param {string} lang */\n+export function "
+  },
+  {
+   "id": "E3",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua das datas do cabeçalho deixa de conferir a palavra antes da data («atualizado a» ou «corrigido a»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "feca718557e6708802cefb464f6f5d90e24343d1c17b07a990f284c3369c171c",
+   "sha256_depois": "693c13ffd07ef99c5f45b5b5a224aa1b01cee13fffae1088fa0d695b0b586827",
+   "contexto_antes": "ibute(m.natureza==='atualizacao'?'data-estudo-correcao':'data-estudo-atualizacao')||el.getAttribute('datetime')!==m.data||normal(el.textContent)!==forma(m.data)||normal(anterior?.textContent)!==rotulo)erros.push(`ED2 datas: atualização/correção ou data incorreta ${m.data}`);\n+ }\n+ return erros;\n+}\ndiff --git a/scripts/historia-edicoes-conferir.mjs b/scripts/historia-edi",
+   "contexto_depois": "ibute(m.natureza==='atualizacao'?'data-estudo-correcao':'data-estudo-atualizacao')||el.getAttribute('datetime')!==m.data||normal(el.textContent)!==forma(m.data))erros.push(`ED2 datas: atualização/correção ou data incorreta ${m.data}`);\n+ }\n+ return erros;\n+}\ndiff --git a/scripts/historia-edicoes-conferir.mjs b/scripts/historia-edi"
+  },
+  {
+   "id": "E4",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "o cabeçalho português de Évora 2027 chama atualização à correção de 06.11.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b1f160e6704174338b0801e8c7145d790da8d6ba2503236480b17338c67be378",
+   "sha256_depois": "dc16ac0c67a37c5745b78e4ad1ba9fd3b91f8cb0dac1cf1bdf625aa2d3265a90",
+   "contexto_antes": "\"2026-11-03\" data-estudo-atualizacao=\"true\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.11.2026</time><span aria-hidden=\"true\"> · </span><span data-voz>corrigido a</span> <time datetime=\"2026-11-06\" data-estudo-correcao=\"true\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">06.11.2026</time></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria",
+   "contexto_depois": "\"2026-11-03\" data-estudo-atualizacao=\"true\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.11.2026</time><span aria-hidden=\"true\"> · </span><span data-voz>atualizado a</span> <time datetime=\"2026-11-06\" data-estudo-correcao=\"true\" data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">06.11.2026</time></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria"
+  },
+  {
+   "id": "E5",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/document/index.html",
+   "descricao": "a linha inglesa das edições da versão atual perde a edição de 03.11.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6f4105618ce224279e02c70236b0cde4bf64ea8358351543a6a74ca3c61e1dc8",
+   "sha256_depois": "a88f3c9af593d2865e7b6d578f511a447fdcaebd6356db6956f8e24c59f5b01b",
+   "contexto_antes": "2026-10-01\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">01.10.2026</time></a> <span data-voz>(first)</span></span> · <span data-edicoes-item><a data-edicao-porta href=\"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03\" hreflang=\"en\"><time datetime=\"2026-11-03\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.11.2026</time></a> <span data-voz>(update)</span></span> · <span data-edicoes-item><span aria-current=\"page\"><time datetime=\"2026-11-06\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.d",
+   "contexto_depois": "2026-10-01\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">01.10.2026</time></a> <span data-voz>(first)</span></span> · <span data-edicoes-item><span aria-current=\"page\"><time datetime=\"2026-11-06\" data-edicao-lista-data data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.d"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+# conferir-tudo · c021704c2 · 14 passos · 0 vermelhos · 1642 s
+
+- 00 `npm run build`: 0 (659 s)
+- 02 `npm run check:edicoes`: 0 (8 s)
+- 03 `npm run check:publicadores`: 0 (1 s)
+- 09 `npm run check:briefs`: 0 (159 s)
+- 10 `npm run check:leituras`: 0 (160 s)
+- 12 `npm run gate:html`: 0 (69 s)
+- 16 `npm run check:datas`: 0 (8 s)
+- 20 `npm run check:cabeca`: 0 (6 s)
+- 33 `npm run check:voz`: 0 (223 s)
+- 34 `npm run check:voz-retiradas`: 0 (217 s)
+- 37 `npm run check:lugar`: 0 (48 s)
+- 40 `npm run check:mortos`: 0 (2 s)
+- 49 `npm run check:privacidade`: 0 (82 s)
+- 63 `npm run typecheck`: 0 (0 s)
