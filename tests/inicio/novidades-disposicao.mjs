@@ -1,7 +1,10 @@
+import {parse} from 'node-html-parser';
+import {cenarioDossie} from './novidades.mjs';
 /** DO4: a mesma medida nas capturas e na régua dos alvos, com plantas locais. */
 export async function conferirDisposicaoNovidades(pagina, plantas=true) {
- if(!await pagina.locator('[data-novidade^="dossie:"]').count())throw Error('DO4: falta a entrada do dossiê para medir');
+ const tinhaDossie=Boolean(await pagina.locator('[data-novidade^="dossie:"]').count());
  const entradas=pagina.locator('[data-novidade]');
+ if(!await entradas.count())throw Error('DO4: faltam as entradas reais das novidades');
  const resultados=[];
  for(let i=0;i<await entradas.count();i++) {
   const li=entradas.nth(i);await li.scrollIntoViewIfNeeded();
@@ -40,6 +43,23 @@ export async function conferirDisposicaoNovidades(pagina, plantas=true) {
   }
   if((await medir()).erros.length)throw Error('DO4: reposição da página falhou');
   resultados.push({...controlo,plantas:recusadas});
+ }
+ if(plantas&&!tinhaDossie) {
+  // As atualizações podem ocupar as cinco entradas. A página real continua medida;
+  // o dossiê e as três adulterações usam um cenário declarado só no navegador.
+  const lista=pagina.locator('[data-novidades] ol'),original=await lista.innerHTML();
+  const lang=(await pagina.locator('html').getAttribute('lang')).startsWith('pt')?'pt':'en';
+  const cenario=cenarioDossie(await pagina.content(),lang,process.env.OEDP_DIST??'dist');
+  const html=parse(cenario.html).querySelector('[data-novidades] ol').innerHTML;
+  try {
+   await lista.evaluate((el,html)=>{el.innerHTML=html;},html);
+   if(!await pagina.locator('[data-novidade-dossie]').count())throw Error('DO4: cenário sem dossiê');
+   const ensaio=await conferirDisposicaoNovidades(pagina,true);
+   if(!ensaio.some(r=>r.plantas.length===3))throw Error('DO4: faltam as três plantas do dossiê');
+   resultados.push(...ensaio.map(r=>({...r,cenario:'dossie-de-ensaio'})));
+  } finally {await lista.evaluate((el,html)=>{el.innerHTML=html;},original);}
+  if(await lista.innerHTML()!==original)throw Error('DO4: cenário não repôs as entradas reais');
+  await conferirDisposicaoNovidades(pagina,false);
  }
  return resultados;
 }

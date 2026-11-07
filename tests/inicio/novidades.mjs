@@ -129,12 +129,12 @@ export function conferirNovidades(root, lang, dist='dist', publicacoes=publicaco
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 function renderNovidades(root,lang,publicacoes) {
   root.querySelector('[data-novidades] ol').set_content(entradasEsperadas(lang,publicacoes).slice(0,5).map(p=>{
-   const texto=p.dossie?`${esc(p.titulo.slice(0,p.titulo.lastIndexOf(' · ')))} · <span data-prova="dossie_pecas_${p.dossie.slug.replace(/-/g,'_')}">${p.n}</span> ${lang==='pt'?(p.n===1?'peça':'peças'):(p.n===1?'piece':'pieces')}`:esc(p.titulo);
+   const texto=p.dossie?`${esc(p.titulo.slice(0,p.titulo.lastIndexOf(' · ')))} · <span class="prova-valor" data-prova="dossie_pecas_${p.dossie.slug.replace(/-/g,'_')}">${p.n}</span> ${lang==='pt'?(p.n===1?'peça':'peças'):(p.n===1?'piece':'pieces')}`:esc(p.titulo);
    return `<li data-novidade="${p.id}"><time datetime="${p.data}" data-nonledger="data-editorial" data-data-origem="${p.origem}">${forma(p.data)}</time><span class="pp-novidade-tipo">${p.dossie?(lang==='pt'?'dossiê':'dossier'):FP1[lang][p.tipo]}</span><a href="${p.rota}" data-novidade-porta ${p.dossie?`data-novidade-dossie="${p.dossie.slug}"`:''}>${texto}</a></li>`;
   }).join(''));
 }
 
-function cenarioDossie(html,lang,dist) {
+export function cenarioDossie(html,lang,dist) {
  const root=parse(html), manifesto=structuredClone(lerManifesto());
  for(const e of manifesto.edicoes)for(const v of e.edicoes)if(v.natureza==='atualizacao')v.natureza='correcao';
  const publicacoes=publicacoesEsperadas(lang,manifesto);

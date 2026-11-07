@@ -50,9 +50,19 @@ export function plantasDasListagens(html,lang,dossieHtml) {
  // Uma cópia dos dados retira o dossiê das novidades; a discussão recebe a mesma forma da lista.
  const candidatas=candidatasDoInicio(lang);candidatas.novidades=candidatas.novidades.filter(e=>e.dossie?.slug!==d.slug);
  const listas=listagensDoInicio(lang,candidatas),r=parse(html),lista=parse(dossieHtml).querySelector(`[data-dossie-lista="${d.slug}"]`);
- r.querySelector(`[data-novidade="dossie:${d.slug}"]`).remove();
- r.querySelector('[data-novidades]').insertAdjacentHTML('afterend',`<section data-discussao-inicio><ul>${lista.outerHTML}</ul></section>`);
+ const entrada=r.querySelector(`[data-novidade="dossie:${d.slug}"]`);
+ if(entrada) {
+  entrada.remove();
+  r.querySelector('[data-novidades]').insertAdjacentHTML('afterend',`<section data-discussao-inicio><ul>${lista.outerHTML}</ul></section>`);
+ }
+ // Quando as novidades são todas estudos, o dossiê já tem de estar na discussão real.
  const erros=conferirListagens(r,lang,listas);
  provas.push({nome:'dossiê fora das novidades ocupa a primeira secção seguinte',lang,mordeu:!erros.length&&listas.discussao[0]?.dossie?.slug===d.slug&&listas.estudos.every(e=>e.dossie?.slug!==d.slug),queixa:erros.join('; ')||null});
+ const falta=parse(r.toString());
+ const porta=falta.querySelector(`[data-discussao-inicio] [data-dossie-lista="${d.slug}"]`);
+ if(!porta)throw Error('DO2: falta o dossiê no controlo da secção seguinte');
+ porta.remove();
+ const recusas=conferirListagens(falta,lang,listas);
+ provas.push({nome:'dossiê omitido na secção seguinte recusado',lang,mordeu:recusas.some(e=>/lugar do dossiê em discussao diferente/.test(e))});
  return provas;
 }

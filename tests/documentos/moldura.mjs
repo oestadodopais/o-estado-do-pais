@@ -129,7 +129,7 @@ const opcao = (nome) => {
   const i = argv.indexOf(nome);
   return i >= 0 ? (argv[i + 1] ?? true) : null;
 };
-const FICHEIRO_JSON = opcao('--json');
+const FICHEIRO_JSON = opcao('--json') ?? (process.env.OEDP_TEMPOS_DIR ? path.join(process.env.OEDP_TEMPOS_DIR, 'moldura.json') : null);
 const VERMELHOS = argv.includes('--vermelhos');
 
 if (!fs.existsSync(DIST)) {
@@ -571,6 +571,7 @@ async function passagem() {
             id: v.id,
             impacto: v.impact,
             nos: v.nodes.length,
+            alvos: v.nodes.map(n => ({seletor:n.target,razao:n.failureSummary})),
             /* ONDE, e não só QUANTOS. O relatório do bloco tem de poder dizer
                quanto do contraste é da moldura e quanto é do corpo da obra
                citada, e uma contagem que não separa as duas coisas deixa a
@@ -585,7 +586,10 @@ async function passagem() {
           const k = `${v.id} [${v.impacto}]`;
           axe[k] = (axe[k] ?? 0) + v.nos;
           axe[`${k} · em tabela`] = (axe[`${k} · em tabela`] ?? 0) + v.emTabela;
-          if (v.impacto === 'serious' || v.impacto === 'critical') graves += v.nos;
+          if (v.impacto === 'serious' || v.impacto === 'critical') {
+            graves += v.nos;
+            console.log(JSON.stringify({moldura:doc.chave,tema,largura,...v}));
+          }
         }
         const medida = await pagina.evaluate(medeNaPagina);
         docs.push({ chave: doc.chave, tema, largura, ...medida });
