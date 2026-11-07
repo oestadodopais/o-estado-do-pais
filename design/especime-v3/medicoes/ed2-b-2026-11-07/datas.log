@@ -1,0 +1,50 @@
+
+> o-estado-do-pais@0.1.0 check:datas
+> node tests/explicacoes/revisoes.mjs --datas && node tests/inicio/novidades.mjs && node tests/inicio/datas-do-recibo.mjs && node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node tests/hb1/pagina-editada.mjs && node scripts/check-datas.mjs && node tests/quadro/reguas.mjs datas
+
+PAI1-B: controlo da página e das datas (pt): 0
+PAI1-B: data de outra releitura recusada (pt): 0
+PAI1-B: controlo da página e das datas (en): 0
+PAI1-B: data de outra releitura recusada (en): 0
+PAI1-B: 4 provas, código 0.
+VOZ-1 H pt, 2026-11-05: controlo a 0; marca retirada recusada: FP1: marca novo diferente da data impressa; voz exige o rótulo.
+VOZ-1 H pt, 2026-11-06: controlo a 0; marca indevida recusada: FP1: marca novo diferente da data impressa; voz não exige o rótulo.
+VOZ-1 H en, 2026-11-05: controlo a 0; marca retirada recusada: FP1: marca novo diferente da data impressa; voz exige o rótulo.
+VOZ-1 H en, 2026-11-06: controlo a 0; marca indevida recusada: FP1: marca novo diferente da data impressa; voz não exige o rótulo.
+{"fp1":"verde","plantas":[{"nome":"quatro peças dão uma entrada, conservam a data e a peça exterior e deixam cinco entradas","mordeu":true},{"nome":"entrada do registo empurrada para as novidades","mordeu":true},{"nome":"condição do inventário limitada aos rótulos condicionais FP1","mordeu":true},{"nome":"read continua proibido e re-read aprovado não é uma palavra parcial","mordeu":true},{"nome":"FP3 correção conserva publicação, tipo, ligação e desempate","lang":"pt","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"pt","cenario":"real","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"pt","cenario":"real","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"pt","cenario":"real","mordeu":true},{"nome":"entrada do registo na caixa","lang":"pt","cenario":"real","mordeu":true},{"nome":"DO4 data na última coluna","lang":"pt","cenario":"real","mordeu":true},{"nome":"DO4 tipo em maiúscula","lang":"pt","cenario":"real","mordeu":true},{"nome":"DO4 cauda antiga","lang":"pt","cenario":"real","mordeu":true},{"nome":"DO4 marca editorial retirada","lang":"pt","cenario":"real","mordeu":true},{"nome":"contagem sem token","lang":"pt","cenario":"real","mordeu":true},{"nome":"dossiê repetido","lang":"pt","cenario":"real","mordeu":true},{"nome":"marca novo retirada ou indevida","lang":"pt","cenario":"real","mordeu":true},{"nome":"dossiê da novidade trocado","lang":"pt","cenario":"real","mordeu":true},{"nome":"dossiê da novidade retirado","lang":"pt","cenario":"real","mordeu":true},{"nome":"título da peça trocado","lang":"pt","cenario":"real","mordeu":true},{"nome":"entrada sem página","lang":"pt","cenario":"real","mordeu":true},{"nome":"data no futuro","lang":"pt","cenario":"real","mordeu":true},{"nome":"ordem trocada","lang":"pt","cenario":"real","mordeu":true},{"nome":"peça mais recente em falta","lang":"pt","cenario":"real","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"pt","cenario":"real","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"pt","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"pt","cenario":"planta","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"pt","cenario":"planta","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"pt","cenario":"planta","mordeu":true},{"nome":"DO4 L1 porta do dossiê duplicada","lang":"pt","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"pt","mordeu":true},{"nome":"FP3 correção conserva publicação, tipo, ligação e desempate","lang":"en","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"en","cenario":"real","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"en","cenario":"real","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"en","cenario":"real","mordeu":true},{"nome":"entrada do registo na caixa","lang":"en","cenario":"real","mordeu":true},{"nome":"DO4 data na última coluna","lang":"en","cenario":"real","mordeu":true},{"nome":"DO4 tipo em maiúscula","lang":"en","cenario":"real","mordeu":true},{"nome":"DO4 cauda antiga","lang":"en","cenario":"real","mordeu":true},{"nome":"DO4 marca editorial retirada","lang":"en","cenario":"real","mordeu":true},{"nome":"contagem sem token","lang":"en","cenario":"real","mordeu":true},{"nome":"dossiê repetido","lang":"en","cenario":"real","mordeu":true},{"nome":"marca novo retirada ou indevida","lang":"en","cenario":"real","mordeu":true},{"nome":"dossiê da novidade trocado","lang":"en","cenario":"real","mordeu":true},{"nome":"dossiê da novidade retirado","lang":"en","cenario":"real","mordeu":true},{"nome":"título da peça trocado","lang":"en","cenario":"real","mordeu":true},{"nome":"entrada sem página","lang":"en","cenario":"real","mordeu":true},{"nome":"data no futuro","lang":"en","cenario":"real","mordeu":true},{"nome":"ordem trocada","lang":"en","cenario":"real","mordeu":true},{"nome":"peça mais recente em falta","lang":"en","cenario":"real","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"en","cenario":"real","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"en","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"en","cenario":"planta","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"en","cenario":"planta","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"en","cenario":"planta","mordeu":true},{"nome":"DO4 L1 porta do dossiê duplicada","lang":"en","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"en","mordeu":true}]}
+{"paginas":8282,"semPeriodo":44,"comPainel":182,"copiasAlojadas":4,"plantas":[{"nome":"undefined contra undefined recusado pela guarda da origem","mordeu":true},{"nome":"próxima leitura indevida derivada","mordeu":true},{"nome":"próxima leitura indevida semReleituras","mordeu":true},{"nome":"alojamento dito leitura (pt)","mordeu":true},{"nome":"alojamento dito leitura (en)","mordeu":true},{"nome":"campo ausente acrescentado","mordeu":true},{"nome":"próxima leitura no passado","mordeu":true},{"nome":"releitura do painel retirada","mordeu":true}],"calendario":"verde","marcaNovo":"verde"}
+HB1 publicação: preparação, aterragem declarada, legado, planta anterior e abertura comum conferidos.
+I9 publicação declarada: dois controlos verdes; sete adulterações recusadas.
+I9 integração: 6 edições reais verdes; 6 páginas sem scripts recusadas.
+PLANTA período: mês trocado, texto divergente recusado
+PLANTA período: trimestre trocado, texto divergente recusado
+PLANTA período: dia inventado num ano, texto divergente recusado
+HB1: períodos dos recibos conferidos nas duas línguas.
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-eurostat-privacao-severa-definicao (pt): vermelho 1, verde 0
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-eurostat-privacao-severa-definicao (en): vermelho 1, verde 0
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-il-proposta (pt): vermelho 1, verde 0
+PLANTA HB1-g descrição pela regra antiga (a linha sem published_at_kind), hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g excerto com a data no lugar do período (a linha com period), hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g atribuição com a data como edição (a página), hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g portão do código diante do excerto antigo, hab-il-proposta (en): vermelho 1, verde 0
+PLANTA HB1-g portão do JSON diante do período antigo, hab-il-proposta (en): vermelho 1, verde 0
+HB1-g: 2 linhas que só declaram a última edição de uma página, nas duas edições (a descrição, o excerto, o JSON e a atribuição); o controlo hab-ine-iphab-homologa como estava; 20 plantas.
+DO2: estudos avulsos conferidos; 4 plantas das portas recusadas.
+ED1: plantas das portas históricas nas datas recusadas.
+DO1: datas dos estudos presas às edições; 8 plantas recusadas.
+check-datas: história completa · 29 edição(ões) do ficheiro refeitas do `git`.
+check-datas · 29 edição(ões) datadas, 122 data(s) impressa(s) em 52 página(s), 122 laço(s) data-edição em 668 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso; 12 nota(s) do sucessor com a frase da reconciliação.
+PAI2 datas pt: controlo verde, planta recusada pela mesma função.
+PAI2 datas en: controlo verde, planta recusada pela mesma função.

@@ -1,0 +1,16 @@
+{
+  "check:edicoes": 0,
+  "check:datas": 0,
+  "check:lugar": 0,
+  "check:voz": 0,
+  "check:mortos": 0,
+  "typecheck": 0,
+  "comparacao_com_main": 0,
+  "planta_atualizacao_tirada": 1,
+  "planta_porta_publicada_falsa": 1,
+  "planta_atualizacao_a_mais": 1,
+  "planta_so_palavra_errada": 1,
+  "planta_outra_palavra": 1,
+  "controlo_das_plantas": 0,
+  "build": 0
+}

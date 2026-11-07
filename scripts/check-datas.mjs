@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {conferirMudancasDoCabecalho,rotasNoManifesto} from './edicoes-linha-conferir.mjs';
+import {conferirMudancasDoCabecalho,rotasNoManifesto,manifestoEd2} from './edicoes-linha-conferir.mjs';
 import { primeiraEdicao } from '../src/lib/edicoes.mjs';
 /**
  * O PORTÃO DAS DATAS DE PUBLICAÇÃO · três contas, e nenhuma confia na anterior.
@@ -374,7 +374,7 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
     }
-    if(slugDaPagina)falhas.push(...conferirMudancasDoCabecalho(bloco,slug,lang).map(e=>`${rota}: ${e}`));
+    if(slugDaPagina)falhas.push(...conferirMudancasDoCabecalho(bloco,slug,lang,manifestoEd2,linguaDaPagina).map(e=>`${rota}: ${e}`));
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina
       ? (rotasNoManifesto(slug,lang)[0] || (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`))

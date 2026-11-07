@@ -3,7 +3,8 @@ import {exigeRotuloNovo} from './marca-novo.mjs';
 import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 import {normalizaEspacosDaRetirada} from './titulos-publicados.mjs';
 import {retirarTitulosConferidos} from './titulos-publicados.mjs';
-import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
+import {manifestoEd2} from './edicoes-linha-conferir.mjs';
+import {FAIXAS_DE_EDICAO,classeDaVozDaEdicao,conferirVozDaLinha,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
@@ -1345,6 +1346,11 @@ for (const file of ficheiros) {
   const html = fs.readFileSync(file, 'utf8');
   const root = lerPaginaComCodigo(html, { comment: false, blockTextElements: { script: true, style: true } });
   tirarCodigoConferido(root, rota);
+  if(rota?.key==='estudo')for(const cabecalho of root.querySelectorAll('[data-estudo-edicao]')){
+    const [slug,lang]=cabecalho.getAttribute('data-estudo-edicao').split('/');
+    const erros=conferirVozDaLinha(cabecalho,manifestoEd2,slug,lang);
+    if(erros.length)throw Error(erros.join('; '));
+  }
   const titulosCopiados=conferirTitulosCopiados(root,rota,DIST);
   if(titulosCopiados.erros.length)throw new Error(titulosCopiados.erros.join('; '));
   for(const el of titulosCopiados.elementos)el.set_content('');
@@ -1654,7 +1660,7 @@ for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
   let total = 0;
   for (const [t, n] of conta) {
     total += n;
-    const classe = classesNormalizadas.get(normalizaFraseDoInventario(t));
+    const classe = classesNormalizadas.get(normalizaFraseDoInventario(t)) ?? classeDaVozDaEdicao(t);
     if (classe) porClasse[classe] += n;
     else naoClassificados.push(t);
   }

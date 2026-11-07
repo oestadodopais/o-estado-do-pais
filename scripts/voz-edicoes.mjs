@@ -1,16 +1,34 @@
 /** ED1-F: só as formas integrais da faixa admitem o fragmento retirado. */
 import {fraseRetiradaNoTexto} from './titulos-publicados.mjs';
-// ED2: só estas formas integrais admitem os fragmentos antigos; as plantas conservam a recusa isolada.
-const FAIXAS_PT = ['Edições: (primeira) · (correção, atual) · publicado a · corrigido a', 'Edições: (primeira) · (atualização) · (correção, atual) · publicado a · atualizado a · corrigido a'];
-const FAIXAS_EN = ['Editions: (first) · (correction, current) · published on · corrected on', 'Editions: (first) · (update) · (correction, current) · published on · updated on · corrected on'];
-export const FAIXAS_DE_EDICAO = new Map([
- ['publicado a ·',new Set(FAIXAS_PT)],
- ['published on ·',new Set(FAIXAS_EN)],
- ['· publicado a · atualizado a',new Set([FAIXAS_PT[1]])],
- ['· published on · updated on',new Set([FAIXAS_EN[1]])],
- ['Edições',new Set(['Edições:',...FAIXAS_PT])],
- ['Editions',new Set(['Editions:',...FAIXAS_EN])],
-]);
+import {manifestoEd2,mudancasNoManifesto,publicacaoNoPortao,conferirLinhaDasEdicoes} from './edicoes-linha-conferir.mjs';
+/** O repertório sai das versões declaradas, sem importar a composição da vista.
+ * Uma palavra nova, outra ordem ou outra quantidade não se acrescenta por expressão regular. */
+export function repertorioDaVozDasEdicoes(manifesto=manifestoEd2){
+ const frases=new Set(),porLingua={pt:new Set(),en:new Set()};
+ for(const e of manifesto.edicoes)for(const lang of ['pt','en']){
+  const pt=lang==='pt',vs=e.edicoes,mudancas=mudancasNoManifesto(e.slug,e.lang,manifesto);
+  const naturezas=vs.map((v,i)=>`(${i===0?(pt?'primeira':'first'):v.natureza==='atualizacao'?(pt?'atualização':'update'):(pt?'correção':'correction')}${i===vs.length-1?(pt?', atual':', current'):''})`);
+  let forma='';
+  if(vs.length>1){
+   // A primeira nunca é a atual quando há uma linha de edições.
+   forma=`${pt?'Edições:':'Editions:'} ${naturezas.join(' · ')}`;
+   for(const v of vs)frases.add(v.data.split('-').reverse().join('.'));
+   for(const n of naturezas)frases.add(n);
+   frases.add(pt?'Edições:':'Editions:');
+  }
+  if(publicacaoNoPortao(e.slug,e.lang))forma+=` · ${pt?'publicado a':'published on'}`;
+  for(const m of mudancas)forma+=` · ${m.natureza==='atualizacao'?(pt?'atualizado a':'updated on'):(pt?'corrigido a':'corrected on')}`;
+  if(vs.length>1||mudancas.length){forma=forma.trim();porLingua[lang].add(forma);frases.add(forma);}
+ }
+ return {frases,faixas:new Map([
+  ['publicado a ·',porLingua.pt],['published on ·',porLingua.en],
+  ['Edições',new Set(['Edições:',...[...porLingua.pt].filter(t=>t.startsWith('Edições:'))])],['Editions',new Set(['Editions:',...[...porLingua.en].filter(t=>t.startsWith('Editions:'))])],
+ ])};
+}
+const repertorio=repertorioDaVozDasEdicoes();
+export const FAIXAS_DE_EDICAO=repertorio.faixas;
+export function classeDaVozDaEdicao(texto,prova=repertorio){return prova.frases.has(texto)?'conteudo':null;}
+export function conferirVozDaLinha(root,manifesto,slug,lang,data=null){return conferirLinhaDasEdicoes(root,manifesto,slug,lang,data);}
 /** @param {string} texto @param {string} frase @param {Set<string>} admitidas */
 export function retiradaForaDaFrase(texto,frase,admitidas=new Set()) {
  return fraseRetiradaNoTexto(texto,frase)&&!admitidas.has(texto);
@@ -18,9 +36,12 @@ export function retiradaForaDaFrase(texto,frase,admitidas=new Set()) {
 /** A obra citada fica fora da voz; o aviso editorial e as suas portas entram.
  * Não se removem datas nem palavras do aviso, que o portão documental confere.
  * @param {any} root */
-export function frasesDaFaixaDocumental(root) {
+export function frasesDaFaixaDocumental(root,manifesto=manifestoEd2) {
  const frases=[];
  for(const faixa of root.querySelectorAll('[data-documento-edicao]')) {
+  const [slug,lang,data]=faixa.getAttribute('data-documento-edicao').split('/');
+  const erros=conferirVozDaLinha(faixa,manifesto,slug,lang,data);
+  if(erros.length)throw Error(erros.join('; '));
   for(const el of faixa.querySelectorAll('p,h1,h2,h3,li,a,[data-voz]')) {
    if(el.querySelector('p,h1,h2,h3,li'))continue;
    const frase=el.textContent.replace(/\s+/g,' ').trim();

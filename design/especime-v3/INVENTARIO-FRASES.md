@@ -5333,8 +5333,8 @@ As cinco passagens nas duas edições são transcrições dos registos do estudo
 | --- | --- | --- | --- | --- |
 | conteudo | atualizado a | ev2 | viva | EV2-F, 30.10.2026: rótulo da data updated da edição, conferida por check:datas. |
 | conteudo | updated on | ev2 | viva | EV2-F, 30.10.2026: rótulo da data updated da edição, conferida por check:datas. |
-| conteudo | · publicado a · atualizado a | ev2 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
-| conteudo | · published on · updated on | ev2 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
+| conteudo | · publicado a · atualizado a | ev2 | viva | ED2 B: conservada nos estudos com uma só edição posterior à publicação, como em main. |
+| conteudo | · published on · updated on | ev2 | viva | ED2 B: conservada nos estudos com uma só edição posterior à publicação, como em main. |
 ## DO4: as três colunas das novidades
 
 | Classe | Frase | Bloco | Estado | Razão |
@@ -5546,7 +5546,5 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 
 | conteudo | corrigido a | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
 | conteudo | corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
-| conteudo | Edições: (primeira) · (correção, atual) · publicado a · corrigido a | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
-| conteudo | Edições: (primeira) · (atualização) · (correção, atual) · publicado a · atualizado a · corrigido a | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
-| conteudo | Editions: (first) · (correction, current) · published on · corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
-| conteudo | Editions: (first) · (update) · (correction, current) · published on · updated on · corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
+
+ED2 B: a linha completa das edições é uma composição das palavras já declaradas, conferida na ordem do manifesto por `scripts/edicoes-linha-conferir.mjs` e classificada por `scripts/voz-edicoes.mjs`. Não se enumeram aqui formas finitas pelo número de versões.

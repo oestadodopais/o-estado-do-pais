@@ -9,12 +9,12 @@ const principal = work.editions.find(e => e.lang === lang) ?? work.editions[0];
 const documento = documentosDoEstudo(work.slug).find(d => d.lang === principal.lang);
 const linha = linhaDasEdicoes(work.slug, principal.lang);
 const data = dataPublicacao(work, principal);
-const mudancas = mudancasDaEdicao(work.slug, principal.lang);
+const mudancas = mudancasDaEdicao(work.slug, principal.lang, data);
 const rotulos = ROTULOS_B1[lang];
 if (!documento) throw new Error(`Edição sem documento ou data: ${work.slug}/${principal.lang}`);
 ---
 <p class="estudo-publicado" data-estudo-edicao={`${work.slug}/${principal.lang}`}>
-  {linha ? <Fragment set:html={linha} /> : <a href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>}
+  {linha ? <Fragment set:html={linha} /> : <a data-voz={mudancas.length ? true : undefined} href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{mudancas.length ? rotulos.edicaoAtual : data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>}
   {data && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
   <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time></>}
   {mudancas.map(m => <><span aria-hidden="true"> · </span><span data-voz>{m.natureza === 'atualizacao' ? rotulos.atualizado : rotulos.corrigido}</span>{' '}

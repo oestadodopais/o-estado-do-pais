@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
-import {FAIXAS_DE_EDICAO,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz} from '../../scripts/voz-edicoes.mjs';
+import {FAIXAS_DE_EDICAO,classeDaVozDaEdicao,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz} from '../../scripts/voz-edicoes.mjs';
 import {leInventario,normalizaFraseDoInventario,analisa,leMarcadores} from '../../scripts/voz.mjs';
 import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 import {manifestoDasEdicoes,versoesDaEdicao,faixaDaVersao} from '../../src/lib/edicoes.mjs';
@@ -10,7 +10,7 @@ const declarada=texto=>inv.linhas.some(l=>l.estado==='viva'&&normalizaFraseDoInv
 let controlos=0,plantas=0,documentos=0;
 for(const [fragmento,inteiras] of FAIXAS_DE_EDICAO){
  assert(inv.linhas.some(l=>l.texto===fragmento&&l.estado==='retirada'));
- for(const inteira of inteiras){assert(!retiradaForaDaFrase(inteira,fragmento,inteiras));assert(declarada(inteira));controlos++;}
+ for(const inteira of inteiras){assert(!retiradaForaDaFrase(inteira,fragmento,inteiras));assert(declarada(inteira)||classeDaVozDaEdicao(inteira)==='conteudo');controlos++;}
  for(const texto of [fragmento,`· ${fragmento}`,`${[...inteiras].at(-1)} texto acrescentado`]){assert(retiradaForaDaFrase(texto,fragmento,inteiras));plantas++;}
 }
 for(const lang of ['pt','en']){

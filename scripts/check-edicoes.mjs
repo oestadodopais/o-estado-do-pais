@@ -1,3 +1,4 @@
+import {conferirMudancasDoCabecalho} from './edicoes-linha-conferir.mjs';
 import {conferirSuperficieCorrecoes} from './correcoes-superficie-conferir.mjs';
 import fs from 'node:fs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
@@ -31,7 +32,7 @@ for(const lang of ['pt','en']) {
     for(const c of CORRECOES_TEXTO)if(entradas.filter(e=>e.getAttribute('data-texto-estudo')===c.slug&&e.getAttribute('data-texto-data')===c.data).length!==1)erros.push(`ED1 registo: ${c.slug}/${lang}`);
   }
 }
-for(const [rota,html] of paginas){const r=matchPath(rota);if(r?.key==='documento')erros.push(...conferirFaixaDaVersao(parse(html),manifesto,r.params.slug,r.lang,r.params.date??null));}
+for(const [rota,html] of paginas){const r=matchPath(rota);if(r?.key==='estudo'){const w=WORKS.find(w=>w.slug===r.params.slug),e=w?.editions.find(e=>e.lang===r.lang)??w?.editions[0];if(e)erros.push(...conferirMudancasDoCabecalho(parse(html).querySelector('[data-estudo-edicao]'),w.slug,e.lang,manifesto,r.lang));}if(r?.key==='documento')erros.push(...conferirFaixaDaVersao(parse(html),manifesto,r.params.slug,r.lang,r.params.date??null));}
 for(const e of erros)console.error(e);
 console.log(`ED1: ${manifesto.edicoes.filter(e=>e.primeira_edicao).length} primeiras edições; ${CORRECOES_TEXTO.length} correções; ${erros.length} falhas.`);
 if(erros.length)process.exitCode=1;

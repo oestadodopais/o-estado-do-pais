@@ -22,7 +22,8 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=nul
     const [slug,lingua]=(el.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao')??'').split('/');
     const natureza=el.hasAttribute('data-estudo-atualizacao')?'atualizacao':'correcao';
     const m=mudancasNoManifesto(slug,lingua,manifesto??manifestoEd2).find(m=>m.natureza===natureza);
-    return Boolean(m&&lingua===lang&&el.getAttribute('datetime')===m.data&&el.text.trim()===dataDaCasa(m.data));
+    const w=WORKS.find(w=>w.slug===slug),principal=w?.editions.find(e=>e.lang===lang)??w?.editions[0];
+    return Boolean(m&&lingua===principal?.lang&&el.getAttribute('datetime')===m.data&&el.text.trim()===dataDaCasa(m.data));
   }
   if(rota==='correcoes' && origem==='edicoes.data') {
     const entrada=el.closest('[data-texto-estudo]'),porta=el.parentNode;
