@@ -1,0 +1,89 @@
+{
+  "natureza": "Ensaio sintético identificado; não é o índice real de 07.11.2026.",
+  "origem_da_escala": "medida-2026-11-07.json",
+  "conteudo": "Cinco atos e 5096 declarações em oito DAR. Títulos extensos sintéticos forçam a divisão; razão e oradores também sintéticos.",
+  "entradas": 5101,
+  "designacoes": 5,
+  "grupos_dar": 8,
+  "minimo_bytes": 3568,
+  "limite_exclusivo_bytes": 2500,
+  "partes": {
+    "quantidade": 3,
+    "bytes": [
+      475,
+      2480,
+      2486
+    ]
+  },
+  "descricoes_cortadas": 5,
+  "designacoes_omitidas": 0,
+  "historico_12_10": {
+    "bytes": 2489,
+    "sha256": "ace8d3246898dd6dea6ed006261a67fd0e400607b72636a81735fd497c1b3328",
+    "referencia": "Saída do código anterior à VIG2 sobre o índice do repositório, congelada antes da alteração."
+  },
+  "cinco_provas": {
+    "acumulacao": {
+      "codigo": 0,
+      "provas": 1
+    },
+    "designacao_tirada": {
+      "codigo": 0,
+      "provas": 1
+    },
+    "parte_acima_limite": {
+      "codigo": 0,
+      "provas": 1
+    },
+    "numero_errado": {
+      "codigo": 0,
+      "provas": 1
+    },
+    "uma_parte_identica": {
+      "codigo": 0,
+      "provas": 1
+    }
+  },
+  "conferencias": {
+    "vigilancia_tests": {
+      "codigos": [
+        0,
+        0
+      ],
+      "provas": [
+        74,
+        75
+      ]
+    },
+    "medicao_e_cinco_provas": {
+      "codigo": 0
+    },
+    "core_gate": {
+      "codigo": 1,
+      "corridas": 1,
+      "segundos": 649,
+      "vigilancia_tests": {
+        "codigo": 0,
+        "provas": 75
+      },
+      "suites_recusadas": [
+        "core.http_test",
+        "publisher.dominios_series_test",
+        "indicators.provas_test",
+        "indicators.refresh_rede_real_test",
+        "core.http_nome_test"
+      ],
+      "erro": "PermissionError: [Errno 1] Operation not permitted",
+      "operacao": "socket.bind, ao abrir servidores locais"
+    }
+  },
+  "commit_motor": "1c38c4a3bb890ad0b4a5b244c7af728ecc0293ac",
+  "consumo": {
+    "chamadas_de_ferramentas": 37,
+    "invocacoes_internas": 58,
+    "corridas_explicitas_conferencias_e_medicao": 4,
+    "portoes_sitio": 0,
+    "capturas": 0,
+    "tokens_used": "não exposto"
+  }
+}

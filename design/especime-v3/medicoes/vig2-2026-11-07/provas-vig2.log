@@ -1,0 +1,25 @@
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_autoria: «autoria trocada contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_corpo: «corpo truncado ou alterado no arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_data: «data errada contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_excerto: «excerto alterado contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_vazio: «falha apresentada como vazio ou cobertura completa»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_autoria: «autoria trocada contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_corpo: «corpo truncado ou alterado no arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_data: «data errada contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_excerto: «excerto alterado contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_vazio: «falha apresentada como vazio ou cobertura completa»; passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_autoria: «autoria trocada contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_corpo: «corpo truncado ou alterado no arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_data: «data errada contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_excerto: «excerto alterado contra o arquivo»; passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_vazio: «falha apresentada como vazio ou cobertura completa»; passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_acumulacao: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_designacao_tirada: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_dez_partes_e_separador_no_titulo: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_escrita_e_recibo: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_linha_indivisivel: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_numero_errado: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_parte_acima_limite: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_repeticao_e_dar_omitido: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_uma_parte_identica: passou
+PASS vigilancia: 75

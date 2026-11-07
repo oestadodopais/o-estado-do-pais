@@ -1,0 +1,15 @@
+Comando: python3 -m core.gate
+Código: 1
+Duração: 649 segundos
+GATE  vigilancia.tests       ok
+GATE  core.http_test         FAIL
+GATE  publisher.dominios_series_test FAIL
+GATE  indicators.provas_test FAIL
+GATE  indicators.refresh_rede_real_test FAIL
+GATE  core.http_nome_test    FAIL
+GATE: FAIL — 5 problem(s); commit blocked
+  PermissionError: [Errno 1] Operation not permitted
+  PermissionError: [Errno 1] Operation not permitted
+  PermissionError: [Errno 1] Operation not permitted
+  PermissionError: [Errno 1] Operation not permitted
+  PermissionError: [Errno 1] Operation not permitted
