@@ -57,6 +57,7 @@ done
 dono="$(cat "$tranca")"
 OEDP_TRANCA_DONO="$dono"; export OEDP_TRANCA_DONO
 filho=""
+motor_filho=""
 mediu=0
 soltar_a_tranca() {
   resultado=$?
@@ -100,8 +101,8 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"voz2a-f"}, {"perfil":"ed3-navegador"}, {"perfil":"build"}, {"perfil":"voz1a"}, {"perfil":"voz1b"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2-d"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}); print(r["perfil"])' "$O/selecao.json") || exit 9
-  [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"voz2a-g"}, {"perfil":"voz2a-f"}, {"perfil":"ed3-navegador"}, {"perfil":"build"}, {"perfil":"voz1a"}, {"perfil":"voz1b"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2-d"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || [ "$perfil" = voz2a-g ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
     portoes="build check:discussao check:palavras check:frases-compostas gate:html check:alvos check:css check:lugar check:series typecheck"
@@ -132,6 +133,8 @@ elif [ "${perfil:-}" = lar1 ] || [ "${perfil:-}" = lar1-largura ]; then
   fi
   export OEDP_LARGURA_JSON="$O/largura.json"
   export OEDP_LAR1_DIR="$O/depois"
+elif [ "${perfil:-}" = voz2a-g ]; then
+  portoes="build voz2a-g typecheck"
 elif [ "${perfil:-}" = voz2a-f ]; then
   portoes="check:alvos check:moldura check:primeira check:dossies"
 elif [ "${perfil:-}" = do4-alvos ]; then
@@ -164,6 +167,14 @@ export OEDP_TEMPOS_DIR="$O"
 export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
 git rev-parse HEAD > "$O/cabeca"
 printf 'limpa\n' > "$O/arvore.inicio"
+# O fecho dirigido mede as duas árvores fixas em paralelo; cada processo tem
+# o seu registo e é esperado antes de soltar a tranca.
+if [ "${perfil:-}" = voz2a-g ] && [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
+  git -C "$RESEARCHHUB_DIR" rev-parse HEAD > "$O/motor.cabeca"
+  date -u +%Y-%m-%dT%H:%M:%SZ > "$O/motor.inicio"
+  (cd "$RESEARCHHUB_DIR" && exec python3 "$W/scripts/leituras/processo.py" python3 -m core.gate) > "$O/motor.log" 2>&1 &
+  motor_filho=$!
+fi
 for g in $portoes; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
   if [ -n "${perfil:-}" ] && [ -f "$O/build.codigo" ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
@@ -182,6 +193,9 @@ for g in $portoes; do
     codigo=$?
   elif [ "$g" = check:largura:planta ]; then
     correr "$O/$g.log" npm run "$g" -- --json "$O/largura-planta.json"
+    codigo=$?
+  elif [ "$g" = voz2a-g ]; then
+    correr "$O/$g.log" node scripts/leituras/conferir-voz2a-g.mjs
     codigo=$?
   elif [ "$g" = verify ]; then
     if [ "$(cat "$O/build.codigo")" -ne 0 ]; then
@@ -204,10 +218,16 @@ for g in $portoes; do
 done
 if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
   git -C "$RESEARCHHUB_DIR" rev-parse HEAD > "$O/motor.cabeca"
-  date -u +%Y-%m-%dT%H:%M:%SZ > "$O/motor.inicio"
+  [ -f "$O/motor.inicio" ] || date -u +%Y-%m-%dT%H:%M:%SZ > "$O/motor.inicio"
   cd "$RESEARCHHUB_DIR" || exit 9
-  correr "$O/motor.log" python3 -m core.gate
-  codigo=$?
+  if [ -n "$motor_filho" ]; then
+    wait "$motor_filho"
+    codigo=$?
+    motor_filho=""
+  else
+    correr "$O/motor.log" python3 -m core.gate
+    codigo=$?
+  fi
   echo "$codigo" > "$O/motor.codigo"
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/motor.fim"
   git rev-parse HEAD > "$O/motor.cabeca.fim"
