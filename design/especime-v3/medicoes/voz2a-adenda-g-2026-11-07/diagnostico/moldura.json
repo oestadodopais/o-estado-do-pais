@@ -1,0 +1,56 @@
+{
+  "quando": "2026-11-07T21:29:55.044Z",
+  "documentos": 29,
+  "temas": [
+    "light",
+    "dark"
+  ],
+  "larguras": [
+    390,
+    1280
+  ],
+  "celulas": [
+    {
+      "nome": "C1",
+      "passa": false,
+      "prova": "2 nó(s) graves em 116 passagens · color-contrast [serious]=2"
+    },
+    {
+      "nome": "C2",
+      "passa": true,
+      "prova": "filetes: 64972 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 60040 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)"
+    },
+    {
+      "nome": "C3",
+      "passa": true,
+      "prova": "588 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)"
+    },
+    {
+      "nome": "C4",
+      "passa": true,
+      "prova": "116 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro"
+    },
+    {
+      "nome": "C5",
+      "passa": true,
+      "prova": "4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa"
+    },
+    {
+      "nome": "C6",
+      "passa": true,
+      "prova": "29 de 29 verdes · 29 de 29 plantas apanhadas"
+    }
+  ],
+  "axe": {
+    "region [moderate]": 116,
+    "region [moderate] · em tabela": 0,
+    "heading-order [moderate]": 8,
+    "heading-order [moderate] · em tabela": 0,
+    "color-contrast [serious]": 2,
+    "color-contrast [serious] · em tabela": 0
+  },
+  "graves": 2,
+  "selos": [],
+  "caixas": 588,
+  "plantas": []
+}

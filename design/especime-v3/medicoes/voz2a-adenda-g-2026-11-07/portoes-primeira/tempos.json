@@ -1,0 +1,208 @@
+{
+  "cabeca": "425dce262c42b887d310d2d19711936ca7a5a5b7",
+  "inicio": "2026-11-07T21:33:27.170Z",
+  "fim": "2026-11-07T21:43:18.590Z",
+  "segundos": 591.42,
+  "passos": [
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:27.170+00:00",
+      "fim": "2026-11-07T21:33:27.311+00:00",
+      "segundos": 0.1403049579821527,
+      "codigo": 0
+    },
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:27.170+00:00",
+      "fim": "2026-11-07T21:43:18.123+00:00",
+      "segundos": 590.91225333279,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:27.311+00:00",
+      "fim": "2026-11-07T21:33:43.229+00:00",
+      "segundos": 15.917781541589648,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:43.229+00:00",
+      "fim": "2026-11-07T21:33:45.414+00:00",
+      "segundos": 2.184817750006914,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:45.414+00:00",
+      "fim": "2026-11-07T21:33:51.949+00:00",
+      "segundos": 6.534964334219694,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:51.949+00:00",
+      "fim": "2026-11-07T21:33:52.119+00:00",
+      "segundos": 0.17048075003549457,
+      "codigo": 0
+    },
+    {
+      "passo": "node scripts/stamp-version.mjs --preparar",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:52.120+00:00",
+      "fim": "2026-11-07T21:33:52.153+00:00",
+      "segundos": 0.03345350036397576,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:33:52.153+00:00",
+      "fim": "2026-11-07T21:34:17.563+00:00",
+      "segundos": 25.409723916091025,
+      "codigo": 0
+    },
+    {
+      "passo": "node scripts/calendario-paginas.mjs",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:34:17.563+00:00",
+      "fim": "2026-11-07T21:34:19.100+00:00",
+      "segundos": 1.536446874961257,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run stamp:version",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:34:19.100+00:00",
+      "fim": "2026-11-07T21:34:19.260+00:00",
+      "segundos": 0.16064687492325902,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run cartoes",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:34:19.261+00:00",
+      "fim": "2026-11-07T21:35:54.119+00:00",
+      "segundos": 94.8235584157519,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run gate:html",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:35:54.119+00:00",
+      "fim": "2026-11-07T21:37:06.953+00:00",
+      "segundos": 72.83230641623959,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:edicoes",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:06.953+00:00",
+      "fim": "2026-11-07T21:37:17.069+00:00",
+      "segundos": 10.11527304071933,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:selos",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:17.069+00:00",
+      "fim": "2026-11-07T21:37:26.610+00:00",
+      "segundos": 9.541076750028878,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:datas",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:26.611+00:00",
+      "fim": "2026-11-07T21:37:35.046+00:00",
+      "segundos": 8.435339374933392,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cadeia",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:35.046+00:00",
+      "fim": "2026-11-07T21:37:35.490+00:00",
+      "segundos": 0.44393954100087285,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:dados",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:35.490+00:00",
+      "fim": "2026-11-07T21:37:37.571+00:00",
+      "segundos": 2.0804970832541585,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:mapa",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:37.571+00:00",
+      "fim": "2026-11-07T21:37:38.035+00:00",
+      "segundos": 0.46416520792990923,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:regioes",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:38.035+00:00",
+      "fim": "2026-11-07T21:37:38.369+00:00",
+      "segundos": 0.3339649997651577,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:areas",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:38.369+00:00",
+      "fim": "2026-11-07T21:37:38.908+00:00",
+      "segundos": 0.5382113750092685,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:formas",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:38.908+00:00",
+      "fim": "2026-11-07T21:37:50.060+00:00",
+      "segundos": 11.151690584141761,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:lugares",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:50.060+00:00",
+      "fim": "2026-11-07T21:37:51.732+00:00",
+      "segundos": 1.672166416887194,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:pais",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:37:51.732+00:00",
+      "fim": "2026-11-07T21:39:27.698+00:00",
+      "segundos": 95.96522645791993,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:voz",
+      "cadeia": "build:conteudo",
+      "inicio": "2026-11-07T21:39:27.699+00:00",
+      "fim": "2026-11-07T21:43:18.122+00:00",
+      "segundos": 230.42151466710493,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-11-07T21:43:18.285+00:00",
+      "fim": "2026-11-07T21:43:18.590+00:00",
+      "segundos": 0.3050577500835061,
+      "codigo": 0
+    }
+  ]
+}

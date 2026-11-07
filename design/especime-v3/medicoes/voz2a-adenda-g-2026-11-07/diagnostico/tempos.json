@@ -1,0 +1,40 @@
+{
+  "cabeca": "5142012554632b44135d432eae3d01432b9eda42",
+  "inicio": "2026-11-07T21:21:56.671Z",
+  "fim": "2026-11-07T21:32:18.993Z",
+  "segundos": 622.322,
+  "passos": [
+    {
+      "passo": "npm run check:alvos",
+      "cadeia": "check:alvos",
+      "inicio": "2026-11-07T21:21:56.671+00:00",
+      "fim": "2026-11-07T21:27:24.302+00:00",
+      "segundos": 327.6301655420102,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run check:moldura",
+      "cadeia": "check:moldura",
+      "inicio": "2026-11-07T21:27:24.475+00:00",
+      "fim": "2026-11-07T21:29:55.048+00:00",
+      "segundos": 150.57319499971345,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run check:primeira",
+      "cadeia": "check:primeira",
+      "inicio": "2026-11-07T21:29:55.230+00:00",
+      "fim": "2026-11-07T21:32:11.331+00:00",
+      "segundos": 136.10098404204473,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:dossies",
+      "cadeia": "check:dossies",
+      "inicio": "2026-11-07T21:32:11.448+00:00",
+      "fim": "2026-11-07T21:32:18.993+00:00",
+      "segundos": 7.544762750156224,
+      "codigo": 0
+    }
+  ]
+}

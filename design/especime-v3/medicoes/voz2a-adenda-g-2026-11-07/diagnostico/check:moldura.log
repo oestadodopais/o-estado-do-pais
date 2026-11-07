@@ -1,0 +1,31 @@
+
+> o-estado-do-pais@0.1.0 check:moldura
+> node tests/documentos/moldura.mjs
+
+
+[90m  a régua da moldura · 29 documentos × 2 temas × 2 larguras (390, 1280 px)[0m
+
+{"moldura":"evora-economia-investidores-portas-abertas-2026/pt","tema":"dark","largura":390,"id":"color-contrast","impacto":"serious","nos":1,"alvos":[{"seletor":["time[datetime=\"2026-08-12\"]"],"razao":"Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #0000ee, background color: #211e19, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"}],"emTabela":0}
+{"moldura":"evora-economia-investidores-portas-abertas-2026/pt","tema":"dark","largura":1280,"id":"color-contrast","impacto":"serious","nos":1,"alvos":[{"seletor":["time[datetime=\"2026-08-12\"]"],"razao":"Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #0000ee, background color: #211e19, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"}],"emTabela":0}
+  [31m✗[0m C1  2 nó(s) graves em 116 passagens · color-contrast [serious]=2
+  [32m✓[0m C2  filetes: 64972 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 60040 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+  [32m✓[0m C3  588 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  [32m✓[0m C4  116 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  [32m✓[0m C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  [32m✓[0m C6  29 de 29 verdes · 29 de 29 plantas apanhadas
+
+[90m  o axe, regra a regra (as dezasseis páginas nos dois temas):[0m
+[90m       116  region [moderate][0m
+[90m         8  heading-order [moderate][0m
+[90m         2  color-contrast [serious][0m
+[90m         0  region [moderate] · em tabela[0m
+[90m         0  heading-order [moderate] · em tabela[0m
+[90m         0  color-contrast [serious] · em tabela[0m
+
+[90m  o que a moldura NÃO corrige, contado:[0m
+[90m    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)[0m
+[90m
+  escrito <temporario>[0m
+
+[31m  1 célula(s) vermelhas: C1[0m
+

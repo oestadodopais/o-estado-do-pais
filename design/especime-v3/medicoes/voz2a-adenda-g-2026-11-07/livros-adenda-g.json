@@ -118,5 +118,71 @@
       ]
     }
   ],
-  "referencias_identicas": 8382
+  "referencias_identicas": 8382,
+  "livro19_desde_inicio": {
+    "base": "155a9f2",
+    "campos": [
+      "assertions",
+      "composto_de",
+      "ignore"
+    ],
+    "ignore_retirado": [
+      "256"
+    ],
+    "asserção_retirada": {
+      "id": "nenhum-uniformiza",
+      "quotes": [
+        "este documento não uniformiza nenhum dos dois",
+        "this document standardises neither"
+      ],
+      "review": "regra de método do próprio documento"
+    },
+    "asserções_reancoradas": {
+      "base-sem-contratos": {
+        "antes": {
+          "id": "base-sem-contratos",
+          "quotes": [
+            "nenhum documento aqui lido lista contratos, adjudicatários ou valores",
+            "no document read here lists contracts, contractors or values"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        },
+        "depois": {
+          "id": "base-sem-contratos",
+          "quotes": [
+            "nenhum dos documentos lidos lista contratos, adjudicatários ou valores",
+            "none of the documents read lists contracts, contractors or values"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        }
+      },
+      "so-previsionais": {
+        "antes": {
+          "id": "so-previsionais",
+          "quotes": [
+            "Pela mesma razão: só se leram documentos previsionais",
+            "For the same reason: only forecast documents were read"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        },
+        "depois": {
+          "id": "so-previsionais",
+          "quotes": [
+            "Pela mesma razão: só se leram documentos previsionais",
+            "For the same reason: only forecast documents were read",
+            "none of them is an execution account"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        }
+      }
+    },
+    "resumos": [
+      {
+        "fonte": "14 Évora 2027",
+        "antes": "f2077836a4f943578c54460830d55533b4c3ffd444ce6def0245744790683aaa",
+        "depois": "8ca64d1794639d95f7d1ab83be97908bb7e6f3b4a070b02eee15d1ba195942ec"
+      }
+    ],
+    "linhas_identicas": 161
+  }
 }

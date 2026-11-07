@@ -1,0 +1,121 @@
+{
+  "estado": "concluida",
+  "motor": "ce0cf7506a2696c1e23f1279fe272a25778330e0",
+  "sitio_conferido": "50669385be16d215870ebc83d67f24dfc1773bbf",
+  "codigos_fecho": {
+    "motor": 0,
+    "typecheck": 0,
+    "build": 0,
+    "voz2a-g": 0
+  },
+  "conferencias": {
+    "check:voz": 0,
+    "check:lugar": 0,
+    "check:edicoes": 0,
+    "check:registo": 0,
+    "check:datas": 0,
+    "check:discussao": 0,
+    "check:alvos": 0,
+    "check:moldura": 0,
+    "check:primeira": 0,
+    "check:dossies": 0,
+    "typecheck": 0
+  },
+  "cobertas_pelo_build": [
+    "check:voz",
+    "check:edicoes",
+    "check:registo",
+    "check:datas",
+    "check:discussao"
+  ],
+  "corridas_dirigidas_apos_build": [
+    "npm run check:alvos",
+    "npm run check:moldura",
+    "npm run check:lugar",
+    "npm run check:primeira",
+    "npm run check:dossies"
+  ],
+  "classe": {
+    "antes": {
+      "paginas_lidas": 26,
+      "paginas_com_ocorrencias": 19,
+      "ocorrencias": 214,
+      "fora_fica": 161
+    },
+    "depois": {
+      "paginas_lidas": 26,
+      "paginas_com_ocorrencias": 15,
+      "ocorrencias": 53,
+      "fora_fica": 0
+    }
+  },
+  "documentos": {
+    "antes": {
+      "ocorrencias": 203,
+      "fora_fica": 153
+    },
+    "depois": {
+      "ocorrencias": 50,
+      "fora_fica": 0
+    }
+  },
+  "fica": {
+    "frases": 37,
+    "combinacoes_frase_pagina_conferidas": 56
+  },
+  "referencias_identicas": 8382,
+  "versoes_historicas_identicas": 19,
+  "edicoes_atuais_conferidas": 13,
+  "contagem_correcoes": 46,
+  "corridas": {
+    "curto": 40,
+    "integral": 1,
+    "dirigidas": 2,
+    "core_gate": 2,
+    "capturas": 0
+  },
+  "chamadas_orquestracao": 96,
+  "tokens_used": "não exposto",
+  "corridas_curto": [
+    "assertions-final.log",
+    "assertions.log",
+    "classe-antes.log",
+    "classe-depois.log",
+    "compor16-fica.log",
+    "compor16.log",
+    "compor18.log",
+    "compor19-final.log",
+    "compor19.log",
+    "doc07.log",
+    "dossies.log",
+    "expanded-documentos.log",
+    "export-test.log",
+    "extrair-final.log",
+    "fica-final.log",
+    "html07.log",
+    "html16-fica.log",
+    "html16.log",
+    "html18.log",
+    "html19.log",
+    "integridade-fica.log",
+    "integridade.log",
+    "livro19-completo.log",
+    "livros-fica.log",
+    "livros-final.log",
+    "livros-publicados.log",
+    "livros.log",
+    "novas.log",
+    "plantas-assercao-final.log",
+    "plantas-assercao.log",
+    "plantas-l1.log",
+    "primeira.log",
+    "pt07.log",
+    "registos-fica.log",
+    "registos1.log",
+    "registos2.log",
+    "registos3.log",
+    "retomar.log",
+    "travessia-fica.log",
+    "travessia.log"
+  ]
+}

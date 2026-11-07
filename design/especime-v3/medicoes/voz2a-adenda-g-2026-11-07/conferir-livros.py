@@ -52,3 +52,25 @@ for p in motor.glob('content/*/*.record.json'):
  refs+=len(f(b))
 print('Referências idênticas:',refs)
 Path(__file__).with_name('livros-adenda-g.json').write_text(json.dumps({'base_motor':base,'livros':resultado,'referencias_identicas':refs},ensure_ascii=False,indent=2)+'\n')
+# O livro 19 também é confrontado com a cabeça anterior à VOZ-2A inteira.
+p=next(motor.glob('content/19 */ledger.json'))
+a=json.loads(subprocess.check_output(['git','show','155a9f2:'+p.relative_to(motor).as_posix()],cwd=motor));b=json.loads(p.read_text())
+campos=[k for k in a.keys()|b.keys() if a.get(k)!=b.get(k)]
+assert set(campos)=={'ignore','assertions','composto_de'}
+assert b['ignore']==[v for v in a['ignore'] if str(v)!='256']
+aa={x['id']:x for x in a['assertions']};bb={x['id']:x for x in b['assertions']}
+assert set(aa)-set(bb)=={'nenhum-uniformiza'} and not set(bb)-set(aa)
+assert {k for k in aa.keys()&bb.keys() if aa[k]!=bb[k]}=={'base-sem-contratos','so-previsionais'}
+assert aa['base-sem-contratos']['review']==bb['base-sem-contratos']['review']
+assert bb['base-sem-contratos']['quotes']==['nenhum dos documentos lidos lista contratos, adjudicatários ou valores','none of the documents read lists contracts, contractors or values']
+assert aa['so-previsionais']['review']==bb['so-previsionais']['review']
+assert bb['so-previsionais']['quotes']==aa['so-previsionais']['quotes']+['none of them is an execution account']
+resumos=[]
+for x,y in zip(a['composto_de'],b['composto_de']):
+ if x==y:continue
+ assert x['pasta']==y['pasta']=='14 Évora 2027'
+ resumos.append({'fonte':x['pasta'],'antes':x['ledger_sha256'],'depois':y['ledger_sha256']})
+completo={'base':'155a9f2','campos':sorted(campos),'ignore_retirado':[v for v in a['ignore'] if v not in b['ignore']],'asserção_retirada':aa['nenhum-uniformiza'],'asserções_reancoradas':{k:{'antes':aa[k],'depois':bb[k]} for k in ['base-sem-contratos','so-previsionais']},'resumos':resumos,'linhas_identicas':len(b['claims'])}
+destino=Path(__file__).with_name('livros-adenda-g.json');r=json.loads(destino.read_text());r['livro19_desde_inicio']=completo;destino.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+print('19 desde 155a9f2: ignore perde 256; sai nenhum-uniformiza; reancoram-se base-sem-contratos e so-previsionais; linhas idênticas:',len(b['claims']))
+for r in resumos:print(' ',r['fonte'],r['antes'],'->',r['depois'])

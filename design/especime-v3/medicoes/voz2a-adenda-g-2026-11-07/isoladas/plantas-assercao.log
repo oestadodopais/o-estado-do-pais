@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<temporario>/voz2g/plantas-assercao.py", line 12, in <module>
+    with contextlib.redirect_stdout(buf):codigo=run(doc,p)
+                                                ~~~^^^^^^^
+  File "<motor>/core/assertions.py", line 182, in run
+    raise LedgerError(f"assertions[{i}] needs id and quotes")
+core.reconcile.LedgerError: assertions[19] needs id and quotes

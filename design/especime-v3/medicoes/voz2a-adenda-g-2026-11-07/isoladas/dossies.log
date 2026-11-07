@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 check:dossies
+> node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs && node tests/dossies/leitura.mjs && node tests/dossies/reguas.mjs
+
+DO1: quatro páginas, pertenças e datas conferidas nas duas edições; 30 plantas recusadas.
+SEL1-F4: anos fora do nome conservam a fonte; a sua retirada é recusada.
+DO2 e DO4: formas reais e dossiê de ensaio conferidos; 16 plantas recusadas.
+DO3: ordem e transcrição conferidas; 20 plantas recusadas.
+DO3: superfície, voz e explicação conferidas; 36 plantas recusadas.

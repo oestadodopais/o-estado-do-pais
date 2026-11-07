@@ -1,0 +1,71 @@
+código 0 · 1 s · 6 linhas em <temporario>/voz2g/compor16-fica.log
+--- últimas oito linhas ---
+COMPOR  The accounts of the Câmara de Évora, 2010 to 2025.md: 130 bloco(s) de 3 fonte(s), 46 marcador(es), 32 saída(s) declarada(s)
+COMPOR  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md: 131 bloco(s) de 3 fonte(s), 46 marcador(es), 32 saída(s) declarada(s)
+COMPOR  livro: 399 linha(s), 23 valor(es) ignorado(s), 21 asserção(ões)
+COMPOR  decisões en: 490 figura(s), 0 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR  decisões pt: 490 figura(s), 0 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR: ESCRITO
+código 0 · 0 s · 3 linhas em <temporario>/voz2g/html16-fica.log
+--- últimas oito linhas ---
+HTML  The accounts of the Câmara de Évora, 2010 to 2025.html
+HTML  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html
+MAKE_HTML: PASS — 2 edição(ões) rendida(s) do Markdown
+código 0 · 48 s · 27 linhas em <temporario>/voz2g/registos-fica.log
+--- últimas oito linhas ---
+As contas da Câmara de Évora, 2010 a 2025 (pt-PT      172   490  221   254824  edicao-html | heading=27 list=6 paragraph=103 rule=11 table=25 | derivado=28 pdf-sem-resumo=226 raw-sem-manifesto=15 | prefixos=221 | juntas-apertadas=24 espacos-fantasma=0
+The accounts of the Câmara de Évora, 2010 to 202      171   490  221   252020  edicao-html | heading=27 list=6 paragraph=102 rule=11 table=25 | derivado=28 pdf-sem-resumo=226 raw-sem-manifesto=15 | prefixos=221 | juntas-apertadas=23 espacos-fantasma=0
+Quem governou a Câmara de Évora, 2009 a 2025 (pt      211   484  221   378774  edicao-html | heading=54 list=8 paragraph=103 rule=10 table=36 | derivado=20 pdf-sem-resumo=32 portal-estatico=165 raw-sem-manifesto=46 | prefixos=221 | juntas-apertadas=13 espacos-fantasma=0
+A economia de Évora e o dinheiro público que che      160   530    0   249399  edicao-html | heading=26 list=4 paragraph=105 rule=7 table=18 | api-viva=154 derivado=109 pdf-sem-resumo=30 raw-sem-manifesto=237 | prefixos=0 | juntas-apertadas=35 espacos-fantasma=0
+The economy of Évora and the public money that r      161   530    0   245568  edicao-html | heading=26 list=4 paragraph=106 rule=7 table=18 | api-viva=155 derivado=106 pdf-sem-resumo=32 raw-sem-manifesto=237 | prefixos=0 | juntas-apertadas=34 espacos-fantasma=0
+Évora 2027, Capital Europeia da Cultura (pt-PT)       137   196   20   223967  edicao-html | heading=31 paragraph=70 rule=7 table=29 | pdf-sem-resumo=170 raw-sem-manifesto=6 | prefixos=0 | juntas-apertadas=6 espacos-fantasma=0
+Évora 2027, European Capital of Culture               137   196   20   221992  edicao-html | heading=31 paragraph=70 rule=7 table=29 | pdf-sem-resumo=169 raw-sem-manifesto=7 | prefixos=0 | juntas-apertadas=6 espacos-fantasma=0
+REGISTOS: WROTE — 25 records and 13 manifests
+commit código 0 · cabeça ce0cf750
+  pre-commit: core.gate adiado para a aterragem (OEDP_GATE=adiado)
+REVIEW  anuario-presentation-only — the OCC hosting page links the presentation alone; recorded as full_study_available=false in raw/anuario_2024_extract.json — the refutation pass re-checks the hosting page
+REVIEW  hospital-no-execution — two zero-execution lines: the report's Quadro 13 shows Cooperação técnica with 0,00 collected of 5 013 000,00 budgeted (excerpt on row hospital-protocolo-orc), and states the Évora 2027 revenue estimate of € 5 M was «sem execução no ano» (excerpt on row evora2027-receita-prevista); the refutation pass re-reads both
+REVIEW  amortization-only-rigid-line — editorial characterisation inside a sentence already labelled (inferência): loan amortisation executed at 93,64% while every other capital line ran far below its budget — rows amortizacoes-exec-pct, invest-exec-pct; the refutation pass checks Quadro 17 for a capital line executing comparably high
+REVIEW  only-23-over-100 — the count IS the derived row municipios-over100-2024 (23 of 308, formula in its derivation); «only» is editorial on its smallness — the refutation pass re-runs the count over raw/dgal_divida_2024_all.json
+REVIEW  result-positive-once — the sign of a result is in each row's excerpt, not in its canonical ledger value (the number gate strips the minus), so this cannot be expressed as a predicate over ledger values; the refutation pass re-reads the fifteen resultado_liquido excerpts, of which only 2018 (2.186.031,46) is printed without a minus sign
+REVIEW  no-2024-document — an absence claim recorded by the accounts-history agent after probing cm-evora.pt, its 'anos anteriores' index, typical wp-content/uploads paths and the Wayback Machine; the refutation pass re-probes
+REVIEW  habevora-consolidated-only — the source's own sentence, in the 2017 and 2018 reports: the Habévora debt to the IHRU «será refletida apenas nas Contas Consolidadas do Município»; the refutation pass re-reads the excerpt on row habevora-ihru
+REVIEW  rossio-largest-2026-allocation — a claim over the RECOVERED set, not over the whole plan: the evidence file's own scope note records that, merged into the recovered list, the Rossio de São Brás would be the largest 2026 allocation of the entire PPI, and most PPI lines could not be recovered from the scan at all; the refutation pass re-reads raw/gop2026_plan.json scope_note and gaps
+REVIEW  culture-pre2013-concept — the socio-series agent's own gap reason for municipal culture spending before 2013, which names the superseded indicator; the refutation pass re-reads raw/socio_series.json gaps
+REVIEW  e1-leitura-so-destes-documentos — a nota da leitura de abertura declara o seu âmbito: cada frase da abertura remete para uma secção do documento, e a revisão confere-o frase a frase
+REVIEW  e1-excesso-2015-nenhum-explica — lidos os dois relatórios que imprimem os dois valores (o de gestão de 2015 e o de 2021); nenhum diz que o valor de 2015 foi reexpresso
+REVIEW  e1-pmp-2022-nenhum-explica — a mesma frase que o «Quinze Anos» escrevia sobre os dois registos de 2022 («Os dois registos ficam de pé»), dita sobre os documentos do estudo
+REVIEW  e1-series-2020-2023-nenhum-explica — o «Quinze Anos» imprimia a divergência e deixava-a por explicar porque nenhuma fonte a explica; a frase di-lo como o que fica por saber
+REVIEW  e1-votacao-duas-leituras — as duas leituras da votação de 2024 que as edições de agosto davam como causa; o registo da votação não diz porque votou cada membro
+ASSERTIONS: PASS — 24 quantifier hits, 7 checked, 14 review, 0 undeclared, 0 failed
+Edições atualizadas: 13 ; motor: ce0cf7506a2696c1e23f1279fe272a25778330e0
+código 0 · 1 s · 36 linhas em <temporario>/voz2g/travessia-fica.log
+--- últimas oito linhas ---
+  «09 en»: sem edição alojada no sítio
+
+  D5 corre em 20 edição(ões) e não corre em 1: avaliacao-economica-regional-de-portugal-2026/pt
+  0 nova(s) · 2 alterada(s) · 19 inalterada(s)
+
+  Escritos 42 ficheiro(s) em <worktree>/registos
+  Registo de travessia em <worktree>/registos/manifest.json
+
+código 0 · 0 s · 16 linhas em <temporario>/voz2g/integridade-fica.log
+--- últimas oito linhas ---
+contagens offsets_conferidos 9753 -> 9761
+contagens operacoes 916 -> 874
+contagens substituicoes 443 -> 411
+estratos S1·aprovado 73 -> 65
+estratos S2·inventário-cego·aprovado-24.08 70 -> 69
+estratos S3·famílias-leituras·aprovado-24.08 78 -> 77
+estratos S5·segunda-voz·proposta-27.08 374 -> 360
+estratos S6·terceira-voz·proposta-27.08 313 -> 295
+código 0 · 1 s · 7 linhas em <temporario>/voz2g/livros-fica.log
+--- últimas oito linhas ---
+04 : assertions ; hospital-registos-sem-identidade-declarada ; citação na prosa: 1
+14 : assertions ; so-previsionais ; citação na prosa: 1
+18 : assertions, composto_de ; hospital-registos-sem-identidade-declarada ; citação na prosa: 1
+  04 Évora Public Money 427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64 -> 689618106d38640d127531b80bc179215429eb71f773c7a023ac7bad69a19a44
+19 : assertions, composto_de ; so-previsionais ; citação na prosa: 1
+  14 Évora 2027 307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b -> 8ca64d1794639d95f7d1ab83be97908bb7e6f3b4a070b02eee15d1ba195942ec
+Referências idênticas: 8382
+commit código 0 · cabeça 50669385

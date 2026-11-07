@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/export_records.py", line 1398, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ~~~~^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1391, in main
+    return run(ROOT, write=write)
+  File "<motor>/publisher/export_records.py", line 1349, in run
+    built = build_all(root)
+  File "<motor>/publisher/export_records.py", line 1174, in build_all
+    return [build_record(root, edition) for edition in EDITIONS]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1148, in build_record
+    record, voz_stats = voz.para_o_exportador(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        root, edition, record, ops_file, proof_html=proof_html,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ledger_path=ledger_path, baseline=matched, nao_figuras=stats["nao_figuras"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/voz.py", line 1402, in para_o_exportador
+    depois, contagens, _relatorio, _ops = aplicar(root, edition, record, data,
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                  proof_html, allowed, baseline, nao_figuras)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/voz.py", line 1337, in aplicar
+    anchored = anchor(antes, data)
+  File "<motor>/publisher/voz.py", line 616, in anchor
+    raise Fail(
+    ...<3 lines>...
+           if hits else ""))
+publisher.voz.Fail: 07 en b60 f2 (substituicao): a frase ancora 0 vezes no registo e tem de ancorar exatamente uma.
+     frase: "Ten years of paying down the rescue debt is the context for every number in this document: for why investment executes at 21.13%, for why the plan's money goes to debt operations, and for why a €28 192 653 margin is a genuine achievement rather than an accounting nicety (inference; the table is the source's, the connection is ours)."
