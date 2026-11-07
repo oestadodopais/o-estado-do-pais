@@ -1120,6 +1120,18 @@
   "razao": "remissão para ficheiros internos de prova (manifesto, sha256)"
  },
  {
+  "id": "V307",
+  "estudo": "evora-2027-capital-europeia-da-cultura",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+   "/en/studies/evora-2027-prometido-painel-dinheiro/document"
+  ],
+  "classe": "SAI",
+  "frase": "The sha256 digest, the byte count and the content type of every response are in the manifest of the copies, which travels with this study.",
+  "razao": "o par inglês da V157 (remissão para ficheiros internos de prova, manifesto e sha256), acrescentado a 07.11.2026 pela adenda C para as duas edições dizerem o mesmo"
+ },
+ {
   "id": "V158",
   "estudo": "evora-2027-prometido-painel-dinheiro",
   "lingua": "pt",

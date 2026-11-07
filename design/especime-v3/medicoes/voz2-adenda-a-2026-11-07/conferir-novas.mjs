@@ -26,7 +26,8 @@ const plantas = [
 ];
 const mordem = plantas.filter(recusa).length;
 // Os números: o gerador do motor recusa um documento cujas duas línguas não tenham os mesmos números; por estudo, o que as frases tiram (SAI inteira; REESCREVE a diferença) tem de ser o mesmo nas duas línguas, nos estudos que têm as duas.
-const numeros = s => (s.match(/(?<![\p{L}\d])\d+(?:[.,]\d+)*/gu) ?? []).map(n => n.replace(',', '.'));
+// Conta também os algarismos colados a letras («sha256» dá 256), como o leitor de números do estudo 14 (make_en.py).
+const numeros = s => (s.match(/(?<!\d)\d+(?:[.,]\d+)*/gu) ?? []).map(n => n.replace(',', '.'));
 const tirados = new Map();
 for (const [b, nome] of [['voz2a-2026-11-07', 'FRASES-VOZ-2A.json'], ['voz2b-2026-11-07', 'FRASES-VOZ-2B.json']]) {
   for (const f of JSON.parse(fs.readFileSync(path.join(medicoes, b, nome), 'utf8'))) {
