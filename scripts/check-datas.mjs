@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import {conferirMudancasDoCabecalho,rotasNoManifesto} from './edicoes-linha-conferir.mjs';
-import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { primeiraEdicao } from '../src/lib/edicoes.mjs';
 /**
  * O PORTÃO DAS DATAS DE PUBLICAÇÃO · três contas, e nenhuma confia na anterior.
