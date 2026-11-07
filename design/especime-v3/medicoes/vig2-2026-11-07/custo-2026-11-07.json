@@ -1,0 +1,37 @@
+{
+ "bloco": "VIG2 (o resumo da vigilância em partes depois de uma paragem; no motor)",
+ "data": "2026-11-07",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "leituras": "Claude Opus 5.5 (leitor): fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros; o ponto de cada passagem lê-se da subida do contador.",
+ "passagens_codex": [
+  {
+   "nome": "VIG2 (o lançamento das 04:09:12 recusado pelo pré-voo, sem as caches; a passagem a partir das 04:09:47)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-07T04:09:47Z",
+   "fim": "2026-11-07T04:27:07Z",
+   "pontos": 1.0,
+   "pontos_antes": 33.0,
+   "pontos_depois": 34.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-vig2.log"
+  },
+  {
+   "nome": "VIG2 A (as designações com quebras de linha; o lançamento das 04:47:15 recusado pelo escrivão, uma pasta que não é repositório)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-07T04:47:39Z",
+   "fim": "2026-11-07T04:50:57Z",
+   "pontos": 0.0,
+   "pontos_antes": 34.0,
+   "pontos_depois": 34.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-vig2-a.log"
+  }
+ ],
+ "pontos_codex_total": 1.0
+}

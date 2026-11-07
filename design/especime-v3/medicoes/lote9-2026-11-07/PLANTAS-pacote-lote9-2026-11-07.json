@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T06:51:30+00:00",
+ "copia": "<caminho>/_aterragens/pacote-lote9-2026-11-07",
+ "plantas": [
+  {
+   "id": "K1",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua da ND1 salta todas as páginas e nunca confere uma marca seguida de unidade",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3d5353bdf0fb3420253b33b61c32ac35a2246a6a68904dc07db54ccb3c186e00",
+   "sha256_depois": "9fbc2f14e7abfd79950f3f5857465f413368649d66a540c8590789a09173241b",
+   "contexto_antes": "sDirectory()) visitar(ficheiro);\n+      else if (entrada.name.endsWith('.html')) {\n+        paginas++;\n+        const html = fs.readFileSync(ficheiro, 'utf8');\n+        if (!MARCAS_DE_AUSENCIA.some(m => html.includes(m))) continue;\n+        paginasComMarca++;\n+        if (marcaSeguidaDeUnidade(html, regua)) paginasComUnidade.push(path.relative(dist, ficheiro));\n+      }\n+    }\n+  }\n+  vis",
+   "contexto_depois": "sDirectory()) visitar(ficheiro);\n+      else if (entrada.name.endsWith('.html')) {\n+        paginas++;\n+        const html = fs.readFileSync(ficheiro, 'utf8');\n+        if (true) continue;\n+        paginasComMarca++;\n+        if (marcaSeguidaDeUnidade(html, regua)) paginasComUnidade.push(path.relative(dist, ficheiro));\n+      }\n+    }\n+  }\n+  vis"
+  },
+  {
+   "id": "K2",
+   "ficheiro": "built/livro-razao/evora-prazo-medio-de-pagamento-2025-12/index.html",
+   "descricao": "o título português do recibo de Évora volta a dizer «N.d. dias»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8c843383bd37ce5da5b64a805950cedd8347d7318007561820e3fb22d40795ed",
+   "sha256_depois": "b5b2d3fdc540734a78836215cb5876dea7b522e7fde882df562f96fb25c68da6",
+   "contexto_antes": "<!DOCTYPE html><html lang=\"pt-PT\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>N.d. · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão evora-prazo-medio-de-pagamento-2025-12 · N.d. · Publicado por: Direção-Geral d",
+   "contexto_depois": "<!DOCTYPE html><html lang=\"pt-PT\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>N.d. dias · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão evora-prazo-medio-de-pagamento-2025-12 · N.d. · Publicado por: Direção-Geral d"
+  },
+  {
+   "id": "K3",
+   "ficheiro": "built/en/ledger/evora-prazo-medio-de-pagamento-2025-12/index.html",
+   "descricao": "a frase inglesa do recibo de Évora muda uma palavra («figure» por «value»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9a8b4aee87224e82ec53b00b06158e4f05db13878f4641fb793c31cf845ffd87",
+   "sha256_depois": "3264f7cdb8c3458dc4229b77185cdb370c206e63255ceddc03681404eab48d9a",
+   "contexto_antes": "ass=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>The source publishes «<span lang=\"pt-PT\">N.d.</span>» instead of a value.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>data from</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"evora-pr",
+   "contexto_depois": "ass=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>The source publishes «<span lang=\"pt-PT\">N.d.</span>» instead of a figure.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>data from</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"evora-pr"
+  },
+  {
+   "id": "K4",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "o cabeçalho português de Évora 2027 diz «corrigido a» na data da atualização de 03.11.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4bbc45b2f5928cc81b5ffe97056c05195f1effd03844ba6f513f5099ab639f1f",
+   "sha256_depois": "cd7ee1cdf304be090dde24be4ed68e644ba962e7af35351ef4e066bcae1c6069",
+   "contexto_antes": "2026-10-01\" data-edicao-lista-data  data-nonledger=\"data-do-repositorio\">01.10.2026</time></a></span><span aria-hidden=\"true\"> · </span><span data-edicoes-item><span data-voz>atualizado a</span> <a data-edicao-porta href=\"/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03\" hreflang=\"pt-PT\"><time datetime=\"2026-11-03\" data-edicao-lista-data data-estudo-atualizacao data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.",
+   "contexto_depois": "2026-10-01\" data-edicao-lista-data  data-nonledger=\"data-do-repositorio\">01.10.2026</time></a></span><span aria-hidden=\"true\"> · </span><span data-edicoes-item><span data-voz>corrigido a</span> <a data-edicao-porta href=\"/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03\" hreflang=\"pt-PT\"><time datetime=\"2026-11-03\" data-edicao-lista-data data-estudo-atualizacao data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03."
+  },
+  {
+   "id": "K5",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/index.html",
+   "descricao": "a faixa da edição de 03.11.2026 liga para si própria em vez de a marcar como a edição que se lê",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f683302edaa6546225ac2f24fd81a912cc3d31b383ca25d92c9a9a4f726dbac3",
+   "sha256_depois": "fd14014a51d22a7e054a25e49099839a5840d1bf3c25d4ca9d295b1ef6079556",
+   "contexto_antes": " data-nonledger=\"data-do-repositorio\">01.10.2026</time></a></span><span aria-hidden=\"true\"> · </span><span data-edicoes-item><span data-voz>atualizado a</span> <span aria-current=\"page\"><time datetime=\"2026-11-03\" data-edicao-lista-data data-estudo-atualizacao data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.11.2026</time></span> <span data-voz>(esta edição)</span></span><span aria-hidden=\"true\"> · </span><span data-edicoes-item><span data-voz>corrigido a</span> <a data-edicao-porta href=\"/estudos/evora-2027-capital-europ",
+   "contexto_depois": " data-nonledger=\"data-do-repositorio\">01.10.2026</time></a></span><span aria-hidden=\"true\"> · </span><span data-edicoes-item><span data-voz>atualizado a</span> <a data-edicao-porta href=\"/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03\" hreflang=\"pt-PT\"><time datetime=\"2026-11-03\" data-edicao-lista-data data-estudo-atualizacao data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">03.11.2026</time></a></span><span aria-hidden=\"true\"> · </span><span data-edicoes-item><span data-voz>corrigido a</span> <a data-edicao-porta href=\"/estudos/evora-2027-capital-europ"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+{
+ "linhas_nd": {"valor": "12", "comando": "python3: as linhas de ledger/claims/*.yml cujo value é «N.d.» (grep -rlE \"value: ['\\\"]?N\\.d\\.\" ledger/claims | wc -l)"},
+ "paginas_nd": {"valor": "44", "comando": "grep -rl 'N\\.d\\.' dist --include=index.html | wc -l, no dist/ de 2cc0806c2"}
+}

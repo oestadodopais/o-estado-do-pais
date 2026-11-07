@@ -1,0 +1,37 @@
+{
+ "bloco": "ND1 (o «N.d.» da fonte dito como ausência, nunca como um número)",
+ "data": "2026-11-07",
+ "orcamento": {
+  "pontos_codex_por_bloco": "menos de 5 (a escada da §1.202, depois dos dois primeiros blocos de 27.10)"
+ },
+ "leituras": "Claude Opus 5.5 (leitor): fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros; o ponto de cada passagem lê-se da subida do contador.",
+ "passagens_codex": [
+  {
+   "nome": "ND1 (parada pelo §3 na régua da voz)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-07T05:07:17Z",
+   "fim": "2026-11-07T05:19:15Z",
+   "pontos": 1.0,
+   "pontos_antes": 34.0,
+   "pontos_depois": 35.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-nd1.log"
+  },
+  {
+   "nome": "ND1 A (a linha inglesa do inventário na forma que a régua lê)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-07T05:21:35Z",
+   "fim": "2026-11-07T05:35:02Z",
+   "pontos": 0.0,
+   "pontos_antes": 35.0,
+   "pontos_depois": 35.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-nd1-a.log"
+  }
+ ],
+ "pontos_codex_total": 1.0
+}

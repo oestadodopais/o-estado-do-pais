@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T04:28:11+00:00",
+ "copia": "<caminho>/_aterragens/pacote-vig2-2026-11-07",
+ "plantas": [
+  {
+   "id": "G1",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a verificação das partes aceita uma parte até 3000 bytes",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b1d0dae4d7da307479dec1bf02cf8cb2b65829cc68c8d5616b69d341412e9557",
+   "sha256_depois": "63e138bc96a735a06317e777f584a61b5de6d643bbfb9aa5c32fa32335b9e3c4",
+   "contexto_antes": "indice, partes):\n+    \"\"\"Confere o texto entregue, sem regenerar as partes que está a conferir.\"\"\"\n+    from .diario import entradas_vigentes, numeracao_resumo\n+    if not partes or any(len(p.encode()) >= 2500 for p in partes):\n+        raise Recusa('parte do resumo excede o limite de bytes')\n+    if len(partes) == 1:\n+        return\n+    for n, parte in enumerate(partes, 1):\n+       ",
+   "contexto_depois": "indice, partes):\n+    \"\"\"Confere o texto entregue, sem regenerar as partes que está a conferir.\"\"\"\n+    from .diario import entradas_vigentes, numeracao_resumo\n+    if not partes or any(len(p.encode()) >= 3000 for p in partes):\n+        raise Recusa('parte do resumo excede o limite de bytes')\n+    if len(partes) == 1:\n+        return\n+    for n, parte in enumerate(partes, 1):\n+       "
+  },
+  {
+   "id": "G2",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a verificação aceita qualquer numeração desde que haja uma linha «Parte»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "63e138bc96a735a06317e777f584a61b5de6d643bbfb9aa5c32fa32335b9e3c4",
+   "sha256_depois": "a34e2ebbadd202247daf7e7899f32945d23731e8abd4b506fb149c8dd4ebc20d",
+   "contexto_antes": "     return\n+    for n, parte in enumerate(partes, 1):\n+        linhas = parte.splitlines()\n+        marcadores = [l for l in linhas if l.startswith('Parte ')]\n+        if marcadores != [numeracao_resumo(indice['dia'], n, len(partes))]:\n+            raise Recusa('numeração das partes do resumo diverge')\n+    entradas = entradas_vigentes(indice['entradas'])\n+    esperadas = Counter(\n+        ('",
+   "contexto_depois": "     return\n+    for n, parte in enumerate(partes, 1):\n+        linhas = parte.splitlines()\n+        marcadores = [l for l in linhas if l.startswith('Parte ')]\n+        if not marcadores:\n+            raise Recusa('numeração das partes do resumo diverge')\n+    entradas = entradas_vigentes(indice['entradas'])\n+    esperadas = Counter(\n+        ('"
+  },
+  {
+   "id": "G3",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a repartição deixa cair a segunda unidade (uma designação) sem aviso",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a34e2ebbadd202247daf7e7899f32945d23731e8abd4b506fb149c8dd4ebc20d",
+   "sha256_depois": "5e0759398f32f8755880fc80849e37c2f9678381c06410c6f6c9dc99ff89f38b",
+   "contexto_antes": "l) + '\\n').encode())\n+            if tamanho + peso >= 2500:\n+                raise Recusa('linha ou bloco indivisível excede o limite de uma parte do resumo')\n+            plano[-1].append(n)\n+            tamanho += peso\n+        if len(plano) == total:\n+            return plano\n+        total = len(plano)\n+\n+\n def detalhes_resumo(indice):\n     r = ",
+   "contexto_depois": "l) + '\\n').encode())\n+            if tamanho + peso >= 2500:\n+                raise Recusa('linha ou bloco indivisível excede o limite de uma parte do resumo')\n+            if n != 1: plano[-1].append(n)\n+            tamanho += peso\n+        if len(plano) == total:\n+            return plano\n+        total = len(plano)\n+\n+\n def detalhes_resumo(indice):\n     r = "
+  },
+  {
+   "id": "G4",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a escrita apaga todas as partes numeradas do dia, incluindo as que acabou de escrever",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5e0759398f32f8755880fc80849e37c2f9678381c06410c6f6c9dc99ff89f38b",
+   "sha256_depois": "b2e080b2b5b635a65f827b297a190dc7413572ee50759ea371f63435a4208678",
+   "contexto_antes": " # Uma segunda corrida pode precisar de menos partes no mesmo dia.\n+    for caminho in pasta.glob(f'{dia}-*.md'):\n+        sufixo = caminho.stem[len(dia) + 1:]\n+        if sufixo.isdigit() and caminho.name not in nomes:\n+            caminho.unlink()\n+    verificar.resumo_gravado(indice, raiz)\n+\n+\n def novo_estado(dia):\n     return {\"versao\": 1, \"inicio\": dia, \"http\": {}, \"vist",
+   "contexto_depois": " # Uma segunda corrida pode precisar de menos partes no mesmo dia.\n+    for caminho in pasta.glob(f'{dia}-*.md'):\n+        sufixo = caminho.stem[len(dia) + 1:]\n+        if sufixo.isdigit():\n+            caminho.unlink()\n+    verificar.resumo_gravado(indice, raiz)\n+\n+\n def novo_estado(dia):\n     return {\"versao\": 1, \"inicio\": dia, \"http\": {}, \"vist"
+  },
+  {
+   "id": "G5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório dá à parte 3 da medida 2516 bytes, acima do limite, como se estivesse bem",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8fea550f919e701bf6af229ea965eb98e62ee43c689392e916279c59505cfbc7",
+   "sha256_depois": "139f55f83c52f184cc6008a7c9b7c89151f3933a1155e19798e75d7df70770de",
+   "contexto_antes": "onstrução do conteúdo real de 07.11.\n\n| Medida | Bytes UTF-8 |\n| --- | ---: |\n| Mínimo sintético antes da divisão | 3568 |\n| Parte 1 | 475 |\n| Parte 2 | 2480 |\n| Parte 3 | 2486 |\n\nO JSON `medidas-vig2.json` guarda as medidas e os códigos. Os três ficheiros `sintetico-2026-11-07*.md` conservam a saída medida. Nenhuma designação foi omiti",
+   "contexto_depois": "onstrução do conteúdo real de 07.11.\n\n| Medida | Bytes UTF-8 |\n| --- | ---: |\n| Mínimo sintético antes da divisão | 3568 |\n| Parte 1 | 475 |\n| Parte 2 | 2480 |\n| Parte 3 | 2516 |\n\nO JSON `medidas-vig2.json` guarda as medidas e os códigos. Os três ficheiros `sintetico-2026-11-07*.md` conservam a saída medida. Nenhuma designação foi omiti"
+  }
+ ]
+}

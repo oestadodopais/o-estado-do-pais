@@ -1,0 +1,30 @@
+{
+ "novas": {
+  "valor": "5 101",
+  "comando": "python3 design/especime-v3/medicoes/vig2-2026-11-07/medir-resumo.py <motor> <cópia dos dados da vigilância> (o campo medidas.novas, medidas.entradas_por_fonte, medidas.segundos e bytes)"
+ },
+ "declaracoes_dar": {
+  "valor": "5 096",
+  "comando": "python3 design/especime-v3/medicoes/vig2-2026-11-07/medir-resumo.py <motor> <cópia dos dados da vigilância> (o campo medidas.novas, medidas.entradas_por_fonte, medidas.segundos e bytes)"
+ },
+ "segundos": {
+  "valor": "108",
+  "comando": "python3 design/especime-v3/medicoes/vig2-2026-11-07/medir-resumo.py <motor> <cópia dos dados da vigilância> (o campo medidas.novas, medidas.entradas_por_fonte, medidas.segundos e bytes); 108,486 arredondado"
+ },
+ "resumo_inteiro": {
+  "valor": "17 639",
+  "comando": "python3 design/especime-v3/medicoes/vig2-2026-11-07/medir-resumo.py <motor> <cópia dos dados da vigilância> (o campo medidas.novas, medidas.entradas_por_fonte, medidas.segundos e bytes) (o campo bytes)"
+ },
+ "minimo_07_11": {
+  "valor": "2 135",
+  "comando": "python3 design/especime-v3/medicoes/vig2-2026-11-07/minimo-do-resumo.py <motor> <índice> (o campo minimo_bytes) sobre o índice de 07.11 da medida"
+ },
+ "minimo_12_10": {
+  "valor": "1 475",
+  "comando": "python3 design/especime-v3/medicoes/vig2-2026-11-07/minimo-do-resumo.py <motor> <índice> (o campo minimo_bytes) sobre vigilancia/indice/2026-10-12.json do master"
+ },
+ "limite": {
+  "valor": "2 500",
+  "comando": "grep -c 2500 vigilancia/diario.py no master do motor: 4 ocorrências, todas o limite do resumo"
+ }
+}

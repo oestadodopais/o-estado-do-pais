@@ -87,5 +87,15 @@
 83. `dataAtualizacaoDaEdicao` ficou exportada com a regra antiga, sem a data de publicação, e sem nenhum chamador em `src`, `scripts` ou `tests`; sai (a leitura curta da adenda B da ED2, 7).
 84. A chave da correção que não é a atual (`naturezaCorrecao`) não aparece em nenhuma página construída, e a prova da linha de quatro edições é HTML escrito à mão, não a saída do renderizador; a VOZ-2 vai imprimi-la: a sua corrida da voz confere-a (a leitura curta da adenda B da ED2, 8).
 85. O relatório da ED2 B conta 14 invocações por `curto.sh` e a sua lista soma 15, e seis números sem ficheiro que os prove; a mesma classe do 72 (a leitura curta da adenda B da ED2, 9).
+86. Com o resumo em partes, `limite_superior_simbolos` mede só a primeira parte (475 bytes no caso sintético, contra 5 441 nas três), e o campo diz-se um limite superior do que o modelo lê; somar as partes ou mudar o nome (a leitura a frio da VIG2, 9).
+87. A verificação das partes não vê um ficheiro de parte a mais, numerado acima da quantidade do recibo, nem confere nada quando há uma parte só (a leitura a frio da VIG2, 10; a leitura curta da adenda A da VIG2, 6).
+88. As descrições do resumo da vigilância não se normalizam como as designações: uma quebra de linha numa descrição parte a linha sem a verificação o ver (a leitura curta da adenda A da VIG2, 10).
+89. O campo `designacoes_omitidas` das medidas da VIG2 copia uma constante do motor, e três blocos do ficheiro das medidas (as conferências, o commit, o consumo) foram escritos à mão e não pelo guião; as contagens 74 e 75 das provas descritas de forma que não bate (as leituras da VIG2, 7; e da adenda A, 7 e 8).
+90. Os doze recibos com uma marca de ausência têm todos o título «N.d. · Números e fontes · O Estado do País», sem a medida nem o município, e a linha do valor diz «N.d.» duas vezes; o título com o assunto, como o H1 (a leitura a frio do lote 9, 9).
+91. As plantas isoladas da ED3 saem a 1 tanto quando mordem como quando falham por asserção; a prova isolada diz o que mordeu pela mensagem (a leitura a frio do lote 9, 10).
+92. A comparação dos cabeçalhos de uma só edição da ED3 com 2cc0806c2 compara só o texto; uma porta ou uma data de `datetime` mudada passava (a leitura a frio do lote 9, 11).
+93. A prova da voz das faixas (`tests/edicoes/voz.mjs`) trocou a contagem exata das frases de cada faixa por «pelo menos uma»; a frase nova sem declaração é apanhada pela régua do texto da linha, não pela da voz (a leitura a frio do lote 9, 12).
+94. A frase da linha calculada diz «os valores de que depende» e um dos três valores do índice de dívida de Penedono é o limite legal de 150, um número da lei; escrever «a dívida e o limite de que depende» quando a ND2 refizer estes recibos (a leitura curta da adenda B da ND1, 7).
+95. Nenhuma planta da ND1 cobre a frase da linha calculada num recibo de uma linha da fonte, nem a frase calculada inglesa sem a marcação portuguesa; a régua apanha-as pela igualdade, sem prova (a leitura curta da adenda B da ND1, 9).
 
 Feitos na HIG-5 (06.11.2026, f75fc7a0a, 777d906a1 e a adenda C): 56, 58, 62, 63, 64 e 66.

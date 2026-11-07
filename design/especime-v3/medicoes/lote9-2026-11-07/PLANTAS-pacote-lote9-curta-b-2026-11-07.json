@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T07:44:49+00:00",
+ "copia": "<caminho>/_aterragens/pacote-lote9-curta-b-2026-11-07",
+ "plantas": [
+  {
+   "id": "L1",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua decide se a linha é calculada pelo valor e não pelo livro (nunca é calculada)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1f6f66ca42fb0bd78158db4ca94980e446860d2293b8735d28eb30b3ff6d1305",
+   "sha256_depois": "86694cbe18481c1c2d1ff8f156da77d54865ff833f1b3ca715d49667b27a81a4",
+   "contexto_antes": "ue}» em vez de um valor.` : `The source publishes «${c.value}» instead of a value.`;\n+  // A natureza vem da linha do livro, independentemente do renderizador.\n+  const calculada = Array.isArray(c.derived_from) && c.derived_from.length > 0;\n+  const esperada = calculada\n+    ? (lang === 'pt' ? `Não se calcula: a fonte publica «${c.value}» nos valores de que depende.` : `Not calculated: the source ",
+   "contexto_depois": "ue}» em vez de um valor.` : `The source publishes «${c.value}» instead of a value.`;\n+  // A natureza vem da linha do livro, independentemente do renderizador.\n+  const calculada = Array.isArray(c.derived_from) && c.derived_from.length > 99;\n+  const esperada = calculada\n+    ? (lang === 'pt' ? `Não se calcula: a fonte publica «${c.value}» nos valores de que depende.` : `Not calculated: the source "
+  },
+  {
+   "id": "L2",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua deixa de conferir a marcação portuguesa do «N.d.» na frase inglesa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "86694cbe18481c1c2d1ff8f156da77d54865ff833f1b3ca715d49667b27a81a4",
+   "sha256_depois": "48a3694eade3e654eb0242e7b192ad143f6ad2e5c4d2b0bf92c6e10bd52d6f98",
+   "contexto_antes": "or.` : `The source publishes «${c.value}» instead of a value.`);\n   if (!frase || frase.textContent !== esperada) erros.push('ND1 frase ausente ou diferente');\n   if (lang === 'en' && frase?.querySelector('[lang=\"pt-PT\"]')?.textContent !== c.value) erros.push('ND1 marca sem língua portuguesa');\n   return erros;\ndiff --git a/src/views/LinhaView.astro b/src/views/LinhaView.astro\nindex af4ae4b5b..e72f697bf 100644\n--- a/src/views/LinhaView.astro\n+++ b/src",
+   "contexto_depois": "or.` : `The source publishes «${c.value}» instead of a value.`);\n   if (!frase || frase.textContent !== esperada) erros.push('ND1 frase ausente ou diferente');\n   if (false) erros.push('ND1 marca sem língua portuguesa');\n   return erros;\ndiff --git a/src/views/LinhaView.astro b/src/views/LinhaView.astro\nindex af4ae4b5b..e72f697bf 100644\n--- a/src/views/LinhaView.astro\n+++ b/src"
+  },
+  {
+   "id": "L3",
+   "ficheiro": "built/livro-razao/penedono-indice-de-divida-2024/index.html",
+   "descricao": "o recibo português da linha calculada volta à frase da fonte",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "fb722a64a51ae076b734ab780bd6dd9556a7b8fbe2753ad190b04a4389b6a903",
+   "sha256_depois": "1ed589d3561aadbbc0b55aeac699d8ce267ce73a27ab71bcd48d2a3d2c4d4925",
+   "contexto_antes": "a-valor\"><span data-claim=\"penedono-indice-de-divida-2024\" class=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>Não se calcula: a fonte publica «N.d.» nos valores de que depende.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>dados de</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pened",
+   "contexto_depois": "a-valor\"><span data-claim=\"penedono-indice-de-divida-2024\" class=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>A fonte publica «N.d.» em vez de um valor.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>dados de</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pened"
+  },
+  {
+   "id": "L4",
+   "ficheiro": "built/en/ledger/penedono-indice-de-divida-2024/index.html",
+   "descricao": "a frase inglesa da linha calculada perde a marcação portuguesa do «N.d.»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "05ce4719b2085036145a7323568a6975284e473d3668af82ff2dd8debe14ec03",
+   "sha256_depois": "11df39e8e45cf2dcbb8d3a0059a3b66fb5c797e828ef181747c7335591f41383",
+   "contexto_antes": "<span data-claim=\"penedono-indice-de-divida-2024\" class=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>Not calculated: the source publishes «<span lang=\"pt-PT\">N.d.</span>» for the values it depends on.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>data from</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linh",
+   "contexto_depois": "<span data-claim=\"penedono-indice-de-divida-2024\" class=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>Not calculated: the source publishes «N.d.» for the values it depends on.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>data from</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linh"
+  },
+  {
+   "id": "L5",
+   "ficheiro": "built/livro-razao/evora-prazo-medio-de-pagamento-2025-12/index.html",
+   "descricao": "o recibo da fonte de Évora recebe a frase da linha calculada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8c843383bd37ce5da5b64a805950cedd8347d7318007561820e3fb22d40795ed",
+   "sha256_depois": "96ddfd1b32e43e3896f1235bd642bd35ba11f71daa9e675f2b6321b934eee7a3",
+   "contexto_antes": "><span data-claim=\"evora-prazo-medio-de-pagamento-2025-12\" class=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>A fonte publica «N.d.» em vez de um valor.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>dados de</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"evora",
+   "contexto_depois": "><span data-claim=\"evora-prazo-medio-de-pagamento-2025-12\" class=\"claim-value linha-valor-num\">N.d.</span> <span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>Não se calcula: a fonte publica «N.d.» nos valores de que depende.</span></p><div class=\"linha-datas\" data-recibo-datas><p><span data-voz>dados de</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"evora"
+  }
+ ]
+}

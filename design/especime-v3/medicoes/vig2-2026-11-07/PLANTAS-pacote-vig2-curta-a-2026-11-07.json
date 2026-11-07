@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T04:51:42+00:00",
+ "copia": "<caminho>/_aterragens/pacote-vig2-curta-a-2026-11-07",
+ "plantas": [
+  {
+   "id": "J1",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a designação só junta espaços, e as quebras de linha ficam",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7093bd92f03a26b3666bd9a3b8c2ef8e28f31db8b963d57711d813d10299b2f2",
+   "sha256_depois": "5264a9e4c538d0f1024fba2a18cd3a634646746f62cef87f9fdc42dc12bc4579",
+   "contexto_antes": "acoes(antigas, novas):\n     return novas, retiradas\n \n \n+def designacao_resumo(e):\n+    \"\"\"Normaliza só a apresentação; o título no índice conserva a fonte.\"\"\"\n+    return ' '.join(e['titulo'].partition('  -  Diário da República')[0].split())\n+\n+\n def descricao_resumo(e):\n     # O excerto contém os primeiros trezentos caracteres literais da fonte.\n     texto = e.get('descricao_fonte', e['excerto']).",
+   "contexto_depois": "acoes(antigas, novas):\n     return novas, retiradas\n \n \n+def designacao_resumo(e):\n+    \"\"\"Normaliza só a apresentação; o título no índice conserva a fonte.\"\"\"\n+    return ' '.join(e['titulo'].partition('  -  Diário da República')[0].split(' '))\n+\n+\n def descricao_resumo(e):\n     # O excerto contém os primeiros trezentos caracteres literais da fonte.\n     texto = e.get('descricao_fonte', e['excerto'])."
+  },
+  {
+   "id": "J2",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a verificação volta ao título em bruto, sem a mesma forma do resumo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5264a9e4c538d0f1024fba2a18cd3a634646746f62cef87f9fdc42dc12bc4579",
+   "sha256_depois": "80cc1dda8ad14f827e916559c96d45797ea90ac4513eeb32dee304beaec15f3c",
+   "contexto_antes": "das'])\n     esperadas = Counter(\n         ('Revisão' if e.get('revisao') else 'Entrada') + ': ' +\n-        e['titulo'].partition('  -  Diário da República')[0]\n+        designacao_resumo(e)\n         for e in entradas if e['origem'] != 'dar' and (e.get('estreia', True) or e.get('revisao')))\n     linhas = [l for p in partes for l in p.splitlines()]\n",
+   "contexto_depois": "das'])\n     esperadas = Counter(\n         ('Revisão' if e.get('revisao') else 'Entrada') + ': ' +\n-        e['titulo'].partition('  -  Diário da República')[0]\n+        e['titulo'].partition('  -  Diário da República')[0]\n         for e in entradas if e['origem'] != 'dar' and (e.get('estreia', True) or e.get('revisao')))\n     linhas = [l for p in partes for l in p.splitlines()]\n"
+  },
+  {
+   "id": "J3",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a prova deixa de exigir que cada designação apareça uma só vez",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "80cc1dda8ad14f827e916559c96d45797ea90ac4513eeb32dee304beaec15f3c",
+   "sha256_depois": "84e3585fab84ce56651e6a1e6a857f9b4084db479a1c7c3de0a06d62d8c897e6",
+   "contexto_antes": "ra', 'Designação com parágrafo', 'Designação com espaços finais'):\n+                    ocorrencias = [l for l in linhas if l.startswith('Entrada: ' + titulo)]\n+                    self.assertEqual(len(ocorrencias), 1)\n+                    self.assertTrue(ocorrencias[0].startswith((\n+                        'Entrada: ' + titulo + ' | ', 'Entrada: ' + titulo + ' (detalhes no í",
+   "contexto_depois": "ra', 'Designação com parágrafo', 'Designação com espaços finais'):\n+                    ocorrencias = [l for l in linhas if l.startswith('Entrada: ' + titulo)]\n+                    self.assertGreaterEqual(len(ocorrencias), 0)\n+                    self.assertTrue(ocorrencias[0].startswith((\n+                        'Entrada: ' + titulo + ' | ', 'Entrada: ' + titulo + ' (detalhes no í"
+  },
+  {
+   "id": "J4",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a prova deixa de conferir que o índice da fonte fica intacto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "84e3585fab84ce56651e6a1e6a857f9b4084db479a1c7c3de0a06d62d8c897e6",
+   "sha256_depois": "e71ef37e4c570fd68ee1ea7d759159b4d2ddd283ee75a4be94dbf421063d8565",
+   "contexto_antes": "          self.assertTrue(ocorrencias[0].startswith((\n+                        'Entrada: ' + titulo + ' | ', 'Entrada: ' + titulo + ' (detalhes no índice).')))\n+                self.assertEqual(indice, antes, 'a apresentação alterou o índice da fonte')\n+\n+    def test_vig2_a_designacao_normalizada_tirada(self):\n+        indice = self.indice_com_quebras(True)\n+        detalhes = diario.detalhes_resumo(indice)\n",
+   "contexto_depois": "          self.assertTrue(ocorrencias[0].startswith((\n+                        'Entrada: ' + titulo + ' | ', 'Entrada: ' + titulo + ' (detalhes no índice).')))\n+                pass\n+\n+    def test_vig2_a_designacao_normalizada_tirada(self):\n+        indice = self.indice_com_quebras(True)\n+        detalhes = diario.detalhes_resumo(indice)\n"
+  },
+  {
+   "id": "J5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório dá à parte 4 do índice real 2504 bytes, acima do limite",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "681a9f02d11db112d5256de3aa5abfb879ccc9c4026a54fefd530f23a1b183a5",
+   "sha256_depois": "1958d7115867213cb08dc3b53bf2e256632f98289ba29b4d8bd5d9b0ceb3daa0",
+   "contexto_antes": "a mensagem `designações das partes divergem do índice, por omissão ou repetição`.\n\n| Parte | Bytes UTF-8 |\n| --- | ---: |\n| 1 | 748 |\n| 2 | 2453 |\n| 3 | 2409 |\n| 4 | 2484 |\n\nA referência histórica conserva o SHA-256 `ace8d3246898dd6dea6ed006261a67fd0e400607b72636a81735fd497c1b3328`. Não foi alargado qualquer limite nem alterado qu",
+   "contexto_depois": "a mensagem `designações das partes divergem do índice, por omissão ou repetição`.\n\n| Parte | Bytes UTF-8 |\n| --- | ---: |\n| 1 | 748 |\n| 2 | 2453 |\n| 3 | 2409 |\n| 4 | 2504 |\n\nA referência histórica conserva o SHA-256 `ace8d3246898dd6dea6ed006261a67fd0e400607b72636a81735fd497c1b3328`. Não foi alargado qualquer limite nem alterado qu"
+  }
+ ]
+}

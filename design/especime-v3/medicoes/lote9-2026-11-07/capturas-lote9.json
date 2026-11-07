@@ -1,0 +1,1442 @@
+{
+  "cabeca": "79b10ff8fee4d395bfc21ceac7974ccb8b5a2000",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "recibo-evora-pmp-nd-pt-390.png",
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3361,
+      "sha256": "4111319bb9c91d9e0c74b029b5d78dc68798d4d6e47aff36d2996f2a7561db9e",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-pt-390-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 546,
+            "width": 354,
+            "height": 65
+          },
+          "sha256": "1167385bc4da2155bb7c86c41a6c0ced41087cc6ffd90d813d0e1b54ed1b11d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-pt-768.png",
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2932,
+      "sha256": "6691da4f5e9216bc524a9d3170951f6031762329a5ffb5ec18f8edf79229fea8",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-pt-768-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 499,
+            "width": 545,
+            "height": 39
+          },
+          "sha256": "badc3c491b06b0ff813895c1dc09c7f96feb2d4dd58d1b9de4ab7093cbe1c806"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-pt-1024.png",
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2244,
+      "sha256": "ef7559a75c4b8a2c7df68628ba65858f4fe6a4548a2930e4183a36cc80488fa0",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-pt-1024-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 528,
+            "width": 545,
+            "height": 52
+          },
+          "sha256": "a5c83bcf138f0405a74ce1b75e6ff4547e5c1e18d1b396d576bde194a579cb52"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-pt-1280.png",
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2278,
+      "sha256": "520ccaacc713818c1a71de1fec12a41803a5bc692311f22e35b38a09bb2907c6",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-pt-1280-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 532,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "2164ad7e75784005870e051a49d936f4c2465523ff8efecf9e5798a65e99cb56"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-pt-1600.png",
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2285,
+      "sha256": "7beef4a44d82ce25c1e8ae52023e16447dbe9629a35409147b7398a71ad18d43",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-pt-1600-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 532,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "2164ad7e75784005870e051a49d936f4c2465523ff8efecf9e5798a65e99cb56"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-en-390.png",
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3360,
+      "sha256": "b1819c587df8c98af937c64055c088ced929625b7145ffb45042f0e0eba47ec4",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-en-390-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 516,
+            "width": 354,
+            "height": 65
+          },
+          "sha256": "608330942705eb1a9cad7d54cae8373b008048af2e8e20f0b0127cd317da6a71"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-en-768.png",
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2932,
+      "sha256": "bcc78eafb0ee646270d7e85e0229ad8a0ee78da5f68adb12192c6e6c6710c681",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-en-768-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 499,
+            "width": 545,
+            "height": 39
+          },
+          "sha256": "6f518dc7ee594a6e7e4d3c24db9a2becbcdd3a24b058de1fbeec3c8246fb0db3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-en-1024.png",
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2200,
+      "sha256": "062763f8ecde34073b694b95d71468c04cdc8493fbc292e12e9366ae19cde40f",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-en-1024-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 484,
+            "width": 545,
+            "height": 52
+          },
+          "sha256": "2c402f445ba499e89e1f637520e68bd78d0a17d49a12e97e5519ed3afb6d136f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-en-1280.png",
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2235,
+      "sha256": "f2bda48954ddcaa534768369147a0e10a462e4bf55cffd340f5d28e7fb2626d3",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-en-1280-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 488,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "2ff21e13775be056e524591a17ca0820ff664818b6e03dd76886eb1cd3f9ac80"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-evora-pmp-nd-en-1600.png",
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025-12/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2241,
+      "sha256": "d0caeae4842272f96d7a29d98ecf986fae43d2c6c2c4e45d1bc3ee8066df35dc",
+      "recortes": [
+        {
+          "ficheiro": "recibo-evora-pmp-nd-en-1600-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-evora-pmp-nd-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 488,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "2ff21e13775be056e524591a17ca0820ff664818b6e03dd76886eb1cd3f9ac80"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-pt-390.png",
+      "rota": "/livro-razao/penedono-divida-dgal-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3215,
+      "sha256": "c30dfbc6bb077f457f077eef07db6fb8db9eb7f32daacd22d7d13e70b1e87272",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-pt-390-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 562,
+            "width": 354,
+            "height": 65
+          },
+          "sha256": "4d7fd215fab4f0d0bd29aebbb5128e30f2bd5ba5a3b02aa3c0bddc3dbe8590c9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-pt-768.png",
+      "rota": "/livro-razao/penedono-divida-dgal-2024/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2746,
+      "sha256": "bbe21f63f9296624f6b8a3d264b4be36c743df41ed75fcc3d2ac540ec7e51520",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-pt-768-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 475,
+            "width": 545,
+            "height": 39
+          },
+          "sha256": "badc3c491b06b0ff813895c1dc09c7f96feb2d4dd58d1b9de4ab7093cbe1c806"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-pt-1024.png",
+      "rota": "/livro-razao/penedono-divida-dgal-2024/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2113,
+      "sha256": "58399cc7faf2e26cefb16f605930253f38075962c660a90bad77d96a722c62bd",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-pt-1024-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 504,
+            "width": 545,
+            "height": 51
+          },
+          "sha256": "5fe478066a565e9b07cc9f8b2c2532b8de8e1528b801e5ab0940f85e54f1698c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-pt-1280.png",
+      "rota": "/livro-razao/penedono-divida-dgal-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2148,
+      "sha256": "b72e5e6947f81b5e45b75be24f34110474f0b50bac39f5bd2d41be776373469f",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-pt-1280-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 508,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "2164ad7e75784005870e051a49d936f4c2465523ff8efecf9e5798a65e99cb56"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-pt-1600.png",
+      "rota": "/livro-razao/penedono-divida-dgal-2024/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2154,
+      "sha256": "d6d1ef22dcb922da25e5f5b0615d576e7b0882a5ad59072cfda8d1c692f866ec",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-pt-1600-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 508,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "2164ad7e75784005870e051a49d936f4c2465523ff8efecf9e5798a65e99cb56"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-en-390.png",
+      "rota": "/en/ledger/penedono-divida-dgal-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3288,
+      "sha256": "cc044b97aeacee06ea46f6eb49d51ad41d6e1a968fe14b1db030a9689d87966b",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-en-390-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 587,
+            "width": 354,
+            "height": 65
+          },
+          "sha256": "01ec82643421c283e7a3480b914fd512eb5a00fbe4a09d8172af0b87121909bd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-en-768.png",
+      "rota": "/en/ledger/penedono-divida-dgal-2024/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2771,
+      "sha256": "f8fb270182d5380da5f438c40e6376d571076db6cb0f55b3325a75ff6cf66970",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-en-768-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 499,
+            "width": 545,
+            "height": 40
+          },
+          "sha256": "630f4e7f8a30047054a7ac2c0d7fe33df96081a7db6b3dd8ab3a48a3e22bdaec"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-en-1024.png",
+      "rota": "/en/ledger/penedono-divida-dgal-2024/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2094,
+      "sha256": "8ca51e4a4fd9f5629f4effc70c18caa01dcf0d3f528cdd7df9ba6e73e87d21fd",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-en-1024-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 485,
+            "width": 545,
+            "height": 51
+          },
+          "sha256": "fa776e2ff7ea837e4cc4ac4cc1a72234a02337a0cfec3a1d076a07629e1dbfc7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-en-1280.png",
+      "rota": "/en/ledger/penedono-divida-dgal-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2129,
+      "sha256": "6b98d48dbf74e78e24038662bd257358227567b4152f01200209fde1d27a964b",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-en-1280-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 489,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "9a9ac122ff5b3e1c62a3528479d126ab6b658bcbc03bc84d10d6ac0b86b5d691"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-penedono-divida-nd-en-1600.png",
+      "rota": "/en/ledger/penedono-divida-dgal-2024/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2135,
+      "sha256": "0d175a89f4954e457e1d97ca2eee48620249f8f55c4acdb7f9eead35b4b6dae8",
+      "recortes": [
+        {
+          "ficheiro": "recibo-penedono-divida-nd-en-1600-valor.png",
+          "seletor": ".linha-valor",
+          "origem": "recibo-penedono-divida-nd-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 489,
+            "width": 544,
+            "height": 59
+          },
+          "sha256": "9a9ac122ff5b3e1c62a3528479d126ab6b658bcbc03bc84d10d6ac0b86b5d691"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 51514,
+      "sha256": "2adbbfa3994945336f608bd31deddc57c1277fd7bd37c6b01993b4a62f57bffc",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-pt-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 51101,
+            "width": 354,
+            "height": 59
+          },
+          "sha256": "da85402b00d98503d5dbf5c862b7a5003fae7aed7fcea7769f55110bb6c1ba63"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-pt-768.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 34256,
+      "sha256": "a9ea532a7d542d1fb4becff88c2843a32ed8ec701ff609ef52190951e557ebb8",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-pt-768-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 33961,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "3951e58d12551a85ce251de74d9a6ad743d013786bb9cd79a7c5db2ee7d50bff"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-pt-1024.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 33462,
+      "sha256": "29b4c997db2e9ad288803488725be35535cd2eb1cd7398bf3c60304a57da32ac",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-pt-1024-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 33223,
+            "width": 545,
+            "height": 37
+          },
+          "sha256": "e673ea9d962514942882422ed7f1918241edb242661559c8f5d22a3518fac882"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-pt-1280.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 33573,
+      "sha256": "300ccaa70d899c549d5be15687f54844c54217a1c29eeb208fc4fdc9f0bae9f0",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-pt-1280-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 33316,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "404b2642e10e57e5491d33ff2d0e489d54ec51abc647c7620fdc4c5c95273335"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-pt-1600.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 33579,
+      "sha256": "62ed9b2591912f57f6d8aeea3b30b6bcc1e0b08dca5cb4e523b6af8ee5eaa986",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-pt-1600-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 33316,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "404b2642e10e57e5491d33ff2d0e489d54ec51abc647c7620fdc4c5c95273335"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 52039,
+      "sha256": "889f3b0f6c8ece08d5ad9752ef1639ddc39d2e2aebd40e1aaf205e0b78c9b72d",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-en-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 51579,
+            "width": 354,
+            "height": 59
+          },
+          "sha256": "b46514ca19bd317c066829c3af7cef5ebdf1699d9d5192209103c2514108848c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-en-768.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 33621,
+      "sha256": "496f9163c91de317b66c8445627bdbf05a8e068381fb42b952293294ad84ec49",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-en-768-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 33325,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "844e47df27ddf34279025ae216ee6049471d07d904f1bffd5b1db81909cc1f42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-en-1024.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 32816,
+      "sha256": "050ab1afa6de78cbffa8172f3f93f071effa88267b9906e4325663fd5817b8d5",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-en-1024-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 32577,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "33ec4663c295c23977043735eba8264f079f31781831d940b9ec2bd7c7e4d22e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-en-1280.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 32924,
+      "sha256": "ce87e0ea03004ac89164825db3466e85852fc7b8423f3c761ff68b4a56a88284",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-en-1280-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 32668,
+            "width": 544,
+            "height": 37
+          },
+          "sha256": "a2a4f871d9f231eb40f7200754555d66d03fe5846194512c0b06af772cef1586"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-estudo-en-1600.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 32931,
+      "sha256": "8e746ecbeefa9ef6a07dbc93c9f7367107468a10c609558ae828d69b6b904874",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-estudo-en-1600-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 32668,
+            "width": 544,
+            "height": 37
+          },
+          "sha256": "a2a4f871d9f231eb40f7200754555d66d03fe5846194512c0b06af772cef1586"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 43037,
+      "sha256": "3d632999435111be113dda765d519b92c2c822023d62f2359ad11cf618dca881",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-pt-390-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 52
+          },
+          "sha256": "308b205732c3cf17f4dd876627f35d1142a937b68b504f46f7f1305882b1e405"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-pt-768.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 26098,
+      "sha256": "59d2741cef1f2a894be48f223b25ab5bd75f2bbc9f152400b32a360bf773230d",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-pt-768-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-pt-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 728,
+            "height": 26
+          },
+          "sha256": "f2d7c14a1790915aff47b402706036f4c4a5c16867b3b9c0914ffc8cd417aac4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-pt-1024.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 24087,
+      "sha256": "ff422b65f65df1f8564d2fd836cf3939295654d2d858b77e4b120d4096df3f85",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-pt-1024-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-pt-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 40,
+            "width": 864,
+            "height": 26
+          },
+          "sha256": "e25ea27f621cc99cc172e32b90a167d7e2f1c4371db0d30c3365c33cf8f8095a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-pt-1280.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 24087,
+      "sha256": "3ad94a27b60e267c2dd776c47fc210e3832fe2c2694652f9e8ebb53d240940e0",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-pt-1280-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-pt-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 40,
+            "width": 864,
+            "height": 26
+          },
+          "sha256": "e25ea27f621cc99cc172e32b90a167d7e2f1c4371db0d30c3365c33cf8f8095a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-pt-1600.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 24087,
+      "sha256": "3eeee1eccefb07fdb317c6a41ec273cee6ed8ff3d238a6f1393f7987fc11dbb9",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-pt-1600-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-pt-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 40,
+            "width": 864,
+            "height": 26
+          },
+          "sha256": "e25ea27f621cc99cc172e32b90a167d7e2f1c4371db0d30c3365c33cf8f8095a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41997,
+      "sha256": "e4f449c6287f87aa321a996d03e5ae1e6f62fdfc4e5c97e73516e00b3f96081d",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-en-390-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 52
+          },
+          "sha256": "2437bff3735fd6c0f3c736d420dccf97cf87bb931121a0381479099076d46013"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-en-768.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 25317,
+      "sha256": "70b401f4b0df42d937c3816fe14a987a6cd0f748b1b674e8f8e7dc7e81b01cb4",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-en-768-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-en-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 728,
+            "height": 26
+          },
+          "sha256": "9e8def8c0c7d0f0e689987b21b7f9a3dc9736b95518872291647b75373ad317a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-en-1024.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 23427,
+      "sha256": "25d5ac6d3fc40ae20da626a1b4c9b0a8a40ac264b0b98062ce3209ae80a6b561",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-en-1024-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-en-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 40,
+            "width": 864,
+            "height": 26
+          },
+          "sha256": "3ecf1166a230fd5650abd2fa7cc6aafde0a6218602553f03460a654374a90d4a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-en-1280.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 23427,
+      "sha256": "a18f21c9f4e266923041ddd918050becb089b22b2b936fa40a4fa6c091fc2171",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-en-1280-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-en-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 40,
+            "width": 864,
+            "height": 26
+          },
+          "sha256": "3ecf1166a230fd5650abd2fa7cc6aafde0a6218602553f03460a654374a90d4a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-documento-2026-11-03-en-1600.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 23427,
+      "sha256": "749c7275c46539f06d94789981326745d8f918f804446d2fd56ee85f330b1be8",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-documento-2026-11-03-en-1600-faixa.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-documento-2026-11-03-en-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 40,
+            "width": 864,
+            "height": 26
+          },
+          "sha256": "3ecf1166a230fd5650abd2fa7cc6aafde0a6218602553f03460a654374a90d4a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36925,
+      "sha256": "a2fbcdfa9a72057490ac44df498b15611f570fe06df19e3ba56cab32d1a249a8",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-pt-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 36412,
+            "width": 354,
+            "height": 38
+          },
+          "sha256": "0ec6aa5bc90378e38a16b6b04b1f8a6e16920efd1d54a332aa051c9a44ac5e29"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29399,
+      "sha256": "d85214dd6f16ef3fdaf19ea75062cc742dfebd7ce40145409edd35ac6c1ce82e",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-pt-768-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 29008,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "9b218e506ca4d8c87253c317a50f056131ce23c0be1ed4448846eb183e52a3fb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28641,
+      "sha256": "27d7f26b0620b33fdff2092b58dd87c82551c78174024e627fea6b3c5cd4dff4",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-pt-1024-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 28307,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "88c51a7b3ede86480fd668f800d6edca7ee0e1ddc1aff3adbe532a3a41d852ef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28810,
+      "sha256": "a41e1a58a6e864c57206f7f96c97fcad4441c9373170d5d5a7b8372accbc08b2",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-pt-1280-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 28458,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "79bd1bbf68e23d21d63d8011d798dfcca0b10c256be08f03cb27afe2b6bf21a1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28816,
+      "sha256": "29195ff1cfc172dffd518e38ceee1aca7a5b8df1713a2f75e60e2c86e4785907",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-pt-1600-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 28458,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "79bd1bbf68e23d21d63d8011d798dfcca0b10c256be08f03cb27afe2b6bf21a1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 37213,
+      "sha256": "3ad62d190ebb53882969f9d6588aff6a1e7613d45efdfa62d410b2274f2dc978",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-en-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 36630,
+            "width": 354,
+            "height": 60
+          },
+          "sha256": "a0f5885c97d67ab83ce64a4f1f5bf204c469e51bce1c36dfa14069cf9a31a56c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29643,
+      "sha256": "fd3575e04826d138aabcc23f6dcfe1dc8ce040101adeaffcfb9815d1bd773c94",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-en-768-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 29252,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "3b56e4c915baba1ac6350495c4d238656bfb659573f74fe897658f0c45b9b0e8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28885,
+      "sha256": "74cf673d4a99a67a0b50c2fe8ccc13ec67e5b9504dd3b3a7723f06cb3ce8da35",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-en-1024-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 28551,
+            "width": 545,
+            "height": 38
+          },
+          "sha256": "a6175317ca99b13fb9c4f7929be6e3c2ed3a98f4ca966ea58d5fa1364538193c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 29023,
+      "sha256": "1b3f2d9c051bfa9f912db5d48d48ad2bfb743b639e36f31b9efe1087c021fc99",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-en-1280-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 28671,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "77a9f5753572a03eb256946210ef3c8620b42da88d50eef5ffc9b1bd60686315"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-estudo-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 29029,
+      "sha256": "ba9969665f43163df72719ed1be8d6a06625381910f687f2aeda42ff468dafef",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-estudo-en-1600-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 28671,
+            "width": 544,
+            "height": 38
+          },
+          "sha256": "77a9f5753572a03eb256946210ef3c8620b42da88d50eef5ffc9b1bd60686315"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "981b64d389383329af3e4b019abc295a648f6d9ce9628e26f354c23345255aa7",
+    "livro-razao/evora-prazo-medio-de-pagamento-2025-12/index.html": "8c843383bd37ce5da5b64a805950cedd8347d7318007561820e3fb22d40795ed",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.Dn-yGrQ-.css": "50a30a549ab240c216b83c0acdd141c24533cda9244f2446624b1a4128f1284c",
+    "_astro/linha.DOdCy9TF.css": "99cb640e0f6cafe8bb8b68a992968df0ab42486b4006260f7657bdd3596f0e24",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/ledger/evora-prazo-medio-de-pagamento-2025-12/index.html": "9a8b4aee87224e82ec53b00b06158e4f05db13878f4641fb793c31cf845ffd87",
+    "livro-razao/penedono-divida-dgal-2024/index.html": "c16636dea364ca21458824d8173d077c6b9e4e66247d0aa7d39cbea89d3dee10",
+    "en/ledger/penedono-divida-dgal-2024/index.html": "9e86401aec5ddb2b0dec3bce3aefcee801cb6680771c06a1efc6a7d226d07840",
+    "estudos/evora-2027-capital-europeia-da-cultura/index.html": "4bbc45b2f5928cc81b5ffe97056c05195f1effd03844ba6f513f5099ab639f1f",
+    "_astro/texto.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "en/studies/evora-2027-capital-europeia-da-cultura/index.html": "89870f8991b8176463ac581e72cf9fec1090ccd4b64c75d8a6e8d7fe1b7c07d0",
+    "estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/index.html": "f683302edaa6546225ac2f24fd81a912cc3d31b383ca25d92c9a9a4f726dbac3",
+    "en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/index.html": "6c8d555a3a17d139fc858d3902ab816d40e2ac8ebeac04cc10f3d40f1dc1c05f",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/index.html": "d490fc5efc3b19ae18ef08fc4e21bbe68859ba38ad3f25ea2875ea2754eb9323",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html": "25962cd1f07e099fc9f5ece7f619229cd054b5a6ef7fa33afbe0e6f82f9d4b61"
+  },
+  "falhas": [],
+  "ok": true
+}

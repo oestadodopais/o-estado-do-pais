@@ -1,0 +1,26 @@
+{
+ "novas": {
+  "valor": "5 132",
+  "comando": "a corrida de captura (vigilancia.executar numa cópia dos dados, com detalhes_resumo e resumo_partes embrulhados para guardar o índice e as partes no ponto da recusa); len das entradas novas: corridas[-1].medidas.novas no índice guardado"
+ },
+ "declaracoes": {
+  "valor": "5 096",
+  "comando": "a corrida de captura (vigilancia.executar numa cópia dos dados, com detalhes_resumo e resumo_partes embrulhados para guardar o índice e as partes no ponto da recusa); medidas.entradas_por_fonte.dar"
+ },
+ "parte1": {
+  "valor": "748",
+  "comando": "a corrida de captura (vigilancia.executar numa cópia dos dados, com detalhes_resumo e resumo_partes embrulhados para guardar o índice e as partes no ponto da recusa); [len(p.encode()) for p in partes.json['partes']][0]"
+ },
+ "parte2": {
+  "valor": "2 456",
+  "comando": "a corrida de captura (vigilancia.executar numa cópia dos dados, com detalhes_resumo e resumo_partes embrulhados para guardar o índice e as partes no ponto da recusa); idem, [1]"
+ },
+ "parte3": {
+  "valor": "2 410",
+  "comando": "a corrida de captura (vigilancia.executar numa cópia dos dados, com detalhes_resumo e resumo_partes embrulhados para guardar o índice e as partes no ponto da recusa); idem, [2]"
+ },
+ "parte4": {
+  "valor": "2 484",
+  "comando": "a corrida de captura (vigilancia.executar numa cópia dos dados, com detalhes_resumo e resumo_partes embrulhados para guardar o índice e as partes no ponto da recusa); idem, [3]"
+ }
+}
