@@ -967,3 +967,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | ev3-p | Frase do Rossio, entrada do registo e portas das edições nas duas línguas | por ler | Codex, 06.11.2026: frases autorizadas pelo mandato EV3-p e adenda A, comparadas com o HTML; leitura cruzada reservada ao lugar de direção. |
 
 | ed2 | Linha de todas as edições e datas por natureza nas duas línguas | por ler | Codex, 07.11.2026: frases do mandato ED2 conferidas contra o manifesto e o HTML construído; leitura cruzada reservada ao lugar de direção. |
+
+| nd1 | Duas frases de ausência nos recibos | por ler | Codex, 07.11.2026: frases literais do mandato ND1, §1.2; conferência em `tests/linha/ausencia-nd1.mjs`; leitura cruzada reservada ao lugar de direção. |

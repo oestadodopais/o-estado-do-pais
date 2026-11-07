@@ -12,6 +12,7 @@ import { provenienciaIncompleta, paginaSoComEdicao } from './ledger.mjs';
 import { leituraDaIncorporacao } from './leitura-da-incorporacao.mjs';
 import { caminhoDaLinha } from './livro.mjs';
 import { textoDocumentalConferido, valorImpressoDoPainelConferido } from './prova-efeitos.mjs';
+import { eMarcaDeAusencia } from './marcas-de-ausencia.mjs';
 
 /** @param {unknown} valor */
 export function escaparIncorporacao(valor) {
@@ -37,7 +38,7 @@ export function dadosDaIncorporacao(c, lang) {
   const nome = nomeNoRecibo(c.id, lang).texto;
   const lugar = lugarDaIncorporacao(c, lang);
   const unidade = unidadeDaLinha(c.unit, lang);
-  const unidadeNoValor = valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c);
+  const unidadeNoValor = eMarcaDeAusencia(c.value) || valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c);
   const correcoes = (c.corrections ?? []).filter((/** @type {any} */ x) =>
     !Object.hasOwn(x, 'field') && x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));
   const atualizada = correcoes[0]?.date ?? '';

@@ -1,4 +1,5 @@
 import {loadClaims} from '../src/lib/ledger.mjs';
+import {eMarcaDeAusencia} from '../src/lib/marcas-de-ausencia.mjs';
 import {valorImpressoDoPainelConferido,textoDocumentalConferido} from '../src/lib/prova-efeitos.mjs';
 /** I143 e I158: o espaço do desenho também existe no texto que se copia e ouve.
  *  R4 (05.10.2026): o valor do recibo de uma linha deixou de ser o `<h1>` (o título passou a ser o nome da medida) e
@@ -23,6 +24,11 @@ export function conferirValorUnidade(root, linhas = loadClaims()) {
     }
     const tipo = el.classList.contains('linha-valor') ? 'titulos' : 'cartoes';
     contas[tipo]++;
+    if (tipo === 'titulos' && claim && eMarcaDeAusencia(claim.value)) {
+      if (unidade) erros.push('ND1 unidade no valor do recibo');
+      if (valor.textContent !== claim.value) erros.push('ND1 marca diferente da fonte');
+      continue;
+    }
     if (tipo === 'titulos' && claim && (valorImpressoDoPainelConferido(claim.id, claim.value) || textoDocumentalConferido(claim))) {
       if (unidade) erros.push('V2E recibo: a unidade está repetida depois do valor documental conferido');
       if (valor.textContent !== claim.value) erros.push('V2E recibo: valor impresso diferente da prova selada');

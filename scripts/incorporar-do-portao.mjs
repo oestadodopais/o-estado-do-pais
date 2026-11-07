@@ -15,6 +15,7 @@ import { t } from '../src/i18n/strings.mjs';
 import { LICENCA } from '../src/data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../site.config.mjs';
 import { parse } from 'node-html-parser';
+import { eMarcaDeAusencia } from '../src/lib/marcas-de-ausencia.mjs';
 const leiturasLiterais = new WeakSet();
 
 /* O textarea é texto literal, como no navegador. O analisador genérico elimina
@@ -49,7 +50,7 @@ export function dadosEsperados(c, lang) {
     periodo: c.published_at_kind === 'last-edited' && !c.period && c.published_at
       ? t(lang).livro.linha.editadoEmK.replace(/^./u, (x) => x.toLocaleLowerCase('pt-PT')) + ' ' + dataDaCasa(c.published_at, lang)
       : (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : palavras.periodoEmFalta,
-    valor: String(c.value), unidade: (valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c)) ? '' : un.texto, unidadeLang: un.lingua || t(lang).lang,
+    valor: String(c.value), unidade: (eMarcaDeAusencia(c.value) || valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c)) ? '' : un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
     data: dia, leitura: leituraDaIncorporacao(c, lang, dia),
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',

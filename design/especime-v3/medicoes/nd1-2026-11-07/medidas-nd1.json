@@ -1,0 +1,262 @@
+{
+  "depois": {
+    "paginas": 9825,
+    "paginasComMarca": 44,
+    "recibos": 24,
+    "paginasComUnidade": [],
+    "erros": []
+  },
+  "plantas": [
+    {
+      "planta": "titulo",
+      "codigo": 1,
+      "erros": [
+        "ND1 marca seguida de unidade no título"
+      ]
+    },
+    {
+      "planta": "unidade",
+      "codigo": 1,
+      "erros": [
+        "ND1 unidade no valor do recibo"
+      ]
+    },
+    {
+      "planta": "frase",
+      "codigo": 1,
+      "erros": [
+        "ND1 frase ausente ou diferente",
+        "ND1 marca sem língua portuguesa"
+      ]
+    },
+    {
+      "planta": "marca",
+      "codigo": 1,
+      "erros": [
+        "ND1 marca desconhecida: nd1-linha-de-teste (n.d.)"
+      ]
+    }
+  ],
+  "recibos": [
+    {
+      "lang": "pt",
+      "rota": "/livro-razao/aljezur-prazo-medio-de-pagamento-2025-12",
+      "titulo": "N.d. · Números e fontes · O Estado do País",
+      "valor": "N.d. A fonte publica «N.d.» em vez de um valor.",
+      "fraseHtml": "<span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>A fonte publica «N.d.» em vez de um valor.</span>",
+      "excertoParaCitar": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"aljezur-prazo-medio-de-pagamento-2025-12\" data-oedp-valor=\"N.d.\" data-oedp-lido=\"2026-08-26\"><a href=\"https://oestadodopaís.pt/livro-razao/aljezur-prazo-medio-de-pagamento-2025-12\">Prazo médio de pagamento · Aljezur, dezembro de 2025: N.d.</a> · <span lang=\"pt-PT\">Direção-Geral das Autarquias Locais (DGAL)</span>, lido a 26.08.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+    },
+    {
+      "lang": "en",
+      "rota": "/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12",
+      "titulo": "N.d. · Numbers and sources · O Estado do País",
+      "valor": "N.d. The source publishes «N.d.» instead of a value.",
+      "fraseHtml": "<span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>The source publishes «<span lang=\"pt-PT\">N.d.</span>» instead of a value.</span>",
+      "excertoParaCitar": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"aljezur-prazo-medio-de-pagamento-2025-12\" data-oedp-valor=\"N.d.\" data-oedp-lido=\"2026-08-26\"><a href=\"https://oestadodopaís.pt/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12\">Average payment time · Aljezur, December 2025: N.d.</a> · <span lang=\"pt-PT\">Direção-Geral das Autarquias Locais (DGAL)</span>, read on 26.08.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+    }
+  ],
+  "antes": {
+    "paginas": 9825,
+    "paginasComMarca": 44,
+    "recibos": 24,
+    "paginasComUnidade": [
+      "en/ledger/aljezur-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/aljustrel-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/almada-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/batalha-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/evora-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/moimenta-da-beira-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/pedrogao-grande-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/penedono-divida-dgal-2024/index.html",
+      "en/ledger/penedono-indice-de-divida-2024/index.html",
+      "en/ledger/penedono-limite-divida-dgal-2024/index.html",
+      "en/ledger/penedono-prazo-medio-de-pagamento-2025-12/index.html",
+      "en/ledger/trancoso-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/aljezur-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/aljustrel-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/almada-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/batalha-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/evora-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/moimenta-da-beira-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/pedrogao-grande-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/penedono-divida-dgal-2024/index.html",
+      "livro-razao/penedono-indice-de-divida-2024/index.html",
+      "livro-razao/penedono-limite-divida-dgal-2024/index.html",
+      "livro-razao/penedono-prazo-medio-de-pagamento-2025-12/index.html",
+      "livro-razao/trancoso-prazo-medio-de-pagamento-2025-12/index.html"
+    ],
+    "erros": [
+      "/livro-razao/aljezur-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/aljezur-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/aljustrel-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/aljustrel-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/aljustrel-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/aljustrel-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/aljustrel-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/almada-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/almada-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/almada-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/almada-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/almada-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/batalha-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/batalha-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/batalha-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/batalha-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/batalha-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/evora-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/evora-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/evora-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/evora-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/evora-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/moimenta-da-beira-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/moimenta-da-beira-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/moimenta-da-beira-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/moimenta-da-beira-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/moimenta-da-beira-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/pedrogao-grande-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/pedrogao-grande-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/pedrogao-grande-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/pedrogao-grande-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/pedrogao-grande-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/penedono-divida-dgal-2024: ND1 unidade no valor do recibo",
+      "/livro-razao/penedono-divida-dgal-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-divida-dgal-2024: ND1 unidade no valor do recibo",
+      "/en/ledger/penedono-divida-dgal-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-divida-dgal-2024: ND1 marca sem língua portuguesa",
+      "/livro-razao/penedono-indice-de-divida-2024: ND1 unidade no valor do recibo",
+      "/livro-razao/penedono-indice-de-divida-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-indice-de-divida-2024: ND1 unidade no valor do recibo",
+      "/en/ledger/penedono-indice-de-divida-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-indice-de-divida-2024: ND1 marca sem língua portuguesa",
+      "/livro-razao/penedono-limite-divida-dgal-2024: ND1 unidade no valor do recibo",
+      "/livro-razao/penedono-limite-divida-dgal-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-limite-divida-dgal-2024: ND1 unidade no valor do recibo",
+      "/en/ledger/penedono-limite-divida-dgal-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-limite-divida-dgal-2024: ND1 marca sem língua portuguesa",
+      "/livro-razao/penedono-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/penedono-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/penedono-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "/livro-razao/trancoso-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/livro-razao/trancoso-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/trancoso-prazo-medio-de-pagamento-2025-12: ND1 unidade no valor do recibo",
+      "/en/ledger/trancoso-prazo-medio-de-pagamento-2025-12: ND1 frase ausente ou diferente",
+      "/en/ledger/trancoso-prazo-medio-de-pagamento-2025-12: ND1 marca sem língua portuguesa",
+      "ND1 marca seguida de unidade: en/ledger/aljezur-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/aljustrel-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/almada-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/batalha-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/evora-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/moimenta-da-beira-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/pedrogao-grande-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/penedono-divida-dgal-2024/index.html",
+      "ND1 marca seguida de unidade: en/ledger/penedono-indice-de-divida-2024/index.html",
+      "ND1 marca seguida de unidade: en/ledger/penedono-limite-divida-dgal-2024/index.html",
+      "ND1 marca seguida de unidade: en/ledger/penedono-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: en/ledger/trancoso-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/aljezur-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/aljustrel-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/almada-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/batalha-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/evora-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/moimenta-da-beira-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/pedrogao-grande-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/penedono-divida-dgal-2024/index.html",
+      "ND1 marca seguida de unidade: livro-razao/penedono-indice-de-divida-2024/index.html",
+      "ND1 marca seguida de unidade: livro-razao/penedono-limite-divida-dgal-2024/index.html",
+      "ND1 marca seguida de unidade: livro-razao/penedono-prazo-medio-de-pagamento-2025-12/index.html",
+      "ND1 marca seguida de unidade: livro-razao/trancoso-prazo-medio-de-pagamento-2025-12/index.html"
+    ]
+  },
+  "conferencias": {
+    "build": 0,
+    "gate:html": 0,
+    "check:voz": 0,
+    "check:lingua": 0,
+    "check:nd1": 0,
+    "check:cabeca": null
+  },
+  "check_cabeca": "Reservado à corrida inteira fora da sandbox pelo lugar de direção, conforme a adenda A; não repetido nesta passagem.",
+  "comandos_npm_no_build": [
+    "build",
+    "build:conteudo",
+    "mapa:unidades",
+    "ledger:check",
+    "check:registo",
+    "check:cruzamento",
+    "check:documentos",
+    "stamp:version",
+    "cartoes",
+    "gate:html",
+    "check:nd1",
+    "check:edicoes",
+    "check:selos",
+    "check:datas",
+    "check:cadeia",
+    "check:dados",
+    "check:mapa",
+    "check:regioes",
+    "check:areas",
+    "check:formas",
+    "check:lugares",
+    "check:pais",
+    "check:voz",
+    "check:nomes",
+    "check:lingua",
+    "check:formato",
+    "check:navegacao",
+    "sinais",
+    "check:discussao"
+  ],
+  "passagem_inicial": {
+    "conferencias": {
+      "build_inicial": 0,
+      "medicao_inicial": 0,
+      "build": 1,
+      "gate:html": 0,
+      "check:nd1": 0,
+      "check:voz": 1,
+      "check:lingua": null,
+      "check:cabeca": 1,
+      "check:css": 0,
+      "typecheck": 0,
+      "incorporar_conferir": 0,
+      "medicao_final": 0
+    },
+    "paragem": {
+      "regra": "Mandato ND1, §3",
+      "regua": "scripts/check-voz.mjs",
+      "mensagem": "design/especime-v3/INVENTARIO-FRASES.md:5557: linha «viva» que não se rende em rota nenhuma: «The source publishes «N.d.» instead of a value.»",
+      "frase_presente_no_dist": true,
+      "commit": false,
+      "check_lingua": "Não correu: o build parou antes, na voz.",
+      "check_cabeca": "Error: listen EPERM: operation not permitted 127.0.0.1"
+    },
+    "orcamento": {
+      "chamadas_ate_fecho_do_relatorio": 49,
+      "corridas_principais_por_curto": 8,
+      "sondas_curtas": 1,
+      "comandos_npm_no_build": 23,
+      "processos_das_quatro_plantas_nd1": 8,
+      "corridas_inteiras_dos_portoes": 0
+    }
+  },
+  "adenda_a": {
+    "alteracao": "Apenas a forma inglesa do inventário, com espaços em torno da marca conforme a leitura da régua e a convenção pequenas-5.",
+    "pagina_e_regua": "Sem alterações relativamente à patch ND1.",
+    "codigos_lidos": {
+      "build": 0,
+      "lingua": 0,
+      "nd1": 0
+    },
+    "chamadas_ate_fecho_do_relatorio": 24,
+    "corridas_principais": 3,
+    "comandos_npm_no_build": 29,
+    "processos_das_quatro_plantas_nd1": 8,
+    "corridas_inteiras_dos_portoes": 0
+  }
+}

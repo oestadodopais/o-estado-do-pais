@@ -90,6 +90,7 @@ import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { eMarcaDeAusencia } from '../lib/marcas-de-ausencia.mjs';
 import Frase from '../components/Frase.astro';
 import DefinicaoEo1 from '../components/DefinicaoEo1.astro';
 import TextoDoNome from '../components/TextoDoNome.astro';
@@ -635,6 +636,7 @@ const estudo = studyTitle(claim.study, lang).titulo;
  * `derivation` e com a nota de bandeira.
  */
 const unidade = unidadeDaLinha(claim.unit, lang, claim.value);
+const marcaDeAusencia = eMarcaDeAusencia(claim.value);
 const unidadeNoValor = valorImpressoDoPainelConferido(id, claim.value);
 
 /**
@@ -838,7 +840,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           texto do título era «175pessoas»: um leitor de ecrã e quem copia o
           título liam uma palavra só. O espaço escreve-se aqui, e a célula do
           `gate:html` exige-o em todas as páginas de linha. */}
-      <Fragment slot="sufixo">{!unidadeNoValor && !(claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.unit === 'data') && !textoDocumentalConferido(claim) && <>{' '}
+      <Fragment slot="sufixo">{marcaDeAusencia && <>{' '}<span class="linha-valor-ausencia" data-nd1-ausencia data-voz>{lang === 'pt' ? <>A fonte publica «{claim.value}» em vez de um valor.</> : <>The source publishes «<span lang="pt-PT">{claim.value}</span>» instead of a value.</>}</span></>}{!marcaDeAusencia && !unidadeNoValor && !(claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.unit === 'data') && !textoDocumentalConferido(claim) && <>{' '}
       <CampoDaLinha
         id={id}
         campo="unit"

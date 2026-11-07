@@ -2766,7 +2766,8 @@ a.badge-porta:hover {
   line-height: 0.94;
   letter-spacing: -0.04em;
 }
-.linha-valor-unidade {
+.linha-valor-unidade,
+.linha-valor-ausencia {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-size: 14px;

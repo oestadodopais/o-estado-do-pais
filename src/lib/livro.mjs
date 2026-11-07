@@ -22,6 +22,7 @@ import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
 import { NOMES_HB1 } from '../data/nomes-hb1.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
+import { eMarcaDeAusencia } from './marcas-de-ausencia.mjs';
 
 /**
  * O endereço da página de uma afirmação, numa língua.
@@ -86,6 +87,7 @@ export function valorComUnidade(claim, lang = null) {
 /** Os textos documentais têm nome curto no cabeçalho e transcrição no corpo.
  * @param {Linha} claim @param {Lingua} lang */
 function mancheteDaLinha(claim, lang) {
+  if (eMarcaDeAusencia(claim.value)) return String(claim.value);
   if (!textoDocumentalConferido(claim)) return nomeTextual(claim, lang) ?? valorComUnidade(claim, lang);
   const familias = /** @type {Record<string,{nome?:{pt:string,en:string}}>} */ (FAMILIAS_DAS_LINHAS);
   const nome = familias[claim.id]?.nome?.[lang];

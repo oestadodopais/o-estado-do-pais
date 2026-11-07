@@ -5548,3 +5548,10 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 | conteudo | corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
 
 ED2 B: a linha completa das edições é uma composição das palavras já declaradas, conferida na ordem do manifesto por `scripts/edicoes-linha-conferir.mjs` e classificada por `scripts/voz-edicoes.mjs`. Não se enumeram aqui formas finitas pelo número de versões.
+
+## ND1: a marca de ausência da fonte
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A fonte publica «N.d.» em vez de um valor. | nd1 | viva | Mandato ND1, §1.2: frase literal no lugar da unidade, conferida em cada recibo marcado. |
+| conteudo | The source publishes « N.d. » instead of a value. | nd1 | viva | Adenda A à ND1: forma lida pela régua, segundo a convenção do bloco `pequenas-5` (29.08.2026), «O ESPAÇO ANTES DOS DOIS PONTOS NA FRASE DA LEI É A RÉGUA A LER, E NÃO A PÁGINA A ESCREVER». A página mantém a frase literal e a marca em português. |
