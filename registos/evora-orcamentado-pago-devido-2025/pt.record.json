@@ -2537,34 +2537,34 @@
   {
    "emphasis": [
     {
-     "end": 292,
+     "end": 287,
      "kind": "strong",
-     "start": 259
+     "start": 254
     }
    ],
    "figures": [
     {
-     "end": 107,
+     "end": 102,
      "printed": "21,13",
      "row": "invest-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 102,
+     "start": 97,
      "value": "21.13"
     },
     {
-     "end": 192,
+     "end": 187,
      "printed": "28 192 653",
      "row": "margem-endividamento-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 182,
+     "start": 177,
      "value": "28 192 653"
     }
    ],
    "i": 58,
    "kind": "paragraph",
-   "text": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
+   "text": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
   },
   {
    "figures": [],

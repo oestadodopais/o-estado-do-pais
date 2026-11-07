@@ -113,7 +113,7 @@ import { unidadeDaLinha, UNIDADES_EM_PORTUGUES } from '../../src/i18n/unidades.m
 import { feitioDeLei } from '../../src/i18n/nomes-de-lei.mjs';
 import { MUNICIPIOS } from '../../src/data/caop-centroids.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
-import { medeComandos, aceitaComandos, avaliaExpanded } from './expanded.mjs';
+import { medeComandos, aceitaComandos, avaliaExpanded, seletorDosComandos } from './expanded.mjs';
 import { medePesquisa, resumoDaPesquisa } from './pesquisa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -1297,19 +1297,14 @@ function varreDist() {
   for (const f of paginas(DIST)) {
     const s = leFicheiro(f);
     const rel = path.relative(DIST, f);
-    /* OS DOCUMENTOS ALOJADOS FICAM DE FORA DESTA CONTA, e não é uma folga: um
-       documento em `/estudos/<slug>/documento` é obra já publicada, alojada
-       carácter a carácter e conferida contra a origem; o `aria-expanded` que
-       está lá dentro é DELE, com o guião dele, e a casa não lhe toca. Medido a
-       04.09.2026: 1 380 das 8 601 ocorrências estavam nesses dezasseis
-       ficheiros (e algumas nem eram markup, eram a palavra dentro do `<style>`
-       do próprio documento). É a mesma exclusão que `scripts/check-lingua.mjs`
-       faz, e pela mesma razão. */
-    if (!/[\\/](documento|document)[\\/]index\.html$/.test(rel) && /\baria-expanded\b/i.test(s)) {
-      const nos = parse(s).querySelectorAll('[aria-expanded]');
+    // A obra citada é conferida contra os bytes publicados. Os comandos da
+    // faixa da casa nunca ficam isentos, incluindo nas edições guardadas.
+    if (/\baria-expanded\b/i.test(s)) {
+      const rota='/' + rel.replace(/index\.html$/, '').replaceAll('\\','/');
+      const nos = parse(s).querySelectorAll(seletorDosComandos(rota));
       if (nos.length) {
         expanded += nos.length;
-        paginasExpanded.push({ rota: '/' + rel.replace(/index\.html$/, ''), n: nos.length });
+        paginasExpanded.push({ rota, n: nos.length });
       }
     }
     if (path.basename(f) !== 'index.html') continue;
@@ -2195,7 +2190,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   try {
     for (const p of dist.paginasExpanded) {
       await abrirPaginaPronta(pagina, p.rota);
-      provas.push({ rota: p.rota, comandos: await medeComandos(pagina) });
+      provas.push({ rota: p.rota, comandos: await medeComandos(pagina,p.rota) });
     }
     // Corre em cada chamada da cadeia, sem bandeira e sem escrever no dist.
     await pagina.setContent('<!doctype html><html><body><nav aria-expanded="true">Planta sem comando</nav></body></html>');

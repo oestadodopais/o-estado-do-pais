@@ -2523,27 +2523,27 @@
      "value": "242.6"
     },
     {
-     "end": 368,
+     "end": 369,
      "printed": "21.13",
      "row": "invest-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 363,
+     "start": 364,
      "value": "21.13"
     },
     {
-     "end": 446,
+     "end": 447,
      "printed": "28 192 653",
      "row": "margem-endividamento-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 436,
+     "start": 437,
      "value": "28 192 653"
     }
    ],
    "i": 57,
    "kind": "paragraph",
-   "text": "Évora spent the middle of the last decade far above the legal ceiling — the index opens at 242.6% — and crossed back under it only in 2020. The index falls in every year of the table, even in 2020 when the euro amount itself ticked up — revenue grew faster. Ten years of paying down the rescue debt is the context for every number: for why investment executes at 21.13%, for why the plan's money goes to debt operations, and for why a €28 192 653 margin is a genuine achievement rather than an accounting nicety (inference)."
+   "text": "Évora spent the middle of the last decade far above the legal ceiling — the index opens at 242.6% — and crossed back under it only in 2020. The index falls in every year of the table, even in 2020 when the euro amount itself ticked up — revenue grew faster. Ten years of paying down the rescue debt is the context for these numbers: for why investment executes at 21.13%, for why the plan's money goes to debt operations, and for why a €28 192 653 margin is a genuine achievement rather than an accounting nicety (inference)."
   },
   {
    "figures": [],

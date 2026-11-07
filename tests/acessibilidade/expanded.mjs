@@ -1,6 +1,14 @@
 /** H10: mede cada comando no navegador e exige a recusa do conhecido positivo. */
-export async function medeComandos(pagina) {
-  const comandos = pagina.locator('[aria-expanded]');
+import {manifestoDasEdicoes,versoesDaEdicao} from '../../src/lib/edicoes.mjs';
+// Só as rotas declaradas no manifesto têm corpo de obra citada. A faixa da
+// casa continua medida, tanto na edição atual como nas guardadas.
+const documentos = new Set(manifestoDasEdicoes().edicoes.flatMap(e=>versoesDaEdicao(e.slug,e.lang).map(v=>v.rota)));
+export function seletorDosComandos(rota='') {
+  const declarada=documentos.has(rota.replace(/\/index\.html$/,'').replace(/\/$/,''));
+  return declarada?'[aria-expanded]:not([data-oedp-moldura] [aria-expanded])':'[aria-expanded]';
+}
+export async function medeComandos(pagina,rota='') {
+  const comandos = pagina.locator(seletorDosComandos(rota));
   const provas = [];
   for (let i = 0; i < await comandos.count(); i++) {
     const comando = comandos.nth(i);

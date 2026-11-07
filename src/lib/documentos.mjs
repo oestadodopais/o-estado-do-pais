@@ -537,6 +537,7 @@ function estiloDaFaixa() {
       ['text-decoration', 'none'],
       ['text-underline-offset', '3px'],
     ])}}`,
+    `[data-documento-edicao] a{color:inherit}`,
     `[data-oedp-faixa] a:hover{text-decoration:underline}`,
     `[data-oedp-faixa] a:focus-visible{outline:2px solid var(--oedp-ink);outline-offset:3px}`,
     `[data-oedp-faixa] span{background:none;border:0;padding:0;margin:0}`,

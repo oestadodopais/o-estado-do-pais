@@ -1,0 +1,122 @@
+{
+  "base_motor": "aee60173990d1c645719f782c47b14f65ee0fff5",
+  "livros": [
+    {
+      "estudo": "04",
+      "campos": [
+        "assertions"
+      ],
+      "asserção": {
+        "id": "hospital-registos-sem-identidade-declarada",
+        "antes": null,
+        "depois": {
+          "id": "hospital-registos-sem-identidade-declarada",
+          "quotes": [
+            "nenhuma das fontes afirma que são a mesma entidade"
+          ],
+          "review": "Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes."
+        }
+      },
+      "ancorada_em": [
+        "Évora — Prometido, Pago, Auditado 2026 (pt-PT).md"
+      ],
+      "resumos": []
+    },
+    {
+      "estudo": "14",
+      "campos": [
+        "assertions"
+      ],
+      "asserção": {
+        "id": "so-previsionais",
+        "antes": {
+          "id": "so-previsionais",
+          "quotes": [
+            "Pela mesma razão: só se leram documentos previsionais",
+            "For the same reason: only forecast documents were read"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        },
+        "depois": {
+          "id": "so-previsionais",
+          "quotes": [
+            "Pela mesma razão: só se leram documentos previsionais",
+            "For the same reason: only forecast documents were read",
+            "none of them is an execution account"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        }
+      },
+      "ancorada_em": [
+        "Évora 2027 — Promised, Panel, Money.md"
+      ],
+      "resumos": []
+    },
+    {
+      "estudo": "18",
+      "campos": [
+        "assertions",
+        "composto_de"
+      ],
+      "asserção": {
+        "id": "hospital-registos-sem-identidade-declarada",
+        "antes": null,
+        "depois": {
+          "id": "hospital-registos-sem-identidade-declarada",
+          "quotes": [
+            "nenhuma das fontes afirma que são a mesma entidade"
+          ],
+          "review": "Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes."
+        }
+      },
+      "ancorada_em": [
+        "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md"
+      ],
+      "resumos": [
+        {
+          "fonte": "04 Évora Public Money",
+          "antes": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+          "depois": "689618106d38640d127531b80bc179215429eb71f773c7a023ac7bad69a19a44"
+        }
+      ]
+    },
+    {
+      "estudo": "19",
+      "campos": [
+        "assertions",
+        "composto_de"
+      ],
+      "asserção": {
+        "id": "so-previsionais",
+        "antes": {
+          "id": "so-previsionais",
+          "quotes": [
+            "Pela mesma razão: só se leram documentos previsionais",
+            "For the same reason: only forecast documents were read"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        },
+        "depois": {
+          "id": "so-previsionais",
+          "quotes": [
+            "Pela mesma razão: só se leram documentos previsionais",
+            "For the same reason: only forecast documents were read",
+            "none of them is an execution account"
+          ],
+          "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+        }
+      },
+      "ancorada_em": [
+        "Évora 2027, European Capital of Culture.md"
+      ],
+      "resumos": [
+        {
+          "fonte": "14 Évora 2027",
+          "antes": "307297cf47c6919c43b0234c0ab02b22d5cc1eaa79353bf1e82c8f9feb87ab0b",
+          "depois": "8ca64d1794639d95f7d1ab83be97908bb7e6f3b4a070b02eee15d1ba195942ec"
+        }
+      ]
+    }
+  ],
+  "referencias_identicas": 8382
+}
