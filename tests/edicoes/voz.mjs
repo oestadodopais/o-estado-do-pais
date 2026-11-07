@@ -11,7 +11,7 @@ let controlos=0,plantas=0,documentos=0;
 for(const [fragmento,inteiras] of FAIXAS_DE_EDICAO){
  assert(inv.linhas.some(l=>l.texto===fragmento&&l.estado==='retirada'));
  for(const inteira of inteiras){assert(!retiradaForaDaFrase(inteira,fragmento,inteiras));assert(declarada(inteira)||classeDaVozDaEdicao(inteira)==='conteudo');controlos++;}
- for(const texto of [fragmento,`· ${fragmento}`,`${[...inteiras].at(-1)} texto acrescentado`]){assert(retiradaForaDaFrase(texto,fragmento,inteiras));plantas++;}
+ for(const texto of [fragmento,`· ${fragmento}`,`${[...inteiras].at(-1)??fragmento} texto acrescentado`]){assert(retiradaForaDaFrase(texto,fragmento,inteiras));plantas++;}
 }
 for(const lang of ['pt','en']){
  const politica=t(lang).correcoes.politicaV;
@@ -23,10 +23,10 @@ for(const lang of ['pt','en']){
 for(const e of manifestoDasEdicoes().edicoes)for(const v of versoesDaEdicao(e.slug,e.lang)){
  const faixa=faixaDaVersao(e.slug,e.lang,v.data);if(!faixa)continue;
  const root=parse(`<body><main><p>Texto da obra que não pertence ao inventário.</p></main>${faixa}</body>`);
- const frases=frasesDaFaixaDocumental(root);const naturezas=new Set(e.edicoes.map((v,i)=>`${i===0?'primeira':v.natureza??'correcao'}${i===e.edicoes.length-1?',atual':''}`));assert.equal(frases.length,2+e.edicoes.length-1+naturezas.size);assert(frases.every(declarada));documentos++;controlos++;
- const alterada=parse(root.outerHTML);alterada.querySelector('[data-edicao-frase]').set_content('publicado a ·');
- const resultado=frasesDaFaixaDocumental(alterada);assert(resultado.includes('publicado a ·'));assert(retiradaForaDaFrase(resultado[0],'publicado a ·',FAIXAS_DE_EDICAO.get('publicado a ·')));plantas++;
- const extra=parse(root.outerHTML);extra.querySelector('[data-documento-edicao]').insertAdjacentHTML('beforeend','<p>Uma frase nova sem declaração.</p>');assert(frasesDaFaixaDocumental(extra).some(f=>!declarada(f)));plantas++;
+ const frases=frasesDaFaixaDocumental(root);assert(frases.length>0);assert(frases.every(f=>declarada(f)||classeDaVozDaEdicao(f)==='conteudo'));assert(frases.includes(root.querySelector('[data-edicoes-linha]').textContent));documentos++;controlos++;
+ const alterada=parse(root.outerHTML);alterada.querySelector('[data-documento-edicao]').insertAdjacentHTML('afterbegin','<p data-edicao-frase>publicado a ·</p>');
+ assert.throws(()=>frasesDaFaixaDocumental(alterada),/ED3 linha/);plantas++;
+ const extra=parse(root.outerHTML);extra.querySelector('[data-documento-edicao]').insertAdjacentHTML('beforeend','<p>Uma frase nova sem declaração.</p>');assert.throws(()=>frasesDaFaixaDocumental(extra),/ED3 linha/);plantas++;
 }
 // A extração histórica separa todos os nós de texto, também nas marcas de língua.
 for(const [html,esperado] of [

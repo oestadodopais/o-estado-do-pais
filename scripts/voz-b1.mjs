@@ -1,3 +1,4 @@
+import {conferirLinhaDasEdicoes,manifestoEd2} from './edicoes-linha-conferir.mjs';
 import { superficieDoQuadro } from './check-quadro.mjs';
 import {dataEditorialPermitida} from './datas-editoriais.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
@@ -176,6 +177,14 @@ export function verificaB1(raiz) {
       const do1 = conferirSuperficieDossies(main, lang, `${rota}/index.html`);
       erros.push(...do1.erros);
       for (const no of do1.nos) dispensados.add(no);
+      // ED3: a linha só sai da lista de fragmentos depois de conferida inteira.
+      for(const linha of main.querySelectorAll('[data-edicoes-linha]')){
+        const cabecalho=linha.closest('[data-estudo-edicao]');
+        const [slug,lingua]=(cabecalho?.getAttribute('data-estudo-edicao')??'').split('/');
+        const queixas=conferirLinhaDasEdicoes(cabecalho,manifestoEd2,slug,lingua);
+        if(!cabecalho||lingua!==lang||queixas.length)erros.push(`B1 ED3: ${rota}: linha de edições não conferida. ${queixas.join('; ')}`);
+        else dispensados.add(linha);
+      }
       const anda = (no, tecnico = false) => {
         if (dispensados.has(no)) return;
         if (no.nodeType === NodeType.TEXT_NODE) {

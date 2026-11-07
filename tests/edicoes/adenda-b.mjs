@@ -28,8 +28,8 @@ for(const lang of ['pt','en']){
  const evora='evora-2027-capital-europeia-da-cultura',atual=ler(evora,lang),confere=r=>conferirMudancasDoCabecalho(r,evora,lang);
  assert.deepEqual(confere(atual),[]);controlos++;
  planta('so-palavra-errada',atual,r=>{
-  const time=r.querySelector('[data-estudo-correcao]'),ns=time.parentNode.childNodes;
-  const label=ns.slice(0,ns.indexOf(time)).findLast(n=>n.nodeType===1);label.set_content(lang==='pt'?'atualizado a':'updated on');
+  const time=r.querySelector('[data-estudo-correcao]'),ns=time.parentNode.parentNode.childNodes;
+  const label=ns.slice(0,ns.indexOf(time.parentNode)).findLast(n=>n.nodeType===1);label.set_content(lang==='pt'?'atualizado a':'updated on');
   assert(time.hasAttribute('data-estudo-correcao'));assert(!time.hasAttribute('data-estudo-atualizacao'));
  },confere);
 }

@@ -1,28 +1,30 @@
 /** ED1-F: só as formas integrais da faixa admitem o fragmento retirado. */
 import {fraseRetiradaNoTexto} from './titulos-publicados.mjs';
-import {manifestoEd2,mudancasNoManifesto,publicacaoNoPortao,conferirLinhaDasEdicoes} from './edicoes-linha-conferir.mjs';
+import {elementosDaLinha,manifestoEd2,mudancasNoManifesto,publicacaoNoPortao,conferirLinhaDasEdicoes} from './edicoes-linha-conferir.mjs';
 /** O repertório sai das versões declaradas, sem importar a composição da vista.
  * Uma palavra nova, outra ordem ou outra quantidade não se acrescenta por expressão regular. */
 export function repertorioDaVozDasEdicoes(manifesto=manifestoEd2){
  const frases=new Set(),porLingua={pt:new Set(),en:new Set()};
  for(const e of manifesto.edicoes)for(const lang of ['pt','en']){
   const pt=lang==='pt',vs=e.edicoes,mudancas=mudancasNoManifesto(e.slug,e.lang,manifesto);
-  const naturezas=vs.map((v,i)=>`(${i===0?(pt?'primeira':'first'):v.natureza==='atualizacao'?(pt?'atualização':'update'):(pt?'correção':'correction')}${i===vs.length-1?(pt?', atual':', current'):''})`);
-  let forma='';
   if(vs.length>1){
-   // A primeira nunca é a atual quando há uma linha de edições.
-   forma=`${pt?'Edições:':'Editions:'} ${naturezas.join(' · ')}`;
-   for(const v of vs)frases.add(v.data.split('-').reverse().join('.'));
-   for(const n of naturezas)frases.add(n);
-   frases.add(pt?'Edições:':'Editions:');
+   for(const data of [null,...vs.map(v=>v.data)]){
+    const itens=elementosDaLinha(manifesto,e.slug,lang,data);
+    const forma=itens.map(i=>i.rotulo+i.estado).join(' · ');
+    porLingua[lang].add(forma);frases.add(forma);
+    frases.add(itens.map(i=>`${i.rotulo} ${i.data.split('-').reverse().join('.')}${i.estado}`).join(' · '));
+    for(const i of itens){frases.add(i.rotulo);if(i.estado)frases.add(i.estado.trim());frases.add(i.data.split('-').reverse().join('.'));}
+   }
+  }else{
+   let forma='';
+   if(publicacaoNoPortao(e.slug,e.lang))forma+=` · ${pt?'publicado a':'published on'}`;
+   for(const m of mudancas)forma+=` · ${m.natureza==='atualizacao'?(pt?'atualizado a':'updated on'):(pt?'corrigido a':'corrected on')}`;
+   if(mudancas.length){forma=forma.trim();porLingua[lang].add(forma);frases.add(forma);}
   }
-  if(publicacaoNoPortao(e.slug,e.lang))forma+=` · ${pt?'publicado a':'published on'}`;
-  for(const m of mudancas)forma+=` · ${m.natureza==='atualizacao'?(pt?'atualizado a':'updated on'):(pt?'corrigido a':'corrected on')}`;
-  if(vs.length>1||mudancas.length){forma=forma.trim();porLingua[lang].add(forma);frases.add(forma);}
  }
  return {frases,faixas:new Map([
   ['publicado a ·',porLingua.pt],['published on ·',porLingua.en],
-  ['Edições',new Set(['Edições:',...[...porLingua.pt].filter(t=>t.startsWith('Edições:'))])],['Editions',new Set(['Editions:',...[...porLingua.en].filter(t=>t.startsWith('Editions:'))])],
+  ['Edições',new Set()],['Editions',new Set()],
  ])};
 }
 const repertorio=repertorioDaVozDasEdicoes();
@@ -42,7 +44,7 @@ export function frasesDaFaixaDocumental(root,manifesto=manifestoEd2) {
   const [slug,lang,data]=faixa.getAttribute('data-documento-edicao').split('/');
   const erros=conferirVozDaLinha(faixa,manifesto,slug,lang,data);
   if(erros.length)throw Error(erros.join('; '));
-  for(const el of faixa.querySelectorAll('p,h1,h2,h3,li,a,[data-voz]')) {
+  for(const el of faixa.querySelectorAll('p,h1,h2,h3,li,a,[data-voz],[data-edicoes-linha]')) {
    if(el.querySelector('p,h1,h2,h3,li'))continue;
    const frase=el.textContent.replace(/\s+/g,' ').trim();
    if(frase)frases.push(frase);

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import {conferirMudancasDoCabecalho,rotasNoManifesto,manifestoEd2} from './edicoes-linha-conferir.mjs';
+import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
+import {conferirLinhaDasEdicoes,conferirMudancasDoCabecalho,rotasNoManifesto,manifestoEd2} from './edicoes-linha-conferir.mjs';
 import { primeiraEdicao } from '../src/lib/edicoes.mjs';
 /**
  * O PORTÃO DAS DATAS DE PUBLICAÇÃO · três contas, e nenhuma confia na anterior.
@@ -60,7 +61,7 @@ import { parse } from 'node-html-parser';
 
 import assert from 'node:assert/strict';
 import { DOSSIES } from '../src/data/dossies.mjs';
-import { routePath } from '../src/lib/routes.mjs';
+import { routePath, matchPath } from '../src/lib/routes.mjs';
 import { WORKS } from '../src/data/studies.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 
@@ -197,7 +198,7 @@ for (const f of paginas) {
   /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
      páginas do sítio não a tem nem é uma das rotas que imprimem datas. */
   const temMarca = cru.includes(MARCA);
-  if (!temMarca && !eIndice && !daEdicao) continue;
+  if (!temMarca && !eIndice && !daEdicao && matchPath(rota)?.key!=='documento') continue;
   const doc = parse(cru);
   if (eIndice || daEdicao) paraPrender.push({ rota, doc, slug: daEdicao ? daEdicao[1] : null });
   else paraPrender.push({ rota, doc, slug: null });
@@ -374,6 +375,7 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
     }
+    if(slugDaPagina)falhas.push(...conferirLinhaDasEdicoes(bloco,manifestoEd2,slug,lang).map(e=>`${rota}: ${e}`));
     if(slugDaPagina)falhas.push(...conferirMudancasDoCabecalho(bloco,slug,lang,manifestoEd2,linguaDaPagina).map(e=>`${rota}: ${e}`));
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina
@@ -550,6 +552,18 @@ for (const { rota, doc, slug } of paraPrender) {
   if (slug !== null) {
     paginasPrendidas++;
     prendeNaPaginaDoTrabalho(rota, slug, doc);
+    continue;
+  }
+  const documento=matchPath(rota);
+  if(documento?.key==='documento'){
+    paginasPrendidas++;
+    const {slug:estudo,date}=documento.params,lang=documento.lang;
+    falhas.push(...conferirFaixaDaVersao(doc,manifestoEd2,estudo,lang,date??null).map(e=>`${rota}: ${e}`));
+    const faixa=doc.querySelector('[data-documento-edicao]'),marcas=faixa?.querySelectorAll(SELETOR)??[];
+    const temHistoria=(manifestoEd2.edicoes.find(e=>e.slug===estudo&&e.lang===lang)?.edicoes.length??0)>1;
+    if(marcas.length!==(temHistoria?1:0))falhas.push(`${rota}: publicação documental ausente ou repetida`);
+    if(temHistoria)prende(rota,estudo,lang,marcas[0]?.textContent.trim()??null,'a faixa documental');
+    orfas(rota,doc,new Set(marcas));
     continue;
   }
   /* Uma página com a marca e sem uma data impressa é a caixa das datas por

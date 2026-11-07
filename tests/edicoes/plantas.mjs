@@ -1,4 +1,3 @@
-import {mudancasNoManifesto} from '../../scripts/edicoes-linha-conferir.mjs';
 import {fraseHtml} from './texto-html.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -15,8 +14,7 @@ const manifesto=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const paginas=new Map();
 for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao)) {
  for(const v of e.edicoes.slice(0,-1)) paginas.set(rotaAtual(e.slug,e.lang)+'/'+v.data,primeiraEdicaoServida(e.slug,e.lang,v.data));
- const mudancas=mudancasNoManifesto(e.slug,e.lang).map(m=>`<span>${m.natureza==='atualizacao'?(e.lang==='pt'?'atualizado a':'updated on'):(e.lang==='pt'?'corrigido a':'corrected on')}</span> <time data-estudo-${m.natureza} datetime="${m.data}">${m.data.split('-').reverse().join('.')}</time>`).join(' · ');
- paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}">${linhaDasEdicoes(e.slug,e.lang)} · ${mudancas}</p>`);
+ paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}">${linhaDasEdicoes(e.slug,e.lang)}</p>`);
 }
 let conta=0;
 const alvo=manifesto.edicoes.find(e=>e.primeira_edicao),rota=`/estudos/${alvo.slug}`;

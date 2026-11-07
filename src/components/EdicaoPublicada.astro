@@ -15,8 +15,8 @@ if (!documento) throw new Error(`Edição sem documento ou data: ${work.slug}/${
 ---
 <p class="estudo-publicado" data-estudo-edicao={`${work.slug}/${principal.lang}`}>
   {linha ? <Fragment set:html={linha} /> : <a data-voz={mudancas.length ? true : undefined} href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{mudancas.length ? rotulos.edicaoAtual : data ? rotulos.edicao : rotulos.edicaoPreparacao}</a>}
-  {data && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
+  {!linha && data && <><span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
   <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time></>}
-  {mudancas.map(m => <><span aria-hidden="true"> · </span><span data-voz>{m.natureza === 'atualizacao' ? rotulos.atualizado : rotulos.corrigido}</span>{' '}
+  {!linha && mudancas.map(m => <><span aria-hidden="true"> · </span><span data-voz>{m.natureza === 'atualizacao' ? rotulos.atualizado : rotulos.corrigido}</span>{' '}
   <time datetime={m.data} data-estudo-atualizacao={m.natureza === 'atualizacao' ? true : undefined} data-estudo-correcao={m.natureza === 'correcao' ? true : undefined} data-nonledger="data-editorial" data-data-origem="edicoes.data">{dataDaCasa(m.data)}</time></>)}
 </p>

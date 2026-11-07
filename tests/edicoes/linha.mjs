@@ -19,14 +19,14 @@ for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
  planta('edicao-omitida',root,r=>r.querySelector('[data-edicoes-item]').remove(),conferir);
  const correcao=e.edicoes.findIndex((v,i)=>i>0&&v.natureza===undefined);
  if(correcao>0){
-  planta('natureza-trocada',root,r=>{const el=r.querySelectorAll('[data-edicoes-item]')[correcao].querySelector('[data-voz]');el.set_content(el.textContent.replace(e.lang==='pt'?'correção':'correction',e.lang==='pt'?'atualização':'update'));},conferir);
-  planta('data-de-correcao-como-atualizacao',root,r=>{const el=r.querySelector('[data-estudo-correcao]');el.removeAttribute('data-estudo-correcao');el.setAttribute('data-estudo-atualizacao','');const ns=el.parentNode.childNodes;const antes=ns.slice(0,ns.indexOf(el)).findLast(n=>n.nodeType===1);antes.set_content(e.lang==='pt'?'atualizado a':'updated on');},conferir);
+  planta('natureza-trocada',root,r=>{const el=r.querySelectorAll('[data-edicao-lista-data]')[correcao].closest('[data-edicoes-item]').querySelector('[data-voz]');el.set_content(el.textContent.replace(e.lang==='pt'?'corrigido a':'corrected on',e.lang==='pt'?'atualizado a':'updated on'));},conferir);
+  planta('data-de-correcao-como-atualizacao',root,r=>{const el=r.querySelector('[data-estudo-correcao]');el.removeAttribute('data-estudo-correcao');el.setAttribute('data-estudo-atualizacao','');const ns=el.parentNode.parentNode.childNodes;const antes=ns.slice(0,ns.indexOf(el.parentNode)).findLast(n=>n.nodeType===1);antes.set_content(e.lang==='pt'?'atualizado a':'updated on');},conferir);
  }
  for(const [i,rota] of rotasNoManifesto(e.slug,e.lang).entries()){
   const doc=ler(rota),data=e.edicoes[i].data,confere=r=>conferirFaixaDaVersao(r,manifestoEd2,e.slug,e.lang,data);
   assert.deepEqual(confere(doc),[]);controlos++;
   planta('edicao-omitida',doc,r=>r.querySelector('[data-edicoes-item]').remove(),confere);
-  if(correcao>0)planta('natureza-trocada',doc,r=>{const el=r.querySelectorAll('[data-edicoes-item]')[correcao].querySelector('[data-voz]');el.set_content(el.textContent.replace(e.lang==='pt'?'correção':'correction',e.lang==='pt'?'atualização':'update'));},confere);
+  if(correcao>0)planta('natureza-trocada',doc,r=>{const el=r.querySelectorAll('[data-edicao-lista-data]')[correcao].closest('[data-edicoes-item]').querySelector('[data-voz]');el.set_content(el.textContent.replace(e.lang==='pt'?'corrigido a':'corrected on',e.lang==='pt'?'atualizado a':'updated on'));},confere);
   planta('corrente-com-porta',doc,r=>r.querySelector('[aria-current="page"]').set_content(`<a href="${rota}">indevida</a>`),confere);
  }
 }

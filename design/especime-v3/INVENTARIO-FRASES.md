@@ -5407,18 +5407,18 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 | --- | --- | --- | --- | --- |
 | conteudo | · · publicado a · atualizado a | ed1-f | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
 | conteudo | · · published on · updated on | ed1-f | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
-| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 30.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Edição atual, de 30.10.2026. A primeira edição é de 01.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | First edition, published on 01.10.2026. The current edition is from 30.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Current edition, from 30.10.2026. The first edition is from 01.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Primeira edição, publicada a 21.10.2026. A edição atual é de 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Edição atual, de 02.11.2026. A primeira edição é de 21.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | First edition, published on 21.10.2026. The current edition is from 02.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Current edition, from 02.11.2026. The first edition is from 21.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Primeira edição, publicada a 29.10.2026. A edição atual é de 03.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Edição atual, de 03.11.2026. A primeira edição é de 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | First edition, published on 29.10.2026. The current edition is from 03.11.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | Current edition, from 03.11.2026. The first edition is from 29.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 30.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Edição atual, de 30.10.2026. A primeira edição é de 01.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | First edition, published on 01.10.2026. The current edition is from 30.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Current edition, from 30.10.2026. The first edition is from 01.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Primeira edição, publicada a 21.10.2026. A edição atual é de 02.11.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Edição atual, de 02.11.2026. A primeira edição é de 21.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | First edition, published on 21.10.2026. The current edition is from 02.11.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Current edition, from 02.11.2026. The first edition is from 21.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Primeira edição, publicada a 29.10.2026. A edição atual é de 03.11.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Edição atual, de 03.11.2026. A primeira edição é de 29.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | First edition, published on 29.10.2026. The current edition is from 03.11.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Current edition, from 03.11.2026. The first edition is from 29.10.2026. | ed1-f | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 
 ## OG1-E F: relatos da cronologia, 03.11.2026
 
@@ -5506,16 +5506,16 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 | conteudo | Edição de 03.11.2026 | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Edição atual | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Primeira edição | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Edição de 03.11.2026. A edição atual é de 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Edição atual, de 06.11.2026. A primeira edição é de 01.10.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Edição de 03.11.2026. A edição atual é de 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Edição atual, de 06.11.2026. A primeira edição é de 01.10.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara &#39;s notes names. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Edition of 03.11.2026 | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Current edition | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | First edition | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | First edition, published on 01.10.2026. The current edition is from 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Edition of 03.11.2026. The current edition is from 06.11.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Current edition, from 06.11.2026. The first edition is from 01.10.2026. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | First edition, published on 01.10.2026. The current edition is from 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Edition of 03.11.2026. The current edition is from 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | Current edition, from 06.11.2026. The first edition is from 01.10.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 
 ### Frases autorizadas no documento
 
@@ -5528,18 +5528,18 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Edições: | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | (primeira) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | Edições: | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | (primeira) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 30.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | (correção, atual) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (correção, atual) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 01.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | Editions: | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | (first) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | (correction, current) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | Editions: | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | (first) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
+| conteudo | (correction, current) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 03.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | (atualização) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (atualização) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 06.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
-| conteudo | (update) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (update) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 02.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
 | conteudo | 21.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
 | conteudo | 29.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
@@ -5555,3 +5555,16 @@ ED2 B: a linha completa das edições é uma composição das palavras já decla
 | --- | --- | --- | --- | --- |
 | conteudo | A fonte publica «N.d.» em vez de um valor. | nd1 | viva | Mandato ND1, §1.2: frase literal no lugar da unidade, conferida em cada recibo marcado. |
 | conteudo | The source publishes « N.d. » instead of a value. | nd1 | viva | Adenda A à ND1: forma lida pela régua, segundo a convenção do bloco `pequenas-5` (29.08.2026), «O ESPAÇO ANTES DOS DOIS PONTOS NA FRASE DA LEI É A RÉGUA A LER, E NÃO A PÁGINA A ESCREVER». A página mantém a frase literal e a marca em português. |
+
+## ED3: uma linha, cada data uma vez
+
+As formas completas do cabeçalho e da faixa são geradas do manifesto e da publicação declarada em `scripts/voz-edicoes.mjs`, com a régua independente em `scripts/edicoes-linha-conferir.mjs`. A primeira edição guardada só se junta à publicação quando as datas coincidem. A forma com datas diferentes fica no repertório quando os dados a exigirem.
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | (atual) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
+| conteudo | (esta edição) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
+| conteudo | (atual, esta edição) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
+| conteudo | (current) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
+| conteudo | (this edition) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
+| conteudo | (current, this edition) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
