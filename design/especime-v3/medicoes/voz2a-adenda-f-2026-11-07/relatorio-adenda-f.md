@@ -1,6 +1,6 @@
 # VOZ-2A: fecho da adenda F
 
-Estado: conferências finais em curso. O conteúdo do motor está no commit `aee60173990d1c645719f782c47b14f65ee0fff5`; o fecho dos portões do sítio e do motor será acrescentado a este relatório.
+Estado: paragem obrigatória nas V182, V195 e V040. O sítio está comitado em `909e5acca`, com build completo a 0; o motor permanece em `aee60173990d1c645719f782c47b14f65ee0fff5`, com core.gate a 1. Não se declara a VOZ-2A concluída.
 
 ## Método e teto L1
 
@@ -75,29 +75,96 @@ node design/especime-v3/medicoes/voz2a-2026-11-07/medir-classe-adenda-a.mjs <tem
 node design/especime-v3/medicoes/voz2a-2026-11-07/medir-classe-adenda-a.mjs <temporario>/depois.json
 ```
 
-As dez frases da adenda A desta metade, com a V194 corrigida pela adenda B, estão transcritas em [frases-do-dist.md](../voz2a-2026-11-07/frases-do-dist.md). As outras onze pertencem à VOZ-2B. Três reescritas por língua, copiadas do dist:
+As dez frases da adenda A desta metade, com a V194 corrigida pela adenda B, estão transcritas em [frases-do-dist.md](../voz2a-2026-11-07/frases-do-dist.md). As outras onze pertencem à VOZ-2B. Três reescritas por língua, copiadas do dist final:
 
 **V164 (pt)**
 
 A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram um padrão: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não é recebido. Que este padrão explique a queda é uma inferência.
 
-**V176 (pt)**
-
-A execução da receita caiu de 96%fonte · Município de Évora em 2021 para 61,44%fonte · Município de Évora em 2025, e as próprias contas mostram um padrão: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não é recebido. Que este padrão explique a queda é uma inferência.
-
 **V182 (pt)**
 
 Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência).
+
+**V194 (pt)**
+
+O relatório de 2015 traz 48,1%, um fundo mais fundo, um ano depois das tranches do resgate, pelo que os colapsos de execução já seguiram antes as crises de dívida de Évora (inferência; o valor é do próprio relatório de 2015).
 
 **V043 (en)**
 
 Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show a pattern: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in. That this pattern explains the fall is an inference.
 
-**V053 (en)**
-
-Revenue execution fell from 96%source · Município de Évora in 2021 to 61.44%source · Município de Évora in 2025, and the accounts themselves show a pattern: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in. That this pattern explains the fall is an inference.
-
 **V057 (en)**
 
 The two registers use different names, and neither source states that they are the same entity. The contract objects themselves show that they are one body (inference).
 
+**V064 (en)**
+
+The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality (the university, the health service, housing bodies, national agencies), and most of the part that is the Câmara's to spend has yet to arrive (inference).
+
+## Impedimento do motor e ponto de retoma
+
+O core.gate executado fora da sandbox encontrou dez recusas de asserções, as mesmas cinco superfícies em Markdown e HTML. São três frases exatamente prescritas:
+
+| Frase | Quantificador sem cobertura na frase nova | Estudos afetados |
+| --- | --- | --- |
+| V182 | nenhuma | 04 pt e composição 18 pt |
+| V195 | todos os números | 07 pt |
+| V040 | none | 14 en e composição 19 en |
+
+**V182**
+
+Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência).
+
+**V195**
+
+Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte).
+
+**V040**
+
+The municipal documents read are forecasts; none of them is an execution account
+
+A prova [assercao-pendente.json](assercao-pendente.json) liga cada quantificador ao campo nova da lista e à superfície do motor. `diagnosticar-assercao.py <motor>` reproduz a localização sem escrever nos livros. A regra está em `core/assertions.py:208`: cada ocorrência de um quantificador tem de caber numa citação declarada ou numa dispensa expressa. Os limites existentes são zero asserções não declaradas.
+
+As adendas D e E autorizam apenas as mudanças de livro já conferidas, não as declarações destas três frases. Acrescentar asserções, dispensas ou novas citações para as cobrir ultrapassaria essa autorização; alterar os campos nova deixaria de aplicar o texto prescrito. Por isso a passagem para aqui. Nenhum livro, nenhuma frase prescrita e nenhuma régua do motor foram alterados nesta adenda.
+
+O motor também recusou `publisher.export_records_test`: `R3(04) setup: the delivered edition has no lede to doctor`. O ensaio pressupõe uma lede no estudo 04, que as retiradas autorizadas deixaram de fornecer. Essa planta ficou por adaptar, sem reduzir a proteção que ela testa.
+
+## Portões e pendências do sítio
+
+| Corrida | Código |
+| --- | ---: |
+| build completo | 0 |
+| verify integral | 1 |
+| typecheck no escrivão | 0 |
+| core.gate no escrivão | 1 |
+| check:voz isolado | 0 |
+| check:lugar isolado | 0 |
+| check:edicoes isolado | 0 |
+| check:registo isolado | 0 |
+| check:datas isolado | 0 |
+| check:discussao isolado | 0 |
+| typecheck isolado | 0 |
+| Plantas VOZ-2A | 0 |
+| Planta L1, ensaio que exige a recusa | 0 |
+| Diferença autorizada dos livros | 0 |
+| Integridade de arquivos e referências | 0 |
+| Frases novas e paridade dos números retirados | 0 |
+| Localização das asserções pendentes | 0 |
+| Contagens antes e depois e extração do dist final | 0 |
+
+A planta L1 provoca código 1 ao repor as ligações antigas, com 3481 páginas contra o teto 3479. O ensaio dá 0 porque a mesma régua detetou ambas as páginas, e o dist ficou intacto.
+
+O verify terminou com quatro falhas:
+
+- `check:alvos`: a planta de disposição exige sempre um dossiê nas novidades, mas as cinco entradas reais são agora atualizações de estudos.
+- `check:primeira`: uma planta de listagens tenta retirar das novidades o dossiê que já está na secção seguinte.
+- `check:dossies`: a planta da voz procura a forma de novidade do dossiê numa página onde está a forma de lista.
+- `check:moldura`: C1 encontrou dois nós graves de contraste em 116 passagens. O registo não identifica os seletores ou documentos desses dois nós; a localização continua por fazer. Os limites de contraste não mudaram.
+
+Ficaram preparados, mas não aplicados, dois guiões temporários: `<temporario>/voz2f-ajustar-alvos.py` adapta os três conjuntos de plantas, conservando os controlos reais e ensaiando explicitamente a forma de dossiê nas novidades; `<temporario>/voz2f-preparar-diagnostico.py` acrescenta seletores ao diagnóstico de contraste e um perfil limitado às quatro conferências que falharam. As sete cópias de ficheiros passaram o ensaio de aplicação e de sintaxe. A paragem do motor impediu aplicar estas alterações e correr o navegador; não há um resultado verde delas. Nenhuma patch foi acrescentada ao repositório.
+
+Retoma: decidir primeiro como declarar as V182, V195 e V040 nos livros, preservando o texto e as réguas; adaptar a planta R3(04); depois aplicar e conferir os ajustes dos ensaios do sítio, localizar o contraste e repetir apenas as conferências afetadas. A corrida integral desta passagem não foi repetida. Não houve capturas.
+
+O core.gate demorou 795 segundos, medidos entre motor.inicio e motor.fim. Corridas isoladas por curto.sh: 17; corridas integrais pelo escrivão: 1; corridas seletivas: 0. Os códigos e os registos estão em [portoes](portoes).
+
+Chamadas de ferramentas: 77 chamadas de orquestração na contagem manual desta passagem, incluindo a verificação final dos commits. Houve também um ensaio de aplicação e sintaxe em sete cópias temporárias. A contagem de tokens não foi exposta.
