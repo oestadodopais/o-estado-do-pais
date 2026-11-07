@@ -35,7 +35,11 @@ export function conferirRecibo(html, c, lang) {
   const valor = root.querySelector('.linha-valor');
   if (!valor || valor.querySelector('[data-linha-campo="unit"], .linha-valor-unidade')) erros.push('ND1 unidade no valor do recibo');
   const frase = valor?.querySelector('[data-nd1-ausencia]');
-  const esperada = lang === 'pt' ? `A fonte publica «${c.value}» em vez de um valor.` : `The source publishes «${c.value}» instead of a value.`;
+  // A natureza vem da linha do livro, independentemente do renderizador.
+  const calculada = Array.isArray(c.derived_from) && c.derived_from.length > 0;
+  const esperada = calculada
+    ? (lang === 'pt' ? `Não se calcula: a fonte publica «${c.value}» nos valores de que depende.` : `Not calculated: the source publishes «${c.value}» for the values it depends on.`)
+    : (lang === 'pt' ? `A fonte publica «${c.value}» em vez de um valor.` : `The source publishes «${c.value}» instead of a value.`);
   if (!frase || frase.textContent !== esperada) erros.push('ND1 frase ausente ou diferente');
   if (lang === 'en' && frase?.querySelector('[lang="pt-PT"]')?.textContent !== c.value) erros.push('ND1 marca sem língua portuguesa');
   return erros;

@@ -840,7 +840,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           texto do título era «175pessoas»: um leitor de ecrã e quem copia o
           título liam uma palavra só. O espaço escreve-se aqui, e a célula do
           `gate:html` exige-o em todas as páginas de linha. */}
-      <Fragment slot="sufixo">{marcaDeAusencia && <>{' '}<span class="linha-valor-ausencia" data-nd1-ausencia data-voz>{lang === 'pt' ? <>A fonte publica «{claim.value}» em vez de um valor.</> : <>The source publishes «<span lang="pt-PT">{claim.value}</span>» instead of a value.</>}</span></>}{!marcaDeAusencia && !unidadeNoValor && !(claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.unit === 'data') && !textoDocumentalConferido(claim) && <>{' '}
+      <Fragment slot="sufixo">{marcaDeAusencia && <>{' '}<span class="linha-valor-ausencia" data-nd1-ausencia data-voz>{derivada
+        ? (lang === 'pt' ? <>Não se calcula: a fonte publica «{claim.value}» nos valores de que depende.</> : <>Not calculated: the source publishes «<span lang="pt-PT">{claim.value}</span>» for the values it depends on.</>)
+        : (lang === 'pt' ? <>A fonte publica «{claim.value}» em vez de um valor.</> : <>The source publishes «<span lang="pt-PT">{claim.value}</span>» instead of a value.</>)
+      }</span></>}{!marcaDeAusencia && !unidadeNoValor && !(claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.unit === 'data') && !textoDocumentalConferido(claim) && <>{' '}
       <CampoDaLinha
         id={id}
         campo="unit"

@@ -10,7 +10,9 @@ import { conferirLinhas, conferirRecibo, marcaSeguidaDeUnidade, medirDist, regua
 const linhas = allClaims(), dist = process.env.OEDP_DIST || 'dist';
 const c = linhas.find(c => eMarcaDeAusencia(c.value) && c.unit === 'dias');
 assert(c, 'ND1: falta o controlo com marca e unidade dias');
-const html = lang => fs.readFileSync(`${dist}${caminhoDaLinha(c.id, lang)}/index.html`, 'utf8');
+const calculada = linhas.find(c => c.id === 'penedono-indice-de-divida-2024');
+assert(calculada?.derived_from?.length && eMarcaDeAusencia(calculada.value), 'ND1 B: falta o controlo calculado com marca');
+const html = (lang, linha = c) => fs.readFileSync(`${dist}${caminhoDaLinha(linha.id, lang)}/index.html`, 'utf8');
 const regua = reguaDasUnidades(linhas);
 const plantas = {
   titulo() {
@@ -31,6 +33,13 @@ const plantas = {
   marca() {
     return conferirLinhas([...linhas, { ...c, id: 'nd1-linha-de-teste', value: 'n.d.' }]);
   },
+};
+for (const lang of ['pt', 'en']) plantas[`fonte-na-calculada-${lang}`] = () => {
+  const root = parse(html(lang, calculada));
+  root.querySelector('[data-nd1-ausencia]').set_content(lang === 'pt'
+    ? `A fonte publica «${calculada.value}» em vez de um valor.`
+    : `The source publishes «<span lang="pt-PT">${calculada.value}</span>» instead of a value.`);
+  return conferirRecibo(root.toString(), calculada, lang);
 };
 const iPlanta = process.argv.indexOf('--planta');
 if (iPlanta !== -1) {
@@ -66,18 +75,19 @@ const provas = Object.keys(plantas).map(nome => {
   assert(resultado.erros.length > 0);
   return resultado;
 });
-const recibos = ['pt', 'en'].map(lang => {
-  const root = parse(html(lang));
-  return { lang, rota: caminhoDaLinha(c.id, lang), titulo: root.querySelector('title').textContent,
+const copiarRecibos = linha => ['pt', 'en'].map(lang => {
+  const root = parse(html(lang, linha));
+  return { lang, rota: caminhoDaLinha(linha.id, lang), titulo: root.querySelector('title').textContent,
     valor: root.querySelector('.linha-valor').textContent.trim(),
     fraseHtml: root.querySelector('[data-nd1-ausencia]').outerHTML,
     excertoParaCitar: root.querySelector('[data-incorporar-codigo]').textContent };
 });
-const medidas = { depois, plantas: provas, recibos };
+const recibos = copiarRecibos(c), recibosCalculados = copiarRecibos(calculada);
+const medidas = { depois, plantas: provas, recibos, recibosCalculados };
 const iAntes = process.argv.indexOf('--antes');
 if (iAntes !== -1) medidas.antes = JSON.parse(fs.readFileSync(process.argv[iAntes + 1], 'utf8'));
 const iMedidas = process.argv.indexOf('--medidas');
 if (iMedidas !== -1) fs.writeFileSync(process.argv[iMedidas + 1], JSON.stringify(medidas, null, 2) + '\n');
 console.log(JSON.stringify({ antes: medidas.antes?.paginasComUnidade.length, depois: depois.paginasComUnidade.length,
   paginas: depois.paginas, recibos: depois.recibos, plantas: provas.map(({ planta, codigo }) => ({ planta, codigo })) }));
-if (iMedidas !== -1) for (const recibo of recibos) console.log(JSON.stringify(recibo));
+if (iMedidas !== -1) for (const recibo of [...recibos, ...recibosCalculados]) console.log(JSON.stringify(recibo));

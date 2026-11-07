@@ -5568,3 +5568,10 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 | conteudo | (current) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
 | conteudo | (this edition) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
 | conteudo | (current, this edition) | ed3 | viva | ED3 §1: estado da edição, conferido contra o manifesto e a rota. |
+
+## ND1 B: ausência nos valores de que depende uma linha calculada
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Não se calcula: a fonte publica «N.d.» nos valores de que depende. | nd1-b | viva | Adenda B à ND1, §1: frase literal para uma marca numa linha com `derived_from`. |
+| conteudo | Not calculated: the source publishes « N.d. » for the values it depends on. | nd1-b | viva | Adenda B à ND1, §1, na forma lida pela régua segundo a adenda A e a convenção `pequenas-5`. A página conserva a marca colada às aspas e em português. |

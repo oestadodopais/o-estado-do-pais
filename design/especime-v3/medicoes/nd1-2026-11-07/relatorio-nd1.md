@@ -1,5 +1,7 @@
 # ND1: a marca de ausência da fonte
 
+> Relatório histórico da ND1 e da adenda A. A atribuição à fonte no recibo da linha calculada foi corrigida pela [adenda B](relatorio-nd1-b.md); as cópias abaixo documentam a construção anterior a essa correção.
+
 O build completo da adenda A terminou com código 0. A linha inglesa do inventário passou a «The source publishes « N.d. » instead of a value.», segundo a forma lida pela régua e a convenção do bloco `pequenas-5`, de 29.08.2026. A página mantém a frase literal com a marca colada às aspas e marcada como português. A régua não mudou.
 
 A paragem inicial pelo §3 ficou resolvida: o portão da voz reconheceu a linha inglesa. O histórico da falha e dos códigos da passagem inicial está em `medidas-nd1.json`, no campo `passagem_inicial`.

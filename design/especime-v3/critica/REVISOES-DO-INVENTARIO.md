@@ -971,3 +971,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | nd1 | Duas frases de ausência nos recibos | por ler | Codex, 07.11.2026: frases literais do mandato ND1, §1.2; conferência em `tests/linha/ausencia-nd1.mjs`; leitura cruzada reservada ao lugar de direção. |
 
 | ed3 | Linha única de publicação e edições, estados da edição e retirada das frases redundantes | por ler | Codex, 07.11.2026: formas do mandato ED3 §1, conferidas contra o manifesto, a publicação declarada e o HTML construído. Leitura cruzada reservada ao lugar de direção. |
+
+| nd1-b | Duas frases para a ausência numa linha calculada | por ler | Codex, 07.11.2026: frases literais da adenda B à ND1, conferidas pela natureza da linha no livro-razão. Leitura cruzada reservada ao lugar de direção. |

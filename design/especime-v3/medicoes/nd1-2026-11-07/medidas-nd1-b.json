@@ -1,0 +1,153 @@
+{
+  "depois": {
+    "paginas": 9825,
+    "paginasComMarca": 44,
+    "recibos": 24,
+    "paginasComUnidade": [],
+    "erros": []
+  },
+  "plantas": [
+    {
+      "planta": "titulo",
+      "codigo": 1,
+      "erros": [
+        "ND1 marca seguida de unidade no título"
+      ]
+    },
+    {
+      "planta": "unidade",
+      "codigo": 1,
+      "erros": [
+        "ND1 unidade no valor do recibo"
+      ]
+    },
+    {
+      "planta": "frase",
+      "codigo": 1,
+      "erros": [
+        "ND1 frase ausente ou diferente",
+        "ND1 marca sem língua portuguesa"
+      ]
+    },
+    {
+      "planta": "marca",
+      "codigo": 1,
+      "erros": [
+        "ND1 marca desconhecida: nd1-linha-de-teste (n.d.)"
+      ]
+    },
+    {
+      "planta": "fonte-na-calculada-pt",
+      "codigo": 1,
+      "erros": [
+        "ND1 frase ausente ou diferente"
+      ]
+    },
+    {
+      "planta": "fonte-na-calculada-en",
+      "codigo": 1,
+      "erros": [
+        "ND1 frase ausente ou diferente"
+      ]
+    }
+  ],
+  "recibos": [
+    {
+      "lang": "pt",
+      "rota": "/livro-razao/aljezur-prazo-medio-de-pagamento-2025-12",
+      "titulo": "N.d. · Números e fontes · O Estado do País",
+      "valor": "N.d. A fonte publica «N.d.» em vez de um valor.",
+      "fraseHtml": "<span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>A fonte publica «N.d.» em vez de um valor.</span>",
+      "excertoParaCitar": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"aljezur-prazo-medio-de-pagamento-2025-12\" data-oedp-valor=\"N.d.\" data-oedp-lido=\"2026-08-26\"><a href=\"https://oestadodopaís.pt/livro-razao/aljezur-prazo-medio-de-pagamento-2025-12\">Prazo médio de pagamento · Aljezur, dezembro de 2025: N.d.</a> · <span lang=\"pt-PT\">Direção-Geral das Autarquias Locais (DGAL)</span>, lido a 26.08.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+    },
+    {
+      "lang": "en",
+      "rota": "/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12",
+      "titulo": "N.d. · Numbers and sources · O Estado do País",
+      "valor": "N.d. The source publishes «N.d.» instead of a value.",
+      "fraseHtml": "<span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>The source publishes «<span lang=\"pt-PT\">N.d.</span>» instead of a value.</span>",
+      "excertoParaCitar": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"aljezur-prazo-medio-de-pagamento-2025-12\" data-oedp-valor=\"N.d.\" data-oedp-lido=\"2026-08-26\"><a href=\"https://oestadodopaís.pt/en/ledger/aljezur-prazo-medio-de-pagamento-2025-12\">Average payment time · Aljezur, December 2025: N.d.</a> · <span lang=\"pt-PT\">Direção-Geral das Autarquias Locais (DGAL)</span>, read on 26.08.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+    }
+  ],
+  "recibosCalculados": [
+    {
+      "lang": "pt",
+      "rota": "/livro-razao/penedono-indice-de-divida-2024",
+      "titulo": "N.d. · Números e fontes · O Estado do País",
+      "valor": "N.d. Não se calcula: a fonte publica «N.d.» nos valores de que depende.",
+      "fraseHtml": "<span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>Não se calcula: a fonte publica «N.d.» nos valores de que depende.</span>",
+      "excertoParaCitar": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"penedono-indice-de-divida-2024\" data-oedp-valor=\"N.d.\" data-oedp-lido=\"\"><a href=\"https://oestadodopaís.pt/livro-razao/penedono-indice-de-divida-2024\">Índice de dívida · Penedono, 2024: N.d.</a> · <span lang=\"pt-PT\">calculado por este projeto</span> · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+    },
+    {
+      "lang": "en",
+      "rota": "/en/ledger/penedono-indice-de-divida-2024",
+      "titulo": "N.d. · Numbers and sources · O Estado do País",
+      "valor": "N.d. Not calculated: the source publishes «N.d.» for the values it depends on.",
+      "fraseHtml": "<span class=\"linha-valor-ausencia\" data-nd1-ausencia data-voz>Not calculated: the source publishes «<span lang=\"pt-PT\">N.d.</span>» for the values it depends on.</span>",
+      "excertoParaCitar": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"penedono-indice-de-divida-2024\" data-oedp-valor=\"N.d.\" data-oedp-lido=\"\"><a href=\"https://oestadodopaís.pt/en/ledger/penedono-indice-de-divida-2024\">Debt index · Penedono, 2024: N.d.</a> · <span lang=\"en\">calculated by this project</span> · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+    }
+  ],
+  "antes": {
+    "paginas": 9825,
+    "paginasComMarca": 44,
+    "recibos": 24,
+    "paginasComUnidade": [],
+    "erros": [
+      "/livro-razao/penedono-indice-de-divida-2024: ND1 frase ausente ou diferente",
+      "/en/ledger/penedono-indice-de-divida-2024: ND1 frase ausente ou diferente"
+    ]
+  },
+  "conferencias": {
+    "build": 0,
+    "typecheck": 0,
+    "nd1": 0,
+    "gate:html": 0,
+    "check:voz": 0,
+    "check:lingua": 0
+  },
+  "comandos_npm_no_build": [
+    "build",
+    "build:conteudo",
+    "mapa:unidades",
+    "ledger:check",
+    "check:registo",
+    "check:cruzamento",
+    "check:documentos",
+    "stamp:version",
+    "cartoes",
+    "gate:html",
+    "check:nd1",
+    "check:edicoes",
+    "check:selos",
+    "check:datas",
+    "check:cadeia",
+    "check:dados",
+    "check:mapa",
+    "check:regioes",
+    "check:areas",
+    "check:formas",
+    "check:lugares",
+    "check:pais",
+    "check:voz",
+    "check:nomes",
+    "check:lingua",
+    "check:formato",
+    "check:navegacao",
+    "sinais",
+    "check:discussao"
+  ],
+  "linhas_com_marca": {
+    "total": 12,
+    "da_fonte": 11,
+    "calculadas": [
+      "penedono-indice-de-divida-2024"
+    ]
+  },
+  "orcamento": {
+    "chamadas_ate_fecho_do_relatorio": 18,
+    "corridas_por_curto": 4,
+    "comandos_npm_no_build": 29,
+    "processos_das_plantas_nd1": 12,
+    "corridas_inteiras_dos_portoes": 0
+  }
+}
