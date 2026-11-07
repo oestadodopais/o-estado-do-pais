@@ -1578,7 +1578,20 @@
   "classe": "REESCREVE",
   "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números deste documento: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência; a tabela é da fonte, a ligação é nossa).",
   "razao": "tira «a ligação é nossa» e «deste documento»",
-  "nova": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
+  "nova": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
+ },
+ {
+  "id": "V308",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-orcamentado-pago-devido-2025/document",
+   "/en/studies/evora-orcamentado-pago-devido-2025"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Ten years of paying down the rescue debt is the context for every number in this document:",
+  "nova": "Ten years of paying down the rescue debt is the context for these numbers:",
+  "razao": "o par inglês da V195 (o documento a falar de si e um «todos» sem asserção), acrescentado a 07.11.2026 pela adenda G"
  },
  {
   "id": "V196",
