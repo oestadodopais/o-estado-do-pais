@@ -1,0 +1,153 @@
+{
+  "estudos": 4,
+  "resultado": [
+    {
+      "slug": "evora-contas-da-camara-2010-2025",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "manifesto": 2,
+          "cabecalho": 2,
+          "faixas": [
+            {
+              "data": "2026-10-01",
+              "portas": 1
+            },
+            {
+              "data": "2026-10-30",
+              "portas": 1
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "manifesto": 2,
+          "cabecalho": 2,
+          "faixas": [
+            {
+              "data": "2026-10-01",
+              "portas": 1
+            },
+            {
+              "data": "2026-10-30",
+              "portas": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "manifesto": 3,
+          "cabecalho": 3,
+          "faixas": [
+            {
+              "data": "2026-10-01",
+              "portas": 2
+            },
+            {
+              "data": "2026-11-03",
+              "portas": 2
+            },
+            {
+              "data": "2026-11-06",
+              "portas": 2
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "manifesto": 3,
+          "cabecalho": 3,
+          "faixas": [
+            {
+              "data": "2026-10-01",
+              "portas": 2
+            },
+            {
+              "data": "2026-11-03",
+              "portas": 2
+            },
+            {
+              "data": "2026-11-06",
+              "portas": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "orcamento-2027-o-que-muda-e-para-quem",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "manifesto": 2,
+          "cabecalho": 2,
+          "faixas": [
+            {
+              "data": "2026-10-21",
+              "portas": 1
+            },
+            {
+              "data": "2026-11-02",
+              "portas": 1
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "manifesto": 2,
+          "cabecalho": 2,
+          "faixas": [
+            {
+              "data": "2026-10-21",
+              "portas": 1
+            },
+            {
+              "data": "2026-11-02",
+              "portas": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a-casa-em-portugal-e-na-europa",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "manifesto": 2,
+          "cabecalho": 2,
+          "faixas": [
+            {
+              "data": "2026-10-29",
+              "portas": 1
+            },
+            {
+              "data": "2026-11-03",
+              "portas": 1
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "manifesto": 2,
+          "cabecalho": 2,
+          "faixas": [
+            {
+              "data": "2026-10-29",
+              "portas": 1
+            },
+            {
+              "data": "2026-11-03",
+              "portas": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

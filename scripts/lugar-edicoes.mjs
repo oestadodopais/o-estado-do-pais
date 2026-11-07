@@ -1,6 +1,6 @@
 /** ED1-D: as portas atuais e históricas têm contas e destinos próprios. */
-export function conferirPortasDaEdicao(portas, atual, primeira) {
-  const esperadas=primeira?[primeira,atual]:[atual];
+export function conferirPortasDaEdicao(portas, atual, primeira, todas=null) {
+  const esperadas=todas??(primeira?[primeira,atual]:[atual]);
   const erros=[];
   if(portas.length!==esperadas.length||portas.some((p,i)=>p!==esperadas[i]))erros.push('faltam as portas das edições nos destinos e na ordem declarados');
   return {edicoes:portas.filter(p=>p===atual).length,primeiras_edicoes:portas.filter(p=>primeira&&p===primeira).length,erros};

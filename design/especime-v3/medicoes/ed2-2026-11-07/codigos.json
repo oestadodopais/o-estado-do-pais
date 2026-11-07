@@ -1,0 +1,14 @@
+{
+  "check:edicoes": 0,
+  "check:voz": 0,
+  "check:datas": 0,
+  "check:lugar": 0,
+  "typecheck": 0,
+  "check:cabeca": 1,
+  "capturas": 0,
+  "planta_edicao_omitida": 1,
+  "planta_natureza_trocada": 1,
+  "planta_data_de_correcao_como_atualizacao": 1,
+  "controlo_das_tres_plantas": 0,
+  "build": 0
+}

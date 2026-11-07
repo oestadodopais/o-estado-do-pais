@@ -23,7 +23,7 @@ for(const lang of ['pt','en']){
 for(const e of manifestoDasEdicoes().edicoes)for(const v of versoesDaEdicao(e.slug,e.lang)){
  const faixa=faixaDaVersao(e.slug,e.lang,v.data);if(!faixa)continue;
  const root=parse(`<body><main><p>Texto da obra que não pertence ao inventário.</p></main>${faixa}</body>`);
- const frases=frasesDaFaixaDocumental(root);assert.equal(frases.length,2);assert(frases.every(declarada));documentos++;controlos++;
+ const frases=frasesDaFaixaDocumental(root);const naturezas=new Set(e.edicoes.map((v,i)=>`${i===0?'primeira':v.natureza??'correcao'}${i===e.edicoes.length-1?',atual':''}`));assert.equal(frases.length,2+e.edicoes.length-1+naturezas.size);assert(frases.every(declarada));documentos++;controlos++;
  const alterada=parse(root.outerHTML);alterada.querySelector('[data-edicao-frase]').set_content('publicado a ·');
  const resultado=frasesDaFaixaDocumental(alterada);assert(resultado.includes('publicado a ·'));assert(retiradaForaDaFrase(resultado[0],'publicado a ·',FAIXAS_DE_EDICAO.get('publicado a ·')));plantas++;
  const extra=parse(root.outerHTML);extra.querySelector('[data-documento-edicao]').insertAdjacentHTML('beforeend','<p>Uma frase nova sem declaração.</p>');assert(frasesDaFaixaDocumental(extra).some(f=>!declarada(f)));plantas++;

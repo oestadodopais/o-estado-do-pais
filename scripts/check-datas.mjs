@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
+import {conferirMudancasDoCabecalho,rotasNoManifesto} from './edicoes-linha-conferir.mjs';
 import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { primeiraEdicao } from '../src/lib/edicoes.mjs';
 /**
@@ -350,20 +350,6 @@ function prendeNaPaginaDoLugar(rota, doc) {
 function prendeNaPaginaDoTrabalho(rota, slug, doc) {
   prendeEdicoesB1(rota, doc, slug);
 }
-/** EV2-F: a atualização pertence ao campo updated da edição, separado da publicação. */
-function confereAtualizacao(bloco, esperada) {
-  const marcas = bloco.querySelectorAll('[data-estudo-atualizacao]');
-  if (!esperada) return marcas.length === 0;
-  return marcas.length === 1 && marcas[0].getAttribute('datetime') === esperada &&
-    marcas[0].textContent.trim() === naFormaDaCasa(esperada);
-}
-for (const [html, esperada, aceite] of [
-  ['<p><time data-estudo-atualizacao datetime="2026-10-30">30.10.2026</time></p>', '2026-10-30', true],
-  ['<p><time data-estudo-atualizacao datetime="2026-10-01">01.10.2026</time></p>', '2026-10-30', false],
-  ['<p></p>', '2026-10-30', false],
-  ['<p><time data-estudo-atualizacao datetime="2026-10-30">30.10.2026</time></p>', null, false],
-]) assert.equal(confereAtualizacao(parse(html), esperada), aceite, 'EV2: atualização presa à edição');
-
 function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
   const presasAqui = new Set();
   const blocos = doc.querySelectorAll('[data-estudo-edicao]');
@@ -389,13 +375,10 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
     }
-    const atualizada=dataAtualizacaoDaEdicao(slug,lang,publicacaoEd1(work,principal));
-    if (slugDaPagina && !confereAtualizacao(bloco, atualizada)) {
-      falhas.push(`${rota}: a atualização impressa diverge de updated em ${slug}/${lang}.`);
-    }
+    if(slugDaPagina)falhas.push(...conferirMudancasDoCabecalho(bloco,slug,lang).map(e=>`${rota}: ${e}`));
     const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
     const esperada = slugDaPagina
-      ? (atualizada && primeiraEdicao(slug, lang)?.rota || (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`))
+      ? (rotasNoManifesto(slug,lang)[0] || (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`))
       : (linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`);
     if (porta.replace(/\/$/, '') !== esperada) falhas.push(`${rota}: a data de ${slug}/${lang} está junto da porta errada: ${porta}.`);
     const marcas = marcasDeData(bloco);

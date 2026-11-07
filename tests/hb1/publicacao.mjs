@@ -65,10 +65,10 @@ if(process.argv.includes('--html-construido')) {
   assert.deepEqual(conferirPublicacaoDeclaradaNoHtml(work,edition,entrada,pag.html),[]);
   if(edition.updated) {
    const semAtualizacao=parse(pag.html);
-   semAtualizacao.querySelector('[data-estudo-atualizacao]').remove();
+   semAtualizacao.querySelector('[data-estudo-atualizacao], [data-estudo-correcao]').remove();
    assert(conferirPublicacaoDeclaradaNoHtml(work,edition,entrada,semAtualizacao.toString()).some(e=>e.includes('atualização')),'EV2: atualização ausente passou');
    const dataTrocada=parse(pag.html);
-   dataTrocada.querySelector('[data-estudo-atualizacao]').setAttribute('datetime',edition.date);
+   dataTrocada.querySelector('[data-estudo-atualizacao], [data-estudo-correcao]').setAttribute('datetime',edition.date);
    assert(conferirPublicacaoDeclaradaNoHtml(work,edition,entrada,dataTrocada.toString()).some(e=>e.includes('atualização')),'EV2: publicação no lugar da atualização passou');
   }
   if(planta&&edition.date){

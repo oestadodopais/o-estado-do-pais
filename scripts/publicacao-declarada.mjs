@@ -1,4 +1,4 @@
-import {dataAtualizacaoDaEdicao} from '../src/lib/edicoes.mjs';
+import {conferirMudancasDoCabecalho,conferirLinhaDasEdicoes,manifestoEd2,versoesNoManifesto} from './edicoes-linha-conferir.mjs';
 /** Régua independente do resolvedor da vista. */
 import { parse } from 'node-html-parser';
 export function conferirDataDeclarada(work, edition, entrada) {
@@ -25,14 +25,11 @@ export function conferirPublicacaoDeclaradaNoHtml(work, edition, entrada, html) 
   if(erros.length)return erros;
   const faixa=root.querySelector(`[data-estudo-edicao="${work.slug}/${edition.lang}"]`);
   if(!faixa)return ['falta a faixa da edição declarada'];
-  const datas=faixa.querySelectorAll('time:not([data-estudo-atualizacao])');
-  const atualizacoes=faixa.querySelectorAll('[data-estudo-atualizacao]');
-  const atualizada=dataAtualizacaoDaEdicao(work.slug,edition.lang,edition.date);
-  if(edition.updated&&edition.updated!==atualizada)erros.push('updated diverge da história publicada');
-  if(atualizada) {
-    const iso=atualizada,forma=`${iso.slice(8)}.${iso.slice(5,7)}.${iso.slice(0,4)}`;
-    if(atualizacoes.length!==1||atualizacoes[0]?.getAttribute('datetime')!==iso||atualizacoes[0]?.textContent.trim()!==forma)erros.push('a atualização impressa não é a declarada');
-  } else if(atualizacoes.length)erros.push('a edição imprime uma atualização não declarada');
+  const datas=faixa.querySelectorAll('time:not([data-estudo-atualizacao]):not([data-estudo-correcao]):not([data-edicao-lista-data])');
+  erros.push(...conferirLinhaDasEdicoes(faixa,manifestoEd2,work.slug,edition.lang));
+  const ultima=versoesNoManifesto(work.slug,edition.lang).at(-1)?.data;
+  if(edition.updated&&edition.updated!==ultima)erros.push('updated diverge da história publicada');
+  erros.push(...conferirMudancasDoCabecalho(faixa,work.slug,edition.lang));
   let artigos=[];
   try {
     const juntar=x=>{if(Array.isArray(x))return x.flatMap(juntar);if(x?.['@graph'])return juntar(x['@graph']);return [x];};

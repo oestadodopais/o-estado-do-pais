@@ -1,0 +1,151 @@
+{
+  "cabeca": "450fdafac41f2e1d5be8b799f3d9615c360cf8a5",
+  "larguras": [
+    390
+  ],
+  "paginas": [
+    {
+      "nome": "evora-contas-da-camara-2010-2025",
+      "pt": "/estudos/evora-contas-da-camara-2010-2025/",
+      "en": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-estudo-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "evora-contas-da-camara-2010-2025-2026-10-01",
+      "pt": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+      "en": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "evora-contas-da-camara-2010-2025-2026-10-30",
+      "pt": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "en": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "evora-2027-capital-europeia-da-cultura",
+      "pt": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "en": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-estudo-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "evora-2027-capital-europeia-da-cultura-2026-10-01",
+      "pt": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "en": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "evora-2027-capital-europeia-da-cultura-2026-11-03",
+      "pt": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "en": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "evora-2027-capital-europeia-da-cultura-2026-11-06",
+      "pt": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "en": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "orcamento-2027-o-que-muda-e-para-quem",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-estudo-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "a-casa-em-portugal-e-na-europa",
+      "pt": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "en": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-estudo-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "a-casa-em-portugal-e-na-europa-2026-10-29",
+      "pt": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+      "en": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    },
+    {
+      "nome": "a-casa-em-portugal-e-na-europa-2026-11-03",
+      "pt": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+      "en": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+      "recortes": [
+        {
+          "nome": "edicoes",
+          "seletor": "[data-documento-edicao]"
+        }
+      ]
+    }
+  ]
+}

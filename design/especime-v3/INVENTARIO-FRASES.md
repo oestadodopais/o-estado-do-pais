@@ -5333,8 +5333,8 @@ As cinco passagens nas duas edições são transcrições dos registos do estudo
 | --- | --- | --- | --- | --- |
 | conteudo | atualizado a | ev2 | viva | EV2-F, 30.10.2026: rótulo da data updated da edição, conferida por check:datas. |
 | conteudo | updated on | ev2 | viva | EV2-F, 30.10.2026: rótulo da data updated da edição, conferida por check:datas. |
-| conteudo | · publicado a · atualizado a | ev2 | viva | EV2-F, 30.10.2026: forma completa da faixa depois de retiradas as duas datas, ambas conferidas contra a edição. |
-| conteudo | · published on · updated on | ev2 | viva | EV2-F, 30.10.2026: forma completa da faixa depois de retiradas as duas datas, ambas conferidas contra a edição. |
+| conteudo | · publicado a · atualizado a | ev2 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
+| conteudo | · published on · updated on | ev2 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
 ## DO4: as três colunas das novidades
 
 | Classe | Frase | Bloco | Estado | Razão |
@@ -5351,8 +5351,8 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 
 | Classe | Texto | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| navegacao | Primeira edição, tal como foi publicada | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| navegacao | First edition, as published | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | Primeira edição, tal como foi publicada | ed1 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
+| navegacao | First edition, as published | ed1 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
 | navegacao | Edição atual | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | navegacao | Current edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | navegacao | Primeira edição | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
@@ -5405,8 +5405,8 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | · · publicado a · atualizado a | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
-| conteudo | · · published on · updated on | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
+| conteudo | · · publicado a · atualizado a | ed1-f | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
+| conteudo | · · published on · updated on | ed1-f | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
 | conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 30.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
 | conteudo | Edição atual, de 30.10.2026. A primeira edição é de 01.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
 | conteudo | First edition, published on 01.10.2026. The current edition is from 30.10.2026. | ed1-f | viva | ED1-F: unidade rendida, conferida nas páginas dos documentos e dos estudos. |
@@ -5523,3 +5523,30 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 | --- | --- | --- | --- |
 | Rossio | pt | Na nota em que anunciou a abertura do concurso da requalificação, a Câmara escreveu que a obra era «apoiada por financiamento do Plano de Recuperação e Resiliência»; a nota de outubro só fala do Fundo Ambiental, e nenhuma das duas menciona o financiamento que a outra nomeia. | viva |
 | Rossio | en | In the notice announcing the tender for the works, the Câmara wrote that they were supported by Recovery and Resilience Plan funding («apoiada por financiamento do Plano de Recuperação e Resiliência»); the October notice names only the Fundo Ambiental , and neither mentions the funding the other names. | viva |
+
+## ED2: todas as edições e a natureza da mudança
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Edições: | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (primeira) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 30.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (correção, atual) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 01.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | Editions: | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (first) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (correction, current) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 03.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (atualização) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 06.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | (update) | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 02.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 21.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+| conteudo | 29.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
+
+| conteudo | corrigido a | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
+| conteudo | corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
+| conteudo | Edições: (primeira) · (correção, atual) · publicado a · corrigido a | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
+| conteudo | Edições: (primeira) · (atualização) · (correção, atual) · publicado a · atualizado a · corrigido a | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
+| conteudo | Editions: (first) · (correction, current) · published on · corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |
+| conteudo | Editions: (first) · (update) · (correction, current) · published on · updated on · corrected on | ed2 | viva | ED2: forma integral pedida no mandato, conferida contra o manifesto. |

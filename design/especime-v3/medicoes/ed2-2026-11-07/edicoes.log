@@ -1,0 +1,28 @@
+
+> o-estado-do-pais@0.1.0 check:edicoes
+> node scripts/check-edicoes.mjs && node tests/edicoes/plantas.mjs && node tests/edicoes/reguas.mjs && node tests/edicoes/contagem.mjs && node tests/edicoes/leis.mjs && node tests/edicoes/historia.mjs && node tests/edicoes/faixas.mjs && node tests/edicoes/politica.mjs && node tests/edicoes/numeros.mjs && node tests/edicoes/atualizacao.mjs && node tests/edicoes/linha.mjs
+
+ED1: 8 primeiras edições; 5 correções; 0 falhas.
+ED1 planta: controlo: passou
+ED1 planta: edição sem entrada: passou
+ED1 planta: primeira porta para o documento atual: passou
+ED1 planta: um byte da primeira edição: passou
+ED1 planta: entrada sem estudo: passou
+ED1 planta: entrada com outra data: passou
+ED1 planta: bytes servidos mudados: passou
+ED1: 67 controlos e plantas.
+ED1 réguas: 42 plantas da contagem, voz e inventário.
+ED1-A contagem: controlo e três plantas da definição e do apoio literal conferidos.
+ED1-D: controlos dos bytes de todas as primeiras edições e 17 plantas das marcas e dos bytes; partição sem mudança do texto.
+ED1-E história: 12 controlos e plantas; segunda atualização conserva a entrada anterior; ausência da testemunha é explícita.
+ED2 faixas: todas as edições guardadas e atuais conferidas; 80 plantas recusadas.
+EV3-G pt: superfície autorizada, verde 0.
+EV3-G pt: lede antiga reposta, vermelho 1.
+EV3-G en: superfície autorizada, verde 0.
+EV3-G en: lede antiga reposta, vermelho 1.
+ED1 política: cinco naturezas nos dados; história conservada; texto integral e plantas conferidos.
+ED1-E números: recomposição comum às mudanças do projeto; 27 plantas recusadas.
+EV3: 8 controlos e plantas da natureza, contagem, língua e integridade dos nomes.
+EV3 língua: 6 marcas válidas; 12 adulterações recusadas.
+EV3-I: edições guardadas sem marcas de nomes da atualização.
+ED2: 28 controlos; 79 plantas recusadas.

@@ -1,4 +1,4 @@
-import {rotaAtual,rotaPrimeira} from './edicoes-conferir.mjs';
+import {conferirLinhaDasEdicoes} from './edicoes-linha-conferir.mjs';
 const normal=s=>s.replace(/\s+/g,' ').trim(),forma=d=>d.split('-').reverse().join('.');
 export function conferirFaixaDaVersao(root,manifesto,slug,lang,data=null){
  const e=manifesto.edicoes.find(e=>e.slug===slug&&e.lang===lang),vs=e?.edicoes??[],i=data?vs.findIndex(v=>v.data===data):vs.length-1;
@@ -10,8 +10,7 @@ export function conferirFaixaDaVersao(root,manifesto,slug,lang,data=null){
  if(el.getAttribute('data-documento-edicao')!==`${slug}/${lang}/${v.data}`||el.getAttribute('lang')!==(pt?'pt-PT':'en-GB')||normal(el.querySelector('[data-edicao-frase]')?.textContent??'')!==esperado)erros.push('ED1 faixa: frase, língua ou edição incorreta');
  const datas=el.querySelectorAll('time[data-edicao-data]'),esperadas=[v.data,atual?p.data:a.data];
  if(datas.length!==2||datas.some((d,j)=>d.getAttribute('datetime')!==esperadas[j]||d.textContent!==forma(esperadas[j])))erros.push('ED1 faixa: datas incorretas');
- const portas=el.querySelectorAll('a[href]'),destino=atual?rotaPrimeira(e):rotaAtual(slug,lang),rotulo=atual?(pt?'Primeira edição, tal como foi publicada':'First edition, as published'):(pt?'Edição atual':'Current edition');
- if(portas.length!==1||portas[0].getAttribute('href')!==destino||portas[0].textContent!==rotulo)erros.push('ED1 faixa: porta incorreta');
+ erros.push(...conferirLinhaDasEdicoes(el,manifesto,slug,lang,v.data));
  const marca=root.querySelector('[data-oedp-faixa]');if(marca&&el.range[0]>marca.range[0])erros.push('ED1 faixa: não está no topo');
  return erros;
 }

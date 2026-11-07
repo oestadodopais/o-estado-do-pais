@@ -22,8 +22,27 @@ export function edicoesGuardadas(){return manifestoDasEdicoes().edicoes.flatMap(
 export function primeirasEdicoes(){return edicoesGuardadas().filter(e=>e.indice===0);}
 /** @param {string} slug @param {string} lang */
 export function primeiraEdicao(slug,lang){return primeirasEdicoes().find(e=>e.slug===slug&&e.lang===lang)??null;}
-/** @param {string} slug @param {string} lang @param {string|null} publicada */
-export function dataAtualizacaoDaEdicao(slug,lang,publicada=null){const vs=versoesDaEdicao(slug,lang),ultima=vs.at(-1);return ultima&&(vs.length>1||(publicada&&ultima.data>publicada))?ultima.data:null;}
+/** @param {string} slug @param {string} lang */
+export function mudancasDaEdicao(slug,lang){
+ const vs=versoesDaEdicao(slug,lang).slice(1);
+ return ['atualizacao','correcao'].flatMap(natureza=>{
+  const v=vs.findLast(v=>(v.natureza??'correcao')===natureza);
+  return v?[{data:v.data,natureza}]:[];
+ }).sort((a,b)=>a.data.localeCompare(b.data));
+}
+/** @param {string} slug @param {string} lang */
+export function dataAtualizacaoDaEdicao(slug,lang){return mudancasDaEdicao(slug,lang).find(v=>v.natureza==='atualizacao')?.data??null;}
+/** @param {string} slug @param {Lingua} lang @param {string|null} data */
+export function linhaDasEdicoes(slug,lang,data=null){
+ const vs=versoesDaEdicao(slug,lang),pt=lang==='pt';if(vs.length<2)return '';
+ return `<span data-edicoes-linha><span data-voz>${pt?'Edições:':'Editions:'}</span> `+vs.map(v=>{
+  if(v.natureza!==undefined&&v.natureza!=='atualizacao')throw Error(`ED2: natureza desconhecida: ${v.natureza}`);
+  const natureza=v.indice===0?(pt?'primeira':'first'):v.natureza==='atualizacao'?(pt?'atualização':'update'):(pt?'correção':'correction');
+  const dia=`<time datetime="${v.data}" data-edicao-lista-data data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(v.data)}</time>`;
+  const porta=data===v.data?`<span aria-current="page">${dia}</span>`:`<a data-edicao-porta href="${v.rota}" hreflang="${pt?'pt-PT':'en'}">${dia}</a>`;
+  return `<span data-edicoes-item>${porta} <span data-voz>(${natureza}${v.atual?(pt?', atual':', current'):''})</span></span>`;
+ }).join(' · ')+'</span>';
+}
 /** @param {string} slug @param {Lingua} lang @param {string} data */
 export function portasDaCorrecao(slug,lang,data){
  const vs=versoesDaEdicao(slug,lang),i=vs.findIndex(v=>v.data===data);
@@ -38,8 +57,7 @@ export function faixaDaVersao(slug,lang,data){
  const primeira=vs[0],atual=vs.at(-1);if(!atual)throw Error('ED1: versão atual ausente');
  const d=dataEm(data),p=dataEm(primeira.data),a=dataEm(atual.data),pt=lang==='pt';
  const frase=i===0?(pt?`Primeira edição, publicada a ${d}. A edição atual é de ${a}.`:`First edition, published on ${d}. The current edition is from ${a}.`):i===vs.length-1?(pt?`Edição atual, de ${d}. A primeira edição é de ${p}.`:`Current edition, from ${d}. The first edition is from ${p}.`):(pt?`Edição de ${d}. A edição atual é de ${a}.`:`Edition of ${d}. The current edition is from ${a}.`);
- const destino=i===vs.length-1?primeira:atual,label=i===vs.length-1?(pt?'Primeira edição, tal como foi publicada':'First edition, as published'):(pt?'Edição atual':'Current edition');
- return `<aside data-documento-edicao="${slug}/${lang}/${data}" lang="${pt?'pt-PT':'en-GB'}"><p data-edicao-frase>${frase}</p><a data-edicao-porta href="${destino.rota}">${label}</a></aside>`;
+ return `<aside data-documento-edicao="${slug}/${lang}/${data}" lang="${pt?'pt-PT':'en-GB'}"><p data-edicao-frase>${frase}</p>${linhaDasEdicoes(slug,lang,data)}</aside>`;
 }
 /** @param {string} html @param {string} slug @param {Lingua} lang @param {string} data */
 function comFaixaDaVersao(html,slug,lang,data){const faixa=faixaDaVersao(slug,lang,data);if(!faixa)return html;const marca='<div data-oedp-faixa';if(!html.includes(marca))throw Error('ED1: faixa da casa ausente');return html.replace(marca,faixa+marca);}

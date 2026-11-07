@@ -1798,8 +1798,8 @@ const RETIRADAS_DENTRO_DE_FRASE = new Map([
   // EO1: a atualização da contagem faz o índice mostrar a definição desta linha.
   // As antigas portas isoladas continuam proibidas; só se admite a definição inteira.
   ['estudos publicados', new Set([DEFINICAO_EDICOES_PT])],
-  ['Edições', new Set([DEFINICAO_EDICOES_PT])],
-  ['Editions', new Set([DEFINICAO_EDICOES_EN])],
+  ['Edições', new Set([DEFINICAO_EDICOES_PT,...FAIXAS_DE_EDICAO.get('Edições')])],
+  ['Editions', new Set([DEFINICAO_EDICOES_EN,...FAIXAS_DE_EDICAO.get('Editions')])],
   ['abaixo do valor de referência', new Set([`${LADO_ABAIXO} %.`, `${LADO_ABAIXO} − %.`, `${LADO_ABAIXO} − pp.`, `${LADO_ABAIXO} pp.`])],
   ['entre os valores de referência', new Set([`${LADO_ENTRE} − % e %.`, `${LADO_ENTRE} % e %.`])],
   [

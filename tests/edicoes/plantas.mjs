@@ -1,3 +1,4 @@
+import {mudancasNoManifesto} from '../../scripts/edicoes-linha-conferir.mjs';
 import {fraseHtml} from './texto-html.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -8,14 +9,14 @@ import {load} from 'js-yaml';
 import {parse} from 'node-html-parser';
 import {WORKS} from '../../src/data/studies.mjs';
 import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';
-import {primeiraEdicaoServida,portasDaCorrecao} from '../../src/lib/edicoes.mjs';
+import {primeiraEdicaoServida,portasDaCorrecao,linhaDasEdicoes} from '../../src/lib/edicoes.mjs';
 import {conferirEdicoes,conferirTextoHtml,rotaPrimeira,rotaAtual} from '../../scripts/edicoes-conferir.mjs';
 const manifesto=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const paginas=new Map();
 for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao)) {
  for(const v of e.edicoes.slice(0,-1)) paginas.set(rotaAtual(e.slug,e.lang)+'/'+v.data,primeiraEdicaoServida(e.slug,e.lang,v.data));
- const labels=e.lang==='pt'?['Primeira edição, tal como foi publicada','Edição atual']:['First edition, as published','Current edition'];
- paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}"><a href="${rotaPrimeira(e)}">${labels[0]}</a><a href="${rotaAtual(e.slug,e.lang)}">${labels[1]}</a></p>`);
+ const mudancas=mudancasNoManifesto(e.slug,e.lang).map(m=>`<span>${m.natureza==='atualizacao'?(e.lang==='pt'?'atualizado a':'updated on'):(e.lang==='pt'?'corrigido a':'corrected on')}</span> <time data-estudo-${m.natureza} datetime="${m.data}">${m.data.split('-').reverse().join('.')}</time>`).join(' · ');
+ paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}">${linhaDasEdicoes(e.slug,e.lang)} · ${mudancas}</p>`);
 }
 let conta=0;
 const alvo=manifesto.edicoes.find(e=>e.primeira_edicao),rota=`/estudos/${alvo.slug}`;

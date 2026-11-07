@@ -1,0 +1,780 @@
+{
+  "cabeca": "450fdafac41f2e1d5be8b799f3d9615c360cf8a5",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390
+  ],
+  "resultados": [
+    {
+      "ficheiro": "evora-contas-da-camara-2010-2025-pt-390.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 42946,
+      "sha256": "227928960f01459ac1aea74632fb222b2d443ab22cb40124c93f2dbac30a35b3",
+      "recortes": [
+        {
+          "ficheiro": "evora-contas-da-camara-2010-2025-pt-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-contas-da-camara-2010-2025-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 42533,
+            "width": 354,
+            "height": 59
+          },
+          "sha256": "e8e15b7df84bc91028b6046dd89e18f0ce4c755f7013b8c8e477f88a3af4a2fd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-contas-da-camara-2010-2025-en-390.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41330,
+      "sha256": "eeb02ccb670756c59dfe94e72eca452f61f711abc48f76b92bece0aeb5792242",
+      "recortes": [
+        {
+          "ficheiro": "evora-contas-da-camara-2010-2025-en-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-contas-da-camara-2010-2025-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 40847,
+            "width": 354,
+            "height": 81
+          },
+          "sha256": "bcb575b3a516b460f0b6ff97b8c99445bb9b3753a3ced86389a297b51299150e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-01-pt-390.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 37924,
+      "sha256": "921f0dad24d62a1933d3ef02b7ba774725ca18bbdcef36a5ca12cbf1acd4f633",
+      "recortes": [
+        {
+          "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-01-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-contas-da-camara-2010-2025-2026-10-01-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "7e4ead60e4b337adc8e12666a274f19d9a9cd264367c0fd7e80e9af3cdc2f745"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-01-en-390.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36368,
+      "sha256": "06077b0ded9cd731d1271687ab54c7bb48ca70227796d90bdb2db216041bfb47",
+      "recortes": [
+        {
+          "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-01-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-contas-da-camara-2010-2025-2026-10-01-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "74c2bd5a41a1ccc0f9a337a6e290e781b91bb1a9b4df9631a7373198c470585a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-30-pt-390.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 38287,
+      "sha256": "b8a4e760dd5002decd554b5be31a294ed0388ded85686e970af7b0e10df82075",
+      "recortes": [
+        {
+          "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-30-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-contas-da-camara-2010-2025-2026-10-30-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "9c7391c4442397439b30454e501bf652fa63110144856a6e7b380fb377a8b4cd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-30-en-390.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36757,
+      "sha256": "911aa977a9b361cf5987b7eb9855832f04f35acbb5b717234f9290a5992e5f25",
+      "recortes": [
+        {
+          "ficheiro": "evora-contas-da-camara-2010-2025-2026-10-30-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-contas-da-camara-2010-2025-2026-10-30-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "b2392e7a47061cbe8a46080d45e304c5f55c210a915a599c30fb21085c846a88"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 51535,
+      "sha256": "5cea3f2065be4207e27bab26ee5f090e1e0e19b54d33f36b6e9ff416298b79d5",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-pt-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 51101,
+            "width": 354,
+            "height": 81
+          },
+          "sha256": "aebaf96b2da603517804355433418947ea6cc356d5e9e9c5efa66299aac67350"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 52061,
+      "sha256": "083d8617cdc010fdfecfd4a3c9a5781a9cdec8e420bccc84b1263279613ec850",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-en-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 51579,
+            "width": 354,
+            "height": 80
+          },
+          "sha256": "92c6b0dc06b4b6521af5d4c8a236bbf3f7b8acad4144a2edd95f1d63e6ea2d82"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-10-01-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41993,
+      "sha256": "9ed779684a001255c160ff1e9ec8b0cf82bcf9b7e83dfd4f57b63a46c886f3ff",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-10-01-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-2026-10-01-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "0b5f9bb5e199228cf6629ec6f031b08ca8a9e37404ed69f56e11d0caaec47b70"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-10-01-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 40953,
+      "sha256": "5c08a7a9182ad98165afc347ecb1fca4b74b8ad7746e779b1b97bbf30f49f47c",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-10-01-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-2026-10-01-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "600326a93905a27c90cef6498bd9748e7cbe5dc988b77c2e9b56ec3f2413419a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-03-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 43106,
+      "sha256": "b984e50fd3cb6dd3caae4f06e84758f6d1e68b208e8c226e2ad2bd5220a26e70",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-03-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-2026-11-03-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "ee942e81ab92a5954a9a1aea2195ff87a8539fbce8935864e74ca2c16caee6b4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-03-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 42065,
+      "sha256": "bb71377e3231b52cfa4da758cbde194cbc16b2c610983fe70d739bd358822950",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-03-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-2026-11-03-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "8323e31fc60b5d159eef6439d320bc9e0025cc8a7d2c58dadaa8ba1520044b42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-06-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 43106,
+      "sha256": "8adf4186fb892a5e992bcadcefdd96e0cd96f8c6ff0f39a08824d9141ddf4fc0",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-06-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-2026-11-06-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "564e587301cc7ca03da79477d53ddc710cfa0acd6cba79d594eb785e03e88341"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-06-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 42065,
+      "sha256": "9a4158231e097fc431c513cced4becc640c37432e75367652bd688213a4b2863",
+      "recortes": [
+        {
+          "ficheiro": "evora-2027-capital-europeia-da-cultura-2026-11-06-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "evora-2027-capital-europeia-da-cultura-2026-11-06-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "8cec8394a77c1db318cd5cf8dcc5163b2447ce7b0643048658ebdb8f5137e911"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36947,
+      "sha256": "098607fa26a44516a4c6c510d2018e50544e1ade65de5da299026566d6633e79",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-pt-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-o-que-muda-e-para-quem-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 36412,
+            "width": 354,
+            "height": 60
+          },
+          "sha256": "dd39587a7f2af4caa79e1cb048f0d001cd8633e13e5fd22298e8dc203f64ce7f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 37235,
+      "sha256": "f43879368ce3941ad9b4af8114bb33e897d609e0b0481e740e308154e1a8bb43",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-en-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "orcamento-2027-o-que-muda-e-para-quem-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 36630,
+            "width": 354,
+            "height": 81
+          },
+          "sha256": "484921e757689b0c1d0e5bdba7b9096309adf5336987739c162aad9189697c30"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27413,
+      "sha256": "c49e8d77023467925f6831d8d2747d319f45175d46689c785b4255a2c050e45d",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "264d31fb61e6d0bf9a61b275926e178494795ab528fa4488ce45fc7c8cd06cdb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27194,
+      "sha256": "258ab9d5f88acd0d541de6cecff91b66d218468786527bd1b163291508004171",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "orcamento-2027-o-que-muda-e-para-quem-2026-10-21-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "c08d98c009182531ca6d7bb179e086fd03f431ce7408a523f6a4daeba699aa72"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27698,
+      "sha256": "c2a0319434439b160a67ab42143a13c66e5bdf9d423e0b374a745ad779be5e1b",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "2a67d1ecf7fe34958cb1130b12eebf43c7f6bb21106c8260586feb74d161edcb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27428,
+      "sha256": "77ea5ed7853713a818304e0a7fe13fe950163d3bf1b4b88bac79a3eb93c1e13a",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "orcamento-2027-o-que-muda-e-para-quem-2026-11-02-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "bc09b3efc72c7f7e5fcfed506870f5ac480ab3f30c8762df6aa6bf0e122b695e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "a-casa-em-portugal-e-na-europa-pt-390.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 28350,
+      "sha256": "747960fddd81e7bd38aba6e620b2adb1b43f59e7baac9b6bc4048f00e73174c2",
+      "recortes": [
+        {
+          "ficheiro": "a-casa-em-portugal-e-na-europa-pt-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "a-casa-em-portugal-e-na-europa-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 27937,
+            "width": 354,
+            "height": 59
+          },
+          "sha256": "00bd81e744213708e9eae2121b10f1b8baab865c3b5fe567f1b060cbc7ebd4d2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "a-casa-em-portugal-e-na-europa-en-390.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 28417,
+      "sha256": "0b9211b04f00f2421a7de6e12cc7657adfc4d72d836f1286d9d9c9d0de74c44c",
+      "recortes": [
+        {
+          "ficheiro": "a-casa-em-portugal-e-na-europa-en-390-edicoes.png",
+          "seletor": "[data-estudo-edicao]",
+          "origem": "a-casa-em-portugal-e-na-europa-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 27935,
+            "width": 354,
+            "height": 81
+          },
+          "sha256": "30d1813ad401e1161f206228aa4be2e64fc5a29f68410a0498c73e74b1720933"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "a-casa-em-portugal-e-na-europa-2026-10-29-pt-390.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 20349,
+      "sha256": "dfbfb467602075f07606c312af0f5c4173a333a7a9d851902c0967f4024bcdb0",
+      "recortes": [
+        {
+          "ficheiro": "a-casa-em-portugal-e-na-europa-2026-10-29-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "a-casa-em-portugal-e-na-europa-2026-10-29-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "21d5e3dcdff616930c2f3c267b790856893dc37c46a6a1c7228d1e613a7f1530"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "a-casa-em-portugal-e-na-europa-2026-10-29-en-390.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 20174,
+      "sha256": "adc53ee9bb1251ccae8007a9353ebe2c15200498776b8a18423fe3fff124d1f5",
+      "recortes": [
+        {
+          "ficheiro": "a-casa-em-portugal-e-na-europa-2026-10-29-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "a-casa-em-portugal-e-na-europa-2026-10-29-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "6a11002b9d047d7ed84bcd93e057b4a273ed55b750b2291bff40806998a8d4a7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "a-casa-em-portugal-e-na-europa-2026-11-03-pt-390.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 20763,
+      "sha256": "b8a63d90e29b50c68624d10e61a69c1f33dbfa3197bdd91000dec605e859c133",
+      "recortes": [
+        {
+          "ficheiro": "a-casa-em-portugal-e-na-europa-2026-11-03-pt-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "a-casa-em-portugal-e-na-europa-2026-11-03-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "64bae7193715557842543121d69b41364085866a61445eedfb0344b4e22d747e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "a-casa-em-portugal-e-na-europa-2026-11-03-en-390.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 20510,
+      "sha256": "ebd2dafa679c633ae8c18345ebe4c669fd8e90ec347b7cf6fc8b3ad04380508c",
+      "recortes": [
+        {
+          "ficheiro": "a-casa-em-portugal-e-na-europa-2026-11-03-en-390-edicoes.png",
+          "seletor": "[data-documento-edicao]",
+          "origem": "a-casa-em-portugal-e-na-europa-2026-11-03-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 40,
+            "width": 350,
+            "height": 121
+          },
+          "sha256": "c2d80d70060265df0a162097976ffd395a173111514197ba2ac277a97dfaf7fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "5b2f2aadfb8914f5d11268e514e2d8788d6ab1d20fb632164f362bb95fc57cde",
+    "estudos/evora-contas-da-camara-2010-2025/index.html": "9cadc482f6f29bbbabfadb615c6bf0fc9cb086bf23a04d4c53b10a37e48394e6",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BWFC6hW5.css": "a5b5c68831d20e48f9d39a8b5387fccccffc022d56f2a7b17e2b8efe88b5d220",
+    "_astro/texto.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/studies/evora-contas-da-camara-2010-2025/index.html": "0f0ee0a70f7539b9363376df97a2d86871c72e21de96f5d4e3545fb75de8e43c",
+    "estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/index.html": "47453fc30538d2d6e11068ba9a6698f58e0ab2ab09cc216c0cb8a1dce7127723",
+    "en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/index.html": "a270b62017a4f29a73d2543fc6eaa9345b2d50ec4746feba21b004070038c07e",
+    "estudos/evora-contas-da-camara-2010-2025/documento/index.html": "5a3da7e80f6acfa2cc7d30088b528be24b0b2f52ecdbbbd39f9f0898b813035c",
+    "en/studies/evora-contas-da-camara-2010-2025/document/index.html": "edabe6ff4f083c78bd24d9485b077b0c23c69018c6733de3529a2028b79df99b",
+    "estudos/evora-2027-capital-europeia-da-cultura/index.html": "b1f160e6704174338b0801e8c7145d790da8d6ba2503236480b17338c67be378",
+    "en/studies/evora-2027-capital-europeia-da-cultura/index.html": "6860ce9224162de27b98829f7ab87fe3effcb2be5716bbc774f3f44aad382865",
+    "estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/index.html": "d4905c4f5f4ce5e0fa09fb2e57d07892e0ffb746d2ce8fc3b4185ab4d312ba11",
+    "en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/index.html": "22ecd63097a9cfef9875853f6ee043c58e6230cf707876e518b4765b5aa65919",
+    "estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/index.html": "bd7ee9ddbbd4f1686440390367dccd1e4e42cb5efcc893b76edfac48884d6bf3",
+    "en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/index.html": "5b5e35dbddf674534bad6b8bfdcb753b7cca28dde96d3401d140fcbf22dc6ea4",
+    "estudos/evora-2027-capital-europeia-da-cultura/documento/index.html": "5678a6217d9542f4f4a8bcdb18e669dbe11bc7511b12714d20a2cf7083cef2e7",
+    "en/studies/evora-2027-capital-europeia-da-cultura/document/index.html": "6f4105618ce224279e02c70236b0cde4bf64ea8358351543a6a74ca3c61e1dc8",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/index.html": "bef0801ec8daa7bf74edba3389d1c9079e301f2b8a0acd026d4e03a4c112c84f",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html": "16d5bc40c31a86771f449ce55318b2763bf836367a578722f748f5f2b8db0809",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21/index.html": "8b1b6e1abb8ab3d2ba36c4b3ce421ad6ff8eeeff9864124c91a93355b7c044db",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21/index.html": "f68b114b9900a551a1c4765f1596cc25e20711cd1302ada509468f5d3f009eab",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html": "01cdf4cc8ce863becd911ddc5d9121b2bc7d549123701ab64ec75d499374d1f4",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html": "f8d082dbe1fa52f1c24bc4b10ad49c32fa9103fb49d904805316502156148774",
+    "estudos/a-casa-em-portugal-e-na-europa/index.html": "d6d92e41b6452c112301c422d752aefdb933272a4305ceec65fe8c3582578476",
+    "en/studies/a-casa-em-portugal-e-na-europa/index.html": "a8fee1da7708fa10e808d7edf6d4ba23d94fb7e16f627c7cc508b99f4c712f64",
+    "estudos/a-casa-em-portugal-e-na-europa/documento/2026-10-29/index.html": "71ffa4396cde3bf08a97e0a43110b749aff1c0c87d0f086329b17677abb3ce16",
+    "en/studies/a-casa-em-portugal-e-na-europa/document/2026-10-29/index.html": "8583edd254ac0251cf08bc788075e4fde796af844408282af5c96feb948e733d",
+    "estudos/a-casa-em-portugal-e-na-europa/documento/index.html": "2b19afe92c83fb201e73f33c36c50a1075ffa9714c6941267b849e1c426969ca",
+    "en/studies/a-casa-em-portugal-e-na-europa/document/index.html": "f52dce74ac730204cf2c2a8c740367c91d262b54305a9471dfee3ed226822779"
+  },
+  "falhas": [],
+  "ok": true
+}

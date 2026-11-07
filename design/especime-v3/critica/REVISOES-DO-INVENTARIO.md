@@ -965,3 +965,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | voz1b | Calendário público, títulos das páginas afetadas e definição de área e domínio | por ler | Codex, 04.11.2026: frases da adenda B; leitura cruzada reservada ao lugar de direção. |
 
 | ev3-p | Frase do Rossio, entrada do registo e portas das edições nas duas línguas | por ler | Codex, 06.11.2026: frases autorizadas pelo mandato EV3-p e adenda A, comparadas com o HTML; leitura cruzada reservada ao lugar de direção. |
+
+| ed2 | Linha de todas as edições e datas por natureza nas duas línguas | por ler | Codex, 07.11.2026: frases do mandato ED2 conferidas contra o manifesto e o HTML construído; leitura cruzada reservada ao lugar de direção. |

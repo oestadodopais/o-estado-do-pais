@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {rotasNoManifesto} from './edicoes-linha-conferir.mjs';
 import { conferirPortasDasNovidades } from '../tests/inicio/novidades.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
 import { portasObrigatoriasEo1 } from './portas-eo1-do-portao.mjs';
@@ -1798,7 +1799,7 @@ for (const ficheiro of paginas) {
     const documento = documentosDoEstudo(slug).find(d => d.lang === edicao?.lang);
     const portas = corpo.querySelectorAll('.estudo-publicado a[href]');
     const primeira=edicao?.updated ? historicas.find(e=>e.slug===slug&&e.lang===edicao.lang) : null;
-    const prova=conferirPortasDaEdicao(portas.map(p=>p.getAttribute('href')),documento?.rota,primeira?.rota);
+    const prova=conferirPortasDaEdicao(portas.map(p=>p.getAttribute('href')),documento?.rota,primeira?.rota,rotasNoManifesto(slug,edicao?.lang));
     vistas.edicoes+=prova.edicoes;
     vistas.primeiras_edicoes+=prova.primeiras_edicoes;
     for(const erro of prova.erros){medidas.d86_estudos_forma++;anota('d86_estudos_forma',`${url} · ${erro}`);}

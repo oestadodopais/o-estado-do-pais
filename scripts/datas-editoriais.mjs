@@ -1,4 +1,5 @@
-import {dataAtualizacaoDaEdicao,versoesDaEdicao} from '../src/lib/edicoes.mjs';
+import {mudancasNoManifesto,conferirLinhaDasEdicoes,manifestoEd2} from './edicoes-linha-conferir.mjs';
+import {versoesDaEdicao} from '../src/lib/edicoes.mjs';
 import {dataPublicacao as publicacaoEd1} from '../src/lib/publicacao.mjs';
 import { dataDoDossiePermitida } from './dossies-html.mjs';
 /** FP1-d: a isenção editorial depende do elemento, da página e da origem. */
@@ -12,12 +13,16 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=nul
   if(el.tagName?.toLowerCase()!=='time' || !/^\d{4}-\d{2}-\d{2}$/.test(el.getAttribute('datetime')??''))return false;
   const origem=el.getAttribute('data-data-origem');
   if(dataDoDossiePermitida(el,rota,lang))return true;
-  if(rota==='estudo' && origem==='edicoes.data' && el.hasAttribute('data-estudo-atualizacao')) {
-    const [slug, lingua]=(el.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao')??'').split('/');
-    const work=WORKS.find(w=>w.slug===slug);
-    const edicao=work?.editions.find(e=>e.lang===lang)??work?.editions[0];
-    const atualizada=work&&edicao?dataAtualizacaoDaEdicao(slug,edicao.lang,publicacaoEd1(work,edicao)):null;
-    return Boolean(atualizada && edicao.lang===lingua && el.getAttribute('datetime')===atualizada && el.text.trim()===dataDaCasa(atualizada));
+  if(origem==='edicoes.data' && el.hasAttribute('data-edicao-lista-data')) {
+    const bloco=el.closest('[data-estudo-edicao], [data-documento-edicao]');
+    const [slug,lingua,data]=(bloco?.getAttribute('data-estudo-edicao')??bloco?.getAttribute('data-documento-edicao')??'').split('/');
+    return Boolean(bloco&&el.closest('[data-edicoes-linha]')&&lingua===lang&&((rota==='estudo'&&!data)||(rota==='documento'&&data))&&!conferirLinhaDasEdicoes(bloco,manifesto??manifestoEd2,slug,lang,data??null).length);
+  }
+  if(rota==='estudo' && origem==='edicoes.data' && (el.hasAttribute('data-estudo-atualizacao')||el.hasAttribute('data-estudo-correcao'))) {
+    const [slug,lingua]=(el.closest('[data-estudo-edicao]')?.getAttribute('data-estudo-edicao')??'').split('/');
+    const natureza=el.hasAttribute('data-estudo-atualizacao')?'atualizacao':'correcao';
+    const m=mudancasNoManifesto(slug,lingua,manifesto??manifestoEd2).find(m=>m.natureza===natureza);
+    return Boolean(m&&lingua===lang&&el.getAttribute('datetime')===m.data&&el.text.trim()===dataDaCasa(m.data));
   }
   if(rota==='correcoes' && origem==='edicoes.data') {
     const entrada=el.closest('[data-texto-estudo]'),porta=el.parentNode;
@@ -79,7 +84,7 @@ export function plantasDatasEditoriais() {
  const work=WORKS.find(w=>w.slug==='evora-contas-da-camara-2010-2025');
  for(const lang of ['pt','en']) {
   const edicao=work.editions.find(e=>e.lang===lang);
-  const html=`<p data-estudo-edicao="${work.slug}/${lang}"><time data-estudo-atualizacao datetime="${edicao.updated}" data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(edicao.updated)}</time></p>`;
+  const html=`<p data-estudo-edicao="${work.slug}/${lang}"><time data-estudo-correcao datetime="${edicao.updated}" data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(edicao.updated)}</time></p>`;
   const el=parse(html).querySelector('time');
   assert.equal(dataEditorialPermitida(el,'estudo',null,lang),true);
   assert.equal(dataEditorialPermitida(el,'home',null,lang),false);

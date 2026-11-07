@@ -1,3 +1,4 @@
+import {conferirLinhaDasEdicoes,conferirMudancasDoCabecalho} from './edicoes-linha-conferir.mjs';
 import fs from 'node:fs';
 import {KIND_LABELS} from '../src/data/correcoes.mjs';
 import {loadClaims} from '../src/lib/ledger.mjs';
@@ -42,9 +43,8 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
       }
       const pagina = paginas.get(`${d.lang === 'pt' ? '/estudos' : '/en/studies'}/${w.slug}`);
       const faixa = pagina && parse(pagina).querySelector(`[data-estudo-edicao="${chave}"]`);
-      const links = faixa?.querySelectorAll('a[href]') ?? [];
-      const labels = d.lang === 'pt' ? ['Primeira edição, tal como foi publicada','Edição atual'] : ['First edition, as published','Current edition'];
-      if (links.length !== 2 || links.some((a,i) => normal(a.textContent) !== labels[i] || a.getAttribute('href')?.replace(/\/$/,'') !== [rotaPrimeira(e),rotaAtual(w.slug,d.lang)][i])) erros.push(`ED1 portas: ${chave}`);
+      for(const erro of conferirLinhaDasEdicoes(faixa,manifesto,w.slug,d.lang))erros.push(`ED1 portas: ${chave}: ${erro}`);
+      erros.push(...conferirMudancasDoCabecalho(faixa,w.slug,d.lang,manifesto));
     }
   }
   for (const c of correcoes) {

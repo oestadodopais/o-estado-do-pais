@@ -11,6 +11,7 @@ export function conferirHistoria({works,manifesto,correcoes,raiz}) {
   if(e.primeira_edicao&&vs.length<2)erros.push(`ED1 versões: ${chave} perdeu a história declarada`);
   for(const [i,v] of vs.entries()){
    const atual=i===vs.length-1;
+   if(v.natureza!==undefined&&v.natureza!=='atualizacao')erros.push(`ED2 natureza desconhecida: ${chave}: ${v.natureza}`);
    if(!dataValida(v.data)||(i>0&&v.data<=vs[i-1].data))erros.push(`ED1 ordem: ${chave}`);
    const file=atual?`${e.slug}/${e.lang}.html`:`_edicoes/${e.slug}.${e.lang}.${v.data}.html`;
    if(v.file!==file||!/^[a-f0-9]{64}$/.test(v.sha256??'')){erros.push(`ED1 arquivo: ${chave}/${v.data}`);continue;}
