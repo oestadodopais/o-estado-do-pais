@@ -1,0 +1,97 @@
+{
+  "natureza": "Índice real de 07.11.2026 fornecido em leitura pelo lugar de direção.",
+  "indice_sha256": "99a9f14c0bd32512fe91c178eb183d946ea751d1b857f859cfc7580479dd7bd9",
+  "indice_preservado": true,
+  "entradas": 5132,
+  "designacoes": 36,
+  "designacoes_normalizadas": 3,
+  "ocorrencias_por_designacao": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "designacoes_exatamente_uma_vez": 36,
+  "partes": {
+    "quantidade": 4,
+    "bytes": [
+      748,
+      2453,
+      2409,
+      2484
+    ]
+  },
+  "limite_exclusivo_bytes": 2500,
+  "designacoes_omitidas": 0,
+  "indice_real_codigo": 0,
+  "designacao_real_tirada": {
+    "codigo": 0,
+    "recusa_observada": "designações das partes divergem do índice, por omissão ou repetição"
+  },
+  "historico_12_10": {
+    "codigo": 0,
+    "igual_byte_a_byte": true,
+    "bytes": 2489,
+    "sha256": "ace8d3246898dd6dea6ed006261a67fd0e400607b72636a81735fd497c1b3328"
+  },
+  "conferencias": {
+    "novas_provas_antes": {
+      "codigo": 1,
+      "resultado": "defeito reproduzido"
+    },
+    "vigilancia_tests": {
+      "codigo": 0,
+      "provas": 77,
+      "segundos": 16
+    },
+    "medicao_indice_real_e_historico": {
+      "codigo": 0
+    },
+    "core_gate": {
+      "corridas": 0,
+      "razao": "não pedido nesta adenda"
+    }
+  },
+  "commit_motor": "155a9f2497775b7c6b39cd9bbc6210ec0e86b29d",
+  "consumo": {
+    "chamadas_de_orquestracao": 8,
+    "invocacoes_internas": 16,
+    "corridas_testes_e_medicao": 3,
+    "reproducao_previa_indice_real": 1,
+    "portoes_sitio": 0,
+    "capturas": 0,
+    "tokens_used": "não exposto"
+  }
+}

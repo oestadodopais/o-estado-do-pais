@@ -1,0 +1,7 @@
+Antes da correção: provas novas, código 1 (recusa e quebra de linha reproduzidas).
+Depois da correção: python3 -m vigilancia.tests, código 0, 16 segundos.
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_a_designacao_normalizada_tirada: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_a_designacoes_numa_linha: passou
+PROVA vigilancia.tests.test_resumo_partes.ProvasPartes.test_vig2_uma_parte_identica: passou
+PASS vigilancia: 77
+Índice real: código 0; designação normalizada retirada, recusa observada.
