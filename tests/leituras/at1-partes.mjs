@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { dividir, conferirPartes, juntar } from '../../scripts/verify-partes.mjs';
+import {restantesDoVerify, celulaDaUniao} from '../../scripts/verify-depois-do-build.mjs';
 const scripts = JSON.parse(fs.readFileSync('package.json')).scripts;
 const tempos = JSON.parse(fs.readFileSync('scripts/verify-partes-tempos.json')).passos;
 const plano = dividir(scripts, tempos);
@@ -24,3 +25,28 @@ for (const mudar of [p=>p.pop(),p=>p[0].corridos.pop(),p=>p[0].corridos[0].codig
  const p=structuredClone(provas); mudar(p); assert.throws(()=>juntar(scripts,base,p));
 }
 console.log('AT1: união inteira verde; faltas, repetições, vermelhos e outras construções recusados');
+
+// Sem motor no ambiente, apenas a reserva declarada sai da união do GitHub.
+const ambiente = process.env.RESEARCHHUB_DIR;
+delete process.env.RESEARCHHUB_DIR;
+try {
+  const motor = scripts['verify:com-motor'].split(/\s*&&\s*/);
+  const verify = scripts.verify.split(/\s*&&\s*/);
+  const build = scripts['build:conteudo'].split(/\s*&&\s*/);
+  const partes = dividir(scripts, tempos).partes;
+  assert.deepEqual(partes.flat().sort(), restantesDoVerify(scripts).sort());
+  assert.deepEqual([...verify.filter(p => build.includes(p)), ...partes.flat()].sort(), verify.filter(p => !motor.includes(p)).sort());
+  assert.equal(juntar(scripts, base, provas).U.reservados_ao_motor, 2);
+  for (const reserva of ['npm run inexistente', scripts['verify:com-motor'] + ' && ', scripts['verify:com-motor'] + ' && ' + motor[0]]) {
+    const invalidos = {...scripts, 'verify:com-motor':reserva};
+    assert.throws(() => restantesDoVerify(invalidos));
+    assert.throws(() => conferirPartes(invalidos, partes));
+    assert.throws(() => juntar(invalidos, base, provas));
+    assert.equal(celulaDaUniao(invalidos, provas.flatMap(p => p.corridos)).ok, false);
+  }
+  const omitidos = partes.map(ps => ps.filter(p => p !== partes[0][0]));
+  assert.equal(celulaDaUniao(scripts, omitidos.flat().map(passo => ({passo, codigo:0}))).ok, false);
+  console.log(JSON.stringify({sem_motor:true, verify:verify.length, build:verify.filter(p => build.includes(p)).length, partes:partes.flat().length, reservados:motor}));
+} finally {
+  if (ambiente === undefined) delete process.env.RESEARCHHUB_DIR; else process.env.RESEARCHHUB_DIR = ambiente;
+}

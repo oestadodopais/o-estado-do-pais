@@ -16,6 +16,10 @@
  * já estava conferido, e as três conferências mais lentas corriam em série. O
  * `npm run verify` que se corre à mão não muda: continua a ser a cadeia inteira.
  *
+ * HIG-6A: `verify:com-motor` declara os passos reservados à aterragem local.
+ * A escolha e a união recusam declarações fora do verify. Esses passos continuam
+ * na corrida inteira local, e a união do GitHub identifica-os como reservados.
+ *
  * AS DUAS CADEIAS LEEM-SE DO `package.json`, e não de uma lista escrita aqui:
  * um passo do `verify` que não seja, carácter a carácter, um passo do `build`
  * corre aqui. Uma conferência nova que entre no `verify` entra sozinha.
@@ -134,10 +138,21 @@ export function passosDe(cadeia) {
     .filter(Boolean);
 }
 
-/** Os passos do `verify` que não são, carácter a carácter, um passo do `build`. */
+/** A reserva explícita para a aterragem tem de ser um subconjunto sem repetições. */
+export function passosComMotor(scripts) {
+  if (scripts['verify:com-motor'] === undefined) return [];
+  const motor = String(scripts['verify:com-motor']).split('&&').map(s => s.trim());
+  const verify = passosDe(scripts.verify);
+  if (motor.some(p => !p || !verify.includes(p)) || new Set(motor).size !== motor.length)
+    throw new Error('verify:com-motor inválido ou com passo fora do verify');
+  return motor;
+}
+
+/** Os passos do GitHub, retirando o build e a reserva explícita para a aterragem. */
 export function restantesDoVerify(scripts) {
   const doBuild = new Set(passosDe(scripts['build:conteudo'] ?? scripts.build));
-  return passosDe(scripts.verify).filter((p) => !doBuild.has(p));
+  const comMotor = new Set(passosComMotor(scripts));
+  return passosDe(scripts.verify).filter((p) => !doBuild.has(p) && !comMotor.has(p));
 }
 
 /**
@@ -172,17 +187,21 @@ export function celulaDaUniao(scripts, corridos) {
   if (scripts['build:conteudo'] !== undefined && scripts.build !== 'python3 scripts/leituras/com-tranca.py npm run build:conteudo') falhas.push('U: o build não executa a cadeia declarada sob a tranca');
   if (verify.length === 0) falhas.push('U: o verify do package.json não tem passos');
   if (verify.length !== esperados) falhas.push(`U: o verify tem ${esperados} passos pelos &&, e o leitor leu ${verify.length}`);
+  // Leitura própria da reserva, sem confiar na escolha das partes.
+  const motor = scripts['verify:com-motor'] === undefined ? [] : String(scripts['verify:com-motor']).split(/\s*&&\s*/).map(p => p.trim());
+  if (motor.some(p => !p || !verify.includes(p)) || new Set(motor).size !== motor.length) falhas.push('U: verify:com-motor inválido ou fora do verify');
   const verdes = new Set(corridos.filter((c) => c.codigo === 0).map((c) => c.passo));
   const vermelhos = new Set(corridos.filter((c) => c.codigo !== 0).map((c) => c.passo));
   let doBuild = 0;
-  let daqui = 0;
+  let daqui = 0, reservados = 0;
   for (const p of verify) {
-    if (build.has(p)) doBuild++;
+    if (motor.includes(p)) reservados++;
+    else if (build.has(p)) doBuild++;
     else if (verdes.has(p)) daqui++;
     else if (vermelhos.has(p)) falhas.push(`U: «${p}» correu e não saiu com 0`);
     else falhas.push(`U: «${p}» está no verify, não é um passo do build e não correu aqui`);
   }
-  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui };
+  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui, reservados_ao_motor: reservados };
 }
 
 /**

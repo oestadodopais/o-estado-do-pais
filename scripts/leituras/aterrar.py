@@ -482,6 +482,7 @@ class Aterragem:
             self.preparar()
             self.correr('series', ['npm', 'run', 'check:series'])
             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])
+            self.correr('camada-0', ['npm', 'run', 'verify:com-motor'])
             self.conferir_arvores()
             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)
             self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')

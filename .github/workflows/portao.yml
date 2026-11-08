@@ -99,25 +99,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # A camada 0 lê o motor localmente; não o descarrega durante as conferências.
-      - name: O motor da camada 0, numa revisão fixada
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: oestadodopais/motor
-          ref: cf5bd5b28b26d814315a5440d0b7dc1038e7ca1e
-          token: ${{ secrets.RESEARCHHUB_READ_TOKEN || github.token }}
-          persist-credentials: false
-          path: .motor-camada-zero
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /core/assertions.py
-            /content/*/ledger.json
-            /content/*/Technical Source/documento.*.md.tmpl
-      - name: Disponibilizar o motor fora da árvore do sítio
-        run: |
-          mv .motor-camada-zero "$RUNNER_TEMP/motor-camada-zero"
-          printf 'RESEARCHHUB_DIR=%s\n' "$RUNNER_TEMP/motor-camada-zero" >> "$GITHUB_ENV"
-
       - name: O Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:

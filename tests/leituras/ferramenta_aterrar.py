@@ -33,6 +33,7 @@ class Aterrar(unittest.TestCase):
         commit(self.w, 'ensaio: ramo pronto')
         self.cabeca = git(self.w, 'rev-parse', 'HEAD')
         self.main_antes = git(self.main, 'rev-parse', 'HEAD')
+        (self.main / '.git' / 'info' / 'exclude').write_text('dist\n')
         self.motor = repo(self.p / 'motor', 'master')
         self.bin = self.p / 'bin'
         self.bin.mkdir()
@@ -67,6 +68,13 @@ else: sys.exit(88)
         comando(self.bin, 'npm', comum + '''
 if modo=='series-falha' and a[1]=='check:series': sys.exit(6)
 if modo=='cruzamento-falha' and a[1]=='check:cruzamento': sys.exit(5)
+if a==['run','build']:
+    Path('dist').mkdir(exist_ok=True)
+    Path('dist/version.json').write_text(json.dumps({'commit':os.environ['CABECA']}))
+if a==['run','verify:com-motor']:
+    assert json.loads(Path('dist/version.json').read_text())['commit']==os.environ['CABECA']
+    assert Path(os.environ['RESEARCHHUB_DIR']).is_dir()
+    if modo=='camada-0-falha': sys.exit(8)
 if modo=='deploy-falha' and a[1]=='verify:deploy': sys.exit(4)
 assert os.environ.get('RESEARCHHUB_DIR')
 ''')
@@ -188,6 +196,20 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
                 if modo in ('series-falha', 'cruzamento-falha'):
                     self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
 
+    def test_camada_zero_vermelha_nao_funde_nem_publica(self):
+        r, recibo, chamadas = self.correr('camada-0-falha')
+        self.assertEqual(r.returncode, 8, r.stdout + r.stderr)
+        self.assertEqual((self.saida / 'camada-0.codigo').read_text(), '8\n')
+        self.assertIn(['npm', 'run', 'verify:com-motor'], chamadas)
+        self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
+        self.assertNotIn(['git', 'push', 'origin', 'main'], chamadas)
+        self.assertFalse(any(c[0] == 'vercel' for c in chamadas))
+        self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.main_antes)
+        passos = [p['passo'] for p in recibo['passos']]
+        self.assertLess(passos.index('preparar-dist'), passos.index('camada-0'))
+        self.assertLess(passos.index('cruzamento'), passos.index('camada-0'))
+        self.assertNotIn('fundir-main', passos)
+
     def test_preparacao_da_worktree(self):
         # Sem node_modules nem dist, a aterragem prepara-os antes das conferências (I250).
         r, recibo, chamadas = self.correr()
@@ -248,10 +270,10 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.cabeca)
         self.assertEqual(git(self.w, 'branch', '--show-current'), '')
         self.assertEqual(git(self.main, 'branch', '--list', 'ensaio'), '')
-        for nome in ('series', 'cruzamento', 'verify-deploy', 'github'):
+        for nome in ('series', 'cruzamento', 'camada-0', 'verify-deploy', 'github'):
             self.assertEqual((self.saida / (nome + '.codigo')).read_text(), '0\n')
         passos = [p['passo'] for p in recibo['passos']]
-        ordem = ['publicar-ramo', 'github', 'series', 'cruzamento', 'fundir-main', 'publicar-main',
+        ordem = ['publicar-ramo', 'github', 'series', 'cruzamento', 'camada-0', 'fundir-main', 'publicar-main',
                  'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local']
         self.assertEqual([p for p in passos if p in ordem], ordem)
         self.assertIn(['gh', 'run', 'watch', '123', '--interval', '60', '--exit-status'], chamadas)

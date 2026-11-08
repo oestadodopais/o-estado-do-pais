@@ -34,7 +34,9 @@ export function conferirPartes(scripts, partes) {
   const todos = scripts.verify.split(/\s*&&\s*/).map(x => x.trim());
   const build = (scripts['build:conteudo'] ?? scripts.build).split(/\s*&&\s*/).map(x => x.trim());
   assert(todos.every(Boolean) && build.every(Boolean), 'passo vazio');
-  const esperados = todos.filter(p => !build.includes(p));
+  const motor = scripts['verify:com-motor'] === undefined ? [] : scripts['verify:com-motor'].split(/\s*&&\s*/).map(p => p.trim());
+  assert(motor.every(p => p && todos.includes(p)) && new Set(motor).size === motor.length, 'verify:com-motor inválido ou fora do verify');
+  const esperados = todos.filter(p => !build.includes(p) && !motor.includes(p));
   const recebidos = partes.flat();
   assert.equal(new Set(recebidos).size, recebidos.length, 'passo repetido nas partes');
   assert.deepEqual([...recebidos].sort(), [...esperados].sort(), 'faltam ou sobram passos nas partes');
@@ -100,7 +102,7 @@ async function main() {
     // D e C são as mesmas células; U local confere cada processo selecionado.
     // A U inteira corre no trabalho final sobre os registos efetivamente recebidos.
     const r = await correr({ raiz, dist, cabeca: head(), paralelo: 1,
-      scripts: { ...scripts, verify: selecionados.join(' && ') }, escolher: () => selecionados });
+      scripts: { ...scripts, 'verify:com-motor': undefined, verify: selecionados.join(' && ') }, escolher: () => selecionados });
     assert.deepEqual(inventario(dist), base.dist, 'dist alterado pela parte');
     const prova = { ...r, corridos: r.corridos.map(({ saida, ...c }) => c),
       cabeca: head(), parte: i, manifesto: resumo(JSON.stringify(base)) };
