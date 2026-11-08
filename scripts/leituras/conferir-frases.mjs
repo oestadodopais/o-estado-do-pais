@@ -27,6 +27,7 @@ export function validarLista(lista) {
     if (!f || typeof f.id !== 'string' || !f.id || ids.has(f.id) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(f.estudo ?? '') ||
         !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || !f.frase.trim() ||
         (f.classe === 'REESCREVE' && (typeof f.nova !== 'string' || !f.nova.trim())) || ('nova' in f && typeof f.nova !== 'string')) throw new Error('entrada da lista inválida ou repetida');
+    if (('par' in f || 'razao_par' in f) && !parDispensado(f)) throw new Error('par: nenhum exige razao_par de pelo menos vinte carateres');
     ids.add(f.id);
   }
 }
@@ -46,8 +47,36 @@ export function conferirNumeros(lista, bilingues) {
 }
 const contem = (texto, frase) => normal(texto).includes(normal(frase));
 const nomeada = (texto, entradas) => entradas.some(f => contem(texto, f.frase) || contem(f.frase, texto) || (f.nova && (contem(texto, f.nova) || contem(f.nova, texto))));
-export function conferirBlocos(lista, documentos) {
-  const semPar = new Map(), semEntrada = new Map();
+export const parDispensado = f => f.par === 'nenhum' && typeof f.razao_par === 'string' && [...f.razao_par.trim()].length >= 20;
+// A folga não permite reutilizar um bloco para justificar dois blocos da outra língua.
+// Limite HIG-6A: um bloco com par pode conter uma frase gémea por mudar (V122).
+// A correspondência pelo conteúdo fica para a HIG-6B.
+// Conserva a ordem, maximiza os pares e, entre emparelhamentos iguais, minimiza a distância.
+// No empate final prefere o par mais recente, como no segundo ensaio da adenda A.
+export function emparelharBlocos(a, b, alinhados) {
+  const dp = Array.from({length:a.length + 1}, () => Array.from({length:b.length + 1}, () => ({n:0, custo:0, passo:null})));
+  const melhor = (x, y) => x.n > y.n || (x.n === y.n && x.custo <= y.custo);
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+    let r = {...dp[i - 1][j], passo:'a'};
+    const salto = {...dp[i][j - 1], passo:'b'};
+    if (melhor(salto, r)) r = salto;
+    const distancia = Math.abs(a[i - 1] - b[j - 1]);
+    if (distancia <= (alinhados ? 0 : 3)) {
+      const antes = dp[i - 1][j - 1], par = {n:antes.n + 1, custo:antes.custo + distancia, passo:'par'};
+      if (melhor(par, r)) r = par;
+    }
+    dp[i][j] = r;
+  }
+  const pares = new Map();
+  for (let i = a.length, j = b.length; i && j;) {
+    const passo = dp[i][j].passo;
+    if (passo === 'par') { pares.set(a[--i], b[--j]); }
+    else if (passo === 'a') i--; else j--;
+  }
+  return pares;
+}
+export function conferirBlocos(lista, documentos, bilingues = new Set(documentos.filter(d => d.tipo === 'documento' && documentos.some(g => g.tipo === 'documento' && g.estudo === d.estudo && g.lingua !== d.lingua)).map(d => d.estudo))) {
+  const semPar = new Map(), semEntrada = new Map(), emparelhamentos = new Map();
   for (const d of documentos) {
     const entradas = lista.filter(f => f.lingua === d.lingua && (f.estudo === d.estudo || f.paginas?.includes(d.rota)));
     (d.textosVoz ?? d.blocos).forEach((t, i) => {
@@ -57,13 +86,22 @@ export function conferirBlocos(lista, documentos) {
       }
     });
     const gemeo = documentos.find(g => g.estudo === d.estudo && g.tipo === d.tipo && g.lingua !== d.lingua);
-    if (!gemeo) continue;
+    if (!gemeo || !bilingues.has(d.estudo)) continue;
     const outras = lista.filter(f => f.lingua === gemeo.lingua && (f.estudo === gemeo.estudo || f.paginas?.includes(gemeo.rota)));
-    for (const f of entradas) for (const [i, t] of d.blocos.entries()) {
+    const chave = d.estudo + '|' + d.tipo;
+    if (!emparelhamentos.has(chave)) {
+      const p = d.lingua === 'pt' ? d : gemeo, e = d.lingua === 'en' ? d : gemeo;
+      const ep = d.lingua === 'pt' ? entradas : outras, ee = d.lingua === 'en' ? entradas : outras;
+      const indicesComEntrada = (doc, es) => doc.blocos.flatMap((t, i) => es.some(f => contem(t, f.frase) || (f.nova && contem(t, f.nova))) ? [i] : []);
+      const ip = indicesComEntrada(p, ep), ie = indicesComEntrada(e, ee);
+      const indices = emparelharBlocos(ip, ie, p.blocos.length === e.blocos.length);
+      emparelhamentos.set(chave, {pt:new Set(indices.keys()), en:new Set(indices.values())});
+    }
+    const pares = emparelhamentos.get(chave);
+    for (const f of entradas.filter(f => f.classe !== 'FICA' && !parDispensado(f))) for (const [i, t] of d.blocos.entries()) {
       if (!contem(t, f.frase) && !(f.nova && contem(t, f.nova))) continue;
-      const candidatos = d.blocos.length === gemeo.blocos.length ? [gemeo.blocos[i]] : gemeo.blocos.slice(Math.max(0, i - 3), i + 4);
-      const captadas = candidatos.flatMap(recusaVoz);
-      if (captadas.length && !candidatos.some(t => nomeada(t, outras))) semPar.set(f.id, {id:f.id, estudo:d.estudo, lingua:d.lingua, bloco:i});
+      const temPar = pares[d.lingua].has(i);
+      if (!temPar) semPar.set(f.id, {id:f.id, estudo:d.estudo, lingua:d.lingua, bloco:i});
     }
   }
   return {semPar:[...semPar.values()], semEntrada:[...semEntrada.values()]};
@@ -87,7 +125,7 @@ export function lerDocumentos(lista, dist) {
 export function conferir(lista, documentos, bilingues, quantificadores) {
   validarLista(lista);
   return {voz:lista.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, bilingues),
-    quantificadores, ...conferirBlocos(lista, documentos)};
+    quantificadores, ...conferirBlocos(lista, documentos, bilingues)};
 }
 export const recusas = r => Object.values(r).reduce((n, xs) => n + xs.length, 0);
 export function conferirLista(ficheiro, dist = 'dist') {

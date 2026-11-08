@@ -30,7 +30,9 @@ assert.deepEqual([...ids].sort(), ['V032','V040','V182','V195']);
 provas.atualA = conferirLista(A);
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
 provas.atualB = conferirLista(B);
-assert(provas.atualB.semPar.length && provas.atualB.semEntrada.length, 'A lista VOZ-2B desta passagem tem lacunas reais');
+assert.deepEqual(provas.atualB.semPar.map(f => f.id).sort(), ['V012','V093','V094','V100','V124','V293','V296']);
+assert.equal(provas.atualB.semEntrada.length, 15);
+assert(!provas.atualB.semPar.some(f => f.id === 'V122'), 'O limite por bloco fica para a HIG-6B');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hig6-historica-'));
 try {
   const f = path.join(tmp, 'lista.json'); fs.writeFileSync(f, JSON.stringify(inicial));

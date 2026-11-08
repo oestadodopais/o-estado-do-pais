@@ -29,6 +29,16 @@
 # propósito e registado, depois de `sondar-modelo.sh` dizer que a conta o aceita.
 # O RACIOCÍNIO VAI POR VARIÁVEL (§1.177, M57, 06.10.2026): `high` nas construções e nas passagens mecânicas,
 # `xhigh` só onde o lugar de direção o pedir; por omissão fica xhigh, para uma troca ser sempre deliberada.
+# A passagem pode editar o original. O shell continua a ler uma cópia fora da worktree.
+# O bloco inteiro é lido antes do exec; os guiões auxiliares ficam na pasta de origem.
+if [ "${OEDP_LANCADOR_COPIA:-}" != "$0" ]; then
+  origem="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
+  copia=$(mktemp "${TMPDIR:-/tmp}/oedp-lancador.XXXXXX") || exit 9
+  cp "$0" "$copia" || { rm -f "$copia"; exit 9; }
+  OEDP_LANCADOR_ORIGEM="$origem" OEDP_LANCADOR_COPIA="$copia" exec sh "$copia" "$@"
+fi
+# O descritor aberto pelo shell conserva a cópia até ao fim, mesmo depois do unlink.
+rm -f "$0" || exit 9
 set -u
 worktree="$1"; prompt="$2"; relatorio="$3"; shift 3
 case "$worktree" in /*) ;; *) echo "a worktree passa-se em caminho absoluto (recebi: ${worktree})" >&2; exit 9;; esac
@@ -49,7 +59,7 @@ raciocinio="${CODEX_RACIOCINIO:-}"
 teto="${CODEX_TETO_SEGUNDOS:-4500}"
 case "$teto" in ''|*[!0-9]*) echo "CODEX_TETO_SEGUNDOS tem de ser um inteiro de segundos (recebi: ${teto})" >&2; exit 9;; esac
 case "$raciocinio" in low|medium|high|xhigh) ;; *) echo "CODEX_RACIOCINIO tem de ser low, medium, high ou xhigh (recebi: ${raciocinio})" >&2; exit 9;; esac
-aqui="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
+aqui="$OEDP_LANCADOR_ORIGEM"
 comum="$aqui/PROMPT-construtor-comum.md"
 [ -f "$comum" ] || { echo "falta o prompt comum dos construtores: $comum" >&2; exit 9; }
 [ -f "$prompt" ] || { echo "falta o prompt da passagem: $prompt" >&2; exit 9; }

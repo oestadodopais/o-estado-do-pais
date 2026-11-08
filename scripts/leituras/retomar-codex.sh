@@ -5,6 +5,16 @@
 # uso: [CODEX_RACIOCINIO=high] retomar-codex.sh <worktree> <sessão> <prompt.md> <resposta fora do ramo> [<outra pasta com escrita>...]
 # As outras pastas entram em `--add-dir`, pela razão dita em construir-codex.sh (M43). A retoma é também o ensaio
 # da alavanca 3 do plano de 13.10: uma passagem de correção que retoma a sessão em vez de arrancar a frio.
+# A passagem pode editar o original. O shell continua a ler uma cópia fora da worktree.
+# O bloco inteiro é lido antes do exec; os guiões auxiliares ficam na pasta de origem.
+if [ "${OEDP_LANCADOR_COPIA:-}" != "$0" ]; then
+  origem="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
+  copia=$(mktemp "${TMPDIR:-/tmp}/oedp-lancador.XXXXXX") || exit 9
+  cp "$0" "$copia" || { rm -f "$copia"; exit 9; }
+  OEDP_LANCADOR_ORIGEM="$origem" OEDP_LANCADOR_COPIA="$copia" exec sh "$copia" "$@"
+fi
+# O descritor aberto pelo shell conserva a cópia até ao fim, mesmo depois do unlink.
+rm -f "$0" || exit 9
 set -u
 worktree="$1"; sessao="$2"; prompt="$3"; resposta="$4"; shift 4
 case "$worktree" in /*) ;; *) echo "a worktree passa-se em caminho absoluto (recebi: ${worktree})" >&2; exit 9;; esac
@@ -19,7 +29,7 @@ modelo="${CODEX_CONSTRUTOR:-gpt-6-astra}"
 raciocinio="${CODEX_RACIOCINIO:-}"
 [ -n "$raciocinio" ] || { echo "9 CODEX_RACIOCINIO por escolher, pela tarefa: high nas construções e nas correções que toquem réguas, nomes, frases ou dist/; medium no mecânico sem nada disso (Sol 6.1) e nas leituras do Astra; xhigh só nas leituras que toquem números ou fontes; nunca max (§1.202 regra 6)"; exit 9; }
 case "$raciocinio" in low|medium|high|xhigh) ;; *) echo "CODEX_RACIOCINIO tem de ser low, medium, high ou xhigh (recebi: ${raciocinio})" >&2; exit 9;; esac
-aqui="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
+aqui="$OEDP_LANCADOR_ORIGEM"
 comum="$aqui/PROMPT-construtor-comum.md"
 [ -f "$comum" ] || { echo "falta o prompt comum dos construtores: $comum" >&2; exit 9; }
 [ -f "$prompt" ] || { echo "falta o prompt da passagem: $prompt" >&2; exit 9; }

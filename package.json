@@ -38,7 +38,7 @@
     "check:cabeca": "node tests/inicio/hierarquia-b2.mjs",
     "check:cadeia": "node scripts/check-cadeia.mjs",
     "check:voz-retiradas": "node tests/edicoes/voz-integracao.mjs",
-    "check:pre-mandato": "node tests/leituras/frases.mjs && python3 tests/leituras/hig6a.py && python3 tests/leituras/pl1.py && python3 tests/leituras/ferramenta_pre_voo.py",
+    "check:pre-mandato": "node tests/leituras/frases.mjs && python3 tests/leituras/hig6a.py && python3 tests/leituras/pl1.py && python3 tests/leituras/ferramenta_pre_voo.py && python3 tests/leituras/lancadores_copia.py",
     "check:paridade": "node tests/leituras/paridade.mjs && node scripts/check-paridade.mjs",
     "check:voz": "node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/voz2a.mjs && node design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs dist design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json 2026-11-08 && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs",
     "check:lugar": "node scripts/check-lugar.mjs && node tests/edicoes/lugar.mjs && node tests/quadro/reguas.mjs l1",

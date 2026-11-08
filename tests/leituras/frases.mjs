@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync, spawnSync} from 'node:child_process';
-import {recusaVoz, conferirNumeros, conferirBlocos, conferir, recusas, validarLista, blocos, conferirLista} from '../../scripts/leituras/conferir-frases.mjs';
+import {recusaVoz, conferirNumeros, conferirBlocos, conferir, recusas, validarLista, blocos, conferirLista, emparelharBlocos} from '../../scripts/leituras/conferir-frases.mjs';
 const f = {id:'P1', estudo:'planta', lingua:'pt', classe:'REESCREVE', frase:'Este estudo não lê 12 nem sha256.', nova:'A fonte publicou 12.'};
 const g = {...f, id:'E1', lingua:'en', frase:'This study does not read 12 or sha256.', nova:'The source published 12.'};
 let provas = 0;
@@ -19,13 +19,39 @@ let docs = [doc('pt', [f.frase]), doc('en', [g.frase])];
 assert.equal(conferirBlocos([f], docs).semPar.length, 1); provas++;
 assert.equal(conferirBlocos([f], docs).semEntrada.length, 1); provas++;
 assert.equal(conferirBlocos([f,g], docs).semPar.length, 0); provas++;
-assert.equal(conferirBlocos([f], [docs[0], doc('en', ['A source.'])]).semPar.length, 0); provas++;
+assert.equal(conferirBlocos([f], [docs[0], doc('en', ['A source.'])]).semPar.length, 1); provas++;
 docs = [doc('pt', ['Fonte.', f.frase]), doc('en', ['Source.', 'Source.', g.frase])];
 assert.equal(conferirBlocos([f,g], docs).semPar.length, 0); provas++;
 assert.equal(conferirBlocos([f], docs).semPar.length, 1); provas++;
 // Com alinhamento, um par próximo não pode esconder o bloco gémeo sem entrada.
 docs = [doc('pt', [f.frase, 'Fonte.']), doc('en', ['This document does not say it.', g.frase])];
-assert.equal(conferirBlocos([f,g], docs).semPar.length, 1); provas++;
+assert.equal(conferirBlocos([f,g], docs).semPar.length, 2); provas++;
+// V228: o português sai e o inglês sem entrada não é apanhado pela régua.
+const v228 = {...f, id:'V228', classe:'SAI', frase:'Estão aqui em vez de numa nota de rodapé.'};
+const inglesV228 = 'They are here rather than in a footnote.';
+assert.equal(recusaVoz(inglesV228).length, 0); provas++;
+const docsV228 = [doc('pt', [v228.frase]), doc('en', [inglesV228])];
+assert.deepEqual(conferirBlocos([v228], docsV228).semPar.map(e => e.id), ['V228']); provas++;
+for (const extra of [{par:'nenhum'}, {par:'nenhum', razao_par:'curta'}, {par:'outro', razao_par:'Uma razão com mais de vinte carateres.'}, {razao_par:'Uma razão com mais de vinte carateres.'}]) {
+  assert.throws(() => validarLista([{...v228, ...extra}]), /razao_par/); provas++;
+}
+const dispensada = {...v228, par:'nenhum', razao_par:'A outra edição já não contém esta frase.'};
+validarLista([dispensada]);
+assert.equal(conferirBlocos([dispensada], docsV228).semPar.length, 0); provas++;
+const fica = {...g, classe:'FICA', frase:inglesV228};
+assert.equal(conferirBlocos([v228, fica], docsV228).semPar.length, 0); provas++;
+// Duas entradas no mesmo bloco partilham o seu par.
+assert.equal(conferirBlocos([v228, {...v228, id:'V229'}, fica], docsV228).semPar.length, 0); provas++;
+// Dois blocos distintos não podem reutilizar o único bloco inglês.
+const segundo = {...v228, id:'V230', frase:'Outra frase retirada.'};
+const reutilizado = [doc('pt', [v228.frase, segundo.frase]), doc('en', [inglesV228])];
+assert.deepEqual(conferirBlocos([v228, segundo, fica], reutilizado).semPar.map(e => e.id), ['V230']); provas++;
+// O aviso de indisponibilidade em inglês não torna o estudo bilingue.
+const indisponivel = {...doc('en', [inglesV228]), tipo:'página'};
+assert.equal(conferirBlocos([v228], [doc('pt', [v228.frase]), {...doc('pt', [v228.frase]), tipo:'página'}, indisponivel]).semPar.length, 0); provas++;
+assert.deepEqual([...emparelharBlocos([0,2], [1], false)], [[2,1]]); provas++;
+assert.deepEqual([...emparelharBlocos([0,2], [1,3], false)].reverse(), [[0,1],[2,3]]); provas++;
+assert.equal(emparelharBlocos([0], [4], false).size, 0); provas++;
 assert(recusas(conferir([f,g], [], new Set(['planta']), [{id:'P1'}]))); provas++;
 for (const lista of [[], [f,f], [{...f, nova:null}], [{...f, lingua:'xx'}]]) { assert.throws(() => validarLista(lista)); provas++; }
 assert.deepEqual(blocos('<main><p data-registo-unidade="x">This study does not read it.</p><section class="texto-artigo estudo-leitura"><p data-registo-unidade="x">This study does not read it.</p></section></main>', 'página'), ['This study does not read it.']); provas++;
