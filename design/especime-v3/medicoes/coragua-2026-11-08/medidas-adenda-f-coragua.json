@@ -1,0 +1,578 @@
+{
+  "mandato": "COR-AGUA, adenda F",
+  "estado": "concluida",
+  "data": "2026-11-08",
+  "motor": "f9073daf20775f5c949d8a7bcc60a0db6fc5bedb",
+  "restauracao": {
+    "core/attributions.py": {
+      "igual_byte_a_byte": true,
+      "sha256": "65b82825741563f6a5586149ec68c3d61a3b7aa0aef3173019390eddd784753e"
+    },
+    "core/attributions_test.py": {
+      "igual_byte_a_byte": true,
+      "sha256": "099845aa9d889ec2651991cc47c811163932cc65e131fb32af05e882b2bb1e20"
+    }
+  },
+  "teste": {
+    "codigo": 0,
+    "linha_final": "ATTRIBUTIONS_TEST: PASS — 6 checks (known-positive caught, correct pass, accent folding, undeclared warn/strict, bare pass, ledger validation)",
+    "contagem_lida_pelo_gate": 6
+  },
+  "medicao_no_motor": {
+    "ficheiro": "core/medidas-adenda-f-coragua.json",
+    "sha256": "d3e0cda09bf49b3862bd0c12169553b562e830f58bfa1527fc6295e71b721d86"
+  },
+  "tetos": {
+    "onde-esta-a-agua-pt": {
+      "misattributions": 6,
+      "undeclared": 28
+    },
+    "agua-nao-faturada-pt": {
+      "misattributions": 0,
+      "undeclared": 5
+    },
+    "agua-nao-faturada-en": {
+      "misattributions": 0,
+      "undeclared": 5
+    }
+  },
+  "evora": {
+    "evora-economy-2026-pt": {
+      "misattributions": 0,
+      "undeclared": 0,
+      "tetos": {
+        "misattributions": 0,
+        "undeclared": 0
+      }
+    },
+    "evora-economy-2026-pt-html": {
+      "misattributions": 0,
+      "undeclared": 0,
+      "tetos": {
+        "misattributions": 0,
+        "undeclared": 0
+      }
+    },
+    "evora-economy-2026-pt-art": {
+      "misattributions": 0,
+      "undeclared": 0,
+      "tetos": {
+        "misattributions": 0,
+        "undeclared": 0
+      }
+    },
+    "evora-pelouros-html": {
+      "misattributions": 0,
+      "undeclared": 0,
+      "tetos": {
+        "misattributions": 0,
+        "undeclared": 0
+      }
+    },
+    "evora-quem-governou-pt-html": {
+      "misattributions": 19,
+      "undeclared": 0,
+      "tetos": {
+        "misattributions": 19,
+        "undeclared": 0
+      }
+    }
+  },
+  "atribuicoes_retiradas": 12,
+  "outras_linhas_novas_atribuidas": 21,
+  "ocorrencias": [
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "ATTRIB",
+      "numero": 1,
+      "valor": "0,0706",
+      "entidade": "ERSAR",
+      "classificacao": "falsa",
+      "forma": "entidade certa na frase anterior",
+      "razao": "A ERSAR pertence à frase anterior sobre o encargo doméstico; o 0,0706 é a tarifa da EDIA."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "ATTRIB",
+      "numero": 2,
+      "valor": "0,0382",
+      "entidade": "ERSAR",
+      "classificacao": "falsa",
+      "forma": "entidade certa na frase anterior",
+      "razao": "A ERSAR pertence à frase anterior sobre o encargo doméstico; o 0,0382 é a tarifa da EDIA."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "ATTRIB",
+      "numero": 3,
+      "valor": "70",
+      "entidade": "EDIA",
+      "classificacao": "falsa",
+      "forma": "número homónimo de outra grandeza",
+      "razao": "O 70 do texto é investimento em sistemas de rega, na auditoria do Tribunal de Contas à EDIA. A linha bul-oct24-pct trata de armazenamento da APA. A EDIA é a entidade auditada, não a autora do valor do boletim."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "ATTRIB",
+      "numero": 4,
+      "valor": "70",
+      "entidade": "Tribunal de Contas",
+      "classificacao": "falsa",
+      "forma": "número homónimo de outra grandeza",
+      "razao": "O Tribunal de Contas é a fonte correta do 70 relativo ao investimento em rega. A régua associa o mesmo literal à linha bul-oct24-pct, relativa ao armazenamento da APA."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "ATTRIB",
+      "numero": 5,
+      "valor": "1,348",
+      "entidade": "EDIA",
+      "classificacao": "falsa",
+      "forma": "entidade certa na frase seguinte",
+      "razao": "A EDIA pertence à frase seguinte sobre as contas auditadas; o 1,348 é o encargo doméstico calculado a partir da ERSAR."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "ATTRIB",
+      "numero": 6,
+      "valor": "2 029 018 255",
+      "entidade": "Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "entidade certa na frase seguinte",
+      "razao": "A Gulbenkian pertence à frase seguinte sobre o inquérito; o 2 029 018 255 vem das contas da EDIA."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 1,
+      "valor": "2024",
+      "entidade": "APA, ERSAR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 identifica a edição dos dados da ERSAR, não atribui o ano de referência da DGADR à APA ou à ERSAR."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 2,
+      "valor": "02",
+      "entidade": "ERSAR",
+      "classificacao": "falsa",
+      "forma": "rótulo",
+      "razao": "02 é uma entrada do índice das secções."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 3,
+      "valor": "05",
+      "entidade": "ERSAR",
+      "classificacao": "falsa",
+      "forma": "rótulo",
+      "razao": "05 é uma entrada do índice das secções."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 4,
+      "valor": "02",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "rótulo",
+      "razao": "02 é o rótulo da secção De onde vem."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 5,
+      "valor": "2024",
+      "entidade": "CADC",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024/25 é um ano hidrológico dos relatórios da CADC."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 6,
+      "valor": "2024",
+      "entidade": "CADC",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024/25 é um ano hidrológico da grelha conferida na CADC."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 7,
+      "valor": "2",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "rótulo de parte",
+      "razao": "Parte 2 identifica uma parte dos planos de bacia, não duas albufeiras."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 8,
+      "valor": "2024",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "A data 2024 é mencionada numa crítica a um cartão; a frase diz que não existe esse balanço setorial."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 9,
+      "valor": "2024",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 integra o título do cartão que o estudo critica, distinguindo-o dos dados de 2018."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 10,
+      "valor": "5",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "número homónimo de outra grandeza",
+      "razao": "O 5% industrial aparece no cartão transcrito e criticado; não são os cinco hectares do universo do inquérito da Gulbenkian."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 11,
+      "valor": "2024",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024/25 identifica o período hidrológico dos dados da APA."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 12,
+      "valor": "2019",
+      "entidade": "Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2019 é o ano do inquérito, com a Gulbenkian corretamente identificada no texto e na fonte da linha."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 13,
+      "valor": "5",
+      "entidade": "Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "quantidade de um algarismo",
+      "razao": "Os cinco hectares são corretamente ligados ao inquérito da Gulbenkian. A ausência de attributed_to é a decisão do §1.2, não falta de fonte."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 14,
+      "valor": "8",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "código",
+      "razao": "O 8 faz parte do código RH8 dos planos de bacia."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 15,
+      "valor": "05",
+      "entidade": "APA",
+      "classificacao": "falsa",
+      "forma": "rótulo",
+      "razao": "05 é o rótulo da secção O que se perde."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 16,
+      "valor": "2024",
+      "entidade": "ERSAR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 é o período da decomposição publicada pela ERSAR."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 17,
+      "valor": "2024",
+      "entidade": "DGADR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 é o período da eficiência publicada pela DGADR; a fonte permanece na linha."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 18,
+      "valor": "8",
+      "entidade": "DGADR",
+      "classificacao": "falsa",
+      "forma": "quantidade de um algarismo",
+      "razao": "O mínimo de 8% de Alvor é corretamente apresentado como valor da DGADR. A atribuição por proximidade foi retirada pelo §1.2."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 19,
+      "valor": "2024",
+      "entidade": "ERSAR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 é o período do encargo doméstico da ERSAR."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 20,
+      "valor": "2024",
+      "entidade": "EDIA, ERSAR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 refere-se aos dados da ERSAR; a EDIA aparece no contexto das tarifas da campanha seguinte."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 21,
+      "valor": "35",
+      "entidade": "EDIA",
+      "classificacao": "falsa",
+      "forma": "número homónimo de outra grandeza",
+      "razao": "O 35 é receita estimada em milhões de euros na auditoria à EDIA, não o rácio calculado da linha ratio-hi. A fonte da auditoria está identificada na frase anterior."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 22,
+      "valor": "2016",
+      "entidade": "EDIA",
+      "classificacao": "falsa",
+      "forma": "ano em referência documental",
+      "razao": "2016 integra o número do Relatório 4/2016; a EDIA é o objeto da auditoria."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 23,
+      "valor": "2",
+      "entidade": "EDIA",
+      "classificacao": "falsa",
+      "forma": "rótulo ordinal",
+      "razao": "2.ª Secção identifica a secção do Tribunal de Contas, não duas albufeiras."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 24,
+      "valor": "2",
+      "entidade": "IPMA",
+      "classificacao": "falsa",
+      "forma": "código no endereço",
+      "razao": "O 2 faz parte do nome público cs2.ipma.pt, não é uma quantidade atribuída ao IPMA."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 25,
+      "valor": "08",
+      "entidade": "IPMA",
+      "classificacao": "falsa",
+      "forma": "rótulo",
+      "razao": "08 é o rótulo da secção Autonomia."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 26,
+      "valor": "2019",
+      "entidade": "Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2019 é o ano do inquérito corretamente atribuído à Gulbenkian."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 27,
+      "valor": "5",
+      "entidade": "Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "quantidade de um algarismo",
+      "razao": "Os cinco hectares delimitam o universo do inquérito da Gulbenkian; a fonte permanece na linha e no texto."
+    },
+    {
+      "documento": "onde-esta-a-agua-pt",
+      "tipo": "UNDECLARED",
+      "numero": 28,
+      "valor": "2024",
+      "entidade": "CADC",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024/25 identifica o último período hidrológico referido nos relatórios da CADC."
+    },
+    {
+      "documento": "agua-nao-faturada-pt",
+      "tipo": "UNDECLARED",
+      "numero": 1,
+      "valor": "2019",
+      "entidade": "C-Lab, Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2019 identifica o ano do inquérito da Gulbenkian e do C-Lab."
+    },
+    {
+      "documento": "agua-nao-faturada-pt",
+      "tipo": "UNDECLARED",
+      "numero": 2,
+      "valor": "2020",
+      "entidade": "C-Lab, Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2020 identifica a data de publicação do estudo da Gulbenkian."
+    },
+    {
+      "documento": "agua-nao-faturada-pt",
+      "tipo": "UNDECLARED",
+      "numero": 3,
+      "valor": "5",
+      "entidade": "C-Lab, Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "quantidade de um algarismo",
+      "razao": "Os cinco hectares delimitam o universo do inquérito corretamente identificado como da Gulbenkian e do C-Lab; attributed_to saiu pela decisão do §1.2."
+    },
+    {
+      "documento": "agua-nao-faturada-pt",
+      "tipo": "UNDECLARED",
+      "numero": 4,
+      "valor": "2024",
+      "entidade": "DGADR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 identifica o período da eficiência publicada pela DGADR."
+    },
+    {
+      "documento": "agua-nao-faturada-pt",
+      "tipo": "UNDECLARED",
+      "numero": 5,
+      "valor": "2024",
+      "entidade": "DGADR",
+      "classificacao": "falsa",
+      "forma": "ano em referência documental",
+      "razao": "2024 integra RCM 23/2024 numa lista de documentos; a DGADR aparece nessa lista, não como autora da resolução."
+    },
+    {
+      "documento": "agua-nao-faturada-en",
+      "tipo": "UNDECLARED",
+      "numero": 1,
+      "valor": "2019",
+      "entidade": "C-Lab, Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2019 identifica o ano do inquérito da Gulbenkian e do C-Lab."
+    },
+    {
+      "documento": "agua-nao-faturada-en",
+      "tipo": "UNDECLARED",
+      "numero": 2,
+      "valor": "2020",
+      "entidade": "C-Lab, Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2020 identifica a data de publicação do estudo da Gulbenkian."
+    },
+    {
+      "documento": "agua-nao-faturada-en",
+      "tipo": "UNDECLARED",
+      "numero": 3,
+      "valor": "5",
+      "entidade": "C-Lab, Gulbenkian",
+      "classificacao": "falsa",
+      "forma": "quantidade de um algarismo",
+      "razao": "Os cinco hectares delimitam o universo do inquérito corretamente identificado como da Gulbenkian e do C-Lab; attributed_to saiu pela decisão do §1.2."
+    },
+    {
+      "documento": "agua-nao-faturada-en",
+      "tipo": "UNDECLARED",
+      "numero": 4,
+      "valor": "2024",
+      "entidade": "DGADR",
+      "classificacao": "falsa",
+      "forma": "ano",
+      "razao": "2024 identifica o período da eficiência publicada pela DGADR."
+    },
+    {
+      "documento": "agua-nao-faturada-en",
+      "tipo": "UNDECLARED",
+      "numero": 5,
+      "valor": "2024",
+      "entidade": "DGADR",
+      "classificacao": "falsa",
+      "forma": "ano em referência documental",
+      "razao": "2024 integra RCM 23/2024 numa lista de documentos; a DGADR aparece nessa lista, não como autora da resolução."
+    }
+  ],
+  "nota_sobre_avisos": "UNDECLARED assinala corretamente a ausência de attributed_to. A classificação falsa significa que a ocorrência não prova uma atribuição errada no texto; não nega a ausência deliberada do campo.",
+  "conferencias": [
+    {
+      "nome": "medição das atribuições",
+      "codigo": 0,
+      "registo": "coragua-f-medir.log"
+    },
+    {
+      "nome": "classificação e tetos",
+      "codigo": 0,
+      "registo": "coragua-f-classificacao.log"
+    },
+    {
+      "nome": "core.attributions_test",
+      "codigo": 0,
+      "registo": "coragua-f-attributions-test.log"
+    },
+    {
+      "nome": "verificação dos tetos, restauração e formato",
+      "codigo": 0,
+      "registo": "coragua-f-verificacao.log"
+    },
+    {
+      "nome": "ledger:check",
+      "codigo": 0,
+      "registo": "coragua-f-ledger.log"
+    },
+    {
+      "nome": "check:cruzamento -- --with-origin",
+      "codigo": 0,
+      "registo": "coragua-f-cruzamento.log"
+    },
+    {
+      "nome": "check:series com motor",
+      "codigo": 0,
+      "registo": "coragua-f-series.log"
+    }
+  ],
+  "codigos_da_medicao_direta": {
+    "onde-esta-a-agua-pt": 1,
+    "agua-nao-faturada-pt": 0,
+    "agua-nao-faturada-en": 0
+  },
+  "core_gate": "Adiado para o lugar de direção, como manda o mandato.",
+  "erros_de_inspecao_corrigidos": [
+    "Na primeira inspeção procurei documents no ficheiro de tetos; a chave correta é deliverables. A leitura seguinte usou essa chave. O livro novo de Água não faturada não existia em cf5bd5b, pelo que todas as suas linhas foram consideradas novas na auditoria das atribuições."
+  ],
+  "custo": {
+    "chamadas_ate_medicao": 13,
+    "corridas": 7,
+    "ajudantes": 0,
+    "criterio": "Uma corrida por invocação de curto.sh, incluindo medições e verificações. Os subprocessos contam na corrida que os lançou."
+  }
+}
