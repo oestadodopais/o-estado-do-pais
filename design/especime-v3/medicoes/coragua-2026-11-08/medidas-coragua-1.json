@@ -1,0 +1,66 @@
+{
+  "cabeca_do_dist": {
+    "valor": "a2ebb1a9418e958a0e0a4b0882362291e200a231",
+    "comando": "node -p \"JSON.parse(require('fs').readFileSync('dist/version.json')).commit\""
+  },
+  "entradas_coragua": {
+    "valor": "91",
+    "comando": "node -p \"JSON.parse(require('fs').readFileSync('design/especime-v3/medicoes/coragua-2026-11-08/FRASES-COR-AGUA.json')).length\""
+  },
+  "pre_mandato_codigo": {
+    "valor": "0",
+    "comando": "npm run check:pre-mandato"
+  },
+  "frases_reais_codigo": {
+    "valor": "0",
+    "comando": "npm run check:frases-reais"
+  },
+  "typecheck_codigo": {
+    "valor": "0",
+    "comando": "npm run typecheck"
+  },
+  "plantas_memoria": {
+    "valor": "48",
+    "comando": "node tests/leituras/frases.mjs"
+  },
+  "plantas_ligacao": {
+    "valor": "43",
+    "comando": "node tests/leituras/frases-ligacao.mjs"
+  },
+  "atualA": {
+    "valor": "{\"voz\": 0, \"numeros\": 0, \"quantificadores\": 0, \"presenca\": 0, \"semPar\": 0, \"semEntrada\": 0}",
+    "comando": "npm run check:frases-reais"
+  },
+  "atualB": {
+    "valor": "{\"voz\": 0, \"numeros\": 1, \"quantificadores\": 28, \"presenca\": 0, \"semPar\": 7, \"semEntrada\": 15}",
+    "comando": "npm run check:frases-reais"
+  },
+  "corAgua": {
+    "valor": "{\"voz\": 0, \"numeros\": 0, \"quantificadores\": 0, \"presenca\": 0, \"semPar\": 0, \"semEntrada\": 0}",
+    "comando": "npm run check:frases-reais"
+  },
+  "diferenca_voz2b": {
+    "valor": "onde-esta-a-agua, documento: total igual à exceção; índices 186 e 208 passam a 185 e 207. Números: 0 para 1. As restantes contagens mantêm-se.",
+    "comando": "npm run check:frases-reais"
+  },
+  "build_codigo": {
+    "valor": "0",
+    "comando": "npm run build"
+  },
+  "build_segundos": {
+    "valor": "692",
+    "comando": "sh scripts/leituras/curto.sh <temporario>/coragua-build.log npm run build"
+  },
+  "corridas": {
+    "valor": "7",
+    "comando": "2 check:pre-mandato; 2 check:frases-reais; 1 typecheck; 1 build; 1 medição direta das três listas por conferirLista"
+  },
+  "portoes_completos": {
+    "valor": "0",
+    "comando": "Não executado nesta passagem."
+  },
+  "capturas": {
+    "valor": "0",
+    "comando": "Não executadas nesta passagem."
+  }
+}

@@ -6,12 +6,16 @@ import {compara, blocosDe, plantasParidade} from './paridade-numeros.mjs';
 
 export const assinatura = r => ({total: Object.fromEntries(Object.entries(r.total).map(([k, v]) => [k, [...v].sort()])),
   blocos: r.blocos.map(b => ({i: b.i, soPt: [...b.soPt].sort(), soEn: [...b.soEn].sort()}))});
-export function conferirParidade(dist, excecoes) {
-  const erros = [], medidas = [], usados = new Set();
+export function validarExcecoes(excecoes) {
   if (excecoes.data !== '2026-11-08' || excecoes.retirar !== 'COR-AGUA') throw new Error('paridade: exceção sem data ou fecho');
   const permitidos = new Set(['a-casa-em-portugal-e-na-europa', 'agua-nao-faturada', 'onde-esta-a-agua']);
   const chaves = excecoes.diferencas.map(e => e.estudo + '|' + e.tipo);
   if (new Set(chaves).size !== chaves.length || excecoes.diferencas.some(e => !permitidos.has(e.estudo))) throw new Error('paridade: exceção fora da lista fechada');
+  return chaves;
+}
+export function conferirParidade(dist, excecoes) {
+  const erros = [], medidas = [], usados = new Set();
+  const chaves = validarExcecoes(excecoes);
   for (const s of fs.readdirSync(path.join(dist, 'estudos')).sort()) {
     const pt = path.join(dist, 'estudos', s), en = path.join(dist, 'en/studies', s);
     // Uma página de indisponibilidade não é uma edição inglesa publicada.

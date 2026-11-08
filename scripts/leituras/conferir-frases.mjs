@@ -5,7 +5,8 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
 import {frasesDoTexto, medirPagina} from '../voz-autorreferencia.mjs';
-import {formasNumericas} from '../paridade-numeros.mjs';
+import {formasNumericas, blocosDe, compara} from '../paridade-numeros.mjs';
+import {assinatura, validarExcecoes} from '../check-paridade.mjs';
 // Grupos de milhares da paridade, conservando a distinção entre 1,2 e 12.
 export const numeros = t => formasNumericas(t).map(n => {
   n = n.replace(/[\s\u00a0\u202f]/g, '');
@@ -88,31 +89,54 @@ export function validarLista(lista) {
     ids.add(f.id);
   }
 }
-export function conferirNumeros(lista, bilingues) {
-  const tirados = new Map();
-  for (const f of lista) {
-    if (f.classe === 'FICA') continue;
-    const antes = numeros(f.frase), depois = f.classe === 'REESCREVE' ? numeros(f.nova) : [];
-    for (const n of depois) { const i = antes.indexOf(n); if (i >= 0) antes.splice(i, 1); else antes.push('+' + n); }
-    const k = f.estudo + '|' + f.lingua;
-    tirados.set(k, [...(tirados.get(k) ?? []), ...antes]);
+// A procura conserva as frases com selos, mas a comparação usa os blocos
+// de check:paridade, incluindo legendas e transcrições da página.
+const blocosNumericos = d => d.blocosNumericos ?? d.blocos;
+const frasesSemSelos = (frase, d) => [...new Set(d.procuraPagina
+  ? procurarFrase(frase, d.procuraPagina).map(o => o.texto).filter(Boolean)
+  : [normal(frase)])];
+function aplicarLista(lista, d) {
+  let resultado = [...blocosNumericos(d)];
+  for (const f of lista.filter(f => f.estudo === d.estudo && f.lingua === d.lingua && f.classe !== 'FICA')) {
+    for (const frase of frasesSemSelos(f.frase, d)) {
+      resultado = resultado.map(b => b.replaceAll(frase, () => f.classe === 'SAI' ? '' : normal(f.nova)));
+    }
   }
-  return [...new Set(lista.map(f => f.estudo))].filter(s => bilingues.has(s)).flatMap(estudo => {
-    const pt = (tirados.get(estudo + '|pt') ?? []).sort(), en = (tirados.get(estudo + '|en') ?? []).sort();
-    return JSON.stringify(pt) === JSON.stringify(en) ? [] : [{estudo, pt, en}];
-  });
+  return resultado.map(normal).filter(Boolean);
+}
+export function conferirNumeros(lista, documentos, bilingues, {aplicada = false, excecoes = JSON.parse(fs.readFileSync(new URL('../paridade-excecoes.json', import.meta.url), 'utf8'))} = {}) {
+  validarExcecoes(excecoes);
+  const erros = [];
+  for (const estudo of new Set(lista.map(f => f.estudo))) {
+    if (!bilingues.has(estudo)) continue;
+    for (const tipo of ['documento', 'página']) {
+      const edicao = lingua => documentos.find(d => !d.soPresenca && d.estudo === estudo && d.tipo === tipo && d.lingua === lingua);
+      const pt = edicao('pt'), en = edicao('en');
+      if (!pt || !en) continue;
+      const depois = d => aplicada ? blocosNumericos(d) : aplicarLista(lista, d);
+      const numeros = assinatura(compara(depois(pt), depois(en)));
+      const difere = numeros.total.soPt.length || numeros.total.soEn.length || numeros.blocos.length;
+      const excecao = excecoes.diferencas.find(e => e.estudo === estudo && e.tipo === tipo);
+      if (difere && JSON.stringify(numeros) !== JSON.stringify(excecao?.numeros)) erros.push({estudo, tipo, numeros});
+    }
+  }
+  return erros;
 }
 const textoDaEntrada = (f, aplicada) => aplicada ? (f.classe === 'SAI' ? null : f.classe === 'REESCREVE' ? f.nova : f.frase) : f.frase;
 const nomeada = (texto, entradas, bloco, aplicada) => entradas.some(f =>
   procurarFrase(textoDaEntrada(f, aplicada), bloco).some(o => o.texto &&
-    (f.classe === 'FICA' ? normal(texto) === o.texto : normal(texto).includes(o.texto))));
+    (f.classe === 'FICA' ? normal(texto) === o.texto : (normal(texto).includes(o.texto) || o.texto.includes(normal(texto))))));
 export function conferirPresenca(lista, documentos, aplicada = false) {
   return lista.flatMap(f => {
     const paginas = documentos.filter(d => f.paginas.includes(d.rota));
     const frase = aplicada && f.classe === 'REESCREVE' ? f.nova : f.frase;
-    const presente = paginas.some(d => procurarFrase(frase, d.procuraPagina ?? d.texto ?? d.blocos.join(' ')).length);
+    // Antes de aplicar, SAI e REESCREVE têm de caber num bloco da paridade.
+    // A presença recusa a entrada inaplicável; os números medem o resultado.
+    const presente = paginas.some(d => !aplicada && f.classe !== 'FICA'
+      ? frasesSemSelos(frase, d).some(t => blocosNumericos(d).some(b => b.includes(t)))
+      : procurarFrase(frase, d.procuraPagina ?? d.texto ?? d.blocos.join(' ')).length);
     const ok = aplicada && f.classe === 'SAI' ? f.paginas.every(rota => paginas.some(d => d.rota === rota)) && !presente : presente;
-    return ok ? [] : [{id:f.id, classe:f.classe, razao:aplicada && f.classe === 'SAI' ? 'frase retirada ainda presente ou páginas ausentes' : 'frase ausente das páginas declaradas'}];
+    return ok ? [] : [{id:f.id, classe:f.classe, razao:aplicada && f.classe === 'SAI' ? 'frase retirada ainda presente ou páginas ausentes' : !aplicada && f.classe !== 'FICA' ? 'frase ausente dos blocos das páginas declaradas' : 'frase ausente das páginas declaradas'}];
   });
 }
 
@@ -192,7 +216,7 @@ export function lerDocumentos(lista, dist) {
       const procuraPagina = textoParaProcura(corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo);
       const procuraBlocos = blocosParaProcura(html, tipo, tags), procuraVoz = blocosParaProcura(html, tipo, tagsVoz);
       documentos.push({estudo, lingua, tipo, rota, soPresenca, procuraPagina, procuraBlocos, procuraVoz,
-        textoComSelos:procuraPagina.textoComSelos, texto:procuraPagina.texto,
+        textoComSelos:procuraPagina.textoComSelos, texto:procuraPagina.texto, blocosNumericos:blocosDe(html),
         blocos:procuraBlocos.map(b => b.texto), textosVoz:procuraVoz.map(b => b.texto)});
       if (tipo === 'documento') lidos.add(lingua);
     }
@@ -207,7 +231,7 @@ export function conferirQuantificadores(lista) {
 }
 export function conferir(lista, documentos, bilingues, {aplicada = false} = {}) {
   validarLista(lista);
-  return {voz:lista.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, bilingues),
+  return {voz:lista.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, documentos, bilingues, {aplicada}),
     quantificadores:conferirQuantificadores(lista), presenca:conferirPresenca(lista, documentos, aplicada),
     ...conferirBlocos(lista, documentos, bilingues, aplicada)};
 }

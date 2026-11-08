@@ -51,6 +51,17 @@ medir([{...pt, classe:'SAI', nova:'', frase:'nesta página'}], [doc('pt', [capta
 // Uma FICA com duas frases também não cobre cada uma por subcadeia.
 medir([{...pt, classe:'FICA', nova:'', frase:captada + ' A fonte está identificada.'}],
   [doc('pt', [captada + ' A fonte está identificada.'])], 'semEntrada');
+// Uma SAI ou REESCREVE do bloco nomeia cada frase apanhada dentro dele.
+for (const classe of ['SAI', 'REESCREVE']) {
+  const bloco = captada + ' Este estudo não lê a fonte.';
+  medir([{...pt, classe, frase:bloco}], [doc('pt', [bloco])], null);
+  const ausente = {...pt, classe, frase:'Antes. ' + bloco + ' Depois.'};
+  const r = conferir([ausente], [doc('pt', [bloco])], new Set());
+  assert.equal(r.presenca.length, 1); assert.equal(r.semEntrada.length, 2); provas++;
+}
+// A frase que atravessa blocos existe na página, mas não se pode aplicar.
+medir([{...pt, frase:'A fonte publicou o relatório. O relatório identifica a fonte.'}],
+  [{...doc('pt', [pt.frase, pt.nova]), texto:pt.frase + ' ' + pt.nova}], 'presenca');
 // A lista não cobre uma frase captada apenas por a incluir numa frase inventada.
 const inventada = entrada('pt', {classe:'FICA', nova:'', frase:'Antes. Este estudo não lê a fonte. Depois.'});
 const descoberta = conferir([inventada], [doc('pt', ['Este estudo não lê a fonte.'])], new Set());

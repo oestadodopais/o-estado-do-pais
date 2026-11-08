@@ -10,6 +10,7 @@ const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 process.chdir(raiz);
 const A = 'design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json';
 const B = 'design/especime-v3/medicoes/voz2b-2026-11-07/FRASES-VOZ-2B.json';
+const C = 'design/especime-v3/medicoes/coragua-2026-11-08/FRASES-COR-AGUA.json';
 const antiga = rev => JSON.parse(execFileSync('git', ['show', rev + ':' + A], {encoding:'utf8'}));
 const quant = conferirQuantificadores;
 const norm = t => t.replace(/\u200b/g, '').trim();
@@ -29,9 +30,15 @@ assert.equal(provas.frasesNovasAntesG.length, 3);
 assert.deepEqual([...ids].sort(), ['V032','V040','V182','V195']);
 provas.atualA = conferirLista(A, 'dist', {aplicada:true});
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
+provas.corAgua = conferirLista(C);
+assert.equal(recusas(provas.corAgua), 0, JSON.stringify(provas.corAgua));
 provas.atualB = conferirLista(B);
 assert.equal(provas.atualB.voz.length, 0);
-assert.equal(provas.atualB.numeros.length, 0);
+// O total mantém-se, mas a retirada de um bloco desloca dois índices da exceção.
+assert.deepEqual(provas.atualB.numeros.map(({estudo, tipo}) => ({estudo, tipo})), [{estudo:'onde-esta-a-agua', tipo:'documento'}]);
+const excecaoB = JSON.parse(fs.readFileSync('scripts/paridade-excecoes.json', 'utf8')).diferencas.find(e => e.estudo === 'onde-esta-a-agua' && e.tipo === 'documento');
+assert.deepEqual(provas.atualB.numeros[0].numeros.total, excecaoB.numeros.total);
+assert.deepEqual(provas.atualB.numeros[0].numeros.blocos, excecaoB.numeros.blocos.map(b => ({...b, i:b.i >= 186 ? b.i - 1 : b.i})));
 assert.equal(provas.atualB.quantificadores.length, 28);
 assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas da VOZ-2B têm de estar nas páginas declaradas');
 assert.deepEqual(provas.atualB.semPar.map(f => f.id).sort(), ['V012','V093','V094','V100','V124','V293','V296']);
@@ -44,6 +51,6 @@ try {
   assert.equal(provas.inicialCompleta.voz.length, 10);
   assert(recusas(provas.inicialCompleta));
 } finally { fs.rmSync(tmp, {recursive:true, force:true}); }
-for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));
+for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['COR-AGUA', provas.corAgua], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));
 console.log('pré-G: ' + provas.quantificadoresAntesGRaw.length + ' entradas sem campo; ' + provas.quantificadoresNovosAntesG.length + ' entradas novas, ' + provas.frasesNovasAntesG.length + ' frases distintas');
 if (process.argv[2]) fs.writeFileSync(process.argv[2], JSON.stringify(provas, null, 2) + '\n');

@@ -3,18 +3,41 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync, spawnSync} from 'node:child_process';
+import {compara} from '../../scripts/paridade-numeros.mjs';
+import {assinatura} from '../../scripts/check-paridade.mjs';
 import {recusaVoz, conferirNumeros, conferirBlocos, conferir, recusas, validarLista, blocos, conferirLista, emparelharBlocos} from '../../scripts/leituras/conferir-frases.mjs';
 const f = {id:'P1', estudo:'planta', lingua:'pt', paginas:['/estudos/planta/documento'], classe:'REESCREVE', frase:'Este estudo não lê 12 nem sha256.', nova:'A fonte publicou 12.'};
 const g = {...f, id:'E1', lingua:'en', paginas:['/en/studies/planta/document'], frase:'This study does not read 12 or sha256.', nova:'The source published 12.'};
 let provas = 0;
 for (const t of ['and then that money does not come in (inference).', 'Os três moveram-se com as marés nacionais e nada do que aqui foi lido fornece o contrafactual (inferência).', 'Iniciativa Liberal, updated on 8 June 2026 (the page does not say when it was published).']) { assert(recusaVoz(t).length); provas++; }
 assert.equal(recusaVoz('A fonte publicou 12.').length, 0); provas++;
-assert.equal(conferirNumeros([f, g], new Set(['planta'])).length, 0); provas++;
-assert.equal(conferirNumeros([f, {...g, nova:'The source published 12 and sha256.'}], new Set(['planta'])).length, 1); provas++;
-assert.equal(conferirNumeros([{...g, nova:'The source published 13.'}], new Set(['planta'])).length, 1); provas++;
-assert.equal(conferirNumeros([{...f, frase:'1 234,5', nova:'1 234,5'}, {...g, frase:'1,234.5', nova:'1,234.5'}], new Set(['planta'])).length, 0); provas++;
-assert.equal(conferirNumeros([{...f, frase:'1,2', nova:'12'}, {...g, frase:'1.2', nova:'1.2'}], new Set(['planta'])).length, 1); provas++;
 const doc = (lingua, blocos) => ({estudo:'planta', tipo:'documento', lingua, rota:lingua==='pt'?'/estudos/planta/documento':'/en/studies/planta/document', blocos});
+const medirNumeros = (lista, docs, opcoes) => conferirNumeros(lista, docs, new Set(docs.map(d => d.estudo)), opcoes);
+const originais = [doc('pt', [f.frase]), doc('en', [g.frase])];
+assert.equal(medirNumeros([f, g], originais).length, 0); provas++;
+assert.equal(medirNumeros([f, {...g, nova:'The source published 12 and sha256.'}], originais).length, 1); provas++;
+// Uma assimetria corrigida passa, mesmo que só o português perca um número.
+const assimetria = [doc('pt', ['A fonte publicou 12 e 99.']), doc('en', ['The source published 12.'])];
+const corrige = {...f, frase:assimetria[0].blocos[0], nova:'A fonte publicou 12.'};
+assert.equal(medirNumeros([corrige], assimetria).length, 0); provas++;
+const iguais = [doc('pt', [f.nova]), doc('en', [g.nova])];
+const muda = {...f, frase:f.nova, nova:'A fonte publicou 13.'};
+assert.equal(medirNumeros([muda], iguais).length, 1); provas++;
+// A diferença prévia que a lista deixa ficar também se recusa, sem exceção.
+assert.equal(medirNumeros([{...corrige, classe:'FICA'}], assimetria).length, 1); provas++;
+const estudo = 'onde-esta-a-agua';
+const comExcecao = assimetria.map(d => ({...d, estudo}));
+const ficaNumero = {...corrige, estudo, classe:'FICA'};
+const excecoes = {data:'2026-11-08', retirar:'COR-AGUA', diferencas:[{estudo, tipo:'documento', numeros:assinatura(compara(...assimetria.map(d => d.blocos)))}]};
+assert.equal(medirNumeros([ficaNumero], comExcecao, {excecoes}).length, 0); provas++;
+assert.equal(medirNumeros([ficaNumero], comExcecao.map(d => ({...d, tipo:'página'})), {excecoes}).length, 1); provas++;
+assert.equal(medirNumeros([{...ficaNumero, estudo:'planta'}], assimetria, {excecoes}).length, 1); provas++;
+assert.equal(medirNumeros([ficaNumero], [comExcecao[0], {...comExcecao[1], blocos:['The source published 13.']}], {excecoes}).length, 1); provas++;
+assert.throws(() => medirNumeros([ficaNumero], comExcecao, {excecoes:{...excecoes, retirar:''}})); provas++;
+// A repetição aplicada compara o dist atual, sem voltar a executar a troca.
+assert.equal(medirNumeros([muda], iguais, {aplicada:true}).length, 0); provas++;
+// Uma troca entre blocos não desaparece por conservar o total.
+assert.equal(medirNumeros([f], [doc('pt', ['12', '21']), doc('en', ['21', '12'])]).length, 1); provas++;
 let docs = [doc('pt', [f.frase]), doc('en', [g.frase])];
 assert.equal(conferirBlocos([f], docs).semPar.length, 1); provas++;
 assert.equal(conferirBlocos([f], docs).semEntrada.length, 1); provas++;
