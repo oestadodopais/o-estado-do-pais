@@ -1,0 +1,50 @@
+{
+ "cabeca": "11f2a023c08f0f465627a0854ed50fbbd51d21ee",
+ "paginas": [
+  {
+   "nome": "onde-documento",
+   "pt": "/estudos/onde-esta-a-agua/documento/",
+   "en": "/en/studies/onde-esta-a-agua/document/",
+   "recortes": [
+    {
+     "nome": "precos",
+     "seletor": "#f-price"
+    }
+   ]
+  },
+  {
+   "nome": "agua-documento",
+   "pt": "/estudos/agua-nao-faturada/documento/",
+   "en": "/en/studies/agua-nao-faturada/document/",
+   "recortes": [
+    {
+     "nome": "prr",
+     "seletor": "#s4"
+    }
+   ]
+  },
+  {
+   "nome": "correcoes",
+   "pt": "/correcoes/",
+   "en": "/en/corrections/",
+   "recortes": [
+    {
+     "nome": "onde-esta",
+     "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]"
+    },
+    {
+     "nome": "agua",
+     "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]"
+    },
+    {
+     "nome": "evora",
+     "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]"
+    },
+    {
+     "nome": "alentejo",
+     "seletor": "[data-texto-estudo=\"alentejo-algarve\"]"
+    }
+   ]
+  }
+ ]
+}

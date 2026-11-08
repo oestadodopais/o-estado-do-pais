@@ -1,0 +1,22 @@
+{
+ "l1-paginas": {
+  "valor": "3 518",
+  "comando": "AMOSTRA=5000 node scripts/check-lugar.mjs na worktree coragua, dist da7d6603d: contagem das linhas «· /rota · N destinos repetidos»; 39 rotas novas contra design/especime-v3/medicoes/voz2a-adenda-f-2026-11-07/l1.json, 0 retiradas, 2 mudadas (/correcoes e /en/corrections, 46 para 49 destinos)"
+ },
+ "l1-teto": {
+  "valor": "3 479",
+  "comando": "scripts/lugar-tetos-b1.json, l1_paginas, na cabeça da7d6603d"
+ },
+ "maior-pdf-mb": {
+  "valor": "32,6",
+  "comando": "tamanho de raw/fontes/tcontas-rel004-2016-2s.pdf na worktree do motor coragua: 32586865 bytes (sha256 963da78ce93d…); os cinco: 346923 + 32586865 + 12409211 + 9406728 + 7268814 bytes"
+ },
+ "faixa-alvos-de": {
+  "valor": "641",
+  "comando": "19-check_alvos.log da corrida coragua-conferir-2026-11-08-b2 (da7d6603d): «faixa 641 a 1023: … destes, 12 são caixas e falham (3× a.src-chip «row · O Estado do País» …; 2× a.src-chip «fonte · calculado» …; 2× a.src-chip «source · calculated» …)»"
+ },
+ "faixa-alvos-ate": {
+  "valor": "1 023",
+  "comando": "a mesma linha do 19-check_alvos.log"
+ }
+}

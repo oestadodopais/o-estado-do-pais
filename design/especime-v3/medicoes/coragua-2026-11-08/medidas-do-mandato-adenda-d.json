@@ -1,0 +1,34 @@
+{
+ "ersar-rotulo-2024": {
+  "valor": "13,48",
+  "comando": "pdftoppm -f 410 -l 410 -r 110 do RASARP 2025 vol. 1 (sha256 cd913fa3af3c…), lido na imagem por este lugar: Figura 553, barra de 2024, Abastecimento de água, rótulo 13,48; pdftotext -layout da p. 410 sem o valor (a frase, o título e a nota 87)"
+ },
+ "edital-vazio": {
+  "valor": "0,0692",
+  "comando": "pdftotext -f 5 -l 5 -layout do edital da campanha de 2026 (sha256 a6619e4be333…): alta pressão, Vazio/ Super vazio 0,0692; Valor médio 0,0706; Cheia 0,0689; Ponta 0,0847"
+ },
+ "edital-cheia": {
+  "valor": "0,0689",
+  "comando": "a mesma página do edital, a linha Cheia"
+ },
+ "edital-ponta": {
+  "valor": "0,0847",
+  "comando": "a mesma página do edital, a linha Ponta"
+ },
+ "rasarp-pagina": {
+  "valor": "410",
+  "comando": "pdftotext -f 410 -l 410 -layout do RASARP 2025 vol. 1: o rodapé «410 | 2025 VOL. 1» e a Figura 553 nessa página"
+ },
+ "rasarp-figura": {
+  "valor": "553",
+  "comando": "a mesma página: «Figura 553. Evolução do nível médio de encargos tarifários mensais por serviço entre 2015 e 2024»"
+ },
+ "edital-medio": {
+  "valor": "0,0706",
+  "comando": "a p. 5 do edital, a linha Valor médio da alta pressão"
+ },
+ "conversao-pagina": {
+  "valor": "2,5",
+  "comando": "o dist/ de 61689dfcb, /estudos/onde-esta-a-agua/documento/: «entre 100 % e 110 % do volume autorizado, 2,5 vezes o preço base»"
+ }
+}

@@ -1,0 +1,302 @@
+{
+  "cabeca": "67db1d1f6514bedefe7ea8dddd906cd30df3333d",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "onde-documento-pt-390.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 55772,
+      "sha256": "15e320063895f9ef124e136f5480f554640095e5ba85811be4df9dcf70e8c73e",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-390-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-390.png",
+          "caixa": {
+            "left": 43,
+            "top": 1171,
+            "width": 304,
+            "height": 32
+          },
+          "sha256": "8efa18ffa807f53ac62d0418ab2b71fd459e29457514a0c62948f203fbf42251"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-768.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 40087,
+      "sha256": "392bd06744c91cb77be40900b8a13975139ca6413d6fd0491a3a50a2c5a4eab5",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-768-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-768.png",
+          "caixa": {
+            "left": 582,
+            "top": 518,
+            "width": 143,
+            "height": 32
+          },
+          "sha256": "953dc871f0121f80e95c900dab99159111a765d6a8d975253fd5cb349e0a74ef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-1024.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 39073,
+      "sha256": "91e27554defaa0e9f7ec1b327a64a31c5d9dff942150b65217be40fcac28e5c6",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-1024-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-1024.png",
+          "caixa": {
+            "left": 774,
+            "top": 562,
+            "width": 207,
+            "height": 31
+          },
+          "sha256": "bcb8ba5b6342900f95cda1f21af5193159ad5dd5911366695dc91d43042da371"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-1280.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 38538,
+      "sha256": "572f1472f0fde0c7aaa7631622546973a36eaf90979c5f38b295723313e5b5d2",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-1280-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-1280.png",
+          "caixa": {
+            "left": 941,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-1600.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 38538,
+      "sha256": "71403edf003d1fbb60ac759af628065af5df9af326ff234f80d32cc7f39460cb",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-1600-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-1600.png",
+          "caixa": {
+            "left": 1101,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-390.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 52703,
+      "sha256": "e82c03246a8179ccf251c1f3e1739dd409275a62c143cf8cd844161cd73f00f6",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-390-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-390.png",
+          "caixa": {
+            "left": 43,
+            "top": 1162,
+            "width": 304,
+            "height": 31
+          },
+          "sha256": "c45c4685cd6c27e722ad812ab66e33b8975ed53963f1841125bd0feba198dd84"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-768.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 38429,
+      "sha256": "e4d589690a49de53c8c4a0b7f24cc681f0c3f02cf10c63848715700d9f22dc9a",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-768-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-768.png",
+          "caixa": {
+            "left": 582,
+            "top": 518,
+            "width": 143,
+            "height": 32
+          },
+          "sha256": "953dc871f0121f80e95c900dab99159111a765d6a8d975253fd5cb349e0a74ef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-1024.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 37410,
+      "sha256": "b8975b13359c7c11df933184a7b4538dfb15e48d7f41077327bcbadce280d723",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-1024-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-1024.png",
+          "caixa": {
+            "left": 774,
+            "top": 521,
+            "width": 207,
+            "height": 32
+          },
+          "sha256": "fd5469cdeaeeab91a8173c5da26a20ad7fb6c7f52f762592f591a1f3ef5b6934"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-1280.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 36958,
+      "sha256": "08d7981e4b5eaed83d6a19012c42bd32aea1c7f4e0454cbd896068ecb99fcfd3",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-1280-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-1280.png",
+          "caixa": {
+            "left": 941,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-1600.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 36958,
+      "sha256": "14ea622c327a845e95fb728ff576a67c62828913e0216cfc085f0dc0be13ee58",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-1600-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-1600.png",
+          "caixa": {
+            "left": 1101,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "15a28aaf061d48dadf5f3e926c453a52db94822734156cb7ec0d439f3f3e4d91",
+    "estudos/onde-esta-a-agua/documento/index.html": "08a6af7d5e67000dc55ca7e97e929a05aa90a961ab8c32b6d8195a3989f4f9c1",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/studies/onde-esta-a-agua/document/index.html": "67128193b1748d6d5d8d6c002227820febecdfeea0541b41be059c45224bf344"
+  },
+  "falhas": [],
+  "ok": true
+}

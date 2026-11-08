@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T23:27:24+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "J1",
+   "ficheiro": "built/estudos/onde-esta-a-agua/documento/index.html",
+   "descricao": "o cartão português passa a comparar com a tarifa «em todo o Alqueva»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b931775921298572a83083287a901ebed2a3eb64ca88ad1b59d47652dd775324",
+   "sha256_depois": "af5cd5dcf00051a137c99ef8f4525f127709ebb70e327be787bb0497fbcaa2f2",
+   "contexto_antes": "º ciclo · dados de 2018</div></div>\n    <div class=\"fig d\"><div class=\"v\" id=\"f-price\">—</div>\n      <div class=\"l\">o encargo médio doméstico por metro cúbico, face à tarifa por metro cúbico nos blocos de rega do Alqueva</div>\n      <div class=\"s mono\">ERSAR 2024 · Edital da EDIA de 2026</div></div>\n  </div>\n\n  <nav class=\"toc\" aria-label=\"Índice\">\n    <a href=\"#s1\"><b>01</b>Qu",
+   "contexto_depois": "º ciclo · dados de 2018</div></div>\n    <div class=\"fig d\"><div class=\"v\" id=\"f-price\">—</div>\n      <div class=\"l\">o encargo médio doméstico por metro cúbico, face à tarifa por metro cúbico em todo o Alqueva</div>\n      <div class=\"s mono\">ERSAR 2024 · Edital da EDIA de 2026</div></div>\n  </div>\n\n  <nav class=\"toc\" aria-label=\"Índice\">\n    <a href=\"#s1\"><b>01</b>Qu"
+  },
+  {
+   "id": "J2",
+   "ficheiro": "built/en/studies/onde-esta-a-agua/document/index.html",
+   "descricao": "o cartão inglês volta a dizer o que o regante paga",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "59454de18bf8eb7e06fba0cca79d8706ad1e80ffa19963a6faa4109620d1b642",
+   "sha256_depois": "3943d6f07e565cb6e6533c92455c88c09a829067bc6107c536a90c9a117d6ba2",
+   "contexto_antes": "3rd cycle · 2018 data</div></div>\n    <div class=\"fig d\"><div class=\"v\" id=\"f-price\">—</div>\n      <div class=\"l\">a household's average charge per cubic metre, against the per-cubic-metre tariff in Alqueva's irrigation blocks</div>\n      <div class=\"s mono\">ERSAR 2024 · EDIA 2026 tariff notice</div></div>\n  </div>\n\n  <nav class=\"toc\" aria-label=\"Contents\">\n    <a href=\"#s1\"><b>01</b",
+   "contexto_depois": "3rd cycle · 2018 data</div></div>\n    <div class=\"fig d\"><div class=\"v\" id=\"f-price\">—</div>\n      <div class=\"l\">a household's average charge per cubic metre, against what an Alqueva irrigator pays per cubic metre</div>\n      <div class=\"s mono\">ERSAR 2024 · EDIA 2026 tariff notice</div></div>\n  </div>\n\n  <nav class=\"toc\" aria-label=\"Contents\">\n    <a href=\"#s1\"><b>01</b"
+  },
+  {
+   "id": "J3",
+   "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/body_onde_pt.html",
+   "descricao": "o corpo português do motor volta ao «acrescenta-lhe»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1206cc471b5b1bd2c4586532100974ee613b4d54348e5d0131eb18bf4bf73e2b",
+   "sha256_depois": "bac06e58dfb18dd749e6071b52a58c434df2eb9de9c6f87395d97d80b4f902f9",
+   "contexto_antes": "s a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital de 2026 acrescenta à tarifa a taxa de recursos hídricos e uma componente de conservação por hectare, e não diz se a tarifa inclui o IVA. As contas auditadas da EDIA de 2025 registam imparidade s",
+   "contexto_depois": "s a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital de 2026 acrescenta-lhe a taxa de recursos hídricos e uma componente de conservação por hectare, e não diz se a tarifa inclui o IVA. As contas auditadas da EDIA de 2025 registam imparidade s"
+  },
+  {
+   "id": "J4",
+   "ficheiro": "studies-src/onde-esta-a-agua/en.html",
+   "descricao": "a fonte inglesa acrescenta a taxa ao encargo doméstico",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "80fc1ffaac9f265197355e5cbbd0bdc0b61b6a1204531fd52775fd1a2735714b",
+   "sha256_depois": "94a0d291dfe631beba998183323c9e5c7b645eaaf269c137ed27114c89a765ce",
+   "contexto_antes": "per-m³ irrigation tariff in the irrigation blocks, up to the allotted volume (calculation: €1.348 divided by €0.0706 and by €0.0382); EDIA's 2026 tariff notice adds to the tariff the water-resources levy and a per-hectare conservation component, and does not say whether the tariff includes VAT. EDIA's audited 2025 accounts record impairment on all of the water ",
+   "contexto_depois": "per-m³ irrigation tariff in the irrigation blocks, up to the allotted volume (calculation: €1.348 divided by €0.0706 and by €0.0382); EDIA's 2026 tariff notice adds to the household charge the water-resources levy and a per-hectare conservation component, and does not say whether the tariff includes VAT. EDIA's audited 2025 accounts record impairment on all of the water "
+  },
+  {
+   "id": "J5",
+   "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/onde_body.html",
+   "descricao": "o cartão no corpo inglês do motor fala do encargo total",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "477cbd3073a77e6be245fb0f5d2ba9bd22a9d20ebde2f50ab843c4d9a7387edd",
+   "sha256_depois": "17d7bc18695e656679f38ccb1d5060cc11222f0a1d43d867ed18efe360ff9c9e",
+   "contexto_antes": "re</div>\n      <div class=\"s mono\">APA · PGRH 3rd cycle · 2018 data</div></div>\n    <div class=\"fig d\"><div class=\"v\" id=\"f-price\">—</div>\n      <div class=\"l\">a household's average charge per cubic metre, against the per-cubic-metre tariff in Alqueva's irrigation blocks</div>\n      <div class=\"s mono\">ERSAR 2024 · EDIA 2026 tariff notice</div></div>\n  </div>\n\n  <nav cla",
+   "contexto_depois": "re</div>\n      <div class=\"s mono\">APA · PGRH 3rd cycle · 2018 data</div></div>\n    <div class=\"fig d\"><div class=\"v\" id=\"f-price\">—</div>\n      <div class=\"l\">a household's total charge per cubic metre, against the per-cubic-metre tariff in Alqueva's irrigation blocks</div>\n      <div class=\"s mono\">ERSAR 2024 · EDIA 2026 tariff notice</div></div>\n  </div>\n\n  <nav cla"
+  }
+ ]
+}

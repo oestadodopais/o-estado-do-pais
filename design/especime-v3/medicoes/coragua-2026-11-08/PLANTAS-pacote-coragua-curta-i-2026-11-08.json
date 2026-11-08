@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T22:29:47+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "I1",
+   "ficheiro": "built/estudos/onde-esta-a-agua/documento/index.html",
+   "descricao": "a conclusão portuguesa diz «até ao dobro do volume atribuído»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "08a6af7d5e67000dc55ca7e97e929a05aa90a961ab8c32b6d8195a3989f4f9c1",
+   "sha256_depois": "cc6d4147cefb197f54100e6e718b8daab3653318a11ea0e78fdb868f1881baf6",
+   "contexto_antes": " é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos. Esse valor é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital de 2026 acrescenta-lhe a taxa de recursos hídricos e uma componente de conservação por hecta",
+   "contexto_depois": " é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos. Esse valor é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao dobro do volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital de 2026 acrescenta-lhe a taxa de recursos hídricos e uma componente de conservação por hecta"
+  },
+  {
+   "id": "I2",
+   "ficheiro": "built/en/studies/onde-esta-a-agua/document/index.html",
+   "descricao": "a linha da fonte do cartão inglês volta a 2017",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "67128193b1748d6d5d8d6c002227820febecdfeea0541b41be059c45224bf344",
+   "sha256_depois": "906b7adb61e45468f84249ab7dfdaf791a21dba5981b3598d1d376340d1c9c8a",
+   "contexto_antes": "\n      <div class=\"l\">more per cubic metre paid by a household than by an irrigator in Alqueva's irrigation blocks</div>\n      <div class=\"s mono\">ERSAR 2024 · EDIA 2026 tariff notice</div></div>\n  </div>\n\n  <nav class=\"toc\" aria-label=\"Contents\">\n    <a href=\"#s1\"><b>01</b>How much there is</a>\n    <a href=\"#s2\"><b>02</b>Where it comes from",
+   "contexto_depois": "\n      <div class=\"l\">more per cubic metre paid by a household than by an irrigator in Alqueva's irrigation blocks</div>\n      <div class=\"s mono\">ERSAR 2024 · EDIA 2017 tariff notice</div></div>\n  </div>\n\n  <nav class=\"toc\" aria-label=\"Contents\">\n    <a href=\"#s1\"><b>01</b>How much there is</a>\n    <a href=\"#s2\"><b>02</b>Where it comes from"
+  },
+  {
+   "id": "I3",
+   "ficheiro": "ledger/claims/coragua-ersar-encargo-mensal-2024.yml",
+   "descricao": "a nota 87 no excerto da ERSAR troca a taxa de gestão de resíduos por uma taxa de saneamento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a945541c0a4bba780bfb57c9dec554c879dacb9411fa7d7882e5c56fa15777fa",
+   "sha256_depois": "cb6fec40dcb8c19c6a86d2e041f419b74720da1cd9d6a73b2452d73c0ba8f414",
+   "contexto_antes": "e 2024\n\n  Em 2022, há uma quebra de série na medida em que os valores apresentados passaram a incluir o IVA e a repercussão dos gastos com as taxas ambientais (Taxa de Recursos Hídricos e Taxa de Gestão de Resíduos).\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: null\nstudy: onde-esta-a-agua\nnote: \"COR-AGUA: transcrição da linha ersar-bill-month do livro da ",
+   "contexto_depois": "e 2024\n\n  Em 2022, há uma quebra de série na medida em que os valores apresentados passaram a incluir o IVA e a repercussão dos gastos com as taxas ambientais (Taxa de Recursos Hídricos e Taxa de Saneamento).\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: null\nstudy: onde-esta-a-agua\nnote: \"COR-AGUA: transcrição da linha ersar-bill-month do livro da "
+  },
+  {
+   "id": "I4",
+   "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/onde_body.html",
+   "descricao": "o corpo inglês do motor diz «above the allotted volume»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "aaa3db16c2bca2c001a98018a971ebe44334031bf002ecdf4dcf080764a1531d",
+   "sha256_depois": "6295a174cbfb00d72aecb95c2d118a86fbd65710521ef2a50e192de491000780",
+   "contexto_antes": " €1.348 per m³, including the fixed part, VAT and the water-resources levy. That is 19 to 35 times Alqueva's per-m³ irrigation tariff in the irrigation blocks, up to the allotted volume (calculation: €1.348 divided by €0.0706 and by €0.0382); EDIA's 2026 tariff notice adds the water-resources levy and a per-hectare conservation component, and ",
+   "contexto_depois": " €1.348 per m³, including the fixed part, VAT and the water-resources levy. That is 19 to 35 times Alqueva's per-m³ irrigation tariff in the irrigation blocks, above the allotted volume (calculation: €1.348 divided by €0.0706 and by €0.0382); EDIA's 2026 tariff notice adds the water-resources levy and a per-hectare conservation component, and "
+  },
+  {
+   "id": "I5",
+   "ficheiro": "built/estudos/onde-esta-a-agua/documento/index.html",
+   "descricao": "a conclusão portuguesa passa a «9 a 35 vezes»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cc6d4147cefb197f54100e6e718b8daab3653318a11ea0e78fdb868f1881baf6",
+   "sha256_depois": "3f8df6b4498cf7502ced588cd168909bfb08ca17c6b1143c132edf43d09d6c6b",
+   "contexto_antes": "ara um consumo de 10 m³ por mês, o encargo médio de um utilizador doméstico com a água é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos. Esse valor é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao dobro do volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital ",
+   "contexto_depois": "ara um consumo de 10 m³ por mês, o encargo médio de um utilizador doméstico com a água é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos. Esse valor é 9 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao dobro do volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital "
+  }
+ ]
+}

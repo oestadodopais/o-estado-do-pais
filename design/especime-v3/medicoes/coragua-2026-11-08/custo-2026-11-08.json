@@ -1,0 +1,149 @@
+{
+ "bloco": "COR-AGUA (os dois estudos da água corrigidos nas duas edições; a marca «[verify]» fora do sítio inteiro; a camada 0 compara os números depois da lista; as correções da leitura a frio)",
+ "data": "2026-11-08",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem (os números depois de aplicada a lista; a nomeação por inclusão)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T12:38:28Z",
+   "fim": "2026-11-08T12:54:22Z",
+   "pontos": 1.0,
+   "pontos_antes": 59.0,
+   "pontos_depois": 60.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-1.log"
+  },
+  {
+   "nome": "adenda A (paragem pelo §2: o 4212 hm³ sem cópias regionais; três ajudantes lançados às 13:21)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T13:20:20Z",
+   "fim": "2026-11-08T13:32:37Z",
+   "pontos": 4.0,
+   "pontos_antes": 60.0,
+   "pontos_depois": 64.0,
+   "ajudantes": 3,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-a.log; as «3 outras sessões» são os ajudantes do próprio construtor (parent_thread_id da sessão, nos rollouts)"
+  },
+  {
+   "nome": "adenda B (fecho parcial: a L1 e o pacote por resolver; 120 chamadas da sessão principal)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T13:34:35Z",
+   "fim": "2026-11-08T14:45:34Z",
+   "pontos": 12.0,
+   "pontos_antes": 64.0,
+   "pontos_depois": 76.0,
+   "ajudantes": 3,
+   "simbolos_de_entrada": {
+    "principal_total_da_sessao": 28973084,
+    "reguas": 33016354,
+    "motor_fontes": 19213008,
+    "graficos": 7299939
+   },
+   "fonte": "a linha PONTOS do LANCADOR-coragua-b.log e os rollouts dos ajudantes (último token_count de cada um)"
+  },
+  {
+   "nome": "adenda C (os corpos alojados, as edições arquivadas no pacote, o teto da L1, o PRR, os sete vermelhos; 71 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T15:42:27Z",
+   "fim": "2026-11-08T16:29:28Z",
+   "pontos": 3.0,
+   "pontos_antes": 76.0,
+   "pontos_depois": 79.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-c.log"
+  },
+  {
+   "nome": "adenda D (paragem pelo §1.5: a janela antiga e a planta reference-code não cabiam juntas; 12 chamadas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T17:49:34Z",
+   "fim": "2026-11-08T17:55:13Z",
+   "pontos": 0.0,
+   "pontos_antes": 79.0,
+   "pontos_depois": 79.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-d.log"
+  },
+  {
+   "nome": "adenda E (os rótulos das secções e o resto da adenda D: as correções da leitura a frio, dez corpos alojados, a janela das atribuições reposta; 66 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T17:56:17Z",
+   "fim": "2026-11-08T18:25:04Z",
+   "pontos": 2.0,
+   "pontos_antes": 79.0,
+   "pontos_depois": 81.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-e.log"
+  },
+  {
+   "nome": "adenda F (a conferência das atribuições de volta a cf5bd5b, as sete linhas sem attributed_to, os tetos da água medidos e classificados; 14 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T18:55:02Z",
+   "fim": "2026-11-08T19:03:16Z",
+   "pontos": 1.0,
+   "pontos_antes": 81.0,
+   "pontos_depois": 82.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-f.log"
+  },
+  {
+   "nome": "adenda G (o consumo de referência, os blocos de rega e o IVA na conclusão do rácio; o excerto da ERSAR; o relatório de 2005 alojado; 45 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T19:32:14Z",
+   "fim": "2026-11-08T19:55:19Z",
+   "pontos": 1.0,
+   "pontos_antes": 82.0,
+   "pontos_depois": 83.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-g.log"
+  },
+  {
+   "nome": "adenda H (os selos do registo como prosa corrida; a regra da adenda C fora; parou pelo §2 numa medida a 390 px que a régua não exige; 33 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T20:28:06Z",
+   "fim": "2026-11-08T20:53:39Z",
+   "pontos": 1.0,
+   "pontos_antes": 83.0,
+   "pontos_depois": 84.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-h.log"
+  },
+  {
+   "nome": "adenda I (o cartão da manchete, a conclusão em duas frases, os três corpos do motor iguais, a nota 87, o comentário da régua dos alvos; 32 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T21:35:42Z",
+   "fim": "2026-11-08T21:59:35Z",
+   "pontos": 1.0,
+   "pontos_antes": 84.0,
+   "pontos_depois": 85.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-i.log"
+  },
+  {
+   "nome": "adenda J (o verbo do cartão da manchete e o «lhe» da conclusão; 20 chamadas, sem ajudantes)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T22:39:03Z",
+   "fim": "2026-11-08T22:57:30Z",
+   "pontos": 1.0,
+   "pontos_antes": 85.0,
+   "pontos_depois": 86.0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-coragua-j.log"
+  }
+ ],
+ "total_pontos_codex": 27.0,
+ "nota": "Os pontos do Codex são da conta inteira; nas adendas A e B as outras sessões no intervalo eram os três ajudantes do construtor, por isso os 16 pontos são da COR-AGUA. A leitura a frio (Claude) e as corridas por guião não entram nos pontos do Codex."
+}

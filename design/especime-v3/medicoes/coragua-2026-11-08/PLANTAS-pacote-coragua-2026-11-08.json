@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T17:24:55+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "C1",
+   "ficheiro": "built/estudos/onde-esta-a-agua/documento/index.html",
+   "descricao": "a citação do despacho da EDIA trocada: «atualizar» passa a «alterar»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5dc981ba12ceb7cf475f54f548829d75afefe114fd17b61dacba299780bda8ea",
+   "sha256_depois": "b325f588f9799a6fc90551b501079a95f15de9359a9d0c16b1702654dbff0636",
+   "contexto_antes": "s=\"note warn\"><span class=\"tag src\">Aviso de atualidade</span>Segundo a EDIA, o tarifário da água para rega conheceu novas regras com um despacho de 2026, que «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017», com uma penalização dos consumos acima da dotação: entre 100 % e 110 % do volume a",
+   "contexto_depois": "s=\"note warn\"><span class=\"tag src\">Aviso de atualidade</span>Segundo a EDIA, o tarifário da água para rega conheceu novas regras com um despacho de 2026, que «veio alterar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017», com uma penalização dos consumos acima da dotação: entre 100 % e 110 % do volume a"
+  },
+  {
+   "id": "C2",
+   "ficheiro": "built/en/studies/agua-nao-faturada/document/index.html",
+   "descricao": "o mínimo da eficiência da DGADR na edição inglesa passa de 8 % a 6 %",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "dd7e65d49882ddc3015573e2b1f067fe6bbd983849bb6904190416ab70689230",
+   "sha256_depois": "91207dd792870c57a6f31f14f86921f5167fcfb466d463c9e8d30a0a0f5903b8",
+   "contexto_antes": "ublishes conveyance and distribution efficiency for the 33 irrigation schemes of significant size that it tracks: in 2024 the average across them was 76%, with lows of 8% (Alvor) and highs of 98% (Alfândega da Fé). That is genuine per-scheme government\n    data and it is better than nothing.</p>\n\n\n\n    <p class=\"note null\"><span class=\"",
+   "contexto_depois": "ublishes conveyance and distribution efficiency for the 33 irrigation schemes of significant size that it tracks: in 2024 the average across them was 76%, with lows of 6% (Alvor) and highs of 98% (Alfândega da Fé). That is genuine per-scheme government\n    data and it is better than nothing.</p>\n\n\n\n    <p class=\"note null\"><span class=\""
+  },
+  {
+   "id": "C3",
+   "ficheiro": "ledger/claims/coragua-tc-auditoria-ano.yml",
+   "descricao": "o excerto do Tribunal de Contas com o ano do diferendo mudado (2013 para 2011)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9831fd7620abe2d6c165018140cd8d77c9a523f3bcc41f1258454cd399b46568",
+   "sha256_depois": "803609e0f992a549d91f8966f14fd1f2fd1434674e5e1b2a90b9f3a7039e53c4",
+   "contexto_antes": " 214.   Em conclusão, a situação financeira da EDIA ficou comprometida desde então e agravada pelo diferendo em\n         relação à retenção de parte das rendas pela EDP desde 2013.\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: null\nstudy: onde-esta-a-agua\nnote: 'COR-AGUA: transcrição da linha tc-2016-auditoria do livro da ",
+   "contexto_depois": " 214.   Em conclusão, a situação financeira da EDIA ficou comprometida desde então e agravada pelo diferendo em\n         relação à retenção de parte das rendas pela EDP desde 2011.\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: null\nstudy: onde-esta-a-agua\nnote: 'COR-AGUA: transcrição da linha tc-2016-auditoria do livro da "
+  },
+  {
+   "id": "C4",
+   "ficheiro": "ledger/claims/coragua-gulbenkian-sem-contador.yml",
+   "descricao": "o sha256 da cópia da Gulbenkian mudado num algarismo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9a8a1a053c79fc57f1ffc71bce46bcdaea4362fbb9ee74e57c5495a78612c46a",
+   "sha256_depois": "1014b13235d1a203c89ca23930eacb00a6c6a1a552149cfc4cb239a3bec6944c",
+   "contexto_antes": "compreender e actuar com os protagonistas chave'\n  edition: março de 2020\n  locator: p. 57, Quem mede a água com rigor?\n  page: 57\n  kind: pdf\n  source_sha256: 623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd7\nsource_url: https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf#page=57\naccess_date: '2026-11-",
+   "contexto_depois": "compreender e actuar com os protagonistas chave'\n  edition: março de 2020\n  locator: p. 57, Quem mede a água com rigor?\n  page: 57\n  kind: pdf\n  source_sha256: 623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd8\nsource_url: https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf#page=57\naccess_date: '2026-11-"
+  },
+  {
+   "id": "C5",
+   "ficheiro": "built/en/studies/agua-nao-faturada/document/index.html",
+   "descricao": "um valor pago do PRR nos dados do gráfico inglês diferente do português (18993466 para 18939466)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "91207dd792870c57a6f31f14f86921f5167fcfb466d463c9e8d30a0a0f5903b8",
+   "sha256_depois": "91b019a9f828346d2e7869389d4672aacb00d6b24af3cd34a7f768ebe4459c85",
+   "contexto_antes": "3,13665856,1],[\"Área Metropolitana de Lisboa\",148944,103051,1]],\"by_line\":[[\"C09-i01\",122784031,88233381],[\"C09-i03-RAM\",82150386,19532992],[\"C09-i05\",35000000,18993466]],\"source\":{\"url\":\"https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx\"",
+   "contexto_depois": "3,13665856,1],[\"Área Metropolitana de Lisboa\",148944,103051,1]],\"by_line\":[[\"C09-i01\",122784031,88233381],[\"C09-i03-RAM\",82150386,19532992],[\"C09-i05\",35000000,18939466]],\"source\":{\"url\":\"https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx\""
+  }
+ ]
+}

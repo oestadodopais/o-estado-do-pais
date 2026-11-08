@@ -110,5 +110,16 @@
 106. A repetição nos casos reais trata o limite da V122 como comportamento exigido (a HIG-6B vai partir essa afirmação) (a leitura a frio da HIG-6A, 14).
 107. O Método diz um número de conferências automáticas que não é o número de passos do `verify` (a contagem é a do guião do próprio Método); conferir a regra da contagem na HIG-6B (a leitura a frio da HIG-6A, 17).
 108. A régua da voz apanha «(inference)» numa frase inglesa e não «(inferência)» na portuguesa da mesma afirmação (medido a 08.11.2026 na lista da COR-AGUA); o desenho da CAM2 usa essas marcas para as leituras deste projeto, e a régua tem de as tratar da mesma maneira nas duas línguas.
+109. A conferência dos dados dos gráficos (`check:paridade-graficos`) compara só os números do JSON: datas, rótulos e números escritos como texto (a data de um instantâneo) não se comparam, e um estudo sem dados nas duas edições salta sem aviso (a leitura a frio da COR-AGUA, achado 14).
+110. Os dois estudos da água continuam isentos do `check:voz` até à VOZ-2B, e o `voz2a.mjs` fixa essa isenção; a prosa corrigida só passa pela voz da camada 0 (achado 21).
+111. O relatório da adenda B diz «números 1→0» na VOZ-2B, e a asserção do teste já era zero antes do bloco (achado 24).
+112. Nas entradas do registo das correções, o selo de um número cai entre o número e a palavra da unidade («5 ■ FONTE hectares»; a captura a 390 px de 08.11.2026).
+113. O pacote de uma leitura leva só os corpos das linhas do sítio e os ficheiros do motor que o diff muda; não percorre as linhas do motor que o bloco muda (a leitura curta da COR-AGUA, achado 21; a mesma família da M83 no `ledger:check`, que vai para a CAM2).
+114. O teste da exceção da voz do registo muda a data da entrada mas nunca o estudo (achado 16 da leitura curta).
+115. Os códigos de uma passagem que só muda o motor não têm recibo escrito pela máquina no pacote seguinte (achado 11 da leitura curta).
+116. A edição inglesa de «Onde está a água» dá ao edital da EDIA três nomes («EDIA 2026 tariff notice», «EDIA edital, Anexo II», «the campaign edital»); a portuguesa diz «edital» em todo o lado (a leitura curta da adenda I, achado 7).
+117. O excerto da ERSAR traz a nota 87 sem a chamada «87» e sem marcar o salto entre o título da Figura 553 e a nota, e nenhum excerto traz «a parte fixa» do encargo (a Figura 554; achados 8 e 9 da leitura curta da adenda I).
+118. O cartão da manchete do rácio em «Onde está a água» só diz qual lado é maior pelo «face à» / «against» (a leitura curta da adenda J, achado 7), e a conclusão inglesa diz «adds to the tariff» antes de um objeto longo (achado 8).
+119. A regra dos números da camada 0 salta em silêncio um documento ou tipo de página a que falte uma edição (`if (!pt || !en) continue;`), como a paridade já fazia (achado 25).
 
 Feitos na HIG-5 (06.11.2026, f75fc7a0a, 777d906a1 e a adenda C): 56, 58, 62, 63, 64 e 66.

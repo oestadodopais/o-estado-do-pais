@@ -1,0 +1,70 @@
+{
+ "cabeca": "61689dfcbb7921f95a071d0f6da51ea213c93d93",
+ "paginas": [
+  {
+   "nome": "onde-documento",
+   "pt": "/estudos/onde-esta-a-agua/documento/",
+   "en": "/en/studies/onde-esta-a-agua/document/",
+   "recortes": [
+    {
+     "nome": "precos",
+     "seletor": "#f-price"
+    }
+   ]
+  },
+  {
+   "nome": "onde-arquivo",
+   "pt": "/estudos/onde-esta-a-agua/documento/2026-08-12/",
+   "en": "/en/studies/onde-esta-a-agua/document/2026-08-12/"
+  },
+  {
+   "nome": "agua-documento",
+   "pt": "/estudos/agua-nao-faturada/documento/",
+   "en": "/en/studies/agua-nao-faturada/document/",
+   "recortes": [
+    {
+     "nome": "prr",
+     "seletor": "#s4"
+    }
+   ]
+  },
+  {
+   "nome": "evora-quinze",
+   "pt": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+   "en": "/en/studies/evora-quinze-anos-cinco-mandatos/"
+  },
+  {
+   "nome": "alentejo",
+   "pt": "/estudos/alentejo-algarve/",
+   "en": "/en/studies/alentejo-algarve/document/"
+  },
+  {
+   "nome": "correcoes",
+   "pt": "/correcoes/",
+   "en": "/en/corrections/",
+   "recortes": [
+    {
+     "nome": "onde-esta",
+     "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]"
+    },
+    {
+     "nome": "agua",
+     "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]"
+    },
+    {
+     "nome": "evora",
+     "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]"
+    },
+    {
+     "nome": "alentejo",
+     "seletor": "[data-texto-estudo=\"alentejo-algarve\"]"
+    }
+   ]
+  },
+  {
+   "nome": "recibo-racio",
+   "pt": "/livro-razao/coragua-racio-minimo-2026/",
+   "en": "/en/ledger/coragua-racio-minimo-2026/"
+  }
+ ]
+}

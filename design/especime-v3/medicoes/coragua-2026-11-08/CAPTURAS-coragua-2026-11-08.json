@@ -1,0 +1,1846 @@
+{
+  "cabeca": "61689dfcbb7921f95a071d0f6da51ea213c93d93",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "onde-documento-pt-390.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 55472,
+      "sha256": "2dfcde80e81196fc8faaa6b7b50cf6bfdc195e2f5bf74261ab2fdc7389a2ab81",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-390-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-390.png",
+          "caixa": {
+            "left": 43,
+            "top": 1171,
+            "width": 304,
+            "height": 32
+          },
+          "sha256": "8efa18ffa807f53ac62d0418ab2b71fd459e29457514a0c62948f203fbf42251"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-768.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 39935,
+      "sha256": "36686ea0b8d8e30398b0d2ce78bb6484dfba4dd6d48ebd5228b0fa71b82e6272",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-768-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-768.png",
+          "caixa": {
+            "left": 582,
+            "top": 518,
+            "width": 143,
+            "height": 32
+          },
+          "sha256": "953dc871f0121f80e95c900dab99159111a765d6a8d975253fd5cb349e0a74ef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-1024.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 38921,
+      "sha256": "53f09bf4e1931f441e91673730e66cedb11a844f3976cf24bc499fd5f5db50e9",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-1024-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-1024.png",
+          "caixa": {
+            "left": 774,
+            "top": 562,
+            "width": 207,
+            "height": 31
+          },
+          "sha256": "bcb8ba5b6342900f95cda1f21af5193159ad5dd5911366695dc91d43042da371"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-1280.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 38385,
+      "sha256": "fa93c1ff530d0dd1a948cee0120fbfc1efab54801c1385917f804bbd454209f9",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-1280-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-1280.png",
+          "caixa": {
+            "left": 941,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-pt-1600.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 38385,
+      "sha256": "8233d068bc67dc86e6eb4be446e0c20efa267a2d1bf85aa10895b78eef60550e",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-pt-1600-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-pt-1600.png",
+          "caixa": {
+            "left": 1101,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-390.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 52350,
+      "sha256": "3696419a19727d98e4f748c545d454923ee8cfeedc68af20130f5d8bf4d47af0",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-390-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-390.png",
+          "caixa": {
+            "left": 43,
+            "top": 1162,
+            "width": 304,
+            "height": 31
+          },
+          "sha256": "c45c4685cd6c27e722ad812ab66e33b8975ed53963f1841125bd0feba198dd84"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-768.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 38231,
+      "sha256": "1d551bf8cfa5f342c27ef3d73c9a0cfb8cd079aca70273ab2c822f19428eb565",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-768-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-768.png",
+          "caixa": {
+            "left": 582,
+            "top": 518,
+            "width": 143,
+            "height": 32
+          },
+          "sha256": "953dc871f0121f80e95c900dab99159111a765d6a8d975253fd5cb349e0a74ef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-1024.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 37246,
+      "sha256": "71ad798cae0873c1ce39fb98e5effc010ef47994b9c5df39ef0afa97b1c0498f",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-1024-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-1024.png",
+          "caixa": {
+            "left": 774,
+            "top": 521,
+            "width": 207,
+            "height": 32
+          },
+          "sha256": "fd5469cdeaeeab91a8173c5da26a20ad7fb6c7f52f762592f591a1f3ef5b6934"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-1280.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 36778,
+      "sha256": "a5e4134a09a229719a4df66183813023c4da22b0a6286ac74c74a7dacf38997d",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-1280-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-1280.png",
+          "caixa": {
+            "left": 941,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-documento-en-1600.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 36778,
+      "sha256": "5e9580d725147159b1e3393da35f38f88b48eedf62a41de408e08a1a52880bbd",
+      "recortes": [
+        {
+          "ficheiro": "onde-documento-en-1600-precos.png",
+          "seletor": "#f-price",
+          "origem": "onde-documento-en-1600.png",
+          "caixa": {
+            "left": 1101,
+            "top": 504,
+            "width": 246,
+            "height": 31
+          },
+          "sha256": "e1e59eef665e1d8ebcde4738780d875e37db40b02ae2003eb8e48e89ca669991"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-pt-390.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/2026-08-12/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 59931,
+      "sha256": "44a97118cce09e4a34ece73dfed9c93e6c7ab3bee0974e9b7908360d82ee709d",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-pt-768.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/2026-08-12/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 42398,
+      "sha256": "b8ca6eefc5cb31af97a593d3c84ff20a37cbb9c7b6e1a5cc8b606abcacb5e1a3",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-pt-1024.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/2026-08-12/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 41328,
+      "sha256": "3a1f600b3b64fd9ce51b2739f90432be2df339c1539ae09b453ea0165c98dc83",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-pt-1280.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/2026-08-12/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 40814,
+      "sha256": "e1f3bf130731d249d3173cab2a5f06588d57904a65a473223d6509a395d316b4",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-pt-1600.png",
+      "rota": "/estudos/onde-esta-a-agua/documento/2026-08-12/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 40814,
+      "sha256": "612520a2627ad2b59be763500ab7a7c290010ac32f09be9f4323ebe57f6c5065",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-en-390.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/2026-08-12/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 55959,
+      "sha256": "242112df02081a5393a6bb9d87b17f538efec33d0793c6ac408e31e4265c9ea7",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-en-768.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/2026-08-12/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 40391,
+      "sha256": "d2ae8ac202ddf97b49fda47bc6195415f736a9af94c563aa3147e69d1355d77a",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-en-1024.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/2026-08-12/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 39386,
+      "sha256": "05169989014650fc6c8def8a225e8da69a3ac062fcb469491a649a4579016997",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-en-1280.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/2026-08-12/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 38843,
+      "sha256": "46d300ce9209bd6b59cddb056c10c52eae097864a02d757c57387f44f3b6882d",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "onde-arquivo-en-1600.png",
+      "rota": "/en/studies/onde-esta-a-agua/document/2026-08-12/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 38843,
+      "sha256": "f17c49459ef873547e2d6142c54139b644b0f8d98b5842a72ded63f60fe5c701",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-pt-390.png",
+      "rota": "/estudos/agua-nao-faturada/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 26938,
+      "sha256": "73a0fd973f34044ef83c65803aa563b1cd6573da9dbc1f035e57c1ad7ac9219a",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-pt-390-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-pt-390.png",
+          "caixa": {
+            "left": 24,
+            "top": 11058,
+            "width": 342,
+            "height": 4728
+          },
+          "sha256": "9a9c74521cc29420c3b643a2706e1fc520c5775e7b51c70a8f12570feebc60e0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-pt-768.png",
+      "rota": "/estudos/agua-nao-faturada/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 18710,
+      "sha256": "0c424688fb38212fb548c59042a8428a093a96ed86328625faeac146dc3aba01",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-pt-768-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-pt-768.png",
+          "caixa": {
+            "left": 24,
+            "top": 8492,
+            "width": 720,
+            "height": 3146
+          },
+          "sha256": "987aa284b9e1fcf7f12a6c40bf69c29c3d3288ac54979c44eb77c55a7cd24007"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-pt-1024.png",
+      "rota": "/estudos/agua-nao-faturada/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 17187,
+      "sha256": "ade6445599c53fec9f70d57a70fe910438b11d89c39cb47612d78d64d56cd36a",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-pt-1024-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-pt-1024.png",
+          "caixa": {
+            "left": 24,
+            "top": 7964,
+            "width": 976,
+            "height": 3145
+          },
+          "sha256": "4a432794ed368af4b6c725411c1d8ce6b466b5db4848987ad7e91577b195f774"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-pt-1280.png",
+      "rota": "/estudos/agua-nao-faturada/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 17101,
+      "sha256": "7c0420a1814287be3184c7df237e5c9d5c710731b2eb9303962de1f006e45588",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-pt-1280-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-pt-1280.png",
+          "caixa": {
+            "left": 74,
+            "top": 8057,
+            "width": 1132,
+            "height": 3149
+          },
+          "sha256": "67c9ded161285108796760cdbdea5b55f44e5065815f61afe4fa39043055c4a7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-pt-1600.png",
+      "rota": "/estudos/agua-nao-faturada/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 17101,
+      "sha256": "ecd6adfd0d4324257ff9e91b2d6aafa6fee0995a9dbfbeeb31646d6d277bf71e",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-pt-1600-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-pt-1600.png",
+          "caixa": {
+            "left": 234,
+            "top": 8057,
+            "width": 1132,
+            "height": 3149
+          },
+          "sha256": "4f5a6b2048d639ae38a8f36bf2cc06942e4915a5ef3d83853e2dbc88727d9c69"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-en-390.png",
+      "rota": "/en/studies/agua-nao-faturada/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 25699,
+      "sha256": "e37e1764c300cdebc81f0c502646f07b9dde4bf061c292e6c09ff437bed78b98",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-en-390-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-en-390.png",
+          "caixa": {
+            "left": 24,
+            "top": 10861,
+            "width": 342,
+            "height": 4481
+          },
+          "sha256": "26317ccb53403228adea35e335813a81e689ba8fde8a239ba4e67319790f60d0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-en-768.png",
+      "rota": "/en/studies/agua-nao-faturada/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 17707,
+      "sha256": "59da04a005ff15d682a96bf60f59d8fe6a39df7a4169297d5a72dd6513968656",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-en-768-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-en-768.png",
+          "caixa": {
+            "left": 24,
+            "top": 8381,
+            "width": 720,
+            "height": 2969
+          },
+          "sha256": "202d3cfbed1646caf5bf2a792eecc7847422f3493f90e2cc979ac6edbd66845d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-en-1024.png",
+      "rota": "/en/studies/agua-nao-faturada/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 16425,
+      "sha256": "34b75cd14923787cf0785f7f7b90abcaa61271350cc4b5d9f12d6561cc5510f5",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-en-1024-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-en-1024.png",
+          "caixa": {
+            "left": 24,
+            "top": 7796,
+            "width": 976,
+            "height": 2987
+          },
+          "sha256": "72bc61f453bd1cc0b44ecdf3da5fee4d7b4c7244835ef233141bfac4274291c0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-en-1280.png",
+      "rota": "/en/studies/agua-nao-faturada/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 16455,
+      "sha256": "f3699bac0b77af9e7c358ea97facf76c0e32957b7be82324acda211d46b8adcf",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-en-1280-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-en-1280.png",
+          "caixa": {
+            "left": 74,
+            "top": 7925,
+            "width": 1132,
+            "height": 2990
+          },
+          "sha256": "39b8c469b02293c811dfe7ccd7dcb43eb000b7b05c3064c01aa9341efe8a5828"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "agua-documento-en-1600.png",
+      "rota": "/en/studies/agua-nao-faturada/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 16455,
+      "sha256": "d1b0b40466f46aeb9b2b69fdf3acdb7062292d473dc8aafb29281ba8a42b84e3",
+      "recortes": [
+        {
+          "ficheiro": "agua-documento-en-1600-prr.png",
+          "seletor": "#s4",
+          "origem": "agua-documento-en-1600.png",
+          "caixa": {
+            "left": 234,
+            "top": 7925,
+            "width": 1132,
+            "height": 2990
+          },
+          "sha256": "3c8e5969eb50510dd9f3ae4cb612ba5a5e951dad9544c7abdaac96e96cbc2999"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-pt-390.png",
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 44748,
+      "sha256": "6a8408210bc2120833b00d928272239789f148fff00a4589100fdacc4ef7aaba",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-pt-768.png",
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29355,
+      "sha256": "1815c86817690226402be5807fc4cb7e367549c8a3dd474b76b0f077269d6455",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-pt-1024.png",
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 768,
+      "altura": 29362,
+      "sha256": "e1582d17978e35c3f0a02670eb1790e2b82a1315e74e295dfd54824f589ef37b",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-pt-1280.png",
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 768,
+      "altura": 29362,
+      "sha256": "79437b88e964ca1958e6bc321fe670b04d872429ad5628c7895fbadd7a4a59f4",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-pt-1600.png",
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 768,
+      "altura": 29362,
+      "sha256": "8cfb36a48812b9fcf2dd3a4d02568dc0880e5c14b1bf179fc8905d6d03210a08",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-en-390.png",
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 1211,
+      "sha256": "f822c27521a32ccd64d1b9884ea405366bdbca9ee6037d9b6e809c80a1f53fd8",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-en-768.png",
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 972,
+      "sha256": "db80626bb9cd3a87ad06e2710c581bba54edb44f3ce8e12c172e836997c6929f",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-en-1024.png",
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 925,
+      "sha256": "fe6e66632e5d501137de567c5a7330ce86888e41003d69d5c075222097f52327",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-en-1280.png",
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 950,
+      "sha256": "01f239d53214f3f6bdf0dc316f266f164aefd21297633efd35c196ad6e211006",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-quinze-en-1600.png",
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 956,
+      "sha256": "64d1124ceeedb89559560d25bc8db67da35a112925ec321c731b6eba58f21cd5",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-pt-390.png",
+      "rota": "/estudos/alentejo-algarve/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 900,
+      "sha256": "758defffd52dd2d5ccca0ddf28e3b52408414b3319bd1a9ba1b8b6aba3c83b5d",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-pt-768.png",
+      "rota": "/estudos/alentejo-algarve/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 900,
+      "sha256": "e2b9d0ecb37e58950cae5f94800fef7e4871018008a73d2ab7c1dc5f5d90945c",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-pt-1024.png",
+      "rota": "/estudos/alentejo-algarve/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 900,
+      "sha256": "b115864b713c8b503d66b97e37d824cdd4284b825cd03e7228413c06196738d1",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-pt-1280.png",
+      "rota": "/estudos/alentejo-algarve/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 900,
+      "sha256": "43071997af73393bef239b00608deb2b1501bbf7cfb47bbde12910480911b1e7",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-pt-1600.png",
+      "rota": "/estudos/alentejo-algarve/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 900,
+      "sha256": "b56ecb3709621b177402e6a09e00b26b114d8e25cd130d148f905ff96ddf87f1",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-en-390.png",
+      "rota": "/en/studies/alentejo-algarve/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 23996,
+      "sha256": "2f7141369454dfa6cda5c860552c1b69cd952321fed5a806632d02e56659a98d",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-en-768.png",
+      "rota": "/en/studies/alentejo-algarve/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 14982,
+      "sha256": "3f36f7c69de5f91478789638199a6633c60ea227171487a8190a8ce6ef10557d",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-en-1024.png",
+      "rota": "/en/studies/alentejo-algarve/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 15104,
+      "sha256": "e45cd7a2154e1729e0c28d78f2f7b808803925b92c67355250a0ece9fecb44f6",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-en-1280.png",
+      "rota": "/en/studies/alentejo-algarve/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 14788,
+      "sha256": "8a02de599309f355552517e2c65715f847663c21ca0bc190debb528888e69ac1",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "alentejo-en-1600.png",
+      "rota": "/en/studies/alentejo-algarve/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 14788,
+      "sha256": "1520537fa84f8bcc59cf77364e948af983cc179258ec1137e7fa7cf71382150f",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-390.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41569,
+      "sha256": "56ed7546dba37cbea63392aac0eab482ee008f272599668dc4c5ab5f83235fed",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-390-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-pt-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 4503,
+            "width": 333,
+            "height": 669
+          },
+          "sha256": "cd4e717f652d815fe3f49766e2f1d9573166528edb20eb88c4998a9fb681290c"
+        },
+        {
+          "ficheiro": "correcoes-pt-390-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-pt-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 1956,
+            "width": 333,
+            "height": 440
+          },
+          "sha256": "30d79b5babb0b997f3d0a19578451e158d49c095c696d55526a5319185b95409"
+        },
+        {
+          "ficheiro": "correcoes-pt-390-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-pt-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 4274,
+            "width": 333,
+            "height": 230
+          },
+          "sha256": "a70df01c941d481cd3fcb352a61e290f52a3d182a3ccaff318689be221f1e252"
+        },
+        {
+          "ficheiro": "correcoes-pt-390-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-pt-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 2395,
+            "width": 333,
+            "height": 204
+          },
+          "sha256": "f2b8bf8d8e25f92bc391dfbb72b2b181657eecfa0b3a7b24ce0204013abe2615"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-768.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 43558,
+      "sha256": "e2c53fda8eb0b51606b73d9ed0575e4537010b986f9cd8b51ae30252ddf74a32",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-768-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-pt-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 4369,
+            "width": 524,
+            "height": 961
+          },
+          "sha256": "2b9a3ab9a7ec330b28bc148239eb6442299a1049cd0f0de83624a4bfc0081520"
+        },
+        {
+          "ficheiro": "correcoes-pt-768-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-pt-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 1692,
+            "width": 524,
+            "height": 618
+          },
+          "sha256": "f39a6e9392eedd59d9f856538b760f506b6b514fbf05794191a0068efedee957"
+        },
+        {
+          "ficheiro": "correcoes-pt-768-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-pt-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 4137,
+            "width": 524,
+            "height": 233
+          },
+          "sha256": "5281bca9c4438422398c0e697a08c847aa64a5511aea42ee848f753872cc3663"
+        },
+        {
+          "ficheiro": "correcoes-pt-768-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-pt-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 2309,
+            "width": 524,
+            "height": 207
+          },
+          "sha256": "274ff77e58547588517f3993e74a01c8e4bafc9f43144131ef1fc39239201a63"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1024.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 41047,
+      "sha256": "3a608a31154be8c18f06a930017402acf1962c0e1d2416ae7f361b6c6154fa41",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1024-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-pt-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 4183,
+            "width": 524,
+            "height": 853
+          },
+          "sha256": "ce120e71d75a42055778c05d4b8fc4de11cb4271a66d604f1f89f32d42dbeafb"
+        },
+        {
+          "ficheiro": "correcoes-pt-1024-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-pt-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 1605,
+            "width": 524,
+            "height": 519
+          },
+          "sha256": "1d6e598141c961e3fa3301e34aaf040f86fefc5d10db57f2f8b55ddf32f73218"
+        },
+        {
+          "ficheiro": "correcoes-pt-1024-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-pt-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 3951,
+            "width": 524,
+            "height": 233
+          },
+          "sha256": "1ced47d3e863e4d6e75730d7436c091ebcc3dd31f27421c1ecd148d7a117a841"
+        },
+        {
+          "ficheiro": "correcoes-pt-1024-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-pt-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 2123,
+            "width": 524,
+            "height": 207
+          },
+          "sha256": "ab9f6cdb87c74ac7a4f20753c67898457c0db69b0d3031faeb5436c7c83e391e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1280.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 41932,
+      "sha256": "bc401e7d20fde862b8c6277f9207fa23d06d41421bf1b745477ee970c1c3ce90",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1280-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-pt-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 4248,
+            "width": 523,
+            "height": 878
+          },
+          "sha256": "effaf01cdfeecf6409dc370e38334895145d7b18dfbac55acb283d9ae0ad2cbd"
+        },
+        {
+          "ficheiro": "correcoes-pt-1280-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-pt-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 1618,
+            "width": 523,
+            "height": 519
+          },
+          "sha256": "1e236f50693c8703ddf9d2d7ed10e590e6b357c9325ce99887bfce55e2bd838c"
+        },
+        {
+          "ficheiro": "correcoes-pt-1280-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-pt-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 4016,
+            "width": 523,
+            "height": 233
+          },
+          "sha256": "ea48feee0c6a7e287a79d6f98c977bab0eba4f6a1d76600ad5ff5a220e803e1d"
+        },
+        {
+          "ficheiro": "correcoes-pt-1280-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-pt-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 2136,
+            "width": 523,
+            "height": 207
+          },
+          "sha256": "e5973f19edadd80c0d32eacfea9f85727906c825cb1b0f980d793af7181f280a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1600.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 41942,
+      "sha256": "ba28fb1fc30a0345fa8f4189546250d7acda767ddb52d1f38bc2b71105abce13",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1600-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-pt-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 4248,
+            "width": 523,
+            "height": 878
+          },
+          "sha256": "effaf01cdfeecf6409dc370e38334895145d7b18dfbac55acb283d9ae0ad2cbd"
+        },
+        {
+          "ficheiro": "correcoes-pt-1600-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-pt-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 1618,
+            "width": 523,
+            "height": 519
+          },
+          "sha256": "1e236f50693c8703ddf9d2d7ed10e590e6b357c9325ce99887bfce55e2bd838c"
+        },
+        {
+          "ficheiro": "correcoes-pt-1600-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-pt-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 4016,
+            "width": 523,
+            "height": 233
+          },
+          "sha256": "ea48feee0c6a7e287a79d6f98c977bab0eba4f6a1d76600ad5ff5a220e803e1d"
+        },
+        {
+          "ficheiro": "correcoes-pt-1600-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-pt-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 2136,
+            "width": 523,
+            "height": 207
+          },
+          "sha256": "e5973f19edadd80c0d32eacfea9f85727906c825cb1b0f980d793af7181f280a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-390.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41779,
+      "sha256": "410096df8beef5ef87b572343adf7eb5bc463027e0d757467da1d17e52d377c1",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-390-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-en-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 4486,
+            "width": 333,
+            "height": 696
+          },
+          "sha256": "2823225b74f6ca27cab80492907a55aa049e256b9271e739826587751df2cb05"
+        },
+        {
+          "ficheiro": "correcoes-en-390-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-en-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 1914,
+            "width": 333,
+            "height": 465
+          },
+          "sha256": "2b0630f36b86cc006c2e716f8080a8c18ee236c7476da65abfa89e02cc1d53b0"
+        },
+        {
+          "ficheiro": "correcoes-en-390-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-en-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 4257,
+            "width": 333,
+            "height": 230
+          },
+          "sha256": "d4a788f12937b0e079995ca108673e69f187e52c42e6949771e31700cd129cda"
+        },
+        {
+          "ficheiro": "correcoes-en-390-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-en-390.png",
+          "caixa": {
+            "left": 39,
+            "top": 2378,
+            "width": 333,
+            "height": 229
+          },
+          "sha256": "97cacea59fdb3a1576af74e845efbf9814c78f6c9f9cb7e44b1ae078e53d0541"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-768.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 43762,
+      "sha256": "5323c52705fa0812e52aad7c7a383df1a5b34e130e3397022fa91bcf12f49ecd",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-768-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-en-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 4394,
+            "width": 524,
+            "height": 1006
+          },
+          "sha256": "3716e7035cbf05709b2ef749b1e4f8f2a8aa2cd6f4a194f96d2e19ad54ed0fd8"
+        },
+        {
+          "ficheiro": "correcoes-en-768-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-en-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 1692,
+            "width": 524,
+            "height": 643
+          },
+          "sha256": "8dcf81a53ffe1a204a1a442976157492c988647a4d1678c1fa962d1e62c3c10f"
+        },
+        {
+          "ficheiro": "correcoes-en-768-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-en-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 4163,
+            "width": 524,
+            "height": 232
+          },
+          "sha256": "30be30e499cb5418422eddbe58d9bbf7c56376e0283372f135b27165b161761b"
+        },
+        {
+          "ficheiro": "correcoes-en-768-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-en-768.png",
+          "caixa": {
+            "left": 51,
+            "top": 2334,
+            "width": 524,
+            "height": 207
+          },
+          "sha256": "485e448f87aa6de9a3c2214f5eea833d62be1c50b0f44391ba06d702ec829a6e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1024.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 41190,
+      "sha256": "f82662fc6e1d819145c5104328865156a9bf83a34228e699febcaa36c8a8ea9d",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1024-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-en-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 4264,
+            "width": 524,
+            "height": 853
+          },
+          "sha256": "ada89db86e2665926332ca59e8f9630c27b22eca189464f71ee770983f199de1"
+        },
+        {
+          "ficheiro": "correcoes-en-1024-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-en-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 1583,
+            "width": 524,
+            "height": 571
+          },
+          "sha256": "db82e4fbd1d61ed29c8edc9587df62177f8fdee7460f57eafd55038538ee8ba6"
+        },
+        {
+          "ficheiro": "correcoes-en-1024-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-en-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 4032,
+            "width": 524,
+            "height": 233
+          },
+          "sha256": "3a422bbcc6e2e71cf6fc8ec8b4c4cee5a1d3b31a334eec5b9e6ef53ba76ee497"
+        },
+        {
+          "ficheiro": "correcoes-en-1024-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-en-1024.png",
+          "caixa": {
+            "left": 312,
+            "top": 2153,
+            "width": 524,
+            "height": 207
+          },
+          "sha256": "06831b307546ae22d073edace607352fc6c94fdf265bffb6dfcca22e0e2a47d3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1280.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 42381,
+      "sha256": "e145648d98d4d22a0726da695264719ce91f82da7794566c25187ae6ead76a23",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1280-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-en-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 4328,
+            "width": 523,
+            "height": 879
+          },
+          "sha256": "fee4f07e5305cbe6b731f89a1234a56978b49c7f755f5cdacdff439049fa04ee"
+        },
+        {
+          "ficheiro": "correcoes-en-1280-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-en-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 1596,
+            "width": 523,
+            "height": 571
+          },
+          "sha256": "f404d2b9a47dfad02a7a9f5c6017f47b9ba049a21e39c72fa19e658c857dc126"
+        },
+        {
+          "ficheiro": "correcoes-en-1280-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-en-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 4071,
+            "width": 523,
+            "height": 258
+          },
+          "sha256": "99ad2522941c8e38cf085dc913f68e2e8afa9317a2b77d0db9eabca3e242c20f"
+        },
+        {
+          "ficheiro": "correcoes-en-1280-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-en-1280.png",
+          "caixa": {
+            "left": 369,
+            "top": 2166,
+            "width": 523,
+            "height": 207
+          },
+          "sha256": "b50da0e1c47d32b1eef55bbc127e0b0bfb538c4ab2229dce5200bdafe008bab2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1600.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 42390,
+      "sha256": "e3bb8c7aa20b0c3eaef3a7fbc40d18ac8dcdf7c3075baa6052871e3beeec46cf",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1600-onde-esta.png",
+          "seletor": "[data-texto-estudo=\"onde-esta-a-agua\"]",
+          "origem": "correcoes-en-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 4328,
+            "width": 523,
+            "height": 879
+          },
+          "sha256": "fee4f07e5305cbe6b731f89a1234a56978b49c7f755f5cdacdff439049fa04ee"
+        },
+        {
+          "ficheiro": "correcoes-en-1600-agua.png",
+          "seletor": "[data-texto-estudo=\"agua-nao-faturada\"]",
+          "origem": "correcoes-en-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 1596,
+            "width": 523,
+            "height": 571
+          },
+          "sha256": "f404d2b9a47dfad02a7a9f5c6017f47b9ba049a21e39c72fa19e658c857dc126"
+        },
+        {
+          "ficheiro": "correcoes-en-1600-evora.png",
+          "seletor": "[data-texto-estudo=\"evora-quinze-anos-cinco-mandatos\"]",
+          "origem": "correcoes-en-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 4071,
+            "width": 523,
+            "height": 258
+          },
+          "sha256": "99ad2522941c8e38cf085dc913f68e2e8afa9317a2b77d0db9eabca3e242c20f"
+        },
+        {
+          "ficheiro": "correcoes-en-1600-alentejo.png",
+          "seletor": "[data-texto-estudo=\"alentejo-algarve\"]",
+          "origem": "correcoes-en-1600.png",
+          "caixa": {
+            "left": 529,
+            "top": 2166,
+            "width": 523,
+            "height": 207
+          },
+          "sha256": "b50da0e1c47d32b1eef55bbc127e0b0bfb538c4ab2229dce5200bdafe008bab2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-pt-390.png",
+      "rota": "/livro-razao/coragua-racio-minimo-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2725,
+      "sha256": "b1df5c148a3dadd67078a7414b6d028e39bc56021dafd25e4507c98b869914ff",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-pt-768.png",
+      "rota": "/livro-razao/coragua-racio-minimo-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2463,
+      "sha256": "19f19d7dc2e016a8764182bf23234e8ac63a7c9eb4e75457ada3c452e00d358e",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-pt-1024.png",
+      "rota": "/livro-razao/coragua-racio-minimo-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1719,
+      "sha256": "7b8eaf368f0a77d6d6371c285706f73dfd71ad5b7344ca445a73705f6de0129a",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-pt-1280.png",
+      "rota": "/livro-razao/coragua-racio-minimo-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1754,
+      "sha256": "9ee2f1906b16bb3550e4d89e8d89f6d3d65c2c709110f616b5bcb135e955d4da",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-pt-1600.png",
+      "rota": "/livro-razao/coragua-racio-minimo-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1760,
+      "sha256": "d8f02a3c85b2abb369c812ff494435f477df04f19c6fa1bdd1b6b1ce53f2565b",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-en-390.png",
+      "rota": "/en/ledger/coragua-racio-minimo-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2743,
+      "sha256": "13628533b53ac3fc93e4c2d5f79e2fc56208c3faef9cf2d95ae15e50e8924553",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-en-768.png",
+      "rota": "/en/ledger/coragua-racio-minimo-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2463,
+      "sha256": "8b9472c697f0a7f0d385e649a05fdd27aaac1b5bbefa6031a739a0e7b744bfc7",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-en-1024.png",
+      "rota": "/en/ledger/coragua-racio-minimo-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1676,
+      "sha256": "7b0eab109ac19a22394bd8b401960341d6ce8a6019b37e823221680046d7c334",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-en-1280.png",
+      "rota": "/en/ledger/coragua-racio-minimo-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1710,
+      "sha256": "0adf2b286907ad0f4e4c8868ca2c551cc0b71c2427d74c014d994e6fb16cede0",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-racio-en-1600.png",
+      "rota": "/en/ledger/coragua-racio-minimo-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1717,
+      "sha256": "10cc99b0a36cb5e0138c23454ab08332c307a9a646041109fbeab0fc36d7928b",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "38d2ed58fd0bb0a5f6bc565f963afaac99ef10a51a5d7d9962066544092e5585",
+    "estudos/onde-esta-a-agua/documento/index.html": "5dc981ba12ceb7cf475f54f548829d75afefe114fd17b61dacba299780bda8ea",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/studies/onde-esta-a-agua/document/index.html": "3dc3507c757c69612c4dacbd10aa48d98b8bab428817109adcee1bbba57d16ff",
+    "estudos/onde-esta-a-agua/documento/2026-08-12/index.html": "1a36044c492ab3f21223111e4bdaf5412d2f7bc0aa1ee4c758fa112cca4563c3",
+    "en/studies/onde-esta-a-agua/document/2026-08-12/index.html": "226083808b344c810d43dc247cf3aaa9a179638783e08bc8370233872a02ed7d",
+    "estudos/agua-nao-faturada/documento/index.html": "8a9ceddbca8788ed07ebb70b5a8e540569cfd8e01bbcd760dd771ee438097d71",
+    "en/studies/agua-nao-faturada/document/index.html": "dd7e65d49882ddc3015573e2b1f067fe6bbd983849bb6904190416ab70689230",
+    "estudos/evora-quinze-anos-cinco-mandatos/documento/index.html": "1ec67c170536b384885de5fdccda5855ff6478b5744bd9af4abcc2523f2f97c1",
+    "en/studies/evora-quinze-anos-cinco-mandatos/index.html": "f057d933b161ddb9fd28759ad9a897c58e24999b5116adce6ef3594d13f4f888",
+    "_astro/Base.Dn-yGrQ-.css": "50a30a549ab240c216b83c0acdd141c24533cda9244f2446624b1a4128f1284c",
+    "_astro/texto.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "estudos/alentejo-algarve/index.html": "46d8f3ca94db075063bd7589a407307f867a44301489439b3a3151c950f5a449",
+    "en/studies/alentejo-algarve/document/index.html": "d537ca1099434159526e22eb974461e3878091e90a2b59c37b9497d26450d7eb",
+    "correcoes/index.html": "977138696311e7e677fa1fc1098886e712d4aa26f45ba6633ab60b9bb21ff21c",
+    "js/correcoes.js": "48c514d7ead045fff64051c2837ad4ec695ed3ab379c6447a54468f82dc0e69a",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/corrections/index.html": "4929edd26f24009b38c24fa941b7b15e86bf5e01379989f14c96910aae2b9524",
+    "livro-razao/coragua-racio-minimo-2026/index.html": "4394aa792c26c97beed16f38e9e8d809e84e74bb2e2da2916309610053fd8bc6",
+    "_astro/linha.DOdCy9TF.css": "99cb640e0f6cafe8bb8b68a992968df0ab42486b4006260f7657bdd3596f0e24",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/coragua-racio-minimo-2026/index.html": "56d08737b22abeb0b7d3000037be899f5c09c382593139f6be6119833a0538d2"
+  },
+  "falhas": [],
+  "ok": true
+}

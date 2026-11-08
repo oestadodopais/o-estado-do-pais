@@ -1,0 +1,30 @@
+{
+ "chega": {
+  "valor": "345 684",
+  "comando": "GATE-motor-coragua-d.log e o diff das linhas ATTRIB de cf5bd5b e da cabeça 19dd943 sobre os documentos de gate_baselines.json (scratchpad coragua/attr): evora-pelouros-html, «345 684 credited to CHEGA», só na cabeça"
+ },
+ "presidente": {
+  "valor": "2 307 512",
+  "comando": "GATE-motor-coragua-d.log e o diff das linhas ATTRIB de cf5bd5b e da cabeça 19dd943 sobre os documentos de gate_baselines.json (scratchpad coragua/attr): evora-quem-governou-pt-html, «2 307 512 credited to João Manuel da Horta Rodrigues», só na cabeça"
+ },
+ "alta": {
+  "valor": "0,0706",
+  "comando": "o core.attributions de cf5bd5b sobre onde-esta-a-agua-pt com o livro da cabeça sem attributed_to nas sete linhas: ATTRIB 0,0706 credited to ERSAR"
+ },
+ "baixa": {
+  "valor": "0,0382",
+  "comando": "a mesma corrida: ATTRIB 0,0382 credited to ERSAR"
+ },
+ "ersar": {
+  "valor": "1,348",
+  "comando": "a mesma corrida: ATTRIB 1,348 credited to EDIA"
+ },
+ "imparidade": {
+  "valor": "2 029 018 255",
+  "comando": "a mesma corrida: ATTRIB 2 029 018 255 credited to Gulbenkian"
+ },
+ "janela": {
+  "valor": "160",
+  "comando": "core/attributions.py de cf5bd5b, a docstring: the surrounding window (±160 chars)"
+ }
+}

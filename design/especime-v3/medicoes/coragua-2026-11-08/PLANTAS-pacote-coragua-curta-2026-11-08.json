@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T19:04:19+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "D1",
+   "ficheiro": "built/estudos/onde-esta-a-agua/documento/index.html",
+   "descricao": "a conclusão do rácio na edição portuguesa passa de 19 a 35 para 19 a 53 vezes",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "46b0c997b740df6b813cd1c91641b46af455608b68fbd9c33f0b6152b4ca2103",
+   "sha256_depois": "e4656e09ed98da664956b2087d71af46cf29f69b4d96e03b7f36bc6408feaf3a",
+   "contexto_antes": " nada e não está a ser puxada.</b> O encargo médio de um utilizador doméstico com a água, 1,348 € por m³ com a parte fixa, o IVA e a taxa de recursos hídricos, é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega, à qual o edital acrescenta a taxa de recursos hídricos e uma componente de conservação por hectare (cálculo: 1,348 € a dividir p",
+   "contexto_depois": " nada e não está a ser puxada.</b> O encargo médio de um utilizador doméstico com a água, 1,348 € por m³ com a parte fixa, o IVA e a taxa de recursos hídricos, é 19 a 53 vezes a tarifa do Alqueva por m³ para a rega, à qual o edital acrescenta a taxa de recursos hídricos e uma componente de conservação por hectare (cálculo: 1,348 € a dividir p"
+  },
+  {
+   "id": "D2",
+   "ficheiro": "built/en/studies/onde-esta-a-agua/document/index.html",
+   "descricao": "o segundo escalão da EDIA na edição inglesa passa de mais 400 % a mais 300 %",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "778d7364e9077e0793de8bf8fe7a4dcbf381c76d97da5339b78290e31b59f026",
+   "sha256_depois": "f82f1d300fc6f0871dc64aa915d4b41de00d41ed916d18bb16b99c22c058434a",
+   "contexto_antes": "r despacho), with tiered pricing for consumption above the allocation: from 100% to 110% of the authorised volume, the base price plus 150%; from 110% to 125%, the base price plus 400%. The 2026 base values are in the campaign edital (Anexo II, dated 2 June 2026): €0.0706 per m³ at high pressure (average value; €0.0689 to €0.0847 depending on",
+   "contexto_depois": "r despacho), with tiered pricing for consumption above the allocation: from 100% to 110% of the authorised volume, the base price plus 150%; from 110% to 125%, the base price plus 300%. The 2026 base values are in the campaign edital (Anexo II, dated 2 June 2026): €0.0706 per m³ at high pressure (average value; €0.0689 to €0.0847 depending on"
+  },
+  {
+   "id": "D3",
+   "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/ledger_onde_pt.json",
+   "descricao": "o excerto do simulador da EDIA no livro do motor com o limite do escalão mudado (125 % para 120 %)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "317bb293f06055d5e44ea02b675017347908975e432b1c077d6ba7703ce89c86",
+   "sha256_depois": "55ec19f9a3a08bb53ba51f0bdedbc7b7f80a423498d9a1574a8a836acc60f5f5",
+   "contexto_antes": "urce_url\": \"https://www.edia.pt/pt/o-que-fazemos/apoio-ao-agricultor/simulador-de-tarifarios-de-rega/\",\n   \"fetched_at\": \"2026-11-08T07:15:29Z\",\n   \"excerpt\": \"De 110% até 125% do volume autorizado – aplicação de Preço Base + 400%.\",\n   \"source_type\": \"government\",\n   \"source_file\": \"../source/agua-2026-11-08/edia-simulador-tarifarios.html\",\n   \"source_sha256\": \"690a9abe89b39118c2709bb13",
+   "contexto_depois": "urce_url\": \"https://www.edia.pt/pt/o-que-fazemos/apoio-ao-agricultor/simulador-de-tarifarios-de-rega/\",\n   \"fetched_at\": \"2026-11-08T07:15:29Z\",\n   \"excerpt\": \"De 110% até 120% do volume autorizado – aplicação de Preço Base + 400%.\",\n   \"source_type\": \"government\",\n   \"source_file\": \"../source/agua-2026-11-08/edia-simulador-tarifarios.html\",\n   \"source_sha256\": \"690a9abe89b39118c2709bb13"
+  },
+  {
+   "id": "D4",
+   "ficheiro": "built/estudos/agua-nao-faturada/documento/index.html",
+   "descricao": "o inquérito da Gulbenkian volta a ser dado à Ipsos APEME na edição portuguesa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9e5bbbecd784162e7dcbb9538d672ad89acc5a87a7c75692b31f6db9252a0e72",
+   "sha256_depois": "13a966d0170955e7d027533231cf48b4ab88b1951a6ab309215ed492a419d409",
+   "contexto_antes": "elo, não uma medição.</b> O PGRH calcula-o como área regada × coeficiente\n    cultural ÷ eficiência de transporte. <b>Num inquérito da Gulbenkian feito em 2019 pelo C-Lab (publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água; o Recenseament",
+   "contexto_depois": "elo, não uma medição.</b> O PGRH calcula-o como área regada × coeficiente\n    cultural ÷ eficiência de transporte. <b>Num inquérito da Gulbenkian feito em 2019 pela Ipsos APEME (publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água; o Recenseament"
+  },
+  {
+   "id": "D5",
+   "ficheiro": "ledger/claims/coragua-ersar-encargo-mensal-2024.yml",
+   "descricao": "o localizador da ERSAR aponta a barra de 2023 em vez da de 2024",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0e69e42918c8a4c531cf5a7dd8da172b61d138644c9d16616b4d3faeb186fab3",
+   "sha256_depois": "17eb80c977f20cc3953209cba6a72b859183123c100d9abbe3b1183c60d33e29",
+   "contexto_antes": "nit: euros\nsource: ERSAR\ndocument:\n  title: RASARP 2025, volume 1\n  edition: RASARP 2025, volume 1\n  locator: \"p. 410, Figura 553: 13,48 é o rótulo de dados da barra de 2024 do abastecimento de água, na imagem da figura, sem camada de texto\"\n  page: 410\n  kind: pdf\n  source_sha256: cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33a",
+   "contexto_depois": "nit: euros\nsource: ERSAR\ndocument:\n  title: RASARP 2025, volume 1\n  edition: RASARP 2025, volume 1\n  locator: \"p. 410, Figura 553: 13,48 é o rótulo de dados da barra de 2023 do abastecimento de água, na imagem da figura, sem camada de texto\"\n  page: 410\n  kind: pdf\n  source_sha256: cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33a"
+  }
+ ]
+}

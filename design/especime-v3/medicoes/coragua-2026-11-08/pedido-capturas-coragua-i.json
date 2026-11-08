@@ -1,0 +1,16 @@
+{
+ "cabeca": "67db1d1f6514bedefe7ea8dddd906cd30df3333d",
+ "paginas": [
+  {
+   "nome": "onde-documento",
+   "pt": "/estudos/onde-esta-a-agua/documento/",
+   "en": "/en/studies/onde-esta-a-agua/document/",
+   "recortes": [
+    {
+     "nome": "precos",
+     "seletor": "#f-price"
+    }
+   ]
+  }
+ ]
+}

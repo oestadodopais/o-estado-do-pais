@@ -1,0 +1,14 @@
+{
+ "rasarp-pagina": {
+  "valor": "410",
+  "comando": "pdftotext -f 410 -l 410 -layout do RASARP 2025 vol. 1 (sha256 cd913fa3af3c…): «Encargos tarifários domésticos para consumos de 10 metros cúbicos» e «…para um consumo de 10 metros cúbicos…Figura 553» com a nota 87; o rodapé «410 | 2025 VOL. 1»"
+ },
+ "edital-alta": {
+  "valor": "0,0706",
+  "comando": "pdftotext -f 5 -l 5 -layout do edital da campanha de 2026 (sha256 a6619e4be333…): «Fornecimento de água em alta pressão», Valor médio 0,0706, no quadro «Blocos de Rega EFMA»; as linhas «Precários e Captações Diretas» à parte (2 ocorrências de «Precários»)"
+ },
+ "edital-baixa": {
+  "valor": "0,0382",
+  "comando": "a mesma página: «Fornecimento de água em baixa pressão» 0,0382; pdftotext do edital inteiro: 0 ocorrências da palavra «IVA», 1 de «recursos hídricos»"
+ }
+}

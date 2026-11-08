@@ -1,0 +1,18 @@
+{
+ "faixa-de": {
+  "valor": "641",
+  "comando": "19-check_alvos.log da corrida coragua-conferir-2026-11-08-g (9d3a76d05): «faixa 641 a 1023: … destes, 1 são caixas e falham (1× a.src-chip «row · O Estado do País» · 44.7×44.8 de toque (caixa 44×44))»"
+ },
+ "faixa-ate": {
+  "valor": "1 023",
+  "comando": "a mesma linha"
+ },
+ "captura": {
+  "valor": "768",
+  "comando": "scratchpad coragua-capturas-d/correcoes-pt-768-agua.png (a captura de 11f2a023c), lida por este lugar: a entrelinha alarga em cada linha com selo"
+ },
+ "area-390": {
+  "valor": "390",
+  "comando": "tests/acessibilidade/alvos.mjs, o comentário da EX1: «cada selo continua a ser a porta da sua linha, com a área inteira a 390 px»"
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T21:25:04+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "G1",
+   "ficheiro": "built/estudos/onde-esta-a-agua/documento/index.html",
+   "descricao": "a conclusão portuguesa perde «nos blocos de rega»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1bbe2669115ee081ca1df19ab930d41a8665d53c3c0e80ae49fe6a253de6726e",
+   "sha256_depois": "4c80bdba27566f3c210243010da2689c02022c1e6c64a9a3381959b06179df24",
+   "contexto_antes": "o médio de um utilizador doméstico com a água é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos: 19 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €), à qual o edital acrescenta a taxa de recursos hídricos e uma componente de conservação por hectare, sem dizer ",
+   "contexto_depois": "o médio de um utilizador doméstico com a água é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos: 19 a 35 vezes a tarifa do Alqueva por m³ para a rega (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €), à qual o edital acrescenta a taxa de recursos hídricos e uma componente de conservação por hectare, sem dizer "
+  },
+  {
+   "id": "G2",
+   "ficheiro": "built/en/studies/onde-esta-a-agua/document/index.html",
+   "descricao": "o consumo de referência na conclusão inglesa passa de 10 a 15 m³",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7457f769f3284642e26c766c6afa08048ddf8e2b456014a4266405c0fa6e84df",
+   "sha256_depois": "e8c6df352415dad0907d889f5ed47f8c8e368468c9cd3f273f924fd1d00bc834",
+   "contexto_antes": "      €1.42 billion, of which two line items name a funding source.</li>\n      <li><b>Pricing is the lever that costs nothing and is not being pulled.</b> At a consumption of 10 m³ a month, a household's average water charge is €1.348 per m³, including the fixed part, VAT and the water resources tax: 19 to 35 times Alqueva's per-m³ irrigation tar",
+   "contexto_depois": "      €1.42 billion, of which two line items name a funding source.</li>\n      <li><b>Pricing is the lever that costs nothing and is not being pulled.</b> At a consumption of 15 m³ a month, a household's average water charge is €1.348 per m³, including the fixed part, VAT and the water resources tax: 19 to 35 times Alqueva's per-m³ irrigation tar"
+  },
+  {
+   "id": "G3",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "o rácio antigo na entrada portuguesa do registo passa de 27 a 29",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "41c99bad59b79ff2a977045752a26645090089590bd238e50d718b4448fc46a7",
+   "sha256_depois": "5f33d96c0f964134d2cce903ae1a35952c837cbef0d59271fbd05d2139f8594f",
+   "contexto_antes": "co por metro cúbico, ao consumo de referência da ERSAR, e a tarifa do Alqueva para a rega nos blocos de rega passou de <span class=\"claim claim-com-chip\"><span data-claim=\"coragua-historico-racio-minimo\" class=\"claim-value\">27</span><a class=\"src-chip\" href=\"/livro-razao/coragua-historico-racio-minimo\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"O Estado do País\" title=\"O Estado",
+   "contexto_depois": "co por metro cúbico, ao consumo de referência da ERSAR, e a tarifa do Alqueva para a rega nos blocos de rega passou de <span class=\"claim claim-com-chip\"><span data-claim=\"coragua-historico-racio-minimo\" class=\"claim-value\">29</span><a class=\"src-chip\" href=\"/livro-razao/coragua-historico-racio-minimo\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"O Estado do País\" title=\"O Estado"
+  },
+  {
+   "id": "G4",
+   "ficheiro": "ledger/claims/coragua-ersar-encargo-mensal-2024.yml",
+   "descricao": "o excerto da ERSAR cita a Figura 552 em vez da 553",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ca21a1858cdfb7f133fbd9fd8e81059aced9f20259489fff20906d460f2a7bac",
+   "sha256_depois": "42254fa3c995c237b7e25f2ed37b4f976ecd52c82e986fa76849af7349a684a2",
+   "contexto_antes": "s tarifários mensais suportado pelo utilizador final para um\n  consumo de 10 metros cúbicos, apresenta a evolução, a preços correntes, que se pode verificar na Figura 553⁸⁷.\n\n\n\n\n                  Figura 553. Evolução do nível médio de encargos tarifários mensais por serviço entre 2015 e 2024\nderivation: null\nderivation_en: null\nder",
+   "contexto_depois": "s tarifários mensais suportado pelo utilizador final para um\n  consumo de 10 metros cúbicos, apresenta a evolução, a preços correntes, que se pode verificar na Figura 552⁸⁷.\n\n\n\n\n                  Figura 553. Evolução do nível médio de encargos tarifários mensais por serviço entre 2015 e 2024\nderivation: null\nderivation_en: null\nder"
+  },
+  {
+   "id": "G5",
+   "ficheiro": "built/en/studies/onde-esta-a-agua/document/index.html",
+   "descricao": "a frase inglesa dos valores base perde «for the irrigation blocks»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e8c6df352415dad0907d889f5ed47f8c8e368468c9cd3f273f924fd1d00bc834",
+   "sha256_depois": "ccf759e585005f02fd8c56bd896094cc4bfad1dca1e4c198e31e0aa5b1b14486",
+   "contexto_antes": "ricing for consumption above the allocation: from 100% to 110% of the authorised volume, the base price plus 150%; from 110% to 125%, the base price plus 400%. The 2026 base values for the irrigation blocks are in the campaign edital (Anexo II, dated 2 June 2026): €0.0706 per m³ at high pressure (average value; €0.0689 to €0.0847 depending on the period) and €0.0382 p",
+   "contexto_depois": "ricing for consumption above the allocation: from 100% to 110% of the authorised volume, the base price plus 150%; from 110% to 125%, the base price plus 400%. The 2026 base values are in the campaign edital (Anexo II, dated 2 June 2026): €0.0706 per m³ at high pressure (average value; €0.0689 to €0.0847 depending on the period) and €0.0382 p"
+  }
+ ]
+}
