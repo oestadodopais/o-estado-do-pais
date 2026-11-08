@@ -1,0 +1,301 @@
+diff --git a/scripts/leituras/conferir-frases.mjs b/scripts/leituras/conferir-frases.mjs
+index afc9cf5d9..118f93015 100644
+--- a/scripts/leituras/conferir-frases.mjs
++++ b/scripts/leituras/conferir-frases.mjs
+@@ -5,8 +5,16 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
+ import {execFileSync} from 'node:child_process';
+ import {parse} from 'node-html-parser';
+ import {frasesDoTexto, medirPagina} from '../voz-autorreferencia.mjs';
+-// A régua das listas conserva a distinção decimal da VOZ-2 e conta sha256 como 256.
+-export const numeros = t => (t.match(/(?<!\d)\d+(?:[.,]\d+)*/gu) ?? []).map(n => n.replace(',', '.'));
++import {formasNumericas} from '../paridade-numeros.mjs';
++// Grupos de milhares da paridade, conservando a distinção entre 1,2 e 12.
++export const numeros = t => formasNumericas(t).map(n => {
++  n = n.replace(/[\s\u00a0\u202f]/g, '');
++  if (n.includes(',') && n.includes('.')) {
++    const i = Math.max(n.lastIndexOf(','), n.lastIndexOf('.'));
++    return n.slice(0, i).replace(/[.,]/g, '') + '.' + n.slice(i + 1);
++  }
++  return /^\d{1,3}(?:[.,]\d{3})+$/.test(n) ? n.replace(/[.,]/g, '') : n.replace(',', '.');
++});
+ 
+ const normal = t => t.replace(/\u200b/g, '').replace(/\s+/g, ' ').trim();
+ const esc = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
+@@ -25,8 +33,9 @@ export function validarLista(lista) {
+   const ids = new Set();
+   for (const f of lista) {
+     if (!f || typeof f.id !== 'string' || !f.id || ids.has(f.id) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(f.estudo ?? '') ||
+-        !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || !f.frase.trim() ||
++        !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || [...normal(f.frase)].length < 12 ||
+         (f.classe === 'REESCREVE' && (typeof f.nova !== 'string' || !f.nova.trim())) || ('nova' in f && typeof f.nova !== 'string')) throw new Error('entrada da lista inválida ou repetida');
++    if (!Array.isArray(f.paginas) || !f.paginas.length || f.paginas.some(r => typeof r !== 'string' || !/^\/(?:estudos|en\/studies)\/[a-z0-9-]+(?:\/(?:documento|document))?$/.test(r))) throw new Error('entrada sem páginas válidas');
+     if (('par' in f || 'razao_par' in f) && !parDispensado(f)) throw new Error('par: nenhum exige razao_par de pelo menos vinte carateres');
+     ids.add(f.id);
+   }
+@@ -46,7 +55,22 @@ export function conferirNumeros(lista, bilingues) {
+   });
+ }
+ const contem = (texto, frase) => normal(texto).includes(normal(frase));
+-const nomeada = (texto, entradas) => entradas.some(f => contem(texto, f.frase) || contem(f.frase, texto) || (f.nova && (contem(texto, f.nova) || contem(f.nova, texto))));
++const textoDaEntrada = (f, aplicada) => aplicada ? (f.classe === 'SAI' ? null : f.classe === 'REESCREVE' ? f.nova : f.frase) : f.frase;
++const nomeada = (texto, entradas, bloco, aplicada) => entradas.some(f => {
++  const frase = textoDaEntrada(f, aplicada);
++  // Só uma frase comprovadamente dentro deste bloco pode cobrir a frase captada.
++  return frase && contem(bloco, frase) && (contem(texto, frase) || contem(frase, texto));
++});
++export function conferirPresenca(lista, documentos, aplicada = false) {
++  return lista.flatMap(f => {
++    const paginas = documentos.filter(d => f.paginas.includes(d.rota));
++    const frase = aplicada && f.classe === 'REESCREVE' ? f.nova : f.frase;
++    const presente = paginas.some(d => contem(d.texto ?? d.blocos.join(' '), frase));
++    const ok = aplicada && f.classe === 'SAI' ? paginas.length > 0 && !presente : presente;
++    return ok ? [] : [{id:f.id, classe:f.classe, razao:aplicada && f.classe === 'SAI' ? 'frase retirada ainda presente ou páginas ausentes' : 'frase ausente das páginas declaradas'}];
++  });
++}
++
+ export const parDispensado = f => f.par === 'nenhum' && typeof f.razao_par === 'string' && [...f.razao_par.trim()].length >= 20;
+ // A folga não permite reutilizar um bloco para justificar dois blocos da outra língua.
+ // Limite HIG-6A: um bloco com par pode conter uma frase gémea por mudar (V122).
+@@ -75,12 +99,12 @@ export function emparelharBlocos(a, b, alinhados) {
+   }
+   return pares;
+ }
+-export function conferirBlocos(lista, documentos, bilingues = new Set(documentos.filter(d => d.tipo === 'documento' && documentos.some(g => g.tipo === 'documento' && g.estudo === d.estudo && g.lingua !== d.lingua)).map(d => d.estudo))) {
++export function conferirBlocos(lista, documentos, bilingues = new Set(documentos.filter(d => d.tipo === 'documento' && documentos.some(g => g.tipo === 'documento' && g.estudo === d.estudo && g.lingua !== d.lingua)).map(d => d.estudo)), aplicada = false) {
+   const semPar = new Map(), semEntrada = new Map(), emparelhamentos = new Map();
+   for (const d of documentos) {
+     const entradas = lista.filter(f => f.lingua === d.lingua && (f.estudo === d.estudo || f.paginas?.includes(d.rota)));
+     (d.textosVoz ?? d.blocos).forEach((t, i) => {
+-      for (const frase of recusaVoz(t)) if (!nomeada(frase, entradas)) {
++      for (const frase of recusaVoz(t)) if (!nomeada(frase, entradas, t, aplicada)) {
+         const k = [d.estudo, d.lingua, frase].join('|');
+         semEntrada.set(k, {estudo:d.estudo, lingua:d.lingua, bloco:i, frase});
+       }
+@@ -92,14 +116,15 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
+     if (!emparelhamentos.has(chave)) {
+       const p = d.lingua === 'pt' ? d : gemeo, e = d.lingua === 'en' ? d : gemeo;
+       const ep = d.lingua === 'pt' ? entradas : outras, ee = d.lingua === 'en' ? entradas : outras;
+-      const indicesComEntrada = (doc, es) => doc.blocos.flatMap((t, i) => es.some(f => contem(t, f.frase) || (f.nova && contem(t, f.nova))) ? [i] : []);
++      const indicesComEntrada = (doc, es) => doc.blocos.flatMap((t, i) => es.some(f => { const frase = textoDaEntrada(f, aplicada); return frase && contem(t, frase); }) ? [i] : []);
+       const ip = indicesComEntrada(p, ep), ie = indicesComEntrada(e, ee);
+       const indices = emparelharBlocos(ip, ie, p.blocos.length === e.blocos.length);
+       emparelhamentos.set(chave, {pt:new Set(indices.keys()), en:new Set(indices.values())});
+     }
+     const pares = emparelhamentos.get(chave);
+     for (const f of entradas.filter(f => f.classe !== 'FICA' && !parDispensado(f))) for (const [i, t] of d.blocos.entries()) {
+-      if (!contem(t, f.frase) && !(f.nova && contem(t, f.nova))) continue;
++      const frase = textoDaEntrada(f, aplicada);
++      if (!frase || !contem(t, frase)) continue;
+       const temPar = pares[d.lingua].has(i);
+       if (!temPar) semPar.set(f.id, {id:f.id, estudo:d.estudo, lingua:d.lingua, bloco:i});
+     }
+@@ -114,7 +139,9 @@ export function lerDocumentos(lista, dist) {
+       const rota = (lingua === 'pt' ? '/estudos/' : '/en/studies/') + estudo + (tipo === 'documento' ? (lingua === 'pt' ? '/documento' : '/document') : '');
+       const ficheiro = path.join(dist, rota, 'index.html');
+       if (!fs.existsSync(ficheiro)) continue;
+-      documentos.push({estudo, lingua, tipo, rota, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo), textosVoz:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo, tagsVoz)});
++      const corpo = parse(fs.readFileSync(ficheiro, 'utf8')); corpo.querySelectorAll('script,style,.src-chip').forEach(n => n.remove());
++      const texto = normal((corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo).textContent);
++      documentos.push({estudo, lingua, tipo, rota, texto, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo), textosVoz:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo, tagsVoz)});
+       if (tipo === 'documento') lidos.add(lingua);
+     }
+     if (lidos.size === 2) bilingues.add(estudo);
+@@ -122,26 +149,32 @@ export function lerDocumentos(lista, dist) {
+   }
+   return {documentos, bilingues};
+ }
+-export function conferir(lista, documentos, bilingues, quantificadores) {
++export function conferirQuantificadores(lista) {
++  return JSON.parse(execFileSync('python3', [fileURLToPath(new URL('./quantificadores.py', import.meta.url))],
++    {input:JSON.stringify(lista), encoding:'utf8', stdio:['pipe','pipe','pipe']}));
++}
++export function conferir(lista, documentos, bilingues, {aplicada = false} = {}) {
+   validarLista(lista);
+   return {voz:lista.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, bilingues),
+-    quantificadores, ...conferirBlocos(lista, documentos, bilingues)};
++    quantificadores:conferirQuantificadores(lista), presenca:conferirPresenca(lista, documentos, aplicada),
++    ...conferirBlocos(lista, documentos, bilingues, aplicada)};
+ }
+ export const recusas = r => Object.values(r).reduce((n, xs) => n + xs.length, 0);
+-export function conferirLista(ficheiro, dist = 'dist') {
++export function conferirLista(ficheiro, dist = 'dist', opcoes = {}) {
+   const lista = JSON.parse(fs.readFileSync(ficheiro, 'utf8')); validarLista(lista);
+   const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], {encoding:'utf8'}).trim();
+   if (JSON.parse(fs.readFileSync(path.join(dist, 'version.json'), 'utf8')).commit !== cabeca) throw new Error('dist não corresponde à cabeça da worktree');
+   const {documentos, bilingues} = lerDocumentos(lista, dist);
+-  const quantificadores = JSON.parse(execFileSync('python3', [fileURLToPath(new URL('./quantificadores.py', import.meta.url))], {input:JSON.stringify(lista), encoding:'utf8', stdio:['pipe','pipe','pipe']}));
+-  return conferir(lista, documentos, bilingues, quantificadores);
++  return conferir(lista, documentos, bilingues, opcoes);
+ }
+ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+   try {
+-    const r = conferirLista(process.argv[2], process.argv[3] ?? 'dist');
+-    console.log(`camada 0: voz ${r.voz.length}; números ${r.numeros.length}; quantificadores ${r.quantificadores.length}; entradas sem par ${r.semPar.length}; frases sem entrada ${r.semEntrada.length}`);
++    const args = process.argv.slice(2).filter(a => a !== '--aplicada');
++    if (args.some(a => a.startsWith('--')) || args.length < 1 || args.length > 3) throw new Error('argumentos inválidos');
++    const r = conferirLista(args[0], args[1] ?? 'dist', {aplicada:process.argv.includes('--aplicada')});
++    console.log(`camada 0: voz ${r.voz.length}; números ${r.numeros.length}; quantificadores ${r.quantificadores.length}; entradas sem par ${r.semPar.length}; frases sem entrada ${r.semEntrada.length}; presença ${r.presenca.length}`);
+     for (const [regra, erros] of Object.entries(r)) for (const erro of erros) console.log(`${regra}: ${JSON.stringify(erro)}`);
+-    if (process.argv[4]) fs.writeFileSync(process.argv[4], JSON.stringify(r, null, 2) + '\n');
++    if (args[2]) fs.writeFileSync(args[2], JSON.stringify(r, null, 2) + '\n');
+     process.exitCode = recusas(r) ? 9 : 0;
+   } catch (e) { console.error('camada 0: ' + (e.stderr?.toString().trim() || (e.code ? 'ficheiro, dist ou guião ilegível' : e.message))); process.exitCode = 9; }
+ }
+diff --git a/scripts/leituras/pre-mandato.py b/scripts/leituras/pre-mandato.py
+index 7a5728110..c3eb21925 100644
+--- a/scripts/leituras/pre-mandato.py
++++ b/scripts/leituras/pre-mandato.py
+@@ -8,6 +8,7 @@ OEDP_ACRESCENTA só pode acrescentar exigências; um valor vazio recusa.
+ Com linhas, OEDP_LINHA_IRMA identifica a linha usada nas listas.
+ OEDP_TITULO_IRMA e OEDP_FICHEIRO_IRMA são argumentos opcionais da medição.
+ """
++import argparse
+ import json
+ import os
+ from pathlib import Path
+@@ -81,10 +82,13 @@ def conferir_medidas(texto, mandato):
+ 
+ 
+ def main(argv):
+-    if len(argv) != 2:
+-        print('uso: pre-mandato.py <worktree> <mandato.md>', file=sys.stderr)
+-        return 9
+-    sitio, mandato = map(Path, argv)
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('sitio', type=Path)
++    parser.add_argument('mandato', type=Path)
++    parser.add_argument('--aplicada', action='store_true')
++    parser.add_argument('--dist', type=Path)
++    args = parser.parse_args(argv)
++    sitio, mandato = args.sitio, args.mandato
+     try:
+         texto = mandato.read_text(encoding='utf-8')
+         conferir_medidas(texto, mandato)
+@@ -103,13 +107,16 @@ def main(argv):
+         guioes = sitio / 'scripts/leituras'
+         codigos = []
+         cabecalho = re.split(r'^## ', texto, maxsplit=1, flags=re.M)[0]
++        if re.search(r'^Frases:', texto[len(cabecalho):], re.M):
++            raise ValueError('Frases: fora do cabeçalho do mandato')
+         for declaracao in re.findall(r'^Frases:[ \t]*(.*)$', cabecalho, re.M):
+             relativo = Path(declaracao.strip())
+             if not declaracao.strip() or relativo.is_absolute():
+                 raise ValueError('Frases: tem de ser um caminho relativo à pasta do mandato')
+             lista = (mandato.parent / relativo).resolve()
+             codigos.append(subprocess.run(['node', str((guioes / 'conferir-frases.mjs').resolve()),
+-                                           str(lista)], cwd=sitio).returncode)
++                                           str(lista), *([str(args.dist.resolve())] if args.dist else []),
++                                           *(['--aplicada'] if args.aplicada else [])], cwd=sitio).returncode)
+         if not exigencias:
+             print('pré-mandato: não acrescenta linhas nem frases ao leitor', flush=True)
+             return next((c if c > 0 else 128 - c for c in codigos if c), 0)
+diff --git a/scripts/leituras/quantificadores.py b/scripts/leituras/quantificadores.py
+index b3222ad93..b90dc9526 100644
+--- a/scripts/leituras/quantificadores.py
++++ b/scripts/leituras/quantificadores.py
+@@ -8,7 +8,40 @@ import re
+ import sys
+ 
+ 
+-def conferir(lista, motor):
++def normal(texto):
++    texto = re.sub(r"\s+", " ", texto.replace("*", "").replace("`", ""))
++    texto = re.sub(r"\s+([,.;:)»%])", r"\1", texto)
++    return re.sub(r"([(«])\s+", r"\1", texto)
++
++
++def livros_do_estudo(estudo, lingua, motor, sitio):
++    import yaml
++    manifesto = yaml.safe_load((sitio / 'studies-src/manifest.yml').read_text())
++    content = (motor / 'content').resolve()
++    pastas = set()
++    for edicao in manifesto['edicoes']:
++        if edicao.get('slug') != estudo or edicao.get('lang') != lingua:
++            continue
++        origem = edicao.get('origin_ref', '').split(' @ ')[0]
++        pasta = (motor / origem).resolve().parent
++        if not pasta.is_relative_to(content):
++            raise ValueError('origem do estudo fora de content do motor')
++        pastas.add(pasta)
++    # As composições declaram as fontes nas diretivas do próprio motor.
++    importacoes = {}
++    for tmpl in content.glob('*/Technical Source/documento.*.md.tmpl'):
++        fontes = re.findall(r'^@@fonte\s+\S+\s+(.+)$', tmpl.read_text(), re.M)
++        importacoes.setdefault(tmpl.parent.parent, set()).update((content / f.strip()).resolve() for f in fontes)
++    while True:
++        novas = {p for p, fontes in importacoes.items() if fontes & pastas}
++        if novas <= pastas:
++            break
++        pastas.update(novas)
++    return sorted(p / 'ledger.json' for p in pastas if (p / 'ledger.json').is_file())
++
++
++def conferir(lista, motor, sitio=None):
++    sitio = sitio or Path(__file__).resolve().parents[2]
+     arvore = ast.parse((motor / 'core/assertions.py').read_text(encoding='utf-8'))
+     valores = [ast.literal_eval(n.value) for n in arvore.body
+                if isinstance(n, ast.Assign) and any(isinstance(t, ast.Name) and
+@@ -16,9 +49,37 @@ def conferir(lista, motor):
+     if len(valores) != 1 or not valores[0] or not all(isinstance(p, str) for p in valores[0]):
+         raise ValueError('QUANTIFIER_PATTERNS ausente ou inválido no motor')
+     regua = re.compile('|'.join(valores[0]), re.I)
+-    return [{'id': f['id'], 'quantificadores': [m.group() for m in regua.finditer(f.get('nova', ''))]}
+-            for f in lista if regua.search(f.get('nova', '')) and
+-            not (isinstance(f.get('assercao'), str) and re.fullmatch(r'[\w][\w.-]*', f['assercao']))]
++    erros, cache = [], {}
++    for f in lista:
++        texto = normal(f.get('nova', ''))
++        ocorrencias = list(regua.finditer(texto))
++        if not ocorrencias and 'assercao' not in f:
++            continue
++        erro = {'id': f['id'], 'quantificadores': [m.group() for m in ocorrencias]}
++        if not (isinstance(f.get('assercao'), str) and re.fullmatch(r'[\w][\w.-]*', f['assercao'])):
++            erros.append({**erro, 'razao': 'falta declaração de asserção válida'})
++            continue
++        chave = (f.get('estudo'), f.get('lingua'))
++        if chave not in cache:
++            cache[chave] = [a for livro in livros_do_estudo(*chave, motor, sitio)
++                            for a in json.loads(livro.read_text()).get('assertions', [])]
++        declaradas = [a for a in cache[chave] if a.get('id') == f['assercao']]
++        if not declaradas:
++            erros.append({**erro, 'razao': 'asserção ausente dos livros do estudo e das suas composições'})
++            continue
++        spans = []
++        for a in declaradas:
++            for citacao in a.get('quotes', []):
++                q = normal(citacao)
++                if not q:
++                    continue
++                inicio = 0
++                while (i := texto.find(q, inicio)) >= 0:
++                    spans.append((i, i + len(q)))
++                    inicio = i + 1
++        if any(not any(a <= m.start() and m.end() <= b for a, b in spans) for m in ocorrencias):
++            erros.append({**erro, 'razao': 'citação ausente da nova ou sem cobrir cada ocorrência do quantificador'})
++    return erros
+ 
+ 
+ if __name__ == '__main__':
+@@ -26,7 +87,7 @@ if __name__ == '__main__':
+         motor = os.environ.get('RESEARCHHUB_DIR')
+         if not motor:
+             raise ValueError('falta RESEARCHHUB_DIR para ler os quantificadores')
+-        print(json.dumps(conferir(json.load(sys.stdin), Path(motor)), ensure_ascii=False))
++        print(json.dumps(conferir(json.load(sys.stdin), Path(motor), Path(sys.argv[1]) if len(sys.argv) > 1 else None), ensure_ascii=False))
+     except (OSError, ValueError, SyntaxError) as e:
+         print('quantificadores: ' + (str(e) if isinstance(e, ValueError) else 'régua do motor ilegível'), file=sys.stderr)
+         sys.exit(9)
+diff --git a/scripts/paridade-numeros.mjs b/scripts/paridade-numeros.mjs
+index 5b70885d0..e937057d6 100644
+--- a/scripts/paridade-numeros.mjs
++++ b/scripts/paridade-numeros.mjs
+@@ -5,7 +5,8 @@ export const blocosDe = html => { const r = parse(html); r.querySelectorAll('scr
+   const c = r.querySelector('[data-oedp-moldura]') ?? r.querySelector('main') ?? r;
+   return c.querySelectorAll(tags).filter(n => !n.querySelector(tags)).map(n => n.textContent.replace(/​/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean); };
+ // um número: um a três algarismos com grupos de milhares (espaço, ponto ou vírgula seguidos de exatamente três algarismos) e uma parte decimal; ou só algarismos
+-export const numeros = t => (t.match(/(?<!\d)(?:\d{1,3}(?:[\u00a0\u202f .,]\d{3})+(?!\d)(?:[.,]\d+(?!\d))?|\d+(?:[.,]\d+)?(?!\d))/g) ?? []).map(x => x.replace(/[^\d]/g, ''));
++export const formasNumericas = t => (t.match(/(?<!\d)(?:\d{1,3}(?:[\u00a0\u202f .,]\d{3})+(?!\d)(?:[.,]\d+(?!\d))?|\d+(?:[.,]\d+)?(?!\d))/g) ?? []);
++export const numeros = t => formasNumericas(t).map(x => x.replace(/[^\d]/g, ''));
+ const conta = xs => xs.reduce((m, x) => m.set(x, (m.get(x) ?? 0) + 1), new Map());
+ const menos = (a, b) => { const r = []; for (const [k, n] of a) { const d = n - (b.get(k) ?? 0); for (let i = 0; i < d; i++) r.push(k); } return r; };
+ export function compara(bp, be) {

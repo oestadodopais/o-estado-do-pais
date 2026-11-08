@@ -1,0 +1,16 @@
+[
+  {
+    "id": "V009",
+    "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+    "frase": "The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); this study's numbers do not measure rent against wages: they measure how many spend more than forty percent of household income on all housing costs, and those are 27.2 %source · Eurostat of tenants at market rents, against 6.2 %source · Eurostat of the whole population.",
+    "presenteComEtiquetas": true,
+    "indice": 10704
+  },
+  {
+    "id": "V121",
+    "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+    "frase": "A plataforma que convocou as manifestações de outubro diz que «a renda consome metade do salário»; os números deste estudo não medem a renda face ao salário: medem quantos gastam mais de quarenta por cento do rendimento do agregado em toda a despesa com a casa, e são 27,2 %fonte · Eurostat dos inquilinos a preços de mercado, contra 6,2 %fonte · Eurostat da população toda.",
+    "presenteComEtiquetas": true,
+    "indice": 10871
+  }
+]
