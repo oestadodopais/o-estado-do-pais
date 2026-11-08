@@ -1,0 +1,35 @@
+{
+  "cabeca_conferida": "bdf6ccab002d06d08be6a71db55fbfcd8e028327",
+  "dist_commit": "bdf6ccab002d06d08be6a71db55fbfcd8e028327",
+  "codigos": {
+    "build": 0,
+    "check:pre-mandato": 0,
+    "typecheck": 0,
+    "pre-voz2a": 0,
+    "pre-voz2b": 9,
+    "frases-reais": 0
+  },
+  "voz2a": {
+    "voz": 0,
+    "numeros": 0,
+    "quantificadores": 0,
+    "semPar": 0,
+    "semEntrada": 0
+  },
+  "voz2b": {
+    "voz": 0,
+    "numeros": 0,
+    "quantificadores": 28,
+    "semPar": 7,
+    "semEntrada": 15
+  },
+  "sem_par_voz2b": [
+    "V124",
+    "V012",
+    "V293",
+    "V296",
+    "V093",
+    "V094",
+    "V100"
+  ]
+}

@@ -1,0 +1,67 @@
+
+> o-estado-do-pais@0.1.0 check:pre-mandato
+> node tests/leituras/frases.mjs && python3 tests/leituras/hig6a.py && python3 tests/leituras/pl1.py && python3 tests/leituras/ferramenta_pre_voo.py && python3 tests/leituras/lancadores_copia.py
+
+camada 0: 41 plantas e controlos em memória
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.194s
+
+OK
+test_blocos_prefixos_e_ausencias (__main__.Lotes.test_blocos_prefixos_e_ausencias) ... ok
+test_corrida_inteira_dirigida_e_vermelha (__main__.Lotes.test_corrida_inteira_dirigida_e_vermelha) ... ok
+test_custo_um_por_bloco (__main__.Lotes.test_custo_um_por_bloco) ... ok
+test_decisao_sem_data_ou_curta_recusada (__main__.Lotes.test_decisao_sem_data_ou_curta_recusada) ... ok
+test_fila_invalida_recusada_tambem_na_retoma (__main__.Lotes.test_fila_invalida_recusada_tambem_na_retoma) ... ok
+test_orcamento_por_omissao_e_soma_medida (__main__.Lotes.test_orcamento_por_omissao_e_soma_medida) ... ok
+test_orcamento_recusa_12_e_aceita_decisao (__main__.Lotes.test_orcamento_recusa_12_e_aceita_decisao) ... ok
+test_passagens_12_e_limite_igual_recusados (__main__.Lotes.test_passagens_12_e_limite_igual_recusados) ... ok
+test_pontos_nulos_sem_passagens_recusados (__main__.Lotes.test_pontos_nulos_sem_passagens_recusados) ... ok
+test_prefixo_de_registos_exige_nome_conhecido_e_caixa (__main__.Lotes.test_prefixo_de_registos_exige_nome_conhecido_e_caixa) ... ok
+test_ramo_de_registos_recusa_src_e_lista_todos_os_ficheiros (__main__.Lotes.test_ramo_de_registos_recusa_src_e_lista_todos_os_ficheiros) ... ok
+test_ramo_git_de_registos_recusa_src_e_espaco_no_nome (__main__.Lotes.test_ramo_git_de_registos_recusa_src_e_espaco_no_nome) ... ok
+test_retoma_conserva_custos_por_bloco (__main__.Lotes.test_retoma_conserva_custos_por_bloco) ... ok
+test_retoma_de_registos_confere_a_base_original (__main__.Lotes.test_retoma_de_registos_confere_a_base_original) ... ok
+test_retoma_exige_repetir_decisao_guardada (__main__.Lotes.test_retoma_exige_repetir_decisao_guardada) ... ok
+test_retoma_so_de_registos (__main__.Lotes.test_retoma_so_de_registos) ... ok
+test_sem_custo_nao_dispensa_bloco_de_conteudo (__main__.Lotes.test_sem_custo_nao_dispensa_bloco_de_conteudo) ... ok
+test_semana_valores_ausentes_nao_sao_zero (__main__.Lotes.test_semana_valores_ausentes_nao_sao_zero) ... ok
+test_so_registos_carrega_custo_de_outro_bloco (__main__.Lotes.test_so_registos_carrega_custo_de_outro_bloco) ... ok
+test_terceira_aterragem_contada_sem_excecao (__main__.Lotes.test_terceira_aterragem_contada_sem_excecao) ... ok
+test_adenda_c_oito_linhas_do_zero (__main__.PreMandato.test_adenda_c_oito_linhas_do_zero) ... ok
+test_adenda_c_pontuacao_e_excecoes (__main__.PreMandato.test_adenda_c_pontuacao_e_excecoes) ... ok
+test_contagens_do_zero_exigem_medidas_antes_de_sair (__main__.PreMandato.test_contagens_do_zero_exigem_medidas_antes_de_sair) ... ok
+test_datas_identificadores_e_citacoes_nao_sao_contagens (__main__.PreMandato.test_datas_identificadores_e_citacoes_nao_sao_contagens) ... ok
+test_excecoes_vizinhas_nao_escondem_uma_contagem (__main__.PreMandato.test_excecoes_vizinhas_nao_escondem_uma_contagem) ... ok
+test_grafia_exata_grupos_decimais_e_limites_dos_anos (__main__.PreMandato.test_grafia_exata_grupos_decimais_e_limites_dos_anos) ... ok
+test_listas_reais_no_ensaio_recusam (__main__.PreMandato.test_listas_reais_no_ensaio_recusam) ... ok
+test_medidas_ilegivel_ou_entrada_incompleta_recusadas (__main__.PreMandato.test_medidas_ilegivel_ou_entrada_incompleta_recusadas) ... ok
+test_medidas_no_corpo_nao_substitui_cabecalho (__main__.PreMandato.test_medidas_no_corpo_nao_substitui_cabecalho) ... ok
+test_selecao_dos_guioes_e_argumentos (__main__.PreMandato.test_selecao_dos_guioes_e_argumentos) ... ok
+test_sem_cabecalho_e_variavel_vazia_recusados (__main__.PreMandato.test_sem_cabecalho_e_variavel_vazia_recusados) ... ok
+test_variavel_so_aperta (__main__.PreMandato.test_variavel_so_aperta) ... ok
+test_voz_real_no_ensaio_recusa (__main__.PreMandato.test_voz_real_no_ensaio_recusa) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 1.683s
+
+OK
+HIG-5 C: {"texto": "prova o limite em 4321.", "devolve": ["4321"]}
+HIG-5 C: {"texto": "São 1 234.", "devolve": ["1 234"]}
+HIG-5 C: {"texto": "1.234 linhas", "devolve": ["1.234"]}
+HIG-5 C: {"texto": "12.5 por cento e 123.4 também", "devolve": ["12.5", "123.4"]}
+HIG-5 C: {"texto": "1.234,5 euros", "devolve": ["1.234,5"]}
+HIG-5 C: {"texto": "1 234 casos", "devolve": ["1 234"]}
+HIG-5 C: {"texto": "4321 casos", "devolve": ["4321"]}
+HIG-5 C: {"texto": "o Claude Sonnet 5.5 e o `aterrar.py:274`, a 06.11.2026 às 16:41:50, e 2026.", "devolve": []}
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 21.761s
+
+OK
+{"pre_voo_segundos": {"livre": 0.0747735002078116, "ocupada": 0.07377266697585583}}
+....
+----------------------------------------------------------------------
+Ran 4 tests in 9.221s
+
+OK
