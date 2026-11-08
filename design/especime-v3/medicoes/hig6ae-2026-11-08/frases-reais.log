@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:frases-reais
+> node tests/leituras/frases-reais.mjs <temporario>
+
+VOZ-2A atual: {"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+VOZ-2B atual: {"voz":0,"numeros":0,"quantificadores":28,"presenca":0,"semPar":7,"semEntrada":15}
+VOZ-2A inicial: {"voz":10,"numeros":1,"quantificadores":6,"presenca":122,"semPar":0,"semEntrada":5}
+pré-G: 7 entradas sem campo; 4 entradas novas, 3 frases distintas

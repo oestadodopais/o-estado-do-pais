@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:paridade
+> node tests/leituras/paridade.mjs && node scripts/check-paridade.mjs
+
+paridade: 12 provas, incluindo as seis da AUD1, diferença nova, exceção exata, alterada e caduca, e troca entre blocos
+paridade: 20 documentos e páginas; 4 exceções exatas, datadas; plantas 6/6; recusas 0

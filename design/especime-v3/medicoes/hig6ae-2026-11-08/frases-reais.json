@@ -1,0 +1,1165 @@
+{
+  "vozInicial": [
+    "V043",
+    "V053",
+    "V057",
+    "V064",
+    "V164",
+    "V176",
+    "V182",
+    "V194",
+    "V195",
+    "V196"
+  ],
+  "quantificadoresAntesGRaw": [
+    {
+      "id": "V030",
+      "quantificadores": [
+        "none"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V032",
+      "quantificadores": [
+        "none"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V040",
+      "quantificadores": [
+        "none"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V152",
+      "quantificadores": [
+        "nenhum"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V182",
+      "quantificadores": [
+        "nenhuma"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V188",
+      "quantificadores": [
+        "nenhum"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V195",
+      "quantificadores": [
+        "todos os números"
+      ],
+      "razao": "falta declaração de asserção válida"
+    }
+  ],
+  "quantificadoresNovosAntesG": [
+    {
+      "id": "V032",
+      "quantificadores": [
+        "none"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V040",
+      "quantificadores": [
+        "none"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V182",
+      "quantificadores": [
+        "nenhuma"
+      ],
+      "razao": "falta declaração de asserção válida"
+    },
+    {
+      "id": "V195",
+      "quantificadores": [
+        "todos os números"
+      ],
+      "razao": "falta declaração de asserção válida"
+    }
+  ],
+  "frasesNovasAntesG": [
+    "The municipal documents read are forecasts; none of them is an execution account",
+    "Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência).",
+    "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
+  ],
+  "atualA": {
+    "voz": [],
+    "numeros": [],
+    "quantificadores": [],
+    "presenca": [],
+    "semPar": [],
+    "semEntrada": []
+  },
+  "atualB": {
+    "voz": [],
+    "numeros": [],
+    "quantificadores": [
+      {
+        "id": "V000",
+        "quantificadores": [
+          "None"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V001",
+        "quantificadores": [
+          "only"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V007",
+        "quantificadores": [
+          "none"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V015",
+        "quantificadores": [
+          "Only"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V111",
+        "quantificadores": [
+          "Nenhum"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V112",
+        "quantificadores": [
+          "nenhuma",
+          "única"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V119",
+        "quantificadores": [
+          "nenhuma",
+          "nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V120",
+        "quantificadores": [
+          "nenhum"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V123",
+        "quantificadores": [
+          "nenhum"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V132",
+        "quantificadores": [
+          "nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V200",
+        "quantificadores": [
+          "nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V203",
+        "quantificadores": [
+          "todos os quadros"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V207",
+        "quantificadores": [
+          "nenhumas"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V208",
+        "quantificadores": [
+          "única"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V215",
+        "quantificadores": [
+          "nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V216",
+        "quantificadores": [
+          "todas as letras",
+          "apenas"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V217",
+        "quantificadores": [
+          "único"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V226",
+        "quantificadores": [
+          "única",
+          "todos os mandatos"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V251",
+        "quantificadores": [
+          "todos os quadros"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V256",
+        "quantificadores": [
+          "única",
+          "todos os mandatos"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V261",
+        "quantificadores": [
+          "únicas"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V268",
+        "quantificadores": [
+          "Nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V270",
+        "quantificadores": [
+          "Nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V273",
+        "quantificadores": [
+          "Nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V277",
+        "quantificadores": [
+          "Nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V286",
+        "quantificadores": [
+          "nenhuma"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V300",
+        "quantificadores": [
+          "todos os escalões"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V304",
+        "quantificadores": [
+          "Nenhum",
+          "todas as medidas"
+        ],
+        "razao": "falta declaração de asserção válida"
+      }
+    ],
+    "presenca": [],
+    "semPar": [
+      {
+        "id": "V124",
+        "estudo": "agua-nao-faturada",
+        "lingua": "pt",
+        "bloco": 77
+      },
+      {
+        "id": "V012",
+        "estudo": "onde-esta-a-agua",
+        "lingua": "en",
+        "bloco": 124
+      },
+      {
+        "id": "V293",
+        "estudo": "onde-esta-a-agua",
+        "lingua": "pt",
+        "bloco": 190
+      },
+      {
+        "id": "V296",
+        "estudo": "onde-esta-a-agua",
+        "lingua": "pt",
+        "bloco": 207
+      },
+      {
+        "id": "V093",
+        "estudo": "onde-esta-a-agua",
+        "lingua": "en",
+        "bloco": 95
+      },
+      {
+        "id": "V094",
+        "estudo": "onde-esta-a-agua",
+        "lingua": "en",
+        "bloco": 134
+      },
+      {
+        "id": "V100",
+        "estudo": "onde-esta-a-agua",
+        "lingua": "en",
+        "bloco": 212
+      }
+    ],
+    "semEntrada": [
+      {
+        "estudo": "agua-nao-faturada",
+        "lingua": "pt",
+        "bloco": 94,
+        "frase": "Nenhum número desses aparece nesta página."
+      },
+      {
+        "estudo": "agua-nao-faturada",
+        "lingua": "en",
+        "bloco": 105,
+        "frase": "What follows are the things this page cannot tell you, and why."
+      },
+      {
+        "estudo": "alentejo-algarve",
+        "lingua": "en",
+        "bloco": 4,
+        "frase": "V verified — survived 3-vote adversarial verification against primary sources Q quote-backed — verbatim from a fetched source, not adversarially verified A my analysis — judgment on the evidence, not a sourced fact"
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "lingua": "pt",
+        "bloco": 130,
+        "frase": "Esse terceiro valor não é usado nesta página, mas existe, e quem refizer estas contas deve saber porque são possíveis três totais defensáveis."
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "lingua": "pt",
+        "bloco": 163,
+        "frase": "Nenhum número desses aparece nesta página."
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "lingua": "pt",
+        "bloco": 259,
+        "frase": "Nada nesta página é aconselhamento."
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "lingua": "en",
+        "bloco": 235,
+        "frase": "What this page cannot tell you, and what was tried before giving up."
+      },
+      {
+        "estudo": "evolucao-de-portugal-desde-1981",
+        "lingua": "pt",
+        "bloco": 27,
+        "frase": "Nada nesta página está no ficheiro."
+      },
+      {
+        "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+        "lingua": "pt",
+        "bloco": 30,
+        "frase": "Uma biografia retrospetiva não é um mapa, e nada neste documento assenta nela."
+      },
+      {
+        "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+        "lingua": "pt",
+        "bloco": 851,
+        "frase": "As contas nunca foram cortadas para responder à segunda pergunta, e nenhum rearranjo delas nesta página consegue respondê-la também."
+      },
+      {
+        "estudo": "evora-quinze-anos-cinco-mandatos",
+        "lingua": "pt",
+        "bloco": 450,
+        "frase": "Nunca foi publicado nenhum documento de contas de 2024, e cada valor de 2024 neste documento é uma coluna comparativa do relatório de 2025."
+      },
+      {
+        "estudo": "evora-quinze-anos-cinco-mandatos",
+        "lingua": "pt",
+        "bloco": 602,
+        "frase": "Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau, que é o que um empréstimo parece numa tabela de caixa e não o que parece um bom ano (inferência; os relatórios afirmam cada empréstimo e cada total, não o padrão)."
+      },
+      {
+        "estudo": "evora-quinze-anos-cinco-mandatos",
+        "lingua": "pt",
+        "bloco": 996,
+        "frase": "O resto dela é a totalidade do financiamento não definido do objetivo da Capital da Cultura para o ano — o mesmo valor, concentrado numa linha (inferência; o plano imprime os dois montantes, não a identidade entre eles)."
+      },
+      {
+        "estudo": "evora-quinze-anos-cinco-mandatos",
+        "lingua": "pt",
+        "bloco": 999,
+        "frase": "O plano de 2026 inscreve-o outra vez (inferência; o plano afirma cada linha e cada repartição de financiamento, e não afirma padrão algum)."
+      },
+      {
+        "estudo": "evora-quinze-anos-cinco-mandatos",
+        "lingua": "pt",
+        "bloco": 1003,
+        "frase": "O mandato do PS de 2009–2013 é dono da maior decisão do período — a entrada no PAEL, €32 166 372 — e os seus próprios anos são os que menos registo deixaram neste documento: os relatórios que contariam o seu lado são os ilegíveis."
+      }
+    ]
+  },
+  "inicialCompleta": {
+    "voz": [
+      "V043",
+      "V053",
+      "V057",
+      "V064",
+      "V164",
+      "V176",
+      "V182",
+      "V194",
+      "V195",
+      "V196"
+    ],
+    "numeros": [
+      {
+        "estudo": "evora-2027-capital-europeia-da-cultura",
+        "pt": [
+          "256"
+        ],
+        "en": []
+      }
+    ],
+    "quantificadores": [
+      {
+        "id": "V030",
+        "quantificadores": [
+          "none"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V032",
+        "quantificadores": [
+          "none"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V040",
+        "quantificadores": [
+          "none"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V152",
+        "quantificadores": [
+          "nenhum"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V188",
+        "quantificadores": [
+          "nenhum"
+        ],
+        "razao": "falta declaração de asserção válida"
+      },
+      {
+        "id": "V195",
+        "quantificadores": [
+          "todos os números"
+        ],
+        "razao": "falta declaração de asserção válida"
+      }
+    ],
+    "presenca": [
+      {
+        "id": "V016",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V017",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V018",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V019",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V020",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V021",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V022",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V023",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V024",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V025",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V027",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V028",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V029",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V030",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V031",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V032",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V033",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V034",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V035",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V036",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V038",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V039",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V040",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V041",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V042",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V043",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V046",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V049",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V053",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V057",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V058",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V059",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V060",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V062",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V063",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V064",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V066",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V067",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V068",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V069",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V070",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V071",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V072",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V073",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V074",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V075",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V076",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V077",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V080",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V081",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V082",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V083",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V084",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V085",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V136",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V137",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V138",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V139",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V140",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V141",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V142",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V143",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V144",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V145",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V146",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V148",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V149",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V150",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V151",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V152",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V153",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V154",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V155",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V156",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V157",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V159",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V160",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V161",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V162",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V163",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V164",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V166",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V171",
+        "classe": "FICA",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V172",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V176",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V177",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V182",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V183",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V184",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V185",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V186",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V187",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V188",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V189",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V190",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V191",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V192",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V194",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V195",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V196",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V198",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V199",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V228",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V229",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V230",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V231",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V232",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V233",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V234",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V235",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V236",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V237",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V238",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V239",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V240",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V241",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V245",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V246",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V247",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V248",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V249",
+        "classe": "REESCREVE",
+        "razao": "frase ausente das páginas declaradas"
+      },
+      {
+        "id": "V250",
+        "classe": "SAI",
+        "razao": "frase ausente das páginas declaradas"
+      }
+    ],
+    "semPar": [],
+    "semEntrada": [
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "lingua": "pt",
+        "bloco": 498,
+        "frase": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência)."
+      },
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "lingua": "en",
+        "bloco": 109,
+        "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them)."
+      },
+      {
+        "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+        "lingua": "en",
+        "bloco": 476,
+        "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference)."
+      },
+      {
+        "estudo": "evora-orcamentado-pago-devido-2025",
+        "lingua": "en",
+        "bloco": 91,
+        "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them)."
+      },
+      {
+        "estudo": "evora-prometido-pago-auditado-2026",
+        "lingua": "en",
+        "bloco": 242,
+        "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "cabeca_codigo_conferida": "a6d8a810243debb114ae6782d184537ace8881b0",
+  "cabeca_dist": "a6d8a810243debb114ae6782d184537ace8881b0",
+  "motor": "cf5bd5b28b26d814315a5440d0b7dc1038e7ca1e",
+  "codigos": {
+    "build": 0,
+    "check:pre-mandato": 0,
+    "check:paridade": 0,
+    "check:voz_no_build": 0,
+    "check:frases-reais": 0,
+    "check:repositorio": 0,
+    "typecheck": 0,
+    "pre-voz2a-aplicada": 0,
+    "pre-voz2b": 9
+  },
+  "voz2a": {
+    "voz": 0,
+    "numeros": 0,
+    "quantificadores": 0,
+    "presenca": 0,
+    "semPar": 0,
+    "semEntrada": 0
+  },
+  "voz2b": {
+    "voz": 0,
+    "numeros": 0,
+    "quantificadores": 28,
+    "presenca": 0,
+    "semPar": 7,
+    "semEntrada": 15
+  },
+  "sem_par_voz2b": [
+    "V124",
+    "V012",
+    "V293",
+    "V296",
+    "V093",
+    "V094",
+    "V100"
+  ],
+  "ci_remota_executada": false,
+  "construcoes": 2,
+  "corridas": 26
+}
