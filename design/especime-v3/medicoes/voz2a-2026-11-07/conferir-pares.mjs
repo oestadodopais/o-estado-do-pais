@@ -6,13 +6,12 @@
 // Executar da raiz, depois do build: node design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs <dist> <lista.json> <data da edição>
 import fs from 'node:fs';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
-const pasta = path.dirname(fileURLToPath(import.meta.url));
 const dist = process.argv[2] ?? 'dist';
 const EDICAO = process.argv[4];
-if (!/^\d{4}-\d{2}-\d{2}$/.test(EDICAO ?? '') || !process.argv[3]) throw new Error('uso: conferir-pares.mjs <dist> <lista.json> <data da edição>');
+if (!/^\d{4}-\d{2}-\d{2}$/.test(EDICAO ?? '') || !Number.isFinite(Date.parse(EDICAO)) || new Date(EDICAO).toISOString().slice(0, 10) !== EDICAO || !process.argv[3]) throw new Error('uso: conferir-pares.mjs <dist> <lista.json> <data da edição>');
 const lista = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
+if (!Array.isArray(lista) || !lista.length) throw new Error('pares: lista vazia ou inválida');
 const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
 const blocos = f => {
   const root = parse(fs.readFileSync(f, 'utf8'));
@@ -68,7 +67,8 @@ for (const slug of [...new Set(lista.map(f => f.estudo))]) {
 }
 export const codigo = (sem, fora, planta, controlo, estudos) => (sem || fora || planta !== 2 || controlo !== 0 || !estudos ? 1 : 0);
 // As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.
-const plantasFora = [!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), explicado(lista.find(f => f.classe !== 'FICA').lingua, lista.find(f => f.classe !== 'FICA').frase),
+const exemplo = lista.find(f => f.classe !== 'FICA');
+const plantasFora = [!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), exemplo ? explicado(exemplo.lingua, exemplo.frase) : antigas.pt.length === 0 && antigas.en.length === 0,
   conferirEstudo(['a', 'b'], ['a', 'b', 'Isto é novo.'], ['a', 'b'], ['a', 'b']).length === 1,
   codigo(0, 1, 2, 0, 1) === 1, codigo(1, 0, 2, 0, 1) === 1, codigo(0, 0, 2, 0, 1) === 0];
 // A planta: um par em que só o português muda tem de dar dois blocos sem par (o antigo e o novo); o mesmo par a mudar nas duas línguas, nenhum.

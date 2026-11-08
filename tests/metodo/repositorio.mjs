@@ -38,6 +38,8 @@ try {
     ['domínio raw', 'nota.txt', 'https://raw.githubusercontent.com/oestadodopais/site/main/a'],
     ['github.io escapado', 'nota.json', String.raw`https:\/\/oestadodopais\u002egithub.io`],
     ['raw codificado', 'nota.txt', 'https%3A%2F%2Fraw.githubusercontent.com%2Foestadodopais'],
+    ['github.io codificado', 'nota.txt', 'https%3A%2F%2Foestadodopais%2Egithub%2Eio'],
+    ['raw escapado em JSON', 'nota.json', String.raw`https:\/\/raw.githubusercontent.com\/oestadodopais`],
     ['src', 'index.html', '<img src="https://github.com/terceiro/foto">'],
     ['action', 'index.html', '<form action="https://github.com/terceiro/envio"></form>'],
     ['refresh', 'index.html', '<meta http-equiv="refresh" content="0; URL=https://github.com/terceiro">'],

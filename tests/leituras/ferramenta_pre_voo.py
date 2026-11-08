@@ -195,6 +195,20 @@ Path(sys.argv[sys.argv.index('-o')+1]).write_text('saída sintética')
         registo = next(self.p.glob('oedp-construtor.*/RELATORIO.pre-mandato.log')).read_text()
         self.assertIn('pode lançar C1', registo)
         self.assertIn('não acrescenta linhas nem frases', registo)
+        # HIG-6A: a terceira retoma não chega ao Codex; a decisão fica ao lado do custo.
+        args = ['sh', str(GUIOES / 'retomar-codex.sh'), str(self.sw), 'sessao-sintetica', str(prompt), str(pasta / 'RELATORIO.md')]
+        for esperado in (0, 0, 9):
+            r = subprocess.run(args, env=env, capture_output=True, text=True, timeout=15)
+            self.assertEqual(r.returncode, esperado, r.stdout + r.stderr)
+            if esperado:
+                self.assertNotIn('INICIO ', r.stdout)
+                self.assertIn('OEDP_RETOMA_DECISAO', r.stdout)
+        decisao = '2026-11-08 A planta comprova a decisão explícita antes da terceira retoma.'
+        r = subprocess.run(args, env=dict(env, OEDP_RETOMA_DECISAO=decisao), capture_output=True, text=True, timeout=15)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        registos = [json.loads(f.read_text()) for f in self.p.glob('oedp-retoma.*/RELATORIO.retomas.json')]
+        self.assertTrue(any(d.get('decisao') == decisao and d['retomas'] == 3 for d in registos))
+
 
 
 if __name__ == '__main__':
