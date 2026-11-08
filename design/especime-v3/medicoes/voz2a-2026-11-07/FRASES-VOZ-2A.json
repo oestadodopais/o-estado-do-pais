@@ -1292,8 +1292,8 @@
    "/estudos/evora-contas-da-camara-2010-2025/documento"
   ],
   "classe": "FICA",
-  "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
-  "razao": "rótulo de inferência"
+  "frase": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
+  "razao": "rótulo de inferência; a forma com «destes números» desde a adenda H (a V326)"
  },
  {
   "id": "V172",
@@ -1625,8 +1625,8 @@
   ],
   "classe": "REESCREVE",
   "frase": "A opinião limpa de 2025 devolve a testemunha externa daqui para a frente; não a devolve para trás, e cada tabela plurianual deste documento herda esse asterisco na coluna de 2024.",
-  "razao": "fica o alcance da opinião; tira o asterisco do documento",
-  "nova": "A opinião limpa de 2025 devolve a testemunha externa daqui para a frente; não a devolve para trás."
+  "razao": "fica o alcance da opinião; tira o asterisco do documento; desde a adenda H fica o facto das tabelas (a forma que a página do estudo imprimia), e sai só «deste documento»",
+  "nova": "A opinião limpa de 2025 devolve a testemunha externa daqui para a frente; não a devolve para trás, e cada tabela plurianual herda esse asterisco na coluna de 2024."
  },
  {
   "id": "V199",
@@ -1763,9 +1763,10 @@
   "paginas": [
    "/estudos/evora-prometido-pago-auditado-2026/documento"
   ],
-  "classe": "SAI",
+  "classe": "REESCREVE",
   "frase": "Dois pontos cegos, ambos medidos e não presumidos, e ambos encontrados primeiro por um agente que estava proibido de ler este documento.",
-  "razao": "o projeto a falar do seu processo de verificação"
+  "razao": "o projeto a falar do seu processo de verificação; desde a adenda H, fica a forma curta que o estudo da economia e as páginas imprimiam («Dois pontos cegos.»), nas duas línguas",
+  "nova": "Dois pontos cegos."
  },
  {
   "id": "V239",
@@ -1903,5 +1904,271 @@
   "classe": "SAI",
   "frase": "Este documento foi escrito ao abrigo da regra de entregáveis do Research Hub: um registo de afirmações antes da prosa, reconciliação mecânica de cada valor impresso contra esse registo, uma verificação de atribuição de que cada valor é creditado à instituição que a sua linha nomeia, uma verificação de asserções sobre afirmações quantificadas, e verificação formulada para refutar por agentes que não o escreveram.",
   "razao": "método do projeto e nome do motor (Research Hub)"
+ },
+ {
+  "id": "V309",
+  "estudo": "evora-2027-capital-europeia-da-cultura",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+   "/estudos/evora-2027-capital-europeia-da-cultura",
+   "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+   "/estudos/evora-2027-prometido-painel-dinheiro"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Cada um entra neste documento com a construção que o seu próprio documento declara, e nunca somados.",
+  "razao": "o par português da V020 (facto: cada valor tem a construção declarada pela sua fonte; tira «neste documento» e «nunca somados»), acrescentado a 07.11.2026 pela adenda H",
+  "nova": "Cada valor tem a construção que a sua própria fonte declara."
+ },
+ {
+  "id": "V310",
+  "estudo": "evora-2027-capital-europeia-da-cultura",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+   "/estudos/evora-2027-capital-europeia-da-cultura"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura​",
+  "razao": "o par português da V032, com o carácter invisível final; adenda H",
+  "nova": "Os documentos do município que se leram são previsionais; nenhum deles é uma conta de execução​"
+ },
+ {
+  "id": "V311",
+  "estudo": "evora-2027-prometido-painel-dinheiro",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+   "/estudos/evora-2027-prometido-painel-dinheiro"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura",
+  "razao": "o par português da V040, sem o carácter invisível final; adenda H",
+  "nova": "Os documentos do município que se leram são previsionais; nenhum deles é uma conta de execução"
+ },
+ {
+  "id": "V312",
+  "estudo": "evora-2027-capital-europeia-da-cultura",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+   "/estudos/evora-2027-capital-europeia-da-cultura",
+   "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+   "/estudos/evora-2027-prometido-painel-dinheiro"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Duas leituras ficaram por fazer, e ficam ditas: a decisão da União que rege as capitais europeias da cultura devolveu um corpo vazio nos três caminhos tentados, e a avaliação intercalar da ação das capitais europeias da cultura não foi aberta na fonte.",
+  "razao": "o par português da V035 (mantém o facto da fonte; a leitura não feita é do projeto); adenda H",
+  "nova": "A decisão da União que rege as capitais europeias da cultura devolveu um corpo vazio nos três caminhos tentados."
+ },
+ {
+  "id": "V313",
+  "estudo": "evora-2027-capital-europeia-da-cultura",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+   "/en/studies/evora-2027-capital-europeia-da-cultura",
+   "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+   "/en/studies/evora-2027-prometido-painel-dinheiro"
+  ],
+  "classe": "SAI",
+  "frase": "Co-financing rates do not enter.",
+  "razao": "o par inglês da V141 (o que o documento não inclui); adenda H"
+ },
+ {
+  "id": "V314",
+  "estudo": "evora-2027-capital-europeia-da-cultura",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+   "/en/studies/evora-2027-capital-europeia-da-cultura",
+   "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+   "/en/studies/evora-2027-prometido-painel-dinheiro"
+  ],
+  "classe": "SAI",
+  "frase": "Percentages do not enter.",
+  "razao": "o par inglês da V149 (o que o documento não inclui); adenda H"
+ },
+ {
+  "id": "V315",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-orcamentado-pago-devido-2025/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente, e nada neste documento trata os comparativos de 2024 como se certificasse.",
+  "razao": "o par português da V062; adenda H",
+  "nova": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente."
+ },
+ {
+  "id": "V316",
+  "estudo": "evora-contas-da-camara-2010-2025",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-contas-da-camara-2010-2025/documento",
+   "/estudos/evora-contas-da-camara-2010-2025"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Nunca foi publicado um documento de contas de 2024, e cada valor de 2024 neste estudo é uma coluna comparativa do relatório de 2025.",
+  "razao": "o par português da V049; adenda H",
+  "nova": "Nunca foi publicado um documento de contas de 2024, e cada valor de 2024 é uma coluna comparativa do relatório de 2025."
+ },
+ {
+  "id": "V317",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-orcamentado-pago-devido-2025/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table in this document inherits that asterisk on its 2024 column.",
+  "nova": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table inherits that asterisk on its 2024 column.",
+  "razao": "o par inglês da V198, com o facto das tabelas e sem «in this document» (a forma que a página do estudo já imprime); adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V318",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-orcamentado-pago-devido-2025/document"
+  ],
+  "classe": "SAI",
+  "frase": "One thing this document can do that the accounts alone cannot: it puts the municipality's own numbers, the regulator's independent series and the national distribution side by side.",
+  "razao": "o par inglês da V192; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V319",
+  "estudo": "evora-prometido-pago-auditado-2026",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-prometido-pago-auditado-2026/document"
+  ],
+  "classe": "SAI",
+  "frase": "One thing this document can do that a single source cannot: it puts the promise, the payment and the audit record of one place side by side.",
+  "razao": "o par inglês da V231; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V320",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-orcamentado-pago-devido-2025/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato, e viajam aqui com a sua proveniência original.",
+  "nova": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato.",
+  "razao": "o par português da V063 (a forma nova é a que a página do estudo já imprime); adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V321",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-orcamentado-pago-devido-2025/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The companion reaches back to 2015 and finds 48.1% there — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own).",
+  "nova": "The 2015 report shows 48.1%, a deeper trough, in the year after the bailout instalments, so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own).",
+  "razao": "o par inglês da V194; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V322",
+  "estudo": "evora-contas-da-camara-2010-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-contas-da-camara-2010-2025/document",
+   "/en/studies/evora-contas-da-camara-2010-2025"
+  ],
+  "classe": "REESCREVE",
+  "frase": "It is left unknown, and that is why this study always says which series it means when it says the debt rises or falls.",
+  "nova": "It is left unknown.",
+  "razao": "o par inglês da V172; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V323",
+  "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+   "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The Tribunal de Contas catalogue read here covers 4 of the Tribunal's product families rather than all of them.",
+  "nova": "The Tribunal de Contas catalogue consulted covers 4 of the Tribunal's product families rather than all of them.",
+  "razao": "o par inglês da V177; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V324",
+  "estudo": "evora-prometido-pago-auditado-2026",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-prometido-pago-auditado-2026/document"
+  ],
+  "classe": "SAI",
+  "frase": "They are here rather than in a footnote because each one is the difference between a true sentence and a false one.",
+  "razao": "o par inglês da V228; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V325",
+  "estudo": "evora-prometido-pago-auditado-2026",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-prometido-pago-auditado-2026/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Two blind spots, both measured rather than assumed, and both first found by an agent that was forbidden to read this document.",
+  "razao": "o par inglês da V238 (a forma curta nas duas línguas); adenda H (o par em falta, achado pela conferência dos pares)",
+  "nova": "Two blind spots."
+ },
+ {
+  "id": "V326",
+  "estudo": "evora-contas-da-camara-2010-2025",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-contas-da-camara-2010-2025/documento",
+   "/estudos/evora-contas-da-camara-2010-2025"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números:",
+  "nova": "Dez anos a pagar a dívida do resgate são o contexto destes números:",
+  "razao": "o par português da forma inglesa que as contas da Câmara já imprimem («the context for these numbers:», pela composição da V308); a FICA V171 passa a ter esta forma; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V327",
+  "estudo": "evora-contas-da-camara-2010-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-contas-da-camara-2010-2025/document",
+   "/en/studies/evora-orcamentado-pago-devido-2025/document"
+  ],
+  "classe": "FICA",
+  "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
+  "razao": "o par inglês da FICA V169 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V328",
+  "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+   "/en/studies/evora-prometido-pago-auditado-2026/document"
+  ],
+  "classe": "FICA",
+  "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
+  "razao": "o par inglês da FICA V180 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
+ },
+ {
+  "id": "V330",
+  "estudo": "evora-contas-da-camara-2010-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-contas-da-camara-2010-2025/document",
+   "/en/studies/evora-contas-da-camara-2010-2025"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Ten years of paying down the rescue debt is the context for every number:",
+  "nova": "Ten years of paying down the rescue debt is the context for these numbers:",
+  "razao": "a forma da V308 nas contas da Câmara, que a composição já imprime; registada para a lista ficar fechada; o par da V326; adenda H"
  }
 ]
