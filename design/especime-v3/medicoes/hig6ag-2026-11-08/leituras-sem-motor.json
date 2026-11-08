@@ -1,0 +1,121 @@
+{
+  "guiões": [
+    {
+      "guiao": "tests/leituras/apoio_ferramentas.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/at1.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/at1_aterrar.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/at1_partes.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/aterrar.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/briefs-presos.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/comparar-alvos.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_aterrar.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_fundir.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_modelos_novos.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_pre_voo.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/ferramentas.py",
+      "codigo": 1
+    },
+    {
+      "guiao": "tests/leituras/fila.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/hig6a.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/lancadores_copia.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/listas-de-uma-linha.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/medicoes-pl1.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/pacote-portoes.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/pacote-recibo.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/pacote.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/pl1.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/portoes.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-jd1.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1b.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1c.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1d.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1e.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-segredo.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/tempos.py",
+      "codigo": 0
+    }
+  ],
+  "erro": "Error: listen EPERM: operation not permitted 127.0.0.1"
+}

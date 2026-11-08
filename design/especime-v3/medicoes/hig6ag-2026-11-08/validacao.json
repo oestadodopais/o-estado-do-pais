@@ -1,0 +1,49 @@
+{
+  "cabeca_conferida": "ea1cf1b3f9809bafe63706cfcf132cfbd2a6393b",
+  "codigos": {
+    "check:pre-mandato": 0,
+    "check:frases-reais": 0,
+    "verify:com-motor": 0,
+    "at1-partes": 0,
+    "ferramenta_aterrar": 0,
+    "plantas_uniao": 0,
+    "typecheck": 0,
+    "build": 0,
+    "check:leituras_sem_motor": 1
+  },
+  "partes": {
+    "sem_motor": true,
+    "verify": 66,
+    "build": 24,
+    "partes": 40,
+    "reservados": [
+      "npm run check:pre-mandato",
+      "npm run check:frases-reais"
+    ]
+  },
+  "contagens": {
+    "VOZ-2A atual": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "VOZ-2B atual": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 28,
+      "presenca": 0,
+      "semPar": 7,
+      "semEntrada": 15
+    }
+  },
+  "leituras": {
+    "total": 29,
+    "verdes": 28
+  },
+  "corridas": 9,
+  "builds": 1,
+  "github_remoto_executado": false
+}

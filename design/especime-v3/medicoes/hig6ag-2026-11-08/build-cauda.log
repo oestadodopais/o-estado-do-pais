@@ -1,0 +1,20 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+PASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.
+V2B · 0 erro(s), 1046 de 1046 plantas, 770 portas de integração.
+VOZ-1 E: revisão de proveniência sem porta no recibo (pt): recusada; V2D percurso: recibo de divida-publica-2025 sem porta completa para orcamento-2027-generalidade
+VOZ-1 E: medida adicional na revisão (pt): recusada; V2B integração: presença ou ausência errada em correcoes/index.html
+VOZ-1 E: nome fora da revisão (pt): recusada; V2B integração: presença ou ausência errada em correcoes/index.html
+VOZ-1 E: revisão de proveniência sem porta no recibo (en): recusada; V2D percurso: recibo de divida-publica-2025 sem porta completa para orcamento-2027-generalidade
+VOZ-1 E: medida adicional na revisão (en): recusada; V2B integração: presença ou ausência errada em en/corrections/index.html
+VOZ-1 E: nome fora da revisão (en): recusada; V2B integração: presença ou ausência errada em en/corrections/index.html
+OG1: 16 âncoras conferidas no corpo alojado.
+OG1 pt: planta de data trocada e planta de partido trocado recusadas.
+OG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.
+OG1 pt: planta do bloco da citação alterado recusada.
+OG1 en: planta de data trocada e planta de partido trocado recusadas.
+OG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.
+OG1 en: planta do bloco da citação alterado recusada.
+PASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições.
