@@ -1,0 +1,62 @@
+{
+  "cabeca_do_dist": "4ec3181e42c6a33375129b9ab815e7c9b9a740c3",
+  "codigos": {
+    "check:pre-mandato": 0,
+    "check:frases-reais": 0,
+    "typecheck": 0
+  },
+  "contagens": {
+    "atualA": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "atualB": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 28,
+      "presenca": 0,
+      "semPar": 7,
+      "semEntrada": 15
+    }
+  },
+  "sem_par": [
+    "V012",
+    "V093",
+    "V094",
+    "V100",
+    "V124",
+    "V293",
+    "V296"
+  ],
+  "origens": [
+    {
+      "id": "V009",
+      "tipo": "página",
+      "bloco": 85,
+      "gemeo": 85,
+      "entradasGemeas": [
+        "V113",
+        "V114",
+        "V121"
+      ]
+    },
+    {
+      "id": "V121",
+      "tipo": "página",
+      "bloco": 85,
+      "gemeo": 85,
+      "entradasGemeas": [
+        "V002",
+        "V003",
+        "V009"
+      ]
+    }
+  ],
+  "plantas_ligacao": 38,
+  "corridas": 8,
+  "builds": 0
+}

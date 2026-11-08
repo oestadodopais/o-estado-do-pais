@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync, spawnSync} from 'node:child_process';
-import {conferir, conferirLista, lerDocumentos, numeros, recusas} from '../../scripts/leituras/conferir-frases.mjs';
+import {conferir, conferirLista, lerDocumentos, numeros, recusas, procurarFrase} from '../../scripts/leituras/conferir-frases.mjs';
 
 const rota = l => l === 'pt' ? '/estudos/planta/documento' : '/en/studies/planta/document';
 const entrada = (lingua = 'pt', extra = {}) => ({id:lingua, estudo:'planta', lingua,
@@ -40,6 +40,17 @@ medir([sai], [doc('pt', [pt.frase])], 'presenca', true);
 medir([{...sai, paginas:[rota('pt'), '/estudos/planta']}], [doc('pt', ['O relatório está publicado.'])], 'presenca', true);
 medir([{...pt, classe:'FICA', nova:''}], [doc('pt', [pt.frase])], null, true);
 assert.throws(() => conferir([{...pt, classe:'FICA', frase:'A'}], [doc('pt', ['A fonte publicou o relatório.'])], new Set())); provas++;
+// Onze carateres recusam-se; doze passam a validação e a presença.
+assert.throws(() => conferir([{...pt, classe:'FICA', nova:'', frase:'nesta págin'}], [doc('pt', ['nesta págin'])], new Set()), /entrada da lista inválida/); provas++;
+medir([{...pt, classe:'FICA', nova:'', frase:'nesta página'}], [doc('pt', ['nesta página'])], null);
+const captada = 'Nada nesta página é aconselhamento.';
+medir([{...pt, classe:'FICA', nova:'', frase:'nesta página'}], [doc('pt', [captada])], 'semEntrada');
+medir([{...pt, classe:'FICA', nova:'', frase:captada}], [doc('pt', [captada])], null);
+medir([{...pt, frase:'nesta página'}], [doc('pt', [captada])], null);
+medir([{...pt, classe:'SAI', nova:'', frase:'nesta página'}], [doc('pt', [captada])], null);
+// Uma FICA com duas frases também não cobre cada uma por subcadeia.
+medir([{...pt, classe:'FICA', nova:'', frase:captada + ' A fonte está identificada.'}],
+  [doc('pt', [captada + ' A fonte está identificada.'])], 'semEntrada');
 // A lista não cobre uma frase captada apenas por a incluir numa frase inventada.
 const inventada = entrada('pt', {classe:'FICA', nova:'', frase:'Antes. Este estudo não lê a fonte. Depois.'});
 const descoberta = conferir([inventada], [doc('pt', ['Este estudo não lê a fonte.'])], new Set());
@@ -61,6 +72,32 @@ try {
   const {documentos, bilingues} = lerDocumentos([comSelo], dist);
   assert.equal(recusas(conferir([comSelo], documentos, bilingues)), 0); provas++;
   assert.equal(recusas(conferir([semSelo], documentos, bilingues)), 0); provas++;
+  // A etiqueta no meio participa da procura e projeta a mesma ocorrência
+  // para a voz e para os índices dos pares, nas duas línguas.
+  const paginaEn = path.join(dist, rota('en'), 'index.html');
+  fs.mkdirSync(path.dirname(paginaEn), {recursive:true});
+  fs.writeFileSync(pagina, '<main><p>Nada nesta<span class="src-chip"><span>fonte · Publicação</span></span> página é aconselhamento.</p></main>');
+  fs.writeFileSync(paginaEn, '<main><p>' + en.frase + '</p></main>');
+  const reescrita = {...pt, frase:'Nada nestafonte · Publicação página é aconselhamento.'};
+  const carregar = lista => { const d = lerDocumentos(lista, dist); return conferir(lista, d.documentos, d.bilingues); };
+  const faltaPar = carregar([reescrita]);
+  assert.deepEqual(Object.entries(faltaPar).filter(([, v]) => v.length).map(([k]) => k), ['semPar']);
+  assert.deepEqual(faltaPar.semPar.map(f => f.id), ['pt']); provas++;
+  assert.equal(recusas(carregar([reescrita, en])), 0); provas++;
+  const ficaComSelo = {...reescrita, classe:'FICA', nova:''};
+  assert.equal(recusas(carregar([ficaComSelo])), 0); provas++;
+  const semEtiqueta = {...reescrita, frase:captada};
+  assert.equal(recusas(carregar([semEtiqueta, en])), 0); provas++;
+  fs.writeFileSync(pagina, '<main><p>  Nada \u200b nesta<span class="src-chip">fonte · Publicação</span>\n página é aconselhamento.  </p></main>');
+  assert.equal(recusas(carregar([reescrita, en])), 0); provas++;
+  const carregados = lerDocumentos([reescrita], dist);
+  const bloco = carregados.documentos.find(d => d.lingua === 'pt').procuraBlocos[0];
+  assert.deepEqual(procurarFrase(reescrita.frase, bloco), [{inicio:0, fim:reescrita.frase.length, forma:'textoComSelos', texto:captada}]); provas++;
+  const novaComSelo = {...reescrita, nova:reescrita.frase};
+  const aplicada = conferir([novaComSelo], carregados.documentos, carregados.bilingues, {aplicada:true});
+  assert.equal(aplicada.presenca.length, 0); assert.equal(aplicada.semPar.length, 1); assert.equal(aplicada.semEntrada.length, 0); provas++;
+  fs.rmSync(paginaEn);
+  fs.writeFileSync(pagina, '<main><p>O valor é 12<span class="src-chip">fonte · Publicação</span> euros.</p></main>');
   const outraRota = '/estudos/outra/documento';
   const outraPagina = path.join(dist, outraRota, 'index.html'); fs.mkdirSync(path.dirname(outraPagina), {recursive:true});
   fs.writeFileSync(outraPagina, '<main><p>' + pt.frase + '</p><p>Este estudo não lê a fonte.</p></main>');

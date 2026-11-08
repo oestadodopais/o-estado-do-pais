@@ -21,12 +21,60 @@ const esc = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
 export const recusaVoz = t => [...new Set([...frasesDoTexto(t), ...medirPagina('<p>' + esc(t) + '</p>', '/camada-zero').frases])];
 const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
 const tagsVoz = tags + ',div,section,article';
-export function blocos(html, tipo = 'documento', seletores = tags) {
-  const root = parse(html); root.querySelectorAll('script,style,.src-chip').forEach(n => n.remove());
+// Cada carater do texto com selos conserva a sua projeção no texto sem selos.
+// U+200B marca apenas os carateres retirados e é eliminado pela normalização.
+function textoParaProcura(no) {
+  const partes = [], projecoes = [];
+  function visitar(n, selo = false) {
+    selo ||= n.classList?.contains('src-chip') ?? false;
+    if (n.nodeType === 3) {
+      const t = n.textContent; partes.push(t); projecoes.push(selo ? '\u200b'.repeat(t.length) : t);
+    } else for (const filho of n.childNodes) visitar(filho, selo);
+  }
+  visitar(no);
+  const bruto = partes.join(''), projecao = projecoes.join('');
+  let textoComSelos = '', semSelosPorCarater = '', espaco = false, espacoSemSelo = false;
+  for (let i = 0; i < bruto.length; i++) {
+    const c = bruto[i];
+    if (c === '\u200b') continue;
+    if (/\s/.test(c)) { espaco = true; espacoSemSelo ||= projecao[i] !== '\u200b'; continue; }
+    if (espaco && textoComSelos) {
+      textoComSelos += ' '; semSelosPorCarater += espacoSemSelo ? ' ' : '\u200b';
+    }
+    espaco = false; espacoSemSelo = false;
+    textoComSelos += c; semSelosPorCarater += projecao[i];
+  }
+  return {textoComSelos, texto:normal(semSelosPorCarater), semSelosPorCarater};
+}
+function blocosParaProcura(html, tipo, seletores) {
+  const root = parse(html); root.querySelectorAll('script,style').forEach(n => n.remove());
   // As transcrições fora da leitura já são excluídas pela régua da página.
   if (tipo === 'página') root.querySelectorAll('[data-registo-unidade], .estudo-indice, [data-registo-indice]').filter(n => !n.closest('.texto-artigo.estudo-leitura, .texto-sumario, .estudo-sumario')).forEach(n => n.remove());
   const corpo = root.querySelector('[data-oedp-moldura]') ?? root.querySelector('main') ?? root;
-  return corpo.querySelectorAll(seletores).filter(n => !n.querySelector(seletores)).map(n => normal(n.textContent)).filter(Boolean);
+  return corpo.querySelectorAll(seletores).filter(n => !n.closest('.src-chip') && !n.querySelectorAll(seletores).some(f => !f.closest('.src-chip'))).map(textoParaProcura).filter(b => b.texto);
+}
+export function blocos(html, tipo = 'documento', seletores = tags) {
+  return blocosParaProcura(html, tipo, seletores).map(b => b.texto);
+}
+// Procura única para presença, pares, índices e cobertura. Os intervalos referem-se
+// à forma indicada; texto é sempre a ocorrência projetada sem os selos.
+export function procurarFrase(frase, bloco) {
+  if (!frase) return [];
+  if (typeof bloco === 'string') bloco = {texto:normal(bloco)};
+  const alvo = normal(frase);
+  if (!alvo) return [];
+  for (const forma of ['textoComSelos', 'texto']) {
+    const texto = bloco[forma];
+    if (texto === undefined) continue;
+    const ocorrencias = [];
+    for (let inicio = texto.indexOf(alvo); inicio >= 0; inicio = texto.indexOf(alvo, inicio + 1)) {
+      const fim = inicio + alvo.length;
+      const projecao = forma === 'textoComSelos' ? bloco.semSelosPorCarater ?? texto : texto;
+      ocorrencias.push({inicio, fim, forma, texto:normal(projecao.slice(inicio, fim))});
+    }
+    if (ocorrencias.length) return ocorrencias;
+  }
+  return [];
 }
 export function validarLista(lista) {
   if (!Array.isArray(lista) || !lista.length) throw new Error('lista vazia ou inválida');
@@ -54,19 +102,15 @@ export function conferirNumeros(lista, bilingues) {
     return JSON.stringify(pt) === JSON.stringify(en) ? [] : [{estudo, pt, en}];
   });
 }
-const contem = (texto, frase) => normal(texto).includes(normal(frase));
 const textoDaEntrada = (f, aplicada) => aplicada ? (f.classe === 'SAI' ? null : f.classe === 'REESCREVE' ? f.nova : f.frase) : f.frase;
-const nomeada = (texto, entradas, bloco, aplicada) => entradas.some(f => {
-  const frase = textoDaEntrada(f, aplicada);
-  // Só uma frase comprovadamente dentro deste bloco pode cobrir a frase captada.
-  return frase && contem(bloco, frase) && (contem(texto, frase) || contem(frase, texto));
-});
+const nomeada = (texto, entradas, bloco, aplicada) => entradas.some(f =>
+  procurarFrase(textoDaEntrada(f, aplicada), bloco).some(o => o.texto &&
+    (f.classe === 'FICA' ? normal(texto) === o.texto : normal(texto).includes(o.texto))));
 export function conferirPresenca(lista, documentos, aplicada = false) {
   return lista.flatMap(f => {
     const paginas = documentos.filter(d => f.paginas.includes(d.rota));
     const frase = aplicada && f.classe === 'REESCREVE' ? f.nova : f.frase;
-    const presente = paginas.some(d => contem(d.textoComSelos ?? d.texto ?? d.blocos.join(' '), frase)) ||
-      paginas.some(d => contem(d.texto ?? d.blocos.join(' '), frase));
+    const presente = paginas.some(d => procurarFrase(frase, d.procuraPagina ?? d.texto ?? d.blocos.join(' ')).length);
     const ok = aplicada && f.classe === 'SAI' ? f.paginas.every(rota => paginas.some(d => d.rota === rota)) && !presente : presente;
     return ok ? [] : [{id:f.id, classe:f.classe, razao:aplicada && f.classe === 'SAI' ? 'frase retirada ainda presente ou páginas ausentes' : 'frase ausente das páginas declaradas'}];
   });
@@ -105,7 +149,7 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
   for (const d of documentos.filter(d => !d.soPresenca)) {
     const entradas = lista.filter(f => f.lingua === d.lingua && (f.estudo === d.estudo || f.paginas?.includes(d.rota)));
     (d.textosVoz ?? d.blocos).forEach((t, i) => {
-      for (const frase of recusaVoz(t)) if (!nomeada(frase, entradas, t, aplicada)) {
+      for (const frase of recusaVoz(t)) if (!nomeada(frase, entradas, d.procuraVoz?.[i] ?? t, aplicada)) {
         const k = [d.estudo, d.lingua, frase].join('|');
         semEntrada.set(k, {estudo:d.estudo, lingua:d.lingua, bloco:i, frase});
       }
@@ -117,7 +161,7 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
     if (!emparelhamentos.has(chave)) {
       const p = d.lingua === 'pt' ? d : gemeo, e = d.lingua === 'en' ? d : gemeo;
       const ep = d.lingua === 'pt' ? entradas : outras, ee = d.lingua === 'en' ? entradas : outras;
-      const indicesComEntrada = (doc, es) => doc.blocos.flatMap((t, i) => es.some(f => { const frase = textoDaEntrada(f, aplicada); return frase && contem(t, frase); }) ? [i] : []);
+      const indicesComEntrada = (doc, es) => doc.blocos.flatMap((t, i) => es.some(f => { const frase = textoDaEntrada(f, aplicada); return procurarFrase(frase, doc.procuraBlocos?.[i] ?? t).length; }) ? [i] : []);
       const ip = indicesComEntrada(p, ep), ie = indicesComEntrada(e, ee);
       const indices = emparelharBlocos(ip, ie, p.blocos.length === e.blocos.length);
       emparelhamentos.set(chave, {pt:new Set(indices.keys()), en:new Set(indices.values())});
@@ -125,7 +169,7 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
     const pares = emparelhamentos.get(chave);
     for (const f of entradas.filter(f => f.classe !== 'FICA' && !parDispensado(f))) for (const [i, t] of d.blocos.entries()) {
       const frase = textoDaEntrada(f, aplicada);
-      if (!frase || !contem(t, frase)) continue;
+      if (!procurarFrase(frase, d.procuraBlocos?.[i] ?? t).length) continue;
       const temPar = pares[d.lingua].has(i);
       if (!temPar) semPar.set(f.id, {id:f.id, estudo:d.estudo, lingua:d.lingua, bloco:i});
     }
@@ -143,11 +187,13 @@ export function lerDocumentos(lista, dist) {
       if (soPresenca && !lista.some(f => f.paginas.includes(rota))) continue;
       const ficheiro = path.join(dist, rota, 'index.html');
       if (!fs.existsSync(ficheiro)) continue;
-      const corpo = parse(fs.readFileSync(ficheiro, 'utf8')); corpo.querySelectorAll('script,style').forEach(n => n.remove());
-      const textoComSelos = normal((corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo).textContent);
-      corpo.querySelectorAll('.src-chip').forEach(n => n.remove());
-      const texto = normal((corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo).textContent);
-      documentos.push({estudo, lingua, tipo, rota, soPresenca, textoComSelos, texto, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo), textosVoz:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo, tagsVoz)});
+      const html = fs.readFileSync(ficheiro, 'utf8'), corpo = parse(html);
+      corpo.querySelectorAll('script,style').forEach(n => n.remove());
+      const procuraPagina = textoParaProcura(corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo);
+      const procuraBlocos = blocosParaProcura(html, tipo, tags), procuraVoz = blocosParaProcura(html, tipo, tagsVoz);
+      documentos.push({estudo, lingua, tipo, rota, soPresenca, procuraPagina, procuraBlocos, procuraVoz,
+        textoComSelos:procuraPagina.textoComSelos, texto:procuraPagina.texto,
+        blocos:procuraBlocos.map(b => b.texto), textosVoz:procuraVoz.map(b => b.texto)});
       if (tipo === 'documento') lidos.add(lingua);
     }
     if (estudos.has(estudo) && lidos.size === 2) bilingues.add(estudo);
