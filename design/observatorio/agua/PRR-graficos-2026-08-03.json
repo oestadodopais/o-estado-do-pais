@@ -1,0 +1,592 @@
+{
+  "fonte": {
+    "ficheiro": "listagem-de-projetos-prr-20260803.xlsx",
+    "url": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx",
+    "sha256": "0d2a911eaa584432f9681211772a9125af38370fde6bb8018f18046fef671d0c",
+    "folha": "Sheet1",
+    "colunas": [
+      "cd_investimento",
+      "valor_aprovado",
+      "valor_pago"
+    ],
+    "acesso": "2026-11-08",
+    "copia": "raw/fontes/listagem-de-projetos-prr-20260803.xlsx"
+  },
+  "calculo": "Somar valor_pago das linhas cujo cd_investimento começa por C09-. Arredondar o total e cada linha ao euro mais próximo para os dados dos gráficos.",
+  "total_pago": "126759838.90",
+  "por_linha": {
+    "C09-i01": {
+      "projetos": 66,
+      "aprovado": "122784031.34",
+      "pago": "88233381.42"
+    },
+    "C09-i03-RAM": {
+      "projetos": 10,
+      "aprovado": "82150385.99",
+      "pago": "19532991.57"
+    },
+    "C09-i05": {
+      "projetos": 1,
+      "aprovado": "35000000",
+      "pago": "18993465.91"
+    }
+  },
+  "linhas": [
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4641",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "2687871.49",
+      "valor_pago": "2487166.77",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P6",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "109728.85",
+      "valor_pago": "104242.41",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P7",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "318769.89",
+      "valor_pago": "302831.4",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P8",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "163029.06",
+      "valor_pago": "154877.61",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P25",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "190182.26",
+      "valor_pago": "180673.14",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P13",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "244371.31",
+      "valor_pago": "232152.74",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P16",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1581731.74",
+      "valor_pago": "1502645.15",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P40",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "4951.4",
+      "valor_pago": "0",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P1",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "600000",
+      "valor_pago": "542190.63",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P14",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "79941.6",
+      "valor_pago": "75944.52",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P21",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "75676.18",
+      "valor_pago": "71892.37",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P26",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "694395.06",
+      "valor_pago": "659675.31",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P4",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "154584.4",
+      "valor_pago": "146855.18",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P5",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "36616.55",
+      "valor_pago": "34785.72",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3735",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1688764.47",
+      "valor_pago": "1293568.72",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P34",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "11334.66",
+      "valor_pago": "0",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P39",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "41694.25",
+      "valor_pago": "0",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12418",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "709598.14",
+      "valor_pago": "309755.75",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.02/2022.P26",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "41074.48",
+      "valor_pago": "34558.8",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.02/2022.P28",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "53617.09",
+      "valor_pago": "50936.24",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.02/2022.P27",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "68938.86",
+      "valor_pago": "65491.92",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m04",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "15693287",
+      "valor_pago": "2120216.9",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m07",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "5403795.91",
+      "valor_pago": "893738.51",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m01",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "26928711.6",
+      "valor_pago": "3747885.37",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m11",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1500000",
+      "valor_pago": "195000",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3796",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "322676.6",
+      "valor_pago": "304406.36",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.02/2022.P29",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "38589.55",
+      "valor_pago": "7392.08",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4703",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "228244.74",
+      "valor_pago": "211712.02",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12437",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1912419.73",
+      "valor_pago": "1362411.85",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m03",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "2771937.16",
+      "valor_pago": "371902.34",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m05",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "2940698.36",
+      "valor_pago": "2844196.87",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m08",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "14857095.8",
+      "valor_pago": "4281336.81",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m09",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "3952897.95",
+      "valor_pago": "3937821.55",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m10",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "8101962.2",
+      "valor_pago": "1140893.22",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "01/C09-i03-RAM/2022.PC09-i03-RAM-m06",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "0.01",
+      "valor_pago": "0",
+      "cd_investimento": "C09-i03-RAM"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4546",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "106709.55",
+      "valor_pago": "101374.07",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4545",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "20464.16",
+      "valor_pago": "19440.95",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4542",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "159268.71",
+      "valor_pago": "151305.28",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4666",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "893130.6",
+      "valor_pago": "828365.94",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "C09-i01.01",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "219650",
+      "valor_pago": "219650",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3792",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "775685.19",
+      "valor_pago": "670878.25",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3802",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "289637.86",
+      "valor_pago": "205190.51",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3795",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "316962.09",
+      "valor_pago": "0",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4625",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "3651700",
+      "valor_pago": "3318433.58",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P52",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "3420.4",
+      "valor_pago": "0",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P17",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "908210.22",
+      "valor_pago": "803004.65",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P23",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1831456.35",
+      "valor_pago": "1739883.53",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P24",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "213734.73",
+      "valor_pago": "203047.99",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4626",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1881279.09",
+      "valor_pago": "1569273.89",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4548",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "192980.61",
+      "valor_pago": "173993.77",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4850",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "738500.96",
+      "valor_pago": "448979.59",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3809",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "197696.76",
+      "valor_pago": "154737.27",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3808",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "455976.67",
+      "valor_pago": "388665.13",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.02/2022.P1",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "17771274",
+      "valor_pago": "11513959.99",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P18",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "491060.57",
+      "valor_pago": "215378.55",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3805",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "188425.25",
+      "valor_pago": "179003.99",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P37",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "23798.13",
+      "valor_pago": "9337.25",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12467",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "82710.04",
+      "valor_pago": "63113.25",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4721",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "150468.15",
+      "valor_pago": "141328.8",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4603",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "771800",
+      "valor_pago": "413519.32",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4857",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "6028372.33",
+      "valor_pago": "4566323.49",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12447",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "3944732.76",
+      "valor_pago": "2598478.58",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12416",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "2380836.92",
+      "valor_pago": "312941.94",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P42",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "14465.71",
+      "valor_pago": "13776.87",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "C09-i01.04",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "51315517.61",
+      "valor_pago": "37664152.38",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12396",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1461490",
+      "valor_pago": "1266149.38",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "02/C09-i01.01/2023.P3798",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "675168.89",
+      "valor_pago": "454849.23",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4784",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "2418194.09",
+      "valor_pago": "1828986.12",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12473",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "2051337",
+      "valor_pago": "1269485.78",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "08/C09-i01.01/2024.P12429",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "356358.07",
+      "valor_pago": "278215.68",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4709",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "523500",
+      "valor_pago": "368733.39",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "01/C09-i01.01/2021.P22",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "431002.55",
+      "valor_pago": "62535.88",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P45",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "96121.31",
+      "valor_pago": "70866.86",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.02/2023.P46",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "148943.86",
+      "valor_pago": "103051.24",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "C09-i01.03",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "5500000",
+      "valor_pago": "2725093.77",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "03/C09-i01.01/2023.P4541",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "1043187.79",
+      "valor_pago": "981708.59",
+      "cd_investimento": "C09-i01"
+    },
+    {
+      "cd_projeto": "C09-i05",
+      "dt_referencia": "2026-08-03",
+      "valor_aprovado": "35000000",
+      "valor_pago": "18993465.91",
+      "cd_investimento": "C09-i05"
+    }
+  ],
+  "alteracoes": [
+    {
+      "campo": "prr_c09.total_pago",
+      "pt_antes": 126759839,
+      "en_antes": 123642501,
+      "pt_depois": 126759839,
+      "en_depois": 126759839
+    },
+    {
+      "campo": "prr_c09.by_line[2][2]",
+      "pt_antes": 18993466,
+      "en_antes": 15876128,
+      "pt_depois": 18993466,
+      "en_depois": 18993466
+    }
+  ],
+  "limite": "A data textual de 29 de julho de 2026 foi conservada por instrução da adenda B; estes dados provêm do ficheiro de 3 de agosto de 2026."
+}

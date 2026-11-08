@@ -7,6 +7,7 @@ import { WORKS } from '../data/studies.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../data/lugar-das-linhas.mjs';
 import { nomeDoPais } from './series.mjs';
+import { LUGARES_CORAGUA } from '../data/lugares-coragua.mjs';
 import { LUGARES_HB1 } from '../data/lugares-hb1.mjs';
 
 /** @param {string} slug */
@@ -37,6 +38,7 @@ const EXCECOES = {
   'smi-espanha-2026': { pt: 'Espanha', en: 'Spain' },
   'rmmg-2026': { pt: 'Continente', en: 'Mainland Portugal' },
   ...LUGARES_HB1,
+  ...LUGARES_CORAGUA,
   'alentejo-central-poder-de-compra-2023': { pt: 'Alentejo Central', en: 'Alentejo Central' },
   'municipios-acores-caop-2025': nomeDaRegiao('acores'),
   'municipios-madeira-caop-2025': nomeDaRegiao('madeira'),

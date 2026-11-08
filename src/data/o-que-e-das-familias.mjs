@@ -24388,3 +24388,262 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     }
   }
 });
+
+// COR-AGUA: declarações acrescentadas pelo compositor próprio.
+Object.assign(FAMILIAS_DAS_LINHAS, {
+  "coragua-ersar-encargo-mensal-2024": {
+    "nome": {
+      "pt": "Encargo mensal de abastecimento de água",
+      "en": "Monthly water supply charge"
+    },
+    "frase": {
+      "pt": [
+        "É o nível médio de encargos mensais com abastecimento de água que a ERSAR apresenta para o consumo doméstico de referência."
+      ],
+      "en": [
+        "It is the average monthly water supply charge presented by ERSAR for the reference household consumption."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-ersar-encargo-metro-cubico-2024": {
+    "nome": {
+      "pt": "Encargo doméstico por metro cúbico",
+      "en": "Household charge per cubic metre"
+    },
+    "frase": {
+      "pt": [
+        "É o encargo mensal de referência dividido pelo consumo de referência, para comparar os encargos por metro cúbico."
+      ],
+      "en": [
+        "It is the reference monthly charge divided by the reference consumption, to compare charges per cubic metre."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-alqueva-alta-pressao-2026": {
+    "nome": {
+      "pt": "Tarifa do Alqueva em alta pressão",
+      "en": "Alqueva high pressure tariff"
+    },
+    "frase": {
+      "pt": [
+        "É a tarifa por metro cúbico para fornecimento em alta pressão publicada no edital do Alqueva."
+      ],
+      "en": [
+        "It is the tariff per cubic metre for high pressure supply published in the Alqueva edital."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-alqueva-baixa-pressao-2026": {
+    "nome": {
+      "pt": "Tarifa do Alqueva em baixa pressão",
+      "en": "Alqueva low pressure tariff"
+    },
+    "frase": {
+      "pt": [
+        "É a tarifa por metro cúbico para fornecimento em baixa pressão publicada no edital do Alqueva."
+      ],
+      "en": [
+        "It is the tariff per cubic metre for low pressure supply published in the Alqueva edital."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-dgadr-eficiencia-2024": {
+    "nome": {
+      "pt": "Eficiência média na adução e distribuição",
+      "en": "Average conveyance and distribution efficiency"
+    },
+    "frase": {
+      "pt": [
+        "É a média da eficiência na adução e distribuição do conjunto dos aproveitamentos hidroagrícolas que a DGADR publica."
+      ],
+      "en": [
+        "It is the average conveyance and distribution efficiency across the hydroagricultural schemes published by DGADR."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-gulbenkian-sem-contador": {
+    "nome": {
+      "pt": "Agricultores sem contador no inquérito",
+      "en": "Farmers without a meter in the survey"
+    },
+    "frase": {
+      "pt": [
+        "É a percentagem dos agricultores inquiridos que não têm contador de saída de água."
+      ],
+      "en": [
+        "It is the percentage of surveyed farmers who do not have a water outlet meter."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-gulbenkian-universo-hectares": {
+    "nome": {
+      "pt": "Área mínima das explorações no inquérito",
+      "en": "Minimum holding area in the survey"
+    },
+    "frase": {
+      "pt": [
+        "É a área mínima das explorações abrangidas pelo inquérito a agricultores que regam as suas culturas em Portugal continental."
+      ],
+      "en": [
+        "It is the minimum holding area covered by the survey of farmers who irrigate their crops in mainland Portugal."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-gulbenkian-inquerito-ano": {
+    "nome": {
+      "pt": "Ano das entrevistas do inquérito",
+      "en": "Year of the survey interviews"
+    },
+    "frase": {
+      "pt": [
+        "É o ano em que decorreram as entrevistas do inquérito sobre o uso da água."
+      ],
+      "en": [
+        "It is the year in which the water use survey interviews took place."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-tc-auditoria-ano": {
+    "nome": {
+      "pt": "Ano da auditoria do Tribunal de Contas",
+      "en": "Year of the Tribunal de Contas audit"
+    },
+    "frase": {
+      "pt": [
+        "É o ano do relatório de auditoria ao contrato de concessão das centrais hidroelétricas."
+      ],
+      "en": [
+        "It is the year of the audit report on the hydroelectric power stations concession contract."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-racio-minimo-2026": {
+    "nome": {
+      "pt": "Limite inferior do rácio de encargos",
+      "en": "Lower charge ratio"
+    },
+    "frase": {
+      "pt": [
+        "É o nível médio de encargos domésticos dividido pela tarifa de alta pressão do Alqueva, arredondado à unidade."
+      ],
+      "en": [
+        "It is the average household charge level divided by the Alqueva high pressure tariff, rounded to the nearest integer."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-racio-maximo-2026": {
+    "nome": {
+      "pt": "Limite superior do rácio de encargos",
+      "en": "Upper charge ratio"
+    },
+    "frase": {
+      "pt": [
+        "É o nível médio de encargos domésticos dividido pela tarifa de baixa pressão do Alqueva, arredondado à unidade."
+      ],
+      "en": [
+        "It is the average household charge level divided by the Alqueva low pressure tariff, rounded to the nearest integer."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-historico-racio-minimo": {
+    "nome": {
+      "pt": "Limite inferior do rácio na edição anterior",
+      "en": "Lower ratio in the previous edition"
+    },
+    "frase": {
+      "pt": [
+        "É o limite inferior do rácio de preços que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual."
+      ],
+      "en": [
+        "It is the lower price ratio printed in the archived edition. It is retained as evidence of the correction, not as a current value."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-historico-racio-maximo": {
+    "nome": {
+      "pt": "Limite superior do rácio na edição anterior",
+      "en": "Upper ratio in the previous edition"
+    },
+    "frase": {
+      "pt": [
+        "É o limite superior do rácio de preços que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual."
+      ],
+      "en": [
+        "It is the upper price ratio printed in the archived edition. It is retained as evidence of the correction, not as a current value."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-historico-eficiencia-95": {
+    "nome": {
+      "pt": "Eficiência ponderada na edição anterior",
+      "en": "Weighted efficiency in the previous edition"
+    },
+    "frase": {
+      "pt": [
+        "É a eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual."
+      ],
+      "en": [
+        "It is the volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-historico-eficiencia-83": {
+    "nome": {
+      "pt": "Limite inferior da eficiência na edição anterior",
+      "en": "Lower efficiency bound in the previous edition"
+    },
+    "frase": {
+      "pt": [
+        "É o limite inferior da eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual."
+      ],
+      "en": [
+        "It is the lower bound of volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-historico-eficiencia-85": {
+    "nome": {
+      "pt": "Limite superior da eficiência na edição anterior",
+      "en": "Upper efficiency bound in the previous edition"
+    },
+    "frase": {
+      "pt": [
+        "É o limite superior da eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual."
+      ],
+      "en": [
+        "It is the upper bound of volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value."
+      ]
+    },
+    "origens": []
+  },
+  "coragua-historico-inquerito-2021": {
+    "nome": {
+      "pt": "Ano atribuído ao inquérito na edição anterior",
+      "en": "Year assigned to the survey in the previous edition"
+    },
+    "frase": {
+      "pt": [
+        "É o ano que a edição arquivada atribuía ao inquérito. Conserva-se como prova da correção, não como valor atual."
+      ],
+      "en": [
+        "It is the year the archived edition assigned to the survey. It is retained as evidence of the correction, not as a current value."
+      ]
+    },
+    "origens": []
+  }
+});

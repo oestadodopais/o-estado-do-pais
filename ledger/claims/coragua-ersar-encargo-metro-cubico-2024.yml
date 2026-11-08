@@ -1,0 +1,17 @@
+id: coragua-ersar-encargo-metro-cubico-2024
+value: 1,348
+unit: euros por m³
+source: null
+document: null
+source_url: null
+access_date: '2026-11-08'
+reference_date: '2024'
+excerpt: null
+derivation: Encargo mensal de referência de 13,48 euros dividido pelo consumo de referência de 10 metros cúbicos.
+derivation_en: Reference monthly charge of 13.48 euros divided by the reference consumption of 10 cubic metres.
+derived_from:
+  - coragua-ersar-encargo-mensal-2024
+check: coragua-ersar-encargo-mensal-2024 / 10
+study: onde-esta-a-agua
+note: 'COR-AGUA: origem do número citado no registo da correção de texto.'
+corrections: []

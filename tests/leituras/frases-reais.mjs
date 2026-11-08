@@ -30,20 +30,16 @@ assert.equal(provas.frasesNovasAntesG.length, 3);
 assert.deepEqual([...ids].sort(), ['V032','V040','V182','V195']);
 provas.atualA = conferirLista(A, 'dist', {aplicada:true});
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
-provas.corAgua = conferirLista(C);
+provas.corAgua = conferirLista(C, 'dist', {aplicada:true});
 assert.equal(recusas(provas.corAgua), 0, JSON.stringify(provas.corAgua));
 provas.atualB = conferirLista(B);
 assert.equal(provas.atualB.voz.length, 0);
-// O total mantém-se, mas a retirada de um bloco desloca dois índices da exceção.
-assert.deepEqual(provas.atualB.numeros.map(({estudo, tipo}) => ({estudo, tipo})), [{estudo:'onde-esta-a-agua', tipo:'documento'}]);
-const excecaoB = JSON.parse(fs.readFileSync('scripts/paridade-excecoes.json', 'utf8')).diferencas.find(e => e.estudo === 'onde-esta-a-agua' && e.tipo === 'documento');
-assert.deepEqual(provas.atualB.numeros[0].numeros.total, excecaoB.numeros.total);
-assert.deepEqual(provas.atualB.numeros[0].numeros.blocos, excecaoB.numeros.blocos.map(b => ({...b, i:b.i >= 186 ? b.i - 1 : b.i})));
-assert.equal(provas.atualB.quantificadores.length, 28);
+assert.equal(provas.atualB.numeros.length, 0);
+// As 42 entradas da água passaram para a COR-AGUA; as restantes ficam na VOZ-2B.
+assert.equal(provas.atualB.quantificadores.length, 26);
 assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas da VOZ-2B têm de estar nas páginas declaradas');
-assert.deepEqual(provas.atualB.semPar.map(f => f.id).sort(), ['V012','V093','V094','V100','V124','V293','V296']);
-assert.equal(provas.atualB.semEntrada.length, 15);
-assert(!provas.atualB.semPar.some(f => f.id === 'V122'), 'O limite por bloco fica para a HIG-6B');
+assert.deepEqual(provas.atualB.semPar, []);
+assert.equal(provas.atualB.semEntrada.length, 9);
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hig6-historica-'));
 try {
   const f = path.join(tmp, 'lista.json'); fs.writeFileSync(f, JSON.stringify(inicial));

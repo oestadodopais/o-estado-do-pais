@@ -1,0 +1,21 @@
+id: coragua-historico-eficiencia-95
+value: '95'
+unit: '%'
+source: O Estado do País
+document:
+  title: Edição anterior do estudo onde-esta-a-agua
+  edition: 12.08.2026
+  locator: Passagem citada no excerto da edição arquivada
+  kind: html
+  source_sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
+source_url: https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+access_date: '2026-11-08'
+reference_date: '2026-08-12'
+excerpt: Duas médias nacionais válidasOs mesmos dados sustentam uma eficiência ponderada pelo volume de ~95% tão bem como a média simples de 75,5%, porque só o Alqueva é cerca de 40% do volume nacional e é muito melhor do que o aproveitamento pequeno mediano. Citar qualquer uma delas sozinha deturpa o sistema.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: Valor que a edição anterior imprimia, conservado como prova histórica da correção. Não é apresentado como valor atual nem como confirmação pela fonte externa.
+corrections: []

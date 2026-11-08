@@ -7,10 +7,11 @@ import {compara, blocosDe, plantasParidade} from './paridade-numeros.mjs';
 export const assinatura = r => ({total: Object.fromEntries(Object.entries(r.total).map(([k, v]) => [k, [...v].sort()])),
   blocos: r.blocos.map(b => ({i: b.i, soPt: [...b.soPt].sort(), soEn: [...b.soEn].sort()}))});
 export function validarExcecoes(excecoes) {
-  if (excecoes.data !== '2026-11-08' || excecoes.retirar !== 'COR-AGUA') throw new Error('paridade: exceção sem data ou fecho');
-  const permitidos = new Set(['a-casa-em-portugal-e-na-europa', 'agua-nao-faturada', 'onde-esta-a-agua']);
+  if (excecoes.data !== '2026-11-08' || excecoes.natureza !== 'permanente' || 'retirar' in excecoes ||
+      typeof excecoes.razao !== 'string' || excecoes.razao.trim().length < 20) throw new Error('paridade: exceção sem data, natureza permanente ou razão');
+  const permitidos = new Set(['a-casa-em-portugal-e-na-europa']);
   const chaves = excecoes.diferencas.map(e => e.estudo + '|' + e.tipo);
-  if (new Set(chaves).size !== chaves.length || excecoes.diferencas.some(e => !permitidos.has(e.estudo))) throw new Error('paridade: exceção fora da lista fechada');
+  if (new Set(chaves).size !== chaves.length || excecoes.diferencas.some(e => !permitidos.has(e.estudo) || !['documento', 'página'].includes(e.tipo))) throw new Error('paridade: exceção fora da lista fechada');
   return chaves;
 }
 export function conferirParidade(dist, excecoes) {
@@ -28,7 +29,7 @@ export function conferirParidade(dist, excecoes) {
       medidas.push({estudo:s, tipo, numeros, excecao: Boolean(excecao)});
       if (excecao) {
         usados.add(chave);
-        if (!difere || JSON.stringify(numeros) !== JSON.stringify(excecao.numeros)) erros.push(`${chave}: diferença mudou; rever e retirar a exceção na COR-AGUA`);
+        if (!difere || JSON.stringify(numeros) !== JSON.stringify(excecao.numeros)) erros.push(`${chave}: diferença mudou; rever a exceção permanente da glosa`);
       } else if (difere) erros.push(`${chave}: diferença nova: ${JSON.stringify(numeros)}`);
     }
   }
@@ -39,7 +40,7 @@ export function conferirParidade(dist, excecoes) {
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {
     const r = conferirParidade(process.argv[2] ?? 'dist', JSON.parse(fs.readFileSync(new URL('./paridade-excecoes.json', import.meta.url), 'utf8')));
-    console.log(`paridade: ${r.medidas.length} documentos e páginas; ${r.medidas.filter(m => m.excecao).length} exceções exatas, datadas; plantas ${plantasParidade.filter(Boolean).length}/${plantasParidade.length}; recusas ${r.erros.length}`);
+    console.log(`paridade: ${r.medidas.length} documentos e páginas; ${r.medidas.filter(m => m.excecao).length} exceções exatas, permanentes, com data e razão; plantas ${plantasParidade.filter(Boolean).length}/${plantasParidade.length}; recusas ${r.erros.length}`);
     for (const e of r.erros) console.error(e);
     process.exitCode = r.erros.length ? 1 : 0;
   } catch { console.error('paridade: dist ou exceções ilegíveis'); process.exitCode = 1; }

@@ -59,6 +59,12 @@
       "kind": "atualizacao",
       "old_value": "45",
       "new_value": "46"
+    },
+    {
+      "date": "2026-11-08",
+      "kind": "atualizacao",
+      "old_value": "46",
+      "new_value": "50"
     }
   ],
   "custo-unitario-do-trabalho-2024": [

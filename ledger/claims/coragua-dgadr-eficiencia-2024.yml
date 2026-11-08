@@ -1,0 +1,27 @@
+id: coragua-dgadr-eficiencia-2024
+value: '76'
+unit: '%'
+source: DGADR
+document:
+  title: Anuário dos Aproveitamentos Hidroagrícolas, Campanha de Rega 2024
+  edition: '2024'
+  locator: p. 27, Eficiência hídrica versus intensificação do regadio
+  page: 27
+  kind: pdf
+  source_sha256: 2cdd510e177cefa928f4fe022890ee6af3b7d985efd6f18e3952acfc9801ae4e
+source_url: https://sir.dgadr.gov.pt/images/conteudos/Campanhas_rega/ANUARIO_2024.pdf#page=27
+access_date: '2026-11-08'
+reference_date: '2024'
+excerpt: |-
+  infraestruturais associadas.
+  Relativamente à E昀椀ciência na Adução e Distribuição, a média do conjunto dos AHs situa-se nos 76%,
+  observando-se, contudo, amplitudes consideráveis, com mínimos de 8% (Alvor) e máximos de 98%
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: 'COR-AGUA: transcrição da linha dgadr-eficiencia do livro da água no motor; cópia e SHA256 conferidos.'
+corrections: []
+attributed_to:
+  - DGADR

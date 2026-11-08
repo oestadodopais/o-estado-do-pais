@@ -1,0 +1,17 @@
+{
+  "entradas": [
+    "CA41",
+    "CA42"
+  ],
+  "valor_inalterado": "4212 hm³",
+  "origem_motor": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/sectors/pgrh3_captacao_por_setor_rh_2018.csv",
+  "sha256_csv": "68e4bde4b944f5e0b9b8c38c4b584f9d37fb667be51bdc6ae8bf189e6895659a",
+  "componentes_hm3": {
+    "Agricultura - Rega": "4164.6",
+    "Pecuaria": "47.03"
+  },
+  "total_hm3": "4211.63",
+  "resolucao": "Reconstrução técnica das oito regiões hidrográficas; mantida sem inventar excerto.",
+  "falha_para_auditoria": "As oito cópias primárias regionais não estão guardadas no acervo fornecido. O agregado inclui rega e pecuária.",
+  "decisao": "Adenda B: número que a lista conserva, fora da exigência de prova nova desta correção."
+}

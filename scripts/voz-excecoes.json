@@ -406,5 +406,25 @@
     "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
     "classe": "facto de uma fonte",
     "razao": "o par inglês da FICA V180 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
+  },
+  {
+    "rota": "/correcoes",
+    "frase": "Água Não Faturada: A eficiência da rega passou ao valor que a DGADR publica, 76 %fonte · DGADR, sem a média ponderada de 83linha · O Estado do País a 85 %linha · O Estado do País que era uma conta deste estudo, e os 71 %fonte · Gulbenkian de agricultores sem contador passaram a dizer que vêm de um inquérito da Gulbenkian feito em 2019fonte · Gulbenkian a quem rega explorações de 5fonte · Gulbenkian hectares ou mais, e não de 2021linha · O Estado do País.",
+    "classe": "natureza do registo",
+    "razao": "COR-AGUA: correção textual autorizada, integral, com os números selados e conferidos por conferirTextoHtml. A expressão sobre a conta anterior descreve a mudança registada.",
+    "correcao_textual": {
+      "slug": "agua-nao-faturada",
+      "data": "2026-11-08"
+    }
+  },
+  {
+    "rota": "/en/corrections",
+    "frase": "Água Não Faturada: Irrigation efficiency moved to the figure DGADR publishes, 76%source · DGADR, without the 83row · O Estado do País to 85%row · O Estado do País weighted average that was this study's own calculation, and the 71%source · Gulbenkian of farmers without a meter now say they come from a Gulbenkian survey carried out in 2019source · Gulbenkian among those who irrigate holdings of 5source · Gulbenkian hectares or more, not from 2021row · O Estado do País.",
+    "classe": "natureza do registo",
+    "razao": "COR-AGUA: correção textual autorizada, integral, com os números selados e conferidos por conferirTextoHtml. A expressão sobre a conta anterior descreve a mudança registada.",
+    "correcao_textual": {
+      "slug": "agua-nao-faturada",
+      "data": "2026-11-08"
+    }
   }
 ]

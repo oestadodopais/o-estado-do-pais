@@ -1,0 +1,21 @@
+id: coragua-historico-inquerito-2021
+value: '2021'
+unit: ano
+source: O Estado do País
+document:
+  title: Edição anterior do estudo agua-nao-faturada
+  edition: 12.08.2026
+  locator: Passagem citada no excerto da edição arquivada
+  kind: html
+  source_sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
+source_url: https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+access_date: '2026-11-08'
+reference_date: '2026-08-12'
+excerpt: 'Não medidoO número da agricultura é um modelo, não uma medição. O PGRH calcula-o como área regada × coeficiente cultural ÷ eficiência de transporte. 71% dos agricultores não têm contador de água — valor de um inquérito Gulbenkian/Ipsos a cerca de 490 explorações (2021), não do Recenseamento Agrícola do INE, que não contém esta estatística (atribuição corrigida a 29 de julho de 2026). Os setores que são medidos — urbano e indústria, a partir de declarações fiscais — concordam entre fontes dentro de 2,5% onde a comparação foi possível. A agricultura não: no Guadiana, o volume declarado para a taxa de recursos hídricos é 62% inferior ao modelado no PGRH, e entre ciclos de planeamento as diferenças regionais chegam a +98%.'
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: agua-nao-faturada
+note: Valor que a edição anterior imprimia, conservado como prova histórica da correção. Não é apresentado como valor atual nem como confirmação pela fonte externa.
+corrections: []

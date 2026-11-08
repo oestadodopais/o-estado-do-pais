@@ -86,6 +86,11 @@
       "quem": "Codex gpt-6-astra",
       "quando": "2026-10-30",
       "o_que": "EV2: as três derivações e as cinco passagens nas duas edições pertencem aos registos do estudo 16, com as frases revistas pelas adendas F e G. As linhas irmãs invest-exec-pct e outras-rec-correntes-exec não atravessam para ledger/; não há alteração às folhas dos cartões, às famílias, às unidades nem aos lugares do livro-razão do sítio. As frases ficam inventariadas no bloco ev2 do INVENTARIO-FRASES.md."
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-11-08",
+      "o_que": "Construção COR-AGUA: definições dos recibos conferidas nos excertos, localizadores e contas das linhas seladas."
     }
   ],
   "comuns": [
@@ -52064,6 +52069,576 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-ersar-encargo-mensal-2024"
+      ],
+      "nome": {
+        "pt": "Encargo mensal de abastecimento de água",
+        "en": "Monthly water supply charge"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o nível médio de encargos mensais com abastecimento de água que a ERSAR apresenta para o consumo doméstico de referência.",
+          "en": "It is the average monthly water supply charge presented by ERSAR for the reference household consumption.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o nível médio de encargos mensais com abastecimento de água que a ERSAR apresenta para o consumo doméstico de referência.",
+              "en": "It is the average monthly water supply charge presented by ERSAR for the reference household consumption.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "13,48"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "p. 410, Figura 553, barra de 2024, Abastecimento de água"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-ersar-encargo-metro-cubico-2024"
+      ],
+      "nome": {
+        "pt": "Encargo doméstico por metro cúbico",
+        "en": "Household charge per cubic metre"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o encargo mensal de referência dividido pelo consumo de referência, para comparar os encargos por metro cúbico.",
+          "en": "It is the reference monthly charge divided by the reference consumption, to compare charges per cubic metre.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o encargo mensal de referência dividido pelo consumo de referência, para comparar os encargos por metro cúbico.",
+              "en": "It is the reference monthly charge divided by the reference consumption, to compare charges per cubic metre.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Encargo mensal de referência de 13,48 euros dividido pelo consumo de referência de 10 metros cúbicos."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-alqueva-alta-pressao-2026"
+      ],
+      "nome": {
+        "pt": "Tarifa do Alqueva em alta pressão",
+        "en": "Alqueva high pressure tariff"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a tarifa por metro cúbico para fornecimento em alta pressão publicada no edital do Alqueva.",
+          "en": "It is the tariff per cubic metre for high pressure supply published in the Alqueva edital.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a tarifa por metro cúbico para fornecimento em alta pressão publicada no edital do Alqueva.",
+              "en": "It is the tariff per cubic metre for high pressure supply published in the Alqueva edital.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "p. 5, Anexo II, alta pressão, valor médio"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Valor médio          0,0706             0,1765            0,3530"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-alqueva-baixa-pressao-2026"
+      ],
+      "nome": {
+        "pt": "Tarifa do Alqueva em baixa pressão",
+        "en": "Alqueva low pressure tariff"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a tarifa por metro cúbico para fornecimento em baixa pressão publicada no edital do Alqueva.",
+          "en": "It is the tariff per cubic metre for low pressure supply published in the Alqueva edital.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a tarifa por metro cúbico para fornecimento em baixa pressão publicada no edital do Alqueva.",
+              "en": "It is the tariff per cubic metre for low pressure supply published in the Alqueva edital.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "p. 5, Anexo II, baixa pressão"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "23,94               na               0,0382             0,0955            0,1910"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-dgadr-eficiencia-2024"
+      ],
+      "nome": {
+        "pt": "Eficiência média na adução e distribuição",
+        "en": "Average conveyance and distribution efficiency"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a média da eficiência na adução e distribuição do conjunto dos aproveitamentos hidroagrícolas que a DGADR publica.",
+          "en": "It is the average conveyance and distribution efficiency across the hydroagricultural schemes published by DGADR.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a média da eficiência na adução e distribuição do conjunto dos aproveitamentos hidroagrícolas que a DGADR publica.",
+              "en": "It is the average conveyance and distribution efficiency across the hydroagricultural schemes published by DGADR.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "infraestruturais associadas.\nRelativamente à E昀椀ciência na Adução e Distribuição, a média do conjunto dos AHs situa-se nos 76%,\nobservando-se, contudo, amplitudes consideráveis, com mínimos de 8% (Alvor) e máximos de 98%"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-gulbenkian-sem-contador"
+      ],
+      "nome": {
+        "pt": "Agricultores sem contador no inquérito",
+        "en": "Farmers without a meter in the survey"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a percentagem dos agricultores inquiridos que não têm contador de saída de água.",
+          "en": "It is the percentage of surveyed farmers who do not have a water outlet meter.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a percentagem dos agricultores inquiridos que não têm contador de saída de água.",
+              "en": "It is the percentage of surveyed farmers who do not have a water outlet meter.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "COMO SE PODE MONITORIZAR E GERIR\n O QUE NÃO SE MEDE COM RIGOR?\n\n\n 71%                                  Não tem contador de saída de água (caudalímetro)\n\n\n\n QUEM TEM CONTADOR DE SAÍDA DE ÁGUA?\n\n [Neste inquérito, os agricultores que têm contador (29%) representam"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-gulbenkian-universo-hectares"
+      ],
+      "nome": {
+        "pt": "Área mínima das explorações no inquérito",
+        "en": "Minimum holding area in the survey"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a área mínima das explorações abrangidas pelo inquérito a agricultores que regam as suas culturas em Portugal continental.",
+          "en": "It is the minimum holding area covered by the survey of farmers who irrigate their crops in mainland Portugal.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a área mínima das explorações abrangidas pelo inquérito a agricultores que regam as suas culturas em Portugal continental.",
+              "en": "It is the minimum holding area covered by the survey of farmers who irrigate their crops in mainland Portugal.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Universo: Agricultores que regam as suas culturas (mesmo que só em parte da sua propriedade), com\nexplorações iguais ou superiores a 5 ha, em Portugal Continental. A sua produção destina-se à venda\nno mercado nacional e internacional."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-gulbenkian-inquerito-ano"
+      ],
+      "nome": {
+        "pt": "Ano das entrevistas do inquérito",
+        "en": "Year of the survey interviews"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o ano em que decorreram as entrevistas do inquérito sobre o uso da água.",
+          "en": "It is the year in which the water use survey interviews took place.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o ano em que decorreram as entrevistas do inquérito sobre o uso da água.",
+              "en": "It is the year in which the water use survey interviews took place.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "explorações iguais ou superiores a 5 ha, em Portugal Continental. A sua produção destina-se à venda\nno mercado nacional e internacional.\nCalendário: Entrevistas realizadas entre 31 de Julho e 13 de Dezembro de 2019\nMetodologia: Entrevistas telefónicas\n\nRepresentatividade da amostra\nInvestigação C-Lab (2019 )                                  Dados Portugal Continental, INE (2016)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "p. 22, Trabalho de campo, estudo quantitativo, calendário"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-tc-auditoria-ano"
+      ],
+      "nome": {
+        "pt": "Ano da auditoria do Tribunal de Contas",
+        "en": "Year of the Tribunal de Contas audit"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o ano do relatório de auditoria ao contrato de concessão das centrais hidroelétricas.",
+          "en": "It is the year of the audit report on the hydroelectric power stations concession contract.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o ano do relatório de auditoria ao contrato de concessão das centrais hidroelétricas.",
+              "en": "It is the year of the audit report on the hydroelectric power stations concession contract.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Tribunal de Contas                                     AUDITORIA AO CONTRATO DE CONCESSÃO DAS CENTRAIS HIDROELÉCTRICAS\n\n\n\n\n214.   Em conclusão, a situação financeira da EDIA ficou comprometida desde então e agravada pelo diferendo em\n       relação à retenção de parte das rendas pela EDP desde 2013."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.edition",
+                  "literal": "Relatório 4/2016, 2.ª Secção"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-racio-minimo-2026"
+      ],
+      "nome": {
+        "pt": "Limite inferior do rácio de encargos",
+        "en": "Lower charge ratio"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o nível médio de encargos domésticos dividido pela tarifa de alta pressão do Alqueva, arredondado à unidade.",
+          "en": "It is the average household charge level divided by the Alqueva high pressure tariff, rounded to the nearest integer.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o nível médio de encargos domésticos dividido pela tarifa de alta pressão do Alqueva, arredondado à unidade.",
+              "en": "It is the average household charge level divided by the Alqueva high pressure tariff, rounded to the nearest integer.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Nível médio de encargos domésticos dividido pela tarifa de alta pressão do Alqueva, arredondado à unidade."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-racio-maximo-2026"
+      ],
+      "nome": {
+        "pt": "Limite superior do rácio de encargos",
+        "en": "Upper charge ratio"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o nível médio de encargos domésticos dividido pela tarifa de baixa pressão do Alqueva, arredondado à unidade.",
+          "en": "It is the average household charge level divided by the Alqueva low pressure tariff, rounded to the nearest integer.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o nível médio de encargos domésticos dividido pela tarifa de baixa pressão do Alqueva, arredondado à unidade.",
+              "en": "It is the average household charge level divided by the Alqueva low pressure tariff, rounded to the nearest integer.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Nível médio de encargos domésticos dividido pela tarifa de baixa pressão do Alqueva, arredondado à unidade."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-historico-racio-minimo"
+      ],
+      "nome": {
+        "pt": "Limite inferior do rácio na edição anterior",
+        "en": "Lower ratio in the previous edition"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o limite inferior do rácio de preços que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+          "en": "It is the lower price ratio printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o limite inferior do rácio de preços que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+              "en": "It is the lower price ratio printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O preço é a alavanca que não custa nada e não está a ser puxada. A agricultura paga 27 a 53× menos por m³ do que os agregados familiares, cobriu cerca de 7% do custo de capital do Alqueva, e 71% dos agricultores não têm contador contra o qual cobrar."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Edição anterior do estudo onde-esta-a-agua"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-historico-racio-maximo"
+      ],
+      "nome": {
+        "pt": "Limite superior do rácio na edição anterior",
+        "en": "Upper ratio in the previous edition"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o limite superior do rácio de preços que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+          "en": "It is the upper price ratio printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o limite superior do rácio de preços que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+              "en": "It is the upper price ratio printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O preço é a alavanca que não custa nada e não está a ser puxada. A agricultura paga 27 a 53× menos por m³ do que os agregados familiares, cobriu cerca de 7% do custo de capital do Alqueva, e 71% dos agricultores não têm contador contra o qual cobrar."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Edição anterior do estudo onde-esta-a-agua"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-historico-eficiencia-95"
+      ],
+      "nome": {
+        "pt": "Eficiência ponderada na edição anterior",
+        "en": "Weighted efficiency in the previous edition"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+          "en": "It is the volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+              "en": "It is the volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Duas médias nacionais válidasOs mesmos dados sustentam uma eficiência ponderada pelo volume de ~95% tão bem como a média simples de 75,5%, porque só o Alqueva é cerca de 40% do volume nacional e é muito melhor do que o aproveitamento pequeno mediano. Citar qualquer uma delas sozinha deturpa o sistema."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Edição anterior do estudo onde-esta-a-agua"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-historico-eficiencia-83"
+      ],
+      "nome": {
+        "pt": "Limite inferior da eficiência na edição anterior",
+        "en": "Lower efficiency bound in the previous edition"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o limite inferior da eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+          "en": "It is the lower bound of volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o limite inferior da eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+              "en": "It is the lower bound of volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Corrigido a 29 de julho de 2026Esta nota apresentava ~95% como eficiência ponderada pelo volume; o rácio não é válido. Resulta de dividir totais com cobertura desigual — cerca de 120 hm³ de consumo pertencem a aproveitamentos sem captação reportada. Comparando apenas os aproveitamentos com ambos os valores, a eficiência ponderada pelo volume é 83–85%, a par da média simples de 75–76%. Só o Alqueva representa cerca de 40% do volume nacional. Citar a média simples isoladamente continua a representar mal o sistema."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Edição anterior do estudo agua-nao-faturada"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-historico-eficiencia-85"
+      ],
+      "nome": {
+        "pt": "Limite superior da eficiência na edição anterior",
+        "en": "Upper efficiency bound in the previous edition"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o limite superior da eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+          "en": "It is the upper bound of volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o limite superior da eficiência ponderada pelo volume que a edição arquivada imprimia. Conserva-se como prova da correção, não como valor atual.",
+              "en": "It is the upper bound of volume weighted efficiency printed in the archived edition. It is retained as evidence of the correction, not as a current value.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Corrigido a 29 de julho de 2026Esta nota apresentava ~95% como eficiência ponderada pelo volume; o rácio não é válido. Resulta de dividir totais com cobertura desigual — cerca de 120 hm³ de consumo pertencem a aproveitamentos sem captação reportada. Comparando apenas os aproveitamentos com ambos os valores, a eficiência ponderada pelo volume é 83–85%, a par da média simples de 75–76%. Só o Alqueva representa cerca de 40% do volume nacional. Citar a média simples isoladamente continua a representar mal o sistema."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Edição anterior do estudo agua-nao-faturada"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "coragua-historico-inquerito-2021"
+      ],
+      "nome": {
+        "pt": "Ano atribuído ao inquérito na edição anterior",
+        "en": "Year assigned to the survey in the previous edition"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o ano que a edição arquivada atribuía ao inquérito. Conserva-se como prova da correção, não como valor atual.",
+          "en": "It is the year the archived edition assigned to the survey. It is retained as evidence of the correction, not as a current value.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o ano que a edição arquivada atribuía ao inquérito. Conserva-se como prova da correção, não como valor atual.",
+              "en": "It is the year the archived edition assigned to the survey. It is retained as evidence of the correction, not as a current value.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Não medidoO número da agricultura é um modelo, não uma medição. O PGRH calcula-o como área regada × coeficiente cultural ÷ eficiência de transporte. 71% dos agricultores não têm contador de água — valor de um inquérito Gulbenkian/Ipsos a cerca de 490 explorações (2021), não do Recenseamento Agrícola do INE, que não contém esta estatística (atribuição corrigida a 29 de julho de 2026). Os setores que são medidos — urbano e indústria, a partir de declarações fiscais — concordam entre fontes dentro de 2,5% onde a comparação foi possível. A agricultura não: no Guadiana, o volume declarado para a taxa de recursos hídricos é 62% inferior ao modelado no PGRH, e entre ciclos de planeamento as diferenças regionais chegam a +98%."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Edição anterior do estudo agua-nao-faturada"
                 }
               ]
             }

@@ -707,8 +707,18 @@
     {
       "nome": "O Estado do País",
       "aliases": [],
-      "dominios": [],
-      "provas": []
+      "dominios": [
+        "xn--oestadodopas-2fb.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "coragua-historico-racio-minimo",
+          "documento": "Edição arquivada de Onde está a água",
+          "endereco": "https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12",
+          "origem": "Domínio definido em site.config.mjs; edição e SHA256 declarados em studies-src/manifest.yml e na linha histórica."
+        }
+      ]
     },
     {
       "nome": "Observador",
@@ -1138,6 +1148,54 @@
           "documento": "EDITAL",
           "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/11/Edital-da-RPC-de-29.10.2026.pdf",
           "origem": "Fecho do documento alojado, linha 617 de pdftotext -layout: Câmara Municipal de Évora, 29 de outubro de 2026."
+        }
+      ]
+    },
+    {
+      "nome": "EDIA",
+      "aliases": [],
+      "dominios": [
+        "www.edia.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "coragua-alqueva-alta-pressao-2026",
+          "documento": "Edital, Empreendimento de Fins Múltiplos de Alqueva, Blocos de Rega do EFMA",
+          "endereco": "https://www.edia.pt/wp-content/uploads/2026/06/Edital-Campanha-de-2026_VR_signed.pdf#page=5",
+          "origem": "Publicador e domínio da cópia citada no livro da água do motor, com SHA256 conferido em 08.11.2026."
+        }
+      ]
+    },
+    {
+      "nome": "DGADR",
+      "aliases": [],
+      "dominios": [
+        "sir.dgadr.gov.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "coragua-dgadr-eficiencia-2024",
+          "documento": "Anuário dos Aproveitamentos Hidroagrícolas, Campanha de Rega 2024",
+          "endereco": "https://sir.dgadr.gov.pt/images/conteudos/Campanhas_rega/ANUARIO_2024.pdf#page=27",
+          "origem": "Publicador e domínio da cópia citada no livro da água do motor, com SHA256 conferido em 08.11.2026."
+        }
+      ]
+    },
+    {
+      "nome": "Gulbenkian",
+      "aliases": [],
+      "dominios": [
+        "content.gulbenkian.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "coragua-gulbenkian-inquerito-ano",
+          "documento": "O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave",
+          "endereco": "https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf#page=22",
+          "origem": "Publicador e domínio da cópia citada no livro da água do motor, com SHA256 conferido em 08.11.2026."
         }
       ]
     }

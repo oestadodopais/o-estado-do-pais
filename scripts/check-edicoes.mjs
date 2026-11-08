@@ -20,7 +20,7 @@ if (!process.argv.includes('--fontes')) {
 const erros = conferirEdicoes({works:WORKS,manifesto,correcoes:CORRECOES_TEXTO,raiz:'studies-src',paginas:process.argv.includes('--fontes')?null:paginas});
 let permitirAusencia=false;
 try{permitirAusencia=execFileSync('git',['rev-parse','--is-shallow-repository'],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim()==='true';}catch{permitirAusencia=true;}
-const testemunhas=conferirTestemunhas(manifesto,(commit,file)=>execFileSync('git',['show',`${commit}:${file}`],{stdio:['ignore','pipe','ignore']}),{permitirAusencia});
+const testemunhas=conferirTestemunhas(manifesto,(commit,file)=>execFileSync('git',['show',`${commit}:${file}`],{stdio:['ignore','pipe','ignore'],maxBuffer:16*1024*1024}),{permitirAusencia});
 erros.push(...testemunhas.erros);
 for(const aviso of testemunhas.avisos)console.log(aviso);
 for(const lang of ['pt','en']) {

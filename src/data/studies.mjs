@@ -264,7 +264,7 @@ export const WORKS = [
        a janela que o extractor corrigido produz, e nenhum valor mexeu. A razão é
        de ponteiro, e a prova é o portão das edições do motor. DECISIONS §1.49. */
     editions: [
-      { lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null, updated: '2026-08-20' },
+      { lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null, updated: '2026-11-08' },
     ],
     description: {
       pt: 'Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.',
@@ -480,8 +480,8 @@ export const WORKS = [
     // avisa, porque a afirmação estudos-evora-publicados é verificada contra ela.
     subject: null,
     editions: [
-      { lang: 'pt', title: 'Onde está a água?', date: null, updated: null },
-      { lang: 'en', title: 'Onde está a água?', date: null, updated: null },
+      { lang: 'pt', title: 'Onde está a água?', date: null, updated: '2026-11-08' },
+      { lang: 'en', title: 'Onde está a água?', date: null, updated: '2026-11-08' },
     ],
     /* O título não determina o objecto do estudo. Não se escreve uma descrição
        a partir de nada — e a falta diz-se com o MARCADOR ÚNICO do sítio.
@@ -501,8 +501,8 @@ export const WORKS = [
     slug: 'agua-nao-faturada',
     tema: 'agua',
     editions: [
-      { lang: 'pt', title: 'Água Não Faturada', date: null, updated: null },
-      { lang: 'en', title: 'Água Não Faturada', date: null, updated: null },
+      { lang: 'pt', title: 'Água Não Faturada', date: null, updated: '2026-11-08' },
+      { lang: 'en', title: 'Água Não Faturada', date: null, updated: '2026-11-08' },
     ],
     description: {
       pt: 'Água não faturada nos sistemas de abastecimento em Portugal.',
@@ -548,7 +548,7 @@ export const WORKS = [
     subject: 'alentejo',
     tema: 'economia-e-financas-publicas',
     editions: [
-      { lang: 'en', title: 'Alentejo & Algarve — Economy, Society, Strategy', date: null, updated: null },
+      { lang: 'en', title: 'Alentejo & Algarve — Economy, Society, Strategy', date: null, updated: '2026-11-08' },
     ],
     description: {
       pt: 'Economia, sociedade e estratégia no Alentejo e no Algarve.',

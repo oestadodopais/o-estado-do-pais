@@ -1,0 +1,31 @@
+id: coragua-tc-auditoria-ano
+value: '2016'
+unit: ano
+source: Tribunal de Contas
+document:
+  title: Relatório 4/2016, 2.ª Secção
+  edition: Relatório 4/2016, 2.ª Secção
+  locator: p. 37, parágrafo 214; Relatório 4/2016, 2.ª Secção
+  page: 37
+  kind: pdf
+  source_sha256: 963da78ce93d20fc89507732b817ca3043492c8d75394a93709c0de82f5e1383
+source_url: https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2016/rel004-2016-2s.pdf#page=37
+access_date: '2026-11-08'
+reference_date: '2016'
+excerpt: |-
+  Tribunal de Contas                                     AUDITORIA AO CONTRATO DE CONCESSÃO DAS CENTRAIS HIDROELÉCTRICAS
+
+
+
+
+  214.   Em conclusão, a situação financeira da EDIA ficou comprometida desde então e agravada pelo diferendo em
+         relação à retenção de parte das rendas pela EDP desde 2013.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: 'COR-AGUA: transcrição da linha tc-2016-auditoria do livro da água no motor; cópia e SHA256 conferidos.'
+corrections: []
+attributed_to:
+  - Tribunal de Contas

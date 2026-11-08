@@ -66,18 +66,26 @@ edicoes:
   - slug: evora-quinze-anos-cinco-mandatos
     lang: pt
     edicoes:
-      - data: '2026-08-20'
-        sha256: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
-        file: evora-quinze-anos-cinco-mandatos/pt.html
-    title: "Évora — Quinze Anos, Cinco Mandatos"
+    - data: '2026-08-20'
+      sha256: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
+      file: _edicoes/evora-quinze-anos-cinco-mandatos.pt.2026-08-20.html
+    - data: '2026-11-08'
+      sha256: 168ccec7cc35c9d7ad2919b65e9b6efb4fad4a38d6400bcf679b90433aae506e
+      file: evora-quinze-anos-cinco-mandatos/pt.html
+    title: Évora — Quinze Anos, Cinco Mandatos
     origin: researchhub
-    origin_ref: "content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
+    origin_ref: content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ 6976c54e70b5f4e32e4ec387f0ebddf2ce8e8bb2
     raw_file: _raw/evora-quinze-anos-cinco-mandatos.pt.html
-    fetched_utc: 2026-08-20T11:15:09Z
-    bytes_raw: 1059969
-    bytes_normalized: 1059969
-    sha256_raw: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
-    sha256_normalized: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
+    fetched_utc: '2026-11-08T13:46:08.500719Z'
+    bytes_raw: 1060003
+    bytes_normalized: 1060003
+    sha256_raw: 168ccec7cc35c9d7ad2919b65e9b6efb4fad4a38d6400bcf679b90433aae506e
+    sha256_normalized: 168ccec7cc35c9d7ad2919b65e9b6efb4fad4a38d6400bcf679b90433aae506e
+    primeira_edicao:
+      date: '2026-08-20'
+      sha256: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
+      file: _edicoes/evora-quinze-anos-cinco-mandatos.pt.2026-08-20.html
+      commit: 6ccf66d93d184e57797f235c4ad33bc841b3a8e5
   # Republicada a 2026-08-24 do motor (estimativa da parte 3, pergunta 7): o
   # texto alojado era igual ao da edição do motor, medido carácter a carácter,
   # e a troca é só de proveniência de bytes, para que o D5 da parte 3 possa
@@ -159,61 +167,93 @@ edicoes:
     edicoes:
       - data: '2026-08-12'
         sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
+        file: _edicoes/onde-esta-a-agua.pt.2026-08-12.html
+      - data: '2026-11-08'
+        sha256: 5b970f87017b41a89434c131a9e5286a8e5a4f7d70324f054d1d7fd2e6ca3229
         file: onde-esta-a-agua/pt.html
-    title: "Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia"
+    title: Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia
     artifact_url: https://claude.ai/code/artifact/8cd298f4-908e-4e84-8849-2ea03a3778d0
     raw_file: _raw/onde-esta-a-agua.pt.html
-    fetched_utc: 2026-08-12T13:54:56Z
-    bytes_raw: 276167
+    fetched_utc: '2026-08-12T13:54:56Z'
+    bytes_raw: 267111
     bytes_runtime_removed: 17141
-    bytes_normalized: 259026
-    sha256_raw: c718a678ac30a15e0becd79d864d2b264aa0c69803efecb2b16b8854ee1c5160
-    sha256_normalized: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
+    bytes_normalized: 249970
+    sha256_raw: 74a595c1a66ba4066d3aeb0f2a4abe3951c47ff33714e11f757f0368aaffe275
+    sha256_normalized: 5b970f87017b41a89434c131a9e5286a8e5a4f7d70324f054d1d7fd2e6ca3229
+    primeira_edicao:
+      date: '2026-08-12'
+      sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
+      file: _edicoes/onde-esta-a-agua.pt.2026-08-12.html
+      commit: 6ccf66d93d184e57797f235c4ad33bc841b3a8e5
   - slug: onde-esta-a-agua
     lang: en
     edicoes:
       - data: '2026-08-12'
         sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
+        file: _edicoes/onde-esta-a-agua.en.2026-08-12.html
+      - data: '2026-11-08'
+        sha256: 47859b5a616f0ac812f4a0d41ef7bc0b94768f3197a087e137913405d8dadad3
         file: onde-esta-a-agua/en.html
-    title: "Onde está a água? — Portugal's water, where it comes from, and what autonomy would take"
+    title: Onde está a água? — Portugal's water, where it comes from, and what autonomy would take
     artifact_url: https://claude.ai/code/artifact/59c36e54-f400-4bed-b532-3b390695cd71
     raw_file: _raw/onde-esta-a-agua.en.html
-    fetched_utc: 2026-08-12T13:54:57Z
-    bytes_raw: 265840
+    fetched_utc: '2026-08-12T13:54:57Z'
+    bytes_raw: 258771
     bytes_runtime_removed: 17141
-    bytes_normalized: 248699
-    sha256_raw: 01ca577c59dd5be79e3f45e78e63bed894106aa224e7f6a083cd3455b36e5229
-    sha256_normalized: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
+    bytes_normalized: 241630
+    sha256_raw: d99c41501fa1ffec2015444131fed62baf014b60d91ebdefec929b7db3e2b773
+    sha256_normalized: 47859b5a616f0ac812f4a0d41ef7bc0b94768f3197a087e137913405d8dadad3
+    primeira_edicao:
+      date: '2026-08-12'
+      sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
+      file: _edicoes/onde-esta-a-agua.en.2026-08-12.html
+      commit: 6ccf66d93d184e57797f235c4ad33bc841b3a8e5
   - slug: agua-nao-faturada
     lang: pt
     edicoes:
       - data: '2026-08-12'
         sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
+        file: _edicoes/agua-nao-faturada.pt.2026-08-12.html
+      - data: '2026-11-08'
+        sha256: 439fcab785602ea2908ac59b58ff3b89402dbd94e206356ffec6e8767bdae97e
         file: agua-nao-faturada/pt.html
-    title: "Água Não Faturada — a água que Portugal perde e a que nunca mediu"
+    title: Água Não Faturada — a água que Portugal perde e a que nunca mediu
     artifact_url: https://claude.ai/code/artifact/5cc977d1-a577-488e-8867-c027c3d7fa09
     raw_file: _raw/agua-nao-faturada.pt.html
-    fetched_utc: 2026-08-12T13:55:05Z
-    bytes_raw: 480374
+    fetched_utc: '2026-08-12T13:55:05Z'
+    bytes_raw: 479713
     bytes_runtime_removed: 17141
-    bytes_normalized: 463233
-    sha256_raw: 106d1f9bc6ebf125fb7f5d7c5171110031c89568b5c6b4c72ece485eb2c8c322
-    sha256_normalized: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
+    bytes_normalized: 462572
+    sha256_raw: 220da61e5d9664de60d94f3c843626cae8669a71d3eaa133cc144736f29cac35
+    sha256_normalized: 439fcab785602ea2908ac59b58ff3b89402dbd94e206356ffec6e8767bdae97e
+    primeira_edicao:
+      date: '2026-08-12'
+      sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
+      file: _edicoes/agua-nao-faturada.pt.2026-08-12.html
+      commit: 6ccf66d93d184e57797f235c4ad33bc841b3a8e5
   - slug: agua-nao-faturada
     lang: en
     edicoes:
       - data: '2026-08-12'
         sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
+        file: _edicoes/agua-nao-faturada.en.2026-08-12.html
+      - data: '2026-11-08'
+        sha256: 31c5d1a6fb8ba0e63113cb84a5165d8ab52774c8ae4f7771a90ab186257659ee
         file: agua-nao-faturada/en.html
-    title: "Água Não Faturada — Portugal's water, what leaks and what was never measured"
+    title: Água Não Faturada — Portugal's water, what leaks and what was never measured
     artifact_url: https://claude.ai/code/artifact/f19de77e-ce10-4cca-b040-07e345258227
     raw_file: _raw/agua-nao-faturada.en.html
-    fetched_utc: 2026-08-12T13:55:12Z
-    bytes_raw: 478227
+    fetched_utc: '2026-08-12T13:55:12Z'
+    bytes_raw: 477379
     bytes_runtime_removed: 17141
-    bytes_normalized: 461086
-    sha256_raw: 1a2f6545100bbba4a604a7590c5c3e81e995823c05ccceba726d01cf9008a988
-    sha256_normalized: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
+    bytes_normalized: 460238
+    sha256_raw: 75e71ea86f1eae75608293276314f36483c1cc08534fcc7a0378e28b17d3a12b
+    sha256_normalized: 31c5d1a6fb8ba0e63113cb84a5165d8ab52774c8ae4f7771a90ab186257659ee
+    primeira_edicao:
+      date: '2026-08-12'
+      sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
+      file: _edicoes/agua-nao-faturada.en.2026-08-12.html
+      commit: 6ccf66d93d184e57797f235c4ad33bc841b3a8e5
   - slug: avaliacao-economica-regional-de-portugal-2026
     lang: pt
     edicoes:
@@ -256,16 +296,24 @@ edicoes:
     edicoes:
       - data: '2026-08-12'
         sha256: 836d148abee1612413fc2bd7f5728b5777e8eb563e4258a304c1493d92cbb2e0
+        file: _edicoes/alentejo-algarve.en.2026-08-12.html
+      - data: '2026-11-08'
+        sha256: b2db9b1bc584b1294c86ab4a0034879fc14a74d54b59f234f3553068929f2626
         file: alentejo-algarve/en.html
-    title: "Alentejo & Algarve — Economy, Society, Strategy"
+    title: Alentejo & Algarve — Economy, Society, Strategy
     artifact_url: https://claude.ai/code/artifact/bc6cb6de-4fa7-4b1f-a67c-733e02f8966a
     raw_file: _raw/alentejo-algarve.en.html
-    fetched_utc: 2026-08-12T13:55:28Z
-    bytes_raw: 79484
+    fetched_utc: '2026-08-12T13:55:28Z'
+    bytes_raw: 79466
     bytes_runtime_removed: 17141
-    bytes_normalized: 62343
-    sha256_raw: 9761a549e7f88c88af4bc93b29168b37d40ff5cb1f71e8d8f2e3e144279aad90
-    sha256_normalized: 836d148abee1612413fc2bd7f5728b5777e8eb563e4258a304c1493d92cbb2e0
+    bytes_normalized: 62325
+    sha256_raw: a4b56c058f8fb8eedbed37f5f98b2c1392074485c5fc2d1d23af4c1d96b15621
+    sha256_normalized: b2db9b1bc584b1294c86ab4a0034879fc14a74d54b59f234f3553068929f2626
+    primeira_edicao:
+      date: '2026-08-12'
+      sha256: 836d148abee1612413fc2bd7f5728b5777e8eb563e4258a304c1493d92cbb2e0
+      file: _edicoes/alentejo-algarve.en.2026-08-12.html
+      commit: 6ccf66d93d184e57797f235c4ad33bc841b3a8e5
   - slug: evolucao-de-portugal-desde-1981
     lang: pt
     edicoes:

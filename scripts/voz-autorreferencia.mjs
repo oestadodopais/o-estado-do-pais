@@ -2,6 +2,10 @@
  * Isenção VOZ-2: onze estudos aguardam a VOZ-2B; edições datadas são arquivo.
  * A lista de ledes é fechada por rota e texto, nunca por classe de CSS.
  */
+import {conferirTextoHtml} from './edicoes-conferir.mjs';
+import {manifestoEd2} from './edicoes-linha-conferir.mjs';
+import {WORKS} from '../src/data/studies.mjs';
+import {CORRECOES_TEXTO} from '../src/data/correcoes.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
@@ -44,7 +48,7 @@ export function medirPagina(html, rota, ledes = {}) {
  const root=parse(html); root.querySelectorAll('script,style').forEach(n=>n.remove());
  const corpo=root.querySelector('body') ?? root;
  const protecao=conferirProtecoes(root,rota,claims);
- const marca=/\[\s*(?:a\s+verificar|to\s+verify)\s*\]/iu.test(corpo.textContent + ' ' + root.querySelectorAll('[data-marca], [aria-label], [title]').map(n=>[n.getAttribute('data-marca'),n.getAttribute('aria-label'),n.getAttribute('title')].join(' ')).join(' '));
+ const marca=/\[\s*(?:a\s+verificar|verificar|to\s+verify|verify)\s*\]/iu.test(corpo.textContent + ' ' + root.querySelectorAll('[data-marca], [aria-label], [title]').map(n=>[n.getAttribute('data-marca'),n.getAttribute('aria-label'),n.getAttribute('title')].join(' ')).join(' '));
  const hit=matchPath(rota);
  if(['metodo','sobre','privacidade',...ISENCAO_RECIBOS.rotas].includes(hit?.key) || (ISENCAO_VOZ2.rotas.includes(hit?.key) && isentaVoz2(hit))) return {marca,protecao,frases:[],ledes:[],isenta:true};
  const h1=corpo.querySelector('h1');
@@ -56,17 +60,23 @@ export function medirPagina(html, rota, ledes = {}) {
  if(hit?.key==='estudo') corpo.querySelectorAll('[data-registo-unidade], .estudo-indice, [data-registo-indice]').filter(n=>!n.closest('.texto-artigo.estudo-leitura, .texto-sumario, .estudo-sumario')).forEach(n=>n.remove());
  if(hit?.key==='estudo' && isentaVoz2(hit)) corpo.querySelectorAll('.texto-artigo.estudo-leitura, .texto-sumario, .estudo-sumario').forEach(n=>n.remove());
  const candidatas=corpo.querySelectorAll('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,div,section,article');
- const frases=[];
+ const frases=[],nosDasFrases=new Map();
  for(const n of candidatas){
   if(n.querySelector('p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,div,section,article'))continue;
   const texto=normal(n.textContent);
-  if(CLASSE.test(texto)) frases.push(...frasesDoTexto(texto));
+  if(CLASSE.test(texto))for(const f of frasesDoTexto(texto)){frases.push(f);if(!nosDasFrases.has(f))nosDasFrases.set(f,[]);nosDasFrases.get(f).push(n);}
  }
  // As ledes editoriais são fechadas por rota e texto. Os campos calculados continuam conferidos pelas suas réguas.
  const ledesEncontradas=lede && !ISENCAO_VOZ2.rotas.includes(hit?.key) && !['data-explicacao-paragrafo','data-semana-frase','data-leitura-do-lugar','data-serie-o-que-conta','data-dossie-campo','data-dossie-ligacao','data-sugestoes-resultado','data-sugestoes-paragrafo','data-sucessor-edicao','data-verbatim'].some(k=>imediato.hasAttribute(k)) && !/^(?:lugar-leitura|serie-|livro-contas|estudo-descricao)/.test(imediato.classNames) ? [lede] : [];
  const ledesNovas=ledesEncontradas.filter(t=>ledes[rota]!==t);
  const captadas=[...new Set(frases)];
- const permitidas=captadas.filter(f=>EXCECOES.some(e=>e.rota===rota && e.frase===f));
+ const correcaoIntegra=(e,frase)=>{
+  if(!e.correcao_textual)return true;
+  if(hit?.key!=='correcoes')return false;
+  const c=e.correcao_textual,el=corpo.querySelector(`[data-texto-estudo="${c.slug}"][data-texto-data="${c.data}"]`);
+  return Boolean(el && nosDasFrases.get(frase)?.every(n=>n===el||n.closest('[data-texto-estudo]')===el) && !conferirTextoHtml(parse(el.outerHTML),hit.lang,WORKS,CORRECOES_TEXTO,manifestoEd2,claims).erros.length);
+ };
+ const permitidas=captadas.filter(f=>EXCECOES.some(e=>e.rota===rota && e.frase===f && correcaoIntegra(e,f)));
  return {marca,protecao,captadas,permitidas,frases:captadas.filter(f=>!permitidas.includes(f)),ledes:ledesEncontradas,ledesNovas};
 }
 export function conferirMapa(xml,livro=claims) {

@@ -1,0 +1,18 @@
+id: coragua-racio-maximo-2026
+value: '35'
+unit: vezes
+source: null
+document: null
+source_url: null
+access_date: '2026-11-08'
+reference_date: '2026'
+excerpt: null
+derivation: Nível médio de encargos domésticos dividido pela tarifa de baixa pressão do Alqueva, arredondado à unidade.
+derivation_en: Average household charge level divided by the Alqueva low pressure tariff, rounded to the nearest integer.
+derived_from:
+  - coragua-ersar-encargo-metro-cubico-2024
+  - coragua-alqueva-baixa-pressao-2026
+check: round ( coragua-ersar-encargo-metro-cubico-2024 / coragua-alqueva-baixa-pressao-2026 , 0 )
+study: onde-esta-a-agua
+note: 'COR-AGUA: origem do número citado no registo da correção de texto.'
+corrections: []

@@ -1,0 +1,21 @@
+id: coragua-historico-eficiencia-85
+value: '85'
+unit: '%'
+source: O Estado do País
+document:
+  title: Edição anterior do estudo agua-nao-faturada
+  edition: 12.08.2026
+  locator: Passagem citada no excerto da edição arquivada
+  kind: html
+  source_sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
+source_url: https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+access_date: '2026-11-08'
+reference_date: '2026-08-12'
+excerpt: Corrigido a 29 de julho de 2026Esta nota apresentava ~95% como eficiência ponderada pelo volume; o rácio não é válido. Resulta de dividir totais com cobertura desigual — cerca de 120 hm³ de consumo pertencem a aproveitamentos sem captação reportada. Comparando apenas os aproveitamentos com ambos os valores, a eficiência ponderada pelo volume é 83–85%, a par da média simples de 75–76%. Só o Alqueva representa cerca de 40% do volume nacional. Citar a média simples isoladamente continua a representar mal o sistema.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: agua-nao-faturada
+note: Valor que a edição anterior imprimia, conservado como prova histórica da correção. Não é apresentado como valor atual nem como confirmação pela fonte externa.
+corrections: []

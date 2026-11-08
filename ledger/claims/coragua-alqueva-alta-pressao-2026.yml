@@ -1,0 +1,24 @@
+id: coragua-alqueva-alta-pressao-2026
+value: 0,0706
+unit: euros por m³
+source: EDIA
+document:
+  title: Edital, Empreendimento de Fins Múltiplos de Alqueva, Blocos de Rega do EFMA
+  edition: '2026'
+  locator: p. 5, Anexo II, alta pressão, valor médio
+  page: 5
+  kind: pdf
+  source_sha256: a6619e4be333ed28d0dd9b835161cf83bece51e27ae549bdbc1d7b9d90664ef4
+source_url: https://www.edia.pt/wp-content/uploads/2026/06/Edital-Campanha-de-2026_VR_signed.pdf#page=5
+access_date: '2026-11-08'
+reference_date: '2026'
+excerpt: Valor médio          0,0706             0,1765            0,3530
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: 'COR-AGUA: transcrição da linha alq-pumped do livro da água no motor; cópia e SHA256 conferidos.'
+corrections: []
+attributed_to:
+  - EDIA

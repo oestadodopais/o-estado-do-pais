@@ -1,0 +1,232 @@
+{
+  "mandato": "COR-AGUA, adenda B",
+  "data": "2026-11-08",
+  "estado": "Trabalho parcial testado, preparado para commit limpo no limite da passagem. A lista aplicada está a zero; o build integral e check:voz não estão verdes.",
+  "codigos": {
+    "check:pre-mandato": 0,
+    "check:frases-reais": 0,
+    "check:paridade": 0,
+    "check:voz": 1,
+    "ledger:check": 0,
+    "check:cruzamento": 0,
+    "check:series": 0,
+    "check:graficos": 0,
+    "check:publicadores": 0,
+    "check:forma-citacao": 0,
+    "check:edicoes": 0,
+    "check:selos": 0,
+    "typecheck": 0,
+    "check:voz-retiradas": 0,
+    "build": 1,
+    "check:frases-compostas": 1,
+    "motor/core.gate": 1,
+    "check:areas": 0,
+    "check:formas": 0,
+    "check:lugares": 0
+  },
+  "camada_0": {
+    "COR-AGUA_aplicada": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "VOZ-2A_aplicada": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "VOZ-2B": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 26,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 9
+    },
+    "VOZ-2B_antes": {
+      "voz": 0,
+      "numeros": 1,
+      "quantificadores": 28,
+      "presenca": 0,
+      "semPar": 7,
+      "semEntrada": 15
+    }
+  },
+  "alteracao_VOZ-2B": "As entradas dos dois estudos da água passaram para a COR-AGUA. Saem as diferenças numéricas e os pares em falta; os quantificadores passam de 28 a 26 e as frases sem entrada de 15 a 9. A isenção integral anterior dos dois estudos mantém-se para nomes e frases fora da lista; não dispensa a régua das marcas.",
+  "leitor": {
+    "onde-esta-a-agua": {
+      "pt_en": "Tarifas do Alqueva e conservação de 2026; nível médio de encargos da ERSAR de 2024; rácio de 19 a 35 vezes; eficiência DGADR de 76%; universo e data do inquérito Gulbenkian explicitados; valores do boletim ilegível retirados. Gráficos iguais nas duas edições.",
+      "pt": "Total nacional do resumo dos planos de bacia incluído.",
+      "en": "Auditoria do Tribunal de Contas incluída; tarifas encontradas no edital substituem a ausência."
+    },
+    "agua-nao-faturada": {
+      "pt_en": "Eficiência de 76%, retirada a média calculada de 83 a 85%; inquérito de 2019, publicado em março de 2020, com universo declarado."
+    },
+    "evora-quinze-anos-cinco-mandatos": {
+      "pt": "As duas marcas do nome legal interino passam à ausência explícita; edição anterior arquivada.",
+      "en": "Texto do estudo conservado; registo bilingue da correção."
+    },
+    "alentejo-algarve": {
+      "en": "Retirada a marca de verificação da frase declarada.",
+      "pt": "Texto do estudo conservado; registo bilingue da correção."
+    }
+  },
+  "marcas": {
+    "varredura_paginas": 9878,
+    "marcador": 0,
+    "protecao": 0,
+    "frases_recusadas": 0,
+    "arquivos": "Apresentação reversível das ausências; os bytes arquivados e os seus SHA256 mantêm-se."
+  },
+  "origens_das_correcoes": {
+    "linhas_site": 17,
+    "fontes_motor": 8,
+    "calculos": 3,
+    "valores_historicos": 6,
+    "provas": "tests/edicoes/origens-coragua.mjs",
+    "selagem": "Frases integrais, valores e datas recompostos; selo com destino inventado, valor alterado e cópia fora da unidade recusados."
+  },
+  "prr": {
+    "evidencia": "design/observatorio/agua/PRR-graficos-2026-08-03.json",
+    "ficheiro": "listagem-de-projetos-prr-20260803.xlsx",
+    "sha256": "0d2a911eaa584432f9681211772a9125af38370fde6bb8018f18046fef671d0c",
+    "linhas": 77,
+    "en": {
+      "total_pago": {
+        "antes": 123642501,
+        "depois": 126759839
+      },
+      "C09-i05_pago": {
+        "antes": 15876128,
+        "depois": 18993466
+      }
+    },
+    "pt": "Valores conservados.",
+    "data_compilacao_conservada": "2026-07-29"
+  },
+  "captacao_4212": {
+    "valor": "4212 hm³",
+    "inalterado": true,
+    "auditoria": "design/especime-v3/medicoes/coragua-2026-11-08/auditoria-proveniencia-b.json",
+    "limite": "O agregado técnico inclui rega e pecuária; as oito cópias primárias regionais não estão no acervo fornecido. A adenda B conserva o número e regista esta falta, sem inventar excerto."
+  },
+  "motor": {
+    "gate": {
+      "codigo": 1,
+      "corridas": 1,
+      "duracao_segundos": 652,
+      "permissao": "PermissionError: [Errno 1] Operation not permitted",
+      "suites_impedidas": [
+        "core.http_test",
+        "publisher.dominios_series_test",
+        "indicators.provas_test",
+        "indicators.refresh_rede_real_test",
+        "core.http_nome_test"
+      ]
+    },
+    "reparacoes_apos_gate": {
+      "core.compor_test": {
+        "codigo": 0,
+        "verificacoes": 23
+      },
+      "publisher.ev2_test": {
+        "codigo": 0,
+        "verificacoes": 14
+      },
+      "motivo": "Duas suites falharam por emendas antigas do bloco do nome interino; os três modelos foram corrigidos e as suites dirigidas repetidas. O gate completo não foi repetido."
+    },
+    "publicadores_test": {
+      "codigo": 0,
+      "verificacoes": 134
+    },
+    "commits": [
+      "6976c54e70b5f4e32e4ec387f0ebddf2ce8e8bb2",
+      "0f468da469a24aaed4510da1df1a44af8900a92e",
+      "8c33b6fbe9b6ad02dfad5446e0f6cafdbee2af2e",
+      "5df4e79456036fba2f6e3ddb520c6aa78a807b43"
+    ]
+  },
+  "sandbox_site": {
+    "check:frases-compostas": {
+      "codigo": 1,
+      "mensagem": "listen EPERM: operation not permitted 127.0.0.1"
+    },
+    "navegador": "Não executado nesta sandbox."
+  },
+  "erros_de_implementacao_corrigidos": [
+    "Importação do gerador YAML ajustada à exportação instalada.",
+    "Completadas definições das famílias, auditoria, travessia do registo de publicadores e âmbito das novas linhas.",
+    "Inventário das oito frases do registo e das duas contagens do livro atualizado pelo HTML.",
+    "Planta de datas distintas restringida aos casos cuja publicação sintética difere da primeira edição guardada.",
+    "Ligada a apresentação reversível das marcas também às edições arquivadas.",
+    "Composição das correções passou a ver as partes em conjunto, para não pôr selos entre número e unidade.",
+    "As dezassete linhas de prova das correções foram declaradas uma a uma em SEM_AREA, como as outras linhas documentais do registo, sem incluir futuros identificadores."
+  ],
+  "custo": {
+    "raiz": {
+      "chamadas_ate_autorizacao_final": 119,
+      "chamadas_com_espera_final": 120,
+      "corridas_proprias_informadas": 23,
+      "builds_antes_deste_fecho": 5
+    },
+    "agente_reguas": {
+      "chamadas_exec_confirmadas_antes_deste_fecho": 31,
+      "corridas_confirmadas_antes_deste_fecho": 13,
+      "chamadas_exec_neste_fecho_ate_esta_escrita": 73,
+      "chamadas_colaboracao_neste_fecho": 10,
+      "builds_neste_fecho": 3,
+      "corridas_iniciadas_neste_fecho": 30
+    },
+    "nota": "Contagens separadas por executor e retoma; a contagem integral das chamadas anteriores ao contexto conservado não está disponível ao agente."
+  },
+  "registos": {
+    "build": "<temporario>/coragua-b-build-selos-agente.log",
+    "frases": "<temporario>/coragua-b-frases-reais-fecho.json",
+    "voz_retiradas": "<temporario>/coragua-b-voz-retiradas-fecho.log",
+    "core_gate": "<temporario>/coragua-b-core-gate.log"
+  },
+  "builds_do_fecho": [
+    {
+      "registo": "<temporario>/coragua-b-build-agente.log",
+      "codigo": 1,
+      "duracao_segundos": 239,
+      "falha": "Inventário das novas correções; corrigido."
+    },
+    {
+      "registo": "<temporario>/coragua-b-build-final-agente.log",
+      "codigo": 1,
+      "duracao_segundos": 257,
+      "falha": "Selo entre número e unidade; corrigido."
+    },
+    {
+      "registo": "<temporario>/coragua-b-build-selos-agente.log",
+      "codigo": 1,
+      "duracao_segundos": 284,
+      "falha": "A7, classificação das dezassete linhas documentais; corrigida."
+    }
+  ],
+  "artefactos_da_paragem_anterior": "Conservados: a remoção estava condicionada a uma corrida integral verde do sítio, que não foi obtida antes do limite.",
+  "pendencias": [
+    "Repetir o build integral depois das correções de integração.",
+    "Resolver L1: 3518 páginas com destinos repetidos fora da mobília, acima do teto 3479; a guarda foi mantida.",
+    "As cinco suites do gate do motor e a conferência de frases compostas continuam impedidas pelas permissões de rede local."
+  ],
+  "check_voz_falha": {
+    "planta": "tests/voz/agenda-voz1.mjs",
+    "conferencia": "lugar",
+    "paginas_destinos_duplicados": 3518,
+    "teto": 3479,
+    "decisao": "Teto não alargado; pendência registada."
+  },
+  "continuacao_do_build": {
+    "registo": "<temporario>/coragua-b-restantes-fecho.log",
+    "codigo": null,
+    "estado": "Em curso no fecho do artefacto; A7 corrigida e conferida. Não substitui uma corrida integral verde."
+  }
+}

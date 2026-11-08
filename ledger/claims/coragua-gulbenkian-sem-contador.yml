@@ -1,0 +1,36 @@
+id: coragua-gulbenkian-sem-contador
+value: '71'
+unit: '%'
+source: Gulbenkian
+document:
+  title: 'O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave'
+  edition: março de 2020
+  locator: p. 57, Quem mede a água com rigor?
+  page: 57
+  kind: pdf
+  source_sha256: 623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd7
+source_url: https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf#page=57
+access_date: '2026-11-08'
+reference_date: '2019'
+excerpt: |-
+  COMO SE PODE MONITORIZAR E GERIR
+   O QUE NÃO SE MEDE COM RIGOR?
+
+
+   71%                                  Não tem contador de saída de água (caudalímetro)
+
+
+
+   QUEM TEM CONTADOR DE SAÍDA DE ÁGUA?
+
+   [Neste inquérito, os agricultores que têm contador (29%) representam
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: 'COR-AGUA: transcrição da linha gulb-71 do livro da água no motor; cópia e SHA256 conferidos.'
+corrections: []
+attributed_to:
+  - Gulbenkian
+  - Ipsos

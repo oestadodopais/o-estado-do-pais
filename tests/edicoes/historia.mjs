@@ -1,3 +1,4 @@
+import './testemunhas.mjs';
 import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {load} from 'js-yaml';
 import {WORKS} from '../../src/data/studies.mjs';import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';
 import {conferirHistoria,conferirTestemunhas} from '../../scripts/historia-edicoes-conferir.mjs';
@@ -31,7 +32,7 @@ for(const [nome,mudar,erro] of [
   mudar(c);const erros=conferirHistoria(c);if(erro)assert(erros.some(e=>e.startsWith(erro)),nome+': '+erros);else assert.deepEqual(erros,[],nome);plantas++;
  }finally{fs.rmSync(raiz,{recursive:true,force:true});}
 }
-const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-2027-capital-europeia-da-cultura','evora-prometido-pago-auditado-2026','evora-orcamentado-pago-devido-2025','evora-2027-prometido-painel-dinheiro','evora-economia-e-dinheiro-publico-de-fora-da-camara'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang)).concat('evora-economia-investidores-portas-abertas-2026/pt');
+const testemunhas=['evora-contas-da-camara-2010-2025','orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-2027-capital-europeia-da-cultura','evora-prometido-pago-auditado-2026','evora-orcamentado-pago-devido-2025','evora-2027-prometido-painel-dinheiro','evora-economia-e-dinheiro-publico-de-fora-da-camara'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang)).concat('evora-economia-investidores-portas-abertas-2026/pt', 'evora-quinze-anos-cinco-mandatos/pt', 'onde-esta-a-agua/pt', 'onde-esta-a-agua/en', 'agua-nao-faturada/pt', 'agua-nao-faturada/en', 'alentejo-algarve/en');
 assert.deepEqual(manifesto.edicoes.filter(e=>e.primeira_edicao).map(e=>e.slug+'/'+e.lang).sort(),testemunhas.sort());
 const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===testemunhas.length);plantas++;
 assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,testemunhas.length);plantas++;

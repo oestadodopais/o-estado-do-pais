@@ -1,0 +1,28 @@
+id: coragua-gulbenkian-universo-hectares
+value: '5'
+unit: hectares
+source: Gulbenkian
+document:
+  title: 'O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave'
+  edition: março de 2020
+  locator: p. 22, Trabalho de campo, estudo quantitativo, universo
+  page: 22
+  kind: pdf
+  source_sha256: 623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd7
+source_url: https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf#page=22
+access_date: '2026-11-08'
+reference_date: '2019'
+excerpt: |-
+  Universo: Agricultores que regam as suas culturas (mesmo que só em parte da sua propriedade), com
+  explorações iguais ou superiores a 5 ha, em Portugal Continental. A sua produção destina-se à venda
+  no mercado nacional e internacional.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: 'COR-AGUA: transcrição da linha gulb-universo-ha do livro da água no motor; cópia e SHA256 conferidos.'
+corrections: []
+attributed_to:
+  - Gulbenkian
+  - Ipsos

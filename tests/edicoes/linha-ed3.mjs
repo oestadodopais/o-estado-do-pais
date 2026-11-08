@@ -46,7 +46,8 @@ const entradas=JSON.parse(fs.readFileSync('src/data/datas-de-publicacao.json','u
 for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
  const edicao=WORKS.find(w=>w.slug===e.slug)?.editions.find(v=>v.lang===e.lang);
  const entrada=entradas.find(v=>v.slug===e.slug&&v.lang===e.lang)?.data;
- if(!edicao||!entrada||entrada===edicao.date)continue;
+ // O caso exige publicação e primeira edição guardada em datas distintas.
+ if(!edicao||!entrada||entrada===edicao.date||entrada===e.edicoes[0].data)continue;
  const original=edicao.date;edicao.date=entrada;
  try{
   const data=e.edicoes[0].data;

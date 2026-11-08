@@ -17,9 +17,14 @@ for(const [lang,rota] of [['pt','/explicacoes/dinheiro-do-estado-2026'],['en','/
  const lede=lang==='pt'?'Corrigir em silêncio é a forma mais barata de mentir.':'Correcting in silence is the cheapest way to lie.';
  morde(`lede reposta (${lang})`,medirPagina(html.replace('</h1>',`</h1><p>${lede}</p>`),rota,ledes).ledesNovas.includes(lede));
  morde(`marcador reposto (${lang})`,medirPagina(html.replace('</main>',`<p>${lang==='pt'?'[a verificar]':'[to verify]'}</p></main>`),rota,ledes).marca);
- const raw='<p>Nome: [a verificar].</p>',apresentado=apresentarAusencias(raw,lang);
- assert.equal(retirarAusencias(apresentado),raw);
- morde(`palavra histórica alterada (${lang})`,retirarAusencias(apresentado.replace('Nome','Intruso'))!==raw);
+ for (const marca of ['a verificar', 'verificar', 'to verify', 'verify']) {
+  const raw=`<p>Nome: [${marca}].</p>`,apresentado=apresentarAusencias(raw,lang);
+  assert.equal(retirarAusencias(apresentado),raw);
+  morde(`marca histórica apresentada (${lang}, ${marca})`, !medirPagina(apresentado, '/estudos/onde-esta-a-agua/documento/2026-08-12').marca);
+  morde(`palavra histórica alterada (${lang}, ${marca})`,retirarAusencias(apresentado.replace('Nome','Intruso'))!==raw);
+ }
+ const reservado='<script>const estado="[verify]";</script><style>/* [verificar] */</style>';
+ assert.equal(apresentarAusencias(reservado,lang),reservado);
  const incompleta=new Map([['planta',{source:'[a verificar]'}]]);
  const root=parse('<html><head><meta name="robots" content="noindex, follow"></head><body><a class="src-chip is-unverified" href="/livro-razao/planta">fonte</a></body></html>');
  assert.deepEqual(conferirProtecoes(root,'/livro-razao/planta',incompleta),[]);
@@ -27,6 +32,13 @@ for(const [lang,rota] of [['pt','/explicacoes/dinheiro-do-estado-2026'],['en','/
  morde(`tracejado retirado (${lang})`,conferirProtecoes(root,'/livro-razao/planta',incompleta).some(e=>e.includes('tracejado')));
  root.querySelector('meta').remove();
  morde(`noindex retirado (${lang})`,conferirProtecoes(root,'/livro-razao/planta',incompleta).some(e=>e.includes('indexável')));
+}
+// COR-AGUA: a isenção da voz dos estudos não isenta as marcas de confirmação.
+for (const rota of ['/estudos/onde-esta-a-agua', '/estudos/onde-esta-a-agua/documento', '/en/studies/onde-esta-a-agua', '/en/studies/onde-esta-a-agua/document']) {
+ for (const marca of ['[verify]', '[a verificar]', '[verificar]', '[to verify]']) {
+  morde(`marca num estudo (${rota}, ${marca})`, medirPagina(`<main><p>Nome: ${marca}.</p></main>`, rota).marca);
+ }
+ assert.equal(medirPagina('<main><p>Nome por confirmar na fonte.</p><script>const estado="[verify]";</script><style>/* [verificar] */</style></main>', rota).marca, false);
 }
 for(const sujeito of ['O sítio','A página','A peça','A explicação','O estudo','O projeto','Aqui'])morde(sujeito,CLASSE.test(`${sujeito} não diz o que aconteceu.`));
 for(const f of ['Esta explicação lê o mapa.','Esta página é uma explicação.','O projeto não compara os números.','The project is not a source.'])morde(f,CLASSE.test(f));

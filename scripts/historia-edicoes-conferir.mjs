@@ -1,3 +1,4 @@
+import {normalizeStudy} from './normalize-study.mjs';
 import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const dataValida=s=>typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s;
@@ -32,6 +33,8 @@ export function conferirTestemunhas(manifesto, ler, {permitirAusencia=false}={})
   const p=e.primeira_edicao;
   if(!/^[a-f0-9]{7,40}$/.test(p.commit??'')){erros.push(`ED1 história: referência inválida ${e.slug}/${e.lang}`);continue;}
   let bytes;try{bytes=ler(p.commit,`studies-src/${e.raw_file}`);}catch{const mensagem=`ED1 história indisponível: ${e.slug}/${e.lang}; a lista e os bytes guardados foram conferidos sem Git.`;if(permitirAusencia)avisos.push(mensagem);else erros.push(mensagem);continue;}
+  // A testemunha é o bruto guardado no commit; só o artefacto tem runtime.
+  if(e.artifact_url){try{bytes=normalizeStudy(bytes);}catch{erros.push(`ED1 história: invólucro inválido ${e.slug}/${e.lang}`);continue;}}
   if(sha(bytes)!==p.sha256)erros.push(`ED1 história: ${e.slug}/${e.lang}`);
  }
  return {erros,avisos};

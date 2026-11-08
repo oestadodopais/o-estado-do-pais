@@ -16,10 +16,13 @@ try{assert(medirPagina(pagina(fica.frase),rota).frases.length,'FICA sem exceçã
 assert.equal(medirPagina(pagina('Research Hub. '+sai.frase),rota+'/2026-10-01').protecao.length,0);
 assert(medirPagina(pagina(sai.frase),rota+'/2026-10-01').isenta);
 const listaB=JSON.parse(fs.readFileSync('design/especime-v3/medicoes/voz2b-2026-11-07/FRASES-VOZ-2B.json','utf8'));
-assert.deepEqual([...ISENCAO_VOZ2.estudos].sort(),[...new Set(listaB.map(f=>f.estudo))].sort());
+// COR-AGUA aplica as entradas da água, mas não retira a isenção integral da VOZ-2B.
+// Os nomes do motor e as frases fora dessa lista mantêm a pendência anterior.
+const aguaComListaAplicada=['agua-nao-faturada','onde-esta-a-agua'];
+assert.deepEqual([...ISENCAO_VOZ2.estudos].sort(),[...new Set([...listaB.map(f=>f.estudo),...aguaComListaAplicada])].sort());
 for(const s of ISENCAO_VOZ2.estudos){const r='/estudos/'+s+'/documento';assert(medirPagina(pagina(sai.frase),r).isenta);assert.equal(medirPagina(pagina('Research Hub'),r).protecao.length,0);assert(medirPagina(pagina('Research Hub'),'/estudos/'+s).protecao.length,'A página do estudo continua coberta pela régua do nome');}
 assert.equal(medirPagina('<style>/* Research Hub house style */</style><p>Fonte.</p>',rota).protecao.length,0);
-console.log('VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, onze estudos e comentário style conservados.');
+console.log('VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, estudos pendentes e comentário style conservados.');
 
 // Adenda H: uma planta por forma acrescentada, pela medição da página.
 const novas=[...['neste projeto','nesta página','nesta explicação','neste estudo','neste documento','nesta leitura'].map(f=>`Nada entra ${f}.`),'Rates do not enter.','Rates did not enter.',...['cannot',"can't",'can’t',"don't",'don’t',"didn't",'didn’t',"won't",'won’t'].map(f=>`It ${f} happen (inference).`)];

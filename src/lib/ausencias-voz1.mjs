@@ -11,7 +11,7 @@ export function apresentarAusencias(html,lang='pt') {
  function anda(n){
   if(n.nodeType===NodeType.TEXT_NODE){
    for(let p=n.parentNode;p;p=p.parentNode)if(['SCRIPT','STYLE','HEAD'].includes(p.tagName))return;
-   const texto=String(n.rawText).replace(/\[(a verificar|to verify)\]/g,(_,marca)=>`<span data-voz1-ausencia="${marca}">${frase}</span>`);
+   const texto=String(n.rawText).replace(/\[(a verificar|verificar|to verify|verify)\]/g,(_,marca)=>`<span data-voz1-ausencia="${marca}">${frase}</span>`);
    if(texto!==n.rawText)mudancas.push({inicio:n.range[0],fim:n.range[1],texto});
   }else for(const f of n.childNodes??[])anda(f);
  }
@@ -19,5 +19,5 @@ export function apresentarAusencias(html,lang='pt') {
 }
 /** @param {string} html */
 export function retirarAusencias(html){
- return html.replace(/<span data-voz1-ausencia="(a verificar|to verify)">(por confirmar na fonte|to be confirmed at the source)<\/span>/g,(_,marca)=>`[${marca}]`);
+ return html.replace(/<span data-voz1-ausencia="(a verificar|verificar|to verify|verify)">(por confirmar na fonte|to be confirmed at the source)<\/span>/g,(_,marca)=>`[${marca}]`);
 }

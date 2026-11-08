@@ -1,0 +1,21 @@
+id: coragua-historico-racio-maximo
+value: '53'
+unit: vezes
+source: O Estado do País
+document:
+  title: Edição anterior do estudo onde-esta-a-agua
+  edition: 12.08.2026
+  locator: Passagem citada no excerto da edição arquivada
+  kind: html
+  source_sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
+source_url: https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+access_date: '2026-11-08'
+reference_date: '2026-08-12'
+excerpt: O preço é a alavanca que não custa nada e não está a ser puxada. A agricultura paga 27 a 53× menos por m³ do que os agregados familiares, cobriu cerca de 7% do custo de capital do Alqueva, e 71% dos agricultores não têm contador contra o qual cobrar.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: onde-esta-a-agua
+note: Valor que a edição anterior imprimia, conservado como prova histórica da correção. Não é apresentado como valor atual nem como confirmação pela fonte externa.
+corrections: []

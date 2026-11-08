@@ -30,7 +30,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
     const chave = `${w.slug}/${d.lang}`;
 
     const e = manifesto.edicoes.find(e => e.slug === w.slug && e.lang === d.lang), p = e?.primeira_edicao;
-    if (!p || !p.file?.startsWith('_edicoes/') || p.file.includes('..') || p.date !== d.date || !/^[a-f0-9]{64}$/.test(p.sha256 ?? '')) {
+    if (!p || !p.file?.startsWith('_edicoes/') || p.file.includes('..') || p.date !== (d.date ?? e.edicoes[0].data) || !/^[a-f0-9]{64}$/.test(p.sha256 ?? '')) {
       erros.push(`ED1 arquivo: ${chave} sem primeira edição válida`); continue;
     }
     const file = path.join(raiz,p.file);

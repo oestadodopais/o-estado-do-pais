@@ -25,15 +25,15 @@ const muda = {...f, frase:f.nova, nova:'A fonte publicou 13.'};
 assert.equal(medirNumeros([muda], iguais).length, 1); provas++;
 // A diferença prévia que a lista deixa ficar também se recusa, sem exceção.
 assert.equal(medirNumeros([{...corrige, classe:'FICA'}], assimetria).length, 1); provas++;
-const estudo = 'onde-esta-a-agua';
+const estudo = 'a-casa-em-portugal-e-na-europa';
 const comExcecao = assimetria.map(d => ({...d, estudo}));
 const ficaNumero = {...corrige, estudo, classe:'FICA'};
-const excecoes = {data:'2026-11-08', retirar:'COR-AGUA', diferencas:[{estudo, tipo:'documento', numeros:assinatura(compara(...assimetria.map(d => d.blocos)))}]};
+const excecoes = {data:'2026-11-08', natureza:'permanente', razao:'A glosa inglesa repete os números das citações portuguesas.', diferencas:[{estudo, tipo:'documento', numeros:assinatura(compara(...assimetria.map(d => d.blocos)))}]};
 assert.equal(medirNumeros([ficaNumero], comExcecao, {excecoes}).length, 0); provas++;
 assert.equal(medirNumeros([ficaNumero], comExcecao.map(d => ({...d, tipo:'página'})), {excecoes}).length, 1); provas++;
 assert.equal(medirNumeros([{...ficaNumero, estudo:'planta'}], assimetria, {excecoes}).length, 1); provas++;
 assert.equal(medirNumeros([ficaNumero], [comExcecao[0], {...comExcecao[1], blocos:['The source published 13.']}], {excecoes}).length, 1); provas++;
-assert.throws(() => medirNumeros([ficaNumero], comExcecao, {excecoes:{...excecoes, retirar:''}})); provas++;
+assert.throws(() => medirNumeros([ficaNumero], comExcecao, {excecoes:{...excecoes, razao:''}})); provas++;
 // A repetição aplicada compara o dist atual, sem voltar a executar a troca.
 assert.equal(medirNumeros([muda], iguais, {aplicada:true}).length, 0); provas++;
 // Uma troca entre blocos não desaparece por conservar o total.
