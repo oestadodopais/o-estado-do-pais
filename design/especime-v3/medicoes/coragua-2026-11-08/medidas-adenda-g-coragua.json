@@ -1,0 +1,158 @@
+{
+  "mandato": "COR-AGUA, adenda G",
+  "motor": "f57cb4b035271e8843242e89b160fed9ef98627e",
+  "lista_sha256": "463c5467af402763bf95c0dc8a3e919f19e5c9be3b3a25e80ea942511ad18ca0",
+  "frases": [
+    {
+      "id": "G-pt-1",
+      "ficheiros": [
+        "studies-src/_raw/onde-esta-a-agua.pt.html",
+        "studies-src/onde-esta-a-agua/pt.html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água 2026 (pt-PT).html"
+      ]
+    },
+    {
+      "id": "G-en-1",
+      "ficheiros": [
+        "studies-src/_raw/onde-esta-a-agua.en.html",
+        "studies-src/onde-esta-a-agua/en.html"
+      ]
+    },
+    {
+      "id": "G-pt-2",
+      "ficheiros": [
+        "studies-src/_raw/onde-esta-a-agua.pt.html",
+        "studies-src/onde-esta-a-agua/pt.html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água 2026 (pt-PT).html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/body_onde_pt.html"
+      ]
+    },
+    {
+      "id": "G-en-2",
+      "ficheiros": [
+        "studies-src/_raw/onde-esta-a-agua.en.html",
+        "studies-src/onde-esta-a-agua/en.html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/onde_body.html"
+      ]
+    },
+    {
+      "id": "G-pt-3",
+      "ficheiros": [
+        "studies-src/_raw/onde-esta-a-agua.pt.html",
+        "studies-src/onde-esta-a-agua/pt.html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água 2026 (pt-PT).html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/body_onde_pt.html"
+      ]
+    },
+    {
+      "id": "G-en-3",
+      "ficheiros": [
+        "studies-src/_raw/onde-esta-a-agua.en.html",
+        "studies-src/onde-esta-a-agua/en.html",
+        "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/onde_body.html"
+      ]
+    }
+  ],
+  "fonte_alojada": {
+    "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2005/rel003-2005-2s.pdf",
+    "endereco_final": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2005/rel003-2005-2s.pdf",
+    "acedido_em": "2026-11-08T07:15:32Z",
+    "cliente": null,
+    "user_agent": null,
+    "ficheiro": "tcontas-rel003-2005-2s.pdf",
+    "estado": 200,
+    "tipo": "application/pdf",
+    "segundos": null,
+    "erro": null,
+    "redirecionamentos": null,
+    "bytes": 4273476,
+    "sha256": "09c649ea0528704aafe8706ded38a70ba3a20ccfbd33c3b5bb8cb24178254004"
+  },
+  "consumo_referencia": {
+    "linha": "ersar-consumo-referencia",
+    "valor": "10",
+    "unidade": "m³ por mês",
+    "fonte": "ERSAR, RASARP 2025, volume 1, p. 410",
+    "prova": "Valor e excerto conferidos na camada textual da cópia selada. O 10 anterior do parágrafo dos preços não resolvia em load_ledger; a linha nova cobre ambas as ocorrências."
+  },
+  "nota_ersar": {
+    "antes": "Figura 55387",
+    "depois": "Figura 553⁸⁷",
+    "prova": "O excerto coincide com a camada textual do PDF ao devolver a chamada ao texto simples. A tipografia distingue a figura da nota.",
+    "campos_motor": [
+      "ersar-bill",
+      "ersar-bill-month",
+      "ratio-lo",
+      "ratio-hi",
+      "ersar-consumo-referencia"
+    ],
+    "linha_sitio": "coragua-ersar-encargo-mensal-2024"
+  },
+  "atribuicoes": {
+    "ATTRIB": 4,
+    "UNDECLARED": 28,
+    "tetos_modificados": false
+  },
+  "limites": [
+    "O motor não tem um corpo inglês deste documento; as duas edições do sítio e os três corpos portugueses do motor foram atualizados.",
+    "As linhas dos números do relatório de 2005 ficam para COR-AGUA-3.",
+    "O core.gate fica para o lugar de direção."
+  ],
+  "erros_corrigidos": [
+    "O aplicador parou no inventário inglês porque os apóstrofos estavam codificados como entidades HTML. Corrigida a correspondência, conservando os comentários dos documentos."
+  ],
+  "conferencias": {
+    "check:frases-reais": {
+      "codigo": 0,
+      "segundos": 9.907
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "segundos": 0.605
+    },
+    "check:voz": {
+      "codigo": 0,
+      "segundos": 254.708
+    },
+    "check:formato": {
+      "codigo": 0,
+      "segundos": 1.251
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "segundos": 27.125
+    },
+    "ledger:check": {
+      "codigo": 0,
+      "segundos": 18.393
+    },
+    "check:selos": {
+      "codigo": 0,
+      "segundos": 10.45
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "segundos": 13.317
+    },
+    "build": {
+      "codigo": 0
+    },
+    "check:pre-mandato": {
+      "codigo": 0
+    },
+    "typecheck": {
+      "codigo": 0
+    },
+    "lista_aplicada": {
+      "codigo": 0
+    }
+  },
+  "custo": {
+    "chamadas_ate_escrita": 43,
+    "ajudantes": 0,
+    "corridas_pedidas": 11,
+    "camada_0_aplicada": 1,
+    "medicao_dirigida_atribuicoes": 1,
+    "operacoes_aplicador": 2
+  }
+}
