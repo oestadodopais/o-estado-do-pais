@@ -20,12 +20,14 @@ excerpt: |-
 
 
                   Figura 553. Evolução do nível médio de encargos tarifários mensais por serviço entre 2015 e 2024
+
+  Em 2022, há uma quebra de série na medida em que os valores apresentados passaram a incluir o IVA e a repercussão dos gastos com as taxas ambientais (Taxa de Recursos Hídricos e Taxa de Gestão de Resíduos).
 derivation: null
 derivation_en: null
 derived_from: []
 check: null
 study: onde-esta-a-agua
-note: 'COR-AGUA: transcrição da linha ersar-bill-month do livro da água no motor; cópia e SHA256 conferidos.'
+note: "COR-AGUA: transcrição da linha ersar-bill-month do livro da água no motor; cópia e SHA256 conferidos. Texto da página 410, com a chamada da nota 87 em expoente, como na folha impressa; a camada de texto cola a chamada ao número da figura. O valor 13,48 é lido visualmente na barra de 2024 da Figura 553."
 corrections: []
 attributed_to:
   - ERSAR

@@ -1081,7 +1081,8 @@ function medeNaPagina(cfg) {
            390 px. O estrago «explicacao-sem-classe» prova que é a classe que os dispensa, e só ela. */
         /* COR-AGUA H, 08.11.2026: a frase de uma correção textual é prosa corrida.
            A área de 44 px cruza a linha vizinha na faixa H2; a entrelinha não
-           se estica (I127). A área inteira a 390 px continua conferida.
+           se estica (I127). A 390 px, a área destes selos não é conferida;
+           a questão COR-AGUA-4 fica aberta.
            «registo-sem-classe» prova que só esta classe dispensa estes selos. */
         noRegistoCorrido: !!el.closest?.('[data-texto-estudo] .registo-frase'),
         naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto, .explicacao-p, [data-texto-estudo] .registo-frase'),

@@ -48,14 +48,26 @@ const listaD=JSON.parse(fs.readFileSync(D,'utf8'));
 let substituidasDG=0;
 for(const f of listaD) for(const g of sucessorasG) if(f.nova?.includes(g.frase)) {f.nova=f.nova.replace(g.frase,g.nova);substituidasDG++;}
 assert.equal(substituidasDG,2);
+// A adenda I divide a conclusão; as três listas anteriores mantêm a sucessão explícita.
+const I = 'design/especime-v3/medicoes/coragua-2026-11-08/FRASES-COR-AGUA-i.json';
+const sucessorasI=JSON.parse(fs.readFileSync(I,'utf8')).filter(f=>f.classe==='REESCREVE');
+const listaG=JSON.parse(fs.readFileSync(G,'utf8'));
+for(const lista of [inicialAgua,listaD,listaG]) {
+ let n=0;
+ for(const f of lista) for(const i of sucessorasI) if(f.nova?.includes(i.frase)) {f.nova=f.nova.replace(i.frase,i.nova);n++;}
+ assert.equal(n,2);
+}
 const pastaAgua=fs.mkdtempSync(path.join(os.tmpdir(),'coragua-sucessao-'));
 try {
  const ficheiro=path.join(pastaAgua,'lista.json');fs.writeFileSync(ficheiro,JSON.stringify(inicialAgua));
  provas.corAgua = conferirLista(ficheiro, 'dist', {aplicada:true});
  const ficheiroD=path.join(pastaAgua,'lista-d.json');fs.writeFileSync(ficheiroD,JSON.stringify(listaD));
  provas.corAguaD=conferirLista(ficheiroD,'dist',{aplicada:true});
+ const ficheiroG=path.join(pastaAgua,'lista-g.json');fs.writeFileSync(ficheiroG,JSON.stringify(listaG));
+ provas.corAguaG=conferirLista(ficheiroG,'dist',{aplicada:true});
 } finally {fs.rmSync(pastaAgua,{recursive:true,force:true});}
-provas.corAguaG = conferirLista(G, 'dist', {aplicada:true});
+provas.corAguaI = conferirLista(I, 'dist', {aplicada:true});
+assert.equal(recusas(provas.corAguaI),0,JSON.stringify(provas.corAguaI));
 assert.equal(recusas(provas.corAguaG),0,JSON.stringify(provas.corAguaG));
 assert.equal(recusas(provas.corAguaD),0,JSON.stringify(provas.corAguaD));
 assert.equal(recusas(provas.corAgua), 0, JSON.stringify(provas.corAgua));
@@ -76,6 +88,6 @@ try {
   assert.equal(provas.inicialCompleta.voz.length, 10);
   assert(recusas(provas.inicialCompleta));
 } finally { fs.rmSync(tmp, {recursive:true, force:true}); }
-for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['COR-AGUA', provas.corAgua], ['COR-AGUA PRR', provas.prr], ['COR-AGUA D', provas.corAguaD], ['COR-AGUA G', provas.corAguaG], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));
+for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['COR-AGUA', provas.corAgua], ['COR-AGUA PRR', provas.prr], ['COR-AGUA D', provas.corAguaD], ['COR-AGUA G', provas.corAguaG], ['COR-AGUA I', provas.corAguaI], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));
 console.log('pré-G: ' + provas.quantificadoresAntesGRaw.length + ' entradas sem campo; ' + provas.quantificadoresNovosAntesG.length + ' entradas novas, ' + provas.frasesNovasAntesG.length + ' frases distintas');
 if (process.argv[2]) fs.writeFileSync(process.argv[2], JSON.stringify(provas, null, 2) + '\n');
