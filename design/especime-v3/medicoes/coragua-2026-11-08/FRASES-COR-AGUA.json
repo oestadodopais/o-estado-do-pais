@@ -1,0 +1,1059 @@
+[
+ {
+  "id": "CA00",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Reconciliado a 12 de agosto de 2026 Esta edição foi reconciliada com a edição inglesa a 12 de agosto de 2026. Um assunto — o boletim semanal de armazenamento da APA, na secção 03, que a edição inglesa retirou a 29 de julho de 2026 e esta edição reconfirmou a 1 de agosto de 2026 — não pôde ser reverificado hoje, por a fonte estar inacessível a partir do ambiente de verificação. As duas edições passam a afirmar exatamente o mesmo, com todo o histórico à vista, e o valor de fim de setembro de 2025 fica assinalado [verify] em ambas.",
+  "razao": "a faixa da reconciliação de 12 de agosto sai; o que mudou fica no registo das correções e na edição anterior guardada"
+ },
+ {
+  "id": "CA01",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Reconciled 12 August 2026 This edition was reconciled with the Portuguese edition on 12 August 2026. The corrections set out below were applied to the Portuguese edition on 29 July 2026 and reach this edition today. One matter did not resolve that way: the APA weekly storage bulletin in section 03, which this edition withdrew on 29 July 2026 and the Portuguese edition reconfirmed on 1 August 2026, could not be re-tested today because the source was unreachable from the checking environment. Both editions now carry the same, weaker claim, with the whole history visible.",
+  "razao": "a faixa da reconciliação de 12 de agosto sai; o que mudou fica no registo das correções e na edição anterior guardada"
+ },
+ {
+  "id": "CA02",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Nenhum é uma declaração governamental de total nacional.",
+  "razao": "o resumo nacional do PGRH dá um total (Quadro 4: 263 e 14 804,71 hm³; Quadro 16: 264); o português dizia que não havia, o inglês dizia uma soma regional não sustentada",
+  "nova": "O resumo nacional do terceiro ciclo dos planos de gestão de região hidrográfica dá um total: 263 grandes barragens e 14 804,71 hm³ nas regiões hidrográficas do Continente (Quadro 4); o mesmo documento conta 264 noutro quadro (Quadro 16)."
+ },
+ {
+  "id": "CA03",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Correction, 29 July 2026: an earlier version said none of these is a government statement of a national total. One is — the PGRH third-cycle national summary, Quadro 4, states 263 large dams and 14,804.71 hm³, and summing the eight regional documents independently reproduces it to the last digit. The disagreement between populations is real; the absence of any official total was not.",
+  "razao": "o resumo nacional do PGRH dá um total (Quadro 4: 263 e 14 804,71 hm³; Quadro 16: 264); o português dizia que não havia, o inglês dizia uma soma regional não sustentada",
+  "nova": "The national summary of the third-cycle river basin management plans gives a total: 263 large dams and 14,804.71 hm³ in the mainland river basin districts (Quadro 4); the same document counts 264 in another table (Quadro 16)."
+ },
+ {
+  "id": "CA04",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Por resolver — histórico abaixoEsta página reportou que o boletim semanal da APA se contradiz: 13 185 hm³ de capacidade total na primeira página contra 13 299,2 hm³ somados linha a linha a partir do seu próprio anexo por albufeira — uma diferença de 114 hm³, 0,87%. O mesmo método aplicado à coluna do volume atual reproduz o valor de destaque do próprio boletim, 10 762 hm³, a menos de arredondamentos. Essa leitura mudou de estado três vezes. É aqui mantida como reportada, mas não reverificada de forma independente — posição mais fraca do que a que qualquer das versões anteriores desta página assumiu. 29 de julho de 2026 — retirada. O boletim não pôde ser obtido: o caminho citado devolveu HTTP 404 com corpo de erro em HTML, a cópia do SNIRH devolveu 403, e não foi encontrado qualquer instantâneo no arquivo da Internet. Um PDF de controlo positivo no mesmo servidor devolveu 200, pelo que a via de acesso estava a funcionar. 1 de agosto de 2026 — reconfirmada. O caminho publicado tinha variado. O boletim voltou a estar acessível e ambos os valores foram reconfirmados por leitura direta da edição de 27 de julho de 2026 — primeira página 13 185 hm³, soma do anexo 13 299,2 hm³, duas derivações independentes. A inconsistência interna manteve-se por resolver na fonte. 12 de agosto de 2026 — não foi possível reverificar. Na reconciliação das duas edições, nenhum dos valores pôde ser novamente testado: apambiente.pt e snirh.apambiente.pt recusaram liminarmente a ligação a partir do ambiente de verificação, o arquivo da Internet também não estava acessível a esse verificador, e a sua quota de pesquisa web estava esgotada. Fetches de controlo a outros sítios públicos devolveram 200, pelo que a via do próprio verificador funcionava — mas uma restrição do lado de quem verifica não é prova sobre o que o boletim diz ou deixa de dizer. Nem confirmada nem refutada.",
+  "razao": "o boletim semanal da APA de 27 de julho de 2026 não se lê hoje (nunca foi arquivado); os valores que só ele sustentava saem"
+ },
+ {
+  "id": "CA05",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Unresolved — history belowThis page has reported that APA's weekly reservoir bulletin contradicts itself: 13,185 hm³ of total capacity on the front page against 13,299.2 hm³ summed line by line from its own per-reservoir appendix — a difference of 114 hm³, 0.87%. That reading has changed status three times. It is carried here as reported, but not independently re-tested — which is a weaker position than either earlier version of this page took. 29 July 2026 — withdrawn. The bulletin could not be retrieved: the cited path returned HTTP 404 with an HTML error body, the SNIRH copy returned 403, and no Internet Archive snapshot was found. A known-positive PDF on the same host returned 200, so the fetch route was working. 1 August 2026 — reconfirmed. The published path had shifted. The bulletin was reachable again, and both figures were reconfirmed by direct reading of the 27 July 2026 edition — front page 13,185 hm³, appendix sum 13,299.2 hm³, two independent derivations. The internal inconsistency remained unresolved in the source. 12 August 2026 — could not be re-tested. Reconciling the two language editions, neither figure could be checked again: apambiente.pt and snirh.apambiente.pt refused the connection outright from the checking environment, the Internet Archive was not reachable to that checker either, and its web-search quota was exhausted. Control fetches to unrelated public sites returned 200, so the checker's own route worked — but a restriction at the checking end is not evidence about what the bulletin does or does not say. Neither confirmed nor refuted.",
+  "razao": "o boletim semanal da APA de 27 de julho de 2026 não se lê hoje (nunca foi arquivado); os valores que só ele sustentava saem"
+ },
+ {
+  "id": "CA06",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A posição atual é confortável e recente, lida do mesmo boletim não reverificado. A 27 de julho de 2026 as albufeiras monitorizadas retinham 10 762 hm³, 81,6% da capacidade indicada pelo boletim [verify] — herdando o estado da nota acima, por vir desse mesmo documento. Três anos antes várias dessas mesmas albufeiras estavam a um décimo da sua.",
+  "razao": "o valor que fica é o do boletim que se lê hoje (31 de outubro de 2026: 9 317 hm³ e 13 215 hm³), sem a marca [verify]",
+  "nova": "No boletim semanal da APA de 31 de outubro de 2026, o volume armazenado era de 9 317 hm³, para uma capacidade total de 13 215 hm³."
+ },
+ {
+  "id": "CA07",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The current position is comfortable and recent, read from the same un-retested bulletin: at 27 July 2026 the monitored reservoirs held 10,762 hm³, 81.6% of the capacity the bulletin states [verify] — inheriting the status of the note above, because it comes from that same document. Three years before that, several of the same reservoirs were at a tenth of theirs.",
+  "razao": "o valor que fica é o do boletim que se lê hoje (31 de outubro de 2026: 9 317 hm³ e 13 215 hm³), sem a marca [verify]",
+  "nova": "In APA's weekly bulletin of 31 October 2026, stored volume was 9,317 hm³, against a total capacity of 13,215 hm³."
+ },
+ {
+  "id": "CA08",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "[verify] — as duas edições divergiamO valor nacional de fim de ano hidrológico mais recente com fonte está em conflito, e o conflito não está resolvido. Esta edição indicava 29 de setembro de 2025, 10 067 hm³, 76% da capacidade, atribuído ao boletim semanal da APA através de um instantâneo do arquivo da Internet de 5 de outubro de 2025. A edição inglesa indicava 30 de setembro de 2025, 10 047 hm³, 76% da capacidade, atribuído ao relatório de ano hidrológico da APA. O mesmo ponto de dados nominal, com data diferente e a 20 hm³ de distância; as duas só concordam nos 76%. Os comparativos do ano anterior também divergiam — esta edição dava 9 314 hm³ a 30 de setembro de 2024, da mesma série arquivada, e a inglesa dava \"70% um ano antes e 68% em outubro de 2023\". A 12 de agosto de 2026 uma tentativa de o resolver contra a fonte primária falhou: a APA e o SNIRH estavam inacessíveis a partir do ambiente de verificação e a via do arquivo da Internet não estava disponível. Nenhum dos valores é adotado aqui. Ambos são mostrados, assinalados, e idênticos nas duas edições até a fonte poder ser lida novamente.",
+  "razao": "o conflito do fim do ano hidrológico de 2025 publicava-se com a marca [verify]; nenhum dos dois valores se conferiu na fonte, e saem os dois"
+ },
+ {
+  "id": "CA09",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "[verify] — the two editions disagreedThe most recent sourceable national end-of-hydrological-year figure is in conflict, and the conflict is not resolved. This edition carried 30 September 2025, 10,047 hm³, 76% of capacity, attributed to APA's hydrological-year report. The Portuguese edition carried 29 September 2025, 10,067 hm³, 76% of capacity, attributed to APA's weekly bulletin via an Internet Archive snapshot of 5 October 2025. The same nominal datapoint, on a different date and 20 hm³ apart; the two agree only on the 76%. The prior-year comparatives differed too — this edition gave \"70% a year earlier and 68% in October 2023\", the Portuguese edition gave 9,314 hm³ at 30 September 2024 from the same archived series. On 12 August 2026 an attempt to settle this against the primary source failed: APA and SNIRH were unreachable from the checking environment and the Internet Archive route was unavailable. Neither figure is adopted here. Both are shown, marked, and identical in both language editions until the source can be read again.",
+  "razao": "o conflito do fim do ano hidrológico de 2025 publicava-se com a marca [verify]; nenhum dos dois valores se conferiu na fonte, e saem os dois"
+ },
+ {
+  "id": "CA10",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Nota de verificação, 1 de agosto de 2026 — superada a 12 de agosto de 2026Esta nota registava que o boletim citado nesta secção esteve irrecuperável a 29 de julho de 2026 (o caminho publicado tinha variado), voltou a estar acessível, e que os valores foram reconfirmados por leitura direta da edição de 27 de julho de 2026 — primeira página 13 185 hm³, soma do anexo 13 299,2 hm³, duas derivações independentes. Continua a valer como registo do que foi lido a 1 de agosto, e está agora incorporada no histórico completo, acima, que lhe acrescenta a tentativa falhada de reverificação de 12 de agosto de 2026. A inconsistência interna mantém-se por resolver na fonte.",
+  "razao": "o relatório mais recente da seca é o de 31 de agosto de 2026 (78 albufeiras; duas abaixo de 40 %, Fronhas 33 % e Vigia 39 %; 36 acima de 80 %), e o relatório dá contagens, não um volume nacional",
+  "nova": "No relatório de 31 de agosto de 2026 do grupo de trabalho da Comissão da Seca, com dados da APA, das 78 albufeiras monitorizadas, duas tinham menos de 40 % do volume total (Fronhas, 33 %, e Vigia, 39 %) e 36 mais de 80 %; o relatório dá contagens, e não um volume nacional."
+ },
+ {
+  "id": "CA11",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Why not something more recentAPA's latest monitoring report, 31 May 2026, gives only counts — 78 reservoirs monitored, 67 above 80% of capacity, none below 40% — and no national volume. The percentages also describe the monitored set, whose capacity is never stated and works out at roughly 13,250 hm³, not the 14,805 hm³ of the large-dam inventory. Dividing one by the other gives 68%, not 76%: they are different populations.",
+  "razao": "o relatório mais recente da seca é o de 31 de agosto de 2026 (78 albufeiras; duas abaixo de 40 %, Fronhas 33 % e Vigia 39 %; 36 acima de 80 %), e o relatório dá contagens, não um volume nacional",
+  "nova": "In the 31 August 2026 report of the Drought Commission's technical working group, with APA data, of the 78 reservoirs monitored, two held less than 40% of total volume (Fronhas, 33%, and Vigia, 39%) and 36 more than 80%; the report gives counts, not a national volume."
+ },
+ {
+  "id": "CA12",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "71% dos agricultores portugueses não têm contador e 61% não pagam a água diretamente.",
+  "razao": "os 71 % e os 61 % são de um inquérito da Gulbenkian feito em 2019 aos agricultores do Continente que regam explorações de 5 ha ou mais, e são o que disseram",
+  "nova": "Num inquérito da Gulbenkian feito em 2019 aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água e 61 % disseram não pagar a água diretamente."
+ },
+ {
+  "id": "CA13",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "71% of Portuguese farmers have no water meter and 61% do not pay for water directly.",
+  "razao": "os 71 % e os 61 % são de um inquérito da Gulbenkian feito em 2019 aos agricultores do Continente que regam explorações de 5 ha ou mais, e são o que disseram",
+  "nova": "In a Gulbenkian survey carried out in 2019 among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter and 61% said they did not pay for water directly."
+ },
+ {
+  "id": "CA14",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "O que existe é a eficiência de transporte por aproveitamento para os 33 maiores aproveitamentos hidroagrícolas públicos: uma média simples de 75,5%, desde 8% no Alvor até 98% em Alfândega da Fé, com o Alqueva em 92,2%.",
+  "razao": "a DGADR dá 76 % (a média do conjunto, mínimos de 8 % e máximos de 98 %) nos 33 aproveitamentos de dimensão relevante; o 75,5 % e o valor do Alqueva não se confirmaram na fonte",
+  "nova": "O que existe é a eficiência na adução e distribuição por aproveitamento, nos 33 aproveitamentos hidroagrícolas de dimensão relevante que a DGADR acompanha: em 2024, a média do conjunto situou-se nos 76 %, com mínimos de 8 % (Alvor) e máximos de 98 % (Alfândega da Fé)."
+ },
+ {
+  "id": "CA15",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "What does exist is per-scheme conveyance efficiency for the 33 largest public irrigation schemes: a simple average of 75.5%, from 8% at Alvor to 98% at Alfândega da Fé, with Alqueva at 92.2%.",
+  "razao": "a DGADR dá 76 % (a média do conjunto, mínimos de 8 % e máximos de 98 %) nos 33 aproveitamentos de dimensão relevante; o 75,5 % e o valor do Alqueva não se confirmaram na fonte",
+  "nova": "What does exist is per-scheme conveyance and distribution efficiency for the 33 irrigation schemes of significant size that DGADR tracks: in 2024 the average across them was 76%, with lows of 8% (Alvor) and highs of 98% (Alfândega da Fé)."
+ },
+ {
+  "id": "CA16",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Duas médias nacionais válidasOs mesmos dados sustentam uma eficiência ponderada pelo volume de ~95% tão bem como a média simples de 75,5%, porque só o Alqueva é cerca de 40% do volume nacional e é muito melhor do que o aproveitamento pequeno mediano. Citar qualquer uma delas sozinha deturpa o sistema.",
+  "razao": "o «~95 %» ponderado pelo volume divide o consumo de todos pela captação de alguns; nenhuma versão do anuário da DGADR dá um valor ponderado"
+ },
+ {
+  "id": "CA17",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Two valid national averagesThe same data supports a ~95% volume-weighted efficiency as well as the 75.5% simple average, because Alqueva alone is about 40% of national volume and far better than the median small scheme. Quoting either alone misrepresents the system.",
+  "razao": "o «~95 %» ponderado pelo volume divide o consumo de todos pela captação de alguns; nenhuma versão do anuário da DGADR dá um valor ponderado"
+ },
+ {
+  "id": "CA18",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Um agregado familiar português paga 1,348 €/m³ na fatura de referência da ERSAR (dados de 2024 — 13,48 €/mês por 10 m³, incluindo taxas e IVA). Na campanha de 2026, um regante do Alqueva paga 0,0706 €/m³ em alta pressão (valor médio) ou 0,0382 €/m³ em baixa pressão (Edital EDIA, Anexo II).",
+  "razao": "a ERSAR chama-lhe o nível médio de encargos tarifários (Figura 553: 13,48 € por mês para 10 m³ em 2024, com o IVA e as taxas ambientais desde 2022); o Alqueva pela alta e pela baixa pressão do Edital de 2026, com a TRH e a componente por hectare a acrescer",
+  "nova": "No Continente, o nível médio de encargos tarifários do abastecimento de água suportado pelo utilizador doméstico foi de 13,48 € por mês para 10 m³ em 2024, com o IVA e a taxa de recursos hídricos (ERSAR, Figura 553), ou seja, 1,348 €/m³ (cálculo). Na campanha de 2026, um regante do Alqueva paga 0,0706 €/m³ em alta pressão (valor médio) ou 0,0382 €/m³ em baixa pressão, a que acrescem a taxa de recursos hídricos e uma componente de conservação por hectare (Edital da EDIA, Anexo II)."
+ },
+ {
+  "id": "CA19",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A Portuguese household pays €1.35 per cubic metre for water supply at the tap — ERSAR's 2024 reference bill of €13.48 a month for 10 m³, inclusive of the fixed charge, the water-resources levy and VAT. An Alqueva irrigator pays €0.0382 on the gravity network and €0.0706 pumped, before levy and VAT, plus a per-hectare charge.",
+  "razao": "a ERSAR chama-lhe o nível médio de encargos tarifários (Figura 553: 13,48 € por mês para 10 m³ em 2024, com o IVA e as taxas ambientais desde 2022); o Alqueva pela alta e pela baixa pressão do Edital de 2026, com a TRH e a componente por hectare a acrescer",
+  "nova": "In mainland Portugal, the average level of monthly water-supply charges borne by the domestic user was €13.48 for 10 m³ in 2024, with VAT and the water-resources levy (ERSAR, Figura 553), that is, €1.348 per m³ (calculation). In the 2026 campaign, an Alqueva irrigator pays €0.0706 per m³ at high pressure (average value) or €0.0382 per m³ at low pressure, plus the water-resources levy and a per-hectare conservation component (EDIA edital, Anexo II)."
+ },
+ {
+  "id": "CA20",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Corrigido a 1 de agosto de 2026Esta secção indicava 1,61 €/m³ para o retalho doméstico e um rácio de 27–53×. O valor de 1,61 € é receita ÷ volume faturado de todos os utilizadores — domésticos e não domésticos, com serviços auxiliares — e não uma tarifa doméstica; com a fatura de referência da ERSAR (1,348 €/m³, dados de 2024) o rácio é 19–35×. Entretanto, as contas auditadas de 2025 da EDIA imparizam integralmente o segmento de água — 2 029 018 255 € brutos, sem nunca ter sido praticada amortização — pelo que a recuperação do capital do Alqueva é 0%; a exploração recupera 72% (26,6 M€ de receitas contra 36,9 M€ de gastos). A edição inglesa recebeu a correção tarifária a 29 de julho; esta edição só hoje.",
+  "razao": "as notas de correção passam ao registo das correções; o que fica como facto está no corpo (o rácio no bloco da conclusão, a imparidade como inferência)"
+ },
+ {
+  "id": "CA21",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Corrected 29 July 2026This page previously said €1.61. That figure is ERSAR's revenue divided by billed volume across domestic and non-domestic users and auxiliary services — not a household tariff. Using it inflated the ratio below. An independent re-derivation caught it.",
+  "razao": "as notas de correção passam ao registo das correções; o que fica como facto está no corpo (o rácio no bloco da conclusão, a imparidade como inferência)"
+ },
+ {
+  "id": "CA22",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Tarifas de retalho e em alta do relatório da ERSAR de 2025 sobre dados de 2024; tarifas do Alqueva do Despacho 3025/2017, tal como reproduzido nas contas da própria EDIA. Repare na escala — é logarítmica, porque um eixo linear torna invisível qualquer barra agrícola.",
+  "razao": "as barras do Alqueva passam aos valores de 2026 do Edital, e a barra doméstica ao nível médio de encargos da ERSAR",
+  "nova": "Os valores da ERSAR são do relatório de 2025, sobre dados de 2024; os do Alqueva, da campanha de 2026 (Edital da EDIA, Anexo II). A escala é logarítmica, porque um eixo linear torna invisível qualquer barra agrícola."
+ },
+ {
+  "id": "CA23",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Retail and bulk tariffs from ERSAR's 2025 report on 2024 data; Alqueva tariffs from Despacho 3025/2017 as reproduced in EDIA's own accounts. Note the scale — it is logarithmic, because a linear axis renders every agricultural bar invisible.",
+  "razao": "as barras do Alqueva passam aos valores de 2026 do Edital, e a barra doméstica ao nível médio de encargos da ERSAR",
+  "nova": "ERSAR figures are from its 2025 report, on 2024 data; Alqueva figures from the 2026 campaign (EDIA edital, Anexo II). The scale is logarithmic, because a linear axis renders every agricultural bar invisible."
+ },
+ {
+  "id": "CA24",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A tarifa do Alqueva tem também um encargo fixo de conservação — 55,22 €/ha/ano em alta pressão e 20,08 € em baixa — que a comparação em €/m³ não inclui.",
+  "razao": "55,22 e 20,08 €/ha eram os valores de 2017; o Edital de 2026 dá 65,83 e 23,94 €/ha",
+  "nova": "A tarifa do Alqueva tem também uma componente de conservação por hectare, 65,83 €/ha em alta pressão e 23,94 €/ha em baixa pressão em 2026, que a comparação em €/m³ não inclui."
+ },
+ {
+  "id": "CA25",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The Alqueva rate also carries a fixed conservation charge — €55.22/ha/year at high pressure, €20.08 at low — which the €/m³ comparison does not include.",
+  "razao": "55,22 e 20,08 €/ha eram os valores de 2017; o Edital de 2026 dá 65,83 e 23,94 €/ha",
+  "nova": "The Alqueva rate also carries a per-hectare conservation component, €65.83/ha at high pressure and €23.94/ha at low pressure in 2026, which the €/m³ comparison does not include."
+ },
+ {
+  "id": "CA26",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A tarifa de 2017 foi substituída. O Despacho 1645/2026, de 10 de fevereiro de 2026, fixa a campanha de 2026 e introduz uma estrutura de penalização por excesso de dotação — o consumo entre 100 e 110% do volume autorizado é cobrado ao preço base +150%, e entre 110 e 125% ao preço base +400%. Os valores base para 2026 constam do Edital da campanha de 2026 da EDIA (Anexo II, «Tarifário para 2026», assinado a 2 de junho de 2026): 0,0706 €/m³ em alta pressão (valor médio; 0,0689–0,0847 por período) e 0,0382 €/m³ em baixa pressão, com componente de conservação de 65,83 €/ha (alta) e 23,94 €/ha (baixa). As bandas de penalização confirmam-se na mesma tabela: consumos >100–110% a 2,5× o preço base e >110–125% a 5×. Uma versão anterior desta nota dizia que os valores de 2026 «não foram obtidos» — estavam publicados no site da EDIA; corrigido a 1 de agosto de 2026, achado por auditoria cega.",
+  "razao": "a EDIA diz que o despacho de 2026 atualizou aspetos e manteve o essencial do de 2017 (não «substituída»); o número e a data do despacho saem (a EDIA dá duas datas); o inglês dizia que os valores de 2026 não se encontraram, e estão no Edital",
+  "nova": "Segundo a EDIA, o tarifário da água para rega conheceu novas regras com um despacho de 2026, que «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017», com uma penalização dos consumos acima da dotação: entre 100 % e 110 % do volume autorizado, 2,5 vezes o preço base; entre 110 % e 125 %, 5 vezes. Os valores base de 2026 estão no Edital da campanha (Anexo II, datado de 2 de junho de 2026): 0,0706 €/m³ em alta pressão (valor médio; 0,0689 a 0,0847 consoante o período) e 0,0382 €/m³ em baixa pressão."
+ },
+ {
+  "id": "CA27",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The 2017 tariff has been superseded. Despacho 1645/2026, 10 February 2026 sets the 2026 campaign and introduces an over-quota penalty structure — consumption at 100–110% of the authorised volume is charged at base price +150%, and at 110–125% at base price +400%. The 2026 base €/m³ figures were not obtained. The structure holds; the exact indexed rates for 2026 are not on this page because they were not found.",
+  "razao": "a EDIA diz que o despacho de 2026 atualizou aspetos e manteve o essencial do de 2017 (não «substituída»); o número e a data do despacho saem (a EDIA dá duas datas); o inglês dizia que os valores de 2026 não se encontraram, e estão no Edital",
+  "nova": "According to EDIA, the irrigation water tariff got new rules with a 2026 despacho, which «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017» (updated some aspects, keeping the essentials of the earlier despacho), with a penalty on consumption above the allocation: from 100% to 110% of the authorised volume, 2.5 times the base price; from 110% to 125%, 5 times. The 2026 base values are in the campaign edital (Anexo II, dated 2 June 2026): €0.0706 per m³ at high pressure (average value; €0.0689 to €0.0847 depending on the period) and €0.0382 per m³ at low pressure."
+ },
+ {
+  "id": "CA28",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Depois de 1999 e 2005, a cobertura seguinte do Tribunal de Contas é o Relatório n.º 4/2016 – 2.ª Secção, auditoria à concessão das centrais hidroelétricas de Alqueva e Pedrógão, com a situação financeira da EDIA em capítulo próprio — três peças com incidência na EDIA em 1577 relatórios do arquivo 1999–2025. Uma versão anterior desta passagem afirmava «não há nada mais recente» do que 2005; corrigido a 1 de agosto de 2026, achado por auditoria cega.",
+  "razao": "o Tribunal de Contas voltou ao Alqueva no Relatório n.º 4/2016 (2.ª Secção), que conclui que a situação financeira da EDIA ficou comprometida; a contagem de 1577 relatórios não se reproduz no índice de hoje; o inglês dizia que não havia nada mais recente do que 2005",
+  "nova": "O Tribunal auditou a EDIA em 1999 e em 2005, e voltou ao Alqueva no Relatório n.º 4/2016 (2.ª Secção), sobre a concessão das centrais hidroelétricas de Alqueva e Pedrógão, que conclui que «a situação financeira da EDIA ficou comprometida»."
+ },
+ {
+  "id": "CA29",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "This is the only Tribunal de Contas coverage of EDIA in the full 1999–2025 archive — two audits among 1,577 reports, in 1999 and 2005. There is nothing more recent.",
+  "razao": "o Tribunal de Contas voltou ao Alqueva no Relatório n.º 4/2016 (2.ª Secção), que conclui que a situação financeira da EDIA ficou comprometida; a contagem de 1577 relatórios não se reproduz no índice de hoje; o inglês dizia que não havia nada mais recente do que 2005",
+  "nova": "The Tribunal audited EDIA in 1999 and 2005, and returned to Alqueva in Relatório n.º 4/2016 (2.ª Secção), on the concession of the Alqueva and Pedrógão hydroelectric plants, which concludes that «a situação financeira da EDIA ficou comprometida» (EDIA's financial situation was compromised)."
+ },
+ {
+  "id": "CA30",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A agricultura paga 27 a 53× menos por m³ do que os agregados familiares, cobriu cerca de 7% do custo de capital do Alqueva, e 71% dos agricultores não têm contador contra o qual cobrar.",
+  "razao": "o rácio é 19 a 35 (1,348 a dividir por 0,0706 e por 0,0382), dito como cálculo; os 7 % são da receita de 2004 a 2006 face ao investimento desses anos, não do custo de capital; a recuperação nula diz-se como leitura da imparidade; os 71 % dizem a quem se aplicam",
+  "nova": "A agricultura paga 19 a 35 vezes menos por m³ do que os utilizadores domésticos (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €). As contas auditadas da EDIA de 2025 registam imparidade sobre a totalidade dos ativos do segmento da água, 2 029 018 255 € em valor bruto, o que indica que as tarifas não estão a recuperar o custo de capital do Alqueva. E, num inquérito da Gulbenkian feito em 2019 aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água."
+ },
+ {
+  "id": "CA31",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Agriculture pays 19–35× less per m³ than households, has recovered none of Alqueva's capital cost — €2.03 bn of water-segment assets are fully impaired in EDIA's own audited accounts — and 71% of farmers have no meter to price against.",
+  "razao": "o rácio é 19 a 35 (1,348 a dividir por 0,0706 e por 0,0382), dito como cálculo; os 7 % são da receita de 2004 a 2006 face ao investimento desses anos, não do custo de capital; a recuperação nula diz-se como leitura da imparidade; os 71 % dizem a quem se aplicam",
+  "nova": "Agriculture pays 19 to 35 times less per m³ than domestic users (calculation: €1.348 divided by €0.0706 and by €0.0382). EDIA's audited 2025 accounts record impairment on all of the water segment's assets, €2,029,018,255 gross, which indicates that the tariffs are not recovering Alqueva's capital cost. And, in a Gulbenkian survey carried out in 2019 among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter."
+ },
+ {
+  "id": "CA32",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "A tarifa do Alqueva de 2026 em €/m³. O Despacho 1645/2026 existe e a sua estrutura de penalização por excesso de dotação foi obtida. Os valores base não.",
+  "razao": "os valores base da tarifa de 2026 estão no Edital da EDIA (Anexo II); a linha sai da lista do que não se conseguiu ler"
+ },
+ {
+  "id": "CA33",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "The 2026 Alqueva tariff in €/m³. Despacho 1645/2026 exists and its over-quota penalty structure was obtained. The base rates were not.",
+  "razao": "os valores base da tarifa de 2026 estão no Edital da EDIA (Anexo II); a linha sai da lista do que não se conseguiu ler"
+ },
+ {
+  "id": "CA34",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "SAI",
+  "frase": "Reconciled 12 August 2026 This edition was reconciled with the Portuguese edition on 12 August 2026. The corrections set out below were applied to the Portuguese edition on 29 July 2026 and reach this edition today. Each one keeps its own dated correction note where it appears.",
+  "razao": "a faixa da reconciliação de 12 de agosto sai; o que mudou fica no registo das correções",
+  "par": "nenhum",
+  "razao_par": "a faixa da reconciliação só existe na edição inglesa deste estudo"
+ },
+ {
+  "id": "CA35",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "71% dos agricultores não têm contador de água — valor de um inquérito Gulbenkian/Ipsos a cerca de 490 explorações (2021), não do Recenseamento Agrícola do INE, que não contém esta estatística (atribuição corrigida a 29 de julho de 2026).",
+  "razao": "os 71 % são de um inquérito da Gulbenkian feito em 2019 (publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 ha ou mais, não de 2021; dizem a quem se aplicam",
+  "nova": "Num inquérito da Gulbenkian feito em 2019 (Ipsos APEME, publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água; o Recenseamento Agrícola do INE não tem esta estatística."
+ },
+ {
+  "id": "CA36",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "71% of Portuguese farmers have no water meter — a figure from a Gulbenkian/Ipsos survey of about 490 holdings (2021), not from INE's Recenseamento Agrícola, which does not contain this statistic (attribution corrected 29 July 2026).",
+  "razao": "os 71 % são de um inquérito da Gulbenkian feito em 2019 (publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 ha ou mais, não de 2021; dizem a quem se aplicam",
+  "nova": "In a Gulbenkian survey carried out in 2019 (Ipsos APEME, published March 2020) among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter; INE's Recenseamento Agrícola does not contain this statistic."
+ },
+ {
+  "id": "CA37",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A DGADR publica a eficiência de transporte real dos 33 maiores aproveitamentos hidroagrícolas públicos: uma média simples de 75–76% em 2024, variando entre 8% no Alvor e 98% em Alfândega da Fé, com o Alqueva nos 92%.",
+  "razao": "a DGADR dá 76 % (a média do conjunto dos 33 aproveitamentos de dimensão relevante, mínimos de 8 % e máximos de 98 %); o 75–76 % e o valor do Alqueva não se confirmaram na fonte",
+  "nova": "A DGADR publica a eficiência na adução e distribuição dos 33 aproveitamentos hidroagrícolas de dimensão relevante que acompanha: em 2024, a média do conjunto situou-se nos 76 %, com mínimos de 8 % (Alvor) e máximos de 98 % (Alfândega da Fé)."
+ },
+ {
+  "id": "CA38",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "DGADR publishes real conveyance efficiency for the 33 largest public irrigation schemes: a simple average of 75–76% in 2024, ranging from 8% at Alvor to 98% at Alfândega da Fé, with Alqueva at 92%.",
+  "razao": "a DGADR dá 76 % (a média do conjunto dos 33 aproveitamentos de dimensão relevante, mínimos de 8 % e máximos de 98 %); o 75–76 % e o valor do Alqueva não se confirmaram na fonte",
+  "nova": "DGADR publishes conveyance and distribution efficiency for the 33 irrigation schemes of significant size that it tracks: in 2024 the average across them was 76%, with lows of 8% (Alvor) and highs of 98% (Alfândega da Fé)."
+ },
+ {
+  "id": "CA39",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Corrigido a 29 de julho de 2026Esta nota apresentava ~95% como eficiência ponderada pelo volume; o rácio não é válido. Resulta de dividir totais com cobertura desigual — cerca de 120 hm³ de consumo pertencem a aproveitamentos sem captação reportada. Comparando apenas os aproveitamentos com ambos os valores, a eficiência ponderada pelo volume é 83–85%, a par da média simples de 75–76%. Só o Alqueva representa cerca de 40% do volume nacional. Citar a média simples isoladamente continua a representar mal o sistema.",
+  "razao": "o «83–85 %» é uma derivação sobre a versão 1.1 do anuário e o «40 % do volume nacional» não se confirmou; fica o valor da fonte, 76 %, e a nota passa ao registo"
+ },
+ {
+  "id": "CA40",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "SAI",
+  "frase": "Corrected 29 July 2026This note gave ~95% as the volume-weighted efficiency; the ratio is not valid. It comes from dividing totals with unequal coverage — about 120 hm³ of consumption belongs to schemes with no reported abstraction. Comparing only the schemes that carry both figures, the volume-weighted efficiency is 83–85%, alongside the 75–76% simple average. Alqueva alone is about 40% of national volume. Quoting the simple average on its own still misrepresents the system.",
+  "razao": "o «83–85 %» é uma derivação sobre a versão 1.1 do anuário e o «40 % do volume nacional» não se confirmou; fica o valor da fonte, 76 %, e a nota passa ao registo"
+ },
+ {
+  "id": "CA41",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "O movimento óbvio é multiplicar os 4212 hm³ da agricultura pela eficiência de 75% da DGADR para obter as perdas do regadio.",
+  "razao": "a eficiência média da DGADR é 76 %, como a fonte a dá",
+  "nova": "O movimento óbvio é multiplicar os 4212 hm³ da agricultura pela eficiência média de 76 % da DGADR para obter as perdas do regadio."
+ },
+ {
+  "id": "CA42",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The obvious move is to multiply agriculture's 4,212 hm³ by DGADR's 75% efficiency to get irrigation losses.",
+  "razao": "a eficiência média da DGADR é 76 %, como a fonte a dá",
+  "nova": "The obvious move is to multiply agriculture's 4,212 hm³ by DGADR's 76% average efficiency to get irrigation losses."
+ },
+ {
+  "id": "V2B-V010",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "FICA",
+  "frase": "Corrected 29 July 2026The industry figure on this page was wrong, and is fixed.",
+  "razao": "aviso de correção datado de um erro publicado; pertence ao registo público de correções, decisão do chamador se fica na página"
+ },
+ {
+  "id": "V2B-V011",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "It reads as an authoritative EU-wide fact and cannot be traced to country data from the document itself, so it is not used here to place Portugal anywhere.",
+  "razao": "facto sobre a afirmação do documento (não rastreável a dados por país); tira a decisão do projeto; sem o quantificador (a camada 0, 08.11.2026)",
+  "nova": "It reads as an authoritative EU-wide fact and cannot be traced to country data from the document itself, so it cannot be used to place Portugal."
+ },
+ {
+  "id": "V2B-V012",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document",
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "No such figure appears on this page.",
+  "razao": "a página a falar de si própria"
+ },
+ {
+  "id": "V2B-V013",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "FICA",
+  "frase": "The 239-year replacement cycle is an inference from rehabilitation volumes, not an asset survey.",
+  "razao": "qualificação de um número como inferência, não fala do projeto"
+ },
+ {
+  "id": "V2B-V014",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document",
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Nothing here is drawn from general knowledge, and no number appears without a document behind it.",
+  "razao": "o projeto a defender-se"
+ },
+ {
+  "id": "V2B-V086",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Where the report of a year covered the basins in aggregate rather than station by station, the cell is drawn faded and marked — that is a limit of the record, not a judgement.",
+  "razao": "legenda de gráfico: o limite é do registo; tira «não um juízo»",
+  "nova": "Where the report of a year covered the basins in aggregate rather than station by station, the cell is drawn faded and marked; that is a limit of the record."
+ },
+ {
+  "id": "V2B-V087",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "The intermediate extraction this page was built from put Crestuma's 327% on the Cedillo row, and carried no figure at all for Crestuma or for Badajoz.",
+  "razao": "erro de extração interna do projeto (processo de construção)"
+ },
+ {
+  "id": "V2B-V088",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "This is an inference from station names in a scrape, not a proven absence: SNIRH returned 403 and the register could not be re-queried directly.",
+  "razao": "fica o facto da fonte (SNIRH devolveu 403); a inferência fica dita sem «scrape»",
+  "nova": "The absence is inferred from station names and remains unproven. SNIRH returned 403, and the register could not be re-queried directly."
+ },
+ {
+  "id": "V2B-V089",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Where a cell reads that no clause was found, that is the result of reading the text, not an omission here.",
+  "razao": "o projeto a defender-se"
+ },
+ {
+  "id": "V2B-V090",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Bars marked derived are sums computed here across published per-region or per-dam tables; no source states them.",
+  "razao": "legenda de gráfico; tira «computed here»; sem o quantificador (a camada 0, 08.11.2026)",
+  "nova": "Bars marked derived are sums of published per-region or per-dam tables, not totals the sources state."
+ },
+ {
+  "id": "V2B-V093",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "That third figure is not used on this page, but it exists, and anyone recomputing this should know why three defensible totals are possible.",
+  "razao": "sem o referente, só resta o projeto a justificar-se; o facto dos três totais deve estar nas frases vizinhas"
+ },
+ {
+  "id": "V2B-V095",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "They are not this plant's, and they are not used as such here.",
+  "razao": "fica o facto (não são desta central); tira «não usados aqui»",
+  "nova": "They are not this plant's."
+ },
+ {
+  "id": "V2B-V096",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "The larger number is not used here.",
+  "razao": "o projeto a dizer o que não usa"
+ },
+ {
+  "id": "V2B-V097",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Each claim was checked against IPMA's own station normals and published documents. \"Not found\" means not found by the methods available, and the probes are recorded in the research file behind this page.",
+  "razao": "método e defesa do projeto"
+ },
+ {
+  "id": "V2B-V098",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Absence here means \"not found by the methods available\", never \"proven not to exist\".",
+  "razao": "método e defesa do projeto"
+ },
+ {
+  "id": "V2B-V099",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "What this page could not settle",
+  "razao": "cabeçalho de autodescrição; fica neutro",
+  "nova": "What remains unsettled"
+ },
+ {
+  "id": "V2B-V100",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "Nothing on this page is advice.",
+  "razao": "o projeto a dizer o que a página não é"
+ },
+ {
+  "id": "V2B-V122",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "SAI",
+  "frase": "É a mesma classe de erro que a página assinala nos valores da hidroeletricidade — detetada ali, não detetada aqui.",
+  "razao": "a página a falar dos seus próprios erros"
+ },
+ {
+  "id": "V2B-V123",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Lê-se como um facto europeu autorizado e não é rastreável a dados por país a partir do próprio documento, pelo que não é usada aqui para situar Portugal em lado nenhum.",
+  "razao": "facto sobre a afirmação do documento; tira a decisão do projeto; sem o quantificador (a camada 0, 08.11.2026)",
+  "nova": "Lê-se como um facto europeu autorizado e não é rastreável a dados por país a partir do próprio documento, pelo que não serve para situar Portugal."
+ },
+ {
+  "id": "V2B-V124",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Segue-se aquilo que esta página não consegue dizer, e porquê.",
+  "razao": "sinalização do que a página não diz"
+ },
+ {
+  "id": "V2B-V125",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O ciclo de 239 anos é uma inferência a partir dos volumes de reabilitação, não um levantamento de ativos.",
+  "razao": "qualificação de um número como inferência"
+ },
+ {
+  "id": "V2B-V126",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O que corrigiu foi a leitura, na secção 04, da afirmação dos 40 M€: esta página confrontava originalmente essa afirmação com o total do C09 no Algarve e concluía que o valor da imprensa era conservador.",
+  "razao": "texto de correção de um erro publicado; pertence ao registo de correções, decisão do chamador"
+ },
+ {
+  "id": "V2B-V127",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Nada aqui provém de conhecimento geral, e nenhum número aparece sem um documento por trás.",
+  "razao": "o projeto a defender-se"
+ },
+ {
+  "id": "V2B-V282",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Onde o relatório de um ano cobriu as bacias em agregado e não secção a secção, a célula é desenhada esbatida e marcada — isso é um limite do registo, não um juízo.",
+  "razao": "legenda de gráfico: o limite é do registo; tira «não um juízo»",
+  "nova": "Onde o relatório de um ano cobriu as bacias em agregado e não secção a secção, a célula é desenhada esbatida e marcada; isso é um limite do registo."
+ },
+ {
+  "id": "V2B-V283",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "A extração intermédia a partir da qual esta página foi construída colocou os 327% de Crestuma na linha de Cedillo, e não trazia valor nenhum para Crestuma nem para Badajoz.",
+  "razao": "erro de extração interna do projeto (processo de construção)"
+ },
+ {
+  "id": "V2B-V284",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Isto é uma inferência a partir de nomes de estações numa extração, não uma ausência provada: o SNIRH devolveu 403 e o registo não pôde ser reinterrogado diretamente.",
+  "razao": "fica o facto da fonte (SNIRH devolveu 403); a inferência fica dita sem «extração»",
+  "nova": "A ausência infere-se dos nomes das estações e não está provada. O SNIRH devolveu 403, e o registo não pôde ser reinterrogado diretamente."
+ },
+ {
+  "id": "V2B-V285",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Quando uma célula diz que não foi encontrada cláusula, isso é o resultado de ler o texto, não uma omissão aqui.",
+  "razao": "o projeto a defender-se"
+ },
+ {
+  "id": "V2B-V286",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "As barras marcadas como derivado são somas calculadas aqui a partir de tabelas publicadas por região ou por barragem; nenhuma fonte as enuncia.",
+  "razao": "legenda de gráfico; tira «calculadas aqui»; sem o quantificador (a camada 0, 08.11.2026)",
+  "nova": "As barras marcadas como derivado são somas de tabelas publicadas por região ou por barragem, e não totais que as fontes enunciem."
+ },
+ {
+  "id": "V2B-V289",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Não são desta central, e não são aqui usados como tal.",
+  "razao": "fica o facto (não são desta central); tira «não são aqui usados»",
+  "nova": "Não são desta central."
+ },
+ {
+  "id": "V2B-V290",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Inferência — assinalada como tal pela própria fonte A Água que Une projeta o consumo agrícola a subir de 3175 hm³ para 4093 hm³ até 2040 — mais 28,9% — no mesmo documento que propõe centenas de milhões em investimento de eficiência.",
+  "razao": "a inferência é da própria fonte A Água que Une"
+ },
+ {
+  "id": "V2B-V291",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "O número maior não é usado aqui.",
+  "razao": "o projeto a dizer o que não usa"
+ },
+ {
+  "id": "V2B-V292",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Cada afirmação foi verificada contra as normais das próprias estações do IPMA e contra documentos publicados. \"Não encontrado\" significa não encontrado pelos métodos disponíveis, e as tentativas estão registadas no ficheiro de investigação por trás desta página.",
+  "razao": "método e defesa do projeto"
+ },
+ {
+  "id": "V2B-V293",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "O que esta página não lhe pode dizer, e o que foi tentado antes de desistir.",
+  "razao": "a página a falar do que não consegue dizer e do que tentou"
+ },
+ {
+  "id": "V2B-V294",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Ausência aqui significa \"não encontrado pelos métodos disponíveis\", nunca \"provado que não existe\".",
+  "razao": "método e defesa do projeto"
+ },
+ {
+  "id": "V2B-V295",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "O que esta página não conseguiu resolver",
+  "razao": "cabeçalho de autodescrição; fica neutro",
+  "nova": "O que fica por resolver"
+ },
+ {
+  "id": "V2B-V296",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Um erro que esta página apanhou em si própria Construir a grelha de cumprimento obrigou a ler o relatório anual da CADC contra a extração de onde ele veio, e os dois não coincidiram.",
+  "razao": "a página a narrar um erro de processo de construção em si própria"
+ },
+ {
+  "id": "V2B-V297",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Nada aqui é retirado de conhecimento geral, e nenhum número aparece sem um documento por trás.",
+  "razao": "o projeto a defender-se"
+ },
+ {
+  "id": "CA-G80",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "What this page cannot tell you, and what was tried before giving up.",
+  "razao": "a página fala de si; sai como na edição portuguesa (o gémeo da V293)"
+ },
+ {
+  "id": "CA-G81",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Nenhum número desses aparece nesta página.",
+  "razao": "a página fala de si; sai como na edição inglesa (o gémeo da V012)"
+ },
+ {
+  "id": "CA-G82",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Esse terceiro valor não é usado nesta página, mas existe, e quem refizer estas contas deve saber porque são possíveis três totais defensáveis.",
+  "razao": "a página fala de si; sai como na edição inglesa (o gémeo da V093)"
+ },
+ {
+  "id": "CA-G83",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Nada nesta página é aconselhamento.",
+  "razao": "a página fala de si; sai como na edição inglesa (o gémeo da V100)"
+ },
+ {
+  "id": "CA-G84",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "SAI",
+  "frase": "One error this page caught in itself Building the compliance grid meant reading the CADC annual report against the extraction it came from, and the two disagreed.",
+  "razao": "a página fala de si; sai como na edição portuguesa, e o resto do bloco lê-se sozinho (o gémeo da V296)"
+ },
+ {
+  "id": "CA-G85",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "SAI",
+  "frase": "What follows are the things this page cannot tell you, and why.",
+  "razao": "a página fala de si; sai como na edição portuguesa (o gémeo da V124)"
+ },
+ {
+  "id": "CA-G86",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "SAI",
+  "frase": "Nenhum número desses aparece nesta página.",
+  "razao": "a página fala de si; sai como na edição inglesa (o gémeo da V2B do inglês)"
+ },
+ {
+  "id": "CA-P87",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "and found that estimated tariff and energy revenue for 2004–2006 of €35 million represented \"apenas cerca de 7% do volume de investimento previsto\" — about 7% of the capital investment planned for the same period.",
+  "nova": "and found that estimated tariff and energy revenue for 2004–2006, €35 million, represented about 7% of the investment planned for those years.",
+  "razao": "a edição inglesa dizia o 7 duas vezes (a citação portuguesa e a glosa); diz-se uma vez, em inglês, sem aspas, porque é uma tradução",
+  "par": "nenhum",
+  "razao_par": "a edição portuguesa já diz este número desta forma; muda só a inglesa, para as duas dizerem os mesmos números"
+ },
+ {
+  "id": "CA-P88",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The sector balance is 2018 because the PGRH third cycle is the most recent full reconstruction that exists;",
+  "nova": "The sector balance is 2018 because the PGRH 3rd cycle is the most recent full reconstruction that exists;",
+  "razao": "o ordinal em algarismos, como o português o escreve (3.º ciclo)",
+  "par": "nenhum",
+  "razao_par": "a edição portuguesa já diz este número desta forma; muda só a inglesa, para as duas dizerem os mesmos números"
+ },
+ {
+  "id": "CA-P89",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The PGRH third cycle is the most recent full reconstruction available; the fourth cycle is not published.",
+  "nova": "The PGRH 3rd cycle is the most recent full reconstruction available; the 4th cycle is not published.",
+  "razao": "os ordinais em algarismos, como o português os escreve (3.º e 4.º ciclos)",
+  "par": "nenhum",
+  "razao_par": "a edição portuguesa já diz este número desta forma; muda só a inglesa, para as duas dizerem os mesmos números"
+ },
+ {
+  "id": "CA-P90",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Against a stated requirement of €5.5bn,",
+  "nova": "Against a stated requirement of €5,500m,",
+  "razao": "o valor na unidade do português (5500 M€)",
+  "par": "nenhum",
+  "razao_par": "a edição portuguesa já diz este número desta forma; muda só a inglesa, para as duas dizerem os mesmos números"
+ }
+]
