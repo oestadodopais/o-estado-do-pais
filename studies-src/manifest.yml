@@ -169,17 +169,17 @@ edicoes:
         sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
         file: _edicoes/onde-esta-a-agua.pt.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 741ec1ecadb5b80050577984841d32feb12e8868e0f878fbf926feefe74f9a29
+        sha256: fd6dcfdd769fe68e6e4c5dc17b00e9d0fae8d8c136f9be93992b2304caaa9acd
         file: onde-esta-a-agua/pt.html
     title: Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia
     artifact_url: https://claude.ai/code/artifact/8cd298f4-908e-4e84-8849-2ea03a3778d0
     raw_file: _raw/onde-esta-a-agua.pt.html
     fetched_utc: '2026-08-12T13:54:56Z'
-    bytes_raw: 267572
+    bytes_raw: 267591
     bytes_runtime_removed: 17141
-    bytes_normalized: 250431
-    sha256_raw: 816bd9c9764f12edd8e3b34820067bd545946cac7a687b43cdc1f9a0325533a2
-    sha256_normalized: 741ec1ecadb5b80050577984841d32feb12e8868e0f878fbf926feefe74f9a29
+    bytes_normalized: 250450
+    sha256_raw: d3f5b2a4bb1dd855868f5a4dd6b6b9d029e336a94f8f674206a16f4623101bd5
+    sha256_normalized: fd6dcfdd769fe68e6e4c5dc17b00e9d0fae8d8c136f9be93992b2304caaa9acd
     primeira_edicao:
       date: '2026-08-12'
       sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
@@ -192,17 +192,17 @@ edicoes:
         sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
         file: _edicoes/onde-esta-a-agua.en.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 6726be12c02cc9a8cfab2854224d4e9d205454afbe0ee905aabf8938047f23cc
+        sha256: 80fc1ffaac9f265197355e5cbbd0bdc0b61b6a1204531fd52775fd1a2735714b
         file: onde-esta-a-agua/en.html
     title: Onde está a água? — Portugal's water, where it comes from, and what autonomy would take
     artifact_url: https://claude.ai/code/artifact/59c36e54-f400-4bed-b532-3b390695cd71
     raw_file: _raw/onde-esta-a-agua.en.html
     fetched_utc: '2026-08-12T13:54:57Z'
-    bytes_raw: 259255
+    bytes_raw: 259288
     bytes_runtime_removed: 17141
-    bytes_normalized: 242114
-    sha256_raw: e504ce7c22777275e6db064c8d4f90dc0b3787d8e92b8ead264f376171b6a8fd
-    sha256_normalized: 6726be12c02cc9a8cfab2854224d4e9d205454afbe0ee905aabf8938047f23cc
+    bytes_normalized: 242147
+    sha256_raw: f818bc8fe381b7316df50d330ad38318fa7115cd0693e9f807157751aa2f3576
+    sha256_normalized: 80fc1ffaac9f265197355e5cbbd0bdc0b61b6a1204531fd52775fd1a2735714b
     primeira_edicao:
       date: '2026-08-12'
       sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db

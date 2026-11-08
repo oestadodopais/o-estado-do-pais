@@ -1,0 +1,37 @@
+[
+ {
+  "id": "J-pt-1",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Para um consumo de 10 m³ por mês, o encargo médio de um utilizador doméstico com a água é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos. Esse valor é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital de 2026 acrescenta-lhe a taxa de recursos hídricos e uma componente de conservação por hectare, e não diz se a tarifa inclui o IVA.",
+  "nova": "Para um consumo de 10 m³ por mês, o encargo médio de um utilizador doméstico com a água é 1,348 € por m³, com a parte fixa, o IVA e a taxa de recursos hídricos. Esse valor é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega nos blocos de rega, até ao volume atribuído (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €); o edital de 2026 acrescenta à tarifa a taxa de recursos hídricos e uma componente de conservação por hectare, e não diz se a tarifa inclui o IVA.",
+  "razao": "«acrescenta-lhe» pode ler-se como juntando a taxa ao valor doméstico, e o inglês «adds the water-resources levy» não diz a quê (a leitura curta da adenda I, achado 10)"
+ },
+ {
+  "id": "J-en-1",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "At a consumption of 10 m³ a month, a household's average water charge is €1.348 per m³, including the fixed part, VAT and the water-resources levy. That is 19 to 35 times Alqueva's per-m³ irrigation tariff in the irrigation blocks, up to the allotted volume (calculation: €1.348 divided by €0.0706 and by €0.0382); EDIA's 2026 tariff notice adds the water-resources levy and a per-hectare conservation component, and does not say whether the tariff includes VAT.",
+  "nova": "At a consumption of 10 m³ a month, a household's average water charge is €1.348 per m³, including the fixed part, VAT and the water-resources levy. That is 19 to 35 times Alqueva's per-m³ irrigation tariff in the irrigation blocks, up to the allotted volume (calculation: €1.348 divided by €0.0706 and by €0.0382); EDIA's 2026 tariff notice adds to the tariff the water-resources levy and a per-hectare conservation component, and does not say whether the tariff includes VAT.",
+  "razao": "«acrescenta-lhe» pode ler-se como juntando a taxa ao valor doméstico, e o inglês «adds the water-resources levy» não diz a quê (a leitura curta da adenda I, achado 10)"
+ },
+ {
+  "id": "J-F1",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Inferência — assinalada como tal pela própria fonte A Água que Une projeta o consumo agrícola a subir de 3175 hm³ para 4093 hm³ até 2040 — mais 28,9% — no mesmo documento que propõe centenas de milhões em investimento de eficiência.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V290): a inferência é da própria fonte A Água que Une"
+ }
+]
