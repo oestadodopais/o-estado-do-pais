@@ -63,10 +63,11 @@ try {
   assert.equal(recusas(conferir([semSelo], documentos, bilingues)), 0); provas++;
   const outraRota = '/estudos/outra/documento';
   const outraPagina = path.join(dist, outraRota, 'index.html'); fs.mkdirSync(path.dirname(outraPagina), {recursive:true});
-  fs.writeFileSync(outraPagina, '<main><p>' + pt.frase + '</p></main>');
+  fs.writeFileSync(outraPagina, '<main><p>' + pt.frase + '</p><p>Este estudo não lê a fonte.</p></main>');
   const noutra = {...pt, paginas:[outraRota]};
   const outras = lerDocumentos([noutra], dist);
   assert.equal(recusas(conferir([noutra], outras.documentos, outras.bilingues)), 0); provas++;
+  assert(outras.documentos.find(d => d.rota === outraRota).soPresenca); provas++;
   // Sem substitutos de executáveis ou funções: só os dados são uma planta.
   const lista = path.join(tmp, 'lista.json'), mandato = path.join(tmp, 'mandato.md');
   fs.writeFileSync(mandato, 'Acrescenta: nada\nFrases: lista.json\n');

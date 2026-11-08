@@ -102,7 +102,7 @@ export function emparelharBlocos(a, b, alinhados) {
 }
 export function conferirBlocos(lista, documentos, bilingues = new Set(documentos.filter(d => d.tipo === 'documento' && documentos.some(g => g.tipo === 'documento' && g.estudo === d.estudo && g.lingua !== d.lingua)).map(d => d.estudo)), aplicada = false) {
   const semPar = new Map(), semEntrada = new Map(), emparelhamentos = new Map();
-  for (const d of documentos) {
+  for (const d of documentos.filter(d => !d.soPresenca)) {
     const entradas = lista.filter(f => f.lingua === d.lingua && (f.estudo === d.estudo || f.paginas?.includes(d.rota)));
     (d.textosVoz ?? d.blocos).forEach((t, i) => {
       for (const frase of recusaVoz(t)) if (!nomeada(frase, entradas, t, aplicada)) {
@@ -110,7 +110,7 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
         semEntrada.set(k, {estudo:d.estudo, lingua:d.lingua, bloco:i, frase});
       }
     });
-    const gemeo = documentos.find(g => g.estudo === d.estudo && g.tipo === d.tipo && g.lingua !== d.lingua);
+    const gemeo = documentos.find(g => !g.soPresenca && g.estudo === d.estudo && g.tipo === d.tipo && g.lingua !== d.lingua);
     if (!gemeo || !bilingues.has(d.estudo)) continue;
     const outras = lista.filter(f => f.lingua === gemeo.lingua && (f.estudo === gemeo.estudo || f.paginas?.includes(gemeo.rota)));
     const chave = d.estudo + '|' + d.tipo;
@@ -133,22 +133,25 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
   return {semPar:[...semPar.values()], semEntrada:[...semEntrada.values()]};
 }
 export function lerDocumentos(lista, dist) {
-  const documentos = [], bilingues = new Set();
-  for (const estudo of new Set([...lista.map(f => f.estudo), ...lista.flatMap(f => f.paginas.map(r => r.match(/^\/(?:estudos|en\/studies)\/([^/]+)/)[1]))])) {
+  const documentos = [], bilingues = new Set(), estudos = new Set(lista.map(f => f.estudo));
+  for (const estudo of new Set([...estudos, ...lista.flatMap(f => f.paginas.map(r => r.match(/^\/(?:estudos|en\/studies)\/([^/]+)/)[1]))])) {
     const lidos = new Set();
     for (const lingua of ['pt', 'en']) for (const tipo of ['documento', 'página']) {
       const rota = (lingua === 'pt' ? '/estudos/' : '/en/studies/') + estudo + (tipo === 'documento' ? (lingua === 'pt' ? '/documento' : '/document') : '');
+      // Uma rota adicional prova a presença; não acrescenta um estudo ao âmbito da lista.
+      const soPresenca = !estudos.has(estudo);
+      if (soPresenca && !lista.some(f => f.paginas.includes(rota))) continue;
       const ficheiro = path.join(dist, rota, 'index.html');
       if (!fs.existsSync(ficheiro)) continue;
       const corpo = parse(fs.readFileSync(ficheiro, 'utf8')); corpo.querySelectorAll('script,style').forEach(n => n.remove());
       const textoComSelos = normal((corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo).textContent);
       corpo.querySelectorAll('.src-chip').forEach(n => n.remove());
       const texto = normal((corpo.querySelector('[data-oedp-moldura]') ?? corpo.querySelector('main') ?? corpo).textContent);
-      documentos.push({estudo, lingua, tipo, rota, textoComSelos, texto, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo), textosVoz:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo, tagsVoz)});
+      documentos.push({estudo, lingua, tipo, rota, soPresenca, textoComSelos, texto, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo), textosVoz:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo, tagsVoz)});
       if (tipo === 'documento') lidos.add(lingua);
     }
-    if (lidos.size === 2) bilingues.add(estudo);
-    if (!documentos.some(d => d.estudo === estudo)) throw new Error(`estudo sem páginas no dist: ${estudo}`);
+    if (estudos.has(estudo) && lidos.size === 2) bilingues.add(estudo);
+    if (estudos.has(estudo) && !documentos.some(d => d.estudo === estudo)) throw new Error(`estudo sem páginas no dist: ${estudo}`);
   }
   return {documentos, bilingues};
 }
