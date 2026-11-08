@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T02:39:14+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "I1",
+   "ficheiro": "built/en/studies/evora-orcamentado-pago-devido-2025/document/index.html",
+   "descricao": "a etiqueta inglesa do documento do orçamentado volta a dizer que a ligação é do projeto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "eca7c00a38746a631e6160c4b8760f6f647df77a322e49ddffd4babe25c056fe",
+   "sha256_depois": "6abd39aefa3f35efd5bd2b6efc4a104db9e21924c6e316172b5f96b5bc1430e7",
+   "contexto_antes": "log\" aria-expanded=\"false\" data-r=\"margem-endividamento-2025\" data-snip=\"1\">€28 192 653</span> margin is a genuine achievement rather than an accounting nicety <strong>(inference; the table is the source's)</strong>.</p>\n<p>Two more things the regulator's file supports, both computed over its own rows and recorded as derivations in the ledger:</p>\n<ul><li>Against the munic",
+   "contexto_depois": "log\" aria-expanded=\"false\" data-r=\"margem-endividamento-2025\" data-snip=\"1\">€28 192 653</span> margin is a genuine achievement rather than an accounting nicety <strong>(inference; the table is the source's, the connection is ours)</strong>.</p>\n<p>Two more things the regulator's file supports, both computed over its own rows and recorded as derivations in the ledger:</p>\n<ul><li>Against the munic"
+  },
+  {
+   "id": "I2",
+   "ficheiro": "built/estudos/evora-orcamentado-pago-devido-2025/index.html",
+   "descricao": "a etiqueta portuguesa da página do orçamentado volta a ter a oração da fonte da tabela",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4a6f165b6200b6b51c9fb07328850c9b2d6f3a1b6a587848df7552a41a99e04b",
+   "sha256_depois": "1aebffd8cc363da08c96bd8fbbcf1a9c89ebdb2194abb0b1aed820dcd352a937",
+   "contexto_antes": "cípio de Évora\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Município de Évora</span></span></a> ser uma conquista genuína em vez de uma delicadeza contabilística (inferência).</p><p data-registo-bloco=\"59\" data-registo-unidade=\"evora-orcamentado-pago-devido-2025/pt#59\">Mais duas coisas que o ficheiro do regulador sustenta:</p><ul class=\"",
+   "contexto_depois": "cípio de Évora\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Município de Évora</span></span></a> ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte).</p><p data-registo-bloco=\"59\" data-registo-unidade=\"evora-orcamentado-pago-devido-2025/pt#59\">Mais duas coisas que o ficheiro do regulador sustenta:</p><ul class=\""
+  },
+  {
+   "id": "I3",
+   "ficheiro": "built/estudos/evora-orcamentado-pago-devido-2025/documento/index.html",
+   "descricao": "as transferências de capital cofinanciadas de 2025 passam de 1 087 287 para 1 078 287 euros numa frase do documento português",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b4136fc05a106b1a2e45fec2f51e85bd3907c682d3a946a72fe0b90b6fecc3cb",
+   "sha256_depois": "857c667245dade2b40f786d5417d2b4c7f644e01250cf6d4bc87899739f49772",
+   "contexto_antes": "inanciados foram orçamentadas em muitas vezes o que chegou: entraram <span class=\"rcpt\" tabindex=\"0\" role=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-r=\"cofinanciados-capital-2025\" data-snip=\"1\">€1 087 287,</span> uma execução de <span class=\"rcpt\" tabindex=\"0\" role=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-r=\"cofinanciados-capital-pct\">11,58%</span> nessa linha. Orçame",
+   "contexto_depois": "inanciados foram orçamentadas em muitas vezes o que chegou: entraram <span class=\"rcpt\" tabindex=\"0\" role=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-r=\"cofinanciados-capital-2025\" data-snip=\"1\">€1 078 287,</span> uma execução de <span class=\"rcpt\" tabindex=\"0\" role=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-r=\"cofinanciados-capital-pct\">11,58%</span> nessa linha. Orçame"
+  },
+  {
+   "id": "I4",
+   "ficheiro": "diff.patch",
+   "descricao": "o código de saída da conferência dos pares deixa de contar as mudanças fora da lista",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e62c213d171fe773e99604960dc83c0072b0851341284d145d9b352204b6c10a",
+   "sha256_depois": "1019dc4781a1d818da09387ba5f4edfe51f3d39517e1c38f383aa48edbba38fa",
+   "contexto_antes": "só o português muda tem de dar um bloco sem par; o mesmo par a mudar nas duas línguas, nenhum.\n+export const codigo = (sem, fora, planta, controlo, estudos) => (sem || fora || planta !== 2 || controlo !== 0 || !estudos ? 1 : 0);\n+// As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.\n+const plantasFora =",
+   "contexto_depois": "só o português muda tem de dar um bloco sem par; o mesmo par a mudar nas duas línguas, nenhum.\n+export const codigo = (sem, fora, planta, controlo, estudos) => (sem || planta !== 2 || controlo !== 0 || !estudos ? 1 : 0);\n+// As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.\n+const plantasFora ="
+  },
+  {
+   "id": "I5",
+   "ficheiro": "built/en/studies/evora-orcamentado-pago-devido-2025/index.html",
+   "descricao": "a página inglesa do orçamentado diz que o ano por assinar é «o único» facto de governação a reter",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7c5df0b8e4f1ca53a7880654983557a761f2dd0925ee4891da456012a7a8ee79",
+   "sha256_depois": "0ec66df69c1b490982342d21333e3e2135cd2b99e1f285b289fb62d748be1d53",
+   "contexto_antes": "the investment named after its city <strong>(inference)</strong>.</p><p data-registo-bloco=\"82\" data-registo-unidade=\"evora-orcamentado-pago-devido-2025/en#82\"><strong>The unsigned year is the governance fact to keep.</strong> The 2024 accounts were rejected <span class=\"texto-figura\" data-registo=\"evora-orcamentado-pago-devido-2025/en#82.0\" data-registo-row=\"clc-2024-votos-favor\">2<",
+   "contexto_depois": "the investment named after its city <strong>(inference)</strong>.</p><p data-registo-bloco=\"82\" data-registo-unidade=\"evora-orcamentado-pago-devido-2025/en#82\"><strong>The unsigned year is the only governance fact to keep.</strong> The 2024 accounts were rejected <span class=\"texto-figura\" data-registo=\"evora-orcamentado-pago-devido-2025/en#82.0\" data-registo-row=\"clc-2024-votos-favor\">2<"
+  }
+ ]
+}

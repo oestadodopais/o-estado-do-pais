@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T01:35:20+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "H1",
+   "ficheiro": "built/en/studies/evora-orcamentado-pago-devido-2025/document/index.html",
+   "descricao": "o documento inglês do orçamentado volta a dizer a frase que o português tirou (o par da V192)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6abd39aefa3f35efd5bd2b6efc4a104db9e21924c6e316172b5f96b5bc1430e7",
+   "sha256_depois": "976a82dcec0fa91a6ec8bfaaac378a1055be42bfb37062d7ed4720c068b5912a",
+   "contexto_antes": "t table stops at accounts year 2023. DGAL's per-municipality file reaches 2024. The two are never mixed in one sentence below without their years attached.</p>\n<p>Where it reasons beyond what a source states, the sentence says <strong>(inference)</strong>.</p>\n<hr>\n<h2>The year in four numbers</h2>\n<table><thead><tr><th>​</th><th>​</th></tr></thead><tbody><tr><td>Budget for 2025, after revisions​</td><td class=\"num\">",
+   "contexto_depois": "t table stops at accounts year 2023. DGAL's per-municipality file reaches 2024. The two are never mixed in one sentence below without their years attached.</p>\n<p>One thing this document can do that the accounts alone cannot: it puts the municipality's own numbers, the regulator's independent series and the national distribution side by side. Where it reasons beyond what a source states, the sentence says <strong>(inference)</strong>.</p>\n<hr>\n<h2>The year in four numbers</h2>\n<table><thead><tr><th>​</th><th>​</th></tr></thead><tbody><tr><td>Budget for 2025, after revisions​</td><td class=\"num\">"
+  },
+  {
+   "id": "H2",
+   "ficheiro": "built/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/index.html",
+   "descricao": "no bloco do Turismo de Portugal reposto, a linha da qualificação da oferta passa de 80% para 60% do investimento elegível",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "726945625f93d06fc2419c1aefb13d76588ee3126a0bd5e71ea61e4a8440f0fc",
+   "sha256_depois": "e54e0d809c8752b597889d58a7b17a585914e590819d7cc86b484bc73e90c6aa",
+   "contexto_antes": "esas do Portugal 2030 acima.</p>\n<p><strong>Para uma empresa de turismo</strong> — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a ent",
+   "contexto_depois": "esas do Portugal 2030 acima.</p>\n<p><strong>Para uma empresa de turismo</strong> — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 60% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a ent"
+  },
+  {
+   "id": "H3",
+   "ficheiro": "diff.patch",
+   "descricao": "a conferência dos pares deixa de falhar por uma mudança fora da lista (o código de saída sem «fora»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "061e1a07ec5229b901226623b45dbd1dc6cd7c95c6ab0d45f5441cdf44251eb9",
+   "sha256_depois": "1f7c545ae3a29d5136a8e2746f542185d98567f886b395ee9c99dd7d83c39e56",
+   "contexto_antes": "tudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 1), controlo ${controlo} (tem de ser 0)`);\n+process.exitCode = total || fora || planta !== 1 || controlo !== 0 || !estudos ? 1 : 0;\ndiff --git a/design/especime-v3/medicoes/voz2a-adenda-h-2026-11-08/assercao-pendente.json b/design/especime-v3/med",
+   "contexto_depois": "tudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 1), controlo ${controlo} (tem de ser 0)`);\n+process.exitCode = total || planta !== 1 || controlo !== 0 || !estudos ? 1 : 0;\ndiff --git a/design/especime-v3/medicoes/voz2a-adenda-h-2026-11-08/assercao-pendente.json b/design/especime-v3/med"
+  },
+  {
+   "id": "H4",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o gerador do livro do estudo 14 cita «conta de gerência» em vez da frase publicada («conta de execução»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "eaa4cf3ac8d506e7b8393a2b65615b3220bd769912a46f448c456a3aaa91c992",
+   "sha256_depois": "a781424aa3ec786c36bccdd7740bc7fe67d51d7d87c4c82ebe91901a54ed4f66",
+   "contexto_antes": "},\n+    {'id': 'so-previsionais', 'quotes': ['Pela mesma razão: só se leram documentos previsionais', 'For the same reason: only forecast documents were read', 'none of them is an execution account', 'nenhum deles é uma conta de execução'], 'review': 'A quantificação abrange os documentos municipais que o estudo lista como lidos, todos previsionais. Confere-se relendo um a um os documentos municip",
+   "contexto_depois": "},\n+    {'id': 'so-previsionais', 'quotes': ['Pela mesma razão: só se leram documentos previsionais', 'For the same reason: only forecast documents were read', 'none of them is an execution account', 'nenhum deles é uma conta de gerência'], 'review': 'A quantificação abrange os documentos municipais que o estudo lista como lidos, todos previsionais. Confere-se relendo um a um os documentos municip"
+  },
+  {
+   "id": "H5",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "o cabeçalho português de Évora 2027 mostra a edição nova como 07.11.2026 (o datetime fica 2026-11-08)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2fe2994c752d60ea9c8dfa141fe0784e808ff3ca9157b31f46b0fd9e8a27fd4a",
+   "sha256_depois": "a0d7e8c4fefaa5f6111c601fb6bf204cf01eaaae16807f567c361defe54e9e39",
+   "contexto_antes": "ital-europeia-da-cultura/documento\" hreflang=\"pt-PT\"><time datetime=\"2026-11-08\" data-edicao-lista-data data-estudo-atualizacao data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">08.11.2026</time></a> <span data-voz>(atual)</span></span></span></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livr",
+   "contexto_depois": "ital-europeia-da-cultura/documento\" hreflang=\"pt-PT\"><time datetime=\"2026-11-08\" data-edicao-lista-data data-estudo-atualizacao data-nonledger=\"data-editorial\" data-data-origem=\"edicoes.data\">07.11.2026</time></a> <span data-voz>(atual)</span></span></span></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livr"
+  }
+ ]
+}

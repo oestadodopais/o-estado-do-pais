@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-07T23:40:08+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "N1",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/documento/index.html",
+   "descricao": "uma frase reescrita de Évora 2027 muda um facto: o Portal BASE recusou «os dois pedidos» em vez dos três",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8e48862d585ef2fe17a2f9e7e3b40182f8ee19ad6addc85b92f822fd0d8b2e9b",
+   "sha256_depois": "1d2dba1c284840451057ce8186d924438f2580f58d5deee76e08dac21b62854a",
+   "contexto_antes": "thead><tr><th>a pergunta​</th><th>porque não tem resposta​</th></tr></thead><tbody><tr><td>Que contratos a associação celebrou, com quem e por quanto?​</td><td>O Portal BASE recusou os três pedidos, sempre com a mesma página de um dispositivo de segurança, e nenhum dos documentos lidos lista contratos, adjudicatários ou valores. O estudo <a href=\"/estudos/evora-e",
+   "contexto_depois": "thead><tr><th>a pergunta​</th><th>porque não tem resposta​</th></tr></thead><tbody><tr><td>Que contratos a associação celebrou, com quem e por quanto?​</td><td>O Portal BASE recusou os dois pedidos, sempre com a mesma página de um dispositivo de segurança, e nenhum dos documentos lidos lista contratos, adjudicatários ou valores. O estudo <a href=\"/estudos/evora-e"
+  },
+  {
+   "id": "N2",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/document/index.html",
+   "descricao": "o documento inglês de Évora 2027 volta a falar de si: «What this document does not answer.»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a18b2cae758ead2bd0804b8bacb677f47627f1c7d62af14bb5c9c574a79fc7d4",
+   "sha256_depois": "9185e1565377306966e480a75fba65a2fe29ef3d76ca96ac65dc9b9436a0c187",
+   "contexto_antes": "ment:</strong> the European panel writes in English and the acts of the Portuguese State write in Portuguese, and translating either would be rewriting it.</p>\n<p><strong>What remains unanswered.</strong> What Évora 2027 has cost in total. What contracts the association signed and with whom. How much the municipality actually transferred. What the 2027 programme",
+   "contexto_depois": "ment:</strong> the European panel writes in English and the acts of the Portuguese State write in Portuguese, and translating either would be rewriting it.</p>\n<p><strong>What this document does not answer.</strong> What Évora 2027 has cost in total. What contracts the association signed and with whom. How much the municipality actually transferred. What the 2027 programme"
+  },
+  {
+   "id": "N3",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a entrada portuguesa de Évora 2027 no registo diz «Estudo corrigido» em vez de «Estudo atualizado»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "292151c4d18bfdd5ec3760da8b44add6e393c8412f119262a178184bec9f80ed",
+   "sha256_depois": "86e868a9614e927aaafaee5ae784d19aff31448ff5d92e7f909d20c049a3ce73",
+   "contexto_antes": "datetime=\"2026-11-07\" data-texto-campo=\"data\">07.11.2026</time><a class=\"registo-lugar\" href=\"/municipios/evora\">Évora</a><div class=\"registo-mudanca-corpo\"><p><span data-texto-campo=\"kind\">Estudo atualizado</span></p><p><span data-nonledger=\"titulo-de-estudo\" data-texto-campo=\"titulo\" data-titulo-publicado=\"pt\">Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos</span>: <span data-texto-campo=\"frase\" data-voz>Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.</span> <a data-texto-porta=\"primeira\" data-voz href=\"/estudos/evora-",
+   "contexto_depois": "datetime=\"2026-11-07\" data-texto-campo=\"data\">07.11.2026</time><a class=\"registo-lugar\" href=\"/municipios/evora\">Évora</a><div class=\"registo-mudanca-corpo\"><p><span data-texto-campo=\"kind\">Estudo corrigido</span></p><p><span data-nonledger=\"titulo-de-estudo\" data-texto-campo=\"titulo\" data-titulo-publicado=\"pt\">Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos</span>: <span data-texto-campo=\"frase\" data-voz>Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.</span> <a data-texto-porta=\"primeira\" data-voz href=\"/estudos/evora-"
+  },
+  {
+   "id": "N4",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a asserção do livro do estudo 04 cita uma oração que a frase publicada não diz («nenhum dos registos»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ae498c0569b878bf9bb936e71e272b549bfbd01c0fd4135413a6cdbb64dd2e62",
+   "sha256_depois": "57ab31c63b6c943aa9b6fbad9577aa4422b6f202cb888405c0c026040253912f",
+   "contexto_antes": "c..b2ff240 100644\n--- a/content/04 Évora Public Money/ledger.json\t\n+++ b/content/04 Évora Public Money/ledger.json\t\n@@ -4858,6 +4858,13 @@\n      ]\n     ]\n    }\n+  },\n+  {\n+   \"id\": \"hospital-registos-sem-identidade-declarada\",\n+   \"quotes\": [\n+    \"nenhuma das fontes afirma que são a mesma entidade\"\n+   ],\n+   \"review\": \"Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes.\"\n   }\n  ],\n  \"assertion_ignores\": [\n@@ -4877,4 +4884,4 @@\n  \"adjacency_",
+   "contexto_depois": "c..b2ff240 100644\n--- a/content/04 Évora Public Money/ledger.json\t\n+++ b/content/04 Évora Public Money/ledger.json\t\n@@ -4858,6 +4858,13 @@\n      ]\n     ]\n    }\n+  },\n+  {\n+   \"id\": \"hospital-registos-sem-identidade-declarada\",\n+   \"quotes\": [\n+    \"nenhum dos registos afirma que são a mesma entidade\"\n+   ],\n+   \"review\": \"Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes.\"\n   }\n  ],\n  \"assertion_ignores\": [\n@@ -4877,4 +4884,4 @@\n  \"adjacency_"
+  },
+  {
+   "id": "N5",
+   "ficheiro": "diff.patch",
+   "descricao": "a isenção da régua da voz ganha um estudo da VOZ-2A (as contas da Câmara), doze em vez de onze",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "54604dcd587d5e6b60719983a1349963f6f8ed4fdbe4dc1fb34de63b6897747b",
+   "sha256_depois": "173a9539f6d325692fb87806a19063e8d7c3e11745a5e1fdc5b9e8393a997a8c",
+   "contexto_antes": "ortão de HTML']};\n+export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2B', estudos:[\"a-casa-em-portugal-e-na-europa\", \"agua-nao-faturada\", \"alentejo-algarve\", \"avaliacao-economica-regional-de-portugal-2026\", \"evolucao-de-portugal-desde-1981\", \"evora-os-pelouros-quem-os-teve-o-que-fizeram\", \"evora-",
+   "contexto_depois": "ortão de HTML']};\n+export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2B', estudos:[\"a-casa-em-portugal-e-na-europa\", \"agua-nao-faturada\", \"evora-contas-da-camara-2010-2025\", \"alentejo-algarve\", \"avaliacao-economica-regional-de-portugal-2026\", \"evolucao-de-portugal-desde-1981\", \"evora-os-pelouros-quem-os-teve-o-que-fizeram\", \"evora-"
+  }
+ ]
+}
