@@ -1,0 +1,87 @@
+{
+  "mandato": "COR-AGUA, adenda J",
+  "sitio_conferido": "50b9f89516472a737de0e7436c963308ac28a603",
+  "motor": "9cdd2328e19d0d9854a8ded6da526084d9364ca9",
+  "aplicacao": [
+    {
+      "ficheiro": "studies-src/_raw/onde-esta-a-agua.pt.html",
+      "entrada": "J-pt-1",
+      "cartao": "o encargo médio doméstico por metro cúbico, face à tarifa por metro cúbico nos blocos de rega do Alqueva",
+      "numeros_fontes_guioes_comentarios_inalterados": true
+    },
+    {
+      "ficheiro": "studies-src/_raw/onde-esta-a-agua.en.html",
+      "entrada": "J-en-1",
+      "cartao": "a household's average charge per cubic metre, against the per-cubic-metre tariff in Alqueva's irrigation blocks",
+      "numeros_fontes_guioes_comentarios_inalterados": true
+    },
+    {
+      "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água 2026 (pt-PT).html",
+      "entrada": "J-pt-1",
+      "cartao": "o encargo médio doméstico por metro cúbico, face à tarifa por metro cúbico nos blocos de rega do Alqueva",
+      "numeros_fontes_guioes_comentarios_inalterados": true
+    },
+    {
+      "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/body_onde_pt.html",
+      "entrada": "J-pt-1",
+      "cartao": "o encargo médio doméstico por metro cúbico, face à tarifa por metro cúbico nos blocos de rega do Alqueva",
+      "numeros_fontes_guioes_comentarios_inalterados": true
+    },
+    {
+      "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/onde_body.html",
+      "entrada": "J-en-1",
+      "cartao": "a household's average charge per cubic metre, against the per-cubic-metre tariff in Alqueva's irrigation blocks",
+      "numeros_fontes_guioes_comentarios_inalterados": true
+    }
+  ],
+  "conferencias": {
+    "check:pre-mandato": {
+      "codigo": 0,
+      "segundos": 37.218
+    },
+    "typecheck": {
+      "codigo": 0,
+      "segundos": 0.409
+    },
+    "build": {
+      "codigo": 0,
+      "segundos": 709.0339226252399
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "segundos": 9.505
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "segundos": 0.554
+    },
+    "check:voz": {
+      "codigo": 0,
+      "segundos": 234.879
+    },
+    "check:formato": {
+      "codigo": 0,
+      "segundos": 1.21
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "segundos": 25.418
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "segundos": 13.094
+    },
+    "lista_aplicada": {
+      "codigo": 0,
+      "segundos": 0.432
+    }
+  },
+  "custo": {
+    "chamadas_ate_escrita": 19,
+    "corridas_conferencias": 10,
+    "operacoes_aplicacao": 1,
+    "operacoes_normalizacao": 1,
+    "ajudantes": 0
+  },
+  "limite": "Gate do motor adiado nos commits, como pedido. Não houve corrida inteira nem capturas."
+}
