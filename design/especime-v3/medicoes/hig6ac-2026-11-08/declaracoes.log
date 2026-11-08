@@ -1,0 +1,9 @@
+V030 existe=True cobertura=True
+V032 existe=True cobertura=True
+V040 existe=True cobertura=True
+V152 existe=True cobertura=True
+V182 existe=True cobertura=True
+V188 existe=True cobertura=False
+V310 existe=True cobertura=True
+V311 existe=True cobertura=True
+declarações: 8 recusadas: V188

@@ -1,0 +1,144 @@
+{
+  "motor_commit": "cf5bd5b28b26d814315a5440d0b7dc1038e7ca1e",
+  "resultados": [
+    {
+      "id": "V030",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+      "assercao": "base-sem-contratos",
+      "existe": true,
+      "oracoes": [
+        "none of the documents read lists contracts, contractors or values"
+      ],
+      "citacoes": [
+        "nenhum dos documentos lidos lista contratos, adjudicatários ou valores",
+        "none of the documents read lists contracts, contractors or values"
+      ],
+      "cobertura": true
+    },
+    {
+      "id": "V032",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+      "assercao": "so-previsionais",
+      "existe": true,
+      "oracoes": [
+        "none of them is an execution account"
+      ],
+      "citacoes": [
+        "Pela mesma razão: só se leram documentos previsionais",
+        "For the same reason: only forecast documents were read",
+        "none of them is an execution account",
+        "nenhum deles é uma conta de execução"
+      ],
+      "cobertura": true
+    },
+    {
+      "id": "V040",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "lingua": "en",
+      "livro": "content/14 Évora 2027/ledger.json",
+      "assercao": "so-previsionais",
+      "existe": true,
+      "oracoes": [
+        "none of them is an execution account"
+      ],
+      "citacoes": [
+        "Pela mesma razão: só se leram documentos previsionais",
+        "For the same reason: only forecast documents were read",
+        "none of them is an execution account",
+        "nenhum deles é uma conta de execução"
+      ],
+      "cobertura": true
+    },
+    {
+      "id": "V152",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+      "assercao": "base-sem-contratos",
+      "existe": true,
+      "oracoes": [
+        "nenhum dos documentos lidos lista contratos, adjudicatários ou valores"
+      ],
+      "citacoes": [
+        "nenhum dos documentos lidos lista contratos, adjudicatários ou valores",
+        "none of the documents read lists contracts, contractors or values"
+      ],
+      "cobertura": true
+    },
+    {
+      "id": "V182",
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lingua": "pt",
+      "livro": "content/18 Évora Economia e Dinheiro de Fora/ledger.json",
+      "assercao": "hospital-registos-sem-identidade-declarada",
+      "existe": true,
+      "oracoes": [
+        "nenhuma das fontes afirma que são a mesma entidade"
+      ],
+      "citacoes": [
+        "nenhuma das fontes afirma que são a mesma entidade",
+        "neither source states that they are the same entity"
+      ],
+      "cobertura": true
+    },
+    {
+      "id": "V188",
+      "estudo": "evora-economia-investidores-portas-abertas-2026",
+      "lingua": "pt",
+      "livro": "content/06 Évora Economy/ledger.json",
+      "assercao": "e2027-no-consolidated-budget",
+      "existe": true,
+      "oracoes": [
+        "Não existe nenhum orçamento consolidado oficial da Évora 2027"
+      ],
+      "citacoes": [
+        "No official consolidated budget for Évora 2027 exists",
+        "Não existe nenhum orçamento consolidado oficial da Évora"
+      ],
+      "cobertura": false
+    },
+    {
+      "id": "V310",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+      "assercao": "so-previsionais",
+      "existe": true,
+      "oracoes": [
+        "nenhum deles é uma conta de execução"
+      ],
+      "citacoes": [
+        "Pela mesma razão: só se leram documentos previsionais",
+        "For the same reason: only forecast documents were read",
+        "none of them is an execution account",
+        "nenhum deles é uma conta de execução"
+      ],
+      "cobertura": true
+    },
+    {
+      "id": "V311",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "lingua": "pt",
+      "livro": "content/14 Évora 2027/ledger.json",
+      "assercao": "so-previsionais",
+      "existe": true,
+      "oracoes": [
+        "nenhum deles é uma conta de execução"
+      ],
+      "citacoes": [
+        "Pela mesma razão: só se leram documentos previsionais",
+        "For the same reason: only forecast documents were read",
+        "none of them is an execution account",
+        "nenhum deles é uma conta de execução"
+      ],
+      "cobertura": true
+    }
+  ],
+  "recusadas": [
+    "V188"
+  ]
+}
