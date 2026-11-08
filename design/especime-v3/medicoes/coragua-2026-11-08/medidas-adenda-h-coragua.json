@@ -1,0 +1,303 @@
+{
+  "mandato": "COR-AGUA, adenda H",
+  "estado": "paragem pelo §2: área inteira a 390 px não confirmada em todos os selos",
+  "cabeca_conferida": "466ac89994b07ffb8f472fba7b4e294d93f59c56",
+  "familias": {
+    "rotas": {
+      "correcoes/index.html": 21,
+      "en/corrections/index.html": 21
+    },
+    "selos": 42,
+    "fora_do_registo": 0,
+    "retirados": 0
+  },
+  "selos_390": {
+    "medidos": 42,
+    "passam": 28,
+    "nao_passam": 14,
+    "casos": [
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «fonte · DGADR»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/span:0/a:1",
+        "caixa": {
+          "w": 52.5,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 53.8,
+          "h": 26.5
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «linha · O Estado do País»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/span:2/a:1",
+        "caixa": {
+          "w": 51.5,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 52.3,
+          "h": 26.3
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «fonte · Gulbenkian»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/a:5",
+        "caixa": {
+          "w": 52.5,
+          "h": 14
+        },
+        "toque": {
+          "w": 53.3,
+          "h": 44.7
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «fonte · Gulbenkian»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/span:6/a:1",
+        "caixa": {
+          "w": 52.5,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 53.3,
+          "h": 44.7
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «linha · O Estado do País»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:11/div:2/p:1/span:1/span:1/a:1",
+        "caixa": {
+          "w": 51.5,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 52.3,
+          "h": 26.3
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «fonte · DGADR»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:11/div:2/p:1/span:1/span:10/a:1",
+        "caixa": {
+          "w": 52.5,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 53.6,
+          "h": 44.7
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/pt",
+        "largura": 390,
+        "marca": "a.src-chip «fonte · Marques, Cruz & Associados»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:46/div:2/p:1/span:1/a:3",
+        "caixa": {
+          "w": 52.5,
+          "h": 14
+        },
+        "toque": {
+          "w": 53.3,
+          "h": 44.7
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «source · DGADR»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/span:0/a:1",
+        "caixa": {
+          "w": 61,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 61.9,
+          "h": 26.3
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «source · Gulbenkian»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/a:5",
+        "caixa": {
+          "w": 61,
+          "h": 14
+        },
+        "toque": {
+          "w": 61.9,
+          "h": 27
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «source · Gulbenkian»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:1/div:2/p:1/span:1/span:6/a:1",
+        "caixa": {
+          "w": 61,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 61.9,
+          "h": 26.3
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «row · O Estado do País»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:11/div:2/p:1/span:1/span:0/a:1",
+        "caixa": {
+          "w": 40.9,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 44.7,
+          "h": 26.3
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «row · O Estado do País»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:11/div:2/p:1/span:1/span:1/a:1",
+        "caixa": {
+          "w": 40.9,
+          "h": 19.2
+        },
+        "toque": {
+          "w": 44.7,
+          "h": 26.3
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «source · ERSAR»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:11/div:2/p:1/span:1/a:5",
+        "caixa": {
+          "w": 61,
+          "h": 14
+        },
+        "toque": {
+          "w": 62.2,
+          "h": 25.4
+        },
+        "exigido": 44,
+        "ok": false
+      },
+      {
+        "chave": "correcoes/en",
+        "largura": 390,
+        "marca": "a.src-chip «source · Marques, Cruz & Associado»",
+        "caminho": "div:1/main:1/section:4/div:1/div:0/section:0/ol:1/li:46/div:2/p:1/span:1/a:4",
+        "caixa": {
+          "w": 61,
+          "h": 14
+        },
+        "toque": {
+          "w": 62.2,
+          "h": 25.4
+        },
+        "exigido": 44,
+        "ok": false
+      }
+    ]
+  },
+  "H2": {
+    "nome": "H2",
+    "passa": true,
+    "prova": "fichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 58 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 35643 alvos medidos, 23670 deles com 44 px a 390, 505 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 447 são selos dentro de leitura, sinopse ou registo em prosa corrida, 16 destes no registo, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (38× a.src-chip «source · Ministério das Finanças» · 61.9×27.5 de toque (caixa 61×19); 33× a.src-chip «source · calculated» · 61.9×27.5 de toque (caixa 61×19); 25× a.src-chip «source · Ministério das Finanças» · 61.9×44.7 de toque (caixa 61×19); 18× a.src-chip «fonte · Ministério das Finanças» · 53.3×27.5 de toque (caixa 52.5×19)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 9 estão numa página de leitura, que o brief põe fora deste bloco (3× a «A economia de Évora e o dinheiro p» · 88×22.3 de toque (caixa 437.4×45.5); 3× a «The economy of Évora and the publi» · 88×22.3 de toque (caixa 434.8×68); 2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18 de toque (caixa 248.4×36.6)) e 49 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (4× a «Cada mudança fica no registo das c» · 88×27.8 de toque (caixa 532.2×54.6); 4× a.discussao-literal «O Orçamento do Estado para 2027 é » · 88×27.5 de toque (caixa 517.7×82.3); 4× a.discussao-literal «Ora, esta verba do PRR foi excecio» · 88×27.5 de toque (caixa 461.3×54.6); 3× a.discussao-literal «estão perfeitamente alinhadas com » · 88×20.5 de toque (caixa 454×82.3)) · 7821 não medido(s)"
+  },
+  "planta": {
+    "nome": "registo-sem-classe · os selos do registo fora da prosa corrida",
+    "celulas": [
+      "H2"
+    ],
+    "mudou": true,
+    "caiu": [
+      "H2"
+    ],
+    "nomeadas": [
+      "H2"
+    ],
+    "verdesAntes": [
+      "H2"
+    ],
+    "bom": true
+  },
+  "conferencias": {
+    "check:voz": {
+      "codigo": 0,
+      "segundos": 289.177
+    },
+    "check:formato": {
+      "codigo": 0,
+      "segundos": 1.537
+    },
+    "check:selos": {
+      "codigo": 0,
+      "segundos": 11.272
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "segundos": 17.641
+    },
+    "typecheck": {
+      "codigo": 0,
+      "segundos": 0.645
+    },
+    "alvos": {
+      "codigo": 0,
+      "segundos": 648.715
+    },
+    "build": {
+      "codigo": 0
+    }
+  },
+  "modo_alvos": "check:alvos:registo conserva as três conferências de check:alvos e acrescenta --vermelhos --so registo-sem-classe. O perfil dirigido coragua-h executa-o pelo escrivão, sem corrida inteira.",
+  "limite": "O código 0 da H2 não demonstra a área inteira de cada selo a 390 px: doBuraco só inclui os alvos que já passam a essa largura. Não se alterou essa regra nem se alargou a dispensa.",
+  "custo": {
+    "chamadas_ate_escrita": 32,
+    "corridas": 8,
+    "ajudantes": 0
+  }
+}
