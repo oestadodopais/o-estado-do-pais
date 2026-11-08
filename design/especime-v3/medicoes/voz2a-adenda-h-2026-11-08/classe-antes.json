@@ -1,0 +1,1163 @@
+{
+  "paginas_lidas": 26,
+  "paginas_com_ocorrencias": 19,
+  "ocorrencias": 231,
+  "fora_fica": 174,
+  "frases": [
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "frase": "Cada número desta página é substituído a partir de um livro-razão de afirmações no momento da construção — nenhum número foi escrito à mão.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "frase": "O que este documento pode e não pode dizer",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "frase": "Não existe PIB da cidade, e nenhum é inventado aqui.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "frase": "Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa, e deliberadamente não são impressos aqui.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "frase": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade — se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial, e não é afirmado aqui.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "frase": "API JSON do INE (códigos de indicador e URLs exatos no livro-razão ao lado deste documento), lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR através do servidor `pt-public-money` deste repositório, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento — cada uma com URL, data de acesso e excerto verbatim no `ledger.json`.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "Ler o orçamento como despesa é a maneira mais fácil de se enganar sobre um município, e aqui a distância não é pequena.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "A votação ocorre meses antes das eleições autárquicas de outubro de 2025; este documento regista o facto e as datas e não retira deles conclusão política nenhuma.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "Uma coisa que este documento consegue e as contas sozinhas não conseguem: pôr lado a lado os números do próprio município, a série independente do regulador e a distribuição nacional.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência a partir das três linhas acima; o relatório afirma cada linha, não o padrão).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "O companheiro chega a 2015 e encontra aí 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência; o valor é do próprio relatório de 2015).",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números deste documento: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência; a tabela é da fonte, a ligação é nossa).",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente, e nada neste documento trata os comparativos de 2024 como se certificasse.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "No papel, o balanço municipal cobre o passivo várias vezes; a pressão nestas contas nunca foi sobre o património líquido, é sobre caixa e tempo (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "O dinheiro do PRR atribuído a Évora flui esmagadoramente através de entidades que não o município — a universidade, o serviço de saúde, organismos de habitação, agências nacionais — e a parte que cabe à Câmara gastar, até agora, na sua maior parte não chegou (inferência; cada valor está fundamentado acima, a junção é nossa).",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "Por isso o tamanho do orçamento de 2026, €110 840 577, de novo maior, prevê muito pouco por si; o primeiro número a verificar nas contas de 2026 é a taxa de execução, não o total (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "A opinião limpa de 2025 devolve a testemunha externa daqui para a frente; não a devolve para trás, e cada tabela plurianual deste documento herda esse asterisco na coluna de 2024.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "frase": "O que os portões não conseguem verificar — se uma frase lê mal a sua fonte — foi revisto por agentes que não escreveram este documento, contra os ficheiros originais.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "Reading the budget as spending is the single easiest way to be wrong about a municipality, and the gap here is not small.",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "The vote sits months before the October 2025 local elections; this document records the fact and the dates and draws no political conclusion from them.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "One thing this document can do that the accounts alone cannot: it puts the municipality's own numbers, the regulator's independent series and the national distribution side by side.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference from the three lines above; the report states each line, not the pattern).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "The 2025 opinion being clean means the books recovered their external witness; it does not certify 2024 retroactively, and nothing in this document treats the 2024 comparatives as if it did.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "The municipal balance sheet is solvent many times over on paper; the pressure in these accounts has never been about net worth, it is about cash and time (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "That register republishes daily with no history, so those figures are that snapshot's, and are carried here with their original provenance.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality — the university, the health service, housing bodies, national agencies — and the part that is the Câmara's to spend has, so far, mostly not arrived (inference; each figure is sourced above, the join is ours).",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "So the size of the 2026 budget, €110 840 577, larger again, predicts very little by itself; the first number worth checking in the 2026 accounts is the execution rate, not the total (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table in this document inherits that asterisk on its 2024 column.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "frase": "What the gates cannot check — whether a sentence misreads its source — was reviewed by agents that did not write this document, against the raw files.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Estão aqui, e não numa nota de rodapé, porque cada um deles é a diferença entre uma frase verdadeira e uma frase falsa.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Não chega para dizer o que o Tribunal concluiu — as constatações, as recomendações e os montantes em euros estão dentro dos PDF, e nada aqui abre um deles.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Não existe um valor da UE para um município, e este documento não o fabrica.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Uma coisa que este documento consegue fazer e que uma fonte isolada não consegue: põe lado a lado a promessa, o pagamento e o registo de auditoria de um mesmo sítio.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "A fonte devolve 23 linhas e não 22, porque um organismo detém dinheiro de Évora sob dois papéis diferentes — uma contagem de linhas aqui não é uma contagem de organismos.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "O próprio município não é o canal principal do dinheiro do PRR no seu território (inferência, a partir das duas tabelas acima: a câmara aparece na camada de beneficiários com menos contratado do que a universidade, e não aparece de todo na camada de gestores).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Não reconcilia com os totais dos projetos e a sua coluna de localização significa outra coisa, pelo que não é usada aqui.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Nada aqui diz que Évora reporta de forma diferente de qualquer outro sítio; diz que as datas de conclusão do registo não podem ser lidas como entrega observada em sítio algum.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado (inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Está aqui como contexto sobre o mesmo território, não como uma segunda medida do mesmo dinheiro: os apoios do plano de recuperação e os preços de contratos são quantidades diferentes, e este documento nunca as soma.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "O script reporta essa forma em vez de a fundir, porque nada do que aqui está disponível consegue distinguir um prefixo de acrónimo de um organismo genuinamente diferente.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade).",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Essas 4 não são tudo o que o Tribunal publica — um limite que este documento mede em vez de mencionar, abaixo.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "O que esse instrumento conclui, e em que medida difere em profundidade de uma auditoria, não é algo que este documento lhe possa dizer — o catálogo regista a família e o título, e nada além disso.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Porque é que um silêncio aqui não é um silêncio",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Dois pontos cegos, ambos medidos e não presumidos, e ambos encontrados primeiro por um agente que estava proibido de ler este documento.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "A afirmação honesta é, por isso, estreita: nas quatro famílias que este documento lê, nada publicado depois de 2019 nomeia Évora no título ou no resumo.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Um resultado nulo aqui significa «não encontrado no catálogo por este método», nunca «não auditado».",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Fica do lado de cá da linha que a primeira secção traça — onde assentam o dinheiro e o risco é uma leitura de registos; se alguém geriu bem ou mal exigiria as auditorias que este documento não abre.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Na leitura acima, são estes os sinais de alarme credíveis, porque a coluna dos pagamentos — o campo mais duro — é a que diz que nada se moveu (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "O que sobrevive é o ponto prático: um cidadão que vá à procura de um exame desses anos não o encontrará pela pesquisa deste catálogo, o que quer que de facto tenha sido examinado (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Dinheiro, risco de entrega e um rasto pesquisável fino concentram-se no mesmo canto da mesma cidade (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Até lá, a aterragem honesta é a que esta secção tentou dar: não um veredicto, mas um mapa de onde procurar veredictos primeiro (inferência).",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "O que este documento não responde",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Nada aqui lê as constatações de uma auditoria.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Este documento pesquisou quatro famílias de produtos por título e resumo, e consegue nomear um piso, não um total.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Uma pergunta de contabilidade ao nível da câmara precisa dos dados de finanças municipais da DGAL, que este documento não usa.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "frase": "Este documento foi escrito ao abrigo da regra de entregáveis do Research Hub: um registo de afirmações antes da prosa, reconciliação mecânica de cada valor impresso contra esse registo, uma verificação de atribuição de que cada valor é creditado à instituição que a sua linha nomeia, uma verificação de asserções sobre afirmações quantificadas, e verificação formulada para refutar por agentes que não o escreveram.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "It is not enough to say what the Tribunal concluded — the findings, the recommendations and the euro amounts are inside the PDFs, and nothing here opens one.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "There is no EU figure for a municipality, and this document does not manufacture one.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "One thing this document can do that a single source cannot: it puts the promise, the payment and the audit record of one place side by side.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies.",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "The municipality itself is not the main channel for PRR money in its own territory (inference, from the two tables above: the câmara appears in the recipient layer with less contracted than the university, and not at all in the manager layer).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "It does not reconcile to project totals and its location column means something different, so it is not used here.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "Nothing here says Évora reports differently from anywhere else; it says the register's completion dates cannot be read as observed delivery anywhere.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed (inference: the source records approval, date and payment, and does not say why).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "It is included here as context on the same territory, not as a second measure of the same money: recovery-plan grants and contract prices are different quantities, and this document never adds them.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "The script reports that shape rather than merging it, because nothing available here can distinguish an acronym prefix from a genuinely different body.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity).",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "Those 4 are not everything the Tribunal publishes — a limit this document measures rather than mentions, below.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "What that instrument concludes, and how it differs in depth from an audit, is not something this document can tell you — the catalogue records the family and the title, and nothing more.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "Why a silence here is not a silence",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "The honest statement is therefore narrow: in the four families this document reads, nothing published after 2019 names Évora in its title or abstract.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "A nil result here means \"not found in the catalogue by this method\", never \"not audited\".",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "It stays on this side of the line the first section draws — where the money and the risk sit is a reading of registers; whether anyone managed well or badly would need the audits this document does not open.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "Under the reading above these are the credible red flags, because the payment column — the harder field — is the one saying nothing has moved (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "What survives is the practical point: a citizen who goes looking for an examination of those years will not find it through this catalogue's search, whatever may in fact have been examined (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "Until then the honest landing is the one this section has tried to give: not a verdict, but a map of where verdicts should be sought first (inference).",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "What this document does not answer",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "Nothing here reads an audit's findings.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "This document searched four product families by title and abstract, and can name a floor, not a total.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "A council-level accounting question needs DGAL's municipal finance data, which this document does not use.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "frase": "This document was written under the Research Hub deliverable rule: a claims ledger before prose, mechanical reconciliation of every printed figure against it, an attribution check that a figure is credited to the institution its row names, an assertion check on quantified claims, and refutation-framed verification by agents that did not write it.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "À data desta leitura, o documento de programação publicado cobre 2026 e não 2027, e a última notícia da associação é de agosto de 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Quem julga é o painel, não este projeto.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Não há aqui um estado de cumprimento, não há cores, não há contagem de promessas cumpridas contra promessas por cumprir.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Um compromisso sem valor e sem data não é verificável, e este documento di-lo em vez de o converter num juízo.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Cada um entra neste documento com a construção que o seu próprio documento declara, e nunca somados.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "É por isso que aparecem duas formas de separar os milhares e duas formas de escrever o mesmo valor: o dossiê de candidatura escreve o espaço, o plano de atividades da associação escreve o ponto, e este documento não uniformiza nenhum dos dois.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Taxas de cofinanciamento não entram.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Tudo o que está aqui vem das 53 leituras registadas a 2026-09-15, listadas uma a uma no fim; 43 responderam e 10 não.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "O que este documento não responde.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Não há inferência.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Onde o painel não escreveu sobre um objeto, a célula di-lo; onde o juízo do painel não tem promessa correspondente, a célula da candidatura diz em que páginas se procurou.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "À data desta leitura, a última notícia publicada pela associação é de agosto de 2026 e não anuncia o programa de 2027.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "As percentagens não entram.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Este projeto não os soma e não escolhe entre eles.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "porque não tem resposta aqui",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "O Portal BASE recusou os três pedidos desta leitura, sempre com a mesma página de um dispositivo de segurança, e nenhum documento aqui lido lista contratos, adjudicatários ou valores.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Uma leitura anterior deste projeto, no estudo «Évora — Prometido, Pago, Auditado 2026», conseguiu ler o portal e conta na sua janela os contratos da associação; o cruzamento das duas leituras fica para o bloco dos contratos",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Não está publicado à data desta leitura.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "Possível em princípio, porque os editais dizem o sentido do voto, mas exige ler as atas e os editais das reuniões de câmara, o que esta leitura não fez",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "O decreto-lei que cria a associação obriga a divulgar a identidade dos membros dos órgãos sociais, e esta página é essa divulgação.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "frase": "O resumo sha256, os bytes e o tipo de conteúdo de cada resposta estão no manifesto das cópias, que acompanha este estudo.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro",
+      "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro",
+      "frase": "À data desta leitura, o documento de programação publicado cobre 2026 e não 2027, e a última notícia da associação é de agosto de 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "At the date of this reading, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "The panel judges, this project does not.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "There is no delivery status here, no colours, no tally of promises kept against promises broken.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "A commitment with no value and no date cannot be checked, and this document says so rather than turning it into a judgement.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Each enters this document with the construction its own source declares, and never added together.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "That is why two thousands separators and two spellings of the same value appear: the bid book writes a space, the association's activity plan writes a dot, and this document standardises neither.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Co-financing rates do not enter.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Everything here comes from the 53 reads registered on 2026-09-15 and listed one by one at the end; 43 answered and 10 did not.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "What this document does not answer.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Where the panel wrote nothing about an object, the cell says so; where the panel's judgement has no matching promise, the bid cell says which pages were searched.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "At the date of this reading, the association's most recent published news item is from August 2026 and does not announce the 2027 programme.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Percentages do not enter.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "This project neither adds them nor chooses between them.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "why it has no answer here",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Portal BASE refused all three requests of this reading, each time with the same firewall page, and no document read here lists contracts, contractors or values.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "The municipal documents read are forecasts; the execution accounts did not enter this reading",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "It is not published at the date of this reading.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Possible in principle, because the published notices give the direction of the vote, but it requires reading the council minutes and notices, which this reading did not do",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "Two readings were not made, and are stated here: the Union decision governing the European Capitals of Culture returned an empty body on all three paths attempted, and the mid-term evaluation of the European Capitals of Culture action was not opened at source.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "frase": "The decree-law that creates the association obliges it to publish the identity of the members of its governing bodies, and this page is that publication.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro",
+      "frase": "At the date of this reading, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Este estudo lê as contas do município de 2010 a 2025 em três vozes: os relatórios do próprio município, a opinião assinada do auditor e a série independente de dívida que o regulador publica.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "A execução da receita caiu de 96% em 2021 para 61,44% em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Ler o orçamento como despesa é a maneira mais fácil de se enganar sobre um município, e aqui a distância não é pequena.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Este estudo mostra as contas e as séries, e não as atribui a ninguém: o programa de ajustamento, a pandemia, a transferência de competências para os municípios e o ciclo económico nacional mexem nos índices seja quem for que ocupe a câmara.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência; o relatório afirma cada linha, não o padrão).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "O relatório de 2015 traz 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau, que é o que um empréstimo parece numa tabela de caixa e não o que parece um bom ano (inferência; os relatórios afirmam cada empréstimo e cada total, não o padrão).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Fica por saber, e é por isso que este estudo diz sempre de que série fala quando diz que a dívida sobe ou desce.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "Nunca foi publicado um documento de contas de 2024, e cada valor de 2024 neste estudo é uma coluna comparativa do relatório de 2025.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "No papel, o balanço municipal cobre o passivo várias vezes; a pressão nestas contas nunca foi sobre o património líquido, é sobre caixa e tempo (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "O resto dela é a totalidade do financiamento não definido do objetivo da Capital da Cultura para o ano — o mesmo valor, concentrado numa linha (inferência; o plano imprime os dois montantes, não a identidade entre eles).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "frase": "O plano de 2026 inscreve-o outra vez (inferência; o plano afirma cada linha e cada repartição de financiamento, e não afirma padrão algum).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "frase": "Este estudo lê as contas do município de 2010 a 2025 em três vozes: os relatórios do próprio município, a opinião assinada do auditor e a série independente de dívida que o regulador publica.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "frase": "A execução da receita caiu de 96%fonte · Município de Évora em 2021 para 61,44%fonte · Município de Évora em 2025, e as próprias contas mostram o padrão que, nesta leitura, explica essa queda: o município orçamenta dinheiro de fora antes de alguém o ter comprometido, como as obras do plano de recuperação e o protocolo das acessibilidades ao novo hospital, e depois esse dinheiro não entra.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "This study reads the municipality's accounts from 2010 to 2025 in three voices: the municipality's own reports, the auditor's signed opinion and the independent debt series the regulator publishes.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "Revenue execution fell from 96% in 2021 to 61.44% in 2025, and the accounts themselves show the pattern that, in this reading, explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "The clean opinion on 2025 brings the outside witness back from here on, not backwards.",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "Reading the budget as spending is the single easiest way to be wrong about a municipality, and the gap here is not small.",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "This study shows the accounts and the series, and attributes them to nobody: the adjustment programme, the pandemic, the transfer of powers to municipalities and the national economic cycle move the indices whoever sits in the council.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference; the report states each line, not the pattern).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "In each of those three years the revenue column steps up and the following year gives the step back, which is what a loan looks like in a cash-basis table and not what a good year looks like (inference; the reports state each loan and each total, not the pattern).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "No 2024 accounts document was ever published, and every 2024 figure in this study is a comparative column of the 2025 report.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "The municipal balance sheet is solvent many times over on paper; the pressure in these accounts has never been about net worth, it is about cash and time (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "The rest of it is the whole of the Capital of Culture objective's undefined financing for the year — the same figure, concentrated in one line (inference; the plan prints both amounts, not the identity between them).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "frase": "The 2026 plan inscribes it again (inference; the plan states each line and each financing split, and states no pattern).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "frase": "This study reads the municipality's accounts from 2010 to 2025 in three voices: the municipality's own reports, the auditor's signed opinion and the independent debt series the regulator publishes.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "frase": "Revenue execution fell from 96%source · Município de Évora in 2021 to 61.44%source · Município de Évora in 2025, and the accounts themselves show the pattern that, in this reading, explains that fall: the municipality budgets outside money before anyone has committed it, such as the recovery-plan works and the protocol for access roads to the new hospital, and then that money does not come in.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "frase": "The clean opinion on 2025 brings the outside witness back from here on, not backwards.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "O catálogo do Tribunal de Contas lido aqui cobre 4 das famílias de produtos do Tribunal, e não a totalidade delas.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "A fonte devolve 23 linhas e não 22, porque um organismo detém dinheiro de Évora sob dois papéis diferentes — uma contagem de linhas aqui não é uma contagem de organismos.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "O próprio município não é o canal principal do dinheiro do PRR no seu território (inferência, a partir das duas tabelas acima: a câmara aparece na camada de beneficiários com menos contratado do que a universidade, e não aparece de todo na camada de gestores).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado (inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê).",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade).",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "Porque é que um silêncio aqui não é um silêncio",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "frase": "As duas medidas são de populações diferentes, e este estudo não mede o que explica a distância entre elas.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies.",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "The municipality itself is not the main channel for PRR money in its own territory (inference, from the two tables above: the câmara appears in the recipient layer with less contracted than the university, and not at all in the manager layer).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed (inference: the source records approval, date and payment, and does not say why).",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity).",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "Why a silence here is not a silence",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "frase": "The two measures are of different populations, and this study does not measure what explains the distance between them.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "À data desta leitura, o documento de programação publicado cobre 2026 e não 2027, e a última notícia da associação é de agosto de 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Quem julga é o painel, não este projeto.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Não há aqui um estado de cumprimento, não há cores, não há contagem de promessas cumpridas contra promessas por cumprir.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Um compromisso sem valor e sem data não é verificável, e este documento di-lo em vez de o converter num juízo.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Cada um entra neste documento com a construção que o seu próprio documento declara, e nunca somados.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "É por isso que aparecem duas formas de separar os milhares e duas formas de escrever o mesmo valor: o dossiê de candidatura escreve o espaço, o plano de atividades da associação escreve o ponto, e este documento não uniformiza nenhum dos dois.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Taxas de cofinanciamento não entram.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Tudo o que está aqui vem das 53 leituras registadas a 2026-09-15, listadas uma a uma no fim; 43 responderam e 10 não.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "As ligações para outros estudos deste projeto apontam para o que esses estudos leram, e nada do que eles leram entra nos valores deste.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O que este documento não responde.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Não há inferência.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Onde o painel não escreveu sobre um objeto, a célula di-lo; onde o juízo do painel não tem promessa correspondente, a célula da candidatura diz em que páginas se procurou.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»​",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O do registo lê-se no estudo da economia, e não se repete aqui:",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "As percentagens não entram.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Este projeto não os soma e não escolhe entre eles.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "porque não tem resposta aqui​",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O Portal BASE recusou os três pedidos desta leitura, sempre com a mesma página de um dispositivo de segurança, e nenhum documento aqui lido lista contratos, adjudicatários ou valores.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O estudo A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara leu o portal numa janela de 2026 e conta nela os contratos da associação; o cruzamento com esta leitura não está feito​",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura​",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Não está publicado à data desta leitura.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "Possível em princípio, porque os editais dizem o sentido do voto, mas exige ler as atas e os editais das reuniões de câmara, o que esta leitura não fez​",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O decreto-lei que cria a associação obriga a divulgar a identidade dos membros dos órgãos sociais, e esta página é essa divulgação.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "frase": "O resumo sha256, os bytes e o tipo de conteúdo de cada resposta estão no manifesto das cópias, que acompanha este estudo.",
+      "fica": false
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
+      "fica": true
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "frase": "À data desta leitura, o documento de programação publicado cobre 2026 e não 2027, e a última notícia da associação é de agosto de 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "At the date of this reading, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "The panel judges, this project does not.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "There is no delivery status here, no colours, no tally of promises kept against promises broken.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "A commitment with no value and no date cannot be checked, and this document says so rather than turning it into a judgement.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Each enters this document with the construction its own source declares, and never added together.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "That is why two thousands separators and two spellings of the same value appear: the bid book writes a space, the association's activity plan writes a dot, and this document standardises neither.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Co-financing rates do not enter.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Everything here comes from the 53 reads registered on 2026-09-15 and listed one by one at the end; 43 answered and 10 did not.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "The links to other studies of this project point to what those studies read, and nothing they read enters the values of this one.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "What this document does not answer.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Where the panel wrote nothing about an object, the cell says so; where the panel's judgement has no matching promise, the bid cell says which pages were searched.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»​",
+      "fica": true
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "The register's value is read in the economy study, and is not repeated here:",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Percentages do not enter.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "This project neither adds them nor chooses between them.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "why it has no answer here​",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Portal BASE refused all three requests of this reading, each time with the same firewall page, and no document read here lists contracts, contractors or values.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "The study The economy of Évora and the public money that reaches the municipality outside the council read the portal in a 2026 window and counts the association's contracts in it; the crossing with this reading has not been done​",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "The municipal documents read are forecasts; the execution accounts did not enter this reading​",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "It is not published at the date of this reading.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Possible in principle, because the published notices give the direction of the vote, but it requires reading the council minutes and notices, which this reading did not do​",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "Two readings were not made, and are stated here: the Union decision governing the European Capitals of Culture returned an empty body on all three paths attempted, and the mid-term evaluation of the European Capitals of Culture action was not opened at source.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "frase": "The decree-law that creates the association obliges it to publish the identity of the members of its governing bodies, and this page is that publication.",
+      "fica": false
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "frase": "At the date of this reading, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026.",
+      "fica": false
+    }
+  ]
+}

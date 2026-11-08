@@ -1,0 +1,69 @@
+04 build_doc.py
+wrote Évora — Promised, Paid, Audited 2026.md — 35,103 bytes, 216 of 278 ledger rows referenced
+  62 ledger row(s) never referenced (warnings, not errors):
+    base-gesamb-group-sum
+    fin-max-contracted
+    fin-max-paid
+    mgrall-00
+    mgrall-01
+    mgrall-02
+    mgrall-03
+    mgrall-04
+    mgrall-05
+    mgrall-06
+    mgrall-07
+    mgrall-08
+    mgrall-09
+    mgrall-10
+    mgrall-11
+    mgrall-12
+    mgrall-13
+    mgrall-14
+    mgrall-15
+    mgrall-16
+    mgrall-17
+    mgrall-18
+    mgrall-19
+    mgrall-20
+    mgrall-21
+    mgrall-22
+    mgrallpaid-00
+    mgrallpaid-01
+    mgrallpaid-02
+    mgrallpaid-03
+    mgrallpaid-04
+    mgrallpaid-05
+    mgrallpaid-06
+    mgrallpaid-07
+    mgrallpaid-08
+    mgrallpaid-09
+    mgrallpaid-10
+    mgrallpaid-11
+    mgrallpaid-12
+    mgrallpaid-13
+    … and 22 more
+04 make_pt.py
+OK — 105 blocks (104 translated, 1 carried verbatim), 347 numeric tokens verified invariant, 10 ISO dates and 16 URLs carried mechanically. Wrote: Évora — Prometido, Pago, Auditado 2026 (pt-PT).md
+04 make_html.py
+OK — wrote Évora — Promised, Paid, Audited 2026.html (66452 bytes) from Évora — Promised, Paid, Audited 2026.md [signed off 2026-08-15]
+OK — wrote Évora — Prometido, Pago, Auditado 2026 (pt-PT).html (69628 bytes) from Évora — Prometido, Pago, Auditado 2026 (pt-PT).md [signed off 2026-08-15]
+07 build_doc.py
+wrote Évora — Budgeted, Paid, Owed 2025.md — 21,889 bytes, 153 of 156 ledger rows referenced
+  3 ledger row(s) never referenced (warnings):
+    dgal-limite-2014
+    dgal-limite-2017
+    dgal-limite-2021
+07 make_pt.py
+wrote Évora — Orçamentado, Pago, Devido 2025 (pt-PT).md — 22,877 bytes; numeric, date and URL multisets equal the English edition's
+07 make_html.py
+wrote Évora — Budgeted, Paid, Owed 2025.html — 955,838 bytes · 194 receipts (83 with a snippet, 10 on shared values) · 305 visible number tokens, unchanged
+wrote Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html — 956,865 bytes · 194 receipts (83 with a snippet, 10 on shared values) · 305 visible number tokens, unchanged
+14 build_doc.py
+DOC: PASS — Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).md, 48596 caracteres, 117 linhas do livro-razão citadas de 124
+DOC: 7 linha(s) do livro-razão que o gabarito nunca cita: bbs-op-acrescimo, painel-interno, painel-protocolo-municipio, plano-internacionalizacao-dotacao, plano-premio-melina, rc-subcontratos-prosa, rc-trabalhos-especializados
+14 make_en.py
+MAKE_EN: PASS — Évora 2027 — Promised, Panel, Money.md, 47939 caracteres, 349 cadeias trocadas, 110 trechos citados repostos carácter a carácter, 529 algarismos iguais nas duas edições
+14 make_html.py
+HTML  Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html  (63040 caracteres)
+HTML  Évora 2027 — Promised, Panel, Money.html  (62388 caracteres)
+MAKE_HTML: PASS — 2 edições rendidas do markdown, sem gráficos

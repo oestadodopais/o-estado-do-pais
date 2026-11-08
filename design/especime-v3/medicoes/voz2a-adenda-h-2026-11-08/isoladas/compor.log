@@ -1,0 +1,7 @@
+COMPOR: RECUSA — a troca no bloco 17 espera «48,1%, um fundo mais fundo, um ano depois das tranches do re» uma vez e acha-o 0 vez(es)
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<temporario>", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<temporario>', '-m', 'core.compor', 'content/16 Évora Contas da Câmara', '--escrever']' returned non-zero exit status 1.

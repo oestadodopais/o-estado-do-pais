@@ -1,0 +1,10 @@
+COMPOR  The economy of Évora and the public money that reaches the municipality outside the council.md: 138 bloco(s) de 3 fonte(s), 28 marcador(es), 19 saída(s) declarada(s)
+COMPOR  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md: 138 bloco(s) de 3 fonte(s), 28 marcador(es), 19 saída(s) declarada(s)
+COMPOR  livro: 494 linha(s), 30 valor(es) ignorado(s), 26 asserção(ões)
+COMPOR: RECUSA — A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md: 6 correção(ões) de decisão não caíram em nenhuma figura antiga: [('04', 66, '.l0', '1', 0), ('04', 66, '.l1', '8', 0), ('04', 68, '', '13', 0), ('04', 70, '', '0', 0)]
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<temporario>", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<temporario>', '-m', 'core.compor', 'content/18 Évora Economia e Dinheiro de Fora', '--escrever']' returned non-zero exit status 1.

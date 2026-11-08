@@ -1,0 +1,2 @@
+VOZ_TEST: FAIL — 1 problem(s)
+ - as contagens da passagem mudaram: {'operacoes': 874, 'cortes': 462, 'substituicoes': 412, 'nenhuma': 26, 'refs_antes': 8390, 'refs_depois': 8382, 'blocos_antes': 2922, 'blocos_depois': 2819, 'figuras_caidas': 8} contra {'operacoes': 874, 'cortes': 462, 'substituicoes': 412, 'nenhuma': 26, 'refs_antes': 8390, 'refs_depois': 8382, 'blocos_antes': 2920, 'blocos_depois': 2817, 'figuras_caidas': 8}

@@ -1,0 +1,433 @@
+{
+  "motor": "e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176",
+  "sitio_conferido": "2729f6ed7c14dafc630596fa4f31a436d3fe4b53",
+  "classe_antes_voz2a": {
+    "paginas_lidas": 26,
+    "paginas_com_ocorrencias": 19,
+    "ocorrencias": 231,
+    "fora_fica": 174
+  },
+  "classe_antes_h": {
+    "ocorrencias": 70,
+    "fora_fica": 13
+  },
+  "classe_depois": {
+    "paginas_lidas": 26,
+    "paginas_com_ocorrencias": 15,
+    "ocorrencias": 57,
+    "fora_fica": 0
+  },
+  "por_estudo": [
+    {
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "antes_voz2a": 51,
+      "antes_h": 8,
+      "depois": 4,
+      "fora_fica_antes_h": 4,
+      "fora_fica_depois": 0
+    },
+    {
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "antes_voz2a": 48,
+      "antes_h": 8,
+      "depois": 4,
+      "fora_fica_antes_h": 4,
+      "fora_fica_depois": 0
+    },
+    {
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "antes_voz2a": 31,
+      "antes_h": 19,
+      "depois": 18,
+      "fora_fica_antes_h": 1,
+      "fora_fica_depois": 0
+    },
+    {
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "antes_voz2a": 15,
+      "antes_h": 8,
+      "depois": 8,
+      "fora_fica_antes_h": 0,
+      "fora_fica_depois": 0
+    },
+    {
+      "estudo": "evora-economia-investidores-portas-abertas-2026",
+      "antes_voz2a": 6,
+      "antes_h": 0,
+      "depois": 0,
+      "fora_fica_antes_h": 0,
+      "fora_fica_depois": 0
+    },
+    {
+      "estudo": "evora-orcamentado-pago-devido-2025",
+      "antes_voz2a": 25,
+      "antes_h": 13,
+      "depois": 10,
+      "fora_fica_antes_h": 3,
+      "fora_fica_depois": 0
+    },
+    {
+      "estudo": "evora-prometido-pago-auditado-2026",
+      "antes_voz2a": 55,
+      "antes_h": 14,
+      "depois": 13,
+      "fora_fica_antes_h": 1,
+      "fora_fica_depois": 0
+    }
+  ],
+  "lista_antes": {
+    "REESCREVE": 84,
+    "SAI": 39,
+    "FICA": 37
+  },
+  "lista_depois": {
+    "REESCREVE": 99,
+    "SAI": 43,
+    "FICA": 39
+  },
+  "global_depois": {
+    "paginas": 9838,
+    "marcador": 0,
+    "protecao": 0,
+    "captadas": 68,
+    "permitidas": 68,
+    "frases": 0,
+    "ledesNovas": 0
+  },
+  "portoes_primeira": {
+    "verify": 125,
+    "motor": 1,
+    "typecheck": 0,
+    "build": 1
+  },
+  "fecho": {
+    "motor": 0,
+    "typecheck": 0,
+    "build": 0,
+    "voz2a-g": 0
+  },
+  "conferencias": {
+    "check:voz": 0,
+    "check:lugar": 0,
+    "check:edicoes": 0,
+    "check:registo": 0,
+    "check:datas": 0,
+    "check:discussao": 0,
+    "check:alvos": 0,
+    "check:moldura": 0,
+    "check:primeira": 0,
+    "check:dossies": 0
+  },
+  "uniao": {
+    "ok": true,
+    "falhas": [],
+    "passos_do_verify": 10,
+    "cobertos_pelo_build": 5,
+    "corridos_aqui": 5
+  },
+  "integridade": {
+    "arquivos_conferidos": 19,
+    "correntes_conferidas": 13,
+    "registos_conferidos": 25,
+    "referencias_identicas": 8382,
+    "blocos_alterados": [
+      {
+        "estudo": "04 Évora Public Money",
+        "lingua": "pt-PT",
+        "antes": 94,
+        "depois": 95
+      },
+      {
+        "estudo": "18 Évora Economia e Dinheiro de Fora",
+        "lingua": "pt-PT",
+        "antes": 160,
+        "depois": 161
+      }
+    ],
+    "prova_voz_antes": {
+      "contagens": {
+        "blocos_antes": 2920,
+        "blocos_conferidos": 2817,
+        "blocos_depois": 2817,
+        "com_palavra": 150,
+        "cortes": 463,
+        "excecoes_R6": 8,
+        "figuras_caidas": 8,
+        "frases_depois": 17752,
+        "italicos_conferidos": 6,
+        "nenhuma": 26,
+        "offsets_conferidos": 9761,
+        "operacoes": 874,
+        "refs_antes": 8390,
+        "refs_depois": 8382,
+        "substituicoes": 411,
+        "titulos_novos": 6
+      },
+      "estratos": {
+        "S1·aprovado": 65,
+        "S2·L1·regra-aprovada": 30,
+        "S2·inventário-cego·aprovado-24.08": 69,
+        "S3·famílias-leituras·aprovado-24.08": 77,
+        "S4·coerência·aprovado-24.08": 4,
+        "S5·segunda-voz·proposta-27.08": 360,
+        "S6·terceira-voz·proposta-27.08": 295
+      }
+    },
+    "prova_voz_depois": {
+      "contagens": {
+        "blocos_antes": 2922,
+        "blocos_conferidos": 2819,
+        "blocos_depois": 2819,
+        "com_palavra": 149,
+        "cortes": 462,
+        "excecoes_R6": 8,
+        "figuras_caidas": 8,
+        "frases_depois": 17749,
+        "italicos_conferidos": 6,
+        "nenhuma": 26,
+        "offsets_conferidos": 9758,
+        "operacoes": 874,
+        "refs_antes": 8390,
+        "refs_depois": 8382,
+        "substituicoes": 412,
+        "titulos_novos": 6
+      },
+      "estratos": {
+        "S1·aprovado": 65,
+        "S2·L1·regra-aprovada": 30,
+        "S2·inventário-cego·aprovado-24.08": 69,
+        "S3·famílias-leituras·aprovado-24.08": 76,
+        "S4·coerência·aprovado-24.08": 4,
+        "S5·segunda-voz·proposta-27.08": 360,
+        "S6·terceira-voz·proposta-27.08": 296
+      }
+    }
+  },
+  "livros": {
+    "base_motor": "ce0cf7506a2696c1e23f1279fe272a25778330e0",
+    "livros": [
+      {
+        "estudo": "04",
+        "campos": [
+          "assertions"
+        ],
+        "asserção": {
+          "id": "hospital-registos-sem-identidade-declarada",
+          "antes": {
+            "id": "hospital-registos-sem-identidade-declarada",
+            "quotes": [
+              "nenhuma das fontes afirma que são a mesma entidade"
+            ],
+            "review": "Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes."
+          },
+          "depois": {
+            "id": "hospital-registos-sem-identidade-declarada",
+            "quotes": [
+              "nenhuma das fontes afirma que são a mesma entidade",
+              "neither source states that they are the same entity"
+            ],
+            "review": "Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes."
+          }
+        },
+        "ancorada_em": [
+          "Évora — Promised, Paid, Audited 2026.md"
+        ],
+        "resumos": []
+      },
+      {
+        "estudo": "14",
+        "campos": [
+          "assertions"
+        ],
+        "asserção": {
+          "id": "so-previsionais",
+          "antes": {
+            "id": "so-previsionais",
+            "quotes": [
+              "Pela mesma razão: só se leram documentos previsionais",
+              "For the same reason: only forecast documents were read",
+              "none of them is an execution account"
+            ],
+            "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+          },
+          "depois": {
+            "id": "so-previsionais",
+            "quotes": [
+              "Pela mesma razão: só se leram documentos previsionais",
+              "For the same reason: only forecast documents were read",
+              "none of them is an execution account",
+              "nenhum deles é uma conta de execução"
+            ],
+            "review": "A quantificação abrange os documentos municipais que o estudo lista como lidos, todos previsionais. Confere-se relendo um a um os documentos municipais dessa lista, sem a estender às outras respostas do registo."
+          }
+        },
+        "ancorada_em": [
+          "Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).md"
+        ],
+        "resumos": []
+      },
+      {
+        "estudo": "16",
+        "campos": [
+          "assertion_ignores"
+        ],
+        "retirado": "o contexto de todos os números"
+      },
+      {
+        "estudo": "18",
+        "campos": [
+          "assertions",
+          "composto_de"
+        ],
+        "asserção": {
+          "id": "hospital-registos-sem-identidade-declarada",
+          "antes": {
+            "id": "hospital-registos-sem-identidade-declarada",
+            "quotes": [
+              "nenhuma das fontes afirma que são a mesma entidade"
+            ],
+            "review": "Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes."
+          },
+          "depois": {
+            "id": "hospital-registos-sem-identidade-declarada",
+            "quotes": [
+              "nenhuma das fontes afirma que são a mesma entidade",
+              "neither source states that they are the same entity"
+            ],
+            "review": "Os dois registos lidos no estudo dão ao organismo nomes diferentes e nenhum diz que são o mesmo. Confere-se relendo os registos do Portal BASE e do plano de recuperação citados nesta secção; a identidade inferida pelos objetos dos contratos não é uma declaração das fontes."
+          }
+        },
+        "ancorada_em": [
+          "The economy of Évora and the public money that reaches the municipality outside the council.md"
+        ],
+        "resumos": [
+          {
+            "fonte": "04 Évora Public Money",
+            "antes": "689618106d38640d127531b80bc179215429eb71f773c7a023ac7bad69a19a44",
+            "depois": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6"
+          }
+        ]
+      },
+      {
+        "estudo": "19",
+        "campos": [
+          "assertions",
+          "composto_de"
+        ],
+        "asserção": {
+          "id": "so-previsionais",
+          "antes": {
+            "id": "so-previsionais",
+            "quotes": [
+              "Pela mesma razão: só se leram documentos previsionais",
+              "For the same reason: only forecast documents were read",
+              "none of them is an execution account"
+            ],
+            "review": "quantificação sobre o corpus fechado deste estudo (as 53 respostas do registo de 15.09.2026, 43 com corpo); confere-se relendo-as e não por predicado sobre valores, e a tabela do VERIFICATION.md di-lo linha a linha"
+          },
+          "depois": {
+            "id": "so-previsionais",
+            "quotes": [
+              "Pela mesma razão: só se leram documentos previsionais",
+              "For the same reason: only forecast documents were read",
+              "none of them is an execution account",
+              "nenhum deles é uma conta de execução"
+            ],
+            "review": "A quantificação abrange os documentos municipais que o estudo lista como lidos, todos previsionais. Confere-se relendo um a um os documentos municipais dessa lista, sem a estender às outras respostas do registo."
+          }
+        },
+        "ancorada_em": [
+          "Évora 2027, Capital Europeia da Cultura (pt-PT).md"
+        ],
+        "resumos": [
+          {
+            "fonte": "14 Évora 2027",
+            "antes": "8ca64d1794639d95f7d1ab83be97908bb7e6f3b4a070b02eee15d1ba195942ec",
+            "depois": "2ceb01c9c5e76f87adba8fcdefffa99e81674006e693ff3e40c8ea93fd29e01a"
+          }
+        ]
+      }
+    ],
+    "referencias_identicas": 8382
+  },
+  "plantas_formas_novas": 17,
+  "fica": {
+    "frases": 39,
+    "combinacoes_frase_pagina": 60
+  },
+  "novas": {
+    "campos": 175,
+    "recusas": 0,
+    "diferencas_numericas_entre_linguas": 0
+  },
+  "pares": {
+    "estudos": 6,
+    "sem_par": 0,
+    "fora_lista": 0,
+    "planta": 1,
+    "controlo": 0
+  },
+  "capturas": 0,
+  "orcamento": {
+    "chamadas": 108,
+    "por_ferramenta": {
+      "exec": 79,
+      "wait": 29
+    },
+    "corridas_curto": 47,
+    "comandos_curto": [
+      "curto.sh <temporario>/plantas-regua.log",
+      "curto.sh <temporario>/novas.log",
+      "curto.sh <temporario>/antes-alargada.log",
+      "curto.sh <temporario>/mapear.log",
+      "curto.sh <temporario>/aplicar.log",
+      "curto.sh <temporario>/gerar.log",
+      "curto.sh <temporario>/ops.log",
+      "curto.sh <temporario>/ops2.log",
+      "curto.sh <temporario>/mapas.log",
+      "curto.sh <temporario>/compor.log",
+      "curto.sh <temporario>/compor2.log",
+      "curto.sh <temporario>/compor3.log",
+      "curto.sh <temporario>/compor4.log",
+      "curto.sh <temporario>/preparar-edicoes.log",
+      "curto.sh <temporario>/pares-previa.log",
+      "curto.sh <temporario>/livros.log",
+      "curto.sh <temporario>/assertions.log",
+      "curto.sh <temporario>/voz-previa.log",
+      "curto.sh <temporario>/compor16-ignore.log",
+      "curto.sh <temporario>/travessia.log",
+      "curto.sh <temporario>/atualizar-edicoes.log",
+      "curto.sh <temporario>/livros-final.log",
+      "curto.sh <temporario>/integridade.log",
+      "curto.sh <temporario>/plantas-assercao.log",
+      "curto.sh <temporario>/plantas-assercao2.log",
+      "curto.sh <temporario>/plantas-assercao3.log",
+      "curto.sh <temporario>/classe-original.log",
+      "curto.sh <temporario>/classe-depois.log",
+      "curto.sh <temporario>/pares-dist.log",
+      "curto.sh <temporario>/extrair.log",
+      "curto.sh <temporario>/edicoes-diagnostico.log",
+      "curto.sh <temporario>/fica.log",
+      "curto.sh <temporario>/compor18-indices.log",
+      "curto.sh <temporario>/voz-test.log",
+      "curto.sh <temporario>/compor-test.log",
+      "curto.sh <temporario>/classe-antes-final.log",
+      "curto.sh <temporario>/extrair-final.log",
+      "curto.sh <temporario>/voz-test-final.log",
+      "curto.sh <temporario>/travessia-final.log",
+      "curto.sh <temporario>/edicoes-origem-final.log",
+      "curto.sh <temporario>/integridade-final.log",
+      "curto.sh <temporario>/classe-depois-final.log",
+      "curto.sh <temporario>/novas-final.log",
+      "curto.sh <temporario>/pares-final.log",
+      "curto.sh <temporario>/voz-final.log",
+      "curto.sh <temporario>/extrair-dist-final.log",
+      "curto.sh <temporario>/privacidade-final.log"
+    ],
+    "portoes_integrais": 1,
+    "fechos_dirigidos": 1,
+    "core_gate_fora_sandbox": 2,
+    "capturas": 0
+  },
+  "privacidade": 0
+}

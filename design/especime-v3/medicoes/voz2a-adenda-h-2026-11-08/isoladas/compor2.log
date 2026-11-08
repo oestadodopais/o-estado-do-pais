@@ -1,0 +1,16 @@
+COMPOR  The accounts of the Câmara de Évora, 2010 to 2025.md: 130 bloco(s) de 3 fonte(s), 46 marcador(es), 32 saída(s) declarada(s)
+COMPOR  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md: 131 bloco(s) de 3 fonte(s), 46 marcador(es), 32 saída(s) declarada(s)
+COMPOR  livro: 399 linha(s), 23 valor(es) ignorado(s), 21 asserção(ões)
+COMPOR  decisões en: 490 figura(s), 0 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR  decisões pt: 490 figura(s), 0 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR: ESCRITO
+HTML  The accounts of the Câmara de Évora, 2010 to 2025.html
+HTML  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html
+MAKE_HTML: PASS — 2 edição(ões) rendida(s) do Markdown
+COMPOR: RECUSA — a troca no bloco 36 espera «Para uma empresa de turismo, o Turismo» uma vez e acha-o 0 vez(es)
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<temporario>", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<temporario>', '-m', 'core.compor', 'content/18 Évora Economia e Dinheiro de Fora', '--escrever']' returned non-zero exit status 1.

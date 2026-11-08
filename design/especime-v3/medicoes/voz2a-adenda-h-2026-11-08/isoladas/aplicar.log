@@ -1,0 +1,72 @@
+[
+  {
+    "ficheiro": "content/16 Évora Contas da Câmara/Technical Source/documento.en.md.tmpl",
+    "entradas": [
+      "V322"
+    ]
+  },
+  {
+    "ficheiro": "content/16 Évora Contas da Câmara/Technical Source/documento.pt.md.tmpl",
+    "entradas": [
+      "V316",
+      "V326"
+    ]
+  },
+  {
+    "ficheiro": "content/07 Évora Municipal Accounts/Technical Source/document.pt.md.tmpl",
+    "entradas": [
+      "V198",
+      "V315",
+      "V320"
+    ]
+  },
+  {
+    "ficheiro": "content/07 Évora Municipal Accounts/Technical Source/document.md.tmpl",
+    "entradas": [
+      "V317",
+      "V318",
+      "V321"
+    ]
+  },
+  {
+    "ficheiro": "content/04 Évora Public Money/Technical Source/make_pt.py",
+    "entradas": [
+      "V238",
+      "V319",
+      "V324",
+      "V325"
+    ]
+  },
+  {
+    "ficheiro": "content/04 Évora Public Money/Technical Source/document.md.tmpl",
+    "entradas": [
+      "V319",
+      "V324",
+      "V325"
+    ]
+  },
+  {
+    "ficheiro": "content/14 Évora 2027/Technical Source/document.md.tmpl",
+    "entradas": [
+      "V309",
+      "V311",
+      "V312"
+    ]
+  },
+  {
+    "ficheiro": "content/14 Évora 2027/Technical Source/make_en.py",
+    "entradas": [
+      "V309",
+      "V311",
+      "V312",
+      "V313",
+      "V314"
+    ]
+  },
+  {
+    "ficheiro": "content/18 Évora Economia e Dinheiro de Fora/Technical Source/documento.en.md.tmpl",
+    "entradas": [
+      "V323"
+    ]
+  }
+]

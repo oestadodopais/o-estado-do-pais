@@ -1,0 +1,226 @@
+▶ npm run check:alvos · começou aos 0.0 s
+▶ npm run check:moldura · começou aos 0.0 s
+▶ npm run check:lugar · começou aos 0.0 s
+▶ npm run check:primeira · começou aos 0.0 s
+✓ npm run check:lugar · 73.6 s · código 0
+    
+    > o-estado-do-pais@0.1.0 check:lugar
+    > node scripts/check-lugar.mjs && node tests/edicoes/lugar.mjs && node tests/quadro/reguas.mjs l1
+    
+      H2 I193: 5 controlos do endereço e da prosa no mesmo bloco
+      8.4, o que a régua leu: 88 definições (esperadas 88) · 190 origens (esperadas 190)
+      item 5, o que a régua leu no Método: pt «selo» ×1 · en «seal» ×1 (chão 1 por edição; a rota do Método está fora da conta da L3, pela medida P9 do brief)
+      item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
+      RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos 0 (esperado 0) · «limiar» na prosa da casa a conta em palavras 1, o motivo de uma correção 1, o motivo inglês de uma correção 1, um invólucro sem campo 1 (esperado 1 em cada) · o seletor e a lista fechada de acordo
+      §7.4 e 8.6, o que os dados dizem: estudo 38 · texto 21 · indice 2 · edicoes 38 · primeiras_edicoes 18 · documentos_historicos 23 · linhas 26
+    check:lugar · 9838 páginas em dist/
+      L1 · páginas com dois destinos iguais fora da mobília         3479  (teto 3479) ok
+          · /agenda · 10 destinos repetidos (ex.: /emprego ×2)
+          · /areas/infraestruturas-e-habitacao · 1 destinos repetidos (ex.: /estudos/a-casa-em-portugal-e-na-europa ×4)
+          · /correcoes · 46 destinos repetidos (ex.: /livro-razao/correcoes-publicadas ×11)
+          · /distritos/aveiro · 19 destinos repetidos (ex.: /municipios/agueda ×2)
+          · /distritos/beja · 14 destinos repetidos (ex.: /municipios/aljustrel ×2)
+          · /distritos/braga · 14 destinos repetidos (ex.: /municipios/amares ×2)
+      L2 · segundas listas dos concelhos                               0  (teto 0) ok
+      L2 · réguas da convergência fora de /regioes                     0  (teto 0) ok
+      L2 · sinopses de estudo fora de /estudos                         0  (teto 0) ok
+      L3 · palavras fora do vocabulário fechado                        0  (teto 0) ok
+      L4 · frases de definição e de hierarquia em falta                0  (teto 0) ok
+      L5 · páginas sem caminho no cabeçalho                            0  (teto 0) ok
+      L6 · selos que não dizem o publicador                            0  (teto 0) ok
+      8.5 · «limiar» sozinho                                           0  (teto 0) ok
+      8.8 · «livro-razão» nos menus e nos títulos                      0  (teto 0) ok
+      8.13 · valores selados na secção dos domínios de /               0  (teto 0) ok
+      8.14 · «Relance» e «Leitura breve» nas páginas do leitor         0  (teto 0) ok
+      8.17 · pontos dos 308 na página de um concelho                   0  (teto 0) ok
+      8.17 · páginas de concelho sem o mapa da sua unidade             0  (teto 0) ok
+      8.11 · leituras de aparelho no cabeçalho                         0  (teto 0) ok
+      8.4 · definições de painel fora da declaração                    0  (teto 0) ok
+      VOZ-1 · definição retirada do marcador reposta                   0  (teto 0) ok
+      §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok
+      §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok
+      §7.4 e 8.6, o que a régua leu: estudo 38 · texto 21 · indice 2 · edicoes 38 · primeiras_edicoes 18 · documentos_historicos 23 · linhas 26
+      as exceções, e quantas vezes cada uma foi precisa:
+          · «peça»     1 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
+          · «trabalho»    34 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+          · «trabalho»     1 · o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo
+          · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+          · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa
+    check:lugar · verde.
+    ED1-D lugar: 38 estudos, 38 edições atuais e 18 primeiras edições; 56 plantas recusadas.
+    PAI2 l1 pt: controlo verde, planta recusada pela mesma função.
+    PAI2 l1 en: controlo verde, planta recusada pela mesma função.
+    
+▶ npm run check:dossies · começou aos 73.6 s
+✓ npm run check:dossies · 10.8 s · código 0
+    
+    > o-estado-do-pais@0.1.0 check:dossies
+    > node tests/dossies/dossies.mjs && node tests/dossies/do2-voz.mjs && node tests/dossies/leitura.mjs && node tests/dossies/reguas.mjs
+    
+    DO1: quatro páginas, pertenças e datas conferidas nas duas edições; 30 plantas recusadas.
+    SEL1-F4: anos fora do nome conservam a fonte; a sua retirada é recusada.
+    DO2 e DO4: formas reais e dossiê de ensaio conferidos; 16 plantas recusadas.
+    DO3: ordem e transcrição conferidas; 20 plantas recusadas.
+    DO3: superfície, voz e explicação conferidas; 36 plantas recusadas.
+    
+✓ npm run check:primeira · 141.4 s · código 0
+    
+    > o-estado-do-pais@0.1.0 check:primeira
+    > node tests/inicio/novidades.mjs && node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/lugares-no-navegador.mjs --prova && node tests/inicio/tema-e-menu.mjs --prova
+    
+    VOZ-1 H pt, 2026-11-05: controlo a 0; marca retirada recusada: FP1: marca novo diferente da data impressa; voz exige o rótulo.
+    VOZ-1 H pt, 2026-11-06: controlo a 0; marca indevida recusada: FP1: marca novo diferente da data impressa; voz não exige o rótulo.
+    VOZ-1 H en, 2026-11-05: controlo a 0; marca retirada recusada: FP1: marca novo diferente da data impressa; voz exige o rótulo.
+    VOZ-1 H en, 2026-11-06: controlo a 0; marca indevida recusada: FP1: marca novo diferente da data impressa; voz não exige o rótulo.
+    {"fp1":"verde","plantas":[{"nome":"quatro peças dão uma entrada, conservam a data e a peça exterior e deixam cinco entradas","mordeu":true},{"nome":"entrada do registo empurrada para as novidades","mordeu":true},{"nome":"condição do inventário limitada aos rótulos condicionais FP1","mordeu":true},{"nome":"read continua proibido e re-read aprovado não é uma palavra parcial","mordeu":true},{"nome":"FP3 correção conserva publicação, tipo, ligação e desempate","lang":"pt","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"pt","cenario":"real","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"pt","cenario":"real","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"pt","cenario":"real","mordeu":true},{"nome":"entrada do registo na caixa","lang":"pt","cenario":"real","mordeu":true},{"nome":"DO4 data na última coluna","lang":"pt","cenario":"planta","mordeu":true},{"nome":"DO4 tipo em maiúscula","lang":"pt","cenario":"planta","mordeu":true},{"nome":"DO4 cauda antiga","lang":"pt","cenario":"planta","mordeu":true},{"nome":"DO4 marca editorial retirada","lang":"pt","cenario":"planta","mordeu":true},{"nome":"contagem sem token","lang":"pt","cenario":"planta","mordeu":true},{"nome":"dossiê repetido","lang":"pt","cenario":"planta","mordeu":true},{"nome":"marca novo retirada ou indevida","lang":"pt","cenario":"real","mordeu":true},{"nome":"dossiê da novidade trocado","lang":"pt","cenario":"planta","mordeu":true},{"nome":"dossiê da novidade retirado","lang":"pt","cenario":"planta","mordeu":true},{"nome":"título da peça trocado","lang":"pt","cenario":"real","mordeu":true},{"nome":"entrada sem página","lang":"pt","cenario":"real","mordeu":true},{"nome":"data no futuro","lang":"pt","cenario":"real","mordeu":true},{"nome":"ordem trocada","lang":"pt","cenario":"real","mordeu":true},{"nome":"peça mais recente em falta","lang":"pt","cenario":"real","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"pt","cenario":"real","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"pt","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"pt","cenario":"planta","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"pt","cenario":"planta","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"pt","cenario":"planta","mordeu":true},{"nome":"DO4 L1 porta do dossiê duplicada","lang":"pt","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"pt","mordeu":true},{"nome":"FP3 correção conserva publicação, tipo, ligação e desempate","lang":"en","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"en","cenario":"real","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"en","cenario":"real","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"en","cenario":"real","mordeu":true},{"nome":"entrada do registo na caixa","lang":"en","cenario":"real","mordeu":true},{"nome":"DO4 data na última coluna","lang":"en","cenario":"planta","mordeu":true},{"nome":"DO4 tipo em maiúscula","lang":"en","cenario":"planta","mordeu":true},{"nome":"DO4 cauda antiga","lang":"en","cenario":"planta","mordeu":true},{"nome":"DO4 marca editorial retirada","lang":"en","cenario":"planta","mordeu":true},{"nome":"contagem sem token","lang":"en","cenario":"planta","mordeu":true},{"nome":"dossiê repetido","lang":"en","cenario":"planta","mordeu":true},{"nome":"marca novo retirada ou indevida","lang":"en","cenario":"real","mordeu":true},{"nome":"dossiê da novidade trocado","lang":"en","cenario":"planta","mordeu":true},{"nome":"dossiê da novidade retirado","lang":"en","cenario":"planta","mordeu":true},{"nome":"título da peça trocado","lang":"en","cenario":"real","mordeu":true},{"nome":"entrada sem página","lang":"en","cenario":"real","mordeu":true},{"nome":"data no futuro","lang":"en","cenario":"real","mordeu":true},{"nome":"ordem trocada","lang":"en","cenario":"real","mordeu":true},{"nome":"peça mais recente em falta","lang":"en","cenario":"real","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"en","cenario":"real","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"en","mordeu":true},{"nome":"FP3 data de atualização diferente do manifesto","lang":"en","cenario":"planta","mordeu":true},{"nome":"FP3 origem de atualização trocada","lang":"en","cenario":"planta","mordeu":true},{"nome":"FP3 tipo de atualização trocado","lang":"en","cenario":"planta","mordeu":true},{"nome":"DO4 L1 porta do dossiê duplicada","lang":"en","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"en","mordeu":true}]}
+    check:primeira · auditoria: 81 folhas, 128 partes (76 diz, 24 conta, 28 liga), 103 apoios, 14 algarismos · 16 páginas, 10 blocos rendidos e recontados · entradas: 0 cartões nos temas, 94 nas entradas, 0 fora por declaração, 16 páginas das entradas no mapa do sítio · 89 de 89 plantas mordidas
+    check:primeira · todas as conferências a 0.
+    / a 390 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.817 px por unidade, faixa de 170.0 px · estado · referência: a linha a 109.0 px da base, os 60 a 109.0 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+    / a 1280 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.355 px por unidade, faixa de 220.0 px · estado · referência: a linha a 141.3 px da base, os 60 a 141.3 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+    / a 390 px (dark): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.817 px por unidade, faixa de 170.0 px · estado · referência: a linha a 109.0 px da base, os 60 a 109.0 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+    / a 1280 px (dark): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.355 px por unidade, faixa de 220.0 px · estado · referência: a linha a 141.3 px da base, os 60 a 141.3 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+    /en/ a 390 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.817 px por unidade, faixa de 170.0 px · estado · referência: a linha a 109.0 px da base, os 60 a 109.0 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+    /en/ a 1280 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.355 px por unidade, faixa de 220.0 px · estado · referência: a linha a 141.3 px da base, os 60 a 141.3 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+      apanhada · um número solto → PP1 · / (planta) · precos: o bloco escreve um algarismo sem marca de origem: «Os preços no seu conjunto medem-se num cabaz de bens e se…»
+      apanhada · um valor trocado → PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,87» e a linha diz «23,78»
+      apanhada · o identificador de outra linha → PP1 · / (planta) · precos: o valor desenhado de ipc-alimentacao-variacao-homologa é «5,22» e a linha diz «2,14»
+      apanhada · uma linha retirada → PP1 · / (planta) · pobreza: o desenho não tem a linha racio-s80-s20-2025-ue
+      apanhada · um número das palavras fixas mudado → PP1 · / (planta) · casa: o texto rendido da frase difere do que o resolvedor dá: «Em Portugal, a parte das pessoas que gastam mais de 45 % …» contra «Em Portugal, a parte das pessoas que gastam mais de 40 % …»
+      apanhada · a unidade dentro do elemento do valor → PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,78 %» e a linha diz «23,78»
+      apanhada · um travessão → PP1 · / (planta) · estado: da frase tem um travessão: «A dívida pública desceu de 2024 para 2025 — e está acima …»
+      apanhada · um painel da habitação com outra escala escrita → [desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 27.73 px
+      apanhada · um painel da habitação mais estreito → [desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 14.24 px
+      apanhada · uma barra fora da origem → [desenho] G3 · as barras de ipc-combustiveis-variacao-homologa, ipc-rendas-variacao-homologa, ipc-alimentacao-variacao-homologa, ipc-energia-em-casa-variacao-homologa, ipc-variacao-homologa não partem da mesma origem
+      apanhada · a linha do limiar nos 50 → [desenho] G4 · a linha de referência está a 90.4 px da base; os 60 da escala estão a 109.0 px
+      apanhada · a linha a entrar no painel da União → [desenho] G4 · a linha do valor de referência entra no painel da União, onde a Comissão não aplica o limiar
+      apanhada · uma cor numa coluna → [cor] G5 · rgb(31, 78, 140) em span.pp-col-barra
+      apanhada · preenchimento preto nas guias da série → [cor] G5 · rgb(0, 0, 0) em line
+      apanhada · preenchimento preto na linha da leitura de um ponto → [cor] G5 · rgb(0, 0, 0) em line
+      apanhada · o âmbar no rótulo → [cor] G5 · âmbar fora da linha de referência, em p.pp-ref-rotulo
+    geometria · 6 corridas sem falhas · 16 de 16 plantas apanhadas.
+    ✓ a porta · pt 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+    ✓ a porta · pt 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+    ✓ a porta · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+    ✓ a porta · en 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+    ✓ a ordem · pt 390 (uma coluna): pesquisa 379 · mapa 501–1025 à esquerda 18 · regiões 1044 · distritos 1089 · nomes à vista 0
+    ✓ a ordem · pt 768 (uma coluna): pesquisa 349 · mapa 472–970 à esquerda 31 · regiões 990 · distritos 1035 · nomes à vista 0
+    ✓ a ordem · pt 1024 (duas colunas): pesquisa 336 · mapa 336–962 à esquerda 553 · regiões 475 · distritos 520 · nomes à vista 0
+    ✓ a ordem · pt 1280 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 756 · regiões 492 · distritos 537 · nomes à vista 0
+    ✓ a ordem · pt 1600 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 916 · regiões 495 · distritos 540 · nomes à vista 0
+    ✓ a ordem · en 390 (uma coluna): pesquisa 379 · mapa 501–1025 à esquerda 18 · regiões 1044 · distritos 1089 · nomes à vista 0
+    ✓ a ordem · en 768 (uma coluna): pesquisa 349 · mapa 472–970 à esquerda 31 · regiões 990 · distritos 1035 · nomes à vista 0
+    ✓ a ordem · en 1024 (duas colunas): pesquisa 336 · mapa 336–962 à esquerda 553 · regiões 475 · distritos 520 · nomes à vista 0
+    ✓ a ordem · en 1280 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 756 · regiões 492 · distritos 537 · nomes à vista 0
+    ✓ a ordem · en 1600 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 916 · regiões 495 · distritos 540 · nomes à vista 0
+    ✓ as gavetas · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+    ✓ as gavetas · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+    ✓ a pesquisa · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /distritos/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+    ✓ a pesquisa · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+      mordeu · o mapa depois das gavetas em «Lugares», a 390 · pt 390 (uma coluna): pesquisa 379 · mapa 610–1134 à esquerda 18 · regiões 502 · distritos 547 · nomes à vista 0
+      mordeu · a porta «Lugares» da primeira página para uma página que não existe · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places-that-do-not-exist (404)
+      mordeu · o <summary> das regiões trocado por um bloco qualquer · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ? · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+      mordeu · o <summary> dos distritos e das ilhas trocado por um bloco qualquer · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ?
+      mordeu · a porta do distrito de Mourão tirada da gaveta dos distritos e das ilhas · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de NENHUM distrito escondida com a gaveta fechada ?, à vista com ela aberta ?, abre (?) e nela a porta de Mourão à vista 0×, que abre (?)
+      mordeu · o formulário de «Lugares» sem destino · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places-that-do-not-exist?concelho=mourao (404), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+    a porta e a página dos lugares · 18 medições no navegador, todas a cumprir · 6 de 6 plantas mordidas.
+    tema e menu · TM1 24 corrida(s), TM2 36, TM3 6, TM4 54 · 30 planta(s), 30 a morder
+      mordeu · a paleta escura pela preferência do sistema
+      mordeu · a guarda tirada do <head>
+      mordeu · um manipulador que aplica o claro a todos os cliques
+      mordeu · a guarda no fim do <body>
+      mordeu · o comando tirado do cabeçalho
+      mordeu · um botão do tema com 30 px
+      mordeu · uma nona porta no menu
+      mordeu · menu sem a discussão
+      mordeu · filas sem intervalo
+      mordeu · a última porta fora da janela
+      mordeu · o menu apertado a 6 px
+      mordeu · a letra do menu a 13 px
+      mordeu · a regra base apertada
+      mordeu · o menu sem dobrar a 320 px
+      mordeu · oito linhas a 320 px
+      mordeu · oito linhas a 390 px
+      mordeu · oito linhas a 430 px
+      mordeu · uma porta sem 44 px de toque
+      mordeu · uma nona porta no menu
+      mordeu · menu sem a discussão
+      mordeu · filas sem intervalo
+      mordeu · a última porta fora da janela
+      mordeu · o menu apertado a 6 px
+      mordeu · a letra do menu a 13 px
+      mordeu · a regra base apertada
+      mordeu · o menu sem dobrar a 320 px
+      mordeu · oito linhas a 320 px
+      mordeu · oito linhas a 390 px
+      mordeu · oito linhas a 430 px
+      mordeu · uma porta sem 44 px de toque
+    tema e menu · todas as células a 0.
+    
+✓ npm run check:moldura · 154.8 s · código 0
+    
+    > o-estado-do-pais@0.1.0 check:moldura
+    > node tests/documentos/moldura.mjs
+    
+    
+    [90m  a régua da moldura · 29 documentos × 2 temas × 2 larguras (390, 1280 px)[0m
+    
+      [32m✓[0m C1  0 nó(s) graves em 116 passagens · nenhuma
+      [32m✓[0m C2  filetes: 64972 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 60040 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+      [32m✓[0m C3  588 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+      [32m✓[0m C4  116 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+      [32m✓[0m C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+      [32m✓[0m C6  29 de 29 verdes · 29 de 29 plantas apanhadas
+    
+    [90m  o axe, regra a regra (as dezasseis páginas nos dois temas):[0m
+    [90m       116  region [moderate][0m
+    [90m         8  heading-order [moderate][0m
+    [90m         0  region [moderate] · em tabela[0m
+    [90m         0  heading-order [moderate] · em tabela[0m
+    
+    [90m  o que a moldura NÃO corrige, contado:[0m
+    [90m    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)[0m
+    [90m
+      escrito <temporario>[0m
+    
+    [32m  todas as células verdes.[0m
+    
+    
+✓ npm run check:alvos · 342.9 s · código 0
+    
+    > o-estado-do-pais@0.1.0 check:alvos
+    > node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs && node tests/quadro/disposicao.mjs alvos
+    
+    H10: 52 rotas documentais declaradas; 55 plantas da casa recusadas, incluindo o Método e uma rota inventada.
+    check:alvos · planta M-A · folha atrasada reduz o alvo · H16: 9837 página(s) do dist/: 9785 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 52 sem ela (e 52 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 390 de 390 passagens com uma porta no seu marco; 78 porta(s) a 390 e 78 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade
+    check:alvos · planta M-A · alvo abaixo de 44 px · H16: 9837 página(s) do dist/: 9785 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 52 sem ela (e 52 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 390 de 390 passagens com uma porta no seu marco; 78 porta(s) a 390 e 78 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade
+    check:alvos · planta M-A · etiqueta cortada depois da primeira linha · H14: 390 passagens de todas as famílias com o rótulo de IA no topo: 1 sem linha única, corpo de 12 px ou posição antes do título (sugestoes/pt@390)
+    
+    [90m  a régua dos alvos · 78 rotas × 5 larguras · dist: dist[0m
+    
+      [32m✓[0m H1  [90m0 nó(s) em violação (0 graves) em 78 rotas × 2 larguras · nenhuma violação[0m
+      [32m✓[0m H2  [90mfichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 58 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 35361 alvos medidos, 23508 deles com 44 px a 390, 489 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 431 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (38× a.src-chip «source · Ministério das Finanças» · 61.9×27.5 de toque (caixa 61×19); 33× a.src-chip «source · calculated» · 61.9×27.5 de toque (caixa 61×19); 25× a.src-chip «source · Ministério das Finanças» · 61.9×44.7 de toque (caixa 61×19); 18× a.src-chip «fonte · Ministério das Finanças» · 53.3×27.5 de toque (caixa 52.5×19)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 9 estão numa página de leitura, que o brief põe fora deste bloco (3× a «A economia de Évora e o dinheiro p» · 88×22.3 de toque (caixa 437.4×45.5); 3× a «The economy of Évora and the publi» · 88×22.3 de toque (caixa 434.8×68); 2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18 de toque (caixa 248.4×36.6)) e 49 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (4× a «Cada mudança fica no registo das c» · 88×27.8 de toque (caixa 532.2×54.6); 4× a.discussao-literal «O Orçamento do Estado para 2027 é » · 88×27.5 de toque (caixa 517.7×82.3); 4× a.discussao-literal «Ora, esta verba do PRR foi excecio» · 88×27.5 de toque (caixa 461.3×54.6); 3× a.discussao-literal «estão perfeitamente alinhadas com » · 88×20.5 de toque (caixa 454×82.3)) · 7821 não medido(s)[0m
+      [32m✓[0m H3  [90m9837 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 390 passagens[0m
+      [32m✓[0m H14  [90m390 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título[0m
+      [32m✓[0m H4  [90m9837 página(s) do dist/: 9785 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 52 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
+      [32m✓[0m H5  [90m25 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel[0m
+      [32m✓[0m H6  [90mprimeira página, a 1280: 26 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)[0m
+      [32m✓[0m H7  [90m20 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 20 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)[0m
+      [32m✓[0m H8  [90mcartões: 5504 registo(s), 2752 da edição inglesa, 2290 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 7505 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
+      [32m✓[0m H9  [90m4916 página(s) inglesas lidas: 1016 com um nome de diploma, 3900 sem nenhum, 5 documento(s) alojado(s) fora da conta · 1114 nome(s): 1108 com lang="pt-PT", 6 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
+      [32m✓[0m H13  [90m/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308[0m
+      [32m✓[0m H15  [90mpt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão[0m
+      [32m✓[0m H16  [90m9837 página(s) do dist/: 9785 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 52 sem ela (e 52 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 390 de 390 passagens com uma porta no seu marco; 78 porta(s) a 390 e 78 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade[0m
+      [32m✓[0m H10  [90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título[0m
+    [90m
+      escrito <temporario>[0m
+    
+    [32m  todas as células verdes.[0m
+    
+    PAI2 alvos: 70 combinações verdes; 2 plantas recusadas; sem capturas.
+    
+npm run check:alvos: 0
+npm run check:moldura: 0
+npm run check:lugar: 0
+npm run check:primeira: 0
+npm run check:dossies: 0
+{"ok":true,"uniao":{"ok":true,"falhas":[],"passos_do_verify":10,"cobertos_pelo_build":5,"corridos_aqui":5},"dist":true,"cabeca":true}
