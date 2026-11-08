@@ -169,17 +169,17 @@ edicoes:
         sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
         file: _edicoes/onde-esta-a-agua.pt.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 5b970f87017b41a89434c131a9e5286a8e5a4f7d70324f054d1d7fd2e6ca3229
+        sha256: 2129f39c0c951cbbf8f09d4c5173e469682b15deb48ee74f133d8217cd6262ae
         file: onde-esta-a-agua/pt.html
     title: Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia
     artifact_url: https://claude.ai/code/artifact/8cd298f4-908e-4e84-8849-2ea03a3778d0
     raw_file: _raw/onde-esta-a-agua.pt.html
     fetched_utc: '2026-08-12T13:54:56Z'
-    bytes_raw: 267111
+    bytes_raw: 267374
     bytes_runtime_removed: 17141
-    bytes_normalized: 249970
-    sha256_raw: 74a595c1a66ba4066d3aeb0f2a4abe3951c47ff33714e11f757f0368aaffe275
-    sha256_normalized: 5b970f87017b41a89434c131a9e5286a8e5a4f7d70324f054d1d7fd2e6ca3229
+    bytes_normalized: 250233
+    sha256_raw: f81b21b9551f8c3824c8657c8bb1ebf88428c07200c9de31a83b7aff674f1305
+    sha256_normalized: 2129f39c0c951cbbf8f09d4c5173e469682b15deb48ee74f133d8217cd6262ae
     primeira_edicao:
       date: '2026-08-12'
       sha256: afca065a7d0b9c645a18467e95ffac767a3193bbd1348867f4826b3b95d21b5f
@@ -192,17 +192,17 @@ edicoes:
         sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
         file: _edicoes/onde-esta-a-agua.en.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 47859b5a616f0ac812f4a0d41ef7bc0b94768f3197a087e137913405d8dadad3
+        sha256: 064e2471fc6d71868571552fb78661e018ca1386a1d834aa10103ae42197268c
         file: onde-esta-a-agua/en.html
     title: Onde está a água? — Portugal's water, where it comes from, and what autonomy would take
     artifact_url: https://claude.ai/code/artifact/59c36e54-f400-4bed-b532-3b390695cd71
     raw_file: _raw/onde-esta-a-agua.en.html
     fetched_utc: '2026-08-12T13:54:57Z'
-    bytes_raw: 258771
+    bytes_raw: 259021
     bytes_runtime_removed: 17141
-    bytes_normalized: 241630
-    sha256_raw: d99c41501fa1ffec2015444131fed62baf014b60d91ebdefec929b7db3e2b773
-    sha256_normalized: 47859b5a616f0ac812f4a0d41ef7bc0b94768f3197a087e137913405d8dadad3
+    bytes_normalized: 241880
+    sha256_raw: 84616b07b15f84c6b342b25d12b4b9bb8a7d955c6e46530f4b612c8015b57fc9
+    sha256_normalized: 064e2471fc6d71868571552fb78661e018ca1386a1d834aa10103ae42197268c
     primeira_edicao:
       date: '2026-08-12'
       sha256: b8055a493016c595ffd0789f00af1357c265f1ab2aaaf4f498bbeb4bff5511db
@@ -215,17 +215,17 @@ edicoes:
         sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
         file: _edicoes/agua-nao-faturada.pt.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 1a5ca7f2d0e5791614b42b41ae6908142db0eae5feef77c607b236ebc649822b
+        sha256: e0fd3c1fdb2bf1a0bad9916ebd8488baf68e24e1c48a7a4a6565bcd12b40cf9e
         file: agua-nao-faturada/pt.html
     title: Água Não Faturada — a água que Portugal perde e a que nunca mediu
     artifact_url: https://claude.ai/code/artifact/5cc977d1-a577-488e-8867-c027c3d7fa09
     raw_file: _raw/agua-nao-faturada.pt.html
     fetched_utc: '2026-08-12T13:55:05Z'
-    bytes_raw: 479642
+    bytes_raw: 479640
     bytes_runtime_removed: 17141
-    bytes_normalized: 462501
-    sha256_raw: e6b080c9c4bf13c1e436bfaa093a13fa441ded67009f093ffc4b420ccb54da27
-    sha256_normalized: 1a5ca7f2d0e5791614b42b41ae6908142db0eae5feef77c607b236ebc649822b
+    bytes_normalized: 462499
+    sha256_raw: e5b99a427043a4e15b2f701bcbed1e76d7314e0b576e429c4b0d9f4f439e2cec
+    sha256_normalized: e0fd3c1fdb2bf1a0bad9916ebd8488baf68e24e1c48a7a4a6565bcd12b40cf9e
     primeira_edicao:
       date: '2026-08-12'
       sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
@@ -238,17 +238,17 @@ edicoes:
         sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
         file: _edicoes/agua-nao-faturada.en.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 4c1b65ea2f8c4d82d47e86a4fa1894895dd901dd3d90573cafc630d1cd5fdb38
+        sha256: dfc2c9aaa4d7533b4cdfb33ac323ad46dffb6dd371d4a76b1752a071aca3f80a
         file: agua-nao-faturada/en.html
     title: Água Não Faturada — Portugal's water, what leaks and what was never measured
     artifact_url: https://claude.ai/code/artifact/f19de77e-ce10-4cca-b040-07e345258227
     raw_file: _raw/agua-nao-faturada.en.html
     fetched_utc: '2026-08-12T13:55:12Z'
-    bytes_raw: 477311
+    bytes_raw: 477307
     bytes_runtime_removed: 17141
-    bytes_normalized: 460170
-    sha256_raw: 90834402a23bfba23669d892565741f0dc1f7b0bdd965d3d8c20bc58c90af7a0
-    sha256_normalized: 4c1b65ea2f8c4d82d47e86a4fa1894895dd901dd3d90573cafc630d1cd5fdb38
+    bytes_normalized: 460166
+    sha256_raw: 16273a69d128024dfc0c0aed7f8db1a45270c4d9b53e37794329e48d2c8cb4a8
+    sha256_normalized: dfc2c9aaa4d7533b4cdfb33ac323ad46dffb6dd371d4a76b1752a071aca3f80a
     primeira_edicao:
       date: '2026-08-12'
       sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278

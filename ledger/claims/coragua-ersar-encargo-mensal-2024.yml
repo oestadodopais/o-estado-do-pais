@@ -5,14 +5,21 @@ source: ERSAR
 document:
   title: RASARP 2025, volume 1
   edition: RASARP 2025, volume 1
-  locator: p. 410, Figura 553, barra de 2024, Abastecimento de água
+  locator: "p. 410, Figura 553: 13,48 é o rótulo de dados da barra de 2024 do abastecimento de água, na imagem da figura, sem camada de texto"
   page: 410
   kind: pdf
   source_sha256: cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67
 source_url: https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf#page=410
 access_date: '2026-11-08'
 reference_date: '2024'
-excerpt: 13,48
+excerpt: |-
+  Em Portugal continental, entre 2015 e 2024, o nível médio de encargos tarifários mensais suportado pelo utilizador final para um
+  consumo de 10 metros cúbicos, apresenta a evolução, a preços correntes, que se pode verificar na Figura 55387.
+
+
+
+
+                  Figura 553. Evolução do nível médio de encargos tarifários mensais por serviço entre 2015 e 2024
 derivation: null
 derivation_en: null
 derived_from: []
