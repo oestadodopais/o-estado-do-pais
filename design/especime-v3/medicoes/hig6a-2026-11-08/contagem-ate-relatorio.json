@@ -1,0 +1,37 @@
+{
+  "chamadas": {
+    "exec": 68,
+    "request_user_input_async": 1,
+    "wait": 20
+  },
+  "invocacoes": [
+    "curto hig6a-unidades.log",
+    "portoes-pelo-escrivao hig6a-build",
+    "curto hig6a-python.log",
+    "curto hig6a-pre-existentes.log",
+    "portoes-pelo-escrivao hig6a-build-cabeca",
+    "curto hig6a-historicas.log",
+    "curto hig6a-typecheck.log",
+    "curto hig6a-lancadores.log",
+    "curto hig6a-fontes-preliminar.log",
+    "curto hig6a-decimais.log",
+    "curto hig6a-voz2-original.log",
+    "curto hig6a-lancador-terceira.log",
+    "curto hig6a-pre-mandato.log",
+    "curto hig6a-dist-existente.log",
+    "curto hig6a-aud1-referencia.log",
+    "curto hig6a-blocos-prototipo.log",
+    "curto hig6a-blocos-prototipo.log",
+    "curto hig6a-unidades-finais.log",
+    "curto hig6a-aud1-escopo.log",
+    "curto hig6a-pares-argumentos.log",
+    "curto hig6a-pares-diagnostico.log",
+    "curto hig6a-pre-plantas-final.log",
+    "curto hig6a-tipos-final.log",
+    "curto hig6a-repositorio-final.log",
+    "curto hig6a-paridade-plantas-final.log",
+    "portoes-pelo-escrivao hig6a-build-final",
+    "curto hig6a-fecho.log"
+  ],
+  "conferencias_com_registo": 34
+}

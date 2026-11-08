@@ -1,0 +1,120 @@
+{
+  "voz": {
+    "codigo": 0,
+    "esperado": 0,
+    "comando": [
+      "npm",
+      "run",
+      "check:voz"
+    ]
+  },
+  "paridade": {
+    "codigo": 0,
+    "esperado": 0,
+    "comando": [
+      "npm",
+      "run",
+      "check:paridade"
+    ]
+  },
+  "reais": {
+    "codigo": 0,
+    "esperado": 0,
+    "comando": [
+      "node",
+      "tests/leituras/frases-reais.mjs",
+      "<temporario>"
+    ]
+  },
+  "mandato-hig6a": {
+    "codigo": 0,
+    "esperado": 0,
+    "comando": [
+      "python3",
+      "scripts/leituras/pre-mandato.py",
+      ".",
+      "<temporario>"
+    ]
+  },
+  "pre-voz2a": {
+    "codigo": 0,
+    "esperado": 0,
+    "comando": [
+      "python3",
+      "scripts/leituras/pre-mandato.py",
+      ".",
+      "<temporario>/hig6-mandatos-1cz9jyws/mandato-A.md"
+    ]
+  },
+  "pre-voz2b": {
+    "codigo": 9,
+    "esperado": 9,
+    "comando": [
+      "python3",
+      "scripts/leituras/pre-mandato.py",
+      ".",
+      "<temporario>/hig6-mandatos-1cz9jyws/mandato-B.md"
+    ]
+  },
+  "pares-lista-incompleta": {
+    "codigo": 1,
+    "esperado": 1,
+    "comando": [
+      "node",
+      "design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs",
+      "dist",
+      "<temporario>/hig6-mandatos-1cz9jyws/pares-incompletos.json",
+      "2026-11-08"
+    ]
+  },
+  "pares-data-invalida": {
+    "codigo": 1,
+    "esperado": 1,
+    "comando": [
+      "node",
+      "design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs",
+      "dist",
+      "<temporario>/hig6-mandatos-1cz9jyws/pares-incompletos.json",
+      "2026-02-30"
+    ]
+  },
+  "build": {
+    "codigo": 0,
+    "comando": [
+      "sh",
+      "scripts/leituras/portoes-pelo-escrivao.sh",
+      "<temporario>",
+      "build"
+    ]
+  },
+  "pre-plantas": {
+    "codigo": 0,
+    "comando": [
+      "npm",
+      "run",
+      "check:pre-mandato"
+    ]
+  },
+  "typecheck": {
+    "codigo": 0,
+    "comando": [
+      "npm",
+      "run",
+      "typecheck"
+    ]
+  },
+  "repositorio": {
+    "codigo": 0,
+    "comando": [
+      "node",
+      "tests/metodo/repositorio.mjs"
+    ]
+  },
+  "paridade-plantas": {
+    "codigo": 0,
+    "comando": [
+      "node",
+      "tests/leituras/paridade.mjs"
+    ]
+  }
+}
