@@ -1,0 +1,250 @@
+{
+  "mandato": "COR-AGUA, adenda I",
+  "sitio_conferido": "ed5e771a1830805f6bf0a212bdac870ad630d2cf",
+  "motor": "706b4626e871db8bb230efdd1a79b7cb30491ce8",
+  "aplicacao": {
+    "corpos": [
+      {
+        "ficheiro": "studies-src/_raw/onde-esta-a-agua.pt.html",
+        "lingua": "pt",
+        "aplicadas": [
+          "I-pt-1"
+        ],
+        "frases_finais_conferidas": [
+          "D-pt-1",
+          "D-pt-2",
+          "D-pt-3",
+          "G-pt-1",
+          "G-pt-2",
+          "G-pt-3",
+          "I-pt-1"
+        ],
+        "comentarios_preservados": true,
+        "guioes_e_dados_inalterados": true
+      },
+      {
+        "ficheiro": "studies-src/_raw/onde-esta-a-agua.en.html",
+        "lingua": "en",
+        "aplicadas": [
+          "I-en-1"
+        ],
+        "frases_finais_conferidas": [
+          "D-en-1",
+          "D-en-2",
+          "D-en-3",
+          "G-en-1",
+          "G-en-2",
+          "G-en-3",
+          "I-en-1"
+        ],
+        "comentarios_preservados": true,
+        "guioes_e_dados_inalterados": true
+      },
+      {
+        "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água 2026 (pt-PT).html",
+        "lingua": "pt",
+        "aplicadas": [
+          "I-pt-1"
+        ],
+        "frases_finais_conferidas": [
+          "D-pt-1",
+          "D-pt-2",
+          "D-pt-3",
+          "G-pt-1",
+          "G-pt-2",
+          "G-pt-3",
+          "I-pt-1"
+        ],
+        "comentarios_preservados": true,
+        "guioes_e_dados_inalterados": true
+      },
+      {
+        "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/body_onde_pt.html",
+        "lingua": "pt",
+        "aplicadas": [
+          "D-pt-1",
+          "D-pt-2",
+          "D-pt-3",
+          "G-pt-1",
+          "I-pt-1"
+        ],
+        "frases_finais_conferidas": [
+          "D-pt-1",
+          "D-pt-2",
+          "D-pt-3",
+          "G-pt-1",
+          "G-pt-2",
+          "G-pt-3",
+          "I-pt-1"
+        ],
+        "comentarios_preservados": true,
+        "guioes_e_dados_inalterados": true
+      },
+      {
+        "ficheiro": "motor/content/01 Energy Water and Climate/Onde Está a Água — Technical Source/onde_body.html",
+        "lingua": "en",
+        "aplicadas": [
+          "D-en-1",
+          "D-en-2",
+          "D-en-3",
+          "G-en-1",
+          "I-en-1"
+        ],
+        "frases_finais_conferidas": [
+          "D-en-1",
+          "D-en-2",
+          "D-en-3",
+          "G-en-1",
+          "G-en-2",
+          "G-en-3",
+          "I-en-1"
+        ],
+        "comentarios_preservados": true,
+        "guioes_e_dados_inalterados": true
+      }
+    ],
+    "nota_87": "Em 2022, há uma quebra de série na medida em que os valores apresentados passaram a incluir o IVA e a repercussão dos gastos com as taxas ambientais (Taxa de Recursos Hídricos e Taxa de Gestão de Resíduos).",
+    "excertos_motor": [
+      "ersar-bill",
+      "ersar-bill-month",
+      "ratio-lo",
+      "ratio-hi",
+      "ersar-consumo-referencia"
+    ],
+    "metodo": "Texto da página 410, com a chamada da nota 87 em expoente, como na folha impressa; a camada de texto cola a chamada ao número da figura (55387). O valor 13,48 é lido visualmente na barra de 2024 da Figura 553."
+  },
+  "frases": {
+    "lista": "FRASES-COR-AGUA-i.json",
+    "sha256": "b38f2a2124bf0977a7f29bf395bca7c45cbad87cbc1e6c96135464d438f4ab0f",
+    "aplicada": 0
+  },
+  "ersar": {
+    "nota_87_no_pdf_alojado": true,
+    "excerto_e_titulo_no_pdf_alojado": true,
+    "sha256_conferido": true,
+    "metodo_no_motor": "excerpt_method",
+    "metodo_no_sitio": "note, o campo já aceite pelo esquema"
+  },
+  "alvos": {
+    "mudanca": "Só o comentário; o código funcional foi comparado com a cabeça anterior e é igual.",
+    "limite": "COR-AGUA-4 continua aberta: a área inteira a 390 px não é condição protegida para estes selos."
+  },
+  "conferencias": {
+    "check:pre-mandato": {
+      "codigo": 0
+    },
+    "typecheck": {
+      "codigo": 0
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "segundos": 9.838
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "segundos": 0.652
+    },
+    "check:voz": {
+      "codigo": 0,
+      "segundos": 267.045
+    },
+    "check:formato": {
+      "codigo": 0,
+      "segundos": 1.379
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "segundos": 28.071
+    },
+    "ledger:check": {
+      "codigo": 0,
+      "segundos": 18.202
+    },
+    "check:selos": {
+      "codigo": 0,
+      "segundos": 9.85
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "segundos": 14.455
+    },
+    "lista_aplicada": {
+      "codigo": 0,
+      "segundos": 0.442
+    },
+    "check:alvos": {
+      "codigo": 0,
+      "segundos": 354.581
+    },
+    "build": {
+      "codigo": 0,
+      "segundos": 721.7568410001695
+    }
+  },
+  "tentativas_anteriores": {
+    "build_campo": 1,
+    "ledger_apos_correcao": 0,
+    "build_cabeca_mudada": 1,
+    "conferencias_sobre_construcao_incompleta": {
+      "check:pre-mandato": {
+        "codigo": 0,
+        "segundos": 37.586
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.348
+      },
+      "check:frases-reais": {
+        "codigo": 1,
+        "segundos": 0.481
+      },
+      "check:paridade": {
+        "codigo": 0,
+        "segundos": 0.564
+      },
+      "check:voz": {
+        "codigo": 1,
+        "segundos": 3.775
+      },
+      "check:formato": {
+        "codigo": 0,
+        "segundos": 1.279
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 25.26
+      },
+      "ledger:check": {
+        "codigo": 0,
+        "segundos": 16.9
+      },
+      "check:selos": {
+        "codigo": 0,
+        "segundos": 9.439
+      },
+      "check:edicoes": {
+        "codigo": 1,
+        "segundos": 11.485
+      },
+      "lista_aplicada": {
+        "codigo": 9,
+        "segundos": 0.286
+      },
+      "check:alvos": {
+        "codigo": 1,
+        "segundos": 8.183
+      }
+    }
+  },
+  "erros_corrigidos": [
+    "Acrescentei excerpt_method ao livro do sítio, cujo esquema não admite esse campo. A explicação ficou em note; o motor conserva excerpt_method.",
+    "Uma chamada de preparação de mensagens correu na pasta do motor e tentou ler um ficheiro do sítio; não alterou ficheiros e foi repetida na pasta certa.",
+    "Comitei entre a preparação e a gravação do carimbo. A guarda recusou a cabeça diferente. A construção foi repetida sobre a cabeça fixa; os resultados da construção incompleta não servem de prova final."
+  ],
+  "custo": {
+    "chamadas_ate_escrita": 31,
+    "corridas": 26,
+    "ajudantes": 0,
+    "criterio": "Invocações de conferências, incluindo tentativas recusadas; os passos internos do build não se contam à parte."
+  }
+}
