@@ -10,6 +10,7 @@ import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
 const pasta = path.dirname(fileURLToPath(import.meta.url));
 const dist = process.argv[2] ?? 'dist';
+const EDICAO = '2026-11-08'; // a data das edições da VOZ-2A
 const lista = JSON.parse(fs.readFileSync(path.join(pasta, 'FRASES-VOZ-2A.json'), 'utf8'));
 const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
 const blocos = f => {
@@ -44,10 +45,12 @@ let total = 0, estudos = 0, fora = 0;
 for (const slug of [...new Set(lista.map(f => f.estudo))]) {
   const dp = path.join(dist, 'estudos', slug, 'documento'), de = path.join(dist, 'en', 'studies', slug, 'document');
   if (!fs.existsSync(de)) continue;
-  const datas = fs.readdirSync(dp).filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d) && fs.existsSync(path.join(de, d))).sort();
+  // a edição anterior à da VOZ-2A, contra a edição da VOZ-2A (guardada, se já houver outra depois dela; senão, a atual)
+  const datas = fs.readdirSync(dp).filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d) && d < EDICAO && fs.existsSync(path.join(de, d))).sort();
   if (!datas.length) continue;
   const d = datas.at(-1); estudos++;
-  const [pa, pn, ea, en] = [path.join(dp, d), dp, path.join(de, d), de].map(x => blocos(path.join(x, 'index.html')));
+  const vp = fs.existsSync(path.join(dp, EDICAO)) ? path.join(dp, EDICAO) : dp, ve = fs.existsSync(path.join(de, EDICAO)) ? path.join(de, EDICAO) : de;
+  const [pa, pn, ea, en] = [path.join(dp, d), vp, path.join(de, d), ve].map(x => blocos(path.join(x, 'index.html')));
   const sem = conferirEstudo(pa, pn, ea, en);
   for (const [l, i, t] of sem) console.log(`${slug} (desde ${d}): o bloco ${i} muda só em ${l}: ${t.slice(0, 140)}`);
   total += sem.length;
