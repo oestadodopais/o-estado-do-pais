@@ -1,0 +1,25 @@
+{
+ "bloco": "MET2 (a política de inteligência artificial sem a porta para o repositório)",
+ "data": "2026-11-08",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232); um bloco pequeno"
+ },
+ "passagens_codex": [
+  {
+   "nome": "MET2 (a passagem única; 41 chamadas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T05:07:19Z",
+   "fim": "2026-11-08T05:23:02Z",
+   "pontos": 0.0,
+   "pontos_antes": 52.0,
+   "pontos_depois": 52.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-met2.log"
+  }
+ ],
+ "pontos_codex_total": 0.0,
+ "leituras": "Claude Opus 5.5 (leitor): fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros; zero pontos quer dizer que a passagem não subiu o contador num ponto inteiro."
+}

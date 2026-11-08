@@ -1,0 +1,308 @@
+{
+  "cabeca": "319d5a6cdc5cd25d1ec16a2ba46b5f5f950de789",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "metodo-pt-390.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4073,
+      "sha256": "916621d73a2e8f9f778406fb6ae9d2f42b142a646602e0bf06e66264a28a233d",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-390-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 3651,
+            "width": 354,
+            "height": 45
+          },
+          "sha256": "f93d7819d4397bc74e54f92d955763e010d155491a361d338427d082d9f1f65f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-768.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3797,
+      "sha256": "bf921cefe2c87495b6df387c166552af1c54c4417bedb6a47413e1f0dcafdf90",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-768-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 3470,
+            "width": 545,
+            "height": 45
+          },
+          "sha256": "be0a5b702bea4b3bdd0054941b111b546432ee74025c24760a41bff57f0ee19e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1024.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3689,
+      "sha256": "70a993042ade9dcab01cae500b23e5560010b902ba5bd1eba1b43d81e87ccc7a",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1024-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-pt-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 3410,
+            "width": 545,
+            "height": 45
+          },
+          "sha256": "4f771815d2bf319460a8ca9bf14f0ead71bd9af58fc47dac33a0a3e84b1751b4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1280.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3730,
+      "sha256": "9c9b376b32de897685f865c85aef2ed0fe2e91b6af4205b7518b43e296f07219",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1280-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-pt-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 3432,
+            "width": 544,
+            "height": 45
+          },
+          "sha256": "73b766aed85b416eb1368c7e516fd1b58b060047aa6a581e9190744acc705e06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1600.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3737,
+      "sha256": "09896cf3498422c3631b6d5180e45f1c134bbf75f8756ee74ffd8ffda61c2cc8",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1600-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-pt-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 3432,
+            "width": 544,
+            "height": 45
+          },
+          "sha256": "73b766aed85b416eb1368c7e516fd1b58b060047aa6a581e9190744acc705e06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-390.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4223,
+      "sha256": "04aabb39ae27d9fc5b6130ef1638be8c0faf684410ef42cbd0059e2932c4b20b",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-390-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 3753,
+            "width": 354,
+            "height": 45
+          },
+          "sha256": "05732b7158abc33dd5f0afa6b5969905aec3ccd68427e0177eb3cc35e19ce5c4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-768.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3797,
+      "sha256": "2236216efa6e60ed488c779cd0df90a5e178ec58f538d5a43f5af6c26fa0f834",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-768-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 3470,
+            "width": 545,
+            "height": 45
+          },
+          "sha256": "6a1f4dc71406e0098f63f248ef81fb3865206c8f3c25923f9be1f213ef9d18b2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3689,
+      "sha256": "f91d128489712417a2214af910962f1a22ac99c84ed2b4331046754d40d91556",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1024-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-en-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 3410,
+            "width": 545,
+            "height": 45
+          },
+          "sha256": "c757068e6a8c74d74ae316d1faa2fa6d085c64387ba0ac14b7e4a6eea48304df"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3730,
+      "sha256": "a3ceccdfcb99e0a1d9c025d7c8c91001da3136c9293a354fde664f816692496c",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1280-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-en-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 3432,
+            "width": 544,
+            "height": 45
+          },
+          "sha256": "f638f0e151ac9807e296a64220300729b16c6a202b151ec9ba2b03512c2c384b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3737,
+      "sha256": "c1c1770f49a49f6464cb6c750aa7136f8846bae6ae1561f4bb023cec3b123a0a",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1600-portas.png",
+          "seletor": ".met1-portas",
+          "origem": "metodo-en-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 3432,
+            "width": 544,
+            "height": 45
+          },
+          "sha256": "f638f0e151ac9807e296a64220300729b16c6a202b151ec9ba2b03512c2c384b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "b2a0f33c688439dd4c791bc794671ef9e627f2d80a1b3c5adc986b34a9a1d68e",
+    "metodo/index.html": "daffe6bf25020dd2bef8540b939788e154be3bcd8a959bd7f45d7e613b08402b",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.Dn-yGrQ-.css": "50a30a549ab240c216b83c0acdd141c24533cda9244f2446624b1a4128f1284c",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/method/index.html": "5cd7c4a1cd7269e7a500e81d260b741a30e6500ed5820164085706db00318e44"
+  },
+  "falhas": [],
+  "ok": true
+}

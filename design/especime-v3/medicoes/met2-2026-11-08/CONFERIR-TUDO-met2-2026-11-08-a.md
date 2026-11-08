@@ -1,0 +1,15 @@
+# conferir-tudo · 319d5a6cd · 13 passos · 0 vermelhos · 1492 s
+
+- 00 `npm run build`: 0 (692 s)
+- 05 `npm run ledger:check`: 0 (16 s)
+- 09 `npm run check:briefs`: 0 (158 s)
+- 10 `npm run check:leituras`: 0 (166 s)
+- 11 `npm run check:metodo-construido`: 0 (5 s)
+- 12 `npm run gate:html`: 0 (76 s)
+- 20 `npm run check:cabeca`: 0 (6 s)
+- 33 `npm run check:voz`: 0 (227 s)
+- 37 `npm run check:lugar`: 0 (48 s)
+- 40 `npm run check:mortos`: 0 (2 s)
+- 43 `npm run check:navegacao`: 0 (14 s)
+- 49 `npm run check:privacidade`: 0 (82 s)
+- 63 `npm run typecheck`: 0 (0 s)

@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T05:48:45+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "M1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a porta do repositório volta ao Método português",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "daffe6bf25020dd2bef8540b939788e154be3bcd8a959bd7f45d7e613b08402b",
+   "sha256_depois": "48168a3ffd02932b0449aa0b6bbfc5515d0e7f3e9e16ab1ce6d74e2b24e991ca",
+   "contexto_antes": "são escritas, conferidas e atualizadas por modelos de inteligência artificial; nenhuma pessoa revê cada mudança antes de se publicar.</p><p class=\"met1-portas\"><a data-met1=\"ligacao-0\" href=\"/agenda\">A agenda</a></p></div></section></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livro-",
+   "contexto_depois": "são escritas, conferidas e atualizadas por modelos de inteligência artificial; nenhuma pessoa revê cada mudança antes de se publicar.</p><p class=\"met1-portas\"><a data-met1=\"ligacao-0\" href=\"/agenda\">A agenda</a> <a data-met1=\"ligacao-1\" href=\"https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md\">Política de inteligência artificial</a></p></div></section></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livro-"
+  },
+  {
+   "id": "M2",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "o Método inglês diz que uma pessoa revê cada mudança antes de se publicar",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5cd7c4a1cd7269e7a500e81d260b741a30e6500ed5820164085706db00318e44",
+   "sha256_depois": "876187ceb583711ac1aac811230ba7dd9ab2ff3abc221b618a6ade80e495c64a",
+   "contexto_antes": " it.</a></p><p class=\"metodo-p\" data-met1=\"autoria\" data-frase-da-politica=\"en\">These pages are written, checked and updated by artificial intelligence models; no person reviews each change before publication.</p><p class=\"met1-portas\"><a data-met1=\"ligacao-0\" href=\"/en/agenda\">The agenda</a></p></div></section></div></main><footer class=\"rodape rodape-b1\"><nav clas",
+   "contexto_depois": " it.</a></p><p class=\"metodo-p\" data-met1=\"autoria\" data-frase-da-politica=\"en\">These pages are written, checked and updated by artificial intelligence models; a person reviews each change before publication.</p><p class=\"met1-portas\"><a data-met1=\"ligacao-0\" href=\"/en/agenda\">The agenda</a></p></div></section></div></main><footer class=\"rodape rodape-b1\"><nav clas"
+  },
+  {
+   "id": "M3",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua nova procura um endereço da organização que nunca existe (um hífen a mais)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5fd54fb9a2f6f20052aebbb47651a2d8f686a157dbf4503e069526350c60a008",
+   "sha256_depois": "d4d4fe61e2deca90694afb8494e5d3f6718c78050b90c8a6e8a90b8bd3f4370c",
+   "contexto_antes": "ão sai em nenhum ficheiro; o HTML não liga ao GitHub. */\n+import fs from 'node:fs';\n+import path from 'node:path';\n+import { parse } from 'node-html-parser';\n+\n+const ORGANIZACAO = 'github.com/oestadodopais';\n+\n+export function ligacoesAoGithub(root) {\n+  return root.querySelectorAll('[href],[xlink\\\\:href]').filter(n =>\n+    ['href', 'xlink:href'].some(atributo => {",
+   "contexto_depois": "ão sai em nenhum ficheiro; o HTML não liga ao GitHub. */\n+import fs from 'node:fs';\n+import path from 'node:path';\n+import { parse } from 'node-html-parser';\n+\n+const ORGANIZACAO = 'github.com/oestadodopais-';\n+\n+export function ligacoesAoGithub(root) {\n+  return root.querySelectorAll('[href],[xlink\\\\:href]').filter(n =>\n+    ['href', 'xlink:href'].some(atributo => {"
+  },
+  {
+   "id": "M4",
+   "ficheiro": "diff.patch",
+   "descricao": "a §1.235 carimba um resumo do Método que não é o do ficheiro (o último algarismo)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d4d4fe61e2deca90694afb8494e5d3f6718c78050b90c8a6e8a90b8bd3f4370c",
+   "sha256_depois": "bda446ea7ef1fed80876ea82d04d4977d08d03ea6f47ace7a6ad3dba235fc6fd",
+   "contexto_antes": ".235 Domingo 08.11.2026, de manhã: a política de inteligência artificial sem a porta para o repositório (a MET2)\n+\n+**Afecta:** metodo · politica\n+\n+**Texto:** metodo f8b353c598eb · politica c4f1f16457b1\n+\n+**Toca:** §1.233 (8: a MET2 na fila), a regra 9 (o repositório público), o bloco ME1 (15.10.2026: a página diz os papéis e a regra d",
+   "contexto_depois": ".235 Domingo 08.11.2026, de manhã: a política de inteligência artificial sem a porta para o repositório (a MET2)\n+\n+**Afecta:** metodo · politica\n+\n+**Texto:** metodo f8b353c598ec · politica c4f1f16457b1\n+\n+**Toca:** §1.233 (8: a MET2 na fila), a regra 9 (o repositório público), o bloco ME1 (15.10.2026: a página diz os papéis e a regra d"
+  },
+  {
+   "id": "M5",
+   "ficheiro": "built/index.html",
+   "descricao": "a primeira página ganha uma ligação ao repositório no rodapé",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "02dc8fd2e6cf70814ba216cdc5307c4671711fb9334d21ba8b08db50aec54841",
+   "sha256_depois": "5288d9b85d3468d98036b671e38d05ff07a59ff87e455b827fa6f55054bd1a87",
+   "contexto_antes": "</a></p><p class=\"regra-portas\"><a href=\"/livro-razao\">Números e fontes →</a></p><p class=\"regra-portas\"><a href=\"/correcoes\">O que mudou →</a></p></div></main><footer class=\"rodape rodape-b1\"><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livro-razao\">Números e fontes</a> · <a href=\"/metodo\">Método</a> · <a href=\"/correcoes\">Correçõe",
+   "contexto_depois": "</a></p><p class=\"regra-portas\"><a href=\"/livro-razao\">Números e fontes →</a></p><p class=\"regra-portas\"><a href=\"/correcoes\">O que mudou →</a></p></div></main><footer class=\"rodape rodape-b1\"><p><a href=\"https://github.com/oestadodopais/o-estado-do-pais\">Código</a></p><nav class=\"rodape-nav\" aria-label=\"Navegação do rodapé\"><a href=\"/\">Início</a> · <a href=\"/livro-razao\">Números e fontes</a> · <a href=\"/metodo\">Método</a> · <a href=\"/correcoes\">Correçõe"
+  }
+ ]
+}
