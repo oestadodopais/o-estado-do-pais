@@ -1,0 +1,111 @@
+{
+  "motor": "cf5bd5b28b26d814315a5440d0b7dc1038e7ca1e",
+  "sitio_conferido": "a1b2ffb41df2f2b4e1746cbc916681a3c76ee503",
+  "portoes": {
+    "motor": 0,
+    "typecheck": 0,
+    "build": 0,
+    "voz2a-g": 0
+  },
+  "conferencias": {
+    "check:voz": 0,
+    "check:lugar": 0,
+    "check:edicoes": 0,
+    "check:registo": 0,
+    "check:datas": 0,
+    "check:discussao": 0,
+    "check:alvos": 0,
+    "check:moldura": 0,
+    "check:primeira": 0,
+    "check:dossies": 0
+  },
+  "voz_retiradas": {
+    "codigo": 0,
+    "retiradas": 1391,
+    "controlo": 0,
+    "planta": 1,
+    "retiradas_na_planta": 4
+  },
+  "frases_novas": {
+    "codigo": 0,
+    "campos": 176,
+    "recusas": 0,
+    "diferencas_numericas": 0
+  },
+  "pares": {
+    "codigo": 0,
+    "estudos": 6,
+    "blocos_sem_par": 0,
+    "fora_lista": 0,
+    "planta": 2,
+    "controlo": 0,
+    "plantas_ramos": 6
+  },
+  "integridade": {
+    "base_motor": "e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176",
+    "documento_portugues_identico": true,
+    "v331_unica_mudanca_documental": true,
+    "livros_identicos": 27,
+    "referencias_identicas": 8382,
+    "blocos_alterados": [
+      {
+        "estudo": "07",
+        "lingua": "pt",
+        "bloco": 58,
+        "antes": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte).",
+        "depois": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência)."
+      }
+    ]
+  },
+  "contagens": {
+    "offsets_conferidos": {
+      "antes": 9758,
+      "depois": 9757
+    },
+    "operacoes": {
+      "antes": 874,
+      "depois": 875
+    },
+    "substituicoes": {
+      "antes": 412,
+      "depois": 413
+    }
+  },
+  "uniao": {
+    "ok": true,
+    "falhas": [],
+    "passos_do_verify": 10,
+    "cobertos_pelo_build": 5,
+    "corridos_aqui": 5
+  },
+  "orcamento": {
+    "chamadas": 31,
+    "por_ferramenta": {
+      "exec": 17,
+      "wait": 14
+    },
+    "corridas_curto": 15,
+    "comandos_curto": [
+      "curto.sh <temporario>/aplicar.log",
+      "curto.sh <temporario>/compor16.log",
+      "curto.sh <temporario>/registos.log",
+      "curto.sh <temporario>/voz-test.log",
+      "curto.sh <temporario>/compor-test.log",
+      "curto.sh <temporario>/novas.log",
+      "curto.sh <temporario>/integridade.log",
+      "curto.sh <temporario>/travessia.log",
+      "curto.sh <temporario>/edicoes.log",
+      "curto.sh <temporario>/pares-previa.log",
+      "curto.sh <temporario>/travessia-final.log",
+      "curto.sh <temporario>/voz-retiradas.log",
+      "curto.sh <temporario>/etiquetas.log",
+      "curto.sh <temporario>/pares-final.log",
+      "curto.sh <temporario>/privacidade.log"
+    ],
+    "fechos_dirigidos": 1,
+    "core_gate_fora_sandbox": 1,
+    "corridas_integrais": 0,
+    "capturas": 0
+  },
+  "privacidade": 0
+}
