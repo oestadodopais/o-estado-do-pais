@@ -14823,7 +14823,9 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 
 ### 1.232 Sábado 07.11.2026, de manhã: o teto dos cinco pontos cai, a auditoria antes de partilhar, e a palavra «corrigido»
 
-**Afecta:** a §1.202 (3: o teto por bloco); a §1.229 (9: a prontidão); os mandatos VOZ-2A e VOZ-2B (§1.3: a natureza das edições novas).
+**Afecta:** nenhum
+
+**Toca:** a §1.202 (3: o teto por bloco); a §1.229 (9: a prontidão); os mandatos VOZ-2A e VOZ-2B (§1.3: a natureza das edições novas).
 
 **Data:** 07.11.2026, das 08:04 às 08:16 UTC (as palavras do financiador) ao commit destes registos, a 08.11.2026, com os da VOZ-2A (a §1.233).
 
