@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
-import {campoLocalizadorMet1, conferirLimitesSobre, APROVADO, unidades, conferirLugaresIA, recontarConferencias, DOCUMENTO_DA_POLITICA_DO_PORTAO as politica, campoDoReciboMet1} from '../../scripts/metodo-do-portao.mjs';
+import {campoLocalizadorMet1, conferirLimitesSobre, APROVADO, unidades, conferirLugaresIA, recontarConferencias, campoDoReciboMet1} from '../../scripts/metodo-do-portao.mjs';
 import {passosDaCorrida} from '../../src/lib/conferencias-da-corrida.mjs';
 import {getClaim} from '../../src/lib/ledger.mjs';
 import {routePath} from '../../src/lib/routes.mjs';
@@ -20,12 +20,17 @@ function pagina(lang) {
  return `<main><h1>${lang === 'pt' ? 'Método' : 'Method'}</h1><div class="met1">`+['conferir-um-numero','percurso','marcas','correcoes'].map((sec,i)=>`<section id="${sec}"><h2>${APROVADO.titulos[lang][i]}</h2></section>`).join('')+
  `<ol class="met1-percurso">${APROVADO.passos.map((_,i)=>`<li>${texto(`passo-${i}`)}</li>`).join('')}</ol>`+
  Object.keys(u).filter(k=>!k.startsWith('passo-')&&!k.startsWith('ligacao-')&&k!=='mudanca'&&k!=='campo-2').map(texto).join('')+
- `<p data-met1="mudanca"><a href="${routePath('correcoes',lang)}">${u.mudanca}</a></p><a data-met1="ligacao-0" href="${routePath('agenda',lang)}">${u['ligacao-0']}</a><a data-met1="ligacao-1" href="${politica}">${u['ligacao-1']}</a>`+
+ `<p data-met1="mudanca"><a href="${routePath('correcoes',lang)}">${u.mudanca}</a></p><p class="met1-portas"><a data-met1="ligacao-0" href="${routePath('agenda',lang)}">${u['ligacao-0']}</a></p>`+
  `<div data-met1-recibo="${id}">${['reference_date','unit','source','document.title',campoLocalizadorMet1(lang),'excerpt','access_date'].map(campo).join('')}<span data-claim="${id}">89,2</span></div></div></main>`;
 }
 for(const lang of ['pt','en']) {
  const html=pagina(lang), conf=s=>conferirLugaresIA(parse(s),lang,s);
  assert.deepEqual(conf(html),[],`intacta ${lang}`);
+ const reposta=html.replace('</main>','<a data-met1="ligacao-1" href="https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md"></a></main>');
+ planta(`porta do repositório reposta ${lang}`,conf(reposta).includes('MET2: ligação ao repositório no Método.'));
+ const portaExtra=html.replace('</main>','<a data-met1="ligacao-1" href="/outra"></a></main>');
+ planta(`segunda porta sem texto ${lang}`,conf(portaExtra).includes('MET2: o parágrafo das portas deve conter apenas a agenda.'));
+
  for(const [nome,alterar] of [
   ['título extra',s=>s.replace('</main>','<h1>Extra sentence.</h1></main>')],
   ['atributo extra',s=>s.replace('class="met1-percurso"','class="met1-percurso" title="Extra sentence."')],
@@ -35,7 +40,7 @@ for(const lang of ['pt','en']) {
   ['família alterada',s=>s.replace(esc(unidades(lang)['passo-6']),'Another model reads it.')],
   ['frase repetida',s=>s.replace('</main>',`<p data-met1="abrir">${esc(unidades(lang).abrir)}</p></main>`)],
   ['nome de modelo',s=>s.replace('</main>','<p>Opus 5</p></main>')],
-  ['porta política',s=>s.replace(politica,'/outra')],
+  ['porta agenda',s=>s.replace(routePath('agenda',lang),'/outra')],
   ['porta correções',s=>s.replace(routePath('correcoes',lang),'/outra')],
   ['ligação da fonte trocada',s=>s.replace(getClaim(APROVADO.recibo.id).source_url,'/outra-fonte')],
   ['recibo trocado',s=>s.replaceAll(APROVADO.recibo.id,'outra-linha')],

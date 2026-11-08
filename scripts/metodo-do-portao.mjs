@@ -4,8 +4,8 @@ import { parse } from 'node-html-parser';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
 import { routePath } from '../src/lib/routes.mjs';
+import { ligacoesAoGithub } from './repositorio-no-dist.mjs';
 export const APROVADO = JSON.parse(fs.readFileSync(new URL('./metodo-aprovado.json', import.meta.url), 'utf8'));
-export const DOCUMENTO_DA_POLITICA_DO_PORTAO = 'https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md';
 export const NOMES_DE_MODELOS = /\b(?:Claude|Anthropic|Codex|OpenAI|Opus|Fable)\b|gpt-/i;
 const normal = s => s.replace(/\s+/g, ' ').trim();
 const partes = ps => ps.map(p => typeof p === 'string' ? p : `{prova:${p.prova}}`).join('');
@@ -42,6 +42,7 @@ export function campoDoReciboMet1(rota, el, id, campo) {
 export function conferirLugaresIA(_root, lang, html = null) {
   const root = parse(html ?? _root.toString(), {comment:false,blockTextElements:{script:true,style:true}});
   const erros = [...conferirContagemDaCorrida(root)], u = unidades(lang), main = root.querySelector('main');
+  if (ligacoesAoGithub(root).length) erros.push('MET2: ligação ao repositório no Método.');
   if (!main) return ['MET1: falta main.'];
   const campoLocalizador = campoLocalizadorMet1(lang);
   const linhaLocalizador = getClaim(APROVADO.recibo.id);
@@ -61,8 +62,8 @@ export function conferirLugaresIA(_root, lang, html = null) {
   const titulos = main.querySelectorAll('h2');
   if (titulos.length !== 4 || titulos.some((n,i)=>normal(n.textContent)!==APROVADO.titulos[lang][i])) erros.push('MET1: títulos diferentes.');
   if (main.querySelectorAll('.met1-percurso > li').length !== 10) erros.push('MET1: percurso incompleto.');
-  const porta = main.querySelector('[data-met1="ligacao-1"]');
-  if (porta?.getAttribute('href') !== DOCUMENTO_DA_POLITICA_DO_PORTAO) erros.push('MET1: porta da política alterada.');
+  const portas = main.querySelectorAll('.met1-portas');
+  if (portas.length !== 1 || portas[0].querySelectorAll('a').length !== 1 || !portas[0].querySelector('a[data-met1="ligacao-0"]') || main.querySelectorAll('[data-met1^="ligacao-"]').length !== 1) erros.push('MET2: o parágrafo das portas deve conter apenas a agenda.');
   if (main.querySelector('[data-met1="ligacao-0"]')?.getAttribute('href') !== routePath('agenda',lang)) erros.push('MET1: porta da agenda alterada.');
   if (main.querySelector('[data-met1="mudanca"] a')?.getAttribute('href') !== routePath('correcoes',lang)) erros.push('MET1: porta das correções alterada.');
   for (const [k,esperado] of Object.entries(u)) {

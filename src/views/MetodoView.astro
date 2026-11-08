@@ -5,7 +5,6 @@ import Frase from '../components/Frase.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import { METODO as m } from '../data/metodo.mjs';
-import { DOCUMENTO_DA_POLITICA } from '../data/politica-ia.mjs';
 import { prova } from '../lib/prova.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -77,7 +76,7 @@ const tipos = ['modelo', 'programa', 'documento', 'modelo', 'modelo', 'programa'
       <div class="metodo-corpo" id="politica-de-ia">
         <p class="metodo-p" data-met1="mudanca"><a href={routePath('correcoes',lang)}><Frase partes={m.mudanca[lang]} lang={lang} provas={p} /></a></p>
         <p class="metodo-p" data-met1="autoria" data-frase-da-politica={lang}><Frase partes={m.autoria[lang]} lang={lang} provas={p} /></p>
-        <p class="met1-portas"><a data-met1="ligacao-0" href={routePath('agenda',lang)}>{m.ligacoes[lang][0]}</a>{' '}<a data-met1="ligacao-1" href={DOCUMENTO_DA_POLITICA}>{m.ligacoes[lang][1]}</a></p>
+        <p class="met1-portas"><a data-met1="ligacao-0" href={routePath('agenda',lang)}>{m.ligacoes[lang][0]}</a></p>
       </div>
     </section>
   </div>

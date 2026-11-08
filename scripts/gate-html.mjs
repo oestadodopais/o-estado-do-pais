@@ -31,6 +31,8 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
 import { conferirLugaresIA, APROVADO as MET1, recontarConferencias, campoDoReciboMet1, conferirLimitesSobre } from './metodo-do-portao.mjs';
 import { PLANTAS_DO_METODO } from '../tests/metodo/plantas.mjs';
+import { conferirRepositorioNoDist } from './repositorio-no-dist.mjs';
+import { PLANTAS_DO_REPOSITORIO } from '../tests/metodo/repositorio.mjs';
 import { inventariarMarcadores, resumirMarcadores } from './sem-marcadores.mjs';
 const MARCAS_RP4N = [];
 import { plantasDosMarcadores } from '../tests/cartao/rp4nb.mjs';
@@ -762,7 +764,7 @@ const LINGUA_POR_HREFLANG = Object.fromEntries(
   Object.entries(HREFLANG).map(([lang, hreflang]) => [hreflang, lang]),
 );
 
-const erros = [];
+const erros = conferirRepositorioNoDist(DIST);
 const avisos = [];
 /**
  * Afirmações citadas por uma página que NÃO seja a do próprio livro-razão.
@@ -9064,6 +9066,7 @@ if (paginasDoLivro !== LANGS.length) {
 
 console.log(`  RP4N: ${PLANTAS_RP4N.length} plantas com mensagem e contagem afirmadas`);
 console.log(`  MET1: ${PLANTAS_DO_METODO.length} plantas do Método (lista fechada, recibo, contagem e portas), cada uma com a queixa esperada`);
+console.log(`  MET2: ${PLANTAS_DO_REPOSITORIO.length} plantas do repositório, cada uma com a queixa esperada`);
 for (const [estado, tipos] of Object.entries(resumirMarcadores(MARCAS_RP4N))) {
   for (const [tipo, dados] of Object.entries(tipos)) {
     console.log(`  RP4N ${estado} · ${tipo}: ${dados.ocorrencias} ocorrência(s)`);
