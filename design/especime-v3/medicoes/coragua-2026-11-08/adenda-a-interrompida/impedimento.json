@@ -1,0 +1,42 @@
+{
+  "estado": "interrompida pelo §2; conteúdo e código repostos nas cabeças de entrada",
+  "entradas": [
+    {
+      "id": "CA41",
+      "estudo": "agua-nao-faturada",
+      "lingua": "pt",
+      "nova": "O movimento óbvio é multiplicar os 4212 hm³ da agricultura pela eficiência média de 76 % da DGADR para obter as perdas do regadio."
+    },
+    {
+      "id": "CA42",
+      "estudo": "agua-nao-faturada",
+      "lingua": "en",
+      "nova": "The obvious move is to multiply agriculture's 4,212 hm³ by DGADR's 76% average efficiency to get irrigation losses."
+    }
+  ],
+  "razao": "Não foi possível ligar 4212 hm³ a um excerto das cópias primárias fornecidas. O CSV técnico reconstrói um agregado de rega e pecuária de oito regiões; as oito cópias primárias regionais não constam do acervo fornecido. Não se declara que o valor esteja refutado; falta a prova primária exigida.",
+  "evidencia_motor": {
+    "csv": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/sectors/pgrh3_captacao_por_setor_rh_2018.csv",
+    "payload": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/build_payload.py:143",
+    "rotulo_payload": "Agricultura e pecuária",
+    "fontes": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/SOURCES.md:68"
+  },
+  "outro_impedimento": "PRR: os valores portugueses correspondem a 3 de agosto de 2026; os ingleses aos instantâneos de julho. O texto das duas edições declara 29 de julho. Ver prr-evidencia.json.",
+  "erros_implementacao": "O aplicador HTML temporário perdeu comentários do invólucro por usar o parser sem comment:true; a normalização recusou corretamente. O código e os HTML foram repostos. Os patches são trabalho incompleto, não devem ser aplicados sem reparar o aplicador e repetir a verificação.",
+  "entrega": "Nenhuma alteração de texto, gráfico, livro ou régua entrou em produção. Não houve build, core.gate ou commit de implementação.",
+  "trabalho_recuperavel": {
+    "sitio.patch": "c0e7be18af97ea694be30df25c3795005778b36044940468a82744885b781e0a",
+    "motor.patch": "49b8aa5be353a3d1d1c8362c4457dc58b5c43caf0ea3325a55027c480fc90884"
+  },
+  "conferencias_agentes": {
+    "reguas": 6,
+    "graficos": 2,
+    "motor": 4
+  },
+  "limites_das_provas": "As conferências dirigidas verdes referem-se a trabalho parcial preservado nos patches. A lista aplicada e o fecho integral não foram conferidos.",
+  "somas_csv_hm3": {
+    "Agricultura - Rega": "4164.6",
+    "Pecuaria": "47.03",
+    "total": "4211.63"
+  }
+}
