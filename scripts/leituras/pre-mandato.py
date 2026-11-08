@@ -2,6 +2,8 @@
 """Exige a declaração do conteúdo e corre as duas medições antes do lançamento.
 
 O cabeçalho «Acrescenta: linhas|frases|linhas e frases|nada» é obrigatório.
+Frases: <lista.json> é relativo à pasta do mandato e pode repetir-se.
+Cada lista passa pela camada 0, mesmo quando Acrescenta: nada.
 OEDP_ACRESCENTA só pode acrescentar exigências; um valor vazio recusa.
 Com linhas, OEDP_LINHA_IRMA identifica a linha usada nas listas.
 OEDP_TITULO_IRMA e OEDP_FICHEIRO_IRMA são argumentos opcionais da medição.

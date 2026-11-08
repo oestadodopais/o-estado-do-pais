@@ -5,16 +5,20 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
 import {frasesDoTexto, medirPagina} from '../voz-autorreferencia.mjs';
-import {numeros} from '../paridade-numeros.mjs';
+// A régua das listas conserva a distinção decimal da VOZ-2 e conta sha256 como 256.
+export const numeros = t => (t.match(/(?<!\d)\d+(?:[.,]\d+)*/gu) ?? []).map(n => n.replace(',', '.'));
 
 const normal = t => t.replace(/\u200b/g, '').replace(/\s+/g, ' ').trim();
 const esc = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
 export const recusaVoz = t => [...new Set([...frasesDoTexto(t), ...medirPagina('<p>' + esc(t) + '</p>', '/camada-zero').frases])];
-const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote,div,section,article';
-export function blocos(html) {
-  const root = parse(html); root.querySelectorAll('script,style').forEach(n => n.remove());
+const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
+const tagsVoz = tags + ',div,section,article';
+export function blocos(html, tipo = 'documento', seletores = tags) {
+  const root = parse(html); root.querySelectorAll('script,style,.src-chip').forEach(n => n.remove());
+  // As transcrições fora da leitura já são excluídas pela régua da página.
+  if (tipo === 'página') root.querySelectorAll('[data-registo-unidade], .estudo-indice, [data-registo-indice]').filter(n => !n.closest('.texto-artigo.estudo-leitura, .texto-sumario, .estudo-sumario')).forEach(n => n.remove());
   const corpo = root.querySelector('[data-oedp-moldura]') ?? root.querySelector('main') ?? root;
-  return corpo.querySelectorAll(tags).filter(n => !n.querySelector(tags)).map(n => normal(n.textContent)).filter(Boolean);
+  return corpo.querySelectorAll(seletores).filter(n => !n.querySelector(seletores)).map(n => normal(n.textContent)).filter(Boolean);
 }
 export function validarLista(lista) {
   if (!Array.isArray(lista) || !lista.length) throw new Error('lista vazia ou inválida');
@@ -46,7 +50,7 @@ export function conferirBlocos(lista, documentos) {
   const semPar = new Map(), semEntrada = new Map();
   for (const d of documentos) {
     const entradas = lista.filter(f => f.lingua === d.lingua && (f.estudo === d.estudo || f.paginas?.includes(d.rota)));
-    d.blocos.forEach((t, i) => {
+    (d.textosVoz ?? d.blocos).forEach((t, i) => {
       for (const frase of recusaVoz(t)) if (!nomeada(frase, entradas)) {
         const k = [d.estudo, d.lingua, frase].join('|');
         semEntrada.set(k, {estudo:d.estudo, lingua:d.lingua, bloco:i, frase});
@@ -72,7 +76,7 @@ export function lerDocumentos(lista, dist) {
       const rota = (lingua === 'pt' ? '/estudos/' : '/en/studies/') + estudo + (tipo === 'documento' ? (lingua === 'pt' ? '/documento' : '/document') : '');
       const ficheiro = path.join(dist, rota, 'index.html');
       if (!fs.existsSync(ficheiro)) continue;
-      documentos.push({estudo, lingua, tipo, rota, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'))});
+      documentos.push({estudo, lingua, tipo, rota, blocos:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo), textosVoz:blocos(fs.readFileSync(ficheiro, 'utf8'), tipo, tagsVoz)});
       if (tipo === 'documento') lidos.add(lingua);
     }
     if (lidos.size === 2) bilingues.add(estudo);
