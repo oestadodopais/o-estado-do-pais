@@ -1,0 +1,530 @@
+{
+  "mandato": "COR-AGUA, adenda C",
+  "data": "2026-11-08",
+  "cabeca_codigo_sitio": "faa153e5b75860c10f43118cda6772e434e171b5",
+  "cabeca_motor": "63276adb0674a348ab22690c1200264019ac41a5",
+  "verificacoes": {
+    "build": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91"
+    },
+    "check:voz": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "check:formato": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "ledger:check": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "check:selos": {
+      "codigo": 0,
+      "registo": "coragua-c-build-fecho.log",
+      "sha256_registo": "4dc1f792624b3edf77e852480a1fe9b7fc6ce90a2e89d9ba3f66468744754f91",
+      "origem": "Passo concluído no encadeamento && do build integral, cujo código final é zero."
+    },
+    "check:lugar": {
+      "codigo": 0,
+      "registo": "coragua-c-lugar-fecho.log",
+      "sha256_registo": "414a5a3bdaab8e8cd0b7cbbb03e331c125979b8514ab339bc347d2cd30748347"
+    },
+    "check:eo1": {
+      "codigo": 0,
+      "registo": "coragua-c-check-eo1.log",
+      "sha256_registo": "a5cac212240be1349532c6f54cbc1ce97d531d44591fb46fab857bbc5dca0c6a"
+    },
+    "provar:eyetext": {
+      "codigo": 0,
+      "registo": "coragua-c-eyetext-final.log",
+      "sha256_registo": "73d831bc83bebe1e00cab5e7dbddd26c8ce8e8519c72599742fe62e248dc66ee"
+    },
+    "check:pre-mandato": {
+      "codigo": 0,
+      "registo": "coragua-c-pre-mandato.log",
+      "sha256_registo": "9dd0803dc0430d11395a2b5e5d6d2570cfa71600a0a664f630d25dbe1d7a75d3"
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "registo": "coragua-c-check-frases-reais.log",
+      "sha256_registo": "1d68784891f111532ba64a270b54da37968a444e61c8204d25a6f709c0cba3e7"
+    },
+    "check:publicadores": {
+      "codigo": 0,
+      "registo": "coragua-c-check-publicadores.log",
+      "sha256_registo": "e71a0057209823db65a8dc1c3c6ba52afacb45b32b2f29328811c75496be375e"
+    },
+    "check:graficos": {
+      "codigo": 0,
+      "registo": "coragua-c-check-graficos.log",
+      "sha256_registo": "41833414b644b6d0c22de7e48092096e0ec73315be34a8ba146125b0cf4a2ed1"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "registo": "coragua-c-typecheck.log",
+      "sha256_registo": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    },
+    "provas do pacote": {
+      "codigo": 0,
+      "registo": "coragua-c-pacote-testes-final.log",
+      "sha256_registo": "63f8490c4c8e15b32c8f63f950340d38eaab0f29d5cab4070ebf3dff1ec8a0c5"
+    },
+    "provas do recibo e dos portões do pacote": {
+      "codigo": 0,
+      "registo": "coragua-c-pacote-restantes.log",
+      "sha256_registo": "4096f40ae324afbf5da76b1fe9f4ebc5f2c2f3afd2cdfdad6b2960899181a2a0"
+    },
+    "montagem do pacote": {
+      "codigo": 0,
+      "registo": "coragua-c-pacote-montagem-final.log",
+      "sha256_registo": "a6ac80a84d83f1c47f086c7c5a7e2cddaa802ae97e3a4f0fc5c24ba5c4ea461a"
+    },
+    "check:alvos": {
+      "codigo": 0,
+      "registo": "check:alvos.log",
+      "sha256_registo": "51b2e4ab55ad8d3b267d1446b60f4250ecae4675dcbf10fc980f9ee9c725b8b5",
+      "origem": "Escrivão, perfil do4-alvos, apenas check:alvos."
+    }
+  },
+  "build_segundos": 707.0560559169389,
+  "lista_prr": {
+    "ficheiro": "FRASES-COR-AGUA-prr.json",
+    "sha256": "845609edc36b14cd9f87fcdab550975da2f1892cdc863070e4a6c08db5fde427",
+    "entradas": 8,
+    "classes": {
+      "REESCREVE": 2,
+      "SAI": 2,
+      "FICA": 4
+    }
+  },
+  "camada_0": {
+    "atualA": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "atualB": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 26,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 9
+    },
+    "corAgua": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "prr": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    }
+  },
+  "fontes_primarias": [
+    {
+      "ficheiro": "content/01 Energy Water and Climate/source/agua-2026-11-08/dgadr-anuario-2024.pdf",
+      "bytes": 9406728,
+      "sha256": "2cdd510e177cefa928f4fe022890ee6af3b7d985efd6f18e3952acfc9801ae4e",
+      "pedido": "https://sir.dgadr.gov.pt/images/conteudos/Campanhas_rega/ANUARIO_2024.pdf",
+      "acedido_em": "2026-11-08T08:19:24Z",
+      "campos_desconhecidos": [
+        "cliente",
+        "user_agent",
+        "segundos",
+        "erro",
+        "redirecionamentos"
+      ]
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/source/agua-2026-11-08/edia-edital-campanha-2026.pdf",
+      "bytes": 346923,
+      "sha256": "a6619e4be333ed28d0dd9b835161cf83bece51e27ae549bdbc1d7b9d90664ef4",
+      "pedido": "https://www.edia.pt/wp-content/uploads/2026/06/Edital-Campanha-de-2026_VR_signed.pdf",
+      "acedido_em": "2026-11-08T07:15:25Z",
+      "campos_desconhecidos": [
+        "cliente",
+        "user_agent",
+        "segundos",
+        "erro",
+        "redirecionamentos"
+      ]
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/source/agua-2026-11-08/ersar-rasarp2025-volume1.pdf",
+      "bytes": 12409211,
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67",
+      "pedido": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+      "acedido_em": "2026-11-08T07:19:35Z",
+      "campos_desconhecidos": [
+        "cliente",
+        "user_agent",
+        "segundos",
+        "erro",
+        "redirecionamentos"
+      ]
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/source/agua-2026-11-08/gulbenkian-uso-da-agua-em-portugal-2020.pdf",
+      "bytes": 7268814,
+      "sha256": "623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd7",
+      "pedido": "https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf",
+      "acedido_em": "2026-11-08T08:19:29Z",
+      "campos_desconhecidos": [
+        "cliente",
+        "user_agent",
+        "segundos",
+        "erro",
+        "redirecionamentos"
+      ]
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/source/agua-2026-11-08/tcontas-rel004-2016-2s.pdf",
+      "bytes": 32586865,
+      "sha256": "963da78ce93d20fc89507732b817ca3043492c8d75394a93709c0de82f5e1383",
+      "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2016/rel004-2016-2s.pdf",
+      "acedido_em": "2026-11-08T07:16:47Z",
+      "campos_desconhecidos": [
+        "cliente",
+        "user_agent",
+        "segundos",
+        "erro",
+        "redirecionamentos"
+      ]
+    }
+  ],
+  "l1": {
+    "medicao": "l1-c.json",
+    "contagens": {
+      "base": 3479,
+      "novas": 39,
+      "retiradas": 0,
+      "estudos": 3518
+    },
+    "regua": {
+      "cabeca": "d2c65af9d",
+      "sha256": "8cfb6df2b74f25ab9d52a1544bdb4039299d114a58be693f253754761d10146e",
+      "igual": true
+    },
+    "novas": [
+      "/en/ledger/coragua-alqueva-alta-pressao-2026",
+      "/en/ledger/coragua-alqueva-baixa-pressao-2026",
+      "/en/ledger/coragua-dgadr-eficiencia-2024",
+      "/en/ledger/coragua-ersar-encargo-mensal-2024",
+      "/en/ledger/coragua-ersar-encargo-metro-cubico-2024",
+      "/en/ledger/coragua-gulbenkian-inquerito-ano",
+      "/en/ledger/coragua-gulbenkian-sem-contador",
+      "/en/ledger/coragua-gulbenkian-universo-hectares",
+      "/en/ledger/coragua-historico-eficiencia-83",
+      "/en/ledger/coragua-historico-eficiencia-85",
+      "/en/ledger/coragua-historico-eficiencia-95",
+      "/en/ledger/coragua-historico-inquerito-2021",
+      "/en/ledger/coragua-historico-racio-maximo",
+      "/en/ledger/coragua-historico-racio-minimo",
+      "/en/ledger/coragua-racio-maximo-2026",
+      "/en/ledger/coragua-racio-minimo-2026",
+      "/en/ledger/coragua-tc-auditoria-ano",
+      "/en/studies/agua-nao-faturada/document/2026-08-12",
+      "/en/studies/alentejo-algarve/document/2026-08-12",
+      "/en/studies/onde-esta-a-agua/document/2026-08-12",
+      "/estudos/agua-nao-faturada/documento/2026-08-12",
+      "/estudos/evora-quinze-anos-cinco-mandatos/documento/2026-08-20",
+      "/livro-razao/coragua-alqueva-alta-pressao-2026",
+      "/livro-razao/coragua-alqueva-baixa-pressao-2026",
+      "/livro-razao/coragua-dgadr-eficiencia-2024",
+      "/livro-razao/coragua-ersar-encargo-mensal-2024",
+      "/livro-razao/coragua-ersar-encargo-metro-cubico-2024",
+      "/livro-razao/coragua-gulbenkian-inquerito-ano",
+      "/livro-razao/coragua-gulbenkian-sem-contador",
+      "/livro-razao/coragua-gulbenkian-universo-hectares",
+      "/livro-razao/coragua-historico-eficiencia-83",
+      "/livro-razao/coragua-historico-eficiencia-85",
+      "/livro-razao/coragua-historico-eficiencia-95",
+      "/livro-razao/coragua-historico-inquerito-2021",
+      "/livro-razao/coragua-historico-racio-maximo",
+      "/livro-razao/coragua-historico-racio-minimo",
+      "/livro-razao/coragua-racio-maximo-2026",
+      "/livro-razao/coragua-racio-minimo-2026",
+      "/livro-razao/coragua-tc-auditoria-ano"
+    ],
+    "retiradas": [],
+    "alteradas": [
+      {
+        "rota": "/correcoes",
+        "antes": {
+          "destinos": 46,
+          "exemplo": "/livro-razao/correcoes-publicadas",
+          "vezes": 11
+        },
+        "depois": {
+          "destinos": 49,
+          "exemplo": "/livro-razao/correcoes-publicadas",
+          "vezes": 12
+        }
+      },
+      {
+        "rota": "/en/corrections",
+        "antes": {
+          "destinos": 46,
+          "exemplo": "/en/ledger/correcoes-publicadas",
+          "vezes": 11
+        },
+        "depois": {
+          "destinos": 49,
+          "exemplo": "/en/ledger/correcoes-publicadas",
+          "vezes": 12
+        }
+      }
+    ]
+  },
+  "pacote": {
+    "codigo": 0,
+    "cabeca_sitio": "faa153e5b75860c10f43118cda6772e434e171b5",
+    "cabeca_motor": "63276adb0674a348ab22690c1200264019ac41a5",
+    "linhas_com_corpo": 14,
+    "corpos_em_falta": 0,
+    "linhas_com_corpo_motor": 8,
+    "linhas_com_corpo_sitio": 6,
+    "ficheiros_distintos": 7,
+    "paginas": 36,
+    "sha256_conferidos": true,
+    "destino": "<temporario>/coragua-c-pacote-fecho"
+  },
+  "alvos": {
+    "escolha": "Caixas reais dos selos do registo, com altura e largura mínimas de 44 px entre 641 e 1023 px; classificação e régua H2 preservadas.",
+    "codigo": 0
+  },
+  "anos": {
+    "regra": "Só o valor exato de uma linha com unidade ano admite quatro algarismos sem agrupamento.",
+    "plantas": [
+      "ano declarado aceite",
+      "ano trocado recusado",
+      "ano agrupado recusado",
+      "montante de milhares sem agrupamento recusado"
+    ]
+  },
+  "ed1": {
+    "codigo": 0,
+    "documentos_com_arquivo_mantidos": [
+      "onde-esta-a-agua/pt",
+      "onde-esta-a-agua/en",
+      "agua-nao-faturada/pt",
+      "agua-nao-faturada/en",
+      "alentejo-algarve/en"
+    ],
+    "origem_inventada_recusada": true
+  },
+  "tentativas_anteriores": {
+    "build": [
+      1,
+      1
+    ],
+    "pacote_importacao_yaml": 1,
+    "eyetext_ambito_motor_alargado_por_engano": 1,
+    "numeros_com_dist_anterior": 1,
+    "h2_arvore_suja": 9,
+    "montagem_relatorio_em_pasta_demasiado_ampla": 130
+  },
+  "erros_corrigidos": [
+    "Importação local de PyYAML no novo caso do pacote.",
+    "Separação da prova ED1 dos artefactos e do âmbito dos registos do motor.",
+    "Declarações de títulos, organismos, edições e unidades das linhas novas, seguidas de reconstrução do HTML e do código copiável.",
+    "Atualização das unidades integrais do inventário com a frase PRR e os espaços antes de %.",
+    "Relatório da montagem isolado numa pasta temporária própria antes de repetir a prova."
+  ],
+  "adiados_por_mandato": [
+    "core.gate do motor",
+    "suites de rede do motor",
+    "check:frases-compostas"
+  ],
+  "portoes_inteiros": 0,
+  "capturas": 0,
+  "adenda_a_interrompida_removida": true,
+  "custo": {
+    "chamadas_ate_medicao": 69,
+    "ferramentas": {
+      "exec": 68,
+      "request_user_input_async": 1
+    },
+    "corridas_por_curto": 34,
+    "corridas": [
+      {
+        "registo": "coragua-c-pacote-testes.log",
+        "comando": "python3 tests/leituras/pacote.py"
+      },
+      {
+        "registo": "coragua-c-pacote-testes2.log",
+        "comando": "python3 tests/leituras/pacote.py"
+      },
+      {
+        "registo": "coragua-c-lugar-antes.log",
+        "comando": "node scripts/check-lugar.mjs"
+      },
+      {
+        "registo": "coragua-c-eyetext.log",
+        "comando": "npm run provar:eyetext"
+      },
+      {
+        "registo": "coragua-c-eyetext2.log",
+        "comando": "npm run provar:eyetext"
+      },
+      {
+        "registo": "coragua-c-l1-medicao.log",
+        "comando": "node scripts/check-lugar.mjs"
+      },
+      {
+        "registo": "coragua-c-l1-prova.log",
+        "comando": "node design/especime-v3/medicoes/coragua-2026-11-08/conferir-l1-c.mjs /tmp/coragua-c-l1-medicao.log --escrever"
+      },
+      {
+        "registo": "coragua-c-numeros.log",
+        "comando": "node tests/edicoes/numeros.mjs"
+      },
+      {
+        "registo": "coragua-c-pacote-restantes.log",
+        "comando": "sh -c 'python3 tests/leituras/pacote-recibo.py && python3 tests/leituras/pacote-portoes.py'"
+      },
+      {
+        "registo": "coragua-c-build.log",
+        "comando": "npm run build"
+      },
+      {
+        "registo": "coragua-c-pre-mandato.log",
+        "comando": "npm run check:pre-mandato"
+      },
+      {
+        "registo": "coragua-c-check-eo1.log",
+        "comando": "npm run check:eo1"
+      },
+      {
+        "registo": "coragua-c-check-formato.log",
+        "comando": "npm run check:formato"
+      },
+      {
+        "registo": "coragua-c-check-publicadores.log",
+        "comando": "npm run check:publicadores"
+      },
+      {
+        "registo": "coragua-c-check-graficos.log",
+        "comando": "npm run check:graficos"
+      },
+      {
+        "registo": "coragua-c-typecheck.log",
+        "comando": "npm run typecheck"
+      },
+      {
+        "registo": "coragua-c-check-frases-reais.log",
+        "comando": "npm run check:frases-reais"
+      },
+      {
+        "registo": "coragua-c-lingua-dados.log",
+        "comando": "node tests/eo1/lingua-nomes.mjs"
+      },
+      {
+        "registo": "coragua-c-numeros-final.log",
+        "comando": "node tests/edicoes/numeros.mjs"
+      },
+      {
+        "registo": "coragua-c-build-final.log",
+        "comando": "npm run build"
+      },
+      {
+        "registo": "coragua-c-eyetext-final.log",
+        "comando": "npm run provar:eyetext"
+      },
+      {
+        "registo": "coragua-c-formato-final.log",
+        "comando": "npm run check:formato"
+      },
+      {
+        "registo": "coragua-c-pacote-testes-final.log",
+        "comando": "python3 tests/leituras/pacote.py"
+      },
+      {
+        "registo": "coragua-c-check-eo1.log",
+        "comando": "npm run check:eo1"
+      },
+      {
+        "registo": "coragua-c-check-lugar.log",
+        "comando": "npm run check:lugar"
+      },
+      {
+        "registo": "coragua-c-typecheck.log",
+        "comando": "npm run typecheck"
+      },
+      {
+        "registo": "coragua-c-build-fecho.log",
+        "comando": "npm run build"
+      },
+      {
+        "registo": "coragua-c-pacote-montagem.log",
+        "comando": "pacote.sh"
+      },
+      {
+        "registo": "coragua-c-check-eo1.log",
+        "comando": "npm run check:eo1"
+      },
+      {
+        "registo": "coragua-c-check-frases-reais.log",
+        "comando": "npm run check:frases-reais"
+      },
+      {
+        "registo": "coragua-c-typecheck.log",
+        "comando": "npm run typecheck"
+      },
+      {
+        "registo": "coragua-c-pacote-montagem-final.log",
+        "comando": "pacote.sh"
+      },
+      {
+        "registo": "coragua-c-lugar-fecho.log",
+        "comando": "npm run check:lugar"
+      },
+      {
+        "registo": "coragua-c-l1-fecho.log",
+        "comando": "node design/especime-v3/medicoes/coragua-2026-11-08/conferir-l1-c.mjs /tmp/coragua-c-lugar-fecho.log"
+      }
+    ],
+    "ajudantes": 0,
+    "corridas_pelo_escrivao": 1,
+    "corridas_total": 35,
+    "definicao": "Cada invocação por curto conta uma corrida, incluindo lotes compostos e builds com os seus passos. Cada comando do lote de conferências dirigido conta uma invocação. Soma-se a H2 pelo escrivão. Não inclui inspeções ou asserções breves em linha."
+  }
+}
