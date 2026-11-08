@@ -2170,5 +2170,17 @@
   "frase": "Ten years of paying down the rescue debt is the context for every number:",
   "nova": "Ten years of paying down the rescue debt is the context for these numbers:",
   "razao": "a forma da V308 nas contas da Câmara, que a composição já imprime; registada para a lista ficar fechada; o par da V326; adenda H"
+ },
+ {
+  "id": "V331",
+  "estudo": "evora-orcamentado-pago-devido-2025",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/evora-orcamentado-pago-devido-2025/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "(inference; the table is the source's, the connection is ours)",
+  "nova": "(inference; the table is the source's)",
+  "razao": "o par inglês do fim da V195 («a ligação é nossa» saiu do português e ficou no inglês); adenda I (a leitura curta da adenda H, 6)"
  }
 ]

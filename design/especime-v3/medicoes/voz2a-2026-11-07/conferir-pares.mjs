@@ -27,16 +27,23 @@ const mudados = (antes, agora) => {
   antes.forEach((b, i) => { const n = resto.get(b) ?? 0; if (n) resto.set(b, n - 1); else fora.push(i); });
   return fora;
 };
+const emparelhar = (p, e, pa, ea, sem, rotulo) => {
+  const usados = new Set();
+  for (const i of p) { const j = e.find(j => !usados.has(j) && Math.abs(j - i) <= 3); if (j === undefined) sem.push(['pt' + rotulo, i, pa[i]]); else usados.add(j); }
+  for (const j of e) if (!usados.has(j)) sem.push(['en' + rotulo, j, ea[j]]);
+  return usados;
+};
 export function conferirEstudo(pa, pn, ea, en) {
-  const p = mudados(pa, pn), e = mudados(ea, en), usados = new Set(), sem = [];
-  for (const i of p) { const j = e.find(j => !usados.has(j) && Math.abs(j - i) <= 3); if (j === undefined) sem.push(['pt', i, pa[i]]); else usados.add(j); }
-  for (const j of e) if (!usados.has(j)) sem.push(['en', j, ea[j]]);
+  const p = mudados(pa, pn), e = mudados(ea, en), sem = [];
+  const usados = emparelhar(p, e, pa, ea, sem, '');
   sem.pares = new Set([...p.filter(i => !sem.some(([l, k]) => l === 'pt' && k === i)).map(i => 'pt' + i), ...[...usados].map(j => 'en' + j)]);
+  // e o lado novo: um bloco que só existe na edição nova de uma língua (uma frase acrescentada) tem par na outra
+  emparelhar(mudados(pn, pa), mudados(en, ea), pn, en, sem, ' (bloco novo)');
   return sem;
 }
 const antigas = {pt: [], en: []};
 for (const f of lista) if (f.classe !== 'FICA') antigas[f.lingua].push(f.frase.replace(/\s+/g, ' ').trim());
-// as frases da lista são cortadas pelo divisor da régua; um bloco explica-se se contiver uma delas, ou o seu começo até aos dois pontos
+// um bloco explica-se se contiver a frase antiga de uma entrada (as entradas cortadas aos dois pontos contam pelo seu texto)
 const explicado = (l, t) => antigas[l].some(a => t.includes(a)) || /\bResearch\s*Hub\b/.test(t);
 // As composições importam frases de outros estudos da lista: no estudo da economia (a composição 18 do motor), uma mudança
 // que tem par na outra língua é a frase reescrita no estudo de origem; uma mudança sem par nunca se explica assim.
@@ -58,8 +65,15 @@ for (const slug of [...new Set(lista.map(f => f.estudo))]) {
     fora++; console.log(`${slug} (desde ${d}): o bloco ${i} em ${l} muda sem entrada na lista: ${antes[i].slice(0, 140)}`);
   }
 }
-// A planta: um par em que só o português muda tem de dar um bloco sem par; o mesmo par a mudar nas duas línguas, nenhum.
+export const codigo = (sem, fora, planta, controlo, estudos) => (sem || fora || planta !== 2 || controlo !== 0 || !estudos ? 1 : 0);
+// As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.
+const plantasFora = [!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), explicado(lista.find(f => f.classe !== 'FICA').lingua, lista.find(f => f.classe !== 'FICA').frase),
+  conferirEstudo(['a', 'b'], ['a', 'b', 'Isto é novo.'], ['a', 'b'], ['a', 'b']).length === 1,
+  codigo(0, 1, 2, 0, 1) === 1, codigo(1, 0, 2, 0, 1) === 1, codigo(0, 0, 2, 0, 1) === 0];
+// A planta: um par em que só o português muda tem de dar dois blocos sem par (o antigo e o novo); o mesmo par a mudar nas duas línguas, nenhum.
 const planta = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a', 'Isto entra.', 'c'], ['a', 'This enters this document.', 'c'], ['a', 'This enters this document.', 'c']).length;
 const controlo = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a', 'Isto entra.', 'c'], ['a', 'This enters this document.', 'c'], ['a', 'This enters.', 'c']).length;
-console.log(`estudos com as duas línguas: ${estudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 1), controlo ${controlo} (tem de ser 0)`);
-process.exitCode = total || fora || planta !== 1 || controlo !== 0 || !estudos ? 1 : 0;
+console.log(`estudos com as duas línguas: ${estudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 2: o bloco antigo e o novo), controlo ${controlo} (tem de ser 0)`);
+const mordem = plantasFora.filter(Boolean).length;
+console.log(`plantas do ramo fora da lista, do bloco novo e do código: ${mordem} de ${plantasFora.length}`);
+process.exitCode = codigo(total, fora, planta, controlo, estudos) || (mordem !== plantasFora.length ? 1 : 0);
