@@ -5,7 +5,8 @@ export const blocosDe = html => { const r = parse(html); r.querySelectorAll('scr
   const c = r.querySelector('[data-oedp-moldura]') ?? r.querySelector('main') ?? r;
   return c.querySelectorAll(tags).filter(n => !n.querySelector(tags)).map(n => n.textContent.replace(/​/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean); };
 // um número: um a três algarismos com grupos de milhares (espaço, ponto ou vírgula seguidos de exatamente três algarismos) e uma parte decimal; ou só algarismos
-export const numeros = t => (t.match(/(?<!\d)(?:\d{1,3}(?:[\u00a0\u202f .,]\d{3})+(?!\d)(?:[.,]\d+(?!\d))?|\d+(?:[.,]\d+)?(?!\d))/g) ?? []).map(x => x.replace(/[^\d]/g, ''));
+export const formasNumericas = t => (t.match(/(?<!\d)(?:\d{1,3}(?:[\u00a0\u202f .,]\d{3})+(?!\d)(?:[.,]\d+(?!\d))?|\d+(?:[.,]\d+)?(?!\d))/g) ?? []);
+export const numeros = t => formasNumericas(t).map(x => x.replace(/[^\d]/g, ''));
 const conta = xs => xs.reduce((m, x) => m.set(x, (m.get(x) ?? 0) + 1), new Map());
 const menos = (a, b) => { const r = []; for (const [k, n] of a) { const d = n - (b.get(k) ?? 0); for (let i = 0; i < d; i++) r.push(k); } return r; };
 export function compara(bp, be) {

@@ -20,7 +20,7 @@ class PreVoo(unittest.TestCase):
         self.sw = worktree(self.s, self.p / 'sitio-ramo')
         self.mw = worktree(self.m, self.p / 'motor-ramo')
         (self.sw / 'node_modules').mkdir()
-        self.env = {k: v for k, v in os.environ.items() if k not in ('OEDP_RELATORIO', 'OEDP_LANCADOR_BASE', 'RESEARCHHUB_LOCK_DIR')}
+        self.env = {k: v for k, v in os.environ.items() if k not in ('OEDP_RELATORIO', 'OEDP_LANCADOR_BASE', 'RESEARCHHUB_LOCK_DIR', 'OEDP_RETOMA_DECISAO')}
         self.env.update(OEDP_TRANCA=str(self.p / 'tranca'), RESEARCHHUB_DIR=str(self.mw), CODEX_RACIOCINIO='high')
 
     def correr(self):

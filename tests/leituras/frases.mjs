@@ -4,8 +4,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync, spawnSync} from 'node:child_process';
 import {recusaVoz, conferirNumeros, conferirBlocos, conferir, recusas, validarLista, blocos, conferirLista, emparelharBlocos} from '../../scripts/leituras/conferir-frases.mjs';
-const f = {id:'P1', estudo:'planta', lingua:'pt', classe:'REESCREVE', frase:'Este estudo não lê 12 nem sha256.', nova:'A fonte publicou 12.'};
-const g = {...f, id:'E1', lingua:'en', frase:'This study does not read 12 or sha256.', nova:'The source published 12.'};
+const f = {id:'P1', estudo:'planta', lingua:'pt', paginas:['/estudos/planta/documento'], classe:'REESCREVE', frase:'Este estudo não lê 12 nem sha256.', nova:'A fonte publicou 12.'};
+const g = {...f, id:'E1', lingua:'en', paginas:['/en/studies/planta/document'], frase:'This study does not read 12 or sha256.', nova:'The source published 12.'};
 let provas = 0;
 for (const t of ['and then that money does not come in (inference).', 'Os três moveram-se com as marés nacionais e nada do que aqui foi lido fornece o contrafactual (inferência).', 'Iniciativa Liberal, updated on 8 June 2026 (the page does not say when it was published).']) { assert(recusaVoz(t).length); provas++; }
 assert.equal(recusaVoz('A fonte publicou 12.').length, 0); provas++;
@@ -14,7 +14,7 @@ assert.equal(conferirNumeros([f, {...g, nova:'The source published 12 and sha256
 assert.equal(conferirNumeros([{...g, nova:'The source published 13.'}], new Set(['planta'])).length, 1); provas++;
 assert.equal(conferirNumeros([{...f, frase:'1 234,5', nova:'1 234,5'}, {...g, frase:'1,234.5', nova:'1,234.5'}], new Set(['planta'])).length, 0); provas++;
 assert.equal(conferirNumeros([{...f, frase:'1,2', nova:'12'}, {...g, frase:'1.2', nova:'1.2'}], new Set(['planta'])).length, 1); provas++;
-const doc = (lingua, blocos) => ({estudo:'planta', tipo:'documento', lingua, blocos});
+const doc = (lingua, blocos) => ({estudo:'planta', tipo:'documento', lingua, rota:lingua==='pt'?'/estudos/planta/documento':'/en/studies/planta/document', blocos});
 let docs = [doc('pt', [f.frase]), doc('en', [g.frase])];
 assert.equal(conferirBlocos([f], docs).semPar.length, 1); provas++;
 assert.equal(conferirBlocos([f], docs).semEntrada.length, 1); provas++;
@@ -52,7 +52,7 @@ assert.equal(conferirBlocos([v228], [doc('pt', [v228.frase]), {...doc('pt', [v22
 assert.deepEqual([...emparelharBlocos([0,2], [1], false)], [[2,1]]); provas++;
 assert.deepEqual([...emparelharBlocos([0,2], [1,3], false)].reverse(), [[0,1],[2,3]]); provas++;
 assert.equal(emparelharBlocos([0], [4], false).size, 0); provas++;
-assert(recusas(conferir([f,g], [], new Set(['planta']), [{id:'P1'}]))); provas++;
+assert(recusas(conferir([f,g], [], new Set(['planta'])))); provas++;
 for (const lista of [[], [f,f], [{...f, nova:null}], [{...f, lingua:'xx'}]]) { assert.throws(() => validarLista(lista)); provas++; }
 assert.deepEqual(blocos('<main><p data-registo-unidade="x">This study does not read it.</p><section class="texto-artigo estudo-leitura"><p data-registo-unidade="x">This study does not read it.</p></section></main>', 'página'), ['This study does not read it.']); provas++;
 assert.deepEqual(blocos('<p>Há 12<a class="src-chip">fonte</a> casos.</p>'), ['Há 12 casos.']); provas++;

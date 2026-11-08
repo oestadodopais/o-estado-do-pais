@@ -45,16 +45,41 @@ class HIG6A(unittest.TestCase):
             f = p / 'core/assertions.py'
             f.write_text("QUANTIFIER_PATTERNS = [r'\\bonly\\b']\nraise RuntimeError('não executar')\n")
             conferir = modulo('quantificadores').conferir
-            lista = [{'id':'P', 'nova':'Only one.'}]
-            self.assertEqual(len(conferir(lista, p)), 1)
+            (p / 'studies-src').mkdir()
+            (p / 'studies-src/manifest.yml').write_text(json.dumps({'edicoes': [
+                {'slug':'planta', 'lang':'en', 'origin_ref':'content/01 Planta/document.html @ cabeca'}]}))
+            livro = p / 'content/01 Planta/ledger.json'; livro.parent.mkdir(parents=True)
+            def citar(quotes, id='id-da-asserção'):
+                livro.write_text(json.dumps({'assertions':[{'id':id, 'quotes':quotes}]}))
+            citar(['Only one.'])
+            lista = [{'id':'P', 'estudo':'planta', 'lingua':'en', 'nova':'Only one.'}]
+            def correr(): return conferir(lista, p, p)
+            self.assertEqual(len(correr()), 1)
             lista[0]['assercao'] = 'id-da-asserção'
-            self.assertEqual(conferir(lista, p), [])
+            self.assertEqual(correr(), [])
+            citar(['one.'])  # Está no texto, mas não cobre o quantificador.
+            self.assertEqual(len(correr()), 1)
+            citar(['Only another.'])  # Contém o quantificador, mas não está no texto.
+            self.assertEqual(len(correr()), 1)
+            citar(['Only one.'], id='outro-id')
+            self.assertEqual(len(correr()), 1)
+            # Um ID homónimo num livro alheio não cobre este estudo.
+            alheio = p / 'content/02 Alheio/ledger.json'; alheio.parent.mkdir()
+            alheio.write_text(json.dumps({'assertions':[{'id':'id-da-asserção', 'quotes':['Only one.']}]}))
+            self.assertEqual(len(correr()), 1)
+            # Uma composição que declara esta fonte pode conter a asserção.
+            ts = alheio.parent / 'Technical Source'; ts.mkdir()
+            (ts / 'documento.en.md.tmpl').write_text('@@fonte P 01 Planta\n')
+            self.assertEqual(correr(), [])
+            lista[0]['nova'] = 'Only one. Only another.'
+            self.assertEqual(len(correr()), 1)  # A segunda ocorrência fica descoberta.
             lista[0]['assercao'] = ''
-            self.assertEqual(len(conferir(lista, p)), 1)
+            self.assertEqual(len(correr()), 1)
             f.write_text("QUANTIFIER_PATTERNS = [r'\\bfonte\\b']\n")
-            self.assertEqual(conferir(lista, p), [])
+            lista[0].pop('assercao')
+            self.assertEqual(correr(), [])
             lista[0]['nova'] = 'A fonte.'
-            self.assertEqual(len(conferir(lista, p)), 1)
+            self.assertEqual(len(correr()), 1)
 
     def test_plantar_conserva_mtime_ns(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -87,6 +112,10 @@ class HIG6A(unittest.TestCase):
             self.assertEqual(correr('Acrescenta: nada\nFrases: verde.json\n').returncode, 0)
             self.assertEqual(correr('Acrescenta: nada\nFrases:\n').returncode, 9)
             self.assertEqual(correr('Acrescenta: nada\nFrases: /absoluto.json\n').returncode, 9)
+            for titulo in ('# Corpo', '## Corpo', '### Corpo'):
+                r = correr('# Mandato\nAcrescenta: nada\n' + titulo + '\nFrases: verde.json\n')
+                self.assertEqual(r.returncode, 9)
+                self.assertIn('fora do cabeçalho', r.stdout + r.stderr)
 
 
 if __name__ == '__main__':

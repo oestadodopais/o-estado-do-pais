@@ -8,6 +8,7 @@ OEDP_ACRESCENTA só pode acrescentar exigências; um valor vazio recusa.
 Com linhas, OEDP_LINHA_IRMA identifica a linha usada nas listas.
 OEDP_TITULO_IRMA e OEDP_FICHEIRO_IRMA são argumentos opcionais da medição.
 """
+import argparse
 import json
 import os
 from pathlib import Path
@@ -80,11 +81,27 @@ def conferir_medidas(texto, mandato):
         raise ValueError('§0: ' + '; '.join(erros))
 
 
+def cabecalho_do_mandato(texto):
+    primeira = True
+    posicao = 0
+    for linha in texto.splitlines(keepends=True):
+        if re.match(r'^#{1,6}\s', linha):
+            if not (primeira and linha.startswith('# ')):
+                return texto[:posicao]
+        if linha.strip():
+            primeira = False
+        posicao += len(linha)
+    return texto
+
+
 def main(argv):
-    if len(argv) != 2:
-        print('uso: pre-mandato.py <worktree> <mandato.md>', file=sys.stderr)
-        return 9
-    sitio, mandato = map(Path, argv)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('sitio', type=Path)
+    parser.add_argument('mandato', type=Path)
+    parser.add_argument('--aplicada', action='store_true')
+    parser.add_argument('--dist', type=Path)
+    args = parser.parse_args(argv)
+    sitio, mandato = args.sitio, args.mandato
     try:
         texto = mandato.read_text(encoding='utf-8')
         conferir_medidas(texto, mandato)
@@ -102,14 +119,17 @@ def main(argv):
             exigencias = modos[modo]
         guioes = sitio / 'scripts/leituras'
         codigos = []
-        cabecalho = re.split(r'^## ', texto, maxsplit=1, flags=re.M)[0]
+        cabecalho = cabecalho_do_mandato(texto)
+        if re.search(r'^Frases:', texto[len(cabecalho):], re.M):
+            raise ValueError('Frases: fora do cabeçalho do mandato')
         for declaracao in re.findall(r'^Frases:[ \t]*(.*)$', cabecalho, re.M):
             relativo = Path(declaracao.strip())
             if not declaracao.strip() or relativo.is_absolute():
                 raise ValueError('Frases: tem de ser um caminho relativo à pasta do mandato')
             lista = (mandato.parent / relativo).resolve()
             codigos.append(subprocess.run(['node', str((guioes / 'conferir-frases.mjs').resolve()),
-                                           str(lista)], cwd=sitio).returncode)
+                                           str(lista), *([str(args.dist.resolve())] if args.dist else []),
+                                           *(['--aplicada'] if args.aplicada else [])], cwd=sitio).returncode)
         if not exigencias:
             print('pré-mandato: não acrescenta linhas nem frases ao leitor', flush=True)
             return next((c if c > 0 else 128 - c for c in codigos if c), 0)
