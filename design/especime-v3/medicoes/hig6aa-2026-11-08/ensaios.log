@@ -1,0 +1,8 @@
+a {"voz":0,"numeros":0,"quantificadores":0,"semPar":0,"semEntrada":0}
+sem par: 
+b {"voz":0,"numeros":0,"quantificadores":28,"semPar":6,"semEntrada":15}
+sem par: V012, V293, V296, V093, V094, V100
+a sem par 0  sem entrada 0
+b sem par 7 V124, V012, V293, V296, V093, V094, V100 sem entrada 15
+a sem par 4 V161, V326, V331, V249 sem entrada 0
+PARAGEM: a regra nova recusa a VOZ-2A.

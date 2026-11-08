@@ -1,0 +1,84 @@
+{
+  "cabeca_do_codigo": "32a7e42bb019f25ed96852bcba58396694d33fb8",
+  "cabeca_do_dist": "ba12379596b6927c5a463604aa0a3ff6afb90aba",
+  "resultado": {
+    "semPar": [
+      {
+        "id": "V161",
+        "estudo": "evora-2027-prometido-painel-dinheiro",
+        "lingua": "pt",
+        "bloco": 621
+      },
+      {
+        "id": "V326",
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "lingua": "pt",
+        "bloco": 498
+      },
+      {
+        "id": "V331",
+        "estudo": "evora-orcamentado-pago-devido-2025",
+        "lingua": "en",
+        "bloco": 179
+      },
+      {
+        "id": "V249",
+        "estudo": "evora-prometido-pago-auditado-2026",
+        "lingua": "pt",
+        "bloco": 387
+      }
+    ],
+    "semEntrada": []
+  },
+  "entradas": [
+    {
+      "id": "V161",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "lingua": "pt",
+      "paginas": [
+        "/estudos/evora-2027-prometido-painel-dinheiro/documento"
+      ],
+      "classe": "REESCREVE",
+      "frase": "Uma leitura anterior deste projeto, no estudo «Évora — Prometido, Pago, Auditado 2026», conseguiu ler o portal e conta na sua janela os contratos da associação; o cruzamento das duas leituras fica para o bloco dos contratos",
+      "razao": "mantém o que o outro estudo conta; tira o plano de trabalho («bloco dos contratos»)",
+      "nova": "O estudo «Évora — Prometido, Pago, Auditado 2026» leu o portal e conta na sua janela os contratos da associação"
+    },
+    {
+      "id": "V249",
+      "estudo": "evora-prometido-pago-auditado-2026",
+      "lingua": "pt",
+      "paginas": [
+        "/estudos/evora-prometido-pago-auditado-2026/documento"
+      ],
+      "classe": "REESCREVE",
+      "frase": "Uma pergunta de contabilidade ao nível da câmara precisa dos dados de finanças municipais da DGAL, que este documento não usa.",
+      "razao": "fica o que a pergunta exige (dados da DGAL); tira «este documento não usa»",
+      "nova": "Uma pergunta de contabilidade ao nível da câmara precisa dos dados de finanças municipais da DGAL."
+    },
+    {
+      "id": "V326",
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "lingua": "pt",
+      "paginas": [
+        "/estudos/evora-contas-da-camara-2010-2025/documento",
+        "/estudos/evora-contas-da-camara-2010-2025"
+      ],
+      "classe": "REESCREVE",
+      "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números:",
+      "nova": "Dez anos a pagar a dívida do resgate são o contexto destes números:",
+      "razao": "o par português da forma inglesa que as contas da Câmara já imprimem («the context for these numbers:», pela composição da V308); a FICA V171 passa a ter esta forma; adenda H (o par em falta, achado pela conferência dos pares)"
+    },
+    {
+      "id": "V331",
+      "estudo": "evora-orcamentado-pago-devido-2025",
+      "lingua": "en",
+      "paginas": [
+        "/en/studies/evora-orcamentado-pago-devido-2025/document"
+      ],
+      "classe": "REESCREVE",
+      "frase": "(inference; the table is the source's, the connection is ours)",
+      "nova": "(inference; the table is the source's)",
+      "razao": "o par inglês do fim da V195 («a ligação é nossa» saiu do português e ficou no inglês); adenda I (a leitura curta da adenda H, 6)"
+    }
+  ]
+}
