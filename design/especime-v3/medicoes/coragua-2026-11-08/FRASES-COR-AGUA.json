@@ -1055,5 +1055,395 @@
   "razao": "o valor na unidade do português (5500 M€)",
   "par": "nenhum",
   "razao_par": "a edição portuguesa já diz este número desta forma; muda só a inglesa, para as duas dizerem os mesmos números"
+ },
+ {
+  "id": "CA-V91",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento",
+   "/estudos/evora-quinze-anos-cinco-mandatos"
+  ],
+  "classe": "REESCREVE",
+  "frase": "O nome legal completo é [verify];",
+  "nova": "O nome legal completo está por confirmar na fonte;",
+  "razao": "a marca «[verify]» não se publica (a regra 1); a página diz a ausência exata"
+ },
+ {
+  "id": "CA-V92",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento",
+   "/estudos/evora-quinze-anos-cinco-mandatos"
+  ],
+  "classe": "REESCREVE",
+  "frase": "O nome legal completo do presidente interino é [verify].",
+  "nova": "O nome legal completo do presidente interino está por confirmar na fonte.",
+  "razao": "a marca «[verify]» não se publica (a regra 1); a página diz a ausência exata"
+ },
+ {
+  "id": "CA-V93",
+  "estudo": "alentejo-algarve",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/alentejo-algarve/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Algarve rail electrification status and Faro airport traffic were not established [verify];",
+  "nova": "Algarve rail electrification status and Faro airport traffic were not established;",
+  "razao": "a marca «[verify]» não se publica (a regra 1); a página diz a ausência exata"
+ },
+ {
+  "id": "CA-F094",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Este documento separa dois tipos de afirmação e nunca os mistura.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V257 da sua lista)"
+ },
+ {
+  "id": "CA-F095",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Este documento imprime o conceito ao lado do valor da dívida de cada ano, imprime os valores rivais onde existem, e nunca escolhe um em silêncio.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V258 da sua lista)"
+ },
+ {
+  "id": "CA-F096",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O mandato que começou em 2025 não é avaliável aqui.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V259 da sua lista)"
+ },
+ {
+  "id": "CA-F097",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "A votação para a assembleia municipal é outra eleição e não está aqui.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V260 da sua lista)"
+ },
+ {
+  "id": "CA-F098",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Estas duas eleições produziram as únicas maiorias absolutas das cinco aqui avaliadas — um facto retirado de um campo booleano dos ficheiros oficiais de resultados, e não calculado a partir de qualquer valor deste documento, e declarado como tal no ledger.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V261 da sua lista)"
+ },
+ {
+  "id": "CA-F099",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "A tabela abaixo são esses mandatos de eleição direta, e nada mais: este documento não faz afirmação alguma sobre a composição total da assembleia, porque a evidência lida para ela cobre a votação nas listas e não cobre quem mais lá tem assento.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V262 da sua lista)"
+ },
+ {
+  "id": "CA-F100",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O resultado da assembleia de 2021 está no mesmo ficheiro de evidência, mas é a contagem provisória do portal de resultados para esse órgão e nunca foi confrontado com um mapa definitivo, como aconteceu com os valores da câmara, pelo que não é impresso aqui.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V263 da sua lista)"
+ },
+ {
+  "id": "CA-F101",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Os dois números são do próprio município; este documento imprime ambos e não escolhe entre eles.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V264 da sua lista)"
+ },
+ {
+  "id": "CA-F102",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Nunca foi publicado nenhum documento de contas de 2024, e cada valor de 2024 neste documento é uma coluna comparativa do relatório de 2025.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (sem entrada na sua lista: a VOZ-2B tem de a nomear)"
+ },
+ {
+  "id": "CA-F103",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Qualquer avaliação dele antes de essas contas existirem seria uma previsão, e este documento não faz previsões.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V265 da sua lista)"
+ },
+ {
+  "id": "CA-F104",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Que os dois órgãos atuam sobre os mesmos processos não é aqui uma suposição: as secções acima registam um acordo de pagamento com a empresa regional da água aprovado pela câmara na reunião de 2016-12-28 e pela assembleia municipal na sessão de 2017-02-17, e registam a própria câmara a rejeitar um ano de contas em 2025.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V266 da sua lista)"
+ },
+ {
+  "id": "CA-F105",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "As contas anuais e o endividamento seguem esse mesmo caminho (inferência; os números de mandatos são registo oficial, o caminho é lido dos atos que este documento já imprimiu e não de qualquer diploma aqui citado).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V267 da sua lista)"
+ },
+ {
+  "id": "CA-F106",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau, que é o que um empréstimo parece numa tabela de caixa e não o que parece um bom ano (inferência; os relatórios afirmam cada empréstimo e cada total, não o padrão).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (sem entrada na sua lista: a VOZ-2B tem de a nomear)"
+ },
+ {
+  "id": "CA-F107",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Este documento não tenta repartir o degrau do pessoal entre essa transferência e tudo o resto, porque nada do que aqui foi lido o reparte.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V268 da sua lista)"
+ },
+ {
+  "id": "CA-F108",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Nem um nem outro foi ajustado aqui.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V269 da sua lista)"
+ },
+ {
+  "id": "CA-F109",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Nada do que foi lido para este documento explica essas diferenças; não houve ajuste de uma série para caber na outra, e cada valor de dívida citado neste documento diz de qual das duas veio.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V270 da sua lista)"
+ },
+ {
+  "id": "CA-F110",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O ficheiro de evidência não regista qualquer nota que explique esse degrau, e este documento não o lê como migração de um ano; imprime a série tal como publicada.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V271 da sua lista)"
+ },
+ {
+  "id": "CA-F111",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "E a taxa de IMI que este documento seguiu de 0,45% até 0,43% mantém-se em 0,37% no plano, com uma minoração de 30% para as freguesias rurais.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V272 da sua lista)"
+ },
+ {
+  "id": "CA-F112",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Nada do que aqui foi lido explica a diferença.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V273 da sua lista)"
+ },
+ {
+  "id": "CA-F113",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "As linhas dos projetos da Capital da Cultura não estão repetidas aqui — pertencem ao parágrafo acima — e, fundido nesta lista, o Rossio de São Brás ficaria no topo dela.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V274 da sua lista)"
+ },
+ {
+  "id": "CA-F114",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O resto dela é a totalidade do financiamento não definido do objetivo da Capital da Cultura para o ano — o mesmo valor, concentrado numa linha (inferência; o plano imprime os dois montantes, não a identidade entre eles).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (sem entrada na sua lista: a VOZ-2B tem de a nomear)"
+ },
+ {
+  "id": "CA-F115",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O plano de 2026 inscreve-o outra vez (inferência; o plano afirma cada linha e cada repartição de financiamento, e não afirma padrão algum).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (sem entrada na sua lista: a VOZ-2B tem de a nomear)"
+ },
+ {
+  "id": "CA-F116",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Foi escrita pelo modelo que dirigiu e verificou este documento, e não pelo que o montou — o construtor e o signatário são sistemas diferentes, que é a disciplina de revisão deste repositório aplicada à opinião tanto como ao facto.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V275 da sua lista)"
+ },
+ {
+  "id": "CA-F117",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O mandato do PS de 2009–2013 é dono da maior decisão do período — a entrada no PAEL, €32 166 372 — e os seus próprios anos são os que menos registo deixaram neste documento: os relatórios que contariam o seu lado são os ilegíveis.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (sem entrada na sua lista: a VOZ-2B tem de a nomear)"
+ },
+ {
+  "id": "CA-F118",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Se esse capítulo se lê como pior governação ou como governar sem votos é uma distinção que o registo não consegue fazer, e este documento não finge que consegue (inferência).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V276 da sua lista)"
+ },
+ {
+  "id": "CA-F119",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Os três moveram-se com as marés nacionais — o boom do turismo, a subida em escada do salário mínimo — e nada do que aqui foi lido fornece o contrafactual que recortaria a parte de cada executivo neles (inferência).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V277 da sua lista)"
+ },
+ {
+  "id": "CA-F120",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "As pessoas do município e a sua despesa com pessoal contam duas histórias diferentes: os efetivos caíram durante uma década enquanto a remuneração subia, e depois um ano — 2022 — acrescentou trezentos e seis trabalhadores com as escolas transferidas, pelo que o degrau da despesa com pessoal na tabela das finanças é sobretudo gente a chegar, e não o efeito isolado das atualizações salariais (inferência).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V278 da sua lista)"
+ },
+ {
+  "id": "CA-F121",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "A distância entre orçamento e dinheiro não é um hábito do passado; está agendada para as primeiras contas do novo mandato (inferência).",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V279 da sua lista)"
+ },
+ {
+  "id": "CA-F122",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Uma quarta etapa — o construtor ao lado deste documento — transformou esses ficheiros em linhas do ledger, e verifica em vez de confiar: um valor de contas tem de aparecer entre os números da própria linha que o agente citou; um valor que o agente não citou é procurado por agulha no texto extraído do PDF de origem, tem de ter exatamente uma correspondência, e tem de aparecer na janela correspondida; um valor eleitoral ou estatístico é lido do JSON por caminho de campo.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V280 da sua lista)"
+ },
+ {
+  "id": "CA-F123",
+  "estudo": "evora-quinze-anos-cinco-mandatos",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/evora-quinze-anos-cinco-mandatos/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O que os portões não conseguem verificar — se uma frase lê mal a sua fonte — é o trabalho da revisão de verificação que se segue, por agentes que não escreveram este documento.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V281 da sua lista)"
+ },
+ {
+  "id": "CA-F124",
+  "estudo": "alentejo-algarve",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/alentejo-algarve/document"
+  ],
+  "classe": "FICA",
+  "frase": "V verified — survived 3-vote adversarial verification against primary sources Q quote-backed — verbatim from a fetched source, not adversarially verified A my analysis — judgment on the evidence, not a sourced fact",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (sem entrada na sua lista: a VOZ-2B tem de a nomear)"
+ },
+ {
+  "id": "CA-F125",
+  "estudo": "alentejo-algarve",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/alentejo-algarve/document"
+  ],
+  "classe": "FICA",
+  "frase": "Verified series points only; the line between 2000 and 2019 spans years not individually verified here.",
+  "razao": "fica nesta correção, que só tira a marca de valor por verificar deste estudo; a voz do estudo é da VOZ-2B (a entrada V015 da sua lista)"
  }
 ]

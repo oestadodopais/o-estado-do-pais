@@ -1,0 +1,47 @@
+## edia-edital-campanha-2026.pdf  sha256 a6619e4be333ed28d0dd9b835161cf83bece51e27ae549bdbc1d7b9d90664ef4
+- /0,0706/: Valor médio 0,0706 0,1765 0,3530 Vazio/ Super
+- /0,0382/: Fornecimento de água em baixa 23,94 na 0,0382 0,0955 0,1910 pressão
+- /65,83/: Fornecimento de água em alta vazio 65,83 pressão
+- /23,94/: Fornecimento de água em baixa 23,94 na 0,0382 0,0955 0,1910 pressão
+- /0,0689/: pressão Cheia 0,0689 0,1723 0,3445
+- /0,0847/: Ponta 0,0847 0,2118 0,4235
+- /Anexo II/: de janeiro, o preço da água destinada a rega para uso agrícola, industrial e abastecimento público é o constante do Anexo II ao presente edital.
+- /2 de junho/: Beja, 2 de junho de 2026
+
+## ersar-rasarp2025-volume1.pdf  sha256 cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67
+- /o nível médio de encargos tarifários mensais suportado/: Encargos tarifários domésticos para consumos de 10 metros cúbicos Em Portugal continental, entre 2015 e 2024, o nível médio de encargos tarifários mensais suportado pelo utilizador final para um consumo de 10 metros cúbicos, apresenta a evolução, a preços correntes, que se pode verificar na Figura 55387.
+- /Em 2022, há uma quebra de série/: 87 Em 2022, há uma quebra de série na medida em que os valores apresentados passaram a incluir o IVA e a repercussão dos gastos com as taxas
+
+## apa-pgrh3-ptcont-resumo-nao-tecnico.pdf  sha256 bc1550e81c83dd10771b115326a940d0a5044977a5b4c33b8da9fe9061fc48c6
+- /14 804,71/: [Altura>= 15 m] 263 14 804,71 52 18 peixes e bivalves). Relativamente à introdução de
+- /existem 264 grandes barragens/: dos danos potenciais resultantes da rutura. Nas RH do Seveso 5 32 34 52 62 36 2 8 continente existem 264 grandes barragens abrangidas PCIP (exceto pelo Regulamento de Segurança de Barragens, sendo pecuárias e 12 83 49 178 219 33 1 6
+
+## apa-boletim-semanal-albufeiras-live-20261108.pdf  sha256 c7240e9f4e5db52d4b9eb0ec123ed867567df3d704d4f83cfa15c03b9f4c5ca3
+- /9 317/: Volume a 31 de outubro: 9 317 hm³ 96% das 100% das bacias média de outubro Volume a 26 outubro: 9 472 hm³ albufeiras hidrográficas bacias
+- /13 215/: Volume a 26 outubro: 9 472 hm³ albufeiras hidrográficas bacias Capacidade total: 13 215 hm³ monitorizadas monitorizadas 6 abaixo
+
+## gpp-relatorio-monitorizacao-seca-agosto-2026.pdf  sha256 5986ec77ccb123a680b2679c769a523ca4462f2c8ad77908af467fcaadeb6a10
+- /Das 78 albufeiras/: Das 78 albufeiras monitorizadas em 31 de agosto de 2026, duas apresentam disponibilidades hídricas inferiores a 40% e 36 apresentam disponibilidades hídricas superiores a 80% do volume
+- /Fronhas/: total. As duas albufeiras que apresentam volume total inferior a 40% localizam-se na bacia do Mondego (Fronhas – 33%) e na bacia do Guadiana (Vigia – 39%).
+
+## gulbenkian-uso-da-agua-em-portugal-2020.pdf  sha256 623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd7
+- /71% – que não tem contador|71%.{0,5}que não tem/: água com qualidade, na resposta às necessidades do localizados de rega gota-a-gota. Mas ainda há uma país. Um cenário que não é homogéneo no território grande maioria – 71% – que não tem contador de português, estando o Sul mais vulnerável à escassez. água. Como se pode monitorizar e gerir o que não
+- /dizem não pagar a água/: outras estruturas privadas, 61% dos agricultores “Eu gasto o que eu faço. Não estou a contabilizar … olhe, é inquiridos dizem não pagar a água (no Norte, são para o monte …Mas este ano passado não vi dinheiro […] mais de 80% que o dizem). No entanto, há todo o Tenho as coisas montadas, sei que recebo x, vai chegando || [Neste inquérito, os agricultores que dizem não pagar a água, directamente (61%), representam 52% da superfície de regadio]
+- /iguais ou superiores a 5 ha/: Universo: Agricultores que regam as suas culturas (mesmo que só em parte da sua propriedade), com explorações iguais ou superiores a 5 ha, em Portugal Continental. A sua produção destina-se à venda no mercado nacional e internacional.
+
+## dgadr-anuario-2024.pdf  sha256 2cdd510e177cefa928f4fe022890ee6af3b7d985efd6f18e3952acfc9801ae4e
+- /situa-se nos 76%/: infraestruturais associadas. Relativamente à E昀椀ciência na Adução e Distribuição, a média do conjunto dos AHs situa-se nos 76%, observando-se, contudo, amplitudes consideráveis, com mínimos de 8% (Alvor) e máximos de 98%
+- /dimensão relevante/: O levantamento de dados e informação, junto das entidades gestoras dos aproveitamentos hidroagrícolas, abrangeu 33 aproveitamentos hidroagrícolas de dimensão relevante e com origens de água diversi昀椀cadas. Nestes aproveitamentos, foram distribuídos cerca de 973 hm³ de água em 2024
+
+## edia-relatorio-contas-2025.pdf  sha256 80bdf0f5b60789bf57b23e1e0898f94d5605d223778d22fd43d8efdbe04b3675
+- /2\.029\.018\.255/: Assim os ativos intangíveis, afetos ao segmento água, em 2025, com valor bruto de 2.029.018.255 EUR, e em 2024 no valor bruto de 1.976.639.831 EUR, encontram-se totalmente compensados por
+
+## tcontas-rel003-2005-2s.pdf  sha256 09c649ea0528704aafe8706ded38a70ba3a20ccfbd33c3b5bb8cb24178254004
+- /2,7 mil milhões/: a sua conclusão, com um investimento global orçado em 2,7 mil milhões de euros (542 milhões de contos), dos quais, mais de 70% dizem respeito a investimentos || o “Projecto EFMA”, a desenvolver até 2025 deverão revela superior a 1,2 mil milhões de euros. atingir cerca de 2,7 mil milhões de euros, dos quais mais de 70% dizem respeito a investimentos a realizar
+- /mais de 70%/: em 2,7 mil milhões de euros (542 milhões de contos), dos quais, mais de 70% dizem respeito a investimentos a realizar no âmbito dos sistemas de rega (primário e || atingir cerca de 2,7 mil milhões de euros, dos quais mais de 70% dizem respeito a investimentos a realizar no âmbito dos sistemas de rega (primário e secundário).
+- /35 milhões/: recursos obtidos por via do endividamento, cerca de 135 milhões de euros (21%). || passivo de médio e longo prazo, derivado do concessão de garantias pelo Estado, as quais empréstimo obrigacionista. Note-se que esta forma de totalizaram, ao longo do período, 435 milhões de euros. financiamento com recurso ao endividamento permite,
+- /apenas cerca de 7%/: que as receitas estimadas para o período 2004-2006 Face ao exposto, conclui-se que é preciso, por um lado, representam apenas cerca de 7% do volume de que o Estado assegure com transparência e de modo investimento previsto a realizar no mesmo período com continuado os fundos necessários para suporte dos
+
+## tcontas-rel004-2016-2s.pdf  sha256 963da78ce93d20fc89507732b817ca3043492c8d75394a93709c0de82f5e1383
+- /ficou comprometida/: 214. Em conclusão, a situação financeira da EDIA ficou comprometida desde então e agravada pelo diferendo em relação à retenção de parte das rendas pela EDP desde 2013.
+
