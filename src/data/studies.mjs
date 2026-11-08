@@ -169,8 +169,8 @@ export const WORKS = [
     subject: 'evora',
     publication: 'declared',
     editions: [
-      { lang: 'pt', title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação', date: '2026-10-01', updated: '2026-11-07' },
-      { lang: 'en', title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification', date: '2026-10-01', updated: '2026-11-07' },
+      { lang: 'pt', title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação', date: '2026-10-01', updated: '2026-11-08' },
+      { lang: 'en', title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification', date: '2026-10-01', updated: '2026-11-08' },
     ],
     artifactUrl: null,
     pergunta: {
@@ -209,8 +209,8 @@ export const WORKS = [
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     editions: [
-      { lang: 'pt', title: 'A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara', date: '2026-10-01', updated: '2026-11-07' },
-      { lang: 'en', title: 'The economy of Évora and the public money that reaches the municipality outside the council', date: '2026-10-01', updated: '2026-11-07' },
+      { lang: 'pt', title: 'A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara', date: '2026-10-01', updated: '2026-11-08' },
+      { lang: 'en', title: 'The economy of Évora and the public money that reaches the municipality outside the council', date: '2026-10-01', updated: '2026-11-08' },
     ],
     artifactUrl: null,
     pergunta: {
@@ -232,8 +232,8 @@ export const WORKS = [
     tema: 'cultura',
     subject: 'evora',
     editions: [
-      { lang: 'pt', title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos', date: '2026-10-01', updated: '2026-11-07' },
-      { lang: 'en', title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts', date: '2026-10-01', updated: '2026-11-07' },
+      { lang: 'pt', title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos', date: '2026-10-01', updated: '2026-11-08' },
+      { lang: 'en', title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts', date: '2026-10-01', updated: '2026-11-08' },
     ],
     artifactUrl: null,
     pergunta: {
@@ -279,7 +279,7 @@ export const WORKS = [
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
     sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     editions: [
-      { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: '2026-08-12', updated: '2026-11-07' },
+      { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: '2026-08-12', updated: '2026-11-08' },
     ],
     description: {
       pt: 'Economia, investidores e portas abertas no concelho de Évora.',
@@ -296,7 +296,7 @@ export const WORKS = [
     /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de
        ponteiro. DECISIONS §1.49. */
     editions: [
-      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: '2026-08-20', updated: '2026-11-07' },
+      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: '2026-08-20', updated: '2026-11-08' },
       /* O TÍTULO É O NOME DO DOCUMENTO, e não a sua etiqueta `<title>`.
          Até 2026-08-20 as duas coisas coincidiam, porque o que estava alojado
          era o artefacto do claude.ai, cujo `<title>` o anfitrião punha a
@@ -307,7 +307,7 @@ export const WORKS = [
          de «Prometido, Pago, Auditado» já seguiam desde 15.08.2026. Estava aqui
          sem o «Évora — », e um título literal não se abrevia (15.08.2026,
          revisão cruzada). */
-      { lang: 'en', title: 'Évora — Budgeted, Paid, Owed 2025', date: '2026-08-20', updated: '2026-11-07' },
+      { lang: 'en', title: 'Évora — Budgeted, Paid, Owed 2025', date: '2026-08-20', updated: '2026-11-08' },
     ],
     description: {
       pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora.',
@@ -383,8 +383,8 @@ export const WORKS = [
          passou de 2026-08-17 para 2026-08-19, e a frase de abertura passou a
          dizer que o registo do plano de recuperação foi relido a 2026-08-20.
          DECISIONS §1.49. */
-      { lang: 'pt', title: 'Évora — Prometido, Pago, Auditado 2026', date: '2026-08-20', updated: '2026-11-07' },
-      { lang: 'en', title: 'Évora — Promised, Paid, Audited 2026', date: '2026-08-20', updated: '2026-11-07' },
+      { lang: 'pt', title: 'Évora — Prometido, Pago, Auditado 2026', date: '2026-08-20', updated: '2026-11-08' },
+      { lang: 'en', title: 'Évora — Promised, Paid, Audited 2026', date: '2026-08-20', updated: '2026-11-08' },
     ],
     // Nunca foi publicado fora deste sítio: não há endereço externo para dar.
     artifactUrl: null,
@@ -452,13 +452,13 @@ export const WORKS = [
         lang: 'pt',
         title: 'Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas',
         date: '2026-09-16',
-        updated: '2026-11-07',
+        updated: '2026-11-08',
       },
       {
         lang: 'en',
         title: 'Évora 2027: what was promised, what the panel wrote, and the money line by line',
         date: '2026-09-16',
-        updated: '2026-11-07',
+        updated: '2026-11-08',
       },
     ],
     // Nunca foi publicado fora deste sítio: não há endereço externo para dar.

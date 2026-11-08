@@ -157,7 +157,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "Two blind spots, both measured rather than assumed, and both first found by an agent that was forbidden to read this document.",
+   "antes_no_registo": "Two blind spots.",
    "b": 67,
    "b_no_registo": 67,
    "depois": "Two blind spots.",
@@ -178,7 +178,7 @@
     "pendente": "aprovado pelo diretor a 24.08",
     "razao": "a moldura dos dois pontos cegos é dos dados; a oração do agente é diligência"
    },
-   "texto": "Two blind spots, both measured rather than assumed, and both first found by an agent that was forbidden to read this document.",
+   "texto": "Two blind spots.",
    "unidade": null
   },
   {
@@ -292,24 +292,6 @@
    "razao": "declaração de intenção: «não há nenhuma, e isso é deliberado»",
    "ronda": 3,
    "texto": "There are none, and that is deliberate.",
-   "unidade": null
-  },
-  {
-   "antes_no_registo": "They are here rather than in a footnote because each one is the difference between a true sentence and a false one.",
-   "b": 4,
-   "b_no_registo": 4,
-   "estrato": "S3·famílias-leituras·aprovado-24.08",
-   "f": 1,
-   "f_no_registo": 1,
-   "familia": "C1",
-   "figuras": [],
-   "frases_no_registo": 1,
-   "op": "corte",
-   "origem": "leituras-codex-C1",
-   "pendente": "aprovado pelo diretor a 24.08",
-   "razao": "explicação de onde a casa põe os limites, e porquê",
-   "ronda": 3,
-   "texto": "They are here rather than in a footnote because each one is the difference between a true sentence and a false one.",
    "unidade": null
   },
   {
@@ -442,20 +424,20 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "One thing this document can do that a single source cannot: it puts the promise, the payment and the audit record of one place side by side. Where it reasons beyond what a source states, the sentence says (inference).",
+   "antes_no_registo": "Where it reasons beyond what a source states, the sentence says (inference).",
    "b": 8,
    "b_no_registo": 8,
    "estrato": "S5·segunda-voz·proposta-27.08",
    "f": 0,
    "f_no_registo": 0,
    "familia": "F4",
-   "frases_no_registo": 2,
+   "frases_no_registo": 1,
    "gemea": "04-pode-fazer",
    "op": "corte",
    "origem": "registo de hoje b8 f0",
    "pendente": "diretor",
    "razao": "o documento a dizer o que consegue fazer, e a explicar o seu próprio rótulo",
-   "texto": "One thing this document can do that a single source cannot: it puts the promise, the payment and the audit record of one place side by side. Where it reasons beyond what a source states, the sentence says (inference).",
+   "texto": "Where it reasons beyond what a source states, the sentence says (inference).",
    "unidade": null
   },
   {

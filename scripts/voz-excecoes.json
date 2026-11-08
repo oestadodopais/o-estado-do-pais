@@ -277,7 +277,7 @@
   },
   {
     "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
+    "frase": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência"
   },
@@ -382,5 +382,29 @@
     "frase": "Dinheiro, risco de entrega e um rasto pesquisável fino concentram-se no mesmo canto da mesma cidade (inferência).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência"
+  },
+  {
+    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+    "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
+    "classe": "facto de uma fonte",
+    "razao": "o par inglês da FICA V169 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
+  },
+  {
+    "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+    "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
+    "classe": "facto de uma fonte",
+    "razao": "o par inglês da FICA V169 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
+  },
+  {
+    "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+    "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
+    "classe": "facto de uma fonte",
+    "razao": "o par inglês da FICA V180 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
+  },
+  {
+    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+    "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
+    "classe": "facto de uma fonte",
+    "razao": "o par inglês da FICA V180 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
   }
 ]

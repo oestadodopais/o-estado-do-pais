@@ -454,7 +454,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato, e viajam aqui com a sua proveniência original.",
+   "antes_no_registo": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato.",
    "b": 75,
    "b_no_registo": 75,
    "depois": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato.",
@@ -468,7 +468,7 @@
    "origem": "registo de hoje b75 f1",
    "pendente": "diretor",
    "razao": "o ponteiro para o aparelho da casa; o facto do instantâneo fica",
-   "texto": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato, e viajam aqui com a sua proveniência original.",
+   "texto": "Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato.",
    "unidade": null
   },
   {
@@ -704,7 +704,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente, e nada neste documento trata os comparativos de 2024 como se certificasse.",
+   "antes_no_registo": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente.",
    "b": 65,
    "b_no_registo": 68,
    "depois": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente.",
@@ -718,7 +718,7 @@
    "origem": "registo de 27.08 b65 f2",
    "pendente": "diretor",
    "razao": "«nada neste documento trata» é o documento a garantir-se; o que a opinião limpa faz e não faz fica",
-   "texto": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente, e nada neste documento trata os comparativos de 2024 como se certificasse.",
+   "texto": "A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente.",
    "unidade": null
   },
   {
@@ -736,6 +736,41 @@
    "pendente": "diretor",
    "razao": "a agenda do próprio documento sai, como a linha do diretor a nomeia; as quatro coisas que ela anunciava ficam, cada uma com o seu facto",
    "texto": "O que vigiar a seguir.",
+   "unidade": null
+  },
+  {
+   "antes_no_registo": "O relatório de 2015 traz 48,1%, um fundo mais fundo, um ano depois das tranches do resgate, pelo que os colapsos de execução já seguiram antes as crises de dívida de Évora (inferência; o valor é do próprio relatório de 2015).",
+   "b": 76,
+   "b_no_registo": 20,
+   "depois": "O relatório de 2015 traz 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência).",
+   "estrato": "S6·terceira-voz·proposta-27.08",
+   "f": 0,
+   "f_no_registo": 1,
+   "familia": "F1",
+   "figuras": [
+    [
+     "167 372 756",
+     "prr-approved-evora-0804"
+    ],
+    [
+     "86 944 669",
+     "prr-paid-evora-0804"
+    ]
+   ],
+   "frases_no_registo": 1,
+   "gemea": "07-relatorio-2015-pagina-adenda-h",
+   "op": "substituicao",
+   "origem": "VOZ-2A, adenda H, ponto 2",
+   "pendente": "diretor",
+   "razao": "A adenda H repõe na página a frase publicada antes da VOZ-2A; o documento conserva a reescrita prescrita.",
+   "reve": {
+    "estrato": "S2·L1·regra-aprovada",
+    "op": "substituicao",
+    "pendente": null,
+    "razao": "L1: sai «neste repositório», fica tudo o resto, e os dois algarismos (prr-approved-evora-0804, prr-paid-evora-0804) ficam carácter a carácter. O companheiro já estava nomeado na frase, em itálico e em minúsculas; o nome que a frase usa não é o título da edição do motor, e essa é uma questão de redação para o assento, não da passagem de voz. Ronda 3, palavra do diretor de 24.08: o nome do companheiro normaliza para o título real da edição do motor, que é o que a frase passa a imprimir em itálico."
+   },
+   "ronda": 3,
+   "texto": "O relatório de 2015 traz 48,1%, um fundo mais fundo, um ano depois das tranches do resgate, pelo que os colapsos de execução já seguiram antes as crises de dívida de Évora (inferência; o valor é do próprio relatório de 2015).",
    "unidade": null
   }
  ]

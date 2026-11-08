@@ -1,0 +1,78 @@
+{
+  "arquivos_conferidos": 19,
+  "correntes_conferidas": 13,
+  "registos_conferidos": 25,
+  "referencias_identicas": 8382,
+  "blocos_alterados": [
+    {
+      "estudo": "04 Évora Public Money",
+      "lingua": "pt-PT",
+      "antes": 94,
+      "depois": 95
+    },
+    {
+      "estudo": "18 Évora Economia e Dinheiro de Fora",
+      "lingua": "pt-PT",
+      "antes": 160,
+      "depois": 161
+    }
+  ],
+  "prova_voz_antes": {
+    "contagens": {
+      "blocos_antes": 2920,
+      "blocos_conferidos": 2817,
+      "blocos_depois": 2817,
+      "com_palavra": 150,
+      "cortes": 463,
+      "excecoes_R6": 8,
+      "figuras_caidas": 8,
+      "frases_depois": 17752,
+      "italicos_conferidos": 6,
+      "nenhuma": 26,
+      "offsets_conferidos": 9761,
+      "operacoes": 874,
+      "refs_antes": 8390,
+      "refs_depois": 8382,
+      "substituicoes": 411,
+      "titulos_novos": 6
+    },
+    "estratos": {
+      "S1·aprovado": 65,
+      "S2·L1·regra-aprovada": 30,
+      "S2·inventário-cego·aprovado-24.08": 69,
+      "S3·famílias-leituras·aprovado-24.08": 77,
+      "S4·coerência·aprovado-24.08": 4,
+      "S5·segunda-voz·proposta-27.08": 360,
+      "S6·terceira-voz·proposta-27.08": 295
+    }
+  },
+  "prova_voz_depois": {
+    "contagens": {
+      "blocos_antes": 2922,
+      "blocos_conferidos": 2819,
+      "blocos_depois": 2819,
+      "com_palavra": 149,
+      "cortes": 462,
+      "excecoes_R6": 8,
+      "figuras_caidas": 8,
+      "frases_depois": 17749,
+      "italicos_conferidos": 6,
+      "nenhuma": 26,
+      "offsets_conferidos": 9758,
+      "operacoes": 874,
+      "refs_antes": 8390,
+      "refs_depois": 8382,
+      "substituicoes": 412,
+      "titulos_novos": 6
+    },
+    "estratos": {
+      "S1·aprovado": 65,
+      "S2·L1·regra-aprovada": 30,
+      "S2·inventário-cego·aprovado-24.08": 69,
+      "S3·famílias-leituras·aprovado-24.08": 76,
+      "S4·coerência·aprovado-24.08": 4,
+      "S5·segunda-voz·proposta-27.08": 360,
+      "S6·terceira-voz·proposta-27.08": 296
+    }
+  }
+}

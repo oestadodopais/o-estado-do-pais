@@ -290,20 +290,20 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "One thing this document can do that the accounts alone cannot: it puts the municipality's own numbers, the regulator's independent series and the national distribution side by side. Where it reasons beyond what a source states, the sentence says (inference).",
+   "antes_no_registo": "Where it reasons beyond what a source states, the sentence says (inference).",
    "b": 9,
    "b_no_registo": 9,
    "estrato": "S5·segunda-voz·proposta-27.08",
    "f": 0,
    "f_no_registo": 0,
    "familia": "F4",
-   "frases_no_registo": 2,
+   "frases_no_registo": 1,
    "gemea": "07-pode-fazer",
    "op": "corte",
    "origem": "registo de hoje b9 f0",
    "pendente": "diretor",
    "razao": "o documento a dizer o que consegue fazer, e a explicar o seu próprio rótulo",
-   "texto": "One thing this document can do that the accounts alone cannot: it puts the municipality's own numbers, the regulator's independent series and the national distribution side by side. Where it reasons beyond what a source states, the sentence says (inference).",
+   "texto": "Where it reasons beyond what a source states, the sentence says (inference).",
    "unidade": null
   },
   {
@@ -620,7 +620,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "The companion reaches back to 2015 and finds 48.1% there — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own).",
+   "antes_no_registo": "The 2015 report shows 48.1%, a deeper trough, in the year after the bailout instalments, so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own).",
    "b": 17,
    "b_no_registo": 20,
    "depois": "The 2015 report carries 48.1% — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference).",
@@ -634,7 +634,7 @@
    "origem": "registo de 27.08 b17 f1",
    "pendente": "diretor",
    "razao": "o companheiro a chegar e a encontrar é o ato da casa; o relatório de 2015 passa a sujeito do seu próprio valor",
-   "texto": "The companion reaches back to 2015 and finds 48.1% there — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own).",
+   "texto": "The 2015 report shows 48.1%, a deeper trough, in the year after the bailout instalments, so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own).",
    "unidade": null
   },
   {
@@ -728,7 +728,7 @@
    "unidade": null
   },
   {
-   "antes_no_registo": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table in this document inherits that asterisk on its 2024 column.",
+   "antes_no_registo": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table inherits that asterisk on its 2024 column.",
    "b": 82,
    "b_no_registo": 86,
    "depois": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table inherits that asterisk on its 2024 column.",
@@ -742,7 +742,7 @@
    "origem": "registo de 27.08 b82 f2",
    "pendente": "diretor",
    "razao": "«deste documento» aponta para si próprio; o asterisco na coluna de 2024 fica",
-   "texto": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table in this document inherits that asterisk on its 2024 column.",
+   "texto": "The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table inherits that asterisk on its 2024 column.",
    "unidade": null
   },
   {

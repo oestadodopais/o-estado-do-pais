@@ -15,7 +15,13 @@ const i=EXCECOES.indexOf(fica);EXCECOES.splice(i,1);
 try{assert(medirPagina(pagina(fica.frase),rota).frases.length,'FICA sem exceção tem de dar vermelho');}finally{EXCECOES.splice(i,0,fica);}
 assert.equal(medirPagina(pagina('Research Hub. '+sai.frase),rota+'/2026-10-01').protecao.length,0);
 assert(medirPagina(pagina(sai.frase),rota+'/2026-10-01').isenta);
-assert.equal(ISENCAO_VOZ2.estudos.length,11);
+const listaB=JSON.parse(fs.readFileSync('design/especime-v3/medicoes/voz2b-2026-11-07/FRASES-VOZ-2B.json','utf8'));
+assert.deepEqual([...ISENCAO_VOZ2.estudos].sort(),[...new Set(listaB.map(f=>f.estudo))].sort());
 for(const s of ISENCAO_VOZ2.estudos){const r='/estudos/'+s+'/documento';assert(medirPagina(pagina(sai.frase),r).isenta);assert.equal(medirPagina(pagina('Research Hub'),r).protecao.length,0);assert(medirPagina(pagina('Research Hub'),'/estudos/'+s).protecao.length,'A página do estudo continua coberta pela régua do nome');}
 assert.equal(medirPagina('<style>/* Research Hub house style */</style><p>Fonte.</p>',rota).protecao.length,0);
 console.log('VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, onze estudos e comentário style conservados.');
+
+// Adenda H: uma planta por forma acrescentada, pela medição da página.
+const novas=[...['neste projeto','nesta página','nesta explicação','neste estudo','neste documento','nesta leitura'].map(f=>`Nada entra ${f}.`),'Rates do not enter.','Rates did not enter.',...['cannot',"can't",'can’t',"don't",'don’t',"didn't",'didn’t',"won't",'won’t'].map(f=>`It ${f} happen (inference).`)];
+for(const frase of novas)assert(medirPagina(pagina(frase),rota).frases.length,frase);
+console.log(`Adenda H: ${novas.length} formas novas recusadas; conjunto exato da isenção conferido.`);

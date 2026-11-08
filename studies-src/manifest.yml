@@ -88,15 +88,15 @@ edicoes:
       - data: '2026-08-12'
         sha256: 10b0adc0633cfda598a7261519ef5d12bf712beeee3cccb5da8d784cb5ceebc7
         file: _edicoes/evora-economia-investidores-portas-abertas-2026.pt.2026-08-12.html
-      - data: '2026-11-07'
+      - data: '2026-11-08'
         sha256: f4548e08ed5c3fc5bcba166ffc006733dfc84b87de83d2a2c5650bd363068708
         file: evora-economia-investidores-portas-abertas-2026/pt.html
         natureza: atualizacao
     title: Évora — Economia, Investidores, Portas Abertas 2026
     origin: researchhub
-    origin_ref: content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-economia-investidores-portas-abertas-2026.pt.html
-    fetched_utc: '2026-11-07T21:58:33.514Z'
+    fetched_utc: '2026-11-08T00:16:58.734Z'
     bytes_raw: 25988
     bytes_normalized: 25988
     sha256_raw: f4548e08ed5c3fc5bcba166ffc006733dfc84b87de83d2a2c5650bd363068708
@@ -112,19 +112,19 @@ edicoes:
       - data: '2026-08-20'
         sha256: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
         file: _edicoes/evora-orcamentado-pago-devido-2025.pt.2026-08-20.html
-      - data: '2026-11-07'
-        sha256: 50d2c4edb88f0dcf56e35c52db0e1d0f259732867aa5a5c290fbfd739ec26887
+      - data: '2026-11-08'
+        sha256: a23e871116e395a27586d4f28682608a010db4242b43290a37982d5bf8c48dcb
         file: evora-orcamentado-pago-devido-2025/pt.html
         natureza: atualizacao
     title: Évora — Orçamentado, Pago, Devido 2025
     origin: researchhub
-    origin_ref: content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-orcamentado-pago-devido-2025.pt.html
-    fetched_utc: '2026-11-07T21:58:33.522Z'
-    bytes_raw: 960222
-    bytes_normalized: 960222
-    sha256_raw: 50d2c4edb88f0dcf56e35c52db0e1d0f259732867aa5a5c290fbfd739ec26887
-    sha256_normalized: 50d2c4edb88f0dcf56e35c52db0e1d0f259732867aa5a5c290fbfd739ec26887
+    fetched_utc: '2026-11-08T00:16:58.742Z'
+    bytes_raw: 960164
+    bytes_normalized: 960164
+    sha256_raw: a23e871116e395a27586d4f28682608a010db4242b43290a37982d5bf8c48dcb
+    sha256_normalized: a23e871116e395a27586d4f28682608a010db4242b43290a37982d5bf8c48dcb
     primeira_edicao:
       date: '2026-08-20'
       sha256: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
@@ -136,19 +136,19 @@ edicoes:
       - data: '2026-08-20'
         sha256: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
         file: _edicoes/evora-orcamentado-pago-devido-2025.en.2026-08-20.html
-      - data: '2026-11-07'
-        sha256: 20d79874c34525ccd87279162b5d2c5e995d7c254dfcef28092e78a2cc920715
+      - data: '2026-11-08'
+        sha256: 7592cb1f27177825938b2e5e48fc199fec285cd32b808e4de3ad8844b2288959
         file: evora-orcamentado-pago-devido-2025/en.html
         natureza: atualizacao
     title: Évora — Budgeted, Paid, Owed 2025
     origin: researchhub
-    origin_ref: content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-orcamentado-pago-devido-2025.en.html
-    fetched_utc: '2026-11-07T21:58:33.530Z'
-    bytes_raw: 958678
-    bytes_normalized: 958678
-    sha256_raw: 20d79874c34525ccd87279162b5d2c5e995d7c254dfcef28092e78a2cc920715
-    sha256_normalized: 20d79874c34525ccd87279162b5d2c5e995d7c254dfcef28092e78a2cc920715
+    fetched_utc: '2026-11-08T00:16:58.750Z'
+    bytes_raw: 958444
+    bytes_normalized: 958444
+    sha256_raw: 7592cb1f27177825938b2e5e48fc199fec285cd32b808e4de3ad8844b2288959
+    sha256_normalized: 7592cb1f27177825938b2e5e48fc199fec285cd32b808e4de3ad8844b2288959
     primeira_edicao:
       date: '2026-08-20'
       sha256: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
@@ -311,19 +311,19 @@ edicoes:
       - data: '2026-08-20'
         sha256: ca5841258e2e9d630f0f2ffb1e737f2a611f38db540947675d2531bdc937f5cd
         file: _edicoes/evora-prometido-pago-auditado-2026.pt.2026-08-20.html
-      - data: '2026-11-07'
-        sha256: 9eddac51fb57fffaeb509c05391dc106d0c3bf2c84c41a469e1dc0a1a170bd5b
+      - data: '2026-11-08'
+        sha256: 2a88e2fa9197a4f34906593a654504056aa7d90fbb785eba8d1ca594fbfa114c
         file: evora-prometido-pago-auditado-2026/pt.html
         natureza: atualizacao
     title: Évora — Prometido, Pago, Auditado 2026
     origin: researchhub
-    origin_ref: content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-prometido-pago-auditado-2026.pt.html
-    fetched_utc: '2026-11-07T21:58:33.536Z'
-    bytes_raw: 69602
-    bytes_normalized: 69602
-    sha256_raw: 9eddac51fb57fffaeb509c05391dc106d0c3bf2c84c41a469e1dc0a1a170bd5b
-    sha256_normalized: 9eddac51fb57fffaeb509c05391dc106d0c3bf2c84c41a469e1dc0a1a170bd5b
+    fetched_utc: '2026-11-08T00:16:58.755Z'
+    bytes_raw: 69628
+    bytes_normalized: 69628
+    sha256_raw: 2a88e2fa9197a4f34906593a654504056aa7d90fbb785eba8d1ca594fbfa114c
+    sha256_normalized: 2a88e2fa9197a4f34906593a654504056aa7d90fbb785eba8d1ca594fbfa114c
     primeira_edicao:
       date: '2026-08-20'
       sha256: ca5841258e2e9d630f0f2ffb1e737f2a611f38db540947675d2531bdc937f5cd
@@ -335,19 +335,19 @@ edicoes:
       - data: '2026-08-20'
         sha256: 6315e7b2e3b9da32cfcdc69b92ab7d1877fd63b1d800483190ba1da0c250dfc8
         file: _edicoes/evora-prometido-pago-auditado-2026.en.2026-08-20.html
-      - data: '2026-11-07'
-        sha256: 063eedc217518e05d7e872fd62ba3e69c4f9ff22b5a5d6947e25a672570fd7cd
+      - data: '2026-11-08'
+        sha256: 95701752d608c1068558d8a5e06960b97e071473d74c27a67055683fa477d727
         file: evora-prometido-pago-auditado-2026/en.html
         natureza: atualizacao
     title: Évora — Promised, Paid, Audited 2026
     origin: researchhub
-    origin_ref: content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-prometido-pago-auditado-2026.en.html
-    fetched_utc: '2026-11-07T21:58:33.542Z'
-    bytes_raw: 66828
-    bytes_normalized: 66828
-    sha256_raw: 063eedc217518e05d7e872fd62ba3e69c4f9ff22b5a5d6947e25a672570fd7cd
-    sha256_normalized: 063eedc217518e05d7e872fd62ba3e69c4f9ff22b5a5d6947e25a672570fd7cd
+    fetched_utc: '2026-11-08T00:16:58.760Z'
+    bytes_raw: 66452
+    bytes_normalized: 66452
+    sha256_raw: 95701752d608c1068558d8a5e06960b97e071473d74c27a67055683fa477d727
+    sha256_normalized: 95701752d608c1068558d8a5e06960b97e071473d74c27a67055683fa477d727
     primeira_edicao:
       date: '2026-08-20'
       sha256: 6315e7b2e3b9da32cfcdc69b92ab7d1877fd63b1d800483190ba1da0c250dfc8
@@ -400,19 +400,19 @@ edicoes:
       - data: '2026-09-16'
         sha256: 5e2f9a1cdd9bdddc49b1230aad858d0a00bb4df218cc1bb2d0cbba11d89f563d
         file: _edicoes/evora-2027-prometido-painel-dinheiro.pt.2026-09-16.html
-      - data: '2026-11-07'
-        sha256: f9145fffcda56ab052269b0cac525b8bcbb223a6d4fe1002d67edb8279ad3914
+      - data: '2026-11-08'
+        sha256: d7dc48660c99ee71789b069f20fa09b2db81fd9772e655722bfbcd14ebdcb3d1
         file: evora-2027-prometido-painel-dinheiro/pt.html
         natureza: atualizacao
     title: 'Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas'
     origin: researchhub
-    origin_ref: content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-2027-prometido-painel-dinheiro.pt.html
-    fetched_utc: '2026-11-07T21:58:33.547Z'
-    bytes_raw: 65033
-    bytes_normalized: 65033
-    sha256_raw: f9145fffcda56ab052269b0cac525b8bcbb223a6d4fe1002d67edb8279ad3914
-    sha256_normalized: f9145fffcda56ab052269b0cac525b8bcbb223a6d4fe1002d67edb8279ad3914
+    fetched_utc: '2026-11-08T00:16:58.766Z'
+    bytes_raw: 64843
+    bytes_normalized: 64843
+    sha256_raw: d7dc48660c99ee71789b069f20fa09b2db81fd9772e655722bfbcd14ebdcb3d1
+    sha256_normalized: d7dc48660c99ee71789b069f20fa09b2db81fd9772e655722bfbcd14ebdcb3d1
     primeira_edicao:
       date: '2026-09-16'
       sha256: 5e2f9a1cdd9bdddc49b1230aad858d0a00bb4df218cc1bb2d0cbba11d89f563d
@@ -424,19 +424,19 @@ edicoes:
       - data: '2026-09-16'
         sha256: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
         file: _edicoes/evora-2027-prometido-painel-dinheiro.en.2026-09-16.html
-      - data: '2026-11-07'
-        sha256: d455ca73fb4cbf85e86626444af9f2eb26a7ba91a8ce13dbebae2120baab483d
+      - data: '2026-11-08'
+        sha256: dc5ccb1b38ac94d7f3c63e7a26490f3b9594c4c0175a07e3dcf529a985cc747e
         file: evora-2027-prometido-painel-dinheiro/en.html
         natureza: atualizacao
     title: 'Évora 2027: what was promised, what the panel wrote, and the money line by line'
     origin: researchhub
-    origin_ref: content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-2027-prometido-painel-dinheiro.en.html
-    fetched_utc: '2026-11-07T21:58:33.552Z'
-    bytes_raw: 63172
-    bytes_normalized: 63172
-    sha256_raw: d455ca73fb4cbf85e86626444af9f2eb26a7ba91a8ce13dbebae2120baab483d
-    sha256_normalized: d455ca73fb4cbf85e86626444af9f2eb26a7ba91a8ce13dbebae2120baab483d
+    fetched_utc: '2026-11-08T00:16:58.771Z'
+    bytes_raw: 63096
+    bytes_normalized: 63096
+    sha256_raw: dc5ccb1b38ac94d7f3c63e7a26490f3b9594c4c0175a07e3dcf529a985cc747e
+    sha256_normalized: dc5ccb1b38ac94d7f3c63e7a26490f3b9594c4c0175a07e3dcf529a985cc747e
     primeira_edicao:
       date: '2026-09-16'
       sha256: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
@@ -451,8 +451,8 @@ edicoes:
       - data: '2026-10-30'
         sha256: 2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247
         file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-30.html
-      - data: '2026-11-07'
-        sha256: 6562941dcf637d4ee8ff0c8e90ca082a6497399623b91481cda1e677d0564527
+      - data: '2026-11-08'
+        sha256: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
         file: evora-contas-da-camara-2010-2025/pt.html
         natureza: atualizacao
     primeira_edicao:
@@ -462,13 +462,13 @@ edicoes:
       commit: c2aa011f1
     title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação'
     origin: researchhub
-    origin_ref: content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-contas-da-camara-2010-2025.pt.html
-    fetched_utc: '2026-11-07T21:58:33.558Z'
-    bytes_raw: 61151
-    bytes_normalized: 61151
-    sha256_raw: 6562941dcf637d4ee8ff0c8e90ca082a6497399623b91481cda1e677d0564527
-    sha256_normalized: 6562941dcf637d4ee8ff0c8e90ca082a6497399623b91481cda1e677d0564527
+    fetched_utc: '2026-11-08T00:16:58.776Z'
+    bytes_raw: 61133
+    bytes_normalized: 61133
+    sha256_raw: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+    sha256_normalized: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
   - slug: evora-contas-da-camara-2010-2025
     lang: en
     edicoes:
@@ -478,8 +478,8 @@ edicoes:
       - data: '2026-10-30'
         sha256: c19dcffa6012c2ea03a9eecad9b4c3a0e8de233b3bcf41bd75add6622ab6a1e8
         file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-30.html
-      - data: '2026-11-07'
-        sha256: 1f28e60fbdd67fbfd3c23014cae339e8b93925acaa2f072f0d239588832058fa
+      - data: '2026-11-08'
+        sha256: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
         file: evora-contas-da-camara-2010-2025/en.html
         natureza: atualizacao
     primeira_edicao:
@@ -489,13 +489,13 @@ edicoes:
       commit: c2aa011f1
     title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification'
     origin: researchhub
-    origin_ref: content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-contas-da-camara-2010-2025.en.html
-    fetched_utc: '2026-11-07T21:58:33.563Z'
-    bytes_raw: 58410
-    bytes_normalized: 58410
-    sha256_raw: 1f28e60fbdd67fbfd3c23014cae339e8b93925acaa2f072f0d239588832058fa
-    sha256_normalized: 1f28e60fbdd67fbfd3c23014cae339e8b93925acaa2f072f0d239588832058fa
+    fetched_utc: '2026-11-08T00:16:58.781Z'
+    bytes_raw: 58311
+    bytes_normalized: 58311
+    sha256_raw: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+    sha256_normalized: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
   - slug: evora-quem-governou-a-camara-2009-2025
     lang: pt
     edicoes:
@@ -517,19 +517,19 @@ edicoes:
       - data: '2026-10-01'
         sha256: 0d905c1f545e05f85a9d0128666781d05fec684d653c1ca3d0d584a71457384d
         file: _edicoes/evora-economia-e-dinheiro-publico-de-fora-da-camara.pt.2026-10-01.html
-      - data: '2026-11-07'
-        sha256: 2f09d343caf580c49a7c53d9cf54af0bf436bb8a28d98f07a8c5c5b726f9e2e1
+      - data: '2026-11-08'
+        sha256: 78e681599df39e75f2a4a5a3eb48c8be339ca4ae588d82e4e14e507b9a2e30d3
         file: evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html
         natureza: atualizacao
     title: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara
     origin: researchhub
-    origin_ref: content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-economia-e-dinheiro-publico-de-fora-da-camara.pt.html
-    fetched_utc: '2026-11-07T21:58:33.568Z'
-    bytes_raw: 65579
-    bytes_normalized: 65579
-    sha256_raw: 2f09d343caf580c49a7c53d9cf54af0bf436bb8a28d98f07a8c5c5b726f9e2e1
-    sha256_normalized: 2f09d343caf580c49a7c53d9cf54af0bf436bb8a28d98f07a8c5c5b726f9e2e1
+    fetched_utc: '2026-11-08T00:16:58.786Z'
+    bytes_raw: 65505
+    bytes_normalized: 65505
+    sha256_raw: 78e681599df39e75f2a4a5a3eb48c8be339ca4ae588d82e4e14e507b9a2e30d3
+    sha256_normalized: 78e681599df39e75f2a4a5a3eb48c8be339ca4ae588d82e4e14e507b9a2e30d3
     primeira_edicao:
       date: '2026-10-01'
       sha256: 0d905c1f545e05f85a9d0128666781d05fec684d653c1ca3d0d584a71457384d
@@ -541,19 +541,19 @@ edicoes:
       - data: '2026-10-01'
         sha256: 29d030c203705f9559cb2aa6af9399086f5c379f23d6189fe2bfe6facac0dd5d
         file: _edicoes/evora-economia-e-dinheiro-publico-de-fora-da-camara.en.2026-10-01.html
-      - data: '2026-11-07'
-        sha256: 5fed17773741fe0ceccfc531a2dcce032b3248c81321e7d7fa791ba9ae46021e
+      - data: '2026-11-08'
+        sha256: 316728c84d081eb523fca13707d0fcec83d43192a45b3670fd5eac751faa2427
         file: evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html
         natureza: atualizacao
     title: The economy of Évora and the public money that reaches the municipality outside the council
     origin: researchhub
-    origin_ref: content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-economia-e-dinheiro-publico-de-fora-da-camara.en.html
-    fetched_utc: '2026-11-07T21:58:33.575Z'
+    fetched_utc: '2026-11-08T00:16:58.792Z'
     bytes_raw: 61717
     bytes_normalized: 61717
-    sha256_raw: 5fed17773741fe0ceccfc531a2dcce032b3248c81321e7d7fa791ba9ae46021e
-    sha256_normalized: 5fed17773741fe0ceccfc531a2dcce032b3248c81321e7d7fa791ba9ae46021e
+    sha256_raw: 316728c84d081eb523fca13707d0fcec83d43192a45b3670fd5eac751faa2427
+    sha256_normalized: 316728c84d081eb523fca13707d0fcec83d43192a45b3670fd5eac751faa2427
     primeira_edicao:
       date: '2026-10-01'
       sha256: 29d030c203705f9559cb2aa6af9399086f5c379f23d6189fe2bfe6facac0dd5d
@@ -572,19 +572,19 @@ edicoes:
       - data: '2026-11-06'
         sha256: 3e98c9473a1b8f94323087719cd50c1f0fac88baf0108847c12d33d2563f015c
         file: _edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-11-06.html
-      - data: '2026-11-07'
-        sha256: 5fb5957169c79c02efadc1b7e43d466d4a42e15fde5285ee2c4842ce2d8ed05e
+      - data: '2026-11-08'
+        sha256: 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711
         file: evora-2027-capital-europeia-da-cultura/pt.html
         natureza: atualizacao
     title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos'
     origin: researchhub
-    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.pt.html
-    fetched_utc: '2026-11-07T21:58:33.581Z'
-    bytes_raw: 72056
-    bytes_normalized: 72056
-    sha256_raw: 5fb5957169c79c02efadc1b7e43d466d4a42e15fde5285ee2c4842ce2d8ed05e
-    sha256_normalized: 5fb5957169c79c02efadc1b7e43d466d4a42e15fde5285ee2c4842ce2d8ed05e
+    fetched_utc: '2026-11-08T00:16:58.797Z'
+    bytes_raw: 71866
+    bytes_normalized: 71866
+    sha256_raw: 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711
+    sha256_normalized: 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711
     primeira_edicao:
       date: '2026-10-01'
       sha256: d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569
@@ -603,19 +603,19 @@ edicoes:
       - data: '2026-11-06'
         sha256: 88fb28658d71b218403006d185487d10ba479bc41ccac7313aa7bf3cdc7f1c53
         file: _edicoes/evora-2027-capital-europeia-da-cultura.en.2026-11-06.html
-      - data: '2026-11-07'
-        sha256: 4d8230989f1cf653946a2fcb50f3b5648ed5110f651de9c016d23add3f8e8418
+      - data: '2026-11-08'
+        sha256: 480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d
         file: evora-2027-capital-europeia-da-cultura/en.html
         natureza: atualizacao
     title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts'
     origin: researchhub
-    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ ce0cf7506a2696c1e23f1279fe272a25778330e0
+    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 8e6cd348d4458f041e049a4c1fed584170542c16
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.en.html
-    fetched_utc: '2026-11-07T21:58:33.586Z'
-    bytes_raw: 70022
-    bytes_normalized: 70022
-    sha256_raw: 4d8230989f1cf653946a2fcb50f3b5648ed5110f651de9c016d23add3f8e8418
-    sha256_normalized: 4d8230989f1cf653946a2fcb50f3b5648ed5110f651de9c016d23add3f8e8418
+    fetched_utc: '2026-11-08T00:16:58.803Z'
+    bytes_raw: 69946
+    bytes_normalized: 69946
+    sha256_raw: 480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d
+    sha256_normalized: 480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d
     primeira_edicao:
       date: '2026-10-01'
       sha256: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291

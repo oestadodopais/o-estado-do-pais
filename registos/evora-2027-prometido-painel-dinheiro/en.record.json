@@ -264,17 +264,10 @@
    "text": "Every figure is written the way its own document writes it. That is why two thousands separators and two spellings of the same value appear: the bid book writes a space, the association's activity plan writes a dot. Where an official document contradicts itself, both readings stay, side by side, with no choice made between them."
   },
   {
-   "emphasis": [
-    {
-     "end": 32,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [],
    "i": 18,
    "kind": "paragraph",
-   "text": "Co-financing rates do not enter. The published sheet for one of the European operations writes one percentage and the managing authority's list writes another for the same operation, and neither document says on what base it is computed. What enters is the amount in euros."
+   "text": "The published sheet for one of the European operations writes one percentage and the managing authority's list writes another for the same operation, and neither document says on what base it is computed. What enters is the amount in euros."
   },
   {
    "emphasis": [
@@ -5229,7 +5222,7 @@
    "figures": [],
    "i": 106,
    "kind": "paragraph",
-   "text": "Percentages do not enter. The VAGAR operation sheet writes one co-financing rate and the managing authority's list writes another for the same operation, and neither document says on what base it is computed."
+   "text": "The VAGAR operation sheet writes one co-financing rate and the managing authority's list writes another for the same operation, and neither document says on what base it is computed."
   },
   {
    "figures": [],

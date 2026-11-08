@@ -91,31 +91,31 @@ export const CORRECOES_TEXTO = [
     pt: 'A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.',
     en: "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names.",
   } },
-  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
-  { kind: 'texto_atualizado', slug: 'evora-2027-prometido-painel-dinheiro', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-2027-prometido-painel-dinheiro', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
-  { kind: 'texto_atualizado', slug: 'evora-contas-da-camara-2010-2025', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-contas-da-camara-2010-2025', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
-  { kind: 'texto_atualizado', slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
-  { kind: 'texto_atualizado', slug: 'evora-orcamentado-pago-devido-2025', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-orcamentado-pago-devido-2025', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
-  { kind: 'texto_atualizado', slug: 'evora-prometido-pago-auditado-2026', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-prometido-pago-auditado-2026', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
-  { kind: 'texto_atualizado', slug: 'evora-economia-investidores-portas-abertas-2026', data: '2026-11-07', frase: {
+  { kind: 'texto_atualizado', slug: 'evora-economia-investidores-portas-abertas-2026', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
   } },
