@@ -1,0 +1,577 @@
+{
+  "mandato": "COR-AGUA, fecho da adenda D na retoma E",
+  "data": "2026-11-08",
+  "estado": "concluida",
+  "cabeca_do_sitio_conferida": "6ac18271671d6cefbcf8383feaf2e92b5ce3a6c7",
+  "cabeca_do_motor_conferida": "19dd94350faba1f28175841289f3aabd4d44f942",
+  "lista": {
+    "ficheiro": "FRASES-COR-AGUA-d.json",
+    "sha256": "0964996f74dcc51be636c133716f44cc34c98952236fb4cd2180658b53266eaf",
+    "classes": {
+      "REESCREVE": 8,
+      "FICA": 5
+    },
+    "aplicada": true
+  },
+  "camada_zero": {
+    "atualA": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "atualB": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 26,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 9
+    },
+    "corAgua": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "prr": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    },
+    "corAguaD": {
+      "voz": 0,
+      "numeros": 0,
+      "quantificadores": 0,
+      "presenca": 0,
+      "semPar": 0,
+      "semEntrada": 0
+    }
+  },
+  "sucessao_da_lista_inicial": [
+    "CA26",
+    "CA27",
+    "CA30",
+    "CA31",
+    "CA35",
+    "CA36"
+  ],
+  "numeros_mudados_ou_acrescentados": {
+    "76": "dgadr-eficiencia",
+    "150": "edital-mult-150",
+    "400": "edital-mult-125"
+  },
+  "registo_exato": {
+    "frases_exatas": [
+      {
+        "estudo": "onde-esta-a-agua",
+        "lingua": "pt",
+        "sha256": "1a50b3f80ae98a838d09b9742484c907ac8016828508b78d759e914db5940a0b"
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "lingua": "en",
+        "sha256": "6609d8d0220f1d9ab0643adb2b10d5d1feb744b74125dd41d1d4df9fafaecf20"
+      },
+      {
+        "estudo": "agua-nao-faturada",
+        "lingua": "pt",
+        "sha256": "09e54b7f085d688da82eb7e767af9f1268f7c30eee3358fe0c4e5385284ff830"
+      },
+      {
+        "estudo": "agua-nao-faturada",
+        "lingua": "en",
+        "sha256": "65e3eebdf734d12e5ab514813699593d2dc43f662f80c48542d5694e3f8b260c"
+      }
+    ]
+  },
+  "ersar": {
+    "excerto_na_camada_textual_do_pdf": true,
+    "sha256_conferido": true,
+    "valor_no_excerto": false,
+    "valor_localizado_na_imagem": true,
+    "limite": "A prova automática confere o texto e a cópia. A leitura do rótulo 13,48 na imagem foi fornecida pelo lugar de direção no mandato."
+  },
+  "fontes_acrescentadas": {
+    "apa-boletim-semanal-albufeiras-live-20261108.pdf": {
+      "pedido": "https://apambiente.pt/sites/default/files/_SNIAMB_Agua/DRH/MonitorizacaoAvaliacao/BoletimAlbufeiras/Semanal.pdf",
+      "endereco_final": "https://apambiente.pt/sites/default/files/_SNIAMB_Agua/DRH/MonitorizacaoAvaliacao/BoletimAlbufeiras/Semanal.pdf",
+      "acedido_em": "2026-11-08T07:24:53Z",
+      "cliente": null,
+      "user_agent": null,
+      "ficheiro": "apa-boletim-semanal-albufeiras-live-20261108.pdf",
+      "estado": 200,
+      "tipo": "application/pdf",
+      "segundos": null,
+      "erro": null,
+      "redirecionamentos": null,
+      "bytes": 3749238,
+      "sha256": "c7240e9f4e5db52d4b9eb0ec123ed867567df3d704d4f83cfa15c03b9f4c5ca3"
+    },
+    "apa-pgrh3-ptcont-resumo-nao-tecnico.pdf": {
+      "pedido": "https://apambiente.pt/sites/default/files/_SNIAMB_Agua/DRH/PlaneamentoOrdenamento/PGRH/2022-2027/PGRH_3_PTCONT_ResumoNaoTecnico.pdf",
+      "endereco_final": "https://apambiente.pt/sites/default/files/_SNIAMB_Agua/DRH/PlaneamentoOrdenamento/PGRH/2022-2027/PGRH_3_PTCONT_ResumoNaoTecnico.pdf",
+      "acedido_em": "2026-11-08T07:22:39Z",
+      "cliente": null,
+      "user_agent": null,
+      "ficheiro": "apa-pgrh3-ptcont-resumo-nao-tecnico.pdf",
+      "estado": 200,
+      "tipo": "application/pdf",
+      "segundos": null,
+      "erro": null,
+      "redirecionamentos": null,
+      "bytes": 5985067,
+      "sha256": "bc1550e81c83dd10771b115326a940d0a5044977a5b4c33b8da9fe9061fc48c6"
+    },
+    "edia-relatorio-contas-2025.pdf": {
+      "pedido": "https://www.edia.pt/wp-content/uploads/2026/04/Relatorio_Contas_2025.pdf",
+      "endereco_final": "https://www.edia.pt/wp-content/uploads/2026/04/Relatorio_Contas_2025.pdf",
+      "acedido_em": "2026-11-08T07:15:26Z",
+      "cliente": null,
+      "user_agent": null,
+      "ficheiro": "edia-relatorio-contas-2025.pdf",
+      "estado": 200,
+      "tipo": "application/pdf",
+      "segundos": null,
+      "erro": null,
+      "redirecionamentos": null,
+      "bytes": 8622264,
+      "sha256": "80bdf0f5b60789bf57b23e1e0898f94d5605d223778d22fd43d8efdbe04b3675"
+    },
+    "gpp-relatorio-monitorizacao-seca-agosto-2026.pdf": {
+      "pedido": "https://www.gpp.pt/images/Estatisticas_e_analises/Analises/MonitorizaSeca/Relatorio_Monitorizacao_agosto_2026.pdf",
+      "endereco_final": "https://www.gpp.pt/images/Estatisticas_e_analises/Analises/MonitorizaSeca/Relatorio_Monitorizacao_agosto_2026.pdf",
+      "acedido_em": "2026-11-08T07:24:24Z",
+      "cliente": null,
+      "user_agent": null,
+      "ficheiro": "gpp-relatorio-monitorizacao-seca-agosto-2026.pdf",
+      "estado": 200,
+      "tipo": "application/pdf",
+      "segundos": null,
+      "erro": null,
+      "redirecionamentos": null,
+      "bytes": 5894840,
+      "sha256": "5986ec77ccb123a680b2679c769a523ca4462f2c8ad77908af467fcaadeb6a10"
+    },
+    "edia-simulador-tarifarios.html": {
+      "pedido": "https://www.edia.pt/pt/o-que-fazemos/apoio-ao-agricultor/simulador-de-tarifarios-de-rega/",
+      "endereco_final": "https://www.edia.pt/pt/o-que-fazemos/apoio-ao-agricultor/simulador-de-tarifarios-de-rega/",
+      "acedido_em": "2026-11-08T07:15:29Z",
+      "cliente": null,
+      "user_agent": null,
+      "ficheiro": "edia-simulador-tarifarios.html",
+      "estado": 200,
+      "tipo": "text/html; charset=UTF-8",
+      "segundos": null,
+      "erro": null,
+      "redirecionamentos": null,
+      "bytes": 115365,
+      "sha256": "690a9abe89b39118c2709bb13fa16754a0591cb1b218b5135a349405786b4c22"
+    }
+  },
+  "corpos_dos_livros": [
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/dgadr-anuario-2024.pdf",
+      "sha256": "2cdd510e177cefa928f4fe022890ee6af3b7d985efd6f18e3952acfc9801ae4e",
+      "linhas": [
+        "ledger.json:dgadr-ahs",
+        "ledger.json:dgadr-eficiencia",
+        "ledger.json:dgadr-minimo",
+        "ledger.json:dgadr-maximo",
+        "ledger.json:dgadr-referencia-ano",
+        "ledger_onde_pt.json:dgadr-ahs",
+        "ledger_onde_pt.json:dgadr-eficiencia",
+        "ledger_onde_pt.json:dgadr-minimo",
+        "ledger_onde_pt.json:dgadr-maximo",
+        "ledger_onde_pt.json:dgadr-referencia-ano"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/gulbenkian-uso-da-agua-em-portugal-2020.pdf",
+      "sha256": "623abfec8fcc7aa9c9c2cfe7e7ad0e9494fb04429d282be9c687b93b64622bd7",
+      "linhas": [
+        "ledger.json:gulb-71",
+        "ledger.json:gulb-61",
+        "ledger.json:gulb-universo-ha",
+        "ledger.json:gulb-inquerito-ano",
+        "ledger.json:gulb-publicacao-ano",
+        "ledger_onde_pt.json:gulb-71",
+        "ledger_onde_pt.json:gulb-61",
+        "ledger_onde_pt.json:gulb-universo-ha",
+        "ledger_onde_pt.json:gulb-inquerito-ano",
+        "ledger_onde_pt.json:gulb-publicacao-ano"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/edia-relatorio-contas-2025.pdf",
+      "sha256": "80bdf0f5b60789bf57b23e1e0898f94d5605d223778d22fd43d8efdbe04b3675",
+      "linhas": [
+        "ledger_onde_pt.json:edia-impair",
+        "ledger_onde_pt.json:edia-capital-zero"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/ersar-rasarp2025-volume1.pdf",
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67",
+      "linhas": [
+        "ledger_onde_pt.json:ersar-bill",
+        "ledger_onde_pt.json:ersar-bill-month",
+        "ledger_onde_pt.json:ratio-lo",
+        "ledger_onde_pt.json:ratio-hi"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/edia-edital-campanha-2026.pdf",
+      "sha256": "a6619e4be333ed28d0dd9b835161cf83bece51e27ae549bdbc1d7b9d90664ef4",
+      "linhas": [
+        "ledger_onde_pt.json:alq-pumped",
+        "ledger_onde_pt.json:alq-gravity",
+        "ledger_onde_pt.json:edital-cons-alta",
+        "ledger_onde_pt.json:edital-cons-baixa",
+        "ledger_onde_pt.json:edital-alta-cheia",
+        "ledger_onde_pt.json:edital-alta-ponta"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/edia-simulador-tarifarios.html",
+      "sha256": "690a9abe89b39118c2709bb13fa16754a0591cb1b218b5135a349405786b4c22",
+      "linhas": [
+        "ledger_onde_pt.json:edital-mult-150",
+        "ledger_onde_pt.json:edital-mult-125"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/apa-pgrh3-ptcont-resumo-nao-tecnico.pdf",
+      "sha256": "bc1550e81c83dd10771b115326a940d0a5044977a5b4c33b8da9fe9061fc48c6",
+      "linhas": [
+        "ledger_onde_pt.json:pgrh-barragens",
+        "ledger_onde_pt.json:pgrh-capacidade",
+        "ledger_onde_pt.json:pgrh-barragens-rsb"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/apa-boletim-semanal-albufeiras-live-20261108.pdf",
+      "sha256": "c7240e9f4e5db52d4b9eb0ec123ed867567df3d704d4f83cfa15c03b9f4c5ca3",
+      "linhas": [
+        "ledger_onde_pt.json:bul-out26-vol",
+        "ledger_onde_pt.json:bul-out26-cap"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/gpp-relatorio-monitorizacao-seca-agosto-2026.pdf",
+      "sha256": "5986ec77ccb123a680b2679c769a523ca4462f2c8ad77908af467fcaadeb6a10",
+      "linhas": [
+        "ledger_onde_pt.json:seca-ago-albufeiras",
+        "ledger_onde_pt.json:seca-ago-baixas",
+        "ledger_onde_pt.json:seca-ago-limiar-baixo",
+        "ledger_onde_pt.json:seca-ago-altas",
+        "ledger_onde_pt.json:seca-ago-limiar-alto",
+        "ledger_onde_pt.json:seca-ago-fronhas",
+        "ledger_onde_pt.json:seca-ago-vigia"
+      ]
+    },
+    {
+      "caminho": "content/01 Energy Water and Climate/source/agua-2026-11-08/tcontas-rel004-2016-2s.pdf",
+      "sha256": "963da78ce93d20fc89507732b817ca3043492c8d75394a93709c0de82f5e1383",
+      "linhas": [
+        "ledger_onde_pt.json:tc-2016-auditoria"
+      ]
+    }
+  ],
+  "linhas_com_sha256": 47,
+  "corpos_em_falta": 0,
+  "atribuicoes": {
+    "codigo": 0,
+    "janela": 160,
+    "rotulos": "Número com zero à esquerda, texto inteiro do elemento, sai como ROTULO. O analisador HTML distingue atributos, comentários e elementos sem texto visível.",
+    "datas": "A dispensa contextual de data exige unit ano ou year e ausência de entidade conhecida antes do ano. As linhas de ano cuja atribuição não foi conferida saem individualmente como ANO_NAO_CONFERIDO. Uma quantidade de quatro algarismos na mesma posição continua a ser conferida.",
+    "planta_da_adenda_b": "reference-year recebeu unit ano para declarar o tipo que explicit-year testa. A planta gémea, com unit euros na mesma posição, recusa. Os resultados esperados dos doze cenários da adenda B mantiveram-se.",
+    "exclusoes_anteriores": "Conservam-se códigos RH, ordinais de secção ou trimestre e referências de relatório ou despacho. A janela não foi encurtada nem foi excluída nenhuma frase ou página.",
+    "provas": "Casos da atribuição na frase anterior, na legenda anterior, no ano do inquérito e no 71; controlos da Gulbenkian; rótulo 08; quantidades 8 e 8%; aviso do ano sem atribuição conferida."
+  },
+  "voz": {
+    "controlos": 2,
+    "plantas": 6,
+    "codigo": 0,
+    "casos": [
+      "entrada mudada",
+      "frase fora da entrada",
+      "frase noutra rota"
+    ]
+  },
+  "conferencias": {
+    "ledger:check": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "check:selos": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "check:voz": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "check:formato": {
+      "codigo": 0,
+      "prova": "build integral, cadeia de comandos com &&"
+    },
+    "build": {
+      "codigo": 0,
+      "segundos": 713.0775432088412,
+      "registo": "coragua-e-build-final.log"
+    },
+    "check:lugar": {
+      "codigo": 0,
+      "segundos": 49.654
+    },
+    "check:graficos": {
+      "codigo": 0,
+      "segundos": 4.947
+    },
+    "provar:eyetext": {
+      "codigo": 0,
+      "segundos": 0.405
+    },
+    "core.attributions_test": {
+      "codigo": 0,
+      "registo": "coragua-e-attributions-fecho.log"
+    },
+    "check:pre-mandato": {
+      "codigo": 0,
+      "registo": "coragua-e-pre-mandato.log"
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "registo": "coragua-e-frases-fecho.log"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "registo": "coragua-e-typecheck.log"
+    },
+    "pacote": {
+      "codigo": 0,
+      "registo": "coragua-e-pacote.log"
+    }
+  },
+  "pacote": {
+    "codigo": 0,
+    "sitio": "6ac18271671d6cefbcf8383feaf2e92b5ce3a6c7",
+    "motor": "19dd94350faba1f28175841289f3aabd4d44f942",
+    "corpos_dos_livros_conferidos": 10,
+    "linhas_com_sha256": 47,
+    "sem_corpo": 0,
+    "corpos_no_manifesto": 14,
+    "paginas_em_falta": 0,
+    "dist_commit": "6ac18271671d6cefbcf8383feaf2e92b5ce3a6c7",
+    "avisos": "Oito referências a corpos primários conservam o aviso de ausência de pasta direitos/, já presente na montagem da adenda C. Os corpos foram copiados e conferidos pelo SHA256. Quatro linhas derivadas não declaram source_sha256."
+  },
+  "ensaio_extra_reconcile": {
+    "base": {
+      "codigo": 1,
+      "resumo": "RECONCILE: FAIL — 523 numbers, 103 matched, 37 ignored, 383 orphans, 10 unused rows",
+      "orfaos": 383
+    },
+    "atual": {
+      "codigo": 1,
+      "resumo": "RECONCILE: FAIL — 524 numbers, 104 matched, 37 ignored, 383 orphans, 10 unused rows",
+      "orfaos": 383
+    },
+    "novos_valores": {
+      "76": "dgadr-eficiencia",
+      "150": "edital-mult-150",
+      "400": "edital-mult-125"
+    }
+  },
+  "limites": [
+    "O ensaio extra de reconcile sobre o documento integral deu código 1 na base e na cabeça, com os mesmos 383 órfãos. Não foi usado para alargar ou dispensar nenhuma regra.",
+    "A resolução anterior de 4212 hm³ foi conservada, como autorizou a adenda B; esta retoma não fecha a falha de proveniência regional.",
+    "O core.gate e a corrida inteira ficam para o lugar de direção, como manda o fecho."
+  ],
+  "erros_corrigidos": [
+    "O aplicador pressupunha uma cópia inglesa de Onde está a água no motor que não existe. Aplicou as oito reescritas nas quatro páginas do sítio e nas cópias correspondentes que existem no motor, preservando os comentários.",
+    "O localizador YAML ficou com uma quebra de linha indevida; passou a uma cadeia entre aspas e ledger:check passou.",
+    "O inventário precisava da forma renderizada dos apóstrofos e de retirar o espaço que ficara junto do selo eliminado.",
+    "Os apoios K17 ainda citavam o excerto e o localizador antigos. O compositor existente recompôs os dois literais; a definição e a régua ficaram iguais.",
+    "O Content-Type do simulador contém charset; o recibo passou a conservar esse campo completo e a ler o endereço final no último campo. Todos os campos conhecidos foram comparados com o fetch-log.",
+    "A primeira inspeção do manifesto do pacote contava apenas o estado copiado sem o sufixo de aviso. A conferência final inclui os oito corpos copiados com aviso e verifica o SHA256 dos catorze."
+  ],
+  "custo": {
+    "chamadas_ate_medicao": 65,
+    "ajudantes": 0,
+    "invocacoes_de_curto": 30,
+    "corridas_de_conferencias": 26,
+    "criterio": "Uma corrida por invocação de conferência, build ou montagem. As conferências internas do build contam na mesma corrida. A aplicação de dados, a normalização e a composição de apoios não contam como conferências.",
+    "corridas": [
+      {
+        "registo": "coragua-e-attributions.log",
+        "comando": "python3 -m core.attributions_test",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-dados.log",
+        "comando": "python3 <temporario>/coragua-e-dados.py",
+        "conferencia": false
+      },
+      {
+        "registo": "coragua-e-dados-final.log",
+        "comando": "python3 <temporario>/coragua-e-dados.py",
+        "conferencia": false
+      },
+      {
+        "registo": "coragua-e-normalizar.log",
+        "comando": "node <temporario>/coragua-e-normalizar.mjs",
+        "conferencia": false
+      },
+      {
+        "registo": "coragua-e-ledger.log",
+        "comando": "npm run ledger:check",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-ledger-final.log",
+        "comando": "npm run ledger:check",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-build.log",
+        "comando": "npm run build",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-pre-mandato.log",
+        "comando": "npm run check:pre-mandato",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-reconcile.log",
+        "comando": "sh -c 'python3 -m core.reconcile \"content/01 Energy Water and Climate/Onde Está a Água 2026 (pt-PT).html\" \"content/01 Energy Water and Climate/Onde Está a Água — Technical Source/ledger_onde_pt.json\" && python3 -m core.reconcile \"content/01 Energy Water and Climate/Portugal Perdas de Água na Distribuição 2026.html\" \"content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/ledger.json\"'",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-typecheck.log",
+        "comando": "npm run typecheck",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-attributions-final.log",
+        "comando": "python3 -m core.attributions_test",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-frases-reais.log",
+        "comando": "npm run check:frases-reais",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-graficos.log",
+        "comando": "npm run check:graficos",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-provar-eyetext.log",
+        "comando": "npm run provar:eyetext",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-lugar.log",
+        "comando": "npm run check:lugar",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-voz-diagnostico.log",
+        "comando": "npm run check:voz",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-edicoes-final.log",
+        "comando": "npm run check:edicoes",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-reguas-final.log",
+        "comando": "node tests/edicoes/reguas.mjs",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-voz-plantas.log",
+        "comando": "node tests/voz/coragua.mjs",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-paridade.log",
+        "comando": "npm run check:paridade",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-formato.log",
+        "comando": "npm run check:formato",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-lingua.log",
+        "comando": "npm run check:lingua",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-check-selos.log",
+        "comando": "npm run check:selos",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-apoios.log",
+        "comando": "node scripts/compor-familias-coragua.mjs",
+        "conferencia": false
+      },
+      {
+        "registo": "coragua-e-edicoes-apoios.log",
+        "comando": "npm run check:edicoes",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-build-final.log",
+        "comando": "npm run build",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-frases-fecho.log",
+        "comando": "node tests/leituras/frases-reais.mjs <temporario>/coragua-e-frases-fecho.json",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-excerto.log",
+        "comando": "python3 <temporario>/coragua-e-excerto.py",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-attributions-fecho.log",
+        "comando": "python3 -m core.attributions_test",
+        "conferencia": true
+      },
+      {
+        "registo": "coragua-e-pacote.log",
+        "comando": "montagem do pacote",
+        "conferencia": true
+      }
+    ]
+  }
+}
