@@ -1,0 +1,254 @@
+[
+  {
+    "nome": "negative-nearby",
+    "texto": "<p>Segundo o censo do INE, e não a Gulbenkian, 71% das explorações não tinham contador.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Segundo o censo do INE, e não a Gulbenkian, 71% das explorações não tinham contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Segundo o censo do INE, e não a Gulbenkian, 71% das explorações não tinham contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Segundo o censo do INE, e não a Gulbenkian, 71% das explorações não tinham contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "negative-comparison",
+    "texto": "<p>Segundo o INE, e não a Gulbenkian, 71% não tinham contador e 3% responderam.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Segundo o INE, e não a Gulbenkian, 71% não tinham contador e 3% responderam.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Segundo o INE, e não a Gulbenkian, 71% não tinham contador e 3% responderam.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Segundo o INE, e não a Gulbenkian, 71% não tinham contador e 3% responderam.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "inline-adjacency",
+    "texto": "<p><b>INE</b><b>71percent</b> sem contador.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …INE 71percent sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …INE 71percent sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …INE 71percent sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "glued-unit",
+    "texto": "<p>O INE publicou 71percent de explorações sem contador.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …O INE publicou 71percent de explorações sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …O INE publicou 71percent de explorações sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …O INE publicou 71percent de explorações sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "separate-blocks",
+    "texto": "<p>O INE publica o recenseamento.</p><p>A Gulbenkian publicou 71% sem contador.</p>",
+    "esperado": 0,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …O INE publica o recenseamento. A Gulbenkian publicou 71% sem contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "separate-sentences",
+    "texto": "<p>A Gulbenkian publicou 71% sem contador. O INE publica o recenseamento.</p>",
+    "esperado": 0,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …A Gulbenkian publicou 71% sem contador. O INE publica o recenseamento.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "explicit-year",
+    "texto": "<p>Em 2024 o INE apresentou o recenseamento.</p>",
+    "esperado": 0,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '2024' credited to INE but claim reference-year names DGADR  …Em 2024 o INE apresentou o recenseamento.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 0 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 0 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "real-quantity-year-shaped",
+    "texto": "<p>O INE publicou 2024 euros.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '2024' credited to INE but claim reference-year names DGADR  …O INE publicou 2024 euros.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '2024' credited to INE but claim reference-year names DGADR  …O INE publicou 2024 euros.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '2024' credited to INE but claim reference-year names DGADR  …O INE publicou 2024 euros.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "reference-code",
+    "texto": "<p>A APA publicou o plano da RH8.</p><div>08</div><h2>Relatório do INE</h2>",
+    "esperado": 0,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '8' credited to APA but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIB  '8' credited to INE but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIB  '08' credited to APA but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIB  '08' credited to INE but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIBUTIONS: FAIL — 2 ledger-matched values scanned, 4 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '08' credited to APA but claim reference-eight names DGADR  …08…\nATTRIB  '08' credited to INE but claim reference-eight names DGADR  …08…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 2 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "real-eight",
+    "texto": "<p>O INE publicou 8%.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '8' credited to INE but claim reference-eight names DGADR  …O INE publicou 8%.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '8' credited to INE but claim reference-eight names DGADR  …O INE publicou 8%.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '8' credited to INE but claim reference-eight names DGADR  …O INE publicou 8%.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "comparison",
+    "texto": "<p>A ERSAR publicou 1,348 euros e a EDIA publicou 0,0706 euros.</p>",
+    "esperado": 0,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '1,348' credited to EDIA but claim household names ERSAR  …A ERSAR publicou 1,348 euros e a EDIA publicou 0,0706 euros.…\nATTRIB  '0,0706' credited to ERSAR but claim irrigation names EDIA  …A ERSAR publicou 1,348 euros e a EDIA publicou 0,0706 euros.…\nATTRIBUTIONS: FAIL — 2 ledger-matched values scanned, 2 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 2 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 2 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "wrong-comparison",
+    "texto": "<p>A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.</p>",
+    "esperado": 1,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '1,348' credited to EDIA but claim household names ERSAR  …A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.…\nATTRIB  '0,0706' credited to ERSAR but claim irrigation names EDIA  …A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.…\nATTRIBUTIONS: FAIL — 2 ledger-matched values scanned, 2 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 1,
+      "saida": "ATTRIB  '1,348' credited to EDIA but claim household names ERSAR  …A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.…\nATTRIB  '0,0706' credited to ERSAR but claim irrigation names EDIA  …A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.…\nATTRIBUTIONS: FAIL — 2 ledger-matched values scanned, 2 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '1,348' credited to EDIA but claim household names ERSAR  …A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.…\nATTRIB  '0,0706' credited to ERSAR but claim irrigation names EDIA  …A EDIA publicou 1,348 euros e a ERSAR publicou 0,0706 euros.…\nATTRIBUTIONS: FAIL — 2 ledger-matched values scanned, 2 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "d-frase-anterior",
+    "texto": "<p>O recenseamento do INE mostra a falta de contadores. Hoje, 71% dos agricultores não têm contador.</p>",
+    "esperado": 1,
+    "origem": "adenda D",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …O recenseamento do INE mostra a falta de contadores. Hoje, 71% dos agricultores não têm contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …O recenseamento do INE mostra a falta de contadores. Hoje, 71% dos agricultores não têm contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  },
+  {
+    "nome": "d-legenda-anterior",
+    "texto": "<figcaption>Fonte: INE</figcaption><p>71% dos agricultores não têm contador.</p>",
+    "esperado": 1,
+    "origem": "adenda D",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …Fonte: INE 71% dos agricultores não têm contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '71' credited to INE but claim no-meter-71 names Gulbenkian, Ipsos  …71% dos agricultores não têm contador.…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 1 misattributions, 0 undeclared"
+    }
+  }
+]

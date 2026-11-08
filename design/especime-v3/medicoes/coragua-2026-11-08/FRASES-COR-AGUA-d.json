@@ -1,0 +1,153 @@
+[
+ {
+  "id": "D-pt-1",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "A agricultura paga 19 a 35 vezes menos por m³ do que os utilizadores domésticos (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €).",
+  "nova": "O encargo médio de um utilizador doméstico com a água, 1,348 € por m³ com a parte fixa, o IVA e a taxa de recursos hídricos, é 19 a 35 vezes a tarifa do Alqueva por m³ para a rega, à qual o edital acrescenta a taxa de recursos hídricos e uma componente de conservação por hectare (cálculo: 1,348 € a dividir por 0,0706 € e por 0,0382 €).",
+  "razao": "a conclusão juntava duas medidas diferentes sem dizer o que cada uma inclui (a regra 2, §1.206): o encargo doméstico da ERSAR inclui a parte fixa, o IVA e a taxa de recursos hídricos (Figura 553, nota 87; Figura 554); a tarifa do Alqueva é a variável, a que o edital acrescenta a taxa de recursos hídricos e a componente de conservação por hectare (Anexo II); a leitura a frio da COR-AGUA, achado 7"
+ },
+ {
+  "id": "D-en-1",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Agriculture pays 19 to 35 times less per m³ than domestic users (calculation: €1.348 divided by €0.0706 and by €0.0382).",
+  "nova": "A household's average water charge, €1.348 per m³ including the fixed part, VAT and the water resources tax, is 19 to 35 times Alqueva's per-m³ irrigation tariff, to which the edital adds the water resources tax and a per-hectare conservation charge (calculation: €1.348 divided by €0.0706 and by €0.0382).",
+  "razao": "a conclusão juntava duas medidas diferentes sem dizer o que cada uma inclui (a regra 2, §1.206): o encargo doméstico da ERSAR inclui a parte fixa, o IVA e a taxa de recursos hídricos (Figura 553, nota 87; Figura 554); a tarifa do Alqueva é a variável, a que o edital acrescenta a taxa de recursos hídricos e a componente de conservação por hectare (Anexo II); a leitura a frio da COR-AGUA, achado 7"
+ },
+ {
+  "id": "D-pt-2",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "O movimento óbvio é multiplicar os 4212 hm³ da agricultura por uma eficiência de 75% para obter as perdas de rega.",
+  "nova": "O movimento óbvio é multiplicar os 4212 hm³ da agricultura pela eficiência média na adução e distribuição de 76 % da DGADR para obter as perdas de rega.",
+  "razao": "o exemplo da circularidade usava 75 %, um parágrafo depois de a página dar os 76 % da DGADR na adução e distribuição; o gémeo de «Água não faturada» já diz 76 % (CA41); a leitura a frio, achado 13"
+ },
+ {
+  "id": "D-en-2",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "The obvious move is to multiply agriculture's 4,212 hm³ by a 75% efficiency to get irrigation losses.",
+  "nova": "The obvious move is to multiply agriculture's 4,212 hm³ by DGADR's 76% average conveyance and distribution efficiency to get irrigation losses.",
+  "razao": "o exemplo da circularidade usava 75 %, um parágrafo depois de a página dar os 76 % da DGADR na adução e distribuição; o gémeo de «Água não faturada» já diz 76 % (CA41); a leitura a frio, achado 13"
+ },
+ {
+  "id": "D-pt-3",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Segundo a EDIA, o tarifário da água para rega conheceu novas regras com um despacho de 2026, que «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017», com uma penalização dos consumos acima da dotação: entre 100 % e 110 % do volume autorizado, 2,5 vezes o preço base; entre 110 % e 125 %, 5 vezes.",
+  "nova": "Segundo a EDIA, o tarifário da água para rega conheceu novas regras com um despacho de 2026, que «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017», com um escalonamento dos consumos acima da dotação: de 100 % até 110 % do volume autorizado, o preço base mais 150 %; de 110 % até 125 %, o preço base mais 400 %.",
+  "razao": "a EDIA escreve «Preço Base + 150%» e «Preço Base + 400%» (o simulador de tarifários, a cópia guardada); a página dava a conversão (2,5 e 5 vezes) atribuída à EDIA; a leitura a frio, achado 11"
+ },
+ {
+  "id": "D-en-3",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/onde-esta-a-agua/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "According to EDIA, the irrigation water tariff got new rules with a 2026 despacho, which «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017» (updated some aspects, keeping the essentials of the earlier despacho), with a penalty on consumption above the allocation: from 100% to 110% of the authorised volume, 2.5 times the base price; from 110% to 125%, 5 times.",
+  "nova": "According to EDIA, the irrigation water tariff got new rules with a 2026 despacho, which «veio atualizar alguns aspetos, mantendo-se no essencial aquilo que foi fixado pelo Despacho nº 3025/2017» (updated some aspects, keeping the essentials of the earlier despacho), with tiered pricing for consumption above the allocation: from 100% to 110% of the authorised volume, the base price plus 150%; from 110% to 125%, the base price plus 400%.",
+  "razao": "a EDIA escreve «Preço Base + 150%» e «Preço Base + 400%» (o simulador de tarifários, a cópia guardada); a página dava a conversão (2,5 e 5 vezes) atribuída à EDIA; a leitura a frio, achado 11"
+ },
+ {
+  "id": "D-F1",
+  "estudo": "onde-esta-a-agua",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/onde-esta-a-agua/documento"
+  ],
+  "classe": "FICA",
+  "frase": "Inferência — assinalada como tal pela própria fonte A Água que Une projeta o consumo agrícola a subir de 3175 hm³ para 4093 hm³ até 2040 — mais 28,9% — no mesmo documento que propõe centenas de milhões em investimento de eficiência.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V290): a inferência é da própria fonte A Água que Une"
+ },
+ {
+  "id": "D-pt-4",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "Num inquérito da Gulbenkian feito em 2019 (Ipsos APEME, publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água; o Recenseamento Agrícola do INE não tem esta estatística.",
+  "nova": "Num inquérito da Gulbenkian feito em 2019 pelo C-Lab (publicado em março de 2020) aos agricultores do Continente que regam explorações de 5 hectares ou mais, 71 % disseram não ter contador de água; o Recenseamento Agrícola do INE não tem esta estatística.",
+  "razao": "o estudo da Gulbenkian diz que pediu «ao C-Lab para que conduzisse esta investigação» (p. 11) e dá o inquérito como «Investigação C-Lab (2019) · Inquérito telefónico» (p. 22); a Ipsos APEME adquiriu e analisou a base de dados da amostra (p. 22); a leitura a frio, achado 22"
+ },
+ {
+  "id": "D-en-4",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "In a Gulbenkian survey carried out in 2019 (Ipsos APEME, published March 2020) among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter; INE's Recenseamento Agrícola does not contain this statistic.",
+  "nova": "In a Gulbenkian survey carried out in 2019 by C-Lab (published March 2020) among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter; INE's Recenseamento Agrícola does not contain this statistic.",
+  "razao": "o estudo da Gulbenkian diz que pediu «ao C-Lab para que conduzisse esta investigação» (p. 11) e dá o inquérito como «Investigação C-Lab (2019) · Inquérito telefónico» (p. 22); a Ipsos APEME adquiriu e analisou a base de dados da amostra (p. 22); a leitura a frio, achado 22"
+ },
+ {
+  "id": "D-F2",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "FICA",
+  "frase": "Corrected 29 July 2026The industry figure on this page was wrong, and is fixed.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V010): aviso de correção datado de um erro publicado; pertence ao registo público de correções, decisão do chamador se fica na página"
+ },
+ {
+  "id": "D-F3",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "FICA",
+  "frase": "The 239-year replacement cycle is an inference from rehabilitation volumes, not an asset survey.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V013): qualificação de um número como inferência, não fala do projeto"
+ },
+ {
+  "id": "D-F4",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O ciclo de 239 anos é uma inferência a partir dos volumes de reabilitação, não um levantamento de ativos.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V125): qualificação de um número como inferência"
+ },
+ {
+  "id": "D-F5",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O que corrigiu foi a leitura, na secção 04, da afirmação dos 40 M€: esta página confrontava originalmente essa afirmação com o total do C09 no Algarve e concluía que o valor da imprensa era conservador.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V126): texto de correção de um erro publicado; pertence ao registo de correções, decisão do chamador"
+ }
+]

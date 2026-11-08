@@ -1,0 +1,65 @@
+{
+  "mandato": "COR-AGUA, adenda D",
+  "data": "2026-11-08",
+  "estado": "interrompida pelo §1.5",
+  "sitio_base": "61689dfcbb7921f95a071d0f6da51ea213c93d93",
+  "motor_base": "63276adb0674a348ab22690c1200264019ac41a5",
+  "lista": {
+    "ficheiro": "FRASES-COR-AGUA-d.json",
+    "sha256": "0964996f74dcc51be636c133716f44cc34c98952236fb4cd2180658b53266eaf",
+    "entradas": 13,
+    "aplicada": false
+  },
+  "conflito": {
+    "nome": "reference-code",
+    "texto": "<p>A APA publicou o plano da RH8.</p><div>08</div><h2>Relatório do INE</h2>",
+    "esperado": 0,
+    "origem": "adenda B",
+    "cf5bd5b": {
+      "codigo": 1,
+      "saida": "ATTRIB  '8' credited to APA but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIB  '8' credited to INE but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIB  '08' credited to APA but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIB  '08' credited to INE but claim reference-eight names DGADR  …A APA publicou o plano da RH8. 08 Relatório do INE…\nATTRIBUTIONS: FAIL — 2 ledger-matched values scanned, 4 misattributions, 0 undeclared"
+    },
+    "cabeca": {
+      "codigo": 0,
+      "saida": "ATTRIBUTIONS: PASS — 1 ledger-matched values scanned, 0 misattributions, 0 undeclared"
+    },
+    "janela_exigida_sem_outras_mudancas": {
+      "codigo": 1,
+      "saida": "ATTRIB  '08' credited to APA but claim reference-eight names DGADR  …08…\nATTRIB  '08' credited to INE but claim reference-eight names DGADR  …08…\nATTRIBUTIONS: FAIL — 1 ledger-matched values scanned, 2 misattributions, 0 undeclared"
+    }
+  },
+  "prova": "provar-conflito-atribuicoes-d.py",
+  "resultado": "atribuicoes-conflito-d.json",
+  "metodo": "As doze plantas contextuais são lidas por AST do teste da cabeça do motor. Executam-se na versão cf5bd5b, na cabeça e numa variante em memória que acrescenta apenas a janela de 160 caracteres quando a frase e o bloco não nomeiam entidades. Juntam-se os casos da frase anterior e da legenda anterior da adenda D. Nenhum ficheiro do motor é alterado.",
+  "observacao": "A procura pela janela recupera as duas recusas da adenda D e contraria o resultado exigido pela planta reference-code da adenda B. Não foi criada uma nova exclusão para blocos numéricos isolados nem alterado o resultado esperado dessa planta.",
+  "conferencias": [
+    {
+      "nome": "reprodução exploratória das doze plantas",
+      "codigo": 0
+    },
+    {
+      "nome": "core.attributions_test da cabeça, sem alterações",
+      "codigo": 0
+    },
+    {
+      "nome": "prova reproduzível das doze plantas e dos dois casos da adenda D",
+      "codigo": 0
+    }
+  ],
+  "codigo_prova": "0 confirma que o conflito foi reproduzido; não significa que o mandato passou.",
+  "por_fazer": [
+    "aplicar as frases e atualizar os livros e o registo",
+    "alojar as cinco cópias",
+    "corrigir o excerto e o localizador da ERSAR",
+    "implementar e conferir as atribuições depois de resolvido o conflito",
+    "provar a exceção da voz",
+    "atualizar o limite do PRR",
+    "build, restantes conferências e montagem do pacote"
+  ],
+  "custo": {
+    "chamadas_ate_medicao": 10,
+    "ajudantes": 0,
+    "corridas_de_conferencias": 3,
+    "definicao": "Chamadas medidas antes da escrita e do commit deste relatório; uma corrida por invocação de curto.sh."
+  }
+}
