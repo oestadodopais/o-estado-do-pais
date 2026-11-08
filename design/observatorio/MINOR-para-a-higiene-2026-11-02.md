@@ -103,5 +103,11 @@
 99. O vocabulário dos quantificadores do motor (`core.assertions`) não tem «neither» nem «nenhum dos dois»: a citação inglesa do par da V182 está declarada, mas nenhuma régua a exige (o relatório da adenda H da VOZ-2A).
 100. O `plantar.py` muda a hora de modificação dos ficheiros que planta, e o leitor da adenda H viu as cinco plantas pela data; os guiões das plantas da VOZ-2A repõem a hora desde 08.11.2026, e o `plantar.py` da casa deve fazê-lo ele próprio, com uma prova (a leitura curta da adenda H da VOZ-2A).
 101. A conferência dos pares da VOZ-2A emparelha pela posição (três blocos de folga) e não pelo conteúdo, e só lê documentos; generalizá-la na HIG-6 com o conteúdo de cada par e as páginas dos estudos (a leitura curta da adenda H, 7).
+102. Na camada 0, uma `frase` com etiquetas de fonte mede os doze carateres com as etiquetas e pode nomear uma frase apanhada pela projeção sem elas, mais curta (inferido do código; a leitura curta da adenda F da HIG-6A, 6).
+103. Na lista aplicada, uma `nova` em fragmento nomeia a frase que a contém e a voz confere só o fragmento; o `check:voz` da página cobre-o (a leitura curta da adenda F da HIG-6A, 9).
+104. O contador das retomas fica na pasta temporária do sistema: um lançamento com outro `TMPDIR` recomeça do zero, e a mesma decisão escrita desbloqueia todas as retomas seguintes (a leitura a frio da HIG-6A, 10).
+105. As guardas da paridade (a data e a condição de saída das exceções, a lista fechada, a exceção sem estudo bilingue) existem mas não têm planta; a mensagem de erro de uma planta falhada diz «dist ou exceções ilegíveis» (a leitura a frio da HIG-6A, 12).
+106. A repetição nos casos reais trata o limite da V122 como comportamento exigido (a HIG-6B vai partir essa afirmação) (a leitura a frio da HIG-6A, 14).
+107. O Método diz um número de conferências automáticas que não é o número de passos do `verify` (a contagem é a do guião do próprio Método); conferir a regra da contagem na HIG-6B (a leitura a frio da HIG-6A, 17).
 
 Feitos na HIG-5 (06.11.2026, f75fc7a0a, 777d906a1 e a adenda C): 56, 58, 62, 63, 64 e 66.

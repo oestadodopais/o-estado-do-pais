@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T10:09:22+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "F1",
+   "ficheiro": "diff.patch",
+   "descricao": "uma FICA volta a nomear por fragmento (a regra da frase inteira desligada)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7c556bea3bdd7d26a8a3512ce97ecbae276eae903505d5888de3c28cebb2d0b8",
+   "sha256_depois": "f964cca8def24f998ad07ee3f42dfdfd5fad82e651b53f12841c052980a011b1",
+   "contexto_antes": "exto));\n-});\n+const nomeada = (texto, entradas, bloco, aplicada) => entradas.some(f =>\n+  procurarFrase(textoDaEntrada(f, aplicada), bloco).some(o => o.texto &&\n+    (f.classe === 'FICA' ? normal(texto) === o.texto : normal(texto).includes(o.texto))));\n export function conferirPresenca(lista, documentos, aplicada = false) {\n   return lista.flatMap(f => {\n     const paginas = documentos.filter(d => f.paginas.i",
+   "contexto_depois": "exto));\n-});\n+const nomeada = (texto, entradas, bloco, aplicada) => entradas.some(f =>\n+  procurarFrase(textoDaEntrada(f, aplicada), bloco).some(o => o.texto &&\n+    (normal(texto).includes(o.texto))));\n export function conferirPresenca(lista, documentos, aplicada = false) {\n   return lista.flatMap(f => {\n     const paginas = documentos.filter(d => f.paginas.i"
+  },
+  {
+   "id": "F2",
+   "ficheiro": "diff.patch",
+   "descricao": "a presença volta a procurar só no texto sem as etiquetas de fonte",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f964cca8def24f998ad07ee3f42dfdfd5fad82e651b53f12841c052980a011b1",
+   "sha256_depois": "63038955720bad2f803d1423afc77ab85a645828469fa232bff0217e55364e6c",
+   "contexto_antes": " = paginas.some(d => contem(d.textoComSelos ?? d.texto ?? d.blocos.join(' '), frase)) ||\n-      paginas.some(d => contem(d.texto ?? d.blocos.join(' '), frase));\n+    const presente = paginas.some(d => procurarFrase(frase, d.procuraPagina ?? d.texto ?? d.blocos.join(' ')).length);\n     const ok = aplicada && f.classe === 'SAI' ? f.paginas.every(rota => paginas.some(d => d.rota === rota)) && !presente : presente;\n     return ok ? [] : [{i",
+   "contexto_depois": " = paginas.some(d => contem(d.textoComSelos ?? d.texto ?? d.blocos.join(' '), frase)) ||\n-      paginas.some(d => contem(d.texto ?? d.blocos.join(' '), frase));\n+    const presente = paginas.some(d => procurarFrase(frase, d.blocos.join(' ')).length);\n     const ok = aplicada && f.classe === 'SAI' ? f.paginas.every(rota => paginas.some(d => d.rota === rota)) && !presente : presente;\n     return ok ? [] : [{i"
+  },
+  {
+   "id": "F3",
+   "ficheiro": "diff.patch",
+   "descricao": "o ciclo dos pares volta a procurar a frase sem as etiquetas",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "63038955720bad2f803d1423afc77ab85a645828469fa232bff0217e55364e6c",
+   "sha256_depois": "2044a0023d559f17b1b3f6ce5ab79b8f5e59a397a43130f894648637cc316c22",
+   "contexto_antes": "arDispensado(f))) for (const [i, t] of d.blocos.entries()) {\n       const frase = textoDaEntrada(f, aplicada);\n-      if (!frase || !contem(t, frase)) continue;\n+      if (!procurarFrase(frase, d.procuraBlocos?.[i] ?? t).length) continue;\n       const temPar = pares[d.lingua].has(i);\n       if (!temPar) semPar.set(f.id, {id:f.id, estudo:d.estudo, lingua:d.lingua, bloco:i});\n     }\n@@ -143,11 +18",
+   "contexto_depois": "arDispensado(f))) for (const [i, t] of d.blocos.entries()) {\n       const frase = textoDaEntrada(f, aplicada);\n-      if (!frase || !contem(t, frase)) continue;\n+      if (!procurarFrase(frase, t).length) continue;\n       const temPar = pares[d.lingua].has(i);\n       if (!temPar) semPar.set(f.id, {id:f.id, estudo:d.estudo, lingua:d.lingua, bloco:i});\n     }\n@@ -143,11 +18"
+  },
+  {
+   "id": "F4",
+   "ficheiro": "diff.patch",
+   "descricao": "a repetição nos casos reais aceita qualquer número de quantificadores na VOZ-2B",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2044a0023d559f17b1b3f6ce5ab79b8f5e59a397a43130f894648637cc316c22",
+   "sha256_depois": "1a103e9af15b0dcad5b8bdc6377336588c5ffa101daf3ef1daaadf6f72ff8773",
+   "contexto_antes": ", JSON.stringify(provas.atualA));\n provas.atualB = conferirLista(B);\n+assert.equal(provas.atualB.voz.length, 0);\n+assert.equal(provas.atualB.numeros.length, 0);\n+assert.equal(provas.atualB.quantificadores.length, 28);\n assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas da VOZ-2B têm de estar nas páginas declaradas');\n assert.deepEqual(provas.atualB.semPar.map(",
+   "contexto_depois": ", JSON.stringify(provas.atualA));\n provas.atualB = conferirLista(B);\n+assert.equal(provas.atualB.voz.length, 0);\n+assert.equal(provas.atualB.numeros.length, 0);\n+assert.ok(provas.atualB.quantificadores.length >= 0);\n assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas da VOZ-2B têm de estar nas páginas declaradas');\n assert.deepEqual(provas.atualB.semPar.map("
+  },
+  {
+   "id": "F5",
+   "ficheiro": "diff.patch",
+   "descricao": "o relatório diz que a VOZ-2B tem cinco pares em falta",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1a103e9af15b0dcad5b8bdc6377336588c5ffa101daf3ef1daaadf6f72ff8773",
+   "sha256_depois": "77fda7f8e495dfb52140d75c822eb7783d5ff8f04f8f30dc77c6788a30ace2f7",
+   "contexto_antes": "ituras/frases-reais.mjs <temporario>/hig6af-frases-reais.json\n+\n+VOZ-2A atual: {\"voz\":0,\"numeros\":0,\"quantificadores\":0,\"presenca\":0,\"semPar\":0,\"semEntrada\":0}\n+VOZ-2B atual: {\"voz\":0,\"numeros\":0,\"quantificadores\":28,\"presenca\":0,\"semPar\":7,\"semEntrada\":15}\n+VOZ-2A inicial: {\"voz\":10,\"numeros\":1,\"quantificadores\":6,\"presenca\":122,\"semPar\":0,\"semEntrada\":5}\n+pré-G: 7 entradas sem campo; 4 entradas novas, 3 frases d",
+   "contexto_depois": "ituras/frases-reais.mjs <temporario>/hig6af-frases-reais.json\n+\n+VOZ-2A atual: {\"voz\":0,\"numeros\":0,\"quantificadores\":0,\"presenca\":0,\"semPar\":0,\"semEntrada\":0}\n+VOZ-2B atual: {\"voz\":0,\"numeros\":0,\"quantificadores\":28,\"presenca\":0,\"semPar\":5,\"semEntrada\":15}\n+VOZ-2A inicial: {\"voz\":10,\"numeros\":1,\"quantificadores\":6,\"presenca\":122,\"semPar\":0,\"semEntrada\":5}\n+pré-G: 7 entradas sem campo; 4 entradas novas, 3 frases d"
+  }
+ ]
+}

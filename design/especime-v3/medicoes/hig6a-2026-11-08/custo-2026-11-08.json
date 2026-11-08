@@ -1,0 +1,98 @@
+{
+ "bloco": "HIG-6A (a camada 0 antes de cada lançamento, o teto das voltas, a paridade dos números e os pares na cadeia)",
+ "data": "2026-11-08",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "HIG-6A (a passagem do mandato; 92 chamadas; o lançador partiu depois do fim, ao ler o seu ficheiro mudado, e os pontos mediram-se à mão por pontos.py)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T06:03:18Z",
+   "fim": "2026-11-08T06:59:43Z",
+   "pontos": 2.0,
+   "pontos_antes": 52.0,
+   "pontos_depois": 54.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a.log"
+  },
+  {
+   "nome": "adenda A (paragem pelo §2: o par por entrada recusava a VOZ-2A)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T07:01:32Z",
+   "fim": "2026-11-08T07:10:45Z",
+   "pontos": 1.0,
+   "pontos_antes": 54.0,
+   "pontos_depois": 55.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r.log"
+  },
+  {
+   "nome": "adenda B (os pares por bloco, o lançador por cópia, o fecho)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T07:11:32Z",
+   "fim": "2026-11-08T07:31:40Z",
+   "pontos": 1.0,
+   "pontos_antes": 55.0,
+   "pontos_depois": 56.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r2.log"
+  },
+  {
+   "nome": "adenda C (paragem pelo §2: a regra da cobertura mais estrita do que o motor; terceira retoma por decisão escrita)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T08:12:54Z",
+   "fim": "2026-11-08T08:16:02Z",
+   "pontos": 0.0,
+   "pontos_antes": 56.0,
+   "pontos_depois": 56.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r3.log"
+  },
+  {
+   "nome": "adenda D (paragem pelo §2: o extrator do construtor; quarta retoma por decisão escrita)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T08:16:37Z",
+   "fim": "2026-11-08T08:22:51Z",
+   "pontos": 0.0,
+   "pontos_antes": 56.0,
+   "pontos_depois": 56.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r4.log"
+  },
+  {
+   "nome": "adenda E (a presença das frases como as listas as escrevem, e o fecho; quinta retoma por decisão escrita)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T08:23:21Z",
+   "fim": "2026-11-08T09:00:42Z",
+   "pontos": 2.0,
+   "pontos_antes": 56.0,
+   "pontos_depois": 58.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r5.log"
+  },
+  {
+   "nome": "adenda F (uma só procura das frases; as FICA pela frase inteira; sexta retoma por decisão escrita)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T09:35:43Z",
+   "fim": "2026-11-08T09:44:06Z",
+   "pontos": 0.0,
+   "pontos_antes": 58.0,
+   "pontos_depois": 58.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r6.log"
+  }
+ ],
+ "pontos_codex_total": 6.0,
+ "leituras": "Claude Opus 5.5 (leitor, a xhigh): fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
+ "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros; nenhuma outra sessão do Codex escreveu nos intervalos.",
+ "reflexo_dos_gargalos": "sete passagens e 6 pontos: a leitura a frio a xhigh achou quatro Major na força da camada 0 (a adenda C), e a leitura curta das adendas C a E mais dois, da mesma classe (a adenda F); as paragens das adendas A, C e D foram a redação deste lugar (o par por entrada, a cobertura mais estrita do que o motor) e um erro de implementação que o §2 deste lugar mandava parar; o teto das voltas pediu uma decisão escrita a cada retoma a partir da terceira, e funcionou. O corte: o §2 de um mandato distingue um erro de implementação (o construtor corrige e segue) de uma decisão (pára)."
+}

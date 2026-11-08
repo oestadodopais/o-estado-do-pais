@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T09:27:56+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "diff.patch",
+   "descricao": "as plantas da camada 0 saem do verify (a cadeia do GitHub deixa de as correr)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f7087986a75b7ee6c5d87691c05c5f0e6243ab82ed921d733bd75f80ff923224",
+   "sha256_depois": "c6f633568026d12d2fb1342d9297453800fc81bb92438d8ce61601d018d434be",
+   "contexto_antes": "stas && npm run check:incorporar && npm run check:discussao && npm run check:eo1 && npm run check:graficos && npm run check:dossies && npm run check:largura && npm run check:capturas-largura && npm run check:pre-mandato && npm run check:frases-reais && npm run check:repositorio\",\n     \"verify:depois-do-build\": \"node scripts/verify-depois-do-build.mjs\",\n     \"check:mortos\": \"node scripts/check-mortos.mjs --",
+   "contexto_depois": "stas && npm run check:incorporar && npm run check:discussao && npm run check:eo1 && npm run check:graficos && npm run check:dossies && npm run check:largura && npm run check:capturas-largura && npm run check:frases-reais && npm run check:repositorio\",\n     \"verify:depois-do-build\": \"node scripts/verify-depois-do-build.mjs\",\n     \"check:mortos\": \"node scripts/check-mortos.mjs --"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "diff.patch",
+   "descricao": "uma frase de uma letra passa o mínimo de comprimento",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c6f633568026d12d2fb1342d9297453800fc81bb92438d8ce61601d018d434be",
+   "sha256_depois": "33142426d149eb43284a8edd9fc0fc6f8bfdf976908d184d71da80f9c9f901ee",
+   "contexto_antes": "udo ?? '') ||\n-        !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || !f.frase.trim() ||\n+        !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || [...normal(f.frase)].length < 12 ||\n         (f.classe === 'REESCREVE' && (typeof f.nova !== 'string' || !f.nova.trim())) || ('nova' in f && typeof f.nova !== 'string')) throw new Error('entrada ",
+   "contexto_depois": "udo ?? '') ||\n-        !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || !f.frase.trim() ||\n+        !['pt', 'en'].includes(f.lingua) || !['SAI', 'REESCREVE', 'FICA'].includes(f.classe) || typeof f.frase !== 'string' || [...normal(f.frase)].length < 1 ||\n         (f.classe === 'REESCREVE' && (typeof f.nova !== 'string' || !f.nova.trim())) || ('nova' in f && typeof f.nova !== 'string')) throw new Error('entrada "
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "diff.patch",
+   "descricao": "a cobertura da asserção só pede uma citação presente, sem cobrir o quantificador",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "33142426d149eb43284a8edd9fc0fc6f8bfdf976908d184d71da80f9c9f901ee",
+   "sha256_depois": "7b2fd99dc64b426dfbf0d5675143f1f6b1fe59451025c8b72a3c409efef94a49",
+   "contexto_antes": "     inicio = 0\n+                while (i := texto.find(q, inicio)) >= 0:\n+                    spans.append((i, i + len(q)))\n+                    inicio = i + 1\n+        if any(not any(a <= m.start() and m.end() <= b for a, b in spans) for m in ocorrencias):\n+            erros.append({**erro, 'razao': 'citação ausente da nova ou sem cobrir cada ocorrência do quantificador'})\n+    return erros\n \n \n if __name__ == '_",
+   "contexto_depois": "     inicio = 0\n+                while (i := texto.find(q, inicio)) >= 0:\n+                    spans.append((i, i + len(q)))\n+                    inicio = i + 1\n+        if not spans:\n+            erros.append({**erro, 'razao': 'citação ausente da nova ou sem cobrir cada ocorrência do quantificador'})\n+    return erros\n \n \n if __name__ == '_"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "diff.patch",
+   "descricao": "a presença das entradas sai do resultado da camada 0",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7b2fd99dc64b426dfbf0d5675143f1f6b1fe59451025c8b72a3c409efef94a49",
+   "sha256_depois": "d43c76741afac39cf944af5c7dc2c750d95f46d84012674db7d13aba4358d62c",
+   "contexto_antes": " && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, bilingues),\n-    quantificadores, ...conferirBlocos(lista, documentos, bilingues)};\n+    quantificadores:conferirQuantificadores(lista), presenca:conferirPresenca(lista, documentos, aplicada),\n+    ...conferirBlocos(lista, documentos, bilingues, aplicada)};\n }\n export const recusas = r => Object.values(r).reduce((n, xs) => n + xs.length, 0);\n-export ",
+   "contexto_depois": " && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, bilingues),\n-    quantificadores, ...conferirBlocos(lista, documentos, bilingues)};\n+    quantificadores:conferirQuantificadores(lista), presenca:[],\n+    ...conferirBlocos(lista, documentos, bilingues, aplicada)};\n }\n export const recusas = r => Object.values(r).reduce((n, xs) => n + xs.length, 0);\n-export "
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "diff.patch",
+   "descricao": "o resumo da camada 0 diz «entradas sem par» com a contagem das frases sem entrada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d43c76741afac39cf944af5c7dc2c750d95f46d84012674db7d13aba4358d62c",
+   "sha256_depois": "093e920bcce50204013fa7ffcfdbb42e68ce07deb0646b56ce243b666154c89a",
+   "contexto_antes": "s.length > 3) throw new Error('argumentos inválidos');\n+    const r = conferirLista(args[0], args[1] ?? 'dist', {aplicada:process.argv.includes('--aplicada')});\n+    console.log(`camada 0: voz ${r.voz.length}; números ${r.numeros.length}; quantificadores ${r.quantificadores.length}; entradas sem par ${r.semPar.length}; frases sem entrada ${r.semEntrada.length}; presença ${r.presenca.length}`);\n     for (const [regra, erros] of Object.entries(r)) for (const erro of erros) con",
+   "contexto_depois": "s.length > 3) throw new Error('argumentos inválidos');\n+    const r = conferirLista(args[0], args[1] ?? 'dist', {aplicada:process.argv.includes('--aplicada')});\n+    console.log(`camada 0: voz ${r.voz.length}; números ${r.numeros.length}; quantificadores ${r.quantificadores.length}; entradas sem par ${r.semEntrada.length}; frases sem entrada ${r.semEntrada.length}; presença ${r.presenca.length}`);\n     for (const [regra, erros] of Object.entries(r)) for (const erro of erros) con"
+  }
+ ]
+}

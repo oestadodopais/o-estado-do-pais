@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T08:00:18+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "diff.patch",
+   "descricao": "a camada 0 sai sempre com 0, mesmo com recusas (falha aberta)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "baa7be9ba97bc5a84e0ed3c562453fd6a13f95ab70330440d2d529269eaccf26",
+   "sha256_depois": "373866f2c32cf2312177a798d6acffb649413e3c269cefbc16bc9ad5b29d8c77",
+   "contexto_antes": "rro of erros) console.log(`${regra}: ${JSON.stringify(erro)}`);\n+    if (process.argv[4]) fs.writeFileSync(process.argv[4], JSON.stringify(r, null, 2) + '\\n');\n+    process.exitCode = recusas(r) ? 9 : 0;\n+  } catch (e) { console.error('camada 0: ' + (e.stderr?.toString().trim() || (e.code ? 'ficheiro, dist ou guião ilegível' : e.message))); process.exitCode = 9",
+   "contexto_depois": "rro of erros) console.log(`${regra}: ${JSON.stringify(erro)}`);\n+    if (process.argv[4]) fs.writeFileSync(process.argv[4], JSON.stringify(r, null, 2) + '\\n');\n+    process.exitCode = 0;\n+  } catch (e) { console.error('camada 0: ' + (e.stderr?.toString().trim() || (e.code ? 'ficheiro, dist ou guião ilegível' : e.message))); process.exitCode = 9"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "diff.patch",
+   "descricao": "o teto das voltas só pede decisão à quinta retoma",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "373866f2c32cf2312177a798d6acffb649413e3c269cefbc16bc9ad5b29d8c77",
+   "sha256_depois": "3d2acf45781bd9025337507d3dcbbd400b0081dd16739107183b0516d1a9546e",
+   "contexto_antes": "ior else int(retoma)\n+        registo = {'bloco': bloco, 'retomas': voltas, 'data': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')}\n+        if voltas >= 3:\n+            m = re.fullmatch(r'(\\d{4}-\\d{2}-\\d{2})\\s+(.+)', decisao.strip())\n+            valido = False\n+            if m and len(m[2].strip()) >= 20:\n+     ",
+   "contexto_depois": "ior else int(retoma)\n+        registo = {'bloco': bloco, 'retomas': voltas, 'data': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')}\n+        if voltas >= 5:\n+            m = re.fullmatch(r'(\\d{4}-\\d{2}-\\d{2})\\s+(.+)', decisao.strip())\n+            valido = False\n+            if m and len(m[2].strip()) >= 20:\n+     "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua do repositório deixa de ver raw.githubusercontent.com",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3d2acf45781bd9025337507d3dcbbd400b0081dd16739107183b0516d1a9546e",
+   "sha256_depois": "912fa8b0d7fe61167811ca24edb653e39f134b1c6cf4a44d4bbceac13b70da44",
+   "contexto_antes": " return true;\n+  try {\n+    const host = new URL(href, 'https://met2.invalid/').hostname.toLowerCase().replace(/\\.$/, '');\n+    return host === 'github.com' || host.endsWith('.github.com') || host === 'raw.githubusercontent.com' || host.endsWith('.github.io');\n+  } catch { return true; }\n+}\n export function ligacoesAoGithub(root) {\n-  return root.querySelectorAll('[href],[xlink\\\\:href]').filter(n =>\n-    ['href', 'xl",
+   "contexto_depois": " return true;\n+  try {\n+    const host = new URL(href, 'https://met2.invalid/').hostname.toLowerCase().replace(/\\.$/, '');\n+    return host === 'github.com' || host.endsWith('.github.com') || host.endsWith('.github.io');\n+  } catch { return true; }\n+}\n export function ligacoesAoGithub(root) {\n-  return root.querySelectorAll('[href],[xlink\\\\:href]').filter(n =>\n-    ['href', 'xl"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "o Método português diz que uma pessoa revê cada mudança antes de se publicar (uma página do leitor mudada)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "992f1a0caa96afc3f22f13b693cb16d1b459f123b8abd6ea49b8d457d0442bda",
+   "sha256_depois": "2515bdcb1e8281dbe482fe7df1cbddd5c59e38db9e601133cf07faf2ac9c828a",
+   "contexto_antes": "p class=\"metodo-p\" data-met1=\"autoria\" data-frase-da-politica=\"pt\">Estas páginas são escritas, conferidas e atualizadas por modelos de inteligência artificial; nenhuma pessoa revê cada mudança antes de se publicar.</p><p class=\"met1-portas\"><a data-met1=\"ligacao-0\" href=\"/agenda\">A agenda</a></p></div></section></div></main><footer class=\"rodape rodape-b1\"><nav class=\"ro",
+   "contexto_depois": "p class=\"metodo-p\" data-met1=\"autoria\" data-frase-da-politica=\"pt\">Estas páginas são escritas, conferidas e atualizadas por modelos de inteligência artificial; uma pessoa revê cada mudança antes de se publicar.</p><p class=\"met1-portas\"><a data-met1=\"ligacao-0\" href=\"/agenda\">A agenda</a></p></div></section></div></main><footer class=\"rodape rodape-b1\"><nav class=\"ro"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "diff.patch",
+   "descricao": "a exceção da paridade de «Onde está a água» deixa de estar datada e fechada (o campo de retirada vazio)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "912fa8b0d7fe61167811ca24edb653e39f134b1c6cf4a44d4bbceac13b70da44",
+   "sha256_depois": "cad6c91102f2fbc453e2b3d948b14a6e3a00e333557bbcc9ca728b037d49e587",
+   "contexto_antes": "cecoes.json\nnew file mode 100644\nindex 000000000..7ed7fd877\n--- /dev/null\n+++ b/scripts/paridade-excecoes.json\n@@ -0,0 +1,319 @@\n+{\n+  \"data\": \"2026-11-08\",\n+  \"retirar\": \"COR-AGUA\",\n+  \"fonte\": \"design/especime-v3/medicoes/aud1-2026-11-08/paridade-numeros-2026-11-08.json\",\n+  \"diferencas\": [\n+    {\n+      \"estudo\": \"a-casa-em-portugal-e-n",
+   "contexto_depois": "cecoes.json\nnew file mode 100644\nindex 000000000..7ed7fd877\n--- /dev/null\n+++ b/scripts/paridade-excecoes.json\n@@ -0,0 +1,319 @@\n+{\n+  \"data\": \"2026-11-08\",\n+  \"retirar\": \"\",\n+  \"fonte\": \"design/especime-v3/medicoes/aud1-2026-11-08/paridade-numeros-2026-11-08.json\",\n+  \"diferencas\": [\n+    {\n+      \"estudo\": \"a-casa-em-portugal-e-n"
+  }
+ ]
+}
