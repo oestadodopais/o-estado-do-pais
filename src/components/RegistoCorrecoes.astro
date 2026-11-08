@@ -289,7 +289,7 @@ const palavraRevisoes =
             ) : e.tipo === 'texto' ? (
               <div class="registo-mudanca-corpo">
                 <p><span data-texto-campo="kind">{rotulo(e.kind)}</span></p>
-                <p><TituloDeTrabalho titulo={e.titulo} lang={lang} data-texto-campo="titulo" />: <span data-texto-campo="frase" data-voz><TextoDaCorrecao entrada={e} lang={lang}/></span>{' '}
+                <p><TituloDeTrabalho titulo={e.titulo} lang={lang} data-texto-campo="titulo" />: <span class="registo-frase" data-texto-campo="frase" data-voz><TextoDaCorrecao entrada={e} lang={lang}/></span>{' '}
                   <PortaDaEdicao porta="primeira" rota={e.primeira} rotulo={e.rotuloPrimeira} data={e.dataPrimeira} />{' · '}
                   <PortaDaEdicao porta="atual" rota={e.atual} rotulo={e.rotuloAtual} data={e.dataAtual} />
                 </p>

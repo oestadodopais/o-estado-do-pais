@@ -35,6 +35,7 @@
     "check:sobreposicao": "node tests/documentos/sobreposicao.mjs && node tests/quadro/disposicao.mjs sobreposicao",
     "check:moldura": "node tests/documentos/moldura.mjs",
     "check:alvos": "node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs && node tests/quadro/disposicao.mjs alvos",
+    "check:alvos:registo": "node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs --vermelhos --so registo-sem-classe && node tests/quadro/disposicao.mjs alvos",
     "check:cabeca": "node tests/inicio/hierarquia-b2.mjs",
     "check:cadeia": "node scripts/check-cadeia.mjs",
     "check:voz-retiradas": "node tests/edicoes/voz-integracao.mjs",

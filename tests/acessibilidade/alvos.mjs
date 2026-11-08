@@ -451,6 +451,14 @@ const ESTRAGOS = [
     faz: (html) => html.replaceAll('class="explicacao-p', 'class="explicacao-x'),
   },
   {
+    /* COR-AGUA H: só a classe da frase dispensa os selos na faixa H2.
+       A planta conserva o texto e o estilo, retirando apenas essa classe. */
+    nome: 'registo-sem-classe · os selos do registo fora da prosa corrida',
+    celulas: ['H2'],
+    amostra: '/correcoes/',
+    faz: html => html.replaceAll('class="registo-frase"', 'class="registo-frase-sem-classe"'),
+  },
+  {
     /* A LISTA ESCONDIDA (H15, bloco R1). O estrago é o defeito que a leitura de
        fora de 23.09.2026 encontrou, reposto no guião que o servidor entrega: a
        linha que abre a lista sai, e os itens que casam acendem-se dentro de uma
@@ -1071,7 +1079,12 @@ function medeNaPagina(cfg) {
            leva o selo ao lado, e a área de 44 px de um selo cruza a linha vizinha do mesmo parágrafo na faixa dos 641 aos
            1023 px; a entrelinha não se estica (I127), e cada selo continua a ser a porta da sua linha, com a área inteira a
            390 px. O estrago «explicacao-sem-classe» prova que é a classe que os dispensa, e só ela. */
-        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto, .explicacao-p'),
+        /* COR-AGUA H, 08.11.2026: a frase de uma correção textual é prosa corrida.
+           A área de 44 px cruza a linha vizinha na faixa H2; a entrelinha não
+           se estica (I127). A área inteira a 390 px continua conferida.
+           «registo-sem-classe» prova que só esta classe dispensa estes selos. */
+        noRegistoCorrido: !!el.closest?.('[data-texto-estudo] .registo-frase'),
+        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto, .explicacao-p, [data-texto-estudo] .registo-frase'),
         /* H16 (bloco S1, 02.10.2026): a porta das sugestões do rodapé e o botão do formulário. */
         portaSugestoes: !!el.closest?.('[data-porta-sugestoes]'),
         botaoSugestoes: !!el.matches?.('[data-sugestoes-formulario] button[type="submit"]'),
@@ -1858,7 +1871,8 @@ async function avalia(p, dist, cartoes, leis, folhas) {
       ` · faixa 641 a 1023: ${noBuraco.length} alvos medidos, ${doBuraco.length} deles com ` +
       `${ALVO} px a 390, ${buracoMau.length} sem eles na faixa · destes, ` +
       `${buracoDeCaixa.length} são caixas e falham (${resumo(buracoDeCaixa)}), ` +
-      `${buracoDeSinopse.length} são selos dentro de leitura ou sinopse em prosa corrida, ` +
+      `${buracoDeSinopse.length} são selos dentro de leitura, sinopse ou registo em prosa corrida, ` +
+      `${buracoDeSinopse.filter(a => a.noRegistoCorrido).length} destes no registo, ` +
       `cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo ` +
       `(${resumo(buracoDeSinopse)}) e ` +
       `${buracoDeDesenho.length} são áreas de desenho, cujo alvo é a rede de nomes por baixo do ` +
@@ -2381,6 +2395,7 @@ if (FICHEIRO_JSON) {
           .filter((a) => a.ok !== true)
           .map((a) => ({ chave: a.chave, largura: a.largura, marca: a.marca, caminho: a.caminho, caixa: a.caixa, toque: a.toque, exigido: a.exigido, ok: a.ok })),
         caixas: diagnostico.caixas,
+        prosa_registo: diagnostico.todosOsAlvos.filter(a => a.noRegistoCorrido).map(a => ({chave:a.chave, largura:a.largura, caminho:a.caminho, marca:a.marca, naProsaCorrida:a.naProsaCorrida, ok:a.ok})),
         plantas,
         plantas_da_espera: plantasDaEsperaMedidas,
       },
