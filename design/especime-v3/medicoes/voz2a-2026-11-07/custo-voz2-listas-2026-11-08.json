@@ -1,0 +1,17 @@
+{
+ "bloco": "VOZ-2 (as listas das frases das duas metades e a conferência dos pares, escritas pelo lugar de direção)",
+ "data": "2026-11-08",
+ "pontos_do_bloco": 0,
+ "passagens_codex": [],
+ "commits": [
+  "003cb109e",
+  "14f931195",
+  "44fb32cfe",
+  "6eb9a6db0",
+  "8ad95a920",
+  "b77720653",
+  "efdc3c482"
+ ],
+ "nota": "Os commits «VOZ-2 adenda …» são deste lugar e servem as duas metades da VOZ-2 (as listas FRASES-VOZ-2A.json e FRASES-VOZ-2B.json, e a conferência dos pares); nenhum é uma passagem do Codex. Aterram com a VOZ-2A, cujo custo está em custo-2026-11-07.json. A aterragem de 08.11.2026 recusou-os como «fora dos blocos declarados» por terem o prefixo da família e não o do bloco; daqui em diante, um commit deste lugar leva o prefixo do bloco que aterra.",
+ "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)"
+}
