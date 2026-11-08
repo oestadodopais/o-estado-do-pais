@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-08T11:34:20+00:00",
+ "copia": "<caminho>",
+ "plantas": [
+  {
+   "id": "G1",
+   "ficheiro": "diff.patch",
+   "descricao": "a camada 0 da aterragem corre na árvore principal (a cabeça antiga), não na cabeça que aterra",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b00951d284bb048aa01dcff89b9e46074a91790271bd7a12165736da538a6fa0",
+   "sha256_depois": "8dedfc566b11261c8328b486f6a62108327c8144bfcf5862e7f201a376ac8fda",
+   "contexto_antes": "         self.correr('series', ['npm', 'run', 'check:series'])\n             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])\n+            self.correr('camada-0', ['npm', 'run', 'verify:com-motor'])\n             self.conferir_arvores()\n             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)\n    ",
+   "contexto_depois": "         self.correr('series', ['npm', 'run', 'check:series'])\n             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])\n+            self.correr('camada-0', ['npm', 'run', 'verify:com-motor'], cwd=self.principal)\n             self.conferir_arvores()\n             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)\n    "
+  },
+  {
+   "id": "G2",
+   "ficheiro": "diff.patch",
+   "descricao": "as partes aceitam uma reserva com um passo fora do verify",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8dedfc566b11261c8328b486f6a62108327c8144bfcf5862e7f201a376ac8fda",
+   "sha256_depois": "56b1865f7db397f0433e67fb274c55cd61b33180b05d7a82eb574f0f35cbf6b5",
+   "contexto_antes": "er(p => !build.includes(p));\n+  const motor = scripts['verify:com-motor'] === undefined ? [] : scripts['verify:com-motor'].split(/\\s*&&\\s*/).map(p => p.trim());\n+  assert(motor.every(p => p && todos.includes(p)) && new Set(motor).size === motor.length, 'verify:com-motor inválido ou fora do verify');\n+  const esperados = todos.filter(p => !build.includes(p) && !motor.includes(p));\n   const recebidos = partes.flat();\n   assert.equal(new Set(recebidos).size, ",
+   "contexto_depois": "er(p => !build.includes(p));\n+  const motor = scripts['verify:com-motor'] === undefined ? [] : scripts['verify:com-motor'].split(/\\s*&&\\s*/).map(p => p.trim());\n+  assert(motor.every(p => p), 'verify:com-motor inválido ou fora do verify');\n+  const esperados = todos.filter(p => !build.includes(p) && !motor.includes(p));\n   const recebidos = partes.flat();\n   assert.equal(new Set(recebidos).size, "
+  },
+  {
+   "id": "G3",
+   "ficheiro": "diff.patch",
+   "descricao": "o GitHub tira em silêncio um terceiro passo (o check:repositorio)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "56b1865f7db397f0433e67fb274c55cd61b33180b05d7a82eb574f0f35cbf6b5",
+   "sha256_depois": "1e07134ee244d1b0dbe54760875a4419a9167ffc162b2d1821fdb75b2c58dbe6",
+   "contexto_antes": "s['build:conteudo'] ?? scripts.build));\n-  return passosDe(scripts.verify).filter((p) => !doBuild.has(p));\n+  const comMotor = new Set(passosComMotor(scripts));\n+  return passosDe(scripts.verify).filter((p) => !doBuild.has(p) && !comMotor.has(p));\n }\n \n /**\n@@ -172,17 +187,21 @@ export function celulaDaUniao(scripts, corridos) {\n   if (scripts['build:conteudo'] !== undefined && scripts.build !== 'python3",
+   "contexto_depois": "s['build:conteudo'] ?? scripts.build));\n-  return passosDe(scripts.verify).filter((p) => !doBuild.has(p));\n+  const comMotor = new Set(passosComMotor(scripts));\n+  return passosDe(scripts.verify).filter((p) => !doBuild.has(p) && !comMotor.has(p) && !p.includes('check:repositorio'));\n }\n \n /**\n@@ -172,17 +187,21 @@ export function celulaDaUniao(scripts, corridos) {\n   if (scripts['build:conteudo'] !== undefined && scripts.build !== 'python3"
+  },
+  {
+   "id": "G4",
+   "ficheiro": "diff.patch",
+   "descricao": "a prova da aterragem vermelha deixa de provar que não há push para main",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1e07134ee244d1b0dbe54760875a4419a9167ffc162b2d1821fdb75b2c58dbe6",
+   "sha256_depois": "06980d47119610c03ee81cb3d736934474d3dae20da4dac7d5a004a107784737",
+   "contexto_antes": ").read_text(), '8\\n')\n+        self.assertIn(['npm', 'run', 'verify:com-motor'], chamadas)\n+        self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))\n+        self.assertNotIn(['git', 'push', 'origin', 'main'], chamadas)\n+        self.assertFalse(any(c[0] == 'vercel' for c in chamadas))\n+        self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.main_antes)\n+        pas",
+   "contexto_depois": ").read_text(), '8\\n')\n+        self.assertIn(['npm', 'run', 'verify:com-motor'], chamadas)\n+        self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))\n+        self.assertNotIn(['git', 'push', '--force', 'origin', 'main'], chamadas)\n+        self.assertFalse(any(c[0] == 'vercel' for c in chamadas))\n+        self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.main_antes)\n+        pas"
+  },
+  {
+   "id": "G5",
+   "ficheiro": "diff.patch",
+   "descricao": "a guarda da cadeia só procura a chave, e não o repositório nem a variável do motor",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "06980d47119610c03ee81cb3d736934474d3dae20da4dac7d5a004a107784737",
+   "sha256_depois": "4e2a357b3f858ef41bc8c76c93141ac39b807bbc67227cd3337f84c7a3c76abc",
+   "contexto_antes": "        self.correr('fundir-main',\"));\n+  assert(preparar >= 0 && preparar < cruzamento && cruzamento < i && i < fundir, 'camada 0 fora da ordem da aterragem');\n+  assert(!/oestadodopais\\/motor|RESEARCHHUB_READ_TOKEN|RESEARCHHUB_DIR/.test(JSON.stringify(w)), 'motor ainda referido no GitHub');\n }\n-conferir(scripts, workflow);\n+conferir(scripts, workflow, aterragem);\n let plantas = 0;\n for (const nome of ['check:pre-mandato', 'check:frases-reais', 'ch",
+   "contexto_depois": "        self.correr('fundir-main',\"));\n+  assert(preparar >= 0 && preparar < cruzamento && cruzamento < i && i < fundir, 'camada 0 fora da ordem da aterragem');\n+  assert(!/RESEARCHHUB_READ_TOKEN/.test(JSON.stringify(w)), 'motor ainda referido no GitHub');\n }\n-conferir(scripts, workflow);\n+conferir(scripts, workflow, aterragem);\n let plantas = 0;\n for (const nome of ['check:pre-mandato', 'check:frases-reais', 'ch"
+  }
+ ]
+}

@@ -109,5 +109,6 @@
 105. As guardas da paridade (a data e a condição de saída das exceções, a lista fechada, a exceção sem estudo bilingue) existem mas não têm planta; a mensagem de erro de uma planta falhada diz «dist ou exceções ilegíveis» (a leitura a frio da HIG-6A, 12).
 106. A repetição nos casos reais trata o limite da V122 como comportamento exigido (a HIG-6B vai partir essa afirmação) (a leitura a frio da HIG-6A, 14).
 107. O Método diz um número de conferências automáticas que não é o número de passos do `verify` (a contagem é a do guião do próprio Método); conferir a regra da contagem na HIG-6B (a leitura a frio da HIG-6A, 17).
+108. A régua da voz apanha «(inference)» numa frase inglesa e não «(inferência)» na portuguesa da mesma afirmação (medido a 08.11.2026 na lista da COR-AGUA); o desenho da CAM2 usa essas marcas para as leituras deste projeto, e a régua tem de as tratar da mesma maneira nas duas línguas.
 
 Feitos na HIG-5 (06.11.2026, f75fc7a0a, 777d906a1 e a adenda C): 56, 58, 62, 63, 64 e 66.

@@ -1,0 +1,6 @@
+{
+ "corrida-portao": {
+  "valor": "42471282619",
+  "comando": "gh run view 42471282619 --json databaseId,conclusion,headSha (conclusion=failure, headSha 9fa332bdd)"
+ }
+}

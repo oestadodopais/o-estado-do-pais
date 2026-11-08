@@ -88,11 +88,23 @@
    "pontos_depois": 58.0,
    "outras_sessoes_no_intervalo": 0,
    "fonte": "a linha PONTOS do LANCADOR-hig6a-r6.log"
+  },
+  {
+   "nome": "adenda G (a camada 0 com o motor corre na aterragem; o motor sai da corrida do GitHub; sétima retoma por decisão escrita, depois da aterragem recusada às 10:49 UTC; duas tentativas recusadas antes de arrancar, pela fila e pelo §0 sem Medidas:, a zero pontos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-08T10:56:12Z",
+   "fim": "2026-11-08T11:13:48Z",
+   "pontos": 1.0,
+   "pontos_antes": 58.0,
+   "pontos_depois": 59.0,
+   "outras_sessoes_no_intervalo": 0,
+   "fonte": "a linha PONTOS do LANCADOR-hig6a-r7.log"
   }
  ],
- "pontos_codex_total": 6.0,
+ "pontos_codex_total": 7.0,
  "leituras": "Claude Opus 5.5 (leitor, a xhigh): fora do contador do Codex.",
  "lugar_de_direcao": "Claude Opus 5.5 (por palavra do financiador a 02.11.2026, 10:48 UTC)",
  "nota_dos_pontos": "O contador do Codex é um só para todas as sessões e em pontos inteiros; nenhuma outra sessão do Codex escreveu nos intervalos.",
- "reflexo_dos_gargalos": "sete passagens e 6 pontos: a leitura a frio a xhigh achou quatro Major na força da camada 0 (a adenda C), e a leitura curta das adendas C a E mais dois, da mesma classe (a adenda F); as paragens das adendas A, C e D foram a redação deste lugar (o par por entrada, a cobertura mais estrita do que o motor) e um erro de implementação que o §2 deste lugar mandava parar; o teto das voltas pediu uma decisão escrita a cada retoma a partir da terceira, e funcionou. O corte: o §2 de um mandato distingue um erro de implementação (o construtor corrige e segue) de uma decisão (pára)."
+ "reflexo_dos_gargalos": "sete passagens e 6 pontos: a leitura a frio a xhigh achou quatro Major na força da camada 0 (a adenda C), e a leitura curta das adendas C a E mais dois, da mesma classe (a adenda F); as paragens das adendas A, C e D foram a redação deste lugar (o par por entrada, a cobertura mais estrita do que o motor) e um erro de implementação que o §2 deste lugar mandava parar; o teto das voltas pediu uma decisão escrita a cada retoma a partir da terceira, e funcionou. O corte: o §2 de um mandato distingue um erro de implementação (o construtor corrige e segue) de uma decisão (pára). Depois: a aterragem de 08.11 parou no GitHub (o motor privado sem chave de leitura; o mandato pediu-o sem este lugar medir a chave) e a adenda G pôs a camada 0 com o motor na aterragem, na máquina: oito passagens e 7 pontos. O corte: o pré-mandato passa a recusar um mandato que nomeie um repositório, um segredo ou uma variável da corrida do GitHub sem a medida (por fazer, na HIG-6B)."
 }
