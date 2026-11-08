@@ -772,6 +772,30 @@
    "ronda": 3,
    "texto": "O relatório de 2015 traz 48,1%, um fundo mais fundo, um ano depois das tranches do resgate, pelo que os colapsos de execução já seguiram antes as crises de dívida de Évora (inferência; o valor é do próprio relatório de 2015).",
    "unidade": null
+  },
+  {
+   "antes_no_registo": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte).",
+   "b": 61,
+   "b_no_registo": 61,
+   "depois": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência).",
+   "estrato": "S6·terceira-voz·proposta-27.08",
+   "f": 0,
+   "f_no_registo": 0,
+   "familia": "F4",
+   "frases_no_registo": 1,
+   "gemea": "07-contexto-de-todos-os-numeros",
+   "op": "substituicao",
+   "origem": "registo de hoje b61 f0",
+   "pendente": "diretor",
+   "razao": "A adenda I repõe na página a etiqueta da inferência; o documento português conserva a ressalva sobre a tabela.",
+   "reve": {
+    "estrato": "S5·segunda-voz·proposta-27.08",
+    "op": "substituicao",
+    "pendente": "diretor",
+    "razao": "a casa como dona da leitura; o rótulo (inferência) que o documento usa fica"
+   },
+   "texto": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte).",
+   "unidade": null
   }
  ]
 }

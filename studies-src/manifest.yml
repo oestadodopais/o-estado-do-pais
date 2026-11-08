@@ -137,18 +137,18 @@ edicoes:
         sha256: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
         file: _edicoes/evora-orcamentado-pago-devido-2025.en.2026-08-20.html
       - data: '2026-11-08'
-        sha256: 7592cb1f27177825938b2e5e48fc199fec285cd32b808e4de3ad8844b2288959
+        sha256: 6b29c85114c1a8a6eb1f622426e3650eff285c4e4bb09dc1b0d67745a31b2151
         file: evora-orcamentado-pago-devido-2025/en.html
         natureza: atualizacao
     title: Évora — Budgeted, Paid, Owed 2025
     origin: researchhub
-    origin_ref: content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176
+    origin_ref: content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ cf5bd5b28b26d814315a5440d0b7dc1038e7ca1e
     raw_file: _raw/evora-orcamentado-pago-devido-2025.en.html
-    fetched_utc: '2026-11-08T00:38:19.593Z'
-    bytes_raw: 958444
-    bytes_normalized: 958444
-    sha256_raw: 7592cb1f27177825938b2e5e48fc199fec285cd32b808e4de3ad8844b2288959
-    sha256_normalized: 7592cb1f27177825938b2e5e48fc199fec285cd32b808e4de3ad8844b2288959
+    fetched_utc: '2026-11-08T01:49:45.579Z'
+    bytes_raw: 958420
+    bytes_normalized: 958420
+    sha256_raw: 6b29c85114c1a8a6eb1f622426e3650eff285c4e4bb09dc1b0d67745a31b2151
+    sha256_normalized: 6b29c85114c1a8a6eb1f622426e3650eff285c4e4bb09dc1b0d67745a31b2151
     primeira_edicao:
       date: '2026-08-20'
       sha256: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b

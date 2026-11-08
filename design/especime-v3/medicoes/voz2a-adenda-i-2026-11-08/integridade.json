@@ -1,0 +1,16 @@
+{
+  "base_motor": "e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176",
+  "documento_portugues_identico": true,
+  "v331_unica_mudanca_documental": true,
+  "livros_identicos": 27,
+  "referencias_identicas": 8382,
+  "blocos_alterados": [
+    {
+      "estudo": "07",
+      "lingua": "pt",
+      "bloco": 58,
+      "antes": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte).",
+      "depois": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência)."
+    }
+  ]
+}

@@ -2528,13 +2528,6 @@
    "text": "Évora passou o meio da década passada muito acima do teto legal — o índice abre em 242,6% — e só voltou a ficar abaixo dele em 2020. O índice desce em todos os anos da tabela, mesmo em 2020, quando o valor em euros até subiu — a receita cresceu mais depressa."
   },
   {
-   "emphasis": [
-    {
-     "end": 287,
-     "kind": "strong",
-     "start": 254
-    }
-   ],
    "figures": [
     {
      "end": 102,
@@ -2557,7 +2550,7 @@
    ],
    "i": 58,
    "kind": "paragraph",
-   "text": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência; a tabela é da fonte)."
+   "text": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína em vez de uma delicadeza contabilística (inferência)."
   },
   {
    "figures": [],
