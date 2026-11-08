@@ -352,3 +352,15 @@ ul.metodo-sumario-lista li {
     column-gap: 14px;
   }
 }
+
+/* COR-AGUA C: os selos do registo mantêm caixas de toque inteiras na faixa H2. */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .registo a.src-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    min-width: 44px;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+}

@@ -274,6 +274,31 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     exige('M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto',
           r.returncode == 0 and list(le) == ['linha-sintetica'] and le['linha-sintetica']['estado'] == 'copiado' and le['linha-sintetica']['motivo'] == 'página pedida'
           and (so_en/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo and (so_en/'built/en/ledger/linha-sintetica/index.html').is_file())
+    # COR-AGUA C: a origem arquivada resolve apenas na cabeça do sítio.
+    corpo_arquivo = '<p>Edição arquivada sintética.</p>\n'
+    caminho_arquivo = 'studies-src/_edicoes/planta.pt.2026-08-12.html'
+    escrever(sitio, caminho_arquivo, corpo_arquivo)
+    escrever(sitio, caminho_arquivo.replace('.pt.', '.en.'), corpo_arquivo)
+    sha_arquivo = hashlib.sha256(corpo_arquivo.encode()).hexdigest()
+    def linha_arquivo(sha, rota):
+        escrever(sitio, 'ledger/claims/arquivo.yml', 'id: arquivo\nvalue: "1"\nsource_url: https://xn--oestadodopas-2fb.pt' + rota + '\ndocument:\n  source_sha256: "' + sha + '"\n')
+    base_arquivo = cabeca_so_frase
+    for nome, resumo, rota, passa in [
+        ('arquivo-certo', sha_arquivo, '/estudos/planta/documento/2026-08-12', True),
+        ('arquivo-en-certo', sha_arquivo, '/en/studies/planta/document/2026-08-12', True),
+        ('arquivo-sha-errado', '0'*64, '/estudos/planta/documento/2026-08-12', False),
+        ('sitio-sem-rota-arquivada', sha_arquivo, '/estudos/planta/documento', False),
+    ]:
+        linha_arquivo(resumo, rota)
+        cab_arquivo = commit(sitio)
+        dest = tmp/nome
+        r = subprocess.run([*cmd[:-2], base_arquivo, cab_arquivo, str(dest), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_sem_motor, capture_output=True, text=True)
+        caminho_copiado = caminho_arquivo.replace('.pt.', '.en.') if rota.startswith('/en/') else caminho_arquivo
+        exige('COR-AGUA: ' + nome, (r.returncode == 0) == passa and (not passa or ((dest/'sitio'/caminho_copiado).read_text() == corpo_arquivo and caminho_copiado in (dest/'motor/CORPOS-ALOJADOS.md').read_text())))
+        # As duas recusas têm de chegar à guarda certa, antes de existir pacote.
+        if not passa:
+            causa = 'sha256 da edição arquivada diferente' if nome == 'arquivo-sha-errado' else 'PACOTE_MOTOR não foi dado'
+            exige('COR-AGUA: causa da recusa ' + nome, causa in r.stderr and not dest.exists())
 saida={'ok':all(c['passou'] for c in casos),'casos':casos}
 if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(saida,ensure_ascii=False,indent=2))

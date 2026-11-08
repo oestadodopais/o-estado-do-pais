@@ -32,6 +32,8 @@ provas.atualA = conferirLista(A, 'dist', {aplicada:true});
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
 provas.corAgua = conferirLista(C, 'dist', {aplicada:true});
 assert.equal(recusas(provas.corAgua), 0, JSON.stringify(provas.corAgua));
+provas.prr = conferirLista('design/especime-v3/medicoes/coragua-2026-11-08/FRASES-COR-AGUA-prr.json', 'dist', {aplicada:true});
+assert.equal(recusas(provas.prr), 0, JSON.stringify(provas.prr));
 provas.atualB = conferirLista(B);
 assert.equal(provas.atualB.voz.length, 0);
 assert.equal(provas.atualB.numeros.length, 0);
@@ -47,6 +49,6 @@ try {
   assert.equal(provas.inicialCompleta.voz.length, 10);
   assert(recusas(provas.inicialCompleta));
 } finally { fs.rmSync(tmp, {recursive:true, force:true}); }
-for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['COR-AGUA', provas.corAgua], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));
+for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['COR-AGUA', provas.corAgua], ['COR-AGUA PRR', provas.prr], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));
 console.log('pré-G: ' + provas.quantificadoresAntesGRaw.length + ' entradas sem campo; ' + provas.quantificadoresNovosAntesG.length + ' entradas novas, ' + provas.frasesNovasAntesG.length + ' frases distintas');
 if (process.argv[2]) fs.writeFileSync(process.argv[2], JSON.stringify(provas, null, 2) + '\n');

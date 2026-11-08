@@ -90,6 +90,13 @@ function bytesDoMotor(slug, lang, documentos = manifestoDosDocumentos) {
   );
 }
 
+/** A ED1 também guarda artefactos: prova-se a declaração atual sem os promover a registos do motor. */
+function bytesDoDocumentoAtual(slug, lang, documentos = manifestoDosDocumentos) {
+  return documentos.edicoes.some(e => e.slug === slug && e.lang === lang &&
+    (e.origin === 'researchhub' || (e.origin === undefined && typeof e.artifact_url === 'string')) &&
+    typeof e.sha256_normalized === 'string' && !e.file?.startsWith('_edicoes/'));
+}
+
 /** As unidades de um bloco, em ordem de documento. As duas formas são a mesma. */
 function unidadesDoBloco(bloco) {
   if (bloco.kind === 'heading' || bloco.kind === 'paragraph') return [bloco];
@@ -325,11 +332,12 @@ conferencias++;
 for (const e of edicoesGuardadas()) {
   const atual=manifestoDosDocumentos.edicoes.find(d=>d.slug===e.slug&&d.lang===e.lang);
   const historica = {...structuredClone(atual),file:e.file,sha256_normalized:e.sha256};
-  if(typeof historica.sha256_normalized!=='string'||historica.origin!=='researchhub')falhas.push('ED1: planta não chegou à cláusula do ficheiro');
+  if(typeof historica.sha256_normalized!=='string'||!(historica.origin==='researchhub'||(historica.origin===undefined&&typeof historica.artifact_url==='string')))falhas.push('ED1: planta não chegou à cláusula do ficheiro');
   const semFicheiro={...historica};delete semFicheiro.file;
-  if(!bytesDoMotor(e.slug,e.lang,{edicoes:[semFicheiro]}))falhas.push('ED1: controlo da cláusula do ficheiro falhou');
-  if (bytesDoMotor(e.slug,e.lang,{edicoes:[historica]})) falhas.push(`ED1: primeira edição entrou no texto atual: ${e.slug}/${e.lang}`);
-  if (!bytesDoMotor(e.slug,e.lang)) falhas.push(`ED1: documento atual saiu da prova: ${e.slug}/${e.lang}`);
+  if(!bytesDoDocumentoAtual(e.slug,e.lang,{edicoes:[semFicheiro]}))falhas.push('ED1: controlo da cláusula do ficheiro falhou');
+  if (bytesDoDocumentoAtual(e.slug,e.lang,{edicoes:[historica]})) falhas.push(`ED1: primeira edição entrou no texto atual: ${e.slug}/${e.lang}`);
+  if (!bytesDoDocumentoAtual(e.slug,e.lang)) falhas.push(`ED1: documento atual saiu da prova: ${e.slug}/${e.lang}`);
+  if (bytesDoDocumentoAtual(e.slug,e.lang,{edicoes:[{...atual,origin:'origem-inventada'}]})) falhas.push(`ED1: origem inventada aceite: ${e.slug}/${e.lang}`);
 }
 const EDICOES_DA_PROVA = 18;
 function falhaDaContagem(quantidade) {

@@ -1,0 +1,92 @@
+[
+ {
+  "id": "PRR-pt-1",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "REESCREVE",
+  "frase": "instantâneo de 29 de julho de 2026",
+  "nova": "instantâneo de 3 de agosto de 2026",
+  "razao": "os valores que o título imprime são os do instantâneo de 3 de agosto de 2026, que está guardado (o sha256 no registo das descargas); nenhum instantâneo de 29 de julho está nas cópias do motor nem no arquivo da Internet, e o motor regista a investigação a 28 de julho"
+ },
+ {
+  "id": "PRR-en-1",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "REESCREVE",
+  "frase": "snapshot of 29 July 2026",
+  "nova": "snapshot of 3 August 2026",
+  "razao": "os valores que o título imprime são os do instantâneo de 3 de agosto de 2026, que está guardado (o sha256 no registo das descargas); nenhum instantâneo de 29 de julho está nas cópias do motor nem no arquivo da Internet, e o motor regista a investigação a 28 de julho"
+ },
+ {
+  "id": "PRR-pt-2",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "SAI",
+  "frase": "O total pago do PRR foi atualizado para o instantâneo do próprio dia.",
+  "razao": "a frase diz que o total foi atualizado para um instantâneo do dia 29 de julho, que não se consegue confirmar; o valor fica com a data do instantâneo guardado"
+ },
+ {
+  "id": "PRR-en-2",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "SAI",
+  "frase": "The PRR paid total was updated to the same day's snapshot.",
+  "razao": "a frase diz que o total foi atualizado para um instantâneo do dia 29 de julho, que não se consegue confirmar; o valor fica com a data do instantâneo guardado"
+ },
+ {
+  "id": "PRR-F1",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "FICA",
+  "frase": "Corrected 29 July 2026The industry figure on this page was wrong, and is fixed.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V010): aviso de correção datado de um erro publicado; pertence ao registo público de correções, decisão do chamador se fica na página"
+ },
+ {
+  "id": "PRR-F2",
+  "estudo": "agua-nao-faturada",
+  "lingua": "en",
+  "paginas": [
+   "/en/studies/agua-nao-faturada/document"
+  ],
+  "classe": "FICA",
+  "frase": "The 239-year replacement cycle is an inference from rehabilitation volumes, not an asset survey.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V013): qualificação de um número como inferência, não fala do projeto"
+ },
+ {
+  "id": "PRR-F3",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O ciclo de 239 anos é uma inferência a partir dos volumes de reabilitação, não um levantamento de ativos.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V125): qualificação de um número como inferência"
+ },
+ {
+  "id": "PRR-F4",
+  "estudo": "agua-nao-faturada",
+  "lingua": "pt",
+  "paginas": [
+   "/estudos/agua-nao-faturada/documento"
+  ],
+  "classe": "FICA",
+  "frase": "O que corrigiu foi a leitura, na secção 04, da afirmação dos 40 M€: esta página confrontava originalmente essa afirmação com o total do C09 no Algarve e concluía que o valor da imprensa era conservador.",
+  "razao": "fica como na lista da COR-AGUA (V2B-V126): texto de correção de um erro publicado; pertence ao registo de correções, decisão do chamador"
+ }
+]

@@ -58,6 +58,9 @@
  * Uso: node tests/inicio/formato-dos-numeros.mjs [--prova] [--json <ficheiro>]   (OEDP_DIST mede outra construção)
  */
 import {parse} from 'node-html-parser';
+import assert from 'node:assert/strict';
+import {loadClaims} from '../../src/lib/ledger.mjs';
+const ANOS_DECLARADOS = new Map([...loadClaims()].filter(([,c]) => c.unit === 'ano' && /^\d{4}$/.test(String(c.value))).map(([id,c]) => [id,String(c.value)]));
 import {naRevisaoDaSemana} from '../../scripts/revisoes-da-semana.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -134,7 +137,7 @@ export function conferirFormatoDaPagina(html, rel) {
       if(pontoSemanal && numero.includes(',')) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
       else if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
       else if (!pontoSemanal && /\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
-      else if (!daCasa(forma)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
+      else if (marca === 'claim' && ANOS_DECLARADOS.has(chave) ? ANOS_DECLARADOS.get(chave) !== forma : !daCasa(forma)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }
     /* F4: o primeiro carácter visível depois do elemento, saltando a etiqueta do sufixo do `Claim` e as do fecho. */
     contas.simbolos++;
@@ -243,6 +246,13 @@ export const PLANTAS_DO_FORMATO = [
  *   esta; o relatório da passagem K2-c corre a mesma lista na versão anterior, para mostrar que ela não mordia)
  */
 export function plantasDoFormato(dist, conferir = conferirFormatoDaPagina) {
+  // Um ano declarado conserva quatro algarismos; um montante não ganha essa exceção.
+  const ano = [...ANOS_DECLARADOS][0];
+  assert(ano);
+  assert.equal(conferir(`<span data-claim="${ano[0]}">${ano[1]}</span>`, 'planta-ano').desvios.length, 0);
+  assert(conferir('<span data-claim="remuneracao-bruta-mensal-media">2019</span>', 'planta-milhares').desvios.some(d => d.regra === 'F1'));
+  assert(conferir(`<span data-claim="${ano[0]}">9876</span>`, 'planta-ano-trocado').desvios.some(d => d.regra === 'F1'));
+  assert(conferir(`<span data-claim="${ano[0]}">${ano[1][0]}\u00a0${ano[1].slice(1)}</span>`, 'planta-ano-agrupado').desvios.some(d => d.regra === 'F1'));
   const ler = (rel) => fs.readFileSync(path.join(dist, rel), 'utf8');
   return PLANTAS_DO_FORMATO.map((p) => {
     const limpo = conferir(ler(p.rel), p.rel).desvios;

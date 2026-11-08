@@ -1,5 +1,5 @@
 {
-  "l1_paginas": 3479,
-  "medicao": "design/especime-v3/medicoes/voz2a-adenda-f-2026-11-07/l1.json",
-  "razao": "VOZ-2A F: a MET1 D (330fd7500) já retirara a ligação repetida nas duas páginas do Método, corrigindo a base de 3468 para 3466. Acrescem exatamente as treze rotas de arquivo guardadas em 07.11.2026, listadas na medição: 3466 + 13 = 3479. A régua L1 e as suas exclusões não mudam."
+  "l1_paginas": 3518,
+  "medicao": "design/especime-v3/medicoes/coragua-2026-11-08/l1-c.json",
+  "razao": "COR-AGUA C: 3479 páginas anteriores, mais os 34 recibos das 17 linhas novas e cinco edições arquivadas, sem retiradas. As duas páginas de correções passam de 46 a 49 destinos repetidos e já pertenciam à conta. Régua e exclusões L1 iguais à cabeça d2c65af9d."
 }

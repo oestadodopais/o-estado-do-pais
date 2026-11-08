@@ -37,6 +37,8 @@ import re
 import shutil
 import subprocess
 import sys
+from urllib.parse import urlsplit
+from datetime import date
 
 
 def git(repo, *args):
@@ -256,6 +258,28 @@ def indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):
     return indice
 
 
+def corpo_arquivado(repo, cabeca, ident, sha):
+    """Só as rotas datadas do próprio sítio resolvem em edições arquivadas."""
+    import yaml
+    linha = yaml.safe_load(git(repo, 'show', f'{cabeca}:ledger/claims/{ident}.yml'))
+    url = urlsplit(str(linha.get('source_url') or ''))
+    if url.scheme != 'https' or url.netloc != 'xn--oestadodopas-2fb.pt' or url.query or url.fragment:
+        return None
+    m = re.fullmatch(r'/(estudos/([a-z0-9-]+)/documento|en/studies/([a-z0-9-]+)/document)/(\d{4}-\d{2}-\d{2})', url.path)
+    if not m:
+        return None
+    date.fromisoformat(m[4])
+    lingua, estudo = ('pt', m[2]) if m[2] else ('en', m[3])
+    caminho = f'studies-src/_edicoes/{estudo}.{lingua}.{m[4]}.html'
+    try:
+        corpo = git(repo, 'show', f'{cabeca}:{caminho}')
+    except subprocess.CalledProcessError as erro:
+        raise ValueError(f'O pacote recusa: edição arquivada ausente para {ident}.') from erro
+    if sha256_de(corpo) != sha:
+        raise ValueError(f'O pacote recusa: sha256 da edição arquivada diferente para {ident}.')
+    return caminho
+
+
 def levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos):
     """Decide, antes de criar a pasta, que corpos alojados o pacote leva e quais faltam; a falta sem razão recusa."""
     precisos = {sha for sha, *_ in linhas.values() if sha}
@@ -263,7 +287,10 @@ def levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos):
     indice = indice_dos_corpos(repo, cabeca, Path(motor[0]).resolve(), motor[2], estudos, precisos) if (motor and precisos) else {}
     registo, em_falta = [], []
     for ident, (sha, estudo, motivo) in sorted(linhas.items()):
-        if not sha:
+        arquivo = corpo_arquivado(repo, cabeca, ident, sha) if sha else None
+        if arquivo:
+            registo.append({'linha': ident, 'motivo': motivo, 'sha256': sha, 'caminho': arquivo, 'origem': 'edição arquivada na cabeça do sítio', 'repositorio': 'sitio', 'estado': 'copiado'})
+        elif not sha:
             registo.append({'linha': ident, 'motivo': motivo, 'sha256': None, 'caminho': None, 'origem': None, 'estado': 'sem documento alojado (linha derivada ou sem source_sha256)'})
         elif sha in indice:
             registo.append({'linha': ident, 'motivo': motivo, 'sha256': sha, 'caminho': indice[sha][0], 'origem': indice[sha][1], 'estado': 'copiado'})
@@ -279,13 +306,20 @@ def levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos):
     return registo, em_falta, sorted(e for e in estudos if e)
 
 
-def escrever_corpos(destino, motor, registo, em_falta, razao_sem_corpos, paginas, paginas_das_linhas, paginas_em_falta, versao_dist, estudos, estudos_extra):
+def escrever_corpos(destino, motor, registo, em_falta, razao_sem_corpos, paginas, paginas_das_linhas, paginas_em_falta, versao_dist, estudos, estudos_extra, repo=None, cabeca=None):
     """Copia os corpos decididos, confere cada cópia pelo sha256 da linha, junta o recibo do pedido e os direitos quando o motor os tem
     (e diz, linha a linha, quando não os tem: achado 6 da leitura), e escreve o manifesto."""
     pasta = destino / 'motor'
     anexos, n, avisos = [], 0, []
     for r in registo:
         if r['estado'] != 'copiado':
+            continue
+        if r.get('repositorio') == 'sitio':
+            if not copiar(repo, cabeca, r['caminho'], destino / 'sitio'):
+                raise ValueError(f'O pacote recusa: edição arquivada ausente para {r["linha"]}.')
+            if sha256_de((destino / 'sitio' / r['caminho']).read_bytes()) != r['sha256']:
+                raise ValueError(f'O pacote recusa: edição arquivada alterada para {r["linha"]}.')
+            n += 1
             continue
         if not copiar(motor[0], motor[2], r['caminho'], pasta):
             raise ValueError(f'O pacote recusa: o corpo alojado {r["caminho"]} desapareceu da cabeça do motor durante a montagem.')
@@ -317,7 +351,8 @@ def escrever_corpos(destino, motor, registo, em_falta, razao_sem_corpos, paginas
                      'e é Blocking na leitura. As páginas construídas das linhas entram de `dist/` quando lá estão; as que faltam estão listadas abaixo. '
                      'A coluna «porquê» diz se a linha entra por ter mudado no intervalo ou por o lugar de direção ter pedido a sua página construída ao pacote '
                      '(M83-b, 14.10.2026: a frase de uma página muda pelos dados da família sem a linha mudar).', '',
-                     '| linha | sha256 (12) | caminho no motor | resolvido por | estado | porquê |', '|---|---|---|---|---|---|']
+                     'As edições arquivadas vêm da cabeça do sítio para `sitio/<caminho>`, conferidas pelo mesmo sha256.', '',
+                     '| linha | sha256 (12) | caminho no repositório indicado pela origem | resolvido por | estado | porquê |', '|---|---|---|---|---|---|']
         linhas_md += [f'| `{r["linha"]}` | {(r["sha256"] or "")[:12]} | {("`" + r["caminho"] + "`") if r["caminho"] else ""} | {r["origem"] or ""} | {r["estado"]} | {r["motivo"]} |' for r in registo]
         if anexos:
             linhas_md += ['', 'Ao lado dos corpos: ' + ', '.join(f'`{a}`' for a in sorted(set(anexos))) + '.']
@@ -470,7 +505,7 @@ def principal():
             partes_motor.append(diferenca(motor[0], motor[1], motor[2], f))
             n_motor += copiar(motor[0], motor[2], f, pasta)
         (pasta / 'diff.patch').write_bytes(b''.join(partes_motor))
-    n_corpos = escrever_corpos(destino, motor, registo_corpos, em_falta, razao_sem_corpos, paginas, paginas_das_linhas, paginas_em_falta, versao_dist, estudos_declarados, estudos_extra)
+    n_corpos = escrever_corpos(destino, motor, registo_corpos, em_falta, razao_sem_corpos, paginas, paginas_das_linhas, paginas_em_falta, versao_dist, estudos_declarados, estudos_extra, repo, cabeca)
     for f in construidos:
         alvo = destino / 'built' / relativo(f)
         alvo.parent.mkdir(parents=True, exist_ok=True)

@@ -43,6 +43,12 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  "Edital, Empreendimento de Fins Múltiplos de Alqueva, Blocos de Rega do EFMA": "pt",
+  "Anuário dos Aproveitamentos Hidroagrícolas, Campanha de Rega 2024": "pt",
+  "O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave": "pt",
+  "Edição anterior do estudo agua-nao-faturada": "pt",
+  "Edição anterior do estudo onde-esta-a-agua": "pt",
+  "Relatório 4/2016, 2.ª Secção": "pt",
   "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027": "pt",
   "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se": "pt",
   "Guião de Votações: votações a efetuar em 28-10-2026, versão 2": "pt",
@@ -1010,6 +1016,9 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  "EDIA": "pt",
+  "DGADR": "pt",
+  "Gulbenkian": "pt",
   'DNOTICIAS.PT': 'pt',
   'PAN': 'pt',
   'Sindicato da Hotelaria do Sul': 'pt',
@@ -1138,6 +1147,9 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  "RASARP 2025, volume 1": "pt",
+  "março de 2020": "pt",
+  "Relatório 4/2016, 2.ª Secção": "pt",
   "2026-10-28": null,
   "2026-10-29": null,
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
@@ -1244,9 +1256,9 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* EV3-p D: a edição da contagem das correções passou a 06.11.2026.
+  /* COR-AGUA C: a edição da contagem das correções passou a 08.11.2026.
      É uma data sem língua; a edição anterior já não é usada pelas linhas. */
-  '06.11.2026': null,
+  '08.11.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */

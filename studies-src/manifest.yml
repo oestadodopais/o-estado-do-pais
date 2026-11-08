@@ -215,17 +215,17 @@ edicoes:
         sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
         file: _edicoes/agua-nao-faturada.pt.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 439fcab785602ea2908ac59b58ff3b89402dbd94e206356ffec6e8767bdae97e
+        sha256: 1a5ca7f2d0e5791614b42b41ae6908142db0eae5feef77c607b236ebc649822b
         file: agua-nao-faturada/pt.html
     title: Água Não Faturada — a água que Portugal perde e a que nunca mediu
     artifact_url: https://claude.ai/code/artifact/5cc977d1-a577-488e-8867-c027c3d7fa09
     raw_file: _raw/agua-nao-faturada.pt.html
     fetched_utc: '2026-08-12T13:55:05Z'
-    bytes_raw: 479713
+    bytes_raw: 479642
     bytes_runtime_removed: 17141
-    bytes_normalized: 462572
-    sha256_raw: 220da61e5d9664de60d94f3c843626cae8669a71d3eaa133cc144736f29cac35
-    sha256_normalized: 439fcab785602ea2908ac59b58ff3b89402dbd94e206356ffec6e8767bdae97e
+    bytes_normalized: 462501
+    sha256_raw: e6b080c9c4bf13c1e436bfaa093a13fa441ded67009f093ffc4b420ccb54da27
+    sha256_normalized: 1a5ca7f2d0e5791614b42b41ae6908142db0eae5feef77c607b236ebc649822b
     primeira_edicao:
       date: '2026-08-12'
       sha256: 1d4b6abcc1f9b8ab647c271bc5c8d145bc8d471b0603bf1bd6b1f381de25b44f
@@ -238,17 +238,17 @@ edicoes:
         sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278
         file: _edicoes/agua-nao-faturada.en.2026-08-12.html
       - data: '2026-11-08'
-        sha256: 31c5d1a6fb8ba0e63113cb84a5165d8ab52774c8ae4f7771a90ab186257659ee
+        sha256: 4c1b65ea2f8c4d82d47e86a4fa1894895dd901dd3d90573cafc630d1cd5fdb38
         file: agua-nao-faturada/en.html
     title: Água Não Faturada — Portugal's water, what leaks and what was never measured
     artifact_url: https://claude.ai/code/artifact/f19de77e-ce10-4cca-b040-07e345258227
     raw_file: _raw/agua-nao-faturada.en.html
     fetched_utc: '2026-08-12T13:55:12Z'
-    bytes_raw: 477379
+    bytes_raw: 477311
     bytes_runtime_removed: 17141
-    bytes_normalized: 460238
-    sha256_raw: 75e71ea86f1eae75608293276314f36483c1cc08534fcc7a0378e28b17d3a12b
-    sha256_normalized: 31c5d1a6fb8ba0e63113cb84a5165d8ab52774c8ae4f7771a90ab186257659ee
+    bytes_normalized: 460170
+    sha256_raw: 90834402a23bfba23669d892565741f0dc1f7b0bdd965d3d8c20bc58c90af7a0
+    sha256_normalized: 4c1b65ea2f8c4d82d47e86a4fa1894895dd901dd3d90573cafc630d1cd5fdb38
     primeira_edicao:
       date: '2026-08-12'
       sha256: 309836d5cccec54646481379aa96b611a1467206a021bb64aa2fdc2ba72c8278

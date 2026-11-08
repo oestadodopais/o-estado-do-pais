@@ -97,6 +97,10 @@ export const UNIDADES = {
   'alojamentos': 'dwellings',
   'vezes': 'times',
   'anos': 'years',
+  // COR-AGUA: singular de years, hectares (dicionário) e euros por unidade de volume.
+  'ano': 'year',
+  'hectares': 'hectares',
+  'euros por m³': 'euros per m³',
   'por mil habitantes': 'per thousand inhabitants',
   // V2-d: «razão» é «ratio»; o valor é uma divisão, não uma percentagem.
   'razão': 'ratio',

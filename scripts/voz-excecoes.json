@@ -409,7 +409,7 @@
   },
   {
     "rota": "/correcoes",
-    "frase": "Água Não Faturada: A eficiência da rega passou ao valor que a DGADR publica, 76 %fonte · DGADR, sem a média ponderada de 83linha · O Estado do País a 85 %linha · O Estado do País que era uma conta deste estudo, e os 71 %fonte · Gulbenkian de agricultores sem contador passaram a dizer que vêm de um inquérito da Gulbenkian feito em 2019fonte · Gulbenkian a quem rega explorações de 5fonte · Gulbenkian hectares ou mais, e não de 2021linha · O Estado do País.",
+    "frase": "Água Não Faturada: A eficiência da rega passou ao valor que a DGADR publica, 76 %fonte · DGADR, sem a média ponderada de 83linha · O Estado do País a 85 %linha · O Estado do País que era uma conta deste estudo; os 71 %fonte · Gulbenkian de agricultores sem contador passaram a dizer que vêm de um inquérito da Gulbenkian feito em 2019fonte · Gulbenkian a quem rega explorações de 5fonte · Gulbenkian hectares ou mais, e não de 2021linha · O Estado do País; e os valores do PRR passaram a ter a data do instantâneo de onde vêm, com os dados da edição inglesa iguais aos da portuguesa.",
     "classe": "natureza do registo",
     "razao": "COR-AGUA: correção textual autorizada, integral, com os números selados e conferidos por conferirTextoHtml. A expressão sobre a conta anterior descreve a mudança registada.",
     "correcao_textual": {
@@ -419,7 +419,7 @@
   },
   {
     "rota": "/en/corrections",
-    "frase": "Água Não Faturada: Irrigation efficiency moved to the figure DGADR publishes, 76%source · DGADR, without the 83row · O Estado do País to 85%row · O Estado do País weighted average that was this study's own calculation, and the 71%source · Gulbenkian of farmers without a meter now say they come from a Gulbenkian survey carried out in 2019source · Gulbenkian among those who irrigate holdings of 5source · Gulbenkian hectares or more, not from 2021row · O Estado do País.",
+    "frase": "Água Não Faturada: Irrigation efficiency moved to the figure DGADR publishes, 76 %source · DGADR, without the 83row · O Estado do País to 85 %row · O Estado do País weighted average that was this study's own calculation; the 71 %source · Gulbenkian of farmers without a meter now say they come from a Gulbenkian survey carried out in 2019source · Gulbenkian among those who irrigate holdings of 5source · Gulbenkian hectares or more, not from 2021row · O Estado do País; and the PRR values now carry the date of the snapshot they come from, with the English edition's data the same as the Portuguese edition's.",
     "classe": "natureza do registo",
     "razao": "COR-AGUA: correção textual autorizada, integral, com os números selados e conferidos por conferirTextoHtml. A expressão sobre a conta anterior descreve a mudança registada.",
     "correcao_textual": {
