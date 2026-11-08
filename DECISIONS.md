@@ -14883,3 +14883,35 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 - O primeiro envio das capturas falhou por este lugar ter lido mal a linha do identificador da pasta; o identificador ficou num registo local que o Git ignora.
 
 **O que fica aberto.** A VOZ-2B (a retoma com uma adenda: a régua alargada e os pares); a VOZ-3; a MET2; a AUD1; a HIG-6; a IT0 e o IT-ISP1; a ED4, a ND2, a LANG1, a EV4, o DO5.
+
+### 1.234 Domingo 08.11.2026, de manhã: o risco de erro no ar como a medida principal, as camadas de queijo suíço, o caminho curto das correções pequenas, e o correio diário dos temas
+
+**Afecta:** nenhum
+
+**Toca:** §1.232 (a visão da noite de 07.11 e o texto da Anthropic sobre a revisão de código), §1.233 (a VOZ-2A em dez passagens), a regra 3 (quem constrói não verifica), a regra 10 (o correio para fora é do financiador), §1.202 (o custo).
+
+**Data:** 08.11.2026, a partir das 05:01 UTC (a mensagem do financiador).
+
+**As palavras do financiador (o leitor), 08.11.2026, 05:01 UTC, em resumo e nas suas palavras essenciais:** se adotámos alguma das opções do texto da Anthropic e porquê; «we should keep building machinery as long as it improves anything on our website, either decreases the risk of errors, which is the most important. So we should aim for a moment where we have enough machinery and capabilities on models that reduces the risk of an error go live to zero»; depois disso, o custo e a rapidez; scripts, modelos ou uma mistura em camadas «like the theory of the Swiss cheese»; «every time we need to correct a phrase or a word or a number … it seems that we have to go through the same process for the whole thing again and again»; e um correio diário para ele, com a etiqueta «Estado do País daily content», com os temas achados, os escolhidos e a razão, e quanto da cobertura dos meios de referência vai para cada tema, para comparar com o que ele escolheria; o objetivo é o que mais pesa na vida das pessoas, com pensamento crítico.
+
+**As decisões deste lugar** (a desenvolver no mandato de cada bloco):
+1. *A medida principal passa a ser o risco residual de um erro chegar ao ar*, medido por camada (cada camada com plantas, e a taxa de captura de cada uma registada por bloco); o custo e a rapidez medem-se ao lado e só se cortam onde o risco não sobe.
+2. *As camadas, por ordem do risco que tiram:* (0) cada frase que este lugar prescreve passa pelos guiões antes de o construtor a ver (a régua da voz, os números, os pares das duas línguas, os quantificadores e as asserções); (1) os guiões das propriedades formais (os números no livro-razão, a paridade dos números pt/en, os pares, as datas, as ligações, as citações iguais à cópia alojada); (2) as frases sobre fontes com proveniência como os números: cada atribuição, causa ou afirmação sobre uma fonte aponta para o excerto que a sustenta; um guião confere que o excerto existe na cópia alojada, e um modelo de outra família julga se a frase diz o que o excerto diz (a AUD1 tornada permanente, em cada bloco e à noite sobre o que está no ar); (3) a leitura a frio por outra família, com plantas; (4) uma segunda família numa amostra; (5) a conferência no ar depois da aterragem; (6) o registo das correções.
+3. *O caminho curto das correções pequenas:* uma frase prescrita sem número nem citação aplica-se por guião, sem sessão do construtor; o build, as conferências e a leitura curta correm só sobre as páginas tocadas; a corrida inteira uma vez por bloco, no GitHub. E o teto de duas voltas por bloco: à terceira, este lugar pára e mede a classe inteira.
+4. *O correio diário* («Estado do País daily content», só para o financiador, a pedido dele): um bloco pequeno (DIA1) que acrescenta à vigilância os feeds públicos dos meios de referência, mede por guião a parte da cobertura de cada tema, e junta os temas que este lugar escolheria pelo peso na vida das pessoas, com a razão e o ângulo crítico, e os que deixa e porquê. A percentagem da cobertura mede-se, nunca se estima.
+
+### 1.235 Domingo 08.11.2026, de manhã: a política de inteligência artificial sem a porta para o repositório (a MET2)
+
+**Afecta:** metodo · politica
+
+**Texto:** metodo f8b353c598eb · politica c4f1f16457b1
+
+**Toca:** §1.233 (8: a MET2 na fila), a regra 9 (o repositório público), o bloco ME1 (15.10.2026: a página diz os papéis e a regra das famílias).
+
+**Data:** 08.11.2026, das 05:02 UTC ao commit deste texto.
+
+**As palavras do financiador (o leitor):** a 07.11.2026, às 21:13 UTC, «we can leave it public on github but never being able to have a it accessible from our page, don't you think»; a 08.11.2026, às 05:02 UTC, «when will be the fix to the page that goes to GitHub sorted, because it's still going to GitHub when we go to to do, and política de inteligência artificial».
+
+**A decisão.** A porta «Política de inteligência artificial» / «Artificial intelligence policy» sai do Método, nas duas línguas, e a constante com o endereço do documento interno sai de `src/data/politica-ia.mjs`. A política continua dita na própria página: quem lê as notícias, quem mede os números, quem escreve, quem constrói, quem lê a frio com estragos plantados, e que nenhuma pessoa revê cada mudança antes de se publicar (as secções «Do documento à página» e «Quando um número muda»). O repositório continua público e o documento interno continua nele, mas nenhuma página do leitor nem nenhum ficheiro que o sítio publica liga ao repositório, por uma régua com planta. Medido antes, no `dist/` de f87512ab1: só o Método, nas duas línguas, ligava ao repositório; os três ficheiros de licença das letras falam de outros repositórios e não são ligações.
+
+**A razão.** O documento interno é escrito para quem trabalha no projeto, não para o leitor; o que o leitor precisa de saber sobre a inteligência artificial já está na página. Esta porta foi a única ligação do Método para fora, e levava o leitor a um ficheiro de trabalho.

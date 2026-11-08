@@ -91,13 +91,6 @@ export const ANCORA_DA_POLITICA = '';
  */
 export const ID_DA_SECCAO_DA_POLITICA = 'politica-de-ia';
 
-/**
- * O documento público da política deste projeto, onde os sistemas de cada papel
- * e as suas trocas ficam escritos com a data. É a única ligação para fora do
- * Método, e a mesma nas duas edições (o documento é um só).
- */
-export const DOCUMENTO_DA_POLITICA =
-  'https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md';
 
 /**
  * A porta da política na língua de uma edição: a rota do Método, e `#` com a

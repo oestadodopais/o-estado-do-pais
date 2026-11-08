@@ -224,12 +224,10 @@ export const METODO = {
   },
   "ligacoes": {
     "pt": [
-      "A agenda",
-      "Política de inteligência artificial"
+      "A agenda"
     ],
     "en": [
-      "The agenda",
-      "Artificial intelligence policy"
+      "The agenda"
     ]
   }
 };
