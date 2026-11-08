@@ -75,6 +75,8 @@ registos=$(mktemp -d "${TMPDIR:-/tmp}/oedp-construtor.XXXXXX") || exit 9
 base="$registos/RELATORIO"
 OEDP_RELATORIO="$relatorio" OEDP_LANCADOR_BASE="$base" sh "$aqui/pre-voo.sh" "$sitio" "$motor" || exit 9
 [ -n "${OEDP_BLOCO:-}" ] || { echo '9 fila: falta OEDP_BLOCO=<bloco>' >&2; exit 9; }
+RESEARCHHUB_DIR="$motor"
+export RESEARCHHUB_DIR
 echo "registo do pré-mandato: $base.pre-mandato.log"
 python3 "$sitio/scripts/leituras/fila.py" --lancar "$OEDP_BLOCO" > "$base.pre-mandato.log" 2>&1
 codigo=$?
@@ -82,6 +84,10 @@ codigo=$?
 python3 "$sitio/scripts/leituras/pre-mandato.py" "$sitio" "$prompt" >> "$base.pre-mandato.log" 2>&1
 codigo=$?
 cat "$base.pre-mandato.log"
+[ "$codigo" -eq 0 ] || exit "$codigo"
+python3 "$aqui/retomas.py" "$sitio" "$base" construcao >> "$base.pre-mandato.log" 2>&1
+codigo=$?
+tail -n 1 "$base.pre-mandato.log"
 [ "$codigo" -eq 0 ] || exit "$codigo"
 RESEARCHHUB_DIR="$motor"
 RESEARCHHUB_LOCK_DIR="${RESEARCHHUB_LOCK_DIR:-$registos/trancas-motor}"

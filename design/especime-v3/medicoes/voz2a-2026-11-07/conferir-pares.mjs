@@ -3,15 +3,16 @@
 // (o mesmo lugar na ordem dos blocos, com uma folga de três). Um bloco mudado sem par é uma frase que uma edição diz e a outra não.
 // E nenhuma mudança fora da lista: cada bloco que muda contém a frase antiga de uma entrada da lista nessa língua (uma composição
 // que importa uma frase de outro estudo não muda o que a lista não manda mudar).
-// Executar da raiz, depois do build: node design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs [dist]
+// Executar da raiz, depois do build: node design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs <dist> <lista.json> <data da edição>
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
 const pasta = path.dirname(fileURLToPath(import.meta.url));
 const dist = process.argv[2] ?? 'dist';
-const EDICAO = '2026-11-08'; // a data das edições da VOZ-2A
-const lista = JSON.parse(fs.readFileSync(path.join(pasta, 'FRASES-VOZ-2A.json'), 'utf8'));
+const EDICAO = process.argv[4];
+if (!/^\d{4}-\d{2}-\d{2}$/.test(EDICAO ?? '') || !process.argv[3]) throw new Error('uso: conferir-pares.mjs <dist> <lista.json> <data da edição>');
+const lista = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
 const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
 const blocos = f => {
   const root = parse(fs.readFileSync(f, 'utf8'));

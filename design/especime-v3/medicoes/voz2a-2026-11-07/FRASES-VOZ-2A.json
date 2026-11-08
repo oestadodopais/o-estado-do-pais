@@ -183,7 +183,8 @@
   "classe": "REESCREVE",
   "frase": "Portal BASE refused all three requests of this reading, each time with the same firewall page, and no document read here lists contracts, contractors or values.",
   "razao": "facto: o Portal BASE recusou os pedidos; tira «desta leitura»",
-  "nova": "Portal BASE refused all three requests, each time with the same firewall page, and none of the documents read lists contracts, contractors or values."
+  "nova": "Portal BASE refused all three requests, each time with the same firewall page, and none of the documents read lists contracts, contractors or values.",
+  "assercao": "base-sem-contratos"
  },
  {
   "id": "V031",
@@ -207,7 +208,8 @@
   "classe": "REESCREVE",
   "frase": "The municipal documents read are forecasts; the execution accounts did not enter this reading​",
   "razao": "facto: os documentos municipais são previsões; tira «esta leitura»",
-  "nova": "The municipal documents read are forecasts; none of them is an execution account​"
+  "nova": "The municipal documents read are forecasts; none of them is an execution account​",
+  "assercao": "so-previsionais"
  },
  {
   "id": "V033",
@@ -305,7 +307,8 @@
   "classe": "REESCREVE",
   "frase": "The municipal documents read are forecasts; the execution accounts did not enter this reading",
   "razao": "como 32, sem o carácter invisível final",
-  "nova": "The municipal documents read are forecasts; none of them is an execution account"
+  "nova": "The municipal documents read are forecasts; none of them is an execution account",
+  "assercao": "so-previsionais"
  },
  {
   "id": "V041",
@@ -1055,7 +1058,8 @@
   "classe": "REESCREVE",
   "frase": "O Portal BASE recusou os três pedidos desta leitura, sempre com a mesma página de um dispositivo de segurança, e nenhum documento aqui lido lista contratos, adjudicatários ou valores.",
   "razao": "facto: o Portal BASE recusou os pedidos; tira «desta leitura»",
-  "nova": "O Portal BASE recusou os três pedidos, sempre com a mesma página de um dispositivo de segurança, e nenhum dos documentos lidos lista contratos, adjudicatários ou valores."
+  "nova": "O Portal BASE recusou os três pedidos, sempre com a mesma página de um dispositivo de segurança, e nenhum dos documentos lidos lista contratos, adjudicatários ou valores.",
+  "assercao": "base-sem-contratos"
  },
  {
   "id": "V153",
@@ -1426,7 +1430,8 @@
   "classe": "REESCREVE",
   "frase": "Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade).",
   "razao": "ficam os factos dos registos; tira a técnica de junção do projeto",
-  "nova": "Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência)."
+  "nova": "Os dois registos usam nomes diferentes, e nenhuma das fontes afirma que são a mesma entidade. Os próprios objetos dos contratos mostram que são o mesmo organismo (inferência).",
+  "assercao": "hospital-registos-sem-identidade-declarada"
  },
  {
   "id": "V183",
@@ -1496,7 +1501,8 @@
   "classe": "REESCREVE",
   "frase": "Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa, e deliberadamente não são impressos aqui.",
   "razao": "fica o facto; tira «deliberadamente não são impressos aqui» (e o travessão)",
-  "nova": "Não existe nenhum orçamento consolidado oficial da Évora 2027; circulam totais maiores na imprensa."
+  "nova": "Não existe nenhum orçamento consolidado oficial da Évora 2027; circulam totais maiores na imprensa.",
+  "assercao": "e2027-no-consolidated-budget"
  },
  {
   "id": "V189",
@@ -1931,7 +1937,8 @@
   "classe": "REESCREVE",
   "frase": "Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura​",
   "razao": "o par português da V032, com o carácter invisível final; adenda H",
-  "nova": "Os documentos do município que se leram são previsionais; nenhum deles é uma conta de execução​"
+  "nova": "Os documentos do município que se leram são previsionais; nenhum deles é uma conta de execução​",
+  "assercao": "so-previsionais"
  },
  {
   "id": "V311",
@@ -1944,7 +1951,8 @@
   "classe": "REESCREVE",
   "frase": "Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura",
   "razao": "o par português da V040, sem o carácter invisível final; adenda H",
-  "nova": "Os documentos do município que se leram são previsionais; nenhum deles é uma conta de execução"
+  "nova": "Os documentos do município que se leram são previsionais; nenhum deles é uma conta de execução",
+  "assercao": "so-previsionais"
  },
  {
   "id": "V312",

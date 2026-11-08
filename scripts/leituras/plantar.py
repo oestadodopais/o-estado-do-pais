@@ -26,6 +26,7 @@ def linhas_dos_hunks(diff: pathlib.Path, caminho: str):
 pacote, rel, pid, desc, old, new = sys.argv[1:7]
 raiz = pathlib.Path(pacote)
 p = raiz / rel
+tempos = p.stat()
 t = p.read_text(encoding='utf-8')
 assert t.count(old) == 1, f'{rel}: {t.count(old)} ocorrência(s) de {old!r}'
 if rel.startswith('motor/'):
@@ -50,6 +51,7 @@ t2 = t.replace(old, new)
 sha_depois = hashlib.sha256(t2.encode('utf-8')).hexdigest()
 depois = t2[max(0, i-160): i+len(new)+160]
 p.write_text(t2, encoding='utf-8')
+os.utime(p, ns=(tempos.st_atime_ns, tempos.st_mtime_ns))
 reg = pathlib.Path(pathlib.Path(pacote).with_suffix('').as_posix() + '.plantas.json')
 d = json.loads(reg.read_text(encoding='utf-8')) if reg.exists() else {"registado_em": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'), "copia": pacote, "plantas": []}
 d["plantas"].append({"id": pid, "ficheiro": rel, "descricao": desc, "alcance": estado_alcance, "sha256_antes": sha_antes, "sha256_depois": sha_depois, "contexto_antes": antes, "contexto_depois": depois})

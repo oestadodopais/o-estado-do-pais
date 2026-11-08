@@ -98,14 +98,22 @@ def main(argv):
             if modo not in modos or not exigencias <= modos[modo]:
                 raise ValueError('OEDP_ACRESCENTA não pode afrouxar o mandato')
             exigencias = modos[modo]
+        guioes = sitio / 'scripts/leituras'
+        codigos = []
+        cabecalho = re.split(r'^## ', texto, maxsplit=1, flags=re.M)[0]
+        for declaracao in re.findall(r'^Frases:[ \t]*(.*)$', cabecalho, re.M):
+            relativo = Path(declaracao.strip())
+            if not declaracao.strip() or relativo.is_absolute():
+                raise ValueError('Frases: tem de ser um caminho relativo à pasta do mandato')
+            lista = (mandato.parent / relativo).resolve()
+            codigos.append(subprocess.run(['node', str((guioes / 'conferir-frases.mjs').resolve()),
+                                           str(lista)], cwd=sitio).returncode)
         if not exigencias:
             print('pré-mandato: não acrescenta linhas nem frases ao leitor', flush=True)
-            return 0
+            return next((c if c > 0 else 128 - c for c in codigos if c), 0)
         irma = os.environ.get('OEDP_LINHA_IRMA', '').strip()
         if 'linhas' in exigencias and not irma:
             raise ValueError('falta OEDP_LINHA_IRMA para medir as listas antes do lançamento')
-        guioes = sitio / 'scripts/leituras'
-        codigos = []
         if 'linhas' in exigencias:
             codigos.append(subprocess.run(['sh', str(guioes / 'listas-de-uma-linha.sh'), str(sitio), irma,
                             os.environ.get('OEDP_TITULO_IRMA', ''), os.environ.get('OEDP_FICHEIRO_IRMA', '')]).returncode)
