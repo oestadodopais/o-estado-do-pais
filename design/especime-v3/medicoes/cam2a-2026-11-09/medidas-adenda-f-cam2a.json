@@ -1,0 +1,1194 @@
+{
+  "base": "d9a6489a9",
+  "implementacao": "c745e734568d62309e4236de89a22c4fd0275a20",
+  "construido_em": "2026-11-09T17:41:29.392Z",
+  "antes": {
+    "paginas": 872,
+    "frases": 2477,
+    "pt": 1313,
+    "en": 1164,
+    "registo": 22,
+    "por_registar": 2433,
+    "por_registar_por_lingua": {
+      "pt": 1291,
+      "en": 1142
+    },
+    "estudos": {
+      "/": {
+        "pt": 6,
+        "en": 6,
+        "registo": 0,
+        "por_registar": {
+          "pt": 6,
+          "en": 6
+        }
+      },
+      "/404": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/agenda": {
+        "pt": 7,
+        "en": 7,
+        "registo": 0,
+        "por_registar": {
+          "pt": 7,
+          "en": 7
+        }
+      },
+      "/areas": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/correcoes": {
+        "pt": 47,
+        "en": 47,
+        "registo": 0,
+        "por_registar": {
+          "pt": 47,
+          "en": 47
+        }
+      },
+      "/dossies/orcamento-2027": {
+        "pt": 74,
+        "en": 74,
+        "registo": 0,
+        "por_registar": {
+          "pt": 74,
+          "en": 74
+        }
+      },
+      "/dossies": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/educacao-e-saude": {
+        "pt": 5,
+        "en": 5,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 5
+        }
+      },
+      "/emprego": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/estado-e-economia": {
+        "pt": 4,
+        "en": 4,
+        "registo": 0,
+        "por_registar": {
+          "pt": 4,
+          "en": 4
+        }
+      },
+      "/estudos": {
+        "pt": 5,
+        "en": 5,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 5
+        }
+      },
+      "/explicacoes/dinheiro-do-estado-2026": {
+        "pt": 6,
+        "en": 6,
+        "registo": 0,
+        "por_registar": {
+          "pt": 6,
+          "en": 6
+        }
+      },
+      "/explicacoes/dinheiro-do-estado-2027": {
+        "pt": 5,
+        "en": 5,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 5
+        }
+      },
+      "/explicacoes/leitura-da-semana": {
+        "pt": 3,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 3,
+          "en": 3
+        }
+      },
+      "/explicacoes": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/habitacao": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/indice": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/lugares": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/metodo": {
+        "pt": 8,
+        "en": 8,
+        "registo": 0,
+        "por_registar": {
+          "pt": 8,
+          "en": 8
+        }
+      },
+      "/o-que-se-discute": {
+        "pt": 89,
+        "en": 89,
+        "registo": 22,
+        "por_registar": {
+          "pt": 67,
+          "en": 67
+        }
+      },
+      "/pobreza-e-desigualdade": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/precos": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/privacidade": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/regioes": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/salarios-pensoes-e-apoios": {
+        "pt": 3,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 3,
+          "en": 3
+        }
+      },
+      "/sobre": {
+        "pt": 3,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 3,
+          "en": 3
+        }
+      },
+      "/sugestoes/limite": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/sugestoes/nao-chegou": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/sugestoes/obrigado": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/sugestoes/vazia": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/sugestoes": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/temas": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "a-casa-em-portugal-e-na-europa": {
+        "pt": 92,
+        "en": 92,
+        "registo": 0,
+        "por_registar": {
+          "pt": 92,
+          "en": 92
+        }
+      },
+      "agua-nao-faturada": {
+        "pt": 41,
+        "en": 41,
+        "registo": 0,
+        "por_registar": {
+          "pt": 41,
+          "en": 41
+        }
+      },
+      "alentejo-algarve": {
+        "pt": 1,
+        "en": 39,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 39
+        }
+      },
+      "avaliacao-economica-regional-de-portugal-2026": {
+        "pt": 13,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 13,
+          "en": 1
+        }
+      },
+      "colecao-area": {
+        "pt": 10,
+        "en": 10,
+        "registo": 0,
+        "por_registar": {
+          "pt": 10,
+          "en": 10
+        }
+      },
+      "colecao-distrito": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "colecao-municipio": {
+        "pt": 11,
+        "en": 11,
+        "registo": 0,
+        "por_registar": {
+          "pt": 11,
+          "en": 11
+        }
+      },
+      "colecao-regiao": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "colecao-uniaoEuropeia": {
+        "pt": 22,
+        "en": 22,
+        "registo": 0,
+        "por_registar": {
+          "pt": 22,
+          "en": 22
+        }
+      },
+      "evolucao-de-portugal-desde-1981": {
+        "pt": 4,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 4,
+          "en": 1
+        }
+      },
+      "evora-2027-capital-europeia-da-cultura": {
+        "pt": 115,
+        "en": 115,
+        "registo": 0,
+        "por_registar": {
+          "pt": 115,
+          "en": 115
+        }
+      },
+      "evora-2027-prometido-painel-dinheiro": {
+        "pt": 111,
+        "en": 110,
+        "registo": 0,
+        "por_registar": {
+          "pt": 111,
+          "en": 110
+        }
+      },
+      "evora-contas-da-camara-2010-2025": {
+        "pt": 69,
+        "en": 70,
+        "registo": 0,
+        "por_registar": {
+          "pt": 69,
+          "en": 70
+        }
+      },
+      "evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+        "pt": 45,
+        "en": 45,
+        "registo": 0,
+        "por_registar": {
+          "pt": 45,
+          "en": 45
+        }
+      },
+      "evora-economia-investidores-portas-abertas-2026": {
+        "pt": 5,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 2
+        }
+      },
+      "evora-orcamentado-pago-devido-2025": {
+        "pt": 36,
+        "en": 36,
+        "registo": 0,
+        "por_registar": {
+          "pt": 36,
+          "en": 36
+        }
+      },
+      "evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+        "pt": 67,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 67,
+          "en": 3
+        }
+      },
+      "evora-prometido-pago-auditado-2026": {
+        "pt": 74,
+        "en": 74,
+        "registo": 0,
+        "por_registar": {
+          "pt": 74,
+          "en": 74
+        }
+      },
+      "evora-quem-governou-a-camara-2009-2025": {
+        "pt": 53,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 53,
+          "en": 1
+        }
+      },
+      "evora-quinze-anos-cinco-mandatos": {
+        "pt": 62,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 62,
+          "en": 2
+        }
+      },
+      "onde-esta-a-agua": {
+        "pt": 74,
+        "en": 81,
+        "registo": 0,
+        "por_registar": {
+          "pt": 74,
+          "en": 81
+        }
+      },
+      "orcamento-2027-o-que-muda-e-para-quem": {
+        "pt": 107,
+        "en": 107,
+        "registo": 0,
+        "por_registar": {
+          "pt": 107,
+          "en": 107
+        }
+      },
+      "penalizacoes-por-reforma-antecipada-2026": {
+        "pt": 10,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 10,
+          "en": 1
+        }
+      },
+      "which-door-is-yours": {
+        "pt": 1,
+        "en": 10,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 10
+        }
+      }
+    }
+  },
+  "depois": {
+    "paginas": 872,
+    "frases": 2471,
+    "pt": 1310,
+    "en": 1161,
+    "registo": 22,
+    "por_registar": 2427,
+    "por_registar_por_lingua": {
+      "pt": 1288,
+      "en": 1139
+    },
+    "estudos": {
+      "/": {
+        "pt": 6,
+        "en": 6,
+        "registo": 0,
+        "por_registar": {
+          "pt": 6,
+          "en": 6
+        }
+      },
+      "/404": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/agenda": {
+        "pt": 7,
+        "en": 7,
+        "registo": 0,
+        "por_registar": {
+          "pt": 7,
+          "en": 7
+        }
+      },
+      "/areas": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/correcoes": {
+        "pt": 47,
+        "en": 47,
+        "registo": 0,
+        "por_registar": {
+          "pt": 47,
+          "en": 47
+        }
+      },
+      "/dossies/orcamento-2027": {
+        "pt": 74,
+        "en": 74,
+        "registo": 0,
+        "por_registar": {
+          "pt": 74,
+          "en": 74
+        }
+      },
+      "/dossies": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/educacao-e-saude": {
+        "pt": 5,
+        "en": 5,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 5
+        }
+      },
+      "/emprego": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/estado-e-economia": {
+        "pt": 4,
+        "en": 4,
+        "registo": 0,
+        "por_registar": {
+          "pt": 4,
+          "en": 4
+        }
+      },
+      "/estudos": {
+        "pt": 5,
+        "en": 5,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 5
+        }
+      },
+      "/explicacoes/dinheiro-do-estado-2026": {
+        "pt": 6,
+        "en": 6,
+        "registo": 0,
+        "por_registar": {
+          "pt": 6,
+          "en": 6
+        }
+      },
+      "/explicacoes/dinheiro-do-estado-2027": {
+        "pt": 5,
+        "en": 5,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 5
+        }
+      },
+      "/explicacoes/leitura-da-semana": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/explicacoes": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/habitacao": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/indice": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/lugares": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/metodo": {
+        "pt": 7,
+        "en": 7,
+        "registo": 0,
+        "por_registar": {
+          "pt": 7,
+          "en": 7
+        }
+      },
+      "/o-que-se-discute": {
+        "pt": 89,
+        "en": 89,
+        "registo": 22,
+        "por_registar": {
+          "pt": 67,
+          "en": 67
+        }
+      },
+      "/pobreza-e-desigualdade": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/precos": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/privacidade": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/regioes": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/salarios-pensoes-e-apoios": {
+        "pt": 3,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 3,
+          "en": 3
+        }
+      },
+      "/sobre": {
+        "pt": 3,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 3,
+          "en": 3
+        }
+      },
+      "/sugestoes/limite": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/sugestoes/nao-chegou": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/sugestoes/obrigado": {
+        "pt": 2,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 2,
+          "en": 2
+        }
+      },
+      "/sugestoes/vazia": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/sugestoes": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "/temas": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "a-casa-em-portugal-e-na-europa": {
+        "pt": 92,
+        "en": 92,
+        "registo": 0,
+        "por_registar": {
+          "pt": 92,
+          "en": 92
+        }
+      },
+      "agua-nao-faturada": {
+        "pt": 41,
+        "en": 41,
+        "registo": 0,
+        "por_registar": {
+          "pt": 41,
+          "en": 41
+        }
+      },
+      "alentejo-algarve": {
+        "pt": 1,
+        "en": 39,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 39
+        }
+      },
+      "avaliacao-economica-regional-de-portugal-2026": {
+        "pt": 13,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 13,
+          "en": 1
+        }
+      },
+      "colecao-area": {
+        "pt": 10,
+        "en": 10,
+        "registo": 0,
+        "por_registar": {
+          "pt": 10,
+          "en": 10
+        }
+      },
+      "colecao-distrito": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "colecao-municipio": {
+        "pt": 11,
+        "en": 11,
+        "registo": 0,
+        "por_registar": {
+          "pt": 11,
+          "en": 11
+        }
+      },
+      "colecao-regiao": {
+        "pt": 1,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 1
+        }
+      },
+      "colecao-uniaoEuropeia": {
+        "pt": 22,
+        "en": 22,
+        "registo": 0,
+        "por_registar": {
+          "pt": 22,
+          "en": 22
+        }
+      },
+      "evolucao-de-portugal-desde-1981": {
+        "pt": 4,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 4,
+          "en": 1
+        }
+      },
+      "evora-2027-capital-europeia-da-cultura": {
+        "pt": 115,
+        "en": 115,
+        "registo": 0,
+        "por_registar": {
+          "pt": 115,
+          "en": 115
+        }
+      },
+      "evora-2027-prometido-painel-dinheiro": {
+        "pt": 111,
+        "en": 110,
+        "registo": 0,
+        "por_registar": {
+          "pt": 111,
+          "en": 110
+        }
+      },
+      "evora-contas-da-camara-2010-2025": {
+        "pt": 69,
+        "en": 70,
+        "registo": 0,
+        "por_registar": {
+          "pt": 69,
+          "en": 70
+        }
+      },
+      "evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+        "pt": 45,
+        "en": 45,
+        "registo": 0,
+        "por_registar": {
+          "pt": 45,
+          "en": 45
+        }
+      },
+      "evora-economia-investidores-portas-abertas-2026": {
+        "pt": 5,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 5,
+          "en": 2
+        }
+      },
+      "evora-orcamentado-pago-devido-2025": {
+        "pt": 36,
+        "en": 36,
+        "registo": 0,
+        "por_registar": {
+          "pt": 36,
+          "en": 36
+        }
+      },
+      "evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+        "pt": 67,
+        "en": 3,
+        "registo": 0,
+        "por_registar": {
+          "pt": 67,
+          "en": 3
+        }
+      },
+      "evora-prometido-pago-auditado-2026": {
+        "pt": 74,
+        "en": 74,
+        "registo": 0,
+        "por_registar": {
+          "pt": 74,
+          "en": 74
+        }
+      },
+      "evora-quem-governou-a-camara-2009-2025": {
+        "pt": 53,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 53,
+          "en": 1
+        }
+      },
+      "evora-quinze-anos-cinco-mandatos": {
+        "pt": 62,
+        "en": 2,
+        "registo": 0,
+        "por_registar": {
+          "pt": 62,
+          "en": 2
+        }
+      },
+      "onde-esta-a-agua": {
+        "pt": 74,
+        "en": 81,
+        "registo": 0,
+        "por_registar": {
+          "pt": 74,
+          "en": 81
+        }
+      },
+      "orcamento-2027-o-que-muda-e-para-quem": {
+        "pt": 107,
+        "en": 107,
+        "registo": 0,
+        "por_registar": {
+          "pt": 107,
+          "en": 107
+        }
+      },
+      "penalizacoes-por-reforma-antecipada-2026": {
+        "pt": 10,
+        "en": 1,
+        "registo": 0,
+        "por_registar": {
+          "pt": 10,
+          "en": 1
+        }
+      },
+      "which-door-is-yours": {
+        "pt": 1,
+        "en": 10,
+        "registo": 0,
+        "por_registar": {
+          "pt": 1,
+          "en": 10
+        }
+      }
+    }
+  },
+  "teto_por_registar": 4000,
+  "total_modelos": 4,
+  "chaves_retiradas": 6,
+  "corridas_conferencias": 12,
+  "modelos_excluidos": {
+    "pt": 4,
+    "en": 4,
+    "por_modelo": {
+      "revisao-en": 3,
+      "painel-en": 1,
+      "revisao-pt": 3,
+      "painel-pt": 1
+    }
+  },
+  "simulacao": {
+    "simulacao": true,
+    "indicador_nao_revisto": "abandono-escolar-precoce-2024",
+    "antes": {
+      "pt": 4,
+      "en": 4,
+      "por_modelo": {
+        "revisao-en": 3,
+        "painel-en": 1,
+        "revisao-pt": 3,
+        "painel-pt": 1
+      }
+    },
+    "depois": {
+      "pt": 4,
+      "en": 4,
+      "por_modelo": {
+        "revisao-en": 3,
+        "painel-en": 1,
+        "revisao-pt": 3,
+        "painel-pt": 1
+      }
+    },
+    "linhas_mudadas": 8,
+    "exemplos": {
+      "revisao-en": "Early school leaving, 2024: published 23.4 %; the source now writes 23.4, in the re-reading of 16.11.2026.",
+      "painel-en": "The panel numbers are read again at the source, most recently on 16.11.2026; when the source changes a value, the number changes and the register shows what was there before.",
+      "revisao-pt": "Abandono escolar precoce, 2024: publicado 23,4 %; a fonte escreve agora 23,4, na releitura de 16.11.2026.",
+      "painel-pt": "Os números do painel são relidos na fonte, a última vez a 16.11.2026; quando a fonte muda um valor, o número muda e o registo diz o que estava antes."
+    },
+    "recusas": 0
+  },
+  "semente_identica_byte_a_byte": true,
+  "todas_por_julgar": true,
+  "conferencias": [
+    {
+      "nome": "build",
+      "comando": "npm run build",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 786.94,
+      "corpos": [
+        "M83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+      ]
+    },
+    {
+      "nome": "ledger-com-motor",
+      "comando": "npm run ledger:check",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 34.19,
+      "corpos": [
+        "M83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+      ]
+    },
+    {
+      "nome": "ledger-sem-motor",
+      "comando": "npm run ledger:check",
+      "motor": false,
+      "codigo": 0,
+      "segundos": 10.34,
+      "corpos": [
+        "M83: não leu os corpos: RESEARCHHUB_DIR ausente; 0/795 linhas; limpa=false; recusas=0"
+      ]
+    },
+    {
+      "nome": "pre-mandato",
+      "comando": "npm run check:pre-mandato",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 38.41,
+      "corpos": []
+    },
+    {
+      "nome": "typecheck",
+      "comando": "npm run typecheck",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 0.49,
+      "corpos": []
+    },
+    {
+      "nome": "mortos",
+      "comando": "npm run check:mortos",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 1.95,
+      "corpos": []
+    },
+    {
+      "nome": "frases-com-motor",
+      "comando": "npm run check:frases-afirmacao",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 89.73,
+      "corpos": [
+        "excertos: corpos lidos; limpa=true; linhas lidas=21"
+      ]
+    },
+    {
+      "nome": "frases-sem-motor",
+      "comando": "npm run check:frases-afirmacao",
+      "motor": false,
+      "codigo": 0,
+      "segundos": 77.55,
+      "corpos": [
+        "excertos: não leu os corpos: RESEARCHHUB_DIR ausente; limpa=false; linhas lidas=0"
+      ]
+    }
+  ],
+  "corridas_anteriores": [
+    {
+      "comando": "node tests/leituras/frases-afirmacao.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "npm run check:mortos",
+      "codigo": 0
+    },
+    {
+      "comando": "npm run check:frases-afirmacao",
+      "codigo": 0
+    },
+    {
+      "comando": "node scripts/simular-painel-frases.mjs dist <medidas.json>",
+      "codigo": 0
+    }
+  ],
+  "pinos": {
+    "frases-modelos.json": "3b61939dee8c95d57015bf3cbdeb8a6545c67993ddc71d51020151c508ab7c09",
+    "frases-modelos-pino.json": "d314b22647ea44674992fff10d13cce7fe22b07b928535f09715c4d9fd9253a2",
+    "frases-semente-pino.json": "de18e11633a3ea47b76c5908aaf9d8b1049edfad65b7a43e4c8037f9fe09cd5f"
+  },
+  "custo_ate_relatorio": {
+    "chamadas": 29,
+    "operacoes_internas": 46,
+    "corridas_conferencias": 12,
+    "geracoes_e_medicoes_cli": 2
+  }
+}
