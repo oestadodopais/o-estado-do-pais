@@ -1,0 +1,81 @@
+{
+ "bloco": "CAM2-A (a camada 2, primeira passagem: o detetor das frases com afirmação, o registo no livro-razão, a cobertura por régua com a lista que só encolhe, a M83 no ledger:check)",
+ "data": "2026-11-09",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem (parou pelo teto de 1 500 deste lugar)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T07:47:56Z",
+   "fim": "2026-11-09T08:02:39Z",
+   "saida": 0,
+   "pontos": 0.0,
+   "pontos_antes": 86.0,
+   "pontos_depois": 86.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-1.log"
+  },
+  {
+   "nome": "adenda A (o teto, o âmbito, as marcas com plantas; parou pela regra das páginas deste lugar)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T10:13:36Z",
+   "fim": "2026-11-09T10:42:24Z",
+   "saida": 0,
+   "pontos": 2.0,
+   "pontos_antes": 86.0,
+   "pontos_depois": 88.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-a.log"
+  },
+  {
+   "nome": "adenda B (o número do Método, a base do mesmo dia, o fecho)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T11:01:40Z",
+   "fim": "2026-11-09T11:20:28Z",
+   "saida": 0,
+   "pontos": 2.0,
+   "pontos_antes": 88.0,
+   "pontos_depois": 90.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-b.log"
+  },
+  {
+   "nome": "adenda C (as marcas presas, as portuguesas, o âmbito inteiro, o corte, a entrada de uma frase nova)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T12:22:17Z",
+   "fim": "2026-11-09T13:00:50Z",
+   "saida": 0,
+   "pontos": 2.0,
+   "pontos_antes": 91.0,
+   "pontos_depois": 93.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-c.log"
+  },
+  {
+   "nome": "adenda D (todas as entradas por julgar, a cobertura pelo par)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T13:13:55Z",
+   "fim": "2026-11-09T13:39:18Z",
+   "saida": 0,
+   "pontos": 1.0,
+   "pontos_antes": 94.0,
+   "pontos_depois": 95.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-d.log"
+  }
+ ],
+ "total_pontos_codex": 7.0,
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros: uma passagem abaixo de um ponto lê-se como zero, e o contador subiu um ponto entre passagens sem construtor a correr. As leituras (Claude) e as corridas por guião não entram nos pontos do Codex."
+}

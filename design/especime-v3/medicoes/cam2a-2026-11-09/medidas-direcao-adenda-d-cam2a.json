@@ -1,0 +1,22 @@
+{
+ "pares-em-falta": {
+  "valor": "260",
+  "comando": "a leitura curta da adenda C da CAM2-A (LEITURA-cam2a-2026-11-09.md), medida pelo leitor na worktree da cabeça 155fd74a5: achado 10, pares.en_para_pt"
+ },
+ "pendentes-pt": {
+  "valor": "1033",
+  "comando": "a leitura curta da adenda C da CAM2-A (LEITURA-cam2a-2026-11-09.md), medida pelo leitor na worktree da cabeça 155fd74a5: achado 9, as entradas portuguesas de ledger/frases/por-registar.json"
+ },
+ "pendentes-en": {
+  "valor": "1085",
+  "comando": "a leitura curta da adenda C da CAM2-A (LEITURA-cam2a-2026-11-09.md), medida pelo leitor na worktree da cabeça 155fd74a5: achado 9, as entradas inglesas"
+ },
+ "teto": {
+  "valor": "4 000",
+  "comando": "a adenda C da CAM2-A, §1, ponto 3"
+ },
+ "plantas": {
+  "valor": "178",
+  "comando": "a leitura curta da adenda C da CAM2-A (LEITURA-cam2a-2026-11-09.md), medida pelo leitor na worktree da cabeça 155fd74a5: achado 9, tests/leituras/frases-marcas-plantas.json (31 + 25 + 42 + 80)"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "verbos": {
+  "valor": "120",
+  "comando": "a leitura a frio da CAM2-A (LEITURA-cam2a-2026-11-09.md, achados 7, 8 e 9), medida pelo leitor com os módulos do bloco no dist/ de f1b98c701: as frases portuguesas com diz, refere, indica, conclui, estima ou alerta"
+ },
+ "concelhos": {
+  "valor": "308",
+  "comando": "a leitura a frio da CAM2-A (LEITURA-cam2a-2026-11-09.md, achados 7, 8 e 9), medida pelo leitor com os módulos do bloco no dist/ de f1b98c701: as páginas dos concelhos por edição e o rodapé repetido"
+ },
+ "concelhos-pt": {
+  "valor": "619",
+  "comando": "a leitura a frio da CAM2-A (LEITURA-cam2a-2026-11-09.md, achados 7, 8 e 9), medida pelo leitor com os módulos do bloco no dist/ de f1b98c701: unidades portuguesas"
+ },
+ "concelhos-en": {
+  "valor": "931",
+  "comando": "a leitura a frio da CAM2-A (LEITURA-cam2a-2026-11-09.md, achados 7, 8 e 9), medida pelo leitor com os módulos do bloco no dist/ de f1b98c701: unidades inglesas"
+ },
+ "corte": {
+  "valor": "115",
+  "comando": "a leitura a frio da CAM2-A (LEITURA-cam2a-2026-11-09.md, achados 7, 8 e 9), medida pelo leitor com os módulos do bloco no dist/ de f1b98c701: unidades com a forma .» Maiúscula"
+ }
+}

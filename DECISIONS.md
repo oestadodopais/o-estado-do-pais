@@ -14915,3 +14915,32 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 **A decisão.** A porta «Política de inteligência artificial» / «Artificial intelligence policy» sai do Método, nas duas línguas, e a constante com o endereço do documento interno sai de `src/data/politica-ia.mjs`. A política continua dita na própria página: quem lê as notícias, quem mede os números, quem escreve, quem constrói, quem lê a frio com estragos plantados, e que nenhuma pessoa revê cada mudança antes de se publicar (as secções «Do documento à página» e «Quando um número muda»). O repositório continua público e o documento interno continua nele, mas nenhuma página do leitor nem nenhum ficheiro que o sítio publica liga ao repositório, por uma régua com planta. Medido antes, no `dist/` de f87512ab1: só o Método, nas duas línguas, ligava ao repositório; os três ficheiros de licença das letras falam de outros repositórios e não são ligações.
 
 **A razão.** O documento interno é escrito para quem trabalha no projeto, não para o leitor; o que o leitor precisa de saber sobre a inteligência artificial já está na página. Esta porta foi a única ligação do Método para fora, e levava o leitor a um ficheiro de trabalho.
+
+### 1.236 Segunda-feira 09.11.2026: a camada 2 em três passagens e a primeira a aterrar (a CAM2-A), o uso inteiro do Codex, e o correio diário só com os meios que não reservam o uso por IA
+
+**Afecta:** nenhum
+
+**Toca:** §1.234 (2 e 4: a camada 2 e o correio diário), §1.232 (o teto dos pontos caiu), a regra 3 (quem constrói não verifica), a regra 10 (o correio para fora e a exposição legal são do financiador), a regra 15 (a classe no sítio inteiro).
+
+**Data:** 09.11.2026, das 07:16 UTC ao commit deste texto.
+
+**As palavras do financiador (o leitor):** às 07:32 UTC, «codex is at 14%, is that enough, we can use all the usage and i can reset it when is close to 0%»; às 07:35, «we recived a couple of free resets for codex, that will hava an expire date of nov 30 and dec 1» e «it doesn't happen all the time but once in a while we get these»; às 08:24, «should we add a couple off new outlets […] i was thinking Jornal Publico, maybe jornal Expresso and the public tv channnel RTP»; às 10:19, «yes to both, go ahead» (guardar os campos dos feeds numa pasta privada desta máquina, nunca publicados; criar a etiqueta no Gmail dele); às 13:03, «yes, i can apply the reset when it gets near zero, no problem».
+
+**As decisões.**
+
+1. A CAM2 parte-se em três passagens, cada uma com a sua leitura e a sua aterragem: a CAM2-A (o detetor das frases com afirmação, o registo no livro-razão, a cobertura por régua com a lista que só encolhe, a M83 no `ledger:check`), a CAM2-B (o juiz de outra família, com plantas, também sobre as frases de um mandato antes do construtor) e a CAM2-C (a régua dos instantâneos datados).
+2. Todas as entradas do registo das frases ficam por julgar até ao juiz da CAM2-B. A citação presa ao excerto prova as palavras citadas, não o resto da frase (a leitura curta da adenda C, achado 8: uma entrada sobre o número do ministro estava selada por uma linha da UTAO que não fala do ministro).
+3. Uma frase entra na cobertura também pelo seu par na outra língua. 260 frases portuguesas cujo par inglês é detetado estavam fora do registo e da lista.
+4. O Codex usa-se inteiro. O financiador aplica a reposição perto do zero, e este lugar pede-a antes de um lançamento com menos de cinco pontos. As reposições são ocasionais: o regime permanente (a varredura noturna, o juiz por bloco) dimensiona-se sem elas.
+5. A DIA1 lê só os meios cujo `robots.txt` se lê e que não reservam o uso por IA. Um meio fica fora quando o `robots.txt` do feed ou do editor é ilegível, bloqueia os agentes da Anthropic (cujo modelo lê os títulos), traz a reserva geral (`Google-Extended` ou `CCBot`) ou bloqueia tudo. Entram a RTP, o Observador e a CNN Portugal. Ficam fora o Público (regras ilegíveis), o Expresso (recusa o agente) e o Correio da Manhã (a reserva geral). Um pedido de autorização ao Público ou à Impresa seria correio para fora, do financiador.
+6. A guarda dos números na escolha do correio é lexical, com uma nova tentativa e a recusa por unidade, e mediu-se com os modelos reais sobre os títulos reais antes do primeiro correio.
+
+**O que este lugar errou** (as linhas na `GARGALOS.md`):
+- o teto de 1 500 frases sem as contar nas duas línguas;
+- a regra «nenhuma página muda» sem medir que o Método conta as conferências, e com uma base construída noutro dia;
+- a leitura do `robots.txt` do Observador, que juntava os agentes de dois grupos: dita ao financiador como um bloqueio da Anthropic, e corrigida no mesmo dia;
+- o §1.1 contraditório da adenda D da DIA1;
+- a guarda da escolha desenhada como lista negra, sem a medir antes sobre prosa real (quatro passagens);
+- a vez fechada às 08:30 UTC sem relançar, depois de o dizer: nada correu até às 10:13 UTC.
+
+**Custo:** a CAM2-A, 7 pontos do Codex em cinco passagens (`custo-cam2a-2026-11-09.json`); a DIA1, no seu fecho.

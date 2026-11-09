@@ -1,0 +1,30 @@
+{
+ "por-registar": {
+  "valor": "1 522",
+  "comando": "o relatório da passagem interrompida (design/especime-v3/medicoes/cam2a-2026-11-09/RELATORIO-CAM2-A-interrompida.md, em ddf8b8edf), a tabela «Medidas do ensaio»: «Por registar no ensaio»"
+ },
+ "teto": {
+  "valor": "1 500",
+  "comando": "o §2 do mandato MANDATO-CAM2-A.md"
+ },
+ "pt": {
+  "valor": "641",
+  "comando": "o relatório da passagem interrompida (design/especime-v3/medicoes/cam2a-2026-11-09/RELATORIO-CAM2-A-interrompida.md, em ddf8b8edf), a tabela «Medidas do ensaio»: «Frases portuguesas, uma vez por estudo ou página»"
+ },
+ "en-depois": {
+  "valor": "881",
+  "comando": "o relatório da passagem interrompida (design/especime-v3/medicoes/cam2a-2026-11-09/RELATORIO-CAM2-A-interrompida.md, em ddf8b8edf), a tabela «Medidas do ensaio»: «Frases inglesas depois de afinar as marcas»"
+ },
+ "en-antes": {
+  "valor": "471",
+  "comando": "o relatório da passagem interrompida (design/especime-v3/medicoes/cam2a-2026-11-09/RELATORIO-CAM2-A-interrompida.md, em ddf8b8edf), a tabela «Medidas do ensaio»: «Frases inglesas antes de afinar as marcas»"
+ },
+ "afirmacao": {
+  "valor": "92",
+  "comando": "python3 medir-semente.py <raiz do sítio> <dist de f362f5ccd>: «linhas afirmacao»"
+ },
+ "paginas-fora": {
+  "valor": "12",
+  "comando": "python3 medir-semente.py <raiz do sítio> <dist de f362f5ccd>: «páginas fora do livro-razão»"
+ }
+}
