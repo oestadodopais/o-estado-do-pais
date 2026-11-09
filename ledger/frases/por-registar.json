@@ -1636,28 +1636,8 @@
   },
   {
     "estudo": "/explicacoes/leitura-da-semana",
-    "lingua": "en",
-    "sha256": "816c1108a3cd01cf1a51701d4a001bc84872e8b129037c0992c3edd47a095260"
-  },
-  {
-    "estudo": "/explicacoes/leitura-da-semana",
-    "lingua": "en",
-    "sha256": "ec74702db3e3b2e74e142b0ede0fd520b70595f18438cc8d73baab0ece4f3fce"
-  },
-  {
-    "estudo": "/explicacoes/leitura-da-semana",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
-  },
-  {
-    "estudo": "/explicacoes/leitura-da-semana",
-    "lingua": "pt",
-    "sha256": "3d7f4361c35ae5529a303b89b274876a402b56fedf611bf2d53e2efa305b499b"
-  },
-  {
-    "estudo": "/explicacoes/leitura-da-semana",
-    "lingua": "pt",
-    "sha256": "a81e5693ebff2202e121055e282a82a06a670784b3437968340d1504ca1fed54"
   },
   {
     "estudo": "/explicacoes",
@@ -1732,11 +1712,6 @@
   {
     "estudo": "/metodo",
     "lingua": "en",
-    "sha256": "6c957e7c1a4eeb3a9875b975567f3b3dd3fa5b993efc039ae33766efd133b8dc"
-  },
-  {
-    "estudo": "/metodo",
-    "lingua": "en",
     "sha256": "8221e2fa24ca732972e50026daf275e5a495c1738a235f13e3579ff8fc07ff20"
   },
   {
@@ -1793,11 +1768,6 @@
     "estudo": "/metodo",
     "lingua": "pt",
     "sha256": "b5804afeef21310cf5dc1e640c7fdbc447b4287cbf6ac01de5adbffab0800bf3"
-  },
-  {
-    "estudo": "/metodo",
-    "lingua": "pt",
-    "sha256": "b970c49234251f944264fce43aa22b29f28a192b13094eee6a00f8236747feb5"
   },
   {
     "estudo": "/o-que-se-discute",

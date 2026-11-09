@@ -4,7 +4,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 const sha=t=>createHash('sha256').update(t).digest('hex');
 const canon=f=>JSON.stringify(['id','estudo','tipos','pt','en','linhas','razao'].map(k=>f[k]??null));
-const PINO_SEMENTE='bab837f4bd4fb2653f1f680bff119ddc1c2aeae2b7bb082ebbb75e6ee6db4fca';
+const PINO_SEMENTE='de18e11633a3ea47b76c5908aaf9d8b1049edfad65b7a43e4c8037f9fe09cd5f';
 export function conferirSemente(f, sementes=null) {
   let hashes;
   if(sementes)hashes=sementes.map(e=>sha(canon(e)));

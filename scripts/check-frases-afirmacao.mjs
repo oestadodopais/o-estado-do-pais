@@ -6,11 +6,12 @@ import {pathToFileURL} from 'node:url';
 import {loadClaims} from '../src/lib/ledger.mjs';
 import {normal, normalDaChave, sha256, chave, lerPaginas, inventario, marcaLeitura, parDaFrase, tiposDaFrase} from './frases-com-afirmacao.mjs';
 import {conferirPino} from './frases-pino.mjs';
+import {conferirModelos, conferirPinoModelos} from './frases-modelos.mjs';
 import {conferirOrigem, conferirSemente} from './frases-origem.mjs';
 import {conferirCorpos} from './corpos-ledger.mjs';
 const LISTA = 'ledger/frases/por-registar.json';
-const BASE = 'd21c48f0b';
-export const SEMENTE_SHA256 = 'a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd';
+const BASE = 'd9a6489a9';
+export const SEMENTE_SHA256 = 'b83b0a1e558ed6fa2f10cd91bbcaa3c8945932d1d5ac78dd58c58eaba5ff80e4';
 export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
 export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
 export function lerRegisto(pasta = 'ledger/frases') {
@@ -77,6 +78,9 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
       if (typeof f[lingua] !== 'string' || !f[lingua].trim()) {erros.push(`${id}: falta ${lingua}`); continue;}
       const k = chave({estudo:f.estudo, lingua, frase:f[lingua]});
       if (!impressas.has(k)) erros.push(`${id}: ${lingua} ausente da edição`);
+      for (const p of paginas.filter(p => p.estudo === f.estudo && p.lingua === lingua)) for (const b of p.blocos) for (const frase of b.frases) {
+        if (chave({estudo:p.estudo, lingua, frase}) === k && JSON.stringify(citacoes(frase, lingua)) !== JSON.stringify(citacoes(f[lingua], lingua))) erros.push(`${id}: ${lingua} citação impressa diferente do registo em ${p.rota}`);
+      }
       if (textos.has(k)) erros.push(`${id}: frase repetida no registo`);
       textos.add(k);
     }
@@ -130,13 +134,13 @@ export function conferir(dist = 'dist') {
   const r = conferirRegisto(registo, paginas, loadClaims());
   const corpos = conferirCorpos(r.linhas, true);
   return {frases:frases.length, registo:registo.length, pendentes:pendentes.length, corpos,
-    erros:[...r.erros, ...conferirCobertura(frases, r.textos, pendentes), ...conferirHistorico(pendentes), ...conferirPino(), ...corpos.erros]};
+    erros:[...r.erros, ...conferirCobertura(frases, r.textos, pendentes), ...conferirHistorico(pendentes), ...conferirPino(), ...conferirPinoModelos(), ...conferirModelos(), ...corpos.erros]};
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {
     if (process.argv.includes('--so-lista')) {
       const indice = process.argv.includes('--indice');
-      const erros = [...conferirHistorico(lerLista({indice})), ...conferirPino({indice})];
+      const erros = [...conferirHistorico(lerLista({indice})), ...conferirPino({indice}), ...conferirPinoModelos({indice}), ...conferirModelos()];
       for (const e of erros) console.error(e);
       console.log(`por registar: histórico e ${indice ? 'índice preparado' : 'árvore de trabalho'}; recusas=${erros.length}`);
       process.exit(erros.length ? 1 : 0);

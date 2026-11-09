@@ -1,3 +1,4 @@
+import './frases-adenda-f.mjs';
 import './frases-adenda-e.mjs';
 import './frases-adenda-d.mjs';
 import './frases-adenda-c.mjs';

@@ -1,5 +1,6 @@
 /** CAM2-A: deteção sem modelo, sobre o texto impresso sem selos. */
 import fs from 'node:fs';
+import {modeloDaFrase} from './frases-modelos.mjs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {parse} from 'node-html-parser';
@@ -100,6 +101,7 @@ export const rotasFora = () => Object.keys(ROUTES).filter(k => !rotasDaProsa().s
 function unidades(paginas, antes=false) {
   const unicas=new Map();
   for(const p of paginas) for(const [bloco,b] of p.blocos.entries()) for(const [indice,frase] of b.frases.entries()) {
+    if (modeloDaFrase(frase,p.lingua,p.tipo)) continue;
     const tipos=tiposComContexto(frase,b.contextos?.[indice],p.lingua,antes);
     const f={estudo:p.estudo,lingua:p.lingua,frase,tipos,sha256:sha256(normalDaChave(frase))}, k=chave(f);
     if(!unicas.has(k))unicas.set(k,{...f,ocorrencias:[]});
@@ -118,6 +120,7 @@ export function inventario(paginas, antes=false) {
   for(const f of diretas) for(const o of f.ocorrencias) {
     const par=parDaFrase(paginas,o);if(!par)continue;
     const p=porRota.get(par.pagina), k=chave({estudo:p.estudo,lingua:p.lingua,frase:par.frase}), alvo=todas.get(k);
+    if (!alvo) continue;
     alvo.tipos=['atribuicao','causa','leitura'].filter(t=>alvo.tipos.includes(t)||f.tipos.includes(t));
     alvo.pelo_par=!chavesDiretas.has(k);
   }
@@ -166,7 +169,7 @@ export function medirPares(paginas, detetorAntes = null) {
         if (!contextoAntes.length) m.falhas_antes++;
       }
       const pagina=paginas.find(p=>p.rota===par.pagina);
-      if(!cobertura.has(chave({estudo:pagina.estudo,lingua:destino,frase:par.frase})))m.sem_cobertura++;
+      if(!modeloDaFrase(par.frase,destino,pagina.tipo)&&!cobertura.has(chave({estudo:pagina.estudo,lingua:destino,frase:par.frase})))m.sem_cobertura++;
       if (!tiposComContexto(par.frase,par.contexto,destino).length) {m.falhas_depois++;m.falhas.push({estudo:f.estudo,[lingua]:f.frase,[destino]:par.frase});}
     }
   }

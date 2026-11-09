@@ -15,12 +15,12 @@ export function validarPino(marcas, pino, anteriores = null) {
   }
   return erros;
 }
-export function conferirPino({indice=false,repo='.',gitRun}={}) {
+export function conferirPino({indice=false,repo='.',gitRun,ficheiros={marcas:MARCAS,pino:PINO,base:BASE}}={}) {
   const git=gitRun??((...a)=>execFileSync('git',['-C',repo,...a],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trimEnd());
   const ler=(rev,f)=>git('ls-tree','--name-only',rev,'--',f)?git('show',rev+':'+f)+'\n':null;
-  const estado=rev=>({marcas:ler(rev,MARCAS),pino:ler(rev,PINO)});
+  const estado=rev=>({marcas:ler(rev,ficheiros.marcas),pino:ler(rev,ficheiros.pino)});
   const erros=[];
-  for(const rev of git('rev-list','--full-history',BASE+'..HEAD','--',MARCAS,PINO).split('\n').filter(Boolean)) {
+  for(const rev of git('rev-list','--full-history',ficheiros.base+'..HEAD','--',ficheiros.marcas,ficheiros.pino).split('\n').filter(Boolean)) {
     const atual=estado(rev);
     if (!atual.marcas || !atual.pino) {erros.push('marcas: listas ou pino apagados');continue;}
     for(const pai of git('rev-list','--parents','-n','1',rev).split(' ').slice(1)) {
@@ -28,7 +28,7 @@ export function conferirPino({indice=false,repo='.',gitRun}={}) {
       erros.push(...validarPino(atual.marcas,atual.pino,anterior.marcas?anterior:null).map(e=>rev+': '+e));
     }
   }
-  const atual=indice?{marcas:git('show',':'+MARCAS)+'\n',pino:git('show',':'+PINO)+'\n'}:{marcas:fs.readFileSync(MARCAS,'utf8'),pino:fs.readFileSync(PINO,'utf8')};
+  const atual=indice?{marcas:git('show',':'+ficheiros.marcas)+'\n',pino:git('show',':'+ficheiros.pino)+'\n'}:{marcas:fs.readFileSync(ficheiros.marcas,'utf8'),pino:fs.readFileSync(ficheiros.pino,'utf8')};
   const anterior=estado('HEAD');
   return [...erros,...validarPino(atual.marcas,atual.pino,anterior.marcas?anterior:null)];
 }

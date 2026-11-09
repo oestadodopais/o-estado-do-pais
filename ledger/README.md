@@ -1249,9 +1249,9 @@ dos números guardam a proveniência dos valores; a camada 2 guarda as palavras
 das atribuições e das causas. O painel e as revisões mudam datas e valores
 todas as semanas.
 
-A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda E autoriza
+A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda F autoriza
 a regeneração antes da aterragem: a base da lista desta série passa a
-d21c48f0b, já com o painel de 09.11.2026. O histórico do pino das marcas mantém a base anterior, sem apagar
+d9a6489a9, já com o painel de 09.11.2026. O histórico do pino das marcas mantém a base anterior, sem apagar
 as alterações já conferidas. A régua percorre todos os commits posteriores que tocaram a lista,
 compara com cada pai que já conhece esta semente e confere a árvore de
 trabalho. Um aumento histórico recusa mesmo que depois seja desfeito. Apagar
@@ -1349,3 +1349,34 @@ byte. Todos os restantes ficheiros, incluindo caminhos novos ou apagados, são
 comparados sem normalização. As plantas recusam texto, ligação, campo, número,
 ficheiro ou data fora destas condições. Uma eventual diferença residual de
 relógio tem de ser inspecionada e relatada; o guião não a oculta automaticamente.
+
+### Adenda F: citações impressas e modelos gerados
+
+A presença continua a usar a chave sem algarismos. Para cada entrada, todas
+as ocorrências impressas com essa chave têm de conservar exatamente a lista
+de citações da entrada, nas duas línguas, incluindo números, ordem e conteúdo.
+Uma ocorrência correta não esconde outra adulterada. O excerto continua a
+ser conferido sem máscara.
+
+`scripts/frases-modelos.json` contém apenas a linha das revisões da leitura
+da semana e a linha do painel no Método, em português e inglês. Cada modelo
+inteiro vira uma expressão regular ancorada. Só se aplica à respetiva coleção.
+As palavras fixas são escapadas literalmente; nomes, unidades e períodos são
+alternativas exatas do catálogo do livro-razão e das funções usadas pela vista.
+Valores aceitam apenas sinal, algarismos e separadores; datas aceitam a forma
+dd.mm.aaaa. Não há campo livre capaz de engolir uma oração. Uma nova unidade
+ou um nome não representável fica sujeito à cobertura, sem dispensa automática.
+
+As frases inteiras que casam saem da cobertura editorial e são contadas em
+`modelos`, por língua e modelo. Os números e a composição continuam sob as
+réguas existentes do painel. Uma oração acrescentada ao fim não casa.
+`conferirModelos` recompõe os quatro textos de `src/i18n/strings.mjs` e
+`src/data/metodo.mjs` e exige igualdade com a lista. O pino
+`scripts/frases-modelos-pino.json` prende os bytes, a data e a razão, pela
+mesma conferência histórica e do índice usada pelas marcas. Uma alteração
+sem pino e razão novos no mesmo commit recusa-se mesmo se for reparada depois.
+
+`node scripts/simular-painel-frases.mjs dist <medidas.json>` lê a projeção
+das páginas construídas e simula outra semana, com datas e valores diferentes
+e um indicador do livro-razão que não figura nas revisões atuais. Não altera
+o `dist/`: confere o registo e a cobertura sobre a projeção modificada.

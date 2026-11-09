@@ -1,5 +1,6 @@
 /** Semente CAM2-A reproduzível. Recusa sobrescrever um registo existente. */
 import fs from 'node:fs';
+import {contarModelos} from './frases-modelos.mjs';
 import path from 'node:path';
 import {loadClaims} from '../src/lib/ledger.mjs';
 import {lerPaginas, inventario, tiposDaFrase, parDaFrase, medirPares, normalDaChave, sha256, chave} from './frases-com-afirmacao.mjs';
@@ -34,7 +35,7 @@ export function medidas(paginas, resultado) {
   }
   for (const f of registo) estudos[f.estudo].registo++;
   for (const f of pendentes) estudos[f.estudo].por_registar[f.lingua]++;
-  return {paginas:paginas.length, frases:frases.length, pt:frases.filter(f=>f.lingua==='pt').length, en:frases.filter(f=>f.lingua==='en').length, registo:registo.length, por_registar:pendentes.length, por_registar_por_lingua:Object.fromEntries(['pt','en'].map(l=>[l,pendentes.filter(f=>f.lingua===l).length])), teto_por_registar:TETO_PENDENTES, pelo_par:Object.fromEntries(['pt','en'].map(l=>[l,frases.filter(f=>f.lingua===l&&f.pelo_par).length])), pares:medirPares(paginas), estudos};
+  return {modelos:contarModelos(paginas), paginas:paginas.length, frases:frases.length, pt:frases.filter(f=>f.lingua==='pt').length, en:frases.filter(f=>f.lingua==='en').length, registo:registo.length, por_registar:pendentes.length, por_registar_por_lingua:Object.fromEntries(['pt','en'].map(l=>[l,pendentes.filter(f=>f.lingua===l).length])), teto_por_registar:TETO_PENDENTES, pelo_par:Object.fromEntries(['pt','en'].map(l=>[l,frases.filter(f=>f.lingua===l&&f.pelo_par).length])), pares:medirPares(paginas), estudos};
 }
 if (process.argv[1]?.endsWith('/gerar-frases-afirmacao.mjs')) {
   const dist = process.argv[2] ?? 'dist', destino = process.argv[3] ?? 'ledger/frases';
