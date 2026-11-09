@@ -1,0 +1,8 @@
+{
+ "bloco": "painel (o painel semanal de 09.11.2026: as 91 afirmações relidas na fonte pelo guião, sem modelo)",
+ "data": "2026-11-09",
+ "orcamento": {"pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"},
+ "pontos_do_bloco": 0,
+ "passagens_codex": [],
+ "nota": "O painel corre por guião às segundas-feiras na árvore principal (09:30 UTC de 09.11, pela tarefa semanal dos indicadores); nenhum modelo. 88 iguais e 3 divergentes. As três divergências são as mesmas do painel de 02.11, com os mesmos valores lidos (desempenho-das-exportacoes-2024 17.0, desempenho-das-exportacoes-2025 8.0, sobrecarga-do-custo-da-habitacao-2025-ue 7.6): revisões da fonte do Eurostat de 29.10.2026, por aplicar no bloco das revisões (a I233). O lugar de direção levou as mudanças da árvore principal para o ramo da CAM2-A, ficheiro a ficheiro iguais, para aterrarem juntas."
+}

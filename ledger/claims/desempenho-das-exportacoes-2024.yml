@@ -69,3 +69,8 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "17.0"
+  - date: "2026-11-09"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST"
+    result: "diverge"
+    by: "painel-semanal"
+    found: "17.0"
