@@ -1,0 +1,1513 @@
+{
+  "paginas": 115,
+  "frases": 1667,
+  "pt": 767,
+  "en": 900,
+  "registo": 22,
+  "por_registar": 1623,
+  "pares": {
+    "pares": 600,
+    "sem_par": 167,
+    "falhas_antes": 80,
+    "falhas_depois": 22,
+    "falhas": [
+      {
+        "estudo": "/agenda",
+        "pt": "Ficheiro «Evolução endividamento total 2025» no Portal Autárquico",
+        "en": "File 'Evolução endividamento total 2025' on the Portal Autárquico"
+      },
+      {
+        "estudo": "/dossies/orcamento-2027",
+        "pt": "As medidas novas valem 79 milhões de euros a favor do saldo, segundo o quadro das medidas do relatório e a UTAO; as dez linhas que o quadro marca como «invariante» pesam 1 210 milhões.",
+        "en": "The new measures are worth 79 million euros to the balance, by the report's table of measures and by the UTAO; the ten lines the table marks as «invariante» (invariant) weigh 1,210 million."
+      },
+      {
+        "estudo": "/estado-e-economia",
+        "pt": "É a parte das pessoas que, num inquérito europeu, considera a independência dos tribunais e dos juízes do seu país muito boa ou razoavelmente boa.",
+        "en": "It is the share of people who, in a European survey, rate the independence of their country’s courts and judges as very good or fairly good."
+      },
+      {
+        "estudo": "/estado-e-economia",
+        "pt": "Que parte das pessoas inquiridas considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes (a perceção da independência da justiça)?",
+        "en": "What share of respondents rate the independence of the courts and judges as very good or fairly good (perceived independence of the justice system)?"
+      },
+      {
+        "estudo": "/o-que-se-discute",
+        "pt": "Com estes números, a pergunta ao Governo e aos partidos não é «sobe ou desce»: é com que dinheiro se pagam os encargos com medicamentos que aumentaram 6,1 % e como se financia o investimento depois do PRR, com 52,9 % do contratado na saúde ainda por pagar.",
+        "en": "With these numbers, the question to the Government and the parties is not «up or down»: it is which money pays for medicine expenditure that rose 6,1 % and how investment is financed after the RRP, with 52,9 % of the contracted health amount still unpaid."
+      },
+      {
+        "estudo": "agua-nao-faturada",
+        "pt": "A Diretiva da Água para Consumo Humano reformulada, no artigo 4.º, n.º 3, exigia que cada Estado-Membro avaliasse as fugas segundo uma metodologia comum e reportasse à Comissão até 12 de janeiro de 2026.",
+        "en": "The recast Drinking Water Directive, Article 4(3), required every member state to assess leakage on a common methodology and report to the Commission by 12 January 2026."
+      },
+      {
+        "estudo": "agua-nao-faturada",
+        "pt": "Segundo, o ritmo de substituição.",
+        "en": "Second, the rate of replacement."
+      },
+      {
+        "estudo": "evora-2027-capital-europeia-da-cultura",
+        "pt": "porque não tem resposta",
+        "en": "why there is no answer"
+      },
+      {
+        "estudo": "evora-2027-prometido-painel-dinheiro",
+        "pt": "porque não tem resposta",
+        "en": "why there is no answer"
+      },
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "pt": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
+        "en": "Two more things the regulator's file supports:"
+      },
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "pt": "Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau, que é o que um empréstimo parece numa tabela de caixa e não o que parece um bom ano (inferência; os relatórios afirmam cada empréstimo e cada total, não o padrão).",
+        "en": "In each of those three years the revenue column steps up and the following year gives the step back, which is what a loan looks like in a cash-basis table and not what a good year looks like (inference; the reports state each loan and each total, not the pattern)."
+      },
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "pt": "Publicar as contas de 2024, ou dizer publicamente porque não existem.",
+        "en": "Publishing the 2024 accounts, or saying publicly why they do not exist."
+      },
+      {
+        "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+        "pt": "Para uma empresa — as janelas concorrenciais do PRR estão na prática encerradas: 0 avisos comprovadamente abertos a novas candidaturas, segundo o próprio plano de avisos de 2026 do programa.",
+        "en": "For a company — the PRR's competitive windows are effectively over: 0 avisos verifiably open to new applications, on the programme's own 2026 avisos plan."
+      },
+      {
+        "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+        "pt": "O que significa «dentro do prazo» nestes dados, e o que está vencido",
+        "en": "What \"on time\" means in this data, and what is overdue"
+      },
+      {
+        "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+        "pt": "Segundo, o padrão é nacional e não local: em todo o país, 177 241 de 246 545 localizações dentro do prazo têm o mesmo carimbo de data exata, 71,89 %, ligeiramente acima do valor de Évora.",
+        "en": "Second, the pattern is national, not local: across the country 177 241 of 246 545 on-time locations carry the same exact-date stamp, 71.89%, which is slightly higher than Évora's."
+      },
+      {
+        "estudo": "evora-prometido-pago-auditado-2026",
+        "pt": "Porque estão vencidos os projetos que estão vencidos.",
+        "en": "Why the overdue projects are overdue."
+      },
+      {
+        "estudo": "evora-prometido-pago-auditado-2026",
+        "pt": "O que significa «dentro do prazo» nestes dados, e o que está vencido",
+        "en": "What \"on time\" means in this data, and what is overdue"
+      },
+      {
+        "estudo": "evora-prometido-pago-auditado-2026",
+        "pt": "Segundo, o padrão é nacional e não local: em todo o país, 177 241 de 246 545 localizações dentro do prazo têm o mesmo carimbo de data exata, 71,89 %, ligeiramente acima do valor de Évora.",
+        "en": "Second, the pattern is national, not local: across the country 177 241 of 246 545 on-time locations carry the same exact-date stamp, 71.89%, which is slightly higher than Évora's."
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "pt": "2005 continua a ser a referência — o único ano em que mais de metade do território atingiu a classe extrema. 2022 é o segundo, e num sentido específico pior: a 31 de agosto de 2022 cada quilómetro quadrado de Portugal continental estava em seca severa ou extrema, 60,4% severa e 39,6% extrema, sem território nenhum em qualquer classe inferior. 2025 não foi ano de seca.",
+        "en": "2005 remains the benchmark — the only year in which more than half the territory reached the extreme class. 2022 is second, and in a specific sense worse: at 31 August 2022 every square kilometre of mainland Portugal was in severe or extreme drought, 60.4% severe and 39.6% extreme, with no territory in any lower class at all. 2025 was not a drought year."
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "pt": "O Minho suspende abaixo de 70% da precipitação de referência; o Douro abaixo de 65%; o Tejo abaixo de 60%, com um segundo gatilho de dupla condição aos 70%.",
+        "en": "The Minho suspends below 70% of reference precipitation; the Douro below 65%; the Tejo below 60%, with a second two-condition trigger at 70%."
+      },
+      {
+        "estudo": "onde-esta-a-agua",
+        "pt": "O primeiro está orçamentado e não financiado, o segundo está medido e é lento, o terceiro é politicamente difícil e aritmeticamente o maior, e o quarto é a precondição do terceiro.",
+        "en": "The first is costed and unfunded, the second is measured and slow, the third is politically hard and arithmetically the largest, and the fourth is the precondition for the third."
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "pt": "As medidas novas valem 79 milhões de euros a favor do saldo, segundo o quadro das medidas do relatório e a UTAO; as dez linhas que o quadro marca como «invariante» pesam 1 210 milhões.",
+        "en": "The new measures are worth 79 million euros to the balance, by the report's table of measures and by the UTAO; the ten lines the table marks as «invariante» (invariant) weigh 1,210 million."
+      }
+    ]
+  },
+  "estudos": {
+    "/": {
+      "pt": 5,
+      "en": 6,
+      "registo": 0,
+      "por_registar": {
+        "pt": 5,
+        "en": 6
+      }
+    },
+    "/agenda": {
+      "pt": 2,
+      "en": 6,
+      "registo": 0,
+      "por_registar": {
+        "pt": 2,
+        "en": 6
+      }
+    },
+    "/correcoes": {
+      "pt": 22,
+      "en": 47,
+      "registo": 0,
+      "por_registar": {
+        "pt": 22,
+        "en": 47
+      }
+    },
+    "/dossies/orcamento-2027": {
+      "pt": 40,
+      "en": 47,
+      "registo": 0,
+      "por_registar": {
+        "pt": 40,
+        "en": 47
+      }
+    },
+    "/dossies": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/educacao-e-saude": {
+      "pt": 1,
+      "en": 5,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 5
+      }
+    },
+    "/emprego": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/estado-e-economia": {
+      "pt": 3,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 3,
+        "en": 2
+      }
+    },
+    "/estudos": {
+      "pt": 4,
+      "en": 5,
+      "registo": 0,
+      "por_registar": {
+        "pt": 4,
+        "en": 5
+      }
+    },
+    "/explicacoes/dinheiro-do-estado-2026": {
+      "pt": 3,
+      "en": 4,
+      "registo": 0,
+      "por_registar": {
+        "pt": 3,
+        "en": 4
+      }
+    },
+    "/explicacoes/dinheiro-do-estado-2027": {
+      "pt": 5,
+      "en": 5,
+      "registo": 0,
+      "por_registar": {
+        "pt": 5,
+        "en": 5
+      }
+    },
+    "/explicacoes/leitura-da-semana": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/explicacoes": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/habitacao": {
+      "pt": 1,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 2
+      }
+    },
+    "/indice": {
+      "pt": 2,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 2,
+        "en": 2
+      }
+    },
+    "/lugares": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/metodo": {
+      "pt": 4,
+      "en": 7,
+      "registo": 0,
+      "por_registar": {
+        "pt": 4,
+        "en": 7
+      }
+    },
+    "/o-que-se-discute": {
+      "pt": 58,
+      "en": 79,
+      "registo": 22,
+      "por_registar": {
+        "pt": 36,
+        "en": 57
+      }
+    },
+    "/pobreza-e-desigualdade": {
+      "pt": 1,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 2
+      }
+    },
+    "/precos": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/privacidade": {
+      "pt": 2,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 2,
+        "en": 2
+      }
+    },
+    "/salarios-pensoes-e-apoios": {
+      "pt": 1,
+      "en": 3,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 3
+      }
+    },
+    "/sobre": {
+      "pt": 1,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 2
+      }
+    },
+    "/temas": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "a-casa-em-portugal-e-na-europa": {
+      "pt": 47,
+      "en": 75,
+      "registo": 0,
+      "por_registar": {
+        "pt": 47,
+        "en": 75
+      }
+    },
+    "agua-nao-faturada": {
+      "pt": 18,
+      "en": 34,
+      "registo": 0,
+      "por_registar": {
+        "pt": 18,
+        "en": 34
+      }
+    },
+    "alentejo-algarve": {
+      "pt": 1,
+      "en": 38,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 38
+      }
+    },
+    "avaliacao-economica-regional-de-portugal-2026": {
+      "pt": 11,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 11,
+        "en": 1
+      }
+    },
+    "evolucao-de-portugal-desde-1981": {
+      "pt": 3,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 3,
+        "en": 1
+      }
+    },
+    "evora-2027-capital-europeia-da-cultura": {
+      "pt": 83,
+      "en": 100,
+      "registo": 0,
+      "por_registar": {
+        "pt": 83,
+        "en": 100
+      }
+    },
+    "evora-2027-prometido-painel-dinheiro": {
+      "pt": 79,
+      "en": 96,
+      "registo": 0,
+      "por_registar": {
+        "pt": 79,
+        "en": 96
+      }
+    },
+    "evora-contas-da-camara-2010-2025": {
+      "pt": 36,
+      "en": 61,
+      "registo": 0,
+      "por_registar": {
+        "pt": 36,
+        "en": 61
+      }
+    },
+    "evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+      "pt": 26,
+      "en": 36,
+      "registo": 0,
+      "por_registar": {
+        "pt": 26,
+        "en": 36
+      }
+    },
+    "evora-economia-investidores-portas-abertas-2026": {
+      "pt": 5,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 5,
+        "en": 2
+      }
+    },
+    "evora-orcamentado-pago-devido-2025": {
+      "pt": 24,
+      "en": 35,
+      "registo": 0,
+      "por_registar": {
+        "pt": 24,
+        "en": 35
+      }
+    },
+    "evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+      "pt": 60,
+      "en": 3,
+      "registo": 0,
+      "por_registar": {
+        "pt": 60,
+        "en": 3
+      }
+    },
+    "evora-prometido-pago-auditado-2026": {
+      "pt": 46,
+      "en": 59,
+      "registo": 0,
+      "por_registar": {
+        "pt": 46,
+        "en": 59
+      }
+    },
+    "evora-quem-governou-a-camara-2009-2025": {
+      "pt": 42,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 42,
+        "en": 1
+      }
+    },
+    "evora-quinze-anos-cinco-mandatos": {
+      "pt": 43,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 43,
+        "en": 2
+      }
+    },
+    "onde-esta-a-agua": {
+      "pt": 22,
+      "en": 52,
+      "registo": 0,
+      "por_registar": {
+        "pt": 22,
+        "en": 52
+      }
+    },
+    "orcamento-2027-o-que-muda-e-para-quem": {
+      "pt": 50,
+      "en": 60,
+      "registo": 0,
+      "por_registar": {
+        "pt": 50,
+        "en": 60
+      }
+    },
+    "penalizacoes-por-reforma-antecipada-2026": {
+      "pt": 8,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 8,
+        "en": 1
+      }
+    },
+    "which-door-is-yours": {
+      "pt": 1,
+      "en": 10,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 10
+      }
+    }
+  },
+  "marcas_inglesas_antes": 647,
+  "rotas": [
+    {
+      "rota": "/",
+      "tipo": "home"
+    },
+    {
+      "rota": "/agenda",
+      "tipo": "agenda"
+    },
+    {
+      "rota": "/correcoes",
+      "tipo": "correcoes"
+    },
+    {
+      "rota": "/dossies",
+      "tipo": "dossies"
+    },
+    {
+      "rota": "/dossies/orcamento-2027",
+      "tipo": "dossie"
+    },
+    {
+      "rota": "/educacao-e-saude",
+      "tipo": "entradaEscolaESaude"
+    },
+    {
+      "rota": "/emprego",
+      "tipo": "entradaTrabalho"
+    },
+    {
+      "rota": "/en",
+      "tipo": "home"
+    },
+    {
+      "rota": "/en/about",
+      "tipo": "sobre"
+    },
+    {
+      "rota": "/en/agenda",
+      "tipo": "agenda"
+    },
+    {
+      "rota": "/en/corrections",
+      "tipo": "correcoes"
+    },
+    {
+      "rota": "/en/dossiers",
+      "tipo": "dossies"
+    },
+    {
+      "rota": "/en/dossiers/orcamento-2027",
+      "tipo": "dossie"
+    },
+    {
+      "rota": "/en/education-and-health",
+      "tipo": "entradaEscolaESaude"
+    },
+    {
+      "rota": "/en/employment",
+      "tipo": "entradaTrabalho"
+    },
+    {
+      "rota": "/en/explainers",
+      "tipo": "explicacoes"
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "tipo": "explicacao"
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2027",
+      "tipo": "explicacao"
+    },
+    {
+      "rota": "/en/explainers/weekly-reading",
+      "tipo": "leituraDaSemana"
+    },
+    {
+      "rota": "/en/housing",
+      "tipo": "entradaCasa"
+    },
+    {
+      "rota": "/en/index",
+      "tipo": "indice"
+    },
+    {
+      "rota": "/en/method",
+      "tipo": "metodo"
+    },
+    {
+      "rota": "/en/pay-pensions-and-benefits",
+      "tipo": "entradaSalarios"
+    },
+    {
+      "rota": "/en/places",
+      "tipo": "lugares"
+    },
+    {
+      "rota": "/en/poverty-and-inequality",
+      "tipo": "entradaPobreza"
+    },
+    {
+      "rota": "/en/prices",
+      "tipo": "entradaDinheiro"
+    },
+    {
+      "rota": "/en/privacy",
+      "tipo": "privacidade"
+    },
+    {
+      "rota": "/en/state-and-economy",
+      "tipo": "entradaEstado"
+    },
+    {
+      "rota": "/en/studies",
+      "tipo": "estudos"
+    },
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/agua-nao-faturada",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/agua-nao-faturada/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/alentejo-algarve",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/alentejo-algarve/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/avaliacao-economica-regional-de-portugal-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evolucao-de-portugal-desde-1981",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/evora-economia-investidores-portas-abertas-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/evora-quem-governou-a-camara-2009-2025",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/onde-esta-a-agua",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/onde-esta-a-agua/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/studies/penalizacoes-por-reforma-antecipada-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/which-door-is-yours",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/en/studies/which-door-is-yours/document",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/en/themes",
+      "tipo": "temas"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "tipo": "discussao"
+    },
+    {
+      "rota": "/estado-e-economia",
+      "tipo": "entradaEstado"
+    },
+    {
+      "rota": "/estudos",
+      "tipo": "estudos"
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/agua-nao-faturada",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/agua-nao-faturada/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/alentejo-algarve",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evolucao-de-portugal-desde-1981",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evolucao-de-portugal-desde-1981/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/onde-esta-a-agua",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/onde-esta-a-agua/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/penalizacoes-por-reforma-antecipada-2026",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/estudos/penalizacoes-por-reforma-antecipada-2026/documento",
+      "tipo": "documento"
+    },
+    {
+      "rota": "/estudos/which-door-is-yours",
+      "tipo": "estudo"
+    },
+    {
+      "rota": "/explicacoes",
+      "tipo": "explicacoes"
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "tipo": "explicacao"
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2027",
+      "tipo": "explicacao"
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana",
+      "tipo": "leituraDaSemana"
+    },
+    {
+      "rota": "/habitacao",
+      "tipo": "entradaCasa"
+    },
+    {
+      "rota": "/indice",
+      "tipo": "indice"
+    },
+    {
+      "rota": "/lugares",
+      "tipo": "lugares"
+    },
+    {
+      "rota": "/metodo",
+      "tipo": "metodo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "tipo": "discussao"
+    },
+    {
+      "rota": "/pobreza-e-desigualdade",
+      "tipo": "entradaPobreza"
+    },
+    {
+      "rota": "/precos",
+      "tipo": "entradaDinheiro"
+    },
+    {
+      "rota": "/privacidade",
+      "tipo": "privacidade"
+    },
+    {
+      "rota": "/salarios-pensoes-e-apoios",
+      "tipo": "entradaSalarios"
+    },
+    {
+      "rota": "/sobre",
+      "tipo": "sobre"
+    },
+    {
+      "rota": "/temas",
+      "tipo": "temas"
+    }
+  ],
+  "familias_fora": [
+    "sugestoes",
+    "sugestoesObrigado",
+    "sugestoesVazia",
+    "sugestoesLimite",
+    "sugestoesNaoChegou",
+    "texto",
+    "municipios",
+    "municipio",
+    "distritos",
+    "distrito",
+    "regioes",
+    "regiao",
+    "areas",
+    "area",
+    "dominios",
+    "dominio",
+    "uniaoEuropeia",
+    "livro",
+    "livroConcelhos",
+    "livroConcelho",
+    "linha",
+    "serie",
+    "marcador"
+  ],
+  "registo_por_rota": {
+    "/o-que-se-discute": 22,
+    "/en/under-discussion": 22
+  },
+  "amostra_semente": "CAM2-A-2026-11-09",
+  "amostra": [
+    {
+      "id": "pt-1",
+      "lingua": "pt",
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "frase": "Os três leem «Portugal, Évora, Évora».",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-2",
+      "lingua": "pt",
+      "estudo": "agua-nao-faturada",
+      "frase": "Texto gerado por inteligência artificial, segundo o Método.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Nota do método de produção, sem afirmação substantiva sobre fonte externa, pessoa ou causa."
+    },
+    {
+      "id": "pt-3",
+      "lingua": "pt",
+      "estudo": "/explicacoes/leitura-da-semana",
+      "frase": "Texto gerado por inteligência artificial, segundo o Método.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Nota do método de produção."
+    },
+    {
+      "id": "pt-4",
+      "lingua": "pt",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "frase": "Segundo o presidente da Câmara, citado na mesma nota, as duas propostas de ajustamento orçamental apresentadas por esse motivo evitam a perda dos fundos da obra e dão flexibilidade para a fazer em articulação com o projeto artístico da Floresta Nómada, da programação da Capital Europeia da Cultura.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-5",
+      "lingua": "pt",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "O plano escreve: «A candidatura para o programa geral de Évora_27 foi aprovada pelo Programa Regional do Alentejo 2030 (ALENTEJO 2030), com um montante global de financiamento de 11.764.710,00€ (quinze milhões de euros)» O algarismo e o extenso não dizem a mesma coisa.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-6",
+      "lingua": "pt",
+      "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "frase": "A causa parece um deslize de atribuição de página — o quadro de função fica na página a seguir ao resumo por grupo, e a nota citava o quadro de grupo com o número de página do quadro de função (inferência).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-7",
+      "lingua": "pt",
+      "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "frase": "Entre 119 PDF do repositório de delegações de poderes do município — na esmagadora maioria subdelegações departamentais, não atribuições de pelouros — está o despacho «Distribuição de Pelouros», assinado nos Paços do Concelho a 2025-11-10 pelo presidente ao abrigo dos poderes conferidos pelo artigo 36.º do Anexo I à Lei n.º 75/2013.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-8",
+      "lingua": "pt",
+      "estudo": "evora-prometido-pago-auditado-2026",
+      "frase": "Porque estão vencidos os projetos que estão vencidos.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Pergunta sobre uma causa, sem resposta afirmada."
+    },
+    {
+      "id": "pt-9",
+      "lingua": "pt",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "frase": "O mesmo decreto-lei obriga a associação a divulgar «A identidade e os elementos curriculares de todos os membros dos seus órgãos sociais, designadamente do órgão de administração, bem como as respetivas remunerações e outros benefícios.».",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-10",
+      "lingua": "pt",
+      "estudo": "a-casa-em-portugal-e-na-europa",
+      "frase": "Feridos segundo um dirigente do BE, pela imprensa",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-11",
+      "lingua": "pt",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "O que ela autoriza, e os cinco tetos que fixa, estão todos na mesma página, a p. 86: «1 — Autorizar o Gabinete de Estratégia, Planeamento e Avaliação Culturais (GEPAC) a realizar a despesa relativa à contribuição financeira do Estado para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027, no âmbito da programação cultural, até ao montante global de 15 000 000 EUR.»",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-12",
+      "lingua": "pt",
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "frase": "Os prazos mais próximos entre os avisos alcançáveis: «Capacitação de Atores e Redes – Parcerias para a Coesão não Urbanas - Alentejo» fecha a 2026-08-14, «RAM - Medidas de adaptação às alterações climáticas - 5.º Aviso» a 2026-08-19, «Reabilitação da aerogare do aeródromo de São Jorge» a 2026-08-20.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-13",
+      "lingua": "pt",
+      "estudo": "/explicacoes/dinheiro-do-estado-2027",
+      "frase": "Os valores não são consolidados, porque contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, 259 633 860 562 euros em 2027.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-14",
+      "lingua": "pt",
+      "estudo": "/estudos",
+      "frase": "Texto gerado por inteligência artificial, segundo o Método.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Nota do método de produção."
+    },
+    {
+      "id": "pt-15",
+      "lingua": "pt",
+      "estudo": "evora-quem-governou-a-camara-2009-2025",
+      "frase": "No último ano do mandato, esse executivo viu as contas de 2024 rejeitadas pela câmara, e os documentos não dizem porque votou assim cada membro; a votação está no estudo As contas da Câmara de Évora, 2010 a 2025.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-16",
+      "lingua": "pt",
+      "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+      "frase": "Texto gerado por inteligência artificial, segundo o Método.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Nota do método de produção."
+    },
+    {
+      "id": "pt-17",
+      "lingua": "pt",
+      "estudo": "/dossies/orcamento-2027",
+      "frase": "O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante» (a nota do quadro diz só isso, «Nota: (i) invariante.»; a UTAO usa a mesma palavra para um conjunto maior, na secção das medidas): a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE (Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial), a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-18",
+      "lingua": "pt",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "A repartição do protocolo de junho de 2023, tal como este plano a escreve:",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-19",
+      "lingua": "pt",
+      "estudo": "evora-quem-governou-a-camara-2009-2025",
+      "frase": "Antes de 2001 a câmara era do PCP/CDU, cujo presidente de 1976 a 2001 foi Abílio Dias Fernandes, segundo a lista de presidentes da associação nacional de municípios.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-20",
+      "lingua": "pt",
+      "estudo": "/emprego",
+      "frase": "Texto gerado por inteligência artificial, segundo o Método.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Nota do método de produção."
+    },
+    {
+      "id": "pt-21",
+      "lingua": "pt",
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "frase": "Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-22",
+      "lingua": "pt",
+      "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+      "frase": "O relatório: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» E o objetivo: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» O ministro das Finanças, a 13 de outubro, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-23",
+      "lingua": "pt",
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "frase": "Estão impressas na tabela das finanças como um ano inteiro, porque é assim que existem, e não são atribuídas nem a um mandato nem ao outro.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-24",
+      "lingua": "pt",
+      "estudo": "evora-orcamentado-pago-devido-2025",
+      "frase": "Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência; o relatório afirma cada linha, não o padrão).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-25",
+      "lingua": "pt",
+      "estudo": "evora-orcamentado-pago-devido-2025",
+      "frase": "Lidas em conjunto, parte da folga para continuar a amortizar o passado está a ser tirada à paciência dos fornecedores do presente — a composição da dívida piora mesmo enquanto o total desce (inferência).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-26",
+      "lingua": "pt",
+      "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "frase": "Um membro deste executivo está registado, e só porque descreveu os seus próprios pelouros passados numa biografia publicada no sítio do município enquanto servia no mandato seguinte.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-27",
+      "lingua": "pt",
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "frase": "O segundo é o que o município escreveu nesse ano; o primeiro é o que escreveu seis anos depois, na série que o relatório de 2021 reimprime.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-28",
+      "lingua": "pt",
+      "estudo": "evora-quem-governou-a-camara-2009-2025",
+      "frase": "2013–2017 — o mandato que imprime «Sem pelouros»",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-29",
+      "lingua": "pt",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "frase": "A associação escreve no plano de 2026: «no último trimestre de 2026, em data a definir, será elaborado um último relatório de monitorização e progresso, a entregar ao painel de peritos, fundamental, e requisito, para a decisão de atribuição a Évora_2027 do prémio Melina Mercouri, no valor de 1.500.000€.» Nenhuma linha das tabelas de receita de 2026 o inscreve, o que é coerente com o pagamento estar diferido, e o relatório e contas de 2025 não o menciona.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "pt-30",
+      "lingua": "pt",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "frase": "O calendário da monitorização, no relatório de seleção, p. 35: «There are three formal monitoring checkpoints (autumn 2023, mid 2025 and autumn 2026)»",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-1",
+      "lingua": "en",
+      "estudo": "alentejo-algarve",
+      "frase": "And both share the meta-problem: a delivery system that cannot convert money into transformation — self-admitted (\"filter, not motor\"), EC-confirmed (capacity as precondition), and visible in outcomes (zero convergence, a no-bid mega-tender, ejected PRR projects, confetti grants).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-2",
+      "lingua": "en",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "Each figure has the construction its own source declares.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Regra genérica de apresentação dos números."
+    },
+    {
+      "id": "en-3",
+      "lingua": "en",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "«Protocols signed between the Municipality and the national government guarantee €39 million in state funding, including €5 million from the Comunidade Intermunicipal do Alentejo Central.» and «€34 million has been transferred to the Association already, while the €5 million remaining are currently under negotiation and should be released soon.»",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-4",
+      "lingua": "en",
+      "estudo": "a-casa-em-portugal-e-na-europa",
+      "frase": "Prime Minister's statement after the intervention, reported by the press",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-5",
+      "lingua": "en",
+      "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+      "frase": "In 2026 the limits were 8,342, 12,587, 17,838, 23,089, 29,397, 43,090, 46,566 and 86,634 euros: the update of the limits is 3.9 % in every bracket; the rates in the 2027 table are those set in September 2026, according to the report («O Orçamento do Estado para 2027 apresentará a sexta redução generalizada de IRS, considerando a redução das taxas em junho de 2024, junho de 2025, no Orçamento do Estado para 2026 e em setembro de 2026, a que acresce a atualização dos respetivos escalões nos Orçamentos do Estado para 2025, 2026 e 2027.»), which this study has not checked against the legislation.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-6",
+      "lingua": "en",
+      "estudo": "/correcoes",
+      "frase": "Prime Minister's statement after the intervention, reported by the presspublisher: Luís Montenegro → Diário de Notícias",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-7",
+      "lingua": "en",
+      "estudo": "alentejo-algarve",
+      "frase": "4What has been tried — and what evaluation actually says",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Título que anuncia o que será lido, sem afirmar uma conclusão."
+    },
+    {
+      "id": "en-8",
+      "lingua": "en",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "frase": "The association's plan for 2026 writes \"no confirmed values\" on the municipality's line, and the 2025 accounts record not one euro from that source.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-9",
+      "lingua": "en",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "What is missing is stated in the section on what was not found.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Indicação interna de onde procurar uma secção."
+    },
+    {
+      "id": "en-10",
+      "lingua": "en",
+      "estudo": "/o-que-se-discute",
+      "frase": "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-11",
+      "lingua": "en",
+      "estudo": "onde-esta-a-agua",
+      "frase": "Saline intrusion is formally coded on exactly one body, Campina de Faro–Vale de Lobo, attributed verbatim to \"as extrações existentes do setor agrícola e do golfe\".",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-12",
+      "lingua": "en",
+      "estudo": "a-casa-em-portugal-e-na-europa",
+      "frase": "The PS lists the same deduction among what it has already proposed in Parliament: «Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.», the limit the May decree-law sets for 2027.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-13",
+      "lingua": "en",
+      "estudo": "evora-prometido-pago-auditado-2026",
+      "frase": "Money, delivery risk and a thin searchable trail concentrate in the same corner of the same town (inference).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-14",
+      "lingua": "en",
+      "estudo": "/metodo",
+      "frase": "Study corrected: the text said something it should not have.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Nota de correção sem conteúdo da afirmação corrigida."
+    },
+    {
+      "id": "en-15",
+      "lingua": "en",
+      "estudo": "evora-2027-prometido-painel-dinheiro",
+      "frase": "Project «EVORA CAPITAL EUROPEIA DA CULTURA», 2025 appropriation",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Rótulo de projeto e exercício orçamental."
+    },
+    {
+      "id": "en-16",
+      "lingua": "en",
+      "estudo": "alentejo-algarve",
+      "frase": "Data centres: Start Campus SIN01 operational and fully leased (31MW); SIN02 (180–200MW) ready to build; campus target ~1.2GW by 2031; Microsoft announced a $10bn AI data-centre investment (Nov 2025, with Start Campus and Nscale — up to 12,600 Nvidia GB300 GPUs); the grid connection is the binding bottleneck.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-17",
+      "lingua": "en",
+      "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+      "frase": "The UTAO explains: «O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-18",
+      "lingua": "en",
+      "estudo": "/o-que-se-discute",
+      "frase": "The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the one the report writes and the UTAO, Parliament's technical budget support unit, confirms: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» The PCP's figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-19",
+      "lingua": "en",
+      "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+      "frase": "The debt target the finance minister stated is reachable, and the reason lies mainly in treasury operations.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-20",
+      "lingua": "en",
+      "estudo": "/o-que-se-discute",
+      "frase": "The Public Finance Council, on 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» (now anticipates a budget deficit of 0,1% of GDP) for 2027: a difference of 0,2 p.p. of GDP from the Finance Ministry's forecast which, it writes, «não assume uma expressão materialmente significativa» (is not materially significant).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-21",
+      "lingua": "en",
+      "estudo": "alentejo-algarve",
+      "frase": "Argue regionalisation on the merits — but don't wait for it.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Recomendação imperativa, não atribuição nem causa."
+    },
+    {
+      "id": "en-22",
+      "lingua": "en",
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "frase": "What the register said on the days without a reading is left unknown, because the previous day's file disappears from the source.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-23",
+      "lingua": "en",
+      "estudo": "onde-esta-a-agua",
+      "frase": "Ponte de Muge was under a declared exception for the Portuguese sub-basin and still delivered 100% of the unreduced minimum; Crestuma delivered 130%.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-24",
+      "lingua": "en",
+      "estudo": "/o-que-se-discute",
+      "frase": "The general vote, on 28.10.2026, according to ECO: the proposal «foi esta quarta-feira aprovada na generalidade» (was passed at the general vote this Wednesday), with «os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP» (the votes in favour of the two parties that support the Government, PSD and CDS-PP), «a abstenção do PS» (the abstention of PS), «do PAN e do JPP» (of PAN and JPP) and «o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda» (the vote against of Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda); RTP: «O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-25",
+      "lingua": "en",
+      "estudo": "agua-nao-faturada",
+      "frase": "In a Gulbenkian survey carried out in 2019 by C-Lab (published March 2020) among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter; INE's Recenseamento Agrícola does not contain this statistic.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-26",
+      "lingua": "en",
+      "estudo": "/dossies/orcamento-2027",
+      "frase": "The Prime Minister, in the Government's communication «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas»: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report on the Budget in the Assembly of the Republic (Assembleia da República, AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro, in the party's web page «OE2027: PS leva propostas à especialidade para responder ao custo de vida»: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP».",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-27",
+      "lingua": "en",
+      "estudo": "/dossies/orcamento-2027",
+      "frase": "Against 2026, when the guaranteed minimum monthly wage was 920.00 euros, it is 50 euros more, 5.4 %.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Comparação numérica; guaranteed integra o nome do salário mínimo, não uma atribuição."
+    },
+    {
+      "id": "en-28",
+      "lingua": "en",
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "frase": "Every figure is written the way its own document writes it.",
+      "afirmacao_estimada": false,
+      "razao_da_classificacao": "Regra genérica de apresentação dos números."
+    },
+    {
+      "id": "en-29",
+      "lingua": "en",
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "frase": "A city whose plan-money goes first to water, waste and debt service is a city paying for its infrastructure and its past before its ambitions (inference).",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    },
+    {
+      "id": "en-30",
+      "lingua": "en",
+      "estudo": "evora-orcamentado-pago-devido-2025",
+      "frase": "Évora's 2025 budget says €109 483 315 after revisions; the money that actually arrived was €67 263 297.",
+      "afirmacao_estimada": true,
+      "razao_da_classificacao": "Contém atribuição a fonte ou pessoa, citação documental ou uma relação causal ou inferencial afirmada."
+    }
+  ],
+  "amostra_natureza": "Estimativa editorial do construtor; classifica o conteúdo da frase, não verifica a sua verdade. Fragmentos que atribuem uma declaração a uma pessoa contam; perguntas sem resposta, rótulos e regras genéricas não contam.",
+  "amostra_estimativa": {
+    "pt": {
+      "n": 30,
+      "afirmacoes": 24
+    },
+    "en": {
+      "n": 30,
+      "afirmacoes": 22
+    }
+  },
+  "estado": "interrompida pelo §2: a integração muda o número de conferências publicado em Método; comparação estrita diferente",
+  "corpos": {
+    "motor_commit": "9cdd2328e19d0d9854a8ded6da526084d9364ca9",
+    "ledger_linhas_lidas": 795,
+    "ledger_linhas_com_sha": 795,
+    "registo_linhas_com_excerto_conferido": 21
+  },
+  "plantas": {
+    "reais": 20,
+    "estragos_registo_cobertura_historico": 21,
+    "testes_aterragem": 24
+  }
+}

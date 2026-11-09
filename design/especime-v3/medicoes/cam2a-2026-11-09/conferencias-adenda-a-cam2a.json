@@ -1,0 +1,174 @@
+{
+  "corridas": [
+    {
+      "nome": "frases-com-motor",
+      "comando": "npm run check:frases-afirmacao",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-frases-inicial.log",
+      "ultimas_linhas": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:frases-afirmacao",
+        "> node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs",
+        "",
+        "frases-afirmacao: 20 plantas reais; 20 estragos recusados; semente, vizinhança, histórico e cadeia conferidos",
+        "frases: 1667; registo: 22; por registar: 1623; recusas: 0",
+        "excertos: corpos lidos; limpa=true; linhas lidas=21"
+      ]
+    },
+    {
+      "nome": "frases-sem-motor",
+      "comando": "env -u RESEARCHHUB_DIR npm run check:frases-afirmacao",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-frases-sem-motor.log",
+      "ultimas_linhas": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:frases-afirmacao",
+        "> node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs",
+        "",
+        "frases-afirmacao: 20 plantas reais; 21 estragos recusados; semente, vizinhança, histórico e cadeia conferidos",
+        "frases: 1667; registo: 22; por registar: 1623; recusas: 0",
+        "excertos: não leu os corpos: RESEARCHHUB_DIR ausente; limpa=false; linhas lidas=0"
+      ]
+    },
+    {
+      "nome": "ledger-com-motor",
+      "comando": "npm run ledger:check",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-ledger-com-motor.log",
+      "ultimas_linhas": [
+        "OG1-E D campo diferente do atual: código 1",
+        "OG1-E D publicador como revisão: código 1",
+        "OG1-E D campo sem mudança: código 1",
+        "OG1-E D campo fora da lista: código 1",
+        "OG1-E D história do valor partida: código 1",
+        "OG1-E D: 37 plantas e controlos; trinta correções de campo e a contagem conferidas.",
+        "corpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos",
+        "M83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+      ]
+    },
+    {
+      "nome": "ledger-sem-motor",
+      "comando": "env -u RESEARCHHUB_DIR npm run ledger:check",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-ledger-sem-motor.log",
+      "ultimas_linhas": [
+        "OG1-E D campo diferente do atual: código 1",
+        "OG1-E D publicador como revisão: código 1",
+        "OG1-E D campo sem mudança: código 1",
+        "OG1-E D campo fora da lista: código 1",
+        "OG1-E D história do valor partida: código 1",
+        "OG1-E D: 37 plantas e controlos; trinta correções de campo e a contagem conferidas.",
+        "corpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos",
+        "M83: não leu os corpos: RESEARCHHUB_DIR ausente; 0/795 linhas; limpa=false; recusas=0"
+      ]
+    },
+    {
+      "nome": "pre-mandato",
+      "comando": "npm run check:pre-mandato",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-pre-mandato.log",
+      "ultimas_linhas": [
+        "{\"pre_voo_segundos\": {\"livre\": 0.10477104177698493, \"ocupada\": 0.09943662490695715}}",
+        "....",
+        "----------------------------------------------------------------------",
+        "Ran 4 tests in 10.219s",
+        "",
+        "OK",
+        "camada 0: 43 plantas e controlos da ligação, incluindo o pré-mandato ponta a ponta",
+        "camada 0 na cadeia: controlo verde e 12 desligamentos recusados"
+      ]
+    },
+    {
+      "nome": "typecheck",
+      "comando": "npm run typecheck",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-typecheck.log",
+      "ultimas_linhas": [
+        "",
+        "> o-estado-do-pais@0.1.0 typecheck",
+        "> tsc -p tsconfig.check.json",
+        ""
+      ]
+    },
+    {
+      "nome": "plantas-frases-final",
+      "comando": "node tests/leituras/frases-afirmacao.mjs",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-plantas-final.log",
+      "ultimas_linhas": [
+        "frases-afirmacao: 20 plantas reais; 21 estragos recusados; semente, vizinhança, histórico e cadeia conferidos"
+      ]
+    },
+    {
+      "nome": "plantas-corpos",
+      "comando": "python3 tests/leituras/corpos-ledger.py",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-corpos-plantas.log",
+      "ultimas_linhas": [
+        "corpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos"
+      ]
+    },
+    {
+      "nome": "plantas-aterragem",
+      "comando": "python3 tests/leituras/ferramenta_aterrar.py",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-aterragem-plantas.log",
+      "ultimas_linhas": [
+        "........................",
+        "----------------------------------------------------------------------",
+        "Ran 24 tests in 55.242s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "nome": "leituras",
+      "comando": "npm run check:leituras",
+      "codigo": 1,
+      "registo": "<temporario>/cam2a-a-leituras.log",
+      "ultimas_linhas": [
+        "git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead",
+        "git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead",
+        "git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead",
+        "git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead",
+        "git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead",
+        "check:leituras · tests/leituras/tempos.py · código 0",
+        "tempos: a chamada por ligação escreveu os mesmos tempos.json.",
+        "tempos: o ambiente chegou; o código 7 foi conservado; o passo seguinte não correu; cada passo tem início, fim e duração."
+      ]
+    },
+    {
+      "nome": "comparacao",
+      "comando": "python3 scripts/comparar-dist-frases.py dist <temporario>/cam2a-a-comparacao.json",
+      "codigo": 1,
+      "resultado": "193 ficheiros diferentes, incluindo 192 páginas HTML; apenas version.json excluído"
+    },
+    {
+      "nome": "build",
+      "comando": "npm run build",
+      "codigo": 0,
+      "registo": "<temporario>/cam2a-a-build.log",
+      "ultimas_linhas": [
+        "OG1 pt: planta de data trocada e planta de partido trocado recusadas.",
+        "OG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.",
+        "OG1 pt: planta do bloco da citação alterado recusada.",
+        "OG1 en: planta de data trocada e planta de partido trocado recusadas.",
+        "OG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.",
+        "OG1 en: planta do bloco da citação alterado recusada.",
+        "PASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições.",
+        "{\"tranca\": \"libertada\", \"espera_segundos\": 0.00014154193922877312, \"execucao_segundos\": 947.4875723328441, \"codigo\": 0}"
+      ]
+    }
+  ],
+  "resumo_custo": {
+    "conferencias_funcionais": 14,
+    "verificacoes_sintaticas_node_check": 1,
+    "geracoes_semente": 3,
+    "corridas_inteiras_portoes": 0,
+    "capturas": 0,
+    "ajudantes": 0,
+    "chamadas_orquestracao": 38,
+    "operacoes_internas": 59,
+    "build_segundos": 947
+  }
+}
