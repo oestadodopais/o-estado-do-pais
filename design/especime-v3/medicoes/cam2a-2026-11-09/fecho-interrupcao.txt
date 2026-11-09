@@ -1,0 +1,11 @@
+build inicial: codigo 0; duracao 737 s
+M83 do prototipo: codigo 0; 795/795 linhas; recusas 0
+semente do prototipo: codigo 2; 1522 por registar; limite 1500
+OG1 pt: planta de data trocada e planta de partido trocado recusadas.
+OG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.
+OG1 pt: planta do bloco da citação alterado recusada.
+OG1 en: planta de data trocada e planta de partido trocado recusadas.
+OG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.
+OG1 en: planta do bloco da citação alterado recusada.
+PASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições.
+{"tranca": "libertada", "espera_segundos": 7.379194721579552e-05, "execucao_segundos": 736.5700225420296, "codigo": 0}

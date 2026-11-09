@@ -1,0 +1,439 @@
+diff --git a/scripts/leituras/conferir-frases.mjs b/scripts/leituras/conferir-frases.mjs
+index 8bba9a6c4..95c3da458 100644
+--- a/scripts/leituras/conferir-frases.mjs
++++ b/scripts/leituras/conferir-frases.mjs
+@@ -24,7 +24,7 @@ const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
+ const tagsVoz = tags + ',div,section,article';
+ // Cada carater do texto com selos conserva a sua projeção no texto sem selos.
+ // U+200B marca apenas os carateres retirados e é eliminado pela normalização.
+-function textoParaProcura(no) {
++export function textoParaProcura(no) {
+   const partes = [], projecoes = [];
+   function visitar(n, selo = false) {
+     selo ||= n.classList?.contains('src-chip') ?? false;
+diff --git a/scripts/paridade-numeros.mjs b/scripts/paridade-numeros.mjs
+index e937057d6..1de236ad9 100644
+--- a/scripts/paridade-numeros.mjs
++++ b/scripts/paridade-numeros.mjs
+@@ -1,6 +1,6 @@
+ /** HIG-6A: régua da AUD1, com as suas seis plantas conservadas. */
+ import {parse} from 'node-html-parser';
+-const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote,caption';
++export const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote,caption';
+ export const blocosDe = html => { const r = parse(html); r.querySelectorAll('script,style,a.src-chip,.src-chip').forEach(n => n.remove());
+   const c = r.querySelector('[data-oedp-moldura]') ?? r.querySelector('main') ?? r;
+   return c.querySelectorAll(tags).filter(n => !n.querySelector(tags)).map(n => n.textContent.replace(/​/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean); };
+diff --git a/scripts/voz-autorreferencia.mjs b/scripts/voz-autorreferencia.mjs
+index ab8ce6b8c..6f26b0dfc 100644
+--- a/scripts/voz-autorreferencia.mjs
++++ b/scripts/voz-autorreferencia.mjs
+@@ -43,7 +43,7 @@ export function conferirProtecoes(root,rota,livro=claims) {
+  }
+  return erros;
+ }
+-export const frasesDoTexto = texto => normal(texto).split(/(?<=[.!?])\s+(?=[A-ZÀ-Þ])/u).filter(f=>CLASSE.test(f));
++export const frasesDoTexto = (texto, filtro = f => CLASSE.test(f)) => normal(texto).split(/(?<=[.!?])\s+(?=[A-ZÀ-Þ])/u).filter(filtro);
+ export function medirPagina(html, rota, ledes = {}) {
+  const root=parse(html); root.querySelectorAll('script,style').forEach(n=>n.remove());
+  const corpo=root.querySelector('body') ?? root;
+--- /dev/null
++++ b/scripts/frases-com-afirmacao.mjs
+@@ -0,0 +1,92 @@
++/** CAM2-A: deteção sem modelo, sobre o texto impresso sem selos. */
++import fs from 'node:fs';
++import path from 'node:path';
++import {createHash} from 'node:crypto';
++import {parse} from 'node-html-parser';
++import {frasesDoTexto} from './voz-autorreferencia.mjs';
++import {textoParaProcura} from './leituras/conferir-frases.mjs';
++import {tags} from './paridade-numeros.mjs';
++import {matchPath, routePath} from '../src/lib/routes.mjs';
++export const normal = t => t.normalize('NFKC').replace(/\u200b/g, '').replace(/\s+/g, ' ').trim();
++export const sha256 = t => createHash('sha256').update(t).digest('hex');
++const palavra = t => new RegExp(`(?<![\\p{L}])(?:${t})(?![\\p{L}])`, 'iu');
++const atrPt = {test: t => /«[^»]{12,}»/u.test(t) || palavra('segundo|de acordo com|disse|disseram|afirmou|afirma|afirmam|defende|defendeu|considera|considerou|declarou|garantiu|acusou|criticou|reconheceu|prometeu|anunciou|escreveu|escreve').test(t)};
++const cauPt = palavra('porque|devido a|devido ao|devido à|por causa d|graças a|explica|explicam|explicou|levou a|levaram a|resultou|resulta d|resultado d|fez com que|em consequência|consequentemente|motivad[oa]s? por|provocou|causou|deve-se a|deveu-se a');
++const atrEnAntes = /“[^”]{12,}”|«[^»]{12,}»|\b(according to|said|says|stated|argued|argues|claimed|wrote|writes|promised|announced|acknowledged|declared|criticised|criticized|accused)\b/iu;
++const cauEnAntes = /\b(because|due to|owing to|as a result|resulted in|results from|led to|leads to|caused|causes|explains|explained|thanks to|driven by|consequently)\b/iu;
++const atrEnMais = palavra('say|states?|claims?|argue|defends?|defended|considers?|considered|declares?|guaranteed|assured|recognised|recognized|told|per|reported|second|promises?|announces?|written|in accordance with');
++const cauEnMais = palavra('explain|resulting|resulted from|results? of|result of|result in|results in|lead to|leading to|caused by|causing|motivated by|as a consequence|therefore|attributable to');
++export const marcaLeitura = (t, lingua) => (lingua === 'pt' ? /\((?:cálculo\s*:[^)]+|inferência)\)/iu : /\((?:calculation\s*:[^)]+|inference)\)/iu).test(t);
++export function tiposDaFrase(t, lingua, antes = false) {
++  const tipos = [];
++  if ((lingua === 'pt' ? atrPt.test(t) : atrEnAntes.test(t) || (!antes && (atrEnMais.test(t) || /"[^"]{12,}"/u.test(t) || atrPt.test(t))))) tipos.push('atribuicao');
++  if ((lingua === 'pt' ? cauPt.test(t) : cauEnAntes.test(t) || (!antes && (cauEnMais.test(t) || cauPt.test(t))))) tipos.push('causa');
++  if (marcaLeitura(t, lingua)) tipos.push('leitura');
++  return tipos;
++}
++export const cortar = t => frasesDoTexto(t, () => true);
++export const chave = f => `${f.estudo}|${f.lingua}|${f.sha256 ?? sha256(normal(f.frase))}`;
++export function blocosDaPagina(html) {
++  const r = parse(html); r.querySelectorAll('script,style').forEach(n => n.remove());
++  const c = r.querySelector('[data-oedp-moldura]') ?? r.querySelector('main') ?? r;
++  // Os mesmos blocos e ordem da paridade; os selos conservam-se apenas para ler as linhas.
++  return c.querySelectorAll(tags).filter(n => !n.closest('.src-chip') && !n.querySelectorAll(tags).some(f => !f.closest('.src-chip'))).map(n => {
++    const texto = textoParaProcura(n).texto;
++    const paragrafo = n.closest('p') ?? n;
++    const linhas = [...new Set([paragrafo, ...paragrafo.querySelectorAll('[data-claim],a[href]')].flatMap(a => {
++      const id = a.getAttribute('data-claim');
++      const hit = matchPath((a.getAttribute('href') ?? '').split('#')[0]);
++      return [id, hit?.key === 'linha' ? hit.params.slug : null].filter(Boolean);
++    }))].sort();
++    return {texto, frases:cortar(texto), linhas};
++  }).filter(b => b.texto);
++}
++export function lerPaginas(dist) {
++  const paginas = [];
++  function andar(dir) {
++    if (!fs.existsSync(dir)) return;
++    for (const e of fs.readdirSync(dir, {withFileTypes:true})) {
++      const f = path.join(dir, e.name);
++      if (e.isDirectory()) andar(f);
++      else if (e.name === 'index.html') {
++        const rota = '/' + path.relative(dist, path.dirname(f)).split(path.sep).join('/');
++        const hit = matchPath(rota);
++        if (!hit || !['estudo','documento','temas','explicacoes','explicacao','leituraDaSemana'].includes(hit.key) || hit.params.date) continue;
++        const estudo = ['estudo','documento'].includes(hit.key) ? hit.params.slug : routePath(hit.key, 'pt', hit.params).replace(/\/$/, '');
++        paginas.push({rota, estudo, lingua:hit.lang, tipo:hit.key, par:routePath(hit.key, hit.lang === 'pt' ? 'en' : 'pt', hit.params).replace(/\/$/, ''), blocos:blocosDaPagina(fs.readFileSync(f, 'utf8'))});
++      }
++    }
++  }
++  for (const raiz of ['estudos','en/studies','temas','en/themes','explicacoes','en/explainers']) andar(path.join(dist, raiz));
++  if (!paginas.length) throw new Error('frases: nenhuma página lida');
++  return paginas.sort((a,b) => a.rota.localeCompare(b.rota));
++}
++export function inventario(paginas, antes = false) {
++  const unicas = new Map();
++  for (const p of paginas) for (const [bloco, b] of p.blocos.entries()) for (const [indice, frase] of b.frases.entries()) {
++    const tipos = tiposDaFrase(frase, p.lingua, antes); if (!tipos.length) continue;
++    const f = {estudo:p.estudo, lingua:p.lingua, frase, tipos, sha256:sha256(normal(frase))};
++    const k = chave(f); if (!unicas.has(k)) unicas.set(k, {...f, ocorrencias:[]});
++    unicas.get(k).ocorrencias.push({pagina:p.rota, bloco, indice, linhas:b.linhas});
++  }
++  return [...unicas.values()].sort((a,b) => chave(a).localeCompare(chave(b)));
++}
++export function parDaFrase(paginas, ocorrencia) {
++  const p = paginas.find(p => p.rota === ocorrencia.pagina), par = paginas.find(e => e.rota === p.par);
++  if (!par || p.blocos.length !== par.blocos.length) return null;
++  const a = p.blocos[ocorrencia.bloco], b = par.blocos[ocorrencia.bloco];
++  if (a.frases.length !== b.frases.length) return null;
++  return {frase:b.frases[ocorrencia.indice], linhas:b.linhas, pagina:par.rota};
++}
++export function medirPares(paginas) {
++  const pt = inventario(paginas).filter(f => f.lingua === 'pt');
++  const r = {pares:0, sem_par:0, falhas_antes:0, falhas_depois:0, falhas:[]};
++  for (const f of pt) {
++    const par = f.ocorrencias.map(o => parDaFrase(paginas, o)).find(Boolean);
++    if (!par) {r.sem_par++; continue;}
++    r.pares++;
++    if (!tiposDaFrase(par.frase, 'en', true).length) r.falhas_antes++;
++    if (!tiposDaFrase(par.frase, 'en').length) {r.falhas_depois++; r.falhas.push({estudo:f.estudo, pt:f.frase, en:par.frase});}
++  }
++  return r;
++}
+--- /dev/null
++++ b/scripts/check-frases-afirmacao.mjs
+@@ -0,0 +1,117 @@
++/** CAM2-A: cobertura exata, registo bilingue e lista que só encolhe. */
++import fs from 'node:fs';
++import path from 'node:path';
++import {execFileSync} from 'node:child_process';
++import {pathToFileURL} from 'node:url';
++import {loadClaims} from '../src/lib/ledger.mjs';
++import {normal, sha256, chave, lerPaginas, inventario, marcaLeitura} from './frases-com-afirmacao.mjs';
++import {conferirCorpos} from './corpos-ledger.mjs';
++const LISTA = 'ledger/frases/por-registar.json';
++const BASE = 'f362f5ccd';
++export const SEMENTE_SHA256 = 'POR-GERAR';
++export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
++export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
++export function lerRegisto(pasta = 'ledger/frases') {
++  return fs.readdirSync(pasta).filter(f => f.endsWith('.json') && f !== 'por-registar.json').sort().flatMap(f => {
++    const registo = JSON.parse(fs.readFileSync(path.join(pasta, f), 'utf8'));
++    if (!Array.isArray(registo)) throw new Error('registo: formato inválido');
++    return registo;
++  });
++}
++export function validarPendentes(lista) {
++  if (!Array.isArray(lista)) throw new Error('por registar: não é uma lista');
++  const vistos = new Set();
++  for (const f of lista) {
++    if (!f || typeof f.estudo !== 'string' || !f.estudo || !['pt','en'].includes(f.lingua) || !/^[a-f0-9]{64}$/.test(f.sha256 ?? '') || Object.keys(f).sort().join(',') !== 'estudo,lingua,sha256' || vistos.has(chave(f))) throw new Error('por registar: entrada inválida ou repetida');
++    vistos.add(chave(f));
++  }
++  return vistos;
++}
++export function compararListas(antes, depois) {
++  const a = validarPendentes(antes), d = validarPendentes(depois);
++  return [...d].filter(k => !a.has(k)).map(k => `por registar: entrada nova: ${k}`);
++}
++export function conferirHistorico(lista, repo = '.') {
++  const git = (...args) => execFileSync('git', ['-C', repo, ...args], {encoding:'utf8', stdio:['ignore','pipe','pipe']}).trim();
++  if (git('rev-parse', '--is-shallow-repository') !== 'false') throw new Error('por registar: histórico incompleto');
++  git('merge-base', '--is-ancestor', BASE, 'HEAD');
++  const ler = rev => {
++    const existe = git('ls-tree', '--name-only', rev, '--', LISTA);
++    return existe ? JSON.parse(git('show', `${rev}:${LISTA}`)) : null;
++  };
++  const inicial = l => sha256(JSON.stringify(l)) === SEMENTE_SHA256 ? [] : ['por registar: primeira lista diferente da semente medida'];
++  const erros = [];
++  // Todos os commits que tocaram a lista, incluindo aumentos entretanto desfeitos.
++  for (const rev of git('rev-list', '--full-history', `${BASE}..HEAD`, '--', LISTA).split('\n').filter(Boolean)) {
++    const atual = ler(rev) ?? [];
++    const pais = git('rev-list', '--parents', '-n', '1', rev).split(' ').slice(1);
++    for (const pai of pais) {
++      const anterior = ler(pai);
++      erros.push(...(anterior === null ? inicial(atual) : compararListas(anterior, atual)).map(e => `${rev.slice(0,12)}: ${e}`));
++    }
++  }
++  const anterior = ler('HEAD');
++  erros.push(...(anterior === null ? inicial(lista) : compararListas(anterior, lista)));
++  return erros;
++}
++export function conferirRegisto(registo, paginas, livro) {
++  const erros = [], ids = new Set(), textos = new Set(), linhas = new Map();
++  const impressas = new Set(paginas.flatMap(p => p.blocos.flatMap(b => b.frases.map(frase => chave({estudo:p.estudo, lingua:p.lingua, frase})))));
++  for (const f of registo) {
++    const id = f.id ?? '(sem id)';
++    if (typeof id !== 'string' || !/^[a-z0-9-]+$/.test(id) || ids.has(id)) erros.push(`${id}: identificador inválido ou repetido`);
++    ids.add(id);
++    if (!['atribuicao','causa','leitura'].includes(f.tipo)) erros.push(`${id}: tipo inválido`);
++    if (typeof f.estudo !== 'string' || !f.estudo) erros.push(`${id}: falta estudo ou página`);
++    for (const lingua of ['pt','en']) {
++      if (typeof f[lingua] !== 'string' || !f[lingua].trim()) {erros.push(`${id}: falta ${lingua}`); continue;}
++      const k = chave({estudo:f.estudo, lingua, frase:f[lingua]});
++      if (!impressas.has(k)) erros.push(`${id}: ${lingua} ausente da edição`);
++      if (textos.has(k)) erros.push(`${id}: frase repetida no registo`);
++      textos.add(k);
++    }
++    const suporte = [];
++    if (!Array.isArray(f.linhas) || !f.linhas.length || new Set(f.linhas).size !== f.linhas.length) erros.push(`${id}: linhas inválidas`);
++    else for (const nome of f.linhas) {
++      const l = livro.get(nome);
++      if (!l || typeof l.excerpt !== 'string' || !l.excerpt.trim() || !/^[a-f0-9]{64}$/.test(l.document?.source_sha256 ?? '')) erros.push(`${id}: linha ${nome} sem excerto ou documento`);
++      else {suporte.push(l); linhas.set(nome, l);}
++    }
++    if (typeof f.pt === 'string' && typeof f.en === 'string') {
++      const pt = citacoes(f.pt, 'pt'), en = citacoes(f.en, 'en');
++      if (Boolean(pt.length) !== Boolean(en.length)) erros.push(`${id}: citação só numa edição`);
++      for (const c of pt.filter(c => [...c].length >= 12)) if (!suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c)))) erros.push(`${id}: citação ausente do excerto`);
++      const marcada = ['pt','en'].some(l => marcaLeitura(f[l], l));
++      if (f.tipo === 'leitura' || marcada) {
++        if (f.tipo !== 'leitura' || !['pt','en'].every(l => marcaLeitura(f[l], l)) || typeof f.razao !== 'string' || !f.razao.trim()) erros.push(`${id}: leitura sem marca bilingue e conta ou razão`);
++      }
++    }
++  }
++  return {erros, linhas:[...linhas.values()], textos};
++}
++export function conferirCobertura(frases, registo, pendentes) {
++  const erros = [], presentes = new Set(frases.map(chave)), p = validarPendentes(pendentes);
++  for (const k of presentes) if (!registo.has(k) && !p.has(k)) erros.push(`cobertura: frase sem registo: ${k}`);
++  for (const k of p) {
++    if (!presentes.has(k)) erros.push(`por registar: frase já não está no dist: ${k}`);
++    if (registo.has(k)) erros.push(`por registar: frase já registada: ${k}`);
++  }
++  return erros;
++}
++export function conferir(dist = 'dist') {
++  const paginas = lerPaginas(dist), frases = inventario(paginas), registo = lerRegisto();
++  const pendentes = JSON.parse(fs.readFileSync(LISTA, 'utf8'));
++  const r = conferirRegisto(registo, paginas, loadClaims());
++  const corpos = conferirCorpos(r.linhas, true);
++  return {frases:frases.length, registo:registo.length, pendentes:pendentes.length, corpos,
++    erros:[...r.erros, ...conferirCobertura(frases, r.textos, pendentes), ...conferirHistorico(pendentes), ...corpos.erros]};
++}
++if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
++  try {
++    const r = conferir(process.argv[2] ?? 'dist');
++    console.log(`frases: ${r.frases}; registo: ${r.registo}; por registar: ${r.pendentes}; recusas: ${r.erros.length}`);
++    console.log(`excertos: ${r.corpos.estado}; limpa=${r.corpos.limpa}; linhas lidas=${r.corpos.lidas}`);
++    for (const e of r.erros) console.error(e);
++    process.exitCode = r.erros.length ? 1 : 0;
++  } catch (e) {console.error(e.message); process.exitCode = 1;}
++}
+--- /dev/null
++++ b/scripts/gerar-frases-afirmacao.mjs
+@@ -0,0 +1,51 @@
++/** Semente CAM2-A reproduzível. Recusa sobrescrever um registo existente. */
++import fs from 'node:fs';
++import path from 'node:path';
++import {loadClaims} from '../src/lib/ledger.mjs';
++import {lerPaginas, inventario, parDaFrase, medirPares, normal, sha256, chave} from './frases-com-afirmacao.mjs';
++import {citacoes, normalExcerto} from './check-frases-afirmacao.mjs';
++export function semear(paginas, livro) {
++  const frases = inventario(paginas), registo = [], usadas = new Set();
++  for (const f of frases.filter(f => f.lingua === 'pt')) {
++    const cita = citacoes(f.frase, 'pt').filter(c => [...c].length >= 12);
++    if (!cita.length || f.tipos.includes('leitura')) continue;
++    for (const o of f.ocorrencias) {
++      const afirmacoes = o.linhas.filter(id => livro.get(id)?.afirmacao === true);
++      if (afirmacoes.length !== 1) continue;
++      const l = livro.get(afirmacoes[0]), par = parDaFrase(paginas, o);
++      if (!l.excerpt || !l.document?.source_sha256 || !cita.every(c => normalExcerto(l.excerpt).includes(normalExcerto(c))) || !par || !citacoes(par.frase, 'en').length) continue;
++      const kp = chave(f), ke = chave({estudo:f.estudo, lingua:'en', frase:par.frase});
++      if (usadas.has(kp) || usadas.has(ke)) continue;
++      registo.push({id:'f-' + sha256(f.estudo + '\n' + normal(f.frase)).slice(0,24), estudo:f.estudo, tipo:f.tipos[0], pt:f.frase, en:par.frase, linhas:[l.id]});
++      usadas.add(kp); usadas.add(ke); break;
++    }
++  }
++  const pendentes = frases.filter(f => !usadas.has(chave(f))).map(({estudo,lingua,sha256}) => ({estudo,lingua,sha256}));
++  return {frases, registo, pendentes};
++}
++export function medidas(paginas, resultado) {
++  const {frases, registo, pendentes} = resultado, estudos = {};
++  for (const f of frases) {
++    const e = estudos[f.estudo] ??= {pt:0, en:0, registo:0, por_registar:{pt:0,en:0}};
++    e[f.lingua]++;
++  }
++  for (const f of registo) estudos[f.estudo].registo++;
++  for (const f of pendentes) estudos[f.estudo].por_registar[f.lingua]++;
++  return {paginas:paginas.length, frases:frases.length, pt:frases.filter(f=>f.lingua==='pt').length, en:frases.filter(f=>f.lingua==='en').length, registo:registo.length, por_registar:pendentes.length, pares:medirPares(paginas), estudos};
++}
++if (process.argv[1]?.endsWith('/gerar-frases-afirmacao.mjs')) {
++  const dist = process.argv[2] ?? 'dist', destino = process.argv[3] ?? 'ledger/frases';
++  if (fs.existsSync(destino)) throw new Error('semente: destino já existe');
++  const paginas = lerPaginas(dist), r = semear(paginas, loadClaims()), m = medidas(paginas, r);
++  if (r.pendentes.length > 1500) {
++    console.error(JSON.stringify({estado:'PAROU: lista acima de 1500', frases:m.frases,registo:m.registo,por_registar:m.por_registar})); process.exit(2);
++  }
++  fs.mkdirSync(destino, {recursive:true});
++  for (const estudo of new Set(r.registo.map(f=>f.estudo))) {
++    const nome = estudo.startsWith('/') ? 'pagina-' + estudo.slice(1).replaceAll('/', '-') : estudo;
++    fs.writeFileSync(path.join(destino, nome + '.json'), JSON.stringify(r.registo.filter(f=>f.estudo===estudo),null,2) + '\n');
++  }
++  fs.writeFileSync(path.join(destino,'por-registar.json'), JSON.stringify(r.pendentes,null,2) + '\n');
++  fs.writeFileSync(process.argv[4] ?? '/tmp/cam2a-semente-medidas.json', JSON.stringify(m,null,2)+'\n');
++  console.log(JSON.stringify({frases:m.frases,registo:m.registo,por_registar:m.por_registar,semente_sha256:sha256(JSON.stringify(r.pendentes))}));
++}
+--- /dev/null
++++ b/scripts/corpos-ledger.mjs
+@@ -0,0 +1,21 @@
++/** Interface única para o índice M83 do pacote e para a conferência dos excertos. */
++import {spawnSync} from 'node:child_process';
++import {fileURLToPath, pathToFileURL} from 'node:url';
++import path from 'node:path';
++import {loadClaims} from '../src/lib/ledger.mjs';
++export function conferirCorpos(linhas, excertos = false) {
++  const r = spawnSync('python3', [fileURLToPath(new URL('./leituras/corpos-ledger.py', import.meta.url))], {
++    input:JSON.stringify({linhas, excertos}), encoding:'utf8', maxBuffer:4 * 1024 * 1024,
++  });
++  if (r.error || ![0,1].includes(r.status)) throw new Error('corpos: processo de leitura indisponível');
++  let resultado; try {resultado = JSON.parse(r.stdout);} catch {throw new Error('corpos: resposta ilegível');}
++  if (r.status && !resultado.erros?.length) throw new Error('corpos: falha sem diagnóstico');
++  return resultado;
++}
++if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
++  const linhas = [...loadClaims().values()].filter(l => l.document?.source_sha256 != null);
++  const r = conferirCorpos(linhas);
++  console.log(`M83: ${r.estado}; ${r.lidas}/${linhas.length} linhas; limpa=${r.limpa}; recusas=${r.erros.length}`);
++  for (const e of r.erros) console.error(e);
++  process.exitCode = r.erros.length ? 1 : 0;
++}
+--- /dev/null
++++ b/scripts/leituras/corpos-ledger.py
+@@ -0,0 +1,105 @@
++#!/usr/bin/env python3
++"""CAM2-A: a M83 inteira e os excertos do registo, sem rede.
++Reutiliza o índice do pacote; os bytes vêm dos objetos Git, não de ficheiros soltos.
++"""
++import gzip
++import hashlib
++import html
++from html.parser import HTMLParser
++import json
++import os
++from pathlib import Path
++import re
++import subprocess
++import sys
++import tempfile
++import unicodedata
++from pacote import git, indice_dos_corpos
++
++
++def normal(texto):
++    texto = unicodedata.normalize('NFKC', texto).replace('\u00ad', '')
++    texto = re.sub(r'(\w)-\s*\n\s*(\w)', r'\1\2', texto)
++    texto = texto.translate(str.maketrans('’‘“”', "''\"\""))
++    return re.sub(r'\s+', ' ', texto).strip()
++
++
++class TextoHTML(HTMLParser):
++    def __init__(self):
++        super().__init__(convert_charrefs=True)
++        self.partes, self.ignorar = [], 0
++    def handle_starttag(self, tag, attrs):
++        if tag in ('script', 'style'): self.ignorar += 1
++        if tag in ('p', 'div', 'br', 'li', 'td', 'th', 'tr', 'section', 'h1', 'h2', 'h3'): self.partes.append(' ')
++    def handle_endtag(self, tag):
++        if tag in ('script', 'style'): self.ignorar = max(0, self.ignorar - 1)
++        if tag in ('p', 'div', 'li', 'td', 'th', 'tr', 'section'): self.partes.append(' ')
++    def handle_data(self, data):
++        if not self.ignorar: self.partes.append(data)
++
++
++def texto_do_corpo(raw):
++    if raw[:2] == b'\x1f\x8b': raw = gzip.decompress(raw)
++    if raw.startswith(b'%PDF'):
++        with tempfile.TemporaryDirectory(prefix='cam2a-corpo-') as tmp:
++            f = Path(tmp) / 'corpo.pdf'; f.write_bytes(raw)
++            texto = subprocess.run(['pdftotext', '-q', str(f), '-'], capture_output=True, check=True, timeout=120).stdout.decode('utf-8')
++    else:
++        texto = raw.decode('utf-8-sig')
++        if re.search(r'<(?:!doctype|html|body|p|div)\b', texto, re.I):
++            parser = TextoHTML(); parser.feed(texto); texto = ''.join(parser.partes)
++    return normal(texto)
++
++
++def indice_completo(repo, motor, precisos):
++    cabeca = git(repo, 'rev-parse', 'HEAD').decode().strip()
++    cabeca_motor = git(motor, 'rev-parse', 'HEAD').decode().strip()
++    nomes = git(motor, 'ls-tree', '-r', '--name-only', '-z', cabeca_motor, '--', 'content').split(b'\0')
++    estudos = {os.fsdecode(n).split('/source/')[0] for n in nomes if b'/source/' in n}
++    indice = {s: (motor, cabeca_motor, p) for s, (p, _) in indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos).items()}
++    # As edições arquivadas pertencem ao Git do sítio e também são identificadas pelos bytes.
++    for p in git(repo, 'ls-tree', '-r', '--name-only', '-z', cabeca, '--', 'studies-src/_edicoes').split(b'\0'):
++        if not p: continue
++        p = os.fsdecode(p); raw = git(repo, 'show', f'{cabeca}:{p}'); sha = hashlib.sha256(raw).hexdigest()
++        if sha in precisos: indice.setdefault(sha, (repo, cabeca, p))
++    return indice
++
++
++def conferir(linhas, indice, excertos=False):
++    erros, cache = [], {}
++    for linha in linhas:
++        sha = (linha.get('document') or {}).get('source_sha256')
++        if sha is None: continue
++        if not isinstance(sha, str) or not re.fullmatch('[0-9a-f]{64}', sha):
++            erros.append(f'{linha["id"]}: source_sha256 inválido'); continue
++        if sha not in indice:
++            erros.append(f'{linha["id"]}: corpo não alojado pelo sha256'); continue
++        if excertos:
++            if sha not in cache:
++                repo, cabeca, p = indice[sha]
++                raw = git(repo, 'show', f'{cabeca}:{p}')
++                if hashlib.sha256(raw).hexdigest() != sha: raise ValueError('corpo diferente do índice')
++                cache[sha] = texto_do_corpo(raw)
++            excerpt = normal(linha.get('excerpt') or '')
++            if not excerpt or excerpt not in cache[sha]: erros.append(f'{linha["id"]}: excerto ausente do corpo')
++    return erros
++
++
++def main():
++    pedido = json.load(sys.stdin)
++    motor = os.environ.get('RESEARCHHUB_DIR')
++    if not motor:
++        print(json.dumps({'estado':'não leu os corpos: RESEARCHHUB_DIR ausente', 'limpa':False, 'lidas':0, 'erros':[]})); return
++    linhas = pedido['linhas']
++    precisos = {l['document']['source_sha256'] for l in linhas if (l.get('document') or {}).get('source_sha256')}
++    indice = indice_completo(Path.cwd(), Path(motor), precisos)
++    erros = conferir(linhas, indice, pedido.get('excertos', False))
++    print(json.dumps({'estado':'corpos lidos', 'limpa':not erros, 'lidas':sum((l.get('document') or {}).get('source_sha256') in indice for l in linhas), 'erros':erros}, ensure_ascii=False))
++    sys.exit(bool(erros))
++
++
++if __name__ == '__main__':
++    try: main()
++    except Exception as erro:
++        # Sem caminhos locais na saída que possa integrar um registo.
++        print(json.dumps({'estado':'leitura dos corpos recusada', 'limpa':False, 'erros':[type(erro).__name__]})); sys.exit(1)

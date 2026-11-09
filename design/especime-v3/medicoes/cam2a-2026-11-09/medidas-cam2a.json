@@ -66,5 +66,300 @@
  "excertos-literais": {
   "valor": "277",
   "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «excertos encontrados palavra por palavra»"
- }
+ },
+ "ensaio-construtor-interrompido": {
+  "paginas": 77,
+  "frases": 1522,
+  "pt": 641,
+  "en": 881,
+  "registo": 0,
+  "por_registar": 1522,
+  "pares": {
+    "pares": 383,
+    "sem_par": 258,
+    "falhas_antes": 63,
+    "falhas_depois": 6,
+    "falhas": [
+      {
+        "estudo": "evora-2027-capital-europeia-da-cultura",
+        "pt": "porque não tem resposta",
+        "en": "why there is no answer"
+      },
+      {
+        "estudo": "evora-2027-prometido-painel-dinheiro",
+        "pt": "porque não tem resposta",
+        "en": "why there is no answer"
+      },
+      {
+        "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+        "pt": "Para uma empresa — as janelas concorrenciais do PRR estão na prática encerradas: 0 avisos comprovadamente abertos a novas candidaturas, segundo o próprio plano de avisos de 2026 do programa.",
+        "en": "For a company — the PRR's competitive windows are effectively over: 0 avisos verifiably open to new applications, on the programme's own 2026 avisos plan."
+      },
+      {
+        "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+        "pt": "O que significa «dentro do prazo» nestes dados, e o que está vencido",
+        "en": "What \"on time\" means in this data, and what is overdue"
+      },
+      {
+        "estudo": "evora-prometido-pago-auditado-2026",
+        "pt": "O que significa «dentro do prazo» nestes dados, e o que está vencido",
+        "en": "What \"on time\" means in this data, and what is overdue"
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "pt": "As medidas novas valem 79 milhões de euros a favor do saldo, segundo o quadro das medidas do relatório e a UTAO; as dez linhas que o quadro marca como «invariante» pesam 1 210 milhões.",
+        "en": "The new measures are worth 79 million euros to the balance, by the report's table of measures and by the UTAO; the ten lines the table marks as «invariante» (invariant) weigh 1,210 million."
+      }
+    ]
+  },
+  "estudos": {
+    "/explicacoes/dinheiro-do-estado-2026": {
+      "pt": 3,
+      "en": 7,
+      "registo": 0,
+      "por_registar": {
+        "pt": 3,
+        "en": 7
+      }
+    },
+    "/explicacoes/dinheiro-do-estado-2027": {
+      "pt": 5,
+      "en": 8,
+      "registo": 0,
+      "por_registar": {
+        "pt": 5,
+        "en": 8
+      }
+    },
+    "/explicacoes/leitura-da-semana": {
+      "pt": 1,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 1
+      }
+    },
+    "/explicacoes": {
+      "pt": 1,
+      "en": 3,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 3
+      }
+    },
+    "/temas": {
+      "pt": 1,
+      "en": 21,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 21
+      }
+    },
+    "a-casa-em-portugal-e-na-europa": {
+      "pt": 51,
+      "en": 90,
+      "registo": 0,
+      "por_registar": {
+        "pt": 51,
+        "en": 90
+      }
+    },
+    "agua-nao-faturada": {
+      "pt": 18,
+      "en": 44,
+      "registo": 0,
+      "por_registar": {
+        "pt": 18,
+        "en": 44
+      }
+    },
+    "alentejo-algarve": {
+      "pt": 1,
+      "en": 52,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 52
+      }
+    },
+    "avaliacao-economica-regional-de-portugal-2026": {
+      "pt": 11,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 11,
+        "en": 1
+      }
+    },
+    "evolucao-de-portugal-desde-1981": {
+      "pt": 3,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 3,
+        "en": 1
+      }
+    },
+    "evora-2027-capital-europeia-da-cultura": {
+      "pt": 89,
+      "en": 119,
+      "registo": 0,
+      "por_registar": {
+        "pt": 89,
+        "en": 119
+      }
+    },
+    "evora-2027-prometido-painel-dinheiro": {
+      "pt": 85,
+      "en": 115,
+      "registo": 0,
+      "por_registar": {
+        "pt": 85,
+        "en": 115
+      }
+    },
+    "evora-contas-da-camara-2010-2025": {
+      "pt": 37,
+      "en": 69,
+      "registo": 0,
+      "por_registar": {
+        "pt": 37,
+        "en": 69
+      }
+    },
+    "evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+      "pt": 26,
+      "en": 65,
+      "registo": 0,
+      "por_registar": {
+        "pt": 26,
+        "en": 65
+      }
+    },
+    "evora-economia-investidores-portas-abertas-2026": {
+      "pt": 5,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 5,
+        "en": 2
+      }
+    },
+    "evora-orcamentado-pago-devido-2025": {
+      "pt": 26,
+      "en": 48,
+      "registo": 0,
+      "por_registar": {
+        "pt": 26,
+        "en": 48
+      }
+    },
+    "evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+      "pt": 60,
+      "en": 3,
+      "registo": 0,
+      "por_registar": {
+        "pt": 60,
+        "en": 3
+      }
+    },
+    "evora-prometido-pago-auditado-2026": {
+      "pt": 46,
+      "en": 74,
+      "registo": 0,
+      "por_registar": {
+        "pt": 46,
+        "en": 74
+      }
+    },
+    "evora-quem-governou-a-camara-2009-2025": {
+      "pt": 44,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 44,
+        "en": 1
+      }
+    },
+    "evora-quinze-anos-cinco-mandatos": {
+      "pt": 46,
+      "en": 2,
+      "registo": 0,
+      "por_registar": {
+        "pt": 46,
+        "en": 2
+      }
+    },
+    "onde-esta-a-agua": {
+      "pt": 23,
+      "en": 71,
+      "registo": 0,
+      "por_registar": {
+        "pt": 23,
+        "en": 71
+      }
+    },
+    "orcamento-2027-o-que-muda-e-para-quem": {
+      "pt": 50,
+      "en": 70,
+      "registo": 0,
+      "por_registar": {
+        "pt": 50,
+        "en": 70
+      }
+    },
+    "penalizacoes-por-reforma-antecipada-2026": {
+      "pt": 8,
+      "en": 1,
+      "registo": 0,
+      "por_registar": {
+        "pt": 8,
+        "en": 1
+      }
+    },
+    "which-door-is-yours": {
+      "pt": 1,
+      "en": 13,
+      "registo": 0,
+      "por_registar": {
+        "pt": 1,
+        "en": 13
+      }
+    }
+  },
+  "estado": "interrompida pelo §2: ensaio acima de 1500 por registar",
+  "diagnostico_semente": {
+    "com_citacao": 252,
+    "com_unica_afirmacao": 0,
+    "com_excerto_e_sha": 0,
+    "citacao_no_excerto": 0,
+    "com_par": 0,
+    "com_citacao_en": 0
+  },
+  "tipos": {
+    "pt": {
+      "atribuicao": 465,
+      "causa": 134,
+      "leitura": 63
+    },
+    "en": {
+      "atribuicao": 774,
+      "causa": 111,
+      "leitura": 33
+    }
+  },
+  "antes_de_afinar_ingles": {
+    "pt": 641,
+    "en": 471
+  },
+  "limites": [
+    "Protótipo sem plantas e sem integração na cadeia.",
+    "Alinhamento apenas quando os totais de blocos e de frases coincidem.",
+    "Âmbito dos temas por conferir: as entradas temáticas têm rotas próprias.",
+    "Nenhum ficheiro ledger/frases foi criado."
+  ]
+}
 }
