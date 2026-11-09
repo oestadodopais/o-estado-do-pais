@@ -1161,46 +1161,58 @@ ficheiro contém uma lista de entradas. O nome é o slug do estudo; páginas sem
 estudo usam `pagina-` seguido da rota portuguesa, com barras substituídas por
 hífens. `por-registar.json` é a dívida inicial, não um registo de prova.
 
-Uma entrada tem `id` único, `estudo` (slug ou rota portuguesa canónica), `tipo`
-(`atribuicao`, `causa` ou `leitura`), `pt`, `en` e `linhas`, uma lista não vazia
+Uma entrada tem `id` único, `estudo` (slug ou rota portuguesa canónica), `tipos`
+(lista sem repetições de `atribuicao`, `causa` e `leitura`), `pt`, `en` e `linhas`, uma lista não vazia
 de identificadores de `ledger/claims`. Cada linha referida tem de existir e
 conter `excerpt` não vazio e `document.source_sha256` de 64 hexadecimais.
 A referência resolve esses campos no livro, sem manter uma cópia que possa
 ficar desatualizada. Uma `leitura` tem também `razao`, a conta ou razão, e as
 marcas `(cálculo: …)` ou `(inferência)` e os equivalentes ingleses na frase.
-A semente conserva em `origem` as rotas e o método de alinhamento; esse campo
-é informativo e não dispensa a procura independente das frases na conferência.
+Cada entrada tem `origem: "semente"` ou `origem: "mandato <caminho relativo>"`.
+O caminho do mandato é relativo a `design/especime-v3/medicoes`, tem extensão
+`.md` e não pode sair dessa pasta, nem por ligação simbólica. A semente guarda
+as rotas e o método de alinhamento em `locais`; não dispensam a procura
+independente das frases. Conserva todos os tipos detetados, não só o primeiro.
+Uma origem `semente` exige novamente a regra do parágrafo, da linha única com
+`afirmacao: true` e da citação presa; não é uma autorização para texto livre. As entradas da semente inicial estão
+também presas por resumo em `scripts/frases-semente-pino.json`; uma frase nova
+não pode usar `origem: "semente"` para dispensar o mandato.
 
 `node scripts/gerar-frases-afirmacao.mjs dist <destino-novo> <medidas.json>`
 semeia apenas frases com citação portuguesa de pelo menos doze carateres,
 num parágrafo que cite exatamente uma linha com `afirmacao: true`, com a
 citação dentro do excerto e com par inglês encontrado. Não escreve entradas
-à mão, não sobrescreve destinos e recusa mais de 3 000 pendentes.
+à mão, não sobrescreve destinos e recusa mais de 4 000 pendentes.
 As outras frases são auditadas e registadas pela AUD1.
 
 ### Âmbito, texto e pares
 
 `rotasDaProsa()` enumera as páginas pelas coleções `WORKS`, `PUBLISHED_EDITIONS`,
-`DOSSIES`, `EXPLICACOES` e `ENTRADAS`, e pela tabela `ROUTES` para as páginas
-literais. Entram documentos atuais, páginas e índice dos estudos, itens em
-discussão, dossiês, temas e entradas temáticas, explicações e leitura semanal,
-correções, início e índice geral. Entram também Sobre, Método, Privacidade e
-Agenda, para que a prosa institucional e de calendário não escape à mesma régua.
-Uma página esperada ausente recusa a conferência.
+`DOSSIES`, `EXPLICACOES`, `ENTRADAS`, `MUNICIPIOS_COM_PAGINA`, `slugsDasUnidades`,
+`slugsDasRegioes`, `slugsDasAreas` e `edicoesGuardadas`, e pela tabela `ROUTES`
+para as páginas literais. Inclui União Europeia, sugestões e respostas,
+erros 404 e documentos datados. Uma página esperada ausente recusa.
 
-Ficam fora os recibos do livro e das séries (`livro`, `livroConcelhos`,
-`livroConcelho`, `linha`, `serie`); as páginas geográficas de indicadores
-(`municipios`, `municipio`, `distritos`, `distrito`, `regioes`, `regiao`, `areas`,
-`area`, `dominios`, `dominio`, `uniaoEuropeia`), fora das coleções editoriais
-enumeradas no mandato; o formulário de sugestões e as suas respostas
-funcionais; a antiga rota `texto`, que não é uma edição publicada; o alias
-`marcador`, já lido através de Método; e documentos arquivados datados, cuja
-régua fica para a CAM2-C. A lista de famílias excluídas e a lista completa de
-rotas lidas são emitidas por `scripts/medir-frases-afirmacao.mjs`.
+Só se excluem páginas construídas do livro-razão (`livro`, `livroConcelhos`,
+`livroConcelho`, `linha`, `serie`), por serem recibos. `municipios`, `distritos`,
+`dominios`, `dominio` e `texto` são rotas de redirecionamento sem página
+construída. `marcador` é um alias de Método, já incluído. As rotas efetivamente
+lidas e as famílias sem página própria saem na medição. O inventário é
+conferido contra todos os HTML do `dist/` para impedir uma omissão silenciosa.
+
+Concelhos, distritos, regiões, áreas e União Europeia usam a chave
+`colecao-<chave de rota>`, língua e frase normalizada. Repetições dentro da
+coleção contam uma vez e uma entrada cobre todas as ocorrências. Nas demais
+páginas conserva-se a chave por estudo ou página; as edições datadas usam a
+chave do respetivo estudo.
 
 O texto sem selos vem de `textoParaProcura`, da camada 0. O corte vem de
 `frasesDoTexto`, com o filtro de voz desativado apenas para este uso. O filtro
-original continua a ser o valor por omissão. Os blocos usam os seletores da
+original continua a ser o valor por omissão. Só o detetor acrescenta o corte
+depois de `.»`, `!»` e `?»` seguidos de espaço e maiúscula. Um fragmento
+sem marca própria conserva, para cobertura, os tipos de atribuição ou causa
+da unidade marcada de onde foi cortado. Vai para auditoria mesmo que não
+repita o verbo ou a citação, e não herda uma prova no registo. Os blocos usam os seletores da
 paridade. A cobertura normaliza NFKC, remove U+200B, junta espaços e conserva
 maiúsculas, pontuação e palavras. A mesma frase conta uma vez por estudo ou
 página e por língua. As duas línguas são cobertas independentemente.
@@ -1211,7 +1223,8 @@ blocos, por referências partilhadas ou por tag e quantidade de frases;
 cruzamentos são recusados. Dentro do bloco exigem-se quantidades iguais de
 frases e a mesma posição. Isto é alinhamento estrutural, não verificação
 semântica da tradução. Uma frase sem par pode continuar pendente; não pode
-entrar no registo. O verificador volta a conferir o par, não confia em `origem`.
+entrar no registo. O verificador volta a conferir o par, não confia em `locais`. A medição conta as falhas nos dois sentidos: PT para
+EN e EN para PT, além das frases sem par em cada língua.
 
 ### Cobertura e dívida que só encolhe
 
@@ -1222,20 +1235,53 @@ estudo, ou com uma entrada da lista pendente. Cada pendente contém apenas
 frase atual e frases já registadas ainda na dívida são recusados. Uma reescrita
 muda o resumo e exige registo. Não se pode atualizar a dívida para a acomodar.
 
-A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A régua percorre todos
-os commits que tocaram a lista desde f362f5ccd, compara com cada pai que já
-conhece a dívida e confere também a árvore de trabalho. Um aumento histórico
-recusa mesmo que outro commit o tenha desfeito. Apagar e recriar a lista não
-repõe a autorização inicial. Histórico superficial ou base ausente recusam.
+A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda C autoriza
+uma única regeneração antes da aterragem: a base desta série passa a
+f1b98c701. A régua percorre todos os commits posteriores que tocaram a lista,
+compara com cada pai que já conhece esta semente e confere a árvore de
+trabalho. Um aumento histórico recusa mesmo que depois seja desfeito. Apagar
+e recriar a lista não repõe a autorização inicial. Histórico superficial ou
+base ausente recusam. Não há opção de atualização automática do pino inicial.
+
+As listas de marcas estão em `scripts/frases-marcas.json`. O pino em
+`scripts/frases-marcas-pino.json` prende os bytes por sha256, com data e razão.
+A régua confere todos os commits desde a mesma base: alterar marcas sem
+alterar o pino e a razão nesse commit recusa, mesmo que outro commit repare.
+Cada marca tem uma planta isolada; a falta de exemplo real fica identificada
+como sintética. As exclusões ordinais de `segundo` têm plantas negativas,
+assim como os nomes `Mecanismo de Alerta` e `Sistema de Alerta`.
 
 No GitHub, `fetch-depth: 0` fornece o histórico completo e o passo está em
 `verify`, repartido automaticamente pelo portão. Não precisa de rede nem de
-motor privado. No caminho local autorizado, `comitar.sh` corre `--so-lista`
-antes de enviar o pedido ao escrivão, incluindo com `OEDP_GATE=adiado`.
-Este controlo local confere a lista, não reconstrói páginas. A cobertura e a
-remoção de pendentes obsoletos são conferidas pelo `dist/` no portão. Não se
-alega que um commit feito por outro caminho local esteja mecanicamente
-impedido; a validação histórica recusa-o na corrida do GitHub.
+motor privado. Localmente, `comitar.sh` faz a conferência prévia da árvore;
+o escrivão prepara o índice e chama `comitar.sh --conferir-indice`, que lê
+`git show :ledger/frases/por-registar.json` e os pinos do índice. Uma recusa
+impede o commit, também com `OEDP_GATE=adiado`. Um escrivão já em execução
+antes desta versão só ganha esta chamada quando voltar a arrancar. A cobertura
+e os pendentes obsoletos são conferidos pelo `dist/` no portão. Um commit feito
+por outro caminho local continua sujeito à validação histórica no GitHub.
+
+### Entrada de uma frase nova ou reescrita
+
+A direção declara `Acrescenta: frases` (ou `linhas e frases`) e `Frases:` no
+cabeçalho do mandato das medidas. Na lista indicada, acrescenta à entrada da
+camada 0 os campos `id`, `estudo`, `tipos`, `linhas`, `pt`, `en` e, para uma
+leitura, `razao`. Mantém os campos da camada 0 (`lingua`, `classe`, `frase`,
+`nova` quando aplicável e `paginas`), para continuar a conferir números,
+quantificadores, presença e voz pelo `check:pre-mandato` existente.
+
+O construtor aplica o par à edição e ao registo, com
+`origem: "mandato <pasta/MANDATO-nome.md>"`. A conferência compara literalmente
+os campos do registo com a lista `Frases:` desse mandato. Uma entrada manual
+sem mandato, um caminho exterior ou um par ou suporte diferente recusam.
+O mandato é uma autorização escrita verificável, não uma autenticação da
+identidade de quem editou o ficheiro.
+
+As citações de doze ou mais carateres ficam presas aos excertos. Se não houver
+uma citação portuguesa desse tamanho presa a uma das linhas, a entrada exige
+`juizo: "por julgar"`. Nesta camada, qualquer outro valor de `juizo` recusa.
+Só a CAM2-B introduzirá o juiz e a transição do juízo. O código zero da
+cobertura não significa que uma frase sem citação tenha sido julgada.
 
 ### Citações, excertos e corpos
 
@@ -1262,7 +1308,9 @@ Sem motor, ambas as conferências escrevem `não leu os corpos` e `limpa=false`.
 O código zero nessa situação certifica apenas a parte executada, nunca os
 corpos ou os excertos. Na aterragem, `ledger:check` e
 `check:frases-afirmacao` correm com o motor, em comandos próprios, e os códigos
-`ledger-corpos.codigo` e `frases-afirmacao.codigo` são relidos antes da fusão.
+`ledger-corpos.codigo` e `frases-afirmacao.codigo` são relidos antes da fusão. Além do código zero, exige as linhas finais
+`M83: corpos lidos; ... limpa=true; recusas=0` e
+`excertos: corpos lidos; limpa=true; linhas lidas=...`. Sem elas não funde.
 
 A amostra de trinta frases por língua é ordenada pelo sha256 de
 `CAM2-A-2026-11-09|<estudo>|<frase>`. A classificação registada nas medidas é

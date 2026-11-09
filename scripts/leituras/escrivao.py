@@ -177,6 +177,10 @@ def executar(repo, pedido, bater=None):
     adicionar = git(repo, 'add', '--', *ficheiros)
     if adicionar.returncode != 0:
         return {'codigo': adicionar.returncode, 'recusa': 'git add falhou', 'saida': (adicionar.stdout + adicionar.stderr)[-3000:]}
+    if (pathlib.Path(repo) / 'scripts/check-frases-afirmacao.mjs').is_file():
+        prova = subprocess.run(['sh', 'scripts/leituras/comitar.sh', '--conferir-indice'], cwd=repo, capture_output=True, text=True)
+        if prova.returncode:
+            return {'codigo': prova.returncode, 'recusa': 'frases no índice preparado', 'saida': (prova.stdout + prova.stderr)[-3000:]}
     mensagem = pedido['mensagem'].rstrip('\n') + '\n'
     # O commit corre em processo próprio e o escrivão continua a bater enquanto os hooks correm (a leitura a frio da
     # higiene de 13.10, o achado 6: o pre-commit do motor demora cerca de dois minutos e meio, e o batimento parava).

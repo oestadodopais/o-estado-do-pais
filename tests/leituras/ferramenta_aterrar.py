@@ -68,6 +68,10 @@ else: sys.exit(88)
         comando(self.bin, 'npm', comum + '''
 if modo=='ledger-corpos-falha' and a[1]=='ledger:check': sys.exit(12)
 if modo=='frases-afirmacao-falha' and a[1]=='check:frases-afirmacao': sys.exit(13)
+if a[1]=='ledger:check' and modo=='ledger-nao-leu': print('M83: não leu os corpos; 0/1 linhas; limpa=false; recusas=0')
+if a[1]=='check:frases-afirmacao' and modo=='frases-nao-leu': print('excertos: não leu os corpos; limpa=false; linhas lidas=0')
+if a[1]=='ledger:check' and modo!='ledger-nao-leu': print('M83: corpos lidos; 1/1 linhas; limpa=true; recusas=0')
+if a[1]=='check:frases-afirmacao' and modo!='frases-nao-leu': print('excertos: corpos lidos; limpa=true; linhas lidas=1')
 if modo=='series-falha' and a[1]=='check:series': sys.exit(6)
 if modo=='cruzamento-falha' and a[1]=='check:cruzamento': sys.exit(5)
 if a==['run','build']:
@@ -88,6 +92,18 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
                         CHAMADAS=str(self.chamadas), CABECA=self.cabeca, RESEARCHHUB_DIR=str(self.motor),
                         OEDP_TRANCA=str(self.p / 'tranca'), OEDP_BLOCOS='ensaio', OEDP_ATERRAGENS=str(self.p))
         self.saida = self.p / 'saida'
+
+    def test_corpos_nao_lidos_recusam_codigo_zero(self):
+        for modo in ('ledger-nao-leu', 'frases-nao-leu'):
+            with self.subTest(modo=modo):
+                self.saida = self.p / modo
+                self.chamadas.write_text('')
+                r, recibo, chamadas = self.correr(modo)
+                self.assertEqual((self.saida / ('ledger-corpos.codigo' if modo == 'ledger-nao-leu' else 'frases-afirmacao.codigo')).read_text(), '0\n')
+                self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
+                self.assertNotEqual(r.returncode, 0)
+                self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.main_antes)
+                if self.saida.exists(): shutil.rmtree(self.saida)
 
     def correr(self, modo='verde', arvore=None):
         self.env['MODO'] = modo

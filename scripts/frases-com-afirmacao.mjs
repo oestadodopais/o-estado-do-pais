@@ -10,25 +10,29 @@ import {matchPath, routePath, ROUTES} from '../src/lib/routes.mjs';
 import {WORKS, PUBLISHED_EDITIONS} from '../src/data/studies.mjs';
 import {DOSSIES} from '../src/data/dossies.mjs';
 import {EXPLICACOES} from '../src/data/explicacoes/index.mjs';
+import {MUNICIPIOS_COM_PAGINA} from '../src/data/municipios.mjs';
+import {slugsDasUnidades} from '../src/lib/mapa.mjs';
+import {slugsDasRegioes} from '../src/lib/regioes.mjs';
+import {slugsDasAreas} from '../src/lib/areas.mjs';
+import {edicoesGuardadas} from '../src/lib/edicoes.mjs';
 import {ENTRADAS} from '../src/data/primeira-pagina.mjs';
 export const normal = t => t.normalize('NFKC').replace(/\u200b/g, '').replace(/\s+/g, ' ').trim();
 export const sha256 = t => createHash('sha256').update(t).digest('hex');
-const palavra = t => new RegExp(`(?<![\\p{L}])(?:${t})(?![\\p{L}])`, 'iu');
-const atrPt = {test: t => /«[^»]{12,}»/u.test(t) || palavra('segundo(?!\\s+(?:trimestre|semestre|ano|mandato|relatório|protocolo|lugar|desencontro|turno|ciclo|período|painel)\\b)|de acordo com|disse|disseram|afirmou|afirma|afirmam|defende|defendeu|considera|considerou|declarou|garantiu|acusou|criticou|reconheceu|prometeu|anunciou|escreveu|escreve').test(t)};
-const cauPt = palavra('porque|devido a|devido ao|devido à|por causa d|graças a|explica|explicam|explicou|levou a|levaram a|resultou|resulta d|resultado d|fez com que|em consequência|consequentemente|motivad[oa]s? por|provocou|causou|deve-se a|deveu-se a');
-const atrEnAntes = /“[^”]{12,}”|«[^»]{12,}»|\b(according to|said|says|stated|argued|argues|claimed|wrote|writes|promised|announced|acknowledged|declared|criticised|criticized|accused)\b/iu;
-const cauEnAntes = /\b(because|due to|owing to|as a result|resulted in|results from|led to|leads to|caused|causes|explains|explained|thanks to|driven by|consequently)\b/iu;
-const atrEnMais = palavra('say|states|claims?|argue|defends?|defended|considers?|considered|declares?|guaranteed|assured|recognised|recognized|told|reported|promises|announces?|written|in accordance with');
-const cauEnMais = palavra('explain|resulting|resulted from|results? of|result of|result in|results in|lead to|leading to|caused by|causing|motivated by|as a consequence|therefore|attributable to');
-export const marcaLeitura = (t, lingua) => (lingua === 'pt' ? /\((?:cálculo\s*:[^)]+|inferência)\)/iu : /\((?:calculation\s*:[^)]+|inference)\)/iu).test(t);
+export const MARCAS = JSON.parse(fs.readFileSync(new URL('./frases-marcas.json', import.meta.url), 'utf8'));
+const compiladas = MARCAS.map(m => ({...m, re:new RegExp(m.expressao, m.flags)}));
+export const marcasDaFrase = (t, lingua, antes = false) => compiladas.filter(m => m.lingua === lingua && (!antes || m.antes) && m.re.test(t)).map(m => m.id);
+export const marcaLeitura = (t, lingua) => compiladas.some(m => m.lingua === lingua && m.tipo === 'leitura' && m.re.test(t));
 export function tiposDaFrase(t, lingua, antes = false) {
-  const tipos = [];
-  if ((lingua === 'pt' ? atrPt.test(t) : atrEnAntes.test(t) || (!antes && (atrEnMais.test(t) || /\bper\s+[A-ZÀ-Þ]/u.test(t) || /"[^"]{12,}"/u.test(t) || atrPt.test(t))))) tipos.push('atribuicao');
-  if ((lingua === 'pt' ? cauPt.test(t) : cauEnAntes.test(t) || (!antes && (cauEnMais.test(t) || cauPt.test(t))))) tipos.push('causa');
-  if (marcaLeitura(t, lingua)) tipos.push('leitura');
-  return tipos;
+  const ids = new Set(marcasDaFrase(t, lingua, antes));
+  return ['atribuicao','causa','leitura'].filter(tipo => MARCAS.some(m => m.tipo === tipo && ids.has(m.id)));
 }
-export const cortar = t => frasesDoTexto(t, () => true);
+// O corte adicional pertence só ao detetor; a régua da voz conserva o corte original.
+export const cortar = t => frasesDoTexto(t, () => true).flatMap(f => f.split(/(?<=[.!?]»)\s+(?=\p{Lu})/u));
+// Um fragmento separado de uma frase marcada continua a exigir auditoria.
+export function tiposComContexto(frase, contexto, lingua, antes=false) {
+  const diretos=tiposDaFrase(frase,lingua,antes);
+  return diretos.length || !contexto || contexto===frase ? diretos : tiposDaFrase(contexto,lingua,antes).filter(t=>t!=='leitura');
+}
 export const chave = f => `${f.estudo}|${f.lingua}|${f.sha256 ?? sha256(normal(f.frase))}`;
 export function blocosDaPagina(html) {
   const r = parse(html); r.querySelectorAll('script,style').forEach(n => n.remove());
@@ -42,7 +46,8 @@ export function blocosDaPagina(html) {
       const hit = matchPath((a.getAttribute('href') ?? '').split('#')[0]);
       return [id, hit?.key === 'linha' ? hit.params.slug : null].filter(Boolean);
     }))].sort();
-    return {texto, frases:cortar(texto), linhas, tag:n.tagName};
+    const partes=frasesDoTexto(texto,()=>true).flatMap(contexto=>cortar(contexto).map(frase=>({frase,contexto})));
+    return {texto, frases:partes.map(p=>p.frase), contextos:partes.map(p=>p.contexto), linhas, tag:n.tagName};
   }).filter(b => b.texto);
 }
 export function rotasDaProsa() {
@@ -50,12 +55,14 @@ export function rotasDaProsa() {
   const juntar = (key, params = {}) => {
     for (const lingua of ['pt','en']) {
       const rota = routePath(key, lingua, params).replace(/\/$/, '') || '/';
-      const estudo = ['estudo','documento','texto'].includes(key) ? params.slug : routePath(key, 'pt', params).replace(/\/$/, '') || '/';
+      const estudo = ['municipio','distrito','regiao','area','uniaoEuropeia'].includes(key) ? 'colecao-' + key : ['estudo','documento','texto'].includes(key) ? params.slug : routePath(key, 'pt', params).replace(/\/$/, '') || '/';
       rotas.set(rota, {rota, estudo, lingua, tipo:key, par:routePath(key, lingua === 'pt' ? 'en' : 'pt', params).replace(/\/$/, '') || '/'});
     }
   };
   // As coleções que constroem as páginas, sem percorrer prefixos do dist.
-  for (const key of ['home','indice','estudos','discussao','dossies','temas','explicacoes','leituraDaSemana','correcoes','sobre','metodo','privacidade','agenda']) juntar(key);
+  for (const key of ['home','indice','estudos','discussao','dossies','temas','explicacoes','leituraDaSemana','correcoes','sobre','metodo','privacidade','agenda','lugares','regioes','areas','uniaoEuropeia','sugestoes','sugestoesObrigado','sugestoesVazia','sugestoesLimite','sugestoesNaoChegou']) juntar(key);
+  for (const m of MUNICIPIOS_COM_PAGINA) juntar('municipio', {slug:m.slug});
+  for (const [key, slugs] of [['distrito',slugsDasUnidades()],['regiao',slugsDasRegioes()],['area',slugsDasAreas()]]) for (const slug of slugs) juntar(key, {slug});
   for (const w of WORKS) juntar('estudo', {slug:w.slug});
   for (const d of DOSSIES) juntar('dossie', {slug:d.slug});
   for (const e of EXPLICACOES) juntar('explicacao', {slug:e.slug});
@@ -64,11 +71,25 @@ export function rotasDaProsa() {
     const rota = routePath('documento', e.lang, {slug:e.slug});
     rotas.set(rota, {rota, estudo:e.slug, lingua:e.lang, tipo:'documento', par:routePath('documento', e.lang === 'pt' ? 'en' : 'pt', {slug:e.slug})});
   }
+  for (const e of edicoesGuardadas()) {
+    const rota = routePath('documento',e.lang,{slug:e.slug}) + '/' + e.date;
+    rotas.set(rota, {rota,estudo:e.slug,lingua:e.lang,tipo:'arquivo',par:routePath('documento',e.lang==='pt'?'en':'pt',{slug:e.slug})+'/'+e.date});
+  }
+  for (const lingua of ['pt','en']) {
+    const rota=lingua==='pt'?'/404.html':'/en/404';
+    rotas.set(rota,{rota,estudo:'/404',lingua,tipo:'404',par:lingua==='pt'?'/en/404':'/404.html'});
+  }
   return [...rotas.values()].sort((a,b) => a.rota.localeCompare(b.rota));
 }
+export function conferirAmbito(ficheiros, rotas) {
+  const esperadas = new Set(rotas.map(p => p.rota.endsWith('.html') ? p.rota.slice(1) : path.join(p.rota.slice(1),'index.html')));
+  return ficheiros.filter(f => f.endsWith('.html') && !esperadas.has(f)).filter(f => !['livro','livroConcelhos','livroConcelho','linha','serie'].includes(matchPath('/' + f.replace(/\/index.html$/,'').replace(/^index.html$/,''))?.key));
+}
 export function lerPaginas(dist) {
-  return rotasDaProsa().map(p => {
-    const f = path.join(dist, p.rota, 'index.html');
+  const rotas=rotasDaProsa(), fora=conferirAmbito(fs.readdirSync(dist,{recursive:true}),rotas);
+  if(fora.length)throw new Error('frases: HTML fora das coleções: '+fora.join(', '));
+  return rotas.map(p => {
+    const f = p.rota.endsWith('.html') ? path.join(dist,p.rota) : path.join(dist, p.rota, 'index.html');
     if (!fs.existsSync(f)) throw new Error(`frases: página da coleção ausente: ${p.rota}`);
     return {...p, blocos:blocosDaPagina(fs.readFileSync(f, 'utf8'))};
   });
@@ -77,7 +98,7 @@ export const rotasFora = () => Object.keys(ROUTES).filter(k => !rotasDaProsa().s
 export function inventario(paginas, antes = false) {
   const unicas = new Map();
   for (const p of paginas) for (const [bloco, b] of p.blocos.entries()) for (const [indice, frase] of b.frases.entries()) {
-    const tipos = tiposDaFrase(frase, p.lingua, antes); if (!tipos.length) continue;
+    const tipos = tiposComContexto(frase, b.contextos?.[indice], p.lingua, antes); if (!tipos.length) continue;
     const f = {estudo:p.estudo, lingua:p.lingua, frase, tipos, sha256:sha256(normal(frase))};
     const k = chave(f); if (!unicas.has(k)) unicas.set(k, {...f, ocorrencias:[]});
     unicas.get(k).ocorrencias.push({pagina:p.rota, bloco, indice, linhas:b.linhas});
@@ -109,17 +130,20 @@ export function parDaFrase(paginas, ocorrencia) {
   const indice = cache.get(p.rota).get(ocorrencia.bloco); if (indice === undefined) return null;
   const a = p.blocos[ocorrencia.bloco], b = par.blocos[indice];
   if (a.frases.length !== b.frases.length) return null;
-  return {frase:b.frases[ocorrencia.indice], linhas:b.linhas, pagina:par.rota, bloco:indice, metodo:p.blocos.length === par.blocos.length ? 'blocos' : 'vizinhança'};
+  return {frase:b.frases[ocorrencia.indice], contexto:b.contextos?.[ocorrencia.indice], linhas:b.linhas, pagina:par.rota, bloco:indice, metodo:p.blocos.length === par.blocos.length ? 'blocos' : 'vizinhança'};
 }
 export function medirPares(paginas) {
-  const pt = inventario(paginas).filter(f => f.lingua === 'pt');
-  const r = {pares:0, sem_par:0, falhas_antes:0, falhas_depois:0, falhas:[]};
-  for (const f of pt) {
-    const par = f.ocorrencias.map(o => parDaFrase(paginas, o)).find(Boolean);
-    if (!par) {r.sem_par++; continue;}
-    r.pares++;
-    if (!tiposDaFrase(par.frase, 'en', true).length) r.falhas_antes++;
-    if (!tiposDaFrase(par.frase, 'en').length) {r.falhas_depois++; r.falhas.push({estudo:f.estudo, pt:f.frase, en:par.frase});}
+  const r = {};
+  for (const lingua of ['pt','en']) {
+    const destino = lingua === 'pt' ? 'en' : 'pt';
+    const m = r[lingua + '_para_' + destino] = {pares:0,sem_par:0,falhas_antes:0,falhas_depois:0,falhas:[]};
+    for (const f of inventario(paginas).filter(f => f.lingua === lingua)) {
+      const par = f.ocorrencias.map(o => parDaFrase(paginas,o)).find(Boolean);
+      if (!par) {m.sem_par++;continue;}
+      m.pares++;
+      if (!tiposComContexto(par.frase,par.contexto,destino,true).length) m.falhas_antes++;
+      if (!tiposComContexto(par.frase,par.contexto,destino).length) {m.falhas_depois++;m.falhas.push({estudo:f.estudo,[lingua]:f.frase,[destino]:par.frase});}
+    }
   }
   return r;
 }

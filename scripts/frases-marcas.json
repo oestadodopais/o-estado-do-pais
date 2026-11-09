@@ -1,0 +1,1426 @@
+[
+  {
+    "id": "pt-atribuicao-01",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:segundo(?!\\s+(?:trimestre|semestre|ano|mandato|relatório|protocolo|lugar|desencontro|turno|ciclo|período|painel)\\b))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-02",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:de acordo com)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-03",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:disse)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-04",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:disseram)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-05",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:afirmou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-06",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:afirma)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-07",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:afirmam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-08",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:defende)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-09",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:defendeu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-10",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:considera)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-11",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:considerou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-12",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:declarou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-13",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:garantiu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-14",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:acusou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-15",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:criticou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-16",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:reconheceu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-17",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:prometeu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-18",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:anunciou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-19",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:escreveu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-20",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:escreve)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-21",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:diz)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-22",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:dizem)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-23",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:refere)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-24",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:referem)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-25",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:indica)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-26",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:indicam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-27",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:conclui)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-28",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:concluem)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-29",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:estima)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-30",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:estimam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-31",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:(?<!mecanismo de )(?<!sistema de )alerta)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-32",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:alertam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-01",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:porque)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-02",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:devido a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-03",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:devido ao)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-04",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:devido à)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-05",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:por causa d(?:e|o|a|os|as))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-06",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:graças a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-07",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explica)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-08",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explicam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-09",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explicou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-10",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:levou a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-11",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:levaram a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-12",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resultou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-13",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resulta d(?:e|o|a|os|as))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-14",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resultado d(?:e|o|a|os|as))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-15",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:fez com que)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-16",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:em consequência)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-17",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:consequentemente)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-18",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:motivad[oa]s? por)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-19",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:provocou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-20",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:causou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-21",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:deve-se a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-causa-22",
+    "lingua": "pt",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:deveu-se a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-atribuicao-33",
+    "lingua": "pt",
+    "tipo": "atribuicao",
+    "expressao": "«[^»]{12,}»",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "pt-leitura-01",
+    "lingua": "pt",
+    "tipo": "leitura",
+    "expressao": "\\((?:cálculo\\s*:[^)]+|inferência)\\)",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-01",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:according to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-02",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:said)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-03",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:says)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-04",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:stated)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-05",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:argued)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-06",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:argues)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-07",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:claimed)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-08",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:wrote)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-09",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:writes)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-10",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:promised)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-11",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:announced)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-12",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:acknowledged)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-13",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:declared)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-14",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:criticised)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-15",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:criticized)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-16",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:accused)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-17",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:say)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-18",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:states)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-19",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:claims?)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-20",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:argue)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-21",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:defends?)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-22",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:defended)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-23",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:considers?)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-24",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:considered)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-25",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:declares?)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-26",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:guaranteed)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-27",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:assured)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-28",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:recognised)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-29",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:recognized)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-30",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:told)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-31",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:reported)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-32",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:promises)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-33",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:announces?)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-34",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:written)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-35",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:in accordance with)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-01",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:because)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-02",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:due to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-03",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:owing to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-04",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:as a result)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-05",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resulted in)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-06",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:results from)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-07",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:led to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-08",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:leads to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-09",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:caused)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-10",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:causes)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-11",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explains)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-12",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explained)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-13",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:thanks to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-14",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:driven by)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-15",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:consequently)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-causa-16",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explain)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-17",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resulting)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-18",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resulted from)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-19",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:results? of)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-20",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:result in)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-21",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:results in)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-22",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:lead to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-23",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:leading to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-24",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:causing)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-25",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:motivated by)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-26",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:as a consequence)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-27",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:therefore)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-28",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:attributable to)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-36",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "«[^»]{12,}»",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-37",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "“[^”]{12,}”",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-38",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "\"[^\"]{12,}\"",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-39",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "\\bper\\s+[A-ZÀ-Þ]",
+    "flags": "u",
+    "antes": false
+  },
+  {
+    "id": "en-leitura-01",
+    "lingua": "en",
+    "tipo": "leitura",
+    "expressao": "\\((?:calculation\\s*:[^)]+|inference)\\)",
+    "flags": "iu",
+    "antes": true
+  },
+  {
+    "id": "en-atribuicao-40",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:segundo(?!\\s+(?:trimestre|semestre|ano|mandato|relatório|protocolo|lugar|desencontro|turno|ciclo|período|painel)\\b))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-41",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:de acordo com)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-42",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:disse)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-43",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:disseram)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-44",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:afirmou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-45",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:afirma)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-46",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:afirmam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-47",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:defende)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-48",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:defendeu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-49",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:considera)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-50",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:considerou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-51",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:declarou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-52",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:garantiu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-53",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:acusou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-54",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:criticou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-55",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:reconheceu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-56",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:prometeu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-57",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:anunciou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-58",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:escreveu)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-59",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:escreve)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-60",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:diz)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-61",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:dizem)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-62",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:refere)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-63",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:referem)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-64",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:indica)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-65",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:indicam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-66",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:conclui)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-67",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:concluem)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-68",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:estima)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-69",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:estimam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-70",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:(?<!mecanismo de )(?<!sistema de )alerta)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-atribuicao-71",
+    "lingua": "en",
+    "tipo": "atribuicao",
+    "expressao": "(?<![\\p{L}])(?:alertam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-29",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:porque)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-30",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:devido a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-31",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:devido ao)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-32",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:devido à)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-33",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:por causa d(?:e|o|a|os|as))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-34",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:graças a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-35",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explica)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-36",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explicam)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-37",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:explicou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-38",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:levou a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-39",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:levaram a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-40",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resultou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-41",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resulta d(?:e|o|a|os|as))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-42",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:resultado d(?:e|o|a|os|as))(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-43",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:fez com que)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-44",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:em consequência)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-45",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:consequentemente)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-46",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:motivad[oa]s? por)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-47",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:provocou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-48",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:causou)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-49",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:deve-se a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  },
+  {
+    "id": "en-causa-50",
+    "lingua": "en",
+    "tipo": "causa",
+    "expressao": "(?<![\\p{L}])(?:deveu-se a)(?![\\p{L}])",
+    "flags": "iu",
+    "antes": false
+  }
+]

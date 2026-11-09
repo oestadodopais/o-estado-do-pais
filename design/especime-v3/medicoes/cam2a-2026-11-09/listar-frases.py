@@ -5,8 +5,8 @@ e as linhas do livro-razão citadas no parágrafo; sem repetir a mesma frase do 
 uso: python3 listar-frases.py <dist> <saída.json>"""
 import sys, re, glob, html, json, hashlib, os
 D, OUT = sys.argv[1], sys.argv[2]
-ATR = re.compile(r'«[^»]{12,}»|\b(segundo|de acordo com|disse|disseram|afirmou|afirma|afirmam|defende|defendeu|considera|considerou|declarou|garantiu|acusou|criticou|reconheceu|prometeu|anunciou|escreveu|escreve)\b', re.I)
-CAU = re.compile(r'\b(porque|devido a|devido ao|devido à|por causa d|graças a|explica|explicam|explicou|levou a|levaram a|resultou|resulta d|resultado d|fez com que|em consequência|consequentemente|motivad[oa]s? por|provocou|causou|deve-se a|deveu-se a)\b', re.I)
+ATR = re.compile(r'«[^»]{12,}»|\b(segundo|de acordo com|disse|disseram|afirmou|afirma|afirmam|defende|defendeu|considera|considerou|declarou|garantiu|acusou|criticou|reconheceu|prometeu|anunciou|escreveu|escreve|diz|dizem|refere|referem|indica|indicam|conclui|concluem|estima|estimam|(?<!mecanismo de )(?<!sistema de )alerta|alertam)\b', re.I)
+CAU = re.compile(r'\b(porque|devido a|devido ao|devido à|por causa d(?:e|o|a|os|as)|graças a|explica|explicam|explicou|levou a|levaram a|resultou|resulta d(?:e|o|a|os|as)|resultado d(?:e|o|a|os|as)|fez com que|em consequência|consequentemente|motivad[oa]s? por|provocou|causou|deve-se a|deveu-se a)\b', re.I)
 def paragrafos(t):
     t = re.sub(r'<script.*?</script>|<style.*?</style>', '', t, flags=re.S)
     m = re.search(r'<main.*?</main>', t, flags=re.S); t = m.group(0) if m else t

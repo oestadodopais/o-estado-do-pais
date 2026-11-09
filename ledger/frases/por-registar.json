@@ -37,6 +37,11 @@
   {
     "estudo": "/",
     "lingua": "pt",
+    "sha256": "3aee8bfb477b8c3efc53b849e5265ca97eab424cb7524f35341010accfab9e72"
+  },
+  {
+    "estudo": "/",
+    "lingua": "pt",
     "sha256": "ae3bd3ff78c673b2c1c160ba0c6300bdbac4a9e408c178ee81bb02ffa92277bb"
   },
   {
@@ -53,6 +58,16 @@
     "estudo": "/",
     "lingua": "pt",
     "sha256": "f58ea1c541fa3b9e0a1033d8d125197ee8fad4410af5ebf97ee72c42d0748485"
+  },
+  {
+    "estudo": "/404",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/404",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
   },
   {
     "estudo": "/agenda",
@@ -93,6 +108,16 @@
     "estudo": "/agenda",
     "lingua": "pt",
     "sha256": "a87093f65c7f84a1e18b444dbc3a00c486bed10fcdd7063162337e18fcf50471"
+  },
+  {
+    "estudo": "/areas",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/areas",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
   },
   {
     "estudo": "/correcoes",
@@ -367,6 +392,11 @@
   {
     "estudo": "/correcoes",
     "lingua": "pt",
+    "sha256": "54895cab336a9157ffea30b82dcb04d20c7465844b2295895381e6b0f42a9235"
+  },
+  {
+    "estudo": "/correcoes",
+    "lingua": "pt",
     "sha256": "56ee54df21d23ded0b1d8d451a1f925f83e72c9de26bd0c195bb91277648386c"
   },
   {
@@ -442,7 +472,22 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "0097b6b5bf07afd8a7780c2de8d791eac9704a5ebfbc23b9606813ac6ff00271"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "00d9f4c36241f32a91569755dc7fd66ae22d2c6a83780cada449dea49e4498ba"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "015f9d89e096bd26b5ca054ded333daf9a3a85a31a5d9a76583415eaea7123d2"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "070c6c308a2badfc0b503967fcace2b496feb833c32c3a37f5287a6bd137664a"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -452,17 +497,37 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "09e76712857533e28f39e30429f6db5c75971e2b64208e1f7540d2edc2b189b3"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "1283d0303bec92c39efca548f3c32436fbbc60e6bbf25dcb1ee3c2c2eaf4a5a6"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "12fab4efa9f31c4f4bac2319e25c22a3747e85545ff1d1fd0ae3662a892a8046"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "135d3aebdd25324ba31380c241be0b23c2a445c554f6928125ad820bab1371fc"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "14373c7aa06163dd21a3b5a40b243720d2b8d9a8075ebe733bce5702357bf3ef"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "1e05635af5c8fc5595c3c7100aa3ffc0883fa5fafa2c61b65787471518546b39"
+    "sha256": "1996b44ffe535f581c93a0faa18b356e3ed6a328464f2fb32dd7eb1ae11e13e5"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "288277f91197895d5dfcb1b7d2d87cc93e726f6137d2a5d3a8502859eb84ab77"
+    "sha256": "1e05635af5c8fc5595c3c7100aa3ffc0883fa5fafa2c61b65787471518546b39"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -482,6 +547,11 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "30fcfd2021b3c45a5666c518ba6357d6459fb81a31ca2f3f872a7da8228283f0"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "327378df13de585c49ab43df22addcf264da25f0e3ecf17911505c58d95e8bb0"
   },
   {
@@ -497,7 +567,7 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "44bccf986b9dc195df54b12c5e9ef7a91983c7fdf844ea466c98fdd0c5516967"
+    "sha256": "42e8abbe8fd10a11e8baa0f88985348fa14786b312de2e8315ad0f8c3a4b55aa"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -507,22 +577,12 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "4a2cf31c7e57175404bfe8c00254edd9fd141ade1013763d40594acea9b82c3a"
+    "sha256": "4ee4f60a366b5e32d239e0680786f3073b5a56e81d8e09617a893f1dc8291ee4"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
     "sha256": "4f43edfddf1392ab5f72aeb365ce88f8aa64b47f09be50fefc805b06bbc114ec"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
-    "sha256": "52cf40cd9d3c6a2c20cf0332a6b9c439c409ece67f334f5b46864b010f374386"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
-    "sha256": "5591f047a053215df8d10311f80fade7d61906fde4ebd61faa772ffe73be6a84"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -542,11 +602,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "5c3e1006c5f85f134d2c37b3f368efaf3451d32bc08a98d2026e08016d177ea2"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
     "sha256": "65df4eb9b15b5de5277fa28861559b6652cd1edfa18fca00461c68def0b1c385"
   },
   {
@@ -557,7 +612,37 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "6e1a437a3894be1a0bbaf1a00fa78ad258602a6a13c2715022cbbdd23d0c38f0"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "72d7cbe968e6fac566c7388b525d26f968a8dbe5ef697ddb714d391800ff35da"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "771213938f7954522752857017640081791e91ca7222a26d8797ee203c9b52f9"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "772c6f812902ddfb6cae4b2bea92689c9efd7a35e3297b8d129b54edd978250c"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "7bb16eaf87362c708307bb793ab543e6298585abb37676c9abd08cc24b25a8f8"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "7e716c43985d416b28ad475a16f182047ac491b3419e7291f107a85519e6c8d0"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "84587103922086d8f13d530939d28c746bc48d96f56cda74fcac3b5c61b1eaf2"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -567,12 +652,22 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "8957a4f1834f7326a2364884f3d6e683ea4e89022e7824e5ebcff1c5f0fb36e4"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "90a3750a843e466ae28f969aaeedec00f5573dca70804e876167ffae3f046949"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "9522b39034be620697bd4fbfa3c8c7e7da5f2c8edfe6901271cb4d1012b43d58"
+    "sha256": "955afa6ca87e11daadceac743815bc372ef213f9e2267e64a425b8f364c524a9"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "95f6366978ffb123cdcb3d5794e04c3ef6b816f8b8198a55fbc49c6dc05f483a"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -582,7 +677,7 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "a43663ced1e60e13b2ba96f03048b3c732703c656ae95346b6254f07e0a0b30c"
+    "sha256": "9906c8914f8993d5911e235cf4031ce2e68b0b94a37e2566d320f9b39a53ec6a"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -597,7 +692,17 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "ae0a9049b789455fb5fcf8a03c48029af56efc515bf0cadc1d1d6790c0b098fb"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "ae18b4a74fad500c12c27c442af44378873c2a75cbf59043b7bb4947aa2f91bc"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "af29752143cb70a1d66822efd4982da0b7aa1f9023d70e639d1e890ec01a6faa"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -607,12 +712,32 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "b3b527efbb24bc9f6d55b50cc90e109a290d252b2b1377b848630c0a7c084b42"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "b5659ff81c21522843e0746a50b7b1c1ae3b6dd386f1855717f9e1c144fa3e48"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "b682c9a7c767d251f86c8ccac4f61b941958bb9c0410c4cf0722987b78d7380d"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "b7c64d590b4ae6dbe3d6a5eff532df6de3db3151efa0bb65324a436b3056e30b"
+    "sha256": "b79758a8eae21b961f0a03f612ad1e5f681f142cdb51338b6aab0bbb22f47ef1"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "b920fe2d099399d90472608483508f0e9595fe905e49709ec34ea6f1e6af3e06"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "bb65858ad2a560392a096c1eb4fae55178534b69fcb7f61f3ef972ac62f1e9c3"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -627,17 +752,12 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "c05a23df119e180f10d30148c4048b9646ff727d2777282f8f55b24696aebe72"
+    "sha256": "ca06329bd4830d104a8657c72bc8c3d4c22b39f9a98bd4c8d7e0a7264057f306"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "c2ea8c78d63fecdf2eb2f749f76805c6aeb47fea201ba813a3097633f2d36fc6"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
-    "sha256": "cffe6fc2792cd3c796ba932c18ea4c00fceb75580fd84f76b31a17be24a42c09"
+    "sha256": "cef3b4ed7af040862a4adeb81610e9f8c3f5e2cbf9fa98a8dce0cf91db88fc9a"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -652,7 +772,7 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "d991309ea3039d31edb07301de5d13ec736a9a88a8b503a80f46bd4d46f50a0a"
+    "sha256": "d8de70e70ab93cb97ef45c739d8f2696a8bbd13652895f0aacc3f1b93546a8bd"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -667,7 +787,42 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
+    "sha256": "e147f9a2c9a948377cbefc8bc05294599c85c09dd1c9b5b57e4296db04c1ec48"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "e2833f565d84d3c6132f764b5e3cacce352c68050e4a878761e2ae12bce6eb74"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
     "sha256": "ebb3fbb42eb8b6b97c5367d2d872b4bde6fdd3fb98d5d6000cfa346c40c56f37"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "ed6d29e37e002078635949637237024a72b28696ea99eba43eff8b9c587e9f03"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "eed0e5225ee9ef49dcf55e9bbe0146750b0ba986b243cdbfd491a3d72e709667"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "f1673518eeb4c166d633ba3b097d79fe0f56c85e8226d72ea6bc128562b3cf9c"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "fa51e9c3f7a60beb342b2c514603f113877c7efea8a93e76e6c875e6905861e4"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "en",
+    "sha256": "faa5674e30bf17d8e73b78d058770ee98363c9a48628933200ca5a8be7cffcb1"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -677,12 +832,22 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "06f1065ae6df98f0f8c7b918130492044ba36c98979bc43b7d5589e262847582"
+    "sha256": "0474f047fc19f93ffdb174c329c77b5a60094acd3e23cc681ee2cb527db91f3c"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
     "sha256": "08fde899981efb44999b4f599a9ddf5cfa8bd6c0824fc231c8ee6f3ed732a62b"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "0de0ed02ebd903e2fccbd20faec8569950f044fc9dcc644232aae1b4886e6bdd"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "102d06034dfb678b35196fce5b3ad5b12f01e29847c6c608092e76d7d39b44e5"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -702,16 +867,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "13d13d16067a456262f417207622670ca5b0f77ac1b3cbe37fb2a391d5cd801a"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
-    "sha256": "1d0876972dec275c1cda87efe32764e0c8762eda75489f26f009766922054f16"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
     "sha256": "1f1ff4aed99e6a1db0e04c769a9ce4335cbdd246ccd84d702c97c2a37955e1ac"
   },
   {
@@ -722,22 +877,27 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "2aca3a693336cdc6e2f9f628e98d5d478f94cb67a509dd8b54be33997de2c808"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "2f1c59c442e18a56c8b487eb1515669b69235914f80ce552230857cfad530280"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "3093d0698310ffdbf8ef502bb1edd7d8ea4acb36473375b7fe937fd76a894794"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "31c9d81de93d765e840e5ad228b20660697b7bc9eef1bae11ff6a09e31f5a1b3"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "3813194eb745d011f7782e9be235e4405179734cff3c09854e9336e540c6f66c"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
-    "sha256": "38144aff94bf55153bd04b9e8e7e2a8cf8de3d94a5969570f5925d7d4f238ab3"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
-    "sha256": "3a3a6016c9c3d8271db1be46425b00bde29c457791f9e33c0d8420d209ca4680"
+    "sha256": "390b1054342dea40093e39e4fba55b6d5ab11258c6aa6da98feaaea498ae052f"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -747,7 +907,47 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "40bd7c4b1e04473ebc558b618cc9f235c76d72d8d99271b19a61c92e8ae83884"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "44e241c150e6241306a5c1fdc1cc5806c4f925ca171bd72b9b746128fdc2139e"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "4ee7ca5e2885519f53bb0d9b5ce1d039568d6a6376c9b48e69c0daf67b11d937"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "59eefb217b51c4abe9f85f424f4dbf69ea24119e94cb0accdc1f305dac007649"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "5b62b53a067d6cb42bb7cc753195ba1f706cb47ea6eb908e38d0b7834d6f9d57"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "5bb581a5e027821a21924650114a43b5f03c14b0b34b710c9b0be5e25689acf7"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "5cb25855f9b040590b69bba8f82cb676f4de06dfd4c22394dc3b20ac5a7c4118"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "654cac7ae1fff989a2af72ab97a9f3b349f1831ef1b97730f53e83f8d05b3d7a"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -762,17 +962,17 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "6c3276a5538b0b377d7d0204414635d9af79fd87fe209e18b8d9539a4f9f33af"
+    "sha256": "6f40235f5c70dcecfcc201c0573e00a05927b3274dd1290ce77da6002ff898e3"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "6db3abedd1ba1b07d61c246f3c761201384749cc0a0324aab548874e207f1d02"
+    "sha256": "6fbbbabf1ef6bff47149d84502f8b0ec5a037bbb66b412a0d861ea0e3335b76f"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "713db72551d3793bc824f2b1922c1cc862fb2067bc5de7cf2d171305dab2ae6f"
+    "sha256": "72deeaea4cccecbd4ffddbd06b437437b67b76217fb7de146a42458cfee0a818"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -782,12 +982,12 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "7a93a4a674d3d85c568bd84c96250546badf46fba06942d5e69c1dd12d292840"
+    "sha256": "750507a98e63b0b55d9d8269487cd8024e49cc0457a494d9d33be44fedd0117b"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "7b4235709bab22e2836b4a537bc8985415eeaf658e974ac304c6b167699e9103"
+    "sha256": "7b6594d975e146badbc30366c9499fa24d968b029d59a5df6dff8df1f6a93add"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -797,7 +997,17 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "914c5c89e9426d209c3a3e22f342af0715672931f5c47c613e84aa2fee1c2c46"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "92b36e3f989aa64d35ebc809ac46a927e187b9e6e373956917c7fac933b3eb1b"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "9333cb1a6b37f9e3df5de56f34f9698c496e32e6cc409f7ee51182a8a1b0a773"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -812,7 +1022,22 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "a9db5f0140238225f6e28cf94041b0e690812ed0af77fd61f6e41014efcffd92"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "ae6ede1170ae853099b6cbdec43c4efca78901b8e747c9a58eb1698963a7976e"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "b294c666b1b7437bd5c128a53abbc5b9f986f0a8615fac8326e1795ec8386ffd"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "b401ff5d71a2eb0db295d53ec6e0aa9afa5b3c6c98166eadee05cbc7256d66f8"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -822,12 +1047,32 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "b79758a8eae21b961f0a03f612ad1e5f681f142cdb51338b6aab0bbb22f47ef1"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "b849e80a08aff255a12da1c2dcf6f5c79ff49dc190d498e04879d5f8ce7db416"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "b96f858f6f2c009a6b37946790e8e9f889fd26166d7a5e0dd69f2afe0fe4e76e"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "bdbf6f2b2a6dde67a2a0e9d2f34d33aa8c1964c9208db6e1b28b6ec85329eba8"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "be842efc610f0515d6168b0b1cfd43931356588e711a33349f4daa998a1d550a"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "c18a9065304f643a680fd66a18dbbeafcefd41d386018e00fe7196712cd4e1f7"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -842,11 +1087,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "d42c13b18e9c3d5e3d10bb10bdafa77df73036bb46acefdce615ab56cbd1bdeb"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
     "sha256": "d516e868029ae3439af5195d1e82cfe5f99e7a78208329deb732bce2580c9470"
   },
   {
@@ -857,7 +1097,17 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "df443ee29e43a6e30d1a05177985d7baf263ed64031ab45ef3ba870534d096d2"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "dfb9a1d5bede986be19656637799935da95c1fbfebaf076ab907267098de139a"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "e473972e9e7125eebdb42408985a53add3ca86d461fd4140ea2cf6c2d6d5c89d"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -867,12 +1117,52 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
+    "sha256": "eb2a0f7c2de3c7e50c95c9551eb1af90a68d24c03ffda763cdaaa4fc85459b91"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "f10fbebe8f00a94cf8c76a190196948ee4435482ee73d07cb35e5b159b613724"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "f23ef4d72c3448d76a8c13477b7bb320dd612639f10a3ed7f010717c0a8e2b27"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "f56f8b28dd1e2291c703a8469021463778ccb8470906a77b44002ce195c98313"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
     "sha256": "f62ffccb1977ff4202e3a2deb41b4294241a51b66de247c5a2015f74a951d211"
   },
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "fb12373f95f73bdf1241cb87981ac2775f2f7d9414bbce19901f7786dd739bff"
+    "sha256": "f6469b39a8fc0f1bf3533640910bb68bba40598634ec613a81af666f699c96dd"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "f646fbdd9bcd2285e64296e82b2bd45ea19b3526fb4e1c782323859241b8d73a"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "f9d1618e8f3abec62129be4ccb3ec94871622ae060e2bc87a1cd568b1233e8a0"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "fe12e7e9909a3ad9ec8d649cdad72c50abb9ef35631272229106e9b601075848"
+  },
+  {
+    "estudo": "/dossies/orcamento-2027",
+    "lingua": "pt",
+    "sha256": "ffcbb4c9042f4280259716fb34f13b619ee211a5afb5c44d3e7b1c0cc1fcb015"
   },
   {
     "estudo": "/dossies",
@@ -913,6 +1203,16 @@
     "estudo": "/educacao-e-saude",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "/educacao-e-saude",
+    "lingua": "pt",
+    "sha256": "167f9eb13f7764e5a19e6dc340ba0e18ce5b94359ec086255bec95678a87eaef"
+  },
+  {
+    "estudo": "/educacao-e-saude",
+    "lingua": "pt",
+    "sha256": "e0e9d85e326a47b0aa748ffa9390a1d0dbdadc34a6166e17b41265d00e018e16"
   },
   {
     "estudo": "/emprego",
@@ -1027,6 +1327,21 @@
   {
     "estudo": "/explicacoes/dinheiro-do-estado-2026",
     "lingua": "pt",
+    "sha256": "4342a5d2b459b46537150e1fc6f342921c77acedf598ce882f9e29bd697458a0"
+  },
+  {
+    "estudo": "/explicacoes/dinheiro-do-estado-2026",
+    "lingua": "pt",
+    "sha256": "4a4215b299a9d28ad9c1d8f1215ceffab35ad841b829aa6b1803dc72d5da7233"
+  },
+  {
+    "estudo": "/explicacoes/dinheiro-do-estado-2026",
+    "lingua": "pt",
+    "sha256": "6f6ca7952e8e72e6e979532bc82fb5ad58378a2b96004fe24cb254a756aeb8b3"
+  },
+  {
+    "estudo": "/explicacoes/dinheiro-do-estado-2026",
+    "lingua": "pt",
     "sha256": "b0d48178ac48e74df663c6cb0c4c9aed0818eda1ab7473797b4ec26bc0bbf1c2"
   },
   {
@@ -1115,6 +1430,11 @@
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
   },
   {
+    "estudo": "/habitacao",
+    "lingua": "pt",
+    "sha256": "3aee8bfb477b8c3efc53b849e5265ca97eab424cb7524f35341010accfab9e72"
+  },
+  {
     "estudo": "/indice",
     "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
@@ -1143,6 +1463,11 @@
     "estudo": "/lugares",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "/metodo",
+    "lingua": "en",
+    "sha256": "535d7c5ba9f4f8853d8c47e00851222985be85bfda0942e7650d072c73b54824"
   },
   {
     "estudo": "/metodo",
@@ -1187,6 +1512,21 @@
   {
     "estudo": "/metodo",
     "lingua": "pt",
+    "sha256": "1329d56ec983ee98ceca9545edee3d3e7e60576d12109347d9cc7327529be093"
+  },
+  {
+    "estudo": "/metodo",
+    "lingua": "pt",
+    "sha256": "3eee62deaa099b2191419369c9060556475e0b66b98153f675f90587aa0a6c0c"
+  },
+  {
+    "estudo": "/metodo",
+    "lingua": "pt",
+    "sha256": "535d7c5ba9f4f8853d8c47e00851222985be85bfda0942e7650d072c73b54824"
+  },
+  {
+    "estudo": "/metodo",
+    "lingua": "pt",
     "sha256": "6bc9c2135ad471f42cb6906fc1c4e9a8b3da0fe11bdd46f8fe79b59eba704548"
   },
   {
@@ -1207,6 +1547,16 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
+    "sha256": "0460c2ec7665c0c538efa686ab760538f6bf725bc0bb9d6cc7566cccb00e9dee"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
+    "sha256": "04cc109353bc1b7ea0495a58ae455d4228627ecef634730b7957b3a4fd9c39d7"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
     "sha256": "06383938a37134e7d9a0282d6920c6d59c998795cc9ad4de153265dc5d1fb817"
   },
   {
@@ -1223,6 +1573,11 @@
     "estudo": "/o-que-se-discute",
     "lingua": "en",
     "sha256": "0ca277c5c2074218aa09f6218785913a48b9435f3d0a828a98cc503d33fe60b4"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
+    "sha256": "0d9cb522f5dd487a203b3203e1387eea265cf50edf4ea364c13902858151e8f2"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1302,12 +1657,22 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
+    "sha256": "48f1a708387a9173a072546d1ec8b1046d549da94502ff2518727607c3845a0b"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
     "sha256": "4b41e76ac5eb8ae874713e73365d4bd361d2609d2407ac6855070749d4642382"
   },
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
     "sha256": "525249d236c1a69fe0c88dc10ca0943dfeb9bdbc33208c1e53369c4235775ec0"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
+    "sha256": "53c6cd8f08e665838eb402212b51db059ab135df04d75246d9a702c699efd6c2"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1352,17 +1717,22 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
+    "sha256": "699e3b5f9437809500878c4379542fbbfabf70fb7201e97a81add5c666041733"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
     "sha256": "69dd1560d903b079a55462825282fcb54dce77a8eec7b061b697a127ff4fe8a6"
   },
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
-    "sha256": "74ade9f0dc25827d9b6fdb2d880b601ee02d423e2bbc640b4d36677461e141bc"
+    "sha256": "733b405950bcd243556055d40dbb37be291af77c180509e0926c297c61ddadf0"
   },
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
-    "sha256": "7815a6c60170fb48d007514abc55eecbd018e5e74a5e5a987b39c0886271eb1e"
+    "sha256": "74ade9f0dc25827d9b6fdb2d880b601ee02d423e2bbc640b4d36677461e141bc"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1378,6 +1748,11 @@
     "estudo": "/o-que-se-discute",
     "lingua": "en",
     "sha256": "80c555c36ca73cdb923af6c66f981cbea21ae60563ac92cb5bc531156fadf85b"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
+    "sha256": "81427161dc23d8c40270e7e069c9fd7711cc32a5906c2097b3c692634ae6142e"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1472,17 +1847,27 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "en",
-    "sha256": "e8ab8110fbf10f9ad7039ef10acca3bceec46f25434913d827005387ba6569ff"
-  },
-  {
-    "estudo": "/o-que-se-discute",
-    "lingua": "en",
-    "sha256": "f4a9d99d6d8e0a33a743597c58f819062bda6b32e03d0a7e2cc4997778836ccc"
-  },
-  {
-    "estudo": "/o-que-se-discute",
-    "lingua": "en",
     "sha256": "fcb24130097a573f2d391a23919f694aea6b250b9ff881d047ffae00953b0127"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "en",
+    "sha256": "ff0c35b60ca80e6c32107aeadae1d6f3cd6c65dae3f940375631038ee3249eda"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "036ab12d6f783aee6073f4b522b84561b49054bc0f903e0b4718bf193d65f9eb"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "0460c2ec7665c0c538efa686ab760538f6bf725bc0bb9d6cc7566cccb00e9dee"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "089edc08ec17d7fd4ce535ad1232e233099a2cd2e505fa83c5d738449a23de30"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1502,6 +1887,11 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
+    "sha256": "12fe62ac3025948338f3e539b9342c760cf44f5b6fd563685366936739db5dd2"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
     "sha256": "186995b5242b3ff1a26262363e13db20002772cd6e56c4c4a51eeba9ecf761b5"
   },
   {
@@ -1512,12 +1902,27 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
+    "sha256": "201013ee1c0ad84215fc13cb3f6fd1b20eaf800b73a5e2180eed438b60fec03a"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
     "sha256": "226191340910a7db7f6661c5760d737d859ec787d19b4e2b70ab0854f47cbf03"
   },
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
+    "sha256": "2b06354dc5fdf4d2f65c0916491704feaa42ccc40f19894d757a6f56723d760e"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
     "sha256": "307725063e19071e7b6fec5ae704ecd9032bed8f71f303f8555096646ffdf5d8"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "327b63b1d4b768a388b367f7a75c27e3e3b1b825c2e1fb743913db3800a7ee09"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1552,7 +1957,27 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
-    "sha256": "7a2bbbaa4e55a5e5d7eb4d1c63790ce5b7c2b9c24df8015a3a01849e72b72a8f"
+    "sha256": "6af13afd3acbbbd45d6d8faa1137844faa1cc6ae7b6c5a18ea0cc090dc693631"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "6bc016111059d2d997eb246870be8b3d20f746313378a26c71be4ffa9e457330"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "76dc99f179580773801a844abdd12c45c84ec568a986b7a87b3e566ce59f86b4"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "7c8d740effaad330f7de3dd0b73d423d515c1689b0739ad2f10e803fb513f628"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "82c52d8df54cf9372dda3668bc1402dd64dd6192ca8dc42e0cec684be8712fef"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1562,7 +1987,12 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
-    "sha256": "84d6ee0dce490ac794ef8fcab89570e661b41da072e21056c900faa26b6fdb25"
+    "sha256": "9273669bee0697fc84d1d8f09476183aedd9e7112ddfd7d9651260c2dbdf6049"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "9371bf08ff7b705abfeaf1f915b42b62db18a2171822885c4c6d43568966db30"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1582,12 +2012,32 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
+    "sha256": "a2c30bc74ff3e5876c0da3d85095fb5888bfe0b53b226f7b24b5ae25cf5d8acb"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "ab726d40aa21488f31b19decc22cf595baef5fb2c73c55b834c614626739f3ab"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "af7c7f3b18a66e88358989a68ee57e0bf94533c34b0c08832c1889f3184defe5"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
     "sha256": "b454b87b4fdd501c1cc8a23f4826aa8960469f52fde7034449528a5ad1246194"
   },
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
     "sha256": "ba0f028737ce3c153d43b61fccfbd1351df4bea381aaff88b3b6496da0af90b2"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "ba352056d374bf6e4cafb40c6419074a4c4fb54a7e43e5ef36ff365d51fd736e"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1622,11 +2072,6 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
-    "sha256": "cab10c01eca3b5dad280a963e4c18eff86f1c75535c7c213f102bfd6d2238661"
-  },
-  {
-    "estudo": "/o-que-se-discute",
-    "lingua": "pt",
     "sha256": "ce8d176dd0bb665989b5acad4950d010c7842b919c69c59926bad53881c6aa38"
   },
   {
@@ -1637,12 +2082,12 @@
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
-    "sha256": "d39292563cdcb5e4b969b63b96358d3c04881c07d33509c6df689e788aa661ad"
+    "sha256": "d3cb0f28a1f150e294ff62215f79c736d05b2e22d405f4bb5265dea85b667ce4"
   },
   {
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
-    "sha256": "d3cb0f28a1f150e294ff62215f79c736d05b2e22d405f4bb5265dea85b667ce4"
+    "sha256": "d9f329abc17d2dffa1fd95c336b3b2f83c62a7b91392c86a558b601c06774bc5"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1653,6 +2098,11 @@
     "estudo": "/o-que-se-discute",
     "lingua": "pt",
     "sha256": "e18d56b101211227de332ce74c034e5a3da45170643be5e130b508ac791150c3"
+  },
+  {
+    "estudo": "/o-que-se-discute",
+    "lingua": "pt",
+    "sha256": "ed44e6deedeca4cde695135f9186624169c117b3ccfe27ee6d5b5f58a9e067a3"
   },
   {
     "estudo": "/o-que-se-discute",
@@ -1710,6 +2160,16 @@
     "sha256": "30e4d68cb5a9a276a483132da99fc10ba10170d1bc414684e974c03fcf8c5afa"
   },
   {
+    "estudo": "/regioes",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/regioes",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
     "estudo": "/salarios-pensoes-e-apoios",
     "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
@@ -1745,6 +2205,71 @@
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
   },
   {
+    "estudo": "/sobre",
+    "lingua": "pt",
+    "sha256": "6d8c0f49bf4d791482f09170b1f1b12c113251bfaf69301926878f787e8e0cad"
+  },
+  {
+    "estudo": "/sobre",
+    "lingua": "pt",
+    "sha256": "e2bcabb170575180a0c2255590cc36489de3b84b0e09d76333526e261afce3a9"
+  },
+  {
+    "estudo": "/sugestoes/limite",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/sugestoes/limite",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "/sugestoes/nao-chegou",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/sugestoes/nao-chegou",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "/sugestoes/obrigado",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/sugestoes/obrigado",
+    "lingua": "en",
+    "sha256": "98accad7cec9559f81898427d28bac10f113b6c91f7ca83c44ed97fb0b39ea33"
+  },
+  {
+    "estudo": "/sugestoes/obrigado",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "/sugestoes/vazia",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/sugestoes/vazia",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "/sugestoes",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "/sugestoes",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
     "estudo": "/temas",
     "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
@@ -1762,7 +2287,17 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "01af49d886fa34d3baab97b33fb863676b3130fba4b5308f59729dcfbd3d4d0f"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "0c5bc343b7a7fc8da4c48e0b5dc5a6202b21adebed59cfc7029c7c97f22e70fb"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "0dd207dec98b0708e7fe7d477734d4203f63df235313040564f5c32e74e8bfad"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1772,32 +2307,17 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "12b38d37e1ce28bef40c7c6fa0cdbbcd0d5b51553d41bd375bc55f9e8b802a6f"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
-    "sha256": "12cc07250c243b0fe2d7c61ac016d4ab59cac24b51ce6e2595c969968d3c112c"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
     "sha256": "1af6bae5b86f59631fd0e8e61752cabaf9a95f8363f91581e196606bb0fcadb6"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "1ff053b2d5d42ba77ef59d384be2bd0ddfd77c8e68ecabb2b5abe895a9c7ac75"
+    "sha256": "1fbbf3f6463930896b1f19c2fc8480ed402d3c11ef1b1a33ee1f2d1ace7a8876"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "2509c5e535803c6a94e1783c9f96bdaf4c7e8fafa3d8c0dc54eaf375457b7745"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
-    "sha256": "26c11564b3cba49eec4ac77331ac533e508aeeaa1445e3ef9d53f0ce4ca5374c"
+    "sha256": "259a0bc05abcc24126a47703a19b2bfd5355af3287b0711abd9dd5668260e44b"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1808,6 +2328,11 @@
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
     "sha256": "31eca19fc0e688b4e5eb39d1fcdc0037f1f187a5452ef02ff7d27e3adcc0d3dc"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "320d155d6018b96ea58608837e6d47b5a933af2894bac03508f08997f9ccf778"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1832,12 +2357,22 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "3ac857939ec1489c6eab7bf9346c7d8179497ceb43f4b05c44b383d76b10259b"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "3dadb7d152b91037bded5d5607c37b602ba11e17cb442ea685be911013020dcc"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
     "sha256": "3e483083a87a74cbf2df675608b53d661b1e17217e5409f27c527fb9a4c4e797"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "3e7afa6d600cc93dfe7ab9af85c26931f9a76da02f60d5ba04435e4eec1bb85c"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1853,6 +2388,11 @@
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
     "sha256": "4ad9c11d25608525e5958de52801b703b0af6178d76a91208dc3fe935129543d"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "53db948a18ffb78964e2732e7f60c873bc629c723d6e3e32c01ab77191afa6f0"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1897,7 +2437,12 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "6f88e8b2676ca539d7c8d95dac4fa8f766e4c12641426faaba258d256ef645aa"
+    "sha256": "6ced8085038548bc1a2474d51f122316d3ebc2b4ef8732350c567dcf98d69fd8"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "74b5a21ba8e6e7885d23448faa5e6c4fba9d2a8fff3d1c75cfeeeaaffb7ca3c1"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1907,7 +2452,22 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "75cabe6f1426f184b54c6c3e4bb518957b7132b7bc7bcefddb73822dd0cb754a"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "7706b9b614c7272365d628416751d3859254c3377394f1e15c0272d1c552844d"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "78be0f9e317053ee491dec805af2234b188d56c2f023ee2184efc35f6424ace7"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "7a27221fd96b7a7bcfd52a04eeb6bc84a5df4ad4e0c121f1fef37ce65d7a6ae9"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -1947,6 +2507,26 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "955f75a37694a72dd863dfd9b47cb197cc8237d09131ebdf61fb8c10499a2739"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "980796d56712c75f64e17619cde1e13e9b8e5e3e3083a8bd5feb2d42dca11358"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "9acc1ee8c65a55ff2f93f60814b9deeed8c8c31b0072bd89f271e589cfc4f279"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "a00f7937476938e70d7d9b79ff3dc9dbca8ded18062f265dec3841a96ef065ec"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "a1efa5d0808b03f8d0eeae30142acb61beb22de10827e9cf494898dd46c3478e"
   },
   {
@@ -1977,6 +2557,11 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "a3e6e73ab678cd8d49e34e20eaf394a3941a22fd24c6a2618034915d216ce2de"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "a4fc9149c1517d32bf264d85b0f001a285f7fa7b9ef0dfa5970f73613ead65a2"
   },
   {
@@ -1992,11 +2577,6 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "af25ec632202d96103e5bc08358b764c38cce43de3d79f3fd51c57702a9ab3fc"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
     "sha256": "b04edac3ff8b10f1b8c670be41da36a2ef25071ed845a85edb4dba41316746ca"
   },
   {
@@ -2007,7 +2587,22 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "b32b760edc201738725c06071bda76bb2f291b456697c28e371f0b26b3d8d2fd"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "b524ee26c5026465b1446ca042a0913a966b528c91253a3259076cbf8de56bf0"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "b5b6c5318e6160ff16e334d5cb020792b8a00527690caece032af1a323711f67"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "bc0fbf8cb14a06363bcbfc2246efac34f5b54bd8a0ccb5cab2c036f039fa0f44"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2037,11 +2632,6 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "c8d6f31c07ccfb8e0d91739b8813541a75f6341635b53d201cb62438fb94b942"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
     "sha256": "c983a43c9518bd12513c9decdc4211b2505f55e817a2d63e00778d1d14504eff"
   },
   {
@@ -2053,11 +2643,6 @@
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
     "sha256": "cebe9812f1cf8a4ee16f677bd7da0b1d886a13b6fd0ba2aab6c6b4142ce31621"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
-    "sha256": "cf15cb98f4262bdc31ae00c3d6ad51d7a01aa935c1753b6cf136f1f3364926ad"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2092,6 +2677,16 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
+    "sha256": "e22f4a6ef2d34d3581862a1d49c5674b96582dd2cb1a21b5b4f50e0d240d71d1"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "e49c84c2822f360d613178da4fd6021b6d09704e437801ce687f2b771bb5f964"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
     "sha256": "e49d0831c60dfe41b0bd66519637c62d7c97eef1ae1e4b192aac92bba0cc5ce9"
   },
   {
@@ -2112,11 +2707,6 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "en",
-    "sha256": "ee1eed63c9157a8317de0dace2f310e7b66189bdfea6197798812d9ee64ad547"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "en",
     "sha256": "f0acf2054162f096bfcd32d0aeb84351614089384778bac50bd9092f28f34528"
   },
   {
@@ -2131,8 +2721,33 @@
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "f2d220291f55b2377f2717f3f08763d3dda9338cb948936c2f6262b2558741ca"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "f595074ccada0728179673792608f8cacba05d804bdb0d87c2e4ca09ae54dfda"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "en",
+    "sha256": "fd081ac04f2b520716483c7789f21843ea1d4a4263c3ed7dccd240e330f6dae9"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "00e31803b8e106dfbb7594ebbabf30c71fd126e8e141c49c7561a1c007d72a2f"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
     "sha256": "021367df1828bab0647e67b75fec407be806268cb34ee60909542c7431c32743"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "06e3671be03253ca073c2fa00a1d023f80adc9c1182c22bf52e9bb1f5bd579a0"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2147,7 +2762,12 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "1567fc5db07a666f63cd167486cd4b09c756d4ca82a2b2dd4cc9faa3067b2688"
+    "sha256": "1329de944844d414e1403a86f6ae8a42e57f3047e4dd88179e5e8e03705747de"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "17ae2a530cd39cb3c1c127f61e4aa438b48d27c0627fee283ebdc533d1318aac"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2157,7 +2777,7 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "219cc867cbba409fd7852e14bf860f9eaab17e3d678c80b61f834f3c39ed8c77"
+    "sha256": "2059eee1dbdbca3c15d4b190ba97e5bcdc2d86b90b9c6f35fdb2fdb2ede9382c"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2167,7 +2787,32 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
+    "sha256": "320d155d6018b96ea58608837e6d47b5a933af2894bac03508f08997f9ccf778"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "35edb6478c25cd2c7af23f9e816316f5857b96b9aa4cdb6eeea6dcbfd30e3a77"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "37996fac9823d2519ba7ab39a87d3e3a47e147008ae7131842e401d2844cf69a"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "39d503ed1aad78c192651ff8203b3d085a63bbc64eafb4efcb1a086db6764f78"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
     "sha256": "44d79dd49f1e4d8b89954e7fa6474b5b392c3a2070ca9ea5f5aa1ee48a371d2f"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2187,6 +2832,11 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
+    "sha256": "594b87f3a54a3946c56481fec948a0ea210721db17bcbf2c8daf69a5486dc3d9"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
     "sha256": "64d91a6fb0e3343f66fa6860b1558938a0f2df33e3872e74762ca0f42bb4f7eb"
   },
   {
@@ -2197,22 +2847,32 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "6b6c7ce93236f53516750ddae3f333c3e85bbbccf5b5ff0b30614443d0e96a7e"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "pt",
-    "sha256": "6c0218ffa1d3b5ec77b589b32077fd80ff101b9beaea917a867748ce093ca6ac"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "pt",
     "sha256": "7019407a74ab375ad4ff9d93c51c8c163c7351958b697b467bc00cbbabab3db0"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
+    "sha256": "7299fda00557e00a648e9bddb0d3cec5b5658ba8eebbe8812a0630a09f7bcb64"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
     "sha256": "7626e6bd512f381966a39510f4a8ed025e0aae33e420d1fd7a61de2977aa3bad"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "763bc085bca354008d5b0d6aa81e6db32b0dc942f4df094d44dbd0c8c9ae30bc"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "820d1ed3155855f698ac689a1b59ed5b19abe700794ac4b845a6cecf996a373b"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "897e233d8217df4fafbc40410926c61e7a00f06ed09789b431cda6d91777be2c"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2227,12 +2887,22 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "9776d2d8d0a1c58b76c6cc81a29b8244d644da5f879a5dc05106f3d9b4fb834c"
+    "sha256": "9528bc5fb170fa39358fe53c50ce90d5a4578885aa0c7f494c823fc874a7c075"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "99182eec5cdee00dd9f7c7623488c637e12e66ef9400611d28b9ce60a6fdce4a"
+    "sha256": "964afc4f756b495af7a13a523cef54b1c464c89df28e4ca80605bebc785d2312"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "9790c8317ee453d8d0b0bb5f39f1ba6930a6cc47a1999749662a4fabdfa94b74"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "9bbf6a430a459c9866c766dc3c1bb6163f42976de9bcb4420e5c131638a53652"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2262,12 +2932,12 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "b021e2711834ae7d009a9115e9ef74d129d7e34a449946e13e41149f25c3f27c"
+    "sha256": "b1962d4b64ad1c4fba3cc86d2b848c99d538cb6034474588c6ded000765ae871"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "b7ac76d60690c3579834b6152e0b8702cba522e1e9af7420faf49950e62a2b92"
+    "sha256": "bce23985bba3b7fc1eb6c32b7c86d39890762e7b8910d657eb280a7dec1c53cf"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2278,6 +2948,11 @@
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
     "sha256": "c700c746642a727f71675e7a30e372e6a2d6167a97697881c00f34c97ab65724"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "cb5426005b8d29433f448661af51a2a961aa941d709127f4929c881f3587851b"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2307,7 +2982,27 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
+    "sha256": "d83e7b630ee869ce7a15d73fc2cd21490a6132a20435b7da7b8a864f585788d1"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
     "sha256": "dad3ae861f52cf68b038dc09409af7065f29108c6c83227bdfb6e0cbae47818e"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "dad45c5de91cfa5fa46fcdb7ed8854b97b719e21ac9cc16573a8069ca6a24ccf"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "dde8ee04455f7612510b9c7455d298830d13bea1d274ec1c3dda39ca5b5d3551"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "e28f786f59bd6ad52211680741fc1b68816585da5746868dd9da1ca6802eb40d"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2318,11 +3013,6 @@
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
     "sha256": "e6e45f730f8d89b51b897d8240eb75a220c82e00fcb13f26ae8d7be9a78a434c"
-  },
-  {
-    "estudo": "a-casa-em-portugal-e-na-europa",
-    "lingua": "pt",
-    "sha256": "e79a85cdb97dc110123c2ad16828349fee84fd9a143001b0a35098edffea0d48"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2342,7 +3032,22 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
+    "sha256": "f2d220291f55b2377f2717f3f08763d3dda9338cb948936c2f6262b2558741ca"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "f39036943cbe3974d8ec046fdf7a41a52b9b69cbf376480f0aaed810ed341989"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
     "sha256": "f3924064a33266a00b4c31596082eacb30c31ff36c730aa13009b16d486b7203"
+  },
+  {
+    "estudo": "a-casa-em-portugal-e-na-europa",
+    "lingua": "pt",
+    "sha256": "f4daf01765e602bd53101b9e75363aeeea99820dd50ac85fe4f9cfd7e4d77c12"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2357,7 +3062,7 @@
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
     "lingua": "pt",
-    "sha256": "fe6fbfa4be352a1ddc9b8612171f2ad4be2dfd154c04cf79d634dda622a3fbf7"
+    "sha256": "fcf65e75ed8f5f385a7690b4620160782bf6249896950d266858d31b132077c2"
   },
   {
     "estudo": "a-casa-em-portugal-e-na-europa",
@@ -2413,6 +3118,11 @@
     "estudo": "agua-nao-faturada",
     "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "en",
+    "sha256": "6135faf7e10e14d9c0a5fb144c8c922f1198fc9fa07487151b981ea2a7e7eba0"
   },
   {
     "estudo": "agua-nao-faturada",
@@ -2517,6 +3227,11 @@
   {
     "estudo": "agua-nao-faturada",
     "lingua": "en",
+    "sha256": "e56eb838abe0e5098391a28601b5e30ea866fb5ad7994de807d73cf897322306"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "en",
     "sha256": "ec6b2107dc0925462c5aad2e7af0c56a3acaaef98db6bcf79727093eb52711e0"
   },
   {
@@ -2582,6 +3297,16 @@
   {
     "estudo": "agua-nao-faturada",
     "lingua": "pt",
+    "sha256": "4868b267093f1f0aa27ac9e6b8854111dcf5973af400781ddaa0642ff2eb66a6"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "pt",
+    "sha256": "6741a0d7fe31d50f7e506511dc7758ac32db39a2ab251d0c4a11d6007bed33b6"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "pt",
     "sha256": "9eeea95b665e3fd0098e9c5a81e58071fdb288bc5d06ce729904a89a8409b1f6"
   },
   {
@@ -2592,7 +3317,22 @@
   {
     "estudo": "agua-nao-faturada",
     "lingua": "pt",
+    "sha256": "ac90fbe5b2ae6ed106e499dfc3b3584a6ab8e0b97d9cd7754dc8dcfe47e798c6"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "pt",
+    "sha256": "b3776ed905b9a511c3c2375e8c702d6d2d0b735c1dda023c6429d127099fc700"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "pt",
     "sha256": "b9d1dcb34a4c06a37882ff79da0086acb6373487ff0fff8fa9375d194f981216"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "pt",
+    "sha256": "bd79e47d6b5459dd1d581ad6833e60b6411104c8a545c2cf94dbd8aedc2633c8"
   },
   {
     "estudo": "agua-nao-faturada",
@@ -2623,6 +3363,16 @@
     "estudo": "agua-nao-faturada",
     "lingua": "pt",
     "sha256": "f1ffbe61ced1e97dab9d723b3a1d2460b60c16e726ea64d7ca7495bcbb0eaa14"
+  },
+  {
+    "estudo": "agua-nao-faturada",
+    "lingua": "pt",
+    "sha256": "f52c22568c08d9df9dc8a79323c8018a4647ee8c865ac10f218836b76ba43ef9"
+  },
+  {
+    "estudo": "alentejo-algarve",
+    "lingua": "en",
+    "sha256": "00e9fb573a7a9436bae8da05ba90337394691ce0afbde29689fdc029d04a1528"
   },
   {
     "estudo": "alentejo-algarve",
@@ -2847,6 +3597,11 @@
   {
     "estudo": "avaliacao-economica-regional-de-portugal-2026",
     "lingua": "pt",
+    "sha256": "47c6fa790fe20df3997c77fe45cf81def1a28a4e7916393b9ac1f33b4385cf31"
+  },
+  {
+    "estudo": "avaliacao-economica-regional-de-portugal-2026",
+    "lingua": "pt",
     "sha256": "51980141755c1494c0e6eace33ffadb6b00495f33029e8c502807de56c5500ac"
   },
   {
@@ -2872,12 +3627,307 @@
   {
     "estudo": "avaliacao-economica-regional-de-portugal-2026",
     "lingua": "pt",
+    "sha256": "c2ce81964dc201f816db7136ae6333d768817d6057808fe16bff3e3ca6aa2d17"
+  },
+  {
+    "estudo": "avaliacao-economica-regional-de-portugal-2026",
+    "lingua": "pt",
     "sha256": "cfcd834f283eb9eab57d7cd5d6b0d1fe5f90c51136356bcc8d0164b9dca0ffb2"
   },
   {
     "estudo": "avaliacao-economica-regional-de-portugal-2026",
     "lingua": "pt",
     "sha256": "df9675535eb610f3a56b6b8f6355eccd7eff41833734b99d7c6172a52da0deca"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "219fbc67f492dc0b5bfdd624894bc0e59a1a369eea1a80b16b320e837fb34f57"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "8886a2194f6f499cdf23a2e93a79ea0dd9d4a3610d9afa7074f7403ffe32239f"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "982e07451d0be0ac940fada727f911d10db48c9c0d4a8c198f533d12c793adc9"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "a4fd35fbc00e2ac210811a8083ad13c524cbba0954ad91796aee9135ef1fecb9"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "c0eee7639ee7ee2e48eebd92c683f617d136a38763bd6f31df56e008899d0ec0"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "dc9ea26dc5fe879cb7f1bfbe113e1a94a04df7164352dde4b8557b18f20c6a38"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "dd95b8528b5845e3111152b0529f2c64adace2fb41325b37ed8d55e75e7d6bfa"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "en",
+    "sha256": "fa786fedb08d39677aae4fb316034ff80697ad9215ad6373f778f6cd85d6b767"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "pt",
+    "sha256": "3aee8bfb477b8c3efc53b849e5265ca97eab424cb7524f35341010accfab9e72"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "pt",
+    "sha256": "65d6dd94fde207d4cb8b4505e27b3f6512eab8d16e8ae4c57c9d78e17d5448d7"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "pt",
+    "sha256": "d17bdc4438d116acba6e973c55598f76b8d16efaa7b8bf207f3ee370a9f67545"
+  },
+  {
+    "estudo": "colecao-area",
+    "lingua": "pt",
+    "sha256": "e0e9d85e326a47b0aa748ffa9390a1d0dbdadc34a6166e17b41265d00e018e16"
+  },
+  {
+    "estudo": "colecao-distrito",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "colecao-distrito",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "1631ab85936553668ba2dd3449270939f0f5bb362d1a34d9e5f38d60a71cbd9a"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "1757cf0c04e7692f820ed515d7b474b6ca26baa3113285b2f211d019de1b6f42"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "210b80edfb44e58e618139b4af6228eadf471e101ebab68a2b1ded22f0853540"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "3ee4d4a1781a8ab035eea635bc2dd50cb5edc688f3d783f1e0d151da5e44a8bc"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "6edbd760ef09bb49deeadb211ea58f46ce692540b0d0bee3b21b438f14179d03"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "c60f17d82c01490073900f4b10ca2dbb11f1f5c277be63270e3fdc9659081d6d"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "e124552184417ce2dd0203097130e5799b33ab534556008da14cb5293961361e"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "e70bf178ef2dc8ba3c551ef4e7b6318dc001a95abc385c1ccfd57c26953da127"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "en",
+    "sha256": "e9061d26ad62307814ee3abfb14912b95106f45274552f6f65b56ed11c635e70"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "sha256": "13db3341135825b5a836d26da3a5a1c5feb1b8ad4eec10b73f8cf9cecc0f6bfa"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "sha256": "509bc670a4b89b1f36996df4d23abb625b93f2018e5c4cfbcf50fe00cb8f3233"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "sha256": "6d4439a747f352ea0b058fefb49f7a87df062d607591abe3473640ef092a6c11"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "sha256": "b5c9739c03f305ef842a91a76bfe46e2a591400091562f72be09347efdbde4e1"
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "sha256": "f58ea1c541fa3b9e0a1033d8d125197ee8fad4410af5ebf97ee72c42d0748485"
+  },
+  {
+    "estudo": "colecao-regiao",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "colecao-regiao",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "10ab4847601e7167d0610a885b90a92c2aa6b4683ef389f338346acaecab326e"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "219fbc67f492dc0b5bfdd624894bc0e59a1a369eea1a80b16b320e837fb34f57"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "24217f141de53c6e4161ba63ec6e7bd49d3a07e2aad0313c315bc0dcf8b79c66"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "2acaf69ad1a1575387e169e6c921253d196d2a05bb199af5731cd34e288f9c6c"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "53d5a826110a9f2865159eedef2145a44d3c9e5cf7e9bf264e2f0831a75710f6"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "738957ed3cf2e649c1b69a627db5df1f9b29c4cd0952b82a0a0e3937926e209b"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "762cf286f74809f2cac55e236459efba9580aa3b4f1ef9ae1befece3adef0171"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "810adca800191b34b92cc39843e1f8250e8e10fb0bd1c3952445d9d89e1ef4db"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "851610fdd798536bfc48268badf29801fe6735f2983ee78f5f339f6ba5709165"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "8ddab34f1746345d6faedbe73582b4695df4f3e0c7fe02cf3a69f7b76d269a6f"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "8dfa9b11583222877e0179cce52cfc05983da85f8c8a2744e27bd659ddd860fd"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "907be78538a38ec75730686726f33a0ec78c63820694de41ed80c778907d8c43"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "982e07451d0be0ac940fada727f911d10db48c9c0d4a8c198f533d12c793adc9"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "98d9220e7892542ee9538d68b15120bcfbc4e16622d380a10c73f7529f9f67b3"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "a8461fdd1374d1d0d83a67778def1deb97df44d3332cfd20f4f058d978a09963"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "ad484139d29d8bc934e4d2ff03cffa525e3c00f30ade3ce2d494207d3e2497ed"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "b0bdb969f1c081a3f3d94951739e2b4afccebf5b331e2ae08070fe3f63c16efc"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "b84b4388dafd62218fa580fbae76b34f780765f36a1a9fc256040e0986439801"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "cd1a275d04bee203a04456ec630c9a29669e8c8abf194047c33e83bb0a5e8cf7"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "d17884084a132f5cf92dcfb550e4208277bcd037c900d504b14641cb8c05c526"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "en",
+    "sha256": "d2dd201ad46637264394a7bec223e8b670800bb94b2c61e198cd1219627e3ca4"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "pt",
+    "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "colecao-uniaoEuropeia",
+    "lingua": "pt",
+    "sha256": "3aee8bfb477b8c3efc53b849e5265ca97eab424cb7524f35341010accfab9e72"
   },
   {
     "estudo": "evolucao-de-portugal-desde-1981",
@@ -2893,6 +3943,11 @@
     "estudo": "evolucao-de-portugal-desde-1981",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "evolucao-de-portugal-desde-1981",
+    "lingua": "pt",
+    "sha256": "5fd25c34954c9447ea4642b3d4395b0da8de52e9ca07d1c17eca6b39b31fcf5d"
   },
   {
     "estudo": "evolucao-de-portugal-desde-1981",
@@ -2918,11 +3973,6 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
     "sha256": "0d7c05d380fe874ed9eef5004b7169e3124ab443bb4bdc03b12d0c390f57364a"
-  },
-  {
-    "estudo": "evora-2027-capital-europeia-da-cultura",
-    "lingua": "en",
-    "sha256": "0eeec5d256b9d0c0e97912a297f654e7e9ad5727e65d36a5bb0c660e9e43c753"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -2953,6 +4003,16 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
     "sha256": "172a34d46a80631cbf22260230387e4480681a5c55166a33d682260329197f1d"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "176ecc8b20612dd1cab3447f39fe753191996be16d27cdafc9d5fb572e03849d"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "1ab7267837e4169bdb74227dc8e7b76e58e3a9b5477bf23a215fd1f7e9318ffb"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -2992,6 +4052,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
+    "sha256": "274709c04408b706cafe9c3ed8606a244df8852bf2845b3cc76a7118eaf3aec2"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
     "sha256": "2bfeffa7aae22e4ca956ba8ddc394c2e423e93aeda6e5b554194aa20da8776a9"
   },
   {
@@ -3018,6 +4083,11 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
     "sha256": "357e7b0df1af6c6ef2080e24e501ad4c8762a0d789b85219b0e1d281665f06a1"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "37a4a97b4e46324cc19c112017f5971ffd5b04c68d63013c062435d348772552"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3082,7 +4152,17 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
+    "sha256": "632dba7f58b494cf5e232affc772f1216ebc40d3b2c88e7bfd5457fddd3f3752"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
     "sha256": "647678039a420dfcbd0fcfa15820183423f4b8c2df514b0eb004a447254dd82e"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "658f69e38c08acf45bbdc2becedbca5cba9fb71e2b62e0b61ff47b9c2a896158"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3112,6 +4192,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
+    "sha256": "774e5c1328c17f6fa9fc11d2a08cf252e78343a1afabe83333ba19c33f678f8d"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
     "sha256": "78c0aa2e14ef57e6004c89240fd20945218276731f64b6431dce37691d43c2a4"
   },
   {
@@ -3128,6 +4213,11 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
     "sha256": "80198e2e8a2ccc9b9ccdef5f6edfa32ffcd7f1442c0d87160f3ad20f2c7196d1"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "83a7f970efb0520955cdf1e4f51b172e7f90e46b5da8efacd0d3f9be3f11de0e"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3192,7 +4282,7 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
-    "sha256": "9835ae94b872d7b28fdc19f9e97b9cefe1f4e1f56cca3f6da9e92629321c37d9"
+    "sha256": "9b734f0c276a147f069faf88bd979f6df0f8fdade050ca35fb82342294790314"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3203,6 +4293,11 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
     "sha256": "9d377369df513e3660e1e3f90144a62d495d2b5917924090433bb01a90ac2ad6"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "9d5a5b66860d8757eb2a0a37b2a16bb911ba7ce0719986e63e0ce52997cbac63"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3247,7 +4342,12 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
-    "sha256": "b9b3d25589dbad7c3599485fcb413c957e896c8e51cb05b3baf01725b37d1666"
+    "sha256": "b9de2d1cc841015d9140a87b84a5a2c756b5253716b33bd14ec7ba97290d1ad4"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "bbffca4141d958bb30428c9d9765d85afcf04d25efcc94700a9ddf00851d9b70"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3322,6 +4422,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
+    "sha256": "d96117bba7fed91c31eb3b66a3ab0506483a1385d2496bb74c542e0cf46a6c23"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
     "sha256": "d9c5b939f4ceb3122858f7bad875f0649ebdf17c496b111660d556a0d1811d0c"
   },
   {
@@ -3372,6 +4477,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
+    "sha256": "eec46ec49f61aaab32acbe1b3363366352731c588bc7ede17a0a38c6684a7c09"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
     "sha256": "f1f397bef8d3fd173ff04d6f6194d6d4f887e7fa4e850007e340939ed53edb95"
   },
   {
@@ -3398,6 +4508,11 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
     "sha256": "fc0deb680d4c3b30ebc438170998a83e0c2edf499ff928cc45b849d5538a8eca"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256": "fdc16e7f5fa3a37b4f01666c388227e9857edba4142c6a6eb61c326bc8e74d22"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3442,6 +4557,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "15ddafb8f42059ec579b17c7482f464fe85558c447604e6fea1f7897a79853ed"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "194958e6ad9b0d29c0985bbb6c542d503b56b4d3f2ff3d129a11e3b694dab22d"
   },
   {
@@ -3472,7 +4592,7 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
-    "sha256": "2c1e3f2a69bf6c5465bc849b4740d9797ce5ec9111a27941ea281e4e81a092b2"
+    "sha256": "2c12ae0e15c9a05fb72b14d14f79749dd3ee9e20d228070df3bce169c79fef83"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3512,6 +4632,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "3efff67d1a8540ffcfab68262347a21a51c232a1340272bd138f97c81286b223"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "404786786b08ce1297ece83b71391ac4679330e9eafb1ef488a9dbe46208724b"
   },
   {
@@ -3527,6 +4652,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "41ba617c8a3addbc33c2ed35ad695a49c0e5883922dbe5f82ddf4d2ad404bdc1"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "4359055e8331932953001e70a7cb3ff1325f9e71ca38a94ecb9522f8280bd61d"
   },
   {
@@ -3537,17 +4667,32 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "47e2efe3fe270daca4086aa7c401715281b3d18bf14c631812098a6a84b3a1f4"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "4895454c184fdd2fbf123059081ed2b1ea083684c292e0111c94fefd370db600"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "4bdde25e6a4d5c14eff31caa2915996a62a6a865865041eae5e6d52e1547b49b"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "509bc670a4b89b1f36996df4d23abb625b93f2018e5c4cfbcf50fe00cb8f3233"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
     "sha256": "54e90e33fe0162d538e1e92d78c3842e9c797b834d5ad5d3df22a7f41cd8f216"
-  },
-  {
-    "estudo": "evora-2027-capital-europeia-da-cultura",
-    "lingua": "pt",
-    "sha256": "55fa7de035ca1f85245cb59ad94b9a6161e2ec7947336fe7dbd485636573709c"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3607,6 +4752,11 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "75532449b905b1882d6842b33506b9bde9dddfdcac62725803b9137a47f504f6"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "75c28d92d85fe57fc7f7d158671b1d3f70a806d61c395ee31b3006d0b9f189c7"
   },
   {
@@ -3637,12 +4787,12 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
-    "sha256": "7f8c682d50c765c840f54dd1a495683dd5205690e53c26e681c97bdcc3707586"
+    "sha256": "7f785c758ae97deb2aa6dc7d18b4c6c43e5322009ccaf07722a6400140240cf4"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
-    "sha256": "8214beaeb5e200c48318df2043c4e312aafbac21d73bd7342ac122fa706f284d"
+    "sha256": "7f8c682d50c765c840f54dd1a495683dd5205690e53c26e681c97bdcc3707586"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3652,7 +4802,17 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "842a1e0cdb88426859ff17001ef3ce29bc47241f4c37e67604e704cd5657f54d"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "8524e77e6b96b073060a22f31e29156b62e7768fee7514c0b0c24a5360a220ae"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "8a05998aa829af37030bff539c1df9e18543c615d6126964051204b96313b0dc"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3663,6 +4823,11 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
     "sha256": "90365b3b7fb42db16df195c70010d795cfb48b7f37fe7f0ff5bd86891256079f"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "957e4b82a3d969489bfba8aceb3d4b73729c5bd4735a1ab1d9d642010cb6bc36"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3707,6 +4872,16 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
+    "sha256": "b399691dba414c6e938e7808d727a0502db62cc727209001dc22e690d57e1ed8"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "b3a2f8f100c9773273a554895384d71fc5afc184bc835d9440992cafd9e14e71"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
     "sha256": "b5c9739c03f305ef842a91a76bfe46e2a591400091562f72be09347efdbde4e1"
   },
   {
@@ -3728,6 +4903,11 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
     "sha256": "befbb1fb7e094ca9bb3195f5b5db008a711e3b00aebf3f916005525a24680491"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256": "c0b57998488dcad5ed268de9cbaa82e6f6e30fb435586aa7bf7242e4a09aa603"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -3847,11 +5027,6 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
-    "sha256": "0eeec5d256b9d0c0e97912a297f654e7e9ad5727e65d36a5bb0c660e9e43c753"
-  },
-  {
-    "estudo": "evora-2027-prometido-painel-dinheiro",
-    "lingua": "en",
     "sha256": "0ef7a4281756146b1f091a574df1f3d28fa4725e79352aa15d2d296c79e6ab8a"
   },
   {
@@ -3882,6 +5057,16 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
+    "sha256": "176ecc8b20612dd1cab3447f39fe753191996be16d27cdafc9d5fb572e03849d"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "1ab7267837e4169bdb74227dc8e7b76e58e3a9b5477bf23a215fd1f7e9318ffb"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
     "sha256": "1c6053aaf77acafbc2a086d923e22a3a1b7772dd7c160768389619fb6b0ce11b"
   },
   {
@@ -3903,6 +5088,11 @@
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
     "sha256": "25f5e36a79e9f6ac35360186afd67b66f53a345aabbe35edd1cd75a8ae47b8fa"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "274709c04408b706cafe9c3ed8606a244df8852bf2845b3cc76a7118eaf3aec2"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -3933,6 +5123,11 @@
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
     "sha256": "357e7b0df1af6c6ef2080e24e501ad4c8762a0d789b85219b0e1d281665f06a1"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "37a4a97b4e46324cc19c112017f5971ffd5b04c68d63013c062435d348772552"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -3992,7 +5187,17 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
+    "sha256": "632dba7f58b494cf5e232affc772f1216ebc40d3b2c88e7bfd5457fddd3f3752"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
     "sha256": "647678039a420dfcbd0fcfa15820183423f4b8c2df514b0eb004a447254dd82e"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "658f69e38c08acf45bbdc2becedbca5cba9fb71e2b62e0b61ff47b9c2a896158"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4013,6 +5218,11 @@
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
     "sha256": "75587efa05d3a5f232d04c47f88ad95a7c3b4a0726267af908fa106aede3981b"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "774e5c1328c17f6fa9fc11d2a08cf252e78343a1afabe83333ba19c33f678f8d"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4077,7 +5287,7 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
-    "sha256": "9835ae94b872d7b28fdc19f9e97b9cefe1f4e1f56cca3f6da9e92629321c37d9"
+    "sha256": "9b734f0c276a147f069faf88bd979f6df0f8fdade050ca35fb82342294790314"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4088,6 +5298,11 @@
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
     "sha256": "9d377369df513e3660e1e3f90144a62d495d2b5917924090433bb01a90ac2ad6"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "9d5a5b66860d8757eb2a0a37b2a16bb911ba7ce0719986e63e0ce52997cbac63"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4142,7 +5357,12 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
-    "sha256": "b9b3d25589dbad7c3599485fcb413c957e896c8e51cb05b3baf01725b37d1666"
+    "sha256": "b9de2d1cc841015d9140a87b84a5a2c756b5253716b33bd14ec7ba97290d1ad4"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "bbffca4141d958bb30428c9d9765d85afcf04d25efcc94700a9ddf00851d9b70"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4212,6 +5432,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
+    "sha256": "d96117bba7fed91c31eb3b66a3ab0506483a1385d2496bb74c542e0cf46a6c23"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
     "sha256": "d9c5b939f4ceb3122858f7bad875f0649ebdf17c496b111660d556a0d1811d0c"
   },
   {
@@ -4262,6 +5487,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
+    "sha256": "eec46ec49f61aaab32acbe1b3363366352731c588bc7ede17a0a38c6684a7c09"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
     "sha256": "f1f397bef8d3fd173ff04d6f6194d6d4f887e7fa4e850007e340939ed53edb95"
   },
   {
@@ -4293,6 +5523,11 @@
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "en",
     "sha256": "fc4155d703ad3ac1a7c1cb19a4a459adf2f98e70b63f8ea08a4b7eb8f25525ea"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "en",
+    "sha256": "fdc16e7f5fa3a37b4f01666c388227e9857edba4142c6a6eb61c326bc8e74d22"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4342,6 +5577,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "15ddafb8f42059ec579b17c7482f464fe85558c447604e6fea1f7897a79853ed"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "194958e6ad9b0d29c0985bbb6c542d503b56b4d3f2ff3d129a11e3b694dab22d"
   },
   {
@@ -4372,7 +5612,7 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
-    "sha256": "2c1e3f2a69bf6c5465bc849b4740d9797ce5ec9111a27941ea281e4e81a092b2"
+    "sha256": "2c12ae0e15c9a05fb72b14d14f79749dd3ee9e20d228070df3bce169c79fef83"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4407,6 +5647,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "3efff67d1a8540ffcfab68262347a21a51c232a1340272bd138f97c81286b223"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "404786786b08ce1297ece83b71391ac4679330e9eafb1ef488a9dbe46208724b"
   },
   {
@@ -4422,6 +5667,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "41ba617c8a3addbc33c2ed35ad695a49c0e5883922dbe5f82ddf4d2ad404bdc1"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "42d8b96b5f67502713682fef68e4a88c82f2d89d8ae7a93df280f838fa87e0c6"
   },
   {
@@ -4432,17 +5682,32 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "47e2efe3fe270daca4086aa7c401715281b3d18bf14c631812098a6a84b3a1f4"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
+    "sha256": "4895454c184fdd2fbf123059081ed2b1ea083684c292e0111c94fefd370db600"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
+    "sha256": "4bdde25e6a4d5c14eff31caa2915996a62a6a865865041eae5e6d52e1547b49b"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "4c1eb848f31214ea095a59da9fb6e09c0fe05f464e03edb42ad23f3b74e4d240"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
-    "sha256": "54e90e33fe0162d538e1e92d78c3842e9c797b834d5ad5d3df22a7f41cd8f216"
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
-    "sha256": "55fa7de035ca1f85245cb59ad94b9a6161e2ec7947336fe7dbd485636573709c"
+    "sha256": "54e90e33fe0162d538e1e92d78c3842e9c797b834d5ad5d3df22a7f41cd8f216"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4502,6 +5767,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "75532449b905b1882d6842b33506b9bde9dddfdcac62725803b9137a47f504f6"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "75c28d92d85fe57fc7f7d158671b1d3f70a806d61c395ee31b3006d0b9f189c7"
   },
   {
@@ -4532,12 +5802,12 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
-    "sha256": "7f8c682d50c765c840f54dd1a495683dd5205690e53c26e681c97bdcc3707586"
+    "sha256": "7f785c758ae97deb2aa6dc7d18b4c6c43e5322009ccaf07722a6400140240cf4"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
-    "sha256": "8214beaeb5e200c48318df2043c4e312aafbac21d73bd7342ac122fa706f284d"
+    "sha256": "7f8c682d50c765c840f54dd1a495683dd5205690e53c26e681c97bdcc3707586"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4552,7 +5822,17 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "8a05998aa829af37030bff539c1df9e18543c615d6126964051204b96313b0dc"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "8b2eb0622b1374fc9633bbdfbf581aa3bbb678e24d8ebbe620ff2219d5f1e6d2"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
+    "sha256": "957e4b82a3d969489bfba8aceb3d4b73729c5bd4735a1ab1d9d642010cb6bc36"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4602,6 +5882,16 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "b399691dba414c6e938e7808d727a0502db62cc727209001dc22e690d57e1ed8"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
+    "sha256": "b3a2f8f100c9773273a554895384d71fc5afc184bc835d9440992cafd9e14e71"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "b80e619af7e4dc2c760369290ef1d565a6274f59e3d45c0cac097887c01c672a"
   },
   {
@@ -4618,6 +5908,11 @@
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
     "sha256": "befbb1fb7e094ca9bb3195f5b5db008a711e3b00aebf3f916005525a24680491"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
+    "sha256": "c0b57998488dcad5ed268de9cbaa82e6f6e30fb435586aa7bf7242e4a09aa603"
   },
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
@@ -4682,6 +5977,11 @@
   {
     "estudo": "evora-2027-prometido-painel-dinheiro",
     "lingua": "pt",
+    "sha256": "efa1c4078721585b34e3a901d14742d266ede4387534c5efbea7322c03987b70"
+  },
+  {
+    "estudo": "evora-2027-prometido-painel-dinheiro",
+    "lingua": "pt",
     "sha256": "f23069f8a86e573d1af9724c54610fbd5a9a1272fbb8b5596c4a90399409eb56"
   },
   {
@@ -4742,6 +6042,11 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "en",
+    "sha256": "2c18ba24e16176a45395808f0a9d10b7e911cc553b8e84d3e4ba8f4f1998e1e9"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "en",
     "sha256": "325849aa4fb7689de88262dd3d7da591b758b9532b6bf6bcbee2bf6282c22ba0"
   },
   {
@@ -4792,6 +6097,11 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "en",
+    "sha256": "4fd269b4fb4a1e2a8b63cb683c8d908b6f003742e5ba6bcc5763e493d541f224"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "en",
     "sha256": "569168594d6e44069f26ba5b956f5ed8e01c89f6b5aa61cbcf8866a634aa4d6d"
   },
   {
@@ -4803,6 +6113,11 @@
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "en",
+    "sha256": "6410210ab7850f71f162c41b5b844264b365ecf219b11b822e69bfd26c519f68"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -4873,6 +6188,11 @@
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "en",
     "sha256": "88fbcdeb773a57aa7355e3564946592c8d3684a6318819cebc62fd29b0e13462"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "en",
+    "sha256": "8d30271595742c2f6a801754125a5229615795ed88178dc910861ca772a1e019"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -4997,6 +6317,16 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "0579645990add52d88c71c5809c7484e6e969ba016b74efdb3d590361a7dee14"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "0fc6cfd0144fb8f7ff7529723c33511646fb7fff0bcf00438656d366478a3ee3"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
   },
   {
@@ -5037,7 +6367,17 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "475d7dfcda5c1a9452de19031bfe3066a69e8a09850da7f719148bad2404beaa"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "4776b94fd5eb65f7c95be1e34397f1ce2faa1cd1508ba92d2d94ca7fd83264e7"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -5052,6 +6392,11 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "5bc39450b731271f3dab8b4246557c64315a4806989d64938050ac8fc4aaeced"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "5c3a4f5f6308f7d1d65f7ca58232cd774a29b19926ea5818cfbc61deb9d79e71"
   },
   {
@@ -5062,7 +6407,17 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "61e89716b1b29027cfb8900effff2a36a5116ea427f6ffdd352679c97169fc55"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "686dfdfd8f9482ab531919a81051c30e90e091ec8f8cd91010d194e1844e786d"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "68d1d7ac6186ea4913beea1f7d2c89f09db8b90a17704ae3b3c8c42ef0503835"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -5077,7 +6432,22 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "74990e9d34963f0311ce82557d41d69c0a7ece035540c78a3bcdf9f53c182800"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "7fb33a67cf840a0f1f0bb60fc6154f97dea6592cfd4e5d104fa0d138a1c1ba50"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "81b958bda3d0697bbe8404dba790280aec8d247f02ff9b498b8dad8f1d69293c"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "846871e0c5d3d269ce4f9e4e68c70a1463031489f43c32d08c31cd4bd311c777"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -5107,6 +6477,11 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "9626109b6d3f0b4ce5cff0095bf4b3fa7205096194ec74a1c6fcb28eb2e637c3"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "9c66391186df2ade1f293b1ae7102365b043b71d20ff9b25d38e195831bf60ad"
   },
   {
@@ -5127,7 +6502,17 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "b14a7ce5e95a15720408af18c0f6cdc11be86af39b5fc932b637df47f604089c"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "b3c8c9c3e105d2a10015b797d783744c71b65d4ffb579fde306106450a77449a"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "b5c015d7c6ad58f8c3ede64195eafd9b325c762c5017a8002221c22e9e4ecc9f"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -5137,7 +6522,22 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "b736f84897f0dcd4ecc7ecea03e2545c9abfa3b61fd3ff8a5cd6a51078e042ca"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "b7a6f0be6c98131103ad0bf8315263e6e0ee6da96b9b9189d5c3d5dc83fe7af3"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "be9623db601de5aed04de7b83688407c432ee84775283885730bfd3e1b22d8b8"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "bf61108a893a3a0236146cbaef2e8b93bbc19ceb286cd8f3180d006515a81e02"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -5157,7 +6557,27 @@
   {
     "estudo": "evora-contas-da-camara-2010-2025",
     "lingua": "pt",
+    "sha256": "d06a7743406f88993c03ba18c86b67bc9ad206d47b54d737becb3642dfe01587"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "e0e4b16f2f621440ce183d4c3e272e3e2c6f242c9800ce635e82d651e1204efc"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
     "sha256": "e675a7d32d706660af2cbb50b119dcf752d893edaf2ac71ac04e0bf39d4d7096"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "e92f4fc336d9761470ea5dd3f28c9c9b53de2d1bc813feb7263a75e24073184e"
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "sha256": "e9ddf8356a5dc90c78a8a4517550cf6c7b1f8db8d861ce9c354f06b92390096d"
   },
   {
     "estudo": "evora-contas-da-camara-2010-2025",
@@ -5302,6 +6722,11 @@
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "en",
+    "sha256": "a67db1692c9d2cc0b47cc6febf7a26c12230b0e31e5af05769055b6b9658e2fc"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "en",
     "sha256": "a9e1a4b4f8ead18864fef7311be8386bf9a2ee72d1bfb711941b73680012708f"
   },
   {
@@ -5337,12 +6762,22 @@
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "en",
+    "sha256": "e1b7f129d07894ae10235d660a9715739d9e40015e422c209b62e39cfbb04f4d"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "en",
     "sha256": "e3aba9d76312e720c47fc45ecde8a9320a7981cb54ee137f4deed85b722b67db"
   },
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "en",
     "sha256": "e6d94c1a84095156f18b717c82dc0cec52f52e77c4b660a2d92a5163d1a4280e"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "en",
+    "sha256": "f2da807c842c4df8628913ba9b76a8782040e40c42b89c5049cd88e17b8bf69b"
   },
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
@@ -5357,7 +6792,17 @@
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "pt",
+    "sha256": "06b08b7dd19e795de5595c142f61177f60c18fcf1e02576c38f09a131e7ae5f9"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "23e71f91ec9904c1d10f6da2c3c31b703f7698d10835a8cd7d3bc919b377bb3d"
   },
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
@@ -5368,6 +6813,11 @@
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "pt",
     "sha256": "2840076311f8a024166061128359e09fef661e1f73f2b6d511aa22403e03dc08"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "2d22c85af83dad01936fa8b8d6ee8f0822721d4c9f8554ac481dd87c7105f7e0"
   },
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
@@ -5383,6 +6833,11 @@
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "pt",
     "sha256": "4c6914c53787c42ec1cdf62a659b38e7c8fcad8a186282f6d685af3cfc0c5e66"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
   },
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
@@ -5467,6 +6922,11 @@
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "pt",
+    "sha256": "b700238a19070f10d6e397195eb1e042284b7500b88b5edcf8fac39d540a7a59"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
     "sha256": "c4b36c0264374fb51106fb6691b5654c7d727aab7d4e408eb8a028354392db79"
   },
   {
@@ -5483,6 +6943,31 @@
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "pt",
     "sha256": "cf5fbae12f0bcf12c9d3a84c2ddc3bf12c0e014b3f1964bcdafba0b74b0a1da6"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "d2e089f43b1ef43d8bb1426cbafc017393295857be56be526eeab38c5143d46e"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "da85499f992369e5332e526532687dae2c3f7d8a029e4fc216e737231160a549"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "dbeb422933a2f9c04019b7045ce4afd43d68e453f39f6530757bae9bb24161e7"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "e941bb6963c517181cc56087583470bece4c3ab5cfe58164f98c831011db624a"
+  },
+  {
+    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "lingua": "pt",
+    "sha256": "f94dfbda5249634cd0b8cb1451c03988da167822091781c211df120c8e2a3dfc"
   },
   {
     "estudo": "evora-economia-investidores-portas-abertas-2026",
@@ -5712,6 +7197,11 @@
   {
     "estudo": "evora-orcamentado-pago-devido-2025",
     "lingua": "pt",
+    "sha256": "2be1d459e1499e3b6312730d761291b3128b819d41207b9f0e0471b37b910960"
+  },
+  {
+    "estudo": "evora-orcamentado-pago-devido-2025",
+    "lingua": "pt",
     "sha256": "2ff34050ac92a0fe3a041976ec22bb7f26bc9164935372ebc13b117b035f0276"
   },
   {
@@ -5757,7 +7247,17 @@
   {
     "estudo": "evora-orcamentado-pago-devido-2025",
     "lingua": "pt",
+    "sha256": "846871e0c5d3d269ce4f9e4e68c70a1463031489f43c32d08c31cd4bd311c777"
+  },
+  {
+    "estudo": "evora-orcamentado-pago-devido-2025",
+    "lingua": "pt",
     "sha256": "8bbfd31ba8cb11234c588b1a85ae3206c532477e96e5074910c554582df6e8b3"
+  },
+  {
+    "estudo": "evora-orcamentado-pago-devido-2025",
+    "lingua": "pt",
+    "sha256": "9b7886cdbd4bff01660a231efe297a4d7cf5cb4e60c06a48ea3ee1a373c07309"
   },
   {
     "estudo": "evora-orcamentado-pago-devido-2025",
@@ -5793,6 +7293,11 @@
     "estudo": "evora-orcamentado-pago-devido-2025",
     "lingua": "pt",
     "sha256": "be9623db601de5aed04de7b83688407c432ee84775283885730bfd3e1b22d8b8"
+  },
+  {
+    "estudo": "evora-orcamentado-pago-devido-2025",
+    "lingua": "pt",
+    "sha256": "d06a7743406f88993c03ba18c86b67bc9ad206d47b54d737becb3642dfe01587"
   },
   {
     "estudo": "evora-orcamentado-pago-devido-2025",
@@ -5837,6 +7342,11 @@
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
     "lingua": "pt",
+    "sha256": "0527568bbcfc7daccfc38daaa98281cc045fde1cf32fd8a2d37345a197ac1bf4"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
     "sha256": "065b368161608d401d40881d3dbd1e33ee403162b70c9dc8cff91edf259901e4"
   },
   {
@@ -5848,11 +7358,6 @@
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
     "lingua": "pt",
     "sha256": "0ebebf5e2203c2fa4c1098a4b33db0b4148c9a6117ec7dfbb56a9ea4b80a80a0"
-  },
-  {
-    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
-    "lingua": "pt",
-    "sha256": "0ffe0f1efd6ea81f9de742895c75ec78ac1742d78aac3f790375657fe980f6e1"
   },
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
@@ -5892,6 +7397,11 @@
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
     "lingua": "pt",
+    "sha256": "2a8286eb0526b0d836a28726908990fcaece83703195dcd07d180e72f271d1f3"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
     "sha256": "2c6c58d21eb5309a1e67bee136e7d3b6009a1a4b1fb209e55bdb2c4e89a7e6b5"
   },
   {
@@ -5918,6 +7428,11 @@
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
     "lingua": "pt",
     "sha256": "3d5532fa6396233496fc8e899f1c27840b908847c521b493b4d1f43586ff2d91"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
+    "sha256": "46d6af9a2057ba7e103a68842dfc70a44bb6bc2c073e84171ff1094e9a76e3dd"
   },
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
@@ -5993,6 +7508,11 @@
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
     "lingua": "pt",
     "sha256": "779c70b5fd3a09b37000fc0931fe72ccf5bf6b5b7e2ef0e9b350ff66b9d7a566"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
+    "sha256": "7c6347560d8cc92790461d24a5516f6d542440c7ec64de8f4fce66491953f51a"
   },
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
@@ -6117,7 +7637,27 @@
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
     "lingua": "pt",
+    "sha256": "fafa34ed68025724e81ad15a9de327fe8b547da5e8f04a634b1f67709bb2042a"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
+    "sha256": "fb1fc1962f86aaef1ec632c06fcf4b8fcd43ff84e6c0fa1e94e9487deae3e021"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
+    "sha256": "fc75c889fdd513eb56bedf64238b3bd60f22d5ab25a665cc29dc3da3eebfc105"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
     "sha256": "fcbf5bb8dd4a108718231c79ba500d8a3786d02d67824ca658794c9750dc4d74"
+  },
+  {
+    "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+    "lingua": "pt",
+    "sha256": "fe2cc686e3ed1e3a928fa49b63e2ad98070fe9e8f79882d73eda2f3524eb0190"
   },
   {
     "estudo": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
@@ -6163,6 +7703,11 @@
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
     "sha256": "178b16c037d6984136b144ad072ed4c56aafeb734a1fc5247d29953f02fb99fc"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
+    "sha256": "1b9d2757f634b8a0ee45d7c7b1659ffceb5abfeeb0802991b1d8f45275a31ae0"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6287,6 +7832,11 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
+    "sha256": "6c9257369f7ebc1afba15e3b763dbb4fe65a85eb12bc950f4464e4cab3e3bc8e"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
     "sha256": "747a1143d4c39909c98d0fe1714f3e51d2e0bdcce1810998f59949059afada24"
   },
   {
@@ -6322,6 +7872,11 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
+    "sha256": "973841d803132e33683af4b26405cce03a026fafa41388ed090545ff8c5d9ed2"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
     "sha256": "9d0b0c803b414ff82ed2c5cd2a79fe0f2c66f7a93ef2f5efa4cff3c5aafb1692"
   },
   {
@@ -6347,7 +7902,17 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
+    "sha256": "a9283978bf7c69ae9469cb1fc3acd04ef105c96006b3d7cff3f4efa6c23830cc"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
     "sha256": "a9e1a4b4f8ead18864fef7311be8386bf9a2ee72d1bfb711941b73680012708f"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
+    "sha256": "aef8eff00e0225eb0935838d3bc50448ae35e153b8ec3478ceae1c51cd2dd004"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6377,7 +7942,17 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
+    "sha256": "be4a2aa5f40dbe4dff28e3d856dfab71db7e6d7ecd76d863c48d8ec3db21eacf"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
     "sha256": "c5f85ed5accb8fe357c012782e4a9c90411c4337dc8d6a561bd5805e209520c5"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
+    "sha256": "ca5544c3c762fa6e394408d86927e84bc89bd38de19a4e65c323224b0bf48026"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6407,7 +7982,17 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
+    "sha256": "e81c9ea28739af996581a940f24e5e2192f0d9e42f4383e8b920f5a69496d040"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
     "sha256": "e9b593078b05e655f382d9727389e4856de6c1f98a5796bef9238291a94e23c6"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "en",
+    "sha256": "f2da807c842c4df8628913ba9b76a8782040e40c42b89c5049cd88e17b8bf69b"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6423,6 +8008,16 @@
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "en",
     "sha256": "fc38443c0766036a6a1ed826be0a23a0d1b2c2153a510508f1dc473aea6965c4"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "02acacbbbd4a66d00cdeeb660cc08a688a1a17e1f60580a8aac5c0df2d6621b3"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "06b08b7dd19e795de5595c142f61177f60c18fcf1e02576c38f09a131e7ae5f9"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6443,6 +8038,11 @@
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
     "sha256": "0ebebf5e2203c2fa4c1098a4b33db0b4148c9a6117ec7dfbb56a9ea4b80a80a0"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "0fd328583077ac1fc3c7793e0a3102a1959036a49339cc2e83930d9676130797"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6477,7 +8077,17 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
+    "sha256": "2d22c85af83dad01936fa8b8d6ee8f0822721d4c9f8554ac481dd87c7105f7e0"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
     "sha256": "383e918a0eed2014297cd019a4868afd7de7a2cd643172865d23d98c4f2bcf12"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "3e6545cb4a3a4402b1f00d5b516cd4fc92055defdafefaf3147308a5b5fbdbb3"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6488,6 +8098,11 @@
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
     "sha256": "4c6914c53787c42ec1cdf62a659b38e7c8fcad8a186282f6d685af3cfc0c5e66"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "4d08b460e7db84266cc8417405f9256f745c00089748517ffdb6ea31a90b95e3"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6532,6 +8147,11 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
+    "sha256": "7ea53010f6b9343ed73aa15f63f8b69c36f775c39097824d3e7673196390ff00"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
     "sha256": "80ca8abe051570f5471472fa7468950b1955f8aa07205183126bf572312108e1"
   },
   {
@@ -6548,6 +8168,11 @@
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
     "sha256": "88c1e65892b3f4cbcfed19d27a8a9accc69b887652f05e28f960fc0ed6b8e4ab"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "895f4a6db27624a4385a4733a2deb2173f2c8d15cfb83bf4853acc0a59aff5ad"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6578,6 +8203,11 @@
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
     "sha256": "97b08bc774b4b8736ca795e7e2d8c7ec409be4eb8d41d95b8b6d0ed3854db536"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "99c1191346eebfeb1117c5776e55f333aa1280299e004c95fb25b8cc395ddb14"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6647,7 +8277,37 @@
   {
     "estudo": "evora-prometido-pago-auditado-2026",
     "lingua": "pt",
+    "sha256": "d2e089f43b1ef43d8bb1426cbafc017393295857be56be526eeab38c5143d46e"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "da1ac70eca2c13cb796df2aa46362d96ce43d4b4885a90445965279c6b8c83fb"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "da85499f992369e5332e526532687dae2c3f7d8a029e4fc216e737231160a549"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
     "sha256": "e24ab7c6092f678697f733a4c77e1289c688928a80aa89a88006eda41372f3b7"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "e27bcec41977a4a048a633d43915878f5a8549aab445c8c37c3e40e1f8ff7975"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "e83a69d523c7d3ce8b6bfdfb85998c75c0319091bfa760ac33920afc30251429"
+  },
+  {
+    "estudo": "evora-prometido-pago-auditado-2026",
+    "lingua": "pt",
+    "sha256": "e941bb6963c517181cc56087583470bece4c3ab5cfe58164f98c831011db624a"
   },
   {
     "estudo": "evora-prometido-pago-auditado-2026",
@@ -6662,12 +8322,12 @@
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
-    "sha256": "065b368161608d401d40881d3dbd1e33ee403162b70c9dc8cff91edf259901e4"
+    "sha256": "00e777297870a589d210b3fd6f575c2bc85f0a51c74f337cbcbd1dd6317c5fa6"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
-    "sha256": "0ffe0f1efd6ea81f9de742895c75ec78ac1742d78aac3f790375657fe980f6e1"
+    "sha256": "065b368161608d401d40881d3dbd1e33ee403162b70c9dc8cff91edf259901e4"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
@@ -6698,6 +8358,11 @@
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
     "sha256": "260d1d78361809e15457f270e212aa0fb23d812b3d77b98cf284a6882e3e7dd3"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "2a8286eb0526b0d836a28726908990fcaece83703195dcd07d180e72f271d1f3"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
@@ -6737,7 +8402,22 @@
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "52446b604c9303eb4fabc8fa17f40c85fdb5cfd2b2a7e53b9dbe2322225e2bda"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
     "sha256": "5773eadb9375a1b73af4ef8a65df047cd35538cb1aa5af4ce74fd3c1999b0365"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "5c232e9afc878b08152ef856118c106def89837f8cfc1039e9b09c019b3cc6d6"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
@@ -6762,6 +8442,11 @@
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
+    "sha256": "70195cb046ec3511bcc7b7a0d51de7684791149d23b3e71fbbc46d9d220bde6a"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
     "sha256": "779c70b5fd3a09b37000fc0931fe72ccf5bf6b5b7e2ef0e9b350ff66b9d7a566"
   },
   {
@@ -6772,12 +8457,22 @@
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
+    "sha256": "7c6347560d8cc92790461d24a5516f6d542440c7ec64de8f4fce66491953f51a"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
     "sha256": "8f7e212dcd967b3451c35e63ca150b0dbb2e698453ee5944c6d4f5298440cba7"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
     "sha256": "8fc999f85b0aded4043452c006791fe7fc7d2e3547305560312376accbb0115c"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "94a141fb2c065eefbf01dd07a0b4e398be49ccf7c5daa3dd351bf173586ff197"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
@@ -6808,6 +8503,11 @@
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
     "sha256": "b832fec2f4b1b66893f1b5ccc4f4fd1c0d24eb5b1b91c1144427a64dc680b68c"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "bba9e389c24feb38257e45c213b34cf77442424c752d4e61e71de3543ecdbeba"
   },
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
@@ -6862,6 +8562,21 @@
   {
     "estudo": "evora-quem-governou-a-camara-2009-2025",
     "lingua": "pt",
+    "sha256": "fb1fc1962f86aaef1ec632c06fcf4b8fcd43ff84e6c0fa1e94e9487deae3e021"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "fc75c889fdd513eb56bedf64238b3bd60f22d5ab25a665cc29dc3da3eebfc105"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
+    "sha256": "fe2cc686e3ed1e3a928fa49b63e2ad98070fe9e8f79882d73eda2f3524eb0190"
+  },
+  {
+    "estudo": "evora-quem-governou-a-camara-2009-2025",
+    "lingua": "pt",
     "sha256": "ff479659c2daad5c4a607d0a294e3a8c76c7495f57282a83c0b4419dd1c7e4ae"
   },
   {
@@ -6882,7 +8597,22 @@
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
+    "sha256": "00e777297870a589d210b3fd6f575c2bc85f0a51c74f337cbcbd1dd6317c5fa6"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "0579645990add52d88c71c5809c7484e6e969ba016b74efdb3d590361a7dee14"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
     "sha256": "0ab11b8cafae61b5238f37909bffb188e1ac8f376f18014116f1cac1f83838fd"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "0d63fb06f03a15c315f7d8ccc02a73b32c42a1f5678c85e8bec048ee83fab7f6"
   },
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
@@ -6932,6 +8662,11 @@
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
+    "sha256": "472bacf055ed205bf2f0427030d211718fd4eb6831eb1d23c4e9de920083932e"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
     "sha256": "4bf5c544dcfc1cffb322c3e06243558b72f0e8e9e4d351e3b1187b4291bbf73b"
   },
   {
@@ -6943,6 +8678,16 @@
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
     "sha256": "5ae378f299124c367f2b0c2f8b48743616da20a771ff7ab0a7b71a19c840f829"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "5bc39450b731271f3dab8b4246557c64315a4806989d64938050ac8fc4aaeced"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "5c232e9afc878b08152ef856118c106def89837f8cfc1039e9b09c019b3cc6d6"
   },
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
@@ -6968,6 +8713,21 @@
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
     "sha256": "686dfdfd8f9482ab531919a81051c30e90e091ec8f8cd91010d194e1844e786d"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "68d1d7ac6186ea4913beea1f7d2c89f09db8b90a17704ae3b3c8c42ef0503835"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "70195cb046ec3511bcc7b7a0d51de7684791149d23b3e71fbbc46d9d220bde6a"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "74990e9d34963f0311ce82557d41d69c0a7ece035540c78a3bcdf9f53c182800"
   },
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
@@ -7002,6 +8762,21 @@
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
+    "sha256": "92aa539cc80b54b1edf7b1a913573cb6c7992aa9867e06e9b802c12966f94aac"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "94a141fb2c065eefbf01dd07a0b4e398be49ccf7c5daa3dd351bf173586ff197"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "9626109b6d3f0b4ce5cff0095bf4b3fa7205096194ec74a1c6fcb28eb2e637c3"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
     "sha256": "97c9794ddfd003ec4aca19588436dcd49dacb3e0f68476db0f29b874b01671d2"
   },
   {
@@ -7022,7 +8797,17 @@
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
+    "sha256": "aba409bc18b6ac0bca0b42baf966117372e7c63c3cde5ca9d82f9cfceb7298d4"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
     "sha256": "b11a0ddb50c69536e750432a8aa0458e8db2bb7930e23e94e2ddf1f7054629df"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "b14a7ce5e95a15720408af18c0f6cdc11be86af39b5fc932b637df47f604089c"
   },
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
@@ -7038,6 +8823,21 @@
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
     "sha256": "b5bae0032fce31f9afe97b8ac3c394877089d342e8f4d67f45688ad9b18c5307"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "b7a6f0be6c98131103ad0bf8315263e6e0ee6da96b9b9189d5c3d5dc83fe7af3"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "bafc5c4f8e2869df93b4ba16c3c14a46ea2894f88b1bb31dd8404e8e45faa14f"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "bba9e389c24feb38257e45c213b34cf77442424c752d4e61e71de3543ecdbeba"
   },
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
@@ -7077,6 +8877,16 @@
   {
     "estudo": "evora-quinze-anos-cinco-mandatos",
     "lingua": "pt",
+    "sha256": "e92f4fc336d9761470ea5dd3f28c9c9b53de2d1bc813feb7263a75e24073184e"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
+    "sha256": "e9ddf8356a5dc90c78a8a4517550cf6c7b1f8db8d861ce9c354f06b92390096d"
+  },
+  {
+    "estudo": "evora-quinze-anos-cinco-mandatos",
+    "lingua": "pt",
     "sha256": "eb77d397c0631029711e40650baa70d303e64f7941255d244dc20e8a11d5eb6e"
   },
   {
@@ -7098,6 +8908,16 @@
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
     "sha256": "04652e8e132bed93ac101b4379ee0116862c63cbaba7ef0d649f547ec46c1479"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "04665e1d24319150499e61c763d3e90323b4e5a0e1a0266f49b1495d17f84487"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "07621c93e92d9b7d4e7bcdf77603464ffe8340ff3963713cc6db6530ee095119"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7142,6 +8962,16 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "2aac350e424fd39d5c9e1182c7f6ef8102a5d1675ebfecd15eb1071353c9c0eb"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "3bc19fef32bb08b160fdb77d7c3af38bda6a1419bd9015522567f0137ac60c40"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "3d20d4ba1e1ad50beb88222b66e10682fe3b9df09071169e231e0b4a83ffbfc4"
   },
   {
@@ -7158,6 +8988,11 @@
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
     "sha256": "417f95a2f40fd3e2d775cdaa10c524cd0b82926eb79af070009ef47001c0d6f7"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "41a0efc7d8fd4374cb1916a9069832a9f01f3400a0f46bff7bef0756cda62094"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7197,6 +9032,11 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "56e012c29610d17139966aa30c7e0bc3705ecb639a25645bdb8f18f581b98793"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "5a52b10c536edc1f6c62134b5621ce3ae43899f8909ef9ea963e2458b5389ada"
   },
   {
@@ -7217,6 +9057,11 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "6349391c03aafcea5ae2975c20cd53dfb589130a151e1c393fa23302bb7c767e"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "63a3278a031c719e9d91f6c0669e7e94d839e4d774f6bc65aeddee280a480b1a"
   },
   {
@@ -7227,7 +9072,22 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "6b0348b66b61112b7f7bc419ed567688e60c4961d491be93b9839ee4c3f597ec"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "6ebaf1e5ee6b447c56454f7e7c5bebc0b6c7ecdf3020c33a14a18168367c96cd"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "6fd90313def4a583c4931101d3dded841580b6ac97460691e44447a108ac3777"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "7469b7accdebf25e6e8926edda2263a9ceecc431de42635517c67200ed520ede"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7243,6 +9103,16 @@
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
     "sha256": "7d5f31c0ceb5d29b2eaaaa816c4e52dc284b322eade9b0cfd0a63d3a9c564cea"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "8286b5fe42db6b68bd34056c5788deef82a86564014f28d50c5c84d902265902"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "882554a77aa37aa6d4a5c7fe72c36e343b43949828a0454a9af7b9ad2706f0ac"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7277,7 +9147,17 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "938eef9e85dde973abe9a3df9e892aa841b3ed2b8e8dfa52f7ae524e8e8efd00"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "997cbc3493956853cca9edb67cdde9a94a743f0ae792d206cc8e61852394f9ec"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "9d947cd4095d7f1c9c3f4c574c59fdf89941e3be085787e3868d846ebfb9137b"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7288,6 +9168,21 @@
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
     "sha256": "a1744e154cfc5d248a1df3b9a64ee12ba3988495fad82035a35912e70db1411f"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "a3537803fd3484cf4f2da0179a509e31dc6c1e86637d35f414b440caa88eb633"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "a5527a25b2be6200ac163e5bbaa25e2d8d19e11af4ab0d7126fb6cef333e61c7"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "a73a77b66053e93d1e7cd088edc930012718ec63c2fc2b3179ef32c8058d1bb4"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7322,6 +9217,16 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "d1a5696299e9aac6c4f74188e293d9c57998fdfabab44500d92b3c00e6ac436d"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
+    "sha256": "d52760879aa3e3737770d8e038fb7ad8dabcad1c6c6dfcb0e0253f057de3f6e4"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "d87957aa6a9acbfa90011ca91821d9adcffbc77ead40560144c8827f7d1eeeb5"
   },
   {
@@ -7352,7 +9257,22 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "en",
+    "sha256": "fe19e75220c9cfa977576564cbd46d40f1b015e95cd314fe3d6894d7ccefc493"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "en",
     "sha256": "fe3b4b4f82b7eee1a1f203b50af82ccdf7b636bff2492d3520ecd0a392e527d0"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "07d30931bfbb7b0054db46308acac469507bd77e632ae7f583ffced836a3d85c"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "0a7a87f2ab770892747685c97e6106eb6e1ccba0a5cf098c6457addac31d2c35"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7372,6 +9292,11 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "pt",
+    "sha256": "17eb0bbe7c31615e1f0ad67c16223c13dcb3a670b7da0551d9e58ce5f56b8eaa"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
     "sha256": "25a82fc31706f4ac3f8cc94d0526edc12b964e92e2c1313a9b74a8a5dfb638d2"
   },
   {
@@ -7387,6 +9312,11 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "pt",
+    "sha256": "4eca20d7887320d51d1d9c8b30a947fd8358b021b10267b208b715e574356ad8"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
     "sha256": "5013217e972be8dbc821236e6330311dd87ae7848d9e5124be3c21b07843c163"
   },
   {
@@ -7397,7 +9327,27 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "pt",
+    "sha256": "532e341c9d1c4e6d992a39c5d7aadd84c0d021754cb0c276382460632866570d"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "535915dc6f82344f1f6b005c208baf0bce16a45d0d0eac85bb0bf635f66e709d"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "56898078bebc18bc5096581ee27595a455070e5508e25b1e8bd2053c2c2c42c6"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
     "sha256": "5cad83bdcc50949c50b80f694ee73e8f2882e321de9fd58d0d500be311e5d27d"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "5f5b7a0183beb00180ba37cdf4a689a1bff8395ac88c32a3a8cb88df424a693c"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7408,6 +9358,11 @@
     "estudo": "onde-esta-a-agua",
     "lingua": "pt",
     "sha256": "7361aa5333b4f457038c6633c7fa3ae64cc07dc0beceb142c73db84f1646ba8c"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "78804f5cab8856548381ed03e0798a6a7896c4cf3d5f29138b1244f37dd7bb28"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7437,6 +9392,16 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "pt",
+    "sha256": "9a7d27922ea96dfb89187899710fc1e9148a90fbb49ddaa7fcf6d88263aadc08"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "9cb068f720656aafb5214d72a09299ac83f0950aca2b8125c7411f5cd4a5d3c2"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
     "sha256": "a6840e5b9ecaf4ae091ceab643992b5900495a9a6a5d13d154a6ca27daffc62e"
   },
   {
@@ -7452,7 +9417,32 @@
   {
     "estudo": "onde-esta-a-agua",
     "lingua": "pt",
+    "sha256": "b8030917ebb255c0a9a8613073558b9add5ba4ed962a9fe6a175e442f9f1a10b"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "b9bb70dee944f67ed42541593787e9e57b58113dc2cf5adb33f2f3cab5bc4e64"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "ca226c98fc3b1c0e3fd3cc0ce4fe1320d4ac307e70e824c6a522c38538733bfa"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
     "sha256": "d131c7d88072040e370a5a5369013c0b51d8c4f1cf8195c6f10c070bdba0e346"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "dd63dd3eae3372763a7236b9bea02ec24ba102cd61a73bd9ecc552717e1480dc"
+  },
+  {
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "df67446eb3d9a7b42437b60822d3b4bbe3c9cad01033cbee1e47ac41352522e4"
   },
   {
     "estudo": "onde-esta-a-agua",
@@ -7465,14 +9455,24 @@
     "sha256": "f02e2646253e937daf1beb3250e884d0dd8fc9e6c0e6f026456d338eb3abcb87"
   },
   {
-    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
-    "lingua": "en",
-    "sha256": "015f9d89e096bd26b5ca054ded333daf9a3a85a31a5d9a76583415eaea7123d2"
+    "estudo": "onde-esta-a-agua",
+    "lingua": "pt",
+    "sha256": "ffd7627089171631863b5efc2649353c14dff40785fc7351b52c931f4a477134"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "01d34c6667ef5ecf648d5e3d4500ed96f1ecd8bfc8020db45b63bcec58999743"
+    "sha256": "0097b6b5bf07afd8a7780c2de8d791eac9704a5ebfbc23b9606813ac6ff00271"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "00d9f4c36241f32a91569755dc7fd66ae22d2c6a83780cada449dea49e4498ba"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "015f9d89e096bd26b5ca054ded333daf9a3a85a31a5d9a76583415eaea7123d2"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7482,12 +9482,57 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
+    "sha256": "0473835a1da079f560bc63af585fe1241034e3fb1697c335db45494c6c06591a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "070c6c308a2badfc0b503967fcace2b496feb833c32c3a37f5287a6bd137664a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
     "sha256": "0764bd1394e8d1f779e8de4fcfb059544ed665ff84211433315588bcf671951e"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
+    "sha256": "09e76712857533e28f39e30429f6db5c75971e2b64208e1f7540d2edc2b189b3"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "1283d0303bec92c39efca548f3c32436fbbc60e6bbf25dcb1ee3c2c2eaf4a5a6"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "12fab4efa9f31c4f4bac2319e25c22a3747e85545ff1d1fd0ae3662a892a8046"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "135d3aebdd25324ba31380c241be0b23c2a445c554f6928125ad820bab1371fc"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "14018096a45a97c03fb30fe342ffbbc7a002fa26b9159ca0be3e3abf4d32e073"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
     "sha256": "14373c7aa06163dd21a3b5a40b243720d2b8d9a8075ebe733bce5702357bf3ef"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "186a2c0658b1ab3fceda9883045789d95813d3f74d4b794f8b41c449d875af48"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "1996b44ffe535f581c93a0faa18b356e3ed6a328464f2fb32dd7eb1ae11e13e5"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7507,7 +9552,7 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "288277f91197895d5dfcb1b7d2d87cc93e726f6137d2a5d3a8502859eb84ab77"
+    "sha256": "2366ee049a0ae02bd7483c46ab9a791c11b2160be99fd8f6e94c517c4a02d4b1"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7527,7 +9572,32 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
+    "sha256": "30fcfd2021b3c45a5666c518ba6357d6459fb81a31ca2f3f872a7da8228283f0"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "310a33d64c7f245324cd3f847e1d0bda453efee0118e25d13900866b2c3b1445"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "3151b0e7cf0ac5405c5e1e7e1d238338802e001714926ab7335e0bc147d0f470"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
     "sha256": "327378df13de585c49ab43df22addcf264da25f0e3ecf17911505c58d95e8bb0"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "35603154fc3d757efd281d60c667c5aa2afdbbe44c4364c6f7371e725199315f"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "39576b5a376a1a9d172ad170af4be94d8e8b15f30d87afdbf655ecc4f2937026"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7542,17 +9612,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "4216151af43f3a6b0c37c0639959e5e1d4a319fd81211c193fbc7e6f319e0b94"
+    "sha256": "42e8abbe8fd10a11e8baa0f88985348fa14786b312de2e8315ad0f8c3a4b55aa"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "44bccf986b9dc195df54b12c5e9ef7a91983c7fdf844ea466c98fdd0c5516967"
+    "sha256": "43ac7d870be6cf93e2a5903480237e2a6db120778ccdad2e9d58eb53632362d2"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "46c3254349f4cb19458881abcb179bda9b1b58e5e18fbb488563ee1f0bc0ee41"
+    "sha256": "449180ed86f409f84c51d95b946081373cf58e37a22d5434f9874dfe9f004e3e"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7562,7 +9632,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "4a2cf31c7e57175404bfe8c00254edd9fd141ade1013763d40594acea9b82c3a"
+    "sha256": "485291552ede5c6ac33db0a33d3283b168bdb5a26299349f355b7c9b45d64f80"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "4e39eaf2e24a8a33ae1a25a32ff6c773a022562f3f96cfe03613f8d59e1ca405"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "4ee4f60a366b5e32d239e0680786f3073b5a56e81d8e09617a893f1dc8291ee4"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7577,17 +9657,12 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "52cf40cd9d3c6a2c20cf0332a6b9c439c409ece67f334f5b46864b010f374386"
-  },
-  {
-    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
-    "lingua": "en",
     "sha256": "5566c07d234dd0b269e68887ac4df8b42064e2426c7cdf45e0b0e49e7797f1f6"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "5591f047a053215df8d10311f80fade7d61906fde4ebd61faa772ffe73be6a84"
+    "sha256": "58a8311317f75c8f9ebb93688297031fe20703e730fec8f762e3bf6ff5e38a4f"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7602,7 +9677,12 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "5c3e1006c5f85f134d2c37b3f368efaf3451d32bc08a98d2026e08016d177ea2"
+    "sha256": "5ea2e9dae10ddc262a6e97a2bc024ba3d1efec26c2afeba05a25d5cbc7863067"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "621ecef38956b0c4eb85a317308f015babd29548f80af31723d08965ca6d9d04"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7627,7 +9707,52 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
+    "sha256": "6e1a437a3894be1a0bbaf1a00fa78ad258602a6a13c2715022cbbdd23d0c38f0"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "72d7cbe968e6fac566c7388b525d26f968a8dbe5ef697ddb714d391800ff35da"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "771213938f7954522752857017640081791e91ca7222a26d8797ee203c9b52f9"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "7bb16eaf87362c708307bb793ab543e6298585abb37676c9abd08cc24b25a8f8"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "7e716c43985d416b28ad475a16f182047ac491b3419e7291f107a85519e6c8d0"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "81acdf559872d457a909865a92d38e7e8f5b0bc6dc9f86dd370cad7658b67678"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "84587103922086d8f13d530939d28c746bc48d96f56cda74fcac3b5c61b1eaf2"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
     "sha256": "85288caf0d44d2b86fc6a31739ccbd0590615062f5442228fb9e9b57f934a313"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "8957a4f1834f7326a2364884f3d6e683ea4e89022e7824e5ebcff1c5f0fb36e4"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "9084ddbf72f478b88779b8dcb60c5d19f7c62189d1b3e72a6ac283c6efb55bb4"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7637,7 +9762,22 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "9522b39034be620697bd4fbfa3c8c7e7da5f2c8edfe6901271cb4d1012b43d58"
+    "sha256": "90adbc867b1a56e0b973cd24a33d6a7a817a7e21b4d2f42373bb9c2f86bdf49f"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "913c301319522fe5ae8f4acd6ce2235176114c17636be08280098654857a9a07"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "955afa6ca87e11daadceac743815bc372ef213f9e2267e64a425b8f364c524a9"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "95f6366978ffb123cdcb3d5794e04c3ef6b816f8b8198a55fbc49c6dc05f483a"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7647,7 +9787,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "a43663ced1e60e13b2ba96f03048b3c732703c656ae95346b6254f07e0a0b30c"
+    "sha256": "9906c8914f8993d5911e235cf4031ce2e68b0b94a37e2566d320f9b39a53ec6a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "9b5ab964cd3fdbd722d66977aea61367d09151c4e69c6cecfeae16ac7d45837d"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "a333de7dc9279030c53249571aa6c370a6af2ebf5a635f790664c322a97c9c79"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7657,7 +9807,7 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "ad8def83b876f85b3c14724c389f5a21c475b79a353f07f65bcf425a2aa68deb"
+    "sha256": "ae0a9049b789455fb5fcf8a03c48029af56efc515bf0cadc1d1d6790c0b098fb"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7667,12 +9817,22 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
+    "sha256": "af29752143cb70a1d66822efd4982da0b7aa1f9023d70e639d1e890ec01a6faa"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
     "sha256": "b1206a26175e7103e5773e2ac215bb7d8d12e34ece98eeb074741d5472620252"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "b2dd581d8524e743713a2afb05df92e9d2d0f0d56f7d1546e765c5808da6f4fb"
+    "sha256": "b3b527efbb24bc9f6d55b50cc90e109a290d252b2b1377b848630c0a7c084b42"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "b5659ff81c21522843e0746a50b7b1c1ae3b6dd386f1855717f9e1c144fa3e48"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7682,7 +9842,27 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "b7c64d590b4ae6dbe3d6a5eff532df6de3db3151efa0bb65324a436b3056e30b"
+    "sha256": "b79758a8eae21b961f0a03f612ad1e5f681f142cdb51338b6aab0bbb22f47ef1"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "b920fe2d099399d90472608483508f0e9595fe905e49709ec34ea6f1e6af3e06"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "baf0db2719a48126f0f354aa1d5c4dc14c2ca910fb19111d2520c6719e19024f"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "bb65858ad2a560392a096c1eb4fae55178534b69fcb7f61f3ef972ac62f1e9c3"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "bc3caf0d8c7a15c5d2e6bec4286f5e00a47edcfca657e3873d0c9f24f1519307"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7697,17 +9877,32 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "c05a23df119e180f10d30148c4048b9646ff727d2777282f8f55b24696aebe72"
+    "sha256": "c001181688703089e62f5559aa820fa128d41a02c8b32cf10c82c8fbb6c4d097"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "c2ea8c78d63fecdf2eb2f749f76805c6aeb47fea201ba813a3097633f2d36fc6"
+    "sha256": "c057d25c917baa288090cb03e6d083a362203c6a7df4429e6cb49f29e115bde3"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "cffe6fc2792cd3c796ba932c18ea4c00fceb75580fd84f76b31a17be24a42c09"
+    "sha256": "c0ef7aabbb5430ae64747c6d8caf77abd02ce4a0683fb93b95dbe72a4ff712bf"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "ca06329bd4830d104a8657c72bc8c3d4c22b39f9a98bd4c8d7e0a7264057f306"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "cd2903ff661a1d3e4bbed8d3bc879f5689292217e2b769e0aa419e12cc8b687d"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "cef3b4ed7af040862a4adeb81610e9f8c3f5e2cbf9fa98a8dce0cf91db88fc9a"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7717,12 +9912,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
+    "sha256": "d5a766f51183621aa6da5a054f6c3659d3fac6a67af32d6262cba6f3a634e801"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
     "sha256": "d7e13008ff34454a4ff98de7e8eb17aa1248492fc0c89f056e141e3343f9edde"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "d991309ea3039d31edb07301de5d13ec736a9a88a8b503a80f46bd4d46f50a0a"
+    "sha256": "d8de70e70ab93cb97ef45c739d8f2696a8bbd13652895f0aacc3f1b93546a8bd"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7732,12 +9932,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "e7358248bccd0d8186840d0877cbbaaed2e95d31a565d3cde0f0eab0efb1f2bf"
+    "sha256": "e147f9a2c9a948377cbefc8bc05294599c85c09dd1c9b5b57e4296db04c1ec48"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "e8409a71fd73364eb00d2326fbedfd82e5d6d7a9cc158c7247b0956ff0ba1d50"
+    "sha256": "e2833f565d84d3c6132f764b5e3cacce352c68050e4a878761e2ae12bce6eb74"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "e36e6a001f676ec7db67343034044066a4aebd1e4b926164483969b44f6ae1f8"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7747,7 +9952,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "f12e8b2f06b39feb430e5f47f98e77e5bd0ca91572d2324413624e63e61b5278"
+    "sha256": "ed6d29e37e002078635949637237024a72b28696ea99eba43eff8b9c587e9f03"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "eed0e5225ee9ef49dcf55e9bbe0146750b0ba986b243cdbfd491a3d72e709667"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "f1673518eeb4c166d633ba3b097d79fe0f56c85e8226d72ea6bc128562b3cf9c"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7757,7 +9972,12 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "fa39bd4bd860262ba521115230829e22ce17c5eb657fb91014c87a7c82354502"
+    "sha256": "fa51e9c3f7a60beb342b2c514603f113877c7efea8a93e76e6c875e6905861e4"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "en",
+    "sha256": "faa5674e30bf17d8e73b78d058770ee98363c9a48628933200ca5a8be7cffcb1"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7772,12 +9992,22 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "06f1065ae6df98f0f8c7b918130492044ba36c98979bc43b7d5589e262847582"
+    "sha256": "0474f047fc19f93ffdb174c329c77b5a60094acd3e23cc681ee2cb527db91f3c"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
     "sha256": "08fde899981efb44999b4f599a9ddf5cfa8bd6c0824fc231c8ee6f3ed732a62b"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "0de0ed02ebd903e2fccbd20faec8569950f044fc9dcc644232aae1b4886e6bdd"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "102d06034dfb678b35196fce5b3ad5b12f01e29847c6c608092e76d7d39b44e5"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7797,17 +10027,22 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "13d13d16067a456262f417207622670ca5b0f77ac1b3cbe37fb2a391d5cd801a"
+    "sha256": "14018096a45a97c03fb30fe342ffbbc7a002fa26b9159ca0be3e3abf4d32e073"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "186a2c0658b1ab3fceda9883045789d95813d3f74d4b794f8b41c449d875af48"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "1964a1d5aba387a839def99b95603ce8f8845de31ad6b746ecd721ad1f2912d0"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
     "sha256": "197d2258732bc9b0845e88767a96923a9f90d0bbf08fc9168e07c4ae697c5ae7"
-  },
-  {
-    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
-    "lingua": "pt",
-    "sha256": "1d0876972dec275c1cda87efe32764e0c8762eda75489f26f009766922054f16"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7822,7 +10057,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "2aca3a693336cdc6e2f9f628e98d5d478f94cb67a509dd8b54be33997de2c808"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "2b12bde222171b72f97e813672aab0cc72e424858e139051fd3c0fcee79425ab"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "2f1c59c442e18a56c8b487eb1515669b69235914f80ce552230857cfad530280"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7832,37 +10077,97 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "3093d0698310ffdbf8ef502bb1edd7d8ea4acb36473375b7fe937fd76a894794"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "310a33d64c7f245324cd3f847e1d0bda453efee0118e25d13900866b2c3b1445"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "31c9d81de93d765e840e5ad228b20660697b7bc9eef1bae11ff6a09e31f5a1b3"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "3813194eb745d011f7782e9be235e4405179734cff3c09854e9336e540c6f66c"
+    "sha256": "3433aed7ca0963e6421a3c681092ed85610aea9a48b00a1425cc77fb019f9d46"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "38144aff94bf55153bd04b9e8e7e2a8cf8de3d94a5969570f5925d7d4f238ab3"
+    "sha256": "34c3ebcf26c79fddcf8d4cb720e5463555738c797185e08a10bcec2472c3b21f"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "3a3a6016c9c3d8271db1be46425b00bde29c457791f9e33c0d8420d209ca4680"
+    "sha256": "390b1054342dea40093e39e4fba55b6d5ab11258c6aa6da98feaaea498ae052f"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "46e194930a980c38de013d45d77cf7ffb31c674bbf20d2617d23b42d3531b336"
+    "sha256": "3b104754260b07acc75a1849bb833f8a3513faee29a03f013d0d27a2f66d04d1"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "5b1d32c9e5b548e88c2639f6e757ce345a95e8e6f8eeef6619529320f3f146b3"
+    "sha256": "40bd7c4b1e04473ebc558b618cc9f235c76d72d8d99271b19a61c92e8ae83884"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "6618cac42cf79cbb5bbba671f8d60ea4c717aabcb02eba54e3b63970ed865312"
+    "sha256": "43ac7d870be6cf93e2a5903480237e2a6db120778ccdad2e9d58eb53632362d2"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "449180ed86f409f84c51d95b946081373cf58e37a22d5434f9874dfe9f004e3e"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "44e241c150e6241306a5c1fdc1cc5806c4f925ca171bd72b9b746128fdc2139e"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "4574988c3e8c5f71a5020f12ae94d8023d30ac65749c76ef566ca560ee58f382"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "4ccdc900494a24d9ee30793db386ea129a751c4e2a2a0725ec3cf7cb7af335bd"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "4ee7ca5e2885519f53bb0d9b5ce1d039568d6a6376c9b48e69c0daf67b11d937"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "5b62b53a067d6cb42bb7cc753195ba1f706cb47ea6eb908e38d0b7834d6f9d57"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "5bb581a5e027821a21924650114a43b5f03c14b0b34b710c9b0be5e25689acf7"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "5cb25855f9b040590b69bba8f82cb676f4de06dfd4c22394dc3b20ac5a7c4118"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "61a276c902b2a82076cc1d92ed3a870ae64fca7d90e6b28faab539f992d8dd3d"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "654cac7ae1fff989a2af72ab97a9f3b349f1831ef1b97730f53e83f8d05b3d7a"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7877,17 +10182,27 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "6c3276a5538b0b377d7d0204414635d9af79fd87fe209e18b8d9539a4f9f33af"
+    "sha256": "697acb301c7476953475502f0f3252176985ae5e9f67c276386e17acb99653d0"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "6db3abedd1ba1b07d61c246f3c761201384749cc0a0324aab548874e207f1d02"
+    "sha256": "6e6a52865f6c14f19f90a5f2e31f933138e82dec5372527098d4acc93492dce7"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "713db72551d3793bc824f2b1922c1cc862fb2067bc5de7cf2d171305dab2ae6f"
+    "sha256": "6f40235f5c70dcecfcc201c0573e00a05927b3274dd1290ce77da6002ff898e3"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "6fbbbabf1ef6bff47149d84502f8b0ec5a037bbb66b412a0d861ea0e3335b76f"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "72deeaea4cccecbd4ffddbd06b437437b67b76217fb7de146a42458cfee0a818"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7897,17 +10212,22 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "745645d79f5cfb069746a22d944595524b40fce734e2115c9ccbb864178e7905"
+    "sha256": "73c81067e38115f6a6cc292c2330fb0e8679f7e8676a5660e76c960b4d4c945f"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "7a93a4a674d3d85c568bd84c96250546badf46fba06942d5e69c1dd12d292840"
+    "sha256": "750507a98e63b0b55d9d8269487cd8024e49cc0457a494d9d33be44fedd0117b"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "7b4235709bab22e2836b4a537bc8985415eeaf658e974ac304c6b167699e9103"
+    "sha256": "7933b8251fc80a72a7e3d88ac7250d5042d5aa02c450decababefd3634fb25e9"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "7b6594d975e146badbc30366c9499fa24d968b029d59a5df6dff8df1f6a93add"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7917,22 +10237,42 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "8591363c9bc8ba44bfba7f3bc29e19fe0ec366c156588537d3dab7a613ba1d57"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "914c5c89e9426d209c3a3e22f342af0715672931f5c47c613e84aa2fee1c2c46"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "92b36e3f989aa64d35ebc809ac46a927e187b9e6e373956917c7fac933b3eb1b"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "95d3c0954c731bfe7076941aea84c1ee86c360372acf47b821d3688eeca04391"
+    "sha256": "9333cb1a6b37f9e3df5de56f34f9698c496e32e6cc409f7ee51182a8a1b0a773"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "96787a428bdffca76adf4e0db9a8fbac56de3668dbe657faa42cc78b6147da70"
+    "sha256": "96517ecbbcdeb1f28317632aab5b10c9db830c371a9de4d2b619b252dd02a323"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "991e44076395a1faebe72da5a2b5182e217805c6c294770297b20b4337540bf1"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
     "sha256": "99ca69ae18300782fc883a138261dc748dea97fa035432ed698dde3cb7cba2e6"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "9b5ab964cd3fdbd722d66977aea61367d09151c4e69c6cecfeae16ac7d45837d"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7947,7 +10287,27 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "a9db5f0140238225f6e28cf94041b0e690812ed0af77fd61f6e41014efcffd92"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "ae6ede1170ae853099b6cbdec43c4efca78901b8e747c9a58eb1698963a7976e"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "b26434ba628f7b2cfd5d772a4068f5f82c3207f7e79430ad04af61d267533491"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "b294c666b1b7437bd5c128a53abbc5b9f986f0a8615fac8326e1795ec8386ffd"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "b401ff5d71a2eb0db295d53ec6e0aa9afa5b3c6c98166eadee05cbc7256d66f8"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7957,7 +10317,42 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "b79758a8eae21b961f0a03f612ad1e5f681f142cdb51338b6aab0bbb22f47ef1"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "b96f858f6f2c009a6b37946790e8e9f889fd26166d7a5e0dd69f2afe0fe4e76e"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "bb91e3f7239327fb0a333a3538f6dccd9bc0895e209791cf316052e6b9e84547"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "bdbf6f2b2a6dde67a2a0e9d2f34d33aa8c1964c9208db6e1b28b6ec85329eba8"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "be842efc610f0515d6168b0b1cfd43931356588e711a33349f4daa998a1d550a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "c0ef7aabbb5430ae64747c6d8caf77abd02ce4a0683fb93b95dbe72a4ff712bf"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "c1220f3e82bd512a8a1aebeacefbf441edc0c75e3d88f7b2477ba1a350e9e6fd"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "c18a9065304f643a680fd66a18dbbeafcefd41d386018e00fe7196712cd4e1f7"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7967,17 +10362,17 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "ca8d4dce1e61f51fefdbb1abec39757fedb96aeac6d50a9af26b2317ce166c97"
+    "sha256": "ccbe707f7c451205f4e7a49596298c36403d61bf14b502a3140efac5bd18c9e7"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "cd2903ff661a1d3e4bbed8d3bc879f5689292217e2b769e0aa419e12cc8b687d"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
     "sha256": "d0b6c309868fd4e3b79bfc38d7d07bf0c33cc09f2a454623b43e705d91131761"
-  },
-  {
-    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
-    "lingua": "pt",
-    "sha256": "d42c13b18e9c3d5e3d10bb10bdafa77df73036bb46acefdce615ab56cbd1bdeb"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -7992,12 +10387,27 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "d969385a017f084993d4e64d36150aa7a19fca0483b138ddc6463d42fcd2601a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "dbe282df053e535a4603d8d90e59e50e6cb42499c30bfbf8bd0caf7a73a36a3b"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
+    "sha256": "df443ee29e43a6e30d1a05177985d7baf263ed64031ab45ef3ba870534d096d2"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
     "sha256": "dfb9a1d5bede986be19656637799935da95c1fbfebaf076ab907267098de139a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "e473972e9e7125eebdb42408985a53add3ca86d461fd4140ea2cf6c2d6d5c89d"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
@@ -8012,12 +10422,77 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
-    "sha256": "fb12373f95f73bdf1241cb87981ac2775f2f7d9414bbce19901f7786dd739bff"
+    "sha256": "eb2a0f7c2de3c7e50c95c9551eb1af90a68d24c03ffda763cdaaa4fc85459b91"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f10fbebe8f00a94cf8c76a190196948ee4435482ee73d07cb35e5b159b613724"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f23ef4d72c3448d76a8c13477b7bb320dd612639f10a3ed7f010717c0a8e2b27"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f56f8b28dd1e2291c703a8469021463778ccb8470906a77b44002ce195c98313"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f6469b39a8fc0f1bf3533640910bb68bba40598634ec613a81af666f699c96dd"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f646fbdd9bcd2285e64296e82b2bd45ea19b3526fb4e1c782323859241b8d73a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f7bb08509fe07a7143924b1449caf2aa1b979120297ab12fd8278ea7e01a0d84"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "f9d1618e8f3abec62129be4ccb3ec94871622ae060e2bc87a1cd568b1233e8a0"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "fd5551cd22dc46642efd487d3a26bb4eef830b2af2db6462aec1ab6d0c7165e1"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "fe12e7e9909a3ad9ec8d649cdad72c50abb9ef35631272229106e9b601075848"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "ff0a46bb052468c36b1ec54feacc060a40e4c6567ab6ee7c1325de0cc1dd079a"
+  },
+  {
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "lingua": "pt",
+    "sha256": "ffcbb4c9042f4280259716fb34f13b619ee211a5afb5c44d3e7b1c0cc1fcb015"
   },
   {
     "estudo": "penalizacoes-por-reforma-antecipada-2026",
     "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
+  },
+  {
+    "estudo": "penalizacoes-por-reforma-antecipada-2026",
+    "lingua": "pt",
+    "sha256": "0757deab9fc8aa8fbd0f40dce20504aa16cde69ad226d237e56ce32fc4d4eb7a"
+  },
+  {
+    "estudo": "penalizacoes-por-reforma-antecipada-2026",
+    "lingua": "pt",
+    "sha256": "10fa4d1245fb0891d59213c5dac02c056105e15f0394b5c24b4ebb9370addda5"
   },
   {
     "estudo": "penalizacoes-por-reforma-antecipada-2026",

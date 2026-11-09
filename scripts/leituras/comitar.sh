@@ -9,6 +9,11 @@
 # Espera até trinta minutos (os hooks do motor demoram cerca de dois minutos e meio) numa só chamada, sem
 # turnos de sondagem. Sai com o código do commit e imprime a cabeça nova e as últimas linhas da saída do git.
 set -u
+# Chamado pelo escrivão depois de preparar o índice e antes do commit.
+if [ "${1:-}" = '--conferir-indice' ]; then
+  node scripts/check-frases-afirmacao.mjs --so-lista --indice
+  exit $?
+fi
 if [ "${1:-}" = "-F" ]; then
   [ -f "${2:-}" ] || { echo 'comitar: -F precisa do ficheiro da mensagem' >&2; exit 2; }
   mensagem=$(cat "$2"); shift 2

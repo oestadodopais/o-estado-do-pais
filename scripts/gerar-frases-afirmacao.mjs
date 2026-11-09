@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {loadClaims} from '../src/lib/ledger.mjs';
-import {lerPaginas, inventario, parDaFrase, medirPares, normal, sha256, chave} from './frases-com-afirmacao.mjs';
+import {lerPaginas, inventario, tiposDaFrase, parDaFrase, medirPares, normal, sha256, chave} from './frases-com-afirmacao.mjs';
 import {citacoes, normalExcerto} from './check-frases-afirmacao.mjs';
 export function semear(paginas, livro) {
   const frases = inventario(paginas), registo = [], usadas = new Set();
@@ -16,7 +16,7 @@ export function semear(paginas, livro) {
       if (!l.excerpt || !l.document?.source_sha256 || !cita.every(c => normalExcerto(l.excerpt).includes(normalExcerto(c))) || !par || !citacoes(par.frase, 'en').length) continue;
       const kp = chave(f), ke = chave({estudo:f.estudo, lingua:'en', frase:par.frase});
       if (usadas.has(kp) || usadas.has(ke)) continue;
-      registo.push({id:'f-' + sha256(f.estudo + '\n' + normal(f.frase)).slice(0,24), estudo:f.estudo, tipo:f.tipos[0], pt:f.frase, en:par.frase, linhas:[l.id], origem:{pt:o.pagina,en:par.pagina,metodo:par.metodo}});
+      registo.push({id:'f-' + sha256(f.estudo + '\n' + normal(f.frase)).slice(0,24), estudo:f.estudo, tipos:['atribuicao','causa','leitura'].filter(t=>f.tipos.includes(t)||tiposDaFrase(par.frase,'en').includes(t)), pt:f.frase, en:par.frase, linhas:[l.id], origem:'semente', locais:{pt:o.pagina,en:par.pagina,metodo:par.metodo}});
       usadas.add(kp); usadas.add(ke); break;
     }
   }
@@ -37,8 +37,8 @@ if (process.argv[1]?.endsWith('/gerar-frases-afirmacao.mjs')) {
   const dist = process.argv[2] ?? 'dist', destino = process.argv[3] ?? 'ledger/frases';
   if (fs.existsSync(destino)) throw new Error('semente: destino já existe');
   const paginas = lerPaginas(dist), r = semear(paginas, loadClaims()), m = medidas(paginas, r);
-  if (r.pendentes.length > 3000) {
-    console.error(JSON.stringify({estado:'PAROU: lista acima de 3000', frases:m.frases,registo:m.registo,por_registar:m.por_registar})); process.exit(2);
+  if (r.pendentes.length > 4000) {
+    console.error(JSON.stringify({estado:'PAROU: lista acima de 4000', frases:m.frases,registo:m.registo,por_registar:m.por_registar})); process.exit(2);
   }
   fs.mkdirSync(destino, {recursive:true});
   for (const estudo of new Set(r.registo.map(f=>f.estudo))) {
