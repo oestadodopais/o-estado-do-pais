@@ -1,3 +1,4 @@
+import './frases-adenda-d.mjs';
 import './frases-adenda-c.mjs';
 import {execFileSync} from 'node:child_process';
 execFileSync('python3',['tests/leituras/frases-indice.py'],{stdio:'inherit'});
@@ -19,7 +20,7 @@ for(const lingua of ['pt','en']) for(const ordinal of 'trimestre semestre ano ma
 for(const frase of ['Mecanismo de Alerta','Sistema de Alerta','A indicação fica aqui.','A estimativa é esta.','A conclusão fica aqui.']) assert.deepEqual(tiposDaFrase(frase,'pt'),[],frase);
 for(const pontuacao of ['.','!','?']) assert.deepEqual(cortar(`Disse «Uma declaração${pontuacao}» Outra frase.`),[`Disse «Uma declaração${pontuacao}»`,'Outra frase.']);
 assert.equal(cortar('Disse «Uma declaração.» outra parte.').length,1);
-const f = {id:'planta', estudo:'planta', tipos:['atribuicao'], origem:'semente', pt:'Segundo a fonte, «Uma citação de ensaio».', en:'According to the source, “A quotation for a test”.', linhas:['linha']};
+const f = {id:'planta', estudo:'planta', tipos:['atribuicao'], origem:'semente', juizo:'por julgar', pt:'Segundo a fonte, «Uma citação de ensaio».', en:'According to the source, “A quotation for a test”.', linhas:['linha']};
 const linha = {id:'linha', afirmacao:true, excerpt:'Uma citação de ensaio', document:{source_sha256:'a'.repeat(64)}};
 const paginas = [
  {rota:'/pt',par:'/en',estudo:'planta',lingua:'pt',blocos:blocosDaPagina(`<main><p>${f.pt}<a class="src-chip" data-claim="linha">selo</a></p></main>`)},
@@ -33,6 +34,7 @@ assert.equal(semear(paginas,livro).registo.length,1);
 const semPar=clone(paginas);semPar[1].blocos[0].frases.push('Outra frase.');assert.equal(semear(semPar,livro).registo.length,0);
 let plantas=0;
 function recusa(nome,r,p=paginas,l=livro){assert(validar(r,p,l).erros.length,nome);plantas++;}
+for(const juizo of [undefined,'aprovado','limpo']) recusa('semente também por julgar',[{...f,juizo}]);
 recusa('linha inexistente',[{...f,linhas:['ausente']}]);
 for(const campo of ['excerpt','document']){const l=clone(linha);delete l[campo];recusa('falta '+campo,[f],paginas,new Map([['linha',l]]));}
 for(const lingua of ['pt','en'])recusa('frase ausente '+lingua,[{...f,[lingua]:f[lingua]+' Alterada.'}]);

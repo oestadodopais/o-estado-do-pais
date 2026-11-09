@@ -95,15 +95,31 @@ export function lerPaginas(dist) {
   });
 }
 export const rotasFora = () => Object.keys(ROUTES).filter(k => !rotasDaProsa().some(p => p.tipo === k));
-export function inventario(paginas, antes = false) {
-  const unicas = new Map();
-  for (const p of paginas) for (const [bloco, b] of p.blocos.entries()) for (const [indice, frase] of b.frases.entries()) {
-    const tipos = tiposComContexto(frase, b.contextos?.[indice], p.lingua, antes); if (!tipos.length) continue;
-    const f = {estudo:p.estudo, lingua:p.lingua, frase, tipos, sha256:sha256(normal(frase))};
-    const k = chave(f); if (!unicas.has(k)) unicas.set(k, {...f, ocorrencias:[]});
-    unicas.get(k).ocorrencias.push({pagina:p.rota, bloco, indice, linhas:b.linhas});
+function unidades(paginas, antes=false) {
+  const unicas=new Map();
+  for(const p of paginas) for(const [bloco,b] of p.blocos.entries()) for(const [indice,frase] of b.frases.entries()) {
+    const tipos=tiposComContexto(frase,b.contextos?.[indice],p.lingua,antes);
+    const f={estudo:p.estudo,lingua:p.lingua,frase,tipos,sha256:sha256(normal(frase))}, k=chave(f);
+    if(!unicas.has(k))unicas.set(k,{...f,ocorrencias:[]});
+    const u=unicas.get(k);u.tipos=[...new Set([...u.tipos,...tipos])];
+    u.ocorrencias.push({pagina:p.rota,bloco,indice,linhas:b.linhas});
   }
-  return [...unicas.values()].sort((a,b) => chave(a).localeCompare(chave(b)));
+  return unicas;
+}
+export function inventarioDireto(paginas, antes=false) {
+  return [...unidades(paginas,antes).values()].filter(f=>f.tipos.length).sort((a,b)=>chave(a).localeCompare(chave(b)));
+}
+export function inventario(paginas, antes=false) {
+  const todas=unidades(paginas,antes), diretas=[...todas.values()].filter(f=>f.tipos.length).map(f=>({...f,tipos:[...f.tipos]}));
+  const chavesDiretas=new Set(diretas.map(chave)), porRota=new Map(paginas.map(p=>[p.rota,p]));
+  // Ambas as direções partem do detetor, nunca de uma tradução inferida.
+  for(const f of diretas) for(const o of f.ocorrencias) {
+    const par=parDaFrase(paginas,o);if(!par)continue;
+    const p=porRota.get(par.pagina), k=chave({estudo:p.estudo,lingua:p.lingua,frase:par.frase}), alvo=todas.get(k);
+    alvo.tipos=['atribuicao','causa','leitura'].filter(t=>alvo.tipos.includes(t)||f.tipos.includes(t));
+    alvo.pelo_par=!chavesDiretas.has(k);
+  }
+  return [...todas.values()].filter(f=>f.tipos.length).sort((a,b)=>chave(a).localeCompare(chave(b)));
 }
 const cachePares = new WeakMap();
 export function alinhamento(p, par) {
@@ -132,16 +148,23 @@ export function parDaFrase(paginas, ocorrencia) {
   if (a.frases.length !== b.frases.length) return null;
   return {frase:b.frases[ocorrencia.indice], contexto:b.contextos?.[ocorrencia.indice], linhas:b.linhas, pagina:par.rota, bloco:indice, metodo:p.blocos.length === par.blocos.length ? 'blocos' : 'vizinhança'};
 }
-export function medirPares(paginas) {
+export function medirPares(paginas, detetorAntes = null) {
+  const cobertura=new Set(inventario(paginas).map(chave));
   const r = {};
   for (const lingua of ['pt','en']) {
     const destino = lingua === 'pt' ? 'en' : 'pt';
-    const m = r[lingua + '_para_' + destino] = {pares:0,sem_par:0,falhas_antes:0,falhas_depois:0,falhas:[]};
-    for (const f of inventario(paginas).filter(f => f.lingua === lingua)) {
+    const m = r[lingua + '_para_' + destino] = {pares:0,sem_par:0,falhas_antes:detetorAntes?0:null,falhas_depois:0,sem_cobertura:0,falhas:[]};
+    for (const f of inventarioDireto(paginas).filter(f => f.lingua === lingua)) {
       const par = f.ocorrencias.map(o => parDaFrase(paginas,o)).find(Boolean);
       if (!par) {m.sem_par++;continue;}
       m.pares++;
-      if (!tiposComContexto(par.frase,par.contexto,destino,true).length) m.falhas_antes++;
+      if(detetorAntes) {
+        const antes=detetorAntes(par.frase,destino);
+        const contextoAntes=antes.length?antes:detetorAntes(par.contexto??par.frase,destino).filter(t=>t!=='leitura');
+        if (!contextoAntes.length) m.falhas_antes++;
+      }
+      const pagina=paginas.find(p=>p.rota===par.pagina);
+      if(!cobertura.has(chave({estudo:pagina.estudo,lingua:destino,frase:par.frase})))m.sem_cobertura++;
       if (!tiposComContexto(par.frase,par.contexto,destino).length) {m.falhas_depois++;m.falhas.push({estudo:f.estudo,[lingua]:f.frase,[destino]:par.frase});}
     }
   }

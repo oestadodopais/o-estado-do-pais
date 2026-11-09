@@ -9,8 +9,8 @@ import {conferirPino} from './frases-pino.mjs';
 import {conferirOrigem, conferirSemente} from './frases-origem.mjs';
 import {conferirCorpos} from './corpos-ledger.mjs';
 const LISTA = 'ledger/frases/por-registar.json';
-const BASE = 'f1b98c701';
-export const SEMENTE_SHA256 = 'd8a2a98728ddba84e2479f2a57e7b29cb37afec76123eec4ffd2bde90b41ca4b';
+const BASE = '155fd74a5';
+export const SEMENTE_SHA256 = '9d40631cd57635938632c39f4e4dddcb7cd5dc8d4e5062bffc11dfe2467cc312';
 export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
 export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
 export function lerRegisto(pasta = 'ledger/frases') {
@@ -98,7 +98,7 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
       if (Boolean(pt.length) !== Boolean(en.length)) erros.push(`${id}: citação só numa edição`);
       for (const c of pt.filter(c => [...c].length >= 12)) if (!suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c)))) erros.push(`${id}: citação ausente do excerto`);
       const presa = pt.some(c => [...c].length >= 12 && suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c))));
-      if ((!presa && f.juizo !== 'por julgar') || ('juizo' in f && f.juizo !== 'por julgar')) erros.push(`${id}: juízo tem de ficar por julgar`);
+      if (f.juizo !== 'por julgar') erros.push(`${id}: juízo tem de ficar por julgar`);
       if (f.origem === 'semente') {
         erros.push(...conferirSemente(f, sementes));
         const elegivel = presa && f.linhas?.length === 1 && livro.get(f.linhas[0])?.afirmacao === true && paginas.some(p => p.estudo === f.estudo && p.lingua === 'pt' && p.blocos.some(b => b.frases.some(t => normal(t) === normal(f.pt)) && b.linhas.filter(l => livro.get(l)?.afirmacao === true).join('|') === f.linhas[0]));

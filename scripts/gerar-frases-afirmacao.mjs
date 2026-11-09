@@ -4,6 +4,7 @@ import path from 'node:path';
 import {loadClaims} from '../src/lib/ledger.mjs';
 import {lerPaginas, inventario, tiposDaFrase, parDaFrase, medirPares, normal, sha256, chave} from './frases-com-afirmacao.mjs';
 import {citacoes, normalExcerto} from './check-frases-afirmacao.mjs';
+export const TETO_PENDENTES = 4000;
 export function semear(paginas, livro) {
   const frases = inventario(paginas), registo = [], usadas = new Set();
   for (const f of frases.filter(f => f.lingua === 'pt')) {
@@ -16,7 +17,7 @@ export function semear(paginas, livro) {
       if (!l.excerpt || !l.document?.source_sha256 || !cita.every(c => normalExcerto(l.excerpt).includes(normalExcerto(c))) || !par || !citacoes(par.frase, 'en').length) continue;
       const kp = chave(f), ke = chave({estudo:f.estudo, lingua:'en', frase:par.frase});
       if (usadas.has(kp) || usadas.has(ke)) continue;
-      registo.push({id:'f-' + sha256(f.estudo + '\n' + normal(f.frase)).slice(0,24), estudo:f.estudo, tipos:['atribuicao','causa','leitura'].filter(t=>f.tipos.includes(t)||tiposDaFrase(par.frase,'en').includes(t)), pt:f.frase, en:par.frase, linhas:[l.id], origem:'semente', locais:{pt:o.pagina,en:par.pagina,metodo:par.metodo}});
+      registo.push({id:'f-' + sha256(f.estudo + '\n' + normal(f.frase)).slice(0,24), estudo:f.estudo, tipos:['atribuicao','causa','leitura'].filter(t=>f.tipos.includes(t)||tiposDaFrase(par.frase,'en').includes(t)), pt:f.frase, en:par.frase, linhas:[l.id], origem:'semente', juizo:'por julgar', locais:{pt:o.pagina,en:par.pagina,metodo:par.metodo}});
       usadas.add(kp); usadas.add(ke); break;
     }
   }
@@ -31,13 +32,13 @@ export function medidas(paginas, resultado) {
   }
   for (const f of registo) estudos[f.estudo].registo++;
   for (const f of pendentes) estudos[f.estudo].por_registar[f.lingua]++;
-  return {paginas:paginas.length, frases:frases.length, pt:frases.filter(f=>f.lingua==='pt').length, en:frases.filter(f=>f.lingua==='en').length, registo:registo.length, por_registar:pendentes.length, pares:medirPares(paginas), estudos};
+  return {paginas:paginas.length, frases:frases.length, pt:frases.filter(f=>f.lingua==='pt').length, en:frases.filter(f=>f.lingua==='en').length, registo:registo.length, por_registar:pendentes.length, por_registar_por_lingua:Object.fromEntries(['pt','en'].map(l=>[l,pendentes.filter(f=>f.lingua===l).length])), teto_por_registar:TETO_PENDENTES, pelo_par:Object.fromEntries(['pt','en'].map(l=>[l,frases.filter(f=>f.lingua===l&&f.pelo_par).length])), pares:medirPares(paginas), estudos};
 }
 if (process.argv[1]?.endsWith('/gerar-frases-afirmacao.mjs')) {
   const dist = process.argv[2] ?? 'dist', destino = process.argv[3] ?? 'ledger/frases';
   if (fs.existsSync(destino)) throw new Error('semente: destino já existe');
   const paginas = lerPaginas(dist), r = semear(paginas, loadClaims()), m = medidas(paginas, r);
-  if (r.pendentes.length > 4000) {
+  if (r.pendentes.length > TETO_PENDENTES) {
     console.error(JSON.stringify({estado:'PAROU: lista acima de 4000', frases:m.frases,registo:m.registo,por_registar:m.por_registar})); process.exit(2);
   }
   fs.mkdirSync(destino, {recursive:true});

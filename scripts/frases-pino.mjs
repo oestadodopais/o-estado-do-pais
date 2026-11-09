@@ -25,7 +25,7 @@ export function conferirPino({indice=false,repo='.',gitRun}={}) {
     if (!atual.marcas || !atual.pino) {erros.push('marcas: listas ou pino apagados');continue;}
     for(const pai of git('rev-list','--parents','-n','1',rev).split(' ').slice(1)) {
       const anterior=estado(pai);
-      erros.push(...validarPino(atual.marcas,atual.pino,anterior.marcas?anterior:null));
+      erros.push(...validarPino(atual.marcas,atual.pino,anterior.marcas?anterior:null).map(e=>rev+': '+e));
     }
   }
   const atual=indice?{marcas:git('show',':'+MARCAS)+'\n',pino:git('show',':'+PINO)+'\n'}:{marcas:fs.readFileSync(MARCAS,'utf8'),pino:fs.readFileSync(PINO,'utf8')};

@@ -212,7 +212,7 @@
   {
     "marca": "pt-atribuicao-31",
     "lingua": "pt",
-    "frase": "A fonte alerta elementos documentados.",
+    "frase": "A fonte (?<!\\b(?:o|um|este|esse|aquele)\\s+)(?<!\\b(?:estado|mecanismo|sistema)(?:\\s+\\p{L}+){0,3}\\s+de\\s+)alerta elementos documentados.",
     "origem": "sintética",
     "razao": "Não há frase do dist apanhada apenas por esta marca."
   },
@@ -1010,7 +1010,7 @@
   {
     "marca": "en-atribuicao-60",
     "lingua": "en",
-    "frase": "A fonte diz elementos documentados.",
+    "frase": "A fonte diz(?!\\s+respeito\\b) elementos documentados.",
     "origem": "sintética",
     "razao": "Não há frase do dist apanhada apenas por esta marca."
   },
@@ -1024,9 +1024,9 @@
   {
     "marca": "en-atribuicao-62",
     "lingua": "en",
-    "frase": "O valor da RMMG a que se refere o n.º 1 do artigo 273.º do Código do Trabalho, aprovado em anexo à Lei n.º 7/2009, de 12 de fevereiro, na sua redação atual, é de € 920,00.",
-    "origem": "dist",
-    "rota": "/en/method"
+    "frase": "A fonte (?<!\\b(?:no que|ao que|a que|que) se )(?<!^se )refere elementos documentados.",
+    "origem": "sintética",
+    "razao": "Não há frase do dist apanhada apenas por esta marca."
   },
   {
     "marca": "en-atribuicao-63",
@@ -1080,7 +1080,7 @@
   {
     "marca": "en-atribuicao-70",
     "lingua": "en",
-    "frase": "A fonte alerta elementos documentados.",
+    "frase": "A fonte (?<!\\b(?:o|um|este|esse|aquele)\\s+)(?<!\\b(?:estado|mecanismo|sistema)(?:\\s+\\p{L}+){0,3}\\s+de\\s+)alerta elementos documentados.",
     "origem": "sintética",
     "razao": "Não há frase do dist apanhada apenas por esta marca."
   },

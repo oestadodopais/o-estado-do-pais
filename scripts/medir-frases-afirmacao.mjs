@@ -2,27 +2,20 @@
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {loadClaims} from '../src/lib/ledger.mjs';
-import {lerPaginas, inventario, sha256, rotasFora, parDaFrase, tiposDaFrase, tiposComContexto, cortar, normal} from './frases-com-afirmacao.mjs';
+import {lerPaginas, inventario, inventarioDireto, medirPares, MARCAS, sha256, rotasFora, parDaFrase, tiposDaFrase, tiposComContexto, cortar, normal} from './frases-com-afirmacao.mjs';
 import {semear, medidas} from './gerar-frases-afirmacao.mjs';
 const paginas=lerPaginas(process.argv[2] ?? 'dist');
 const r=semear(paginas,loadClaims()), m=medidas(paginas,r);
-const anteriores=inventario(paginas,true);
-// Compara as marcas anteriores à adenda C sobre o mesmo âmbito e corte atuais.
-const anterior=execFileSync('git',['show','f1b98c701:scripts/frases-com-afirmacao.mjs'],{encoding:'utf8'});
-const fonte=anterior.slice(anterior.indexOf('const palavra'),anterior.indexOf('export const cortar')).replaceAll('export ','');
-const tiposAnteriores=new Function(fonte+'; return tiposDaFrase;')();
-m.pares_antes_adenda_c={};
-for(const lingua of ['pt','en']) {
-  const destino=lingua==='pt'?'en':'pt';
-  const a=m.pares_antes_adenda_c[lingua+'_para_'+destino]={pares:0,sem_par:0,falhas_antes:0,falhas_depois:0};
-  for(const f of r.frases.filter(f=>f.lingua===lingua)) {
-    const par=f.ocorrencias.map(o=>parDaFrase(paginas,o)).find(Boolean);
-    if(!par){a.sem_par++;continue;}
-    a.pares++;if(!tiposAnteriores(par.frase,destino).length)a.falhas_antes++;
-    if(!tiposComContexto(par.frase,par.contexto,destino).length)a.falhas_depois++;
-  }
-}
-m.marcas_inglesas_antes=anteriores.filter(f=>f.lingua==='en').length;
+const marcasAntes=JSON.parse(execFileSync('git',['show','155fd74a5:scripts/frases-marcas.json'],{encoding:'utf8'})).map(m=>({...m,re:new RegExp(m.expressao,m.flags)}));
+const detetorAntes=(t,l)=>['atribuicao','causa','leitura'].filter(tipo=>marcasAntes.some(m=>m.lingua===l&&m.tipo===tipo&&m.re.test(t)));
+m.pares=medirPares(paginas,detetorAntes);
+m.pares_base='155fd74a5';
+m.pares_criterio='Mesmas unidades diretamente detetadas agora e mesmos pares; marcas da base contra marcas atuais, antes da extensão da cobertura pelo par.';
+m.detecao_direta=Object.fromEntries(['pt','en'].map(l=>[l,inventarioDireto(paginas).filter(f=>f.lingua===l).length]));
+m.total_marcas=MARCAS.length;
+m.plantas_marcas=JSON.parse(fs.readFileSync('tests/leituras/frases-marcas-plantas.json','utf8')).length;
+m.todas_por_julgar=r.registo.every(f=>f.juizo==='por julgar');
+m.juizos=Object.fromEntries([...new Set(r.registo.map(f=>f.juizo))].map(j=>[j,r.registo.filter(f=>f.juizo===j).length]));
 m.colecoes={};
 for(const f of r.frases) {
   const tipos=[...new Set(f.ocorrencias.map(o=>paginas.find(p=>p.rota===o.pagina).tipo))];

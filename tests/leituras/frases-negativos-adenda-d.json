@@ -1,0 +1,41 @@
+[
+  {
+    "frase": "No que diz respeito à saúde",
+    "origem": "Adenda D §0, caso medido pela direção",
+    "presenca_dist": false
+  },
+  {
+    "frase": "No que se refere à saúde",
+    "origem": "Adenda D §0, caso medido pela direção",
+    "presenca_dist": false
+  },
+  {
+    "frase": "estado de alerta",
+    "origem": "Adenda D §0, caso medido pela direção",
+    "presenca_dist": false
+  },
+  {
+    "frase": "O Sistema Nacional de Alerta",
+    "origem": "Adenda D §0, caso medido pela direção",
+    "presenca_dist": false
+  },
+  {
+    "frase": "O alerta da UTAO",
+    "origem": "Adenda D §0, caso medido pela direção",
+    "presenca_dist": false
+  },
+  {
+    "frase": "Relatório sobre o Mecanismo de Alerta e painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, Semestre Europeu de 2027",
+    "rota": "/agenda",
+    "origem": "dist",
+    "presenca_dist": true,
+    "marca": "pt-atribuicao-31"
+  },
+  {
+    "frase": "Para 2027, o limite é «10 — O limite a que se refere a alínea a) do n.º 1 é elevado para 1000,00 €, sem prejuízo da aplicação do n.º 4, quando o limite de dedução daí resultante seja superior.».",
+    "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+    "origem": "dist",
+    "presenca_dist": true,
+    "marca": "pt-atribuicao-23"
+  }
+]

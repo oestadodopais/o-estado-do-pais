@@ -163,7 +163,7 @@
     "id": "pt-atribuicao-21",
     "lingua": "pt",
     "tipo": "atribuicao",
-    "expressao": "(?<![\\p{L}])(?:diz)(?![\\p{L}])",
+    "expressao": "(?<![\\p{L}])(?:diz(?!\\s+respeito\\b))(?![\\p{L}])",
     "flags": "iu",
     "antes": true
   },
@@ -179,7 +179,7 @@
     "id": "pt-atribuicao-23",
     "lingua": "pt",
     "tipo": "atribuicao",
-    "expressao": "(?<![\\p{L}])(?:refere)(?![\\p{L}])",
+    "expressao": "(?<![\\p{L}])(?:(?<!\\b(?:no que|ao que|a que|que) se )(?<!^se )refere)(?![\\p{L}])",
     "flags": "iu",
     "antes": true
   },
@@ -243,7 +243,7 @@
     "id": "pt-atribuicao-31",
     "lingua": "pt",
     "tipo": "atribuicao",
-    "expressao": "(?<![\\p{L}])(?:(?<!mecanismo de )(?<!sistema de )alerta)(?![\\p{L}])",
+    "expressao": "(?<![\\p{L}])(?:(?<!\\b(?:o|um|este|esse|aquele)\\s+)(?<!\\b(?:estado|mecanismo|sistema)(?:\\s+\\p{L}+){0,3}\\s+de\\s+)alerta)(?![\\p{L}])",
     "flags": "iu",
     "antes": true
   },
@@ -1155,7 +1155,7 @@
     "id": "en-atribuicao-60",
     "lingua": "en",
     "tipo": "atribuicao",
-    "expressao": "(?<![\\p{L}])(?:diz)(?![\\p{L}])",
+    "expressao": "(?<![\\p{L}])(?:diz(?!\\s+respeito\\b))(?![\\p{L}])",
     "flags": "iu",
     "antes": false
   },
@@ -1171,7 +1171,7 @@
     "id": "en-atribuicao-62",
     "lingua": "en",
     "tipo": "atribuicao",
-    "expressao": "(?<![\\p{L}])(?:refere)(?![\\p{L}])",
+    "expressao": "(?<![\\p{L}])(?:(?<!\\b(?:no que|ao que|a que|que) se )(?<!^se )refere)(?![\\p{L}])",
     "flags": "iu",
     "antes": false
   },
@@ -1235,7 +1235,7 @@
     "id": "en-atribuicao-70",
     "lingua": "en",
     "tipo": "atribuicao",
-    "expressao": "(?<![\\p{L}])(?:(?<!mecanismo de )(?<!sistema de )alerta)(?![\\p{L}])",
+    "expressao": "(?<![\\p{L}])(?:(?<!\\b(?:o|um|este|esse|aquele)\\s+)(?<!\\b(?:estado|mecanismo|sistema)(?:\\s+\\p{L}+){0,3}\\s+de\\s+)alerta)(?![\\p{L}])",
     "flags": "iu",
     "antes": false
   },

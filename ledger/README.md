@@ -1215,7 +1215,10 @@ da unidade marcada de onde foi cortado. Vai para auditoria mesmo que não
 repita o verbo ou a citação, e não herda uma prova no registo. Os blocos usam os seletores da
 paridade. A cobertura normaliza NFKC, remove U+200B, junta espaços e conserva
 maiúsculas, pontuação e palavras. A mesma frase conta uma vez por estudo ou
-página e por língua. As duas línguas são cobertas independentemente.
+página e por língua. A deteção direta corre em cada língua. Além dela, o par encontrado pelo
+alinhamento entra na cobertura nos dois sentidos, com os tipos da frase
+detetada na outra língua. A referência ao par não dispensa registo ou lista
+pendente. A mesma frase repetida conserva todas as suas ocorrências.
 
 Os pares usam os índices dos blocos da paridade quando os totais coincidem.
 Se não coincidirem, `emparelharBlocos` da camada 0 procura na vizinhança de três
@@ -1235,9 +1238,10 @@ estudo, ou com uma entrada da lista pendente. Cada pendente contém apenas
 frase atual e frases já registadas ainda na dívida são recusados. Uma reescrita
 muda o resumo e exige registo. Não se pode atualizar a dívida para a acomodar.
 
-A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda C autoriza
-uma única regeneração antes da aterragem: a base desta série passa a
-f1b98c701. A régua percorre todos os commits posteriores que tocaram a lista,
+A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda D autoriza
+a regeneração antes da aterragem: a base da lista desta série passa a
+155fd74a5. O histórico do pino das marcas mantém a base anterior, sem apagar
+as alterações já conferidas. A régua percorre todos os commits posteriores que tocaram a lista,
 compara com cada pai que já conhece esta semente e confere a árvore de
 trabalho. Um aumento histórico recusa mesmo que depois seja desfeito. Apagar
 e recriar a lista não repõe a autorização inicial. Histórico superficial ou
@@ -1245,11 +1249,16 @@ base ausente recusam. Não há opção de atualização automática do pino inic
 
 As listas de marcas estão em `scripts/frases-marcas.json`. O pino em
 `scripts/frases-marcas-pino.json` prende os bytes por sha256, com data e razão.
-A régua confere todos os commits desde a mesma base: alterar marcas sem
+A régua das marcas confere todos os commits desde f1b98c701: alterar marcas sem
 alterar o pino e a razão nesse commit recusa, mesmo que outro commit repare.
 Cada marca tem uma planta isolada; a falta de exemplo real fica identificada
-como sintética. As exclusões ordinais de `segundo` têm plantas negativas,
-assim como os nomes `Mecanismo de Alerta` e `Sistema de Alerta`.
+como sintética. A prova histórica conserva a recusa de um commit que mudou as marcas sem
+pino, mesmo depois de um commit posterior o reparar. As exclusões ordinais
+de `segundo` têm plantas negativas,
+assim como as locuções sem atribuição, os estados e nomes com `Alerta` e
+`alerta` como nome depois de artigo. Quando um caso fornecido na adenda não
+existe no `dist/`, a planta identifica essa origem e a ausência; não o
+apresenta como frase publicada.
 
 No GitHub, `fetch-depth: 0` fornece o histórico completo e o passo está em
 `verify`, repartido automaticamente pelo portão. Não precisa de rede nem de
@@ -1277,11 +1286,13 @@ sem mandato, um caminho exterior ou um par ou suporte diferente recusam.
 O mandato é uma autorização escrita verificável, não uma autenticação da
 identidade de quem editou o ficheiro.
 
-As citações de doze ou mais carateres ficam presas aos excertos. Se não houver
-uma citação portuguesa desse tamanho presa a uma das linhas, a entrada exige
-`juizo: "por julgar"`. Nesta camada, qualquer outro valor de `juizo` recusa.
-Só a CAM2-B introduzirá o juiz e a transição do juízo. O código zero da
-cobertura não significa que uma frase sem citação tenha sido julgada.
+As citações de doze ou mais carateres ficam presas aos excertos. Todas as
+entradas, incluindo as semeadas e as que têm citação presa, exigem
+`juizo: "por julgar"`. Qualquer outro valor, ou a ausência do campo, recusa.
+A citação presa prova as palavras citadas, não o resto da frase: é necessária
+para aceitar a citação, mas não é suficiente para julgar a afirmação inteira.
+A CAM2-B fica responsável pelo juiz e pela transição do estado. Até lá, uma
+conferência verde não atribui um juízo favorável a nenhuma entrada.
 
 ### Citações, excertos e corpos
 

@@ -9,7 +9,7 @@
     "pt_para_en": {
       "pares": 846,
       "sem_par": 209,
-      "falhas_antes": 153,
+      "falhas_antes": 103,
       "falhas_depois": 60,
       "falhas": [
         {
@@ -317,7 +317,7 @@
     "en_para_pt": {
       "pares": 1046,
       "sem_par": 61,
-      "falhas_antes": 260,
+      "falhas_antes": 381,
       "falhas_depois": 260,
       "falhas": [
         {
@@ -6636,5 +6636,19 @@
     "corridas_de_conferencias": 46,
     "geracoes_e_medicoes": 12,
     "ambito": "Até à gravação deste relatório; o commit documental e a inspeção final são contados na resposta final."
-  }
+  },
+  "por_registar_por_lingua": {
+    "pt": 1033,
+    "en": 1085
+  },
+  "teto_por_registar": 4000,
+  "total_marcas": 178,
+  "pares_marcas_inglesas_iniciais": {
+    "pares": 846,
+    "sem_par": 209,
+    "falhas_antes": 153,
+    "falhas_depois": 60
+  },
+  "pares_base": "f1b98c701",
+  "correcao_adenda_d": "As contagens explícitas vêm dos ficheiros de 155fd74a5. O antes dos pares usa a medição já guardada em pares_antes_adenda_c, em vez das marcas portuguesas atuais repetidas. A comparação inglesa inicial conserva-se separadamente."
 }
