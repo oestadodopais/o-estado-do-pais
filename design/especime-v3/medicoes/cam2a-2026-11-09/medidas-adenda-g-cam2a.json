@@ -1,0 +1,184 @@
+{
+  "base": "cd60473fd",
+  "implementacao": "cfddc98b90b8852691c7380550edd5f8c2480263",
+  "construido_em": "2026-11-09T18:21:36.066Z",
+  "catalogo": {
+    "linhas": 2632,
+    "catalogo": {
+      "pt": {
+        "indicador": 128,
+        "unidade": 28,
+        "periodo": 21
+      },
+      "en": {
+        "indicador": 128,
+        "unidade": 28,
+        "periodo": 21
+      }
+    },
+    "alternativas_tipadas": [],
+    "erros": []
+  },
+  "simulacao": {
+    "simulacao": true,
+    "revisoes_impressas": 6,
+    "releituras_do_indicador": 8,
+    "indicador_nao_revisto": "abandono-escolar-precoce-2024",
+    "antes": {
+      "pt": 4,
+      "en": 4,
+      "por_modelo": {
+        "revisao-en": 3,
+        "painel-en": 1,
+        "revisao-pt": 3,
+        "painel-pt": 1
+      }
+    },
+    "depois": {
+      "pt": 4,
+      "en": 4,
+      "por_modelo": {
+        "revisao-en": 3,
+        "painel-en": 1,
+        "revisao-pt": 3,
+        "painel-pt": 1
+      }
+    },
+    "linhas_mudadas": 8,
+    "exemplos": {
+      "revisao-en": "Early school leaving, 2024: published 23.4 %; the source now writes 23.4, in the re-reading of 16.11.2026.",
+      "painel-en": "The panel numbers are read again at the source, most recently on 16.11.2026; when the source changes a value, the number changes and the register shows what was there before.",
+      "revisao-pt": "Abandono escolar precoce, 2024: publicado 23,4 %; a fonte escreve agora 23,4, na releitura de 16.11.2026.",
+      "painel-pt": "Os números do painel são relidos na fonte, a última vez a 16.11.2026; quando a fonte muda um valor, o número muda e o registo diz o que estava antes."
+    },
+    "recusas": 0
+  },
+  "historico": {
+    "base": "d21c48f0b",
+    "semente": "a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd",
+    "listas_percorridas": [
+      {
+        "commit": "5314456ebdd0cb03048595b6e84d44bd10a002c3",
+        "entradas": 2433,
+        "sha256": "a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd",
+        "novas": null,
+        "retiradas": null
+      },
+      {
+        "commit": "c745e734568d62309e4236de89a22c4fd0275a20",
+        "entradas": 2427,
+        "sha256": "b83b0a1e558ed6fa2f10cd91bbcaa3c8945932d1d5ac78dd58c58eaba5ff80e4",
+        "novas": 0,
+        "retiradas": 6
+      }
+    ]
+  },
+  "registo": 22,
+  "pendentes": 2427,
+  "pendentes_por_lingua": {
+    "pt": 1288,
+    "en": 1139
+  },
+  "lista_e_registo_inalterados": true,
+  "conferencias": [
+    {
+      "nome": "build",
+      "comando": "npm run build",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 738.14,
+      "corpos": [
+        "M83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+      ]
+    },
+    {
+      "nome": "ledger-com-motor",
+      "comando": "npm run ledger:check",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 31.64,
+      "corpos": [
+        "M83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+      ]
+    },
+    {
+      "nome": "ledger-sem-motor",
+      "comando": "npm run ledger:check",
+      "motor": false,
+      "codigo": 0,
+      "segundos": 9.91,
+      "corpos": [
+        "M83: não leu os corpos: RESEARCHHUB_DIR ausente; 0/795 linhas; limpa=false; recusas=0"
+      ]
+    },
+    {
+      "nome": "pre-mandato",
+      "comando": "npm run check:pre-mandato",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 37.49,
+      "corpos": []
+    },
+    {
+      "nome": "typecheck",
+      "comando": "npm run typecheck",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 0.45,
+      "corpos": []
+    },
+    {
+      "nome": "mortos",
+      "comando": "npm run check:mortos",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 1.86,
+      "corpos": []
+    },
+    {
+      "nome": "frases-com-motor",
+      "comando": "npm run check:frases-afirmacao",
+      "motor": true,
+      "codigo": 0,
+      "segundos": 86.92,
+      "corpos": [
+        "excertos: corpos lidos; limpa=true; linhas lidas=21"
+      ]
+    },
+    {
+      "nome": "frases-sem-motor",
+      "comando": "npm run check:frases-afirmacao",
+      "motor": false,
+      "codigo": 0,
+      "segundos": 71.41,
+      "corpos": [
+        "excertos: não leu os corpos: RESEARCHHUB_DIR ausente; limpa=false; linhas lidas=0"
+      ]
+    }
+  ],
+  "corridas_anteriores": [
+    {
+      "comando": "node tests/leituras/frases-afirmacao.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "npm run check:mortos",
+      "codigo": 0
+    },
+    {
+      "comando": "npm run check:frases-afirmacao",
+      "codigo": 0
+    },
+    {
+      "comando": "node scripts/simular-painel-frases.mjs dist <medidas.json>",
+      "codigo": 0
+    }
+  ],
+  "corridas_conferencias": 12,
+  "custo_ate_relatorio": {
+    "chamadas": 16,
+    "operacoes_internas": 27,
+    "corridas_conferencias": 12,
+    "medicoes_cli": 1
+  }
+}
