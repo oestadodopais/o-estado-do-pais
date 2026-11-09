@@ -1,0 +1,70 @@
+{
+ "frases-pt": {
+  "valor": "702",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas pt»"
+ },
+ "frases-pt-atribuicao": {
+  "valor": "571",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas pt», atribuição"
+ },
+ "frases-pt-causa": {
+  "valor": "144",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas pt», causa"
+ },
+ "paginas-pt": {
+  "valor": "41",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas pt», páginas"
+ },
+ "frases-pt-sem-ligacao": {
+  "valor": "642",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas pt», sem ligação nem linha"
+ },
+ "frases-en": {
+  "valor": "530",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas en»"
+ },
+ "frases-en-atribuicao": {
+  "valor": "444",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas en», atribuição"
+ },
+ "frases-en-causa": {
+  "valor": "94",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas en», causa"
+ },
+ "paginas-en": {
+  "valor": "36",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas en», páginas"
+ },
+ "frases-en-sem-ligacao": {
+  "valor": "477",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «frases candidatas en», sem ligação nem linha"
+ },
+ "linhas-livro": {
+  "valor": "4161",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «linhas do livro-razão»"
+ },
+ "linhas-afirmacao": {
+  "valor": "92",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «linhas do livro-razão», afirmacao: true"
+ },
+ "linhas-com-documento": {
+  "valor": "795",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «linhas do livro-razão», com document.source_sha256; e «linhas com o corpo encontrado»"
+ },
+ "corpos-motor": {
+  "valor": "2178",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «corpos alojados», no git do motor"
+ },
+ "edicoes-sitio": {
+  "valor": "29",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «corpos alojados», edições arquivadas do sítio"
+ },
+ "sem-corpo": {
+  "valor": "0",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «corpos alojados», sem corpo"
+ },
+ "excertos-literais": {
+  "valor": "277",
+  "comando": "python3 design/especime-v3/medicoes/cam2a-2026-11-09/medir-cam2a.py <dist de f362f5ccd> . \"$RESEARCHHUB_DIR\" (motor em 9cdd232); a saída em medidas-f362f5ccd.txt · linha «excertos encontrados palavra por palavra»"
+ }
+}

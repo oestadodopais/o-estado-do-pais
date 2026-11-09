@@ -1,0 +1,5 @@
+frases candidatas pt: 702 (atribuição 571, causa 144) em 41 páginas; sem ligação nem linha no parágrafo: 642
+frases candidatas en: 530 (atribuição 444, causa 94) em 36 páginas; sem ligação nem linha no parágrafo: 477
+linhas do livro-razão: 4161; com afirmacao: true: 92; com document.source_sha256: 795
+corpos alojados: 2178 no git do motor (source/) e 29 edições arquivadas do sítio; linhas com o corpo encontrado por sha256: 795; sem corpo: 0
+excertos encontrados palavra por palavra no texto do corpo (normalização simples): 277 de 795
