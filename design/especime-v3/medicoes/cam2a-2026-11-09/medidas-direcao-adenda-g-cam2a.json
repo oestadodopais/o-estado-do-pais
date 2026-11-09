@@ -1,0 +1,7 @@
+{
+ "catalogo-pt": {"valor": "1 091", "comando": "na worktree da CAM2-A em cd60473fd: cp medir-catalogo-g-1.mjs ./.m.mjs && node ./.m.mjs (catalogo_atual.pt)"},
+ "catalogo-en": {"valor": "1 094", "comando": "o mesmo comando (catalogo_atual.en)"},
+ "relidas-no-ambito": {"valor": "2 632", "comando": "o mesmo comando (com_verificacoes_no_ambito; afirmacao_com_verificacoes = 0)"},
+ "restrito-indicador": {"valor": "128", "comando": "na mesma worktree: cp medir-catalogo-g-2.mjs ./.m.mjs && node ./.m.mjs (restrito.pt.indicador e restrito.en.indicador; unidade 28, periodo 21; tipados_no_restrito vazio; tipados_que_saem 42)"},
+ "catalogo-tipados": {"valor": "42", "comando": "o mesmo comando (tipados_que_saem)"}
+}

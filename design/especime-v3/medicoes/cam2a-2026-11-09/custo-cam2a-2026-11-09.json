@@ -74,8 +74,50 @@
    "outras_sessoes": 0,
    "ajudantes": 0,
    "fonte": "a linha PONTOS do LANCADOR-cam2a-d.log"
+  },
+  {
+   "nome": "adenda E (a chave de uma frase sem os algarismos; os imports mortos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T15:05:12Z",
+   "fim": "2026-11-09T15:26:52Z",
+   "saida": 0,
+   "pontos": 1.0,
+   "pontos_antes": 95.0,
+   "pontos_depois": 96.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-e.log"
+  },
+  {
+   "nome": "adenda F (as citações conferidas sem máscara; os modelos de texto fora da cobertura; a palavra a seguir ao número)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T17:32:58Z",
+   "fim": "2026-11-09T17:57:23Z",
+   "saida": 0,
+   "pontos": 1.0,
+   "pontos_antes": 0.0,
+   "pontos_depois": 1.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-f.log"
+  },
+  {
+   "nome": "adenda G (o catálogo dos modelos só com as linhas relidas; a base do histórico de volta)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-09T18:16:30Z",
+   "fim": "2026-11-09T18:37:23Z",
+   "saida": 0,
+   "pontos": 1.0,
+   "pontos_antes": 1.0,
+   "pontos_depois": 2.0,
+   "outras_sessoes": 0,
+   "ajudantes": 0,
+   "fonte": "a linha PONTOS do LANCADOR-cam2a-g.log"
   }
  ],
- "total_pontos_codex": 7.0,
+ "total_pontos_codex": 10.0,
  "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros: uma passagem abaixo de um ponto lê-se como zero, e o contador subiu um ponto entre passagens sem construtor a correr. As leituras (Claude) e as corridas por guião não entram nos pontos do Codex."
 }

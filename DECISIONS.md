@@ -14924,7 +14924,7 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 
 **Data:** 09.11.2026, das 07:16 UTC ao commit deste texto.
 
-**As palavras do financiador (o leitor):** às 07:32 UTC, «codex is at 14%, is that enough, we can use all the usage and i can reset it when is close to 0%»; às 07:35, «we recived a couple of free resets for codex, that will hava an expire date of nov 30 and dec 1» e «it doesn't happen all the time but once in a while we get these»; às 08:24, «should we add a couple off new outlets […] i was thinking Jornal Publico, maybe jornal Expresso and the public tv channnel RTP»; às 10:19, «yes to both, go ahead» (guardar os campos dos feeds numa pasta privada desta máquina, nunca publicados; criar a etiqueta no Gmail dele); às 13:03, «yes, i can apply the reset when it gets near zero, no problem».
+**As palavras do financiador (o leitor):** às 07:32 UTC, «codex is at 14%, is that enough, we can use all the usage and i can reset it when is close to 0%»; às 07:35, «we recived a couple of free resets for codex, that will hava an expire date of nov 30 and dec 1» e «it doesn't happen all the time but once in a while we get these»; às 08:24, «should we add a couple off new outlets […] i was thinking Jornal Publico, maybe jornal Expresso and the public tv channnel RTP»; às 10:19, «yes to both, go ahead» (guardar os campos dos feeds numa pasta privada desta máquina, nunca publicados; criar a etiqueta no Gmail dele); às 13:03, «yes, i can apply the reset when it gets near zero, no problem»; às 17:32, «fix both» e, logo depois, «never land anything with mistakes»; às 18:33, «major fix, no landing with mistakes»; às 18:41, sobre a correção do PRR feita por outra sessão, «is it better to undo or leave it or what is your suggestion», e às 18:43, «would like you to choose the best option».
 
 **As decisões.**
 
@@ -14934,6 +14934,9 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 4. O Codex usa-se inteiro. O financiador aplica a reposição perto do zero, e este lugar pede-a antes de um lançamento com menos de cinco pontos. As reposições são ocasionais: o regime permanente (a varredura noturna, o juiz por bloco) dimensiona-se sem elas.
 5. A DIA1 lê só os meios cujo `robots.txt` se lê e que não reservam o uso por IA. Um meio fica fora quando o `robots.txt` do feed ou do editor é ilegível, bloqueia os agentes da Anthropic (cujo modelo lê os títulos), traz a reserva geral (`Google-Extended` ou `CCBot`) ou bloqueia tudo. Entram a RTP, o Observador e a CNN Portugal. Ficam fora o Público (regras ilegíveis), o Expresso (recusa o agente) e o Correio da Manhã (a reserva geral). Um pedido de autorização ao Público ou à Impresa seria correio para fora, do financiador.
 6. A guarda dos números na escolha do correio é lexical, com uma nova tentativa e a recusa por unidade, e mediu-se com os modelos reais sobre os títulos reais antes do primeiro correio.
+7. As frases geradas a partir do livro-razão por um modelo de texto (a linha das revisões da leitura da semana e a linha do painel no Método, nas duas línguas) saem da cobertura por uma lista fechada e presa de modelos. As partes variáveis só aceitam valores, datas e as alternativas das linhas relidas no âmbito da leitura e sem afirmações; uma alternativa que o detetor tipe recusa a conferência. As citações de cada entrada do registo conferem-se sem máscara contra a frase impressa, nas duas línguas (as adendas E, F e G).
+8. Nada aterra com um achado Blocking ou Major por corrigir: cada correção leva a sua leitura curta com cinco plantas, até uma leitura sem achado real dessa gravidade (a palavra do financiador às 17:32 e às 18:33). Os Minor vão para o bloco de higiene da semana.
+9. A correção do PRR feita por outra sessão no motor (o ramo `prr-data-2026-11-09`) não se desfaz: o ramo corrige um defeito real, a cache apagada era a errada e já se refez, e nada chegou ao `master`, ao sítio nem ao correio diário (medido). Aterra num bloco pequeno do motor, a PRR1, depois da CAM2-A: a leitura a frio pelo Codex com cinco plantas, o `core.gate`, e um `CLAUDE.md` do motor que diz a qualquer sessão as regras da árvore principal, das worktrees e da aterragem, que até hoje só viviam no do sítio.
 
 **O que este lugar errou** (as linhas na `GARGALOS.md`):
 - o teto de 1 500 frases sem as contar nas duas línguas;
@@ -14942,5 +14945,10 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 - o §1.1 contraditório da adenda D da DIA1;
 - a guarda da escolha desenhada como lista negra, sem a medir antes sobre prosa real (quatro passagens);
 - a vez fechada às 08:30 UTC sem relançar, depois de o dizer: nada correu até às 10:13 UTC.
+- a lista dirigida da primeira aterragem sem o `check:mortos` (a corrida `portão` 42634296115 vermelha);
+- a chave das frases com o texto inteiro, que prendia o painel semanal;
+- «os pinos novos» da adenda F, que moveram a base do histórico por um simples encolhimento;
+- as partes variáveis dos modelos de texto escritas sem medir de que linhas vêm (o catálogo de todas as linhas, com as afirmações);
+- a secção da leitura curta da adenda D por escrever no registo das leituras, recuperada do relatório do leitor.
 
-**Custo:** a CAM2-A, 7 pontos do Codex em cinco passagens (`custo-cam2a-2026-11-09.json`); a DIA1, no seu fecho.
+**Custo:** a CAM2-A, 10 pontos do Codex em oito passagens (`custo-cam2a-2026-11-09.json`); a DIA1, no seu fecho.
