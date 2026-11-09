@@ -1,3 +1,4 @@
+import './frases-adenda-e.mjs';
 import './frases-adenda-d.mjs';
 import './frases-adenda-c.mjs';
 import {execFileSync} from 'node:child_process';

@@ -1214,7 +1214,10 @@ sem marca própria conserva, para cobertura, os tipos de atribuição ou causa
 da unidade marcada de onde foi cortado. Vai para auditoria mesmo que não
 repita o verbo ou a citação, e não herda uma prova no registo. Os blocos usam os seletores da
 paridade. A cobertura normaliza NFKC, remove U+200B, junta espaços e conserva
-maiúsculas, pontuação e palavras. A mesma frase conta uma vez por estudo ou
+maiúsculas, pontuação e palavras fora dos números. Antes do sha256, cada sequência
+de algarismos, com separadores internos `.`, `,`, `:`, `/`, grupos de milhares
+separados por espaço e `%` colado, passa a `⟦número⟧`. Isto inclui as datas.
+A mesma frase conta uma vez por estudo ou
 página e por língua. A deteção direta corre em cada língua. Além dela, o par encontrado pelo
 alinhamento entra na cobertura nos dois sentidos, com os tipos da frase
 detetada na outra língua. A referência ao par não dispensa registo ou lista
@@ -1236,11 +1239,19 @@ Cada frase detetada tem de coincidir com `pt` ou `en` de uma entrada do seu
 estudo, ou com uma entrada da lista pendente. Cada pendente contém apenas
 `estudo`, `lingua` e `sha256` da frase normalizada. Duplicados, pendentes sem
 frase atual e frases já registadas ainda na dívida são recusados. Uma reescrita
-muda o resumo e exige registo. Não se pode atualizar a dívida para a acomodar.
+das palavras muda o resumo e exige registo. Não se pode atualizar a dívida
+para a acomodar. Uma revisão apenas de datas ou valores conserva a chave,
+e duas frases que só diferem nesses números contam como uma. O registo
+guarda `pt` e `en` tal como impressos; a presença e o alinhamento comparam
+as formas com o marcador. As citações e os excertos continuam a ser
+conferidos integralmente, com os números. A regra 1 do livro-razão e as réguas
+dos números guardam a proveniência dos valores; a camada 2 guarda as palavras
+das atribuições e das causas. O painel e as revisões mudam datas e valores
+todas as semanas.
 
-A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda D autoriza
+A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda E autoriza
 a regeneração antes da aterragem: a base da lista desta série passa a
-155fd74a5. O histórico do pino das marcas mantém a base anterior, sem apagar
+d21c48f0b, já com o painel de 09.11.2026. O histórico do pino das marcas mantém a base anterior, sem apagar
 as alterações já conferidas. A régua percorre todos os commits posteriores que tocaram a lista,
 compara com cada pai que já conhece esta semente e confere a árvore de
 trabalho. Um aumento histórico recusa mesmo que depois seja desfeito. Apagar

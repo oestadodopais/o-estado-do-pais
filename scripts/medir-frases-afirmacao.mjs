@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {loadClaims} from '../src/lib/ledger.mjs';
-import {lerPaginas, inventario, inventarioDireto, medirPares, MARCAS, sha256, rotasFora, parDaFrase, tiposDaFrase, tiposComContexto, cortar, normal} from './frases-com-afirmacao.mjs';
+import {lerPaginas, inventarioDireto, medirPares, MARCAS, sha256, rotasFora, cortar, normalDaChave} from './frases-com-afirmacao.mjs';
 import {semear, medidas} from './gerar-frases-afirmacao.mjs';
 const paginas=lerPaginas(process.argv[2] ?? 'dist');
 const r=semear(paginas,loadClaims()), m=medidas(paginas,r);
@@ -25,7 +25,7 @@ m.rotas=paginas.map(({rota,tipo})=>({rota,tipo}));
 m.familias_fora=rotasFora();
 m.registo_por_rota={};for(const f of r.registo)for(const l of ['pt','en'])m.registo_por_rota[f.locais[l]]=(m.registo_por_rota[f.locais[l]]??0)+1;
 const sementesAnteriores=JSON.parse(execFileSync('git',['show','f1b98c701:ledger/frases/pagina-o-que-se-discute.json'],{encoding:'utf8'}));
-m.corte_semente=sementesAnteriores.filter(f=>!r.registo.some(g=>g.pt===f.pt&&g.en===f.en)).map(f=>({id_anterior:f.id,partes:['pt','en'].flatMap(lingua=>cortar(f[lingua]).map(frase=>({lingua,sha256:sha256(normal(frase)),registada:r.registo.some(g=>g[lingua]===frase),pendente:r.pendentes.some(g=>g.estudo===f.estudo&&g.lingua===lingua&&g.sha256===sha256(normal(frase)))})))}));
+m.corte_semente=sementesAnteriores.filter(f=>!r.registo.some(g=>g.pt===f.pt&&g.en===f.en)).map(f=>({id_anterior:f.id,partes:['pt','en'].flatMap(lingua=>cortar(f[lingua]).map(frase=>({lingua,sha256:sha256(normalDaChave(frase)),registada:r.registo.some(g=>g[lingua]===frase),pendente:r.pendentes.some(g=>g.estudo===f.estudo&&g.lingua===lingua&&g.sha256===sha256(normalDaChave(frase)))})))}));
 m.amostra_semente='CAM2-A-2026-11-09';
 m.amostra=['pt','en'].flatMap(l=>r.frases.filter(f=>f.lingua===l).sort((a,b)=>sha256(m.amostra_semente+'|'+a.estudo+'|'+a.frase).localeCompare(sha256(m.amostra_semente+'|'+b.estudo+'|'+b.frase))).slice(0,30).map((f,i)=>({id:l+'-'+(i+1),lingua:l,estudo:f.estudo,frase:f.frase})));
 fs.writeFileSync(process.argv[3] ?? '/tmp/medidas-frases-afirmacao.json',JSON.stringify(m,null,2)+'\n');

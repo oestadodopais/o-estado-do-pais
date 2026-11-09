@@ -4,13 +4,13 @@ import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
 import {loadClaims} from '../src/lib/ledger.mjs';
-import {normal, sha256, chave, lerPaginas, inventario, marcaLeitura, parDaFrase, tiposDaFrase} from './frases-com-afirmacao.mjs';
+import {normal, normalDaChave, sha256, chave, lerPaginas, inventario, marcaLeitura, parDaFrase, tiposDaFrase} from './frases-com-afirmacao.mjs';
 import {conferirPino} from './frases-pino.mjs';
 import {conferirOrigem, conferirSemente} from './frases-origem.mjs';
 import {conferirCorpos} from './corpos-ledger.mjs';
 const LISTA = 'ledger/frases/por-registar.json';
-const BASE = '155fd74a5';
-export const SEMENTE_SHA256 = '9d40631cd57635938632c39f4e4dddcb7cd5dc8d4e5062bffc11dfe2467cc312';
+const BASE = 'd21c48f0b';
+export const SEMENTE_SHA256 = 'a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd';
 export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
 export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
 export function lerRegisto(pasta = 'ledger/frases') {
@@ -89,9 +89,9 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
     }
     if (typeof f.pt === 'string' && typeof f.en === 'string') {
       const parEncontrado = paginas.filter(p => p.estudo === f.estudo && p.lingua === 'pt').some(p => p.blocos.some((b,bloco) => b.frases.some((t,indice) => {
-        if (normal(t) !== normal(f.pt)) return false;
+        if (normalDaChave(t) !== normalDaChave(f.pt)) return false;
         const par = parDaFrase(paginas, {pagina:p.rota,bloco,indice});
-        return par && normal(par.frase) === normal(f.en);
+        return par && normalDaChave(par.frase) === normalDaChave(f.en);
       })));
       if (!parEncontrado) erros.push(`${id}: pt e en sem par pelo alinhamento dos blocos`);
       const pt = citacoes(f.pt, 'pt'), en = citacoes(f.en, 'en');
@@ -101,7 +101,7 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
       if (f.juizo !== 'por julgar') erros.push(`${id}: juízo tem de ficar por julgar`);
       if (f.origem === 'semente') {
         erros.push(...conferirSemente(f, sementes));
-        const elegivel = presa && f.linhas?.length === 1 && livro.get(f.linhas[0])?.afirmacao === true && paginas.some(p => p.estudo === f.estudo && p.lingua === 'pt' && p.blocos.some(b => b.frases.some(t => normal(t) === normal(f.pt)) && b.linhas.filter(l => livro.get(l)?.afirmacao === true).join('|') === f.linhas[0]));
+        const elegivel = presa && f.linhas?.length === 1 && livro.get(f.linhas[0])?.afirmacao === true && paginas.some(p => p.estudo === f.estudo && p.lingua === 'pt' && p.blocos.some(b => b.frases.some(t => normalDaChave(t) === normalDaChave(f.pt)) && b.linhas.filter(l => livro.get(l)?.afirmacao === true).join('|') === f.linhas[0]));
         if (!elegivel) erros.push(`${id}: origem semente fora da regra`);
       }
       const marcada = ['pt','en'].some(l => marcaLeitura(f[l], l));

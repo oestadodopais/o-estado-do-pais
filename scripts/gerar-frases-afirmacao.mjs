@@ -2,22 +2,24 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {loadClaims} from '../src/lib/ledger.mjs';
-import {lerPaginas, inventario, tiposDaFrase, parDaFrase, medirPares, normal, sha256, chave} from './frases-com-afirmacao.mjs';
+import {lerPaginas, inventario, tiposDaFrase, parDaFrase, medirPares, normalDaChave, sha256, chave} from './frases-com-afirmacao.mjs';
 import {citacoes, normalExcerto} from './check-frases-afirmacao.mjs';
 export const TETO_PENDENTES = 4000;
 export function semear(paginas, livro) {
   const frases = inventario(paginas), registo = [], usadas = new Set();
   for (const f of frases.filter(f => f.lingua === 'pt')) {
-    const cita = citacoes(f.frase, 'pt').filter(c => [...c].length >= 12);
-    if (!cita.length || f.tipos.includes('leitura')) continue;
+    if (f.tipos.includes('leitura')) continue;
     for (const o of f.ocorrencias) {
+      const frase = paginas.find(p => p.rota === o.pagina).blocos[o.bloco].frases[o.indice];
+      const cita = citacoes(frase, 'pt').filter(c => [...c].length >= 12);
+      if (!cita.length) continue;
       const afirmacoes = o.linhas.filter(id => livro.get(id)?.afirmacao === true);
       if (afirmacoes.length !== 1) continue;
       const l = livro.get(afirmacoes[0]), par = parDaFrase(paginas, o);
       if (!l.excerpt || !l.document?.source_sha256 || !cita.every(c => normalExcerto(l.excerpt).includes(normalExcerto(c))) || !par || !citacoes(par.frase, 'en').length) continue;
       const kp = chave(f), ke = chave({estudo:f.estudo, lingua:'en', frase:par.frase});
       if (usadas.has(kp) || usadas.has(ke)) continue;
-      registo.push({id:'f-' + sha256(f.estudo + '\n' + normal(f.frase)).slice(0,24), estudo:f.estudo, tipos:['atribuicao','causa','leitura'].filter(t=>f.tipos.includes(t)||tiposDaFrase(par.frase,'en').includes(t)), pt:f.frase, en:par.frase, linhas:[l.id], origem:'semente', juizo:'por julgar', locais:{pt:o.pagina,en:par.pagina,metodo:par.metodo}});
+      registo.push({id:'f-' + sha256(f.estudo + '\n' + normalDaChave(frase)).slice(0,24), estudo:f.estudo, tipos:['atribuicao','causa','leitura'].filter(t=>f.tipos.includes(t)||tiposDaFrase(par.frase,'en').includes(t)), pt:frase, en:par.frase, linhas:[l.id], origem:'semente', juizo:'por julgar', locais:{pt:o.pagina,en:par.pagina,metodo:par.metodo}});
       usadas.add(kp); usadas.add(ke); break;
     }
   }

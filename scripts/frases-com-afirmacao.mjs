@@ -17,6 +17,8 @@ import {slugsDasAreas} from '../src/lib/areas.mjs';
 import {edicoesGuardadas} from '../src/lib/edicoes.mjs';
 import {ENTRADAS} from '../src/data/primeira-pagina.mjs';
 export const normal = t => t.normalize('NFKC').replace(/\u200b/g, '').replace(/\s+/g, ' ').trim();
+// Só a identidade editorial omite números; deteção, citações e excertos conservam-nos.
+export const normalDaChave = t => normal(t).replace(/\p{Nd}+(?:(?:[.,:/]\p{Nd}+)|(?: \p{Nd}{3}(?!\p{Nd})))*%?/gu, '⟦número⟧');
 export const sha256 = t => createHash('sha256').update(t).digest('hex');
 export const MARCAS = JSON.parse(fs.readFileSync(new URL('./frases-marcas.json', import.meta.url), 'utf8'));
 const compiladas = MARCAS.map(m => ({...m, re:new RegExp(m.expressao, m.flags)}));
@@ -33,7 +35,7 @@ export function tiposComContexto(frase, contexto, lingua, antes=false) {
   const diretos=tiposDaFrase(frase,lingua,antes);
   return diretos.length || !contexto || contexto===frase ? diretos : tiposDaFrase(contexto,lingua,antes).filter(t=>t!=='leitura');
 }
-export const chave = f => `${f.estudo}|${f.lingua}|${f.sha256 ?? sha256(normal(f.frase))}`;
+export const chave = f => `${f.estudo}|${f.lingua}|${f.sha256 ?? sha256(normalDaChave(f.frase))}`;
 export function blocosDaPagina(html) {
   const r = parse(html); r.querySelectorAll('script,style').forEach(n => n.remove());
   const c = r.querySelector('[data-oedp-moldura]') ?? r.querySelector('main') ?? r;
@@ -99,7 +101,7 @@ function unidades(paginas, antes=false) {
   const unicas=new Map();
   for(const p of paginas) for(const [bloco,b] of p.blocos.entries()) for(const [indice,frase] of b.frases.entries()) {
     const tipos=tiposComContexto(frase,b.contextos?.[indice],p.lingua,antes);
-    const f={estudo:p.estudo,lingua:p.lingua,frase,tipos,sha256:sha256(normal(frase))}, k=chave(f);
+    const f={estudo:p.estudo,lingua:p.lingua,frase,tipos,sha256:sha256(normalDaChave(frase))}, k=chave(f);
     if(!unicas.has(k))unicas.set(k,{...f,ocorrencias:[]});
     const u=unicas.get(k);u.tipos=[...new Set([...u.tipos,...tipos])];
     u.ocorrencias.push({pagina:p.rota,bloco,indice,linhas:b.linhas});
