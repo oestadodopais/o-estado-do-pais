@@ -1,0 +1,123 @@
+[
+  {
+    "nome": "ledger-com-motor",
+    "comando": [
+      "npm",
+      "run",
+      "ledger:check"
+    ],
+    "codigo": 0,
+    "segundos": 38.77691583381966,
+    "ultimas_linhas": "OG1-E D campo diferente do atual: código 1\nOG1-E D publicador como revisão: código 1\nOG1-E D campo sem mudança: código 1\nOG1-E D campo fora da lista: código 1\nOG1-E D história do valor partida: código 1\nOG1-E D: 37 plantas e controlos; trinta correções de campo e a contagem conferidas.\ncorpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos\nM83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+  },
+  {
+    "nome": "ledger-sem-motor",
+    "comando": [
+      "npm",
+      "run",
+      "ledger:check"
+    ],
+    "codigo": 0,
+    "segundos": 12.229274709243327,
+    "ultimas_linhas": "OG1-E D campo diferente do atual: código 1\nOG1-E D publicador como revisão: código 1\nOG1-E D campo sem mudança: código 1\nOG1-E D campo fora da lista: código 1\nOG1-E D história do valor partida: código 1\nOG1-E D: 37 plantas e controlos; trinta correções de campo e a contagem conferidas.\ncorpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos\nM83: não leu os corpos: RESEARCHHUB_DIR ausente; 0/795 linhas; limpa=false; recusas=0"
+  },
+  {
+    "nome": "pre-mandato",
+    "comando": [
+      "npm",
+      "run",
+      "check:pre-mandato"
+    ],
+    "codigo": 0,
+    "segundos": 39.106830125208944,
+    "ultimas_linhas": "{\"pre_voo_segundos\": {\"livre\": 0.1053136670961976, \"ocupada\": 0.11062566610053182}}\n....\n----------------------------------------------------------------------\nRan 4 tests in 9.279s\n\nOK\ncamada 0: 43 plantas e controlos da ligação, incluindo o pré-mandato ponta a ponta\ncamada 0 na cadeia: controlo verde e 12 desligamentos recusados"
+  },
+  {
+    "nome": "frases-com-motor",
+    "comando": [
+      "npm",
+      "run",
+      "check:frases-afirmacao"
+    ],
+    "codigo": 0,
+    "segundos": 19.823309749830514,
+    "ultimas_linhas": "\nadenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos\nadenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos\níndice preparado: uma recusa impede o commit no escrivão\nAUD1: contrações e verbos portugueses conferidos\nfrases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos\nfrases: 2479; registo: 22; por registar: 2435; recusas: 0\nexcertos: corpos lidos; limpa=true; linhas lidas=21"
+  },
+  {
+    "nome": "frases-sem-motor",
+    "comando": [
+      "npm",
+      "run",
+      "check:frases-afirmacao"
+    ],
+    "codigo": 0,
+    "segundos": 8.799893666990101,
+    "ultimas_linhas": "\nadenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos\nadenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos\níndice preparado: uma recusa impede o commit no escrivão\nAUD1: contrações e verbos portugueses conferidos\nfrases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos\nfrases: 2479; registo: 22; por registar: 2435; recusas: 0\nexcertos: não leu os corpos: RESEARCHHUB_DIR ausente; limpa=false; linhas lidas=0"
+  },
+  {
+    "nome": "comparacao",
+    "comando": [
+      "python3",
+      "scripts/comparar-dist-frases.py",
+      "dist",
+      "<temporario>"
+    ],
+    "codigo": 0,
+    "segundos": 7.207445667125285,
+    "ultimas_linhas": "{\"ok\": true, \"dia_utc\": \"2026-11-09\", \"ficheiros\": 25304, \"paginas_html\": 9878, \"iguais_byte_a_byte\": 25302, \"metodo_autorizadas\": 2, \"novas\": 0, \"apagadas\": 0, \"outras_diferencas\": 0}"
+  },
+  {
+    "nome": "semente",
+    "comando": [
+      "node",
+      "scripts/gerar-frases-afirmacao.mjs",
+      "dist",
+      "<temporario>",
+      "<temporario>"
+    ],
+    "codigo": 0,
+    "segundos": 9.804435166995972,
+    "ultimas_linhas": "{\"frases\":2479,\"registo\":22,\"por_registar\":2435,\"semente_sha256\":\"9d40631cd57635938632c39f4e4dddcb7cd5dc8d4e5062bffc11dfe2467cc312\"}"
+  },
+  {
+    "nome": "medidas",
+    "comando": [
+      "node",
+      "scripts/medir-frases-afirmacao.mjs",
+      "dist",
+      "<temporario>"
+    ],
+    "codigo": 0,
+    "segundos": 14.434675791766495,
+    "ultimas_linhas": "{\"frases\":2479,\"pt\":1314,\"en\":1165,\"registo\":22,\"por_registar\":2435,\"pares\":{\"pt_para_en\":{\"pares\":845,\"sem_par\":209,\"falhas_antes\":60,\"falhas_depois\":60,\"sem_cobertura\":0},\"en_para_pt\":{\"pares\":1045,\"sem_par\":61,\"falhas_antes\":260,\"falhas_depois\":260,\"sem_cobertura\":0}},\"registo_por_rota\":{\"/o-que-se-discute\":22,\"/en/under-discussion\":22}}"
+  },
+  {
+    "nome": "build",
+    "comando": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": "OG1 pt: planta de data trocada e planta de partido trocado recusadas.\nOG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.\nOG1 pt: planta do bloco da citação alterado recusada.\nOG1 en: planta de data trocada e planta de partido trocado recusadas.\nOG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.\nOG1 en: planta do bloco da citação alterado recusada.\nPASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições.\n{\"tranca\": \"libertada\", \"espera_segundos\": 0.00013304222375154495, \"execucao_segundos\": 788.0980948330835, \"codigo\": 0}"
+  },
+  {
+    "nome": "typecheck",
+    "comando": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": "\n> o-estado-do-pais@0.1.0 typecheck\n> tsc -p tsconfig.check.json\n"
+  },
+  {
+    "nome": "plantas",
+    "comando": [
+      "node",
+      "tests/leituras/frases-afirmacao.mjs"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": "adenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos\nadenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos\níndice preparado: uma recusa impede o commit no escrivão\nAUD1: contrações e verbos portugueses conferidos\nfrases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos"
+  }
+]
