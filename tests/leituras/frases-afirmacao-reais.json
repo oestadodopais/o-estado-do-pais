@@ -1,0 +1,142 @@
+[
+  {
+    "lingua": "pt",
+    "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
+    "frase": "Segundo o presidente da Câmara, citado na mesma nota, as duas propostas de ajustamento orçamental apresentadas por esse motivo evitam a perda dos fundos da obra e dão flexibilidade para a fazer em articulação com o projeto artístico da Floresta Nómada, da programação da Capital Europeia da Cultura.",
+    "apanha": true,
+    "razao": "atribuição a uma pessoa"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/dossies/orcamento-2027",
+    "frase": "IRS: sexta redução segundo o relatório",
+    "apanha": true,
+    "razao": "atribuição, não ordinal"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/dossies/orcamento-2027",
+    "frase": "Os valores não são consolidados, porque contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, 259 633 860 562 euros em 2027.",
+    "apanha": true,
+    "razao": "causa explícita"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
+    "frase": "O plano escreve: «A candidatura para o programa geral de Évora_27 foi aprovada pelo Programa Regional do Alentejo 2030 (ALENTEJO 2030), com um montante global de financiamento de 11.764.710,00€ (quinze milhões de euros)» O algarismo e o extenso não dizem a mesma coisa.",
+    "apanha": true,
+    "razao": "citação e atribuição"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+    "frase": "Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência).",
+    "apanha": true,
+    "razao": "leitura marcada"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/estudos/a-casa-em-portugal-e-na-europa",
+    "frase": "No segundo trimestre de 2026 os preços subiram 16,5 % num ano, contra 4,7 % na União, outra vez a subida mais alta, entre os vinte e seis Estados-membros com dados trimestrais.",
+    "apanha": false,
+    "razao": "ordinal"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
+    "frase": "Um segundo desencontro, na mesma página.",
+    "apanha": false,
+    "razao": "ordinal"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
+    "frase": "Página do segundo relatório de monitorização",
+    "apanha": false,
+    "razao": "nome ordinal de documento"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/",
+    "frase": "O Orçamento de 2027 · 5 peças, a mais recente de 29.10.2026",
+    "apanha": false,
+    "razao": "índice de navegação"
+  },
+  {
+    "lingua": "pt",
+    "pagina": "/",
+    "frase": "Atualizado a 09.11.2026 · números do painel relidos na fonte a 02.11.2026",
+    "apanha": false,
+    "razao": "data de atualização"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/studies/agua-nao-faturada/document",
+    "frase": "In a Gulbenkian survey carried out in 2019 by C-Lab (published March 2020) among mainland farmers who irrigate holdings of 5 hectares or more, 71% said they had no water meter; INE's Recenseamento Agrícola does not contain this statistic.",
+    "apanha": true,
+    "razao": "atribuição com said"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+    "frase": "The UTAO explains: «O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico.",
+    "apanha": true,
+    "razao": "atribuição e causa"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/studies/a-casa-em-portugal-e-na-europa",
+    "frase": "The PS lists the same deduction among what it has already proposed in Parliament: «Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.», the limit the May decree-law sets for 2027.",
+    "apanha": true,
+    "razao": "citação literal"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura",
+    "frase": "The association's plan for 2026 writes \"no confirmed values\" on the municipality's line, and the 2025 accounts record not one euro from that source.",
+    "apanha": true,
+    "razao": "aspas direitas e atribuição"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/studies/evora-prometido-pago-auditado-2026",
+    "frase": "Money, delivery risk and a thin searchable trail concentrate in the same corner of the same town (inference).",
+    "apanha": true,
+    "razao": "leitura marcada"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/state-and-economy",
+    "frase": "State and economy",
+    "apanha": false,
+    "razao": "state como substantivo"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/state-and-economy",
+    "frase": "20 700 euros per person, at 2015 prices (provisional data)in 2025",
+    "apanha": false,
+    "razao": "per exprime unidade"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en",
+    "frase": "The 2027 Budget · 5 pieces, the most recent from 29.10.2026",
+    "apanha": false,
+    "razao": "índice de navegação"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en",
+    "frase": "Updated on 09.11.2026 · panel figures re-read at the source on 02.11.2026",
+    "apanha": false,
+    "razao": "data de atualização"
+  },
+  {
+    "lingua": "en",
+    "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura",
+    "frase": "Second monitoring report, p. 8",
+    "apanha": false,
+    "razao": "ordinal"
+  }
+]

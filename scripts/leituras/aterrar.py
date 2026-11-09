@@ -481,6 +481,8 @@ class Aterragem:
             self.conferir_arvores()
             self.preparar()
             self.correr('series', ['npm', 'run', 'check:series'])
+            self.correr('ledger-corpos', ['npm', 'run', 'ledger:check'])
+            self.correr('frases-afirmacao', ['npm', 'run', 'check:frases-afirmacao'])
             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])
             self.correr('camada-0', ['npm', 'run', 'verify:com-motor'])
             self.conferir_arvores()

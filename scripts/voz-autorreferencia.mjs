@@ -43,7 +43,7 @@ export function conferirProtecoes(root,rota,livro=claims) {
  }
  return erros;
 }
-export const frasesDoTexto = texto => normal(texto).split(/(?<=[.!?])\s+(?=[A-ZÀ-Þ])/u).filter(f=>CLASSE.test(f));
+export const frasesDoTexto = (texto, filtro = f => CLASSE.test(f)) => normal(texto).split(/(?<=[.!?])\s+(?=[A-ZÀ-Þ])/u).filter(filtro);
 export function medirPagina(html, rota, ledes = {}) {
  const root=parse(html); root.querySelectorAll('script,style').forEach(n=>n.remove());
  const corpo=root.querySelector('body') ?? root;

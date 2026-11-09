@@ -1153,3 +1153,129 @@ afirmação.
 As linhas `nato-defesa-portugal-pib-2025`, `nato-defesa-portugal-pib-2026` e `nato-defesa-portugal-eur-2026` são exportadas por `publisher/export_site_rows.py`, pelo manifesto `publisher/manifest.ex3.json`. As células do Excel da NATO são relidas por `publisher/ex3.py`; o excerto identifica a folha, célula, coluna, preços, unidade, formato numérico e forma impressa no PDF da mesma edição. A marca `e` corresponde à nota de estimativa da fonte e acompanha os valores nas duas edições.
 
 A origem `nato-definicao-despesa-defesa` apoia a definição e a ligação à medida essencial da NATO. O HTML, Excel, PDF, recibos e pasta de direitos ficam no motor. Percentagem do PIB e percentagem da despesa efetiva consolidada da administração central têm denominadores diferentes. A explicação também apresenta a despesa por função do Eurostat, com o seu período, perímetro e contabilidade, conservando as marcas de provisório.
+
+## Frases com afirmação (CAM2-A, 09.11.2026)
+
+O registo em `ledger/frases/*.json` liga prosa impressa às linhas de prova. Cada
+ficheiro contém uma lista de entradas. O nome é o slug do estudo; páginas sem
+estudo usam `pagina-` seguido da rota portuguesa, com barras substituídas por
+hífens. `por-registar.json` é a dívida inicial, não um registo de prova.
+
+Uma entrada tem `id` único, `estudo` (slug ou rota portuguesa canónica), `tipo`
+(`atribuicao`, `causa` ou `leitura`), `pt`, `en` e `linhas`, uma lista não vazia
+de identificadores de `ledger/claims`. Cada linha referida tem de existir e
+conter `excerpt` não vazio e `document.source_sha256` de 64 hexadecimais.
+A referência resolve esses campos no livro, sem manter uma cópia que possa
+ficar desatualizada. Uma `leitura` tem também `razao`, a conta ou razão, e as
+marcas `(cálculo: …)` ou `(inferência)` e os equivalentes ingleses na frase.
+A semente conserva em `origem` as rotas e o método de alinhamento; esse campo
+é informativo e não dispensa a procura independente das frases na conferência.
+
+`node scripts/gerar-frases-afirmacao.mjs dist <destino-novo> <medidas.json>`
+semeia apenas frases com citação portuguesa de pelo menos doze carateres,
+num parágrafo que cite exatamente uma linha com `afirmacao: true`, com a
+citação dentro do excerto e com par inglês encontrado. Não escreve entradas
+à mão, não sobrescreve destinos e recusa mais de 3 000 pendentes.
+As outras frases são auditadas e registadas pela AUD1.
+
+### Âmbito, texto e pares
+
+`rotasDaProsa()` enumera as páginas pelas coleções `WORKS`, `PUBLISHED_EDITIONS`,
+`DOSSIES`, `EXPLICACOES` e `ENTRADAS`, e pela tabela `ROUTES` para as páginas
+literais. Entram documentos atuais, páginas e índice dos estudos, itens em
+discussão, dossiês, temas e entradas temáticas, explicações e leitura semanal,
+correções, início e índice geral. Entram também Sobre, Método, Privacidade e
+Agenda, para que a prosa institucional e de calendário não escape à mesma régua.
+Uma página esperada ausente recusa a conferência.
+
+Ficam fora os recibos do livro e das séries (`livro`, `livroConcelhos`,
+`livroConcelho`, `linha`, `serie`); as páginas geográficas de indicadores
+(`municipios`, `municipio`, `distritos`, `distrito`, `regioes`, `regiao`, `areas`,
+`area`, `dominios`, `dominio`, `uniaoEuropeia`), fora das coleções editoriais
+enumeradas no mandato; o formulário de sugestões e as suas respostas
+funcionais; a antiga rota `texto`, que não é uma edição publicada; o alias
+`marcador`, já lido através de Método; e documentos arquivados datados, cuja
+régua fica para a CAM2-C. A lista de famílias excluídas e a lista completa de
+rotas lidas são emitidas por `scripts/medir-frases-afirmacao.mjs`.
+
+O texto sem selos vem de `textoParaProcura`, da camada 0. O corte vem de
+`frasesDoTexto`, com o filtro de voz desativado apenas para este uso. O filtro
+original continua a ser o valor por omissão. Os blocos usam os seletores da
+paridade. A cobertura normaliza NFKC, remove U+200B, junta espaços e conserva
+maiúsculas, pontuação e palavras. A mesma frase conta uma vez por estudo ou
+página e por língua. As duas línguas são cobertas independentemente.
+
+Os pares usam os índices dos blocos da paridade quando os totais coincidem.
+Se não coincidirem, `emparelharBlocos` da camada 0 procura na vizinhança de três
+blocos, por referências partilhadas ou por tag e quantidade de frases;
+cruzamentos são recusados. Dentro do bloco exigem-se quantidades iguais de
+frases e a mesma posição. Isto é alinhamento estrutural, não verificação
+semântica da tradução. Uma frase sem par pode continuar pendente; não pode
+entrar no registo. O verificador volta a conferir o par, não confia em `origem`.
+
+### Cobertura e dívida que só encolhe
+
+`npm run check:frases-afirmacao` executa plantas e a conferência do `dist/`.
+Cada frase detetada tem de coincidir com `pt` ou `en` de uma entrada do seu
+estudo, ou com uma entrada da lista pendente. Cada pendente contém apenas
+`estudo`, `lingua` e `sha256` da frase normalizada. Duplicados, pendentes sem
+frase atual e frases já registadas ainda na dívida são recusados. Uma reescrita
+muda o resumo e exige registo. Não se pode atualizar a dívida para a acomodar.
+
+A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A régua percorre todos
+os commits que tocaram a lista desde f362f5ccd, compara com cada pai que já
+conhece a dívida e confere também a árvore de trabalho. Um aumento histórico
+recusa mesmo que outro commit o tenha desfeito. Apagar e recriar a lista não
+repõe a autorização inicial. Histórico superficial ou base ausente recusam.
+
+No GitHub, `fetch-depth: 0` fornece o histórico completo e o passo está em
+`verify`, repartido automaticamente pelo portão. Não precisa de rede nem de
+motor privado. No caminho local autorizado, `comitar.sh` corre `--so-lista`
+antes de enviar o pedido ao escrivão, incluindo com `OEDP_GATE=adiado`.
+Este controlo local confere a lista, não reconstrói páginas. A cobertura e a
+remoção de pendentes obsoletos são conferidas pelo `dist/` no portão. Não se
+alega que um commit feito por outro caminho local esteja mecanicamente
+impedido; a validação histórica recusa-o na corrida do GitHub.
+
+### Citações, excertos e corpos
+
+Cada citação portuguesa entre aspas angulares, de pelo menos doze carateres,
+tem de ocorrer no excerto de alguma linha de suporte. Há citação inglesa se e
+só se houver portuguesa; aceitam-se aspas angulares, curvas e direitas em
+inglês. A régua não traduz nem certifica a equivalência semântica da citação.
+
+Com `RESEARCHHUB_DIR`, os corpos são procurados pelos sha256 dos bytes dos
+objetos Git da cabeça do motor e das edições arquivadas do sítio. O módulo
+`scripts/leituras/corpos-ledger.py` chama `indice_dos_corpos` de `pacote.py`,
+sem o duplicar; o pacote continua a usar o mesmo código. O `ledger:check`
+confere todas as linhas que declaram sha256. A conferência das frases lê
+adicionalmente os excertos das suas linhas de suporte.
+
+A extração usa `pdftotext` para PDF, descomprime gzip e lê texto HTML sem scripts
+nem estilos, preservando a junção de elementos em linha. A normalização usa
+NFKC, remove hífen opcional, desfaz hifenização no fim de linha, uniformiza
+aspas curvas simples e duplas e junta espaços. Não ignora palavras, números,
+pontuação, caixa ou a ordem do texto. Um excerto composto que não apareça de
+seguida no corpo recusa; `excerpt_method` não é uma dispensa desta prova.
+
+Sem motor, ambas as conferências escrevem `não leu os corpos` e `limpa=false`.
+O código zero nessa situação certifica apenas a parte executada, nunca os
+corpos ou os excertos. Na aterragem, `ledger:check` e
+`check:frases-afirmacao` correm com o motor, em comandos próprios, e os códigos
+`ledger-corpos.codigo` e `frases-afirmacao.codigo` são relidos antes da fusão.
+
+A amostra de trinta frases por língua é ordenada pelo sha256 de
+`CAM2-A-2026-11-09|<estudo>|<frase>`. A classificação registada nas medidas é
+uma estimativa editorial do construtor, não uma régua nem validação da verdade
+das frases. As plantas reais são exemplos do `dist/` de 09.11.2026, guardados
+com língua e rota; não obrigam as páginas futuras a conservar esse texto.
+
+A comparação CAM2-A, adenda B, usa `scripts/comparar-dist-frases.py`, com a
+base indicada por `OEDP_DIST_BASE`. Recusa uma base que não seja f362f5ccd e
+construções que não pertençam ao mesmo dia UTC atual. Só `version.json` e
+`prova.json` ficam fora. Nas duas páginas Método admite uma única troca de 67
+para 68 no elemento `data-prova="conferencias_da_corrida"`, sem alterar outro
+byte. Todos os restantes ficheiros, incluindo caminhos novos ou apagados, são
+comparados sem normalização. As plantas recusam texto, ligação, campo, número,
+ficheiro ou data fora destas condições. Uma eventual diferença residual de
+relógio tem de ser inspecionada e relatada; o guião não a oculta automaticamente.

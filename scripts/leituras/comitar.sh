@@ -23,6 +23,10 @@ if [ ! -f "$batimento" ] || [ "$(python3 -c 'import os,sys,time; print(int(time.
   echo "comitar: nenhum escrivão a correr para esta worktree; o lançador arranca-o (construir-codex.sh), e à mão corre-se python3 scripts/leituras/escrivao.py <worktree>" >&2
   exit 3
 fi
+# CAM2-A: mesmo com OEDP_GATE=adiado, a dívida de frases não pode crescer.
+if [ -f scripts/check-frases-afirmacao.mjs ]; then
+  node scripts/check-frases-afirmacao.mjs --so-lista || exit 1
+fi
 id=$(date -u +%Y%m%dT%H%M%S)-$$
 pedido="$pasta/pedido-$id.json"
 OEDP_MENSAGEM="$mensagem" python3 - "$pedido" "$raiz" "$@" <<'PY'

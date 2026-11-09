@@ -66,6 +66,8 @@ elif a[:2]==['run','view']:
 else: sys.exit(88)
 ''')
         comando(self.bin, 'npm', comum + '''
+if modo=='ledger-corpos-falha' and a[1]=='ledger:check': sys.exit(12)
+if modo=='frases-afirmacao-falha' and a[1]=='check:frases-afirmacao': sys.exit(13)
 if modo=='series-falha' and a[1]=='check:series': sys.exit(6)
 if modo=='cruzamento-falha' and a[1]=='check:cruzamento': sys.exit(5)
 if a==['run','build']:
@@ -185,7 +187,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
                 self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
 
     def test_conferencias_e_publicacao_falhadas_nao_apagam(self):
-        for modo, codigo in (('series-falha', 6), ('cruzamento-falha', 5), ('push-main-falha', 7), ('vercel-falha', 1), ('deploy-falha', 4)):
+        for modo, codigo in (('ledger-corpos-falha', 12), ('frases-afirmacao-falha', 13), ('series-falha', 6), ('cruzamento-falha', 5), ('push-main-falha', 7), ('vercel-falha', 1), ('deploy-falha', 4)):
             with self.subTest(modo=modo):
                 self.saida = self.p / modo
                 self.chamadas.write_text('')
@@ -193,7 +195,9 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
                 self.assertEqual(r.returncode, codigo)
                 self.assertFalse(any('--delete' in c or '-d' in c for c in chamadas))
                 self.assertEqual(git(self.w, 'branch', '--show-current'), 'ensaio')
-                if modo in ('series-falha', 'cruzamento-falha'):
+                if modo in ('series-falha', 'cruzamento-falha', 'ledger-corpos-falha', 'frases-afirmacao-falha'):
+                    nome = {'ledger-corpos-falha':'ledger-corpos', 'frases-afirmacao-falha':'frases-afirmacao'}.get(modo)
+                    if nome: self.assertEqual((self.saida / (nome + '.codigo')).read_text(), str(codigo) + '\n')
                     self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
 
     def test_camada_zero_vermelha_nao_funde_nem_publica(self):
@@ -270,10 +274,10 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.cabeca)
         self.assertEqual(git(self.w, 'branch', '--show-current'), '')
         self.assertEqual(git(self.main, 'branch', '--list', 'ensaio'), '')
-        for nome in ('series', 'cruzamento', 'camada-0', 'verify-deploy', 'github'):
+        for nome in ('series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'verify-deploy', 'github'):
             self.assertEqual((self.saida / (nome + '.codigo')).read_text(), '0\n')
         passos = [p['passo'] for p in recibo['passos']]
-        ordem = ['publicar-ramo', 'github', 'series', 'cruzamento', 'camada-0', 'fundir-main', 'publicar-main',
+        ordem = ['publicar-ramo', 'github', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'fundir-main', 'publicar-main',
                  'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local']
         self.assertEqual([p for p in passos if p in ordem], ordem)
         self.assertIn(['gh', 'run', 'watch', '123', '--interval', '60', '--exit-status'], chamadas)

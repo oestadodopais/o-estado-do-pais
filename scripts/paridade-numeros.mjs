@@ -1,6 +1,6 @@
 /** HIG-6A: régua da AUD1, com as suas seis plantas conservadas. */
 import {parse} from 'node-html-parser';
-const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote,caption';
+export const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote,caption';
 export const blocosDe = html => { const r = parse(html); r.querySelectorAll('script,style,a.src-chip,.src-chip').forEach(n => n.remove());
   const c = r.querySelector('[data-oedp-moldura]') ?? r.querySelector('main') ?? r;
   return c.querySelectorAll(tags).filter(n => !n.querySelector(tags)).map(n => n.textContent.replace(/​/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean); };

@@ -1,0 +1,332 @@
+[
+  {
+    "id": "f-c3946ec53884a3511a937753",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "O Conselho conta «riscos descendentes», entre eles «um crescimento da massa salarial da economia inferior ao previsto», «um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto» e «a materialização de despesa pública associada a passivos contingentes das AP», onde entram as parcerias público-privadas.",
+    "en": "The Council counts «riscos descendentes» (downside risks), among them «um crescimento da massa salarial da economia inferior ao previsto» (wage bill growth below forecast), «um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto» (a smaller than forecast impact of the fuel anti-fraud measure) and «a materialização de despesa pública associada a passivos contingentes das AP» (public expenditure arising from the public administrations' contingent liabilities), where the public-private partnerships come in.",
+    "linhas": [
+      "og1-cfp-riscos"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-e9ceb98fb46d1a4442b069de",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Inês Sousa Real, do PAN, no debate a 28.10.2026, segundo a RTP: «Este orçamento tem um problema: contas certas, mas prioridades trocadas».",
+    "en": "Inês Sousa Real, of PAN, in the debate on 28.10.2026, as reported by RTP: «Este orçamento tem um problema: contas certas, mas prioridades trocadas».",
+    "linhas": [
+      "og1-pan-abstencao"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-f0fc7316e553d7662d76899c",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "A diferença entre o Governo e o Conselho está no que o Conselho não conta, a começar pelos 300 milhões de euros do combate à fraude nos combustíveis, «a medida de maior dimensão do lado da receita» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, que não encontra na proposta «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação».",
+    "en": "The difference between the Government and the Council lies in what the Council does not count, starting with the 300 million euros of the fight against fuel fraud, «a medida de maior dimensão do lado da receita» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, which does not find in the proposal «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms).",
+    "linhas": [
+      "og1-utao-p42"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-e007586a968f2ada29da7577",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo a RTP, sobre as medidas da habitação: «foi praticamente tudo feito».",
+    "en": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by RTP, on the housing measures: «foi praticamente tudo feito».",
+    "linhas": [
+      "og1-governo-rtp-habitacao"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-117440d22ff0399fb6a4029f",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Comité Central do PCP, no comunicado de 19.10.2026: «O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.» O comunicado não anuncia o voto.",
+    "en": "Comité Central do PCP, in its communiqué of 19.10.2026: «O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.» The communiqué does not announce the vote.",
+    "linhas": [
+      "og1-pcp-comite"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-4f4eefb78eeea81463b4aaea",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Filipe Sousa, do JPP, no debate a 28.10.2026, segundo a RTP: «há muito por resolver».",
+    "en": "Filipe Sousa, of JPP, in the debate on 28.10.2026, as reported by RTP: «há muito por resolver».",
+    "linhas": [
+      "og1-jpp-abstencao"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-094b75b403ff6c263ca9ceb6",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Joaquim Miranda Sarmento, ministro das Finanças, na audição da comissão de Orçamento a 23.10.2026, segundo a RTP, sobre as previsões das entidades nacionais e internacionais: «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas».",
+    "en": "Joaquim Miranda Sarmento, Finance Minister, at the Budget committee hearing on 23.10.2026, as reported by RTP, on the forecasts of national and international bodies: «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas».",
+    "linhas": [
+      "og1-governo-rtp-previsoes"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-c55610c3544d7ae5e3a624da",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Sobre o emprego, a UTAO escreve que o crescimento de 1,4 % em 2027 «é difícil de conciliar com o abrandamento recente da imigração líquida».",
+    "en": "On employment, the UTAO writes that growth of 1,4 % in 2027 «é difícil de conciliar com o abrandamento recente da imigração líquida».",
+    "linhas": [
+      "og1-utao-p15"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-54e58f7671abc49fbedd1cfd",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo o ECO, sobre os juros da dívida: «a nossa subida das taxas de juro é risco de mercado e não risco de país».",
+    "en": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by ECO, on the interest on the debt: «a nossa subida das taxas de juro é risco de mercado e não risco de país».",
+    "linhas": [
+      "og1-governo-eco-juros"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-7a9dab881cf88e748ca8f803",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»",
+    "en": "The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»",
+    "linhas": [
+      "utao-risco-execucao-sns-2027"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-e51ab7fe98da96759502029b",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "A UTAO distingue os pedidos dos encargos efetivos: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»",
+    "en": "The UTAO distinguishes claims from actual charges: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»",
+    "linhas": [
+      "utao-ppp-contingencias-natureza-2026"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-b1793538134ded0557bb4ffa",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Comissão Política Nacional do Partido Socialista, a 22.10.2026, na página do partido: «viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento».",
+    "en": "Comissão Política Nacional do Partido Socialista, on 22.10.2026, on the party's page: «viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento».",
+    "linhas": [
+      "og1-ps-abstencao"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-f96e0af013cc97f5ed153208",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "André Ventura, do Chega, a 28.10.2026, aos jornalistas na Assembleia da República, segundo a RTP, sobre o Governo: «não consegue reconhecer o momento de dificuldade».",
+    "en": "André Ventura, of Chega, on 28.10.2026, to journalists at the Assembly of the Republic, as reported by RTP, on the Government: «não consegue reconhecer o momento de dificuldade».",
+    "linhas": [
+      "og1-chega-voto"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-24f04b82730675baee809b45",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Paulo Raimundo, a 15.10.2026, numa intervenção publicada na página do PCP: «Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.» A intervenção não anuncia o voto.",
+    "en": "Paulo Raimundo, on 15.10.2026, in a speech published on the PCP's page: «Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.» The speech does not announce the vote.",
+    "linhas": [
+      "og1-pcp-raimundo"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-01e4606e75800c78110ed86a",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo o Observador, na escolha entre o IRS Jovem e o prémio salarial: «esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões».",
+    "en": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by Observador, on the choice between the youth income tax and the wage premium: «esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões».",
+    "linhas": [
+      "og1-governo-observador-saldo"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-a5914203ca635e8b1a0cb455",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Isabel Mendes Lopes, do Livre, a 28.09.2026, antes de a proposta dar entrada, segundo o Correio da Manhã: «dificilmente o acompanharemos, como é óbvio».",
+    "en": "Isabel Mendes Lopes, of Livre, on 28.09.2026, before the proposal was tabled, as reported by Correio da Manhã: «dificilmente o acompanharemos, como é óbvio».",
+    "linhas": [
+      "og1-livre-posicao"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-a6f152f19d218729515d4ca1",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %, a mesma que o relatório escreve e que a UTAO, a unidade técnica de apoio orçamental do Parlamento, confirma: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» O número do PCP sobre o investimento coincide com a linha do investimento com o PRR, −33,7 %; sem o PRR, a mesma linha sobe 22,2 %.",
+    "en": "The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the one the report writes and the UTAO, Parliament's technical budget support unit, confirms: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» The PCP's figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %.",
+    "linhas": [
+      "utao-saude-sem-prr-2027"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-53aeca5a1dc1fade66d5f1a5",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "A maior, do lado da receita, é o combate à fraude nos combustíveis, 300 milhões de euros; a UTAO escreve que a proposta «não disponibiliza informação suficientemente detalhada sobre o seu conteúdo» e conta a subexecução entre os riscos.",
+    "en": "The largest, on the revenue side, is the fight against fuel fraud, 300 million euros; the UTAO writes that the proposal «não disponibiliza informação suficientemente detalhada sobre o seu conteúdo» and counts under-execution among the risks.",
+    "linhas": [
+      "og1-utao-p42"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-f3b698ab1b78c59126b1084c",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Mário Amorim Lopes, da Iniciativa Liberal, no debate a 28.10.2026, segundo a RTP, sobre os portugueses e o Governo: «não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor».",
+    "en": "Mário Amorim Lopes, of Iniciativa Liberal, in the debate on 28.10.2026, as reported by RTP, on the Portuguese and the Government: «não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor».",
+    "linhas": [
+      "og1-il-voto"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-21eff4a3222f36a4d2970764",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Jorge Pinto, do Livre, a 28.10.2026, aos jornalistas no Parlamento, segundo a RTP: «Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra».",
+    "en": "Jorge Pinto, of Livre, on 28.10.2026, to journalists in Parliament, as reported by RTP: «Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra».",
+    "linhas": [
+      "og1-livre-voto"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-cc4178b1009970b96f9ae81e",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Mariana Leitão, da Iniciativa Liberal, no título de uma entrevista ao ECO a 06.10.2026: «A prioridade é baixar o IRS e o ISP».",
+    "en": "Mariana Leitão, of Iniciativa Liberal, in the title of an interview with ECO on 06.10.2026: «A prioridade é baixar o IRS e o ISP».",
+    "linhas": [
+      "og1-il-prioridades"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  },
+  {
+    "id": "f-a1f1eb23fd1d8e9342503d69",
+    "estudo": "/o-que-se-discute",
+    "tipo": "atribuicao",
+    "pt": "Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo a RTP, sobre os 300 milhões de euros do combate à fraude nos combustíveis: «são receita do Estado».",
+    "en": "Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by RTP, on the 300 million euros from the fight against fuel fraud: «são receita do Estado».",
+    "linhas": [
+      "og1-governo-rtp-combustiveis"
+    ],
+    "origem": {
+      "pt": "/o-que-se-discute",
+      "en": "/en/under-discussion",
+      "metodo": "blocos"
+    }
+  }
+]

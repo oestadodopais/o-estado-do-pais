@@ -24,7 +24,7 @@ const tags = 'p,li,h1,h2,h3,h4,h5,h6,figcaption,dd,dt,td,th,summary,blockquote';
 const tagsVoz = tags + ',div,section,article';
 // Cada carater do texto com selos conserva a sua projeção no texto sem selos.
 // U+200B marca apenas os carateres retirados e é eliminado pela normalização.
-function textoParaProcura(no) {
+export function textoParaProcura(no) {
   const partes = [], projecoes = [];
   function visitar(n, selo = false) {
     selo ||= n.classList?.contains('src-chip') ?? false;
