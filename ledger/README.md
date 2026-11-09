@@ -1249,14 +1249,21 @@ dos números guardam a proveniência dos valores; a camada 2 guarda as palavras
 das atribuições e das causas. O painel e as revisões mudam datas e valores
 todas as semanas.
 
-A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A adenda F autoriza
-a regeneração antes da aterragem: a base da lista desta série passa a
-d9a6489a9, já com o painel de 09.11.2026. O histórico do pino das marcas mantém a base anterior, sem apagar
-as alterações já conferidas. A régua percorre todos os commits posteriores que tocaram a lista,
-compara com cada pai que já conhece esta semente e confere a árvore de
-trabalho. Um aumento histórico recusa mesmo que depois seja desfeito. Apagar
-e recriar a lista não repõe a autorização inicial. Histórico superficial ou
-base ausente recusam. Não há opção de atualização automática do pino inicial.
+A primeira lista é presa pelo `SEMENTE_SHA256` do guião. A base do histórico
+é `d21c48f0b`, com a semente
+`a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd`.
+A adenda G repõe esta base e esta semente: as listas das adendas E e F
+voltam a ser percorridas. A lista da adenda F só encolheu e nunca justificou
+mover a base. A base só se pode mover quando a mudança da lista não é apenas
+um encolhimento, com a razão escrita no commit. Nunca se move por um
+encolhimento. Os históricos dos pinos das marcas e dos modelos conservam
+as respetivas bases independentes.
+
+A régua percorre todos os commits posteriores que tocaram a lista e compara
+com cada pai que já conhece esta semente, além da árvore de trabalho e do
+índice preparado. Um aumento histórico recusa mesmo que depois seja desfeito.
+Apagar e recriar a lista não repõe a autorização inicial. Histórico superficial
+ou base ausente recusam. Não há atualização automática do pino inicial.
 
 As listas de marcas estão em `scripts/frases-marcas.json`. O pino em
 `scripts/frases-marcas-pino.json` prende os bytes por sha256, com data e razão.
@@ -1362,7 +1369,11 @@ ser conferido sem máscara.
 da semana e a linha do painel no Método, em português e inglês. Cada modelo
 inteiro vira uma expressão regular ancorada. Só se aplica à respetiva coleção.
 As palavras fixas são escapadas literalmente; nomes, unidades e períodos são
-alternativas exatas do catálogo do livro-razão e das funções usadas pela vista.
+alternativas exatas das funções usadas pela vista, apenas para linhas no âmbito
+de `linhaDoAmbito` que tenham pelo menos uma releitura e não sejam afirmações
+(`afirmacao: true` ou unidade `afirmação`). A conferência dos modelos recusa
+qualquer alternativa de indicador, unidade ou período tipada por `tiposDaFrase`
+e identifica a linha, a língua e o campo.
 Valores aceitam apenas sinal, algarismos e separadores; datas aceitam a forma
 dd.mm.aaaa. Não há campo livre capaz de engolir uma oração. Uma nova unidade
 ou um nome não representável fica sujeito à cobertura, sem dispensa automática.
@@ -1378,5 +1389,7 @@ sem pino e razão novos no mesmo commit recusa-se mesmo se for reparada depois.
 
 `node scripts/simular-painel-frases.mjs dist <medidas.json>` lê a projeção
 das páginas construídas e simula outra semana, com datas e valores diferentes
-e um indicador do livro-razão que não figura nas revisões atuais. Não altera
+e um indicador relido do livro-razão que não figura nas revisões atuais.
+Antes da simulação, exige que todas as revisões impressas ainda casem com
+o catálogo restrito. Não altera
 o `dist/`: confere o registo e a cobertura sobre a projeção modificada.

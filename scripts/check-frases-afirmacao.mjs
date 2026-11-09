@@ -10,8 +10,8 @@ import {conferirModelos, conferirPinoModelos} from './frases-modelos.mjs';
 import {conferirOrigem, conferirSemente} from './frases-origem.mjs';
 import {conferirCorpos} from './corpos-ledger.mjs';
 const LISTA = 'ledger/frases/por-registar.json';
-const BASE = 'd9a6489a9';
-export const SEMENTE_SHA256 = 'b83b0a1e558ed6fa2f10cd91bbcaa3c8945932d1d5ac78dd58c58eaba5ff80e4';
+const BASE = 'd21c48f0b';
+export const SEMENTE_SHA256 = 'a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd';
 export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
 export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
 export function lerRegisto(pasta = 'ledger/frases') {

@@ -1,5 +1,6 @@
 /** CAM2-A: deteção sem modelo, sobre o texto impresso sem selos. */
 import fs from 'node:fs';
+import {tiposDaFrase} from './frases-marcas.mjs';
 import {modeloDaFrase} from './frases-modelos.mjs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -21,14 +22,7 @@ export const normal = t => t.normalize('NFKC').replace(/\u200b/g, '').replace(/\
 // Só a identidade editorial omite números; deteção, citações e excertos conservam-nos.
 export const normalDaChave = t => normal(t).replace(/\p{Nd}+(?:(?:[.,:/]\p{Nd}+)|(?: \p{Nd}{3}(?!\p{Nd})))*%?/gu, '⟦número⟧');
 export const sha256 = t => createHash('sha256').update(t).digest('hex');
-export const MARCAS = JSON.parse(fs.readFileSync(new URL('./frases-marcas.json', import.meta.url), 'utf8'));
-const compiladas = MARCAS.map(m => ({...m, re:new RegExp(m.expressao, m.flags)}));
-export const marcasDaFrase = (t, lingua, antes = false) => compiladas.filter(m => m.lingua === lingua && (!antes || m.antes) && m.re.test(t)).map(m => m.id);
-export const marcaLeitura = (t, lingua) => compiladas.some(m => m.lingua === lingua && m.tipo === 'leitura' && m.re.test(t));
-export function tiposDaFrase(t, lingua, antes = false) {
-  const ids = new Set(marcasDaFrase(t, lingua, antes));
-  return ['atribuicao','causa','leitura'].filter(tipo => MARCAS.some(m => m.tipo === tipo && ids.has(m.id)));
-}
+export {MARCAS, marcasDaFrase, marcaLeitura, tiposDaFrase} from './frases-marcas.mjs';
 // O corte adicional pertence só ao detetor; a régua da voz conserva o corte original.
 export const cortar = t => frasesDoTexto(t, () => true).flatMap(f => f.split(/(?<=[.!?]»)\s+(?=\p{Lu})/u));
 // Um fragmento separado de uma frase marcada continua a exigir auditoria.

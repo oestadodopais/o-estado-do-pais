@@ -3,11 +3,12 @@ import fs from 'node:fs';
 import {STRINGS} from '../src/i18n/strings.mjs';
 import {METODO} from '../src/data/metodo.mjs';
 import {allClaims} from '../src/lib/ledger.mjs';
-import {nomeNaSemana} from '../src/lib/leitura-da-semana.mjs';
+import {nomeNaSemana,linhaDoAmbito} from '../src/lib/leitura-da-semana.mjs';
 import {nomeNaLista} from '../src/lib/primeira-pagina.mjs';
 import {unidadeDaLinha} from '../src/i18n/unidades.mjs';
 import {dataDaCasa} from '../src/lib/datas.mjs';
 import {conferirPino} from './frases-pino.mjs';
+import {tiposDaFrase} from './frases-marcas.mjs';
 export const MODELOS=JSON.parse(fs.readFileSync(new URL('./frases-modelos.json',import.meta.url),'utf8'));
 const normal=t=>String(t).normalize('NFKC').replace(/\u200b/g,'').replace(/\s+/g,' ').trim();
 const escapar=t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
@@ -19,22 +20,37 @@ export function modelosDasFontes(strings=STRINGS,metodo=METODO) {
       {id:'painel-'+lingua,lingua,tipo:'metodo',fonte:'src/data/metodo.mjs',modelo:p?.map(t=>typeof t==='string'?t:t.prova==='painel_reconferido_em'?'{data}':'{desconhecido}').join('')??null}];
   });
 }
-export function conferirModelos(lista=MODELOS,strings=STRINGS,metodo=METODO) {
-  return JSON.stringify(lista)===JSON.stringify(modelosDasFontes(strings,metodo))?[]:['modelos: lista diferente dos textos que os ficheiros geram'];
+export function conferirModelos(lista=MODELOS,strings=STRINGS,metodo=METODO,dados=dadosDoCatalogo()) {
+  const erros=JSON.stringify(lista)===JSON.stringify(modelosDasFontes(strings,metodo))?[]:['modelos: lista diferente dos textos que os ficheiros geram'];
+  for(const a of dados.alternativas) if(tiposDaFrase(a.texto,a.lingua).length) erros.push(`modelos: alternativa com afirmação na linha ${a.linha}, ${a.lingua}, ${a.campo}: ${a.texto}`);
+  return erros;
 }
 export const conferirPinoModelos=opcoes=>conferirPino({...opcoes,ficheiros:{marcas:'scripts/frases-modelos.json',pino:'scripts/frases-modelos-pino.json',base:'d9a6489a9'}}).map(e=>e.replaceAll('marcas:','modelos:'));
-let catalogo;
-export function catalogoDosModelos() {
-  if(catalogo)return catalogo;
-  catalogo=Object.fromEntries(['pt','en'].map(l=>[l,{indicador:new Set(),unidade:new Set(),periodo:new Set()}]));
-  for(const linha of allClaims()) for(const lingua of ['pt','en']) {
-    const c=catalogo[lingua], nome=nomeNaSemana(linha.id,lingua);
-    if(nome?.texto)c.indicador.add(normal(nome.texto+(nomeNaLista(linha.id,lingua).qualificador==='ue'?STRINGS[lingua].semana.virgula+STRINGS[lingua].cartao.uniaoEuropeia:'')));
-    c.unidade.add(normal(unidadeDaLinha(linha.unit,lingua).texto));
-    c.periodo.add(normal(dataDaCasa(linha.reference_date,lingua)));
-  }
-  return catalogo;
+export const linhaDoCatalogo = l => Boolean(linhaDoAmbito(l) && Array.isArray(l.verifications) && l.verifications.length && l.afirmacao !== true && normal(l.unit).toLowerCase() !== 'afirmação');
+function alternativasDaLinha(linha,lingua) {
+  const nome=nomeNaSemana(linha.id,lingua);
+  return {
+    indicador:nome?.texto ? nome.texto+(nomeNaLista(linha.id,lingua).qualificador==='ue'?STRINGS[lingua].semana.virgula+STRINGS[lingua].cartao.uniaoEuropeia:'') : '',
+    unidade:unidadeDaLinha(linha.unit,lingua).texto,
+    periodo:dataDaCasa(linha.reference_date,lingua),
+  };
 }
+export function construirCatalogo(linhas=allClaims(),resolver=alternativasDaLinha) {
+  const catalogo=Object.fromEntries(['pt','en'].map(l=>[l,{indicador:new Set(),unidade:new Set(),periodo:new Set()}]));
+  const alternativas=[], elegiveis=[];
+  for(const linha of linhas) {
+    if(!linhaDoCatalogo(linha))continue;
+    elegiveis.push(linha.id);
+    for(const lingua of ['pt','en'])for(const [campo,valor] of Object.entries(resolver(linha,lingua))) {
+      const texto=normal(valor);if(!texto)continue;
+      catalogo[lingua][campo].add(texto);alternativas.push({linha:linha.id,lingua,campo,texto});
+    }
+  }
+  return {catalogo,alternativas,linhas:elegiveis};
+}
+let dados;
+export function dadosDoCatalogo() {return dados??=construirCatalogo();}
+export function catalogoDosModelos() {return dadosDoCatalogo().catalogo;}
 export function expressaoDoModelo(m,catalogos=catalogoDosModelos()) {
   const numero='[-+−]?\\d+(?:[., ]\\d+)*%?', data='\\d{2}\\.\\d{2}\\.\\d{4}';
   const partes=m.modelo.split(/(\{(?:indicador|unidade|periodo|valor|data)\})/u);
