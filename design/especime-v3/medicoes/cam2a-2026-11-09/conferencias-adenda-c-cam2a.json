@@ -1,0 +1,388 @@
+[
+  {
+    "nome": "ledger-com-motor",
+    "comando": [
+      "npm",
+      "run",
+      "ledger:check"
+    ],
+    "codigo": 0,
+    "segundos": 34.479122166056186,
+    "ultimas_linhas": "OG1-E D campo diferente do atual: código 1\nOG1-E D publicador como revisão: código 1\nOG1-E D campo sem mudança: código 1\nOG1-E D campo fora da lista: código 1\nOG1-E D história do valor partida: código 1\nOG1-E D: 37 plantas e controlos; trinta correções de campo e a contagem conferidas.\ncorpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos\nM83: corpos lidos; 795/795 linhas; limpa=true; recusas=0"
+  },
+  {
+    "nome": "ledger-sem-motor",
+    "comando": [
+      "npm",
+      "run",
+      "ledger:check"
+    ],
+    "codigo": 0,
+    "segundos": 11.477341416757554,
+    "ultimas_linhas": "OG1-E D campo diferente do atual: código 1\nOG1-E D publicador como revisão: código 1\nOG1-E D campo sem mudança: código 1\nOG1-E D campo fora da lista: código 1\nOG1-E D história do valor partida: código 1\nOG1-E D: 37 plantas e controlos; trinta correções de campo e a contagem conferidas.\ncorpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos\nM83: não leu os corpos: RESEARCHHUB_DIR ausente; 0/795 linhas; limpa=false; recusas=0"
+  },
+  {
+    "nome": "pre-mandato",
+    "comando": [
+      "npm",
+      "run",
+      "check:pre-mandato"
+    ],
+    "codigo": 0,
+    "segundos": 37.93368333391845,
+    "ultimas_linhas": "{\"pre_voo_segundos\": {\"livre\": 0.0739521668292582, \"ocupada\": 0.07226079190149903}}\n....\n----------------------------------------------------------------------\nRan 4 tests in 9.369s\n\nOK\ncamada 0: 43 plantas e controlos da ligação, incluindo o pré-mandato ponta a ponta\ncamada 0 na cadeia: controlo verde e 12 desligamentos recusados"
+  },
+  {
+    "nome": "typecheck",
+    "comando": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "codigo": 0,
+    "segundos": 0.6066607502289116,
+    "ultimas_linhas": "\n> o-estado-do-pais@0.1.0 typecheck\n> tsc -p tsconfig.check.json\n"
+  },
+  {
+    "nome": "plantas-corpos",
+    "comando": [
+      "python3",
+      "tests/leituras/corpos-ledger.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.17330295825377107,
+    "ultimas_linhas": "corpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos"
+  },
+  {
+    "nome": "plantas-comparacao",
+    "comando": [
+      "python3",
+      "tests/leituras/comparar-dist-frases.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.05293566593900323,
+    "ultimas_linhas": "comparação: controlo verde; 11 alterações ou condições inválidas recusadas; só o campo 67 para 68 passa"
+  },
+  {
+    "nome": "apoio_ferramentas",
+    "comando": [
+      "python3",
+      "tests/leituras/apoio_ferramentas.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.027823624666780233,
+    "ultimas_linhas": ""
+  },
+  {
+    "nome": "at1",
+    "comando": [
+      "python3",
+      "tests/leituras/at1.py"
+    ],
+    "codigo": 0,
+    "segundos": 23.617289875168353,
+    "ultimas_linhas": "................\n----------------------------------------------------------------------\nRan 16 tests in 23.518s\n\nOK\n{\"dupla\": [\"build\", \"build\"], \"segundos\": 1.195042791776359, \"sem_espera\": 0.3047437500208616, \"intervalo\": 0.14317754097282887}\n{\"dupla\": [\"corrida\", \"corrida\"], \"segundos\": 10.5240210830234, \"sem_espera\": 0.30030199978500605, \"intervalo\": 9.470057917293161}\n{\"dupla\": [\"build\", \"corrida\"], \"segundos\": 10.502609208226204, \"sem_espera\": 0.30540087493136525, \"intervalo\": 9.752541999798268}"
+  },
+  {
+    "nome": "at1_aterrar",
+    "comando": [
+      "python3",
+      "tests/leituras/at1_aterrar.py"
+    ],
+    "codigo": 0,
+    "segundos": 17.189742375165224,
+    "ultimas_linhas": ".......\n----------------------------------------------------------------------\nRan 7 tests in 17.112s\n\nOK"
+  },
+  {
+    "nome": "at1_partes",
+    "comando": [
+      "python3",
+      "tests/leituras/at1_partes.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.06054570898413658,
+    "ultimas_linhas": "AT1: união inteira verde; faltas, repetições, vermelhos e outras construções recusados\n{\"sem_motor\":true,\"verify\":67,\"build\":24,\"partes\":41,\"reservados\":[\"npm run check:pre-mandato\",\"npm run check:frases-reais\"]}"
+  },
+  {
+    "nome": "aterrar",
+    "comando": [
+      "python3",
+      "tests/leituras/aterrar.py"
+    ],
+    "codigo": 0,
+    "segundos": 3.3069932498037815,
+    "ultimas_linhas": "    {\n      \"planta\": \"verde\",\n      \"codigo\": 0,\n      \"mensagem\": \"ATERROU: aaaaaaaa no ar, verify:deploy verde, portao já conferido nesta cabeça · 12:43:00 UTC\",\n      \"passou\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "briefs-presos",
+    "comando": [
+      "python3",
+      "tests/leituras/briefs-presos.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.27689400035887957,
+    "ultimas_linhas": "      \"mensagens\": [\n        \"BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\\n      comando: ensaio sintético\",\n        \"BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\\n      «Há 13 objetos (`objetos`).»\"\n      ],\n      \"passou\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "comparar-alvos",
+    "comando": [
+      "python3",
+      "tests/leituras/comparar-alvos.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.026134708430618048,
+    "ultimas_linhas": "{\"ok\": true, \"casos\": [{\"planta\": \"página alterada\", \"mensagem\": \"paginas: comparação diferente\", \"passou\": true}]}"
+  },
+  {
+    "nome": "ferramenta_modelos_novos",
+    "comando": [
+      "python3",
+      "tests/leituras/ferramenta_modelos_novos.py"
+    ],
+    "codigo": 0,
+    "segundos": 1.0436267079785466,
+    "ultimas_linhas": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.999s\n\nOK"
+  },
+  {
+    "nome": "ferramentas",
+    "codigo": null,
+    "estado": "delegado à direção fora da sandbox pela adenda B"
+  },
+  {
+    "nome": "fila",
+    "comando": [
+      "python3",
+      "tests/leituras/fila.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.06758083309978247,
+    "ultimas_linhas": "test_sexta_maquinaria_passa_conteudo_pronto (__main__.Fila.test_sexta_maquinaria_passa_conteudo_pronto) ... ok\ntest_so_primeira_tabela_ativa (__main__.Fila.test_so_primeira_tabela_ativa) ... ok\ntest_tipos_dos_blocos_aterrados (__main__.Fila.test_tipos_dos_blocos_aterrados) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.007s\n\nOK"
+  },
+  {
+    "nome": "listas-de-uma-linha",
+    "comando": [
+      "python3",
+      "tests/leituras/listas-de-uma-linha.py"
+    ],
+    "codigo": 0,
+    "segundos": 4.703980999998748,
+    "ultimas_linhas": "test_guiao_corrigido (__main__.ListasDeUmaLinha.test_guiao_corrigido) ... ok\ntest_linha_antiga_morde (__main__.ListasDeUmaLinha.test_linha_antiga_morde) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 4.661s\n\nOK"
+  },
+  {
+    "nome": "medicoes-pl1",
+    "comando": [
+      "python3",
+      "tests/leituras/medicoes-pl1.py"
+    ],
+    "codigo": 0,
+    "segundos": 1.2514959168620408,
+    "ultimas_linhas": "ok\ntest_uso_dos_tres (__main__.Medicoes.test_uso_dos_tres) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 1.163s\n\nOK\n<sys>:0: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  {
+    "nome": "pacote-portoes",
+    "comando": [
+      "python3",
+      "tests/leituras/pacote-portoes.py"
+    ],
+    "codigo": 0,
+    "segundos": 1.2944749160669744,
+    "ultimas_linhas": "    },\n    {\n      \"planta\": \"citação sem linha de origem\",\n      \"mensagem\": \"O pacote recusa a citação: med/portoes/verify.log: não existe uma linha que comece por «npm run check:ausente ·».\",\n      \"passou\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "pacote-recibo",
+    "comando": [
+      "python3",
+      "tests/leituras/pacote-recibo.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.08019729098305106,
+    "ultimas_linhas": "EO1-d pacote: cópias com hash igual, preferência pelo recibo: código 0"
+  },
+  {
+    "nome": "pacote",
+    "comando": [
+      "python3",
+      "tests/leituras/pacote.py"
+    ],
+    "codigo": 0,
+    "segundos": 8.42785712517798,
+    "ultimas_linhas": "      \"passou\": true\n    },\n    {\n      \"nome\": \"COR-AGUA: causa da recusa sitio-sem-rota-arquivada\",\n      \"passou\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "portoes",
+    "comando": [
+      "python3",
+      "tests/leituras/portoes.py"
+    ],
+    "codigo": 0,
+    "segundos": 17.384833000134677,
+    "ultimas_linhas": "    },\n    {\n      \"planta\": \"motor exercido sob a tranca comum\",\n      \"codigo\": 0,\n      \"mensagem\": \"Motor e sítio conferidos antes de soltar a tranca.\"\n    }\n  ]\n}"
+  },
+  {
+    "nome": "privacidade-jd1",
+    "comando": [
+      "python3",
+      "tests/leituras/privacidade-jd1.py"
+    ],
+    "codigo": 0,
+    "segundos": 2.825195500161499,
+    "ultimas_linhas": "  \"passou\": true,\n  \"casos\": [\n    \"A guarda lê a lista real do Git e recusa ambos os fragmentos, incluindo gzip.\",\n    \"A limpeza rastreada só altera a lista do Git; guarda verde, gzip legível e segunda passagem sem mudanças.\",\n    \"A worktree e a pasta principal do sítio têm marcas distintas, sem raiz local.\",\n    \"As raízes históricas, também mascaradas, desaparecem sem perder caminhos dentro do repositório.\"\n  ]\n}"
+  },
+  {
+    "nome": "privacidade-rh1b",
+    "comando": [
+      "python3",
+      "tests/leituras/privacidade-rh1b.py"
+    ],
+    "codigo": 0,
+    "segundos": 3.110838582739234,
+    "ultimas_linhas": "      \"mordeu\": true\n    },\n    {\n      \"id\": \"regra-dos-alvos-limitada-as-medicoes\",\n      \"mordeu\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "privacidade-rh1c",
+    "comando": [
+      "python3",
+      "tests/leituras/privacidade-rh1c.py"
+    ],
+    "codigo": 0,
+    "segundos": 3.101578874979168,
+    "ultimas_linhas": "      \"mordeu\": true\n    },\n    {\n      \"id\": \"mutacao-identidades-nos-autores\",\n      \"mordeu\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "privacidade-rh1d",
+    "comando": [
+      "python3",
+      "tests/leituras/privacidade-rh1d.py"
+    ],
+    "codigo": 0,
+    "segundos": 1.0837667500600219,
+    "ultimas_linhas": "      \"mordeu\": true\n    },\n    {\n      \"id\": \"detetor-cego-recusa-plantas\",\n      \"mordeu\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "privacidade-rh1e",
+    "comando": [
+      "python3",
+      "tests/leituras/privacidade-rh1e.py"
+    ],
+    "codigo": 0,
+    "segundos": 2.3996950001455843,
+    "ultimas_linhas": "      \"mordeu\": true\n    },\n    {\n      \"id\": \"colapso-prematuro-recusa-oito-plantas\",\n      \"mordeu\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "privacidade-segredo",
+    "comando": [
+      "python3",
+      "tests/leituras/privacidade-segredo.py"
+    ],
+    "codigo": 0,
+    "segundos": 32.44231399986893,
+    "ultimas_linhas": "      \"mordeu\": true\n    },\n    {\n      \"id\": \"ci-nao-le-casa\",\n      \"mordeu\": true\n    }\n  ]\n}"
+  },
+  {
+    "nome": "tempos",
+    "comando": [
+      "python3",
+      "tests/leituras/tempos.py"
+    ],
+    "codigo": 0,
+    "segundos": 0.9402589998207986,
+    "ultimas_linhas": "tempos: a chamada por ligação escreveu os mesmos tempos.json.\ntempos: o ambiente chegou; o código 7 foi conservado; o passo seguinte não correu; cada passo tem início, fim e duração."
+  },
+  {
+    "nome": "frases-com-motor",
+    "comando": [
+      "npm",
+      "run",
+      "check:frases-afirmacao"
+    ],
+    "codigo": 0,
+    "segundos": 35.299984250217676,
+    "ultimas_linhas": "> node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs\n\nadenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos\níndice preparado: uma recusa impede o commit no escrivão\nAUD1: contrações e verbos portugueses conferidos\nfrases-afirmacao: 20 plantas reais; 21 estragos recusados; semente, vizinhança, histórico e cadeia conferidos\nfrases: 2162; registo: 22; por registar: 2118; recusas: 0\nexcertos: corpos lidos; limpa=true; linhas lidas=21"
+  },
+  {
+    "nome": "frases-sem-motor",
+    "comando": [
+      "npm",
+      "run",
+      "check:frases-afirmacao"
+    ],
+    "codigo": 0,
+    "segundos": 13.72297141700983,
+    "ultimas_linhas": "> node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs\n\nadenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos\níndice preparado: uma recusa impede o commit no escrivão\nAUD1: contrações e verbos portugueses conferidos\nfrases-afirmacao: 20 plantas reais; 21 estragos recusados; semente, vizinhança, histórico e cadeia conferidos\nfrases: 2162; registo: 22; por registar: 2118; recusas: 0\nexcertos: não leu os corpos: RESEARCHHUB_DIR ausente; limpa=false; linhas lidas=0"
+  },
+  {
+    "nome": "comparacao",
+    "comando": [
+      "python3",
+      "scripts/comparar-dist-frases.py",
+      "dist",
+      "<temporario>"
+    ],
+    "codigo": 0,
+    "segundos": 8.07637754175812,
+    "ultimas_linhas": "{\"ok\": true, \"dia_utc\": \"2026-11-09\", \"ficheiros\": 25304, \"paginas_html\": 9878, \"iguais_byte_a_byte\": 25302, \"metodo_autorizadas\": 2, \"novas\": 0, \"apagadas\": 0, \"outras_diferencas\": 0}"
+  },
+  {
+    "nome": "semente",
+    "comando": [
+      "node",
+      "scripts/gerar-frases-afirmacao.mjs",
+      "dist",
+      "<temporario>",
+      "<temporario>"
+    ],
+    "codigo": 0,
+    "segundos": 10.015167749952525,
+    "ultimas_linhas": "{\"frases\":2162,\"registo\":22,\"por_registar\":2118,\"semente_sha256\":\"d8a2a98728ddba84e2479f2a57e7b29cb37afec76123eec4ffd2bde90b41ca4b\"}"
+  },
+  {
+    "nome": "medidas",
+    "comando": [
+      "node",
+      "scripts/medir-frases-afirmacao.mjs",
+      "dist",
+      "<temporario>"
+    ],
+    "codigo": 0,
+    "segundos": 16.050214666407555,
+    "ultimas_linhas": "{\"frases\":2162,\"pt\":1055,\"en\":1107,\"registo\":22,\"por_registar\":2118,\"pares\":{\"pt_para_en\":{\"pares\":846,\"sem_par\":209,\"falhas_antes\":153,\"falhas_depois\":60},\"en_para_pt\":{\"pares\":1046,\"sem_par\":61,\"falhas_antes\":260,\"falhas_depois\":260}},\"registo_por_rota\":{\"/o-que-se-discute\":22,\"/en/under-discussion\":22}}"
+  },
+  {
+    "nome": "build",
+    "comando": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": "OG1 pt: planta de data trocada e planta de partido trocado recusadas.\nOG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.\nOG1 pt: planta do bloco da citação alterado recusada.\nOG1 en: planta de data trocada e planta de partido trocado recusadas.\nOG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.\nOG1 en: planta do bloco da citação alterado recusada.\nPASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições.\n{\"tranca\": \"libertada\", \"espera_segundos\": 0.00014795782044529915, \"execucao_segundos\": 933.5609250832349, \"codigo\": 0}"
+  },
+  {
+    "nome": "plantas-aterragem",
+    "comando": [
+      "python3",
+      "tests/leituras/ferramenta_aterrar.py"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 52.389s\n\nOK"
+  },
+  {
+    "nome": "plantas-escrivao-fusao",
+    "comando": [
+      "python3",
+      "tests/leituras/ferramenta_fundir.py"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": "........\n----------------------------------------------------------------------\nRan 8 tests in 5.659s\n\nOK"
+  },
+  {
+    "nome": "indice-preparado",
+    "comando": [
+      "sh",
+      "scripts/leituras/comitar.sh",
+      "--conferir-indice"
+    ],
+    "codigo": 0,
+    "ultimas_linhas": "por registar: histórico e índice preparado; recusas=0"
+  }
+]

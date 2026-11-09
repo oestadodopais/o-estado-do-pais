@@ -1,0 +1,34 @@
+{
+  "base_commit": "f362f5ccd60dd7e81d12f4ff194b16bc72714b30",
+  "atual_commit": "ad3505c52669aaa677902cc12219dfd5bf40f4d2",
+  "base_construido_em": "2026-11-09T10:44:13.922Z",
+  "atual_construido_em": "2026-11-09T12:41:57.044Z",
+  "dia_utc": "2026-11-09",
+  "ficheiros_base": 25304,
+  "ficheiros_atual": 25304,
+  "paginas_html": 9878,
+  "iguais_byte_a_byte": 25302,
+  "diferencas_autorizadas": [
+    {
+      "pagina": "en/method/index.html",
+      "campo": "conferencias_da_corrida",
+      "antes": 67,
+      "depois": 68
+    },
+    {
+      "pagina": "metodo/index.html",
+      "campo": "conferencias_da_corrida",
+      "antes": 67,
+      "depois": 68
+    }
+  ],
+  "novas": [],
+  "apagadas": [],
+  "outras_diferencas": [],
+  "paginas_metodo_ausentes": [],
+  "excluidos": [
+    "prova.json",
+    "version.json"
+  ],
+  "ok": true
+}
