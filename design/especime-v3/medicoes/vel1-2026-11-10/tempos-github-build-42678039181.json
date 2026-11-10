@@ -1,0 +1,31 @@
+{
+ "fonte": "corrida portão 42678039181 (ramo, 09.11.2026): o registo do trabalho construir, de marca a marca",
+ "segundos": {
+  "npm run check:edicoes": 31.1,
+  "npm run check:selos": 20.9,
+  "npm run check:datas": 21.8,
+  "npm run check:dados": 3.1,
+  "npm run check:mapa": 1.0,
+  "npm run check:regioes": 0.6,
+  "npm run check:areas": 1.2,
+  "npm run check:formas": 28.8,
+  "npm run check:lugares": 3.9,
+  "npm run check:pais": 261.1,
+  "npm run check:voz": 603.2,
+  "npm run check:paridade": 1.3,
+  "npm run check:nomes": 6.6,
+  "npm run check:lingua": 67.5,
+  "npm run check:formato": 2.2,
+  "npm run check:navegacao": 33.8,
+  "npm run sinais": 3.5,
+  "npm run check:discussao": 101.9,
+  "npm run ledger:check": 25.0,
+  "npm run check:registo": 4.5,
+  "npm run check:cruzamento": 13.9,
+  "npm run check:documentos": 70.9,
+  "npm run cartoes": 195.8,
+  "npm run gate:html": 200.9,
+  "npm run check:cadeia": 1.0,
+  "npm run mapa:unidades": 0.2
+ }
+}
