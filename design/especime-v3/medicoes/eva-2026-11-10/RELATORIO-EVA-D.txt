@@ -1,0 +1,199 @@
+EVA D: o título do plano de 2026 e o portão integral
+
+1. Título documental
+
+As 17 linhas próprias do plano levam «GRANDES OPÇÕES DO PLANO E ORÇAMENTO
+2026». A prova em titulos-documentais.json conserva o PDF
+Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf, o sha256
+7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04,
+a página 1, a data 2026-11-10, o leitor «lugar de direção (Claude Fable 5.2)»
+e a transcrição das quatro linhas comunicada na adenda D. Diz expressamente
+«lido na imagem»: a camada de texto só contém «i». O construtor verificou
+o resumo e a existência da página; a leitura visual é a comunicada pelo
+lugar de direção. Não se apresenta essa leitura como extração automática.
+
+A régua conserva a prova literal dos outros dez títulos. O título inventado
+continua a ser recusado. A leitura por imagem exige resumo, página positiva
+e existente, data válida, leitor e razão. As plantas retiram cada metadado,
+trocam o resumo, usam página zero, booleana ou inexistente, data impossível,
+leitor vazio, modo desconhecido e título inventado. Passaram os 15 testes
+de core.eva_test, incluindo as duas plantas de títulos.
+
+A preparação foi regenerada. Os ajustes ativos e candidatos receberam
+apenas os 17 títulos; os restantes campos das linhas próprias são iguais.
+O compositor regenerou o livro e a proveniência. Foram regenerados os HTML
+e os registos, que conservaram os bytes. A primeira exportação isolada não
+tinha carregado o índice global de resumos das fontes; a comparação apanhou
+a perda de metadados. Refeita com digestos_de antes de limitar a exportação
+ao estudo 16, reproduziu exatamente os registos anteriores e o manifesto.
+As 502 unidades PT e as 502 EN passaram na composição e na suite EVA.
+As duas referências julgadas conservam os bytes e os resumos.
+
+2. Língua e estudo 11
+
+A declaração document_languages do relatório inglês da Segurança Social
+fica intacta. O ficheiro não tem língua reconhecível no nome nem HTML par.
+A declaração permite as 16 ocorrências da forma decimal com milhares
+separados por espaços e ponto decimal. O HTML português declara pt-PT.
+
+A regra atual só recusa a forma como «87 682 770.50» fora do inglês.
+Não verifica toda a convenção decimal de uma língua. A leitura numérica
+continua a aceitar ambas as formas; esta restrição é editorial.
+A prioridade é lang do HTML, depois HTML com o mesmo nome do Markdown,
+depois marca de língua reconhecida no nome, depois document_languages,
+e finalmente pt por omissão. Uma declaração contraditória recusa.
+O padrão atual do nome não reconhece o sufixo (pt-PT). Nenhum dos 59
+documentos medidos pelo portão obtém a língua diretamente do nome.
+
+Ficaram a passar por omissão os documentos ingleses do estudo 03 e os
+relatórios ingleses dos estudos 10 e 12. A função devolve pt; não têm hoje
+a forma decimal que a regra recusa. Isso não prova que a língua esteja
+corretamente identificada. Ficaram também por omissão os documentos
+portugueses do estudo 03, artifact_pt.html do estudo 06 e RELATORIO-D1.md
+do estudo 13. Não se alteraram esses documentos nem os seus livros.
+
+Inventário de todos os documentos medidos pelo portão, incluindo os estudos
+com edição inglesa. Cada Markdown que remete para HTML usa o ficheiro com
+o mesmo nome e extensão .html. «Formas» conta a forma decimal afetada.
+
+03 Regional Economy
+  Portugal Regional Economic Assessment 2026.md: pt; omissão: pt; formas=0.
+  Avaliação Económica Regional de Portugal 2026 (pt-PT).md: pt; omissão: pt; formas=0.
+  Technical Source/artifact_pt.html: pt; omissão: pt; formas=0.
+
+01 Energy Water and Climate
+  Onde Está a Água 2026 (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  Portugal Perdas de Água na Distribuição 2026.html: pt-PT; HTML lang=pt-PT; formas=0.
+  Portugal Water Distribution Losses 2026.html: en; HTML lang=en; formas=0.
+
+04 Évora Public Money
+  Évora — Promised, Paid, Audited 2026.md: en; HTML par: HTML lang=en; formas=0.
+  Évora — Promised, Paid, Audited 2026.html: en; HTML lang=en; formas=0.
+  Évora — Prometido, Pago, Auditado 2026 (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  Évora — Prometido, Pago, Auditado 2026 (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+
+06 Évora Economy
+  Évora — Economy, Investors, Open Doors 2026.md: en; HTML par: HTML lang=en; formas=0.
+  Évora — Economy, Investors, Open Doors 2026.html: en; HTML lang=en; formas=0.
+  Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  Technical Source/artifact_pt.html: pt; omissão: pt; formas=0.
+
+07 Évora Municipal Accounts
+  Évora — Budgeted, Paid, Owed 2025.md: en; HTML par: HTML lang=en; formas=0.
+  Évora — Budgeted, Paid, Owed 2025.html: en; HTML lang=en; formas=0.
+  Évora — Orçamentado, Pago, Devido 2025 (pt-PT).md: pt; HTML par: HTML lang=pt; formas=0.
+  Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html: pt; HTML lang=pt; formas=0.
+
+08 Évora Mandates
+  Évora — Fifteen Years, Five Mandates.md: en; HTML par: HTML lang=en; formas=0.
+  Évora — Fifteen Years, Five Mandates.html: en; HTML lang=en; formas=0.
+  Évora — Quinze Anos, Cinco Mandatos (pt-PT).md: pt; HTML par: HTML lang=pt; formas=0.
+  Évora — Quinze Anos, Cinco Mandatos (pt-PT).html: pt; HTML lang=pt; formas=0.
+
+09 Évora Pelouros
+  Évora — The Portfolios, Who Held Them, What They Did.md: en; HTML par: HTML lang=en; formas=0.
+  Évora — The Portfolios, Who Held Them, What They Did.html: en; HTML lang=en; formas=0.
+  Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).md: pt; HTML par: HTML lang=pt; formas=0.
+  Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html: pt; HTML lang=pt; formas=0.
+
+10 Housing
+  Technical Source/SURVEY.md: pt; omissão: pt; formas=0.
+  Technical Source/SQ3.md: pt; omissão: pt; formas=0.
+  Technical Source/ACCOUNTING.md: pt; omissão: pt; formas=0.
+  Technical Source/SQ7.md: pt; omissão: pt; formas=0.
+
+12 Concelhos
+  RELATORIO-P1.md: pt; omissão: pt; formas=0.
+  RELATORIO-P3.md: pt; omissão: pt; formas=0.
+  RELATORIO-P4.md: pt; omissão: pt; formas=0.
+
+13 Dominios
+  RELATORIO-D1.md: pt; omissão: pt; formas=0.
+
+14 Évora 2027
+  Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  Évora 2027 — Promised, Panel, Money.md: en; HTML par: HTML lang=en; formas=0.
+  Évora 2027 — Promised, Panel, Money.html: en; HTML lang=en; formas=0.
+
+11 Seguranca Social
+  Penalizações por Reforma Antecipada em Portugal (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  RELATORIO-seguranca-social.md: en; declaração document_languages; formas=16.
+
+16 Évora Contas da Câmara
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  The accounts of the Câmara de Évora, 2010 to 2025.md: en; HTML par: HTML lang=en; formas=5.
+  The accounts of the Câmara de Évora, 2010 to 2025.html: en; HTML lang=en; formas=5.
+
+17 Évora Quem Governou
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+
+18 Évora Economia e Dinheiro de Fora
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  The economy of Évora and the public money that reaches the municipality outside the council.md: en; HTML par: HTML lang=en; formas=0.
+  The economy of Évora and the public money that reaches the municipality outside the council.html: en; HTML lang=en; formas=0.
+
+19 Évora 2027 Capital Europeia da Cultura
+  Évora 2027, Capital Europeia da Cultura (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  Évora 2027, Capital Europeia da Cultura (pt-PT).html: pt-PT; HTML lang=pt-PT; formas=0.
+  Évora 2027, European Capital of Culture.md: en; HTML par: HTML lang=en; formas=0.
+  Évora 2027, European Capital of Culture.html: en; HTML lang=en; formas=0.
+
+27 Orcamento 2027 O que muda
+  O Orçamento de 2027, o que muda e para quem (pt-PT).md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  The 2027 Budget, what changes, and for whom.md: en; HTML par: HTML lang=en; formas=0.
+
+28 Habitacao Estudo
+  A casa em Portugal e na Europa.md: pt-PT; HTML par: HTML lang=pt-PT; formas=0.
+  Housing in Portugal and in Europe.md: en; HTML par: HTML lang=en; formas=0.
+
+3. Preservação e portão
+
+Os 3 270 ficheiros rastreados dos outros estudos têm os mesmos resumos
+sha256 da entrada nesta passagem. Os 145 ficheiros da prova histórica
+outros-estudos-eva-c.json também conferem. A comparação Git com f30b0df,
+a cabeça anterior à adenda C, só encontra o ledger.json do estudo 11 fora
+do estudo 16; retirando document_languages, o objeto é igual ao anterior.
+A prova medida está em Technical Source/eva/preparado/medidas-eva-d.json.
+
+Portão integral: verde, código 0. Uma corrida de core.gate, pelo curto.sh,
+em 1 231 segundos, com 389 linhas no registo eva-d-gate.log. Código guardado
+em eva-d-gate.codigo. Não foi necessária uma segunda corrida de reparação.
+
+Últimas oito linhas do portão, copiadas do registo:
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Execução: uma suite dirigida (core.eva_test, 15 testes) e uma corrida
+integral de core.gate. A preparação, composição, renderização e duas
+exportações foram executadas; a segunda exportação corrigiu a chamada do
+construtor, sem alteração ao código do exportador. A comparação estruturada
+inicial detetou essa diferença; a comparação final passou. Nenhum portão
+do sítio nem captura foi pedido ou executado.
+A tentativa de observar processos durante a espera foi recusada pela
+sandbox: PermissionError: [Errno 1] Operation not permitted: 'ps'.
+Isso não impediu a conclusão do portão; não foi pedida escalada.
+
+Commit aceite pelo escrivão: 5925531cd50b6f0b9cafbcfbfd71350c13e61e5f.
+Dez ficheiros no commit; árvore do motor limpa após o commit. O código e
+os produtos conferidos pelo portão são os desta cabeça final. Depois do
+portão só se acrescentou o resultado medido ao ficheiro de provas.
+O hook declarou: «pre-commit: core.gate adiado para a aterragem
+(OEDP_GATE=adiado)». Não se conta isso como uma segunda corrida nem como
+prova independente; a prova é o core.gate integral verde desta passagem.
+
+Chamadas de ferramentas na conversa, incluindo as esperas e a conferência
+final do relatório: 54. Corridas de suites dirigidas: 1. Corridas integrais
+de core.gate: 1. Portões do sítio: 0. Capturas: 0.
+
+
