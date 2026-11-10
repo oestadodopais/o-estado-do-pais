@@ -1,0 +1,20 @@
+VEL1, adenda C, 10.11.2026
+
+1. A fila aceita «gargalo medido:» com a linha ou o ficheiro da medição na razão do próprio bloco de maquinaria, em qualquer dia. A declaração vazia recusa, mesmo à sexta-feira; num bloco de conteúdo não dá prioridade. Não ultrapassa outro bloco de maquinaria pronto. A linha do VEL1 declara tempos-github-42897032498.json, e a introdução da fila acompanha a regra. As plantas cobrem conteúdo antes e depois da maquinaria, a terça-feira, a sexta-feira e a declaração na coluna errada. <!-- portao: evidencias-adenda-c/verify.log | VEL1 C fila: código 0 -->
+
+2. O orçamento aceita um inteiro positivo, uma cadeia só com esse inteiro, ou «sem teto» com decisão citada. O campo ausente mantém o teto de 10. Texto como «cerca de 7», valores nulos, booleanos, decimais e tetos não positivos recusam com «orçamento ilegível». Os pontos ficam no recibo, também nas recusas. Vinte pontos com «sem teto por bloco desde 07.11.2026 (§1.232)» aterram sem ATERRAR_DECISAO; o recibo guarda «sem teto» e §1.232. Sete pontos de teto com dez medidos exigem a decisão. A planta antiga com «menos de 10» passou a declarar o inteiro 10. <!-- portao: evidencias-adenda-c/verify.log | VEL1 C pl1: código 0 -->
+<!-- portao: evidencias-adenda-c/verify.log | VEL1 C ferramenta_aterrar: código 0 -->
+
+3. Depois da promoção, verify:deploy, destaque da worktree e eliminação do ramo, um comando próprio remove a worktree a partir da árvore principal. Não força a remoção. Ignorados não bloqueiam; ficheiros novos, alterações e alterações no índice conservam a worktree e ficam nomeados no recibo. ATERRAR_CONSERVA_WORKTREE=1 conserva e regista. Falhas da consulta ou remoção ficam como aviso sem mudar o código da aterragem. Uma falha anterior não chega à limpeza. O auxiliar arvores.py conserva em memória o módulo que higieniza os registos: a prova copia a ferramenta para a worktree removida e confirma que o recibo final sobrevive. Nove plantas de limpeza passaram. <!-- portao: evidencias-adenda-c/verify.log | VEL1 C vel1_limpeza: código 0 -->
+
+Prova final: quinze comandos, todos com código 0. Os comandos exatos e códigos estão em evidencias-adenda-c/codigos.json, e os registos individuais na mesma pasta. Correram fila.py, pl1.py, ferramenta_aterrar.py, aterrar.py, at1_aterrar.py e todos os vel1_*.py, incluindo vel1_limpeza.py; também npm run check:mortos e npm run check:repositorio. Aterragem, GitHub, Vercel e npm das plantas são simulados; os repositórios Git das plantas são temporários.
+<!-- portao: evidencias-adenda-c/verify.log | VEL1 C check:mortos: código 0 -->
+<!-- portao: evidencias-adenda-c/verify.log | VEL1 C check:repositorio: código 0 -->
+
+Regressão: a planta de remoção deu código 1 antes da implementação porque a worktree permanecia. A primeira corrida completa da limpeza deu código 1 apenas na comparação entre duas formas do mesmo caminho temporário; a comparação passou a usar caminhos resolvidos. A corrida seguinte deu 0. Os dois registos vermelhos ficam preservados e higienizados.
+
+Commits confirmados: 5c832583c (C1) e c7cb1750c (C2). O terceiro pedido inclui C3, este relatório e as provas. Os dois primeiros invólucros saíram com 3 por perda de batimento; os resultados posteriores do escrivão confirmaram 0, sem repetir pedidos. A linha Claude-Session foi copiada do commit que introduziu esta adenda, pois o prompt não fornecia uma linha própria.
+
+Operação até esta redação: 28 chamadas de orquestração functions.exec e 20 execuções dirigidas de conferências, contando as corridas intermédias; zero corridas dos portões completos e zero capturas. A contagem de fecho consta da resposta final. Não houve publicação nem push. A linha «tokens used» não foi exposta.
+
+Fecho das provas: check:repositorio voltou a dar código 0 depois de escrever o relatório e as provas (repositorio-fecho.log); total de 21 execuções dirigidas.

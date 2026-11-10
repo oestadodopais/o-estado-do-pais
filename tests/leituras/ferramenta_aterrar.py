@@ -302,13 +302,14 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         r, recibo, chamadas = self.correr()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.cabeca)
-        self.assertEqual(git(self.w, 'branch', '--show-current'), '')
+        self.assertFalse(self.w.exists())
         self.assertEqual(git(self.main, 'branch', '--list', 'ensaio'), '')
         for nome in ('series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'verify-deploy', 'github'):
             self.assertEqual((self.saida / (nome + '.codigo')).read_text(), '0\n')
         passos = [p['passo'] for p in recibo['passos']]
         ordem = ['publicar-ramo', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'github', 'fundir-main', 'publicar-main',
-                 'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local']
+                 'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local',
+                 'conferir-limpeza-worktree', 'remover-worktree']
         self.assertEqual([p for p in passos if p in ordem], ordem)
         self.assertIn(['gh', 'run', 'watch', '123', '--interval', '10', '--exit-status'], chamadas)
         self.assertIn(['npm', 'run', 'check:cruzamento', '--', '--with-origin'], chamadas)

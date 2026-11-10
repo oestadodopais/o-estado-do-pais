@@ -1,5 +1,6 @@
 """Leituras comuns às conferências de arranque e à aterragem, sem mudar o Git."""
 import importlib.util
+from functools import cache
 import os
 from pathlib import Path
 import subprocess
@@ -38,10 +39,17 @@ def principal(repo, ramo):
     raise ValueError('não há árvore principal no ramo ' + ramo)
 
 
-def higienizar(texto, sitio, motor=None, principal_sitio=None):
+@cache
+def higienizador():
+    # A aterragem ainda escreve o recibo depois de remover a sua própria worktree.
     spec = importlib.util.spec_from_file_location('limpar_caminhos', Path(__file__).with_name('limpar-caminhos.py'))
     modulo = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(modulo)
+    return modulo
+
+
+def higienizar(texto, sitio, motor=None, principal_sitio=None):
+    modulo = higienizador()
     trocas = modulo.caminhos_a_trocar(sitio, motor, None, None, os.environ.get('TMPDIR', '/tmp'))
     if principal_sitio:
         trocas[str(principal_sitio)] = '<worktree>'

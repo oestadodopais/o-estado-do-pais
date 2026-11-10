@@ -4,7 +4,7 @@
 A direção chama esta ferramenta depois dos portões locais e da leitura a frio.
 Prepara uma produção sem domínio em paralelo com o portão do GitHub.
 Os comandos externos têm um teto de 90 minutos; as consultas, de dois minutos.
-A worktree fica destacada na cabeça aterrada depois de apagar o ramo local.
+A worktree limpa é removida no fim, salvo ATERRAR_CONSERVA_WORKTREE=1.
 """
 import datetime
 import hashlib
@@ -527,6 +527,27 @@ class Aterragem:
             self.guardar()
             self.correr('preparar-dist', ['npm', 'run', 'build'])
 
+    def remover_worktree(self):
+        """A aterragem já aconteceu; uma falha de limpeza fica apenas como aviso."""
+        try:
+            if os.environ.get('ATERRAR_CONSERVA_WORKTREE') == '1':
+                self.registar('remover-worktree', 0, estado='conservada', motivo='ATERRAR_CONSERVA_WORKTREE=1')
+                return
+            estado = self.correr('conferir-limpeza-worktree',
+                                 ['git', '-c', 'core.quotepath=false', 'status', '--porcelain', '--untracked-files=all'], teto=120)
+            if estado.strip():
+                self.registar('remover-worktree', 0, estado='conservada', ficheiros=estado.splitlines(),
+                              aviso='a worktree tem ficheiros por registar; não se remove')
+                return
+            self.correr('remover-worktree', ['git', 'worktree', 'remove', str(self.sitio)], cwd=self.principal)
+            self.recibo['passos'][-1]['estado'] = 'removida'
+            self.guardar()
+        except Parar as erro:
+            self.registar('remover-worktree', erro.codigo, estado='aviso', aviso=erro.motivo)
+        except (OSError, ValueError, KeyError, IndexError, TypeError):
+            self.registar('remover-worktree', 9, estado='aviso',
+                          aviso='não foi possível confirmar a remoção da worktree; consultar o último passo')
+
     def executar(self):
         codigo = 9
         try:
@@ -577,6 +598,7 @@ class Aterragem:
             self.correr('destacar-worktree', ['git', 'switch', '--detach', self.cabeca])
             self.correr('apagar-ramo-local', ['git', 'branch', '-d', self.ramo], cwd=self.principal)
             codigo = 0
+            self.remover_worktree()
         except Parar as erro:
             codigo = erro.codigo
             self.registar('parou', codigo, motivo=erro.motivo)

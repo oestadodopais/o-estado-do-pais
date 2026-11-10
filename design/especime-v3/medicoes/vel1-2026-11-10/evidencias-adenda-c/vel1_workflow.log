@@ -1,0 +1,3 @@
+{"juntar_importa":["scripts/verify-partes.mjs","scripts/alvos-fatias.mjs","scripts/verify-depois-do-build.mjs","scripts/leituras/tempos.mjs"],"bytes":56984,"arvore_esparsa":"união verde sem src, tests ou dependências instaladas"}
+VEL1 workflow: plano dinâmico, árvore esparsa e cache conferidos; 192 combinações do portao e dispensa sem endereço provadas
+VEL1 cache: versão real aceite; vazia, nula e ausente recusadas nos dois trabalhos

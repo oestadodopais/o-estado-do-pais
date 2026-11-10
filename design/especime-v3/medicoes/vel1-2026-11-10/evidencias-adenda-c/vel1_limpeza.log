@@ -1,0 +1,14 @@
+test_alteracao_fica_nomeada_no_recibo (__main__.Limpeza.test_alteracao_fica_nomeada_no_recibo) ... ok
+test_falha_antes_nao_chega_a_remocao (__main__.Limpeza.test_falha_antes_nao_chega_a_remocao) ... ok
+test_falha_de_estado_avisa_sem_mudar_codigo (__main__.Limpeza.test_falha_de_estado_avisa_sem_mudar_codigo) ... ok
+test_falha_de_remocao_avisa_sem_mudar_codigo (__main__.Limpeza.test_falha_de_remocao_avisa_sem_mudar_codigo) ... ok
+test_ficheiro_novo_fica_nomeado_no_recibo (__main__.Limpeza.test_ficheiro_novo_fica_nomeado_no_recibo) ... ok
+test_indice_alterado_fica_nomeado_no_recibo (__main__.Limpeza.test_indice_alterado_fica_nomeado_no_recibo) ... ok
+test_limpa_sai_com_ignorados_e_comando_na_principal (__main__.Limpeza.test_limpa_sai_com_ignorados_e_comando_na_principal) ... ok
+test_recibo_sobrevive_ao_codigo_removido (__main__.Limpeza.test_recibo_sobrevive_ao_codigo_removido) ... ok
+test_variavel_conserva (__main__.Limpeza.test_variavel_conserva) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 31.594s
+
+OK
