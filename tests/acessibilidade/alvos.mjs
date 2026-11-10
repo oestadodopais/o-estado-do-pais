@@ -100,7 +100,7 @@ import { conferirDisposicaoNovidades } from '../inicio/novidades-disposicao.mjs'
  */
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import {FAMILIAS, EDICOES, LARGURAS, fatiaDaFamilia, medidasEsperadas, juntarAlvos, PRESENCAS} from '../../scripts/alvos-fatias.mjs';
+import {FAMILIAS, EDICOES, LARGURAS, fatiaDaFamilia, juntarAlvos, PRESENCAS} from '../../scripts/alvos-fatias.mjs';
 import {inventario} from '../../scripts/verify-partes.mjs';
 import fs from 'node:fs';
 import { lerPaginaComCodigo, tirarCodigoConferido } from '../../scripts/incorporar-do-portao.mjs';
@@ -140,9 +140,23 @@ const FATIA = opcao('--fatia') === null ? null : Number(opcao('--fatia'));
 assert(FATIA === null || (Number.isInteger(FATIA) && FATIA >= 0 && FATIA < 3), 'use --fatia 0, 1 ou 2');
 assert(!(FATIA !== null && VERMELHOS), '--vermelhos exige a régua inteira');
 assert.deepEqual(LANGS, EDICOES, 'as edições da partição diferem das rotas');
+// A listagem percorre as mesmas rotas e larguras que a medição no navegador.
+const ROTAS = [];
+for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
+  for (const lang of LANGS) {
+    if (FATIA !== null && fatiaDaFamilia(chave, lang) !== FATIA) continue;
+    const p = routePath(rotaDaFamilia, lang, params ?? undefined);
+    const rota = p.endsWith('/') ? p : `${p}/`;
+    ROTAS.push({ chave: `${chave}/${lang}`, familia: chave, lang, rota });
+  }
+}
 if (argv.includes('--listar')) {
-  console.log(JSON.stringify(medidasEsperadas(FATIA)));
+  console.log(JSON.stringify(ROTAS.flatMap(r => LARGURAS.map(w => `${r.chave}@${w}`))));
   process.exit(0);
+}
+if (!fs.existsSync(DIST)) {
+  console.error('não existe dist/. Corra o build primeiro.');
+  process.exit(2);
 }
 const PRESENCAS_MEDIDAS = {};
 // As condições existenciais juntam-se no fim: soma > 0 equivale à régua inteira.
@@ -160,10 +174,6 @@ if (FATIA !== null && !EXECUCAO) {
   EXECUCAO = contexto.id;
 }
 
-if (!fs.existsSync(DIST)) {
-  console.error('não existe dist/. Corra o build primeiro.');
-  process.exit(2);
-}
 if (!fs.existsSync(AXE)) {
   console.error(`não existe ${path.relative(RAIZ, AXE)}. Corra \`npm ci\` primeiro.`);
   process.exit(2);
@@ -222,18 +232,11 @@ const CLAIMS = loadClaims();
 /** @param {string} id */
 const claimOuNulo = (id) => CLAIMS.get(id) ?? null;
 
-const ROTAS = [];
-for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
-  for (const lang of LANGS) {
-    if (FATIA !== null && fatiaDaFamilia(chave, lang) !== FATIA) continue;
-    const p = routePath(rotaDaFamilia, lang, params ?? undefined);
-    const rota = p.endsWith('/') ? p : `${p}/`;
-    const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
-    if (!fs.existsSync(ficheiro)) {
-      console.error(`a régua pede ${rota} e a construção não a tem (${path.relative(RAIZ, ficheiro)}).`);
-      process.exit(2);
-    }
-    ROTAS.push({ chave: `${chave}/${lang}`, familia: chave, lang, rota });
+for (const {rota} of ROTAS) {
+  const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
+  if (!fs.existsSync(ficheiro)) {
+    console.error(`a régua pede ${rota} e a construção não a tem (${path.relative(RAIZ, ficheiro)}).`);
+    process.exit(2);
   }
 }
 
