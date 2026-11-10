@@ -1,0 +1,93 @@
+{
+ "bloco": "REC1 (a edição de ensaio: a marca, o noindex, o registo das correções a contar do lançamento, as listas de mudanças pelo mesmo filtro)",
+ "data": "2026-11-10",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem (parou em dois minutos por uma regra de paragem deste lugar larga demais)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T10:16:49Z",
+   "fim": "2026-11-10T10:18:03Z",
+   "pontos": 0.0,
+   "pontos_antes": 18.0,
+   "pontos_depois": 18.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador rec1-1",
+   "chamadas": 6
+  },
+  {
+   "nome": "adenda A (o bloco construído: a marca, o noindex, o registo filtrado)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T10:18:51Z",
+   "fim": "2026-11-10T11:03:31Z",
+   "pontos": 7.0,
+   "pontos_antes": 18.0,
+   "pontos_depois": 25.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador rec1-a",
+   "chamadas": 120
+  },
+  {
+   "nome": "adenda B (as treze correções da leitura a frio; o robots.txt reposto, erro do mandato)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T11:43:59Z",
+   "fim": "2026-11-10T12:25:40Z",
+   "pontos": 3.0,
+   "pontos_antes": 26.0,
+   "pontos_depois": 29.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador rec1-b",
+   "chamadas": 94
+  },
+  {
+   "nome": "adenda C (o que a adenda B deixou aberto)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T12:27:45Z",
+   "fim": "2026-11-10T12:44:11Z",
+   "pontos": 1.0,
+   "pontos_antes": 29.0,
+   "pontos_depois": 30.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador rec1-c",
+   "chamadas": 51
+  },
+  {
+   "nome": "adenda D (as sete correções da leitura curta)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T13:13:41Z",
+   "fim": "2026-11-10T13:41:43Z",
+   "pontos": 2.0,
+   "pontos_antes": 31.0,
+   "pontos_depois": 33.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador rec1-d",
+   "chamadas": 73
+  },
+  {
+   "nome": "adenda E (os oito vermelhos da corrida inteira; as novidades da página inicial repostas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T14:56:56Z",
+   "fim": "2026-11-10T15:30:25Z",
+   "pontos": 2.0,
+   "pontos_antes": 33.0,
+   "pontos_depois": 35.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador rec1-e",
+   "chamadas": 64
+  }
+ ],
+ "total_pontos_codex": 15.0,
+ "reflexo_dos_gargalos": "seis passagens e 15 pontos para um bloco que muda o que todas as páginas mostram: a primeira parou por uma regra de paragem larga demais; a B corrigiu um erro de desenho do mandato (o Disallow com o noindex); a E corrigiu oito conferências que nenhuma lista dirigida corria e que a corrida inteira mostrou de uma vez. O corte: um bloco que mexe em todas as páginas corre a lista inteira do verify, sem parar no primeiro vermelho, logo na primeira passagem; e as regras de paragem só para o que protege um número, uma fonte ou uma pessoa.",
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh: uma leitura a frio e uma leitura curta, cinco plantas em cinco em cada uma; fora do contador do Codex.",
+ "lugar_de_direcao": "Claude Fable 5.2 (por palavra do financiador a 09.11.2026)",
+ "mandato_escrito_em": "2026-11-10T10:16:49Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros: a subida de cada passagem lê-se da linha PONTOS do lançador, e «outras sessões» diz que outra sessão do Codex escreveu no mesmo intervalo (as leituras do juiz a xhigh correram nessas horas), pelo que a subida pode não ser toda da passagem. As leituras a frio (Claude Opus 5.5, leitor) e as corridas por guião não entram nos pontos do Codex; os símbolos das leituras ficam por medir."
+}

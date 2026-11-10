@@ -5462,6 +5462,9 @@ h1[data-citadas]:not([data-citadas='1']) > a.src-chip {
 .menu-cinco a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .menu-cinco a[aria-current='page'], .menu-cinco a:hover { color: var(--ink); }
 .masthead-pais { border-bottom: 0; padding: clamp(24px, 4.4vw, 50px) 0 clamp(14px, 2.2vw, 22px); }
+/* REC1: na página inicial o nome do sítio é grande e a caixa das suas letras desce abaixo da linha; a marca de
+   ensaio afasta-se dela para as duas caixas de texto não se tocarem (M118), em todas as larguras. */
+.masthead-pais > [data-edicao-ensaio] { margin-top: clamp(6px, 1.8vw, 18px); }
 .rotulo-ia-final { white-space: nowrap; }
 .rodape-b1 { border-top: 1.5px solid var(--ink); padding: 16px 0 40px; font-family: var(--f-versal); font-size: 13px; line-height: 1.8; letter-spacing: .04em; color: var(--muted); }
 .rodape-b1 .rodape-nav, .rodape-b1 .rotulo-ia-linha, .rodape-b1 .rotulo-ia-ficha { display: inline; margin: 0; padding: 0; border: 0; font: inherit; letter-spacing: inherit; }

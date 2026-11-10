@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-10T12:46:00+00:00",
+ "copia": "rec1bc-2026-11-10/pacote",
+ "plantas": [
+  {
+   "id": "J1a",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a política portuguesa troca os dois modos",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4a7375deaeca019716734c7c04f248ddbc1eb0cc781b1b84236097e1eba09dd8",
+   "sha256_depois": "90783fa3fdfed4c9449b94a8b6358db9c75ae865bbb377c05f7168e34040be92",
+   "contexto_antes": "',\n      h1: emEnsaio() ? 'O que for corrigido, a partir do lançamento' : 'O que foi corrigido, e o que mudou',\n      politicaK: 'A política',\n      politicaV:\n        (emEnsaio() ? \"A partir do lançamento, quando o que se publicou aqui estiver errado,\" : \"Desde o lançamento, quando o que se publicou aqui está errado,\") + \" corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e n",
+   "contexto_depois": "',\n      h1: emEnsaio() ? 'O que for corrigido, a partir do lançamento' : 'O que foi corrigido, e o que mudou',\n      politicaK: 'A política',\n      politicaV:\n        (!emEnsaio() ? \"A partir do lançamento, quando o que se publicou aqui estiver errado,\" : \"Desde o lançamento, quando o que se publicou aqui está errado,\") + \" corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e n"
+  },
+  {
+   "id": "J1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a política portuguesa troca os dois modos (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0621e36678bfc228490bf327055680a5c28c34fb56f73b7416605b01e17213ac",
+   "sha256_depois": "1909cf28e78336f0110e0e3d7d197a93ebed1a0e055d37f802d29dda8fc951ce",
+   "contexto_antes": "lançamento, quando o que se publicou aqui está errado,\") + \" corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga.\",\n+        (emEnsaio() ? \"A partir do lançamento, quando o que se publicou aqui estiver errado,\" : \"Desde o lançamento, quando o que se publicou aqui está errado,\") + \" corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e n",
+   "contexto_depois": "lançamento, quando o que se publicou aqui está errado,\") + \" corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga.\",\n+        (!emEnsaio() ? \"A partir do lançamento, quando o que se publicou aqui estiver errado,\" : \"Desde o lançamento, quando o que se publicou aqui está errado,\") + \" corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e n"
+  },
+  {
+   "id": "J2a",
+   "ficheiro": "src/lib/prova.mjs",
+   "descricao": "a legenda portuguesa das correções volta a dizer que conta o livro-razão",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "72b80cafc3cd50463acbee3bb942275a513df14890edd78d9ccae8205df0c49a",
+   "sha256_depois": "ff7c493f107e00b8ec69dab9c3d549c60693452c652a40e9d18312bf233124b3",
+   "contexto_antes": "e source’s latest period',\n  },\n  linhas_atrasadas: {\n    pt: 'linhas do livro-razão dessas séries',\n    en: 'ledger rows in those series',\n  },\n  correcoes: {\n    pt: 'entradas de natureza correção mostradas no registo',\n    en: 'entries of kind correction shown in the register',\n  },\n  atualizacoes: {\n    pt: 'entradas de natureza atualização mostradas no registo',\n    en: 'en",
+   "contexto_depois": "e source’s latest period',\n  },\n  linhas_atrasadas: {\n    pt: 'linhas do livro-razão dessas séries',\n    en: 'ledger rows in those series',\n  },\n  correcoes: {\n    pt: 'entradas de natureza correção no livro-razão',\n    en: 'entries of kind correction shown in the register',\n  },\n  atualizacoes: {\n    pt: 'entradas de natureza atualização mostradas no registo',\n    en: 'en"
+  },
+  {
+   "id": "J2b",
+   "ficheiro": "diff.patch",
+   "descricao": "a legenda portuguesa das correções volta a dizer que conta o livro-razão (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1909cf28e78336f0110e0e3d7d197a93ebed1a0e055d37f802d29dda8fc951ce",
+   "sha256_depois": "67d1dad737b53992dba42784d8a7c1b14fcb0dafa7dbccb7b2098b21643e947d",
+   "contexto_antes": "dger rows in those series',\n   },\n   correcoes: {\n-    pt: 'entradas de natureza correção no livro-razão',\n-    en: 'entries of kind correction in the ledger',\n+    pt: 'entradas de natureza correção mostradas no registo',\n+    en: 'entries of kind correction shown in the register',\n   },\n   atualizacoes: {\n-    pt: 'entradas de natureza atualização no livro-razão',\n-    en: 'ent",
+   "contexto_depois": "dger rows in those series',\n   },\n   correcoes: {\n-    pt: 'entradas de natureza correção no livro-razão',\n-    en: 'entries of kind correction in the ledger',\n+    pt: 'entradas de natureza correção no livro-razão',\n+    en: 'entries of kind correction shown in the register',\n   },\n   atualizacoes: {\n-    pt: 'entradas de natureza atualização no livro-razão',\n-    en: 'ent"
+  },
+  {
+   "id": "J3a",
+   "ficheiro": "site.config.mjs",
+   "descricao": "uma data impossível passa a validação do lançamento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f1a41f605c483d102b490924ceb0ed2e61959f50038da044a381c5bf344d118a",
+   "sha256_depois": "996fa57427f85152b5e027b915d9430d4f35b4e485e36dd2923dc2636a55d932",
+   "contexto_antes": "rt const LANCAMENTO = /** @type {string | null} */ (null);\nif (LANCAMENTO !== null && (typeof LANCAMENTO !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(LANCAMENTO) || Number.isNaN(Date.parse(LANCAMENTO)) || new Date(LANCAMENTO).toISOString().slice(0, 10) !== LANCAMENTO)) {\n  throw new Error('REC1: LANCAMENTO exige null ou uma data ISO válida de dez carateres.');\n}\nexport const emEnsaio = () => LANCAMENTO === null;\n/** @param {str",
+   "contexto_depois": "rt const LANCAMENTO = /** @type {string | null} */ (null);\nif (LANCAMENTO !== null && (typeof LANCAMENTO !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(LANCAMENTO) || Number.isNaN(Date.parse(LANCAMENTO)))) {\n  throw new Error('REC1: LANCAMENTO exige null ou uma data ISO válida de dez carateres.');\n}\nexport const emEnsaio = () => LANCAMENTO === null;\n/** @param {str"
+  },
+  {
+   "id": "J3b",
+   "ficheiro": "diff.patch",
+   "descricao": "uma data impossível passa a validação do lançamento (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "67d1dad737b53992dba42784d8a7c1b14fcb0dafa7dbccb7b2098b21643e947d",
+   "sha256_depois": "9ee06944a56602c5a28929aca9614e050bd8d7efa6345ed408c00161ce25e233",
+   "contexto_antes": "t const LANCAMENTO = /** @type {string | null} */ (null);\n+if (LANCAMENTO !== null && (typeof LANCAMENTO !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(LANCAMENTO) || Number.isNaN(Date.parse(LANCAMENTO)) || new Date(LANCAMENTO).toISOString().slice(0, 10) !== LANCAMENTO)) {\n+  throw new Error('REC1: LANCAMENTO exige null ou uma data ISO válida de dez carateres.');\n+}\n export const emEnsaio = () => LANCAMENTO === null;\n /** @param ",
+   "contexto_depois": "t const LANCAMENTO = /** @type {string | null} */ (null);\n+if (LANCAMENTO !== null && (typeof LANCAMENTO !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(LANCAMENTO) || Number.isNaN(Date.parse(LANCAMENTO)))) {\n+  throw new Error('REC1: LANCAMENTO exige null ou uma data ISO válida de dez carateres.');\n+}\n export const emEnsaio = () => LANCAMENTO === null;\n /** @param "
+  },
+  {
+   "id": "J4a",
+   "ficheiro": "src/lib/novidades.mjs",
+   "descricao": "as novidades mostram as atualizações de antes do lançamento e escondem as de depois",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "aa44ce627e73498423c048d5104665a6be5f4e6420d1fa62f89eb3b5eeac6faf",
+   "sha256_depois": "1140900741e38abb81752c4fc08ee4eb503c36a9235d083ef3b41328011e6962",
+   "contexto_antes": "a:routePath('dossie',lang,{slug})});\n  }\n  conferirTiposDasNovidades(entradas);\n  // Uma atualização escondida deixa o lugar vazio, sem repor outra publicação.\n  return entradas.slice(0,5).filter(p => p.tipo !== 'estudo-atualizado' || desdeOLancamento(p.data));\n}\n/** @param {'pt'|'en'} lang */\nexport function entradasDasNovidades(lang) {\n  return agruparNovidades(pecasPublicadas(lang), dossiesDaLista(lang), lang);\n}\n",
+   "contexto_depois": "a:routePath('dossie',lang,{slug})});\n  }\n  conferirTiposDasNovidades(entradas);\n  // Uma atualização escondida deixa o lugar vazio, sem repor outra publicação.\n  return entradas.slice(0,5).filter(p => p.tipo !== 'estudo-atualizado' || !desdeOLancamento(p.data));\n}\n/** @param {'pt'|'en'} lang */\nexport function entradasDasNovidades(lang) {\n  return agruparNovidades(pecasPublicadas(lang), dossiesDaLista(lang), lang);\n}\n"
+  },
+  {
+   "id": "J4b",
+   "ficheiro": "diff.patch",
+   "descricao": "as novidades mostram as atualizações de antes do lançamento e escondem as de depois (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9ee06944a56602c5a28929aca9614e050bd8d7efa6345ed408c00161ce25e233",
+   "sha256_depois": "5623ced7a951101d2ce9cbb4eb28499a1a349f5574e37294ff0fa049a88c1b63",
+   "contexto_antes": ");\n   }\n   conferirTiposDasNovidades(entradas);\n-  return entradas.slice(0,5);\n+  // Uma atualização escondida deixa o lugar vazio, sem repor outra publicação.\n+  return entradas.slice(0,5).filter(p => p.tipo !== 'estudo-atualizado' || desdeOLancamento(p.data));\n }\n /** @param {'pt'|'en'} lang */\n export function entradasDasNovidades(lang) {\ndiff --git a/src/lib/prova.mjs b/src/lib/prova.mjs\nindex 186da7bb5..9b7852184 ",
+   "contexto_depois": ");\n   }\n   conferirTiposDasNovidades(entradas);\n-  return entradas.slice(0,5);\n+  // Uma atualização escondida deixa o lugar vazio, sem repor outra publicação.\n+  return entradas.slice(0,5).filter(p => p.tipo !== 'estudo-atualizado' || !desdeOLancamento(p.data));\n }\n /** @param {'pt'|'en'} lang */\n export function entradasDasNovidades(lang) {\ndiff --git a/src/lib/prova.mjs b/src/lib/prova.mjs\nindex 186da7bb5..9b7852184 "
+  },
+  {
+   "id": "J5a",
+   "ficheiro": "src/lib/prova.mjs",
+   "descricao": "a legenda inglesa diz páginas com noindex",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ff7c493f107e00b8ec69dab9c3d549c60693452c652a40e9d18312bf233124b3",
+   "sha256_depois": "81adc769cc46142a7a5927c4c5e8bda2b0e021110d57d7aac41a369661f7e280",
+   "contexto_antes": "y reading written',\n  },\n  afirmacoes: {\n    pt: 'linhas do livro-razão',\n    en: 'ledger rows',\n  },\n  indexaveis: {\n    pt: 'páginas de linha sem `noindex`',\n    en: 'row pages without `noindex`',\n  },\n  divida: {\n    pt: 'linhas com pelo menos um campo por confirmar na fonte',\n    en: 'rows with at least one field to be confirmed at the source',\n  },\n  ",
+   "contexto_depois": "y reading written',\n  },\n  afirmacoes: {\n    pt: 'linhas do livro-razão',\n    en: 'ledger rows',\n  },\n  indexaveis: {\n    pt: 'páginas de linha sem `noindex`',\n    en: 'row pages with `noindex`',\n  },\n  divida: {\n    pt: 'linhas com pelo menos um campo por confirmar na fonte',\n    en: 'rows with at least one field to be confirmed at the source',\n  },\n  "
+  },
+  {
+   "id": "J5b",
+   "ficheiro": "diff.patch",
+   "descricao": "a legenda inglesa diz páginas com noindex (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5623ced7a951101d2ce9cbb4eb28499a1a349f5574e37294ff0fa049a88c1b63",
+   "sha256_depois": "8a4e0739f933c23f4c0b171d0a14b596203b87edb096162c887715f3b9b23ff1",
+   "contexto_antes": ": 'linhas sem nenhum campo de proveniência por confirmar',\n-    en: 'rows with no provenance field left to confirm',\n+    pt: 'páginas de linha sem `noindex`',\n+    en: 'row pages without `noindex`',\n   },\n   divida: {\n     pt: 'linhas com pelo menos um campo por confirmar na fonte',\n@@ -492,16 +492,16 @@ const FRASES = {\n     en: 'ledger rows in those seri",
+   "contexto_depois": ": 'linhas sem nenhum campo de proveniência por confirmar',\n-    en: 'rows with no provenance field left to confirm',\n+    pt: 'páginas de linha sem `noindex`',\n+    en: 'row pages with `noindex`',\n   },\n   divida: {\n     pt: 'linhas com pelo menos um campo por confirmar na fonte',\n@@ -492,16 +492,16 @@ const FRASES = {\n     en: 'ledger rows in those seri"
+  }
+ ]
+}

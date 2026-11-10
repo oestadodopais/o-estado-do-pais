@@ -1,0 +1,26 @@
+{
+ "bloco": "MOT2 (o motor: o excerto de uma linha própria conferido na página do documento alojado; as referências sem linha presas ao contexto)",
+ "data": "2026-11-10",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a passagem única",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T12:44:22Z",
+   "fim": "2026-11-10T13:13:10Z",
+   "pontos": 1.0,
+   "pontos_antes": 30.0,
+   "pontos_depois": 31.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador mot2",
+   "chamadas": 51
+  }
+ ],
+ "total_pontos_codex": 1.0,
+ "leituras": "conferido pelo lugar de direção por recomposição própria e uma planta de referência movida; o portão do motor com código 0 em 948 segundos na cabeça aterrada.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros: a subida de cada passagem lê-se da linha PONTOS do lançador, e «outras sessões» diz que outra sessão do Codex escreveu no mesmo intervalo (as leituras do juiz a xhigh correram nessas horas), pelo que a subida pode não ser toda da passagem. As leituras a frio (Claude Opus 5.5, leitor) e as corridas por guião não entram nos pontos do Codex; os símbolos das leituras ficam por medir."
+}

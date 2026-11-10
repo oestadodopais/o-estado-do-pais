@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-10T11:05:11+00:00",
+ "copia": "rec1-2026-11-10/pacote",
+ "plantas": [
+  {
+   "id": "G1a",
+   "ficheiro": "src/pages/robots.txt.js",
+   "descricao": "o robots.txt convida os motores de busca em ensaio e afasta-os depois do lançamento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "903c9e1cec1e388ffd29b9fd284fef66430c00facdf72251ac532673e2f3dab5",
+   "sha256_depois": "a03307456e59603a4db136d0f92441741f6c304bdd1372b4efa9b7264d7809a5",
+   "contexto_antes": "te de domínio que tudo o resto.\n */\nimport { emEnsaio, SITE_URL } from '../../site.config.mjs';\n\nexport function GET() {\n  const corpo = [\n    'User-agent: *',\n    emEnsaio() ? 'Disallow: /' : 'Allow: /',\n    '',\n    `Sitemap: ${new URL('sitemap-index.xml', SITE_URL).href}`,\n    '',\n  ].join('\\n');\n  return new Response(corpo, {\n    headers: { 'Content-Type': 't",
+   "contexto_depois": "te de domínio que tudo o resto.\n */\nimport { emEnsaio, SITE_URL } from '../../site.config.mjs';\n\nexport function GET() {\n  const corpo = [\n    'User-agent: *',\n    emEnsaio() ? 'Allow: /' : 'Disallow: /',\n    '',\n    `Sitemap: ${new URL('sitemap-index.xml', SITE_URL).href}`,\n    '',\n  ].join('\\n');\n  return new Response(corpo, {\n    headers: { 'Content-Type': 't"
+  },
+  {
+   "id": "G1b",
+   "ficheiro": "diff.patch",
+   "descricao": "o robots.txt convida os motores de busca em ensaio e afasta-os depois do lançamento (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ba25e2579d60f3ead9ed68e42346d47dfd2899a98898732f98b205cc78d487e6",
+   "sha256_depois": "024d024804581195c038c330667ee4a13f7c734ad628ff48ae868d431f30bb2d",
+   "contexto_antes": ".config.mjs';\n+import { emEnsaio, SITE_URL } from '../../site.config.mjs';\n \n export function GET() {\n   const corpo = [\n     'User-agent: *',\n-    'Allow: /',\n+    emEnsaio() ? 'Disallow: /' : 'Allow: /',\n     '',\n     `Sitemap: ${new URL('sitemap-index.xml', SITE_URL).href}`,\n     '',\ndiff --git a/src/views/MetodoView.astro b/src/views/MetodoView.astro\nindex 7d",
+   "contexto_depois": ".config.mjs';\n+import { emEnsaio, SITE_URL } from '../../site.config.mjs';\n \n export function GET() {\n   const corpo = [\n     'User-agent: *',\n-    'Allow: /',\n+    emEnsaio() ? 'Allow: /' : 'Disallow: /',\n     '',\n     `Sitemap: ${new URL('sitemap-index.xml', SITE_URL).href}`,\n     '',\ndiff --git a/src/views/MetodoView.astro b/src/views/MetodoView.astro\nindex 7d"
+  },
+  {
+   "id": "G2a",
+   "ficheiro": "src/lib/mudancas.mjs",
+   "descricao": "o registo mostra em ensaio tudo o que não for correção",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3e63976f0a641a5e59fb53408b014fea5a2d379cd2476796e576e87d7963996c",
+   "sha256_depois": "68de7df0d83179cc86b0c5c8e37a8c966a9646dba042e7001aa93988e2b86dfa",
+   "contexto_antes": "ubject : PORTUGAL, lang),\n      chaveDaMudanca: `texto|${e.slug}|${e.data}`};\n  });\n}\n\n/** @param {'pt'|'en'} lang */\nexport function mudancasDoRegisto(lang) {\n  return todasAsMudancas(lang).filter(e => desdeOLancamento(e.data));\n}\n",
+   "contexto_depois": "ubject : PORTUGAL, lang),\n      chaveDaMudanca: `texto|${e.slug}|${e.data}`};\n  });\n}\n\n/** @param {'pt'|'en'} lang */\nexport function mudancasDoRegisto(lang) {\n  return todasAsMudancas(lang).filter(e => desdeOLancamento(e.data) || e.kind !== 'correcao');\n}\n"
+  },
+  {
+   "id": "G2b",
+   "ficheiro": "diff.patch",
+   "descricao": "o registo mostra em ensaio tudo o que não for correção (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "024d024804581195c038c330667ee4a13f7c734ad628ff48ae868d431f30bb2d",
+   "sha256_depois": "3b375ca65fc1c3711f9ba307b05bab02e5adf40fbb6331334d0df771fe0503b0",
+   "contexto_antes": "esDosTextos(lang) {\n       chaveDaMudanca: `texto|${e.slug}|${e.data}`};\n   });\n }\n+\n+/** @param {'pt'|'en'} lang */\n+export function mudancasDoRegisto(lang) {\n+  return todasAsMudancas(lang).filter(e => desdeOLancamento(e.data));\n+}\ndiff --git a/src/lib/prova.mjs b/src/lib/prova.mjs\nindex 77f46e789..186da7bb5 100644\n--- a/src/lib/prova.mjs\n+++ b/src/lib/prova.mjs\n@@ -1,3 +1,4 @@\n+import",
+   "contexto_depois": "esDosTextos(lang) {\n       chaveDaMudanca: `texto|${e.slug}|${e.data}`};\n   });\n }\n+\n+/** @param {'pt'|'en'} lang */\n+export function mudancasDoRegisto(lang) {\n+  return todasAsMudancas(lang).filter(e => desdeOLancamento(e.data) || e.kind !== 'correcao');\n+}\ndiff --git a/src/lib/prova.mjs b/src/lib/prova.mjs\nindex 77f46e789..186da7bb5 100644\n--- a/src/lib/prova.mjs\n+++ b/src/lib/prova.mjs\n@@ -1,3 +1,4 @@\n+import"
+  },
+  {
+   "id": "G3a",
+   "ficheiro": "site.config.mjs",
+   "descricao": "uma correção feita no próprio dia do lançamento fica fora do registo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "11e5e8970d82cb16d34099bdda969eb7024cb1dcff951e9291e74c8dfbba4b6f",
+   "sha256_depois": "6a4e587d717a3ed467467c5c35d5802485f3d3a645d2123ef71f5db8d8881703",
+   "contexto_antes": "ção de ensaio. */\nexport const LANCAMENTO = /** @type {string | null} */ (null);\nexport const emEnsaio = () => LANCAMENTO === null;\n/** @param {string} data */\nexport const desdeOLancamento = (data) => LANCAMENTO !== null && data >= LANCAMENTO;\n",
+   "contexto_depois": "ção de ensaio. */\nexport const LANCAMENTO = /** @type {string | null} */ (null);\nexport const emEnsaio = () => LANCAMENTO === null;\n/** @param {string} data */\nexport const desdeOLancamento = (data) => LANCAMENTO !== null && data > LANCAMENTO;\n"
+  },
+  {
+   "id": "G3b",
+   "ficheiro": "diff.patch",
+   "descricao": "uma correção feita no próprio dia do lançamento fica fora do registo (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3b375ca65fc1c3711f9ba307b05bab02e5adf40fbb6331334d0df771fe0503b0",
+   "sha256_depois": "e9becc1b1aa92341d3d2619ab6df0f708b38023857cbd4b75ba345a0761a9268",
+   "contexto_antes": " de ensaio. */\n+export const LANCAMENTO = /** @type {string | null} */ (null);\n+export const emEnsaio = () => LANCAMENTO === null;\n+/** @param {string} data */\n+export const desdeOLancamento = (data) => LANCAMENTO !== null && data >= LANCAMENTO;\ndiff --git a/src/components/Masthead.astro b/src/components/Masthead.astro\nindex 94f8397c8..99834c06c 100644\n--- a/src/components/Masthead.astro\n+++ b/src/comp",
+   "contexto_depois": " de ensaio. */\n+export const LANCAMENTO = /** @type {string | null} */ (null);\n+export const emEnsaio = () => LANCAMENTO === null;\n+/** @param {string} data */\n+export const desdeOLancamento = (data) => LANCAMENTO !== null && data > LANCAMENTO;\ndiff --git a/src/components/Masthead.astro b/src/components/Masthead.astro\nindex 94f8397c8..99834c06c 100644\n--- a/src/components/Masthead.astro\n+++ b/src/comp"
+  },
+  {
+   "id": "G4a",
+   "ficheiro": "src/layouts/Base.astro",
+   "descricao": "em ensaio só levam noindex as páginas que já o levavam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ca617de016206ae856146ee3370b0c392f7275c74a0d7826c8955b03807ad706",
+   "sha256_depois": "f6ed3939594b6734e9373e1eb0aedcae11b01f75fc9315a38a134eb8712eaeee",
+   "contexto_antes": "  {\n      /* Páginas sem conteúdo não se oferecem para indexação. O canónico fica:\n         o endereço continua a ser o mesmo, só não é convidado ao índice. */\n      (emEnsaio() || noindex) && <meta name=\"robots\" content=\"noindex, follow\" />\n    }\n    {\n      /* OS DOIS TIPOS DA PRIMEIRA PINTURA (etapa 1b do redesenho v3).\n         Só dois: a prosa (Spectral Regular) e o aparelho (Bitter variável).",
+   "contexto_depois": "  {\n      /* Páginas sem conteúdo não se oferecem para indexação. O canónico fica:\n         o endereço continua a ser o mesmo, só não é convidado ao índice. */\n      (emEnsaio() && noindex) && <meta name=\"robots\" content=\"noindex, follow\" />\n    }\n    {\n      /* OS DOIS TIPOS DA PRIMEIRA PINTURA (etapa 1b do redesenho v3).\n         Só dois: a prosa (Spectral Regular) e o aparelho (Bitter variável)."
+  },
+  {
+   "id": "G4b",
+   "ficheiro": "diff.patch",
+   "descricao": "em ensaio só levam noindex as páginas que já o levavam (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e9becc1b1aa92341d3d2619ab6df0f708b38023857cbd4b75ba345a0761a9268",
+   "sha256_depois": "205ab11e55a965bc56289cd7e4b56e18f1f9e28aec5b5f89e716007d1871cbe4",
+   "contexto_antes": "canónico fica:\n          o endereço continua a ser o mesmo, só não é convidado ao índice. */\n-      noindex && <meta name=\"robots\" content=\"noindex, follow\" />\n+      (emEnsaio() || noindex) && <meta name=\"robots\" content=\"noindex, follow\" />\n     }\n     {\n       /* OS DOIS TIPOS DA PRIMEIRA PINTURA (etapa 1b do redesenho v3).\ndiff --git a/src/lib/documentos.mjs b/src/lib/documentos.mjs\nindex e7976d",
+   "contexto_depois": "canónico fica:\n          o endereço continua a ser o mesmo, só não é convidado ao índice. */\n-      noindex && <meta name=\"robots\" content=\"noindex, follow\" />\n+      (emEnsaio() && noindex) && <meta name=\"robots\" content=\"noindex, follow\" />\n     }\n     {\n       /* OS DOIS TIPOS DA PRIMEIRA PINTURA (etapa 1b do redesenho v3).\ndiff --git a/src/lib/documentos.mjs b/src/lib/documentos.mjs\nindex e7976d"
+  },
+  {
+   "id": "G5a",
+   "ficheiro": "src/data/ensaio.mjs",
+   "descricao": "a marca portuguesa diz que tudo já foi conferido, e a inglesa que está a ser relido",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9bc81ebc17063d0e0a118014aa3d2cc21a4fcf1bff855cb17f689a03c7557665",
+   "sha256_depois": "101c6a3aa4497a4b6031a22d6ac17066234f8d1ceb1dfad774405644d68ef2e3",
+   "contexto_antes": "export const ENSAIO = {\n  pt: {\n    marca: 'Edição de ensaio',\n    acessivel: 'O Estado do País está em ensaio até ao lançamento: o que aqui se lê está a ser relido contra as fontes.',\n    registo: 'O registo começa no lançamento. Até lá, O Estado do País está em ensaio, e o que aqui se lê está a ser relido contra as fontes.',\n    vazio: 'Sem",
+   "contexto_depois": "export const ENSAIO = {\n  pt: {\n    marca: 'Edição de ensaio',\n    acessivel: 'O Estado do País está em ensaio até ao lançamento: o que aqui se lê já foi conferido contra as fontes.',\n    registo: 'O registo começa no lançamento. Até lá, O Estado do País está em ensaio, e o que aqui se lê está a ser relido contra as fontes.',\n    vazio: 'Sem"
+  },
+  {
+   "id": "G5b",
+   "ficheiro": "diff.patch",
+   "descricao": "a marca portuguesa diz que tudo já foi conferido, e a inglesa que está a ser relido (no diff)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "205ab11e55a965bc56289cd7e4b56e18f1f9e28aec5b5f89e716007d1871cbe4",
+   "sha256_depois": "3a0a4232579fe9c5c46a22b9678491afd459f9e1ddb8c3f3ccb5992e2b87a4ed",
+   "contexto_antes": "de 100644\nindex 000000000..5e74bebce\n--- /dev/null\n+++ b/src/data/ensaio.mjs\n@@ -0,0 +1,16 @@\n+export const ENSAIO = {\n+  pt: {\n+    marca: 'Edição de ensaio',\n+    acessivel: 'O Estado do País está em ensaio até ao lançamento: o que aqui se lê está a ser relido contra as fontes.',\n+    registo: 'O registo começa no lançamento. Até lá, O Estado do País está em ensaio, e o que aqui se lê está a ser relido contra as fontes.',\n+    vazio: 'S",
+   "contexto_depois": "de 100644\nindex 000000000..5e74bebce\n--- /dev/null\n+++ b/src/data/ensaio.mjs\n@@ -0,0 +1,16 @@\n+export const ENSAIO = {\n+  pt: {\n+    marca: 'Edição de ensaio',\n+    acessivel: 'O Estado do País está em ensaio até ao lançamento: o que aqui se lê já foi conferido contra as fontes.',\n+    registo: 'O registo começa no lançamento. Até lá, O Estado do País está em ensaio, e o que aqui se lê está a ser relido contra as fontes.',\n+    vazio: 'S"
+  }
+ ]
+}

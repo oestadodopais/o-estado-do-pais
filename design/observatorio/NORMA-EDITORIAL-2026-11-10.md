@@ -37,7 +37,7 @@ O que se passa, o que foi feito, o que isso faz às pessoas e se foi bem feito, 
 
 1. **A página do estudo é o resumo,** nunca uma capa vazia.
 2. **A abertura,** até 150 palavras: a pergunta numa linha, a resposta em três frases, e pelo menos um efeito num grupo de pessoas com nome.
-3. **«O que concluímos»:** até cinco achados, cada um aberto por um juízo de até 20 palavras e com dois números no máximo.
+3. **«O que concluímos»:** até cinco achados, cada um aberto por uma frase de até 20 palavras que diz o achado como facto, com dois números no máximo. Os juízos ficam em «A nossa leitura».
 4. **«O que está bem, o que está mal»,** dito às claras.
 5. **«Para quem»:** exemplos feitos por tipo de pessoa ou de casa, ou a falta dita: que número falta e quem o tem.
 6. **As comparações,** pelo menos três: no tempo (dez anos onde a série existe), com a União, Espanha ou os pares, com o que foi prometido, com o limite legal ou a meta.

@@ -1,0 +1,52 @@
+{
+ "bloco": "MOT1 (o motor: os estudos compostos passam a texto próprio; core.aplanar; as linhas próprias com documento alojado)",
+ "data": "2026-11-10",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem (core.aplanar e a prova no estudo 16)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T08:58:18Z",
+   "fim": "2026-11-10T09:21:00Z",
+   "pontos": 0.0,
+   "pontos_antes": 12.0,
+   "pontos_depois": 12.0,
+   "outras_sessoes": 0,
+   "fonte": "o registo do lançador desta passagem já não existe; o início vem do nome do registo da sessão do Codex, o fim (ao minuto) e o contador do plano do lugar de direção, escritos na altura",
+   "chamadas": 36
+  },
+  {
+   "nome": "adenda A (os quatro estudos aplanados; as linhas próprias)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T09:22:41Z",
+   "fim": "2026-11-10T10:13:29Z",
+   "pontos": 6.0,
+   "pontos_antes": 12.0,
+   "pontos_depois": 18.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador mot1-a",
+   "chamadas": 68
+  },
+  {
+   "nome": "adenda B (as nove correções da leitura a frio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T11:03:59Z",
+   "fim": "2026-11-10T11:43:45Z",
+   "pontos": 1.0,
+   "pontos_antes": 25.0,
+   "pontos_depois": 26.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador mot1-b",
+   "chamadas": 54
+  }
+ ],
+ "total_pontos_codex": 7.0,
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh: uma leitura a frio e uma leitura curta, cinco plantas em cinco em cada uma.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros: a subida de cada passagem lê-se da linha PONTOS do lançador, e «outras sessões» diz que outra sessão do Codex escreveu no mesmo intervalo (as leituras do juiz a xhigh correram nessas horas), pelo que a subida pode não ser toda da passagem. As leituras a frio (Claude Opus 5.5, leitor) e as corridas por guião não entram nos pontos do Codex; os símbolos das leituras ficam por medir."
+}
