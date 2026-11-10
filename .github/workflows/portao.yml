@@ -42,6 +42,8 @@ concurrency:
 # Só fica verde depois de todas as partes; renomeá-lo exige atualizar essa proteção.
 jobs:
   construir:
+    outputs:
+      partes: ${{ steps.plano.outputs.partes }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     env:
@@ -70,10 +72,12 @@ jobs:
         run: python3 -c "import yaml" 2>/dev/null || sudo apt-get install -y -qq python3-yaml
 
       - name: Construção e typecheck
+        id: plano
         run: |
           node scripts/verify-partes.mjs construir
           npm run typecheck
           node scripts/verify-partes.mjs planear
+          echo "partes=$(node -e 'console.log(JSON.stringify(require("./at1-build.json").partes.map((_, i) => i)))')" >> "$GITHUB_OUTPUT"
           tar -cpf /tmp/dist.tar dist at1-build.json
       - name: Dist para as conferências
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -87,7 +91,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        parte: [0, 1, 2, 3, 4, 5]
+        parte: ${{ fromJSON(needs.construir.outputs.partes) }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     env:
@@ -156,7 +160,7 @@ jobs:
           tar -xpf /tmp/at1-dist/dist.tar
       - name: Reunir as provas e conferir a união inteira
         run: |
-          for i in 0 1 2 3 4 5; do
+          for i in $(node -e "console.log(require('./at1-build.json').partes.map((_, i) => i).join(' '))"); do
             gh run download "$GITHUB_RUN_ID" --name parte-$i-${{ github.sha }} --dir /tmp/at1-partes
           done
           node scripts/verify-partes.mjs juntar /tmp/at1-partes /tmp/uniao.json

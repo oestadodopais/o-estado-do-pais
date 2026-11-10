@@ -46,7 +46,7 @@ export function conferirPartes(scripts, partes) {
   assert.deepEqual([...recebidos].sort(), [...esperados].sort(), 'faltam ou sobram passos nas partes');
 }
 
-export function dividir(scripts, tempos, n = 6) {
+export function dividir(scripts, tempos, n = 8) {
   const partes = Array.from({ length: n }, () => []);
   const cargas = Array(n).fill(0);
   const restantes = restantesDoVerify(scripts);

@@ -10,7 +10,7 @@ const tempos = {...tabela.estimativas, ...tabela.passos};
 const plano = dividir(scripts, tempos);
 conferirPartes(scripts, plano.partes);
 assert.equal(scripts['check:metodo-construido'], 'node tests/metodo/construido.mjs');
-assert.equal(plano.partes.length, 6);
+assert.equal(plano.partes.length, 8);
 assert.equal(plano.partes.flat().filter(p => p === 'npm run check:metodo-construido').length, 1);
 assert.throws(()=>conferirPartes({...scripts, build:'true'},plano.partes));
 for (let i=0; i<plano.partes.length; i++) {
