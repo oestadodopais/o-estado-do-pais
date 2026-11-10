@@ -1,0 +1,42 @@
+{
+ "blocos_do_registo_do_16_no_sitio_pt": {
+  "valor": "172",
+  "comando": "python3 -c \"import json;print(json.load(open('registos/manifest.json'))['registos']['evora-contas-da-camara-2010-2025/pt']['blocos'])\""
+ },
+ "referencias_do_registo_do_16_no_sitio_pt": {
+  "valor": "490",
+  "comando": "python3 -c \"import json;print(json.load(open('registos/manifest.json'))['registos']['evora-contas-da-camara-2010-2025/pt']['referencias'])\""
+ },
+ "blocos_do_registo_do_16_no_motor_pt": {
+  "valor": "198",
+  "comando": "cd \"$RESEARCHHUB_DIR\" && OEDP_SITE=\"$OLDPWD\" python3 publisher/export_records_site.py | awk '/^  16 pt/{print $6}'"
+ },
+ "referencias_do_registo_do_16_no_motor_pt": {
+  "valor": "607",
+  "comando": "cd \"$RESEARCHHUB_DIR\" && OEDP_SITE=\"$OLDPWD\" python3 publisher/export_records_site.py | awk '/^  16 pt/{print $9}'"
+ },
+ "referencias_do_registo_do_16_no_motor_en": {
+  "valor": "610",
+  "comando": "cd \"$RESEARCHHUB_DIR\" && OEDP_SITE=\"$OLDPWD\" python3 publisher/export_records_site.py | awk '/^  16 en/{print $9}'"
+ },
+ "entradas_do_16_por_registar": {
+  "valor": "139",
+  "comando": "python3 -c \"import json;print(sum(1 for f in json.load(open('ledger/frases/por-registar.json')) if f['estudo']=='evora-contas-da-camara-2010-2025'))\""
+ },
+ "teto_da_L1": {
+  "valor": "3518",
+  "comando": "python3 -c \"import json,re;print(re.search(r'\\d{4}',json.dumps(json.load(open('scripts/lugar-tetos-b1.json')))).group())\""
+ },
+ "correcoes_publicadas": {
+  "valor": "50",
+  "comando": "awk -F'\"' '/^value:/{print $2}' ledger/claims/correcoes-publicadas.yml"
+ },
+ "unidades_do_texto_julgado_por_lingua": {
+  "valor": "502",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^(?:#+ |- |  )?\\[([BNC][0-9A-Z.]+)\\]',open('design/especime-v3/medicoes/eva-2026-11-10/TEXTO-FINAL-16.pt.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "pagina_do_historial_na_linha_de_2021": {
+  "valor": "112",
+  "comando": "awk '/^  page:/{print $2; exit}' ledger/claims/evora-execucao-da-receita-2021.yml"
+ }
+}
