@@ -73,5 +73,10 @@
     "npm run check:cadeia": 1.0,
     "npm run mapa:unidades": 0.2
   },
-  "nota": "Segundos medidos no executor do GitHub. Passos sem medição são identificados pelo plano."
+  "nota": "Segundos medidos no executor do GitHub. Passos sem medição são identificados pelo plano. As fatias usam provisoriamente um terço do tempo medido da régua inteira, pois têm a mesma quantidade de medições; não são tempos medidos no GitHub.",
+  "estimativas": {
+    "npm run check:alvos:0": 313.814,
+    "npm run check:alvos:1": 313.814,
+    "npm run check:alvos:2": 313.814
+  }
 }
