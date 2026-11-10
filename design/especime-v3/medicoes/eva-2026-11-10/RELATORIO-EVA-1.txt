@@ -1,0 +1,22 @@
+RELATÓRIO EVA-1, 10.11.2026 (reposto pelo lugar de direção)
+
+O relatório de 57 linhas que o construtor escreveu neste ficheiro foi substituído pelo resumo final do lançador,
+porque o mandato lhe deu o mesmo nome que o lançador usa para a última mensagem. O que ele dizia está nas medidas
+(`medidas-eva.json`, chave `motor_eva_1`) e no motor, em `Technical Source/eva/preparado/` do estudo 16
+(`gabaritos-paragens.json`, `divergencias.json`, `fontes.json`, `linhas.json`). Em resumo:
+
+Estado: parcial. O texto julgado ainda não substitui o texto ativo. Commits do motor: 92e05c8 e 5e604b4.
+1. Fontes: 20 resumos conferidos, 11 PDF alojados na pasta source/ do estudo, com MANIFEST.sha256.
+2. Linhas: 110 primárias e 42 derivações preparadas e conferidas, nos ajustes candidatos, não nos ativos.
+3. Gabaritos candidatos com as 502 unidades em cada língua: compõem e conferem letra por letra 482 unidades
+   portuguesas e 480 inglesas. Paradas: a numeração das listas da cabeça (C007 a C011, C045 a C047); a C011
+   (a prova dá 575 079,95 e a fonte imprime -575 079,95, na coluna das diferenças negativas); a C027 (os dias
+   1 e 18 da ilustração de calendário); o dia 10 de «10 de agosto de 2026» em onze unidades (C025, C053,
+   B018.3, B021.1, B062.1, N02.A1, B102.R1, B169.L4.2, B170.L1.1, B171.2, B171.3); só no inglês, a C037
+   (duas formas do mesmo valor) e a B105.2 (dois valores com cêntimos).
+4. O conferidor novo, core.texto_julgado, com quatro plantas que recusam nas duas línguas.
+5. Asserções: 13 ocorrências portuguesas e 9 inglesas por declarar, nenhum check falhado.
+6. HTML, registo, manifesto, cortes e contagens do portão: por regenerar.
+7. Os outros estudos e o estudo 16 ativo ficaram byte a byte.
+O core.gate correu uma vez e foi interrompido pelo teto (código 130): não demonstrou aprovação.
+Custo: 2 pontos do Codex (41 para 43 por cento), 84 turnos, 62 minutos.

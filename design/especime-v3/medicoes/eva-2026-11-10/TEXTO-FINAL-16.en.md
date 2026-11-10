@@ -10,15 +10,15 @@
 
 ## [C006] What we conclude
 
-[C007] 1. **Unpaid invoices more than doubled in two years.** At the end of 2025, €14.6 million of invoices were waiting to be paid; at the end of 2023 the figure was about 5.9 million.
+- [C007] **Unpaid invoices more than doubled in two years.** At the end of 2025, €14.6 million of invoices were waiting to be paid; at the end of 2023 the figure was about 5.9 million.
 
-[C008] 2. **The legal debt almost stopped falling.** In 2025 it fell by €301 601. The principal of medium and long-term loans went down by €3 549 470 and the debt in the supplier headings went up by €3 674 532; these headings include the water debt assigned to the European Investment Bank.
+- [C008] **The legal debt almost stopped falling.** In 2025 it fell by €301 601. The principal of medium and long-term loans went down by €3 549 470 and the debt in the supplier headings went up by €3 674 532; these headings include the water debt assigned to the European Investment Bank.
 
-[C009] 3. **Almost half of what the budget fell short by sits in a single line.** The line «outras receitas correntes» (other current revenue) budgeted €19 427 778 and collected €155 573; the report says the line results from the need to accommodate debt carried over. The rest of the shortfall is mostly transfers from the State and from co-financed projects that did not arrive.
+- [C009] **Almost half of what the budget fell short by sits in a single line.** The line «outras receitas correntes» (other current revenue) budgeted €19 427 778 and collected €155 573; the report says the line results from the need to accommodate debt carried over. The rest of the shortfall is mostly transfers from the State and from co-financed projects that did not arrive.
 
-[C010] 4. **Under the municipal heading for Évora 2027, almost nothing was paid in 2025.** The plan gave that heading €3 796 940 for the year, and €55 594 was paid; the five projects paid for by the recovery plan record no payments in 2025.
+- [C010] **Under the municipal heading for Évora 2027, almost nothing was paid in 2025.** The plan gave that heading €3 796 940 for the year, and €55 594 was paid; the five projects paid for by the recovery plan record no payments in 2025.
 
-[C011] 5. **The year without certification has a documented explanation, and the matter remains unresolved.** The annex to the 2025 accounts says the 2024 accounts were not approved because the differences between the accounting records and the bank records could not be validated. Excluding the items resolved in 2026, the annex calculates a net unreconciled balance of €195 040 at the end of 2025, resulting from differences of €770 120 in one direction and €575 080 in the other. It reports an improvement but gives no figure for previous years. The same annex says that court proceedings are under way concerning «uma situação de alcance na Tesouraria» (a shortfall in the Treasury), and that the unexplained entries identified in the audit of 2022 and 2023 remain unresolved.
+- [C011] **The year without certification has a documented explanation, and the matter remains unresolved.** The annex to the 2025 accounts says the 2024 accounts were not approved because the differences between the accounting records and the bank records could not be validated. Excluding the items resolved in 2026, the annex calculates a net unreconciled balance of €195 040 at the end of 2025, resulting from differences of €770 120 in one direction and €575 080 in the other. It reports an improvement but gives no figure for previous years. The same annex says that court proceedings are under way concerning «uma situação de alcance na Tesouraria» (a shortfall in the Treasury), and that the unexplained entries identified in the audit of 2022 and 2023 remain unresolved.
 
 ## [C012] What is going well, what is going badly
 
@@ -41,7 +41,7 @@
 
 ## [C026] For whom
 
-[C027] **For those who sell to the council.** To give a sense of the average: 137 days counted from 1 January end on 18 May. At the end of the year, the schedule of debts recorded €4 976 172 overdue by 90 days or more, of which €357 328 by more than a year.
+[C027] **For those who sell to the council.** An average of 137 days is four and a half months of waiting. At the end of the year, the schedule of debts recorded €4 976 172 overdue by 90 days or more, of which €357 328 by more than a year.
 
 [C028] **For those who pay for water and waste collection.** The 2026 budget provides for €14 476 737 from the sale of goods and services, which is where water, sanitation and waste sit: €6 153 637 more than the 2025 budget. The budget report does not explain the increase. The documents read do not say whether tariffs go up; that is to be read in the 2026 tariff table and in the resolution that approves it.
 
@@ -56,7 +56,7 @@
 [C034] | «a redução da dívida em 2025 foi de 302 mil €» (the reduction in debt in 2025 was 302 thousand euros) | The council, in the annex to the 2025 accounts | Total debt fell from €54 680 636 to €54 379 035. In the same year, the debt in the supplier headings rose by €3 674 532. | Checks out, but leaves out the rise in supplier debt |
 [C035] | «A execução global foi de 61%, representando uma diminuição face ao que vinha a ser a execução dos últimos anos» (the overall budget execution rate was 61%, down from the rates achieved in recent years) | The council, in the 2025 report | Total revenue as a proportion of the budget fell from 87.72% in 2021 to 61.44% in 2025, although the amounts executed rose every year, as the report itself acknowledges. The historical figures cited in the report mix execution rates for current revenue with those for total revenue. Of the €42 220 018 shortfall, 45.6% is in the line «outras receitas correntes». | Checks out, but does not separate the two measures in the historical figures |
 [C036] | The average payment time in 2023 was 22 days | The council, in the table of the 2025 report | The 2023 report adds the caveat that, without the year-end accrual entries, the time «seria de 50 dias» (would be 50 days). | Checks out, but leaves out the caveat |
-[C037] | «os 7.470.000,00 euros alocados aos investimentos» (the 7 470 000.00 euros allocated to the investments) of Évora 2027 | The council, in the 2026 budget | The figure matches the sum of what the 2025 plan spread over 2025 and 2026 (€3 485 940 and €3 984 060). The documents do not say whether it is the same money, and in 2025 nothing was paid on those lines. | Cannot be checked |
+[C037] | «os 7.470.000,00 euros alocados aos investimentos» (the euros allocated to the investments) of Évora 2027 | The council, in the 2026 budget | The figure matches the sum of what the 2025 plan spread over 2025 and 2026 (€3 485 940 and €3 984 060). The documents do not say whether it is the same money, and in 2025 nothing was paid on those lines. | Cannot be checked |
 [C038] | «as receitas arrecadadas permitem cobrir as despesas realizadas» (the revenue collected is sufficient to cover the expenditure incurred) | The council, in the 2025 report | It covers expenditure paid if the balance carried over from 2024 is included. €14.6 million had been invoiced and remained unpaid. | Checks out, but leaves out the unpaid amounts |
 
 ## [C039] Our reading
@@ -71,11 +71,11 @@
 
 ## [C044] The recommendations
 
-[C045] 1. **To the Câmara Municipal de Évora:** publish a schedule for paying the €4 976 172 in arrears, quarter by quarter, before the legal deadline for the 2026 accounts, at the end of April 2027. While debts remain in default, interest can keep adding up. The reader can follow it in the average payment time and the arrears in the 2026 accounts, and in the schedule itself, if it is published with what was paid in each quarter.
+- [C045] **To the Câmara Municipal de Évora:** publish a schedule for paying the €4 976 172 in arrears, quarter by quarter, before the legal deadline for the 2026 accounts, at the end of April 2027. While debts remain in default, interest can keep adding up. The reader can follow it in the average payment time and the arrears in the 2026 accounts, and in the schedule itself, if it is published with what was paid in each quarter.
 
-[C046] 2. **To the Câmara and the Assembleia Municipal:** in the 2027 budget, write next to the line «outras receitas correntes» how much carried-over debt it accommodates and to whom it is owed. Without that explanation, the revenue execution rate remains hard to read. The reader can check it in the 2027 budget report.
+- [C046] **To the Câmara and the Assembleia Municipal:** in the 2027 budget, write next to the line «outras receitas correntes» how much carried-over debt it accommodates and to whom it is owed. Without that explanation, the revenue execution rate remains hard to read. The reader can check it in the 2027 budget report.
 
-[C047] 3. **To the Câmara Municipal de Évora:** say by 31 December 2026, the end date of the four Évora 2027 construction contracts in the plan, how much has been paid on each. Said by that date, those figures are known before the year of the European Capital of Culture begins. The reader can check it in the statement of execution of the 2026 plan.
+- [C047] **To the Câmara Municipal de Évora:** say by 31 December 2026, the end date of the four Évora 2027 construction contracts in the plan, how much has been paid on each. Said by that date, those figures are known before the year of the European Capital of Culture begins. The reader can check it in the statement of execution of the 2026 plan.
 
 ## [C048] What to watch
 

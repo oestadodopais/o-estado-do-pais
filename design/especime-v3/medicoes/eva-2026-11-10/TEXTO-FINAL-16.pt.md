@@ -10,15 +10,15 @@
 
 ## [C006] O que concluímos
 
-[C007] 1. **As faturas por pagar mais do que duplicaram em dois anos.** No fim de 2025 havia €14,6 milhões de faturas à espera de pagamento; no fim de 2023 eram cerca de 5,9 milhões.
+- [C007] **As faturas por pagar mais do que duplicaram em dois anos.** No fim de 2025 havia €14,6 milhões de faturas à espera de pagamento; no fim de 2023 eram cerca de 5,9 milhões.
 
-[C008] 2. **A dívida legal quase deixou de descer.** Em 2025 desceu €301 601. O capital dos empréstimos de médio e longo prazo diminuiu €3 549 470 e a dívida nas rubricas de fornecedores aumentou €3 674 532; estas rubricas incluem a dívida da água cedida ao Banco Europeu de Investimento.
+- [C008] **A dívida legal quase deixou de descer.** Em 2025 desceu €301 601. O capital dos empréstimos de médio e longo prazo diminuiu €3 549 470 e a dívida nas rubricas de fornecedores aumentou €3 674 532; estas rubricas incluem a dívida da água cedida ao Banco Europeu de Investimento.
 
-[C009] 3. **Quase metade do que faltou ao orçamento está numa só linha.** A linha «outras receitas correntes» previa €19 427 778 e cobrou €155 573; o relatório diz que ela resulta da necessidade de acomodar dívida transitada. O resto do desvio está sobretudo em transferências do Estado e de projetos cofinanciados que não chegaram.
+- [C009] **Quase metade do que faltou ao orçamento está numa só linha.** A linha «outras receitas correntes» previa €19 427 778 e cobrou €155 573; o relatório diz que ela resulta da necessidade de acomodar dívida transitada. O resto do desvio está sobretudo em transferências do Estado e de projetos cofinanciados que não chegaram.
 
-[C010] 4. **Na rubrica municipal do Évora 2027, quase nada se pagou em 2025.** O plano dava €3 796 940 a essa rubrica nesse ano, e pagaram-se €55 594; os cinco projetos pagos pelo plano de recuperação não registam pagamentos em 2025.
+- [C010] **Na rubrica municipal do Évora 2027, quase nada se pagou em 2025.** O plano dava €3 796 940 a essa rubrica nesse ano, e pagaram-se €55 594; os cinco projetos pagos pelo plano de recuperação não registam pagamentos em 2025.
 
-[C011] 5. **O ano sem certificação tem uma razão escrita, e o assunto não está fechado.** O anexo às contas de 2025 diz que as de 2024 não foram aprovadas por não se conseguirem validar as diferenças entre os livros e os bancos. Depois de excluídos os movimentos regularizados já em 2026, o anexo apura um saldo líquido de €195 040 por conciliar no fecho de 2025, que resulta de €770 120 de diferenças num sentido e €575 080 no outro. Fala de melhoria e não dá o valor dos anos anteriores. O mesmo anexo diz que está em curso um processo judicial relativo a «uma situação de alcance na Tesouraria», e que os movimentos não justificados achados na auditoria de 2022 e 2023 continuam por regularizar.
+- [C011] **O ano sem certificação tem uma razão escrita, e o assunto não está fechado.** O anexo às contas de 2025 diz que as de 2024 não foram aprovadas por não se conseguirem validar as diferenças entre os livros e os bancos. Depois de excluídos os movimentos regularizados já em 2026, o anexo apura um saldo líquido de €195 040 por conciliar no fecho de 2025, que resulta de €770 120 de diferenças num sentido e €575 080 no outro. Fala de melhoria e não dá o valor dos anos anteriores. O mesmo anexo diz que está em curso um processo judicial relativo a «uma situação de alcance na Tesouraria», e que os movimentos não justificados achados na auditoria de 2022 e 2023 continuam por regularizar.
 
 ## [C012] O que está bem, o que está mal
 
@@ -41,7 +41,7 @@
 
 ## [C026] Para quem
 
-[C027] **Para quem vende à câmara.** Para dar a medida do prazo médio: 137 dias contados a partir de 1 de janeiro acabam a 18 de maio. No fim do ano, o mapa das dívidas registava €4 976 172 vencidos há 90 dias ou mais, dos quais €357 328 há mais de um ano.
+[C027] **Para quem vende à câmara.** Um prazo médio de 137 dias é quatro meses e meio de espera. No fim do ano, o mapa das dívidas registava €4 976 172 vencidos há 90 dias ou mais, dos quais €357 328 há mais de um ano.
 
 [C028] **Para quem paga a água e o lixo.** O orçamento de 2026 prevê €14 476 737 na venda de bens e serviços, onde estão a água, o saneamento e os resíduos: mais €6 153 637 do que o orçamento de 2025. O relatório do orçamento não explica o aumento. Os documentos lidos não dizem se as tarifas sobem; isso lê-se na tabela de tarifas de 2026 e na deliberação que a aprovar.
 
@@ -71,11 +71,11 @@
 
 ## [C044] As recomendações
 
-[C045] 1. **À Câmara Municipal de Évora:** publicar um calendário de pagamento dos €4 976 172 em atraso, trimestre a trimestre, antes do prazo legal das contas de 2026, no fim de abril de 2027. Enquanto houver dívidas em mora, os juros podem continuar a somar-se. O leitor acompanha-o no prazo médio de pagamento e nos pagamentos em atraso das contas de 2026, e no próprio calendário, se for publicado com o que se pagou em cada trimestre.
+- [C045] **À Câmara Municipal de Évora:** publicar um calendário de pagamento dos €4 976 172 em atraso, trimestre a trimestre, antes do prazo legal das contas de 2026, no fim de abril de 2027. Enquanto houver dívidas em mora, os juros podem continuar a somar-se. O leitor acompanha-o no prazo médio de pagamento e nos pagamentos em atraso das contas de 2026, e no próprio calendário, se for publicado com o que se pagou em cada trimestre.
 
-[C046] 2. **À Câmara e à Assembleia Municipal:** no orçamento de 2027, escrever ao lado da linha «outras receitas correntes» quanta dívida transitada ela acomoda e a quem é devida. Sem essa explicação, a taxa de execução da receita continua difícil de ler. O leitor confere-o no relatório do orçamento de 2027.
+- [C046] **À Câmara e à Assembleia Municipal:** no orçamento de 2027, escrever ao lado da linha «outras receitas correntes» quanta dívida transitada ela acomoda e a quem é devida. Sem essa explicação, a taxa de execução da receita continua difícil de ler. O leitor confere-o no relatório do orçamento de 2027.
 
-[C047] 3. **À Câmara Municipal de Évora:** dizer até 31 de dezembro de 2026, data de fim das quatro empreitadas do Évora 2027 no plano, quanto está pago em cada uma. Ditos até essa data, esses valores conhecem-se antes de começar o ano da Capital Europeia da Cultura. O leitor confere-o na demonstração de execução do plano de 2026.
+- [C047] **À Câmara Municipal de Évora:** dizer até 31 de dezembro de 2026, data de fim das quatro empreitadas do Évora 2027 no plano, quanto está pago em cada uma. Ditos até essa data, esses valores conhecem-se antes de começar o ano da Capital Europeia da Cultura. O leitor confere-o na demonstração de execução do plano de 2026.
 
 ## [C048] O que vigiar
 
