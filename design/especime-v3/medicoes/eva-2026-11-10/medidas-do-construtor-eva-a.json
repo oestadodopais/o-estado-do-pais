@@ -1,0 +1,180 @@
+{
+  "estado": "parcial_nao_instalado",
+  "chamadas_ferramentas_ate_medicao": 60,
+  "ferramentas": {
+    "exec": 55,
+    "wait": 5
+  },
+  "tokens_ate_medicao": {
+    "input_tokens": 6118681,
+    "cached_input_tokens": 6016384,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 45034,
+    "reasoning_output_tokens": 21369,
+    "total_tokens": 6163715
+  },
+  "suites_especificas": [
+    {
+      "modulo": "core.eva_test",
+      "conferencias": 2,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-point4.log"
+    },
+    {
+      "modulo": "core.datas_declaradas_test",
+      "conferencias": 11,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-datas.log"
+    },
+    {
+      "modulo": "unittest (EVA, linhas e texto julgado)",
+      "conferencias": 36,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-suites5.log"
+    },
+    {
+      "modulo": "core.datas_declaradas_test",
+      "conferencias": 12,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-datas-integral.log"
+    },
+    {
+      "modulo": "core.compor_test",
+      "conferencias": 23,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-suite-compor.log"
+    },
+    {
+      "modulo": "core.linhas_proprias_test",
+      "conferencias": 26,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-suite-linhas.log"
+    },
+    {
+      "modulo": "core.reconcile_test",
+      "conferencias": 29,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-suite-reconcile.log"
+    },
+    {
+      "modulo": "core.texto_julgado_test",
+      "conferencias": 9,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-suite-texto.log"
+    },
+    {
+      "modulo": "core.eva_test",
+      "conferencias": 2,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-suite-eva.log"
+    },
+    {
+      "modulo": "core.eva_test",
+      "conferencias": 3,
+      "codigo": 0,
+      "registo": "<temporario>/eva-a-c027.log"
+    }
+  ],
+  "corridas_suites_especificas": 10,
+  "corridas_conferidor_candidatos": 1,
+  "corridas_preparacao_com_prova": 3,
+  "corridas_geracao": 3,
+  "portao": {
+    "estado": "PASS",
+    "codigo": 0,
+    "duracao_segundos": 871,
+    "linhas": 388,
+    "corridas": 1,
+    "ultimas_linhas": [
+      "GATE  editions evora-quem-governou-pt-md-html ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+      "GATE: PASS"
+    ],
+    "registo": "registo-portao-eva-a.log"
+  },
+  "unidades": {
+    "pt": {
+      "total": 502,
+      "antes_conferidas": 482,
+      "conferidas": 502,
+      "paradas": 0
+    },
+    "en": {
+      "total": 502,
+      "antes_conferidas": 480,
+      "conferidas": 501,
+      "paradas": 1
+    }
+  },
+  "paragens_gabaritos": {
+    "antes": {
+      "pt": 22,
+      "en": 25
+    },
+    "depois": {
+      "pt": 0,
+      "en": 2
+    }
+  },
+  "paragens_preparacao": {
+    "antes": 14,
+    "depois": 0
+  },
+  "primarias": {
+    "antes": 110,
+    "depois": 111
+  },
+  "derivadas": {
+    "antes": 42,
+    "depois": 43
+  },
+  "ligacoes_numericas": {
+    "antes": 207,
+    "depois": 208
+  },
+  "datas_declaradas": 3,
+  "ligacoes_datas": 11,
+  "assercoes_c027": {
+    "declaracoes_candidatas": 2,
+    "plantas_recusadas": [
+      "135 dias",
+      "139 dias"
+    ]
+  },
+  "assercoes_texto_julgado_contra_livro_ativo": {
+    "pt": {
+      "codigo": 1,
+      "por_declarar": 13,
+      "falhadas": 0
+    },
+    "en": {
+      "codigo": 1,
+      "por_declarar": 9,
+      "falhadas": 0
+    }
+  },
+  "outros_estudos": {
+    "ficheiros": 96,
+    "alterados": 0,
+    "resumos": "preparado/outros-estudos-eva-a.json"
+  },
+  "ativos_16_e_baselines": {
+    "ficheiros": 17,
+    "alterados": 0
+  },
+  "commits_motor": [
+    "fce2fab EVA documenta os candidatos e a condição de instalação ainda recusada",
+    "1f6ef01 EVA confere os 96 ficheiros dos outros estudos byte a byte",
+    "f36d847 EVA prepara a asserção calculada dos quatro meses e meio",
+    "e4c01d2 EVA mantém a instalação recusada até ambas as edições conferirem",
+    "1c08a5c EVA documenta a paragem de B105.2 inglesa por formas ausentes",
+    "ac38605 EVA declara datas verificadas e gera as formas nas duas línguas",
+    "ad3757a EVA declara a magnitude de C011 sobre a fonte com sinal",
+    "996e904 EVA recebe as três decisões do texto julgado"
+  ]
+}

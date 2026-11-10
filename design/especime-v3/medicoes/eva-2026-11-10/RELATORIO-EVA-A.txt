@@ -1,0 +1,136 @@
+EVA, adenda A: preparação parcial, sem instalação
+
+A única unidade parada é B105.2 inglesa. A fonte 08 imprime 60 282 480,32
+e 60 282 480,38 também no registo inglês; o texto julgado exige ponto decimal.
+O ponto 6 manda parar quando a forma não existir para essas linhas. Não se
+inventou uma forma, não se alterou o estudo 08 e não se mudou o texto julgado.
+
+1. Listas da cabeça: os oito itens sem numeração foram copiados novamente
+   do mandato para as duas referências. Cada referência conserva 502 unidades.
+2. C027: a ilustração de calendário saiu das duas referências. As provas dos
+   antigos dias 1 e 18 ficaram marcadas sem uso. Há duas asserções candidatas
+   com a conta 137 / (365,25 / 12) = 4,501026694045174537987679671 meses,
+   arredondados para 4,5. Declaram a convenção de mês médio, não uma duração
+   fixa de todos os meses. Os checks delimitam 135,446875 <= dias < 138,490625;
+   as plantas com 135 e 139 dias recusam pelo limite respetivo. Não estão no
+   livro ativo, porque a instalação não passou.
+3. C037 inglesa: a tradução já não repete o valor; compõe letra por letra.
+4. C011: prova corrigida para -575 079,95, conforme a decisão recebida.
+   A linha primária conserva -575079.95; a derivação faz
+   round ( ( 0 - cabeca-c011-25-fonte ) , 0 ) = 575080.
+   A forma impressa é 575 080. A planta que tira o sinal à componente recusa
+   por valor ausente do excerto. A página e o excerto do PDF foram conferidos.
+5. Datas: as onze ocorrências de recolha usam três declarações. Cada uma tem
+   ISO, registo JSON seguido pelo Git, SHA-256, chave e valor lido. A impressão
+   em português e inglês é gerada. O marcador próprio é ⟦data:id⟧.
+   A via de documento alojado também foi exercitada: PDF, página, excerto e
+   data integral. As outras datas que já compunham conservaram as ligações;
+   as quatro datas ISO do corpo não foram alteradas.
+   Plantas: data impressa diferente, data declarada diferente da fonte, chave
+   ausente, valor ausente da chave, resumo errado, dia à mão junto do mês,
+   registo não seguido, página errada, campo de impressão manual e colagem
+   de algarismos. Todas recusaram pelo motivo respetivo.
+6. B105.2: português conferido; inglês parado nos dois valores com cêntimos.
+   A prova está em preparado/b105-2-formas.json, com formas e resumos das
+   duas linhas. A ausência da forma inglesa com ponto é a causa da paragem.
+7. Não instalado. O português confere as 502 unidades individualmente e no
+   contrato integral. O inglês confere 501; o contrato candidato_incompleto
+   é recusado. O ponto 7 exige as duas línguas completas antes de ativar os
+   ajustes e os gabaritos. Os ativos não foram substituídos parcialmente.
+8. Asserções do texto instalado: não refeitas, por falta de instalação.
+   Diagnóstico do texto julgado contra o livro ativo: português, 13 por
+   declarar e zero falhadas; inglês, nove por declarar e zero falhadas.
+   São falhas assumidas, não uma aprovação. A C027 está declarada apenas nos
+   ajustes candidatos. O detetor de asserções e o alcance das frases ficaram
+   intactos; não se retirou frase nenhuma para o fazer passar.
+9. HTML, livro, registo, manifesto, cortes e baselines ativos: sem alteração.
+   Os 17 ficheiros verificados conservam os resumos do início da passagem.
+   A cadeia nova não foi gerada como ativa enquanto o ponto 7 estiver recusado.
+10. Outros estudos: 96 ficheiros dos estudos 07, 08, 17, 18 e 19 conferidos
+    byte a byte. Zero diferenças. Os pares de resumos estão em
+    preparado/outros-estudos-eva-a.json.
+
+Mudanças ao núcleo, incluindo a primeira passagem
+
+A. core/compor.py, formas de derivações. Antes, só imprimia value com a troca
+   de separador para inglês. Agora aceita impresso por língua se representar
+   exatamente o mesmo valor. O conteúdo pede os espaços e casas decimais do
+   texto julgado. A planta que muda o valor impresso recusa por forma impressa.
+B. core/compor.py, componentes próprias. Antes, cada linha primária local tinha
+   de aparecer num marcador direto de cada edição. Agora pode entrar pela
+   cadeia de componentes de uma derivação efetivamente impressa nessa edição.
+   As contas novas precisam dos valores integrais da fonte, incluindo cêntimos
+   que o texto arredonda. A planta sem uso numa edição recusa por sem marcador;
+   os checks da derivação continuam a conferir a conta e as componentes.
+C. core/linhas_proprias.py. Antes, o localizador de recortes exigia pelo menos
+   24 carateres e um algarismo de dois dígitos. Agora uma célula curta passa
+   se o excerto integral for único na página declarada e não cortar um número.
+   O conteúdo tem células curtas completas. Excerto inventado, ambíguo,
+   fragmento numérico, página errada e corpo com resumo diferente recusam.
+D. core/reconcile.py. Antes, um decimal inglês com milhares separados por
+   espaços podia ser partido. Agora é um token integral. O conteúdo inglês
+   usa essa escrita. A planta 87 682 770.51 continua órfã perante uma linha de
+   87 682 770,50; 87 682 770.50 passa. Não se dispensou nenhum cêntimo.
+E. core/texto_julgado.py e chamada no compositor. Antes não havia o contrato
+   integral com este texto julgado. Agora verifica estado, resumo, unidades,
+   ordem, identidade dos marcadores e texto. Não alarga aceitação. As plantas
+   de letra trocada, outra linha de valor igual, ordem trocada e frase a mais
+   recusam nas duas línguas; candidato incompleto também recusa.
+F. core/datas_declaradas.py e core/compor.py, nesta adenda. Antes, o dia de uma
+   data nova ficava sem marcador de quantidade e era recusado. Agora o dia só
+   entra por data declarada e verificada na fonte. O conteúdo pede as datas
+   dos registos de extração, que não são valores económicos nem páginas PDF.
+   As formas são geradas; a proveniência é guardada e o dia não recebe o selo
+   de uma quantidade com o mesmo valor. Os doze testes da suite cobrem JSON,
+   PDF, duas línguas, divergências e ausência de prova. O dia à mão recusa.
+G. core/gate.py: regista a suite nova; as suites de EVA, texto julgado e linhas
+   próprias continuam no portão. As contagens das plantas mudaram por causas
+   explícitas: datas, nova suite com 12 testes; EVA, dois para três, pela conta
+   da C027; linhas próprias, 25 para 26, pela planta do cêntimo inglês.
+   Não ficou uma abertura do compositor sem planta de recusa correspondente.
+
+Contagens da preparação
+
+Primárias: 110 para 111, componente negativa de C011.
+Derivações: 42 para 43, magnitude arredondada de C011.
+Ligações numéricas: 207 para 208, C011. Datas: três declarações, onze ligações.
+Paragens de prova: 14 para zero: sinal de C011, duas datas de calendário que
+saíram por decisão e onze datas agora declaradas.
+Unidades conferidas: português, 482 para 502; inglês, 480 para 501.
+Paragens numéricas dos gabaritos: português, 22 para zero; inglês, 25 para duas.
+Nenhuma contagem ativa de core/gate_baselines.json foi alterada.
+
+Prova executada
+
+Dez corridas de suites específicas, todas com código zero, discriminadas nas
+medidas. Incluem uma chamada agregada de unittest; as suites com main próprio
+foram depois executadas pelos seus comandos. Uma corrida do conferidor de
+candidatos, três preparações com prova e três gerações. Conferência separada dos
+contratos finais e dos resumos. Nenhuma corrida dos portões do sítio ou captura.
+core.gate: uma corrida, PASS; código 0.
+O portão cobre os ativos conservados e as suites novas. Não instala nem aprova
+o candidato inglês incompleto. Os hooks anteriores declararam OEDP_GATE=adiado.
+Últimas linhas do registo, copiadas:
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Commits do motor verificados até esta emissão:
+fce2fab EVA documenta os candidatos e a condição de instalação ainda recusada
+1f6ef01 EVA confere os 96 ficheiros dos outros estudos byte a byte
+f36d847 EVA prepara a asserção calculada dos quatro meses e meio
+e4c01d2 EVA mantém a instalação recusada até ambas as edições conferirem
+1c08a5c EVA documenta a paragem de B105.2 inglesa por formas ausentes
+ac38605 EVA declara datas verificadas e gera as formas nas duas línguas
+ad3757a EVA declara a magnitude de C011 sobre a fonte com sinal
+996e904 EVA recebe as três decisões do texto julgado
+
+Chamadas de ferramentas até esta emissão: 60 (chamadas de alto nível, incluindo exec e wait).
+A medição é do registo da sessão e não uma estimativa de chamadas futuras.
+tokens used: 6163715 (contagem cumulativa exposta até esta emissão).
+Os detalhes estão em medidas-do-construtor-eva-a.json. medidas-eva.json não mudou.
