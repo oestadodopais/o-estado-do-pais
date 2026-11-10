@@ -182,7 +182,8 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(r.returncode, 1)
         self.assertEqual((self.saida / 'github.codigo').read_text(), '1\n')
         self.assertEqual((self.saida / 'github.url').read_text(), 'https://example.invalid/corrida/123\n')
-        self.assertFalse(any(c[0] in ('npm', 'vercel') or c[1:2] == ['merge'] for c in chamadas))
+        self.assertFalse(any(c[0] == 'vercel' or c[1:2] == ['merge'] or c == ['npm', 'run', 'verify:deploy'] for c in chamadas))
+        self.assertIn(['npm', 'run', 'check:series'], chamadas)
         self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.main_antes)
 
     def test_conclusao_vermelha_e_cabeca_errada(self):
@@ -238,7 +239,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertIn(['npm', 'run', 'build'], chamadas)
         self.assertEqual(recibo['preparar_dist'], {'motivo': 'em falta'})
         passos = [p['passo'] for p in recibo['passos']]
-        self.assertLess(passos.index('github'), passos.index('preparar-dependencias'))
+        self.assertLess(passos.index('preparar-dependencias'), passos.index('github'))
         self.assertLess(passos.index('preparar-dist'), passos.index('series'))
 
     def test_preparacao_dispensada_quando_existe(self):
@@ -293,7 +294,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         for nome in ('series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'verify-deploy', 'github'):
             self.assertEqual((self.saida / (nome + '.codigo')).read_text(), '0\n')
         passos = [p['passo'] for p in recibo['passos']]
-        ordem = ['publicar-ramo', 'github', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'fundir-main', 'publicar-main',
+        ordem = ['publicar-ramo', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'github', 'fundir-main', 'publicar-main',
                  'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local']
         self.assertEqual([p for p in passos if p in ordem], ordem)
         self.assertIn(['gh', 'run', 'watch', '123', '--interval', '10', '--exit-status'], chamadas)

@@ -517,17 +517,11 @@ class Aterragem:
             self.recibo['cabeca_motor'] = self.cabeca_motor
             self.registar('condicoes', 0)
             self.correr('publicar-ramo', ['git', 'push', '-u', 'origin', self.ramo])
-            if self.novo_fluxo:
-                self.tomar_tranca()
-                self.conferir_arvores()
-                self.preparar_envio()
-                self.largar_tranca()
-            self.github()
-            self.conferir_limite_diario()
             self.tomar_tranca()
-            self.conferir_limite_diario()
             self.conferir_arvores()
             self.preparar()
+            if self.novo_fluxo:
+                self.preparar_envio()
             self.correr('series', ['npm', 'run', 'check:series'])
             ledger = self.correr('ledger-corpos', ['npm', 'run', 'ledger:check'])
             self.exigir(bool(re.search(r'^M83: corpos lidos; .*limpa=true; recusas=0$', ledger, re.M)), 'ledger:check não confirmou corpos lidos')
@@ -535,6 +529,12 @@ class Aterragem:
             self.exigir(bool(re.search(r'^excertos: corpos lidos; limpa=true; linhas lidas=\d+$', frases, re.M)), 'check:frases-afirmacao não confirmou corpos lidos')
             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])
             self.correr('camada-0', ['npm', 'run', 'verify:com-motor'])
+            self.largar_tranca()
+            self.github()
+            self.conferir_limite_diario()
+            self.tomar_tranca()
+            self.conferir_limite_diario()
+            # A cabeça de ambas as árvores volta a ser conferida antes da fusão.
             self.conferir_arvores()
             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)
             self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')
