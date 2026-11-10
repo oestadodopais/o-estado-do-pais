@@ -19,6 +19,8 @@ name: portão
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '17 4 * * *'
 
 # Nada mais do que ler a árvore. Sem escrita, sem pacotes, sem `id-token`.
 permissions:
@@ -41,7 +43,47 @@ concurrency:
 # AT1: o nome do trabalho `portao` é o contexto obrigatório da proteção de main.
 # Só fica verde depois de todas as partes; renomeá-lo exige atualizar essa proteção.
 jobs:
+  antecedente:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      dispensar: ${{ steps.decisao.outputs.dispensar }}
+      url: ${{ steps.decisao.outputs.url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: A decisão versionada
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/portao-dispensa.mjs
+            /.nvmrc
+      - name: O Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - name: Procurar um portão verde do ramo para esta cabeça
+        id: decisao
+        env:
+          EVENTO: ${{ github.event_name }}
+          REFERENCIA: ${{ github.ref }}
+        run: |
+          if [ "$EVENTO" = push ] && [ "$REFERENCIA" = refs/heads/main ]; then
+            if gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/workflows/portao.yml/runs?event=push&head_sha=$GITHUB_SHA&status=success&per_page=100" > /tmp/corridas.json; then
+              node scripts/portao-dispensa.mjs /tmp/corridas.json "$GITHUB_SHA" "$GITHUB_REPOSITORY" "$GITHUB_OUTPUT"
+            else
+              echo 'dispensar=nao' >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo 'dispensar=nao' >> "$GITHUB_OUTPUT"
+          fi
   construir:
+    needs: antecedente
+    if: needs.antecedente.outputs.dispensar != 'sim'
+    outputs:
+      partes: ${{ steps.plano.outputs.partes }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     env:
@@ -62,7 +104,28 @@ jobs:
       - name: npm ci
         run: npm ci
 
+      - name: A versão do Playwright
+        id: playwright
+        run: |
+          versao=$(node -p 'require("./package-lock.json").packages?.["node_modules/playwright"]?.version ?? ""')
+          if [ -z "$versao" ]; then
+            echo 'Não foi possível ler a versão do Playwright.' >&2
+            exit 1
+          fi
+          echo "versao=$versao" >> "$GITHUB_OUTPUT"
+      - name: O Chromium guardado
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-${{ runner.arch }}-playwright-${{ steps.playwright.outputs.versao }}
       - name: O Chromium do Playwright
+        id: chromium
+        timeout-minutes: 5
+        continue-on-error: true
+        run: npx playwright install --with-deps chromium
+      - name: Repetir a instalação do Chromium
+        if: ${{ !cancelled() && steps.chromium.outcome == 'failure' }}
+        timeout-minutes: 5
         run: npx playwright install --with-deps chromium
       - name: O zsh, para a planta da aterragem
         run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
@@ -70,10 +133,12 @@ jobs:
         run: python3 -c "import yaml" 2>/dev/null || sudo apt-get install -y -qq python3-yaml
 
       - name: Construção e typecheck
+        id: plano
         run: |
-          npm run build
+          node scripts/verify-partes.mjs construir
           npm run typecheck
           node scripts/verify-partes.mjs planear
+          echo "partes=$(node -e 'console.log(JSON.stringify(require("./at1-build.json").partes.map((_, i) => i)))')" >> "$GITHUB_OUTPUT"
           tar -cpf /tmp/dist.tar dist at1-build.json
       - name: Dist para as conferências
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -84,10 +149,11 @@ jobs:
           if-no-files-found: error
   conferir:
     needs: construir
+    if: needs.construir.result == 'success'
     strategy:
       fail-fast: false
       matrix:
-        parte: [0, 1, 2, 3, 4, 5]
+        parte: ${{ fromJSON(needs.construir.outputs.partes) }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     env:
@@ -108,7 +174,28 @@ jobs:
       - name: npm ci
         run: npm ci
 
+      - name: A versão do Playwright
+        id: playwright
+        run: |
+          versao=$(node -p 'require("./package-lock.json").packages?.["node_modules/playwright"]?.version ?? ""')
+          if [ -z "$versao" ]; then
+            echo 'Não foi possível ler a versão do Playwright.' >&2
+            exit 1
+          fi
+          echo "versao=$versao" >> "$GITHUB_OUTPUT"
+      - name: O Chromium guardado
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-${{ runner.arch }}-playwright-${{ steps.playwright.outputs.versao }}
       - name: O Chromium do Playwright
+        id: chromium
+        timeout-minutes: 5
+        continue-on-error: true
+        run: npx playwright install --with-deps chromium
+      - name: Repetir a instalação do Chromium
+        if: ${{ !cancelled() && steps.chromium.outcome == 'failure' }}
+        timeout-minutes: 5
         run: npx playwright install --with-deps chromium
       - name: O zsh, para a planta da aterragem
         run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
@@ -129,7 +216,7 @@ jobs:
           retention-days: 14
           if-no-files-found: error
   portao:
-    needs: [construir, conferir]
+    needs: [antecedente, construir, conferir]
     if: always()
     runs-on: ubuntu-24.04
     timeout-minutes: 90
@@ -138,25 +225,50 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Todas as tarefas passaram
-        run: test '${{ needs.construir.result }}' = success && test '${{ needs.conferir.result }}' = success
+        env:
+          ANTECEDENTE: ${{ needs.antecedente.result }}
+          DISPENSAR: ${{ needs.antecedente.outputs.dispensar }}
+          ENDERECO: ${{ needs.antecedente.outputs.url }}
+          CONSTRUIR: ${{ needs.construir.result }}
+          CONFERIR: ${{ needs.conferir.result }}
+        run: |
+          test "$ANTECEDENTE" = success
+          if [ "$DISPENSAR" = sim ]; then
+            test -n "$ENDERECO"
+            printf 'Portão já conferido para esta cabeça: %s\n' "$ENDERECO"
+          else
+            test "$DISPENSAR" = nao
+            test "$CONSTRUIR" = success
+            test "$CONFERIR" = success
+          fi
       - name: A árvore
+        if: needs.antecedente.outputs.dispensar != 'sim'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /package.json
+            /.nvmrc
+            /package-lock.json
+            /scripts/
 
       - name: O Node
+        if: needs.antecedente.outputs.dispensar != 'sim'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: .nvmrc
           cache: npm
 
       - name: O dist desta corrida, com as datas intactas
+        if: needs.antecedente.outputs.dispensar != 'sim'
         run: |
           gh run download "$GITHUB_RUN_ID" --name dist-${{ github.sha }} --dir /tmp/at1-dist
           tar -xpf /tmp/at1-dist/dist.tar
       - name: Reunir as provas e conferir a união inteira
+        if: needs.antecedente.outputs.dispensar != 'sim'
         run: |
-          for i in 0 1 2 3 4 5; do
+          for i in $(node -e "console.log(require('./at1-build.json').partes.map((_, i) => i).join(' '))"); do
             gh run download "$GITHUB_RUN_ID" --name parte-$i-${{ github.sha }} --dir /tmp/at1-partes
           done
           node scripts/verify-partes.mjs juntar /tmp/at1-partes /tmp/uniao.json
@@ -165,7 +277,7 @@ jobs:
           mkdir /tmp/at1-prova
           cp dist/prova.json dist/cadeia.json /tmp/uniao.json /tmp/at1-prova/
       - name: A prova desta corrida
-        if: success()
+        if: success() && needs.antecedente.outputs.dispensar != 'sim'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: prova-${{ github.sha }}

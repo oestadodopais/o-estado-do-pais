@@ -18,7 +18,7 @@ function conferir(s, w, a, partes = dividir(s, {}).partes) {
   assert.equal(s['check:frases-reais'], 'node tests/leituras/frases-reais.mjs');
   assert.equal(s['check:repositorio'], 'node tests/metodo/repositorio.mjs');
   conferirPartes(s, partes);
-  const build = s['build:conteudo'].split(/\s*&&\s*/);
+  const build = (s['build:escrever'] ?? s['build:conteudo']).split(/\s*&&\s*/);
   assert.deepEqual([...passos.filter(p => build.includes(p) && !motor.includes(p)), ...partes.flat()].sort(),
     passos.filter(p => !motor.includes(p)).sort(), 'GitHub omite um terceiro passo');
   const linhas = a.split('\n'), i = linhas.indexOf(chamada);
@@ -26,7 +26,9 @@ function conferir(s, w, a, partes = dividir(s, {}).partes) {
   const preparar = linhas.indexOf('            self.preparar()');
   const cruzamento = linhas.indexOf("            self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])");
   const fundir = linhas.findIndex(l => l.startsWith("            self.correr('fundir-main',"));
-  assert(preparar >= 0 && preparar < cruzamento && cruzamento < i && i < fundir, 'camada 0 fora da ordem da aterragem');
+  const github = linhas.indexOf('            self.github()');
+  assert(preparar >= 0 && preparar < cruzamento && cruzamento < i && i < github && github < fundir, 'camada 0 fora da ordem da aterragem');
+  assert.equal(linhas[fundir - 1], '            self.conferir_arvores()', 'as árvores não são reconferidas imediatamente antes da fusão');
   assert(!/oestadodopais\/motor|RESEARCHHUB_READ_TOKEN|RESEARCHHUB_DIR/.test(JSON.stringify(w)), 'motor ainda referido no GitHub');
 }
 conferir(scripts, workflow, aterragem);
@@ -48,4 +50,6 @@ for (const referencia of ['oestadodopais/motor', 'RESEARCHHUB_READ_TOKEN', 'RESE
   const w = structuredClone(workflow); w.jobs.conferir.steps.push({run:'echo ' + referencia});
   assert.throws(() => conferir(scripts, w, aterragem)); plantas++;
 }
+const tardia = aterragem.replace(chamada + '\n', '').replace('            self.github()\n', '            self.github()\n' + chamada + '\n');
+assert.throws(() => conferir(scripts, workflow, tardia)); plantas++;
 console.log(`camada 0 na cadeia: controlo verde e ${plantas} desligamentos recusados`);

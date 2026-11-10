@@ -2,6 +2,12 @@
 /**
  * =============================================================================
  * O VERIFY DEPOIS DO BUILD · bloco CI1, 28.09.2026
+ *
+ * VEL1: no GitHub a escrita tem uma cadeia própria e um registo dos processos.
+ * A união exige também os passos exclusivos de build:conteudo. A corrida local
+ * depois do build completo continua a pagar todos os passos dessa construção.
+ * As três fatias dos alvos correm em série nesta corrida local para reunir
+ * as condições de existência; no GitHub a união reúne os recibos das partes.
  * =============================================================================
  *
  * O QUE FAZ. Corre, sobre o `dist/` que o `npm run build` acabou de fazer, as
@@ -126,7 +132,7 @@ const MAIS_LENTAS_PRIMEIRO = [
    refaz `design-system/`). Uma conferência nova que escreva na árvore entra
    aqui quando o inventário a vir; até lá, se escrever num ficheiro que o
    `git` segue, a célula D fecha a corrida. */
-export const DEPOIS_DO_GRUPO = ['npm run design:feixe'];
+export const DEPOIS_DO_GRUPO = ['npm run design:feixe', ...[0,1,2].map(i=>`npm run check:alvos:${i}`)];
 
 /* ------------------------------------------------------------------ a escolha */
 
@@ -148,11 +154,25 @@ export function passosComMotor(scripts) {
   return motor;
 }
 
-/** Os passos do GitHub, retirando o build e a reserva explícita para a aterragem. */
+/** A cadeia escrita é uma subsequência da construção local, pela mesma ordem. */
+export function passosDaEscrita(scripts) {
+  const build = passosDe(scripts['build:conteudo'] ?? scripts.build);
+  if (scripts['build:escrever'] === undefined) return build;
+  const escrita = String(scripts['build:escrever']).split('&&').map(p => p.trim());
+  if (escrita.some(p => !p || !build.includes(p))) throw new Error('build:escrever: passo ausente de build:conteudo');
+  if (new Set(escrita).size !== escrita.length) throw new Error('build:escrever: passo repetido');
+  if (JSON.stringify(build.filter(p => escrita.includes(p))) !== JSON.stringify(escrita))
+    throw new Error('build:escrever: ordem diferente de build:conteudo');
+  return escrita;
+}
+
+/** No CI entram também os passos exclusivos do build que não escrevem. */
 export function restantesDoVerify(scripts) {
-  const doBuild = new Set(passosDe(scripts['build:conteudo'] ?? scripts.build));
+  const doBuild = new Set(passosDaEscrita(scripts));
   const comMotor = new Set(passosComMotor(scripts));
-  return passosDe(scripts.verify).filter((p) => !doBuild.has(p) && !comMotor.has(p));
+  const todos = scripts['build:escrever'] === undefined ? passosDe(scripts.verify)
+    : [...new Set([...passosDe(scripts.verify), ...passosDe(scripts['build:conteudo'])])];
+  return todos.filter(p => !doBuild.has(p) && !comMotor.has(p));
 }
 
 /**
@@ -176,14 +196,24 @@ function ordemDeArranque(restantes, depoisDoGrupo = DEPOIS_DO_GRUPO) {
  * @param {{build?: string, verify?: string}} scripts
  * @param {{passo: string, codigo: number|null}[]} corridos
  */
-export function celulaDaUniao(scripts, corridos) {
+export function celulaDaUniao(scripts, corridos, construidos = []) {
   const parte = (s) => String(s ?? '').split(/\s*&&\s*/).map((x) => x.trim()).filter((x) => x.length > 0);
   const verify = parte(scripts.verify);
-  const build = new Set(parte(scripts['build:conteudo'] ?? scripts.build));
+  const conteudo = parte(scripts['build:conteudo'] ?? scripts.build);
+  const build = new Set(parte(scripts['build:escrever'] ?? scripts['build:conteudo'] ?? scripts.build));
   /* A contagem por outra via: tantos passos quantos `&&` mais um. Um leitor
      que perdesse um passo pelo caminho não passa daqui. */
   const esperados = (String(scripts.verify ?? '').match(/&&/g) ?? []).length + 1;
   const falhas = [];
+  if (scripts['build:escrever'] !== undefined) {
+    const escrita = String(scripts['build:escrever']).split(/\s*&&\s*/).map(p => p.trim());
+    if (escrita.some(p => !p || !conteudo.includes(p))) falhas.push('U: build:escrever tem passo ausente de build:conteudo');
+    if (new Set(escrita).size !== escrita.length || JSON.stringify(conteudo.filter(p => build.has(p))) !== JSON.stringify(escrita))
+      falhas.push('U: build:escrever tem repetição ou ordem diferente de build:conteudo');
+    if (conteudo.length !== (String(scripts['build:conteudo']).match(/&&/g) ?? []).length + 1) falhas.push('U: passo vazio em build:conteudo');
+    if (JSON.stringify(construidos.map(c => c.passo)) !== JSON.stringify(escrita) || construidos.some(c => c.codigo !== 0))
+      falhas.push('U: registo da construção ausente, incompleto, fora de ordem ou vermelho');
+  }
   if (scripts['build:conteudo'] !== undefined && scripts.build !== 'python3 scripts/leituras/com-tranca.py npm run build:conteudo') falhas.push('U: o build não executa a cadeia declarada sob a tranca');
   if (verify.length === 0) falhas.push('U: o verify do package.json não tem passos');
   if (verify.length !== esperados) falhas.push(`U: o verify tem ${esperados} passos pelos &&, e o leitor leu ${verify.length}`);
@@ -194,14 +224,15 @@ export function celulaDaUniao(scripts, corridos) {
   const vermelhos = new Set(corridos.filter((c) => c.codigo !== 0).map((c) => c.passo));
   let doBuild = 0;
   let daqui = 0, reservados = 0;
-  for (const p of verify) {
+  const exigidos = scripts['build:escrever'] === undefined ? verify : [...new Set([...verify, ...conteudo])];
+  for (const p of exigidos) {
     if (motor.includes(p)) reservados++;
     else if (build.has(p)) doBuild++;
     else if (verdes.has(p)) daqui++;
     else if (vermelhos.has(p)) falhas.push(`U: «${p}» correu e não saiu com 0`);
-    else falhas.push(`U: «${p}» está no verify, não é um passo do build e não correu aqui`);
+    else falhas.push(`U: «${p}» está no verify ou build:conteudo, não é um passo do build e não correu aqui`);
   }
-  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui, reservados_ao_motor: reservados };
+  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, passos_do_build: conteudo.length, passos_da_uniao: exigidos.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui, reservados_ao_motor: reservados };
 }
 
 /**
@@ -387,12 +418,13 @@ async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0
  *   depoisDoGrupo?: string[], arvore?: () => string[]|null}} o
  */
 export async function correr(o) {
+  const scripts = o.escolher ? o.scripts : { ...o.scripts, 'build:escrever': undefined };
   const escolher = o.escolher ?? restantesDoVerify;
   const escreve = o.escreve ?? ((s) => process.stdout.write(s));
   if (!fs.existsSync(o.dist)) {
     return { ok: false, corridos: [], celulas: { U: null, D: null, C: { ok: false, falhas: [`C: não existe ${path.basename(o.dist)}/. Corra o build primeiro.`] } } };
   }
-  const { grupo, depois: sozinhas } = ordemDeArranque(escolher(o.scripts), o.depoisDoGrupo ?? DEPOIS_DO_GRUPO);
+  const { grupo, depois: sozinhas } = ordemDeArranque(escolher(scripts), o.depoisDoGrupo ?? DEPOIS_DO_GRUPO);
   const listaDaArvore = (o.arvore ?? (() => ficheirosSeguidos(o.raiz)))();
   const retrato = () => ({ dist: estadoDaPasta(o.dist), arvore: listaDaArvore === null ? null : estadoDaArvore(o.raiz, listaDaArvore) });
   const antes = retrato();
@@ -401,7 +433,7 @@ export async function correr(o) {
   const depoisDoGrupo = await correPassos(sozinhas, { raiz: o.raiz, paralelo: 1, escreve, fase: 'depois', t0, medir: o.medir });
   const corridos = [...doGrupo, ...depoisDoGrupo];
   const depois = retrato();
-  const U = celulaDaUniao(o.scripts, corridos);
+  const U = celulaDaUniao(scripts, corridos);
   const D = celulaDoDist(antes, depois);
   const C = celulaDaCabeca(o.dist, o.cabeca);
   const vermelhos = corridos.filter((c) => c.codigo !== 0).map((c) => c.passo);
@@ -569,7 +601,7 @@ async function principal() {
     process.exit(0);
   }
 
-  const scripts = JSON.parse(fs.readFileSync(path.join(RAIZ, 'package.json'), 'utf8')).scripts ?? {};
+  const scripts = { ...JSON.parse(fs.readFileSync(path.join(RAIZ, 'package.json'), 'utf8')).scripts, 'build:escrever': undefined };
   if (args.includes('--a-seco')) {
     const { grupo, depois } = ordemDeArranque(restantesDoVerify(scripts));
     const n = passosDe(scripts.verify).length;

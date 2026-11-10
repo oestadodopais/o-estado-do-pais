@@ -1,0 +1,23 @@
+test_cli_cabeca_e_toda (__main__.Fila.test_cli_cabeca_e_toda) ... ok
+test_conteudo_nao_passa_conteudo_pronto (__main__.Fila.test_conteudo_nao_passa_conteudo_pronto) ... ok
+test_conteudo_passa_espera_ou_condicao (__main__.Fila.test_conteudo_passa_espera_ou_condicao) ... ok
+test_espera_de_fonte_e_condicao_sem_colisao (__main__.Fila.test_espera_de_fonte_e_condicao_sem_colisao) ... ok
+test_gargalo_medido_na_terca (__main__.Fila.test_gargalo_medido_na_terca) ... ok
+test_gargalo_nao_da_prioridade_a_conteudo (__main__.Fila.test_gargalo_nao_da_prioridade_a_conteudo) ... ok
+test_gargalo_so_vale_na_razao_da_propria_maquinaria (__main__.Fila.test_gargalo_so_vale_na_razao_da_propria_maquinaria) ... ok
+test_gargalo_vazio_recusa_mesmo_na_sexta (__main__.Fila.test_gargalo_vazio_recusa_mesmo_na_sexta) ... ok
+test_passagem_condicao (__main__.Fila.test_passagem_condicao) ... ok
+test_passagem_sexta (__main__.Fila.test_passagem_sexta) ... ok
+test_recusa_bloco_fora_da_fila (__main__.Fila.test_recusa_bloco_fora_da_fila) ... ok
+test_recusa_maquinaria_antes_de_conteudo_pronto (__main__.Fila.test_recusa_maquinaria_antes_de_conteudo_pronto) ... ok
+test_recusa_maquinaria_depois_de_navegacao (__main__.Fila.test_recusa_maquinaria_depois_de_navegacao) ... ok
+test_recusa_ordem_repetida (__main__.Fila.test_recusa_ordem_repetida) ... ok
+test_recusa_tipo_inventado (__main__.Fila.test_recusa_tipo_inventado) ... ok
+test_sexta_maquinaria_passa_conteudo_pronto (__main__.Fila.test_sexta_maquinaria_passa_conteudo_pronto) ... ok
+test_so_primeira_tabela_ativa (__main__.Fila.test_so_primeira_tabela_ativa) ... ok
+test_tipos_dos_blocos_aterrados (__main__.Fila.test_tipos_dos_blocos_aterrados) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.015s
+
+OK

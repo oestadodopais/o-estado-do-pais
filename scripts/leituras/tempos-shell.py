@@ -32,7 +32,7 @@ def main():
     cadeia = os.environ.get('OEDP_CADEIA', evento)
     # Os scripts internos do npm ficam dentro do passo que os chamou. Assim
     # conta-se cada conferência uma vez, e mede-se também o astro sem npm.
-    decompor = evento in ('build', 'build:conteudo', 'verify')
+    decompor = evento in ('build', 'build:conteudo', 'build:escrever', 'verify')
     if os.environ.get('OEDP_TEMPOS_PASSO') and not decompor:
         os.execv('/bin/sh', ['/bin/sh', *argumentos])
     inicio_cadeia, relogio_cadeia = agora(), time.monotonic()

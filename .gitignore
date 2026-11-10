@@ -66,3 +66,7 @@ design/especime-v3/medicoes/**/*.png
 
 # Manifesto transitório da construção partilhada pelo GitHub (AT1).
 at1-build.json
+
+# VEL1: recibos transitórios da escrita e das fatias dos alvos.
+at1-escrita.json
+.alvos/

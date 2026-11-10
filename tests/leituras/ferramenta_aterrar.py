@@ -62,7 +62,7 @@ if a[:2]==['run','list']:
 elif a[:2]==['run','watch']: sys.exit(1 if modo=='vermelho' else 0)
 elif a[:2]==['run','view']:
     if modo=='conclusao-invalida': print('null'); sys.exit(0)
-    print(json.dumps({'headSha':os.environ['CABECA'],'status':'completed','conclusion':'failure' if modo=='conclusao-vermelha' else 'success'}))
+    print(json.dumps({'headSha':os.environ['CABECA'],'status':'completed','conclusion':'failure' if modo in ('vermelho','conclusao-vermelha') else 'success'}))
 else: sys.exit(88)
 ''')
         comando(self.bin, 'npm', comum + '''
@@ -144,6 +144,19 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertEqual(recibo['custo'], ['design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'])
 
+    def test_vinte_pontos_sem_teto_aterram_sem_decisao(self):
+        self.custo.write_text(json.dumps({'bloco': 'ensaio', 'pontos_do_bloco': 20,
+            'orcamento': {'pontos_codex_por_bloco': 'sem teto por bloco desde 07.11.2026 (§1.232)'}}))
+        git(self.w, 'add', '--', str(self.custo.relative_to(self.w)))
+        commit(self.w, 'ensaio: orçamento sem teto por decisão citada')
+        self.env['CABECA'] = git(self.w, 'rev-parse', 'HEAD')
+        self.env.pop('ATERRAR_DECISAO', None)
+        r, recibo, _ = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(recibo['medidas_de_custo']['ensaio'], {
+            'pontos': 20, 'orcamento': 'sem teto', 'decisao': '§1.232', 'origem_orcamento': 'custo'})
+        self.assertNotIn('decisao_do_financiador', recibo)
+
     def test_ficheiro_por_registar(self):
         (self.w / 'nao-seguido').write_text('planta')
         r, _, chamadas = self.correr()
@@ -182,7 +195,8 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(r.returncode, 1)
         self.assertEqual((self.saida / 'github.codigo').read_text(), '1\n')
         self.assertEqual((self.saida / 'github.url').read_text(), 'https://example.invalid/corrida/123\n')
-        self.assertFalse(any(c[0] in ('npm', 'vercel') or c[1:2] == ['merge'] for c in chamadas))
+        self.assertFalse(any(c[0] == 'vercel' or c[1:2] == ['merge'] or c == ['npm', 'run', 'verify:deploy'] for c in chamadas))
+        self.assertIn(['npm', 'run', 'check:series'], chamadas)
         self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.main_antes)
 
     def test_conclusao_vermelha_e_cabeca_errada(self):
@@ -238,7 +252,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertIn(['npm', 'run', 'build'], chamadas)
         self.assertEqual(recibo['preparar_dist'], {'motivo': 'em falta'})
         passos = [p['passo'] for p in recibo['passos']]
-        self.assertLess(passos.index('github'), passos.index('preparar-dependencias'))
+        self.assertLess(passos.index('preparar-dependencias'), passos.index('github'))
         self.assertLess(passos.index('preparar-dist'), passos.index('series'))
 
     def test_preparacao_dispensada_quando_existe(self):
@@ -288,15 +302,16 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         r, recibo, chamadas = self.correr()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertEqual(git(self.main, 'rev-parse', 'HEAD'), self.cabeca)
-        self.assertEqual(git(self.w, 'branch', '--show-current'), '')
+        self.assertFalse(self.w.exists())
         self.assertEqual(git(self.main, 'branch', '--list', 'ensaio'), '')
         for nome in ('series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'verify-deploy', 'github'):
             self.assertEqual((self.saida / (nome + '.codigo')).read_text(), '0\n')
         passos = [p['passo'] for p in recibo['passos']]
-        ordem = ['publicar-ramo', 'github', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'fundir-main', 'publicar-main',
-                 'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local']
+        ordem = ['publicar-ramo', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'github', 'fundir-main', 'publicar-main',
+                 'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local',
+                 'conferir-limpeza-worktree', 'remover-worktree']
         self.assertEqual([p for p in passos if p in ordem], ordem)
-        self.assertIn(['gh', 'run', 'watch', '123', '--interval', '60', '--exit-status'], chamadas)
+        self.assertIn(['gh', 'run', 'watch', '123', '--interval', '10', '--exit-status'], chamadas)
         self.assertIn(['npm', 'run', 'check:cruzamento', '--', '--with-origin'], chamadas)
         self.assertEqual(sum(c == ['git', 'push', 'origin', 'main'] for c in chamadas), 1)
 

@@ -1,0 +1,15 @@
+test_limpa_sai_com_ignorados_e_comando_na_principal (__main__.Limpeza.test_limpa_sai_com_ignorados_e_comando_na_principal) ... FAIL
+
+======================================================================
+FAIL: test_limpa_sai_com_ignorados_e_comando_na_principal (__main__.Limpeza.test_limpa_sai_com_ignorados_e_comando_na_principal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<worktree>/tests/leituras/vel1_limpeza.py", line 43, in test_limpa_sai_com_ignorados_e_comando_na_principal
+    self.assertFalse(self.b.w.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 5.995s
+
+FAILED (failures=1)

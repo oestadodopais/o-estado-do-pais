@@ -1,0 +1,140 @@
+{
+  "metodo": "inventario de scripts/verify-partes.mjs, SHA-256 antes e depois de cada comando",
+  "outras_pastas_conferidas": [
+    "src",
+    "ledger/provas",
+    ".sinais",
+    "design-system"
+  ],
+  "passos": [
+    {
+      "passo": "npm run check:edicoes",
+      "codigo": 0,
+      "segundos": 15.70406925,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:selos",
+      "codigo": 0,
+      "segundos": 11.115957583,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:datas",
+      "codigo": 0,
+      "segundos": 9.792000250000005,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:dados",
+      "codigo": 0,
+      "segundos": 2.2002237499999975,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:mapa",
+      "codigo": 0,
+      "segundos": 0.5504979579999999,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:regioes",
+      "codigo": 0,
+      "segundos": 0.35874754199999737,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:areas",
+      "codigo": 0,
+      "segundos": 0.545234540999998,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:formas",
+      "codigo": 0,
+      "segundos": 11.920978124999994,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:lugares",
+      "codigo": 0,
+      "segundos": 1.8783834170000047,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:pais",
+      "codigo": 0,
+      "segundos": 28.577086540999996,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:voz",
+      "codigo": 0,
+      "segundos": 269.437008959,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:paridade",
+      "codigo": 0,
+      "segundos": 0.5821372499999706,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:nomes",
+      "codigo": 0,
+      "segundos": 4.0197338340000135,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:lingua",
+      "codigo": 0,
+      "segundos": 26.540601083000016,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:formato",
+      "codigo": 0,
+      "segundos": 1.2574496250000085,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run check:navegacao",
+      "codigo": 0,
+      "segundos": 14.354505541999998,
+      "dist": [],
+      "outros": []
+    },
+    {
+      "passo": "npm run sinais",
+      "codigo": 0,
+      "segundos": 1.6012036659999866,
+      "dist": [],
+      "outros": [
+        ".sinais/explicacoes.json",
+        ".sinais/primeira-pagina.json"
+      ]
+    },
+    {
+      "passo": "npm run check:discussao",
+      "codigo": 0,
+      "segundos": 45.880300250000026,
+      "dist": [],
+      "outros": []
+    }
+  ]
+}

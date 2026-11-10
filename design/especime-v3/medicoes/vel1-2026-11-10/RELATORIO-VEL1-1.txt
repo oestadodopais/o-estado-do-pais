@@ -1,0 +1,43 @@
+VEL1, passagem 1, 10.11.2026
+
+Os nove pontos estão implementados em commits separados. A redução para metade fica por medir no GitHub. A prova local das partes ficou incompleta por recusa da sandbox.
+
+1. build:escrever conserva a ordem do build:conteudo. O runner executa-o sob a tranca e regista os processos reais; U exige todos os passos de verify e build:conteudo. As plantas recusam omissão, passo intruso, ordem trocada e registo ausente ou vermelho; aceitam antecipar um leitor. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/at1_partes.py · código 0 -->
+O registo real também foi provado com uma cadeia sintética: o vermelho interrompe a cadeia e elimina o recibo anterior. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_escrita.py · código 0 -->
+Os 18 candidatos deram código 0 e conservaram os SHA-256 do dist; só sinais alterou .sinais/primeira-pagina.json e .sinais/explicacoes.json, sem consumidores encontrados nas conferências. Inventários e tempos: escritas-build.json. <!-- portao: evidencias/dirigidas/verify.log | VEL1 inventários: 18 passos, código 0, dist inalterado -->
+
+2. Oito partes, pelos dois ficheiros fornecidos do GitHub. A matriz e a reunião leem os índices de at1-build.json. Cargas calculadas, em segundos: 0: 603.200, 1: 597.660, 2: 593.302, 3: 593.522, 4: 593.503, 5: 593.343, 6: 593.301, 7: 593.287. O plano completo está em plano-vel1.json. As três fatias usam estimativas; check:rec1 ficou assinalado sem medição. Plantas de divergência e leitura dinâmica: código 0. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_workflow.py · código 0 -->
+
+3. check:alvos:0, :1 e :2 substituem o passo único no verify. As listas são disjuntas e repartem as 390 medições em 130 por fatia, conservando inclusive a repetição já existente de entradaDinheiro. As condições globais de existência são reunidas pelos recibos; o verify local reúne-as no último passo e o GitHub no juntar. As plantas próprias ficam nas fatias responsáveis. Família ou largura em falta, repetição e ausência global são recusadas. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_alvos.py · código 0 -->
+
+4. portao usa checkout raso e esparso: package.json, package-lock.json, .nvmrc e scripts/. O grafo do juntar contém quatro módulos locais. Uma união sintética passou numa cópia sem src/, tests/ ou dependências instaladas. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_workflow.py · código 0 -->
+
+5. Cache do Chromium pela versão do Playwright no lockfile, instalação limitada a cinco minutos e uma repetição. Falta preencher, nos dois locais, PREENCHER_SHA_ACTIONS_CACHE_V4_2_3, versão actions/cache@v4.2.3. A configuração foi conferida localmente; a ação e a instalação reais exigem o GitHub. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_workflow.py · código 0 -->
+
+6. Um push de main só dispensa a corrida quando a API confirma sucesso do mesmo fluxo e commit, por push noutro ramo do mesmo repositório. Falha da consulta conserva a corrida completa. O agendamento diário corre inteiro. As plantas cobrem os casos pedidos e o fecho real do YAML foi executado nas 192 combinações de estados, mais a dispensa sem endereço. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_dispensa.py · código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_workflow.py · código 0 -->
+
+7. Vigia a cada dez segundos; depois de um erro, até seis consultas, separadas por trinta segundos. O gh falso falha duas vezes e recupera. Rede indisponível, pendência, vermelho, cancelamento e outra cabeça recusam. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_vigia.py · código 0 -->
+
+8. A retoma reutiliza apenas um envio confirmado, para a mesma cabeça, modo e inventário SHA-256 completo do dist. Outra cabeça, bytes diferentes, ficheiro novo, outro modo ou ausência de confirmação refazem o envio. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_retoma.py · código 0 -->
+
+9. series, ledger-corpos, frases-afirmacao, cruzamento com origem e camada 0 correm na preparação, sob a tranca, antes da espera pelo GitHub. As duas árvores são reconferidas imediatamente antes de fundir. Cada vermelho local, com API simulada verde, impede a fusão. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/vel1_sobreposicao.py · código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | VEL1 camada-cadeia: código 0 -->
+
+Lista final de build:escrever, pela ordem: mapa:unidades; ledger:check; check:registo; check:cruzamento; check:documentos; node scripts/stamp-version.mjs --preparar; astro build; node scripts/calendario-paginas.mjs; stamp:version; cartoes; gate:html; check:cadeia.
+Escritas conservadas: mapa:unidades em public/dados/mapa, copiado pela construção; preparação em .astro/version.json; Astro no dist; calendário no HTML do dist; carimbo em dist/version.json; cartoes em dist/cartoes; gate:html em dist/prova.json; check:cadeia em dist/cadeia.json. As quatro conferências prévias ficam na posição pedida pelo mandato. Nenhum candidato adicional teve de ficar na escrita.
+
+Prova executada: um build completo, código 0, sobre a cabeça 131c17ddedc243ce2bdb6d355185127e8145cf60; planear produziu as oito partes. <!-- portao: evidencias/build/build.log | VEL1 build: código 0 -->
+As conferências dirigidas deram código 0 em check:projecao-portoes, check:repositorio, check:mortos, check:briefs, typecheck, camada-cadeia, frases-afirmacao e plantas U/D/C. <!-- portao: evidencias/dirigidas/verify.log | VEL1 check:projecao-portoes: código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | VEL1 check:repositorio: código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | VEL1 check:mortos: código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | VEL1 check:briefs: código 0 -->
+<!-- portao: evidencias/typecheck/typecheck.log | VEL1 typecheck: código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | VEL1 frases-afirmacao: código 0 -->
+<!-- portao: evidencias/dirigidas/verify.log | VEL1 celulas-UDC: código 0 -->
+check:leituras deu código 1 apenas em ferramentas.py: Error: listen EPERM: operation not permitted 127.0.0.1. Todas as plantas VEL1 passaram dentro dessa corrida. <!-- portao: evidencias/dirigidas/verify.log | check:leituras · tests/leituras/ferramentas.py · código 1 -->
+
+Por provar fora da sandbox: as partes 7 e 6, as duas mais curtas, e a parte 3, com a fatia 0; as três fatias no navegador; juntar com partes realmente corridas; a ação de cache, a consulta real da API, a matriz, a dispensa e o agendamento no GitHub; o tempo final contra a corrida anterior. A tentativa da parte 7 encontrou listen EPERM em check:moldura e foi interrompida. O juntar está provado por plantas sintéticas. <!-- portao: evidencias/partes/verify.log | Error: listen EPERM: operation not permitted 127.0.0.1 -->
+A sandbox recusou também a limpeza do grupo de processos do invólucro. A tranca ficou por inspecionar pelo lançador; não foi removida sem confirmação do fim dos descendentes. Não correu a corrida inteira dos portões nem houve capturas.
+
+Custo observado até à redação: 92 chamadas de ferramentas; 65 execuções de conferências, pela definição e pelos recibos de execucoes-vel1.json; zero corridas inteiras dos portões. Os commits e a conferência das citações posteriores a esta redação ficam fora desta contagem.

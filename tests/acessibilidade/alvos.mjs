@@ -99,6 +99,9 @@ import { conferirDisposicaoNovidades } from '../inicio/novidades-disposicao.mjs'
  * três faz a corrida sair a 1.
  */
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {FAMILIAS, EDICOES, LARGURAS, fatiaDaFamilia, juntarAlvos, PRESENCAS} from '../../scripts/alvos-fatias.mjs';
+import {inventario} from '../../scripts/verify-partes.mjs';
 import fs from 'node:fs';
 import { lerPaginaComCodigo, tirarCodigoConferido } from '../../scripts/incorporar-do-portao.mjs';
 import { cabecaValida } from './cabeca-b1.mjs';
@@ -130,14 +133,47 @@ const opcao = (nome) => {
   return i >= 0 ? (argv[i + 1] ?? true) : null;
 };
 // M-A: a medição conserva também cada página e largura, antes de mudar a espera.
-const FICHEIRO_JSON = opcao('--json') ?? (process.env.OEDP_TEMPOS_DIR ? path.join(process.env.OEDP_TEMPOS_DIR, 'alvos.json') : null);
+const FICHEIRO_JSON = opcao('--json') ?? (process.env.OEDP_TEMPOS_DIR ? path.join(process.env.OEDP_TEMPOS_DIR, opcao('--fatia') === null ? 'alvos.json' : `alvos-${opcao('--fatia')}.json`) : null);
 const VERMELHOS = argv.includes('--vermelhos');
 const SO = opcao('--so');
-
+const FATIA = opcao('--fatia') === null ? null : Number(opcao('--fatia'));
+assert(FATIA === null || (Number.isInteger(FATIA) && FATIA >= 0 && FATIA < 3), 'use --fatia 0, 1 ou 2');
+assert(!(FATIA !== null && VERMELHOS), '--vermelhos exige a régua inteira');
+assert.deepEqual(LANGS, EDICOES, 'as edições da partição diferem das rotas');
+// A listagem percorre as mesmas rotas e larguras que a medição no navegador.
+const ROTAS = [];
+for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
+  for (const lang of LANGS) {
+    if (FATIA !== null && fatiaDaFamilia(chave, lang) !== FATIA) continue;
+    const p = routePath(rotaDaFamilia, lang, params ?? undefined);
+    const rota = p.endsWith('/') ? p : `${p}/`;
+    ROTAS.push({ chave: `${chave}/${lang}`, familia: chave, lang, rota });
+  }
+}
+if (argv.includes('--listar')) {
+  console.log(JSON.stringify(ROTAS.flatMap(r => LARGURAS.map(w => `${r.chave}@${w}`))));
+  process.exit(0);
+}
 if (!fs.existsSync(DIST)) {
   console.error('não existe dist/. Corra o build primeiro.');
   process.exit(2);
 }
+const PRESENCAS_MEDIDAS = {};
+// As condições existenciais juntam-se no fim: soma > 0 equivale à régua inteira.
+const existe = (nome, n) => { PRESENCAS_MEDIDAS[nome] = n; return FATIA === null ? n > 0 : true; };
+const PASTA_FATIAS = process.env.OEDP_ALVOS_DIR ?? path.join(RAIZ, '.alvos');
+let EXECUCAO = process.env.OEDP_ALVOS_EXECUCAO;
+if (FATIA !== null && !EXECUCAO) {
+  fs.mkdirSync(PASTA_FATIAS, {recursive:true});
+  if (FATIA === 0 || !fs.existsSync(path.join(PASTA_FATIAS, 'execucao.json'))) {
+    for (let i = 0; i < 3; i++) fs.rmSync(path.join(PASTA_FATIAS, `fatia-${i}.json`), {force:true});
+    fs.writeFileSync(path.join(PASTA_FATIAS, 'execucao.json'), JSON.stringify({id:crypto.randomUUID(), dist:inventario(DIST)}));
+  }
+  const contexto = JSON.parse(fs.readFileSync(path.join(PASTA_FATIAS, 'execucao.json'), 'utf8'));
+  assert.deepEqual(inventario(DIST), contexto.dist, 'dist mudou entre fatias');
+  EXECUCAO = contexto.id;
+}
+
 if (!fs.existsSync(AXE)) {
   console.error(`não existe ${path.relative(RAIZ, AXE)}. Corra \`npm ci\` primeiro.`);
   process.exit(2);
@@ -155,7 +191,7 @@ const LIMIAR_DA_COLUNA = 1024;
  * AS CINCO LARGURAS. 390 é o telemóvel da casa; 641, 768 e 1023 são as três
  * pontas do buraco que a I104 mediu; 1280 é a secretária.
  */
-const LARGURAS = [390, 641, 768, 1023, 1280];
+
 
 /* -------------------------------------------------------------- as rotas */
 
@@ -169,64 +205,7 @@ const LARGURAS = [390, 641, 768, 1023, 1280];
  * bloco F1.8 mede-os com a régua deles (`tests/documentos/moldura.mjs`). O
  * brief F1.7 di-lo à letra: «fora do CSS próprio dos documentos alojados».
  */
-const FAMILIAS = [
-  ['home', null],
-  ['temas', null],
-  /* AS PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) são uma família nova, com a mesma vista para as
-     cinco; mede-se a que tem mais cartões e mais secções, «O meu dinheiro», nas duas edições. */
-  ['entradaDinheiro', null],
-  ['lugares', null],
-  ['municipio', { slug: 'evora' }],
-  /* O ÍNDICE DOS DISTRITOS SAIU DA LISTA COM A PÁGINA (B1, peça 2, 21.09.2026):
-     passou a redirecionamento para a página dos lugares, que já está aqui em
-     cima. A página de uma unidade fica, e é a linha a seguir. */
-  ['distrito', { slug: 'evora' }],
-  ['regioes', null],
-  ['regiao', { slug: 'alentejo' }],
-  ['areas', null],
-  ['area', { slug: 'administracao-interna' }],
-  ['entradaDinheiro', null],
-  ['entradaSalarios', null],
-  ['entradaPobreza', null],
-  ['entradaTrabalho', null],
-  ['entradaCasa', null],
-  ['entradaEscolaESaude', null],
-  ['entradaEstado', null],
-  ['livro', null],
-  ['livroConcelhos', null],
-  ['livroConcelho', { slug: 'evora' }],
-  ['linha', { slug: 'evora-populacao-2025' }],
-  ['estudos', null],
-  ['estudo', { slug: 'agua-nao-faturada' }],
-  /* B1: a amostra de texto longo abre o corpo na rota do estudo. O nome
-     «texto» identifica esta medição e conserva as conferências da leitura;
-     a terceira coluna diz a rota real, sem pedir um HTML de redirecionamento. */
-  ['texto', { slug: 'evora-prometido-pago-auditado-2026' }, 'estudo'],
-  ['agenda', null],
-  ['metodo', null],
-  ['sobre', null],
-  ['correcoes', null],
-  ['marcador', null],
-  /* A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026): o formulário e uma das quatro páginas do resultado,
-     que partilham a mesma vista; a do obrigado é a que um leitor vê quando tudo correu bem. */
-  ['sugestoes', null],
-  ['sugestoesObrigado', null],
-  /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026): uma página de serviço nova, com o texto e uma porta de correio; o axe
-     a zero e os alvos nas larguras desta régua, como as outras. */
-  ['privacidade', null],
-  /* O ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, ponto 4): as portas das listas e o resumo de cada gaveta dos
-     concelhos com o alvo de 44 px, e o axe a zero, nas larguras desta régua. */
-  ['indice', null],
-  /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026): a lista, a página da semana (as portas das mudanças, o
-     selo de cada uma) e a primeira explicação (os selos do texto, as figuras das barras e a lista dobrada dos números de
-     cada figura), com o axe a zero e os alvos nas larguras desta régua, como as outras páginas do leitor. */
-  ['discussao', null],
-  ['dossies', null],
-  ['dossie', { slug: 'orcamento-2027' }],
-  ['explicacoes', null],
-  ['leituraDaSemana', null],
-  ['explicacao', { slug: 'dinheiro-do-estado-2026' }],
-];
+
 
 /**
  * O PREFIXO DA PÁGINA DE UM CONCELHO, POR EDIÇÃO, tirado da tabela de rotas e
@@ -253,17 +232,11 @@ const CLAIMS = loadClaims();
 /** @param {string} id */
 const claimOuNulo = (id) => CLAIMS.get(id) ?? null;
 
-const ROTAS = [];
-for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
-  for (const lang of LANGS) {
-    const p = routePath(rotaDaFamilia, lang, params ?? undefined);
-    const rota = p.endsWith('/') ? p : `${p}/`;
-    const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
-    if (!fs.existsSync(ficheiro)) {
-      console.error(`a régua pede ${rota} e a construção não a tem (${path.relative(RAIZ, ficheiro)}).`);
-      process.exit(2);
-    }
-    ROTAS.push({ chave: `${chave}/${lang}`, familia: chave, lang, rota });
+for (const {rota} of ROTAS) {
+  const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
+  if (!fs.existsSync(ficheiro)) {
+    console.error(`a régua pede ${rota} e a construção não a tem (${path.relative(RAIZ, ficheiro)}).`);
+    process.exit(2);
   }
 }
 
@@ -1755,6 +1728,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     })),
   );
 
+  for (const k of PRESENCAS) PRESENCAS_MEDIDAS[k] = 0;
   /* --- H1 · o axe a zero, e de qualquer grau ------------------------------
    *
    * ZERO DE QUALQUER IMPACTO, e não zero de graves com moderadas por baixo
@@ -1859,11 +1833,11 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   const naoMedidos = todosOsAlvos.filter((a) => a.ok === null);
   conta(
     'H2',
-    fichas.length > 0 &&
+    existe('fichas', fichas.length) &&
       fichasMas.length === 0 &&
       folhas.blocos > 0 &&
       folhas.maus.length === 0 &&
-      doBuraco.length > 0 &&
+      existe('buraco', doBuraco.length) &&
       buracoDeCaixa.length === 0,
     `fichas de concelho: ${fichas.length} medidas, ${fichasMas.length} sem o alvo ` +
       `(${resumo(fichasMas)}) · a folha: ${folhas.blocos} bloco(s) @media com tecto, ` +
@@ -1957,7 +1931,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   const daI105Maus = daI105.filter((a) => a.ok32 !== true);
   conta(
     'H6',
-    daI105.length > 0 && daI105Maus.length === 0,
+    existe('i105', daI105.length) && daI105Maus.length === 0,
     `primeira página, a ${LARGURAS.filter((w) => w >= LIMIAR_DA_COLUNA).join(' e ')}: ` +
       `${daI105.length} alvo(s) da I105 medidos, ${daI105Maus.length} abaixo de ` +
       `${ALVO_PONTEIRO} px (${resumo(daI105Maus)})`,
@@ -2012,7 +1986,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
        linha. O que sai é a exigência de que o primeiro degrau tenha instâncias,
        porque exigir uma página que não existe é medir uma ausência. */
     'H7',
-    manchetes.length > 0 &&
+    existe('manchetes', manchetes.length) &&
       simplesMas.length === 0 &&
       pluraisMas.length === 0 &&
       comPortaAlheia.length === 0,
@@ -2056,7 +2030,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     cartoes.en > 0 &&
       cartoes.comUnidade > 0 &&
       cartoes.desenharamOutraCoisa === 0 &&
-      unidadesEn.length > 0 &&
+      existe('unidadesEn', unidadesEn.length) &&
       unidadesMas.length === 0,
     `cartões: ${cartoes.registos} registo(s), ${cartoes.en} da edição inglesa, ` +
       `${cartoes.comUnidade} com unidade · ${cartoes.desenharamOutraCoisa} desenharam uma cadeia ` +
@@ -2103,7 +2077,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   );
   conta(
     'H13',
-    doIndice.length > 0 && indiceMau.length === 0,
+    existe('indice', doIndice.length) && indiceMau.length === 0,
     `/lugares nas duas edições e nas ${LARGURAS.length} larguras: ${doIndice.length} ` +
       `passagem(ns) · portas de concelho por página: ` +
       `${[...new Set(doIndice.map((pg) => pg.portasDeConcelho))].sort((a, b) => a - b).join(', ')} ` +
@@ -2124,13 +2098,13 @@ async function avalia(p, dist, cartoes, leis, folhas) {
    * conhecido tem de ser encontrado, ou a régua não viu nada.
    */
   const pesquisas = [];
-  for (const lang of LANGS) {
+  if (FATIA === null || FATIA === 0) for (const lang of LANGS) {
     for (const largura of [390, 1280]) pesquisas.push(await medePesquisa(nav, base, lang, largura));
   }
   conta(
     'H15',
-    pesquisas.length === 4 && pesquisas.every((m) => m.passa),
-    pesquisas.map((m) => resumoDaPesquisa(m)).join(' || '),
+    (FATIA !== null && FATIA !== 0) || (pesquisas.length === 4 && pesquisas.every((m) => m.passa)),
+    pesquisas.length ? pesquisas.map((m) => resumoDaPesquisa(m)).join(' || ') : 'Pesquisa medida na fatia 0.',
   );
 
   /* --- H16 · a caixa das sugestões (bloco S1, 02.10.2026) -----------------
@@ -2170,12 +2144,12 @@ async function avalia(p, dist, cartoes, leis, folhas) {
       soSemSugestoes.length === 0 &&
       soSemCorrecoes.length === 0 &&
       paginasComPorta.length === p.paginas.length &&
-      portasA390.length > 0 &&
-      portasLargas.length > 0 &&
+      existe('portas390', portasA390.length) &&
+      existe('portasLargas', portasLargas.length) &&
       portasMasDeToque.length === 0 &&
-      botoes.length > 0 &&
+      existe('botoes', botoes.length) &&
       botoesMaus.length === 0 &&
-      armadilhas.length > 0 &&
+      existe('armadilhas', armadilhas.length) &&
       armadilhasMas.length === 0,
     `${dist.n} página(s) do dist/: ${dist.sugestoesEmMarco} com a porta das sugestões dentro do <footer>, ` +
       `${dist.sugestoesForaDeMarco} fora dele${dist.exemplos.sugestoes.length ? ` (${dist.exemplos.sugestoes.join('; ')})` : ''}, ` +
@@ -2198,10 +2172,11 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     (pg) => !pg.tituloDaPagina || pg.h1Texto.some((t) => t === ''),
   );
   // Todas as páginas com comandos reais, mesmo fora da amostra de famílias.
+  const provas = [];
+  let positivo = {ocorrencias:0, aceite:false, provas:[]};
+  if (FATIA === null || FATIA === 0) {
   const contexto = await nav.newContext({ viewport: { width: 390, height: 900 } });
   const pagina = await contexto.newPage();
-  const provas = [];
-  let positivo;
   try {
     for (const p of dist.paginasExpanded) {
       await abrirPaginaPronta(pagina, p.rota);
@@ -2212,12 +2187,13 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     const plantados = await medeComandos(pagina);
     positivo = { ocorrencias: plantados.length, aceite: aceitaComandos(plantados), provas: plantados };
   } finally { await contexto.close(); }
+  }
   const medidos = provas.flatMap(p => p.comandos);
-  conta('H10', avaliaExpanded(dist, provas, positivo) && metodo.length > 0 && metodoSemTitulo.length === 0,
+  conta('H10', ((FATIA !== null && FATIA !== 0) || avaliaExpanded(dist, provas, positivo)) && existe('metodo', metodo.length) && metodoSemTitulo.length === 0,
     `aria-expanded no dist/: ${dist.expanded} ocorrência(s) em ${dist.paginasExpanded.length} página(s)` +
     (dist.expanded === 0 ? ' · ausência medida em todas as páginas próprias' :
       ` · abrir e fechar: ${medidos.length} prova(s), ${medidos.filter(p => !p.mudou).length} falha(s)`) +
-    ` · conhecido positivo obrigatório: ${positivo.ocorrencias} ocorrência(s), ${positivo.aceite ? 'PASSOU INDEVIDAMENTE' : 'recusado'}` +
+    (FATIA !== null && FATIA !== 0 ? ' · comandos e conhecido positivo medidos na fatia 0' : ` · conhecido positivo obrigatório: ${positivo.ocorrencias} ocorrência(s), ${positivo.aceite ? 'PASSOU INDEVIDAMENTE' : 'recusado'}`) +
     ` · Método: ${metodo.length} passagem(ns), ${metodoSemTitulo.length} sem título`);
 
   return { todosOsAlvos, caixas, buraco: buracoMau, expanded: { provas, positivo } };
@@ -2289,7 +2265,9 @@ const FOLHAS = varreFolhas();
 const primeira = await passagem();
 const diagnostico = await avalia(primeira, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
 const limpas = celulas;
-const plantasDaEsperaMedidas = await plantasDaEspera(primeira, limpas, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
+const presencasLimpas = {...PRESENCAS_MEDIDAS};
+const plantasDaEsperaMedidas = FATIA === null || FATIA === fatiaDaFamilia('sugestoes', 'pt')
+  ? await plantasDaEspera(primeira, limpas, DIST_VARRIDO, CARTOES, LEIS, FOLHAS) : [];
 
 console.log('');
 console.log(cinza(`  a régua dos alvos · ${ROTAS.length} rotas × ${LARGURAS.length} larguras · dist: ${path.relative(RAIZ, DIST) || DIST}`));
@@ -2365,6 +2343,17 @@ if (VERMELHOS) {
 
 await nav.close();
 servidor.close();
+
+if (FATIA !== null) {
+  const prova = {fatia:FATIA, execucao:EXECUCAO, ok:limpas.every(c=>c.passa) && !plantaMa,
+    medidas:primeira.paginas.map(p=>`${p.chave}@${p.largura}`), presencas:presencasLimpas};
+  fs.mkdirSync(PASTA_FATIAS, {recursive:true});
+  fs.writeFileSync(path.join(PASTA_FATIAS, `fatia-${FATIA}.json`), JSON.stringify(prova) + '\n');
+  if (argv.includes('--juntar') && !process.env.OEDP_ALVOS_EXECUCAO) {
+    const provas = [0,1,2].map(i=>JSON.parse(fs.readFileSync(path.join(PASTA_FATIAS, `fatia-${i}.json`),'utf8')));
+    console.log(JSON.stringify(juntarAlvos(provas, EXECUCAO)));
+  }
+}
 
 if (FICHEIRO_JSON) {
   fs.writeFileSync(

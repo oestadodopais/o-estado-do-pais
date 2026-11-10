@@ -1,0 +1,64 @@
+{
+ "bloco": "VEL1 (a corrida portão em metade do tempo sem tirar uma conferência; a aterragem que espera pelo GitHub, reaproveita o envio e tira a worktree; a fila e a guarda do custo em linha com as regras)",
+ "data": "2026-11-10",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem (os nove pontos, um commit por ponto)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T19:07:27Z",
+   "fim": "2026-11-10T20:09:16Z",
+   "pontos": 8.0,
+   "pontos_antes": 43.0,
+   "pontos_depois": 51.0,
+   "outras_sessoes": 2,
+   "fonte": "a linha PONTOS do registo do lançador vel1-1"
+  },
+  {
+   "nome": "adenda A (seis correções da leitura a frio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T21:03:56Z",
+   "fim": "2026-11-10T21:21:32Z",
+   "pontos": 2.0,
+   "pontos_antes": 52.0,
+   "pontos_depois": 54.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador vel1-a"
+  },
+  {
+   "nome": "adenda B (uma interrupção pára a aterragem)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T21:33:36Z",
+   "fim": "2026-11-10T21:44:40Z",
+   "pontos": 1.0,
+   "pontos_antes": 55.0,
+   "pontos_depois": 56.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador vel1-b"
+  },
+  {
+   "nome": "adenda C (a fila, a guarda do custo e a worktree na aterragem)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T21:45:47Z",
+   "fim": "2026-11-10T21:58:41Z",
+   "pontos": 1.0,
+   "pontos_antes": 56.0,
+   "pontos_depois": 57.0,
+   "outras_sessoes": 2,
+   "fonte": "a linha PONTOS do registo do lançador vel1-c"
+  }
+ ],
+ "total_pontos_codex": 12.0,
+ "reflexo_dos_gargalos": "quatro passagens e 12 pontos pelo contador da conta, que nas mesmas horas contou também as passagens do EVA no motor (outras sessões: 1 ou 2 em cada intervalo): a subida não é toda deste bloco. As passagens tiveram um commit por ponto e acabaram em 62, 18, 11 e 13 minutos.",
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh: uma leitura a frio (278 mil símbolos) e uma leitura curta (142 mil), cinco plantas em cinco em cada uma. As adendas B e C lidas pelo lugar de direção no diff, com as plantas corridas fora da sandbox (check:leituras, código 0).",
+ "medida": "a corrida portão do ramo antes do bloco: 42,6 a 52,1 minutos (quatro aterragens); depois: 24,7 minutos (a corrida 42897032498).",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-10T19:07:27Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros. As leituras a frio (Claude) e as corridas por guião não entram nos pontos do Codex."
+}

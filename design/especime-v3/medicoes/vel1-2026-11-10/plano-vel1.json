@@ -1,0 +1,101 @@
+{
+  "partes": [
+    [
+      "npm run check:voz"
+    ],
+    [
+      "npm run check:voz-retiradas"
+    ],
+    [
+      "npm run check:palavras",
+      "npm run check:privacidade",
+      "npm run check:edicoes",
+      "npm run check:datas",
+      "npm run check:rotulos",
+      "npm run check:quadro",
+      "npm run check:formato",
+      "npm run check:areas",
+      "npm run check:repositorio"
+    ],
+    [
+      "npm run check:alvos:0",
+      "npm run check:frases-compostas",
+      "npm run check:indice",
+      "npm run check:navegacao",
+      "npm run check:formas",
+      "npm run check:dossies",
+      "npm run check:dados",
+      "npm run check:series",
+      "npm run provar:eyetext",
+      "npm run check:regioes"
+    ],
+    [
+      "npm run check:alvos:1",
+      "npm run check:frases-afirmacao",
+      "npm run check:lingua",
+      "npm run check:cartao",
+      "npm run check:explicacoes",
+      "npm run check:alcance",
+      "npm run design:feixe",
+      "npm run check:capturas-largura",
+      "npm run check:fontes"
+    ],
+    [
+      "npm run check:alvos:2",
+      "npm run check:indice-do-sitio",
+      "npm run check:briefs",
+      "npm run check:eo1",
+      "npm run check:css",
+      "npm run check:cabeca",
+      "npm run check:publicadores",
+      "npm run check:mapa",
+      "npm run provar:guardas",
+      "npm run mapa:unidades -- --verifica"
+    ],
+    [
+      "npm run check:pais",
+      "npm run check:primeira",
+      "npm run check:discussao",
+      "npm run check:incorporar",
+      "npm run check:selos",
+      "npm run check:graficos",
+      "npm run check:nomes",
+      "npm run check:pais:auto-teste",
+      "npm run check:forma-citacao",
+      "npm run check:projecao-portoes"
+    ],
+    [
+      "npm run check:leituras",
+      "npm run check:moldura",
+      "npm run check:lugar",
+      "npm run check:largura",
+      "npm run check:sobreposicao",
+      "npm run check:metodo-construido",
+      "npm run check:lugares",
+      "npm run sinais",
+      "npm run check:mortos",
+      "npm run check:paridade",
+      "npm run check:sugestoes",
+      "npm run check:rec1"
+    ]
+  ],
+  "cargas": [
+    603.2,
+    597.66,
+    593.302,
+    593.522,
+    593.503,
+    593.343,
+    593.301,
+    593.287
+  ],
+  "sem_medida": [
+    "npm run check:rec1"
+  ],
+  "estimados": [
+    "npm run check:alvos:0",
+    "npm run check:alvos:1",
+    "npm run check:alvos:2"
+  ],
+  "fonte": "scripts/verify-partes-tempos.json; as três fatias usam estimativas de um terço da régua inteira"
+}

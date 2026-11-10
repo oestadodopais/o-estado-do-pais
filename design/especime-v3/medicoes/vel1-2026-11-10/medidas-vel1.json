@@ -1,0 +1,14 @@
+{
+ "alvos": {
+  "valor": "941",
+  "comando": "python3 -c \"import json;print(round(json.load(open('tempos-github-42678039181.json'))['npm run check:alvos']))\""
+ },
+ "voz-retiradas": {
+  "valor": "598",
+  "comando": "python3 -c \"import json;print(round(json.load(open('tempos-github-42678039181.json'))['npm run check:voz-retiradas']))\""
+ },
+ "voz": {
+  "valor": "603",
+  "comando": "python3 -c \"import json;print(round(json.load(open('tempos-github-build-42678039181.json'))['segundos']['npm run check:voz']))\""
+ }
+}

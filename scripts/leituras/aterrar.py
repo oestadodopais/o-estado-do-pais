@@ -4,9 +4,10 @@
 A direção chama esta ferramenta depois dos portões locais e da leitura a frio.
 Prepara uma produção sem domínio em paralelo com o portão do GitHub.
 Os comandos externos têm um teto de 90 minutos; as consultas, de dois minutos.
-A worktree fica destacada na cabeça aterrada depois de apagar o ramo local.
+A worktree limpa é removida no fim, salvo ATERRAR_CONSERVA_WORKTREE=1.
 """
 import datetime
+import hashlib
 import json
 import math
 import os
@@ -27,8 +28,13 @@ def agora():
 
 
 class Parar(Exception):
-    def __init__(self, codigo, motivo):
+    def __init__(self, codigo, motivo, sinal=None):
         self.codigo, self.motivo = codigo, motivo
+        self.sinal = sinal
+
+
+class FalhaComando(Parar):
+    """Uma falha recuperável ao consultar um serviço externo."""
 
 
 class Aterragem:
@@ -75,9 +81,11 @@ class Aterragem:
             os.utime(self.tranca, None)
 
     def esperar(self, segundos):
-        for _ in range(segundos // 10):
+        while segundos > 0:
             self.pulsar()
-            time.sleep(10)
+            parcela = min(10, segundos)
+            time.sleep(parcela)
+            segundos -= parcela
 
     def tomar_tranca(self):
         inicio = time.monotonic()
@@ -137,10 +145,10 @@ class Aterragem:
                         p.wait(timeout=min(10, max(0.1, limite - time.monotonic())))
                     except subprocess.TimeoutExpired:
                         if time.monotonic() >= limite:
-                            raise Parar(124, nome + ' excedeu o tempo limite')
+                            raise FalhaComando(124, nome + ' excedeu o tempo limite')
                 codigo = p.returncode if p.returncode >= 0 else 128 - p.returncode
             except (Parar, OSError) as erro:
-                falha = erro if isinstance(erro, Parar) else Parar(9, nome + ' não arrancou')
+                falha = erro if isinstance(erro, Parar) else FalhaComando(9, nome + ' não arrancou')
                 codigo = falha.codigo
                 if p is not None and p.poll() is None:
                     os.killpg(p.pid, signal.SIGTERM)
@@ -159,7 +167,7 @@ class Aterragem:
         if falha:
             raise falha
         if codigo:
-            raise Parar(codigo, nome + ' falhou')
+            raise FalhaComando(codigo, nome + ' falhou', sinal=-p.returncode if p.returncode < 0 else None)
         return texto
 
     def conferir_arvores(self):
@@ -337,6 +345,7 @@ class Aterragem:
             self.exigir(len(restante) >= 20, 'ATERRAR_DECISAO exige vinte carateres além da data')
             self.recibo['decisao_do_financiador'] = decisao
         medidas = {}
+        self.recibo['medidas_de_custo'] = medidas
         def numero(v):
             return type(v) in (int, float) and math.isfinite(v) and v >= 0
         for b, f in por_bloco.items():
@@ -350,16 +359,23 @@ class Aterragem:
                 pontos = sum(valores)
             self.exigir(numero(pontos), 'pontos_do_bloco inválido: ' + b)
             o = d.get('orcamento')
-            declarado = o.get('pontos_codex_por_bloco') if isinstance(o, dict) else None
-            if declarado is None:
+            presente = isinstance(o, dict) and 'pontos_codex_por_bloco' in o
+            declarado = o['pontos_codex_por_bloco'] if presente else None
+            medida = medidas[b] = {'pontos': pontos, 'origem_orcamento': 'custo' if presente else 'por omissão'}
+            if not presente:
                 limite = 10
                 self.recibo['orcamento_por_omissao'] = limite
+            elif type(declarado) is int or (isinstance(declarado, str) and re.fullmatch(r'[0-9]+', declarado)):
+                limite = int(declarado)
+                self.exigir(limite > 0, 'orçamento ilegível: ' + b)
+            elif isinstance(declarado, str) and re.match(r'sem teto\b', declarado):
+                citacao = re.search(r'§[0-9]+(?:\.[0-9]+)*(?![\w.])', declarado)
+                self.exigir(bool(citacao), 'orçamento ilegível: ' + b)
+                medida.update(orcamento='sem teto', decisao=citacao.group())
+                continue
             else:
-                m = re.search(r'\d+', str(declarado))
-                self.exigir(bool(m) and int(m.group()) > 0, 'orçamento sem inteiro positivo: ' + b)
-                limite = int(m.group())
-            medidas[b] = {'pontos': pontos, 'orcamento': limite,
-                          'origem_orcamento': 'por omissão' if declarado is None else 'custo'}
+                raise Parar(9, 'orçamento ilegível: ' + b)
+            medida['orcamento'] = limite
             self.exigir(pontos < limite or bool(decisao),
                         f'{b}: {pontos:g} pontos atingem o orçamento de {limite}; falta ATERRAR_DECISAO')
         self.recibo['custo'] = list(por_bloco.values())
@@ -385,13 +401,38 @@ class Aterragem:
             self.recibo['corrida'] = corrida
             self.escrever('github.url', corrida['url'] + '\n')
             self.guardar()
+            limite = time.monotonic() + 5400
             try:
-                self.correr('github-vigia', ['gh', 'run', 'watch', str(corrida['databaseId']), '--interval', '60', '--exit-status'])
-            except Parar as erro:
-                self.escrever('github.codigo', str(erro.codigo) + '\n')
-                raise
-            confirmada = json.loads(self.correr('github-conclusao', ['gh', 'run', 'view', str(corrida['databaseId']),
-                '--json', 'headSha,status,conclusion,url'], teto=120))
+                self.correr('github-vigia', ['gh', 'run', 'watch', str(corrida['databaseId']), '--interval', '10', '--exit-status'])
+            except FalhaComando as erro:
+                if erro.codigo == 130 or erro.sinal is not None:
+                    raise
+            # Um erro do vigia não é o estado da corrida. Só a API decide.
+            confirmada = None
+            consulta = 0
+            while True:
+                if consulta:
+                    self.esperar(min(30, max(0, limite - time.monotonic())))
+                restante = limite - time.monotonic()
+                if restante <= 0:
+                    self.escrever('github.codigo', '124\n')
+                    self.registar('github', 124, endereco=corrida['url'])
+                    raise Parar(124, 'esgotado o teto de 90 minutos de espera pelo GitHub')
+                consulta += 1
+                try:
+                    confirmada = json.loads(self.correr(f'github-conclusao-{consulta}',
+                        ['gh', 'run', 'view', str(corrida['databaseId']),
+                         '--json', 'headSha,status,conclusion,url'], teto=min(120, restante)))
+                except FalhaComando as erro:
+                    if erro.codigo == 130 or erro.sinal is not None:
+                        raise
+                    continue
+                except ValueError:
+                    continue
+                self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
+                self.exigir(confirmada.get('headSha') == self.cabeca, 'a conclusão do GitHub é de outra cabeça')
+                if confirmada.get('status') == 'completed':
+                    break
             self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
             passou = confirmada.get('headSha') == self.cabeca and confirmada.get('status') == 'completed' and confirmada.get('conclusion') == 'success'
             self.escrever('github.codigo', '0\n' if passou else '1\n')
@@ -416,8 +457,35 @@ class Aterragem:
                 raise Parar(1, 'o lançamento desta cabeça falhou na Vercel')
         raise Parar(124, 'a Vercel não mostrou esta cabeça pronta em 45 consultas')
 
+    def inventario_dist(self):
+        dist = self.sitio / 'dist'
+        self.exigir(dist.is_dir() and not dist.is_symlink(), 'dist ausente ou ligado a outra pasta')
+        mapa = {}
+        for f in sorted(dist.rglob('*')):
+            self.exigir(not f.is_symlink(), 'ligação simbólica no dist')
+            if f.is_file():
+                mapa[f.relative_to(dist).as_posix()] = hashlib.sha256(f.read_bytes()).hexdigest()
+        self.exigir(bool(mapa), 'dist vazio')
+        return mapa
+
     def preparar_envio(self):
         self.preparar()
+        inventario = self.inventario_dist()
+        candidatos = [r for r in self.recibos_anteriores()
+            if r.get('cabeca') == self.cabeca and r.get('envio_inventario') == inventario
+            and r.get('recurso') is self.recurso
+            and isinstance(r.get('vercel_preparado'), str)
+            and re.fullmatch(r'https://[a-zA-Z0-9-]+\.vercel\.app', r['vercel_preparado'])
+            and any(p.get('passo') in ('vercel-preparado', 'envio-reutilizado') and p.get('codigo') == 0
+                    for p in r.get('passos', []))]
+        if candidatos:
+            anterior = max(candidatos, key=lambda r: r.get('inicio', ''))
+            self.recibo.update(vercel_preparado=anterior['vercel_preparado'],
+                envio_inventario=inventario, recurso=self.recurso,
+                envio_reutilizado={'inicio': anterior.get('inicio'), 'endereco': anterior['vercel_preparado']})
+            self.escrever('vercel.url', anterior['vercel_preparado'] + '\n')
+            self.registar('envio-reutilizado', 0)
+            return
         if not self.recurso:
             self.correr('vercel-prebuilt', ['sh', 'scripts/leituras/vercel-prebuilt.sh', str(self.sitio)])
         else:
@@ -429,6 +497,8 @@ class Aterragem:
         texto = re.sub(r'\x1b\[[0-9;]*m', '', texto)
         urls = re.findall(r'https://[a-zA-Z0-9-]+\.vercel\.app(?=\s|$)', texto)
         self.exigir(bool(urls) and len(set(urls)) == 1, 'o envio não devolveu um endereço único da Vercel')
+        self.exigir(self.inventario_dist() == inventario, 'o dist mudou durante a preparação do envio')
+        self.recibo['envio_inventario'] = inventario
         self.recibo['vercel_preparado'] = urls[0]
         self.recibo['recurso'] = self.recurso
         self.escrever('vercel.url', urls[0] + '\n')
@@ -457,6 +527,27 @@ class Aterragem:
             self.guardar()
             self.correr('preparar-dist', ['npm', 'run', 'build'])
 
+    def remover_worktree(self):
+        """A aterragem já aconteceu; uma falha de limpeza fica apenas como aviso."""
+        try:
+            if os.environ.get('ATERRAR_CONSERVA_WORKTREE') == '1':
+                self.registar('remover-worktree', 0, estado='conservada', motivo='ATERRAR_CONSERVA_WORKTREE=1')
+                return
+            estado = self.correr('conferir-limpeza-worktree',
+                                 ['git', '-c', 'core.quotepath=false', 'status', '--porcelain', '--untracked-files=all'], teto=120)
+            if estado.strip():
+                self.registar('remover-worktree', 0, estado='conservada', ficheiros=estado.splitlines(),
+                              aviso='a worktree tem ficheiros por registar; não se remove')
+                return
+            self.correr('remover-worktree', ['git', 'worktree', 'remove', str(self.sitio)], cwd=self.principal)
+            self.recibo['passos'][-1]['estado'] = 'removida'
+            self.guardar()
+        except Parar as erro:
+            self.registar('remover-worktree', erro.codigo, estado='aviso', aviso=erro.motivo)
+        except (OSError, ValueError, KeyError, IndexError, TypeError):
+            self.registar('remover-worktree', 9, estado='aviso',
+                          aviso='não foi possível confirmar a remoção da worktree; consultar o último passo')
+
     def executar(self):
         codigo = 9
         try:
@@ -469,17 +560,11 @@ class Aterragem:
             self.recibo['cabeca_motor'] = self.cabeca_motor
             self.registar('condicoes', 0)
             self.correr('publicar-ramo', ['git', 'push', '-u', 'origin', self.ramo])
-            if self.novo_fluxo:
-                self.tomar_tranca()
-                self.conferir_arvores()
-                self.preparar_envio()
-                self.largar_tranca()
-            self.github()
-            self.conferir_limite_diario()
             self.tomar_tranca()
-            self.conferir_limite_diario()
             self.conferir_arvores()
             self.preparar()
+            if self.novo_fluxo:
+                self.preparar_envio()
             self.correr('series', ['npm', 'run', 'check:series'])
             ledger = self.correr('ledger-corpos', ['npm', 'run', 'ledger:check'])
             self.exigir(bool(re.search(r'^M83: corpos lidos; .*limpa=true; recusas=0$', ledger, re.M)), 'ledger:check não confirmou corpos lidos')
@@ -487,6 +572,12 @@ class Aterragem:
             self.exigir(bool(re.search(r'^excertos: corpos lidos; limpa=true; linhas lidas=\d+$', frases, re.M)), 'check:frases-afirmacao não confirmou corpos lidos')
             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])
             self.correr('camada-0', ['npm', 'run', 'verify:com-motor'])
+            self.largar_tranca()
+            self.github()
+            self.conferir_limite_diario()
+            self.tomar_tranca()
+            self.conferir_limite_diario()
+            # A cabeça de ambas as árvores volta a ser conferida antes da fusão.
             self.conferir_arvores()
             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)
             self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')
@@ -507,6 +598,7 @@ class Aterragem:
             self.correr('destacar-worktree', ['git', 'switch', '--detach', self.cabeca])
             self.correr('apagar-ramo-local', ['git', 'branch', '-d', self.ramo], cwd=self.principal)
             codigo = 0
+            self.remover_worktree()
         except Parar as erro:
             codigo = erro.codigo
             self.registar('parou', codigo, motivo=erro.motivo)
@@ -531,7 +623,7 @@ def principal_cli(argv):
     try:
         aterragem = Aterragem(*argv)
         def interromper(_sinal, _quadro):
-            raise Parar(130, 'aterragem interrompida')
+            raise Parar(130, 'aterragem interrompida', sinal=_sinal)
         signal.signal(signal.SIGTERM, interromper)
         signal.signal(signal.SIGINT, interromper)
         return aterragem.executar()

@@ -1,0 +1,139 @@
+[
+  {
+    "nome": "fila",
+    "comando": [
+      "python3",
+      "tests/leituras/fila.py"
+    ],
+    "codigo": 0,
+    "registo": "fila.log"
+  },
+  {
+    "nome": "pl1",
+    "comando": [
+      "python3",
+      "tests/leituras/pl1.py"
+    ],
+    "codigo": 0,
+    "registo": "pl1.log"
+  },
+  {
+    "nome": "ferramenta_aterrar",
+    "comando": [
+      "python3",
+      "tests/leituras/ferramenta_aterrar.py"
+    ],
+    "codigo": 0,
+    "registo": "ferramenta_aterrar.log"
+  },
+  {
+    "nome": "aterrar",
+    "comando": [
+      "python3",
+      "tests/leituras/aterrar.py"
+    ],
+    "codigo": 0,
+    "registo": "aterrar.log"
+  },
+  {
+    "nome": "at1_aterrar",
+    "comando": [
+      "python3",
+      "tests/leituras/at1_aterrar.py"
+    ],
+    "codigo": 0,
+    "registo": "at1_aterrar.log"
+  },
+  {
+    "nome": "vel1_alvos",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_alvos.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_alvos.log"
+  },
+  {
+    "nome": "vel1_dispensa",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_dispensa.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_dispensa.log"
+  },
+  {
+    "nome": "vel1_escrita",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_escrita.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_escrita.log"
+  },
+  {
+    "nome": "vel1_retoma",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_retoma.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_retoma.log"
+  },
+  {
+    "nome": "vel1_sobreposicao",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_sobreposicao.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_sobreposicao.log"
+  },
+  {
+    "nome": "vel1_vigia",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_vigia.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_vigia.log"
+  },
+  {
+    "nome": "vel1_workflow",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_workflow.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_workflow.log"
+  },
+  {
+    "nome": "check:mortos",
+    "comando": [
+      "npm",
+      "run",
+      "check:mortos"
+    ],
+    "codigo": 0,
+    "registo": "check-mortos.log"
+  },
+  {
+    "nome": "check:repositorio",
+    "comando": [
+      "npm",
+      "run",
+      "check:repositorio"
+    ],
+    "codigo": 0,
+    "registo": "check-repositorio.log"
+  },
+  {
+    "nome": "vel1_limpeza",
+    "comando": [
+      "python3",
+      "tests/leituras/vel1_limpeza.py"
+    ],
+    "codigo": 0,
+    "registo": "vel1_limpeza.log"
+  }
+]

@@ -1,0 +1,28 @@
+VEL1, adenda B, 10.11.2026
+
+1. A interrupção pára a aterragem. FalhaComando distingue a falha de um comando das outras paragens; os dois pontos de recuperação só repetem falhas de comando sem sinal e diferentes de 130. A origem do sinal é preservada, incluindo no processo filho. Uma resposta que não é JSON continua a permitir nova consulta. As plantas percorrem a aterragem com ferramentas simuladas: SIGINT e SIGTERM no operador, saída 130 do comando e SIGTERM no filho, tanto no vigia como na consulta. Confirmam código 130 (143 no filho), main intacto, ausência de fusão e de push de main, zero consultas depois de interromper o vigia e uma só quando a interrupção ocorre na consulta. A planta SIGINT no vigia falhou antes da correção: devolvia 0 em vez de 130. A recuperação de duas falhas de rede, dez respostas pendentes e sucesso continua verde.
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B regressão antes da correção: código 1 -->
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B vigia ponto 1: código 0 -->
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B sinais dos filhos: código 0 -->
+
+2. Cancelamento afirma código 1; outra cabeça afirma código 9. Ambas as plantas exigem uma única consulta e nenhuma pausa.
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B vigia ponto 2: código 0 -->
+
+3. A planta nova deixa 37 segundos depois do vigia e confirma os tetos reais registados por correr: 37 e 7 segundos, com pausas de 30 e 7 e saída 124 no fim do prazo. Um ensaio isolado em memória forçou teto 120 em ambas as consultas: a planta recusou com a diferença [120, 120] != [37, 7]. Essa mutação nunca foi escrita no código do produto.
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B mutação teto fixo 120: código 1 -->
+
+Prova final, pelos comandos python3 tests/leituras/<ficheiro>, através de curto.sh:
+vel1_vigia.py: código 0, 16 testes.
+ferramenta_aterrar.py: código 0, 25 testes.
+vel1_retoma.py: código 0, 6 testes.
+vel1_sobreposicao.py: código 0, 1 teste.
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B vigia final: código 0 -->
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B ferramenta_aterrar: código 0 -->
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B vel1_retoma: código 0 -->
+<!-- portao: evidencias-adenda-b/verify.log | VEL1 B vel1_sobreposicao: código 0 -->
+
+Commits: a50ca5725 (B1) e fa6234266 (B2), confirmados no resultado do escrivão e no histórico. O terceiro pedido inclui B3, este relatório e as provas. Nos dois primeiros pedidos, comitar.sh saiu com 3 por falta de batimento durante o commit; os resultados posteriores deram 0, sem repetir pedidos. O trailer Claude-Session foi copiado do commit da adenda B, pois o texto desta passagem não fornecia uma linha própria.
+
+Limitações e operação: não se executaram typecheck, portões completos, capturas ou publicação real. Os testes usam repositórios temporários e serviços simulados. Uma tentativa de diagnóstico com ps foi recusada pela sandbox (operation not permitted); a confirmação fez-se pelos ficheiros do escrivão e pelo histórico. Duas leituras agrupadas iniciais produziram saída truncada; as leituras seguintes foram delimitadas. Nada ficou por implementar nos três pontos.
+
+Custo até à redação deste relatório: 35 chamadas de ferramentas, incluindo esperas e esta escrita; 9 invocações explícitas de conferências, das quais duas vermelhas esperadas (regressão antes da correção e mutação do teto). Zero corridas completas dos portões e zero capturas. As préconferências e os hooks dos pedidos de commit não entram nas 9 invocações. As chamadas posteriores de inspeção e confirmação do terceiro commit ficam fora das 35. A linha tokens used não foi exposta.

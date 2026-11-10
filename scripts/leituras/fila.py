@@ -71,17 +71,24 @@ def conferir(linhas, bloco, hoje=None):
         raise ValueError('fila: bloco fora da fila: ' + bloco)
     hoje = hoje or datetime.now(timezone.utc).date()
     sexta_maquinaria = alvo['Tipo'] == 'maquinaria' and hoje.weekday() == 4
+    gargalo = None
+    if alvo['Tipo'] == 'maquinaria':
+        razao = alvo.get('Razão da posição', alvo.get('Razão', ''))
+        gargalo = re.search(r'\bgargalo medido:\s*([^;]*)', razao, re.I)
+        if gargalo and not gargalo.group(1).strip(' `\t'):
+            raise ValueError('fila: gargalo medido sem linha ou ficheiro da medição')
+    prioridade_maquinaria = sexta_maquinaria or bool(gargalo)
     for d in linhas:
         if d['Ordem'] >= alvo['Ordem']:
             continue
-        if sexta_maquinaria and d['Tipo'] in ('conteúdo', 'navegação'):
+        if prioridade_maquinaria and d['Tipo'] in ('conteúdo', 'navegação'):
             continue
         if d['Estado'].casefold().startswith('à espera'):
             continue
         if re.search(r'condição:\s*' + re.escape(bloco) + r'(?![\w-])', d['linha']):
             continue
         raise ValueError(f"fila: {bloco} espera por {d['Bloco']}, que está à sua frente")
-    if alvo['Tipo'] != 'maquinaria' or sexta_maquinaria:
+    if alvo['Tipo'] != 'maquinaria' or prioridade_maquinaria:
         return
     for d in linhas:
         estado = d['Estado'].casefold()
@@ -91,7 +98,7 @@ def conferir(linhas, bloco, hoje=None):
             continue
         if re.search(r'condição:\s*' + re.escape(bloco) + r'(?![\w-])', d['linha'], re.I):
             continue
-        raise ValueError(f"fila: {bloco} espera por {d['Bloco']} ({d['Tipo']}); só passa à sexta-feira ou como condição desse bloco")
+        raise ValueError(f"fila: {bloco} espera por {d['Bloco']} ({d['Tipo']}); só passa à sexta-feira, como condição desse bloco ou com gargalo medido")
 
 
 def main():

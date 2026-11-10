@@ -1,0 +1,100 @@
+VEL1 A vigia: código 0
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 47.353s
+
+OK
+
+VEL1 A workflow-2: código 0
+{"juntar_importa":["scripts/verify-partes.mjs","scripts/alvos-fatias.mjs","scripts/verify-depois-do-build.mjs","scripts/leituras/tempos.mjs"],"bytes":56984,"arvore_esparsa":"união verde sem src, tests ou dependências instaladas"}
+VEL1 workflow: plano dinâmico, árvore esparsa e cache conferidos; 192 combinações do portao e dispensa sem endereço provadas
+
+VEL1 A workflow-3: código 0
+{"juntar_importa":["scripts/verify-partes.mjs","scripts/alvos-fatias.mjs","scripts/verify-depois-do-build.mjs","scripts/leituras/tempos.mjs"],"bytes":56984,"arvore_esparsa":"união verde sem src, tests ou dependências instaladas"}
+VEL1 workflow: plano dinâmico, árvore esparsa e cache conferidos; 192 combinações do portao e dispensa sem endereço provadas
+VEL1 cache: versão real aceite; vazia, nula e ausente recusadas nos dois trabalhos
+
+VEL1 A dispensa: código 0
+VEL1 dispensa: ramo verde aceite; main, outra cabeça, vermelho, cancelado, pendente, outro fluxo, evento e repositório recusados
+VEL1 API ilegível ou com forma errada: corrida inteira; resposta válida mantém a dispensa
+
+VEL1 A alvos: código 0
+{"regua_inteira":390,"fatias":[130,130,130],"plantas":"família e largura omitidas, repetição, outra execução, vermelho e todas as ausências recusados"}
+
+VEL1 A partes: código 0
+AT1: união inteira verde; faltas, repetições, vermelhos e outras construções recusados
+{"sem_motor":true,"verify":70,"build":6,"partes":62,"reservados":["npm run check:pre-mandato","npm run check:frases-reais"]}
+VEL1 escrita: omissão, intruso, ordem trocada e registo incompleto ou vermelho recusados; leitor antecipado aceite
+
+VEL1 A tempos: código 0
+{"passos_medidos":62,"cargas":[604.811,572.509,572.525,572.5319999999999,572.558,572.4949999999999,572.4820000000001,572.5289999999999],"sem_medida":[],"estimativas":0}
+
+VEL1 A check:projecao-portoes: código 0
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue: valor recusado, releitura aceite.
+PAI1-C: dois controlos e dezasseis plantas nos leitores reais, código 0.
+
+VEL1 A check:repositorio: código 0
+> o-estado-do-pais@0.1.0 check:repositorio
+> node tests/metodo/repositorio.mjs
+
+repositório: 20 plantas e controlos locais
+
+VEL1 A check:mortos: código 0
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.
+
+  ✓ identificadores · 542 ficheiro(s) lidos, nenhuma declaração morta
+
+VEL1 A typecheck: código 0
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+VEL1 A check:leituras: código 1
+check:leituras · tests/leituras/apoio_ferramentas.py · código 0
+check:leituras · tests/leituras/at1.py · código 0
+check:leituras · tests/leituras/at1_aterrar.py · código 0
+check:leituras · tests/leituras/at1_partes.py · código 0
+check:leituras · tests/leituras/aterrar.py · código 0
+check:leituras · tests/leituras/briefs-presos.py · código 0
+check:leituras · tests/leituras/comparar-alvos.py · código 0
+check:leituras · tests/leituras/comparar-dist-frases.py · código 0
+check:leituras · tests/leituras/corpos-ledger.py · código 0
+check:leituras · tests/leituras/ferramenta_aterrar.py · código 0
+check:leituras · tests/leituras/ferramenta_fundir.py · código 0
+check:leituras · tests/leituras/ferramenta_modelos_novos.py · código 0
+check:leituras · tests/leituras/ferramenta_pre_voo.py · código 0
+check:leituras · tests/leituras/ferramentas.py · código 1
+Error: listen EPERM: operation not permitted 127.0.0.1
+check:leituras · tests/leituras/fila.py · código 0
+check:leituras · tests/leituras/frases-indice.py · código 0
+check:leituras · tests/leituras/hig6a.py · código 0
+check:leituras · tests/leituras/lancadores_copia.py · código 0
+check:leituras · tests/leituras/listas-de-uma-linha.py · código 0
+check:leituras · tests/leituras/medicoes-pl1.py · código 0
+check:leituras · tests/leituras/pacote-portoes.py · código 0
+check:leituras · tests/leituras/pacote-recibo.py · código 0
+check:leituras · tests/leituras/pacote.py · código 0
+check:leituras · tests/leituras/pl1.py · código 0
+check:leituras · tests/leituras/portoes.py · código 0
+check:leituras · tests/leituras/privacidade-jd1.py · código 0
+check:leituras · tests/leituras/privacidade-rh1b.py · código 0
+check:leituras · tests/leituras/privacidade-rh1c.py · código 0
+check:leituras · tests/leituras/privacidade-rh1d.py · código 0
+check:leituras · tests/leituras/privacidade-rh1e.py · código 0
+check:leituras · tests/leituras/privacidade-segredo.py · código 0
+check:leituras · tests/leituras/tempos.py · código 0
+check:leituras · tests/leituras/vel1_alvos.py · código 0
+check:leituras · tests/leituras/vel1_dispensa.py · código 0
+check:leituras · tests/leituras/vel1_escrita.py · código 0
+check:leituras · tests/leituras/vel1_retoma.py · código 0
+check:leituras · tests/leituras/vel1_sobreposicao.py · código 0
+check:leituras · tests/leituras/vel1_vigia.py · código 0
+check:leituras · tests/leituras/vel1_workflow.py · código 0
