@@ -76,9 +76,11 @@ class Aterragem:
             os.utime(self.tranca, None)
 
     def esperar(self, segundos):
-        for _ in range(segundos // 10):
+        while segundos > 0:
             self.pulsar()
-            time.sleep(10)
+            parcela = min(10, segundos)
+            time.sleep(parcela)
+            segundos -= parcela
 
     def tomar_tranca(self):
         inicio = time.monotonic()
@@ -386,27 +388,29 @@ class Aterragem:
             self.recibo['corrida'] = corrida
             self.escrever('github.url', corrida['url'] + '\n')
             self.guardar()
-            erro_vigia = None
+            limite = time.monotonic() + 5400
             try:
                 self.correr('github-vigia', ['gh', 'run', 'watch', str(corrida['databaseId']), '--interval', '10', '--exit-status'])
-            except Parar as erro:
-                erro_vigia = erro
+            except Parar:
+                pass
             # Um erro do vigia não é o estado da corrida. Só a API decide.
             confirmada = None
-            tentativas = 6 if erro_vigia else 1
-            for consulta in range(tentativas):
+            consulta = 0
+            while True:
                 if consulta:
-                    self.esperar(30)
+                    self.esperar(min(30, max(0, limite - time.monotonic())))
+                restante = limite - time.monotonic()
+                if restante <= 0:
+                    self.escrever('github.codigo', '124\n')
+                    self.registar('github', 124, endereco=corrida['url'])
+                    raise Parar(124, 'esgotado o teto de 90 minutos de espera pelo GitHub')
+                consulta += 1
                 try:
-                    confirmada = json.loads(self.correr(f'github-conclusao-{consulta + 1}',
+                    confirmada = json.loads(self.correr(f'github-conclusao-{consulta}',
                         ['gh', 'run', 'view', str(corrida['databaseId']),
-                         '--json', 'headSha,status,conclusion,url'], teto=120))
-                except (Parar, ValueError) as erro:
-                    if consulta + 1 < tentativas:
-                        continue
-                    codigo = erro.codigo if isinstance(erro, Parar) else 9
-                    self.escrever('github.codigo', str(codigo) + '\n')
-                    raise Parar(codigo, 'não foi possível confirmar o estado do GitHub') from erro
+                         '--json', 'headSha,status,conclusion,url'], teto=min(120, restante)))
+                except (Parar, ValueError):
+                    continue
                 self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
                 self.exigir(confirmada.get('headSha') == self.cabeca, 'a conclusão do GitHub é de outra cabeça')
                 if confirmada.get('status') == 'completed':
