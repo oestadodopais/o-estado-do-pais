@@ -28,8 +28,13 @@ def agora():
 
 
 class Parar(Exception):
-    def __init__(self, codigo, motivo):
+    def __init__(self, codigo, motivo, sinal=None):
         self.codigo, self.motivo = codigo, motivo
+        self.sinal = sinal
+
+
+class FalhaComando(Parar):
+    """Uma falha recuperável ao consultar um serviço externo."""
 
 
 class Aterragem:
@@ -140,10 +145,10 @@ class Aterragem:
                         p.wait(timeout=min(10, max(0.1, limite - time.monotonic())))
                     except subprocess.TimeoutExpired:
                         if time.monotonic() >= limite:
-                            raise Parar(124, nome + ' excedeu o tempo limite')
+                            raise FalhaComando(124, nome + ' excedeu o tempo limite')
                 codigo = p.returncode if p.returncode >= 0 else 128 - p.returncode
             except (Parar, OSError) as erro:
-                falha = erro if isinstance(erro, Parar) else Parar(9, nome + ' não arrancou')
+                falha = erro if isinstance(erro, Parar) else FalhaComando(9, nome + ' não arrancou')
                 codigo = falha.codigo
                 if p is not None and p.poll() is None:
                     os.killpg(p.pid, signal.SIGTERM)
@@ -162,7 +167,7 @@ class Aterragem:
         if falha:
             raise falha
         if codigo:
-            raise Parar(codigo, nome + ' falhou')
+            raise FalhaComando(codigo, nome + ' falhou', sinal=-p.returncode if p.returncode < 0 else None)
         return texto
 
     def conferir_arvores(self):
@@ -391,8 +396,9 @@ class Aterragem:
             limite = time.monotonic() + 5400
             try:
                 self.correr('github-vigia', ['gh', 'run', 'watch', str(corrida['databaseId']), '--interval', '10', '--exit-status'])
-            except Parar:
-                pass
+            except FalhaComando as erro:
+                if erro.codigo == 130 or erro.sinal is not None:
+                    raise
             # Um erro do vigia não é o estado da corrida. Só a API decide.
             confirmada = None
             consulta = 0
@@ -409,7 +415,11 @@ class Aterragem:
                     confirmada = json.loads(self.correr(f'github-conclusao-{consulta}',
                         ['gh', 'run', 'view', str(corrida['databaseId']),
                          '--json', 'headSha,status,conclusion,url'], teto=min(120, restante)))
-                except (Parar, ValueError):
+                except FalhaComando as erro:
+                    if erro.codigo == 130 or erro.sinal is not None:
+                        raise
+                    continue
+                except ValueError:
                     continue
                 self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
                 self.exigir(confirmada.get('headSha') == self.cabeca, 'a conclusão do GitHub é de outra cabeça')
@@ -583,7 +593,7 @@ def principal_cli(argv):
     try:
         aterragem = Aterragem(*argv)
         def interromper(_sinal, _quadro):
-            raise Parar(130, 'aterragem interrompida')
+            raise Parar(130, 'aterragem interrompida', sinal=_sinal)
         signal.signal(signal.SIGTERM, interromper)
         signal.signal(signal.SIGINT, interromper)
         return aterragem.executar()
