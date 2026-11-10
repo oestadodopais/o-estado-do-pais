@@ -56,7 +56,7 @@ function conferirWorkflow(w) {
     assert(cache.with.key.includes('steps.playwright.outputs.versao'));
     assert.equal(cache.with.path,'~/.cache/ms-playwright');
     const versao=job.steps.find(s=>s.id==='playwright');
-    assert(versao.run.includes('packages["node_modules/playwright"].version'));
+    assert(versao.run.includes('packages?.["node_modules/playwright"]?.version'));
     const instalar=job.steps.find(s=>s.name==='O Chromium do Playwright');
     assert.equal(instalar['timeout-minutes'],5);
     assert.equal(instalar.id,'chromium');
@@ -97,3 +97,21 @@ for (const dispensar of ['sim','nao','']) for (const antecedente of ['success','
   }
 assert.notEqual(spawnSync('bash',['-e','-c',gate],{env:{ANTECEDENTE:'success',DISPENSAR:'sim',ENDERECO:''}}).status,0);
 console.log(`VEL1 workflow: plano dinâmico, árvore esparsa e cache conferidos; ${casos} combinações do portao e dispensa sem endereço provadas`);
+
+// Executa o passo de versão do YAML com os ficheiros que uma leitura vazia pode produzir.
+const versaoTmp=fs.mkdtempSync(path.join(os.tmpdir(),'vel1-versao-'));
+try {
+  const real=JSON.parse(fs.readFileSync('package-lock.json')).packages['node_modules/playwright'].version;
+  for (const job of [workflow.jobs.construir,workflow.jobs.conferir]) {
+    const passo=job.steps.find(s=>s.id==='playwright');
+    for (const versao of [real,'',null,undefined]) {
+      fs.writeFileSync(path.join(versaoTmp,'package-lock.json'),JSON.stringify({packages:{'node_modules/playwright':{version:versao}}}));
+      const saida=path.join(versaoTmp,'output');fs.writeFileSync(saida,'');
+      const r=spawnSync('bash',['-e','-c',passo.run],{cwd:versaoTmp,encoding:'utf8',env:{...process.env,GITHUB_OUTPUT:saida}});
+      assert.equal(r.status,versao===real?0:1,r.stderr);
+      assert.equal(fs.readFileSync(saida,'utf8'),versao===real?`versao=${real}\n`:'');
+      if(versao!==real) assert(r.stderr.includes('Não foi possível ler a versão do Playwright.'));
+    }
+  }
+} finally { fs.rmSync(versaoTmp,{recursive:true,force:true}); }
+console.log('VEL1 cache: versão real aceite; vazia, nula e ausente recusadas nos dois trabalhos');
