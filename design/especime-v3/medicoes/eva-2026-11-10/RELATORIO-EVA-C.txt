@@ -1,0 +1,156 @@
+EVA C: correções da leitura a frio
+
+Portão integral: vermelho, código 1. As duas falhas encontradas foram corrigidas
+e conferidas pelas suites correspondentes. A corrida integral não foi repetida,
+conforme o limite do mandato. Não se declara um portão integral verde.
+
+Paragem documental: o título do plano de 2026 requer leitura da imagem pelo
+lugar de direção. A capa de Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf só
+expõe «i» na camada de texto; a página seguinte tem texto degradado. O título
+anterior foi conservado, sem o declarar conferido nesta passagem. Não houve
+paragens por palavras ausentes de uma citação nem por atribuições sem razão.
+
+1. Citações. As 36 ocorrências (19 PT e 17 EN) têm unidade, língua, PDF,
+   resumo, página e excerto em citacoes-julgadas.json. C037 estende a linha
+   até «investimentos», conferido no plano, página 38. C038 tem a frase da
+   Prestação de Contas 2025, página 130. A régua confere a inclusão literal
+   e a ocorrência única do excerto na página, com a normalização do motor.
+   Estas 20 ocorrências não tinham as suas palavras em nenhum excerto do
+   livro inicial e receberam prova, uma a uma:
+   C009 (PT e EN): «outras receitas correntes».
+   C011 (PT e EN): «uma situação de alcance na Tesouraria».
+   C018 (PT e EN): «outras receitas correntes».
+   C035 (PT e EN): «outras receitas correntes».
+   C037 (PT e EN): «os 7.470.000,00 euros alocados aos investimentos».
+   C038 (PT e EN): «as receitas arrecadadas permitem cobrir as despesas realizadas».
+   C046 (PT e EN): «outras receitas correntes».
+   C050 (PT e EN): «outras receitas correntes».
+   B042.1 (PT e EN): «outras receitas correntes».
+   N04.1 (PT e EN): «outras receitas correntes».
+   Planta: TextoJulgadoTest.test_citacao_sem_excerto_e_palavra_trocada,
+   nas duas línguas. Retirar a prova ou trocar uma palavra recusa.
+
+2. Datas por posição. As isenções são intervalos produzidos pelos marcadores,
+   presos ao resumo do Markdown. O HTML usa a sua projeção exata. Não se
+   acrescenta nenhum valor a ignore por esta via. Os dias não recebem selos
+   de quantidades nos registos, nem a data de recolha é atribuída à DGAL.
+   As plantas do 10 solto, do livro sem dia/ano acrescentados e da projeção
+   HTML passaram em core.datas_declaradas_test. A lista final tem 21 valores,
+   sem 10 nem 31. Os anos que nela permanecem vêm das outras ocorrências.
+
+3. Datas restantes. As quatro datas pedidas têm declarações com fontes PDF.
+   Os quatro cabeçalhos herdados «31 de dezembro» também passaram a datas,
+   para não reintroduzirem 31 em ignore ao sair a antiga linha de quantidade.
+   São nove datas declaradas e 22 ocorrências por língua. Saíram quatro
+   primárias de dias; o texto julgado e os valores das quantidades mantiveram-se.
+
+4. Atribuições. Os 31 avisos restantes estão declarados por edição, unidade,
+   valor, linha, entidade, tipo e ocorrência, com razão obrigatória. As
+   janelas alcançam a DGAL ao lado de colunas municipais; o HTML inglês
+   alcança-a também junto da taxa de amortização. Os avisos brutos são 7 no
+   Markdown PT, 8 no HTML PT, 7 no Markdown EN e 9 no HTML EN. O portão aceita
+   essas identidades, não a contagem. Restam zero casos por declarar nas
+   quatro baselines. A planta test_atribuicao_diferente_com_mesma_contagem_recusa
+   troca uma linha sem mudar a contagem e recusa; uma razão vazia também.
+
+5. Quadro. O gerador deixou de acrescentar a segunda separadora de C033.
+   Conferem-se a quantidade de linhas e as posições das separadoras em cada
+   quadro. test_separadora_a_mais_ou_fora_de_posicao_recusa passou nas duas
+   línguas, tanto para uma linha adicional como para uma separadora deslocada.
+
+6. Contrato fechado. O compositor e o portão descobrem os gabaritos julgados.
+   Exigem o contrato e exatamente PT e EN. Passaram as plantas
+   test_manifesto_com_uma_so_lingua_recusa e
+   test_descoberta_nao_salta_gabarito_sem_contrato.
+
+7. Títulos. Dez títulos foram conferidos por guião na primeira página, com
+   excerto e resumo; o de 2023 está no rodapé. Das 31 linhas com a marca,
+   30 receberam o título literal e uma saiu ao passar a data declarada.
+   Nenhuma linha ativa conserva a marca. A paragem do plano está declarada
+   no início deste relatório e em titulos-documentais.json. A planta de um
+   título inventado recusa. Não se apresenta esta paragem como uma prova feita.
+
+8. Medidas. Corrigidos os campos de 26 linhas, incluindo as componentes
+   monetárias antes descritas como taxas. As medidas e as derivações dizem
+   o que o número mede. A régua dos campos imprimíveis recusa andaime em
+   medida, derivação, excerto, nota, descrição, atribuição e metadados textuais
+   do documento. test_campos_imprimiveis_sem_andaime passou.
+
+9. Adagas. As 22 de cada língua são conferidas pelo resumo ou pelo nome
+   exato do ficheiro do plano de 2026. A planta
+   test_adaga_nas_contas_de_2025_recusa usa um endereço que contém /2026/
+   mas pertence à Prestação de Contas; recusa nas duas línguas.
+
+10. Título HTML. Voltou a ser a manchete. O livro declara a multiplicidade;
+    só os algarismos de um título idêntico ao h1 deixam de contar uma segunda
+    vez. test_titulo_e_manchete_contam_uma_vez confirma o 137 e a igualdade dos
+    contadores MD/HTML, e recusa um título diferente da manchete declarada.
+
+11. Menores. «Quase metade» exige 45% inclusive e 50% exclusivo, convenção
+    editorial declarada da asserção. Passam 45, 45,6 e 49,99; recusam 0, 44,99,
+    50 e 51. Saíram e1-leitura-so-destes-documentos,
+    e1-pmp-2022-nenhum-explica, e1-series-2020-2023-nenhum-explica e
+    e1-votacao-duas-leituras. A declaração e1-excesso-2015-nenhum-explica fica,
+    porque ambas as edições ainda a imprimem. A planta portuguesa com
+    87 682 770.50 recusa; a inglesa continua a passar e um cêntimo errado recusa.
+
+O que ficou como estava, conferido pelas plantas:
+- Valor da forma de uma derivação: EvaTest.test_b105_identidades_e_centimo_ingles_recusado.
+- Excerto curto único: LinhasPropriasTest.test_excerto_curto_ambiguo_e_fragmento_recusados.
+- Resumo obrigatório das datas: DatasDeclaradasTest.test_resumo_nao_bate,
+  incluindo agora também a ausência do campo, além de um resumo diferente.
+- Identidade dos marcadores: TextoJulgadoTest.test_outra_linha_com_mesmo_valor.
+- Ordem das unidades: TextoJulgadoTest.test_unidade_fora_de_ordem.
+Os PDF continuam alojados e cada excerto é conferido na página. A travessia
+para o sítio, com os corpos exigidos pelo seu pacote, pertence ao passo seguinte.
+
+Prova final e medidas
+- As 502 unidades de cada língua continuam a conferir. As referências julgadas
+  conservam os resumos. O gerador reproduz byte a byte os ajustes, os dois
+  gabaritos e o contrato ativos, a partir da base anterior conferida pelos
+  seus três resumos. A preparação tem 107 primárias, 45 derivações e 202
+  ligações numéricas, sem paragens de valores ou excertos.
+- Livro: 520 para 516 linhas, 28 para 24 asserções, 21 valores em ignore.
+  Registos: 198 blocos por língua; figuras 614 para 607 PT e 617 para 610 EN.
+  Saíram sete selos de dias por edição. As três repetições inglesas julgadas
+  continuam declaradas. As quatro baselines têm zero órfãos, casos de
+  atribuição por declarar, asserções por declarar/falhadas e adjacências.
+  Contador numérico: 1080 números e 607 batidos em PT, 1084 e 610 em EN;
+  em cada língua o Markdown e o HTML têm as mesmas contagens.
+- Os 145 ficheiros seguidos dos outros estudos foram reconferidos depois do
+  portão, byte a byte: 07, 28; 08, 45; 17, 13; 18, 21; 19, 38. Zero diferenças.
+- 32 corridas dirigidas de suites: uma falha inicial de fixture sem h1,
+  corrigida, e todas as versões finais verdes. Incluem contratos, datas,
+  linhas próprias, EVA, atribuições, números, paridade, compositor, asserções,
+  testes do portão, exportador, voz e reprodução da cadeia ativa. Os resultados
+  estão em preparado/medidas-eva-c.json.
+- A corrida integral encontrou uma diferença entre tuplos em memória e listas
+  no JSON dos intervalos de datas. A proveniência passa a produzir listas;
+  publisher.ev2_test voltou a conferir a recomposição exata do livro, da
+  proveniência e das duas edições. A outra falha era uma recusa estrutural
+  do relatório inglês da Segurança Social, cujo nome não indica a língua.
+  O seu livro declara agora a língua desse documento. A conferência específica
+  reencontrou exatamente todos os contadores da baseline, incluindo os 17
+  órfãos e as 88 atribuições antigas; essa dívida não foi apagada nem aumentada.
+  core.reconcile_test confere o inglês declarado e recusa a mesma forma em
+  português, bem como uma declaração que contradiga a língua explícita do HTML.
+  Passaram ainda core.eva_test e core.datas_declaradas_test após as correções.
+  Também se corrigiu a explicação de «quase metade» para «no máximo a cinco
+  pontos percentuais», coerente com o limite inferior inclusivo.
+  Depois destas alterações, core.texto_julgado voltou a conferir as duas
+  edições e os outros cinco estudos voltaram a ser comparados byte a byte.
+- core.gate: uma corrida, pelo curto.sh; código 1, 1265.32 segundos.
+  Nenhum portão do sítio ou captura foi pedido ou executado.
+
+Últimas oito linhas do portão, copiadas do registo:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  AssertionError
+
+  --------------------------------------------------------------------
+  reconcile structural failure on content/11 Seguranca Social/RELATORIO-seguranca-social.md:
+  ERROR: decimal com ponto depois de milhares com espaço só é aceite na edição inglesa
+
+An unrunnable or red gate is not evidence of a clean commit (rule 14).
+
+Chamadas de ferramentas até à redação: 131.
+tokens used: 17995485 (contador exposto da sessão até à redação).
