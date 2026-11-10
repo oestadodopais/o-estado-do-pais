@@ -1,0 +1,303 @@
+{
+  "estudo": "evora-contas-da-camara-2010-2025",
+  "commit_motor": "5925531cd50b6f0b9cafbcfbfd71350c13e61e5f",
+  "livro": {
+    "file": "design/especime-v3/medicoes/eva-2026-11-10/livro-16-julgado.json",
+    "sha256": "661dfe3dd522c4f3199b3467e29592c38a93de6824b273af6b1f7c78f0323607",
+    "origin_ref": "content/16 Évora Contas da Câmara/ledger.json @ 5925531cd50b6f0b9cafbcfbfd71350c13e61e5f"
+  },
+  "registos": {
+    "pt": {
+      "edition": "As contas da Câmara de Évora, 2010 a 2025 (pt-PT)",
+      "lang": "pt-PT",
+      "file": "registos/evora-contas-da-camara-2010-2025/pt.record.json",
+      "sha256": "cad4f5047a386652750364f8b97d40f46959e168eb4ab18b3cfa13ed01fb02e9",
+      "objeto_sha256": "212e0e8c02b02105465956dbc4709b63332b5525ae820087ad6a2ba34efb2dff"
+    },
+    "en": {
+      "edition": "The accounts of the Câmara de Évora, 2010 to 2025",
+      "lang": "en",
+      "file": "registos/evora-contas-da-camara-2010-2025/en.record.json",
+      "sha256": "59f94d5fd8f06efe7f830e034b1e5564e8d115be0630071ab23297e1527a130a",
+      "objeto_sha256": "67f16e87d525ed2a413e09b71e6100126b11d98de8551d5d1374387bd356671e"
+    }
+  },
+  "corpos": {
+    "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+    "16 Évora Contas da Câmara/source/2023_relatorio_gestao.pdf": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1",
+    "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04",
+    "16 Évora Contas da Câmara/source/2021_relatorio_gestao.pdf": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a",
+    "16 Évora Contas da Câmara/source/2018_relatorio_gestao.pdf": "578b0c9f4dd48e83e156c21a318e6ffc29dfe00f31dfb00dde680514bc5db098",
+    "16 Évora Contas da Câmara/source/2019_relatorio_gestao.pdf": "26e511fe3786576f8b7bb2b39e394ca97ff3113db370e24461b25cb12d29b2f8",
+    "16 Évora Contas da Câmara/source/2022_relatorio_gestao.pdf": "20490a35dc792a2d1076421b9e930122c44f1bba44955d7c231bebfebc9fedc1",
+    "16 Évora Contas da Câmara/source/2015_relatorio_gestao.pdf": "2bb3773629c22b801d8d7a2fc53c1b7766428c9fab28f791e005f8f72ac898c3",
+    "16 Évora Contas da Câmara/source/2016_relatorio_gestao.pdf": "3f193caed76483c02108abd38760fa376fb53819ae13d10f77309ee797d02303",
+    "16 Évora Contas da Câmara/source/2017_relatorio_gestao.pdf": "075f405d67386045ac987868e3e6e7ed46a053188ef0336be14b6428cdc16e9c"
+  },
+  "linhas": {
+    "juros-mora-dotacao-inicial-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "compromissos-faturados-2023": {
+      "source_body": "16 Évora Contas da Câmara/source/2023_relatorio_gestao.pdf",
+      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1"
+    },
+    "cabeca-c010-20": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "gop26-outras-receitas-correntes": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "dtas-intervalo-90": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "gop26-receita-6": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "cabeca-c028-51": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "cabeca-c034-55": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "cabeca-c035-59": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "exec-total-2021-pct": {
+      "source_body": "16 Évora Contas da Câmara/source/2021_relatorio_gestao.pdf",
+      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    },
+    "pmp-2023-expurgado": {
+      "source_body": "16 Évora Contas da Câmara/source/2023_relatorio_gestao.pdf",
+      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1"
+    },
+    "cabeca-c037-67": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "cabeca-c051-87": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "cabeca-c052-88": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "cabeca-c052-89": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "cabeca-c052-90": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "exec-total-2018-pct": {
+      "source_body": "16 Évora Contas da Câmara/source/2018_relatorio_gestao.pdf",
+      "source_sha256": "578b0c9f4dd48e83e156c21a318e6ffc29dfe00f31dfb00dde680514bc5db098"
+    },
+    "exec-total-2019-pct": {
+      "source_body": "16 Évora Contas da Câmara/source/2019_relatorio_gestao.pdf",
+      "source_sha256": "26e511fe3786576f8b7bb2b39e394ca97ff3113db370e24461b25cb12d29b2f8"
+    },
+    "exec-total-2020-pct": {
+      "source_body": "16 Évora Contas da Câmara/source/2021_relatorio_gestao.pdf",
+      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    },
+    "exec-total-2022-pct": {
+      "source_body": "16 Évora Contas da Câmara/source/2022_relatorio_gestao.pdf",
+      "source_sha256": "20490a35dc792a2d1076421b9e930122c44f1bba44955d7c231bebfebc9fedc1"
+    },
+    "exec-total-2023-pct": {
+      "source_body": "16 Évora Contas da Câmara/source/2023_relatorio_gestao.pdf",
+      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1"
+    },
+    "transf-cofinanciados-orcado-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "outras-rec-correntes-orc-2015": {
+      "source_body": "16 Évora Contas da Câmara/source/2015_relatorio_gestao.pdf",
+      "source_sha256": "2bb3773629c22b801d8d7a2fc53c1b7766428c9fab28f791e005f8f72ac898c3"
+    },
+    "outras-rec-correntes-orc-2016": {
+      "source_body": "16 Évora Contas da Câmara/source/2016_relatorio_gestao.pdf",
+      "source_sha256": "3f193caed76483c02108abd38760fa376fb53819ae13d10f77309ee797d02303"
+    },
+    "outras-rec-correntes-orc-2017": {
+      "source_body": "16 Évora Contas da Câmara/source/2017_relatorio_gestao.pdf",
+      "source_sha256": "075f405d67386045ac987868e3e6e7ed46a053188ef0336be14b6428cdc16e9c"
+    },
+    "outras-rec-correntes-orc-2018": {
+      "source_body": "16 Évora Contas da Câmara/source/2018_relatorio_gestao.pdf",
+      "source_sha256": "578b0c9f4dd48e83e156c21a318e6ffc29dfe00f31dfb00dde680514bc5db098"
+    },
+    "outras-rec-correntes-orc-2019": {
+      "source_body": "16 Évora Contas da Câmara/source/2019_relatorio_gestao.pdf",
+      "source_sha256": "26e511fe3786576f8b7bb2b39e394ca97ff3113db370e24461b25cb12d29b2f8"
+    },
+    "outras-rec-correntes-orc-2020": {
+      "source_body": "16 Évora Contas da Câmara/source/2021_relatorio_gestao.pdf",
+      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    },
+    "outras-rec-correntes-orc-2021": {
+      "source_body": "16 Évora Contas da Câmara/source/2021_relatorio_gestao.pdf",
+      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    },
+    "outras-rec-correntes-orc-2022": {
+      "source_body": "16 Évora Contas da Câmara/source/2022_relatorio_gestao.pdf",
+      "source_sha256": "20490a35dc792a2d1076421b9e930122c44f1bba44955d7c231bebfebc9fedc1"
+    },
+    "outras-rec-correntes-orc-2023": {
+      "source_body": "16 Évora Contas da Câmara/source/2023_relatorio_gestao.pdf",
+      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1"
+    },
+    "outras-rec-correntes-orc-2024": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "bens-servicos-exec-pct-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "transferencias-correntes-exec-pct-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "juros-encargos-exec-pct-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "amr-agua-previsto-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "amr-agua-pago-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "amr-saneamento-previsto-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "amr-residuos-previsto-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "juros-mora-dotacao-corrigida-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "dtas-intervalo-180": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "dtas-intervalo-365": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "compromissos-faturados-2021": {
+      "source_body": "16 Évora Contas da Câmara/source/2021_relatorio_gestao.pdf",
+      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    },
+    "compromissos-faturados-2022": {
+      "source_body": "16 Évora Contas da Câmara/source/2022_relatorio_gestao.pdf",
+      "source_sha256": "20490a35dc792a2d1076421b9e930122c44f1bba44955d7c231bebfebc9fedc1"
+    },
+    "divida-inicio-mandato-rel2015": {
+      "source_body": "16 Évora Contas da Câmara/source/2015_relatorio_gestao.pdf",
+      "source_sha256": "2bb3773629c22b801d8d7a2fc53c1b7766428c9fab28f791e005f8f72ac898c3"
+    },
+    "excesso-divida-2018-rel2018": {
+      "source_body": "16 Évora Contas da Câmara/source/2018_relatorio_gestao.pdf",
+      "source_sha256": "578b0c9f4dd48e83e156c21a318e6ffc29dfe00f31dfb00dde680514bc5db098"
+    },
+    "efetivos-2024": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "efetivos-variacao-2024": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "efetivos-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "gop26-receita-2": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "receita-cobrada-2025-2": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "gop26-receita-3": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-receita-4": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-receita-5": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-receita-8": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-receita-9": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-receita-10": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "receita-cobrada-2025-10": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "gop26-receita-11": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-receita-12": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "receita-cobrada-2025-12": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "gop26-receita-13": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "gop26-sistema-integrado-transito": {
+      "source_body": "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+      "source_sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+    },
+    "rossio-plano-2025-total": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "despesas-por-pagar-periodos-anteriores-2025": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    },
+    "pc25-quadro-3": {
+      "source_body": "16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf",
+      "source_sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    }
+  }
+}

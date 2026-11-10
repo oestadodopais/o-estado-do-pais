@@ -67,8 +67,90 @@
           }
         ]
       }
+    },
+    {
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "tipo": "documento",
+      "numeros": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "2025",
+            "302",
+            "50",
+            "61"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 35,
+            "soPt": [],
+            "soEn": [
+              "2025",
+              "302"
+            ]
+          },
+          {
+            "i": 39,
+            "soPt": [],
+            "soEn": [
+              "61"
+            ]
+          },
+          {
+            "i": 45,
+            "soPt": [],
+            "soEn": [
+              "50"
+            ]
+          }
+        ]
+      },
+      "data": "2026-11-11",
+      "razao": "EVA: as glosas inglesas das citações portuguesas repetem 2025, 302, 61 e 50. Texto julgado preservado; diferença exata de cada bloco."
+    },
+    {
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "tipo": "página",
+      "numeros": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "2025",
+            "302",
+            "50",
+            "61"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 69,
+            "soPt": [],
+            "soEn": [
+              "2025",
+              "302"
+            ]
+          },
+          {
+            "i": 73,
+            "soPt": [],
+            "soEn": [
+              "61"
+            ]
+          },
+          {
+            "i": 79,
+            "soPt": [],
+            "soEn": [
+              "50"
+            ]
+          }
+        ]
+      },
+      "data": "2026-11-11",
+      "razao": "EVA: as glosas inglesas das citações portuguesas repetem 2025, 302, 61 e 50. Texto julgado preservado; diferença exata de cada bloco."
     }
   ],
   "natureza": "permanente",
-  "razao": "A glosa inglesa das citações portuguesas repete os números. A exceção conserva apenas a diferença exata de A casa em Portugal e na Europa, sem dispensar diferenças novas."
+  "razao": "A glosa inglesa das citações portuguesas repete os números. A exceção conserva apenas a diferença exata de A casa em Portugal e na Europa, sem dispensar diferenças novas. EVA: a mesma regra conserva as três glosas do texto julgado das contas da Câmara, nas posições medidas."
 }

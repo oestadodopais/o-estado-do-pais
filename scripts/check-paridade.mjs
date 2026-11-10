@@ -9,7 +9,7 @@ export const assinatura = r => ({total: Object.fromEntries(Object.entries(r.tota
 export function validarExcecoes(excecoes) {
   if (excecoes.data !== '2026-11-08' || excecoes.natureza !== 'permanente' || 'retirar' in excecoes ||
       typeof excecoes.razao !== 'string' || excecoes.razao.trim().length < 20) throw new Error('paridade: exceção sem data, natureza permanente ou razão');
-  const permitidos = new Set(['a-casa-em-portugal-e-na-europa']);
+  const permitidos = new Set(['a-casa-em-portugal-e-na-europa','evora-contas-da-camara-2010-2025']);
   const chaves = excecoes.diferencas.map(e => e.estudo + '|' + e.tipo);
   if (new Set(chaves).size !== chaves.length || excecoes.diferencas.some(e => !permitidos.has(e.estudo) || !['documento', 'página'].includes(e.tipo))) throw new Error('paridade: exceção fora da lista fechada');
   return chaves;

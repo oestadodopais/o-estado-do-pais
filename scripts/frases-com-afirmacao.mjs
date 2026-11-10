@@ -44,7 +44,7 @@ export function blocosDaPagina(html) {
       return [id, hit?.key === 'linha' ? hit.params.slug : null].filter(Boolean);
     }))].sort();
     const partes=frasesDoTexto(texto,()=>true).flatMap(contexto=>cortar(contexto).map(frase=>({frase,contexto})));
-    return {texto, frases:partes.map(p=>p.frase), contextos:partes.map(p=>p.contexto), linhas, tag:n.tagName};
+    return {rotuloIA: n.matches('p.rotulo-ia-linha') && n.querySelectorAll('a').length === 1 ? n.querySelector('a').getAttribute('href') : null, texto, frases:partes.map(p=>p.frase), contextos:partes.map(p=>p.contexto), linhas, tag:n.tagName};
   }).filter(b => b.texto);
 }
 export function rotasDaProsa() {

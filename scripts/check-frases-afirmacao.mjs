@@ -1,5 +1,6 @@
 /** CAM2-A: cobertura exata, registo bilingue e lista que só encolhe. */
 import fs from 'node:fs';
+import {lerTextosJulgados,conferirTextosJulgados} from './textos-julgados.mjs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
@@ -15,7 +16,7 @@ export const SEMENTE_SHA256 = 'a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08e
 export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
 export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
 export function lerRegisto(pasta = 'ledger/frases') {
-  return fs.readdirSync(pasta).filter(f => f.endsWith('.json') && f !== 'por-registar.json').sort().flatMap(f => {
+  return fs.readdirSync(pasta).filter(f => f.endsWith('.json') && !['por-registar.json','textos-julgados.json'].includes(f)).sort().flatMap(f => {
     const registo = JSON.parse(fs.readFileSync(path.join(pasta, f), 'utf8'));
     if (!Array.isArray(registo)) throw new Error('registo: formato inválido');
     return registo;
@@ -132,9 +133,10 @@ export function conferir(dist = 'dist') {
   const paginas = lerPaginas(dist), frases = inventario(paginas), registo = lerRegisto();
   const pendentes = JSON.parse(fs.readFileSync(LISTA, 'utf8'));
   const r = conferirRegisto(registo, paginas, loadClaims());
+  const julgados = conferirTextosJulgados(lerTextosJulgados(), paginas, frases);
   const corpos = conferirCorpos(r.linhas, true);
   return {frases:frases.length, registo:registo.length, pendentes:pendentes.length, corpos,
-    erros:[...r.erros, ...conferirCobertura(frases, r.textos, pendentes), ...conferirHistorico(pendentes), ...conferirPino(), ...conferirPinoModelos(), ...conferirModelos(), ...corpos.erros]};
+    erros:[...r.erros, ...julgados.erros, ...conferirCobertura(frases, new Set([...r.textos, ...julgados.textos, ...julgados.mobilia]), pendentes), ...conferirHistorico(pendentes), ...conferirPino(), ...conferirPinoModelos(), ...conferirModelos(), ...corpos.erros]};
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {
