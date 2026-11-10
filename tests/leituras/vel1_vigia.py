@@ -138,12 +138,16 @@ else:sys.exit(88)
         pausa.assert_not_called()
 
     def test_cancelada_nao_e_verde(self):
-        codigo, _, _ = self.correr('cancelada')
-        self.assertNotEqual(codigo, 0)
+        codigo, _, pausa = self.correr('cancelada')
+        self.assertEqual(codigo, 1)
+        self.assertEqual(Path(self.b.env['CONTAGEM']).read_text(), '1')
+        pausa.assert_not_called()
 
     def test_outra_cabeca_nao_e_verde(self):
-        codigo, _, _ = self.correr('outra')
-        self.assertNotEqual(codigo, 0)
+        codigo, _, pausa = self.correr('outra')
+        self.assertEqual(codigo, 9)
+        self.assertEqual(Path(self.b.env['CONTAGEM']).read_text(), '1')
+        pausa.assert_not_called()
 
 if __name__ == '__main__':
     unittest.main(defaultTest='Vigia')
