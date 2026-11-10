@@ -345,6 +345,7 @@ class Aterragem:
             self.exigir(len(restante) >= 20, 'ATERRAR_DECISAO exige vinte carateres além da data')
             self.recibo['decisao_do_financiador'] = decisao
         medidas = {}
+        self.recibo['medidas_de_custo'] = medidas
         def numero(v):
             return type(v) in (int, float) and math.isfinite(v) and v >= 0
         for b, f in por_bloco.items():
@@ -358,16 +359,23 @@ class Aterragem:
                 pontos = sum(valores)
             self.exigir(numero(pontos), 'pontos_do_bloco inválido: ' + b)
             o = d.get('orcamento')
-            declarado = o.get('pontos_codex_por_bloco') if isinstance(o, dict) else None
-            if declarado is None:
+            presente = isinstance(o, dict) and 'pontos_codex_por_bloco' in o
+            declarado = o['pontos_codex_por_bloco'] if presente else None
+            medida = medidas[b] = {'pontos': pontos, 'origem_orcamento': 'custo' if presente else 'por omissão'}
+            if not presente:
                 limite = 10
                 self.recibo['orcamento_por_omissao'] = limite
+            elif type(declarado) is int or (isinstance(declarado, str) and re.fullmatch(r'[0-9]+', declarado)):
+                limite = int(declarado)
+                self.exigir(limite > 0, 'orçamento ilegível: ' + b)
+            elif isinstance(declarado, str) and re.match(r'sem teto\b', declarado):
+                citacao = re.search(r'§[0-9]+(?:\.[0-9]+)*(?![\w.])', declarado)
+                self.exigir(bool(citacao), 'orçamento ilegível: ' + b)
+                medida.update(orcamento='sem teto', decisao=citacao.group())
+                continue
             else:
-                m = re.search(r'\d+', str(declarado))
-                self.exigir(bool(m) and int(m.group()) > 0, 'orçamento sem inteiro positivo: ' + b)
-                limite = int(m.group())
-            medidas[b] = {'pontos': pontos, 'orcamento': limite,
-                          'origem_orcamento': 'por omissão' if declarado is None else 'custo'}
+                raise Parar(9, 'orçamento ilegível: ' + b)
+            medida['orcamento'] = limite
             self.exigir(pontos < limite or bool(decisao),
                         f'{b}: {pontos:g} pontos atingem o orçamento de {limite}; falta ATERRAR_DECISAO')
         self.recibo['custo'] = list(por_bloco.values())

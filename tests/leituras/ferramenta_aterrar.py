@@ -144,6 +144,19 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertEqual(recibo['custo'], ['design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'])
 
+    def test_vinte_pontos_sem_teto_aterram_sem_decisao(self):
+        self.custo.write_text(json.dumps({'bloco': 'ensaio', 'pontos_do_bloco': 20,
+            'orcamento': {'pontos_codex_por_bloco': 'sem teto por bloco desde 07.11.2026 (§1.232)'}}))
+        git(self.w, 'add', '--', str(self.custo.relative_to(self.w)))
+        commit(self.w, 'ensaio: orçamento sem teto por decisão citada')
+        self.env['CABECA'] = git(self.w, 'rev-parse', 'HEAD')
+        self.env.pop('ATERRAR_DECISAO', None)
+        r, recibo, _ = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(recibo['medidas_de_custo']['ensaio'], {
+            'pontos': 20, 'orcamento': 'sem teto', 'decisao': '§1.232', 'origem_orcamento': 'custo'})
+        self.assertNotIn('decisao_do_financiador', recibo)
+
     def test_ficheiro_por_registar(self):
         (self.w / 'nao-seguido').write_text('planta')
         r, _, chamadas = self.correr()

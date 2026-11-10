@@ -118,7 +118,7 @@ class Lotes(unittest.TestCase):
         return f
 
     def test_orcamento_recusa_12_e_aceita_decisao(self):
-        f = self.custo({'pontos_do_bloco': 12, 'orcamento': {'pontos_codex_por_bloco': 'menos de 10'}})
+        f = self.custo({'pontos_do_bloco': 12, 'orcamento': {'pontos_codex_por_bloco': 10}})
         with patch.object(aterrar, 'git', return_value=f), self.assertRaises(aterrar.Parar) as e:
             self.a.conferir_custo()
         self.assertIn('atingem o orçamento', e.exception.motivo)
@@ -126,6 +126,44 @@ class Lotes(unittest.TestCase):
         with patch.dict(os.environ, ATERRAR_DECISAO=decisao), patch.object(aterrar, 'git', return_value=f):
             self.a.conferir_custo()
         self.assertEqual(self.a.recibo['decisao_do_financiador'], decisao)
+
+    def test_sem_teto_com_decisao_citada_mede_sem_pedir_autorizacao(self):
+        f = self.custo({'pontos_do_bloco': 20, 'orcamento': {
+            'pontos_codex_por_bloco': 'sem teto por bloco desde 07.11.2026 (§1.232)'}})
+        with patch.object(aterrar, 'git', return_value=f):
+            self.a.conferir_custo()
+        self.assertEqual(self.a.recibo['medidas_de_custo']['A1'], {
+            'pontos': 20, 'orcamento': 'sem teto', 'decisao': '§1.232', 'origem_orcamento': 'custo'})
+        self.assertNotIn('decisao_do_financiador', self.a.recibo)
+
+    def test_orcamentos_ilegiveis_nao_adivinham_numero(self):
+        for valor in ('sem teto', 'cerca de 7', 'menos de 10', '', '7 pontos', '7.0',
+                      'sem tetos §1.232', 'sem teto §', 0, -1, 7.0, True, None, [], {}):
+            with self.subTest(valor=valor):
+                f = self.custo({'pontos_do_bloco': 20, 'orcamento': {'pontos_codex_por_bloco': valor}})
+                with patch.object(aterrar, 'git', return_value=f), self.assertRaises(aterrar.Parar) as e:
+                    self.a.conferir_custo()
+                self.assertIn('orçamento ilegível', e.exception.motivo)
+                self.assertEqual(self.a.recibo['medidas_de_custo']['A1']['pontos'], 20)
+
+    def test_teto_sete_inteiro_ou_cadeia_exige_decisao_para_dez(self):
+        for valor in (7, '7'):
+            with self.subTest(valor=valor):
+                f = self.custo({'pontos_do_bloco': 10, 'orcamento': {'pontos_codex_por_bloco': valor}})
+                with patch.object(aterrar, 'git', return_value=f), self.assertRaises(aterrar.Parar) as e:
+                    self.a.conferir_custo()
+                self.assertIn('falta ATERRAR_DECISAO', e.exception.motivo)
+                self.assertEqual(self.a.recibo['medidas_de_custo']['A1']['pontos'], 10)
+                with patch.dict(os.environ, ATERRAR_DECISAO='10.11.2026: decisão escrita para esta planta'), patch.object(aterrar, 'git', return_value=f):
+                    self.a.conferir_custo()
+                self.assertEqual(self.a.recibo['medidas_de_custo']['A1']['orcamento'], 7)
+
+    def test_teto_sete_aceita_seis_sem_decisao(self):
+        for valor in (7, '7'):
+            f = self.custo({'pontos_do_bloco': 6, 'orcamento': {'pontos_codex_por_bloco': valor}})
+            with patch.object(aterrar, 'git', return_value=f):
+                self.a.conferir_custo()
+            self.assertEqual(self.a.recibo['medidas_de_custo']['A1']['orcamento'], 7)
 
     def test_passagens_12_e_limite_igual_recusados(self):
         for dados in ({'passagens_codex': [{'pontos': None}, {'pontos': 7}, {'pontos': 5}]}, {'pontos_do_bloco': 10}):
