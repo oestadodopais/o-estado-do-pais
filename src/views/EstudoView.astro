@@ -99,7 +99,7 @@ const jsonld = {
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
 };
 ---
-<Base lang={lang} path={path} title={`${principal.title} · ${SITE_NAME}`}
+<Base lang={lang} path={path} title={`${registo?.blocks[1]?.text === principal.title ? principal.title : jsonld.headline} · ${SITE_NAME}`}
   description={work.description[lang]} jsonld={jsonld} noindex={!indexavel(work)}>
   {work.ausenciaAtual && <p class="estudo-descricao" data-ausencia-atual>{work.ausenciaAtual[lang]}</p>}
   {registo ? (

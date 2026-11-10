@@ -13,6 +13,11 @@ export function conferirAberturaB1(root, registo, chave, lang) {
     const primeiroConteudo = registo.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2);
     if (primeiroConteudo?.kind !== 'heading' || Number(primeiroConteudo.level) !== 2 || primeiroConteudo.text !== nomes[0]) {
       if (leituras.length) err(`B1 leitura ${chave}: registo sem abertura não pode ter leitura.`);
+      // EVA: pergunta e resposta pertencem ao corpo contínuo, pela ordem do registo.
+      const esperados = registo.blocks.filter(b => b.i > 0).map(b => String(b.i));
+      const rendidos = textos[0]?.querySelectorAll('[data-registo-bloco]').map(n => n.getAttribute('data-registo-bloco')) ?? [];
+      if (JSON.stringify(rendidos) !== JSON.stringify(esperados))
+        err(`B1 leitura ${chave}: abertura contínua incompleta ou fora da ordem do registo.`);
 
     } else {
       if (nomes.some((nome, i) => principais[i]?.text !== nome) || principais.filter(b => nomes.includes(b.text)).length !== nomes.length)
