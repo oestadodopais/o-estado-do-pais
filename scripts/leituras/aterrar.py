@@ -385,13 +385,31 @@ class Aterragem:
             self.recibo['corrida'] = corrida
             self.escrever('github.url', corrida['url'] + '\n')
             self.guardar()
+            erro_vigia = None
             try:
-                self.correr('github-vigia', ['gh', 'run', 'watch', str(corrida['databaseId']), '--interval', '60', '--exit-status'])
+                self.correr('github-vigia', ['gh', 'run', 'watch', str(corrida['databaseId']), '--interval', '10', '--exit-status'])
             except Parar as erro:
-                self.escrever('github.codigo', str(erro.codigo) + '\n')
-                raise
-            confirmada = json.loads(self.correr('github-conclusao', ['gh', 'run', 'view', str(corrida['databaseId']),
-                '--json', 'headSha,status,conclusion,url'], teto=120))
+                erro_vigia = erro
+            # Um erro do vigia não é o estado da corrida. Só a API decide.
+            confirmada = None
+            tentativas = 6 if erro_vigia else 1
+            for consulta in range(tentativas):
+                if consulta:
+                    self.esperar(30)
+                try:
+                    confirmada = json.loads(self.correr(f'github-conclusao-{consulta + 1}',
+                        ['gh', 'run', 'view', str(corrida['databaseId']),
+                         '--json', 'headSha,status,conclusion,url'], teto=120))
+                except (Parar, ValueError) as erro:
+                    if consulta + 1 < tentativas:
+                        continue
+                    codigo = erro.codigo if isinstance(erro, Parar) else 9
+                    self.escrever('github.codigo', str(codigo) + '\n')
+                    raise Parar(codigo, 'não foi possível confirmar o estado do GitHub') from erro
+                self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
+                self.exigir(confirmada.get('headSha') == self.cabeca, 'a conclusão do GitHub é de outra cabeça')
+                if confirmada.get('status') == 'completed':
+                    break
             self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
             passou = confirmada.get('headSha') == self.cabeca and confirmada.get('status') == 'completed' and confirmada.get('conclusion') == 'success'
             self.escrever('github.codigo', '0\n' if passou else '1\n')

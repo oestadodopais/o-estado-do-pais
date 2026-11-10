@@ -62,7 +62,7 @@ if a[:2]==['run','list']:
 elif a[:2]==['run','watch']: sys.exit(1 if modo=='vermelho' else 0)
 elif a[:2]==['run','view']:
     if modo=='conclusao-invalida': print('null'); sys.exit(0)
-    print(json.dumps({'headSha':os.environ['CABECA'],'status':'completed','conclusion':'failure' if modo=='conclusao-vermelha' else 'success'}))
+    print(json.dumps({'headSha':os.environ['CABECA'],'status':'completed','conclusion':'failure' if modo in ('vermelho','conclusao-vermelha') else 'success'}))
 else: sys.exit(88)
 ''')
         comando(self.bin, 'npm', comum + '''
@@ -296,7 +296,7 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         ordem = ['publicar-ramo', 'github', 'series', 'ledger-corpos', 'frases-afirmacao', 'cruzamento', 'camada-0', 'fundir-main', 'publicar-main',
                  'vercel-pronto', 'verify-deploy', 'apagar-ramo-remoto', 'destacar-worktree', 'apagar-ramo-local']
         self.assertEqual([p for p in passos if p in ordem], ordem)
-        self.assertIn(['gh', 'run', 'watch', '123', '--interval', '60', '--exit-status'], chamadas)
+        self.assertIn(['gh', 'run', 'watch', '123', '--interval', '10', '--exit-status'], chamadas)
         self.assertIn(['npm', 'run', 'check:cruzamento', '--', '--with-origin'], chamadas)
         self.assertEqual(sum(c == ['git', 'push', 'origin', 'main'] for c in chamadas), 1)
 
