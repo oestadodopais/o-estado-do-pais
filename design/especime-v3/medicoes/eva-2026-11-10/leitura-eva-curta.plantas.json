@@ -1,0 +1,82 @@
+[
+ {
+  "id": "F1a",
+  "ficheiro": "motor/core/citacoes_julgadas.py",
+  "descricao": "uma citação passa se só as primeiras letras estiverem no excerto",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "9438d26b9ade0a9251785aa2fcd90f93fb31c4c2b5ae0237392b45b15e632e50",
+  "sha256_depois": "27b1f714068fc9b402fd0c3bcd30b099f3475eed3f70b5f0da46fc38002716fb"
+ },
+ {
+  "id": "F1b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "uma citação passa se só as primeiras letras estiverem no excerto (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "0e2d5ba1e70e2554df044c217a87c5f33cad3d7d4a2e96e719211ef7b27ba05d",
+  "sha256_depois": "781641e3e3c188536dac2e23a8a3b75b0147391e0eb6afaa363a8218ed014383"
+ },
+ {
+  "id": "F2a",
+  "ficheiro": "motor/core/textos_das_linhas.py",
+  "descricao": "os identificadores da cabeça (C0xx) passam nos campos dos recibos",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "dde8c94d23cb21c9a38b44764f8795e911a76adb65f40b49c359f7e8b06c35bd",
+  "sha256_depois": "0e0a9a4fdef247eaa04bfa5a166feced696e4e511951e70fd0815ba1b5d27dff"
+ },
+ {
+  "id": "F2b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "os identificadores da cabeça (C0xx) passam nos campos dos recibos (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "781641e3e3c188536dac2e23a8a3b75b0147391e0eb6afaa363a8218ed014383",
+  "sha256_depois": "c4b2915d34b60c59a76853f98cc1aa64658ba7a9e35799ace0f9e8094061c546"
+ },
+ {
+  "id": "F3a",
+  "ficheiro": "motor/core/titulos_documentais.py",
+  "descricao": "um título lido na imagem passa sem dizer quem leu",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "5856f58d74b7a0be050d13759a07f452d7774e4a21c452cf929edc3bc3071f24",
+  "sha256_depois": "320f42e28f1777a6ef546b6dc1a69c04a084c37a1dbe4c4fe887646801c5aeb6"
+ },
+ {
+  "id": "F3b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "um título lido na imagem passa sem dizer quem leu (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "c4b2915d34b60c59a76853f98cc1aa64658ba7a9e35799ace0f9e8094061c546",
+  "sha256_depois": "28b62a9ffaaa84ffedc18c82470933e993e5f836121f75411e33f5fce90476fe"
+ },
+ {
+  "id": "F4a",
+  "ficheiro": "motor/core/atribuicoes_declaradas.py",
+  "descricao": "uma exceção de atribuição passa com a razão vazia",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "a2edb5bfabead55a573b7921f2a9416304606e9d3f11fb30982f57f037cbfb40",
+  "sha256_depois": "65950ee63ccc95498d9febd5fe2f933216e37eef2563307cd9555660eac78bdd"
+ },
+ {
+  "id": "F4b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "uma exceção de atribuição passa com a razão vazia (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "28b62a9ffaaa84ffedc18c82470933e993e5f836121f75411e33f5fce90476fe",
+  "sha256_depois": "f98619bf2f4b503a537b18771f1e48df292bc25370fedd0e9819d3ae6aee4e46"
+ },
+ {
+  "id": "F5a",
+  "ficheiro": "motor/core/texto_julgado.py",
+  "descricao": "a estrutura dos quadros só compara o número de quadros",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "fc1fd398b73a3bcb625fe421199e13f8e7c05115af5b59e93f637c4795131c22",
+  "sha256_depois": "9499afb377e2efd2ca2b9787b720d0ecee6d0d601d84a426341e5ee2a7e0a8a8"
+ },
+ {
+  "id": "F5b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "a estrutura dos quadros só compara o número de quadros (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "f98619bf2f4b503a537b18771f1e48df292bc25370fedd0e9819d3ae6aee4e46",
+  "sha256_depois": "1c6087d1b817815031469ebf2e9f729c4d4ad67addfe27eacaefcc61879cba12"
+ }
+]

@@ -1,0 +1,81 @@
+[
+ {
+  "id": "E1a",
+  "ficheiro": "motor/core/compor.py",
+  "descricao": "a forma impressa de uma derivação pode mudar o valor",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "6b3e746737c0622004b6052829f930f9cbab87f5d4190f2d4e2ada195bf1cee5",
+  "sha256_depois": "2e8091e81dca7b82611ac39850215d9e60817d9e5f1551ecc60df2aff6ccd9d0"
+ },
+ {
+  "id": "E1b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "a forma impressa de uma derivação pode mudar o valor (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "28d4fbde145725356ff2fe3437719227d1471533c1fae03292bb03567a26231f",
+  "sha256_depois": "7788eab7bdc75729db708eed82b7af860093481e651e4f0d922ffa7ab90f22f8"
+ },
+ {
+  "id": "E2a",
+  "ficheiro": "motor/core/linhas_proprias.py",
+  "descricao": "um excerto que aparece mais de uma vez na página passa",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "2a16db16ca12f0c7c7278f72a9bd98b5f90c099f512df9eaf82a2a2bcf6305ac",
+  "sha256_depois": "90b3bdb55daa60509c3412ffac9eb370576f605345a0ebbff3a799231d8dbdce"
+ },
+ {
+  "id": "E2b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "um excerto que aparece mais de uma vez na página passa (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "7788eab7bdc75729db708eed82b7af860093481e651e4f0d922ffa7ab90f22f8",
+  "sha256_depois": "986a23b4b27d46dc8947521c03e4cdfbb9c92eb0f8921152e424966e70a224d9"
+ },
+ {
+  "id": "E3a",
+  "ficheiro": "motor/core/datas_declaradas.py",
+  "descricao": "uma data declarada sem resumo do registo passa",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "f634c1966441946d043cae4572b5d6db093ea56eae7c49c4bc60c7727415120d",
+  "sha256_depois": "739ae4972ff84ea3a0c2e114b1a54738f79b2e81bd41df39b5f409fd4f5ca9f1"
+ },
+ {
+  "id": "E3b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "uma data declarada sem resumo do registo passa (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "986a23b4b27d46dc8947521c03e4cdfbb9c92eb0f8921152e424966e70a224d9",
+  "sha256_depois": "64145b1dd05c4ac903ade7cb3eeb4dc7165369d3f33ca20c666c0152806b6035"
+ },
+ {
+  "id": "E4a",
+  "ficheiro": "motor/core/texto_julgado.py",
+  "descricao": "uma unidade pode trocar de linha se o número de marcadores for o mesmo",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "7e60879e930f31d08b4b00c9bfa2833efcf081782c57517594fa93fc8f67ee40",
+  "sha256_depois": "0cc42cf9dce25d5af0519420a6e9d8d942314bef36baffd7a909ccf04d0282f4"
+ },
+ {
+  "id": "E4b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "uma unidade pode trocar de linha se o número de marcadores for o mesmo (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "64145b1dd05c4ac903ade7cb3eeb4dc7165369d3f33ca20c666c0152806b6035",
+  "sha256_depois": "bc6aa76a20eb36b4dbfd45106dd139422000e2290ce88ca25ea31e764abeeec9"
+ },
+ {
+  "id": "E5a",
+  "ficheiro": "motor/core/texto_julgado.py",
+  "descricao": "as unidades podem compor fora de ordem",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "0cc42cf9dce25d5af0519420a6e9d8d942314bef36baffd7a909ccf04d0282f4",
+  "sha256_depois": "def2e718bbf92824a5812056a4fdba484e16f75e1c70673989b3cb3425c1e065"
+ },
+ {
+  "id": "E5b",
+  "ficheiro": "motor/diff.patch",
+  "descricao": "as unidades podem compor fora de ordem (no diff; plantada pelo lugar de direção com o cabeçalho do hunk ajustado)",
+  "sha256_antes": "bc6aa76a20eb36b4dbfd45106dd139422000e2290ce88ca25ea31e764abeeec9",
+  "sha256_depois": "6236a773d794a56a2a089b371eb0119cadaa1cc5d6419585c09c9381b2493db2"
+ }
+]
