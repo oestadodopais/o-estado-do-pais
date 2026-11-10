@@ -1,0 +1,2122 @@
+{
+ "_": [
+  "As provas dos números novos do corpo do estudo 16 (TEXTO-FINAL-16.pt.md), achadas por provas.py nas cópias guardadas e conferidas na página dita, com os espaços reduzidos a um.",
+  "As cópias estão na pasta das fontes do pacote do estudo (os nomes de ficheiro do INDICE-das-fontes.json). Os .json são registos de extração do motor, não a fonte publicada.",
+  "«linhas_novas»: uma entrada por número e por unidade onde é impresso (o mesmo «id» repete-se quando o número aparece em duas unidades). «valor_na_fonte» é o que a cópia imprime; o guião confere que, arredondado às casas do texto, dá o impresso.",
+  "As contas levam «derivacao» e «entradas». «existentes_no_estudo» são números de unidades mudadas que já estão noutras unidades de texto-corrigido.md (com linha no livro). «provas_de_frases» provam o facto de frases novas ou mudadas sem número novo. «ausencias» registam a procura, com o conhecido-positivo."
+ ],
+ "resumo": {
+  "linhas_novas": 146,
+  "ids_distintos": 128,
+  "provas_de_frases": 48,
+  "existentes_no_estudo": 4,
+  "numeros_sem_prova": 0,
+  "erros_da_conferencia": 0,
+  "sem_uso": 24
+ },
+ "linhas_novas": [
+  {
+   "id": "dtas-2025-vincenda-curto-prazo",
+   "unidade": "N01.R1",
+   "impresso": "€3 906 517",
+   "valor_na_fonte": "3.906.517,45",
+   "medida": "DTAS 2025, linha Total, coluna «Dívida Vincenda, Curto prazo [A]»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³"
+  },
+  {
+   "id": "dtas-2025-vencida-menos-90",
+   "unidade": "N01.R2",
+   "impresso": "€5 697 772",
+   "valor_na_fonte": "5.697.772,35",
+   "medida": "DTAS 2025, linha Total, dívida vencida «<90 [1]»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³"
+  },
+  {
+   "id": "dtas-2025-vencida-90-180",
+   "unidade": "N01.R3",
+   "impresso": "€2 909 897",
+   "valor_na_fonte": "2.909.896,98",
+   "medida": "DTAS 2025, linha Total, dívida vencida «[90-180[ [2]»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³"
+  },
+  {
+   "id": "dtas-2025-vencida-180-365",
+   "unidade": "N01.R4",
+   "impresso": "€1 708 947",
+   "valor_na_fonte": "1.708.947,31",
+   "medida": "DTAS 2025, linha Total, dívida vencida «[180-365] [3]»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³"
+  },
+  {
+   "id": "divida-vencida-mais-365-dias-2025",
+   "unidade": "N01.R5",
+   "impresso": "€357 328",
+   "valor_na_fonte": "357.327,95",
+   "medida": "DTAS 2025, linha Total, dívida vencida «>365 [4]» (a mesma linha nova da cabeça)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³"
+  },
+  {
+   "id": "dtas-2025-curto-prazo-total",
+   "unidade": "N01.R6",
+   "impresso": "€14 580 462",
+   "valor_na_fonte": "14.580.462,04",
+   "medida": "DTAS 2025, linha Total, coluna «Total dívida por natureza da despesa, Curto prazo [F]=[A]+[C]»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³",
+   "derivacao": "3.906.517,45 + 5.697.772,35 + 2.909.896,98 + 1.708.947,31 + 357.327,95 = 14.580.462,04 (a soma confere com a coluna [F])"
+  },
+  {
+   "id": "dtas-2025-periodo",
+   "unidade": "N01.R0",
+   "impresso": "31",
+   "valor_na_fonte": "2025/12/31",
+   "medida": "o fim do período do mapa DTAS (31 de dezembro de 2025)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "Período : 2025/01/01 2025/12/31 Visualizar Contas s/ Mov. ? S (Periodicidade Mensal / Período Mensal Após Apuramento Euros",
+   "nota": "rótulo de cabeçalho (a data)"
+  },
+  {
+   "id": "dtas-intervalo-90",
+   "unidade": "N01.R2",
+   "impresso": "90",
+   "valor_na_fonte": "<90",
+   "medida": "os limites dos intervalos de antiguidade do mapa DTAS: <90, [90-180[, [180-365], >365",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo de coluna"
+  },
+  {
+   "id": "dtas-intervalo-90",
+   "unidade": "N01.R3",
+   "impresso": "90",
+   "valor_na_fonte": "[90-180[",
+   "medida": "o mesmo cabeçalho",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo de coluna; o intervalo inclui o 90 e exclui o 180"
+  },
+  {
+   "id": "dtas-intervalo-180",
+   "unidade": "N01.R3",
+   "impresso": "180",
+   "valor_na_fonte": "[90-180[",
+   "medida": "o mesmo cabeçalho",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo de coluna"
+  },
+  {
+   "id": "dtas-intervalo-180",
+   "unidade": "N01.R4",
+   "impresso": "180",
+   "valor_na_fonte": "[180-365]",
+   "medida": "o mesmo cabeçalho",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo de coluna"
+  },
+  {
+   "id": "dtas-intervalo-365",
+   "unidade": "N01.R4",
+   "impresso": "365",
+   "valor_na_fonte": "[180-365]",
+   "medida": "o mesmo cabeçalho",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo de coluna"
+  },
+  {
+   "id": "dtas-intervalo-365",
+   "unidade": "N01.R5",
+   "impresso": "365",
+   "valor_na_fonte": ">365",
+   "medida": "o mesmo cabeçalho",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo de coluna"
+  },
+  {
+   "id": "compromissos-faturados-2021",
+   "unidade": "N02.R1",
+   "impresso": "cerca de 4,1",
+   "valor_na_fonte": "4,1",
+   "medida": "compromissos faturados a aguardar pagamento no fim de 2021, em milhões de euros, como o relatório escreve («apenas cerca de»)",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 74,
+   "excerto": "apenas cerca de 4,1 milhões de euros se encontram faturados a aguardar pagamento"
+  },
+  {
+   "id": "compromissos-faturados-2022",
+   "unidade": "N02.R2",
+   "impresso": "cerca de 3,8",
+   "valor_na_fonte": "3,8",
+   "medida": "o mesmo, no fim de 2022",
+   "documento": "2022_relatorio_gestao.txt",
+   "pagina": 74,
+   "excerto": "apenas cerca de 3,8 milhões de euros se encontram faturados a aguardar pagamento"
+  },
+  {
+   "id": "compromissos-faturados-2023",
+   "unidade": "N02.R3",
+   "impresso": "cerca de 5,9",
+   "valor_na_fonte": "5,9",
+   "medida": "o mesmo, no fim de 2023 (a mesma linha nova da cabeça)",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 92,
+   "excerto": "dos quais cerca de 5,9 milhões de euros se encontram faturados a aguardar pagamento"
+  },
+  {
+   "id": "compromissos-faturados",
+   "unidade": "N02.R5",
+   "impresso": "14,6",
+   "valor_na_fonte": "14,6",
+   "medida": "o mesmo, no fim de 2025 (linha que já existe no livro)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 125,
+   "excerto": "No final de 2025 o total dos compromissos assumidos a transitar é de € 25,7 M dos quais € 14,6 M estão faturados a aguardar pagamento."
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "N02.A1",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da procura das contas de 2024 nas páginas do município (a mesma da cabeça)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "amr-agua-previsto-2025",
+   "unidade": "N03.R1",
+   "impresso": "€4 540 000",
+   "valor_na_fonte": "4.540.000,00",
+   "medida": "plano de 2025, linha 0104 2016 A 2 «Águas de Vale do Tejo - Água», montante previsto no ano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.4. ³0104 2016 A 2 ³AGUAS DE VALE DO TEJO - AGUA ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.540.000,00³ 13.600.000,00³ 18.140.000,00³ ³ 2.556.915,00³ 2.556.915,00³ 56.32 ³ 14.10 ³"
+  },
+  {
+   "id": "amr-agua-pago-2025",
+   "unidade": "N03.R1",
+   "impresso": "€2 556 915",
+   "valor_na_fonte": "2.556.915,00",
+   "medida": "a mesma linha, montante executado no ano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.4. ³0104 2016 A 2 ³AGUAS DE VALE DO TEJO - AGUA ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.540.000,00³ 13.600.000,00³ 18.140.000,00³ ³ 2.556.915,00³ 2.556.915,00³ 56.32 ³ 14.10 ³"
+  },
+  {
+   "id": "amr-saneamento-previsto-2025",
+   "unidade": "N03.R2",
+   "impresso": "€4 110 000",
+   "valor_na_fonte": "4.110.000,00",
+   "medida": "linha 0104 2016 A 3 «Águas de Vale do Tejo - Saneamento», montante previsto no ano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.3. ³0104 2016 A 3 ³AGUAS DE VALE DO TEJO - SANEAMENTO ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.110.000,00³ 12.640.000,00³ 16.750.000,00³ ³ 2.759.202,44³ 2.759.202,44³ 67.13 ³ 16.47 ³"
+  },
+  {
+   "id": "amr-saneamento-pago-2025",
+   "unidade": "N03.R2",
+   "impresso": "€2 759 202",
+   "valor_na_fonte": "2.759.202,44",
+   "medida": "a mesma linha, montante executado no ano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.3. ³0104 2016 A 3 ³AGUAS DE VALE DO TEJO - SANEAMENTO ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.110.000,00³ 12.640.000,00³ 16.750.000,00³ ³ 2.759.202,44³ 2.759.202,44³ 67.13 ³ 16.47 ³"
+  },
+  {
+   "id": "amr-residuos-previsto-2025",
+   "unidade": "N03.R3",
+   "impresso": "€3 670 000",
+   "valor_na_fonte": "3.670.000,00",
+   "medida": "linha 0101 2014 A 4 «Gesamb», montante previsto no ano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.5. ³0101 2014 A 4 ³GESAMB ³ ³OUTRA ³ ³ ³ ³ ³2020/01/02³2029/12/31³ 3.670.000,00³ 11.100.000,00³ 14.770.000,00³ ³ 2.244.755,23³ 2.244.755,23³ 61.16 ³ 15.20 ³"
+  },
+  {
+   "id": "amr-residuos-pago-2025",
+   "unidade": "N03.R3",
+   "impresso": "€2 244 755",
+   "valor_na_fonte": "2.244.755,23",
+   "medida": "a mesma linha, montante executado no ano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.5. ³0101 2014 A 4 ³GESAMB ³ ³OUTRA ³ ³ ³ ³ ³2020/01/02³2029/12/31³ 3.670.000,00³ 11.100.000,00³ 14.770.000,00³ ³ 2.244.755,23³ 2.244.755,23³ 61.16 ³ 15.20 ³"
+  },
+  {
+   "id": "amr-agua-saneamento-residuos-previsto-2025",
+   "unidade": "N03.R4",
+   "impresso": "€12 320 000",
+   "valor_calculado": "12320000",
+   "medida": "a soma do previsto nas três linhas (a mesma linha nova da cabeça)",
+   "derivacao": "4.540.000,00 + 4.110.000,00 + 3.670.000,00",
+   "entradas": [
+    "amr-agua-previsto-2025",
+    "amr-saneamento-previsto-2025",
+    "amr-residuos-previsto-2025"
+   ]
+  },
+  {
+   "id": "amr-agua-saneamento-residuos-pago-2025",
+   "unidade": "N03.R4",
+   "impresso": "€7 560 873",
+   "valor_na_fonte": "7 560 872,67",
+   "medida": "atividades mais relevantes de 2025, Habitação e Serviços Coletivos, pago (a mesma linha nova da cabeça)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 128,
+   "excerto": "Habitação e Serviços Coletivos 1 473 695,95 7 560 872,67 9 034 568,62 33%",
+   "derivacao": "é também a soma das três linhas: 2.556.915,00 + 2.759.202,44 + 2.244.755,23 = 7.560.872,67; a soma dos três pagos arredondados dá 7 560 872, um euro abaixo do total arredondado"
+  },
+  {
+   "id": "juros-mora-dotacao-inicial-2025",
+   "unidade": "N12.R1",
+   "impresso": "€190 000",
+   "valor_na_fonte": "190.000,00",
+   "medida": "rubrica 03.05.02.02, dotação inicial de 2025 (a mesma linha nova da cabeça)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 253,
+   "excerto": "³ 03050202 JUROS DE MORA ³P/M ³ 190.000,00³ 505.000,00³ ³ ³ 695.000,00³ ³"
+  },
+  {
+   "id": "juros-mora-dotacao-corrigida-2025",
+   "unidade": "N12.R2",
+   "impresso": "€695 000",
+   "valor_na_fonte": "695.000,00",
+   "medida": "a mesma rubrica, dotação corrigida (190.000,00 + 505.000,00 de reforço)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 253,
+   "excerto": "³ 03050202 JUROS DE MORA ³P/M ³ 190.000,00³ 505.000,00³ ³ ³ 695.000,00³ ³"
+  },
+  {
+   "id": "juros-mora-obrigacoes-2025",
+   "unidade": "N12.R3",
+   "impresso": "€622 495",
+   "valor_na_fonte": "622.495,42",
+   "medida": "a mesma rubrica, coluna «Obrigações» da demonstração orçamental da despesa (a mesma linha nova da cabeça)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 214,
+   "excerto": "³ 03050202 Juros de Mora ³ 93.935,13³ 695.000,00³ ³ ³ 33.151,63³ 661.848,37³ 661.663,87³ 622.495,42³ 206.867,67³ ³ ³ 11.658,54³ 195.209,13³ 206.867,67³ 39.168,45³ 415.627,75³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³",
+   "nota": "a mesma linha imprime 93.935,13 de despesas por pagar de períodos anteriores; a coluna pode incluí-las"
+  },
+  {
+   "id": "juros-mora-pagos-2025",
+   "unidade": "N12.R4",
+   "impresso": "€206 868",
+   "valor_na_fonte": "206.867,67",
+   "medida": "a mesma rubrica, despesas pagas líquidas de reposições, total (11.658,54 de períodos anteriores e 195.209,13 do período)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 214,
+   "excerto": "³ 03050202 Juros de Mora ³ 93.935,13³ 695.000,00³ ³ ³ 33.151,63³ 661.848,37³ 661.663,87³ 622.495,42³ 206.867,67³ ³ ³ 11.658,54³ 195.209,13³ 206.867,67³ 39.168,45³ 415.627,75³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³"
+  },
+  {
+   "id": "juros-mora-por-pagar-2025",
+   "unidade": "N12.R5",
+   "impresso": "€415 628",
+   "valor_na_fonte": "415.627,75",
+   "medida": "a mesma rubrica, obrigações por pagar",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 214,
+   "excerto": "³ 03050202 Juros de Mora ³ 93.935,13³ 695.000,00³ ³ ³ 33.151,63³ 661.848,37³ 661.663,87³ 622.495,42³ 206.867,67³ ³ ³ 11.658,54³ 195.209,13³ 206.867,67³ 39.168,45³ 415.627,75³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³",
+   "derivacao": "622.495,42 − 206.867,67 = 415.627,75 (a coluna confere com a conta)"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2015",
+   "unidade": "N04.R1",
+   "impresso": "€45 313 631",
+   "valor_na_fonte": "45.313.631,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2015 (coluna «Orçamento»)",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 73,
+   "excerto": "Outras Receitas Correntes 45.313.631,00 79.406,50 0,18%"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2015",
+   "unidade": "N04.R1",
+   "impresso": "€79 407",
+   "valor_na_fonte": "79.406,50",
+   "medida": "«Outras Receitas Correntes», cobrado em 2015 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 73,
+   "excerto": "Outras Receitas Correntes 45.313.631,00 79.406,50 0,18%"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2016",
+   "unidade": "N04.R2",
+   "impresso": "€16 752 721",
+   "valor_na_fonte": "16.752.721,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2016 (coluna «Orçamento»)",
+   "documento": "2016_relatorio_gestao.txt",
+   "pagina": 82,
+   "excerto": "Outras Receitas Correntes 16.752.721,00 626.999,23 3,7%",
+   "nota": "o orçamento corrigido; o inicial era 44.666.721,00 (RG 2016 p.70 e p.71)"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2016",
+   "unidade": "N04.R2",
+   "impresso": "€626 999",
+   "valor_na_fonte": "626.999,23",
+   "medida": "«Outras Receitas Correntes», cobrado em 2016 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2016_relatorio_gestao.txt",
+   "pagina": 82,
+   "excerto": "Outras Receitas Correntes 16.752.721,00 626.999,23 3,7%",
+   "nota": "o orçamento corrigido; o inicial era 44.666.721,00 (RG 2016 p.70 e p.71)"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2017",
+   "unidade": "N04.R3",
+   "impresso": "€15 105 642",
+   "valor_na_fonte": "15.105.642,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2017 (coluna «Orçamento»)",
+   "documento": "2017_relatorio_gestao.txt",
+   "pagina": 67,
+   "excerto": "Outras Receitas Correntes 15.105.642,00 144.472,15 0,96%"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2017",
+   "unidade": "N04.R3",
+   "impresso": "€144 472",
+   "valor_na_fonte": "144.472,15",
+   "medida": "«Outras Receitas Correntes», cobrado em 2017 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2017_relatorio_gestao.txt",
+   "pagina": 67,
+   "excerto": "Outras Receitas Correntes 15.105.642,00 144.472,15 0,96%"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2018",
+   "unidade": "N04.R4",
+   "impresso": "€9 902 858",
+   "valor_na_fonte": "9.902.858,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2018 (coluna «Orçamento»)",
+   "documento": "2018_relatorio_gestao.txt",
+   "pagina": 71,
+   "excerto": "Outras Receitas Correntes 9.902.858,00 611.499,76 6,17%"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2018",
+   "unidade": "N04.R4",
+   "impresso": "€611 500",
+   "valor_na_fonte": "611.499,76",
+   "medida": "«Outras Receitas Correntes», cobrado em 2018 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2018_relatorio_gestao.txt",
+   "pagina": 71,
+   "excerto": "Outras Receitas Correntes 9.902.858,00 611.499,76 6,17%"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2019",
+   "unidade": "N04.R5",
+   "impresso": "€7 539 050",
+   "valor_na_fonte": "7.539.050,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2019 (coluna «Orçamento»)",
+   "documento": "2019_relatorio_gestao.txt",
+   "pagina": 57,
+   "excerto": "Outras Receitas Correntes 7.539.050,00 290.760,82 3,86%"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2019",
+   "unidade": "N04.R5",
+   "impresso": "€290 761",
+   "valor_na_fonte": "290.760,82",
+   "medida": "«Outras Receitas Correntes», cobrado em 2019 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2019_relatorio_gestao.txt",
+   "pagina": 57,
+   "excerto": "Outras Receitas Correntes 7.539.050,00 290.760,82 3,86%"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2020",
+   "unidade": "N04.R6",
+   "impresso": "€4 004 209*",
+   "valor_na_fonte": "4 004 209,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2020 (coluna «Orçamento»)",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 67,
+   "excerto": "Outras Receitas Correntes 4 004 209,00 76 147,58 5 705 454,00 237 039,64 4,2%",
+   "nota": "comparativo do relatório de 2021 (o asterisco da casa); colunas «Orçamento 2020» e «Receitas Homólogas»"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2020",
+   "unidade": "N04.R6",
+   "impresso": "€76 148*",
+   "valor_na_fonte": "76 147,58",
+   "medida": "«Outras Receitas Correntes», cobrado em 2020 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 67,
+   "excerto": "Outras Receitas Correntes 4 004 209,00 76 147,58 5 705 454,00 237 039,64 4,2%",
+   "nota": "comparativo do relatório de 2021 (o asterisco da casa); colunas «Orçamento 2020» e «Receitas Homólogas»"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2021",
+   "unidade": "N04.R7",
+   "impresso": "€5 705 454",
+   "valor_na_fonte": "5 705 454,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2021 (coluna «Orçamento»)",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 61,
+   "excerto": "Outras Receitas Correntes 5 705 454,00 237 039,64 4,15%"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2021",
+   "unidade": "N04.R7",
+   "impresso": "€237 040",
+   "valor_na_fonte": "237 039,64",
+   "medida": "«Outras Receitas Correntes», cobrado em 2021 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 61,
+   "excerto": "Outras Receitas Correntes 5 705 454,00 237 039,64 4,15%"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2022",
+   "unidade": "N04.R8",
+   "impresso": "€6 449 972",
+   "valor_na_fonte": "6 449 972,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2022 (coluna «Orçamento»)",
+   "documento": "2022_relatorio_gestao.txt",
+   "pagina": 61,
+   "excerto": "Outras Receitas Correntes 6 449 972,00 930 522,03 14,43%"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2022",
+   "unidade": "N04.R8",
+   "impresso": "€930 522",
+   "valor_na_fonte": "930 522,03",
+   "medida": "«Outras Receitas Correntes», cobrado em 2022 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2022_relatorio_gestao.txt",
+   "pagina": 61,
+   "excerto": "Outras Receitas Correntes 6 449 972,00 930 522,03 14,43%"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2023",
+   "unidade": "N04.R9",
+   "impresso": "€19 484 554",
+   "valor_na_fonte": "19 484 554,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2023 (coluna «Orçamento»)",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 79,
+   "excerto": "Outras Receitas Correntes 19 484 554,00 -43 922,19 -0,23%",
+   "nota": "o cobrado é negativo no relatório"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2023",
+   "unidade": "N04.R9",
+   "impresso": "−€43 922",
+   "valor_na_fonte": "-43 922,19",
+   "medida": "«Outras Receitas Correntes», cobrado em 2023 (coluna «Execução» / «Recebimentos»)",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 79,
+   "excerto": "Outras Receitas Correntes 19 484 554,00 -43 922,19 -0,23%",
+   "nota": "o cobrado é negativo no relatório"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2024",
+   "unidade": "N04.R10",
+   "impresso": "€20 543 757*",
+   "valor_na_fonte": "20 543 757,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2024 (coluna «Orçamento»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "Outras Receitas Correntes 20 543 757,00 159 104,47 19 427 778,00 155 572,72 0,8%",
+   "nota": "comparativo do relatório de 2025 (o asterisco da casa); colunas «Orçamento 2024» e «Receitas Homólogas»"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2024",
+   "unidade": "N04.R10",
+   "impresso": "€159 104*",
+   "valor_na_fonte": "159 104,47",
+   "medida": "«Outras Receitas Correntes», cobrado em 2024 (coluna «Execução» / «Recebimentos»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "Outras Receitas Correntes 20 543 757,00 159 104,47 19 427 778,00 155 572,72 0,8%",
+   "nota": "comparativo do relatório de 2025 (o asterisco da casa); colunas «Orçamento 2024» e «Receitas Homólogas»"
+  },
+  {
+   "id": "outras-rec-correntes-orc-2025",
+   "unidade": "N04.R11",
+   "impresso": "€19 427 778",
+   "valor_na_fonte": "19 427 778,00",
+   "medida": "«Outras Receitas Correntes», orçamento de 2025 (coluna «Orçamento»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 113,
+   "excerto": "Outras Receitas Correntes 19 427 778,00 155 572,72 0,80%",
+   "nota": "linhas que já existem no livro (outras-rec-correntes-orc e -exec)"
+  },
+  {
+   "id": "outras-rec-correntes-cobrado-2025",
+   "unidade": "N04.R11",
+   "impresso": "€155 573",
+   "valor_na_fonte": "155 572,72",
+   "medida": "«Outras Receitas Correntes», cobrado em 2025 (coluna «Execução» / «Recebimentos»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 113,
+   "excerto": "Outras Receitas Correntes 19 427 778,00 155 572,72 0,80%",
+   "nota": "linhas que já existem no livro (outras-rec-correntes-orc e -exec)"
+  },
+  {
+   "id": "gop26-outras-receitas-correntes",
+   "unidade": "N04.R12",
+   "impresso": "€7 615 243",
+   "valor_na_fonte": "7 615 243",
+   "medida": "orçamento de 2026, capítulo 08 (a mesma linha nova da cabeça)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "08 - Outras receitas correntes 7 615 243 6,87% -11 812 535"
+  },
+  {
+   "id": "anuario-2024-exec-receita-cobrada",
+   "unidade": "N05.1",
+   "impresso": "89,5%",
+   "valor_na_fonte": "89,5%",
+   "medida": "grau de execução da receita cobrada dos municípios em 2024",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 34,
+   "excerto": "O grau de execução da receita cobrada foi de 89,5%, diminuindo 2 pontos percentuais",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: a comparação com os pares pela execução da receita não entra nesta edição: o ano do quadro do Anuário é inferido e não se sabe se a taxa conta o saldo da gerência; fica aberto até se ler a definição no Anuário"
+  },
+  {
+   "id": "anuario-2024-municipios",
+   "unidade": "N05.1",
+   "impresso": "308",
+   "valor_na_fonte": "308",
+   "medida": "o total de municípios do quadro de distribuição",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "TOTAL 308 308",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: a comparação com os pares pela execução da receita não entra nesta edição: o ano do quadro do Anuário é inferido e não se sabe se a taxa conta o saldo da gerência; fica aberto até se ler a definição no Anuário"
+  },
+  {
+   "id": "exec-receita-total-2024-pct",
+   "unidade": "N05.1",
+   "impresso": "70,42%",
+   "valor_calculado": "70.41617090606919944910214860",
+   "medida": "taxa de execução da receita total de 2024 (já no estudo, B032.R7: «calculado do comparativo do relatório de 2025»)",
+   "derivacao": "66 509 640,42 ÷ 94 452 225,34 × 100 (PC 2025 p.118, «TOTAL DO ORÇAMENTO», colunas «Orçamento 2024» e «Receitas Homólogas»)",
+   "entradas": [
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 118,
+     "excerto": "TOTAL DO ORÇAMENTO 94 452 225,34 66 509 640,42 109 483 314,95 67 263 297,08 61,4%"
+    }
+   ],
+   "sem_uso": "DECISOES-da-direcao.json: cortar: a comparação com os pares pela execução da receita não entra nesta edição: o ano do quadro do Anuário é inferido e não se sabe se a taxa conta o saldo da gerência; fica aberto até se ler a definição no Anuário"
+  },
+  {
+   "id": "anuario-2024-faixa-r1",
+   "unidade": "N05.R1",
+   "impresso": "0",
+   "valor_na_fonte": "0",
+   "medida": "número de municípios na faixa de execução da receita cobrada (a primeira das duas colunas, «Receita cobrada»); o ano do quadro é inferido (a página não o escreve no quadro; o Anuário é o de 2024)",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Inferior a 50% 0 2 78,7%",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-50",
+   "unidade": "N05.R1",
+   "impresso": "50%",
+   "valor_na_fonte": "50%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Inferior a 50% 0 2 78,7%",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-r2",
+   "unidade": "N05.R2",
+   "impresso": "35",
+   "valor_na_fonte": "35",
+   "medida": "número de municípios na faixa de execução da receita cobrada (a primeira das duas colunas, «Receita cobrada»); o ano do quadro é inferido (a página não o escreve no quadro; o Anuário é o de 2024)",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 50% e inferior a 80% 35 196 77,8%",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-50",
+   "unidade": "N05.R2",
+   "impresso": "50%",
+   "valor_na_fonte": "50%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 50% e inferior a 80% 35 196 77,8%",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-80",
+   "unidade": "N05.R2",
+   "impresso": "80%",
+   "valor_na_fonte": "80%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 50% e inferior a 80% 35 196 77,8%",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-r3",
+   "unidade": "N05.R3",
+   "impresso": "123",
+   "valor_na_fonte": "123",
+   "medida": "número de municípios na faixa de execução da receita cobrada (a primeira das duas colunas, «Receita cobrada»); o ano do quadro é inferido (a página não o escreve no quadro; o Anuário é o de 2024)",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 80% e inferior a 90% 123 99 73,5% 73,3%",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-80",
+   "unidade": "N05.R3",
+   "impresso": "80%",
+   "valor_na_fonte": "80%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 80% e inferior a 90% 123 99 73,5% 73,3%",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-90",
+   "unidade": "N05.R3",
+   "impresso": "90%",
+   "valor_na_fonte": "90%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 80% e inferior a 90% 123 99 73,5% 73,3%",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-r4",
+   "unidade": "N05.R4",
+   "impresso": "119",
+   "valor_na_fonte": "119",
+   "medida": "número de municípios na faixa de execução da receita cobrada (a primeira das duas colunas, «Receita cobrada»); o ano do quadro é inferido (a página não o escreve no quadro; o Anuário é o de 2024)",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 90% e inferior a 100% 119 11",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-90",
+   "unidade": "N05.R4",
+   "impresso": "90%",
+   "valor_na_fonte": "90%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 90% e inferior a 100% 119 11",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-100",
+   "unidade": "N05.R4",
+   "impresso": "100%",
+   "valor_na_fonte": "100%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 90% e inferior a 100% 119 11",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-r5",
+   "unidade": "N05.R5",
+   "impresso": "31",
+   "valor_na_fonte": "31",
+   "medida": "número de municípios na faixa de execução da receita cobrada (a primeira das duas colunas, «Receita cobrada»); o ano do quadro é inferido (a página não o escreve no quadro; o Anuário é o de 2024)",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 100% 31 0",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-limite-100",
+   "unidade": "N05.R5",
+   "impresso": "100%",
+   "valor_na_fonte": "100%",
+   "medida": "o limite da faixa, como o quadro o escreve",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "Superior a 100% 31 0",
+   "nota": "rótulo de linha",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "anuario-2024-faixa-r6",
+   "unidade": "N05.R6",
+   "impresso": "308",
+   "valor_na_fonte": "308",
+   "medida": "número de municípios na faixa de execução da receita cobrada (a primeira das duas colunas, «Receita cobrada»); o ano do quadro é inferido (a página não o escreve no quadro; o Anuário é o de 2024)",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "TOTAL 308 308",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "id": "gop26-receita-1",
+   "unidade": "N06.R1",
+   "impresso": "€15 759 100",
+   "valor_na_fonte": "15 759100",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "01 - Impostos diretos 15 759100 14,22% -2112000"
+  },
+  {
+   "id": "receita-cobrada-2025-1",
+   "unidade": "N06.R1",
+   "impresso": "€15 395 084",
+   "valor_na_fonte": "15 395 083,68",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Impostos directos 12 034 955,16 15 395 083,68 128%"
+  },
+  {
+   "id": "gop26-receita-2",
+   "unidade": "N06.R2",
+   "impresso": "€100",
+   "valor_na_fonte": "100",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "02 -Impostos indiretos 100 0,00% 0"
+  },
+  {
+   "id": "receita-cobrada-2025-2",
+   "unidade": "N06.R2",
+   "impresso": "€0",
+   "valor_na_fonte": "0,00",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Impostos indirectos 1 023 874,00 0,00 0%"
+  },
+  {
+   "id": "gop26-receita-3",
+   "unidade": "N06.R3",
+   "impresso": "€5 786 600",
+   "valor_na_fonte": "5 786 600",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "04 - Taxas, multas e outras penalidades 5 786 600 5,22% 2 298 100"
+  },
+  {
+   "id": "receita-cobrada-2025-3",
+   "unidade": "N06.R3",
+   "impresso": "€3 106 718",
+   "valor_na_fonte": "3 106 717,79",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Taxas, multas e outras penalidades 2 784 923,00 3 106 717,79 112%"
+  },
+  {
+   "id": "gop26-receita-4",
+   "unidade": "N06.R4",
+   "impresso": "€4 752 366",
+   "valor_na_fonte": "4 752 366",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "05 -R endimentos da propriedade 4 752 366 4,29% 1 270 966"
+  },
+  {
+   "id": "receita-cobrada-2025-4",
+   "unidade": "N06.R4",
+   "impresso": "€3 630 477",
+   "valor_na_fonte": "3 630 477,22",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Rendimentos da propriedade 100 084,00 3 630 477,22 3627%"
+  },
+  {
+   "id": "gop26-receita-5",
+   "unidade": "N06.R5",
+   "impresso": "€29 740 467",
+   "valor_na_fonte": "29 740 467",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "06 -Transferê ncias correntes 29 740 467 26,83% -3 877 546"
+  },
+  {
+   "id": "receita-cobrada-2025-5",
+   "unidade": "N06.R5",
+   "impresso": "€27 553 504",
+   "valor_na_fonte": "27 553 503,97",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Transferências correntes 19 955 061,00 27 553 503,97 138%"
+  },
+  {
+   "id": "gop26-receita-6",
+   "unidade": "N06.R6",
+   "impresso": "€14 476 737",
+   "valor_na_fonte": "14 476 737",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "07- Venda de bens e serviços correntes 14 476 737 13,06% 6153 637"
+  },
+  {
+   "id": "receita-cobrada-2025-6",
+   "unidade": "N06.R6",
+   "impresso": "€8 375 707",
+   "valor_na_fonte": "8 375 707,35",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Venda de bens e serviços correntes 15 539 853,00 8 375 707,35 54%"
+  },
+  {
+   "id": "gop26-receita-7",
+   "unidade": "N06.R7",
+   "impresso": "€7 615 243",
+   "valor_na_fonte": "7 615 243",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "08 - Outras receitas correntes 7 615 243 6,87% -11 812 535"
+  },
+  {
+   "id": "receita-cobrada-2025-7",
+   "unidade": "N06.R7",
+   "impresso": "€155 573",
+   "valor_na_fonte": "155 572,72",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Outras receitas correntes 87 714,00 155 572,72 177%"
+  },
+  {
+   "id": "gop26-receita-8",
+   "unidade": "N06.R8",
+   "impresso": "€116 587",
+   "valor_na_fonte": "116 587",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "09- Venda de bens de investimento 116 587 0,11% 8 087"
+  },
+  {
+   "id": "receita-cobrada-2025-8",
+   "unidade": "N06.R8",
+   "impresso": "€58 526",
+   "valor_na_fonte": "58 525,84",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Venda de bens de investimento 1 250 000,00 58 525,84 5%"
+  },
+  {
+   "id": "gop26-receita-9",
+   "unidade": "N06.R9",
+   "impresso": "€31 520 878",
+   "valor_na_fonte": "31 520 878",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "10- Transferê ncias de capital 31 520 878 28,44% 15 659 836"
+  },
+  {
+   "id": "receita-cobrada-2025-9",
+   "unidade": "N06.R9",
+   "impresso": "€6 223 368",
+   "valor_na_fonte": "6 223 368,38",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Transferências de capital 1 213 396,00 6 223 368,38 513%"
+  },
+  {
+   "id": "gop26-receita-10",
+   "unidade": "N06.R10",
+   "impresso": "€11 317",
+   "valor_na_fonte": "11 317",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "11 -Ativosfinanceiros 11 317 0,01% 11 217"
+  },
+  {
+   "id": "receita-cobrada-2025-10",
+   "unidade": "N06.R10",
+   "impresso": "€0",
+   "valor_na_fonte": "0,00",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.118, Quadro 13, coluna «Recebimentos» de 2025)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "Activos Financeiros 300,00 0,00 100,00 0,00 0,0%"
+  },
+  {
+   "id": "gop26-receita-11",
+   "unidade": "N06.R11",
+   "impresso": "€1 024 717",
+   "valor_na_fonte": "1 024 717",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "12- Passivos F inanceiros 1 024 717 0,92% -766 550"
+  },
+  {
+   "id": "receita-cobrada-2025-11",
+   "unidade": "N06.R11",
+   "impresso": "€759 313",
+   "valor_na_fonte": "759 312,52",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Passivos financeiros 0,00 759 312,52 -"
+  },
+  {
+   "id": "gop26-receita-12",
+   "unidade": "N06.R12",
+   "impresso": "€29 000",
+   "valor_na_fonte": "29 000",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "13- Outras receitas de capital 29 000 0,03% 0"
+  },
+  {
+   "id": "receita-cobrada-2025-12",
+   "unidade": "N06.R12",
+   "impresso": "€0",
+   "valor_na_fonte": "0,00",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.441, coluna «Valores Executados 2025 (b)»)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 441,
+   "excerto": "Outras receitas de capital 0,00 0,00 -"
+  },
+  {
+   "id": "gop26-receita-13",
+   "unidade": "N06.R13",
+   "impresso": "€7 465",
+   "valor_na_fonte": "7 465",
+   "medida": "orçamento da receita de 2026, Quadro 10 do relatório do orçamento (a cópia tem o texto com espaços partidos)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "15 - R eposições nê o abatidas nos pagamentos 7 465 0,01% 7 365"
+  },
+  {
+   "id": "receita-cobrada-2025-13",
+   "unidade": "N06.R13",
+   "impresso": "€7 653",
+   "valor_na_fonte": "7 652,66",
+   "medida": "receita de 2025 executada, por capítulo (PC 2025 p.118, Quadro 13, coluna «Recebimentos» de 2025)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "Reposições não abatidas aos pagts 100,00 22 516,53 100,00 7 652,66 7652,7%"
+  },
+  {
+   "id": "saldo-gerencia-anterior-2024-receita-2025",
+   "unidade": "N06.R14",
+   "impresso": "€1 997 375",
+   "valor_na_fonte": "1 997 374,95",
+   "medida": "saldo da gerência anterior na receita de 2025 (linha própria das 72 correções)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "Saldo de Gerência 1 702 225,34 1 702 225,34 1 997 374,95 1 997 374,95 100,0%"
+  },
+  {
+   "id": "gop26-total",
+   "unidade": "N06.R15",
+   "impresso": "€110 840 577",
+   "valor_na_fonte": "110 840 577",
+   "medida": "receita total do orçamento de 2026 (linha que já existe no livro)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "excerto": "R E C E ITA - TOTAL 110 840 577 99,99% 6 840 577"
+  },
+  {
+   "id": "receita-cobrada-2025",
+   "unidade": "N06.R15",
+   "impresso": "€67 263 297",
+   "valor_na_fonte": "67 263 297,08",
+   "medida": "receita cobrada em 2025, com o saldo transitado (linha que já existe no livro)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "TOTAL DO ORÇAMENTO 94 452 225,34 66 509 640,42 109 483 314,95 67 263 297,08 61,4%"
+  },
+  {
+   "id": "gop26-receita-acima-do-cobrado-2025",
+   "unidade": "N06.1",
+   "impresso": "€43,6 milhões",
+   "valor_calculado": "43.57727992",
+   "medida": "o orçamento de 2026 menos o cobrado em 2025 (derivadas.py, ponto 9)",
+   "derivacao": "110 840 577 − 67 263 297,08 = 43 577 279,92 → 43,6 milhões",
+   "entradas": [
+    "gop26-total",
+    "receita-cobrada-2025"
+   ]
+  },
+  {
+   "id": "gop26-transf-capital-acima-do-cobrado-2025",
+   "unidade": "N06.1",
+   "impresso": "€25,3 milhões",
+   "valor_calculado": "25.29750962",
+   "medida": "as transferências de capital do orçamento de 2026 menos as cobradas em 2025",
+   "derivacao": "31 520 878 − 6 223 368,38 = 25 297 509,62 → 25,3 milhões",
+   "entradas": [
+    "gop26-receita-9",
+    "receita-cobrada-2025-9"
+   ]
+  },
+  {
+   "id": "efetivos-2024",
+   "unidade": "N07.R1",
+   "impresso": "1 357",
+   "valor_na_fonte": "1 357",
+   "medida": "trabalhadores a 31 de dezembro de 2024, Quadro 3 «Variação de Efetivos 2012-2025»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "2024 1 357 19"
+  },
+  {
+   "id": "efetivos-variacao-2024",
+   "unidade": "N07.R1",
+   "impresso": "+19",
+   "valor_na_fonte": "19",
+   "medida": "variação no ano, o mesmo quadro (o sinal é o da casa)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "2024 1 357 19"
+  },
+  {
+   "id": "efetivos-2025",
+   "unidade": "N07.R3",
+   "impresso": "1 332",
+   "valor_na_fonte": "1 332",
+   "medida": "trabalhadores a 31 de dezembro de 2025, o mesmo quadro",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "2025 1 332 -25"
+  },
+  {
+   "id": "efetivos-variacao-2025",
+   "unidade": "N07.R3",
+   "impresso": "−25",
+   "valor_na_fonte": "-25",
+   "medida": "variação no ano, o mesmo quadro",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "2025 1 332 -25"
+  },
+  {
+   "id": "pc25-quadro-3",
+   "unidade": "N11.1",
+   "impresso": "3",
+   "valor_na_fonte": "Quadro 3",
+   "medida": "o número do quadro",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "Quadro 3 - Variação de Efetivos 2012-2025",
+   "nota": "identificador do quadro"
+  },
+  {
+   "id": "pc25-quadro-3",
+   "unidade": "N11.2",
+   "impresso": "3",
+   "valor_na_fonte": "Quadro 3",
+   "medida": "o número do quadro",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "Quadro 3 - Variação de Efetivos 2012-2025",
+   "nota": "identificador do quadro"
+  },
+  {
+   "id": "pmp-2023-expurgado",
+   "unidade": "B092.R2",
+   "impresso": "50",
+   "valor_na_fonte": "50",
+   "medida": "prazo médio de pagamento de 2023 sem os registos patrimoniais do fecho de contas (a mesma linha nova da cabeça)",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 65,
+   "excerto": "Expurgando estes registos patrimoniais, efetuados no decorrer dos trabalhos de encerramento de contas, o PMP apurado para 2023 seria de 50 dias."
+  },
+  {
+   "id": "divida-total-acrescimo-criterio-2024",
+   "unidade": "B108.R3",
+   "impresso": "€3 827 392",
+   "valor_na_fonte": "3.827.392,47",
+   "medida": "acréscimo da conta 20.2.2 (contrato de eficiência energética) à dívida total de 2024, pela alteração de critério (nota 8)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "representa um acréscimo de 3.827.392,47€ e"
+  },
+  {
+   "id": "divida-total-acrescimo-criterio-2024",
+   "unidade": "B121.1",
+   "impresso": "€3 827 392",
+   "valor_na_fonte": "3.827.392,47",
+   "medida": "acréscimo da conta 20.2.2 (contrato de eficiência energética) à dívida total de 2024, pela alteração de critério (nota 8)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "representa um acréscimo de 3.827.392,47€ e"
+  },
+  {
+   "id": "reconciliacao-diferencas-liquidas-2025",
+   "unidade": "B131.2",
+   "impresso": "€195 040",
+   "valor_na_fonte": "195.040,41",
+   "medida": "montante líquido de diferenças por conciliar a 31.12.2025, depois do expurgo dos movimentos regularizados em 2026 (a mesma linha nova da cabeça)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 162,
+   "excerto": "o montante líquido de diferenças por conciliar ascende a 195.040,41€"
+  },
+  {
+   "id": "evora2027-equipamentos-plano-2025",
+   "unidade": "B151.6",
+   "impresso": "€829 900",
+   "valor_na_fonte": "829.900,00",
+   "medida": "plano de 2025, linha 0409 «PRR - Aquisição de equipamentos (Évora 2027)», montante previsto (só no ano)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 221,
+   "excerto": "³2.5.1. ³0409 2025 I 3 ³PRR - AQUISIÇÃO DE EQUIPAMENTOS ³ ³OUTRA ³ ³ ³ ³ ³2025/01/02³2026/12/31³ 829.900,00³ ³ 829.900,00³ ³ ³ ³ ³ ³",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: idem"
+  },
+  {
+   "id": "evora2027-equipamentos-plano-2026",
+   "unidade": "B151.6",
+   "impresso": "€927 119†",
+   "valor_na_fonte": "927.119,00",
+   "medida": "plano plurianual de investimentos de 2026, a mesma linha, financiamento definido (digitalização degradada)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 110,
+   "excerto": "2.5.1. 0439 2025 II PRA - AQUISIÇÃO DE EQUIPAX6NTOS 010201/01011002 0 <- .110,00 2025101/02 2027/12/31 0 927.119,00 927,119,00 '27.119,00",
+   "nota": "a cópia lê o número da linha como «0439»; a p.119 da mesma cópia imprime a mesma linha com «927.125,00» e «92.119,00» (leitura degradada). O registo do motor (gop2026_plan.json) dá 927119.",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: idem"
+  },
+  {
+   "id": "evora2027-arquivo-plano-2025",
+   "unidade": "B151.6",
+   "impresso": "€670 100",
+   "valor_na_fonte": "670.100,00",
+   "medida": "plano de 2025, linha 0410 «PRR - Reabilitação do arquivo fotográfico (Évora 2027)», total previsto (268.040,00 no ano e 402.060,00 nos seguintes)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 221,
+   "excerto": "³2.5.1. ³0410 2025 I 4 ³PRR - REABILITAÇÃO DO ARQUIVO ³D6 ³EMPREITADA ³ ³ ³ 268.040,00³ ³2025/01/02³2026/12/31³ 268.040,00³ 402.060,00³ 670.100,00³ ³ ³ ³ ³ ³",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: idem"
+  },
+  {
+   "id": "evora2027-arquivo-plano-2026",
+   "unidade": "B151.6",
+   "impresso": "€750 000†",
+   "valor_na_fonte": "750.000,00",
+   "medida": "o arquivo fotográfico no plano de 2026",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 32,
+   "excerto": "• R eabilitaçã o do Arquivo F otográfico: 750.000,00€;",
+   "nota": "no texto do relatório do orçamento (p.32 e p.41) o valor é legível; no anexo digitalizado (p.119) a linha lê «50.000,00». A adaga é a da troca (trocas.json).",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: idem"
+  },
+  {
+   "id": "rossio-plano-2025-total",
+   "unidade": "N09.1",
+   "impresso": "€2 350 000",
+   "valor_na_fonte": "2.350.000,00",
+   "medida": "plano de 2025, linha 0408 «PRR - Requalificação do Rossio de São Brás (Évora 2027)», total previsto (940.000,00 no ano e 1.410.000,00 nos seguintes)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 220,
+   "excerto": "³2.5.1. ³0408 2025 I 2 ³PRR - REQUALIFICAÇÃO DO ROSSIO DE ³D6 ³EMPREITADA ³ ³ ³ 940.000,00³ ³2025/01/02³2026/12/31³ 940.000,00³ 1.410.000,00³ 2.350.000,00³ ³ ³ ³ ³ ³"
+  },
+  {
+   "id": "evora2027-gop-2025",
+   "unidade": "B151.3",
+   "impresso": "€3 485 940",
+   "valor_na_fonte": "3.485.940",
+   "medida": "a parte de 2025 (linha que já existe no livro)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 109,
+   "excerto": "projeto Évora 2027, financiado pelo PRR, no montante de 3.485.940€ em 2025 (3.984.060€ em 2026)."
+  },
+  {
+   "id": "evora2027-gop-2026",
+   "unidade": "B151.3",
+   "impresso": "€3 984 060",
+   "valor_na_fonte": "3.984.060",
+   "medida": "a parte de 2026 (linha que já existe no livro)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 109,
+   "excerto": "projeto Évora 2027, financiado pelo PRR, no montante de 3.485.940€ em 2025 (3.984.060€ em 2026)."
+  },
+  {
+   "id": "exec-receita-total-2015-pct",
+   "unidade": "B034.2",
+   "impresso": "48,1%",
+   "valor_na_fonte": "48,10%",
+   "medida": "taxa de execução da receita total de 2015, como o relatório de 2015 a imprime (terceira passagem)",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 72,
+   "excerto": "Total 89.868.149,48 43.223.967,14 48,10%"
+  },
+  {
+   "id": "evora2027-receita-orcada-2025",
+   "unidade": "B033.1",
+   "impresso": "5 000 000",
+   "valor_na_fonte": "5.000.000,00",
+   "medida": "rubrica de receita 06030603 «Évora 2027», orçamento de 2025 (entrada da conta)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 241,
+   "excerto": "³ 06030603 EVORA 2027 ³ ³ 5.000.000,00³ ³ ³ ³ 5.000.000,00³ ³",
+   "nota": "entrada de uma conta: o número não se imprime na frase"
+  },
+  {
+   "id": "cooperacao-tecnica-orcada-2025",
+   "unidade": "B033.1",
+   "impresso": "5 013 000",
+   "valor_na_fonte": "5.013.000,00",
+   "medida": "rubrica 10030104 «Cooperação técnica e financeira», orçamento de 2025 (entrada da conta)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 243,
+   "excerto": "³ 10030104 COOPERAÇÃO TÉCNICA E FINANCEIRA ³ ³ 5.013.000,00³ ³ ³ ³ 5.013.000,00³ ³",
+   "nota": "entrada de uma conta: o número não se imprime na frase"
+  },
+  {
+   "id": "rubricas-sem-cobranca-2025",
+   "unidade": "B033.1",
+   "impresso": "€10 013 000",
+   "valor_calculado": "10013000",
+   "medida": "as duas rubricas sem cobrança em 2025 (DECISOES-quarta-passagem: «10 013 000 = 5 000 000 + 5 013 000»)",
+   "derivacao": "5.000.000,00 + 5.013.000,00 = 10.013.000,00",
+   "entradas": [
+    "evora2027-receita-orcada-2025",
+    "cooperacao-tecnica-orcada-2025"
+   ]
+  },
+  {
+   "id": "rubricas-sem-cobranca-quota-falta-2025",
+   "unidade": "B033.1",
+   "impresso": "23,7%",
+   "valor_calculado": "23.71623818547663726983638058",
+   "medida": "a parte das duas rubricas no que faltou à receita de 2025 face ao orçamento corrigido",
+   "derivacao": "10 013 000 ÷ 42 220 017,87 × 100 = 23,716…; 42 220 017,87 = 109 483 314,95 − 67 263 297,08 (PC 2025 p.118, «TOTAL DO ORÇAMENTO»)",
+   "entradas": [
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 118,
+     "excerto": "TOTAL DO ORÇAMENTO 94 452 225,34 66 509 640,42 109 483 314,95 67 263 297,08 61,4%"
+    }
+   ]
+  },
+  {
+   "id": "transf-cofinanciados-orcado-2025",
+   "unidade": "B033.4",
+   "impresso": "€9 391 128",
+   "valor_na_fonte": "9 391 128,00",
+   "medida": "transferências de projetos cofinanciados, orçamento de 2025 (Quadro 13)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 118,
+   "excerto": "Transf. Cofinanciados 5 483 507,00 2 548 487,32 9 391 128,00 1 087 287,03 11,6%"
+  },
+  {
+   "id": "saldo-seguinte-execucao-orcamental-2025",
+   "unidade": "B035.1",
+   "impresso": "€1 698 247",
+   "valor_na_fonte": "1 698 247,21",
+   "medida": "saldo para a gerência seguinte, parte da execução orçamental",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "excerto": "Saldo p/ Gerência Seguinte 2 381 077,06 Outras 7 652,66 Execução Orçamental 1 698 247,21 Operações de Tesouraria 682 829,85"
+  },
+  {
+   "id": "saldo-seguinte-operacoes-tesouraria-2025",
+   "unidade": "B035.1",
+   "impresso": "€682 830",
+   "valor_na_fonte": "682 829,85",
+   "medida": "saldo para a gerência seguinte, parte das operações de tesouraria",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "excerto": "Saldo p/ Gerência Seguinte 2 381 077,06 Outras 7 652,66 Execução Orçamental 1 698 247,21 Operações de Tesouraria 682 829,85"
+  },
+  {
+   "id": "pessoal-quota-despesa-corrente-2025",
+   "unidade": "B045.2",
+   "impresso": "55,77%",
+   "valor_calculado": "55.77318708504402302921552306",
+   "medida": "a despesa com pessoal na despesa corrente paga de 2025",
+   "derivacao": "30 438 431,98 ÷ 54 575 385,72 × 100 = 55,773…",
+   "entradas": [
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 119,
+     "excerto": "Pessoal 31 525 040,00 30 438 431,98 96,55%"
+    },
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 119,
+     "excerto": "Aquisição de Bens e Serviços 34 918 874,95 18 216 726,60 52,17%"
+    },
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 119,
+     "excerto": "Total 77 255 309,95 54 575 385,72 70,64%"
+    }
+   ]
+  },
+  {
+   "id": "bens-servicos-quota-despesa-corrente-2025",
+   "unidade": "B045.2",
+   "impresso": "33,38%",
+   "valor_calculado": "33.37901575897464861747201592",
+   "medida": "a aquisição de bens e serviços na despesa corrente paga de 2025 (o relatório imprime 34%)",
+   "derivacao": "18 216 726,60 ÷ 54 575 385,72 × 100 = 33,379…",
+   "entradas": [
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 119,
+     "excerto": "Pessoal 31 525 040,00 30 438 431,98 96,55%"
+    },
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 119,
+     "excerto": "Aquisição de Bens e Serviços 34 918 874,95 18 216 726,60 52,17%"
+    },
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 119,
+     "excerto": "Total 77 255 309,95 54 575 385,72 70,64%"
+    }
+   ]
+  },
+  {
+   "id": "ppi-amortizacoes-2025",
+   "unidade": "B051.1",
+   "impresso": "€4 308 783",
+   "valor_na_fonte": "4.308.782,93",
+   "medida": "plano plurianual de investimentos de 2025, linha 0202 2004 I 29 «Amortizações empréstimos bancários», executado",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 222,
+   "excerto": "³4.1. ³0202 2004 I 29 ³AMORTIZACOES EMPRESTIMOS BANCARIOS ³D10 ³OUTRA ³ ³ 4.601.320,00³ ³ ³2004/01/02³2025/12/31³ 4.601.320,00³ 18.989.693,00³ 23.591.013,00³ ³ 4.308.782,93³ 4.308.782,93³ 93.64 ³ 18.26 ³"
+  },
+  {
+   "id": "divida-inicio-mandato-rel2015",
+   "unidade": "B077.R1",
+   "impresso": "€87 682 770,50",
+   "valor_na_fonte": "87.682.770,50",
+   "medida": "«Dívida Total no Início do Mandato», Quadro 5 do relatório de 2015",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 11,
+   "excerto": "Dívida Total no Início do Mandato 87.682.770,50"
+  },
+  {
+   "id": "excesso-divida-2018-rel2018",
+   "unidade": "B082.R6",
+   "impresso": "€8 551 759",
+   "valor_na_fonte": "8.551.759",
+   "medida": "montante em excesso no fim de 2018, como o relatório de 2018 o dava",
+   "documento": "2018_relatorio_gestao.txt",
+   "pagina": 32,
+   "excerto": "Montante em Excesso 32.559.910 29.755.643 26.422.446 20.928.244 12.263.435 8.551.759"
+  },
+  {
+   "id": "gop26-sistema-integrado-transito",
+   "unidade": "B156.R8",
+   "impresso": "€889 441",
+   "valor_na_fonte": "889.441,00",
+   "medida": "plano de 2026, «Sistema integrado de trânsito, transportes e estacionamento», dotação para 2026 (texto limpo do relatório do orçamento)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 44,
+   "excerto": "S istema integrado de trâ nsito, transportes e estacionamento (889.441,00 euros)",
+   "nota": "o lugar de direção leu também 889.441,00 na imagem da p.118 do PDF original (DECISOES-quarta-passagem.json, notas); a cópia em texto da p.118 lê «809.441,20 889,441,02 889.441,00»"
+  },
+  {
+   "id": "rfalei-vigor-2014-01-01",
+   "unidade": "B019.2",
+   "impresso": "1",
+   "valor_na_fonte": "1 de janeiro de 2014",
+   "medida": "a data de entrada em vigor do novo regime financeiro das autarquias (o dia)",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 101,
+   "excerto": "O novo Regime Financeiro das Autarquias Locais, que entrou em vigor no dia 1 de janeiro de 2014, eliminou os conceitos de “Endividamento líquido municipal”",
+   "nota": "rótulo de data"
+  },
+  {
+   "id": "rfalei-vigor-2014-01-01",
+   "unidade": "B102.R1",
+   "impresso": "1",
+   "valor_na_fonte": "1 de janeiro de 2014",
+   "medida": "a data de entrada em vigor do novo regime financeiro das autarquias (o dia)",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 101,
+   "excerto": "O novo Regime Financeiro das Autarquias Locais, que entrou em vigor no dia 1 de janeiro de 2014, eliminou os conceitos de “Endividamento líquido municipal”",
+   "nota": "rótulo de data"
+  },
+  {
+   "id": "rfalei-vigor-2014-01-01",
+   "unidade": "B169.L3.2",
+   "impresso": "1",
+   "valor_na_fonte": "1 de janeiro de 2014",
+   "medida": "a data de entrada em vigor do novo regime financeiro das autarquias (o dia)",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 101,
+   "excerto": "O novo Regime Financeiro das Autarquias Locais, que entrou em vigor no dia 1 de janeiro de 2014, eliminou os conceitos de “Endividamento líquido municipal”",
+   "nota": "rótulo de data"
+  },
+  {
+   "id": "despesas-por-pagar-periodos-anteriores-2025",
+   "unidade": "N02.A1",
+   "impresso": "€10 396 322,56",
+   "valor_na_fonte": "10.396.322,56",
+   "medida": "despesas por pagar de períodos anteriores, total da demonstração orçamental da despesa de 2025",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 216,
+   "excerto": "³ Total :³ 10.396.322,56³109.483.314,95³ ³ ³ 15.710.612,21³ 93.772.702,74³ 91.244.013,02³ 80.145.511,91³ 65.638.218,95³ 73.169,08³ 73.169,08³ 9.055.574,89³ 56.509.474,98³ 65.565.049,87³ 11.098.501,11³ 14.580.462,04³ 11.301.723,32³ 7.862.362,12³ 7.328.550,30³ 7.037.089,22³ 18.685.399,89³ 6.070.785,33³ 5.874.361,26³ 5.678.833,43³ "
+  },
+  {
+   "id": "anuario-recolha-data",
+   "unidade": "B018.3",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10T09:12:13+00:00",
+   "medida": "a data da recolha da apresentação do Anuário 2024 (quinta passagem)",
+   "documento": "anuario_2024_extract.json",
+   "pagina": null,
+   "excerto": "fetched_at = \"2026-08-10T09:12:13+00:00\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "anuario-recolha-data",
+   "unidade": "B169.L4.2",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10T09:12:13+00:00",
+   "medida": "a data da recolha da apresentação do Anuário 2024 (quinta passagem)",
+   "documento": "anuario_2024_extract.json",
+   "pagina": null,
+   "excerto": "fetched_at = \"2026-08-10T09:12:13+00:00\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "B021.1",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da procura (a do índice das extrações do motor; para o Anuário integral não há registo próprio da procura guardado)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "B171.3",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da procura (a do índice das extrações do motor; para o Anuário integral não há registo próprio da procura guardado)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "transf-correntes-quota-receita-corrente-2025",
+   "unidade": "B039.1",
+   "impresso": "47,3%",
+   "valor_calculado": "47.32891471661507509381004458",
+   "medida": "as transferências correntes na receita corrente cobrada de 2025 (DECISOES-sexta-passagem: 27 553 504 / 58 217 063)",
+   "derivacao": "27 553 503,97 ÷ 58 217 062,73 × 100 = 47,33…",
+   "entradas": [
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 113,
+     "excerto": "Transferências Correntes 33 618 013,00 27 553 503,97 81,96%"
+    },
+    {
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 113,
+     "excerto": "Total 86 209 991,00 58 217 062,73 67,53%"
+    }
+   ]
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "B062.1",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da extração dos relatórios de 2010 a 2024 (accounts_history/_index.json, «generated»; o «scope» é a prestação de contas de 2010 a 2024)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "B170.L1.1",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da extração dos relatórios de 2010 a 2024 (accounts_history/_index.json, «generated»; o «scope» é a prestação de contas de 2010 a 2024)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "B102.R1",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da extração dos relatórios de 2010 a 2024 (accounts_history/_index.json, «generated»; o «scope» é a prestação de contas de 2010 a 2024)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "id": "procura-contas-2024-data",
+   "unidade": "B171.2",
+   "impresso": "10",
+   "valor_na_fonte": "2026-08-10",
+   "medida": "a data da extração dos relatórios de 2010 a 2024 (accounts_history/_index.json, «generated»; o «scope» é a prestação de contas de 2010 a 2024)",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  }
+ ],
+ "existentes_no_estudo": [
+  {
+   "unidade": "B121.1",
+   "numero": "€926",
+   "ja_no_estudo_em": [
+    "B117.L1.1",
+    "B119.R10"
+   ]
+  },
+  {
+   "unidade": "B060.1",
+   "numero": "€19100045",
+   "ja_no_estudo_em": [
+    "B057.R15",
+    "B070.1"
+   ]
+  },
+  {
+   "unidade": "B060.1",
+   "numero": "€27392931",
+   "ja_no_estudo_em": [
+    "B057.R18"
+   ]
+  },
+  {
+   "unidade": "B146.1",
+   "numero": "31",
+   "ja_no_estudo_em": [
+    "B028.R4",
+    "B065.1",
+    "B068.R0",
+    "B076.1",
+    "B102.R3",
+    "B104.R1"
+   ]
+  }
+ ],
+ "provas_de_frases": [
+  {
+   "unidade": "N01.1",
+   "o_que_prova": "a «dívida de curto prazo» do mapa é a vincenda de curto prazo mais a vencida",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "excerto": "³ ³ ³ [A] ³ prazo [B] ³ [1] ³ [2] ³ [3] ³ [4] ³ [D] ³[E]=[2+3+4]-[D]³ [F]=[A]+[C] ³ prazo[G]=[B] ³ [H]=[F]+[G] ³"
+  },
+  {
+   "unidade": "N03.R3",
+   "o_que_prova": "a Gesamb é a linha da recolha de resíduos sólidos no plano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.5. ³0101 2014 A 4 ³GESAMB ³ ³OUTRA ³ ³ ³ ³ ³2020/01/02³2029/12/31³ 3.670.000,00³ 11.100.000,00³ 14.770.000,00³ ³ 2.244.755,23³ 2.244.755,23³ 61.16 ³ 15.20 ³"
+  },
+  {
+   "unidade": "N05.R0",
+   "o_que_prova": "a medida do quadro: «receita cobrada / receita prevista»",
+   "documento": "anuario-2024-apresentacao.txt",
+   "pagina": 14,
+   "excerto": "GRAU DE EXECUÇÃO ORÇAMENTAL receita cobrada / receita prevista",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: o quadro sai com a frase"
+  },
+  {
+   "unidade": "N11.1",
+   "o_que_prova": "o Quadro 3 da PC 2025 reimprime sem alteração os anos 2012 a 2023 do quadro B068",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 25,
+   "excerto": "Quadro 3 - Variação de Efetivos 2012-2025",
+   "conferencia": "12 anos comparados por guião, 0 diferenças"
+  },
+  {
+   "unidade": "B034.2",
+   "o_que_prova": "é a taxa de execução da receita total",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 72,
+   "excerto": "o que representa uma percentagem de execução de 48,10%"
+  },
+  {
+   "unidade": "B035.1",
+   "o_que_prova": "as operações de tesouraria são valores retidos para entregar a terceiros",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "excerto": "Os fluxos financeiros de tesouraria correspondem aos valores"
+  },
+  {
+   "unidade": "B018.3",
+   "o_que_prova": "na recolha, só a apresentação das conclusões estava publicada em acesso livre",
+   "documento": "anuario_2024_extract.json",
+   "pagina": null,
+   "excerto": "full_study_note = \"Only the conclusions presentation is openly published at fetch time; the full 2024 Anuário is not freely downloadable.\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "unidade": "B169.L4.2",
+   "o_que_prova": "na recolha, só a apresentação das conclusões estava publicada em acesso livre",
+   "documento": "anuario_2024_extract.json",
+   "pagina": null,
+   "excerto": "full_study_note = \"Only the conclusions presentation is openly published at fetch time; the full 2024 Anuário is not freely downloadable.\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "unidade": "B034.2",
+   "o_que_prova": "a última tranche do PAEL foi recebida em 2014",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 79,
+   "excerto": "das duas primeiras prestações do PAEL, que terminou, em 2014, com o registo da receita proveniente da última tranche"
+  },
+  {
+   "unidade": "B080.2",
+   "o_que_prova": "a dívida ao IHRU é um empréstimo, registado na Habévora em 2017",
+   "documento": "2017_relatorio_gestao.txt",
+   "pagina": 93,
+   "excerto": "Empréstimo do IHRU à Habévora, no âmbito da resolução de um processo que remonta a 2004, no valor de 1.680.442,70 €"
+  },
+  {
+   "unidade": "B080.2",
+   "o_que_prova": "54 fogos, só nas contas consolidadas",
+   "documento": "2017_relatorio_gestao.txt",
+   "pagina": 9,
+   "excerto": "foi registada na Habévora, EM uma dívida de € 1.680.442,70, ao IHRU, resultante da compra, pelo Município, em 2004, de 54 fogos. Aquela dívida será refletida apenas nas Contas Consolidadas do Município."
+  },
+  {
+   "unidade": "B090.5",
+   "o_que_prova": "na prática, dívida financeira",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 135,
+   "excerto": "Na prática deixou de ser uma dívida a fornecedores passando a ser uma dívida financeira que o ME tem para com o BEI"
+  },
+  {
+   "unidade": "B091.2",
+   "o_que_prova": "o PMP calcula-se pela fórmula da RCM n.º 34/2008",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "excerto": "O cálculo do PMP aplicando a fórmula definida na RCM n.º 34/2008"
+  },
+  {
+   "unidade": "B098.2",
+   "o_que_prova": "3 empréstimos de saneamento, 2 de substituição do PAEL",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 136,
+   "excerto": "3 empréstimos do Programa de Saneamento Financeiro (CGD, BPI e CCA), 2 empréstimos contratados para Substituição de Dívida do Empréstimo do PAEL"
+  },
+  {
+   "unidade": "B098.2",
+   "o_que_prova": "o saneamento financeiro teve visto em 2016",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 439,
+   "excerto": "visto do Tribunal de Contas, em sessão de 27/07/2016"
+  },
+  {
+   "unidade": "B112.2",
+   "o_que_prova": "a média da receita corrente líquida cobrada nos três exercícios anteriores",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 140,
+   "excerto": "1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores"
+  },
+  {
+   "unidade": "B129.2",
+   "o_que_prova": "ativos e passivos da concessão",
+   "documento": "certificacao-legal-contas-2025.txt",
+   "pagina": 1,
+   "excerto": "o Município desreconheceu os ativos e passivos relativos ao acordo de concessão com a E-Redes"
+  },
+  {
+   "unidade": "B129.2",
+   "o_que_prova": "credores por transferência de natureza não corrente",
+   "documento": "certificacao-legal-contas-2025.txt",
+   "pagina": 2,
+   "excerto": "fazem parte cerca de 2,8 milhões de euros que correspondem à natureza de não corrente"
+  },
+  {
+   "unidade": "B146.1",
+   "o_que_prova": "o executivo novo instalou-se a 31 de outubro de 2025",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 20,
+   "excerto": "constituição política dos órgãos autárquicos do Município de Évora teve lugar a 31 de outubro de 2025"
+  },
+  {
+   "unidade": "B148.2",
+   "o_que_prova": "o acréscimo face ao orçamento de 2025",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 23,
+   "excerto": "exibindo um acréscimo de +6.840.577,00 euros, comparativamente com o do exercício de 2025"
+  },
+  {
+   "unidade": "N06.R14",
+   "o_que_prova": "o orçamento de 2026 tem a linha do saldo da gerência anterior sem montante",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 99,
+   "excerto": "SALDO DA GERÊNCI A ANTERI OR"
+  },
+  {
+   "unidade": "B102.R1",
+   "o_que_prova": "o endividamento líquido municipal era o conceito eliminado pelo regime em vigor desde 1 de janeiro de 2014",
+   "documento": "2015_relatorio_gestao.txt",
+   "pagina": 101,
+   "excerto": "eliminou os conceitos de “Endividamento líquido municipal”, de “Limite ao endividamento líquido municipal”"
+  },
+  {
+   "unidade": "B156.R10",
+   "o_que_prova": "a linha chama-se «PT 2030 - REGENERACAO URBANA»",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 118,
+   "excerto": "",
+   "nota": "lido pelo lugar de direção na imagem da p.118 do PDF original (DECISOES-quarta-passagem.json); a cópia em texto não dá a designação (procura «PT 2030» na cópia inteira: 0 ocorrências)"
+  },
+  {
+   "unidade": "B161.L3.1",
+   "o_que_prova": "toda a verba de 2026 do Plano Local de Habitação tem financiamento definido (256.407,00 na coluna «F P» e 1.573.843,00 na «U E»)",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 121,
+   "excerto": "",
+   "nota": "lido pelo lugar de direção na imagem da p.121 do PDF original (DECISOES-quarta-passagem.json); não conferido nesta montagem"
+  },
+  {
+   "unidade": "B021.1",
+   "o_que_prova": "a data e a falta de reconhecimento de carateres na extração",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "documentos": [
+    "accounts_history/2010.json",
+    "accounts_history/2011.json",
+    "accounts_history/2012.json",
+    "accounts_history/2013.json",
+    "accounts_history/2014.json",
+    "accounts_history/2020.json"
+   ],
+   "excerto": {
+    "_index.generated": "2026-08-10",
+    "_index.scope": "Município de Évora, prestação de contas 2010-2024 (2025 processado noutro fluxo)",
+    "_index.years.2010.biggest_caveat": "RG 2010 com camada de texto corrompida (sem OCR por regra); só fluxos de caixa e DR legíveis - 5 de 8 indicadores em falta.",
+    "gaps com «OCR», por ano": {
+     "2010": [
+      "relatorio_gestao_2010.pdf (67 pp.) tem camada de texto corrompida (fontes TrueType subset sem ToUnicode; pdftotext e ghostscript txtwrite devolvem glifos ilegíveis). Sem OCR, nenhum valor do RG 2010 é excertável - por regra desta extração não se fez OCR."
+     ],
+     "2011": [
+      "relatriodegesto2011.pdf (172 pp.) tem camada de texto corrompida (fontes subset sem ToUnicode; ghostscript txtwrite também falha). Sem OCR, nenhum valor do RG 2011 é excertável."
+     ],
+     "2012": [],
+     "2013": [],
+     "2014": [],
+     "2020": [
+      "Todo o dossier de prestação de contas 2020 publicado (Relatorio-de-Gestao-2020.pdf, 115 pp.; Demonstrações-Financeiras-2020.pdf, 62 pp.) é digitalização sem camada de texto - pdftotext devolve 0 caracteres. Por regra desta extração não se fez OCR; todos os indicadores de 2020 vêm de colunas comparat"
+     ]
+    }
+   },
+   "nota": "registo de extração do motor, não é a fonte publicada. «Sem OCR» está dito nos registos de 2010, 2011 e 2020, e como regra da extração («por regra desta extração não se fez OCR», 2010 e 2020); os registos de 2012, 2013 e 2014 não o repetem"
+  },
+  {
+   "unidade": "B062.1",
+   "o_que_prova": "a data e a falta de reconhecimento de carateres na extração",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "documentos": [
+    "accounts_history/2010.json",
+    "accounts_history/2011.json",
+    "accounts_history/2012.json",
+    "accounts_history/2013.json",
+    "accounts_history/2014.json",
+    "accounts_history/2020.json"
+   ],
+   "excerto": {
+    "_index.generated": "2026-08-10",
+    "_index.scope": "Município de Évora, prestação de contas 2010-2024 (2025 processado noutro fluxo)",
+    "_index.years.2010.biggest_caveat": "RG 2010 com camada de texto corrompida (sem OCR por regra); só fluxos de caixa e DR legíveis - 5 de 8 indicadores em falta.",
+    "gaps com «OCR», por ano": {
+     "2010": [
+      "relatorio_gestao_2010.pdf (67 pp.) tem camada de texto corrompida (fontes TrueType subset sem ToUnicode; pdftotext e ghostscript txtwrite devolvem glifos ilegíveis). Sem OCR, nenhum valor do RG 2010 é excertável - por regra desta extração não se fez OCR."
+     ],
+     "2011": [
+      "relatriodegesto2011.pdf (172 pp.) tem camada de texto corrompida (fontes subset sem ToUnicode; ghostscript txtwrite também falha). Sem OCR, nenhum valor do RG 2011 é excertável."
+     ],
+     "2012": [],
+     "2013": [],
+     "2014": [],
+     "2020": [
+      "Todo o dossier de prestação de contas 2020 publicado (Relatorio-de-Gestao-2020.pdf, 115 pp.; Demonstrações-Financeiras-2020.pdf, 62 pp.) é digitalização sem camada de texto - pdftotext devolve 0 caracteres. Por regra desta extração não se fez OCR; todos os indicadores de 2020 vêm de colunas comparat"
+     ]
+    }
+   },
+   "nota": "registo de extração do motor, não é a fonte publicada. «Sem OCR» está dito nos registos de 2010, 2011 e 2020, e como regra da extração («por regra desta extração não se fez OCR», 2010 e 2020); os registos de 2012, 2013 e 2014 não o repetem"
+  },
+  {
+   "unidade": "B170.L1.1",
+   "o_que_prova": "a data e a falta de reconhecimento de carateres na extração",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "documentos": [
+    "accounts_history/2010.json",
+    "accounts_history/2011.json",
+    "accounts_history/2012.json",
+    "accounts_history/2013.json",
+    "accounts_history/2014.json",
+    "accounts_history/2020.json"
+   ],
+   "excerto": {
+    "_index.generated": "2026-08-10",
+    "_index.scope": "Município de Évora, prestação de contas 2010-2024 (2025 processado noutro fluxo)",
+    "_index.years.2010.biggest_caveat": "RG 2010 com camada de texto corrompida (sem OCR por regra); só fluxos de caixa e DR legíveis - 5 de 8 indicadores em falta.",
+    "gaps com «OCR», por ano": {
+     "2010": [
+      "relatorio_gestao_2010.pdf (67 pp.) tem camada de texto corrompida (fontes TrueType subset sem ToUnicode; pdftotext e ghostscript txtwrite devolvem glifos ilegíveis). Sem OCR, nenhum valor do RG 2010 é excertável - por regra desta extração não se fez OCR."
+     ],
+     "2011": [
+      "relatriodegesto2011.pdf (172 pp.) tem camada de texto corrompida (fontes subset sem ToUnicode; ghostscript txtwrite também falha). Sem OCR, nenhum valor do RG 2011 é excertável."
+     ],
+     "2012": [],
+     "2013": [],
+     "2014": [],
+     "2020": [
+      "Todo o dossier de prestação de contas 2020 publicado (Relatorio-de-Gestao-2020.pdf, 115 pp.; Demonstrações-Financeiras-2020.pdf, 62 pp.) é digitalização sem camada de texto - pdftotext devolve 0 caracteres. Por regra desta extração não se fez OCR; todos os indicadores de 2020 vêm de colunas comparat"
+     ]
+    }
+   },
+   "nota": "registo de extração do motor, não é a fonte publicada. «Sem OCR» está dito nos registos de 2010, 2011 e 2020, e como regra da extração («por regra desta extração não se fez OCR», 2010 e 2020); os registos de 2012, 2013 e 2014 não o repetem"
+  },
+  {
+   "unidade": "B171.2",
+   "o_que_prova": "em 2011 o pessoal e a aquisição de bens de capital ficam por preencher porque não se somaram as parcelas do mapa de fluxos de caixa",
+   "documento": "accounts_history/2011.json",
+   "pagina": null,
+   "excerto": [
+    "investimento_pago: o Mapa de Fluxos de Caixa 2011 detalha pagamentos por orgânica/rubrica mas não imprime um total municipal da rubrica 07 'Aquisição de Bens de Capital'; somar seria derivação, não excerto - fica gap. (Total das despesas de capital pagas impresso: 9.882.333,34, p.13.)",
+    "despesas_pessoal (ótica orçamental): mesmo problema - sem total impresso da rubrica 01 no mapa; a DR tem 'Custos com o pessoal' (conceito patrimonial, não substituído)."
+   ],
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "unidade": "B102.R4",
+   "o_que_prova": "a PC 2025 usa o mesmo conceito para 2025 (Quadro 29, com a contribuição das entidades participadas)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "CONTRIBUIÇÃO DAS ENTIDADES PARTICIPADAS AMPV - Associação de Municípios Portugueses de Vinho 190,18"
+  },
+  {
+   "unidade": "B102.R4",
+   "o_que_prova": "o total do Quadro 29",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 54 379 034,55"
+  },
+  {
+   "unidade": "B090.5",
+   "o_que_prova": "os dois acordos de regularização e a cessão ao BEI",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 120,
+   "excerto": "efetivação da Cessão de Créditos da AdVT ao Banco Europeu de Investimento (BEI), presente a reunião de Câmara de 15/01/2020"
+  },
+  {
+   "unidade": "B131.1",
+   "o_que_prova": "a razão da não aprovação das contas de 2024",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 159,
+   "excerto": "não obtiveram aprovação pelo Órgão Executivo, em virtude da impossibilidade de validação integral das diferenças apuradas no âmbito da reconciliação bancária à data da respetiva apreciação"
+  },
+  {
+   "unidade": "B131.2",
+   "o_que_prova": "o processo judicial",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 162,
+   "excerto": "importa salientar que se encontra em curso processo judicial relativo a uma situação de alcance na Tesouraria"
+  },
+  {
+   "unidade": "B121.1",
+   "o_que_prova": "a dívida inclui, desde 2024, os encargos do contrato de eficiência energética, depois da auditoria da IGF à CIMAC",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "Assim, a partir de 2024, a dívida total de operações orçamentais passou a incluir aquele valor"
+  },
+  {
+   "unidade": "B121.1",
+   "o_que_prova": "a auditoria",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "Salienta-se que uma auditoria da Inspeção Geral de Finanças à CIMAC, tornou claro que a dívida referente"
+  },
+  {
+   "unidade": "B108.R3",
+   "o_que_prova": "a nota 8 data o critério",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "excerto": "A conta 20.2.2, incluída para efeito do cálculo do endividamento a partir de 2024, em resultado da alteração de critério"
+  },
+  {
+   "unidade": "B042.1",
+   "o_que_prova": "«dívida transitada»",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 112,
+   "excerto": "situação que resulta da necessidade de acomodar dívida transitada num orçamento cuja receita corrente real foi de 68% da prevista"
+  },
+  {
+   "unidade": "B098.2",
+   "o_que_prova": "o nome do PAEL",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 9,
+   "excerto": "PAEL Programa de Apoio à Economia Local"
+  },
+  {
+   "unidade": "B090.5",
+   "o_que_prova": "a cessão dos créditos da AdVT ao BEI (reunião de câmara de 15/01/2020)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 120,
+   "excerto": "efetivação da Cessão de Créditos da AdVT ao Banco Europeu de Investimento (BEI), presente a reunião de Câmara de 15/01/2020"
+  },
+  {
+   "unidade": "B090.5",
+   "o_que_prova": "a cessão do segundo acordo (reunião de câmara de 16/06/2021)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 120,
+   "excerto": "Banco Europeu de Investimento (BEI), presente a reunião de Câmara de 16/06/2021"
+  },
+  {
+   "unidade": "B096.1",
+   "o_que_prova": "o relatório de 2023 explica a diferença",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 64,
+   "excerto": "Estes valores registam os valores obtidos na DGAL, publicados posteriormente às Prestações de Contas, e que têm ligeiras diferenças face aos valores calculados pela CME. O valor final de 2023 traduz, assim, o valor calculado, mas ainda não o valor da DGAL."
+  },
+  {
+   "unidade": "B095.R2",
+   "o_que_prova": "o relatório de 2022 diz que os seus valores não refletiam os da DGAL",
+   "documento": "2022_relatorio_gestao.txt",
+   "pagina": 48,
+   "excerto": "Estes valores registam o calculado e apresentado nas anteriores Prestações de Contas, as quais não refletiam os valores da DGAL que surgiam, habitualmente, mais tarde e com valores mais favoráveis."
+  },
+  {
+   "unidade": "B092.R2",
+   "o_que_prova": "a ressalva do relatório de 2023",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 65,
+   "excerto": "ressalva-se que o PMP apurado para 2023, calculado conforme instruções da DGAL"
+  },
+  {
+   "unidade": "B048.4",
+   "o_que_prova": "a amortização é a linha da despesa de capital com a taxa mais alta (as cinco linhas do Quadro 17)",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 122,
+   "excerto": "Passivos Financeiros 4 601 320,00 4 308 782,93 93,64%",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: repete a B048.3; vale a lista ids-fora-do-corpo.txt"
+  },
+  {
+   "unidade": "B048.4",
+   "o_que_prova": "as outras quatro linhas",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 122,
+   "excerto": "Aquisição de Bens de Capital 24 159 745,00 5 104 306,91 21,13% Transferências de Capital 3 386 940,00 1 576 574,31 46,55% Activos Financeiros 80 000,00 0,00 0,00%",
+   "sem_uso": "DECISOES-da-direcao.json: cortar: repete a B048.3; vale a lista ids-fora-do-corpo.txt"
+  },
+  {
+   "unidade": "N09.1",
+   "o_que_prova": "a linha do Rossio no plano de 2025 é uma linha do plano de recuperação",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 220,
+   "excerto": "³2.5.1. ³0408 2025 I 2 ³PRR - REQUALIFICAÇÃO DO ROSSIO DE ³D6 ³EMPREITADA ³ ³ ³ 940.000,00³ ³2025/01/02³2026/12/31³ 940.000,00³ 1.410.000,00³ 2.350.000,00³ ³ ³ ³ ³ ³"
+  },
+  {
+   "unidade": "N12.1",
+   "o_que_prova": "a dotação inicial e o reforço",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 253,
+   "excerto": "³ 03050202 JUROS DE MORA ³P/M ³ 190.000,00³ 505.000,00³ ³ ³ 695.000,00³ ³"
+  },
+  {
+   "unidade": "N03.1",
+   "o_que_prova": "as três linhas do plano",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 226,
+   "excerto": "³2.4.4. ³0104 2016 A 2 ³AGUAS DE VALE DO TEJO - AGUA ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.540.000,00³ 13.600.000,00³ 18.140.000,00³ ³ 2.556.915,00³ 2.556.915,00³ 56.32 ³ 14.10 ³"
+  }
+ ],
+ "ausencias": [
+  {
+   "unidades": [
+    "N02.R4",
+    "N02.A1"
+   ],
+   "o_que": "um valor de faturas a aguardar pagamento no fim de 2024",
+   "procura": "regex «faturad[oa]s? a aguardar» em todas as 458 páginas da cópia da Prestação de Contas 2025; e «faturad» linha a linha",
+   "paginas_achadas": [
+    125
+   ],
+   "conhecido_positivo": {
+    "pagina": 125,
+    "achado": true
+   },
+   "resultado": "só a p.125, que dá o valor de 2025; as contas de 2024 não estão entre as cópias guardadas",
+   "data_da_procura_das_contas_de_2024": "2026-08-10 (accounts_history/_index.json, «generated»)"
+  },
+  {
+   "unidades": [
+    "B086.1"
+   ],
+   "o_que": "o valor 26.422.446 nos relatórios anteriores a 2018",
+   "procura": "a cadeia «26.422.446» ou «26 422 446» em todas as páginas dos relatórios de 2015 a 2021",
+   "paginas_achadas": {
+    "2015": [],
+    "2016": [],
+    "2017": [],
+    "2018": [
+     32,
+     100
+    ],
+    "2019": [
+     27,
+     83
+    ],
+    "2021": [
+     33,
+     84
+    ]
+   },
+   "conhecido_positivo": {
+    "relatorio": 2018,
+    "achado": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "_": "As fontes guardadas que PROVAS-do-corpo.json e PROVAS-da-cabeca-v4.json citam, do INDICE.json do pacote do estudo (título, endereço, cópia guardada, sha256).",
+ "fontes": [
+  {
+   "ficheiro": "2015_relatorio_gestao.txt",
+   "titulo": "2015 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestao_2015.pdf",
+   "copia_guardada": "2015_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "2bb3773629c22b801d8d7a2fc53c1b7766428c9fab28f791e005f8f72ac898c3"
+  },
+  {
+   "ficheiro": "2016_relatorio_gestao.txt",
+   "titulo": "2016 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf",
+   "copia_guardada": "2016_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "3f193caed76483c02108abd38760fa376fb53819ae13d10f77309ee797d02303"
+  },
+  {
+   "ficheiro": "2017_relatorio_gestao.txt",
+   "titulo": "2017 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2020/06/2.Relatorio_de_Gestão_2017.pdf",
+   "copia_guardada": "2017_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "075f405d67386045ac987868e3e6e7ed46a053188ef0336be14b6428cdc16e9c"
+  },
+  {
+   "ficheiro": "2018_relatorio_gestao.txt",
+   "titulo": "2018 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2018_Final.pdf",
+   "copia_guardada": "2018_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "578b0c9f4dd48e83e156c21a318e6ffc29dfe00f31dfb00dde680514bc5db098"
+  },
+  {
+   "ficheiro": "2019_relatorio_gestao.txt",
+   "titulo": "2019 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2020/12/Relatorio_Gestao_2019.pdf",
+   "copia_guardada": "2019_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "26e511fe3786576f8b7bb2b39e394ca97ff3113db370e24461b25cb12d29b2f8"
+  },
+  {
+   "ficheiro": "2021_relatorio_gestao.txt",
+   "titulo": "2021 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf",
+   "copia_guardada": "2021_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+  },
+  {
+   "ficheiro": "2022_relatorio_gestao.txt",
+   "titulo": "2022 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2023/05/2_Relatorio_Gestao.pdf",
+   "copia_guardada": "2022_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "20490a35dc792a2d1076421b9e930122c44f1bba44955d7c231bebfebc9fedc1"
+  },
+  {
+   "ficheiro": "2023_relatorio_gestao.txt",
+   "titulo": "2023 relatorio gestao (título por confirmar no documento)",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2024/06/2_Relatorio_Gestao.pdf",
+   "copia_guardada": "2023_relatorio_gestao.pdf",
+   "sha256_da_copia_guardada": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1"
+  },
+  {
+   "ficheiro": "accounts_history/2010.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "2010.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "e147ab052898aa57cef11faafcb50295327c31b66ff89d8fddba3cd63af6c0bc",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "accounts_history/2011.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "2011.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "2584512ff75085e8f42041a4163aa42238aed53e4d7d423d31c7ce508b494786",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "accounts_history/2012.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "2012.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "e302e7991d8460c7451be09c9c2878855a95fe8ce660b8b6f7ffd0bca6e4c41c",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "accounts_history/2013.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "2013.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "b5d2f59c5e0c0dcab1594e5fd40837b8b2e759c82083d25d71596ad086cefaf5",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "accounts_history/2014.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "2014.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "59fd2d19f5c8a0f8c5eec4e0420161cdcc941ec183b834f2ecc6a239c6b97169",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "accounts_history/2020.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "2020.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "9c22ed9c3ec9b3d1187cf09d8d1994cf70521da121f22baea4d98660dc60ecf5",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "accounts_history/_index.json",
+   "titulo": "extrações do motor das contas de 2010 a 2024, por ano",
+   "url": "ver cada ficheiro",
+   "copia_guardada": "_index.json",
+   "sha256_da_copia_guardada": null,
+   "sha256_do_ficheiro_de_extracao": "6676172256cf4ec4eb721cba769a92d35d98cf3b2f4bc3ac759bfaaf1ea0e100",
+   "nota": "o INDICE.json não dá sha256 para os registos de extração por ano; este é o do ficheiro guardado, calculado nesta montagem"
+  },
+  {
+   "ficheiro": "anuario_2024_extract.json",
+   "titulo": "extração do motor (JSON)",
+   "url": "ver o conteúdo",
+   "copia_guardada": "anuario_2024_extract.json",
+   "sha256_da_copia_guardada": "45346df7e0283598a7c5bc9ed5487d333bd3796e974171d7c5ba5ee9bac5f132"
+  },
+  {
+   "ficheiro": "certificacao-legal-contas-2025.txt",
+   "titulo": "Certificação Legal das Contas 2025 — Município de Évora",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/Municipio-Evora-CLC-2025.pdf",
+   "copia_guardada": "Municipio-Evora-CLC-2025.pdf",
+   "sha256_da_copia_guardada": "31c53c32cb43439c3e93c6cf6245b1cbdec783366f090fefe4b6aba494fd83c5"
+  },
+  {
+   "ficheiro": "dgal_divida_evora.json",
+   "titulo": "extração do motor (JSON)",
+   "url": "ver o conteúdo",
+   "copia_guardada": "dgal_divida_evora.json",
+   "sha256_da_copia_guardada": "12fbb24a56c45196d320fc9aec144a1f1d7d1abdbac5d9723ff7880e32074a02"
+  },
+  {
+   "ficheiro": "grandes-opcoes-plano-orcamento-2026.txt",
+   "titulo": "Grandes Opções do Plano e Orçamento 2026 — Município de Évora",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+   "copia_guardada": "Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+   "sha256_da_copia_guardada": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04"
+  },
+  {
+   "ficheiro": "prestacao-contas-2025.txt",
+   "titulo": "Prestação de Contas 2025 — Município de Évora",
+   "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+   "copia_guardada": "PRESTACAO_CONTAS_2025.pdf",
+   "sha256_da_copia_guardada": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+  }
+ ]
+}

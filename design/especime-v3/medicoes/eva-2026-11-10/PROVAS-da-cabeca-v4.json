@@ -1,0 +1,1539 @@
+{
+ "_": [
+  "As provas da cabeça v4 do estudo 16 (CABECA-nova-v4.pt.md, do título a «Os limites»): uma entrada por número impresso, pela ordem da cabeça.",
+  "Tipos: «pagina» (a página de uma cópia guardada, achada por guião, com o valor da fonte e o arredondamento), «corpo» (uma unidade do corpo que imprime o mesmo número com a mesma medida, com a prova de PROVAS-do-corpo.json), «livro» (uma linha dos livros do motor, com o valor conferido), «derivado» (uma conta, com as entradas).",
+  "Não contam como números os anos (1900 a 2099 sozinhos) e a numeração das listas; as palavras de número que não são quantidades estão em «nao_sao_quantidades», com a razão.",
+  "As cópias das fontes são as do INDICE-das-fontes.json; os .json são registos de extração do motor, não a fonte publicada."
+ ],
+ "resumo": {
+  "numeros": 95,
+  "por_tipo": {
+   "pagina": 67,
+   "derivado": 19,
+   "livro": 2,
+   "corpo": 7
+  },
+  "sem_prova": 0,
+  "erros": 0
+ },
+ "entradas": [
+  {
+   "linha": "C001",
+   "numero": "137",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "valor_na_fonte": "137",
+   "excerto": "Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C004",
+   "numero": "€54379035",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "valor_na_fonte": "54 379 034,55",
+   "excerto": "DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 54 379 034,55",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C004",
+   "numero": "€28192653",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 140,
+   "valor_na_fonte": "28.192.652,50",
+   "excerto": "com uma margem de endividamento absoluta de 28.192.652,50€",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C004",
+   "numero": "€14.6",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 125,
+   "valor_na_fonte": "14,6",
+   "excerto": "No final de 2025 o total dos compromissos assumidos a transitar é de € 25,7 M dos quais € 14,6 M estão faturados a aguardar pagamento.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C004",
+   "numero": "96.55%",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 119,
+   "valor_na_fonte": "96,55%",
+   "excerto": "Pessoal 31 525 040,00 30 438 431,98 96,55%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C005",
+   "numero": "137",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "valor_na_fonte": "137",
+   "excerto": "Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C005",
+   "numero": "49",
+   "tipo": "pagina",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 65,
+   "valor_na_fonte": "49",
+   "excerto": "Final de Mandato 49",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C005",
+   "numero": "€622495",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 214,
+   "valor_na_fonte": "622.495,42",
+   "excerto": "³ 03050202 Juros de Mora ³ 93.935,13³ 695.000,00³ ³ ³ 33.151,63³ 661.848,37³ 661.663,87³ 622.495,42³ 206.867,67³ ³ ³ 11.658,54³ 195.209,13³ 206.867,67³ 39.168,45³ 415.627,75³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C005",
+   "numero": "€190000",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 253,
+   "valor_na_fonte": "190.000,00",
+   "excerto": "³ 03050202 JUROS DE MORA ³P/M ³ 190.000,00³ 505.000,00³ ³ ³ 695.000,00³ ³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C005",
+   "numero": "triplo",
+   "tipo": "derivado",
+   "derivacao": "«mais do triplo»: 622 495,42 ÷ 190 000,00 = 3,28 (> 3)",
+   "resultado": "3.28",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 214,
+     "valor_na_fonte": "622.495,42",
+     "excerto": "³ 03050202 Juros de Mora ³ 93.935,13³ 695.000,00³ ³ ³ 33.151,63³ 661.848,37³ 661.663,87³ 622.495,42³ 206.867,67³ ³ ³ 11.658,54³ 195.209,13³ 206.867,67³ 39.168,45³ 415.627,75³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³ 53.247,55³ 50.011,70³ 46.775,82³ 43.539,94³ 3.334.413,74³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 253,
+     "valor_na_fonte": "190.000,00",
+     "excerto": "³ 03050202 JUROS DE MORA ³P/M ³ 190.000,00³ 505.000,00³ ³ ³ 695.000,00³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C007",
+   "numero": "€14.6",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 125,
+   "valor_na_fonte": "14,6",
+   "excerto": "No final de 2025 o total dos compromissos assumidos a transitar é de € 25,7 M dos quais € 14,6 M estão faturados a aguardar pagamento.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C007",
+   "numero": "5.9",
+   "tipo": "pagina",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 92,
+   "valor_na_fonte": "5,9",
+   "excerto": "dos quais cerca de 5,9 milhões de euros se encontram faturados a aguardar pagamento",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C007",
+   "numero": "duplicaram",
+   "tipo": "derivado",
+   "derivacao": "«mais do que duplicaram»: 14,6 ÷ 5,9 = 2,47 (> 2)",
+   "resultado": "2.47",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 125,
+     "valor_na_fonte": "14,6",
+     "excerto": "No final de 2025 o total dos compromissos assumidos a transitar é de € 25,7 M dos quais € 14,6 M estão faturados a aguardar pagamento.",
+     "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "2023_relatorio_gestao.txt",
+     "pagina": 92,
+     "valor_na_fonte": "5,9",
+     "excerto": "dos quais cerca de 5,9 milhões de euros se encontram faturados a aguardar pagamento",
+     "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+    }
+   ]
+  },
+  {
+   "linha": "C007",
+   "numero": "dois",
+   "tipo": "derivado",
+   "derivacao": "«em dois anos»: do fim de 2023 (o 5,9 do relatório de 2023) ao fim de 2025 (o 14,6 do relatório de 2025): 2025 − 2023 = 2",
+   "resultado": "2",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 125,
+     "valor_na_fonte": "14,6",
+     "excerto": "No final de 2025 o total dos compromissos assumidos a transitar é de € 25,7 M dos quais € 14,6 M estão faturados a aguardar pagamento.",
+     "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "2023_relatorio_gestao.txt",
+     "pagina": 92,
+     "valor_na_fonte": "5,9",
+     "excerto": "dos quais cerca de 5,9 milhões de euros se encontram faturados a aguardar pagamento",
+     "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+    }
+   ]
+  },
+  {
+   "linha": "C008",
+   "numero": "€301601",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "valor_na_fonte": "301.601,03",
+   "excerto": "Em 2025 a dívida total de operações orçamentais é de 54.379.034,55€, menos 301.601,03€ que no ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C008",
+   "numero": "€3549470",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 136,
+   "valor_na_fonte": "3.549.470,41",
+   "excerto": "O capital em dívida, em 31 de dezembro de 2025, é de 29.418.656,53€, menos 3.549.470,41€ do que no ano anterior",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C008",
+   "numero": "€3674532",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 135,
+   "valor_na_fonte": "3.674.531,50",
+   "excerto": "No final do ano 2025, a dívida a fornecedores totaliza 19.821.417,66€, mais 3.674.531,50€ que no final do ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C009",
+   "numero": "€19427778",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 113,
+   "valor_na_fonte": "19 427 778,00",
+   "excerto": "Outras Receitas Correntes 19 427 778,00 155 572,72 0,80%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C009",
+   "numero": "€155573",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 113,
+   "valor_na_fonte": "155 572,72",
+   "excerto": "Outras Receitas Correntes 19 427 778,00 155 572,72 0,80%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C009",
+   "numero": "metade",
+   "tipo": "derivado",
+   "derivacao": "«quase metade»: (19 427 778,00 − 155 572,72) ÷ 42 220 017,87 = 45,6% (< 50%)",
+   "resultado": "45.6",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 113,
+     "valor_na_fonte": "19 427 778,00",
+     "excerto": "Outras Receitas Correntes 19 427 778,00 155 572,72 0,80%",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "derivado",
+     "derivacao": "109 483 314,95 − 67 263 297,08 = 42 220 017,87",
+     "resultado": "42220017.87",
+     "entradas": [
+      {
+       "tipo": "pagina",
+       "documento": "prestacao-contas-2025.txt",
+       "pagina": 118,
+       "valor_na_fonte": "109 483 314,95",
+       "excerto": "TOTAL DO ORÇAMENTO 94 452 225,34 66 509 640,42 109 483 314,95 67 263 297,08 61,4%",
+       "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linha": "C010",
+   "numero": "€3796940",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 234,
+   "valor_na_fonte": "3.796.940,00",
+   "excerto": "³2.5.1. ³04 2014 ³EVORA CAPITAL EUROPEIA DA CULTURA ³ ³ ³ ³ 311.000,00³ 3.485.940,00³ ³ ³ ³ 3.796.940,00³ 12.174.060,00³ 15.971.000,00³ ³ 55.593,54³ 55.593,54³ 1.46 ³ 0.35 ³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C010",
+   "numero": "€55594",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 234,
+   "valor_na_fonte": "55.593,54",
+   "excerto": "³2.5.1. ³04 2014 ³EVORA CAPITAL EUROPEIA DA CULTURA ³ ³ ³ ³ 311.000,00³ 3.485.940,00³ ³ ³ ³ 3.796.940,00³ 12.174.060,00³ 15.971.000,00³ ³ 55.593,54³ 55.593,54³ 1.46 ³ 0.35 ³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C010",
+   "numero": "cinco",
+   "tipo": "derivado",
+   "derivacao": "«os cinco projetos pagos pelo plano de recuperação»: as linhas PRR do objetivo do Évora 2027 no plano de 2025 (0407 a 0411), contadas: 5",
+   "resultado": "5",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "1.060.000,00",
+     "excerto": "³2.5.1. ³0407 2025 I 1 ³PRR - REABILITAÇÃO DOS ANTIGOS ³D6 ³EMPREITADA ³ ³ ³ 1.060.000,00³ ³2025/01/02³2026/12/31³ 1.060.000,00³ 1.590.000,00³ 2.650.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "940.000,00",
+     "excerto": "³2.5.1. ³0408 2025 I 2 ³PRR - REQUALIFICAÇÃO DO ROSSIO DE ³D6 ³EMPREITADA ³ ³ ³ 940.000,00³ ³2025/01/02³2026/12/31³ 940.000,00³ 1.410.000,00³ 2.350.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "829.900,00",
+     "excerto": "³2.5.1. ³0409 2025 I 3 ³PRR - AQUISIÇÃO DE EQUIPAMENTOS ³ ³OUTRA ³ ³ ³ ³ ³2025/01/02³2026/12/31³ 829.900,00³ ³ 829.900,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "268.040,00",
+     "excerto": "³2.5.1. ³0410 2025 I 4 ³PRR - REABILITAÇÃO DO ARQUIVO ³D6 ³EMPREITADA ³ ³ ³ 268.040,00³ ³2025/01/02³2026/12/31³ 268.040,00³ 402.060,00³ 670.100,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "388.000,00",
+     "excerto": "³2.5.1. ³0411 2025 I 5 ³PRR - REABILITAÇÃO DO CONVENTO DOS ³D6 ³EMPREITADA ³ ³ ³ 388.000,00³ ³2025/01/02³2026/12/31³ 388.000,00³ 582.000,00³ 970.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C011",
+   "numero": "€195040",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 162,
+   "valor_na_fonte": "195.040,41",
+   "excerto": "o montante líquido de diferenças por conciliar ascende a 195.040,41€",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C011",
+   "numero": "€770120",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 161,
+   "valor_na_fonte": "770 120,36",
+   "excerto": "2 779 195,99 € 2 584 155,58 € 770 120,36 € -575 079,95 €",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C011",
+   "numero": "€575080",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 161,
+   "valor_na_fonte": "575 079,95",
+   "excerto": "2 779 195,99 € 2 584 155,58 € 770 120,36 € -575 079,95 €",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C014",
+   "numero": "242.6%",
+   "tipo": "livro",
+   "livro": "16",
+   "linha_do_livro": "evora-indice-2014",
+   "valor_no_livro": "242.6",
+   "excerto": "computed from the Évora row of DGAL 2014: 77 961 663 ÷ (48 206 020 ÷ 1.5)",
+   "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+  },
+  {
+   "linha": "C014",
+   "numero": "105.5%",
+   "tipo": "livro",
+   "livro": "16",
+   "linha_do_livro": "evora-indice-2024",
+   "valor_no_livro": "105.5",
+   "excerto": "computed from the Évora row of DGAL 2024: 54 681 562 ÷ (77 764 656 ÷ 1.5)",
+   "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+  },
+  {
+   "linha": "C015",
+   "numero": "93.64%",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 122,
+   "valor_na_fonte": "93,64%",
+   "excerto": "Passivos Financeiros 4 601 320,00 4 308 782,93 93,64%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C017",
+   "numero": "quatro",
+   "tipo": "derivado",
+   "derivacao": "as ênfases da certificação, contadas: 4 (os quatro parágrafos da secção «Ênfases»)",
+   "resultado": "4",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "certificacao-legal-contas-2025.txt",
+     "pagina": 1,
+     "valor_na_fonte": "Ênfases",
+     "excerto": "Ênfases"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "certificacao-legal-contas-2025.txt",
+     "pagina": 1,
+     "valor_na_fonte": "reconciliar",
+     "excerto": "o Municipio iniciou no ano de 2025, o trabalho de recuperação e regularização dos itens por reconciliar"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "certificacao-legal-contas-2025.txt",
+     "pagina": 1,
+     "valor_na_fonte": "E-Redes",
+     "excerto": "o Município desreconheceu os ativos e passivos relativos ao acordo de concessão com a E-Redes"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "certificacao-legal-contas-2025.txt",
+     "pagina": 2,
+     "valor_na_fonte": "não corrente",
+     "excerto": "fazem parte cerca de 2,8 milhões de euros que correspondem à natureza de não corrente"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "certificacao-legal-contas-2025.txt",
+     "pagina": 2,
+     "valor_na_fonte": "pagamentos em atraso",
+     "excerto": "Conforme nota 30 do anexo o Município apresenta pagamentos em atraso."
+    }
+   ]
+  },
+  {
+   "linha": "C018",
+   "numero": "€7615243",
+   "tipo": "corpo",
+   "unidade": "N04.R12",
+   "linha_da_prova": "gop26-outras-receitas-correntes",
+   "impresso_no_corpo": "€7 615 243",
+   "medida": "orçamento de 2026, capítulo 08 (a mesma linha nova da cabeça)",
+   "prova": {
+    "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+    "pagina": 28,
+    "excerto": "08 - Outras receitas correntes 7 615 243 6,87% -11 812 535",
+    "valor_na_fonte": "7 615 243"
+   }
+  },
+  {
+   "linha": "C020",
+   "numero": "€4976172",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "valor_na_fonte": "4.976.172,24",
+   "excerto": "Pelo segundo ano consecutivo, o Município de Évora encerrou 2025 com pagamentos em atraso, no valor de 4.976.172,24 €.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C020",
+   "numero": "oitavo",
+   "tipo": "pagina",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 98,
+   "valor_na_fonte": "oitavo",
+   "excerto": "Destacamos que 2023 foi o oitavo ano consecutivo sem pagamentos em atraso."
+  },
+  {
+   "linha": "C021",
+   "numero": "€7560873",
+   "tipo": "corpo",
+   "unidade": "N03.R4",
+   "linha_da_prova": "amr-agua-saneamento-residuos-pago-2025",
+   "impresso_no_corpo": "€7 560 873",
+   "medida": "atividades mais relevantes de 2025, Habitação e Serviços Coletivos, pago (a mesma linha nova da cabeça)",
+   "prova": {
+    "documento": "prestacao-contas-2025.txt",
+    "pagina": 128,
+    "excerto": "Habitação e Serviços Coletivos 1 473 695,95 7 560 872,67 9 034 568,62 33%",
+    "valor_na_fonte": "7 560 872,67",
+    "derivacao": "é também a soma das três linhas: 2.556.915,00 + 2.759.202,44 + 2.244.755,23 = 7.560.872,67; a soma dos três pagos arredondados dá 7 560 872, um euro abaixo do total arredondado"
+   }
+  },
+  {
+   "linha": "C021",
+   "numero": "€12320000",
+   "tipo": "corpo",
+   "unidade": "N03.R4",
+   "linha_da_prova": "amr-agua-saneamento-residuos-previsto-2025",
+   "impresso_no_corpo": "€12 320 000",
+   "medida": "a soma do previsto nas três linhas (a mesma linha nova da cabeça)",
+   "prova": {
+    "derivacao": "4.540.000,00 + 4.110.000,00 + 3.670.000,00",
+    "valor_calculado": "12320000"
+   }
+  },
+  {
+   "linha": "C021",
+   "numero": "três",
+   "tipo": "derivado",
+   "derivacao": "as três linhas do plano: AdVT água, AdVT saneamento e Gesamb, contadas: 3",
+   "resultado": "3",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 226,
+     "valor_na_fonte": "AGUAS DE VALE DO TEJO - AGUA",
+     "excerto": "³2.4.4. ³0104 2016 A 2 ³AGUAS DE VALE DO TEJO - AGUA ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.540.000,00³ 13.600.000,00³ 18.140.000,00³ ³ 2.556.915,00³ 2.556.915,00³ 56.32 ³ 14.10 ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 226,
+     "valor_na_fonte": "AGUAS DE VALE DO TEJO - SANEAMENTO",
+     "excerto": "³2.4.3. ³0104 2016 A 3 ³AGUAS DE VALE DO TEJO - SANEAMENTO ³ ³OUTRA ³ ³ ³ ³ ³2020/01/01³2029/12/31³ 4.110.000,00³ 12.640.000,00³ 16.750.000,00³ ³ 2.759.202,44³ 2.759.202,44³ 67.13 ³ 16.47 ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 226,
+     "valor_na_fonte": "GESAMB",
+     "excerto": "³2.4.5. ³0101 2014 A 4 ³GESAMB ³ ³OUTRA ³ ³ ³ ³ ³2020/01/02³2029/12/31³ 3.670.000,00³ 11.100.000,00³ 14.770.000,00³ ³ 2.244.755,23³ 2.244.755,23³ 61.16 ³ 15.20 ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C022",
+   "numero": "€2443292",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 143,
+   "valor_na_fonte": "2 443 291,65",
+   "excerto": "Resultado líquido do período -2 443 291,65 -4 591 038,87 2 147 747,22 -47%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C022",
+   "numero": "€4591039",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 143,
+   "valor_na_fonte": "4 591 038,87",
+   "excerto": "Resultado líquido do período -2 443 291,65 -4 591 038,87 2 147 747,22 -47%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C023",
+   "numero": "21.13%",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 122,
+   "valor_na_fonte": "21,13%",
+   "excerto": "Aquisição de Bens de Capital 24 159 745,00 5 104 306,91 21,13%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C023",
+   "numero": "7.4%",
+   "tipo": "derivado",
+   "derivacao": "5 104 306,91 ÷ 4 752 426,65 − 1 = 7,40%",
+   "resultado": "7.4",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 124,
+     "valor_na_fonte": "4 752 426,65",
+     "excerto": "Aquisição de Bens de Capital 4 913 568,24 3 246 821,75 4 752 426,65 5 104 306,91",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C024",
+   "numero": "€110840577",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 28,
+   "valor_na_fonte": "110 840 577",
+   "excerto": "R E C E ITA - TOTAL 110 840 577 99,99% 6 840 577",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C024",
+   "numero": "€67263297",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "valor_na_fonte": "67 263 297,08",
+   "excerto": "Total 109 483 314,95 67 263 297,08 61,44%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C024",
+   "numero": "€1997375",
+   "tipo": "corpo",
+   "unidade": "N06.R14",
+   "linha_da_prova": "saldo-gerencia-anterior-2024-receita-2025",
+   "impresso_no_corpo": "€1 997 375",
+   "medida": "saldo da gerência anterior na receita de 2025 (linha própria das 72 correções)",
+   "prova": {
+    "documento": "prestacao-contas-2025.txt",
+    "pagina": 118,
+    "excerto": "Saldo de Gerência 1 702 225,34 1 702 225,34 1 997 374,95 1 997 374,95 100,0%",
+    "valor_na_fonte": "1 997 374,95"
+   }
+  },
+  {
+   "linha": "C025",
+   "numero": "10",
+   "tipo": "pagina",
+   "documento": "accounts_history/_index.json",
+   "pagina": null,
+   "valor_na_fonte": "2026-08-10",
+   "excerto": "generated = \"2026-08-10\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "linha": "C027",
+   "numero": "137",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "valor_na_fonte": "137",
+   "excerto": "Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C027",
+   "numero": "1",
+   "tipo": "derivado",
+   "derivacao": "a ilustração: o dia 1 de janeiro é o ponto de partida escolhido (o início do ano); 1 de janeiro de 2025 + 137 dias = 18 de maio de 2025",
+   "resultado": "2025-05-18",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 141,
+     "valor_na_fonte": "137",
+     "excerto": "Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior.",
+     "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+    }
+   ]
+  },
+  {
+   "linha": "C027",
+   "numero": "18",
+   "tipo": "derivado",
+   "derivacao": "1 de janeiro de 2025 + 137 dias = 18 de maio de 2025",
+   "resultado": "2025-05-18",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 141,
+     "valor_na_fonte": "137",
+     "excerto": "Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior.",
+     "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+    }
+   ]
+  },
+  {
+   "linha": "C027",
+   "numero": "€4976172",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "valor_na_fonte": "4.976.172,24",
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C027",
+   "numero": "90",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "valor_na_fonte": "[90-180[",
+   "excerto": "³ Designação ³ ³ Curto prazo ³ Médio/Longo ³ <90 ³ [90-180[ ³ [180-365] ³ >365 ³ Exceções ³ em atraso ³ Curto prazo ³ Médio/longo ³ SOMA ³",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C027",
+   "numero": "€357328",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 337,
+   "valor_na_fonte": "357.327,95",
+   "excerto": "³ Total :³ 54.692.159,95³ 3.906.517,45³ 40.111.697,92³ 5.697.772,35³ 2.909.896,98³ 1.708.947,31³ 357.327,95³ ³ 4.976.172,24³ 14.580.462,04³ 40.111.697,92³ 54.692.159,96³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C028",
+   "numero": "€14476737",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 31,
+   "valor_na_fonte": "14.476.737,00",
+   "excerto": "se, para esta componente da receita, 14.476.737,00 euros, representando 13,06% das receitas totais. F ace a 2025, regista um aumento de 6.153.637,00 euros",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C028",
+   "numero": "€6153637",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 31,
+   "valor_na_fonte": "6.153.637,00",
+   "excerto": "se, para esta componente da receita, 14.476.737,00 euros, representando 13,06% das receitas totais. F ace a 2025, regista um aumento de 6.153.637,00 euros",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C030",
+   "numero": "€24159745",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 122,
+   "valor_na_fonte": "24 159 745,00",
+   "excerto": "Aquisição de Bens de Capital 24 159 745,00 5 104 306,91 21,13%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C030",
+   "numero": "€5104307",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 122,
+   "valor_na_fonte": "5 104 306,91",
+   "excerto": "Aquisição de Bens de Capital 24 159 745,00 5 104 306,91 21,13%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C030",
+   "numero": "€7537452",
+   "tipo": "pagina",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 71,
+   "valor_na_fonte": "7 537 452,22",
+   "excerto": "Aquisição de Bens de Capital 12 857 510,72 7 537 452,22 58,62%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C034",
+   "numero": "«302»",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 198,
+   "valor_na_fonte": "302 mil €",
+   "excerto": "Comparando com os valores de 2024, a redução da dívida em 2025 foi de 302 mil €.",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C034",
+   "numero": "€54680636",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 140,
+   "valor_na_fonte": "54 680 635,58",
+   "excerto": "Dívida Total de Operações Orçamentais 53 488 433,80 50 432 431,16 54 680 635,58 54 379 034,55",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C034",
+   "numero": "€54379035",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 140,
+   "valor_na_fonte": "54 379 034,55",
+   "excerto": "Dívida Total de Operações Orçamentais 53 488 433,80 50 432 431,16 54 680 635,58 54 379 034,55",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C034",
+   "numero": "€3674532",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 135,
+   "valor_na_fonte": "3.674.531,50",
+   "excerto": "No final do ano 2025, a dívida a fornecedores totaliza 19.821.417,66€, mais 3.674.531,50€ que no final do ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C035",
+   "numero": "«61%»",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 112,
+   "valor_na_fonte": "61%",
+   "excerto": "A execução global foi de 61%, representando uma diminuição face ao que vinha a ser a execução dos últimos anos",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C035",
+   "numero": "87.72%",
+   "tipo": "pagina",
+   "documento": "2021_relatorio_gestao.txt",
+   "pagina": 60,
+   "valor_na_fonte": "87,72%",
+   "excerto": "Total 65 108 759,70 57 113 924,56 87,72%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C035",
+   "numero": "61.44%",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "valor_na_fonte": "61,44%",
+   "excerto": "Total 109 483 314,95 67 263 297,08 61,44%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C035",
+   "numero": "€42220018",
+   "tipo": "derivado",
+   "derivacao": "109 483 314,95 − 67 263 297,08 = 42 220 017,87",
+   "resultado": "42220017.87",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 118,
+     "valor_na_fonte": "109 483 314,95",
+     "excerto": "TOTAL DO ORÇAMENTO 94 452 225,34 66 509 640,42 109 483 314,95 67 263 297,08 61,4%",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C035",
+   "numero": "45.6%",
+   "tipo": "derivado",
+   "derivacao": "(19 427 778,00 − 155 572,72) ÷ 42 220 017,87 × 100 = 45,6%",
+   "resultado": "45.6",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 113,
+     "valor_na_fonte": "155 572,72",
+     "excerto": "Outras Receitas Correntes 19 427 778,00 155 572,72 0,80%",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "derivado",
+     "derivacao": "109 483 314,95 − 67 263 297,08 = 42 220 017,87",
+     "resultado": "42220017.87",
+     "entradas": [
+      {
+       "tipo": "pagina",
+       "documento": "prestacao-contas-2025.txt",
+       "pagina": 118,
+       "valor_na_fonte": "109 483 314,95",
+       "excerto": "TOTAL DO ORÇAMENTO 94 452 225,34 66 509 640,42 109 483 314,95 67 263 297,08 61,4%",
+       "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linha": "C035",
+   "numero": "duas",
+   "tipo": "derivado",
+   "derivacao": "«junta duas medidas»: o historial do relatório de 2025 dá 96% para 2021, que é a execução da receita corrente do relatório de 2021, e 84% para 2022, que é a da receita total (83,54%) do relatório de 2022",
+   "resultado": "2",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 112,
+     "valor_na_fonte": "2021 (96%)",
+     "excerto": "2024 (70%), 2023 (76%), 2022 (84%), 2021 (96%), 2020 (84%), 2019 (85%) e 2018 (86%)",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "2021_relatorio_gestao.txt",
+     "pagina": 61,
+     "valor_na_fonte": "96%",
+     "excerto": "Ainda assim, a execução foi de 96%",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "2021_relatorio_gestao.txt",
+     "pagina": 60,
+     "valor_na_fonte": "87,72%",
+     "excerto": "Total 65 108 759,70 57 113 924,56 87,72%",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "2022_relatorio_gestao.txt",
+     "pagina": 59,
+     "valor_na_fonte": "83,54%",
+     "excerto": "Total 72 655 700,47 60 695 430,07 83,54%",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C036",
+   "numero": "22",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "valor_na_fonte": "22",
+   "excerto": "69 22 104 137",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C036",
+   "numero": "«50»",
+   "tipo": "pagina",
+   "documento": "2023_relatorio_gestao.txt",
+   "pagina": 65,
+   "valor_na_fonte": "50",
+   "excerto": "o PMP apurado para 2023 seria de 50 dias",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C037",
+   "numero": "«7»",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 38,
+   "valor_na_fonte": "7.470.000,00",
+   "excerto": "inscrito para a aquisiçã o de bens de capital destacam-se os 7.470.000,00 euros alocados aos",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C037",
+   "numero": "«470»",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 38,
+   "valor_na_fonte": "7.470.000,00",
+   "excerto": "inscrito para a aquisiçã o de bens de capital destacam-se os 7.470.000,00 euros alocados aos",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C037",
+   "numero": "«000,00»",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 38,
+   "valor_na_fonte": "7.470.000,00",
+   "excerto": "inscrito para a aquisiçã o de bens de capital destacam-se os 7.470.000,00 euros alocados aos",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C037",
+   "numero": "€3485940",
+   "tipo": "corpo",
+   "unidade": "B151.3",
+   "linha_da_prova": "evora2027-gop-2025",
+   "impresso_no_corpo": "€3 485 940",
+   "medida": "a parte de 2025 (linha que já existe no livro)",
+   "prova": {
+    "documento": "prestacao-contas-2025.txt",
+    "pagina": 109,
+    "excerto": "projeto Évora 2027, financiado pelo PRR, no montante de 3.485.940€ em 2025 (3.984.060€ em 2026).",
+    "valor_na_fonte": "3.485.940"
+   }
+  },
+  {
+   "linha": "C037",
+   "numero": "€3984060",
+   "tipo": "corpo",
+   "unidade": "B151.3",
+   "linha_da_prova": "evora2027-gop-2026",
+   "impresso_no_corpo": "€3 984 060",
+   "medida": "a parte de 2026 (linha que já existe no livro)",
+   "prova": {
+    "documento": "prestacao-contas-2025.txt",
+    "pagina": 109,
+    "excerto": "projeto Évora 2027, financiado pelo PRR, no montante de 3.485.940€ em 2025 (3.984.060€ em 2026).",
+    "valor_na_fonte": "3.984.060"
+   }
+  },
+  {
+   "linha": "C038",
+   "numero": "€14.6",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 125,
+   "valor_na_fonte": "14,6",
+   "excerto": "No final de 2025 o total dos compromissos assumidos a transitar é de € 25,7 M dos quais € 14,6 M estão faturados a aguardar pagamento.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C041",
+   "numero": "€3549470",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 136,
+   "valor_na_fonte": "3.549.470,41",
+   "excerto": "O capital em dívida, em 31 de dezembro de 2025, é de 29.418.656,53€, menos 3.549.470,41€ do que no ano anterior",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C041",
+   "numero": "€3674532",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 135,
+   "valor_na_fonte": "3.674.531,50",
+   "excerto": "No final do ano 2025, a dívida a fornecedores totaliza 19.821.417,66€, mais 3.674.531,50€ que no final do ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C042",
+   "numero": "€301601",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 139,
+   "valor_na_fonte": "301.601,03",
+   "excerto": "Em 2025 a dívida total de operações orçamentais é de 54.379.034,55€, menos 301.601,03€ que no ano anterior.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C042",
+   "numero": "década",
+   "tipo": "derivado",
+   "derivacao": "«uma década de descida do índice»: o índice do regulador desce em cada ano de 2014 a 2024 (dez descidas seguidas)",
+   "resultado": "10 descidas em 10 anos",
+   "entradas": [
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2014",
+     "valor_no_livro": "242.6",
+     "excerto": "computed from the Évora row of DGAL 2014: 77 961 663 ÷ (48 206 020 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2015",
+     "valor_no_livro": "228.2",
+     "excerto": "computed from the Évora row of DGAL 2015: 77 698 527 ÷ (51 080 868 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2016",
+     "valor_no_livro": "208.3",
+     "excerto": "computed from the Évora row of DGAL 2016: 74 760 717 ÷ (53 831 872 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2017",
+     "valor_no_livro": "182.0",
+     "excerto": "computed from the Évora row of DGAL 2017: 69 826 899 ÷ (57 563 962 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2018",
+     "valor_no_livro": "165.7",
+     "excerto": "computed from the Évora row of DGAL 2018: 66 243 125 ÷ (59 966 993 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2019",
+     "valor_no_livro": "152.8",
+     "excerto": "computed from the Évora row of DGAL 2019: 64 390 566 ÷ (63 225 201 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2020",
+     "valor_no_livro": "148.6",
+     "excerto": "computed from the Évora row of DGAL 2020: 64 827 142 ÷ (65 430 393 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2021",
+     "valor_no_livro": "141.9",
+     "excerto": "computed from the Évora row of DGAL 2021: 61 737 315 ÷ (65 268 258 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2022",
+     "valor_no_livro": "130.3",
+     "excerto": "computed from the Évora row of DGAL 2022: 58 379 210 ÷ (67 180 259 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2023",
+     "valor_no_livro": "118.1",
+     "excerto": "computed from the Évora row of DGAL 2023: 55 862 259 ÷ (70 966 028 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "evora-indice-2024",
+     "valor_no_livro": "105.5",
+     "excerto": "computed from the Évora row of DGAL 2024: 54 681 562 ÷ (77 764 656 ÷ 1.5)",
+     "derivacao": "dívida total (excl.) ÷ average net current revenue of the three prior years, where the average is the file's own limit column ÷ 1.5 (art. 52.º defines the limit as 1.5× that average); ×100, printed to one decimal"
+    }
+   ]
+  },
+  {
+   "linha": "C042",
+   "numero": "três",
+   "tipo": "derivado",
+   "derivacao": "«descia mais de três milhões por ano» de 2021 a 2023 (a série dos relatórios): 60 481 588 − 57 293 550 = 3 188 038; 57 293 550 − 53 488 434 = 3 805 116; 53 488 434 − 50 432 431 = 3 056 003; todas > 3 000 000",
+   "resultado": "3 188 038; 3 805 116; 3 056 003",
+   "entradas": [
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "ind-divida-total-2020",
+     "valor_no_livro": "60 481 588*",
+     "excerto": "2021_relatorio_gestao.pdf (sha256 be0c8f8228552a27…) p.83 → “Dívida Total de Operações Orçamentais 77 739 225,20 77 198 306,39 69 532 414,48 68 518 751,95 64 168 864,90 60 481 587,54 57 293 550,23” — Dívida Total de Operações Orçamentais (Evolução, coluna 2020)",
+     "derivacao": "the source prints 60 481 587,54; printed here to the nearest euro"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "ind-divida-total-2021",
+     "valor_no_livro": "57 293 550",
+     "excerto": "2021_relatorio_gestao.pdf (sha256 be0c8f8228552a27…) p.83 → “DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 57 293 550,23 €” — Dívida Total de Operações Orçamentais (RFALEI, inclui entidades participadas) - Quadro 31",
+     "derivacao": "the source prints 57 293 550,23; printed here to the nearest euro"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "ind-divida-total-2022",
+     "valor_no_livro": "53 488 434",
+     "excerto": "2022_relatorio_gestao.pdf (sha256 20490a35dc792a2d…) p.83 → “DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 53 488 433,80” — Dívida Total de Operações Orçamentais (RFALEI, inclui entidades participadas)",
+     "derivacao": "the source prints 53 488 433,80; printed here to the nearest euro"
+    },
+    {
+     "tipo": "livro",
+     "livro": "16",
+     "linha_do_livro": "ind-divida-total-2023",
+     "valor_no_livro": "50 432 431",
+     "excerto": "2023_relatorio_gestao.pdf (sha256 abd6e32e6fea211a…) p.103 → “DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 50 432 431,16” — Dívida Total de Operações Orçamentais (RFALEI, inclui entidades participadas)",
+     "derivacao": "the source prints 50 432 431,16; printed here to the nearest euro"
+    }
+   ]
+  },
+  {
+   "linha": "C043",
+   "numero": "€109483315",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "valor_na_fonte": "109 483 314,95",
+   "excerto": "Total 109 483 314,95 67 263 297,08 61,44%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C043",
+   "numero": "€67263297",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 111,
+   "valor_na_fonte": "67 263 297,08",
+   "excerto": "Total 109 483 314,95 67 263 297,08 61,44%",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C043",
+   "numero": "cinco",
+   "tipo": "derivado",
+   "derivacao": "os cinco projetos PRR do Évora 2027 no plano de 2025 (0407 a 0411): 5",
+   "resultado": "5",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "1.060.000,00",
+     "excerto": "³2.5.1. ³0407 2025 I 1 ³PRR - REABILITAÇÃO DOS ANTIGOS ³D6 ³EMPREITADA ³ ³ ³ 1.060.000,00³ ³2025/01/02³2026/12/31³ 1.060.000,00³ 1.590.000,00³ 2.650.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "940.000,00",
+     "excerto": "³2.5.1. ³0408 2025 I 2 ³PRR - REQUALIFICAÇÃO DO ROSSIO DE ³D6 ³EMPREITADA ³ ³ ³ 940.000,00³ ³2025/01/02³2026/12/31³ 940.000,00³ 1.410.000,00³ 2.350.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "829.900,00",
+     "excerto": "³2.5.1. ³0409 2025 I 3 ³PRR - AQUISIÇÃO DE EQUIPAMENTOS ³ ³OUTRA ³ ³ ³ ³ ³2025/01/02³2026/12/31³ 829.900,00³ ³ 829.900,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "268.040,00",
+     "excerto": "³2.5.1. ³0410 2025 I 4 ³PRR - REABILITAÇÃO DO ARQUIVO ³D6 ³EMPREITADA ³ ³ ³ 268.040,00³ ³2025/01/02³2026/12/31³ 268.040,00³ 402.060,00³ 670.100,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "388.000,00",
+     "excerto": "³2.5.1. ³0411 2025 I 5 ³PRR - REABILITAÇÃO DO CONVENTO DOS ³D6 ³EMPREITADA ³ ³ ³ 388.000,00³ ³2025/01/02³2026/12/31³ 388.000,00³ 582.000,00³ 970.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C045",
+   "numero": "€4976172",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 141,
+   "valor_na_fonte": "4.976.172,24",
+   "excerto": "Pelo segundo ano consecutivo, o Município de Évora encerrou 2025 com pagamentos em atraso, no valor de 4.976.172,24 €.",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C047",
+   "numero": "31",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 220,
+   "valor_na_fonte": "2026/12/31",
+   "excerto": "³2.5.1. ³0407 2025 I 1 ³PRR - REABILITAÇÃO DOS ANTIGOS ³D6 ³EMPREITADA ³ ³ ³ 1.060.000,00³ ³2025/01/02³2026/12/31³ 1.060.000,00³ 1.590.000,00³ 2.650.000,00³ ³ ³ ³ ³ ³",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C047",
+   "numero": "quatro",
+   "tipo": "derivado",
+   "derivacao": "as linhas PRR do Évora 2027 com forma de realização «EMPREITADA», todas com fim em 2026/12/31: 4",
+   "resultado": "4",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0407 2025 I 1 ³PRR - REABILITAÇÃO DOS ANTIGOS ³D6 ³EMPREITADA ³ ³ ³ 1.060.000,00³ ³2025/01/02³2026/12/31³ 1.060.000,00³ 1.590.000,00³ 2.650.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0408 2025 I 2 ³PRR - REQUALIFICAÇÃO DO ROSSIO DE ³D6 ³EMPREITADA ³ ³ ³ 940.000,00³ ³2025/01/02³2026/12/31³ 940.000,00³ 1.410.000,00³ 2.350.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0410 2025 I 4 ³PRR - REABILITAÇÃO DO ARQUIVO ³D6 ³EMPREITADA ³ ³ ³ 268.040,00³ ³2025/01/02³2026/12/31³ 268.040,00³ 402.060,00³ 670.100,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0411 2025 I 5 ³PRR - REABILITAÇÃO DO CONVENTO DOS ³D6 ³EMPREITADA ³ ³ ³ 388.000,00³ ³2025/01/02³2026/12/31³ 388.000,00³ 582.000,00³ 970.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C049",
+   "numero": "31",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 220,
+   "valor_na_fonte": "2026/12/31",
+   "excerto": "³2.5.1. ³0407 2025 I 1 ³PRR - REABILITAÇÃO DOS ANTIGOS ³D6 ³EMPREITADA ³ ³ ³ 1.060.000,00³ ³2025/01/02³2026/12/31³ 1.060.000,00³ 1.590.000,00³ 2.650.000,00³ ³ ³ ³ ³ ³",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C049",
+   "numero": "quatro",
+   "tipo": "derivado",
+   "derivacao": "idem: 4 empreitadas",
+   "resultado": "4",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0407 2025 I 1 ³PRR - REABILITAÇÃO DOS ANTIGOS ³D6 ³EMPREITADA ³ ³ ³ 1.060.000,00³ ³2025/01/02³2026/12/31³ 1.060.000,00³ 1.590.000,00³ 2.650.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 220,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0408 2025 I 2 ³PRR - REQUALIFICAÇÃO DO ROSSIO DE ³D6 ³EMPREITADA ³ ³ ³ 940.000,00³ ³2025/01/02³2026/12/31³ 940.000,00³ 1.410.000,00³ 2.350.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0410 2025 I 4 ³PRR - REABILITAÇÃO DO ARQUIVO ³D6 ³EMPREITADA ³ ³ ³ 268.040,00³ ³2025/01/02³2026/12/31³ 268.040,00³ 402.060,00³ 670.100,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    },
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 221,
+     "valor_na_fonte": "EMPREITADA",
+     "excerto": "³2.5.1. ³0411 2025 I 5 ³PRR - REABILITAÇÃO DO CONVENTO DOS ³D6 ³EMPREITADA ³ ³ ³ 388.000,00³ ³2025/01/02³2026/12/31³ 388.000,00³ 582.000,00³ 970.000,00³ ³ ³ ³ ³ ³",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  },
+  {
+   "linha": "C051",
+   "numero": "€9500000†",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 110,
+   "valor_na_fonte": "9.500.000,00",
+   "excerto": "20,1. 0409 2025 12 POP - REQOALIFICAÇAO 00 905510 DE 010201107010401 E 2.350.000,00 2025/01/02 2026112/31 0 2.350.000,00 7.150.000,00 9.500.000,00 0.500.000,00",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça",
+   "nota": "linha da digitalização degradada do anexo (o número da linha lê-se «0409»; é a do Rossio de São Brás, «REQOALIFICAÇAO 00 905510 DE ... SAO ORBS»); o lugar de direção conferiu-a na imagem; linha do livro gop26-rossio-total = 9 500 000†"
+  },
+  {
+   "linha": "C051",
+   "numero": "€7150000†",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 110,
+   "valor_na_fonte": "7.150.000,00",
+   "excerto": "20,1. 0409 2025 12 POP - REQOALIFICAÇAO 00 905510 DE 010201107010401 E 2.350.000,00 2025/01/02 2026112/31 0 2.350.000,00 7.150.000,00 9.500.000,00 0.500.000,00",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça",
+   "nota": "a mesma linha: a coluna do financiamento não definido"
+  },
+  {
+   "linha": "C052",
+   "numero": "€250000",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 220,
+   "valor_na_fonte": "250.000,00",
+   "excerto": "³2.5.1. ³0406 2024 I 1 ³ASSOCIAÇÃO \"ÉVORA 2027\" ³D712 ³OUTRA ³ ³ 250.000,00³ ³ ³2024/01/02³2029/12/31³ 250.000,00³ 8.000.000,00³ 8.250.000,00³ ³ ³ ³ ³ ³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C052",
+   "numero": "€8250000",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 220,
+   "valor_na_fonte": "8.250.000,00",
+   "excerto": "³2.5.1. ³0406 2024 I 1 ³ASSOCIAÇÃO \"ÉVORA 2027\" ³D712 ³OUTRA ³ ³ 250.000,00³ ³ ³2024/01/02³2029/12/31³ 250.000,00³ 8.000.000,00³ 8.250.000,00³ ³ ³ ³ ³ ³",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça"
+  },
+  {
+   "linha": "C052",
+   "numero": "€1000†",
+   "tipo": "pagina",
+   "documento": "grandes-opcoes-plano-orcamento-2026.txt",
+   "pagina": 119,
+   "valor_na_fonte": "1.000,00",
+   "excerto": "2.5.1, 0406 2024 1 7 ASSOCIAÇÃO Ét'ORA 2020 010201/080101 'O 1.000,00 2024/01102 2021/12131 0 1.000,00 1.000,00 1.000,00 2.000,02",
+   "arredondamento": "o valor da fonte arredondado às casas impressas dá o número da cabeça",
+   "nota": "digitalização degradada; o registo do motor (gop2026_plan.json) dá dotacao_2026 = 1000.0"
+  },
+  {
+   "linha": "C053",
+   "numero": "10",
+   "tipo": "pagina",
+   "documento": "dgal_divida_evora.json",
+   "pagina": null,
+   "valor_na_fonte": "2026-08-10T09:21:06+00:00",
+   "excerto": "fetched_at = \"2026-08-10T09:21:06+00:00\"",
+   "nota": "registo de extração do motor, não é a fonte publicada"
+  },
+  {
+   "linha": "C055",
+   "numero": "31",
+   "tipo": "pagina",
+   "documento": "prestacao-contas-2025.txt",
+   "pagina": 20,
+   "valor_na_fonte": "31 de outubro de 2025",
+   "excerto": "constituição política dos órgãos autárquicos do Município de Évora teve lugar a 31 de outubro de 2025",
+   "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+  },
+  {
+   "linha": "C055",
+   "numero": "€10396322.56",
+   "tipo": "corpo",
+   "unidade": "N02.A1",
+   "linha_da_prova": "despesas-por-pagar-periodos-anteriores-2025",
+   "impresso_no_corpo": "€10 396 322,56",
+   "medida": "despesas por pagar de períodos anteriores, total da demonstração orçamental da despesa de 2025",
+   "prova": {
+    "documento": "prestacao-contas-2025.txt",
+    "pagina": 216,
+    "excerto": "³ Total :³ 10.396.322,56³109.483.314,95³ ³ ³ 15.710.612,21³ 93.772.702,74³ 91.244.013,02³ 80.145.511,91³ 65.638.218,95³ 73.169,08³ 73.169,08³ 9.055.574,89³ 56.509.474,98³ 65.565.049,87³ 11.098.501,11³ 14.580.462,04³ 11.301.723,32³ 7.862.362,12³ 7.328.550,30³ 7.037.089,22³ 18.685.399,89³ 6.070.785,33³ 5.874.361,26³ 5.678.833,43³ ",
+    "valor_na_fonte": "10.396.322,56"
+   }
+  },
+  {
+   "linha": "C055",
+   "numero": "dois",
+   "tipo": "derivado",
+   "derivacao": "«o ano de 2025 teve dois executivos»: o eleito em 2021 até 31 de outubro de 2025 e o instalado nesse dia",
+   "resultado": "2",
+   "entradas": [
+    {
+     "tipo": "pagina",
+     "documento": "prestacao-contas-2025.txt",
+     "pagina": 20,
+     "valor_na_fonte": "31 de outubro de 2025",
+     "excerto": "constituição política dos órgãos autárquicos do Município de Évora teve lugar a 31 de outubro de 2025",
+     "nota": "rótulo, data ou contagem impressa: o número está no excerto"
+    }
+   ]
+  }
+ ],
+ "nao_sao_quantidades": [
+  {
+   "linha": "C011",
+   "palavra": "uma",
+   "razao": "artigo («uma situação de alcance»)"
+  },
+  {
+   "linha": "C011",
+   "palavra": "um",
+   "razao": "artigo («um saldo», «um processo»)"
+  },
+  {
+   "linha": "C027",
+   "palavra": "um",
+   "razao": "«há mais de um ano»: o intervalo «>365» dias do mapa, provado com o 357 328"
+  },
+  {
+   "linha": "C030",
+   "palavra": "uma",
+   "razao": "artigo («uma obra»)"
+  },
+  {
+   "linha": "C035",
+   "palavra": "uma",
+   "razao": "artigo («uma diminuição»)"
+  },
+  {
+   "linha": "C041",
+   "palavra": "primeiro",
+   "razao": "advérbio («paga primeiro»), não é uma contagem"
+  },
+  {
+   "linha": "C041",
+   "palavra": "dois",
+   "razao": "«os dois movimentos» são os da frase seguinte, que os números da mesma linha provam"
+  },
+  {
+   "linha": "C042",
+   "palavra": "uma",
+   "razao": "artigo, em «uma década»: a década conta-se em («C042», «década»)"
+  },
+  {
+   "linha": "C045",
+   "palavra": "um",
+   "razao": "artigo («um calendário»)"
+  },
+  {
+   "linha": "C047",
+   "palavra": "uma",
+   "razao": "«em cada uma» (das quatro empreitadas)"
+  },
+  {
+   "linha": "C052",
+   "palavra": "um",
+   "razao": "artigo"
+  },
+  {
+   "linha": "C055",
+   "palavra": "uma",
+   "razao": "artigo («uma prestação», «uma digitalização»)"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "unidades_no_texto_portugues": {
+  "valor": "502",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^(?:#+ |- |  )?\\[([BNC][0-9A-Z.]+)\\]',open('TEXTO-FINAL-16.pt.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "unidades_iguais_ao_texto_antes_da_revisao": {
+  "valor": "227",
+  "comando": "python3 -c \"import json,re;m=json.load(open('MUDANCAS.json',encoding='utf-8'));ch={e['id'] for e in m['entradas']};ids=re.findall(r'^(?:#+ |- |  )?\\[(B[0-9A-Z.]+)\\]',open('TEXTO-FINAL-16.pt.md',encoding='utf-8').read(),re.M);print(sum(1 for i in ids if i not in ch))\""
+ },
+ "unidades_mudadas_contra_o_texto_antes_da_revisao": {
+  "valor": "143",
+  "comando": "python3 -c \"import json;m=json.load(open('MUDANCAS.json',encoding='utf-8'));print(sum(1 for e in m['entradas'] if e['id'].startswith('B')))\""
+ },
+ "unidades_novas_no_corpo_anexo_e_rodape": {
+  "valor": "77",
+  "comando": "python3 -c \"import json;m=json.load(open('MUDANCAS.json',encoding='utf-8'));print(sum(1 for e in m['entradas'] if e['nova']))\""
+ },
+ "linhas_da_cabeca_nova": {
+  "valor": "55",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^(?:#+ )?\\[C\\d{3}\\]',open('TEXTO-FINAL-16.pt.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "linhas_novas_em_PROVAS-do-corpo": {
+  "valor": "146",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-do-corpo.json',encoding='utf-8'))['linhas_novas']))\""
+ },
+ "linhas_novas_em_PROVAS-do-corpo_em_uso": {
+  "valor": "125",
+  "comando": "python3 -c \"import json;print(sum(1 for l in json.load(open('PROVAS-do-corpo.json',encoding='utf-8'))['linhas_novas'] if 'sem_uso' not in l))\""
+ },
+ "numeros_provados_em_PROVAS-da-cabeca-v4": {
+  "valor": "95",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-da-cabeca-v4.json',encoding='utf-8'))['entradas']))\""
+ },
+ "numeros_sem_prova_em_PROVAS-da-cabeca-v4": {
+  "valor": "0",
+  "comando": "python3 -c \"import json;print(json.load(open('PROVAS-da-cabeca-v4.json',encoding='utf-8'))['resumo']['sem_prova'])\""
+ },
+ "documentos_de_fonte_citados_pelas_provas": {
+  "valor": "20",
+  "comando": "python3 -c \"import json;print(len(json.load(open('INDICE-das-fontes.json',encoding='utf-8'))['fontes']))\""
+ }
+}
