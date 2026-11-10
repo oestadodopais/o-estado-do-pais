@@ -113,8 +113,14 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-${{ runner.arch }}-playwright-${{ steps.playwright.outputs.versao }}
       - name: O Chromium do Playwright
+        id: chromium
         timeout-minutes: 5
-        run: npx playwright install --with-deps chromium || npx playwright install --with-deps chromium
+        continue-on-error: true
+        run: npx playwright install --with-deps chromium
+      - name: Repetir a instalação do Chromium
+        if: ${{ !cancelled() && steps.chromium.outcome == 'failure' }}
+        timeout-minutes: 5
+        run: npx playwright install --with-deps chromium
       - name: O zsh, para a planta da aterragem
         run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
       - name: O PyYAML, para o pacote das leituras
@@ -171,8 +177,14 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-${{ runner.arch }}-playwright-${{ steps.playwright.outputs.versao }}
       - name: O Chromium do Playwright
+        id: chromium
         timeout-minutes: 5
-        run: npx playwright install --with-deps chromium || npx playwright install --with-deps chromium
+        continue-on-error: true
+        run: npx playwright install --with-deps chromium
+      - name: Repetir a instalação do Chromium
+        if: ${{ !cancelled() && steps.chromium.outcome == 'failure' }}
+        timeout-minutes: 5
+        run: npx playwright install --with-deps chromium
       - name: O zsh, para a planta da aterragem
         run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
       - name: O PyYAML, para o pacote das leituras

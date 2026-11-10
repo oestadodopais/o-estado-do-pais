@@ -59,7 +59,15 @@ function conferirWorkflow(w) {
     assert(versao.run.includes('packages["node_modules/playwright"].version'));
     const instalar=job.steps.find(s=>s.name==='O Chromium do Playwright');
     assert.equal(instalar['timeout-minutes'],5);
-    assert.equal(instalar.run.split(' || ').length,2);
+    assert.equal(instalar.id,'chromium');
+    assert.equal(instalar['continue-on-error'],true);
+    assert.equal(instalar.run,'npx playwright install --with-deps chromium');
+    const repetir=job.steps.find(s=>s.name==='Repetir a instalação do Chromium');
+    assert.equal(repetir['timeout-minutes'],5);
+    assert.equal(repetir.if,"${{ !cancelled() && steps.chromium.outcome == 'failure' }}");
+    assert.equal(repetir.run,instalar.run);
+    assert(!repetir['continue-on-error']);
+    assert.equal(job.steps.indexOf(repetir),job.steps.indexOf(instalar)+1);
   }
   assert.equal(w.jobs.construir.needs,'antecedente');
   assert.equal(w.jobs.construir.if,"needs.antecedente.outputs.dispensar != 'sim'");
@@ -71,7 +79,10 @@ function conferirWorkflow(w) {
 conferirWorkflow(workflow);
 for (const mudar of [w=>w.jobs.conferir.strategy.matrix.parte=[0,1,2],w=>w.jobs.construir.outputs.partes='[0,1]',
   w=>w.jobs.portao.steps.find(s=>s.run?.includes('verify-partes.mjs juntar')).run='for i in 0 1; do true; done',
-  w=>w.jobs.portao.needs=['construir','conferir']]) {
+  w=>w.jobs.portao.needs=['construir','conferir'],
+  w=>delete w.jobs.construir.steps.find(s=>s.id==='chromium')['timeout-minutes'],
+  w=>delete w.jobs.conferir.steps.find(s=>s.name==='Repetir a instalação do Chromium')['timeout-minutes'],
+  w=>w.jobs.construir.steps.find(s=>s.name==='Repetir a instalação do Chromium').if='always()']) {
   const w=structuredClone(workflow);mudar(w);assert.throws(()=>conferirWorkflow(w));
 }
 // Executa a condição real do YAML com todas as combinações de resultados.
