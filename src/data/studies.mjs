@@ -174,8 +174,8 @@ export const WORKS = [
     ],
     artifactUrl: null,
     pergunta: {
-      pt: 'O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?',
-      en: 'What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?',
+      pt: 'A Câmara de Évora tem as contas em ordem?',
+      en: 'Are the accounts of the Câmara de Évora in order?',
     },
     verbatimDaPergunta: { pt: 'estudo-contas-camara-pergunta-pt', en: 'estudo-contas-camara-pergunta-en' },
     description: {

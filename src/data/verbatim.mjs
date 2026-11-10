@@ -203,14 +203,14 @@ export const VERBATIM = {
      a página do concelho rendem-nas com a marca, e o portão compara-as aqui. */
   'estudo-contas-camara-pergunta-pt': {
     lang: 'pt',
-    origem: 'Primeira frase da leitura de abertura de studies-src/evora-contas-da-camara-2010-2025/pt.html.',
-    text: `O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?`,
+    origem: 'Unidade C003, título da pergunta em studies-src/evora-contas-da-camara-2010-2025/pt.html.',
+    text: `A Câmara de Évora tem as contas em ordem?`,
   },
 
   'estudo-contas-camara-pergunta-en': {
     lang: 'en',
-    origem: 'First sentence of the opening reading of studies-src/evora-contas-da-camara-2010-2025/en.html.',
-    text: `What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?`,
+    origem: 'Unit C003, question heading in studies-src/evora-contas-da-camara-2010-2025/en.html.',
+    text: `Are the accounts of the Câmara de Évora in order?`,
   },
 
   'estudo-quem-governou-pergunta-pt': {

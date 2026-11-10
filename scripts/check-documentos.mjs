@@ -71,6 +71,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 
+import {nomeDoEstudoNoDocumento} from './nome-do-estudo.mjs';
 import { WORKS } from '../src/data/studies.mjs';
 import { LANGS } from '../src/lib/routes.mjs';
 import { FICHEIRO_DA_EDICAO, todosOsDocumentos } from '../src/lib/documentos.mjs';
@@ -576,6 +577,13 @@ for (const [chave, e] of porChave) {
   if (e.origin) {
     console.log(cinza(`    · "${chave}" não é artefacto: veio de «${e.origin}» — ${e.origin_ref}`));
   }
+}
+
+// Nas edições de publicação declarada, o nome mantém-se preso ao documento.
+for (const w of WORKS.filter(w => w.publication === 'declared')) for (const e of w.editions) {
+  const f = path.join(SRC, w.slug, `${e.lang}.html`);
+  if (fs.existsSync(f) && !nomeDoEstudoNoDocumento(fs.readFileSync(f, 'utf8'), e.title))
+    err(`Nome do estudo ausente do H1 ou da linha em itálico imediatamente seguinte: ${w.slug}/${e.lang}`);
 }
 
 /* Os registos de conteúdo, e o D5 dito em voz alta a cada construção. Uma
