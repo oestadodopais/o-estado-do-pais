@@ -493,57 +493,33 @@ edicoes:
   - slug: evora-contas-da-camara-2010-2025
     lang: pt
     edicoes:
-      - data: '2026-10-01'
-        sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839
-        file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html
-      - data: '2026-10-30'
-        sha256: 2f2cb3849b1c068d61e0445fda47b40e7434af177ae8acff34e46d2cdd7e5247
-        file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-30.html
-      - data: '2026-11-08'
-        sha256: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+      - data: '2026-11-11'
+        sha256: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
         file: evora-contas-da-camara-2010-2025/pt.html
-        natureza: atualizacao
-    primeira_edicao:
-      file: _edicoes/evora-contas-da-camara-2010-2025.pt.2026-10-01.html
-      sha256: 619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839
-      date: '2026-10-01'
-      commit: c2aa011f1
     title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação'
     origin: researchhub
-    origin_ref: content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176
+    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ d490827259544a24b050a773f5d691cbeaff340d"
     raw_file: _raw/evora-contas-da-camara-2010-2025.pt.html
-    fetched_utc: '2026-11-08T00:38:19.624Z'
-    bytes_raw: 61133
-    bytes_normalized: 61133
-    sha256_raw: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
-    sha256_normalized: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+    fetched_utc: '2026-11-10T23:28:08.156990Z'
+    bytes_raw: 64830
+    bytes_normalized: 64830
+    sha256_raw: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
+    sha256_normalized: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
   - slug: evora-contas-da-camara-2010-2025
     lang: en
     edicoes:
-      - data: '2026-10-01'
-        sha256: edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87
-        file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-01.html
-      - data: '2026-10-30'
-        sha256: c19dcffa6012c2ea03a9eecad9b4c3a0e8de233b3bcf41bd75add6622ab6a1e8
-        file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-30.html
-      - data: '2026-11-08'
-        sha256: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+      - data: '2026-11-11'
+        sha256: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
         file: evora-contas-da-camara-2010-2025/en.html
-        natureza: atualizacao
-    primeira_edicao:
-      file: _edicoes/evora-contas-da-camara-2010-2025.en.2026-10-01.html
-      sha256: edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87
-      date: '2026-10-01'
-      commit: c2aa011f1
     title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification'
     origin: researchhub
-    origin_ref: content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176
+    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ d490827259544a24b050a773f5d691cbeaff340d"
     raw_file: _raw/evora-contas-da-camara-2010-2025.en.html
-    fetched_utc: '2026-11-08T00:38:19.630Z'
-    bytes_raw: 58311
-    bytes_normalized: 58311
-    sha256_raw: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
-    sha256_normalized: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+    fetched_utc: '2026-11-10T23:28:08.172822Z'
+    bytes_raw: 64676
+    bytes_normalized: 64676
+    sha256_raw: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
+    sha256_normalized: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
   - slug: evora-quem-governou-a-camara-2009-2025
     lang: pt
     edicoes:
