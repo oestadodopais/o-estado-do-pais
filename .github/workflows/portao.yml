@@ -19,6 +19,8 @@ name: portão
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '17 4 * * *'
 
 # Nada mais do que ler a árvore. Sem escrita, sem pacotes, sem `id-token`.
 permissions:
@@ -41,7 +43,45 @@ concurrency:
 # AT1: o nome do trabalho `portao` é o contexto obrigatório da proteção de main.
 # Só fica verde depois de todas as partes; renomeá-lo exige atualizar essa proteção.
 jobs:
+  antecedente:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      dispensar: ${{ steps.decisao.outputs.dispensar }}
+      url: ${{ steps.decisao.outputs.url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: A decisão versionada
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/portao-dispensa.mjs
+            /.nvmrc
+      - name: O Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - name: Procurar um portão verde do ramo para esta cabeça
+        id: decisao
+        env:
+          EVENTO: ${{ github.event_name }}
+          REFERENCIA: ${{ github.ref }}
+        run: |
+          if [ "$EVENTO" = push ] && [ "$REFERENCIA" = refs/heads/main ]; then
+            if gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/workflows/portao.yml/runs?event=push&head_sha=$GITHUB_SHA&status=success&per_page=100" > /tmp/corridas.json; then
+              node scripts/portao-dispensa.mjs /tmp/corridas.json "$GITHUB_SHA" "$GITHUB_REPOSITORY" "$GITHUB_OUTPUT"
+            else
+              echo 'dispensar=nao' >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo 'dispensar=nao' >> "$GITHUB_OUTPUT"
+          fi
   construir:
+    needs: antecedente
+    if: needs.antecedente.outputs.dispensar != 'sim'
     outputs:
       partes: ${{ steps.plano.outputs.partes }}
     runs-on: ubuntu-24.04
@@ -97,6 +137,7 @@ jobs:
           if-no-files-found: error
   conferir:
     needs: construir
+    if: needs.construir.result == 'success'
     strategy:
       fail-fast: false
       matrix:
@@ -151,7 +192,7 @@ jobs:
           retention-days: 14
           if-no-files-found: error
   portao:
-    needs: [construir, conferir]
+    needs: [antecedente, construir, conferir]
     if: always()
     runs-on: ubuntu-24.04
     timeout-minutes: 90
@@ -160,8 +201,24 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Todas as tarefas passaram
-        run: test '${{ needs.construir.result }}' = success && test '${{ needs.conferir.result }}' = success
+        env:
+          ANTECEDENTE: ${{ needs.antecedente.result }}
+          DISPENSAR: ${{ needs.antecedente.outputs.dispensar }}
+          ENDERECO: ${{ needs.antecedente.outputs.url }}
+          CONSTRUIR: ${{ needs.construir.result }}
+          CONFERIR: ${{ needs.conferir.result }}
+        run: |
+          test "$ANTECEDENTE" = success
+          if [ "$DISPENSAR" = sim ]; then
+            test -n "$ENDERECO"
+            printf 'Portão já conferido para esta cabeça: %s\n' "$ENDERECO"
+          else
+            test "$DISPENSAR" = nao
+            test "$CONSTRUIR" = success
+            test "$CONFERIR" = success
+          fi
       - name: A árvore
+        if: needs.antecedente.outputs.dispensar != 'sim'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 1
@@ -173,16 +230,19 @@ jobs:
             /scripts/
 
       - name: O Node
+        if: needs.antecedente.outputs.dispensar != 'sim'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: .nvmrc
           cache: npm
 
       - name: O dist desta corrida, com as datas intactas
+        if: needs.antecedente.outputs.dispensar != 'sim'
         run: |
           gh run download "$GITHUB_RUN_ID" --name dist-${{ github.sha }} --dir /tmp/at1-dist
           tar -xpf /tmp/at1-dist/dist.tar
       - name: Reunir as provas e conferir a união inteira
+        if: needs.antecedente.outputs.dispensar != 'sim'
         run: |
           for i in $(node -e "console.log(require('./at1-build.json').partes.map((_, i) => i).join(' '))"); do
             gh run download "$GITHUB_RUN_ID" --name parte-$i-${{ github.sha }} --dir /tmp/at1-partes
@@ -193,7 +253,7 @@ jobs:
           mkdir /tmp/at1-prova
           cp dist/prova.json dist/cadeia.json /tmp/uniao.json /tmp/at1-prova/
       - name: A prova desta corrida
-        if: success()
+        if: success() && needs.antecedente.outputs.dispensar != 'sim'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: prova-${{ github.sha }}
