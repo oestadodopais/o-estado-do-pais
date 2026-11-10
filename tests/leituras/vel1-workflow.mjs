@@ -33,3 +33,11 @@ try {
   execFileSync('node',['--input-type=module','-e',ensaio],{cwd:tmp,stdio:'pipe'});
 } finally { fs.rmSync(tmp,{recursive:true,force:true}); }
 console.log(JSON.stringify({juntar_importa:[...visitados],bytes:[...visitados].reduce((n,f)=>n+fs.statSync(f).size,0),arvore_esparsa:'união verde sem src, tests ou dependências instaladas'}));
+
+for(const job of [workflow.jobs.construir,workflow.jobs.conferir]) {
+  assert(job.steps.some(s=>s.uses?.startsWith('actions/cache@')));
+  const instalar=job.steps.find(s=>s.name==='O Chromium do Playwright');
+  assert.equal(instalar['timeout-minutes'],5);
+  assert.equal(instalar.run.split(' || ').length,2);
+}
+console.log('VEL1 cache: chave por versão e instalação limitada com repetição');
