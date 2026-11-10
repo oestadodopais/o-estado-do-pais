@@ -7,6 +7,7 @@ Os comandos externos têm um teto de 90 minutos; as consultas, de dois minutos.
 A worktree fica destacada na cabeça aterrada depois de apagar o ramo local.
 """
 import datetime
+import hashlib
 import json
 import math
 import os
@@ -434,8 +435,35 @@ class Aterragem:
                 raise Parar(1, 'o lançamento desta cabeça falhou na Vercel')
         raise Parar(124, 'a Vercel não mostrou esta cabeça pronta em 45 consultas')
 
+    def inventario_dist(self):
+        dist = self.sitio / 'dist'
+        self.exigir(dist.is_dir() and not dist.is_symlink(), 'dist ausente ou ligado a outra pasta')
+        mapa = {}
+        for f in sorted(dist.rglob('*')):
+            self.exigir(not f.is_symlink(), 'ligação simbólica no dist')
+            if f.is_file():
+                mapa[f.relative_to(dist).as_posix()] = hashlib.sha256(f.read_bytes()).hexdigest()
+        self.exigir(bool(mapa), 'dist vazio')
+        return mapa
+
     def preparar_envio(self):
         self.preparar()
+        inventario = self.inventario_dist()
+        candidatos = [r for r in self.recibos_anteriores()
+            if r.get('cabeca') == self.cabeca and r.get('envio_inventario') == inventario
+            and r.get('recurso') is self.recurso
+            and isinstance(r.get('vercel_preparado'), str)
+            and re.fullmatch(r'https://[a-zA-Z0-9-]+\.vercel\.app', r['vercel_preparado'])
+            and any(p.get('passo') in ('vercel-preparado', 'envio-reutilizado') and p.get('codigo') == 0
+                    for p in r.get('passos', []))]
+        if candidatos:
+            anterior = max(candidatos, key=lambda r: r.get('inicio', ''))
+            self.recibo.update(vercel_preparado=anterior['vercel_preparado'],
+                envio_inventario=inventario, recurso=self.recurso,
+                envio_reutilizado={'inicio': anterior.get('inicio'), 'endereco': anterior['vercel_preparado']})
+            self.escrever('vercel.url', anterior['vercel_preparado'] + '\n')
+            self.registar('envio-reutilizado', 0)
+            return
         if not self.recurso:
             self.correr('vercel-prebuilt', ['sh', 'scripts/leituras/vercel-prebuilt.sh', str(self.sitio)])
         else:
@@ -447,6 +475,8 @@ class Aterragem:
         texto = re.sub(r'\x1b\[[0-9;]*m', '', texto)
         urls = re.findall(r'https://[a-zA-Z0-9-]+\.vercel\.app(?=\s|$)', texto)
         self.exigir(bool(urls) and len(set(urls)) == 1, 'o envio não devolveu um endereço único da Vercel')
+        self.exigir(self.inventario_dist() == inventario, 'o dist mudou durante a preparação do envio')
+        self.recibo['envio_inventario'] = inventario
         self.recibo['vercel_preparado'] = urls[0]
         self.recibo['recurso'] = self.recurso
         self.escrever('vercel.url', urls[0] + '\n')
