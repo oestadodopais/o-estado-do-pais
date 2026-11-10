@@ -71,7 +71,7 @@ jobs:
 
       - name: Construção e typecheck
         run: |
-          npm run build
+          node scripts/verify-partes.mjs construir
           npm run typecheck
           node scripts/verify-partes.mjs planear
           tar -cpf /tmp/dist.tar dist at1-build.json

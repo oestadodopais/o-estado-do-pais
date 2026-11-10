@@ -18,7 +18,7 @@ function conferir(s, w, a, partes = dividir(s, {}).partes) {
   assert.equal(s['check:frases-reais'], 'node tests/leituras/frases-reais.mjs');
   assert.equal(s['check:repositorio'], 'node tests/metodo/repositorio.mjs');
   conferirPartes(s, partes);
-  const build = s['build:conteudo'].split(/\s*&&\s*/);
+  const build = (s['build:escrever'] ?? s['build:conteudo']).split(/\s*&&\s*/);
   assert.deepEqual([...passos.filter(p => build.includes(p) && !motor.includes(p)), ...partes.flat()].sort(),
     passos.filter(p => !motor.includes(p)).sort(), 'GitHub omite um terceiro passo');
   const linhas = a.split('\n'), i = linhas.indexOf(chamada);
