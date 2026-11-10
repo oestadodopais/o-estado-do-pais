@@ -1,0 +1,3546 @@
+
+VEL1 comando: npm run check:leituras
+
+> o-estado-do-pais@0.1.0 check:leituras
+> python3 scripts/check-leituras.py
+
+check:leituras · tests/leituras/apoio_ferramentas.py · código 0
+check:leituras · tests/leituras/at1.py · código 0
+{"dupla": ["build", "build"], "segundos": 1.201065834145993, "sem_espera": 0.30523154186084867, "intervalo": 0.17040816601365805}
+{"dupla": ["corrida", "corrida"], "segundos": 10.473495249636471, "sem_espera": 0.3052088748663664, "intervalo": 9.446294167079031}
+{"dupla": ["build", "corrida"], "segundos": 10.477256374899298, "sem_espera": 0.30522433388978243, "intervalo": 9.74696416594088}
+................
+----------------------------------------------------------------------
+Ran 16 tests in 23.174s
+
+OK
+check:leituras · tests/leituras/at1_aterrar.py · código 0
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 15.228s
+
+OK
+check:leituras · tests/leituras/at1_partes.py · código 0
+AT1: união inteira verde; faltas, repetições, vermelhos e outras construções recusados
+{"sem_motor":true,"verify":70,"build":6,"partes":62,"reservados":["npm run check:pre-mandato","npm run check:frases-reais"]}
+VEL1 escrita: omissão, intruso, ordem trocada e registo incompleto ou vermelho recusados; leitor antecipado aceite
+check:leituras · tests/leituras/aterrar.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "sem-ramo",
+      "codigo": 14,
+      "mensagem": "PAROU: o ramo ramo-sintetico não existe (código 14)",
+      "passou": true
+    },
+    {
+      "planta": "cabeca-errada",
+      "codigo": 15,
+      "mensagem": "PAROU: a cabeça de ramo-sintetico é aaaaaaaa, e não bbbb (código 15)",
+      "passou": true
+    },
+    {
+      "planta": "sem-main",
+      "codigo": 16,
+      "mensagem": "PAROU: main não está dentro de ramo-sintetico: a fusão não seria um avanço rápido (código 16)",
+      "passou": true
+    },
+    {
+      "planta": "sem-origin",
+      "codigo": 17,
+      "mensagem": "PAROU: origin/main não está dentro de ramo-sintetico (código 17)",
+      "passou": true
+    },
+    {
+      "planta": "sem-check",
+      "codigo": 18,
+      "mensagem": "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «nada») (código 18)",
+      "passou": true
+    },
+    {
+      "planta": "vermelho",
+      "codigo": 18,
+      "mensagem": "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «failure») (código 18)",
+      "passou": true
+    },
+    {
+      "planta": "verde",
+      "codigo": 0,
+      "mensagem": "ATERROU: aaaaaaaa no ar, verify:deploy verde, portao já conferido nesta cabeça · 19:53:02 UTC",
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/briefs-presos.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "controlo preso não volta a executar o guião",
+      "mensagem": "bytes iguais; §0 e JSON conferidos",
+      "passou": true
+    },
+    {
+      "planta": "a gravação executa mesmo com selo válido",
+      "mensagem": "Só se selam guiões verdes desta invocação.",
+      "passou": true
+    },
+    {
+      "planta": "selo escrito à mão sem execução",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: selo recusado: falta o registo de execução verde com cabeça, hora e invocação."
+      ],
+      "passou": true
+    },
+    {
+      "planta": "GITHUB_ACTIONS ignora um selo válido",
+      "mensagem": "O guião correu com a variável de GitHub/CI no ambiente.",
+      "passou": true
+    },
+    {
+      "planta": "CI ignora um selo válido",
+      "mensagem": "O guião correu com a variável de GitHub/CI no ambiente.",
+      "passou": true
+    },
+    {
+      "planta": "número alterado no brief preso",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «14» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=13).\n      «Há 14 objetos (`objetos`).»"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "número alterado no guião preso",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 14 hoje e o ficheiro diz 13.\n      comando: ensaio sintético"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "JSON alterado com os selos antigos",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\n      comando: ensaio sintético",
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\n      «Há 13 objetos (`objetos`).»"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "corrida vermelha não produz selo",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\n      comando: ensaio sintético",
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\n      «Há 13 objetos (`objetos`).»"
+      ],
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/comparar-alvos.py · código 0
+{"ok": true, "casos": [{"planta": "página alterada", "mensagem": "paginas: comparação diferente", "passou": true}]}
+check:leituras · tests/leituras/comparar-dist-frases.py · código 0
+comparação: controlo verde; 11 alterações ou condições inválidas recusadas; só o campo 67 para 68 passa
+check:leituras · tests/leituras/corpos-ledger.py · código 0
+corpos: controlo verde; falta de corpo, excerto ausente e bytes trocados recusados; HTML, gzip, normalização e ausência do motor conferidos
+check:leituras · tests/leituras/ferramenta_aterrar.py · código 0
+.........................
+----------------------------------------------------------------------
+Ran 25 tests in 52.287s
+
+OK
+check:leituras · tests/leituras/ferramenta_fundir.py · código 0
+........
+----------------------------------------------------------------------
+Ran 8 tests in 5.916s
+
+OK
+check:leituras · tests/leituras/ferramenta_modelos_novos.py · código 0
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.925s
+
+OK
+check:leituras · tests/leituras/ferramenta_pre_voo.py · código 0
+{"pre_voo_segundos": {"livre": 0.08309524971991777, "ocupada": 0.08214837498962879}}
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 22.270s
+
+OK
+check:leituras · tests/leituras/ferramentas.py · código 1
+Traceback (most recent call last):
+  File "<worktree>/tests/leituras/ferramentas.py", line 113, in <module>
+    r=captar('limpo'); assert r.returncode==0,r.stdout+r.stderr
+                              ^^^^^^^^^^^^^^^
+AssertionError: node:net:1919
+      const error = new UVExceptionWithHostPort(rval, 'listen', address, port);
+                    ^
+
+Error: listen EPERM: operation not permitted 127.0.0.1
+    at Server.setupListenHandle [as _listen2] (node:net:1919:21)
+    at listenInCluster (node:net:1998:12)
+    at node:net:2207:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+  code: 'EPERM',
+  errno: -1,
+  syscall: 'listen',
+  address: '127.0.0.1'
+}
+
+Node.js v22.23.1
+
+check:leituras · tests/leituras/fila.py · código 0
+test_cli_cabeca_e_toda (__main__.Fila.test_cli_cabeca_e_toda) ... ok
+test_conteudo_nao_passa_conteudo_pronto (__main__.Fila.test_conteudo_nao_passa_conteudo_pronto) ... ok
+test_conteudo_passa_espera_ou_condicao (__main__.Fila.test_conteudo_passa_espera_ou_condicao) ... ok
+test_espera_de_fonte_e_condicao_sem_colisao (__main__.Fila.test_espera_de_fonte_e_condicao_sem_colisao) ... ok
+test_passagem_condicao (__main__.Fila.test_passagem_condicao) ... ok
+test_passagem_sexta (__main__.Fila.test_passagem_sexta) ... ok
+test_recusa_bloco_fora_da_fila (__main__.Fila.test_recusa_bloco_fora_da_fila) ... ok
+test_recusa_maquinaria_antes_de_conteudo_pronto (__main__.Fila.test_recusa_maquinaria_antes_de_conteudo_pronto) ... ok
+test_recusa_maquinaria_depois_de_navegacao (__main__.Fila.test_recusa_maquinaria_depois_de_navegacao) ... ok
+test_recusa_ordem_repetida (__main__.Fila.test_recusa_ordem_repetida) ... ok
+test_recusa_tipo_inventado (__main__.Fila.test_recusa_tipo_inventado) ... ok
+test_sexta_maquinaria_passa_conteudo_pronto (__main__.Fila.test_sexta_maquinaria_passa_conteudo_pronto) ... ok
+test_so_primeira_tabela_ativa (__main__.Fila.test_so_primeira_tabela_ativa) ... ok
+test_tipos_dos_blocos_aterrados (__main__.Fila.test_tipos_dos_blocos_aterrados) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.011s
+
+OK
+check:leituras · tests/leituras/frases-indice.py · código 0
+índice preparado: uma recusa impede o commit no escrivão
+AUD1: contrações e verbos portugueses conferidos
+check:leituras · tests/leituras/hig6a.py · código 0
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.392s
+
+OK
+check:leituras · tests/leituras/lancadores_copia.py · código 0
+....
+----------------------------------------------------------------------
+Ran 4 tests in 9.260s
+
+OK
+check:leituras · tests/leituras/listas-de-uma-linha.py · código 0
+test_guiao_corrigido (__main__.ListasDeUmaLinha.test_guiao_corrigido) ... ok
+test_linha_antiga_morde (__main__.ListasDeUmaLinha.test_linha_antiga_morde) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.609s
+
+OK
+check:leituras · tests/leituras/medicoes-pl1.py · código 0
+CONFERE medicoes-pl1 · test_pdf_fitz_e_layout_reais · correu sem salto
+SALTA medicoes-pl1 · test_pdf_fitz_e_layout_reais · falta: fitz, pdftotext
+test_html_motor_real (__main__.Medicoes.test_html_motor_real) ... ok
+test_no_ar_igual_diferente_http_e_caminho (__main__.Medicoes.test_no_ar_igual_diferente_http_e_caminho) ... ok
+test_pdf_com_ferramentas_corre_sem_salto (__main__.Medicoes.test_pdf_com_ferramentas_corre_sem_salto) ... <frozen importlib._bootstrap>:491: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:491: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+<frozen importlib._bootstrap>:491: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+ok
+test_pdf_fitz_e_layout_reais (__main__.Medicoes.test_pdf_fitz_e_layout_reais) ... ok
+test_pdf_sem_ferramentas_salta_com_linha (__main__.Medicoes.test_pdf_sem_ferramentas_salta_com_linha) ... ok
+test_uso_dos_tres (__main__.Medicoes.test_uso_dos_tres) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.469s
+
+OK
+<sys>:0: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+check:leituras · tests/leituras/pacote-portoes.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "controlo com PACOTE_EXTRA",
+      "mensagem": "Só as linhas citadas, os três códigos e os tempos chegaram.",
+      "passou": true
+    },
+    {
+      "planta": "registos omitidos são ditos com o tamanho",
+      "mensagem": "Pacote: registo reduzido ou deixado de fora: med/portoes/build.log (22 bytes; 0 conservados).\nPacote: registo reduzido ou deixado de fora: med/portoes/verify.log (104 bytes; 76 conservados).",
+      "passou": true
+    },
+    {
+      "planta": "PACOTE_LOGS conserva os registos inteiros",
+      "mensagem": "Os registos citados e sem citação chegaram byte a byte.",
+      "passou": true
+    },
+    {
+      "planta": "linha retirada durante a montagem normal",
+      "mensagem": "O pacote recusa a entrega: faltam as linhas citadas de med/portoes/verify.log.",
+      "passou": true
+    },
+    {
+      "planta": "citação sem linha de origem",
+      "mensagem": "O pacote recusa a citação: med/portoes/verify.log: não existe uma linha que comece por «npm run check:ausente ·».",
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/pacote-recibo.py · código 0
+EO1-d pacote: cópias com hash igual, preferência pelo recibo: código 0
+check:leituras · tests/leituras/pacote.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "controlo sem variáveis conserva o diff gerado",
+      "passou": true
+    },
+    {
+      "nome": "controlo limpo: a cópia conserva os bytes esperados",
+      "passou": true
+    },
+    {
+      "nome": "a página construída chega",
+      "passou": true
+    },
+    {
+      "nome": "planta do argumento ponto: a montagem conserva a pontuação",
+      "passou": true
+    },
+    {
+      "nome": "planta: bytes do sítio diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "planta: bytes do motor diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "os dois lados e as exclusões conferem",
+      "passou": true
+    },
+    {
+      "nome": "a tabela nomeia o caminho e as linhas retiradas",
+      "passou": true
+    },
+    {
+      "nome": "o diff do motor declara as exclusões na primeira linha",
+      "passou": true
+    },
+    {
+      "nome": "a conferência dos números chega ao pacote",
+      "passou": true
+    },
+    {
+      "nome": "PACOTE_EXTRA conserva os bytes",
+      "passou": true
+    },
+    {
+      "nome": "planta: uma secção excluída que volte ao diff morde",
+      "passou": true
+    },
+    {
+      "nome": "planta: ficheiro do motor alterado morde",
+      "passou": true
+    },
+    {
+      "nome": "reposição dos dois lados",
+      "passou": true
+    },
+    {
+      "nome": "nenhum caminho temporário foi guardado",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "um relatório não conferido chega com o código de aviso",
+      "passou": true
+    },
+    {
+      "nome": "planta: relatório inexistente recusa pela conferência do relatório",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "conferir-relatorio.py: não existe o relatório <ensaio>/sitio/medicoes/relatorio-ausente.md"
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "o corpo alojado da linha mudada chega ao pacote, byte a byte, sem estar no diff do motor",
+      "passou": true
+    },
+    {
+      "nome": "o recibo do pedido e os direitos vêm ao lado do corpo",
+      "passou": true
+    },
+    {
+      "nome": "o corpo que nenhuma linha cita não vem",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz a linha, o sha256 e o caminho, e a linha derivada sem documento",
+      "passou": true
+    },
+    {
+      "nome": "a página construída da linha mudada entra sozinha de dist/, e a que falta fica dita",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto não guarda caminhos da máquina",
+      "passou": true
+    },
+    {
+      "nome": "planta: linha com documento alojado e sem PACOTE_MOTOR recusa antes de criar a pasta",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: o bloco toca 1 linha(s) com documento alojado e PACOTE_MOTOR não foi dado; os corpos alojados têm de vir da cabeça do motor (M83): linha-sintetica (0c7cf42484dd)."
+    },
+    {
+      "nome": "planta: o corpo com outro sha256 na cabeça do motor recusa, e diz a linha e o estudo percorrido",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: corpo alojado não encontrado na cabeça do motor para 1 linha(s) (M83): linha-sintetica (0c7cf42484dd); estudos percorridos: content/Estudo sintético."
+    },
+    {
+      "nome": "planta: uma razão curta não abre a exceção",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "conhecido-positivo: com a razão declarada o pacote monta-se e diz a falta ao leitor",
+      "passou": true
+    },
+    {
+      "nome": "controlo: só uma linha derivada mudada não exige o motor, e o manifesto diz que não tem documento",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "o sha256 com aspas simples, sem aspas, em fluxo e com a chave entre aspas resolve, e null é «sem documento»",
+      "passou": true
+    },
+    {
+      "nome": "uma chave parecida fora de document e um sha256 dentro de crop não contam como documento",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz por onde cada linha se resolveu e que estudos percorreu",
+      "passou": true
+    },
+    {
+      "nome": "planta: 64 hexadecimais com lixo atrás recusam, em vez de passarem truncados",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-lixo-atras declara document.source_sha256 numa forma que o guião não aceita ('0c7cf42484ddc9ed5436d47e1207815920f77365a87ade98'); esperam-se 64 hexadecimais entre aspas, ou null."
+    },
+    {
+      "nome": "planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-duplicada não é YAML que o guião aceite (ValueError: chave duplicada «source_sha256»)."
+    },
+    {
+      "nome": "planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-ilegivel declara document.source_sha256 numa forma que o guião não aceita ('abc'); esperam-se 64 hexadecimais entre aspas, ou null."
+    },
+    {
+      "nome": "um corpo sem recibo do pedido nem direitos ao lado chega, mas o estado di-lo, linha a linha, e a montagem avisa",
+      "passou": true
+    },
+    {
+      "nome": "uma página pedida à mão conta nas páginas das linhas e não nas acrescentadas",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz porquê cada linha entra: a mudada, e a mudada cuja página também se pediu",
+      "passou": true
+    },
+    {
+      "nome": "M83-b: a página pedida de uma linha que não mudou traz o corpo dela, byte a byte, e o manifesto diz «página pedida»",
+      "passou": true
+    },
+    {
+      "nome": "controlo: sem página pedida e sem linha mudada, nenhum corpo vem e não há manifesto",
+      "passou": true
+    },
+    {
+      "nome": "controlo: uma página pedida que não é de uma linha do livro não traz corpo nenhum",
+      "passou": true
+    },
+    {
+      "nome": "M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto",
+      "passou": true
+    },
+    {
+      "nome": "COR-AGUA: arquivo-certo",
+      "passou": true
+    },
+    {
+      "nome": "COR-AGUA: arquivo-en-certo",
+      "passou": true
+    },
+    {
+      "nome": "COR-AGUA: arquivo-sha-errado",
+      "passou": true
+    },
+    {
+      "nome": "COR-AGUA: causa da recusa arquivo-sha-errado",
+      "passou": true
+    },
+    {
+      "nome": "COR-AGUA: sitio-sem-rota-arquivada",
+      "passou": true
+    },
+    {
+      "nome": "COR-AGUA: causa da recusa sitio-sem-rota-arquivada",
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/pl1.py · código 0
+HIG-5 C: {"texto": "prova o limite em 4321.", "devolve": ["4321"]}
+HIG-5 C: {"texto": "São 1 234.", "devolve": ["1 234"]}
+HIG-5 C: {"texto": "1.234 linhas", "devolve": ["1.234"]}
+HIG-5 C: {"texto": "12.5 por cento e 123.4 também", "devolve": ["12.5", "123.4"]}
+HIG-5 C: {"texto": "1.234,5 euros", "devolve": ["1.234,5"]}
+HIG-5 C: {"texto": "1 234 casos", "devolve": ["1 234"]}
+HIG-5 C: {"texto": "4321 casos", "devolve": ["4321"]}
+HIG-5 C: {"texto": "o Claude Sonnet 5.5 e o `aterrar.py:274`, a 06.11.2026 às 16:41:50, e 2026.", "devolve": []}
+test_blocos_prefixos_e_ausencias (__main__.Lotes.test_blocos_prefixos_e_ausencias) ... ok
+test_corrida_inteira_dirigida_e_vermelha (__main__.Lotes.test_corrida_inteira_dirigida_e_vermelha) ... ok
+test_custo_um_por_bloco (__main__.Lotes.test_custo_um_por_bloco) ... ok
+test_decisao_sem_data_ou_curta_recusada (__main__.Lotes.test_decisao_sem_data_ou_curta_recusada) ... ok
+test_fila_invalida_recusada_tambem_na_retoma (__main__.Lotes.test_fila_invalida_recusada_tambem_na_retoma) ... ok
+test_orcamento_por_omissao_e_soma_medida (__main__.Lotes.test_orcamento_por_omissao_e_soma_medida) ... ok
+test_orcamento_recusa_12_e_aceita_decisao (__main__.Lotes.test_orcamento_recusa_12_e_aceita_decisao) ... ok
+test_passagens_12_e_limite_igual_recusados (__main__.Lotes.test_passagens_12_e_limite_igual_recusados) ... ok
+test_pontos_nulos_sem_passagens_recusados (__main__.Lotes.test_pontos_nulos_sem_passagens_recusados) ... ok
+test_prefixo_de_registos_exige_nome_conhecido_e_caixa (__main__.Lotes.test_prefixo_de_registos_exige_nome_conhecido_e_caixa) ... ok
+test_ramo_de_registos_recusa_src_e_lista_todos_os_ficheiros (__main__.Lotes.test_ramo_de_registos_recusa_src_e_lista_todos_os_ficheiros) ... ok
+test_ramo_git_de_registos_recusa_src_e_espaco_no_nome (__main__.Lotes.test_ramo_git_de_registos_recusa_src_e_espaco_no_nome) ... ok
+test_retoma_conserva_custos_por_bloco (__main__.Lotes.test_retoma_conserva_custos_por_bloco) ... ok
+test_retoma_de_registos_confere_a_base_original (__main__.Lotes.test_retoma_de_registos_confere_a_base_original) ... ok
+test_retoma_exige_repetir_decisao_guardada (__main__.Lotes.test_retoma_exige_repetir_decisao_guardada) ... ok
+test_retoma_so_de_registos (__main__.Lotes.test_retoma_so_de_registos) ... ok
+test_sem_custo_nao_dispensa_bloco_de_conteudo (__main__.Lotes.test_sem_custo_nao_dispensa_bloco_de_conteudo) ... ok
+test_semana_valores_ausentes_nao_sao_zero (__main__.Lotes.test_semana_valores_ausentes_nao_sao_zero) ... ok
+test_so_registos_carrega_custo_de_outro_bloco (__main__.Lotes.test_so_registos_carrega_custo_de_outro_bloco) ... ok
+test_terceira_aterragem_contada_sem_excecao (__main__.Lotes.test_terceira_aterragem_contada_sem_excecao) ... ok
+test_adenda_c_oito_linhas_do_zero (__main__.PreMandato.test_adenda_c_oito_linhas_do_zero) ... ok
+test_adenda_c_pontuacao_e_excecoes (__main__.PreMandato.test_adenda_c_pontuacao_e_excecoes) ... ok
+test_contagens_do_zero_exigem_medidas_antes_de_sair (__main__.PreMandato.test_contagens_do_zero_exigem_medidas_antes_de_sair) ... ok
+test_datas_identificadores_e_citacoes_nao_sao_contagens (__main__.PreMandato.test_datas_identificadores_e_citacoes_nao_sao_contagens) ... ok
+test_excecoes_vizinhas_nao_escondem_uma_contagem (__main__.PreMandato.test_excecoes_vizinhas_nao_escondem_uma_contagem) ... ok
+test_grafia_exata_grupos_decimais_e_limites_dos_anos (__main__.PreMandato.test_grafia_exata_grupos_decimais_e_limites_dos_anos) ... ok
+test_listas_reais_no_ensaio_recusam (__main__.PreMandato.test_listas_reais_no_ensaio_recusam) ... ok
+test_medidas_ilegivel_ou_entrada_incompleta_recusadas (__main__.PreMandato.test_medidas_ilegivel_ou_entrada_incompleta_recusadas) ... ok
+test_medidas_no_corpo_nao_substitui_cabecalho (__main__.PreMandato.test_medidas_no_corpo_nao_substitui_cabecalho) ... ok
+test_selecao_dos_guioes_e_argumentos (__main__.PreMandato.test_selecao_dos_guioes_e_argumentos) ... ok
+test_sem_cabecalho_e_variavel_vazia_recusados (__main__.PreMandato.test_sem_cabecalho_e_variavel_vazia_recusados) ... ok
+test_variavel_so_aperta (__main__.PreMandato.test_variavel_so_aperta) ... ok
+test_voz_real_no_ensaio_recusa (__main__.PreMandato.test_voz_real_no_ensaio_recusa) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 2.538s
+
+OK
+check:leituras · tests/leituras/portoes.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "árvore suja recusada antes da tranca e dos portões",
+      "codigo": 9,
+      "mensagem": "portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código"
+    },
+    {
+      "planta": "lar1",
+      "codigo": 1
+    },
+    {
+      "planta": "v2d",
+      "codigo": 1
+    },
+    {
+      "planta": "v2c",
+      "codigo": 1
+    },
+    {
+      "planta": "perfil-invalido",
+      "codigo": 9
+    },
+    {
+      "planta": "LAR1 verde com planta vermelha esperada e sem verify",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção verde exata sem motor",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção V2-d exata",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção exata og1-b-navegador",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção exata fp2-base",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção exata fp2-contadores",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção exata fp2",
+      "codigo": 0
+    },
+    {
+      "planta": "FP2 recusa planta sem mordida",
+      "codigo": 1
+    },
+    {
+      "planta": "build vermelho não paga conferências",
+      "codigo": 1,
+      "codigos": {
+        "build": 7,
+        "verify": 125,
+        "typecheck": 0
+      },
+      "mensagem": "verify: não correu; o build não ficou verde e não pode pagar passos da união"
+    },
+    {
+      "planta": "escrita da tranca recusada",
+      "codigo": 9,
+      "mensagem": "portoes: não foi possível tomar a tranca; nenhum portão correu"
+    },
+    {
+      "planta": "tranca de outra corrida não é substituída nem solta",
+      "mensagem": "à espera da tranca da máquina: tranca de ensaio",
+      "codigo": -15
+    },
+    {
+      "planta": "tranca caducada deixa correr",
+      "codigo": 1,
+      "mensagem": "tranca com mais de quarenta minutos (tranca de ensaio); ignora-se"
+    },
+    {
+      "planta": "partes de corrida morta",
+      "codigo": 9,
+      "mensagem": "portoes: a pasta já tem códigos ou partes .tempos; escolha uma pasta nova"
+    },
+    {
+      "planta": "TERM depois de tomar a tranca",
+      "codigo": 130,
+      "mensagem": "portoes: corrida interrompida; os portões seguintes não correm"
+    },
+    {
+      "planta": "motor exercido sob a tranca comum",
+      "codigo": 0,
+      "mensagem": "Motor e sítio conferidos antes de soltar a tranca."
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-jd1.py · código 0
+{
+  "passou": true,
+  "casos": [
+    "A guarda lê a lista real do Git e recusa ambos os fragmentos, incluindo gzip.",
+    "A limpeza rastreada só altera a lista do Git; guarda verde, gzip legível e segunda passagem sem mudanças.",
+    "A worktree e a pasta principal do sítio têm marcas distintas, sem raiz local.",
+    "As raízes históricas, também mascaradas, desaparecem sem perder caminhos dentro do repositório."
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1b.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "transferida-nome-inteiro",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-for-abreviado",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-en",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-atributo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-json-ld",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-rotulo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-regra-do-metodo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-pagina-com-comentario",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-vista",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-fonte-publica",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-controlo-publico",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-as-plantas",
+      "mordeu": true
+    },
+    {
+      "id": "repositorio-limpo",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/estudos/ensaio/documento/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/estudos/ensaio/documento/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/en/studies/ensaio/document/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/en/studies/ensaio/document/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/sobre/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/sobre/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/metodo/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/metodo/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-src/views/Ensaio.astro",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-src/views/Ensaio.astro",
+      "mordeu": true
+    },
+    {
+      "id": "reposicao-limpa",
+      "mordeu": true
+    },
+    {
+      "id": "forma-abreviada-do-git",
+      "mordeu": true
+    },
+    {
+      "id": "saida-recusa-forma-abreviada",
+      "mordeu": true
+    },
+    {
+      "id": "oraculo-sem-campos-pessoais",
+      "mordeu": true
+    },
+    {
+      "id": "alvos-ignorados",
+      "mordeu": true
+    },
+    {
+      "id": "regra-dos-alvos-limitada-as-medicoes",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1c.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "ramo-pessoal-texto",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-nome",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-outra-caixa",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-binario",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-entidade-nome",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-entidade-decimal",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-entidade-hexadecimal",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-escape-unicode",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-decisao-estrutura",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-decisao-inocua",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-1-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-1-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-2-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-2-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-3-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-3-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-4-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-4-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-5-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-5-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-6-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-6-autor",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-bom-pagina",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-abreviada-limpa",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-nfd-pagina",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-formato-recusado",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-duplo",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-inseparavel",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-tabulador",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espacos-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-cr",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-linha",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-paragrafo",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-nel",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-vt",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-ff",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-rs",
+      "mordeu": true
+    },
+    {
+      "id": "e-duas-entradas-com-cr-recusadas",
+      "mordeu": true
+    },
+    {
+      "id": "e-crlf-aceite",
+      "mordeu": true
+    },
+    {
+      "id": "e-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "interior-1",
+      "mordeu": true
+    },
+    {
+      "id": "interior-2-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-3-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-4-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-5-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-6-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-7-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-8-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-9-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "linhas-crlf",
+      "mordeu": true
+    },
+    {
+      "id": "minimo-depois-de-nfc",
+      "mordeu": true
+    },
+    {
+      "id": "controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "sem-entidades-nao-descodifica",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-or-and-recusa-no-portao",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-isola-cadeia",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-isola-estrutura",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-identidades-no-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-identidades-nos-autores",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1d.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "espaco-segredo-duplo",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-inseparavel",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-tabulador",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espacos-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-0",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-0",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-2",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-2",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-3",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-3",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-4",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-4",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-5",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-5",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-6",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-6",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-7",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-7",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-9",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-9",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-10",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-10",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-11",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-11",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-12",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-12",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-13",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-13",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-14",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-14",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-15",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-15",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-16",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-16",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-17",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-17",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-18",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-18",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-19",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-19",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-20",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-20",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-21",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-21",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-22",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-22",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-23",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-23",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-24",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-24",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-25",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-25",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-26",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-26",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-27",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-27",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-28",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-28",
+      "mordeu": true
+    },
+    {
+      "id": "entidade-nome",
+      "mordeu": true
+    },
+    {
+      "id": "entidade-decimal",
+      "mordeu": true
+    },
+    {
+      "id": "entidade-hexadecimal",
+      "mordeu": true
+    },
+    {
+      "id": "escape",
+      "mordeu": true
+    },
+    {
+      "id": "formas-misturadas",
+      "mordeu": true
+    },
+    {
+      "id": "ascii-em-entidade",
+      "mordeu": true
+    },
+    {
+      "id": "ascii-em-escape",
+      "mordeu": true
+    },
+    {
+      "id": "caixa-mista",
+      "mordeu": true
+    },
+    {
+      "id": "corpo-em-bytes-uma-copia",
+      "mordeu": true
+    },
+    {
+      "id": "formas-em-cache",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-plantas",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1e.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "e-nfc-nfd-mistos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-cr",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-linha",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-paragrafo",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-nel",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-vt",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-ff",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-rs",
+      "mordeu": true
+    },
+    {
+      "id": "e-duas-entradas-com-cr-recusadas",
+      "mordeu": true
+    },
+    {
+      "id": "e-crlf-aceite",
+      "mordeu": true
+    },
+    {
+      "id": "e-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-nfc-nfd",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-sem-ponto-virgula",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-apos",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-ccaron",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-eszett",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-ligatura",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-nfc-nfd",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-sem-ponto-virgula",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-apos",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-ccaron",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-eszett",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-ligatura",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-seis-regressoes",
+      "mordeu": true
+    },
+    {
+      "id": "colapso-prematuro-recusa-oito-plantas",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-segredo.py · código 0
+{
+  "passou": true,
+  "cadeias_sinteticas_lidas": 2,
+  "ficheiros_sinteticos_conferidos": 7,
+  "plantas": [
+    {
+      "id": "GITHUB_ACTIONS-ausente",
+      "mordeu": true
+    },
+    {
+      "id": "GITHUB_ACTIONS-vazio",
+      "mordeu": true
+    },
+    {
+      "id": "CI-ausente",
+      "mordeu": true
+    },
+    {
+      "id": "CI-vazio",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-0",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-1",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-2",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-3",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-4",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-5",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-6",
+      "mordeu": true
+    },
+    {
+      "id": "repositorio-limpo-e-json",
+      "mordeu": true
+    },
+    {
+      "id": "plantas-dist-api-rastreado",
+      "mordeu": true
+    },
+    {
+      "id": "linhas-limpas",
+      "mordeu": true
+    },
+    {
+      "id": "git-reescrito-sem-base",
+      "mordeu": true
+    },
+    {
+      "id": "autores-do-projeto-excluidos",
+      "mordeu": true
+    },
+    {
+      "id": "positivo-do-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "positivo-do-autor-conservado",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-texto",
+      "mordeu": true
+    },
+    {
+      "id": "saida-texto",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "saida-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-nome",
+      "mordeu": true
+    },
+    {
+      "id": "saida-nome",
+      "mordeu": true
+    },
+    {
+      "id": "json-recusado-antes-da-escrita",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-caixa",
+      "mordeu": true
+    },
+    {
+      "id": "saida-caixa",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-binario",
+      "mordeu": true
+    },
+    {
+      "id": "saida-binario",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-em-dist",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-em-api",
+      "mordeu": true
+    },
+    {
+      "id": "identidades-publicas-passam",
+      "mordeu": true
+    },
+    {
+      "id": "sem-fontes-recusa-dist-api",
+      "mordeu": true
+    },
+    {
+      "id": "positivo-da-casa",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-publica-na-casa",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-antes-das-excecoes-de-caminhos",
+      "mordeu": true
+    },
+    {
+      "id": "carregamento-local",
+      "mordeu": true
+    },
+    {
+      "id": "ambiente-prevalece",
+      "mordeu": true
+    },
+    {
+      "id": "ci-nao-le-casa",
+      "mordeu": true
+    }
+  ]
+}
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+check:leituras · tests/leituras/tempos.py · código 0
+tempos: a chamada por ligação escreveu os mesmos tempos.json.
+tempos: o ambiente chegou; o código 7 foi conservado; o passo seguinte não correu; cada passo tem início, fim e duração.
+check:leituras · tests/leituras/vel1_alvos.py · código 0
+{"regua_inteira":390,"fatias":[130,130,130],"plantas":"família e largura omitidas, repetição, outra execução, vermelho e todas as ausências recusados"}
+check:leituras · tests/leituras/vel1_dispensa.py · código 0
+VEL1 dispensa: ramo verde aceite; main, outra cabeça, vermelho, cancelado, pendente, outro fluxo, evento e repositório recusados
+check:leituras · tests/leituras/vel1_escrita.py · código 0
+VEL1 escrita real: ordem e códigos medidos; vermelho para o passo seguinte e elimina o recibo anterior
+check:leituras · tests/leituras/vel1_retoma.py · código 0
+......
+----------------------------------------------------------------------
+Ran 6 tests in 22.044s
+
+OK
+check:leituras · tests/leituras/vel1_sobreposicao.py · código 0
+.
+----------------------------------------------------------------------
+Ran 1 test in 8.912s
+
+OK
+check:leituras · tests/leituras/vel1_vigia.py · código 0
+......
+----------------------------------------------------------------------
+Ran 6 tests in 5.091s
+
+OK
+check:leituras · tests/leituras/vel1_workflow.py · código 0
+{"juntar_importa":["scripts/verify-partes.mjs","scripts/alvos-fatias.mjs","scripts/verify-depois-do-build.mjs","scripts/leituras/tempos.mjs"],"bytes":56984,"arvore_esparsa":"união verde sem src, tests ou dependências instaladas"}
+VEL1 workflow: plano dinâmico, árvore esparsa e cache conferidos; 192 combinações do portao e dispensa sem endereço provadas
+
+VEL1 check:leituras: código 1
+
+VEL1 comando: npm run check:projecao-portoes
+
+> o-estado-do-pais@0.1.0 check:projecao-portoes
+> node tests/hb1/projecao-portoes.mjs
+
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue: valor recusado, releitura aceite.
+PAI1-C: dois controlos e dezasseis plantas nos leitores reais, código 0.
+
+VEL1 check:projecao-portoes: código 0
+
+VEL1 comando: npm run check:repositorio
+
+> o-estado-do-pais@0.1.0 check:repositorio
+> node tests/metodo/repositorio.mjs
+
+repositório: 20 plantas e controlos locais
+
+VEL1 check:repositorio: código 0
+
+VEL1 comando: npm run check:mortos
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+[90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.[0m
+
+  [32m✓[0m identificadores · 542 ficheiro(s) lidos, nenhuma declaração morta
+
+
+VEL1 check:mortos: código 0
+
+VEL1 comando: npm run check:briefs
+
+> o-estado-do-pais@0.1.0 check:briefs
+> python3 scripts/check-briefs.py
+
+  portão dos briefs · 78 brief(s) em design/observatorio/ · 42 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
+check:briefs · 2 brief(s) presos conferidos pelos bytes e pelo JSON; 40 guião(ões) reexecutado(s). O GitHub corre todos os guiões.
+    conferido: BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md (medidas/BRIEF-B2.json)
+    conferido: BRIEF-C1-as-correcoes-de-confianca.md (medidas/BRIEF-C1.json)
+    conferido: BRIEF-C2-as-nove-revisoes-da-eurostat.md (medidas/BRIEF-C2.json)
+    conferido: BRIEF-CI1-o-portao-em-metade-do-tempo.md (medidas/BRIEF-CI1.json)
+    conferido: BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md (medidas/BRIEF-E0.json)
+    conferido: BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md (medidas/BRIEF-E1.json)
+    conferido: BRIEF-ER1-o-recibo-incorporavel.md (medidas/BRIEF-ER1.json)
+    conferido: BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md (medidas/BRIEF-EX1.json)
+    conferido: BRIEF-EX2-a-leitura-da-semana-com-o-que-cada-numero-e.md (medidas/BRIEF-EX2.json)
+    conferido: BRIEF-F22b-as-corridas-prontas-a-armar.md (medidas/BRIEF-F22b.json)
+    conferido: BRIEF-H2-a-passagem-de-higiene-de-04-10.md (medidas/BRIEF-H2.json)
+    conferido: BRIEF-H3-a-passagem-de-higiene-de-05-10.md (medidas/BRIEF-H3.json)
+    conferido: BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md (medidas/BRIEF-H4.json)
+    conferido: BRIEF-JD1-os-juros-e-a-divida-do-estado-no-livro-razao.md (medidas/BRIEF-JD1.json)
+    conferido: BRIEF-K2-o-cartao-para-o-telemovel.md (medidas/BRIEF-K2.json)
+    conferido: BRIEF-L1-a-leitura-de-cada-medida.md (medidas/BRIEF-L1.json)
+    conferido: BRIEF-L2a-o-mapa-primeiro.md (medidas/BRIEF-L2a.json)
+    conferido: BRIEF-L2b-o-concelho-entre-os-308.md (medidas/BRIEF-L2b.json)
+    conferido: BRIEF-M4b-o-livro-razao-do-11-reparado-e-declarado.md (medidas/BRIEF-M4b.json)
+    conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+    conferido: BRIEF-MA-a-maquinaria-sem-perda-de-protecao.md (medidas/BRIEF-MA.json)
+    conferido: BRIEF-N1-uma-porta-por-assunto.md (medidas/BRIEF-N1.json)
+    conferido: BRIEF-OE1-o-dinheiro-do-estado-por-ministerio.md (medidas/BRIEF-OE1.json)
+    conferido: BRIEF-P4-os-pequenos-do-sitio.md (medidas/BRIEF-P4.json)
+    conferido: BRIEF-PP1-a-primeira-pagina-de-um-leitor-comum.md (medidas/BRIEF-PP1.json)
+    conferido: BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md (medidas/BRIEF-R1.json)
+    conferido: BRIEF-R2-os-rotulos-do-sitio.md (medidas/BRIEF-R2.json)
+    conferido: BRIEF-R3-o-indice-do-sitio.md (medidas/BRIEF-R3.json)
+    conferido: BRIEF-R4-as-palavras-correntes-em-cada-numero.md (medidas/BRIEF-R4.json)
+    conferido: BRIEF-RP1-rendimentos-e-precos-os-cartoes.md (medidas/BRIEF-RP1.json)
+    conferido: BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md (medidas/BRIEF-RP2.json)
+    conferido: BRIEF-RP3-as-series-no-motor-e-no-livro.md (medidas/BRIEF-RP3.json)
+    conferido: BRIEF-RP4-o-grafico-das-series-no-cartao-e-no-recibo.md (medidas/BRIEF-RP4.json)
+    conferido: BRIEF-RP4C-as-ajudas-de-leitura-do-grafico.md (medidas/BRIEF-RP4C.json)
+    conferido: BRIEF-RP4M-as-series-que-faltam-e-o-corredor-das-series.md (medidas/BRIEF-RP4M.json)
+    conferido: BRIEF-RP4N-selar-na-fonte-o-que-as-frases-ainda-dizem-pelo-nome.md (medidas/BRIEF-RP4N.json)
+    conferido: BRIEF-S1-a-caixa-das-sugestoes.md (medidas/BRIEF-S1.json)
+    conferido: BRIEF-UE1-onde-portugal-fica-entre-os-27.md (medidas/BRIEF-UE1.json)
+    conferido: BRIEF-UE2-a-pagina-dos-paises.md (medidas/BRIEF-UE2.json)
+    conferido: BRIEF-V1-o-primeiro-varrimento-de-vigilancia.md (medidas/BRIEF-V1.json)
+    conferido: BRIEF-V2a-as-fontes-da-vigilancia-seladas-no-motor.md (medidas/BRIEF-V2a.json)
+    conferido: BRIEF-V2b-o-que-se-discute-os-tres-primeiros-itens.md (medidas/BRIEF-V2b.json)
+      §0 liga «35» a `cartoes_nacionais_nos_temas`
+      §0 liga «9» a `temas_com_medidas`
+      §0 liga «18» a `temas_da_carta`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «19» a `cartoes_na_primeira_pagina`
+      §0 liga «0» a `cartoes_com_referencia_na_primeira_pagina`
+      §0 liga «24» a `cartoes_com_media_da_uniao`
+      §0 liga «29» a `cartoes_com_periodo_anterior`
+      §0 liga «6» a `cartoes_sem_regua`
+      §0 liga «20» a `cartoes_com_definicao`
+      §0 liga «34» a `cartoes_com_a_marca_entre_o_valor_e_a_unidade`
+      §0 liga «5» a `cartoes_com_precisao_mista`
+      §0 liga «2» a `formas_do_euro_nos_temas`
+      §0 liga «3» a `precisoes_do_euro_nos_temas`
+      §0 liga «1» a `cartao_do_limite_legal_nos_temas`
+      §0 liga «150» a `limite_legal`
+      §0 liga «308» a `concelhos_no_ficheiro`
+      §0 liga «10» a `camaras_acima_do_limite`
+      §0 liga «297» a `camaras_dentro_do_limite`
+      §0 liga «1» a `camaras_sem_valor`
+      §0 liga «21» a `medidas_na_faixa_europeia`
+      §0 liga «4» a `fora_do_valor_de_referencia`
+      §0 liga «9» a `dentro_do_valor_de_referencia`
+      §0 liga «8» a `sem_valor_de_referencia`
+      §0 liga «1» a `posicao_na_faixa_europeia`
+      §0 liga «21» a `medidas_na_faixa_europeia`
+      §0 liga «1» a `posicao_na_faixa_europeia`
+      §0 liga «8» a `mourao_cartoes`
+      §0 liga «1» a `mourao_cartoes_com_regua`
+      §0 liga «34» a `nome_do_projeto_a_390`
+      §0 liga «68» a `nome_do_projeto_a_1280`
+      §0 liga «30» a `titulo_a_390`
+      §0 liga «46» a `titulo_a_1280`
+      §0 liga «10» a `ligacoes_no_rodape`
+      §0 liga «1» a `dominios_com_pagina`
+      §0 liga «9» a `areas_de_governo_com_pagina`
+      §0 liga «17» a `ficheiros_que_dependem_das_rotas`
+      §0 liga «6,3» a `sobrecarga_pt_2025`
+      §0 liga «6,9» a `sobrecarga_pt_2024`
+      §0 liga «7,7» a `sobrecarga_ue_2025`
+      §0 liga «1» a `sobrecarga_sem_media_europeia_declarada`
+      §0 liga «27,2» a `inquilinos_a_preco_de_mercado_pt`
+      §0 liga «18,6» a `inquilinos_a_preco_de_mercado_ue`
+      §0 liga «3,0» a `proprietarios_com_credito_pt`
+      §0 liga «5,0» a `proprietarios_com_credito_ue`
+      §0 liga «1,3» a `proprietarios_sem_credito_pt`
+      §0 liga «3,8» a `proprietarios_sem_credito_ue`
+      §0 liga «2,8» a `inquilinos_a_renda_reduzida_ou_gratuita_pt`
+      §0 liga «9,2» a `inquilinos_a_renda_reduzida_ou_gratuita_ue`
+      §0 liga «47» a `cartoes_na_pagina_dos_temas`
+      §0 liga «47» a `cartoes_na_pagina_dos_temas`
+      §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «2» a `frases_fixas_da_subida`
+      §0 liga «6» a `ramos_da_uniao_com_subida`
+      §0 liga «1» a `rendas_com_dos_de_ha_um_ano`
+      §0 liga «49,3» a `valor_selado_da_divida_das_familias_ue`
+      §0 liga «49,2» a `valor_revisto_segundo_o_painel`
+      §0 liga «3» a `linhas_do_pib_por_habitante`
+      §0 liga «3» a `linhas_do_pib_por_habitante`
+      §0 liga «5» a `colunas_do_csv_dos_concelhos`
+      §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «82» a `linhas_com_uma_verificacao_igual_de_05_10_2026`
+      §0 liga «9» a `linhas_com_uma_verificacao_divergente_de_05_10_2026`
+      §0 liga «0» a `linhas_com_uma_verificacao_inacessivel_de_05_10_2026`
+      §0 liga «9» a `dessas_as_lidas_na_eurostat`
+      §0 liga «3» a `linhas_divergentes_usadas_na_primeira_pagina`
+      §0 liga «1» a `correcoes_do_tipo_atualizacao_no_livro`
+      §0 liga «2» a `mencoes_da_v16_no_readme_do_livro`
+      §0 liga «21» a `passos_do_build`
+      §0 liga «33» a `passos_do_verify`
+      §0 liga «17» a `passos_repetidos`
+      §0 liga «1» a `trabalhos_da_corrida`
+      §0 liga «2» a `linhas_do_desemprego_com_o_inteiro_onde_a_fonte_escreve_o_decimal`
+      §0 liga «3» a `correcoes_publicadas_contadas_no_livro`
+      §0 liga «3» a `correcoes_publicadas_contadas_no_livro`
+      §0 liga «9» a `linhas_com_historia_selada`
+      §0 liga «0» a `entradas_seladas_do_contador_das_correcoes`
+      §0 liga «2» a `linhas_com_lugar_declarado_a_mao`
+      §0 liga «1» a `lugares_fora_do_pais_que_o_registo_aceita`
+      §0 liga «6» a `estudos_de_evora_alojados`
+      §0 liga «43 866» a `palavras_dos_seis_estudos`
+      §0 liga «4» a `estudos_com_mais_de_cinco_mil_palavras`
+      §0 liga «61» a `seccoes_dos_seis_estudos`
+      §0 liga «5» a `estudos_de_evora_com_linhas_no_livro`
+      §0 liga «69» a `linhas_do_livro_dos_estudos_de_evora`
+      §0 liga «1» a `estudos_de_evora_sem_linhas_proprias`
+      §0 liga «6» a `contador_dos_estudos_de_evora_publicados`
+      §0 liga «3195» a `linhas_do_livro`
+      §0 liga «34» a `series_do_livro`
+      §0 liga «1» a `enderecos_do_json_de_cada_linha`
+      §0 liga «1» a `enderecos_do_json_de_cada_linha`
+      §0 liga «1» a `enderecos_do_json_de_cada_linha`
+      §0 liga «1» a `portas_de_descarga_do_json_da_linha_no_recibo`
+      §0 liga «0» a `blocos_de_incorporacao_no_recibo`
+      §0 liga «0» a `cabecalhos_cors_no_vercel_json`
+      §0 liga «1» a `cabecalhos_x_frame_options_no_vercel_json`
+      §0 liga «0» a `guioes_de_incorporacao_servidos`
+      §0 liga «94» a `linhas_do_orcamento_do_estado_de_2026`
+      §0 liga «10» a `linhas_dos_cem_euros_por_funcao`
+      §0 liga «16» a `linhas_dos_cem_euros_por_ministerio`
+      §0 liga «16» a `linhas_dos_cem_euros_por_ministerio`
+      §0 liga «30» a `linhas_da_despesa_por_funcao_de_2024`
+      §0 liga «31» a `linhas_da_execucao_orcamental_de_agosto_de_2026`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «0» a `linhas_sobre_os_juros_da_divida`
+      §0 liga «3 870» a `entradas_datadas_nas_linhas`
+      §0 liga «203» a `entradas_datadas_desde_28_09_2026`
+      §0 liga «18» a `estudos_publicados`
+      §0 liga «0» a `rotas_de_explicacoes_no_sitio`
+      §0 liga «13» a `blocos_da_primeira_pagina`
+      §0 liga «4» a `frases_com_ramo_decidido_pelos_numeros_na_primeira_pagina`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «3195» a `linhas_do_livro`
+      §0 liga «3184» a `linhas_no_ambito_da_leitura_da_semana`
+      §0 liga «41» a `unidades_distintas_no_ambito`
+      §0 liga «25» a `unidades_que_comecam_por_palavra`
+      §0 liga «9» a `linhas_com_entradas_de_valor_na_semana_ate_06_10`
+      §0 liga «181» a `familias_com_frase_provada`
+      §0 liga «1» a `funcao_da_frase_o_que_e_no_recibo`
+      §0 liga «1» a `vezes_que_a_unidade_entra_na_frase_da_semana`
+      §0 liga «10» a `paginas_lidas_pela_celula_das_frases_compostas`
+      §0 liga «1» a `explicacoes_publicadas`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «91» a `linhas_com_carimbo_do_painel`
+      §0 liga «2545» a `linhas_com_carimbo_do_corredor`
+      §0 liga «6» a `commits_do_painel_semanal`
+      §0 liga «93» a `ficheiros_do_painel_de_28_09`
+      §0 liga «91» a `linhas_mudadas_pelo_painel_de_28_09`
+      §0 liga «3» a `estudos_recentes_na_primeira_pagina`
+      §0 liga «11» a `estudos_sem_sucessor`
+      §0 liga «4» a `estudos_sem_sucessor_datados_a_01_10_2026`
+      §0 liga «1» a `chamadas_a_routePath_texto_na_pagina_da_area`
+      §0 liga «1» a `portas_que_embrulham_o_titulo_na_lista_dos_estudos`
+      §0 liga «1» a `existeConstruido_aceita_o_ficheiro_html_irmao`
+      §0 liga «1» a `isencoes_json_indicador_na_check_lugar`
+      §0 liga «1» a `plantas_da_copia_com_a_mesma_hora_no_verify_depois_do_build`
+      §0 liga «0» a `variaveis_PACOTE_RETIRA_e_PACOTE_MOTOR_no_pacote_sh`
+      §0 liga «5» a `questoes_I190_a_I194_abertas`
+      §0 liga «144» a `palavras_da_nota_da_caixa_das_sugestoes_em_portugues`
+      §0 liga «0» a `rotas_de_privacidade_no_sitio`
+      §0 liga «1» a `portas_do_menu_com_o_nome_europa`
+      §0 liga «10» a `faixas_de_paises_no_livro`
+      §0 liga «9» a `faixas_com_paises_no_mesmo_valor`
+      §0 liga «4» a `maximo_de_paises_no_mesmo_valor_numa_faixa`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «8» a `portas_do_rodape`
+      §0 liga «430» a `largura_da_regra_do_telefone_px`
+      §0 liga «6» a `espaco_entre_portas_ate_430_px`
+      §0 liga «13» a `letra_do_menu_ate_430_px`
+      §0 liga «16» a `espaco_minimo_entre_portas_nas_outras_larguras`
+      §0 liga «15» a `letra_do_menu_nas_outras_larguras`
+      §0 liga «390» a `largura_do_telefone_px`
+      §0 liga «344» a `largura_natural_das_seis_portas_pt_a_390_px`
+      §0 liga «354» a `coluna_do_menu_a_390_px`
+      §0 liga «435» a `largura_natural_das_sete_portas_pt_a_390_px`
+      §0 liga «2» a `linhas_do_menu_com_sete_portas_pt_a_390_px`
+      §0 liga «6» a `portas_exigidas_pela_celula_tm4`
+      §0 liga «4» a `lugares_declarados_na_politica_de_ia`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «0» a `linhas_dos_juros_e_do_custo_da_divida`
+      §0 liga «20» a `linhas_da_despesa_por_programa_do_orcamento_de_2026`
+      §0 liga «20» a `linhas_da_despesa_por_programa_do_orcamento_de_2026`
+      §0 liga «1» a `linhas_executadas_do_programa_da_gestao_da_divida`
+      §0 liga «24» a `series_no_tempo_registadas_no_sitio`
+      §0 liga «34» a `ficheiros_de_series_no_livro`
+      §0 liga «21» a `cartoes_declarados_nos_quadros`
+      §0 liga «4» a `cartoes_com_variacao_sob_nome_de_nivel`
+      §0 liga «2» a `linhas_com_menos_decimais_do_que_a_fonte`
+      §0 liga «11» a `frases_das_leituras_com_termos_por_explicar`
+      §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «35» a `cartoes_de_linha_nos_temas`
+      §0 liga «1» a `cartoes_das_camaras_nos_temas`
+      §0 liga «36» a `cartoes_nacionais_na_edicao_inglesa`
+      §0 liga «20» a `cartoes_na_primeira_pagina`
+      §0 liga «21» a `cartoes_com_pergunta`
+      §0 liga «15» a `cartoes_sem_pergunta`
+      §0 liga «8» a `perguntas_com_algarismos`
+      §0 liga «15» a `cartoes_com_valor_de_referencia`
+      §0 liga «5» a `cartoes_fora_do_valor_de_referencia`
+      §0 liga «10» a `cartoes_dentro_do_valor_de_referencia`
+      §0 liga «15» a `referencias_declaradas`
+      §0 liga «13» a `referencias_da_comissao`
+      §0 liga «1» a `referencias_do_pacto`
+      §0 liga «1» a `referencias_do_pacto`
+      §0 liga «4» a `formas_do_veredicto`
+      §0 liga «33» a `cartoes_com_periodo_anterior`
+      §0 liga «25» a `cartoes_com_media_da_uniao`
+      §0 liga «2» a `cartoes_de_linha_sem_regua`
+      §0 liga «0» a `cartoes_so_com_referencia_e_sem_comparacao`
+      §0 liga «59» a `valores_de_linha_nas_reguas_dos_temas`
+      §0 liga «0» a `cartoes_com_leitura`
+      §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+      §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «1» a `medidas_com_valor_negativo`
+      §0 liga «5» a `inventario_das_medidas`
+      §0 liga «16» a `unidades_distintas`
+      §0 liga «0,7» a `saldo_valor`
+      §0 liga «0,6» a `saldo_anterior_valor`
+      §0 liga «7» a `disparidade_valor`
+      §0 liga «8,6» a `disparidade_anterior_valor`
+      §0 liga «22» a `definicoes_declaradas`
+      §0 liga «31» a `origens_das_definicoes_declaradas`
+      §0 liga «22» a `definicoes_declaradas`
+      §0 liga «72» a `pedacos_auditados`
+      §0 liga «85» a `apoios_auditados`
+      §0 liga «32» a `indicadores_no_ficheiro_do_motor`
+      §0 liga «13» a `indicadores_com_limiar_no_motor`
+      §0 liga «19» a `indicadores_sem_limiar_no_motor`
+      §0 liga «28» a `tamanho_do_numero_px`
+      §0 liga «16» a `tamanho_do_nome_px`
+      §0 liga «14» a `tamanho_da_regua_px`
+      §0 liga «12» a `tamanho_da_pergunta_px`
+      §0 liga «3» a `pecas_de_lugares_antes_do_mapa`
+      §0 liga «9» a `regioes_na_lista`
+      §0 liga «29» a `distritos_e_ilhas_na_lista`
+      §0 liga «2» a `seccoes_da_primeira_pagina_antes_dos_lugares`
+      §0 liga «1» a `pesquisas_na_primeira_pagina`
+      §0 liga «1» a `pesquisas_na_primeira_pagina`
+      §0 liga «5321» a `altura_da_captura_de_lugares_a_390`
+      §0 liga «7194» a `altura_da_captura_da_primeira_pagina_a_390`
+      §0 liga «308» a `concelhos_com_linha_de_populacao`
+      §0 liga «9» a `medidas_com_linhas_por_concelho`
+      §0 liga «308» a `linhas_do_ganho_medio_por_concelho`
+      §0 liga «0» a `faixas_na_pagina_do_concelho`
+      §0 liga «0» a `faixas_na_pagina_do_concelho`
+      §0 liga «2» a `reguas_a_mao_que_procuram_o_mapa_na_primeira_pagina`
+      §0 liga «55» a `linhas`
+      §0 liga «28» a `linhas_recusadas`
+      §0 liga «9» a `valor_de_texto`
+      §0 liga «7» a `sem_valor_no_excerto`
+      §0 liga «20» a `source_type_invalido`
+      §0 liga «10» a `derived`
+      §0 liga «149» a `numeros_html`
+      §0 liga «41» a `casados_html`
+      §0 liga «89» a `orfaos_html`
+      §0 liga «9» a `erradas_html`
+      §0 liga «654» a `numeros_relatorio`
+      §0 liga «154» a `casados_relatorio`
+      §0 liga «328» a `orfaos_relatorio`
+      §0 liga «95» a `erradas_relatorio`
+      §0 liga «40» a `desvios_do_par`
+      §0 liga «38» a `briefs_ate_22_09_2026`
+      §0 liga «35» a `briefs_com_seccao_de_medicoes`
+      §0 liga «2» a `briefs_com_guiao_de_medicoes`
+      §0 liga «2» a `briefs_conferidos_pelo_portao`
+      §0 liga «33» a `briefs_isentos_por_data`
+      §0 liga «3» a `briefs_isentos_por_nomeacao`
+      §0 liga «0» a `ocorrencias_do_nome_de_quem_responde_em_src_e_public`
+      §0 liga «0» a `exportacoes_de_politica_ia_com_o_nome_de_quem_responde`
+      §0 liga «44» a `passos_do_verify`
+      §0 liga «24» a `passos_do_build`
+      §0 liga «20» a `passos_repetidos_do_build_no_verify`
+      §0 liga «13» a `corridas_inteiras_registadas`
+      §0 liga «186» a `build_segundos_minimo`
+      §0 liga «220» a `build_segundos_maximo`
+      §0 liga «1010» a `verify_segundos_minimo`
+      §0 liga «1165» a `verify_segundos_maximo`
+      §0 liga «75» a `build_segundos_a_28_09_arredondado`
+      §0 liga «471» a `verify_segundos_a_28_09_arredondado`
+      §0 liga «34» a `briefs_com_guiao_de_medidas`
+      §0 liga «5» a `larguras_do_check_alvos`
+      §0 liga «120» a `espera_fixa_depois_de_networkidle_ms`
+      §0 liga «1» a `esperas_pela_corrida_de_main_no_aterrar`
+      §0 liga «274406» a `bytes_do_mapa`
+      §0 liga «862» a `citacoes_do_mapa`
+      §0 liga «47» a `cartoes_nas_entradas`
+      §0 liga «47» a `cartoes_nos_temas`
+      §0 liga «47» a `cartoes_nos_temas`
+      §0 liga «0» a `cartoes_so_numa_das_duas`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «4» a `entradas_que_copiam_blocos`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «9» a `temas`
+      §0 liga «18» a `dominios`
+      §0 liga «1» a `dominios_no_ar`
+      §0 liga «16» a `dominios_sem_pagina`
+      §0 liga «9» a `temas`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «0» a `linhas_da_entidade_orcamental`
+      §0 liga «0» a `linhas_da_despesa_por_funcao_do_eurostat`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «5» a `linhas_com_fonte_no_dados_gov`
+      §0 liga «9» a `areas_do_governo_declaradas`
+      §0 liga «1» a `linhas_do_orcamento_de_evora`
+      §0 liga «3» a `folhas_que_seguem_a_preferencia_do_aparelho`
+      §0 liga «0» a `lugares_onde_o_comando_do_tema_e_rendido`
+      §0 liga «5» a `entradas_do_menu`
+      §0 liga «5» a `reguas_a_mao_que_leem_a_primeira_pagina_antiga`
+      §0 liga «117» a `linhas_que_a_regra_das_casas_decimais_le`
+      §0 liga «2535» a `linhas_que_a_regra_das_casas_decimais_deixa_por_ler`
+      §0 liga «6» a `ocorrencias_dos_dois_termos_nas_definicoes`
+      §0 liga «0» a `palavras_da_nota_do_sucessor_que_dizem_a_reconciliacao`
+      §0 liga «1» a `codigo_do_decisoes_em_vigor_num_intervalo_com_png`
+      §0 liga «8» a `linhas_de_chaves_en_com_a_descricao_de_setembro`
+      §0 liga «23» a `cartoes_na_primeira_pagina`
+      §0 liga «9» a `temas_na_primeira_pagina`
+      §0 liga «1» a `mapas_na_primeira_pagina`
+      §0 liga «0» a `numeros_no_mapa`
+      §0 liga «4» a `mudancas_na_primeira_pagina`
+      §0 liga «126» a `palavras_antes_do_primeiro_titulo`
+      §0 liga «8» a `numeros_antes_do_primeiro_titulo`
+      §0 liga «9» a `valores_fixos_da_leitura_do_pais`
+      §0 liga «5» a `blocos_declarados`
+      §0 liga «30» a `linhas_dos_blocos`
+      §0 liga «30» a `linhas_dos_blocos`
+      §0 liga «18» a `condicoes_dos_blocos`
+      §0 liga «18» a `condicoes_dos_blocos`
+      §0 liga «8» a `condicoes_do_mesmo_periodo`
+      §0 liga «8» a `condicoes_do_mesmo_periodo`
+      §0 liga «6» a `entradas_declaradas`
+      §0 liga «47» a `cartoes_nas_entradas`
+      §0 liga «0» a `cartoes_repetidos_nas_entradas`
+      §0 liga «48» a `artigos_da_pagina_dos_temas`
+      §0 liga «1» a `cartoes_fora_das_entradas`
+      §0 liga «0» a `cartoes_das_entradas_fora_dos_temas`
+      §0 liga «1» a `pesquisa_lista_nasce_escondida`
+      §0 liga «0» a `pesquisa_lista_nunca_se_mostra`
+      §0 liga «0» a `pesquisa_enter_recarrega`
+      §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+      §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+      §0 liga «39» a `cor_de_estado_na_pagina_europeia`
+      §0 liga «1» a `metodo_frase_da_cor`
+      §0 liga «0» a `ficheiros_com_a_ressalva_fora_da_agenda`
+      §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+      §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+      §0 liga «1» a `cartao_da_habitacao_com_media_europeia`
+      §0 liga «2» a `mudancas_declaradas`
+      §0 liga «1» a `mudancas_com_palavras_internas`
+      §0 liga «1» a `estudos_seccao_por_lugar`
+      §0 liga «2» a `definicoes_com_sigla_por_verificar`
+      §0 liga «1» a `vistas_com_o_rotulo_no_topo`
+      §0 liga «1» a `recibo_valor_e_unidade_colados`
+      §0 liga «8» a `cartoes_do_concelho`
+      §0 liga «1» a `cartoes_do_concelho_com_regua`
+      §0 liga «1» a `metodo_frase_do_base`
+      §0 liga «89,2» a `ine_divida_2025`
+      §0 liga «93,0» a `ine_divida_2024`
+      §0 liga «0,7» a `ine_saldo_2025`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «41» a `unidades_distintas_nas_linhas`
+      §0 liga «28» a `nomes_de_medida_distintos_nas_linhas`
+      §0 liga «3» a `unidades_com_o_simbolo_do_euro_em_vez_da_palavra`
+      §0 liga «1» a `unidades_que_dizem_um_limite_na_propria_unidade`
+      §0 liga «2» a `unidades_de_indice_com_base_cem`
+      §0 liga «25» a `entradas_do_dicionario_das_unidades_inglesas`
+      §0 liga «16» a `unidades_das_linhas_sem_entrada_inglesa`
+      §0 liga «7466» a `paginas_construidas_lidas_pelo_inventario`
+      §0 liga «5248» a `cartoes_de_medida_nas_paginas`
+      §0 liga «34» a `formas_distintas_da_unidade_nos_cartoes_portugueses`
+      §0 liga «25» a `formas_distintas_do_estado_nos_cartoes_portugueses`
+      §0 liga «8» a `formas_distintas_da_dobra_nos_cartoes_portugueses`
+      §0 liga «40» a `rotas_declaradas`
+      §0 liga «0» a `rotas_de_indice_declaradas`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «0» a `portas_do_rodape_para_um_indice`
+      §0 liga «32» a `ficheiros_de_pagina_portugueses`
+      §0 liga «32» a `ficheiros_de_pagina_portugueses`
+      §0 liga «17» a `estudos_declarados`
+      §0 liga «6» a `estudos_com_sucessor`
+      §0 liga «3 195» a `linhas_do_livro_razao`
+      §0 liga «48» a `linhas_com_leitura_provada_num_cartao`
+      §0 liga «303» a `familias_de_medida_sem_frase_provada`
+      §0 liga «12» a `familias_municipais_sem_frase_provada`
+      §0 liga «2 817» a `linhas_dos_concelhos_sem_frase_provada`
+      §0 liga «330» a `linhas_nacionais_e_da_uniao_sem_frase_provada`
+      §0 liga «121» a `linhas_com_nome_do_projeto`
+      §0 liga «24» a `series_no_tempo`
+      §0 liga «2» a `series_com_frase_do_ultimo_ponto`
+      §0 liga «22» a `series_sem_frase_do_ultimo_ponto`
+      §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «9» a `temas_com_medidas`
+      §0 liga «18» a `temas_da_carta`
+      §0 liga «13» a `cartoes_por_tema`
+      §0 liga «10» a `cartoes_por_tema`
+      §0 liga «2» a `cartoes_por_tema`
+      §0 liga «3» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «4» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_nacionais_com_periodo_mensal`
+      §0 liga «2» a `cartoes_de_linha_sem_regua`
+      §0 liga «920,00» a `valor_do_salario_minimo_no_sitio`
+      §0 liga «2 984» a `linhas_do_livro`
+      §0 liga «288» a `linhas_de_documento_alojado`
+      §0 liga «1 358» a `linhas_de_serie_de_api`
+      §0 liga «9» a `linhas_da_tabela_do_memorando`
+      §0 liga «8» a `linhas_do_memorando_verificadas`
+      §0 liga «15» a `marcas_por_verificar_no_memorando`
+      §0 liga «2 984» a `linhas_do_livro`
+      §0 liga «303,7» a `segundos_do_build`
+      §0 liga «7 354» a `paginas_construidas`
+      §0 liga «486,9» a `segundos_do_verify`
+      §0 liga «45» a `grupos_com_varios_periodos`
+      §0 liga «28» a `grupos_que_misturam_uniao`
+      §0 liga «2 655» a `linhas_lidas_para_os_grupos`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «4 131» a `pontos_das_series_no_tempo`
+      §0 liga «2» a `lacunas_declaradas_nas_series_no_tempo`
+      §0 liga «944» a `pontos_da_maior_serie_no_tempo`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «8» a `formas_na_lista_fechada_da_check_formas`
+      §0 liga «0» a `ocorrencias_de_serie_do_pais_em_src`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «64» a `pixeis_minimos_de_uma_marca_intermedia_do_tempo_as_pontas`
+      §0 liga «0» a `marcas_do_eixo_vertical_com_o_simbolo_da_unidade`
+      §0 liga «0» a `linhas_de_referencia_no_modulo_da_forma`
+      §0 liga «2» a `regras_de_passagem_ou_foco_na_folha_do_desenho`
+      §0 liga «0» a `etiquetas_de_valor_por_ponto_no_componente`
+      §0 liga «378» a `linhas_do_livro_com_derivation_nao_nula`
+      §0 liga «416» a `pontos_da_serie_da_inflacao`
+      §0 liga «2» a `mencoes_ao_banco_central_europeu_nas_leituras`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «1» a `series_no_tempo_derivadas`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «5» a `dessas_as_linhas_principais_sem_o_periodo_anterior`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «13» a `series_no_tempo_com_ponto_no_periodo_de_base_de_2015`
+      §0 liga «6» a `pontos_da_serie_da_remuneracao_bruta_mensal_media`
+      §0 liga «174» a `linhas_com_a_frase_por_confirmar`
+      §0 liga «11» a `linhas_marcadas_do_desemprego_registado_da_madeira`
+      §0 liga «92» a `linhas_marcadas_do_orcamento_de_2026`
+      §0 liga «56» a `linhas_marcadas_da_execucao_de_2026`
+      §0 liga «11» a `linhas_marcadas_do_desemprego_registado_da_madeira`
+      §0 liga «4» a `linhas_marcadas_restantes`
+      §0 liga «6» a `series_com_a_frase_por_confirmar`
+      §0 liga «5» a `series_marcadas_do_eurostat`
+      §0 liga «45» a `partes_apoiadas_no_nome_do_projeto_nas_familias`
+      §0 liga «6» a `partes_apoiadas_no_nome_do_projeto_nas_series`
+      §0 liga «0» a `ficheiros_na_pasta_das_funcoes`
+      §0 liga «1» a `portas_do_rodape_para_escrever_ao_projeto`
+      §0 liga «5» a `ficheiros_de_codigo_que_leem_a_porta_das_correcoes`
+      §0 liga «2» a `vistas_com_formulario`
+      §0 liga «0» a `ficheiros_fonte_que_falam_de_sugestoes`
+      §0 liga «35» a `rotas_declaradas`
+      §0 liga «0» a `rotas_de_sugestoes_declaradas`
+      §0 liga «2» a `tabelas_no_registo_da_base`
+      §0 liga «1» a `funcoes_no_registo_da_base`
+      §0 liga «5» a `envios_por_marca_e_por_hora`
+      §0 liga «200» a `envios_por_dia_na_caixa_inteira`
+      §0 liga «90» a `dias_de_retencao_depois_da_decisao`
+      §0 liga «1» a `papeis_que_podem_chamar_a_funcao`
+      §0 liga «10» a `linhas_da_uniao_nos_blocos`
+      §0 liga «10» a `linhas_da_uniao_nos_blocos`
+      §0 liga «10» a `gemeas_portuguesas`
+      §0 liga «10» a `gemeas_portuguesas`
+      §0 liga «3 009» a `linhas_do_livro`
+      §0 liga «0» a `linhas_de_serie_no_livro`
+      §0 liga «10» a `series_de_paises_no_livro`
+      §0 liga «21» a `cartoes_dos_dois_quadros`
+      §0 liga «2» a `paises_nomeados_em_cada_faixa_hoje`
+      §0 liga «44» a `termos_tecnicos_nas_definicoes_dos_quadros`
+      §0 liga «1205» a `altura_da_pagina_da_uniao_a_390_depois_do_k2`
+      §0 liga «0» a `portao_inicial_do_motor`
+      §0 liga «3 211» a `linhas_do_livro_na_partida`
+      §0 liga «0» a `linhas_que_citam_o_oe2027_na_partida`
+      §0 liga «0» a `linhas_do_v2a_no_livro`
+      §0 liga «1 932» a `cadeias_na_tabela`
+    isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+    isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+    isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+    chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
+    apagado antes de contar no §0: codigo 749, enderecos 0, seccoes 53, datas 55, resumos 0, ordinais 1, identificadores 50, anos 7
+  ✓ 481 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.
+
+VEL1 check:briefs: código 0
+
+VEL1 comando: npm run typecheck
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+
+VEL1 typecheck: código 0
+
+VEL1 comando: node tests/leituras/camada-cadeia.mjs
+camada 0 na cadeia: controlo verde e 13 desligamentos recusados
+
+VEL1 camada-cadeia: código 0
+
+VEL1 comando: node tests/leituras/frases-afirmacao.mjs
+adenda G: atribuições da leitura curta exigem registo; alternativas tipadas recusam e nomeiam a linha nos três campos e nas duas línguas; histórico E e F conferido
+adenda F: citações impressas PT e EN sem máscara, todas as ocorrências, palavras após números, prosa manual e modelos diferentes da fonte recusados
+adenda E: datas e valores conservam a chave; palavras exigem registo; duplicados colapsam; presença aceita datas; citações conservam os números
+adenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos
+adenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos
+índice preparado: uma recusa impede o commit no escrivão
+AUD1: contrações e verbos portugueses conferidos
+frases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos
+
+VEL1 frases-afirmacao: código 0
+
+VEL1 comando: node scripts/verify-depois-do-build.mjs --prova
+  ✓ planta · a cadeia limpa passa, e o que o build já correu não corre outra vez
+  ✓ planta · uma conferência nova só no verify corre sozinha
+  ✓ planta · uma conferência tirada da escolha fecha a célula U
+  ✓ planta · uma conferência vermelha fecha a corrida, e as outras acabam
+  ✓ planta · uma conferência que escreve no dist/ fecha a célula D
+  ✓ planta · um dist/ de outra cabeça fecha a célula C
+  ✓ planta · um passo vazio na cadeia não passa despercebido à contagem
+  ✓ planta · uma conferência que escreve no dist/ e repõe os bytes fecha a célula D
+  ✓ planta · uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D
+  ✓ planta · uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D
+  ✓ planta · um cadeia.json de outra construção fecha a célula C
+  ✓ planta · uma conferência que escreve na árvore corre sozinha, depois do grupo
+  I194 {"planta":"uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D","antes":{"escrito":"1794337030552999000","inode":"318871769","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"depois":{"escrito":"1794337030552999000","inode":"318871787","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"passos_da_troca":1,"codigo_da_troca":0,"falhas":["D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"],"mordeu":true}
+  as 12 plantas morderam em 0.9 s
+
+
+VEL1 celulas-UDC: código 0
+
+VEL1 comando: node scripts/verify-depois-do-build.mjs --a-seco
+  ✓ planta · a cadeia limpa passa, e o que o build já correu não corre outra vez
+  ✓ planta · uma conferência nova só no verify corre sozinha
+  ✓ planta · uma conferência tirada da escolha fecha a célula U
+  ✓ planta · uma conferência vermelha fecha a corrida, e as outras acabam
+  ✓ planta · uma conferência que escreve no dist/ fecha a célula D
+  ✓ planta · um dist/ de outra cabeça fecha a célula C
+  ✓ planta · um passo vazio na cadeia não passa despercebido à contagem
+  ✓ planta · uma conferência que escreve no dist/ e repõe os bytes fecha a célula D
+  ✓ planta · uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D
+  ✓ planta · uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D
+  ✓ planta · um cadeia.json de outra construção fecha a célula C
+  ✓ planta · uma conferência que escreve na árvore corre sozinha, depois do grupo
+  I194 {"planta":"uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D","antes":{"escrito":"1794337030875999000","inode":"318871882","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"depois":{"escrito":"1794337030875999000","inode":"318871889","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"passos_da_troca":1,"codigo_da_troca":0,"falhas":["D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"],"mordeu":true}
+  as 12 plantas morderam em 0.9 s
+
+70 passos no verify, 26 já corridos pelo build, 44 a correr aqui:
+  lado a lado  npm run check:palavras
+  lado a lado  npm run check:moldura
+  lado a lado  npm run check:lugar
+  lado a lado  npm run check:indice
+  lado a lado  npm run check:cartao
+  lado a lado  npm run check:cabeca
+  lado a lado  npm run check:css
+  lado a lado  npm run check:alcance
+  lado a lado  npm run check:rec1
+  lado a lado  npm run check:quadro
+  lado a lado  npm run check:publicadores
+  lado a lado  npm run check:forma-citacao
+  lado a lado  npm run check:briefs
+  lado a lado  npm run check:leituras
+  lado a lado  npm run check:metodo-construido
+  lado a lado  npm run check:projecao-portoes
+  lado a lado  npm run check:sobreposicao
+  lado a lado  npm run check:fontes
+  lado a lado  npm run mapa:unidades -- --verifica
+  lado a lado  npm run check:pais:auto-teste
+  lado a lado  npm run check:frases-afirmacao
+  lado a lado  npm run check:voz-retiradas
+  lado a lado  npm run provar:eyetext
+  lado a lado  npm run provar:guardas
+  lado a lado  npm run check:mortos
+  lado a lado  npm run check:primeira
+  lado a lado  npm run check:privacidade
+  lado a lado  npm run check:sugestoes
+  lado a lado  npm run check:rotulos
+  lado a lado  npm run check:series
+  lado a lado  npm run check:indice-do-sitio
+  lado a lado  npm run check:explicacoes
+  lado a lado  npm run check:frases-compostas
+  lado a lado  npm run check:incorporar
+  lado a lado  npm run check:eo1
+  lado a lado  npm run check:graficos
+  lado a lado  npm run check:dossies
+  lado a lado  npm run check:largura
+  lado a lado  npm run check:capturas-largura
+  lado a lado  npm run check:repositorio
+  depois, só   npm run check:alvos:0
+  depois, só   npm run check:alvos:1
+  depois, só   npm run check:alvos:2
+  depois, só   npm run design:feixe
+
+VEL1 plano-local: código 0
+
+{"passo":"npm run check:edicoes","codigo":0,"segundos":15.70406925,"dist":[],"outros":[]}
+{"passo":"npm run check:selos","codigo":0,"segundos":11.115957583,"dist":[],"outros":[]}
+{"passo":"npm run check:datas","codigo":0,"segundos":9.792000250000005,"dist":[],"outros":[]}
+{"passo":"npm run check:dados","codigo":0,"segundos":2.2002237499999975,"dist":[],"outros":[]}
+{"passo":"npm run check:mapa","codigo":0,"segundos":0.5504979579999999,"dist":[],"outros":[]}
+{"passo":"npm run check:regioes","codigo":0,"segundos":0.35874754199999737,"dist":[],"outros":[]}
+{"passo":"npm run check:areas","codigo":0,"segundos":0.545234540999998,"dist":[],"outros":[]}
+{"passo":"npm run check:formas","codigo":0,"segundos":11.920978124999994,"dist":[],"outros":[]}
+{"passo":"npm run check:lugares","codigo":0,"segundos":1.8783834170000047,"dist":[],"outros":[]}
+{"passo":"npm run check:pais","codigo":0,"segundos":28.577086540999996,"dist":[],"outros":[]}
+{"passo":"npm run check:voz","codigo":0,"segundos":269.437008959,"dist":[],"outros":[]}
+{"passo":"npm run check:paridade","codigo":0,"segundos":0.5821372499999706,"dist":[],"outros":[]}
+{"passo":"npm run check:nomes","codigo":0,"segundos":4.0197338340000135,"dist":[],"outros":[]}
+{"passo":"npm run check:lingua","codigo":0,"segundos":26.540601083000016,"dist":[],"outros":[]}
+{"passo":"npm run check:formato","codigo":0,"segundos":1.2574496250000085,"dist":[],"outros":[]}
+{"passo":"npm run check:navegacao","codigo":0,"segundos":14.354505541999998,"dist":[],"outros":[]}
+{"passo":"npm run sinais","codigo":0,"segundos":1.6012036659999866,"dist":[],"outros":[".sinais/explicacoes.json",".sinais/primeira-pagina.json"]}
+{"passo":"npm run check:discussao","codigo":0,"segundos":45.880300250000026,"dist":[],"outros":[]}
+{"tranca": "libertada", "espera_segundos": 340.1553639997728, "execucao_segundos": 497.0808937079273, "codigo": 0}
+
+VEL1 inventários: 18 passos, código 0, dist inalterado

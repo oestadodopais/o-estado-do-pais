@@ -1,0 +1,253 @@
+{
+  "chamadas_ate_redacao": 92,
+  "corridas_de_conferencias": 65,
+  "definicao": "execuções com recibo de curto.sh e execuções dos lotes; exclui hooks, verificações de sintaxe e processos internos das plantas",
+  "recibos_curto": [
+    {
+      "registo": "plantas-escrita.log",
+      "codigo": 0,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "dispensa.log",
+      "codigo": 0,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "plantas-escrita-2.log",
+      "codigo": 0,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "camada-cadeia.log",
+      "codigo": 0,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "imports-juntar.log",
+      "codigo": 0,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "udc.log",
+      "codigo": 0,
+      "segundos_involucro": 1
+    },
+    {
+      "registo": "plano-plantas.log",
+      "codigo": 0,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "workflow.log",
+      "codigo": 0,
+      "segundos_involucro": 1
+    },
+    {
+      "registo": "vel1-build.log",
+      "codigo": 0,
+      "segundos_involucro": 708
+    },
+    {
+      "registo": "alvos-particao-2.log",
+      "codigo": 0,
+      "segundos_involucro": 2
+    },
+    {
+      "registo": "typecheck.log",
+      "codigo": 0,
+      "segundos_involucro": 2
+    },
+    {
+      "registo": "alvos-particao.log",
+      "codigo": 0,
+      "segundos_involucro": 2
+    },
+    {
+      "registo": "workflow-2.log",
+      "codigo": 0,
+      "segundos_involucro": 1
+    },
+    {
+      "registo": "escrita-real.log",
+      "codigo": 0,
+      "segundos_involucro": 1
+    },
+    {
+      "registo": "alvos-particao-final.log",
+      "codigo": 0,
+      "segundos_involucro": 2
+    },
+    {
+      "registo": "vigia.log",
+      "codigo": 1,
+      "segundos_involucro": 7
+    },
+    {
+      "registo": "aterrar-p7.log",
+      "codigo": 0,
+      "segundos_involucro": 51
+    },
+    {
+      "registo": "retoma.log",
+      "codigo": 0,
+      "segundos_involucro": 18
+    },
+    {
+      "registo": "preparada-p8.log",
+      "codigo": 0,
+      "segundos_involucro": 15
+    },
+    {
+      "registo": "aterrar-vermelho-final.log",
+      "codigo": 1,
+      "segundos_involucro": 0
+    },
+    {
+      "registo": "aterrar-vermelho-final.log",
+      "codigo": 0,
+      "segundos_involucro": 2
+    },
+    {
+      "registo": "preparada-final.log",
+      "codigo": 0,
+      "segundos_involucro": 14
+    },
+    {
+      "registo": "sobreposicao.log",
+      "codigo": 0,
+      "segundos_involucro": 8
+    },
+    {
+      "registo": "camada-final.log",
+      "codigo": 0,
+      "segundos_involucro": 1
+    },
+    {
+      "registo": "aterrar-final.log",
+      "codigo": 1,
+      "segundos_involucro": 48
+    },
+    {
+      "registo": "vigia-final.log",
+      "codigo": 0,
+      "segundos_involucro": 6
+    }
+  ],
+  "provas_antes_dos_commits": [
+    "precommit-1-0.log",
+    "precommit-1-1.log",
+    "precommit-2-0.log",
+    "precommit-3-0.log",
+    "precommit-3-1.log",
+    "precommit-4-0.log",
+    "precommit-5-0.log",
+    "precommit-6-0.log",
+    "precommit-6-1.log"
+  ],
+  "passos_medir_escritas": 18,
+  "conferencias_finais": [
+    {
+      "nome": "check:leituras",
+      "comando": [
+        "npm",
+        "run",
+        "check:leituras"
+      ],
+      "codigo": 1,
+      "segundos": 252.0129120000638
+    },
+    {
+      "nome": "check:projecao-portoes",
+      "comando": [
+        "npm",
+        "run",
+        "check:projecao-portoes"
+      ],
+      "codigo": 0,
+      "segundos": 0.1323595829308033
+    },
+    {
+      "nome": "check:repositorio",
+      "comando": [
+        "npm",
+        "run",
+        "check:repositorio"
+      ],
+      "codigo": 0,
+      "segundos": 0.10707445815205574
+    },
+    {
+      "nome": "check:mortos",
+      "comando": [
+        "npm",
+        "run",
+        "check:mortos"
+      ],
+      "codigo": 0,
+      "segundos": 1.940918458160013
+    },
+    {
+      "nome": "check:briefs",
+      "comando": [
+        "npm",
+        "run",
+        "check:briefs"
+      ],
+      "codigo": 0,
+      "segundos": 287.7416129577905
+    },
+    {
+      "nome": "typecheck",
+      "comando": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "codigo": 0,
+      "segundos": 0.5824515828862786
+    },
+    {
+      "nome": "camada-cadeia",
+      "comando": [
+        "node",
+        "tests/leituras/camada-cadeia.mjs"
+      ],
+      "codigo": 0,
+      "segundos": 0.03961775032803416
+    },
+    {
+      "nome": "frases-afirmacao",
+      "comando": [
+        "node",
+        "tests/leituras/frases-afirmacao.mjs"
+      ],
+      "codigo": 0,
+      "segundos": 36.955795040819794
+    },
+    {
+      "nome": "celulas-UDC",
+      "comando": [
+        "node",
+        "scripts/verify-depois-do-build.mjs",
+        "--prova"
+      ],
+      "codigo": 0,
+      "segundos": 0.8848009998910129
+    },
+    {
+      "nome": "plano-local",
+      "comando": [
+        "node",
+        "scripts/verify-depois-do-build.mjs",
+        "--a-seco"
+      ],
+      "codigo": 0,
+      "segundos": 0.8924350836314261
+    }
+  ],
+  "outras_execucoes": [
+    "verify-partes planear",
+    "tentativa da parte 7"
+  ]
+}

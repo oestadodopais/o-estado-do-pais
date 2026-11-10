@@ -232,7 +232,7 @@ export function celulaDaUniao(scripts, corridos, construidos = []) {
     else if (vermelhos.has(p)) falhas.push(`U: «${p}» correu e não saiu com 0`);
     else falhas.push(`U: «${p}» está no verify ou build:conteudo, não é um passo do build e não correu aqui`);
   }
-  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui, reservados_ao_motor: reservados };
+  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, passos_do_build: conteudo.length, passos_da_uniao: exigidos.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui, reservados_ao_motor: reservados };
 }
 
 /**
