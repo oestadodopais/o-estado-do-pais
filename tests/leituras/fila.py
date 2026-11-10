@@ -96,6 +96,40 @@ class Fila(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'espera por C1'):
             self.conferir()
 
+    def test_gargalo_medido_na_terca(self):
+        for ordem in ('1', '3'):
+            for cabecalho in ('Razão', 'Razão da posição'):
+                texto = self.texto.replace('| 1 |', '| ' + ordem + ' |').replace('Razão', cabecalho)
+                with self.subTest(ordem=ordem, cabecalho=cabecalho):
+                    self.p.write_text(texto)
+                    with self.assertRaisesRegex(ValueError, 'espera por C1'):
+                        self.conferir(dia=date(2026, 11, 10))
+                    self.p.write_text(texto.replace('pronto | |', 'pronto | gargalo medido: medicoes/tempos.json |'))
+                    self.conferir(dia=date(2026, 11, 10))
+
+    def test_gargalo_vazio_recusa_mesmo_na_sexta(self):
+        for razao in ('gargalo medido:', 'gargalo medido: ; outra razão'):
+            self.p.write_text(self.texto.replace('pronto | |', 'pronto | ' + razao + ' |'))
+            for dia in (date(2026, 11, 10), date(2026, 11, 13)):
+                with self.assertRaisesRegex(ValueError, 'gargalo medido sem'):
+                    self.conferir(dia=dia)
+
+    def test_gargalo_nao_da_prioridade_a_conteudo(self):
+        self.p.write_text(self.texto.replace('ontem | |', 'ontem | gargalo medido: medicoes/tempos.json |'))
+        with self.assertRaisesRegex(ValueError, 'espera por M1'):
+            self.conferir('C1', dia=date(2026, 11, 10))
+
+    def test_gargalo_so_vale_na_razao_da_propria_maquinaria(self):
+        for texto in (
+            self.texto.replace('| pronto |', '| pronto; gargalo medido: medicoes/tempos.json |'),
+            self.texto.replace('ontem | |', 'ontem | gargalo medido: medicoes/tempos.json |'),
+            self.texto.replace('conteúdo', 'maquinaria').replace('| 1 |', '| 3 |')
+                .replace('pronto | |', 'pronto | gargalo medido: medicoes/tempos.json |'),
+        ):
+            self.p.write_text(texto)
+            with self.assertRaisesRegex(ValueError, 'espera por C1'):
+                self.conferir(dia=date(2026, 11, 10))
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
