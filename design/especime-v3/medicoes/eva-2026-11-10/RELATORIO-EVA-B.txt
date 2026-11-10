@@ -1,0 +1,157 @@
+EVA, adenda B: instalação das duas edições e cadeia do estudo
+
+1. B105.2. Duas derivações de identidade no estudo 16, cada uma com a sua
+   componente do 08 e duas casas decimais. Valores e fontes intactos:
+   60 282 480,32 e 60 282 480,38. A forma inglesa usa ponto decimal e
+   representa o mesmo valor. As duas plantas com um cêntimo a mais recusaram.
+   As duas componentes entram por @@linhas; os marcadores das duas línguas
+   resolvem nas derivações. Nenhuma outra unidade precisou desta via.
+
+2. Instalação. As 502 unidades de cada língua conferiram individualmente e
+   no contrato integral de core.texto_julgado. Ajustes, gabaritos e contrato
+   aprovados passaram a ativos. A planta candidato_incompleto recusa.
+   O texto julgado não mudou. A geração final reproduziu, byte a byte,
+   ajustes.json, os dois gabaritos e texto-julgado.json ativos.
+   PT 2030 ficou declarado como nome do programa, não como quantidade.
+
+3. Asserções. Refeitas sobre os dois Markdown instalados, com o detetor
+   intacto e sem tirar frases do seu alcance. Português: 21 ocorrências,
+   10 checks ativos, 14 reviews, zero por declarar e zero falhadas. Inglês:
+   13 ocorrências, nove checks ativos, 13 reviews, zero por declarar e zero
+   falhadas. Checks e reviews podem cobrir a mesma ocorrência e incluem
+   afirmações que não acionam uma palavra do detetor; não são parcelas das
+   contagens de ocorrências.
+   Entraram os dois checks de C027 e mais cinco checks e nove reviews da
+   adenda B. Os novos checks cobrem a quota da linha de receita, o crescimento
+   dos montantes, os mínimos das duas colunas e a descida anual da taxa.
+   As cinco plantas de valores que quebram essas comparações recusaram.
+   As revisões registam o que se leu ou contou: 308 entradas da DGAL, 307
+   completas e PENEDONO sem valores; 22 adagas por língua, todas ligadas ao
+   plano de 2026; três excertos conferidos nos PDF; cinco projetos do PPI
+   com pagamentos não inscritos. Células vazias não ganharam valores zero.
+   As medidas e os limites das revisões estão nos ficheiros preparados.
+
+4. Cadeia. HTML, livro, proveniência, decisões, registos, manifesto e cortes
+   refeitos. Os cortes continuam vazios por decisão explícita: o texto
+   julgado não admite uma segunda edição editorial depois da conferência.
+   O título dos metadados HTML identifica a edição pelo nome do ficheiro;
+   o corpo conserva a manchete julgada com 137, sem a duplicar na contagem.
+   C034, C035 e C036 inglesas repetem 302, 61 e 50 nas traduções parentéticas.
+   Essas três multiplicidades ficaram declaradas em edition_divergences.
+   A paridade passa com 623 tokens batidos de cada lado, 440 linhas
+   comparadas e zero divergências não declaradas. Retirar uma marca das
+   citações protegidas continua a recusar no contrato integral.
+   O aviso dos tokens ignorados, 489 contra 490, é estrutural: o inglês
+   repete o ano 2025 na tradução parentética de C034. Não há outra diferença
+   entre os multiconjuntos de tokens estruturais.
+
+   A ordem de entrada das componentes locais dependia de um conjunto sem
+   ordem. A planta com a ordem antiga produziu dois resumos diferentes em
+   processos com sementes 1 e 2. A ordenação explícita reproduz os bytes do
+   livro e da proveniência entre processos. A suite EVA exige essa igualdade.
+
+   Contagens da preparação: derivações 43 para 45 e ligações 208 para 210,
+   pelas duas identidades de B105.2. Primárias: 111, sem mudança nesta adenda.
+   Livro: 399 para 520 linhas, com 156 entradas e 35 saídas. As entradas são
+   111 primárias e 45 derivações; saíram linhas antigas sem uso no texto novo.
+   Asserções no livro: 21 para 28. Nove do texto anterior deixaram de ser
+   aplicáveis; entraram duas de C027 e catorze da adenda B.
+   Valores ignorados: 23 para 21. Entrou 2030, nome do programa; saíram
+   31, 52 e 73 da lista resultante da composição do texto novo.
+
+   Registos: português, 172 para 198 blocos e 490 para 614 figuras;
+   inglês, 171 para 198 blocos e 490 para 617 figuras. A cabeça, os quadros
+   completados e a reorganização do texto julgado explicam a mudança.
+   As três traduções parentéticas explicam a diferença entre línguas.
+   Os blocos do registo agregam unidades, por isso 198 não substitui as
+   502 unidades do contrato.
+   Abreviaturas de fonte: 221 para 212 por edição do 16; a contagem global
+   do teste passa de 1656 para 1638. Os corpos alojados das linhas próprias
+   usam a via de resumo integral, conferida separadamente.
+   Teste do exportador: 629 tokens batidos no português e 632 no inglês,
+   menos 15 não-figuras por língua, dão as 614 e 617 figuras dos registos.
+   Teste de voz: mais 251 referências antes e depois e mais 53 blocos antes
+   e depois. As constantes de blocos passam de 2704/2601 para 2757/2654;
+   operações, cortes e figuras caídas não mudam.
+
+   core/gate_baselines.json, somente os quatro documentos do estudo 16:
+   - Português Markdown: números 895 para 1118, batidos 486 para 629.
+   - Português HTML: números 890 para 1120, batidos 486 para 629.
+   - Inglês Markdown: números 895 para 1122, batidos 486 para 632.
+   - Inglês HTML: números 890 para 1124, batidos 486 para 632.
+   As mudanças contam o texto instalado, não uma estimativa do gabarito.
+   Órfãos, asserções por declarar, asserções falhadas e adjacências não
+   declaradas continuam em zero. Sete trechos de prosa têm declarações
+   exatas: seis enumerações de anos e a frase inglesa que separa o fim de
+   2025 da variação de 33 dias.
+
+   Avisos de atribuição: zero para sete no Markdown e zero para oito no
+   HTML, em cada língua. Valores sem attributed_to: zero para três nos
+   dois Markdown e no HTML português, zero para quatro no HTML inglês.
+   Os avisos foram conferidos, não apagados. O detetor usa uma janela que
+   alcança DGAL junto de colunas expressamente municipais, e encontra
+   linhas com valores iguais a dias de datas. Os selos mantêm as fontes
+   verdadeiras. O HTML aproxima ainda a linha municipal de 2018 e, em
+   inglês, a taxa de amortização de 93.64. Cada ocorrência e a classificação
+   estão em atribuicoes-declaradas.json e preparado/atribuicoes-eva-b.json.
+   Um portão verde não significa que estes avisos deixaram de existir.
+
+   Suites: EVA, três para oito testes, pelas identidades, asserções,
+   medidas documentais, determinismo e multiplicidades julgadas. O teste
+   de linhas próprias passou a acrescentar a planta numa cópia do estudo
+   18: o 16 já tem um contrato que proíbe acrescentar essa prosa. A árvore
+   real do 18 não mudou. O teste do exportador passou a resolver os corpos
+   próprios relativamente a content/, conforme o contrato dessa via.
+
+5. Outros estudos. Depois da instalação, os 96 ficheiros da conferência
+   anterior mantiveram os resumos. A conferência foi alargada aos 145
+   ficheiros seguidos: estudo 07, 28; 08, 45; 17, 13; 18, 21; 19, 38.
+   Zero diferenças, sem novos ficheiros por seguir nessas pastas.
+   Pares SHA-256 em preparado/outros-estudos-eva-b.json.
+
+6. Portão final. Uma corrida de core.gate pelo curto.sh: código 0,
+   GATE: PASS. Duração medida: 1 199 segundos. Arrancou com mais de duas
+   horas de folga até ao teto. Nenhum portão do sítio nem captura foi pedido
+   ou executado. Depois do portão, os 145 resumos dos outros estudos e as
+   duas referências julgadas foram novamente conferidos, sem diferenças.
+
+Últimas oito linhas do portão, copiadas:
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Commits do motor, um por ponto, verificados:
+f30b0df EVA regista o portão final verde e documenta a instalação completa
+78882a3 EVA confere os outros cinco estudos byte a byte depois da instalação
+64b795e EVA fecha a cadeia instalada e fixa as contagens medidas
+599d16e EVA declara e confere as asserções das duas edições instaladas
+c1625d9 EVA instala as duas edições com 502 unidades conferidas
+f3e3573 EVA declara as duas identidades de B105.2 e recusa o cêntimo inglês alterado
+
+Prova e custo da passagem
+
+45 execuções registadas por curto.sh: 12 corridas de suites específicas,
+uma de core.gate e 32 outras gerações ou conferências. As medidas conservam
+código, duração e última linha de cada execução. As quinze saídas 1 foram
+diagnósticos: duas asserções antes de declarar, duas atribuições que continuam
+explicitamente classificadas, duas adjacências, uma paridade, quatro guardas
+de medição de baselines, uma construção do registo, duas composições e o
+primeiro ensaio do exportador. As suites terminaram verdes após a correção
+do caminho dos corpos no teste do exportador. O portão integral passou.
+As duas asserções lançadas internamente pelo conferidor de candidatos contra
+o livro anterior constam do diagnóstico da preparação; não foram aprovações.
+
+Chamadas de ferramentas até esta emissão: 101, segundo o registo
+da sessão, incluindo exec e wait. A contagem não antecipa chamadas posteriores
+de commit e verificação.
+tokens used: 15083969 (contagem cumulativa exposta até esta emissão).
+Os detalhes estão em medidas-do-construtor-eva-b.json e o portão em
+registo-portao-eva-b.log. medidas-eva.json não mudou.
+
+Nenhuma unidade ficou parada. Nenhuma frase julgada nem linha do estudo 08
+foi alterada. Os seis pontos estão concluídos no motor.

@@ -1,0 +1,884 @@
+{
+  "mandato": "EVA, adenda B",
+  "estado": "concluido_no_motor",
+  "cabeca_inicial": "fce2fab",
+  "commits_motor": [
+    "f30b0df EVA regista o portão final verde e documenta a instalação completa",
+    "78882a3 EVA confere os outros cinco estudos byte a byte depois da instalação",
+    "64b795e EVA fecha a cadeia instalada e fixa as contagens medidas",
+    "599d16e EVA declara e confere as asserções das duas edições instaladas",
+    "c1625d9 EVA instala as duas edições com 502 unidades conferidas",
+    "f3e3573 EVA declara as duas identidades de B105.2 e recusa o cêntimo inglês alterado"
+  ],
+  "unidades": {
+    "pt": 502,
+    "en": 502
+  },
+  "referencias_julgadas_inalteradas": true,
+  "contratos_incompletos_instalados": 0,
+  "preparacao": {
+    "primarias": 111,
+    "derivadas_antes": 43,
+    "derivadas_depois": 45,
+    "ligacoes_antes": 208,
+    "ligacoes_depois": 210,
+    "datas": 3,
+    "ligacoes_datas": 11
+  },
+  "assercoes_instaladas": {
+    "pt": {
+      "ocorrencias": 21,
+      "checks_ativos": 10,
+      "reviews_ativos": 14,
+      "por_declarar": 0,
+      "falhadas": 0
+    },
+    "en": {
+      "ocorrencias": 13,
+      "checks_ativos": 9,
+      "reviews_ativos": 13,
+      "por_declarar": 0,
+      "falhadas": 0
+    }
+  },
+  "cadeia": {
+    "deltas-registos": {
+      "The accounts of the Câmara de Évora, 2010 to 2025.record.json": {
+        "blocos_antes": 171,
+        "blocos_depois": 198,
+        "refs_antes": 490,
+        "refs_depois": 617,
+        "abreviaturas_antes": 221,
+        "abreviaturas_depois": 212
+      },
+      "As contas da Câmara de Évora, 2010 a 2025 (pt-PT).record.json": {
+        "blocos_antes": 172,
+        "blocos_depois": 198,
+        "refs_antes": 490,
+        "refs_depois": 614,
+        "abreviaturas_antes": 221,
+        "abreviaturas_depois": 212
+      }
+    },
+    "deltas-livro": {
+      "linhas": {
+        "antes": 399,
+        "depois": 520,
+        "acrescentadas": [
+          "amr-agua-pago-2025",
+          "amr-agua-previsto-2025",
+          "amr-agua-saneamento-residuos-pago-2025",
+          "amr-agua-saneamento-residuos-previsto-2025",
+          "amr-residuos-pago-2025",
+          "amr-residuos-pago-2025-fonte",
+          "amr-residuos-previsto-2025",
+          "amr-saneamento-pago-2025",
+          "amr-saneamento-pago-2025-fonte",
+          "amr-saneamento-previsto-2025",
+          "b105-divida-orcamental-2020-quadro3",
+          "b105-divida-orcamental-2020-quadro32",
+          "bens-servicos-exec-pct-2025",
+          "bens-servicos-pagos-2025-fonte",
+          "bens-servicos-quota-despesa-corrente-2025",
+          "cabeca-c008-14",
+          "cabeca-c008-14-fonte",
+          "cabeca-c010-20",
+          "cabeca-c010-21",
+          "cabeca-c010-21-fonte",
+          "cabeca-c011-24",
+          "cabeca-c011-24-fonte",
+          "cabeca-c011-25",
+          "cabeca-c011-25-fonte",
+          "cabeca-c028-51",
+          "cabeca-c034-55",
+          "cabeca-c035-59",
+          "cabeca-c037-67",
+          "cabeca-c047-82",
+          "cabeca-c051-87",
+          "cabeca-c052-88",
+          "cabeca-c052-89",
+          "cabeca-c052-90",
+          "cabeca-c055-92",
+          "compromissos-faturados-2021",
+          "compromissos-faturados-2022",
+          "compromissos-faturados-2023",
+          "despesa-corrente-paga-2025-fonte",
+          "despesas-por-pagar-periodos-anteriores-2025",
+          "divida-inicio-mandato-rel2015",
+          "divida-total-acrescimo-criterio-2024",
+          "divida-total-acrescimo-criterio-2024-fonte",
+          "divida-vencida-mais-365-dias-2025",
+          "divida-vencida-mais-365-dias-2025-fonte",
+          "dtas-2025-curto-prazo-total",
+          "dtas-2025-periodo",
+          "dtas-2025-vencida-180-365",
+          "dtas-2025-vencida-180-365-fonte",
+          "dtas-2025-vencida-90-180",
+          "dtas-2025-vencida-90-180-fonte",
+          "dtas-2025-vencida-menos-90",
+          "dtas-2025-vencida-menos-90-fonte",
+          "dtas-2025-vincenda-curto-prazo",
+          "dtas-2025-vincenda-curto-prazo-fonte",
+          "dtas-intervalo-180",
+          "dtas-intervalo-365",
+          "dtas-intervalo-90",
+          "efetivos-2024",
+          "efetivos-2025",
+          "efetivos-variacao-2024",
+          "efetivos-variacao-2025",
+          "efetivos-variacao-2025-fonte",
+          "evora2027-receita-orcada-2025",
+          "excesso-divida-2018-rel2018",
+          "exec-receita-total-2024-pct",
+          "exec-total-2018-pct",
+          "exec-total-2019-pct",
+          "exec-total-2020-pct",
+          "exec-total-2021-pct",
+          "exec-total-2022-pct",
+          "exec-total-2023-pct",
+          "gop26-outras-receitas-correntes",
+          "gop26-receita-10",
+          "gop26-receita-11",
+          "gop26-receita-12",
+          "gop26-receita-13",
+          "gop26-receita-2",
+          "gop26-receita-3",
+          "gop26-receita-4",
+          "gop26-receita-5",
+          "gop26-receita-6",
+          "gop26-receita-8",
+          "gop26-receita-9",
+          "gop26-receita-acima-do-cobrado-2025",
+          "gop26-sistema-integrado-transito",
+          "gop26-transf-capital-acima-do-cobrado-2025",
+          "juros-encargos-exec-pct-2025",
+          "juros-mora-dotacao-corrigida-2025",
+          "juros-mora-dotacao-inicial-2025",
+          "juros-mora-obrigacoes-2025",
+          "juros-mora-obrigacoes-2025-fonte",
+          "juros-mora-pagos-2025",
+          "juros-mora-pagos-2025-fonte",
+          "juros-mora-por-pagar-2025",
+          "orcamento-2024-fonte",
+          "orcamento-corrigido-2025-fonte",
+          "outras-rec-correntes-cobrado-2015",
+          "outras-rec-correntes-cobrado-2015-fonte",
+          "outras-rec-correntes-cobrado-2016",
+          "outras-rec-correntes-cobrado-2016-fonte",
+          "outras-rec-correntes-cobrado-2017",
+          "outras-rec-correntes-cobrado-2017-fonte",
+          "outras-rec-correntes-cobrado-2018",
+          "outras-rec-correntes-cobrado-2018-fonte",
+          "outras-rec-correntes-cobrado-2019",
+          "outras-rec-correntes-cobrado-2019-fonte",
+          "outras-rec-correntes-cobrado-2020",
+          "outras-rec-correntes-cobrado-2020-fonte",
+          "outras-rec-correntes-cobrado-2021",
+          "outras-rec-correntes-cobrado-2021-fonte",
+          "outras-rec-correntes-cobrado-2022",
+          "outras-rec-correntes-cobrado-2022-fonte",
+          "outras-rec-correntes-cobrado-2023",
+          "outras-rec-correntes-cobrado-2023-fonte",
+          "outras-rec-correntes-cobrado-2024",
+          "outras-rec-correntes-cobrado-2024-fonte",
+          "outras-rec-correntes-orc-2015",
+          "outras-rec-correntes-orc-2016",
+          "outras-rec-correntes-orc-2017",
+          "outras-rec-correntes-orc-2018",
+          "outras-rec-correntes-orc-2019",
+          "outras-rec-correntes-orc-2020",
+          "outras-rec-correntes-orc-2021",
+          "outras-rec-correntes-orc-2022",
+          "outras-rec-correntes-orc-2023",
+          "outras-rec-correntes-orc-2024",
+          "pc25-quadro-3",
+          "pessoal-pago-2025-fonte",
+          "pessoal-quota-despesa-corrente-2025",
+          "pmp-2023-expurgado",
+          "receita-cobrada-2024-fonte",
+          "receita-cobrada-2025-10",
+          "receita-cobrada-2025-12",
+          "receita-cobrada-2025-13",
+          "receita-cobrada-2025-13-fonte",
+          "receita-cobrada-2025-2",
+          "receita-cobrada-2025-8",
+          "receita-cobrada-2025-8-fonte",
+          "receita-cobrada-2025-9",
+          "receita-cobrada-2025-9-fonte",
+          "receita-cobrada-2025-fonte",
+          "receita-corrente-2025-fonte",
+          "reconciliacao-diferencas-liquidas-2025",
+          "reconciliacao-diferencas-liquidas-2025-fonte",
+          "rfalei-vigor-2014-01-01",
+          "rossio-plano-2025-total",
+          "rubricas-sem-cobranca-2025",
+          "rubricas-sem-cobranca-quota-falta-2025",
+          "saldo-seguinte-execucao-orcamental-2025",
+          "saldo-seguinte-execucao-orcamental-2025-fonte",
+          "saldo-seguinte-operacoes-tesouraria-2025",
+          "saldo-seguinte-operacoes-tesouraria-2025-fonte",
+          "transf-cofinanciados-orcado-2025",
+          "transf-correntes-quota-receita-corrente-2025",
+          "transferencias-correntes-2025-fonte",
+          "transferencias-correntes-exec-pct-2025"
+        ],
+        "retiradas": [
+          "am2025-seats-total",
+          "bens-servicos-share",
+          "divida-inicio-mandato-2015",
+          "gop26-cec-ajustado",
+          "gop26-cec-diferenca",
+          "gop26-impostos-texto",
+          "gop26-plh-definido",
+          "gop26-proj-transito",
+          "imi-2019",
+          "imi-2021",
+          "ind-gop-cultura-2015",
+          "ind-gop-cultura-2016",
+          "ind-gop-cultura-2017",
+          "ind-gop-cultura-2018",
+          "ind-gop-cultura-2019",
+          "ind-gop-cultura-2021",
+          "ind-gop-cultura-2022",
+          "ind-gop-cultura-2023",
+          "ind-gop-cultura-2025",
+          "pessoal-share-correntes",
+          "pmp-2022-revisto",
+          "servico-divida-2021",
+          "socio-municipal-culture-expenditure-2013",
+          "socio-municipal-culture-expenditure-2014",
+          "socio-municipal-culture-expenditure-2015",
+          "socio-municipal-culture-expenditure-2016",
+          "socio-municipal-culture-expenditure-2017",
+          "socio-municipal-culture-expenditure-2018",
+          "socio-municipal-culture-expenditure-2019",
+          "socio-municipal-culture-expenditure-2020",
+          "socio-municipal-culture-expenditure-2021",
+          "socio-municipal-culture-expenditure-2022",
+          "socio-municipal-culture-expenditure-2023",
+          "socio-municipal-culture-expenditure-2024",
+          "transf-correntes-share"
+        ]
+      },
+      "assertions": {
+        "antes": 21,
+        "depois": 28
+      },
+      "ignore": {
+        "antes": [
+          "31",
+          "52",
+          "73",
+          "2004",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026",
+          "2027"
+        ],
+        "depois": [
+          "2004",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026",
+          "2027",
+          "2030"
+        ]
+      }
+    },
+    "baselines-medidas": [
+      {
+        "name": "evora-contas-camara-pt",
+        "antes": {
+          "numbers": 895,
+          "matched": 486,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 1118,
+          "matched": 629,
+          "orphans": 0,
+          "misattributions": 7,
+          "undeclared": 3,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        }
+      },
+      {
+        "name": "evora-contas-camara-pt-html",
+        "antes": {
+          "numbers": 890,
+          "matched": 486,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 1120,
+          "matched": 629,
+          "orphans": 0,
+          "misattributions": 8,
+          "undeclared": 3,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        }
+      },
+      {
+        "name": "evora-contas-camara-en",
+        "antes": {
+          "numbers": 895,
+          "matched": 486,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 1122,
+          "matched": 632,
+          "orphans": 0,
+          "misattributions": 7,
+          "undeclared": 3,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        }
+      },
+      {
+        "name": "evora-contas-camara-en-html",
+        "antes": {
+          "numbers": 890,
+          "matched": 486,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 1124,
+          "matched": 632,
+          "orphans": 0,
+          "misattributions": 8,
+          "undeclared": 4,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        }
+      }
+    ],
+    "registos-medidas": [
+      {
+        "lang": "pt-PT",
+        "blocos": 198,
+        "stats": {
+          "figures": 614,
+          "kinds": {
+            "heading": 38,
+            "paragraph": 110,
+            "list": 21,
+            "table": 29
+          },
+          "tight": 0,
+          "phantom": 0,
+          "nao_figuras": 15,
+          "matched": 614,
+          "kinds_origem": {
+            "api-viva": 0,
+            "raw-sem-manifesto": 3,
+            "derivado": 25,
+            "portal-estatico": 0,
+            "pdf-sem-resumo": 287
+          },
+          "with_digest": 299,
+          "with_prefix": 212,
+          "ligacoes": 0,
+          "figuras_caidas_linhas": [],
+          "offsets_conferidos": 634,
+          "blocos_conferidos": 198,
+          "estratos": {
+            "S1·aprovado": 0,
+            "S2·L1·regra-aprovada": 0,
+            "S2·inventário-cego·aprovado-24.08": 0,
+            "S3·famílias-leituras·aprovado-24.08": 0,
+            "S4·coerência·aprovado-24.08": 0,
+            "S5·segunda-voz·proposta-27.08": 0,
+            "S6·terceira-voz·proposta-27.08": 0
+          },
+          "com_palavra": 0,
+          "operacoes": 0,
+          "nenhuma": 0,
+          "cortes": 0,
+          "substituicoes": 0,
+          "refs_antes": 614,
+          "refs_depois": 614,
+          "blocos_antes": 198,
+          "blocos_depois": 198,
+          "frases_depois": 1032,
+          "titulos_novos": 0,
+          "italicos_conferidos": 0,
+          "excecoes_R6": 0,
+          "figuras_caidas": 0
+        },
+        "sha256": "e7a2537746f6c7d9002b5fb2b49f5dc0038274049bbc231e891464c16e076aba"
+      },
+      {
+        "lang": "en",
+        "blocos": 198,
+        "stats": {
+          "figures": 617,
+          "kinds": {
+            "heading": 38,
+            "paragraph": 110,
+            "list": 21,
+            "table": 29
+          },
+          "tight": 0,
+          "phantom": 0,
+          "nao_figuras": 15,
+          "matched": 617,
+          "kinds_origem": {
+            "api-viva": 0,
+            "raw-sem-manifesto": 3,
+            "derivado": 25,
+            "portal-estatico": 0,
+            "pdf-sem-resumo": 287
+          },
+          "with_digest": 302,
+          "with_prefix": 212,
+          "ligacoes": 0,
+          "figuras_caidas_linhas": [],
+          "offsets_conferidos": 637,
+          "blocos_conferidos": 198,
+          "estratos": {
+            "S1·aprovado": 0,
+            "S2·L1·regra-aprovada": 0,
+            "S2·inventário-cego·aprovado-24.08": 0,
+            "S3·famílias-leituras·aprovado-24.08": 0,
+            "S4·coerência·aprovado-24.08": 0,
+            "S5·segunda-voz·proposta-27.08": 0,
+            "S6·terceira-voz·proposta-27.08": 0
+          },
+          "com_palavra": 0,
+          "operacoes": 0,
+          "nenhuma": 0,
+          "cortes": 0,
+          "substituicoes": 0,
+          "refs_antes": 617,
+          "refs_depois": 617,
+          "blocos_antes": 198,
+          "blocos_depois": 198,
+          "frases_depois": 1033,
+          "titulos_novos": 0,
+          "italicos_conferidos": 0,
+          "excecoes_R6": 0,
+          "figuras_caidas": 0
+        },
+        "sha256": "88a7c1b9046c4924ff703502db6184af1007b94c682b0cd637a34d9200988cd6"
+      }
+    ],
+    "planta-ordem": {
+      "1": "db9716d96779b63180354919a375d55addbfa80f891990e1be580c2624511771",
+      "2": "2149275d312b081a35de71731983b7d392b496c6d01982fb0cb415b90aff9499"
+    },
+    "reproducibilidade": {
+      "ledger.json": "ef19201d7b5eec4446bfdf4875c67c0f4adb1dc5ee36b4ca15e0b4b84c86f0ec",
+      "Technical Source/origem-das-linhas.json": "0ab7c7f483eb2f719266688a2ab840dfa204c88a2ceeef1a138a99aa9571b076"
+    },
+    "motivos": {
+      "linhas": "111 primárias e 45 derivações novas; 35 linhas antigas sem uso deixaram o livro. As duas identidades mantêm as componentes do 08.",
+      "assertions": "21 para 28: nove declarações do texto anterior deixam de ser aplicáveis, duas de C027 entram e catorze da adenda B entram.",
+      "registos": "A cabeça nova, os quadros completados e a reorganização do texto julgado aumentam blocos e figuras. As três traduções parentéticas C034 a C036 explicam as três figuras a mais em inglês.",
+      "abreviaturas": "221 para 212 por edição do 16; os corpos alojados das linhas próprias têm resumo integral e via de prova direta, medida separadamente.",
+      "baselines": "Contagens medidas nos quatro documentos instalados. Atribuições de proximidade e dias de datas discriminados nos dois ficheiros de atribuições; nenhuma atribuição factual alterada.",
+      "prosa": "Sete trechos exatos declarados: enumerações de anos em ambas as línguas e o ano 2025 seguido da variação de 33 dias na frase inglesa.",
+      "determinismo": "A travessia das componentes partia de um conjunto sem ordem; duas sementes produziam resumos diferentes. A ordenação e a suite EVA exigem bytes idênticos entre processos."
+    }
+  },
+  "reproducao_candidatos": {
+    "ajustes.json": "7a74904ac2bb1a6b2225493fd85cec7c4864515c0dc0238b4dfa809505275680",
+    "documento.pt.md.tmpl": "61c6e248aa52d73b6b8fcd1d72d1800a6c11cb497dc2268223d0452df8178b64",
+    "documento.en.md.tmpl": "5a0812bacd751344786ef362cb803e88e25a84eecbda772c46edd7fedef725f8",
+    "texto-julgado.json": "f1424cab4801cb5957709a51a963772b95477cb4c92fdb3ede43a7501a0c611b"
+  },
+  "outros_estudos": {
+    "algoritmo": "sha256",
+    "estado": "conferido_depois_da_instalacao",
+    "ficheiros_da_conferencia_anterior": 96,
+    "ficheiros_seguidos_conferidos": 145,
+    "por_estudo": {
+      "07": 28,
+      "08": 45,
+      "17": 13,
+      "18": 21,
+      "19": 38
+    },
+    "diferencas": 0
+  },
+  "portao": {
+    "comando": "python3 -m core.gate",
+    "via": "curto.sh",
+    "corridas": 1,
+    "codigo": 0,
+    "duracao_segundos": 1199,
+    "linhas": 388,
+    "ultimas_linhas": [
+      "GATE  editions evora-quem-governou-pt-md-html ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+      "GATE: PASS"
+    ],
+    "folga_antes_do_teto": "Mais de duas horas no início da corrida; mínimo pedido: trinta minutos."
+  },
+  "corridas_por_curto": {
+    "ponto1-testes.log": {
+      "codigo": 0,
+      "segundos": 11,
+      "linhas": 10,
+      "ultima_linha": "EVA: PASS, 4 testes"
+    },
+    "preparacao.log": {
+      "codigo": 0,
+      "segundos": 10,
+      "linhas": 2,
+      "ultima_linha": "POR DOCUMENTO {'Prestação de Contas 2025 — Município de Évora': 63, '2021 relatorio gestao (título por confirmar no documento)': 7, '2022 relatorio gestao (título por confirmar no documento)': 4, '2023 relatorio gestao (título por confirmar no documento)': 5, '2015 relatorio gestao (título por confirmar no documento)': 4, '2016 relatorio gestao (título por confirmar no documento)': 2, '2017 relatorio gestao (título por confirmar no documento)': 2, '2018 relatorio gestao (título por confirmar no documento)': 4, '2019 relatorio gestao (título por confirmar no documento)': 3, 'Grandes Opções do Plano e Orçamento 2026 — Município de Évora': 17}"
+    },
+    "geracao.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 2,
+      "ultima_linha": "en unidades 502 ligações 621 paragens 0"
+    },
+    "candidatos.log": {
+      "codigo": 0,
+      "segundos": 18,
+      "linhas": 4,
+      "ultima_linha": "ASSERTIONS en codigo 1 ASSERTIONS: FAIL — 13 quantifier hits, 2 checked, 4 review, 9 undeclared, 0 failed"
+    },
+    "compor-instalacao.log": {
+      "codigo": 1,
+      "segundos": 1,
+      "linhas": 1,
+      "ultima_linha": "COMPOR: RECUSA — The accounts of the Câmara de Évora, 2010 to 2025.md: o número '2030' não bate com nenhuma linha e nenhuma fonte o ignora: …889 441 | | LIFE projects | €836 254† | | PT 2030, urban regeneration | €823 326† | The first…"
+    },
+    "texto-testes.log": {
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 15,
+      "ultima_linha": "TEXTO JULGADO: PASS, 9 testes"
+    },
+    "compor-instalacao2.log": {
+      "codigo": 1,
+      "segundos": 2,
+      "linhas": 1,
+      "ultima_linha": "COMPOR: RECUSA — derivação local sem componente: b105-divida-orcamental-2020-quadro3"
+    },
+    "geracao2.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 2,
+      "ultima_linha": "en unidades 502 ligações 621 paragens 0"
+    },
+    "compor-instalacao3.log": {
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 8,
+      "ultima_linha": "COMPOR: ESCRITO"
+    },
+    "assertions-instaladas-pt.log": {
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 19,
+      "ultima_linha": "ASSERTIONS: FAIL — 21 quantifier hits, 5 checked, 5 review, 13 undeclared, 0 failed"
+    },
+    "assertions-instaladas-en.log": {
+      "codigo": 1,
+      "segundos": 1,
+      "linhas": 14,
+      "ultima_linha": "ASSERTIONS: FAIL — 13 quantifier hits, 4 checked, 4 review, 9 undeclared, 0 failed"
+    },
+    "compor-assercoes.log": {
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 8,
+      "ultima_linha": "COMPOR: ESCRITO"
+    },
+    "assertions-final-pt.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 15,
+      "ultima_linha": "ASSERTIONS: PASS — 21 quantifier hits, 10 checked, 14 review, 0 undeclared, 0 failed"
+    },
+    "assertions-final-en.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 14,
+      "ultima_linha": "ASSERTIONS: PASS — 13 quantifier hits, 9 checked, 13 review, 0 undeclared, 0 failed"
+    },
+    "eva-assercoes-testes.log": {
+      "codigo": 0,
+      "segundos": 10,
+      "linhas": 12,
+      "ultima_linha": "EVA: PASS, 6 testes"
+    },
+    "html.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 3,
+      "ultima_linha": "MAKE_HTML: PASS — 2 edição(ões) rendida(s) do Markdown"
+    },
+    "cadeia.log": {
+      "codigo": 1,
+      "segundos": 4,
+      "linhas": 19,
+      "ultima_linha": "publisher.export_records.Fail: R2 As contas da Câmara de Évora, 2010 a 2025 (pt-PT): the delivered HTML edition has 630 matched figures and the .md has 629"
+    },
+    "baselines.log": {
+      "codigo": 1,
+      "segundos": 1,
+      "linhas": 6,
+      "ultima_linha": "AssertionError: {'numbers': 1118, 'matched': 629, 'orphans': 0, 'misattributions': 7, 'undeclared': 3, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 4}"
+    },
+    "atribuicoes-pt.log": {
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 11,
+      "ultima_linha": "ATTRIBUTIONS: FAIL — 629 ledger-matched values scanned, 7 misattributions, 3 undeclared"
+    },
+    "prosa-pt.log": {
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 5,
+      "ultima_linha": "PROSE: FAIL — 4 number adjacencies (0 declared ignore(s))"
+    },
+    "atribuicoes-en.log": {
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 11,
+      "ultima_linha": "ATTRIBUTIONS: FAIL — 632 ledger-matched values scanned, 7 misattributions, 3 undeclared"
+    },
+    "html2.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 3,
+      "ultima_linha": "MAKE_HTML: PASS — 2 edição(ões) rendida(s) do Markdown"
+    },
+    "cadeia2.log": {
+      "codigo": 0,
+      "segundos": 13,
+      "linhas": 11,
+      "ultima_linha": "CADEIA: PASS"
+    },
+    "baselines2.log": {
+      "codigo": 1,
+      "segundos": 1,
+      "linhas": 7,
+      "ultima_linha": "AssertionError: {'numbers': 1120, 'matched': 629, 'orphans': 0, 'misattributions': 8, 'undeclared': 3, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0}"
+    },
+    "atribuicoes-declarar.log": {
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 2,
+      "ultima_linha": "ATRIBUICOES: ESCRITO atribuicoes-declaradas.json"
+    },
+    "baselines3.log": {
+      "codigo": 1,
+      "segundos": 1,
+      "linhas": 8,
+      "ultima_linha": "AssertionError: {'numbers': 1122, 'matched': 632, 'orphans': 0, 'misattributions': 7, 'undeclared': 3, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 1}"
+    },
+    "eva-cadeia-testes.log": {
+      "codigo": 0,
+      "segundos": 14,
+      "linhas": 13,
+      "ultima_linha": "EVA: PASS, 7 testes"
+    },
+    "prosa-en.log": {
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 2,
+      "ultima_linha": "PROSE: FAIL — 1 number adjacencies (6 declared ignore(s))"
+    },
+    "cadeia3.log": {
+      "codigo": 0,
+      "segundos": 15,
+      "linhas": 11,
+      "ultima_linha": "CADEIA: PASS"
+    },
+    "baselines4.log": {
+      "codigo": 1,
+      "segundos": 2,
+      "linhas": 9,
+      "ultima_linha": "AssertionError: {'numbers': 1124, 'matched': 632, 'orphans': 0, 'misattributions': 8, 'undeclared': 4, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0}"
+    },
+    "export-testes.log": {
+      "codigo": 1,
+      "segundos": 40,
+      "linhas": 16,
+      "ultima_linha": "FileNotFoundError: [Errno 2] No such file or directory: '<motor>/16 Évora Contas da Câmara/source/PRESTACAO_CONTAS_2025.pdf'"
+    },
+    "voz-testes.log": {
+      "codigo": 0,
+      "segundos": 73,
+      "linhas": 1,
+      "ultima_linha": "VOZ_TEST: PASS — 26 checks (1 a cut sentence retained, caught by the sentence conference, 2 a sentence removed with no operation, caught by R3(b)'s reinstatement, 3 a substitution with stale offsets, caught by the offset check and by nothing else, 4 an empty block left in the record, caught by the empty check and by nothing else, 5 a cut over 04 pt b86 f0 which carries ine-nuts3-entries, refused by R6 naming the sentence, the row and the value, 6 a substitution that loses the 25, 7 an excecao_R6 with no written reason, 8 an italic companion title that reaches the record as plain prose, each of the eight also run with its own rule switched off in place, the twelve editions clean over seven gates, the counts of the pass across the three strata, the exporter applying the pass on a copied tree, no record in content/ carrying an operations file, the reading copy carrying neither stratum nor reason, the orphan rule pruned and the twelve records unchanged by it, an interval remapped exactly by deletion where the substring repeats, an ambiguous hand-written depois still refused, and a second-pass operation with no twin)"
+    },
+    "baselines5.log": {
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 4,
+      "ultima_linha": "evora-contas-camara-en-html {'numbers': 1124, 'matched': 632, 'orphans': 0, 'misattributions': 8, 'undeclared': 4, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0}"
+    },
+    "compor-testes.log": {
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 47,
+      "ultima_linha": "COMPOR: PASS — 23 checks"
+    },
+    "ev2-testes.log": {
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 6,
+      "ultima_linha": "EV2: PASS, 14 checks (contas, plantas, ressalva, proveniência e duas edições)"
+    },
+    "proprias-testes.log": {
+      "codigo": 0,
+      "segundos": 4,
+      "linhas": 32,
+      "ultima_linha": "LINHAS PROPRIAS: PASS, 26 testes"
+    },
+    "paridade.log": {
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 5,
+      "ultima_linha": "EDITIONS: FAIL — 629 vs 632 matched tokens, 443 rows compared, 3 drift(s)"
+    },
+    "geracao-final.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 2,
+      "ultima_linha": "en unidades 502 ligações 621 paragens 0"
+    },
+    "ativos-testes.log": {
+      "codigo": 0,
+      "segundos": 64,
+      "linhas": 12,
+      "ultima_linha": "GABARITOS ATIVOS: PASS, 6 testes"
+    },
+    "export-testes2.log": {
+      "codigo": 0,
+      "segundos": 143,
+      "linhas": 1,
+      "ultima_linha": "EXPORT_RECORDS_TEST: PASS — 34 checks (R1 a row that is not in the ledger, R1 a value with one digit edited, R2 a reference deleted from a block, R2 a reference added on a number the ledger does not match, R3 one character changed in a block, R3 a ** left inside the text, R3 a space put in front of a full stop, R3 the same character change on 03 en which has no HTML edition on disk, R3 every block of 03 en is inside its own .md, R3(04) a chart printing a figure the replaced table does not, R3(04) a word changed outside the chart regions, R3(04) the record carries the .md's thirteen tables and no chart at all, R4 an unsorted key, R4 a timestamp inside a record, R5 a record deleted without its manifest entry, R5 a record edited without rebuilding the manifest, R7 an invented source_digest_kind, R7 a 63-character digest, R7 a ledger row that fits none of the five reasons, R8 one byte touched in an HTML edition, the real tree clean over twelve editions, the twelve reference counts with not one phantom space, the 2346 row choices of 07, 08 and 09 are the ones the shipped receipts already name)"
+    },
+    "cadeia4.log": {
+      "codigo": 0,
+      "segundos": 15,
+      "linhas": 11,
+      "ultima_linha": "CADEIA: PASS"
+    },
+    "paridade2.log": {
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 3,
+      "ultima_linha": "EDITIONS: PASS — 623 vs 623 matched tokens, 440 rows compared, 0 drift(s)"
+    },
+    "eva-final-testes.log": {
+      "codigo": 0,
+      "segundos": 13,
+      "linhas": 14,
+      "ultima_linha": "EVA: PASS, 8 testes"
+    },
+    "geracao-final2.log": {
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 2,
+      "ultima_linha": "en unidades 502 ligações 621 paragens 0"
+    },
+    "core-gate.log": {
+      "codigo": 0,
+      "segundos": 1199,
+      "linhas": 388,
+      "ultima_linha": "GATE: PASS"
+    }
+  },
+  "contagens_corridas": {
+    "total": 45,
+    "suites_especificas": 12,
+    "core_gate": 1,
+    "outras_geracoes_e_conferencias": 32,
+    "por_codigo": {
+      "0": 30,
+      "1": 15
+    },
+    "portoes_sitio": 0,
+    "capturas": 0
+  },
+  "ferramentas_ate_a_emissao": {
+    "total": 101,
+    "por_nome": {
+      "exec": 88,
+      "wait": 13
+    },
+    "criterio": "Chamadas de alto nível no registo desta sessão, até à chamada que escreve este relatório. Não inclui chamadas posteriores de commit e verificação."
+  },
+  "tokens_used_cumulativo_exposto": {
+    "input_tokens": 15019082,
+    "cached_input_tokens": 14849920,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 64887,
+    "reasoning_output_tokens": 28746,
+    "total_tokens": 15083969
+  },
+  "limites": [
+    "Os avisos de atribuição de janela permanecem explícitos nas baselines e nas declarações, sem falsificar a fonte de uma linha.",
+    "Review identifica evidência e limites; não equivale a uma prova aritmética.",
+    "Esta passagem instala no motor; a travessia para o sítio é posterior."
+  ]
+}
