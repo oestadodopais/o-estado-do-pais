@@ -5,7 +5,7 @@ uso: conferir-regras.py <CLAUDE.md antigo> <CLAUDE.md novo> [--planta]
   O antigo lê-se de `git show main:CLAUDE.md` guardado num ficheiro. Confere: (1) cada regra numerada com cabeça a negrito
   do antigo tem a mesma cabeça no novo; (2) cada referência § (decisões), M (melhorias) e I (questões) do antigo está no
   novo; (3) cada frase dura da lista abaixo (os «nunca», os comandos, os números das regras) está no novo; (4) o novo não
-  tem travessões nem caminhos da máquina, e cabe em 21 400 bytes (de 31 143 passou a cerca de 20 400: um terço a menos; a 02.11.2026 subiu de 21 000 para 21 400 pela regra 15, §1.216; o resto é texto de regra, e cortar mais era cortar regras). `--planta` retira uma regra do novo em memória e exige
+  tem travessões nem caminhos da máquina, e cabe em 24 000 bytes (a 10.11.2026 subiu de 21 400 para 24 000 pela §1.238: o estado da direção, a cadeia de publicação, o orçamento por tamanho; antes: de 31 143 passou a cerca de 20 400: um terço a menos; a 02.11.2026 subiu de 21 000 para 21 400 pela regra 15, §1.216; o resto é texto de regra, e cortar mais era cortar regras). `--planta` retira uma regra do novo em memória e exige
   que a conferência a apanhe (o conhecido-positivo). Saída 0 se tudo passar; 1 com a lista do que falta.
 """
 import re
@@ -61,8 +61,8 @@ def conferir(antigo, novo):
         faltas.append('travessão no novo')
     if '/Users/' in novo:
         faltas.append('caminho da máquina no novo')
-    if len(novo.encode()) > 21400:
-        faltas.append(f'novo com {len(novo.encode())} bytes, acima de 21 400')
+    if len(novo.encode()) > 24000:
+        faltas.append(f'novo com {len(novo.encode())} bytes, acima de 24 000')
     return faltas
 
 
