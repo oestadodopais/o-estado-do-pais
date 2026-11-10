@@ -1,0 +1,4 @@
+FAIL: test_cada_consulta_usa_so_o_tempo_restante (vel1_vigia.Vigia.test_cada_consulta_usa_so_o_tempo_restante)
+AssertionError: Lists differ: [120, 120] != [37, 7]
+Ran 1 test in 1.260s
+FAILED (failures=1)

@@ -1,0 +1,4 @@
+FAIL: test_sigint_durante_vigia_para_sem_fundir (__main__.Vigia.test_sigint_durante_vigia_para_sem_fundir)
+AssertionError: 0 != 130
+Ran 1 test in 4.710s
+FAILED (failures=1)

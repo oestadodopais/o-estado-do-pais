@@ -131,6 +131,14 @@ else:sys.exit(88)
         self.assertEqual(sum(c.args[0] for c in pausa.call_args_list), 45)
         self.assertEqual(Path(self.b.env['CONTAGEM']).read_text(), '2')
 
+    def test_cada_consulta_usa_so_o_tempo_restante(self):
+        codigo, a, pausa = self.correr('pendente', vigia_segundos=5363)
+        consultas = [p for p in a.recibo['passos'] if p['passo'].startswith('github-conclusao-')]
+        self.assertEqual([p['teto_segundos'] for p in consultas], [37, 7])
+        self.assertEqual(Path(self.b.env['CONTAGEM']).read_text(), '2')
+        self.assertEqual([c.args[0] for c in pausa.call_args_list], [30, 7])
+        self.assertEqual(codigo, 124)
+
     def test_vermelho_confirmado_para_sem_repetir(self):
         codigo, _, pausa = self.correr('vermelho')
         self.assertNotEqual(codigo, 0)
