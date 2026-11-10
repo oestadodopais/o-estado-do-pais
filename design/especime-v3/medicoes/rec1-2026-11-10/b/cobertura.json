@@ -1,0 +1,61 @@
+{
+  "antes": 2427,
+  "depois": 2337,
+  "retiradas": 90,
+  "novas": [
+    {
+      "chave": "/|en|7e97984a0ff6030fa22e917eb9a9e075c36cb8b1cd45de0ef0a535875e3a10b1",
+      "estudo": "/",
+      "lingua": "en",
+      "frase": "01.10.2026studyÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+      "tipos": [
+        "atribuicao"
+      ],
+      "marcas": [
+        "en-atribuicao-08",
+        "en-atribuicao-10"
+      ],
+      "linhas": []
+    },
+    {
+      "chave": "/|pt|7b22ce1b1d5c185af03d51aa91089dfa2e138c091ff18050bbb2528915f5a39e",
+      "estudo": "/",
+      "lingua": "pt",
+      "frase": "01.10.2026estudoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+      "tipos": [
+        "atribuicao"
+      ],
+      "marcas": [
+        "pt-atribuicao-17",
+        "pt-atribuicao-19"
+      ],
+      "linhas": []
+    },
+    {
+      "chave": "/correcoes|en|4d5ab8be0b5b7760f253a784c9135c35ecf06e5a4c2ea5ab9743448c51b59b65",
+      "estudo": "/correcoes",
+      "lingua": "en",
+      "frase": "From launch onward, when something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted.",
+      "tipos": [
+        "atribuicao"
+      ],
+      "marcas": [
+        "en-atribuicao-03"
+      ],
+      "linhas": []
+    },
+    {
+      "chave": "/correcoes|pt|fc7f94b4848cb49788591c36386c6bb6127060da6362cb7a125307e3212e7872",
+      "estudo": "/correcoes",
+      "lingua": "pt",
+      "frase": "A partir do lançamento, quando o que se publicou aqui estiver errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga.",
+      "tipos": [
+        "atribuicao"
+      ],
+      "marcas": [
+        "pt-atribuicao-21"
+      ],
+      "linhas": []
+    }
+  ]
+}

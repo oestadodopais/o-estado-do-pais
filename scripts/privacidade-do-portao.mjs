@@ -1,3 +1,4 @@
+import { emEnsaio } from '../site.config.mjs';
 /**
  * ---------------------------------------------------------------------------
  * A PÁGINA «PRIVACIDADE», LIDA PELO PORTÃO DE HTML (bloco H3, 05.10.2026)
@@ -107,7 +108,7 @@ export function conferirPaginaDaPrivacidade(root, rota, declarado = PRIVACIDADE)
   if (!rota || rota.key !== 'privacidade') return erros;
   const lang = rota.lang;
   const robots = root.querySelectorAll('meta[name="robots"]').map((m) => desfaz(m.getAttribute('content')));
-  if (robots.length) erros.push(`H3 privacidade: a página entra no índice e no mapa do sítio, e leva uma marca robots ${JSON.stringify(robots)}.`);
+  if (emEnsaio() ? robots.length !== 1 || robots[0] !== 'noindex, follow' : robots.length !== 0) erros.push(`H3 privacidade: a página entra no índice e no mapa do sítio, e leva uma marca robots ${JSON.stringify(robots)}.`);
   const titulos = root.querySelectorAll('main h1');
   if (titulos.length !== 1 || textoDe(titulos[0]) !== NOME_DA_PRIVACIDADE[lang]) {
     erros.push(`H3 privacidade: o título da página tem de ser «${NOME_DA_PRIVACIDADE[lang]}», uma vez, e é ${JSON.stringify(titulos.map(textoDe))}.`);
@@ -279,7 +280,7 @@ export function plantasDaPrivacidade() {
   const boa = `<span data-porta-privacidade><a href="${routePath('privacidade', lang)}">${NOME_DA_PRIVACIDADE[lang]}</a></span>`;
   const texto = PRIVACIDADE.texto[lang];
   const [antes, depois] = texto.split(ENDERECO_CORRECOES);
-  const pagina = (corpo, cabeca = '') => parse(`<html><head>${cabeca}</head><body><main><h1>${NOME_DA_PRIVACIDADE[lang]}</h1>${corpo}</main></body></html>`);
+  const pagina = (corpo, cabeca = emEnsaio() ? '<meta name="robots" content="noindex, follow">' : '') => parse(`<html><head>${cabeca}</head><body><main><h1>${NOME_DA_PRIVACIDADE[lang]}</h1>${corpo}</main></body></html>`);
   const blocoBom = `<p data-privacidade-texto="pt">${antes}<a href="mailto:${ENDERECO_CORRECOES}">${ENDERECO_CORRECOES}</a>${depois}</p>`;
   const rota = { key: 'privacidade', lang };
   const casos = [

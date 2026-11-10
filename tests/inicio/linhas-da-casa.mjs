@@ -1,3 +1,4 @@
+import { emEnsaio, desdeOLancamento } from '../../site.config.mjs';
 import { CORRECOES_TEXTO } from '../../src/data/correcoes.mjs';
 import { contarCorrecoesPublicadas } from '../../src/lib/contagem-correcoes.mjs';
 /** E0, §1.146: as linhas do projeto, a precisão publicada e a história selada.
@@ -56,7 +57,7 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
     erros.push('E0b datas: o contador tem uma data anterior à sua última recontagem.');
   if (contador.value !== String(contadas) || contador.check !== 'correcoes_publicadas')
     erros.push('E0 contagem: o contador não coincide com as correções do livro.');
-  if (LUGAR_DECLARADO_DAS_LINHAS[contador.id] !== 'o-estado-do-pais') erros.push('E0 declaração: falta o lugar do projeto.');
+  if (contador.publication !== 'withdrawn' || LUGAR_DECLARADO_DAS_LINHAS[contador.id]) erros.push('E0 retirada: contador ainda publicado.');
   medidas.correcoes_contadas = contadas;
   for (const lang of ['pt', 'en']) {
     const esperada = lang === 'pt' ? '/correcoes' : '/en/corrections';
@@ -78,6 +79,10 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
     for (const id of ids) {
       const c = lerLinha(id);
       const entrada = entradaE0(c);
+      if (c.publication === 'withdrawn' || !desdeOLancamento(entrada.date)) {
+        if (registo.querySelector(`[data-correcao-entrada="${id}"]`)) erros.push(`E0 registo ${lang}: ${id} fora do lançamento`);
+        continue;
+      }
       const indice = c.corrections.indexOf(entrada);
       const itens = registo.querySelectorAll(`[data-mudou-registo] [data-correcao-entrada="${id}"]`)
         .filter(li => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') === String(indice));
@@ -100,7 +105,7 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
       const c = lerLinha(e.claim);
       return e.n === c.corrections.indexOf(entradaE0(c));
     });
-    if (resolvidas.length !== 3 || resolvidas.find(e => e.claim === contador.id)?.lugar.chave !== 'o-estado-do-pais')
+    if (resolvidas.length !== ids.filter(id => {const c=lerLinha(id);return c.publication !== 'withdrawn' && desdeOLancamento(entradaE0(c).date);}).length)
       erros.push(`E0 resolvedor ${lang}: as mudanças não têm os lugares declarados.`);
     for (const [pagina, rota] of [['primeira', lang === 'pt' ? '/' : '/en/'], ['emprego', lang === 'pt' ? '/emprego/' : '/en/employment/']]) {
       const doc = parse(fs.readFileSync(path.join(dist, rota, 'index.html'), 'utf8'));
@@ -126,14 +131,14 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
       mordeu: r.status === 1 && mordida.test(saida), memoria_isolada: true };
   };
   const plantas = [executar('A: contador sem declaração, A3',
-    'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; delete lugares["correcoes-publicadas"]; await import("./scripts/check-pais.mjs");',
-    /A3: .*uma linha do registo sem lugar/),
+    'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; delete lugares["estudos-evora-publicados"]; await import("./scripts/check-pais.mjs");',
+    /A[13]: .*uma linha.*sem lugar/),
   executar('A: contador sem declaração, resolvedor',
-    'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; import {mudancasDoRegisto} from "./src/lib/mudancas.mjs"; delete lugares["correcoes-publicadas"]; try {mudancasDoRegisto("pt");} catch(e) {console.log(e.message); process.exitCode=1;}',
-    /correcoes-publicadas.*nenhuma declaração diz de que lugar é/),
+    'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; import {todasAsMudancas} from "./src/lib/mudancas.mjs"; delete lugares["estudos-evora-publicados"]; try {todasAsMudancas("pt");} catch(e) {console.log(e.message); process.exitCode=1;}',
+    /estudos-evora-publicados.*nenhuma declaração diz de que lugar é/),
   executar('declaração falsa de Portugal',
-    'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; lugares["correcoes-publicadas"]="portugal"; await import("./scripts/check-pais.mjs");',
-    /A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»/)];
+    'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; lugares["estudos-evora-publicados"]="portugal"; await import("./scripts/check-pais.mjs");',
+    /A1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora»/)];
   plantas.push(executar('atualização de estudo contada como correção',
     `import fs from 'node:fs';
      import {load,dump} from 'js-yaml';
@@ -155,15 +160,15 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
   plantas.push(executar('data antiga do contador',
     'import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); return String(f).endsWith("ledger/claims/correcoes-publicadas.yml") ? String(b).replace(/reference_date: "[^"]+"/, "reference_date: \\"2026-08-12\\"") : b;}; const {conferirLinhasDaCasa}=await import("./tests/inicio/linhas-da-casa.mjs"); const r=conferirLinhasDaCasa(process.env.OEDP_DIST); for(const e of r.erros) console.log(e); if(r.erros.some(e=>e.startsWith("E0b datas:"))) process.exitCode=1;',
     /E0b datas: o contador tem uma data anterior/));
-  plantas.push(executar('valor pela marca do nome no portão real',
+  if (!emEnsaio()) plantas.push(executar('valor pela marca do nome no portão real',
     'import fs from "node:fs"; import {parse} from "node-html-parser"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); if(String(f).endsWith("/dist/correcoes/index.html")) {const r=parse(String(b)); const nome=r.querySelector("[data-correcao-entrada=divida-das-familias-2025-ue] .registo-mudanca-nome"); nome.setAttribute("data-linha-claim","divida-das-familias-2025-ue"); nome.setAttribute("data-linha-campo","value"); return r.toString();} return b;}; await import("./scripts/gate-html.mjs");',
     /data-linha-claim="divida-das-familias-2025-ue" numa página que não é do livro-razão/));
   const registo = parse(fs.readFileSync(path.join(dist, 'correcoes/index.html'), 'utf8'));
   const nomeDaFonte = registo.querySelector('[data-correcao-entrada="divida-das-familias-2025-ue"] .registo-mudanca-nome');
-  for (const [nome, rota, id, campo] of [
+  for (const [nome, rota, id, campo] of (emEnsaio() ? [] : [
     ['nome fora da página do registo', 'home', 'divida-das-familias-2025-ue', 'document.title'],
     ['nome de outra linha na entrada', 'correcoes', 'correcoes-publicadas', 'document.title'],
-  ]) plantas.push({ nome, mordeu: Boolean(nomeDaFonte) && !nomeNoRegistoAdmitido(rota, nomeDaFonte, id, campo),
+  ])) plantas.push({ nome, mordeu: Boolean(nomeDaFonte) && !nomeNoRegistoAdmitido(rota, nomeDaFonte, id, campo),
     queixa: 'A porta estreita do portão recusa o contexto plantado.', memoria_isolada: true });
   for (const id of ids) plantas.push(executar(`B: ${id} sem entrada selada`,
     `import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); if(String(f).endsWith("ledger/historias-valores.json")) {const h=JSON.parse(b); delete h[${JSON.stringify(id)}]; return JSON.stringify(h);} return b;}; await import("./scripts/check-ledger.mjs");`,
@@ -176,10 +181,11 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
     } }, /E0 visível pt primeira/],
     /* K2 (02.10.2026): a planta escolhe a entrada do E0 pelo seu índice, como a célula; com a recontagem de 02.10.2026
        o contador tem duas entradas, e a primeira do registo, que é a mais recente, já não é a do E0. */
-    ['lugar retirado do registo inglês', (r, lang, p) => { if (lang !== 'en' || p !== 'registo') return; const c = lerLinha('correcoes-publicadas'); const n = String(c.corrections.indexOf(entradaE0(c))); r.querySelectorAll('[data-mudou-registo] [data-correcao-entrada="correcoes-publicadas"]').find(li => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') === n)?.querySelector('.registo-lugar')?.remove(); }, /E0 registo en: correcoes-publicadas perdeu a mudança/],
-    ['nome retirado da recontagem', (r, lang, p) => { if (lang === 'pt' && p === 'registo') r.querySelector('[data-correcao-entrada="correcoes-publicadas"] .registo-mudanca-nome')?.remove(); }, /E0b nome pt: correcoes-publicadas/],
+    ['lugar retirado do registo inglês', (r, lang, p) => { if (lang !== 'en' || p !== 'registo') return; const c = lerLinha('taxa-de-desemprego-2025'); const n = String(c.corrections.indexOf(entradaE0(c))); r.querySelectorAll('[data-mudou-registo] [data-correcao-entrada="taxa-de-desemprego-2025"]').find(li => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') === n)?.querySelector('.registo-lugar')?.remove(); }, /E0 registo en: taxa-de-desemprego-2025 perdeu a mudança/],
+    ['nome retirado da recontagem', (r, lang, p) => { if (lang === 'pt' && p === 'registo') r.querySelector('[data-correcao-entrada="taxa-de-desemprego-2025"] .registo-mudanca-nome')?.remove(); }, /E0b nome pt: taxa-de-desemprego-2025/],
     ['nome retirado da dívida das famílias', (r, lang, p) => { if (lang === 'en' && p === 'registo') r.querySelector('[data-correcao-entrada="divida-das-familias-2025-ue"] .registo-mudanca-nome')?.remove(); }, /E0b nome en: divida-das-familias-2025-ue/],
   ]) {
+    if (emEnsaio() && nome !== 'decimal retirado da primeira') continue;
     const r = conferirLinhasDaCasa(dist, estraga);
     const queixa = r.erros.find(e => mordida.test(e));
     plantas.push({ nome, mordeu: Boolean(queixa), queixa: queixa ?? null, memoria_isolada: true });

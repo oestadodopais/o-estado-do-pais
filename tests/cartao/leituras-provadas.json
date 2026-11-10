@@ -11968,32 +11968,6 @@
     },
     {
       "chaves": [
-        "correcoes-publicadas"
-      ],
-      "origens": [],
-      "folhas": [
-        {
-          "pt": "As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos.",
-          "en": "The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies.",
-          "partes": [
-            {
-              "pt": "As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos.",
-              "en": "The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chaves": [
         "estudos-publicados"
       ],
       "origens": [],
@@ -12023,44 +11997,6 @@
                   "linha": "propria",
                   "campo": "derivation",
                   "literal": "As traduções não contam como trabalhos novos."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chaves": [
-        "edicoes-publicadas"
-      ],
-      "origens": [],
-      "folhas": [
-        {
-          "pt": "É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado.",
-          "en": "It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately.",
-          "partes": [
-            {
-              "pt": "É o número de edições dos estudos publicados",
-              "en": "It is the number of editions of the studies published",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "Contagem das edições no arquivo."
-                }
-              ]
-            },
-            {
-              "pt": "; a edição portuguesa e a inglesa do mesmo estudo contam em separado.",
-              "en": "; the Portuguese and English editions of the same study count separately.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "As edições PT e EN do mesmo trabalho contam em separado."
                 }
               ]
             }

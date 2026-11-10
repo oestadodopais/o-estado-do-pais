@@ -1,0 +1,1495 @@
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
+
+E1: prazo e razão conferidos pela chamada da check:pais.
+E1 DO2 pt: planta «estudo do dossiê repetido» recusada pela seleção.
+E1 DO2 pt: planta «estudo avulso retirado» recusada pela seleção.
+E1 DO2 pt: planta «ordem trocada» recusada pela seleção.
+E1 DO2 en: planta «estudo do dossiê repetido» recusada pela seleção.
+E1 DO2 en: planta «estudo avulso retirado» recusada pela seleção.
+E1 DO2 en: planta «ordem trocada» recusada pela seleção.
+REC1 país lançado pt/pais: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país lançado pt/evora: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país lançado pt/indice: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país lançado en/pais: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país lançado en/evora: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país lançado en/indice: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 9816 menus, 5 mudanças declaradas, 4 listas com teto 8, 2 registos de 128 mudanças em português, 110 títulos de edição.
+B1 país: todas as conferências a 0.
+{
+  "erros": [],
+  "medidas": {
+    "linhas": [
+      {
+        "id": "taxa-de-desemprego-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "correcoes-publicadas",
+        "valor": "50",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "atualizacao",
+          "old_value": "3",
+          "new_value": "5"
+        },
+        "seladas": 11
+      }
+    ],
+    "registos": [
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-mip-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/en"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-mip-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/en"
+      }
+    ],
+    "nomes": [
+      {
+        "lang": "pt",
+        "id": "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+        "n": 0,
+        "lido": "Afirmação de Paula Santos sobre o investimento na Saúde",
+        "esperado": "Afirmação de Paula Santos sobre o investimento na Saúde"
+      },
+      {
+        "lang": "pt",
+        "id": "afirmacao-pcp-paula-ppp-2026-10-12",
+        "n": 0,
+        "lido": "Afirmação de Paula Santos sobre as parcerias",
+        "esperado": "Afirmação de Paula Santos sobre as parcerias"
+      },
+      {
+        "lang": "pt",
+        "id": "afirmacao-pcp-ppp-2026-10-15",
+        "n": 0,
+        "lido": "Afirmação de Paulo Raimundo sobre as parcerias",
+        "esperado": "Afirmação de Paulo Raimundo sobre as parcerias"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-cgtp-convocatoria",
+        "n": 0,
+        "lido": "Convocatória divulgada pelo sindicato",
+        "esperado": "Convocatória divulgada pelo sindicato"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-acampados",
+        "n": 0,
+        "lido": "Comunicado dos acampados, pela imprensa",
+        "esperado": "Comunicado dos acampados, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-amorim",
+        "n": 0,
+        "lido": "Declaração do ministro dos Assuntos Parlamentares, pela imprensa",
+        "esperado": "Declaração do ministro dos Assuntos Parlamentares, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-assistidos",
+        "n": 0,
+        "lido": "Pessoas assistidas, pela imprensa",
+        "esperado": "Pessoas assistidas, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-debate-custos",
+        "n": 0,
+        "lido": "Afirmação do primeiro-ministro sobre os preços, pela imprensa",
+        "esperado": "Afirmação do primeiro-ministro sobre os preços, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-debate-protecao",
+        "n": 0,
+        "lido": "Afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa",
+        "esperado": "Afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-feridos35",
+        "n": 0,
+        "lido": "Feridos segundo um dirigente do BE, pela imprensa",
+        "esperado": "Feridos segundo um dirigente do BE, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-feridos37",
+        "n": 0,
+        "lido": "Feridos segundo o movimento, pela imprensa",
+        "esperado": "Feridos segundo o movimento, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-feridos39",
+        "n": 0,
+        "lido": "Feridos segundo a organização, pela imprensa",
+        "esperado": "Feridos segundo a organização, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-igai",
+        "n": 0,
+        "lido": "Processo da inspeção, pela imprensa",
+        "esperado": "Processo da inspeção, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-mai",
+        "n": 0,
+        "lido": "Declaração do ministro da Administração Interna, pela imprensa",
+        "esperado": "Declaração do ministro da Administração Interna, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-pm-15",
+        "n": 0,
+        "lido": "Declaração do primeiro-ministro após a intervenção, pela imprensa",
+        "esperado": "Declaração do primeiro-ministro após a intervenção, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-pm-16",
+        "n": 0,
+        "lido": "Declaração posterior do primeiro-ministro, pela imprensa",
+        "esperado": "Declaração posterior do primeiro-ministro, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-imprensa-psp-ferido",
+        "n": 0,
+        "lido": "Polícia ferido, segundo a PSP, pela imprensa",
+        "esperado": "Polícia ferido, segundo a PSP, pela imprensa"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-pan-caucoes",
+        "n": 0,
+        "lido": "Proposta do PAN sobre cauções",
+        "esperado": "Proposta do PAN sobre cauções"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-pan-controlo",
+        "n": 0,
+        "lido": "Proposta do PAN sobre controlo de rendas",
+        "esperado": "Proposta do PAN sobre controlo de rendas"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-pan-tetos",
+        "n": 0,
+        "lido": "Proposta do PAN sobre limites às rendas",
+        "esperado": "Proposta do PAN sobre limites às rendas"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-pcp-rendas",
+        "n": 0,
+        "lido": "Proposta do PCP sobre rendas",
+        "esperado": "Proposta do PCP sobre rendas"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-plataforma-reivindicacoes",
+        "n": 0,
+        "lido": "Reivindicações da plataforma",
+        "esperado": "Reivindicações da plataforma"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-ps-mais-valias",
+        "n": 0,
+        "lido": "Proposta do PS sobre mais-valias",
+        "esperado": "Proposta do PS sobre mais-valias"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-ps-rendas",
+        "n": 0,
+        "lido": "Proposta do PS sobre rendas",
+        "esperado": "Proposta do PS sobre rendas"
+      },
+      {
+        "lang": "pt",
+        "id": "hab-ps-vazias",
+        "n": 0,
+        "lido": "Afirmação do PS sobre casas vazias habitáveis",
+        "esperado": "Afirmação do PS sobre casas vazias habitáveis"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-jpp-irs",
+        "n": 0,
+        "lido": "Proteção das famílias não abrangidas pela descida do IRS",
+        "esperado": "Proteção das famílias não abrangidas pela descida do IRS"
+      },
+      {
+        "lang": "pt",
+        "id": "custo-unitario-do-trabalho-2025-ue",
+        "n": 0,
+        "lido": "Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho)",
+        "esperado": "Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho)"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-empresas-2024",
+        "n": 1,
+        "lido": "Dívida das empresas (não financeiras)",
+        "esperado": "Dívida das empresas (não financeiras)"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-empresas-2025",
+        "n": 1,
+        "lido": "Dívida das empresas (não financeiras)",
+        "esperado": "Dívida das empresas (não financeiras)"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-empresas-2025-ue",
+        "n": 1,
+        "lido": "Dívida das empresas (não financeiras) na União Europeia",
+        "esperado": "Dívida das empresas (não financeiras) na União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-familias-2024",
+        "n": 1,
+        "lido": "Dívida das famílias",
+        "esperado": "Dívida das famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-familias-2025",
+        "n": 1,
+        "lido": "Dívida das famílias",
+        "esperado": "Dívida das famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-publica-2024",
+        "n": 0,
+        "lido": "Dívida pública",
+        "esperado": "Dívida pública"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-publica-2025",
+        "n": 0,
+        "lido": "Dívida pública",
+        "esperado": "Dívida pública"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-publica-2025-ue",
+        "n": 0,
+        "lido": "Dívida pública na União Europeia",
+        "esperado": "Dívida pública na União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-publicados",
+        "n": 2,
+        "lido": "Estudos publicados",
+        "esperado": "Estudos publicados"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-empresas-2024",
+        "n": 0,
+        "lido": "Fluxo de crédito às empresas (não financeiras)",
+        "esperado": "Fluxo de crédito às empresas (não financeiras)"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-empresas-2025",
+        "n": 1,
+        "lido": "Fluxo de crédito às empresas (não financeiras)",
+        "esperado": "Fluxo de crédito às empresas (não financeiras)"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-familias-2024",
+        "n": 0,
+        "lido": "Fluxo de crédito às famílias",
+        "esperado": "Fluxo de crédito às famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-familias-2025",
+        "n": 0,
+        "lido": "Fluxo de crédito às famílias",
+        "esperado": "Fluxo de crédito às famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-familias-2025-ue",
+        "n": 1,
+        "lido": "Fluxo de crédito às famílias na União Europeia",
+        "esperado": "Fluxo de crédito às famílias na União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2025-ue",
+        "n": 0,
+        "lido": "Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo)",
+        "esperado": "Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo)"
+      },
+      {
+        "lang": "pt",
+        "id": "licencas-de-construcao-2025-ue",
+        "n": 0,
+        "lido": "Área licenciada para habitação na União Europeia",
+        "esperado": "Área licenciada para habitação na União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2025-ue",
+        "n": 0,
+        "lido": "PIB real por habitante na União Europeia",
+        "esperado": "PIB real por habitante na União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "despesa-por-funcao-2024-gf01-ue",
+        "n": 0,
+        "lido": "Despesa pública em serviços gerais das administrações públicas, em percentagem do PIB, União Europeia",
+        "esperado": "Despesa pública em serviços gerais das administrações públicas, em percentagem do PIB, União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "despesa-por-funcao-2024-gf10-ue",
+        "n": 0,
+        "lido": "Despesa pública em proteção social, em percentagem do PIB, União Europeia",
+        "esperado": "Despesa pública em proteção social, em percentagem do PIB, União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "oe-2027-calendario-entrega",
+        "n": 0,
+        "lido": "Entrega da proposta de Orçamento",
+        "esperado": "Entrega da proposta de Orçamento"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-publicados",
+        "n": 1,
+        "lido": "Estudos publicados",
+        "esperado": "Estudos publicados"
+      },
+      {
+        "lang": "pt",
+        "id": "oe-2027-saude-contrato-programa-acss",
+        "n": 0,
+        "lido": "Contrato-programa entre a ACSS e as entidades do SNS",
+        "esperado": "Contrato-programa entre a ACSS e as entidades do SNS"
+      },
+      {
+        "lang": "pt",
+        "id": "pe-oe-beira-abolicao",
+        "n": 0,
+        "lido": "Beira Interior: pedido pela abolição de portagens",
+        "esperado": "Beira Interior: pedido pela abolição de portagens"
+      },
+      {
+        "lang": "pt",
+        "id": "utao-ppp-contingencias-natureza-2026",
+        "n": 0,
+        "lido": "Natureza dos pedidos contingentes das parcerias",
+        "esperado": "Natureza dos pedidos contingentes das parcerias"
+      },
+      {
+        "lang": "pt",
+        "id": "utao-risco-execucao-sns-2027",
+        "n": 0,
+        "lido": "Risco de pressão orçamental no Serviço Nacional de Saúde",
+        "esperado": "Risco de pressão orçamental no Serviço Nacional de Saúde"
+      },
+      {
+        "lang": "pt",
+        "id": "custo-unitario-do-trabalho-2024",
+        "n": 1,
+        "lido": "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+        "esperado": "Custo do trabalho por unidade produzida (custo unitário do trabalho)"
+      },
+      {
+        "lang": "pt",
+        "id": "despesa-em-id-2024-ue",
+        "n": 1,
+        "lido": "Despesa em investigação e desenvolvimento na União Europeia",
+        "esperado": "Despesa em investigação e desenvolvimento na União Europeia"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "n": 1,
+        "lido": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)",
+        "esperado": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "n": 1,
+        "lido": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)",
+        "esperado": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2024",
+        "n": 1,
+        "lido": "PIB real por habitante",
+        "esperado": "PIB real por habitante"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2025",
+        "n": 1,
+        "lido": "PIB real por habitante",
+        "esperado": "PIB real por habitante"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-de-investimento-internacional-2024",
+        "n": 0,
+        "lido": "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+        "esperado": "O que o país tem no exterior menos o que deve (posição de investimento internacional)"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-de-investimento-internacional-2025",
+        "n": 0,
+        "lido": "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+        "esperado": "O que o país tem no exterior menos o que deve (posição de investimento internacional)"
+      },
+      {
+        "lang": "pt",
+        "id": "saldo-da-balanca-corrente-2024",
+        "n": 0,
+        "lido": "Saldo da balança corrente",
+        "esperado": "Saldo da balança corrente"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-empresas-2025",
+        "n": 0,
+        "lido": "Fluxo de crédito às empresas (não financeiras)",
+        "esperado": "Fluxo de crédito às empresas (não financeiras)"
+      },
+      {
+        "lang": "pt",
+        "id": "jovens-nem-2025",
+        "n": 0,
+        "lido": "Jovens sem emprego, escola ou formação",
+        "esperado": "Jovens sem emprego, escola ou formação"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 4,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-publicados",
+        "n": 0,
+        "lido": "Estudos publicados",
+        "esperado": "Estudos publicados"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-2025",
+        "n": 0,
+        "lido": "Taxa de desemprego",
+        "esperado": "Taxa de desemprego"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-mip-2025",
+        "n": 0,
+        "lido": "Taxa de desemprego",
+        "esperado": "Taxa de desemprego"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-familias-2025-ue",
+        "n": 0,
+        "lido": "Dívida das famílias",
+        "esperado": "Dívida das famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 3,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-aprovado-2026",
+        "n": 5,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-execucao-2026",
+        "n": 1,
+        "lido": "Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga",
+        "esperado": "Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-pago-2026",
+        "n": 5,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 5,
+        "lido": "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026",
+        "esperado": "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 1,
+        "lido": "Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada",
+        "esperado": "Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-aprovado-2026",
+        "n": 3,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-execucao-2026",
+        "n": 0,
+        "lido": "Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga",
+        "esperado": "Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-pago-2026",
+        "n": 3,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 3,
+        "lido": "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026",
+        "esperado": "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 0,
+        "lido": "Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada",
+        "esperado": "Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 2,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "municipios-acores-caop-2025",
+        "n": 0,
+        "lido": "Concelhos nos Açores",
+        "esperado": "Concelhos nos Açores"
+      },
+      {
+        "lang": "pt",
+        "id": "municipios-continente-caop-2025",
+        "n": 0,
+        "lido": "Concelhos no continente",
+        "esperado": "Concelhos no continente"
+      },
+      {
+        "lang": "pt",
+        "id": "municipios-madeira-caop-2025",
+        "n": 0,
+        "lido": "Concelhos na Madeira",
+        "esperado": "Concelhos na Madeira"
+      },
+      {
+        "lang": "pt",
+        "id": "municipios-portugal-caop-2025",
+        "n": 0,
+        "lido": "Concelhos em Portugal",
+        "esperado": "Concelhos em Portugal"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-pc-alentejo-2000",
+        "n": 0,
+        "lido": "Produto interno bruto por habitante no Alentejo",
+        "esperado": "Produto interno bruto por habitante no Alentejo"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-pc-alentejo-2024",
+        "n": 0,
+        "lido": "Produto interno bruto por habitante no Alentejo",
+        "esperado": "Produto interno bruto por habitante no Alentejo"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 1,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 0,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "en",
+        "id": "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+        "n": 0,
+        "lido": "Paula Santos’s statement on Health investment",
+        "esperado": "Paula Santos’s statement on Health investment"
+      },
+      {
+        "lang": "en",
+        "id": "afirmacao-pcp-paula-ppp-2026-10-12",
+        "n": 0,
+        "lido": "Paula Santos’s statement on partnerships",
+        "esperado": "Paula Santos’s statement on partnerships"
+      },
+      {
+        "lang": "en",
+        "id": "afirmacao-pcp-ppp-2026-10-15",
+        "n": 0,
+        "lido": "Paulo Raimundo’s statement on partnerships",
+        "esperado": "Paulo Raimundo’s statement on partnerships"
+      },
+      {
+        "lang": "en",
+        "id": "hab-cgtp-convocatoria",
+        "n": 0,
+        "lido": "Call circulated by the union",
+        "esperado": "Call circulated by the union"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-acampados",
+        "n": 0,
+        "lido": "Campers' statement, reported by the press",
+        "esperado": "Campers' statement, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-amorim",
+        "n": 0,
+        "lido": "Statement by the Minister for Parliamentary Affairs, reported by the press",
+        "esperado": "Statement by the Minister for Parliamentary Affairs, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-assistidos",
+        "n": 0,
+        "lido": "People assisted, reported by the press",
+        "esperado": "People assisted, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-debate-custos",
+        "n": 0,
+        "lido": "Prime Minister's statement on prices, reported by the press",
+        "esperado": "Prime Minister's statement on prices, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-debate-protecao",
+        "n": 0,
+        "lido": "Prime Minister's statement on tenant protection, reported by the press",
+        "esperado": "Prime Minister's statement on tenant protection, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-feridos35",
+        "n": 0,
+        "lido": "Injured according to a BE leader, via the press",
+        "esperado": "Injured according to a BE leader, via the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-feridos37",
+        "n": 0,
+        "lido": "Injured people according to the movement, reported by the press",
+        "esperado": "Injured people according to the movement, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-feridos39",
+        "n": 0,
+        "lido": "Injured people according to the organisation, reported by the press",
+        "esperado": "Injured people according to the organisation, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-igai",
+        "n": 0,
+        "lido": "Inspectorate case, reported by the press",
+        "esperado": "Inspectorate case, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-mai",
+        "n": 0,
+        "lido": "Statement by the Minister of Home Affairs, reported by the press",
+        "esperado": "Statement by the Minister of Home Affairs, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-pm-15",
+        "n": 0,
+        "lido": "Prime Minister's statement after the intervention, reported by the press",
+        "esperado": "Prime Minister's statement after the intervention, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-pm-16",
+        "n": 0,
+        "lido": "Prime Minister's subsequent statement, reported by the press",
+        "esperado": "Prime Minister's subsequent statement, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-imprensa-psp-ferido",
+        "n": 0,
+        "lido": "Police officer injured, according to the PSP, reported by the press",
+        "esperado": "Police officer injured, according to the PSP, reported by the press"
+      },
+      {
+        "lang": "en",
+        "id": "hab-pan-caucoes",
+        "n": 0,
+        "lido": "PAN proposal on deposits",
+        "esperado": "PAN proposal on deposits"
+      },
+      {
+        "lang": "en",
+        "id": "hab-pan-controlo",
+        "n": 0,
+        "lido": "PAN proposal on rent control",
+        "esperado": "PAN proposal on rent control"
+      },
+      {
+        "lang": "en",
+        "id": "hab-pan-tetos",
+        "n": 0,
+        "lido": "PAN proposal on rent limits",
+        "esperado": "PAN proposal on rent limits"
+      },
+      {
+        "lang": "en",
+        "id": "hab-pcp-rendas",
+        "n": 0,
+        "lido": "PCP proposal on rents",
+        "esperado": "PCP proposal on rents"
+      },
+      {
+        "lang": "en",
+        "id": "hab-plataforma-reivindicacoes",
+        "n": 0,
+        "lido": "Platform demands",
+        "esperado": "Platform demands"
+      },
+      {
+        "lang": "en",
+        "id": "hab-ps-mais-valias",
+        "n": 0,
+        "lido": "PS proposal on capital gains",
+        "esperado": "PS proposal on capital gains"
+      },
+      {
+        "lang": "en",
+        "id": "hab-ps-rendas",
+        "n": 0,
+        "lido": "PS proposal on rents",
+        "esperado": "PS proposal on rents"
+      },
+      {
+        "lang": "en",
+        "id": "hab-ps-vazias",
+        "n": 0,
+        "lido": "PS statement on habitable vacant homes",
+        "esperado": "PS statement on habitable vacant homes"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-jpp-irs",
+        "n": 0,
+        "lido": "Protection for households outside the income tax reduction",
+        "esperado": "Protection for households outside the income tax reduction"
+      },
+      {
+        "lang": "en",
+        "id": "custo-unitario-do-trabalho-2025-ue",
+        "n": 0,
+        "lido": "Labour cost per unit of output in the European Union (unit labour cost)",
+        "esperado": "Labour cost per unit of output in the European Union (unit labour cost)"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-empresas-2024",
+        "n": 1,
+        "lido": "Debt of (non-financial) companies",
+        "esperado": "Debt of (non-financial) companies"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-empresas-2025",
+        "n": 1,
+        "lido": "Debt of (non-financial) companies",
+        "esperado": "Debt of (non-financial) companies"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-empresas-2025-ue",
+        "n": 1,
+        "lido": "Debt of (non-financial) companies in the European Union",
+        "esperado": "Debt of (non-financial) companies in the European Union"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-familias-2024",
+        "n": 1,
+        "lido": "Household debt",
+        "esperado": "Household debt"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-familias-2025",
+        "n": 1,
+        "lido": "Household debt",
+        "esperado": "Household debt"
+      },
+      {
+        "lang": "en",
+        "id": "divida-publica-2024",
+        "n": 0,
+        "lido": "Government debt",
+        "esperado": "Government debt"
+      },
+      {
+        "lang": "en",
+        "id": "divida-publica-2025",
+        "n": 0,
+        "lido": "Government debt",
+        "esperado": "Government debt"
+      },
+      {
+        "lang": "en",
+        "id": "divida-publica-2025-ue",
+        "n": 0,
+        "lido": "Government debt in the European Union",
+        "esperado": "Government debt in the European Union"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-publicados",
+        "n": 2,
+        "lido": "Published studies",
+        "esperado": "Published studies"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-empresas-2024",
+        "n": 0,
+        "lido": "Credit flow to (non-financial) companies",
+        "esperado": "Credit flow to (non-financial) companies"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-empresas-2025",
+        "n": 1,
+        "lido": "Credit flow to (non-financial) companies",
+        "esperado": "Credit flow to (non-financial) companies"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-familias-2024",
+        "n": 0,
+        "lido": "Credit flow to households",
+        "esperado": "Credit flow to households"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-familias-2025",
+        "n": 0,
+        "lido": "Credit flow to households",
+        "esperado": "Credit flow to households"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-familias-2025-ue",
+        "n": 1,
+        "lido": "Credit flow to households in the European Union",
+        "esperado": "Credit flow to households in the European Union"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2025-ue",
+        "n": 0,
+        "lido": "Investment in durable goods used for production in the European Union (gross fixed capital formation)",
+        "esperado": "Investment in durable goods used for production in the European Union (gross fixed capital formation)"
+      },
+      {
+        "lang": "en",
+        "id": "licencas-de-construcao-2025-ue",
+        "n": 0,
+        "lido": "Floor area licensed for housing in the European Union",
+        "esperado": "Floor area licensed for housing in the European Union"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2025-ue",
+        "n": 0,
+        "lido": "Real GDP per capita in the European Union",
+        "esperado": "Real GDP per capita in the European Union"
+      },
+      {
+        "lang": "en",
+        "id": "despesa-por-funcao-2024-gf01-ue",
+        "n": 0,
+        "lido": "Public expenditure on general public services, as a percentage of GDP, European Union",
+        "esperado": "Public expenditure on general public services, as a percentage of GDP, European Union"
+      },
+      {
+        "lang": "en",
+        "id": "despesa-por-funcao-2024-gf10-ue",
+        "n": 0,
+        "lido": "Public expenditure on social protection, as a percentage of GDP, European Union",
+        "esperado": "Public expenditure on social protection, as a percentage of GDP, European Union"
+      },
+      {
+        "lang": "en",
+        "id": "oe-2027-calendario-entrega",
+        "n": 0,
+        "lido": "Delivery of the Budget proposal",
+        "esperado": "Delivery of the Budget proposal"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-publicados",
+        "n": 1,
+        "lido": "Published studies",
+        "esperado": "Published studies"
+      },
+      {
+        "lang": "en",
+        "id": "oe-2027-saude-contrato-programa-acss",
+        "n": 0,
+        "lido": "Contract-programme between ACSS and NHS entities",
+        "esperado": "Contract-programme between ACSS and NHS entities"
+      },
+      {
+        "lang": "en",
+        "id": "pe-oe-beira-abolicao",
+        "n": 0,
+        "lido": "Beira Interior claim following toll abolition",
+        "esperado": "Beira Interior claim following toll abolition"
+      },
+      {
+        "lang": "en",
+        "id": "utao-ppp-contingencias-natureza-2026",
+        "n": 0,
+        "lido": "Nature of contingent partnership claims",
+        "esperado": "Nature of contingent partnership claims"
+      },
+      {
+        "lang": "en",
+        "id": "utao-risco-execucao-sns-2027",
+        "n": 0,
+        "lido": "Risk of budget pressure in the National Health Service",
+        "esperado": "Risk of budget pressure in the National Health Service"
+      },
+      {
+        "lang": "en",
+        "id": "custo-unitario-do-trabalho-2024",
+        "n": 1,
+        "lido": "Labour cost per unit of output (unit labour cost)",
+        "esperado": "Labour cost per unit of output (unit labour cost)"
+      },
+      {
+        "lang": "en",
+        "id": "despesa-em-id-2024-ue",
+        "n": 1,
+        "lido": "Spending on research and development in the European Union",
+        "esperado": "Spending on research and development in the European Union"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "n": 1,
+        "lido": "Investment in durable goods used for production (gross fixed capital formation)",
+        "esperado": "Investment in durable goods used for production (gross fixed capital formation)"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "n": 1,
+        "lido": "Investment in durable goods used for production (gross fixed capital formation)",
+        "esperado": "Investment in durable goods used for production (gross fixed capital formation)"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2024",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2025",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-de-investimento-internacional-2024",
+        "n": 0,
+        "lido": "What the country owns abroad minus what it owes (net international investment position)",
+        "esperado": "What the country owns abroad minus what it owes (net international investment position)"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-de-investimento-internacional-2025",
+        "n": 0,
+        "lido": "What the country owns abroad minus what it owes (net international investment position)",
+        "esperado": "What the country owns abroad minus what it owes (net international investment position)"
+      },
+      {
+        "lang": "en",
+        "id": "saldo-da-balanca-corrente-2024",
+        "n": 0,
+        "lido": "Current account balance",
+        "esperado": "Current account balance"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-empresas-2025",
+        "n": 0,
+        "lido": "Credit flow to (non-financial) companies",
+        "esperado": "Credit flow to (non-financial) companies"
+      },
+      {
+        "lang": "en",
+        "id": "jovens-nem-2025",
+        "n": 0,
+        "lido": "Young people not in employment, education or training",
+        "esperado": "Young people not in employment, education or training"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 4,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-publicados",
+        "n": 0,
+        "lido": "Published studies",
+        "esperado": "Published studies"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-2025",
+        "n": 0,
+        "lido": "Unemployment rate",
+        "esperado": "Unemployment rate"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-mip-2025",
+        "n": 0,
+        "lido": "Unemployment rate",
+        "esperado": "Unemployment rate"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-familias-2025-ue",
+        "n": 0,
+        "lido": "Household debt",
+        "esperado": "Household debt"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 3,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-aprovado-2026",
+        "n": 5,
+        "lido": "Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-execucao-2026",
+        "n": 1,
+        "lido": "Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid",
+        "esperado": "Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-pago-2026",
+        "n": 5,
+        "lido": "Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 5,
+        "lido": "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026",
+        "esperado": "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 1,
+        "lido": "Share of contracted funds in projects with a deadline before the snapshot and no completion recorded",
+        "esperado": "Share of contracted funds in projects with a deadline before the snapshot and no completion recorded"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-aprovado-2026",
+        "n": 3,
+        "lido": "Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-execucao-2026",
+        "n": 0,
+        "lido": "Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid",
+        "esperado": "Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-pago-2026",
+        "n": 3,
+        "lido": "Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 3,
+        "lido": "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026",
+        "esperado": "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 0,
+        "lido": "Share of contracted funds in projects with a deadline before the snapshot and no completion recorded",
+        "esperado": "Share of contracted funds in projects with a deadline before the snapshot and no completion recorded"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 2,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "municipios-acores-caop-2025",
+        "n": 0,
+        "lido": "Municipalities in the Azores",
+        "esperado": "Municipalities in the Azores"
+      },
+      {
+        "lang": "en",
+        "id": "municipios-continente-caop-2025",
+        "n": 0,
+        "lido": "Municipalities on the mainland",
+        "esperado": "Municipalities on the mainland"
+      },
+      {
+        "lang": "en",
+        "id": "municipios-madeira-caop-2025",
+        "n": 0,
+        "lido": "Municipalities in Madeira",
+        "esperado": "Municipalities in Madeira"
+      },
+      {
+        "lang": "en",
+        "id": "municipios-portugal-caop-2025",
+        "n": 0,
+        "lido": "Municipalities in Portugal",
+        "esperado": "Municipalities in Portugal"
+      },
+      {
+        "lang": "en",
+        "id": "pib-pc-alentejo-2000",
+        "n": 0,
+        "lido": "Gross domestic product per inhabitant in the Alentejo",
+        "esperado": "Gross domestic product per inhabitant in the Alentejo"
+      },
+      {
+        "lang": "en",
+        "id": "pib-pc-alentejo-2024",
+        "n": 0,
+        "lido": "Gross domestic product per inhabitant in the Alentejo",
+        "esperado": "Gross domestic product per inhabitant in the Alentejo"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 1,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 0,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      }
+    ],
+    "valores_visiveis": [
+      {
+        "lang": "pt",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "pt",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      }
+    ],
+    "correcoes_contadas": 50
+  },
+  "plantas": [
+    {
+      "nome": "A: contador sem declaração, A3",
+      "codigo": 1,
+      "mordida": "A[13]: .*uma linha.*sem lugar",
+      "queixa": "A1: uma linha com história sem lugar: estudos-evora-publicados.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "A: contador sem declaração, resolvedor",
+      "codigo": 1,
+      "mordida": "estudos-evora-publicados.*nenhuma declaração diz de que lugar é",
+      "queixa": "mudancas: a linha \"estudos-evora-publicados\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "declaração falsa de Portugal",
+      "codigo": 1,
+      "mordida": "A1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora»",
+      "queixa": "A1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora».",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "atualização de estudo contada como correção",
+      "codigo": 1,
+      "mordida": "E0 contagem: o contador não coincide com as correções do livro",
+      "queixa": "E0 contagem: o contador não coincide com as correções do livro.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "data antiga do contador",
+      "codigo": 1,
+      "mordida": "E0b datas: o contador tem uma data anterior",
+      "queixa": "E0b datas: o contador tem uma data anterior à sua última recontagem.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "valor pela marca do nome no portão real",
+      "codigo": 1,
+      "mordida": "data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão",
+      "queixa": "    \u001b[31m✗\u001b[0m data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome fora da página do registo",
+      "mordeu": true,
+      "queixa": "A porta estreita do portão recusa o contexto plantado.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome de outra linha na entrada",
+      "mordeu": true,
+      "queixa": "A porta estreita do portão recusa o contexto plantado.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-mip-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-mip-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: correcoes-publicadas sem entrada selada",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 11 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 11 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "decimal retirado da primeira",
+      "mordeu": true,
+      "queixa": "E0 visível pt primeira: falta o valor publicado com a unidade.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "lugar retirado do registo inglês",
+      "mordeu": true,
+      "queixa": "E0 registo en: taxa-de-desemprego-2025 perdeu a mudança ou o lugar com a porta.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome retirado da recontagem",
+      "mordeu": true,
+      "queixa": "E0b nome pt: taxa-de-desemprego-2025, entrada 0, perdeu o nome da medida.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome retirado da dívida das famílias",
+      "mordeu": true,
+      "queixa": "E0b nome en: divida-das-familias-2025-ue, entrada 0, perdeu o nome da medida.",
+      "memoria_isolada": true
+    }
+  ]
+}
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-11-09, construção 2026-11-10); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 26 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-11-10, sem escrever em dist/.
+
+REC1 D lancado check:pais: código 0

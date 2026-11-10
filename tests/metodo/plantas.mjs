@@ -1,3 +1,5 @@
+import { emEnsaio } from '../../site.config.mjs';
+import { ENSAIO } from '../../src/data/ensaio.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -18,7 +20,7 @@ function pagina(lang) {
  const linha=getClaim(id);
  const campo=k=>{if(k===campoLocalizadorMet1(lang))return `<div><dt data-met1="campo-2">${esc(u['campo-2'])}</dt><dd><span data-linha-claim="${id}" data-linha-campo="${k}">${esc(linha.document[k.split('.')[1]])}</span></dd></div>`;const href=k==='document.title'?linha.document.url:['source','document.edition'].includes(k)?linha.source_url:null;const span=['reference_date','access_date'].includes(k)?`<span data-nonledger="data-da-linha" data-de-linha="${id}" data-de-campo="${k}">2025</span>`:`<span data-linha-claim="${id}" data-linha-campo="${k}">campo</span>`;return href?`<a href="${href}">${span}</a>`:span;};
  return `<main><h1>${lang === 'pt' ? 'Método' : 'Method'}</h1><div class="met1">`+['conferir-um-numero','percurso','marcas','correcoes'].map((sec,i)=>`<section id="${sec}"><h2>${APROVADO.titulos[lang][i]}</h2></section>`).join('')+
- `<ol class="met1-percurso">${APROVADO.passos.map((_,i)=>`<li>${texto(`passo-${i}`)}</li>`).join('')}</ol>`+
+ `${emEnsaio()?`<p data-metodo-ensaio>${ENSAIO[lang].metodo}</p><ul></ul>`:""}<ol class="met1-percurso">${APROVADO.passos.map((_,i)=>`<li>${texto(`passo-${i}`)}</li>`).join('')}</ol>`+
  Object.keys(u).filter(k=>!k.startsWith('passo-')&&!k.startsWith('ligacao-')&&k!=='mudanca'&&k!=='campo-2').map(texto).join('')+
  `<p data-met1="mudanca"><a href="${routePath('correcoes',lang)}">${u.mudanca}</a></p><p class="met1-portas"><a data-met1="ligacao-0" href="${routePath('agenda',lang)}">${u['ligacao-0']}</a></p>`+
  `<div data-met1-recibo="${id}">${['reference_date','unit','source','document.title',campoLocalizadorMet1(lang),'excerpt','access_date'].map(campo).join('')}<span data-claim="${id}">89,2</span></div></div></main>`;

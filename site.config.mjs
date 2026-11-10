@@ -91,3 +91,12 @@ export function canonicalUrl(path) {
   const clean = path === '/' ? '/' : '/' + path.replace(/^\/+/, '').replace(/\/+$/, '');
   return new URL(clean, SITE_URL).href;
 }
+
+/** A ausência de data mantém a edição de ensaio. */
+export const LANCAMENTO = /** @type {string | null} */ (null);
+if (LANCAMENTO !== null && (typeof LANCAMENTO !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(LANCAMENTO) || Number.isNaN(Date.parse(LANCAMENTO)) || new Date(LANCAMENTO).toISOString().slice(0, 10) !== LANCAMENTO)) {
+  throw new Error('REC1: LANCAMENTO exige null ou uma data ISO válida de dez carateres.');
+}
+export const emEnsaio = () => LANCAMENTO === null;
+/** @param {string} data */
+export const desdeOLancamento = (data) => LANCAMENTO !== null && data >= LANCAMENTO;

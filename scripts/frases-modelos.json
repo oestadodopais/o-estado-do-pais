@@ -11,7 +11,7 @@
     "lingua": "pt",
     "tipo": "metodo",
     "fonte": "src/data/metodo.mjs",
-    "modelo": "Os números do painel são relidos na fonte, a última vez a {data}; quando a fonte muda um valor, o número muda e o registo diz o que estava antes."
+    "modelo": "Os números do painel são relidos na fonte, a última vez a {data}; quando a fonte muda um valor, o número muda e o recibo desse número diz o que estava antes."
   },
   {
     "id": "revisao-en",
@@ -25,6 +25,6 @@
     "lingua": "en",
     "tipo": "metodo",
     "fonte": "src/data/metodo.mjs",
-    "modelo": "The panel numbers are read again at the source, most recently on {data}; when the source changes a value, the number changes and the register shows what was there before."
+    "modelo": "The panel numbers are read again at the source, most recently on {data}; when the source changes a value, the number changes and that number's receipt shows what was there before."
   }
 ]

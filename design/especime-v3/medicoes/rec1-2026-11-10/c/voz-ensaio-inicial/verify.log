@@ -1,0 +1,39 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/voz2a.mjs && node design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs dist design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json 2026-11-08 && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs && node tests/voz/coragua.mjs
+
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":123,"plantas":117,"documentos":52,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-10.
+  FP1 en: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-10.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  PORTÃO DA VOZ · 14 problema(s)
+
+    · V2C início: novidades fora do primeiro lugar
+    · V2C início: discussão não é a secção única imediatamente depois das novidades
+    · B1 lista fechada país: /: «O que se discute →».
+    · V2C início: novidades fora do primeiro lugar
+    · V2C início: discussão não é a secção única imediatamente depois das novidades
+    · B1 lista fechada país: en: «Under discussion →».
+    · design/especime-v3/INVENTARIO-FRASES.md:5021: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Atualizado a»
+    · design/especime-v3/INVENTARIO-FRASES.md:5022: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Atualizado a · números do painel relidos na fonte a»
+    · design/especime-v3/INVENTARIO-FRASES.md:5023: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «O que há de novo»
+    · design/especime-v3/INVENTARIO-FRASES.md:5024: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Updated on»
+    · design/especime-v3/INVENTARIO-FRASES.md:5025: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Updated on · panel figures re-read at the source on»
+    · design/especime-v3/INVENTARIO-FRASES.md:5026: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «What is new»
+    · design/especime-v3/INVENTARIO-FRASES.md:5031: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «panel figures re-read at the source on»
+    · design/especime-v3/INVENTARIO-FRASES.md:5037: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «números do painel relidos na fonte a»
+
+
+REC1 voz-ensaio-inicial: código 1

@@ -205,7 +205,6 @@ export const LINGUA_DOS_TITULOS = {
      edições, e é o nome com que eles se publicam: a edição inglesa cita-os pelo
      nome que eles têm, e diz em que língua está. */
   'Arquivo de estudos': 'pt',
-  'Registo de correções': 'pt',
 
   /* --- os documentos ingleses ------------------------------------------- */
   'Gross domestic product (GDP) at current market prices by NUTS 2 region': 'en',
@@ -1256,9 +1255,6 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* COR-AGUA C: a edição da contagem das correções passou a 08.11.2026.
-     É uma data sem língua; a edição anterior já não é usada pelas linhas. */
-  '08.11.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */

@@ -1,3 +1,6 @@
+import { emEnsaio } from '../site.config.mjs';
+import { parse } from 'node-html-parser';
+import { conferirLancamentoHtml, conferirRobotsTxt } from './lancamento-conferir.mjs';
 import { conferirCors } from './incorporar-do-portao.mjs';
 import { allClaims } from '../src/lib/ledger.mjs';
 /**
@@ -222,7 +225,10 @@ for (const caminho of ['/', '/en/ledger']) {
 /* (b) o escudo do alias: `noindex` no alias, e nada no domínio canónico. */
 const respostaAlias = await ler(`https://${ALIAS_VERCEL}/`);
 conferir(`${ALIAS_VERCEL} x-robots-tag`, respostaAlias.cabecalho('x-robots-tag'), 'noindex');
-const respostaCanonica = await ler(`https://${host}/`);
+const respostaCanonica = await ler(`https://${host}/`, {comCorpo:true});
+conferir(`modo ${emEnsaio() ? "ensaio" : "lançado"}: HTML canónico`, conferirLancamentoHtml(parse(respostaCanonica.corpo), {lang:"pt",key:"home"}).join("; "), "");
+const robotsCanonico = await ler(`https://${host}/robots.txt`, {comCorpo:true});
+conferir("robots.txt canónico", conferirRobotsTxt(robotsCanonico.corpo).join("; "), "");
 conferir(`${host} x-robots-tag`, respostaCanonica.cabecalho('x-robots-tag'), null);
 
 /* (c) os três 308 de anfitrião. Os anfitriões saem do `site.config.mjs` e não do

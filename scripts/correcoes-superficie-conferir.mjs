@@ -8,6 +8,7 @@ export function conferirSuperficieCorrecoes(root,lang){
  const erros=[],r=t(lang).correcoes,main=root.querySelector('main');
  const h=main?.querySelector('h1'),registo=main?.querySelector('#registo');
  if(!h||!registo)return ['EV3-G: título ou registo ausente'];
+ if(h.textContent!==r.h1)erros.push(`REC1: título do registo diferente em ${lang}`);
  const partes=[];let ativo=false,fim=false;
  function visitar(n){
   if(n===h){ativo=true;return;}

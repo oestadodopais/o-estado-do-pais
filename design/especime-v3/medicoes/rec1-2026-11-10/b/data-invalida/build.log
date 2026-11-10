@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 astro
+> astro build --root <temporario>
+
+[astro] Unable to load your Astro config
+
+REC1: LANCAMENTO exige null ou uma data ISO válida de dez carateres.
+  Location:
+    <worktree>/node_modules/vite/dist/node/module-runner.js:1015:163
+  Stack trace:
+    at eval (<temporario>/site.config.mjs:113:9)
+    at ModuleRunner.directRequest (file://<worktree>/node_modules/vite/dist/node/module-runner.js:1268:80)
+REC1 data-invalida: código 1

@@ -230,12 +230,6 @@ export const UNIDADES = {
      e não o que o Eurostat imprime: onde a fonte tem inglês próprio, é o dela. */
   'euros por habitante · volumes encadeados (2015)':
     'euro per capita · chain linked volumes (2015)',
-  /* 1 linha (`edicoes-publicadas`). A casa: `strings.mjs`, `stubEdicoes`,
-     escreve «Editions» na edição inglesa para a mesma coisa. */
-  edições: 'editions',
-  /* 1 linha (`correcoes-publicadas`). A casa: a rota inglesa do registo é
-     `/en/corrections` (`src/lib/routes.mjs`). */
-  correções: 'corrections',
   /* 1 linha. A fonte: «Percentage of individuals», no excerto de
      `competencias-digitais-2025`. */
   '% dos indivíduos': '% of individuals',

@@ -14952,3 +14952,12 @@ A classe destes erros corrige-se por guião, na HIG-6: o `pre-mandato.py` corre 
 - a secção da leitura curta da adenda D por escrever no registo das leituras, recuperada do relatório do leitor.
 
 **Custo:** a CAM2-A, 10 pontos do Codex em oito passagens (`custo-cam2a-2026-11-09.json`); a DIA1, no seu fecho.
+
+
+### 1.237 REC1, 10.11.2026: ensaio e registo a partir do lançamento
+
+**Afecta:** metodo
+
+**Texto:** metodo ad1b89132342
+
+REC1, 10.11.2026. O Estado do País ainda não foi mostrado a ninguém e está a ser auditado contra as fontes, estudo a estudo, por outra família de modelos. Até essa auditoria fechar, o projeto está em edição de ensaio e di-lo em todas as páginas, com `noindex`. Há uma linha de partida, o lançamento (`LANCAMENTO` em `site.config.mjs`): o registo das correções e as listas de mudanças ao que já estava publicado contam a partir dela; antes dela não se mostram. Nenhum dado da história se apaga: as correções das linhas, a história selada e as reconferências ficam, e o recibo de cada número continua a mostrar a história desse valor. As duas linhas que contavam correções e edições deixam de se publicar. Depois do lançamento, um erro corrigido chama-se correção. A razão: a palavra do financiador como leitor (um sítio com o registo do seu próprio ensaio à vista quebra a confiança antes de a ganhar) e a decisão do lugar de direção de não chamar atualização a uma correção.

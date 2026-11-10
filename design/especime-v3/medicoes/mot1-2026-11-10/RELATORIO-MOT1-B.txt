@@ -1,0 +1,142 @@
+MOT1-B, 10.11.2026
+Cabeça de entrada do motor: 1970a41.
+
+Não se fechou toda a adenda. O contexto do ponto 2 e a nota do ponto 9 ficam
+abertos pela regra de paragem que proíbe mudar os produtos dos quatro estudos.
+Os restantes pontos foram implementados. Os 47 ficheiros gerados conservam os
+bytes. Não se alteraram fontes, históricos, bases do portão nem medir-mot1.py.
+
+1. Correções por identidade. O marcador cor usa c- mais o SHA-256 da fonte,
+bloco, unidade, forma impressa, ocorrência e edição, em serialização canónica.
+A linha escolhida e a posição na lista não fazem parte da identidade.
+Só as chaves cor mudaram nos gabaritos ativos. Plantas: inverter duas correções
+com valores diferentes conserva o texto; chave ausente, índice antigo, chave
+repetida, fonte/figura/edição/linha inválida e reutilização recusam pelo motivo.
+
+2. Parcial. Uma correção sem linha exige razão textual não vazia. Ausência,
+null, espaços e número no lugar da razão recusam; a razão escrita passa.
+A ancoragem pelo contexto não foi aplicada. Uma tentativa que comparava os
+vizinhos encontrou alterações de prosa já fixadas. Mesmo usando só a palavra
+imediata de cada lado, a fonte 06, bloco 22, edição en, escreve «NUTS3), with»;
+o documento.en.md.tmpl do 18, linha 155, escreve «NUTS⟦nf:06:22:0:3⟧). The».
+Repor o vizinho da fonte mudaria o Markdown, o HTML e o registo. A tentativa e
+as mudanças de coordenadas foram retiradas, sem exceções que dispensassem a
+regra. A referência movida continua a ser uma vulnerabilidade aberta.
+
+3. Linhas próprias com documento alojado. document.source_sha256 é obrigatório.
+O corpo é procurado pelo resumo em source/ do estudo e das fontes declaradas.
+Reutiliza-se core.pdfproof.locate: exige-se a página exata e o excerto inteiro,
+recusando os acertos por truncagem ou por páginas vizinhas que o localizador
+permite para recortes. O suporte nesta passagem é PDF; outros corpos recusam
+por falta de leitor de página. Plantas: falta de resumo, corpo inexistente,
+página errada e excerto inventado recusam; corpo correto no estudo ou numa
+fonte declarada passa. A exportação volta a conferir o corpo e publica o seu
+nome real em source_body. R7 recusa a troca desse nome. A cópia de teste do 16
+compõe, exporta e passa reconciliação, atribuições, asserções, prosa, derivações
+e paridade. Nenhuma linha fictícia foi acrescentada a estudos reais.
+
+4. Cada linha própria tem marcador em cada edição. A planta com uso só em pt
+recusa especificamente pela edição en; com uso nas duas passa.
+
+5. Um algarismo colado a um marcador recusa, antes de dispensar anos e datas.
+Plantas: ano colado à esquerda, à direita e numa emenda recusam. O ano separado
+continua a passar. A regra abrange a prosa e a resolução das emendas antigas.
+
+6. A nova suite core.gabaritos_ativos_test integra core.gate. Descobre os estudos
+pelo livro do compositor, compara os produtos ativos, recompõe, renderiza e
+exporta uma cópia sem sequer copiar os históricos. Confere Markdown, livro,
+proveniência, decisões, HTML, registos, cortes e manifestos. A frase alterada
+no gabarito ativo sem recompor recusa. HTML alterado com o mesmo tamanho recusa.
+A prova de aplanar usa agora o estudo pequeno de core/fixtures/mot1/content,
+fixado nos testes; prova ensaio, escrita, história, mapa e idempotência.
+
+7. core.aplanar compara os produtos recompostos com os ficheiros em disco,
+incluindo quando os gabaritos já estão aplanados. A mudança de «despesa» para
+«receita» no produto, com o mesmo tamanho, recusa nos dois estados. O ensaio
+explicita que não cobre HTML, registos, cortes nem records.manifest.json.
+
+8. As recusas das suites MOT1 usam a mensagem da regra. Também se precisaram
+as recusas do compositor já existentes. Plantas que distinguem regras fracas:
+alternativas [valor certo, valor errado]; uma única colisão de identificador;
+valor positivo com excerto negativo recusa, negativo com excerto negativo
+passa; mudanças de igual tamanho no Markdown e no HTML recusam. A planta de
+correção para uma linha sem o valor agora alcança essa regra, em vez de cair
+antes pela ausência de outra correção.
+
+9. Parado. NOTA_E1, em publisher/export_records.py, está literalmente no campo
+nota dos quatro records.manifest.json. Corrigir na origem e regenerar muda
+esses quatro produtos. A regra de paragem impede-o nesta passagem; nem a nota
+na origem nem os manifestos foram alterados. Não se deixou a origem divergente
+dos produtos fixados.
+
+Conferências dirigidas
+15 corridas de suites: core.aplanar_test, três; core.linhas_proprias_test, três;
+core.compor_test, três; core.gabaritos_ativos_test, duas; core.compor_livros_test,
+uma; publisher.ev2_test, uma; publisher.export_records_test, duas.
+Últimos resultados, todos com código 0: aplanar, 18 testes; linhas próprias,
+19; compositor, 23; ativos, 3; livros, 47; EV2, 14; exportador, 34.
+Erros corrigidos: duas corridas das linhas próprias expuseram a integração em
+falta com a prova de corpo do exportador; uma corrida do compositor apanhou
+mensagens esperadas que não eram as mensagens reais. Nenhuma regra foi dispensada.
+
+Portão completo
+Código 0; 993 segundos; 70 suites; uma única corrida por curto.sh.
+Últimas oito linhas, copiadas de <temporario>/mot1-b-gate.log:
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Resumos SHA-256: antes = depois
+Os sete Markdown seguintes foram comparados diretamente com a composição dos
+ativos. A prova integral dos ativos conferiu também renderização e exportação.
+
+16 Évora Contas da Câmara
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md
+    076c676f7e0bceb87dffd8fc7adfd6500ab747c80f683c5b464ceb56934439de
+  The accounts of the Câmara de Évora, 2010 to 2025.md
+    0780b494518f5df45b53fa9080dca47142acbf04b2e04875a3a1ca8ce6501e06
+  Conjunto dos 13 produtos: 49f63e54cfb67e1743ba61501e00fecea4f31c35c433e5cb43011cfa3ed3102c
+
+17 Évora Quem Governou
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md
+    d496dcfc19d96d8949c5cde4d8fd584637c4b1e90b4df96dab5cb356f566f50b
+  Conjunto dos 8 produtos: ff99ec6f72d9c82dd8f3a230d834207014ae13b9b868b30fa99a5548a99d873e
+
+18 Évora Economia e Dinheiro de Fora
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md
+    ad529ecbbae894c1a1b75695a7b5eeb88e40f05f1b2c496061dfe49bbf4fe7cb
+  The economy of Évora and the public money that reaches the municipality outside the council.md
+    366be2398d515b02ec80f6fd8a7d28f7efeab17dc1bb40d6ea131388852e0404
+  Conjunto dos 13 produtos: 973302e5fe5fd65bccdca0a2402b69bdb6dd39e015dd6dcaa67c38f92bd074d2
+
+19 Évora 2027 Capital Europeia da Cultura
+  Évora 2027, Capital Europeia da Cultura (pt-PT).md
+    1318c813da17fc25b1c2064667b163591676a15e81f84cafa199ceec72a84601
+  Évora 2027, European Capital of Culture.md
+    0b06469a0869b40e3523ec3e3690f9b99bedd3e94470ee6624a13b96c464b47f
+  Conjunto dos 13 produtos: 81e10bba0b781b89b3802af1a09ee200bd91b424a1f8801116d7709c2e71942e
+
+O resumo de conjunto usa os nomes relativos, ordenados, cada um seguido de NUL,
+do SHA-256 do ficheiro e de uma mudança de linha. Os conjuntos têm os mesmos
+nomes e bytes antes e depois: 13, 8, 13 e 13 ficheiros, respetivamente.
+
+Aberto: ancoragem de nf e cor sem linha pelo contexto; correção de NOTA_E1 e
+regeneração dos manifestos; leitor de páginas para corpos que não sejam PDF.
+
+Motor: 27c3ada4, 23 ficheiros, confirmado pelo escrivão e pelo Git.
+O hook confirmou OEDP_GATE=adiado e não repetiu o portão.
+Sítio: 481fabce, primeiro commit deste relatório, confirmado pelo Git e pelo
+resultado do escrivão com código 0. O cliente saiu com código 3 porque o sinal
+de atividade parou por mais de trinta segundos durante o commit; o escrivão
+acabou o pedido e retomou o sinal. Esta revisão regista essa confirmação.
+Claude-Session copiada do commit 8cd6b87ea, que trouxe a adenda B.
+Custo documentado: 51 chamadas de ferramentas até à confirmação dos dois
+commits acima. As chamadas seguintes fecham este relatório; o total final é
+dado na resposta de fecho. Houve 15 corridas de suites dirigidas e uma corrida
+de core.gate. Zero portões do sítio e capturas.
+Não foi exposta uma linha «tokens used».

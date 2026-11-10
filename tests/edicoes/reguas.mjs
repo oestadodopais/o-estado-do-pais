@@ -1,3 +1,4 @@
+import { desdeOLancamento } from '../../site.config.mjs';
 import fs from 'node:fs';
 import {parse} from 'node-html-parser';
 import {textoDaVoz} from '../../scripts/voz-edicoes.mjs';
@@ -9,8 +10,8 @@ import {contagensDoRegisto,loadClaims,validateLedger} from '../../src/lib/ledger
 import {analisa,leMarcadores,leInventario} from '../../scripts/voz.mjs';
 import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 let plantas=0;
-const linhas=loadClaims(),conta=linhas.get('correcoes-publicadas');
-assert.equal(Number(conta.value),contagensDoRegisto().correcoes_publicadas);
+const linhas=loadClaims({includeWithdrawn:true}),conta=linhas.get('correcoes-publicadas');
+assert.equal(Number(conta.value),contagensDoRegisto(linhas).correcoes_publicadas);
 const livro = [...linhas.values()].reduce((n,c)=>n+(c.corrections??[]).filter(e=>e.kind==='correcao').length,0);
 assert.equal(contagemDasCorrecoesNoPortao(livro,CORRECOES_TEXTO),Number(conta.value));
 assert.notEqual(contagemDasCorrecoesNoPortao(livro,CORRECOES_TEXTO.slice(1)),Number(conta.value));plantas++;
@@ -26,7 +27,7 @@ for(const e of CORRECOES_TEXTO)for(const lang of ['pt','en']) {
 // ED1-F: a unidade é o campo marcado que a voz lê, com selos e marcas de língua.
 // A classe e o estado são exigidos; o nome do bloco editorial não muda o texto rendido.
 const normal=s=>normalizaFraseDoInventario(s.replace(/\s+/g,' ').trim());
-const declarada=(inv,t)=>inv.linhas.some(l=>l.estado==='viva'&&l.classe==='conteudo'&&normal(l.texto)===normal(t));
+const declarada=(inv,t)=>inv.linhas.some(l=>['viva','condicional-rec1'].includes(l.estado)&&l.classe==='conteudo'&&normal(l.texto)===normal(t));
 let campos=0;
 for(const rota of ['correcoes','en/corrections']) {
  const root=parse(fs.readFileSync(`${process.env.OEDP_DIST??'dist'}/${rota}/index.html`,'utf8'));
@@ -38,5 +39,5 @@ for(const rota of ['correcoes','en/corrections']) {
   const alterada=parse(el.outerHTML);alterada.querySelector('[data-texto-campo="frase"]').set_content('Uma frase diferente.');assert(!declarada(inventario,textoDaVoz(alterada)));plantas++;
  }
 }
-assert.equal(campos,CORRECOES_TEXTO.length*2,'todas as entradas nas duas línguas');
+assert.equal(campos,CORRECOES_TEXTO.filter(c=>desdeOLancamento(c.data)).length*2,'todas as entradas nas duas línguas');
 console.log(`ED1 réguas: ${plantas} plantas da contagem, voz e inventário.`);

@@ -1,0 +1,74 @@
+[
+  {
+    "estudo": "/",
+    "lingua": "en",
+    "frase": "08.11.2026study updatedÉvora 2027: what was promised, what the panel wrote, and the money line by line",
+    "tipos": [
+      "atribuicao"
+    ],
+    "sha256": "48b1f5fb4a3db78c8bf8bac82b9a355b860758c57a2c63fd08fbfac9205f3a0d",
+    "ocorrencias": [
+      {
+        "pagina": "/en",
+        "bloco": 3,
+        "indice": 0,
+        "linhas": []
+      }
+    ],
+    "pelo_par": false
+  },
+  {
+    "estudo": "/",
+    "lingua": "en",
+    "frase": "08.11.2026study updatedÉvora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+    "tipos": [
+      "atribuicao"
+    ],
+    "sha256": "65d6d08881d0a72f81d0acd4589cf612d987dc2193f6946bdc9b9e392c706b40",
+    "ocorrencias": [
+      {
+        "pagina": "/en",
+        "bloco": 2,
+        "indice": 0,
+        "linhas": []
+      }
+    ],
+    "pelo_par": false
+  },
+  {
+    "estudo": "/",
+    "lingua": "pt",
+    "frase": "08.11.2026estudo atualizadoÉvora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
+    "tipos": [
+      "atribuicao"
+    ],
+    "sha256": "2749c1ac00abad7ef1c7c4d762b618585aa721c3beba6ea607c27f2f3450f422",
+    "ocorrencias": [
+      {
+        "pagina": "/",
+        "bloco": 3,
+        "indice": 0,
+        "linhas": []
+      }
+    ],
+    "pelo_par": false
+  },
+  {
+    "estudo": "/",
+    "lingua": "pt",
+    "frase": "08.11.2026estudo atualizadoÉvora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+    "tipos": [
+      "atribuicao"
+    ],
+    "sha256": "dce85d7b0a3e726c3e07a7eabdf53d0c4fa3ffc3717578de3a3d204c329498d4",
+    "ocorrencias": [
+      {
+        "pagina": "/",
+        "bloco": 2,
+        "indice": 0,
+        "linhas": []
+      }
+    ],
+    "pelo_par": false
+  }
+]

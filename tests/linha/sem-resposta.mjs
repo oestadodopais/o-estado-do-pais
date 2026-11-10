@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import assert from 'node:assert/strict';
+import {parse} from 'node-html-parser';
+import {emEnsaio} from '../../site.config.mjs';
 /**
  * =============================================================================
  * «SEM RESPOSTA A dd.mm.aaaa» · a régua do estado da fonte no recibo
@@ -310,6 +313,24 @@ for (const claim of claims) {
  * o `filter` do `astro.config.mjs` e o `noindex` do `LinhaView` leem, e o que
  * aqui se prova é que as três leituras dizem o mesmo.
  */
+function conferirIndexacao(html, dentro, incompleta, ensaio = emEnsaio()) {
+  const erros = [], metas = parse(html).querySelectorAll('meta[name="robots"]');
+  const noindex = metas.length === 1 && /\bnoindex\b/.test(metas[0].getAttribute('content') ?? '');
+  if (dentro === incompleta) erros.push(incompleta ? 'proveniência incompleta e no mapa do sítio.' : 'proveniência completa e fora do mapa do sítio.');
+  if ((ensaio || incompleta) && !noindex) erros.push('falta a meta noindex única.');
+  if (!ensaio && !incompleta && metas.some(n=>/\bnoindex\b/.test(n.getAttribute('content')??''))) erros.push('proveniência completa e com noindex.');
+  return erros;
+}
+let plantasIndexacao = 0;
+for (const ensaio of [true,false]) for (const incompleta of [true,false]) {
+  const html = ensaio || incompleta ? '<meta name="robots" content="noindex, follow">' : '';
+  assert.deepEqual(conferirIndexacao(html,!incompleta,incompleta,ensaio),[]);
+  assert(conferirIndexacao(html,incompleta,incompleta,ensaio).length);plantasIndexacao++;
+  const trocada = ensaio || incompleta ? '' : '<meta name="robots" content="noindex, follow">';
+  assert(conferirIndexacao(trocada,!incompleta,incompleta,ensaio).length);plantasIndexacao++;
+  if (ensaio || incompleta) {assert(conferirIndexacao(html+html,!incompleta,incompleta,ensaio).length);plantasIndexacao++;}
+}
+console.log(`REC1 fontes: ${plantasIndexacao} plantas de mapa e meta recusadas nos dois modos.`);
 const MAPA = path.join(DIST, 'sitemap-0.xml');
 if (!fs.existsSync(MAPA)) {
   falhas.push(`não há ${MAPA}: sem o mapa do sítio não se pode conferir quem está fora dele.`);
@@ -325,15 +346,9 @@ if (!fs.existsSync(MAPA)) {
        primeira corrida. */
     if (!fs.existsSync(pagina)) continue;
     const html = fs.readFileSync(pagina, 'utf8');
-    const semIndice = html.includes('name="robots"') && html.includes('noindex');
-    if (provenienciaIncompleta(claim)) {
-      incompletas += 1;
-      if (dentro) falhas.push(`${claim.id}: proveniência incompleta e no mapa do sítio.`);
-      if (!semIndice) falhas.push(`${claim.id}: proveniência incompleta e sem noindex.`);
-    } else {
-      if (!dentro) falhas.push(`${claim.id}: proveniência completa e fora do mapa do sítio.`);
-      if (semIndice) falhas.push(`${claim.id}: proveniência completa e com noindex.`);
-    }
+    const incompleta = provenienciaIncompleta(claim);
+    if (incompleta) incompletas += 1;
+    falhas.push(...conferirIndexacao(html, dentro, incompleta).map(e=>`${claim.id}: ${e}`));
   }
 }
 

@@ -7,7 +7,8 @@
  * e o comando do tema volta ao cabeçalho, na fila da marca, à direita dela, em
  * todas as larguras (a razão do lugar está em `ControloDeTema.astro`). A troca
  * de língua continua no rodapé, onde a peça 3 do B1 a pôs. */
-import { SITE_NAME } from '../../site.config.mjs';
+import { ENSAIO } from '../data/ensaio.mjs';
+import { emEnsaio, SITE_NAME } from '../../site.config.mjs';
 import { routePath, normalizePath } from '../lib/routes.mjs';
 import Caminho from './Caminho.astro';
 import ControloDeTema from './ControloDeTema.astro';
@@ -34,6 +35,7 @@ const NomeTag = naHome ? 'h1' : 'p';
       <NomeTag class="wordmark">{compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}</NomeTag>
       <ControloDeTema s={s} />
     </div>
+    {emEnsaio() && <p class="rotulo-ia-linha" data-edicao-ensaio title={ENSAIO[lang].acessivel}>{ENSAIO[lang].marca}{' '}<span class="vh">{ENSAIO[lang].acessivel}</span></p>}
     <Caminho lang={lang} path={aqui} />
   </div>
 </header>

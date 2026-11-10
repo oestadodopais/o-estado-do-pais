@@ -1,3 +1,4 @@
+import { emEnsaio } from '../../site.config.mjs';
 /** MET1: texto aprovado pelo mandato, nas duas edições. As contagens são tokens de prova. */
 export const ENDERECO_CORRECOES = 'correcoes@oestadodopais.pt';
 export const METODO = {
@@ -126,14 +127,14 @@ export const METODO = {
         {
           "prova": "painel_reconferido_em"
         },
-        "; quando a fonte muda um valor, o número muda e o registo diz o que estava antes."
+        "; quando a fonte muda um valor, o número muda e o recibo desse número diz o que estava antes."
       ],
       "en": [
         "The panel numbers are read again at the source, most recently on ",
         {
           "prova": "painel_reconferido_em"
         },
-        "; when the source changes a value, the number changes and the register shows what was there before."
+        "; when the source changes a value, the number changes and that number's receipt shows what was there before."
       ]
     }
   ],
@@ -189,10 +190,10 @@ export const METODO = {
   ],
   "mudanca": {
     "pt": [
-      "Cada mudança fica no registo das correções, com a data, o que estava e o que ficou."
+      emEnsaio() ? "A partir do lançamento, cada mudança fica no registo das correções, com a data, o que estava e o que ficou." : "Cada mudança fica no registo das correções, com a data, o que estava e o que ficou."
     ],
     "en": [
-      "Each change is recorded in the corrections register, with the date, what was there and what replaced it."
+      emEnsaio() ? "From launch onward, each change is recorded in the corrections register, with the date, what was there and what replaced it." : "Each change is recorded in the corrections register, with the date, what was there and what replaced it."
     ]
   },
   "autoria": {

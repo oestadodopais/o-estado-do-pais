@@ -1,0 +1,282 @@
+[
+  {
+    "prova": "e/cartoes-ensaio.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/complementos/check-discussao.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/complementos/check-edicoes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/complementos/check-voz.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/construcao-ensaio.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-datas.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-explicacoes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-fontes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-indice-do-sitio.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-lugar.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-nomes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-pais.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-privacidade.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-rec1.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-sugestoes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/check-voz-retiradas.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/design-feixe.codigo",
+    "codigo": 1
+  },
+  {
+    "prova": "e/ensaio/provar-guardas.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/ensaio/typecheck.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/feixe-final/design-feixe.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/final/design-feixe.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/final/gate-html.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/irmas/check-cartao.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/irmas/check-frases-afirmacao.codigo",
+    "codigo": 1
+  },
+  {
+    "prova": "e/irmas/check-frases-compostas.codigo",
+    "codigo": 1
+  },
+  {
+    "prova": "e/irmas/check-rotulos.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/irmas/check-series.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-datas.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-explicacoes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-fontes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-indice-do-sitio.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-lugar.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-nomes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-pais.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-privacidade.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-rec1.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-sugestoes.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/check-voz-retiradas.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/design-feixe.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/provar-guardas.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/lancado/typecheck.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/largura-amostra.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "e/primeira-tentativa.codigo",
+    "codigo": 1
+  },
+  {
+    "prova": "e/tipos-final/typecheck.codigo",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-datas",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-explicacoes",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-fontes",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-indice-do-sitio",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-lugar",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-nomes",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-pais",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-privacidade",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-rec1",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-sugestoes",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/check-voz-retiradas",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/design-feixe",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/provar-guardas",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/typecheck",
+    "modo_real": "ensaio",
+    "rotulo_da_corrida_incorreto": "lancado",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/build:pai2-d",
+    "codigo": 0
+  },
+  {
+    "prova": "cópia sem data/cartoes",
+    "codigo": 0
+  },
+  {
+    "prova": "lançado/build:pai2-d",
+    "codigo": 0
+  },
+  {
+    "prova": "lançado/cartoes",
+    "codigo": 0
+  },
+  {
+    "prova": "revisão final do diff e sintaxe",
+    "codigo": 0
+  }
+]

@@ -6,7 +6,7 @@ import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 import {manifestoDasEdicoes,versoesDaEdicao,faixaDaVersao} from '../../src/lib/edicoes.mjs';
 import {t} from '../../src/i18n/strings.mjs';
 const inv=leInventario(process.cwd()),marcadores=leMarcadores(process.cwd());
-const declarada=texto=>inv.linhas.some(l=>l.estado==='viva'&&normalizaFraseDoInventario(l.texto)===normalizaFraseDoInventario(texto));
+const declarada=texto=>inv.linhas.some(l=>['viva','condicional-rec1'].includes(l.estado)&&normalizaFraseDoInventario(l.texto)===normalizaFraseDoInventario(texto));
 let controlos=0,plantas=0,documentos=0;
 for(const [fragmento,inteiras] of FAIXAS_DE_EDICAO){
  assert(inv.linhas.some(l=>l.texto===fragmento&&l.estado==='retirada'));

@@ -1,0 +1,14 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/edicoes/lingua.mjs && node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+ED1-A língua: edição atual sem língua recusada.
+ED1-A língua: edição anterior órfã recusada.
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+[32m  língua ✓ [0m87 unidade(s) do livro-razão (85 das linhas, 14 das séries): 86 traduzida(s), 1 em português com razão escrita («factor») · 3480 localizador(es), todos dentro de documento português · 241 título(s) de documento com língua declarada (178 pt, 62 en) · 908 rótulo(s) da fonte com língua declarada (542 pt, 366 en) · 65 organismo(s) com língua declarada (61 pt, 3 en) · 146 edição(ões) com língua declarada (28 pt, 0 en, 118 sem língua)
+[90m        9816 página(s) lidas · unidades em «en»: 10549 (10547 traduzidas, 2 em português, todas com marca) · títulos com marca de língua: 7817 de 15629 rendidos · rótulos da fonte com marca de língua: 8592 de 18166 rendidos · organismos rendidos: 21756 (10848 de língua contrária: 10006 em «en» e 842 em «pt», 10848 com a marca certa) · edições rendidas: 11535 (3860 de língua contrária: 3860 em «en» e 0 em «pt», 3860 com a marca certa, 3809 sem língua nenhuma e sem marca) · localizadores em «en»: 3254 com marca · leis em «en»: 1102 com marca, 6 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 123 à vista e 0 no oculto, todos com marca · rótulo de IA: 9816 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[90m        6 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
+
+
+REC1 D lancado check:lingua: código 0

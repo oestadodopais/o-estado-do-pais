@@ -44,7 +44,7 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=nul
       // OG1-B-c: a data da frase mostrada é a da escrita; a caixa de novidades conserva a publicação.
       return Boolean(item && origem==='escrita.declarada' && el.parentNode===resumo && el.getAttribute('datetime')===item.escrita && el.text.trim()===dataDaCasa(item.escrita));
     }
-    if(el.closest('[data-atualizacao]')?.closest('[data-novidades]'))return ['verificacao.verificadoEm','version.construido_em'].includes(origem);
+    if(el.closest('p[data-atualizacao]')?.closest('main'))return ['verificacao.verificadoEm','version.construido_em'].includes(origem);
     const novidade=el.closest('[data-novidades] [data-novidade]');
     if(novidade && origem==='edicoes.data') {
       const id=novidade.getAttribute('data-novidade');

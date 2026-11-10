@@ -189,6 +189,7 @@ export function analisa(texto, rota, { marcadores, excecoes }, chaveDaRota = nul
  * ler-se, e fica sem bloco, porque um ficheiro de dados a meio de uma migração
  * não deve mentir sobre o que tem.
  * ========================================================================== */
+const FRASES_REC1 = new Set(JSON.parse(fs.readFileSync(new URL('./voz-rec1.json',import.meta.url),'utf8')));
 export const FICHEIRO_DO_INVENTARIO = path.join(
   'design',
   'especime-v3',
@@ -243,6 +244,7 @@ const ESTADOS_DO_INVENTARIO = new Set(['viva', 'retirada']);
 // DO2: rótulos dependentes de itens fora de dossiês;
 // conferirNovidades verifica a condição, a origem e o texto em cada primeira página.
 export function estadoDoInventario(cru,bloco,texto) {
+  if (cru==='condicional-rec1') return FRASES_REC1.has(texto) ? cru : null;
   if (cru==='condicional-novo') return bloco==='fp1' && ['novo','new'].includes(texto) ? cru : null;
   if (cru==='condicional-do2') return bloco==='v2b' && ['O que se discute →','Under discussion →'].includes(texto) ? cru : null;
   if (cru==='condicional-fp1') return bloco==='fp1' && ['o que se discute','under discussion'].includes(texto) ? cru : null;

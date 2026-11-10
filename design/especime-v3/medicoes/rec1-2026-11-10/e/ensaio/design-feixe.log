@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+
+  [31m✗[0m não há `dist/cartoes/`. Correr `npm run build`.
+
+
+REC1 E ensaio design:feixe: código 1

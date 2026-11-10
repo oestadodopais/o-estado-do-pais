@@ -1,0 +1,14 @@
+{
+ "diretivas-bloco": {
+  "valor": "285",
+  "comando": "python3 -B design/especime-v3/medicoes/mot1-2026-11-10/medir-mot1.py <motor> (motor em b4d0bbe); a saída em medidas-mot1.txt · linha TOTAL, «blocos»"
+ },
+ "emendas": {
+  "valor": "169",
+  "comando": "python3 -B design/especime-v3/medicoes/mot1-2026-11-10/medir-mot1.py <motor> (motor em b4d0bbe); a saída em medidas-mot1.txt · linha TOTAL, «emendas»"
+ },
+ "marcadores": {
+  "valor": "191",
+  "comando": "python3 -B design/especime-v3/medicoes/mot1-2026-11-10/medir-mot1.py <motor> (motor em b4d0bbe); a saída em medidas-mot1.txt · linha TOTAL, «marcadores»"
+ }
+}

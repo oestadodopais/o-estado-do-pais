@@ -219,16 +219,6 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": "People with basic or above basic digital skills in the European Union"
     }
   },
-  "correcoes-publicadas": {
-    "frase": {
-      "pt": [
-        "As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos."
-      ],
-      "en": [
-        "The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies."
-      ]
-    }
-  },
   "credito-malparado": {
     "nome": {
       "pt": "Crédito malparado",
@@ -843,16 +833,6 @@ export const FAMILIAS_DAS_LINHAS = {
       ],
       "en": [
         "It is everything general government owes, as a percentage of GDP, the value of everything the economy produces in a year."
-      ]
-    }
-  },
-  "edicoes-publicadas": {
-    "frase": {
-      "pt": [
-        "É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado."
-      ],
-      "en": [
-        "It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately."
       ]
     }
   },

@@ -1,3 +1,5 @@
+import { emEnsaio } from '../site.config.mjs';
+import { ENSAIO } from '../src/data/ensaio.mjs';
 /** MET1: lista fechada independente da vista, com recibo conferido pelas guardas do livro-razão. */
 import fs from 'node:fs';
 import { parse } from 'node-html-parser';
@@ -17,6 +19,7 @@ export function unidades(lang) {
     ...a.marcas.map((p,i) => [`marca-${i}`, partes(p[lang])]),
     ...a.campos[lang].map((p,i) => [`campo-${i}`,p]),
     ...a.ligacoes[lang].map((p,i) => [`ligacao-${i}`,p]),
+    ['mudanca', emEnsaio() ? (lang === 'pt' ? 'A partir do lançamento, cada mudança fica no registo das correções, com a data, o que estava e o que ficou.' : 'From launch onward, each change is recorded in the corrections register, with the date, what was there and what replaced it.') : partes(a.mudanca[lang])],
     ['recibo-nome',nomeNoRecibo(a.recibo.id, lang).texto],
   ]);
 }
@@ -44,6 +47,12 @@ export function conferirLugaresIA(_root, lang, html = null) {
   const erros = [...conferirContagemDaCorrida(root)], u = unidades(lang), main = root.querySelector('main');
   if (ligacoesAoGithub(root).length) erros.push('MET2: ligação ao repositório no Método.');
   if (!main) return ['MET1: falta main.'];
+  const marcasEnsaio = main.querySelectorAll('[data-metodo-ensaio]');
+  if (emEnsaio() ? marcasEnsaio.length !== 1 || marcasEnsaio[0].textContent !== ENSAIO[lang].metodo : marcasEnsaio.length !== 0) erros.push('REC1 Método: frase de ensaio ausente, repetida ou diferente');
+  for (const n of marcasEnsaio) {
+    if (n.tagName !== 'P' || n.closest('li') || n.nextElementSibling?.tagName !== 'UL') erros.push('REC1 Método: ensaio fora de parágrafo próprio antes da lista.');
+    n.remove();
+  }
   const campoLocalizador = campoLocalizadorMet1(lang);
   const linhaLocalizador = getClaim(APROVADO.recibo.id);
   const valorLocalizador = linhaLocalizador.document[campoLocalizador.split('.')[1]];

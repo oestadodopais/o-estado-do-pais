@@ -1,3 +1,4 @@
+import {emEnsaio} from '../../site.config.mjs';
 /** OG1-E K: o portão real lê cópias, com os códigos e a medição que produziu. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -74,7 +75,14 @@ try{
   const root=parse(originais.get(rotas[2])),p=root.querySelectorAll('p').find(p=>p.textContent.startsWith('The council’s debt that counts towards the legal limit'));
   assert(p,'definição atual da dívida ausente');p.set_content(nova(dgal.texto));escrever(rotas[2],root.toString());
   for(const [i,l] of entradas.entries()){
-   const pagina=parse(originais.get(rotas[i])),campo=pagina.querySelector('[data-texto-estudo="a-casa-em-portugal-e-na-europa"] [data-texto-campo="frase"]');assert(campo);campo.set_content(esc(l.texto));escrever(rotas[i],pagina.toString());
+   const pagina=parse(originais.get(rotas[i]));
+   if(emEnsaio()) {
+    assert.equal(pagina.querySelectorAll('[data-mudanca]').length,0,'REC1: controlo do registo vazio');
+    pagina.querySelector('main').insertAdjacentHTML('beforeend',`<p data-voz>${esc(l.texto)}</p>`);
+   } else {
+    const campo=pagina.querySelector('[data-texto-estudo="a-casa-em-portugal-e-na-europa"] [data-texto-campo="frase"]');assert(campo);campo.set_content(esc(l.texto));
+   }
+   escrever(rotas[i],pagina.toString());
   }
   const pagina=parse(originais.get(rotas[3]));
   const html=esc(lei.texto).replace('Lei n.º 73/2013 :','<span lang="pt-PT">Lei n.º 73/2013</span>:');

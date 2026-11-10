@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {fraseRec1DeveRender,conferirPresencaRec1} from './voz-rec1.mjs';
 import {exigeRotuloNovo} from './marca-novo.mjs';
 import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 import {normalizaEspacosDaRetirada} from './titulos-publicados.mjs';
@@ -1410,6 +1411,18 @@ for (const file of ficheiros) {
     chaveDaRotaPorCaminho.set(chave, rota.key);
   }
 
+  // REC1: unidades acessíveis e frases do mandato, lidas do HTML efetivo.
+  for (const n of root.querySelectorAll('[data-edicao-ensaio]')) {
+    rendidasNasIsentas.add(n.childNodes.filter(c=>c.nodeType===3).map(c=>c.textContent).join('').trim());
+    for(const explicacao of n.querySelectorAll('.vh')) rendidasNasIsentas.add(explicacao.textContent.trim());
+  }
+  if (rota?.key === 'metodo') for (const n of root.querySelectorAll('[data-met1="mudanca"]')) rendidasNasIsentas.add(n.textContent.trim());
+  if (rota?.key === 'correcoes') for (const a of root.querySelectorAll('a[href^="mailto:"]')) {
+    const p=a.closest('p'); if(p) {
+      const depois=p.textContent.slice(p.textContent.indexOf(a.textContent)+a.textContent.length).trim().replace(/^\.\s*/, '');
+      if(depois) rendidasNasIsentas.add(depois);
+    }
+  }
   /* As rotas isentas da contagem, que só provam que uma linha se rende. */
   if (rota && ROTAS_QUE_PROVAM_A_RENDICAO.has(rota.key)) {
     for (const f of frasesDaCasa(root, rota.key)) rendidasNasIsentas.add(f);
@@ -1832,6 +1845,7 @@ function ondeVolta(frase) {
 
 const rendidasNormalizadas = new Set([...rendidas, ...rendidasNasIsentas].map(normalizaFraseDoInventario));
 
+const presencaRec1=conferirPresencaRec1(INVENTARIO.linhas,rendidasNormalizadas,normalizaFraseDoInventario);
 const marcasNovo=Object.fromEntries(['pt','en'].map(lang=>[lang,exigeRotuloNovo(lang,diaDaMarcaNovo)]));
 const declaracoes = {
   marcas_novo: {dia:diaDaMarcaNovo,exigidas:marcasNovo},
@@ -1839,7 +1853,7 @@ const declaracoes = {
   vivas: INVENTARIO.linhas.filter((l) => l.estado === 'viva').length,
   condicionais_do2: INVENTARIO.linhas.filter(l=>l.estado==='condicional-do2').length,
   condicionais_fp1: INVENTARIO.linhas.filter(l=>l.estado==='condicional-fp1').length,
-  retiradas: INVENTARIO.linhas.filter((l) => l.estado === 'retirada').length,
+  retiradas: INVENTARIO.linhas.filter((l) => l.estado === 'retirada' || (l.estado === 'condicional-rec1' && !fraseRec1DeveRender(l.texto))).length,
   rendidas: rendidas.size,
   sem_estado: INVENTARIO.linhas
     .filter((l) => !l.estado)
@@ -1855,11 +1869,12 @@ const declaracoes = {
      da contagem (o Método e o Sobre): uma linha declarada para uma frase que só
      lá vive rende-se, e a lista não está a mentir sobre o sítio. */
   vivas_que_nao_rendem: INVENTARIO.linhas
-    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-fp1' && l.estado !== 'condicional-do2' && (l.estado !== 'condicional-novo' || marcasNovo[l.texto==='novo'?'pt':'en']) && !rendidasNormalizadas.has(normalizaFraseDoInventario(l.texto)))
-    .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
+    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-rec1' && l.estado !== 'condicional-fp1' && l.estado !== 'condicional-do2' && (l.estado !== 'condicional-novo' || marcasNovo[l.texto==='novo'?'pt':'en']) && !rendidasNormalizadas.has(normalizaFraseDoInventario(l.texto)))
+    .concat(presencaRec1.faltam).map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
   retiradas_que_rendem: INVENTARIO.linhas
     .filter((l) => l.estado === 'retirada')
     .map((l) => ({ l, onde: ondeVolta(l.texto) }))
+    .concat(presencaRec1.sobram.map(l=>({l,onde:l.texto})))
     .filter((x) => x.onde)
     .map(({ l, onde }) => ({
       n: l.n,

@@ -1,0 +1,223 @@
+MOT1-A, segunda passagem, 10.11.2026
+
+Os estudos 17, 18 e 19 têm texto próprio nos gabaritos ativos. Os originais
+ficaram ao lado como documento.<língua>.composto.md.tmpl; os make_html.py leem
+só documento.??.md.tmpl. As cópias históricas foram comparadas com o Git.
+A prova integral recompõe e exporta cópias dos quatro estudos, compara todos
+os ficheiros gerados e inutiliza os históricos para provar que não são lidos.
+
+O 17 foi primeiro recomposto e exportado. Só mudaram as duas frases previstas
+no Markdown, no HTML e no record.json, e três resumos do records.manifest.json.
+O livro, a proveniência, as decisões e os cortes ficaram iguais. Depois desse
+estado, o aplanamento não mudou nenhum byte. Nos 16, 18 e 19, todos os produtos
+ficaram iguais à entrada da passagem. Foram conferidos 47 ficheiros gerados.
+
+As decisões corrigidas continuam em ajustes.json, sem alteração. O marcador
+⟦cor:índice⟧ lê a correção e confere fonte, figura antiga, edição e valor da linha;
+uma correção ausente, alterada, repetida ou sem figura recusa. O marcador
+⟦fig:fonte:bloco:unidade:ocorrência⟧ conserva uma forma impressa que difere da
+primeira forma da linha, sempre lida do registo da fonte. As referências nf
+continuam a recusar uma figura numérica com linha. As decisões exportadas,
+incluindo as contagens de correções, ficaram byte a byte iguais.
+
+Linhas próprias
+
+@@proprias P declara o espaço local de Technical Source/ajustes.json,
+linhas_proprias. Cada objeto declara id, value, alternates, source_url,
+fetched_at, excerpt, source_type, document {title, page}, e impresso {pt, en}
+ou formatacao: "numero". A regra usa a formatação numérica das fontes, com
+espaços nos milhares e o separador decimal da língua. O marcador é ⟦P:id⟧.
+É uma forma numérica primária: não aceita conta, componentes nem dispensa
+numérica. As formas alternativas e impressas têm de conservar o valor.
+
+O livro assinala linha_propria: true; a proveniência escreve tipo: propria,
+campo: linhas_proprias e o resumo da linha. A validação de core.reconcile,
+que as réguas de atribuição e recibos também chamam, volta a conferir a linha
+primária. As derivações locais podem citar os seus identificadores.
+
+Plantas: sem excerto, endereço, data, documento ou página; valor ausente,
+fragmento de outro número ou sinal trocado; formas que mudam o valor;
+identificador repetido, de fonte não impressa, de derivação ou renomeado;
+linha sem marcador, mesmo declarada no acervo; eliminação por mesma_medida;
+excerto adulterado no livro. Todas recusadas. Uma conta com componente próprio
+passa e o resultado adulterado recusa. Nenhuma linha real foi acrescentada.
+Uma cópia do 16 com uma linha de teste nas duas línguas compõe, exporta e passa
+as réguas reais de reconciliação, atribuição, asserções, prosa, derivações e
+paridade de edições. Esta prova integra a suite executada pelo portão completo.
+
+Conferências dirigidas
+
+10 corridas de suites, todas com código 0. Últimas versões: core.aplanar_test,
+16 testes; core.linhas_proprias_test, 14; core.compor_test, 23 conferências;
+core.compor_livros_test, 47; publisher.ev2_test, 14;
+publisher.export_records_test, 34. git diff --check: 0.
+Duas exportações reais. Seis tentativas em lote de aplanamento, cinco recusadas
+antes de completar o lote: faltavam os casos dos anos, das correções e das
+formas impressas alternativas. Foram corrigidos sem alterar os produtos nem
+relaxar as regras. A primeira chamada do 17 usou uma pasta errada e não escreveu;
+uma chamada auxiliar a um guião inexistente também não alterou ficheiros.
+
+Contagens
+
+O 17 conserva todas as contagens da base: Markdown, numbers 926, matched 485,
+orphans 0, misattributions 15, restantes dívidas 0; HTML, numbers 912,
+matched 485, orphans 0, misattributions 19, restantes dívidas 0.
+As duas frases não alteram nenhuma dessas contagens. Base não atualizada.
+Nos 16 e 18, medições iguais à base. No 19, a base já tinha numbers 570 no
+Markdown e 565 no HTML, nas duas línguas; os ficheiros de entrada e de saída
+medem 569 e 564. A medição foi repetida sobre as cópias anteriores e confirmou
+que a diferença é anterior à passagem. Nenhuma contagem protegida mudou e
+não se alterou a base do 19.
+
+Medição dos ativos
+
+medir-mot1.py não foi alterado. Foi executado com Path.glob filtrado em memória
+para os ativos: sete gabaritos, zero blocos, zero emendas, zero saídas,
+3742 marcadores, sete iguais ao publicado. Marcadores por gabarito: 16 en/pt,
+518/518; 17 pt, 543; 18 en/pt, 677/675; 19 en/pt, 407/404.
+O total inclui as referências de acervo, como a expressão do guião determina.
+
+Portão completo
+
+Código 0; uma única corrida, por curto.sh; 1482 segundos; 69 suites verdes.
+A saída ficou retida até ao fim. Não houve repetição nem correção após o portão.
+Últimas oito linhas:
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Commits e fecho
+
+Motor: 1970a41b, 24 ficheiros, confirmado pelo escrivão e pelo Git.
+O hook confirmou OEDP_GATE=adiado; não repetiu o portão completo.
+Sítio: 5bc652fb, relatório da adenda A. Esta revisão só fecha a contagem
+das chamadas e identifica o commit do relatório já confirmado.
+A linha Claude-Session foi copiada do commit que trouxe o mandato e a adenda.
+
+Nada funcional ficou aberto. A diferença preexistente da contagem numbers
+do 19 fica assinalada acima, sem alteração da base. Nenhuma fonte das pastas
+04 a 14 mudou; nenhuma publicação, push, captura ou alteração do sítio além
+deste relatório. A inspeção de processos foi recusada pela sandbox com
+"/bin/ps: Operation not permitted"; não se pediu escalada.
+
+Custo observado: 65 chamadas de ferramentas até à confirmação dos dois
+commits. As chamadas seguintes, para corrigir esta contagem e conferir o fecho,
+constam do total na resposta final. Houve 10 corridas de suites dirigidas e uma
+corrida do portão completo, com 69 suites. Zero portões do sítio e zero capturas.
+Não foi exposta uma linha "tokens used".
+
+SHA-256 dos ficheiros gerados
+A = entrada da passagem; B = depois da recomposição do 17; C = depois do aplanamento e exportação.
+A=B=C significa que os três resumos são iguais. Caminhos relativos à pasta de cada estudo.
+
+16 Évora Contas da Câmara
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).cortes.json
+    A=B=C 8342e35808f04c0ff43fb8e11217b40260cccd8d63c230c271f41466ee22c17d
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html
+    A=B=C c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md
+    A=B=C 076c676f7e0bceb87dffd8fc7adfd6500ab747c80f683c5b464ceb56934439de
+  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).record.json
+    A=B=C a081fba0df32306bb9963009e6f0b55112a517c6b4778479f670fca53058e762
+  Technical Source/decisoes.en.json
+    A=B=C 7d5e5460a2473642de608ded01a964f38f81aa36c2c8ac7ad809941bdb425bf0
+  Technical Source/decisoes.pt.json
+    A=B=C 2f39a9dadeeeb81161c28fe7cdb5d1f052192114d6222faaa4467b52158059eb
+  Technical Source/origem-das-linhas.json
+    A=B=C 46ff87dda109286fa82cdc9ffc8e08cf9ea9a5e1796142c291a6e2915777fe54
+  The accounts of the Câmara de Évora, 2010 to 2025.cortes.json
+    A=B=C 4ef85ba640316e23c1c92399f1129cf438c07711ab8db8ef94959382f979ca58
+  The accounts of the Câmara de Évora, 2010 to 2025.html
+    A=B=C 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+  The accounts of the Câmara de Évora, 2010 to 2025.md
+    A=B=C 0780b494518f5df45b53fa9080dca47142acbf04b2e04875a3a1ca8ce6501e06
+  The accounts of the Câmara de Évora, 2010 to 2025.record.json
+    A=B=C 300a236d06bf316121d57b1b7d8618536d69cb0cf665b0739b7556ff68996dc4
+  ledger.json
+    A=B=C b8053b38c96f152d00ca728d2c1268129d48795953ebbb2b5c4056fd2095fea0
+  records.manifest.json
+    A=B=C e31a4cc46a71cb7d93ec0498a449a475231c84ccbf954388f353fa37e8a6c221
+
+17 Évora Quem Governou
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).cortes.json
+    A=B=C a4e7ae37ce7f58a476581031f869eb41d9aa1c82fa6ac47e67a341b4b32a472e
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html
+    A f65b11cc5c0501d31c1ada5a884cc6e001ba1e2d521558dc88893e67b8ba0d1b
+    B=C 6ae4b9ae0262ad4d7f62d4766a9b4a0d477a06908d5b4e6da082573f7782e26e
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md
+    A ddfbbf931467a0c6133e9ce222c1a94c0e719f3953c5316a1769a67652512fbf
+    B=C d496dcfc19d96d8949c5cde4d8fd584637c4b1e90b4df96dab5cb356f566f50b
+  Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).record.json
+    A 31919ddf47d055b6399285d8204e4c8b15be1254dc694ec852e76bf2700d890d
+    B=C 8d088a4ac076f9dc17d1d2c75b1cc5bafbba6f17e145356a897dc08a5b8cc3d9
+  Technical Source/decisoes.pt.json
+    A=B=C bfd824e9d58d77fb2770fff99b8854bcf3106c279e4e27eb0dc60872614f127e
+  Technical Source/origem-das-linhas.json
+    A=B=C 788e049e4b23dbcae136eda5743478b6e650120a43eb18b0da907479fe951b44
+  ledger.json
+    A=B=C e01a1a6460c353844a50915ac0f1a930ef1989a9b2078d3a8e5ff310eee5a887
+  records.manifest.json
+    A 201c75bdb4f104f02c2677364e79b566201268447aee58819d7ddd60a3d2cc29
+    B=C f33930cc21785632cd7531ff88e285e70535e9d6f12d2fd1a198011c9825b36d
+
+18 Évora Economia e Dinheiro de Fora
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).cortes.json
+    A=B=C c9c91f342e10b882bc82e96f34728d0cf64e5fd26d7e6a37d649bdaabc3c7d1b
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html
+    A=B=C 78e681599df39e75f2a4a5a3eb48c8be339ca4ae588d82e4e14e507b9a2e30d3
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md
+    A=B=C ad529ecbbae894c1a1b75695a7b5eeb88e40f05f1b2c496061dfe49bbf4fe7cb
+  A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).record.json
+    A=B=C 5f381c1da8de93764ef0fe79e74658311ae74698dfa22aec40e5b8c74a4b1caa
+  Technical Source/decisoes.en.json
+    A=B=C b88b2dd5b695c67a2ff706f8a2cecd63c761152ae6edbb6cfa23235940490aa9
+  Technical Source/decisoes.pt.json
+    A=B=C 35b966743bfb7f9095458d2d8c201fa6fa8744a7ab815c83ef011a28e8236669
+  Technical Source/origem-das-linhas.json
+    A=B=C 57a9548ef3e2b20c76141624323586c5ed246ef76712634bf65ee50b31021b52
+  The economy of Évora and the public money that reaches the municipality outside the council.cortes.json
+    A=B=C 6b125fd90b98e0ab4079758d531c93defce9c7670e1d552327681a6abf866f54
+  The economy of Évora and the public money that reaches the municipality outside the council.html
+    A=B=C 316728c84d081eb523fca13707d0fcec83d43192a45b3670fd5eac751faa2427
+  The economy of Évora and the public money that reaches the municipality outside the council.md
+    A=B=C 366be2398d515b02ec80f6fd8a7d28f7efeab17dc1bb40d6ea131388852e0404
+  The economy of Évora and the public money that reaches the municipality outside the council.record.json
+    A=B=C 0c5c36f7bf52295f34734a1dc79bb91e8476c2b323e687b2039ddf71dbe5e290
+  ledger.json
+    A=B=C 88d3e4a8d28235c3950d1efe5f4c68e86dfc9544d8aec7616468ace6c2c6bfa0
+  records.manifest.json
+    A=B=C 334345af0cbd358acdbcbce246fd1f2c6a63925f85507497a9d36cff9ba37438
+
+19 Évora 2027 Capital Europeia da Cultura
+  Technical Source/decisoes.en.json
+    A=B=C aacd5e945656df3f7715d5adaa9255db761a3154aeb58753010c152057348aed
+  Technical Source/decisoes.pt.json
+    A=B=C 4a5cadc18d44e2e0753cb3e096069f139622729962e2eb1ccab93bf2d8f1f798
+  Technical Source/origem-das-linhas.json
+    A=B=C 28d1b3600fd2ac77f6082b72959c91fe58f965b04ac6357631408885ed1b83fe
+  ledger.json
+    A=B=C 32f4929e233fbfd88dc0dfaffaf2da8db85131ee1d78eefa7fa2401cc05e58ac
+  records.manifest.json
+    A=B=C 0ac8d57b4af043f59fcf1d6a7578ec5b59f4d273eb2f4ec64677765961b96510
+  Évora 2027, Capital Europeia da Cultura (pt-PT).cortes.json
+    A=B=C 919bf583785cbc8da661d27f6137cb9399c0c88f3fa2945bd4711e91691ae3f5
+  Évora 2027, Capital Europeia da Cultura (pt-PT).html
+    A=B=C 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711
+  Évora 2027, Capital Europeia da Cultura (pt-PT).md
+    A=B=C 1318c813da17fc25b1c2064667b163591676a15e81f84cafa199ceec72a84601
+  Évora 2027, Capital Europeia da Cultura (pt-PT).record.json
+    A=B=C 8eff661abf007ab4c42797fd1de77b75de1f15fba0e8a99252700d71d9e2ea42
+  Évora 2027, European Capital of Culture.cortes.json
+    A=B=C 7d23221605b8cd2a7bdf5aa1d6b0dd0efa12046faa8c65a978b2b29aaf8794ef
+  Évora 2027, European Capital of Culture.html
+    A=B=C 480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d
+  Évora 2027, European Capital of Culture.md
+    A=B=C 0b06469a0869b40e3523ec3e3690f9b99bedd3e94470ee6624a13b96c464b47f
+  Évora 2027, European Capital of Culture.record.json
+    A=B=C d1c29362a06aee829b78969f9788c7f46e7d3c67d14138339c921b8575890b53
+

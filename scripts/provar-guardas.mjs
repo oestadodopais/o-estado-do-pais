@@ -943,8 +943,8 @@ caso(
    chamada, e passou a conferi-la na primeira chamada de cada processo e a
    congelar a árvore a seguir. A guarda é a mesma e tem de morder na mesma.
    O texto do módulo lê-se do ficheiro e a cópia importa-se da memória, por um
-   endereço `data:` (o módulo não importa nada, por isso carrega-se inteiro
-   assim): nada se escreve no disco. A cópia com uma chave plantada só na
+   endereço `data:`, resolvendo a configuração contra o ficheiro original:
+   nada se escreve no disco. A cópia com uma chave plantada só na
    edição portuguesa TEM de fechar na primeira chamada, a dizer a chave; a
    cópia intacta TEM de passar; e depois da primeira chamada a árvore TEM de
    recusar uma chave nova e uma cadeia trocada, para a conferência feita uma
@@ -953,7 +953,7 @@ const FONTE_DAS_CADEIAS = fs.readFileSync(new URL('../src/i18n/strings.mjs', imp
 const ABERTURA_DO_PT = 'export const STRINGS = {\n  pt: {\n';
 /** @param {string} texto */
 const cadeiasDaMemoria = (texto) =>
-  import(`data:text/javascript;base64,${Buffer.from(texto, 'utf8').toString('base64')}`);
+  import(`data:text/javascript;base64,${Buffer.from(texto.replace("'../../site.config.mjs'", JSON.stringify(new URL('../site.config.mjs', import.meta.url).href)), 'utf8').toString('base64')}`);
 caso(
   't/abertura-da-arvore',
   true,

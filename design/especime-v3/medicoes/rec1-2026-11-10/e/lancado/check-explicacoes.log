@@ -1,0 +1,64 @@
+
+> o-estado-do-pais@0.1.0 check:explicacoes
+> npm run check:semana && node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova && node tests/explicacoes/ex3.mjs
+
+
+> o-estado-do-pais@0.1.0 check:semana
+> node tests/explicacoes/revisoes.mjs
+
+PAI1-B: controlo da página e das datas (pt): 0
+PAI1-B: data de outra releitura recusada (pt): 0
+PAI1-B: definições dos recibos (pt): 0
+PAI1-B: definição trocada recusada (pt): 0
+PAI1-B: contagens no fim da página recusadas (pt): 0
+PAI1-B: contagens independentes (pt): 0
+PAI1-B: frase e secção conferidas (pt): 0
+PAI1-B: divergência omitida da frase (pt): 0
+PAI1-B: nenhum mudou sem declarar a revisão (pt): 0
+PAI1-B: entrada omitida (pt): 0
+PAI1-B: portão recusa contagem errada (pt): 0
+PAI1-B: unidade de outra linha recusada (pt): 0
+PAI1-B: inventário só reconhece a entrada dentro da lista (pt): 0
+PAI1-B: voz das frases novas e planta lexical (pt): 0
+PAI1-B: linha reunida entra na contagem e na lista (pt): 0
+PAI1-B: pendente no livro copiado (pt): 0
+PAI1-B: última igual no livro copiado (pt): 0
+PAI1-B: correção posterior no livro copiado (pt): 0
+PAI1-B: atualização posterior no livro copiado (pt): 0
+PAI1-B: proveniência não aplica valor no livro copiado (pt): 0
+PAI1-B: controlo da página e das datas (en): 0
+PAI1-B: data de outra releitura recusada (en): 0
+PAI1-B: definições dos recibos (en): 0
+PAI1-B: definição trocada recusada (en): 0
+PAI1-B: contagens no fim da página recusadas (en): 0
+PAI1-B: contagens independentes (en): 0
+PAI1-B: frase e secção conferidas (en): 0
+PAI1-B: pontos decimais nas entradas inglesas: 0
+PAI1-B: vírgula inglesa recusada ([data-claim]): 0
+PAI1-B: vírgula inglesa recusada ([data-linha-campo$=".found"]): 0
+PAI1-B: ponto fora da lista continua recusado: 0
+PAI1-B: divergência omitida da frase (en): 0
+PAI1-B: nenhum mudou sem declarar a revisão (en): 0
+PAI1-B: entrada omitida (en): 0
+PAI1-B: portão recusa contagem errada (en): 0
+PAI1-B: unidade de outra linha recusada (en): 0
+PAI1-B: inventário só reconhece a entrada dentro da lista (en): 0
+PAI1-B: voz das frases novas e planta lexical (en): 0
+PAI1-B: linha reunida entra na contagem e na lista (en): 0
+PAI1-B: pendente no livro copiado (en): 0
+PAI1-B: última igual no livro copiado (en): 0
+PAI1-B: correção posterior no livro copiado (en): 0
+PAI1-B: atualização posterior no livro copiado (en): 0
+PAI1-B: proveniência não aplica valor no livro copiado (en): 0
+PAI1-B: 44 provas, código 0.
+X · a explicação: 2 explicação(ões), 292 folhas e 345 partes auditadas (178 diz, 27 leitura, 26 conta, 3 aponta, 111 liga), 13 origens usadas; 2 token(s) «maiores» conferidos nas duas edições; 8 token(s) de ramos (sinal, compara e comparaSaldos) com todos os ramos; 2 origens das explicações, 2 lidas no motor; 4 página(s) recontadas; 43 de 44 plantas em memória.
+W · a leitura da semana: janela 2026-11-04 a 2026-11-10, 91 relidas, 0 mudadas de valor, 0 só na forma de escrever, 0 de proveniência; W1 23 de 23 plantas na cópia do livro; 4 porta(s) da semana conferidas; 71 de 71 plantas na página (16 não se aplicam: a semana não tem mudanças de valor).
+PLANTAS: marcadores da voz fora dos contextos e da rota continuam a morder.
+PLANTAS: ponto decimal recusado nas duas edições; vírgula aceite nas duas percentagens.
+PLANTA: parte da definição sem apoio recusada pela X2.
+PLANTAS X13: apoio dos euros, percentagem e sufixo trocados recusados.
+PLANTA: token sobre linha inexistente recusado pelo resolvedor.
+PLANTAS: valor NATO trocado e precisão reduzida recusados pela X6 nas duas edições.
+PASS EX3: auditoria, dez nomes ingleses, marcas e precisão.
+
+REC1 E lancado check:explicacoes: código 0

@@ -1,4 +1,5 @@
 /** VOZ-1 B: dados conservados, futuro exato, ausência distinta e portas verificadas. */
+import {emEnsaio} from '../../site.config.mjs';
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {parse} from 'node-html-parser';
 import {WORKS} from '../../src/data/studies.mjs';
 import {contextoDaRevisao} from '../../src/lib/contexto-da-revisao.mjs';
@@ -75,6 +76,7 @@ for(const lang of ['pt','en']){
  for(const p of datadas[lang]){const r=parse(texto),a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',p.rota);a.setAttribute('data-calendario-pagina',p.rota);a.set_content(p.titulo);morde(`edição datada ${p.rota}`,conferir(r,lang).includes('edição datada no calendário'));}
  const passado=structuredClone(calendario);const atual=root.querySelector('[data-calendario-evento]').getAttribute('data-calendario-evento');passado.eventos.find(e=>e.id===atual).data='1900-01-01';morde('passado visível',conferir(root,lang,passado).includes('acontecimento passado visível'));
  const correcoes=parse(fs.readFileSync(`dist/${lang==='pt'?'correcoes':'en/corrections'}/index.html`,'utf8'));
+ if(emEnsaio()) { assert.equal(correcoes.querySelectorAll('[data-correcao-titulo], [data-correcao-entrada]').length,0); } else {
  const titulos=correcoes.querySelectorAll('[data-correcao-titulo]');assert(titulos.length>0);
  assert.deepEqual(conferirTitulosCopiados(correcoes,{key:'correcoes',lang}).erros,[]);
  for(const el of titulos){const id=el.getAttribute('data-correcao-titulo');assert(el.closest('li').querySelector('a.src-chip'));assert.notEqual(el.textContent,id);}
@@ -93,6 +95,7 @@ for(const lang of ['pt','en']){
   ['porta trocada',r=>r.querySelector('.registo-proveniencia-linhas a.src-chip').setAttribute('href','/')],
  ]){const r=parse(correcoes.toString());muda(r);const erros=conferirRevisoesNoRegisto(r,lang).erros;morde(nome,erros.some(e=>e.includes(nome.startsWith('União')?nome:nome==='título diferente do recibo'?'título diferente do recibo':nome==='porta trocada'?'porta do recibo diferente':'contexto ou período diferente')));if(['título diferente do recibo','período repetido','União em falta','União repetida'].includes(nome))console.log(`VOZ-1 G: ${lang}, ${nome}: recusado`);}
 
+ }
 }
 const c={eventos:[{id:'antes',data:'2026-11-03'},{id:'hoje',data:'2026-11-04'},{id:'depois',data:'2026-11-05'},{id:'janela',janela:{inicio:'2026-11-01',fim:'2026-11-04'}},{id:'sem',motivo_sem_data:'nao_lida'}]};
 assert.deepEqual(calendarioFuturo(c,'2026-11-04').eventos.map(e=>e.id),['hoje','depois','janela','sem']);

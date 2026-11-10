@@ -1,0 +1,12 @@
+16 Évora Contas da Câmara | documento.en.md.tmpl | fontes 2 | diretivas @@bloco 58 | emendas 24 | @@sai 17 | marcadores na prosa 46 | linhas 547 | igual ao publicado: sim | linhas diferentes 0
+16 Évora Contas da Câmara | documento.pt.md.tmpl | fontes 2 | diretivas @@bloco 62 | emendas 26 | @@sai 17 | marcadores na prosa 46 | linhas 549 | igual ao publicado: sim | linhas diferentes 0
+17 Évora Quem Governou | documento.pt.md.tmpl | fontes 2 | diretivas @@bloco 59 | emendas 43 | @@sai 22 | marcadores na prosa 7 | linhas 718 | igual ao publicado: não | linhas diferentes 4
+      -O nome legal completo do presidente interino é uma pequena questão em aberto. A lista de presidentes da associação de municípios e o ficheiro de candidatos do ministério
+      +O nome legal completo do presidente interino é uma pequena questão em aberto. A lista de presidentes da associação de municípios e o ficheiro de candidatos do ministério
+      -Lacunas das eleições. O nome legal completo do presidente interino é \[a verificar\]. A data exata da instalação do mandato de 2009 não foi fixada a partir de uma fonte 
+      +Lacunas das eleições. O nome legal completo do presidente interino está por confirmar na fonte. A data exata da instalação do mandato de 2009 não foi fixada a partir de 
+18 Évora Economia e Dinheiro de Fora | documento.en.md.tmpl | fontes 3 | diretivas @@bloco 30 | emendas 22 | @@sai 8 | marcadores na prosa 28 | linhas 466 | igual ao publicado: sim | linhas diferentes 0
+18 Évora Economia e Dinheiro de Fora | documento.pt.md.tmpl | fontes 3 | diretivas @@bloco 32 | emendas 24 | @@sai 8 | marcadores na prosa 28 | linhas 466 | igual ao publicado: sim | linhas diferentes 0
+19 Évora 2027 Capital Europeia da Cultura | documento.en.md.tmpl | fontes 2 | diretivas @@bloco 22 | emendas 15 | @@sai 2 | marcadores na prosa 18 | linhas 508 | igual ao publicado: sim | linhas diferentes 0
+19 Évora 2027 Capital Europeia da Cultura | documento.pt.md.tmpl | fontes 2 | diretivas @@bloco 22 | emendas 15 | @@sai 2 | marcadores na prosa 18 | linhas 508 | igual ao publicado: sim | linhas diferentes 0
+TOTAL {'gabaritos': 7, 'blocos': 285, 'emendas': 169, 'sai': 76, 'marcadores': 191, 'iguais': 6}

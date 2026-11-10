@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { emEnsaio, desdeOLancamento } from '../site.config.mjs';
+import { conferirNovidades } from '../tests/inicio/novidades.mjs';
 import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 /** B1, peça 3. Leitor próprio do HTML, da tabela declarada e do livro.
  * A E1 usa a seleção comum das listagens, pela adenda D ao DO2; as contas dos valores continuam independentes. */
@@ -101,12 +103,15 @@ const correcoesEsperadas = new Set();
    `correcoesEsperadas` guarda a data porque a C1 e a M3 a comparam; a A3 conta
    as entradas, e conta-as pela linha e pelo índice. */
 const chavesDoLivro = new Set();
+const chavesDoLivroDesdeLancamento = new Set();
 for (const f of fs.readdirSync('ledger/claims').filter(f=>f.endsWith('.yml'))) {
   const c = linha(f.slice(0,-4));
+  if (c.publication === 'withdrawn') continue;
   (c.corrections ?? []).forEach((e, n) => {
     if (['correcao','atualizacao'].includes(e.kind)) {
       correcoesEsperadas.add(`${c.id}|${n}|${e.date}`);
       chavesDoLivro.add(`correcao|${c.id}|${n}`);
+      if (desdeOLancamento(e.date)) chavesDoLivroDesdeLancamento.add(`correcao|${c.id}|${n}`);
     }
   });
 }
@@ -405,6 +410,11 @@ function lugarDaLinha(id) {
   lugarVisto.set(id, declarado);
   return declarado;
 }
+// O corte do registo não dispensa o lugar de uma mudança histórica.
+for (const chave of chavesDoLivro) {
+  const [,id,n]=chave.split('|');
+  if (!linha(id).corrections[Number(n)].field && !lugarDaLinha(id)) erros.push(`A1: uma linha com história sem lugar: ${id}.`);
+}
 /* A tabela explícita, entrada a entrada: cada uma tem de derivar o lugar que
    declara. É o conhecido-positivo desta comparação — sem ele, uma tabela que
    nunca derivasse nada passava por não haver nada com que discordar. */
@@ -447,11 +457,12 @@ function chaveDaMudanca(li) {
   if (tipo === 'projeto') return { tipo, chave: `projeto|${li.getAttribute('data-mudanca-id')}`, claim: null };
   return { tipo: null, chave: null, claim: null };
 }
-const chavesDoRegisto = new Set([
-  ...CORRECOES_TEXTO.map(c => `texto|${c.slug}|${c.data}`),
-  ...chavesDoLivro,
-  ...PUBLISHED_WORKS.map(w => `publicacao|${w.slug}`),
-  ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
+const chavesDeTodasAsMudancas = new Set([...chavesDoLivro, ...CORRECOES_TEXTO.map(c=>`texto|${c.slug}|${c.data}`), ...PUBLISHED_WORKS.map(w=>`publicacao|${w.slug}`), ...MUDANCAS_DO_PROJETO.map(m=>`projeto|${m.id}`)]);
+const chavesDoRegistoNaLingua = lang => new Set([
+  ...CORRECOES_TEXTO.filter(c => desdeOLancamento(c.data)).map(c => `texto|${c.slug}|${c.data}`),
+  ...chavesDoLivroDesdeLancamento,
+  ...PUBLISHED_WORKS.filter(w => desdeOLancamento((w.publication === 'declared' ? (w.editions.find(e=>e.lang===lang)??w.editions[0]).date : datas.find(d=>d.slug===w.slug && d.lang===(w.editions.find(e=>e.lang===lang)??w.editions[0]).lang)?.data) ?? '')).map(w => `publicacao|${w.slug}`),
+  ...MUDANCAS_DO_PROJETO.filter(m => desdeOLancamento(m.data)).map(m => `projeto|${m.id}`),
 ]);
 let listasMedidas = 0;
 /* T9: os cartões com valor de referência vistos, e quantos em cada estado. */
@@ -615,12 +626,14 @@ for (const lang of ['pt', 'en']) {
   if (listaDosEstudos.querySelector('#por-lugar') || listaDosEstudos.querySelectorAll('main [data-prova]').length)
     erros.push(`E2 ${lang}: a lista dos estudos voltou a ter a secção por lugar, ou contagens.`);
   if (!entradas.length) erros.push(`E2 ${lang}: a lista dos estudos não tem entrada nenhuma: a célula não mediu nada.`);
+  erros.push(...conferirNovidades(home,lang,dist).map(e=>`M2 ${lang}: ${e}`));
   /* M2 · a mudança declarada que a primeira página rende tem de ser a declarada,
      e não se repete. A PRESENÇA de todas mudou de casa a 22.09.2026 (B1c): a
      primeira página mostra no máximo oito mudanças, e quem tem de as ter todas
      é o registo, que é o que a A3 conta. */
   for (const m of MUDANCAS_DO_PROJETO) {
     const els = home.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
+    if (!desdeOLancamento(m.data) && els.length) erros.push(`M2 ${lang}: mudança anterior ao lançamento: ${m.id}.`);
     if (els.length > 1) erros.push(`M2 ${lang}: a mudança ${m.id} repete-se na página do país.`);
     if (els.length === 1 && (normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || semSelos(els[0]?.querySelector('[data-mudanca-campo="texto"]')) !== normal(textoDeclarado(m.texto[lang])))) erros.push(`M2 ${lang}: a mudança ${m.id} não coincide com a declaração.`);
   }
@@ -745,6 +758,57 @@ function mesmaLinhaForaDeOrdem(itens) {
   }
   return null;
 }
+function confereListasDeMudancas(doc, rotaDaPagina, onde) {
+    for (const lista of doc.querySelectorAll('[data-mudou-ambito]')) {
+      listasMedidas++;
+      const ambito = lista.getAttribute('data-mudou-ambito');
+      const itens = lista.querySelectorAll('li[data-mudanca]');
+      /* O ÂMBITO DO ÍNDICE SÓ NA PÁGINA DO ÍNDICE (a passagem R3-b): a marca sozinha abria a regra larga do índice
+         (as linhas de qualquer lugar) a uma lista de outra página, e uma página de concelho passava a aceitar uma
+         correção de Portugal ou de outro concelho. */
+      if (ambito === 'indice' && rotaDaPagina?.key !== 'indice')
+        erros.push(`A1: ${onde}: uma lista «O que mudou» com o âmbito do índice numa página que não é o índice; esse âmbito só vale na página do índice.`);
+      if (itens.length !== lista.querySelectorAll('li').length)
+        erros.push(`A1: ${onde}: uma linha de «O que mudou» sem classe declarada.`);
+      if (itens.length > TETO) erros.push(`A2: ${onde}: ${itens.length} mudanças, e o teto é ${TETO}.`);
+      for (const li of itens) {
+        const { tipo, chave, claim } = chaveDaMudanca(li);
+        if (!tipo || !chave || chave.includes('|null') || chave.endsWith('|undefined')) {
+          erros.push(`A1: ${onde}: uma linha de «O que mudou» sem identidade legível.`);
+          continue;
+        }
+        if (!chavesDeTodasAsMudancas.has(chave))
+          erros.push(`A1: ${onde}: a linha ${chave} não é do livro, do arquivo nem das mudanças declaradas.`);
+        if (tipo !== 'publicacao' && !desdeOLancamento(li.querySelector('time')?.getAttribute('datetime') ?? '')) erros.push(`M2: ${onde}: mudança anterior ao lançamento: ${chave}.`);
+        const doLugar = claim ? lugarDaEntrada(li,claim) : null;
+        /* A página do país mostra o que mudou NO PAÍS: as correções das suas
+           linhas e as mudanças declaradas do projeto. Uma PUBLICAÇÃO nesta
+           página fecha a construção desde 22.09.2026, pela leitura do lugar de
+           direção: a notícia de um estudo é a secção «Estudos recentes», e a
+           lista de todos é a página dos estudos. Continuam no registo. */
+        /* O ÍNDICE (bloco R3, 04.10.2026) mostra as últimas linhas do livro que mudaram, de
+           qualquer lugar, uma vez cada linha; as publicações e as mudanças declaradas do projeto
+           têm a porta delas noutra secção da mesma página (a razão está em `mudancasDoIndice()`,
+           `src/lib/mudancas.mjs`). A repetição de uma linha conta-se logo a seguir. */
+        const dentro = ambito === 'pais'
+          ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
+          : ambito === 'indice'
+            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !((linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação') || textoDocumentalConferido(linha(claim)) || dataDeCalendarioConferida(linha(claim)) || textoDaHabitacao(linha(claim)))
+            : (tipo === 'correcao' && doLugar === ambito);
+        if (!dentro)
+          erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);
+      }
+      if (ambito === 'indice') {
+        const linhas = itens.map((li) => chaveDaMudanca(li).claim);
+        if (new Set(linhas).size !== linhas.length) erros.push(`A1: ${onde}: o índice repete uma linha do livro em «O que mudou»; cada linha entra uma vez, com a sua entrada mais recente.`);
+      }
+      const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
+      if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A2: ${onde}: as mudanças não estão da mais recente para a mais antiga.`);
+      const foraDeOrdemNaLista = mesmaLinhaForaDeOrdem(itens);
+      if (foraDeOrdemNaLista) erros.push(`A2: ${onde}: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente: ${foraDeOrdemNaLista}.`);
+      confereCorrecoes(lista, `${onde} (${ambito})`);
+    }
+}
 function anda(dir) {
   for (const f of fs.readdirSync(dir, {withFileTypes:true})) {
     const abs = path.join(dir,f.name);
@@ -756,6 +820,7 @@ function anda(dir) {
     if (!doc.querySelector('footer.rodape')) continue;
     paginas++;
     const lang = doc.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
+    const chavesDoRegisto = chavesDoRegistoNaLingua(lang);
     confereTema(doc, path.relative(dist, abs), lang);
     /* N1 · AS OITO PORTAS (V2-c): a discussão entre as explicações e a União.
        A lista esperada é independente da lista que o cabeçalho rende; conserva contagem, ordem, rótulos e destinos. */
@@ -800,54 +865,7 @@ function anda(dir) {
     }
 
     /* ------------------------------------------------------- A1, A2 e A3 */
-    for (const lista of doc.querySelectorAll('[data-mudou-ambito]')) {
-      listasMedidas++;
-      const ambito = lista.getAttribute('data-mudou-ambito');
-      const itens = lista.querySelectorAll('li[data-mudanca]');
-      /* O ÂMBITO DO ÍNDICE SÓ NA PÁGINA DO ÍNDICE (a passagem R3-b): a marca sozinha abria a regra larga do índice
-         (as linhas de qualquer lugar) a uma lista de outra página, e uma página de concelho passava a aceitar uma
-         correção de Portugal ou de outro concelho. */
-      if (ambito === 'indice' && rotaDaPagina?.key !== 'indice')
-        erros.push(`A1: ${onde}: uma lista «O que mudou» com o âmbito do índice numa página que não é o índice; esse âmbito só vale na página do índice.`);
-      if (itens.length !== lista.querySelectorAll('li').length)
-        erros.push(`A1: ${onde}: uma linha de «O que mudou» sem classe declarada.`);
-      if (itens.length > TETO) erros.push(`A2: ${onde}: ${itens.length} mudanças, e o teto é ${TETO}.`);
-      for (const li of itens) {
-        const { tipo, chave, claim } = chaveDaMudanca(li);
-        if (!tipo || !chave || chave.includes('|null') || chave.endsWith('|undefined')) {
-          erros.push(`A1: ${onde}: uma linha de «O que mudou» sem identidade legível.`);
-          continue;
-        }
-        if (!chavesDoRegisto.has(chave))
-          erros.push(`A1: ${onde}: a linha ${chave} não é do livro, do arquivo nem das mudanças declaradas.`);
-        const doLugar = claim ? lugarDaEntrada(li,claim) : null;
-        /* A página do país mostra o que mudou NO PAÍS: as correções das suas
-           linhas e as mudanças declaradas do projeto. Uma PUBLICAÇÃO nesta
-           página fecha a construção desde 22.09.2026, pela leitura do lugar de
-           direção: a notícia de um estudo é a secção «Estudos recentes», e a
-           lista de todos é a página dos estudos. Continuam no registo. */
-        /* O ÍNDICE (bloco R3, 04.10.2026) mostra as últimas linhas do livro que mudaram, de
-           qualquer lugar, uma vez cada linha; as publicações e as mudanças declaradas do projeto
-           têm a porta delas noutra secção da mesma página (a razão está em `mudancasDoIndice()`,
-           `src/lib/mudancas.mjs`). A repetição de uma linha conta-se logo a seguir. */
-        const dentro = ambito === 'pais'
-          ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
-          : ambito === 'indice'
-            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !((linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação') || textoDocumentalConferido(linha(claim)) || dataDeCalendarioConferida(linha(claim)) || textoDaHabitacao(linha(claim)))
-            : (tipo === 'correcao' && doLugar === ambito);
-        if (!dentro)
-          erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);
-      }
-      if (ambito === 'indice') {
-        const linhas = itens.map((li) => chaveDaMudanca(li).claim);
-        if (new Set(linhas).size !== linhas.length) erros.push(`A1: ${onde}: o índice repete uma linha do livro em «O que mudou»; cada linha entra uma vez, com a sua entrada mais recente.`);
-      }
-      const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
-      if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A2: ${onde}: as mudanças não estão da mais recente para a mais antiga.`);
-      const foraDeOrdemNaLista = mesmaLinhaForaDeOrdem(itens);
-      if (foraDeOrdemNaLista) erros.push(`A2: ${onde}: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente: ${foraDeOrdemNaLista}.`);
-      confereCorrecoes(lista, `${onde} (${ambito})`);
-    }
+    confereListasDeMudancas(doc, rotaDaPagina, onde);
     for (const registo of doc.querySelectorAll('[data-mudou-registo]')) {
       registosMedidos++;
       const itens = registo.querySelectorAll('li[data-mudanca]');
@@ -860,7 +878,7 @@ function anda(dir) {
         erros.push(`A3: ${onde}: o registo tem ${chaves.length} mudanças e o livro inteiro tem ${chavesDoRegisto.size}` +
           `${aMais.length ? `; a mais: ${aMais.slice(0,3).join(', ')}` : ''}` +
           `${aMenos.length ? `; a menos: ${aMenos.slice(0,3).join(', ')}` : ''}.`);
-      for (const m of MUDANCAS_DO_PROJETO) {
+      for (const m of MUDANCAS_DO_PROJETO.filter(m=>desdeOLancamento(m.data))) {
         const els = registo.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
         if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || semSelos(els[0]?.querySelector('[data-mudanca-campo="texto"]')) !== normal(textoDeclarado(m.texto[lang])))
           erros.push(`A3: ${onde}: a mudança declarada ${m.id} falta no registo ou não coincide com a declaração.`);
@@ -891,17 +909,31 @@ function anda(dir) {
     }
   }
 }
+// REC1: o positivo lê uma lista de amostra mesmo quando o sítio está em ensaio.
+// As plantas passam pela mesma célula chamada para cada página construída.
+for(const lang of ['pt','en'])for(const ambito of ['pais','evora','indice']) {
+ const antes= listasMedidas, errosAntes=erros.length;
+ const amostra=parse(`<ol data-mudou-ambito="${ambito}"></ol>`);
+ confereListasDeMudancas(amostra,{key:ambito==='indice'?'indice':'municipio'},'amostra REC1');
+ if(listasMedidas!==antes+1||erros.length!==errosAntes)throw Error('REC1 país: positivo da lista de amostra recusado');
+ const chave=[...chavesDoLivro][0], [,id,n]=chave.split('|');
+ amostra.querySelector('ol').insertAdjacentHTML('beforeend',`<li data-mudanca="correcao" data-correcao-entrada="${id}"><time datetime="1900-01-01" data-correcao-claim="${id}" data-correcao-n="${n}" data-correcao-campo="date">01.01.1900</time></li>`);
+ confereListasDeMudancas(amostra,{key:ambito==='indice'?'indice':'municipio'},'amostra REC1');
+ if(!erros.slice(errosAntes).some(e=>e===`M2: amostra REC1: mudança anterior ao lançamento: ${chave}.`))throw Error('REC1 país: planta anterior ao lançamento não mordeu');
+ erros.splice(errosAntes);listasMedidas=antes;
+ console.log(`REC1 país ${emEnsaio()?'ensaio':'lançado'} ${lang}/${ambito}: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.`);
+}
 anda(dist);
 if (!paginas) erros.push('N1: nenhuma página própria medida.');
 /* Os dois positivos conhecidos do bloco B1c: uma régua que não encontre nem uma
    lista nem um registo mediu zero, e zero nunca é verde. */
-if (!listasMedidas) erros.push('A1: nenhuma lista de «O que mudou» medida.');
+if (!emEnsaio() && chavesDoLivroDesdeLancamento.size && !listasMedidas) erros.push('A1: nenhuma lista de «O que mudou» medida.');
 if (!titulosMedidos) erros.push('A4: nenhum título de edição medido.');
 if (registosMedidos !== 2) erros.push(`A3: ${registosMedidos} registos medidos, e as duas edições têm um cada.`);
 /* O conhecido-positivo da T9: cartões com referência vistos, e os dois estados. */
 if (!estadosVistos.cartoes || !estadosVistos.fora || !estadosVistos.dentro)
   erros.push(`T9: ${estadosVistos.cartoes} cartões com referência vistos (${estadosVistos.fora} fora, ${estadosVistos.dentro} dentro); a célula tem de ver os dois estados.`);
 console.log(`T9: ${estadosVistos.cartoes} cartões com valor de referência nos temas e nas entradas, ${estadosVistos.fora} fora e ${estadosVistos.dentro} dentro, cada um com a cor do seu estado.`);
-console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegisto.size} mudanças, ${titulosMedidos} títulos de edição.`);
+console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegistoNaLingua('pt').size} mudanças em português, ${titulosMedidos} títulos de edição.`);
 if (erros.length) { console.error(erros.join('\n')); process.exitCode = 1; }
 else console.log('B1 país: todas as conferências a 0.');

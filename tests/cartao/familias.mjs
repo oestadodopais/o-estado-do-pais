@@ -219,6 +219,8 @@ export function conferirAuditoriaDasFamilias({
     const declarada = f.tipo === 'concelho'
       ? MEDIDAS_DO_CONCELHO.find((m) => m.chave === f.chave)?.nota ?? doConcelho[f.chave]?.frase
       : familias[f.chave] ? (familias[f.chave].cartao ? { cartao: familias[f.chave].cartao } : familias[f.chave].frase) : null;
+    // Uma linha retirada pode deixar de declarar a frase que já não publica.
+    if (linhas.get(id)?.publication === 'withdrawn' && !declarada && !porFamilia.has(k)) continue;
     if (!declarada) falha(`a linha «${id}» (família «${k}») não tem frase declarada`);
     if (!porFamilia.has(k)) falha(`a linha «${id}» (família «${k}») não tem frase auditada`);
   }

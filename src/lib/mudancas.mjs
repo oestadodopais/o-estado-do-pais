@@ -1,3 +1,4 @@
+import { desdeOLancamento } from '../../site.config.mjs';
 import { CORRECOES_TEXTO } from '../data/correcoes.mjs';
 import { portasDaCorrecao } from './edicoes.mjs';
 import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mjs';
@@ -282,7 +283,7 @@ function porData(a, b) {
  *
  * @param {'pt'|'en'} lang
  */
-export function mudancasDoRegisto(lang) {
+export function todasAsMudancas(lang) {
   return [...mudancasDeclaradas(lang), ...publicacoes(lang), ...correcoesDasLinhas(lang), ...correcoesDosTextos(lang)].sort(porData);
 }
 
@@ -317,8 +318,8 @@ function noAmbitoDoLugar(m, chave) {
  * @param {'pt'|'en'} lang
  */
 export function mudancasDoLugar(chave, lang) {
-  return mudancasDoRegisto(lang)
-    .filter((m) => noAmbitoDoLugar(m, chave))
+  return todasAsMudancas(lang)
+    .filter((m) => desdeOLancamento(m.data) && noAmbitoDoLugar(m, chave))
     .slice(0, TETO_DAS_MUDANCAS);
 }
 
@@ -352,8 +353,8 @@ export function mudancasDoLugar(chave, lang) {
 export function mudancasDoIndice(lang) {
   /** @type {Map<string, ReturnType<typeof correcoesDasLinhas>[number]>} */
   const maisRecente = new Map();
-  for (const m of mudancasDoRegisto(lang)) {
-    if (m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
+  for (const m of todasAsMudancas(lang)) {
+    if (!desdeOLancamento(m.data) || m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
     // O índice lê as correções do registo; os campos têm apresentação própria,
     // sem comparação numérica. As frases corrigidas conservam a entrada
     // completa no registo e a história no recibo.
@@ -379,4 +380,9 @@ function correcoesDosTextos(lang) {
       lugar: lugarPorChave(typeof work.subject === 'string' ? work.subject : PORTUGAL, lang),
       chaveDaMudanca: `texto|${e.slug}|${e.data}`};
   });
+}
+
+/** @param {'pt'|'en'} lang */
+export function mudancasDoRegisto(lang) {
+  return todasAsMudancas(lang).filter(e => desdeOLancamento(e.data));
 }

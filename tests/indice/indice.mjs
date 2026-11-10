@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { emEnsaio } from '../../site.config.mjs';
 /**
  * ===========================================================================
  * check:indice-do-sitio · O ÍNDICE E O MAPA DO SÍTIO DIZEM AS MESMAS PÁGINAS DO LEITOR
@@ -70,6 +71,7 @@
  *
  * Uso: node tests/indice/indice.mjs [--prova] [--json <ficheiro>]   (`OEDP_DIST` mede outra construção)
  */
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
@@ -181,7 +183,8 @@ function lerPaginas(dist = DIST) {
 
 const ler = (caminho) => {
   const f = ficheiroDaRota(caminho);
-  return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
+  const html=fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
+  return html;
 };
 
 /**
@@ -255,6 +258,10 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler,
       if (!noIndice.has(caminho)) erros.push(`I2 ${lang}: as páginas de «${familia}» entram pela lista ${caminho}, e ela não é uma porta do índice.`);
     }
     for (const d of noIndice) {
+      if (emEnsaio()) {
+        const paginaEnsaio = lerPagina(d);
+        if (paginaEnsaio !== null && !/<meta[^>]+name="robots"[^>]+content="noindex, follow"/i.test(paginaEnsaio)) erros.push(`REC1 índice: ${d} sem noindex`);
+      }
       if (mapa.has(d)) continue;
       const r = matchPath(d);
       const pagina = lerPagina(d);
@@ -342,6 +349,7 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler,
 
     /* I6 · «O que mudou», o começo do registo. */
     const registo = parse(lerPagina(routePath('correcoes', lang)) ?? '').querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]');
+    if (emEnsaio() && registo.length) erros.push(`I6 ${lang}: registo com entradas durante o ensaio.`);
     /* O lugar escrito: no registo é a porta do lugar; no índice é o nome sem porta. */
     const daEntrada = (li) => {
       const data = li.querySelector('[data-correcao-campo="date"]');
@@ -371,7 +379,7 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler,
     const listas = doc.querySelectorAll('main [data-mudou-ambito="indice"]');
     const itens = listas.flatMap((l) => l.querySelectorAll('li'));
     const lidas = itens.map(daEntrada);
-    if (listas.length !== 1 || JSON.stringify(lidas) !== JSON.stringify(esperadas)) {
+    if (listas.length !== (esperadas.length ? 1 : 0) || JSON.stringify(lidas) !== JSON.stringify(esperadas)) {
       const k = lidas.findIndex((x, i) => x !== esperadas[i]);
       erros.push(`I6 ${lang}: «O que mudou» do índice tem ${lidas.length} linha(s) em ${listas.length} lista(s), e o começo do registo dá ${esperadas.length}` +
         `${k >= 0 ? `; a primeira que difere: ${lidas[k]}, e o registo dá ${esperadas[k] ?? 'nada'}` : ''}.`);
@@ -589,7 +597,17 @@ export function plantasDoIndice(base) {
   tipos.push({nome:'r3-celula-numero-disfarcado-de-texto-nao-desaparece',mordeu:!textoForaDoResumo(numerica),queixas:[]});
   /* `soEstas`: a planta só morde se as queixas forem todas das que ela nomeia (as plantas da passagem R3-b provam
      que é a conferência nova que morde, e não outra pelo caminho). */
-  return [...tipos,...casos.map(([nome, faz, mordidas, soEstas = false]) => {
+  const historicas = new Set(['hb1b-celula-correcao-textual-no-indice','r3-celula-linha-repetida-em-o-que-mudou','r3-celula-linha-reunida-que-se-le-igual','r3-celula-lugar-trocado-em-o-que-mudou','r3-celula-duas-entradas-no-mesmo-dia-pela-ordem-errada','r3-celula-correcao-documental-no-resumo-numerico']);
+  if (emEnsaio()) for (const lang of LANGS) {
+    const muda = lang === 'pt' ? comPt : comEn;
+    casos.push([`rec1-${lang}-entrada-no-indice`,()=>muda(d=>d.querySelector('main').insertAdjacentHTML('beforeend','<ol data-mudou-ambito="indice"><li data-mudanca="correcao">Entrada indevida</li></ol>')),[new RegExp(`I6 ${lang}:`)]]);
+    casos.push([`rec1-${lang}-entrada-no-registo`,()=>{
+      const caminho=routePath('correcoes',lang), doc=parse(ler(caminho));
+      doc.querySelector('main').insertAdjacentHTML('beforeend','<ol data-mudou-registo><li data-mudanca="correcao">Entrada indevida</li></ol>');
+      return comPaginas({},new Map([[normalizePath(caminho),doc.toString()]]));
+    },[new RegExp(`I6 ${lang}: registo com entradas`)]]);
+  }
+  return [...tipos,...casos.filter(([nome])=>!emEnsaio()||!historicas.has(nome)).map(([nome, faz, mordidas, soEstas = false]) => {
     const r = conferirIndice(faz());
     const todas = mordidas.every((re) => r.erros.some((e) => re.test(e)));
     const soAsDela = !soEstas || r.erros.every((e) => mordidas.some((re) => re.test(e)));

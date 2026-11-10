@@ -1,0 +1,140 @@
+MOT1, primeira passagem, 10.11.2026
+
+O estudo 16 tem texto próprio nos dois gabaritos. Não há mudança em nenhum dos
+13 ficheiros gerados: Markdown, HTML, livro, proveniência, decisões, registos,
+cortes e manifesto. Os commits ficam pendentes da confirmação do ambiente do
+escrivão, explicada no fim. Não houve publicação nem portão completo.
+
+Ferramenta e integração
+
+python3 -m core.aplanar "content/16 Évora Contas da Câmara" [--escrever]
+
+O ensaio recompõe numa cópia temporária e compara os bytes de todas as línguas
+antes de permitir a escrita. Uma diferença identifica o ficheiro e a primeira
+linha diferente. A escrita guarda os originais como documento.<l>.composto.md.tmpl;
+a repetição não altera os gabaritos já aplanados. Os comentários foram conservados.
+
+Cada edição tem 490 marcadores de figura e seis referências de não figura.
+⟦nf:fonte:bloco:unidade:ocorrência⟧ lê o algarismo daquela ocorrência do registo:
+não recebe um valor literal e recusa uma figura numérica com linha. Anos e datas
+ISO mantêm a exceção que já existia. A construção do livro continua a conferir
+ignore, assertions, assertion_ignores, entity_aliases e adjacency_ignores.
+
+@@linhas declara, por identificador validado na fonte, as 22 linhas herdadas que
+os marcadores da prosa não usam. Não imprime texto nem autoriza números à mão.
+Isto conserva o livro e a proveniência sem consultar os gabaritos históricos.
+
+Além da ferramenta, dos testes, dos dois gabaritos e das duas cópias históricas,
+foi necessário alterar core/compor.py e o make_html.py do 16: reconhecer as novas
+referências e excluir os históricos da seleção de gabaritos ativos. O mapa
+core.compor --mapa lê apenas as declarações @@fonte, @@bloco e @@sai dos históricos;
+não recompõe as suas emendas. A prova compara o mapa antes e depois e consegue
+compor e renderizar mesmo com os históricos inutilizados numa cópia temporária.
+Nenhum ficheiro gerado mudou de forma. As fontes e os estudos 17 a 19 não têm
+alterações de bytes. A comparação adicional de 818 ficheiros deu zero diferenças.
+
+Conferências e códigos
+
+- Medição obrigatória antes das alterações: 0; diff com medidas-mot1.txt: 0.
+  Sete gabaritos, 285 blocos, 169 emendas, 76 saídas, 191 marcadores, seis iguais.
+  A divergência do 17 continua a ser a conhecida, nas duas frases da COR-AGUA.
+- core.aplanar_test: 0, 11 testes na última corrida integral.
+- core.compor_test: 0, 23 conferências, repetido após ajustar o mapa.
+- core.compor_livros_test: 0, 47 conferências.
+- publisher.ev2_test: 0, 14 conferências.
+- publisher.export_records_test: 0, 34 conferências.
+- Prova integral do 16 isolada, após o último ajuste do mapa: 0.
+- core.aplanar --escrever, core.compor --escrever e make_html.py: 0.
+- publisher/export_records.py --write: 0, 25 registos e 13 manifestos escritos,
+  sem alteração de bytes nos ficheiros sob comparação.
+- git diff --check: 0.
+
+Plantas: o valor do livro escrito à mão recusa; um número novo sem linha recusa;
+a página que a fonte já trazia passa e não rouba a figura seguinte de igual valor;
+o valor com linha disfarçado de não figura recusa; ocorrência e fonte inventadas
+recusam; um algarismo literal junto de um marcador recusa; @@linhas não autoriza
+algarismos nem aceita uma linha inexistente. Uma frase plantada no aplanamento
+recusa pela diferença de bytes sem escrever. A prova integral cobre ensaio sem
+escrita, escrita, HTML, exportação, história, mapa, repetição e edição de prosa
+num único gabarito sem depender do histórico.
+
+Erros corrigidos: as duas primeiras corridas da suite nova falharam porque a cópia
+de teste não fornecia ao exportador os resumos das fontes. Copiar os resumos não
+bastou: foi também necessário carregá-los antes de restringir as edições ao 16,
+pois a importação tardia guardava essa lista restrita. Não se alterou nenhuma
+regra de números ou de fontes para fazer a prova passar.
+
+SHA-256, antes e depois, caminhos relativos à pasta do estudo 16
+
+As contas da Câmara de Évora, 2010 a 2025 (pt-PT).cortes.json
+  antes:  8342e35808f04c0ff43fb8e11217b40260cccd8d63c230c271f41466ee22c17d
+  depois: 8342e35808f04c0ff43fb8e11217b40260cccd8d63c230c271f41466ee22c17d
+As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html
+  antes:  c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+  depois: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md
+  antes:  076c676f7e0bceb87dffd8fc7adfd6500ab747c80f683c5b464ceb56934439de
+  depois: 076c676f7e0bceb87dffd8fc7adfd6500ab747c80f683c5b464ceb56934439de
+As contas da Câmara de Évora, 2010 a 2025 (pt-PT).record.json
+  antes:  a081fba0df32306bb9963009e6f0b55112a517c6b4778479f670fca53058e762
+  depois: a081fba0df32306bb9963009e6f0b55112a517c6b4778479f670fca53058e762
+Technical Source/decisoes.en.json
+  antes:  7d5e5460a2473642de608ded01a964f38f81aa36c2c8ac7ad809941bdb425bf0
+  depois: 7d5e5460a2473642de608ded01a964f38f81aa36c2c8ac7ad809941bdb425bf0
+Technical Source/decisoes.pt.json
+  antes:  2f39a9dadeeeb81161c28fe7cdb5d1f052192114d6222faaa4467b52158059eb
+  depois: 2f39a9dadeeeb81161c28fe7cdb5d1f052192114d6222faaa4467b52158059eb
+Technical Source/origem-das-linhas.json
+  antes:  46ff87dda109286fa82cdc9ffc8e08cf9ea9a5e1796142c291a6e2915777fe54
+  depois: 46ff87dda109286fa82cdc9ffc8e08cf9ea9a5e1796142c291a6e2915777fe54
+The accounts of the Câmara de Évora, 2010 to 2025.cortes.json
+  antes:  4ef85ba640316e23c1c92399f1129cf438c07711ab8db8ef94959382f979ca58
+  depois: 4ef85ba640316e23c1c92399f1129cf438c07711ab8db8ef94959382f979ca58
+The accounts of the Câmara de Évora, 2010 to 2025.html
+  antes:  6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+  depois: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+The accounts of the Câmara de Évora, 2010 to 2025.md
+  antes:  0780b494518f5df45b53fa9080dca47142acbf04b2e04875a3a1ca8ce6501e06
+  depois: 0780b494518f5df45b53fa9080dca47142acbf04b2e04875a3a1ca8ce6501e06
+The accounts of the Câmara de Évora, 2010 to 2025.record.json
+  antes:  300a236d06bf316121d57b1b7d8618536d69cb0cf665b0739b7556ff68996dc4
+  depois: 300a236d06bf316121d57b1b7d8618536d69cb0cf665b0739b7556ff68996dc4
+ledger.json
+  antes:  b8053b38c96f152d00ca728d2c1268129d48795953ebbb2b5c4056fd2095fea0
+  depois: b8053b38c96f152d00ca728d2c1268129d48795953ebbb2b5c4056fd2095fea0
+records.manifest.json
+  antes:  e31a4cc46a71cb7d93ec0498a449a475231c84ccbf954388f353fa37e8a6c221
+  depois: e31a4cc46a71cb7d93ec0498a449a475231c84ccbf954388f353fa37e8a6c221
+
+Aberto para a segunda passagem
+
+Aplicar e provar os estudos 17, 18 e 19; acrescentar as linhas próprias; tratar a
+divergência já medida do publicado do 17. A preservação das correções de decisão
+que referem blocos antigos, presentes no 19, não foi implementada nesta passagem:
+a ferramenta recusa se essas correções não caírem ou se os bytes divergirem.
+Os make_html.py restantes devem excluir os históricos ao selecionar os gabaritos.
+O guião de medição inicial usa documento.*.md.tmpl; depois da migração deve
+restringir a contagem aos ativos, para não contar também a história. Não foi
+alterado nesta passagem, pois o sítio só recebe este relatório.
+Correr o core.gate completo na segunda passagem, como determina o mandato.
+
+Commits
+
+Nenhum commit pedido. O comitar.sh envia só mensagem, ficheiros e raiz; não
+transporta OEDP_GATE ao escrivão. A variável está ausente no ambiente desta
+sessão. A tentativa de inspecionar o ambiente do escrivão foi recusada pela
+sandbox: PermissionError: [Errno 1] Operation not permitted: 'ps'. Não houve
+pedido de escalada. Foi pedida confirmação de que o escrivão arrancou com
+OEDP_GATE=adiado, para não executar inadvertidamente o portão completo agora.
+Os oito ficheiros do motor estão preparados e verificados; o sítio só tem este
+relatório novo. A referência inicial do motor é b4d0bbe.
+
+Custo observado
+
+11 corridas de suites: cinco de core.aplanar_test (duas falhas da montagem da
+cópia, três verdes), duas de core.compor_test, uma de cada uma das outras três
+suites pedidas e uma prova integral isolada. Uma medição inicial, uma composição,
+uma renderização e uma exportação real; quatro invocações da ferramenta pela CLI
+(dois ensaios, uma escrita e uma repetição sem alterações). Zero corridas dos
+portões completos e zero capturas. Foram usadas 36 chamadas de ferramentas ao nível da sessão, incluindo esta verificação final.
+Não foi exposta uma linha «tokens used».

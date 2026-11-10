@@ -1,3 +1,6 @@
+import {emEnsaio} from '../../site.config.mjs';
+import {conferirLancamentoHtml} from '../../scripts/lancamento-conferir.mjs';
+import {conferirProvenienciaNoRecibo} from './proveniencia-rec1.mjs';
 import {conferirRevisoesNoRegisto} from '../../scripts/revisoes-no-registo.mjs';
 import {contextoDaRevisao} from '../../src/lib/contexto-da-revisao.mjs';
 import { conferirQuadro } from '../../scripts/check-quadro.mjs';
@@ -221,12 +224,13 @@ export function conferirInicio(root,lang,dist=process.env.OEDP_DIST??path.join(r
  const entradas=listas.discussao;
  if(blocos.length!==Number(entradas.length>0))return ['V2B início: presença do bloco diferente da seleção'];
  const seccoes=root.querySelectorAll('main > section');
- if(!seccoes[0]?.hasAttribute('data-novidades'))erros.push('V2C início: novidades fora do primeiro lugar');
+ const temNovidades=listas.novidades.length>0;
+ if(root.querySelectorAll('[data-novidades]').length!==Number(temNovidades)||temNovidades&&!seccoes[0]?.hasAttribute('data-novidades'))erros.push('V2C início: novidades fora do primeiro lugar ou presença diferente da seleção');
  const content=root.querySelector('main')?.innerHTML??'';
  const marcas=['data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
  if(marcas.some(n=>n<0)||marcas[0]>=marcas[1])erros.push('V2C início: marca ausente ou bloco fora do lugar');
  if(!bloco)return erros;
- if(seccoes[1]!==bloco)erros.push('V2C início: discussão não é a secção única imediatamente depois das novidades');
+ if(seccoes[Number(temNovidades)]!==bloco)erros.push('V2C início: discussão não é a secção única imediatamente depois das novidades');
  if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang)||normal(bloco.querySelector('h2 a')?.text)!==`${DISCUSSAO.titulo[lang]} →`)erros.push('V2C início: destino do título errado');
  const soltos=entradas.filter(e=>e.tipo==='discussao').map(e=>ITENS.find(x=>x.slug===e.slug));
  const dossies=entradas.filter(e=>e.tipo==='dossie').map(e=>e.dossie);
@@ -443,10 +447,12 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
    ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
    ...['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>['marca ausente: '+m,r=>r.querySelector('['+m+']').removeAttribute(m)]),
    ['bloco duplicado',r=>r.querySelector('main').insertAdjacentHTML('beforeend',r.querySelector('[data-discussao-inicio]').toString())],
-   ['novidades retiradas do primeiro lugar',r=>r.querySelector('[data-novidades]').remove()],
+   ['presença das novidades diferente da seleção',r=>{const caixa=r.querySelector('[data-novidades]');if(caixa)caixa.remove();else r.querySelector('main').insertAdjacentHTML('afterbegin','<section data-novidades></section>');}],
    ['destino do título errado',r=>r.querySelector('[data-discussao-inicio] h2 a').setAttribute('href','#errado')]
   ]){const r=parse(ensaio.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang,dist,listas).length>0});}
-  for(const [nome,mudar] of [
+  // As plantas dos campos das novidades correm quando há entradas mostradas;
+  // a cópia com lançamento antigo conserva estas mesmas plantas.
+  if(home.querySelector('[data-novidade]'))for(const [nome,mudar] of [
    ['data da peça alterada',r=>r.querySelector('[data-novidade] time').setAttribute('datetime','9999-12-31')],
    ['título da peça alterado',r=>r.querySelector('[data-novidade] [data-novidade-porta]').set_content('Outro título')],
    ['porta da peça fora da caixa',r=>r.querySelector('[data-novidade] [data-novidade-porta]').remove()],
@@ -515,6 +521,42 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
  for(const lang of ['pt','en']){
   const pagina=(lang==='pt'?'correcoes':'en/corrections')+'/index.html';
   const root=parse(fs.readFileSync(path.join(dist,pagina),'utf8'));
+  if(emEnsaio()) {
+   erros.push(...conferirLancamentoHtml(root,{key:'correcoes',lang}));
+   const linhas=loadClaims();
+   const candidatas=[...linhas.values()].filter(l=>l.corrections?.some(c=>c.kind==='proveniencia')&&ITENS.some(e=>linhasImpressasOuDerivadas(e,linhas).has(l.id)));
+   if(!candidatas.length)erros.push('VOZ-1 E: nenhuma revisão de proveniência com discussão para a planta');
+   for(const l of candidatas) {
+    const rota=recibo(l.id,lang).slice(1)+'/index.html';
+    const documento=parse(fs.readFileSync(path.join(dist,rota),'utf8'));
+    const conferir=r=>[...conferirProvenienciaNoRecibo(r,l,lang),...conferirIntegracao(r,lang,rota,linhas,{dist})];
+    const controlo=conferir(documento);erros.push(...controlo);
+    const n=l.corrections.findIndex(c=>c.kind==='proveniencia');
+    for(const [nome,mutar] of [
+     ['revisão de proveniência sem porta no recibo',r=>r.querySelectorAll('#prova [data-discussao-integracao]').forEach(n=>n.remove())],
+     ['revisão de proveniência sem história',r=>r.querySelector('.historico').remove()],
+     ...['old_value','new_value','reason','date','kind'].map(campo=>[`revisão de proveniência com ${campo} alterado`,r=>r.querySelector(`.historico [data-correcao-n="${n}"][data-correcao-campo="${campo}"]`).set_content('História adulterada')]),
+    ]) {
+     const copia=parse(documento.toString());mutar(copia);const falhas=conferir(copia);
+     provas.push({nome:'VOZ-1 E: '+nome,lang,linha:l.id,mordeu:controlo.length===0&&falhas.length>0,queixa:falhas[0]??null});
+    }
+   }
+   // Os nomes de outra linha continuam a exigir a discussão da medida adicional.
+   const outras=[...linhas.values()].filter(l=>l.corrections?.some(c=>c.kind==='proveniencia')&&contextoDaRevisao(l.id).medida!==l.id&&ITENS.some(e=>linhasImpressasOuDerivadas(e,linhas).has(contextoDaRevisao(l.id).medida)));
+   if(!outras.length)erros.push('VOZ-1 E: nenhum nome de outra linha com discussão para a planta');
+   for(const l of outras) {
+    const rota=recibo(l.id,lang).slice(1)+'/index.html',adicional=contextoDaRevisao(l.id).medida;
+    const documento=parse(fs.readFileSync(path.join(dist,rota),'utf8'));
+    const controlo=[...conferirProvenienciaNoRecibo(documento,l,lang),...conferirIntegracao(documento,lang,rota,linhas,{dist})];erros.push(...controlo);
+    for(const fora of [false,true]) {
+     const copia=parse(documento.toString());
+     copia.querySelector(fora?'main':'.historico').insertAdjacentHTML('beforeend',`<span ${fora?'data-de-linha':'data-claim'}="${adicional}"></span>`);
+     const falhas=conferirIntegracao(copia,lang,rota,linhas,{dist}),queixa=falhas.find(e=>e.startsWith('V2B integração:'));
+     provas.push({nome:'VOZ-1 E: '+(fora?'nome fora da revisão':'medida adicional na revisão')+' no recibo',lang,linha:l.id,mordeu:controlo.length===0&&!!queixa,queixa:queixa??null});
+    }
+   }
+   continue;
+  }
   const limpo=conferirIntegracao(root,lang,pagina,loadClaims(),{dist}).length===0;
   const entrada=root.querySelectorAll('ul.registo-proveniencia-linhas li[data-correcao-entrada]').find(n=>ITENS.some(e=>linhasImpressasOuDerivadas(e,loadClaims()).has(n.getAttribute('data-correcao-entrada'))));
   const id=entrada?.getAttribute('data-correcao-entrada');

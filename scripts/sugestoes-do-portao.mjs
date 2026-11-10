@@ -1,3 +1,4 @@
+import { emEnsaio } from '../site.config.mjs';
 /**
  * ---------------------------------------------------------------------------
  * A CAIXA DAS SUGESTÕES, LIDA PELO PORTÃO DE HTML (bloco S1, 02.10.2026)
@@ -223,7 +224,7 @@ export function conferirPaginaDasSugestoes(root, rota) {
 
   if (rota.key !== 'sugestoes') return erros;
 
-  if (robots.length) erros.push(`S1 formulário: a página do formulário entra no índice, e leva uma marca robots ${JSON.stringify(robots)}.`);
+  if (emEnsaio() ? robots.length !== 1 || robots[0] !== 'noindex, follow' : robots.length !== 0) erros.push(`S1 formulário: a página do formulário entra no índice, e leva uma marca robots ${JSON.stringify(robots)}.`);
   const paragrafo = blocoDeclarado(root, '[data-sugestoes-paragrafo]', SUGESTOES.paragrafo[lang], 'S1 formulário', erros);
   if (paragrafo) ligacaoDe(paragrafo, routePath('correcoes', lang), SUGESTOES.portaDoParagrafo[lang], 'S1 formulário (a porta das correções)', erros);
 
@@ -499,7 +500,7 @@ function formularioDePlanta(lang, comPorta) {
     ? `${SUGESTOES.nota[lang]} <a href="${routePath('privacidade', lang)}">${SUGESTOES.portaDaNota[lang]}</a>`
     : `${SUGESTOES.nota[lang]} ${SUGESTOES.portaDaNota[lang]}`;
   return parse(
-    `<html><body><main><h1>${SUGESTOES.titulo[lang]}</h1><p data-sugestoes-paragrafo>${antes}<a href="${routePath('correcoes', lang)}">${porta}</a>${depois}</p>` +
+    `<html><head>${emEnsaio()?'<meta name="robots" content="noindex, follow">':''}</head><body><main><h1>${SUGESTOES.titulo[lang]}</h1><p data-sugestoes-paragrafo>${antes}<a href="${routePath('correcoes', lang)}">${porta}</a>${depois}</p>` +
       `<form method="post" action="/api/sugestoes"><input type="hidden" name="lingua" value="${lang}">` +
       `<div aria-hidden="true"><label for="s-sitio">${r.sitio[lang]}</label><input id="s-sitio" name="sitio" type="text" tabindex="-1" autocomplete="off"></div>` +
       `${caixa('procurou')}${caixa('estudo')}${caixa('outro')}<p data-sugestoes-nota>${nota}</p><p><button type="submit">${SUGESTOES.botao[lang]}</button></p></form></main></body></html>`,

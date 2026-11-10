@@ -1,3 +1,4 @@
+import { emEnsaio, desdeOLancamento } from '../../site.config.mjs';
 import { passosDaCorrida } from './conferencias-da-corrida.mjs';
 import { CORRECOES_TEXTO } from '../data/correcoes.mjs';
 /**
@@ -440,8 +441,8 @@ const FRASES = {
     en: 'ledger rows',
   },
   indexaveis: {
-    pt: 'linhas sem nenhum campo de proveniência por confirmar',
-    en: 'rows with no provenance field left to confirm',
+    pt: 'páginas de linha sem noindex',
+    en: 'row pages without noindex',
   },
   divida: {
     pt: 'linhas com pelo menos um campo por confirmar na fonte',
@@ -491,16 +492,16 @@ const FRASES = {
     en: 'ledger rows in those series',
   },
   correcoes: {
-    pt: 'entradas de natureza correção no livro-razão',
-    en: 'entries of kind correction in the ledger',
+    pt: 'correções mostradas no registo, de linhas e de texto de estudos',
+    en: 'corrections shown in the register, to rows and to study text',
   },
   atualizacoes: {
-    pt: 'entradas de natureza atualização no livro-razão',
-    en: 'entries of kind update in the ledger',
+    pt: 'entradas de natureza atualização mostradas no registo',
+    en: 'entries of kind update shown in the register',
   },
   revisoes_de_proveniencia: {
-    pt: 'entradas de natureza revisão de proveniência no livro-razão',
-    en: 'entries of kind provenance revision in the ledger',
+    pt: 'entradas de natureza revisão de proveniência mostradas no registo',
+    en: 'entries of kind provenance revision shown in the register',
   },
   valores_creditados: {
     pt: 'linhas que creditam o valor a quem consta do documento',
@@ -802,7 +803,7 @@ export function prova(lang = 'pt') {
     /* ---- o livro-razão ---- */
     conferencias_da_corrida: k('conferencias_da_corrida', passosDaCorrida().length, CAMINHO_DA_PROVA),
     afirmacoes: k('afirmacoes', claims.size, livro),
-    indexaveis: k('indexaveis', claims.size - divida, livro),
+    indexaveis: k('indexaveis', emEnsaio() ? 0 : claims.size - divida, livro),
     divida: k('divida', divida, livro),
     derivadas: k('derivadas', linhas.filter((c) => listaDaLinha(c.derived_from).length > 0).length, livro),
     aritmetica_reavaliada: k(
@@ -1051,10 +1052,10 @@ export function prova(lang = 'pt') {
     ),
 
     /* ---- o registo ---- */
-    correcoes: k('correcoes', entradasDoRegisto('correcao').length + CORRECOES_TEXTO.filter(e => e.kind === 'texto').length, routePath('correcoes', lang)),
+    correcoes: k('correcoes', entradasDoRegisto('correcao').filter(e => desdeOLancamento(e.date)).length + CORRECOES_TEXTO.filter(e => e.kind === 'texto' && desdeOLancamento(e.data)).length, routePath('correcoes', lang)),
     atualizacoes: k(
       'atualizacoes',
-      entradasDoRegisto('atualizacao').length,
+      entradasDoRegisto('atualizacao').filter(e => desdeOLancamento(e.date)).length,
       routePath('correcoes', lang),
     ),
     /* A porta é a secção do registo e não a página inteira: a contagem passou a
@@ -1063,7 +1064,7 @@ export function prova(lang = 'pt') {
        levar o leitor ao mesmo sítio, um pouco mais abaixo. */
     revisoes_de_proveniencia: k(
       'revisoes_de_proveniencia',
-      entradasDoRegisto('proveniencia').length,
+      entradasDoRegisto('proveniencia').filter(e => desdeOLancamento(e.date)).length,
       ancora(routePath('correcoes', lang), 'registo'),
     ),
     endereco_correcoes: k('endereco_correcoes', ENDERECO_CORRECOES, routePath('correcoes', lang)),

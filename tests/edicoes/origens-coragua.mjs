@@ -1,3 +1,4 @@
+import {registoParaPlantas} from './texto-html.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -58,7 +59,7 @@ const {medirPagina,EXCECOES}=await import('../../scripts/voz-autorreferencia.mjs
 for(const rota of ['/correcoes','/en/corrections']){
  const e=EXCECOES.find(e=>e.rota===rota&&e.razao.startsWith('COR-AGUA:'));
  assert(e);assert(medirPagina(`<p>${e.frase}</p>`,rota).frases.length,'texto sem a unidade e os selos não basta');
- const html=fs.readFileSync('dist'+rota+'/index.html','utf8');
+ const html=registoParaPlantas(rota);
  assert.equal(medirPagina(html,rota).frases.length,0);
  assert(medirPagina(html.replace('</body>',`<p>${e.frase}</p></body>`),rota).frases.length,'a unidade válida não legitima uma cópia solta');
  const {parse}=await import('node-html-parser');

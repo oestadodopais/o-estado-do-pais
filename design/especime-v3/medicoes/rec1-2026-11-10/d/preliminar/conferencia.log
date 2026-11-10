@@ -1,0 +1,267 @@
+
+> o-estado-do-pais@0.1.0 check:rec1
+> node tests/rec1/modos.mjs && node tests/rec1/construido.mjs
+
+REC1 inventário: 99 frases fechadas; adulterações recusadas.
+REC1 troca de modo recusada: ensaio pt politicaV.
+REC1 troca de modo recusada: ensaio pt h1.
+REC1 troca de modo recusada: ensaio pt enderecoB.
+REC1 troca de modo recusada: ensaio pt metodo.
+REC1 troca de modo recusada: ensaio en politicaV.
+REC1 troca de modo recusada: ensaio en h1.
+REC1 troca de modo recusada: ensaio en enderecoB.
+REC1 troca de modo recusada: ensaio en metodo.
+REC1 modo ensaio: controlos e plantas verdes.
+REC1 troca de modo recusada: 2026-08-01 pt politicaV.
+REC1 troca de modo recusada: 2026-08-01 pt h1.
+REC1 troca de modo recusada: 2026-08-01 pt enderecoB.
+REC1 troca de modo recusada: 2026-08-01 pt metodo.
+REC1 troca de modo recusada: 2026-08-01 en politicaV.
+REC1 troca de modo recusada: 2026-08-01 en h1.
+REC1 troca de modo recusada: 2026-08-01 en enderecoB.
+REC1 troca de modo recusada: 2026-08-01 en metodo.
+REC1 modo 2026-08-01: controlos e plantas verdes.
+REC1 troca de modo recusada: 2099-01-01 pt politicaV.
+REC1 troca de modo recusada: 2099-01-01 pt h1.
+REC1 troca de modo recusada: 2099-01-01 pt enderecoB.
+REC1 troca de modo recusada: 2099-01-01 pt metodo.
+REC1 troca de modo recusada: 2099-01-01 en politicaV.
+REC1 troca de modo recusada: 2099-01-01 en h1.
+REC1 troca de modo recusada: 2099-01-01 en enderecoB.
+REC1 troca de modo recusada: 2099-01-01 en metodo.
+REC1 modo 2099-01-01: controlos e plantas verdes.
+REC1: 45 controlos, 128 plantas; cópias isoladas, duas línguas.
+REC1 HTML: 9874 páginas, marcas e metas conferidas.
+REC1 novidades pt: 0 entradas; bloco ausente.
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dist/lugares/evora/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>/tests/rec1/construido.mjs:72:25
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dist/lugares/evora/index.html'
+}
+
+Node.js v22.23.1
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
+
+E1: prazo e razão conferidos pela chamada da check:pais.
+E1 DO2 pt: planta «estudo do dossiê repetido» recusada pela seleção.
+E1 DO2 pt: planta «estudo avulso retirado» recusada pela seleção.
+E1 DO2 pt: planta «ordem trocada» recusada pela seleção.
+E1 DO2 en: planta «estudo do dossiê repetido» recusada pela seleção.
+E1 DO2 en: planta «estudo avulso retirado» recusada pela seleção.
+E1 DO2 en: planta «ordem trocada» recusada pela seleção.
+REC1 país ensaio pt/pais: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país ensaio pt/evora: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país ensaio pt/indice: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país ensaio en/pais: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país ensaio en/evora: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+REC1 país ensaio en/indice: positivo de amostra aceite; mudança anterior ao lançamento recusada pela M2.
+T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 9816 menus, 5 mudanças declaradas, 0 listas com teto 8, 2 registos de 0 mudanças em português, 72 títulos de edição.
+B1 país: todas as conferências a 0.
+{
+  "erros": [],
+  "medidas": {
+    "linhas": [
+      {
+        "id": "taxa-de-desemprego-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "correcoes-publicadas",
+        "valor": "50",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "atualizacao",
+          "old_value": "3",
+          "new_value": "5"
+        },
+        "seladas": 11
+      }
+    ],
+    "registos": [],
+    "nomes": [],
+    "valores_visiveis": [
+      {
+        "lang": "pt",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "pt",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      }
+    ],
+    "correcoes_contadas": 50
+  },
+  "plantas": [
+    {
+      "nome": "A: contador sem declaração, A3",
+      "codigo": 1,
+      "mordida": "A[13]: .*uma linha.*sem lugar",
+      "queixa": "A1: uma linha com história sem lugar: estudos-evora-publicados.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "A: contador sem declaração, resolvedor",
+      "codigo": 1,
+      "mordida": "estudos-evora-publicados.*nenhuma declaração diz de que lugar é",
+      "queixa": "mudancas: a linha \"estudos-evora-publicados\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "declaração falsa de Portugal",
+      "codigo": 1,
+      "mordida": "A1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora»",
+      "queixa": "A1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora».",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "atualização de estudo contada como correção",
+      "codigo": 1,
+      "mordida": "E0 contagem: o contador não coincide com as correções do livro",
+      "queixa": "E0 contagem: o contador não coincide com as correções do livro.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "data antiga do contador",
+      "codigo": 1,
+      "mordida": "E0b datas: o contador tem uma data anterior",
+      "queixa": "E0b datas: o contador tem uma data anterior à sua última recontagem.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-mip-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-mip-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: correcoes-publicadas sem entrada selada",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 11 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 11 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "decimal retirado da primeira",
+      "mordeu": true,
+      "queixa": "E0 visível pt primeira: falta o valor publicado com a unidade.",
+      "memoria_isolada": true
+    }
+  ]
+}
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-11-09, construção 2026-11-10); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 26 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-11-10, sem escrever em dist/.
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+PASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.
+V2B · 4 erro(s), 1060 de 1060 plantas, 764 portas de integração.
+VOZ-1 E: revisão de proveniência sem porta no recibo (pt): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (pt)
+VOZ-1 E: revisão de proveniência sem história (pt): recusada; REC1 proveniência: divida-publica-2025/1/old_value ausente ou diferente no recibo (pt)
+VOZ-1 E: revisão de proveniência com old_value alterado (pt): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (pt)
+VOZ-1 E: revisão de proveniência com new_value alterado (pt): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (pt)
+VOZ-1 E: revisão de proveniência com reason alterado (pt): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (pt)
+VOZ-1 E: revisão de proveniência sem porta no recibo (en): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência sem história (en): recusada; REC1 proveniência: divida-publica-2025/1/old_value ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com old_value alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com new_value alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com reason alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (en)
+REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (pt)
+REC1 proveniência: divida-publica-2025/2/kind ausente ou diferente no recibo (pt)
+REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (en)
+REC1 proveniência: divida-publica-2025/2/kind ausente ou diferente no recibo (en)
+
+REC1 D preliminar: código 1

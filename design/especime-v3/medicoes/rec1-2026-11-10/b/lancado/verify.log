@@ -1,0 +1,220 @@
+
+> o-estado-do-pais@0.1.0 check:rec1
+> node tests/rec1/modos.mjs && node tests/rec1/construido.mjs
+
+REC1 inventário: 91 frases fechadas; adulterações recusadas.
+REC1 modo ensaio: controlos e plantas verdes.
+REC1 modo 2026-08-01: controlos e plantas verdes.
+REC1 modo 2099-01-01: controlos e plantas verdes.
+REC1: 45 controlos, 104 plantas; cópias isoladas, duas línguas.
+REC1 HTML: 9874 páginas, marcas e metas conferidas.
+REC1 pt: 128 entradas construídas, prova e retirada conferidas.
+REC1 en: 128 entradas construídas, prova e retirada conferidas.
+
+> o-estado-do-pais@0.1.0 check:metodo-construido
+> node tests/metodo/construido.mjs
+
+{
+  "conferencias_da_corrida": 69,
+  "plantas": 54,
+  "edicoes": {
+    "pt": {
+      "seccoes": 4,
+      "passos": 10,
+      "palavras": 487
+    },
+    "en": {
+      "seccoes": 4,
+      "passos": 10,
+      "palavras": 478
+    }
+  },
+  "marcador": {
+    "pt": 0,
+    "en": 0
+  },
+  "paginas": {
+    "pt": 4940,
+    "en": 4934
+  }
+}
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/voz2a.mjs && node design/especime-v3/medicoes/voz2a-2026-11-07/conferir-pares.mjs dist design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json 2026-11-08 && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs && node tests/voz/coragua.mjs
+
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":123,"plantas":117,"documentos":52,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-10.
+  FP1 en: marca novo não exigida, nenhum estudo da lista tem 0 a 7 dias em 2026-11-10.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  voz ✓ 103 marcadores · 32 exceções (0 de registo) · 3737 frases distintas, 34866 ocorrências em 1480 rotas · autorreferência 0 · nada por classificar · divulgação 1436 ocorrência(s) nas rotas medidas · 2666 linhas do inventário com bloco (1172 vivas, todas rendidas; 1423 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 9084 · nomes declarados: areas 54, regioes 0, dominios 1848, figuras 442, medidas 80, projeto 9648, oficial 0, cartao 28, concelho 9850, serie 76, familia 1066 · palavras proibidas: 0 em 9874 página(s) da superfície (14 palavras da norma §1.3; 96 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+        128 bloco(s) do inventário por ler, e o registo di-lo:
+        · B1-peca1 · por ler pelo lugar de direção antes de aterrar
+        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu
+        · b1-peca3 · por ler pelo lugar de direção antes de aterrar
+        · b1-peca3-correcao · por ler
+        · b1-peca3-correcao2 · por ler pelo lugar de direção antes de aterrar
+        · b1c · por ler pelo lugar de direção antes de aterrar
+        · b2-peca1 · por ler pelo lugar de direção antes de aterrar
+        · b2-peca1-correcao-2 · por ler pelo lugar de direção antes de aterrar
+        · c1 · por ler pelo lugar de direção antes de aterrar
+        · c1c · por ler pelo lugar de direção antes de aterrar
+        · c1d · por ler pelo lugar de direção antes de aterrar
+        · c1f · por ler pelo lugar de direção antes de aterrar
+        · c2 · por ler
+        · cartao · por ler
+        · cor-agua · por ler
+        · cr1 · por ler
+        · do1 · por ler
+        · do1-d · por ler
+        · do2 · por ler
+        · do3 · por ler
+        · e1 · por ler pelo lugar de direção antes de aterrar
+        · e1-evora-2027 · por ler
+        · e1b · por ler pelo lugar de direção antes de aterrar
+        · e1c · por ler pelo lugar de direção antes de aterrar
+        · ed1 · por ler
+        · ed1-f · por ler
+        · ed2 · por ler
+        · ed3 · por ler
+        · eo1 · por ler
+        · eo1-b · por ler
+        · eo1-c · por ler
+        · eo1-d · por ler
+        · eo1-e · por ler
+        · er1 · por ler
+        · er1b · lida (as leituras ER1-b, ER1-c/d, ER1-e e ER1-f pelo Opus, 07 e 12.10.2026, cinco plantas mordidas em cada)
+        · ev2 · por ler
+        · ev3 · por ler
+        · ev3-g · por ler
+        · ev3-p · por ler
+        · ex1 · por ler
+        · ex3 · por ler
+        · ex4 · por ler
+        · fp1 · por ler
+        · fp2-c · lida
+        · fp3 · por ler
+        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados
+        · h3 · por ler
+        · h4 · por ler
+        · hb1 · por ler
+        · hb1-e · por ler
+        · hb1b · por ler
+        · hb1d · por ler
+        · higiene-rp4n20 · por ler
+        · k2 · lida pelo lugar de direção a 02.10.2026, aprovada como está
+        · l1 · por ler pelo lugar de direção antes de aterrar
+        · l1-correcao · por ler pelo lugar de direção antes de aterrar
+        · l2a · por ler pelo lugar de direção antes de aterrar
+        · l2b · por ler pelo lugar de direção antes de aterrar
+        · l2b-c · por ler pelo lugar de direção antes de aterrar
+        · lugar · por ler
+        · mapa · leitura a frio (design/especime-v3/critica/2026-09-08-codex-leitura-f11e-distritos.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui)
+        · me1 · lida pelo Codex gpt-6-astra a 15.10.2026, cinco plantas em cinco, e pelo lugar de direção, e a leitura curta da passagem de correção, 15.10.2026, cinco plantas em cinco
+        · n1 · por ler antes de aterrar
+        · n1c · por ler antes de aterrar
+        · n1d · por ler antes de aterrar
+        · nd1 · por ler
+        · nd1-b · por ler
+        · oe1-d · por ler
+        · oe1-e · por ler
+        · og1-a6 · por ler
+        · og1-a7 · por ler
+        · og1-a9 · por ler
+        · og1-b · por ler
+        · og1-b0 · por ler
+        · og1-b0-d · por ler
+        · og1-b0-f · por ler
+        · og1-b0-g · por ler
+        · og1-b0-h · por ler
+        · og1-b4 · por ler
+        · og1-c · por ler
+        · og1-e-c · por ler
+        · og1-e-d · por ler
+        · og1-e-f · por ler
+        · og1-e-h · por ler
+        · p4 · por ler
+        · p4-c · por ler
+        · p4-d · por ler
+        · pp1 · por ler pelo lugar de direção antes de aterrar
+        · r1 · por ler pelo lugar de direção antes de aterrar
+        · r2 · por ler
+        · r2b · por ler
+        · r3 · por ler
+        · r4 · por ler
+        · r4b · por ler
+        · rec1-a · por ler
+        · rec1-b · por ler
+        · rotulo-ia · na árvore principal, fora deste ramo
+        · rp1 · por ler pelo lugar de direção antes de aterrar
+        · rp1b · por ler pelo lugar de direção antes de aterrar
+        · rp1c · por ler pelo lugar de direção antes de aterrar
+        · rp4nc · por ler
+        · rp4nd · por ler
+        · rp4ne · por ler
+        · rp4ng · por ler
+        · rp4nj · por ler
+        · s1 · por ler
+        · s1-b · por ler
+        · s1-c · por ler
+        · ue1 · lida pelo lugar de direção a 29.09.2026 (as palavras declaradas no §3 do brief, com os acertos F0 a F4 do construtor e as quatro palavras novas das marcas da fonte, conferidas com as definições da resposta do Eurostat)
+        · ue1b · lida pelo lugar de direção a 29.09.2026 (as palavras declaradas no §3 do brief, com os acertos F0 a F4 do construtor e as quatro palavras novas das marcas da fonte, conferidas com as definições da resposta do Eurostat)
+        · ue1d · lida pelo lugar de direção a 29.09.2026 (a leitura do cartão acaba nas folhas comuns da comparação com a União, as mesmas das outras nove medidas; a ressalva é o texto da primeira página, de uma fonte só, e o cartão a 390 px diz a comparação, a faixa e a ressalva por esta ordem)
+        · ue2 · por ler
+        · ue2-b · por ler
+        · v2a · por ler
+        · v2ab · por ler
+        · v2ac · por ler
+        · v2ai · por ler
+        · v2ak · por ler
+        · v2b · por ler
+        · v2d · por ler
+        · v2e · por ler
+        · v2e-b · por ler
+        · v2e-c · por ler
+        · v2e-d · por ler
+        · v2e-e · por ler
+        · voz-2a · por ler
+        · voz1 · por ler
+        · voz1b · por ler
+        5 exceção(ões) por exercer, e o ficheiro di-lo:
+        · «cada número desta página tem a sua fonte a um passo»
+        · «esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda s»
+        · «assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida»
+        · «Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrig»
+        · «a verificar»
+
+PAI2 voz pt: controlo verde, planta recusada pela mesma função.
+PAI2 voz en: controlo verde, planta recusada pela mesma função.
+VOZ-1: 65 plantas recusadas; factos das fontes e reversibilidade conferidos.
+VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, estudos pendentes e comentário style conservados.
+Adenda H: 17 formas novas recusadas; conjunto exato da isenção conferido.
+estudos com as duas línguas: 6; blocos mudados sem par: 0; blocos mudados sem entrada na lista: 0; planta 2 (tem de ser 2: o bloco antigo e o novo), controlo 0 (tem de ser 0)
+plantas do ramo fora da lista, do bloco novo e do código: 6 de 6
+VOZ-1 B: 8 frases inteiras conferidas, incluindo uma revisão e mudanças de proveniência.
+VOZ-1 G: pt, União em falta: recusado
+VOZ-1 G: pt, União repetida: recusado
+VOZ-1 G: pt, título diferente do recibo: recusado
+VOZ-1 G: pt, período repetido: recusado
+VOZ-1 G: en, União em falta: recusado
+VOZ-1 G: en, União repetida: recusado
+VOZ-1 G: en, título diferente do recibo: recusado
+VOZ-1 G: en, período repetido: recusado
+VOZ-1 B: calendário nas duas edições; 65 plantas recusadas; dia atual e intervalo aberto incluídos; nomes, contextos e períodos das revisões conferidos.
+VOZ-1 D lugar: controlo intacto; código 0.
+✗ L1 · /agenda: /uniao-europeia ×2, porta repetida com duas grafias entre o menu e o corpo.
+✗ L1 · /en/agenda: /en/european-union ×2, porta repetida com duas grafias entre o menu e o corpo.
+VOZ-1 D lugar: planta recusada nas duas edições; código 1.
+VOZ-1 D pais: controlo intacto; código 0.
+N1: menu de oito errado em agenda/index.html.
+N1: menu de oito errado em en/agenda/index.html.
+VOZ-1 D pais: planta recusada nas duas edições; código 1.
+{"paginas":9874,"marcador":0,"protecao":0,"captadas":70,"permitidas":70,"frases":0,"ledesNovas":0}
+COR-AGUA voz: 2 controlos, 6 plantas recusadas.
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+REC1 lancado: código 0

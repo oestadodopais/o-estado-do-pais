@@ -1,9 +1,15 @@
 [
   {
     "rota": "/correcoes",
-    "frase": "Quando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga.",
+    "frase": "A partir do lançamento, quando o que se publicou aqui estiver errado, corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e nada se apaga.",
     "classe": "natureza do registo",
-    "razao": "Define os campos e a conservação das entradas do registo público de correções."
+    "razao": "REC1: política prescrita no mandato, antes e depois do lançamento."
+  },
+  {
+    "rota": "/correcoes",
+    "frase": "Desde o lançamento, quando o que se publicou aqui está errado, corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e nada se apaga.",
+    "classe": "natureza do registo",
+    "razao": "REC1: política prescrita no mandato, antes e depois do lançamento."
   },
   {
     "rota": "/correcoes",
@@ -13,9 +19,15 @@
   },
   {
     "rota": "/en/corrections",
-    "frase": "When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted.",
+    "frase": "From launch onward, when something published here is wrong, it is corrected in the open: each entry carries what it was, what it became, the date and the reason, and nothing is deleted.",
     "classe": "natureza do registo",
-    "razao": "Define os campos e a conservação das entradas do registo público de correções."
+    "razao": "REC1: política prescrita no mandato, antes e depois do lançamento."
+  },
+  {
+    "rota": "/en/corrections",
+    "frase": "Since launch, when something published here is wrong, it is corrected in the open: each entry carries what it was, what it became, the date and the reason, and nothing is deleted.",
+    "classe": "natureza do registo",
+    "razao": "REC1: política prescrita no mandato, antes e depois do lançamento."
   },
   {
     "rota": "/en/corrections",

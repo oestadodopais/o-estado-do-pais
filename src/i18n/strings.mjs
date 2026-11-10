@@ -1,3 +1,4 @@
+import { emEnsaio } from '../../site.config.mjs';
 /**
  * Gabaritos de texto, por língua.
  *
@@ -2000,10 +2001,10 @@ export const STRINGS = {
       metaDescription:
         "O registo das correções e das atualizações de O Estado do País: o que estava publicado, o que ficou, a data e o motivo.",
       eyebrow: 'Correções',
-      h1: 'O que foi corrigido, e o que mudou',
+      h1: emEnsaio() ? 'O que for corrigido, a partir do lançamento' : 'O que foi corrigido, e o que mudou',
       politicaK: 'A política',
       politicaV:
-        "Quando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos.",
+        (emEnsaio() ? "A partir do lançamento, quando o que se publicou aqui estiver errado," : "Desde o lançamento, quando o que se publicou aqui está errado,") + " corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos.",
       naturezas: [
         { k: 'Correção.', v: 'O que estava publicado estava errado: um valor, ou um campo do recibo, como o nome de quem publicou o documento ou o endereço da fonte. É uma confissão, e é a razão de o registo existir.' },
         { k: 'Atualização.', v: 'O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro.' },
@@ -2013,7 +2014,7 @@ export const STRINGS = {
       ],
       enderecoA: 'Quem encontrar um erro escreve para ',
       enderecoB:
-        '. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.',
+        emEnsaio() ? '. A partir do lançamento, um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.' : '. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.',
       /* O DIREITO DE RESPOSTA (diretor, 15.09.2026; a emenda da política da
          autonomia, item 8 do bloco P3). É a segunda das três proteções que
          substituíram a revisão caso a caso de qualquer peça que nomeie uma
@@ -4009,10 +4010,10 @@ export const STRINGS = {
       metaDescription:
         "The register of the corrections and updates of O Estado do País: what was published, what it became, the date and the reason.",
       eyebrow: 'Corrections',
-      h1: 'What was corrected, and what changed',
+      h1: emEnsaio() ? 'What gets corrected, from launch onward' : 'What was corrected, and what changed',
       politicaK: 'The policy',
       politicaV:
-        "When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents.",
+        (emEnsaio() ? "From launch onward," : "Since launch,") + " when something published here is wrong, it is corrected in the open: each entry carries what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents.",
       naturezas: [
         { k: 'Correction.', v: 'What was published was wrong: a value, or a field of the receipt, such as the name of the document\'s publisher or the address of the source. It is a confession, and it is the reason the register exists.' },
         { k: 'Update.', v: 'The value was right and stopped being so, because what it measures changed. It is not an error.' },
@@ -4021,7 +4022,7 @@ export const STRINGS = {
         { k: "Study corrected.", v: "The text of a study said something it should not have; the entry says what changed, and the previous edition stays one tap away." },
       ],
       enderecoA: 'Anyone who finds an error writes to ',
-      enderecoB: '. A confirmed error enters the register with credit to whoever found it, if they wish.',
+      enderecoB: emEnsaio() ? '. From launch onward, a confirmed error enters the register with credit to whoever found it, if they wish.' : '. A confirmed error enters the register with credit to whoever found it, if they wish.',
       /* Ver a razão na edição portuguesa. */
       direitoDeResposta:
         'Anyone named may reply to the same address as the corrections: the reply is published beside the piece, unedited.',

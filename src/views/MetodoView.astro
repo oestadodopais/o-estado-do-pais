@@ -4,6 +4,8 @@ import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
+import { emEnsaio } from '../../site.config.mjs';
+import { ENSAIO } from '../data/ensaio.mjs';
 import { METODO as m } from '../data/metodo.mjs';
 import { prova } from '../lib/prova.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -68,7 +70,11 @@ const tipos = ['modelo', 'programa', 'documento', 'modelo', 'modelo', 'programa'
     <section class="metodo-secao" id={ids[2]}>
       <div class="regra-cabeca"><h2>{m.titulos[lang][2]}</h2></div>
       <div class="metodo-corpo" id="por-confirmar">
-        <ul class="met1-marcas">{m.marcas.map((marca,i) => <li id={i === 4 ? 'a-cor' : undefined} data-met1={`marca-${i}`}><Frase partes={marca[lang]} lang={lang} provas={p} /></li>)}</ul>
+        <ul class="met1-marcas">{m.marcas.slice(0, emEnsaio() ? -1 : undefined).map((marca,i) => <li id={i === 4 ? 'a-cor' : undefined}><span data-met1={`marca-${i}`}><Frase partes={marca[lang]} lang={lang} provas={p} /></span></li>)}</ul>
+        {emEnsaio() && <>
+          <p class="metodo-p" data-metodo-ensaio>{ENSAIO[lang].metodo}</p>
+          <ul class="met1-marcas"><li><span data-met1={`marca-${m.marcas.length - 1}`}><Frase partes={m.marcas.at(-1)[lang]} lang={lang} provas={p} /></span></li></ul>
+        </>}
       </div>
     </section>
     <section class="metodo-secao" id={ids[3]}>

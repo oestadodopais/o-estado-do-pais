@@ -8,6 +8,7 @@
  */
 import { jsonLd } from '../lib/jsonld.mjs';
 import {
+  emEnsaio,
   SITE_NAME,
   SITE_SHORT_NAME,
   SITE_URL,
@@ -136,7 +137,7 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
     {
       /* Páginas sem conteúdo não se oferecem para indexação. O canónico fica:
          o endereço continua a ser o mesmo, só não é convidado ao índice. */
-      noindex && <meta name="robots" content="noindex, follow" />
+      (emEnsaio() || noindex) && <meta name="robots" content="noindex, follow" />
     }
     {
       /* OS DOIS TIPOS DA PRIMEIRA PINTURA (etapa 1b do redesenho v3).

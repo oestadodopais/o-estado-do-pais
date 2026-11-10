@@ -1,0 +1,40 @@
+
+> o-estado-do-pais@0.1.0 check:rec1
+> node tests/rec1/modos.mjs && node tests/rec1/construido.mjs
+
+REC1 inventário: 99 frases fechadas; adulterações recusadas.
+REC1 troca de modo recusada: ensaio pt politicaV.
+REC1 troca de modo recusada: ensaio pt h1.
+REC1 troca de modo recusada: ensaio pt enderecoB.
+REC1 troca de modo recusada: ensaio pt metodo.
+REC1 troca de modo recusada: ensaio en politicaV.
+REC1 troca de modo recusada: ensaio en h1.
+REC1 troca de modo recusada: ensaio en enderecoB.
+REC1 troca de modo recusada: ensaio en metodo.
+REC1 modo ensaio: controlos e plantas verdes.
+REC1 troca de modo recusada: 2026-08-01 pt politicaV.
+REC1 troca de modo recusada: 2026-08-01 pt h1.
+REC1 troca de modo recusada: 2026-08-01 pt enderecoB.
+REC1 troca de modo recusada: 2026-08-01 pt metodo.
+REC1 troca de modo recusada: 2026-08-01 en politicaV.
+REC1 troca de modo recusada: 2026-08-01 en h1.
+REC1 troca de modo recusada: 2026-08-01 en enderecoB.
+REC1 troca de modo recusada: 2026-08-01 en metodo.
+REC1 modo 2026-08-01: controlos e plantas verdes.
+REC1 troca de modo recusada: 2099-01-01 pt politicaV.
+REC1 troca de modo recusada: 2099-01-01 pt h1.
+REC1 troca de modo recusada: 2099-01-01 pt enderecoB.
+REC1 troca de modo recusada: 2099-01-01 pt metodo.
+REC1 troca de modo recusada: 2099-01-01 en politicaV.
+REC1 troca de modo recusada: 2099-01-01 en h1.
+REC1 troca de modo recusada: 2099-01-01 en enderecoB.
+REC1 troca de modo recusada: 2099-01-01 en metodo.
+REC1 modo 2099-01-01: controlos e plantas verdes.
+REC1: 45 controlos, 128 plantas; cópias isoladas, duas línguas.
+REC1 HTML: 9874 páginas, marcas e metas conferidas.
+REC1 novidades pt: 0 entradas; bloco ausente.
+REC1 pt: 0 entradas construídas, prova e retirada conferidas.
+REC1 novidades en: 0 entradas; bloco ausente.
+REC1 en: 0 entradas construídas, prova e retirada conferidas.
+
+REC1 D rec1-rota-corrigida: código 0

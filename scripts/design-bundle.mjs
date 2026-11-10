@@ -87,7 +87,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
-import { SITE_HOST_DISPLAY, SITE_NAME } from '../site.config.mjs';
+import { SITE_HOST_DISPLAY, SITE_NAME, emEnsaio } from '../site.config.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 /* Os números do mapa não se escrevem aqui: leem-se do artefacto que o motor
@@ -1471,7 +1471,8 @@ ${tabelaTipos}
      mudança e o lugar de cada linha. A peça que o feixe mostra é a linha de uma
      correção nessa lista, que é onde o valor antigo riscado e o novo em tinta
      vivem agora. */
-  const correcao = peca('correcoes/index.html', '.registo-mudanca[data-mudanca="correcao"]');
+  const ondeCorrecao = emEnsaio() ? 'livro-razao/oe-2027-saude-contrato-programa-acss/index.html' : 'correcoes/index.html';
+  const correcao = peca(ondeCorrecao, emEnsaio() ? '.historico-entrada-correcao' : '.registo-mudanca[data-mudanca="correcao"]');
 
   /* O texto oculto do selo mostra-se como texto, porque é isso que ele é para
      quem ouve a página. O `.vh` é lido do próprio selo que está ao lado. */
@@ -1538,7 +1539,7 @@ ${tabelaTipos}
   <section class="ds-bloco">
     <h2>A correção tem forma, não tem cor</h2>
     <div class="ds-mostra">${correcao}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/correcoes/index.html</code> · o valor antigo riscado a cinzento, o novo a tinta ao lado, a data, e uma porta só.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/${ondeCorrecao}</code> · o valor antigo riscado a cinzento, o novo a tinta ao lado e a data${emEnsaio() ? ', na história do recibo' : ', e uma porta só'}.</p>
     ${citar(REGRA('**No registo de correções a porta é o selo da LINHA'))}
   </section>`;
 

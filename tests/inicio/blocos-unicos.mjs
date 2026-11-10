@@ -132,6 +132,9 @@ export function plantasDosBlocosUnicos(dist) {
     const destino = lang === 'pt' ? 'temas/index.html' : 'en/european-union/index.html';
     const homeDaEdicao = parse(fs.readFileSync(path.join(dist, lang === 'pt' ? 'index.html' : 'en/index.html'), 'utf8'));
     const mobilia = parse(homeDaEdicao.outerHTML);
+    /* REC1: em ensaio a caixa das novidades não se desenha quando a lista fica vazia. A planta põe então
+       ela própria a caixa na cópia, para a régua continuar a recusar a mobília marcada como bloco. */
+    if (!mobilia.querySelector('[data-novidades]')) mobilia.querySelector('main').insertAdjacentHTML('beforeend', '<section class="pp-novidades" data-novidades></section>');
     mobilia.querySelector('[data-novidades]').setAttribute('data-bloco', BLOCOS_DA_PRIMEIRA_PAGINA[0].id);
     const rotaHome = lang === 'pt' ? 'index.html' : 'en/index.html';
     const queixaMobilia = conferirBlocosUnicos(dist, new Map([[rotaHome, mobilia.outerHTML]]), {paginas:[rotaHome]}).erros.find(e=>e.includes('mobília das novidades marcada como bloco'));

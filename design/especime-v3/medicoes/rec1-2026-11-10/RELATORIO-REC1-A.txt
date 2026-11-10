@@ -1,0 +1,39 @@
+REC1-A, 10.11.2026
+
+Estado: implementação feita; cobertura das frases com afirmações ainda vermelha. Não está pronto para aterrar ou publicar.
+
+O leitor vê «Edição de ensaio» / «Test edition» no cabeçalho e nos documentos. Todas as páginas levam uma única meta noindex, follow; robots.txt impede a indexação. O registo está vazio, sem contagens, com o título e a política prescritos. O Método remete para o recibo do número e explica o ensaio antes das marcas dos estudos. Uma data de lançamento retira a marca e filtra o registo a partir desse dia. As novidades, as mudanças dos lugares e do índice e a história nos recibos conservam-se.
+
+Ficheiros por classe:
+- Interruptor e apresentação: site.config.mjs; src/data/ensaio.mjs; Masthead, Base, RegistoCorrecoes, MetodoView; src/lib/documentos.mjs; src/pages/robots.txt.js; src/i18n/strings.mjs; src/data/metodo.mjs.
+- Projeção e retirada: src/lib/mudancas.mjs e prova.mjs; publication nas duas linhas do livro; áreas, lugares, nomes, famílias, unidades, títulos e auditoria das famílias.
+- Conferências: gate-html, check-pais, check-edicoes, verify-deploy, guardas do Método, Privacidade, Sugestões e superfície do registo; inventário, modelos e respetivo pino; testes do índice, início, edições, história e REC1; package.json.
+- Registo editorial: DECISIONS.md, §1.237; INVENTARIO-FRASES.md; REVISOES-DO-INVENTARIO.md, leitura cruzada por ler antes da fusão.
+
+Integridade: comparação byte a byte com a cabeça inicial confirmou src/data/correcoes.mjs, ledger/historias-valores.json, studies-src/manifest.yml e src/data/studies.mjs intactos. Nas duas linhas retiradas, a única diferença é publication: withdrawn. Não se alteraram o motor, os estudos nem as reconferências.
+
+Verificação:
+- Ensaio: zero entradas nas duas páginas; identificadores retirados ausentes dos ficheiros publicados; prova.correcoes e prova.indexaveis a zero. Cópia com LANCAMENTO de 2026-08-01: 128 entradas em cada língua; marca de ensaio ausente.
+- REC1: 27 controlos e 33 plantas em cópias de ensaio, lançamento antigo e lançamento futuro, nas duas línguas. Recusados: entrada durante o ensaio, meta duplicada, ausência de noindex, algarismo na marca e marca depois do lançamento. Inventário: 67 frases fechadas, adulterações recusadas.
+- Índice: 42 de 42 plantas recusadas nos dois modos. Edições: código 0 nos dois modos; os ensaios históricos continuam a adulterar texto, valores, fontes, selos e portas mesmo com o registo público vazio.
+- Códigos 0: ledger:check; check:registo; check:areas; check:nomes; check:formato; check:lingua; check:lugar; typecheck; check:metodo-construido; check:rec1; novidades, primeira página e índice do livro sem navegador; gate:html nos dois modos; builds de conteúdo build:pai2-d nos dois modos. As primeiras tentativas de build deram 1; os erros de indexação e a contagem da construção anterior foram corrigidos e conferidos nos passos afetados. Não se declara uma corrida completa de npm run build verde.
+- check:pais: código 0 nos dois modos, incluindo as plantas das correções sem lugar e da história selada. check:voz: código 0 nos dois modos. As plantas das revisões do registo correram na cópia com lançamento; em ensaio conferiu-se a ausência dessas entradas.
+- check:frases-afirmacao: código 1, 92 recusas. Duas frases novas não têm registo; as outras recusas são entradas da lista por registar que já não aparecem no registo público ou no Método. A régua e ledger/frases/por-registar.json ficaram intactos. A sua resolução não se substitui por uma dispensa de cobertura. O teste de histórico e de pinos usado pelo escrivão, --so-lista, passou com código 0.
+
+Chaves das duas frases novas recusadas:
+/correcoes|en|4d5ab8be0b5b7760f253a784c9135c35ecf06e5a4c2ea5ab9743448c51b59b65
+/correcoes|pt|fc7f94b4848cb49788591c36386c6bb6127060da6362cb7a125307e3212e7872
+
+Frases fixas deixadas intactas, para decisão na aterragem:
+- src/data/metodo.mjs:192: «Cada mudança fica no registo das correções, com a data, o que estava e o que ficou.»; :195: «Each change is recorded in the corrections register, with the date, what was there and what replaced it.»
+- src/i18n/strings.mjs:2017: «Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.»; :4025: «A confirmed error enters the register with credit to whoever found it, if they wish.»
+- src/lib/prova.mjs:444 e :445: «linhas sem nenhum campo de proveniência por confirmar» / «rows with no provenance field left to confirm». A chave indexaveis passa a zero em ensaio, sem mudar a proveniência das linhas.
+- src/lib/prova.mjs:495 e :496: «entradas de natureza correção no livro-razão» / «entries of kind correction in the ledger»; :499 e :500: «entradas de natureza atualização no livro-razão» / «entries of kind update in the ledger»; :503 e :504: «entradas de natureza revisão de proveniência no livro-razão» / «entries of kind provenance revision in the ledger». As contagens passam a referir-se ao registo mostrado desde o lançamento.
+
+Ficam para a aterragem: resolver a cobertura das frases sem enfraquecer a proteção, decidir as frases acima, leitura cruzada do inventário, corrida completa e capturas nas larguras pedidas. Nesta passagem: zero corridas completas dos portões, zero capturas, zero publicações.
+
+Consumo até à preparação do commit: 116 chamadas de ferramentas; 60 invocações externas de conferências ou construções, incluindo repetições e comandos compostos; uma medição adicional da voz. As sub-conferências de cada comando composto não se contam outra vez. A cópia de trabalho não se conta como conferência. Portões completos: 0. Capturas: 0.
+
+tokens used (última medição disponível): 15631248.
+
+Commit preparado para o escrivão com o assunto REC1. O resultado e a cabeça confirmada constam da resposta final; não há fusão nem publicação.

@@ -859,7 +859,7 @@ export const SEM_AREA = [
   {
     assunto: 'As contagens deste arquivo sobre si próprio',
     estudos: ['o-estado-do-pais'],
-    id: /^(estudos-publicados|estudos-evora-publicados|edicoes-publicadas|correcoes-publicadas|municipios-com-estudo-aprofundado|municipios-sem-estudo-aprofundado)$/,
+    id: /^(estudos-publicados|estudos-evora-publicados|municipios-com-estudo-aprofundado|municipios-sem-estudo-aprofundado)$/,
     motivo:
       'Quantos estudos, edições e correções este sítio publicou, e a quantos concelhos já chegou, é este sítio a contar-se a si próprio. Não é matéria de governo nenhum.',
   },

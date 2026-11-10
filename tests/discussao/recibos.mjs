@@ -1,3 +1,5 @@
+import {emEnsaio} from '../../site.config.mjs';
+import {conferirLancamentoHtml} from '../../scripts/lancamento-conferir.mjs';
 /** V2-d-b: o recibo distingue o período dos dados da edição do documento. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -41,7 +43,16 @@ export function conferirRecibosCorrigidos(dist,linhas){
   if(textual){
    erros.push(...conferirHistoriaTextual(root,l,lang).map(e=>`${e}: ${id} (${lang})`));
    const registo=path.join(dist,lang==='pt'?'correcoes':'en/corrections','index.html');
-   if(fs.existsSync(registo))erros.push(...conferirHistoriaTextual(parse(fs.readFileSync(registo,'utf8')),l,lang).map(e=>`${e}: registo ${id} (${lang})`));
+   if(fs.existsSync(registo)) {
+    const pagina=parse(fs.readFileSync(registo,'utf8'));
+    erros.push(...(emEnsaio()?conferirLancamentoHtml(pagina,{key:'correcoes',lang}):conferirHistoriaTextual(pagina,l,lang)).map(e=>`${e}: registo ${id} (${lang})`));
+    const historia=emEnsaio()?root:pagina;
+    for(const campo of ['old_value','new_value']) {
+     const copia=parse(historia.toString()),no=copia.querySelector(`[data-correcao-claim="${id}"][data-correcao-campo="${campo}"]`);
+     if(no)no.set_content('História adulterada');
+     plantas.push({nome:`REC1 história textual ${campo} adulterada no ${emEnsaio()?'recibo':'registo'}`,lang,item:id,mordeu:!!no&&conferirHistoriaTextual(copia,l,lang).length>0});
+    }
+   }
    else erros.push(`V2D história textual: registo ausente (${lang})`);
    if(lang==='en'){
     const no=root.querySelector(`[data-correcao-claim="${id}"][data-correcao-campo="old_value"]`);

@@ -532,7 +532,7 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | 26 revisões de proveniência | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
 | conteudo | A política | até 2026-08-26 | viva | — |
 | conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
-| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. | até 2026-08-26 | viva | — |
+| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. | até 2026-08-26 | condicional-rec1 | — |
 | conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Correcting in silence is the cheapest way of lying. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Correction. What was published was wrong: a value, or a field of the receipt, such as the name of the document&#39;s publisher or the address of the source. It is a confession, and it is the reason the register exists. | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
@@ -543,14 +543,14 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. | até 2026-08-26 | viva | — |
 | conteudo | Escrever uma correção | até 2026-08-26 | viva | — |
 | navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. | até 2026-08-26 | viva | — |
-| conteudo | O que foi corrigido, e o que mudou | até 2026-08-26 | viva | — |
+| conteudo | O que foi corrigido, e o que mudou | até 2026-08-26 | condicional-rec1 | — |
 | conteudo | O registo | até 2026-08-26 | viva | — |
 | conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 | conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
-| conteudo | Provenance revisions | até 2026-08-26 | viva | — |
-| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | até 2026-08-26 | viva | — |
+| conteudo | Provenance revisions | até 2026-08-26 | condicional-rec1 | — |
+| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | até 2026-08-26 | condicional-rec1 | — |
 | conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
-| conteudo | Revisões de proveniência | até 2026-08-26 | viva | — |
+| conteudo | Revisões de proveniência | até 2026-08-26 | condicional-rec1 | — |
 | navegacao | Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever. | até 2026-08-26 | viva | — |
 | conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. | até 2026-08-26 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | The policy | até 2026-08-26 | viva | — |
@@ -561,12 +561,12 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
 | conteudo | Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
 | conteudo | Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
-| conteudo | What was corrected, and what changed | até 2026-08-26 | viva | — |
+| conteudo | What was corrected, and what changed | até 2026-08-26 | condicional-rec1 | — |
 | conteudo | Write a correction | até 2026-08-26 | viva | — |
 | navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. | até 2026-08-26 | viva | — |
-| conteudo | As mudanças, por data | b1c | viva | — |
+| conteudo | As mudanças, por data | b1c | condicional-rec1 | — |
 | conteudo | Todas as mudanças deste sítio, da mais recente para a mais antiga: as correções e as atualizações de cada linha, cada estudo que se publicou e as mudanças do projeto. Cada uma diz o lugar a que pertence, e nenhuma é removida. | b1c | retirada | a nota da lista descrevia a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor (achado 12 da leitura a frio de 22.09.2026). O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página |
-| conteudo | The changes, by date | b1c | viva | — |
+| conteudo | The changes, by date | b1c | condicional-rec1 | — |
 | conteudo | Every change to this site, from the most recent to the oldest: the corrections and updates to each row, the studies published and the changes to the project. Each says the place it belongs to, and none is removed. | b1c | retirada | a nota da lista descrevia a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor (achado 12 da leitura a frio de 22.09.2026). O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página |
 
 ## `/agenda` · `/en/agenda` (etapa 4, subetapa 4c)
@@ -597,7 +597,7 @@ página» é o rótulo do sumário, e é navegação: leva a outro sítio da pá
 | conteudo | O calendário das fontes | até 2026-08-26 | viva | — |
 | conteudo | O calendário, no tempo | até 2026-08-26 | viva | — |
 | conteudo | O que está em cada estado | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
-| conteudo | O que mudou | até 2026-08-26 | viva | — |
+| conteudo | O que mudou | até 2026-08-26 | condicional-rec1 | — |
 | conteudo | O que se mede a seguir | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | navegacao | On this page | até 2026-08-26 | viva | — |
 | conteudo | Porquê | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
@@ -605,7 +605,7 @@ página» é o rótulo do sumário, e é navegação: leva a outro sítio da pá
 | conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: apresentação substituída pelo mandato; dados conservados. |
 | conteudo | The calendar, in time | até 2026-08-26 | viva | — |
 | conteudo | The source calendar | até 2026-08-26 | viva | — |
-| conteudo | What changed | até 2026-08-26 | viva | — |
+| conteudo | What changed | até 2026-08-26 | condicional-rec1 | — |
 | conteudo | What gets measured next | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | What is in each state | até 2026-08-26 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Why | até 2026-08-26 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
@@ -1268,8 +1268,8 @@ página do leitor.*
 | conteudo | editions in the archive | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 | navegacao | edições publicadas | lugar | retirada | a contagem das edições dos estudos sai do cartão dos estudos (item 7 do brief do P1, 15.09.2026): a porta diz o tamanho do que está do outro lado, e o arquivo mede-se em estudos. A chave da prova fica, e o portão continua a recontá-la; o que sai é a rendição, e com ela a frase de origem que esta linha declara |
 | conteudo | edições no arquivo | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
-| conteudo | entradas de natureza revisão de proveniência no livro-razão | grelha-2 | viva | — |
-| conteudo | entries of kind provenance revision in the ledger | grelha-2 | viva | — |
+| conteudo | entradas de natureza revisão de proveniência mostradas no registo | grelha-2 | condicional-rec1 | — |
+| conteudo | entries of kind provenance revision shown in the register | grelha-2 | condicional-rec1 | — |
 | conteudo | itens da agenda | grelha-2 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | ledger rows | grelha-2 | viva | — |
 | conteudo | ledger rows of the municipalities study | grelha-2 | viva | — |
@@ -3023,7 +3023,7 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | The penalty for retiring one year early is % or % , depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is % : the law misses in both directions, and is harshest on those who deviate least. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
 | conteudo | published on · | b1-peca3-correcao | retirada | O rótulo ficava sem data; a linha de mudança passa a dizer que se publicou um estudo. |
 | conteudo | Évora Economy and public finances published on | hb1d | retirada | EV2-F, 30.10.2026: a primeira publicação voltou a 01.10.2026; updated declara a atualização e não ordena os estudos recentes, de cuja lista esta edição saiu. |
-| conteudo | → | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
+| conteudo | → | b1-peca3 | condicional-rec1 | Passagem entre valores e marca de incerteza das correções declaradas. |
 | conteudo | → · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | b1-peca3 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 | conteudo | → · a field not confirmed against the source, not a doubt about what is published | b1-peca3 | retirada | VOZ-1, 03.11.2026: saiu da superfície do leitor; a informação de bastidores conserva-se nos dados. |
 
@@ -3033,8 +3033,8 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | --- | --- | --- | --- | --- |
 | conteudo | Estudos recentes | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
 | conteudo | Recent studies | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
-| conteudo | Estudo publicado · | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
-| conteudo | Study published · | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Estudo publicado · | b1-peca3-correcao | condicional-rec1 | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Study published · | b1-peca3-correcao | condicional-rec1 | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
 
 ## B1, peça 3, segunda correção de 22.09.2026
 
@@ -4879,8 +4879,8 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 102 revisões de proveniência | og1-e-d | viva | OG1-E D: contagem do livro depois de reclassificar trinta erros como correções. |
-| conteudo | 102 provenance revisions | og1-e-d | viva | OG1-E D: contagem do livro depois de reclassificar trinta erros como correções. |
+| conteudo | 102 revisões de proveniência | og1-e-d | condicional-rec1 | OG1-E D: contagem do livro depois de reclassificar trinta erros como correções. |
+| conteudo | 102 provenance revisions | og1-e-d | condicional-rec1 | OG1-E D: contagem do livro depois de reclassificar trinta erros como correções. |
 
 ## HB1: o estudo da habitação
 
@@ -5349,13 +5349,13 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | navegacao | First edition, as published | ed1 | retirada | ED2: substituída pela linha completa das edições e pelas datas por natureza. |
 | navegacao | Edição atual | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
 | navegacao | Current edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| navegacao | Primeira edição | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| navegacao | First edition | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| conteudo | Estudo corrigido | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
-| conteudo | Study corrected | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| navegacao | Primeira edição | ed1 | condicional-rec1 | ED1, adenda A: forma rendida e conferida. |
+| navegacao | First edition | ed1 | condicional-rec1 | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Estudo corrigido | ed1 | condicional-rec1 | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Study corrected | ed1 | condicional-rec1 | ED1, adenda A: forma rendida e conferida. |
 | conteudo | fonte · Registo de correções | ed1 | retirada | EV3-G: o selo saiu com a entrada do registo na caixa de novidades. |
 | conteudo | source · Registo de correções | ed1 | retirada | EV3-G: o selo saiu com a entrada do registo na caixa de novidades. |
-| conteudo | Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP). | ed1 | viva | ED1, adenda A: forma rendida e conferida. |
+| conteudo | Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP). | ed1 | condicional-rec1 | ED1, adenda A: forma rendida e conferida. |
 
 
 ## ED1-E: política das quatro naturezas
@@ -5367,8 +5367,8 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 | conteudo | Uma entrada do registo guarda, para um número ou um campo do seu recibo, o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou; para o texto de um estudo, a data, o que mudou e as duas versões do texto. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São cinco naturezas, e não se misturam: | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | An entry in the register holds, for a figure or a field of its receipt, the previous value, the new value, the date, the reason and the ledger row that changed; for the text of a study, the date, what changed and both versions of the text. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are five kinds, and they are not mixed: | og1-e-d | retirada | EV3-G: a frase saiu da página das correções. |
 
-| conteudo | As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
-| conteudo | The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies. | og1-e-d | viva | OG1-E D: frase autorizada no §2. |
+| conteudo | As correções publicadas no registo: as correções das linhas do livro, de um valor ou de um campo do recibo, e as correções do texto dos estudos. | og1-e-d | retirada | REC1: linha retirada da publicação; a história conserva-se no livro. |
+| conteudo | The corrections published in the register: the corrections of ledger rows, of a value or of a field of the receipt, and the corrections of the text of studies. | og1-e-d | retirada | REC1: linha retirada da publicação; a história conserva-se no livro. |
 
 
 ## ED1-E: identificação dos documentos
@@ -5388,9 +5388,9 @@ Rotas: estudos atualizados, `/correcoes` e `/en/corrections`. Os rótulos e as f
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Quatro passagens diziam como facto causas que o relatório de contas de 2025 fonte · Município de Évora da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 fonte · Marques, Cruz &amp; Associados é o que o relatório de 2025 fonte · Município de Évora imprime como comparativo, porque as contas de 2024 fonte · Marques, Cruz &amp; Associados nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano. | og1-e-c | viva | Forma lida em /correcoes; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
-| conteudo | Five quotations presented the Prime Minister and the Socialist Party ( Partido Socialista , PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP). | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
-| conteudo | Four passages stated as fact causes that the Câmara &#39;s 2025 source · Município de Évora accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 source · Marques, Cruz &amp; Associados investment value is the one the 2025 source · Município de Évora report prints as a comparative, because the 2024 source · Marques, Cruz &amp; Associados accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications. | og1-e-c | viva | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
+| conteudo | Quatro passagens diziam como facto causas que o relatório de contas de 2025 fonte · Município de Évora da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 fonte · Marques, Cruz &amp; Associados é o que o relatório de 2025 fonte · Município de Évora imprime como comparativo, porque as contas de 2024 fonte · Marques, Cruz &amp; Associados nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano. | og1-e-c | condicional-rec1 | Forma lida em /correcoes; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
+| conteudo | Five quotations presented the Prime Minister and the Socialist Party ( Partido Socialista , PS) as saying words that are the account given by the Government&#39;s communication and by the party&#39;s web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP). | og1-e-c | condicional-rec1 | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
+| conteudo | Four passages stated as fact causes that the Câmara &#39;s 2025 source · Município de Évora accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 source · Marques, Cruz &amp; Associados investment value is the one the 2025 source · Município de Évora report prints as a comparative, because the 2024 source · Marques, Cruz &amp; Associados accounts were never certified, and with the explanation that revenue is compared with the budget after the year&#39;s modifications. | og1-e-c | condicional-rec1 | Forma lida em /en/corrections; os títulos publicados são dados conferidos e as 26 correções do publicador integram a contagem. |
 
 
 ## ED1-F: a faixa e os avisos das versões
@@ -5420,19 +5420,19 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 | --- | --- | --- | --- | --- |
 | conteudo | Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las. | og1-e-f | retirada | OG1-E H: substituída pela entrada que também declara a ausência anterior de «pelo menos». |
 | conteudo | Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade&#39;s commander, and a sentence said the campers had written what a news report attributes to them; they are news reports&#39; accounts, and the sentences now name them. | og1-e-f | retirada | OG1-E H: substituída pela entrada que também declara a ausência anterior de «pelo menos». |
-| conteudo | Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las. | og1-e-h | viva | OG1-E H: frase autorizada no §3 e conferida com as duas versões. |
-| conteudo | Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade&#39;s commander, the movement&#39;s count appeared without the « pelo menos » (at least) with which the report gives it, and a sentence said the campers had written what a news report attributes to them; they are news reports&#39; accounts, and the sentences now name them. | og1-e-h | viva | OG1-E H: frase autorizada no §3 e conferida com as duas versões. |
+| conteudo | Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las. | og1-e-h | condicional-rec1 | OG1-E H: frase autorizada no §3 e conferida com as duas versões. |
+| conteudo | Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade&#39;s commander, the movement&#39;s count appeared without the « pelo menos » (at least) with which the report gives it, and a sentence said the campers had written what a news report attributes to them; they are news reports&#39; accounts, and the sentences now name them. | og1-e-h | condicional-rec1 | OG1-E H: frase autorizada no §3 e conferida com as duas versões. |
 
 ## EV3: atualização do estudo de Évora
 
 | Tipo | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Estudo atualizado | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
-| conteudo | Study updated | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
+| conteudo | Estudo atualizado | ev3 | condicional-rec1 | Mandato EV3 e adendas: frase autorizada. |
+| conteudo | Study updated | ev3 | condicional-rec1 | Mandato EV3 e adendas: frase autorizada. |
 | conteudo | Estudo atualizado. O texto de um estudo ganhou documentos novos, sem que o que dizia estivesse errado; a entrada diz o que entrou, e a edição anterior fica a um toque. | ev3 | retirada | EV3-G: a frase saiu da página das correções. |
 | conteudo | Study updated. The text of a study gained new documents, and nothing it said was wrong; the entry says what came in, and the previous edition stays one tap away. | ev3 | retirada | EV3-G: a frase saiu da página das correções. |
-| conteudo | Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
-| conteudo | The October decisions of Évora&#39;s Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added. | ev3 | viva | Mandato EV3 e adendas: frase autorizada. |
+| conteudo | Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação. | ev3 | condicional-rec1 | Mandato EV3 e adendas: frase autorizada. |
+| conteudo | The October decisions of Évora&#39;s Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added. | ev3 | condicional-rec1 | Mandato EV3 e adendas: frase autorizada. |
 | conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 03.11.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
 | conteudo | Edição atual, de 03.11.2026. A primeira edição é de 01.10.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
 | conteudo | First edition, published on 01.10.2026. The current edition is from 03.11.2026. | ev3 | retirada | EV3-p: substituída pela faixa com a edição atual de 06.11.2026. |
@@ -5442,9 +5442,11 @@ O corpo documental permanece fora da voz. Os avisos da casa, com as datas confer
 
 | Classe | Texto | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Quando o que se publicou aqui está errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos. | ev3-g | viva | Redação prescrita na adenda G. |
+| conteudo | A partir do lançamento, quando o que se publicou aqui estiver errado, corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos. | rec1-c | condicional-rec1 | Redação prescrita no mandato REC1. |
+| conteudo | Desde o lançamento, quando o que se publicou aqui está errado, corrige-se à vista: cada entrada traz o que estava, o que ficou, a data e o motivo, e nada se apaga. Uma atualização não é um erro: é um valor que mudou porque aquilo que mede mudou, ou um estudo que ganhou documentos novos. | rec1-c | condicional-rec1 | Redação prescrita no mandato REC1. |
 | conteudo | O registo das correções e das atualizações de O Estado do País: o que estava publicado, o que ficou, a data e o motivo. | ev3-g | viva | Redação prescrita na adenda G. |
-| conteudo | When something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents. | ev3-g | viva | Redação prescrita na adenda G. |
+| conteudo | From launch onward, when something published here is wrong, it is corrected in the open: each entry carries what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents. | rec1-c | condicional-rec1 | Redação prescrita no mandato REC1. |
+| conteudo | Since launch, when something published here is wrong, it is corrected in the open: each entry carries what it was, what it became, the date and the reason, and nothing is deleted. An update is not an error: it is a value that changed because what it measures changed, or a study that gained new documents. | rec1-c | condicional-rec1 | Redação prescrita no mandato REC1. |
 | conteudo | The register of the corrections and updates of O Estado do País: what was published, what it became, the date and the reason. | ev3-g | viva | Redação prescrita na adenda G. |
 
 ## PAI2: o quadro do país e a revisão da fonte
@@ -5472,11 +5474,11 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 | conteudo | Item retirado | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Item withdrawn | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | No announced date | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
-| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | voz1 | condicional-rec1 | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
 | conteudo | Pergunta por registar | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Question not recorded | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Sem data anunciada | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
-| conteudo | The value did not change; the way to find it did: a source that moves address, for example. Each row below leads to its own history, where the revision is written out in full. | voz1 | viva | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
+| conteudo | The value did not change; the way to find it did: a source that moves address, for example. Each row below leads to its own history, where the revision is written out in full. | voz1 | condicional-rec1 | VOZ-1: campo público, ausência declarada ou descrição da mudança da fonte. |
 | conteudo | Trabalho concluído | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Up next | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
 | conteudo | Work concluded | voz1 | retirada | VOZ-1 B: saiu a agenda interna ou mudou a descrição do calendário e das áreas. |
@@ -5496,17 +5498,17 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 
 | Classe | Texto | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Edição de 03.11.2026 | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia. | ev3-p | condicional-rec1 | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edição de 03.11.2026 | ev3-p | condicional-rec1 | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Edição atual | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Primeira edição | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Primeira edição | ev3-p | condicional-rec1 | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Primeira edição, publicada a 01.10.2026. A edição atual é de 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | Edição de 03.11.2026. A edição atual é de 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | Edição atual, de 06.11.2026. A primeira edição é de 01.10.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
-| conteudo | The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara &#39;s notes names. | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | Edition of 03.11.2026 | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara &#39;s notes names. | ev3-p | condicional-rec1 | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | Edition of 03.11.2026 | ev3-p | condicional-rec1 | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | Current edition | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
-| conteudo | First edition | ev3-p | viva | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
+| conteudo | First edition | ev3-p | condicional-rec1 | Mandato EV3-p e adenda A: frase autorizada; unidade completa da superfície rendida. |
 | conteudo | First edition, published on 01.10.2026. The current edition is from 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | Edition of 03.11.2026. The current edition is from 06.11.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | Current edition, from 06.11.2026. The first edition is from 01.10.2026. | ev3-p | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
@@ -5574,24 +5576,58 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou. | voz-2a | viva | Texto literal do mandato, com natureza de atualização pela adenda E. |
-| conteudo | The sentences in which the study talked about itself came out; no number and no conclusion changed. | voz-2a | viva | Texto literal do mandato, com natureza de atualização pela adenda E. |
-| conteudo | Edição de 06.11.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
-| conteudo | Edição de 30.10.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
-| conteudo | Edition of 06.11.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
-| conteudo | Edition of 30.10.2026 | voz-2a | viva | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou. | voz-2a | condicional-rec1 | Texto literal do mandato, com natureza de atualização pela adenda E. |
+| conteudo | The sentences in which the study talked about itself came out; no number and no conclusion changed. | voz-2a | condicional-rec1 | Texto literal do mandato, com natureza de atualização pela adenda E. |
+| conteudo | Edição de 06.11.2026 | voz-2a | condicional-rec1 | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Edição de 30.10.2026 | voz-2a | condicional-rec1 | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Edition of 06.11.2026 | voz-2a | condicional-rec1 | Porta da versão anterior, conferida contra o manifesto das edições. |
+| conteudo | Edition of 30.10.2026 | voz-2a | condicional-rec1 | Porta da versão anterior, conferida contra o manifesto das edições. |
 
 ## COR-AGUA: correções dos quatro estudos
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A eficiência na adução e distribuição dos aproveitamentos hidroagrícolas passou ao valor que a DGADR publica, 76 % fonte · DGADR , sem a média ponderada de 83 linha · O Estado do País a 85 % linha · O Estado do País que era uma conta deste estudo; os 71 % fonte · Gulbenkian de agricultores sem contador passaram a dizer que vêm de um inquérito da Gulbenkian feito em 2019 fonte · Gulbenkian a quem rega explorações de 5 fonte · Gulbenkian hectares ou mais, e não de 2021 linha · O Estado do País ; e os valores do PRR passaram a ter a data do instantâneo de onde vêm, com os dados da edição inglesa iguais aos da portuguesa. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | Uma frase sobre o que não se apurou trazia uma marca de valor por confirmar; a marca saiu. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | O nome legal do presidente interino aparecia com uma marca de valor por confirmar; passou a dizer que está por confirmar na fonte. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | O rácio entre o encargo médio de um utilizador doméstico por metro cúbico, ao consumo de referência da ERSAR, e a tarifa do Alqueva para a rega nos blocos de rega passou de 27 linha · O Estado do País a 53 vezes linha · O Estado do País para 19 fonte · calculado a 35 vezes fonte · calculado , com o nível médio de encargos da ERSAR de 2024 fonte · ERSAR e as tarifas do Alqueva de 2026 fonte · EDIA , que a edição inglesa dizia não encontradas e estão no edital da EDIA; o encargo de conservação passou aos valores do mesmo edital; a auditoria do Tribunal de Contas de 2016 fonte · Tribunal de Contas entrou na edição inglesa; o total nacional de barragens do resumo dos planos de bacia entrou na edição portuguesa; os valores de um boletim semanal da APA que já não se consegue ler saíram, com as marcas de valor por confirmar; a eficiência na adução e distribuição dos aproveitamentos hidroagrícolas passou ao valor da DGADR, 76 % fonte · DGADR , sem a média ponderada de cerca de 95 % linha · O Estado do País ; e os 71 % fonte · Gulbenkian de agricultores sem contador passaram a dizer de que inquérito são e a quem se aplicam. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | Conveyance and distribution efficiency in the irrigation schemes moved to the figure DGADR publishes, 76 % source · DGADR , without the 83 row · O Estado do País to 85 % row · O Estado do País weighted average that was this study&#39;s own calculation; the 71 % source · Gulbenkian of farmers without a meter now say they come from a Gulbenkian survey carried out in 2019 source · Gulbenkian among those who irrigate holdings of 5 source · Gulbenkian hectares or more, not from 2021 row · O Estado do País ; and the PRR values now carry the date of the snapshot they come from, with the English edition&#39;s data the same as the Portuguese edition&#39;s. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | A sentence on what was not established carried a marker of a value still to be confirmed; the marker came out. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | The interim Câmara president&#39;s legal name appeared with a marker of a value still to be confirmed; it now says it is yet to be confirmed in the source. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | The ratio between a household&#39;s average charge per cubic metre at ERSAR&#39;s reference consumption and Alqueva&#39;s irrigation tariff in the irrigation blocks went from 27 row · O Estado do País to 53 times row · O Estado do País to 19 source · calculated to 35 times source · calculated , using ERSAR&#39;s 2024 source · ERSAR average charge level and the 2026 source · EDIA Alqueva tariffs, which the English edition said had not been found and are in EDIA&#39;s edital; the conservation charge moved to the values in the same edital; the Tribunal de Contas&#39; 2016 source · Tribunal de Contas audit entered the English edition; the national dam total from the river basin plans&#39; summary entered the Portuguese edition; the values from an APA weekly bulletin that can no longer be read came out, with the markers of values still to be confirmed; conveyance and distribution efficiency in the irrigation schemes moved to DGADR&#39;s figure, 76 % source · DGADR , without the weighted average of about 95 % row · O Estado do País ; and the 71 % source · Gulbenkian of farmers without a meter now say which survey they come from and whom they cover. | cor-agua | viva | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
-| conteudo | 4 158 afirmações · 523 de 4 158 calculadas · 2 767 de 4 158 linhas de concelhos | cor-agua | viva | Contagem medida no livro construído, com as dezassete origens das correções e três cálculos novos. |
-| conteudo | 4 158 claims · 523 of 4 158 calculated · 2 767 of 4 158 municipality rows | cor-agua | viva | Contagem medida no livro construído, com as dezassete origens das correções e três cálculos novos. |
+| conteudo | A eficiência na adução e distribuição dos aproveitamentos hidroagrícolas passou ao valor que a DGADR publica, 76 % fonte · DGADR , sem a média ponderada de 83 linha · O Estado do País a 85 % linha · O Estado do País que era uma conta deste estudo; os 71 % fonte · Gulbenkian de agricultores sem contador passaram a dizer que vêm de um inquérito da Gulbenkian feito em 2019 fonte · Gulbenkian a quem rega explorações de 5 fonte · Gulbenkian hectares ou mais, e não de 2021 linha · O Estado do País ; e os valores do PRR passaram a ter a data do instantâneo de onde vêm, com os dados da edição inglesa iguais aos da portuguesa. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | Uma frase sobre o que não se apurou trazia uma marca de valor por confirmar; a marca saiu. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | O nome legal do presidente interino aparecia com uma marca de valor por confirmar; passou a dizer que está por confirmar na fonte. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | O rácio entre o encargo médio de um utilizador doméstico por metro cúbico, ao consumo de referência da ERSAR, e a tarifa do Alqueva para a rega nos blocos de rega passou de 27 linha · O Estado do País a 53 vezes linha · O Estado do País para 19 fonte · calculado a 35 vezes fonte · calculado , com o nível médio de encargos da ERSAR de 2024 fonte · ERSAR e as tarifas do Alqueva de 2026 fonte · EDIA , que a edição inglesa dizia não encontradas e estão no edital da EDIA; o encargo de conservação passou aos valores do mesmo edital; a auditoria do Tribunal de Contas de 2016 fonte · Tribunal de Contas entrou na edição inglesa; o total nacional de barragens do resumo dos planos de bacia entrou na edição portuguesa; os valores de um boletim semanal da APA que já não se consegue ler saíram, com as marcas de valor por confirmar; a eficiência na adução e distribuição dos aproveitamentos hidroagrícolas passou ao valor da DGADR, 76 % fonte · DGADR , sem a média ponderada de cerca de 95 % linha · O Estado do País ; e os 71 % fonte · Gulbenkian de agricultores sem contador passaram a dizer de que inquérito são e a quem se aplicam. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | Conveyance and distribution efficiency in the irrigation schemes moved to the figure DGADR publishes, 76 % source · DGADR , without the 83 row · O Estado do País to 85 % row · O Estado do País weighted average that was this study&#39;s own calculation; the 71 % source · Gulbenkian of farmers without a meter now say they come from a Gulbenkian survey carried out in 2019 source · Gulbenkian among those who irrigate holdings of 5 source · Gulbenkian hectares or more, not from 2021 row · O Estado do País ; and the PRR values now carry the date of the snapshot they come from, with the English edition&#39;s data the same as the Portuguese edition&#39;s. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | A sentence on what was not established carried a marker of a value still to be confirmed; the marker came out. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | The interim Câmara president&#39;s legal name appeared with a marker of a value still to be confirmed; it now says it is yet to be confirmed in the source. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | The ratio between a household&#39;s average charge per cubic metre at ERSAR&#39;s reference consumption and Alqueva&#39;s irrigation tariff in the irrigation blocks went from 27 row · O Estado do País to 53 times row · O Estado do País to 19 source · calculated to 35 times source · calculated , using ERSAR&#39;s 2024 source · ERSAR average charge level and the 2026 source · EDIA Alqueva tariffs, which the English edition said had not been found and are in EDIA&#39;s edital; the conservation charge moved to the values in the same edital; the Tribunal de Contas&#39; 2016 source · Tribunal de Contas audit entered the English edition; the national dam total from the river basin plans&#39; summary entered the Portuguese edition; the values from an APA weekly bulletin that can no longer be read came out, with the markers of values still to be confirmed; conveyance and distribution efficiency in the irrigation schemes moved to DGADR&#39;s figure, 76 % source · DGADR , without the weighted average of about 95 % row · O Estado do País ; and the 71 % source · Gulbenkian of farmers without a meter now say which survey they come from and whom they cover. | cor-agua | condicional-rec1 | Texto literal do mandato COR-AGUA, com os selos de origem que o campo rende; conferido contra a declaração e o HTML. |
+| conteudo | 4 156 afirmações · 523 de 4 156 calculadas · 2 767 de 4 156 linhas de concelhos | cor-agua | viva | Contagem medida no livro construído, com as dezassete origens das correções e três cálculos novos. |
+| conteudo | 4 156 claims · 523 of 4 156 calculated · 2 767 of 4 156 municipality rows | cor-agua | viva | Contagem medida no livro construído, com as dezassete origens das correções e três cálculos novos. |
+
+## REC1: frases prescritas no mandato e na adenda A
+
+| Classe | Texto | Origem | Estado | Motivo |
+| --- | --- | --- | --- | --- |
+| conteudo | O que for corrigido, a partir do lançamento | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | What gets corrected, from launch onward | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | Edição de ensaio | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | Test edition | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | O Estado do País está em ensaio até ao lançamento: o que aqui se lê está a ser relido contra as fontes. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | O Estado do País is in testing until launch: what you read here is being re-read against the sources. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | O registo começa no lançamento. Até lá, O Estado do País está em ensaio, e o que aqui se lê está a ser relido contra as fontes. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | The register starts at launch. Until then O Estado do País is in testing, and what you read here is being re-read against the sources. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | Sem correções desde o lançamento. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | No corrections since launch. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | O Estado do País está em ensaio até ao lançamento; o que se segue vale a partir dele. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+| conteudo | O Estado do País is in testing until launch; what follows applies from then on. | rec1-a | condicional-rec1 | Redação prescrita no mandato REC1 e na adenda A. |
+
+| conteudo | 50 correções publicadas | rec1-a | condicional-rec1 | REC1: contagem e origem mostradas só com lançamento. |
+| conteudo | correções mostradas no registo, de linhas e de texto de estudos | rec1-d | condicional-rec1 | REC1: contagem e origem mostradas só com lançamento. |
+| conteudo | 50 corrections published | rec1-a | condicional-rec1 | REC1: contagem e origem mostradas só com lançamento. |
+| conteudo | corrections shown in the register, to rows and to study text | rec1-d | condicional-rec1 | REC1: contagem e origem mostradas só com lançamento. |
+| conteudo | A partir do lançamento, cada mudança fica no registo das correções, com a data, o que estava e o que ficou. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | From launch onward, each change is recorded in the corrections register, with the date, what was there and what replaced it. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | A partir do lançamento, um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | From launch onward, a confirmed error enters the register with credit to whoever found it, if they wish. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | Cada mudança fica no registo das correções, com a data, o que estava e o que ficou. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | Each change is recorded in the corrections register, with the date, what was there and what replaced it. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | A confirmed error enters the register with credit to whoever found it, if they wish. | rec1-b | condicional-rec1 | Adenda B: presença conforme o lançamento. |
+| conteudo | Edição de ensaio O Estado do País está em ensaio até ao lançamento: o que aqui se lê está a ser relido contra as fontes. | rec1-b | condicional-rec1 | Adenda B: marca e explicação no mesmo elemento. |
+| conteudo | Test edition O Estado do País is in testing until launch: what you read here is being re-read against the sources. | rec1-b | condicional-rec1 | Adenda B: marca e explicação no mesmo elemento. |
+| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . A partir do lançamento, um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | rec1-b | condicional-rec1 | Adenda B: parágrafo integral do contacto. |
+| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . From launch onward, a confirmed error enters the register with credit to whoever found it, if they wish. | rec1-b | condicional-rec1 | Adenda B: parágrafo integral do contacto. |

@@ -1,0 +1,314 @@
+MOT2, 10.11.2026
+Cabeça de entrada do motor: 27c3ada.
+
+1. Referências sem linha presas ao contexto.
+O compositor confere nf e cor com linha null depois de resolver os marcadores
+da linha. Usa os carateres visíveis imediatamente antes e depois da ocorrência
+na fonte e na composição. A mesma renderização do documento retira a marcação;
+não contam espaços nem o separador de largura zero das tabelas. Contam a
+pontuação, os sinais e as maiúsculas. Nas tabelas, o contexto fica dentro da
+célula, como a unidade do registo da fonte. Não se mistura com a célula seguinte.
+
+Largura fixada: um carater de cada lado. Foram medidas 601 ocorrências dos sete
+gabaritos: 589 nf e 12 cor sem linha. Com dois carateres, 39 ocorrências divergem; com um, 25 divergem.
+As outras 576 passam a regra de um carater. Catorze destas deixam de passar
+quando se sobe a dois. Não se mudou prosa nem coordenadas de marcadores.
+O caso NUTS3 de MOT1-B, nf:06:22:0:3 em inglês, passa com S à esquerda
+e ) à direita; a largura máxima que conserva esse caso é um.
+As 25 divergências estão nas duas listas referencias-contexto.json, ao lado
+dos gabaritos dos estudos 18 e 19, com 19 e seis entradas, respetivamente. Cada entrada fixa gabarito, marcador, linha
+composta inteira e início da ocorrência nessa linha. A comparação da lista
+é literal, sem normalização; não autoriza o mesmo algarismo noutro contexto.
+O contexto de uma exceção pode mudar apenas se passar a regra normal da fonte;
+fora dela, qualquer diferença face à entrada fechada recusa.
+
+Plantas: nf movida para uma percentagem recusa; cor sem linha movida para essa
+frase recusa; ambas no contexto de origem passam. Uma mudança só à esquerda
+ou só à direita recusa. Marcação de negrito não interfere. A entrada fechada
+passa para nf e cor; a mudança do vizinho ou de uma palavra distante na linha
+recusa. A planta q. conserva o carater imediato . e passa: a regra implementa
+um carater, não promete identidade de frase inteira fora da lista fechada.
+
+2. Conferência dos gabaritos ativos.
+A lista fechada ESTUDOS nomeia 16 Évora Contas da Câmara, 17 Évora Quem Governou,
+18 Évora Economia e Dinheiro de Fora e 19 Évora 2027 Capital Europeia da Cultura.
+A descoberta pelos livros tem de ser exatamente esta. Retirar um estudo ou
+acrescentar um quinto recusa, com mensagem própria.
+A cópia de trabalho exclui todos os produtos da composição, renderização e
+exportação, e os históricos. Cada etapa tem de criar as suas saídas, que se
+comparam byte a byte com os ficheiros fixados da árvore de trabalho. Plantas:
+composição, renderização e exportação substituídas por uma função que devolve
+sucesso sem escrever recusam por produto não regenerado. Uma frase ativa
+mudada e um HTML alterado sem mudar o tamanho continuam a recusar.
+Os cortes da voz (*.cortes.json) são entradas, não produtos: o exportador lê-os
+e não os escreve. São copiados, com bytes conferidos por uma planta. Também
+são entradas os gabaritos, ajustes, listas de contexto, renderizador e fontes.
+Os sete cortes, os sete gabaritos e os históricos permaneceram iguais.
+
+3. Nota dos manifestos.
+NOTA_E1 foi corrigida na origem para o texto do mandato. Os quatro manifestos
+foram regenerados pelo exportador. A comparação JSON contra HEAD confirmou
+que só o campo nota mudou; os resumos dos registos dentro dos manifestos não
+mudaram. A comparação SHA-256 confirmou 36 dos 40 produtos iguais e apenas os
+quatro manifestos diferentes. Os 49 outros ficheiros preexistentes dos quatro
+estudos também ficaram iguais. Não se alteraram fontes, bases nem prosa.
+
+4. Testes em falta.
+A planta da correção sem razão executa agora a composição antes de acrescentar
+a chave razao. Recusa por "correção sem linha exige razão escrita", não por
+KeyError. A guarda indexar_correcoes já tratava a chave ausente na cabeça de
+entrada; o teste anterior só executava os casos null, vazio, espaços e número.
+O resumo de documento com 63 carateres recusa diretamente em linhas_proprias.
+conferir, por "sem source_sha256 válido do documento", e também no compositor.
+Não foi necessário afrouxar nem mudar a validação destas duas regras.
+
+Conferências dirigidas
+Oito corridas efetivas de suites: aplanar duas vezes, linhas próprias uma,
+ativos uma, compositor uma, livros uma, EV2 uma e exportador uma.
+Resultados finais, código 0: aplanar 21 testes; linhas próprias 20; ativos 6;
+compositor 23; livros 47; EV2 14; exportador 34.
+Houve ainda uma tentativa inválida de reunir quatro módulos pelo unittest,
+que saiu com código 5 e zero testes: estes módulos têm a sua própria entrada.
+Foram depois executados pelos comandos python3 -m de cada suite, acima.
+Duas medições de contexto e duas exportações dirigidas. A primeira medição
+juntava as células de tabela: foi corrigida para a unidade visível da fonte.
+Na primeira exportação, o guião temporário restringiu EDITIONS antes de carregar
+os digestos das fontes e mudou indevidamente três registos. Corrigida a ordem,
+a segunda corrida restaurou os registos byte a byte e mudou só as quatro notas.
+A prova final de resumos cobre esta correção. Nenhuma dispensa de regra.
+Uma corrida de core.gate. Zero portões e zero capturas do sítio.
+
+Portão completo
+Código 0; 872 segundos; uma única corrida por curto.sh.
+Últimas oito linhas, copiadas de <temporario>/mot2/gate.log:
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Lista fechada, cada entrada
+Os inícios são posições em carateres na linha composta, a partir de zero.
+O contexto integral está escrito nos JSON comitados, sem abreviações.
+01. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:06:21:0:9⟧, início 969
+    vizinhos compostos: 'S' / ','; fonte: 'n' / 'F'
+02. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:06:25:0:0⟧, início 83
+    vizinhos compostos: 'y' / ','; fonte: 's' / 'b'
+03. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:04:20:6:1⟧, início 3
+    vizinhos compostos: 'C' / '-'; fonte: 'i' / ''
+04. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:04:60:9:0⟧, início 40
+    vizinhos compostos: '-' / 'ª'; fonte: '' / 'ª'
+05. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:04:67:0:2⟧, início 222
+    vizinhos compostos: 'B' / '/'; fonte: '-' / 'ª'
+06. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:06:37:0:1⟧, início 236
+    vizinhos compostos: 'e' / 'i'; fonte: '(' / ':'
+07. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:06:41:0:0⟧, início 150
+    vizinhos compostos: 'E' / 'c'; fonte: 'g' / 'c'
+08. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:06:44:0:5⟧, início 533
+    vizinhos compostos: 'n' / 'm'; fonte: '-' / '—'
+09. 18 Évora Economia e Dinheiro de Fora, documento.en.md.tmpl, ⟦nf:06:46:0:4⟧, início 381
+    vizinhos compostos: 'r' / ','; fonte: 'r' / '—'
+10. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:21:0:9⟧, início 1128
+    vizinhos compostos: 'S' / ','; fonte: 'a' / 'd'
+11. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:25:0:0⟧, início 56
+    vizinhos compostos: 'a' / ','; fonte: 'a' / 'é'
+12. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:25:0:0⟧, início 90
+    vizinhos compostos: 'e' / ','; fonte: 'a' / 'é'
+13. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:04:20:6:1⟧, início 3
+    vizinhos compostos: 'C' / '-'; fonte: 'i' / ''
+14. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:04:60:9:0⟧, início 40
+    vizinhos compostos: '-' / 'ª'; fonte: '' / 'ª'
+15. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:04:67:0:2⟧, início 222
+    vizinhos compostos: 'B' / '/'; fonte: '-' / 'ª'
+16. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:37:0:1⟧, início 303
+    vizinhos compostos: 'e' / '('; fonte: '(' / ':'
+17. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:41:0:0⟧, início 185
+    vizinhos compostos: 'e' / ','; fonte: 'e' / 'd'
+18. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:44:0:5⟧, início 598
+    vizinhos compostos: 'm' / 'c'; fonte: 'e' / '—'
+19. 18 Évora Economia e Dinheiro de Fora, documento.pt.md.tmpl, ⟦nf:06:46:0:4⟧, início 426
+    vizinhos compostos: 'e' / ','; fonte: 'e' / '—'
+20. 19 Évora 2027 Capital Europeia da Cultura, documento.en.md.tmpl, ⟦nf:14:23:15:0⟧, início 104
+    vizinhos compostos: '.' / ''; fonte: 't' / 'o'
+21. 19 Évora 2027 Capital Europeia da Cultura, documento.en.md.tmpl, ⟦nf:14:103:4:0⟧, início 28
+    vizinhos compostos: '_' / ''; fonte: 'a' / ''
+22. 19 Évora 2027 Capital Europeia da Cultura, documento.en.md.tmpl, ⟦nf:14:103:4:0⟧, início 28
+    vizinhos compostos: '_' / ''; fonte: 'a' / ''
+23. 19 Évora 2027 Capital Europeia da Cultura, documento.pt.md.tmpl, ⟦nf:14:23:15:0⟧, início 117
+    vizinhos compostos: '.' / ''; fonte: 'a' / 'd'
+24. 19 Évora 2027 Capital Europeia da Cultura, documento.pt.md.tmpl, ⟦nf:14:103:4:0⟧, início 28
+    vizinhos compostos: '_' / ''; fonte: 'a' / ''
+25. 19 Évora 2027 Capital Europeia da Cultura, documento.pt.md.tmpl, ⟦nf:14:103:4:0⟧, início 28
+    vizinhos compostos: '_' / ''; fonte: 'a' / ''
+
+Resumos SHA-256 de cada produto
+content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html
+  antes:  c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+  depois: c9e5f3744cf21af03a58547da7e8a3a0521489368de979d474f32803a70de730
+content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md
+  antes:  076c676f7e0bceb87dffd8fc7adfd6500ab747c80f683c5b464ceb56934439de
+  depois: 076c676f7e0bceb87dffd8fc7adfd6500ab747c80f683c5b464ceb56934439de
+content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).record.json
+  antes:  a081fba0df32306bb9963009e6f0b55112a517c6b4778479f670fca53058e762
+  depois: a081fba0df32306bb9963009e6f0b55112a517c6b4778479f670fca53058e762
+content/16 Évora Contas da Câmara/Technical Source/decisoes.en.json
+  antes:  7d5e5460a2473642de608ded01a964f38f81aa36c2c8ac7ad809941bdb425bf0
+  depois: 7d5e5460a2473642de608ded01a964f38f81aa36c2c8ac7ad809941bdb425bf0
+content/16 Évora Contas da Câmara/Technical Source/decisoes.pt.json
+  antes:  2f39a9dadeeeb81161c28fe7cdb5d1f052192114d6222faaa4467b52158059eb
+  depois: 2f39a9dadeeeb81161c28fe7cdb5d1f052192114d6222faaa4467b52158059eb
+content/16 Évora Contas da Câmara/Technical Source/origem-das-linhas.json
+  antes:  46ff87dda109286fa82cdc9ffc8e08cf9ea9a5e1796142c291a6e2915777fe54
+  depois: 46ff87dda109286fa82cdc9ffc8e08cf9ea9a5e1796142c291a6e2915777fe54
+content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html
+  antes:  6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+  depois: 6eaabfefa41dee78c5d613e27ca8cd50d4b5471296412b2e2112762e128c8118
+content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.md
+  antes:  0780b494518f5df45b53fa9080dca47142acbf04b2e04875a3a1ca8ce6501e06
+  depois: 0780b494518f5df45b53fa9080dca47142acbf04b2e04875a3a1ca8ce6501e06
+content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.record.json
+  antes:  300a236d06bf316121d57b1b7d8618536d69cb0cf665b0739b7556ff68996dc4
+  depois: 300a236d06bf316121d57b1b7d8618536d69cb0cf665b0739b7556ff68996dc4
+content/16 Évora Contas da Câmara/ledger.json
+  antes:  b8053b38c96f152d00ca728d2c1268129d48795953ebbb2b5c4056fd2095fea0
+  depois: b8053b38c96f152d00ca728d2c1268129d48795953ebbb2b5c4056fd2095fea0
+content/16 Évora Contas da Câmara/records.manifest.json
+  antes:  e31a4cc46a71cb7d93ec0498a449a475231c84ccbf954388f353fa37e8a6c221
+  depois: 975b2b2cd40a0342b21b25b6c9c8428026211570b53b2df2b4dbc0cfe1407afc
+content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html
+  antes:  6ae4b9ae0262ad4d7f62d4766a9b4a0d477a06908d5b4e6da082573f7782e26e
+  depois: 6ae4b9ae0262ad4d7f62d4766a9b4a0d477a06908d5b4e6da082573f7782e26e
+content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md
+  antes:  d496dcfc19d96d8949c5cde4d8fd584637c4b1e90b4df96dab5cb356f566f50b
+  depois: d496dcfc19d96d8949c5cde4d8fd584637c4b1e90b4df96dab5cb356f566f50b
+content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).record.json
+  antes:  8d088a4ac076f9dc17d1d2c75b1cc5bafbba6f17e145356a897dc08a5b8cc3d9
+  depois: 8d088a4ac076f9dc17d1d2c75b1cc5bafbba6f17e145356a897dc08a5b8cc3d9
+content/17 Évora Quem Governou/Technical Source/decisoes.pt.json
+  antes:  bfd824e9d58d77fb2770fff99b8854bcf3106c279e4e27eb0dc60872614f127e
+  depois: bfd824e9d58d77fb2770fff99b8854bcf3106c279e4e27eb0dc60872614f127e
+content/17 Évora Quem Governou/Technical Source/origem-das-linhas.json
+  antes:  788e049e4b23dbcae136eda5743478b6e650120a43eb18b0da907479fe951b44
+  depois: 788e049e4b23dbcae136eda5743478b6e650120a43eb18b0da907479fe951b44
+content/17 Évora Quem Governou/ledger.json
+  antes:  e01a1a6460c353844a50915ac0f1a930ef1989a9b2078d3a8e5ff310eee5a887
+  depois: e01a1a6460c353844a50915ac0f1a930ef1989a9b2078d3a8e5ff310eee5a887
+content/17 Évora Quem Governou/records.manifest.json
+  antes:  f33930cc21785632cd7531ff88e285e70535e9d6f12d2fd1a198011c9825b36d
+  depois: 69e7df02577dc0b194fe169f91e4d33c48554e97a827e99e257b6a21cebda981
+content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html
+  antes:  78e681599df39e75f2a4a5a3eb48c8be339ca4ae588d82e4e14e507b9a2e30d3
+  depois: 78e681599df39e75f2a4a5a3eb48c8be339ca4ae588d82e4e14e507b9a2e30d3
+content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md
+  antes:  ad529ecbbae894c1a1b75695a7b5eeb88e40f05f1b2c496061dfe49bbf4fe7cb
+  depois: ad529ecbbae894c1a1b75695a7b5eeb88e40f05f1b2c496061dfe49bbf4fe7cb
+content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).record.json
+  antes:  5f381c1da8de93764ef0fe79e74658311ae74698dfa22aec40e5b8c74a4b1caa
+  depois: 5f381c1da8de93764ef0fe79e74658311ae74698dfa22aec40e5b8c74a4b1caa
+content/18 Évora Economia e Dinheiro de Fora/Technical Source/decisoes.en.json
+  antes:  b88b2dd5b695c67a2ff706f8a2cecd63c761152ae6edbb6cfa23235940490aa9
+  depois: b88b2dd5b695c67a2ff706f8a2cecd63c761152ae6edbb6cfa23235940490aa9
+content/18 Évora Economia e Dinheiro de Fora/Technical Source/decisoes.pt.json
+  antes:  35b966743bfb7f9095458d2d8c201fa6fa8744a7ab815c83ef011a28e8236669
+  depois: 35b966743bfb7f9095458d2d8c201fa6fa8744a7ab815c83ef011a28e8236669
+content/18 Évora Economia e Dinheiro de Fora/Technical Source/origem-das-linhas.json
+  antes:  57a9548ef3e2b20c76141624323586c5ed246ef76712634bf65ee50b31021b52
+  depois: 57a9548ef3e2b20c76141624323586c5ed246ef76712634bf65ee50b31021b52
+content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html
+  antes:  316728c84d081eb523fca13707d0fcec83d43192a45b3670fd5eac751faa2427
+  depois: 316728c84d081eb523fca13707d0fcec83d43192a45b3670fd5eac751faa2427
+content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.md
+  antes:  366be2398d515b02ec80f6fd8a7d28f7efeab17dc1bb40d6ea131388852e0404
+  depois: 366be2398d515b02ec80f6fd8a7d28f7efeab17dc1bb40d6ea131388852e0404
+content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.record.json
+  antes:  0c5c36f7bf52295f34734a1dc79bb91e8476c2b323e687b2039ddf71dbe5e290
+  depois: 0c5c36f7bf52295f34734a1dc79bb91e8476c2b323e687b2039ddf71dbe5e290
+content/18 Évora Economia e Dinheiro de Fora/ledger.json
+  antes:  88d3e4a8d28235c3950d1efe5f4c68e86dfc9544d8aec7616468ace6c2c6bfa0
+  depois: 88d3e4a8d28235c3950d1efe5f4c68e86dfc9544d8aec7616468ace6c2c6bfa0
+content/18 Évora Economia e Dinheiro de Fora/records.manifest.json
+  antes:  334345af0cbd358acdbcbce246fd1f2c6a63925f85507497a9d36cff9ba37438
+  depois: ac72f6207e166a098a594812c6ac683f62ded1e5e9798f493fb90a94609bbe5f
+content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/decisoes.en.json
+  antes:  aacd5e945656df3f7715d5adaa9255db761a3154aeb58753010c152057348aed
+  depois: aacd5e945656df3f7715d5adaa9255db761a3154aeb58753010c152057348aed
+content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/decisoes.pt.json
+  antes:  4a5cadc18d44e2e0753cb3e096069f139622729962e2eb1ccab93bf2d8f1f798
+  depois: 4a5cadc18d44e2e0753cb3e096069f139622729962e2eb1ccab93bf2d8f1f798
+content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/origem-das-linhas.json
+  antes:  28d1b3600fd2ac77f6082b72959c91fe58f965b04ac6357631408885ed1b83fe
+  depois: 28d1b3600fd2ac77f6082b72959c91fe58f965b04ac6357631408885ed1b83fe
+content/19 Évora 2027 Capital Europeia da Cultura/ledger.json
+  antes:  32f4929e233fbfd88dc0dfaffaf2da8db85131ee1d78eefa7fa2401cc05e58ac
+  depois: 32f4929e233fbfd88dc0dfaffaf2da8db85131ee1d78eefa7fa2401cc05e58ac
+content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json
+  antes:  0ac8d57b4af043f59fcf1d6a7578ec5b59f4d273eb2f4ec64677765961b96510
+  depois: 5b43a9ddacbe297279d8f2187247830007cf825c2bf51e39e7da53c48015f1c9
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html
+  antes:  95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711
+  depois: 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md
+  antes:  1318c813da17fc25b1c2064667b163591676a15e81f84cafa199ceec72a84601
+  depois: 1318c813da17fc25b1c2064667b163591676a15e81f84cafa199ceec72a84601
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).record.json
+  antes:  8eff661abf007ab4c42797fd1de77b75de1f15fba0e8a99252700d71d9e2ea42
+  depois: 8eff661abf007ab4c42797fd1de77b75de1f15fba0e8a99252700d71d9e2ea42
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html
+  antes:  480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d
+  depois: 480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md
+  antes:  0b06469a0869b40e3523ec3e3690f9b99bedd3e94470ee6624a13b96c464b47f
+  depois: 0b06469a0869b40e3523ec3e3690f9b99bedd3e94470ee6624a13b96c464b47f
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.record.json
+  antes:  d1c29362a06aee829b78969f9788c7f46e7d3c67d14138339c921b8575890b53
+  depois: d1c29362a06aee829b78969f9788c7f46e7d3c67d14138339c921b8575890b53
+
+Entradas: cortes da voz e gabaritos ativos, antes = depois
+content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).cortes.json
+  8342e35808f04c0ff43fb8e11217b40260cccd8d63c230c271f41466ee22c17d
+content/16 Évora Contas da Câmara/Technical Source/documento.en.md.tmpl
+  df1eb6783a59cb10939637d603577c184e8a22520dd4d7e93683aeef81fa2551
+content/16 Évora Contas da Câmara/Technical Source/documento.pt.md.tmpl
+  ee5292660634bd1111205956cf995f27874b4beed16c13cef2c301ce3baf9b4d
+content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.cortes.json
+  4ef85ba640316e23c1c92399f1129cf438c07711ab8db8ef94959382f979ca58
+content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).cortes.json
+  a4e7ae37ce7f58a476581031f869eb41d9aa1c82fa6ac47e67a341b4b32a472e
+content/17 Évora Quem Governou/Technical Source/documento.pt.md.tmpl
+  be9fa177200c4bae1f7d8d0b658512f27a07bad11daa3aa1d42df4da726a4525
+content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).cortes.json
+  c9c91f342e10b882bc82e96f34728d0cf64e5fd26d7e6a37d649bdaabc3c7d1b
+content/18 Évora Economia e Dinheiro de Fora/Technical Source/documento.en.md.tmpl
+  35e178ad3a127494f5f40569cd27bb1b4c9d1263655762c80b3f85f9b1f3ce04
+content/18 Évora Economia e Dinheiro de Fora/Technical Source/documento.pt.md.tmpl
+  e2d416441211fb5c8ba9d5e86bf05652bf9f314f816204ab5d7d67f950dc409a
+content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.cortes.json
+  6b125fd90b98e0ab4079758d531c93defce9c7670e1d552327681a6abf866f54
+content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/documento.en.md.tmpl
+  8cd8d592167a114c6ccfb4c677f4237255a96281dcacac683dbbbbb36cdfa231
+content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/documento.pt.md.tmpl
+  d79eac83ee1376bccfa222f20aab8f6c6dff98676317e3235e496c77241a9d8a
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).cortes.json
+  919bf583785cbc8da661d27f6137cb9399c0c88f3fa2945bd4711e91691ae3f5
+content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.cortes.json
+  7d23221605b8cd2a7bdf5aa1d6b0dd0efa12046faa8c65a978b2b29aaf8794ef
+
+Commits e custo
+Motor: a657e2fda477b9b06c9ac1cbe032e1419f3e2e4c, confirmado pelo escrivão
+com código 0 e pelo Git. A worktree do motor ficou limpa. O hook confirmou
+OEDP_GATE=adiado e não repetiu o portão.
+Este relatório é entregue num commit do sítio com o assunto MOT2. O trailer
+Claude-Session foi copiado do commit que trouxe MANDATO-MOT2.md.
+Contagem até ao pedido de commit deste relatório: 46 chamadas à interface
+functions (exec e wait, incluindo esta chamada de fecho). O total final,
+incluindo qualquer espera adicional pelo escrivão, acompanha a resposta.
+Oito corridas efetivas de suites dirigidas, uma tentativa sem testes,
+uma corrida de core.gate, duas medições de contexto e duas exportações.
+Zero portões do sítio e zero capturas. Nenhum ponto do mandato ficou aberto.
+Uma consulta auxiliar de processos foi recusada pela sandbox:
+"zsh:1: operation not permitted: ps". Não se tentou escalada; o resultado
+do portão foi lido do próprio comando.
+Não foi exposta uma linha «tokens used».

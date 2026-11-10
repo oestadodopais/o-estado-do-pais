@@ -124,14 +124,14 @@
         {
           "prova": "painel_reconferido_em"
         },
-        "; quando a fonte muda um valor, o número muda e o registo diz o que estava antes."
+        "; quando a fonte muda um valor, o número muda e o recibo desse número diz o que estava antes."
       ],
       "en": [
         "The panel numbers are read again at the source, most recently on ",
         {
           "prova": "painel_reconferido_em"
         },
-        "; when the source changes a value, the number changes and the register shows what was there before."
+        "; when the source changes a value, the number changes and that number's receipt shows what was there before."
       ]
     }
   ],

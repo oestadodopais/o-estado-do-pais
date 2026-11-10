@@ -53,7 +53,7 @@ export function medirPagina(html, rota, ledes = {}) {
  if(['metodo','sobre','privacidade',...ISENCAO_RECIBOS.rotas].includes(hit?.key) || (ISENCAO_VOZ2.rotas.includes(hit?.key) && isentaVoz2(hit))) return {marca,protecao,frases:[],ledes:[],isenta:true};
  const h1=corpo.querySelector('h1');
  const imediato = h1?.nextElementSibling?.tagName === 'P' ? h1.nextElementSibling : h1?.parentNode?.nextElementSibling?.tagName === 'P' ? h1.parentNode.nextElementSibling : null;
- const lede=imediato ? normal(imediato.textContent) : null;
+ const lede=imediato && !imediato.closest('header') ? normal(imediato.textContent) : null;
  // Só transcrições explicitamente atribuídas: dados da agenda e frases das explicações entram.
  if(hit?.key==='dossie') corpo.querySelectorAll('[data-registo-unidade], [data-registo-indice]').forEach(n=>n.remove());
  // As unidades transcritas e os índices continuam conferidos pela composição e pelo portão de HTML.

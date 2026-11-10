@@ -79,6 +79,8 @@
  * «valor novo: »), **fora** do elemento marcado com `data-correcao-campo`, para
  * que o portão continue a comparar só o valor com o do livro-razão.
  */
+import { emEnsaio, desdeOLancamento } from '../../site.config.mjs';
+import { ENSAIO } from '../data/ensaio.mjs';
 import TextoDaCorrecao from './TextoDaCorrecao.astro';
 import PortaDaEdicao from './PortaDaEdicao.astro';
 import TextoDoNome from './TextoDoNome.astro';
@@ -111,12 +113,11 @@ const linhasDasMudancas = mudancas.flatMap(e => {
   if (e.tipo !== 'projeto' || !Array.isArray(e.texto[lang])) return [];
   return e.texto[lang].flatMap(p => typeof p === 'string' ? [] : [p.claim]);
 });
-/* A contagem das correções continua a ser a linha do livro-razão, e conta só as
-   de natureza «correção»: é a confissão, e é o número que a política promete. */
-const correcoes = [...entradasDoRegisto('correcao'), ...CORRECOES_TEXTO.filter(e => e.kind === 'texto')];
+/* A prova conta as correções que o registo mostra desde o lançamento. */
+const correcoes = [...entradasDoRegisto('correcao').filter(e => desdeOLancamento(e.date)), ...CORRECOES_TEXTO.filter(e => e.kind === 'texto' && desdeOLancamento(e.data))];
 /* As revisões de proveniência entram como contagem e como caminho, não como
    lista: ver o cabeçalho deste ficheiro. */
-const revisoes = entradasDoRegisto('proveniencia');
+const revisoes = entradasDoRegisto('proveniencia').filter(e => desdeOLancamento(e.date));
 /* Uma entrada por linha, a primeira de cada — a lista é a contagem, e cada
    item é a porta para a história completa daquela linha. O id vai marcado
    como campo de uma entrada do registo (data-correcao-*), que é a única
@@ -143,13 +144,13 @@ const palavraRevisoes =
     : s.correcoes.registoProvenienciaConta;
 ---
 
-<div class="registo">
+{mudancas.length === 0 && primeiraPorLinha.length === 0 ? <div data-mudou-registo><p data-registo-vazio>{emEnsaio() ? ENSAIO[lang].registo : ENSAIO[lang].vazio}</p></div> : <div class="registo">
   <!-- ============================ TODAS AS MUDANÇAS, POR DATA -->
   <section class="registo-grupo registo-grupo-correcoes" aria-labelledby="registo-mudancas">
     <div class="registo-cabeca">
       <h3 class="registo-titulo" id="registo-mudancas">{s.correcoes.registoMudancasK}</h3>
       <p class="registo-conta">
-        <Frase partes={[{claim:"correcoes-publicadas"}, " " + palavraConta]} lang={lang} selos />
+        <ValorDaProva chave="correcoes" item={p.correcoes} lang={lang} />{' ' + palavraConta}
       </p>
     </div>
     {/* A NOTA DA LISTA SAIU a 22.09.2026, na passagem de correção: «Todas as
@@ -356,4 +357,4 @@ const palavraRevisoes =
       </section>
     )
   }
-</div>
+</div>}

@@ -1,0 +1,48 @@
+REC1 E: fecho não alcançado; faltam conferências de navegador e a cobertura de quatro frases.
+
+1. O leitor volta a ver as cinco novidades anteriores, com publicações e atualizações de estudos, nos dois modos. A linha das datas volta ao interior da caixa. Repostos o teste das novidades, os rótulos e o inventário anteriores; retirados o filtro, a condição da caixa e as plantas que dependiam deles. As listas de mudanças dos lugares e do índice conservam o filtro do lançamento.
+
+2. Fontes: o noindex global do ensaio deixa de recusar a proveniência completa. Proveniência incompleta continua fora do mapa e com noindex. Plantas de meta ausente, duplicada e mapa trocado; controlos nos dois modos.
+
+3. Feixe: em ensaio a amostra da correção vem da história de um recibo real; com data vem do registo. As plantas existentes do feixe continuam a correr.
+
+4. Semana: em ensaio exige registo vazio e lê os dois valores textuais nos recibos; com data compara o registo construído. Alterar o antes ou o depois é recusado. O índice continua a excluir movimentos textuais da comparação numérica.
+
+5. Guardas: a cópia em memória das frases resolve o import da configuração contra o módulo original. Mantêm-se as plantas da paridade e do congelamento.
+
+6. Retiradas: em ensaio as duas frases retiradas são plantadas no registo vazio da cópia; com data adulteram os campos existentes. As outras duas plantas mantêm-se. Largura: em ensaio a planta nowrap usa um valor textual longo real num recibo; com data usa o registo. As páginas do registo continuam na amostra e têm de ficar vazias em ensaio. A execução no navegador está por confirmar.
+
+Os oito passos, ensaio / com data:
+check:sobreposicao: sem código nos dois modos, não executado por falta de canal autorizado para o navegador.
+check:alvos: sem código nos dois modos, não executado por falta de canal autorizado para o navegador.
+check:fontes: <!-- portao: e/ensaio/check-fontes.log | REC1 E ensaio check:fontes: código 0 --> <!-- portao: e/lancado/check-fontes.log | REC1 E lancado check:fontes: código 0 -->
+design:feixe: <!-- portao: e/feixe-final/design-feixe.log | REC1 E ensaio design:feixe: código 0 --> <!-- portao: e/lancado/design-feixe.log | REC1 E lancado design:feixe: código 0 -->
+check:explicacoes: <!-- portao: e/ensaio/check-explicacoes.log | REC1 E ensaio check:explicacoes: código 0 --> <!-- portao: e/lancado/check-explicacoes.log | REC1 E lancado check:explicacoes: código 0 -->
+provar:guardas: <!-- portao: e/ensaio/provar-guardas.log | REC1 E ensaio provar:guardas: código 0 --> <!-- portao: e/lancado/provar-guardas.log | REC1 E lancado provar:guardas: código 0 -->
+check:voz-retiradas: <!-- portao: e/ensaio/check-voz-retiradas.log | REC1 E ensaio check:voz-retiradas: código 0 --> <!-- portao: e/lancado/check-voz-retiradas.log | REC1 E lancado check:voz-retiradas: código 0 -->
+check:largura: sem código nos dois modos, não executado por falta de canal autorizado para o navegador.
+
+7. Irmãs: pesquisadas em tests/ e scripts/ as leituras de correcoes/corrections, robots/noindex e data-mudou-ambito. Conferidas as regras de sugestões, privacidade, nomes, lugares e índice; também séries, cartões e rótulos. As frases compostas precisam do navegador. A cobertura das frases encontrou quatro títulos recuperados nas novidades, dois pares PT/EN, marcados como atribuição; estão transcritos com identidade e ocorrência em e/frases-recuperadas.json. A lista por-registar não foi ampliada, o detetor não foi dispensado e não se inventou um mandato Frases:. Esta conferência permanece vermelha.
+check:sugestoes: <!-- portao: e/ensaio/check-sugestoes.log | REC1 E ensaio check:sugestoes: código 0 -->
+check:privacidade: <!-- portao: e/ensaio/check-privacidade.log | REC1 E ensaio check:privacidade: código 0 -->
+check:nomes: <!-- portao: e/ensaio/check-nomes.log | REC1 E ensaio check:nomes: código 0 -->
+check:lugar: <!-- portao: e/ensaio/check-lugar.log | REC1 E ensaio check:lugar: código 0 -->
+check:indice-do-sitio: <!-- portao: e/ensaio/check-indice-do-sitio.log | REC1 E ensaio check:indice-do-sitio: código 0 -->
+check:series: <!-- portao: e/irmas/check-series.log | REC1 E ensaio check:series: código 0 -->
+check:cartao: <!-- portao: e/irmas/check-cartao.log | REC1 E ensaio check:cartao: código 0 -->
+check:rotulos: <!-- portao: e/irmas/check-rotulos.log | REC1 E ensaio check:rotulos: código 0 -->
+check:frases-compostas: <!-- portao: e/irmas/check-frases-compostas.log | REC1 E ensaio check:frases-compostas: código 1 -->
+check:frases-afirmacao: <!-- portao: e/irmas/check-frases-afirmacao.log | REC1 E ensaio check:frases-afirmacao: código 1 -->
+O escrivão instalado aceita commits, portões completos e capturas, mas não conferências dirigidas. A adenda proíbe a corrida inteira e as capturas; as regras comuns proíbem o navegador na sandbox. Foi pedida indicação de um canal autorizado, sem resposta até este relatório. Bloqueio medido em check:frases-compostas: «Error: listen EPERM: operation not permitted 127.0.0.1». Não se tentou contornar a sandbox.
+
+Complementos: <!-- portao: e/ensaio/check-rec1.log | REC1 E ensaio check:rec1: código 0 --> <!-- portao: e/lancado/check-rec1.log | REC1 E lancado check:rec1: código 0 --> <!-- portao: e/ensaio/check-datas.log | REC1 E ensaio check:datas: código 0 --> <!-- portao: e/lancado/check-datas.log | REC1 E lancado check:datas: código 0 --> <!-- portao: e/ensaio/check-pais.log | REC1 E ensaio check:pais: código 0 --> <!-- portao: e/lancado/check-pais.log | REC1 E lancado check:pais: código 0 --> <!-- portao: e/ensaio/typecheck.log | REC1 E ensaio typecheck: código 0 --> <!-- portao: e/lancado/typecheck.log | REC1 E lancado typecheck: código 0 -->
+<!-- portao: e/complementos/check-voz.log | REC1 E ensaio check:voz: código 0 -->
+<!-- portao: e/complementos/check-edicoes.log | REC1 E ensaio check:edicoes: código 0 -->
+<!-- portao: e/complementos/check-discussao.log | REC1 E ensaio check:discussao: código 0 -->
+<!-- portao: e/final/gate-html.log | REC1 E ensaio gate:html: código 0 -->
+
+A primeira cópia pedida com data permaneceu em ensaio porque a substituição da configuração falhou. As suas corridas não são prova do modo com data. A segunda cópia confirmou LANCAMENTO=2026-08-01 antes da construção. Nenhuma linha do livro-razão, correção de dados ou história selada foi alterada. Corridas inteiras: 0. Capturas: 0.
+
+Construção com data: <!-- portao: e/construcao-lancado.log | REC1 E construcao-lancado: código 0 -->
+
+Consumo até à preparação do commit: 60 chamadas exec contadas no registo do lançador; 63 execuções de conferência/construção/revisão em e/execucoes.json, incluindo as repetições e a cópia sem data. Os subcomandos não voltam a contar. O registo não expõe a contagem total de chamadas de ferramentas, incluindo as esperas: [verify].

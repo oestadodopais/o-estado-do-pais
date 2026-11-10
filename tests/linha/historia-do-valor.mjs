@@ -38,7 +38,7 @@ for(const [nome,muda,falha] of [
 }
 // O corte editorial do não reconhecimento não conta como correção de erro.
 assert.deepEqual(entradasDoValor(linhas.get('pe-oe-riscos-nao-reconhecimento')),[]);
-assert.equal(linhas.get('correcoes-publicadas').value,String(contagensDoRegisto().correcoes_publicadas));
+assert.equal(linhas.get('correcoes-publicadas').value,String(contagensDoRegisto(linhas).correcoes_publicadas));
 for(const id of ['pe-oe-beira-abolicao']){
  const original=linhas.get(id),seladas=JSON.parse(fs.readFileSync('ledger/historias-valores.json','utf8'))[id],erros=[];
  conferirHistoriaDoValor(original,seladas,'ensaio',erros);assert.deepEqual(erros,[]);
@@ -82,7 +82,7 @@ for(const id of ['hab-imprensa-manif-euronews','hab-imprensa-tendas']) {
  try { const erros=validateLedger().errors.filter(so);assert.ok(erros.length,`${id}: correção numa edição em preparação passou`);plantas.push({nome:`${id}: correção pública numa edição em preparação`,falha:'estudo em preparação',erros,mordeu:true}); }
  finally { linhas.set(id,original);obra.editions.forEach((e,i)=>{e.date=datas[i];}); }
 }
-assert.equal(linhas.get('correcoes-publicadas').value,String(contagensDoRegisto().correcoes_publicadas));
+assert.equal(linhas.get('correcoes-publicadas').value,String(contagensDoRegisto(linhas).correcoes_publicadas));
 const r = { controlos: 4, plantas };
 const i = process.argv.indexOf('--json');
 if (i >= 0) fs.writeFileSync(process.argv[i+1], JSON.stringify(r, null, 2)+'\n');

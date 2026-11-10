@@ -1,0 +1,43 @@
+REC1-B, 10.11.2026
+
+Estado: paragem obrigatória no ponto 12. Não está pronto para aterrar. Os pontos 1 a 11 e 13 estão implementados e conferidos nos modos null e 2026-08-01. LANCAMENTO fica null na worktree. A leitura cruzada do diff continua por fazer.
+
+1. robots.txt reposto byte a byte ao anterior ao bloco nos dois modos; mantém Allow: /. A meta noindex, follow continua única em ensaio. Plantas de Disallow, meta ausente/duplicada e marca indevida recusadas. Construções de conteúdo: código 0 nos dois modos. <!-- portao: b/construcao-ensaio/build.log | REC1 construcao-ensaio: código 0 --> <!-- portao: b/construcao-lancado/build.log | REC1 construcao-lancado: código 0 -->
+
+2. As quatro legendas da prova dizem exatamente o que contam. Comparação literal PT/EN e valores do registo: código 0 nos dois modos. <!-- portao: b/legendas-ensaio/verify.log | REC1 legendas-ensaio: código 0 --> <!-- portao: b/legendas-lancado/verify.log | REC1 legendas-lancado: código 0 -->
+
+3. As frases do Método e do contacto do registo passam a futuro em ensaio e conservam a redação anterior com data. Plantas de alteração literal recusadas nas duas línguas, código 0. <!-- portao: b/modos/verify.log | REC1 modos: código 0 -->
+
+4. A segunda frase da política, sobre atualização não ser erro, voltou nas duas línguas. Planta que a retira recusada; check:edicoes com código 0 nos dois modos. <!-- portao: b/edicoes-ensaio/verify.log | REC1 edicoes-ensaio: código 0 --> <!-- portao: b/edicoes-lancado/verify.log | REC1 edicoes-lancado: código 0 -->
+
+5. A frase de ensaio ficou num parágrafo próprio, entre a lista das marcas dos números e a lista com as marcas dos estudos. Com data, conserva-se a lista única anterior. Método construído e plantas: código 0 nos dois modos. <!-- portao: b/ensaio/verify.log | REC1 ensaio: código 0 --> <!-- portao: b/lancado/verify.log | REC1 lancado: código 0 -->
+
+6. Marca visível com explicação .vh no mesmo elemento e no title, sem aria-label. Estilo da etiqueta de IA, incluindo a faixa documental e as variáveis de cor isoladas. Planta da forma antiga com aria-label recusada. Conferidas 9874 páginas de cada construção, incluindo o CSS da faixa, código 0. <!-- portao: b/legendas-ensaio/verify.log | REC1 legendas-ensaio: código 0 --> <!-- portao: b/legendas-lancado/verify.log | REC1 legendas-lancado: código 0 -->
+
+7. Lugares e índice só mostram mudanças desde o lançamento. As novidades conservam publicações originais quando a atualização é anterior ao lançamento. M1 lê todas as declarações; M2 lê o que aparece, incluindo as novidades. check:pais: código 0 nos dois modos. O leitor deixa de ver as quatro listas de mudanças em ensaio; com a data antiga há quatro. <!-- portao: b/pais-ensaio/verify.log | REC1 pais-ensaio: código 0 --> <!-- portao: b/pais-lancado/verify.log | REC1 pais-lancado: código 0 -->
+
+8. LANCAMENTO recusa outros tipos, cadeia vazia, formato diferente e datas impossíveis. Sete valores inválidos recusados pela importação; construção real com cadeia vazia recusada com código 1 e mensagem REC1. <!-- portao: b/modos/verify.log | REC1 modos: código 0 --> <!-- portao: b/data-invalida/build.log | REC1 data-invalida: código 1 -->
+
+9. A presença do estado condicional-rec1 depende do lançamento, do registo vazio e dos rótulos das novidades selecionadas. A ausência exigida compara unidades completas; não confunde uma palavra dentro de outra frase com o regresso do bloco histórico. Plantas de frase exigida ausente e frase proibida presente recusadas. Há agora 93 linhas condicionais; saiu a dispensa genérica e cada uma tem condição de presença explícita. check:voz completo: código 0 nos dois modos. <!-- portao: b/ensaio/verify.log | REC1 ensaio: código 0 --> <!-- portao: b/lancado/verify.log | REC1 lancado: código 0 -->
+
+10. A lista fechada ganhou as frases da adenda e os parágrafos efetivamente mostrados. A conferência compara os dados das duas línguas com scripts/voz-rec1.json; alterações só nos dados recusam. O conjunto REC1 tem 45 controlos e 104 plantas, incluindo os três modos null, 2026-08-01 e 2099-01-01, código 0. <!-- portao: b/modos/verify.log | REC1 modos: código 0 -->
+
+11. O índice lê o registo construído; saiu a sobreposição sintética de tests/indice/historico.mjs. Em ensaio exige ausência e recusa entradas plantadas; com data compara a história mostrada. Índice: 40 de 40 plantas em ensaio e 42 de 42 com data, ambos com código 0 dentro dos registos das conferências. <!-- portao: b/html-ensaio/verify.log | check:indice-do-sitio: --> <!-- portao: b/html-lancado/verify.log | check:indice-do-sitio: -->
+
+12. A lista por-registar encolheu de 2427 para 2337, menos 90 entradas ausentes. Não se acrescentou dispensa nem registo sem suporte. check:frases-afirmacao continua com código 1: quatro recusas em ensaio e 88 com lançamento antigo, que volta a mostrar frases históricas retiradas da lista de pendentes. <!-- portao: b/afirmacao-ensaio/verify.log | REC1 afirmacao-ensaio: código 1 --> <!-- portao: b/afirmacao-lancado/verify.log | REC1 afirmacao-lancado: código 1 -->
+
+A paragem é esta frase: «A partir do lançamento, quando o que se publicou aqui estiver errado, corrige-se à vista: a entrada diz o que estava, o que ficou, a data e o motivo, e nada se apaga.» Em inglês: «From launch onward, when something published here is wrong, it is corrected in the open: the entry says what it was, what it became, the date and the reason, and nothing is deleted.» O detetor vê atribuição nos verbos diz e says (pt-atribuicao-21 e en-atribuicao-03). Não afirma um número nem cita ninguém; nenhuma ocorrência fornece linha de prova.
+
+As outras duas recusas são o título do estudo de Évora 2027 que a nova seleção mostra na primeira página, com a data e o rótulo juntos: prometeu/escreveu e promised/wrote ativam atribuição. As quatro frases integrais, chaves e marcas estão em b/cobertura.json. O README indicado em ledger/frases/ não existe; a regra está em ledger/README.md, secções «Frases com afirmação» e «Entrada de uma frase nova ou reescrita». Exige linhas não vazias, excerto e documento; a origem por mandato também exige uma lista Frases: que estes mandatos não fornecem. Não se inventou uma linha documental para a política editorial.
+
+13. A §1.237 contém o texto fornecido letra por letra, mantendo Afecta e o pino SHA-256 do Método conforme a régua. ledger:check, check:registo, check:lingua e check:lugar passaram com código 0. Os dados de correções, a história selada, o manifesto e os estudos não mudaram nesta passagem. <!-- portao: b/integridade/verify.log | REC1 integridade: código 0 -->
+
+Verificação e limites: check:rec1, check:metodo-construido, check:voz e typecheck finais deram código 0 nos dois modos. <!-- portao: b/ensaio/verify.log | REC1 ensaio: código 0 --> <!-- portao: b/lancado/verify.log | REC1 lancado: código 0 --> Os dois gate:html deram código 1, exclusivamente por 19633 recusas de cartões sociais ausentes: build:pai2-d não executa cartoes. As células REC1 de marcas, metas, prova e registo foram conferidas separadamente em todas as páginas. Não se executou uma corrida completa dos portões nem capturas. <!-- portao: b/html-ensaio/verify.log | REC1 html-ensaio: código 1 --> <!-- portao: b/html-lancado/verify.log | REC1 html-lancado: código 1 -->
+
+Mudanças adicionais visíveis: as novidades passam a mostrar a publicação original de um estudo quando escondem a atualização; por isso reaparecem rótulos de publicação já existentes, agora declarados no inventário. A contagem das frases por registar desce em 90. A prosa dos estudos e os valores dos recibos ficam intactos.
+
+Erros de implementação corrigidos nesta passagem: pressupostos de listas não vazias nos testes, segunda frase da política em falta no teste, fecho de Fragment no Método, variável de cor sem prefixo na faixa e falta da entrada rec1-b no registo da leitura cruzada. Duas verificações foram interrompidas por reconstrução simultânea do dist; as verificações finais foram repetidas depois da construção terminar. Não se declara o gate:html completo verde.
+
+Consumo até à preparação deste relatório: 87 chamadas de ferramentas; 41 execuções com registo de conferência ou construção, incluindo repetições e comandos compostos, sem contar as sub-conferências outra vez. Mais uma cópia de trabalho e uma medição auxiliar de cobertura. Portões completos: 0; capturas: 0; publicações: 0. Commit pelo escrivão com assunto REC1; a cabeça confirmada fica na resposta final.
+
+tokens used (última medição exposta): 12283691.

@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+
+REC1 E ensaio typecheck: código 0

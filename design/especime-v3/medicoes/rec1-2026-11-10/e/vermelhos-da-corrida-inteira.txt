@@ -1,0 +1,240 @@
+A corrida inteira (conferir-tudo.sh --build) sobre a cabeça 85e2575dd, 10.11.2026: 70 passos, 8 vermelhos. As caudas dos registos, com os caminhos da máquina trocados por <worktree>.
+
+===== check_sobreposicao (código 1; 19-check_sobreposicao.log) =====
+
+> o-estado-do-pais@0.1.0 check:sobreposicao
+> node tests/documentos/sobreposicao.mjs && node tests/quadro/disposicao.mjs sobreposicao
+
+768 /: 1 sobreposições
+768 /en/: 1 sobreposições
+1024 /: 1 sobreposições
+1024 /en/: 1 sobreposições
+1280 /: 1 sobreposições
+1280 /en/: 1 sobreposições
+1600 /: 1 sobreposições
+1600 /en/: 1 sobreposições
+M118: 100 combinações, 8 sobreposições, 0 erros; 7.51 s; planta não pedida.
+
+[…]
+
+> o-estado-do-pais@0.1.0 check:sobreposicao
+> node tests/documentos/sobreposicao.mjs && node tests/quadro/disposicao.mjs sobreposicao
+
+768 /: 1 sobreposições
+768 /en/: 1 sobreposições
+1024 /: 1 sobreposições
+1024 /en/: 1 sobreposições
+1280 /: 1 sobreposições
+1280 /en/: 1 sobreposições
+1600 /: 1 sobreposições
+1600 /en/: 1 sobreposições
+M118: 100 combinações, 8 sobreposições, 0 erros; 7.51 s; planta não pedida.
+
+
+===== check_alvos (código 1; 20-check_alvos.log) =====
+
+> o-estado-do-pais@0.1.0 check:alvos
+> node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs && node tests/quadro/disposicao.mjs alvos
+
+H10: 58 rotas documentais declaradas; 61 plantas da casa recusadas, incluindo o Método e uma rota inventada.
+<worktree>/tests/inicio/novidades-disposicao.mjs:7
+ if(!await entradas.count())throw Error('DO4: faltam as entradas reais das novidades');
+                                  ^
+
+Error: DO4: faltam as entradas reais das novidades
+    at conferirDisposicaoNovidades (<worktree>/tests/inicio/novidades-disposicao.mjs:7:35)
+    at async passagem (<worktree>/tests/acessibilidade/alvos.mjs:1710:29)
+    at async <worktree>/tests/acessibilidade/alvos.mjs:2289:18
+
+Node.js v22.23.1
+
+
+===== check_fontes (código 1; 22-check_fontes.log) =====
+
+> o-estado-do-pais@0.1.0 check:fontes
+> node tests/linha/sem-resposta.mjs
+
+  8312 página(s) de linha lidas em <worktree>/dist, nas duas edições (4156 linha(s) × 2).
+  4 linha(s) devem mostrar o estado da fonte · 4152 não devem · 6 de proveniência incompleta, fora do mapa e com noindex.
+  endereços em falha: 2 · anfitriões em falha: 1
+
+FONTES: FAIL — 4150 problema(s) de 8312 páginas
+ - abandono-escolar-precoce-2024: proveniência completa e com noindex.
+ - abandono-escolar-precoce-2025: proveniência completa e com noindex.
+ - abandono-escolar-precoce-2025-ue: proveniência completa e com noindex.
+ - abrantes-desemprego-registado-2025-12: proveniência completa e com noindex.
+ - abrantes-divida-dgal-2024: proveniência completa e com noindex.
+[…]
+
+> o-estado-do-pais@0.1.0 check:fontes
+> node tests/linha/sem-resposta.mjs
+
+  8312 página(s) de linha lidas em <worktree>/dist, nas duas edições (4156 linha(s) × 2).
+  4 linha(s) devem mostrar o estado da fonte · 4152 não devem · 6 de proveniência incompleta, fora do mapa e com noindex.
+  endereços em falha: 2 · anfitriões em falha: 1
+
+FONTES: FAIL — 4150 problema(s) de 8312 páginas
+ - abandono-escolar-precoce-2024: proveniência completa e com noindex.
+ - abandono-escolar-precoce-2025: proveniência completa e com noindex.
+ - abandono-escolar-precoce-2025-ue: proveniência completa e com noindex.
+ - abrantes-desemprego-registado-2025-12: proveniência completa e com noindex.
+ - abrantes-divida-dgal-2024: proveniência completa e com noindex.
+ - abrantes-empresas-2024: proveniência completa e com noindex.
+ - abrantes-ganho-medio-mensal-2024: proveniência completa e com noindex.
+ - abrantes-indice-de-divida-2024: proveniência completa e com noindex.
+ - abrantes-limite-divida-dgal-2024: proveniência completa e com noindex.
+ - abrantes-poder-de-compra-2023: proveniência completa e com noindex.
+ - abrantes-populacao-2025: proveniência completa e com noindex.
+ - abrantes-prazo-medio-de-pagamento-2025-12: proveniência completa e com noindex.
+ - afirmacao-leitao-amaro-saude-oe2027-2026-10-09: proveniência completa e com noindex.
+ - afirmacao-pcp-paula-investimento-saude-2026-10-12: proveniência completa e com noindex.
+ - afirmacao-pcp-paula-ppp-2026-10-12: proveniência completa e com noindex.
+ - afirmacao-pcp-ppp-2026-10-15: proveniência completa e com noindex.
+ - afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: proveniência completa e com noindex.
+ - afirmacao-rtp-saude-queda-oe2027-2026-10-09: proveniência completa e com noindex.
+ - agua-nao-faturada-portugal-2024: proveniência completa e com noindex.
+ - agueda-desemprego-registado-2025-12: proveniência completa e com noindex.
+ … e mais 4130
+
+
+===== check_voz-retiradas (código 1; 37-check_voz-retiradas.log) =====
+
+> o-estado-do-pais@0.1.0 check:voz-retiradas
+> node tests/edicoes/voz-integracao.mjs
+
+1395 retiradas conferidas em memória com a extração histórica.
+controlo atual: código lido 0; 0 retiradas conferidas; 157.459 s.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(campo)
+
+    at <worktree>/tests/edicoes/voz-integracao.mjs:77:158
+    at executar (<worktree>/tests/edicoes/voz-integracao.mjs:47:10)
+    at <worktree>/tests/edicoes/voz-integracao.mjs:73:2
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
+
+
+===== provar_guardas (código 1; 42-provar_guardas.log) =====
+
+> o-estado-do-pais@0.1.0 provar:guardas
+> node scripts/provar-guardas.mjs
+
+node:internal/modules/esm/resolve:839
+      const error = new ERR_UNSUPPORTED_RESOLVE_REQUEST(specifier, base);
+                    ^
+
+TypeError [ERR_UNSUPPORTED_RESOLVE_REQUEST]: Failed to resolve module specifier "../../site.config.mjs" from "data:text/javascript;base64,aW1wb3J0IHsgZW1FbnNhaW8gfSBmcm9tICcuLi8uLi9zaXRlLmNvbmZpZy5tanMnOwovKioKICogR2FiYXJpdG9zIGRlIHRleHRvLCBwb3IgbMOtbmd1YS4KICoKICogVW1hIHPDsyBmb250ZSBkZSBjb250ZcO6ZG86IG9zIGRhZG9zIHZpdmVtIG5vIGxpdnJvLXJhesOjbyBlIGVtIHNyYy9kYXRhLywKICogZSBhcXVpIGVzdMOjbyBhcyBwYWxhdn
+    at moduleResolve (node:internal/modules/esm/resolve:839:21)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    ... 3 lines matching cause stack trace ...
+    at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {
+  code: 'ERR_UNSUPPORTED_RESOLVE_REQUEST',
+  cause: TypeError: Invalid URL
+      at new URL (node:internal/url:818:25)
+      at moduleResolve (node:internal/modules/esm/resolve:837:18)
+      at defaultResolve (node:internal/modules/esm/resolve:985:11)
+      at #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
+      at ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
+      at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
+      at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {
+    code: 'ERR_INVALID_URL',
+    input: '../../site.config.mjs',
+    base: 'data:text/javascript;base64,aW1wb3J0IHsgZW1FbnNhaW8gfSBmcm9tICcuLi8uLi9zaXRlLmNvbmZpZy5tanMnOwovKioKICogR2FiYXJpdG9zIGRlIHRleHRvLCBwb3IgbMOtbmd1YS4KICoKICogVW1hIHPDsyBmb250ZSBkZSBjb250ZcO6ZG86IG9zIGRhZG9zIHZpdmVtIG5vIGxpdnJvLXJhesOjbyBlIGVtIHNyYy9kYXRhLywKICogZSBhcXVpIGVzdMOjbyBhcyBwYWxhdnJhcyBxdWUgb3MgZW1icnVsaGFtLiBBcyBkdWFzIGzDrW5ndWFzIHBhcnRpbGhhbQogKiBleGFjdGFtZW50ZSBhcyBtZXNtYXMgY
+  }
+}
+
+Node.js v22.23.1
+
+
+===== design_feixe (código 1; 51-design_feixe.log) =====
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+
+  ✗ não encontrei ".registo-mudanca[data-mudanca="correcao"]" (índice 0) em `dist/correcoes/index.html`.
+
+
+
+===== check_explicacoes (código 1; 57-check_explicacoes.log) =====
+PAI1-B: divergência omitida da frase (pt): 0
+PAI1-B: nenhum mudou sem declarar a revisão (pt): 0
+PAI1-B: entrada omitida (pt): 0
+PAI1-B: portão recusa contagem errada (pt): 0
+PAI1-B: unidade de outra linha recusada (pt): 0
+PAI1-B: inventário só reconhece a entrada dentro da lista (pt): 0
+PAI1-B: voz das frases novas e planta lexical (pt): 0
+PAI1-B: linha reunida entra na contagem e na lista (pt): 0
+PAI1-B: pendente no livro copiado (pt): 0
+PAI1-B: última igual no livro copiado (pt): 0
+PAI1-B: correção posterior no livro copiado (pt): 0
+PAI1-B: atualização posterior no livro copiado (pt): 0
+PAI1-B: proveniência não aplica valor no livro copiado (pt): 0
+PAI1-B: controlo da página e das datas (en): 0
+PAI1-B: data de outra releitura recusada (en): 0
+PAI1-B: definições dos recibos (en): 0
+PAI1-B: definição trocada recusada (en): 0
+PAI1-B: contagens no fim da página recusadas (en): 0
+PAI1-B: contagens independentes (en): 0
+PAI1-B: frase e secção conferidas (en): 0
+PAI1-B: pontos decimais nas entradas inglesas: 0
+PAI1-B: vírgula inglesa recusada ([data-claim]): 0
+PAI1-B: vírgula inglesa recusada ([data-linha-campo$=".found"]): 0
+PAI1-B: ponto fora da lista continua recusado: 0
+PAI1-B: divergência omitida da frase (en): 0
+PAI1-B: nenhum mudou sem declarar a revisão (en): 0
+PAI1-B: entrada omitida (en): 0
+PAI1-B: portão recusa contagem errada (en): 0
+PAI1-B: unidade de outra linha recusada (en): 0
+PAI1-B: inventário só reconhece a entrada dentro da lista (en): 0
+PAI1-B: voz das frases novas e planta lexical (en): 0
+PAI1-B: linha reunida entra na contagem e na lista (en): 0
+PAI1-B: pendente no livro copiado (en): 0
+PAI1-B: última igual no livro copiado (en): 0
+PAI1-B: correção posterior no livro copiado (en): 0
+PAI1-B: atualização posterior no livro copiado (en): 0
+PAI1-B: proveniência não aplica valor no livro copiado (en): 0
+PAI1-B: 44 provas, código 0.
+X · a explicação: 2 explicação(ões), 292 folhas e 345 partes auditadas (178 diz, 27 leitura, 26 conta, 3 aponta, 111 liga), 13 origens usadas; 2 token(s) «maiores» conferidos nas duas edições; 8 token(s) de ramos (sinal, compara e comparaSaldos) com todos os ramos; 2 origens das explicações, 2 lidas no motor; 4 página(s) recontadas; 43 de 44 plantas em memória.
+W · a leitura da semana: janela 2026-11-04 a 2026-11-10, 91 relidas, 0 mudadas de valor, 0 só na forma de escrever, 0 de proveniência; W1 21 de 23 plantas na cópia do livro; 4 porta(s) da semana conferidas; 49 de 49 plantas na página (26 não se aplicam: a semana não tem mudanças de valor).
+
+  CÉLULA DA SEMANA · 2 problema(s):
+  · W1 · a planta «afirmações textuais no registo, fora da comparação numérica do índice (pt)» pediu registo conserva textos; índice só compara números e viu registo false, índice true
+  · W1 · a planta «afirmações textuais no registo, fora da comparação numérica do índice (en)» pediu registo conserva textos; índice só compara números e viu registo false, índice true
+
+
+===== check_largura (código 1; 64-check_largura.log) =====
+
+> o-estado-do-pais@0.1.0 check:largura
+> node tests/largura/amostra.mjs && node tests/largura/largura.mjs --prova
+
+Amostra: família nova descoberta; todos os documentos atuais e guardados incluídos.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Error: Planta sem valor textual longo real
+    at eval (eval at evaluate (:302:30), <anonymous>:4:62)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at medirPagina (<worktree>/tests/largura/largura.mjs:37:26)
+    at async correr (<worktree>/tests/largura/largura.mjs:103:24)
+    at async <worktree>/tests/largura/largura.mjs:123:87
+
+Node.js v22.23.1
+

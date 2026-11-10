@@ -87,6 +87,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { WORKS, workById } from '../data/studies.mjs';
+import { emEnsaio } from '../../site.config.mjs';
+import { ENSAIO } from '../data/ensaio.mjs';
 import { ROTULO, portaDaPolitica } from '../data/politica-ia.mjs';
 import { routePath, LANGS } from './routes.mjs';
 import { temRegisto } from './registos.mjs';
@@ -560,6 +562,8 @@ function estiloDaFaixa() {
       ['text-transform', daSobrancelha('text-transform')],
       ['color', daSobrancelha('color')],
     ])}}`,
+    `[data-oedp-faixa] [data-edicao-ensaio]{${regraDe(site, '.rotulo-ia-linha', FOLHA_SITE).replaceAll('var(--', 'var(--oedp-')}}`,
+    `[data-oedp-faixa] .vh{${regraDe(site, '.vh', FOLHA_SITE)}}`,
     `[data-oedp-faixa] [data-oedp-voltar]{margin-left:auto}`,
     `@media (max-width:640px){[data-oedp-faixa] [data-oedp-voltar]{margin-left:0;flex-basis:100%}}`,
   ].join('\n');
@@ -666,6 +670,7 @@ export function faixa(slug, lang) {
     `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
     `<style>${estiloDaFaixa()}</style>`,
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
+    emEnsaio() ? `<span class="rotulo-ia-linha" data-edicao-ensaio title="${atributo(ENSAIO[lang].acessivel)}">${texto(ENSAIO[lang].marca)} <span class="vh">${texto(ENSAIO[lang].acessivel)}</span></span>` : '',
     `<span data-oedp-rotulo>${texto(rotulo)}</span>`,
     `<span data-oedp-rotulo-ia>${texto(r.antes)}` +
       `<a href="${atributo(politica)}">${texto(r.porta)}</a>${texto(r.depois)}</span>`,

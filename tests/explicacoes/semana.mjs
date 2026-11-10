@@ -1,3 +1,6 @@
+import {emEnsaio} from '../../site.config.mjs';
+import {conferirLancamentoHtml} from '../../scripts/lancamento-conferir.mjs';
+import {conferirHistoriaTextual} from '../discussao/recibos.mjs';
 import {revisoesPeloLivro,conferirRevisoes} from '../../scripts/revisoes-da-semana.mjs';
 import {dataDeCalendarioConferida,textoDaHabitacao} from '../../src/lib/historia-do-valor.mjs';
 /**
@@ -9,7 +12,7 @@ import {dataDeCalendarioConferida,textoDaHabitacao} from '../../src/lib/historia
  * ninguém escreve só é tão boa quanto a conta que a faz. Esta célula refaz a conta por si, com leitor próprio, e
  * confere-a de três maneiras:
  *
- *   · W1 · NUMA CÓPIA DO LIVRO COM ENTRADAS PLANTADAS, sem `dist/`: um valor mudado dentro da janela, uma releitura
+ *   · W1 · NUMA CÓPIA DO LIVRO COM ENTRADAS PLANTADAS: um valor mudado dentro da janela, uma releitura
  *     igual dentro da janela e uma entrada fora da janela. O resolvedor e a conta desta célula têm de dar, os dois, o
  *     que cada planta pede (o valor mudado conta uma linha a mais, com a palavra do lado certa; a releitura igual conta
  *     uma relida a mais e nenhuma mudança; a entrada fora da janela não muda nada) e de concordar entre si no livro sem
@@ -185,10 +188,11 @@ export function blocosQueMudaramPelaCelula(s, linhas) {
 /* ------------------------------------------------------------------------- W1 */
 
 /**
- * W1 · A CÓPIA COM ENTRADAS PLANTADAS. Devolve as queixas e as três plantas, cada uma com o que pediu e o que viu.
+ * W1 · A cópia com entradas plantadas e a história textual no HTML construído.
+ * Devolve as queixas e as plantas, cada uma com o que pediu e o que viu.
  * @param {string} fim
  */
-export function provaNaCopiaPlantada(fim) {
+export function provaNaCopiaPlantada(fim, dist = process.env.OEDP_DIST ?? 'dist') {
   /** @type {string[]} */
   const erros = [];
   const base = loadClaims();
@@ -288,9 +292,27 @@ export function provaNaCopiaPlantada(fim) {
     for(const lang of ['pt','en']){
       const indice=mudancasDoIndice(lang),registo=mudancasDoRegisto(lang);
       const ids=[...base.values()].filter(l=>((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l)||textoDaHabitacao(l))&&(l.corrections??[]).some(c=>!Object.hasOwn(c,'field')&&['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
-      const preservadas=ids.every(id=>registo.some(e=>e.tipo==='correcao'&&e.claim===id));
+      const pagina=parse(fs.readFileSync(path.join(dist,lang==='pt'?'correcoes':'en/corrections','index.html'),'utf8'));
+      const vazio=!emEnsaio() || (registo.length===0 && conferirLancamentoHtml(pagina,{key:'correcoes',lang}).length===0);
+      const preservadas=ids.length>0 && vazio && ids.every(id=>{
+        const historia=emEnsaio()?parse(fs.readFileSync(path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html'),'utf8')):pagina;
+        const linha=base.get(id);
+        if(conferirHistoriaTextual(historia,linha,lang).length)return false;
+        if(!emEnsaio()&&!registo.some(e=>e.tipo==='correcao'&&e.claim===id))return false;
+        for(const campo of ['old_value','new_value']) {
+          const copia=parse(historia.toString()),no=copia.querySelector(`[data-correcao-claim="${id}"][data-correcao-campo="${campo}"]`);
+          if(!no)return false;
+          no.set_content('História adulterada');
+          if(!conferirHistoriaTextual(copia,linha,lang).length)return false;
+        }
+        return true;
+      });
+      if(emEnsaio()) {
+        const copia=parse(pagina.toString());copia.querySelector('main').insertAdjacentHTML('beforeend','<li data-mudanca="correcao">Entrada indevida</li>');
+        plantas.push({nome:`registo vazio recusa entrada (${lang})`,pediu:'recusa da entrada em ensaio',viu:'registo adulterado',mordeu:conferirLancamentoHtml(copia,{key:'correcoes',lang}).length>0});
+      }
       const excluidas=ids.every(id=>!indice.some(e=>e.claim===id));
-      plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
+      plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:emEnsaio()?'registo vazio; recibo conserva textos; índice só compara números':'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
     }
   }
   for(const lang of ['pt','en']){
@@ -660,7 +682,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const json = process.argv.includes('--json') ? process.argv[process.argv.indexOf('--json') + 1] : process.env.OEDP_SEMANA_JSON ?? null;
   const aceites = diasAceites(DIST);
   const linhas = loadClaims();
-  const w1 = provaNaCopiaPlantada(aceites[0]);
+  const w1 = provaNaCopiaPlantada(aceites[0], DIST);
   /** @type {string[]} */
   const erros = [...w1.erros];
   for (const [lang, f] of PAGINAS_DA_SEMANA) {

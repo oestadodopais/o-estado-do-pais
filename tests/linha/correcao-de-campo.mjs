@@ -12,5 +12,5 @@ planta('história do valor partida','correcoes-publicadas',r=>{r.corrections.at(
 const all=[...rows.values()].flatMap(r=>(r.corrections??[]).map(c=>({r,c}))),fields=all.filter(({c})=>c.kind==='correcao'&&c.field);
 assert.equal(fields.length,30);assert.equal(all.filter(({c})=>c.kind==='proveniencia'&&c.field==='source').length,0);
 for(const {r,c} of fields){assert.equal(c.new_value,c.field.split('.').reduce((v,k)=>v[k],r));assert.notEqual(c.old_value,c.new_value);n++;}
-assert.equal(String(contagensDoRegisto().correcoes_publicadas),rows.get('correcoes-publicadas').value);n++;
+assert.equal(String(contagensDoRegisto(rows).correcoes_publicadas),rows.get('correcoes-publicadas').value);n++;
 console.log(`OG1-E D: ${n} plantas e controlos; trinta correções de campo e a contagem conferidas.`);

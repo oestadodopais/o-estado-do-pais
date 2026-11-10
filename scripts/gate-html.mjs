@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { emEnsaio, desdeOLancamento } from '../site.config.mjs';
+import { conferirLancamentoHtml, conferirRobotsTxt } from './lancamento-conferir.mjs';
 import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 const TITULOS_COPIADOS_CONFERIDOS = new WeakSet();
 import {retirarAusencias} from '../src/lib/ausencias-voz1.mjs';
@@ -3909,7 +3911,7 @@ function contasDoPortao(claims) {
   const porNatureza = { correcao: 0, atualizacao: 0, proveniencia: 0 };
   for (const c of linhas) {
     for (const corr of c.corrections ?? []) {
-      if (corr.kind in porNatureza) porNatureza[corr.kind]++;
+      if (desdeOLancamento(corr.date) && corr.kind in porNatureza) porNatureza[corr.kind]++;
     }
   }
 
@@ -4133,7 +4135,7 @@ function contasDoPortao(claims) {
     conta('conferencias_da_corrida', recontarConferencias(), 'lista de conferir-tudo.sh'),
     conta('afirmacoes', paginasDeLinhaPt, 'dist'),
     conta('indexaveis', indexaveisPt, 'dist'),
-    conta('divida', paginasDeLinhaPt - indexaveisPt, 'dist'),
+    conta('divida', emEnsaio() ? linhas.filter(c => provenienciaIncompleta(c)).length : paginasDeLinhaPt - indexaveisPt, emEnsaio() ? 'ledger' : 'dist'),
     conta('derivadas', linhas.filter((c) => (c.derived_from ?? []).length > 0).length, 'ledger'),
     conta(
       'aritmetica_reavaliada',
@@ -4254,7 +4256,7 @@ function contasDoPortao(claims) {
         conta('linhas_atrasadas', atrasadas.length, 'ledger'),
       ];
     })(),
-    conta('correcoes', contagemDasCorrecoesNoPortao(porNatureza.correcao, CORRECOES_TEXTO), 'ledger e texto'),
+    conta('correcoes', contagemDasCorrecoesNoPortao(porNatureza.correcao, CORRECOES_TEXTO.filter(c => desdeOLancamento(c.data))), 'ledger e texto'),
     conta('atualizacoes', porNatureza.atualizacao, 'ledger'),
     conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
     conta('endereco_correcoes', ENDERECO_CORRECOES, 'modulo'),
@@ -4501,6 +4503,7 @@ const cartoesUsados = new Set();
 }
 
 /* ------------------------------------------------------------------ varrimento */
+for (const msg of conferirRobotsTxt(fs.readFileSync(path.join(DIST, 'robots.txt'), 'utf8'))) erros.push({rel:'robots.txt',msg});
 for(const {ficheiro,mensagem} of conferirPublicacaoRetirada(DIST,livroInteiro)) erros.push({rel:path.relative(DIST,ficheiro),msg:mensagem});
 
 for (const file of ficheirosHtml(DIST)) {
@@ -4533,6 +4536,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
+  for (const erro of conferirLancamentoHtml(root, rota)) err(erro);
   const titulosCopiados=conferirTitulosCopiados(root,rota,DIST);
   for(const erro of titulosCopiados.erros)err(erro);
   for(const el of titulosCopiados.elementos)TITULOS_COPIADOS_CONFERIDOS.add(el);
@@ -6017,7 +6021,7 @@ for (const file of ficheirosHtml(DIST)) {
     if (rota?.key !== 'correcoes') err('ED1 texto: campo fora do registo');
     else {
       const manifestoEdicoes = load(fs.readFileSync(path.join(ROOT, 'studies-src/manifest.yml'), 'utf8'));
-      const texto = conferirTextoHtml(body, rota.lang, WORKS, CORRECOES_TEXTO, manifestoEdicoes);
+      const texto = conferirTextoHtml(body, rota.lang, WORKS, CORRECOES_TEXTO.filter(c => desdeOLancamento(c.data)), manifestoEdicoes);
       for (const e of texto.erros) err(e);
       aRemover.push(...texto.campos);
     }
