@@ -87,16 +87,18 @@
     {
       "slug": "evora-contas-da-camara-2010-2025",
       "lang": "pt",
-      "data": "2026-10-01",
+      "data": "2026-11-11",
       "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-contas-da-camara-2010-2025/pt.html"
+      "ficheiro": "studies-src/evora-contas-da-camara-2010-2025/pt.html",
+      "origem": "edicao-unica"
     },
     {
       "slug": "evora-contas-da-camara-2010-2025",
       "lang": "en",
-      "data": "2026-10-01",
+      "data": "2026-11-11",
       "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-contas-da-camara-2010-2025/en.html"
+      "ficheiro": "studies-src/evora-contas-da-camara-2010-2025/en.html",
+      "origem": "edicao-unica"
     },
     {
       "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",

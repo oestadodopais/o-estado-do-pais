@@ -22,7 +22,7 @@ import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
 import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS, WORKS, edicaoPublicada } from '../data/studies.mjs';
-import { KINDS_DO_LIVRO as KINDS, CAMPOS_DE_PROVENIENCIA, CORRECOES_TEXTO } from '../data/correcoes.mjs';
+import { KINDS_DO_LIVRO as KINDS, CAMPOS_DE_PROVENIENCIA, CORRECOES_TEXTO, CORRECOES_TEXTO_ENSAIO } from '../data/correcoes.mjs';
 import { contarCorrecoesPublicadas } from './contagem-correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
 import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
@@ -1536,18 +1536,22 @@ export function evaluateCheck(
  * um erro admitido, e o número que a página anuncia é o das confissões.
  */
 export function contagensDoRegisto(claims = loadClaims()) {
+  // Uma contagem retirada conserva a história até à data que o seu selo prova.
+  const selada = claims.get('correcoes-publicadas');
+  const ate = selada?.publication === 'withdrawn' ? selada.reference_date : null;
   let correcoes = 0;
   let atualizacoes = 0;
   let revisoes = 0;
   for (const c of claims.values()) {
     for (const corr of correcoesDaLinha(c)) {
+      if (ate && corr.date > ate) continue;
       if (corr.kind === 'correcao') correcoes++;
       else if (corr.kind === 'atualizacao') atualizacoes++;
       else if (corr.kind === 'proveniencia') revisoes++;
     }
   }
   return {
-    correcoes_publicadas: contarCorrecoesPublicadas(correcoes, CORRECOES_TEXTO),
+    correcoes_publicadas: contarCorrecoesPublicadas(correcoes, ate ? [...CORRECOES_TEXTO, ...CORRECOES_TEXTO_ENSAIO].filter(c => c.data <= ate) : CORRECOES_TEXTO),
     atualizacoes_publicadas: atualizacoes,
     revisoes_de_proveniencia: revisoes,
   };

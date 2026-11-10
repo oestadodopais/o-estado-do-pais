@@ -84,7 +84,7 @@ export function plantasDatasEditoriais() {
  }
  console.log(`EV3-p: datas das portas conferidas nas duas línguas; ${plantasPortas} adulterações recusadas.`);
 
- const work=WORKS.find(w=>w.slug==='evora-contas-da-camara-2010-2025');
+ const work=WORKS.find(w=>w.slug==='evora-2027-capital-europeia-da-cultura');
  for(const lang of ['pt','en']) {
   const edicao=work.editions.find(e=>e.lang===lang);
   const dataCorrigida=mudancasNoManifesto(work.slug,lang).find(m=>m.natureza==='correcao').data;

@@ -77,6 +77,8 @@
  */
 
 import fs from 'node:fs';
+import {load} from 'js-yaml';
+import {dataEdicaoUnica} from './data-edicao-unica.mjs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -214,7 +216,9 @@ for (const slug of slugs) {
       continue;
     }
     const [data, commit] = ultima.split(' ');
-    edicoes.push({ slug, lang, data, commit, ficheiro });
+    const anterior = JSON.parse(fs.readFileSync(DESTINO, 'utf8')).edicoes.find(e => e.slug === slug && e.lang === lang);
+    const unica = anterior && dataEdicaoUnica(anterior, load(fs.readFileSync(path.join(RAIZ, 'studies-src/manifest.yml'), 'utf8')));
+    edicoes.push({ slug, lang, data: unica ?? data, commit, ficheiro, ...(unica ? {origem:'edicao-unica'} : {}) });
   }
 }
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {dataEdicaoUnica} from './data-edicao-unica.mjs';
 import {conferirFaixaDaVersao} from './documento-edicao-conferir.mjs';
 import {conferirLinhaDasEdicoes,conferirMudancasDoCabecalho,rotasNoManifesto,manifestoEd2} from './edicoes-linha-conferir.mjs';
 import { primeiraEdicao } from '../src/lib/edicoes.mjs';
@@ -725,7 +726,8 @@ if (comHistoria) {
         continue;
       }
       conferidas++;
-      if (declarada.data !== data || declarada.commit !== commit) {
+      const dataDaVersao = dataEdicaoUnica(declarada, manifestoEd2);
+      if (declarada.data !== (dataDaVersao ?? data) || declarada.commit !== commit) {
         falhas.push(
           `${rel}: ${FICHEIRO} declara ${declarada.data} (${declarada.commit.slice(0, 8)}) e o ` +
             `\`git\` diz ${data} (${commit.slice(0, 8)}).`,

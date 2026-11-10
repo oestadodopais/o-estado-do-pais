@@ -5,15 +5,15 @@ import {textoDaVoz} from '../../scripts/voz-edicoes.mjs';
 import {normalizaFraseDoInventario} from '../../scripts/voz.mjs';
 import {contagemDasCorrecoesNoPortao} from '../../scripts/edicoes-conferir.mjs';
 import assert from 'node:assert/strict';
-import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';
+import {CORRECOES_TEXTO,CORRECOES_TEXTO_ENSAIO} from '../../src/data/correcoes.mjs';
 import {contagensDoRegisto,loadClaims,validateLedger} from '../../src/lib/ledger.mjs';
 import {analisa,leMarcadores,leInventario} from '../../scripts/voz.mjs';
 import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 let plantas=0;
 const linhas=loadClaims({includeWithdrawn:true}),conta=linhas.get('correcoes-publicadas');
 assert.equal(Number(conta.value),contagensDoRegisto(linhas).correcoes_publicadas);
-const livro = [...linhas.values()].reduce((n,c)=>n+(c.corrections??[]).filter(e=>e.kind==='correcao').length,0);
-assert.equal(contagemDasCorrecoesNoPortao(livro,CORRECOES_TEXTO),Number(conta.value));
+const livro = [...linhas.values()].reduce((n,c)=>n+(c.corrections??[]).filter(e=>e.kind==='correcao'&&e.date<=conta.reference_date).length,0);
+assert.equal(contagemDasCorrecoesNoPortao(livro,[...CORRECOES_TEXTO,...CORRECOES_TEXTO_ENSAIO].filter(c=>c.data<=conta.reference_date)),Number(conta.value));
 assert.notEqual(contagemDasCorrecoesNoPortao(livro,CORRECOES_TEXTO.slice(1)),Number(conta.value));plantas++;
 const anterior=conta.value;conta.value=String(Number(anterior)-1);
 try {assert(validateLedger().errors.some(e=>e.includes('correcoes-publicadas')));plantas++;}finally{conta.value=anterior;}

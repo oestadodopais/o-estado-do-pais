@@ -169,8 +169,8 @@ export const WORKS = [
     subject: 'evora',
     publication: 'declared',
     editions: [
-      { lang: 'pt', title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação', date: '2026-10-01', updated: '2026-11-08' },
-      { lang: 'en', title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification', date: '2026-10-01', updated: '2026-11-08' },
+      { lang: 'pt', title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação', date: '2026-11-11', updated: null },
+      { lang: 'en', title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification', date: '2026-11-11', updated: null },
     ],
     artifactUrl: null,
     pergunta: {

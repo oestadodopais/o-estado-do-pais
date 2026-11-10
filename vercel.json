@@ -11,6 +11,34 @@
   },
   "routes": [
     {
+      "src": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/?",
+      "status": 308,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/documento"
+      }
+    },
+    {
+      "src": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-30/?",
+      "status": 308,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/documento"
+      }
+    },
+    {
+      "src": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-01/?",
+      "status": 308,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/document"
+      }
+    },
+    {
+      "src": "/en/studies/evora-contas-da-camara-2010-2025/document/2026-10-30/?",
+      "status": 308,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/document"
+      }
+    },
+    {
       "src": "/a-verificar/?",
       "status": 308,
       "headers": {

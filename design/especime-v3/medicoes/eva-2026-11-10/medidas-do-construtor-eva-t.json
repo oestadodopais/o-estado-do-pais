@@ -1,0 +1,8 @@
+{
+  "contagens": {
+    "estudos": 3506
+  },
+  "comando": "npm run check:lugar",
+  "ponto": "3",
+  "codigo_antes_de_baixar_teto": 1
+}

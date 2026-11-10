@@ -45,7 +45,7 @@ const listasEsperadas={
 for(const lang of ['pt','en']){
  const inicio=parse(fs.readFileSync(`${dist}/${lang==='pt'?'':'en/'}index.html`,'utf8'));
  // Amostra declarada das cinco atualizações da página inicial.
- const novidades=['estudo:evora-2027-capital-europeia-da-cultura','estudo:evora-2027-prometido-painel-dinheiro','estudo:evora-contas-da-camara-2010-2025','estudo:evora-economia-e-dinheiro-publico-de-fora-da-camara','estudo:evora-economia-investidores-portas-abertas-2026'];
+ const novidades=['estudo:evora-contas-da-camara-2010-2025','estudo:evora-2027-capital-europeia-da-cultura','estudo:evora-2027-prometido-painel-dinheiro','estudo:evora-economia-e-dinheiro-publico-de-fora-da-camara','estudo:evora-economia-investidores-portas-abertas-2026'];
  assert.equal(inicio.querySelectorAll('[data-novidades]').length,Number(novidades.length>0));
  assert.deepEqual(inicio.querySelectorAll('[data-novidade]').map(e=>e.getAttribute('data-novidade')),novidades);
  assert.equal(inicio.querySelectorAll('[data-novidades] [data-atualizacao]').length,1);
