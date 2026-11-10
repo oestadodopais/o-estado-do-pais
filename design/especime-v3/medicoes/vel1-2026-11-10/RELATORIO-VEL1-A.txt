@@ -1,0 +1,27 @@
+VEL1, adenda A, 10.11.2026
+
+1. A aterragem espera pela conclusão da mesma cabeça, com um teto de 5400 segundos contado antes de arrancar o vigia. Consulta de trinta em trinta segundos; uma falha de consulta não é vermelho. A consulta e a última pausa ficam limitadas pelo prazo restante. Sete plantas verdes, incluindo duas falhas de rede, dez respostas pendentes e sucesso; pendência e rede indisponível até ao teto; cancelamento; vermelho; outra cabeça; tempo já gasto no vigia. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A vigia: código 0 -->
+
+2. Nos trabalhos construir e conferir, a instalação do Chromium tem duas tentativas em passos distintos, cada uma com cinco minutos. A segunda só corre se a primeira falhar e o trabalho não estiver cancelado; uma segunda falha continua a travar o trabalho. Plantas do workflow e 192 combinações do portao verdes. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A workflow-2: código 0 -->
+
+3. A versão vazia do Playwright recusa antes de escrever a chave da cache, com «Não foi possível ler a versão do Playwright.». O passo real do YAML foi executado nos dois trabalhos, com a versão do lockfile, vazia, nula e ausente. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A workflow-3: código 0 -->
+
+4. Uma resposta ilegível ou uma página com a forma errada devolve nao, incluindo no GITHUB_OUTPUT, e permite a corrida inteira. Provas pela linha de comandos com texto não JSON, forma errada, null, paginação parcialmente inválida e resposta válida. A resposta válida continua a poder dispensar. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A dispensa: código 0 -->
+
+5. A listagem lê ROTAS e LARGURAS, os mesmos objetos percorridos pela medição real, em vez de chamar medidasEsperadas. A união das três listas tem as mesmas 390 medições do inventário inteiro, 130 por fatia, sem sobreposição entre fatias; omitir uma família recusa. A falta de dist/ é conferida antes de preparar o inventário das fatias: a régua inteira e as três fatias saem a 2 com «não existe dist/. Corra o build primeiro.», sem criar a pasta de provas. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A alvos: código 0 -->
+
+6. Os 62 passos das oito partes usam os segundos de tempos-github-42897032498.json, incluindo as três fatias e os passos retirados do build. A origem está no campo fonte; as medições antigas só ficam para passos ausentes da corrida nova. Não ficam estimativas nas partes nem passos sem medição. O plano foi recalculado pela função dividir e conferido contra cada tempo da fonte. Cargas em segundos, arredondadas a três casas: 604,811; 572,509; 572,525; 572,532; 572,558; 572,495; 572,482; 572,529. São somas dos tempos da corrida anterior, não tempos de uma nova corrida. O plano completo está em evidencias-adenda-a/plano.json. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A tempos: código 0 -->
+A união das partes e as plantas da escrita também passaram. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A partes: código 0 -->
+
+Conferências pedidas: check:projecao-portoes, check:repositorio, check:mortos e typecheck deram código 0.
+<!-- portao: evidencias-adenda-a/verify.log | VEL1 A check:projecao-portoes: código 0 -->
+<!-- portao: evidencias-adenda-a/verify.log | VEL1 A check:repositorio: código 0 -->
+<!-- portao: evidencias-adenda-a/verify.log | VEL1 A check:mortos: código 0 -->
+<!-- portao: evidencias-adenda-a/verify.log | VEL1 A typecheck: código 0 -->
+check:leituras deu código 1: 38 dos 39 guiões deram 0; apenas tests/leituras/ferramentas.py deu 1, com a mensagem exata «Error: listen EPERM: operation not permitted 127.0.0.1». Os códigos de todos os guiões estão em evidencias-adenda-a/leituras-codigos.json e no registo citado. As plantas VEL1 passaram também nesta corrida. <!-- portao: evidencias-adenda-a/verify.log | VEL1 A check:leituras: código 1 -->
+
+Limitações: não se executou o navegador, a corrida inteira dos portões, capturas nem uma corrida nova no GitHub. A execução real do workflow e a medição final ficam para a direção, como pedido. Nenhuma conferência foi retirada ou passou a medir menos.
+
+Operação: commits pedidos pelo escrivão, um por ponto, com assuntos VEL1 A1 a A6; o sexto inclui este relatório e as provas. O invólucro de commit perdeu o batimento do escrivão em pedidos anteriores e saiu a 3; o resultado posterior e o histórico confirmaram os commits, sem repetir o pedido. Não houve push. A primeira pesquisa de ficheiros foi demasiado ampla e produziu saída truncada; as pesquisas seguintes foram delimitadas.
+
+Custo até à redação: 51 chamadas de ferramentas, incluindo esperas; 12 invocações explícitas de conferências e medições, incluindo uma única corrida de check:leituras com 39 guiões internos. Zero corridas inteiras dos portões e zero capturas. As préconferências dos seis pedidos de commit e os hooks do escrivão não entram nas 12 invocações. As chamadas posteriores de conferência do relatório e confirmação dos commits não entram nas 51 chamadas.

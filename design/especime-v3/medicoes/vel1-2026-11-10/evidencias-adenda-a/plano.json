@@ -1,0 +1,93 @@
+{
+  "partes": [
+    [
+      "npm run check:voz"
+    ],
+    [
+      "npm run check:palavras",
+      "npm run check:alcance",
+      "npm run check:capturas-largura",
+      "npm run check:mortos",
+      "npm run mapa:unidades -- --verifica"
+    ],
+    [
+      "npm run check:voz-retiradas",
+      "npm run check:indice",
+      "npm run check:eo1",
+      "npm run check:rec1",
+      "npm run check:rotulos",
+      "npm run check:lugares",
+      "npm run provar:eyetext",
+      "npm run check:sugestoes"
+    ],
+    [
+      "npm run check:alvos:0",
+      "npm run check:indice-do-sitio",
+      "npm run check:lingua",
+      "npm run check:incorporar",
+      "npm run check:selos",
+      "npm run check:quadro",
+      "npm run check:dados",
+      "npm run check:paridade",
+      "npm run check:projecao-portoes"
+    ],
+    [
+      "npm run check:alvos:2",
+      "npm run check:briefs",
+      "npm run check:discussao",
+      "npm run check:cabeca",
+      "npm run check:datas",
+      "npm run check:nomes",
+      "npm run check:publicadores",
+      "npm run check:areas",
+      "npm run check:repositorio"
+    ],
+    [
+      "npm run check:leituras",
+      "npm run check:privacidade",
+      "npm run check:cartao",
+      "npm run check:sobreposicao",
+      "npm run check:edicoes",
+      "npm run check:dossies",
+      "npm run design:feixe",
+      "npm run check:pais:auto-teste",
+      "npm run check:forma-citacao",
+      "npm run check:mapa"
+    ],
+    [
+      "npm run check:moldura",
+      "npm run check:frases-compostas",
+      "npm run check:lugar",
+      "npm run check:largura",
+      "npm run check:navegacao",
+      "npm run check:explicacoes",
+      "npm run check:graficos",
+      "npm run check:series",
+      "npm run check:formato",
+      "npm run provar:guardas"
+    ],
+    [
+      "npm run check:frases-afirmacao",
+      "npm run check:primeira",
+      "npm run check:alvos:1",
+      "npm run check:pais",
+      "npm run check:formas",
+      "npm run check:css",
+      "npm run check:metodo-construido",
+      "npm run check:fontes",
+      "npm run sinais",
+      "npm run check:regioes"
+    ]
+  ],
+  "cargas": [
+    604.811,
+    572.509,
+    572.525,
+    572.5319999999999,
+    572.558,
+    572.4949999999999,
+    572.4820000000001,
+    572.5289999999999
+  ],
+  "sem_medida": []
+}

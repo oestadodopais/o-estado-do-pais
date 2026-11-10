@@ -1,0 +1,200 @@
+{
+  "ok": false,
+  "guioes": [
+    {
+      "guiao": "tests/leituras/apoio_ferramentas.py",
+      "codigo": 0,
+      "segundos": 0.04662212496623397
+    },
+    {
+      "guiao": "tests/leituras/at1.py",
+      "codigo": 0,
+      "segundos": 24.605532167013735
+    },
+    {
+      "guiao": "tests/leituras/at1_aterrar.py",
+      "codigo": 0,
+      "segundos": 34.83497154107317
+    },
+    {
+      "guiao": "tests/leituras/at1_partes.py",
+      "codigo": 0,
+      "segundos": 0.10992987500503659
+    },
+    {
+      "guiao": "tests/leituras/aterrar.py",
+      "codigo": 0,
+      "segundos": 5.761614250019193
+    },
+    {
+      "guiao": "tests/leituras/briefs-presos.py",
+      "codigo": 0,
+      "segundos": 0.768014166969806
+    },
+    {
+      "guiao": "tests/leituras/comparar-alvos.py",
+      "codigo": 0,
+      "segundos": 0.04107704199850559
+    },
+    {
+      "guiao": "tests/leituras/comparar-dist-frases.py",
+      "codigo": 0,
+      "segundos": 0.06041404092684388
+    },
+    {
+      "guiao": "tests/leituras/corpos-ledger.py",
+      "codigo": 0,
+      "segundos": 0.31274854205548763
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_aterrar.py",
+      "codigo": 0,
+      "segundos": 91.7475311672315
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_fundir.py",
+      "codigo": 0,
+      "segundos": 7.658653583843261
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_modelos_novos.py",
+      "codigo": 0,
+      "segundos": 1.5389767498709261
+    },
+    {
+      "guiao": "tests/leituras/ferramenta_pre_voo.py",
+      "codigo": 0,
+      "segundos": 31.12467833282426
+    },
+    {
+      "guiao": "tests/leituras/ferramentas.py",
+      "codigo": 1,
+      "segundos": 1.8252720842137933
+    },
+    {
+      "guiao": "tests/leituras/fila.py",
+      "codigo": 0,
+      "segundos": 0.08406741684302688
+    },
+    {
+      "guiao": "tests/leituras/frases-indice.py",
+      "codigo": 0,
+      "segundos": 0.08119799988344312
+    },
+    {
+      "guiao": "tests/leituras/hig6a.py",
+      "codigo": 0,
+      "segundos": 0.6926474589854479
+    },
+    {
+      "guiao": "tests/leituras/lancadores_copia.py",
+      "codigo": 0,
+      "segundos": 9.772103792056441
+    },
+    {
+      "guiao": "tests/leituras/listas-de-uma-linha.py",
+      "codigo": 0,
+      "segundos": 4.415821833070368
+    },
+    {
+      "guiao": "tests/leituras/medicoes-pl1.py",
+      "codigo": 0,
+      "segundos": 1.429601791780442
+    },
+    {
+      "guiao": "tests/leituras/pacote-portoes.py",
+      "codigo": 0,
+      "segundos": 1.436973957810551
+    },
+    {
+      "guiao": "tests/leituras/pacote-recibo.py",
+      "codigo": 0,
+      "segundos": 0.06377679109573364
+    },
+    {
+      "guiao": "tests/leituras/pacote.py",
+      "codigo": 0,
+      "segundos": 7.201348875183612
+    },
+    {
+      "guiao": "tests/leituras/pl1.py",
+      "codigo": 0,
+      "segundos": 2.9437281657010317
+    },
+    {
+      "guiao": "tests/leituras/portoes.py",
+      "codigo": 0,
+      "segundos": 15.48330745799467
+    },
+    {
+      "guiao": "tests/leituras/privacidade-jd1.py",
+      "codigo": 0,
+      "segundos": 3.148616542108357
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1b.py",
+      "codigo": 0,
+      "segundos": 2.9866026248782873
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1c.py",
+      "codigo": 0,
+      "segundos": 3.0150966672226787
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1d.py",
+      "codigo": 0,
+      "segundos": 0.7978755831718445
+    },
+    {
+      "guiao": "tests/leituras/privacidade-rh1e.py",
+      "codigo": 0,
+      "segundos": 2.2398352501913905
+    },
+    {
+      "guiao": "tests/leituras/privacidade-segredo.py",
+      "codigo": 0,
+      "segundos": 49.10801691701636
+    },
+    {
+      "guiao": "tests/leituras/tempos.py",
+      "codigo": 0,
+      "segundos": 0.45542733278125525
+    },
+    {
+      "guiao": "tests/leituras/vel1_alvos.py",
+      "codigo": 0,
+      "segundos": 5.429456832818687
+    },
+    {
+      "guiao": "tests/leituras/vel1_dispensa.py",
+      "codigo": 0,
+      "segundos": 0.20743062486872077
+    },
+    {
+      "guiao": "tests/leituras/vel1_escrita.py",
+      "codigo": 0,
+      "segundos": 0.882324583362788
+    },
+    {
+      "guiao": "tests/leituras/vel1_retoma.py",
+      "codigo": 0,
+      "segundos": 25.504070665687323
+    },
+    {
+      "guiao": "tests/leituras/vel1_sobreposicao.py",
+      "codigo": 0,
+      "segundos": 15.442394708283246
+    },
+    {
+      "guiao": "tests/leituras/vel1_vigia.py",
+      "codigo": 0,
+      "segundos": 42.913223874755204
+    },
+    {
+      "guiao": "tests/leituras/vel1_workflow.py",
+      "codigo": 0,
+      "segundos": 1.6371981664560735
+    }
+  ]
+}
