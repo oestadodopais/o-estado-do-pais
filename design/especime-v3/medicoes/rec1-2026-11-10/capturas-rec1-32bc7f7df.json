@@ -1,0 +1,1727 @@
+{
+  "cabeca": "32bc7f7dfb7864651a1e0187116859af61a01d51",
+  "capturador_sha256": "4cab6b21a9a42ff4abb7c3ba146875d7ee5f61d262dedc8ccccfbd5e73c5c079",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "inicio-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9200,
+      "sha256": "95ced9b0a64995153c378066fa1fd37e670197489c2fe993ccc21de1deb7e843",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 211,
+            "width": 354,
+            "height": 21
+          },
+          "sha256": "3d4e1d490da84f96d27c7f77346465e995c554aba147a079ab2638b8ff42b6d5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7249,
+      "sha256": "dff1844c69a2432c47ed6bc0d2691b536727032da7081a672c8c44ea61bd6772",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 201,
+            "width": 708,
+            "height": 22
+          },
+          "sha256": "45e944802b976f44f379fd820c62962b9c4136c7b0a2ba9ee147d417ac857d37"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6410,
+      "sha256": "223b5c9122781ae1ec511023bb42644c79108e5a6f598a6bc62f45c007ab0e58",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 181,
+            "width": 944,
+            "height": 21
+          },
+          "sha256": "82abc3a0ff4deabad42d4c24f0fba0e73ea1295b5a8e7eb39110f2d66d570ffb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6287,
+      "sha256": "92348dce35a5e459062df1252a6fbc30f947040fc68b24e5b8ce1f5de4b63cd7",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 186,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "6ecd33eacf53ad60fff3529917744709f76a822ef293ca7404654fdb9dcd0648"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6331,
+      "sha256": "7193ec24f60df98140314d2b6c32762dd3b1eb7658431f03d1091c10e67f3bc3",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 186,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "6ecd33eacf53ad60fff3529917744709f76a822ef293ca7404654fdb9dcd0648"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9169,
+      "sha256": "b56f7790f5d0c40aac38aa06cc15722838a8555bdcde9426c9cd6842e818bb3c",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 211,
+            "width": 354,
+            "height": 21
+          },
+          "sha256": "293820f8d1e1afdb88d66f9b4462c944701820acbdb3b946250ed8e20906540a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7321,
+      "sha256": "c255b6154cbaedc2a3950dbb73f6d61c37dcc139ea7ef4c4c141192afdf8f84f",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 201,
+            "width": 708,
+            "height": 22
+          },
+          "sha256": "31fc62697005d74819e4d1f69576e609cf3482526d15a6ce8f63c0b2ebf04323"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6509,
+      "sha256": "049ce938a770d695eb828568689295064e1cfd20be1674d263eb473b927d2c31",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 181,
+            "width": 944,
+            "height": 21
+          },
+          "sha256": "0c13c166c5cc2581041cfbec176fe1ab61eb0b40dc9eba1bde2de69423407742"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6344,
+      "sha256": "f49fc84810e9fc0f427cf6f30215d5bb3dc17639784ecf503af605811f772255",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 186,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "aca11be07447774258a5aef058de8c41af39cd2819cd455e81b0b88f42074286"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6364,
+      "sha256": "43ada0f661f41ce15e025508dc8bbb658f3968080a831e5e14e99089e0bc303a",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "inicio-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 186,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "aca11be07447774258a5aef058de8c41af39cd2819cd455e81b0b88f42074286"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 42770,
+      "sha256": "5fed3f7c02185440e24a335c2ec48e4f645dee57cac43094805396534defac3d",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 187,
+            "width": 354,
+            "height": 21
+          },
+          "sha256": "b6f73d67eb69ed74196ffdc0cecff54a64a88f8472e9f4d6cace0566c76ecb2f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 35328,
+      "sha256": "9fcf19bcd58719233a2aabc537b27783a55843575dee9cd86de079c151963d45",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 160,
+            "width": 708,
+            "height": 22
+          },
+          "sha256": "66560e4bd62cd16c5130c34d818c424e1f5a62bbc6cf6853baa59fddd47d0c67"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 34159,
+      "sha256": "5a7e678a22a9840c9fb1cc6d597e94615ca498e155070c55f05284a2f52ec757",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 124,
+            "width": 944,
+            "height": 21
+          },
+          "sha256": "ba454a532cc8b4dafb3c63d9e62bd97318be9cb42553bf28e595ed425c710be4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 34309,
+      "sha256": "dbfdc8ab2f6f201254a19f3179e5a2de0d4c89c4459db1a9ad95552c96d152b0",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "0e2c2284b7a09ea2d4c033c8769595ae98108283e2dc48fa65440579e44131dd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 34315,
+      "sha256": "9b0cf4a7441943caa68b0679ff64a624ce666f1af77f1635f180aa4935adf794",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "0e2c2284b7a09ea2d4c033c8769595ae98108283e2dc48fa65440579e44131dd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 41075,
+      "sha256": "2d93a68fa48b4be63653e000523baf17fbd5ca36f82b6e22c9ebf578d3d04ec2",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 187,
+            "width": 354,
+            "height": 21
+          },
+          "sha256": "689188836d4e6c8fc8d1c6f97ae7eb47a71e2db5383722c463eab602145c885b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 34264,
+      "sha256": "ffe401584428b1d9c954f8178bab8ee9075defb7771ccb81efc8688560f22520",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 160,
+            "width": 708,
+            "height": 22
+          },
+          "sha256": "6da045add43c092fc72aae83deee42648e710799da9a3e0579cbb7defc5360e9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 33087,
+      "sha256": "0faf0b435fe0ba9bb8503da2d138eda4f08e40cc2765923f199ef6df87516275",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 124,
+            "width": 944,
+            "height": 21
+          },
+          "sha256": "ffd6dedaa58586a1124d30a111d3f5132e30ffd6da00449b04db1172a4cbd248"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 33237,
+      "sha256": "d133c498e182f23eb5825c0c72beba756cfbbf0cac91098abaef90d7ef248479",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "024a08801ce3c6f2edff2bc60176c89d312a3c1c7a0ad1f78b3a380022315dc0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 33243,
+      "sha256": "9b9ca3645957f3e24d713aa3c95fe78da21dec355acc353f6f22748bd542dccf",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "024a08801ce3c6f2edff2bc60176c89d312a3c1c7a0ad1f78b3a380022315dc0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 38038,
+      "sha256": "dbe83348955426eab8af6012c922623d32ebcb7d29a79f9442ee54b251424e10",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-pt-390.png",
+          "caixa": {
+            "left": 233,
+            "top": 105,
+            "width": 101,
+            "height": 22
+          },
+          "sha256": "54542b3435034b8ced846f1876828c293a3f2b84ea23c3171ea213dc9b20b61b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 24155,
+      "sha256": "67cb9687f5fd63b3c243d373ef5bfff8eceb247afe1750d52b8cf7273dc2aa51",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-pt-768.png",
+          "caixa": {
+            "left": 248,
+            "top": 81,
+            "width": 101,
+            "height": 22
+          },
+          "sha256": "e55dabaae0359a85e4cdbc1f8a44dfe4ed674840fda8d384c4266bb3fc7596b9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 22134,
+      "sha256": "62e15ba6f6bf88112bb636062ddba9d033f7bf6da1677585a5f3d0d558071b12",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-pt-1024.png",
+          "caixa": {
+            "left": 366,
+            "top": 87,
+            "width": 101,
+            "height": 22
+          },
+          "sha256": "725b871b7a3893112b4ff67016c81d4210aae274046f5b73824ceb24770bf341"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 22134,
+      "sha256": "cd7b3244da02806d62dc2463d2bcc878c310cbcabcce6f1fe88f1c5d7afe609c",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-pt-1280.png",
+          "caixa": {
+            "left": 494,
+            "top": 87,
+            "width": 101,
+            "height": 22
+          },
+          "sha256": "725b871b7a3893112b4ff67016c81d4210aae274046f5b73824ceb24770bf341"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 22134,
+      "sha256": "ea89f009aa106e87e94a9250d23f711f26f1f25dab9587913e6943352dbf558a",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-pt-1600.png",
+          "caixa": {
+            "left": 654,
+            "top": 87,
+            "width": 101,
+            "height": 22
+          },
+          "sha256": "725b871b7a3893112b4ff67016c81d4210aae274046f5b73824ceb24770bf341"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36534,
+      "sha256": "f24e61716b750459968069a865438691ae5874077a358d0ba226879e74e202ea",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-en-390.png",
+          "caixa": {
+            "left": 233,
+            "top": 131,
+            "width": 72,
+            "height": 22
+          },
+          "sha256": "1b2c655366766c162c40a5d894c325de40256a05b77cf887e48daf70992a52c6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 23615,
+      "sha256": "05ff0574d2fd232c1a8b5c787b5a9a5880241b96957fc32fced49b08b65614a2",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-en-768.png",
+          "caixa": {
+            "left": 248,
+            "top": 81,
+            "width": 72,
+            "height": 22
+          },
+          "sha256": "f80ff6a668176d35bc7f2e3b408d0dd3a0cfca1a869e7682cd05d827a113f777"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 21518,
+      "sha256": "61c9c36afedb8b41c8a320c241119a09ee652670e65d6d27e4c8e949b5e59d97",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-en-1024.png",
+          "caixa": {
+            "left": 366,
+            "top": 87,
+            "width": 72,
+            "height": 22
+          },
+          "sha256": "c15c0685e1774561fe8de4b07959d1f1b605ed82fa441a67e6fdd021e19f34c2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 21518,
+      "sha256": "b123ba1531cf73e6214880c0ac473eb77f1b3297e9735aea284053afb2950d6d",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-en-1280.png",
+          "caixa": {
+            "left": 494,
+            "top": 87,
+            "width": 72,
+            "height": 22
+          },
+          "sha256": "c15c0685e1774561fe8de4b07959d1f1b605ed82fa441a67e6fdd021e19f34c2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 21518,
+      "sha256": "43c57091870e1e01732eeddcd1b04c7a9c526ec005dc384d3a68cae11f86b9cc",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "documento-en-1600.png",
+          "caixa": {
+            "left": 654,
+            "top": 87,
+            "width": 72,
+            "height": 22
+          },
+          "sha256": "c15c0685e1774561fe8de4b07959d1f1b605ed82fa441a67e6fdd021e19f34c2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-390.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2184,
+      "sha256": "93b85f1004997a9add580f53f8fa6fc19569b90d99cef90aaba5f5c4b92f36a7",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-390-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1729,
+            "width": 354,
+            "height": 78
+          },
+          "sha256": "ab41ad8b5574f98b17895e9f47768de6612060ff23cc3ff30937525f0c4bbd5a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-768.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 1807,
+      "sha256": "6afb1dde5670591e8f790290ad248a78d352118b0b87905f4d1e7378bb355c11",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-768-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1473,
+            "width": 545,
+            "height": 52
+          },
+          "sha256": "472a3d36f5746366aa2482f5de8241ec7be8ab9169d73ce5254fe029c388eae8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1024.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1688,
+      "sha256": "43d72048d647ccc114a2190a507c53e0a37f2f590f412203a1fe2a7d7aa097ed",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1024-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-pt-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 1401,
+            "width": 545,
+            "height": 53
+          },
+          "sha256": "73764222060afe5385321e977c4c4d9c2de58b3f733d5e1c0112840a10a49f6e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1280.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1720,
+      "sha256": "a785edc78bf3b857b43539759f947bdbb3633bc4c929a6e6731c33c279202c31",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1280-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-pt-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 1415,
+            "width": 544,
+            "height": 52
+          },
+          "sha256": "0a7bd877576ccc09a76a8d61a8feceb854a17e925de0fc336ff1d62e881e8456"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-pt-1600.png",
+      "rota": "/correcoes/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1726,
+      "sha256": "2f6bd2f24fcb57c265dfc5ceed26a9e955c70bf8594e6c5d06a57bae3ce713be",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-pt-1600-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-pt-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 1415,
+            "width": 544,
+            "height": 52
+          },
+          "sha256": "0a7bd877576ccc09a76a8d61a8feceb854a17e925de0fc336ff1d62e881e8456"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-390.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2211,
+      "sha256": "3b0a63a2da935ac7d781a4c9d6bed1b53129fda07cc2f50b7d9086c59fb3007b",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-390-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1708,
+            "width": 354,
+            "height": 78
+          },
+          "sha256": "891e7ed0a91b35b1f7d5302b860d6b59b9756f54b149a106945c416e024b5e3d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-768.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 1807,
+      "sha256": "49b124cbdf65b768fbbf1b70dfe857ff0326c44027e1abf7eeea418c742c923b",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-768-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1473,
+            "width": 545,
+            "height": 52
+          },
+          "sha256": "9a23dcab957bc86671106130bbfd38de0c9d7656918a90e7cfc41f55723f6221"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1024.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1688,
+      "sha256": "8c36beb2a6ab70c2fa82a383b3a5103b0a37522371aed0f600c2bb294c084680",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1024-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-en-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 1401,
+            "width": 545,
+            "height": 53
+          },
+          "sha256": "0ca07d209f5e721b634bdb7b5f5a4d577d6465f660e54bf8ee7d89e2ac4c94d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1280.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1720,
+      "sha256": "d33025a272ae0f5e308d010bab282fccc2c4e2c83401c06dc57050bbd5b19e17",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1280-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-en-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 1415,
+            "width": 544,
+            "height": 52
+          },
+          "sha256": "6529c174db88c2a64bb6f3ce16d4893373821653ef8000e9671fa0af222f2596"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "correcoes-en-1600.png",
+      "rota": "/en/corrections/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1726,
+      "sha256": "cbf6c83b76a028193700cfee03c2894b6a95921223d0ee6cfa45fa2707289de8",
+      "recortes": [
+        {
+          "ficheiro": "correcoes-en-1600-registo.png",
+          "seletor": "[data-registo-vazio]",
+          "origem": "correcoes-en-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 1415,
+            "width": 544,
+            "height": 52
+          },
+          "sha256": "6529c174db88c2a64bb6f3ce16d4893373821653ef8000e9671fa0af222f2596"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-390.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4194,
+      "sha256": "947f335b687ecba84ae32c47549a8d232ec61a265e627387c0e4ce69ad62d3a0",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-390-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 3252,
+            "width": 354,
+            "height": 56
+          },
+          "sha256": "2abda9dbd410fd36183fee89b07b26f9b4c13ec887aca2863b15a8db72d3fde7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-768.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3900,
+      "sha256": "52e3e031239e60aefa4046f5d3d9d39da14b2a6e60565267c31fde790d19928d",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-768-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 3133,
+            "width": 545,
+            "height": 56
+          },
+          "sha256": "d38c71601340446974a193950fa84e23bf1e420b208404d01bdc0f8bad7d0f99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1024.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3792,
+      "sha256": "954931173a7e276dcb694b59ed672e5c5504d5c2a22f716868d55688d54d08af",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1024-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-pt-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 3090,
+            "width": 545,
+            "height": 56
+          },
+          "sha256": "026a1d1421ead19cfbe66dbed036394be2df41762485e389af3867984def2f08"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1280.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3833,
+      "sha256": "7ce9cd767d0f269d71b6197a5235a5b8e88d70e61185343d92866fd617896cc8",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1280-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-pt-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 3110,
+            "width": 544,
+            "height": 56
+          },
+          "sha256": "a5bb8f8ee48fcc493f209684ff557e7addf9e5e2e9a7881cf7683199533a483e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1600.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3840,
+      "sha256": "bfacf575bee10382e98e86b82ea7043885c145eae3d93f54768a80d21ac20a97",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1600-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-pt-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 3110,
+            "width": 544,
+            "height": 56
+          },
+          "sha256": "a5bb8f8ee48fcc493f209684ff557e7addf9e5e2e9a7881cf7683199533a483e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-390.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4316,
+      "sha256": "815dee0c0b9ba981a8031923318d9f1c7b944896fe4536dac969f140476b0b1a",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-390-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 3326,
+            "width": 354,
+            "height": 56
+          },
+          "sha256": "6269e0cdb6053e03a15e3d2fd70e4994df016121c638cd3da9edd9827a8b6235"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-768.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3890,
+      "sha256": "f4d12fdcb52abbb4b2eab56598c22048c4b4506c63bcf5ba812f01debd9bbac1",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-768-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 3123,
+            "width": 545,
+            "height": 56
+          },
+          "sha256": "9c765141abb962085eab5c34251e9ff31672e2a0ce0851580f674c86974711fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3782,
+      "sha256": "6d4761ac25e7c125e99ca62f443e8255ccc73c128fd13077bfef88012444bcf7",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1024-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-en-1024.png",
+          "caixa": {
+            "left": 291,
+            "top": 3080,
+            "width": 545,
+            "height": 56
+          },
+          "sha256": "cec481858f7ecc9dfe13403f94b343be6e5e10ed310975fbcdf35bc1f1ff9b26"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3824,
+      "sha256": "c5cfe0fe7e51ca50856c7915ae542354f57461c16b55735b938563fbd6990af3",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1280-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-en-1280.png",
+          "caixa": {
+            "left": 348,
+            "top": 3100,
+            "width": 544,
+            "height": 57
+          },
+          "sha256": "a2b4e7f5abc78a24b248d769b2158b8e570a1cb9195e3dc5479c1fc3bd11a587"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3830,
+      "sha256": "d9007ac74602a85d90a1f79cdf3716c5321b819ad2c492d4a79b58edb0e46f6c",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1600-ensaio.png",
+          "seletor": "[data-metodo-ensaio]",
+          "origem": "metodo-en-1600.png",
+          "caixa": {
+            "left": 508,
+            "top": 3100,
+            "width": 544,
+            "height": 57
+          },
+          "sha256": "a2b4e7f5abc78a24b248d769b2158b8e570a1cb9195e3dc5479c1fc3bd11a587"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-390.png",
+      "rota": "/municipios/evora/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8953,
+      "sha256": "071cc8cb008842a600efbfe253b86d6e418969adf750d515ffe133c80a905eaf",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 187,
+            "width": 354,
+            "height": 21
+          },
+          "sha256": "3d4e1d490da84f96d27c7f77346465e995c554aba147a079ab2638b8ff42b6d5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-768.png",
+      "rota": "/municipios/evora/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6556,
+      "sha256": "cb3cd62dfb8bdc9167099632b0c1e9c6e0250181f0041fade9ea4650dc44b21e",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 160,
+            "width": 708,
+            "height": 22
+          },
+          "sha256": "45e944802b976f44f379fd820c62962b9c4136c7b0a2ba9ee147d417ac857d37"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-1024.png",
+      "rota": "/municipios/evora/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6115,
+      "sha256": "20b8e0172be07a01b049a9c4f4caa9be3a3fcbb01b4f125e7e6688c87b40f338",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 124,
+            "width": 944,
+            "height": 21
+          },
+          "sha256": "82abc3a0ff4deabad42d4c24f0fba0e73ea1295b5a8e7eb39110f2d66d570ffb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-1280.png",
+      "rota": "/municipios/evora/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6256,
+      "sha256": "cc69f85311e90094f2432e1483ed9ea8cb655d5f1fe0fb03cf44ca633f950e29",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "6ecd33eacf53ad60fff3529917744709f76a822ef293ca7404654fdb9dcd0648"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-1600.png",
+      "rota": "/municipios/evora/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6092,
+      "sha256": "94b0164633e2e4739434551ba1dd1bada6eddcc222e83cb9d86b681c388aceb6",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "6ecd33eacf53ad60fff3529917744709f76a822ef293ca7404654fdb9dcd0648"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-390.png",
+      "rota": "/en/municipalities/evora/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9199,
+      "sha256": "5bf1ec7129408a220e11946db0bc4dc1d21049e0c0fe4b8091861ca5e70bb2a8",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-390-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 187,
+            "width": 354,
+            "height": 21
+          },
+          "sha256": "293820f8d1e1afdb88d66f9b4462c944701820acbdb3b946250ed8e20906540a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-768.png",
+      "rota": "/en/municipalities/evora/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6638,
+      "sha256": "5b3f2bccd545038708d582682d9f65525a788e6552790e5d1ce3273b32675157",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-768-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 160,
+            "width": 708,
+            "height": 22
+          },
+          "sha256": "31fc62697005d74819e4d1f69576e609cf3482526d15a6ce8f63c0b2ebf04323"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-1024.png",
+      "rota": "/en/municipalities/evora/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6174,
+      "sha256": "3699f2dd9ed178e63bd7c53723109deea7303cc9d7d2c94eb78d381b8fb5b77f",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-1024-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 124,
+            "width": 944,
+            "height": 21
+          },
+          "sha256": "0c13c166c5cc2581041cfbec176fe1ab61eb0b40dc9eba1bde2de69423407742"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-1280.png",
+      "rota": "/en/municipalities/evora/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6307,
+      "sha256": "053f78158710735502ba03fa4d1c68bae9713a7f8527579a78390b251b13b037",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-1280-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "aca11be07447774258a5aef058de8c41af39cd2819cd455e81b0b88f42074286"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-1600.png",
+      "rota": "/en/municipalities/evora/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6202,
+      "sha256": "18139929c9e7608c819ac7de1122ec1c63a574b1f01e3ebb16391c60a0db487a",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-1600-marca.png",
+          "seletor": "[data-edicao-ensaio]",
+          "origem": "evora-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 124,
+            "width": 1092,
+            "height": 21
+          },
+          "sha256": "aca11be07447774258a5aef058de8c41af39cd2819cd455e81b0b88f42074286"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "e03815cefb024edc1d2071a9968003f41508df43ccc6dd09243af86e98dfb86d",
+    "index.html": "97a4ae7df3be98168dd1d47697ed3dcac9d6e6766e604f64717771c536579706",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/primeira-pagina.DE2nANO1.css": "7e9e0e30d505a4b533120abc12fe02026082e8b5825a05860e95b5f9c708cb85",
+    "_astro/Base.Czgd51Su.css": "d52702286060cc898756e957e27f7f193d47cd94c25678af1646c1df44ce46c2",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/index.html": "1f82909b109699717a161d76b1e0235f992888535b8672cd49b663c1ad664240",
+    "estudos/evora-contas-da-camara-2010-2025/index.html": "1547d4c0075551137438971b9383049539de4d10d847b4da627892e32acb5ca6",
+    "_astro/texto.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "en/studies/evora-contas-da-camara-2010-2025/index.html": "fe75d80b5d03e8ecd0a5ee55393edc4a7cd9518853aea7598aeaf0cc0a3b82dc",
+    "estudos/evora-contas-da-camara-2010-2025/documento/index.html": "fc3a2ba3e7bd40f98a66262e3e1670e131e314f6ee5244c9f7ae2c7c1b596d4c",
+    "en/studies/evora-contas-da-camara-2010-2025/document/index.html": "191035b468b48af6371a7d2f3aac74f3332ed372d01dfdb0ae8aae3d671ebc10",
+    "correcoes/index.html": "57496d3db911b001914d641c6e041c2f2e53a619d7e0729ec8d4bf0f9b5af184",
+    "js/correcoes.js": "48c514d7ead045fff64051c2837ad4ec695ed3ab379c6447a54468f82dc0e69a",
+    "en/corrections/index.html": "43cb36184576d65e705225731c1c5a8820a0f43358943cd82e53ef1e31a7e4ce",
+    "metodo/index.html": "20bdc93ccc5dd295471e16694d0645aa9fe389c61f39fb94b825d45ca5fe1545",
+    "en/method/index.html": "87ccea96b748c0cd4c15cfae930fd18893b1c12751f905232a6fa42c0b0afeb3",
+    "municipios/evora/index.html": "d92eb3c465c001d43428615a45305aab716262e5d7b78d40b1b9763efd3cf49b",
+    "_astro/cartao-medida.DfTv6Oc1.css": "979cfb4fcb2cc4fe4cf2128ec4fa5e1bf71fc56fbaf091639cd7c17ab4d361d1",
+    "en/municipalities/evora/index.html": "8d4892aa25daeb27655e0acd372bb8cc66d89f0a14c117bc2d063a11a6383286"
+  },
+  "falhas": [],
+  "ok": true
+}

@@ -1,0 +1,71 @@
+{
+ "cabeca": "32bc7f7dfb7864651a1e0187116859af61a01d51",
+ "paginas": [
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/",
+   "recortes": [
+    {
+     "nome": "marca",
+     "seletor": "[data-edicao-ensaio]"
+    }
+   ]
+  },
+  {
+   "nome": "estudo",
+   "pt": "/estudos/evora-contas-da-camara-2010-2025/",
+   "en": "/en/studies/evora-contas-da-camara-2010-2025/",
+   "recortes": [
+    {
+     "nome": "marca",
+     "seletor": "[data-edicao-ensaio]"
+    }
+   ]
+  },
+  {
+   "nome": "documento",
+   "pt": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "en": "/en/studies/evora-contas-da-camara-2010-2025/document/",
+   "recortes": [
+    {
+     "nome": "marca",
+     "seletor": "[data-edicao-ensaio]"
+    }
+   ]
+  },
+  {
+   "nome": "correcoes",
+   "pt": "/correcoes/",
+   "en": "/en/corrections/",
+   "recortes": [
+    {
+     "nome": "registo",
+     "seletor": "[data-registo-vazio]"
+    }
+   ]
+  },
+  {
+   "nome": "metodo",
+   "pt": "/metodo/",
+   "en": "/en/method/",
+   "recortes": [
+    {
+     "nome": "ensaio",
+     "seletor": "[data-metodo-ensaio]"
+    }
+   ]
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/",
+   "recortes": [
+    {
+     "nome": "marca",
+     "seletor": "[data-edicao-ensaio]"
+    }
+   ]
+  }
+ ]
+}
