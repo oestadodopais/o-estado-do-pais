@@ -90,64 +90,16 @@
     "razao": "citação da fonte"
   },
   {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "The clean opinion on 2025 brings the outside witness back from here on, not backwards.",
-    "classe": "facto de uma fonte",
-    "razao": "facto sobre o alcance da opinião do auditor"
-  },
-  {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025",
-    "frase": "The clean opinion on 2025 brings the outside witness back from here on, not backwards.",
-    "classe": "facto de uma fonte",
-    "razao": "facto sobre o alcance da opinião do auditor"
-  },
-  {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "Reading the budget as spending is the single easiest way to be wrong about a municipality, and the gap here is not small.",
-    "classe": "facto de uma fonte",
-    "razao": "«here» é o município; juízo sobre o orçamento, não sobre o projeto"
-  },
-  {
     "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
     "frase": "Reading the budget as spending is the single easiest way to be wrong about a municipality, and the gap here is not small.",
     "classe": "facto de uma fonte",
     "razao": "«here» é o município; juízo sobre o orçamento, não sobre o projeto"
   },
   {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference; the report states each line, not the pattern).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o relatório como sujeito"
-  },
-  {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "In each of those three years the revenue column steps up and the following year gives the step back, which is what a loan looks like in a cash-basis table and not what a good year looks like (inference; the reports state each loan and each total, not the pattern).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com os relatórios como sujeito"
-  },
-  {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "The municipal balance sheet is solvent many times over on paper; the pressure in these accounts has never been about net worth, it is about cash and time (inference).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
     "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
     "frase": "The municipal balance sheet is solvent many times over on paper; the pressure in these accounts has never been about net worth, it is about cash and time (inference).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "The rest of it is the whole of the Capital of Culture objective's undefined financing for the year — the same figure, concentrated in one line (inference; the plan prints both amounts, not the identity between them).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o plano como sujeito"
-  },
-  {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "The 2026 plan inscribes it again (inference; the plan states each line and each financing split, and states no pattern).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o plano como sujeito"
   },
   {
     "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
@@ -246,34 +198,10 @@
     "razao": "citação da fonte"
   },
   {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "Ler o orçamento como despesa é a maneira mais fácil de se enganar sobre um município, e aqui a distância não é pequena.",
-    "classe": "facto de uma fonte",
-    "razao": "«aqui» é o município; juízo sobre o orçamento, não sobre o projeto"
-  },
-  {
     "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
     "frase": "Ler o orçamento como despesa é a maneira mais fácil de se enganar sobre um município, e aqui a distância não é pequena.",
     "classe": "facto de uma fonte",
     "razao": "«aqui» é o município; juízo sobre o orçamento, não sobre o projeto"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência; o relatório afirma cada linha, não o padrão).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o relatório como sujeito"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "O relatório de 2015 traz 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o relatório como sujeito"
   },
   {
     "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
@@ -282,40 +210,10 @@
     "razao": "rótulo de inferência com o relatório como sujeito"
   },
   {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau, que é o que um empréstimo parece numa tabela de caixa e não o que parece um bom ano (inferência; os relatórios afirmam cada empréstimo e cada total, não o padrão).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com os relatórios como sujeito"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "Dez anos a pagar a dívida do resgate são o contexto destes números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "No papel, o balanço municipal cobre o passivo várias vezes; a pressão nestas contas nunca foi sobre o património líquido, é sobre caixa e tempo (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
     "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
     "frase": "No papel, o balanço municipal cobre o passivo várias vezes; a pressão nestas contas nunca foi sobre o património líquido, é sobre caixa e tempo (inferência).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "O resto dela é a totalidade do financiamento não definido do objetivo da Capital da Cultura para o ano — o mesmo valor, concentrado numa linha (inferência; o plano imprime os dois montantes, não a identidade entre eles).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o plano como sujeito"
-  },
-  {
-    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
-    "frase": "O plano de 2026 inscreve-o outra vez (inferência; o plano afirma cada linha e cada repartição de financiamento, e não afirma padrão algum).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o plano como sujeito"
   },
   {
     "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
@@ -396,12 +294,6 @@
     "razao": "rótulo de inferência"
   },
   {
-    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
-    "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
-    "classe": "facto de uma fonte",
-    "razao": "o par inglês da FICA V169 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
-  },
-  {
     "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
     "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
     "classe": "facto de uma fonte",
@@ -438,5 +330,29 @@
       "slug": "agua-nao-faturada",
       "data": "2026-11-08"
     }
+  },
+  {
+    "rota": "/estudos/evora-contas-da-camara-2010-2025",
+    "frase": "Este estudo não apura o que a associação Évora 2027 recebeu: os valores são os das contas e do plano do município.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite do que o estudo mede, na secção dos limites."
+  },
+  {
+    "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+    "frase": "Este estudo não apura o que a associação Évora 2027 recebeu: os valores são os das contas e do plano do município.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite do que o estudo mede, na secção dos limites."
+  },
+  {
+    "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+    "frase": "This study does not establish what the Évora 2027 association received: the values are those of the municipality's accounts and plan.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite do que o estudo mede, na secção dos limites."
+  },
+  {
+    "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+    "frase": "This study does not establish what the Évora 2027 association received: the values are those of the municipality's accounts and plan.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite do que o estudo mede, na secção dos limites."
   }
 ]

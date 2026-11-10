@@ -1,3 +1,4 @@
+import {tituloCopiadoDaPagina} from './titulos-copiados.mjs';
 /** VOZ-1 B: as portas vêm das citações nas páginas construídas, antes dos portões. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,7 +18,7 @@ function andar(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const f=path.join(dir,e.name);if(e.isDirectory()){andar(f);continue;}if(e.name!=='index.html')continue;
  const rota='/'+path.relative(dist,f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);
  if(!hit || excluidas.has(hit.key) || (hit.key==='estudo'&&WORKS.some(w=>w.slug===hit.params.slug&&w.sucedidoPor)))continue;
- const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');
+ const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=tituloCopiadoDaPagina(doc,rota);
  if(!titulo)continue;
  const ids=new Set((main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(r=>r?.key==='linha').map(r=>r.params.slug));
  for(const id of ids)if(linhas.has(id)){if(!indice[hit.lang].has(id))indice[hit.lang].set(id,[]);indice[hit.lang].get(id).push({rota,titulo});}

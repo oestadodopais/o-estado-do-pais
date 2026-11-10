@@ -1,8 +1,9 @@
 {
   "contagens": {
-    "estudos": 3506
+    "estudos": 3508
   },
   "comando": "npm run check:lugar",
   "ponto": "3",
-  "codigo_antes_de_baixar_teto": 1
+  "codigo_antes_de_baixar_teto": 1,
+  "medicao_intermedia_sem_novidades": 3506
 }

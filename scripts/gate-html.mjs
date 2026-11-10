@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { emEnsaio, desdeOLancamento } from '../site.config.mjs';
 import { conferirLancamentoHtml, conferirRobotsTxt } from './lancamento-conferir.mjs';
-import {conferirTitulosCopiados} from './titulos-copiados.mjs';
+import {conferirTitulosCopiados,tituloCopiadoDaPagina} from './titulos-copiados.mjs';
 const TITULOS_COPIADOS_CONFERIDOS = new WeakSet();
 import {retirarAusencias} from '../src/lib/ausencias-voz1.mjs';
 import {marcaDeLinguaEv3Valida} from './ev3-lingua-conferir.mjs';
@@ -7408,7 +7408,7 @@ for (const file of ficheirosHtml(DIST)) {
     const destino=el.getAttribute('data-calendario-pagina');
     try {
       const alvo=parse(fs.readFileSync(path.join(DIST,destino,'index.html'),'utf8'));
-      if(textoTranscrito(el)!==textoTranscrito(alvo.querySelector('h1')))err('VOZ-1 B: título diferente da página de destino');
+      if(textoTranscrito(el)!==tituloCopiadoDaPagina(alvo,destino))err('VOZ-1 B: título diferente da página de destino');
       if(!id && el.getAttribute('href')!==destino)err('VOZ-1 B: porta do calendário diferente do título');
       if(id && el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada')!==id)err('VOZ-1 B: título de outra linha na revisão');
     }catch{err('VOZ-1 B: página do título ausente');}

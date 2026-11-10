@@ -6,7 +6,7 @@ import {contextoDaRevisao} from '../../src/lib/contexto-da-revisao.mjs';
 import {conferirRevisoesNoRegisto} from '../../scripts/revisoes-no-registo.mjs';
 import {spawnSync} from 'node:child_process';
 import {matchPath,routePath} from '../../src/lib/routes.mjs';
-import {conferirTitulosCopiados} from '../../scripts/titulos-copiados.mjs';
+import {conferirTitulosCopiados,tituloCopiadoDaPagina} from '../../scripts/titulos-copiados.mjs';
 import {calendarioFuturo} from '../../src/lib/agenda.mjs';
 const calendario=JSON.parse(fs.readFileSync('src/data/calendario.json'));
 const dia=process.env.OEDP_DIA_DA_CONSTRUCAO??JSON.parse(fs.readFileSync('dist/version.json')).construido_em.slice(0,10);
@@ -16,7 +16,7 @@ const fora=new Set(['linha','livro','livroConcelho','livroConcelhos','serie','me
 function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const f=path.join(dir,e.name);if(e.isDirectory()){anda(f);continue;}if(e.name!=='index.html')continue;
  const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
- const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=normal(main?.querySelector('h1')?.textContent??'');if(!titulo)continue;
+ const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=tituloCopiadoDaPagina(doc,rota);if(!titulo)continue;
  const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
  if(hit.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.sucedidoPor){datadas[hit.lang].push({rota,titulo,refs});continue;}
  leitores[hit.lang].push({rota,titulo,refs});

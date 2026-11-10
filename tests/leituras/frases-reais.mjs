@@ -28,7 +28,13 @@ const ids = new Set(provas.quantificadoresNovosAntesG.map(f => f.id));
 provas.frasesNovasAntesG = [...new Set(antesG.filter(f => ids.has(f.id)).map(f => norm(f.nova)))];
 assert.equal(provas.frasesNovasAntesG.length, 3);
 assert.deepEqual([...ids].sort(), ['V032','V040','V182','V195']);
-provas.atualA = conferirLista(A, 'dist', {aplicada:true});
+// EVA: as frases do estudo das contas saíram com o texto julgado; a lista histórica fica intacta.
+const pastaEVA = fs.mkdtempSync(path.join(os.tmpdir(), 'eva-voz-aplicada-'));
+try {
+ const lista = JSON.parse(fs.readFileSync(A, 'utf8')).filter(f => f.estudo !== 'evora-contas-da-camara-2010-2025');
+ const file = path.join(pastaEVA, 'lista.json'); fs.writeFileSync(file, JSON.stringify(lista));
+ provas.atualA = conferirLista(file, 'dist', {aplicada:true});
+} finally { fs.rmSync(pastaEVA, {recursive:true, force:true}); }
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
 // A adenda D substitui seis novas da lista inicial; as listas declaradas ficam intactas.
 const D = 'design/especime-v3/medicoes/coragua-2026-11-08/FRASES-COR-AGUA-d.json';

@@ -23,7 +23,7 @@ const NEGACAO = /(?<![\p{L}])(?:não|nem|nenhum[ao]?|nunca|nada|not|no|neither|n
 const PROPRIA = /(?<![\p{L}])(?:[dn]?este projeto|[dn]?esta página|[dn]?esta explicação|[dn]?este estudo|[dn]?este documento|[dn]?esta leitura|aqui|não entram?|não se lê|inferências?|juízos?|this project|this site|this page|this explainer|this explanation|this study|this document|this reading|here|does not enter|do not enter|did not enter|is not read|inference|judgement|judgment|deste sítio|from this site)(?![\p{L}])/iu;
 export const CLASSE = {test: frase => (NEGACAO.test(frase) && PROPRIA.test(frase)) || CLASSE_ANTERIOR.test(frase)};
 export const EXCECOES = JSON.parse(fs.readFileSync(new URL('./voz-excecoes.json',import.meta.url),'utf8'));
-const RAZOES = new Set(['facto de uma fonte','informação funcional','natureza do registo']);
+const RAZOES = new Set(['facto de uma fonte','informação funcional','natureza do registo','limite declarado do estudo']);
 if(EXCECOES.some(e=>!e.rota||!e.frase||!e.razao||!RAZOES.has(e.classe)) || new Set(EXCECOES.map(e=>e.rota+'|'+e.frase)).size!==EXCECOES.length) throw new Error('VOZ-1: lista de exceções inválida');
 export function conferirProtecoes(root,rota,livro=claims) {
  const erros=[]; const hit=matchPath(rota);const lang=rota.startsWith('/en/')?'en':'pt';

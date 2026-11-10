@@ -984,3 +984,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | rec1-c | Política: cada entrada traz os campos; rótulos das novidades presentes apenas com entradas, nos dois modos e nas duas línguas | por ler | Codex, 10.11.2026: redação da adenda C; leitura cruzada do diff reservada ao lugar de direção. |
 
 | rec1-d | Linha das datas sempre presente, mesmo sem novidades; seis rótulos voltam a vivos; a legenda das correções identifica linhas e texto de estudos | por ler | Codex, 10.11.2026: adenda D; leitura cruzada do diff reservada ao lugar de direção. |
+
+| eva-t | Leitura das contas da Câmara nas duas línguas | por ler | Codex, 11.11.2026: texto do mandato e origem C004 conferidos; leitura cruzada reservada ao lugar de direção. |
