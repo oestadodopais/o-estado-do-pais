@@ -108,7 +108,7 @@ jobs:
         id: playwright
         run: echo "versao=$(node -p 'require("./package-lock.json").packages["node_modules/playwright"].version')" >> "$GITHUB_OUTPUT"
       - name: O Chromium guardado
-        uses: actions/cache@PREENCHER_SHA_ACTIONS_CACHE_V4_2_3 # v4.2.3, preencher antes de publicar
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-${{ runner.arch }}-playwright-${{ steps.playwright.outputs.versao }}
@@ -166,7 +166,7 @@ jobs:
         id: playwright
         run: echo "versao=$(node -p 'require("./package-lock.json").packages["node_modules/playwright"].version')" >> "$GITHUB_OUTPUT"
       - name: O Chromium guardado
-        uses: actions/cache@PREENCHER_SHA_ACTIONS_CACHE_V4_2_3 # v4.2.3, preencher antes de publicar
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-${{ runner.arch }}-playwright-${{ steps.playwright.outputs.versao }}
