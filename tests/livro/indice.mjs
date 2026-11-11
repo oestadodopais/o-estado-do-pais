@@ -62,7 +62,9 @@
  *      só os do campo da data; refaz, com o `git log`, a data em que o ficheiro
  *      de cada edição entrou no repositório, exigindo que a página a diga; e
  *      confere, linha a linha, o `src/data/datas-de-publicacao.json` que a
- *      construção passou a ler (bloco F1.4b) contra esse mesmo `git`.
+ *      construção passou a ler (bloco F1.4b) contra esse mesmo `git`. A origem
+ *      edicao-unica usa a data da única versão do manifesto; o commit continua
+ *      a conferir-se contra o git.
  * I11 (G11) · **o espaço entre o número e a palavra, a 390** (com
  *      `--navegador`). Lê-se o texto RENDIDO das contagens das portas da
  *      primeira página, e não o `textContent`: o espaço estava nas cadeias e a
@@ -106,6 +108,8 @@ import { FIGURAS } from '../../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../../src/data/nomes-das-medidas.mjs';
 import { WORKS } from '../../src/data/studies.mjs';
+import {dataEdicaoUnica} from '../../scripts/data-edicao-unica.mjs';
+import {manifestoEd2} from '../../scripts/edicoes-linha-conferir.mjs';
 import { conferirPublicacaoDeclaradaNoHtml } from '../../scripts/publicacao-declarada.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -1383,7 +1387,7 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
     } else {
       const bruto = JSON.parse(fs.readFileSync(caminho, 'utf8'));
       for (const e of Array.isArray(bruto?.edicoes) ? bruto.edicoes : []) {
-        declaradas.set(`${e.slug}/${e.lang}`, { data: e.data, commit: e.commit });
+        declaradas.set(`${e.slug}/${e.lang}`, e);
       }
       if (declaradas.size === 0) {
         falhas.push(`${FICHEIRO_DAS_DATAS} não declara edição nenhuma.`);
@@ -1391,6 +1395,7 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
     }
   }
   let conferidasContraOFicheiro = 0;
+  let edicoesUnicas = 0;
   let comData = 0;
   let semHistoria = 0;
   const dirDosTrabalhos = path.join(RAIZ_DO_REPO, 'studies-src');
@@ -1433,9 +1438,11 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
         );
       } else {
         conferidasContraOFicheiro++;
-        if (declarada.data !== data) {
+        const dataDaVersao = dataEdicaoUnica(declarada, manifestoEd2);
+        if (dataDaVersao !== null) edicoesUnicas++;
+        if (declarada.data !== (dataDaVersao ?? data)) {
           falhas.push(
-            `${rel}: ${FICHEIRO_DAS_DATAS} declara ${declarada.data} e o \`git\` diz ${data}.`,
+            `${rel}: ${FICHEIRO_DAS_DATAS} declara ${declarada.data} e ${dataDaVersao ? 'a versão única diz '+dataDaVersao : 'o git diz '+data}.`,
           );
         }
         if (declarada.commit !== commit) {
@@ -1492,10 +1499,34 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
     marcadores: marcadoresAoTodo,
     edicoes_com_data_do_repositorio: comData,
     edicoes_sem_historia: semHistoria,
+    edicoes_com_data_da_versao_unica: edicoesUnicas,
     edicoes_no_ficheiro: declaradas.size,
     edicoes_do_ficheiro_conferidas_contra_o_git: conferidasContraOFicheiro,
   };
-  return `${trabalhos} linha(s) de trabalho · ${marcadoresAoTodo} marcador(es) ao todo, ${comMarcador} linha(s) com um e nenhuma com dois · ${comData} edição(ões) com a data do repositório conferida contra o git, ${semHistoria} sem história · ${conferidasContraOFicheiro} de ${declaradas.size} linha(s) de ${FICHEIRO_DAS_DATAS} refeitas do git`;
+  return `${trabalhos} linha(s) de trabalho · ${marcadoresAoTodo} marcador(es) ao todo, ${comMarcador} linha(s) com um e nenhuma com dois · ${comData} edição(ões) com a data do repositório conferida contra o git, ${semHistoria} sem história · ${conferidasContraOFicheiro} de ${declaradas.size} linha(s) de ${FICHEIRO_DAS_DATAS} conferidas, ${edicoesUnicas} com data da versão única e as restantes com data do git`;
+});
+
+// As cópias só vivem durante a célula I9, sem escrever no ficheiro declarado.
+if (argv.includes('--prova')) celula('I9p', 'as datas erradas recusam nas duas origens', falhas => {
+  const ficheiro=path.join(RAIZ,'src/data/datas-de-publicacao.json');
+  const original=fs.readFileSync,fonte=JSON.parse(original(ficheiro,'utf8'));
+  const unicas=fonte.edicoes.filter(e=>e.origem==='edicao-unica');
+  const legada=fonte.edicoes.find(e=>e.origem!=='edicao-unica');
+  if(!unicas.length||!legada){falhas.push('I9p: faltam controlos das duas origens');return '';}
+  let recusadas=0;
+  for(const entrada of [...unicas,legada]){
+    const copia=structuredClone(fonte),e=copia.edicoes.find(e=>e.slug===entrada.slug&&e.lang===entrada.lang);
+    e.data='1900-01-01';
+    const queixas=[];
+    try {
+      fs.readFileSync=function(f,...args){return path.resolve(String(f))===ficheiro?JSON.stringify(copia):original.call(this,f,...args);};
+      corposDasCelulas.get('I9')(queixas);
+    }finally{fs.readFileSync=original;}
+    const origem=entrada.origem==='edicao-unica'?'a versão única diz':'o git diz';
+    if(queixas.some(q=>q.startsWith(`studies-src/${entrada.slug}/${entrada.lang}.html:`)&&q.includes('declara 1900-01-01')&&q.includes(origem)))recusadas++;
+    else falhas.push(`I9p: data adulterada passou em ${entrada.slug}/${entrada.lang}, ${origem}`);
+  }
+  return `${recusadas} de ${unicas.length+1} plantas recusadas na própria I9`;
 });
 
 /* -------------------------------------------------------------------- I10 */

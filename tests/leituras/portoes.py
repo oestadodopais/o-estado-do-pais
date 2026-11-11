@@ -83,6 +83,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     (p / 'dist/estudos/exemplo/index.html').write_text('<article class="texto-artigo"></article>')
     # FP2 mantém a base separada, sem build nem verify, e exige a planta vermelha.
     for perfil, nomes in [
+        ('eva-ta-indice', {'check:indice'}),
         ('og1-b-navegador', {'check:frases-compostas', 'check:primeira'}),
         ('fp2-base', {'check:sobreposicao'}),
         ('fp2-contadores', {'check:sobreposicao-contadores'}),
