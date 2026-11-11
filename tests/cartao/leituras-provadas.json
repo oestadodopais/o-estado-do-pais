@@ -12020,12 +12020,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de estudos publicados cujo objeto é o concelho de Évora e a que nenhum outro estudo sucedeu.",
-          "en": "It is the number of studies published whose subject is the municipality of Évora and that no other study has succeeded.",
+          "pt": "É o número de estudos publicados cujo objeto é o concelho de Évora.",
+          "en": "It is the number of studies published whose subject is the municipality of Évora.",
           "partes": [
             {
-              "pt": "É o número de estudos publicados cujo objeto é o concelho de Évora e a que nenhum outro estudo sucedeu.",
-              "en": "It is the number of studies published whose subject is the municipality of Évora and that no other study has succeeded.",
+              "pt": "É o número de estudos publicados cujo objeto é o concelho de Évora.",
+              "en": "It is the number of studies published whose subject is the municipality of Évora.",
               "classe": "diz",
               "apoios": [
                 {
