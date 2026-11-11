@@ -8,7 +8,7 @@ import {parse} from 'node-html-parser';
 import {getClaim,loadClaims} from '../../src/lib/ledger.mjs';
 import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
 import {SEM_AREA} from '../../src/data/areas.mjs';
-import {WORKS} from '../../src/data/studies.mjs';
+import {WORKS,PUBLISHED_WORKS} from '../../src/data/studies.mjs';
 import {sinopseEsperada,conferirSinopse} from '../../scripts/voz-pais.mjs';
 import {conferirAberturaB1} from '../../scripts/abertura-b1-do-portao.mjs';
 import {conferirPortasDeEntradaEo1} from '../../scripts/portas-eo1-do-portao.mjs';
@@ -84,7 +84,8 @@ for(const lang of ['pt','en']) {
  assert.deepEqual(conferirAberturaB1(parse(html),{blocks},'planta',lang),[]);
  const r=parse(html);r.querySelector('h2').set_content('Título trocado');assert(conferirAberturaB1(r,{blocks},'planta',lang).length);plantas++;
 }
-if(!fixtures) for(const work of WORKS) for(const edition of work.editions) {
+const aberturasConferidas=new Set();
+if(!fixtures) for(const work of PUBLISHED_WORKS) for(const edition of work.editions) {
  const lang=edition.lang;if(!['pt','en'].includes(lang))continue;
  const file=`registos/${work.slug}/${lang}.record.json`;if(!fs.existsSync(file))continue;
  const record=JSON.parse(fs.readFileSync(file,'utf8'));
@@ -95,6 +96,8 @@ if(!fixtures) for(const work of WORKS) for(const edition of work.editions) {
  assert.deepEqual(conferirAberturaB1(root,record,rota,lang),[],rota);
  const planta=parse(root.outerHTML);planta.querySelector('.estudo-leitura h2').set_content('Título trocado');
  assert(conferirAberturaB1(planta,record,rota,lang).length,'B1 não recusa abertura de '+rota);plantas++;
+ aberturasConferidas.add(`${work.slug}/${lang}`);
  console.log(`B1 ${rota}: primeiro H2 conferido e planta recusada.`);
 }
+if(!fixtures)for(const lang of ['pt','en'])assert(aberturasConferidas.has(`evora-2027-capital-europeia-da-cultura/${lang}`),'abertura do sucessor não conferida: '+lang);
 console.log(`EO1-b maquinaria: PASS; ${plantas} plantas recusadas.`);
