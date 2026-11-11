@@ -1,0 +1,40 @@
+{
+ "bloco": "REC2 (os seis estudos de Évora a que os quatro sucederam saem do que se constrói; os endereços antigos levam ao sucessor)",
+ "data": "2026-11-11",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem (os oito pontos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T08:23:04Z",
+   "fim": "2026-11-11T10:15:52Z",
+   "pontos": 9.0,
+   "pontos_antes": 67.0,
+   "pontos_depois": 76.0,
+   "outras_sessoes": 2,
+   "fonte": "a linha PONTOS do registo do lançador rec2-1"
+  },
+  {
+   "nome": "adenda A (os quatro vermelhos da corrida inteira e dois achados da leitura a frio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T11:10:31Z",
+   "fim": "2026-11-11T11:55:45Z",
+   "pontos": 2.0,
+   "pontos_antes": 76.0,
+   "pontos_depois": 78.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador rec2-a"
+  }
+ ],
+ "total_pontos_codex": 11.0,
+ "reflexo_dos_gargalos": "duas passagens e 11 pontos. A primeira levou 113 minutos e passou o teto de chamadas (364 contra 240) com sessões auxiliares que o lançador não conta: o gargalo está registado, e a adenda proibiu-as (dois pontos). A corrida inteira por guião correu duas vezes, cerca de uma hora cada.",
+ "leituras": "Claude Opus 5.5 (leitor), a high: uma leitura a frio (180 mil símbolos) e uma leitura curta, cinco plantas em cinco em cada uma (ver o registo das leituras).",
+ "medida": "o arquivo publicado passa de 19 para 13 estudos; 38 endereços antigos com redirecionamento permanente.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-11T08:22:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros. As leituras (Claude) e as corridas por guião não entram nos pontos do Codex."
+}

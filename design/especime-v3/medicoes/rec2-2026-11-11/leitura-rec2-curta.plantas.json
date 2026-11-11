@@ -1,0 +1,82 @@
+[
+ {
+  "id": "S1a",
+  "ficheiro": "src/data/o-que-e-das-familias.mjs",
+  "descricao": "a definição inglesa diz distrito e a portuguesa concelho",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "045c3f4edf63e7c63c7049e94055bb132c061667ef68286311c7e09ef325b4e6",
+  "sha256_depois": "2923009236401bbdc3636c24785f147f8b0ebd180011aa3f07fc3723054cae5c"
+ },
+ {
+  "id": "S1b",
+  "ficheiro": "diff.patch",
+  "descricao": "a definição inglesa diz distrito (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "27d998942513c6d827f10f3d57b59014e620a147a26a9bc65527a8345d3f57d5",
+  "sha256_depois": "330c594c6206065364e7bc812df1980cf778ac07d03c597599c3716e231fbaf1"
+ },
+ {
+  "id": "S2a",
+  "ficheiro": "scripts/gate-html.mjs",
+  "descricao": "um registo de um trabalho não retirado sem edição publicada volta a ser saltado",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "bb0d6f13c67722fb7026479966c492c4f7bf15545abf138e5496eddc707d36a0",
+  "sha256_depois": "ffbc6a79254a72efe556873caff068a41f751154dfb4afd840f809a4eb66c817"
+ },
+ {
+  "id": "S2b",
+  "ficheiro": "diff.patch",
+  "descricao": "um registo de um trabalho não retirado volta a ser saltado (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "330c594c6206065364e7bc812df1980cf778ac07d03c597599c3716e231fbaf1",
+  "sha256_depois": "decef698b10464c4822a2c4c756fb1f0199e46357d5f07969ede4aa44c1956dc"
+ },
+ {
+  "id": "S3a",
+  "ficheiro": "src/lib/registo-html.mjs",
+  "descricao": "a correção do nível do título nunca se aplica",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "4e2c8e8ba241fddcb5345334c0b3a3e0867b379d935a4dab87f88fb5fd162710",
+  "sha256_depois": "518fc606ef5723f1c7fa091164f22f57376d75818a5f2bdffd07975395127fe4"
+ },
+ {
+  "id": "S3b",
+  "ficheiro": "diff.patch",
+  "descricao": "a correção do nível do título nunca se aplica (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "decef698b10464c4822a2c4c756fb1f0199e46357d5f07969ede4aa44c1956dc",
+  "sha256_depois": "918054393e20912c387b6d989ae65a9ba573e4fac7e016b068abe9477ef8c151"
+ },
+ {
+  "id": "S4a",
+  "ficheiro": "tests/og1e/publicadores.mjs",
+  "descricao": "a amostra das edições guardadas deixa de olhar à língua",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "7caaa6e7d051781ba27539ab706678cf0df4315b60020490aa27a20b7b29be55",
+  "sha256_depois": "c1d46eece15c979296f0e105ac641e944f0b953bf35701735541e56f4799e732"
+ },
+ {
+  "id": "S4b",
+  "ficheiro": "diff.patch",
+  "descricao": "a amostra das edições guardadas deixa de olhar à língua (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "918054393e20912c387b6d989ae65a9ba573e4fac7e016b068abe9477ef8c151",
+  "sha256_depois": "8bb222e8e35458235ec66729032d1680e51b91602e680b886da20e07220880a1"
+ },
+ {
+  "id": "S5a",
+  "ficheiro": "tests/eo1/maquinaria.mjs",
+  "descricao": "a abertura do sucessor só se exige em português",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "c02d8731e7bbc1e29031764b0f922ba13505f042f0392dacd1cb99d8a476e3ba",
+  "sha256_depois": "94da0058ba1c7f2d441bc6236265817d98b5b9f983e5e34a0d2fd4407a5e2127"
+ },
+ {
+  "id": "S5b",
+  "ficheiro": "diff.patch",
+  "descricao": "a abertura do sucessor só se exige em português (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "8bb222e8e35458235ec66729032d1680e51b91602e680b886da20e07220880a1",
+  "sha256_depois": "04336f62872458dc8a9d91ecbeaa886d68f0c7303e847a23cdac36eab16c7ead"
+ }
+]

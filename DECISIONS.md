@@ -15001,3 +15001,13 @@ REC1, 10.11.2026. O Estado do País ainda não foi mostrado a ninguém e está a
 6. **Só atravessa o que foi auditado.** O exportador dos registos corre todos os estudos; nesta travessia só o 16 ficou, e o registo do estudo de quem governou a câmara foi reposto: atravessa no seu bloco.
 
 **O que se mediu.** Quatro leituras do Claude Opus 5.5 com cinco plantas em cinco (duas no motor, duas na travessia); as 107 linhas próprias, 36 citações, 9 datas e 11 títulos conferidos contra os 11 PDF por guião deste lugar, com cinco estragos recusados; a corrida inteira por guião na cabeça final. Um erro deste lugar não chegou ao ar: uma regra do mandato larga demais punha uma frase falsa em dezoito recibos, e foi apanhada na releitura do HTML construído (as adendas B e C; o gargalo está registado).
+
+### 1.240 Quarta-feira 11.11.2026: REC2, um trabalho substituído sai do que se constrói (o estado «retirado»)
+
+**Afecta:** nenhum
+
+**Toca:** §1.237 (a edição de ensaio), §1.145 (os quatro estudos de Évora que sucederam aos seis), §1.239 (uma edição só por estudo), a regra 15 (a classe no sítio inteiro).
+
+**O que se decidiu.** Em ensaio, o que foi substituído não se mostra. Um trabalho com sucessor ganha o estado «retirado» em `src/data/studies.mjs`: não tem páginas, documentos, edições datadas nem registos construídos, não conta em nenhuma contagem do arquivo, e cada endereço que teve responde com um redirecionamento permanente para o estudo que lhe sucedeu, na mesma língua (para a página do lugar, quando os sucessores são mais de um). O destino lê-se de `sucedidoPor`, por guião, e uma régua confere que cada endereço antigo tem o seu, que o destino existe e que a origem já não existe. Nada se apaga do repositório: os documentos, os registos e as listas históricas ficam, e as réguas que as repetem saltam e contam os retirados, e só esses. Os seis estudos de Évora de agosto e setembro de 2026 são os primeiros: o arquivo passa de 19 para 13 estudos, e Évora fica com os quatro.
+
+**O que se mediu.** 29 rotas próprias e nove endereços `texto` anteriores, 38 redirecionamentos; nenhuma página construída nomeia ou liga aos seis (medido pelo leitor a frio, com conhecido-positivo); duas leituras do Claude Opus 5.5 com cinco plantas em cinco; a corrida inteira por guião na cabeça final. A corrida inteira apanhou, pela mudança das amostras, um título a saltar um nível no estudo das contas da Câmara, que estava no ar desde a madrugada; ficou corrigido neste bloco.

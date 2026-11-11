@@ -8,7 +8,6 @@
 
 | Ordem | Bloco | Tipo | O que o leitor recebe | Estado | Razão da posição |
 | --- | --- | --- | --- | --- | --- |
-| 3 | REC2 | maquinaria | os seis estudos de Évora a que os quatro sucederam deixam de se publicar, com os endereços antigos a levar ao estudo que sucedeu a cada um | mandato escrito (11.11.2026; medido no `dist/` de `740595bbb`) | a decisão de 10.11.2026, com a palavra do financiador; os ficheiros ficam no repositório |
 | 4 | EVB | conteúdo | o estudo de Évora 2027 com as correções julgadas: o dinheiro do Estado dito como o que cada documento escreve (os 34 milhões do relato ao painel ao lado do balanço da associação), os quatro agregados lado a lado, o que é do painel e o que é da equipa | por mandatar (o EVA aterrou a 11.11.2026) | a auditoria de 09.11.2026 e a revisão de 10.11.2026 |
 | 5 | EVC | conteúdo | os outros dois estudos de Évora (quem governou a câmara; a economia e o dinheiro de fora) auditados frase a frase por outra família e corrigidos; no primeiro, a marca «[a verificar]» que ainda se imprime sai | por mandatar (o EVA aterrou a 11.11.2026) | a regra 1: uma marca de verificação não é uma forma de publicar |
 | 7 | CAM2-A | maquinaria | nada diretamente; a primeira passagem da camada 2, só guiões: o detetor das frases com afirmação (as atribuições e as causas), o registo de cada uma no livro-razão com as linhas que a sustentam, a cobertura por régua (uma frase com afirmação sem registo recusa-se; as de hoje numa lista que só encolhe, que a AUD1 esvazia) e a M83 no `ledger:check` (o corpo alojado de cada linha que declara um documento) | mandato escrito (09.11.2026): medido no `dist/` de f362f5ccd (702 frases candidatas em português; as 795 linhas com documento têm o corpo no motor) | a §1.234 (2): tira a classe de erro que já chegou ao leitor (as frases); a AUD1, a VOZ-2B e a VOZ-3 passam por ela |
@@ -33,6 +32,7 @@
 | Bloco | Tipo | O que o leitor recebeu |
 | --- | --- | --- |
 | EVA | conteúdo | o estudo das contas da Câmara de Évora reescrito pela norma nova: a resposta à cabeça, cinco achados, o que está bem e o que está mal, para quem, as afirmações da câmara com veredicto, a leitura da casa, recomendações e o que vigiar; o corpo reordenado, com sete quadros novos e os erros que três voltas de leitura por outra família apanharam corrigidos; a linha da execução da receita de 2021 na medida da de 2025 (87,72); uma edição só, de 11.11.2026 |
+| REC2 | maquinaria | os seis estudos de Évora a que os quatro sucederam deixam de se publicar, com os endereços antigos a levar ao estudo que sucedeu a cada um; o arquivo passa de 19 para 13 estudos; aterrou a 11.11.2026 |
 
 ## Saíram da fila a 10.11.2026
 

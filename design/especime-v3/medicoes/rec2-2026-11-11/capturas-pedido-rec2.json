@@ -1,0 +1,40 @@
+{
+ "cabeca": "68e23502c98692b5dc33a26a1cfc16b4e34d231d",
+ "paginas": [
+  {
+   "nome": "estudos",
+   "pt": "/estudos/",
+   "en": "/en/studies/"
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/"
+  },
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/"
+  },
+  {
+   "nome": "contas",
+   "pt": "/estudos/evora-contas-da-camara-2010-2025/",
+   "en": "/en/studies/evora-contas-da-camara-2010-2025/"
+  },
+  {
+   "nome": "quem-governou",
+   "pt": "/estudos/evora-quem-governou-a-camara-2009-2025/",
+   "en": "/en/studies/evora-quem-governou-a-camara-2009-2025/"
+  },
+  {
+   "nome": "recibo-estudos",
+   "pt": "/livro-razao/estudos-publicados/",
+   "en": "/en/ledger/estudos-publicados/"
+  },
+  {
+   "nome": "recibo-estudos-evora",
+   "pt": "/livro-razao/estudos-evora-publicados/",
+   "en": "/en/ledger/estudos-evora-publicados/"
+  }
+ ]
+}
