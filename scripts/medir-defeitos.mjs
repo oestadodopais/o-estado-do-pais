@@ -5,7 +5,7 @@ import {conferirTitulosCopiados} from './titulos-copiados.mjs';
 import {normalizaEspacosDaRetirada} from './titulos-publicados.mjs';
 import {retirarTitulosConferidos} from './titulos-publicados.mjs';
 import {manifestoEd2} from './edicoes-linha-conferir.mjs';
-import {FAIXAS_DE_EDICAO,classeDaVozDaEdicao,conferirVozDaLinha,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
+import {RETIRADAS_EVA,FAIXAS_DE_EDICAO,classeDaVozDaEdicao,conferirVozDaLinha,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz as texto} from './voz-edicoes.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
@@ -1807,6 +1807,7 @@ const DEFINICAO_EDICOES_EN = 'It is the number of editions of the studies publis
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
   // EV2-F e ED1-F: formas integrais, com planta dos fragmentos isolados.
   ...FAIXAS_DE_EDICAO,
+  ...RETIRADAS_EVA,
   // DO1-G: só as formas completas classificadas no inventário admitem o fragmento retirado.
   ['estudo ·', new Set(['estudo · Dossiê:'])],
   ['explicação ·', new Set(['explicação · Dossiê:'])],

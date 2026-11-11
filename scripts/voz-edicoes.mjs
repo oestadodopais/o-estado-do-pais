@@ -67,3 +67,6 @@ export function textoDaVoz(no) {
   anda(no);
   return partes.join(' ');
 }
+
+// EVA-T: só a leitura prescrita completa admite o antigo rótulo dentro da prosa.
+export const RETIRADAS_EVA = new Map([['Debt limit', new Set(["The Câmara de Évora keeps within the legal debt limit and pays those who sell to it late: days , on average, to pay a supplier in , and euros in overdue payments at the end of that year."])]]);

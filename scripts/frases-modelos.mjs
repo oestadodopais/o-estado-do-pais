@@ -16,7 +16,8 @@ export function modelosDasFontes(strings=STRINGS,metodo=METODO) {
   return ['pt','en'].flatMap(lingua=>{
     const s=strings[lingua].semana;
     const p=metodo.passos.find(p=>p[lingua]?.some(t=>t?.prova==='painel_reconferido_em'))?.[lingua];
-    return [{id:'revisao-'+lingua,lingua,tipo:'leituraDaSemana',fonte:'src/i18n/strings.mjs',modelo:'{indicador}'+s.virgula+'{periodo}'+s.publicado+'{valor} {unidade}'+s.fonteAgora+'{valor}'+s.naReleitura+'{data}'+s.ponto},
+    return [{id:'primeira-sem-mudanca-'+lingua,lingua,tipo:'leituraDaSemana',fonte:'src/i18n/strings.mjs',modelo:s.primeiraNenhuma},
+      {id:'revisao-'+lingua,lingua,tipo:'leituraDaSemana',fonte:'src/i18n/strings.mjs',modelo:'{indicador}'+s.virgula+'{periodo}'+s.publicado+'{valor} {unidade}'+s.fonteAgora+'{valor}'+s.naReleitura+'{data}'+s.ponto},
       {id:'painel-'+lingua,lingua,tipo:'metodo',fonte:'src/data/metodo.mjs',modelo:p?.map(t=>typeof t==='string'?t:t.prova==='painel_reconferido_em'?'{data}':'{desconhecido}').join('')??null}];
   });
 }

@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {recusaVoz, conferirLista, recusas, conferirQuantificadores} from '../../scripts/leituras/conferir-frases.mjs';
+import {recusaVoz, conferirLista, conferir, lerDocumentos, recusas, conferirQuantificadores} from '../../scripts/leituras/conferir-frases.mjs';
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 process.chdir(raiz);
 const A = 'design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json';
@@ -31,9 +31,20 @@ assert.deepEqual([...ids].sort(), ['V032','V040','V182','V195']);
 // EVA: as frases do estudo das contas saíram com o texto julgado; a lista histórica fica intacta.
 const pastaEVA = fs.mkdtempSync(path.join(os.tmpdir(), 'eva-voz-aplicada-'));
 try {
- const lista = JSON.parse(fs.readFileSync(A, 'utf8')).filter(f => f.estudo !== 'evora-contas-da-camara-2010-2025');
+ const slug='evora-contas-da-camara-2010-2025';
+ // As mesmas frases continuam noutros documentos: só as portas do texto substituído saem.
+ const historica=JSON.parse(fs.readFileSync(A, 'utf8'));
+ const ambito=new Set(historica.filter(f=>f.estudo!==slug).map(f=>f.estudo));
+ const lista = historica.flatMap(f => {
+  if(f.estudo!==slug)return [f];
+  const paginas=f.paginas.filter(p=>!p.includes('/'+slug));
+  return paginas.length ? [{...f,estudo:paginas[0].match(/^\/(?:estudos|en\/studies)\/([^/]+)/)[1],paginas}] : [];
+ });
  const file = path.join(pastaEVA, 'lista.json'); fs.writeFileSync(file, JSON.stringify(lista));
- provas.atualA = conferirLista(file, 'dist', {aplicada:true});
+ const {documentos,bilingues}=lerDocumentos(lista,'dist');
+ // Uma porta adicional continua a conferir só a presença, como antes da retirada.
+ for(const d of documentos)d.soPresenca=!ambito.has(d.estudo);
+ provas.atualA = conferir(lista,documentos,bilingues,{aplicada:true});
 } finally { fs.rmSync(pastaEVA, {recursive:true, force:true}); }
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
 // A adenda D substitui seis novas da lista inicial; as listas declaradas ficam intactas.

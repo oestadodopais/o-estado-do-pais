@@ -13,3 +13,10 @@ for(const lang of ['pt','en']){
  assert(n>0);assert(l.origem.onde.includes(`${file}:${n}`));
 }
 console.log('EVA leitura: dois valores, ano por referência, sufixo de unidade e parágrafo C004 com linha medida nas duas línguas.');
+
+// A frase completa conserva a voz; o rótulo isolado e uma palavra nova continuam proibidos.
+const {RETIRADAS_EVA,retiradaForaDaFrase}=await import('../../scripts/voz-edicoes.mjs');
+const admitidas=RETIRADAS_EVA.get('Debt limit');
+for(const frase of admitidas){assert(!retiradaForaDaFrase(frase,'Debt limit',admitidas));assert(retiradaForaDaFrase(frase+' Extra.','Debt limit',admitidas));}
+assert(retiradaForaDaFrase('Debt limit','Debt limit',admitidas));
+console.log('EVA voz: leitura completa aceite; rótulo isolado e frase alterada recusados.');

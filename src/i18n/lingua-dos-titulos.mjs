@@ -169,6 +169,7 @@ export const LINGUA_DOS_TITULOS = {
   'SIE - Desemprego registado por concelhos': 'pt',
   'Resumo - Desemprego registado nos Açores': 'pt',
   'Prestação de Contas 2025': 'pt',
+  'RELATÓRIO DE GESTÃO 2021': 'pt',
   'Boletim Mensal por Concelhos': 'pt',
   'Evolução endividamento total': 'pt',
   'Autárquicas 2025 — resultados oficiais por território': 'pt',

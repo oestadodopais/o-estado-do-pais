@@ -1,5 +1,12 @@
 [
   {
+    "id": "primeira-sem-mudanca-pt",
+    "lingua": "pt",
+    "tipo": "leituraDaSemana",
+    "fonte": "src/i18n/strings.mjs",
+    "modelo": "Nenhuma frase da primeira página mudou por causa disto."
+  },
+  {
     "id": "revisao-pt",
     "lingua": "pt",
     "tipo": "leituraDaSemana",
@@ -12,6 +19,13 @@
     "tipo": "metodo",
     "fonte": "src/data/metodo.mjs",
     "modelo": "Os números do painel são relidos na fonte, a última vez a {data}; quando a fonte muda um valor, o número muda e o recibo desse número diz o que estava antes."
+  },
+  {
+    "id": "primeira-sem-mudanca-en",
+    "lingua": "en",
+    "tipo": "leituraDaSemana",
+    "fonte": "src/i18n/strings.mjs",
+    "modelo": "No sentence on the front page changed because of this."
   },
   {
     "id": "revisao-en",
