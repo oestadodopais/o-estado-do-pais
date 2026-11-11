@@ -1453,7 +1453,8 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
           );
         }
       }
-      const naForma = `${data.slice(8, 10)}.${data.slice(5, 7)}.${data.slice(0, 4)}`;
+      const dataPublicada = dataEdicaoUnica(declarada ?? {}, manifestoEd2) ?? data;
+      const naForma = `${dataPublicada.slice(8, 10)}.${dataPublicada.slice(5, 7)}.${dataPublicada.slice(0, 4)}`;
       const rota = edicao === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`;
       const pag = paginas.find((p) => p.rota === rota);
       if (!pag) continue;
@@ -1466,7 +1467,7 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
       const t = texto(dom(pag));
       if (!t.includes(naForma)) {
         falhas.push(
-          `${rota}: o ficheiro desta edição entrou no repositório a ${naForma} e a página não o diz.`,
+          `${rota}: a data de publicação provada é ${naForma} e a página não a diz.`,
         );
       }
     }
