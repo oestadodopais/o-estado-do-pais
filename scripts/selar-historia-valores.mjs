@@ -7,7 +7,8 @@ const [id, ...resto] = process.argv.slice(2);
 assert.ok(id && !resto.length, 'Uso: node scripts/selar-historia-valores.mjs <id>');
 const ficheiro = 'ledger/historias-valores.json';
 const registo = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
-const linha = loadClaims().get(id);
+// A auditoria também valida linhas retiradas da publicação.
+const linha = loadClaims({includeWithdrawn:true}).get(id);
 assert.ok(linha, 'A linha tem de existir.');
 const entradas = entradasDoValor(linha).map(assinaturaDoValor);
 const anteriores = registo[id] ?? [];

@@ -912,8 +912,5 @@ export const COUNTS = {
    * uma tradução não é um estudo novo. É esta a contagem que reconcilia a
    * afirmação estudos-evora-publicados com o arquivo.
    */
-  /* Desde 01.10.2026 (bloco E1, §1.145), só os trabalhos sem sucessor: os seis
-     estudos de Évora de agosto e setembro ficam alojados como edições datadas,
-     e a linha estudos-evora-publicados conta os quatro que lhes sucedem. */
-  estudos_evora_no_arquivo: WORKS.filter((w) => w.subject === 'evora' && !w.sucedidoPor).length,
+  estudos_evora_no_arquivo: PUBLISHED_WORKS.filter((w) => w.subject === 'evora').length,
 };

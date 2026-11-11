@@ -197,6 +197,12 @@
       "kind": "atualizacao",
       "old_value": "27",
       "new_value": "29"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "atualizacao",
+      "old_value": "29",
+      "new_value": "20"
     }
   ],
   "estudos-evora-publicados": [
@@ -249,6 +255,12 @@
       "kind": "atualizacao",
       "old_value": "18",
       "new_value": "19"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "atualizacao",
+      "old_value": "19",
+      "new_value": "13"
     }
   ],
   "evora-prr-aprovado-2026": [

@@ -4,7 +4,7 @@
 id: "estudos-publicados"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "19"
+value: "13"
 unit: "estudos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -13,7 +13,7 @@ document:
   title: "Arquivo de estudos"
   edition: "26.10.2026"
 source_url: null
-access_date: "2026-10-26"
+access_date: "2026-11-11"
 reference_date: "2026-10-26"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
@@ -49,3 +49,9 @@ corrections:
     new_value: "19"
     reason: "Entrada do estudo da habitação, publicado a 26.10.2026 pela data declarada, contado no registo do arquivo."
     reason_en: "The housing study, published on 26.10.2026 by its declared date, entered the archive, counted from its registry."
+  - date: "2026-11-11"
+    kind: "atualizacao"
+    old_value: "19"
+    new_value: "13"
+    reason: "Os seis estudos de Évora de agosto e setembro de 2026, a que sucederam os quatro de outubro, saíram do arquivo."
+    reason_en: "The six Évora studies of August and September 2026, succeeded by the four of October, left the archive."
