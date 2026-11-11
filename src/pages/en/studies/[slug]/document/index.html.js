@@ -1,3 +1,4 @@
+import { WORKS } from '../../../../../data/studies.mjs';
 import {documentoDaHistoriaServido} from '../../../../../lib/edicoes.mjs';
 /**
  * `/en/studies/<slug>/document` — a edição inglesa do documento original.
@@ -7,6 +8,7 @@ import { todosOsDocumentos, documentoServido } from '../../../../../lib/document
 
 export function getStaticPaths() {
   return todosOsDocumentos()
+    .filter(d => !WORKS.some(w => w.slug === d.slug && w.estado === 'retirado'))
     .filter((d) => d.lang === 'en')
     .map((d) => ({ params: { slug: d.slug } }));
 }

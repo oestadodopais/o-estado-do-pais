@@ -255,6 +255,7 @@ export const WORKS = [
        e o pessoal foram para as contas, as eleições e as decisões para quem
        governou, e a série socioeconómica para a economia. Fica alojado como
        edição datada, fora do índice dos estudos e da página do concelho. */
+    estado: 'retirado',
     sucedidoPor: [
       { slug: 'evora-contas-da-camara-2010-2025', parte: { pt: 'as finanças e o pessoal', en: 'the finances and the staff' } },
       { slug: 'evora-quem-governou-a-camara-2009-2025', parte: { pt: 'as eleições e as decisões', en: 'the elections and the decisions' } },
@@ -277,6 +278,7 @@ export const WORKS = [
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
+    estado: 'retirado',
     sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     editions: [
       { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: '2026-08-12', updated: '2026-11-08' },
@@ -292,6 +294,7 @@ export const WORKS = [
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
+    estado: 'retirado',
     sucedidoPor: [{ slug: 'evora-contas-da-camara-2010-2025' }],
     /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de
        ponteiro. DECISIONS §1.49. */
@@ -320,6 +323,7 @@ export const WORKS = [
     tema: 'governo-e-democracia',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
+    estado: 'retirado',
     sucedidoPor: [{ slug: 'evora-quem-governou-a-camara-2009-2025' }],
     editions: [
       {
@@ -366,6 +370,7 @@ export const WORKS = [
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
+    estado: 'retirado',
     sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     /**
      * A DATA, e como foi encontrada. Este trabalho nunca passou por um
@@ -414,6 +419,7 @@ export const WORKS = [
     tema: 'cultura',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
+    estado: 'retirado',
     sucedidoPor: [{ slug: 'evora-2027-capital-europeia-da-cultura' }],
     /**
      * O TÍTULO É O QUE O DOCUMENTO IMPRIME, palavra por palavra (16.09.2026,
@@ -890,9 +896,9 @@ export function studyTitle(id, lang = 'pt') {
 }
 
 /** HB1-30: novas publicações declaram o dia de aterragem; as antigas mantêm o contrato do arquivo. */
-/** @param {{publication?: string}|undefined} work @param {{date: string|null}} edition */
+/** @param {{publication?: string, estado?: string}|undefined} work @param {{date: string|null}} edition */
 export function edicaoPublicada(work, edition) {
-  return work?.publication !== 'declared' || typeof edition.date === 'string';
+  return work?.estado !== 'retirado' && (work?.publication !== 'declared' || typeof edition.date === 'string');
 }
 export const PUBLISHED_WORKS = WORKS.filter(w => w.editions.some(e => edicaoPublicada(w, e)));
 export const PUBLISHED_EDITIONS = EDITIONS.filter(e => edicaoPublicada(WORKS.find(w => w.id === e.workId), e));

@@ -3,7 +3,7 @@ import EstudoView from '../../../views/EstudoView.astro';
 import { WORKS } from '../../../data/studies.mjs';
 
 export function getStaticPaths() {
-  return WORKS.map((w) => ({ params: { slug: w.slug } }));
+  return WORKS.filter(w => w.estado !== 'retirado').map((w) => ({ params: { slug: w.slug } }));
 }
 
 const { slug } = Astro.params;

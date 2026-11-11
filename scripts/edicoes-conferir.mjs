@@ -36,7 +36,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
     const file = path.join(raiz,p.file);
     if (!fs.existsSync(file) || sha(fs.readFileSync(file)) !== p.sha256) erros.push(`ED1 sha256: ${chave}`);
     if (!correcoes.some(c => ['texto','texto_atualizado'].includes(c.kind) && c.slug === w.slug && c.data === declaracao.edicoes.at(-1).data)) erros.push(`ED1 entrada: ${chave} sem correção na data ${d.updated}`);
-    if (paginas) {
+    if (paginas && w.estado !== 'retirado') {
       for(const v of e.edicoes.slice(0,-1)){
         const html=paginas.get(`${rotaAtual(e.slug,e.lang)}/${v.data}`),arquivo=path.join(raiz,v.file);
         if(!html||!fs.existsSync(arquivo)||provaDosBytesDaEdicao(fs.readFileSync(arquivo,'utf8'),html,d.lang))erros.push(`ED1 servido: ${chave}/${v.data} diverge da edição guardada`);
