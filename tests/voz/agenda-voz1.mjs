@@ -20,10 +20,14 @@ function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=tituloCopiadoDaPagina(doc,rota);if(!titulo)continue;
  const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
- if(hit.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.estado==='retirado'){datadas[hit.lang].push({rota,titulo,refs});continue;}
+ if(hit.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.estado==='retirado')continue;
  leitores[hit.lang].push({rota,titulo,refs});
 }}
 anda('dist');
+// As páginas retiradas já não existem: a planta repõe a porta a partir do registo conservado.
+for (const lang of ['pt','en']) for (const w of WORKS.filter(w => w.estado === 'retirado')) {
+ datadas[lang].push({rota:routePath('estudo',lang,{slug:w.slug}),titulo:(w.editions.find(e => e.lang === lang) ?? w.editions[0]).title,refs:[]});
+}
 export function conferir(root,lang,registo=calendario,hoje=dia){
  const erros=[];
  const grafia=rota=>root.querySelectorAll('#nav-principal a[href]').find(a=>a.getAttribute('href').replace(/\/$/,'')===rota)?.getAttribute('href')??rota;
@@ -44,7 +48,7 @@ export function conferir(root,lang,registo=calendario,hoje=dia){
    if(!esperado || item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==esperado)erros.push('motivo de ausência diferente');
   }
   const portas=item.querySelectorAll('[data-calendario-pagina]');
-  if(portas.some(a=>{const hit=matchPath(a.getAttribute('href'));return hit?.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.estado==='retirado';}))erros.push('edição datada no calendário');
+  if(portas.some(a=>{const hit=matchPath(a.getAttribute('href'));return hit?.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.estado==='retirado';}))erros.push('trabalho retirado no calendário');
   const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id))).map(p=>({...p,rota:grafia(p.rota)})).sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
   if(portas.some(a=>a.hasAttribute('style')))erros.push('estilo em atributo');
   if(portas.some(a=>['home','temas','indice','estudos','discussao','leituraDaSemana','areas'].includes(matchPath(a.getAttribute('href'))?.key)))erros.push('página de entrada no calendário');
@@ -74,8 +78,8 @@ for(const lang of ['pt','en']){
   const r=parse(texto);const a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',routePath(key,lang));
   morde(`entrada ${key} reposta`,conferir(r,lang).includes('página de entrada no calendário'));
  }
- assert(datadas[lang].length>0,'edições datadas disponíveis para a planta');
- for(const p of datadas[lang]){const r=parse(texto),a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',p.rota);a.setAttribute('data-calendario-pagina',p.rota);a.set_content(p.titulo);morde(`edição datada ${p.rota}`,conferir(r,lang).includes('edição datada no calendário'));}
+ assert(datadas[lang].length>0,'trabalhos retirados disponíveis para a planta');
+ for(const p of datadas[lang]){const r=parse(texto),a=r.querySelector('[data-calendario-pagina]');a.setAttribute('href',p.rota);a.setAttribute('data-calendario-pagina',p.rota);a.set_content(p.titulo);morde(`trabalho retirado ${p.rota}`,conferir(r,lang).includes('trabalho retirado no calendário'));}
  const passado=structuredClone(calendario);const atual=root.querySelector('[data-calendario-evento]').getAttribute('data-calendario-evento');passado.eventos.find(e=>e.id===atual).data='1900-01-01';morde('passado visível',conferir(root,lang,passado).includes('acontecimento passado visível'));
  const correcoes=parse(fs.readFileSync(`dist/${lang==='pt'?'correcoes':'en/corrections'}/index.html`,'utf8'));
  if(emEnsaio()) { assert.equal(correcoes.querySelectorAll('[data-correcao-titulo], [data-correcao-entrada]').length,0); } else {
