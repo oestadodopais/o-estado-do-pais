@@ -48,5 +48,25 @@
   "o_que_se_leu": "a capa: três linhas de título, «Évora_27» (com um traço comprido entre «Évora» e «27»), «Cidade Candidata» e «Capital Europeia da Cultura»; à volta, a palavra «ÉVORA» repetida em letras grandes com as letras de «VAGAR» a verde, e uma frase em letra pequena espalhada pela página",
   "serve": "o título do dossiê de candidatura da fase de pré-seleção",
   "razao": "a camada de texto da capa não traz o título"
+ },
+ {
+  "documento": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+  "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+  "data_da_leitura": "2026-11-11",
+  "leitor": "lugar de direção (Claude Fable 5.2)",
+  "razao": "a folha está em colunas e a camada de texto mistura as linhas das colunas",
+  "pagina": 10,
+  "o_que_se_leu": "a folha 10 do PDF (imprime as páginas 18 e 19), «OPEN CALLS ÉVORA 2027»: «A Nossa Voz», um programa de open calls «destinado aos 18 agrupamentos escolares da região», com «Cronograma: 2023 – 2027», «Público-alvo: Agrupamentos escolares do Alentejo», «Orçamento: 500 000€»; «O Nosso Festival», com «Orçamento: 500 000€»; «A Nossa Vez», «Apoiar-se-ão cerca de 30 projetos (de grande e média dimensão), com um orçamento global de dois milhões de euros», com «Orçamento: 2 000 000€»; «O Nosso Laboratório», com «Cronograma: 2025 – 2027», «Público-alvo: Cena cultural internacional», «Orçamento: 6 000 000€»; «Linha de Encontro – Centro de Recursos para a Cultura», com «Orçamento: 3 000 000€»",
+  "serve": "os orçamentos das chamadas na candidatura (as unidades C027, C028, N08.R3 e N08.R4): a folha tem dois «Orçamento: 500 000€», e o de «A Nossa Voz» é o primeiro"
+ },
+ {
+  "documento": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+  "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+  "data_da_leitura": "2026-11-11",
+  "leitor": "lugar de direção (Claude Fable 5.2)",
+  "razao": "a camada de texto dá os sete valores da linha sem os anos das colunas",
+  "pagina": 44,
+  "o_que_se_leu": "a folha 44 do PDF, o quadro da fonte de receita por ano, com as colunas «2022», «2023», «2024», «2025», «2026», «CEC 2027» e «2028»; a linha «CIDADE DE ÉVORA»: «518 203,10», «1 500 000,00», «1 500 000,00», «2 000 000,00», «2 002 750,00», «2 000 000,00», «999 000,00»",
+  "serve": "o calendário da parte do município na candidatura (as unidades C008 e N02.R1): 2 000 000,00 em 2025 e 2 002 750,00 em 2026"
  }
 ]

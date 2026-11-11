@@ -1,0 +1,1785 @@
+{
+ "_": [
+  "As provas em forma de máquina para as linhas LN e os números da cabeça que o construtor parou (preparados/paragens.json e cabeca-numeros-paragens.json).",
+  "Feito por motor/complementares.py, com o leitor do motor (core.documentos_alojados e core.linhas_proprias) na worktree evb-2026-11-11, só a ler.",
+  "«conferido_pelo_motor»: inteiro = excerto_inteiro(page, _tight(excerto)); numero_em_pdf = numero_em_pdf(page, excerto, valor_na_fonte); valor_presente = a regra de core.linhas_proprias.conferir.",
+  "«estado»: «conferido» quando as duas primeiras dão verdadeiro; «conferido, menos numero_em_pdf» quando o excerto é inteiro e o valor está nele, mas a camada de texto cola o símbolo ao algarismo.",
+  "As oito linhas LN de «3» e cinco números da cabeça são datas e estão em «datas», com a fonte da data."
+ ],
+ "resumo": {
+  "linhas_LN_paradas": 33,
+  "linhas_LN_com_prova": 25,
+  "linhas_LN_que_sao_datas": 8,
+  "numeros_da_cabeca_parados_nao_datas": 28,
+  "numeros_da_cabeca_com_prova_ou_linha": 23,
+  "numeros_da_cabeca_que_sao_datas": 5,
+  "provas_distintas": 39,
+  "provas_conferidas_por_inteiro": 20,
+  "provas_conferidas_menos_numero_em_pdf": 19,
+  "provas_nao_conferidas": 0,
+  "pedem_leitura_na_imagem": [
+   "01-bidbook-selecao-PT.pdf.txt p.10",
+   "01-bidbook-selecao-PT.pdf.txt p.44"
+  ]
+ },
+ "linhas_LN": [
+  {
+   "id": "LN019",
+   "unidade": "C027",
+   "impresso": {
+    "pt": "30",
+    "en": "30"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 10
+    },
+    "excerto": "cerca de 30 projetos (de grande e média dimensão)",
+    "valor_na_fonte": "30",
+    "medida": "cerca de 30 projetos, a chamada «A Nossa Vez» na candidatura",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "A Nossa Vez",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "orçamento global de dois milhões de euros",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN020",
+   "unidade": "C027",
+   "impresso": {
+    "pt": "1,3",
+    "en": "1,3"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 36
+    },
+    "excerto": "Orçamento da open call: 1.300.000€",
+    "valor_na_fonte": "1.300.000",
+    "medida": "o orçamento da chamada «A Nossa Vez» lançada em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "2. A NOSSA VEZ",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Público-Alvo: Sector cultural e artístico do Alentejo",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN021",
+   "unidade": "C028",
+   "impresso": {
+    "pt": "18",
+    "en": "18"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 15
+    },
+    "excerto": "Open Call “A Nossa Voz”, destinada aos 18 agrupamentos de escolas do Alentejo Central",
+    "valor_na_fonte": "18",
+    "medida": "os 18 agrupamentos de escolas da chamada «A Nossa Voz»",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN022",
+   "unidade": "C028",
+   "impresso": {
+    "pt": "400 000",
+    "en": "400 000"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 36
+    },
+    "excerto": "Orçamento da open call: 400.000€",
+    "valor_na_fonte": "400.000",
+    "medida": "o orçamento da chamada «A Nossa Voz» lançada em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "1. A NOSSA VOZ",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Parceiros: Plano Nacional das Artes",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN032",
+   "unidade": "N02.R1",
+   "impresso": {
+    "pt": "518 203,10",
+    "en": "518 203,10"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 44
+    },
+    "excerto": "CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00 2 000 000,00 999 000,00 ÉVORA",
+    "valor_na_fonte": "518 203,10",
+    "medida": "a linha «CIDADE DE ÉVORA» do cronograma da receita, em 2022",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "2022 2023 2024 2025 2026 2027 2028",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN033",
+   "unidade": "N02.R1",
+   "impresso": {
+    "pt": "2 002 750,00",
+    "en": "2 002 750,00"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 44
+    },
+    "excerto": "CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00 2 000 000,00 999 000,00 ÉVORA",
+    "valor_na_fonte": "2 002 750,00",
+    "medida": "a mesma linha, em 2026",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "2022 2023 2024 2025 2026 2027 2028",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN034",
+   "unidade": "N02.R1",
+   "impresso": {
+    "pt": "999 000,00",
+    "en": "999 000,00"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 44
+    },
+    "excerto": "CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00 2 000 000,00 999 000,00 ÉVORA",
+    "valor_na_fonte": "999 000,00",
+    "medida": "a mesma linha, em 2028",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "2022 2023 2024 2025 2026 2027 2028",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN037",
+   "unidade": "N03.R1",
+   "impresso": {
+    "pt": "56",
+    "en": "56"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 11
+    },
+    "excerto": "The bid relies on a solid operational budget amounting to €56 million.",
+    "valor_na_fonte": "56",
+    "medida": "o orçamento operacional de Aveiro",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "Aveiro",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN038",
+   "unidade": "N03.R1",
+   "impresso": {
+    "pt": "17,75",
+    "en": "17,75"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 11
+    },
+    "excerto": "The relatively high contribution of the City (€17,75 million covering 32% of the budget)",
+    "valor_na_fonte": "17,75",
+    "medida": "a contribuição da cidade de Aveiro",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "Aveiro",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN039",
+   "unidade": "N03.R1",
+   "impresso": {
+    "pt": "32%",
+    "en": "32%"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 11
+    },
+    "excerto": "The relatively high contribution of the City (€17,75 million covering 32% of the budget)",
+    "valor_na_fonte": "32",
+    "medida": "a parte da cidade no orçamento de Aveiro",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "Aveiro",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN040",
+   "unidade": "N03.R2",
+   "impresso": {
+    "pt": "48",
+    "en": "48"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 17
+    },
+    "excerto": "This brings the total operating budget to €48 million",
+    "valor_na_fonte": "48",
+    "medida": "o orçamento operacional de Braga",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "Braga",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN041",
+   "unidade": "N03.R2",
+   "impresso": {
+    "pt": "9,7",
+    "en": "9,7"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 17
+    },
+    "excerto": "The municipality of Braga doubled its investment in Braga2027 (reaching now around €9,7 million)",
+    "valor_na_fonte": "9,7",
+    "medida": "a contribuição do município de Braga",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN042",
+   "unidade": "N03.R3",
+   "impresso": {
+    "pt": "44,65",
+    "en": "44,65"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 31
+    },
+    "excerto": "The operating budget remains unchanged at €44,65 million",
+    "valor_na_fonte": "44,65",
+    "medida": "o orçamento operacional de Ponta Delgada",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "Ponta Delgada",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN043",
+   "unidade": "N03.R4",
+   "impresso": {
+    "pt": "45,7",
+    "en": "45,7"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 24
+    },
+    "excerto": "The Évora programme is based on a sound operational budget amounting to €45,7 million",
+    "valor_na_fonte": "45,7",
+    "medida": "o orçamento operacional de Évora",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN044",
+   "unidade": "N03.R4",
+   "impresso": {
+    "pt": "10,5",
+    "en": "10,5"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 24
+    },
+    "excerto": "the Municipality of Évora to double its contribution (€10,5 million, covering almost 23% of the budget)",
+    "valor_na_fonte": "10,5",
+    "medida": "a contribuição do município de Évora",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN045",
+   "unidade": "N03.R4",
+   "impresso": {
+    "pt": "23%",
+    "en": "23%"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+    "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 24
+    },
+    "excerto": "the Municipality of Évora to double its contribution (€10,5 million, covering almost 23% of the budget)",
+    "valor_na_fonte": "23",
+    "medida": "a parte do município no orçamento de Évora",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN052",
+   "unidade": "N08.R1",
+   "impresso": {
+    "pt": "400.000",
+    "en": "400.000"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 36
+    },
+    "excerto": "Orçamento da open call: 400.000€",
+    "valor_na_fonte": "400.000",
+    "medida": "o orçamento da chamada «A Nossa Voz» lançada em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "1. A NOSSA VOZ",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Parceiros: Plano Nacional das Artes",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN053",
+   "unidade": "N08.R3",
+   "impresso": {
+    "pt": "30",
+    "en": "30"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 10
+    },
+    "excerto": "cerca de 30 projetos (de grande e média dimensão)",
+    "valor_na_fonte": "30",
+    "medida": "cerca de 30 projetos, a chamada «A Nossa Vez» na candidatura",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "A Nossa Vez",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "orçamento global de dois milhões de euros",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN054",
+   "unidade": "N08.R3",
+   "impresso": {
+    "pt": "1.300.000",
+    "en": "1.300.000"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 36
+    },
+    "excerto": "Orçamento da open call: 1.300.000€",
+    "valor_na_fonte": "1.300.000",
+    "medida": "o orçamento da chamada «A Nossa Vez» lançada em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "2. A NOSSA VEZ",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Público-Alvo: Sector cultural e artístico do Alentejo",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN055",
+   "unidade": "N08.R4",
+   "impresso": {
+    "pt": "6 000 000",
+    "en": "6 000 000"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 10
+    },
+    "excerto": "Orçamento: 6 000 000€",
+    "valor_na_fonte": "6 000 000",
+    "medida": "o orçamento da chamada «O Nosso Laboratório» na candidatura",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "O Nosso Laboratório",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Público-alvo: Cena cultural internacional",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN056",
+   "unidade": "N08.R4",
+   "impresso": {
+    "pt": "2.000.000",
+    "en": "2.000.000"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 37
+    },
+    "excerto": "Orçamento da open call: 2.000.000€",
+    "valor_na_fonte": "2.000.000",
+    "medida": "o orçamento da chamada «O Nosso Laboratório» lançada em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "3. O NOSSO LABORATÓRIO (OUR LAB)",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Público-Alvo: Ecossistema Cultural Internacional",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN057",
+   "unidade": "N08.R5",
+   "impresso": {
+    "pt": "1.000.000",
+    "en": "1.000.000"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 37
+    },
+    "excerto": "Orçamento da open call: 1.000.000€",
+    "valor_na_fonte": "1.000.000",
+    "medida": "o orçamento da chamada da Linha do Vagar, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "4. LINHA DO VAGAR – OPEN CALL",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Público-Alvo: Sector cultural e artístico nacional",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "id": "LN064",
+   "unidade": "N10.R1",
+   "impresso": {
+    "pt": "1,75",
+    "en": "1,75"
+   },
+   "tipo": "transcrito",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 58
+    },
+    "excerto": "Aprovação 1,75 Milhões de Euros",
+    "valor_na_fonte": "1,75",
+    "medida": "a aprovação da operação VAGAR, no detalhe das contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "1. VAGAR – CAPITAL EUROPEIA DA CULTURA ÉVORA_27",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   }
+  },
+  {
+   "id": "LN072",
+   "unidade": "N20.1",
+   "impresso": {
+    "pt": "20 068 589,09",
+    "en": "20 068 589,09"
+   },
+   "tipo": "derivado",
+   "conta": "3 750 000,00 + 80 000,00 + 240 000,00 + 52 500,00 + 4 000 000,00 + 2 500 000,00 + 60 000,00 + 60 000,00 + 9 326 089,09",
+   "valor": 20068589.09,
+   "parcelas": [
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "(GEPAC) - MINISTÉRIO DA CULTURA 3 750 000,00 €",
+     "valor_na_fonte": "3 750 000,00",
+     "medida": "GEPAC",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "TURISMO DE PORTUGAL 80 000,00 €",
+     "valor_na_fonte": "80 000,00",
+     "medida": "Turismo de Portugal",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "PORTUGAL 2030 240 000,00 €",
+     "valor_na_fonte": "240 000,00",
+     "medida": "Portugal 2030",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "INTERREG EUROPE 52 500,00 €",
+     "valor_na_fonte": "52 500,00",
+     "medida": "Interreg Europe",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "REGIONAL DO ALENTEJO 2021-2027 4 000 000,00 €",
+     "valor_na_fonte": "4 000 000,00",
+     "medida": "Alentejo 2030, a primeira linha",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "REGIONAL DO ALENTEJO 2021-2027 2 500 000,00 €",
+     "valor_na_fonte": "2 500 000,00",
+     "medida": "Alentejo 2030, a segunda linha",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "Inovação Social 60 000,00 €",
+     "valor_na_fonte": "60 000,00",
+     "medida": "Alentejo 2030, inovação social",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "APOIO Á CONTRATAÇÃO IEFP 60 000,00 €",
+     "valor_na_fonte": "60 000,00",
+     "medida": "IEFP",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 51
+     },
+     "excerto": "FUNDO DE FOMENTO CULTURAL)) 9 326 089,09 €",
+     "valor_na_fonte": "9 326 089,09",
+     "medida": "transferência de saldos",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    }
+   ],
+   "comparado_com": {
+    "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+    "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 51
+    },
+    "excerto": "RECEITAS 20 008 589,09 € SUBSÍDIOS À EXPLORAÇÃO",
+    "valor_na_fonte": "20 008 589,09",
+    "medida": "o subtotal impresso dos subsídios à exploração",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   },
+   "nota": "60 000 € = 20 068 589,09 − 20 008 589,09, a diferença para o subtotal que a página imprime"
+  },
+  {
+   "id": "LN074",
+   "unidade": "N19.1",
+   "impresso": {
+    "pt": "36 000",
+    "en": "36 000"
+   },
+   "tipo": "derivado",
+   "conta": "17 478 076,66 − 17 442 076,66",
+   "valor": 36000,
+   "parcelas": [
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 48
+     },
+     "excerto": "Execução de Projetos Cofinanciados 16 813 825,41 € TOTAL 17 478 076,66 €",
+     "valor_na_fonte": "17 478 076,66",
+     "medida": "o total do detalhe dessa rubrica",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "rotulo_na_pagina": [
+      {
+       "palavras": "Fornecimentos e Serviços Externos",
+       "na_mesma_pagina": true
+      }
+     ],
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+     "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 48
+     },
+     "excerto": "Despesas 2026 17 442 076,66 € Fornecimentos e Serviços Externos",
+     "valor_na_fonte": "17 442 076,66",
+     "medida": "os fornecimentos e serviços externos no resumo da despesa",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    }
+   ]
+  }
+ ],
+ "numeros_da_cabeca": [
+  {
+   "unidade": "C007",
+   "numero": "34",
+   "medida": "os 34 milhões dados como transferidos no relato ao painel",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "painel-transferido",
+    "valor": "34",
+    "excerto": "27-ce-monitorizacao-2-2025-07.pdf (folha 8, página impressa 8) → \"do Alentejo Central. €34 million has been transferred to the Association already,\""
+   }
+  },
+  {
+   "unidade": "C007",
+   "numero": "1,5",
+   "medida": "a Linha do Vagar paga em 2025, segundo as contas (não é o prémio nem a linha do plano)",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 57
+    },
+    "excerto": "– Linha do Vagar. Pago 1.500.000€ durante o ano de 2025",
+    "valor_na_fonte": "1.500.000",
+    "medida": "a Linha do Vagar paga em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "unidade": "C007",
+   "numero": "9,7",
+   "medida": "a soma do que as contas declaram recebido do protocolo até ao fim de 2025",
+   "tipo": "derivado",
+   "conta": "2.000.000 + 3.750.000 + 3.920.000",
+   "valor": 9670000,
+   "parcelas": [
+    {
+     "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+     "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 72
+     },
+     "excerto": "no valor de € 2.000.000 a pagar em 2024",
+     "valor_na_fonte": "2.000.000",
+     "medida": "a contribuição inicial do Estado, de 2024, que as contas dão como recebida",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": true
+     },
+     "rotulo_na_pagina": [
+      {
+       "palavras": "procedeu-se à reclassificação do montante recebido",
+       "na_mesma_pagina": true
+      }
+     ],
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido"
+    },
+    {
+     "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+     "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 57
+     },
+     "excerto": "contratualizados. Pago 3.750.000€ durante o ano de 2025",
+     "valor_na_fonte": "3.750.000",
+     "medida": "a cultura paga em 2025, nas contas",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": false
+     },
+     "rotulo_na_pagina": [
+      {
+       "palavras": "15 milhões de euros GEPAC",
+       "na_mesma_pagina": true
+      }
+     ],
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido, menos numero_em_pdf",
+     "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+    },
+    {
+     "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+     "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+     "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+     "tipo": "pdf",
+     "lugar": {
+      "type": "pdf",
+      "page": 57
+     },
+     "excerto": "(Ministério da Economia e Coesão) contratualizados. Pago 3.920.000€ durante o ano de 2025",
+     "valor_na_fonte": "3.920.000",
+     "medida": "o turismo pago em 2025, nas contas",
+     "conferido_pelo_motor": {
+      "inteiro": true,
+      "valor_presente": true,
+      "numero_em_pdf": false
+     },
+     "rotulo_na_pagina": [
+      {
+       "palavras": "4 milhões de euros Turismo de Portugal",
+       "na_mesma_pagina": true
+      }
+     ],
+     "pede_leitura_na_imagem": false,
+     "estado": "conferido, menos numero_em_pdf",
+     "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+    }
+   ]
+  },
+  {
+   "unidade": "C007",
+   "numero": "80 000",
+   "medida": "o que o plano prevê receber do turismo em 2026 (a linha do Turismo de Portugal na receita de 2026, p. 45)",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "plano-turismo",
+    "valor": "80 000,00",
+    "excerto": "41-e27-plano-atividades-orcamento-2026.pdf (folha 45, página impressa 45) → \"Turismo de Portugal 80 000,00 € Protocolo Turismo Portugal\""
+   }
+  },
+  {
+   "unidade": "C008",
+   "numero": "2",
+   "medida": "a parte do município em 2025 no cronograma da candidatura",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 44
+    },
+    "excerto": "CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00",
+    "valor_na_fonte": "2 000 000,00",
+    "medida": "a mesma linha, em 2025 (o excerto acaba antes do valor de 2027, que é igual)",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "2022 2023 2024 2025 2026 2027 2028",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido"
+   }
+  },
+  {
+   "unidade": "C009",
+   "numero": "12",
+   "medida": "o custo estimado do Centro Cultural na candidatura",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "bbs-obra-centro-cultural",
+    "valor": "12 000 000,00",
+    "excerto": "01-bidbook-selecao-PT.pdf (folha 55, página impressa 108) → \"Centro Cultural de Utilizações Construção 12 000 000,00 2023−26 Projeto Academia do Vagar os restan"
+   }
+  },
+  {
+   "unidade": "C009",
+   "numero": "3",
+   "medida": "o custo estimado do centro de dança na candidatura",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "bbs-obra-danca",
+    "valor": "3 000 000,00",
+    "excerto": "01-bidbook-selecao-PT.pdf (folha 55, página impressa 108) → \"Centro Nacional para a Dança Reabilitação do antigo Núcleo de Seleção e 3 000 000,00 2023−26 Plano "
+   }
+  },
+  {
+   "unidade": "C011",
+   "numero": "49,5",
+   "medida": "o orçamento global no relato ao painel",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "painel-orcamento-global",
+    "valor": "49.5",
+    "excerto": "27-ce-monitorizacao-2-2025-07.pdf (folha 8, página impressa 8) → \"Financially, the project is backed by an overall budget of €49.5 million. Protocols\""
+   }
+  },
+  {
+   "unidade": "C011",
+   "numero": "1,75",
+   "medida": "a aprovação da operação VAGAR no detalhe das contas (a mesma prova da LN064)",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 58
+    },
+    "excerto": "Aprovação 1,75 Milhões de Euros",
+    "valor_na_fonte": "1,75",
+    "medida": "a aprovação da operação VAGAR, no detalhe das contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "1. VAGAR – CAPITAL EUROPEIA DA CULTURA ÉVORA_27",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   }
+  },
+  {
+   "unidade": "C014",
+   "numero": "2",
+   "medida": "o pagamento da cultura de 2024 que as contas declaram, igual ao teto de 2024 da resolução (rcm-2024)",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 72
+    },
+    "excerto": "no valor de € 2.000.000 a pagar em 2024",
+    "valor_na_fonte": "2.000.000",
+    "medida": "a contribuição inicial do Estado, de 2024, que as contas dão como recebida",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "procedeu-se à reclassificação do montante recebido",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   }
+  },
+  {
+   "unidade": "C015",
+   "numero": "3,92",
+   "medida": "o que o turismo pagou no fim de 2025, no plano",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "plano-turismo-pago-2025",
+    "valor": "3.920.000",
+    "excerto": "41-e27-plano-atividades-orcamento-2026.pdf (folha 46, página impressa 46) → \"Cultura 2027. Valores pagos no final de 2025 no montante de 3.920.000€;\""
+   }
+  },
+  {
+   "unidade": "C015",
+   "numero": "4",
+   "medida": "a parte do turismo (economia) no protocolo, no plano",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "plano-protocolo-economia",
+    "valor": "4.000.000,00",
+    "excerto": "41-e27-plano-atividades-orcamento-2026.pdf (folha 46, página impressa 46) → \"a) Ministério da Economia e da Transição Digital - 4.000.000,00€ (quatro milhões de"
+   }
+  },
+  {
+   "unidade": "C015",
+   "numero": "1,5",
+   "medida": "o reforço do Governo para a chamada nacional e as encomendas, no plano (p. 3)",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "plano-linha-do-vagar",
+    "valor": "1,5",
+    "excerto": "41-e27-plano-atividades-orcamento-2026.pdf (folha 3, página impressa 3) → \"viabilizada através de um reforço de financiamento assegurado junto do Governo, no va"
+   }
+  },
+  {
+   "unidade": "C022",
+   "numero": "1,75",
+   "medida": "o fundo aprovado da VAGAR no detalhe das contas e na lista de junho de 2026",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 58
+    },
+    "excerto": "Aprovação 1,75 Milhões de Euros",
+    "valor_na_fonte": "1,75",
+    "medida": "a aprovação da operação VAGAR, no detalhe das contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "1. VAGAR – CAPITAL EUROPEIA DA CULTURA ÉVORA_27",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   },
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "alt-vagar-fundo",
+    "valor": "1750000"
+   }
+  },
+  {
+   "unidade": "C027",
+   "numero": "2",
+   "medida": "o orçamento de «A Nossa Vez» na candidatura",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 10
+    },
+    "excerto": "Orçamento: 2 000 000€",
+    "valor_na_fonte": "2 000 000",
+    "medida": "o orçamento da chamada «A Nossa Vez» na candidatura",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "A Nossa Vez",
+      "na_mesma_pagina": true
+     },
+     {
+      "palavras": "Público-alvo: Artistas e associações culturais sedeados em Évora",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "unidade": "C027",
+   "numero": "30",
+   "medida": "cerca de 30 projetos (a prova da LN019, neste ficheiro)",
+   "linha_existente": {
+    "linha_LN": "LN019",
+    "nota": "a prova está acima, em «linhas_LN»"
+   }
+  },
+  {
+   "unidade": "C027",
+   "numero": "1,3",
+   "medida": "o orçamento de «A Nossa Vez» lançada (a prova da LN020, neste ficheiro)",
+   "linha_existente": {
+    "linha_LN": "LN020",
+    "nota": "a prova está acima, em «linhas_LN»"
+   }
+  },
+  {
+   "unidade": "C028",
+   "numero": "18",
+   "medida": "os 18 agrupamentos (a prova da LN021, neste ficheiro)",
+   "linha_existente": {
+    "linha_LN": "LN021",
+    "nota": "a prova está acima, em «linhas_LN»"
+   }
+  },
+  {
+   "unidade": "C028",
+   "numero": "400 000",
+   "medida": "o orçamento de «A Nossa Voz» lançada (a prova da LN022, neste ficheiro)",
+   "linha_existente": {
+    "linha_LN": "LN022",
+    "nota": "a prova está acima, em «linhas_LN»"
+   }
+  },
+  {
+   "unidade": "C028",
+   "numero": "500 000",
+   "medida": "o orçamento de «A Nossa Voz» na candidatura",
+   "prova": {
+    "copia": "01-bidbook-selecao-PT.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+    "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 10
+    },
+    "excerto": "Público-alvo: Agrupamentos escolares do Alentejo artistas internacionais. A par das outras open calls, «A Nossa Público-alvo: Sociedade civil, artistas amadores e profissionais da Orçamento: 500 000€",
+    "valor_na_fonte": "500 000",
+    "medida": "o orçamento da chamada «A Nossa Voz» na candidatura (a página está em colunas: o excerto junta a coluna de «A Nossa Voz» às vizinhas)",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "A Nossa Voz",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": true,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "unidade": "C033",
+   "numero": "2",
+   "medida": "os 2 milhões recebidos em 2024, segundo as contas",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 72
+    },
+    "excerto": "no valor de € 2.000.000 a pagar em 2024",
+    "valor_na_fonte": "2.000.000",
+    "medida": "a contribuição inicial do Estado, de 2024, que as contas dão como recebida",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": true
+    },
+    "rotulo_na_pagina": [
+     {
+      "palavras": "procedeu-se à reclassificação do montante recebido",
+      "na_mesma_pagina": true
+     }
+    ],
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido"
+   }
+  },
+  {
+   "unidade": "C033",
+   "numero": "1,5",
+   "medida": "a Linha do Vagar paga em 2025, segundo as contas",
+   "prova": {
+    "copia": "42-e27-relatorio-contas-2025.pdf.txt",
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+    "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "tipo": "pdf",
+    "lugar": {
+     "type": "pdf",
+     "page": 57
+    },
+    "excerto": "– Linha do Vagar. Pago 1.500.000€ durante o ano de 2025",
+    "valor_na_fonte": "1.500.000",
+    "medida": "a Linha do Vagar paga em 2025, nas contas",
+    "conferido_pelo_motor": {
+     "inteiro": true,
+     "valor_presente": true,
+     "numero_em_pdf": false
+    },
+    "pede_leitura_na_imagem": false,
+    "estado": "conferido, menos numero_em_pdf",
+    "porque_numero_em_pdf_falha": "a camada de texto cola o símbolo ao algarismo (por exemplo «400.000€» ou «€56»), e numero_em_pdf só agrupa palavras feitas só de algarismos, pontos e vírgulas; o valor está no excerto pela regra de conferir (valor presente)"
+   }
+  },
+  {
+   "unidade": "C054",
+   "numero": "34",
+   "medida": "os 34 milhões da comparação (o relato ao painel)",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "painel-transferido",
+    "valor": "34",
+    "excerto": "27-ce-monitorizacao-2-2025-07.pdf (folha 8, página impressa 8) → \"do Alentejo Central. €34 million has been transferred to the Association already,\""
+   }
+  }
+ ],
+ "datas": [
+  {
+   "id": "LN003",
+   "unidade": "C004",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN013",
+   "unidade": "C010",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN025",
+   "unidade": "C054",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN066",
+   "unidade": "B023.R8",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN067",
+   "unidade": "B023.R9",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN077",
+   "unidade": "B120.R2",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN078",
+   "unidade": "B120.R3",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "id": "LN080",
+   "unidade": "B120.R10",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura, 3 de novembro de 2026, e não um número",
+   "fonte": {
+    "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+    "chave": "acedido_em",
+    "valor": "2026-11-03T11:10:08.339505+00:00",
+    "endereco": "https://www.evora2027.com/noticias",
+    "sha256_do_corpo": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7"
+   }
+  },
+  {
+   "unidade": "C004",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura (a mesma da LN003)",
+   "linha_LN": "LN003"
+  },
+  {
+   "unidade": "C010",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura (a mesma da LN013)",
+   "linha_LN": "LN013"
+  },
+  {
+   "unidade": "C054",
+   "impresso": "3",
+   "o_que_e": "a data da segunda leitura (a mesma da LN025)",
+   "linha_LN": "LN025"
+  },
+  {
+   "unidade": "C035",
+   "impresso": "3",
+   "o_que_e": "o edital da reunião de 3 de setembro de 2026",
+   "copia": "64-cme-edital-rpc-2026-09-03.pdf.txt",
+   "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/64-cme-edital-rpc-2026-09-03.pdf",
+   "sha256": "9799f676593c421b6e95e77c46e026c5faeba02ef106a80f7758dc0dfad9c7fc",
+   "tipo": "pdf",
+   "lugar": {
+    "type": "pdf",
+    "page": 1
+   },
+   "excerto": "das seguintes deliberações tomadas na Reuniã o Pública de Câmara de 03 de setembro de 2026.",
+   "conferido_pelo_motor": {
+    "inteiro": true
+   }
+  },
+  {
+   "unidade": "C035",
+   "impresso": "15",
+   "o_que_e": "o edital da reunião de 15 de outubro de 2026",
+   "linha_existente": {
+    "livro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+    "id": "ev3-data-cm-15-10",
+    "excerto": "na Reunião Pública de Câmara de 15 de outubro de 2026"
+   }
+  }
+ ]
+}

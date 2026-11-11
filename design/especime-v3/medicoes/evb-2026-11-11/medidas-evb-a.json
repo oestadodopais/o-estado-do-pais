@@ -1,0 +1,82 @@
+{
+ "ocorrencias_por_resolver_em_portugues": {
+  "valor": "641",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(sum(1 for p in json.load(open(P+'gabaritos-paragens.json',encoding='utf-8')) if p['lingua']=='pt'))\""
+ },
+ "ocorrencias_por_resolver_em_ingles": {
+  "valor": "660",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(sum(1 for p in json.load(open(P+'gabaritos-paragens.json',encoding='utf-8')) if p['lingua']=='en'))\""
+ },
+ "por_resolver_em_portugues_que_sao_anos": {
+  "valor": "276",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(sum(1 for p in json.load(open(P+'gabaritos-paragens.json',encoding='utf-8')) if p['lingua']=='pt' and re.fullmatch(r'(19|20)\\\\d\\\\d',p['numero'])))\""
+ },
+ "por_resolver_em_portugues_de_um_a_tres_algarismos": {
+  "valor": "304",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(sum(1 for p in json.load(open(P+'gabaritos-paragens.json',encoding='utf-8')) if p['lingua']=='pt' and re.fullmatch(r'\\\\d{1,3}',p['numero'])))\""
+ },
+ "por_resolver_em_portugues_outros_valores": {
+  "valor": "61",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(sum(1 for p in json.load(open(P+'gabaritos-paragens.json',encoding='utf-8')) if p['lingua']=='pt' and not re.fullmatch(r'(19|20)\\\\d\\\\d|\\\\d{1,3}',p['numero'])))\""
+ },
+ "linhas_LN_paradas": {
+  "valor": "33",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(len(json.load(open(P+'paragens.json',encoding='utf-8'))))\""
+ },
+ "numeros_da_cabeca_parados": {
+  "valor": "36",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(len(json.load(open(P+'cabeca-numeros-paragens.json',encoding='utf-8'))))\""
+ },
+ "citacoes_paradas_nas_duas_linguas": {
+  "valor": "7",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(len(json.load(open(P+'citacoes-paragens.json',encoding='utf-8'))))\""
+ },
+ "citacoes_conferidas_em_portugues": {
+  "valor": "123",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(sum(1 for c in json.load(open(P+'citacoes-julgadas.json',encoding='utf-8')) if c['lingua']=='pt'))\""
+ },
+ "titulos_por_resolver": {
+  "valor": "3",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(len(json.load(open(P+'titulos-paragens.json',encoding='utf-8'))))\""
+ },
+ "avisos_de_atribuicao_por_rever": {
+  "valor": "11",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os,re;P=os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados/');print(len(json.load(open(P+'atribuicoes-por-rever.json',encoding='utf-8'))['casos']))\""
+ },
+ "algarismos_fora_de_marcadores_no_gabarito_portugues_do_16": {
+  "valor": "1232",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import re,os;t=open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/16 Évora Contas da Câmara/Technical Source/documento.pt.md.tmpl'),encoding='utf-8').read();print(len(re.findall(r'\\\\d[\\\\d .,]*\\\\d|\\\\d',re.sub(r'⟦[^⟧]*⟧','',t))))\""
+ },
+ "leituras_na_imagem": {
+  "valor": "7",
+  "comando": "python3 -c \"import json;print(len(json.load(open('LEITURAS-NA-IMAGEM.json',encoding='utf-8'))))\""
+ },
+ "provas_complementares_distintas": {
+  "valor": "39",
+  "comando": "python3 -c \"import json;print(json.load(open('PROVAS-complementares.json',encoding='utf-8'))['resumo']['provas_distintas'])\""
+ },
+ "provas_complementares_com_simbolo_colado_ao_numero": {
+  "valor": "19",
+  "comando": "python3 -c \"import json;print(json.load(open('PROVAS-complementares.json',encoding='utf-8'))['resumo']['provas_conferidas_menos_numero_em_pdf'])\""
+ },
+ "datas_de_leitura_nas_provas_complementares": {
+  "valor": "13",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-complementares.json',encoding='utf-8'))['datas']))\""
+ },
+ "citacoes_atribuidas_por_lingua": {
+  "valor": "126",
+  "comando": "python3 -c \"import json;print(len(json.load(open('CITACOES-atribuidas.json',encoding='utf-8'))['pt']))\""
+ },
+ "citacoes_com_documento_por_lingua": {
+  "valor": "122",
+  "comando": "python3 -c \"import json;print(sum(1 for c in json.load(open('CITACOES-atribuidas.json',encoding='utf-8'))['pt'] if c['classe']=='documento'))\""
+ },
+ "citacoes_corrigidas_pelo_lugar_de_direcao_nas_duas_linguas": {
+  "valor": "34",
+  "comando": "python3 -c \"import json;d=json.load(open('CITACOES-atribuidas.json',encoding='utf-8'));print(sum(1 for l in ('pt','en') for c in d[l] if 'corrigido_pelo_lugar_de_direcao' in c))\""
+ },
+ "citacoes_sem_conferencia_do_motor": {
+  "valor": "0",
+  "comando": "python3 -c \"import json;d=json.load(open('CITACOES-atribuidas.json',encoding='utf-8'));print(sum(1 for l in ('pt','en') for c in d[l] if c['classe']=='documento' and not c['conferido_pelo_motor']))\""
+ }
+}
