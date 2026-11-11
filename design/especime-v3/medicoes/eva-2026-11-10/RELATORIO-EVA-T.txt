@@ -1,0 +1,168 @@
+EVA-T, edição de lançamento do estudo das contas da Câmara de Évora
+11.11.2026
+
+1. Registos, commit 6ccb492f6.
+O exportador correu no motor em 5925531, com OEDP_SITE explícito e --write. Atravessaram os dois registos do estudo 16, os dois cortes e as duas entradas do manifesto. Cada registo tem 198 blocos. O registo português de quem governou a câmara foi reposto por guião. Também foram repostos os campos origin_ref que a corrida global alterara nos outros registos. Nos restantes estudos, só ficaram os quatro rh_manifest_sha256 autorizados, das duas línguas da economia e da Capital Europeia da Cultura. A conferência dos registos aceitou esta composição.
+
+2. Documentos, commit af783c54a.
+atravessar-documentos.py recebe <motor>, <slug> e <data>. Confere os dois manifestos e os bytes no commit que os escreveu antes de escrever qualquer edição. Copia raw e corrente, mede bytes, resumos e fetched_utc, escreve uma versão por língua e retira os ficheiros históricos desse estudo. O commit de origem dos HTML é d490827259544a24b050a773f5d691cbeaff340d. D5 passou.
+Português: 64830 bytes; e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332.
+Inglês: 64676 bytes; 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651.
+Os quatro ficheiros antigos de _edicoes saíram. O texto julgado não foi editado.
+
+3. História pública, commit 153783496.
+As duas publicações são de 2026-11-11, com updated nulo. A origem edicao-unica prende a data à única versão efetiva, ao ficheiro corrente e ao seu resumo. Conserva-se separadamente a prova do commit que introduziu o estudo no repositório. Não há faixa de atualização ou correção nem porta para uma edição guardada. As quatro rotas datadas redirecionam para o documento corrente da sua língua.
+As duas correções textuais de ensaio continuam, intactas, em CORRECOES_TEXTO_ENSAIO. Saíram do conjunto publicado. A contagem retirada correcoes-publicadas conserva 50, até à data selada da linha, incluindo a história de ensaio, sem selo novo. A correção da receita, posterior a essa data, não reescreve essa contagem. O registo público de correções continua vazio em ensaio.
+A testemunha com várias versões passou para evora-2027-capital-europeia-da-cultura, nas réguas da história e das datas. A ordem das novidades e os testes REC1 foram atualizados pela construção. A L1 desceu de 3518 para 3508. A primeira medição, 3506, vinha de uma construção intermédia sem novidades; foi corrigida pela construção completa, e essa diferença está nas medidas do construtor.
+Plantas: uma segunda versão recusa a origem edicao-unica; uma correção textual viva sem versão continua a dar ED1 órfã. Os testes existentes da história, das faixas e das datas mantêm as recusas.
+
+4. Nome, manchete e pergunta, commit e770d5f8b.
+Os dois title de studies.mjs e as descriptions ficaram intactos. O nome pode coincidir literalmente com o único h1 ou com a linha inteira em itálico imediatamente a seguir. Um nome inventado, uma linha não itálica ou uma linha deslocada recusam. O title da página do estudo e os nomes das listas e da agenda usam o nome do estudo; a manchete da página e do documento vem do registo, com o valor resolvido pela referência. A pergunta é C003, nas duas entradas verbatim. As transcrições do HTML estão adiante.
+
+5. Forma da página, commit cec366f47.
+A abertura fica contínua: pergunta, resposta e restante texto pela ordem do registo. A conferência compara a sequência completa das unidades, sem exigir Em resumo. Nas duas edições, 197 unidades do corpo seguem o h1 e há 29 quadros em caixas próprias. O índice vem dos títulos do registo. Foram conferidas as listas, as adagas, as notas, as portas e os quadros pelo HTML e pelo portão dos números. A planta que retira o parágrafo de abertura é recusada.
+A amostra do navegador passou a incluir explicitamente as duas páginas do estudo, os seus documentos e os recibos alterados. As larguras medidas são as da régua existente: 390, 768, 1024, 1280 e 1600.
+
+6. Leitura, commit 397375104.
+A frase prescrita usa os dois valores das linhas e a referência de ano { ref: '2025' }. O primeiro token não leva sufixo; o último conserva o espaço fixo e a unidade traduzida. Medidas e nota ficaram intactas. A origem é o parágrafo C004, nas duas línguas, na linha 48 de cada HTML, medida por guião. Os testes conferem os tokens, a ausência de algarismos manuais, o espaço fixo, o texto de origem e a linha. O HTML imprime os cêntimos que a linha dos pagamentos em atraso conserva.
+
+7. Frases julgadas, commit a243946c4.
+textos-julgados.json tem uma entrada por língua, com os resumos do documento e do texto julgado, o ficheiro, quem julgou, a data de fecho e o commit 5925531cd50b6f0b9cafbcfbfd71350c13e61e5f. A cobertura exige identidade entre declaração, manifesto dos documentos, manifesto dos registos, bytes do HTML e bytes do registo. Cada ocorrência é comparada literalmente com uma frase dos blocos, conservando os números. A normalização retira apenas os separadores invisíveis também retirados na leitura do HTML.
+Saíram exatamente 139 pendências do estudo; a lista ficou com 2202. A via anterior permanece para os estudos sem declaração. Os dois rótulos de IA são conferidos separadamente, contra o texto oficial e a porta do Método, no elemento próprio da página.
+Plantas: resumo trocado, ausência de quem julgou, data ou ficheiro, frase alheia e número adulterado recusam; sem declaração não há cobertura nova; um rótulo sem a porta correta recusa.
+O registo exportado não trazia o formato de proof_rows esperado pela C1. Acrescentei uma prova documental, sem dispensar números: cópia selada do livro do motor e mapa de corpos. O guião verificou os bytes dos documentos e os bytes no Git do motor. As 163 referências com corpo ficaram presas a 66 linhas e 10 documentos. Caminho, resumo, identificador e registo adulterados recusam.
+A paridade encontrou repetições numéricas nas traduções inglesas de citações portuguesas do texto julgado. Duas entradas exatas em paridade-excecoes.json declaram essas diferenças: 2025, 302, 61 e 50. A exceção exige a assinatura completa, os blocos e a rota; os testes de desvio e caducidade continuam a recusar. Não foi acrescentada uma isenção de números ao gate:html.
+
+8. Voz, commit 5063e2703.
+A frase dos limites de C055 foi conservada nas duas línguas, na página e no documento. As quatro exceções usam a classe fechada nova limite declarado do estudo e a razão prescrita. Saíram 18 exceções do texto antigo sem frase correspondente.
+As listas históricas VOZ-2A ficam intactas. Na aplicação corrente, saem as portas do estudo 16; nove entradas que também nomeiam outros documentos conservam essas portas. Mantém-se a distinção entre conferência integral de um estudo e mera presença numa porta adicional. As frases EV2 retiradas foram reclassificadas no inventário com a razão da substituição pelo texto julgado.
+A régua confundia o antigo rótulo Debt limit com a expressão dentro da leitura inglesa nova. Só a frase completa medida, com os valores retirados como a régua os lê, é admitida. O rótulo isolado e a frase com uma palavra acrescentada continuam a recusar. O inventário acompanha ainda a nova leitura, a data retirada e os rótulos das novidades.
+
+9. Execução de 2021.
+Motor: commit 247e6043. A travessia aponta agora para exec-total-2021-pct do estudo 16, conserva exec-2021-pct no livro do 07 e usa RELATÓRIO DE GESTÃO 2021, página 60, referência 2021 e o resumo be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a. O excerto é Total 65 108 759,70 57 113 924,56 87,72%.
+O guião de recortes localizou o excerto completo e único: 33 de 33 caracteres, uma linha, 3096 bytes. O recorte tem o resumo 04d476e0cb4a744fb5986702b98ae1470c3386780a9ff2256a56397a77af82a7. A cópia de teste recebe os mesmos bytes. A suíte do exportador passou 115 verificações em cada uma das duas passagens, cópia versionada e sítio vivo. O core.gate correu uma vez: código 0, 1019 segundos. O hook do commit declarou o portão adiado, pelo OEDP_GATE do lançador, e não o repetiu. motor-eva-t.log e motor-eva-t.codigo guardam o resultado sem caminhos da máquina.
+Sítio: commit 8cc7b6b34, com fechos posteriores descritos abaixo. A linha vale 87,72. A correção de 2026-11-11 guarda 96 e 87,72 e a razão longa prescrita nas duas línguas. A reconferência de 2026-09-01 mantém-se; o recibo identifica que confirmou o valor anterior. A história selada recebeu a entrada adicional, sem apagar as anteriores. Unidade, nome da medida, frases de municipios.mjs e medidas de leituras.mjs ficaram intactos.
+A mudança da edição documental fazia desaparecer 2021 da régua de 2025. A comparação agora reconhece apenas este par de totais, com fonte, unidade, períodos, documentos, páginas, endereços, resumo e excertos conferidos. O gate reconfere o par por uma implementação independente. As plantas trocam cada campo, o valor, a ordem e a linha Total por receita corrente, e são recusadas.
+O exportador alterou mais do que a linha pedida. Foram repostos doze ficheiros de outras linhas e dezanove entradas de cruzamento, enumerados adiante. No motor, a partição passou a nomear a linha antiga do 07 e as 515 linhas do 16 que não atravessam por esta travessia. A contagem da partição histórica passou de 2400 para 2404, medida nos registos: as quatro figuras do historial do 07 já não têm esta linha publicada.
+
+Fechos de conferência e listas adicionais.
+As plantas EVA passaram a integrar os comandos regulares do package.json. Foram acrescentadas amostras explícitas às conferências de largura e sobreposição. O perfil fechado eva-t-navegador do escrivão corre só check:leituras, check:sobreposicao e check:largura. Não corre verify nem a corrida inteira dos portões. A primeira tentativa de check:leituras dentro da sandbox encontrou um navegador numa suíte auxiliar e falhou com bootstrap_check_in ... Permission denied (1100); a conferência foi encaminhada para o escrivão.
+A mudança de fonte exigiu declarar a língua do título em src/i18n/lingua-dos-titulos.mjs e admitir RELATÓRIO DE GESTÃO como apoio literal alternativo da definição em tests/cartao/leituras-provadas.json. A definição não mudou.
+A correção ativou a frase fixa da leitura semanal sobre a ausência de alterações na primeira página. scripts/frases-modelos.json e o seu pino receberam esse modelo literal, por língua, limitado à leitura semanal e conferido contra strings.mjs. A EX1 recompõe a ausência. Uma página diferente ou palavras acrescentadas recusam. Não cresceu por-registar.json.
+Outras listas alteradas além das nomeadas no mandato: ledger/historias-valores.json; as duas exceções de paridade; a língua do título; os modelos de frases e o respetivo pino; as amostras do navegador; o repertório de frases integrais de voz-edicoes.mjs; o perfil fechado do escrivão; e, no motor, a partição de excluded e a cópia do recorte usada pelos testes. As provas documentais auxiliares novas têm resumos e plantas próprias.
+As duas primeiras corridas de build completo diagnosticaram, respetivamente, o apoio literal da definição e os estados do inventário da voz. As recusas foram corrigidas nas suas conferências. As verificações de datas feitas antes da meia-noite recusaram corretamente a publicação de 2026-11-11; a régua não foi afrouxada.
+
+Fecho visual: a sobreposição encontrou seis colisões entre a marca da casa e o rótulo de IA na faixa dos documentos, a 1024, 1280 e 1600, nas duas línguas. A faixa deste estudo recebeu espaço entre as linhas; o CSS e os bytes dos documentos julgados ficaram intactos, assim como as faixas dos outros estudos. A repetição dirigida mede o resultado.
+
+Resultado final.
+Cabeça construída: cd3f471ec23ef71a3259db2d6668cc87e839daf8. Motor: 247e6043dd1544d3e983d65c89eb2eee46842d21.
+A sobreposição inicial e a repetição de diagnóstico deram código 1; a repetição final de sobreposição deu código 0; a largura da primeira seleção deu código 0. O build final passou. As três conferências do navegador passaram pelo escrivão. A corrida inteira de verify e dos portões não foi executada. Nenhuma captura de páginas foi pedida ou produzida; as suites podem criar capturas sintéticas dos seus testes.
+Códigos finais lidos dos ficheiros:
+  check:registo: 0 (eva-t-final-check:registo.codigo)
+  check:documentos: 0 (eva-t-final-check:documentos.codigo)
+  check:edicoes: 0 (eva-t-final-check:edicoes.codigo)
+  check:datas: 0 (eva-t-final-check:datas.codigo)
+  check:paridade: 0 (eva-t-final-check:paridade.codigo)
+  check:selos: 0 (eva-t-final-check:selos.codigo)
+  check:lugar: 0 (eva-t-final-check:lugar.codigo)
+  ledger:check: 0 (eva-t-final-ledger:check.codigo)
+  check:rec1: 0 (eva-t-final-check:rec1.codigo)
+  check:cartao: 0 (eva-t-final-check:cartao.codigo)
+  check:frases-afirmacao: 0 (eva-t-definitivo-check:frases-afirmacao.codigo)
+  check:frases-reais: 0 (eva-t-definitivo-check:frases-reais.codigo)
+  check:lingua: 0 (eva-t-definitivo-check:lingua.codigo)
+  typecheck: 0 (eva-t-definitivo-typecheck.codigo)
+  build: 0 (build-eva-t.codigo) Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo.
+  check:voz: 0 (build-eva-t.codigo) Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo.
+  gate:html: 0 (build-eva-t.codigo) Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo.
+  check:cruzamento --with-origin: 0 (eva-t-cruzamento-2021.codigo) Motor indicado explicitamente; seis avisos de resumos globais anteriores, sem divergência da linha.
+  check:leituras: 0 (check-leituras-eva-t.codigo)
+  check:sobreposicao: 0 (check-sobreposicao-eva-t.codigo)
+  check:largura: 0 (check-largura-eva-t.codigo)
+  core.gate: 0 (motor-eva-t.codigo)
+Os códigos anteriores e as plantas estão em codigos-eva-t.json; os resultados do HTML e as medidas estão em medidas-do-construtor-eva-t.json. Os oito ficheiros de plantas EVA terminaram com código 0: cadeia, edicao, execucao, leitura, modelos, nome, pagina, textos-julgados.
+
+Fechos posteriores aos nove commits.
+cd3f471ec EVA T5: separa a marca e o rótulo na faixa dos documentos julgados
+f8522852c EVA: fecha as declarações da língua, da voz e das frases na construção de lançamento
+ff6da6b3a EVA: confere a fonte anual da definição e dirige as provas de navegador ao escrivão
+dcbcea266 EVA T9: conserva a comparação entre as receitas totais de relatórios distintos
+b2869d56d EVA: prende as plantas novas às conferências e inclui as páginas alteradas no navegador
+8cc7b6b34 EVA T9: corrige a execução de 2021 para a receita total e conserva a história
+
+Frases impressas no HTML final (texto visível, sem o texto acessível dos chips de fonte).
+
+pt
+Ponto 4, title: As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação · O Estado do País
+Manchete da página e do documento: A Câmara de Évora pagou os empréstimos a tempo; o prazo médio de pagamento a fornecedores chegou a 137 dias
+Pergunta: A Câmara de Évora tem as contas em ordem?
+Ponto 6: A Câmara de Évora cumpre o limite legal da dívida e paga tarde a quem lhe vende: 137 dias, em média, para pagar a um fornecedor em 2025, e 4 976 172,24 euros em pagamentos em atraso no fim desse ano.
+Ponto 9, área: 87,72 % do orçamento; em 2021.
+Recibo de 2021: 87,72 % do orçamento.
+Razão da correção: O valor anterior, 96, é o do historial que o relatório das contas de 2025 recita na página 112. O Relatório de Gestão de 2021 imprime 87,72% para a execução da receita total (página 60, quadro 12), a medida da linha de 2025, e 95,61% para a receita corrente; a linha passa ao valor da receita total e a essa fonte.
+Recibo de 2025: 61,44 % do orçamento; período anterior 87,72 · 2021.
+Índice: Receita cobrada face ao orçamento; 87,72.
+Cartão de 2021: O Estado do País | linha do livro-razão | 87,72 % do orçamento | sem valor de referência | evora-execucao-da-receita-2021 · 2021 | oestadodopaís.pt · Publicado por: Município de Évora · Lido na fonte a 2026-08-10
+Cartão de 2025: O Estado do País | linha do livro-razão | 61,44 % do orçamento | sem valor de referência | evora-execucao-da-receita-2025 · 2025 | oestadodopaís.pt · Publicado por: Município de Évora · Lido na fonte a 2026-08-10
+
+en
+Ponto 4, title: The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification · O Estado do País
+Manchete da página e do documento: The Câmara de Évora paid its loans on time; the average time to pay suppliers reached 137 days
+Pergunta: Are the accounts of the Câmara de Évora in order?
+Ponto 6: The Câmara de Évora keeps within the legal debt limit and pays those who sell to it late: 137 days, on average, to pay a supplier in 2025, and 4 976 172,24 euros in overdue payments at the end of that year.
+Ponto 9, área: 87,72 % of the budget; in 2021.
+Recibo de 2021: 87,72 % of the budget.
+Razão da correção: The previous value, 96, is from the history that the report on the 2025 accounts recites on page 112. The 2021 Management Report prints 87.72% for the execution of total revenue (page 60, table 12), the measure of the 2025 row, and 95.61% for current revenue; the row now carries the total-revenue value and that source.
+Recibo de 2025: 61,44 % of the budget; período anterior 87,72 · 2021.
+Índice: Revenue collected against the budget; 87,72.
+Cartão de 2021: O Estado do País | ledger row | 87,72 % of the budget | no reference value | evora-execucao-da-receita-2021 · 2021 | oestadodopaís.pt · Published by: Município de Évora · Read at the source on 2026-08-10
+Cartão de 2025: O Estado do País | ledger row | 61,44 % of the budget | no reference value | evora-execucao-da-receita-2025 · 2025 | oestadodopaís.pt · Published by: Município de Évora · Read at the source on 2026-08-10
+
+Reposições depois do exportador das linhas.
+{
+  "ficheiros_repostos": [
+    "ledger/claims/evora-concentracao-vab4-2024.yml",
+    "ledger/claims/evora-divida-total-2017.yml",
+    "ledger/claims/evora-divida-total-2021.yml",
+    "ledger/claims/evora-divida-total-2024.yml",
+    "ledger/claims/evora-divida-total-2025.yml",
+    "ledger/claims/evora-excesso-endividamento-2014.yml",
+    "ledger/claims/evora-excesso-endividamento-2019.yml",
+    "ledger/claims/evora-limite-divida-2025.yml",
+    "ledger/claims/evora-margem-endividamento-2025.yml",
+    "ledger/claims/evora-vab-empresarial-2024.yml",
+    "ledger/claims/indice-de-divida-limite-legal.yml",
+    "ledger/claims/portugal-concentracao-vab4-2024.yml"
+  ],
+  "entradas_repostas": [
+    "evora-concentracao-vab4-2024",
+    "evora-divida-total-2017",
+    "evora-divida-total-2021",
+    "evora-divida-total-2024",
+    "evora-divida-total-2025",
+    "evora-excesso-endividamento-2014",
+    "evora-excesso-endividamento-2019",
+    "evora-limite-divida-2025",
+    "evora-margem-endividamento-2025",
+    "evora-prr-aprovado-2026",
+    "evora-prr-execucao-2026",
+    "evora-prr-municipio-contratado",
+    "evora-prr-pago-2026",
+    "evora-prr-universidade-contratado",
+    "evora-prr-vencido-aprovado-2026",
+    "evora-prr-vencido-quota-2026",
+    "evora-vab-empresarial-2024",
+    "indice-de-divida-limite-legal",
+    "portugal-concentracao-vab4-2024"
+  ]
+}
+
+Custos medidos à recolha do relatório, antes do commit documental final.
+238 chamadas de ferramentas; 86 corridas de conferência documentadas. Uma execução guardada por ficheiro de código; grupos contam uma vez, o invólucro dirigidas não duplica as seis corridas internas. Excluem-se exportação, recortes, construção, agenda, cartões e selo. Acrescentam-se cinco execuções do navegador: as três iniciais, o diagnóstico de sobreposição e a repetição final. As extrações do HTML com assertivas contam como conferências.
+Quatro builds completos, dois builds Astro intermédios e um core.gate. Três seleções de navegador: uma inicial com três conferências, uma de diagnóstico e uma final de sobreposição. A largura passou antes do ajuste exclusivamente vertical da faixa. Zero corridas inteiras dos portões e zero verify.
+tokens used: 32483989 (contador acumulado da sessão à recolha, incluindo entradas em cache).
+
+A largura mediu 76 famílias, 54 documentos, 151 páginas e 755 combinações, sem falhas. A repetição de sobreposição tem os seus resultados em sobreposicao-eva-t.json.
+
+Entrega.
+Os nove pontos estão implementados e conferidos. O lugar de direção ainda corre conferir-tudo.sh antes de publicar o ramo, conforme o mandato. Não houve push nem publicação. A revisão de outra família do inventário conserva o estado por ler; não se declarou essa revisão feita.

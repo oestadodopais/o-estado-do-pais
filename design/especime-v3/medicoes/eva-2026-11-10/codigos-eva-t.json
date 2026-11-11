@@ -1,0 +1,204 @@
+{
+  "finais": {
+    "check:registo": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:registo.codigo"
+    },
+    "check:documentos": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:documentos.codigo"
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:edicoes.codigo"
+    },
+    "check:datas": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:datas.codigo"
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:paridade.codigo"
+    },
+    "check:selos": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:selos.codigo"
+    },
+    "check:lugar": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:lugar.codigo"
+    },
+    "ledger:check": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-ledger:check.codigo"
+    },
+    "check:rec1": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:rec1.codigo"
+    },
+    "check:cartao": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:cartao.codigo"
+    },
+    "check:frases-afirmacao": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-check:frases-afirmacao.codigo"
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-check:frases-reais.codigo"
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-check:lingua.codigo"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-typecheck.codigo"
+    },
+    "build": {
+      "codigo": 0,
+      "ficheiro": "build-eva-t.codigo",
+      "nota": "Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo."
+    },
+    "check:voz": {
+      "codigo": 0,
+      "ficheiro": "build-eva-t.codigo",
+      "nota": "Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo."
+    },
+    "gate:html": {
+      "codigo": 0,
+      "ficheiro": "build-eva-t.codigo",
+      "nota": "Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo."
+    },
+    "check:cruzamento --with-origin": {
+      "codigo": 0,
+      "ficheiro": "eva-t-cruzamento-2021.codigo",
+      "nota": "Motor indicado explicitamente; seis avisos de resumos globais anteriores, sem divergência da linha."
+    },
+    "check:leituras": {
+      "codigo": 0,
+      "ficheiro": "check-leituras-eva-t.codigo"
+    },
+    "check:sobreposicao": {
+      "codigo": 0,
+      "ficheiro": "check-sobreposicao-eva-t.codigo"
+    },
+    "check:largura": {
+      "codigo": 0,
+      "ficheiro": "check-largura-eva-t.codigo"
+    },
+    "core.gate": {
+      "codigo": 0,
+      "ficheiro": "motor-eva-t.codigo"
+    }
+  },
+  "plantas": {
+    "nome": 0,
+    "execucao": 0,
+    "edicao": 0,
+    "modelos": 0,
+    "cadeia": 0,
+    "pagina": 0,
+    "textos-julgados": 0,
+    "leitura": 0
+  },
+  "historico": {
+    "eva-t-agenda.codigo": 0,
+    "eva-t-astro-1.codigo": 0,
+    "eva-t-build-cabeca.codigo": 1,
+    "eva-t-build-definitivo.codigo": 0,
+    "eva-t-build-final.codigo": 1,
+    "eva-t-build-intermedio.codigo": 0,
+    "eva-t-build-visual.codigo": 0,
+    "eva-t-cadeia.codigo": 0,
+    "eva-t-cam2-reparacao.codigo": 0,
+    "eva-t-cartoes.codigo": 0,
+    "eva-t-cruzamento-2021.codigo": 0,
+    "eva-t-datas.codigo": 1,
+    "eva-t-definitivo-check:frases-afirmacao.codigo": 0,
+    "eva-t-definitivo-check:frases-reais.codigo": 0,
+    "eva-t-definitivo-check:lingua.codigo": 0,
+    "eva-t-definitivo-typecheck.codigo": 0,
+    "eva-t-dirigidas.codigo": 0,
+    "eva-t-edicao.codigo": 0,
+    "eva-t-exportar-2021-2.codigo": 1,
+    "eva-t-exportar-2021-3.codigo": 0,
+    "eva-t-exportar-2021.codigo": 1,
+    "eva-t-final-check:cartao.codigo": 0,
+    "eva-t-final-check:cruzamento.codigo": 0,
+    "eva-t-final-check:datas.codigo": 0,
+    "eva-t-final-check:documentos.codigo": 0,
+    "eva-t-final-check:edicoes.codigo": 0,
+    "eva-t-final-check:frases-afirmacao.codigo": 1,
+    "eva-t-final-check:frases-reais.codigo": 1,
+    "eva-t-final-check:lingua.codigo": 1,
+    "eva-t-final-check:lugar.codigo": 0,
+    "eva-t-final-check:paridade.codigo": 0,
+    "eva-t-final-check:rec1.codigo": 0,
+    "eva-t-final-check:registo.codigo": 0,
+    "eva-t-final-check:selos.codigo": 0,
+    "eva-t-final-ledger:check.codigo": 0,
+    "eva-t-frases-reais-reparacao-2.codigo": 0,
+    "eva-t-frases-reais-reparacao.codigo": 1,
+    "eva-t-gate-com-cartoes.codigo": 0,
+    "eva-t-html-definitivo.codigo": 0,
+    "eva-t-html-fecho.codigo": 0,
+    "eva-t-html-medido.codigo": 0,
+    "eva-t-html-visual.codigo": 0,
+    "eva-t-html.codigo": 1,
+    "eva-t-ledger-2021-2.codigo": 0,
+    "eva-t-ledger-2021.codigo": 1,
+    "eva-t-leituras-final.codigo": 1,
+    "eva-t-lingua.codigo": 0,
+    "eva-t-lugar-2.codigo": 0,
+    "eva-t-lugar.codigo": 1,
+    "eva-t-motor-final.codigo": 0,
+    "eva-t-p1-final.codigo": 0,
+    "eva-t-p1-verificado.codigo": 0,
+    "eva-t-p1.codigo": 0,
+    "eva-t-p2.codigo": 0,
+    "eva-t-p3-datas.codigo": 1,
+    "eva-t-p3-fontes-2.codigo": 0,
+    "eva-t-p3-fontes.codigo": 1,
+    "eva-t-p3-lugar.codigo": 1,
+    "eva-t-p3-stamp.codigo": 0,
+    "eva-t-p3-verificar.codigo": 1,
+    "eva-t-p4-nome.codigo": 0,
+    "eva-t-p4.codigo": 0,
+    "eva-t-p5.codigo": 0,
+    "eva-t-p6.codigo": 0,
+    "eva-t-p7-cobertura.codigo": 1,
+    "eva-t-p7-final.codigo": 0,
+    "eva-t-p7-plantas-2.codigo": 0,
+    "eva-t-p7-plantas-3.codigo": 0,
+    "eva-t-p7-plantas.codigo": 0,
+    "eva-t-p7-provas.codigo": 0,
+    "eva-t-p8-fontes.codigo": 0,
+    "eva-t-p8-voz.codigo": 1,
+    "eva-t-paridade-2.codigo": 0,
+    "eva-t-paridade.codigo": 1,
+    "eva-t-planta-cadeia.codigo": 0,
+    "eva-t-planta-edicao.codigo": 0,
+    "eva-t-planta-execucao.codigo": 0,
+    "eva-t-planta-leitura.codigo": 0,
+    "eva-t-planta-modelos.codigo": 0,
+    "eva-t-planta-nome.codigo": 0,
+    "eva-t-planta-pagina.codigo": 0,
+    "eva-t-planta-textos-julgados.codigo": 0,
+    "eva-t-rec1.codigo": 0,
+    "eva-t-recorte-2021.codigo": 0,
+    "eva-t-registos.codigo": 0,
+    "eva-t-retirada-dentro.codigo": 0,
+    "eva-t-selos-2.codigo": 0,
+    "eva-t-selos.codigo": 1,
+    "eva-t-suite-exportador-2.codigo": 1,
+    "eva-t-suite-exportador-3.codigo": 0,
+    "eva-t-suite-exportador.codigo": 1,
+    "eva-t-typecheck-comparacao.codigo": 0,
+    "eva-t-typecheck-final.codigo": 0,
+    "eva-t-typecheck.codigo": 0,
+    "eva-t-voz-inventario.codigo": 1,
+    "eva-t-voz-reparacao.codigo": 1
+  }
+}

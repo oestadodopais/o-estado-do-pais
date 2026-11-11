@@ -5,5 +5,386 @@
   "comando": "npm run check:lugar",
   "ponto": "3",
   "codigo_antes_de_baixar_teto": 1,
-  "medicao_intermedia_sem_novidades": 3506
+  "medicao_intermedia_sem_novidades": 3506,
+  "cabeca_construida": "cd3f471ec23ef71a3259db2d6668cc87e839daf8",
+  "motor": "247e6043dd1544d3e983d65c89eb2eee46842d21",
+  "codigos_finais": {
+    "check:registo": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:registo.codigo"
+    },
+    "check:documentos": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:documentos.codigo"
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:edicoes.codigo"
+    },
+    "check:datas": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:datas.codigo"
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:paridade.codigo"
+    },
+    "check:selos": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:selos.codigo"
+    },
+    "check:lugar": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:lugar.codigo"
+    },
+    "ledger:check": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-ledger:check.codigo"
+    },
+    "check:rec1": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:rec1.codigo"
+    },
+    "check:cartao": {
+      "codigo": 0,
+      "ficheiro": "eva-t-final-check:cartao.codigo"
+    },
+    "check:frases-afirmacao": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-check:frases-afirmacao.codigo"
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-check:frases-reais.codigo"
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-check:lingua.codigo"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "ficheiro": "eva-t-definitivo-typecheck.codigo"
+    },
+    "build": {
+      "codigo": 0,
+      "ficheiro": "build-eva-t.codigo",
+      "nota": "Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo."
+    },
+    "check:voz": {
+      "codigo": 0,
+      "ficheiro": "build-eva-t.codigo",
+      "nota": "Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo."
+    },
+    "gate:html": {
+      "codigo": 0,
+      "ficheiro": "build-eva-t.codigo",
+      "nota": "Código do build final; check:voz e gate:html fazem parte do encadeamento && de build:conteudo."
+    },
+    "check:cruzamento --with-origin": {
+      "codigo": 0,
+      "ficheiro": "eva-t-cruzamento-2021.codigo",
+      "nota": "Motor indicado explicitamente; seis avisos de resumos globais anteriores, sem divergência da linha."
+    },
+    "check:leituras": {
+      "codigo": 0,
+      "ficheiro": "check-leituras-eva-t.codigo"
+    },
+    "check:sobreposicao": {
+      "codigo": 0,
+      "ficheiro": "check-sobreposicao-eva-t.codigo"
+    },
+    "check:largura": {
+      "codigo": 0,
+      "ficheiro": "check-largura-eva-t.codigo"
+    },
+    "core.gate": {
+      "codigo": 0,
+      "ficheiro": "motor-eva-t.codigo"
+    }
+  },
+  "plantas_eva": {
+    "nome": 0,
+    "execucao": 0,
+    "edicao": 0,
+    "modelos": 0,
+    "cadeia": 0,
+    "pagina": 0,
+    "textos-julgados": 0,
+    "leitura": 0
+  },
+  "historico_de_codigos": {
+    "eva-t-agenda.codigo": 0,
+    "eva-t-astro-1.codigo": 0,
+    "eva-t-build-cabeca.codigo": 1,
+    "eva-t-build-definitivo.codigo": 0,
+    "eva-t-build-final.codigo": 1,
+    "eva-t-build-intermedio.codigo": 0,
+    "eva-t-build-visual.codigo": 0,
+    "eva-t-cadeia.codigo": 0,
+    "eva-t-cam2-reparacao.codigo": 0,
+    "eva-t-cartoes.codigo": 0,
+    "eva-t-cruzamento-2021.codigo": 0,
+    "eva-t-datas.codigo": 1,
+    "eva-t-definitivo-check:frases-afirmacao.codigo": 0,
+    "eva-t-definitivo-check:frases-reais.codigo": 0,
+    "eva-t-definitivo-check:lingua.codigo": 0,
+    "eva-t-definitivo-typecheck.codigo": 0,
+    "eva-t-dirigidas.codigo": 0,
+    "eva-t-edicao.codigo": 0,
+    "eva-t-exportar-2021-2.codigo": 1,
+    "eva-t-exportar-2021-3.codigo": 0,
+    "eva-t-exportar-2021.codigo": 1,
+    "eva-t-final-check:cartao.codigo": 0,
+    "eva-t-final-check:cruzamento.codigo": 0,
+    "eva-t-final-check:datas.codigo": 0,
+    "eva-t-final-check:documentos.codigo": 0,
+    "eva-t-final-check:edicoes.codigo": 0,
+    "eva-t-final-check:frases-afirmacao.codigo": 1,
+    "eva-t-final-check:frases-reais.codigo": 1,
+    "eva-t-final-check:lingua.codigo": 1,
+    "eva-t-final-check:lugar.codigo": 0,
+    "eva-t-final-check:paridade.codigo": 0,
+    "eva-t-final-check:rec1.codigo": 0,
+    "eva-t-final-check:registo.codigo": 0,
+    "eva-t-final-check:selos.codigo": 0,
+    "eva-t-final-ledger:check.codigo": 0,
+    "eva-t-frases-reais-reparacao-2.codigo": 0,
+    "eva-t-frases-reais-reparacao.codigo": 1,
+    "eva-t-gate-com-cartoes.codigo": 0,
+    "eva-t-html-definitivo.codigo": 0,
+    "eva-t-html-fecho.codigo": 0,
+    "eva-t-html-medido.codigo": 0,
+    "eva-t-html-visual.codigo": 0,
+    "eva-t-html.codigo": 1,
+    "eva-t-ledger-2021-2.codigo": 0,
+    "eva-t-ledger-2021.codigo": 1,
+    "eva-t-leituras-final.codigo": 1,
+    "eva-t-lingua.codigo": 0,
+    "eva-t-lugar-2.codigo": 0,
+    "eva-t-lugar.codigo": 1,
+    "eva-t-motor-final.codigo": 0,
+    "eva-t-p1-final.codigo": 0,
+    "eva-t-p1-verificado.codigo": 0,
+    "eva-t-p1.codigo": 0,
+    "eva-t-p2.codigo": 0,
+    "eva-t-p3-datas.codigo": 1,
+    "eva-t-p3-fontes-2.codigo": 0,
+    "eva-t-p3-fontes.codigo": 1,
+    "eva-t-p3-lugar.codigo": 1,
+    "eva-t-p3-stamp.codigo": 0,
+    "eva-t-p3-verificar.codigo": 1,
+    "eva-t-p4-nome.codigo": 0,
+    "eva-t-p4.codigo": 0,
+    "eva-t-p5.codigo": 0,
+    "eva-t-p6.codigo": 0,
+    "eva-t-p7-cobertura.codigo": 1,
+    "eva-t-p7-final.codigo": 0,
+    "eva-t-p7-plantas-2.codigo": 0,
+    "eva-t-p7-plantas-3.codigo": 0,
+    "eva-t-p7-plantas.codigo": 0,
+    "eva-t-p7-provas.codigo": 0,
+    "eva-t-p8-fontes.codigo": 0,
+    "eva-t-p8-voz.codigo": 1,
+    "eva-t-paridade-2.codigo": 0,
+    "eva-t-paridade.codigo": 1,
+    "eva-t-planta-cadeia.codigo": 0,
+    "eva-t-planta-edicao.codigo": 0,
+    "eva-t-planta-execucao.codigo": 0,
+    "eva-t-planta-leitura.codigo": 0,
+    "eva-t-planta-modelos.codigo": 0,
+    "eva-t-planta-nome.codigo": 0,
+    "eva-t-planta-pagina.codigo": 0,
+    "eva-t-planta-textos-julgados.codigo": 0,
+    "eva-t-rec1.codigo": 0,
+    "eva-t-recorte-2021.codigo": 0,
+    "eva-t-registos.codigo": 0,
+    "eva-t-retirada-dentro.codigo": 0,
+    "eva-t-selos-2.codigo": 0,
+    "eva-t-selos.codigo": 1,
+    "eva-t-suite-exportador-2.codigo": 1,
+    "eva-t-suite-exportador-3.codigo": 0,
+    "eva-t-suite-exportador.codigo": 1,
+    "eva-t-typecheck-comparacao.codigo": 0,
+    "eva-t-typecheck-final.codigo": 0,
+    "eva-t-typecheck.codigo": 0,
+    "eva-t-voz-inventario.codigo": 1,
+    "eva-t-voz-reparacao.codigo": 1
+  },
+  "html_construido": {
+    "pt": {
+      "ponto4": {
+        "rota": "/estudos/evora-contas-da-camara-2010-2025",
+        "title": "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação · O Estado do País",
+        "manchete": "A Câmara de Évora pagou os empréstimos a tempo; o prazo médio de pagamento a fornecedores chegou a 137 dias",
+        "pergunta": "A Câmara de Évora tem as contas em ordem?",
+        "manchete_documento": "A Câmara de Évora pagou os empréstimos a tempo; o prazo médio de pagamento a fornecedores chegou a 137 dias"
+      },
+      "ponto6": {
+        "rota": "/municipios/evora",
+        "frase": "A Câmara de Évora cumpre o limite legal da dívida e paga tarde a quem lhe vende: 137 dias, em média, para pagar a um fornecedor em 2025, e 4 976 172,24 euros em pagamentos em atraso no fim desse ano."
+      },
+      "ponto9": {
+        "area": {
+          "rota": "/areas/economia-e-coesao-territorial",
+          "valor": "87,72 % do orçamento",
+          "periodo": "em 2021"
+        },
+        "recibo2021": {
+          "valor": "87,72 % do orçamento",
+          "razao": "O valor anterior, 96, é o do historial que o relatório das contas de 2025 recita na página 112. O Relatório de Gestão de 2021 imprime 87,72% para a execução da receita total (página 60, quadro 12), a medida da linha de 2025, e 95,61% para a receita corrente; a linha passa ao valor da receita total e a essa fonte."
+        },
+        "recibo2025": {
+          "valor": "61,44 % do orçamento",
+          "anterior": "87,72",
+          "enquadramento": "O enquadramentoPeríodo anterior87,72 · 2021"
+        },
+        "indice": {
+          "valor": "87,72",
+          "nome": "Receita cobrada face ao orçamento"
+        },
+        "cartoes": [
+          {
+            "ano": "2021",
+            "copia": [
+              "O Estado do País",
+              "linha do livro-razão",
+              "87,72 % do orçamento",
+              "sem valor de referência",
+              "evora-execucao-da-receita-2021 · 2021",
+              "oestadodopaís.pt · Publicado por: Município de Évora · Lido na fonte a 2026-08-10"
+            ]
+          },
+          {
+            "ano": "2025",
+            "copia": [
+              "O Estado do País",
+              "linha do livro-razão",
+              "61,44 % do orçamento",
+              "sem valor de referência",
+              "evora-execucao-da-receita-2025 · 2025",
+              "oestadodopaís.pt · Publicado por: Município de Évora · Lido na fonte a 2026-08-10"
+            ]
+          }
+        ]
+      }
+    },
+    "en": {
+      "ponto4": {
+        "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+        "title": "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification · O Estado do País",
+        "manchete": "The Câmara de Évora paid its loans on time; the average time to pay suppliers reached 137 days",
+        "pergunta": "Are the accounts of the Câmara de Évora in order?",
+        "manchete_documento": "The Câmara de Évora paid its loans on time; the average time to pay suppliers reached 137 days"
+      },
+      "ponto6": {
+        "rota": "/en/municipalities/evora",
+        "frase": "The Câmara de Évora keeps within the legal debt limit and pays those who sell to it late: 137 days, on average, to pay a supplier in 2025, and 4 976 172,24 euros in overdue payments at the end of that year."
+      },
+      "ponto9": {
+        "area": {
+          "rota": "/en/areas/economia-e-coesao-territorial",
+          "valor": "87,72 % of the budget",
+          "periodo": "in 2021"
+        },
+        "recibo2021": {
+          "valor": "87,72 % of the budget",
+          "razao": "The previous value, 96, is from the history that the report on the 2025 accounts recites on page 112. The 2021 Management Report prints 87.72% for the execution of total revenue (page 60, table 12), the measure of the 2025 row, and 95.61% for current revenue; the row now carries the total-revenue value and that source."
+        },
+        "recibo2025": {
+          "valor": "61,44 % of the budget",
+          "anterior": "87,72",
+          "enquadramento": "The comparisonsPrevious period87,72 · 2021"
+        },
+        "indice": {
+          "valor": "87,72",
+          "nome": "Revenue collected against the budget"
+        },
+        "cartoes": [
+          {
+            "ano": "2021",
+            "copia": [
+              "O Estado do País",
+              "ledger row",
+              "87,72 % of the budget",
+              "no reference value",
+              "evora-execucao-da-receita-2021 · 2021",
+              "oestadodopaís.pt · Published by: Município de Évora · Read at the source on 2026-08-10"
+            ]
+          },
+          {
+            "ano": "2025",
+            "copia": [
+              "O Estado do País",
+              "ledger row",
+              "61,44 % of the budget",
+              "no reference value",
+              "evora-execucao-da-receita-2025 · 2025",
+              "oestadodopaís.pt · Published by: Município de Évora · Read at the source on 2026-08-10"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "repostos_depois_do_exportador": {
+    "ficheiros_repostos": [
+      "ledger/claims/evora-concentracao-vab4-2024.yml",
+      "ledger/claims/evora-divida-total-2017.yml",
+      "ledger/claims/evora-divida-total-2021.yml",
+      "ledger/claims/evora-divida-total-2024.yml",
+      "ledger/claims/evora-divida-total-2025.yml",
+      "ledger/claims/evora-excesso-endividamento-2014.yml",
+      "ledger/claims/evora-excesso-endividamento-2019.yml",
+      "ledger/claims/evora-limite-divida-2025.yml",
+      "ledger/claims/evora-margem-endividamento-2025.yml",
+      "ledger/claims/evora-vab-empresarial-2024.yml",
+      "ledger/claims/indice-de-divida-limite-legal.yml",
+      "ledger/claims/portugal-concentracao-vab4-2024.yml"
+    ],
+    "entradas_repostas": [
+      "evora-concentracao-vab4-2024",
+      "evora-divida-total-2017",
+      "evora-divida-total-2021",
+      "evora-divida-total-2024",
+      "evora-divida-total-2025",
+      "evora-excesso-endividamento-2014",
+      "evora-excesso-endividamento-2019",
+      "evora-limite-divida-2025",
+      "evora-margem-endividamento-2025",
+      "evora-prr-aprovado-2026",
+      "evora-prr-execucao-2026",
+      "evora-prr-municipio-contratado",
+      "evora-prr-pago-2026",
+      "evora-prr-universidade-contratado",
+      "evora-prr-vencido-aprovado-2026",
+      "evora-prr-vencido-quota-2026",
+      "evora-vab-empresarial-2024",
+      "indice-de-divida-limite-legal",
+      "portugal-concentracao-vab4-2024"
+    ]
+  },
+  "custo": {
+    "chamadas_ate_recolha": 238,
+    "tipos_de_chamada": {
+      "custom_tool_call": 235,
+      "function_call": 3
+    },
+    "tokens_ate_recolha": {
+      "input_tokens": 32338044,
+      "cached_input_tokens": 31718528,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 145945,
+      "reasoning_output_tokens": 70563,
+      "total_tokens": 32483989
+    },
+    "codigos_individuais_guardados": 96,
+    "corridas_de_conferencia": 86,
+    "criterio": "Uma execução guardada por ficheiro de código; grupos contam uma vez, o invólucro dirigidas não duplica as seis corridas internas. Excluem-se exportação, recortes, construção, agenda, cartões e selo. Acrescentam-se cinco execuções do navegador: as três iniciais, o diagnóstico de sobreposição e a repetição final. As extrações do HTML com assertivas contam como conferências.",
+    "core_gate": 1,
+    "builds_completos": 4,
+    "construcoes_astro_intermedias": 2,
+    "corridas_inteiras_dos_portoes": 0,
+    "selecao_de_navegador": 3,
+    "verify": 0
+  }
 }
