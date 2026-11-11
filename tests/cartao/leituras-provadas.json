@@ -11096,9 +11096,18 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "document.title",
-                  "literal": "Prestação de Contas"
+                  "ou": [
+                    {
+                      "linha": "propria",
+                      "campo": "document.title",
+                      "literal": "Prestação de Contas"
+                    },
+                    {
+                      "linha": "propria",
+                      "campo": "document.title",
+                      "literal": "RELATÓRIO DE GESTÃO"
+                    }
+                  ]
                 }
               ]
             }
