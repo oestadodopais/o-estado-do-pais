@@ -1,0 +1,54 @@
+{
+ "entradas_nas_provas_da_segunda_ronda": {
+  "valor": "299",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['entradas']))\""
+ },
+ "entradas_em_portugues": {
+  "valor": "139",
+  "comando": "python3 -c \"import json;print(sum(1 for e in json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['entradas'] if e['lingua']=='pt'))\""
+ },
+ "entradas_em_ingles": {
+  "valor": "160",
+  "comando": "python3 -c \"import json;print(sum(1 for e in json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['entradas'] if e['lingua']=='en'))\""
+ },
+ "entradas_de_data_em_portugues": {
+  "valor": "111",
+  "comando": "python3 -c \"import json;print(sum(1 for e in json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['entradas'] if e['lingua']=='pt' and e['classe']=='data'))\""
+ },
+ "provas_distintas_da_segunda_ronda": {
+  "valor": "43",
+  "comando": "python3 -c \"import json;print(json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['resumo']['provas_distintas'])\""
+ },
+ "provas_da_segunda_ronda_conferidas": {
+  "valor": "37",
+  "comando": "python3 -c \"import json;print(json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['resumo']['provas_conferidas'])\""
+ },
+ "datas_numa_forma_que_a_regua_nao_le": {
+  "valor": "6",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-complementares-2.json',encoding='utf-8'))['resumo']['datas_numa_forma_que_a_regua_nao_le']))\""
+ },
+ "leituras_na_imagem": {
+  "valor": "9",
+  "comando": "python3 -c \"import json;print(len(json.load(open('LEITURAS-NA-IMAGEM.json',encoding='utf-8'))))\""
+ },
+ "ocorrencias_por_resolver_em_portugues": {
+  "valor": "109",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;r=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados-a/resumo-adenda.json'),encoding='utf-8'));print(r['edicoes']['pt']['ocorrencias_por_resolver'])\""
+ },
+ "ocorrencias_por_resolver_em_ingles": {
+  "valor": "131",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;r=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados-a/resumo-adenda.json'),encoding='utf-8'));print(r['edicoes']['en']['ocorrencias_por_resolver'])\""
+ },
+ "unidades_paradas": {
+  "valor": "56",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;r=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados-a/resumo-adenda.json'),encoding='utf-8'));print(r['unidades_paradas'])\""
+ },
+ "datas_integrais_paradas": {
+  "valor": "59",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;r=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados-a/resumo-adenda.json'),encoding='utf-8'));print(r['datas_integrais_paradas'])\""
+ },
+ "citacoes_conferidas": {
+  "valor": "252",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;r=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparados-a/resumo-adenda.json'),encoding='utf-8'));print(r['citacoes_conferidas'])\""
+ }
+}
