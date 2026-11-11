@@ -114,7 +114,8 @@ assert.equal(provas.atualB.saltadas.length, 53);
 assert.equal(provas.corAgua.saltadas.length, 32);
 assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas não retiradas da VOZ-2B têm de estar nas páginas declaradas');
 assert.deepEqual(provas.atualB.semPar, []);
-assert.equal(provas.atualB.semEntrada.length, 9);
+// REC2: oito frases sem entrada na repetição das páginas vivas, medidas após a construção.
+assert.equal(provas.atualB.semEntrada.length, 8);
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hig6-historica-'));
 try {
   const f = path.join(tmp, 'lista.json'); fs.writeFileSync(f, JSON.stringify(inicial));

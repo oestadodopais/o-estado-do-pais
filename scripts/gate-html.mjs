@@ -1,6 +1,6 @@
+#!/usr/bin/env node
 import { eventoDeEstudosRetirados } from '../src/lib/agenda-retirada.mjs';
 import { destinoDoRetirado } from './estudos-retirados-conferir.mjs';
-#!/usr/bin/env node
 import { emEnsaio, desdeOLancamento } from '../site.config.mjs';
 import { conferirLancamentoHtml, conferirRobotsTxt } from './lancamento-conferir.mjs';
 import {conferirTitulosCopiados,tituloCopiadoConfere} from './titulos-copiados.mjs';

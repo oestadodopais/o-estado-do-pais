@@ -28,7 +28,7 @@ const forma = d => `${d.slice(8,10)}.${d.slice(5,7)}.${d.slice(0,4)}`;
 const normal = s => s.replace(/\s+/g,' ').trim();
 export function publicacoesEsperadas(lang, manifesto=lerManifesto()) {
   const saida = [];
-  for (const w of WORKS) {
+  for (const w of WORKS.filter(w => w.estado !== 'retirado')) {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions.reduce((a,b) => (dataPublicacao(w,b) ?? '') > (dataPublicacao(w,a) ?? '') ? b : a);
     let atual=null;
     for(const v of manifesto.edicoes.find(d=>d.slug===w.slug&&d.lang===e.lang)?.edicoes.slice(1)??[])if(v.natureza==='atualizacao')atual=v;

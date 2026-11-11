@@ -72,16 +72,18 @@ for (const slug of [...new Set(lista.map(f => f.estudo))]) {
     fora++; console.log(`${slug} (desde ${d}): o bloco ${i} em ${l} muda sem entrada na lista: ${antes[i].slice(0, 140)}`);
   }
 }
-export const codigo = (sem, fora, planta, controlo, estudos) => (sem || fora || planta !== 2 || controlo !== 0 || !estudos ? 1 : 0);
+export const codigo = (sem, fora, planta, controlo, estudos, semEntradasAtivas = false) => (sem || fora || planta !== 2 || controlo !== 0 || (!estudos && !semEntradasAtivas) ? 1 : 0);
 // As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.
 const exemplo = lista.find(f => f.classe !== 'FICA');
 const plantasFora = [!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), exemplo ? explicado(exemplo.lingua, exemplo.frase) : antigas.pt.length === 0 && antigas.en.length === 0,
   conferirEstudo(['a', 'b'], ['a', 'b', 'Isto é novo.'], ['a', 'b'], ['a', 'b']).length === 1,
-  codigo(0, 1, 2, 0, 1) === 1, codigo(1, 0, 2, 0, 1) === 1, codigo(0, 0, 2, 0, 1) === 0];
+  codigo(0, 1, 2, 0, 1) === 1, codigo(1, 0, 2, 0, 1) === 1, codigo(0, 0, 2, 0, 1) === 0,
+  codigo(0, 0, 2, 0, 0) === 1, codigo(0, 0, 2, 0, 0, true) === 0,
+  codigo(1, 0, 2, 0, 0, true) === 1, codigo(0, 1, 2, 0, 0, true) === 1];
 // A planta: um par em que só o português muda tem de dar dois blocos sem par (o antigo e o novo); o mesmo par a mudar nas duas línguas, nenhum.
 const planta = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a', 'Isto entra.', 'c'], ['a', 'This enters this document.', 'c'], ['a', 'This enters this document.', 'c']).length;
 const controlo = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a', 'Isto entra.', 'c'], ['a', 'This enters this document.', 'c'], ['a', 'This enters.', 'c']).length;
 console.log(`estudos com as duas línguas: ${estudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 2: o bloco antigo e o novo), controlo ${controlo} (tem de ser 0)`);
 const mordem = plantasFora.filter(Boolean).length;
 console.log(`plantas do ramo fora da lista, do bloco novo e do código: ${mordem} de ${plantasFora.length}`);
-process.exitCode = codigo(total, fora, planta, controlo, lista.length ? estudos : 1) || (mordem !== plantasFora.length ? 1 : 0);
+process.exitCode = codigo(total, fora, planta, controlo, estudos, lista.length === 0) || (mordem !== plantasFora.length ? 1 : 0);
