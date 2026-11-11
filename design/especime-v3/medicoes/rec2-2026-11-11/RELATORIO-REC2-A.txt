@@ -1,0 +1,183 @@
+RELATÓRIO REC2-A
+
+Os cinco pontos receberam commits separados, seguidos de duas correções de prova.
+Cabeça de código construída e conferida: 90b374e146f7b2fd66a9188ac1f6ed352b3e4327.
+
+1. Publicadores
+A amostra percorre apenas edições guardadas que pertencem a edições publicadas.
+Exige expressamente a presença de evora-2027-capital-europeia-da-cultura em pt e en.
+O controlo intacto passa; acrescentar um byte antes de </body> continua recusado.
+A corrida inicial falhou com «ED3: falta a publicação» (código 1).
+A conferência corrigida passou (código 0), com 169 plantas e controlos.
+
+2. EO1
+A abertura B1 passa a percorrer PUBLISHED_WORKS. O sucessor escolhido é
+«evora-2027-capital-europeia-da-cultura», nas duas línguas, porque conserva
+a abertura «Em resumo» / «In brief» que a conferência mede. A presença das
+duas aberturas é obrigatória: uma seleção vazia não passa.
+Trocar o primeiro H2 por «Título trocado» continua recusado em ambas.
+A corrida inicial falhou ao abrir o HTML do estudo retirado (código 1).
+A conferência corrigida passou (código 0); a maquinaria contou 39 plantas.
+
+3. Acessibilidade
+Rotas:
+/estudos/evora-contas-da-camara-2010-2025/
+/en/studies/evora-contas-da-camara-2010-2025/
+Elemento: #bloco-117, «Os quatro eixos do plano» / «The plan's four axes».
+Antes: H4 depois do H2 «O que o plano de 2026 diz» / «What the 2026 plan says».
+O commit b8f958e64 tinha mudado a amostra de «evora-prometido-pago-auditado-2026»
+para este estudo. A nova amostra revelou o salto que já estava no documento.
+Depois: h4#bloco-117[aria-level="3"], com nível acessível 3 depois do H2.
+Os bytes da edição e do registo de origem mantêm-se; a correção só afeta a
+semântica acessível desse bloco da página. A régua H1 e os limites não mudaram.
+O teste novo recusou o HTML anterior (código 1). O perfil fechado rec2-a-alvos
+foi acrescentado ao escrivão para executar apenas as três fatias pedidas.
+
+4. Definição da contagem de Évora
+O HTML do recibo /livro-razao/estudos-evora-publicados/ imprime:
+É o número de estudos publicados cujo objeto é o concelho de Évora.
+O HTML do recibo /en/ledger/estudos-evora-publicados/ imprime:
+It is the number of studies published whose subject is the municipality of Évora.
+As frases foram extraídas de elementos do HTML construído, não apenas dos dados.
+O teste de contagens recusou o HTML anterior com a definição antiga (código 1).
+A linha edicoes-publicadas não foi alterada.
+
+5. Contagem da travessia dos registos
+Só o estado retirado dispensa a entrada. Um trabalho não retirado, ou desconhecido,
+sem edição publicada dá recusa explícita. As plantas usam manifestos temporários
+e invocam scripts/gate-html.mjs pela entrada real, sem alterar os registos originais.
+Resultados finais das plantas: controlo intacto 0; figura adicional no retirado 0;
+entrada evora-quem-governou-a-camara-2009-2025/en sem edição publicada 1.
+A suíte completa terminou com código 0.
+
+Commits de código, do mais recente para o primeiro:
+90b374e14 REC2: plantar a contagem dos registos com uma língua real
+e4b8b1008 REC2: alinhar a leitura provada com a definição de Évora
+b08f907ab REC2: limitar aos retirados a dispensa da contagem dos registos
+b508a8b21 REC2: alinhar a definição dos estudos publicados de Évora
+2662948d5 REC2: corrigir o nível acessível dos eixos do plano de Évora
+0bbe2765e REC2: provar a abertura publicada do sucessor de Évora 2027
+6fdab1995 REC2: conferir publicadores nas edições guardadas publicadas
+
+Dependências encontradas na prova
+O primeiro build terminou com código 1 em check:edicoes (K17). Faltava alinhar
+as frases e partes de tests/cartao/leituras-provadas.json com a definição nova.
+O apoio literal foi conferido na derivation da própria linha e manteve-se:
+«Contagem dos trabalhos publicados no arquivo cujo objeto é o município de Évora».
+Depois da correção, check:edicoes e check:cartao terminaram com código 0.
+A primeira corrida das plantas dos registos terminou com código 1: o idioma
+artificial zz foi recusado pelas rotas antes da contagem. A planta foi corrigida
+para usar uma língua real sem edição publicada e uma figura num registo retirado.
+O controlo dessa primeira corrida tinha terminado com código 0; o caso zz deu 1.
+Estas duas correções foram seladas à parte, depois dos cinco commits iniciais.
+Desvio ao mandato de um commit por ponto: dois commits corretivos adicionais,
+um do ponto 4 e outro da planta do ponto 5. Não se reescreveu o histórico.
+
+Outras ocorrências
+Os comandos de espera dos pontos 4 e 5 e do complemento do ponto 4 deram código 3 por
+batimento do escrivão. Os resultados efetivos dos pedidos e o histórico foram
+inspecionados: os três commits terminaram com código 0. Não foram duplicados.
+Uma consulta de diagnóstico a ps foi recusada pela sandbox; não houve escalada.
+Não se correram a lista inteira, capturas nem sessões auxiliares.
+Uma consulta auxiliar da partição teve um erro de sintaxe (código 1), corrigido
+na chamada seguinte (código 0): texto/en pertence à fatia 0; texto/pt à fatia 2.
+
+Resultado da acessibilidade
+check:alvos:0 = 0; check:alvos:1 = 0; check:alvos:2 = 0.
+As três fatias e a junção terminaram verdes pelo perfil rec2-a-alvos do escrivão.
+O elemento corrigido é h4#bloco-117[aria-level="3"] nas duas rotas indicadas.
+Não se alteraram a H1, a sua tolerância nem a seleção das páginas medidas.
+
+Códigos das invocações de topo, incluindo todos os vermelhos
+1. check:publicadores, reprodução inicial: 1
+2. check:eo1, reprodução inicial: 1
+3. check:publicadores, depois da correção: 0
+4. check:eo1, depois da correção: 0
+5. node tests/rec2/titulos.mjs, HTML anterior: 1
+6. node tests/rec2/contagens.mjs, HTML anterior: 1
+7. typecheck, primeira conferência: 0
+8. build, primeira cabeça: 1
+9. check:edicoes, correção da leitura provada: 0
+10. check:cartao, correção da leitura provada: 0
+11. node tests/rec2/registos-contagem.mjs, planta com zz: 1
+12. node tests/rec2/registos-contagem.mjs, plantas corrigidas: 0
+13. build, cabeça final: 0
+14. check:publicadores, final: 0
+15. check:eo1, final: 0
+16. typecheck, final: 0
+17. check:alvos:0: 0
+18. check:alvos:1: 0
+19. check:alvos:2: 0
+
+Passos registados de rec2-a-build, cabeça b08f907abc05775261adfa41a8ed4d808031bc28, build 1
+cadeia:build: 1
+npm run mapa:unidades: 0
+npm run ledger:check: 0
+npm run check:registo: 0
+npm run check:cruzamento: 0
+npm run check:documentos: 0
+node scripts/stamp-version.mjs --preparar: 0
+astro build: 0
+node scripts/calendario-paginas.mjs: 0
+npm run stamp:version: 0
+npm run cartoes: 0
+npm run gate:html: 0
+npm run check:edicoes: 1
+
+Passos registados de rec2-a-build-final, cabeça 90b374e146f7b2fd66a9188ac1f6ed352b3e4327, build 0
+npm run mapa:unidades: 0
+cadeia:build: 0
+npm run ledger:check: 0
+npm run check:registo: 0
+npm run check:cruzamento: 0
+npm run check:documentos: 0
+node scripts/stamp-version.mjs --preparar: 0
+astro build: 0
+node scripts/calendario-paginas.mjs: 0
+npm run stamp:version: 0
+npm run cartoes: 0
+npm run gate:html: 0
+npm run check:edicoes: 0
+npm run check:selos: 0
+npm run check:datas: 0
+npm run check:cadeia: 0
+npm run check:dados: 0
+npm run check:mapa: 0
+npm run check:regioes: 0
+npm run check:areas: 0
+npm run check:formas: 0
+npm run check:lugares: 0
+npm run check:pais: 0
+npm run check:voz: 0
+npm run check:paridade: 0
+npm run check:nomes: 0
+npm run check:lingua: 0
+npm run check:formato: 0
+npm run check:navegacao: 0
+npm run sinais: 0
+npm run check:discussao: 0
+
+Conferências internas requeridas
+check:rec2: 0 nos dois builds, dentro de gate:html; as provas dos títulos e das
+duas definições passaram aí sobre o HTML já construído.
+gate:html: 0 nos dois builds.
+check:voz: 0 no build final.
+check:registo e ledger:check: 0 nos dois builds.
+check:nd1: 0, dentro de gate:html.
+As entradas internas ligadas por && só permitem avançar quando saem com código 0.
+
+Provas e custo
+Chamadas diretas a ferramentas (exec e wait), incluindo a escrita e verificação deste relatório: 81.
+Invocações de topo de conferências: 19, discriminadas acima.
+Passos instrumentados dentro dos builds: 13 na primeira corrida e 31 na final.
+As plantas dos registos invocaram node scripts/gate-html.mjs cinco vezes:
+primeira corrida, 0 e 1 (a língua zz impediu chegar à contagem);
+corrida corrigida, 0, 0 e 1, com a recusa explícita da contagem no último caso.
+Verificação de sintaxe dos dois guiões do escrivão (sh -n): 0.
+Seleções pelo escrivão: dois builds e uma corrida das três fatias.
+Corridas da lista inteira: 0. Capturas de páginas: 0. Sessões auxiliares: 0.
+Registos: <temporario>/rec2-a-build/, <temporario>/rec2-a-build-final/,
+<temporario>/rec2-a-alvos/ e <temporario>/rec2-a-provas/.
+Não ficou nenhuma conferência pedida por correr nem nenhum vermelho final.
+O relatório é o ficheiro de entrega na worktree e não foi comitado:
+a cabeça do código permanece exatamente a que foi construída e conferida.
