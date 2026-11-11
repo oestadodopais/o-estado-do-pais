@@ -667,7 +667,8 @@ export function faixa(slug, lang) {
   const politica = portaDaPolitica(lang);
 
   return [
-    `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
+    // EVA-T: a marca e o rótulo de IA quebram em duas linhas nesta edição.
+    `<div data-oedp-faixa${slug === 'evora-contas-da-camara-2010-2025' ? ' style="row-gap:2em"' : ''} lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
     `<style>${estiloDaFaixa()}</style>`,
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
     emEnsaio() ? `<span class="rotulo-ia-linha" data-edicao-ensaio title="${atributo(ENSAIO[lang].acessivel)}">${texto(ENSAIO[lang].marca)} <span class="vh">${texto(ENSAIO[lang].acessivel)}</span></span>` : '',
