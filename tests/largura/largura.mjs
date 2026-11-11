@@ -63,7 +63,10 @@ async function correr() {
   const planta=args.includes('--planta');
   const saida=args.includes('--json') ? args[args.indexOf('--json')+1] : process.env.OEDP_LARGURA_JSON;
   const amostra=amostraDist(dist), resultados=[], falhas=[];
-  amostra.paginas=[...new Set([...amostra.paginas,...rotasDaHistoria()])];
+  // EVA-T: as duas páginas do texto julgado e os recibos cuja linha mudou.
+  const eva = ['estudos/evora-contas-da-camara-2010-2025', 'en/studies/evora-contas-da-camara-2010-2025',
+    ...['livro-razao','en/ledger'].flatMap(base => ['2021','2025'].map(ano => `${base}/evora-execucao-da-receita-${ano}`))].map(r => '/'+r+'/');
+  amostra.paginas=[...new Set([...amostra.paginas,...rotasDaHistoria(),...eva])];
   const tipos={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2','.webp':'image/webp'};
   const servidor=http.createServer((req,res)=>{
     try {
