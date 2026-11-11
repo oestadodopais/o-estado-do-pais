@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { WORKS, PUBLISHED_WORKS, PUBLISHED_EDITIONS, edicaoPublicada } from '../../src/data/studies.mjs';
-import { conferirPaginasDosEstudos } from '../../scripts/estudos-retirados-conferir.mjs';
+import { conferirPaginasDosEstudos, redirecionamentosDosRetirados, conferirRedirecionamentos, destinoDoRetirado } from '../../scripts/estudos-retirados-conferir.mjs';
 const retirados = WORKS.filter(w => w.estado === 'retirado');
 assert.equal(retirados.length, 6);
 assert(retirados.every(w => w.sucedidoPor?.length));
@@ -15,3 +15,16 @@ for (const rota of ['/estudos/antigo', '/en/studies/antigo/document/2026-08-20',
 }
 assert(conferirPaginasDosEstudos(works, rotas.slice(1)).some(e => e.includes('sem página')));
 console.log('REC2 estado: controlos verdes; página, documento datado e registo retirados recusados; publicado sem página recusado.');
+const arquivo = [{slug:'vivo'}, {slug:'antigo', estado:'retirado', sucedidoPor:[{slug:'vivo'}]}];
+const partida = {estudos:[{slug:'antigo', rotas:['/estudos/antigo/','/en/studies/antigo/document/'], redirecionamentos_anteriores:['/estudos/antigo/texto/']}]};
+const tabela = [...redirecionamentosDosRetirados(arquivo,partida), {handle:'filesystem'}];
+const conferir = (t=tabela, r=rotas) => conferirRedirecionamentos(arquivo,partida,t,r);
+assert.deepEqual(conferir(),[]);
+assert(conferir(tabela.slice(1)).some(e => e.includes('redirecionamento')));
+assert(conferir(tabela,rotas.slice(1)).some(e => e.includes('destino inexistente')));
+const manual = structuredClone(tabela);manual[0].headers.Location='/en/studies/vivo/';
+assert(conferir(manual).some(e => e.includes('redirecionamento')));
+assert(conferir(tabela,[...rotas,'/estudos/antigo']).some(e => e.includes('origem construída')));
+const multiplo = {slug:'antigo',subject:'evora',estado:'retirado',sucedidoPor:[{slug:'vivo'},{slug:'outro'}]};
+assert.equal(destinoDoRetirado(multiplo,'en',[{slug:'vivo'},{slug:'outro'}]),'/en/municipalities/evora/');
+console.log('REC2 redirecionamentos: ausência, destino inexistente, destino manual divergente e origem construída recusados; vários sucessores levam ao município.');

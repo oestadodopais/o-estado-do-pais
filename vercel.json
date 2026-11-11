@@ -11,6 +11,272 @@
   },
   "routes": [
     {
+      "src": "/estudos/evora-quinze-anos-cinco-mandatos/?",
+      "status": 301,
+      "headers": {
+        "Location": "/municipios/evora/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quinze-anos-cinco-mandatos/documento/?",
+      "status": 301,
+      "headers": {
+        "Location": "/municipios/evora/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quinze-anos-cinco-mandatos/documento/2026-08-20/?",
+      "status": 301,
+      "headers": {
+        "Location": "/municipios/evora/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-quinze-anos-cinco-mandatos/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/municipalities/evora/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quinze-anos-cinco-mandatos/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/municipios/evora/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/2026-08-12/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-economia-investidores-portas-abertas-2026/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-orcamentado-pago-devido-2025/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-orcamentado-pago-devido-2025/documento/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-orcamentado-pago-devido-2025/documento/2026-08-20/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-orcamentado-pago-devido-2025/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-orcamentado-pago-devido-2025/document/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-orcamentado-pago-devido-2025/document/2026-08-20/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-orcamentado-pago-devido-2025/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-orcamentado-pago-devido-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quem-governou-a-camara-2009-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quem-governou-a-camara-2009-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-quem-governou-a-camara-2009-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quem-governou-a-camara-2009-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-prometido-pago-auditado-2026/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-prometido-pago-auditado-2026/documento/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-prometido-pago-auditado-2026/documento/2026-08-20/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-prometido-pago-auditado-2026/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-prometido-pago-auditado-2026/document/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-prometido-pago-auditado-2026/document/2026-08-20/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-prometido-pago-auditado-2026/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-prometido-pago-auditado-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-prometido-painel-dinheiro/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-prometido-painel-dinheiro/documento/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-prometido-painel-dinheiro/documento/2026-09-16/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/document/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/document/2026-09-16/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-prometido-painel-dinheiro/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
       "src": "/estudos/evora-contas-da-camara-2010-2025/documento/2026-10-01/?",
       "status": 308,
       "headers": {
@@ -151,20 +417,6 @@
       }
     },
     {
-      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/text/?",
-      "status": 301,
-      "headers": {
-        "Location": "/en/studies/evora-2027-prometido-painel-dinheiro/"
-      }
-    },
-    {
-      "src": "/estudos/evora-2027-prometido-painel-dinheiro/texto/?",
-      "status": 301,
-      "headers": {
-        "Location": "/estudos/evora-2027-prometido-painel-dinheiro/"
-      }
-    },
-    {
       "src": "/en/studies/evora-contas-da-camara-2010-2025/text/?",
       "status": 301,
       "headers": {
@@ -193,59 +445,10 @@
       }
     },
     {
-      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/texto/?",
-      "status": 301,
-      "headers": {
-        "Location": "/estudos/evora-economia-investidores-portas-abertas-2026/"
-      }
-    },
-    {
-      "src": "/en/studies/evora-orcamentado-pago-devido-2025/text/?",
-      "status": 301,
-      "headers": {
-        "Location": "/en/studies/evora-orcamentado-pago-devido-2025/"
-      }
-    },
-    {
-      "src": "/estudos/evora-orcamentado-pago-devido-2025/texto/?",
-      "status": 301,
-      "headers": {
-        "Location": "/estudos/evora-orcamentado-pago-devido-2025/"
-      }
-    },
-    {
-      "src": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/?",
-      "status": 301,
-      "headers": {
-        "Location": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/"
-      }
-    },
-    {
-      "src": "/en/studies/evora-prometido-pago-auditado-2026/text/?",
-      "status": 301,
-      "headers": {
-        "Location": "/en/studies/evora-prometido-pago-auditado-2026/"
-      }
-    },
-    {
-      "src": "/estudos/evora-prometido-pago-auditado-2026/texto/?",
-      "status": 301,
-      "headers": {
-        "Location": "/estudos/evora-prometido-pago-auditado-2026/"
-      }
-    },
-    {
       "src": "/estudos/evora-quem-governou-a-camara-2009-2025/texto/?",
       "status": 301,
       "headers": {
         "Location": "/estudos/evora-quem-governou-a-camara-2009-2025/"
-      }
-    },
-    {
-      "src": "/estudos/evora-quinze-anos-cinco-mandatos/texto/?",
-      "status": 301,
-      "headers": {
-        "Location": "/estudos/evora-quinze-anos-cinco-mandatos/"
       }
     },
     {

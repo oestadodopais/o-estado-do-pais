@@ -1,3 +1,4 @@
+import { destinoDoRetirado } from './estudos-retirados-conferir.mjs';
 #!/usr/bin/env node
 import { emEnsaio, desdeOLancamento } from '../site.config.mjs';
 import { conferirLancamentoHtml, conferirRobotsTxt } from './lancamento-conferir.mjs';
@@ -8352,7 +8353,8 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
     const corte = chave.lastIndexOf('/');
     const slug = chave.slice(0, corte), lang = chave.slice(corte + 1);
     const antiga = routePath('texto', lang, { slug });
-    const destino = routePath('estudo', lang, { slug }) + '/';
+    const work = WORKS.find(w => w.slug === slug);
+    const destino = work?.estado === 'retirado' ? destinoDoRetirado(work, lang, WORKS) : routePath('estudo', lang, { slug }) + '/';
     const candidatas = entradas.filter(r => r.src === antiga + '/?');
     const r = candidatas[0];
     if (candidatas.length !== 1 || r?.status !== 301 || r?.headers?.Location !== destino ||
