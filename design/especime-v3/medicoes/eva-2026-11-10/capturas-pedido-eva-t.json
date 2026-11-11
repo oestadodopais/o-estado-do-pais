@@ -1,0 +1,45 @@
+{
+ "cabeca": "e83b0bceadf4e523e4a07b7013a41103b6caa8c2",
+ "paginas": [
+  {
+   "nome": "estudo",
+   "pt": "/estudos/evora-contas-da-camara-2010-2025/",
+   "en": "/en/studies/evora-contas-da-camara-2010-2025/"
+  },
+  {
+   "nome": "documento",
+   "pt": "/estudos/evora-contas-da-camara-2010-2025/documento/",
+   "en": "/en/studies/evora-contas-da-camara-2010-2025/document/"
+  },
+  {
+   "nome": "recibo-2021",
+   "pt": "/livro-razao/evora-execucao-da-receita-2021/",
+   "en": "/en/ledger/evora-execucao-da-receita-2021/"
+  },
+  {
+   "nome": "recibo-2025",
+   "pt": "/livro-razao/evora-execucao-da-receita-2025/",
+   "en": "/en/ledger/evora-execucao-da-receita-2025/"
+  },
+  {
+   "nome": "estudos",
+   "pt": "/estudos/",
+   "en": "/en/studies/"
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/"
+  },
+  {
+   "nome": "area",
+   "pt": "/areas/economia-e-coesao-territorial/",
+   "en": "/en/areas/economia-e-coesao-territorial/"
+  },
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/"
+  }
+ ]
+}

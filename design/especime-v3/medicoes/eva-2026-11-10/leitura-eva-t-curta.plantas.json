@@ -1,0 +1,82 @@
+[
+ {
+  "id": "U1a",
+  "ficheiro": "src/lib/fontes-anteriores.mjs",
+  "descricao": "uma reconferência posterior à correção leva a frase da fonte anterior",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "1d08a1e76d22738338fea050f7cc410afe0eecd0347e6649cc5042fa41f56bf8",
+  "sha256_depois": "3884781d94756b0c830bcaef8b6eaa6b008ab1a933ba6cbaef77642a4680a57e"
+ },
+ {
+  "id": "U1b",
+  "ficheiro": "diff.patch",
+  "descricao": "uma reconferência posterior à correção leva a frase da fonte anterior (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "75553bb4a4b332a43cf379970fabd0d5d28aa6a9a88c7a8e453fd93c6f6297a8",
+  "sha256_depois": "dd1b1df165b3257f5a1e0a95d7ad1dc3fc76aeb0e73aff157539c386a77437b2"
+ },
+ {
+  "id": "U2a",
+  "ficheiro": "ledger/fontes-anteriores.json",
+  "descricao": "a declaração diz uma página que a linha nunca citou",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "4fc419c2526d3feed1037b8241fd7d12ede984278c847ed0f934c2c93e308f93",
+  "sha256_depois": "7ea8fe8b1061ac30c930bb9ab490205a97afe30176f645247156fab718ebd048"
+ },
+ {
+  "id": "U2b",
+  "ficheiro": "diff.patch",
+  "descricao": "a declaração diz uma página que a linha nunca citou (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "dd1b1df165b3257f5a1e0a95d7ad1dc3fc76aeb0e73aff157539c386a77437b2",
+  "sha256_depois": "4c30c343351ff9727fae30e201117b70979d0a6c1d48f2dd675a63a00f6c3964"
+ },
+ {
+  "id": "U3a",
+  "ficheiro": "scripts/titulos-copiados.mjs",
+  "descricao": "uma linha que não está em itálico passa por nome copiado",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "f924c754b273cc4759a768e4a70033b70d2fdf2170b19f4490d6ea6df27bfb1a",
+  "sha256_depois": "49b96f893a56bd4f0f74f72eb98a484b850e50058717885d106f56bd07e0e933"
+ },
+ {
+  "id": "U3b",
+  "ficheiro": "diff.patch",
+  "descricao": "uma linha que não está em itálico passa por nome copiado (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "4c30c343351ff9727fae30e201117b70979d0a6c1d48f2dd675a63a00f6c3964",
+  "sha256_depois": "2aa848326df567f6e96abf62db9c23ea9d98eac7fb4bd9d001f640eef6d190f7"
+ },
+ {
+  "id": "U4a",
+  "ficheiro": "src/lib/ledger.mjs",
+  "descricao": "uma correção com a data do próprio selo deixa de contar",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "42cc88ce15cad3c6f4f5ce08576426ce0e75a328f695aedb1203b1938e3f563f",
+  "sha256_depois": "2535180c5e2a7665e9b4011bfaee0aa29e203c74f03a243514ba61de9763a33c"
+ },
+ {
+  "id": "U4b",
+  "ficheiro": "diff.patch",
+  "descricao": "uma correção com a data do próprio selo deixa de contar (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "2aa848326df567f6e96abf62db9c23ea9d98eac7fb4bd9d001f640eef6d190f7",
+  "sha256_depois": "36560cc2de66b4edf562dcebf79bac3fbc841c7e5acb5ba6692930f0983c1ec7"
+ },
+ {
+  "id": "U5a",
+  "ficheiro": "scripts/corpo-documental-julgado.mjs",
+  "descricao": "um caminho com .. passa na prova documental",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "1ed9b03c45535718a319916bb70fbe350a09e2b255ea27a8bed8508e15e15bc6",
+  "sha256_depois": "fbfcfdff72555ad8148de8da04e49509bcc2c71a1f6dbf63b620843d06caf7b6"
+ },
+ {
+  "id": "U5b",
+  "ficheiro": "diff.patch",
+  "descricao": "um caminho com .. passa na prova documental (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "36560cc2de66b4edf562dcebf79bac3fbc841c7e5acb5ba6692930f0983c1ec7",
+  "sha256_depois": "2e4d24188f487a38073546b980dca1b45063e9e3dfe4f63a5cae6a20dbf09155"
+ }
+]

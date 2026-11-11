@@ -1,0 +1,124 @@
+{
+ "bloco": "EVA (o estudo das contas da Câmara de Évora: o texto julgado no motor e a sua travessia para o sítio como uma edição só; a linha da execução da receita de 2021 na medida da de 2025)",
+ "data": "2026-11-11",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "a primeira passagem do motor (o texto julgado instalado: os documentos, as linhas próprias, os gabaritos, o conferidor)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T18:00:39Z",
+   "fim": "2026-11-10T19:03:05Z",
+   "pontos": 2.0,
+   "pontos_antes": 41.0,
+   "pontos_depois": 43.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-1b"
+  },
+  {
+   "nome": "adenda A do motor",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T19:06:07Z",
+   "fim": "2026-11-10T19:38:07Z",
+   "pontos": 4.0,
+   "pontos_antes": 43.0,
+   "pontos_depois": 47.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-a"
+  },
+  {
+   "nome": "adenda B do motor (as derivações de identidade com a forma impressa por língua)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T19:39:26Z",
+   "fim": "2026-11-10T20:27:01Z",
+   "pontos": 4.0,
+   "pontos_antes": 47.0,
+   "pontos_depois": 51.0,
+   "outras_sessoes": 2,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-b"
+  },
+  {
+   "nome": "adenda C do motor (as onze correções da leitura a frio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T20:48:46Z",
+   "fim": "2026-11-10T22:00:29Z",
+   "pontos": 6.0,
+   "pontos_antes": 51.0,
+   "pontos_depois": 57.0,
+   "outras_sessoes": 3,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-c"
+  },
+  {
+   "nome": "adenda D do motor (o título lido na imagem; o portão inteiro)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T22:05:53Z",
+   "fim": "2026-11-10T22:33:24Z",
+   "pontos": 1.0,
+   "pontos_antes": 57.0,
+   "pontos_depois": 58.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-d"
+  },
+  {
+   "nome": "a travessia para o sítio (nove pontos; o motor só no nono)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-10T23:25:58Z",
+   "fim": "2026-11-11T01:09:21Z",
+   "pontos": 7.0,
+   "pontos_antes": 58.0,
+   "pontos_depois": 65.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-t"
+  },
+  {
+   "nome": "adenda A da travessia (quatro correções da leitura a frio e o vermelho do check:indice)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T02:14:22Z",
+   "fim": "2026-11-11T02:40:37Z",
+   "pontos": 1.0,
+   "pontos_antes": 65.0,
+   "pontos_depois": 66.0,
+   "outras_sessoes": 0,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-t-a"
+  },
+  {
+   "nome": "adenda B da travessia (parou, bem, na régua da travessia; três minutos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T02:42:14Z",
+   "fim": "2026-11-11T02:45:51Z",
+   "pontos": 1.0,
+   "pontos_antes": 66.0,
+   "pontos_depois": 67.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-t-b"
+  },
+  {
+   "nome": "adenda C da travessia (a fonte anterior declarada fora da linha)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T02:46:51Z",
+   "fim": "2026-11-11T03:05:31Z",
+   "pontos": 0.0,
+   "pontos_antes": 67.0,
+   "pontos_depois": 67.0,
+   "outras_sessoes": 1,
+   "fonte": "a linha PONTOS do registo do lançador oedp-eva-t-c"
+  }
+ ],
+ "total_pontos_codex": 26.0,
+ "reflexo_dos_gargalos": "nove passagens e 26 pontos pelo contador da conta, de 41% a 67%. As adendas A, B e C do motor correram ao lado das passagens do VEL1, cujo ficheiro regista 12 pontos nas mesmas horas: os dois blocos juntos levaram a conta de 41% para 67%, e a subida não é toda deste bloco (pela diferença, 14). A passagem da travessia levou 103 minutos e 244 turnos, acima do reflexo dos cem: era uma construção grande declarada, com um commit por ponto. Duas passagens nasceram de erros deste lugar: a regra larga demais do ponto 4 da adenda A da travessia (as adendas B e C) e o pacote da leitura curta do motor sem os documentos alojados (resolvido por guião, sem passagem).",
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh, cinco plantas em cinco em cada uma: a leitura a frio do motor (244 mil símbolos), a leitura curta das adendas C e D do motor (205 mil), a leitura a frio da travessia (248 mil) e a leitura curta das adendas da travessia (ver o registo das leituras). Antes, o texto inteiro julgado pelo Codex gpt-6-astra a xhigh em três voltas (44 plantas válidas em 44). Um levantamento só de leitura pelo Sonnet (395 mil símbolos).",
+ "medida": "o texto do estudo no ar deixa de ser o de 08.11.2026 e passa a ser o julgado; os tempos do último commit ao ar medem-se no recibo da aterragem.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-10T18:00:39Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros. As leituras (Claude) e as corridas por guião não entram nos pontos do Codex."
+}

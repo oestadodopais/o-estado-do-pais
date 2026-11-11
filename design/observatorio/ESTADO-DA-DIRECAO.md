@@ -1,6 +1,6 @@
 # O estado da direção · ler primeiro em cada sessão
 
-*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 10.11.2026, 22:10 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
+*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 11.11.2026, 04:07 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
 
 ## 1. O que o financiador quer, pela ordem dele
 
@@ -32,16 +32,16 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 
 ## 3. O que está no ar
 
-- `main` do sítio: `89dc7a2d5` (REC1, 10.11.2026). `master` do motor: `a657e2f` (MOT1 e MOT2, 10.11.2026).
+- `main` do sítio: a cabeça da aterragem do EVA (11.11.2026), sobre `ccca806e0` (REC1 e VEL1, 10.11.2026). `master` do motor: `247e604` (MOT1, MOT2 e o EVA, com a linha de 2021 a atravessar, 11.11.2026).
 - Treze estudos vivos e seis de Évora substituídos que ainda têm páginas (saem no REC2).
-- **Erros conhecidos que ainda estão no ar,** no estudo das contas da Câmara de Évora, até o EVA atravessar: o sistema integrado de trânsito com €885 441 (são €889 441); a regeneração urbana dita do PRR (é do PT 2030); o Plano Local de Habitação com «€256 407 com financiamento definido» (toda a verba de 2026 o tem); as causas e ausências que a auditoria corrigiu. Nos outros estudos de Évora: 230 erros reais achados em cinco estudos auditados, com listas julgadas.
+- **O estudo das contas da Câmara de Évora está no ar com o texto julgado** (edição única de 11.11.2026), e a linha da execução da receita de 2021 vale 87,72. **Erros conhecidos que ainda estão no ar:** nos outros estudos de Évora, 230 erros reais achados em cinco estudos auditados, com listas julgadas; nas páginas inglesas do livro, os valores na forma portuguesa (EVA-9); o estudo antigo «Orçamentado, Pago, Devido» ainda diz «A taxa caiu de 96% para 61,44%», até o REC2 o retirar.
 
 ## 4. Em curso, bloco a bloco (atualizar sempre)
 
-| Bloco | O que é | Estado a 10.11.2026, 22:10 UTC | O passo seguinte |
+| Bloco | O que é | Estado a 11.11.2026, 04:07 UTC | O passo seguinte |
 | --- | --- | --- | --- |
-| **EVA** | o estudo das contas da Câmara de Évora reescrito pela norma e julgado em três voltas (44 plantas válidas em 44) | o texto fechado (502 unidades por língua, na pasta `eva-2026-11-10` das medições); instalado no motor no ramo `eva-2026-11-10`; lido a frio (cinco em cinco); as onze correções da leitura feitas (adenda C); a adenda D a correr (o título do plano de 2026 lido na imagem da capa por este lugar, e o portão inteiro verde na cabeça final) | ler o relatório da adenda D; uma leitura curta do diff das adendas C e D com plantas conferidas falsas; o `core.gate` verde por este lugar; aterrar no `master` do motor; depois a segunda passagem, a travessia para o sítio (`Acrescenta: linhas e frases`, com os corpos alojados no pacote da leitura), as capturas, a aterragem |
-| **VEL1** | a corrida `portão` em metade do tempo sem tirar uma conferência | construído, lido a frio e relido (cinco em cinco nas duas leituras), corrigido em três adendas; a corrida real do ramo: 24,7 minutos, verde (era 43 a 52); as regras em linha no mesmo ramo (o `CLAUDE.md`, a decisão 1.238, este ficheiro); a aterrar a 10.11.2026 à noite | confirmar no ar e que a corrida de `main` foi dispensada pela do ramo; medir o tempo do último commit ao ar; depois o VEL2 (publicar o `dist/` que o GitHub conferiu, encolher as plantas que correm o sítio inteiro) |
+| **EVA** | o estudo das contas da Câmara de Évora reescrito pela norma e julgado em três voltas (44 plantas válidas em 44) | **a aterrar a 11.11.2026** (a cabeça que aterra traz este registo): o motor em `247e604`; no sítio a travessia (nove pontos) e as adendas A, B e C; quatro leituras do Opus com cinco plantas em cinco; a corrida inteira por guião verde na cabeça `e83b0bcea` (72 passos); as capturas (80, cinco larguras, duas edições) no Drive; a decisão 1.239; o custo em `custo-eva-2026-11-11.json` (nove passagens, 26 pontos pelo contador da conta, partilhados em parte com o VEL1) | conferir o ar depois da aterragem (a manchete, a data, o recibo de 2021); doze Minor (EVA-1 a EVA-12) para a higiene; o Google Doc do texto no Drive do financiador é anterior a três trocas pequenas |
+| **VEL1** | a corrida `portão` em metade do tempo sem tirar uma conferência | **aterrado a 10.11.2026, 22:44 UTC** (`ccca806e0`), com as regras em linha (o `CLAUDE.md`, a decisão 1.238, este ficheiro, o arranque); a corrida do ramo em 25,2 minutos; a corrida de `main` dispensada pela do ramo em 22 segundos; do último commit ao ar 38,5 minutos, ainda com o guião de aterragem antigo | a aterragem seguinte usa o guião novo (as conferências com o motor durante a espera, a worktree tirada no fim): medir o tempo do commit ao ar; depois o VEL2 (publicar o `dist/` que o GitHub conferiu, sem construir duas vezes na máquina; encolher as plantas que correm o sítio inteiro) |
 | **REC2** | os seis estudos de Évora substituídos deixam de ter páginas; os endereços antigos vão para o sucessor | mandato em rascunho, fora do git | medir com `retirada-seis.py` na cabeça de `main`, fechar o mandato, lançar |
 | **EVB** | o estudo de Évora 2027 | a lista de correções julgada (125 entradas) | a análise do Fable pela norma, o texto inteiro ao juiz, a construção como o EVA |
 | **IT0** | a cadeia geral dos itens diários (hoje só serve o Orçamento) | por mandatar; sobe na fila para logo depois do EVB | mandatar; o primeiro item por volta de 18.11.2026 |
@@ -52,11 +52,11 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 
 ## 5. O que este lugar prometeu ao financiador (10.11.2026)
 
-- 11.11 (quarta-feira): o estudo das contas no ar; o VEL1 aterrado; a pasta única; confirmar que o correio das 07:30 chegou sozinho.
+- 11.11 (quarta-feira): o estudo das contas no ar (feito, salvo a aterragem em curso às 04:07 UTC); o VEL1 aterrado (feito a 10.11); a pasta única (por fazer, depois do correio das 07:30); confirmar que o correio das 07:30 chegou sozinho.
 - Até 13.11 (sexta-feira): o REC2 e o EVB.
 - Semana de 16.11: os outros dois estudos de Évora, depois das fontes; o IT0 e o primeiro item diário.
 - A 16.11 (segunda-feira): trocar a estimativa «tudo por volta de 08.12» por uma medida em dias e pontos por estudo.
-- Avisar quando o Codex passar dos oitenta por cento da semana (a 10.11 às 21:21 UTC: 54%).
+- Avisar quando o Codex passar dos oitenta por cento da semana (a 11.11 às 03:05 UTC: 67%).
 
 ## 6. O que espera pela palavra do financiador
 

@@ -14979,3 +14979,25 @@ REC1, 10.11.2026. O Estado do País ainda não foi mostrado a ninguém e está a
 4. **O que a prática do dia mudou nas regras 3, 8 e 14.** Cada planta confere-se falsa na fonte antes de entrar (uma planta deste lugar era verdadeira, e o juiz tinha razão). Um valor lido de uma digitalização degradada confere-se na imagem da página (um valor do plano de 2026 estava errado e três auditorias não o tinham visto). As regras de paragem de um mandato só valem para o que protege um número, uma fonte ou uma pessoa (três passagens pararam por regras largas demais deste lugar). O relatório do construtor e o resumo do lançador têm nomes diferentes. Um bloco que muda todas as páginas corre a lista inteira do `verify` na primeira passagem. Uma construção do motor e uma do sítio podem correr lado a lado: a tranca serializa só as corridas pesadas (medido: duas construções em paralelo das 19:06 às 20:27 UTC, sem conflito). A maquinaria que corta um gargalo medido não espera pela sexta-feira.
 
 **O que fica por fazer para a regra e o código baterem.** A regra da sexta-feira ainda está no `fila.py` (hoje contorna-se com a condição declarada na linha do bloco); a guarda do custo do `aterrar.py` lê o primeiro inteiro do campo do orçamento; a aterragem ainda não tira a worktree do bloco. Vão num bloco de higiene, com plantas.
+
+### 1.239 Quarta-feira 11.11.2026: EVA, o estudo das contas da Câmara de Évora como a primeira edição de lançamento (o texto julgado, uma edição só, e o que isso mudou nas réguas)
+
+**Afecta:** nenhum
+
+**Toca:** §1.238 (como uma página chega ao leitor), §1.237 (a edição de ensaio; a história que recomeça), §1.236 (o risco de um erro chegar ao ar), a regra 1 (cada número numa linha), a regra 2 (o que se copia de uma fonte), a regra 4 (um portão que muda de forma), a regra 15 (a classe no sítio inteiro), a CAM2-A (as frases com afirmação).
+
+**O que se decidiu.** O estudo «As contas da Câmara de Évora, 2010 a 2025» é o primeiro a chegar ao leitor pela cadeia da §1.238: o texto inteiro julgado por outra família contra as cópias das fontes (três voltas; 108, 22 e 2 achados reais; 44 plantas válidas em 44), o motor a recusar um texto composto diferente do julgado, e o sítio a servir os bytes que o motor prova. Seis decisões do lugar de direção ficam em regra para os estudos seguintes.
+
+1. **Uma edição só.** A edição de lançamento de um estudo aterra como a sua única versão: o manifesto sem primeira edição guardada, as edições do ensaio fora, as rotas datadas a levar ao documento corrente, e a data de publicação igual à dessa versão (a origem `edicao-unica`). As correções de texto do ensaio ficam guardadas numa lista que nenhuma página lê; a conta selada das correções publicadas não muda. Nenhum dado das linhas se apaga.
+
+2. **O nome e a manchete.** O `<h1>` do documento é a manchete, com o número resolvido na sua referência; o nome do estudo é a linha em itálico logo abaixo, e é ele que as listas, o índice e o título da página imprimem. A régua que prende o nome ao documento aceita uma das duas formas, letra por letra, e a dos títulos copiados lê sempre a página de destino.
+
+3. **A régua das frases com afirmação ganha a via do texto julgado, sem perder a outra.** Uma frase de um estudo fica coberta quando o estudo tem uma declaração (`ledger/frases/textos-julgados.json`: quem julgou, quando, o ficheiro do texto julgado, o commit do motor) e o documento servido é, byte a byte, o declarado nos dois manifestos; a frase tem de ser, letra por letra e com os números, de um bloco do registo. Um byte diferente tira a cobertura a todas as frases do estudo. As plantas estão em `tests/eva/textos-julgados.mjs`. Para os estudos sem declaração, a régua fica como estava.
+
+4. **Os limites de um estudo dizem-se.** A secção dos limites, que a norma editorial pede, pode dizer o que o estudo não mede; a régua da voz admite-o por rota e texto, com a classe fechada «limite declarado do estudo».
+
+5. **Uma linha que muda de fonte numa correção declara a fonte anterior fora dos seus bytes** (`ledger/fontes-anteriores.json`, com régua no `ledger:check`), e só com essa declaração o recibo diz que uma reconferência antiga leu o ficheiro da fonte anterior. A linha `evora-execucao-da-receita-2021` passou de 96 (o historial que a Prestação de Contas de 2025 recita) para 87,72 (a execução da receita total no quadro 12 do Relatório de Gestão de 2021, p. 60), a medida da linha de 2025.
+
+6. **Só atravessa o que foi auditado.** O exportador dos registos corre todos os estudos; nesta travessia só o 16 ficou, e o registo do estudo de quem governou a câmara foi reposto: atravessa no seu bloco.
+
+**O que se mediu.** Quatro leituras do Claude Opus 5.5 com cinco plantas em cinco (duas no motor, duas na travessia); as 107 linhas próprias, 36 citações, 9 datas e 11 títulos conferidos contra os 11 PDF por guião deste lugar, com cinco estragos recusados; a corrida inteira por guião na cabeça final. Um erro deste lugar não chegou ao ar: uma regra do mandato larga demais punha uma frase falsa em dezoito recibos, e foi apanhada na releitura do HTML construído (as adendas B e C; o gargalo está registado).
