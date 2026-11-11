@@ -47,13 +47,25 @@ export async function medirPagina(page, origem, rota, largura, planta=false) {
     const sw=document.documentElement.scrollWidth;
     const causas=sw>largura ? [...document.querySelectorAll('body *')].filter(el=>el.children.length===0 && el.getBoundingClientRect().right>largura).slice(0,12).map(el=>({elemento:el.tagName.toLowerCase(),classe:el.getAttribute('class')??'',whiteSpace:getComputedStyle(el).whiteSpace})) : [];
     const tabelas=[...document.querySelectorAll('[data-oedp-moldura] table')].filter(el=>el.scrollWidth>el.clientWidth+1).map(el=>({largura:el.clientWidth,conteudo:el.scrollWidth,overflow:getComputedStyle(el).overflowX}));
+    const quadrosEstudo=[...document.querySelectorAll('.estudo-texto table')].map(t=>{
+      const caixa=t.parentElement,antes=caixa.scrollLeft;caixa.scrollLeft=1;
+      const q={caixa:caixa.classList.contains('texto-tabela'),largura:caixa.clientWidth,conteudo:caixa.scrollWidth,overflow:getComputedStyle(caixa).overflowX,desliza:caixa.scrollLeft>0};
+      caixa.scrollLeft=antes;return q;
+    });
     const ocultos=[...document.querySelectorAll(rota.includes('/livro-razao/') || rota.includes('/ledger/') ? '.vh' : '.registo-mudanca .vh')];
     const textoOculto={quantidade:ocultos.length,whiteSpace:[...new Set(ocultos.map(el=>getComputedStyle(el).whiteSpace))]};
-    return {pagina:rota,largura,sw,causas,tabelas,textoOculto};
+    return {pagina:rota,largura,sw,causas,tabelas,textoOculto,quadrosEstudo};
   },{rota,largura});
   if (rotasDaHistoria().includes(rota)) {
     assert(medida.textoOculto.quantidade>0,`${rota}: falta texto oculto no registo`);
     assert.deepEqual(medida.textoOculto.whiteSpace,['nowrap'],`${rota}: o texto oculto perdeu o nowrap`);
+  }
+  if(/\/evora-2027-capital-europeia-da-cultura\/$/.test(rota)){
+    assert.equal(medida.quadrosEstudo.length,33,`${rota}: quadros do texto julgado`);
+    for(const q of medida.quadrosEstudo){
+      assert(q.caixa&&['auto','scroll'].includes(q.overflow)&&q.largura<=largura,`${rota}: quadro fora da caixa`);
+      if(q.conteudo>q.largura+1)assert(q.desliza,`${rota}: quadro largo sem deslocamento interno`);
+    }
   }
   return medida;
 }
@@ -65,6 +77,7 @@ async function correr() {
   const amostra=amostraDist(dist), resultados=[], falhas=[];
   // EVA-T: as duas páginas do texto julgado e os recibos cuja linha mudou.
   const eva = ['estudos/evora-contas-da-camara-2010-2025', 'en/studies/evora-contas-da-camara-2010-2025',
+    'estudos/evora-2027-capital-europeia-da-cultura','en/studies/evora-2027-capital-europeia-da-cultura',
     ...['livro-razao','en/ledger'].flatMap(base => ['2021','2025'].map(ano => `${base}/evora-execucao-da-receita-${ano}`))].map(r => '/'+r+'/');
   amostra.paginas=[...new Set([...amostra.paginas,...rotasDaHistoria(),...eva])];
   const tipos={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2','.webp':'image/webp'};

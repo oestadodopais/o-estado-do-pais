@@ -29,6 +29,9 @@ const ROTAS = rotas ?? [
   '/estudos/evora-contas-da-camara-2010-2025/documento', '/en/studies/evora-contas-da-camara-2010-2025/document',
   '/', '/en/', '/temas/', '/en/themes/', '/estudos/', '/estudos/a-casa-em-portugal-e-na-europa', '/en/studies/a-casa-em-portugal-e-na-europa',
   '/estudos/orcamento-2027-o-que-muda-e-para-quem', '/estudos/evora-2027-capital-europeia-da-cultura',
+  // EVB: as duas páginas e documentos julgados.
+  '/en/studies/evora-2027-capital-europeia-da-cultura',
+  '/estudos/evora-2027-capital-europeia-da-cultura/documento', '/en/studies/evora-2027-capital-europeia-da-cultura/document',
   '/o-que-se-discute/', '/en/under-discussion/', '/precos/', '/habitacao/', '/estado-e-economia/', '/lugares/',
   '/uniao-europeia', '/correcoes/', '/metodo/', '/livro-razao/divida-publica-2025', '/en/ledger/divida-publica-2025',
 ];
