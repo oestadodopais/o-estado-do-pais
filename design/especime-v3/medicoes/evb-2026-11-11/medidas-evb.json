@@ -1,0 +1,90 @@
+{
+ "linhas_com_identificador_no_texto_portugues": {
+  "valor": "464",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^(?:#+ )?\\[[BNC][0-9A-Z.]+\\]',open('TEXTO-FINAL-19.pt.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "linhas_com_identificador_no_texto_ingles": {
+  "valor": "464",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^(?:#+ )?\\[[BNC][0-9A-Z.]+\\]',open('TEXTO-FINAL-19.en.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "quadros_marcados_no_texto_portugues": {
+  "valor": "32",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^Quadro \\[',open('TEXTO-FINAL-19.pt.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "linhas_da_cabeca": {
+  "valor": "54",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'\\[C\\d{3}\\]',open('TEXTO-FINAL-19.pt.md',encoding='utf-8').read())))\""
+ },
+ "unidades_fora_da_cabeca": {
+  "valor": "411",
+  "comando": "python3 -c \"import json;print(json.load(open('MUDANCAS.json',encoding='utf-8'))['resumo']['unidades_no_texto_final_fora_da_cabeca'])\""
+ },
+ "unidades_novas_fora_da_cabeca": {
+  "valor": "60",
+  "comando": "python3 -c \"import json;print(json.load(open('MUDANCAS.json',encoding='utf-8'))['resumo']['novas'])\""
+ },
+ "unidades_mudadas_fora_da_cabeca": {
+  "valor": "143",
+  "comando": "python3 -c \"import json;print(json.load(open('MUDANCAS.json',encoding='utf-8'))['resumo']['mudadas'])\""
+ },
+ "unidades_iguais_fora_da_cabeca": {
+  "valor": "208",
+  "comando": "python3 -c \"import json;print(json.load(open('MUDANCAS.json',encoding='utf-8'))['resumo']['iguais'])\""
+ },
+ "unidades_no_anexo": {
+  "valor": "221",
+  "comando": "python3 -c \"import json;print(json.load(open('MUDANCAS.json',encoding='utf-8'))['resumo']['no_anexo'])\""
+ },
+ "linhas_novas_nas_provas": {
+  "valor": "80",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-do-texto.json',encoding='utf-8'))['linhas_novas']))\""
+ },
+ "linhas_novas_derivadas": {
+  "valor": "16",
+  "comando": "python3 -c \"import json;print(sum(1 for l in json.load(open('PROVAS-do-texto.json',encoding='utf-8'))['linhas_novas'] if l['tipo']=='derivado'))\""
+ },
+ "citacoes_entre_aspas_angulares_no_texto_portugues": {
+  "valor": "126",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-do-texto.json',encoding='utf-8'))['citacoes']))\""
+ },
+ "citacoes_sem_excerto_nas_copias": {
+  "valor": "0",
+  "comando": "python3 -c \"import json;print(len(json.load(open('PROVAS-do-texto.json',encoding='utf-8'))['citacoes_nao_achadas']))\""
+ },
+ "citacoes_distintas_achadas_so_por_pedacos": {
+  "valor": "9",
+  "comando": "python3 -c \"import json;print(len({(c['citacao'],a['documento']) for c in json.load(open('PROVAS-do-texto.json',encoding='utf-8'))['citacoes'] for a in c['achada_em'] if 'por_pedacos' in a}))\""
+ },
+ "documentos_no_indice": {
+  "valor": "40",
+  "comando": "python3 -c \"import json;print(len(json.load(open('INDICE-das-fontes.json',encoding='utf-8'))))\""
+ },
+ "documentos_pdf_no_indice": {
+  "valor": "24",
+  "comando": "python3 -c \"import json;print(sum(1 for x in json.load(open('INDICE-das-fontes.json',encoding='utf-8')) if x['tipo']=='pdf'))\""
+ },
+ "documentos_html_no_indice": {
+  "valor": "14",
+  "comando": "python3 -c \"import json;print(sum(1 for x in json.load(open('INDICE-das-fontes.json',encoding='utf-8')) if x['tipo']=='html'))\""
+ },
+ "documentos_do_indice_na_pasta_source_do_19": {
+  "valor": "32",
+  "comando": "python3 -c \"import json;print(sum(1 for x in json.load(open('INDICE-das-fontes.json',encoding='utf-8')) if x['ficheiro'].startswith('content/19') and '/source/' in x['ficheiro']))\""
+ },
+ "megabytes_da_pasta_source_do_19": {
+  "valor": "161",
+  "comando": "python3 -c \"import json;print(round(sum(x['bytes'] for x in json.load(open('INDICE-das-fontes.json',encoding='utf-8')) if x['ficheiro'].startswith('content/19') and '/source/' in x['ficheiro'])/1e6))\""
+ },
+ "megabytes_do_maior_documento": {
+  "valor": "44.6",
+  "comando": "python3 -c \"import json;print(round(max(x['bytes'] for x in json.load(open('INDICE-das-fontes.json',encoding='utf-8')))/1e6,1))\""
+ },
+ "leituras_na_imagem": {
+  "valor": "4",
+  "comando": "python3 -c \"import json;print(len(json.load(open('LEITURAS-NA-IMAGEM.json',encoding='utf-8'))))\""
+ },
+ "linhas_do_livro_do_19_no_motor": {
+  "valor": "161",
+  "comando": "python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));print(len(d['claims'] if isinstance(d,dict) and 'claims' in d else d))\""
+ }
+}

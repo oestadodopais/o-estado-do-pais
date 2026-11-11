@@ -1,0 +1,402 @@
+[
+ {
+  "copia_em_texto_que_o_juiz_leu": "01-bidbook-selecao-PT.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
+  "tipo": "pdf",
+  "bytes": 7646731,
+  "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+  "provas_que_o_citam": 68,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "02-bidbook-preselecao-PT.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/02-bidbook-preselecao-PT.pdf",
+  "tipo": "pdf",
+  "bytes": 4224021,
+  "sha256": "0a24c92dbe1dd5fdcb2710cb3fd0db7a4bc7fa356db4b48bbf2f82825cc85302",
+  "provas_que_o_citam": 14,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "10-ce-node2896.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/10-ce-node2896.html",
+  "tipo": "html",
+  "bytes": 183945,
+  "sha256": "44db6cf4cfbc4dc224a150b9d75d05cc5f3ea7f55ae86a82ddf7e509f60968b9",
+  "provas_que_o_citam": 2,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://culture.ec.europa.eu/node/2896"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "14-dre-dl124-2023.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/14-dre-dl124-2023.pdf",
+  "tipo": "pdf",
+  "bytes": 679466,
+  "sha256": "c9d6cd18ef8068396ed52277a0787d4908b55650667f70027203346eca27cb37",
+  "provas_que_o_citam": 10,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "15-dr-1s-247-2023-12-26.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/15-dr-1s-247-2023-12-26.pdf",
+  "tipo": "pdf",
+  "bytes": 44575296,
+  "sha256": "393f77271ba8cf2b9a938347e0a5fc9239f3f08ea679350f9d78cef2ecf1ff85",
+  "provas_que_o_citam": 11,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "15.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf",
+  "tipo": "pdf",
+  "bytes": 2002992,
+  "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
+  "provas_que_o_citam": 11,
+  "recibo_do_pedido": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/15.pdf.pedido.json",
+  "endereco": null
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "16-dre-dl47-2025.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/16-dre-dl47-2025.pdf",
+  "tipo": "pdf",
+  "bytes": 568077,
+  "sha256": "8ef0f9736105ef01af95fbec0c2ab69deb50d7c6864cf54455aa1cbe75a06c35",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf, https://files.diariodarepublica.pt/1s/2025/03/06100/0003400035.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "17-dre-rcm-203-2023.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/17-dre-rcm-203-2023.pdf",
+  "tipo": "pdf",
+  "bytes": 231548,
+  "sha256": "76cd523ae75cf21554444d7b081a1d5e8cb1e7c32dd70edccee52291d4978283",
+  "provas_que_o_citam": 31,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "18-gepac-regras-concurso-2027.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/18-gepac-regras-concurso-2027.pdf",
+  "tipo": "pdf",
+  "bytes": 229221,
+  "sha256": "40f0dc113017139e3e9a334445bbc0226965786fd71d254aabc545e79084b5d2",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "20-ce-relatorio-preselecao-2027-PT.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/20-ce-relatorio-preselecao-2027-PT.pdf",
+  "tipo": "pdf",
+  "bytes": 954742,
+  "sha256": "6232f5f64f62077c88e75137bd828bd7672a35a8d6dfd1b78b5102f627053113",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://culture.ec.europa.eu/sites/default/files/2022-04/ecoc-2027-portugual-preselection-report_v1.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
+  "tipo": "pdf",
+  "bytes": 1377964,
+  "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+  "provas_que_o_citam": 43,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://culture.ec.europa.eu/sites/default/files/2023-02/ecoc-2027-portugual-selection-report.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "22-ce-monitorizacao-1-2023-09.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/22-ce-monitorizacao-1-2023-09.pdf",
+  "tipo": "pdf",
+  "bytes": 997785,
+  "sha256": "81529d2d0b2f8c60611c2632ff6dbea7f083d43498762a729cd1c449eecacaaf",
+  "provas_que_o_citam": 6,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "22.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf",
+  "tipo": "pdf",
+  "bytes": 37768,
+  "sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf.pedido.json",
+  "endereco": null
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "23.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html",
+  "tipo": "html",
+  "bytes": 666143,
+  "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
+  "provas_que_o_citam": 22,
+  "recibo_do_pedido": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/23.html.pedido.json",
+  "endereco": null
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "27-ce-monitorizacao-2-2025-07.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/27-ce-monitorizacao-2-2025-07.pdf",
+  "tipo": "pdf",
+  "bytes": 504808,
+  "sha256": "861431b3b5e935f28bf6a3bc60b47307bdbeac571292d05f00defc5b1cd212e0",
+  "provas_que_o_citam": 107,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "28-ce-doc-terceira-monitorizacao.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/28-ce-doc-terceira-monitorizacao.html",
+  "tipo": "html",
+  "bytes": 167891,
+  "sha256": "51a42d91294f9cde01f22b7182c9ac9769c252d22548cdd271fbe063a62fda53",
+  "provas_que_o_citam": 13,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://culture.ec.europa.eu/document/third-monitoring-report-european-capital-of-culture-2027-portugal"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "29.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf",
+  "tipo": "pdf",
+  "bytes": 700705,
+  "sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
+  "provas_que_o_citam": 8,
+  "recibo_do_pedido": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/29.pdf.pedido.json",
+  "endereco": null
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "31-e27-inicio.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/31-e27-inicio.html",
+  "tipo": "html",
+  "bytes": 19755,
+  "sha256": "61f62fd06276cdb812bd0f1dde931455d91811c1771a36e02d09408cb6448f11",
+  "provas_que_o_citam": 2,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "32-e27-bid-book.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/32-e27-bid-book.html",
+  "tipo": "html",
+  "bytes": 18464,
+  "sha256": "17763b2c9ae5df0289c65f1304ac65dfc011667932bdc0546e0b811031083ec0",
+  "provas_que_o_citam": 2,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/bid-book"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "32-e27-programacao.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/32-e27-programacao.html",
+  "tipo": "html",
+  "bytes": 23095,
+  "sha256": "47fec0dc9719f0595612c37b6c26dff2ba485795a71e7cd8055d1fea45cb7a00",
+  "provas_que_o_citam": 6,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/programacao"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "32-e27-quem-somos.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/32-e27-quem-somos.html",
+  "tipo": "html",
+  "bytes": 44628,
+  "sha256": "b324dfd0c349751a2e75142db0731e815751fd191dddc30dc26f0f6a6f8ca632",
+  "provas_que_o_citam": 4,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/quem-somos"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "33-e27-noticias.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/33-e27-noticias.html",
+  "tipo": "html",
+  "bytes": 141431,
+  "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+  "provas_que_o_citam": 9,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/noticias"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/41-e27-plano-atividades-orcamento-2026.pdf",
+  "tipo": "pdf",
+  "bytes": 1127965,
+  "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+  "provas_que_o_citam": 96,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/user_upload/E_27_Plano.de.Atividades.e.Orcamento.2026_Final.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "42-e27-relatorio-contas-2025.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+  "tipo": "pdf",
+  "bytes": 2445695,
+  "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+  "provas_que_o_citam": 279,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "43-e27-programacao-2026.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/43-e27-programacao-2026.pdf",
+  "tipo": "pdf",
+  "bytes": 7881389,
+  "sha256": "a25405119717842f41c0977fc6ebb8eade40564fe753ff935694e37788bbabc8",
+  "provas_que_o_citam": 8,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "44-e27-ficha-operacao-vagar.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/44-e27-ficha-operacao-vagar.pdf",
+  "tipo": "pdf",
+  "bytes": 224679,
+  "sha256": "0816f65622710f8c7c31bad1d007a22b14c9ef26b2f192a40f6f1aa4a8096552",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/ficha_de_operacao_VAGAR.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "45-e27-ficha-operacao-internacionalizacao.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/45-e27-ficha-operacao-internacionalizacao.pdf",
+  "tipo": "pdf",
+  "bytes": 225105,
+  "sha256": "b9a3e0eaaf9ad0b836b218e0fe2a4767b8aa1eb58cc89321d21b799e9968fd91",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.evora2027.com/fileadmin/ficha_de_operacao_INTERNACIONALIZACAO.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "50-cme-gop-orcamento-2026.pdf.txt",
+  "ficheiro": "content/16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+  "tipo": "pdf",
+  "bytes": 31049815,
+  "sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04",
+  "provas_que_o_citam": 18,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "53-cme-gop-orcamento-2025.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/53-cme-gop-orcamento-2025.pdf",
+  "tipo": "pdf",
+  "bytes": 20574695,
+  "sha256": "f07265b18625df34991b1805807f77617955a03da07aa814a521563ea38910a0",
+  "provas_que_o_citam": 13,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.cm-evora.pt/wp-content/uploads/2025/01/Opcoes-do-Plano-e-Orcamento-2025.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "54-cme-gop-orcamento-2024.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/54-cme-gop-orcamento-2024.pdf",
+  "tipo": "pdf",
+  "bytes": 31222926,
+  "sha256": "7c554e97ed97c36625b0846e3c2a03e4e5021f39c878d70d193588200f3f6024",
+  "provas_que_o_citam": 16,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "55-cme-protocolo-2023.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/55-cme-protocolo-2023.html",
+  "tipo": "html",
+  "bytes": 680427,
+  "sha256": "8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a",
+  "provas_que_o_citam": 4,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.cm-evora.pt/investimento-superior-a-44-milhoes-de-euros-camara-de-evora-e-estado-portugues-assinaram-protocolo-de-cooperacao-para-implementacao-da-capital-europeia-da-cultura-em-2027/"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "63-cme-ata-10-rpc-2026-05-14.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/63-cme-ata-10-rpc-2026-05-14.pdf",
+  "tipo": "pdf",
+  "bytes": 26534598,
+  "sha256": "36a3dcacd269279bdd763fb50ff2d68f42420a4f3698610e4464c132da7e4233",
+  "provas_que_o_citam": 28,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Ata-no-10-da-RPC-de-14-de-maio-de-2026.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "64-cme-edital-rpc-2026-09-03.pdf.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/64-cme-edital-rpc-2026-09-03.pdf",
+  "tipo": "pdf",
+  "bytes": 7500569,
+  "sha256": "9799f676593c421b6e95e77c46e026c5faeba02ef106a80f7758dc0dfad9c7fc",
+  "provas_que_o_citam": 4,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Edital-da-RPC-de-03-de-setembro-de-2026-1.pdf"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "70-base-teste.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/70-base-teste.html",
+  "tipo": "html",
+  "bytes": 1172,
+  "sha256": "1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44",
+  "provas_que_o_citam": 0,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.base.gov.pt/"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "71-base-pesquisa.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/71-base-pesquisa.html",
+  "tipo": "html",
+  "bytes": 1172,
+  "sha256": "1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44",
+  "provas_que_o_citam": 0,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.base.gov.pt/"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "72-base-raiz.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/72-base-raiz.html",
+  "tipo": "html",
+  "bytes": 1172,
+  "sha256": "1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44",
+  "provas_que_o_citam": 0,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://www.base.gov.pt/"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/82-alentejo2030-lista-operacoes-2026-06-30.xlsx",
+  "tipo": "xlsx",
+  "bytes": 381334,
+  "sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+  "provas_que_o_citam": 22,
+  "recibo_do_pedido": "content/14 Évora 2027/Technical Source/raw/manifest.json (o registo das 53 descargas de 15.09.2026)",
+  "endereco": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "concurso-rossio.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html",
+  "tipo": "html",
+  "bytes": 659730,
+  "sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03",
+  "provas_que_o_citam": 3,
+  "recibo_do_pedido": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html.pedido.json",
+  "endereco": null
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "noticias.html.txt",
+  "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html",
+  "tipo": "html",
+  "bytes": 141431,
+  "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+  "provas_que_o_citam": 32,
+  "recibo_do_pedido": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/noticias.html.pedido.json",
+  "endereco": "https://www.evora2027.com/noticias"
+ },
+ {
+  "copia_em_texto_que_o_juiz_leu": "registo-das-leituras-1.json",
+  "ficheiro": "content/14 Évora 2027/Technical Source/raw/manifest.json",
+  "tipo": "json",
+  "bytes": 24439,
+  "sha256": "c1183b891dbdb69c833fcb29067eefcff85d338e4156a59e716e8033a3567265",
+  "provas_que_o_citam": 1,
+  "recibo_do_pedido": null,
+  "endereco": null
+ }
+]
