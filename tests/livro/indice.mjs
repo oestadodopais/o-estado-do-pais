@@ -1403,6 +1403,7 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
     ? fs.readdirSync(dirDosTrabalhos, { withFileTypes: true })
         .filter((e) => e.isDirectory() && !e.name.startsWith('_'))
         .map((e) => e.name)
+        .filter(slug => !WORKS.some(w => w.slug === slug && w.estado === 'retirado'))
     : [];
   for (const slug of slugs) {
     for (const edicao of ['pt', 'en']) {
