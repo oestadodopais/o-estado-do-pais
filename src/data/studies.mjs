@@ -237,8 +237,8 @@ export const WORKS = [
     ],
     artifactUrl: null,
     pergunta: {
-      pt: 'O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?',
-      en: "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?",
+      pt: "Évora 2027 tem o dinheiro, as obras e o programa que prometeu?",
+      en: "Does Évora 2027 have the money, the works and the programme it promised?",
     },
     verbatimDaPergunta: { pt: 'estudo-evora-2027-pergunta-pt', en: 'estudo-evora-2027-pergunta-en' },
     description: {

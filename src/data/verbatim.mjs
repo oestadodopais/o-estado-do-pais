@@ -233,14 +233,14 @@ export const VERBATIM = {
 
   'estudo-evora-2027-pergunta-pt': {
     lang: 'pt',
-    origem: 'Primeira frase da leitura de abertura de studies-src/evora-2027-capital-europeia-da-cultura/pt.html.',
-    text: `O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?`,
+    origem: 'Unidade C003 de studies-src/evora-2027-capital-europeia-da-cultura/pt.html.',
+    text: `Évora 2027 tem o dinheiro, as obras e o programa que prometeu?`,
   },
 
   'estudo-evora-2027-pergunta-en': {
     lang: 'en',
-    origem: 'First sentence of the opening reading of studies-src/evora-2027-capital-europeia-da-cultura/en.html.',
-    text: `What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?`,
+    origem: 'Unidade C003 de studies-src/evora-2027-capital-europeia-da-cultura/en.html.',
+    text: `Does Évora 2027 have the money, the works and the programme it promised?`,
   },
 
   'estudo-prometido-abertura-pt': {
