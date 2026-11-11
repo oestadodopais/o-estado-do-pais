@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {figuraDocumentalNaRaiz} from './corpo-documental-julgado.mjs';
 import {corpoDocumentalConferido} from './corpo-documental-conferir.mjs';
 import {irmaoDepoisDaMedida} from '../src/lib/posicao-do-selo.mjs';
 import { conferirProjecaoHb1Cadeia } from './projecao-hb1-portoes.mjs';
@@ -412,7 +413,7 @@ for (const chave of chaves) {
         const sha = figura.source_sha256;
         const motivo = figura.source_digest_kind;
         if (figura.source_body) {
-          if (!corpoDocumentalConferido(registo, figura)) {
+          if (!corpoDocumentalConferido(registo, figuraDocumentalNaRaiz(registo, figura))) {
             err(`C1 ${marca}: o corpo integral não coincide com o ficheiro e o resumo da linha provada.`);
           }
         }

@@ -3,18 +3,37 @@ import fs from 'node:fs';import {createHash} from 'node:crypto';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const provaFile=new URL('../design/especime-v3/medicoes/eva-2026-11-10/provas-documentais-eva-t.json',import.meta.url);
 let prova,linhas;
-export function corpoDocumentalJulgado(registo,figura){
- try {
+function carregarProva(){
   if(!prova){
    prova=JSON.parse(fs.readFileSync(provaFile,'utf8'));
    const bytes=fs.readFileSync(new URL('../'+prova.livro.file,import.meta.url));
    if(sha(bytes)!==prova.livro.sha256)throw Error('Livro do motor alterado');
    linhas=new Map(JSON.parse(bytes).claims.map(r=>[r.id,r]));
   }
+}
+/** Os registos selados guardam caminhos relativos à raiz content do motor.
+ * Só uma figura do objeto selado pode ser qualificada, sem mudar os seus bytes. */
+export function figuraDocumentalNaRaiz(registo,figura){
+ try {
+  carregarProva();
+  const edicao=Object.values(prova.registos).find(r=>r.edition===registo.edition&&r.lang===registo.lang);
+  const corpo=figura.source_body;
+  if(edicao?.objeto_sha256===sha(JSON.stringify(registo))&&typeof corpo==='string'&&
+   !corpo.startsWith('content/')&&!corpo.startsWith('/')&&!corpo.split('/').includes('..')&&
+   prova.linhas[figura.row]?.source_body===corpo)
+   return {...figura,source_body:'content/'+corpo};
+ }catch{}
+ return figura;
+}
+export function corpoDocumentalJulgado(registo,figura){
+ const corpo=figura.source_body;
+ if(typeof corpo!=='string'||!corpo.startsWith('content/')||corpo.split('/').includes('..'))return false;
+ try {
+  carregarProva();
   const edicao=Object.values(prova.registos).find(r=>r.edition===registo.edition&&r.lang===registo.lang);
   if(!edicao||edicao.objeto_sha256!==sha(JSON.stringify(registo)))return false;
   const p=prova.linhas[figura.row],r=linhas.get(figura.row);
-  return Boolean(p&&r&&p.source_body===figura.source_body&&p.source_sha256===figura.source_sha256&&
+  return Boolean(p&&r&&(p.source_body.startsWith('content/')?p.source_body:'content/'+p.source_body)===corpo&&p.source_sha256===figura.source_sha256&&
     prova.corpos[p.source_body]===p.source_sha256&&r.document?.source_sha256===p.source_sha256);
  }catch{return false;}
 }
