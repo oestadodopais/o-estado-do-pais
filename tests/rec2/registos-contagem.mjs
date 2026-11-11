@@ -9,8 +9,10 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rec2-registos-'));
 const origem = path.resolve('registos');
 const manifesto = JSON.parse(fs.readFileSync(path.join(origem, 'manifest.json'), 'utf8'));
 const retirado = WORKS.find(w => w.estado === 'retirado' && manifesto.registos[`${w.slug}/pt`]);
-const publicado = PUBLISHED_EDITIONS.find(e => manifesto.registos[`${e.slug}/${e.lang}`]);
-assert(retirado && publicado);
+const semEdicao = WORKS.filter(w => w.estado !== 'retirado').flatMap(w =>
+  ['pt','en'].filter(lang => !PUBLISHED_EDITIONS.some(e => e.slug === w.slug && e.lang === lang))
+    .map(lang => ({slug:w.slug, lang}))).find(e => Object.keys(manifesto.registos).some(k => k.startsWith(e.slug + '/')));
+assert(retirado && semEdicao);
 function correr(nome, codigo, padrao) {
   fs.writeFileSync(path.join(tmp, 'manifest.json'), JSON.stringify(manifesto));
   const r = spawnSync(process.execPath, ['scripts/gate-html.mjs'], {
@@ -21,19 +23,27 @@ function correr(nome, codigo, padrao) {
   console.log(`REC2 registos: ${nome}: código ${r.status}.`);
 }
 try {
-  for(const d of fs.readdirSync(origem, {withFileTypes:true}))if(d.isDirectory())fs.symlinkSync(path.join(origem, d.name), path.join(tmp, d.name), 'dir');
-  correr('controlo intacto', 0);
-  // Uma entrada sem edição publicada só se dispensa pelo estado do trabalho.
-  const chaveRetirada = `${retirado.slug}/zz`;
-  manifesto.registos[chaveRetirada] = structuredClone(manifesto.registos[`${retirado.slug}/pt`]);
-  correr('retirado sem edição publicada continua dispensado', 0);
-  delete manifesto.registos[chaveRetirada];
-  const chavePublicada = `${publicado.slug}/zz`;
-  manifesto.registos[chavePublicada] = structuredClone(manifesto.registos[`${publicado.slug}/${publicado.lang}`]);
-  correr('não retirado sem edição publicada recusado', 1, /REC2 contagem dos registos: .*\/zz: trabalho não retirado sem edição publicada/);
-  delete manifesto.registos[chavePublicada];
-  manifesto.registos['rec2-trabalho-desconhecido/pt'] = structuredClone(manifesto.registos[`${publicado.slug}/${publicado.lang}`]);
-  correr('trabalho desconhecido não ganha dispensa', 1, /REC2 contagem dos registos: rec2-trabalho-desconhecido\/pt: trabalho não retirado sem edição publicada/);
+  for(const d of fs.readdirSync(origem, {withFileTypes:true}))if(d.isDirectory()) {
+    if(d.name === retirado.slug)fs.cpSync(path.join(origem, d.name), path.join(tmp, d.name), {recursive:true});
+    else fs.symlinkSync(path.join(origem, d.name), path.join(tmp, d.name), 'dir');
+  }
+  correr('controlo intacto, incluindo os registos retirados', 0);
+  // Acrescentar uma figura contável ao retirado não pode mexer nas contagens.
+  const ficheiro = path.join(tmp, retirado.slug, 'pt.record.json');
+  const bytes = fs.readFileSync(ficheiro);
+  const record = JSON.parse(bytes);
+  const bloco = record.blocks.find(b => b.kind === 'paragraph');
+  assert(bloco);
+  bloco.figures ??= [];
+  bloco.figures.push({source_sha256:'0'.repeat(64)});
+  fs.writeFileSync(ficheiro, JSON.stringify(record));
+  correr('figura adicional do retirado continua dispensada', 0);
+  fs.writeFileSync(ficheiro, bytes);
+  // Usa uma língua real, ausente das edições publicadas deste trabalho.
+  const chave = `${semEdicao.slug}/${semEdicao.lang}`;
+  const original = Object.keys(manifesto.registos).find(k => k.startsWith(semEdicao.slug + '/'));
+  manifesto.registos[chave] = structuredClone(manifesto.registos[original]);
+  correr(`não retirado sem edição publicada recusado (${chave})`, 1, /REC2 contagem dos registos: .*: trabalho não retirado sem edição publicada/);
 } finally {
   fs.rmSync(tmp, {recursive:true, force:true});
 }
