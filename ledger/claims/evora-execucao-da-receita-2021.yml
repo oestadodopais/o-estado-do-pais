@@ -6,27 +6,28 @@
 id: "evora-execucao-da-receita-2021"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "96"
+value: "87,72"
 unit: "% do orçamento"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Município de Évora"
 document:
-  title: "Prestação de Contas 2025"
-  edition: "2025"
-  locator: "PRESTACAO_CONTAS_2025.pdf, p. 112"
-  page: 112
+  title: "RELATÓRIO DE GESTÃO 2021"
+  edition: "2021"
+  locator: "2_Relatorio_Gestao_2021.pdf, p. 60"
+  source_sha256: "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+  page: 60
   kind: "pdf"
   crop:
     asset: "recortes/evora-execucao-da-receita-2021.webp"
-    sha256: "19b1248a4cc9612dc3313234b4b49f8e10571486703d18e379a7e2ea2017442f"
-    page: 112
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=112"
+    sha256: "04d476e0cb4a744fb5986702b98ae1470c3386780a9ff2256a56397a77af82a7"
+    page: 60
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=60"
 access_date: "2026-08-10"
 reference_date: "2021"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "2024 (70%), 2023 (76%), 2022 (84%), 2021 (96%), 2020 (84%), 2019 (85%) e 2018 (86%)."
+excerpt: "Total 65 108 759,70 57 113 924,56 87,72%"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -41,10 +42,16 @@ attributed_to:
 
 study: "evora-contas-da-camara-2010-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] the report's own execution-rate recital, year 2021 · Cruzado de ResearchHub content/07 Évora Municipal Accounts · exec-2021-pct."
+note: "Cruzado de ResearchHub content/16 Évora Contas da Câmara · exec-total-2021-pct."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-11"
+    kind: "correcao"
+    old_value: "96"
+    new_value: "87,72"
+    reason: "O valor anterior, 96, é o do historial que o relatório das contas de 2025 recita na página 112. O Relatório de Gestão de 2021 imprime 87,72% para a execução da receita total (página 60, quadro 12), a medida da linha de 2025, e 95,61% para a receita corrente; a linha passa ao valor da receita total e a essa fonte."
+    reason_en: "The previous value, 96, is from the history that the report on the 2025 accounts recites on page 112. The 2021 Management Report prints 87.72% for the execution of total revenue (page 60, table 12), the measure of the 2025 row, and 95.61% for current revenue; the row now carries the total-revenue value and that source."
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.

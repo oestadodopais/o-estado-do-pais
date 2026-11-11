@@ -527,5 +527,13 @@
       "old_value": "Existe um risco de pressão orçamental",
       "new_value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
     }
+  ],
+  "evora-execucao-da-receita-2021": [
+    {
+      "date": "2026-11-11",
+      "kind": "correcao",
+      "old_value": "96",
+      "new_value": "87,72"
+    }
   ]
 }

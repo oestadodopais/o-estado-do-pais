@@ -318,15 +318,15 @@
       "verifications_at_export": 1
     },
     "evora-execucao-da-receita-2021": {
-      "corrections_at_export": 0,
-      "crop_sha256": "19b1248a4cc9612dc3313234b4b49f8e10571486703d18e379a7e2ea2017442f",
-      "exported_at": "2026-09-30",
-      "exported_row_sha256": "abf0b42b2d7f2eb3d1ce8d20bc9a1cc4a63ce33e24eaaf2e21f74c73a17cfa07",
+      "corrections_at_export": 1,
+      "crop_sha256": "04d476e0cb4a744fb5986702b98ae1470c3386780a9ff2256a56397a77af82a7",
+      "exported_at": "2026-11-10",
+      "exported_row_sha256": "238c38d5a6b340345bb54fda16bf5346f854616055c733fa5edacb172c825b02",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "a6dce40ad55277b88ccc68394d93305eb4d3235f8a19b163154a735c2248c220",
-      "rh_id": "exec-2021-pct",
-      "rh_ledger_sha256": "17afc85af647c4436cbe34f3ad46ec96db0b4e7f8abe1d8f78efa3ea5e88bbdd",
-      "rh_study": "07 Évora Municipal Accounts",
+      "origin_row_sha256": "9b69839f6371468b27a7bf37f1823b4b5527870f57135058787f973ea35a5a74",
+      "rh_id": "exec-total-2021-pct",
+      "rh_ledger_sha256": "661dfe3dd522c4f3199b3467e29592c38a93de6824b273af6b1f7c78f0323607",
+      "rh_study": "16 Évora Contas da Câmara",
       "verifications_at_export": 1
     },
     "evora-execucao-da-receita-2025": {
