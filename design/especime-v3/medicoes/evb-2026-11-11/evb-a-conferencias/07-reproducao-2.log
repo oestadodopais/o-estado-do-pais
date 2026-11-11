@@ -1,0 +1,40 @@
+Números: estados dos excertos {'conferido': 51, 'parou': 29}
+Unidades: estados dos excertos {'conferido': 239, 'parou': 83}
+Provas documentais distintas 354
+Preparação: 33 primárias, 21 derivações, 47 ligações, 33 paragens
+Datas: 244 declarações, 644 ligações candidatas, 0 recusas
+Complemento da cabeça: 31 ligações; 36 paragens; 1 posições LN por resolver
+Total preparado: 42 primárias; 33 derivações
+Complementares: 47 conferências; 0 paragens
+Datas da adenda: 350 declarações; 936 ligações; 59 paragens
+Citações atribuídas: 252 conferidas; 0 paragens
+Títulos: 40 conferidos, 0 parados
+pt 465 unidades; 447 marcadores; 127 pendências
+en 465 unidades; 439 marcadores; 157 pendências
+Medidas residuais: 50 ligações; 78 paragens
+pt 465 unidades; 468 marcadores; 106 pendências
+en 465 unidades; 468 marcadores; 128 pendências
+pt adagas 4
+en adagas 4
+pt ASSERTIONS: PASS — 38 quantifier hits, 0 checked, 31 review, 0 undeclared, 0 failed
+en ASSERTIONS: PASS — 20 quantifier hits, 0 checked, 18 review, 0 undeclared, 0 failed
+Atribuições pendentes: {'pt': {'valores_examinados': 659, 'avisos': 2, 'sem_atribuicao': 8}, 'en': {'valores_examinados': 662, 'avisos': 2, 'sem_atribuicao': 5}}
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_adenda.py", line 57, in <module>
+    if __name__=='__main__':run(*(Path(a) for a in sys.argv[1:]))
+                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_adenda.py", line 52, in run
+    razao=reasons[case['unidade']]))
+          ~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'C039'
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/reproduzir_adenda.py", line 20, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/reproduzir_adenda.py", line 17, in run
+    subprocess.run([sys.executable,str(HERE/script),*(str(a) for a in args)],cwd=ROOT,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<runtime>/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<runtime>/bin/python3', '<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_adenda.py', '<temporario>/evb-a-reproducao-conferida/preparados', '<temporario>/evb-a-reproducao-conferida/candidato', '<temporario>/evb-a-reproducao-conferida/diagnostico']' returned non-zero exit status 1.

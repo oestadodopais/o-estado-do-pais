@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/datas_adenda.py", line 102, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/datas_adenda.py", line 43, in run
+    src=item['fonte'];path=ROOT/src['ficheiro'];body=load(path)
+        ~~~~^^^^^^^^^
+KeyError: 'fonte'

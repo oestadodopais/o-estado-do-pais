@@ -1,0 +1,82 @@
+RELATÓRIO EVB A, 11.11.2026
+Não instalado. As duas edições continuam candidato_incompleto; não se aprovou nem publicou uma parte.
+
+1. Algarismos. Geradas e reconferidas 576 ocorrências por classe em português e 557 em inglês, por unidade e posição. ajustes.ignore conserva a classe. As plantas de 3 milhões com 3 ordinal, de ano usado como contagem e de posição adulterada recusam.
+Restam 109 ocorrências em português e 131 em inglês. A lista completa, com contexto e candidatos, está em preparados-a/ocorrencias-por-classificar.json; as listas de classes ficam em candidato-a/Technical Source/evb/pt e en/ocorrencias-sem-linha.json.
+
+2. Provas complementares. As 39 provas documentais distintas conferiram. Zero paragens LN e zero paragens da lista complementar de números da cabeça. As referências abreviadas a linhas existentes foram conferidas pelo excerto integral da linha apontada. Não se alterou nenhum excerto recebido. As plantas recusam um algarismo a mais e um valor de fora do excerto. A comparação da LN072 e as parcelas impressas da LN074 também ficaram ligadas.
+
+3. Datas. Os recibos pedidos foram ligados. Restam 59 ocorrências de datas integrais sem prova ligada nas duas línguas, incluindo C044, 6 de fevereiro de 2027, e C007, 30 de junho de 2026. Um dia e mês não podem aproveitar a prova de outro ano. Ver datas-adenda-paragens.json. A ausência de ligação não foi apresentada como falsidade da frase.
+
+4. Citações. 252 conferidas, 126 por língua, zero recusas, exclusivamente na atribuição recebida. Títulos da edição, nomes de ficheiros e nomes de páginas têm provas próprias. As plantas recusam outra fonte, título inexistente e reunião de palavra sem hífen e mudança de linha. Nas colunas, palavras completas pela ordem e leitura na imagem são ambas obrigatórias.
+
+5. Títulos. 38 títulos e 2 descrições de dados conferidos. O dossiê de pré-seleção usa a leitura recebida da capa; os fragmentos do título conferem nessa leitura. Um PDF com descrição em vez de título recusa.
+
+6. Atribuições. A revisão final parou porque nem todos os números estão ligados. Correu um diagnóstico com as linhas utilizadas: português, 2 avisos de proximidade e 8 casos sem attributed_to; inglês, 2 e 5. Não se instalaram dispensas. A régua ainda escolhe linhas por valor, pelo que a linha que assinala pode não ser a medida da ocorrência. As identidades integrais e as frases estão em atribuicoes-adenda.json. Casos e razões abaixo.
+
+7. Instalação recusada. 56 unidades distintas paradas, 41 em português e 55 em inglês; todas identificadas em unidades-paradas.json. Os conferidores do texto julgado dão código 1 em cada edição. A projeção editorial coincide nas duas línguas, mas repõe lacunas e não é uma composição aprovada. Livro, gabaritos ativos, HTML, registos, manifesto, cortes e core/gate_baselines.json ficaram intactos. O candidato anterior também ficou intacto; a adenda está isolada em candidato-a e preparados-a.
+
+8. Integridade. 3316 ficheiros dos outros estudos comparados, zero alterações. 72 ficheiros da cadeia ativa do 19 e das baselines, e 35 do candidato e preparados anteriores, iguais à base e55af85. Resumos individuais e por estudo em integridade-adenda.json.
+
+Prova: suites dirigidas finais, código 0 (112 testes); planta adicional da separadora julgada e suite EVB final, código 0 (18 testes). Reprodução final, código 0, incluindo os dois códigos editoriais 1. core.gate, uma corrida, código 0. O portão verifica a cadeia ativa preservada, não certifica o candidato. As asserções continuam REVIEW: 31 em português e 18 em inglês; zero undeclared e zero failed.
+Contagens: o estudo ativo conserva 161 linhas e as baselines não mudaram. As contagens de preparação são diagnósticas e estão em resumo-adenda.json; não são novos números de publicação.
+Os registos e os respetivos códigos estão em evb-a-conferencias; o portão está em evb-a-gate.log e evb-a-gate.codigo. As tentativas falhadas e as correções estão conservadas nas medidas, sem ocultar os códigos 1.
+
+Avisos por identidade, agrupados só quando partilham unidade, frase e razão:
+pt C001: 9,7 / evb-a-ln041-fonte / painel europeu / sem_atribuicao / ocorrência 1
+Frase: # Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»
+Razão: A frase distingue os 34 milhões do relato ao painel dos 9,7 milhões que as contas declaram recebidos. O painel não é o autor do segundo valor.
+
+pt C004: 9,7 / evb-a-ln041-fonte / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025.
+Razão: A frase atribui expressamente os 9,7 milhões às contas da Associação Évora 2027. A linha que o diagnóstico escolhe pelo valor não fixa a ocorrência da composição.
+
+pt C039: 2024 / evb-a-residual-en-c008-373 / painel europeu / sem_atribuicao / ocorrência 1
+Frase: A parte da cultura está paga pelos tetos de 2024 e 2025; a do município está por confirmar, e parte do dinheiro europeu depende de candidaturas.
+Razão: 2024 é o ano do teto da cultura. A frase não atribui essa data ao painel europeu.
+
+pt C045: 2 / evb-ln048 / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: 2. **À Associação Évora 2027:** publicar com o programa, até ao fim de 2026, um quadro do dinheiro por origem e por ano, com o prometido, o contratualizado e o recebido, e as remunerações dos órgãos sociais.
+Razão: O 2 é o ordinal do pedido dirigido à Associação Évora 2027, não uma medida atribuída à associação.
+
+pt C046: 3 / evb-a-cab-31 / Câmara Municipal de Évora / sem_atribuicao / ocorrência 1
+Frase: 3. **À Câmara Municipal de Évora:** dizer até ao fim de 2026 quando fica concluída a segunda obra do Rossio de São Brás e onde se faz a cerimónia de abertura se a praça não estiver pronta.
+Razão: O 3 é o ordinal do pedido dirigido à Câmara Municipal de Évora, não uma medida atribuída à Câmara.
+
+pt B023.R10: 4 / evb-a-cab-36 / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: | 2023-09-12 | Primeira reunião de monitorização, por meios virtuais | Primeiro relatório de monitorização | p. 4 |
+Razão: O 4 identifica a página do primeiro relatório de monitorização; não mede uma ação da associação.
+
+pt B023.R14: 2024 / evb-a-residual-en-c008-373 / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: | outubro de 2024 | A associação fica plenamente operacional, segundo o relatório de progresso de Évora 2027 resumido pelo painel | Segundo relatório de monitorização | p. 6 |
+Razão: 2024 é o ano em que a associação ficou operacional, segundo o relatório de progresso resumido pelo painel; não é uma quantidade.
+
+pt N21.2: 93 000 / evb-ln070 / Conselho de Ministros / sem_atribuicao / ocorrência 1; 1 290 000,00 / bbp-op-privado / Conselho de Ministros / proximidade / ocorrência 1; 1 197 000,00 / bbs-op-privado / Conselho de Ministros / proximidade / ocorrência 1
+Frase: A do setor privado desce 93 000 €, de 1 290 000,00 € para 1 197 000,00 €.
+Razão: A frase compara as receitas do setor privado dos dois dossiês e a diferença de 93 000 euros. Não atribui estes valores ao Conselho de Ministros; o nome entra pela janela de proximidade da unidade vizinha.
+
+en C004: 9,7 / evb-a-ln041-fonte / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025.
+Razão: A frase atribui expressamente os 9,7 milhões às contas da Associação Évora 2027. A linha que o diagnóstico escolhe pelo valor não fixa a ocorrência da composição.
+
+en C045: 2 / evb-ln048 / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: 2. **To the Associação Évora 2027:** publish with the programme, by the end of 2026, a table of the money by source and by year, with what was promised, contracted and received, and the pay of the governing bodies.
+Razão: O 2 é o ordinal do pedido dirigido à Associação Évora 2027, não uma medida atribuída à associação.
+
+en C046: 3 / evb-a-cab-31 / Câmara Municipal de Évora / sem_atribuicao / ocorrência 1
+Frase: 3. **To the Câmara Municipal de Évora:** say by the end of 2026 when the second Rossio de São Brás works will be finished and where the opening ceremony will be held if the square is not ready.
+Razão: O 3 é o ordinal do pedido dirigido à Câmara Municipal de Évora, não uma medida atribuída à Câmara.
+
+en B023.R10: 4 / evb-a-cab-36 / Associação Évora 2027 / sem_atribuicao / ocorrência 1
+Frase: | 2023-09-12 | First monitoring meeting, held virtually | First monitoring report | p. 4 |
+Razão: O 4 identifica a página do primeiro relatório de monitorização; não mede uma ação da associação.
+
+en N21.2: 93 000 / evb-ln070 / Conselho de Ministros / sem_atribuicao / ocorrência 1; 1 290 000,00 / bbp-op-privado / Conselho de Ministros / proximidade / ocorrência 1; 1 197 000,00 / bbs-op-privado / Conselho de Ministros / proximidade / ocorrência 1
+Frase: Private-sector revenue falls by 93 000 €, from 1 290 000,00 € to 1 197 000,00 €.
+Razão: A frase compara as receitas do setor privado dos dois dossiês e a diferença de 93 000 euros. Não atribui estes valores ao Conselho de Ministros; o nome entra pela janela de proximidade da unidade vizinha.
+
+Desvios de leitura: a primeira consulta ao relatório anterior e uma amostra de ocorrências produziram saídas excessivas. As listas longas da entrega ficaram nos JSON.
+Não houve push, sessões auxiliares nem alteração das formas inglesas. O relatório e as medidas ficam na pasta do mandato no sítio; não se inventou um trailer Claude-Session que a adenda não forneceu.
+Commits no motor: 8; cabeça 63514b6f.
+Chamadas de ferramentas até esta escrita: 115; repartição {'exec': 103, 'wait': 12}. Corridas registadas por curto.sh: 32, incluindo uma corrida de core.gate.
+tokens used: 16521143 (último contador observado).

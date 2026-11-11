@@ -1,0 +1,24 @@
+test_curta_so_noutro_documento_recusa (__main__.CitacoesAtribuidasTest.test_curta_so_noutro_documento_recusa) ... ok
+test_palavra_reunida_sem_quebra_recusa_em_colunas (__main__.CitacoesAtribuidasTest.test_palavra_reunida_sem_quebra_recusa_em_colunas) ... ok
+test_reuniao_exige_hifen_e_outra_linha (__main__.CitacoesAtribuidasTest.test_reuniao_exige_hifen_e_outra_linha) ... ok
+test_titulo_exige_mesma_edicao_letra_por_letra (__main__.CitacoesAtribuidasTest.test_titulo_exige_mesma_edicao_letra_por_letra) ... ok
+test_grafias_documentais_sem_ano_presumido (__main__.DatasAdendaTest.test_grafias_documentais_sem_ano_presumido) ... ok
+test_pdf_nao_pode_fingir_titulo_com_descricao (__main__.DescricoesTest.test_pdf_nao_pode_fingir_titulo_com_descricao) ... ok
+test_ano_nao_dispensa_contagem (__main__.OcorrenciasEVBTest.test_ano_nao_dispensa_contagem) ... ok
+test_data_completa_nao_e_ano_estrutural (__main__.OcorrenciasEVBTest.test_data_completa_nao_e_ano_estrutural) ... ok
+test_lista_trocada_ou_posicao_errada_recusa (__main__.OcorrenciasEVBTest.test_lista_trocada_ou_posicao_errada_recusa) ... ok
+test_ordinal_nao_dispensa_milhoes (__main__.OcorrenciasEVBTest.test_ordinal_nao_dispensa_milhoes) ... ok
+test_separadora_julgada_nao_tem_ocorrencias (__main__.OcorrenciasEVBTest.test_separadora_julgada_nao_tem_ocorrencias) ... ok
+test_candidatos_reais_nao_sao_contratos_de_publicacao (__main__.PosicoesEVBTest.test_candidatos_reais_nao_sao_contratos_de_publicacao) ... ok
+test_enfase_nao_muda_a_posicao_real (__main__.PosicoesEVBTest.test_enfase_nao_muda_a_posicao_real) ... ok
+test_frase_repetida_recusa (__main__.PosicoesEVBTest.test_frase_repetida_recusa) ... ok
+test_mesma_ocorrencia_nas_duas_linguas (__main__.PosicoesEVBTest.test_mesma_ocorrencia_nas_duas_linguas) ... ok
+test_multiplicidade_diferente_nao_inventa_ligacao (__main__.PosicoesEVBTest.test_multiplicidade_diferente_nao_inventa_ligacao) ... ok
+test_valores_iguais_de_medidas_diferentes (__main__.PosicoesEVBTest.test_valores_iguais_de_medidas_diferentes) ... ok
+test_simbolos_colados_conservam_numero_inteiro (__main__.SimbolosEVBTest.test_simbolos_colados_conservam_numero_inteiro) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.018s
+
+OK
+EVB: PASS, 18 testes

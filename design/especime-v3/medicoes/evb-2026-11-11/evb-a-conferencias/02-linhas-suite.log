@@ -1,0 +1,43 @@
+test_folha_e_linha_erradas (__main__.DocumentosNovosTest.test_folha_e_linha_erradas) ... ok
+test_html_e_xlsx_ausente (__main__.DocumentosNovosTest.test_html_e_xlsx_ausente) ... ok
+test_html_e_xlsx_duplicado (__main__.DocumentosNovosTest.test_html_e_xlsx_duplicado) ... ok
+test_html_e_xlsx_excerto_completo (__main__.DocumentosNovosTest.test_html_e_xlsx_excerto_completo) ... ok
+test_html_so_tem_pagina_unica (__main__.DocumentosNovosTest.test_html_so_tem_pagina_unica) ... ok
+test_mesmo_nome_outro_resumo (__main__.DocumentosNovosTest.test_mesmo_nome_outro_resumo) ... ok
+test_titulos_html_e_xlsx (__main__.DocumentosNovosTest.test_titulos_html_e_xlsx) ... ok
+test_valor_documental_nao_dispensa_o_documento (__main__.DocumentosNovosTest.test_valor_documental_nao_dispensa_o_documento) ... ok
+test_valor_em_colunas_sem_partir_um_numero (__main__.DocumentosNovosTest.test_valor_em_colunas_sem_partir_um_numero) ... ok
+test_xlsx_recusa_formula_sem_cache (__main__.DocumentosNovosTest.test_xlsx_recusa_formula_sem_cache) ... ok
+test_cada_edicao_exige_marcador_proprio (__main__.LinhasPropriasTest.test_cada_edicao_exige_marcador_proprio) ... ok
+test_campos_obrigatorios (__main__.LinhasPropriasTest.test_campos_obrigatorios) ... ok
+test_centimo_ingles_diferente_continua_orfao (__main__.LinhasPropriasTest.test_centimo_ingles_diferente_continua_orfao) ... ok
+test_colisao_com_derivacao (__main__.LinhasPropriasTest.test_colisao_com_derivacao) ... ok
+test_colisao_com_fonte_nao_impressa (__main__.LinhasPropriasTest.test_colisao_com_fonte_nao_impressa) ... ok
+test_colisao_com_identificador_renomeado (__main__.LinhasPropriasTest.test_colisao_com_identificador_renomeado) ... ok
+test_colisao_com_outra_propria (__main__.LinhasPropriasTest.test_colisao_com_outra_propria) ... ok
+test_componente_nao_impressa_so_entra_pela_derivacao (__main__.LinhasPropriasTest.test_componente_nao_impressa_so_entra_pela_derivacao) ... ok
+test_componente_tem_de_ser_usada_em_cada_edicao (__main__.LinhasPropriasTest.test_componente_tem_de_ser_usada_em_cada_edicao) ... ok
+test_composta_como_primaria_e_proveniencia (__main__.LinhasPropriasTest.test_composta_como_primaria_e_proveniencia) ... ok
+test_copia_compoe_exporta_e_passa_reguas_do_portao (__main__.LinhasPropriasTest.test_copia_compoe_exporta_e_passa_reguas_do_portao) ... ok
+test_dados_malformados_recusados (__main__.LinhasPropriasTest.test_dados_malformados_recusados) ... ok
+test_decimal_com_ponto_em_portugues_recusa (__main__.LinhasPropriasTest.test_decimal_com_ponto_em_portugues_recusa) ... ok
+test_derivacao_com_componente_proprio (__main__.LinhasPropriasTest.test_derivacao_com_componente_proprio) ... ok
+test_documento_pode_estar_na_fonte_declarada (__main__.LinhasPropriasTest.test_documento_pode_estar_na_fonte_declarada) ... ok
+test_documento_sem_resumo_ou_nao_alojado (__main__.LinhasPropriasTest.test_documento_sem_resumo_ou_nao_alojado) ... ok
+test_excerto_curto_ambiguo_e_fragmento_recusados (__main__.LinhasPropriasTest.test_excerto_curto_ambiguo_e_fragmento_recusados) ... ok
+test_excerto_curto_completo_e_unico (__main__.LinhasPropriasTest.test_excerto_curto_completo_e_unico) ... ok
+test_excerto_na_pagina_errada_e_excerto_inventado (__main__.LinhasPropriasTest.test_excerto_na_pagina_errada_e_excerto_inventado) ... ok
+test_formas_e_regra_das_fontes (__main__.LinhasPropriasTest.test_formas_e_regra_das_fontes) ... ok
+test_linha_propria_nao_pode_ser_eliminada_por_mesma_medida (__main__.LinhasPropriasTest.test_linha_propria_nao_pode_ser_eliminada_por_mesma_medida) ... ok
+test_livro_tambem_recusa_excerto_adulterado (__main__.LinhasPropriasTest.test_livro_tambem_recusa_excerto_adulterado) ... ok
+test_milhar_com_decimal_ingles_e_um_numero (__main__.LinhasPropriasTest.test_milhar_com_decimal_ingles_e_um_numero) ... ok
+test_resumo_truncado_recusa_na_conferencia_da_linha (__main__.LinhasPropriasTest.test_resumo_truncado_recusa_na_conferencia_da_linha) ... ok
+test_sem_marcador_mesmo_com_acervo (__main__.LinhasPropriasTest.test_sem_marcador_mesmo_com_acervo) ... ok
+test_valor_ausente_e_fragmento_recusados (__main__.LinhasPropriasTest.test_valor_ausente_e_fragmento_recusados) ... ok
+test_valor_negativo_com_excerto_negativo_passa (__main__.LinhasPropriasTest.test_valor_negativo_com_excerto_negativo_passa) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 4.968s
+
+OK
+LINHAS PROPRIAS: PASS, 37 testes

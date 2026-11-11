@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/datas_adenda.py", line 103, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/datas_adenda.py", line 89, in run
+    add(uid,candidate)
+    ~~~^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/datas_adenda.py", line 32, in add
+    value=D.imprimir(row['valor'],lang,form,original=(row.get('registo') or row.get('documento'))['valor'])
+  File "<motor>/core/datas_declaradas.py", line 38, in imprimir
+    stamp=datetime.fromisoformat(original.replace('Z','+00:00')).astimezone(timezone.utc)
+          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '15 SET 2025'

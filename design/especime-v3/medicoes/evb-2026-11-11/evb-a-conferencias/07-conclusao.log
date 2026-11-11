@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/concluir_adenda.py", line 60, in <module>
+    if __name__=='__main__':run(*(Path(a) for a in sys.argv[1:]))
+                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/concluir_adenda.py", line 18, in run
+    conferir_contrato(tech/f'documento.{lang}.md.tmpl',units,contracts[lang])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/ocorrencias_sem_linha.py", line 90, in conferir_contrato
+    conferir(gabarito.read_text(),units,rows)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/ocorrencias_sem_linha.py", line 75, in conferir
+    if not match:raise ValueError('ocorrência: gabarito diferente da unidade '+uid)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: ocorrência: gabarito diferente da unidade C032

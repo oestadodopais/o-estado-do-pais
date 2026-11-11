@@ -1,0 +1,296 @@
+{
+  "cabeca_motor": "63514b6f360d03432feba4a8d09dd1c9aaff878f",
+  "commits_motor": 8,
+  "inicio_da_sessao": "2026-11-11T18:40:13.123Z",
+  "chamadas_de_ferramentas": {
+    "exec": 103,
+    "wait": 12
+  },
+  "total_chamadas": 115,
+  "corridas_por_curto": 32,
+  "corridas": [
+    {
+      "registo": "01-ocorrencias.log",
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 19
+    },
+    {
+      "registo": "01-ocorrencias-2.log",
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 16
+    },
+    {
+      "registo": "02-complementares.log",
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 1
+    },
+    {
+      "registo": "02-suite.log",
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 17
+    },
+    {
+      "registo": "02-complementares-2.log",
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 1
+    },
+    {
+      "registo": "02-complementares-3.log",
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 1
+    },
+    {
+      "registo": "02-linhas-suite.log",
+      "codigo": 0,
+      "segundos": 5,
+      "linhas": 43
+    },
+    {
+      "registo": "03-datas.log",
+      "codigo": 1,
+      "segundos": 1,
+      "linhas": 8
+    },
+    {
+      "registo": "03-datas-2.log",
+      "codigo": 1,
+      "segundos": 33,
+      "linhas": 13
+    },
+    {
+      "registo": "03-datas-3.log",
+      "codigo": 0,
+      "segundos": 34,
+      "linhas": 1
+    },
+    {
+      "registo": "04-citacoes.log",
+      "codigo": 0,
+      "segundos": 6,
+      "linhas": 1
+    },
+    {
+      "registo": "04-citacoes-2.log",
+      "codigo": 0,
+      "segundos": 5,
+      "linhas": 1
+    },
+    {
+      "registo": "03-suite.log",
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 5
+    },
+    {
+      "registo": "03-datas-4.log",
+      "codigo": 0,
+      "segundos": 20,
+      "linhas": 1
+    },
+    {
+      "registo": "04-suite.log",
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 7
+    },
+    {
+      "registo": "01-gerar.log",
+      "codigo": 0,
+      "segundos": 10,
+      "linhas": 2
+    },
+    {
+      "registo": "05-titulos.log",
+      "codigo": 0,
+      "segundos": 4,
+      "linhas": 1
+    },
+    {
+      "registo": "02-residuais.log",
+      "codigo": 0,
+      "segundos": 27,
+      "linhas": 1
+    },
+    {
+      "registo": "06-atribuicoes.log",
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 1
+    },
+    {
+      "registo": "05-suite.log",
+      "codigo": 0,
+      "segundos": 12,
+      "linhas": 7
+    },
+    {
+      "registo": "01-gerar-2.log",
+      "codigo": 0,
+      "segundos": 6,
+      "linhas": 2
+    },
+    {
+      "registo": "07-reproducao.log",
+      "codigo": 0,
+      "segundos": 111,
+      "linhas": 23
+    },
+    {
+      "registo": "04-palavras.log",
+      "codigo": 0,
+      "segundos": 2,
+      "linhas": 1
+    },
+    {
+      "registo": "06-atribuicoes-2.log",
+      "codigo": 0,
+      "segundos": 1,
+      "linhas": 1
+    },
+    {
+      "registo": "07-reproducao-2.log",
+      "codigo": 1,
+      "segundos": 86,
+      "linhas": 40
+    },
+    {
+      "registo": "07-reproducao-3.log",
+      "codigo": 0,
+      "segundos": 86,
+      "linhas": 23
+    },
+    {
+      "registo": "07-conclusao.log",
+      "codigo": 1,
+      "segundos": 0,
+      "linhas": 14
+    },
+    {
+      "registo": "07-conclusao-2.log",
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 3
+    },
+    {
+      "registo": "07-suites-finais.log",
+      "codigo": 0,
+      "segundos": 23,
+      "linhas": 7
+    },
+    {
+      "registo": "07-plantas-finais.log",
+      "codigo": 0,
+      "segundos": 0,
+      "linhas": 24
+    },
+    {
+      "registo": "07-reproducao-final.log",
+      "codigo": 0,
+      "segundos": 88,
+      "linhas": 26
+    },
+    {
+      "registo": "evb-a-gate.log",
+      "codigo": 0,
+      "segundos": 980,
+      "linhas": 390
+    }
+  ],
+  "core_gate": {
+    "corridas": 1,
+    "codigo": 0,
+    "registo": "evb-a-gate.log",
+    "sha256": "84c72d2036bb5d7cb1d8627145f49d194588ec04e5991f6704cfd73a787c86a8",
+    "cabeca_do_codigo_verificado": "6b5f05d92607f6e83996013acf1c1a3aff130621"
+  },
+  "resultado": {
+    "edicoes": {
+      "pt": {
+        "unidades": 465,
+        "marcadores": 464,
+        "ocorrencias_classificadas": 576,
+        "classes": {
+          "ano": 326,
+          "ordinal": 11,
+          "identificador": 15,
+          "pagina_folha": 194,
+          "diploma_artigo_pergunta": 30
+        },
+        "ocorrencias_por_resolver": 109,
+        "unidades_por_resolver": 41,
+        "projecao_editorial": true,
+        "texto_julgado": {
+          "codigo": 1,
+          "motivo": "candidato incompleto: não é um contrato de publicação"
+        }
+      },
+      "en": {
+        "unidades": 465,
+        "marcadores": 465,
+        "ocorrencias_classificadas": 557,
+        "classes": {
+          "ano": 307,
+          "ordinal": 11,
+          "identificador": 16,
+          "pagina_folha": 194,
+          "diploma_artigo_pergunta": 29
+        },
+        "ocorrencias_por_resolver": 131,
+        "unidades_por_resolver": 55,
+        "projecao_editorial": true,
+        "texto_julgado": {
+          "codigo": 1,
+          "motivo": "candidato incompleto: não é um contrato de publicação"
+        }
+      }
+    },
+    "unidades_paradas": 56,
+    "linhas_primarias_preparadas": 95,
+    "derivacoes_preparadas": 45,
+    "linhas_LN_paradas": 0,
+    "numeros_cabeca_parados": 1,
+    "complementares_paradas": 0,
+    "citacoes_conferidas": 252,
+    "citacoes_paradas": 0,
+    "datas_integrais_paradas": 59,
+    "titulos_conferidos": 38,
+    "descricoes_de_dados": 2,
+    "titulos_parados": 0,
+    "atribuicoes": {
+      "pt": {
+        "valores_examinados": 645,
+        "avisos": 2,
+        "sem_atribuicao": 8
+      },
+      "en": {
+        "valores_examinados": 649,
+        "avisos": 2,
+        "sem_atribuicao": 5
+      }
+    },
+    "instalado": false,
+    "estado": "candidato_incompleto",
+    "motivo": "Não se instala uma parte: subsistem ocorrências ou fontes sem ligação verificável."
+  },
+  "integridade": {
+    "outros_estudos": 3316,
+    "alteracoes_outros": 0,
+    "produtos_ativos_19_e_baselines": 72,
+    "candidato_anterior": 35
+  },
+  "tokens_observados": {
+    "input_tokens": 16432668,
+    "cached_input_tokens": 16288256,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 88475,
+    "reasoning_output_tokens": 40322,
+    "total_tokens": 16521143
+  },
+  "nota": "Corridas são as invocações registadas por curto.sh; cada reprodução executa os passos internos indicados no guião. O contador de tokens é o último observado, não uma estimativa de custo."
+}

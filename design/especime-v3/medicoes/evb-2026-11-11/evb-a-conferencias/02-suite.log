@@ -1,0 +1,17 @@
+test_ano_nao_dispensa_contagem (__main__.OcorrenciasEVBTest.test_ano_nao_dispensa_contagem) ... ok
+test_data_completa_nao_e_ano_estrutural (__main__.OcorrenciasEVBTest.test_data_completa_nao_e_ano_estrutural) ... ok
+test_lista_trocada_ou_posicao_errada_recusa (__main__.OcorrenciasEVBTest.test_lista_trocada_ou_posicao_errada_recusa) ... ok
+test_ordinal_nao_dispensa_milhoes (__main__.OcorrenciasEVBTest.test_ordinal_nao_dispensa_milhoes) ... ok
+test_candidatos_reais_nao_sao_contratos_de_publicacao (__main__.PosicoesEVBTest.test_candidatos_reais_nao_sao_contratos_de_publicacao) ... ok
+test_enfase_nao_muda_a_posicao_real (__main__.PosicoesEVBTest.test_enfase_nao_muda_a_posicao_real) ... ok
+test_frase_repetida_recusa (__main__.PosicoesEVBTest.test_frase_repetida_recusa) ... ok
+test_mesma_ocorrencia_nas_duas_linguas (__main__.PosicoesEVBTest.test_mesma_ocorrencia_nas_duas_linguas) ... ok
+test_multiplicidade_diferente_nao_inventa_ligacao (__main__.PosicoesEVBTest.test_multiplicidade_diferente_nao_inventa_ligacao) ... ok
+test_valores_iguais_de_medidas_diferentes (__main__.PosicoesEVBTest.test_valores_iguais_de_medidas_diferentes) ... ok
+test_simbolos_colados_conservam_numero_inteiro (__main__.SimbolosEVBTest.test_simbolos_colados_conservam_numero_inteiro) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.011s
+
+OK
+EVB: PASS, 11 testes
