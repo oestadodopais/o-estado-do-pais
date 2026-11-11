@@ -237,7 +237,7 @@ function passosDaConstrucao() {
 
 function paginasDeLeitura() {
   const m = JSON.parse(fs.readFileSync(path.join(RAIZ, 'registos', 'manifest.json'), 'utf8'));
-  return Object.keys(m.registos ?? {}).length;
+  return Object.keys(m.registos ?? {}).filter(chave => PUBLISHED_EDITIONS.some(e => `${e.slug}/${e.lang}` === chave)).length;
 }
 
 function concelhosGerados() {
@@ -341,8 +341,8 @@ const FACTOS = [
     id: 'paginas_de_leitura',
     nome: 'páginas de leitura (edições com registo de conteúdo)',
     palavras: ['páginas de leitura', 'edições com registo de conteúdo', 'edições com registo'],
-    fonte: 'registos/manifest.json',
-    comando: "node -e \"console.log(Object.keys(require('./registos/manifest.json').registos).length)\"",
+    fonte: 'registos/manifest.json · edições publicadas em src/data/studies.mjs',
+    comando: "node --input-type=module -e \"import fs from 'node:fs'; import {PUBLISHED_EDITIONS} from './src/data/studies.mjs'; const r=JSON.parse(fs.readFileSync('registos/manifest.json')).registos; console.log(PUBLISHED_EDITIONS.filter(e=>r[e.slug+'/'+e.lang]).length)\"",
     valor: paginasDeLeitura(),
     /* uma só fonte, pela mesma razão */
   },

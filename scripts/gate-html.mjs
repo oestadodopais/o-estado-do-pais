@@ -1,3 +1,4 @@
+import { eventoDeEstudosRetirados } from '../src/lib/agenda-retirada.mjs';
 import { destinoDoRetirado } from './estudos-retirados-conferir.mjs';
 #!/usr/bin/env node
 import { emEnsaio, desdeOLancamento } from '../site.config.mjs';
@@ -3968,6 +3969,7 @@ function contasDoPortao(claims) {
    */
   const dosRegistos = { com_resumo: 0, sem_resumo: 0 };
   for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
+    if (!PUBLISHED_EDITIONS.some(e => `${e.slug}/${e.lang}` === chave)) continue;
     const corte = chave.lastIndexOf('/');
     const registo = registoDoPortao(chave.slice(0, corte), chave.slice(corte + 1));
     for (const bloco of registo?.blocks ?? []) {
@@ -8500,7 +8502,7 @@ for (const { rel, chave, destino, caminho, ancora } of ancorasDaProva) {
     if(Number(registoDaTravessia.counts.itens)!==ITENS_DA_AGENDA.size || Number(registoDaTravessia.counts.eventos)!==EVENTOS_DO_CALENDARIO.size) erros.push({rel:'dados',msg:'VOZ-1 B: contagens da travessia diferentes dos dados'});
     for(const [estado,n] of Object.entries(registoDaTravessia.counts.itens_por_estado??{})) if([...ITENS_DA_AGENDA.values()].filter(i=>i.estado===estado).length!==n) erros.push({rel:'dados',msg:'VOZ-1 B: estado diferente da travessia'});
     const dia=process.env.OEDP_DIA_DA_CONSTRUCAO || JSON.parse(fs.readFileSync(path.join(DIST,'version.json'),'utf8')).construido_em.slice(0,10);
-    const esperados=new Set([...EVENTOS_DO_CALENDARIO.values()].filter(e=>!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=dia).map(e=>e.id));
+    const esperados=new Set([...EVENTOS_DO_CALENDARIO.values()].filter(e=>!eventoDeEstudosRetirados(e,AGENDA_REGISTO,WORKS) && (!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=dia)).map(e=>e.id));
     for(const [rel,visto] of paginasDaAgenda){
       if(visto.itens.size)erros.push({rel,msg:'VOZ-1 B: itens internos visíveis'});
       for(const id of new Set([...esperados,...visto.eventos]))if(esperados.has(id)!==visto.eventos.has(id))erros.push({rel,msg:`VOZ-1 B: acontecimento ${id} fora do conjunto futuro esperado`});

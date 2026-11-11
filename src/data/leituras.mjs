@@ -46,6 +46,8 @@ const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
        impõe ao sistema», «Sem o fator de sustentabilidade, a penalização é sempre inferior à neutra» e «Com o fator de
        sustentabilidade, a penalização de um ano é de 22,6%»
        (`studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html`). */
+import { WORKS } from './studies.mjs';
+
 export const LEITURAS = {
 "orcamento-2027-o-que-muda-e-para-quem": {
   "medidas": [
@@ -892,14 +894,11 @@ export const LEITURAS = {
  * @returns {boolean}
  */
 export function temLeitura(id) {
-  return Object.prototype.hasOwnProperty.call(LEITURAS, id);
+  return !WORKS.some(w => w.id === id && w.estado === 'retirado') && Object.prototype.hasOwnProperty.call(LEITURAS, id);
 }
 
 /**
- * Este trabalho oferece-se ao índice? Com leitura escrita e sem sucessor (bloco E1,
- * 01.10.2026): um estudo que outro sucedeu fica alojado como edição datada, com a
- * sua leitura, e sai do índice e do mapa do sítio. É a resposta que a página, o
- * mapa do sítio e a prova leem, para as três metades não divergirem.
+ * Um trabalho retirado não oferece leitura nem página ao índice.
  *
  * @param {{ id: string, estado?: string }} work
  * @returns {boolean}

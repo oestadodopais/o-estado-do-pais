@@ -84,31 +84,7 @@
     "razao": "citação da fonte"
   },
   {
-    "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/document",
-    "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»",
-    "classe": "facto de uma fonte",
-    "razao": "citação da fonte"
-  },
-  {
-    "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
-    "frase": "Reading the budget as spending is the single easiest way to be wrong about a municipality, and the gap here is not small.",
-    "classe": "facto de uma fonte",
-    "razao": "«here» é o município; juízo sobre o orçamento, não sobre o projeto"
-  },
-  {
-    "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
-    "frase": "The municipal balance sheet is solvent many times over on paper; the pressure in these accounts has never been about net worth, it is about cash and time (inference).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
     "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
-    "frase": "The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies.",
-    "classe": "facto de uma fonte",
-    "razao": "facto da fonte (23 linhas, um organismo com dois papéis)"
-  },
-  {
-    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
     "frase": "The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies.",
     "classe": "facto de uma fonte",
     "razao": "facto da fonte (23 linhas, um organismo com dois papéis)"
@@ -120,46 +96,10 @@
     "razao": "rótulo de inferência com a fonte a justificar"
   },
   {
-    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
-    "frase": "The municipality itself is not the main channel for PRR money in its own territory (inference, from the two tables above: the câmara appears in the recipient layer with less contracted than the university, and not at all in the manager layer).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com a fonte a justificar"
-  },
-  {
     "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
     "frase": "The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed (inference: the source records approval, date and payment, and does not say why).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência; a fonte regista aprovação, data e pagamento"
-  },
-  {
-    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
-    "frase": "The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed (inference: the source records approval, date and payment, and does not say why).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência; a fonte regista aprovação, data e pagamento"
-  },
-  {
-    "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
-    "frase": "Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference from the three lines above; the report states each line, not the pattern).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o relatório como sujeito"
-  },
-  {
-    "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
-    "frase": "So the size of the 2026 budget, €110 840 577, larger again, predicts very little by itself; the first number worth checking in the 2026 accounts is the execution rate, not the total (inference).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
-    "frase": "Under the reading above these are the credible red flags, because the payment column — the harder field — is the one saying nothing has moved (inference).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
-    "frase": "What survives is the practical point: a citizen who goes looking for an examination of those years will not find it through this catalogue's search, whatever may in fact have been examined (inference).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência sobre o catálogo"
   },
   {
     "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
@@ -174,55 +114,13 @@
     "razao": "facto sobre o orçamento municipal (digitalização ilegível)"
   },
   {
-    "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
-    "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
-    "classe": "facto de uma fonte",
-    "razao": "facto sobre o orçamento municipal (digitalização ilegível)"
-  },
-  {
-    "rota": "/estudos/evora-2027-prometido-painel-dinheiro",
-    "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
-    "classe": "facto de uma fonte",
-    "razao": "facto sobre o orçamento municipal (digitalização ilegível)"
-  },
-  {
     "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
     "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»​",
     "classe": "facto de uma fonte",
     "razao": "citação da fonte"
   },
   {
-    "rota": "/estudos/evora-2027-prometido-painel-dinheiro/documento",
-    "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»",
-    "classe": "facto de uma fonte",
-    "razao": "citação da fonte"
-  },
-  {
-    "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
-    "frase": "Ler o orçamento como despesa é a maneira mais fácil de se enganar sobre um município, e aqui a distância não é pequena.",
-    "classe": "facto de uma fonte",
-    "razao": "«aqui» é o município; juízo sobre o orçamento, não sobre o projeto"
-  },
-  {
-    "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
-    "frase": "A amortização de empréstimos é a única linha da despesa de capital que não pode deslizar (inferência; o relatório imprime as duas taxas sem as comparar).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o relatório como sujeito"
-  },
-  {
-    "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
-    "frase": "No papel, o balanço municipal cobre o passivo várias vezes; a pressão nestas contas nunca foi sobre o património líquido, é sobre caixa e tempo (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
     "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
-    "frase": "A fonte devolve 23 linhas e não 22, porque um organismo detém dinheiro de Évora sob dois papéis diferentes — uma contagem de linhas aqui não é uma contagem de organismos.",
-    "classe": "facto de uma fonte",
-    "razao": "facto da fonte (23 linhas, um organismo com dois papéis)"
-  },
-  {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
     "frase": "A fonte devolve 23 linhas e não 22, porque um organismo detém dinheiro de Évora sob dois papéis diferentes — uma contagem de linhas aqui não é uma contagem de organismos.",
     "classe": "facto de uma fonte",
     "razao": "facto da fonte (23 linhas, um organismo com dois papéis)"
@@ -234,19 +132,7 @@
     "razao": "rótulo de inferência com a fonte a justificar"
   },
   {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
-    "frase": "O próprio município não é o canal principal do dinheiro do PRR no seu território (inferência, a partir das duas tabelas acima: a câmara aparece na camada de beneficiários com menos contratado do que a universidade, e não aparece de todo na camada de gestores).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com a fonte a justificar"
-  },
-  {
     "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
-    "frase": "Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência sobre convenção de preenchimento do registo"
-  },
-  {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
     "frase": "Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência sobre convenção de preenchimento do registo"
@@ -256,57 +142,9 @@
     "frase": "O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado (inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência; a fonte regista aprovação, data e pagamento"
-  },
-  {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
-    "frase": "O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado (inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência; a fonte regista aprovação, data e pagamento"
-  },
-  {
-    "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
-    "frase": "Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência a partir das três linhas acima; o relatório afirma cada linha, não o padrão).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência com o relatório como sujeito"
-  },
-  {
-    "rota": "/estudos/evora-orcamentado-pago-devido-2025/documento",
-    "frase": "Por isso o tamanho do orçamento de 2026, €110 840 577, de novo maior, prevê muito pouco por si; o primeiro número a verificar nas contas de 2026 é a taxa de execução, não o total (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
-    "frase": "Na leitura acima, são estes os sinais de alarme credíveis, porque a coluna dos pagamentos — o campo mais duro — é a que diz que nada se moveu (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
-    "frase": "O que sobrevive é o ponto prático: um cidadão que vá à procura de um exame desses anos não o encontrará pela pesquisa deste catálogo, o que quer que de facto tenha sido examinado (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência sobre o catálogo"
-  },
-  {
-    "rota": "/estudos/evora-prometido-pago-auditado-2026/documento",
-    "frase": "Dinheiro, risco de entrega e um rasto pesquisável fino concentram-se no mesmo canto da mesma cidade (inferência).",
-    "classe": "facto de uma fonte",
-    "razao": "rótulo de inferência"
-  },
-  {
-    "rota": "/en/studies/evora-orcamentado-pago-devido-2025/document",
-    "frase": "Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them).",
-    "classe": "facto de uma fonte",
-    "razao": "o par inglês da FICA V169 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
   },
   {
     "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
-    "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
-    "classe": "facto de uma fonte",
-    "razao": "o par inglês da FICA V180 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"
-  },
-  {
-    "rota": "/en/studies/evora-prometido-pago-auditado-2026/document",
     "frase": "A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference).",
     "classe": "facto de uma fonte",
     "razao": "o par inglês da FICA V180 (rótulo de inferência), que a régua alargada passa a medir; adenda H (o par em falta, achado pela conferência dos pares)"

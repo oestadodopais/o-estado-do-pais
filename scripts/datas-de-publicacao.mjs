@@ -77,6 +77,7 @@
  */
 
 import fs from 'node:fs';
+import {WORKS} from '../src/data/studies.mjs';
 import {load} from 'js-yaml';
 import {dataEdicaoUnica} from './data-edicao-unica.mjs';
 import path from 'node:path';
@@ -150,6 +151,7 @@ const edicoes = [];
 const semCommit = [];
 
 for (const slug of slugs) {
+  if (WORKS.find(w => w.slug === slug)?.estado === 'retirado') continue;
   for (const lang of ['pt', 'en']) {
     const ficheiro = `studies-src/${slug}/${lang}.html`;
     if (!fs.existsSync(path.join(RAIZ, ficheiro))) continue;

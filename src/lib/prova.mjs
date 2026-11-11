@@ -315,6 +315,7 @@ function contagensDosRegistos(doMotor) {
   };
   for (const motivo of MOTIVOS_SEM_RESUMO) c.motivos[motivo] = 0;
   for (const { slug, lang, entrada } of todosOsRegistos()) {
+    if (!PUBLISHED_EDITIONS.some(e => e.slug === slug && e.lang === lang)) continue;
     const registo = registoDaEdicao(slug, lang);
     if (!registo) continue;
     c.edicoes++;

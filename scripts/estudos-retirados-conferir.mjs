@@ -1,4 +1,5 @@
 import { routePath } from '../src/lib/routes.mjs';
+import { SITE_URL } from '../site.config.mjs';
 import { parse } from 'node-html-parser';
 
 export const normalizarRota = rota => rota.replace(/\/$/, '') || '/';
@@ -61,6 +62,9 @@ export function conferirRedirecionamentos(works, partida, tabela, rotas) {
 /** Percorre todo o sítio, incluindo mapa XML e ligações relativas ou com fragmento. */
 export function conferirLigacoesRetiradas(works, rota, html) {
   const root = parse(html), erros = [];
+  const citacoesVivas = new Set(works.filter(w => w.estado !== 'retirado').flatMap(w => Object.values(w.verbatimDaAbertura ?? {})));
+  const citacoesRetiradas = works.filter(w => w.estado === 'retirado').flatMap(w => Object.values(w.verbatimDaAbertura ?? {})).filter(k => !citacoesVivas.has(k));
+  for (const el of root.querySelectorAll('[data-verbatim]')) if (citacoesRetiradas.includes(el.getAttribute('data-verbatim'))) erros.push(`REC2 citação exclusiva de estudo retirado: ${rota}`);
   if (root.querySelector('[data-sucessor-edicao], [data-sucessor-reconcilia], .estudo-sucessor, .estudo-antecessores')) {
     erros.push(`REC2 nota de sucessão retirada: ${rota}`);
   }
@@ -68,7 +72,7 @@ export function conferirLigacoesRetiradas(works, rota, html) {
   destinos.push(...root.querySelectorAll('loc').map(el => el.textContent));
   for (const href of destinos) {
     let caminho;
-    try { caminho = new URL(href, 'https://oestadodopais.pt' + rota).pathname; } catch { continue; }
+    try { caminho = new URL(href, new URL(rota, SITE_URL)).pathname; } catch { continue; }
     if (estudoDaRota(caminho, works)?.estado === 'retirado') erros.push(`REC2 ligação retirada: ${rota} -> ${href}`);
   }
   return erros;

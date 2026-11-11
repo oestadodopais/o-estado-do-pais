@@ -85,6 +85,7 @@ import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
 
 import { routePath } from '../src/lib/routes.mjs';
+import {WORKS} from '../src/data/studies.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..');
@@ -343,6 +344,10 @@ for (const chave of chaves) {
   const corte = chave.lastIndexOf('/');
   const slug = chave.slice(0, corte);
   const lang = chave.slice(corte + 1);
+  const retirado = WORKS.find(w => w.slug === slug)?.estado === 'retirado';
+  // C1 a C4 continuam a conferir as fontes guardadas; os totais são das páginas publicadas.
+  const contadores = retirado ? Object.fromEntries(Object.keys(totais).map(k => [k, 0])) : totais;
+  const contra = retirado ? {igual:0, diverge:0} : contraOLivro;
   const registo = leJson(
     path.join(REGISTOS, slug, `${lang}.record.json`),
     `${path.relative(RAIZ, REGISTOS)}/${slug}/${lang}.record.json`,
@@ -350,25 +355,30 @@ for (const chave of chaves) {
 
   const rota = routePath('estudo', lang, { slug });
   const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
-  if (!fs.existsSync(ficheiro)) {
-    err(
-      `C5 ${chave}: o registo de travessia declara esta edição e não há página de leitura ` +
-        `construída em ${path.relative(RAIZ, ficheiro)}.`,
-    );
-    continue;
-  }
-  const pagina = parse(fs.readFileSync(ficheiro, 'utf8'), { comment: false });
-  const artigo = pagina.querySelector('[data-registo-edicao]');
-  if (!artigo) {
-    err(`C5 ${chave}: a página construída não tem o corpo transcrito (data-registo-edicao).`);
-    continue;
+  let artigo = null;
+  if (retirado) {
+    if (fs.existsSync(ficheiro)) err(`C5 ${chave}: trabalho retirado com página construída.`);
+  } else {
+    if (!fs.existsSync(ficheiro)) {
+      err(
+        `C5 ${chave}: o registo de travessia declara esta edição e não há página de leitura ` +
+          `construída em ${path.relative(RAIZ, ficheiro)}.`,
+      );
+      continue;
+    }
+    const pagina = parse(fs.readFileSync(ficheiro, 'utf8'), { comment: false });
+    artigo = pagina.querySelector('[data-registo-edicao]');
+    if (!artigo) {
+      err(`C5 ${chave}: a página construída não tem o corpo transcrito (data-registo-edicao).`);
+      continue;
+    }
   }
 
   /* As marcas da página, pela coordenada, e as entradas de «As linhas deste
      documento», pelo id. Uma marca que sobre no fim é uma figura que a página
      inventou, e fecha no passo 5. */
   const marcasDaPagina = new Map();
-  for (const el of artigo.querySelectorAll('[data-registo]')) {
+  for (const el of artigo?.querySelectorAll('[data-registo]') ?? []) {
     const marca = atributo(el, 'data-registo');
     if (marcasDaPagina.has(marca)) {
       err(`C5 ${marca}: a página rende esta coordenada mais do que uma vez.`);
@@ -386,8 +396,8 @@ for (const chave of chaves) {
     com_resumo_de_origem: 0,
     com_motivo: 0,
   };
-  totais.registos_edicoes++;
-  totais.registos_blocos += conta.blocos;
+  contadores.registos_edicoes++;
+  contadores.registos_blocos += conta.blocos;
 
   for (const bloco of registo?.blocks ?? []) {
     for (const { unidade, coordenada } of unidadesDoBloco(bloco, chave)) {
@@ -397,7 +407,7 @@ for (const chave of chaves) {
         const figura = figuras[f];
         const marca = `${chave}#${bloco.i}${coordenada}.${f}`;
         conta.algarismos++;
-        totais.registos_algarismos++;
+        contadores.registos_algarismos++;
 
         /* A marca da página sai da lista aqui, e não no passo 5: uma figura que
            tropece num passo anterior continua a ser uma figura desta
@@ -436,7 +446,7 @@ for (const chave of chaves) {
             );
           } else {
             conta.com_resumo_de_origem++;
-            totais.registos_com_resumo_de_origem++;
+            contadores.registos_com_resumo_de_origem++;
           }
         } else if (motivo === null || motivo === undefined) {
           err(
@@ -450,7 +460,7 @@ for (const chave of chaves) {
           );
         } else {
           conta.com_motivo++;
-          totais.registos_sem_resumo_de_origem++;
+          contadores.registos_sem_resumo_de_origem++;
         }
 
         /* ------------------------------------------------------- passo 2 ---
@@ -462,9 +472,9 @@ for (const chave of chaves) {
               `ela o algarismo não tem nada que o bata.`,
           );
           conta.por_resolver++;
-          totais.registos_por_resolver++;
+          contadores.registos_por_resolver++;
         } else {
-          totais.registos_resolvidos++;
+          contadores.registos_resolvidos++;
         }
 
         /* ------------------------------------------------------- passo 3 ---
@@ -489,12 +499,12 @@ for (const chave of chaves) {
                 `contra ele que se mede o que este documento imprime.`,
             );
           } else if (linha.value === figura.printed) {
-            contraOLivro.igual++;
+            contra.igual++;
           } else {
-            contraOLivro.diverge++;
+            contra.diverge++;
           }
           conta.completas++;
-          totais.registos_com_linha_do_sitio++;
+          contadores.registos_com_linha_do_sitio++;
         } else if (figura.row) {
           conta.do_motor++;
         }
@@ -524,6 +534,8 @@ for (const chave of chaves) {
             );
           }
         }
+
+        if (retirado) continue;
 
         /* ------------------------------------------------------- passo 5 ---
            A marca na página rendida, com o `printed` lá dentro. */
@@ -608,9 +620,9 @@ for (const chave of chaves) {
     );
   }
 
-  porEdicao[chave] = conta;
+  if (!retirado) porEdicao[chave] = conta;
   guiao.push(
-    `  ${conta.etiqueta} · ${conta.blocos} blocos · ${conta.algarismos} algarismos · ` +
+    `  ${conta.etiqueta}${retirado ? ' (retirado, só fontes conferidas)' : ''} · ${conta.blocos} blocos · ${conta.algarismos} algarismos · ` +
       `${conta.completas} completas · ${conta.do_motor} do motor · ` +
       `${conta.por_resolver} por resolver · ${conta.com_resumo_de_origem} com resumo de origem · ` +
       `${conta.com_motivo} com motivo`,

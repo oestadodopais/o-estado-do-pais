@@ -1,3 +1,4 @@
+import { eventoDeEstudosRetirados } from '../../src/lib/agenda-retirada.mjs';
 /** VOZ-1 B: dados conservados, futuro exato, ausência distinta e portas verificadas. */
 import {emEnsaio} from '../../site.config.mjs';
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {parse} from 'node-html-parser';
@@ -8,6 +9,7 @@ import {spawnSync} from 'node:child_process';
 import {matchPath,routePath} from '../../src/lib/routes.mjs';
 import {conferirTitulosCopiados,tituloCopiadoDaPagina} from '../../scripts/titulos-copiados.mjs';
 import {calendarioFuturo} from '../../src/lib/agenda.mjs';
+const agenda=JSON.parse(fs.readFileSync('src/data/agenda.json'));
 const calendario=JSON.parse(fs.readFileSync('src/data/calendario.json'));
 const dia=process.env.OEDP_DIA_DA_CONSTRUCAO??JSON.parse(fs.readFileSync('dist/version.json')).construido_em.slice(0,10);
 const normal=s=>s.replace(/\s+/gu,' ').trim();
@@ -18,7 +20,7 @@ function anda(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const rota='/'+path.relative('dist',f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);if(!hit||fora.has(hit.key))continue;
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=tituloCopiadoDaPagina(doc,rota);if(!titulo)continue;
  const refs=(main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(x=>x?.key==='linha').map(x=>x.params.slug);
- if(hit.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.sucedidoPor){datadas[hit.lang].push({rota,titulo,refs});continue;}
+ if(hit.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.estado==='retirado'){datadas[hit.lang].push({rota,titulo,refs});continue;}
  leitores[hit.lang].push({rota,titulo,refs});
 }}
 anda('dist');
@@ -27,7 +29,7 @@ export function conferir(root,lang,registo=calendario,hoje=dia){
  const grafia=rota=>root.querySelectorAll('#nav-principal a[href]').find(a=>a.getAttribute('href').replace(/\/$/,'')===rota)?.getAttribute('href')??rota;
  if(root.querySelector('[data-agenda-item], [data-agenda-seccao], .quadro-estados'))erros.push('trabalho interno visível');
  if(root.querySelector('[data-calendario-dia]')?.getAttribute('data-calendario-dia')!==hoje)erros.push('dia da construção diferente');
- const esperados=registo.eventos.filter(e=>!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=hoje);
+ const esperados=registo.eventos.filter(e=>!eventoDeEstudosRetirados(e,agenda,WORKS) && (!(e.data??e.janela?.fim)||(e.data??e.janela.fim)>=hoje));
  const artigos=root.querySelectorAll('[data-calendario-evento]');
  if(artigos.length!==esperados.length)erros.push('conjunto futuro diferente');
  for(const e of registo.eventos){
@@ -42,7 +44,7 @@ export function conferir(root,lang,registo=calendario,hoje=dia){
    if(!esperado || item.querySelector(`[data-agenda="evento:${e.id}.marcador"]`)?.textContent!==esperado)erros.push('motivo de ausência diferente');
   }
   const portas=item.querySelectorAll('[data-calendario-pagina]');
-  if(portas.some(a=>{const hit=matchPath(a.getAttribute('href'));return hit?.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.sucedidoPor;}))erros.push('edição datada no calendário');
+  if(portas.some(a=>{const hit=matchPath(a.getAttribute('href'));return hit?.key==='estudo'&&WORKS.find(w=>w.slug===hit.params.slug)?.estado==='retirado';}))erros.push('edição datada no calendário');
   const atualizam=leitores[lang].filter(p=>p.refs.some(id=>(e.afecta_linhas??[]).includes(id))).map(p=>({...p,rota:grafia(p.rota)})).sort((a,b)=>a.titulo.localeCompare(b.titulo,lang));
   if(portas.some(a=>a.hasAttribute('style')))erros.push('estilo em atributo');
   if(portas.some(a=>['home','temas','indice','estudos','discussao','leituraDaSemana','areas'].includes(matchPath(a.getAttribute('href'))?.key)))erros.push('página de entrada no calendário');

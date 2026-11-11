@@ -1,3 +1,5 @@
+import { WORKS } from '../data/studies.mjs';
+import { eventoDeEstudosRetirados } from './agenda-retirada.mjs';
 /**
  * A agenda e o calendário das fontes, lidos do que atravessou do motor.
  *
@@ -139,7 +141,7 @@ export function eventosOrdenados(calendario = calendarioCruzado()) {
 export function calendarioFuturo(calendario, dia) {
   if (!calendario) return null;
   for (const e of calendario?.eventos ?? []) if (!e.data && !e.janela && !['nao_publica','nao_lida'].includes(String(e.motivo_sem_data))) throw new Error(`Calendário: motivo em falta para ${e.id}`);
-  return {...calendario, eventos:(calendario?.eventos ?? []).filter(e => {const fim=e.data??e.janela?.fim;return !fim || fim >= dia;})};
+  return {...calendario, eventos:(calendario?.eventos ?? []).filter(e => {const fim=e.data??e.janela?.fim;return !eventoDeEstudosRetirados(e, agendaCruzada(), WORKS) && (!fim || fim >= dia);})};
 }
 /** @param {'nao_publica'|'nao_lida'} motivo @param {'pt'|'en'} lang */
 export function ausenciaDaData(motivo, lang) {
