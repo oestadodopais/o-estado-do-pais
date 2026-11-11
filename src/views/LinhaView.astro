@@ -1651,7 +1651,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             ) : (
               verificacoes.map((v) => (
                 <>
-                  <dt>{v.result === 'inacessivel' ? s.livro.linha.tentativaDeLeituraK : v.by === 'corredor-diario' ? s.livro.linha.ficheiroRelidoK : s.livro.linha.segundaLeituraK}</dt>
+                  <dt>{v.result === 'inacessivel' ? s.livro.linha.tentativaDeLeituraK : v.path && v.path !== claim.source_url ? s.livro.linha.ficheiroAnteriorRelidoK : v.by === 'corredor-diario' ? s.livro.linha.ficheiroRelidoK : s.livro.linha.segundaLeituraK}</dt>
                   {/* Os atributos crus vão a par dos rótulos: o portão compara
                       os primeiros com o livro-razão e os segundos com a sua
                       própria cópia da tabela de rótulos. */}
