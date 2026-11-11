@@ -35,6 +35,8 @@ export const FAMILIAS = [
      «texto» identifica esta medição e conserva as conferências da leitura;
      a terceira coluna diz a rota real, sem pedir um HTML de redirecionamento. */
   ['texto', { slug: 'evora-contas-da-camara-2010-2025' }, 'estudo'],
+  // EVB: texto julgado, títulos e quadros nas duas línguas.
+  ['textoEvb', { slug: 'evora-2027-capital-europeia-da-cultura' }, 'estudo'],
   ['agenda', null],
   ['metodo', null],
   ['sobre', null],
