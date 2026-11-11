@@ -14,6 +14,10 @@ const frases = {
     en:'The six Évora studies of August and September 2026 that these four succeeded have left the archive.',
   },
 };
+const definicaoEvora = {
+  pt:'É o número de estudos publicados cujo objeto é o concelho de Évora.',
+  en:'It is the number of studies published whose subject is the municipality of Évora.',
+};
 const claims = loadClaims();
 assert.equal(Number(claims.get('estudos-publicados').value), PUBLISHED_WORKS.length);
 assert.equal(Number(claims.get('estudos-evora-publicados').value), PUBLISHED_WORKS.filter(w => w.subject === 'evora').length);
@@ -27,7 +31,8 @@ for (const lang of ['pt','en']) {
   assert.equal(construidos.length,PUBLISHED_WORKS.length);
   for (const [id, frase] of Object.entries(frases)) {
     const html = fs.readFileSync(`${dist}/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${id}/index.html`,'utf8');
+    if(id === 'estudos-evora-publicados')assert(parse(html).textContent.replace(/\s+/g,' ').includes(definicaoEvora[lang]),`${id}/${lang}: definição da contagem ausente no HTML`);
     assert(parse(html).textContent.replace(/\s+/g,' ').includes(frase[lang]),`${id}/${lang}: frase do mandato ausente no HTML`);
   }
 }
-console.log(`REC2 contagens: ${PUBLISHED_WORKS.length} estudos construídos, ${COUNTS.estudos_evora_no_arquivo} de Évora; quatro frases do mandato conferidas no HTML.`);
+console.log(`REC2 contagens: ${PUBLISHED_WORKS.length} estudos construídos, ${COUNTS.estudos_evora_no_arquivo} de Évora; quatro frases do mandato e duas definições conferidas no HTML.`);

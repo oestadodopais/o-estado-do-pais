@@ -854,10 +854,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "estudos-evora-publicados": {
     "frase": {
       "pt": [
-        "É o número de estudos publicados cujo objeto é o concelho de Évora e a que nenhum outro estudo sucedeu."
+        "É o número de estudos publicados cujo objeto é o concelho de Évora."
       ],
       "en": [
-        "It is the number of studies published whose subject is the municipality of Évora and that no other study has succeeded."
+        "It is the number of studies published whose subject is the municipality of Évora."
       ]
     }
   },
