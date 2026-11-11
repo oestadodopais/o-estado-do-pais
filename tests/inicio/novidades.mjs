@@ -155,11 +155,17 @@ export function cenarioFp3(html,lang,dist,semAtualizacao=false) {
  }
  let sintetica=false;
  if(!root.querySelector('[data-novidade] time[data-data-origem="edicoes.data"]')) {
-  const e=manifesto.edicoes.find(e=>e.lang===lang&&e.edicoes.length>1&&!DOSSIES.some(d=>d.pecas.estudos.includes(e.slug)));
+  // A amostra vem das publicações vivas, pela ordem da caixa. Um documento
+  // guardado de um trabalho retirado não pode produzir uma novidade.
+  const e=publicacoesEsperadas(lang,manifesto)
+   .filter(p=>p.id.startsWith('estudo:'))
+   .map(p=>manifesto.edicoes.find(e=>`estudo:${e.slug}`===p.id&&e.lang===lang))
+   .find(e=>e&&e.edicoes.length>1&&!DOSSIES.some(d=>d.pecas.estudos.includes(e.slug)));
   assert(e,'FP3: estudo para a atualização de ensaio');
   const dia=JSON.parse(fs.readFileSync(path.join(dist,'version.json'),'utf8')).construido_em.slice(0,10);
   e.edicoes.push({...e.edicoes.at(-1),data:dia,natureza:'atualizacao'});
   render(publicacoesEsperadas(lang,manifesto));sintetica=true;
+  assert(root.querySelector(`[data-novidade="estudo:${e.slug}"] time[data-data-origem="edicoes.data"]`),'FP3: a atualização da amostra viva tem de aparecer');
  }
  const publicacoes=publicacoesEsperadas(lang,manifesto);
  assert.deepEqual(conferirNovidades(root,lang,dist,publicacoes),[]);
