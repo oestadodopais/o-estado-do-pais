@@ -64,9 +64,8 @@ export function primeirasFrases(partes, quantas = 2) {
  * @param {'pt'|'en'} lang
  */
 export function todosOsEstudos(lang) {
-  /* Os estudos com sucessor (bloco E1, 01.10.2026) ficam alojados como edições
-     datadas e saem da lista: quem os lista agora são os estudos que lhes sucedem. */
-  return WORKS.filter(w => !w.sucedidoPor).map(w => fichaDoEstudo(w, lang))
+  /* REC2: trabalhos retirados conservam a origem, mas não pertencem à lista pública. */
+  return WORKS.filter(w => w.estado !== 'retirado').map(w => fichaDoEstudo(w, lang))
     .sort((a, b) => Number(Boolean(b.work.emCurso)) - Number(Boolean(a.work.emCurso)) || (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
 /** @param {string} lugar @param {'pt'|'en'} lang */

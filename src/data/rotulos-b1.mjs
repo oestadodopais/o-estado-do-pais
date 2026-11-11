@@ -37,20 +37,11 @@ export const ROTULOS_B1 = {
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
     todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '',
     todasAsMudancas: 'Todas as mudanças',
-    /* A nota do sucessor, à cabeça de um estudo com sucessor (bloco E1). «Suceder a»
-       não tem passiva: diz-se «a 01.10.2026 sucedeu-lhe», e não «foi sucedido por». */
-    edicaoDatada: 'Edição datada.', sucedidoA: 'A', sucedidoPor: 'sucedeu-lhe',
-    sucedidoPorVarios: 'sucederam-lhe três estudos:', sucedidoEm: 'em',
-    /* A RECONCILIAÇÃO VIVE NO SUCESSOR (bloco P4, 02.10.2026, item 4 do brief P4; a I184). As edições datadas ficam
-       alojadas com os seus erros conhecidos, porque os bytes não mudam; a nota dizia que lhes sucedeu um estudo, e não
-       que é nele que o que esta edição escreveu se reconcilia. Uma frase para um sucessor, outra para vários. */
-    reconcilia: 'O estudo que lhe sucedeu reconcilia o que esta edição escreveu.',
-    reconciliamVarios: 'Os estudos que lhe sucederam reconciliam o que esta edição escreveu.',
     /* A PORTA DO ESTUDO DA HABITAÇÃO PARA O ESTUDO DO ORÇAMENTO (bloco HB1-c, 21.10.2026). O estudo da habitação
        cita três linhas do estudo do Orçamento, e a porta ao pé do fim dele leva o leitor até lá; o rótulo é declarado
        aqui para a lista fechada da B1 o conhecer, em vez de escrito à mão na vista. */
     estudoDoOrcamento: 'O estudo do Orçamento',
-    sucedeA: 'Sucede a', e: 'e' },
+    },
   en: { dossies: 'Dossiers',
     dossieOrcamentoTitulo: orcamento.titulo.en,
     dossieOrcamentoAmbito: orcamento.ambito.en,
@@ -63,12 +54,8 @@ export const ROTULOS_B1 = {
     lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands',
     todasAsMedidasA: 'All measures for ', todasAsMedidasB: '',
     todasAsMudancas: 'All changes',
-    edicaoDatada: 'Dated edition.', sucedidoA: 'Succeeded on', sucedidoPor: 'by',
-    sucedidoPorVarios: 'by three studies:', sucedidoEm: 'in',
-    reconcilia: 'The study that succeeded it reconciles what this edition wrote.',
-    reconciliamVarios: 'The studies that succeeded it reconcile what this edition wrote.',
     estudoDoOrcamento: 'The Budget study',
-    sucedeA: 'Succeeds', e: 'and' },
+    },
 };
 
 /** Os títulos que delimitam a leitura já aprovada, nas duas edições. */

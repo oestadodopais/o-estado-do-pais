@@ -413,12 +413,9 @@ planta('p4-cartao-pergunta-antiga-da-disparidade','tests/cartao/cartao.mjs',[
 planta('p4-cartao-pergunta-antiga-da-sobrecarga','tests/cartao/cartao.mjs',[
  ['en/housing/index.html',r=>r.querySelector('[data-cartao-medida="sobrecarga-do-custo-da-habitacao-2025"] [data-cartao-definicao]').set_content('What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?')]
 ],[/K6 · \/en\/housing\/ · sobrecarga-do-custo-da-habitacao-2025: a frase do cartão diz «What share of people, across all tenure statuses/]);
-planta('p4-datas-nota-sem-a-reconciliacao','scripts/check-datas.mjs',[
- ['estudos/evora-quinze-anos-cinco-mandatos/index.html',r=>r.querySelector('[data-sucessor-reconcilia]').remove()]
-],[/evora-quinze-anos-cinco-mandatos: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia o que esta edição escreveu/]);
-planta('p4-datas-nota-inglesa-com-a-frase-portuguesa','scripts/check-datas.mjs',[
- ['en/studies/evora-2027-prometido-painel-dinheiro/index.html',r=>r.querySelector('[data-sucessor-reconcilia]').set_content('O estudo que lhe sucedeu reconcilia o que esta edição escreveu.')]
-],[/evora-2027-prometido-painel-dinheiro: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia/]);
+planta('rec2-datas-nota-retirada','scripts/check-datas.mjs',[
+ ['estudos/evora-contas-da-camara-2010-2025/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p data-sucessor-edicao="antigo/pt">Nota retirada</p>')]
+],[/nota de sucessão retirada voltou à página/]);
 /* P4-c (02.10.2026, a leitura do diretor de 02.10 à noite na página de Évora): o cartão do índice de dívida diz de que
    é a percentagem, «% da receita de três anos», e o teto na linha do estado, «dentro do limite legal, que é 150 %», com
    o 150 lido da linha do limite, sem marca própria. O portão de HTML aceita a unidade da casa de uma medida de concelho

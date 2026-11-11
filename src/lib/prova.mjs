@@ -856,7 +856,7 @@ export function prova(lang = 'pt') {
     // B1: cada contagem abre a secção que contém os estudos desse lugar.
     ...Object.fromEntries(Object.keys(SUBJECTS).map(lugar => [`estudos_lugar_${lugar}`, {
       /* Os estudos que a página do lugar lista: sem os que têm sucessor (bloco E1). */
-      valor: WORKS.filter(w => w.subject === lugar && !w.sucedidoPor).length,
+      valor: WORKS.filter(w => w.subject === lugar && w.estado !== 'retirado').length,
       origem: lang === 'pt' ? 'estudos sobre este lugar' : 'studies about this place',
       porta: portaDoLugar(lugar, lang),
     }])),

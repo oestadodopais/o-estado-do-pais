@@ -901,11 +901,11 @@ export function temLeitura(id) {
  * sua leitura, e sai do índice e do mapa do sítio. É a resposta que a página, o
  * mapa do sítio e a prova leem, para as três metades não divergirem.
  *
- * @param {{ id: string, sucedidoPor?: unknown }} work
+ * @param {{ id: string, estado?: string }} work
  * @returns {boolean}
  */
 export function indexavel(work) {
-  return temLeitura(work.id) && !work.sucedidoPor;
+  return temLeitura(work.id) && work.estado !== 'retirado';
 }
 
 /** A leitura de um trabalho, ou null. @param {string} id */

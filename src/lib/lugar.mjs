@@ -279,7 +279,7 @@ export function temasDoLugar(pecas, citadas, lang) {
 export function estudosDoLugar(slug, lang) {
   /* Sem os estudos que têm sucessor (bloco E1, 01.10.2026): são edições datadas,
      e a página do lugar lista os que lhes sucedem. */
-  return WORKS.filter((w) => w.subject === slug && !w.sucedidoPor)
+  return WORKS.filter((w) => w.subject === slug && w.estado !== 'retirado')
     .map((w) => fichaDoEstudo(w, lang))
     .sort(
       (a, b) =>

@@ -6,8 +6,6 @@ import Base from '../layouts/Base.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import PecasDoEstudo from '../components/PecasDoEstudo.astro';
 import EdicaoPublicada from '../components/EdicaoPublicada.astro';
-import NotaDoSucessor from '../components/NotaDoSucessor.astro';
-import NotaDosAntecessores from '../components/NotaDosAntecessores.astro';
 import { workById, edicaoPublicada } from '../data/studies.mjs';
 import { registoDaEdicao, manifestoDosRegistos } from '../lib/registos.mjs';
 import { pecasDoCorpo, linhasDoDocumento, titulosDoDocumento } from '../lib/registo-html.mjs';
@@ -107,7 +105,6 @@ const jsonld = {
       <div id="documento" data-registo-edicao={chave}>
         <div class="estudo-b1-titulo"><PecasDoEstudo pecas={titulo} lang={lang} /></div>
         <LigacaoDoDossie tipo="estudo" slug={slug} lang={lang} />
-        <NotaDoSucessor work={work} lang={lang} />
     {titulos.length > 0 && (
       <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k">
         <details class="texto-indice-dobra">
@@ -168,18 +165,13 @@ const jsonld = {
         </section>
       </details>}
       {work.id === 'a-casa-em-portugal-e-na-europa' && workById('orcamento-2027-o-que-muda-e-para-quem') && <p class="regra-portas" data-hb1-porta="orcamento"><a href={routePath('estudo', lang, {slug: 'orcamento-2027-o-que-muda-e-para-quem'})}>{ROTULOS_B1[lang].estudoDoOrcamento}</a></p>}
-      <NotaDosAntecessores work={work} lang={lang} />
       <EdicaoPublicada work={work} lang={lang} />
     </div>
   ) : (
     <div class="estudo-b1">
       <TituloDeTrabalho as="h1" class="estudo-titulo" edicao={principal} lang={lang} />
       <LigacaoDoDossie tipo="estudo" slug={slug} lang={lang} />
-      {/* E1: a página de uma língua sem edição própria diz também que estudo lhe
-          sucede e a que estudos ele sucede, como a página com o corpo do registo. */}
-      <NotaDoSucessor work={work} lang={lang} />
       <p class="estudo-descricao" data-verbatim={work.verbatimDaAbertura?.[lang]}>{work.description[lang]}</p>
-      <NotaDosAntecessores work={work} lang={lang} />
       <EdicaoPublicada work={work} lang={lang} />
     </div>
   )}

@@ -1,4 +1,5 @@
 import { routePath } from '../src/lib/routes.mjs';
+import { parse } from 'node-html-parser';
 
 export const normalizarRota = rota => rota.replace(/\/$/, '') || '/';
 export function estudoDaRota(rota, works) {
@@ -53,6 +54,22 @@ export function conferirRedirecionamentos(works, partida, tabela, rotas) {
     }
     if (presentes.has(normalizarRota(esperado.src.slice(0,-1)))) erros.push(`REC2 origem construída: ${esperado.src}`);
     if (!presentes.has(normalizarRota(esperado.headers.Location))) erros.push(`REC2 destino inexistente: ${esperado.headers.Location}`);
+  }
+  return erros;
+}
+
+/** Percorre todo o sítio, incluindo mapa XML e ligações relativas ou com fragmento. */
+export function conferirLigacoesRetiradas(works, rota, html) {
+  const root = parse(html), erros = [];
+  if (root.querySelector('[data-sucessor-edicao], [data-sucessor-reconcilia], .estudo-sucessor, .estudo-antecessores')) {
+    erros.push(`REC2 nota de sucessão retirada: ${rota}`);
+  }
+  const destinos = [...root.querySelectorAll('[href]')].map(a => a.getAttribute('href'));
+  destinos.push(...root.querySelectorAll('loc').map(el => el.textContent));
+  for (const href of destinos) {
+    let caminho;
+    try { caminho = new URL(href, 'https://oestadodopais.pt' + rota).pathname; } catch { continue; }
+    if (estudoDaRota(caminho, works)?.estado === 'retirado') erros.push(`REC2 ligação retirada: ${rota} -> ${href}`);
   }
   return erros;
 }

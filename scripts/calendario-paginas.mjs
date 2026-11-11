@@ -17,7 +17,7 @@ const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&q
 function andar(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const f=path.join(dir,e.name);if(e.isDirectory()){andar(f);continue;}if(e.name!=='index.html')continue;
  const rota='/'+path.relative(dist,f).replace(/index\.html$/,'').replace(/\/$/,'');const hit=matchPath(rota);
- if(!hit || excluidas.has(hit.key) || (hit.key==='estudo'&&WORKS.some(w=>w.slug===hit.params.slug&&w.sucedidoPor)))continue;
+ if(!hit || excluidas.has(hit.key) || (hit.key==='estudo'&&WORKS.some(w=>w.slug===hit.params.slug&&w.estado==='retirado')))continue;
  const doc=parse(fs.readFileSync(f,'utf8')),main=doc.querySelector('main'),titulo=tituloCopiadoDaPagina(doc,rota);
  if(!titulo)continue;
  const ids=new Set((main?.querySelectorAll('a.src-chip[href]')??[]).map(a=>matchPath((a.getAttribute('href')??'').split('#')[0])).filter(r=>r?.key==='linha').map(r=>r.params.slug));

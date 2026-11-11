@@ -72,22 +72,12 @@ export function verificaB1(raiz) {
       /* A lista tem todos os estudos desde o bloco R1 (23.09.2026): os de lugar
          deixaram de estar atrás da secção «Por lugar». */
       const dados = w ? [w] : WORKS;
-      /* A NOTA DO SUCESSOR (bloco E1, 01.10.2026): numa edição datada, os títulos dos
-         estudos que lhe sucedem, a parte que cada um levou e a pontuação da nota são
-         texto declarado no arquivo, e a data é a da edição do sucessor. */
-      const sucessores = (w?.sucedidoPor ?? []).map(s => ({ s, x: WORKS.find(x => x.slug === s.slug) })).filter(o => o.x);
-      /* E as edições datadas que este estudo sucede, com a pontuação da lista. */
-      const antecessores = w ? WORKS.filter(x => (x.sucedidoPor ?? []).some(s => s.slug === w.slug)) : [];
       const permitidos = new Set([
         ...Object.values(ROTULOS_B1[lang]),
         ...Object.values(SUBJECTS).map(s => s[lang]),
         ...DOMINIOS.map(d => d.nome[lang]),
         ...dados.flatMap(w => [w.description[lang], ...(w.ausenciaAtual?.[lang] ? [w.ausenciaAtual[lang]] : []), ...w.editions.map(e => e.title),
           ...primeirasFrases(leituraDe(w.id)?.frase[lang] ?? []).filter(p => typeof p === 'string')]),
-        ...sucessores.flatMap(({ s, x }) => [...x.editions.map(e => e.title), s.parte?.[lang]].filter(Boolean)),
-        ...(sucessores.length ? ['.', ';'] : []),
-        ...antecessores.flatMap(x => x.editions.map(e => e.title)),
-        ...(antecessores.length ? ['.', ',', ROTULOS_B1[lang].e] : []),
         S[lang].estudos.textoSubir, `${S[lang].estudos.textoSubir} ↑`, `${ROTULOS_B1[lang].fontes} →`, '→', '↑', '·',
         /* A porta para o registo inteiro, por baixo de «O que mudou» (B1c). */
         `${ROTULOS_B1[lang].todasAsMudancas} →`,

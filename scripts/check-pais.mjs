@@ -601,7 +601,7 @@ for (const lang of ['pt', 'en']) {
   const listaDosEstudos = le(lang === 'pt' ? 'estudos' : 'en/studies');
   /* Desde o bloco E1 (01.10.2026) a lista não traz os estudos que têm sucessor:
      são edições datadas, e quem os lista são os estudos que lhes sucedem. */
-  const todos = WORKS.map((w,i) => ({ w, i })).filter(({ w }) => !w.sucedidoPor).map(({ w, i }) => {
+  const todos = WORKS.map((w,i) => ({ w, i })).filter(({ w }) => w.estado !== 'retirado').map(({ w, i }) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
     return { w, i, data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
   }).sort((a,b) => Number(Boolean(b.w.emCurso)) - Number(Boolean(a.w.emCurso)) || b.data.localeCompare(a.data) || a.i-b.i);

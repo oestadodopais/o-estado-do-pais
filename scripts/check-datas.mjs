@@ -171,7 +171,7 @@ const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)$/;
    um estudo que caísse do índice deixava de imprimir a data dele, e a conta fechava. Os dois
    caminhos são os da tabela das rotas, escritos aqui como os outros desta conta. */
 const INDICES_DO_SITIO = new Set(['/indice', '/en/index']);
-const ESTUDOS_DO_INDICE = WORKS.filter((w) => !w.sucedidoPor).length;
+const ESTUDOS_DO_INDICE = WORKS.filter((w) => w.estado !== 'retirado').length;
 
 /* --- 1a. nenhuma data impressa fora do que o ficheiro declara ------------- */
 
@@ -346,7 +346,7 @@ function prendeNaPaginaDoLugar(rota, doc) {
   const slug = rota.split('/').pop();
   /* Sem os estudos que têm sucessor (bloco E1, 01.10.2026): a página do lugar lista
      os que lhes sucedem, e as edições datadas não entram na lista. */
-  prendeEdicoesB1(rota, doc, null, WORKS.filter((w) => w.subject === slug && !w.sucedidoPor).length);
+  prendeEdicoesB1(rota, doc, null, WORKS.filter((w) => w.subject === slug && w.estado !== 'retirado').length);
 }
 function prendeNaPaginaDoTrabalho(rota, slug, doc) {
   prendeEdicoesB1(rota, doc, slug);
@@ -395,58 +395,8 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
     if (marca) presasAqui.add(marca);
     prende(rota, slug, lang, marca?.textContent.trim() ?? null, `a edição ${slug}/${lang}`);
   }
-  if (slugDaPagina) prendeSucessor(rota, doc, slugDaPagina, presasAqui);
+  if (doc.querySelector('[data-sucessor-edicao], [data-sucessor-reconcilia], .estudo-sucessor, .estudo-antecessores')) falhas.push(`${rota}: nota de sucessão retirada voltou à página.`);
   orfas(rota, doc, presasAqui);
-}
-
-/**
- * A NOTA DO SUCESSOR (bloco E1, 01.10.2026). Um estudo que outro sucedeu leva, à
- * cabeça, a data de publicação da edição do sucessor. A marca
- * `[data-sucessor-edicao]` diz de que edição é a data, e a regra é a das outras:
- * uma data só, a da edição declarada em datas-de-publicacao.json, junto da porta
- * para a página desse estudo; e o estudo nomeado tem de estar no `sucedidoPor`
- * do trabalho desta página. Uma nota que não se prenda fica órfã e fecha.
- *
- * @param {string} rota
- * @param {any} doc
- * @param {string} slugDaPagina
- * @param {Set<unknown>} presasAqui
- */
-/* A RECONCILIAÇÃO NA NOTA (bloco P4, 02.10.2026, item 4 do brief P4; a I184). A edição datada fica alojada com os seus
-   erros conhecidos, e a nota tem de dizer que é no estudo que sucedeu que se reconcilia o que ela escreveu: uma frase
-   por língua e por número de sucessores, na marca `data-sucessor-reconcilia`. As frases esperadas são uma cópia escrita
-   aqui, e não as de `src/data/rotulos-b1.mjs`, para que uma mudança na fonte da página não se confirme a si própria. */
-const RECONCILIACAO = {
-  pt: { um: 'O estudo que lhe sucedeu reconcilia o que esta edição escreveu.', varios: 'Os estudos que lhe sucederam reconciliam o que esta edição escreveu.' },
-  en: { um: 'The study that succeeded it reconciles what this edition wrote.', varios: 'The studies that succeeded it reconcile what this edition wrote.' },
-};
-let notasComReconciliacao = 0;
-
-function prendeSucessor(rota, doc, slugDaPagina, presasAqui) {
-  const work = WORKS.find((w) => w.slug === slugDaPagina);
-  const linguaDaPagina = (rota === '/en' || rota.startsWith('/en/')) ? 'en' : 'pt';
-  for (const bloco of doc.querySelectorAll('[data-sucessor-edicao]')) {
-    const esperada = RECONCILIACAO[linguaDaPagina][(work?.sucedidoPor?.length ?? 0) > 1 ? 'varios' : 'um'];
-    const frases = bloco.querySelectorAll('[data-sucessor-reconcilia]').map((s) => s.textContent.replace(/\s+/g, ' ').trim());
-    if (frases.length !== 1 || frases[0] !== esperada) {
-      falhas.push(`${rota}: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia o que esta edição escreveu (esperada «${esperada}», lida ${JSON.stringify(frases)}).`);
-    } else notasComReconciliacao++;
-  }
-  for (const bloco of doc.querySelectorAll('[data-sucessor-edicao]')) {
-    const [slug, lang] = (bloco.getAttribute('data-sucessor-edicao') ?? '').split('/');
-    if (!work?.sucedidoPor?.some((s) => s.slug === slug)) {
-      falhas.push(`${rota}: a nota do sucessor nomeia ${slug}, que não sucede este estudo.`);
-      continue;
-    }
-    const porta = linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`;
-    const portas = bloco.querySelectorAll('a[href]').map((a) => (a.getAttribute('href') ?? '').replace(/\/$/, ''));
-    if (!portas.includes(porta)) falhas.push(`${rota}: a nota do sucessor não tem a porta para ${porta}.`);
-    const marcas = marcasDeData(bloco);
-    if (marcas.length !== 1) falhas.push(`${rota}: a nota do sucessor tem ${marcas.length} datas, esperada uma.`);
-    const marca = marcas[0];
-    if (marca) presasAqui.add(marca);
-    prende(rota, slug, lang, marca?.textContent.trim() ?? null, `a nota do sucessor, ${slug}/${lang}`);
-  }
 }
 
 /* AS CINCO PÁGINAS DAS ENTRADAS usam o mesmo resolvedor da vista para contar as edições:
@@ -591,12 +541,6 @@ if (lacos === 0) {
     `${paginasPrendidas} página(s) conferida(s) e nenhuma data presa a uma edição: a conta 1b ` +
       `percorreu-as e não prendeu nada.`,
   );
-}
-
-/* O POSITIVO CONHECIDO DA RECONCILIAÇÃO (bloco P4): com estudos sucedidos no arquivo, a conta tem de ter visto e
-   conferido notas; zero notas com estudos sucedidos é uma conta que não mediu nada. */
-if (WORKS.some((w) => (w.sucedidoPor ?? []).length) && notasComReconciliacao === 0) {
-  falhas.push('o arquivo tem estudos sucedidos e nenhuma nota do sucessor foi conferida com a frase da reconciliação.');
 }
 
 /* E NENHUMA EDIÇÃO DO ARQUIVO PODE FICAR SEM PÁGINA QUE A IMPRIMA. Uma linha do
@@ -773,5 +717,5 @@ console.log(
   `${verde('check-datas')} · ${edicoes.length} edição(ões) datadas, ${impressas} data(s) ` +
     `impressa(s) em ${porRota.size} página(s), ${lacos} laço(s) data-edição em ` +
     `${paginasPrendidas} página(s) conferida(s), ${semData} edição(ões) sem data` +
-    `${semData === 0 ? ' e nenhuma caixa de aviso' : ''}; ${notasComReconciliacao} nota(s) do sucessor com a frase da reconciliação.`,
+    `${semData === 0 ? ' e nenhuma caixa de aviso' : ''}.`,
 );
