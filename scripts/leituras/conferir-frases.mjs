@@ -4,9 +4,30 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
+import {WORKS} from '../../src/data/studies.mjs';
 import {frasesDoTexto, medirPagina} from '../voz-autorreferencia.mjs';
 import {formasNumericas, blocosDe, compara} from '../paridade-numeros.mjs';
 import {assinatura, validarExcecoes} from '../check-paridade.mjs';
+// REC2: a lista histórica permanece intacta. Só o estado de retirada autoriza
+// saltar uma entrada ou uma porta adicional para o estudo retirado.
+export function conferirSaltadas(lista, saltadas, trabalhos = WORKS) {
+  const retirados = new Set(trabalhos.filter(w => w.estado === 'retirado').map(w => w.slug));
+  const esperadas = lista.filter(f => retirados.has(f.estudo)).map(f => f.id).sort();
+  if (JSON.stringify(esperadas) !== JSON.stringify(saltadas.map(f => f.id).sort())) throw new Error('entradas saltadas não correspondem aos trabalhos retirados');
+  return esperadas.length;
+}
+export function separarRetirados(lista, trabalhos = WORKS) {
+  const retirados = new Set(trabalhos.filter(w => w.estado === 'retirado').map(w => w.slug));
+  const ativas = [], saltadas = [];
+  for (const f of lista) {
+    if (retirados.has(f.estudo)) { saltadas.push({id:f.id, estudo:f.estudo}); continue; }
+    const paginas = f.paginas.filter(r => !retirados.has(r.match(/^\/(?:estudos|en\/studies)\/([^/]+)/)?.[1]));
+    if (!paginas.length) throw new Error(`entrada de estudo não retirado sem páginas publicadas: ${f.id}`);
+    ativas.push({...f, paginas});
+  }
+  conferirSaltadas(lista, saltadas, trabalhos);
+  return {ativas, saltadas, retirados};
+}
 // Grupos de milhares da paridade, conservando a distinção entre 1,2 e 12.
 export const numeros = t => formasNumericas(t).map(n => {
   n = n.replace(/[\s\u00a0\u202f]/g, '');
@@ -201,6 +222,8 @@ export function conferirBlocos(lista, documentos, bilingues = new Set(documentos
   return {semPar:[...semPar.values()], semEntrada:[...semEntrada.values()]};
 }
 export function lerDocumentos(lista, dist) {
+  const {ativas, saltadas} = separarRetirados(lista);
+  lista = ativas;
   const documentos = [], bilingues = new Set(), estudos = new Set(lista.map(f => f.estudo));
   for (const estudo of new Set([...estudos, ...lista.flatMap(f => f.paginas.map(r => r.match(/^\/(?:estudos|en\/studies)\/([^/]+)/)[1]))])) {
     const lidos = new Set();
@@ -223,7 +246,7 @@ export function lerDocumentos(lista, dist) {
     if (estudos.has(estudo) && lidos.size === 2) bilingues.add(estudo);
     if (estudos.has(estudo) && !documentos.some(d => d.estudo === estudo)) throw new Error(`estudo sem páginas no dist: ${estudo}`);
   }
-  return {documentos, bilingues};
+  return {documentos, bilingues, saltadas};
 }
 export function conferirQuantificadores(lista) {
   return JSON.parse(execFileSync('python3', [fileURLToPath(new URL('./quantificadores.py', import.meta.url))],
@@ -231,11 +254,15 @@ export function conferirQuantificadores(lista) {
 }
 export function conferir(lista, documentos, bilingues, {aplicada = false} = {}) {
   validarLista(lista);
-  return {voz:lista.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, documentos, bilingues, {aplicada}),
-    quantificadores:conferirQuantificadores(lista), presenca:conferirPresenca(lista, documentos, aplicada),
+  const {ativas, saltadas, retirados} = separarRetirados(lista);
+  lista = ativas;
+  documentos = documentos.filter(d => !retirados.has(d.estudo));
+  bilingues = new Set([...bilingues].filter(s => !retirados.has(s)));
+  return {saltadas, voz:lista.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id), numeros:conferirNumeros(lista, documentos, bilingues, {aplicada}),
+    quantificadores:lista.length ? conferirQuantificadores(lista) : [], presenca:conferirPresenca(lista, documentos, aplicada),
     ...conferirBlocos(lista, documentos, bilingues, aplicada)};
 }
-export const recusas = r => Object.values(r).reduce((n, xs) => n + xs.length, 0);
+export const recusas = r => Object.entries(r).filter(([regra]) => regra !== 'saltadas').reduce((n, [, xs]) => n + xs.length, 0);
 export function conferirLista(ficheiro, dist = 'dist', opcoes = {}) {
   const lista = JSON.parse(fs.readFileSync(ficheiro, 'utf8')); validarLista(lista);
   const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], {encoding:'utf8'}).trim();
@@ -248,8 +275,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
     const args = process.argv.slice(2).filter(a => a !== '--aplicada');
     if (args.some(a => a.startsWith('--')) || args.length < 1 || args.length > 3) throw new Error('argumentos inválidos');
     const r = conferirLista(args[0], args[1] ?? 'dist', {aplicada:process.argv.includes('--aplicada')});
-    console.log(`camada 0: voz ${r.voz.length}; números ${r.numeros.length}; quantificadores ${r.quantificadores.length}; entradas sem par ${r.semPar.length}; frases sem entrada ${r.semEntrada.length}; presença ${r.presenca.length}`);
-    for (const [regra, erros] of Object.entries(r)) for (const erro of erros) console.log(`${regra}: ${JSON.stringify(erro)}`);
+    console.log(`camada 0: voz ${r.voz.length}; números ${r.numeros.length}; quantificadores ${r.quantificadores.length}; entradas sem par ${r.semPar.length}; frases sem entrada ${r.semEntrada.length}; presença ${r.presenca.length}; entradas saltadas ${r.saltadas.length}`);
+    for (const [regra, erros] of Object.entries(r)) if (regra !== 'saltadas') for (const erro of erros) console.log(`${regra}: ${JSON.stringify(erro)}`);
     if (args[2]) fs.writeFileSync(args[2], JSON.stringify(r, null, 2) + '\n');
     process.exitCode = recusas(r) ? 9 : 0;
   } catch (e) { console.error('camada 0: ' + (e.stderr?.toString().trim() || (e.code ? 'ficheiro, dist ou guião ilegível' : e.message))); process.exitCode = 9; }

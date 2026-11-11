@@ -1,6 +1,7 @@
 /** VOZ-2A: a isenção é por estudo; arquivo e factos declarados conservam-se. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {WORKS} from '../../src/data/studies.mjs';
 import {medirPagina,EXCECOES,ISENCAO_VOZ2} from '../../scripts/voz-autorreferencia.mjs';
 const lista=JSON.parse(fs.readFileSync('design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json','utf8'));
 const slug='evora-2027-capital-europeia-da-cultura',rota='/estudos/'+slug+'/documento';
@@ -19,7 +20,7 @@ const listaB=JSON.parse(fs.readFileSync('design/especime-v3/medicoes/voz2b-2026-
 // COR-AGUA aplica as entradas da água, mas não retira a isenção integral da VOZ-2B.
 // Os nomes do motor e as frases fora dessa lista mantêm a pendência anterior.
 const aguaComListaAplicada=['agua-nao-faturada','onde-esta-a-agua'];
-assert.deepEqual([...ISENCAO_VOZ2.estudos].sort(),[...new Set([...listaB.map(f=>f.estudo),...aguaComListaAplicada])].sort());
+assert.deepEqual([...ISENCAO_VOZ2.estudos].sort(),[...new Set([...listaB.map(f=>f.estudo),...aguaComListaAplicada])].filter(s=>WORKS.find(w=>w.slug===s)?.estado!=='retirado').sort());
 for(const s of ISENCAO_VOZ2.estudos){const r='/estudos/'+s+'/documento';assert(medirPagina(pagina(sai.frase),r).isenta);assert.equal(medirPagina(pagina('Research Hub'),r).protecao.length,0);assert(medirPagina(pagina('Research Hub'),'/estudos/'+s).protecao.length,'A página do estudo continua coberta pela régua do nome');}
 assert.equal(medirPagina('<style>/* Research Hub house style */</style><p>Fonte.</p>',rota).protecao.length,0);
 console.log('VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, estudos pendentes e comentário style conservados.');
