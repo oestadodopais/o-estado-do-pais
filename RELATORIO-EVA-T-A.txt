@@ -1,0 +1,138 @@
+RELATÓRIO EVA-T-A
+11.11.2026
+
+Âmbito: apenas o sítio. O motor e a data de leitura de 10.08.2026 não mudaram.
+Base: 8bb5dab7e. Cabeça do código a conferir: 08316e4e9.
+
+1. Títulos copiados
+Commit: 86bfe1de5.
+A conferência lê o HTML de destino. Aceita o H1 ou a primeira linha inteira
+em itálico do corpo do estudo, que a moldura separa do H1 para intercalar o
+índice. Retira apenas os selos de fonte da manchete. Não consulta studies.mjs
+nem procura uma edição noutra língua.
+As 16 plantas de tests/eva/titulos-copiados.mjs passaram: título ausente no
+HTML, título da outra língua, título do catálogo depois de alterar o destino,
+manchete com 137 trocado por 138, nome sem itálico e nome afastado recusados.
+Controlos: H1 e nome real aceites nas duas línguas. O outro estudo foi
+orcamento-2027-o-que-muda-e-para-quem.
+
+2. Contagens do registo
+Commit: 0a03f1354.
+O teto de correcoes-publicadas só limita correcoes_publicadas. Uma atualização
+e uma revisão de proveniência posteriores ao selo continuam a contar; uma
+correção posterior não entra na conta retirada. A planta corta agora a mesma
+lista de correções de texto, incluindo o ensaio, filtrada pela data selada.
+As 33 plantas de tests/edicoes/reguas.mjs passaram, incluindo os três casos
+posteriores ao selo e a retirada de uma entrada da lista realmente contada.
+
+3. Caminhos da prova documental
+Commit: bf2ed79f0.
+corpoDocumentalJulgado recusa caminhos sem content/ ou com um segmento .. .
+Os registos originais do motor têm caminhos relativos à raiz content. Para
+não alterar os seus bytes nem os selos, check-cadeia qualifica apenas uma
+figura cujo caminho e registo correspondem à prova selada. A prova recebe
+então o caminho com content/. Um caminho não reconhecido não é qualificado.
+As 163 referências reais passaram. Nas duas línguas, as plantas sem prefixo,
+fora de content/ e com .. recusaram nas duas vias. Resumo, linha e registo
+adulterados também recusaram. check:cadeia passou.
+
+4. Fonte anterior na reconferência
+Commit: 90c351b8a.
+Medição anterior à mudança: 19 linhas, 20 reconferências cujo path é
+literalmente diferente de source_url, incluindo diferenças de fragmento.
+Linhas:
+- alentejo-central-poder-de-compra-2023
+- evora-desemprego-registado-2013
+- evora-desemprego-registado-2024
+- evora-divida-total-2025
+- evora-empresas-2024
+- evora-execucao-da-receita-2021
+- evora-execucao-da-receita-2025
+- evora-limite-divida-2025
+- evora-pagamentos-em-atraso-2025
+- evora-poder-de-compra-2023
+- evora-populacao-2025
+- evora-prazo-medio-de-pagamento-2023
+- evora-prazo-medio-de-pagamento-2025
+- evora-prr-aprovado-2026
+- evora-prr-municipio-contratado
+- evora-prr-pago-2026
+- evora-prr-universidade-contratado
+- evora-prr-vencido-aprovado-2026
+- evora-vab-empresarial-2024
+
+A regra distingue o endereço em todas as linhas. Só a receita de 2021 tem
+uma mudança de valor posterior à reconferência que fornece um old_value:
+96. Nas restantes linhas conserva-se o resultado já registado, sem inventar
+um valor antigo. Uma tentativa inacessível conserva o rótulo de tentativa.
+A data, o resultado, o autor e a ligação do resto do recibo não mudaram.
+As 44 plantas recusaram: quatro casos sintéticos nas duas línguas e quarenta
+reposições da frase antiga nos recibos construídos. Os 38 recibos afetados
+passaram. O controlo com o endereço da fonte atual conserva a frase antiga.
+Frases extraídas do HTML construído:
+pt: Ficheiro da fonte anterior relido a 01.09.2026, confirmou o valor anterior: 96
+en: Previous source file read again on 01.09.2026, confirmed the previous value: 96
+
+5. Data da edição única na I9
+Commit: 08316e4e9.
+A I9 conserva a entrada completa, incluindo origem, slug e lang. Usa
+dataEdicaoUnica, a mesma função de check-datas, apenas para edicao-unica.
+As restantes datas e todos os commits continuam a conferir-se contra o git.
+I9p planta uma data errada em cada edição única e numa entrada legada,
+intercetando a leitura do JSON apenas durante a célula real. Três de três
+plantas recusaram. O controlo sem navegador passou.
+O perfil eva-ta-indice do escrivão seleciona apenas check:indice. A planta
+dessa seleção passou no conjunto tests/leituras/portoes.py.
+
+Prova final e códigos
+Cabeça construída e conferida: 08316e4e97d66cda007a57e09f2ddb6796473fd2.
+Construção normal: 0, 741.275 segundos, 31 passos medidos, todos com código 0.
+check:indice inteiro, --navegador --prova, pelo escrivão: 0, 32.408 segundos.
+I9: 29 edições conferidas, duas pela versão única; I9p: três plantas recusadas.
+O navegador passou a busca, o transbordo e o espaço entre número e palavra.
+A cabeça e a árvore mantiveram-se iguais durante as duas corridas.
+
+Códigos individuais medidos dentro da construção:
+ledger:check: 0
+check:registo: 0
+check:documentos: 0
+gate:html: 0
+check:edicoes: 0
+check:selos: 0
+check:datas: 0
+check:cadeia: 0
+check:voz: 0
+check:paridade: 0
+check:lingua: 0
+Não se repetiram essas conferências depois do build verde.
+
+Provas adicionais, todas com código 0:
+- check:frases-afirmacao, incluindo as plantas de textos julgados e modelos;
+- typecheck;
+- tests/confianca/c1.mjs;
+- os dez ficheiros tests/eva/*.mjs: cadeia, edicao, execucao, leitura, modelos,
+  nome, pagina, reconferencias, textos-julgados e titulos-copiados.
+As oito corridas preliminares também tiveram código 0; a lista está no JSON.
+Os códigos 1 impressos por plantas negativas são recusas esperadas, não
+falhas das suites.
+
+Contabilização
+14 corridas diretas: oito preliminares, uma construção, quatro complementares
+e um índice com navegador. A construção contém 31 passos instrumentados,
+todos verdes; não se somam esses passos como novas construções.
+Uma construção normal, zero corridas inteiras, zero capturas.
+54 chamadas de ferramentas concluídas antes da gravação deste relatório;
+a gravação e os passos finais de entrega constam do total da resposta final.
+
+Entrega e incidências operacionais
+Cinco commits de correção, um por ponto, seguidos do commit deste relatório
+e dos códigos. O trailer Claude-Session foi copiado do commit da adenda.
+Os comandos de espera de alguns commits devolveram 3 por falta temporária
+de batimento; os ficheiros de resultado do escrivão e o git confirmaram
+código 0 e as cabeças indicadas. Não se repetiu nenhum pedido desses commits.
+Não houve alteração ao motor nem à data de leitura da fonte de 2021.
+Sem trabalho funcional pendente. A corrida inteira continua reservada ao
+lugar de direção, como pede o mandato.
+
+Prova conservada: design/especime-v3/medicoes/eva-2026-11-10/adenda-a-codigos.json.
+Registos completos desta passagem: <temporario>/eva-ta/.

@@ -1,0 +1,226 @@
+{
+  "cabeca_conferida": "08316e4e97d66cda007a57e09f2ddb6796473fd2",
+  "medicao_anterior": {
+    "linhas": 19,
+    "reconferencias": 20,
+    "ids": [
+      "alentejo-central-poder-de-compra-2023",
+      "evora-desemprego-registado-2013",
+      "evora-desemprego-registado-2024",
+      "evora-divida-total-2025",
+      "evora-empresas-2024",
+      "evora-execucao-da-receita-2021",
+      "evora-execucao-da-receita-2025",
+      "evora-limite-divida-2025",
+      "evora-pagamentos-em-atraso-2025",
+      "evora-poder-de-compra-2023",
+      "evora-populacao-2025",
+      "evora-prazo-medio-de-pagamento-2023",
+      "evora-prazo-medio-de-pagamento-2025",
+      "evora-prr-aprovado-2026",
+      "evora-prr-municipio-contratado",
+      "evora-prr-pago-2026",
+      "evora-prr-universidade-contratado",
+      "evora-prr-vencido-aprovado-2026",
+      "evora-vab-empresarial-2024"
+    ]
+  },
+  "frases_html": {
+    "pt": "Ficheiro da fonte anterior relido a 01.09.2026, confirmou o valor anterior: 96",
+    "en": "Previous source file read again on 01.09.2026, confirmed the previous value: 96"
+  },
+  "build": {
+    "codigo": 0,
+    "segundos": 741.275,
+    "passos": [
+      {
+        "passo": "cadeia:build",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run mapa:unidades",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run ledger:check",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:registo",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:cruzamento",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:documentos",
+        "codigo": 0
+      },
+      {
+        "passo": "node scripts/stamp-version.mjs --preparar",
+        "codigo": 0
+      },
+      {
+        "passo": "astro build",
+        "codigo": 0
+      },
+      {
+        "passo": "node scripts/calendario-paginas.mjs",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run stamp:version",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run cartoes",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run gate:html",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:edicoes",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:selos",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:datas",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:cadeia",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:dados",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:mapa",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:regioes",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:areas",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:formas",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:lugares",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:pais",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:voz",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:paridade",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:nomes",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:lingua",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:formato",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:navegacao",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run sinais",
+        "codigo": 0
+      },
+      {
+        "passo": "npm run check:discussao",
+        "codigo": 0
+      }
+    ]
+  },
+  "indice_com_navegador": {
+    "codigo": 0,
+    "segundos": 32.408,
+    "plantas_I9p_recusadas": 3
+  },
+  "preliminares": [
+    {
+      "comando": "tests/eva/titulos-copiados.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "tests/edicoes/reguas.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "tests/eva/cadeia.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "check:cadeia",
+      "codigo": 0
+    },
+    {
+      "comando": "tests/eva/reconferencias.mjs --so-plantas",
+      "codigo": 0
+    },
+    {
+      "comando": "typecheck",
+      "codigo": 0
+    },
+    {
+      "comando": "tests/livro/indice.mjs --prova",
+      "codigo": 0
+    },
+    {
+      "comando": "tests/leituras/portoes.py",
+      "codigo": 0
+    }
+  ],
+  "complementares": [
+    {
+      "comando": "tests/eva/*.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "check:frases-afirmacao",
+      "codigo": 0
+    },
+    {
+      "comando": "tests/confianca/c1.mjs",
+      "codigo": 0
+    },
+    {
+      "comando": "typecheck",
+      "codigo": 0
+    }
+  ],
+  "orcamento": {
+    "corridas_diretas": 14,
+    "construcoes_normais": 1,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "chamadas_antes_da_gravacao": 54
+  }
+}
