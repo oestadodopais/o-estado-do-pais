@@ -1544,8 +1544,9 @@ export function contagensDoRegisto(claims = loadClaims()) {
   let revisoes = 0;
   for (const c of claims.values()) {
     for (const corr of correcoesDaLinha(c)) {
-      if (ate && corr.date > ate) continue;
-      if (corr.kind === 'correcao') correcoes++;
+      if (corr.kind === 'correcao') {
+        if (!ate || corr.date <= ate) correcoes++;
+      }
       else if (corr.kind === 'atualizacao') atualizacoes++;
       else if (corr.kind === 'proveniencia') revisoes++;
     }
