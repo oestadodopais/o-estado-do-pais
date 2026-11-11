@@ -7,7 +7,7 @@ import {conferirFormaDasCitacoes,conferirCartoesDeCitacao,conferirEdicaoGuardada
 import {conferirTitulosPublicados,retirarTitulosConferidos,fraseRetiradaNoTexto} from '../../scripts/titulos-publicados.mjs';
 import {edicoesGuardadas,primeiraEdicaoServida} from '../../src/lib/edicoes.mjs';
 import {areasComPecas} from '../../src/lib/areas.mjs';
-import {WORKS} from '../../src/data/studies.mjs';
+import {WORKS,PUBLISHED_EDITIONS} from '../../src/data/studies.mjs';
 const rows=loadClaims(),base=rows.get('hab-imprensa-psp-ferido');let count=0;
 function prova(nome,errors,code){assert.equal(errors.length?1:0,code,nome+': '+errors);count++;console.log(`OG1-E C ${nome}: código ${code}`);}
 for(const [nome,change,code] of [['publicador intacto',{},0],['pessoa como publicador',{source:'Polícia de Segurança Pública'},1],['nome inventado',{source:'Publicador inventado'},1],['domínio trocado',{source_url:'https://rtp.pt/noticia'},1]])prova(nome,errosDoPublicador({...base,...change}),code);
@@ -39,7 +39,9 @@ for(const lang of ['pt','en']){
  const antiga=parse('<span data-nonledger="titulo-de-estudo">A casa em Portugal</span>');retirarTitulosConferidos(antiga);assert(fraseRetiradaNoTexto(antiga.textContent,'A casa em Portugal'));count++;
  const fora=parse('<p>A casa em Portugal</p>');retirarTitulosConferidos(fora);assert.equal(fraseRetiradaNoTexto(fora.textContent,'A casa em Portugal'),true);count++;
 }
-for(const e of edicoesGuardadas()) {
+const guardadasPublicadas=edicoesGuardadas().filter(e=>PUBLISHED_EDITIONS.some(p=>p.slug===e.slug&&p.lang===e.lang));
+for(const lang of ['pt','en'])assert(guardadasPublicadas.some(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang===lang),'amostra publicada de edições guardadas ausente: '+lang);
+for(const e of guardadasPublicadas) {
  const rota={key:'documento',lang:e.lang,params:{slug:e.slug,date:e.data}},html=primeiraEdicaoServida(e.slug,e.lang,e.data);
  assert.equal(conferirEdicaoGuardada(rota,html).erro,null);
  prova(`edição guardada ${e.slug}/${e.lang}`,conferirFormaDasCitacoes(parse(html),rota,rows,{html}),0);
