@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-11T21:05:52+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "V1-file",
+   "ficheiro": "motor/core/ocorrencias_sem_linha.py",
+   "descricao": "um ano seguido de uma palavra de medida («2000 euros») passa a ser classificado como ano: a guarda das medidas saiu da régua das ocorrências",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0eecc87af44c1010e25da0516f49aac3e0aa0541a3556bf102ec16c6386f2ab1",
+   "sha256_depois": "badb3feecf85ed035e4a9a29117cfafd37d94f6d8c122c0f9164274d8393d04a",
+   "contexto_antes": "[0])\n    for classe, pattern in RULES:\n        for m in re.finditer(pattern, text, re.I):\n            if m.start() <= start and end <= m.end():\n                if classe == 'ano' and (not re.fullmatch(r'[12]\\d{3}',text[start:end]) or MEASURE.match(text[end:])):\n                    continue\n                return dict(classe=classe, padrao=pattern, contexto=m[0])\n    return None\n\n\ndef ocorrencias(text):\n    masked = _U",
+   "contexto_depois": "[0])\n    for classe, pattern in RULES:\n        for m in re.finditer(pattern, text, re.I):\n            if m.start() <= start and end <= m.end():\n                if classe == 'ano' and not re.fullmatch(r'[12]\\d{3}',text[start:end]):\n                    continue\n                return dict(classe=classe, padrao=pattern, contexto=m[0])\n    return None\n\n\ndef ocorrencias(text):\n    masked = _U"
+  },
+  {
+   "id": "V2-file",
+   "ficheiro": "motor/core/documentos_alojados.py",
+   "descricao": "o leitor de números aceita um número que só começa pelo valor da fonte (um «€560» resolve um «€56»), e a igualdade do valor deixou de ser exigida em conjunto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b890e2a7ebd7577b63dffc370bf0f87133356f03d55aa78a1c2577f62265aa98",
+   "sha256_depois": "0d4025763e6debc8bee288b06d27dbb8366f6133718f3ed6bfd2e32c4d0296cb",
+   "contexto_antes": "[];:').strip('€%') for word,_,_ in run)\n        text=re.sub(r'^([-−])\\s+',r'\\1',text)\n        try:value=numero(text)\n        except ValueError:continue\n        if value==wanted and _tight(text)==_tight(source_value):matches.append(run)\n    return len(matches)==1\n",
+   "contexto_depois": "[];:').strip('€%') for word,_,_ in run)\n        text=re.sub(r'^([-−])\\s+',r'\\1',text)\n        try:value=numero(text)\n        except ValueError:continue\n        if value==wanted or _tight(text).startswith(_tight(source_value)):matches.append(run)\n    return len(matches)==1\n"
+  },
+  {
+   "id": "V3-file",
+   "ficheiro": "motor/core/citacoes_atribuidas.py",
+   "descricao": "uma citação numa página em colunas passa sem leitura na imagem: a falta da leitura deixa de recusar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "cb08b4f0eb04c71e01e7140b79e0a32986d6f09a93d3fb7be74ba2b04ca3aefb",
+   "sha256_depois": "787e040b9b9a7086c9a933405d61a384df0cbac212f8efa6e5748408b2b8e2c9",
+   "contexto_antes": "alavra_partida_na_mudanca_de_linha',False))\n        image=next((i for i in images if i['sha256']==doc['sha256'] and i['pagina']==doc.get('page')),None)\n        if image is None:raise ValueError('citação atribuída: colunas sem leitura na imagem')\n        reading=dict(image)\n        reading['quebras_de_linha']=sorted(set(re.findall(r'«([^»]*-[^»]*)», partido em duas linhas',image['o_que_se_leu'])))\n     ",
+   "contexto_depois": "alavra_partida_na_mudanca_de_linha',False))\n        image=next((i for i in images if i['sha256']==doc['sha256'] and i['pagina']==doc.get('page')),None)\n        if image is None:return\n        reading=dict(image)\n        reading['quebras_de_linha']=sorted(set(re.findall(r'«([^»]*-[^»]*)», partido em duas linhas',image['o_que_se_leu'])))\n     "
+  },
+  {
+   "id": "V4-file",
+   "ficheiro": "motor/core/ocorrencias_bilingues.py",
+   "descricao": "uma ocorrência inglesa sem par na portuguesa deixa de recusar: um número só do inglês passa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a636d360707294ffa050a2c1a67c43be75dee45a9d510bbd258a61c342808de4",
+   "sha256_depois": "bfbee0529dc82328326465f47ea512093f140655e1a8267e4b2fc0d0046ce880",
+   "contexto_antes": "ct(list)\n    for m in tokens['pt']:byvalue[numero(m[0])].append(m.start())\n    pairs={}\n    for m in tokens['en']:\n        places=byvalue[numero(m[0])]\n        if not places:raise ValueError(f'ocorrência inglesa sem par na portuguesa: {m.start()} {m[0]}')\n        pairs[m.start()]=places.pop(0)\n    if any(byvalue.values()):raise ValueError('ocorrência portuguesa sem par na inglesa')\n    return pairs,translations\n",
+   "contexto_depois": "ct(list)\n    for m in tokens['pt']:byvalue[numero(m[0])].append(m.start())\n    pairs={}\n    for m in tokens['en']:\n        places=byvalue[numero(m[0])]\n        if not places:continue\n        pairs[m.start()]=places.pop(0)\n    if any(byvalue.values()):raise ValueError('ocorrência portuguesa sem par na inglesa')\n    return pairs,translations\n"
+  },
+  {
+   "id": "V5-file",
+   "ficheiro": "motor/core/documentos_alojados.py",
+   "descricao": "a leitura na imagem de outra página passa: a página diferente só recusa quando também falta a página",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0d4025763e6debc8bee288b06d27dbb8366f6133718f3ed6bfd2e32c4d0296cb",
+   "sha256_depois": "1902509203b02ef88b3a35f1e96b1f90abcec83c01fa49454f41f16f9d4667e3",
+   "contexto_antes": "r, data, corpo, página e transcrição.\"\"\"\n    if leitura.get('sha256') != doc.get('sha256'):\n        raise ValueError('leitura na imagem: resumo diferente')\n    if leitura.get('pagina') != doc.get('pagina') or page is None:\n        raise ValueError('leitura na imagem: página diferente ou ausente')\n    for key in ('leitor','razao','o_que_se_leu'):\n        if not isinstance(leitura.",
+   "contexto_depois": "r, data, corpo, página e transcrição.\"\"\"\n    if leitura.get('sha256') != doc.get('sha256'):\n        raise ValueError('leitura na imagem: resumo diferente')\n    if leitura.get('pagina') != doc.get('pagina') and page is None:\n        raise ValueError('leitura na imagem: página diferente ou ausente')\n    for key in ('leitor','razao','o_que_se_leu'):\n        if not isinstance(leitura."
+  },
+  {
+   "id": "V1-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "um ano seguido de uma palavra de medida («2000 euros») passa a ser classificado como ano: a guarda das medidas saiu da régua das ocorrências",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "97ff4b90395879b20acffd25980bfbf33aa59ee6004154baba782569dfdca359",
+   "sha256_depois": "454b91c2f23ca09a346ae6055c3cd017e962d88f820f657a7d06ad5209381fae",
+   "contexto_antes": "\n+    for classe, pattern in RULES:\n+        for m in re.finditer(pattern, text, re.I):\n+            if m.start() <= start and end <= m.end():\n+                if classe == 'ano' and (not re.fullmatch(r'[12]\\d{3}',text[start:end]) or MEASURE.match(text[end:])):\n+                    continue\n+                return dict(classe=classe, padrao=pattern, contexto=m[0])\n+    return None\n+\n+\n+def ocorrencias(text):\n+    mask",
+   "contexto_depois": "\n+    for classe, pattern in RULES:\n+        for m in re.finditer(pattern, text, re.I):\n+            if m.start() <= start and end <= m.end():\n+                if classe == 'ano' and not re.fullmatch(r'[12]\\d{3}',text[start:end]):\n+                    continue\n+                return dict(classe=classe, padrao=pattern, contexto=m[0])\n+    return None\n+\n+\n+def ocorrencias(text):\n+    mask"
+  },
+  {
+   "id": "V2-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o leitor de números aceita um número que só começa pelo valor da fonte (um «€560» resolve um «€56»), e a igualdade do valor deixou de ser exigida em conjunto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "454b91c2f23ca09a346ae6055c3cd017e962d88f820f657a7d06ad5209381fae",
+   "sha256_depois": "7ed5691f348b0523dc10fe030d20706efc00c40eb5e26ee19c92c50ab15be7b1",
+   "contexto_antes": "').strip('€%') for word,_,_ in run)\n+        text=re.sub(r'^([-−])\\s+',r'\\1',text)\n+        try:value=numero(text)\n+        except ValueError:continue\n+        if value==wanted and _tight(text)==_tight(source_value):matches.append(run)\n+    return len(matches)==1\ndiff --git a/core/editions.py b/core/editions.py\nindex 2fde7cc..0263263 100644\n--- a/core/editions.py\n+++ b/core/editions.py\n@@ -7,",
+   "contexto_depois": "').strip('€%') for word,_,_ in run)\n+        text=re.sub(r'^([-−])\\s+',r'\\1',text)\n+        try:value=numero(text)\n+        except ValueError:continue\n+        if value==wanted or _tight(text).startswith(_tight(source_value)):matches.append(run)\n+    return len(matches)==1\ndiff --git a/core/editions.py b/core/editions.py\nindex 2fde7cc..0263263 100644\n--- a/core/editions.py\n+++ b/core/editions.py\n@@ -7,"
+  },
+  {
+   "id": "V3-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "uma citação numa página em colunas passa sem leitura na imagem: a falta da leitura deixa de recusar",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7ed5691f348b0523dc10fe030d20706efc00c40eb5e26ee19c92c50ab15be7b1",
+   "sha256_depois": "7111fc7dfac1e4f6aa6f40615306b131d5b668fe9ec6cdbcd6575d9a23b74d65",
+   "contexto_antes": "avra_partida_na_mudanca_de_linha',False))\n+        image=next((i for i in images if i['sha256']==doc['sha256'] and i['pagina']==doc.get('page')),None)\n+        if image is None:raise ValueError('citação atribuída: colunas sem leitura na imagem')\n+        reading=dict(image)\n+        reading['quebras_de_linha']=sorted(set(re.findall(r'«([^»]*-[^»]*)», partido em duas linhas',image['o_que_se_leu'])))\n+  ",
+   "contexto_depois": "avra_partida_na_mudanca_de_linha',False))\n+        image=next((i for i in images if i['sha256']==doc['sha256'] and i['pagina']==doc.get('page')),None)\n+        if image is None:return\n+        reading=dict(image)\n+        reading['quebras_de_linha']=sorted(set(re.findall(r'«([^»]*-[^»]*)», partido em duas linhas',image['o_que_se_leu'])))\n+  "
+  },
+  {
+   "id": "V4-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "uma ocorrência inglesa sem par na portuguesa deixa de recusar: um número só do inglês passa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7111fc7dfac1e4f6aa6f40615306b131d5b668fe9ec6cdbcd6575d9a23b74d65",
+   "sha256_depois": "4dbba764967825c549bddc02795e90108e5db24bfab49f2ae0ac203ea13618fc",
+   "contexto_antes": "st)\n+    for m in tokens['pt']:byvalue[numero(m[0])].append(m.start())\n+    pairs={}\n+    for m in tokens['en']:\n+        places=byvalue[numero(m[0])]\n+        if not places:raise ValueError(f'ocorrência inglesa sem par na portuguesa: {m.start()} {m[0]}')\n+        pairs[m.start()]=places.pop(0)\n+    if any(byvalue.values()):raise ValueError('ocorrência portuguesa sem par na inglesa')\n+    return pairs,translatio",
+   "contexto_depois": "st)\n+    for m in tokens['pt']:byvalue[numero(m[0])].append(m.start())\n+    pairs={}\n+    for m in tokens['en']:\n+        places=byvalue[numero(m[0])]\n+        if not places:continue\n+        pairs[m.start()]=places.pop(0)\n+    if any(byvalue.values()):raise ValueError('ocorrência portuguesa sem par na inglesa')\n+    return pairs,translatio"
+  },
+  {
+   "id": "V5-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a leitura na imagem de outra página passa: a página diferente só recusa quando também falta a página",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4dbba764967825c549bddc02795e90108e5db24bfab49f2ae0ac203ea13618fc",
+   "sha256_depois": "e5424aa21dc015684fcb51d3b598eb60c82db516f5d6650691ced9abf6cd6f9f",
+   "contexto_antes": "data, corpo, página e transcrição.\"\"\"\n+    if leitura.get('sha256') != doc.get('sha256'):\n+        raise ValueError('leitura na imagem: resumo diferente')\n+    if leitura.get('pagina') != doc.get('pagina') or page is None:\n+        raise ValueError('leitura na imagem: página diferente ou ausente')\n+    for key in ('leitor','razao','o_que_se_leu'):\n+        if not isinstance(leitu",
+   "contexto_depois": "data, corpo, página e transcrição.\"\"\"\n+    if leitura.get('sha256') != doc.get('sha256'):\n+        raise ValueError('leitura na imagem: resumo diferente')\n+    if leitura.get('pagina') != doc.get('pagina') and page is None:\n+        raise ValueError('leitura na imagem: página diferente ou ausente')\n+    for key in ('leitor','razao','o_que_se_leu'):\n+        if not isinstance(leitu"
+  }
+ ]
+}

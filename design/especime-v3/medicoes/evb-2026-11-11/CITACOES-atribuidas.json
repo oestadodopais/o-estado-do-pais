@@ -116,10 +116,18 @@
    },
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": true,
-   "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
+   "nota": "a frase fala de duas das sete intervenções: a prova são as duas linhas, cada uma com o nome da sua obra",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "excertos": [
+    "Sem desenvolvi- Convento dos Remédios instalações Verbas do Évora (2.º Trimestre) mento",
+    "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento"
+   ],
+   "contextos": [
+    "Convento dos Remédios",
+    "Arena de Évora"
+   ],
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: duas linhas, as duas obras"
   },
   {
    "lingua": "pt",
@@ -292,10 +300,18 @@
    },
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": true,
-   "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
+   "nota": "a frase fala de duas das sete intervenções: a prova são as duas linhas, cada uma com o nome da sua obra",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "excertos": [
+    "Sem desenvolvi- Convento dos Remédios instalações Verbas do Évora (2.º Trimestre) mento",
+    "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento"
+   ],
+   "contextos": [
+    "Convento dos Remédios",
+    "Arena de Évora"
+   ],
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: duas linhas, as duas obras"
   },
   {
    "lingua": "pt",
@@ -1035,7 +1051,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Obra de adaptação de conservação e Convento de S. Bento de Cástris - diversos Património 6 750 000 € restauro do acompanhamento e fiscalização da espaços no 2025/2026 Cultural IP Verbas do PRR refeitório e empreitada edifício do portaria - em fase convento, de adjudicação",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Convento de S. Bento de Cástris",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -1057,7 +1075,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Obra em fase de Welcome Turismo do Verbas do Design (2.º Trimestre) adjudicação",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Design",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -1079,7 +1099,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Projeto em fase Arquivo Fotográfico de Évora Cobertura Verbas do Évora (2.º Trimestre) de aprovação",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Arquivo Fotográfico de Évora",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -1099,9 +1121,11 @@
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": true,
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
+   "excerto": "Sem desenvolvi- Convento dos Remédios instalações Verbas do Évora (2.º Trimestre) mento",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "contexto": "Convento dos Remédios",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -1123,7 +1147,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Empreitada em Reforço Município de 2026 Antigos Celeiros da EPAC Verbas do fase de estrutural Évora (2.º Trimestre) PRR concurso",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Antigos Celeiros da EPAC",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -1145,7 +1171,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "contexto": "Arena de Évora",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -1167,7 +1195,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Projeto em fase Rossio de São Brás eletricidade, Verbas do Évora (2.º Trimestre) de conclusão",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Rossio de São Brás",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "pt",
@@ -2550,10 +2580,18 @@
    },
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": true,
-   "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
+   "nota": "a frase fala de duas das sete intervenções: a prova são as duas linhas, cada uma com o nome da sua obra",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "excertos": [
+    "Sem desenvolvi- Convento dos Remédios instalações Verbas do Évora (2.º Trimestre) mento",
+    "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento"
+   ],
+   "contextos": [
+    "Convento dos Remédios",
+    "Arena de Évora"
+   ],
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: duas linhas, as duas obras"
   },
   {
    "lingua": "en",
@@ -2726,10 +2764,18 @@
    },
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": true,
-   "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
+   "nota": "a frase fala de duas das sete intervenções: a prova são as duas linhas, cada uma com o nome da sua obra",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "excertos": [
+    "Sem desenvolvi- Convento dos Remédios instalações Verbas do Évora (2.º Trimestre) mento",
+    "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento"
+   ],
+   "contextos": [
+    "Convento dos Remédios",
+    "Arena de Évora"
+   ],
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: duas linhas, as duas obras"
   },
   {
    "lingua": "en",
@@ -3469,7 +3515,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Obra de adaptação de conservação e Convento de S. Bento de Cástris - diversos Património 6 750 000 € restauro do acompanhamento e fiscalização da espaços no 2025/2026 Cultural IP Verbas do PRR refeitório e empreitada edifício do portaria - em fase convento, de adjudicação",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Convento de S. Bento de Cástris",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -3491,7 +3539,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Obra em fase de Welcome Turismo do Verbas do Design (2.º Trimestre) adjudicação",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Design",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -3513,7 +3563,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Projeto em fase Arquivo Fotográfico de Évora Cobertura Verbas do Évora (2.º Trimestre) de aprovação",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Arquivo Fotográfico de Évora",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -3533,9 +3585,11 @@
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": true,
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
+   "excerto": "Sem desenvolvi- Convento dos Remédios instalações Verbas do Évora (2.º Trimestre) mento",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "contexto": "Convento dos Remédios",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -3557,7 +3611,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Empreitada em Reforço Município de 2026 Antigos Celeiros da EPAC Verbas do fase de estrutural Évora (2.º Trimestre) PRR concurso",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Antigos Celeiros da EPAC",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -3579,7 +3635,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Sem desenvolvi- Arena de Évora Verbas do acústica Évora (2.º Trimestre) mento",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha"
+   "citacao_no_excerto": "pela ordem, com uma palavra partida na mudança de linha",
+   "contexto": "Arena de Évora",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -3601,7 +3659,9 @@
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
    "excerto": "Projeto em fase Rossio de São Brás eletricidade, Verbas do Évora (2.º Trimestre) de conclusão",
    "conferido_pelo_motor": true,
-   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio"
+   "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
+   "contexto": "Rossio de São Brás",
+   "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
    "lingua": "en",
@@ -4888,5 +4948,5 @@
   }
  ],
  "nao_achadas_no_documento_atribuido": [],
- "nota_do_lugar_de_direcao": "Revisto pelo lugar de direção a 11.11.2026: saiu a B019.2 (deixou de ser citação no texto); as citações curtas de estado e de quadro passaram ao excerto da linha a que a unidade as atribui; cada excerto foi conferido outra vez com o leitor do motor."
+ "nota_do_lugar_de_direcao": "Revisto pelo lugar de direção a 11.11.2026: saiu a B019.2 (deixou de ser citação no texto); as citações curtas de estado e de quadro passaram ao excerto da linha a que a unidade as atribui; cada excerto foi conferido outra vez com o leitor do motor. Segunda revisão a 11.11.2026, depois da leitura a frio: cada citação do quadro das sete intervenções leva o nome da sua obra em `contexto`, a do Convento dos Remédios passa ao excerto da sua própria linha, e as duas unidades da cabeça que falam de duas obras levam as duas linhas."
 }
