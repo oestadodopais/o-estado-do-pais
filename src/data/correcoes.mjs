@@ -79,18 +79,6 @@ export const CORRECOES_TEXTO = [
     pt: "Três contagens da imprensa sobre a intervenção policial no Porto apareciam como palavras da organização, da Polícia de Segurança Pública (PSP) e do comandante dos bombeiros, a do movimento aparecia sem o «pelo menos» com que a notícia a dá, e uma frase dizia que os acampados tinham escrito o que uma notícia lhes atribui; são o relato de notícias, e as frases passaram a nomeá-las.",
     en: "Three press counts on the police intervention in Porto appeared as the words of the organisers, of the Public Security Police (PSP) and of the fire brigade's commander, the movement's count appeared without the «pelo menos» (at least) with which the report gives it, and a sentence said the campers had written what a news report attributes to them; they are news reports' accounts, and the sentences now name them.",
   } },
-  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-03', frase: {
-    pt: 'Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação.',
-    en: "The October decisions of Évora's Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added.",
-  } },
-  { kind: 'texto', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-06', frase: {
-    pt: 'A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.',
-    en: "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names.",
-  } },
-  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-08', frase: {
-    pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
-    en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
-  } },
   { kind: 'texto_atualizado', slug: 'evora-2027-prometido-painel-dinheiro', data: '2026-11-08', frase: {
     pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
     en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
@@ -120,6 +108,18 @@ export const CORRECOES_TEXTO = [
 
 /** História do ensaio, conservada apenas para conferir a contagem selada. */
 export const CORRECOES_TEXTO_ENSAIO = [
+  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-03', frase: {
+    pt: 'Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação.',
+    en: "The October decisions of Évora's Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added.",
+  } },
+  { kind: 'texto', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-06', frase: {
+    pt: 'A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.',
+    en: "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names.",
+  } },
+  { kind: 'texto_atualizado', slug: 'evora-2027-capital-europeia-da-cultura', data: '2026-11-08', frase: {
+    pt: 'Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.',
+    en: 'The sentences in which the study talked about itself came out; no number and no conclusion changed.',
+  } },
   { kind: 'texto', slug: 'evora-contas-da-camara-2010-2025', data: '2026-10-30', datas: {'2025':'evora-receita-cobrada-2025','2024':'evora-contas-2024-votos-contra'}, frase: {
     pt: "Quatro passagens diziam como facto causas que o relatório de contas de 2025 da Câmara apresenta como leitura ou como explicação parcial; passaram a dizê-lo assim, com a ressalva de que o valor do investimento de 2024 é o que o relatório de 2025 imprime como comparativo, porque as contas de 2024 nunca foram certificadas, e com a explicação de que a receita se compara com o orçamento depois das modificações do ano.",
     en: "Four passages stated as fact causes that the Câmara's 2025 accounts report presents as a reading or as a partial explanation; they now say so, with the caveat that the 2024 investment value is the one the 2025 report prints as a comparative, because the 2024 accounts were never certified, and with the explanation that revenue is compared with the budget after the year's modifications.",

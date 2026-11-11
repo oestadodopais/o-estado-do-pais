@@ -7,6 +7,7 @@ import {ITENS} from '../src/data/discussao.mjs';
 import {WORKS} from '../src/data/studies.mjs';
 import {dataDaCasa} from '../src/lib/datas.mjs';
 import {eDerivada} from '../src/lib/ledger.mjs';
+import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
 export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=null) {
@@ -30,7 +31,7 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=nul
   if(rota==='correcoes' && origem==='edicoes.data') {
     const entrada=el.closest('[data-texto-estudo]'),porta=el.parentNode;
     const slug=entrada?.getAttribute('data-texto-estudo'),data=entrada?.getAttribute('data-texto-data');
-    const vs=slug?versoesDaEdicao(slug,lang):[],i=vs.findIndex(v=>v.data===data);
+    const vs=slug?versoesDaEdicao(slug,lang,manifesto??undefined):[],i=vs.findIndex(v=>v.data===data);
     const lado=porta?.getAttribute('data-texto-porta');
     if(i<1||!['primeira','atual'].includes(lado)||porta.rawTagName!=='a')return false;
     const v=vs[lado==='primeira'?i-1:i];
@@ -62,16 +63,18 @@ export function dataEditorialPermitida(el, rota, claim, lang='pt', manifesto=nul
   const m=/^verifications\.(\d+)\.date$/.exec(origem??'');
   return Boolean(m&&claim?.verifications?.[Number(m[1])]?.date);
 }
-export function conferirDataEditorial(el, rota, claim, err, lang='pt') {
- if (!dataEditorialPermitida(el,rota,claim,lang)) err('FP1-e: data-editorial fora dos contextos e origens permitidos.');
+export function conferirDataEditorial(el, rota, claim, err, lang='pt', manifesto=null) {
+ if (!dataEditorialPermitida(el,rota,claim,lang,manifesto)) err('FP1-e: data-editorial fora dos contextos e origens permitidos.');
 }
+// A história fixa conserva a planta com três versões, que já não existe publicada.
 export function plantasDatasEditoriais() {
+ const fixo=JSON.parse(fs.readFileSync(new URL('../tests/edicoes/fixtures/evora-2027-historia.json',import.meta.url),'utf8')).manifesto;
  let plantasPortas=0;
  for(const lang of ['pt','en']) {
-  const slug='evora-2027-capital-europeia-da-cultura',vs=versoesDaEdicao(slug,lang),v=vs[1];
+  const slug='evora-2027-capital-europeia-da-cultura',vs=versoesDaEdicao(slug,lang,fixo),v=vs[1];
   const html=`<li data-texto-estudo="${slug}" data-texto-data="${vs[2].data}"><a data-texto-porta="primeira" href="${v.rota}"><time datetime="${v.data}" data-nonledger="data-editorial" data-data-origem="edicoes.data">${dataDaCasa(v.data)}</time></a></li>`;
   const controlo=parse(html).querySelector('time');
-  assert.equal(dataEditorialPermitida(controlo,'correcoes',null,lang),true);
+  assert.equal(dataEditorialPermitida(controlo,'correcoes',null,lang,fixo),true);
   for(const mudar of [
    t=>{t.setAttribute('datetime',vs[0].data);t.set_content(dataDaCasa(vs[0].data));},
    t=>t.parentNode.setAttribute('href',vs[0].rota),
@@ -79,12 +82,12 @@ export function plantasDatasEditoriais() {
    t=>t.closest('li').setAttribute('data-texto-estudo','estudo-inexistente'),
    t=>t.parentNode.setAttribute('data-texto-porta','atual'),
    t=>t.parentNode.insertAdjacentHTML('beforeend',t.outerHTML),
-  ]) {const t=parse(html).querySelector('time');mudar(t);const erros=[];conferirDataEditorial(t,'correcoes',null,e=>erros.push(e),lang);assert.equal(erros.length,1);plantasPortas++;}
+  ]) {const t=parse(html).querySelector('time');mudar(t);const erros=[];conferirDataEditorial(t,'correcoes',null,e=>erros.push(e),lang,fixo);assert.equal(erros.length,1);plantasPortas++;}
   assert.equal(dataEditorialPermitida(parse(controlo.outerHTML).querySelector('time'),'correcoes',null,lang),false);plantasPortas++;
  }
  console.log(`EV3-p: datas das portas conferidas nas duas línguas; ${plantasPortas} adulterações recusadas.`);
 
- const work=WORKS.find(w=>w.slug==='evora-2027-capital-europeia-da-cultura');
+ const work=WORKS.find(w=>w.slug==='orcamento-2027-o-que-muda-e-para-quem');
  for(const lang of ['pt','en']) {
   const edicao=work.editions.find(e=>e.lang===lang);
   const dataCorrigida=mudancasNoManifesto(work.slug,lang).find(m=>m.natureza==='correcao').data;

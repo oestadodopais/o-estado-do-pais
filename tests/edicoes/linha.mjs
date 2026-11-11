@@ -32,7 +32,7 @@ for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1&&!WORKS.some(w=
  }
 }
 // A régua recusa uma natureza desconhecida, sem a converter em correção.
-const desconhecido=structuredClone(manifestoEd2),alvo=desconhecido.edicoes.find(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang==='pt');
+const desconhecido=structuredClone(manifestoEd2),alvo=desconhecido.edicoes.find(e=>e.slug==='orcamento-2027-o-que-muda-e-para-quem'&&e.lang==='pt');
 alvo.edicoes[1].natureza='planta-desconhecida';
 assert(conferirLinhaDasEdicoes(ler(`${alvo.lang==='pt'?'/estudos':'/en/studies'}/${alvo.slug}`).querySelector('[data-estudo-edicao]'),desconhecido,alvo.slug,alvo.lang).some(e=>e.includes('natureza desconhecida')));plantas++;
 // A ordem segue as datas também quando a atualização é posterior à correção.

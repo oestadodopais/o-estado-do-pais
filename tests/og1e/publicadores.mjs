@@ -40,7 +40,7 @@ for(const lang of ['pt','en']){
  const fora=parse('<p>A casa em Portugal</p>');retirarTitulosConferidos(fora);assert.equal(fraseRetiradaNoTexto(fora.textContent,'A casa em Portugal'),true);count++;
 }
 const guardadasPublicadas=edicoesGuardadas().filter(e=>PUBLISHED_EDITIONS.some(p=>p.slug===e.slug&&p.lang===e.lang));
-for(const lang of ['pt','en'])assert(guardadasPublicadas.some(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang===lang),'amostra publicada de edições guardadas ausente: '+lang);
+for(const lang of ['pt','en'])assert(guardadasPublicadas.some(e=>e.slug==='orcamento-2027-o-que-muda-e-para-quem'&&e.lang===lang),'amostra publicada de edições guardadas ausente: '+lang);
 for(const e of guardadasPublicadas) {
  const rota={key:'documento',lang:e.lang,params:{slug:e.slug,date:e.data}},html=primeiraEdicaoServida(e.slug,e.lang,e.data);
  assert.equal(conferirEdicaoGuardada(rota,html).erro,null);

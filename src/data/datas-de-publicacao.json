@@ -59,16 +59,18 @@
     {
       "slug": "evora-2027-capital-europeia-da-cultura",
       "lang": "pt",
-      "data": "2026-10-01",
+      "data": "2026-11-12",
       "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-2027-capital-europeia-da-cultura/pt.html"
+      "ficheiro": "studies-src/evora-2027-capital-europeia-da-cultura/pt.html",
+      "origem": "edicao-unica"
     },
     {
       "slug": "evora-2027-capital-europeia-da-cultura",
       "lang": "en",
-      "data": "2026-10-01",
+      "data": "2026-11-12",
       "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-2027-capital-europeia-da-cultura/en.html"
+      "ficheiro": "studies-src/evora-2027-capital-europeia-da-cultura/en.html",
+      "origem": "edicao-unica"
     },
     {
       "slug": "evora-contas-da-camara-2010-2025",

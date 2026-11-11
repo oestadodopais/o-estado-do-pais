@@ -19,7 +19,7 @@ for(const w of PUBLISHED_WORKS)for(const lang of ['pt','en']){
  paginas++;if(principal.updated)atualizadas++;
 }
 const linhas=[];
-for(const slug of ['evora-2027-capital-europeia-da-cultura','orcamento-2027-o-que-muda-e-para-quem'])for(const lang of ['pt','en']){
+for(const slug of ['a-casa-em-portugal-e-na-europa','orcamento-2027-o-que-muda-e-para-quem'])for(const lang of ['pt','en']){
  const e=manifestoEd2.edicoes.find(e=>e.slug===slug&&e.lang===lang);assert(e,slug);
  const rota=`${lang==='pt'?'/estudos':'/en/studies'}/${slug}`;
  linhas.push({slug,lang,cabecalho:ler(dist,rota,'[data-estudo-edicao]'),faixas:rotasNoManifesto(slug,lang).map((r,i)=>({edicao:e.edicoes[i].data,texto:ler(dist,r,'[data-documento-edicao]')}))});

@@ -1,10 +1,16 @@
+import fs from 'node:fs';
+import {WORKS} from '../../src/data/studies.mjs';
+const historia=JSON.parse(fs.readFileSync(new URL('./fixtures/evora-2027-historia.json',import.meta.url),'utf8'));
+const work=WORKS.find(w=>w.slug===historia.works[0].slug);
+const antes=structuredClone(work);
+Object.assign(work,structuredClone(historia.works[0]),{publication:'declared'});
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
 import {manifestoEd2} from '../../scripts/edicoes-linha-conferir.mjs';
 import {repertorioDaVozDasEdicoes,classeDaVozDaEdicao,conferirVozDaLinha,retiradaForaDaFrase} from '../../scripts/voz-edicoes.mjs';
 const pedida=process.argv.includes('--planta-outra-palavra');let controlos=0,plantas=0;
 for(const lang of ['pt','en']){
- const manifesto=structuredClone(manifestoEd2),slug='evora-2027-capital-europeia-da-cultura',e=manifesto.edicoes.find(e=>e.slug===slug&&e.lang===lang);
+ const manifesto=JSON.parse(fs.readFileSync(new URL('./fixtures/evora-2027-historia.json',import.meta.url),'utf8')).manifesto,slug='evora-2027-capital-europeia-da-cultura',e=manifesto.edicoes.find(e=>e.slug===slug&&e.lang===lang);
  // Planta de quatro versões, independente das atualizações posteriores.
  e.edicoes=e.edicoes.slice(0,3);
  e.edicoes.push({...e.edicoes.at(-1),data:'2026-11-07'});
@@ -24,3 +30,5 @@ for(const lang of ['pt','en']){
 }
 console.log(`ED3 voz: ${controlos} controlos; ${plantas} plantas recusadas.`);
 if(pedida)process.exitCode=1;
+
+Object.assign(work,antes);

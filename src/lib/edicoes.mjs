@@ -15,8 +15,8 @@ export function manifestoDasEdicoes(){
  return /** @type {{edicoes:Declaracao[]}} */(load(fs.readFileSync(path.join(STUDIES_SRC_DIR,'manifest.yml'),'utf8')));
 }
 /** @param {string} slug @param {string} lang */
-export function versoesDaEdicao(slug,lang){
- const e=manifestoDasEdicoes().edicoes.find(e=>e.slug===slug&&e.lang===lang);
+export function versoesDaEdicao(slug,lang,manifesto=manifestoDasEdicoes()){
+ const e=manifesto.edicoes.find(e=>e.slug===slug&&e.lang===lang);
  return (e?.edicoes??[]).map((v,i,lista)=>({...v,date:v.data,slug,lang:/** @type {Lingua} */(lang),indice:i,atual:i===lista.length-1,
   ficheiro:path.join(/** @type {string} */(STUDIES_SRC_DIR),v.file),
   rota:`${lang==='pt'?'/estudos':'/en/studies'}/${slug}/${lang==='pt'?'documento':'document'}${i===lista.length-1?'':'/'+v.data}`}));

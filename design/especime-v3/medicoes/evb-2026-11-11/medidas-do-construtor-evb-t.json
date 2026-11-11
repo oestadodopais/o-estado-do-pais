@@ -1,0 +1,25 @@
+{
+  "contagens": {
+    "estudos": 3485
+  },
+  "l1_antes": 3491,
+  "l1_depois": 3485,
+  "l1_razao": "EVB, 11.11.2026: saíram seis páginas de edições de ensaio; a medição passou de 3491 para 3485. Réguas e exclusões conservadas.",
+  "documentos": {
+    "pt": {
+      "bytes": 101925,
+      "sha256": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb"
+    },
+    "en": {
+      "bytes": 101889,
+      "sha256": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306"
+    }
+  },
+  "quadros_por_lingua": 33,
+  "linhas_afirmacoes_por_lingua": 5,
+  "pendencias_retiradas": 228,
+  "origem_leitura_linhas": {
+    "pt": 69,
+    "en": 69
+  }
+}

@@ -25,7 +25,7 @@ for(const lang of ['pt','en']){
  const slug='onde-esta-a-agua',root=ler(slug,lang),conferir=r=>conferirMudancasDoCabecalho(r,slug,lang);
  assert.deepEqual(conferir(root),[]);controlos++;
  planta('atualizacao-a-mais',root,r=>r.insertAdjacentHTML('beforeend',` · <span>${lang==='pt'?'atualizado a':'updated on'}</span> <time data-estudo-atualizacao datetime="2026-11-07">07.11.2026</time>`),conferir);
- const evora='evora-2027-capital-europeia-da-cultura',atual=ler(evora,lang),confere=r=>conferirMudancasDoCabecalho(r,evora,lang);
+ const evora='orcamento-2027-o-que-muda-e-para-quem',atual=ler(evora,lang),confere=r=>conferirMudancasDoCabecalho(r,evora,lang);
  assert.deepEqual(confere(atual),[]);controlos++;
  planta('so-palavra-errada',atual,r=>{
   const time=r.querySelector('[data-estudo-correcao]'),ns=time.parentNode.parentNode.childNodes;

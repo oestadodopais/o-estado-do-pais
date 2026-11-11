@@ -1,0 +1,161 @@
+{
+  "manifesto": {
+    "historia_edicoes_base": "2026-11-02",
+    "edicoes": [
+      {
+        "slug": "evora-2027-capital-europeia-da-cultura",
+        "lang": "pt",
+        "edicoes": [
+          {
+            "data": "2026-10-01",
+            "sha256": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+            "file": "_edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html"
+          },
+          {
+            "data": "2026-11-03",
+            "sha256": "3547e5fd2933eba9dd05c3c7ce0ca24b370181c73663a2235a65629e4a938b09",
+            "file": "_edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-11-03.html",
+            "natureza": "atualizacao"
+          },
+          {
+            "data": "2026-11-06",
+            "sha256": "3e98c9473a1b8f94323087719cd50c1f0fac88baf0108847c12d33d2563f015c",
+            "file": "_edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-11-06.html"
+          },
+          {
+            "data": "2026-11-08",
+            "sha256": "95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711",
+            "file": "evora-2027-capital-europeia-da-cultura/pt.html",
+            "natureza": "atualizacao"
+          }
+        ],
+        "title": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+        "origin": "researchhub",
+        "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176",
+        "raw_file": "_raw/evora-2027-capital-europeia-da-cultura.pt.html",
+        "fetched_utc": "2026-11-08T00:38:19.648Z",
+        "bytes_raw": 71866,
+        "bytes_normalized": 71866,
+        "sha256_raw": "95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711",
+        "sha256_normalized": "95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711",
+        "primeira_edicao": {
+          "date": "2026-10-01",
+          "sha256": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+          "file": "_edicoes/evora-2027-capital-europeia-da-cultura.pt.2026-10-01.html",
+          "commit": "6dc972e6afd7ef07c744c15f698f11a996664650"
+        }
+      },
+      {
+        "slug": "evora-2027-capital-europeia-da-cultura",
+        "lang": "en",
+        "edicoes": [
+          {
+            "data": "2026-10-01",
+            "sha256": "515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291",
+            "file": "_edicoes/evora-2027-capital-europeia-da-cultura.en.2026-10-01.html"
+          },
+          {
+            "data": "2026-11-03",
+            "sha256": "81e1c0d262cd4066d7d79b4350a0941394b256f096176b3da90bcee89cd243f1",
+            "file": "_edicoes/evora-2027-capital-europeia-da-cultura.en.2026-11-03.html",
+            "natureza": "atualizacao"
+          },
+          {
+            "data": "2026-11-06",
+            "sha256": "88fb28658d71b218403006d185487d10ba479bc41ccac7313aa7bf3cdc7f1c53",
+            "file": "_edicoes/evora-2027-capital-europeia-da-cultura.en.2026-11-06.html"
+          },
+          {
+            "data": "2026-11-08",
+            "sha256": "480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d",
+            "file": "evora-2027-capital-europeia-da-cultura/en.html",
+            "natureza": "atualizacao"
+          }
+        ],
+        "title": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+        "origin": "researchhub",
+        "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ e64065a7a1cd30cc8fd723e2f0b79bf3eeeff176",
+        "raw_file": "_raw/evora-2027-capital-europeia-da-cultura.en.html",
+        "fetched_utc": "2026-11-08T00:38:19.654Z",
+        "bytes_raw": 69946,
+        "bytes_normalized": 69946,
+        "sha256_raw": "480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d",
+        "sha256_normalized": "480fe31478ef7ca0e9dde268980a0692c5d6f8a371e85dab7a6bff2e910d917d",
+        "primeira_edicao": {
+          "date": "2026-10-01",
+          "sha256": "515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291",
+          "file": "_edicoes/evora-2027-capital-europeia-da-cultura.en.2026-10-01.html",
+          "commit": "6dc972e6afd7ef07c744c15f698f11a996664650"
+        }
+      }
+    ]
+  },
+  "works": [
+    {
+      "id": "evora-2027-capital-europeia-da-cultura",
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "emCurso": {
+        "razao": "Acompanhamento da candidatura a Capital Europeia da Cultura.",
+        "ate": "2027-12-31"
+      },
+      "tema": "cultura",
+      "subject": "evora",
+      "editions": [
+        {
+          "lang": "pt",
+          "title": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+          "date": "2026-10-01",
+          "updated": "2026-11-08"
+        },
+        {
+          "lang": "en",
+          "title": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+          "date": "2026-10-01",
+          "updated": "2026-11-08"
+        }
+      ],
+      "artifactUrl": null,
+      "pergunta": {
+        "pt": "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?",
+        "en": "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+      },
+      "verbatimDaPergunta": {
+        "pt": "estudo-evora-2027-pergunta-pt",
+        "en": "estudo-evora-2027-pergunta-en"
+      },
+      "description": {
+        "pt": "O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos.",
+        "en": "What Évora’s bid for European Capital of Culture promised, what the European panel wrote and the money in the official acts."
+      }
+    }
+  ],
+  "correcoes": [
+    {
+      "kind": "texto_atualizado",
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "data": "2026-11-03",
+      "frase": {
+        "pt": "Entraram as decisões de outubro da Câmara e da Assembleia Municipal de Évora sobre o Rossio de São Brás, e um licenciamento de obras de conservação requerido pela associação.",
+        "en": "The October decisions of Évora's Câmara and Assembleia Municipal on the Rossio de São Brás, and a licence for conservation works requested by the association, were added."
+      }
+    },
+    {
+      "kind": "texto",
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "data": "2026-11-06",
+      "frase": {
+        "pt": "A frase sobre o dinheiro do Rossio de São Brás contava dois financiamentos que nenhum documento conta; passou a dizer só o que cada nota da Câmara nomeia.",
+        "en": "The sentence on the Rossio de São Brás funding counted two financings that no document counts; it now says only what each of the Câmara's notes names."
+      }
+    },
+    {
+      "kind": "texto_atualizado",
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "data": "2026-11-08",
+      "frase": {
+        "pt": "Saíram as frases em que o estudo falava de si próprio; nenhum número nem nenhuma conclusão mudou.",
+        "en": "The sentences in which the study talked about itself came out; no number and no conclusion changed."
+      }
+    }
+  ]
+}

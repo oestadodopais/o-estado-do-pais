@@ -232,8 +232,8 @@ export const WORKS = [
     tema: 'cultura',
     subject: 'evora',
     editions: [
-      { lang: 'pt', title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos', date: '2026-10-01', updated: '2026-11-08' },
-      { lang: 'en', title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts', date: '2026-10-01', updated: '2026-11-08' },
+      { lang: 'pt', title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos', date: '2026-11-12', updated: null },
+      { lang: 'en', title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts', date: '2026-11-12', updated: null },
     ],
     artifactUrl: null,
     pergunta: {

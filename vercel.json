@@ -11,6 +11,48 @@
   },
   "routes": [
     {
+      "src": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-10-01/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/documento/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-03/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/documento/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-capital-europeia-da-cultura/documento/2026-11-06/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/documento/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/document/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/document/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-06/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/document/"
+      }
+    },
+    {
       "src": "/estudos/evora-quinze-anos-cinco-mandatos/?",
       "status": 301,
       "headers": {

@@ -17,7 +17,7 @@ for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao&&!WORKS.some(w=>w.s
  paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}">${linhaDasEdicoes(e.slug,e.lang)}</p>`);
 }
 let conta=0;
-const alvo=manifesto.edicoes.find(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang==='pt'&&e.primeira_edicao),rota=`/estudos/${alvo.slug}`;
+const alvo=manifesto.edicoes.find(e=>e.slug==='orcamento-2027-o-que-muda-e-para-quem'&&e.lang==='pt'&&e.primeira_edicao),rota=`/estudos/${alvo.slug}`;
 for(const [nome,muda,erro] of [
  ['controlo',()=>{},null],
  ['edição sem entrada',c=>{c.correcoes=c.correcoes.filter(e=>e.slug!==alvo.slug);},'ED1 entrada:'],
