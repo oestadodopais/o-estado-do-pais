@@ -78,12 +78,6 @@
     "razao": "A nota do Serviço Nacional de Saúde exclui as consultas registadas no Vitacare desta métrica. A frase conserva o âmbito e a natureza provisória publicados pela fonte."
   },
   {
-    "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
-    "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»​",
-    "classe": "facto de uma fonte",
-    "razao": "citação da fonte"
-  },
-  {
     "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
     "frase": "The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies.",
     "classe": "facto de uma fonte",
@@ -100,24 +94,6 @@
     "frase": "The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed (inference: the source records approval, date and payment, and does not say why).",
     "classe": "facto de uma fonte",
     "razao": "rótulo de inferência; a fonte regista aprovação, data e pagamento"
-  },
-  {
-    "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
-    "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
-    "classe": "facto de uma fonte",
-    "razao": "facto sobre o orçamento municipal (digitalização ilegível)"
-  },
-  {
-    "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
-    "frase": "O município inscreveu nos seus orçamentos de 2024 e de 2025 verbas anuais para o projeto muito abaixo da sua parte na candidatura, e o orçamento de 2026 é uma digitalização de que não se lê o valor.",
-    "classe": "facto de uma fonte",
-    "razao": "facto sobre o orçamento municipal (digitalização ilegível)"
-  },
-  {
-    "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
-    "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»​",
-    "classe": "facto de uma fonte",
-    "razao": "citação da fonte"
   },
   {
     "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
@@ -192,5 +168,41 @@
     "frase": "This study does not establish what the Évora 2027 association received: the values are those of the municipality's accounts and plan.",
     "classe": "limite declarado do estudo",
     "razao": "O limite do que o estudo mede, na secção dos limites."
+  },
+  {
+    "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+    "frase": "«Financially, the project is backed by an overall budget of €49.5 million.»​",
+    "classe": "facto de uma fonte",
+    "razao": "Citação literal do relatório do painel no texto julgado."
+  },
+  {
+    "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+    "frase": "The municipal accounts are not among the sources of this study, which does not establish how much the municipality transferred.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite das fontes consultadas e do que o estudo apura, conservado no texto julgado."
+  },
+  {
+    "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+    "frase": "Beyond that list and six official documents read on 3 November 2026, no press, encyclopaedias or other sites were read; the text also refers to two other studies of this project.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite das fontes consultadas e do que o estudo apura, conservado no texto julgado."
+  },
+  {
+    "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+    "frase": "«Financially, the project is backed by an overall budget of €49.5 million.» (financeiramente, o projeto assenta num orçamento global de 49,5 milhões de euros)​",
+    "classe": "facto de uma fonte",
+    "razao": "Citação literal do relatório do painel no texto julgado."
+  },
+  {
+    "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+    "frase": "As contas municipais não integram as fontes deste estudo, que não apura quanto o município transferiu.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite das fontes consultadas e do que o estudo apura, conservado no texto julgado."
+  },
+  {
+    "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+    "frase": "Além dessa lista e de seis documentos oficiais lidos a 3 de novembro de 2026, não se leu imprensa, enciclopédias nem outros sítios; o texto remete também para dois outros estudos deste projeto.",
+    "classe": "limite declarado do estudo",
+    "razao": "O limite das fontes consultadas e do que o estudo apura, conservado no texto julgado."
   }
 ]

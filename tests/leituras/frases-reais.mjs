@@ -18,7 +18,8 @@ const provas = {};
 const inicial = antiga('ab948c410');
 provas.vozInicial = inicial.filter(f => f.nova && recusaVoz(f.nova).length).map(f => f.id);
 assert.equal(provas.vozInicial.length, 10);
-const antesG = antiga('14f931195');
+// EVB: as asserções antigas do 19 saíram com o texto julgado.
+const antesG = antiga('14f931195').filter(f=>f.estudo!=='evora-2027-capital-europeia-da-cultura');
 provas.quantificadoresAntesGRaw = quant(antesG);
 // O campo não existia. Declarações já documentadas antes de G, com os IDs do motor:
 // V030 e V152 (adenda D, base-sem-contratos) e V188 (e2027-no-consolidated-budget).
@@ -27,18 +28,18 @@ provas.quantificadoresNovosAntesG = quant(antesG);
 const ids = new Set(provas.quantificadoresNovosAntesG.map(f => f.id));
 provas.frasesNovasAntesG = [...new Set(antesG.filter(f => ids.has(f.id)).map(f => norm(f.nova)))];
 assert.equal(provas.frasesNovasAntesG.length, 3);
-assert.deepEqual([...ids].sort(), ['V032','V040','V182','V195']);
-// EVA: as frases do estudo das contas saíram com o texto julgado; a lista histórica fica intacta.
+assert.deepEqual([...ids].sort(), ['V040','V182','V195']);
+// EVA e EVB: as frases antigas saíram com os textos julgados; a lista histórica fica intacta.
 const pastaEVA = fs.mkdtempSync(path.join(os.tmpdir(), 'eva-voz-aplicada-'));
 try {
- const slug='evora-contas-da-camara-2010-2025';
+ const julgados=new Set(['evora-contas-da-camara-2010-2025','evora-2027-capital-europeia-da-cultura']);
  // As mesmas frases continuam noutros documentos: só as portas do texto substituído saem.
  const historica=JSON.parse(fs.readFileSync(A, 'utf8'));
  const {ativas, saltadas}=separarRetirados(historica);
- const ambito=new Set(ativas.filter(f=>f.estudo!==slug).map(f=>f.estudo));
+ const ambito=new Set(ativas.filter(f=>!julgados.has(f.estudo)).map(f=>f.estudo));
  const lista = ativas.flatMap(f => {
-  if(f.estudo!==slug)return [f];
-  const paginas=f.paginas.filter(p=>!p.includes('/'+slug));
+  if(!julgados.has(f.estudo))return [f];
+  const paginas=f.paginas.filter(p=>![...julgados].some(slug=>p.includes('/'+slug)));
   return paginas.length ? [{...f,estudo:paginas[0].match(/^\/(?:estudos|en\/studies)\/([^/]+)/)[1],paginas}] : [];
  });
  const file = path.join(pastaEVA, 'lista.json'); fs.writeFileSync(file, JSON.stringify(lista));
