@@ -779,28 +779,18 @@ export const LEITURAS = {
   },
 
   'evora-2027-capital-europeia-da-cultura': {
-    /* A leitura do Évora 2027 (passagem E1b, 01.10.2026, decisão 4 do lugar de
-       direção): entra no índice dos motores de busca e no mapa do sítio como os
-       outros três estudos de Évora. O estudo não tem linhas no livro-razão do
-       sítio (os seus números vivem no documento alojado, com o livro do próprio
-       estudo), e por isso a leitura não tem medidas nem números: a frase são as
-       duas frases impressas que a origem abaixo cita, sem as duas datas que as
-       trariam (o ano do evento e o mês do protocolo), e com «a câmara» no lugar
-       de «o município», que é a palavra do sítio para quem governa o concelho
-       (a L3 do check:lugar, §1.98); não diz mais do que elas. */
+    /* EVB: C039 do documento julgado. «A câmara» substitui «o município» e
+       «the council» substitui «the municipality», as palavras da casa para
+       quem governa o concelho. Os anos são referências; não há medidas. */
     medidas: [],
     frase: {
-      pt: [
-        'O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado.',
-      ],
-      en: [
-        'The State’s money is what arrived; the council’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published.',
-      ],
+      pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.'],
+      en: ['The culture share is paid up to the ', { ref: '2024' }, ' and ', { ref: '2025' }, " ceilings; the council's is still to be confirmed, and part of the European money depends on applications."],
     },
     origem: {
-      onde: 'content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md:9, :5',
-      pt: 'O dinheiro do Estado é o que chegou; o do município é o que falta. · os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo de junho de 2023 que reparte o dinheiro entre as partes não está publicado.',
-      en: "The State's money is what arrived; the municipality's is what is missing. · the documents show three different totals for the cost of the event and no document that reconciles them, because the June 2023 protocol that divides the money between the parties is not published.",
+      onde: "studies-src/evora-2027-capital-europeia-da-cultura/pt.html:69 (C039) · studies-src/evora-2027-capital-europeia-da-cultura/en.html:69 (C039)",
+      pt: "A parte da cultura está paga pelos tetos de 2024 e 2025; a do município está por confirmar, e parte do dinheiro europeu depende de candidaturas.",
+      en: "The culture share is paid up to the 2024 and 2025 ceilings; the municipality's is still to be confirmed, and part of the European money depends on applications.",
     },
   },
   'penalizacoes-por-reforma-antecipada-2026': {
