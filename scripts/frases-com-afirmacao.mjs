@@ -60,7 +60,7 @@ export function rotasDaProsa() {
   for (const key of ['home','indice','estudos','discussao','dossies','temas','explicacoes','leituraDaSemana','correcoes','sobre','metodo','privacidade','agenda','lugares','regioes','areas','uniaoEuropeia','sugestoes','sugestoesObrigado','sugestoesVazia','sugestoesLimite','sugestoesNaoChegou']) juntar(key);
   for (const m of MUNICIPIOS_COM_PAGINA) juntar('municipio', {slug:m.slug});
   for (const [key, slugs] of [['distrito',slugsDasUnidades()],['regiao',slugsDasRegioes()],['area',slugsDasAreas()]]) for (const slug of slugs) juntar(key, {slug});
-  for (const w of WORKS) juntar('estudo', {slug:w.slug});
+  for (const w of WORKS.filter(w => w.estado !== 'retirado')) juntar('estudo', {slug:w.slug});
   for (const d of DOSSIES) juntar('dossie', {slug:d.slug});
   for (const e of EXPLICACOES) juntar('explicacao', {slug:e.slug});
   for (const e of ENTRADAS) juntar(matchPath(e.rota.pt).key);
@@ -68,7 +68,7 @@ export function rotasDaProsa() {
     const rota = routePath('documento', e.lang, {slug:e.slug});
     rotas.set(rota, {rota, estudo:e.slug, lingua:e.lang, tipo:'documento', par:routePath('documento', e.lang === 'pt' ? 'en' : 'pt', {slug:e.slug})});
   }
-  for (const e of edicoesGuardadas()) {
+  for (const e of edicoesGuardadas().filter(e => !WORKS.some(w => w.slug === e.slug && w.estado === 'retirado'))) {
     const rota = routePath('documento',e.lang,{slug:e.slug}) + '/' + e.date;
     rotas.set(rota, {rota,estudo:e.slug,lingua:e.lang,tipo:'arquivo',par:routePath('documento',e.lang==='pt'?'en':'pt',{slug:e.slug})+'/'+e.date});
   }

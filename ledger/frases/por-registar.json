@@ -12,11 +12,6 @@
   {
     "estudo": "/",
     "lingua": "en",
-    "sha256": "48b1f5fb4a3db78c8bf8bac82b9a355b860758c57a2c63fd08fbfac9205f3a0d"
-  },
-  {
-    "estudo": "/",
-    "lingua": "en",
     "sha256": "5c29369deb607c46f8cf8550fcb017a710a589cf0d1d3996ff3062cd140cfbc7"
   },
   {
@@ -33,11 +28,6 @@
     "estudo": "/",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
-  },
-  {
-    "estudo": "/",
-    "lingua": "pt",
-    "sha256": "2749c1ac00abad7ef1c7c4d762b618585aa721c3beba6ea607c27f2f3450f422"
   },
   {
     "estudo": "/",
@@ -68,11 +58,6 @@
     "estudo": "/404",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
-  },
-  {
-    "estudo": "/agenda",
-    "lingua": "en",
-    "sha256": "49906f3286f6b7155bb0a10cde23bee807638fe5aae71a76511fe358fa85da57"
   },
   {
     "estudo": "/agenda",
@@ -118,11 +103,6 @@
     "estudo": "/agenda",
     "lingua": "pt",
     "sha256": "22217bc4c5c3e57ce0c26007b73894361cc2d39e5a6aaf65f95d4aefec7f0568"
-  },
-  {
-    "estudo": "/agenda",
-    "lingua": "pt",
-    "sha256": "7ff01bbfcee52d1bb6cd9b1babcaeaa09d1efabaa4c64fa011d9525f76a26d99"
   },
   {
     "estudo": "/agenda",
@@ -4812,11 +4792,6 @@
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "en",
-    "sha256": "f40c9050802708f759d0ef13dc3c54a981f8142f328708f3a1cfdbf13ed36ff9"
-  },
-  {
-    "estudo": "evora-2027-capital-europeia-da-cultura",
-    "lingua": "en",
     "sha256": "f67226990cc88099d32520aefc8bbc6aa9de14eae62016262c5248fc4a5855e0"
   },
   {
@@ -5113,11 +5088,6 @@
     "estudo": "evora-2027-capital-europeia-da-cultura",
     "lingua": "pt",
     "sha256": "77e921732ed320764420310c6a77221e574c00c95f78fcc89d47bcecae237820"
-  },
-  {
-    "estudo": "evora-2027-capital-europeia-da-cultura",
-    "lingua": "pt",
-    "sha256": "78eebbca43692811871a914e9e87b90fadad252e5c935ad5273dd0e2580238ff"
   },
   {
     "estudo": "evora-2027-capital-europeia-da-cultura",
@@ -5557,11 +5527,6 @@
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "en",
-    "sha256": "9f0a41606620f397fc5d26ea6e2281e500407a0647fe308f17e79c26a8ca979c"
-  },
-  {
-    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
-    "lingua": "en",
     "sha256": "9f604b1edf4171cde6eb103cb6d5ae4372e79b2845c2bd926186a6813561bb2c"
   },
   {
@@ -5843,11 +5808,6 @@
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
     "lingua": "pt",
     "sha256": "dbeb422933a2f9c04019b7045ce4afd43d68e453f39f6530757bae9bb24161e7"
-  },
-  {
-    "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
-    "lingua": "pt",
-    "sha256": "e392c4c1264b2dc7e8cf1078400eea3e70326c67d23d0d3739decd43d3c5d711"
   },
   {
     "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",

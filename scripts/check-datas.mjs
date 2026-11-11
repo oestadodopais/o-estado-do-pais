@@ -63,7 +63,8 @@ import { parse } from 'node-html-parser';
 import assert from 'node:assert/strict';
 import { DOSSIES } from '../src/data/dossies.mjs';
 import { routePath, matchPath } from '../src/lib/routes.mjs';
-import { WORKS, PUBLISHED_WORKS } from '../src/data/studies.mjs';
+import { WORKS } from '../src/data/studies.mjs';
+const TRABALHOS_COM_PAGINA = WORKS.filter(w => w.estado !== 'retirado');
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -261,7 +262,7 @@ const marcasDeData = (no) =>
   no.querySelectorAll(SELETOR).filter((el) => /^\d{2}\.\d{2}\.\d{4}$/.test(el.textContent.trim()));
 
 /** As edições que o arquivo declara: são as que têm de ter página. */
-const noArquivo = new Set(PUBLISHED_WORKS.flatMap((w) => w.editions.map((e) => chave(w.slug, e.lang))));
+const noArquivo = new Set(TRABALHOS_COM_PAGINA.flatMap((w) => w.editions.map((e) => chave(w.slug, e.lang))));
 
 let paginasPrendidas = 0;
 let lacos = 0;
@@ -427,7 +428,7 @@ for (const lang of ['pt','en']) {
 console.log(`DO2: estudos avulsos conferidos; ${plantasPortasDo2} plantas das portas recusadas.`);
 
 // ED1: uma porta da primeira edição que volte ao documento atual fecha a mesma conferência.
-for (const w of PUBLISHED_WORKS) for (const e of w.editions.filter(e => e.updated && primeiraEdicao(w.slug,e.lang))) {
+for (const w of TRABALHOS_COM_PAGINA) for (const e of w.editions.filter(e => e.updated && primeiraEdicao(w.slug,e.lang))) {
   const rota = `${e.lang === 'pt' ? '/estudos' : '/en/studies'}/${w.slug}`;
   const original = paraPrender.find(p => p.rota === rota)?.doc;
   assert(original, `ED1: página ausente ${rota}`);
@@ -565,7 +566,7 @@ for (const e of edicoes) {
  * esteve no ar a 04.09.
  */
 let semData = 0;
-for (const w of PUBLISHED_WORKS) {
+for (const w of TRABALHOS_COM_PAGINA) {
   for (const ed of w.editions) {
     if (!porEdicao.has(chave(w.slug, ed.lang))) semData++;
   }
@@ -582,7 +583,7 @@ for (const rota of ['/estudos', '/en/studies']) {
   if (semData === 0) {
     if (caixas.length > 0) {
       falhas.push(
-        `${rota}: todas as ${PUBLISHED_WORKS.reduce((n, w) => n + w.editions.length, 0)} edições têm data ` +
+        `${rota}: todas as ${TRABALHOS_COM_PAGINA.reduce((n, w) => n + w.editions.length, 0)} edições têm data ` +
           `em ${FICHEIRO} e a página ainda mostra a caixa «${caixas[0].textContent.trim()}». ` +
           `Uma ressalva que não é verdade sobre nada do que está por baixo dela é ruído, e a ` +
           `04.09 foi ruído a tapar um defeito.`,
@@ -632,7 +633,7 @@ if (comHistoria) {
         .sort()
     : [];
   let conferidas = 0;
-  for (const slug of slugs) {
+  for (const slug of slugs.filter(slug => !WORKS.some(w => w.slug === slug && w.estado === 'retirado'))) {
     for (const lang of ['pt', 'en']) {
       const rel = `studies-src/${slug}/${lang}.html`;
       if (!fs.existsSync(path.join(RAIZ, rel))) continue;

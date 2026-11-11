@@ -79,7 +79,8 @@ import {
 /* O REGISTO DOS ESTUDOS E O DAS LEITURAS (Major 13, 09.09.2026): a régua conta
    quantas superfícies TEM DE haver e compara-as com as que viu, em vez de se
    contentar com «pelo menos uma». Ver `COLECOES_DOS_ESTUDOS`, mais abaixo. */
-import { WORKS, PUBLISHED_WORKS } from '../src/data/studies.mjs';
+import { WORKS } from '../src/data/studies.mjs';
+const TRABALHOS_COM_PAGINA = WORKS.filter(w => w.estado !== 'retirado');
 /* O REGISTO DAS TRANSCRIÇÕES: o `<head>` de uma página de estudo compõe a
    descrição pública com a frase de abertura do documento, que é transcrição
    registada. Ver `textoDaCabeca()`. */
@@ -2259,18 +2260,18 @@ if (origensVistas !== ORIGENS_ESPERADAS) {
  * lugar continua também na secção dos trabalhos da página desse lugar.
  */
 const COLECOES_DOS_ESTUDOS = {
-  estudo: PUBLISHED_WORKS.length * LANGS.length,
-  texto: PUBLISHED_WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
+  estudo: TRABALHOS_COM_PAGINA.length * LANGS.length,
+  texto: TRABALHOS_COM_PAGINA.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
   indice: LANGS.length,
-  edicoes: PUBLISHED_WORKS.length * LANGS.length,
-  primeiras_edicoes: PUBLISHED_WORKS.reduce((n,w)=>n+['pt','en'].filter(lang=>{const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return e.updated&&historicas.some(h=>h.slug===w.slug&&h.lang===e.lang);}).length,0),
-  documentos_historicos: edicoesGuardadas().filter(e => PUBLISHED_WORKS.some(w => w.slug === e.slug)).length,
-  linhas: PUBLISHED_WORKS.length * LANGS.length,
+  edicoes: TRABALHOS_COM_PAGINA.length * LANGS.length,
+  primeiras_edicoes: TRABALHOS_COM_PAGINA.reduce((n,w)=>n+['pt','en'].filter(lang=>{const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return e.updated&&historicas.some(h=>h.slug===w.slug&&h.lang===e.lang);}).length,0),
+  documentos_historicos: edicoesGuardadas().filter(e => TRABALHOS_COM_PAGINA.some(w => w.slug === e.slug)).length,
+  linhas: TRABALHOS_COM_PAGINA.length * LANGS.length,
 };
 // B1: toda a coleção existe, cada estudo sai da lista, e o de um lugar sai
 // também da página desse lugar.
 for (const lang of LANGS) {
-  for (const w of PUBLISHED_WORKS) {
+  for (const w of TRABALHOS_COM_PAGINA) {
     const rotas = [routePath('estudos', lang)];
     if (w.subject) rotas.push(routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject }));
     for (const rota of rotas) {

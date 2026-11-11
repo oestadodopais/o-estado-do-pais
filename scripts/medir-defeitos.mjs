@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {rotuloDoDossieNaNovidade} from './voz-inventario-retirados.mjs';
 import {fraseRec1DeveRender,conferirPresencaRec1} from './voz-rec1.mjs';
 import {exigeRotuloNovo} from './marca-novo.mjs';
 import {conferirTitulosCopiados} from './titulos-copiados.mjs';
@@ -1033,6 +1034,11 @@ function frasesDaCasa(root, rotaKey) {
   const leOrigem = ROTAS_COM_ORIGEM_LIDA.has(rotaKey);
   const out = [];
   const marcados = new Set();
+  for (const el of root.querySelectorAll('.pp-novidade-tipo')) {
+    if (!rotuloDoDossieNaNovidade(el, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt', rotaKey)) continue;
+    marcados.add(el);
+    for (const filho of el.querySelectorAll('*')) marcados.add(filho);
+  }
   const pai2 = superficieDoQuadro(root, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt');
   if (!pai2.erros.length) for (const no of pai2.nos) { marcados.add(no); for (const filho of no.querySelectorAll('*')) marcados.add(filho); }
   const DECLARADO =
@@ -1184,6 +1190,8 @@ function frasesDaCasa(root, rotaKey) {
      depois dos blocos e pela mesma porta: é uma frase da casa, e a rota onde ela
      vive conta-a como conta as outras. Ver a razão ao lado de `VOZ_DECLARADA`. */
   for (const el of root.querySelectorAll(VOZ_DECLARADA)) {
+    const rotulo = el.closest('.pp-novidade-tipo');
+    if (rotulo && rotuloDoDossieNaNovidade(rotulo, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt', rotaKey)) continue;
     const t = norm(texto(el));
     if (t) out.push(t);
   }

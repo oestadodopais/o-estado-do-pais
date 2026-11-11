@@ -54,7 +54,7 @@ export function verificaB1(raiz) {
   let paginas = 0;
   for (const lang of ['pt', 'en']) {
     const base = lang === 'pt' ? 'estudos' : 'en/studies';
-    const rotas = [base, ...WORKS.map(w => `${base}/${w.slug}`)];
+    const rotas = [base, ...WORKS.filter(w => w.estado !== 'retirado').map(w => `${base}/${w.slug}`)];
     for (const rota of rotas) {
       const ficheiro = path.join(raiz, 'dist', rota, 'index.html');
       if (!fs.existsSync(ficheiro)) { erros.push(`B1 superfície: falta ${rota}.`); continue; }
@@ -71,7 +71,7 @@ export function verificaB1(raiz) {
       const w = WORKS.find(w => rota === `${base}/${w.slug}`);
       /* A lista tem todos os estudos desde o bloco R1 (23.09.2026): os de lugar
          deixaram de estar atrás da secção «Por lugar». */
-      const dados = w ? [w] : WORKS;
+      const dados = w ? [w] : WORKS.filter(w => w.estado !== 'retirado');
       const permitidos = new Set([
         ...Object.values(ROTULOS_B1[lang]),
         ...Object.values(SUBJECTS).map(s => s[lang]),

@@ -86,6 +86,7 @@ import { conferirPalavrasDaSemanaNaPagina } from '../tests/explicacoes/semana.mj
 import { EXPLICACOES } from '../src/data/explicacoes/index.mjs';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
+import {separarDescricoesRetiradas} from './voz-inventario-retirados.mjs';
 /* A LISTA DAS PALAVRAS PROIBIDAS VIVE NUM FICHEIRO SÓ (bloco P3, 16.09.2026,
    item 5), e é o mesmo que a planta chama. Ver `scripts/voz-palavras.mjs`. */
 import { palavrasProibidasEm, PALAVRAS_PROIBIDAS } from './voz-palavras.mjs';
@@ -228,6 +229,9 @@ for (const [rota, r] of rotas) {
 
 if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
 
+const inventario = leInventario(RAIZ);
+let descricoesRetiradasSaltadas = 0;
+
 /* 7 · o estado de cada declaração (I74).
  *
  * Os dois sentidos, e nenhum deles é o mesmo defeito visto duas vezes. Uma linha
@@ -263,7 +267,10 @@ if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
       «${l.texto.slice(0, 110)}»`,
       );
     }
-    for (const l of d.vivas_que_nao_rendem) {
+    const descricoes = separarDescricoesRetiradas(d.vivas_que_nao_rendem, inventario.linhas);
+    descricoesRetiradasSaltadas = descricoes.saltadas.length;
+    console.log(`  REC2 inventário: ${descricoesRetiradasSaltadas} descrições literais de trabalhos retirados saltadas; conta conferida.`);
+    for (const l of descricoes.restantes) {
       erros.push(
         `${casa.inventario}:${l.n}: linha «viva» que não se rende em rota nenhuma. ` +
           `Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos ` +
@@ -305,7 +312,6 @@ const CAMINHO_DA_DIRECAO =
    que o inventário depende: quando aparecer a 20 com esta cadeia, este passo
    fecha a construção até alguém reler o inventário. */
 const CADEIA_DA_VOZ = '§5 «Voz» emendado';
-const inventario = leInventario(RAIZ);
 const blocosPorLer = [];
 {
   const blocos = new Set();
@@ -847,7 +853,7 @@ console.log(
     `autorreferência 0 · nada por classificar · ` +
     `divulgação ${rotas.reduce((n, [, r]) => n + (r.por_classe.divulgacao ?? 0), 0)} ocorrência(s) ` +
     `nas rotas medidas · ${inventario.linhas.length} linhas do inventário com bloco ` +
-    `(${casa.declaracoes?.vivas ?? '?'} vivas, todas rendidas; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
+    `(${casa.declaracoes ? casa.declaracoes.vivas - descricoesRetiradasSaltadas : '?'} vivas rendidas; ${descricoesRetiradasSaltadas} descrições de trabalhos retirados; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
     `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta}) · ` +
     `rótulos em span: ${Object.entries(voz.rotulos_em_span ?? {})
       .map(([c, n]) => `.${c} ${n}`)

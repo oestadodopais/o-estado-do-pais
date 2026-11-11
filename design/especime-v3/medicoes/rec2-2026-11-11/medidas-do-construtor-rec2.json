@@ -1,0 +1,161 @@
+{
+  "cabeca_construida": "0537e30c9b2574b3bc6bec0110b6ae09707f6cc1",
+  "trabalhos": 19,
+  "retirados": 6,
+  "publicados": 13,
+  "edicoes_publicadas": 20,
+  "listas": {
+    "ledger/frases/por-registar.json": {
+      "antes": 2202,
+      "saidas": 590,
+      "depois": 1612,
+      "dos_seis": 582,
+      "de_paginas_vivas": 8
+    },
+    "scripts/voz-excecoes.json": {
+      "antes": 58,
+      "saidas": 27,
+      "depois": 31
+    },
+    "src/data/datas-de-publicacao.json": {
+      "antes": 29,
+      "saidas": 9,
+      "depois": 20
+    }
+  },
+  "isencao_voz2": {
+    "antes": 11,
+    "saidas": 2,
+    "depois": 9
+  },
+  "leituras_ocultas": 5,
+  "citacoes_exclusivas_ocultas": 3,
+  "eventos_ocultos": [
+    "evora-contas-2024-pagina",
+    "evora-contas-2026"
+  ],
+  "l1": {
+    "antes": 3508,
+    "medido": 3491,
+    "regua": "scripts/check-lugar.mjs",
+    "codigo_medicao": 1,
+    "motivo": "O teto anterior ficou com folga; a régua pediu 3491."
+  },
+  "voz2b": {
+    "semEntrada": [
+      {
+        "estudo": "alentejo-algarve",
+        "lingua": "en",
+        "bloco": 4,
+        "frase": "V verified — survived 3-vote adversarial verification against primary sources Q quote-backed — verbatim from a fetched source, not adversarially verified A my analysis — judgment on the evidence, not a sourced fact"
+      },
+      {
+        "estudo": "evolucao-de-portugal-desde-1981",
+        "lingua": "pt",
+        "bloco": 27,
+        "frase": "Nada nesta página está no ficheiro."
+      },
+      {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "lingua": "pt",
+        "bloco": 21,
+        "frase": "E para 2025 o município afirma, na página impressa 146 da sua própria prestação de contas, que não conseguiu produzir os mapas de custos: «Apesar das melhorias nos procedimentos que têm vindo a ser implementadas, para 2025 não foi possível obter, em tempo útil, os mapas com o apuramento dos rendimentos e gastos por função, situação que, no entanto, procuraremos resolver em 2026.» É a frase do próprio município, não uma inferência, e é a razão pela qual a última coluna dos quadros de custo de serviço acaba onde acaba."
+      },
+      {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "lingua": "pt",
+        "bloco": 434,
+        "frase": "Também aqui não cai nenhuma captura no meio, pelo que a janela é de 18 dias."
+      },
+      {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "lingua": "pt",
+        "bloco": 598,
+        "frase": "A correspondência continua a citar a página do executivo exceto nas três linhas assinaladas, porque a página é a única fonte que cobre os cinco mandatos e os quatro quadros têm de continuar comparáveis entre si."
+      },
+      {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "lingua": "pt",
+        "bloco": 714,
+        "frase": "Duas linhas aqui citam o relatório de gestão e não a página do executivo, porque o relatório nomeia uma área que a página deixa de fora — a segurança, que o relatório dá ao presidente, e o turismo, que dá ao vereador da cultura."
+      },
+      {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "lingua": "pt",
+        "bloco": 1182,
+        "frase": "O turismo fica com este vereador aqui como já ficava no mandato anterior, e pela mesma fonte: o relatório de gestão nomeia-o na sua pasta com todas as letras, onde a página do executivo nomeia apenas cultura e património."
+      },
+      {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "lingua": "pt",
+        "bloco": 1363,
+        "frase": "São mostrados aqui ao nível de grupo, que é o único nível que os três partilham, e não são usados em nenhum painel de pelouro acima."
+      }
+    ],
+    "saltadas": 53,
+    "quantificadores": 13
+  },
+  "contagens": {
+    "estudos": 3491
+  },
+  "contagens_convencao": "estudos é a chave histórica que a régua L1 lê para as páginas com destinos repetidos.",
+  "pendentes_ausentes_apos_retirada": [
+    {
+      "estudo": "/",
+      "lingua": "en",
+      "sha256": "48b1f5fb4a3db78c8bf8bac82b9a355b860758c57a2c63fd08fbfac9205f3a0d",
+      "origens": []
+    },
+    {
+      "estudo": "/",
+      "lingua": "pt",
+      "sha256": "2749c1ac00abad7ef1c7c4d762b618585aa721c3beba6ea607c27f2f3450f422",
+      "origens": []
+    },
+    {
+      "estudo": "/agenda",
+      "lingua": "en",
+      "sha256": "49906f3286f6b7155bb0a10cde23bee807638fe5aae71a76511fe358fa85da57",
+      "origens": []
+    },
+    {
+      "estudo": "/agenda",
+      "lingua": "pt",
+      "sha256": "7ff01bbfcee52d1bb6cd9b1babcaeaa09d1efabaa4c64fa011d9525f76a26d99",
+      "origens": []
+    },
+    {
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "sha256": "f40c9050802708f759d0ef13dc3c54a981f8142f328708f3a1cfdbf13ed36ff9",
+      "origens": [
+        "nota:evora-2027-capital-europeia-da-cultura"
+      ]
+    },
+    {
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "sha256": "78eebbca43692811871a914e9e87b90fadad252e5c935ad5273dd0e2580238ff",
+      "origens": [
+        "nota:evora-2027-capital-europeia-da-cultura"
+      ]
+    },
+    {
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lingua": "en",
+      "sha256": "9f0a41606620f397fc5d26ea6e2281e500407a0647fe308f17e79c26a8ca979c",
+      "origens": [
+        "nota:evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ]
+    },
+    {
+      "estudo": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lingua": "pt",
+      "sha256": "e392c4c1264b2dc7e8cf1078400eea3e70326c67d23d0d3739decd43d3c5d711",
+      "origens": [
+        "nota:evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ]
+    }
+  ],
+  "inventario_frases_descricoes_saltadas": 12
+}
