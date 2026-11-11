@@ -1,0 +1,129 @@
+{
+  "base": "97c95ac",
+  "edicoes_e_referencias_inalteradas": [
+    {
+      "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md",
+      "sha256": "362a4009f4004c0b0e6f5e9e05dd147323b218d7b502bfa0c1f4e93c8f13ddb3"
+    },
+    {
+      "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html",
+      "sha256": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb"
+    },
+    {
+      "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/TEXTO-FINAL-19.pt.md",
+      "sha256": "ed325cfef724cf58a10de8f46d89d4e8c66c9b35b1c627d651f2b5a7f08d3157"
+    },
+    {
+      "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md",
+      "sha256": "781e0b450f2e6caed7706efc2e3e5b3e6b9f880fec96579607f346a7bada1774"
+    },
+    {
+      "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html",
+      "sha256": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306"
+    },
+    {
+      "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/TEXTO-FINAL-19.en.md",
+      "sha256": "205cb33546554e0f8325497afa674586699cf178b2ed995069648e4be3b1591b"
+    }
+  ],
+  "outros_estudos_ficheiros": 3576,
+  "outros_estudos_alteracoes": [],
+  "conferencias_dirigidas": [
+    {
+      "registo": "escalas.log",
+      "codigo": 0
+    },
+    {
+      "registo": "paridade.log",
+      "codigo": 1
+    },
+    {
+      "registo": "paridade-2.log",
+      "codigo": 0
+    },
+    {
+      "registo": "assercoes.log",
+      "codigo": 0
+    },
+    {
+      "registo": "citacoes.log",
+      "codigo": 0
+    },
+    {
+      "registo": "suites.log",
+      "codigo": 0
+    }
+  ],
+  "cabeca": "71df7b3982183adc036bb37d40bc63f98480e8c2",
+  "commits": [
+    {
+      "commit": "e05075955f26c7effa031b7ed9c70da1f8860649",
+      "assunto": "EVB D1: distinguir os quatro degraus das escalas na tradução"
+    },
+    {
+      "commit": "90c5f4837e91df2f6895cc15fde52914f28de278",
+      "assunto": "EVB D2: exercitar a comparação da paridade pelos perfis julgados"
+    },
+    {
+      "commit": "cb8a201dbe6d4f29d027f85a1dfb9056842c6000",
+      "assunto": "EVB D3: declarar fiscal único como falso positivo do detetor"
+    },
+    {
+      "commit": "5802e238a512ae8c622b1f8d1f1c9e0fa82a89b6",
+      "assunto": "EVB D4: reinstalar as citações corrigidas e o resumo do contrato"
+    },
+    {
+      "commit": "71df7b3982183adc036bb37d40bc63f98480e8c2",
+      "assunto": "EVB D5: integrar as plantas da adenda D e fechar o portão inteiro verde"
+    }
+  ],
+  "portao": {
+    "codigo": 0,
+    "duracao_segundos": 1100.112,
+    "linhas": 393,
+    "corridas": 1
+  },
+  "chamadas_de_ferramentas": 49,
+  "corridas_de_conferencias": {
+    "dirigidas": 6,
+    "portao_inteiro": 1
+  },
+  "escalas": {
+    "pares_corretos": 4,
+    "direcoes": 2,
+    "trocas_vizinhas": 6,
+    "recusas_nas_duas_direcoes": 12
+  },
+  "paridade": {
+    "casos_recusados": [
+      "medida",
+      "ano",
+      "pagina_folha",
+      "fora_das_aspas"
+    ],
+    "diferencas_por_caso": 2,
+    "numero_dentro_de_citacao": {
+      "paridade_codigo": 0,
+      "diferencas": 0,
+      "citacoes": "recusa por lista diferente das citações da edição"
+    }
+  },
+  "assercoes": {
+    "unidades": [
+      "C016",
+      "C041"
+    ],
+    "classe": "falso positivo do detetor",
+    "expressao": "fiscal único",
+    "razao": "nome de um cargo",
+    "edicoes_conferidas": 4,
+    "livro_reproduzido": true
+  },
+  "citacoes": {
+    "pt": 126,
+    "en": 126,
+    "sha256": "7f783efb133d93e3fe1838e02f1cd024b36fb2c0d0d56184412ea1b223cd32fb"
+  },
+  "nota_conferencia_intermedia": "A primeira planta da paridade falhou porque a substituição não considerava o identificador da unidade no título. A correção altera a unidade identificada e exige os dois valores divergentes. Segunda corrida: código 0.",
+  "testes_dirigidos_finais": 14
+}

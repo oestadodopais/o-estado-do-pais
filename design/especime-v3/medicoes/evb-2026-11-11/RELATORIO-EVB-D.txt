@@ -1,0 +1,10 @@
+EVB D, relatório do construtor, 11.11.2026.
+1. Escalas: bilião/trillion, mil milhões/billion, milhão/million e mil/thousand, por ordem decrescente. Quatro pares aceites nas duas direções; seis trocas vizinhas recusadas nas duas direções. Código 0.
+2. Paridade: perfis construídos pela função da régua a partir das referências julgadas. Medida, ano, página e número fora das aspas recusam, cada um com duas diferenças e o motivo próprio. Dentro da citação: zero diferenças; a régua das citações recusa. Código 0.
+3. C016 e C041: retiradas as duas revisões; «fiscal único» declarado em assertion_ignores como nome de cargo, com razão nos ajustes. Quatro edições conferidas e livro reproduzido. Código 0.
+4. CITACOES-atribuidas.json reinstalado da direção; resumo atualizado nas duas línguas. As 126 citações por língua passaram. Código 0.
+5. core.gate: uma corrida, código 0, 1100.112 segundos. Registo evb-d-gate.log; código evb-d-gate.codigo. Suíte da adenda D integrada no portão.
+Plantas: conferência dirigida final com 14 testes, código 0. Primeira corrida da paridade: código 1, por substituição incorreta no título da planta; corrigida, segunda corrida com código 0.
+Integridade: quatro edições e duas referências julgadas idênticas à cabeça 97c95ac; 3576 ficheiros dos outros estudos sem alterações. Achados reservados à higiene preservados.
+Commits dos pontos 1 a 5: e0507595, 90c5f483, cb8a201d, 5802e238, 71df7b39. Motor limpo; artefactos de entrega na pasta da passagem.
+Custo observado: 49 chamadas de ferramentas ao nível da conversa; seis corridas dirigidas e uma do portão inteiro. Sem unidades paradas ou trabalho pedido por concluir.

@@ -1,0 +1,14 @@
+.F
+======================================================================
+FAIL: test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas (core.evb_c_test.ParidadeCTest.test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas) (kind='fora_das_aspas')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<motor>/core/evb_c_test.py", line 163, in test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas
+    self.assertEqual(self.profiles['en']-profile,Counter({oldkey:1}))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Counter() != Counter({('C001', 'número impresso', '2027'): 1})
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.221s
+
+FAILED (failures=1)
