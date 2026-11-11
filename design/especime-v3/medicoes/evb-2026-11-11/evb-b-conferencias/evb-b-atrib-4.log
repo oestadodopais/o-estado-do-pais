@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_b.py", line 72, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_b.py", line 58, in run
+    violations,undeclared,checked,found=T.check(path,candidate/'ledger.json',detalhes=True)
+                                        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/attributions.py", line 145, in check
+    positioned = carregar(document, raw, text, json.loads(ledger.read_text())) if positional else None
+                 ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/atribuicoes_por_posicao.py", line 34, in carregar
+    raise LedgerError('atribuições por posição: HTML diferente do texto julgado')
+core.reconcile.LedgerError: atribuições por posição: HTML diferente do texto julgado

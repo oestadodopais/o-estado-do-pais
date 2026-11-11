@@ -1,0 +1,22 @@
+test_ordinal_ano_pagina_nao_herdam_linha_pelo_valor (__main__.AtribuicoesBTest.test_ordinal_ano_pagina_nao_herdam_linha_pelo_valor) ... ok
+test_numero_a_mais_na_traducao_recusa (__main__.BilingueBTest.test_numero_a_mais_na_traducao_recusa) ... ok
+test_numero_ingles_sem_par_fora_da_traducao_recusa (__main__.BilingueBTest.test_numero_ingles_sem_par_fora_da_traducao_recusa) ... ok
+test_parentesis_ligados_a_citacao_resolvida (__main__.BilingueBTest.test_parentesis_ligados_a_citacao_resolvida) ... ok
+test_valor_e_ordem_sem_palavras_inglesas (__main__.BilingueBTest.test_valor_e_ordem_sem_palavras_inglesas) ... ok
+test_detector_nao_come_fim_do_programa (__main__.DatasBTest.test_detector_nao_come_fim_do_programa) ... ok
+test_formas_e_recusa_de_outro_dia_mes_ano (__main__.DatasBTest.test_formas_e_recusa_de_outro_dia_mes_ano) ... ok
+test_nome_so_pelo_pedido_e_ano_explicito (__main__.DatasBTest.test_nome_so_pelo_pedido_e_ano_explicito) ... ok
+test_paridade_recusa_unidade_linha_valor_e_multiplicidade (__main__.DecisoesBTest.test_paridade_recusa_unidade_linha_valor_e_multiplicidade) ... ok
+test_recibo_da_medida_nao_cai_no_ordinal_igual (__main__.DecisoesBTest.test_recibo_da_medida_nao_cai_no_ordinal_igual) ... ok
+test_intervalo_conserva_as_duas_datas (__main__.FormasBTest.test_intervalo_conserva_as_duas_datas) ... ok
+test_ultima_celula_reune_colunas_sem_inventar_texto (__main__.FormasBTest.test_ultima_celula_reune_colunas_sem_inventar_texto) ... ok
+test_numero_no_excerto_da_citacao (__main__.ProvasBTest.test_numero_no_excerto_da_citacao) ... ok
+test_segunda_ocorrencia_nao_pode_usar_outro_documento (__main__.ProvasBTest.test_segunda_ocorrencia_nao_pode_usar_outro_documento) ... ok
+test_contagem_e_resumo_do_registo (__main__.RegistosBTest.test_contagem_e_resumo_do_registo) ... ok
+test_datas_no_pedido_recusam_outro_dia_mes_ano (__main__.RegistosBTest.test_datas_no_pedido_recusam_outro_dia_mes_ano) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.032s
+
+OK
+EVB_B: PASS, 16 testes

@@ -1,0 +1,24 @@
+pt adagas 4
+en adagas 4
+Texto julgado pt {'codigo': 0, 'unidades': 465, 'marcadores': 332}
+Texto julgado en {'codigo': 0, 'unidades': 465, 'marcadores': 332}
+TEXTO JULGADO pt: PASS, 465 unidades
+TEXTO JULGADO en: PASS, 465 unidades
+COMPOR  Évora 2027, European Capital of Culture.md: 0 bloco(s) de 5 fonte(s), 332 marcador(es), 0 saída(s) declarada(s)
+COMPOR  Évora 2027, Capital Europeia da Cultura (pt-PT).md: 0 bloco(s) de 5 fonte(s), 332 marcador(es), 0 saída(s) declarada(s)
+COMPOR  livro: 331 linha(s), 52 valor(es) ignorado(s), 39 asserção(ões)
+Instalação revertida integralmente; edição ativa anterior preservada.
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/instalar_b.py", line 76, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/instalar_b.py", line 38, in run
+    if C.correr(study,escrever=True):raise ValueError('composição recusada')
+       ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/compor.py", line 1390, in correr
+    decisoes = {comp.lingua: decisoes_de_figura(comp, livro, proveniencia, fontes, ajustes)
+                             ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/compor.py", line 1320, in decisoes_de_figura
+    raise Recusa(f"{comp.edicao}: {len(marcas)} marcador(es) de uma peça não caíram em "
+                 f"nenhum algarismo batido: {marcas[:3]}")
+core.compor.Recusa: Évora 2027, European Capital of Culture.md: 249 marcador(es) de uma peça não caíram em nenhum algarismo batido: [('evb-ln048', '2'), (None, '23'), ('evb-ln049', '100')]

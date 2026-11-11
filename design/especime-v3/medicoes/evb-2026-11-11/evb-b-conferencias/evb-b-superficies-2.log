@@ -1,0 +1,8 @@
+pt md ASSERTIONS: PASS — 38 quantifier hits, 0 checked, 31 review, 0 undeclared, 0 failed
+pt md PROSE: PASS — 0 number adjacencies (9 declared ignore(s))
+pt html ASSERTIONS: PASS — 38 quantifier hits, 0 checked, 31 review, 0 undeclared, 0 failed
+pt html PROSE: PASS — 0 number adjacencies (9 declared ignore(s))
+en md ASSERTIONS: PASS — 20 quantifier hits, 0 checked, 18 review, 0 undeclared, 0 failed
+en md PROSE: PASS — 0 number adjacencies (9 declared ignore(s))
+en html ASSERTIONS: PASS — 20 quantifier hits, 0 checked, 18 review, 0 undeclared, 0 failed
+en html PROSE: PASS — 0 number adjacencies (9 declared ignore(s))

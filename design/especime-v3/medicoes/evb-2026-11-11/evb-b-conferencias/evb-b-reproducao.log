@@ -1,0 +1,19 @@
+Segunda entrega: 43 provas; 299 entradas conferidas; 0 paragens
+pt 465 unidades; 503 marcadores; 0 pendências
+en 465 unidades; 503 marcadores; 0 pendências
+pt adagas 4
+en adagas 4
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/reproduzir_b.py", line 40, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/reproduzir_b.py", line 21, in run
+    gerar(prepared,candidate);adagas(candidate);atribuicoes(candidate,prepared);prosa(candidate,prepared)
+                                                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_b.py", line 50, in run
+    if not link.exists():link.symlink_to(os.path.relpath(original,source))
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>/biblioteca", line 1218, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '../../../..<motor>/content/19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf' -> '<temporario>/evb-b-reproducao-final/candidato/source/b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03.pdf'

@@ -1,0 +1,12 @@
+test_copia_leva_cortes_e_nao_leva_produtos (__main__.GabaritosAtivosTest.test_copia_leva_cortes_e_nao_leva_produtos) ... ok
+test_descoberta_diferente_recusa (__main__.GabaritosAtivosTest.test_descoberta_diferente_recusa) ... ok
+test_etapa_sem_escrever_recusa (__main__.GabaritosAtivosTest.test_etapa_sem_escrever_recusa) ... ok
+test_frase_ativa_sem_recompor_recusa (__main__.GabaritosAtivosTest.test_frase_ativa_sem_recompor_recusa) ... ok
+test_html_alterado_com_o_mesmo_tamanho_recusa (__main__.GabaritosAtivosTest.test_html_alterado_com_o_mesmo_tamanho_recusa) ... ok
+test_todos_os_estudos_com_texto_proprio (__main__.GabaritosAtivosTest.test_todos_os_estudos_com_texto_proprio) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 151.676s
+
+OK
+GABARITOS ATIVOS: PASS, 6 testes

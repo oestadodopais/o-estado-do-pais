@@ -1,0 +1,22 @@
+...F...............................................
+======================================================================
+FAIL: test_valor_e_ordem_sem_palavras_inglesas (core.evb_b_test.BilingueBTest.test_valor_e_ordem_sem_palavras_inglesas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<motor>/core/evb_b_test.py", line 65, in test_valor_e_ordem_sem_palavras_inglesas
+    self.assertEqual(pairs,{7:9,15:3,26:25})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {7: 9, 15: 3, 26: 26} != {7: 9, 15: 3, 26: 25}
+- {7: 9, 15: 3, 26: 26}
+?                    ^
+
++ {7: 9, 15: 3, 26: 25}
+?                    ^
+
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.963s
+
+FAILED (failures=1)
+TEXTO JULGADO pt: PASS, 2 unidades
+TEXTO JULGADO en: PASS, 2 unidades

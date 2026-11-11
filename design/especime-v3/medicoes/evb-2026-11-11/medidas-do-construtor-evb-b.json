@@ -1,0 +1,308 @@
+{
+  "pontos": {
+    "adenda": "B",
+    "instalado": true,
+    "estado": "aprovado",
+    "provas_distintas": 43,
+    "entradas_conferidas": 299,
+    "entradas_por_lingua": {
+      "pt": 139,
+      "en": 160
+    },
+    "unidades_paradas": 0,
+    "avisos_novos": [],
+    "texto_julgado": {
+      "pt": {
+        "codigo": 0,
+        "unidades": 465,
+        "marcadores": 332
+      },
+      "en": {
+        "codigo": 0,
+        "unidades": 465,
+        "marcadores": 332
+      }
+    },
+    "classes": {
+      "pt": {
+        "ano": 317,
+        "ordinal": 11,
+        "traducao_de_citacao": 26,
+        "identificador": 15,
+        "pagina_folha": 194,
+        "numero_em_citacao": 2,
+        "data_parcial": 1,
+        "diploma_artigo_pergunta": 29
+      },
+      "en": {
+        "ano": 317,
+        "ordinal": 11,
+        "identificador": 15,
+        "pagina_folha": 194,
+        "numero_em_citacao": 2,
+        "traducao_de_citacao": 32,
+        "data_parcial": 1,
+        "diploma_artigo_pergunta": 29
+      }
+    },
+    "citacoes_conferidas": 252,
+    "leituras_na_imagem": 9,
+    "linhas_proprias": 98,
+    "derivadas": 92,
+    "correcoes_antigas": 0,
+    "diagnosticos_herdados_resolvidos": {
+      "cabeca-numeros-paragens.json": 1,
+      "datas-adenda-paragens.json": 59,
+      "ligacoes-por-posicao-paragens.json": 1,
+      "residuais-paragens.json": 78,
+      "ocorrencias-por-classificar.json": 240,
+      "unidades-paradas.json": 56
+    },
+    "nota": "As asserções REVIEW continuam a pedir revisão. A cobertura não foi apresentada como uma prova de verdade."
+  },
+  "instalacao": {
+    "instalado": true,
+    "linhas_antes": 161,
+    "linhas_depois": 331,
+    "contagens": [
+      {
+        "documento": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md",
+        "antes": {
+          "numbers": 570,
+          "matched": 266,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 927,
+          "matched": 430,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "razao": "Substituição integral pelo texto julgado; datas documentais mascaradas, traduções e classes por ocorrência; medidas ligadas pela posição."
+      },
+      {
+        "documento": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html",
+        "antes": {
+          "numbers": 565,
+          "matched": 266,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 927,
+          "matched": 430,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "razao": "Substituição integral pelo texto julgado; datas documentais mascaradas, traduções e classes por ocorrência; medidas ligadas pela posição."
+      },
+      {
+        "documento": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md",
+        "antes": {
+          "numbers": 570,
+          "matched": 266,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 933,
+          "matched": 434,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "razao": "Substituição integral pelo texto julgado; datas documentais mascaradas, traduções e classes por ocorrência; medidas ligadas pela posição."
+      },
+      {
+        "documento": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html",
+        "antes": {
+          "numbers": 565,
+          "matched": 266,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "depois": {
+          "numbers": 933,
+          "matched": 434,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "razao": "Substituição integral pelo texto julgado; datas documentais mascaradas, traduções e classes por ocorrência; medidas ligadas pela posição."
+      }
+    ],
+    "registos": [
+      {
+        "lingua": "pt-PT",
+        "blocos": 165,
+        "referencias": 332,
+        "sha256": "7e699978f02ae3590e22e549cdbc1d3f1f1808b69c260be7a041d07cbeef6b02"
+      },
+      {
+        "lingua": "en",
+        "blocos": 165,
+        "referencias": 332,
+        "sha256": "eb46320f2807a0886f9456f3d3d0fb2fba6461c6564e221ad7e97233b92da2d5"
+      }
+    ]
+  },
+  "integridade": {
+    "ficheiros": 3316,
+    "alterados": []
+  },
+  "core_gate": {
+    "corridas": 1,
+    "codigo": 1,
+    "falhas_originais": [
+      "publisher.export_records_test",
+      "publisher.voz_test",
+      "core.gabaritos_ativos_test",
+      "paridade do estudo 19"
+    ],
+    "conferencias_dirigidas_apos_correcao": {
+      "evb-b-posgate-paridade-plantas.log": 0,
+      "evb-b-posgate-plantas-b-final.log": 0,
+      "evb-b-posgate-voz.log": 0,
+      "evb-b-posgate-paridade.log": 0,
+      "evb-b-posgate-export-records.log": 1,
+      "evb-b-posgate-gabaritos.log": 0,
+      "evb-b-posgate-export-records-2.log": 0
+    },
+    "repetido": false,
+    "conferencias_finais": {
+      "export-records-2": 0,
+      "voz": 0,
+      "gabaritos": 0,
+      "paridade": 0,
+      "paridade-plantas": 0,
+      "plantas-b-final": 0
+    }
+  },
+  "conferencias": {
+    "corridas_dirigidas": 54,
+    "codigos": {
+      "evb-b-primeira.log": 0,
+      "evb-b-testes-1.log": 0,
+      "evb-b-provas-2.log": 0,
+      "evb-b-gerar-1.log": 1,
+      "evb-b-gerar-2.log": 1,
+      "evb-b-gerar-3.log": 0,
+      "evb-b-testes-2.log": 1,
+      "evb-b-testes-3.log": 0,
+      "evb-b-julgado-1.log": 1,
+      "evb-b-gerar-4.log": 0,
+      "evb-b-julgado-2.log": 1,
+      "evb-b-gerar-5.log": 0,
+      "evb-b-julgado-3.log": 0,
+      "evb-b-render.log": 0,
+      "evb-b-testes-4.log": 0,
+      "evb-b-attributions-test.log": 0,
+      "evb-b-atribuicoes-testes.log": 0,
+      "evb-b-atrib-1.log": 1,
+      "evb-b-atrib-2.log": 1,
+      "evb-b-atrib-3.log": 1,
+      "evb-b-atrib-4.log": 1,
+      "evb-b-atrib-5.log": 1,
+      "evb-b-atrib-posicoes.log": 1,
+      "evb-b-atrib-posicoes-2.log": 0,
+      "evb-b-atrib-6.log": 0,
+      "evb-b-suite-final-3.log": 0,
+      "evb-b-atribuicoes-finais.log": 0,
+      "evb-b-registos-testes.log": 0,
+      "evb-b-instalar-1.log": 1,
+      "evb-b-instalar-2.log": 1,
+      "evb-b-decisoes-testes.log": 0,
+      "evb-b-prosa.log": 0,
+      "evb-b-instalar-3.log": 1,
+      "evb-b-superficies.log": 0,
+      "evb-b-superficies-2.log": 0,
+      "evb-b-prosa-2.log": 0,
+      "evb-b-integridade.log": 0,
+      "evb-b-instalar-4.log": 0,
+      "evb-b-reproducao.log": 1,
+      "evb-b-compor-test.log": 1,
+      "evb-b-suites-finais.log": 0,
+      "evb-b-reproducao-2.log": 0,
+      "evb-b-compor-test-2.log": 0,
+      "evb-b-integridade-2.log": 0,
+      "evb-b-integridade-final.log": 0,
+      "evb-b-diagnostico-vigilancia.log": 0,
+      "evb-b-posgate-paridade-plantas.log": 0,
+      "evb-b-posgate-plantas-b-final.log": 0,
+      "evb-b-posgate-voz.log": 0,
+      "evb-b-posgate-paridade.log": 0,
+      "evb-b-posgate-export-records.log": 1,
+      "evb-b-posgate-gabaritos.log": 0,
+      "evb-b-posgate-export-records-2.log": 0,
+      "evb-b-integridade-posgate.log": 0
+    }
+  },
+  "exportador_antes_da_mascara_de_datas": {
+    "pt": 501,
+    "en": 505,
+    "partes_de_datas_por_lingua": 71,
+    "nao_figuras_pt": 169,
+    "nao_figuras_en": 173
+  },
+  "contagens_voz_estudo_19": {
+    "pt": {
+      "figuras_antes": 196,
+      "figuras_depois": 332,
+      "blocos_antes": 137,
+      "blocos_depois": 165
+    },
+    "en": {
+      "figuras_antes": 196,
+      "figuras_depois": 332,
+      "blocos_antes": 137,
+      "blocos_depois": 165
+    }
+  },
+  "chamadas_de_ferramentas": {
+    "total": 202,
+    "por_ferramenta": {
+      "exec": 176,
+      "wait": 26
+    }
+  },
+  "tokens_used_ultimo_contador_observado": 23862893,
+  "commits": [
+    "a7e6b07 EVB B4: corrigir as conferências de exportação e paridade após o portão",
+    "30a6c3b EVB B5: conferir a integridade dos outros estudos com resumos",
+    "aa7ca6c EVB B4: instalar integralmente o texto julgado e regenerar a cadeia do estudo 19",
+    "a65cd12 EVB B3: atribuir medidas pela posição e declarar apenas os casos aceites",
+    "d884cbf EVB B2: herdar classes e ligações por ocorrência nas duas edições julgadas",
+    "a362921 EVB B1: conferir as provas de cada ocorrência e as formas documentais das datas"
+  ]
+}

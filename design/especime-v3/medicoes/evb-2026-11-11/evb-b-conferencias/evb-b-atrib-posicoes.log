@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "<temporario>/evb_atrib_diagnostico.py", line 3, in <module>
+    from core import attributions as T,documento_md as D,texto_julgado as J
+ModuleNotFoundError: No module named 'core'

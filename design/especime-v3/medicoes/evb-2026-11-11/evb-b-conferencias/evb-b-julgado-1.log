@@ -1,0 +1,4 @@
+pt adagas 4
+en adagas 4
+Texto julgado pt {'codigo': 1, 'motivo': "uma linha de tabela com 3 célula(s) numa tabela de 4: '| outono de 2026 | Terceiro ponto de monitorização, como o relatório de seleção '"}
+Texto julgado en {'codigo': 1, 'motivo': 'ligação inglesa diferente da ocorrência portuguesa'}

@@ -1,0 +1,3 @@
+EXPORT_RECORDS_TEST: FAIL — 2 problem(s)
+ - Évora 2027, Capital Europeia da Cultura (pt-PT): 332 references, the gate's baseline says 266 matched figures, the pass declares 0 dropped and the figure decisions 169 non-figures
+ - Évora 2027, European Capital of Culture: 332 references, the gate's baseline says 266 matched figures, the pass declares 0 dropped and the figure decisions 173 non-figures

@@ -1,0 +1,61 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/core/compor_test.py", line 152, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<motor>/core/compor_test.py", line 119, in main
+    C.compor(g)
+    ~~~~~~~~^^^
+  File "<motor>/core/compor.py", line 469, in compor
+    contract = carregar_contratos(gabarito.parent)[lingua]
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "<motor>/core/texto_julgado.py", line 154, in carregar_contratos
+    raise Recusa('gabarito de texto julgado sem contrato')
+core.texto_julgado.Recusa: gabarito de texto julgado sem contrato
+OG1-E pt pessoa: código 1
+OG1-E pt documento antes: código 0
+OG1-E pt documento depois: código 0
+OG1-E pt atribuição: código 1
+OG1-E pt outra frase: código 1
+OG1-E pt palavras com salientou: código 1
+OG1-E pt sem forma: código 1
+OG1-E pt forma fora da lista: código 1
+OG1-E pt título como fala: código 1
+OG1-E pt título anunciado: código 0
+OG1-E pt documento nomeado: código 0
+OG1-E en pessoa: código 1
+OG1-E en documento antes: código 0
+OG1-E en documento depois: código 0
+OG1-E en atribuição: código 1
+OG1-E en outra frase: código 1
+OG1-E en palavras com salientou: código 1
+OG1-E en sem forma: código 1
+OG1-E en forma fora da lista: código 1
+OG1-E en título como fala: código 1
+OG1-E en título anunciado: código 0
+OG1-E en documento nomeado: código 0
+OG1-E pt dossiê, bloco indevido: código 1
+OG1-E pt dossiê, controlo: código 0
+OG1-E pt dossiê, emenda indevida: código 1
+OG1-E pt prosa nova: código 1
+OG1-E pt prosa nova, controlo: código 0
+OG1-E pt marcador na prosa: código 1
+OG1-E en dossiê, bloco indevido: código 1
+OG1-E en dossiê, controlo: código 0
+OG1-E en dossiê, emenda indevida: código 1
+OG1-E en prosa nova: código 1
+OG1-E en prosa nova, controlo: código 0
+OG1-E en marcador na prosa: código 1
+OG1-E pt cronologia antiga: código 1
+OG1-E pt documento partilhado: código 0
+OG1-E pt documento diferente: código 1
+OG1-E pt frase terminada: código 1
+OG1-E en cronologia antiga: código 1
+OG1-E en documento partilhado: código 0
+OG1-E en documento diferente: código 1
+OG1-E en frase terminada: código 1
+OG1-E: 1 declarações atravessadas; outros campos conservados byte a byte.
+OG1-E: 1 declarações atravessadas; outros campos conservados byte a byte.
+OG1-E: 1 declarações atravessadas; outros campos conservados byte a byte.
+OG1-E migração: controlo 0, idempotência 0, bytes alterados 1, origem alterada 1

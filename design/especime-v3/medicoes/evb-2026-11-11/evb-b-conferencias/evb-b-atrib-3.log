@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<motor>/core/compor.py", line 802, in construir_livro
+    conferir_documentos(proprias, [pasta] + [f.caminho for f in fontes.values()
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                           if not f.proprias and not f.derivadas])
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/linhas_proprias.py", line 161, in conferir_documentos
+    raise LedgerError(f"linha própria {linha['id']}: documento não alojado em source/")
+core.reconcile.LedgerError: linha própria evb-ln049: documento não alojado em source/
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_b.py", line 65, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/atribuicoes_b.py", line 42, in run
+    book,provenance=C.construir_livro(candidate,comps,fonts)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/compor.py", line 805, in construir_livro
+    raise Recusa(str(exc)) from exc
+core.compor.Recusa: linha própria evb-ln049: documento não alojado em source/

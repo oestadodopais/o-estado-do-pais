@@ -1,0 +1,4 @@
+pt adagas 4
+en adagas 4
+Texto julgado pt {'codigo': 0, 'unidades': 465, 'marcadores': 332}
+Texto julgado en {'codigo': 1, 'motivo': "a linha 'prr-arquivo' da fonte 14 não está impressa no registo em en: um marcador tira a forma impressa do registo, e não a inventa"}

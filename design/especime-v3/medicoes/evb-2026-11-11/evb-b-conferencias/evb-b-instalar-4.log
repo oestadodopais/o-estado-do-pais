@@ -1,0 +1,13 @@
+pt adagas 4
+en adagas 4
+Texto julgado pt {'codigo': 0, 'unidades': 465, 'marcadores': 332}
+Texto julgado en {'codigo': 0, 'unidades': 465, 'marcadores': 332}
+TEXTO JULGADO pt: PASS, 465 unidades
+TEXTO JULGADO en: PASS, 465 unidades
+COMPOR  Évora 2027, European Capital of Culture.md: 0 bloco(s) de 5 fonte(s), 332 marcador(es), 0 saída(s) declarada(s)
+COMPOR  Évora 2027, Capital Europeia da Cultura (pt-PT).md: 0 bloco(s) de 5 fonte(s), 332 marcador(es), 0 saída(s) declarada(s)
+COMPOR  livro: 331 linha(s), 52 valor(es) ignorado(s), 39 asserção(ões)
+COMPOR  decisões en: 332 figura(s), 173 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR  decisões pt: 332 figura(s), 169 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR: ESCRITO
+Instalação integral conferida: 161 para 331 linhas; 2 registos

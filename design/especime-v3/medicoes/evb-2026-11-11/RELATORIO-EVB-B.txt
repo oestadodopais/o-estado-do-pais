@@ -1,0 +1,22 @@
+RELATÓRIO EVB B
+Estudo 19 instalado integralmente. Contratos português e inglês aprovados; zero unidades paradas.
+
+1. Cauda: 43 provas distintas e 299 entradas conferidas, 139 em português e 160 em inglês. Nenhum excerto recebido foi alterado. As plantas recusam outro dia, mês ou ano, um número ausente da citação e a linha de outro documento. Corrigido o falso dia 30 dentro de Alentejo 2030; C044 usa a fonte e o marcador da abertura já ligados.
+
+2. Duas edições: 465 unidades e 332 marcadores de medidas em cada língua. Classes herdadas por valor, unidade e ordem. Traduções: um número novo ou repetido a mais recusa; um número inglês sem par, fora da tradução, recusa. A tradução que escreve um valor por extenso conserva-se. Texto julgado: código 0 em ambas. Reprodução: 12 comparações, zero diferenças.
+
+3. Atribuições: só ocorrências ligadas a linhas, pela posição. Soma do protocolo atribuída pelas parcelas às contas da associação. Declarações: três casos de N21.2 por língua e um do título português, com as razões aceites na adenda A; as identidades estão em atribuicoes-b.json. Zero avisos novos e zero medidas ligadas sem atribuição. A mesma regra de posições rege agora as decisões dos recibos.
+
+4. Instalação: livro, Markdown, HTML, decisões, dois registos, manifesto e cortes regenerados. Livro: 161 para 331 linhas. Contagens e razões em instalacao-b.json. Números/matched: português, 570/266 (Markdown) e 565/266 (HTML) para 927/430 em ambos; inglês, 570/266 e 565/266 para 933/434. O exportador, antes da máscara de datas, conta 501/505 coincidências: mais 71 partes de datas por língua. Retira 169/173 não-figuras e conserva 332 figuras. As 332 figuras por língua distinguem-se das coincidências numéricas que incluem não-figuras. Nove correções antigas sem aplicação foram retiradas. As tentativas recusadas repuseram integralmente a edição anterior.
+A cronologia conserva a célula que reúne documento e página, com colspan no HTML. Sete contextos de vírgulas entre anos, páginas e medidas foram declarados nas duas superfícies. As asserções continuam REVIEW: 31 em português e 18 em inglês, com zero undeclared e zero failed. Cobertura não foi apresentada como prova de verdade.
+
+5. Outros estudos: 3 316 ficheiros comparados, zero alterações. Resumos individuais e por estudo em integridade-b.json; 3 313 são seguidos pelo Git e três são os excertos gerados já medidos na adenda A.
+
+Provas dirigidas: 113 testes, código 0; compositor, 23 conferências, código 0. As recusas e as correções das tentativas anteriores permanecem nos registos.
+core.gate: uma corrida, código 1. Registo: evb-b-gate.log; código: evb-b-gate.codigo.
+Depois do portão: corrigidos o teste de caminhos mistos de fontes, a cópia das fontes emprestadas no ensaio de reprodução e a paridade, que passa a conferir unidade, linha, valor e multiplicidade das medidas por posição. As plantas recusam a troca de cada um destes elementos. A voz mede mais 136 figuras e 28 blocos por edição do 19, sem operações novas. O portão inteiro não foi repetido; os códigos dirigidos seguintes não substituem o seu código 1.
+Sem push, sessões auxiliares ou alteração das formas inglesas. Os relatórios e registos do sítio ficam na pasta do mandato; não se inventou um trailer Claude-Session.
+Conferências após correção: export-records-2 = 0, gabaritos = 0, paridade = 0, paridade-plantas = 0, plantas-b-final = 0, voz = 0.
+Commits: a362921, d884cbf, a65cd12, aa7ca6c, 30a6c3b, a7e6b07.
+Chamadas de ferramentas até à medição final: 202. Corridas dirigidas registadas: 54; core.gate: 1.
+tokens used: 23862893 (último contador observado).

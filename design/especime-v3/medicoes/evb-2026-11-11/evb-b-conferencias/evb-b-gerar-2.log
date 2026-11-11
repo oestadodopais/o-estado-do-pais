@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/gerar.py", line 340, in <module>
+    run(Path(sys.argv[1]),Path(sys.argv[2]))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/gerar.py", line 105, in run
+    pairs[uid],translations[uid]=emparelhar(text,texts['en'][uid],qs['pt'],qs['en'])
+                                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/ocorrencias_bilingues.py", line 36, in emparelhar
+    translations={'pt':traducoes(pt,quotes_pt),'en':traducoes(en,quotes_en)}
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "<motor>/core/ocorrencias_bilingues.py", line 28, in traducoes
+    raise ValueError('tradução de citação: números diferentes da citação')
+ValueError: tradução de citação: números diferentes da citação
