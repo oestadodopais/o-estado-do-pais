@@ -1,0 +1,17 @@
+test_contagem_das_sete_recusa_uma_sem_verba (__main__.AssercoesCTest.test_contagem_das_sete_recusa_uma_sem_verba) ... ok
+test_substituicao_explicita_sem_mexer_na_fonte (__main__.AssercoesCTest.test_substituicao_explicita_sem_mexer_na_fonte) ... ok
+test_cada_par_de_excertos_e_contextos (__main__.ContextosCTest.test_cada_par_de_excertos_e_contextos) ... ok
+test_linha_de_outra_obra_e_outro_item_recusam (__main__.ContextosCTest.test_linha_de_outra_obra_e_outro_item_recusam) ... ok
+test_outro_fim_recusa (__main__.IntervalosCTest.test_outro_fim_recusa) ... ok
+test_menu_recusa_titulo_e_h1_passam (__main__.NomesCTest.test_menu_recusa_titulo_e_h1_passam) ... ok
+test_regua_real_recusa_medida_ano_e_pagina_alterados (__main__.ParidadeCTest.test_regua_real_recusa_medida_ano_e_pagina_alterados) ... ok
+test_linha_curta_so_com_unidade_e_razao_no_contrato (__main__.QuadrosCTest.test_linha_curta_so_com_unidade_e_razao_no_contrato) ... ok
+test_algarismos_iguais_com_escala_ou_unidade_diferente_recusam (__main__.TraducoesCTest.test_algarismos_iguais_com_escala_ou_unidade_diferente_recusam) ... ok
+test_details_nao_reabre_ancestral_oculto_ou_segundo_summary (__main__.VisibilidadeCTest.test_details_nao_reabre_ancestral_oculto_ou_segundo_summary) ... ok
+test_uma_planta_por_forma_de_ocultar (__main__.VisibilidadeCTest.test_uma_planta_por_forma_de_ocultar) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 30.491s
+
+OK
+EVB_C: PASS, 11 testes

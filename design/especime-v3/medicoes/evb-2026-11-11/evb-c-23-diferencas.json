@@ -1,0 +1,349 @@
+[
+  {
+    "linha": "evb-a-cab-26",
+    "pt": 8,
+    "en": 7,
+    "diferencas": [
+      {
+        "unidade": "B060.R1",
+        "valor": "1.5",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "evb-a-cab-26-fonte",
+    "pt": 3,
+    "en": 4,
+    "diferencas": [
+      {
+        "unidade": "B061.1",
+        "valor": "1500000",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-a-cab-38",
+    "pt": 3,
+    "en": 4,
+    "diferencas": [
+      {
+        "unidade": "N10.R1",
+        "valor": "1.75",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-a-residual-pt-b120.r1-362",
+    "pt": 3,
+    "en": 5,
+    "diferencas": [
+      {
+        "unidade": "B086.1",
+        "valor": "31",
+        "pt": 0,
+        "en": 1
+      },
+      {
+        "unidade": "N04.1",
+        "valor": "31",
+        "pt": 0,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "evb-a-residual-pt-n13.1-81",
+    "pt": 10,
+    "en": 13,
+    "diferencas": [
+      {
+        "unidade": "B042.1",
+        "valor": "27",
+        "pt": 1,
+        "en": 2
+      },
+      {
+        "unidade": "B093.2",
+        "valor": "27",
+        "pt": 1,
+        "en": 2
+      },
+      {
+        "unidade": "N12.R3",
+        "valor": "27",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-cab-17-1",
+    "pt": 6,
+    "en": 7,
+    "diferencas": [
+      {
+        "unidade": "B035.1",
+        "valor": "15",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-cab-6-1",
+    "pt": 8,
+    "en": 6,
+    "diferencas": [
+      {
+        "unidade": "B031.R2",
+        "valor": "10.5",
+        "pt": 2,
+        "en": 1
+      },
+      {
+        "unidade": "B038.R1",
+        "valor": "10.5",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "evb-cab-88-1",
+    "pt": 13,
+    "en": 12,
+    "diferencas": [
+      {
+        "unidade": "B034.R1",
+        "valor": "5",
+        "pt": 4,
+        "en": 2
+      },
+      {
+        "unidade": "B116.1",
+        "valor": "5",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-forma-5186f9b94fa0a7d746",
+    "pt": 2,
+    "en": 3,
+    "diferencas": [
+      {
+        "unidade": "B077.1",
+        "valor": "1587603.1",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-forma-89edd6b67acc9776d7",
+    "pt": 6,
+    "en": 5,
+    "diferencas": [
+      {
+        "unidade": "B031.R1",
+        "valor": "49.5",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "evb-ln001-parcela-1",
+    "pt": 9,
+    "en": 11,
+    "diferencas": [
+      {
+        "unidade": "B084.1",
+        "valor": "2000000",
+        "pt": 1,
+        "en": 2
+      },
+      {
+        "unidade": "B093.3",
+        "valor": "2000000",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-ln016-parcela-1",
+    "pt": 9,
+    "en": 10,
+    "diferencas": [
+      {
+        "unidade": "B079.1",
+        "valor": "15000000",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "evb-ln049",
+    "pt": 1,
+    "en": 2,
+    "diferencas": [
+      {
+        "unidade": "B049.2",
+        "valor": "100",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "painel-buraco",
+    "pt": 4,
+    "en": 3,
+    "diferencas": [
+      {
+        "unidade": "B031.R2",
+        "valor": "9",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "painel-estado-garantido",
+    "pt": 4,
+    "en": 3,
+    "diferencas": [
+      {
+        "unidade": "B034.R1",
+        "valor": "39",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "painel-externalizado",
+    "pt": 2,
+    "en": 1,
+    "diferencas": [
+      {
+        "unidade": "B057.R3",
+        "valor": "92",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "painel-interno",
+    "pt": 16,
+    "en": 15,
+    "diferencas": [
+      {
+        "unidade": "B057.R3",
+        "valor": "8",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "painel-orcamento-49",
+    "pt": 3,
+    "en": 2,
+    "diferencas": [
+      {
+        "unidade": "B031.R2",
+        "valor": "49",
+        "pt": 2,
+        "en": 1
+      }
+    ]
+  },
+  {
+    "linha": "painel-precontratacao",
+    "pt": 3,
+    "en": 2,
+    "diferencas": [
+      {
+        "unidade": "B057.R2",
+        "valor": "85",
+        "pt": 3,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "painel-transferido",
+    "pt": 15,
+    "en": 14,
+    "diferencas": [
+      {
+        "unidade": "B034.R1",
+        "valor": "34",
+        "pt": 2,
+        "en": 1
+      },
+      {
+        "unidade": "C033",
+        "valor": "34",
+        "pt": 2,
+        "en": 1
+      },
+      {
+        "unidade": "N01.2",
+        "valor": "34",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "plano-alentejo-aprovado",
+    "pt": 2,
+    "en": 3,
+    "diferencas": [
+      {
+        "unidade": "B093.2",
+        "valor": "11764710",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "rc-subcontratos-prosa",
+    "pt": 1,
+    "en": 2,
+    "diferencas": [
+      {
+        "unidade": "B105.2",
+        "valor": "449609.8",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  },
+  {
+    "linha": "rc-trabalhos-especializados",
+    "pt": 1,
+    "en": 2,
+    "diferencas": [
+      {
+        "unidade": "B105.2",
+        "valor": "277220.46",
+        "pt": 1,
+        "en": 2
+      }
+    ]
+  }
+]

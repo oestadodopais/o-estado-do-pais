@@ -1,0 +1,74 @@
+EVB C, relatório do construtor, 11.11.2026
+1. Citações: contexto exigido no excerto e no mesmo item da leitura na imagem. Cada par excerto/contexto é conferido. Plantas da obra trocada e do item trocado recusadas. Ficheiro corrigido instalado com novo resumo no contrato. 126 citações por língua resolvidas. Código 0.
+2. Nomes de página: título ou h1 visível. A planta do nome só no menu recusa. C045 e B130.1 citam «Quem Somos»; a fonte tem «Quem Somos - PT». Código 0.
+3. HTML: plantas sr-only, visually-hidden, collapse sem show, dialog fechado, details fora do summary e opacidade zero recusadas. Sete linhas do livro (uma própria e seis herdadas), 29 datas e 14 citações ou nomes em HTML reconferidos. Nenhuma prova parou. Código 0.
+4. Tradução: número e escala ou unidade imediatamente seguinte têm de corresponder. Milhões/milhares e percentagem/contagem trocados recusam. As classes e traduções das duas edições passam. Código 0.
+5. Paridade: 1 426 números por edição fora das citações e traduções, por unidade e multiplicidade. As citações resolvem nas fontes e as traduções têm a conferência própria do ponto 4. Plantas pela função compare sobre cópias reais: medida, ano e página alterados recusam. Pares Markdown/HTML da mesma língua restaurados: 430/430 e 434/434 ocorrências na comparação antiga. Código 0.
+6. Quadros: recusa geral da linha curta reposta, com o teste antigo. B023.R18 nas duas línguas é a exceção declarada: a célula final junta documento e página. Unidade ausente e razão vazia recusam. Fronteiras de uma célula mantêm a forma própria anterior. HTML idêntico. Código 0.
+7. Datas: dez registos de intervalos declaram valor_fim e conferem-no na fonte. Outro fim ou fim ausente recusam. Proveniência recomposta; texto e números impressos conservados. Código 0.
+8. Asserções: retiradas as declarações que não autorizavam publicação e seis duplicações herdadas. Duas asserções contam as sete intervenções PRR com valor positivo, incluindo Cástris; a do quadro confere também o valor de Cástris. Uma intervenção sem verba recusa. As 31 restantes identificam a revisão documental sobre o corpo fechado, por outra família de modelos, em quatro voltas com plantas e fecho em 11.11.2026. As quatro versões passam sem asserções por declarar nem verificações falhadas. Código 0.
+9. Portão inteiro: código 0, numa corrida de 1 190 segundos; nova suíte e pares de edições aprovados. Registo evb-c-gate.log; código em evb-c-gate.codigo.
+Paragens de unidades: nenhuma.
+Integridade: 3316 ficheiros de 30 outros estudos conferidos, zero alterações. As quatro edições ativas do estudo 19 são idênticas à cabeça a7e6b07.
+
+As 23 diferenças da régua antiga, linha a linha. Contagens PT/EN; cada detalhe identifica unidade, valor e multiplicidade. A régua antiga juntava às medidas as repetições nas traduções; 31 é dia de data e 27 é parte do nome do projeto. Estes números tinham sido atribuídos a linhas por coincidência de valor. Os perfis fora de citações e traduções agora coincidem em todas as unidades.
+evb-a-cab-26: 8/7. B060.R1, valor 1.5: 2/1.
+evb-a-cab-26-fonte: 3/4. B061.1, valor 1500000: 1/2.
+evb-a-cab-38: 3/4. N10.R1, valor 1.75: 1/2.
+evb-a-residual-pt-b120.r1-362: 3/5. B086.1, valor 31: 0/1; N04.1, valor 31: 0/1.
+evb-a-residual-pt-n13.1-81: 10/13. B042.1, valor 27: 1/2; B093.2, valor 27: 1/2; N12.R3, valor 27: 1/2.
+evb-cab-17-1: 6/7. B035.1, valor 15: 1/2.
+evb-cab-6-1: 8/6. B031.R2, valor 10.5: 2/1; B038.R1, valor 10.5: 2/1.
+evb-cab-88-1: 13/12. B034.R1, valor 5: 4/2; B116.1, valor 5: 1/2.
+evb-forma-5186f9b94fa0a7d746: 2/3. B077.1, valor 1587603.1: 1/2.
+evb-forma-89edd6b67acc9776d7: 6/5. B031.R1, valor 49.5: 2/1.
+evb-ln001-parcela-1: 9/11. B084.1, valor 2000000: 1/2; B093.3, valor 2000000: 1/2.
+evb-ln016-parcela-1: 9/10. B079.1, valor 15000000: 1/2.
+evb-ln049: 1/2. B049.2, valor 100: 1/2.
+painel-buraco: 4/3. B031.R2, valor 9: 2/1.
+painel-estado-garantido: 4/3. B034.R1, valor 39: 2/1.
+painel-externalizado: 2/1. B057.R3, valor 92: 2/1.
+painel-interno: 16/15. B057.R3, valor 8: 2/1.
+painel-orcamento-49: 3/2. B031.R2, valor 49: 2/1.
+painel-precontratacao: 3/2. B057.R2, valor 85: 3/2.
+painel-transferido: 15/14. B034.R1, valor 34: 2/1; C033, valor 34: 2/1; N01.2, valor 34: 1/2.
+plano-alentejo-aprovado: 2/3. B093.2, valor 11764710: 1/2.
+rc-subcontratos-prosa: 1/2. B105.2, valor 449609.8: 1/2.
+rc-trabalhos-especializados: 1/2. B105.2, valor 277220.46: 1/2.
+
+Asserções em revisão, com a frase que contém o quantificador. As formas completas e a declaração da revisão estão em evb-c-assercoes-em-revisao.json. Permanecem documentais porque os estados, ausências, compromissos e atribuições que enunciam não são um predicado numérico sobre as linhas disponíveis.
+premio-nao-inscrito: Nenhuma linha das tabelas de receita de 2026 o inscreve
+acrescimo-sem-explicacao: e nenhum dos dois documentos explica a distância
+unica-verba-do-decreto: A única verba que o Decreto-Lei n.º 124/2023 fixa
+remuneracoes-ausentes: Nenhum documento lido as traz
+mapas-ilegiveis: e nenhuma delas é o nome que a câmara imprimiu
+protocolo-nao-publicado: Não está publicado em nenhum dos sítios oficiais lidos
+evb-revisao-c009: No fim de 2025, as contas da associação davam dois dos sete «Sem desenvolvimento».
+evb-revisao-c010: Pelo relato do painel, a equipa previa todos os contratos até setembro de 2025; as contas registam 13 nesse ano.
+evb-revisao-c011: Os três têm datas, âmbitos e composições diferentes, e nenhum documento lido os concilia. Incluem os 10 milhões da operação VAGAR, de que o detalhe das contas só dá 1,75 milhões como aprovados. O decreto-lei manda divulgar as remunerações dos órgãos sociais, e nenhum documento lido as traz.
+evb-revisao-c016: - A associação publicou as contas de 2025, com parecer do fiscal único, e abriu nesse ano três chamadas de projetos da candidatura.
+evb-revisao-c020: - Pelo resumo que o painel faz do relatório de progresso, a associação só ficou plenamente operacional em outubro de 2024, quase dois anos depois da escolha.
+evb-revisao-c024: - O painel recomendou fechar todos os compromissos de financiamento até ao fim de 2025; nas contas aprovadas a 14 de abril de 2026, a parte do município estava «Em Negociação».
+evb-revisao-c029: A ata de maio de 2026 só regista a referência do presidente da Câmara a estudos que apontam para uma possível duplicação.
+evb-revisao-c034: | «all contracts will be signed by September 2025» (todos os contratos estarão assinados até setembro de 2025) | A equipa, na resposta que o painel regista, em junho de 2025 | As contas de 2025 registam 13 projetos da candidatura contratados durante o ano e 15 com a contratação preparada.
+evb-revisao-c035: | «seven venues are funded under the PRR and due to be completed by August 2026» (sete espaços têm financiamento do plano de recuperação e estão previstos para ficar concluídos até agosto de 2026) | A equipa, na resposta que o painel regista, em junho de 2025; a mesma resposta diz que há espaços temporários se for preciso | A primeira obra do Rossio, uma das sete, teve o prazo prorrogado em editais de 3 de setembro e de 15 de outubro de 2026.
+evb-revisao-c041: O que está bem é que os pagamentos da cultura declarados para 2024 e 2025 seguem os tetos desses anos, e que a associação publicou contas com parecer do fiscal único.
+evb-revisao-n01-r3: | Coesão territorial, pelo Alentejo 2030, «mediante candidatura» | 15.000.000,00 € | Nenhum pagamento declarado.
+evb-revisao-b047-r6: | Arena de Évora | 250 000,00 €, qualificação do espaço, estado «Plano» | Dossiê de seleção, p. 108 (folha 55 do PDF) | O resumo do relatório de progresso nomeia a Arena só como espaço a reaproveitar: «repurposing existing spaces (e.g. the Arena)» (reaproveitar espaços existentes, por exemplo a Arena) | Segundo relatório de monitorização, p. 8, resumo do relatório de progresso de Évora 2027 |
+evb-revisao-b048-3: Diz também que, só no caso do Convento de São Bento de Cástris, assegura «o respetivo acompanhamento e fiscalização».
+evb-revisao-b057-r2: The team replied that all contracts will be signed by September 2025 and the full programme will be announced in September 2026.» (o painel perguntou pelo calendário da contratação, notando que 85% dos projetos estão ainda antes da contratação; a equipa respondeu que todos os contratos estarão assinados até setembro de 2025 e que o programa completo será anunciado em setembro de 2026) | Segundo relatório de monitorização, p. 10 |
+evb-revisao-n16-2: Pediu também que se assegurassem todos os compromissos de financiamento, públicos e privados, até ao fim de 2025, com transparência financeira, e que se fizessem e revissem planos de contingência para os riscos políticos, financeiros e de infraestrutura (recomendação 6).
+evb-revisao-b115-r4: | O do quadro de compromissos das contas de 2025 | O «QUADRO RESUMO DO NÍVEL DE COMPROMISSOS DE FINANCIAMENTO EXISTENTES», com um total de 46 259 953 €; as suas linhas somam 46 459 953 €, mais 200 000 € do que o total que imprime, o valor da linha do Interreg Europe; tem linhas do gabinete do Ministério da Cultura, do Turismo de Portugal, do Fundo Fomento Cultural, do Alentejo 2030, do Interreg Europe e do município, e nenhuma da CIMAC | Relatório de atividades e contas de 2025, p. 61 |
+evb-revisao-b084-1: The only amount specified in Decreto-Lei n.º 124/2023 appears on p. 70: an initial State contribution to the association's assets, to be made by GEPAC, «no valor de € 2 000 000 a pagar em 2024» (amounting to € 2 000 000, to be paid in 2024).
+evb-revisao-b085-2: As remunerações individualizadas dos membros dos órgãos sociais não se encontraram nas páginas lidas a 15 de setembro e a 3 de novembro de 2026; as contas de 2025 só dão as despesas com o pessoal em conjunto.
+evb-revisao-b112-3: Os dois algarismos não são o mesmo, nenhum dos documentos explica a diferença, e ficam os dois.
+evb-revisao-b120-r4: Dos documentos do município que se leram, nenhum é uma conta de execução |
+evb-revisao-b120-r5: | A execução real de 2024 e de 2025 do lado do município bateu com o orçamentado? | Pela mesma razão: nenhum documento do município lido é uma conta de execução.
+evb-revisao-b120-r9: | Quanto custou, ao todo, Évora 2027? | Nenhum documento lido soma o custo desde o início.
+evb-revisao-b120-r10: | Batem uns com os outros o orçamento global do relatório de progresso, a receita operacional do dossiê, a repartição do protocolo e o quadro de compromissos das contas de 2025? | São construídos de maneira diferente e nenhum documento lido os concilia.
+evb-revisao-b120-r11: | Quantos visitantes Évora terá em 2027? | A única referência lida é uma afirmação do presidente da Câmara, em reunião de câmara, de que alguns estudos, «nomeadamente da Entidade Regional de Turismo», apontam para uma possível duplicação do número de visitantes. Nenhum desses estudos está entre os documentos lidos, e nenhum documento lido traz um número.
+evb-revisao-b120-r12: Das reuniões anteriores leram-se só a ata da reunião de câmara de 14 de maio de 2026 e o edital da de 3 de setembro de 2026 |
+
+Medição até à geração deste relatório: 90 chamadas de ferramentas; 29 corridas dirigidas e 1 corrida(s) do portão inteiro. As corridas dirigidas incluem as tentativas falhadas dos guiões, corrigidas antes do commit.
+Registos dirigidos: evb-c-conferencias. Medidas: medidas-do-construtor-evb-c.json. Cabeça medida: 97c95acd.
+tokens used: 10639275 (acumulados no registo da sessão até à medição).

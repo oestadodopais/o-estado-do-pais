@@ -1,0 +1,87 @@
+{
+  "cabeca": "97c95acd",
+  "chamadas_ferramentas": 90,
+  "chamadas_por_ferramenta": {
+    "exec": 84,
+    "wait": 6
+  },
+  "operacoes_internas": {
+    "exec_command": 74,
+    "write_stdin": 45,
+    "clock__curr_time": 3
+  },
+  "corridas_dirigidas": 29,
+  "corridas_portao": 1,
+  "corridas_por_registo": {
+    "01-contextos.log": 2,
+    "01-citacoes.log": 1,
+    "02-nomes.log": 1,
+    "03-html.log": 1,
+    "03-provas-html.log": 3,
+    "04-traducoes.log": 2,
+    "04-edicoes.log": 2,
+    "05-paridade.log": 1,
+    "05-diferencas.log": 2,
+    "05-perfis.log": 1,
+    "06-quadros.log": 2,
+    "06-render.log": 2,
+    "06-estudo.log": 1,
+    "07-datas.log": 1,
+    "07-recompor.log": 1,
+    "08-assercoes.log": 1,
+    "08-recompor.log": 1,
+    "08-edicoes.log": 1,
+    "evb-c-gate.log": 1,
+    "09-integridade.log": 1,
+    "09-suite-final.log": 1,
+    "03-html-herdado.log": 1
+  },
+  "codigo_portao": 0,
+  "duracao_portao_segundos": 1190,
+  "tokens_used": {
+    "input_tokens": 10587881,
+    "cached_input_tokens": 10465152,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 51394,
+    "reasoning_output_tokens": 18694,
+    "total_tokens": 10639275
+  },
+  "citacoes": {
+    "pt": 126,
+    "en": 126
+  },
+  "html": {
+    "linhas_proprias": 1,
+    "linhas_herdadas": 6,
+    "datas": 29,
+    "citacoes_e_nomes": 14
+  },
+  "numeros_paridade_por_edicao": 1426,
+  "unidades_por_edicao": 465,
+  "intervalos_de_datas": 10,
+  "assercoes": {
+    "total": 33,
+    "predicados": 2,
+    "revisao": 31
+  },
+  "paragens": [],
+  "integridade": {
+    "ficheiros": 3316,
+    "estudos": 30,
+    "alterados": []
+  },
+  "nota": "Chamadas e tokens medidos no registo desta sessão até à geração deste ficheiro. As corridas incluem as tentativas falhadas e repetidas dos guiões dirigidos.",
+  "commits": [
+    "fa161af EVB C1: prender cada citação à obra e ao item da imagem",
+    "e09b8f0 EVB C2: conferir o nome no título ou num h1 visível",
+    "e29efea EVB C3: excluir texto HTML oculto e reconferir as provas",
+    "1fdbbc5 EVB C4: conferir a escala e a unidade dos números traduzidos",
+    "ea96dc9 EVB C5: comparar todos os números por unidade e restaurar pares da mesma língua",
+    "35cdf76 EVB C6: recusar linhas curtas sem unidade e razão no contrato",
+    "e7a7bfa EVB C7: conferir os dois extremos dos intervalos de datas",
+    "1538477 EVB C8: identificar a revisão documental e contar as sete intervenções",
+    "97c95ac EVB C9: integrar as plantas da adenda C e fechar o portão inteiro verde"
+  ],
+  "gate_sha256": "3dc24bc4b83b97f989cae69ba55a59dcb803de90665b4f810bf50d518c0e9c0c",
+  "arvore_limpa": true
+}
