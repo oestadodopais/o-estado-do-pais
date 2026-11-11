@@ -20,7 +20,7 @@
     "cartoes": "node scripts/cartoes.mjs",
     "check:nd1": "node tests/linha/ausencia-nd1.mjs",
     "check:rec2-moldura": "node tests/documentos/moldura.mjs --vermelhos",
-    "check:rec2": "node tests/rec2/retirados.mjs && node tests/rec2/listas.mjs && node tests/rec2/amostras.mjs && node tests/rec2/titulos.mjs && node tests/rec2/publicacao.mjs && node tests/rec2/fontes.mjs && node tests/rec2/voz-inventario.mjs && node scripts/check-retirados.mjs && node tests/rec2/contagens.mjs",
+    "check:rec2": "node tests/rec2/retirados.mjs && node tests/rec2/listas.mjs && node tests/rec2/amostras.mjs && node tests/rec2/titulos.mjs && node tests/rec2/publicacao.mjs && node tests/rec2/fontes.mjs && node tests/rec2/voz-inventario.mjs && node scripts/check-retirados.mjs && node tests/rec2/contagens.mjs && node tests/rec2/registos-contagem.mjs",
     "gate:html": "npm run check:rec2 && node scripts/check-quadro.mjs && node tests/linha/frequencia-verificacoes.mjs && node scripts/gate-html.mjs && npm run check:nd1 && node tests/eva/pagina.mjs && node tests/eva/execucao.mjs && node tests/eva/reconferencias.mjs",
     "check:datas": "node tests/explicacoes/revisoes.mjs --datas && node tests/inicio/novidades.mjs && node tests/inicio/datas-do-recibo.mjs && node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node tests/hb1/pagina-editada.mjs && node scripts/check-datas.mjs && node tests/quadro/reguas.mjs datas",
     "datas": "node scripts/datas-de-publicacao.mjs",
