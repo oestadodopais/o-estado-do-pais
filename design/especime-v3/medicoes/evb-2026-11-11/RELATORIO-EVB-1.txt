@@ -1,0 +1,930 @@
+RELATÓRIO EVB 1, 11.11.2026
+Resultado: incompleto. O estudo 19 ativo não passou a ser o texto julgado.
+A passagem entregou fontes alojadas, leitores comuns, provas e um candidato reproduzível que se recusa a publicar. Há recusas documentais e há trabalho de ligação por concluir; não são a mesma coisa. Não se reescreveu o texto julgado para fazer passar o motor.
+
+1. Documentos alojados
+Conferidos os resumos e tamanhos dos 40 documentos: {'pdf': 24, 'html': 14, 'xlsx': 1, 'json': 1}. Registados 32 originais, 161391766 bytes, com MANIFEST.sha256. O maior tem 44575296 bytes e foi aceite no commit local. Não se fez push nem se verificou a aceitação remota pelo GitHub.
+Os oito documentos já alojados foram reutilizados; o orçamento municipal de 2026 continua no estudo 16. Nenhum original foi partido ou substituído. Fontes e resumos: fontes-verificadas.json e INDICE-das-fontes.json na pasta EVB do motor.
+
+2. Três tipos de documento
+core.documentos_alojados fornece PDF por página física, HTML por página única do corpo guardado e XLSX por folha e linha. Em todos, o corpo tem o resumo declarado e o excerto deve ser integral e único. HTML exclui scripts, estilos, metadados e elementos explicitamente ocultos; não executa JavaScript nem resolve CSS externo. XLSX usa os resultados guardados e recusa fórmulas sem resultado guardado. O JSON serve apenas pelos campos declarados dos recibos.
+Plantas: excerto ausente, repetido, mesmo nome com outro resumo, folha e linha erradas, HTML com página diferente de um, fórmula sem cache. Foram ainda testados valores numéricos em colunas sem cortar milhares, sinais negativos e a exigência de conferência documental do valor literal.
+
+3. Linhas próprias e derivações
+Das 80 linhas LN recebidas, 47 têm ligação preparada e 33 pararam. Há 42 linhas primárias novas e 33 derivações preparadas, incluindo parcelas e mudanças explícitas de escala. Acrescentaram-se 7 derivações de identidade para respeitar a forma impressa julgada. core.derivations recalculou 40 derivações no livro diagnóstico e deu código 0. As 161 linhas anteriores conservam a dívida de derivação já existente; o diagnóstico não a elimina.
+A cabeça recebeu ainda 31 ligações além da lista LN. Restam 36 recusas nessa procura complementar. Sete ligações LN reutilizam diretamente linhas do estudo 14 já presentes na linhagem do livro do 19. Outras reutilizações são parcelas de derivações. Os números de linhas não equivalem ao número de ocorrências impressas.
+Cada ligação nova usa a posição da ocorrência, para distinguir medidas com o mesmo valor. Não se encurtou o excerto recebido para fazer passar uma linha. Quando uma linha depende de parcelas, ficam declaradas as parcelas e a expressão.
+  01-bidbook-selecao-PT.pdf.txt: 1 primárias; sha256 2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624; evb-ln010
+  02-bidbook-preselecao-PT.pdf.txt: 0 primárias; sha256 0a24c92dbe1dd5fdcb2710cb3fd0db7a4bc7fa356db4b48bbf2f82825cc85302
+  10-ce-node2896.html.txt: 0 primárias; sha256 44db6cf4cfbc4dc224a150b9d75d05cc5f3ea7f55ae86a82ddf7e509f60968b9
+  14-dre-dl124-2023.pdf.txt: 0 primárias; sha256 c9d6cd18ef8068396ed52277a0787d4908b55650667f70027203346eca27cb37
+  15-dr-1s-247-2023-12-26.pdf.txt: 0 primárias; sha256 393f77271ba8cf2b9a938347e0a5fc9239f3f08ea679350f9d78cef2ecf1ff85
+  15.pdf.txt: 0 primárias; sha256 dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9
+  16-dre-dl47-2025.pdf.txt: 0 primárias; sha256 8ef0f9736105ef01af95fbec0c2ab69deb50d7c6864cf54455aa1cbe75a06c35
+  17-dre-rcm-203-2023.pdf.txt: 2 primárias; sha256 76cd523ae75cf21554444d7b081a1d5e8cb1e7c32dd70edccee52291d4978283; evb-ln007-fonte, evb-ln008-parcela-1
+  18-gepac-regras-concurso-2027.pdf.txt: 0 primárias; sha256 40f0dc113017139e3e9a334445bbc0226965786fd71d254aabc545e79084b5d2
+  20-ce-relatorio-preselecao-2027-PT.pdf.txt: 0 primárias; sha256 6232f5f64f62077c88e75137bd828bd7672a35a8d6dfd1b78b5102f627053113
+  21-ce-relatorio-selecao-2027-PT.pdf.txt: 1 primárias; sha256 11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1; evb-cab-95-1
+  22-ce-monitorizacao-1-2023-09.pdf.txt: 0 primárias; sha256 81529d2d0b2f8c60611c2632ff6dbea7f083d43498762a729cd1c449eecacaaf
+  22.pdf.txt: 0 primárias; sha256 b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e
+  23.html.txt: 1 primárias; sha256 15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8; evb-ln049
+  27-ce-monitorizacao-2-2025-07.pdf.txt: 2 primárias; sha256 861431b3b5e935f28bf6a3bc60b47307bdbeac571292d05f00defc5b1cd212e0; evb-ln012, evb-ln051
+  28-ce-doc-terceira-monitorizacao.html.txt: 0 primárias; sha256 51a42d91294f9cde01f22b7182c9ac9769c252d22548cdd271fbe063a62fda53
+  29.pdf.txt: 0 primárias; sha256 77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9
+  31-e27-inicio.html.txt: 0 primárias; sha256 61f62fd06276cdb812bd0f1dde931455d91811c1771a36e02d09408cb6448f11
+  32-e27-bid-book.html.txt: 0 primárias; sha256 17763b2c9ae5df0289c65f1304ac65dfc011667932bdc0546e0b811031083ec0
+  32-e27-programacao.html.txt: 0 primárias; sha256 47fec0dc9719f0595612c37b6c26dff2ba485795a71e7cd8055d1fea45cb7a00
+  32-e27-quem-somos.html.txt: 0 primárias; sha256 b324dfd0c349751a2e75142db0731e815751fd191dddc30dc26f0f6a6f8ca632
+  33-e27-noticias.html.txt: 0 primárias; sha256 e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7
+  41-e27-plano-atividades-orcamento-2026.pdf.txt: 3 primárias; sha256 b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b; evb-ln073, evb-cab-81-1, evb-cab-88-1-fonte
+  42-e27-relatorio-contas-2025.pdf.txt: 27 primárias; sha256 b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03; evb-ln001-parcela-1, evb-ln001-parcela-2, evb-ln001-parcela-3, evb-ln014-fonte, evb-ln016-parcela-1, evb-ln016-parcela-2, evb-ln016-parcela-3, evb-ln016-parcela-4, evb-ln016-parcela-5, evb-ln016-parcela-6, evb-ln016-parcela-7, evb-ln016-parcela-8, evb-ln016-parcela-9, evb-ln030, evb-ln046, evb-ln047, evb-ln059-parcela-1, evb-ln060-parcela-2, evb-ln060-parcela-3, evb-ln061-parcela-1, evb-ln061-parcela-2, evb-ln062, evb-cab-38-1, evb-cab-39-2, evb-cab-49-1, evb-cab-65-1, evb-cab-65-2-fonte
+  43-e27-programacao-2026.pdf.txt: 0 primárias; sha256 a25405119717842f41c0977fc6ebb8eade40564fe753ff935694e37788bbabc8
+  44-e27-ficha-operacao-vagar.pdf.txt: 0 primárias; sha256 0816f65622710f8c7c31bad1d007a22b14c9ef26b2f192a40f6f1aa4a8096552
+  45-e27-ficha-operacao-internacionalizacao.pdf.txt: 0 primárias; sha256 b9a3e0eaaf9ad0b836b218e0fe2a4767b8aa1eb58cc89321d21b799e9968fd91
+  50-cme-gop-orcamento-2026.pdf.txt: 1 primárias; sha256 7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04; evb-ln011
+  53-cme-gop-orcamento-2025.pdf.txt: 1 primárias; sha256 f07265b18625df34991b1805807f77617955a03da07aa814a521563ea38910a0; evb-ln035
+  54-cme-gop-orcamento-2024.pdf.txt: 1 primárias; sha256 7c554e97ed97c36625b0846e3c2a03e4e5021f39c878d70d193588200f3f6024; evb-cab-21-1-fonte
+  55-cme-protocolo-2023.html.txt: 0 primárias; sha256 8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a
+  63-cme-ata-10-rpc-2026-05-14.pdf.txt: 2 primárias; sha256 36a3dcacd269279bdd763fb50ff2d68f42420a4f3698610e4464c132da7e4233; evb-ln048, evb-ln068
+  64-cme-edital-rpc-2026-09-03.pdf.txt: 0 primárias; sha256 9799f676593c421b6e95e77c46e026c5faeba02ef106a80f7758dc0dfad9c7fc
+  70-base-teste.html.txt: 0 primárias; sha256 1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44
+  71-base-pesquisa.html.txt: 0 primárias; sha256 1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44
+  72-base-raiz.html.txt: 0 primárias; sha256 1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44
+  82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt: 0 primárias; sha256 1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503
+  concurso-rossio.html.txt: 0 primárias; sha256 5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03
+  noticias.html.txt: 0 primárias; sha256 e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7
+  registo-das-leituras-1.json: 0 primárias; sha256 c1183b891dbdb69c833fcb29067eefcff85d338e4156a59e716e8033a3567265
+
+4. Gabaritos e contrato do texto julgado
+Os dois gabaritos são gerados por gerar.py; os números por resolver são marcadores pendentes, não algarismos manuais. As referências recebidas ficam copiadas sem alteração. Ambos os contratos têm estado candidato_incompleto e core.texto_julgado recusa-os. Uma planta verifica essa recusa nas duas edições reais.
+  pt: 465 unidades, 532 ligações e 641 ocorrências por resolver. A projeção editorial coincide pela normalização fechada do conferidor; ela repõe também as lacunas e não constitui composição aprovada.
+  en: 465 unidades, 518 ligações e 660 ocorrências por resolver. A projeção editorial coincide pela normalização fechada do conferidor; ela repõe também as lacunas e não constitui composição aprovada.
+Diferença de contagem recebida: há 465 unidades por língua, não 464: 54 da cabeça mais 411 fora dela. As 32 marcas de quadro recebidas correspondem a 33 grupos de linhas tabulares segundo estrutura_quadros; não se alterou o texto para igualar essas contagens. As plantas do conferidor cobrem letra trocada, linha diferente com igual valor, ordem, unidade em falta ou repetida, separadoras, referência alterada e uma só língua.
+
+5. Citações, datas, títulos e atribuições
+Conferidas 245 ocorrências de citação: 123 em português e 122 em inglês; ficaram 7 recusas. As nove citações distintas em colunas passaram com pedaços na ordem, contexto único e leitura na imagem do mesmo documento e página. As plantas trocam uma palavra e a página ou resumo da imagem; ambas são recusadas. A quebra de linha declarada na leitura de Sem desenvolvimento é tratada explicitamente. A omissão […] só passa quando os dois lados constam do contexto integral e único.
+Datas: 244 declarações verificadas, 644 ligações candidatas e 241 ocorrências integrais escolhidas nos gabaritos. Os recibos mantêm a sua identidade por resumo e chave JSON. Datas ainda sem marcador continuam na lista de pendências. Nem todas as datas impressas ficaram resolvidas.
+Títulos: 37 conferidos, três por resolver. Só o dossiê de pré-seleção pede leitura na imagem; o XLSX e o JSON não têm título documental declarado. Não se inventou título a partir do nome do ficheiro.
+  {"documento": "02-bidbook-preselecao-PT.pdf.txt", "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/02-bidbook-preselecao-PT.pdf", "sha256": "0a24c92dbe1dd5fdcb2710cb3fd0db7a4bc7fa356db4b48bbf2f82825cc85302", "tipo": "pdf", "motivo": "capa sem título transcrito; requer leitura na imagem", "pede_leitura_na_imagem": true}
+  {"documento": "82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt", "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/82-alentejo2030-lista-operacoes-2026-06-30.xlsx", "sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503", "tipo": "xlsx", "motivo": "sem título documental declarado; o nome do ficheiro não prova um título", "pede_leitura_na_imagem": false}
+  {"documento": "registo-das-leituras-1.json", "ficheiro": "content/14 Évora 2027/Technical Source/raw/manifest.json", "sha256": "c1183b891dbdb69c833fcb29067eefcff85d338e4156a59e716e8033a3567265", "tipo": "json", "motivo": "sem título documental declarado; o nome do ficheiro não prova um título", "pede_leitura_na_imagem": false}
+Atribuições: foram examinados 556 valores em português e 552 em inglês; ficaram dois avisos em cada língua e quatro casos sem atribuição em português, três em inglês. Os onze casos estão declarados com identidade, razão e estado por rever em atribuicoes-por-rever.json. Não se instalaram dispensas nem regras novas para pessoas.
+
+6. Adagas
+As quatro ocorrências por língua conservam a adaga. A prova identifica o PDF municipal de 2026 no estudo 16, a página 119 e a leitura na imagem recebida, com o mesmo resumo. O valor de 1 000 euros não ganhou uma segunda cópia do documento. As plantas recusam imagem de outro documento ou página e valor ausente da leitura. A verificação é do candidato, não de um HTML novo publicado.
+
+7. Asserções
+core.assertions correu nas duas edições julgadas. Depois das declarações, ambas deram código 0 quanto à cobertura. Português: 38 ocorrências, zero checked, 31 REVIEW, zero undeclared, zero failed. Inglês: 20 ocorrências, zero checked, 18 REVIEW, zero undeclared, zero failed. REVIEW continua revisão pendente e não demonstra a verdade da asserção. Foram retiradas 25 declarações antigas sem ocorrência aplicável e ficaram 33 declarações distintas no candidato, contra 32 antes; não se aumentou a lista global de exclusões.
+
+8. Resto da cadeia e contagens
+Não se regeneraram o HTML, o registo, o manifesto ou os cortes ativos. Não seria correto instalar uma composição que ainda não passa. core/gate_baselines.json e os testes que fixam as contagens ativas ficaram iguais à base. O livro ativo continua com 161 linhas. A lista de suites do portão ganhou core.evb_test, com seis plantas; isto acrescenta cobertura de posições e da recusa do candidato, não cobertura editorial fictícia. LEIA-ME.md e estado-da-cadeia.json explicam a reprodução e o trabalho que falta.
+
+9. Integridade dos outros estudos
+3313 ficheiros comparados com a fotografia inicial, zero alterações. A cadeia ativa do 19 e as baselines foram também comparadas com os objetos Git de 247e604, em 39 ficheiros, sem diferenças. integridade.json contém os resumos antes e depois, por estudo e por produto ativo. O código comum mudou nos leitores, linhas próprias, citações, datas, títulos, adagas e registo da suite EVB; os livros e textos dos outros estudos não mudaram.
+Os resumos individuais dos livros e textos principais também constam de integridade.json, no campo livros_e_textos.
+  content/01 Energy Water and Climate: 102 ficheiros; antes e depois de46553c14fcc991b6f47e33f4d999f532a303f9db5c0a996a00ea112e3ad2f8
+  content/02 AI and Digital Strategy: 12 ficheiros; antes e depois d3c65a054995f1e1c3c18748f15dbb3e5b12c86e59e5c1c8636ba7e6ebe1d74e
+  content/03 Regional Economy: 57 ficheiros; antes e depois 0f0f0b9020f9d572322efeae439e22820121aa895e8eff9b3666d768f2144b24
+  content/04 Évora Public Money: 43 ficheiros; antes e depois d5621c5096532104861f01a50b44f9fd4b69bf6fc61591736fa69cfc738019f9
+  content/05 Fund Access Register: 20 ficheiros; antes e depois 88c30c6a1d36b71c3f8242a737ac765ab7a3df5dd30c392186a97a6688c0b86e
+  content/06 Évora Economy: 301 ficheiros; antes e depois beb9895d5fe1c54647721bf54467df1a330e9c28640007a095ea6c65a28b6531
+  content/07 Évora Municipal Accounts: 28 ficheiros; antes e depois 745a3ccb65f1e65c09b30daed449c1f9b23f8d63665edec832bc9b0297a9199c
+  content/08 Évora Mandates: 45 ficheiros; antes e depois cc3261f6f9c697b82bbaad75aa152ffbe8cefe9e2902ff346cfaf804945baefe
+  content/09 Évora Pelouros: 32 ficheiros; antes e depois 9293f3046d8359550d239fb3c84676b81add3a779ee85f1a22abb3e5f56b52da
+  content/10 Housing: 82 ficheiros; antes e depois eebd30922ec6344feee3a81ab216fcd12a9aad1e28d80f37df6f30d3bd547a6f
+  content/11 Seguranca Social: 56 ficheiros; antes e depois 6eaf475bc7011ee9785970141399f8f8cd8703b60d7bac9dac5417a7326a701d
+  content/12 Concelhos: 45 ficheiros; antes e depois eba2757af38e359d8e911c1378f28eefd213e08c15e727bc6655522367a19c1d
+  content/13 Dominios: 713 ficheiros; antes e depois 1cbfee13488cccddb651a9b25e104741192d8f494d592cb125260cc64f1729c0
+  content/14 Évora 2027: 28 ficheiros; antes e depois 7bafba46c87cf0ca4d831c2720906ae4b0262e4f18c8784b547dabd88b2a3e82
+  content/15 Orcamento do Estado 2027: 50 ficheiros; antes e depois d14bf1514bd3c5228b73b785e440aebdc4683f28b4eecab78c43c91e8e946b4f
+  content/16 Évora Contas da Câmara: 81 ficheiros; antes e depois dbbd62e643a41e8efd61acc32cffdfadcde2d9a6585e1e47c27b09d33f7ef864
+  content/17 Évora Quem Governou: 13 ficheiros; antes e depois 8041d0eb9d33cb59f273487c2f2e19585a10b283f3ff5a5ae3bf8d54b5f54959
+  content/18 Évora Economia e Dinheiro de Fora: 21 ficheiros; antes e depois 6b4e97f0b640f5dba028dc76b08362f90ec1652571d66b692fac33121aac2747
+  content/20 Orcamento do Estado: 308 ficheiros; antes e depois 30edb257260d638434de0bc61bfcb0406c94999b0fa640a5da03064cff470b91
+  content/21 Defesa NATO: 4 ficheiros; antes e depois 22894b8b735d2f1c72998d8e458afcd167c4eac754c4d2e15579437dccf2e114
+  content/22 TAP: 156 ficheiros; antes e depois 23dca24068e8d02f4934b411cd70712fa1e772a75750e1b62eda02a55739c610
+  content/23 Habitacao: 347 ficheiros; antes e depois b70d2921f0c7c1321c8f33282b7c9c370973b460d329f8242bc226a70c94a801
+  content/24 Orcamento 2027 Analise: 196 ficheiros; antes e depois dcdfdf02c598d76e6b1f59e9b6514142b94d9c538d8b6cdb9762b1922fc46286
+  content/25 Orcamento 2027 Medidas: 120 ficheiros; antes e depois b27f99e22288c703b63a151c4d3e6606349bc06ca3942a6fc614815bb783dab2
+  content/26 Saude e Parcerias Efeitos: 222 ficheiros; antes e depois 06c7b90f931c9a5ae2b415716842528380a51a68b9775a71c7a9f3647f5d84e3
+  content/27 Orcamento 2027 O que muda: 18 ficheiros; antes e depois ec08342d4eb072d30ddb15ad8972e786026ea32ccc4be87353e0a7c9e16baa50
+  content/28 Habitacao Estudo: 20 ficheiros; antes e depois a1a8bc7f1c046b16b6a0be0b1ff246f6686b5a85b3173a8c7c4e187ee9fd26e2
+  content/29 Orcamento 2027 Funcoes: 67 ficheiros; antes e depois 4d9cb4b81b24530d77f3630c4b6daed8d87034151952815740d4fb83dacf5c66
+  content/30 Orcamento 2027 Generalidade: 125 ficheiros; antes e depois cdfdc7ce1c9d11ce35a7243fa9e4478803427cf83c6d9c3d9acd37d3a8074f06
+  content/README.md: 1 ficheiros; antes e depois 48d1f1c7c004e3f3540efcc898aa2c8ce08e912e14c0eb6ef0dabf1273c00201
+
+Recusas das 80 linhas recebidas
+  LN003 / C004 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN013 / C010 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN019 / C027 / {'pt': '30', 'en': '30'}: linha própria evb-ln019: valor ausente do excerto
+  LN020 / C027 / {'pt': '1,3', 'en': '1,3'}: linha própria evb-ln020-fonte: valor ausente do excerto
+  LN021 / C028 / {'pt': '18', 'en': '18'}: linha própria evb-ln021: valor ausente do excerto
+  LN022 / C028 / {'pt': '400 000', 'en': '400 000'}: linha própria evb-ln022: valor ausente do excerto
+  LN025 / C054 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN032 / N02.R1 / {'pt': '518 203,10', 'en': '518 203,10'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 01-bidbook-selecao-PT.pdf.txt; folha 44 do PDF (imprime as páginas 86 e 87); FONTE DE RECEITA PARA COBERTURA DAS […] DESPESAS OPERACIONAIS […] CEC […] 2022 2023 2024 2025 2026 2027 2028 […] CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00 2 000 000,00 999 000,00 […] ÉVORA
+    Documento: excerto ausente ou ambíguo no lugar declarado; mCorkInsulation,daCorticeiraAmorim,paraaFONTEDERECEITAPARACOBERTURADASqueincluabenefícios:criaçãodostandpromocionalÉvora2027.DESPESASOPERACIONAIS-parapatrocinadoresinteressadosnaexposiçãoevisibilidadedassuasmarcas-estabelecendocategoriaseCECcotascombaseemcontribuições;2022202320242025202620272028UNIÃO0,001
+  LN033 / N02.R1 / {'pt': '2 002 750,00', 'en': '2 002 750,00'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 01-bidbook-selecao-PT.pdf.txt; folha 44 do PDF (imprime as páginas 86 e 87); FONTE DE RECEITA PARA COBERTURA DAS […] DESPESAS OPERACIONAIS […] CEC […] 2022 2023 2024 2025 2026 2027 2028 […] CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00 2 000 000,00 999 000,00 […] ÉVORA
+    Documento: excerto ausente ou ambíguo no lugar declarado; mCorkInsulation,daCorticeiraAmorim,paraaFONTEDERECEITAPARACOBERTURADASqueincluabenefícios:criaçãodostandpromocionalÉvora2027.DESPESASOPERACIONAIS-parapatrocinadoresinteressadosnaexposiçãoevisibilidadedassuasmarcas-estabelecendocategoriaseCECcotascombaseemcontribuições;2022202320242025202620272028UNIÃO0,001
+  LN034 / N02.R1 / {'pt': '999 000,00', 'en': '999 000,00'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 01-bidbook-selecao-PT.pdf.txt; folha 44 do PDF (imprime as páginas 86 e 87); FONTE DE RECEITA PARA COBERTURA DAS […] DESPESAS OPERACIONAIS […] CEC […] 2022 2023 2024 2025 2026 2027 2028 […] CIDADE DE 518 203,10 1 500 000,00 1 500 000,00 2 000 000,00 2 002 750,00 2 000 000,00 999 000,00 […] ÉVORA
+    Documento: excerto ausente ou ambíguo no lugar declarado; mCorkInsulation,daCorticeiraAmorim,paraaFONTEDERECEITAPARACOBERTURADASqueincluabenefícios:criaçãodostandpromocionalÉvora2027.DESPESASOPERACIONAIS-parapatrocinadoresinteressadosnaexposiçãoevisibilidadedassuasmarcas-estabelecendocategoriaseCECcotascombaseemcontribuições;2022202320242025202620272028UNIÃO0,001
+  LN037 / N03.R1 / {'pt': '56', 'en': '56'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 11; The bid relies on a solid operational budget amounting to €56 million. […] high contribution of the City (€17,75 million covering 32% of the budget) […] the 11 municipalities of the Aveiro Region
+    Documento: excerto ausente ou ambíguo no lugar declarado; ltureandtheeducationalsystem.Management●Thebidreliesonasolidoperationalbudgetamountingto€56million.TherelativelyhighcontributionoftheCity(€17,75millioncovering32%ofthebudget)isseenbythepanelasevidenceofastrongcommitmentfromtheCity,approvedformallyandunanimouslyinDecember2021.●Thepanelwe
+  LN038 / N03.R1 / {'pt': '17,75', 'en': '17,75'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 11; The bid relies on a solid operational budget amounting to €56 million. […] high contribution of the City (€17,75 million covering 32% of the budget) […] the 11 municipalities of the Aveiro Region
+    Documento: excerto ausente ou ambíguo no lugar declarado; ltureandtheeducationalsystem.Management●Thebidreliesonasolidoperationalbudgetamountingto€56million.TherelativelyhighcontributionoftheCity(€17,75millioncovering32%ofthebudget)isseenbythepanelasevidenceofastrongcommitmentfromtheCity,approvedformallyandunanimouslyinDecember2021.●Thepanelwe
+  LN039 / N03.R1 / {'pt': '32%', 'en': '32%'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 11; The bid relies on a solid operational budget amounting to €56 million. […] high contribution of the City (€17,75 million covering 32% of the budget) […] the 11 municipalities of the Aveiro Region
+    Documento: excerto ausente ou ambíguo no lugar declarado; ltureandtheeducationalsystem.Management●Thebidreliesonasolidoperationalbudgetamountingto€56million.TherelativelyhighcontributionoftheCity(€17,75millioncovering32%ofthebudget)isseenbythepanelasevidenceofastrongcommitmentfromtheCity,approvedformallyandunanimouslyinDecember2021.●Thepanelwe
+  LN040 / N03.R2 / {'pt': '48', 'en': '48'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 17; The municipality of Braga doubled its investment in Braga2027 (reaching now around €9,7 million) […] This brings the total operating budget to €48 million
+    Documento: excerto ausente ou ambíguo no lugar declarado; eachandtheyoungergenerations.Management●ThemunicipalityofBragadoubleditsinvestmentinBraga2027(reachingnowaround€9,7million),whichindicatesitscommitmenttothebid.Thisbringsthetotaloperatingbudgetto€48million,whichisasolidbudgettoimplementaEuropeanCapitalo
+  LN041 / N03.R2 / {'pt': '9,7', 'en': '9,7'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 17; The municipality of Braga doubled its investment in Braga2027 (reaching now around €9,7 million) […] This brings the total operating budget to €48 million
+    Documento: excerto ausente ou ambíguo no lugar declarado; eachandtheyoungergenerations.Management●ThemunicipalityofBragadoubleditsinvestmentinBraga2027(reachingnowaround€9,7million),whichindicatesitscommitmenttothebid.Thisbringsthetotaloperatingbudgetto€48million,whichisasolidbudgettoimplementaEuropeanCapitalo
+  LN042 / N03.R3 / {'pt': '44,65', 'en': '44,65'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 31; The operating budget remains unchanged at €44,65 million […] The contribution from the Region is higher than the one by the City of Ponta Delgada, at respectively €6 million and €4 million.
+    Documento: excerto ausente ou ambíguo no lugar declarado; sireforactiveinterconnection.Management●Theoperatingbudgetremainsunchangedat€44,65million,althoughtherehavebeensomechangesinfundingcontributionsfromtherelevantpublicauthorities.ThecontributionfromtheRegionishigherthantheonebytheCityofPontaDelgada,atrespectively€6millionand€4milli
+  LN043 / N03.R4 / {'pt': '45,7', 'en': '45,7'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 24; The Évora programme is based on a sound operational budget amounting to €45,7 million […] to double its contribution (€10,5 million, covering almost 23% of the budget)
+    Documento: excerto ausente ou ambíguo no lugar declarado; peanandinternationalaudience.Management●TheÉvoraprogrammeisbasedonasoundoperationalbudgetamountingto€45,7million,withanincreaseofnearly€1,6millioncomparedtopre-selection.●ThepanelappreciatesthedecisionoftheMunicipalityofÉvoratodoubleitscontribution(€10,5million,c
+  LN044 / N03.R4 / {'pt': '10,5', 'en': '10,5'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 24; The Évora programme is based on a sound operational budget amounting to €45,7 million […] to double its contribution (€10,5 million, covering almost 23% of the budget)
+    Documento: excerto ausente ou ambíguo no lugar declarado; peanandinternationalaudience.Management●TheÉvoraprogrammeisbasedonasoundoperationalbudgetamountingto€45,7million,withanincreaseofnearly€1,6millioncomparedtopre-selection.●ThepanelappreciatesthedecisionoftheMunicipalityofÉvoratodoubleitscontribution(€10,5million,c
+  LN045 / N03.R4 / {'pt': '23%', 'en': '23%'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 21-ce-relatorio-selecao-2027-PT.pdf.txt; p. 24; The Évora programme is based on a sound operational budget amounting to €45,7 million […] to double its contribution (€10,5 million, covering almost 23% of the budget)
+    Documento: excerto ausente ou ambíguo no lugar declarado; peanandinternationalaudience.Management●TheÉvoraprogrammeisbasedonasoundoperationalbudgetamountingto€45,7million,withanincreaseofnearly€1,6millioncomparedtopre-selection.●ThepanelappreciatesthedecisionoftheMunicipalityofÉvoratodoubleitscontribution(€10,5million,c
+  LN052 / N08.R1 / {'pt': '400.000', 'en': '400.000'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 42-e27-relatorio-contas-2025.pdf.txt; p. 36; 1. A NOSSA VOZ […] Lançada no dia 15 de setembro de 2025, a chamada aberta A Nossa Voz […] Orçamento da open call: 400.000€
+    Documento: excerto ausente ou ambíguo no lugar declarado; odarespetivaexecuçãoedesustentabilidade.1.ANOSSAVOZPROGRAMADEMEDIAÇÃOARTÍSTICAECULTURAL|MULTIDISCIPLINAR|AGRUPAMENTOSESCOLARES|ALENTEJOCENTRAL|2025Lançadanodia15desetembrode2025,achamadaabertaANossaVozdestinou-seatodososagr
+  LN053 / N08.R3 / {'pt': '30', 'en': '30'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 01-bidbook-selecao-PT.pdf.txt; folha 10 do PDF (imprime as páginas 18 e 19); A Nossa Vez […] cerca de 30 projetos (de grande e média dimensão), com um […] orçamento global de dois milhões de euros […] Público-alvo: Artistas e associações culturais sedeados em Évora […] Orçamento: 2 000 000€
+    Documento: excerto ausente ou ambíguo no lugar declarado; implementarumprogramaartísticonasescolasANossaVezreuniráespecialistasquepossamasseguraraçõesdeformaçãodostemasapresentados.Sabendoquevivemosnumperíodoqueserá100%discutido,refletidoedefinidopelosalunos.Osectorartísticoalentejanoéresiliente,adaptadoqueestáemgestãodeprojetoeemproduçãodeeventosculturais.Darád
+  LN054 / N08.R3 / {'pt': '1.300.000', 'en': '1.300.000'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 42-e27-relatorio-contas-2025.pdf.txt; p. 36; 2. A NOSSA VEZ […] Lançada no dia 10 de novembro de 2025, a open call A Nossa Vez é destinada ao setor cultural e artístico do Alentejo. […] Orçamento da open call: 1.300.000€
+    Documento: excerto ausente ou ambíguo no lugar declarado; upamentosde14municípiosdoAlentejoCentral2.ANOSSAVEZPROGRAMA|MULTIDISCIPLINAR|ALENTEJO|2025Lançadanodia10denovembrode2025,aopencallANossaVezédestinadaaosetorculturaleartísticodoAlentejo.OsprojetosaselecionarserãoincluídosnoprogramaartísticoÉvora_27,prevendo-searepres
+  LN055 / N08.R4 / {'pt': '6 000 000', 'en': '6 000 000'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 01-bidbook-selecao-PT.pdf.txt; folha 10 do PDF (imprime as páginas 18 e 19); O Nosso Laboratório […] preferimos lançar esta open call internacional […] Público-alvo: Cena cultural internacional […] Orçamento: 6 000 000€
+    Documento: excerto ausente ou ambíguo no lugar declarado; seemtrêsOPENCALLSÉVORA2027ONossoFestivalONossoLaboratóriolinhastemáticas,queassumimoscomoasprincipaisdimen-LançaremosumaopencalldestinadaaosfestivaisdoAlentejoVivemostemposimprevisíveisnaEuropaenomundo.Porsõesdouniversoaqueovagarnosreconecta:Espaço,
+  LN056 / N08.R4 / {'pt': '2.000.000', 'en': '2.000.000'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 42-e27-relatorio-contas-2025.pdf.txt; p. 37; 3. O NOSSO LABORATÓRIO (OUR LAB) […] foi lançada no dia 13 de novembro de 2025 […] Orçamento da open call: 2.000.000€
+    Documento: excerto ausente ou ambíguo no lugar declarado; Local:Diversos3.ONOSSOLABORATÓRIO(OURLAB)PROGRAMA|MULTIDISCIPLINAR|INTERNACIONAL|2025AopencallOurLab,destinadaaoecossistemaartísticoeculturalinternacional,foilançadanodia13denovembrode2025,comae
+  LN057 / N08.R5 / {'pt': '1.000.000', 'en': '1.000.000'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 42-e27-relatorio-contas-2025.pdf.txt; p. 37; 4. LINHA DO VAGAR – OPEN CALL […] A open call Linha do Vagar é destinada ao setor cultural e artístico nacional […] Esta open call será lançada no primeiro trimestre de 2026 […] Orçamento da open call: 1.000.000€
+    Documento: excerto ausente ou ambíguo no lugar declarado; Datasprevistas:2026/2027Local:Alentejo4.LINHADOVAGAR-OPENCALLPROGRAMA|MULTIDISCIPLINAR|PORTUGAL|2025#BIDBOOKAopencallLinhadoVagarédestinadaaosetorculturaleartísticonacional,prevendo-seaseleção12projetosquevãointegraroprogramaartísticoÉvora_27.Estaopencallserálançadanoprimeirotrimestrede2026e,àseme
+  LN064 / N10.R1 / {'pt': '1,75', 'en': '1,75'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 42-e27-relatorio-contas-2025.pdf.txt; p. 58; 1. VAGAR – CAPITAL EUROPEIA DA CULTURA ÉVORA_27 […] ALENTEJO 2030 | ALT2030-2025-18 (Cultura), foi aprovado no dia 9 de outubro de 2025 […] Aprovação 1,75 Milhões de Euros
+    Documento: excerto ausente ou ambíguo no lugar declarado; provadas4,estandoumaemprocessodedecisão.1.VAGAR-CAPITALEUROPEIADACULTURAÉVORA_27PROJETO|ÉVORA|9.0UT.2025>15.DEZ.2027OprojetoVAGAR-CapitalEuropeiadaCulturaÉvora2027,integradonoProgramaRegionaldoAlentejo2021-2027-ALENTEJO2030|ALT2030-2025-18(Cultura),foiaprovadonodia9d
+  LN066 / B023.R8 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN067 / B023.R9 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN072 / N20.1 / {'pt': '20 068 589,09', 'en': '20 068 589,09'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 41-e27-plano-atividades-orcamento-2026.pdf.txt; p. 51; 20 008 589,09 € SUBSÍDIOS À EXPLORAÇÃO […] MINISTÉRIO DA CULTURA 3 750 000,00 € […] TURISMO DE PORTUGAL 80 000,00 € […] PORTUGAL 2030 240 000,00 € […] INTERREG EUROPE 52 500,00 € […] 2021-2027 4 000 000,00 € […] 2021-2027 2 500 000,00 € […] Inovação Social 60 000,00 € […] APOIO Á CONTRATAÇÃO IEFP 60 000,00 € […] FOMENTO CULTURAL)) 9 326 089,09 €
+    Documento: excerto ausente ou ambíguo no lugar declarado; ENSDARECEITAEDESPESARÚBRICAS2026RECEITAS20008589,09€SUBSÍDIOSÀEXPLORAÇÃOGABINETEDEESTRATÉGIA,PLANEAMENTOEAVALIAÇÃOCULTURAIS(GEPAC)-MINISTÉRIODACULTURA3750000,00€TURISMODEPORTUGAL80000,00€PORTUGAL2030240000,00€INTERREGEUROPE52500,00€ALENTEJO2030-PROGRAMAREGIONALDOALENTEJO2021-20274000000,00€ALENTEJO2030-PROGRAMAREGIONALDOALENTEJO2021-20272500000,00€Alentejo2030-ProgramaRegionaldoAlentejo2021-2028-InovaçãoSocial60000,
+  LN074 / N19.1 / {'pt': '36 000', 'en': '36 000'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: 41-e27-plano-atividades-orcamento-2026.pdf.txt; p. 48; 1.2 | DESPESA […] Despesas 2026 17 442 076,66 € Fornecimentos e Serviços Externos
+    Documento: excerto ausente ou ambíguo no lugar declarado; 1.2|DESPESAa|ORIGENSDADESPESADespesas202617442076,66€FornecimentoseServiçosExternosAquisiçãodeBenseServiçosCorrentes664251,25€AquisiçãodeBenseServiços
+  LN077 / B120.R2 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN078 / B120.R3 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+  LN080 / B120.R10 / {'pt': '3', 'en': '3'}: excerto ausente ou ambíguo no lugar declarado
+    Prova: noticias.html.txt; página única; lido em: 2026-11-03
+    Documento: excerto ausente ou ambíguo no lugar declarado; sem excerto integral confirmado no lugar
+As recusas incluem metadados lido em adicionados à cópia de leitura, mas ausentes do HTML alojado; valores que não constam do excerto indicado; e excertos com omissões ou disposição incompatível com o corpo. Isto não prova que o número seja falso: prova que a ligação entregue não satisfaz esta régua.
+
+Citações que pararam
+  {"lingua": "pt", "unidade": "B023.R17", "citacao": "31MAR26", "motivos": ["prova sem página identificável"]}
+  {"lingua": "pt", "unidade": "B081.1", "citacao": "foi assinado, em 21 de junho de 2023, um protocolo de cooperação", "motivos": ["excerto ausente ou ambíguo no lugar declarado"]}
+  {"lingua": "pt", "unidade": "B083.1", "citacao": "A Associação tem como fins o planeamento, promoção, desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027.", "motivos": ["excerto ausente ou ambíguo no lugar declarado"]}
+  {"lingua": "en", "unidade": "B023.R17", "citacao": "31MAR26", "motivos": ["prova sem página identificável"]}
+  {"lingua": "en", "unidade": "B051.2", "citacao": "The capital works", "motivo": "sem prova recebida"}
+  {"lingua": "en", "unidade": "B081.1", "citacao": "foi assinado, em 21 de junho de 2023, um protocolo de cooperação", "motivos": ["excerto ausente ou ambíguo no lugar declarado"]}
+  {"lingua": "en", "unidade": "B083.1", "citacao": "A Associação tem como fins o planeamento, promoção, desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027.", "motivos": ["excerto ausente ou ambíguo no lugar declarado"]}
+
+Diferenças de lugar resolvidas sem mudar o excerto
+  17-dre-rcm-203-2023.pdf.txt: p. 86 -> {"page": 1}; d) 2027: 5 500 000 EUR.
+  17-dre-rcm-203-2023.pdf.txt: p. 86 -> {"page": 1}; c) 2026: 3 750 000 EUR;
+  82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt: página única -> {"type": "xlsx", "sheet": "PT2030_Operações-jun.2026", "row": 490}; 11764778 3755424 1750000
+  82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt: página única -> {"type": "xlsx", "sheet": "PT2030_Operações-jun.2026", "row": 632}; 2941599.16 2941599.16 2500359.28
+  17-dre-rcm-203-2023.pdf.txt: p. 86 -> {"page": 1}; foi assinado, em 21 de junho de 2023
+  17-dre-rcm-203-2023.pdf.txt: p. 86 -> {"page": 1}; podem ser acrescidos do saldo apurado no ano que lhe antecede
+  14-dre-dl124-2023.pdf.txt: p. 71 -> {"page": 4}; bem como as respetivas remunerações e outros
+  17-dre-rcm-203-2023.pdf.txt: p. 86 -> {"page": 1}; a) 2024: 2 000 000 EUR;
+  17-dre-rcm-203-2023.pdf.txt: p. 86 -> {"page": 1}; b) 2025: 3 750 000 EUR;
+  14-dre-dl124-2023.pdf.txt: p. 70 -> {"page": 3}; concorre para a constituição do património social da Associação uma contribuição inicial por parte do Estado, a prestar pelo Gabinete de Estratégia, Planeamento e Avaliação Culturais, no valor de € 2 000 000 a pagar em 2024.
+  82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt: página única -> {"type": "xlsx", "sheet": "PT2030_Operações-jun.2026", "row": 490}; ALT2030-FEDER-03111000
+
+Unidades com pelo menos uma prova recebida não confirmada
+A auditoria de unidades conferiu 239 e parou 83. A lista seguinte não deve ser confundida com as pendências de ligação do gabarito. auditoria-unidades.json conserva os excertos e os lugares de cada caso.
+  C004: excerto ausente ou ambíguo no lugar declarado
+  C007: excerto ausente ou repetido nas linhas do XLSX
+  C009: excerto ausente ou ambíguo no lugar declarado
+  C009: excerto ausente ou ambíguo no lugar declarado
+  C009: excerto ausente ou ambíguo no lugar declarado
+  C010: excerto ausente ou ambíguo no lugar declarado
+  C022: excerto ausente ou repetido nas linhas do XLSX
+  C028: excerto ausente ou ambíguo no lugar declarado
+  C029: excerto ausente ou ambíguo no lugar declarado
+  C054: excerto ausente ou ambíguo no lugar declarado
+  B035.1: excerto ausente ou ambíguo no lugar declarado
+  N01.1: excerto ausente ou ambíguo no lugar declarado
+  N01.R0: excerto ausente ou ambíguo no lugar declarado; excerto ausente ou repetido nas linhas do XLSX
+  N01.R3: excerto ausente ou ambíguo no lugar declarado; excerto ausente ou repetido nas linhas do XLSX
+  N02.1: excerto ausente ou ambíguo no lugar declarado
+  N02.R0: excerto ausente ou ambíguo no lugar declarado
+  N02.R1: excerto ausente ou ambíguo no lugar declarado
+  N02.R2: excerto ausente ou ambíguo no lugar declarado
+  N02.R3: excerto ausente ou ambíguo no lugar declarado
+  N03.1: excerto ausente ou ambíguo no lugar declarado
+  N03.R0: excerto ausente ou ambíguo no lugar declarado
+  N03.R1: excerto ausente ou ambíguo no lugar declarado
+  N03.R2: excerto ausente ou ambíguo no lugar declarado
+  N03.R3: excerto ausente ou ambíguo no lugar declarado
+  N03.R4: excerto ausente ou ambíguo no lugar declarado
+  B047.R1: excerto ausente ou ambíguo no lugar declarado
+  B047.R2: excerto ausente ou ambíguo no lugar declarado
+  B047.R3: excerto ausente ou ambíguo no lugar declarado
+  B047.R4: excerto ausente ou ambíguo no lugar declarado
+  B047.R5: excerto ausente ou ambíguo no lugar declarado
+  B047.R6: excerto ausente ou ambíguo no lugar declarado
+  B047.R7: excerto ausente ou ambíguo no lugar declarado
+  B096.1: excerto ausente ou ambíguo no lugar declarado
+  B097.R0: excerto ausente ou ambíguo no lugar declarado
+  B097.R1: excerto ausente ou ambíguo no lugar declarado
+  B097.R2: excerto ausente ou ambíguo no lugar declarado
+  B097.R3: excerto ausente ou ambíguo no lugar declarado
+  B057.R1: prova sem página identificável
+  N08.1: excerto ausente ou ambíguo no lugar declarado
+  N08.R0: excerto ausente ou ambíguo no lugar declarado
+  N08.R1: excerto ausente ou ambíguo no lugar declarado
+  N08.R2: excerto ausente ou ambíguo no lugar declarado; prova sem página identificável
+  N08.R3: excerto ausente ou ambíguo no lugar declarado
+  N08.R4: excerto ausente ou ambíguo no lugar declarado
+  N08.R5: excerto ausente ou ambíguo no lugar declarado
+  B058.1: prova sem página identificável
+  B058.2: excerto ausente ou ambíguo no lugar declarado
+  N16.1: excerto ausente ou ambíguo no lugar declarado
+  N16.2: excerto ausente ou ambíguo no lugar declarado
+  N16.3: excerto ausente ou ambíguo no lugar declarado
+  N10.R1: excerto ausente ou ambíguo no lugar declarado
+  B116.1a: excerto ausente ou ambíguo no lugar declarado
+  B060.R1: excerto ausente ou ambíguo no lugar declarado
+  B061.1: excerto ausente ou ambíguo no lugar declarado
+  N15.1: excerto ausente ou ambíguo no lugar declarado
+  N15.2: excerto ausente ou ambíguo no lugar declarado
+  N15.3: excerto ausente ou ambíguo no lugar declarado
+  B023.R8: excerto ausente ou ambíguo no lugar declarado
+  B023.R9: excerto ausente ou ambíguo no lugar declarado
+  B023.R14: excerto ausente ou ambíguo no lugar declarado
+  N12.R2: excerto ausente ou ambíguo no lugar declarado
+  N12.R3: excerto ausente ou ambíguo no lugar declarado
+  B023.R17: prova sem página identificável
+  B025.1: excerto ausente ou ambíguo no lugar declarado
+  B025.2: excerto ausente ou ambíguo no lugar declarado
+  B053.R1: excerto ausente ou ambíguo no lugar declarado
+  B079.1: excerto ausente ou ambíguo no lugar declarado
+  B081.1: excerto ausente ou ambíguo no lugar declarado
+  B085.2: excerto ausente ou ambíguo no lugar declarado
+  N20.1: excerto ausente ou ambíguo no lugar declarado
+  N19.1: excerto ausente ou ambíguo no lugar declarado
+  N22.1: prova sem página identificável
+  B104.1: excerto ausente ou ambíguo no lugar declarado
+  B111.2: excerto ausente ou ambíguo no lugar declarado
+  B120.R1: excerto ausente ou ambíguo no lugar declarado
+  B120.R2: excerto ausente ou ambíguo no lugar declarado
+  B120.R3: excerto ausente ou ambíguo no lugar declarado
+  B120.R7: excerto ausente ou ambíguo no lugar declarado
+  B120.R10: excerto ausente ou ambíguo no lugar declarado
+  B019.2: excerto ausente ou ambíguo no lugar declarado
+  B019.3: excerto ausente ou ambíguo no lugar declarado
+  B135.1: excerto ausente ou ambíguo no lugar declarado
+  B135.2: registo JSON exige chave e valor, não página
+
+Outras ligações por concluir
+  {"unidade": "C004", "numero": "23", "medida": "23 de outubro de 2026, a data da nota da Câmara", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C004", "numero": "6", "medida": "6 de fevereiro de 2027, a abertura", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C004", "numero": "3", "medida": "3 de novembro de 2026, a data da segunda leitura", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"unidade": "C007", "numero": "34", "medida": "34 milhões de euros dados como transferidos (relato ao painel)", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C007", "numero": "1,5", "medida": "1 500 000 €, a Linha do Vagar", "motivo": "sem prova numérica única na frase: 4 candidatas"}
+  {"unidade": "C007", "numero": "9,7", "medida": "9 670 000 €, a soma dos três pagamentos do protocolo que as contas declaram", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C007", "numero": "80 000", "medida": "80 000 €, o que o plano prevê receber do turismo em 2026", "motivo": "sem prova numérica única na frase: 2 candidatas"}
+  {"unidade": "C008", "numero": "2", "medida": "2 000 000,00 €, a parte do município em 2025 no calendário da candidatura", "motivo": "sem prova numérica única na frase: 3 candidatas"}
+  {"unidade": "C009", "numero": "23", "medida": "23 de outubro de 2026, a data da nota da Câmara", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C009", "numero": "12", "medida": "O Centro Cultural e o centro de dança, com custos estimados na candidatura de 12 e de 3 milhões, estavam em junho de 2025 sem financiamento ou atrasados, pelo resumo que o painel faz do relatório de progresso.", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C009", "numero": "3", "medida": "O Centro Cultural e o centro de dança, com custos estimados na candidatura de 12 e de 3 milhões, estavam em junho de 2025 sem financiamento ou atrasados, pelo resumo que o painel faz do relatório de progresso.", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C010", "numero": "3", "medida": "3 de novembro de 2026, a data da segunda leitura", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"unidade": "C011", "numero": "49,5", "medida": "49,5 milhões de euros, o orçamento global no relato ao painel", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C011", "numero": "1,75", "medida": "1 750 000 €, o fundo aprovado na operação VAGAR", "motivo": "sem prova numérica única na frase: 2 candidatas"}
+  {"unidade": "C014", "numero": "2", "medida": "2 000 000 EUR, o teto de 2024, e a contribuição inicial recebida nesse ano", "motivo": "sem prova numérica única na frase: 2 candidatas"}
+  {"unidade": "C015", "numero": "3,92", "medida": "3 920 000 €, pagos pelo Turismo de Portugal no fim de 2025", "motivo": "sem prova numérica única na frase: 2 candidatas"}
+  {"unidade": "C015", "numero": "4", "medida": "4 000 000,00 €, a parte do turismo no protocolo", "motivo": "sem prova numérica única na frase: 3 candidatas"}
+  {"unidade": "C015", "numero": "1,5", "medida": "1 500 000 €, a Linha do Vagar", "motivo": "sem prova numérica única na frase: 2 candidatas"}
+  {"unidade": "C022", "numero": "1,75", "medida": "1 750 000 €, o fundo aprovado na operação VAGAR", "motivo": "sem prova numérica única na frase: 3 candidatas"}
+  {"unidade": "C027", "numero": "2", "medida": "2 milhões de euros para «A Nossa Vez» na candidatura", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C027", "numero": "30", "medida": "cerca de 30 projetos", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"unidade": "C027", "numero": "1,3", "medida": "1 300 000 €, o orçamento da chamada «A Nossa Vez» lançada", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"unidade": "C028", "numero": "18", "medida": "18 agrupamentos de escolas", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"unidade": "C028", "numero": "400 000", "medida": "400 000 €, o orçamento da chamada «A Nossa Voz» lançada", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"unidade": "C028", "numero": "500 000", "medida": "500 000 €, a chamada «A Nossa Voz» na candidatura", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C033", "numero": "2", "medida": "2 000 000 €, a contribuição inicial do Estado, recebida em 2024", "motivo": "sem prova numérica única na frase: 3 candidatas"}
+  {"unidade": "C033", "numero": "1,5", "medida": "1 500 000 €, a Linha do Vagar", "motivo": "sem prova numérica única na frase: 2 candidatas"}
+  {"unidade": "C035", "numero": "3", "medida": "| «seven venues are funded under the PRR and due to be completed by August 2026» (sete espaços têm financiamento do plano de recuperação e estão previstos para ficar concluídos até agosto de 2026) | A equipa, na resposta que o painel regista, em junho de 2025; a mesma resposta diz que há espaços temporários se for preciso | A primeira obra do Rossio, uma das sete, teve o prazo prorrogado em editais de 3 de setembro e de 15 de outubro de 2026. Das outras seis, as contas dão o ponto de situação no fim de 2025, com duas «Sem desenvolvimento». | O calendário de agosto de 2026 não se confirmou na primeira obra do Rossio. |", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C035", "numero": "15", "medida": "| «seven venues are funded under the PRR and due to be completed by August 2026» (sete espaços têm financiamento do plano de recuperação e estão previstos para ficar concluídos até agosto de 2026) | A equipa, na resposta que o painel regista, em junho de 2025; a mesma resposta diz que há espaços temporários se for preciso | A primeira obra do Rossio, uma das sete, teve o prazo prorrogado em editais de 3 de setembro e de 15 de outubro de 2026. Das outras seis, as contas dão o ponto de situação no fim de 2025, com duas «Sem desenvolvimento». | O calendário de agosto de 2026 não se confirmou na primeira obra do Rossio. |", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C036", "numero": "27", "medida": "27 de novembro de 2025", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C036", "numero": "25", "medida": "25 de novembro de 2025", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C044", "numero": "6", "medida": "6 de fevereiro de 2027, a abertura", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C046", "numero": "23", "medida": "23 de outubro de 2026, a data da nota da Câmara", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C050", "numero": "6", "medida": "6 de fevereiro de 2027, a abertura", "motivo": "data ainda sem marcador integral com fonte"}
+  {"unidade": "C054", "numero": "34", "medida": "As contas distinguem a receita reconhecida do dinheiro recebido; na comparação com os 34 milhões usam-se os recebimentos que elas declaram.", "motivo": "sem prova numérica única na frase: 0 candidatas"}
+  {"unidade": "C054", "numero": "3", "medida": "3 de novembro de 2026, a data da segunda leitura", "motivo": "a ligação LN deste número já parou; não se troca o excerto"}
+  {"id": "LN047", "unidade": "B097.R8", "numero": "16.320.000", "motivo": "número repetido sem posição única na prova LN"}
+Pendências do gabarito, agrupadas por unidade e língua; o JSON conserva as posições e os candidatos recusados:
+  B019.2 en: 404, 2027
+  B019.2 pt: 404, 2027
+  B023.R1 en: 2021, 11, 23, 2026, 09, 15
+  B023.R1 pt: 2021, 11, 23, 2026, 09, 15
+  B023.R10 en: 2023, 09, 12, 4
+  B023.R10 pt: 2023, 09, 12, 4
+  B023.R11 en: 2023, 12, 14, 203, 2023, 86
+  B023.R11 pt: 2023, 12, 14, 203, 2023, 86
+  B023.R12 en: 2023, 12, 26, 124, 2023, 68
+  B023.R12 pt: 12, 26, 68
+  B023.R13 en: 2023, 12, 28, 203, 2023, 86
+  B023.R13 pt: 2023, 12, 28, 203, 2023, 86
+  B023.R14 en: 2027, 6
+  B023.R14 pt: 2027, 6
+  B023.R15 en: 03, 27, 1
+  B023.R15 pt: 03, 27, 1
+  B023.R16 en: 2025, 06, 18, 4
+  B023.R16 pt: 2025, 06, 18, 4
+  B023.R17 en: 2026, 03, 2026, 2026
+  B023.R17 pt: 2026, 03, 2026, 2026
+  B023.R18 en: 09, 15, 13
+  B023.R18 pt: 09, 15, 13
+  B023.R2 en: 2022, 03, 08, 2022, 03, 11, 2026, 09, 15
+  B023.R2 pt: 2022, 03, 08, 2022, 03, 11, 2026, 09, 15
+  B023.R3 en: 1
+  B023.R3 pt: 1
+  B023.R4 en: 2022, 10, 21, 2026, 09, 15
+  B023.R4 pt: 2022, 10, 21, 2026, 09, 15
+  B023.R5 en: 2022, 12, 05, 2022, 12, 07, 2026, 09, 15
+  B023.R5 pt: 2022, 12, 05, 2022, 12, 07, 2026, 09, 15
+  B023.R6 en: 2022, 12, 07, 2026, 09, 15
+  B023.R6 pt: 2022, 12, 07, 2026, 09, 15
+  B023.R7 en: 1
+  B023.R7 pt: 1
+  B023.R8 en: 4
+  B023.R8 pt: 4
+  B023.R9 en: 06, 21, 86
+  B023.R9 pt: 06, 21, 86
+  B031.R1 en: 43, 8, 2027
+  B031.R1 pt: 43, 8, 2027
+  B031.R2 en: 43, 10
+  B031.R2 pt: 43, 10
+  B032.2 en: 2025
+  B032.2 pt: 2025
+  B034.R1 en: 43, 8, 2027
+  B034.R1 pt: 43, 8, 2027
+  B038.R1 en: 43, 8, 2027
+  B038.R1 pt: 43, 8, 2027
+  B039.1 en: 2026, 2025, 2026, 2026
+  B039.1 pt: 2026, 2025, 2026
+  B039.2 en: 2026
+  B039.2 pt: 2026
+  B041.R1 en: 43, 8, 2027
+  B041.R1 pt: 43, 8, 2027
+  B044.R1 en: 43, 2027, 24, 8
+  B044.R1 pt: 43, 2027, 24, 8
+  B045.1 en: 2030, 2026
+  B045.1 pt: 2030, 2026
+  B047.R1 en: 108, 55, 8, 2027
+  B047.R1 pt: 108, 55, 8, 2027
+  B047.R2 en: 108, 55
+  B047.R2 pt: 108, 55
+  B047.R3 en: 108, 55
+  B047.R3 pt: 108, 55
+  B047.R4 en: 108, 55, 8, 2027
+  B047.R4 pt: 108, 55, 8, 2027
+  B047.R5 en: 108, 55, 8, 2027
+  B047.R5 pt: 108, 55, 8, 2027
+  B047.R6 en: 108, 55, 8, 2027
+  B047.R6 pt: 108, 55, 8, 2027
+  B047.R7 en: 108, 55, 8, 2027
+  B047.R7 pt: 108, 55, 8, 2027
+  B049.2 en: 100, 100
+  B050.1 en: 15, 2026, 2026, 15
+  B050.1 pt: 15, 2026, 2026, 15
+  B050.3 en: 25, 2026
+  B050.3 pt: 25, 2026
+  B053.R1 en: 2023, 47, 8, 2027
+  B053.R1 pt: 2023, 47, 8, 2027
+  B057.R2 en: 85, 89, 108, 109, 43, 45, 55, 85, 10
+  B057.R2 pt: 85, 89, 108, 109, 43, 45, 55, 85, 85, 10
+  B057.R3 en: 10
+  B057.R3 pt: 10
+  B058.1 en: 2026, 2028, 2027
+  B058.1 pt: 2026, 2028, 2027
+  B058.3 en: 2025
+  B058.3 pt: 2025
+  B060.R1 en: 43
+  B060.R1 pt: 43
+  B061.1 en: 2026, 2026, 2026
+  B061.1 pt: 2026, 2026
+  B061.2 en: 2026
+  B061.2 pt: 2026
+  B068.R1 en: 45 784 603,10, 43
+  B068.R1 pt: 45 784 603,10, 43
+  B068.R2 en: 43
+  B068.R2 pt: 43
+  B068.R3 en: 43
+  B068.R3 pt: 43
+  B068.R4 en: 43
+  B068.R4 pt: 43
+  B068.R5 en: 43
+  B068.R5 pt: 43
+  B068.R6 en: 43
+  B068.R6 pt: 43
+  B068.R7 en: 43
+  B068.R7 pt: 43
+  B070.R1 en: 87
+  B070.R1 pt: 87
+  B070.R2 en: 87
+  B070.R2 pt: 87
+  B070.R3 en: 87
+  B070.R3 pt: 87
+  B070.R4 en: 87
+  B070.R4 pt: 87
+  B070.R5 en: 87
+  B070.R5 pt: 87
+  B072.R1 en: 88
+  B072.R1 pt: 88
+  B072.R2 en: 88
+  B072.R2 pt: 88
+  B072.R3 en: 88
+  B072.R3 pt: 88
+  B072.R4 en: 88
+  B072.R4 pt: 88
+  B072.R5 en: 88
+  B072.R5 pt: 88
+  B072.R6 en: 88
+  B072.R6 pt: 88
+  B074.R1 en: 108
+  B074.R1 pt: 108
+  B074.R2 en: 108
+  B074.R2 pt: 108
+  B074.R3 en: 108
+  B074.R3 pt: 108
+  B074.R4 en: 108
+  B074.R4 pt: 108
+  B074.R5 en: 108
+  B074.R5 pt: 108
+  B074.R6 en: 108
+  B074.R6 pt: 108
+  B074.R7 en: 108
+  B074.R7 pt: 108
+  B074.R8 en: 108
+  B074.R8 pt: 108
+  B074.R9 en: 39 336 001,42, 108
+  B074.R9 pt: 39 336 001,42, 108
+  B076.R1 en: 42
+  B076.R1 pt: 42
+  B076.R2 en: 42
+  B076.R2 pt: 42
+  B076.R3 en: 42
+  B076.R3 pt: 42
+  B078 en: 203, 2023
+  B082 en: 124, 2023
+  B085.2 en: 2025
+  B085.2 pt: 2025
+  B089.R10 en: 45
+  B089.R10 pt: 45
+  B089.R11 en: 45
+  B089.R11 pt: 45
+  B089.R12 en: 45
+  B089.R12 pt: 45
+  B089.R13 en: 45
+  B089.R13 pt: 45
+  B089.R14 en: 45
+  B089.R14 pt: 45
+  B089.R2 en: 45
+  B089.R2 pt: 45
+  B089.R3 en: 45
+  B089.R3 pt: 45
+  B089.R4 en: 45
+  B089.R4 pt: 45
+  B089.R5 en: 45
+  B089.R5 pt: 45
+  B089.R6 en: 45
+  B089.R6 pt: 45
+  B089.R7 en: 2030, 45
+  B089.R7 pt: 2030, 45
+  B089.R8 en: 2030, 45
+  B089.R8 pt: 2030, 45
+  B089.R9 en: 45
+  B089.R9 pt: 45
+  B091.R1 en: 46
+  B091.R1 pt: 46
+  B091.R2 en: 46
+  B091.R2 pt: 46
+  B091.R3 en: 46
+  B091.R3 pt: 46
+  B091.R4 en: 46
+  B091.R4 pt: 46
+  B091.R5 en: 46
+  B091.R5 pt: 46
+  B091.R6 en: 46
+  B091.R6 pt: 46
+  B091.R7 en: 46
+  B091.R7 pt: 46
+  B093.2 en: 2030, 2030, 2030, 2030
+  B093.2 pt: 2030, 2030
+  B095.R1 en: 47
+  B095.R1 pt: 47
+  B095.R2 en: 47
+  B095.R2 pt: 47
+  B095.R3 en: 47
+  B095.R3 pt: 47
+  B095.R4 en: 48
+  B095.R4 pt: 48
+  B095.R5 en: 48
+  B095.R5 pt: 48
+  B095.R6 en: 48
+  B095.R6 pt: 48
+  B095.R7 en: 48
+  B095.R7 pt: 48
+  B095.R8 en: 48
+  B095.R8 pt: 48
+  B095.R9 en: 48
+  B095.R9 pt: 48
+  B096.1 en: 2026, 2025
+  B096.1 pt: 2026, 2025
+  B097.R0 en: 31, 2025, 2025, 9
+  B097.R0 pt: 31, 2025, 2025, 9
+  B097.R1 en: 6
+  B097.R1 pt: 6
+  B097.R2 en: 6
+  B097.R2 pt: 6
+  B097.R3 en: 7
+  B097.R3 pt: 7
+  B097.R4 en: 7
+  B097.R4 pt: 7
+  B097.R5 en: 7
+  B097.R5 pt: 7
+  B097.R6 en: 7
+  B097.R6 pt: 7
+  B097.R7 en: 7
+  B097.R7 pt: 7
+  B097.R8 en: 7
+  B097.R8 pt: 7
+  B100.R3 pt: 2026
+  B103.R1 en: 66
+  B103.R1 pt: 66
+  B103.R2 en: 67
+  B103.R2 pt: 67
+  B103.R3 en: 67
+  B103.R3 pt: 67
+  B103.R4 en: 67
+  B103.R4 pt: 67
+  B103.R5 en: 66
+  B103.R5 pt: 66
+  B103.R6 en: 66
+  B103.R6 pt: 66
+  B103.R7 en: 66
+  B103.R7 pt: 66
+  B103.R8 en: 66
+  B103.R8 pt: 66
+  B104.3 en: 71
+  B104.3 pt: 71
+  B107.R1 en: 2024, 2024, 156
+  B107.R1 pt: 2024, 2024, 156
+  B107.R2 en: 2024, 156
+  B107.R2 pt: 2024, 156
+  B107.R3 en: 2024, 2024, 156
+  B107.R3 pt: 2024, 2024, 156
+  B107.R4 en: 2025, 2025, 145
+  B107.R4 pt: 2025, 2025, 145
+  B107.R5 en: 2025, 145
+  B107.R5 pt: 2025, 145
+  B107.R6 en: 2026, 2026
+  B107.R6 pt: 2026, 2026
+  B108.1 en: 2026
+  B108.1 pt: 2026
+  B108.4 en: 2026, 2027, 2025, 2010, 2025
+  B108.4 pt: 2026, 2025, 2027, 2010, 2025
+  B109 en: 2030
+  B109 pt: 2030
+  B110.R1 en: 27
+  B110.R1 pt: 27
+  B110.R2 en: 27
+  B110.R2 pt: 27
+  B110.R3 en: 27
+  B110.R3 pt: 27
+  B110.R4 en: 27
+  B110.R4 pt: 27
+  B115.R1 en: 2027, 5, 5, 8, 2027
+  B115.R1 pt: 2027, 5, 5, 8, 2027
+  B115.R2 en: 43
+  B115.R2 pt: 43
+  B115.R3 en: 2026, 15.000.000,00, 15.000.000,00, 5.000.000,00, 2026, 5.000.000, 2026
+  B115.R3 pt: 2026, 15.000.000,00, 15.000.000,00, 5.000.000,00, 2026, 5.000.000, 2026
+  B115.R4 en: 2025, 46 259 953, 46 459 953, 200 000, 2030, 2025, 61
+  B115.R4 pt: 2025, 46 259 953, 46 459 953, 200 000, 2030, 2025, 61
+  B116.1 en: 2025, 5, 5
+  B116.1 pt: 2025, 5
+  B116.1a en: 2026, 49 519 953,10
+  B116.1a pt: 2026, 49 519 953,10
+  B116.2 en: 45 784 603,10
+  B116.2 pt: 45 784 603,10
+  B120.R1 en: 2025, 31, 13
+  B120.R1 pt: 2025, 31, 13
+  B120.R10 en: 2025, 2023
+  B120.R10 pt: 2025, 2023
+  B120.R12 en: 2026, 14, 2026, 3, 2026
+  B120.R12 pt: 2026, 14, 2026, 3, 2026
+  B120.R5 en: 2010
+  B120.R5 pt: 2010
+  B120.R8 en: 09, 15
+  B120.R8 pt: 09, 15
+  B120.R9 en: 2025
+  B120.R9 pt: 2025
+  B136.R10 en: 203, 2023
+  B136.R34 en: 2026
+  B136.R34 pt: 2026
+  B136.R55 en: 22, 2026
+  B136.R55 pt: 22, 2026
+  B136.R59 en: 25, 2026
+  B136.R59 pt: 25, 2026
+  C001 en: 2027, 2025
+  C001 pt: 2027, 2025
+  C002 en: 2027
+  C002 pt: 2027
+  C003 en: 2027
+  C003 pt: 2027
+  C004 en: 2027, 2023, 2025, 2025, 2026, 23, 2026, 6, 2027, 2027
+  C004 pt: 2027, 2023, 2025, 2025, 2026, 23, 2026, 6, 2027, 2027
+  C005 en: 2025
+  C005 pt: 2025
+  C007 en: 1, 2025, 2024, 2025, 1,5, 2025, 34, 9,7, 2026, 2027, 2026, 80 000, 2026, 2030
+  C007 pt: 1, 2025, 2024, 2025, 34, 1,5, 2025, 9,7, 2026, 2027, 2026, 80 000, 2030, 2026
+  C008 en: 2, 2025, 2025, 2026, 2, 2025, 2026, 2024, 2025, 2026, 2026
+  C008 pt: 2, 2025, 2025, 2026, 2, 2025, 2026, 2025, 2024, 2026, 2026
+  C009 en: 3, 23, 2026, 2025, 2026, 2025, 12, 3, 2025
+  C009 pt: 3, 23, 2026, 2025, 2026, 2025, 12, 3, 2025
+  C010 en: 4, 2025, 2025, 2025, 2025, 2026, 2026
+  C010 pt: 4, 2025, 2025, 2025, 2025, 2026, 2026
+  C011 en: 5, 49,5, 2025, 1,75
+  C011 pt: 5, 49,5, 2025, 1,75
+  C014 en: 2024, 2025, 2
+  C014 pt: 2024, 2025, 2
+  C015 en: 3,92, 4, 1,5
+  C015 pt: 3,92, 4, 1,5
+  C016 en: 2025
+  C016 pt: 2025
+  C017 en: 2025, 2027
+  C017 pt: 2025, 2027
+  C020 en: 2024
+  C020 pt: 2024
+  C021 en: 2025
+  C021 pt: 2025
+  C022 en: 2026, 1,75
+  C022 pt: 2026, 1,75
+  C024 en: 2025
+  C024 pt: 2025
+  C026 en: 2025
+  C026 pt: 2025
+  C027 en: 2, 30, 1,3
+  C027 pt: 2, 30, 1,3
+  C028 en: 18, 400 000, 500 000
+  C028 pt: 18, 400 000, 500 000
+  C029 en: 2027, 2027, 2026
+  C029 pt: 2027, 2027, 2026
+  C033 en: 34, 2027, 2025, 2, 2024, 2025, 1,5, 2025
+  C033 pt: 2027, 2025, 2, 2024, 2025, 1,5, 2025
+  C034 en: 2025, 2025, 2025, 2026, 2026
+  C034 pt: 2025, 2025, 2025, 2025, 2026, 2026
+  C035 en: 2026, 2025, 3, 15, 2026, 2025, 2026
+  C035 pt: 2026, 2026, 2025, 3, 15, 2026, 2025, 2026
+  C036 en: 27, 25, 2025
+  C036 pt: 27, 25, 2025
+  C037 en: 2026, 2025
+  C037 pt: 2026, 2025
+  C039 en: 2024, 2025
+  C039 pt: 2024, 2025
+  C040 en: 2025, 2023
+  C040 pt: 2025, 2023
+  C041 en: 2024, 2025
+  C041 pt: 2024, 2025
+  C042 en: 2026
+  C042 pt: 2026
+  C044 en: 1, 2027, 6, 2027, 2026, 2027
+  C044 pt: 1, 2027, 6, 2027, 2026, 2027
+  C045 en: 2, 2027, 2026
+  C045 pt: 2, 2027, 2026
+  C046 en: 3, 2026, 23, 2026
+  C046 pt: 3, 2026, 23, 2026
+  C048 en: 2026
+  C048 pt: 2026
+  C049 en: 2026
+  C049 pt: 2026
+  C050 en: 6, 2027
+  C050 pt: 6, 2027
+  C051 en: 2027
+  C051 pt: 2027
+  C052 en: 2026
+  C052 pt: 2026
+  C054 en: 34, 2027, 2026
+  C054 pt: 34, 2027, 2026
+  N01.1 en: 2026, 2025
+  N01.1 pt: 2026, 2025
+  N01.2 en: 2025, 29, 34, 29, 34
+  N01.2 pt: 2025
+  N01.R0 en: 2026, 2025, 2025, 30, 2026
+  N01.R0 pt: 2026, 2025, 2025, 30, 2026
+  N01.R1 en: 4.000.000,00, 3.920.000, 2025, 2026, 46, 2025, 57
+  N01.R1 pt: 4.000.000,00, 3.920.000, 2025, 2026, 46, 2025, 57
+  N01.R2 en: 15.000.000,00, 2024, 2025, 2026, 46, 2025, 57, 61, 72
+  N01.R2 pt: 15.000.000,00, 2024, 2025, 2026, 46, 2025, 57, 61, 72
+  N01.R3 en: 2030, 15.000.000,00, 2026, 2026, 46, 2025, 57, 67, 2030, 30, 2026
+  N01.R3 pt: 2030, 15.000.000,00, 2026, 2026, 46, 2025, 57, 67, 2030, 30, 2026
+  N02.1 en: 2024, 2025, 2026
+  N02.1 pt: 2024, 2025, 2026
+  N02.R1 en: 518 203,10, 2022, 1 500 000,00, 2023, 2024, 2 000 000,00, 2025, 2 002 750,00, 2026, 2 000 000,00, 2027, 999 000,00, 2028, 44
+  N02.R1 pt: 518 203,10, 2022, 1 500 000,00, 2023, 2024, 2 000 000,00, 2025, 2 002 750,00, 2026, 2 000 000,00, 2027, 999 000,00, 2028, 44
+  N02.R2 en: 2024, 2027, 250.000,00, 2024, 2.500.000,00, 2025, 156
+  N02.R2 pt: 2024, 2027, 250.000,00, 2024, 2.500.000,00, 2025, 156
+  N02.R3 en: 2025, 2025, 2.000.000,00, 2026, 145
+  N02.R3 pt: 2025, 2025, 2.000.000,00, 2026, 145
+  N02.R4 en: 2026, 2026, 110, 119
+  N02.R4 pt: 2026, 2026, 110, 119
+  N03.R1 en: 56, 17,75, 32, 11
+  N03.R1 pt: 56, 17,75, 32, 11
+  N03.R2 en: 48, 9,7, 17
+  N03.R2 pt: 48, 9,7, 17
+  N03.R3 en: 44,65, 4, 31
+  N03.R3 pt: 44,65, 4, 31
+  N03.R4 en: 45,7, 10,5, 23, 24
+  N03.R4 pt: 45,7, 10,5, 23, 24
+  N04.1 en: 2025, 26
+  N04.1 pt: 2025, 26
+  N04.2 en: 2025
+  N04.2 pt: 2025
+  N05.1 en: 25
+  N05.1 pt: 25
+  N05.2 en: 6
+  N05.2 pt: 6
+  N07.1 en: 2025, 13, 15
+  N07.1 pt: 2025, 13, 15
+  N07.2 en: 2025
+  N07.2 pt: 2025
+  N08.1 en: 2025
+  N08.1 pt: 2025
+  N08.2 en: 2025
+  N08.2 pt: 2025
+  N08.R0 en: 2025
+  N08.R0 pt: 2025
+  N08.R1 en: 500 000, 400.000, 2025, 10, 2025, 36
+  N08.R1 pt: 500 000, 400.000, 2025, 10, 2025, 36
+  N08.R2 en: 500 000, 2025, 2026, 10
+  N08.R2 pt: 500 000, 2025, 2026, 10
+  N08.R3 en: 2 000 000, 30, 1.300.000, 10, 2025, 10, 2025, 36
+  N08.R3 pt: 2 000 000, 30, 1.300.000, 10, 2025, 10, 2025, 36
+  N08.R4 en: 6 000 000, 2.000.000, 13, 2025, 10, 2025, 37
+  N08.R4 pt: 6 000 000, 2.000.000, 13, 2025, 10, 2025, 37
+  N08.R5 en: 1.000.000, 2026, 2025, 5, 37
+  N08.R5 pt: 1.000.000, 2026, 2025, 5, 37
+  N09.1 en: 6
+  N09.1 pt: 6
+  N10.R1 en: 2030, 1,75, 1,75, 2025, 61, 58
+  N10.R1 pt: 2030, 1,75, 2025, 61, 58
+  N12.R1 en: 2025, 21
+  N12.R1 pt: 2025, 21
+  N12.R2 en: 2025, 10, 09, 2030, 2025, 58
+  N12.R2 pt: 2025, 10, 09, 2030, 2025, 58
+  N12.R3 en: 2025, 11, 25, 27, 27, 2025, 17
+  N12.R3 pt: 2025, 11, 25, 27, 2025, 17
+  N12.R4 en: 2026, 02, 06, 2026, 2026, 8
+  N12.R4 pt: 2026, 02, 06, 2026, 2026, 8
+  N12.R5 en: 2025, 2025, 73
+  N12.R5 pt: 2025, 2025, 73
+  N12.R6 en: 18, 19
+  N12.R6 pt: 18, 19
+  N12.R7 en: 2027, 02, 06, 2027, 2026, 2026, 8
+  N12.R7 pt: 2027, 02, 06, 2027, 2026, 2026, 8
+  N13.1 en: 2025, 2025, 27
+  N13.1 pt: 2025, 2025, 27
+  N15.1 en: 14
+  N15.1 pt: 14
+  N16.1 en: 5
+  N16.1 pt: 5
+  N16.2 en: 2025, 6
+  N16.2 pt: 2025, 6
+  N16.3 en: 2025, 4
+  N16.3 pt: 2025, 4
+  N19.1 en: 48, 17 442 076,66, 36 000
+  N19.1 pt: 48, 17 442 076,66, 36 000
+  N20.1 en: 51, 2030, 60 000,00, 20 068 589,09, 60 000, 20 008 589,09
+  N20.1 pt: 51, 2030, 60 000,00, 20 068 589,09, 60 000, 20 008 589,09
+  N21.1 en: 44 587 603,10, 43 000 000,00, 1 587 603,10
+  N21.1 pt: 44 587 603,10, 43 000 000,00, 1 587 603,10
+  N21.2 en: 1 290 000,00, 1 197 000,00
+  N21.2 pt: 1 290 000,00, 1 197 000,00
+
+Prova executada e códigos
+40 execuções por curto.sh, das quais 12 corridas de suites dirigidas, três reproduções completas do candidato e uma corrida de core.gate. Zero portões do sítio e zero capturas. As reproduções incluem chamadas internas aos conferidores; não são contadas como novas corridas do portão. Os registos e códigos individuais ficam em evb-1-conferencias/.
+  evb-tipos.log: código 0, 5 s, 40 linhas
+  evb-auditoria.log: código 0, 2 s, 3 linhas
+  evb-auditoria-2.log: código 0, 18 s, 3 linhas
+  evb-preparar.log: código 1, 1 s, 10 linhas
+  evb-preparar-2.log: código 0, 14 s, 1 linhas
+  evb-preparar-3.log: código 0, 10 s, 1 linhas
+  evb-derivacoes.log: código 0, 0 s, 164 linhas
+  evb-gerar.log: código 1, 0 s, 16 linhas
+  evb-gerar-2.log: código 0, 0 s, 2 linhas
+  evb-texto-suite.log: código 0, 1 s, 21 linhas
+  evb-gerar-3.log: código 0, 0 s, 2 linhas
+  evb-texto-candidato.log: código 0, 0 s, 3 linhas
+  evb-citacoes-suite.log: código 0, 1 s, 28 linhas
+  evb-citacoes.log: código 0, 15 s, 1 linhas
+  evb-citacoes-2.log: código 0, 14 s, 1 linhas
+  evb-documentais-suite.log: código 0, 28 s, 7 linhas
+  evb-titulos.log: código 0, 1 s, 1 linhas
+  evb-datas.log: código 0, 20 s, 1 linhas
+  evb-gerar-datas.log: código 0, 1 s, 2 linhas
+  evb-datas-2.log: código 0, 19 s, 1 linhas
+  evb-titulos-2.log: código 0, 2 s, 1 linhas
+  evb-gerar-datas-2.log: código 0, 3 s, 2 linhas
+  evb-datas-suite-2.log: código 0, 1 s, 24 linhas
+  evb-adagas-suite.log: código 0, 1 s, 29 linhas
+  evb-adagas.log: código 0, 0 s, 2 linhas
+  evb-assercoes.log: código 0, 1 s, 3 linhas
+  evb-assercoes-2.log: código 0, 1 s, 3 linhas
+  evb-complementar.log: código 1, 1 s, 8 linhas
+  evb-complementar-2.log: código 0, 5 s, 2 linhas
+  evb-posicoes-suite.log: código 0, 0 s, 11 linhas
+  evb-reproduzir.log: código 0, 67 s, 17 linhas
+  evb-colunas-suite.log: código 0, 5 s, 43 linhas
+  evb-colunas-suite-2.log: código 0, 4 s, 43 linhas
+  evb-citacoes-suite-2.log: código 0, 1 s, 31 linhas
+  evb-reproduzir-2.log: código 0, 78 s, 17 linhas
+  evb-citacoes-suite-3.log: código 0, 1 s, 32 linhas
+  evb-datas-suite-3.log: código 0, 1 s, 25 linhas
+  evb-reproduzir-3.log: código 0, 73 s, 17 linhas
+  evb-derivacoes-final.log: código 0, 0 s, 164 linhas
+  evb-1-gate.log: código 0, 963 s, 390 linhas
+Três tentativas de geração/preparação devolveram código 1 e foram corrigidas antes das reproduções finais. A primeira declaração de asserções ainda produziu casos undeclared, embora o guião agregador tivesse devolvido zero; foi corrigida e a segunda conferência eliminou undeclared. Os códigos de um guião que regista recusas não significam que essas provas passaram.
+core.gate: código 0; SHA256 do registo e770e84ea2833e404cd8898d801ddec8cfd0bdc8ad4c5a57d2d3b540a2cbd2a4. Correu uma única vez sobre o código comum e a cadeia ativa, com o candidato isolado. Não certifica a instalação do texto julgado no estudo 19.
+Últimas vinte linhas, copiadas de evb-1-gate.log:
+GATE  editions evora-mandates-md-html ok
+GATE  editions evora-mandates-en-pt ok
+GATE  editions evora-mandates-pt-html ok
+GATE  editions evora-pelouros-md-html ok
+GATE  editions evora-pelouros-en-pt ok
+GATE  editions evora-pelouros-pt-html ok
+GATE  editions evora-2027-pt-md-html ok
+GATE  editions evora-2027-en-md-html ok
+GATE  editions evora-2027-pt-en ok
+GATE  editions evora-contas-camara-pt-en ok
+GATE  editions evora-contas-camara-pt-md-html ok
+GATE  editions evora-contas-camara-en-md-html ok
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+
+Commits do motor
+73f3c23 EVB 1: alojar e conferir os documentos do estudo 19
+edae0a6 EVB 2: conferir excertos em PDF, HTML e XLSX alojados
+c25bc2b EVB 3: preparar linhas próprias e derivações com recusas documentadas
+49975de EVB 4: gerar os gabaritos e contratos de candidato incompleto
+30f82d8 EVB 5: conferir citações, datas e títulos nos corpos alojados
+3b266eb EVB 6: prender as adagas à identidade do PDF e à leitura na imagem
+3b04dbd EVB 7: declarar as asserções pendentes de revisão nas duas edições
+bd5d6f3 EVB 3-5: fixar posições, formas impressas e provas em colunas
+436d622 EVB 8: documentar a reprodução e a cadeia que não pode ser instalada
+e55af85 EVB 9: provar a integridade dos outros estudos e guardar o portão final
+Os hooks de commit comunicaram core.gate adiado pelo lançador; a prova geral é a corrida explícita acima. Não houve push. O relatório, as medidas e os registos ficam na pasta do mandato no sítio; não se inventou um trailer Claude-Session que este mandato não forneceu.
+
+Limitações da entrega
+Ficaram por fazer ligações numéricas de execução, além das recusas documentais que exigem decisão ou prova adicional. O candidato não pode ser aprovado apenas mudando o seu estado. Esta passagem não cumpre a instalação integral pedida. O texto recebido, os nomes e a forma numérica inglesa foram preservados. Não foram usadas sessões auxiliares.
+Desvio de leitura: numa consulta à fotografia de resumos, um JSON de uma só linha produziu saída excessiva e truncada. A consulta foi substituída por contagens e resumos programáticos. Nenhum livro ou registo de portão foi usado como despejo para diagnosticar o resultado.
+Chamadas de ferramentas até esta escrita: 130; repartição {'exec': 130}.
+tokens used: 15549090 (último contador observado; não inclui necessariamente a resposta final).

@@ -1,0 +1,3 @@
+pt ASSERTIONS: PASS — 38 quantifier hits, 0 checked, 31 review, 0 undeclared, 0 failed
+en ASSERTIONS: PASS — 20 quantifier hits, 0 checked, 18 review, 0 undeclared, 0 failed
+Atribuições pendentes: {'pt': {'valores_examinados': 522, 'avisos': 2, 'sem_atribuicao': 4}, 'en': {'valores_examinados': 518, 'avisos': 2, 'sem_atribuicao': 3}}

@@ -1,0 +1,24 @@
+test_data_declarada_diferente_da_fonte (__main__.DatasDeclaradasTest.test_data_declarada_diferente_da_fonte) ... ok
+test_data_em_html_e_xlsx (__main__.DatasDeclaradasTest.test_data_em_html_e_xlsx) ... ok
+test_data_gera_proveniencia_e_nao_vira_quantidade (__main__.DatasDeclaradasTest.test_data_gera_proveniencia_e_nao_vira_quantidade) ... ok
+test_data_impressa_diferente_da_declarada (__main__.DatasDeclaradasTest.test_data_impressa_diferente_da_declarada) ... ok
+test_dez_solto_nao_herda_isencao_da_data (__main__.DatasDeclaradasTest.test_dez_solto_nao_herda_isencao_da_data) ... ok
+test_dia_escrito_a_mao_junto_do_mes (__main__.DatasDeclaradasTest.test_dia_escrito_a_mao_junto_do_mes) ... ok
+test_documento_alojado_pagina_e_data_inteira (__main__.DatasDeclaradasTest.test_documento_alojado_pagina_e_data_inteira) ... ok
+test_fonte_fora_do_motor_e_registo_nao_seguido (__main__.DatasDeclaradasTest.test_fonte_fora_do_motor_e_registo_nao_seguido) ... ok
+test_forma_iso_gerada (__main__.DatasDeclaradasTest.test_forma_iso_gerada) ... ok
+test_forma_manual_e_marcador_desconhecido_recusam (__main__.DatasDeclaradasTest.test_forma_manual_e_marcador_desconhecido_recusam) ... ok
+test_forma_original_exige_data_da_fonte (__main__.DatasDeclaradasTest.test_forma_original_exige_data_da_fonte) ... ok
+test_formas_geradas_nas_duas_linguas (__main__.DatasDeclaradasTest.test_formas_geradas_nas_duas_linguas) ... ok
+test_intervalos_gerados_e_projecao_html (__main__.DatasDeclaradasTest.test_intervalos_gerados_e_projecao_html) ... ok
+test_iso_e_calendario_e_colagem (__main__.DatasDeclaradasTest.test_iso_e_calendario_e_colagem) ... ok
+test_registo_nao_tem_chave (__main__.DatasDeclaradasTest.test_registo_nao_tem_chave) ... ok
+test_registo_nao_tem_valor_na_chave (__main__.DatasDeclaradasTest.test_registo_nao_tem_valor_na_chave) ... ok
+test_resumo_nao_bate (__main__.DatasDeclaradasTest.test_resumo_nao_bate) ... ok
+test_timestamp_com_microssegundos (__main__.DatasDeclaradasTest.test_timestamp_com_microssegundos) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.500s
+
+OK
+DATAS DECLARADAS: PASS, 18 testes

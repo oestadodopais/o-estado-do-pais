@@ -1,0 +1,21 @@
+test_andaime_de_listas_e_quadros (__main__.TextoJulgadoTest.test_andaime_de_listas_e_quadros) ... ok
+test_candidato_incompleto_nunca_publica (__main__.TextoJulgadoTest.test_candidato_incompleto_nunca_publica) ... ok
+test_citacao_sem_excerto_e_palavra_trocada (__main__.TextoJulgadoTest.test_citacao_sem_excerto_e_palavra_trocada) ... ok
+test_descoberta_nao_salta_gabarito_sem_contrato (__main__.TextoJulgadoTest.test_descoberta_nao_salta_gabarito_sem_contrato) ... ok
+test_duas_edicoes (__main__.TextoJulgadoTest.test_duas_edicoes) ... ok
+test_frase_a_mais (__main__.TextoJulgadoTest.test_frase_a_mais) ... ok
+test_letra_trocada (__main__.TextoJulgadoTest.test_letra_trocada) ... ok
+test_manifesto_com_uma_so_lingua_recusa (__main__.TextoJulgadoTest.test_manifesto_com_uma_so_lingua_recusa) ... ok
+test_normalizacoes_fechadas (__main__.TextoJulgadoTest.test_normalizacoes_fechadas) ... ok
+test_outra_linha_com_mesmo_valor (__main__.TextoJulgadoTest.test_outra_linha_com_mesmo_valor) ... ok
+test_referencia_alterada_recusa (__main__.TextoJulgadoTest.test_referencia_alterada_recusa) ... ok
+test_separadora_a_mais_ou_fora_de_posicao_recusa (__main__.TextoJulgadoTest.test_separadora_a_mais_ou_fora_de_posicao_recusa) ... ok
+test_unidade_fora_de_ordem (__main__.TextoJulgadoTest.test_unidade_fora_de_ordem) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.146s
+
+OK
+TEXTO JULGADO pt: PASS, 2 unidades
+TEXTO JULGADO en: PASS, 2 unidades
+TEXTO JULGADO: PASS, 13 testes

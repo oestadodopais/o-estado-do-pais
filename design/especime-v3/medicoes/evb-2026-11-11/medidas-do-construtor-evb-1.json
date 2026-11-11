@@ -1,0 +1,759 @@
+{
+  "estado": "incompleto; cadeia ativa preservada",
+  "sessao": {
+    "inicio": "2026-11-11T16:51:42.450Z",
+    "chamadas_por_ferramenta": {
+      "exec": 130
+    },
+    "chamadas": 130,
+    "tokens_observados": {
+      "input_tokens": 15407796,
+      "cached_input_tokens": 15210240,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 141294,
+      "reasoning_output_tokens": 70527,
+      "total_tokens": 15549090
+    }
+  },
+  "fontes": {
+    "documentos": 40,
+    "tipos": {
+      "pdf": 24,
+      "html": 14,
+      "xlsx": 1,
+      "json": 1
+    },
+    "novos_documentos": 32,
+    "novos_bytes": 161391766,
+    "maior_documento": "content/19 Évora 2027 Capital Europeia da Cultura/source/15-dr-1s-247-2023-12-26.pdf",
+    "maior_bytes": 44575296
+  },
+  "texto": {
+    "pt": {
+      "unidades": 465,
+      "quadros": 33,
+      "texto_identico": true,
+      "nota": "Projeção editorial, não composição aprovada: repõe também os marcadores pendentes."
+    },
+    "en": {
+      "unidades": 465,
+      "quadros": 33,
+      "texto_identico": true,
+      "nota": "Projeção editorial, não composição aprovada: repõe também os marcadores pendentes."
+    }
+  },
+  "cadeia": {
+    "estado": "candidato_incompleto",
+    "edicao_ativa_substituida": false,
+    "razoes": [
+      "Há linhas e citações recusadas no documento alojado.",
+      "Há ligações numéricas, títulos e atribuições por concluir."
+    ],
+    "linhas_ativas": 161,
+    "linhas_primarias_preparadas": 42,
+    "derivacoes_preparadas": 33,
+    "formas_impressas_derivadas": 7,
+    "ligacoes_LN": 47,
+    "linhas_LN_paradas": 33,
+    "gabaritos": {
+      "pt": {
+        "ligacoes": 532,
+        "pendencias": 641
+      },
+      "en": {
+        "ligacoes": 518,
+        "pendencias": 660
+      }
+    },
+    "produtos_ativos_preservados": [
+      "livro",
+      "textos",
+      "HTML",
+      "registos",
+      "manifesto",
+      "cortes",
+      "core/gate_baselines.json"
+    ],
+    "contagens_ativas_alteradas": [],
+    "motivo_contagens": "O candidato não substituiu a cadeia ativa; alterar contagens daria uma cobertura que ainda não existe.",
+    "proximo_passo": "Resolver os casos documentais e as ligações pendentes, conferir ambos os contratos e só depois regenerar a cadeia ativa."
+  },
+  "linhas": {
+    "primarias_preparadas": 42,
+    "derivacoes_preparadas": 33,
+    "formas_impressas": 7,
+    "ligacoes_LN": 47,
+    "recusas_LN": 33,
+    "por_documento": [
+      {
+        "documento": "01-bidbook-selecao-PT.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
+        "linhas": 1,
+        "ids": [
+          "evb-ln010"
+        ]
+      },
+      {
+        "documento": "02-bidbook-preselecao-PT.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "0a24c92dbe1dd5fdcb2710cb3fd0db7a4bc7fa356db4b48bbf2f82825cc85302",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "10-ce-node2896.html.txt",
+        "tipo": "html",
+        "sha256": "44db6cf4cfbc4dc224a150b9d75d05cc5f3ea7f55ae86a82ddf7e509f60968b9",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "14-dre-dl124-2023.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "c9d6cd18ef8068396ed52277a0787d4908b55650667f70027203346eca27cb37",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "15-dr-1s-247-2023-12-26.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "393f77271ba8cf2b9a938347e0a5fc9239f3f08ea679350f9d78cef2ecf1ff85",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "15.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "dbfa319ed480f174735add6e1313e4ad8292e10501f6e76d4b4064495d0808e9",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "16-dre-dl47-2025.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "8ef0f9736105ef01af95fbec0c2ab69deb50d7c6864cf54455aa1cbe75a06c35",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "17-dre-rcm-203-2023.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "76cd523ae75cf21554444d7b081a1d5e8cb1e7c32dd70edccee52291d4978283",
+        "linhas": 2,
+        "ids": [
+          "evb-ln007-fonte",
+          "evb-ln008-parcela-1"
+        ]
+      },
+      {
+        "documento": "18-gepac-regras-concurso-2027.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "40f0dc113017139e3e9a334445bbc0226965786fd71d254aabc545e79084b5d2",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "20-ce-relatorio-preselecao-2027-PT.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "6232f5f64f62077c88e75137bd828bd7672a35a8d6dfd1b78b5102f627053113",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "21-ce-relatorio-selecao-2027-PT.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
+        "linhas": 1,
+        "ids": [
+          "evb-cab-95-1"
+        ]
+      },
+      {
+        "documento": "22-ce-monitorizacao-1-2023-09.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "81529d2d0b2f8c60611c2632ff6dbea7f083d43498762a729cd1c449eecacaaf",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "22.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "b7f217d1204cbf5aef775b938f1fcf3179dd2ea5fe3098f2dbae782c81a5079e",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "23.html.txt",
+        "tipo": "html",
+        "sha256": "15cec74b414be624c82bffa8fcc14f95a414e9caa6b4e512d94a4dc090ea94b8",
+        "linhas": 1,
+        "ids": [
+          "evb-ln049"
+        ]
+      },
+      {
+        "documento": "27-ce-monitorizacao-2-2025-07.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "861431b3b5e935f28bf6a3bc60b47307bdbeac571292d05f00defc5b1cd212e0",
+        "linhas": 2,
+        "ids": [
+          "evb-ln012",
+          "evb-ln051"
+        ]
+      },
+      {
+        "documento": "28-ce-doc-terceira-monitorizacao.html.txt",
+        "tipo": "html",
+        "sha256": "51a42d91294f9cde01f22b7182c9ac9769c252d22548cdd271fbe063a62fda53",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "29.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "77f3be83060e2d0bef4a80a3f9032becd8e70de7c64b7aa47562605f198b36e9",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "31-e27-inicio.html.txt",
+        "tipo": "html",
+        "sha256": "61f62fd06276cdb812bd0f1dde931455d91811c1771a36e02d09408cb6448f11",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "32-e27-bid-book.html.txt",
+        "tipo": "html",
+        "sha256": "17763b2c9ae5df0289c65f1304ac65dfc011667932bdc0546e0b811031083ec0",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "32-e27-programacao.html.txt",
+        "tipo": "html",
+        "sha256": "47fec0dc9719f0595612c37b6c26dff2ba485795a71e7cd8055d1fea45cb7a00",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "32-e27-quem-somos.html.txt",
+        "tipo": "html",
+        "sha256": "b324dfd0c349751a2e75142db0731e815751fd191dddc30dc26f0f6a6f8ca632",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "33-e27-noticias.html.txt",
+        "tipo": "html",
+        "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "41-e27-plano-atividades-orcamento-2026.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "b64f3262d8c4c9a3d87017230c19e16651276499ef59dcf33aab398d8cc6324b",
+        "linhas": 3,
+        "ids": [
+          "evb-ln073",
+          "evb-cab-81-1",
+          "evb-cab-88-1-fonte"
+        ]
+      },
+      {
+        "documento": "42-e27-relatorio-contas-2025.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+        "linhas": 27,
+        "ids": [
+          "evb-ln001-parcela-1",
+          "evb-ln001-parcela-2",
+          "evb-ln001-parcela-3",
+          "evb-ln014-fonte",
+          "evb-ln016-parcela-1",
+          "evb-ln016-parcela-2",
+          "evb-ln016-parcela-3",
+          "evb-ln016-parcela-4",
+          "evb-ln016-parcela-5",
+          "evb-ln016-parcela-6",
+          "evb-ln016-parcela-7",
+          "evb-ln016-parcela-8",
+          "evb-ln016-parcela-9",
+          "evb-ln030",
+          "evb-ln046",
+          "evb-ln047",
+          "evb-ln059-parcela-1",
+          "evb-ln060-parcela-2",
+          "evb-ln060-parcela-3",
+          "evb-ln061-parcela-1",
+          "evb-ln061-parcela-2",
+          "evb-ln062",
+          "evb-cab-38-1",
+          "evb-cab-39-2",
+          "evb-cab-49-1",
+          "evb-cab-65-1",
+          "evb-cab-65-2-fonte"
+        ]
+      },
+      {
+        "documento": "43-e27-programacao-2026.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "a25405119717842f41c0977fc6ebb8eade40564fe753ff935694e37788bbabc8",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "44-e27-ficha-operacao-vagar.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "0816f65622710f8c7c31bad1d007a22b14c9ef26b2f192a40f6f1aa4a8096552",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "45-e27-ficha-operacao-internacionalizacao.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "b9a3e0eaaf9ad0b836b218e0fe2a4767b8aa1eb58cc89321d21b799e9968fd91",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "50-cme-gop-orcamento-2026.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04",
+        "linhas": 1,
+        "ids": [
+          "evb-ln011"
+        ]
+      },
+      {
+        "documento": "53-cme-gop-orcamento-2025.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "f07265b18625df34991b1805807f77617955a03da07aa814a521563ea38910a0",
+        "linhas": 1,
+        "ids": [
+          "evb-ln035"
+        ]
+      },
+      {
+        "documento": "54-cme-gop-orcamento-2024.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "7c554e97ed97c36625b0846e3c2a03e4e5021f39c878d70d193588200f3f6024",
+        "linhas": 1,
+        "ids": [
+          "evb-cab-21-1-fonte"
+        ]
+      },
+      {
+        "documento": "55-cme-protocolo-2023.html.txt",
+        "tipo": "html",
+        "sha256": "8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "63-cme-ata-10-rpc-2026-05-14.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "36a3dcacd269279bdd763fb50ff2d68f42420a4f3698610e4464c132da7e4233",
+        "linhas": 2,
+        "ids": [
+          "evb-ln048",
+          "evb-ln068"
+        ]
+      },
+      {
+        "documento": "64-cme-edital-rpc-2026-09-03.pdf.txt",
+        "tipo": "pdf",
+        "sha256": "9799f676593c421b6e95e77c46e026c5faeba02ef106a80f7758dc0dfad9c7fc",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "70-base-teste.html.txt",
+        "tipo": "html",
+        "sha256": "1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "71-base-pesquisa.html.txt",
+        "tipo": "html",
+        "sha256": "1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "72-base-raiz.html.txt",
+        "tipo": "html",
+        "sha256": "1de9e9f4a1d740052c5e13ec835ff14bf295eb32adde3fffdaec26dc84949e44",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt",
+        "tipo": "xlsx",
+        "sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "concurso-rossio.html.txt",
+        "tipo": "html",
+        "sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "noticias.html.txt",
+        "tipo": "html",
+        "sha256": "e91e6b96f7b1ff77a3dd32b29bb4145ce1f4db437ff99632ac07d0225c5d6cc7",
+        "linhas": 0,
+        "ids": []
+      },
+      {
+        "documento": "registo-das-leituras-1.json",
+        "tipo": "json",
+        "sha256": "c1183b891dbdb69c833fcb29067eefcff85d338e4156a59e716e8033a3567265",
+        "linhas": 0,
+        "ids": []
+      }
+    ]
+  },
+  "citacoes": {
+    "conferidas": 245,
+    "paragens": 7,
+    "por_lingua": {
+      "pt": 123,
+      "en": 122
+    },
+    "distintas_em_colunas": 9
+  },
+  "datas": {
+    "declaracoes": 244,
+    "ligacoes_candidatas": 644,
+    "ocorrencias_no_gabarito": 241
+  },
+  "titulos": {
+    "conferidos": 37,
+    "paragens": [
+      {
+        "documento": "02-bidbook-preselecao-PT.pdf.txt",
+        "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/02-bidbook-preselecao-PT.pdf",
+        "sha256": "0a24c92dbe1dd5fdcb2710cb3fd0db7a4bc7fa356db4b48bbf2f82825cc85302",
+        "tipo": "pdf",
+        "motivo": "capa sem título transcrito; requer leitura na imagem",
+        "pede_leitura_na_imagem": true
+      },
+      {
+        "documento": "82-alentejo2030-lista-operacoes-2026-06-30.xlsx.txt",
+        "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/source/82-alentejo2030-lista-operacoes-2026-06-30.xlsx",
+        "sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+        "tipo": "xlsx",
+        "motivo": "sem título documental declarado; o nome do ficheiro não prova um título",
+        "pede_leitura_na_imagem": false
+      },
+      {
+        "documento": "registo-das-leituras-1.json",
+        "ficheiro": "content/14 Évora 2027/Technical Source/raw/manifest.json",
+        "sha256": "c1183b891dbdb69c833fcb29067eefcff85d338e4156a59e716e8033a3567265",
+        "tipo": "json",
+        "motivo": "sem título documental declarado; o nome do ficheiro não prova um título",
+        "pede_leitura_na_imagem": false
+      }
+    ]
+  },
+  "assercoes": {
+    "antes": {
+      "pt": 1,
+      "en": 1
+    },
+    "depois": {
+      "pt": 0,
+      "en": 0
+    },
+    "declaracoes_antes": 32,
+    "declaracoes_depois": 33,
+    "retiradas": [
+      "so-promessa-com-numero",
+      "so-pelo-objeto-nomeado",
+      "agregados-sem-ponte",
+      "taxas-sem-base",
+      "fontes-fechadas",
+      "perguntas-sem-resposta",
+      "dois-agregados-sem-explicacao",
+      "terceiro-desencontro",
+      "base-sem-contratos",
+      "ato-de-designacao-nao-encontrado",
+      "so-previsionais",
+      "sem-soma-total",
+      "visitantes-sem-estudo",
+      "remuneracoes-em-nenhum-documento",
+      "abertura-operacional-so-em-2024",
+      "abertura-sem-documento-que-concilie",
+      "abertura-nenhum-euro-do-municipio",
+      "abertura-todos-os-contratos",
+      "abertura-unico-documento-que-liga",
+      "abertura-planos-de-todos-os-anos",
+      "abertura-so-destes-documentos",
+      "e1-castris-tres-medidas",
+      "e1-castris-nenhum-relaciona",
+      "e1-ligacoes-nao-entram",
+      "ev3-j-financiamentos-nao-relacionados"
+    ],
+    "nota": "Os estados REVIEW permanecem revisão humana pendente; PASS mede cobertura das declarações, não verdade demonstrada."
+  },
+  "atribuicoes": {
+    "pt": {
+      "valores_examinados": 556,
+      "avisos": 2,
+      "sem_atribuicao": 4
+    },
+    "en": {
+      "valores_examinados": 552,
+      "avisos": 2,
+      "sem_atribuicao": 3
+    }
+  },
+  "integridade": {
+    "outros_ficheiros": 3313,
+    "alterados": []
+  },
+  "verificacoes": {
+    "execucao_curto": 40,
+    "suites_dirigidas": 12,
+    "reproducoes": 3,
+    "portoes_completos": 1,
+    "site": 0,
+    "capturas": 0,
+    "registos": {
+      "evb-tipos.log": {
+        "codigo": 0,
+        "segundos": 5,
+        "linhas": 40
+      },
+      "evb-auditoria.log": {
+        "codigo": 0,
+        "segundos": 2,
+        "linhas": 3
+      },
+      "evb-auditoria-2.log": {
+        "codigo": 0,
+        "segundos": 18,
+        "linhas": 3
+      },
+      "evb-preparar.log": {
+        "codigo": 1,
+        "segundos": 1,
+        "linhas": 10
+      },
+      "evb-preparar-2.log": {
+        "codigo": 0,
+        "segundos": 14,
+        "linhas": 1
+      },
+      "evb-preparar-3.log": {
+        "codigo": 0,
+        "segundos": 10,
+        "linhas": 1
+      },
+      "evb-derivacoes.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 164
+      },
+      "evb-gerar.log": {
+        "codigo": 1,
+        "segundos": 0,
+        "linhas": 16
+      },
+      "evb-gerar-2.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 2
+      },
+      "evb-texto-suite.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 21
+      },
+      "evb-gerar-3.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 2
+      },
+      "evb-texto-candidato.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 3
+      },
+      "evb-citacoes-suite.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 28
+      },
+      "evb-citacoes.log": {
+        "codigo": 0,
+        "segundos": 15,
+        "linhas": 1
+      },
+      "evb-citacoes-2.log": {
+        "codigo": 0,
+        "segundos": 14,
+        "linhas": 1
+      },
+      "evb-documentais-suite.log": {
+        "codigo": 0,
+        "segundos": 28,
+        "linhas": 7
+      },
+      "evb-titulos.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 1
+      },
+      "evb-datas.log": {
+        "codigo": 0,
+        "segundos": 20,
+        "linhas": 1
+      },
+      "evb-gerar-datas.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 2
+      },
+      "evb-datas-2.log": {
+        "codigo": 0,
+        "segundos": 19,
+        "linhas": 1
+      },
+      "evb-titulos-2.log": {
+        "codigo": 0,
+        "segundos": 2,
+        "linhas": 1
+      },
+      "evb-gerar-datas-2.log": {
+        "codigo": 0,
+        "segundos": 3,
+        "linhas": 2
+      },
+      "evb-datas-suite-2.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 24
+      },
+      "evb-adagas-suite.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 29
+      },
+      "evb-adagas.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 2
+      },
+      "evb-assercoes.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 3
+      },
+      "evb-assercoes-2.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 3
+      },
+      "evb-complementar.log": {
+        "codigo": 1,
+        "segundos": 1,
+        "linhas": 8
+      },
+      "evb-complementar-2.log": {
+        "codigo": 0,
+        "segundos": 5,
+        "linhas": 2
+      },
+      "evb-posicoes-suite.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 11
+      },
+      "evb-reproduzir.log": {
+        "codigo": 0,
+        "segundos": 67,
+        "linhas": 17
+      },
+      "evb-colunas-suite.log": {
+        "codigo": 0,
+        "segundos": 5,
+        "linhas": 43
+      },
+      "evb-colunas-suite-2.log": {
+        "codigo": 0,
+        "segundos": 4,
+        "linhas": 43
+      },
+      "evb-citacoes-suite-2.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 31
+      },
+      "evb-reproduzir-2.log": {
+        "codigo": 0,
+        "segundos": 78,
+        "linhas": 17
+      },
+      "evb-citacoes-suite-3.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 32
+      },
+      "evb-datas-suite-3.log": {
+        "codigo": 0,
+        "segundos": 1,
+        "linhas": 25
+      },
+      "evb-reproduzir-3.log": {
+        "codigo": 0,
+        "segundos": 73,
+        "linhas": 17
+      },
+      "evb-derivacoes-final.log": {
+        "codigo": 0,
+        "segundos": 0,
+        "linhas": 164
+      },
+      "evb-1-gate.log": {
+        "codigo": 0,
+        "segundos": 963,
+        "linhas": 390
+      }
+    },
+    "gate": {
+      "codigo": 0,
+      "sha256": "e770e84ea2833e404cd8898d801ddec8cfd0bdc8ad4c5a57d2d3b540a2cbd2a4",
+      "ultimas_linhas": [
+        "GATE  editions evora-mandates-md-html ok",
+        "GATE  editions evora-mandates-en-pt ok",
+        "GATE  editions evora-mandates-pt-html ok",
+        "GATE  editions evora-pelouros-md-html ok",
+        "GATE  editions evora-pelouros-en-pt ok",
+        "GATE  editions evora-pelouros-pt-html ok",
+        "GATE  editions evora-2027-pt-md-html ok",
+        "GATE  editions evora-2027-en-md-html ok",
+        "GATE  editions evora-2027-pt-en ok",
+        "GATE  editions evora-contas-camara-pt-en ok",
+        "GATE  editions evora-contas-camara-pt-md-html ok",
+        "GATE  editions evora-contas-camara-en-md-html ok",
+        "GATE  editions evora-quem-governou-pt-md-html ok",
+        "GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+        "GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+        "GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+        "GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+        "GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+        "GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+        "GATE: PASS"
+      ]
+    }
+  },
+  "nota_tokens": "Fotografia do último evento de contagem disponível antes da escrita do relatório; não inclui necessariamente a resposta final."
+}

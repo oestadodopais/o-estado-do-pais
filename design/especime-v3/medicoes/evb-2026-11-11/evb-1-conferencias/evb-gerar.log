@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/gerar.py", line 164, in <module>
+    run(Path(sys.argv[1]),Path(sys.argv[2]))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/gerar.py", line 83, in run
+    comp, olds = previous(tech,lang)
+                 ~~~~~~~~^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/gerar.py", line 42, in previous
+    visible = re.sub(C._NAO_FIGURA_RE.pattern+'|'+C._MARCA_RE.pattern,replace,line)
+  File "<python>", line 208, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/gerar.py", line 38, in replace
+    value = C._impresso(comp.fontes[cod],lang,rid)
+                        ~~~~~~~~~~~^^^^^
+KeyError: 'cor'

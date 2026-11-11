@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/complementar.py", line 125, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/complementar.py", line 65, in run
+    if re.match(r'\d+ de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)',number_row['valor']):
+                                                                                                                       ~~~~~~~~~~^^^^^^^^^
+KeyError: 'valor'

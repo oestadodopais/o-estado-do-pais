@@ -1,0 +1,11 @@
+test_enfase_nao_muda_a_posicao_real (__main__.PosicoesEVBTest.test_enfase_nao_muda_a_posicao_real) ... ok
+test_frase_repetida_recusa (__main__.PosicoesEVBTest.test_frase_repetida_recusa) ... ok
+test_mesma_ocorrencia_nas_duas_linguas (__main__.PosicoesEVBTest.test_mesma_ocorrencia_nas_duas_linguas) ... ok
+test_multiplicidade_diferente_nao_inventa_ligacao (__main__.PosicoesEVBTest.test_multiplicidade_diferente_nao_inventa_ligacao) ... ok
+test_valores_iguais_de_medidas_diferentes (__main__.PosicoesEVBTest.test_valores_iguais_de_medidas_diferentes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+EVB: PASS, 5 testes

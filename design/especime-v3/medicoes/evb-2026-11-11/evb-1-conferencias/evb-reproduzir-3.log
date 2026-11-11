@@ -1,0 +1,17 @@
+Números: estados dos excertos {'conferido': 51, 'parou': 29}
+Unidades: estados dos excertos {'conferido': 239, 'parou': 83}
+Provas documentais distintas 354
+Preparação: 33 primárias, 21 derivações, 47 ligações, 33 paragens
+Datas: 244 declarações, 644 ligações candidatas, 0 recusas
+Complemento da cabeça: 31 ligações; 36 paragens; 1 posições LN por resolver
+Total preparado: 42 primárias; 33 derivações
+Citações: 245 conferidas; 7 paradas; 24 com pedaços e imagem
+Títulos: 37 conferidos, 3 parados
+pt 465 unidades; 532 marcadores; 641 pendências
+en 465 unidades; 518 marcadores; 660 pendências
+pt adagas 4
+en adagas 4
+pt ASSERTIONS: PASS — 38 quantifier hits, 0 checked, 31 review, 0 undeclared, 0 failed
+en ASSERTIONS: PASS — 20 quantifier hits, 0 checked, 18 review, 0 undeclared, 0 failed
+Atribuições pendentes: {'pt': {'valores_examinados': 556, 'avisos': 2, 'sem_atribuicao': 4}, 'en': {'valores_examinados': 552, 'avisos': 2, 'sem_atribuicao': 3}}
+Reprodução terminada; o estado dos contratos continua candidato_incompleto.

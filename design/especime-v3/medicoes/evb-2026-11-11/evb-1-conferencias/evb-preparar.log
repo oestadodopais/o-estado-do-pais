@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparar.py", line 189, in <module>
+    Preparation().run(Path(sys.argv[1]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparar.py", line 176, in run
+    marker = self.quantity(row)
+  File "<motor>/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/preparar.py", line 157, in quantity
+    return self.derived(rid,target,expr,list(dict.fromkeys(ids)),measure,forms)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable

@@ -38,5 +38,15 @@
   "o_que_se_leu": "na folha 43 do PDF, no quadro das receitas do setor público, a linha «União Europeia (com exceção do prémio Melina Mercouri)» com «10 000 000,00» e a linha «TOTAL» com «44 587 603,10»; na prosa da mesma folha, «As receitas do sector público passam, assim, a incluir os seguintes montantes: 19 milhões de euros atribuídos pelo Governo Português, dos quais 15 milhões virão diretamente do Estado Português e quatro milhões através do Turismo de Portugal, para apoio ao Plano de Comunicação (fundos que serão disponibilizados à cidade selecionada como CEC 2027, nos termos da Carta do Ministro da Cultura de 16 de setembro de 2022)»",
   "serve": "as citações das unidades B035.1, B036.1 e B060.R1",
   "razao": "a folha está em colunas e a camada de texto mistura as linhas das duas colunas"
+ },
+ {
+  "documento": "content/19 Évora 2027 Capital Europeia da Cultura/source/02-bidbook-preselecao-PT.pdf",
+  "sha256": "0a24c92dbe1dd5fdcb2710cb3fd0db7a4bc7fa356db4b48bbf2f82825cc85302",
+  "pagina": 1,
+  "data_da_leitura": "2026-11-11",
+  "leitor": "lugar de direção (Claude Fable 5.2)",
+  "o_que_se_leu": "a capa: três linhas de título, «Évora_27» (com um traço comprido entre «Évora» e «27»), «Cidade Candidata» e «Capital Europeia da Cultura»; à volta, a palavra «ÉVORA» repetida em letras grandes com as letras de «VAGAR» a verde, e uma frase em letra pequena espalhada pela página",
+  "serve": "o título do dossiê de candidatura da fase de pré-seleção",
+  "razao": "a camada de texto da capa não traz o título"
  }
 ]
