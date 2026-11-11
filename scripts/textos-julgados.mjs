@@ -14,7 +14,7 @@ export function lerTextosJulgados(raiz='.') {
   return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file,'utf8')) : [];
 }
 export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', documentos, registos, ler}={}) {
-  const erros=[], textos=new Set(), mobilia=new Set(), admitidas=new Map(), vistas=new Set();
+  const erros=[], textos=new Set(), mobilia=new Set(), admitidas=new Map(), copias=new Map(), vistas=new Set();
   ler ??= f => fs.readFileSync(path.join(raiz,f));
   documentos ??= load(ler('studies-src/manifest.yml').toString());
   registos ??= JSON.parse(ler('registos/manifest.json').toString());
@@ -43,20 +43,30 @@ export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', 
       recolher(registo.blocks);
       if(!literais.size)throw Error('registo sem frases');
       admitidas.set(par,literais);
+      copias.set(par,{nome:registo.blocks[1]?.text,pergunta:registo.blocks[2]?.text,data:docs[0].edicoes.length===1?docs[0].edicoes[0].data:null});
     }catch(e){erros.push(`texto julgado ${par}: ${e.message}`);}
   }
   const porRota=new Map(paginas.map(p=>[p.rota,p]));
   for(const f of frases){
     const literais=admitidas.get(`${f.estudo}/${f.lingua}`);
-    if(!literais||!f.ocorrencias?.length)continue;
+    if(!f.ocorrencias?.length)continue;
     // A chave antiga omite números. Esta via confere cada ocorrência com os números intactos.
     const corresponde = (o, aviso=false) => {
       const p=porRota.get(o.pagina), frase=p?.blocos[o.bloco]?.frases[o.indice];
       return p?.estudo===f.estudo&&p.lingua===f.lingua&&['estudo','documento'].includes(p.tipo)&&
         (aviso ? p.tipo==='estudo' && p.blocos[o.bloco].rotuloIA===routePath('metodo',p.lingua) && frase===textoDoRotulo(p.lingua) : literais.has(frase));
     };
-    if(f.ocorrencias.every(o=>corresponde(o)))textos.add(chave(f));
-    else if(f.ocorrencias.every(o=>corresponde(o,true)))mobilia.add(chave(f));
+    if(literais&&f.ocorrencias.every(o=>corresponde(o)))textos.add(chave(f));
+    else if(literais&&f.ocorrencias.every(o=>corresponde(o,true)))mobilia.add(chave(f));
+    else if(f.ocorrencias.every(o=>{
+      const p=porRota.get(o.pagina),b=p?.blocos[o.bloco],c=b?.copiaJulgada;
+      if(!c||p.lingua!==f.lingua||b.frases.length!==1||b.frases[0]!==c.texto)return false;
+      const prova=copias.get(`${c.estudo}/${p.lingua}`);
+      if(!prova||c.porta!==routePath('estudo',p.lingua,{slug:c.estudo}))return false;
+      if(c.tipo==='pergunta')return ['estudos','indice','municipio'].includes(p.tipo)&&c.texto===prova.pergunta;
+      const dia=prova.data?.split('-').reverse().join('.'),rotulo=p.lingua==='pt'?'estudo':'study';
+      return c.tipo==='novidade'&&p.tipo==='home'&&c.lingua===p.lingua&&c.data===prova.data&&c.dia===dia&&c.rotulo===rotulo&&c.nome===prova.nome&&c.texto===dia+rotulo+prova.nome;
+    }))textos.add(chave(f));
   }
   return {erros,textos,mobilia};
 }

@@ -1,5 +1,6 @@
 /** Compara documentos e páginas dos estudos publicados nas duas línguas. */
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {compara, blocosDe, plantasParidade} from './paridade-numeros.mjs';
@@ -9,9 +10,13 @@ export const assinatura = r => ({total: Object.fromEntries(Object.entries(r.tota
 export function validarExcecoes(excecoes) {
   if (excecoes.data !== '2026-11-08' || excecoes.natureza !== 'permanente' || 'retirar' in excecoes ||
       typeof excecoes.razao !== 'string' || excecoes.razao.trim().length < 20) throw new Error('paridade: exceção sem data, natureza permanente ou razão');
-  const permitidos = new Set(['a-casa-em-portugal-e-na-europa','evora-contas-da-camara-2010-2025']);
+  const permitidos = new Set(['a-casa-em-portugal-e-na-europa','evora-contas-da-camara-2010-2025','evora-2027-capital-europeia-da-cultura']);
   const chaves = excecoes.diferencas.map(e => e.estudo + '|' + e.tipo);
   if (new Set(chaves).size !== chaves.length || excecoes.diferencas.some(e => !permitidos.has(e.estudo) || !['documento', 'página'].includes(e.tipo))) throw new Error('paridade: exceção fora da lista fechada');
+  for(const e of excecoes.diferencas.filter(e=>e.estudo==='evora-2027-capital-europeia-da-cultura')){
+    if(e.data_fecho!=='2026-11-11'||typeof e.razao!=='string'||e.razao.length<20)throw Error('paridade: falta a origem julgada da diferença');
+    for(const lang of ['pt','en'])if(e.documentos?.[lang]!==createHash('sha256').update(fs.readFileSync(`studies-src/${e.estudo}/${lang}.html`)).digest('hex'))throw Error('paridade: documento diferente do texto julgado');
+  }
   return chaves;
 }
 export function conferirParidade(dist, excecoes) {

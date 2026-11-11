@@ -46,8 +46,10 @@ for(const outra of ['evora-2027-capital-europeia-da-cultura/pt','outro-estudo/en
 console.log(`EV3 língua: ${marcas.length} marcas válidas; ${adulteradas.length+2} adulterações recusadas.`);
 
 const {edicoesGuardadas,primeiraEdicaoServida}=await import('../../src/lib/edicoes.mjs');
-for(const e of edicoesGuardadas().filter(e=>e.slug==='evora-2027-capital-europeia-da-cultura'))assert.equal(parse(primeiraEdicaoServida(e.slug,e.lang,e.data)).querySelectorAll('[data-ev3-nome]').length,0);
-console.log('EV3-I: edições guardadas sem marcas de nomes da atualização.');
+// EVB: a história saiu da publicação; os seus bytes continuam na planta fixa.
+assert.equal(edicoesGuardadas().filter(e=>e.slug==='evora-2027-capital-europeia-da-cultura').length,0);
+await import('../evb/historia-fixa.mjs');
+console.log('EV3-I: arquivo de ensaio ausente da publicação, história fixa conferida.');
 
 // A língua da página muda os rótulos, sem inventar uma edição do documento.
 const {linhaDasEdicoes,portasDaCorrecao}=await import('../../src/lib/edicoes.mjs');

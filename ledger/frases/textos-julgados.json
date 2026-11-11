@@ -22,5 +22,29 @@
     "quem_julgou": "Codex gpt-6-astra, xhigh, três voltas",
     "data_fecho": "2026-11-10",
     "commit_motor": "5925531cd50b6f0b9cafbcfbfd71350c13e61e5f"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "sha256_documento": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb",
+    "texto": {
+      "file": "design/especime-v3/medicoes/evb-2026-11-11/TEXTO-FINAL-19.pt.md",
+      "sha256": "ed325cfef724cf58a10de8f46d89d4e8c66c9b35b1c627d651f2b5a7f08d3157"
+    },
+    "quem_julgou": "Codex gpt-6-astra, xhigh, quatro voltas",
+    "data_fecho": "2026-11-11",
+    "commit_motor": "71df7b3982183adc036bb37d40bc63f98480e8c2"
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "sha256_documento": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306",
+    "texto": {
+      "file": "design/especime-v3/medicoes/evb-2026-11-11/TEXTO-FINAL-19.en.md",
+      "sha256": "205cb33546554e0f8325497afa674586699cf178b2ed995069648e4be3b1591b"
+    },
+    "quem_julgou": "Codex gpt-6-astra, xhigh, quatro voltas",
+    "data_fecho": "2026-11-11",
+    "commit_motor": "71df7b3982183adc036bb37d40bc63f98480e8c2"
   }
 ]

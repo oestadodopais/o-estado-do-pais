@@ -2,7 +2,9 @@ import fs from 'node:fs';import assert from 'node:assert/strict';
 import {load} from 'js-yaml';
 import {lerTextosJulgados,conferirTextosJulgados} from '../../scripts/textos-julgados.mjs';
 import {blocosDaPagina,inventario,chave} from '../../scripts/frases-com-afirmacao.mjs';
-const ds=lerTextosJulgados(),slug=ds[0].estudo;
+const declaracoes=lerTextosJulgados();
+for(const slug of new Set(declaracoes.map(d=>d.estudo))){
+const ds=declaracoes.filter(d=>d.estudo===slug);
 const paginas=['pt','en'].flatMap(lingua=>['estudo','documento'].map(tipo=>{
  const rota=`/${lingua==='pt'?'estudos':'en/studies'}/${slug}${tipo==='documento'?(lingua==='pt'?'/documento':'/document'):''}`;
  return {estudo:slug,lingua,tipo,rota,par:`/${lingua==='en'?'estudos':'en/studies'}/${slug}${tipo==='documento'?(lingua==='en'?'/documento':'/document'):''}`,blocos:blocosDaPagina(fs.readFileSync(`dist${rota}/index.html`,'utf8'))};
@@ -30,4 +32,6 @@ assert.equal(conferirTextosJulgados([],paginas,frases).textos.size,0);
 const aviso=frases.find(f=>r.mobilia.has(chave(f))),semPorta=structuredClone(paginas);
 for(const p of semPorta)for(const b of p.blocos)b.rotuloIA=null;
 assert(!conferirTextosJulgados(ds,semPorta,[aviso]).mobilia.has(chave(aviso)));
-console.log(`EVA CAM2-A: ${r.textos.size} frases cobertas; resumo trocado, três campos ausentes, frase alheia e número adulterado recusados; estudo sem declaração conserva a via anterior.`);
+console.log(`${slug}: ${r.textos.size} frases cobertas; resumo trocado, três campos ausentes, frase alheia e número adulterado recusados; estudo sem declaração conserva a via anterior.`);
+
+}

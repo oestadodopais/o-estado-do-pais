@@ -44,7 +44,18 @@ export function blocosDaPagina(html) {
       return [id, hit?.key === 'linha' ? hit.params.slug : null].filter(Boolean);
     }))].sort();
     const partes=frasesDoTexto(texto,()=>true).flatMap(contexto=>cortar(contexto).map(frase=>({frase,contexto})));
-    return {rotuloIA: n.matches('p.rotulo-ia-linha') && n.querySelectorAll('a').length === 1 ? n.querySelector('a').getAttribute('href') : null, texto, frases:partes.map(p=>p.frase), contextos:partes.map(p=>p.contexto), linhas, tag:n.tagName};
+    // EVB: a cópia só pode usar a prova do estudo se conservar a porta e o texto inteiro.
+    const caixa=n.closest('[data-estudo]'), novidade=n.matches('[data-novidade]')?n:null;
+    let copiaJulgada=null;
+    if(n.matches('p[data-verbatim]')&&caixa){
+      const slug=caixa.getAttribute('data-estudo'), portas=caixa.querySelectorAll('a[href]');
+      if(portas.length===1)copiaJulgada={tipo:'pergunta',estudo:slug,porta:portas[0].getAttribute('href'),texto};
+    }else if(novidade?.getAttribute('data-novidade')?.startsWith('estudo:')){
+      const portas=n.querySelectorAll('a[href]'), datas=n.querySelectorAll('time'), nomes=n.querySelectorAll('[data-titulo-publicado]'), tipos=n.querySelectorAll('.pp-novidade-tipo');
+      if(portas.length===1&&datas.length===1&&nomes.length===1&&tipos.length===1)
+        copiaJulgada={tipo:'novidade',estudo:n.getAttribute('data-novidade').slice(7),porta:portas[0].getAttribute('href'),texto,data:datas[0].getAttribute('datetime'),dia:datas[0].textContent,nome:nomes[0].textContent,lingua:nomes[0].getAttribute('data-titulo-publicado'),rotulo:tipos[0].textContent};
+    }
+    return {copiaJulgada,rotuloIA: n.matches('p.rotulo-ia-linha') && n.querySelectorAll('a').length === 1 ? n.querySelector('a').getAttribute('href') : null, texto, frases:partes.map(p=>p.frase), contextos:partes.map(p=>p.contexto), linhas, tag:n.tagName};
   }).filter(b => b.texto);
 }
 export function rotasDaProsa() {
