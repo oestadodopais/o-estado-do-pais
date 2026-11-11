@@ -79,6 +79,7 @@
  */
 
 import fs from 'node:fs';
+import {execucaoTotalEvora} from './execucao-total-evora.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -603,6 +604,7 @@ export function mesmaSerie(id, anterior) {
   const a = getClaim(id);
   const b = getClaim(anterior);
   if (!a || !b) return false;
+  if (execucaoTotalEvora(a, b)) return true;
   /* `documentoDaLinha()` é o estreitamento conferido do bloco `document`: os
      valores dele continuam `unknown` até quem os lê os conferir, que é o que as
      duas linhas a seguir fazem. */

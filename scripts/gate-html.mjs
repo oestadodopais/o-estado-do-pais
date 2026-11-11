@@ -3543,6 +3543,19 @@ function linhaDaReguaDoCartao(principal, id, qual) {
     const m = /^(.*)-(\d{4})$/.exec(k);
     return m && m[1] === serie[1] && Number(m[2]) < Number(serie[2]);
   }).sort().at(-1) : null;
+  // EVA-T: conferência independente da linha Total em cada relatório anual.
+  if (qual === 'anterior' && principal === 'evora-execucao-da-receita-2025' && id === 'evora-execucao-da-receita-2021') {
+    const fontes = [
+      [atual, '2025', 'Prestação de Contas 2025', 111, 'https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=111'],
+      [outro, '2021', 'RELATÓRIO DE GESTÃO 2021', 60, 'https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=60'],
+    ];
+    return outro?.document?.source_sha256 === 'be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a' && fontes.every(([c, ano, titulo, pagina, url]) => {
+      const total = /^Total\s[\d .,]+\s(\d+,\d+)%/.exec(c?.excerpt ?? '');
+      return c?.source === 'Município de Évora' && c.unit === '% do orçamento' && !c.derivation &&
+        c.reference_date === ano && c.document?.edition === ano && c.document?.title === titulo &&
+        c.document?.page === pagina && c.source_url === url && total?.[1] === c.value;
+    });
+  }
   const mesmaSerie = typeof atual?.document?.edition === 'string' && atual.document.edition.length > 0 &&
     atual.document.edition === outro?.document?.edition &&
     typeof atual?.unit === 'string' && atual.unit.length > 0 && atual.unit === outro?.unit;

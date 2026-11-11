@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {getClaim} from '../../src/lib/ledger.mjs';
+import {execucaoTotalEvora} from '../../src/lib/execucao-total-evora.mjs';
+import {reguaDaMedida} from '../../src/lib/enquadramento.mjs';
+const a=getClaim('evora-execucao-da-receita-2025'),b=getClaim('evora-execucao-da-receita-2021');
+assert(execucaoTotalEvora(a,b));assert.equal(reguaDaMedida(a.id).anterior.id,b.id);
+for(const campo of ['unit','source','reference_date','source_url','id','value'])assert(!execucaoTotalEvora(a,{...b,[campo]:'inventado'}),campo);
+for(const campo of ['edition','title','page','source_sha256'])assert(!execucaoTotalEvora(a,{...b,document:{...b.document,[campo]:'inventado'}}),campo);
+assert(!execucaoTotalEvora(a,{...b,excerpt:b.excerpt.replace('Total','Receitas correntes')}));
+assert(!execucaoTotalEvora(b,a));
+console.log('EVA execução: comparação entre totais provada; unidade, fonte, período, endereço, identidade, valor, documento, página, resumo, receita corrente e ordem trocados recusados.');
