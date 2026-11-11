@@ -501,7 +501,7 @@ conferencias++;
  * (regra 14). Cada um é a forma de um defeito que a P2 podia mesmo cometer.
  */
 {
-  const chave = 'evora-orcamentado-pago-devido-2025/pt';
+  const chave = 'evora-economia-e-dinheiro-publico-de-fora-da-camara/pt';
   const [slug, lang] = [chave.slice(0, chave.lastIndexOf('/')), chave.slice(chave.lastIndexOf('/') + 1)];
   const html = fs.readFileSync(path.join(RAIZ, 'studies-src', slug, `${lang}.html`), 'utf8');
   const lidos = registoDoHtml(html);
@@ -548,7 +548,7 @@ conferencias++;
     falhas.push(`a leitura imprime ${fantasmas} espaço(s) fantasma numa junta apertada, e tem de imprimir zero`);
   }
   linhasDaProva.push(
-    `  ${'juntas apertadas na 07 pt'.padEnd(48)} ${String(apertadas).padStart(4)} · ` +
+    `  ${'juntas apertadas na economia pt'.padEnd(48)} ${String(apertadas).padStart(4)} · ` +
       `${fantasmas} imprimem um espaço`,
   );
 }

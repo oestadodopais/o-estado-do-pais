@@ -23,6 +23,7 @@
  *
  *   node tests/texto/leitura.mjs
  */
+import { WORKS } from '../../src/data/studies.mjs';
 import { unidadeDaMedida } from '../../src/lib/unidade-da-medida.mjs';
 import http from 'node:http';
 import fs from 'node:fs';
@@ -80,8 +81,8 @@ async function pagina(largura = 1280) {
   return p;
 }
 
-const O04 = '/estudos/evora-prometido-pago-auditado-2026/texto';
-const O03 = '/estudos/avaliacao-economica-regional-de-portugal-2026/texto';
+const O04 = '/estudos/evora-contas-da-camara-2010-2025';
+const O03 = '/estudos/avaliacao-economica-regional-de-portugal-2026';
 
 /**
  * AS OITO, e não três: a medida 4 (o transbordo) corre sobre todas as edições
@@ -93,6 +94,7 @@ const O03 = '/estudos/avaliacao-economica-regional-de-portugal-2026/texto';
 const AS_OITO = Object.keys(
   JSON.parse(fs.readFileSync(path.join(RAIZ, 'registos', 'manifest.json'), 'utf8')).registos,
 )
+  .filter(chave => !WORKS.some(w => w.slug === chave.split('/')[0] && w.estado === 'retirado'))
   .sort()
   .map((chave) => {
     const corte = chave.lastIndexOf('/');
@@ -100,7 +102,7 @@ const AS_OITO = Object.keys(
     const lang = chave.slice(corte + 1);
     return {
       chave,
-      rota: lang === 'pt' ? `/estudos/${slug}/texto` : `/en/studies/${slug}/text`,
+      rota: lang === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`,
     };
   });
 

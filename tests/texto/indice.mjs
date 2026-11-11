@@ -62,6 +62,7 @@
  * pertence já à caixa seguinte, e por isso uma caixa de 44 × 44 mede 42 × 43,8
  * por acerto. Está medido e escrito para que ninguém leia 43,8 como um defeito.
  */
+import { WORKS } from '../../src/data/studies.mjs';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -136,6 +137,7 @@ const conta = (nome, passa, prova) => reguas.push({ nome, passa: !!passa, prova:
 /** O leitor próprio desta régua: o manifesto e os registos, do disco. */
 const manifesto = JSON.parse(fs.readFileSync(path.join(REGISTOS, 'manifest.json'), 'utf8'));
 const PAGINAS = Object.keys(manifesto.registos)
+  .filter(chave => !WORKS.some(w => w.slug === chave.split('/')[0] && w.estado === 'retirado'))
   .sort()
   .map((chave) => {
     const [slug, lang] = chave.split('/');
@@ -149,7 +151,7 @@ const PAGINAS = Object.keys(manifesto.registos)
       chave,
       slug,
       lang,
-      rota: lang === 'pt' ? `/estudos/${slug}/texto` : `/en/studies/${slug}/text`,
+      rota: lang === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`,
       titulos,
       deNivel2: titulos.filter((b) => Number(b.level) === 2).length,
     };
@@ -157,8 +159,8 @@ const PAGINAS = Object.keys(manifesto.registos)
 
 /** A página de cada edição, escolhida para as capturas e para as medidas caras. */
 const AMOSTRA = {
-  pt: PAGINAS.find((p) => p.chave === 'evora-prometido-pago-auditado-2026/pt'),
-  en: PAGINAS.find((p) => p.chave === 'evora-prometido-pago-auditado-2026/en'),
+  pt: PAGINAS.find((p) => p.chave === 'evora-contas-da-camara-2010-2025/pt'),
+  en: PAGINAS.find((p) => p.chave === 'evora-contas-da-camara-2010-2025/en'),
 };
 
 /* ========================================================================== */

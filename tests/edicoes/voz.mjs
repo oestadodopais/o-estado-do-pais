@@ -1,3 +1,4 @@
+import {WORKS} from '../../src/data/studies.mjs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
 import {FAIXAS_DE_EDICAO,classeDaVozDaEdicao,retiradaForaDaFrase,frasesDaFaixaDocumental,textoDaVoz} from '../../scripts/voz-edicoes.mjs';
@@ -20,7 +21,7 @@ for(const lang of ['pt','en']){
  for(const l of inv.linhas.filter(l=>l.estado==='retirada'))assert(!retiradaForaDaFrase(politica,l.texto),`política: ${l.texto}`);
  controlos++;
 }
-for(const e of manifestoDasEdicoes().edicoes)for(const v of versoesDaEdicao(e.slug,e.lang)){
+for(const e of manifestoDasEdicoes().edicoes.filter(e=>!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado')))for(const v of versoesDaEdicao(e.slug,e.lang)){
  const faixa=faixaDaVersao(e.slug,e.lang,v.data);if(!faixa)continue;
  const root=parse(`<body><main><p>Texto da obra que não pertence ao inventário.</p></main>${faixa}</body>`);
  const frases=frasesDaFaixaDocumental(root);assert(frases.length>0);assert(frases.every(f=>declarada(f)||classeDaVozDaEdicao(f)==='conteudo'));assert(frases.includes(root.querySelector('[data-edicoes-linha]').textContent));documentos++;controlos++;
@@ -48,3 +49,15 @@ assert.equal(textoDaVoz(comOrigens.firstChild),'A « narração  porta origem co
 assert(analisa(textoDaVoz(parse('<p><span lang="pt-PT">O projeto verifica tudo.</span></p>').firstChild),'/correcoes',marcadores,'correcoes').length);plantas++;
 assert(documentos>0);
 console.log(JSON.stringify({controlos,plantas,documentos,retiradas_isoladas_recusadas:true,politica_voz_e_L3:0}));
+
+// REC2: só a retirada dispensa o repertório da faixa. Uma publicação em falta
+// num estudo vivo continua a impedir que se fabrique a data da apresentação.
+const {repertorioDaVozDasEdicoes}=await import('../../scripts/voz-edicoes.mjs');
+const todas=manifestoDasEdicoes().edicoes;
+const retirada=todas.find(e=>e.edicoes.length>1&&WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'));
+assert(retirada);
+assert.equal(repertorioDaVozDasEdicoes({edicoes:[retirada]}).frases.size,0);
+const viva=todas.find(e=>e.edicoes.length>1&&!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'));
+assert(viva);
+assert.throws(()=>repertorioDaVozDasEdicoes({edicoes:[{...viva,slug:'planta-sem-publicacao'}]}));
+console.log('REC2 voz das edições: retirada sem faixa; publicação em falta continua recusada.');

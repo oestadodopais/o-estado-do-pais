@@ -103,6 +103,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
+import { WORKS } from '../../src/data/studies.mjs';
 import { todosOsDocumentos, provaDosBytes } from '../../src/lib/documentos.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -195,32 +196,7 @@ const PALETA = paletaDaCasa();
  * Cada estrago: o que faz ao HTML servido, e que células tem de fazer cair.
  * @type {{ nome: string, celulas: string[], faz: (html: string, rota: string) => string }[]}
  */
-const ESTRAGOS = [
-  {
-    nome: 'moldura-fora · tirar a abertura da moldura',
-    celulas: ['C4', 'C5'],
-    faz: (html) => html.replace('<main data-oedp-moldura>', '').replace('<div data-oedp-moldura>', ''),
-  },
-  {
-    nome: 'filete-turquesa · o filete da grelha volta à cor de fora da paleta',
-    celulas: ['C2', 'C5'],
-    faz: (html) => html.replace(/--oedp-g2:#[0-9a-f]{6}/g, '--oedp-g2:#16556E'),
-  },
-  {
-    nome: 'texto-da-celula · tirar a regra da cor do texto das células',
-    celulas: ['C2'],
-    faz: (html) =>
-      html.replace(
-        /\[data-oedp-moldura\] th,\[data-oedp-moldura\] td\{color:[^}]*\}/,
-        '',
-      ),
-  },
-  {
-    nome: 'sem-guiao · tirar o guião da moldura',
-    celulas: ['C1', 'C3'],
-    faz: (html) => html.replace(/<script>\(function\(\)\{var R=[\s\S]*?\}\)\(\);<\/script>/, ''),
-  },
-];
+import { ESTRAGOS } from './moldura-plantas.mjs';
 
 /* -------------------------------------------------------------- o servidor */
 
@@ -268,7 +244,7 @@ const base = `http://127.0.0.1:${servidor.address().port}`;
 /* ----------------------------------------------------------- os documentos */
 
 /** Os dezasseis, com a rota construída e o ficheiro de origem. */
-const DOCUMENTOS = todosOsDocumentos().map((d) => ({
+const DOCUMENTOS = todosOsDocumentos().filter(d => !WORKS.some(w => w.slug === d.slug && w.estado === 'retirado')).map((d) => ({
   chave: `${d.slug}/${d.lang}`,
   origem: d.ficheiro,
   rota: d.rota.endsWith('/') ? d.rota : `${d.rota}/`,
@@ -798,10 +774,10 @@ if (VERMELHOS) {
     /* O HTML tem de mudar: um estrago que não muda nada nunca podia ser
        apanhado. Mede-se num documento com tabelas e com uma caixa que corre. */
     const amostra = fs.readFileSync(
-      path.join(DIST, 'estudos', 'evora-prometido-pago-auditado-2026', 'documento', 'index.html'),
+      path.join(DIST, 'estudos', 'evora-contas-da-camara-2010-2025', 'documento', 'index.html'),
       'utf8',
     );
-    const mudou = estrago.faz(amostra, '/estudos/evora-prometido-pago-auditado-2026/documento/') !== amostra;
+    const mudou = estrago.faz(amostra, '/estudos/evora-contas-da-camara-2010-2025/documento/') !== amostra;
     ESTRAGO = estrago.faz;
     const depois = await passagem();
     avalia(depois);

@@ -1,3 +1,4 @@
+import {WORKS} from '../../src/data/studies.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {NOME_DE_LEI} from '../../src/i18n/nomes-de-lei.mjs';
@@ -5,7 +6,7 @@ import {parse} from 'node-html-parser';
 import {primeirasEdicoes,primeiraEdicaoServida} from '../../src/lib/edicoes.mjs';
 import {marcarLeisDaEdicao,provaDosBytesDaEdicao} from '../../src/lib/leis-da-edicao.mjs';
 let plantas=0;
-for(const e of primeirasEdicoes()) {
+for(const e of primeirasEdicoes().filter(e=>!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'))) {
  const bruto=fs.readFileSync(e.ficheiro,'utf8'),servido=primeiraEdicaoServida(e.slug,e.lang,e.date);
  assert.equal(provaDosBytesDaEdicao(bruto,servido,e.lang),null);
  const nomes=parse(servido).querySelectorAll('[data-edicao-lei]');
@@ -25,4 +26,4 @@ for(const e of primeirasEdicoes()) {
 }
 const amostra='<html lang="en"><body><p>Lei n.º 73/2013</p><p lang="pt-PT">Lei n.º 64/2025</p><script>Lei n.º 1/2020</script></body></html>';
 assert.equal((marcarLeisDaEdicao(amostra,'en').match(/data-edicao-lei/g)??[]).length,1);
-console.log(`ED1-D: controlos dos bytes de todas as primeiras edições e ${plantas} plantas das marcas e dos bytes; partição sem mudança do texto.`);
+console.log(`ED1-D: controlos dos bytes das primeiras edições dos estudos publicados e ${plantas} plantas das marcas e dos bytes; partição sem mudança do texto.`);

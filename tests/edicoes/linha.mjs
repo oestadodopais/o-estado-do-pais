@@ -1,3 +1,4 @@
+import {WORKS} from '../../src/data/studies.mjs';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
@@ -11,7 +12,7 @@ function planta(nome,root,mudar,conferir){
  assert(erros.length,`ED2: planta ${nome} passou`);plantas++;
  if(pedida===nome){recusadas++;console.error(`ED2 planta ${nome}: vermelho 1: ${erros[0]}`);}
 }
-for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
+for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1&&!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'))){
  const base=`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`;
  const root=ler(base).querySelector('[data-estudo-edicao]');
  const conferir=r=>[...conferirLinhaDasEdicoes(r,manifestoEd2,e.slug,e.lang),...conferirMudancasDoCabecalho(r,e.slug,e.lang)];
@@ -31,7 +32,7 @@ for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
  }
 }
 // A régua recusa uma natureza desconhecida, sem a converter em correção.
-const desconhecido=structuredClone(manifestoEd2),alvo=desconhecido.edicoes.find(e=>e.edicoes.length>1);
+const desconhecido=structuredClone(manifestoEd2),alvo=desconhecido.edicoes.find(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang==='pt');
 alvo.edicoes[1].natureza='planta-desconhecida';
 assert(conferirLinhaDasEdicoes(ler(`${alvo.lang==='pt'?'/estudos':'/en/studies'}/${alvo.slug}`).querySelector('[data-estudo-edicao]'),desconhecido,alvo.slug,alvo.lang).some(e=>e.includes('natureza desconhecida')));plantas++;
 // A ordem segue as datas também quando a atualização é posterior à correção.

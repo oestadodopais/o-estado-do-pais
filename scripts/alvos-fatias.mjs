@@ -34,7 +34,7 @@ export const FAMILIAS = [
   /* B1: a amostra de texto longo abre o corpo na rota do estudo. O nome
      «texto» identifica esta medição e conserva as conferências da leitura;
      a terceira coluna diz a rota real, sem pedir um HTML de redirecionamento. */
-  ['texto', { slug: 'evora-prometido-pago-auditado-2026' }, 'estudo'],
+  ['texto', { slug: 'evora-contas-da-camara-2010-2025' }, 'estudo'],
   ['agenda', null],
   ['metodo', null],
   ['sobre', null],

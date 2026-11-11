@@ -1,11 +1,12 @@
 /** ED1-F: só as formas integrais da faixa admitem o fragmento retirado. */
+import {WORKS} from '../src/data/studies.mjs';
 import {fraseRetiradaNoTexto} from './titulos-publicados.mjs';
 import {elementosDaLinha,manifestoEd2,mudancasNoManifesto,publicacaoNoPortao,conferirLinhaDasEdicoes} from './edicoes-linha-conferir.mjs';
 /** O repertório sai das versões declaradas, sem importar a composição da vista.
  * Uma palavra nova, outra ordem ou outra quantidade não se acrescenta por expressão regular. */
 export function repertorioDaVozDasEdicoes(manifesto=manifestoEd2){
  const frases=new Set(),porLingua={pt:new Set(),en:new Set()};
- for(const e of manifesto.edicoes)for(const lang of ['pt','en']){
+ for(const e of manifesto.edicoes.filter(e=>!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado')))for(const lang of ['pt','en']){
   const pt=lang==='pt',vs=e.edicoes,mudancas=mudancasNoManifesto(e.slug,e.lang,manifesto);
   if(vs.length>1){
    for(const data of [null,...vs.map(v=>v.data)]){

@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
-import {WORKS} from '../../src/data/studies.mjs';
+import {WORKS, PUBLISHED_WORKS} from '../../src/data/studies.mjs';
 import {versoesNoManifesto,manifestoEd2,rotasNoManifesto} from '../../scripts/edicoes-linha-conferir.mjs';
 const anterior=process.argv[2];assert(anterior,'indicar o dist anterior');
 const dist=process.env.OEDP_DIST??'dist';
@@ -11,7 +11,7 @@ const ler=(raiz,rota,seletor)=>{
  assert(el,`${rota}: falta ${seletor}`);return el.textContent.replace(/\s+/g,' ').trim();
 };
 let paginas=0,atualizadas=0;
-for(const w of WORKS)for(const lang of ['pt','en']){
+for(const w of PUBLISHED_WORKS)for(const lang of ['pt','en']){
  const principal=w.editions.find(e=>e.lang===lang)??w.editions[0];
  if(versoesNoManifesto(w.slug,principal.lang).length!==1)continue;
  const rota=`${lang==='pt'?'/estudos':'/en/studies'}/${w.slug}`;

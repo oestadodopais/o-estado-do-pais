@@ -12,12 +12,12 @@ import {primeiraEdicaoServida,portasDaCorrecao,linhaDasEdicoes} from '../../src/
 import {conferirEdicoes,conferirTextoHtml,rotaPrimeira,rotaAtual} from '../../scripts/edicoes-conferir.mjs';
 const manifesto=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const paginas=new Map();
-for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao)) {
+for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao&&!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'))) {
  for(const v of e.edicoes.slice(0,-1)) paginas.set(rotaAtual(e.slug,e.lang)+'/'+v.data,primeiraEdicaoServida(e.slug,e.lang,v.data));
  paginas.set(`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`,`<p data-estudo-edicao="${e.slug}/${e.lang}">${linhaDasEdicoes(e.slug,e.lang)}</p>`);
 }
 let conta=0;
-const alvo=manifesto.edicoes.find(e=>e.primeira_edicao),rota=`/estudos/${alvo.slug}`;
+const alvo=manifesto.edicoes.find(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang==='pt'&&e.primeira_edicao),rota=`/estudos/${alvo.slug}`;
 for(const [nome,muda,erro] of [
  ['controlo',()=>{},null],
  ['edição sem entrada',c=>{c.correcoes=c.correcoes.filter(e=>e.slug!==alvo.slug);},'ED1 entrada:'],

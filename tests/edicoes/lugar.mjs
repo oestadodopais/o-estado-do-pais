@@ -2,14 +2,14 @@ import {rotasNoManifesto} from '../../scripts/edicoes-linha-conferir.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parse} from 'node-html-parser';
-import {WORKS} from '../../src/data/studies.mjs';
+import {WORKS, PUBLISHED_WORKS} from '../../src/data/studies.mjs';
 import {primeirasEdicoes} from '../../src/lib/edicoes.mjs';
 import {documentosDoEstudo} from '../../src/lib/documentos.mjs';
 import {conferirPortasDaEdicao,conferirColecoes} from '../../scripts/lugar-edicoes.mjs';
 const historicas=primeirasEdicoes(),vistas={estudo:0,edicoes:0,primeiras_edicoes:0};let plantas=0;
 const amostras=[];
-const esperadas={estudo:WORKS.length*2,edicoes:WORKS.length*2,primeiras_edicoes:WORKS.reduce((n,w)=>n+['pt','en'].filter(lang=>{const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return e.updated&&historicas.some(h=>h.slug===w.slug&&h.lang===e.lang);}).length,0)};
-for(const w of WORKS)for(const lang of ['pt','en']) {
+const esperadas={estudo:PUBLISHED_WORKS.length*2,edicoes:PUBLISHED_WORKS.length*2,primeiras_edicoes:PUBLISHED_WORKS.reduce((n,w)=>n+['pt','en'].filter(lang=>{const e=w.editions.find(e=>e.lang===lang)??w.editions[0];return e.updated&&historicas.some(h=>h.slug===w.slug&&h.lang===e.lang);}).length,0)};
+for(const w of PUBLISHED_WORKS)for(const lang of ['pt','en']) {
  const e=w.editions.find(e=>e.lang===lang)??w.editions[0],atual=documentosDoEstudo(w.slug).find(d=>d.lang===e.lang).rota;
  const primeira=e.updated?historicas.find(h=>h.slug===w.slug&&h.lang===e.lang)?.rota:undefined;
  const rota=`${lang==='pt'?'estudos':'en/studies'}/${w.slug}`;

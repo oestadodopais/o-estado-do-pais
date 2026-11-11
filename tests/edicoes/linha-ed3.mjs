@@ -15,7 +15,7 @@ function plantar(nome,root,muda,confere){
  assert(erros.length,`${nome}: passou indevidamente`);plantas++;
  if(pedida){recusadas++;console.error(`ED3 ${nome}: código 1: ${erros[0]}`);}
 }
-for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
+for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1&&!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'))){
  const base=`${e.lang==='pt'?'/estudos':'/en/studies'}/${e.slug}`;
  const header=ler(base).querySelector('[data-estudo-edicao]');
  const casos=[{root:header,confere:r=>conferirLinhaDasEdicoes(r,manifestoEd2,e.slug,e.lang)}];
@@ -43,7 +43,7 @@ for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
 // Caso sintético: a entrada precede a publicação nos dados reais. Só nesta
 // memória, usa-se essa entrada como publicação para exercitar datas distintas.
 const entradas=JSON.parse(fs.readFileSync('src/data/datas-de-publicacao.json','utf8')).edicoes;
-for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1)){
+for(const e of manifestoEd2.edicoes.filter(e=>e.edicoes.length>1&&!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'))){
  const edicao=WORKS.find(w=>w.slug===e.slug)?.editions.find(v=>v.lang===e.lang);
  const entrada=entradas.find(v=>v.slug===e.slug&&v.lang===e.lang)?.data;
  // O caso exige publicação e primeira edição guardada em datas distintas.

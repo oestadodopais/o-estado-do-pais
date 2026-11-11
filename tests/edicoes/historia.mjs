@@ -38,7 +38,7 @@ const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));asse
 assert.equal(conferirTestemunhas(manifesto,()=>{throw Error('testemunha perdida');}).erros.length,testemunhas.length);plantas++;
 const ausente=conferirTestemunhas(manifesto,()=>{throw Error('sem Git');},{permitirAusencia:true});assert.equal(ausente.avisos.length,testemunhas.length);assert.deepEqual(ausente.erros,[]);plantas++;
 const args={works:WORKS,manifesto,correcoes:CORRECOES_TEXTO,raiz:'studies-src'};
-const alvo=manifesto.edicoes.find(e=>e.primeira_edicao);
+const alvo=manifesto.edicoes.find(e=>e.slug==='evora-2027-capital-europeia-da-cultura'&&e.lang==='pt'&&e.primeira_edicao);
 const paginas=new Map([['/uma-pagina-fora-dos-estudos',`<a href="${rotaAtual(alvo.slug,alvo.lang)}">Primeira edição, tal como foi publicada</a>`]]);
 assert(conferirEdicoes({...args,paginas}).some(e=>e.startsWith('ED1 rótulo:')));plantas++;
 console.log(`ED1-E história: ${plantas} controlos e plantas; segunda atualização conserva a entrada anterior; ausência da testemunha é explícita.`);

@@ -93,8 +93,8 @@ const reguas = [];
 const medidas = {};
 const conta = (nome, passa, prova) => reguas.push({ nome, passa: !!passa, prova: String(prova) });
 
-const O04 = { pt: '/estudos/evora-prometido-pago-auditado-2026', en: '/en/studies/evora-prometido-pago-auditado-2026' };
-const TEXTO = { pt: `${O04.pt}/texto`, en: `${O04.en}/text` };
+const O04 = { pt: '/estudos/evora-contas-da-camara-2010-2025', en: '/en/studies/evora-contas-da-camara-2010-2025' };
+const TEXTO = O04;
 const DOC = { pt: `${O04.pt}/documento`, en: `${O04.en}/document` };
 const ESTUDOS = { pt: '/estudos', en: '/en/studies' };
 

@@ -52,15 +52,17 @@ console.log('EV3-I: edições guardadas sem marcas de nomes da atualização.');
 // A língua da página muda os rótulos, sem inventar uma edição do documento.
 const {linhaDasEdicoes,portasDaCorrecao}=await import('../../src/lib/edicoes.mjs');
 const {conferirLinhaDasEdicoes}=await import('../../scripts/edicoes-linha-conferir.mjs');
-const soPt='evora-economia-investidores-portas-abertas-2026';
-const cabecalho=linhaDasEdicoes(soPt,'pt',null,'en');
-const conferirEmprestada=html=>conferirLinhaDasEdicoes(parse('<p>'+html+'</p>'),manifesto,soPt,'pt',null,'en');
+// REC2: o estudo vivo só em inglês conserva o caso de uma página que usa
+// outra língua nos rótulos e empresta o documento da edição existente.
+const soEn='alentejo-algarve';
+const cabecalho=linhaDasEdicoes(soEn,'en',null,'pt');
+const conferirEmprestada=html=>conferirLinhaDasEdicoes(parse('<p>'+html+'</p>'),manifesto,soEn,'en',null,'pt');
 assert.deepEqual(conferirEmprestada(cabecalho),[]);
-assert(conferirEmprestada(cabecalho.replace('updated on','atualizado a')).length);
-assert(conferirEmprestada(cabecalho.replaceAll('/estudos/','/en/studies/')).length);
-assert(conferirEmprestada(cabecalho.replaceAll('hreflang="pt-PT"','hreflang="en"')).length);
-const dataSoPt=manifesto.edicoes.find(e=>e.slug===soPt&&e.lang==='pt').edicoes.at(-1).data;
-const portasPt=portasDaCorrecao(soPt,'en',dataSoPt);
-assert.throws(()=>portasDaCorrecao(soPt,'en','1900-01-01'),/sem par de versões/);
-assert.equal(portasPt.rotuloDepois,'Current edition');assert(portasPt.depois.rota.startsWith('/estudos/'));
-console.log('VOZ-2A: cabeçalho inglês e portas portuguesas conferidos; língua dos rótulos, rota e hreflang trocados recusados.');
+assert(conferirEmprestada(cabecalho.replace('corrigido a','corrected on')).length);
+assert(conferirEmprestada(cabecalho.replaceAll('/en/studies/','/estudos/')).length);
+assert(conferirEmprestada(cabecalho.replaceAll('hreflang="en"','hreflang="pt-PT"')).length);
+const dataSoEn=manifesto.edicoes.find(e=>e.slug===soEn&&e.lang==='en').edicoes.at(-1).data;
+const portasEn=portasDaCorrecao(soEn,'pt',dataSoEn);
+assert.throws(()=>portasDaCorrecao(soEn,'pt','1900-01-01'),/sem par de versões/);
+assert.equal(portasEn.rotuloDepois,'Edição atual');assert(portasEn.depois.rota.startsWith('/en/studies/'));
+console.log('VOZ-2A: cabeçalho português e portas inglesas conferidos; língua dos rótulos, rota e hreflang trocados recusados.');

@@ -33,7 +33,7 @@ const paginas = [
   ['lugares', '/lugares/', '/en/places/'],
   ['concelho', '/municipios/mourao/', '/en/municipalities/mourao/'],
   ['estudos', '/estudos/', '/en/studies/'],
-  ['estudo', '/estudos/evora-prometido-pago-auditado-2026/', '/en/studies/evora-prometido-pago-auditado-2026/'],
+  ['estudo', '/estudos/evora-contas-da-camara-2010-2025/', '/en/studies/evora-contas-da-camara-2010-2025/'],
   ['sobre', '/sobre/', '/en/about/'],
   ['metodo', '/metodo/', '/en/method/'],
   ['correcoes', '/correcoes/', '/en/corrections/'],

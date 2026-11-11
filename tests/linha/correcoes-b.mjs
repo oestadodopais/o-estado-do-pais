@@ -128,12 +128,12 @@ const conta = (nome, passa, prova) => reguas.push({ nome, passa: !!passa, prova:
 const ROTAS = {
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: {
-    pt: '/estudos/evora-prometido-pago-auditado-2026',
-    en: '/en/studies/evora-prometido-pago-auditado-2026',
+    pt: '/estudos/evora-contas-da-camara-2010-2025',
+    en: '/en/studies/evora-contas-da-camara-2010-2025',
   },
   texto: {
-    pt: '/estudos/evora-prometido-pago-auditado-2026/texto',
-    en: '/en/studies/evora-prometido-pago-auditado-2026/text',
+    pt: '/estudos/evora-contas-da-camara-2010-2025',
+    en: '/en/studies/evora-contas-da-camara-2010-2025',
   },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
   linha: { pt: '/livro-razao/divida-publica-2025', en: '/en/ledger/divida-publica-2025' },

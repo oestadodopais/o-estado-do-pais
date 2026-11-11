@@ -3,11 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
+import {WORKS} from '../../src/data/studies.mjs';
 import {edicoesGuardadas, sha256} from '../../src/lib/edicoes.mjs';
 import {provaDosBytesDaEdicao} from '../../src/lib/leis-da-edicao.mjs';
 const [modo, ficheiro, base] = process.argv.slice(2);
 assert(['antes','depois'].includes(modo) && ficheiro);
-const edicoes = edicoesGuardadas().map(e => {
+const edicoes = edicoesGuardadas().filter(e => !WORKS.some(w => w.slug === e.slug && w.estado === 'retirado')).map(e => {
   const original = fs.readFileSync(e.ficheiro);
   const servido = fs.readFileSync(`dist${e.rota}/index.html`, 'utf8');
   const doc = parse(servido);

@@ -1,12 +1,14 @@
 import {corpoDocumentalConferido} from '../../scripts/corpo-documental-conferir.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import {spawnSync} from 'node:child_process';import {parse} from 'node-html-parser';
+import {WORKS} from '../../src/data/studies.mjs';
 import {manifestoDosRegistos} from '../../src/lib/registos.mjs';import {routePath} from '../../src/lib/routes.mjs';import {irmaoDepoisDaMedida} from '../../src/lib/posicao-do-selo.mjs';
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'sel1-cadeia-'));
 try {
  let alvo;
  for(const chave of Object.keys(manifestoDosRegistos().registos)){
   const corte=chave.lastIndexOf('/'),slug=chave.slice(0,corte),lang=chave.slice(corte+1),f=path.join(routePath('estudo',lang,{slug}),'index.html');
+  if(WORKS.some(w=>w.slug===slug&&w.estado==='retirado'))continue;
   const destino=path.join(tmp,f);fs.mkdirSync(path.dirname(destino),{recursive:true});fs.copyFileSync(path.join('dist',f),destino);
   if(!alvo){const root=parse(fs.readFileSync(destino,'utf8'));const figura=root.querySelectorAll('[data-registo]').find(el=>el.nextSibling?.nodeType===3&&irmaoDepoisDaMedida(el).irmao?.matches('a.src-chip'));if(figura)alvo={root,figura,destino};}
  }
