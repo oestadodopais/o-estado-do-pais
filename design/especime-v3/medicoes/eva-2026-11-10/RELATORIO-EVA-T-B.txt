@@ -1,0 +1,71 @@
+EVA-T-B, 11.11.2026
+
+PARAGEM PEDIDA PELO MANDATO
+
+A correção não foi implementada. O check:cruzamento recusou o campo novo
+previous_source_url na linha gerada evora-execucao-da-receita-2021.
+Cumpri a cláusula «Quando paras» e não contornei a proteção da travessia.
+
+PROVA DO ENDEREÇO E DA RECUSA
+
+O Git, em 8cc7b6b34^:ledger/claims/evora-execucao-da-receita-2021.yml,
+confirma o source_url anterior:
+https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=112
+
+Acrescentei apenas previous_source_url com esse endereço à correção de
+2026-11-11 e executei, por scripts/leituras/curto.sh:
+npm run check:cruzamento -- --with-origin
+Resultado: código 1, duração indicada pelo invólucro: 2 segundos.
+Registo: <temporario>/eva-t-b-cruzamento.log, linhas 39 a 46.
+
+A recusa foi:
+«[evora.json] evora-execucao-da-receita-2021: os bytes em disco já não são
+os que atravessaram.»
+«mudou alguma coisa fora das reconferências.»
+
+A primeira etapa do comando, tests/hb1/projecao-linha.mjs, executa a régua
+numa cópia da árvore e encontrou essa recusa. A asserção falhou antes da
+segunda etapa, node scripts/check-cruzamento.mjs --with-origin. Portanto,
+a comparação com o motor não chegou a correr; não a declaro verificada.
+
+O QUE A RÉGUA PEDE
+
+scripts/check-cruzamento.mjs protege os bytes fora de verifications[].
+A mensagem exige nova travessia pelo exportador do motor
+(ResearchHub/publisher/export_site_rows.py --write), ou uma correção local
+admitida por --accept-correction. Este segundo caminho exige que a lista
+corrections cresça: acrescentar o campo à entrada existente não satisfaz
+essa condição (linhas 359 a 367 do script).
+
+Não executei --accept-correction, não alterei os resumos da travessia,
+não criei uma correção adicional e não alterei o motor.
+É necessário resolver a declaração na origem e a sua exportação, ou
+definir outro procedimento autorizado que preserve a prova da travessia.
+
+ESTADO ENTREGUE E TRABALHO PENDENTE
+
+Retirei apenas o campo de ensaio. git diff --exit-code confirmou que a
+linha voltou exatamente à cabeça; git status --short ficou vazio antes
+da criação deste relatório. O único ficheiro a comitar é este relatório.
+
+Ficam por fazer o campo validado, a função partilhada, a alteração da
+página e da régua legível e as plantas pedidas. O erro da frase mantém-se.
+Não corri build, ledger:check, check:registo, gate:html, typecheck nem
+tests/eva/reconferencias.mjs, porque a condição de paragem se verificou.
+
+Recibos com a frase da fonte anterior num novo HTML: não medidos.
+Frases dos recibos evora-divida-total-2025 e evora-prr-pago-2026 nas duas
+edições: não medidas nesta passagem. Não houve construção nova que
+permita apresentar essas medições como prova de uma correção.
+
+ORÇAMENTO
+
+Até à redação: 10 chamadas functions.exec.
+Corridas de conferências: 1, check:cruzamento, recusada.
+Corridas integrais de portões: 0. Capturas: 0.
+As chamadas de entrega e verificação do commit são contadas na resposta
+final. Não foi exposta uma linha «tokens used».
+
+O trailer Claude-Session da entrega é copiado do commit 2f9bbe402,
+que introduziu esta adenda. A entrega documenta a paragem, não uma
+implementação concluída.
