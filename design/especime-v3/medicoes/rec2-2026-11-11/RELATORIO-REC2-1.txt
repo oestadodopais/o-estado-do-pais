@@ -1,0 +1,101 @@
+REC2, retirada dos seis estudos de Évora, 11.11.2026
+
+1. Os seis trabalhos com sucedidoPor têm estado retirado. O arquivo publica 13 trabalhos e 20 edições; Évora mantém quatro. As seis famílias de páginas deixam de se gerar. Plantas: página, documento datado ou registo de retirado construído recusados; página viva ausente recusada.
+
+2. Gerados 38 redirecionamentos permanentes em vercel.json: as 29 rotas construídas na partida e os nove endereços texto/text anteriores. O destino é calculado de sucedidoPor; o estudo com três sucessores leva ao município na mesma língua. A lista da cabeça 740595bbb fica em rotas-de-partida.json. Plantas: origem sem redirecionamento, destino inexistente, destino manual divergente e origem ainda construída recusados. Lista completa no fim.
+
+3. Saíram os dois componentes das notas de sucessão, os rótulos e o estilo que só lhes pertenciam. A régua percorre todo o HTML e XML construído e recusa ligações aos seis, citações exclusivas e notas de sucessão. A planta da nota reinserida recusa pelo check:datas. A planta da agenda insere portas retiradas a partir do registo conservado, sem exigir páginas inexistentes; 49 plantas recusadas.
+
+4. As listas históricas ficam intactas. Saltadas e contadas: VOZ-2A 85/182; VOZ-2B 53/106; COR-AGUA 32/126; adendas d/g/i/j/prr zero. Nas entradas vivas da VOZ-2A, 64 referências adicionais a páginas retiradas, em 57 entradas, deixam de ser pedidas ao dist. Dezasseis plantas provam a contagem, a dispensa exclusiva dos retirados e a recusa de falta de páginas vivas. O repetidor dos pares passa a scripts/leituras/conferir-pares.mjs; a versão histórica em design fica intacta.
+
+5. Contas contra a medição do mandato:
+   por-registar: 2202 -> 1612; saíram as 582 entradas dos seis medidas pelo mandato e mais oito de páginas vivas. Quatro eram notas de antecessores; quatro eram frases da inicial e agenda que deixaram de aparecer com a retirada. As oito estão discriminadas nas medidas do construtor.
+   voz-excecoes: 58 -> 31; saíram 27, como medido.
+   datas-de-publicacao: 29 -> 20; saíram nove, como medido; o gerador também as exclui.
+   isenção VOZ-2: 11 -> 9; saíram duas, como medido.
+   Deixam de aparecer cinco leituras, três citações de abertura exclusivas e dois eventos exclusivamente documentais: evora-contas-2024-pagina e evora-contas-2026. Dados históricos conservados; eventos mistos e ligados a linhas vivas continuam.
+   O inventário histórico de voz conserva as linhas, mas o consumidor dispensa 12 descrições literais cujo único dono é retirado. Vinte plantas verificam o filtro e a aceitação estreita dos rótulos dossiê/dossier das novidades.
+
+6. As amostras passam para o estudo das contas. Exceções pela forma necessária: economia para EYETEXT; cultura para edição histórica datada; alentejo-algarve para a faixa de língua emprestada com história. As quatro mutações da moldura são partilhadas com a prova real de navegador. L1: 3508 -> 3491, valor medido; a régua anterior recusou a folga e o teto novo passou. As réguas de coleções preservam trabalhos em preparação e excluem apenas retirados.
+
+7. estudos-publicados: 19 -> 13, atualização de 2026-11-11 com as duas razões exatas do mandato. estudos-evora-publicados: quatro, derivação nas duas línguas com a frase pedida, contagem por objeto Évora entre publicados. As quatro frases são verificadas no HTML das páginas das linhas. Histórias anteriores preservadas. A linha já retirada edicoes-publicadas também passou de 29 para 20, com atualização na história: a conferência integral exige concordância com a contagem atual, mesmo nessa linha. Continua retirada.
+
+8. studies-src/, registos/, src/data/correcoes.mjs, listas históricas VOZ e COR-AGUA e ficheiros preexistentes de design preservados. Motor sem alterações. A leitura de auditoria conserva linhas retiradas ao conferir os selos da história; linhas vivas nascidas nos seis mantêm o caminho documental.
+
+O leitor passa a encontrar apenas os trabalhos sustentados atualmente. Os endereços antigos levam ao sucessor ou ao município; os quatro estudos não exibem ligações de regresso aos seis. Não foi feita publicação nem push.
+
+Listas adicionais alteradas: ledger/historias-valores.json (selos acrescentados), tests/cartao/leituras-provadas.json (citação exata da derivação), scripts/lugar-tetos-b1.json (L1) e src/i18n/lingua-dos-titulos.mjs (declaração da nova data da edição). Réguas de novidades, datas, cadeia, voz, inventário e pares acompanham a seleção publicada. Novas testemunhas: tests/rec2/*.mjs, planta da nota em tests/pais/portoes.mjs e plantas partilhadas da moldura.
+
+PROVA E CÓDIGOS
+Cabeça construída: fde90b45c8d1cfb8ddd9b392c5bc085be5f55b19. Índice corrigido e repetido na cabeça 3ea575f6d358440807334683fa28b57ae18f9106; só mudou a régua, sem mudança de páginas. O commit seguinte só guarda relatório e medidas.
+Cinco construções pelo escrivão, sem corrida integral do verify. As quatro primeiras deram 1: ordem do shebang no gate, remedição das datas retiradas, planta da agenda que pedia páginas retiradas e declaração da nova data da edição. Cada erro foi corrigido e conferido pela sua régua; a quinta construção deu 0.
+O perfil de navegador terminou com seis códigos zero e índice 1: a I9 ainda pedia as nove datas retiradas. A seleção foi corrigida apenas nessa régua e o índice foi repetido pelo escrivão, com código zero.
+Códigos lidos dos ficheiros em <temporario>:
+  rec2-build/build.codigo: 1
+  rec2-build-2/build.codigo: 1
+  rec2-build-final/build.codigo: 1
+  rec2-build-fecho/build.codigo: 1
+  rec2-build-verificado/build.codigo: 0
+  rec2-typecheck-4.codigo: 0
+  rec2-frases-afirmacao-final-2.codigo: 0
+  rec2-frases-reais-2.codigo: 0
+  rec2-lugar-final-2.codigo: 0
+  rec2-edicoes-2.codigo: 0
+  rec2-documentos.codigo: 0
+  rec2-planta-nota.codigo: 0
+  rec2-agenda-final-2.codigo: 0
+  rec2-unitarias.codigo: 0
+  rec2-final-check-rec2.codigo: 0
+  rec2-voz-inventario-construido-3.codigo: 0
+  rec2-perfis.codigo: 0
+  rec2-navegador-final/check:cabeca.codigo: 0
+  rec2-navegador-final/check:indice.codigo: 1
+  rec2-navegador-final/check:largura.codigo: 0
+  rec2-navegador-final/check:leituras.codigo: 0
+  rec2-navegador-final/check:moldura.codigo: 0
+  rec2-navegador-final/check:rec2-moldura.codigo: 0
+  rec2-navegador-final/check:sobreposicao.codigo: 0
+  rec2-indice-final/check:indice.codigo: 0
+Todos os 79 códigos guardados, incluindo tentativas recusadas e conferências dirigidas adicionais, estão transcritos nas medidas do construtor. Esta é uma contagem de corridas com código conservado, não de cada processo filho. Houve também provas diretas sem ficheiro de código; a contagem total dessas corridas não foi reconstituída [verify].
+Chamadas medidas nos registos das sessões até fechar este relatório: principal 226; amostras 60; listas 78; soma 364. A soma ultrapassou o teto de 240: os auxiliares foram contabilizados tarde. Depois deste ponto faltam apenas revisão e commit do relatório.
+
+
+REDIRECIONAMENTOS GERADOS
+301 /estudos/evora-quinze-anos-cinco-mandatos/? -> /municipios/evora/
+301 /estudos/evora-quinze-anos-cinco-mandatos/documento/? -> /municipios/evora/
+301 /estudos/evora-quinze-anos-cinco-mandatos/documento/2026-08-20/? -> /municipios/evora/
+301 /en/studies/evora-quinze-anos-cinco-mandatos/? -> /en/municipalities/evora/
+301 /estudos/evora-quinze-anos-cinco-mandatos/texto/? -> /municipios/evora/
+301 /estudos/evora-economia-investidores-portas-abertas-2026/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-economia-investidores-portas-abertas-2026/documento/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-economia-investidores-portas-abertas-2026/documento/2026-08-12/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /en/studies/evora-economia-investidores-portas-abertas-2026/? -> /en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-economia-investidores-portas-abertas-2026/texto/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-orcamentado-pago-devido-2025/? -> /estudos/evora-contas-da-camara-2010-2025/
+301 /estudos/evora-orcamentado-pago-devido-2025/documento/? -> /estudos/evora-contas-da-camara-2010-2025/
+301 /estudos/evora-orcamentado-pago-devido-2025/documento/2026-08-20/? -> /estudos/evora-contas-da-camara-2010-2025/
+301 /en/studies/evora-orcamentado-pago-devido-2025/? -> /en/studies/evora-contas-da-camara-2010-2025/
+301 /en/studies/evora-orcamentado-pago-devido-2025/document/? -> /en/studies/evora-contas-da-camara-2010-2025/
+301 /en/studies/evora-orcamentado-pago-devido-2025/document/2026-08-20/? -> /en/studies/evora-contas-da-camara-2010-2025/
+301 /en/studies/evora-orcamentado-pago-devido-2025/text/? -> /en/studies/evora-contas-da-camara-2010-2025/
+301 /estudos/evora-orcamentado-pago-devido-2025/texto/? -> /estudos/evora-contas-da-camara-2010-2025/
+301 /estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/? -> /estudos/evora-quem-governou-a-camara-2009-2025/
+301 /estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/? -> /estudos/evora-quem-governou-a-camara-2009-2025/
+301 /en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram/? -> /en/studies/evora-quem-governou-a-camara-2009-2025/
+301 /estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/? -> /estudos/evora-quem-governou-a-camara-2009-2025/
+301 /estudos/evora-prometido-pago-auditado-2026/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-prometido-pago-auditado-2026/documento/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-prometido-pago-auditado-2026/documento/2026-08-20/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /en/studies/evora-prometido-pago-auditado-2026/? -> /en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /en/studies/evora-prometido-pago-auditado-2026/document/? -> /en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /en/studies/evora-prometido-pago-auditado-2026/document/2026-08-20/? -> /en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /en/studies/evora-prometido-pago-auditado-2026/text/? -> /en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-prometido-pago-auditado-2026/texto/? -> /estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/
+301 /estudos/evora-2027-prometido-painel-dinheiro/? -> /estudos/evora-2027-capital-europeia-da-cultura/
+301 /estudos/evora-2027-prometido-painel-dinheiro/documento/? -> /estudos/evora-2027-capital-europeia-da-cultura/
+301 /estudos/evora-2027-prometido-painel-dinheiro/documento/2026-09-16/? -> /estudos/evora-2027-capital-europeia-da-cultura/
+301 /en/studies/evora-2027-prometido-painel-dinheiro/? -> /en/studies/evora-2027-capital-europeia-da-cultura/
+301 /en/studies/evora-2027-prometido-painel-dinheiro/document/? -> /en/studies/evora-2027-capital-europeia-da-cultura/
+301 /en/studies/evora-2027-prometido-painel-dinheiro/document/2026-09-16/? -> /en/studies/evora-2027-capital-europeia-da-cultura/
+301 /en/studies/evora-2027-prometido-painel-dinheiro/text/? -> /en/studies/evora-2027-capital-europeia-da-cultura/
+301 /estudos/evora-2027-prometido-painel-dinheiro/texto/? -> /estudos/evora-2027-capital-europeia-da-cultura/
