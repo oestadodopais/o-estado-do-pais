@@ -1,0 +1,58 @@
+{
+ "versoes_do_estudo_por_lingua_no_manifesto_dos_documentos": {
+  "valor": "[4, 4]",
+  "comando": "python3 -c \"import yaml;d=yaml.safe_load(open('studies-src/manifest.yml',encoding='utf-8'));print([len(e['edicoes']) for e in d['edicoes'] if e['slug']=='evora-2027-capital-europeia-da-cultura'])\""
+ },
+ "ficheiros_do_estudo_em_edicoes_guardadas": {
+  "valor": "6",
+  "comando": "sh -c \"ls studies-src/_edicoes/ | grep -c '^evora-2027-capital-europeia-da-cultura\\.'\""
+ },
+ "entradas_do_estudo_em_CORRECOES_TEXTO": {
+  "valor": "3",
+  "comando": "grep -c \"slug: 'evora-2027-capital-europeia-da-cultura'\" src/data/correcoes.mjs"
+ },
+ "entradas_do_estudo_em_por_registar": {
+  "valor": "228",
+  "comando": "python3 -c \"import json;d=json.load(open('ledger/frases/por-registar.json',encoding='utf-8'));print(sum(1 for x in d if 'evora-2027-capital-europeia-da-cultura' in json.dumps(x)))\""
+ },
+ "linhas_do_estudo_em_voz_excecoes": {
+  "valor": "4",
+  "comando": "grep -c 'evora-2027-capital-europeia-da-cultura' scripts/voz-excecoes.json"
+ },
+ "linhas_do_estudo_no_vercel_json": {
+  "valor": "12",
+  "comando": "grep -c 'evora-2027-capital-europeia-da-cultura' vercel.json"
+ },
+ "estudos_retirados_que_apontam_para_este": {
+  "valor": "1",
+  "comando": "grep -c \"sucedidoPor: \\[{ slug: 'evora-2027-capital-europeia-da-cultura' }\\]\" src/data/studies.mjs"
+ },
+ "blocos_do_registo_portugues_no_motor": {
+  "valor": "165",
+  "comando": "python3 -c \"import json,os;m=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json'),encoding='utf-8'));r={x['lang']:x for x in m['registos']};print(r['pt-PT']['blocos'])\""
+ },
+ "referencias_do_registo_portugues_no_motor": {
+  "valor": "332",
+  "comando": "python3 -c \"import json,os;m=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json'),encoding='utf-8'));r={x['lang']:x for x in m['registos']};print(r['pt-PT']['referencias'])\""
+ },
+ "blocos_do_registo_ingles_no_motor": {
+  "valor": "165",
+  "comando": "python3 -c \"import json,os;m=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json'),encoding='utf-8'));r={x['lang']:x for x in m['registos']};print([x for k,x in r.items() if k!='pt-PT'][0]['blocos'])\""
+ },
+ "referencias_do_registo_ingles_no_motor": {
+  "valor": "332",
+  "comando": "python3 -c \"import json,os;m=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json'),encoding='utf-8'));r={x['lang']:x for x in m['registos']};print([x for k,x in r.items() if k!='pt-PT'][0]['referencias'])\""
+ },
+ "unidades_do_texto_julgado_por_lingua": {
+  "valor": "465",
+  "comando": "python3 -c \"import re;print(len(re.findall(r'^(?:#+ )?\\[[BNC][0-9A-Z.a-z]+\\]',open('design/especime-v3/medicoes/evb-2026-11-11/TEXTO-FINAL-19.pt.md',encoding='utf-8').read(),re.M)))\""
+ },
+ "sha256_do_html_pt_no_motor": {
+  "valor": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb",
+  "comando": "python3 -c \"import hashlib,os;print(hashlib.sha256(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html'),'rb').read()).hexdigest())\""
+ },
+ "sha256_do_html_en_no_motor": {
+  "valor": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306",
+  "comando": "python3 -c \"import hashlib,os;print(hashlib.sha256(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html'),'rb').read()).hexdigest())\""
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-11T22:45:30+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "X1-file",
+   "ficheiro": "motor/core/ocorrencias_bilingues.py",
+   "descricao": "«mil milhões» passa a valer como milhão na tabela das escalas: uma tradução com a escala mil vezes menor passa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8e7dfa018c90baf2f0c5724e4d446273ebf8c1250e83be8d24ac59e2a536f0d0",
+   "sha256_depois": "095e8c2167da0687a7295bcf0fe421a0d18f3dbae4fc10554eafd84607f7677b",
+   "contexto_antes": "ilhões|milhão|millions?|mil|thousands?)\\b',tail)\n    scales={'biliões':'trillion','bilião':'trillion','trillion':'trillion','trillions':'trillion',\n            'mil milhões':'billion','billion':'billion','billions':'billion',\n            'milhões':'million','milhão':'million','million':'million','millions':'million',\n            'mil':'thousand','thousand':'thousand','thousands':'th",
+   "contexto_depois": "ilhões|milhão|millions?|mil|thousands?)\\b',tail)\n    scales={'biliões':'trillion','bilião':'trillion','trillion':'trillion','trillions':'trillion',\n            'mil milhões':'million','billion':'billion','billions':'billion',\n            'milhões':'million','milhão':'million','million':'million','millions':'million',\n            'mil':'thousand','thousand':'thousand','thousands':'th"
+  },
+  {
+   "id": "X2-file",
+   "ficheiro": "motor/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/ajustes.json",
+   "descricao": "a dispensa do detetor alarga-se de «fiscal único» a qualquer «único»: uma frase com esse quantificador deixa de pedir asserção",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b1ff3c9138bdd97a5404de673740c44f7e405960586f67ba6a840d0a772d2054",
+   "sha256_depois": "f97641c7246a4e73a4f0c353b11e8bebb06eaa15b123f1c1d572ce00b797254e",
+   "contexto_antes": "s-ilegiveis\",\n    \"premio-nao-inscrito\",\n    \"protocolo-nao-publicado\",\n    \"remuneracoes-ausentes\",\n    \"unica-verba-do-decreto\"\n  ],\n  \"assertion_ignores\": [\n    \"fiscal único\"\n  ]\n}\n",
+   "contexto_depois": "s-ilegiveis\",\n    \"premio-nao-inscrito\",\n    \"protocolo-nao-publicado\",\n    \"remuneracoes-ausentes\",\n    \"unica-verba-do-decreto\"\n  ],\n  \"assertion_ignores\": [\n    \"único\"\n  ]\n}\n"
+  },
+  {
+   "id": "X3-file",
+   "ficheiro": "motor/core/editions.py",
+   "descricao": "as aspas passam a apanhar da primeira à última da unidade: um número entre duas citações da mesma unidade sai da paridade",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a3103bed994e15184426aae76627a6db6cc2c7d24e1eb7335d64a616d125d3e7",
+   "sha256_depois": "0a95cfb08a9ea7c9befb49c437a0efac927b44d0cc19cf8aaacd014c1a03225d",
+   "contexto_antes": "anonical\n    profile=Counter()\n    for uid,unit in J.unidades(reference):\n        translations=traducoes(unit,[r for r in quotes if r['unidade']==uid])\n        quoted=[m.span(1) for m in re.finditer(r'«([^»]+)»',unit)]\n        for m in ocorrencias(unit):\n            if m.start() in translations or any(a<=m.start()<z for a,z in quoted):continue\n            profile[(uid,'número",
+   "contexto_depois": "anonical\n    profile=Counter()\n    for uid,unit in J.unidades(reference):\n        translations=traducoes(unit,[r for r in quotes if r['unidade']==uid])\n        quoted=[m.span() for m in re.finditer(r'«.+»',unit)]\n        for m in ocorrencias(unit):\n            if m.start() in translations or any(a<=m.start()<z for a,z in quoted):continue\n            profile[(uid,'número"
+  },
+  {
+   "id": "X4-file",
+   "ficheiro": "motor/core/evb_d_test.py",
+   "descricao": "o teste da paridade deixa de afirmar o número de diferenças: qualquer contagem serve",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b96fb85d758d21103f9feedcf20090ae10907719bca0e9e8ba323d12d7e29f34",
+   "sha256_depois": "a4f600b264824fbcb5fd5d96cc5f453bcb8a9acd8e75ff4a10c62df3c80f0e3a",
+   "contexto_antes": "ode else 'PASS'\n        self.assertIn('EDITIONS: '+verdict,output.getvalue())\n        self.assertIn(str(expected_drifts)+' drift(s)',output.getvalue())\n        self.assertEqual(output.getvalue().count('DRIFT   unidade '),expected_drifts)\n        return output.getvalue()\n\n    def test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas(self):\n        import re\n        from collections impo",
+   "contexto_depois": "ode else 'PASS'\n        self.assertIn('EDITIONS: '+verdict,output.getvalue())\n        self.assertIn(str(expected_drifts)+' drift(s)',output.getvalue())\n        self.assertGreaterEqual(output.getvalue().count('DRIFT   unidade '),0)\n        return output.getvalue()\n\n    def test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas(self):\n        import re\n        from collections impo"
+  },
+  {
+   "id": "X5-file",
+   "ficheiro": "motor/core/gate.py",
+   "descricao": "a suíte nova da adenda D não entra no portão: a lista repete a suíte da adenda C",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b9b28cdf604399bc6b38ce6e2bd13560b8452bda40357e235f73012fecc91ba5",
+   "sha256_depois": "3dbe6518f96d931d0d43036a72c7809c8129bef8dfd47357e296b15784c9f92e",
+   "contexto_antes": "test\",\n    \"core.texto_julgado_test\",\n    \"core.datas_declaradas_test\",\n    \"core.eva_test\",\n    \"core.evb_test\",\n    \"core.evb_b_test\",\n    \"core.evb_c_test\",\n    \"core.evb_d_test\",\n    \"publisher.publicadores_test\",\n    \"core.formas_documentais_test\",\n    \"publisher.ev2_test\",\n    \"publisher.hb1_test\",\n    \"core.compor_livros_test\",\n    \"",
+   "contexto_depois": "test\",\n    \"core.texto_julgado_test\",\n    \"core.datas_declaradas_test\",\n    \"core.eva_test\",\n    \"core.evb_test\",\n    \"core.evb_b_test\",\n    \"core.evb_c_test\",\n    \"core.evb_c_test\",\n    \"publisher.publicadores_test\",\n    \"core.formas_documentais_test\",\n    \"publisher.ev2_test\",\n    \"publisher.hb1_test\",\n    \"core.compor_livros_test\",\n    \""
+  },
+  {
+   "id": "X1-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "«mil milhões» passa a valer como milhão na tabela das escalas: uma tradução com a escala mil vezes menor passa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6cc2263b30d9c11877c398b018fc28cc1a8e4ed10619cb19a7f1f122a16c8662",
+   "sha256_depois": "5731e4cef658e7f5c95846da462d68a5cbfd97c1c139f16e4ef3c649704f54b3",
+   "contexto_antes": "hões|milhão|millions?|mil|thousands?)\\b',tail)\n+    scales={'biliões':'trillion','bilião':'trillion','trillion':'trillion','trillions':'trillion',\n+            'mil milhões':'billion','billion':'billion','billions':'billion',\n+            'milhões':'million','milhão':'million','million':'million','millions':'million',\n+            'mil':'thousand','thousand':'thousand','thousands':'",
+   "contexto_depois": "hões|milhão|millions?|mil|thousands?)\\b',tail)\n+    scales={'biliões':'trillion','bilião':'trillion','trillion':'trillion','trillions':'trillion',\n+            'mil milhões':'million','billion':'billion','billions':'billion',\n+            'milhões':'million','milhão':'million','million':'million','millions':'million',\n+            'mil':'thousand','thousand':'thousand','thousands':'"
+  },
+  {
+   "id": "X2-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a dispensa do detetor alarga-se de «fiscal único» a qualquer «único»: uma frase com esse quantificador deixa de pedir asserção",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5731e4cef658e7f5c95846da462d68a5cbfd97c1c139f16e4ef3c649704f54b3",
+   "sha256_depois": "e2dd5a4b0487ee7d13ee40bfe01b55d994b4adb9f0dbc6dceaa6ba04fabdbed9",
+   "contexto_antes": "quotes\": [\n@@ -10902,5 +10888,8 @@\n     \"protocolo-nao-publicado\",\n     \"remuneracoes-ausentes\",\n     \"unica-verba-do-decreto\"\n+  ],\n+  \"assertion_ignores\": [\n+    \"fiscal único\"\n   ]\n }\ndiff --git a/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/CITACOES-atribuidas.json b/content/19 Évora 2027 Capital Europeia d",
+   "contexto_depois": "quotes\": [\n@@ -10902,5 +10888,8 @@\n     \"protocolo-nao-publicado\",\n     \"remuneracoes-ausentes\",\n     \"unica-verba-do-decreto\"\n+  ],\n+  \"assertion_ignores\": [\n+    \"único\"\n   ]\n }\ndiff --git a/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/evb/CITACOES-atribuidas.json b/content/19 Évora 2027 Capital Europeia d"
+  },
+  {
+   "id": "X4-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o teste da paridade deixa de afirmar o número de diferenças: qualquer contagem serve",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e2dd5a4b0487ee7d13ee40bfe01b55d994b4adb9f0dbc6dceaa6ba04fabdbed9",
+   "sha256_depois": "b842be3b08da24335d851fa7797e44db41924a19b8bfddc2336d853b9d6aece7",
+   "contexto_antes": " else 'PASS'\n+        self.assertIn('EDITIONS: '+verdict,output.getvalue())\n+        self.assertIn(str(expected_drifts)+' drift(s)',output.getvalue())\n+        self.assertEqual(output.getvalue().count('DRIFT   unidade '),expected_drifts)\n+        return output.getvalue()\n+\n+    def test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas(self):\n+        import re\n+        from collections",
+   "contexto_depois": " else 'PASS'\n+        self.assertIn('EDITIONS: '+verdict,output.getvalue())\n+        self.assertIn(str(expected_drifts)+' drift(s)',output.getvalue())\n+        self.assertGreaterEqual(output.getvalue().count('DRIFT   unidade '),0)\n+        return output.getvalue()\n+\n+    def test_paridade_recusa_medida_ano_pagina_e_numero_fora_das_aspas(self):\n+        import re\n+        from collections"
+  },
+  {
+   "id": "X5-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a suíte nova da adenda D não entra no portão: a lista repete a suíte da adenda C",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b842be3b08da24335d851fa7797e44db41924a19b8bfddc2336d853b9d6aece7",
+   "sha256_depois": "1a603bfb8e2becb3f823a610e3ad07d4da4f0683e2e35d0f2f0326466ad8a069",
+   "contexto_antes": "cea1a7 100644\n--- a/core/gate.py\n+++ b/core/gate.py\n@@ -290,6 +290,7 @@ TEST_MODULES = (\n     \"core.evb_test\",\n     \"core.evb_b_test\",\n     \"core.evb_c_test\",\n+    \"core.evb_d_test\",\n     \"publisher.publicadores_test\",\n     \"core.formas_documentais_test\",\n     \"publisher.ev2_test\",\ndiff --git a/core/ocorrencias_bilingues.py b/core/ocorrenci",
+   "contexto_depois": "cea1a7 100644\n--- a/core/gate.py\n+++ b/core/gate.py\n@@ -290,6 +290,7 @@ TEST_MODULES = (\n     \"core.evb_test\",\n     \"core.evb_b_test\",\n     \"core.evb_c_test\",\n+    \"core.evb_c_test\",\n     \"publisher.publicadores_test\",\n     \"core.formas_documentais_test\",\n     \"publisher.ev2_test\",\ndiff --git a/core/ocorrencias_bilingues.py b/core/ocorrenci"
+  },
+  {
+   "id": "X3-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "as aspas passam a apanhar da primeira à última da unidade: um número entre duas citações da mesma unidade sai da paridade",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1a603bfb8e2becb3f823a610e3ad07d4da4f0683e2e35d0f2f0326466ad8a069",
+   "sha256_depois": "76798067f3e8a6ae91e3e6484eb04d665c8e93af9cd986ad319a495f245a7b99",
+   "contexto_antes": "mport ocorrencias\n+    from .reconcile import canonical\n     profile=Counter()\n-    for uid,unit in units:\n+    for uid,unit in J.unidades(reference):\n         translations=traducoes(unit,[r for r in quotes if r['unidade']==uid])\n         quoted=[m.span(1) for m in re.finditer(r'«([^»]+)»',unit)]\n         for m in ocorrencias(unit):\ndiff --git a/core/evb_c_test.py b/core/evb_c_test.py\nindex a385cd1..6943a16 100644\n--- a/core/evb_c_test.py\n+++ b/core/evb",
+   "contexto_depois": "mport ocorrencias\n+    from .reconcile import canonical\n     profile=Counter()\n-    for uid,unit in units:\n+    for uid,unit in J.unidades(reference):\n         translations=traducoes(unit,[r for r in quotes if r['unidade']==uid])\n         quoted=[m.span() for m in re.finditer(r'«.+»',unit)]\n         for m in ocorrencias(unit):\ndiff --git a/core/evb_c_test.py b/core/evb_c_test.py\nindex a385cd1..6943a16 100644\n--- a/core/evb_c_test.py\n+++ b/core/evb"
+  }
+ ]
+}

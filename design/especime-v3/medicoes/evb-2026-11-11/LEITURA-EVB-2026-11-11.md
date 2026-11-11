@@ -52,3 +52,31 @@ Claude Opus 5.5 (`leitor`), a `xhigh`, 283 mil símbolos e 80 chamadas, sobre o 
 | 9, 10, 12, 13 (o resto) e 14 (Minor) | a opacidade escrita de outras maneiras e o menu recolhido de um sítio responsivo; a unidade que se perde quando há escala; o contrato das linhas curtas que não confere que a linha é curta; a regra das asserções só nos dados; a paridade presa ao caminho deste estudo | o bloco de higiene (as questões EVB-6 a EVB-10); a EVB-10 fecha-se antes do EVC, que traz outro contrato nas duas línguas |
 
 O leitor confirmou por si: os quarenta corpos com o resumo e o tamanho declarados e todas as referências a documentos resolvidas num corpo copiado; as sete linhas do quadro das intervenções na página nove das contas contra os sete excertos e contextos, e as duas unidades com duas linhas; a soma dos sete orçamentos igual ao total impresso; o título da página «Quem Somos»; todos os excertos em HTML a resolver uma só vez com o extrator novo; os dez intervalos de dias com o fim que a fonte imprime; as 33 asserções instaladas sem a palavra que não autorizava; as 23 diferenças linha a linha; os pares de uma só língua de volta à comparação antiga.
+
+## A leitura curta da adenda D
+
+Claude Opus 5.5 (`leitor`), a `xhigh`, 133 mil símbolos e 61 chamadas, sobre o diff da adenda D, com o `core/` inteiro no pacote para o código correr. As plantas estão em `leitura-evb-curta-d.plantas.json`. **Cinco plantas em cinco**, quatro por correr o código e os testes do pacote:
+
+- X1 («mil milhões» a valer como milhão): o achado 1;
+- X2 (a dispensa do detetor alargada a qualquer «único»): o achado 4;
+- X3 (as aspas da primeira à última da unidade): o achado 3, com a conta dos 29 números que saíam da paridade por edição;
+- X4 (o teste da paridade sem afirmar o número de diferenças): o achado 6;
+- X5 (a suíte nova fora do portão): o achado 2.
+
+Conferido por este lugar na cabeça `71df7b3` do motor, linha a linha: nenhum dos cinco estragos está no código verdadeiro.
+
+### Os achados reais e o que se decidiu
+
+Nenhum Blocking nem Major real. Minor, para o bloco de higiene:
+
+| achado | o que é | decisão |
+| --- | --- | --- |
+| 5 | o teste que saiu com a adenda D era o único que afirmava, pela função `compare`, a recusa de uma edição construída com um número diferente do texto julgado; a recusa continua provada no conferidor do texto julgado, mas não por esse caminho | a questão EVB-11 |
+| 6, a segunda parte | a contagem das diferenças confere-se por procura de texto, que aceitaria «12» por «2» | a questão EVB-12 |
+| 3, a parte real | a planta «fora das aspas» escolhe um número antes da única citação da unidade; falta o caso de um número entre duas citações | a questão EVB-12 |
+| 7 | a duração do portão e a contagem da integridade aparecem como números, sem o comando | a questão EVB-12 |
+| 8 | o recibo do PDF das contas não vinha ao lado dele no pacote | é do pacote |
+
+O leitor confirmou por si: a citação do MADE com o excerto contíguo e único na página nove, o contexto no mesmo item da leitura na imagem, e a recusa com o contexto de outra obra; o ficheiro das citações com o resumo que o contrato declara e as 126 citações por língua; as quatro plantas da paridade a mudar uma chave de cada vez; os perfis das duas línguas iguais (1 397 e 1 397); as duas referências julgadas com o resumo do contrato.
+
+**As plantas de código nas três leituras do EVB no motor: quinze em quinze.**
