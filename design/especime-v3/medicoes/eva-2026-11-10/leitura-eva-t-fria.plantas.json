@@ -1,0 +1,82 @@
+[
+ {
+  "id": "T1a",
+  "ficheiro": "src/data/leituras.mjs",
+  "descricao": "os pagamentos em atraso ditos como soma do ano e não como saldo no fecho",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "48cfefa7342a4adfe2feb421949b84ba5175986c50e8622e6f1e2d483bbebfd1",
+  "sha256_depois": "25c8c028228292306db89658096418a71cd46ee41f0ff353226ef54c4f8c3100"
+ },
+ {
+  "id": "T1b",
+  "ficheiro": "diff.patch",
+  "descricao": "os pagamentos em atraso ditos como soma do ano e não como saldo no fecho (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "eb3c28e505e6813f4a18673ea706674567dd62e4d8e4b4a66670547341f8420c",
+  "sha256_depois": "52038f3642f2b00adf7f1311bc193ba533d99a49484bb30efb09976588dc3e2f"
+ },
+ {
+  "id": "T2a",
+  "ficheiro": "ledger/claims/evora-execucao-da-receita-2021.yml",
+  "descricao": "a razão da correção cita um quadro que a página 60 não tem",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "238c38d5a6b340345bb54fda16bf5346f854616055c733fa5edacb172c825b02",
+  "sha256_depois": "3667dc3cf1145266ea36d275a3d0c51fff03539b23ff3f2d703a55c11bfe9136"
+ },
+ {
+  "id": "T3a",
+  "ficheiro": "scripts/textos-julgados.mjs",
+  "descricao": "a declaração do texto julgado deixa de estar presa ao manifesto dos registos",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "9df312362cdee6133a4d3600baa32272948b764b5fdc6d9e02ebac28178dc611",
+  "sha256_depois": "90228712c26d5b802dc2806463ebb81c410f3dceba10a4d84bc91a30450b9dab"
+ },
+ {
+  "id": "T3b",
+  "ficheiro": "diff.patch",
+  "descricao": "a declaração do texto julgado deixa de estar presa ao manifesto dos registos (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "52038f3642f2b00adf7f1311bc193ba533d99a49484bb30efb09976588dc3e2f",
+  "sha256_depois": "72a189efba8ff53d1c5b3416ae20bc72be6b8082be1edd94e3717201dd9ac663"
+ },
+ {
+  "id": "T4a",
+  "ficheiro": "scripts/nome-do-estudo.mjs",
+  "descricao": "uma linha que não está em itálico passa por nome do estudo",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "c1cfa90085abf109d59aa277dd4b3eae05a64984f9a92e86332f69e5e382f261",
+  "sha256_depois": "fe3799d7e9f2321ea4d60beb7fdce315f3a5a99cc009fdc55eeb9841c5c8b8f9"
+ },
+ {
+  "id": "T4b",
+  "ficheiro": "diff.patch",
+  "descricao": "uma linha que não está em itálico passa por nome do estudo (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "72a189efba8ff53d1c5b3416ae20bc72be6b8082be1edd94e3717201dd9ac663",
+  "sha256_depois": "f7020b88e0622dd19459c2bf1a1fbf9bfc720ca8d2bd7ea9454c2e3b830f1c47"
+ },
+ {
+  "id": "T5a",
+  "ficheiro": "src/lib/execucao-total-evora.mjs",
+  "descricao": "a comparação dos totais passa com outra unidade",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "9ea3b7f86f719d403a73a1e3f4d1b01b2f31cc5c667fac3f0ff3cab3eaa57590",
+  "sha256_depois": "c13046e4e9fc4acee2caf22ebcfc18c06740fd6bb1e89ed1221bfadc84c69eb2"
+ },
+ {
+  "id": "T2b",
+  "ficheiro": "diff.patch",
+  "descricao": "a razão da correção cita um quadro que a página 60 não tem (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "f7020b88e0622dd19459c2bf1a1fbf9bfc720ca8d2bd7ea9454c2e3b830f1c47",
+  "sha256_depois": "080b4a0b7b61964178287e851282eff8d22a64a939a639483eae977230474e96"
+ },
+ {
+  "id": "T5b",
+  "ficheiro": "diff.patch",
+  "descricao": "a comparação dos totais passa com outra unidade (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "080b4a0b7b61964178287e851282eff8d22a64a939a639483eae977230474e96",
+  "sha256_depois": "d2111e09ab5168dff9766f9abf1ac1d8135b15fbbdc3315417632059aaa8c655"
+ }
+]
