@@ -1,0 +1,82 @@
+[
+ {
+  "id": "R1a",
+  "ficheiro": "vercel.json",
+  "descricao": "o endereço antigo dos pelouros leva ao estudo das contas e não ao seu sucessor",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "355242414f37961fa997bfcee7f39ad5cfd87e4c2c171e680c078823c5843fca",
+  "sha256_depois": "30e58c685ba9727803152e5e3a3d4b43a5ec49a8260571700e26731e780c5b56"
+ },
+ {
+  "id": "R1b",
+  "ficheiro": "diff.patch",
+  "descricao": "o endereço antigo dos pelouros leva ao estudo das contas (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "fe02096dce3cda227e19fc4a100042cac5a4650b404b6443bbcebf51f0221857",
+  "sha256_depois": "daf7c430c731fb8d36bda90f38e2516a3c1df30a73453b31446bb5f7cb2f2510"
+ },
+ {
+  "id": "R2a",
+  "ficheiro": "ledger/claims/estudos-publicados.yml",
+  "descricao": "a razão da contagem diz cinco sucessores e são quatro",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "7460c1948f22cf5388ad5ca013bc9e99dab3727540174c03ee7b93847e061a18",
+  "sha256_depois": "f76e86fc8e10ce3a120c3b067038f7b277e18a84715985a16384a9411f05f8ba"
+ },
+ {
+  "id": "R2b",
+  "ficheiro": "diff.patch",
+  "descricao": "a razão da contagem diz cinco sucessores e são quatro (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "daf7c430c731fb8d36bda90f38e2516a3c1df30a73453b31446bb5f7cb2f2510",
+  "sha256_depois": "038266dc4170146b3c60bbc22872756220e7c82128e408bd182c498453d509d3"
+ },
+ {
+  "id": "R3a",
+  "ficheiro": "scripts/estudos-retirados-conferir.mjs",
+  "descricao": "um redirecionamento para um destino que não existe passa",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "52f7906fe20da5ba9c680b760badf1aab7d78a4ab092a3b30abc9aad7c723e98",
+  "sha256_depois": "d29530d401825cf5f0d4009b83b8395ec2f30e5c7a83434b251d4bd23eb25e15"
+ },
+ {
+  "id": "R3b",
+  "ficheiro": "diff.patch",
+  "descricao": "um redirecionamento para um destino que não existe passa (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "038266dc4170146b3c60bbc22872756220e7c82128e408bd182c498453d509d3",
+  "sha256_depois": "dc1487c9ddb257078c98b1ea8e90f43c18b102d842b7f3b358e3081abbc9bb05"
+ },
+ {
+  "id": "R4a",
+  "ficheiro": "scripts/leituras/conferir-frases.mjs",
+  "descricao": "uma entrada de um estudo publicado sem páginas deixa de recusar",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "f81cb97592e4248f30680b4c14d5d4cfb8658de8c64cefcbd9612731b857c6e8",
+  "sha256_depois": "a8eafe1d16c5e584f10516fa00e6ec20d72977b4bf4ded5246231e2ddf0f41d6"
+ },
+ {
+  "id": "R4b",
+  "ficheiro": "diff.patch",
+  "descricao": "uma entrada de um estudo publicado sem páginas deixa de recusar (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "dc1487c9ddb257078c98b1ea8e90f43c18b102d842b7f3b358e3081abbc9bb05",
+  "sha256_depois": "68050fc2df8ee549d8843306a7ab37204e88d5a24423fc76e825034b9063b6ac"
+ },
+ {
+  "id": "R5a",
+  "ficheiro": "src/lib/agenda-retirada.mjs",
+  "descricao": "um evento com um documento vivo e um retirado sai da agenda",
+  "alcance": "na linha de um hunk do diff",
+  "sha256_antes": "45a12a9ec87635fa178f324fc2834e26568d733eca4a1f93284f193bf89ebf84",
+  "sha256_depois": "f541829eb92e53cfac05351054779979a540ecfc8f494d6d5c42da38ab4cd0c7"
+ },
+ {
+  "id": "R5b",
+  "ficheiro": "diff.patch",
+  "descricao": "um evento com um documento vivo e um retirado sai da agenda (no diff)",
+  "alcance": "fora do diff da passagem (a referência é outra)",
+  "sha256_antes": "68050fc2df8ee549d8843306a7ab37204e88d5a24423fc76e825034b9063b6ac",
+  "sha256_depois": "7bc18de027f04583bbe9c22fa335aa271ceb00ae14a8bd03e6ebe96f86458550"
+ }
+]

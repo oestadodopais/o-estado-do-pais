@@ -1,0 +1,788 @@
+{
+ "cabeca": "6521a7da0b46b3d3ee4c53211d56e874616530e5",
+ "cabeca_fim": "6521a7da0b46b3d3ee4c53211d56e874616530e5",
+ "arvore_limpa_no_inicio": true,
+ "modo": "inteira",
+ "inicio": "2026-11-11T10:16:24Z",
+ "fim": "2026-11-11T11:09:13Z",
+ "segundos": 3169,
+ "passos": [
+  {
+   "n": "00",
+   "passo": "build",
+   "comando": "npm run build",
+   "codigo": 0,
+   "segundos": 636,
+   "code": "00-build.code",
+   "log": "00-build.log"
+  },
+  {
+   "n": "01",
+   "passo": "check_rec1",
+   "comando": "npm run check:rec1",
+   "codigo": 0,
+   "segundos": 8,
+   "code": "01-check_rec1.code",
+   "log": "01-check_rec1.log"
+  },
+  {
+   "n": "02",
+   "passo": "check_quadro",
+   "comando": "npm run check:quadro",
+   "codigo": 0,
+   "segundos": 4,
+   "code": "02-check_quadro.code",
+   "log": "02-check_quadro.log"
+  },
+  {
+   "n": "03",
+   "passo": "check_edicoes",
+   "comando": "npm run check:edicoes",
+   "codigo": 0,
+   "segundos": 9,
+   "code": "03-check_edicoes.code",
+   "log": "03-check_edicoes.log"
+  },
+  {
+   "n": "04",
+   "passo": "check_publicadores",
+   "comando": "npm run check:publicadores",
+   "codigo": 1,
+   "segundos": 0,
+   "code": "04-check_publicadores.code",
+   "log": "04-check_publicadores.log",
+   "cauda": [
+    "OG1-E C meta intacta/pt: código 0",
+    "OG1-E C motivo da correção/pt: código 0",
+    "OG1-E C cartão de texto/pt: código 1",
+    "OG1-E C dois campos/en: código 1",
+    "OG1-E C frase errada/en: código 1",
+    "OG1-E C meta errada/en: código 1",
+    "OG1-E C meta intacta/en: código 0",
+    "OG1-E C motivo da correção/en: código 0",
+    "OG1-E C cartão de texto/en: código 1",
+    "OG1-E C cartão de citação/pt: código 1",
+    "OG1-E C título publicado/pt: código 0",
+    "OG1-E C título inventado/pt: código 1",
+    "OG1-E C cartão de citação/en: código 1",
+    "OG1-E C título publicado/en: código 0",
+    "OG1-E C título inventado/en: código 1",
+    "file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/src/lib/edicoes.mjs:45",
+    " const publicada=dataPublicacao(work,edicao);if(!publicada)throw Error('ED3: falta a publicação');",
+    "                                                                 ^",
+    "",
+    "Error: ED3: falta a publicação",
+    "    at linhaDasEdicoes (file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/src/lib/edicoes.mjs:45:66)",
+    "    at faixaDaVersao (file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/src/lib/edicoes.mjs:72:105)",
+    "    at comFaixaDaVersao (file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/src/lib/edicoes.mjs:75:60)",
+    "    at primeiraEdicaoServida (file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/src/lib/edicoes.mjs:81:36)",
+    "    at file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/tests/og1e/publicadores.mjs:43:81",
+    "    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)",
+    "    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)",
+    "    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)",
+    "",
+    "Node.js v22.23.1"
+   ]
+  },
+  {
+   "n": "05",
+   "passo": "check_forma-citacao",
+   "comando": "npm run check:forma-citacao",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "05-check_forma-citacao.code",
+   "log": "05-check_forma-citacao.log"
+  },
+  {
+   "n": "06",
+   "passo": "ledger_check",
+   "comando": "npm run ledger:check",
+   "codigo": 0,
+   "segundos": 29,
+   "code": "06-ledger_check.code",
+   "log": "06-ledger_check.log"
+  },
+  {
+   "n": "07",
+   "passo": "check_registo",
+   "comando": "npm run check:registo",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "07-check_registo.code",
+   "log": "07-check_registo.log"
+  },
+  {
+   "n": "08",
+   "passo": "check_cruzamento",
+   "comando": "npm run check:cruzamento",
+   "codigo": 0,
+   "segundos": 6,
+   "code": "08-check_cruzamento.code",
+   "log": "08-check_cruzamento.log"
+  },
+  {
+   "n": "09",
+   "passo": "check_documentos",
+   "comando": "npm run check:documentos",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "09-check_documentos.code",
+   "log": "09-check_documentos.log"
+  },
+  {
+   "n": "10",
+   "passo": "check_briefs",
+   "comando": "npm run check:briefs",
+   "codigo": 0,
+   "segundos": 162,
+   "code": "10-check_briefs.code",
+   "log": "10-check_briefs.log"
+  },
+  {
+   "n": "11",
+   "passo": "check_leituras",
+   "comando": "npm run check:leituras",
+   "codigo": 0,
+   "segundos": 291,
+   "code": "11-check_leituras.code",
+   "log": "11-check_leituras.log"
+  },
+  {
+   "n": "12",
+   "passo": "check_metodo-construido",
+   "comando": "npm run check:metodo-construido",
+   "codigo": 0,
+   "segundos": 4,
+   "code": "12-check_metodo-construido.code",
+   "log": "12-check_metodo-construido.log"
+  },
+  {
+   "n": "13",
+   "passo": "gate_html",
+   "comando": "npm run gate:html",
+   "codigo": 0,
+   "segundos": 92,
+   "code": "13-gate_html.code",
+   "log": "13-gate_html.log"
+  },
+  {
+   "n": "14",
+   "passo": "check_projecao-portoes",
+   "comando": "npm run check:projecao-portoes",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "14-check_projecao-portoes.code",
+   "log": "14-check_projecao-portoes.log"
+  },
+  {
+   "n": "15",
+   "passo": "check_selos",
+   "comando": "npm run check:selos",
+   "codigo": 0,
+   "segundos": 12,
+   "code": "15-check_selos.code",
+   "log": "15-check_selos.log"
+  },
+  {
+   "n": "16",
+   "passo": "check_css",
+   "comando": "npm run check:css",
+   "codigo": 0,
+   "segundos": 7,
+   "code": "16-check_css.code",
+   "log": "16-check_css.log"
+  },
+  {
+   "n": "17",
+   "passo": "check_datas",
+   "comando": "npm run check:datas",
+   "codigo": 0,
+   "segundos": 8,
+   "code": "17-check_datas.code",
+   "log": "17-check_datas.log"
+  },
+  {
+   "n": "18",
+   "passo": "check_moldura",
+   "comando": "npm run check:moldura",
+   "codigo": 0,
+   "segundos": 105,
+   "code": "18-check_moldura.code",
+   "log": "18-check_moldura.log"
+  },
+  {
+   "n": "19",
+   "passo": "check_sobreposicao",
+   "comando": "npm run check:sobreposicao",
+   "codigo": 0,
+   "segundos": 15,
+   "code": "19-check_sobreposicao.code",
+   "log": "19-check_sobreposicao.log"
+  },
+  {
+   "n": "20",
+   "passo": "check_alvos_0",
+   "comando": "npm run check:alvos:0",
+   "codigo": 1,
+   "segundos": 115,
+   "code": "20-check_alvos_0.code",
+   "log": "20-check_alvos_0.log",
+   "cauda": [
+    "",
+    "> o-estado-do-pais@0.1.0 check:alvos:0",
+    "> node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs --fatia 0 && node tests/quadro/disposicao.mjs alvos",
+    "",
+    "H10: 54 rotas documentais declaradas; 57 plantas da casa recusadas, incluindo o Método e uma rota inventada.",
+    "",
+    "\u001b[90m  a régua dos alvos · 26 rotas × 5 larguras · dist: dist\u001b[0m",
+    "",
+    "  \u001b[31m✗\u001b[0m H1  \u001b[90m2 nó(s) em violação (0 graves) em 26 rotas × 2 larguras · heading-order [moderate]=2\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H2  \u001b[90mfichas de concelho: 0 medidas, 0 sem o alvo (nenhum) · a folha: 58 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 12776 alvos medidos, 8307 deles com 44 px a 390, 74 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 74 são selos dentro de leitura, sinopse ou registo em prosa corrida, 0 destes no registo, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (15× a.src-chip «source · Eurostat» · 61.9×27.5 de toque (caixa 61×19); 14× a.src-chip «source · calculated» · 61.9×27.5 de toque (caixa 61×19); 10× a.src-chip «source · calculated» · 61.9×44.7 de toque (caixa 61×19); 3× a.src-chip «fonte · INE» · não medido (caixa 52.5×17.4)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 0 estão numa página de leitura, que o brief põe fora deste bloco (nenhum) e 0 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (nenhum) · 3970 não medido(s)\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H3  \u001b[90m9840 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 130 passagens\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H14  \u001b[90m130 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H4  \u001b[90m9840 página(s) do dist/: 9803 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 37 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H5  \u001b[90m6 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H6  \u001b[90mprimeira página, a 1280: 13 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H7  \u001b[90m10 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 10 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H8  \u001b[90mcartões: 5564 registo(s), 2782 da edição inglesa, 2320 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 7110 unidade(s) rendida(s), 0 diferentes do que a tabela manda\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H9  \u001b[90m4920 página(s) inglesas lidas: 1009 com um nome de diploma, 3911 sem nenhum, 3 documento(s) alojado(s) fora da conta · 1109 nome(s): 1105 com lang=\"pt-PT\", 4 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H13  \u001b[90m/lugares nas duas edições e nas 5 larguras: 5 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H15  \u001b[90mpt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H16  \u001b[90m9840 página(s) do dist/: 9803 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 37 sem ela (e 37 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 130 de 130 passagens com uma porta no seu marco; 26 porta(s) a 390 e 26 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 5 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 5 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H10  \u001b[90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 5 passagem(ns), 0 sem título\u001b[0m",
+    "",
+    "\u001b[31m  1 célula(s) vermelhas: H1\u001b[0m",
+    ""
+   ]
+  },
+  {
+   "n": "21",
+   "passo": "check_alvos_1",
+   "comando": "npm run check:alvos:1",
+   "codigo": 0,
+   "segundos": 32,
+   "code": "21-check_alvos_1.code",
+   "log": "21-check_alvos_1.log"
+  },
+  {
+   "n": "22",
+   "passo": "check_alvos_2",
+   "comando": "npm run check:alvos:2",
+   "codigo": 1,
+   "segundos": 108,
+   "code": "22-check_alvos_2.code",
+   "log": "22-check_alvos_2.log",
+   "cauda": [
+    "  \u001b[32m✓\u001b[0m H2  \u001b[90mfichas de concelho: 1610 medidas, 0 sem o alvo (nenhum) · a folha: 58 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 14747 alvos medidos, 10200 deles com 44 px a 390, 241 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 220 são selos dentro de leitura, sinopse ou registo em prosa corrida, 0 destes no registo, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (39× a.src-chip «source · Ministério das Finanças» · 61.9×27.5 de toque (caixa 61×19); 26× a.src-chip «source · Ministério das Finanças» · 61.9×44.7 de toque (caixa 61×19); 21× a.src-chip «source · calculated» · 61.9×27.5 de toque (caixa 61×19); 9× a.src-chip «source · UTAO» · 61.9×27.5 de toque (caixa 61×19)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 0 estão numa página de leitura, que o brief põe fora deste bloco (nenhum) e 21 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (3× a.discussao-literal «O Orçamento do Estado para 2027 é » · 88×27.5 de toque (caixa 517.7×82.3); 3× a.discussao-literal «Nós não hesitamos. Nós não assinam» · 88×27.3 de toque (caixa 469.5×54.6); 3× a.discussao-literal «Este orçamento tem um problema: co» · 88×27.5 de toque (caixa 461.3×54.6); 3× a.discussao-literal «O disposto no presente decreto-lei» · 88×20.5 de toque (caixa 508.2×82.3)) · 3050 não medido(s)\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H3  \u001b[90m9840 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 130 passagens\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H14  \u001b[90m130 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H4  \u001b[90m9840 página(s) do dist/: 9803 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 37 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H5  \u001b[90m9 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H6  \u001b[90mprimeira página, a 1280: 0 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H7  \u001b[90m10 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 10 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H8  \u001b[90mcartões: 5564 registo(s), 2782 da edição inglesa, 2320 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 10 unidade(s) rendida(s), 0 diferentes do que a tabela manda\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H9  \u001b[90m4920 página(s) inglesas lidas: 1009 com um nome de diploma, 3911 sem nenhum, 3 documento(s) alojado(s) fora da conta · 1109 nome(s): 1105 com lang=\"pt-PT\", 4 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H13  \u001b[90m/lugares nas duas edições e nas 5 larguras: 0 passagem(ns) · portas de concelho por página:  (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: \u001b[0m",
+    "  \u001b[32m✓\u001b[0m H15  \u001b[90mPesquisa medida na fatia 0.\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H16  \u001b[90m9840 página(s) do dist/: 9803 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 37 sem ela (e 37 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 130 de 130 passagens com uma porta no seu marco; 26 porta(s) a 390 e 26 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 5 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 5 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade\u001b[0m",
+    "  \u001b[32m✓\u001b[0m H10  \u001b[90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · comandos e conhecido positivo medidos na fatia 0 · Método: 0 passagem(ns), 0 sem título\u001b[0m",
+    "node:internal/modules/run_main:123",
+    "    triggerUncaughtException(",
+    "    ^",
+    "",
+    "AssertionError [ERR_ASSERTION]: fatia vermelha",
+    "    at conferirFatia (file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/scripts/alvos-fatias.mjs:78:3)",
+    "    at juntarAlvos (file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/scripts/alvos-fatias.mjs:86:27)",
+    "    at file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/tests/acessibilidade/alvos.mjs:2354:32 {",
+    "  generatedMessage: false,",
+    "  code: 'ERR_ASSERTION',",
+    "  actual: false,",
+    "  expected: true,",
+    "  operator: '==',",
+    "  diff: 'simple'",
+    "}",
+    "",
+    "Node.js v22.23.1"
+   ]
+  },
+  {
+   "n": "23",
+   "passo": "check_cabeca",
+   "comando": "npm run check:cabeca",
+   "codigo": 0,
+   "segundos": 6,
+   "code": "23-check_cabeca.code",
+   "log": "23-check_cabeca.log"
+  },
+  {
+   "n": "24",
+   "passo": "check_fontes",
+   "comando": "npm run check:fontes",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "24-check_fontes.code",
+   "log": "24-check_fontes.log"
+  },
+  {
+   "n": "25",
+   "passo": "check_cadeia",
+   "comando": "npm run check:cadeia",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "25-check_cadeia.code",
+   "log": "25-check_cadeia.log"
+  },
+  {
+   "n": "26",
+   "passo": "check_dados",
+   "comando": "npm run check:dados",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "26-check_dados.code",
+   "log": "26-check_dados.log"
+  },
+  {
+   "n": "27",
+   "passo": "mapa_unidades",
+   "comando": "npm run mapa:unidades -- --verifica",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "27-mapa_unidades.code",
+   "log": "27-mapa_unidades.log"
+  },
+  {
+   "n": "28",
+   "passo": "check_mapa",
+   "comando": "npm run check:mapa",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "28-check_mapa.code",
+   "log": "28-check_mapa.log"
+  },
+  {
+   "n": "29",
+   "passo": "check_regioes",
+   "comando": "npm run check:regioes",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "29-check_regioes.code",
+   "log": "29-check_regioes.log"
+  },
+  {
+   "n": "30",
+   "passo": "check_areas",
+   "comando": "npm run check:areas",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "30-check_areas.code",
+   "log": "30-check_areas.log"
+  },
+  {
+   "n": "31",
+   "passo": "check_formas",
+   "comando": "npm run check:formas",
+   "codigo": 0,
+   "segundos": 11,
+   "code": "31-check_formas.code",
+   "log": "31-check_formas.log"
+  },
+  {
+   "n": "32",
+   "passo": "check_alcance",
+   "comando": "npm run check:alcance",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "32-check_alcance.code",
+   "log": "32-check_alcance.log"
+  },
+  {
+   "n": "33",
+   "passo": "check_lugares",
+   "comando": "npm run check:lugares",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "33-check_lugares.code",
+   "log": "33-check_lugares.log"
+  },
+  {
+   "n": "34",
+   "passo": "check_pais",
+   "comando": "npm run check:pais",
+   "codigo": 0,
+   "segundos": 25,
+   "code": "34-check_pais.code",
+   "log": "34-check_pais.log"
+  },
+  {
+   "n": "35",
+   "passo": "check_pais_auto-teste",
+   "comando": "npm run check:pais:auto-teste",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "35-check_pais_auto-teste.code",
+   "log": "35-check_pais_auto-teste.log"
+  },
+  {
+   "n": "36",
+   "passo": "check_voz",
+   "comando": "npm run check:voz",
+   "codigo": 0,
+   "segundos": 228,
+   "code": "36-check_voz.code",
+   "log": "36-check_voz.log"
+  },
+  {
+   "n": "37",
+   "passo": "check_paridade",
+   "comando": "npm run check:paridade",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "37-check_paridade.code",
+   "log": "37-check_paridade.log"
+  },
+  {
+   "n": "38",
+   "passo": "check_frases-afirmacao",
+   "comando": "npm run check:frases-afirmacao",
+   "codigo": 0,
+   "segundos": 112,
+   "code": "38-check_frases-afirmacao.code",
+   "log": "38-check_frases-afirmacao.log"
+  },
+  {
+   "n": "39",
+   "passo": "check_voz-retiradas",
+   "comando": "npm run check:voz-retiradas",
+   "codigo": 0,
+   "segundos": 230,
+   "code": "39-check_voz-retiradas.code",
+   "log": "39-check_voz-retiradas.log"
+  },
+  {
+   "n": "40",
+   "passo": "check_lingua",
+   "comando": "npm run check:lingua",
+   "codigo": 0,
+   "segundos": 25,
+   "code": "40-check_lingua.code",
+   "log": "40-check_lingua.log"
+  },
+  {
+   "n": "41",
+   "passo": "check_formato",
+   "comando": "npm run check:formato",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "41-check_formato.code",
+   "log": "41-check_formato.log"
+  },
+  {
+   "n": "42",
+   "passo": "check_lugar",
+   "comando": "npm run check:lugar",
+   "codigo": 0,
+   "segundos": 48,
+   "code": "42-check_lugar.code",
+   "log": "42-check_lugar.log"
+  },
+  {
+   "n": "43",
+   "passo": "provar_eyetext",
+   "comando": "npm run provar:eyetext",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "43-provar_eyetext.code",
+   "log": "43-provar_eyetext.log"
+  },
+  {
+   "n": "44",
+   "passo": "provar_guardas",
+   "comando": "npm run provar:guardas",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "44-provar_guardas.code",
+   "log": "44-provar_guardas.log"
+  },
+  {
+   "n": "45",
+   "passo": "check_mortos",
+   "comando": "npm run check:mortos",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "45-check_mortos.code",
+   "log": "45-check_mortos.log"
+  },
+  {
+   "n": "46",
+   "passo": "check_indice",
+   "comando": "npm run check:indice",
+   "codigo": 0,
+   "segundos": 26,
+   "code": "46-check_indice.code",
+   "log": "46-check_indice.log"
+  },
+  {
+   "n": "47",
+   "passo": "check_cartao",
+   "comando": "npm run check:cartao",
+   "codigo": 0,
+   "segundos": 46,
+   "code": "47-check_cartao.code",
+   "log": "47-check_cartao.log"
+  },
+  {
+   "n": "48",
+   "passo": "check_navegacao",
+   "comando": "npm run check:navegacao",
+   "codigo": 0,
+   "segundos": 13,
+   "code": "48-check_navegacao.code",
+   "log": "48-check_navegacao.log"
+  },
+  {
+   "n": "49",
+   "passo": "check_primeira",
+   "comando": "npm run check:primeira",
+   "codigo": 0,
+   "segundos": 138,
+   "code": "49-check_primeira.code",
+   "log": "49-check_primeira.log"
+  },
+  {
+   "n": "50",
+   "passo": "sinais",
+   "comando": "npm run sinais",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "50-sinais.code",
+   "log": "50-sinais.log"
+  },
+  {
+   "n": "51",
+   "passo": "check_nomes",
+   "comando": "npm run check:nomes",
+   "codigo": 0,
+   "segundos": 4,
+   "code": "51-check_nomes.code",
+   "log": "51-check_nomes.log"
+  },
+  {
+   "n": "52",
+   "passo": "check_palavras",
+   "comando": "npm run check:palavras",
+   "codigo": 0,
+   "segundos": 213,
+   "code": "52-check_palavras.code",
+   "log": "52-check_palavras.log"
+  },
+  {
+   "n": "53",
+   "passo": "design_feixe",
+   "comando": "npm run design:feixe",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "53-design_feixe.code",
+   "log": "53-design_feixe.log"
+  },
+  {
+   "n": "54",
+   "passo": "check_privacidade",
+   "comando": "npm run check:privacidade",
+   "codigo": 0,
+   "segundos": 81,
+   "code": "54-check_privacidade.code",
+   "log": "54-check_privacidade.log"
+  },
+  {
+   "n": "55",
+   "passo": "check_sugestoes",
+   "comando": "npm run check:sugestoes",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "55-check_sugestoes.code",
+   "log": "55-check_sugestoes.log"
+  },
+  {
+   "n": "56",
+   "passo": "check_rotulos",
+   "comando": "npm run check:rotulos",
+   "codigo": 0,
+   "segundos": 6,
+   "code": "56-check_rotulos.code",
+   "log": "56-check_rotulos.log"
+  },
+  {
+   "n": "57",
+   "passo": "check_series",
+   "comando": "npm run check:series",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "57-check_series.code",
+   "log": "57-check_series.log"
+  },
+  {
+   "n": "58",
+   "passo": "check_indice-do-sitio",
+   "comando": "npm run check:indice-do-sitio",
+   "codigo": 0,
+   "segundos": 38,
+   "code": "58-check_indice-do-sitio.code",
+   "log": "58-check_indice-do-sitio.log"
+  },
+  {
+   "n": "59",
+   "passo": "check_explicacoes",
+   "comando": "npm run check:explicacoes",
+   "codigo": 0,
+   "segundos": 9,
+   "code": "59-check_explicacoes.code",
+   "log": "59-check_explicacoes.log"
+  },
+  {
+   "n": "60",
+   "passo": "check_frases-compostas",
+   "comando": "npm run check:frases-compostas",
+   "codigo": 0,
+   "segundos": 100,
+   "code": "60-check_frases-compostas.code",
+   "log": "60-check_frases-compostas.log"
+  },
+  {
+   "n": "61",
+   "passo": "check_incorporar",
+   "comando": "npm run check:incorporar",
+   "codigo": 0,
+   "segundos": 25,
+   "code": "61-check_incorporar.code",
+   "log": "61-check_incorporar.log"
+  },
+  {
+   "n": "62",
+   "passo": "check_discussao",
+   "comando": "npm run check:discussao",
+   "codigo": 0,
+   "segundos": 42,
+   "code": "62-check_discussao.code",
+   "log": "62-check_discussao.log"
+  },
+  {
+   "n": "63",
+   "passo": "check_eo1",
+   "comando": "npm run check:eo1",
+   "codigo": 1,
+   "segundos": 0,
+   "code": "63-check_eo1.code",
+   "log": "63-check_eo1.log",
+   "cauda": [
+    "> o-estado-do-pais@0.1.0 check:eo1",
+    "> node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs && node tests/eo1/metades.mjs && node tests/eo1/definicoes.mjs",
+    "",
+    "EO1 portas o-que-se-discute: 2/2",
+    "EO1 portas explicacoes/dinheiro-do-estado-2026: 1/1",
+    "EO1 portas en/under-discussion: 2/2",
+    "EO1 portas en/explainers/dinheiro-do-estado-2026: 1/1",
+    "B1 estudos/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.",
+    "B1 en/studies/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.",
+    "B1 estudos/a-casa-em-portugal-e-na-europa: primeiro H2 conferido e planta recusada.",
+    "B1 en/studies/a-casa-em-portugal-e-na-europa: primeiro H2 conferido e planta recusada.",
+    "B1 estudos/evora-quem-governou-a-camara-2009-2025: primeiro H2 conferido e planta recusada.",
+    "B1 estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.",
+    "B1 en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.",
+    "B1 estudos/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.",
+    "B1 en/studies/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.",
+    "node:fs:440",
+    "    return binding.readFileUtf8(path, stringToFlags(options.flag));",
+    "                   ^",
+    "",
+    "Error: ENOENT: no such file or directory, open 'dist/estudos/evora-2027-prometido-painel-dinheiro/index.html'",
+    "    at Object.readFileSync (node:fs:440:20)",
+    "    at file://<casa>/Instruments/OEstadoDoPais-worktrees/rec2-2026-11-11/tests/eo1/maquinaria.mjs:94:22 {",
+    "  errno: -2,",
+    "  code: 'ENOENT',",
+    "  syscall: 'open',",
+    "  path: 'dist/estudos/evora-2027-prometido-painel-dinheiro/index.html'",
+    "}",
+    "",
+    "Node.js v22.23.1"
+   ]
+  },
+  {
+   "n": "64",
+   "passo": "check_graficos",
+   "comando": "npm run check:graficos",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "64-check_graficos.code",
+   "log": "64-check_graficos.log"
+  },
+  {
+   "n": "65",
+   "passo": "check_dossies",
+   "comando": "npm run check:dossies",
+   "codigo": 0,
+   "segundos": 8,
+   "code": "65-check_dossies.code",
+   "log": "65-check_dossies.log"
+  },
+  {
+   "n": "66",
+   "passo": "check_largura",
+   "comando": "npm run check:largura",
+   "codigo": 0,
+   "segundos": 10,
+   "code": "66-check_largura.code",
+   "log": "66-check_largura.log"
+  },
+  {
+   "n": "67",
+   "passo": "check_capturas-largura",
+   "comando": "npm run check:capturas-largura",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "67-check_capturas-largura.code",
+   "log": "67-check_capturas-largura.log"
+  },
+  {
+   "n": "68",
+   "passo": "check_pre-mandato",
+   "comando": "npm run check:pre-mandato",
+   "codigo": 0,
+   "segundos": 36,
+   "code": "68-check_pre-mandato.code",
+   "log": "68-check_pre-mandato.log"
+  },
+  {
+   "n": "69",
+   "passo": "check_frases-reais",
+   "comando": "npm run check:frases-reais",
+   "codigo": 0,
+   "segundos": 6,
+   "code": "69-check_frases-reais.code",
+   "log": "69-check_frases-reais.log"
+  },
+  {
+   "n": "70",
+   "passo": "check_repositorio",
+   "comando": "npm run check:repositorio",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "70-check_repositorio.code",
+   "log": "70-check_repositorio.log"
+  },
+  {
+   "n": "71",
+   "passo": "typecheck",
+   "comando": "npm run typecheck",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "71-typecheck.code",
+   "log": "71-typecheck.log"
+  }
+ ],
+ "vermelhos": [
+  "check_publicadores",
+  "check_alvos_0",
+  "check_alvos_2",
+  "check_eo1"
+ ]
+}
