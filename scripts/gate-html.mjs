@@ -3969,8 +3969,11 @@ function contasDoPortao(claims) {
    */
   const dosRegistos = { com_resumo: 0, sem_resumo: 0 };
   for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
-    if (!PUBLISHED_EDITIONS.some(e => `${e.slug}/${e.lang}` === chave)) continue;
     const corte = chave.lastIndexOf('/');
+    if (WORKS.find(w => w.slug === chave.slice(0, corte))?.estado === 'retirado') continue;
+    if (!PUBLISHED_EDITIONS.some(e => `${e.slug}/${e.lang}` === chave)) {
+      throw new Error(`REC2 contagem dos registos: ${chave}: trabalho não retirado sem edição publicada.`);
+    }
     const registo = registoDoPortao(chave.slice(0, corte), chave.slice(corte + 1));
     for (const bloco of registo?.blocks ?? []) {
       for (const { unidade } of unidadesDoRegisto(bloco)) {
