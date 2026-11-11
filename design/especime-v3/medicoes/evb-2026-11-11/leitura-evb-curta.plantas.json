@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-11T22:01:26+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "W1-file",
+   "ficheiro": "motor/core/citacoes_atribuidas.py",
+   "descricao": "o contexto deixa de escolher o item da leitura: a citação pode estar em qualquer item da transcrição, e o estado de uma obra passa ao pé do nome de outra",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "448c8b8f49884712369d458f42977966badb9ef37833b0a52f5b5760bc415f10",
+   "sha256_depois": "812333b1ace8c7fb6106da5227cc92c0e4e62d6728eea8c07e12a690b2b9317a",
+   "contexto_antes": "(context, str) or not context.strip() or _tight(context) not in _tight(excerpt):\n        raise ValueError('citação atribuída: contexto ausente do excerto')\n    items = [item for item in transcribed.split(';') if _tight(context) in _tight(item)]\n    if not any(_tight(quote) in _tight(item) for item in items):\n        raise ValueError('citação atribuída: citação e contexto em itens diferentes da imagem'",
+   "contexto_depois": "(context, str) or not context.strip() or _tight(context) not in _tight(excerpt):\n        raise ValueError('citação atribuída: contexto ausente do excerto')\n    items = transcribed.split(';')\n    if not any(_tight(quote) in _tight(item) for item in items):\n        raise ValueError('citação atribuída: citação e contexto em itens diferentes da imagem'"
+  },
+  {
+   "id": "W2-file",
+   "ficheiro": "motor/core/citacoes_atribuidas.py",
+   "descricao": "o nome de uma página volta a passar se estiver em qualquer texto visível da página, até num menu",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "812333b1ace8c7fb6106da5227cc92c0e4e62d6728eea8c07e12a690b2b9317a",
+   "sha256_depois": "4d5b8adb0a604a9eeba3f3d5d46bcf210320b5631b60513de66fb2f765575265",
+   "contexto_antes": "aders[key].place(lugar_de_prova(doc))\n    if kind=='nome_de_pagina':\n        from .documentos_alojados import nomes_html\n        names=nomes_html(path)\n        if not any(_tight(quote) in _tight(name) for name in names):\n            raise ValueError('citação atribuída: nome ausente do título e dos h1; página tem '+repr(names))\n        return\n    if 'excertos' in row:\n        pa",
+   "contexto_depois": "aders[key].place(lugar_de_prova(doc))\n    if kind=='nome_de_pagina':\n        from .documentos_alojados import nomes_html\n        names=nomes_html(path)\n        if not any(_tight(quote) in _tight(name) for name in names) and _tight(quote) not in page.stream:\n            raise ValueError('citação atribuída: nome ausente do título e dos h1; página tem '+repr(names))\n        return\n    if 'excertos' in row:\n        pa"
+  },
+  {
+   "id": "W3-file",
+   "ficheiro": "motor/core/documentos_alojados.py",
+   "descricao": "o extrator do HTML esconde os menus abertos e conta os recolhidos: a condição do collapse ficou invertida",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3fa8486104a0d4e44734035169b2152a9d4cfd58050367309f398268f2d94c55",
+   "sha256_depois": "adbb5fcc27a78ec8639575eeace4036281b2d2e0695fed0dfc65797d2f5c9518",
+   "contexto_antes": "maries.add(parent)\n        hidden = (tag in self.OMIT or 'hidden' in attrs\n                  or bool(classes & {'sr-only','visually-hidden'})\n                  or ('collapse' in classes and 'show' not in classes)\n                  or (tag == 'dialog' and 'open' not in attrs)\n                  or bool(re.search(r'(?:^|;)\\s*opacity\\s*:\\s*[+-]?0(?:\\.0*)?(?:\\s*!important)?\\",
+   "contexto_depois": "maries.add(parent)\n        hidden = (tag in self.OMIT or 'hidden' in attrs\n                  or bool(classes & {'sr-only','visually-hidden'})\n                  or ('collapse' in classes and 'show' in classes)\n                  or (tag == 'dialog' and 'open' not in attrs)\n                  or bool(re.search(r'(?:^|;)\\s*opacity\\s*:\\s*[+-]?0(?:\\.0*)?(?:\\s*!important)?\\"
+  },
+  {
+   "id": "W4-file",
+   "ficheiro": "motor/core/ocorrencias_bilingues.py",
+   "descricao": "na tradução de uma citação, «mil» passa a valer como milhão: uma escala trocada passa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "db6e29fba8b2a81bcd1c40dbb28940ed8d75244b3d14d11a9895d4caaae25d2a",
+   "sha256_depois": "b56faaf0b03b16e570c35f14232b0c0dc836a6ffdf0ee6766ca552d74673ec0b",
+   "contexto_antes": "ons?|mil|thousands?|biliões|bilião|billions?)\\b',tail)\n    scales={'milhões':'million','milhão':'million','million':'million','millions':'million',\n            'mil':'thousand','thousand':'thousand','thousands':'thousand',\n            'biliões':'billion','bilião':'billion','billion':'billion','billions':'billion'}\n    factor=scales[scale[1]] if scale else None\n    if scale:return",
+   "contexto_depois": "ons?|mil|thousands?|biliões|bilião|billions?)\\b',tail)\n    scales={'milhões':'million','milhão':'million','million':'million','millions':'million',\n            'mil':'million','thousand':'thousand','thousands':'thousand',\n            'biliões':'billion','bilião':'billion','billion':'billion','billions':'billion'}\n    factor=scales[scale[1]] if scale else None\n    if scale:return"
+  },
+  {
+   "id": "W5-file",
+   "ficheiro": "motor/core/documento_md.py",
+   "descricao": "uma linha curta de quadro só recusa nos estudos que declaram linhas curtas: nos outros, qualquer linha curta volta a passar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "58d5f1dda81b6ed5219a8222655259c69976ab9c07b81877e7d7f02c32b24167",
+   "sha256_depois": "1286721e91f047a7bfbcc45e063b432ec2e103e41993e0f71920e485a90881f8",
+   "contexto_antes": "eira\"><td colspan=\"{largura}\">'\n                              f\"{inline(cs[0])}{_fim_de_celula(inline(cs[0]))}</td></tr>\")\n                continue\n            if len(cs) > largura or (len(cs) < largura and ln.strip() not in linhas_curtas):\n                raise Recusa(f\"uma linha de tabela com {len(cs)} célula(s) numa tabela de \"\n                             f\"{largura}: {ln.strip()[:80]!r}\")\n   ",
+   "contexto_depois": "eira\"><td colspan=\"{largura}\">'\n                              f\"{inline(cs[0])}{_fim_de_celula(inline(cs[0]))}</td></tr>\")\n                continue\n            if len(cs) > largura or (len(cs) < largura and linhas_curtas and ln.strip() not in linhas_curtas):\n                raise Recusa(f\"uma linha de tabela com {len(cs)} célula(s) numa tabela de \"\n                             f\"{largura}: {ln.strip()[:80]!r}\")\n   "
+  },
+  {
+   "id": "W1-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o contexto deixa de escolher o item da leitura: a citação pode estar em qualquer item da transcrição, e o estado de uma obra passa ao pé do nome de outra",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "81adbc988581b7bb40cde88ae3489540873ec9d39339dae4f091f5aeed8d82f2",
+   "sha256_depois": "60e8a74ea8cb2110a6d5d2df7b8658d4c20926881bd0086b49cf02adce4798e3",
+   "contexto_antes": "ontext, str) or not context.strip() or _tight(context) not in _tight(excerpt):\n+        raise ValueError('citação atribuída: contexto ausente do excerto')\n+    items = [item for item in transcribed.split(';') if _tight(context) in _tight(item)]\n+    if not any(_tight(quote) in _tight(item) for item in items):\n+        raise ValueError('citação atribuída: citação e contexto em itens diferentes da image",
+   "contexto_depois": "ontext, str) or not context.strip() or _tight(context) not in _tight(excerpt):\n+        raise ValueError('citação atribuída: contexto ausente do excerto')\n+    items = transcribed.split(';')\n+    if not any(_tight(quote) in _tight(item) for item in items):\n+        raise ValueError('citação atribuída: citação e contexto em itens diferentes da image"
+  },
+  {
+   "id": "W2-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o nome de uma página volta a passar se estiver em qualquer texto visível da página, até num menu",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "60e8a74ea8cb2110a6d5d2df7b8658d4c20926881bd0086b49cf02adce4798e3",
+   "sha256_depois": "63941cdf067bbe567343dd8853950d0eedc8c8b79bbfd210165afbf3b2a97d22",
+   "contexto_antes": "e ValueError('citação atribuída: nome ausente da página alojada')\n+        from .documentos_alojados import nomes_html\n+        names=nomes_html(path)\n+        if not any(_tight(quote) in _tight(name) for name in names):\n+            raise ValueError('citação atribuída: nome ausente do título e dos h1; página tem '+repr(names))\n         return\n     if 'excertos' in row:\n       ",
+   "contexto_depois": "e ValueError('citação atribuída: nome ausente da página alojada')\n+        from .documentos_alojados import nomes_html\n+        names=nomes_html(path)\n+        if not any(_tight(quote) in _tight(name) for name in names) and _tight(quote) not in page.stream:\n+            raise ValueError('citação atribuída: nome ausente do título e dos h1; página tem '+repr(names))\n         return\n     if 'excertos' in row:\n       "
+  },
+  {
+   "id": "W3-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o extrator do HTML esconde os menus abertos e conta os recolhidos: a condição do collapse ficou invertida",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "63941cdf067bbe567343dd8853950d0eedc8c8b79bbfd210165afbf3b2a97d22",
+   "sha256_depois": "7f0f8cb14ed482e1b727f0e56a7a59f7ab8fb310e2ef73daddc672f45e784327",
+   "contexto_antes": "ies.add(parent)\n         hidden = (tag in self.OMIT or 'hidden' in attrs\n+                  or bool(classes & {'sr-only','visually-hidden'})\n+                  or ('collapse' in classes and 'show' not in classes)\n+                  or (tag == 'dialog' and 'open' not in attrs)\n+                  or bool(re.search(r'(?:^|;)\\s*opacity\\s*:\\s*[+-]?0(?:\\.0*)?(?:\\s*!important)",
+   "contexto_depois": "ies.add(parent)\n         hidden = (tag in self.OMIT or 'hidden' in attrs\n+                  or bool(classes & {'sr-only','visually-hidden'})\n+                  or ('collapse' in classes and 'show' in classes)\n+                  or (tag == 'dialog' and 'open' not in attrs)\n+                  or bool(re.search(r'(?:^|;)\\s*opacity\\s*:\\s*[+-]?0(?:\\.0*)?(?:\\s*!important)"
+  },
+  {
+   "id": "W4-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "na tradução de uma citação, «mil» passa a valer como milhão: uma escala trocada passa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7f0f8cb14ed482e1b727f0e56a7a59f7ab8fb310e2ef73daddc672f45e784327",
+   "sha256_depois": "b868aa556241202a23b7848dcdc4dd9f74281700c5eb8a1af3ceb1312a588db4",
+   "contexto_antes": "s?|mil|thousands?|biliões|bilião|billions?)\\b',tail)\n+    scales={'milhões':'million','milhão':'million','million':'million','millions':'million',\n+            'mil':'thousand','thousand':'thousand','thousands':'thousand',\n+            'biliões':'billion','bilião':'billion','billion':'billion','billions':'billion'}\n+    factor=scales[scale[1]] if scale else None\n+    if scale:ret",
+   "contexto_depois": "s?|mil|thousands?|biliões|bilião|billions?)\\b',tail)\n+    scales={'milhões':'million','milhão':'million','million':'million','millions':'million',\n+            'mil':'million','thousand':'thousand','thousands':'thousand',\n+            'biliões':'billion','bilião':'billion','billion':'billion','billions':'billion'}\n+    factor=scales[scale[1]] if scale else None\n+    if scale:ret"
+  },
+  {
+   "id": "W5-diff",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "uma linha curta de quadro só recusa nos estudos que declaram linhas curtas: nos outros, qualquer linha curta volta a passar",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b868aa556241202a23b7848dcdc4dd9f74281700c5eb8a1af3ceb1312a588db4",
+   "sha256_depois": "2bb02bb08863e796f1135af3763d322a42807fa3bdf389b6c2ffd5d2c9442365",
+   "contexto_antes": "                         f\"{inline(cs[0])}{_fim_de_celula(inline(cs[0]))}</td></tr>\")\n                 continue\n-            if len(cs) > largura:\n+            if len(cs) > largura or (len(cs) < largura and ln.strip() not in linhas_curtas):\n                 raise Recusa(f\"uma linha de tabela com {len(cs)} célula(s) numa tabela de \"\n                              f\"{largura}: {ln.strip()[:80]!r}\")\n ",
+   "contexto_depois": "                         f\"{inline(cs[0])}{_fim_de_celula(inline(cs[0]))}</td></tr>\")\n                 continue\n-            if len(cs) > largura:\n+            if len(cs) > largura or (len(cs) < largura and linhas_curtas and ln.strip() not in linhas_curtas):\n                 raise Recusa(f\"uma linha de tabela com {len(cs)} célula(s) numa tabela de \"\n                              f\"{largura}: {ln.strip()[:80]!r}\")\n "
+  }
+ ]
+}

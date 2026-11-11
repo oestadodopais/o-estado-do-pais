@@ -1073,10 +1073,10 @@
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": false,
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Obra em fase de Welcome Turismo do Verbas do Design (2.º Trimestre) adjudicação",
+   "excerto": "MADE – Museu do Artesanato e do 2026 Obra em fase de Welcome Turismo do Verbas do Design (2.º Trimestre) adjudicação",
    "conferido_pelo_motor": true,
    "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
-   "contexto": "Design",
+   "contexto": "Museu do Artesanato e do",
    "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
@@ -3537,10 +3537,10 @@
    "palavras_intercaladas": true,
    "palavra_partida_na_mudanca_de_linha": false,
    "nota": "o excerto contém as palavras da citação pela ordem; a página está em colunas e o motor lê-a por linhas visuais, por isso há palavras de outras colunas pelo meio",
-   "excerto": "Obra em fase de Welcome Turismo do Verbas do Design (2.º Trimestre) adjudicação",
+   "excerto": "MADE – Museu do Artesanato e do 2026 Obra em fase de Welcome Turismo do Verbas do Design (2.º Trimestre) adjudicação",
    "conferido_pelo_motor": true,
    "citacao_no_excerto": "pela ordem, com outras palavras ou quebra de linha no meio",
-   "contexto": "Design",
+   "contexto": "Museu do Artesanato e do",
    "corrigido_pelo_lugar_de_direcao": "2026-11-11: o excerto e o contexto são os da linha da obra de que a unidade fala"
   },
   {
@@ -4948,5 +4948,5 @@
   }
  ],
  "nao_achadas_no_documento_atribuido": [],
- "nota_do_lugar_de_direcao": "Revisto pelo lugar de direção a 11.11.2026: saiu a B019.2 (deixou de ser citação no texto); as citações curtas de estado e de quadro passaram ao excerto da linha a que a unidade as atribui; cada excerto foi conferido outra vez com o leitor do motor. Segunda revisão a 11.11.2026, depois da leitura a frio: cada citação do quadro das sete intervenções leva o nome da sua obra em `contexto`, a do Convento dos Remédios passa ao excerto da sua própria linha, e as duas unidades da cabeça que falam de duas obras levam as duas linhas."
+ "nota_do_lugar_de_direcao": "Revisto pelo lugar de direção a 11.11.2026: saiu a B019.2 (deixou de ser citação no texto); as citações curtas de estado e de quadro passaram ao excerto da linha a que a unidade as atribui; cada excerto foi conferido outra vez com o leitor do motor. Segunda revisão a 11.11.2026, depois da leitura a frio: cada citação do quadro das sete intervenções leva o nome da sua obra em `contexto`, a do Convento dos Remédios passa ao excerto da sua própria linha, e as duas unidades da cabeça que falam de duas obras levam as duas linhas. Terceira revisão a 11.11.2026, depois da leitura curta: a citação do MADE leva no excerto e no contexto o nome da obra («Museu do Artesanato e do»), e não só a palavra «Design»."
 }

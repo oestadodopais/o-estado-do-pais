@@ -29,3 +29,26 @@ Claude Opus 5.5 (`leitor`), a `xhigh`, 265 mil símbolos e 52 chamadas, sobre as
 | 14, 15, 17, 18 e 20 (Minor) | os padrões largos do classificador das ocorrências; a unidade no leitor de números; as folhas e linhas escondidas da folha de cálculo; a data de leitura presa pelo índice no registo; a razão do `ignore` conferida em prosa livre | o bloco de higiene (as questões EVB-1 a EVB-5) |
 
 O leitor confirmou por si: os treze corpos com o resumo declarado; as 595 e as 601 ocorrências sem linha na posição dita, e uma amostra de mais de quarenta com a classe certa; vinte linhas próprias com o valor, a página e o excerto certos, três delas pelas leituras na imagem; as derivações que o texto diz; os números do relatório refeitos a partir dos ficheiros; as atribuições por posição só tiraram avisos falsos.
+
+## A leitura curta da adenda C
+
+Claude Opus 5.5 (`leitor`), a `xhigh`, 283 mil símbolos e 80 chamadas, sobre o diff da adenda C, com os quarenta corpos das fontes no pacote (cada um com o resumo conferido e o recibo do pedido). As plantas estão em `leitura-evb-curta.plantas.json`. **Cinco plantas em cinco**, todas dadas como Blocking e todas por correr o código do pacote contra o teste que o construtor escreveu:
+
+- W1 (o contexto deixa de escolher o item da leitura na imagem): o achado 2;
+- W2 (o nome de uma página volta a passar em qualquer texto visível): o achado 4;
+- W3 (a condição do menu recolhido invertida): o achado 5;
+- W4 («mil» a valer como milhão na tradução): o achado 1;
+- W5 (a linha curta só recusa nos estudos que declaram linhas curtas): o achado 3.
+
+### Os achados reais e o que se decidiu
+
+| achado | o que é | decisão |
+| --- | --- | --- |
+| 6 (Major) | a planta da paridade não chega à paridade: quem recusa é a igualdade com o texto julgado, e o teste aceita qualquer erro | adenda D, ponto 2 |
+| 7 (Major) | a tabela das escalas da tradução trata o bilião português como `billion` e lê «mil milhões» como «mil» | adenda D, ponto 1 |
+| 11 (Minor) | o contexto da citação do MADE era só a palavra «Design» | corrigido pelo lugar de direção no ficheiro das citações; adenda D, ponto 4 |
+| 13, em parte (Minor) | duas asserções em revisão descritas como frases com quantificador, quando o detetor apanha o nome de um cargo | adenda D, ponto 3 |
+| 8 | o pacote não trazia as leituras na imagem do motor, os gabaritos nem a origem das linhas | é do pacote; as contagens que o leitor não pôde refazer (1 426 e 465) estão nos registos do construtor |
+| 9, 10, 12, 13 (o resto) e 14 (Minor) | a opacidade escrita de outras maneiras e o menu recolhido de um sítio responsivo; a unidade que se perde quando há escala; o contrato das linhas curtas que não confere que a linha é curta; a regra das asserções só nos dados; a paridade presa ao caminho deste estudo | o bloco de higiene (as questões EVB-6 a EVB-10); a EVB-10 fecha-se antes do EVC, que traz outro contrato nas duas línguas |
+
+O leitor confirmou por si: os quarenta corpos com o resumo e o tamanho declarados e todas as referências a documentos resolvidas num corpo copiado; as sete linhas do quadro das intervenções na página nove das contas contra os sete excertos e contextos, e as duas unidades com duas linhas; a soma dos sete orçamentos igual ao total impresso; o título da página «Quem Somos»; todos os excertos em HTML a resolver uma só vez com o extrator novo; os dez intervalos de dias com o fim que a fonte imprime; as 33 asserções instaladas sem a palavra que não autorizava; as 23 diferenças linha a linha; os pares de uma só língua de volta à comparação antiga.
