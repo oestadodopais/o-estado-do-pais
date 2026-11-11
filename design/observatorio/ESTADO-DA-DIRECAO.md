@@ -1,6 +1,6 @@
 # O estado da direção · ler primeiro em cada sessão
 
-*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 11.11.2026, 04:07 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
+*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 11.11.2026, 08:08 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
 
 ## 1. O que o financiador quer, pela ordem dele
 
@@ -32,15 +32,15 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 
 ## 3. O que está no ar
 
-- `main` do sítio: a cabeça da aterragem do EVA (11.11.2026), sobre `ccca806e0` (REC1 e VEL1, 10.11.2026). `master` do motor: `247e604` (MOT1, MOT2 e o EVA, com a linha de 2021 a atravessar, 11.11.2026).
+- `main` do sítio: `740595bbb` (o EVA, 11.11.2026, no ar desde as 04:40:55 UTC), sobre `ccca806e0` (REC1 e VEL1, 10.11.2026). `master` do motor: `247e604` (MOT1, MOT2 e o EVA, com a linha de 2021 a atravessar, 11.11.2026).
 - Treze estudos vivos e seis de Évora substituídos que ainda têm páginas (saem no REC2).
 - **O estudo das contas da Câmara de Évora está no ar com o texto julgado** (edição única de 11.11.2026), e a linha da execução da receita de 2021 vale 87,72. **Erros conhecidos que ainda estão no ar:** nos outros estudos de Évora, 230 erros reais achados em cinco estudos auditados, com listas julgadas; nas páginas inglesas do livro, os valores na forma portuguesa (EVA-9); o estudo antigo «Orçamentado, Pago, Devido» ainda diz «A taxa caiu de 96% para 61,44%», até o REC2 o retirar.
 
 ## 4. Em curso, bloco a bloco (atualizar sempre)
 
-| Bloco | O que é | Estado a 11.11.2026, 04:07 UTC | O passo seguinte |
+| Bloco | O que é | Estado a 11.11.2026, 04:42 UTC | O passo seguinte |
 | --- | --- | --- | --- |
-| **EVA** | o estudo das contas da Câmara de Évora reescrito pela norma e julgado em três voltas (44 plantas válidas em 44) | **a aterrar a 11.11.2026** (a cabeça que aterra traz este registo): o motor em `247e604`; no sítio a travessia (nove pontos) e as adendas A, B e C; quatro leituras do Opus com cinco plantas em cinco; a corrida inteira por guião verde na cabeça `e83b0bcea` (72 passos); as capturas (80, cinco larguras, duas edições) no Drive; a decisão 1.239; o custo em `custo-eva-2026-11-11.json` (nove passagens, 26 pontos pelo contador da conta, partilhados em parte com o VEL1) | conferir o ar depois da aterragem (a manchete, a data, o recibo de 2021); doze Minor (EVA-1 a EVA-12) para a higiene; o Google Doc do texto no Drive do financiador é anterior a três trocas pequenas |
+| **EVA** | o estudo das contas da Câmara de Évora reescrito pela norma e julgado em três voltas (44 plantas válidas em 44) | **aterrado a 11.11.2026, 04:40:55 UTC** (`740595bbb`; `aterrar.sh` com código 0; do último commit ao ar 32,5 minutos; o ar conferido por pedido direto: a manchete, «publicado a 11.11.2026», o recibo de 2021 com 87,72 e a frase da fonte anterior, a rota datada com 308 para o documento corrente): o motor em `247e604`; no sítio a travessia (nove pontos) e as adendas A, B e C; quatro leituras do Opus com cinco plantas em cinco; a corrida inteira por guião verde na cabeça `e83b0bcea` (72 passos); as capturas (80, cinco larguras, duas edições) no Drive; a decisão 1.239; o custo em `custo-eva-2026-11-11.json` (nove passagens, 26 pontos pelo contador da conta, partilhados em parte com o VEL1) | nada por fazer no bloco; a cópia deste ficheiro em `main` ainda diz «a aterrar» e acerta-se na aterragem seguinte; doze Minor (EVA-1 a EVA-12) para a higiene; o Google Doc do texto no Drive do financiador é anterior a três trocas pequenas |
 | **VEL1** | a corrida `portão` em metade do tempo sem tirar uma conferência | **aterrado a 10.11.2026, 22:44 UTC** (`ccca806e0`), com as regras em linha (o `CLAUDE.md`, a decisão 1.238, este ficheiro, o arranque); a corrida do ramo em 25,2 minutos; a corrida de `main` dispensada pela do ramo em 22 segundos; do último commit ao ar 38,5 minutos, ainda com o guião de aterragem antigo | a aterragem seguinte usa o guião novo (as conferências com o motor durante a espera, a worktree tirada no fim): medir o tempo do commit ao ar; depois o VEL2 (publicar o `dist/` que o GitHub conferiu, sem construir duas vezes na máquina; encolher as plantas que correm o sítio inteiro) |
 | **REC2** | os seis estudos de Évora substituídos deixam de ter páginas; os endereços antigos vão para o sucessor | mandato em rascunho, fora do git | medir com `retirada-seis.py` na cabeça de `main`, fechar o mandato, lançar |
 | **EVB** | o estudo de Évora 2027 | a lista de correções julgada (125 entradas) | a análise do Fable pela norma, o texto inteiro ao juiz, a construção como o EVA |
@@ -52,7 +52,7 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 
 ## 5. O que este lugar prometeu ao financiador (10.11.2026)
 
-- 11.11 (quarta-feira): o estudo das contas no ar (feito, salvo a aterragem em curso às 04:07 UTC); o VEL1 aterrado (feito a 10.11); a pasta única (por fazer, depois do correio das 07:30); confirmar que o correio das 07:30 chegou sozinho.
+- 11.11 (quarta-feira): o estudo das contas no ar (feito às 04:40 UTC); o VEL1 aterrado (feito a 10.11); a pasta única (por fazer, depois do correio das 07:30); confirmar que o correio das 07:30 chegou sozinho.
 - Até 13.11 (sexta-feira): o REC2 e o EVB.
 - Semana de 16.11: os outros dois estudos de Évora, depois das fontes; o IT0 e o primeiro item diário.
 - A 16.11 (segunda-feira): trocar a estimativa «tudo por volta de 08.12» por uma medida em dias e pontos por estudo.
@@ -62,12 +62,23 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 
 - Os dois arquivos da reescrita de outubro (12,6 GB) e as worktrees com ficheiros por registar: apagar ou guardar.
 - A data do lançamento.
-- A sessão que acorda sozinha de manhã (são sessões sem ninguém, nas subscrições dele): só depois de vários itens feitos à mão.
+- **O passo das decisões da manhã** (`~/Instruments/_dia1/bin/decisoes.sh`, pelo `launchd` às 07:34): o modelo do lugar de direção (Fable a `medium`, sem ferramentas) lê o correio do dia e envia ao financiador as decisões tema a tema. **Aprovado por ele só para 12.11.2026** (a palavra de 11.11, 07:50 UTC); depois dessa data o guião sai sem correr, até ele dizer que fica (mudar `OEDP_DECISOES_ATE`). Medido a 11.11: cerca de 18 mil símbolos de entrada e 2,5 mil de saída por dia. O custo da manhã inteira mede-se a partir de 12.11 em `registos/uso-modelos.jsonl` e `dados/decisoes/`.
+- A sessão inteira que acorda sozinha de manhã para trabalhar nos blocos: só depois de vários itens feitos à mão.
+
+### Em ensaio desde 11.11.2026: as decisões da manhã por correio (ver se funciona, e se fica)
+
+Posto por palavra do financiador (11.11.2026, 07:50 e 08:07 UTC), para cada sessão saber que existe e o conferir.
+
+- **O que está posto:** a tarefa `com.oestadodopais.dia1-decisoes` no `launchd` do portátil (07:34 hora local; `~/Instruments/_dia1/bin/decisoes.sh` e `decisoes.py`): espera pelo correio das 07:30 (até cinquenta minutos), o modelo do lugar de direção (Fable a `medium`, sem ferramentas) decide tema a tema, e o guião envia-lhe as decisões («Estado do País · decisions of the direction seat · <dia>»), uma vez por dia. Não depende de sessão nenhuma. O envio de 11.11 foi feito à mão pelo mesmo caminho e chegou (08:01 UTC).
+- **Até quando:** só 12.11.2026. Depois dessa data o guião sai sem correr (`OEDP_DECISOES_ATE` em `decisoes.sh`). Para ficar: ele di-lo, e muda-se essa data (ou tira-se a guarda). Para desligar: `launchctl bootout gui/$(id -u)/com.oestadodopais.dia1-decisoes` e apagar o plist de `~/Library/LaunchAgents/`.
+- **O que conferir a 12.11, de manhã:** (1) `~/Instruments/_dia1/registos/decisoes.log` tem a corrida do dia com `decisoes exit 0`; (2) `dados/decisoes/2026-11-12.json` e `2026-11-12.enviado.json` existem, e o correio está na caixa dele (pelo `gws`); (3) a hora de chegada, contra a do correio das 07:30; (4) o custo medido: o uso em `dados/decisoes/2026-11-12.json` e, para o correio das 07:30, as linhas do dia em `registos/uso-modelos.jsonl` (o `modelo.sh` regista-as desde 11.11; a versão anterior está em `modelo.sh.antes-2026-11-11`); (5) se as decisões do modelo são as que este lugar tomaria: ler, confirmar ou corrigir, e dizer-lho.
+- **O que decide se fica:** chega sozinho e a horas; as decisões são boas; o custo de uma semana, medido, cabe na subscrição (medido a 11.11 numa chamada: cerca de 18 mil símbolos de entrada e 2,5 mil de saída). Dar-lhe os números do dia 12 e a recomendação.
+- **O despertar diário do portátil está posto** (pelo financiador, na aplicação Terminal, a 11.11.2026): `pmset -g sched`, lido às 08:08 UTC, diz «wakepoweron at 7:25AM every day». Tira-se com `sudo pmset repeat cancel` (pede a palavra-passe dele). **Por provar a 12.11:** se o portátil acorda de facto com a tampa fechada e fora da corrente, e se as duas tarefas correm a horas (as horas em `registos/correio.log` e `registos/decisoes.log`); se dormir e acordar tarde, as tarefas correm ao acordar (o comportamento documentado do `launchd`, por provar nesta máquina); desligado de todo, o despertar liga-o só se estiver na corrente.
 
 ## 7. A rotina de cada sessão, logo de manhã
 
 1. Ler este ficheiro, o `CLAUDE.md` e o diário local; `estado.py` e `uso.py`.
-2. **Confirmar o correio das 07:30** (chegou, e os números batem com o que se recolheu) e **ler o relatório da manhã**: decidir tema a tema (nada, vigiar, cobrir), com a razão. A decisão vai no correio do dia seguinte. Até o IT0 existir não se publica nada por esta via.
+2. **Ler as decisões que o passo automático enviou** (`~/Instruments/_dia1/dados/decisoes/<dia>.json`) e a resposta do financiador, se a houver: este lugar confirma ou corrige. **Confirmar o correio das 07:30** (chegou, e os números batem com o que se recolheu) e **ler o relatório da manhã**: decidir tema a tema (nada, vigiar, cobrir), com a razão. A decisão vai no correio do dia seguinte. Até o IT0 existir não se publica nada por esta via.
 3. Ler a caixa das sugestões pelo conector, sem copiar nada para o repositório.
 4. Retomar o primeiro bloco da secção 4 que não esteja à espera de nada.
 5. No fim de cada bloco: atualizar a secção 4 e a data do cabeçalho, o custo do bloco, a fila, os gargalos.

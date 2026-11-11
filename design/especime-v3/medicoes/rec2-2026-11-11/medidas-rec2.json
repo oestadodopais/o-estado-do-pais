@@ -1,0 +1,46 @@
+{
+ "rotas_proprias_dos_seis_no_dist": {
+  "valor": "29",
+  "comando": "python3 -c \"import json;print(sum(v['rotas_proprias_total'] for v in json.load(open('design/especime-v3/medicoes/rec2-2026-11-11/RETIRADA-dos-seis.json')).values()))\""
+ },
+ "ficheiros_do_dist_fora_dos_seis_com_ligacao_para_eles": {
+  "valor": "20",
+  "comando": "python3 -c \"import json;print(sum(sum(v['ficheiros_do_dist_com_ligacao'].values()) for v in json.load(open('design/especime-v3/medicoes/rec2-2026-11-11/RETIRADA-dos-seis.json')).values()))\""
+ },
+ "trabalhos_em_studies_mjs": {
+  "valor": "19",
+  "comando": "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.WORKS.length))\""
+ },
+ "entradas_dos_seis_por_registar": {
+  "valor": "582",
+  "comando": "python3 -c \"import json;S=['evora-quinze-anos-cinco-mandatos','evora-economia-investidores-portas-abertas-2026','evora-orcamentado-pago-devido-2025','evora-os-pelouros-quem-os-teve-o-que-fizeram','evora-prometido-pago-auditado-2026','evora-2027-prometido-painel-dinheiro'];print(sum(1 for f in json.load(open('ledger/frases/por-registar.json')) if f['estudo'] in S))\""
+ },
+ "entradas_por_registar_ao_todo": {
+  "valor": "2202",
+  "comando": "python3 -c \"import json;print(len(json.load(open('ledger/frases/por-registar.json'))))\""
+ },
+ "excecoes_da_voz_dos_seis": {
+  "valor": "27",
+  "comando": "python3 -c \"import json;S=['evora-quinze-anos-cinco-mandatos','evora-economia-investidores-portas-abertas-2026','evora-orcamentado-pago-devido-2025','evora-os-pelouros-quem-os-teve-o-que-fizeram','evora-prometido-pago-auditado-2026','evora-2027-prometido-painel-dinheiro'];print(sum(1 for e in json.load(open('scripts/voz-excecoes.json')) if any(s in e['rota'] for s in S)))\""
+ },
+ "datas_de_publicacao_dos_seis": {
+  "valor": "9",
+  "comando": "python3 -c \"import json;S=['evora-quinze-anos-cinco-mandatos','evora-economia-investidores-portas-abertas-2026','evora-orcamentado-pago-devido-2025','evora-os-pelouros-quem-os-teve-o-que-fizeram','evora-prometido-pago-auditado-2026','evora-2027-prometido-painel-dinheiro'];print(sum(1 for e in json.load(open('src/data/datas-de-publicacao.json'))['edicoes'] if e['slug'] in S))\""
+ },
+ "linhas_de_vercel_json_que_nomeiam_os_seis": {
+  "valor": "18",
+  "comando": "python3 -c \"S=['evora-quinze-anos-cinco-mandatos','evora-economia-investidores-portas-abertas-2026','evora-orcamentado-pago-devido-2025','evora-os-pelouros-quem-os-teve-o-que-fizeram','evora-prometido-pago-auditado-2026','evora-2027-prometido-painel-dinheiro'];print(sum(1 for l in open('vercel.json') if any(s in l for s in S)))\""
+ },
+ "teto_da_L1": {
+  "valor": "3508",
+  "comando": "python3 -c \"import json;print(json.load(open('scripts/lugar-tetos-b1.json'))['l1_paginas'])\""
+ },
+ "valor_de_estudos_publicados": {
+  "valor": "19",
+  "comando": "awk -F'\"' '/^value:/{print $2}' ledger/claims/estudos-publicados.yml"
+ },
+ "valor_de_estudos_evora_publicados": {
+  "valor": "4",
+  "comando": "awk -F'\"' '/^value:/{print $2}' ledger/claims/estudos-evora-publicados.yml"
+ }
+}
