@@ -569,7 +569,12 @@ export function pecasDoCorpo({
     }
     if (bloco.kind === 'heading') {
       const nivel = Math.min(Math.max(Number(bloco.level) || 1, 1), 6);
-      let aria = '';
+      // REC2-A: o bloco dos quatro eixos pertence ao H2 do plano. O documento
+      // transcrito guarda H4; o nível acessível da página é H3, sem alterar os
+      // bytes nem a proveniência da edição arquivada.
+      const eixosDoPlano = /^evora-contas-da-camara-2010-2025\/(pt|en)$/.test(chave)
+        && bloco.i === 117 && nivel === 4;
+      let aria = eixosDoPlano ? ' aria-level="3"' : '';
       if (nivel === 2) {
         fechaSeccaoEmFluxo();
         if (rotuloDaPosicao) {
