@@ -15,7 +15,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check:forma-citacao": "node tests/og1e/forma-da-citacao.mjs && node tests/og1e/reguas.mjs",
-    "ledger:check": "node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/hb1/bilingue.mjs && node tests/hb1/data-sem-publicacao.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs && node tests/linha/correcao-de-campo.mjs && python3 tests/leituras/corpos-ledger.py && node scripts/corpos-ledger.mjs",
+    "ledger:check": "node tests/eva/reconferencias.mjs --so-plantas && node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/hb1/bilingue.mjs && node tests/hb1/data-sem-publicacao.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs && node tests/linha/correcao-de-campo.mjs && python3 tests/leituras/corpos-ledger.py && node scripts/corpos-ledger.mjs",
     "check:registo": "node scripts/check-registo.mjs && python3 scripts/check-conflitos.py --prova && node tests/hb1/edicoes.mjs && node tests/incorporar/dados.mjs && node tests/hb1/portas.mjs",
     "cartoes": "node scripts/cartoes.mjs",
     "check:nd1": "node tests/linha/ausencia-nd1.mjs",

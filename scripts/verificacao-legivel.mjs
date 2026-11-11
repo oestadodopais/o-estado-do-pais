@@ -1,3 +1,5 @@
+import { fraseDaReconferencia } from '../src/lib/fontes-anteriores.mjs';
+
 export function valorRelidoAqui(valor, lang) {
   const s = String(valor ?? '').replace(/[\s\u202f]/g, '').replace('−', '-');
   if (!/^-?\d+(?:[.,]\d+)?$/.test(s)) return String(valor ?? '');
@@ -97,10 +99,7 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
     const anterior = el.querySelectorAll('[data-valor-anterior-confirmado]');
     if (posterior ? anterior.length !== 1 || n(anterior[0].textContent) !== n(posterior.old_value) : anterior.length !== 0) erros.push('C1d: a releitura não identifica o valor anterior que confirmou');
     if (v.result === 'inacessivel' && el.querySelector('[data-linha-verificacao-resultado]')?.textContent !== (lang === 'en' ? 'no value read' : 'sem valor lido')) erros.push('C1e: a tentativa afirma mais do que a ausência de valor lido');
-    const esperado = v.result === 'inacessivel' ? (lang === 'en' ? 'Re-read attempted on' : 'Releitura tentada a') : v.path && v.path !== linha.source_url
-      ? (lang === 'en' ? 'Previous source file read again on' : 'Ficheiro da fonte anterior relido a') : v.by === 'corredor-diario'
-      ? (lang === 'en' ? 'Source file read again on' : 'Ficheiro da fonte relido a')
-      : (lang === 'en' ? 'Re-read on' : 'Releitura a');
+    const esperado = fraseDaReconferencia(linha, v, lang);
     if (el.previousElementSibling?.textContent !== esperado) erros.push('C1: o recibo não distingue a leitura do número da leitura do ficheiro');
   }
   return erros;

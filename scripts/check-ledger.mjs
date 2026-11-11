@@ -28,6 +28,7 @@ import * as METODO from '../src/data/metodo.mjs';
 import * as POLITICA_IA from '../src/data/politica-ia.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 import { conferirCasasDecimais, plantasDasCasasDecimais } from './casas-decimais.mjs';
+import { conferirFontesAnteriores } from '../src/lib/fontes-anteriores.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
@@ -348,6 +349,7 @@ try {
 }
 
 const { errors, warnings, stats } = resultado;
+errors.push(...conferirFontesAnteriores(loadClaims({includeWithdrawn: true})));
 
 console.log('');
 console.log(cinza('  livro-razão · ' + stats.total + ' afirmações'));

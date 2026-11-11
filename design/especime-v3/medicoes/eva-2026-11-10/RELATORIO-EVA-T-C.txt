@@ -1,0 +1,94 @@
+EVA-T-C, 11.11.2026
+
+IMPLEMENTAÇÃO
+
+ledger/fontes-anteriores.json contém a única declaração pedida: a linha
+evora-execucao-da-receita-2021, a correção de 2026-11-11, o endereço da
+Prestação de Contas de 2025, página 112, e a razão indicada no mandato.
+
+src/lib/fontes-anteriores.mjs confere a existência da linha, a correção
+na data declarada, a diferença em relação à fonte atual, a reconferência
+do endereço exato até essa data e a ausência de linhas repetidas.
+Também recusa entradas incompletas e uma declaração que não seja lista.
+scripts/check-ledger.mjs chama esta régua na cadeia ledger:check.
+
+A página e a régua legível usam fraseDaReconferencia. Só o endereço
+declarado, numa reconferência até à correção, recebe a frase da fonte
+anterior. Uma tentativa inacessível conserva a frase da tentativa.
+Nos restantes casos conservam-se as frases do ficheiro e da releitura.
+
+Nenhum byte de ledger/claims ou ledger/cruzamentos foi alterado.
+git diff --exit-code HEAD nesses diretórios devolveu 0 e a comparação
+com o motor confirmou as linhas e os ficheiros da travessia.
+
+PLANTAS E MEDIÇÃO DO HTML
+
+As plantas cobrem as cinco situações pedidas, além da linha inexistente,
+da duplicação, dos campos obrigatórios, da forma de lista, da tentativa
+inacessível, da segunda leitura e da inclusão do próprio dia da correção.
+ledger:check corre as plantas sem precisar de dist/.
+No teste completo, 18 adulterações foram recusadas e 5 272 recibos com
+reconferências foram conferidos nas duas edições.
+
+A medição direta percorreu 8 312 recibos construídos. Exatamente dois
+imprimem a frase da fonte anterior:
+/livro-razao/evora-execucao-da-receita-2021
+/en/ledger/evora-execucao-da-receita-2021
+
+As outras reconferências foram comparadas com as frases anteriores à
+adenda A. Seguem as linhas completas dos recibos pedidos, com os espaços
+do HTML normalizados:
+
+evora-divida-total-2025, português:
+Ficheiro da fonte relido a 01.09.2026, igual à fonte · conferência automática do ficheiro da fonte
+Releitura a 15.08.2026, igual à fonte · leitura independente Repetir a leitura →
+
+evora-divida-total-2025, inglês:
+Source file read again on 01.09.2026, matches the source · automated check of the source file
+Re-read on 15.08.2026, matches the source · independent reading Repeat the reading →
+
+evora-prr-pago-2026, português:
+Ficheiro da fonte relido a 03.09.2026, igual à fonte · conferência automática do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →
+
+evora-prr-pago-2026, inglês:
+Source file read again on 03.09.2026, matches the source · automated check of the source file against the archived copy of 20.08.2026 Repeat the reading →
+
+CONFERÊNCIAS
+
+Build da árvore alterada sobre 558f3671f: código 0, 826 segundos.
+A sua cadeia correu ledger:check, check:registo, check:cruzamento e
+gate:html, incluindo tests/eva/reconferencias.mjs, todos com código 0.
+O build correu uma vez, antes do commit de entrega.
+ledger:check final: código 0.
+check:cruzamento -- --with-origin: código 0, contra a worktree do motor.
+typecheck final: código 0.
+tests/eva/reconferencias.mjs: código 0.
+check:mortos: código 0.
+git diff --check: código 0.
+
+O ledger:check emitiu dez avisos sobre instantâneos que conservam o
+endereço do mesmo conjunto. O cruzamento emitiu seis avisos de mudança
+dos livros do motor, mas confirmou que as linhas e os ficheiros que
+atravessaram permanecem iguais. Não houve recusa dessas conferências.
+
+Os registos estão em <temporario>/eva-t-c-build.log,
+<temporario>/eva-t-c-ledger-final.log, <temporario>/eva-t-c-cruzamento.log,
+<temporario>/eva-t-c-typecheck-final.log,
+<temporario>/eva-t-c-reconferencias.log e <temporario>/eva-t-c-mortos.log.
+
+ORÇAMENTO E ENTREGA
+
+Até ao fecho das conferências: 39 chamadas de ferramentas.
+Nove invocações de conferências: um build, um ledger:check separado,
+um check:cruzamento com o motor, dois typecheck, duas corridas só das
+plantas, uma corrida completa de reconferencias.mjs e um check:mortos.
+As subetapas do build estão incluídas na sua invocação.
+Três tentativas de medição direta: as primeiras duas abortaram por
+procurarem uma página retirada e o índice de uma pasta de séries.
+A terceira mediu os recibos existentes e confirmou que nenhuma linha
+com reconferência estava sem página. Corridas integrais de portões: zero.
+Capturas: zero. Não foi exposta uma linha «tokens used».
+
+O trailer Claude-Session foi copiado do commit 558f3671f, que introduziu
+esta adenda. As chamadas posteriores de entrega e verificação serão
+contadas na resposta final.
