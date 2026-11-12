@@ -1,0 +1,50 @@
+{
+ "correcoes_da_folha_do_orcamento": {
+  "valor": "12",
+  "comando": "grep -c '^## C[0-9][0-9]' design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-orcamento-decidida.md"
+ },
+ "sha256_da_folha_do_orcamento": {
+  "valor": "d4356ed5e4ed00084ca5935915738f87e4db26e92e6b5daec3638cd72ba92752",
+  "comando": "shasum -a 256 design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-orcamento-decidida.md | cut -d' ' -f1"
+ },
+ "correcoes_da_folha_da_reforma": {
+  "valor": "9",
+  "comando": "grep -c '^## C[0-9][0-9]' design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-reforma-decidida.md"
+ },
+ "sha256_da_folha_da_reforma": {
+  "valor": "e1b9f5bc79d0e8b0d93cf3daccdc944d0395e137cc1606fef6edfadc1641ffe5",
+  "comando": "shasum -a 256 design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-reforma-decidida.md | cut -d' ' -f1"
+ },
+ "correcoes_da_folha_da_habitacao": {
+  "valor": "20",
+  "comando": "grep -c '^## C[0-9][0-9]' design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md"
+ },
+ "sha256_da_folha_da_habitacao": {
+  "valor": "221247b59a06716242adcd2f2f3531259f5722243558efed0c1299f890b679e7",
+  "comando": "shasum -a 256 design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md | cut -d' ' -f1"
+ },
+ "sha256_de_partida_gabarito_pt_do_orcamento": {
+  "valor": "3e5fceaa09ac1dc54285aac216eda55e05e3761998447d6e79fb0baf9e95ecd8",
+  "comando": "shasum -a 256 \"$RESEARCHHUB_DIR/content/27 Orcamento 2027 O que muda/Technical Source/documento.pt.md.tmpl\" | cut -d' ' -f1"
+ },
+ "sha256_de_partida_gabarito_en_do_orcamento": {
+  "valor": "99442969a30c886cf0b1ab8ff2110cd41d49f12cb031929e1f1f3436c93b2e59",
+  "comando": "shasum -a 256 \"$RESEARCHHUB_DIR/content/27 Orcamento 2027 O que muda/Technical Source/documento.en.md.tmpl\" | cut -d' ' -f1"
+ },
+ "sha256_de_partida_documento_da_reforma": {
+  "valor": "6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4",
+  "comando": "shasum -a 256 \"$RESEARCHHUB_DIR/content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html\" | cut -d' ' -f1"
+ },
+ "sha256_de_partida_gabarito_pt_da_habitacao": {
+  "valor": "cd2ad4f019a507c6cfad5e112be613bfbb1860bb14e5c8441065a84cf7d949b0",
+  "comando": "shasum -a 256 \"$RESEARCHHUB_DIR/content/28 Habitacao Estudo/Technical Source/documento.pt.md.tmpl\" | cut -d' ' -f1"
+ },
+ "sha256_de_partida_gabarito_en_da_habitacao": {
+  "valor": "a39a037c042a3c97135f3dc61fa6a82f90b2d65e2b2ac5585e5e9c8332fe97eb",
+  "comando": "shasum -a 256 \"$RESEARCHHUB_DIR/content/28 Habitacao Estudo/Technical Source/documento.en.md.tmpl\" | cut -d' ' -f1"
+ },
+ "cabeca_de_partida_do_motor": {
+  "valor": "61add01",
+  "comando": "git -C \"$RESEARCHHUB_DIR\" rev-parse --short HEAD"
+ }
+}
