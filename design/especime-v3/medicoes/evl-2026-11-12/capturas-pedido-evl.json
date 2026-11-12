@@ -1,0 +1,50 @@
+{
+ "cabeca": "f5290706183614719d2a3ce8b28bfb2c4c8693fc",
+ "paginas": [
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/"
+  },
+  {
+   "nome": "estudos",
+   "pt": "/estudos/",
+   "en": "/en/studies/"
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/"
+  },
+  {
+   "nome": "estudo",
+   "pt": "/estudos/evora-2027-capital-europeia-da-cultura/",
+   "en": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+  },
+  {
+   "nome": "recibo-soma",
+   "pt": "/livro-razao/evora-2027-recebido-do-protocolo-ate-2025/",
+   "en": "/en/ledger/evora-2027-recebido-do-protocolo-ate-2025/"
+  },
+  {
+   "nome": "recibo-relato",
+   "pt": "/livro-razao/evora-2027-transferido-no-relato-ao-painel-2025/",
+   "en": "/en/ledger/evora-2027-transferido-no-relato-ao-painel-2025/"
+  },
+  {
+   "nome": "recibo-contribuicao",
+   "pt": "/livro-razao/evora-2027-contribuicao-inicial-do-estado-2024/",
+   "en": "/en/ledger/evora-2027-contribuicao-inicial-do-estado-2024/"
+  },
+  {
+   "nome": "recibo-cultura",
+   "pt": "/livro-razao/evora-2027-pago-pela-cultura-2025/",
+   "en": "/en/ledger/evora-2027-pago-pela-cultura-2025/"
+  },
+  {
+   "nome": "recibo-turismo",
+   "pt": "/livro-razao/evora-2027-pago-pelo-turismo-2025/",
+   "en": "/en/ledger/evora-2027-pago-pelo-turismo-2025/"
+  }
+ ]
+}

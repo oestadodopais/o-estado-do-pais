@@ -1,0 +1,89 @@
+{
+ "bloco": "EVL (o cartão do estudo de Évora 2027 com duas medidas e os seus recibos: o motor e o sítio)",
+ "data": "2026-11-12",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "o mandato (as cinco linhas, os nomes, o cartão)",
+   "inicio": "2026-11-12T05:09:11Z",
+   "fim": "2026-11-12T05:50:04Z",
+   "pontos": 4.0,
+   "pontos_antes": 12.0,
+   "pontos_depois": 16.0,
+   "turnos": 122,
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda A (a prova do documento na travessia e não na linha composta)",
+   "inicio": "2026-11-12T05:52:13Z",
+   "fim": "2026-11-12T06:18:13Z",
+   "pontos": 1.0,
+   "pontos_antes": 16.0,
+   "pontos_depois": 17.0,
+   "turnos": 53,
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda B (um selo errado e a régua de classe das citações com números)",
+   "inicio": "2026-11-12T06:20:10Z",
+   "fim": "2026-11-12T06:55:52Z",
+   "pontos": 1.0,
+   "pontos_antes": 17.0,
+   "pontos_depois": 18.0,
+   "turnos": 56,
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda C (a voz das medidas, a língua, os alvos)",
+   "inicio": "2026-11-12T08:13:20Z",
+   "fim": "2026-11-12T08:30:19Z",
+   "pontos": 1.0,
+   "pontos_antes": 18.0,
+   "pontos_depois": 19.0,
+   "turnos": 48,
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda D (o nome com um ano antes de pontuação, o inventário das frases)",
+   "inicio": "2026-11-12T08:42:36Z",
+   "fim": "2026-11-12T08:59:15Z",
+   "pontos": 0.0,
+   "pontos_antes": 19.0,
+   "pontos_depois": 19.0,
+   "turnos": 47,
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda E (os achados da leitura a frio, no motor e no sítio)",
+   "inicio": "2026-11-12T10:08:42Z",
+   "fim": "2026-11-12T10:54:57Z",
+   "pontos": 4.0,
+   "pontos_antes": 19.0,
+   "pontos_depois": 23.0,
+   "turnos": 122,
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "fonte": "a linha PONTOS do registo do lançador"
+  }
+ ],
+ "total_pontos_codex": "11 em 6 passagens (o contador da semana foi de 12 para 23)",
+ "reflexo_dos_gargalos": "Um bloco que devia custar dois a quatro pontos custou 11. As causas, pela ordem do custo: o mandato não nomeou as listas fechadas da voz, a língua nem os alvos (duas passagens); pediu um campo numa linha composta que a recomposição apaga (uma); deu por bons selos em frases com outro sentido e escreveu no recibo uma frase que as páginas citadas não dizem (a adenda E, com a guarda da página que o construtor tinha alargado). Cinco linhas novas na GARGALOS; a primeira é a proposta 1 deste lugar: um guião que lista as réguas e as listas que um bloco toca antes de o mandato se escrever.",
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh: uma leitura a frio (364 mil símbolos, 120 chamadas) e uma curta sobre a adenda E (225 mil símbolos, 53 chamadas); cinco plantas em cinco em cada uma.",
+ "claude": "a direção, os mandatos, as seis adendas, a leitura das causas dos vermelhos, as conferências por guião e a revisão pelo Fable 5.2",
+ "medida": "cinco linhas novas no livro do sítio (quatro com documento e recorte, uma derivada); um cartão com duas medidas e uma frase julgada; onze selos por língua na página do estudo; no motor, duas linhas próprias novas e duas réguas (a citação com número, a página da travessia).",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-12T05:05:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros. As leituras (Claude) e as corridas por guião não entram nos pontos do Codex."
+}

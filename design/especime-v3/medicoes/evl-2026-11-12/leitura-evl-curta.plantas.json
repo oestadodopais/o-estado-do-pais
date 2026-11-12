@@ -1,0 +1,126 @@
+{
+ "registado_em": "2026-11-12T11:15:25+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "EVLC-P1",
+   "ficheiro": "motor/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/documento.pt.md.tmpl",
+   "descricao": "a segunda frase da C040, que fala do que a Câmara anunciou em 2023, volta a ligar à linha das contas e não à página da Câmara",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4e5a687bf272f6eb4e003deb0dd65875303cac0fd505695dedec32c8d71364d2",
+   "sha256_depois": "5ef9a066451441123ebcba67f8f7df58b78c982a1460879e0d926166f21a108c",
+   "contexto_antes": "s.\n\n@@# EVA unidade C040\nA nossa leitura é que o relato feito ao painel europeu em junho de 2025 contou como dinheiro transferido o que era dinheiro prometido. Os ⟦P:evl-estado-protocolo-2023⟧ milhões são a parte do Estado, nacional e europeia, que a Câmara anunciou para o protocolo em junho de 2023, a que se junta a contribuição do município.\n\n@@# EVA unidade C041\nO que está bem",
+   "contexto_depois": "s.\n\n@@# EVA unidade C040\nA nossa leitura é que o relato feito ao painel europeu em junho de 2025 contou como dinheiro transferido o que era dinheiro prometido. Os ⟦P:evl-governo-a-financiar⟧ milhões são a parte do Estado, nacional e europeia, que a Câmara anunciou para o protocolo em junho de 2023, a que se junta a contribuição do município.\n\n@@# EVA unidade C041\nO que está bem"
+  },
+  {
+   "id": "EVLC-P1",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o mesmo no diff do motor",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "94bb1b87a756a0a64e2ef922cf098d4a1680f4a14b02c00943811379b90b4ee7",
+   "sha256_depois": "29bc9a50df954586c551b60015d5d70e4ef5a997d1ff668eca76f2d8041ba956",
+   "contexto_antes": "tribuição do município.\n+A nossa leitura é que o relato feito ao painel europeu em junho de 2025 contou como dinheiro transferido o que era dinheiro prometido. Os ⟦P:evl-estado-protocolo-2023⟧ milhões são a parte do Estado, nacional e europeia, que a Câmara anunciou para o protocolo em junho de 2023, a que se junta a contribuição do município.\n \n @@# EVA unidade C041\n O que está ",
+   "contexto_depois": "tribuição do município.\n+A nossa leitura é que o relato feito ao painel europeu em junho de 2025 contou como dinheiro transferido o que era dinheiro prometido. Os ⟦P:evl-governo-a-financiar⟧ milhões são a parte do Estado, nacional e europeia, que a Câmara anunciou para o protocolo em junho de 2023, a que se junta a contribuição do município.\n \n @@# EVA unidade C041\n O que está "
+  },
+  {
+   "id": "EVLC-P2",
+   "ficheiro": "motor/publisher/export_site_rows.py",
+   "descricao": "a guarda da página só recusa uma página diferente quando a travessia não declara localizador",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "28385aedafc878c324fd5bd1f25215b2f07135997e23d5655643cc2862ed9a87",
+   "sha256_depois": "39e1fa4a6fec6a18369a4aa9e5daa874bda2f0322244b048cde0d7ac5bb12da7",
+   "contexto_antes": "DOCUMENT_KINDS}')\n        row_document = row.get(\"document\")\n        if document and row_document is not None:\n            declared_page = document.get(\"page\")\n            if declared_page != row_document.get(\"page\"):\n                raise Fail(f\"{sid}: document.page differs from the engine document.page\")\n            if declared_page is not None and page_in_document_locator",
+   "contexto_depois": "DOCUMENT_KINDS}')\n        row_document = row.get(\"document\")\n        if document and row_document is not None:\n            declared_page = document.get(\"page\")\n            if declared_page != row_document.get(\"page\") and not document.get(\"locator\"):\n                raise Fail(f\"{sid}: document.page differs from the engine document.page\")\n            if declared_page is not None and page_in_document_locator"
+  },
+  {
+   "id": "EVLC-P2",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o mesmo no diff do motor",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "29bc9a50df954586c551b60015d5d70e4ef5a997d1ff668eca76f2d8041ba956",
+   "sha256_depois": "9d85a8e3bbd9bfcc801c0f05cbb52f63338234ac3a90b3d430dd4b69720a4c42",
+   "contexto_antes": "UMENT_KINDS}')\n+        row_document = row.get(\"document\")\n+        if document and row_document is not None:\n+            declared_page = document.get(\"page\")\n+            if declared_page != row_document.get(\"page\"):\n+                raise Fail(f\"{sid}: document.page differs from the engine document.page\")\n+            if declared_page is not None and page_in_document_locat",
+   "contexto_depois": "UMENT_KINDS}')\n+        row_document = row.get(\"document\")\n+        if document and row_document is not None:\n+            declared_page = document.get(\"page\")\n+            if declared_page != row_document.get(\"page\") and not document.get(\"locator\"):\n+                raise Fail(f\"{sid}: document.page differs from the engine document.page\")\n+            if declared_page is not None and page_in_document_locat"
+  },
+  {
+   "id": "EVLC-P4",
+   "ficheiro": "ledger/claims/evora-2027-pago-pelo-turismo-2025.yml",
+   "descricao": "o excerto do turismo diz 5 milhões contratualizados; a página 57 diz 4",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b82d5fc2c64fe7a01d83bc6686a7b280f47e43f407e135ed9d39ebaa53ebf4de",
+   "sha256_depois": "c468a0f5972265785d128e6d88ad255ae834070d43667cebb218d346696f311b",
+   "contexto_antes": "_Final_com_Anexo.pdf#page=57\"\naccess_date: \"2026-09-15\"\nreference_date: \"2025\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"4 milhões de euros Turismo de Portugal (Ministério da Economia e Coesão) contratualizados. Pago 3.920.000€ durante o ano de 2025\"\n\n# null quando o valor é publicado; a aritmética explicada quando é ",
+   "contexto_depois": "_Final_com_Anexo.pdf#page=57\"\naccess_date: \"2026-09-15\"\nreference_date: \"2025\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"5 milhões de euros Turismo de Portugal (Ministério da Economia e Coesão) contratualizados. Pago 3.920.000€ durante o ano de 2025\"\n\n# null quando o valor é publicado; a aritmética explicada quando é "
+  },
+  {
+   "id": "EVLC-P4",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "52166e1a948a0bb833b716b004c665b10af197b59d81492746f32be1e16c400d",
+   "sha256_depois": "b0e1998c7292dacf6cfbd609f57a6feb75550adabcf46d6b9add5f3fe1f631ec",
+   "contexto_antes": "rence_date: \"2025\"\n \n # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\n-excerpt: \"contratualizados. Pago 3.920.000€ durante o ano de 2025\"\n+excerpt: \"4 milhões de euros Turismo de Portugal (Ministério da Economia e Coesão) contratualizados. Pago 3.920.000€ durante o ano de 2025\"\n \n # null quando o valor é publicado; a aritmética explicada quando ",
+   "contexto_depois": "rence_date: \"2025\"\n \n # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\n-excerpt: \"contratualizados. Pago 3.920.000€ durante o ano de 2025\"\n+excerpt: \"5 milhões de euros Turismo de Portugal (Ministério da Economia e Coesão) contratualizados. Pago 3.920.000€ durante o ano de 2025\"\n \n # null quando o valor é publicado; a aritmética explicada quando "
+  },
+  {
+   "id": "EVLC-P5",
+   "ficheiro": "ledger/claims/evora-2027-transferido-no-relato-ao-painel-2025.yml",
+   "descricao": "a atribuição diz ECOC Selection Panel; o título do documento diz ECOC Expert Panel",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "54417f092b2742a501d45fcb9042faa1374352d279fb3f52963326ca63aa753c",
+   "sha256_depois": "4a311d387036a9c4d3f5ed48a0d58d139fbaf49d1217f0c295d100cba668b8dd",
+   "contexto_antes": "essão verificada no build: tem de dar exactamente o valor acima.\ncheck: null\n\n# A quem o valor é creditado. Lista de entidades, ou campo nenhum.\nattributed_to:\n  - \"ECOC Expert Panel\"\n\nstudy: \"evora-2027-capital-europeia-da-cultura\"\n# Nota interna. NÃO é publicada: ver DECISIONS §1.24.\nnote: \"[derivation do motor] transcrito · Cruzado de Res",
+   "contexto_depois": "essão verificada no build: tem de dar exactamente o valor acima.\ncheck: null\n\n# A quem o valor é creditado. Lista de entidades, ou campo nenhum.\nattributed_to:\n  - \"ECOC Selection Panel\"\n\nstudy: \"evora-2027-capital-europeia-da-cultura\"\n# Nota interna. NÃO é publicada: ver DECISIONS §1.24.\nnote: \"[derivation do motor] transcrito · Cruzado de Res"
+  },
+  {
+   "id": "EVLC-P5",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b0e1998c7292dacf6cfbd609f57a6feb75550adabcf46d6b9add5f3fe1f631ec",
+   "sha256_depois": "f387b0333632f4e45d41a53bfcb9560aacd95b40752644cb4cc7de98f8aa9254",
+   "contexto_antes": "l\"\n   edition: \"2025\"\n@@ -38,7 +38,7 @@ check: null\n \n # A quem o valor é creditado. Lista de entidades, ou campo nenhum.\n attributed_to:\n-  - \"painel europeu\"\n+  - \"ECOC Expert Panel\"\n \n study: \"evora-2027-capital-europeia-da-cultura\"\n # Nota interna. NÃO é publicada: ver DECISIONS §1.24.\ndiff --git a/ledger/cruzamentos/evora.json b/ledger/c",
+   "contexto_depois": "l\"\n   edition: \"2025\"\n@@ -38,7 +38,7 @@ check: null\n \n # A quem o valor é creditado. Lista de entidades, ou campo nenhum.\n attributed_to:\n-  - \"painel europeu\"\n+  - \"ECOC Selection Panel\"\n \n study: \"evora-2027-capital-europeia-da-cultura\"\n # Nota interna. NÃO é publicada: ver DECISIONS §1.24.\ndiff --git a/ledger/cruzamentos/evora.json b/ledger/c"
+  },
+  {
+   "id": "EVLC-P3",
+   "ficheiro": "src/data/leituras.mjs",
+   "descricao": "o nome curto português da soma diz recebidos do Estado; a soma só tem as parcelas do protocolo, e as contas declaram mais 1,5 milhões do Estado fora dela (página 57)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "75d3c95ae0f02bc62ef1b523ddcf31e9bd1a9dcdadf936bb5751182e8b3cbf4c",
+   "sha256_depois": "b7bf109ebf9ec486b52e591122a073d3da988cb07253a354c7a0c484e3a3d1a6",
+   "contexto_antes": "opeia-da-cultura\": {\n    mostrarMedidasNoCartao: true,\n    medidas: [\n  {\n    \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n    \"nome\": {\n      \"pt\": [\n        \"milhões de euros recebidos do protocolo até ao fim de \",\n        {\n          \"ref\": \"2025\"\n        },\n        \", pelas contas da Associação Évora \", {\"ref\":\"2027\"}\n      ],\n      \"en\": [\n        \"million euros receiv",
+   "contexto_depois": "opeia-da-cultura\": {\n    mostrarMedidasNoCartao: true,\n    medidas: [\n  {\n    \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n    \"nome\": {\n      \"pt\": [\n        \"milhões de euros recebidos do Estado até ao fim de \",\n        {\n          \"ref\": \"2025\"\n        },\n        \", pelas contas da Associação Évora \", {\"ref\":\"2027\"}\n      ],\n      \"en\": [\n        \"million euros receiv"
+  },
+  {
+   "id": "EVLC-P3",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f387b0333632f4e45d41a53bfcb9560aacd95b40752644cb4cc7de98f8aa9254",
+   "sha256_depois": "4fbf3732a775e03d09ce7435b7fe6c348d8bd9f6ea12fb5e74cf7685d4fcba40",
+   "contexto_antes": "ra\": {\n-  \"mostrarMedidasNoCartao\": true,\n-  \"medidas\": [\n-    {\n-      \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n-      \"nome\": {\n-        \"pt\": [\n-          \"milhões de euros recebidos do protocolo até ao fim de \",\n-          {\n-            \"ref\": \"2025\"\n-          },\n-          \", pelas contas da associação\"\n-        ],\n-        \"en\": [\n-          \"million euros received under the protocol up to the end of \",\n-          {\n-",
+   "contexto_depois": "ra\": {\n-  \"mostrarMedidasNoCartao\": true,\n-  \"medidas\": [\n-    {\n-      \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n-      \"nome\": {\n-        \"pt\": [\n-          \"milhões de euros recebidos do Estado até ao fim de \",\n-          {\n-            \"ref\": \"2025\"\n-          },\n-          \", pelas contas da associação\"\n-        ],\n-        \"en\": [\n-          \"million euros received under the protocol up to the end of \",\n-          {\n-"
+  },
+  {
+   "id": "EVLC-P3-desfeita",
+   "ficheiro": "diff.patch",
+   "descricao": "desfaz a planta posta por engano numa linha retirada do diff (a linha de menos volta ao que era)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4fbf3732a775e03d09ce7435b7fe6c348d8bd9f6ea12fb5e74cf7685d4fcba40",
+   "sha256_depois": "f387b0333632f4e45d41a53bfcb9560aacd95b40752644cb4cc7de98f8aa9254",
+   "contexto_antes": "ra\": {\n-  \"mostrarMedidasNoCartao\": true,\n-  \"medidas\": [\n-    {\n-      \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n-      \"nome\": {\n-        \"pt\": [\n-          \"milhões de euros recebidos do Estado até ao fim de \",\n-          {\n-            \"ref\": \"2025\"\n-          },\n-          \", pelas contas da associação\"\n-        ],\n-        \"en\": [\n-          \"million euros received",
+   "contexto_depois": "ra\": {\n-  \"mostrarMedidasNoCartao\": true,\n-  \"medidas\": [\n-    {\n-      \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n-      \"nome\": {\n-        \"pt\": [\n-          \"milhões de euros recebidos do protocolo até ao fim de \",\n-          {\n-            \"ref\": \"2025\"\n-          },\n-          \", pelas contas da associação\"\n-        ],\n-        \"en\": [\n-          \"million euros received"
+  },
+  {
+   "id": "EVLC-P3",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff, na linha acrescentada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f387b0333632f4e45d41a53bfcb9560aacd95b40752644cb4cc7de98f8aa9254",
+   "sha256_depois": "97f64ff2da388c286996437b0b026895b25eac02a5b86695d55bdf3a1e81b750",
+   "contexto_antes": "    ]\n-      }\n+    mostrarMedidasNoCartao: true,\n+    medidas: [\n+  {\n+    \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n+    \"nome\": {\n+      \"pt\": [\n+        \"milhões de euros recebidos do protocolo até ao fim de \",\n+        {\n+          \"ref\": \"2025\"\n+        },\n+        \", pelas contas da Associação Évora \", {\"ref\":\"2027\"}\n+      ],\n+      \"en\": [\n+        \"million euros",
+   "contexto_depois": "    ]\n-      }\n+    mostrarMedidasNoCartao: true,\n+    medidas: [\n+  {\n+    \"claim\": \"evora-2027-recebido-do-protocolo-ate-2025\",\n+    \"nome\": {\n+      \"pt\": [\n+        \"milhões de euros recebidos do Estado até ao fim de \",\n+        {\n+          \"ref\": \"2025\"\n+        },\n+        \", pelas contas da Associação Évora \", {\"ref\":\"2027\"}\n+      ],\n+      \"en\": [\n+        \"million euros"
+  }
+ ]
+}

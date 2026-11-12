@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-12T09:19:46+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "EVL-P2",
+   "ficheiro": "src/data/familias-evl.mjs",
+   "descricao": "o nome da medida da cultura atribui o pagamento ao Fundo de Fomento Cultural; a página 57 põe os 3.750.000 sob o GEPAC, e o Fundo é o da Linha do Vagar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c4681b9b0a3f005c793d384d3f84277e41f06276b589d88127e7646214aa6d9b",
+   "sha256_depois": "d02f3ac2c8d63dfeea02268daedaebbe55fafd2a8d85ba8189510e3b63bfb9ce",
+   "contexto_antes": "  ]\n    }\n  },\n  \"evora-2027-pago-pela-cultura\": {\n    \"frase\": {\n      \"pt\": [\n        \"euros pagos em \",\n        {\n          \"ref\": \"2025\"\n        },\n        \" pelo gabinete do Ministério da Cultura, segundo as contas da associação\"\n      ],\n      \"en\": [\n        \"euros paid in \",\n        {\n          \"ref\": \"2025\"\n        },\n        \" by the Ministry of Culture's office, according to the a",
+   "contexto_depois": "  ]\n    }\n  },\n  \"evora-2027-pago-pela-cultura\": {\n    \"frase\": {\n      \"pt\": [\n        \"euros pagos em \",\n        {\n          \"ref\": \"2025\"\n        },\n        \" pelo Fundo de Fomento Cultural, segundo as contas da associação\"\n      ],\n      \"en\": [\n        \"euros paid in \",\n        {\n          \"ref\": \"2025\"\n        },\n        \" by the Ministry of Culture's office, according to the a"
+  },
+  {
+   "id": "EVL-P2",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "94e0850ebc17e415a77912b1034b3f8f30f58f4049ea1af02e4bf7f3f58e1383",
+   "sha256_depois": "924c35bbbfc9a96cce682d6bbcbfa1d33d1cd885418f7627b96ad8dcf2288185",
+   "contexto_antes": " ]\n+    }\n+  },\n+  \"evora-2027-pago-pela-cultura\": {\n+    \"frase\": {\n+      \"pt\": [\n+        \"euros pagos em \",\n+        {\n+          \"ref\": \"2025\"\n+        },\n+        \" pelo gabinete do Ministério da Cultura, segundo as contas da associação\"\n+      ],\n+      \"en\": [\n+        \"euros paid in \",\n+        {\n+          \"ref\": \"2025\"\n+        },\n+        \" by the Ministry of Culture's office, according t",
+   "contexto_depois": " ]\n+    }\n+  },\n+  \"evora-2027-pago-pela-cultura\": {\n+    \"frase\": {\n+      \"pt\": [\n+        \"euros pagos em \",\n+        {\n+          \"ref\": \"2025\"\n+        },\n+        \" pelo Fundo de Fomento Cultural, segundo as contas da associação\"\n+      ],\n+      \"en\": [\n+        \"euros paid in \",\n+        {\n+          \"ref\": \"2025\"\n+        },\n+        \" by the Ministry of Culture's office, according t"
+  },
+  {
+   "id": "EVL-P3",
+   "ficheiro": "src/data/leituras.mjs",
+   "descricao": "a frase inglesa do cartão diz julho; a unidade C004 julgada diz junho nas duas línguas",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5745a646e6f44544c76f4c03d54a6f3892bda39e55ffc64a9eebb4a0061e4445",
+   "sha256_depois": "b4c125bf91f1904e8ac6db3e7df6a974ba6732aa386fd68c8b1da238d8553b25",
+   "contexto_antes": ",\n      \" million received from the \",\n      {\n        \"ref\": \"2023\"\n      },\n      \" protocol up to the end of \",\n      {\n        \"ref\": \"2025\"\n      },\n      \". In June \",\n      {\n        \"ref\": \"2025\"\n      },\n      \", the summary that the panel of European experts makes of the progress report gave \",\n      {\n        \"claim\": \"e",
+   "contexto_depois": ",\n      \" million received from the \",\n      {\n        \"ref\": \"2023\"\n      },\n      \" protocol up to the end of \",\n      {\n        \"ref\": \"2025\"\n      },\n      \". In July \",\n      {\n        \"ref\": \"2025\"\n      },\n      \", the summary that the panel of European experts makes of the progress report gave \",\n      {\n        \"claim\": \"e"
+  },
+  {
+   "id": "EVL-P3",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "924c35bbbfc9a96cce682d6bbcbfa1d33d1cd885418f7627b96ad8dcf2288185",
+   "sha256_depois": "d8c366336042b548381be694af33d9fe6019136a320c7f85ee20089284c9b552",
+   "contexto_antes": "+      \" million received from the \",\n+      {\n+        \"ref\": \"2023\"\n+      },\n+      \" protocol up to the end of \",\n+      {\n+        \"ref\": \"2025\"\n+      },\n+      \". In June \",\n+      {\n+        \"ref\": \"2025\"\n+      },\n+      \", the summary that the panel of European experts makes of the progress report gave \",\n+      {\n+        \"clai",
+   "contexto_depois": "+      \" million received from the \",\n+      {\n+        \"ref\": \"2023\"\n+      },\n+      \" protocol up to the end of \",\n+      {\n+        \"ref\": \"2025\"\n+      },\n+      \". In July \",\n+      {\n+        \"ref\": \"2025\"\n+      },\n+      \", the summary that the panel of European experts makes of the progress report gave \",\n+      {\n+        \"clai"
+  },
+  {
+   "id": "EVL-P4",
+   "ficheiro": "motor/core/citacoes_linhas.py",
+   "descricao": "a régua nova deixa passar um número citado cuja linha não tem documento resolvido, ou cuja citação não tem documento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "6faed3d337a25ee77234245edf8b82fa0135d62f7c00788741958c020f5d2201",
+   "sha256_depois": "f127f3c9af57adea6f34443d6a10d13db324f74d2654da987d2e6745533516ae",
+   "contexto_antes": "           continue\n            checked += 1\n            expected = declaration.get('documento', {}).get('sha256')\n            actual = resumo_linha(row, tech)\n            if not expected or actual != expected:\n                findings.append(dict(estudo=tech.parent.name, lingua=lang, unidade=uid,\n                                     marcador=marker, citacao=rendered,",
+   "contexto_depois": "           continue\n            checked += 1\n            expected = declaration.get('documento', {}).get('sha256')\n            actual = resumo_linha(row, tech)\n            if expected and actual and actual != expected:\n                findings.append(dict(estudo=tech.parent.name, lingua=lang, unidade=uid,\n                                     marcador=marker, citacao=rendered,"
+  },
+  {
+   "id": "EVL-P4",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "o mesmo no diff do motor",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "19519f4792f5c2bf34e4d879ae24e732290184b07759889daf43d20cd574080e",
+   "sha256_depois": "45f5ca7c2d975f329e245bfe83b96f56885270a983ce5357de8bd314da31a08e",
+   "contexto_antes": "        continue\n+            checked += 1\n+            expected = declaration.get('documento', {}).get('sha256')\n+            actual = resumo_linha(row, tech)\n+            if not expected or actual != expected:\n+                findings.append(dict(estudo=tech.parent.name, lingua=lang, unidade=uid,\n+                                     marcador=marker, citacao=rendere",
+   "contexto_depois": "        continue\n+            checked += 1\n+            expected = declaration.get('documento', {}).get('sha256')\n+            actual = resumo_linha(row, tech)\n+            if expected and actual and actual != expected:\n+                findings.append(dict(estudo=tech.parent.name, lingua=lang, unidade=uid,\n+                                     marcador=marker, citacao=rendere"
+  },
+  {
+   "id": "EVL-P5",
+   "ficheiro": "ledger/claims/evora-2027-recebido-do-protocolo-ate-2025.yml",
+   "descricao": "a conta portuguesa diz que os 1 500 000 da Linha do Vagar foram pagos em 2024; a página 57 das contas diz durante o ano de 2025",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c9e08f0b5063cdcdd26f2319c26cb872f19b9ea61a71d493625598fdab645656",
+   "sha256_depois": "eca099cb21b584dfcbef4eb33f97afb985cecbe87844d8c5dd6199b7f6b20661",
+   "contexto_antes": ". São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2025 para a Linha do Vagar, que não são do protocolo.\"\nderivation_en: \"2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9.7 million. They are the initial State contribution and the 2",
+   "contexto_depois": ". São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2024 para a Linha do Vagar, que não são do protocolo.\"\nderivation_en: \"2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9.7 million. They are the initial State contribution and the 2"
+  },
+  {
+   "id": "EVL-P1",
+   "ficheiro": "ledger/claims/evora-2027-pago-pelo-turismo-2025.yml",
+   "descricao": "o valor da linha do turismo com dois algarismos trocados; a página 57 das contas diz 3.920.000",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "64936d518f8b2da673cac50857b873f7a9251b0c92292db14434629e63fdb22f",
+   "sha256_depois": "1b7466982a4de618ddce78d8b1a5ad2a0a915f89fa02a6ed745a82ead1674abb",
+   "contexto_antes": " parte scripts/check-cruzamento.mjs.\n\nid: \"evora-2027-pago-pelo-turismo-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"3 920 000\"\nunit: \"euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Associação Évora 2027\"\ndocument:\n  title: \"RELATÓRIO D",
+   "contexto_depois": " parte scripts/check-cruzamento.mjs.\n\nid: \"evora-2027-pago-pelo-turismo-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"3 290 000\"\nunit: \"euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Associação Évora 2027\"\ndocument:\n  title: \"RELATÓRIO D"
+  },
+  {
+   "id": "EVL-P1",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d8c366336042b548381be694af33d9fe6019136a320c7f85ee20089284c9b552",
+   "sha256_depois": "1558ce1a9d02933850f216df64d0daf01e7d72e666e25a0e95d264f8293290c7",
+   "contexto_antes": "te scripts/check-cruzamento.mjs.\n+\n+id: \"evora-2027-pago-pelo-turismo-2025\"\n+\n+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n+value: \"3 920 000\"\n+unit: \"euros\"\n+\n+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\n+source: \"Associação Évora 2027\"\n+document:\n+  title: \"RELAT",
+   "contexto_depois": "te scripts/check-cruzamento.mjs.\n+\n+id: \"evora-2027-pago-pelo-turismo-2025\"\n+\n+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n+value: \"3 290 000\"\n+unit: \"euros\"\n+\n+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\n+source: \"Associação Évora 2027\"\n+document:\n+  title: \"RELAT"
+  },
+  {
+   "id": "EVL-P5",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1558ce1a9d02933850f216df64d0daf01e7d72e666e25a0e95d264f8293290c7",
+   "sha256_depois": "242035031761aa779546aa902cbf462b36e04f943235bcea2279cdfc2177c51f",
+   "contexto_antes": "rto textual da fonte, palavra por palavra. Nunca uma paráfrase.\n+excerpt: null\n+\n+# null quando o valor é publicado; a aritmética explicada quando é calculado.\n+derivation: \"2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2025 para a Linha do Vagar, que não são do protocolo.\"\n+derivation_en: \"2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9.7 million. They are the initial State contribution and the 2025 payments from culture a",
+   "contexto_depois": "rto textual da fonte, palavra por palavra. Nunca uma paráfrase.\n+excerpt: null\n+\n+# null quando o valor é publicado; a aritmética explicada quando é calculado.\n+derivation: \"2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2024 para a Linha do Vagar, que não são do protocolo.\"\n+derivation_en: \"2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9.7 million. They are the initial State contribution and the 2025 payments from culture a"
+  }
+ ]
+}
