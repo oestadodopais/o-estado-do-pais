@@ -159,6 +159,8 @@ def razoes(r: dict, data_do_painel: str) -> list[dict]:
     """As três entradas desta releitura, com as frases do modelo."""
     dia_iso = r["pedido"]["quando"][:10]
     dia = data_pt(dia_iso)
+    if datetime.strptime(dia_iso, "%Y-%m-%d") < datetime.strptime(data_do_painel, "%d.%m.%Y"):
+        raise SystemExit(f"PARAGEM: {r['id']}: leitura anterior ao dia da comparação")
     nova, antiga = data_pt(r["carimbo_novo"]), data_pt(r["carimbo_anterior"])
     geo = r["coordenadas"].get("geo")
     de_quem, whose = {"PT": ("de Portugal", "Portugal's value"), "EU27_2020": ("da União", "the EU value")}[geo]
@@ -197,7 +199,23 @@ def razoes(r: dict, data_do_painel: str) -> list[dict]:
 
 
 def conferir_razao_acesso(acesso: dict, r: dict) -> None:
-    esperado = razoes(r, data_pt(r["verificacao_divergente_no_sitio"]["date"]))[1]
+    leitura = datetime.strptime(r["pedido"]["quando"][:10], "%Y-%m-%d")
+    comparacao = datetime.strptime(r["verificacao_divergente_no_sitio"]["date"], "%Y-%m-%d")
+    if leitura < comparacao:
+        raise SystemExit(f"PARAGEM: {r['id']}: leitura anterior ao dia da comparação")
+    dia, painel = leitura.strftime("%d.%m.%Y"), comparacao.strftime("%d.%m.%Y")
+    anterior = datetime.strptime(r["acesso_antigo"], "%Y-%m-%d").strftime("%d.%m.%Y")
+    valor = r["valor_antigo"]
+    if leitura > comparacao:
+        esperado = {
+            "reason": f"O valor novo foi lido a {dia}, depois de a comparação semanal com a fonte de {painel} ter visto a revisão; a leitura anterior, de {anterior}, é a do valor {valor}.",
+            "reason_en": f"The new value was read on {dia}, after the weekly comparison with the source of {painel} had caught the revision; the earlier reading, of {anterior}, is that of the value {valor}.",
+        }
+    else:
+        esperado = {
+            "reason": f"O valor novo foi lido a {dia}, no dia da reconferência que viu a revisão; a leitura anterior, de {anterior}, é a do valor {valor}.",
+            "reason_en": f"The new value was read on {dia}, the day of the check that caught the revision; the earlier reading, of {anterior}, is that of the value {valor}.",
+        }
     for lingua in ("reason", "reason_en"):
         assert acesso[lingua] == esperado[lingua], "a razão do acesso não distingue o dia da leitura do dia da comparação"
 
