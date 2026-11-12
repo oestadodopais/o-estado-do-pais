@@ -24,7 +24,7 @@ import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { nomeDoProjeto } from '../src/data/nomes-das-medidas.mjs';
 import { routePath } from '../src/lib/routes.mjs';
-import { sinopseEsperada, textoSemSelos } from './voz-pais.mjs';
+import { sinopseEsperada, textoSemSelos, conferirMedidasDoEstudo } from './voz-pais.mjs';
 import {hasSerie,getSerie} from '../src/lib/series.mjs';
 import rotulosDasSeries from '../src/data/rotulos-das-series.json' with {type:'json'};
 const normal = s => s.replace(/\s+/g, ' ').trim();
@@ -35,7 +35,7 @@ export function rotuloDaPortaDaSerieConferido(el,lang) {
   if(!rotulo||rotulo!==serie.document?.title||el.textContent!==rotulo||!porta||normal(porta.textContent)!==rotulo)return false;
   return [sid,serie.linha_de_portugal,serie.linha_da_uniao].filter(Boolean).some(id=>porta.getAttribute('href')===routePath('linha',lang,{slug:id}));
 }
-export function verificaB1(raiz) {
+export function verificaB1(raiz, documentos = new Map()) {
   const erros = [];
   const temas = new Set(DOMINIOS.map(d => d.slug));
   for (const w of WORKS) {
@@ -59,7 +59,7 @@ export function verificaB1(raiz) {
       const ficheiro = path.join(raiz, 'dist', rota, 'index.html');
       if (!fs.existsSync(ficheiro)) { erros.push(`B1 superfície: falta ${rota}.`); continue; }
       paginas++;
-      const main = parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('main');
+      const main = parse(documentos.get(rota) ?? fs.readFileSync(ficheiro, 'utf8')).querySelector('main');
       if (!main) { erros.push(`B1 superfície: ${rota} sem main.`); continue; }
       for (const item of main.querySelectorAll('.estudo-item[data-estudo-edicao]')) {
         const edicao = item.getAttribute('data-estudo-edicao').split('/').at(-1);
@@ -164,6 +164,9 @@ export function verificaB1(raiz) {
         if (id && normal(el.textContent) === getClaim(id).unit) dispensados.add(el);
         else erros.push(`B1 unidade: ${rota}: unidade sem correspondência na linha ${id}.`);
       }
+      const medidas = conferirMedidasDoEstudo(main, lang);
+      erros.push(...medidas.erros);
+      for (const no of medidas.nos) dispensados.add(no);
       const do1 = conferirSuperficieDossies(main, lang, `${rota}/index.html`);
       erros.push(...do1.erros);
       for (const no of do1.nos) dispensados.add(no);

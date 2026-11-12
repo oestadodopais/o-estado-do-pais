@@ -1,0 +1,138 @@
+[
+  {
+    "rota": "/",
+    "caso": "controlo",
+    "recusas": 0
+  },
+  {
+    "rota": "/",
+    "medida": 0,
+    "caso": "palavra trocada",
+    "recusas": 8
+  },
+  {
+    "rota": "/",
+    "medida": 0,
+    "caso": "ano trocado",
+    "recusas": 8
+  },
+  {
+    "rota": "/",
+    "medida": 1,
+    "caso": "palavra trocada",
+    "recusas": 7
+  },
+  {
+    "rota": "/",
+    "medida": 1,
+    "caso": "ano trocado",
+    "recusas": 7
+  },
+  {
+    "rota": "/",
+    "caso": "texto solto",
+    "recusas": 1
+  },
+  {
+    "rota": "en",
+    "caso": "controlo",
+    "recusas": 0
+  },
+  {
+    "rota": "en",
+    "medida": 0,
+    "caso": "palavra trocada",
+    "recusas": 8
+  },
+  {
+    "rota": "en",
+    "medida": 0,
+    "caso": "ano trocado",
+    "recusas": 8
+  },
+  {
+    "rota": "en",
+    "medida": 1,
+    "caso": "palavra trocada",
+    "recusas": 7
+  },
+  {
+    "rota": "en",
+    "medida": 1,
+    "caso": "ano trocado",
+    "recusas": 7
+  },
+  {
+    "rota": "en",
+    "caso": "texto solto",
+    "recusas": 1
+  },
+  {
+    "rota": "estudos",
+    "caso": "controlo",
+    "recusas": 0
+  },
+  {
+    "rota": "estudos",
+    "medida": 0,
+    "caso": "palavra trocada",
+    "recusas": 5
+  },
+  {
+    "rota": "estudos",
+    "medida": 0,
+    "caso": "ano trocado",
+    "recusas": 5
+  },
+  {
+    "rota": "estudos",
+    "medida": 1,
+    "caso": "palavra trocada",
+    "recusas": 4
+  },
+  {
+    "rota": "estudos",
+    "medida": 1,
+    "caso": "ano trocado",
+    "recusas": 4
+  },
+  {
+    "rota": "estudos",
+    "caso": "texto solto",
+    "recusas": 1
+  },
+  {
+    "rota": "en/studies",
+    "caso": "controlo",
+    "recusas": 0
+  },
+  {
+    "rota": "en/studies",
+    "medida": 0,
+    "caso": "palavra trocada",
+    "recusas": 5
+  },
+  {
+    "rota": "en/studies",
+    "medida": 0,
+    "caso": "ano trocado",
+    "recusas": 5
+  },
+  {
+    "rota": "en/studies",
+    "medida": 1,
+    "caso": "palavra trocada",
+    "recusas": 4
+  },
+  {
+    "rota": "en/studies",
+    "medida": 1,
+    "caso": "ano trocado",
+    "recusas": 4
+  },
+  {
+    "rota": "en/studies",
+    "caso": "texto solto",
+    "recusas": 1
+  }
+]

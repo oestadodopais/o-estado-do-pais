@@ -60,6 +60,26 @@ export function sinopseEsperada(w, lang) {
     return (p.abs === true ? valor.replace(/^[+−-]/, '') : valor) + (p.sufixo ?? (linha.unit === '%' ? ' %' : ''));
   }).join(''));
 }
+/** EVL: a medida é conferida inteira, incluindo os anos entre nós de texto.
+ * O valor e a unidade seguem a mesma leitura sem selos das sinopses; as portas
+ * continuam sujeitas às conferências comuns dos selos e do livro-razão. */
+export function conferirMedidasDoEstudo(main, lang) {
+  const erros = [], nos = [];
+  for (const el of main.querySelectorAll('[data-medida-estudo]')) {
+    const estudo = WORKS.find(w => w.slug === el.closest('[data-estudo]')?.getAttribute('data-estudo'));
+    const leitura = estudo && leituraDe(estudo.id);
+    const id = el.getAttribute('data-medida-estudo');
+    const medida = leitura?.mostrarMedidasNoCartao && leitura.medidas.find(m => m.claim === id);
+    const nome = medida?.nome[lang];
+    const partesValidas = nome?.every(p => typeof p === 'string' || typeof p?.ref === 'string');
+    const esperado = partesValidas && normal(valorNaLingua(getClaim(id), lang) + ' ' + nome.map(p => typeof p === 'string' ? p : p.ref).join(''));
+    const valores = el.querySelectorAll('[data-claim]');
+    if (!esperado || texto(el) !== esperado || valores.length !== 1 || valores[0].getAttribute('data-claim') !== id)
+      erros.push(`B1 medida: ${estudo?.slug ?? '(sem estudo)'}: ${id}: texto ou linha diferente da medida declarada.`);
+    else nos.push(el);
+  }
+  return { erros, nos };
+}
 export function conferirSinopse(resumo, w, lang) {
   const esperado = w && sinopseEsperada(w, lang);
   return !esperado || texto(resumo) !== esperado ? [`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`] : [];
@@ -136,6 +156,9 @@ export function verificaVozPais(raiz, documentos = new Map()) {
         erros.push(...conferirSinopse(resumo, w, lang));
         dispensados.add(resumo);
       }
+      const medidas = conferirMedidasDoEstudo(main, lang);
+      erros.push(...medidas.erros);
+      for (const no of medidas.nos) dispensados.add(no);
       const do1 = conferirSuperficieDossies(main, lang, `${rota}/index.html`);
       erros.push(...do1.erros);
       for (const no of do1.nos) dispensados.add(no);
