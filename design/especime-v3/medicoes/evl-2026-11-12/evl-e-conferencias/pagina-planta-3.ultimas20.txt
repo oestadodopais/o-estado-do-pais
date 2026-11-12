@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/export_site_rows_test.py", line 2490, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<motor>/publisher/export_site_rows_test.py", line 2446, in main
+    resultados.append(corrida("a cópia versionada"))
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_site_rows_test.py", line 432, in corrida
+    rows = X.build_rows(m, copy.deepcopy(base_ledgers), [])
+  File "<motor>/publisher/export_site_rows.py", line 2388, in build_rows
+    raise Fail(f"{sid}: source {source!r} names no entity the engine row stands "
+               f"behind ({', '.join(known) or 'none'})")
+publisher.export_site_rows.Fail: evora-2027-transferido-no-relato-ao-painel-2025: source 'European Commission' names no entity the engine row stands behind (painel europeu)
+  a travessia contra a cópia versionada: <motor>/publisher/fixtures/site-min

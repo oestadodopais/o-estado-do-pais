@@ -1,0 +1,20 @@
+10:44:20   ├─ /sugestoes/vazia/index.html (+0ms) 
+10:44:20   ├─ /sugestoes/limite/index.html (+0ms) 
+10:44:20   ├─ /sugestoes/nao-chegou/index.html (+0ms) 
+10:44:20   ├─ /sugestoes/index.html (+1ms) 
+10:44:20   ├─ /temas/index.html (+39ms) 
+10:44:20   ├─ /uniao-europeia/index.html (+49ms) 
+10:44:20   ├─ /index.html (+94ms) 
+10:44:20 ✓ Completed in 25.76s.
+
+10:44:20 [build] ✓ Completed in 26.26s.
+10:44:21 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+10:44:21 [build] 9814 page(s) built in 29.25s
+10:44:21 [build] Complete!
+VOZ-1 B: portas do calendário conferíveis no HTML das páginas atuais.
+
+> o-estado-do-pais@0.1.0 stamp:version
+> node scripts/stamp-version.mjs
+
+
+[90m  versão · 8864969 (evl-2026-11-12, git)[0m

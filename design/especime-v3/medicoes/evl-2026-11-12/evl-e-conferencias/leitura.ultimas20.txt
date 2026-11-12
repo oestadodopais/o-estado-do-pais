@@ -1,0 +1,6 @@
+EVB leitura pt: C005 na linha 49, um ano por referência, sem números de linha nem troca de palavras.
+EVB leitura en: C005 na linha 49, um ano por referência, sem números de linha nem troca de palavras.
+EVL definições: ano trocado e medição disfarçada de ano recusados.
+EVL leitura pt: C004 na linha 48; duas medidas e primeiras frases inteiras conferidas.
+EVL leitura en: C004 na linha 48; duas medidas e primeiras frases inteiras conferidas.
+EVL: 8 plantas de palavra, número, ano e frase incompleta recusadas.

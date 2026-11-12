@@ -3,7 +3,7 @@
  "composto_de": [
   {
    "pasta": "14 Évora 2027",
-   "ledger_sha256": "9a88cf1af72b6fc5ce38ebeee4302758c2e9649dac9e636acb26ee63ebbe75a8"
+   "ledger_sha256": "0b01e1eefdccd415d56e60edaf01b0059cae6cd07032f5fd33626254f3ca6ddc"
   },
   {
    "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
@@ -808,7 +808,8 @@
    "source_type": "intergovernmental",
    "derivation": "transcrito",
    "attributed_to": [
-    "painel europeu"
+    "painel europeu",
+    "ECOC Expert Panel"
    ],
    "sanity_min": 1.0,
    "sanity_max": 100.0

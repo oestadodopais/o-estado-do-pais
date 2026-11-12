@@ -1,0 +1,20 @@
+    resultados.append(corrida("a cópia versionada"))
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_site_rows_test.py", line 820, in corrida
+    case("page digits in digest are not a page",
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         lambda m, led: documentary_page(m, led, 444, "p. 444"),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         "differs from the engine document.page")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_site_rows_test.py", line 295, in case
+    mutate(m, led)
+    ~~~~~~^^^^^^^^
+  File "<motor>/publisher/export_site_rows_test.py", line 821, in <lambda>
+    lambda m, led: documentary_page(m, led, 444, "p. 444"),
+                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_site_rows_test.py", line 817, in documentary_page
+    row = led[spec["rh_study"]][spec["rh_id"]]
+          ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'despesa-paga-2025'
+  a travessia contra a cópia versionada: <motor>/publisher/fixtures/site-min

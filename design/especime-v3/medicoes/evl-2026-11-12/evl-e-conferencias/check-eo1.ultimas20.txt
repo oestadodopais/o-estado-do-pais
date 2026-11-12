@@ -1,0 +1,20 @@
+B1 en/studies/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 estudos/a-casa-em-portugal-e-na-europa: primeiro H2 conferido e planta recusada.
+B1 en/studies/a-casa-em-portugal-e-na-europa: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-quem-governou-a-camara-2009-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+EO1-b maquinaria: PASS; 41 plantas recusadas.
+EO1: 256 localizadores, nomes e períodos conferidos em todas as linhas, com alterações rejeitadas.
+EO1 pt: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1 en: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1: PASS 114 unidades do HTML, provas e três plantas por edição.
+
+[31m  PORTÃO DA LÍNGUA · 1 problema(s)
+[0m
+[31m    · [0ma declaração de língua nomeia o organismo «ECOC Expert Panel», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+

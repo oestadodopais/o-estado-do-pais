@@ -1,0 +1,20 @@
+  },
+  {
+    "nome": "Segundo título para jd1/eo-execucao-agosto-2026.pdf",
+    "mensagem": "JD1: título diferente para o mesmo documento",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Ponto de milhares no valor de trabalho",
+    "mensagem": "JD1 dívida: value contém ponto de milhares",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Dívida vale 315856 no leitor numérico e conserva o literal da fonte",
+    "passou": true,
+    "planta": false
+  }
+]
+JD1_TEST: PASS · 50 conferências

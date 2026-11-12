@@ -1,0 +1,20 @@
+
+EVL-D: 2 controlos verdes; 6 plantas recusadas; recibos originais intactos.
+EVL-C: 4 controlos verdes; 20 plantas recusadas nas duas páginas e línguas.
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":63,"plantas":57,"documentos":22,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+REC2 voz das edições: retirada sem faixa; publicação em falta continua recusada.
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 28 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-12.
+  FP1 en: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-12.
+  REC2 inventário: 12 descrições literais de trabalhos retirados saltadas; conta conferida.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 2 problema(s)
+[0m
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5660: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: EVL-E: substituída pela C005 e pelos nomes com atribuição explícita.
+      «milhões de euros recebidos do protocolo até ao fim de , pelas contas da associação»
+[31m    · [0mo bloco «evl-e» tem linhas no inventário e não tem entrada em design/especime-v3/critica/REVISOES-DO-INVENTARIO.md. Uma linha nova do inventário pede a leitura cruzada do seu diff.
+

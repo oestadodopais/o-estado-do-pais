@@ -1,10 +1,10 @@
 {
   "estudo": "evora-2027-capital-europeia-da-cultura",
-  "commit_motor": "e887f17da7f651a33c112ed3d17d3fbeb9834e21",
+  "commit_motor": "c0b49c72fa5eb33b13ffd90390cbb72dae63095c",
   "livro": {
     "file": "design/especime-v3/medicoes/evb-2026-11-11/livro-19-julgado.json",
-    "sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
-    "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json @ e887f17da7f651a33c112ed3d17d3fbeb9834e21"
+    "sha256": "22a64c6faba1f1e23617837b2f62e128bc214825a56f075e11357bbd2f0f9ddf",
+    "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json @ c0b49c72fa5eb33b13ffd90390cbb72dae63095c"
   },
   "registos": {
     "pt": {

@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/i18n/lingua-dos-titulos.mjs(1937,36): error TS7006: Parameter 'texto' implicitly has an 'any' type.

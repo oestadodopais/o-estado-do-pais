@@ -1,0 +1,3 @@
+EVB cópias: 8 controlos; 38 adulterações de texto, número, porta, data, língua e resumo recusadas.
+EVB leitura julgada: 6 controlos (cópias impressas no dist); 60 plantas de palavra, ano, origem, troca e declaração recusadas.
+EVB título do cartão: 2 controlos; 10 plantas de porta, ano, palavra, língua e marcador recusadas.

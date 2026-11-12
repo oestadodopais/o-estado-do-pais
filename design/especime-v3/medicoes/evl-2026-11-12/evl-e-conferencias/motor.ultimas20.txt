@@ -1,0 +1,20 @@
+  --------------------------------------------------------------------
+  evora-2027-en-html: misattributions: 1 > baseline 0 — new unledgered/unattributed content
+
+  --------------------------------------------------------------------
+  attributions structural failure on content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md:
+  ERROR: atribuições: identidade diferente dos casos declarados
+
+  --------------------------------------------------------------------
+  attributions structural failure on content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html:
+  ERROR: atribuições: identidade diferente dos casos declarados
+
+  --------------------------------------------------------------------
+  attributions structural failure on content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md:
+  ERROR: atribuições: identidade diferente dos casos declarados
+
+  --------------------------------------------------------------------
+  attributions structural failure on content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html:
+  ERROR: atribuições: identidade diferente dos casos declarados
+
+An unrunnable or red gate is not evidence of a clean commit (rule 14).
