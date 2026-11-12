@@ -1,0 +1,66 @@
+EVL A: selos de fonte nas unidades do texto julgado
+Leitura do dist existente; índices das unidades e ocorrências iguais aos do registo.
+Cada ligação foi conferida contra a linha do motor declarada na travessia.
+Esta lista regista a ligação existente; a direção confere a correspondência semântica da medida.
+
+PT
+0 (heading), ocorrência 0.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município 
+0 (heading), ocorrência 0.1: 9,7 → evora-2027-recebido-do-protocolo-ate-2025 [evb-ln001]
+  25, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»
+3 (paragraph), ocorrência 3.0: 9,7 → evora-2027-recebido-do-protocolo-ate-2025 [evb-ln001]
+  No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025. Em junho de 2025, o resumo que o painel de peritos
+3 (paragraph), ocorrência 3.1: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  nho de 2025, o resumo que o painel de peritos europeus faz do relatório de progresso dava 34 milhões como já transferidos. A parte do município, de 10,5 milhões, estava «Em Negociação» nas contas aprova
+6 (paragraph), ocorrência 6.0: 9,7 → evora-2027-recebido-do-protocolo-ate-2025 [evb-ln001]
+  1. Do protocolo, as contas declaram 9,7 milhões recebidos até ao fim de 2025; o relato ao painel dava 34. As contas declaram 2 milhões recebidos em 2
+6 (paragraph), ocorrência 6.1: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  olo, as contas declaram 9,7 milhões recebidos até ao fim de 2025; o relato ao painel dava 34. As contas declaram 2 milhões recebidos em 2024 e, pagos em 2025, 3,75 milhões da cultura e 3,92 milhões do t
+6 (paragraph), ocorrência 6.5: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  es do turismo; o plano da associação situa no fim do ano o pagamento do turismo. Fora dos 34 milhões, declaram mais 1,5 milhões pagos em 2025 para a Linha do Vagar, um reforço que a candidatura não prev
+6 (paragraph), ocorrência 6.7: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  2025 para a Linha do Vagar, um reforço que a candidatura não previa. A diferença entre os 34 e os 9,7 milhões não é toda dinheiro em atraso. A resolução reserva para a cultura tetos de base de 3,75 milh
+22.1.0 (table), ocorrência 22.1.0.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  «€34 million has been transferred to the Association already» (34 milhões já foram transferidos para a associação)
+25 (paragraph), ocorrência 25.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  uropeu em junho de 2025 contou como dinheiro transferido o que era dinheiro prometido. Os 34 milhões são a parte do Estado, nacional e europeia, que a Câmara anunciou para o protocolo em junho de 2023, 
+36.1.2 (table), ocorrência 36.1.2.2: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  ento do Estado, incluindo 5 milhões da Comunidade Intermunicipal do Alentejo Central) e «€34 million has been transferred to the Association already, while the €5 million remaining are currently under n
+41 (paragraph), ocorrência 41.1: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  As mesmas contas escrevem que 2025 foi determinante para assegurar «29 dos 34 milhões de euros a financiar pelo Governo».
+73.1.1 (table), ocorrência 73.1.1.3: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  lhões de financiamento do Estado garantidos por protocolos, incluindo 5 milhões da CIMAC; 34 milhões dados como já transferidos e 5 milhões em negociação; os 10,5 milhões do município por transferir e e
+80 (paragraph), ocorrência 80.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  to. As contas distinguem a receita reconhecida do dinheiro recebido; na comparação com os 34 milhões usam-se os recebimentos que elas declaram. As somas usam valores que os documentos declaram. As conta
+
+EN
+0 (heading), ocorrência 0.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's sha
+0 (heading), ocorrência 0.1: 9,7 → evora-2027-recebido-do-protocolo-ate-2025 [evb-ln001]
+  e June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)
+3 (paragraph), ocorrência 3.0: 9,7 → evora-2027-recebido-do-protocolo-ate-2025 [evb-ln001]
+  On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025. In June 2025, the summary that the panel of Eu
+3 (paragraph), ocorrência 3.1: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  ne 2025, the summary that the panel of European experts makes of the progress report gave 34 million as already transferred. The municipality's share, of 10,5 million, was «Em Negociação» in the account
+6 (paragraph), ocorrência 6.0: 9,7 → evora-2027-recebido-do-protocolo-ate-2025 [evb-ln001]
+  1. Under the protocol, the accounts report 9,7 million received by the end of 2025; the report to the panel put the figure at 34. The accounts report 2 mill
+6 (paragraph), ocorrência 6.1: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  report 9,7 million received by the end of 2025; the report to the panel put the figure at 34. The accounts report 2 million received in 2024 and, paid in 2025, 3,75 million from culture and 3,92 million
+6 (paragraph), ocorrência 6.6: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  . They also report a further 1,5 million paid in 2025 for the Linha do Vagar, outside the 34 million, an addition the bid did not envisage. The difference between the 34 and the 9,7 million is not all m
+6 (paragraph), ocorrência 6.7: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+   outside the 34 million, an addition the bid did not envisage. The difference between the 34 and the 9,7 million is not all money in arrears. The resolution sets base ceilings for culture of 3,75 millio
+22.1.0 (table), ocorrência 22.1.0.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  «€34 million has been transferred to the Association already»​
+25 (paragraph), ocorrência 25.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  the European panel in June 2025 counted as money transferred what was money promised. The 34 million is the State's share, national and European, that the Câmara announced for the protocol in June 2023,
+36.1.2 (table), ocorrência 36.1.2.2: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  ding, including €5 million from the Comunidade Intermunicipal do Alentejo Central.» and «€34 million has been transferred to the Association already, while the €5 million remaining are currently under n
+41 (paragraph), ocorrência 41.1: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  The same accounts write that 2025 was decisive in securing «29 dos 34 milhões de euros a financiar pelo Governo» (29 of the 34 million euros to be funded by the Government).
+73.1.1 (table), ocorrência 73.1.1.3: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+  with 39 million of State funding guaranteed by protocols, including 5 million from CIMAC; 34 million given as already transferred and 5 million under negotiation; the municipality's 10,5 million still t
+80 (paragraph), ocorrência 80.0: 34 → evora-2027-transferido-no-relato-ao-painel-2025 [painel-transferido]
+   The accounts distinguish recognised revenue from money received; the comparison with the 34 million uses the receipts they declare. The sums use figures that the documents state. The municipal accounts
+
+Conferência semântica pendente: unidade 41, ocorrência 41.1, em PT e EN. A frase das contas fala de 29 dos 34 milhões a financiar pelo Governo; o selo aponta para a linha do relato ao painel sobre transferências. A igualdade do número não prova a igualdade da medida.
