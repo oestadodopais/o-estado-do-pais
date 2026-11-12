@@ -2704,7 +2704,7 @@ export function validateLedger() {
        não é uma correção pública. Uma linha de um estudo sem edição publicada
        não traz entradas em `corrections` nem na história selada. */
     const obraDaLinha = c.study ? WORKS.find((w) => w.id === c.study) : undefined;
-    if (obraDaLinha && !obraDaLinha.editions.some((e) => edicaoPublicada(obraDaLinha, e))) {
+    if (obraDaLinha && obraDaLinha.estado !== 'retirado' && !obraDaLinha.editions.some((e) => edicaoPublicada(obraDaLinha, e))) {
       if (Array.isArray(c.corrections) && c.corrections.length) errors.push(`${onde} uma linha de um estudo em preparação (date: null) não tem correção pública: "corrections" tem ${c.corrections.length} entrada(s).`);
       if (historiasSeladas[id]?.length) errors.push(`${onde} uma linha de um estudo em preparação (date: null) não tem história selada em ledger/historias-valores.json.`);
     }

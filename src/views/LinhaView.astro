@@ -89,7 +89,7 @@ import { serieDaLinha } from '../lib/series.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
-import { studyTitle } from '../data/studies.mjs';
+import { tituloDoEstudoDaLinha, enderecoDeEstudoRetirado } from '../lib/estudo-da-linha.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { eMarcaDeAusencia } from '../lib/marcas-de-ausencia.mjs';
 import Frase from '../components/Frase.astro';
@@ -216,7 +216,7 @@ const campoDaAtribuicao = lang === 'en' && claim.attributed_to_en ? 'attributed_
 const ressalvaDeAlcance = ressalvaDaLinha(id);
 
 /* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
-const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
+const url = !enderecoDeEstudoRetirado(claim.source_url) && typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
   ? claim.source_url
   : null;
 
@@ -625,7 +625,7 @@ const ficha = [
  * que é — uma citação de um título — e não como um campo transcrito, que seria
  * o portão a conferir uma função contra ela própria.
  */
-const estudo = studyTitle(claim.study, lang).titulo;
+const estudo = tituloDoEstudoDaLinha(claim.study, lang);
 
 /**
  * A UNIDADE, NA LÍNGUA DA PÁGINA (I92, 29.08.2026).
@@ -1851,8 +1851,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           )
         }
 
-        <dt>{s.prov.estudo}</dt>
-        <TituloDeTrabalho as="dd" titulo={estudo} lang={lang} />
+        {estudo && <>
+          <dt>{s.prov.estudo}</dt>
+          <TituloDeTrabalho as="dd" titulo={estudo} lang={lang} />
+        </>}
 
         {/* O endereço saiu daqui e vive no corpo: é prova, e não ficha. Vai
             no bloco da prova quando fixa a página do documento, e no bloco do
