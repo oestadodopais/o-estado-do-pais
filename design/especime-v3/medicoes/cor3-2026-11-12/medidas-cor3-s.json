@@ -1,0 +1,82 @@
+{
+ "linhas_novas_no_estudo_11": {
+  "valor": "5",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['11 Seguranca Social']['novas']))\""
+ },
+ "linhas_alteradas_no_estudo_11": {
+  "valor": "2",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['11 Seguranca Social']['alteradas']))\""
+ },
+ "linhas_retiradas_no_estudo_11": {
+  "valor": "0",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['11 Seguranca Social']['retiradas']))\""
+ },
+ "linhas_novas_no_estudo_23": {
+  "valor": "16",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['23 Habitacao']['novas']))\""
+ },
+ "linhas_alteradas_no_estudo_23": {
+  "valor": "21",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['23 Habitacao']['alteradas']))\""
+ },
+ "linhas_retiradas_no_estudo_23": {
+  "valor": "0",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['23 Habitacao']['retiradas']))\""
+ },
+ "linhas_novas_no_estudo_27": {
+  "valor": "12",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['27 Orcamento 2027 O que muda']['novas']))\""
+ },
+ "linhas_alteradas_no_estudo_27": {
+  "valor": "2",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['27 Orcamento 2027 O que muda']['alteradas']))\""
+ },
+ "linhas_retiradas_no_estudo_27": {
+  "valor": "2",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['27 Orcamento 2027 O que muda']['retiradas']))\""
+ },
+ "linhas_novas_no_estudo_28": {
+  "valor": "16",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['28 Habitacao Estudo']['novas']))\""
+ },
+ "linhas_alteradas_no_estudo_28": {
+  "valor": "17",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['28 Habitacao Estudo']['alteradas']))\""
+ },
+ "linhas_retiradas_no_estudo_28": {
+  "valor": "12",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/cor3-2026-11-12/medidas-do-construtor-cor3-m.json'))['balanco_linhas']['28 Habitacao Estudo']['retiradas']))\""
+ },
+ "valor_impresso_de_sobrecarga-do-custo-da-habitacao-2025-ue": {
+  "valor": "7,7",
+  "comando": "python3 -c \"import re;print(re.search(r'^value: \\\"(.*)\\\"', open('ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml').read(), re.M).group(1))\""
+ },
+ "valor_impresso_de_sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": {
+  "valor": "18,6",
+  "comando": "python3 -c \"import re;print(re.search(r'^value: \\\"(.*)\\\"', open('ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml').read(), re.M).group(1))\""
+ },
+ "valor_relido_de_sobrecarga-do-custo-da-habitacao-2025-ue": {
+  "valor": "7,6",
+  "comando": "python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));print({x['id']:x for x in d['linhas']}['sobrecarga-do-custo-da-habitacao-2025-ue']['valor_novo'])\""
+ },
+ "valor_relido_da_mesma_celula_dos_inquilinos_no_livro_do_motor": {
+  "valor": "18.5",
+  "comando": "python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/23 Habitacao/ledger.json')));print([c['value'] for c in d['claims'] if c['id']=='hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025'][0])\""
+ },
+ "entradas_do_registo_das_correcoes_de_orcamento-2027-o-que-muda-e-para-quem": {
+  "valor": "1",
+  "comando": "python3 -c \"print(open('src/data/correcoes.mjs').read().count('orcamento-2027-o-que-muda-e-para-quem'))\""
+ },
+ "entradas_do_registo_das_correcoes_de_penalizacoes-por-reforma-antecipada-2026": {
+  "valor": "0",
+  "comando": "python3 -c \"print(open('src/data/correcoes.mjs').read().count('penalizacoes-por-reforma-antecipada-2026'))\""
+ },
+ "entradas_do_registo_das_correcoes_de_a-casa-em-portugal-e-na-europa": {
+  "valor": "1",
+  "comando": "python3 -c \"print(open('src/data/correcoes.mjs').read().count('a-casa-em-portugal-e-na-europa'))\""
+ },
+ "cabeca_do_motor_que_passou_o_portao_inteiro": {
+  "valor": "3c55339",
+  "comando": "git -C \"$RESEARCHHUB_DIR\" rev-parse --short HEAD"
+ }
+}

@@ -1,0 +1,10 @@
+1. Publicador: título corrigido no registo do Diário de Notícias; planta de título desconhecido recusada; publicadores-final=0; commit 546df36d.
+2. HB1: nenhuma data solta na frase; quatro valores ligados às quatro linhas, em português e inglês; hb1-final=0; commit 71dbce42, reforçado no ponto 6.
+3. Orçamento: AN e PM declarados como livros de composição; 267 linhas reconstituídas e presentes no composto; duas edições medidas com 392 provas cada; livros=0, orcamento-linhas=0, orcamento-medidas=0; commit 63f058e6.
+4. Reforma: a afirmação em falta era a comparação do DOI na C08, não as candidatas C01/C02/C03; declaradas as duas cópias, os resumos e os excertos; reforma-afirmacao=0; commit 5ab22688.
+5. Reforma: flexibilizacao-regras-2018 passa a citação textual integral; o ano conserva a linha numérica; relatório com 17 órfãos, 88 más atribuições e zero por declarar; reforma-relatorio=0; commit 9ae5f3ac.
+6. Prova: publicadores-final=0, hb1-final=0, reforma-publicacao=0, reforma-relatorio=0, livros=0 e igualdade=0; 80/80 trechos conformes; suite declaracoes=0, 281 conferências, inscrita no portão; commit 81b8c7a3.
+Plantas recusadas: título desconhecido; data manual, por extenso e em literal; valor de outra linha; livros sem declaração; algarismo trocado e frase anterior reposta.
+Frases julgadas, folhas e bases de tolerância intactas; publicação da reforma conserva duas más atribuições e zero por declarar; seis commits no motor com OEDP_GATE=adiado; sem portão inteiro nem capturas.
+Códigos lidos dos ficheiros em cor3-m-a-conferencias/: 14 corridas verdes e dois diagnósticos iniciais vermelhos, depois corrigidos; registos limitados às últimas vinte linhas, sem caminhos da máquina.
+Consumo: 44 chamadas executoras ou retomas em 19 lotes functions.exec; 16 corridas de conferências dirigidas; nenhum ponto por concluir.

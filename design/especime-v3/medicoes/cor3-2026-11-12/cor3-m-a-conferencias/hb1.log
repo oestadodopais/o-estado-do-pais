@@ -1,0 +1,20 @@
+      "planta": "data escrita à mão",
+      "lingua": "en",
+      "codigo": 1,
+      "mordida": "data ou número escrito à mão na frase da sobrecarga"
+    },
+    {
+      "planta": "data em literal",
+      "lingua": "en",
+      "codigo": 1,
+      "mordida": "quatro valores fora das suas linhas ou literal acrescentado"
+    },
+    {
+      "planta": "valor de outra linha",
+      "lingua": "en",
+      "codigo": 1,
+      "mordida": "quatro valores fora das suas linhas ou literal acrescentado"
+    }
+  ],
+  "periodos": "conferidos"
+}

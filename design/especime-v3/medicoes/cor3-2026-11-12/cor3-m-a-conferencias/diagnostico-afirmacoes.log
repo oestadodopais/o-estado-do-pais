@@ -1,0 +1,7 @@
+REVIEW  fs-corte-unico — O factor de sustentabilidade aplica-se de uma vez ao montante estatutário (p. 226 e nota da linha fs-2026); é uma descrição da regra, não uma quantificação sobre um conjunto medido.
+REVIEW  categoria-residual — Caracterização da categoria que paga o factor, a partir das exceções que o relatório lista (p. 264); não se exprime por um predicado sobre valores do livro.
+REVIEW  metodo-todos-os-valores — Regra de método da edição. Os dois números que não são do relatório estão ditos como tal no mesmo parágrafo e têm linhas próprias com conta (multiplo-legal-sobre-neutro-*, excesso-legal-sobre-neutro-*).
+REVIEW  derivados-nao-aparecem — Medido a 2026-09-23 no texto do relatório espelhado: o múltiplo não aparece; «14,4» aparece uma vez, noutra grandeza, numa tabela do capítulo 16. O medir.py do bloco M4b refaz a contagem.
+REVIEW  fs-nao-se-aplica-a-todas — O relatório di-lo na p. 226: «O factor de sustentabilidade não se aplica uniformemente a todas as situações de reforma antecipada».
+UNDECLARED  'só'  …linha a 12 de novembro de 2026 difere dela, no texto, só na linha do DOI. O resumo SHA-256 da cópia lida é 5559…
+ASSERTIONS: FAIL — 11 quantifier hits, 0 checked, 5 review, 1 undeclared, 0 failed
