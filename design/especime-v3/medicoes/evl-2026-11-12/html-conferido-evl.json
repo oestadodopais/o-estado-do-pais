@@ -1,0 +1,202 @@
+{
+  "cartoes": [
+    {
+      "rota": "/",
+      "lingua": "pt",
+      "frase": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025. Em junho de 2025, o resumo que o painel de peritos europeus faz do relatório de progresso dava 34 milhões como já transferidos.",
+      "medidas": [
+        "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da associação",
+        "34 milhões de euros dados como já transferidos no relato ao painel europeu, em junho de 2025"
+      ]
+    },
+    {
+      "rota": "/estudos",
+      "lingua": "pt",
+      "frase": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025. Em junho de 2025, o resumo que o painel de peritos europeus faz do relatório de progresso dava 34 milhões como já transferidos.",
+      "medidas": [
+        "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da associação",
+        "34 milhões de euros dados como já transferidos no relato ao painel europeu, em junho de 2025"
+      ]
+    },
+    {
+      "rota": "/municipios/evora",
+      "lingua": "pt",
+      "frase": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025. Em junho de 2025, o resumo que o painel de peritos europeus faz do relatório de progresso dava 34 milhões como já transferidos.",
+      "medidas": [
+        "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da associação",
+        "34 milhões de euros dados como já transferidos no relato ao painel europeu, em junho de 2025"
+      ]
+    },
+    {
+      "rota": "/en",
+      "lingua": "en",
+      "frase": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025. In June 2025, the summary that the panel of European experts makes of the progress report gave 34 million as already transferred.",
+      "medidas": [
+        "9,7 million euros received under the protocol up to the end of 2025, by the association's accounts",
+        "34 million euros given as already transferred in the report to the European panel, in June 2025"
+      ]
+    },
+    {
+      "rota": "/en/studies",
+      "lingua": "en",
+      "frase": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025. In June 2025, the summary that the panel of European experts makes of the progress report gave 34 million as already transferred.",
+      "medidas": [
+        "9,7 million euros received under the protocol up to the end of 2025, by the association's accounts",
+        "34 million euros given as already transferred in the report to the European panel, in June 2025"
+      ]
+    },
+    {
+      "rota": "/en/municipalities/evora",
+      "lingua": "en",
+      "frase": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025. In June 2025, the summary that the panel of European experts makes of the progress report gave 34 million as already transferred.",
+      "medidas": [
+        "9,7 million euros received under the protocol up to the end of 2025, by the association's accounts",
+        "34 million euros given as already transferred in the report to the European panel, in June 2025"
+      ]
+    }
+  ],
+  "recibos": [
+    {
+      "rota": "/livro-razao/evora-2027-transferido-no-relato-ao-painel-2025",
+      "lingua": "pt",
+      "id": "evora-2027-transferido-no-relato-ao-painel-2025",
+      "valor": "34",
+      "unidade": "milhões de euros",
+      "nome": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025",
+      "fonte": "Comissão Europeia, pelo painel europeu",
+      "pagina": "8",
+      "origens": []
+    },
+    {
+      "rota": "/livro-razao/evora-2027-contribuicao-inicial-do-estado-2024",
+      "lingua": "pt",
+      "id": "evora-2027-contribuicao-inicial-do-estado-2024",
+      "valor": "2 000 000",
+      "unidade": "euros",
+      "nome": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida",
+      "fonte": "Associação Évora 2027",
+      "pagina": "72",
+      "origens": []
+    },
+    {
+      "rota": "/livro-razao/evora-2027-pago-pela-cultura-2025",
+      "lingua": "pt",
+      "id": "evora-2027-pago-pela-cultura-2025",
+      "valor": "3 750 000",
+      "unidade": "euros",
+      "nome": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
+      "fonte": "Associação Évora 2027",
+      "pagina": "57",
+      "origens": []
+    },
+    {
+      "rota": "/livro-razao/evora-2027-pago-pelo-turismo-2025",
+      "lingua": "pt",
+      "id": "evora-2027-pago-pelo-turismo-2025",
+      "valor": "3 920 000",
+      "unidade": "euros",
+      "nome": "euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação",
+      "fonte": "Associação Évora 2027",
+      "pagina": "57",
+      "origens": []
+    },
+    {
+      "rota": "/livro-razao/evora-2027-recebido-do-protocolo-ate-2025",
+      "lingua": "pt",
+      "id": "evora-2027-recebido-do-protocolo-ate-2025",
+      "valor": "9,7",
+      "unidade": "milhões de euros",
+      "nome": "milhões de euros que as contas da associação declaram recebidos do protocolo de 2023 até ao fim de 2025",
+      "fonte": null,
+      "pagina": null,
+      "origens": [
+        {
+          "id": "evora-2027-contribuicao-inicial-do-estado-2024",
+          "fonte": "Associação Évora 2027",
+          "pagina": 72
+        },
+        {
+          "id": "evora-2027-pago-pela-cultura-2025",
+          "fonte": "Associação Évora 2027",
+          "pagina": 57
+        },
+        {
+          "id": "evora-2027-pago-pelo-turismo-2025",
+          "fonte": "Associação Évora 2027",
+          "pagina": 57
+        }
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-2027-transferido-no-relato-ao-painel-2025",
+      "lingua": "en",
+      "id": "evora-2027-transferido-no-relato-ao-painel-2025",
+      "valor": "34",
+      "unidade": "million euros",
+      "nome": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025",
+      "fonte": "Comissão Europeia, pelo painel europeu",
+      "pagina": "8",
+      "origens": []
+    },
+    {
+      "rota": "/en/ledger/evora-2027-contribuicao-inicial-do-estado-2024",
+      "lingua": "en",
+      "id": "evora-2027-contribuicao-inicial-do-estado-2024",
+      "valor": "2 000 000",
+      "unidade": "euros",
+      "nome": "euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received",
+      "fonte": "Associação Évora 2027",
+      "pagina": "72",
+      "origens": []
+    },
+    {
+      "rota": "/en/ledger/evora-2027-pago-pela-cultura-2025",
+      "lingua": "en",
+      "id": "evora-2027-pago-pela-cultura-2025",
+      "valor": "3 750 000",
+      "unidade": "euros",
+      "nome": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts",
+      "fonte": "Associação Évora 2027",
+      "pagina": "57",
+      "origens": []
+    },
+    {
+      "rota": "/en/ledger/evora-2027-pago-pelo-turismo-2025",
+      "lingua": "en",
+      "id": "evora-2027-pago-pelo-turismo-2025",
+      "valor": "3 920 000",
+      "unidade": "euros",
+      "nome": "euros paid in 2025 by Turismo de Portugal, according to the association's accounts",
+      "fonte": "Associação Évora 2027",
+      "pagina": "57",
+      "origens": []
+    },
+    {
+      "rota": "/en/ledger/evora-2027-recebido-do-protocolo-ate-2025",
+      "lingua": "en",
+      "id": "evora-2027-recebido-do-protocolo-ate-2025",
+      "valor": "9,7",
+      "unidade": "million euros",
+      "nome": "million euros that the association's accounts declare received under the 2023 protocol up to the end of 2025",
+      "fonte": null,
+      "pagina": null,
+      "origens": [
+        {
+          "id": "evora-2027-contribuicao-inicial-do-estado-2024",
+          "fonte": "Associação Évora 2027",
+          "pagina": 72
+        },
+        {
+          "id": "evora-2027-pago-pela-cultura-2025",
+          "fonte": "Associação Évora 2027",
+          "pagina": 57
+        },
+        {
+          "id": "evora-2027-pago-pelo-turismo-2025",
+          "fonte": "Associação Évora 2027",
+          "pagina": 57
+        }
+      ]
+    }
+  ]
+}
