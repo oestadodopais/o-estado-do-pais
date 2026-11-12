@@ -5648,18 +5648,27 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 | --- | --- | --- | --- | --- |
 | conteudo | A parte da cultura está paga pelos tetos de e ; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas. | evb-t-b | retirada | EVB-T-B: substituída por C005, que identifica quem escreve e os compromissos em causa. |
 | conteudo | The culture share is paid up to the and ceilings; the council&#39;s is still to be confirmed, and part of the European money depends on applications. | evb-t-b | retirada | EVB-T-B: substituída por C005, que identifica quem escreve e os compromissos em causa. |
-| conteudo | A associação escreve que reabriu em o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais. | evb-t-b | retirada | EVL-D: substituída pelas duas primeiras frases da unidade C004. |
-| conteudo | The association writes that in it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies. | evb-t-b | retirada | EVL-D: substituída pelas duas primeiras frases da unidade C004. |
+| conteudo | A associação escreve que reabriu em o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais. | evb-t-b | viva | EVL-E: reposta a unidade C005 inteira. |
+| conteudo | The association writes that in it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies. | evb-t-b | viva | EVL-E: reposta a unidade C005 inteira. |
 
 ## EVL-D: frase C004, medidas do cartão e contagem do livro
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | No dinheiro, as contas da Associação Évora declaram milhões recebidos do protocolo de até ao fim de . Em junho de , o resumo que o painel de peritos europeus faz do relatório de progresso dava milhões como já transferidos. | evl-d | viva | Duas primeiras frases da unidade C004, na forma lida pela voz no cartão construído. |
-| conteudo | milhões de euros dados como já transferidos no relato ao painel europeu, em junho de | evl-d | viva | Nome curto da medida, na forma lida pela voz no cartão construído. |
-| conteudo | milhões de euros recebidos do protocolo até ao fim de , pelas contas da associação | evl-d | viva | Nome curto da medida, na forma lida pela voz no cartão construído. |
-| conteudo | On the money, the accounts of the Associação Évora declare million received from the protocol up to the end of . In June , the summary that the panel of European experts makes of the progress report gave million as already transferred. | evl-d | viva | Duas primeiras frases da unidade C004, na forma lida pela voz no cartão construído. |
-| conteudo | million euros given as already transferred in the report to the European panel, in June | evl-d | viva | Nome curto da medida, na forma lida pela voz no cartão construído. |
-| conteudo | million euros received under the protocol up to the end of , by the association&#39;s accounts | evl-d | viva | Nome curto da medida, na forma lida pela voz no cartão construído. |
+| conteudo | No dinheiro, as contas da Associação Évora declaram milhões recebidos do protocolo de até ao fim de . Em junho de , o resumo que o painel de peritos europeus faz do relatório de progresso dava milhões como já transferidos. | evl-d | retirada | EVL-E: substituída pela C005 e pelos nomes com atribuição explícita. |
+| conteudo | milhões de euros dados como já transferidos no relato ao painel europeu, em junho de | evl-d | retirada | EVL-E: substituída pela C005 e pelos nomes com atribuição explícita. |
+| conteudo | milhões de euros recebidos do protocolo até ao fim de , pelas contas da associação | evl-d | retirada | EVL-E: substituída pela C005 e pelos nomes com atribuição explícita. |
+| conteudo | On the money, the accounts of the Associação Évora declare million received from the protocol up to the end of . In June , the summary that the panel of European experts makes of the progress report gave million as already transferred. | evl-d | retirada | EVL-E: substituída pela C005 e pelos nomes com atribuição explícita. |
+| conteudo | million euros given as already transferred in the report to the European panel, in June | evl-d | retirada | EVL-E: substituída pela C005 e pelos nomes com atribuição explícita. |
+| conteudo | million euros received under the protocol up to the end of , by the association&#39;s accounts | evl-d | retirada | EVL-E: substituída pela C005 e pelos nomes com atribuição explícita. |
 | conteudo | 4 161 claims · 524 of 4 161 calculated · 2 767 of 4 161 municipality rows | evl-d | viva | Contagem lida no livro construído após as cinco linhas novas. |
 | conteudo | 4 161 afirmações · 524 de 4 161 calculadas · 2 767 de 4 161 linhas de concelhos | evl-d | viva | Contagem lida no livro construído após as cinco linhas novas. |
+
+## EVL-E: nomes das medidas do cartão
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | milhões de euros recebidos do protocolo até ao fim de , pelas contas da Associação Évora | evl-e | viva | Nome prescrito na adenda E, com os anos como referências. |
+| conteudo | million euros received under the protocol up to the end of , by the accounts of the Associação Évora | evl-e | viva | Nome prescrito na adenda E, com os anos como referências. |
+| conteudo | milhões de euros que o relatório de progresso de Évora dava como já transferidos em junho de , pelo resumo do painel europeu | evl-e | viva | Nome prescrito na adenda E, com os anos como referências. |
+| conteudo | million euros that Évora &#39;s progress report gave as already transferred in June , by the European panel&#39;s summary | evl-e | viva | Nome prescrito na adenda E, com os anos como referências. |

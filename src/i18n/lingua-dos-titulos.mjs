@@ -1019,7 +1019,7 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
   "Associação Évora 2027": "pt",
-  "Comissão Europeia, pelo painel europeu": "pt",
+  "ECOC Expert Panel": "en",
   "EDIA": "pt",
   "DGADR": "pt",
   "Gulbenkian": "pt",

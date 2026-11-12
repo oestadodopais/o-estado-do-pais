@@ -21,7 +21,7 @@ for (const [rota, lang, lista] of [['','pt',false], ['en','en',false], ['estudos
       const pagina = parse(html);
       const medida = pagina.querySelectorAll(`[data-estudo="${slug}"] [data-medida-estudo]`)[indice];
       assert(medida);
-      if (caso === 'ano trocado') medida.querySelector('[data-nonledger="data-de-referencia"]').set_content('2024');
+      if (caso === 'ano trocado') medida.querySelectorAll('[data-nonledger="data-de-referencia"]').find(n=>n.textContent==='2025').set_content('2024');
       else medida.set_content(medida.innerHTML.replace(lang === 'pt' ? 'protocolo' : 'protocol', 'intruso').replace(lang === 'pt' ? 'painel' : 'panel', 'intruso'));
       const erros = conferir(pagina);
       assert(erros.some(e => e.startsWith('B1 medida:')), `${rota}: ${caso} aceite`);

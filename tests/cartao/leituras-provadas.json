@@ -52650,18 +52650,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
-          "en": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts",
+          "pt": "euros pagos em 2025 pelo GEPAC, o Gabinete de Estratégia, Planeamento e Avaliação Culturais, segundo as contas da associação",
+          "en": "euros paid in 2025 by GEPAC, the Gabinete de Estratégia, Planeamento e Avaliação Culturais, according to the association's accounts",
           "partes": [
             {
-              "pt": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
-              "en": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts",
+              "pt": "euros pagos em 2025 pelo GEPAC, o Gabinete de Estratégia, Planeamento e Avaliação Culturais, segundo as contas da associação",
+              "en": "euros paid in 2025 by GEPAC, the Gabinete de Estratégia, Planeamento e Avaliação Culturais, according to the association's accounts",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "contratualizados. Pago 3.750.000€ durante o ano de 2025"
+                  "literal": "15 milhões de euros GEPAC - Gabinete de Estratégia, Planeamento e Avaliação Culturais (Ministério da Cultura, Juventude e Desporto) contratualizados. Pago 3.750.000€ durante o ano de 2025"
                 }
               ]
             }
@@ -52713,7 +52713,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2025 para a Linha do Vagar, que não são do protocolo."
+                  "literal": "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram."
                 }
               ]
             }
