@@ -15,7 +15,7 @@
   },
   {
    "pasta": "19 Évora 2027 Capital Europeia da Cultura",
-   "ledger_sha256": "3bd8475c1ef9cc4f7ba54f45274ff0bf68daccba5b8ec68b5719789c1e786e95",
+   "ledger_sha256": "1240907b87f8c0794f0defe4c052cad3e1a5c9e33fe0ec0a7e8e5e337a367cb9",
    "ficheiro": "Technical Source/ajustes.json",
    "campo": "linhas_proprias",
    "resumo_de": "objeto claims com as linhas próprias, serialização canónica"
@@ -3984,6 +3984,79 @@
    "attributed_to": [
     "Associação Évora 2027"
    ],
+   "linha_propria": true
+  },
+  {
+   "id": "evl-governo-a-financiar",
+   "value": "34",
+   "alternates": [],
+   "source_url": "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf",
+   "fetched_at": "2026-09-15T11:44:40Z",
+   "excerpt": "o ano de 2025 foi determinante para assegurar, através de diferentes instrumentos jurídicos e financeiros, 29 dos 34 milhões de euros a financiar pelo Governo",
+   "source_type": "government",
+   "document": {
+    "title": "RELATÓRIO DE ATIVIDADES E CONTAS 2025",
+    "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
+    "page": 4
+   },
+   "impresso": {
+    "pt": "34",
+    "en": "34"
+   },
+   "medida": "Milhões de euros a financiar pelo Governo, segundo as contas de 2025 da Associação Évora 2027.",
+   "attributed_to": [
+    "Associação Évora 2027"
+   ],
+   "linha_propria": true
+  },
+  {
+   "source_url": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx",
+   "fetched_at": "2026-09-15T11:59:03Z",
+   "source_type": "government",
+   "attributed_to": [
+    "Autoridade de Gestão do Alentejo 2030"
+   ],
+   "id": "evl-intern-fundo-citado",
+   "value": "2500359.28",
+   "alternates": [],
+   "excerpt": "PT2030 ALT2030-FEDER-03693700 ALENTEJO2030 Crescimento e competitividade das PMEs 84.9999998 ASSOCIAÇÃO ÉVORA_2027 518013588 Internacionalização Évora_27 Internacionalização Évora_27 é um projeto estruturante tendo como base o investimento em ações de promoção internacional, contém um conjunto de iniciativas que visam a participação ativa e inclusiva de entidades, empresas, e forças vivas da região na construção de um programa de divulgação e promoção internacional. O projeto envolve os agentes económicos do Alentejo e promove a cultura como agente de transformação económica e social. 2028-01-23T00:00:00 2941599.16 2941599.16 2500359.28 FEDER Portugal Alentejo - - - 024 Serviços avançados de apoio a PME e grupos de PME (incluindo serviços de gestão, marketing e design) ALT2030-2026-2",
+   "document": {
+    "title": "82-alentejo2030-lista-operacoes-2026-06-30.xlsx",
+    "source_sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+    "type": "xlsx",
+    "sheet": "PT2030_Operações-jun.2026",
+    "row": 632
+   },
+   "impresso": {
+    "pt": "2500359.28",
+    "en": "2500359.28"
+   },
+   "medida": "Fundo aprovado à Associação Évora 2027 na operação Internacionalização Évora_27, em euros.",
+   "linha_propria": true
+  },
+  {
+   "source_url": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx",
+   "fetched_at": "2026-09-15T11:59:03Z",
+   "source_type": "government",
+   "attributed_to": [
+    "Autoridade de Gestão do Alentejo 2030"
+   ],
+   "id": "evl-vagar-fundo-citado",
+   "value": "1750000",
+   "alternates": [],
+   "excerpt": "PT2030 ALT2030-FEDER-03111000 ALENTEJO2030 Cultura e turismo sustentáveis 46.5992655 ASSOCIAÇÃO ÉVORA_2027 518013588 VAGAR - Capital Europeia da Cultura Évora 27 VAGAR - Capital Europeia da Cultura Évora 27 é um projeto estruturante para a implementação da iniciativa Évora_27, composto por vários eventos e atividades centrados no conceito de VAGAR, que contribui para afirmar a cultura enquanto pilar da sociedade, do território e da sua identidade. Évora_27 é uma oportunidade para a cidade e para a região Alentejo alcançarem um novo patamar de desenvolvimento cultural, social, económico e turístico. 2027-12-15T00:00:00 11764778 3755424 1750000 FEDER Portugal Alentejo - - - 166 Proteção, desenvolvimento e promoção do património cultural e dos serviços culturais ALT2030-2025-18",
+   "document": {
+    "title": "82-alentejo2030-lista-operacoes-2026-06-30.xlsx",
+    "source_sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+    "type": "xlsx",
+    "sheet": "PT2030_Operações-jun.2026",
+    "row": 490
+   },
+   "impresso": {
+    "pt": "1750000",
+    "en": "1750000"
+   },
+   "medida": "Fundo aprovado à Associação Évora 2027 na operação VAGAR - Capital Europeia da Cultura Évora 27, em euros.",
    "linha_propria": true
   },
   {
