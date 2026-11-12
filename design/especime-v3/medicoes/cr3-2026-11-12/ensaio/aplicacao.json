@@ -1,0 +1,282 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py. Não se edita à mão.",
+  "cabeca_presa": "344b4777de0caa2f497c88bb74db1a6d37a504bf",
+  "releitura_do_motor": "indicators/out/releituras/2026-11-12/releitura.json",
+  "releitura_quando": "2026-11-12T18:24:55+00:00",
+  "releitura_cabeca_do_motor": "c0b49c72fa5eb33b13ffd90390cbb72dae63095c",
+  "linhas": [
+    {
+      "id": "desempenho-das-exportacoes-2024",
+      "antes_sha256": "6abafe4189efdc49c268489739d6048c140e430943c87dbfdbecd874f0613dac",
+      "depois_sha256": "e6ce2290bcced68c1387a4bedcf31df954dd6cf2ccad822a82189bd67ef389c7",
+      "valor_antigo": "17,1",
+      "valor_novo": "17,0",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-11-12",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-07-15T11:00:00+0200",
+      "carimbo_novo": "2026-10-29T23:00:00+0100",
+      "entradas_novas": [
+        {
+          "date": "2026-11-12",
+          "kind": "atualizacao",
+          "old_value": "17,1",
+          "new_value": "17,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 29.10.2026 (o carimbo do conjunto passou de 15.07.2026 a 29.10.2026); a reconferência semanal de 09.11.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 29.10.2026 (the dataset stamp moved from 15.07.2026 to 29.10.2026); the weekly check of 09.11.2026 caught the revision."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-11-12",
+          "reason": "O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 15.09.2026, é a do valor 17,1.",
+          "reason_en": "The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading, of 15.09.2026, is that of the value 17,1."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1",
+          "new_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 8,
+      "aplicada": false
+    },
+    {
+      "id": "desempenho-das-exportacoes-2025",
+      "antes_sha256": "9be889cf781ab03d781833432cc221d016a38e32d5ca0a7bde387ec27f7d409a",
+      "depois_sha256": "fa84997474753dd9a643d3c37c0804c4a2fe0269571f9936c0d34b76ef2811ff",
+      "valor_antigo": "8,2",
+      "valor_novo": "8,0",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-11-12",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-07-15T11:00:00+0200",
+      "carimbo_novo": "2026-10-29T23:00:00+0100",
+      "entradas_novas": [
+        {
+          "date": "2026-11-12",
+          "kind": "atualizacao",
+          "old_value": "8,2",
+          "new_value": "8,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 29.10.2026 (o carimbo do conjunto passou de 15.07.2026 a 29.10.2026); a reconferência semanal de 09.11.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 29.10.2026 (the dataset stamp moved from 15.07.2026 to 29.10.2026); the weekly check of 09.11.2026 caught the revision."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-11-12",
+          "reason": "O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 12.08.2026, é a do valor 8,2.",
+          "reason_en": "The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading, of 12.08.2026, is that of the value 8,2."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2025: 8.2",
+          "new_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2025: 8.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 8,
+      "aplicada": false
+    }
+  ],
+  "lugares": {
+    "desempenho-das-exportacoes-2024": "portugal",
+    "desempenho-das-exportacoes-2025": "portugal"
+  },
+  "plantas": [
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "geografia desconhecida",
+      "mordeu": true,
+      "razao": "PARAGEM: desempenho-das-exportacoes-2024: geografia desconhecida no pedido: ['DESCONHECIDO']"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "lugar contraditório",
+      "mordeu": true,
+      "razao": "PARAGEM: desempenho-das-exportacoes-2024: lugar contraditório: ['uniao-europeia'], pedido portugal"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "geografia desconhecida",
+      "mordeu": true,
+      "razao": "PARAGEM: desempenho-das-exportacoes-2025: geografia desconhecida no pedido: ['DESCONHECIDO']"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "lugar contraditório",
+      "mordeu": true,
+      "razao": "PARAGEM: desempenho-das-exportacoes-2025: lugar contraditório: ['uniao-europeia'], pedido portugal"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "acesso: dias diferentes, molde trocado, reason",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "acesso: dias diferentes, molde trocado, reason_en",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "acesso: dias iguais, molde trocado, reason",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "acesso: dias iguais, molde trocado, reason_en",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "acesso: dias diferentes, molde trocado, reason",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "acesso: dias diferentes, molde trocado, reason_en",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "acesso: dias iguais, molde trocado, reason",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "acesso: dias iguais, molde trocado, reason_en",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    }
+  ],
+  "contagens": {
+    "linhas": 2,
+    "aplicadas": 0,
+    "entradas_novas": 6,
+    "atualizacoes_novas": 2,
+    "bandeiras_que_sairam": 0,
+    "plantas": 28,
+    "plantas_que_morderam": 28
+  }
+}

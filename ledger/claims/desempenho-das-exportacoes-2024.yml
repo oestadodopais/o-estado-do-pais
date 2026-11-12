@@ -6,7 +6,7 @@
 id: "desempenho-das-exportacoes-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "17,1"
+value: "17,0"
 unit: "% do total OCDE e UE não-OCDE, variação em três anos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsbp60/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST"
-access_date: "2026-09-15"
+access_date: "2026-11-12"
+published_at: "2026-10-29"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1"
+excerpt: "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.0"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +34,33 @@ study: "quadro-institucional"
 note: "Período anterior da medida «desempenho-das-exportacoes-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: -3%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-11-12'
+  kind: atualizacao
+  old_value: 17,1
+  new_value: 17,0
+  reason: O Eurostat reviu o valor de Portugal a 29.10.2026 (o carimbo do conjunto passou de 15.07.2026 a 29.10.2026); a reconferência
+    semanal de 09.11.2026 viu a revisão.
+  reason_en: Eurostat revised Portugal's value on 29.10.2026 (the dataset stamp moved from 15.07.2026 to 29.10.2026); the
+    weekly check of 09.11.2026 caught the revision.
+- date: '2026-11-12'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-11-12'
+  reason: O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;
+    a leitura anterior, de 15.09.2026, é a do valor 17,1.
+  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the
+    revision; the earlier reading, of 15.09.2026, is that of the value 17,1.
+- date: '2026-11-12'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change
+    — Portugal — 2024: 17.1'
+  new_value: 'Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change
+    — Portugal — 2024: 17.0'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 

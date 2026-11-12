@@ -1,0 +1,118 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py --published-at. Não se edita à mão.",
+  "cabeca_lida": "8318c17688ab925aef852650f8457bac4bcc3a2e",
+  "hoje_utc": "2026-11-12",
+  "regra_do_dia": "o dia como o carimbo do conjunto o escreve, no fuso do carimbo (updated[:10]), como publisher/dominios_rp1.py",
+  "linhas": [
+    {
+      "id": "desempenho-das-exportacoes-2024",
+      "carimbo": "2026-10-29T23:00:00+0100",
+      "dia": "2026-10-29",
+      "fuso": "+0100",
+      "instante_utc": "2026-10-29T22:00:00+00:00",
+      "dia_utc": "2026-10-29",
+      "coincidem": true,
+      "published_at": "2026-10-29",
+      "antes_sha256": "e6ce2290bcced68c1387a4bedcf31df954dd6cf2ccad822a82189bd67ef389c7",
+      "depois_sha256": "5a44c865ab6a785964434af177677736127a0007dd49d4b30d13e9b92310c9ff",
+      "aplicada": true
+    },
+    {
+      "id": "desempenho-das-exportacoes-2025",
+      "carimbo": "2026-10-29T23:00:00+0100",
+      "dia": "2026-10-29",
+      "fuso": "+0100",
+      "instante_utc": "2026-10-29T22:00:00+00:00",
+      "dia_utc": "2026-10-29",
+      "coincidem": true,
+      "published_at": "2026-10-29",
+      "antes_sha256": "fa84997474753dd9a643d3c37c0804c4a2fe0269571f9936c0d34b76ef2811ff",
+      "depois_sha256": "504c03746f6ef99a8a951911cfd1803cd7f6ebdb5d10a8470ee88ca2b6833a71",
+      "aplicada": true
+    }
+  ],
+  "plantas": [
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "o dia do acesso no lugar do dia do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "o dia do acesso no lugar do dia do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    }
+  ],
+  "contagens": {
+    "linhas": 2,
+    "aplicadas": 2,
+    "dias_iguais_ao_dia_utc": 2,
+    "dias": [
+      "2026-10-29"
+    ],
+    "plantas": 12,
+    "plantas_que_morderam": 12
+  }
+}

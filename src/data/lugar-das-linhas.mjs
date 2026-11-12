@@ -19,6 +19,10 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */
+  'desempenho-das-exportacoes-2025': 'portugal',
+  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */
+  'desempenho-das-exportacoes-2024': 'portugal',
   /* OG1-A6: proposta do Orçamento nacional e afirmações sobre essa proposta. */
   'og1-utao-pib-2026': 'portugal',
   'og1-utao-saldo-2026': 'portugal',
