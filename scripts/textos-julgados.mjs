@@ -6,6 +6,26 @@ import path from 'node:path';
 import {load} from 'js-yaml';
 import {createHash} from 'node:crypto';
 import {cortar,chave} from './frases-com-afirmacao.mjs';
+import {LEITURAS} from '../src/data/leituras.mjs';
+// Lista fechada: a origem declara o nome da troca, nunca um par arbitrário.
+const TROCAS_LEITURA = {
+  pt: ['do município', 'da câmara'],
+  en: ['the municipality', 'the council'],
+};
+function leituraJulgada(entrada, lingua, unidades, estudo) {
+  const origem=entrada?.origem, partes=entrada?.frase?.[lingua];
+  if(!origem || !origem.onde?.includes(`studies-src/${estudo}/${lingua}.html:`) || !unidades.has(origem[lingua]) || !Array.isArray(partes))return null;
+  if(partes.some(p=>typeof p==='string' ? /\d/u.test(p) : !p || Object.keys(p).join(',')!=='ref' || !/^[12]\d{3}$/.test(p.ref)))return null;
+  let esperada=origem[lingua];
+  if(origem.troca!==undefined){
+    if(origem.troca!=='governo-do-concelho')return null;
+    const [antes,depois]=TROCAS_LEITURA[lingua];
+    if(!esperada.includes(antes))return null;
+    esperada=esperada.replace(antes,depois);
+  }
+  const impressa=partes.map(p=>typeof p==='string'?p:p.ref).join('');
+  return impressa===esperada ? impressa : null;
+}
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const digest = s => /^[a-f0-9]{64}$/.test(s ?? '');
 const dia = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s) && Number.isFinite(Date.parse(s)) && new Date(s).toISOString().slice(0,10) === s;
@@ -13,8 +33,9 @@ export function lerTextosJulgados(raiz='.') {
   const file=path.join(raiz,'ledger/frases/textos-julgados.json');
   return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file,'utf8')) : [];
 }
-export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', documentos, registos, ler}={}) {
+export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', documentos, registos, ler, leituras=LEITURAS}={}) {
   const erros=[], textos=new Set(), mobilia=new Set(), admitidas=new Map(), copias=new Map(), vistas=new Set();
+  const leiturasAdmitidas={pt:new Set(),en:new Set()};
   ler ??= f => fs.readFileSync(path.join(raiz,f));
   documentos ??= load(ler('studies-src/manifest.yml').toString());
   registos ??= JSON.parse(ler('registos/manifest.json').toString());
@@ -32,17 +53,22 @@ export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', 
       if(sha(ler(`studies-src/${d.estudo}/${d.lingua}.html`))!==d.sha256_documento)throw Error('bytes do documento diferentes');
       const bytes=ler(`registos/${par}.record.json`);
       if(sha(bytes)!==r.exported_record_sha256)throw Error('bytes do registo diferentes');
-      const registo=JSON.parse(bytes.toString()), literais=new Set();
+      const registo=JSON.parse(bytes.toString()), literais=new Set(), unidades=new Set();
       const recolher = n => {
         if(Array.isArray(n))return n.forEach(recolher);
         if(!n||typeof n!=='object')return;
-        if(typeof n.text==='string')for(const frase of cortar(n.text.replace(/\u200b/g, '')))literais.add(frase);
+        if(typeof n.text==='string'){
+          unidades.add(n.text);
+          for(const frase of cortar(n.text.replace(/\u200b/g, '')))literais.add(frase);
+        }
         if(n.items)recolher(n.items);
         if(n.rows)recolher(n.rows);
       };
       recolher(registo.blocks);
       if(!literais.size)throw Error('registo sem frases');
       admitidas.set(par,literais);
+      const leitura=leituraJulgada(leituras[d.estudo],d.lingua,unidades,d.estudo);
+      if(leitura)leiturasAdmitidas[d.lingua].add(leitura);
       copias.set(par,{nome:registo.blocks[1]?.text,pergunta:registo.blocks[2]?.text,data:docs[0].edicoes.length===1?docs[0].edicoes[0].data:null});
     }catch(e){erros.push(`texto julgado ${par}: ${e.message}`);}
   }
@@ -59,11 +85,16 @@ export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', 
     if(literais&&f.ocorrencias.every(o=>corresponde(o)))textos.add(chave(f));
     else if(literais&&f.ocorrencias.every(o=>corresponde(o,true)))mobilia.add(chave(f));
     else if(f.ocorrencias.every(o=>{
+      const p=porRota.get(o.pagina), frase=p?.blocos[o.bloco]?.frases[o.indice];
+      return p?.lingua===f.lingua&&leiturasAdmitidas[f.lingua]?.has(frase);
+    }))textos.add(chave(f));
+    else if(f.ocorrencias.every(o=>{
       const p=porRota.get(o.pagina),b=p?.blocos[o.bloco],c=b?.copiaJulgada;
       if(!c||p.lingua!==f.lingua||b.frases.length!==1||b.frases[0]!==c.texto)return false;
       const prova=copias.get(`${c.estudo}/${p.lingua}`);
       if(!prova||c.porta!==routePath('estudo',p.lingua,{slug:c.estudo}))return false;
       if(c.tipo==='pergunta')return ['estudos','indice','municipio'].includes(p.tipo)&&c.texto===prova.pergunta;
+      if(c.tipo==='titulo')return p.tipo==='home'&&c.lingua===p.lingua&&c.nome===prova.nome&&c.novo===(p.lingua==='pt'?'novo':'new')&&c.texto===prova.nome+' '+c.novo;
       const dia=prova.data?.split('-').reverse().join('.'),rotulo=p.lingua==='pt'?'estudo':'study';
       return c.tipo==='novidade'&&p.tipo==='home'&&c.lingua===p.lingua&&c.data===prova.data&&c.dia===dia&&c.rotulo===rotulo&&c.nome===prova.nome&&c.texto===dia+rotulo+prova.nome;
     }))textos.add(chave(f));

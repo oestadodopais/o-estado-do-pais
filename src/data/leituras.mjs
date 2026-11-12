@@ -779,9 +779,8 @@ export const LEITURAS = {
   },
 
   'evora-2027-capital-europeia-da-cultura': {
-    /* EVB: C039 do documento julgado. «A câmara» substitui «o município» e
-       «the council» substitui «the municipality», as palavras da casa para
-       quem governa o concelho. Os anos são referências; não há medidas. */
+    /* EVB: C039 do documento julgado, com a troca fechada de vocabulário
+       declarada na origem. Os anos são referências; não há medidas. */
     medidas: [],
     frase: {
       pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.'],
@@ -789,6 +788,7 @@ export const LEITURAS = {
     },
     origem: {
       onde: "studies-src/evora-2027-capital-europeia-da-cultura/pt.html:69 (C039) · studies-src/evora-2027-capital-europeia-da-cultura/en.html:69 (C039)",
+      troca: 'governo-do-concelho',
       pt: "A parte da cultura está paga pelos tetos de 2024 e 2025; a do município está por confirmar, e parte do dinheiro europeu depende de candidaturas.",
       en: "The culture share is paid up to the 2024 and 2025 ceilings; the municipality's is still to be confirmed, and part of the European money depends on applications.",
     },

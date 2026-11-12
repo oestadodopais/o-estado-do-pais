@@ -50,6 +50,9 @@ export function blocosDaPagina(html) {
     if(n.matches('p[data-verbatim]')&&caixa){
       const slug=caixa.getAttribute('data-estudo'), portas=caixa.querySelectorAll('a[href]');
       if(portas.length===1)copiaJulgada={tipo:'pergunta',estudo:slug,porta:portas[0].getAttribute('href'),texto};
+    }else if(n.matches('.estudo-item-titulo')&&caixa){
+      const portas=n.querySelectorAll('a[href][data-titulo-publicado]'), marcas=n.querySelectorAll('[data-estudo-novo]');
+      if(portas.length===1&&marcas.length===1)copiaJulgada={tipo:'titulo',estudo:caixa.getAttribute('data-estudo'),porta:portas[0].getAttribute('href'),texto,nome:portas[0].textContent,lingua:portas[0].getAttribute('data-titulo-publicado'),novo:marcas[0].textContent};
     }else if(novidade?.getAttribute('data-novidade')?.startsWith('estudo:')){
       const portas=n.querySelectorAll('a[href]'), datas=n.querySelectorAll('time'), nomes=n.querySelectorAll('[data-titulo-publicado]'), tipos=n.querySelectorAll('.pp-novidade-tipo');
       if(portas.length===1&&datas.length===1&&nomes.length===1&&tipos.length===1)

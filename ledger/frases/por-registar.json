@@ -11,11 +11,6 @@
   },
   {
     "estudo": "/",
-    "lingua": "en",
-    "sha256": "972969782a682656846a3bff20868977a445a124c3155153143ed52d8acdb642"
-  },
-  {
-    "estudo": "/",
     "lingua": "pt",
     "sha256": "1104916a50c9c54958a61a7d922e1d0365bd51a3527b72b51168e581d26b170a"
   },
@@ -23,11 +18,6 @@
     "estudo": "/",
     "lingua": "pt",
     "sha256": "3aee8bfb477b8c3efc53b849e5265ca97eab424cb7524f35341010accfab9e72"
-  },
-  {
-    "estudo": "/",
-    "lingua": "pt",
-    "sha256": "984767e4d47c58d4036d0441780dea0f94fc24b9654f5340ed255d1a4322626b"
   },
   {
     "estudo": "/404",
