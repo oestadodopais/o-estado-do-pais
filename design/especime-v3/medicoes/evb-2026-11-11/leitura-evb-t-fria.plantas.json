@@ -1,0 +1,86 @@
+{
+ "registado_em": "2026-11-12T02:56:47+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "S1-file",
+   "ficheiro": "built/estudos/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "na página construída do estudo, as contas passam a ser aprovadas em março de 2026; o texto julgado diz abril",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "347290aa763f1e497442328ed9aabf7098196636937338e02df5b546b9250f91",
+   "sha256_depois": "3a16e0a78fff629afacc3798385f78a4af17543d14d217bef2e4038555efbff6",
+   "contexto_antes": "an class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#3.2\" data-registo-row=\"evb-cab-6-1\">10,5</span> milhões, estava «Em Negociação» nas contas aprovadas em abril de 2026. Nas obras, a Câmara escreveu a 23 de outubro de 2026 que a segunda obra do Rossio de São Brás não fica concluída nesse ano. A abertura está marcada para lá, a",
+   "contexto_depois": "an class=\"texto-figura\" data-registo=\"evora-2027-capital-europeia-da-cultura/pt#3.2\" data-registo-row=\"evb-cab-6-1\">10,5</span> milhões, estava «Em Negociação» nas contas aprovadas em março de 2026. Nas obras, a Câmara escreveu a 23 de outubro de 2026 que a segunda obra do Rossio de São Brás não fica concluída nesse ano. A abertura está marcada para lá, a"
+  },
+  {
+   "id": "S2-file",
+   "ficheiro": "built/en/studies/evora-2027-capital-europeia-da-cultura/index.html",
+   "descricao": "na página inglesa construída, a resposta da equipa passa a dizer que os espaços temporários não são precisos; o texto julgado diz que estão disponíveis se for preciso",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6a25fa8c56700db9d5ea6478b3f5ea5b8866854535f80371b008be252108fe7b",
+   "sha256_depois": "7852e4180678e9520462bdf861446a9cd2f7d2f3e335e9b73aae0a1d07103913",
+   "contexto_antes": "td data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/en#22.3.1\">The team, in the response recorded by the panel in June 2025; the same response says temporary venues are available if needed​</td><td data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/en#22.3.2\">The deadline for the first Rossio works, one of the seven, was extended in not",
+   "contexto_depois": "td data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/en#22.3.1\">The team, in the response recorded by the panel in June 2025; the same response says temporary venues are not needed​</td><td data-registo-unidade=\"evora-2027-capital-europeia-da-cultura/en#22.3.2\">The deadline for the first Rossio works, one of the seven, was extended in not"
+  },
+  {
+   "id": "S3-file",
+   "ficheiro": "studies-src/manifest.yml",
+   "descricao": "o resumo declarado da versão portuguesa do documento difere num carácter do ficheiro e do que o motor prova",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7e9a0fe1441dfa1f7ced54c3164b2d5cb72e78f0fdd1d7b2c3307779efda01d0",
+   "sha256_depois": "79c26d27505901af4529c7c233eb9ea31365b6c232d17260a2ed8c28af31a600",
+   "contexto_antes": "ml\n      commit: 14f9311950aa41b9322a02c0b165d29b7f8c2d9c\n  - slug: evora-2027-capital-europeia-da-cultura\n    lang: pt\n    edicoes:\n      - data: '2026-11-12'\n        sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb\n        file: evora-2027-capital-europeia-da-cultura/pt.html\n    title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel ",
+   "contexto_depois": "ml\n      commit: 14f9311950aa41b9322a02c0b165d29b7f8c2d9c\n  - slug: evora-2027-capital-europeia-da-cultura\n    lang: pt\n    edicoes:\n      - data: '2026-11-12'\n        sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbc\n        file: evora-2027-capital-europeia-da-cultura/pt.html\n    title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel "
+  },
+  {
+   "id": "S3-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ba9fcfef4b2243a2717b7a73a1a4b9f987708130ce7d594631eb7045ddd1baf4",
+   "sha256_depois": "1c293b7652604a65d2ff510a2abe84426d5f75b6bd5c71d9ef66b37d224a3d5d",
+   "contexto_antes": "ra.pt.2026-11-06.html\n-      - data: '2026-11-08'\n-        sha256: 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711\n+      - data: '2026-11-12'\n+        sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb\n         file: evora-2027-capital-europeia-da-cultura/pt.html\n-        natureza: atualizacao\n     title: 'Évora 2027, Capital Europeia da Cultura: o que a cand",
+   "contexto_depois": "ra.pt.2026-11-06.html\n-      - data: '2026-11-08'\n-        sha256: 95df514298d533a430b6f8d065a7968bcc4f6f89784047047e850e6264d61711\n+      - data: '2026-11-12'\n+        sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbc\n         file: evora-2027-capital-europeia-da-cultura/pt.html\n-        natureza: atualizacao\n     title: 'Évora 2027, Capital Europeia da Cultura: o que a cand"
+  },
+  {
+   "id": "S4-file",
+   "ficheiro": "vercel.json",
+   "descricao": "a rota datada inglesa de 2026-10-01 passa a redirecionar para o documento português",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1819c15f1e15bf5547732b0131258dddf4689b7c64ce64a3bbd875c1a73c1a5c",
+   "sha256_depois": "21e477b73e062fc87ddffb8734f288489aa3e49c647fe2149422daa68a7994fc",
+   "contexto_antes": "to/2026-11-06/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/estudos/evora-2027-capital-europeia-da-cultura/documento/\"\n      }\n    },\n    {\n      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/\"\n      }\n    },\n    {\n      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"",
+   "contexto_depois": "to/2026-11-06/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/estudos/evora-2027-capital-europeia-da-cultura/documento/\"\n      }\n    },\n    {\n      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/estudos/evora-2027-capital-europeia-da-cultura/documento/\"\n      }\n    },\n    {\n      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/?\",\n      \"status\": 301,\n      \"headers\": {\n        \""
+  },
+  {
+   "id": "S4-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1c293b7652604a65d2ff510a2abe84426d5f75b6bd5c71d9ef66b37d224a3d5d",
+   "sha256_depois": "64318294317780bfc3a3ae550e50a0356622bc2a891ebc4f9859c5aeaa73af02",
+   "contexto_antes": "6-11-06/?\",\n+      \"status\": 301,\n+      \"headers\": {\n+        \"Location\": \"/estudos/evora-2027-capital-europeia-da-cultura/documento/\"\n+      }\n+    },\n+    {\n+      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/?\",\n+      \"status\": 301,\n+      \"headers\": {\n+        \"Location\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/\"\n+      }\n+    },\n+    {\n+      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/?\",\n+      \"status\": 301,\n+      \"headers\": {\n+  ",
+   "contexto_depois": "6-11-06/?\",\n+      \"status\": 301,\n+      \"headers\": {\n+        \"Location\": \"/estudos/evora-2027-capital-europeia-da-cultura/documento/\"\n+      }\n+    },\n+    {\n+      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-10-01/?\",\n+      \"status\": 301,\n+      \"headers\": {\n+        \"Location\": \"/estudos/evora-2027-capital-europeia-da-cultura/documento/\"\n+      }\n+    },\n+    {\n+      \"src\": \"/en/studies/evora-2027-capital-europeia-da-cultura/document/2026-11-03/?\",\n+      \"status\": 301,\n+      \"headers\": {\n+  "
+  },
+  {
+   "id": "S5-file",
+   "ficheiro": "src/data/leituras.mjs",
+   "descricao": "a frase da leitura do estudo passa a dizer que a parte da câmara está confirmada; a unidade C039 do texto julgado diz que está por confirmar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5b11d89f540c8e1b1fe6f05f648550100232ba1485c45a8d5b79347398866802",
+   "sha256_depois": "31a68ba4dbb13bd1ef81c74e18836b990325e4a76557787f7f33498abda0b20d",
+   "contexto_antes": "ferências; não há medidas. */\n    medidas: [],\n    frase: {\n      pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.'],\n      en: ['The culture share is paid up to the ', { ref: '2024' }, ' and ', { ref: '2025' }, \" ceilings; the council's is still to be confirmed, and part of t",
+   "contexto_depois": "ferências; não há medidas. */\n    medidas: [],\n    frase: {\n      pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está confirmada, e parte do dinheiro europeu depende de candidaturas.'],\n      en: ['The culture share is paid up to the ', { ref: '2024' }, ' and ', { ref: '2025' }, \" ceilings; the council's is still to be confirmed, and part of t"
+  },
+  {
+   "id": "S5-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "64318294317780bfc3a3ae550e50a0356622bc2a891ebc4f9859c5aeaa73af02",
+   "sha256_depois": "e3bc84a1f9b7e6ccd515b9793c91d0b731fa98c453c33fe0003ee7ee0e7470fd",
+   "contexto_antes": "he money between the parties is not published.',\n-      ],\n+      pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.'],\n+      en: ['The culture share is paid up to the ', { ref: '2024' }, ' and ', { ref: '2025' }, \" ceilings; the council's is still to be confirmed, and part of ",
+   "contexto_depois": "he money between the parties is not published.',\n-      ],\n+      pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está confirmada, e parte do dinheiro europeu depende de candidaturas.'],\n+      en: ['The culture share is paid up to the ', { ref: '2024' }, ' and ', { ref: '2025' }, \" ceilings; the council's is still to be confirmed, and part of "
+  }
+ ]
+}

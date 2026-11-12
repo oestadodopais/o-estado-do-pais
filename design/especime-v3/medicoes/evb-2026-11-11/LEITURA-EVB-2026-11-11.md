@@ -80,3 +80,26 @@ Nenhum Blocking nem Major real. Minor, para o bloco de higiene:
 O leitor confirmou por si: a citação do MADE com o excerto contíguo e único na página nove, o contexto no mesmo item da leitura na imagem, e a recusa com o contexto de outra obra; o ficheiro das citações com o resumo que o contrato declara e as 126 citações por língua; as quatro plantas da paridade a mudar uma chave de cada vez; os perfis das duas línguas iguais (1 397 e 1 397); as duas referências julgadas com o resumo do contrato.
 
 **As plantas de código nas três leituras do EVB no motor: quinze em quinze.**
+
+## A leitura a frio da travessia para o sítio (12.11.2026)
+
+Claude Opus 5.5 (`leitor`), a `xhigh`, 270 mil símbolos e 84 chamadas, sobre a travessia e a sua adenda A, com dez páginas construídas, o texto julgado e os bytes que o motor prova. As plantas estão em `leitura-evb-t-fria.plantas.json`. **Cinco plantas em cinco:**
+
+- S1 (a página portuguesa do estudo com «março» por «abril»): o achado 1, por comparar os 165 blocos da página com o registo;
+- S2 (a página inglesa com a resposta da equipa invertida): o achado 2, pela mesma comparação;
+- S3 (o resumo declarado do documento português com um carácter trocado): o achado 4;
+- S4 (uma rota datada inglesa a levar ao documento português): o achado 5;
+- S5 (a frase do cartão a dizer «confirmada»): o achado 3.
+
+### Os achados reais e o que se decidiu
+
+| achado | o que é | decisão |
+| --- | --- | --- |
+| 6 (Major) | a régua da página do estudo diz que confere o texto do registo julgado e compara só a manchete, a pergunta, as contagens e a última coluna de um quadro; as plantas S1 e S2 passavam por ela | adenda B, ponto 1: uma régua que compara o texto de cada bloco, em todos os estudos com texto julgado |
+| 8 (Major, o teste dos dois minutos) | a frase do cartão, sozinha na página de entrada, na lista dos estudos e na página do concelho, não se percebe sem contexto (o que é a parte da cultura, o que são os tetos) | o lugar de direção trocou a frase do cartão pela unidade `C005` do texto julgado; adenda B, ponto 2 |
+| 7 (Major) | o pacote não trazia um `build` verde da cabeça | é do pacote: este lugar correu o `build` e quinze conferências na cabeça `6a37212a7`, fora da sandbox, com dezasseis códigos zero (`conferir-dirigidas-evb-t-a/`); a cabeça final leva outra corrida |
+| 9 (Minor) | a adenda A deste lugar diagnosticou mal o vermelho (eram os títulos do cartão com a marca de novidade, como o construtor disse) | registado; a via da leitura fica, sem uso pelo detetor de hoje |
+| 10, 12, 13 e 15 (Minor) | duas das quatro frases de limite estão na secção das fontes e falam do próprio estudo; a planta da porta das datas já não distingue o seu caso; duas proteções saíram com a história do estudo (as edições guardadas sem marcas de nome; um positivo dos quantificadores); a manchete portuguesa não repete a unidade no segundo número | o bloco de higiene (EVB-13 a EVB-16); a manchete revê-se na próxima edição do estudo |
+| 11 e 14 (Minor) | o manifesto dos documentos cita o commit do motor que escreveu os bytes e o dos registos cita a cabeça aterrada; números do relatório sem comando | conferido por este lugar no motor: `aa7ca6c` é antepassado de `71df7b3` e os bytes são os mesmos |
+
+O leitor confirmou por si: os dois documentos e as cópias com os resumos que o motor prova; os registos e os cortes iguais aos do motor; as duas declarações de texto julgado com os resumos, o juiz, a data e o commit certos; `por-registar.json` só encolheu (244 entradas a menos, nenhuma a mais); os 165 blocos da página pela ordem do registo nas duas línguas; uma edição só, sem faixa de atualização nem porta datada; a paridade presa aos resumos dos documentos julgados; as pessoas só pelo cargo e ao pé de um ato público; as 126 citações por língua com a sua prova.

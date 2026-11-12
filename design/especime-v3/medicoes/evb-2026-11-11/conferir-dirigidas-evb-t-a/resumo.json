@@ -1,0 +1,156 @@
+{
+ "cabeca": "6a37212a76a7d37754b0eb4bb683f3e6ad35778b",
+ "cabeca_fim": "6a37212a76a7d37754b0eb4bb683f3e6ad35778b",
+ "arvore_limpa_no_inicio": true,
+ "modo": "dirigidas",
+ "inicio": "2026-11-12T02:20:44Z",
+ "fim": "2026-11-12T02:55:12Z",
+ "segundos": 2068,
+ "passos": [
+  {
+   "n": "00",
+   "passo": "build",
+   "comando": "npm run build",
+   "codigo": 0,
+   "segundos": 865,
+   "code": "00-build.code",
+   "log": "00-build.log"
+  },
+  {
+   "n": "11",
+   "passo": "check_leituras",
+   "comando": "npm run check:leituras",
+   "codigo": 0,
+   "segundos": 290,
+   "code": "11-check_leituras.code",
+   "log": "11-check_leituras.log"
+  },
+  {
+   "n": "13",
+   "passo": "gate_html",
+   "comando": "npm run gate:html",
+   "codigo": 0,
+   "segundos": 313,
+   "code": "13-gate_html.code",
+   "log": "13-gate_html.log"
+  },
+  {
+   "n": "17",
+   "passo": "check_datas",
+   "comando": "npm run check:datas",
+   "codigo": 0,
+   "segundos": 8,
+   "code": "17-check_datas.code",
+   "log": "17-check_datas.log"
+  },
+  {
+   "n": "34",
+   "passo": "check_pais",
+   "comando": "npm run check:pais",
+   "codigo": 0,
+   "segundos": 24,
+   "code": "34-check_pais.code",
+   "log": "34-check_pais.log"
+  },
+  {
+   "n": "36",
+   "passo": "check_voz",
+   "comando": "npm run check:voz",
+   "codigo": 0,
+   "segundos": 230,
+   "code": "36-check_voz.code",
+   "log": "36-check_voz.log"
+  },
+  {
+   "n": "37",
+   "passo": "check_paridade",
+   "comando": "npm run check:paridade",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "37-check_paridade.code",
+   "log": "37-check_paridade.log"
+  },
+  {
+   "n": "38",
+   "passo": "check_frases-afirmacao",
+   "comando": "npm run check:frases-afirmacao",
+   "codigo": 0,
+   "segundos": 117,
+   "code": "38-check_frases-afirmacao.code",
+   "log": "38-check_frases-afirmacao.log"
+  },
+  {
+   "n": "42",
+   "passo": "check_lugar",
+   "comando": "npm run check:lugar",
+   "codigo": 0,
+   "segundos": 48,
+   "code": "42-check_lugar.code",
+   "log": "42-check_lugar.log"
+  },
+  {
+   "n": "46",
+   "passo": "check_indice",
+   "comando": "npm run check:indice",
+   "codigo": 0,
+   "segundos": 27,
+   "code": "46-check_indice.code",
+   "log": "46-check_indice.log"
+  },
+  {
+   "n": "47",
+   "passo": "check_cartao",
+   "comando": "npm run check:cartao",
+   "codigo": 0,
+   "segundos": 45,
+   "code": "47-check_cartao.code",
+   "log": "47-check_cartao.log"
+  },
+  {
+   "n": "54",
+   "passo": "check_privacidade",
+   "comando": "npm run check:privacidade",
+   "codigo": 0,
+   "segundos": 83,
+   "code": "54-check_privacidade.code",
+   "log": "54-check_privacidade.log"
+  },
+  {
+   "n": "63",
+   "passo": "check_eo1",
+   "comando": "npm run check:eo1",
+   "codigo": 0,
+   "segundos": 12,
+   "code": "63-check_eo1.code",
+   "log": "63-check_eo1.log"
+  },
+  {
+   "n": "69",
+   "passo": "check_frases-reais",
+   "comando": "npm run check:frases-reais",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "69-check_frases-reais.code",
+   "log": "69-check_frases-reais.log"
+  },
+  {
+   "n": "70",
+   "passo": "check_repositorio",
+   "comando": "npm run check:repositorio",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "70-check_repositorio.code",
+   "log": "70-check_repositorio.log"
+  },
+  {
+   "n": "71",
+   "passo": "typecheck",
+   "comando": "npm run typecheck",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "71-typecheck.code",
+   "log": "71-typecheck.log"
+  }
+ ],
+ "vermelhos": []
+}

@@ -1,0 +1,2 @@
+Passos: check_leituras gate_html check_frases-afirmacao check_eo1 check_frases-reais check_voz check_lugar check_paridade check_datas check_cartao check_indice check_pais check_privacidade check_repositorio typecheck
+Razão: a adenda A da travessia só mudou réguas, a lista das frases por registar e um campo da leitura; a corrida inteira correu na cabeça anterior com 70 verdes em 72

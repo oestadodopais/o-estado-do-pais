@@ -1,0 +1,18 @@
+# conferir-tudo · 6a37212a7 · 16 passos · 0 vermelhos · 2068 s
+
+- 00 `npm run build`: 0 (865 s)
+- 11 `npm run check:leituras`: 0 (290 s)
+- 13 `npm run gate:html`: 0 (313 s)
+- 17 `npm run check:datas`: 0 (8 s)
+- 34 `npm run check:pais`: 0 (24 s)
+- 36 `npm run check:voz`: 0 (230 s)
+- 37 `npm run check:paridade`: 0 (1 s)
+- 38 `npm run check:frases-afirmacao`: 0 (117 s)
+- 42 `npm run check:lugar`: 0 (48 s)
+- 46 `npm run check:indice`: 0 (27 s)
+- 47 `npm run check:cartao`: 0 (45 s)
+- 54 `npm run check:privacidade`: 0 (83 s)
+- 63 `npm run check:eo1`: 0 (12 s)
+- 69 `npm run check:frases-reais`: 0 (5 s)
+- 70 `npm run check:repositorio`: 0 (0 s)
+- 71 `npm run typecheck`: 0 (0 s)
