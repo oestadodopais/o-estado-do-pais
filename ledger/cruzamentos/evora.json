@@ -20,6 +20,65 @@
       "rh_study": "06 Évora Economy",
       "verifications_at_export": 2
     },
+    "evora-2027-contribuicao-inicial-do-estado-2024": {
+      "corrections_at_export": 0,
+      "crop_sha256": "c8d39ae76c2d9efd18013667f48e832ff5ef06c1ad28276df64666a3f0de208f",
+      "exported_at": "2026-11-12",
+      "exported_row_sha256": "9c8932d19b43341797f2e9699b7dde03cb957420598aed49bc4ec5c549411628",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "cdebf6664c06eac731936bd9163d6096142ab735651e3a3d2ead12eb7046f8d6",
+      "rh_id": "evb-ln001-parcela-1",
+      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
+      "verifications_at_export": 0
+    },
+    "evora-2027-pago-pela-cultura-2025": {
+      "corrections_at_export": 0,
+      "crop_sha256": "209deaea2d6029339123c82ced1c6cb1c92f109868a9ff0c90427722af9e36d1",
+      "exported_at": "2026-11-12",
+      "exported_row_sha256": "80d6472f0460aca5ddca7ee636fb0c4a8aa334356ad61df00d48c8ea48d4478f",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "d692de7557a411d2a99feeb2ebc36b8b86fed2052b830de3144f492519419cd3",
+      "rh_id": "evb-ln001-parcela-2",
+      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
+      "verifications_at_export": 0
+    },
+    "evora-2027-pago-pelo-turismo-2025": {
+      "corrections_at_export": 0,
+      "crop_sha256": "4902610419a589e5b9307c8f8aaf0a4285f6b0be2c4d82c830c2065caf829614",
+      "exported_at": "2026-11-12",
+      "exported_row_sha256": "e61fb275c49569ec59363c318dfef353ee8db275674384333fa3556551ed27a4",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "ffad92e315ccce27f2149b0aae1aedc56d766f4caaf6892939e609ab58446ac6",
+      "rh_id": "evb-ln001-parcela-3",
+      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
+      "verifications_at_export": 0
+    },
+    "evora-2027-recebido-do-protocolo-ate-2025": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-11-12",
+      "exported_row_sha256": "b54f33d5637b71a3b4eabc4dd70b690bf657fc595fde670653f7930d9c037039",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "3119681ccc85de5b0c8bb8b8787a7da2640f994b5cc41c3ce2c8cb4cdf7af77c",
+      "rh_id": "evb-ln001",
+      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
+      "verifications_at_export": 0
+    },
+    "evora-2027-transferido-no-relato-ao-painel-2025": {
+      "corrections_at_export": 0,
+      "crop_sha256": "deee347271d481afeae219dc982a7c92c50f9db77753e846ef7f76f382f0af19",
+      "exported_at": "2026-11-12",
+      "exported_row_sha256": "f0ce3f9f8a43a7d663d5ca298d2855b946059cf78a2ad89f685a40c7f327c218",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "915d1bd591aca1553f31c79f4cc66312e305704c64ffb21109cb45864470ce36",
+      "rh_id": "painel-transferido",
+      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
+      "verifications_at_export": 0
+    },
     "evora-camara-lugares": {
       "corrections_at_export": 0,
       "exported_at": "2026-09-30",

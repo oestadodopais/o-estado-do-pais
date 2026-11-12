@@ -1,0 +1,47 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "evora-2027-contribuicao-inicial-do-estado-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2 000 000"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Associação Évora 2027"
+document:
+  title: "RELATÓRIO DE ATIVIDADES E CONTAS 2025"
+  edition: "2025"
+  locator: "p. 72"
+  page: 72
+  kind: "pdf"
+  crop:
+    asset: "recortes/evora-2027-contribuicao-inicial-do-estado-2024.webp"
+    sha256: "c8d39ae76c2d9efd18013667f48e832ff5ef06c1ad28276df64666a3f0de208f"
+    page: 72
+source_url: "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf#page=72"
+access_date: "2026-09-15"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "no valor de € 2.000.000 a pagar em 2024”. Inicialmente, esta contribuição foi reconhecida como rendimento diferido, tendo sido imputado ao resultado do exercício de 2024 o montante de € 76.104,78, com o objetivo de fazer face aos gastos incorridos nesse período. Contudo, tendo em consideração a natureza da referida contribuição, a qual se destina à constituição do património social da Associação, concluiu-se que a mesma deve ser reconhecida diretamente nos fundos patrimoniais. Neste contexto, procedeu-se à reclassificação do montante recebido"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Associação Évora 2027"
+
+study: "evora-2027-capital-europeia-da-cultura"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/19 Évora 2027 Capital Europeia da Cultura · evb-ln001-parcela-1."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
