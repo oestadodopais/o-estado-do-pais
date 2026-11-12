@@ -57,7 +57,8 @@ for(const lingua of ['pt','en'])for(const tipo of ['home','estudos','municipio']
  const coberta=(pagina=p,entrada=LEITURAS[slug],ds=declaracoes)=>conferirTextosJulgados(ds,[pagina],frases,{leituras:{[slug]:entrada}}).textos.size===frases.length;
  assert(coberta(),rota);leiturasConferidas++;
  // A chave omite números; a prova tem de recusar a ocorrência adulterada.
- for(const [antes,depois] of [[lingua==='pt'?'contas':'accounts',lingua==='pt'?'empresa':'company'],['2025','2023'],['9,7','8,7']]){
+ for(const [antes,depois] of [[lingua==='pt'?'associação':'association',lingua==='pt'?'empresa':'company'],['2025','2023'],[lingua==='pt'?'precisa':'needs',lingua==='pt'?'dispensa':'rejects']]){
+  assert(frases[0].frase.includes(antes),`planta sem alvo: ${rota}: ${antes}`);
   const pagina=structuredClone(p);
   const o=frases[0].ocorrencias[0];
   pagina.blocos[o.bloco].frases[o.indice]=frases[0].frase.replace(antes,depois);
@@ -69,7 +70,7 @@ for(const lingua of ['pt','en'])for(const tipo of ['home','estudos','municipio']
   e=>{e.origem.troca='troca-fora-da-lista';},
   e=>{e.origem.troca='governo-do-concelho';},
   e=>{e.frase[lingua].find(p=>p.ref==='2025').ref='2023';},
-  e=>{e.frase[lingua][0]=e.frase[lingua][0].replace(lingua==='pt'?'contas':'accounts',lingua==='pt'?'empresa':'company');},
+  e=>{e.frase[lingua][0]=e.frase[lingua][0].replace(lingua==='pt'?'associação':'association',lingua==='pt'?'empresa':'company');},
  ]){
   const entrada=structuredClone(LEITURAS[slug]);mudar(entrada);
   assert(!coberta(p,entrada),`origem ou declaração adulterada: ${rota}`);plantasLeitura++;
