@@ -10,7 +10,7 @@ value: "34"
 unit: "milhões de euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Comissão Europeia, pelo painel europeu"
+source: "European Commission"
 document:
   title: "Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert Panel"
   edition: "2025"
@@ -38,7 +38,7 @@ check: null
 
 # A quem o valor é creditado. Lista de entidades, ou campo nenhum.
 attributed_to:
-  - "painel europeu"
+  - "ECOC Expert Panel"
 
 study: "evora-2027-capital-europeia-da-cultura"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

@@ -20,14 +20,14 @@ document:
   kind: "pdf"
   crop:
     asset: "recortes/evora-2027-pago-pela-cultura-2025.webp"
-    sha256: "209deaea2d6029339123c82ced1c6cb1c92f109868a9ff0c90427722af9e36d1"
+    sha256: "4a9716c816ae67fe5384701d4d19069811af9973f67d25c86487b9a124b34b2b"
     page: 57
 source_url: "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf#page=57"
 access_date: "2026-09-15"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "contratualizados. Pago 3.750.000€ durante o ano de 2025"
+excerpt: "15 milhões de euros GEPAC - Gabinete de Estratégia, Planeamento e Avaliação Culturais (Ministério da Cultura, Juventude e Desporto) contratualizados. Pago 3.750.000€ durante o ano de 2025"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

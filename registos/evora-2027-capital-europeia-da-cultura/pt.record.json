@@ -5,6 +5,7 @@
     {
      "end": 56,
      "others": [
+      "evl-estado-protocolo-2023",
       "evl-governo-a-financiar"
      ],
      "printed": "34",
@@ -71,6 +72,7 @@
     {
      "end": 217,
      "others": [
+      "evl-estado-protocolo-2023",
       "evl-governo-a-financiar"
      ],
      "printed": "34",
@@ -137,6 +139,7 @@
     {
      "end": 104,
      "others": [
+      "evl-estado-protocolo-2023",
       "evl-governo-a-financiar"
      ],
      "printed": "34",
@@ -187,12 +190,13 @@
     {
      "end": 299,
      "others": [
-      "evl-governo-a-financiar"
+      "painel-transferido",
+      "evl-estado-protocolo-2023"
      ],
      "printed": "34",
-     "row": "painel-transferido",
-     "source_digest_kind": "pdf-sem-resumo",
-     "source_sha256": null,
+     "row": "evl-governo-a-financiar",
+     "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+     "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
      "start": 297,
      "value": "34"
     },
@@ -213,6 +217,7 @@
     {
      "end": 436,
      "others": [
+      "evl-estado-protocolo-2023",
       "evl-governo-a-financiar"
      ],
      "printed": "34",
@@ -996,6 +1001,7 @@
        {
         "end": 4,
         "others": [
+         "evl-estado-protocolo-2023",
          "evl-governo-a-financiar"
         ],
         "printed": "34",
@@ -1195,12 +1201,13 @@
     {
      "end": 140,
      "others": [
+      "painel-transferido",
       "evl-governo-a-financiar"
      ],
      "printed": "34",
-     "row": "painel-transferido",
-     "source_digest_kind": "pdf-sem-resumo",
-     "source_sha256": null,
+     "row": "evl-estado-protocolo-2023",
+     "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/55-cme-protocolo-2023.html",
+     "source_sha256": "8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a",
      "start": 138,
      "value": "34"
     }
@@ -1476,6 +1483,7 @@
        {
         "end": 377,
         "others": [
+         "evl-estado-protocolo-2023",
          "evl-governo-a-financiar"
         ],
         "printed": "34",
@@ -1812,7 +1820,8 @@
     {
      "end": 77,
      "others": [
-      "painel-transferido"
+      "painel-transferido",
+      "evl-estado-protocolo-2023"
      ],
      "printed": "34",
      "row": "evl-governo-a-financiar",
@@ -3965,6 +3974,7 @@
        {
         "end": 147,
         "others": [
+         "evl-estado-protocolo-2023",
          "evl-governo-a-financiar"
         ],
         "printed": "34",
@@ -4436,6 +4446,7 @@
     {
      "end": 426,
      "others": [
+      "evl-estado-protocolo-2023",
       "evl-governo-a-financiar"
      ],
      "printed": "34",

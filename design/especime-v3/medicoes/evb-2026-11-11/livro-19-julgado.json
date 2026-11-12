@@ -3,7 +3,7 @@
  "composto_de": [
   {
    "pasta": "14 Évora 2027",
-   "ledger_sha256": "2ceb01c9c5e76f87adba8fcdefffa99e81674006e693ff3e40c8ea93fd29e01a"
+   "ledger_sha256": "9a88cf1af72b6fc5ce38ebeee4302758c2e9649dac9e636acb26ee63ebbe75a8"
   },
   {
    "pasta": "19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026",
@@ -15,7 +15,7 @@
   },
   {
    "pasta": "19 Évora 2027 Capital Europeia da Cultura",
-   "ledger_sha256": "1240907b87f8c0794f0defe4c052cad3e1a5c9e33fe0ec0a7e8e5e337a367cb9",
+   "ledger_sha256": "5b69ae460aecd627e859657f4e77d80ba0452c055ac952293cb8676f13fdda59",
    "ficheiro": "Technical Source/ajustes.json",
    "campo": "linhas_proprias",
    "resumo_de": "objeto claims com as linhas próprias, serialização canónica"
@@ -836,7 +836,8 @@
    "source_type": "intergovernmental",
    "derivation": "transcrito",
    "attributed_to": [
-    "painel europeu"
+    "painel europeu",
+    "ECOC Expert Panel"
    ],
    "sanity_min": 1.0,
    "sanity_max": 100.0
@@ -3983,6 +3984,30 @@
    "medida": "o que a frase diz deste número: «…s e serviços externos são 17 442 076,66 €. O detalhe dessa rubrica, na mesma página, soma 17 478 076,66 €, mais 36 000 €.…»",
    "attributed_to": [
     "Associação Évora 2027"
+   ],
+   "linha_propria": true
+  },
+  {
+   "id": "evl-estado-protocolo-2023",
+   "value": "34",
+   "alternates": [],
+   "source_url": "https://www.cm-evora.pt/investimento-superior-a-44-milhoes-de-euros-camara-de-evora-e-estado-portugues-assinaram-protocolo-de-cooperacao-para-implementacao-da-capital-europeia-da-cultura-em-2027/",
+   "fetched_at": "2026-09-15T11:56:28Z",
+   "excerpt": "com uma verba de 34 milhões de euros, através de financiamento público nacional e europeu",
+   "source_type": "government",
+   "document": {
+    "title": "Investimento superior a 44 milhões de euros: Câmara de Évora e Estado Português assinaram protocolo de cooperação para implementação da Capital Europeia da Cultura em 2027 - Portal Institucional",
+    "source_sha256": "8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a",
+    "type": "html",
+    "page": 1
+   },
+   "impresso": {
+    "pt": "34",
+    "en": "34"
+   },
+   "medida": "Milhões de euros de financiamento público nacional e europeu anunciados pela Câmara para o protocolo de 2023.",
+   "attributed_to": [
+    "Câmara Municipal de Évora"
    ],
    "linha_propria": true
   },

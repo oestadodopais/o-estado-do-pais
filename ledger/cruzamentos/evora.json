@@ -28,19 +28,19 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cdebf6664c06eac731936bd9163d6096142ab735651e3a3d2ead12eb7046f8d6",
       "rh_id": "evb-ln001-parcela-1",
-      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
+      "rh_ledger_sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
     "evora-2027-pago-pela-cultura-2025": {
       "corrections_at_export": 0,
-      "crop_sha256": "209deaea2d6029339123c82ced1c6cb1c92f109868a9ff0c90427722af9e36d1",
+      "crop_sha256": "4a9716c816ae67fe5384701d4d19069811af9973f67d25c86487b9a124b34b2b",
       "exported_at": "2026-11-12",
-      "exported_row_sha256": "0f19abc3e079d943e277ee8dac4b9623b10168064553cb8ede758ebdff7760e5",
+      "exported_row_sha256": "ebf2504cf255a10530a058cae3e82db0faa9e4c2623dcd6b9002b2d7f6b9716e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d692de7557a411d2a99feeb2ebc36b8b86fed2052b830de3144f492519419cd3",
       "rh_id": "evb-ln001-parcela-2",
-      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
+      "rh_ledger_sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -48,22 +48,22 @@
       "corrections_at_export": 0,
       "crop_sha256": "4902610419a589e5b9307c8f8aaf0a4285f6b0be2c4d82c830c2065caf829614",
       "exported_at": "2026-11-12",
-      "exported_row_sha256": "64936d518f8b2da673cac50857b873f7a9251b0c92292db14434629e63fdb22f",
+      "exported_row_sha256": "b82d5fc2c64fe7a01d83bc6686a7b280f47e43f407e135ed9d39ebaa53ebf4de",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ffad92e315ccce27f2149b0aae1aedc56d766f4caaf6892939e609ab58446ac6",
       "rh_id": "evb-ln001-parcela-3",
-      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
+      "rh_ledger_sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
     "evora-2027-recebido-do-protocolo-ate-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-11-12",
-      "exported_row_sha256": "c9e08f0b5063cdcdd26f2319c26cb872f19b9ea61a71d493625598fdab645656",
+      "exported_row_sha256": "ad971970afc74e4bb2b99db8e24cb8ee9dc76d46ab0c0a0c7b1f74e87b287f37",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3119681ccc85de5b0c8bb8b8787a7da2640f994b5cc41c3ce2c8cb4cdf7af77c",
       "rh_id": "evb-ln001",
-      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
+      "rh_ledger_sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -71,11 +71,11 @@
       "corrections_at_export": 0,
       "crop_sha256": "deee347271d481afeae219dc982a7c92c50f9db77753e846ef7f76f382f0af19",
       "exported_at": "2026-11-12",
-      "exported_row_sha256": "21c4f118fdd409ce631305bbad27b81d60d3743d105bf30d14c74393d159d948",
+      "exported_row_sha256": "54417f092b2742a501d45fcb9042faa1374352d279fb3f52963326ca63aa753c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "013b062f99eedca9f7050d7e93dfbf342af8ff679a9b221b58065c0e84e307e1",
+      "origin_row_sha256": "ad3c8cd6aa5a41945b9fe980e6a4c38ab1223d469af205aa01900982ff663458",
       "rh_id": "painel-transferido",
-      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
+      "rh_ledger_sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -733,7 +733,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01160246c3448fe569258ca2e6fd1675d270a7583a54f24d7d9ead10e94e9046",
       "rh_id": "prr-approved-evora",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "site_corrections": [
         {
@@ -763,7 +763,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4d3935ee6ed7dd9ab6938534b5ad1e1cfdb19ef1b3b8a88b12d958bd7f452252",
       "rh_id": "prr-execution-evora",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "verifications_at_export": 0
     },
@@ -774,7 +774,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a690c6f03853f6d1fe6cd6b96c9c88cf0e0299b8648248d0d11cc93b4ce3bd98",
       "rh_id": "fin-municipio-contracted",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "site_corrections": [
         {
@@ -804,7 +804,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "68793652fb00dba08c26a2aa2b56ee5807bc7da7cdfa65ad7e15479dac13959e",
       "rh_id": "prr-paid-evora",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "site_corrections": [
         {
@@ -834,7 +834,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d4b1427a026900ee4b4cdb7941be56a3830088b76f91a35f0e1f11015294d7cb",
       "rh_id": "fin-uevora-contracted",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "site_corrections": [
         {
@@ -864,7 +864,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5b4d5634258e73011125ffacc0dae25402f13392668d4befafe8d4688df03197",
       "rh_id": "prr-overdue-approved",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "site_corrections": [
         {
@@ -894,7 +894,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d108f7a094a4e40464242e78002e7ba9ff759c738941b7183ebd2d2e4a7e45d5",
       "rh_id": "prr-overdue-approved-share",
-      "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
+      "rh_ledger_sha256": "f5413079fab9f35bf9a31dcd3850cd9f5950c511cc7e2bd69b51213b6d306db6",
       "rh_study": "04 Évora Public Money",
       "verifications_at_export": 0
     },

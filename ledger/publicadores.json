@@ -398,7 +398,8 @@
       "nome": "European Commission",
       "aliases": [],
       "dominios": [
-        "economy-finance.ec.europa.eu"
+        "economy-finance.ec.europa.eu",
+        "culture.ec.europa.eu"
       ],
       "provas": [
         {
@@ -407,6 +408,13 @@
           "documento": "European Economic Forecast Spring 2026",
           "endereco": "https://economy-finance.ec.europa.eu/document/download/3360898c-cd40-46c0-b170-7adfcb993add_en?filename=ip341_en.pdf#page=143",
           "origem": "Publicador e domínio da fonte oficial ou documental já declarados no livro; aliases conservados."
+        },
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+          "documento": "Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert Panel",
+          "endereco": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf",
+          "origem": "Relatório de monitorização do painel de peritos alojado pela Comissão Europeia; identidade do documento e página provadas na travessia EVL."
         }
       ]
     },
@@ -1196,22 +1204,6 @@
           "documento": "O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave",
           "endereco": "https://content.gulbenkian.pt/wp-content/uploads/2020/06/23155719/Uso-da-%C3%A1gua-em-Portugal_Estudo-Gulbenkian.pdf#page=22",
           "origem": "Publicador e domínio da cópia citada no livro da água do motor, com SHA256 conferido em 08.11.2026."
-        }
-      ]
-    },
-    {
-      "nome": "Comissão Europeia, pelo painel europeu",
-      "aliases": [],
-      "dominios": [
-        "culture.ec.europa.eu"
-      ],
-      "provas": [
-        {
-          "tipo": "organismo-do-documento",
-          "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
-          "documento": "Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert Panel",
-          "endereco": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf",
-          "origem": "Relatório de monitorização do painel de peritos alojado pela Comissão Europeia; identidade do documento e página provadas na travessia EVL."
         }
       ]
     }
@@ -2718,6 +2710,13 @@
       "rotulos": {},
       "sha256": "5467684e4858bc39ee363d3530d4e3bf5ff67f1e32ee91d52a17d49baaf68a03",
       "arquivo": "content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/concurso-rossio.html"
+    },
+    {
+      "url": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf",
+      "titulo": null,
+      "sha256": null,
+      "nome": "European Commission",
+      "rotulos": {}
     }
   ],
   "correcoes": [

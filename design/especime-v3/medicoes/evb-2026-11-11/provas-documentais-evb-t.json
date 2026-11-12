@@ -1,32 +1,33 @@
 {
   "estudo": "evora-2027-capital-europeia-da-cultura",
-  "commit_motor": "a4caad89d3238cc38138812df9ed6a3fff689920",
+  "commit_motor": "e887f17da7f651a33c112ed3d17d3fbeb9834e21",
   "livro": {
     "file": "design/especime-v3/medicoes/evb-2026-11-11/livro-19-julgado.json",
-    "sha256": "697456e549b077d3573f205588e6a5949c08ebe9a1bb0f32c4d88d5ce5005bfe",
-    "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json @ a4caad89d3238cc38138812df9ed6a3fff689920"
+    "sha256": "d766385b96da0b04ad0a5af485b02a758b287e38ea3a87286a7c3043bf1aaa2b",
+    "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json @ e887f17da7f651a33c112ed3d17d3fbeb9834e21"
   },
   "registos": {
     "pt": {
       "edition": "Évora 2027, Capital Europeia da Cultura (pt-PT)",
       "lang": "pt-PT",
       "file": "registos/evora-2027-capital-europeia-da-cultura/pt.record.json",
-      "sha256": "81803901a792021ba7af7f6af11089f0354880cd397a6571148b97f42eeab80f",
-      "objeto_sha256": "59cb9b90ab8777ae49b10ded76079fd99729f6a50ef8aeb09802e5a77dd3d177"
+      "sha256": "2b85740531347a5420f62a1e1ed81f3a7c3c506b8220bfa79f92a1c5a14feaab",
+      "objeto_sha256": "d46073cc4bf69fc7ce678f802d4807827820866025f50795916656d9869edb0f"
     },
     "en": {
       "edition": "Évora 2027, European Capital of Culture",
       "lang": "en",
       "file": "registos/evora-2027-capital-europeia-da-cultura/en.record.json",
-      "sha256": "8facbc7c726601c82fdadeee78bf6a652ab6a9146b8af9f2461c090de3eea0a7",
-      "objeto_sha256": "3cc3aaf85a7ee38bd976e8b659d887e630e49d73c83c47b84925d69e7ee2d00b"
+      "sha256": "034f7616a63267a0a56e31825d1a280f447b6236f331b7ded965a25b7f11b1d9",
+      "objeto_sha256": "4c8264900361408a17e1872b06b8c63e900d03816b7ec842e6eb766ecc22eac4"
     }
   },
   "corpos": {
+    "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
     "19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624",
     "16 Évora Contas da Câmara/source/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf": "7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04",
-    "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
     "19 Évora 2027 Capital Europeia da Cultura/source/27-ce-monitorizacao-2-2025-07.pdf": "861431b3b5e935f28bf6a3bc60b47307bdbeac571292d05f00defc5b1cd212e0",
+    "19 Évora 2027 Capital Europeia da Cultura/source/55-cme-protocolo-2023.html": "8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a",
     "19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1",
     "19 Évora 2027 Capital Europeia da Cultura/source/82-alentejo2030-lista-operacoes-2026-06-30.xlsx": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
     "19 Évora 2027 Capital Europeia da Cultura/source/53-cme-gop-orcamento-2025.pdf": "f07265b18625df34991b1805807f77617955a03da07aa814a521563ea38910a0",
@@ -40,6 +41,10 @@
     "14 Évora 2027/Technical Source/raw/manifest.json": "c1183b891dbdb69c833fcb29067eefcff85d338e4156a59e716e8033a3567265"
   },
   "linhas": {
+    "evl-governo-a-financiar": {
+      "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+      "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03"
+    },
     "evb-ln010": {
       "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/01-bidbook-selecao-PT.pdf",
       "source_sha256": "2a3ad3e82af756c31f3423f6a12cd76a8ac39fdca1c9237a98a5c10a9fb93624"
@@ -80,6 +85,10 @@
       "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
       "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03"
     },
+    "evl-estado-protocolo-2023": {
+      "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/55-cme-protocolo-2023.html",
+      "source_sha256": "8d3327e6f9821eb45aae37eb10c1bfa85abb9f8e842af30372d0999120b5b14a"
+    },
     "evb-cab-95-1": {
       "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/21-ce-relatorio-selecao-2027-PT.pdf",
       "source_sha256": "11195b2a3710949c16b4fc9f6b7460e65b6d43adacc06410ddfcae5dbd2233a1"
@@ -97,10 +106,6 @@
       "source_sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503"
     },
     "evb-ln030": {
-      "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
-      "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03"
-    },
-    "evl-governo-a-financiar": {
       "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
       "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03"
     },
