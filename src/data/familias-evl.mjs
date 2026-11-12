@@ -57,14 +57,14 @@ export const FAMILIAS_EVL = {
         {
           "ref": "2025"
         },
-        " pelo gabinete do Ministério da Cultura, segundo as contas da associação"
+        " pelo GEPAC, o Gabinete de Estratégia, Planeamento e Avaliação Culturais, segundo as contas da associação"
       ],
       "en": [
         "euros paid in ",
         {
           "ref": "2025"
         },
-        " by the Ministry of Culture's office, according to the association's accounts"
+        " by GEPAC, the Gabinete de Estratégia, Planeamento e Avaliação Culturais, according to the association's accounts"
       ]
     }
   },

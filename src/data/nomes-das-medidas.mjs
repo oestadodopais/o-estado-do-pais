@@ -90,8 +90,8 @@ export const NOMES_DO_PROJETO = {
     "en": "euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received"
   },
   "evora-2027-pago-pela-cultura-2025": {
-    "pt": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
-    "en": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts"
+    "pt": "euros pagos em 2025 pelo GEPAC, o Gabinete de Estratégia, Planeamento e Avaliação Culturais, segundo as contas da associação",
+    "en": "euros paid in 2025 by GEPAC, the Gabinete de Estratégia, Planeamento e Avaliação Culturais, according to the association's accounts"
   },
   "evora-2027-pago-pelo-turismo-2025": {
     "pt": "euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação",
