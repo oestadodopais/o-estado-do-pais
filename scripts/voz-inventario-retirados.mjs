@@ -1,6 +1,7 @@
 /** REC2: as declarações históricas ficam, mas só descrições de retirados dispensam presença. */
 import {entradaRetiradaRet1} from './voz-inventario-ret1.mjs';
 import {WORKS} from '../src/data/studies.mjs';
+import {EXPLICACOES} from '../src/data/explicacoes/index.mjs';
 import {DOSSIES} from '../src/data/dossies.mjs';
 import {FP1} from '../src/data/rotulos-fp1.mjs';
 import {routePath} from '../src/lib/routes.mjs';
@@ -23,9 +24,15 @@ export function separarDescricoesRetiradas(ausentes, inventario, trabalhos = WOR
 /** A dispensa só cobre o rótulo literal, no item e na porta do dossiê declarado. */
 export function rotuloDoDossieNaNovidade(el, lang, rotaKey) {
   if (rotaKey !== 'home' || el.rawTagName !== 'span' || !el.classList.contains('pp-novidade-tipo')) return false;
-  if (el.textContent !== FP1[lang]?.dossie || !el.closest('[data-novidades]')) return false;
+  if (!el.closest('[data-novidades]')) return false;
   const item = el.parentNode, id = item?.getAttribute('data-novidade');
-  if (item?.rawTagName !== 'li' || !id?.startsWith('dossie:')) return false;
+  if (item?.rawTagName !== 'li' || item.querySelectorAll('.pp-novidade-tipo').length !== 1) return false;
+  if (id?.startsWith('explicacao:')) {
+    const slug = id.slice('explicacao:'.length);
+    return el.textContent === FP1[lang]?.explicacao && EXPLICACOES.some(e => e.slug === slug && e.publicado) &&
+      item.querySelector('a[data-novidade-porta]')?.getAttribute('href') === routePath('explicacao',lang,{slug});
+  }
+  if (!id?.startsWith('dossie:') || el.textContent !== FP1[lang]?.dossie) return false;
   const slug = id.slice('dossie:'.length), porta = item.querySelector('[data-novidade-dossie]');
   return DOSSIES.some(d => d.slug === slug) && item.querySelectorAll('.pp-novidade-tipo').length === 1 &&
     porta?.getAttribute('data-novidade-dossie') === slug && porta.getAttribute('href') === routePath('dossie', lang, {slug});
