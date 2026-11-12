@@ -1259,7 +1259,6 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
   'TERRITORY-RESULTS-LOCAL-070500-CM.json': null,
