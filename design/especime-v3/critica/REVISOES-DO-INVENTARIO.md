@@ -986,3 +986,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | rec1-d | Linha das datas sempre presente, mesmo sem novidades; seis rótulos voltam a vivos; a legenda das correções identifica linhas e texto de estudos | por ler | Codex, 10.11.2026: adenda D; leitura cruzada do diff reservada ao lugar de direção. |
 
 | eva-t | Leitura das contas da Câmara nas duas línguas | por ler | Codex, 11.11.2026: texto do mandato e origem C004 conferidos; leitura cruzada reservada ao lugar de direção. |
+
+| evb-t | Duas leituras julgadas novas, duas leituras antigas retiradas e uma declaração de data sem superfície removida | por ler | Codex, 12.11.2026: C039 e os anos por referência conferidos no documento e no HTML. A data de 06.11.2026 sai desta declaração de edições, sem proibir outras ocorrências legítimas da mesma data. Leitura cruzada do diff reservada ao lugar de direção antes da fusão. |

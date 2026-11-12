@@ -3000,8 +3000,8 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt: days to pay a supplier, and euros overdue, with total debt still below the limit. | eva-t | retirada | EVA-T: saiu com o texto julgado e a edição única de lançamento. |
 | conteudo | Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de , e designações repartidas por duas pessoas; a câmara instalada em tem lugares. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
 | conteudo | Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the term, and designations split between two people; the council installed in has seats. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
-| conteudo | O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado. | e1b | viva | A leitura do Évora 2027 (passagem E1b, decisão 4 do lugar de direção): as duas frases impressas na abertura do estudo que a origem em src/data/leituras.mjs cita, sem as duas datas e com «a câmara» no lugar de «o município», pelo vocabulário fechado (§1.98); a lista dos estudos e a página de Évora rendem-na como resumo do estudo. |
-| conteudo | The State’s money is what arrived; the council’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published. | e1b | viva | ver a razão na gémea portuguesa |
+| conteudo | O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado. | e1b | retirada | EVB-T: saiu com o texto julgado e a edição única de lançamento. |
+| conteudo | The State’s money is what arrived; the council’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published. | e1b | retirada | EVB-T: saiu com o texto julgado e a edição única de lançamento. |
 | conteudo | Évora Governo e democracia publicado a | eo1 | retirada | Texto composto do lugar, do tema e da data de um estudo (bloco E1, o estudo de quem governou na primeira página), conferido pela lista fechada do país. EO1: deixou de se render com a entrada do estudo e a atualização das contagens medidas. |
 | conteudo | Évora Government and democracy published on | eo1 | retirada | Texto composto do lugar, do tema e da data de um estudo (bloco E1, o estudo de quem governou na primeira página), conferido pela lista fechada do país. EO1: deixou de se render com a entrada do estudo e a atualização das contagens medidas. |
 | conteudo | O orçamento, a cobrança, a dívida e a certificação das contas da Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
@@ -5534,7 +5534,6 @@ A adenda C nomeia a medida, a União quando aplicável e o período da linha rev
 | conteudo | (correction, current) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 03.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
 | conteudo | (atualização) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
-| conteudo | 06.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
 | conteudo | (update) | ed2 | retirada | ED3: substituída pela linha única, com cada data uma vez e a edição lida identificada. |
 | conteudo | 02.11.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
 | conteudo | 21.10.2026 | ed2 | viva | ED2: data, natureza e destino conferidos contra o manifesto. |
@@ -5642,3 +5641,10 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 
 | navegacao | estudo | eva-t | viva | Rótulo da novidade da edição de lançamento, composto pela primeira página. |
 | navegacao | study | eva-t | viva | Rótulo da novidade da edição de lançamento, composto pela primeira página. |
+
+## EVB-T: leitura julgada na edição única
+
+| Classe | Texto | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A parte da cultura está paga pelos tetos de e ; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas. | evb-t | viva | EVB-T: C039, com os anos por referência e a palavra câmara no lugar de município, como declarado na origem da leitura. |
+| conteudo | The culture share is paid up to the and ceilings; the council&#39;s is still to be confirmed, and part of the European money depends on applications. | evb-t | viva | EVB-T: C039, com os anos por referência e a palavra council no lugar de municipality, como declarado na origem da leitura. |
