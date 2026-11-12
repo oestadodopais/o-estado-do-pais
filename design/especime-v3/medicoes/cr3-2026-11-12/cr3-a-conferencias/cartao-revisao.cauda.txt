@@ -1,0 +1,2 @@
+CR3-A cartão: 10 plantas fixas recusadas.
+{ plantas: 20, controlos: 8 }

@@ -1,0 +1,36 @@
+{
+  "codigos_lidos_dos_ficheiros": {
+    "acesso": 0,
+    "quadro": 0,
+    "cartao-revisao": 0,
+    "indice": 0,
+    "cartao": 0,
+    "alvos": 0,
+    "zero": 0,
+    "quadro-final": 0,
+    "ledger": 0,
+    "dados": 0,
+    "check-indice": 0,
+    "check-alvos": 0,
+    "check-sobreposicao": 0
+  },
+  "plantas_acesso": 14,
+  "plantas_fixas": {
+    "quadro": 10,
+    "cartao": 10,
+    "indice": 6
+  },
+  "plantas_alvos": 12,
+  "ficheiros_identicos": 4249,
+  "dados_sha256": "2a34a0d8586006e2469f5ea92f906a2b9180feb5731c91c3846f1e185e92f059",
+  "corridas_explicitas_de_conferencias": 12,
+  "corridas_integrais_dos_portoes": 0,
+  "capturas": 0,
+  "commits_pontos_1_a_3": [
+    "dc03404c4",
+    "dec2e9f4c",
+    "f2396a2a7"
+  ],
+  "chamadas_de_ferramentas_ate_ao_pedido_do_commit_final": 37,
+  "unidade_das_chamadas": "invocações de functions.exec; espera e verificação final na resposta"
+}

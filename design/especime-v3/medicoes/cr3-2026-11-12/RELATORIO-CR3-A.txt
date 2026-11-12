@@ -1,0 +1,10 @@
+1. Conferência do acesso independente de razoes; dois moldes literais, campo a campo, nas duas línguas; leitura anterior à comparação para com a razão.
+1. Prova: 14 plantas recusadas, incluindo condição do guião invertida, cada data trocada nas duas línguas e leitura anterior; acesso=0; listas e seleção=0.
+2. Caso fixo bilingue guardado com uma linha e uma revisão por aplicar: mínimos de 10 plantas no quadro, 10 no cartão e 6 no índice.
+2. Zero revisões simulado em memória: quadro e cartão conservam as plantas fixas; código 0; índice com 12 plantas, seis do caso fixo, código 0.
+3. Alvos obrigatórios em todas as rotas fixas, salvo /estado-e-economia/ e /en/state-and-economy/: perderam os avisos das duas exportações aplicadas.
+3. Doze plantas de rotas vazias recusadas; alvos=0; navegador: 80 combinações e duas plantas de alvos; check:sobreposicao=0.
+4. Códigos lidos dos ficheiros: check:quadro=0; check:cartao=0; check:indice=0 (com navegador); ledger:check=0; guião das releituras=0.
+4. Os 4249 ficheiros de ledger/claims e src/data conservam exatamente os mesmos bytes; nenhuma página, linha aplicada ou frase alterada; motor intacto.
+Provas em cr3-a-conferencias: apenas códigos e últimas vinte linhas, sem caminhos locais; medidas em medidas-do-construtor-cr3-a.json; sem capturas nem portões integrais.
+Custo até ao pedido do commit final: 37 chamadas de functions.exec; 12 corridas explícitas de conferências; espera e verificação final na resposta; tokens used não exposto.

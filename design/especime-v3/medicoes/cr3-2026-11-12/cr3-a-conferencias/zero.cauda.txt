@@ -1,0 +1,20 @@
+PAI2 pt: frase da revisão trocada recusado.
+PAI2 en: medida retirada recusado.
+PAI2 en: valor trocado recusado.
+PAI2 en: sem anterior indevido recusado.
+PAI2 en: período trocado recusado.
+PAI2 en: selo antes do período recusado.
+PAI2 en: prosa acrescentada recusado.
+PAI2 en: unidade da comparação trocada recusado.
+PAI2 en: cabeçalho da referência trocado recusado.
+PAI2 en: nome trocado recusado.
+PAI2 en: divergência sem aviso recusado.
+PAI2 en: aviso sem divergência recusado.
+PAI2 en: data da revisão trocada recusado.
+PAI2 en: nome da revisão trocado recusado.
+PAI2 en: frase da revisão trocada recusado.
+CR3-A quadro: 10 plantas fixas recusadas.
+PAI2: 33 plantas, controlos intactos nas duas edições.
+PAI2-C: 36 plantas no total; unidade, coordenadas e população incompatíveis recusadas, controlo reposto verde.
+CR3-A cartão: 10 plantas fixas recusadas.
+CR3-A zero: nenhuma revisão nos dados em memória; quadro e cartão mantêm as plantas fixas; nenhum ficheiro alterado.
