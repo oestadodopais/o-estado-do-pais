@@ -28,7 +28,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cdebf6664c06eac731936bd9163d6096142ab735651e3a3d2ead12eb7046f8d6",
       "rh_id": "evb-ln001-parcela-1",
-      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -40,7 +40,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d692de7557a411d2a99feeb2ebc36b8b86fed2052b830de3144f492519419cd3",
       "rh_id": "evb-ln001-parcela-2",
-      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -52,7 +52,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ffad92e315ccce27f2149b0aae1aedc56d766f4caaf6892939e609ab58446ac6",
       "rh_id": "evb-ln001-parcela-3",
-      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -63,7 +63,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3119681ccc85de5b0c8bb8b8787a7da2640f994b5cc41c3ce2c8cb4cdf7af77c",
       "rh_id": "evb-ln001",
-      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },
@@ -73,9 +73,9 @@
       "exported_at": "2026-11-12",
       "exported_row_sha256": "21c4f118fdd409ce631305bbad27b81d60d3743d105bf30d14c74393d159d948",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "915d1bd591aca1553f31c79f4cc66312e305704c64ffb21109cb45864470ce36",
+      "origin_row_sha256": "013b062f99eedca9f7050d7e93dfbf342af8ff679a9b221b58065c0e84e307e1",
       "rh_id": "painel-transferido",
-      "rh_ledger_sha256": "b9c151e8d437b7ff1bf5488383b990de5e1e5b3e7cf60bfe60494cfa9d6ea537",
+      "rh_ledger_sha256": "93616eb740fd872838f6498a2beb9b3a407fc78410341f6ccdeebc997f3a6fd8",
       "rh_study": "19 Évora 2027 Capital Europeia da Cultura",
       "verifications_at_export": 0
     },

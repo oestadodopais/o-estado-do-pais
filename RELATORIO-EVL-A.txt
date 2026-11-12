@@ -1,0 +1,10 @@
+1. Motor: painel-transferido sem document no livro composto; título, página e resumo mantidos na entrada existente da travessia.
+1. Exportador: prova o corpo pelo resumo, o título e o excerto inteiro e único na página; valor, excerto e página preservados.
+Plantas: publisher.evl_test com código 0 e 42 conferências; outro resumo na entrada e excerto ausente recusados.
+Exportação --site --write: código 0; cinco ficheiros byte a byte iguais; reposta a reordenação incidental de doze linhas alheias.
+Portão do motor: uma corrida explícita, código 0, 1232 segundos; evl-a-gate.log e evl-a-gate.codigo.
+2. Sítio: 14 selos em 9 unidades por língua; lista em EVL-A-selos-por-unidade.txt; commit 8d5acf094 confirmado.
+Revisão semântica: unidade 41, ocorrência 41.1, PT e EN, fala de financiamento; o selo aponta para transferências relatadas ao painel.
+3. Códigos lidos em evl-a-conferencias: ledger 0; cruzamento com o motor 0; texto da página 0; typecheck 0.
+Commits confirmados: motor c2c988c0 e inventário 8d5acf094; build, gate:html e check:leituras ficam para a direção.
+Custo até esta redação: 49 chamadas da interface; 6 corridas explícitas de conferências e 1 exportação; hook do motor adiado pelo lançador.

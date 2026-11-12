@@ -1,0 +1,110 @@
+[
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "pt",
+    "blocos": 198,
+    "paragrafos": 110,
+    "titulos": 38,
+    "itens": 38,
+    "celulas": 676,
+    "plantas": [
+      {
+        "nome": "palavra no parágrafo",
+        "recusas": 1
+      },
+      {
+        "nome": "palavra na primeira célula",
+        "recusas": 1
+      },
+      {
+        "nome": "número no texto",
+        "recusas": 1
+      },
+      {
+        "nome": "blocos fora de ordem",
+        "recusas": 4
+      }
+    ]
+  },
+  {
+    "estudo": "evora-contas-da-camara-2010-2025",
+    "lingua": "en",
+    "blocos": 198,
+    "paragrafos": 110,
+    "titulos": 38,
+    "itens": 38,
+    "celulas": 676,
+    "plantas": [
+      {
+        "nome": "palavra no parágrafo",
+        "recusas": 1
+      },
+      {
+        "nome": "palavra na primeira célula",
+        "recusas": 1
+      },
+      {
+        "nome": "número no texto",
+        "recusas": 1
+      },
+      {
+        "nome": "blocos fora de ordem",
+        "recusas": 4
+      }
+    ]
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "pt",
+    "blocos": 165,
+    "paragrafos": 91,
+    "titulos": 38,
+    "itens": 15,
+    "celulas": 966,
+    "plantas": [
+      {
+        "nome": "palavra no parágrafo",
+        "recusas": 1
+      },
+      {
+        "nome": "palavra na primeira célula",
+        "recusas": 1
+      },
+      {
+        "nome": "número no texto",
+        "recusas": 1
+      },
+      {
+        "nome": "blocos fora de ordem",
+        "recusas": 4
+      }
+    ]
+  },
+  {
+    "estudo": "evora-2027-capital-europeia-da-cultura",
+    "lingua": "en",
+    "blocos": 165,
+    "paragrafos": 91,
+    "titulos": 38,
+    "itens": 15,
+    "celulas": 966,
+    "plantas": [
+      {
+        "nome": "palavra no parágrafo",
+        "recusas": 1
+      },
+      {
+        "nome": "palavra na primeira célula",
+        "recusas": 1
+      },
+      {
+        "nome": "número no texto",
+        "recusas": 1
+      },
+      {
+        "nome": "blocos fora de ordem",
+        "recusas": 4
+      }
+    ]
+  }
+]

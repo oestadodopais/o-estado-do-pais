@@ -341,6 +341,142 @@
     "ledger": 0,
     "plantas": 0,
     "texto-da-pagina": 0,
-    "typecheck": 0
+    "typecheck": 0,
+    "core.gate": 0
+  },
+  "gate": {
+    "corridas_explicitas": 1,
+    "duracao_segundos": 1232,
+    "codigo": 0
+  },
+  "plantas": {
+    "publisher.evl_test": {
+      "codigo": 0,
+      "conferencias": 42
+    },
+    "texto_da_pagina": [
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "lingua": "pt",
+        "blocos": 198,
+        "paragrafos": 110,
+        "titulos": 38,
+        "itens": 38,
+        "celulas": 676,
+        "plantas": [
+          {
+            "nome": "palavra no parágrafo",
+            "recusas": 1
+          },
+          {
+            "nome": "palavra na primeira célula",
+            "recusas": 1
+          },
+          {
+            "nome": "número no texto",
+            "recusas": 1
+          },
+          {
+            "nome": "blocos fora de ordem",
+            "recusas": 4
+          }
+        ]
+      },
+      {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "lingua": "en",
+        "blocos": 198,
+        "paragrafos": 110,
+        "titulos": 38,
+        "itens": 38,
+        "celulas": 676,
+        "plantas": [
+          {
+            "nome": "palavra no parágrafo",
+            "recusas": 1
+          },
+          {
+            "nome": "palavra na primeira célula",
+            "recusas": 1
+          },
+          {
+            "nome": "número no texto",
+            "recusas": 1
+          },
+          {
+            "nome": "blocos fora de ordem",
+            "recusas": 4
+          }
+        ]
+      },
+      {
+        "estudo": "evora-2027-capital-europeia-da-cultura",
+        "lingua": "pt",
+        "blocos": 165,
+        "paragrafos": 91,
+        "titulos": 38,
+        "itens": 15,
+        "celulas": 966,
+        "plantas": [
+          {
+            "nome": "palavra no parágrafo",
+            "recusas": 1
+          },
+          {
+            "nome": "palavra na primeira célula",
+            "recusas": 1
+          },
+          {
+            "nome": "número no texto",
+            "recusas": 1
+          },
+          {
+            "nome": "blocos fora de ordem",
+            "recusas": 4
+          }
+        ]
+      },
+      {
+        "estudo": "evora-2027-capital-europeia-da-cultura",
+        "lingua": "en",
+        "blocos": 165,
+        "paragrafos": 91,
+        "titulos": 38,
+        "itens": 15,
+        "celulas": 966,
+        "plantas": [
+          {
+            "nome": "palavra no parágrafo",
+            "recusas": 1
+          },
+          {
+            "nome": "palavra na primeira célula",
+            "recusas": 1
+          },
+          {
+            "nome": "número no texto",
+            "recusas": 1
+          },
+          {
+            "nome": "blocos fora de ordem",
+            "recusas": 4
+          }
+        ]
+      }
+    ]
+  },
+  "commits": {
+    "ponto_2": "8d5acf094",
+    "ponto_1": "c2c988c0ae7efcc773d75a02f8ed07a699573265"
+  },
+  "execucao": {
+    "corridas_conferencias_explicitas": 6,
+    "corridas_exportador": 1,
+    "portoes_completos_sitio": 0,
+    "capturas": 0,
+    "nota": "As seis conferências são as plantas EVL, o core.gate e as quatro conferências do sítio. Não houve outra corrida do core.gate no hook.",
+    "chamadas_interface_ate_redacao": 49,
+    "contagem": "Chamadas functions.exec; inclui as esperas e esta redação.",
+    "hook_motor": "core.gate adiado para a aterragem pelo lançador (OEDP_GATE=adiado), sem nova corrida"
   }
 }
