@@ -1,0 +1,66 @@
+{
+ "valor_no_motor_do_relato_ao_painel_em_milhoes": {
+  "valor": "34",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['painel-transferido']['value'])\""
+ },
+ "valor_no_motor_da_contribuicao_inicial": {
+  "valor": "2000000",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-ln001-parcela-1']['value'])\""
+ },
+ "valor_no_motor_do_pagamento_da_cultura_em_2025": {
+  "valor": "3750000",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-ln001-parcela-2']['value'])\""
+ },
+ "valor_no_motor_do_pagamento_do_turismo_em_2025": {
+  "valor": "3920000",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-ln001-parcela-3']['value'])\""
+ },
+ "soma_das_tres_parcelas": {
+  "valor": "9670000",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(sum(int(c['evb-ln001-parcela-%d'%i]['value']) for i in (1,2,3)))\""
+ },
+ "valor_no_motor_da_soma_em_milhoes": {
+  "valor": "9.7",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-ln001']['value'])\""
+ },
+ "pagina_da_contribuicao_inicial_nas_contas": {
+  "valor": "72",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-ln001-parcela-1']['document']['page'])\""
+ },
+ "pagina_dos_pagamentos_de_2025_nas_contas": {
+  "valor": "57 57",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-ln001-parcela-2']['document']['page'],c['evb-ln001-parcela-3']['document']['page'])\""
+ },
+ "linhas_do_manifesto_da_travessia_de_evora": {
+  "valor": "70",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;print(len(json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'publisher/manifest.evora.json'),encoding='utf-8'))['rows']))\""
+ },
+ "linhas_do_estudo_19_no_manifesto_da_travessia": {
+  "valor": "0",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;print(sum(1 for r in json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'publisher/manifest.evora.json'),encoding='utf-8'))['rows'] if r.get('rh_study','').startswith('19')))\""
+ },
+ "linhas_de_evora_no_livro_do_sitio": {
+  "valor": "70",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import glob;print(len(glob.glob('ledger/claims/evora-*.yml')))\""
+ },
+ "linhas_do_livro_do_sitio": {
+  "valor": "4161",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import glob;print(len(glob.glob('ledger/claims/*.yml')))\""
+ },
+ "soma_recebida_do_protocolo_em_milhoes_como_se_imprime": {
+  "valor": "9,7",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(str(c['evb-ln001']['value']).replace('.',','))\""
+ },
+ "linha_do_vagar_paga_em_2025_em_milhoes_como_se_imprime": {
+  "valor": "1,5",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(str(c['evb-a-cab-26']['value']).replace('.',','))\""
+ },
+ "contratualizado_ou_aprovado_no_quadro_das_contas_em_milhoes_como_se_imprime": {
+  "valor": "30,9",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(str(c['evb-ln017']['value']).replace('.',','))\""
+ },
+ "valor_no_motor_da_linha_do_vagar_paga_em_2025": {
+  "valor": "1500000 57",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'content/19 Évora 2027 Capital Europeia da Cultura/ledger.json'),encoding='utf-8'));c={x['id']:x for x in d['claims']};print(c['evb-a-cab-26-fonte']['value'], c['evb-a-cab-26-fonte']['document']['page'])\""
+ }
+}
