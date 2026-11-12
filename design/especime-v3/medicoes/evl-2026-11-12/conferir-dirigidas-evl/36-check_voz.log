@@ -1,0 +1,58 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/voz2a.mjs && node scripts/leituras/conferir-pares.mjs dist design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json 2026-11-08 && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs && node tests/voz/coragua.mjs && node tests/eva/titulos-copiados.mjs
+
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":63,"plantas":57,"documentos":22,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+REC2 voz das edições: retirada sem faixa; publicação em falta continua recusada.
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 28 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-12.
+  FP1 en: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-12.
+  REC2 inventário: 12 descrições literais de trabalhos retirados saltadas; conta conferida.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  PORTÃO DA VOZ · 64 problema(s)
+
+    · B1 lista fechada: estudos: «milhões de euros».
+    · B1 lista fechada: estudos: «recebidos do protocolo até ao fim de».
+    · B1 lista fechada: estudos: «2025».
+    · B1 lista fechada: estudos: «, pelas contas da associação».
+    · B1 lista fechada: estudos: «milhões de euros».
+    · B1 lista fechada: estudos: «dados como já transferidos no relato ao painel europeu, em junho de».
+    · B1 lista fechada: estudos: «2025».
+    · B1 lista fechada: en/studies: «million euros».
+    · B1 lista fechada: en/studies: «received under the protocol up to the end of».
+    · B1 lista fechada: en/studies: «2025».
+    · B1 lista fechada: en/studies: «, by the association's accounts».
+    · B1 lista fechada: en/studies: «million euros».
+    · B1 lista fechada: en/studies: «given as already transferred in the report to the European panel, in June».
+    · B1 lista fechada: en/studies: «2025».
+    · B1 lista fechada país: /: «9,7».
+    · B1 lista fechada país: /: «milhões de euros».
+    · B1 lista fechada país: /: «fonte».
+    · B1 lista fechada país: /: «· calculado».
+    · B1 lista fechada país: /: «recebidos do protocolo até ao fim de».
+    · B1 lista fechada país: /: «2025».
+    · B1 lista fechada país: /: «, pelas contas da associação».
+    · B1 lista fechada país: /: «34».
+    · B1 lista fechada país: /: «milhões de euros».
+    · B1 lista fechada país: /: «fonte».
+    · B1 lista fechada país: /: «Comissão Europeia, pelo painel europeu».
+    · B1 lista fechada país: /: «dados como já transferidos no relato ao painel europeu, em junho de».
+    · B1 lista fechada país: /: «2025».
+    · B1 lista fechada país: en: «9,7».
+    · B1 lista fechada país: en: «million euros».
+    · B1 lista fechada país: en: «source».
+    · B1 lista fechada país: en: «· calculated».
+    · B1 lista fechada país: en: «received under the protocol up to the end of».
+    · B1 lista fechada país: en: «2025».
+    · B1 lista fechada país: en: «, by the association's accounts».
+    · B1 lista fechada país: en: «34».
+    · B1 lista fechada país: en: «million euros».
+    · B1 lista fechada país: en: «source».
+    · B1 lista fechada país: en: «Comissão Europeia, pelo painel europeu».
+    · B1 lista fechada país: en: «given as already transferred in the report to the European panel, in June».
+    · B1 lista fechada país: en: «2025».
+    … e mais 24
+

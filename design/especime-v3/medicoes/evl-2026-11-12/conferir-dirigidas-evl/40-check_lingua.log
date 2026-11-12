@@ -1,0 +1,30 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/edicoes/lingua.mjs && node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+ED1-A língua: edição atual sem língua recusada.
+ED1-A língua: edição anterior órfã recusada.
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+  PORTÃO DA LÍNGUA · 11 problema(s)
+
+    · o título «RELATÓRIO DE ATIVIDADES E CONTAS 2025» (3 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+    · o título «Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+    · o organismo «Associação Évora 2027» (3 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · o organismo «Comissão Europeia, pelo painel europeu» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · a linha "evora-2027-contribuicao-inicial-do-estado-2024" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · a linha "evora-2027-pago-pela-cultura-2025" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · a linha "evora-2027-pago-pelo-turismo-2025" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · a linha "evora-2027-transferido-no-relato-ao-painel-2025" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · localizador em português sem lang="pt-PT" na edição inglesa: «p. 72…» (1 ocorrência(s), ex.: dist/en/ledger/evora-2027-contribuicao-inicial-do-estado-2024/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «p. 57…» (2 ocorrência(s), ex.: dist/en/ledger/evora-2027-pago-pela-cultura-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «p. 8…» (1 ocorrência(s), ex.: dist/en/ledger/evora-2027-transferido-no-relato-ao-painel-2025/index.html).
+
