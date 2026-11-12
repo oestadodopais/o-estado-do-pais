@@ -57,7 +57,7 @@ function visivel(el) {
  * A célula numa página construída.
  * @param {import('node-html-parser').HTMLElement} root @param {'pt'|'en'} lang @param {string} rota
  */
-export function conferirOrdemDaPagina(root, lang, rota) {
+export function conferirOrdemDaPagina(root, lang, rota, opcoesRevisao = {}) {
   /** @type {string[]} */
   const erros = [];
   const contas = { cartoes: 0, com_dobra: 0, sem_definicao: 0, faixa_da_uniao: 0 };
@@ -66,7 +66,7 @@ export function conferirOrdemDaPagina(root, lang, rota) {
     const id = cartao.getAttribute('data-cartao-medida') ?? (cartao.hasAttribute('data-cartao-camaras') ? 'camaras' : '?');
     const falha = (/** @type {string} */ m) => erros.push(`K19 · ${rota} · ${id}: ${m}`);
     contas.cartoes++;
-    const revisao=conferirRevisaoDoCartao(cartao,lang);
+    const revisao=conferirRevisaoDoCartao(cartao,lang,opcoesRevisao);
     revisao.erros.forEach(e=>falha(`O2 · ${e}`));
     const pecas = cartao.childNodes.filter((n) => /** @type {any} */ (n).tagName).map((n) => n===revisao.bloco ? 'comparacao' : pecaDoCartao(n));
     if (pecas[0] !== 'nome' || pecas[1] !== 'valor') falha(`O1 · o cartão não abre pelo nome e pela linha do valor (${pecas.slice(0, 2).join(', ')})`);

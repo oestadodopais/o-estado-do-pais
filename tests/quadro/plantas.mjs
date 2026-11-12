@@ -5,8 +5,9 @@ import path from 'node:path';
 import {parse} from 'node-html-parser';
 import {ENTRADAS} from '../../src/data/primeira-pagina.mjs';
 import {conferirQuadro,conferirAvisos,revisoesPorAplicar,livroDoQuadro,superficieDoQuadro,conferirUnidadeDaComparacao} from '../../scripts/check-quadro.mjs';
+import {casoFixo,pendentesFixos} from '../revisoes/caso-fixo.mjs';
 const dist=process.env.OEDP_DIST??'dist';
-let conta=0;
+let conta=0, plantasFixas=0;
 for(const lang of ['pt','en']){
  const f=lang==='pt'?'temas':'en/themes',html=fs.readFileSync(path.join(dist,f,'index.html'),'utf8');
  const medir=r=>conferirQuadro(r,lang,{dist}).erros;
@@ -26,14 +27,19 @@ for(const lang of ['pt','en']){
  const paginas=ENTRADAS.filter(e=>e.seccoes.some(s=>s.cartoes.length)).map(e=>fs.readFileSync(path.join(dist,e.rota[lang].replace(/^\//,''),'index.html'),'utf8'));
  const card=paginas.find(p=>parse(p).querySelector('[data-aviso-revisao]'))??paginas[0];
  assert.deepEqual(conferirAvisos(parse(card),lang).erros,[]);
- if(parse(card).querySelector('[data-aviso-revisao]')) for(const [nome,mudar,mordida] of [
+ for(const [htmlAviso,pendentes,fixo] of [[casoFixo.edicoes[lang].cartao,pendentesFixos,true],[card,revisoesPorAplicar(),false]]){
+ assert.deepEqual(conferirAvisos(parse(htmlAviso),lang,{pendentes}).erros,[]);
+ if(parse(htmlAviso).querySelector('[data-aviso-revisao]')) for(const [nome,mudar,mordida] of [
   ['divergência sem aviso',r=>r.querySelector('[data-aviso-revisao]').remove(),/Q3/],
   ['aviso sem divergência',r=>r.querySelector('[data-aviso-revisao]').setAttribute('data-aviso-revisao','divida-publica-2025'),/Q4/],
   ['data da revisão trocada',r=>r.querySelector('[data-aviso-revisao] [data-de-campo]').set_content('01.01.1900'),/Q4/],
   ['nome da revisão trocado',r=>r.querySelector('[data-revisao-nome]').set_content('Outra medida, 1900'),/Q4/],
   ['frase da revisão trocada',r=>r.querySelector('[data-aviso-revisao] a').insertAdjacentHTML('beforeend',' Texto inventado.'),/Q4/],
- ]){const copia=parse(card);mudar(copia);assert(conferirAvisos(copia,lang).erros.some(e=>mordida.test(e)),nome);conta++;console.log(`PAI2 ${lang}: ${nome} recusado.`);}
+ ]){const copia=parse(htmlAviso);mudar(copia);assert(conferirAvisos(copia,lang,{pendentes}).erros.some(e=>mordida.test(e)),nome);conta++;if(fixo)plantasFixas++;console.log(`PAI2 ${lang}: ${nome} recusado.`);}
+ }
 }
+assert(plantasFixas>=10,'faltam plantas dos avisos no caso fixo');
+console.log(`CR3-A quadro: ${plantasFixas} plantas fixas recusadas.`);
 for(const lang of ['pt','en'])for(const rota of [lang==='pt'?'uniao-europeia':'en/european-union',`${lang==='pt'?'livro-razao':'en/ledger'}/series/sobrecarga-do-custo-da-habitacao-2025-paises`]){
  const html=fs.readFileSync(path.join(dist,rota,'index.html'),'utf8'),root=parse(html);
  assert.deepEqual(conferirAvisos(root,lang).erros,[]);

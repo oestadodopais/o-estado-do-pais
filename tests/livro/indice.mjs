@@ -83,6 +83,7 @@
  * mesma função que a escreve confirma a função, não o sítio. Uma cadeia que mude
  * do outro lado tem de fazer esta régua falhar, e não acompanhá-la em silêncio.
  */
+import {casoFixo,linhasFixas} from '../revisoes/caso-fixo.mjs';
 import { localizadorEo1Confere, temProvaEo1, selagemProvasEo1Confere } from '../../scripts/localizadores-eo1-do-portao.mjs';
 import fs from 'node:fs';
 import http from 'node:http';
@@ -926,13 +927,13 @@ celula('I2', 'as datas ISO à vista', (falhas) => {
 });
 
 /** Cada período fica dentro da entrada, com a origem da mesma linha. */
-function conferirPeriodosDoIndice(raiz, pag, falhas) {
+function conferirPeriodosDoIndice(raiz, pag, falhas, linhas = LINHAS_DA_REGUA) {
   let entradas = 0;
   let periodos = 0;
   for (const item of raiz.querySelectorAll('.livro-item[data-linha-id]')) {
     entradas++;
     const id = item.getAttribute('data-linha-id');
-    const linha = LINHAS_DA_REGUA.get(id);
+    const linha = linhas.get(id);
     if (!linha) {
       falhas.push(`${pag.rota}: ${id}: a entrada não tem linha no livro-razão.`);
       continue;
@@ -2374,6 +2375,28 @@ function provaPeriodos() {
         if (!mordeu) falhas.push(`A planta do período ${estrago} em ${lang} não deu a queixa da própria linha.`);
       }
     }
+    let fixas = 0;
+    for (const lang of ['pt', 'en']) {
+      const pag = {lang, rota: 'caso-fixo'};
+      const html = casoFixo.edicoes[lang].item;
+      const intacta = [];
+      conferirPeriodosDoIndice(parse(html), pag, intacta, linhasFixas);
+      if (intacta.length) falhas.push(...intacta);
+      for (const estrago of ['retirado', 'trocado', 'aviso-com-periodo']) {
+        const copia = parse(html), id = casoFixo.linha.id;
+        const campo = copia.querySelector('[data-de-campo="reference_date"]');
+        if (estrago === 'retirado') campo.remove();
+        else if (estrago === 'trocado') campo.set_content('1900');
+        else copia.querySelector('[data-revisao-nome]').insertAdjacentHTML('beforeend', ', '+campo.outerHTML);
+        const queixas = [];
+        conferirPeriodosDoIndice(copia, pag, queixas, linhasFixas);
+        const mordeu = queixas.some(q => q.startsWith(`caso-fixo: ${id}:`) && q.includes(estrago === 'trocado' ? '«1900»' : `tem ${estrago === 'retirado' ? 0 : 2} campos`));
+        if (!mordeu) falhas.push(`Caso fixo: período ${estrago} aceite em ${lang}.`);
+        plantas.push({nome: `Caso fixo: ${estrago}, ${lang}`, id, mordeu});
+        fixas++;
+      }
+    }
+    if (fixas < 6) falhas.push('Faltam plantas dos períodos no caso fixo.');
     medida.plantas_periodos = plantas;
     console.log(JSON.stringify({ plantas_periodos: plantas }));
     return `${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas dos períodos a morder, em cópias dos índices construídos`;
