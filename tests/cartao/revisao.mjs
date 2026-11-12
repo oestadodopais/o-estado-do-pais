@@ -1,6 +1,7 @@
 /** PAI2-B: um bloco de revisão, com uma frase por linha revista do cartão. */
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
+import {ENTRADAS} from '../../src/data/primeira-pagina.mjs';
 import {reguaDoCartao} from '../../src/lib/enquadramento.mjs';
 import {conferirAvisos,revisoesPorAplicar} from '../../scripts/check-quadro.mjs';
 const pendentes=revisoesPorAplicar();
@@ -22,10 +23,19 @@ export function conferirRevisaoDoCartao(cartao,lang){
 /** @param {(p:string)=>string} ler @param {Function} ordem */
 export function plantasDaRevisao(ler,ordem){
  let plantas=0,controlos=0;
- for(const [lang,rota] of [['pt','estado-e-economia'],['en','en/state-and-economy']]){
-  const html=ler(rota+'/index.html'),root=parse(html);
-  const card=root.querySelector('[data-cartao-medida="desempenho-das-exportacoes-2025"]');
+ for(const lang of ['pt','en']){
+  const paginas=ENTRADAS.filter(e=>e.seccoes.some(s=>s.cartoes.length)).map(e=>{
+   const rota=e.rota[lang].replace(/^\/|\/$/g,'');return {rota,root:parse(ler(rota+'/index.html'))};
+  });
+  const {rota,root}=paginas.find(p=>p.root.querySelector('[data-cartao-revisao]'))??paginas[0];
+  const card=root.querySelector('[data-cartao-revisao]')?.closest('[data-cartao-medida]')??root.querySelector('[data-cartao-medida]');
   assert(card);assert.deepEqual(conferirRevisaoDoCartao(card,lang).erros,[]);controlos++;
+  if(!card.querySelector('[data-cartao-revisao]')){
+   const copia=parse(card.outerHTML).firstChild;
+   copia.insertAdjacentHTML('beforeend',`<div data-cartao-revisao="${card.getAttribute('data-cartao-medida')}"><p>Revisão inexistente</p></div>`);
+   assert(conferirRevisaoDoCartao(copia,lang).erros.length);assert(ordem(parse(copia.outerHTML),lang,rota).erros.length);plantas++;
+   continue;
+  }
   for(const mudar of [
    c=>c.insertAdjacentHTML('beforeend',c.querySelector('[data-cartao-revisao]').outerHTML),
    c=>c.querySelector('[data-cartao-revisao]').insertAdjacentHTML('beforeend',c.querySelector('[data-aviso-revisao]').outerHTML),

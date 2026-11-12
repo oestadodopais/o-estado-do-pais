@@ -547,5 +547,21 @@
       "old_value": "96",
       "new_value": "87,72"
     }
+  ],
+  "desempenho-das-exportacoes-2024": [
+    {
+      "date": "2026-11-12",
+      "kind": "atualizacao",
+      "old_value": "17,1",
+      "new_value": "17,0"
+    }
+  ],
+  "desempenho-das-exportacoes-2025": [
+    {
+      "date": "2026-11-12",
+      "kind": "atualizacao",
+      "old_value": "8,2",
+      "new_value": "8,0"
+    }
   ]
 }

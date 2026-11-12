@@ -134,6 +134,27 @@ def plantas_lugar(r: dict, texto: str) -> list[dict]:
     return plantas
 
 
+def com_historia(registo: dict, cid: str, antes: dict, depois: dict) -> dict:
+    def assinaturas(linha):
+        return [{k: c[k] for k in ("date", "kind", "old_value", "new_value")}
+                for c in linha["corrections"] if "field" not in c and c["kind"] in ("correcao", "atualizacao")]
+    anteriores, novas = assinaturas(antes), assinaturas(depois)
+    seladas = registo.get(cid, [])
+    if seladas not in (anteriores, novas) or novas[:len(anteriores)] != anteriores:
+        raise SystemExit(f"PARAGEM: {cid}: história selada contraditória; não se reescreve")
+    return {**registo, cid: novas}
+
+
+def planta_historia(registo: dict, cid: str, antes: dict, depois: dict) -> dict:
+    copia = json.loads(json.dumps(registo))
+    copia[cid] = [{"date": "contraditória"}]
+    try:
+        com_historia(copia, cid, antes, depois)
+    except SystemExit as e:
+        return {"linha": cid, "planta": "história anterior contraditória", "mordeu": "história selada contraditória" in str(e), "razao": str(e)}
+    return {"linha": cid, "planta": "história anterior contraditória", "mordeu": False}
+
+
 def razoes(r: dict, data_do_painel: str) -> list[dict]:
     """As três entradas desta releitura, com as frases do modelo."""
     dia_iso = r["pedido"]["quando"][:10]
@@ -397,6 +418,8 @@ def main() -> int:
     resultado, plantas, pendentes = [], [], []
     lugares_destino = SITIO / "src/data/lugar-das-linhas.mjs"
     lugares = lugares_destino.read_text(encoding="utf-8")
+    historia_destino = SITIO / "ledger/historias-valores.json"
+    historias = json.loads(historia_destino.read_text(encoding="utf-8"))
     for r in reg["linhas"]:
         plantas.extend(plantas_lugar(r, lugares))
         lugares = com_lugar(lugares, r["id"], lugar_do_pedido(r))
@@ -440,6 +463,8 @@ def main() -> int:
             novo += "\n"
         depois = yaml.safe_load(novo)
         conferir_linha(antes, depois, r, entradas)
+        plantas.append(planta_historia(historias, cid, antes, depois))
+        historias = com_historia(historias, cid, antes, depois)
         # AS PLANTAS DA FUNÇÃO: cada estrago numa cópia da linha nova tem de ser recusado com a sua razão.
         for nome, estraga, razao in (
             ("atualização retirada", lambda c: c["corrections"].pop(len(antes["corrections"])), "exige a atualização"),
@@ -495,6 +520,7 @@ def main() -> int:
         raise SystemExit("PARAGEM: uma planta da aplicação não mordeu")
     if args.aplicar:
         pendentes.append((lugares_destino, lugares))
+        pendentes.append((historia_destino, json.dumps(historias, ensure_ascii=False, indent=2) + "\n"))
     for destino, novo in pendentes:
         destino.write_text(novo, encoding="utf-8")
         assert destino.read_text(encoding="utf-8") == novo
