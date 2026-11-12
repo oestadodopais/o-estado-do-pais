@@ -1,0 +1,34 @@
+{
+ "valor_antigo_de_desempenho-das-exportacoes-2024": {
+  "valor": "17,1",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));l={x['id']:x for x in d['linhas']}['desempenho-das-exportacoes-2024'];print(l['valor_antigo'])\""
+ },
+ "valor_novo_de_desempenho-das-exportacoes-2024": {
+  "valor": "17,0",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));l={x['id']:x for x in d['linhas']}['desempenho-das-exportacoes-2024'];print(l['valor_novo'])\""
+ },
+ "valor_antigo_de_desempenho-das-exportacoes-2025": {
+  "valor": "8,2",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));l={x['id']:x for x in d['linhas']}['desempenho-das-exportacoes-2025'];print(l['valor_antigo'])\""
+ },
+ "valor_novo_de_desempenho-das-exportacoes-2025": {
+  "valor": "8,0",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));l={x['id']:x for x in d['linhas']}['desempenho-das-exportacoes-2025'];print(l['valor_novo'])\""
+ },
+ "valor_antigo_de_sobrecarga-do-custo-da-habitacao-2025-ue": {
+  "valor": "7,7",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));l={x['id']:x for x in d['linhas']}['sobrecarga-do-custo-da-habitacao-2025-ue'];print(l['valor_antigo'])\""
+ },
+ "valor_novo_de_sobrecarga-do-custo-da-habitacao-2025-ue": {
+  "valor": "7,6",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;d=json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')));l={x['id']:x for x in d['linhas']}['sobrecarga-do-custo-da-habitacao-2025-ue'];print(l['valor_novo'])\""
+ },
+ "linhas_relidas": {
+  "valor": "3",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 -c \"import json,os;print(len(json.load(open(os.path.join(os.environ['RESEARCHHUB_DIR'],'indicators/out/releituras/2026-11-12/releitura.json')))['linhas']))\""
+ },
+ "linhas_de_lugar_das_linhas": {
+  "valor": "168",
+  "comando": "grep -c '' src/data/lugar-das-linhas.mjs"
+ }
+}
