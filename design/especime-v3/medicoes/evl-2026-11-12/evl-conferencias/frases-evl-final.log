@@ -1,0 +1,24 @@
+
+> o-estado-do-pais@0.1.0 check:frases-afirmacao
+> node tests/evb/texto-da-pagina.mjs && node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs && node tests/eva/textos-julgados.mjs && node tests/eva/modelos.mjs && node tests/evb/copias-julgadas.mjs
+
+evora-contas-da-camara-2010-2025/pt: 198 blocos, 110 parágrafos, 38 títulos, 38 itens, 676 células; 4 plantas recusadas.
+evora-contas-da-camara-2010-2025/en: 198 blocos, 110 parágrafos, 38 títulos, 38 itens, 676 células; 4 plantas recusadas.
+evora-2027-capital-europeia-da-cultura/pt: 165 blocos, 91 parágrafos, 38 títulos, 15 itens, 966 células; 4 plantas recusadas.
+evora-2027-capital-europeia-da-cultura/en: 165 blocos, 91 parágrafos, 38 títulos, 15 itens, 966 células; 4 plantas recusadas.
+adenda G: atribuições da leitura curta exigem registo; alternativas tipadas recusam e nomeiam a linha nos três campos e nas duas línguas; histórico E e F conferido
+adenda F: citações impressas PT e EN sem máscara, todas as ocorrências, palavras após números, prosa manual e modelos diferentes da fonte recusados
+adenda E: datas e valores conservam a chave; palavras exigem registo; duplicados colapsam; presença aceita datas; citações conservam os números
+adenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos
+adenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos
+índice preparado: uma recusa impede o commit no escrivão
+AUD1: contrações e verbos portugueses conferidos
+frases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos
+frases: 1960; registo: 28; por registar: 1368; recusas: 6
+excertos: corpos lidos; limpa=true; linhas lidas=25
+evl-6fe334ee8264aa2855bb2751: leitura sem marca bilingue e conta ou razão
+evl-88162076cd391f6bdc788957: leitura sem marca bilingue e conta ou razão
+evl-67f71f0f6c91f09f279822e2: leitura sem marca bilingue e conta ou razão
+evl-93febf49e00002142ea6de45: leitura sem marca bilingue e conta ou razão
+evl-4a6ef2addbd71ae758e9bbc9: leitura sem marca bilingue e conta ou razão
+evl-d3c063caec4d02c2db7d6900: leitura sem marca bilingue e conta ou razão

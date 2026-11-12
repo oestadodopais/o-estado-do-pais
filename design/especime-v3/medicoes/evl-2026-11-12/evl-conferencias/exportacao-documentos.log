@@ -1,0 +1,152 @@
+
+  sítio: <worktree>
+
+  manifesto evora · 75 linhas · 12 grupos excluídos
+
+    evora-populacao-2025                         engine value          58 567
+    evora-populacao-2021                         engine value          55 711
+    evora-populacao-2021                         rótulo herdado de uma irmã do mesmo pedido: 'População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente' em 'IndicadorDsg'
+    evora-poder-de-compra-2023                   as published (excerpt)  111,47
+    alentejo-central-poder-de-compra-2023        as published (excerpt)  93,86
+    evora-desemprego-registado-2024              engine value          1 596
+    evora-desemprego-registado-2013              engine value          3 720
+    evora-empresas-2024                          engine value          7 907
+    evora-divida-dgal-2024                       engine value          54 681 562
+    evora-limite-divida-dgal-2024                engine value          77 764 656
+    indice-de-divida-limite-legal                engine value          150
+      ↳ #page=22 from the declared document.page
+    evora-execucao-da-receita-2025               as published (alternate)  61,44
+      ↳ attribution borrowed from a row on the same source_url: Município de Évora
+      ↳ #page=111 from the declared document.page
+    evora-execucao-da-receita-2021               engine value          87,72
+      ↳ attribution borrowed from a row on the same source_url: Município de Évora
+      ↳ #page=60 from the declared document.page
+    evora-prazo-medio-de-pagamento-2025          engine value          137
+      ↳ #page=141 from the declared document.page
+    evora-prazo-medio-de-pagamento-2023          engine value          22
+      ↳ attribution borrowed from a row on the same source_url: Município de Évora
+      ↳ #page=141 from the declared document.page
+    evora-pagamentos-em-atraso-2025              as published (alternate)  4 976 172,24
+      ↳ #page=141 from the declared document.page
+    evora-orcamento-2025                         as published (alternate)  109 483 314,95
+      ↳ #page=110 from the declared document.page
+    evora-receita-cobrada-2025                   as published (alternate)  67 263 297,08
+      ↳ #page=111 from the declared document.page
+    evora-despesa-paga-2025                      as published (alternate)  65 565 049,87
+      ↳ #page=119 from the declared document.page
+    evora-divida-total-2025                      as published (alternate)  54 379 034,55
+      ↳ #page=139 from the declared document.page
+    evora-limite-divida-2025                     as published (alternate)  82 571 687,05
+      ↳ attribution borrowed from a row on the same source_url: Município de Évora
+      ↳ #page=140 from the declared document.page
+    evora-margem-endividamento-2025              as published (alternate)  28 192 652,50
+      ↳ attribution borrowed from a row on the same source_url: Município de Évora
+      ↳ #page=140 from the declared document.page
+    evora-divida-total-2024                      as published (alternate)  54 680 635,58
+      ↳ #page=140 from the declared document.page
+    evora-camara-mandatos-ps-2009                engine value          3
+      ↳ human page: https://www.eleicoes.mai.gov.pt/autarquicas2009/territorio-nacional.ht…
+    evora-camara-mandatos-cdu-2013               engine value          4
+      ↳ human page: https://www.eleicoes.mai.gov.pt/autarquicas2013/territorio-nacional.ht…
+    evora-camara-mandatos-cdu-2017               engine value          4
+      ↳ human page: https://www.eleicoes.mai.gov.pt/autarquicas2017/territorio-nacional.ht…
+    evora-camara-mandatos-cdu-2021               engine value          2
+    evora-camara-mandatos-ps-2025                engine value          3
+    evora-camara-lugares                         engine value          7
+    evora-executivo-2025-ps                      engine value          3
+    evora-executivo-2025-ad                      engine value          2
+    evora-executivo-2025-cdu                     engine value          1
+    evora-executivo-2025-chega                   engine value          1
+    evora-divida-31-10-2013                      as published (excerpt)  82 871 522,82
+      ↳ #page=11 from the declared document.page
+    evora-divida-inicio-mandato-reexpressa       as published (excerpt)  95 082 509,86
+      ↳ #page=30 from the declared document.page
+    evora-pael-emprestimo                        as published (excerpt)  32 166 372,20
+      ↳ #page=84 from the declared document.page
+    evora-saneamento-financeiro-2016             as published (alternate)  32 500 000,00
+      ↳ #page=79 from the declared document.page
+    evora-divida-total-2017                      as published (excerpt)  69 532 414,48
+      ↳ #page=94 from the declared document.page
+    evora-divida-total-2021                      as published (excerpt)  57 293 550,23
+      ↳ #page=83 from the declared document.page
+    evora-excesso-endividamento-2014             engine value          32 559 910
+      ↳ #page=33 from the declared document.page
+    evora-excesso-endividamento-2019             engine value          943 664
+      ↳ #page=33 from the declared document.page
+    evora-divida-dgal-2014                       engine value          77 961 663
+    evora-divida-dgal-2017                       engine value          69 826 899
+    evora-divida-dgal-2017                       bandeira 'a)': literal conferido junto do valor
+    evora-divida-dgal-2021                       engine value          61 737 315
+    evora-limite-divida-dgal-2014                engine value          48 206 020
+    evora-limite-divida-dgal-2017                engine value          57 563 962
+    evora-limite-divida-dgal-2017                bandeira 'a)': literal conferido junto do valor
+    evora-limite-divida-dgal-2021                engine value          65 268 258
+    evora-contas-2024-votos-favor                engine value          2
+      ↳ #page=2 from the declared document.page
+    evora-contas-2024-votos-contra               engine value          5
+      ↳ attribution borrowed from a row on the same source_url: Marques, Cruz & Associados
+      ↳ #page=2 from the declared document.page
+    evora-pelouros-2021-presidente               engine value          12
+      ↳ excerpt from Technical Source/raw/pelouros_map_v2.json (12 pelouros)
+    evora-pelouros-2021-vice-presidente          engine value          10
+      ↳ excerpt from Technical Source/raw/pelouros_map_v2.json (10 pelouros)
+    evora-pelouros-2025-presidente               engine value          7
+      ↳ excerpt from Technical Source/raw/pelouros_map_v2.json (7 pelouros)
+    evora-pelouros-2025-vice-presidente          engine value          7
+      ↳ excerpt from Technical Source/raw/pelouros_map_v2.json (7 pelouros)
+    evora-pelouros-2025-vereadora                engine value          7
+      ↳ excerpt from Technical Source/raw/pelouros_map_v2.json (7 pelouros)
+    evora-prr-aprovado-2026                      as published (excerpt)  167 372 755,84
+      ↳ computed over 1 file(s) of the 2026-08-19 snapshot · column valor_contratado
+      ↳ address moved: https://dados.gov.pt/s/resources/dataset-estrutura-de-miss… → https://dados.gov.pt/datasets/dataset-estrutura-de-missao-…
+    evora-prr-pago-2026                          as published (excerpt)  86 944 668,69
+      ↳ computed over 1 file(s) of the 2026-08-19 snapshot · column valor_pago
+      ↳ address moved: https://dados.gov.pt/s/resources/dataset-estrutura-de-miss… → https://dados.gov.pt/datasets/dataset-estrutura-de-missao-…
+    evora-prr-vencido-aprovado-2026              as published (excerpt)  102 624 703,85
+      ↳ computed over 2 file(s) of the 2026-08-19 snapshot · column valor_contratado
+      ↳ address moved: https://dados.gov.pt/s/resources/dataset-estrutura-de-miss… → https://dados.gov.pt/datasets/dataset-estrutura-de-missao-…
+    evora-prr-universidade-contratado            as published (excerpt)  38 596 975,81
+      ↳ computed over 1 file(s) of the 2026-08-19 snapshot · column valor_contratado
+      ↳ address moved: https://dados.gov.pt/s/resources/dataset-estrutura-de-miss… → https://dados.gov.pt/datasets/dataset-estrutura-de-missao-…
+    evora-prr-municipio-contratado               as published (excerpt)  12 069 012,6
+      ↳ computed over 1 file(s) of the 2026-08-19 snapshot · column valor_contratado
+      ↳ address moved: https://dados.gov.pt/s/resources/dataset-estrutura-de-miss… → https://dados.gov.pt/datasets/dataset-estrutura-de-missao-…
+    evora-vab-empresarial-2024                   engine value          576 491 544
+    evora-concentracao-vab4-2024                 engine value          21,5
+    portugal-concentracao-vab4-2024              as published (excerpt)  2,56
+    evora-2027-transferido-no-relato-ao-painel-2025 engine value          34
+      ↳ #page=8 from the declared document.page
+    evora-2027-contribuicao-inicial-do-estado-2024 engine value          2 000 000
+      ↳ #page=72 from the declared document.page
+    evora-2027-pago-pela-cultura-2025            engine value          3 750 000
+      ↳ #page=57 from the declared document.page
+    evora-2027-pago-pelo-turismo-2025            engine value          3 920 000
+      ↳ #page=57 from the declared document.page
+      2026-08-15-releitura-cega-evora: 21 valor(es) publicado(s) · lidos e não publicados: 7 (2a-alt[0], 5.14[1], 5.17[1], 5.21[1], 5.24[1], 6a-alt[0], 6d-alt[0])
+      leitores da casa: 70 leitura(s) preservada(s) em 61 linha(s) (corredor-diario 70)
+      21 entrada(s) do disco com uma identidade que o mapa desta corrida produz: fica o resultado do mapa (comportamento anterior ao bloco F0.1)
+      sem recorte: indice-de-divida-limite-legal · the ledger excerpt names no pinned PDF, no page, no quoted line
+    evora-indice-de-divida-2024                  derived               105,5   (= 105.5, engine agrees)
+    evora-divergencia-municipio-dgal-2024        derived               926   (= 926, engine agrees)
+    evora-indice-de-divida-2014                  derived               242,6   (= 242.6, engine agrees)
+    evora-indice-de-divida-2017                  derived               182,0   (= 182, engine agrees)
+    evora-indice-de-divida-2021                  derived               141,9   (= 141.9, engine agrees)
+    evora-pelouros-2021-total                    derived               22   (= 22, engine agrees)
+    evora-pelouros-2025-total                    derived               21   (= 21, engine agrees)
+    evora-prr-execucao-2026                      derived               51,95   (= 51.95, engine agrees)
+    evora-prr-vencido-quota-2026                 derived               61,32   (= 61.32, engine agrees)
+    evora-2027-recebido-do-protocolo-ate-2025    derived               9,7   (= 9.7, engine agrees)
+
+  recortes: 26 de 27 linha(s) com página · 297,840 bytes
+
+  0 nova(s) · 16 alterada(s) · 59 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 3 linha(s) com excerto "[a verificar]" — evora-prr-aprovado-2026, evora-prr-pago-2026, evora-prr-vencido-aprovado-2026
+  rótulo da fonte: 13 de 75 linha(s), 8 rótulo(s) distinto(s): DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) +… · Dívida Total no Início do Mandato · Empresas (N.º) por Localização geográfica (NU… · Indicador de concentração do valor acrescenta… · LIMITE = Média dos Últimos 3 Exercícios * 1,5 · Poder de compra per capita por Localização ge… · População residente (N.º) por Local de residê… · Valor acrescentado bruto (€) das Empresas por…
+  sem rótulo impresso: 62 de 75 linha(s), a que a página chama pelo título do documento: evora-desemprego-registado-2024, evora-desemprego-registado-2013, evora-divida-dgal-2024, evora-limite-divida-dgal-2024, evora-indice-de-divida-2024, indice-de-divida-limite-legal, evora-execucao-da-receita-2025, evora-execucao-da-receita-2021 e mais 54
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 75 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/evora.json
+  Recortes: 0 ficheiro(s) escrito(s) de 26 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.json
+

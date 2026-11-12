@@ -1,0 +1,23 @@
+file://<worktree>/src/lib/o-que-e-o-numero.mjs:421
+    throw new Error(`o que é cada número: ${erros.length} defeito(s):\n  ${erros.slice(0, 40).join('\n  ')}${erros.length > 40 ? `\n  … e mais ${erros.length - 40}` : ''}\n`);
+          ^
+
+Error: o que é cada número: 10 defeito(s):
+  evora-2027-transferido-no-relato-ao-painel · pt[0]: a palavra fixa «milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025» traz um algarismo
+  evora-2027-transferido-no-relato-ao-painel · en[0]: a palavra fixa «million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025» traz um algarismo
+  evora-2027-contribuicao-inicial-do-estado · pt[0]: a palavra fixa «euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida» traz um algarismo
+  evora-2027-contribuicao-inicial-do-estado · en[0]: a palavra fixa «euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received» traz um algarismo
+  evora-2027-pago-pela-cultura · pt[0]: a palavra fixa «euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação» traz um algarismo
+  evora-2027-pago-pela-cultura · en[0]: a palavra fixa «euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts» traz um algarismo
+  evora-2027-pago-pelo-turismo · pt[0]: a palavra fixa «euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação» traz um algarismo
+  evora-2027-pago-pelo-turismo · en[0]: a palavra fixa «euros paid in 2025 by Turismo de Portugal, according to the association's accounts» traz um algarismo
+  evora-2027-recebido-do-protocolo-ate · pt[0]: a palavra fixa «milhões de euros que as contas da associação declaram recebidos do protocolo de 2023 até ao fim de 2025» traz um algarismo
+  evora-2027-recebido-do-protocolo-ate · en[0]: a palavra fixa «million euros that the association's accounts declare received under the 2023 protocol up to the end of 2025» traz um algarismo
+
+    at file://<worktree>/src/lib/o-que-e-o-numero.mjs:421:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:282:26)
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:278:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/estudos-b1.mjs(21,23): error TS2339: Property 'mostrarMedidasNoCartao' does not exist on type '{ medidas: { claim: string; nome: { pt: (string | { ref: string; })[]; en: (string | { ref: string; })[]; }; }[]; frase: { pt: (string | { ref: string; claim?: undefined; abs?: undefined; } | { ref?: undefined; claim: string; abs?: undefined; } | { ...; })[]; en: (string | ... 2 more ... | { ...; })[]; }; origem: { ...'.
+  Property 'mostrarMedidasNoCartao' does not exist on type '{ medidas: { claim: string; nome: { pt: (string | { ref: string; })[]; en: (string | { ref: string; })[]; }; }[]; frase: { pt: (string | { ref: string; claim?: undefined; abs?: undefined; } | { ref?: undefined; claim: string; abs?: undefined; } | { ...; })[]; en: (string | ... 2 more ... | { ...; })[]; }; origem: { ...'.

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/evl_test.py", line 36, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "<motor>/publisher/evl_test.py", line 19, in main
+    try:hosted_provenance(E.CONTENT/spec['rh_study'],bad)
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 430, in hosted_provenance
+    raise Fail("proveniência alojada: excerto ou valor sem prova integral na página")
+publisher.export_records.Fail: proveniência alojada: excerto ou valor sem prova integral na página

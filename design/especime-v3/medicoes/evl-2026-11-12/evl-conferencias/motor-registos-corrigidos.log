@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/export_records_test.py", line 799, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ~~~~^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records_test.py", line 598, in main
+    for item in X.build_all(X.ROOT):
+                ~~~~~~~~~~~^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1193, in build_all
+    return [build_record(root, edition) for edition in EDITIONS]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1153, in build_record
+    digests = check_r7(record, digestos_de(root), corpos_proprios=corpos_proprios)
+  File "<motor>/publisher/export_records.py", line 1058, in check_r7
+    raise Fail(f"R7 {record['edition']}: {where} carries a source digest "
+               f"and does not say in which file it lives")
+publisher.export_records.Fail: R7 Évora 2027, Capital Europeia da Cultura (pt-PT): block 0 carries a source digest and does not say in which file it lives

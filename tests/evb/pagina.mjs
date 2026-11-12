@@ -6,13 +6,14 @@ import {conferirAberturaB1} from '../../scripts/abertura-b1-do-portao.mjs';
 import {WORKS} from '../../src/data/studies.mjs';
 const slug='evora-2027-capital-europeia-da-cultura';
 const normal=s=>s.replace(/[\u200b\u2060\u00ad]/g,'').replace(/\s+/g,' ').trim();
+const semSelos=n=>{const copia=parse(n.outerHTML);for(const selo of copia.querySelectorAll('.src-chip'))selo.remove();return normal(copia.textContent);};
 for(const lang of ['pt','en']){
  const base=`${lang==='pt'?'estudos':'en/studies'}/${slug}`;
  const root=parse(fs.readFileSync(`dist/${base}/index.html`,'utf8'));
  const doc=parse(fs.readFileSync(`studies-src/${slug}/${lang}.html`,'utf8'));
  const r=JSON.parse(fs.readFileSync(`registos/${slug}/${lang}.record.json`,'utf8'));
  const work=WORKS.find(w=>w.slug===slug);
- assert.equal(normal(root.querySelector('h1').textContent),normal(r.blocks[0].text));
+ assert.equal(semSelos(root.querySelector('h1')),normal(r.blocks[0].text));
  assert.equal(work.editions.find(e=>e.lang===lang).title,doc.querySelector('h1').nextElementSibling.textContent);
  assert.equal(work.pergunta[lang],r.blocks[2].text);
  assert.deepEqual(conferirAberturaB1(root,r,`${slug}/${lang}`,lang),[]);

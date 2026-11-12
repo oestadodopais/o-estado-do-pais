@@ -1,0 +1,30 @@
+05:17:41 [types] Generated 63ms
+05:17:41 [build] output: "static"
+05:17:41 [build] mode: "static"
+05:17:41 [build] directory: <worktree>/dist/
+05:17:41 [build] Collecting build info...
+05:17:41 [build] ✓ Completed in 83ms.
+05:17:41 [build] Building static entrypoints...
+05:17:41 [vite] ✓ built in 705ms
+05:17:41 [vite] ✓ built in 45ms
+05:17:42 [build] Rearranging server assets...
+
+ generating static routes 
+o que é cada número: 10 defeito(s):
+  o que é cada número · evora-2027-contribuicao-inicial-do-estado-2024 · pt: a família «evora-2027-contribuicao-inicial-do-estado» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-contribuicao-inicial-do-estado-2024 · en: a família «evora-2027-contribuicao-inicial-do-estado» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pela-cultura-2025 · pt: a família «evora-2027-pago-pela-cultura» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pela-cultura-2025 · en: a família «evora-2027-pago-pela-cultura» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pelo-turismo-2025 · pt: a família «evora-2027-pago-pelo-turismo» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pelo-turismo-2025 · en: a família «evora-2027-pago-pelo-turismo» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-recebido-do-protocolo-ate-2025 · pt: a família «evora-2027-recebido-do-protocolo-ate» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-recebido-do-protocolo-ate-2025 · en: a família «evora-2027-recebido-do-protocolo-ate» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-transferido-no-relato-ao-painel-2025 · pt: a família «evora-2027-transferido-no-relato-ao-painel» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-transferido-no-relato-ao-painel-2025 · en: a família «evora-2027-transferido-no-relato-ao-painel» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+
+  Stack trace:
+    at file://<worktree>/dist/.prerender/chunks/lingua-dos-titulos_IZlyLgoS.mjs:32229:26
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async Object.getComponentByRoute$1 [as getComponentByRoute] (file://<worktree>/dist/.prerender/prerender-entry.MPi4Ssh6.mjs:3902:10)
+    at async StaticPaths.getAll (file://<worktree>/node_modules/astro/dist/runtime/prerender/static-paths.js:32:23)
+    at async BasicMinimalPluginContext.handler (file://<worktree>/node_modules/astro/dist/core/build/static-build.js:118:11)

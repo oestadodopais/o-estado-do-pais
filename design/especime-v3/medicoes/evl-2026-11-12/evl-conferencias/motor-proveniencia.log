@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json;from pathlib import Path;from publisher.export_records import hosted_provenance;p=Path('content/19 Évora 2027 Capital Europeia da Cultura');r=next(r for r in json.load(open(p/'ledger.json'))['claims'] if r['id']=='painel-transferido');print(hosted_provenance(p,r))
+                                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~^^^^^
+  File "<motor>/publisher/export_records.py", line 428, in hosted_provenance
+    raise Fail("proveniência alojada: excerto ou valor sem prova integral na página")
+publisher.export_records.Fail: proveniência alojada: excerto ou valor sem prova integral na página

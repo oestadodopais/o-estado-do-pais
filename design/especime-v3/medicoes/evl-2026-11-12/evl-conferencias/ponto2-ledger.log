@@ -1,0 +1,32 @@
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/eva/reconferencias.mjs --so-plantas && node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/hb1/bilingue.mjs && node tests/hb1/data-sem-publicacao.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs && node tests/linha/correcao-de-campo.mjs && python3 tests/leituras/corpos-ledger.py && node scripts/corpos-ledger.mjs
+
+EVA reconferências: 16 plantas recusadas; frases originais e limite da correção conferidos; 0 recibos construídos conferidos.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'OG1-E publicador evora-2027-transferido-no-relato-ao-painel-2025: nome fora do registo'
++ ]
+- []
+
+    at file://<worktree>/tests/linha/cadeias-proveniencia.mjs:45:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'OG1-E publicador evora-2027-transferido-no-relato-ao-painel-2025: nome fora do registo'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

@@ -1,0 +1,32 @@
+05:19:42 [types] Generated 19ms
+05:19:42 [build] output: "static"
+05:19:42 [build] mode: "static"
+05:19:42 [build] directory: <worktree>/dist/
+05:19:42 [build] Collecting build info...
+05:19:42 [build] ✓ Completed in 38ms.
+05:19:42 [build] Building static entrypoints...
+05:19:42 [vite] ✓ built in 352ms
+05:19:42 [vite] ✓ built in 44ms
+05:19:42 [build] Rearranging server assets...
+
+ generating static routes 
+o que é cada número: 10 defeito(s):
+  evora-2027-transferido-no-relato-ao-painel · pt[0]: a palavra fixa «milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025» traz um algarismo
+  evora-2027-transferido-no-relato-ao-painel · en[0]: a palavra fixa «million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025» traz um algarismo
+  evora-2027-contribuicao-inicial-do-estado · pt[0]: a palavra fixa «euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida» traz um algarismo
+  evora-2027-contribuicao-inicial-do-estado · en[0]: a palavra fixa «euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received» traz um algarismo
+  evora-2027-pago-pela-cultura · pt[0]: a palavra fixa «euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação» traz um algarismo
+  evora-2027-pago-pela-cultura · en[0]: a palavra fixa «euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts» traz um algarismo
+  evora-2027-pago-pelo-turismo · pt[0]: a palavra fixa «euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação» traz um algarismo
+  evora-2027-pago-pelo-turismo · en[0]: a palavra fixa «euros paid in 2025 by Turismo de Portugal, according to the association's accounts» traz um algarismo
+  evora-2027-recebido-do-protocolo-ate · pt[0]: a palavra fixa «milhões de euros que as contas da associação declaram recebidos do protocolo de 2023 até ao fim de 2025» traz um algarismo
+  evora-2027-recebido-do-protocolo-ate · en[0]: a palavra fixa «million euros that the association's accounts declare received under the 2023 protocol up to the end of 2025» traz um algarismo
+
+  Location:
+    <worktree>/node_modules/astro/dist/runtime/prerender/static-paths.js:52:63
+  Stack trace:
+    at file://<worktree>/dist/.prerender/chunks/lingua-dos-titulos_ClrSB7ZJ.mjs:32250:26
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async Object.getComponentByRoute$1 [as getComponentByRoute] (file://<worktree>/dist/.prerender/prerender-entry.DFymJnmv.mjs:3902:10)
+    at async StaticPaths.getAll (file://<worktree>/node_modules/astro/dist/runtime/prerender/static-paths.js:32:23)
+    at async BasicMinimalPluginContext.handler (file://<worktree>/node_modules/astro/dist/core/build/static-build.js:118:11)

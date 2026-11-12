@@ -1,0 +1,81 @@
+
+> o-estado-do-pais@0.1.0 gate:html
+> npm run check:rec2 && node scripts/check-quadro.mjs && node tests/linha/frequencia-verificacoes.mjs && node scripts/gate-html.mjs && npm run check:nd1 && node tests/eva/pagina.mjs && node tests/eva/execucao.mjs && node tests/eva/reconferencias.mjs && node tests/evb/pagina.mjs && node tests/evb/leitura.mjs
+
+
+> o-estado-do-pais@0.1.0 check:rec2
+> node tests/rec2/retirados.mjs && node tests/rec2/listas.mjs && node tests/rec2/amostras.mjs && node tests/rec2/titulos.mjs && node tests/rec2/publicacao.mjs && node tests/rec2/fontes.mjs && node tests/rec2/voz-inventario.mjs && node scripts/check-retirados.mjs && node tests/rec2/contagens.mjs && node tests/rec2/registos-contagem.mjs && node tests/evb/sucessor.mjs
+
+REC2 estado: controlos verdes; página, documento datado e registo retirados recusados; publicado sem página recusado.
+REC2 redirecionamentos: ausência, destino inexistente, destino manual divergente e origem construída recusados; vários sucessores levam ao município.
+REC2 ligações: páginas, mapa, ligação relativa e nota de sucessão recusados.
+voz2a-2026-11-07/FRASES-VOZ-2A.json: 85 de 182 entradas saltadas, conta conferida
+voz2b-2026-11-07/FRASES-VOZ-2B.json: 53 de 106 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA.json: 32 de 126 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-d.json: 0 de 13 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-g.json: 0 de 7 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-i.json: 0 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-j.json: 0 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-prr.json: 0 de 8 entradas saltadas, conta conferida
+REC2 listas: 16 plantas recusadas; retirados sem páginas aceites e publicados sem páginas recusados.
+REC2 amostra: as quatro plantas da moldura alteram o documento das contas nas duas línguas. A recusa pelas células mede-se no navegador.
+REC2 títulos: /estudos/evora-contas-da-camara-2010-2025/ #bloco-117, nível acessível 3; sequência sem saltos.
+REC2 títulos: /en/studies/evora-contas-da-camara-2010-2025/ #bloco-117, nível acessível 3; sequência sem saltos.
+REC2 publicação: listas sem retirados; leitura oculta; evento exclusivo sai, evento misto e linhas vivas ficam.
+REC2 fontes: 5 plantas recusadas; documentos guardados, datas retiradas e cadeia de fontes preservada.
+REC2 voz: 12 descrições de retirados contadas; 20 plantas recusadas, incluindo descrição publicada ausente e rótulo alterado.
+REC2: 6 trabalhos retirados sem páginas; os restantes têm páginas nas duas línguas.
+REC2 contagens: 13 estudos construídos, 4 de Évora; quatro frases do mandato e duas definições conferidas no HTML.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: controlo intacto, incluindo os registos retirados: Claim id="…"/>.
+      Se é estrutura (data, título, escala), embrulhe-a em data-nonledger="…".
+    [31m✗[0m algarismos fora do livro-razão: "2025"
+      contexto: …mónio da associação, a pagar em 2024, que as contas de 2025 dão como recebida Dados de Publicado por Lido na f…
+      Se é uma medição, faça dela uma linha do livro-razão e cite-a com <Claim id="…"/>.
+      Se é estrutura (data, título, escala), embrulhe-a em data-nonledger="…".
+    [31m✗[0m algarismos fora do livro-razão: "2025"
+      contexto: …mónio da associação, a pagar em 2024, que as contas de 2025 dão como recebida Dados de Publicado por Lido na f…
+      Se é uma medição, faça dela uma linha do livro-razão e cite-a com <Claim id="…"/>.
+      Se é estrutura (data, título, escala), embrulhe-a em data-nonledger="…".
+    [31m✗[0m algarismos fora do livro-razão: "2027"
+      contexto: … painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025 Dados de Publicado por Lido na f…
+      Se é uma medição, faça dela uma linha do livro-razão e cite-a com <Claim id="…"/>.
+      Se é estrutura (data, título, escala), embrulhe-a em data-nonledger="…".
+    [31m✗[0m algarismos fora do livro-razão: "2025"
+      contexto: …mónio da associação, a pagar em 2024, que as contas de 2025 dão como recebida Dados de Publicado por Lido na f…
+      Se é uma medição, faça dela uma linha do livro-razão e cite-a com <Claim id="…"/>.
+      Se é estrutura (data, título, escala), embrulhe-a em data-nonledger="…".
+
+ mite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-real-de-santo-antonio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-real-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-velha-de-rodao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-vicosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vimioso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vinhais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "viseu-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+
+
+
+1 !== 0
+
+    at correr (file://<worktree>/tests/rec2/registos-contagem.mjs:21:10)
+    at file://<worktree>/tests/rec2/registos-contagem.mjs:30:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

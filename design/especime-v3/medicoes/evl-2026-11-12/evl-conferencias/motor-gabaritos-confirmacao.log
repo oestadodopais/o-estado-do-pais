@@ -1,0 +1,28 @@
+test_copia_leva_cortes_e_nao_leva_produtos (__main__.GabaritosAtivosTest.test_copia_leva_cortes_e_nao_leva_produtos) ... ok
+test_descoberta_diferente_recusa (__main__.GabaritosAtivosTest.test_descoberta_diferente_recusa) ... ok
+test_etapa_sem_escrever_recusa (__main__.GabaritosAtivosTest.test_etapa_sem_escrever_recusa) ... ok
+test_frase_ativa_sem_recompor_recusa (__main__.GabaritosAtivosTest.test_frase_ativa_sem_recompor_recusa) ... ok
+test_html_alterado_com_o_mesmo_tamanho_recusa (__main__.GabaritosAtivosTest.test_html_alterado_com_o_mesmo_tamanho_recusa) ... ok
+test_todos_os_estudos_com_texto_proprio (__main__.GabaritosAtivosTest.test_todos_os_estudos_com_texto_proprio) ... 
+  test_todos_os_estudos_com_texto_proprio (__main__.GabaritosAtivosTest.test_todos_os_estudos_com_texto_proprio) (estudo='19 Évora 2027 Capital Europeia da Cultura') ... ERROR
+
+======================================================================
+ERROR: test_todos_os_estudos_com_texto_proprio (__main__.GabaritosAtivosTest.test_todos_os_estudos_com_texto_proprio) (estudo='19 Évora 2027 Capital Europeia da Cultura')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<motor>/core/gabaritos_ativos_test.py", line 110, in test_todos_os_estudos_com_texto_proprio
+    conferir(pasta)
+    ~~~~~~~~^^^^^^^
+  File "<motor>/core/gabaritos_ativos_test.py", line 53, in conferir
+    A.conferir_bytes({n: antes[n] for n in compostos}, compostos)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/aplanar.py", line 151, in conferir_bytes
+    raise C.Recusa(f"aplanar: bytes diferentes em {nome}: {primeira}; " + " | ".join(diff[2:5]))
+core.compor.Recusa: aplanar: bytes diferentes em ledger.json: @@ -842,6 +842 @@
+; @@ -842,6 +842 @@
+ | -   "sanity_max": 100.0, | -   "document": {
+
+----------------------------------------------------------------------
+Ran 6 tests in 119.762s
+
+FAILED (errors=1)

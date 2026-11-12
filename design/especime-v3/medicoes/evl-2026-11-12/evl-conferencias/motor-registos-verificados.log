@@ -1,0 +1,3 @@
+EXPORT_RECORDS_TEST: FAIL — 1 problem(s)
+ - the real tree does not validate:
+     R5 19 Évora 2027 Capital Europeia da Cultura: Évora 2027, Capital Europeia da Cultura (pt-PT).record.json on disk is not what this run builds: the record is stale, rebuild it with --write

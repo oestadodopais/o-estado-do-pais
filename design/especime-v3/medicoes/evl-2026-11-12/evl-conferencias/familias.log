@@ -1,0 +1,23 @@
+file://<worktree>/src/lib/o-que-e-o-numero.mjs:421
+    throw new Error(`o que é cada número: ${erros.length} defeito(s):\n  ${erros.slice(0, 40).join('\n  ')}${erros.length > 40 ? `\n  … e mais ${erros.length - 40}` : ''}\n`);
+          ^
+
+Error: o que é cada número: 10 defeito(s):
+  o que é cada número · evora-2027-contribuicao-inicial-do-estado-2024 · pt: a família «evora-2027-contribuicao-inicial-do-estado» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-contribuicao-inicial-do-estado-2024 · en: a família «evora-2027-contribuicao-inicial-do-estado» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pela-cultura-2025 · pt: a família «evora-2027-pago-pela-cultura» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pela-cultura-2025 · en: a família «evora-2027-pago-pela-cultura» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pelo-turismo-2025 · pt: a família «evora-2027-pago-pelo-turismo» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-pago-pelo-turismo-2025 · en: a família «evora-2027-pago-pelo-turismo» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-recebido-do-protocolo-ate-2025 · pt: a família «evora-2027-recebido-do-protocolo-ate» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-recebido-do-protocolo-ate-2025 · en: a família «evora-2027-recebido-do-protocolo-ate» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-transferido-no-relato-ao-painel-2025 · pt: a família «evora-2027-transferido-no-relato-ao-painel» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · evora-2027-transferido-no-relato-ao-painel-2025 · en: a família «evora-2027-transferido-no-relato-ao-painel» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+
+    at file://<worktree>/src/lib/o-que-e-o-numero.mjs:421:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:282:26)
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:278:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

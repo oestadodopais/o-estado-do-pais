@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/export_records_test.py", line 799, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ~~~~^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records_test.py", line 598, in main
+    for item in X.build_all(X.ROOT):
+                ~~~~~~~~~~~^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1214, in build_all
+  File "<motor>/publisher/export_records.py", line 1150, in build_record
+    doc = linha.get("document") or {}
+    
+  File "<motor>/publisher/export_records.py", line 428, in hosted_provenance
+    if legacy: quote = legacy.group(1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+publisher.export_records.Fail: proveniência alojada: excerto ou valor sem prova integral na página

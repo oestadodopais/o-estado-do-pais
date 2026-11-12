@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/export_records_test.py", line 799, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ~~~~^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records_test.py", line 598, in main
+    for item in X.build_all(X.ROOT):
+                ~~~~~~~~~~~^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1193, in build_all
+    return [build_record(root, edition) for edition in EDITIONS]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1101, in build_record
+    entries, stats = build_blocks(blocks, ledger_path, {} if proof_path.exists() else digestos_de(root),
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  decisoes["unidades"] if decisoes else None)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 642, in build_blocks
+    entry.update(note(_render_unit(unit, f"{heading} {body}", by_value, by_id,
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   stats, digestos, decisoes, f"{i}")))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 594, in _render_unit
+    out: dict = {"figures": _figures(text, context, by_value, by_id, digestos, minhas,
+                            ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     chave, tally),
+                                     ^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 550, in _figures
+    figure.update(source_provenance(row, digestos))
+                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 431, in source_provenance
+    "source_body": claim["document"]["file"]}
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'file'

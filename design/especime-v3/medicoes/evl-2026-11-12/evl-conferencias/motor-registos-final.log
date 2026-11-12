@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/export_records_test.py", line 799, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ~~~~^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records_test.py", line 598, in main
+    for item in X.build_all(X.ROOT):
+                ~~~~~~~~~~~^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1193, in build_all
+    return [build_record(root, edition) for edition in EDITIONS]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records.py", line 1153, in build_record
+    digests = check_r7(record, digestos_de(root), corpos_proprios=corpos_proprios)
+  File "<motor>/publisher/export_records.py", line 1050, in check_r7
+    body, receipt = source(reference["source_body"])
+                    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/oe2027_analise.py", line 29, in source
+    body=(ROOT/p).read_bytes();receipt=load(ROOT/(file+'.pedido.json'))
+                                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/oe2027_analise.py", line 12, in load
+    def load(p): return json.loads(p.read_text())
+                                   ~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 792, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 776, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<motor>/content/19 Évora 2027 Capital Europeia da Cultura/source/27-ce-monitorizacao-2-2025-07.pdf.pedido.json'
