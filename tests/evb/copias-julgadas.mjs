@@ -1,9 +1,11 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
-import {blocosDaPagina,inventario,chave} from '../../scripts/frases-com-afirmacao.mjs';
+import {blocosDaPagina,inventario,chave,cortar} from '../../scripts/frases-com-afirmacao.mjs';
 import {conferirTextosJulgados,lerTextosJulgados} from '../../scripts/textos-julgados.mjs';
 import {LEITURAS} from '../../src/data/leituras.mjs';
+import {getClaim} from '../../src/lib/ledger.mjs';
+import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
 const slug='evora-2027-capital-europeia-da-cultura',declaracoes=lerTextosJulgados();
 let controlos=0,plantas=0;
 for(const lingua of ['pt','en'])for(const tipo of ['home','estudos','indice','municipio']){
@@ -40,24 +42,24 @@ let leiturasConferidas=0,plantasLeitura=0;
 for(const lingua of ['pt','en'])for(const tipo of ['home','estudos','municipio']){
  const rota=lingua==='pt'?{home:'/',estudos:'/estudos',municipio:'/municipios/evora'}[tipo]:{home:'/en',estudos:'/en/studies',municipio:'/en/municipalities/evora'}[tipo];
  const root=parse(fs.readFileSync(`dist${rota==='/'?'':rota}/index.html`,'utf8'));
- const texto=LEITURAS[slug].frase[lingua].map(p=>typeof p==='string'?p:p.ref).join('');
+ const texto=LEITURAS[slug].frase[lingua].map(p=>typeof p==='string'?p:p.ref??valorNaLingua(getClaim(p.claim),lingua)).join('');
  if(candidata){
   const el=root.querySelector(`[data-estudo="${slug}"]`).querySelector('p.estudo-resumo, p.lugar-estudo-leitura');
   assert(el,`cartão ausente: ${rota}`);
   const escapar=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-  el.set_content(LEITURAS[slug].frase[lingua].map(p=>typeof p==='string'?escapar(p):`<span data-nonledger="data-de-referencia">${p.ref}</span>`).join(''));
+  el.set_content(LEITURAS[slug].frase[lingua].map(p=>typeof p==='string'?escapar(p):p.ref?`<span data-nonledger="data-de-referencia">${p.ref}</span>`:`<span data-claim="${p.claim}">${valorNaLingua(getClaim(p.claim),lingua)}</span>`).join(''));
  }
  const p={rota,lingua,tipo,estudo:'colecao-teste',blocos:blocosDaPagina(root.outerHTML)};
- const ocorrencias=p.blocos.flatMap((b,bloco)=>b.frases.flatMap((frase,indice)=>frase===texto?[{pagina:rota,bloco,indice}]:[]));
- assert.equal(ocorrencias.length,1,`leitura ausente: ${rota}`);
- const frases=[{estudo:p.estudo,lingua,frase:texto,ocorrencias}];
- const coberta=(pagina=p,entrada=LEITURAS[slug],ds=declaracoes)=>conferirTextosJulgados(ds,[pagina],frases,{leituras:{[slug]:entrada}}).textos.has(chave(frases[0]));
+ const ocorrencias=p.blocos.flatMap((b,bloco)=>b.frases.flatMap((frase,indice)=>cortar(texto).includes(frase)?[{pagina:rota,bloco,indice}]:[]));
+ assert.equal(ocorrencias.length,cortar(texto).length,`leitura ausente: ${rota}`);
+ const frases=ocorrencias.map(o=>({estudo:p.estudo,lingua,frase:p.blocos[o.bloco].frases[o.indice],ocorrencias:[o]}));
+ const coberta=(pagina=p,entrada=LEITURAS[slug],ds=declaracoes)=>conferirTextosJulgados(ds,[pagina],frases,{leituras:{[slug]:entrada}}).textos.size===frases.length;
  assert(coberta(),rota);leiturasConferidas++;
  // A chave omite números; a prova tem de recusar a ocorrência adulterada.
- for(const [antes,depois] of [[lingua==='pt'?'associação':'association',lingua==='pt'?'empresa':'company'],['2025','2023']]){
+ for(const [antes,depois] of [[lingua==='pt'?'contas':'accounts',lingua==='pt'?'empresa':'company'],['2025','2023'],['9,7','8,7']]){
   const pagina=structuredClone(p);
   const o=frases[0].ocorrencias[0];
-  pagina.blocos[o.bloco].frases[o.indice]=texto.replace(antes,depois);
+  pagina.blocos[o.bloco].frases[o.indice]=frases[0].frase.replace(antes,depois);
   assert(!coberta(pagina),`cópia adulterada: ${rota}`);plantasLeitura++;
  }
  for(const mudar of [
@@ -66,14 +68,14 @@ for(const lingua of ['pt','en'])for(const tipo of ['home','estudos','municipio']
   e=>{e.origem.troca='troca-fora-da-lista';},
   e=>{e.origem.troca='governo-do-concelho';},
   e=>{e.frase[lingua].find(p=>p.ref==='2025').ref='2023';},
-  e=>{e.frase[lingua][0]=e.frase[lingua][0].replace(lingua==='pt'?'associação':'association',lingua==='pt'?'empresa':'company');},
+  e=>{e.frase[lingua][0]=e.frase[lingua][0].replace(lingua==='pt'?'contas':'accounts',lingua==='pt'?'empresa':'company');},
  ]){
   const entrada=structuredClone(LEITURAS[slug]);mudar(entrada);
   assert(!coberta(p,entrada),`origem ou declaração adulterada: ${rota}`);plantasLeitura++;
  }
  assert(!coberta(p,LEITURAS[slug],[]));plantasLeitura++;
 }
-console.log(`EVB leitura julgada: ${leiturasConferidas} controlos (${candidata?'cópias em memória com C005 candidata, sem certificar a construção':'cópias impressas no dist'}); ${plantasLeitura} plantas de palavra, ano, origem, troca e declaração recusadas.`);
+console.log(`EVB leitura julgada: ${leiturasConferidas} controlos (${candidata?'cópias em memória com C004 candidata, sem certificar a construção':'cópias impressas no dist'}); ${plantasLeitura} plantas de palavra, ano, origem, troca e declaração recusadas.`);
 let titulosConferidos=0,plantasTitulo=0;
 for(const lingua of ['pt','en']){
  const rota=lingua==='pt'?'/':'/en';

@@ -7,25 +7,38 @@ import {load} from 'js-yaml';
 import {createHash} from 'node:crypto';
 import {cortar,chave} from './frases-com-afirmacao.mjs';
 import {LEITURAS} from '../src/data/leituras.mjs';
+import {getClaim} from '../src/lib/ledger.mjs';
+import {valorNaLingua} from '../src/lib/valor-na-lingua.mjs';
 // Lista fechada: a origem declara o nome da troca, nunca um par arbitrário.
 const TROCAS_LEITURA = {
   pt: ['do município', 'da câmara'],
   en: ['the municipality', 'the council'],
 };
-function leituraJulgada(entrada, lingua, unidades, estudo) {
+export function leituraJulgada(entrada, lingua, unidades, estudo) {
   const origem=entrada?.origem, partes=entrada?.frase?.[lingua];
-  if(!origem || !origem.onde?.includes(`studies-src/${estudo}/${lingua}.html:`) || !unidades.has(origem[lingua]) || !Array.isArray(partes))return null;
-  if(partes.some(p=>typeof p==='string' ? /\d/u.test(p) : !p || Object.keys(p).join(',')!=='ref' || !/^[12]\d{3}$/.test(p.ref)))return null;
-  let esperada=origem[lingua];
+  if(!origem || !origem.onde?.includes(`studies-src/${estudo}/${lingua}.html:`) || !Array.isArray(partes))return null;
+  const literal=origem[lingua];
+  const inteira=[...unidades].some(u=>u===literal || [...new Intl.Segmenter(lingua,{granularity:'sentence'}).segment(u)].some(s=>u.slice(0,s.index+s.segment.trimEnd().length)===literal));
+  if(!inteira)return null;
+  const impressas=[];
+  for(const p of partes){
+    if(typeof p==='string'){if(/\d/u.test(p))return null;impressas.push(p);}
+    else if(p && Object.keys(p).join(',')==='ref' && /^[12]\d{3}$/.test(p.ref))impressas.push(p.ref);
+    else if(p && Object.keys(p).join(',')==='claim'){
+      try {const linha=getClaim(p.claim);if(linha.study!==estudo)return null;impressas.push(valorNaLingua(linha,lingua));}catch{return null;}
+    }else return null;
+  }
+  let esperada=literal;
   if(origem.troca!==undefined){
     if(origem.troca!=='governo-do-concelho')return null;
     const [antes,depois]=TROCAS_LEITURA[lingua];
     if(!esperada.includes(antes))return null;
     esperada=esperada.replace(antes,depois);
   }
-  const impressa=partes.map(p=>typeof p==='string'?p:p.ref).join('');
+  const impressa=impressas.join('');
   return impressa===esperada ? impressa : null;
 }
+
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const digest = s => /^[a-f0-9]{64}$/.test(s ?? '');
 const dia = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s) && Number.isFinite(Date.parse(s)) && new Date(s).toISOString().slice(0,10) === s;
@@ -68,7 +81,7 @@ export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', 
       if(!literais.size)throw Error('registo sem frases');
       admitidas.set(par,literais);
       const leitura=leituraJulgada(leituras[d.estudo],d.lingua,unidades,d.estudo);
-      if(leitura)leiturasAdmitidas[d.lingua].add(leitura);
+      if(leitura)for(const frase of cortar(leitura))leiturasAdmitidas[d.lingua].add(frase);
       copias.set(par,{nome:registo.blocks[1]?.text,pergunta:registo.blocks[2]?.text,data:docs[0].edicoes.length===1?docs[0].edicoes[0].data:null});
     }catch(e){erros.push(`texto julgado ${par}: ${e.message}`);}
   }
