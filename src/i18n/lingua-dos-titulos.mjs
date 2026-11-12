@@ -1934,6 +1934,7 @@ Object.assign(LINGUA_DAS_EDICOES, {
 
 /** EVL-E: nomes de atribuição com língua declarada, conservados como na fonte. */
 export const LINGUA_DAS_ATRIBUICOES = { "ECOC Expert Panel": "en" };
+/** @param {string} texto */
 export function linguaDaAtribuicao(texto, lang = 'pt') {
   const declarada = /** @type {Record<string,string>} */ (LINGUA_DAS_ATRIBUICOES)[texto];
   return declarada && declarada !== lang ? declarada : null;
