@@ -991,3 +991,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | evb-t-b | Duas leituras C005 novas e duas leituras C039 retiradas | por ler | Codex, 12.11.2026: origem na linha 49 dos dois documentos; leitura cruzada do diff pendente antes da fusão. |
 
 | evl-d | Frase C004 nas duas línguas, quatro nomes curtos das medidas e contagens do livro; quatro declarações anteriores retiradas | por ler | Codex, 12.11.2026: formas copiadas da medição do HTML construído; leitura cruzada do diff reservada ao lugar de direção. |
+
+| evl-e | C005 reposta, C004 e quatro nomes anteriores retirados, quatro nomes com atribuição explícita | por ler | Codex, 12.11.2026: palavras da adenda E conferidas contra C005 e o HTML construído; leitura cruzada do diff reservada ao lugar de direção. |
