@@ -81,6 +81,22 @@ import { NOMES_OE1 } from './medidas-oe1.mjs';
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DO_PROJETO = {
+  "evora-2027-transferido-no-relato-ao-painel-2025": {
+    "pt": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025",
+    "en": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025"
+  },
+  "evora-2027-contribuicao-inicial-do-estado-2024": {
+    "pt": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida",
+    "en": "euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received"
+  },
+  "evora-2027-pago-pela-cultura-2025": {
+    "pt": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
+    "en": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts"
+  },
+  "evora-2027-pago-pelo-turismo-2025": {
+    "pt": "euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação",
+    "en": "euros paid in 2025 by Turismo de Portugal, according to the association's accounts"
+  },
   ...NOMES_HB1,
   ...NOMES_V2D,
   ...NOMES_V2E,
@@ -526,6 +542,10 @@ export const NOMES_DO_PROJETO = {
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DAS_LINHAS_DERIVADAS = {
+  "evora-2027-recebido-do-protocolo-ate-2025": {
+    "pt": "milhões de euros que as contas da associação declaram recebidos do protocolo de 2023 até ao fim de 2025",
+    "en": "million euros that the association's accounts declare received under the 2023 protocol up to the end of 2025"
+  },
   // E0b: a medida nomeia-se pela contagem declarada na sua derivação.
   // E1b: as duas contagens do arquivo, nomeadas pela contagem que a derivação declara.
   'estudos-publicados': {

@@ -59,7 +59,7 @@
     "evora-2027-recebido-do-protocolo-ate-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-11-12",
-      "exported_row_sha256": "b54f33d5637b71a3b4eabc4dd70b690bf657fc595fde670653f7930d9c037039",
+      "exported_row_sha256": "c9e08f0b5063cdcdd26f2319c26cb872f19b9ea61a71d493625598fdab645656",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3119681ccc85de5b0c8bb8b8787a7da2640f994b5cc41c3ce2c8cb4cdf7af77c",
       "rh_id": "evb-ln001",

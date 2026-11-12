@@ -20,8 +20,8 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões."
-derivation_en: "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9.7 million."
+derivation: "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2025 para a Linha do Vagar, que não são do protocolo."
+derivation_en: "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9.7 million. They are the initial State contribution and the 2025 payments from culture and tourism, as the association's accounts declare them. Outside the sum are 1 500 000 euros paid in 2025 for the Linha do Vagar, which are not part of the protocol."
 derived_from:
   - "evora-2027-contribuicao-inicial-do-estado-2024"
   - "evora-2027-pago-pela-cultura-2025"
