@@ -109,6 +109,11 @@ def razoes(r: dict, data_do_painel: str) -> list[dict]:
         "reason_en": (f"The new value was read on {dia}, the day of the check that caught the revision; the earlier "
                       f"reading, of {data_pt(r['acesso_antigo'])}, is that of the value {r['valor_antigo']}."),
     }
+    if dia != data_do_painel:
+        acesso["reason"] = (f"O valor novo foi lido a {dia}, depois de a comparação semanal com a fonte de {data_do_painel} "
+                            f"ter visto a revisão; a leitura anterior, de {data_pt(r['acesso_antigo'])}, é a do valor {r['valor_antigo']}.")
+        acesso["reason_en"] = (f"The new value was read on {dia}, after the weekly comparison with the source of {data_do_painel} "
+                               f"had caught the revision; the earlier reading, of {data_pt(r['acesso_antigo'])}, is that of the value {r['valor_antigo']}.")
     if r["bandeira_antiga"] == r["bandeira_nova"]:
         pt, en = "", ""
     elif r["bandeira_antiga"] == "p" and r["bandeira_nova"] == "":
@@ -122,6 +127,32 @@ def razoes(r: dict, data_do_painel: str) -> list[dict]:
         "reason_en": f"The excerpt now transcribes the revised value the source prints for the same observation, read on {dia}{en}.",
     }
     return [atualizacao, acesso, excerto]
+
+
+def conferir_razao_acesso(acesso: dict, r: dict) -> None:
+    esperado = razoes(r, data_pt(r["verificacao_divergente_no_sitio"]["date"]))[1]
+    for lingua in ("reason", "reason_en"):
+        assert acesso[lingua] == esperado[lingua], "a razão do acesso não distingue o dia da leitura do dia da comparação"
+
+
+def plantas_acesso(r: dict) -> list[dict]:
+    plantas = []
+    dia = r["pedido"]["quando"][:10]
+    outro = (datetime.strptime(dia, "%Y-%m-%d") - timedelta(days=1)).date().isoformat()
+    for igual in (False, True):
+        copia = json.loads(json.dumps(r))
+        copia["verificacao_divergente_no_sitio"]["date"] = dia if igual else outro
+        for lingua in ("reason", "reason_en"):
+            acesso = razoes(copia, data_pt(dia if igual else outro))[1]
+            acesso[lingua] = razoes(copia, data_pt(outro if igual else dia))[1][lingua]
+            try:
+                conferir_razao_acesso(acesso, copia)
+            except AssertionError as e:
+                plantas.append({"linha": r["id"], "planta": f"acesso: dias {'iguais' if igual else 'diferentes'}, molde trocado, {lingua}",
+                                "mordeu": "razão do acesso" in str(e), "razao": str(e)})
+            else:
+                plantas.append({"linha": r["id"], "planta": "acesso com molde trocado", "mordeu": False})
+    return plantas
 
 
 def conferir_linha(antes: dict, depois: dict, r: dict, entradas: list[dict]) -> None:
@@ -148,6 +179,7 @@ def conferir_linha(antes: dict, depois: dict, r: dict, entradas: list[dict]) -> 
     mudados = {k for k in set(antes) | set(depois) if antes.get(k) != depois.get(k)}
     permitidos = {"value", "excerpt", "access_date", "corrections", "source_flag", "source_flag_note", "source_flag_note_en"}
     assert mudados <= permitidos, f"mudou um campo fora do mandato: {sorted(mudados - permitidos)}"
+    conferir_razao_acesso(ac[0], r)
     assert novas == entradas, "as entradas novas não são as três desta releitura"
 
 
@@ -336,6 +368,8 @@ def main() -> int:
         reler.conferir_excerto(antes, leitura)
         divergente = r["verificacao_divergente_no_sitio"]
         assert divergente in antes["verifications"] and divergente["result"] == "diverge" and divergente["by"] == "painel-semanal", f"{cid}: sem a divergência selada"
+        assert divergente["date"] == max(v["date"] for v in antes["verifications"]
+                                         if v["result"] == "diverge" and v["by"] == "painel-semanal"), f"{cid}: não é a última reconferência divergente"
         assert not reg.get("dia_do_painel") or divergente["date"] == reg["dia_do_painel"], f"{cid}: outro dia do painel"
         assert float(divergente["found"]) == float(leitura["literal"]), f"{cid}: o painel e o corpo não dão o mesmo valor"
         assert r["valor_antigo"] == antes["value"] and r["acesso_antigo"] == antes["access_date"], f"{cid}: valor ou acesso anterior diferente"
@@ -344,6 +378,7 @@ def main() -> int:
         antiga = reler.ler_celula(corpo_antigo, r["url"], antes)
         assert antiga["carimbo"] == r["carimbo_anterior"] and float(antiga["literal"]) == float(r["literal_antigo"]), f"{cid}: corpo anterior diferente"
         entradas = razoes(r, data_pt(divergente["date"]))
+        plantas.extend(plantas_acesso(r))
         novo = campo(texto, "value", r["valor_novo"])
         novo = campo(novo, "excerpt", r["excerto_novo"])
         novo = campo(novo, "access_date", r["pedido"]["quando"][:10])
