@@ -7,6 +7,7 @@ import {chromium} from 'playwright';
 import {parse} from 'node-html-parser';
 import {ENTRADAS} from '../../src/data/primeira-pagina.mjs';
 import {conferirAvisos} from '../../scripts/check-quadro.mjs';
+import {exigirAlvos} from './alvos-esperados.mjs';
 const modo=process.argv[2]??'alvos';
 assert(['alvos','sobreposicao'].includes(modo));
 const dist=path.resolve(process.env.OEDP_DIST??'dist');
@@ -58,12 +59,13 @@ try{
  const paginas=[...new Set(rotas)].map(rota=>{
   const root=ler(rota),lang=rota.startsWith('/en/')?'en':'pt';
   assert.deepEqual(conferirAvisos(root,lang).erros,[],`avisos exigidos pelos dados: ${rota}`);
+  exigirAlvos(rota,root.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a').length);
   return {rota,temAlvos:root.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a').length>0};
  });
  for(const largura of [390,768,1024,1280,1600])for(const {rota,temAlvos} of paginas){
   const page=await browser.newPage({viewport:{width:largura,height:1000}});
   assert.equal((await page.goto(url+rota)).status(),200,`página da prova ausente: ${rota}`);await page.evaluate(()=>document.fonts.ready);
-  const r=await medir(page);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert.equal(r.alvos>0,temAlvos,`alvos diferentes do HTML conferido: ${rota} a ${largura}`);combinacoes++;
+  const r=await medir(page);exigirAlvos(rota,r.alvos);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert.equal(r.alvos>0,temAlvos,`alvos diferentes do HTML conferido: ${rota} a ${largura}`);combinacoes++;
   await page.close();
  }
  for(const rota of ['/temas/','/en/themes/']){
