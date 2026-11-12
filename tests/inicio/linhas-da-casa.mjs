@@ -1,5 +1,5 @@
 import { emEnsaio, desdeOLancamento } from '../../site.config.mjs';
-import { CORRECOES_TEXTO } from '../../src/data/correcoes.mjs';
+import { CORRECOES_TEXTO, CORRECOES_TEXTO_ENSAIO } from '../../src/data/correcoes.mjs';
 import { contarCorrecoesPublicadas } from '../../src/lib/contagem-correcoes.mjs';
 /** E0, §1.146: as linhas do projeto, a precisão publicada e a história selada.
  * As plantas chamam os portões reais em processos isolados e só mudam memória. */
@@ -30,8 +30,12 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
   const medidas = { linhas: [], registos: [], nomes: [], valores_visiveis: [] };
   const historias = JSON.parse(fs.readFileSync('ledger/historias-valores.json', 'utf8'));
   const livros = fs.readdirSync('ledger/claims').filter(f => f.endsWith('.yml')).map(f => lerLinha(f.slice(0, -4)));
-  const correcoesDoLivro = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao').length, 0);
-  const contadas = contarCorrecoesPublicadas(correcoesDoLivro, CORRECOES_TEXTO);
+  const contador = lerLinha('correcoes-publicadas');
+  const ate = contador.publication === 'withdrawn' ? contador.reference_date : null;
+  // EVB: o contador retirado conserva as correções do ensaio até à data selada.
+  const correcoesDoLivro = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao' && (!ate || e.date <= ate)).length, 0);
+  const textos = ate ? [...CORRECOES_TEXTO, ...CORRECOES_TEXTO_ENSAIO].filter(e => e.data <= ate) : CORRECOES_TEXTO;
+  const contadas = contarCorrecoesPublicadas(correcoesDoLivro, textos);
   for (const id of ids) {
     const c = lerLinha(id);
     const entradas = c.corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind));
@@ -50,7 +54,6 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
       erros.push(`E0 fonte: ${id} não conserva a precisão do excerto no motivo.`);
     medidas.linhas.push({ id, valor: c.value, entrada: e && assinatura(e), seladas: historias[id]?.length ?? 0 });
   }
-  const contador = lerLinha('correcoes-publicadas');
   const ultimaRecontagem = contador.corrections.filter(e => e.kind === 'atualizacao').at(-1)?.date;
   const edicao = contador.document.edition.split('.').reverse().join('-');
   if ([contador.reference_date, contador.access_date, edicao].some(d => !d || d < ultimaRecontagem))
