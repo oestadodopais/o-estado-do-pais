@@ -1,0 +1,42 @@
+[
+  {
+    "rota": "livro-razao/evora-2027-contribuicao-inicial-do-estado-2024/index.html",
+    "texto": "p. 72",
+    "lingua_efetiva": "pt-PT"
+  },
+  {
+    "rota": "livro-razao/evora-2027-pago-pela-cultura-2025/index.html",
+    "texto": "p. 57",
+    "lingua_efetiva": "pt-PT"
+  },
+  {
+    "rota": "livro-razao/evora-2027-pago-pelo-turismo-2025/index.html",
+    "texto": "p. 57",
+    "lingua_efetiva": "pt-PT"
+  },
+  {
+    "rota": "livro-razao/evora-2027-transferido-no-relato-ao-painel-2025/index.html",
+    "texto": "p. 8",
+    "lingua_efetiva": "en"
+  },
+  {
+    "rota": "en/ledger/evora-2027-contribuicao-inicial-do-estado-2024/index.html",
+    "texto": "p. 72",
+    "lingua_efetiva": "pt-PT"
+  },
+  {
+    "rota": "en/ledger/evora-2027-pago-pela-cultura-2025/index.html",
+    "texto": "p. 57",
+    "lingua_efetiva": "pt-PT"
+  },
+  {
+    "rota": "en/ledger/evora-2027-pago-pelo-turismo-2025/index.html",
+    "texto": "p. 57",
+    "lingua_efetiva": "pt-PT"
+  },
+  {
+    "rota": "en/ledger/evora-2027-transferido-no-relato-ao-painel-2025/index.html",
+    "texto": "p. 8",
+    "lingua_efetiva": "en"
+  }
+]

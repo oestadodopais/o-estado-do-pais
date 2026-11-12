@@ -1,0 +1,102 @@
+{
+  "codigos": {
+    "plantas": 0,
+    "reconstrucao": 0,
+    "check-voz": 1,
+    "check-voz-retiradas": 1,
+    "check-lingua": 0,
+    "check-eo1": 0
+  },
+  "execucoes": [
+    {
+      "comando": [
+        "npm",
+        "run",
+        "check:eo1"
+      ],
+      "codigo": 0,
+      "duracao_segundos": 10.759
+    },
+    {
+      "comando": [
+        "npm",
+        "run",
+        "check:lingua"
+      ],
+      "codigo": 0,
+      "duracao_segundos": 25.489
+    },
+    {
+      "comando": [
+        "npm",
+        "run",
+        "check:voz-retiradas"
+      ],
+      "codigo": 1,
+      "duracao_segundos": 116.188
+    },
+    {
+      "comando": [
+        "npm",
+        "run",
+        "check:voz"
+      ],
+      "codigo": 1,
+      "duracao_segundos": 150.754
+    },
+    {
+      "comando": [
+        "npm",
+        "run",
+        "build:pai2-d"
+      ],
+      "codigo": 0,
+      "duracao_segundos": 31.793
+    }
+  ],
+  "plantas": {
+    "controlos": 4,
+    "recusadas": 20,
+    "ficheiro": "evl-c-conferencias/evl-c-plantas.json"
+  },
+  "voz_pendente": {
+    "nomes": 12,
+    "blocos_sem_classificacao": 8,
+    "vivas_sem_rota": 4
+  },
+  "localizadores": {
+    "ocorrencias_inspecionadas": 8,
+    "ficheiro": "evl-c-conferencias/localizadores-renderizados.json"
+  },
+  "alvos": {
+    "estado": "CSS corrigido; medição no navegador por correr pelo lugar de direção",
+    "distincao": "Mesma medida calculada, nas quatro rotas. O selo dependia do prolongamento invisível de 44 px; a caixa não reservava essa altura quando o nome quebrava.",
+    "medicao_anterior_da_direcao_altura_px": 28.7,
+    "nova_medicao": null
+  },
+  "commits_das_correcoes": [
+    "79a138a48 EVL: reservar a área de toque dos selos nas medidas dos cartões",
+    "b44efbd1a EVL: declarar as línguas dos documentos e organismos das novas linhas",
+    "9c5eca179 EVL: conferir medidas completas dos cartões na lista fechada da voz"
+  ],
+  "orcamento": {
+    "corridas_conferencias_pedidas": 4,
+    "ensaios_dirigidos_adicionais": 2,
+    "reconstrucoes": 1,
+    "corridas_completas_portoes": 0,
+    "capturas": 0,
+    "chamadas_ferramentas_ate_ao_pedido_do_commit_final": 44
+  },
+  "preservado": [
+    "textos do cartão e dos recibos",
+    "nomes com anos",
+    "cinco linhas",
+    "motor"
+  ],
+  "pendente": [
+    "24 problemas da voz fora da lista B1",
+    "check:alvos no navegador",
+    "build inteiro e restantes conferências pelo lugar de direção"
+  ],
+  "nota_escrivao": "Os três commits foram confirmados com código 0 nos resultados e no histórico, apesar de o cliente terminar com código 3 por perda temporária do batimento."
+}

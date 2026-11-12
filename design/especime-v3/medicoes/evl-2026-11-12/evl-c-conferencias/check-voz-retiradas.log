@@ -1,0 +1,42 @@
+
+> o-estado-do-pais@0.1.0 check:voz-retiradas
+> node tests/edicoes/voz-integracao.mjs
+
+1400 retiradas conferidas em memória com a extração histórica.
+[31m    · [0mbloco por classificar em /en: «On the money, the accounts of the Associação Évora declare million received from the protocol up to the end of . In June , the summary that the panel of European experts makes of the progress report gave million as already transferred.»
+[31m    · [0mbloco por classificar em /en: «million euros given as already transferred in the report to the European panel, in June»
+[31m    · [0mbloco por classificar em /en: «million euros received under the protocol up to the end of , by the association&#39;s accounts»
+[31m    · [0mbloco por classificar em /en/ledger: «4 161 claims · 524 of 4 161 calculated · 2 767 of 4 161 municipality rows»
+[31m    · [0mbloco por classificar em /livro-razao: «4 161 afirmações · 524 de 4 161 calculadas · 2 767 de 4 161 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5597: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «4 156 afirmações · 523 de 4 156 calculadas · 2 767 de 4 156 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5598: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «4 156 claims · 523 of 4 156 calculated · 2 767 of 4 156 municipality rows»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5651: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «A associação escreve que reabriu em o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5652: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «The association writes that in it reopened dialogue with the Câmara to obtain the money it needs to honour its»
+
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: controlo atual: código inesperado
+
+1 !== 0
+
+    at executar (file://<worktree>/tests/edicoes/voz-integracao.mjs:53:9)
+    at file://<worktree>/tests/edicoes/voz-integracao.mjs:68:2
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

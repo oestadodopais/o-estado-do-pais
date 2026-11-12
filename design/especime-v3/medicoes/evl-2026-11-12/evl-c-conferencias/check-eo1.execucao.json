@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "check:eo1"
+  ],
+  "codigo": 0,
+  "duracao_segundos": 10.759
+}

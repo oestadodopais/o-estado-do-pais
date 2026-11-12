@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "check:lingua"
+  ],
+  "codigo": 0,
+  "duracao_segundos": 25.489
+}

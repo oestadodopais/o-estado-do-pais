@@ -1,0 +1,10 @@
+1. Voz: nomes completos com anos comparados às medidas declaradas, sem cadeias soltas; commit 9c5eca179.
+2. Língua: dois títulos, dois organismos e o localizador inglês declarados; oito localizadores conferidos no HTML; commit b44efbd1a.
+3. Alvos: a caixa dos selos das medidas reserva 44 px em todas as larguras; commit 79a138a48; medição no navegador pendente.
+4. Os quatro alvos eram o selo da mesma medida calculada nas duas páginas e línguas; a caixa não reservava a altura do prolongamento invisível quando o nome quebrava.
+5. Plantas: quatro controlos verdes e vinte recusas de palavra trocada, ano trocado e texto solto; código 0.
+6. Prova sobre dist reconstruído: check:voz=1; check:voz-retiradas=1; check:lingua=0; check:eo1=0; códigos lidos dos ficheiros.
+7. Reconstrução build:pai2-d=0; textos, nomes com anos, cinco linhas e motor preservados; não se correu o build inteiro.
+8. Voz pendente: 12 comparações de nomes, oito blocos sem classificação e quatro entradas vivas sem rota; retiradas falha no controlo atual, antes das plantas.
+9. Por correr pela direção: check:alvos, build inteiro e restantes conferências; resultados e registos em evl-c-conferencias/.
+10. Orçamento: 44 chamadas de ferramentas até ao pedido do commit final; quatro conferências pedidas e dois ensaios dirigidos; uma reconstrução; zero corridas completas dos portões e zero capturas.
