@@ -1,0 +1,96 @@
+{
+ "registado_em": "2026-11-12T03:38:43+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "Y1-file",
+   "ficheiro": "scripts/texto-da-pagina-julgada.mjs",
+   "descricao": "a régua compara só o comprimento do texto de cada bloco: uma palavra trocada por outra com as mesmas letras passa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "28e080200ceec781a9ec144b405633618dec66b19a10e2f3d0cae02f1be6d5b8",
+   "sha256_depois": "1660bb75ce361015210bf5d40761e1b971b04a0580efc0193f354779bf523fdd",
+   "contexto_antes": ", registo.blocks.length);\n  const conferirTexto = (el, unidade, coordenada) => {\n    const pagina = textoImpresso(el), esperado = normalizar(unidade.text);\n    if (pagina !== esperado) falha(coordenada, 'texto', pagina, esperado);\n  };\n  registo.blocks.forEach((bloco, indice) => {\n    const el = elementos[indice];\n    if (!el) return falha(bloco.i, 'bloco ausente', null, bloco.kind);\n   ",
+   "contexto_depois": ", registo.blocks.length);\n  const conferirTexto = (el, unidade, coordenada) => {\n    const pagina = textoImpresso(el), esperado = normalizar(unidade.text);\n    if (pagina.length !== esperado.length) falha(coordenada, 'texto', pagina, esperado);\n  };\n  registo.blocks.forEach((bloco, indice) => {\n    const el = elementos[indice];\n    if (!el) return falha(bloco.i, 'bloco ausente', null, bloco.kind);\n   "
+  },
+  {
+   "id": "Y1-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "26aa0f2d0cda258e3bbc5ae07e79e30afcb3a24374ce58d9fd8e62b6fd44958f",
+   "sha256_depois": "1fc59d7305060d3ca8e9de1505dabc91906e2559ab65fe230f6ff83748764514",
+   "contexto_antes": "egisto.blocks.length);\n+  const conferirTexto = (el, unidade, coordenada) => {\n+    const pagina = textoImpresso(el), esperado = normalizar(unidade.text);\n+    if (pagina !== esperado) falha(coordenada, 'texto', pagina, esperado);\n+  };\n+  registo.blocks.forEach((bloco, indice) => {\n+    const el = elementos[indice];\n+    if (!el) return falha(bloco.i, 'bloco ausente', null, bloco.kind);",
+   "contexto_depois": "egisto.blocks.length);\n+  const conferirTexto = (el, unidade, coordenada) => {\n+    const pagina = textoImpresso(el), esperado = normalizar(unidade.text);\n+    if (pagina.length !== esperado.length) falha(coordenada, 'texto', pagina, esperado);\n+  };\n+  registo.blocks.forEach((bloco, indice) => {\n+    const el = elementos[indice];\n+    if (!el) return falha(bloco.i, 'bloco ausente', null, bloco.kind);"
+  },
+  {
+   "id": "Y2-file",
+   "ficheiro": "scripts/texto-da-pagina-julgada.mjs",
+   "descricao": "nos quadros, a régua só compara a última célula de cada linha: o defeito que a adenda vinha fechar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1660bb75ce361015210bf5d40761e1b971b04a0580efc0193f354779bf523fdd",
+   "sha256_depois": "c084f83c805aab21e0aa19742411bce2b36f5ed78e3a19719b1c2229f995fbe9",
+   "contexto_antes": "{r}.${c}`, tag = celula.header ? 'TH' : 'TD';\n          if (celulas[c].tagName !== tag) falha(coordenada, 'tipo de célula', celulas[c].tagName, tag);\n          conferirTexto(celulas[c], celula, coordenada);\n        });\n      });\n    }\n  });\n  return erros;\n}\n",
+   "contexto_depois": "{r}.${c}`, tag = celula.header ? 'TH' : 'TD';\n          if (celulas[c].tagName !== tag) falha(coordenada, 'tipo de célula', celulas[c].tagName, tag);\n          if (c === linha.length - 1) conferirTexto(celulas[c], celula, coordenada);\n        });\n      });\n    }\n  });\n  return erros;\n}\n"
+  },
+  {
+   "id": "Y2-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1fc59d7305060d3ca8e9de1505dabc91906e2559ab65fe230f6ff83748764514",
+   "sha256_depois": "f8b6ff90aba5a454848671bdb1578fed378c982af6a4c952dea51d72e09ccea1",
+   "contexto_antes": "}.${c}`, tag = celula.header ? 'TH' : 'TD';\n+          if (celulas[c].tagName !== tag) falha(coordenada, 'tipo de célula', celulas[c].tagName, tag);\n+          conferirTexto(celulas[c], celula, coordenada);\n+        });\n+      });\n+    }\n+  });\n+  return erros;\n+}\ndiff --git a/src/data/leituras.mjs b/src/data/leituras.mjs\nindex 43d0fb59b..6ef1e322a 100644\n--- a/sr",
+   "contexto_depois": "}.${c}`, tag = celula.header ? 'TH' : 'TD';\n+          if (celulas[c].tagName !== tag) falha(coordenada, 'tipo de célula', celulas[c].tagName, tag);\n+          if (c === linha.length - 1) conferirTexto(celulas[c], celula, coordenada);\n+        });\n+      });\n+    }\n+  });\n+  return erros;\n+}\ndiff --git a/src/data/leituras.mjs b/src/data/leituras.mjs\nindex 43d0fb59b..6ef1e322a 100644\n--- a/sr"
+  },
+  {
+   "id": "Y3-file",
+   "ficheiro": "src/data/leituras.mjs",
+   "descricao": "a frase portuguesa do cartão passa a dizer que o dinheiro foi prometido à associação; a unidade C005 diz que é o dinheiro de que precisa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3c70acceb1f9eb6345478f4694970a15e20142319912897757da1e7831d79bd5",
+   "sha256_depois": "c61792c19753d9d54ad017699a3ea9ec09ebea4cf232da4d672079658a8441a5",
+   "contexto_antes": "e palavras.\n       O ano é uma referência; não há medidas. */\n    medidas: [],\n    frase: {\n      pt: [\"A associação escreve que reabriu em \", { ref: '2025' }, \" o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais.\"],\n      en: [\"The association writes that in \", { ref: '2025' }, \" it r",
+   "contexto_depois": "e palavras.\n       O ano é uma referência; não há medidas. */\n    medidas: [],\n    frase: {\n      pt: [\"A associação escreve que reabriu em \", { ref: '2025' }, \" o diálogo com a Câmara para obter o dinheiro que lhe foi prometido para honrar os compromissos com entidades artísticas, culturais, educativas e sociais.\"],\n      en: [\"The association writes that in \", { ref: '2025' }, \" it r"
+  },
+  {
+   "id": "Y3-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f8b6ff90aba5a454848671bdb1578fed378c982af6a4c952dea51d72e09ccea1",
+   "sha256_depois": "e9f599832e42b68afe736eb27152c0c90e536adb276b01ab56091726e6e2a0bc",
+   "contexto_antes": "cil's is still to be confirmed, and part of the European money depends on applications.\"],\n+      pt: [\"A associação escreve que reabriu em \", { ref: '2025' }, \" o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais.\"],\n+      en: [\"The association writes that in \", { ref: '2025' }, \" it ",
+   "contexto_depois": "cil's is still to be confirmed, and part of the European money depends on applications.\"],\n+      pt: [\"A associação escreve que reabriu em \", { ref: '2025' }, \" o diálogo com a Câmara para obter o dinheiro que lhe foi prometido para honrar os compromissos com entidades artísticas, culturais, educativas e sociais.\"],\n+      en: [\"The association writes that in \", { ref: '2025' }, \" it "
+  },
+  {
+   "id": "Y4-file",
+   "ficheiro": "built/en/index.html",
+   "descricao": "na página de entrada inglesa construída, o cartão passa a dizer que o dinheiro foi prometido; a unidade C005 inglesa diz que é o dinheiro de que precisa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "86da20700b972073e556adbde3f9580b140ad9ec0a46627779a4a6e06751770d",
+   "sha256_depois": "26a7cbedfcf500a9339997fa73c5de4f587652ffbbdac5b8af43cb14955885e1",
+   "contexto_antes": "=\"estudo-resumo lugar-estudo-leitura\">The association writes that in <span data-nonledger=\"data-de-referencia\">2025</span> it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies.</p></article><article class=\"estudo-item pais-estudo\" data-estudo=\"evora-contas-da-camara-2010-2025\" data",
+   "contexto_depois": "=\"estudo-resumo lugar-estudo-leitura\">The association writes that in <span data-nonledger=\"data-de-referencia\">2025</span> it reopened dialogue with the Câmara to obtain the money it was promised to honour its commitments to artistic, cultural, educational and social bodies.</p></article><article class=\"estudo-item pais-estudo\" data-estudo=\"evora-contas-da-camara-2010-2025\" data"
+  },
+  {
+   "id": "Y5-file",
+   "ficheiro": "tests/evb/texto-da-pagina.mjs",
+   "descricao": "as plantas da régua deixam de afirmar a recusa: zero recusas também passa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "660addf3509203e1bfefbb6ee6113b6861032ddd4d4441f8fc1484b0c315f71f",
+   "sha256_depois": "f9ceaf1492d38332315d58788a04ec3860ac5545c8317b98e8cfd70d6aa4929b",
+   "contexto_antes": ";\n      a.remove(); b.remove();\n    }],\n  ]) {\n    const copia = parse(html); mudar(copia);\n    const recusas = conferirTextoDaPagina(copia, registo, par);\n    assert(recusas.length > 0, `${par}: planta aceite: ${nome}`);\n    plantas.push({nome, recusas: recusas.length});\n  }\n  const m = {estudo, lingua, blocos: registo.blocks.length,\n    paragrafos: registo.blocks.filter(b => b",
+   "contexto_depois": ";\n      a.remove(); b.remove();\n    }],\n  ]) {\n    const copia = parse(html); mudar(copia);\n    const recusas = conferirTextoDaPagina(copia, registo, par);\n    assert(recusas.length >= 0, `${par}: planta aceite: ${nome}`);\n    plantas.push({nome, recusas: recusas.length});\n  }\n  const m = {estudo, lingua, blocos: registo.blocks.length,\n    paragrafos: registo.blocks.filter(b => b"
+  },
+  {
+   "id": "Y5-diff",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo, no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e9f599832e42b68afe736eb27152c0c90e536adb276b01ab56091726e6e2a0bc",
+   "sha256_depois": "27b62acfd3d0047f07607ef7da374c3ea8d09eda5a23919e4ebfb04797b40504",
+   "contexto_antes": "   a.remove(); b.remove();\n+    }],\n+  ]) {\n+    const copia = parse(html); mudar(copia);\n+    const recusas = conferirTextoDaPagina(copia, registo, par);\n+    assert(recusas.length > 0, `${par}: planta aceite: ${nome}`);\n+    plantas.push({nome, recusas: recusas.length});\n+  }\n+  const m = {estudo, lingua, blocos: registo.blocks.length,\n+    paragrafos: registo.blocks.filter(b ",
+   "contexto_depois": "   a.remove(); b.remove();\n+    }],\n+  ]) {\n+    const copia = parse(html); mudar(copia);\n+    const recusas = conferirTextoDaPagina(copia, registo, par);\n+    assert(recusas.length >= 0, `${par}: planta aceite: ${nome}`);\n+    plantas.push({nome, recusas: recusas.length});\n+  }\n+  const m = {estudo, lingua, blocos: registo.blocks.length,\n+    paragrafos: registo.blocks.filter(b "
+  }
+ ]
+}

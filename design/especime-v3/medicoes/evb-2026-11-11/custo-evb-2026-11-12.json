@@ -1,0 +1,115 @@
+{
+ "bloco": "EVB (o estudo de Évora 2027 pela cadeia do texto julgado: o motor e a travessia para o sítio)",
+ "data": "2026-11-12",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "motor, a primeira passagem (os documentos, os três tipos de documento, o candidato)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T16:51:39Z",
+   "fim": "2026-11-11T18:20:36Z",
+   "pontos": 4.0,
+   "pontos_antes": 85.0,
+   "pontos_depois": 89.0,
+   "turnos": 133,
+   "fonte": "a linha PONTOS do registo do lançador evb-1"
+  },
+  {
+   "nome": "motor, adenda A (as provas na forma do conferidor, as citações atribuídas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T18:40:10Z",
+   "fim": "2026-11-11T19:35:26Z",
+   "pontos": 3.0,
+   "pontos_antes": 89.0,
+   "pontos_depois": 92.0,
+   "turnos": 116,
+   "fonte": "a linha PONTOS do registo do lançador evb-a"
+  },
+  {
+   "nome": "motor, adenda B (a cauda e a instalação)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T19:54:13Z",
+   "fim": "2026-11-11T21:03:15Z",
+   "pontos": null,
+   "pontos_antes": 93.0,
+   "pontos_depois": 2.0,
+   "turnos": 205,
+   "entrada": 24143226,
+   "fonte": "a linha PONTOS do registo do lançador evb-b; a reposição do Codex pelo financiador (20:31 UTC) caiu a meio, por isso os pontos não se leem pela diferença; pelos símbolos de entrada, entre a primeira passagem e a travessia"
+  },
+  {
+   "nome": "motor, adenda C (as correções da leitura a frio)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T21:23:39Z",
+   "fim": "2026-11-11T22:00:12Z",
+   "pontos": 2.0,
+   "pontos_antes": 2.0,
+   "pontos_depois": 4.0,
+   "turnos": 91,
+   "fonte": "a linha PONTOS do registo do lançador evb-c"
+  },
+  {
+   "nome": "motor, adenda D (as correções da leitura curta)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T22:19:19Z",
+   "fim": "2026-11-11T22:44:00Z",
+   "pontos": 1.0,
+   "pontos_antes": 4.0,
+   "pontos_depois": 5.0,
+   "turnos": 50,
+   "fonte": "a linha PONTOS do registo do lançador evb-d"
+  },
+  {
+   "nome": "sítio, a travessia (os nove pontos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-11T23:05:37Z",
+   "fim": "2026-11-12T00:47:45Z",
+   "pontos": 5.0,
+   "pontos_antes": 5.0,
+   "pontos_depois": 10.0,
+   "turnos": 232,
+   "fonte": "a linha PONTOS do registo do lançador evb-t"
+  },
+  {
+   "nome": "sítio, adenda A (os dois vermelhos da corrida inteira)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T01:50:30Z",
+   "fim": "2026-11-12T02:18:06Z",
+   "pontos": 1.0,
+   "pontos_antes": 10.0,
+   "pontos_depois": 11.0,
+   "turnos": 61,
+   "fonte": "a linha PONTOS do registo do lançador evb-ta"
+  },
+  {
+   "nome": "sítio, adenda B (a régua do texto da página e a frase do cartão)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T03:10:58Z",
+   "fim": "2026-11-12T03:22:47Z",
+   "pontos": 1.0,
+   "pontos_antes": 11.0,
+   "pontos_depois": 12.0,
+   "turnos": 26,
+   "fonte": "a linha PONTOS do registo do lançador evb-tb"
+  }
+ ],
+ "total_pontos_codex": "17 lidos em sete passagens, mais a adenda B do motor, que atravessou a reposição (estimada em cerca de quatro pelos símbolos): cerca de 21",
+ "juizos_do_texto": "Codex gpt-6-astra a xhigh (o inglês contra o português a high), em seis voltas: duas da abertura e quatro do texto inteiro; entre as 11:55 e as 16:51 UTC de 11.11.2026 o contador da semana foi de 78 para 85, sete pontos, que são destes juízos (o contador só se lê nas passagens do construtor)",
+ "reflexo_dos_gargalos": "oito passagens do construtor e cerca de vinte e oito pontos do Codex com os juízos, contra uma escada que pede menos de cinco por bloco. As três primeiras passagens do motor pagaram dois erros deste lugar na passagem do texto ao motor (as provas na forma do juiz; uma regra mais larga do que a do motor), e as duas seguintes pagaram réguas novas que as leituras acharam largas. Cinco linhas novas na GARGALOS; a medida de volta é o EVC, que reutiliza a maquinaria.",
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh: no motor, uma leitura a frio (265 mil símbolos) e duas curtas (283 e 133 mil); no sítio, uma leitura a frio (270 mil) e uma curta (122 mil); cinco plantas em cinco em cada uma, vinte e cinco em vinte e cinco.",
+ "claude": "a análise e a abertura pelo Fable 5.2 a xhigh; a montagem do texto final nas duas línguas e as três rondas de provas pelo Opus 5.5 (cerca de 1,2 milhões de símbolos nas várias retomas); a direção, os mandatos, as nove leituras na imagem e a revisão pelo Fable 5.2",
+ "medida": "o estudo de Évora 2027 com 465 unidades por língua, 331 linhas no livro do estudo, 126 citações por língua presas ao documento atribuído, 40 documentos de fonte alojados; no sítio, uma edição só, 165 blocos e 332 referências por língua.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-11T16:48:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros. As leituras (Claude) e as corridas por guião não entram nos pontos do Codex. As duas subscrições foram repostas pelo financiador a 11.11.2026 (a do Claude antes das 19:37 UTC, a do Codex às 20:31 UTC)."
+}

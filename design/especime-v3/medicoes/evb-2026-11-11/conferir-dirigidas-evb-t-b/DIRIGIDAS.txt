@@ -1,0 +1,2 @@
+Passos: check_leituras gate_html check_frases-afirmacao check_eo1 check_frases-reais check_voz check_lugar check_lugares check_paridade check_datas check_cartao check_indice check_pais check_registo check_documentos check_edicoes check_primeira check_privacidade check_repositorio typecheck
+Razão: a adenda B da travessia mudou a frase do cartão do estudo e acrescentou uma régua; a corrida inteira correu duas cabeças antes com 70 verdes em 72 e as dirigidas da cabeça anterior deram dezasseis verdes

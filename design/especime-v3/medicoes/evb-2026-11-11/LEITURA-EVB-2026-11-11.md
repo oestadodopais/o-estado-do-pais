@@ -103,3 +103,31 @@ Claude Opus 5.5 (`leitor`), a `xhigh`, 270 mil símbolos e 84 chamadas, sobre a 
 | 11 e 14 (Minor) | o manifesto dos documentos cita o commit do motor que escreveu os bytes e o dos registos cita a cabeça aterrada; números do relatório sem comando | conferido por este lugar no motor: `aa7ca6c` é antepassado de `71df7b3` e os bytes são os mesmos |
 
 O leitor confirmou por si: os dois documentos e as cópias com os resumos que o motor prova; os registos e os cortes iguais aos do motor; as duas declarações de texto julgado com os resumos, o juiz, a data e o commit certos; `por-registar.json` só encolheu (244 entradas a menos, nenhuma a mais); os 165 blocos da página pela ordem do registo nas duas línguas; uma edição só, sem faixa de atualização nem porta datada; a paridade presa aos resumos dos documentos julgados; as pessoas só pelo cargo e ao pé de um ato público; as 126 citações por língua com a sua prova.
+
+## A leitura curta da adenda B da travessia (12.11.2026)
+
+Claude Opus 5.5 (`leitor`), a `xhigh`, 122 mil símbolos e 53 chamadas, sobre o diff da adenda B, com dez páginas construídas da cabeça `a3219fb3d` e os registos dos dois estudos com texto julgado. As plantas estão em `leitura-evb-t-curta.plantas.json`. **Cinco plantas em cinco**, as cinco dadas como Blocking, por correr a régua do pacote sobre as páginas e os registos:
+
+- Y1 (a régua a comparar só o comprimento do texto): o achado 3;
+- Y2 (só a última célula de cada linha de quadro): o achado 4;
+- Y3 (a frase portuguesa do cartão com «que lhe foi prometido»): o achado 1;
+- Y4 (o cartão inglês da página de entrada construída com «it was promised»): o achado 2;
+- Y5 (as plantas da régua sem afirmar a recusa): o achado 5.
+
+Conferido por este lugar na cabeça `a3219fb3d`: nenhum dos cinco estragos está no código nem no `dist/` verdadeiros. O achado 6 (as medidas do relatório não se refazem com o código do pacote) é consequência das plantas.
+
+### Os achados reais e o que se decidiu
+
+| achado | o que é | decisão |
+| --- | --- | --- |
+| 7 (o teste dos dois minutos) | na página de entrada, a frase do cartão começa por «A associação», sem dizer qual; e diz que o diálogo foi reaberto em 2025 sem dizer se o dinheiro chegou | **aceite como verdadeiro, e aterra assim, com a razão:** a frase é uma unidade do texto julgado, exata e atribuída, e não engana ninguém; no texto julgado não há uma frase que nomeie a associação por inteiro e se leia sozinha sem números, e o cartão não pode imprimir números porque o estudo não tem linhas no livro do sítio. O cartão que um editor imprimia leva as duas medidas da manchete (os 34 milhões do relato ao painel e os 9,7 que as contas declaram recebidos), e isso pede duas linhas no livro do sítio, com recibo: é o bloco seguinte deste estudo (a questão EVB-18), não uma correção desta passagem. Segurar a travessia por isto deixava no ar o texto antigo, com os erros que a auditoria achou |
+| 8 (Minor) | a régua do texto só vê os elementos marcados como bloco do registo; um parágrafo sem marca dentro do corpo do estudo não se comparava (hoje só a mobília da navegação não tem marca) | a questão EVB-19, no bloco de higiene |
+| 9 (Minor) | os commits dos pontos são afirmações no pacote | conferidos por este lugar no git da worktree |
+
+O leitor confirmou por si, com a régua em igualdade inteira e em todas as células: **zero diferenças entre as quatro páginas de estudo construídas e os registos (726 blocos)**; a normalização não esconde nada que um leitor veja; a régua está na cadeia do `verify`; a `origem` do cartão é a linha 49 dos dois documentos, igual ao bloco do registo e à unidade C005; cinco das seis páginas com o cartão imprimem a C005 exata (a sexta era a planta); as provas da leitura e das cópias não perderam recusas.
+
+**As plantas das cinco leituras do EVB, no motor e no sítio: vinte e cinco em vinte e cinco.**
+
+## O fecho
+
+As conferências dirigidas da cabeça final `a3219fb3d`, por guião, com o `build`: 21 passos, nenhum vermelho. A corrida inteira da lista do `verify` correu uma vez no bloco, sobre a cabeça `30565ab59` da travessia (72 passos, 70 verdes; os dois vermelhos são os da adenda A). **As plantas das leituras do EVB, no motor e no sítio: todas apanhadas.** O texto foi julgado antes, em seis voltas do Codex com 65 plantas de sentido: 63 apanhadas em 64 válidas (a que falhou, na terceira volta, anulou essa leitura, que se repetiu na quarta) e uma inválida, deste lugar.

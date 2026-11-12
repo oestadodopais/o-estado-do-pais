@@ -1,0 +1,10 @@
+{
+ "cabeca": "a3219fb3d67e11b7c5335637a4aa49a383906c29",
+ "paginas": [
+  {"nome": "estudo", "pt": "/estudos/evora-2027-capital-europeia-da-cultura/", "en": "/en/studies/evora-2027-capital-europeia-da-cultura/"},
+  {"nome": "documento", "pt": "/estudos/evora-2027-capital-europeia-da-cultura/documento/", "en": "/en/studies/evora-2027-capital-europeia-da-cultura/document/"},
+  {"nome": "estudos", "pt": "/estudos/", "en": "/en/studies/"},
+  {"nome": "evora", "pt": "/municipios/evora/", "en": "/en/municipalities/evora/"},
+  {"nome": "inicio", "pt": "/", "en": "/en/"}
+ ]
+}
