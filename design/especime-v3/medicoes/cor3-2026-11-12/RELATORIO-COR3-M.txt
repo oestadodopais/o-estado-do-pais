@@ -1,0 +1,19 @@
+COR3-M: seis pontos comitados; três correções paradas, sem enfraquecer réguas.
+1. Fontes, 5b6bd8bf: 13 pedidos pelo cliente da casa, 12 obtidos; nove cubos iguais aos da chegada; cópias e recibos alojados.
+O novo PDF da reforma falhou com CERTIFICATE_VERIFY_FAILED: unable to get local issuer certificate. Conservada a cópia da auditoria com recibo curl verdadeiro; TLS não alterado.
+2. Orçamento, 94e8333c: 12/12 correções, duas línguas; C10 depois do PCP; 12 linhas novas, duas âncoras relidas, duas linhas antigas retiradas do composto.
+3. Reforma, 24f8edc4: 8/9 correções; cinco linhas novas, duas notas corrigidas; cartão reservado ao sítio.
+C08 da reforma parada: o atribuidor toma um 0 do SHA256 por número atribuído ao MTSSS, elevando duas más atribuições anteriores a três. Mantido o parágrafo anterior, que passa; não foi encontrada uma forma equivalente aceite sem mudar a frase decidida.
+4. Habitação, 8d33632d: 17/19 correções do corpo, nas duas línguas; C08 e C18 paradas; C20 é o cartão da passagem do sítio.
+Estudo 23: 16 linhas novas, 15 células relidas, quatro derivadas recalculadas e dois títulos corrigidos. Estudo 28: duas séries locais relidas e 12 linhas antigas retiradas do composto, preservadas no livro de investigação.
+C08/C18 da habitação: OG1-E recusa relato sem documento na mesma frase, nas linhas hab-imprensa-psp-ferido e hab-imprensa-feridos39. Forma aceite mais próxima: conservar o token |documento, com o título corrigido Manifestantes levam protesto até à porta da Câmara do Porto.
+5. Prova, 7580f102: conferir-composto-cor3.py lê as folhas; 80 trechos por língua, 75 conformes, cinco recusados nas três correções paradas. Igualdade: código 1.
+Plantas: algarismo trocado e frase anterior reposta, ambas detetadas com código 1, a partir de casos originalmente conformes.
+6. Conferências, 364da4d4: 13 códigos finais 0 e igualdade 1, lidos dos ficheiros; cinco documentos dentro dos limites existentes. Nenhuma base de tolerância alterada.
+Habitação: 52 provas numéricas, 36 células distintas, seis ordenações; 65 verificações de células, contas e séries aprovadas. As duas más atribuições anteriores da reforma permanecem.
+Falta correr o core.gate integral pelo lugar de direção numa árvore limpa. Nesta passagem não correram portões do sítio nem capturas; todos os commits usaram OEDP_GATE=adiado.
+Os ficheiros do sítio só mudaram nesta pasta; a chegada permanece não versionada no motor. Registos em cor3-m-conferencias/; medidas e listas de linhas em medidas-do-construtor-cor3-m.json.
+Consumo: 78 chamadas de ferramentas; 29 corridas de conferências registadas por curto, incluindo tentativas e excluindo recolhas e commits.
+tokens used: 12647454 (último registo observado, antes da resposta final).
+
+Depois desta passagem (12.11.2026, o lugar de direção): as três correções paradas foram decididas e instaladas. A C08 da reforma entrou pela mesma frase noutra ordem (commit do motor b02cf4a), que o atribuidor aceita sem mudar a régua; a C08 e a C18 da habitação ficam com o título da notícia na frase, como a régua OG1-E pede, e o título é agora o que a página declara. A prova de igualdade, corrida outra vez: 80 em 80 trechos conformes, código 0 (igualdade-composto-depois-das-decisoes.log).

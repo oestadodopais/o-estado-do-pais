@@ -336,7 +336,7 @@ Atual:
 > Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.
 
 Novo:
-> Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia do Diário de Notícias de 15 de outubro, «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.
+> Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.
 
 No gabarito:
 > Os feridos da intervenção policial no Porto são pelo menos «⟦HB:hab-imprensa-feridos37|excerto⟧» segundo o movimento, «⟦HB:hab-imprensa-feridos35|excerto⟧» segundo ⟦HB:hab-imprensa-feridos35|atribuicao⟧ (o BE é o Bloco de Esquerda) e, pela notícia do Diário de Notícias de ⟦lit:15 de outubro@hab-imprensa-feridos39⟧, «⟦HB:hab-imprensa-feridos39|excerto⟧» segundo as contas da organização, com «⟦HB:hab-imprensa-psp-ferido|excerto⟧» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.
@@ -347,10 +347,12 @@ Atual:
 > The injured of the police intervention in Porto are at least «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the national leadership of the Left Bloc (BE) and, by the report «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case.
 
 Novo:
-> The injured of the police intervention in Porto are at least «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the national leadership of the Left Bloc (BE) and, by the Diário de Notícias report of 15 October, «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case.
+> The injured of the police intervention in Porto are at least «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the national leadership of the Left Bloc (BE) and, by the report «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case.
 
 No gabarito:
 > The injured of the police intervention in Porto are at least «⟦HB:hab-imprensa-feridos37|excerto⟧» according to the movement, «⟦HB:hab-imprensa-feridos35|excerto⟧» according to ⟦HB:hab-imprensa-feridos35|atribuicao⟧ (BE) and, by the Diário de Notícias report of ⟦lit:15 October@hab-imprensa-feridos39⟧, «⟦HB:hab-imprensa-feridos39|excerto⟧» by the organisers' count, with «⟦HB:hab-imprensa-psp-ferido|excerto⟧» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case.
+
+**Decisão do lugar de direção depois da passagem do motor (12.11.2026):** a régua OG1-E do motor recusa um relato da imprensa sem o seu documento na mesma frase, e tem razão. A frase fica como estava, com o título da notícia, e o título passa a ser o que a página declara no seu `<title>` e no seu `<meta name="title">`; o nome que só aparecia dentro do título antigo deixa de se imprimir. O gabarito não muda (o token `|documento` rende o título novo da linha).
 
 **Provas:**
 - `imprensa-9.html` (sha256 `ee80288a4412a61c…`), html: «"publisher":{"name":"Diário de Notícias"» → valor na fonte **Diário de Notícias** [conferido]
@@ -752,7 +754,7 @@ Atual:
 > e pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte» do Diário de Notícias, «39 feridos, dois deles graves» segundo as contas da organização, e «um polícia ficou ferido» segundo a PSP.
 
 Novo:
-> e pela notícia do Diário de Notícias de 15 de outubro, «39 feridos, dois deles graves» segundo as contas da organização, e «um polícia ficou ferido» segundo a PSP.
+> e pela notícia «Manifestantes levam protesto até à porta da Câmara do Porto» do Diário de Notícias, «39 feridos, dois deles graves» segundo as contas da organização, e «um polícia ficou ferido» segundo a PSP.
 
 No gabarito:
 > e pela notícia do Diário de Notícias de ⟦lit:15 de outubro@hab-imprensa-feridos39⟧, «⟦HB:hab-imprensa-feridos39|excerto⟧» segundo as contas da organização, e «⟦HB:hab-imprensa-psp-ferido|excerto⟧» segundo a PSP.
@@ -763,12 +765,14 @@ Atual:
 > and by the Diário de Notícias report «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» by the organisers' count, and «um polícia ficou ferido» according to the PSP.
 
 Novo:
-> and by the Diário de Notícias report of 15 October, «39 feridos, dois deles graves» by the organisers' count, and «um polícia ficou ferido» according to the PSP.
+> and by the Diário de Notícias report «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» by the organisers' count, and «um polícia ficou ferido» according to the PSP.
 
 No gabarito:
 > and by the Diário de Notícias report of ⟦lit:15 October@hab-imprensa-feridos39⟧, «⟦HB:hab-imprensa-feridos39|excerto⟧» by the organisers' count, and «⟦HB:hab-imprensa-psp-ferido|excerto⟧» according to the PSP.
 
 **Instalação:** É uma oração dentro da frase longa que começa em «No Porto, a acampada»; substitui-se só o trecho citado.
+
+**Decisão do lugar de direção depois da passagem do motor (12.11.2026):** a régua OG1-E do motor recusa um relato da imprensa sem o seu documento na mesma frase, e tem razão. A frase fica como estava, com o título da notícia, e o título passa a ser o que a página declara no seu `<title>` e no seu `<meta name="title">`; o nome que só aparecia dentro do título antigo deixa de se imprimir. O gabarito não muda (o token `|documento` rende o título novo da linha).
 
 **Provas:**
 - `imprensa-9.html` (sha256 `ee80288a4412a61c…`), html: «"publisher":{"name":"Diário de Notícias"» → valor na fonte **Diário de Notícias** [conferido]

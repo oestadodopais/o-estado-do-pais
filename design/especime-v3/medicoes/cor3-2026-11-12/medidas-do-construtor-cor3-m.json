@@ -1,0 +1,1461 @@
+{
+  "partida": {
+    "sha256_da_folha_do_orcamento": {
+      "observado": "d4356ed5e4ed00084ca5935915738f87e4db26e92e6b5daec3638cd72ba92752",
+      "esperado": "d4356ed5e4ed00084ca5935915738f87e4db26e92e6b5daec3638cd72ba92752",
+      "igual": true
+    },
+    "sha256_da_folha_da_reforma": {
+      "observado": "e1b9f5bc79d0e8b0d93cf3daccdc944d0395e137cc1606fef6edfadc1641ffe5",
+      "esperado": "e1b9f5bc79d0e8b0d93cf3daccdc944d0395e137cc1606fef6edfadc1641ffe5",
+      "igual": true
+    },
+    "sha256_da_folha_da_habitacao": {
+      "observado": "221247b59a06716242adcd2f2f3531259f5722243558efed0c1299f890b679e7",
+      "esperado": "221247b59a06716242adcd2f2f3531259f5722243558efed0c1299f890b679e7",
+      "igual": true
+    },
+    "sha256_de_partida_gabarito_pt_do_orcamento": {
+      "observado": "3e5fceaa09ac1dc54285aac216eda55e05e3761998447d6e79fb0baf9e95ecd8",
+      "esperado": "3e5fceaa09ac1dc54285aac216eda55e05e3761998447d6e79fb0baf9e95ecd8",
+      "igual": true
+    },
+    "sha256_de_partida_gabarito_en_do_orcamento": {
+      "observado": "99442969a30c886cf0b1ab8ff2110cd41d49f12cb031929e1f1f3436c93b2e59",
+      "esperado": "99442969a30c886cf0b1ab8ff2110cd41d49f12cb031929e1f1f3436c93b2e59",
+      "igual": true
+    },
+    "sha256_de_partida_documento_da_reforma": {
+      "observado": "6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4",
+      "esperado": "6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4",
+      "igual": true
+    },
+    "sha256_de_partida_gabarito_pt_da_habitacao": {
+      "observado": "cd2ad4f019a507c6cfad5e112be613bfbb1860bb14e5c8441065a84cf7d949b0",
+      "esperado": "cd2ad4f019a507c6cfad5e112be613bfbb1860bb14e5c8441065a84cf7d949b0",
+      "igual": true
+    },
+    "sha256_de_partida_gabarito_en_da_habitacao": {
+      "observado": "a39a037c042a3c97135f3dc61fa6a82f90b2d65e2b2ac5585e5e9c8332fe97eb",
+      "esperado": "a39a037c042a3c97135f3dc61fa6a82f90b2d65e2b2ac5585e5e9c8332fe97eb",
+      "igual": true
+    }
+  },
+  "fontes": [
+    {
+      "estudo": "orcamento",
+      "ficheiro": "cor3/ar-calendario-oe2027.html",
+      "estado": 200,
+      "sha256_auditoria": "1566eed756bb2725257381c95b509348d27a65a40a5be3e34cacfcf51f0f8b9b",
+      "sha256_casa": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
+      "bytes_iguais": false
+    },
+    {
+      "estudo": "reforma",
+      "ficheiro": "cor3/eco-2026-08-19-reformas-antecipadas.html",
+      "estado": 200,
+      "sha256_auditoria": "b39f60df7b5089e48f0ab87381fc7472f5f6cf433d2c5dfefaf1cdf8df50048c",
+      "sha256_casa": "1922488db1c376b3d04d73069297c589c583f7aa7e8de6b444af79b9840f5a5c",
+      "bytes_iguais": false
+    },
+    {
+      "estudo": "reforma",
+      "ficheiro": "cor3/ss-documento-cmc1zt9ae.pdf",
+      "estado": 200,
+      "sha256_auditoria": "1e1dec11775e9453a6288f5d152516b2584fabb4f10ef7b2bbf3447ed22285f3",
+      "sha256_casa": "1e1dec11775e9453a6288f5d152516b2584fabb4f10ef7b2bbf3447ed22285f3",
+      "bytes_iguais": true
+    },
+    {
+      "estudo": "reforma",
+      "ficheiro": "cor3/relatorio-gt-live.pdf",
+      "estado": null,
+      "sha256_auditoria": "b46f0c546dfb4b4b9b53b59f7d35322e3241cbc5e4f919d3062b8e385a0e8227",
+      "sha256_casa": null
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/tessi164-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "518a9928315f9fe47f7b735831857eba09dba70e2eeb1a7af9987a0e778d2b32",
+      "sha256_casa": "518a9928315f9fe47f7b735831857eba09dba70e2eeb1a7af9987a0e778d2b32",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/hb1b-tespm140-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "fe7b955ed07839cd7560a9a749872ecafcae298a5544bf0f74673949e1f772f5",
+      "sha256_casa": "fe7b955ed07839cd7560a9a749872ecafcae298a5544bf0f74673949e1f772f5",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/hb1b-ilc_lvho07c-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
+      "sha256_casa": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/tipsho10-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
+      "sha256_casa": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/tipsho60-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+      "sha256_casa": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/ilc_lvho07a-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "d9a6b98030755c8a03a7b9edab2ac75ae5577a749dddabafb6a59f78c1b8e52c",
+      "sha256_casa": "d9a6b98030755c8a03a7b9edab2ac75ae5577a749dddabafb6a59f78c1b8e52c",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/bpstat-bportugal-pt-38-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "59d0046a14b798d0b9566a8e2a81442cb0e6b26998abb144e73128184434b356",
+      "sha256_casa": "59d0046a14b798d0b9566a8e2a81442cb0e6b26998abb144e73128184434b356",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/bpstat-bportugal-pt-39-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "d1203b53423903c50d8378186f91e1cd969e413e7f73c20ab703a03de2b70fb9",
+      "sha256_casa": "d1203b53423903c50d8378186f91e1cd969e413e7f73c20ab703a03de2b70fb9",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    },
+    {
+      "estudo": "habitacao",
+      "ficheiro": "cor3/bpstat-bportugal-pt-40-vivo.json",
+      "estado": 200,
+      "sha256_auditoria": "0afcc520b53684c26131fbc1aef9465f071b959091ebb9d216b249fa5e4ee574",
+      "sha256_casa": "0afcc520b53684c26131fbc1aef9465f071b959091ebb9d216b249fa5e4ee574",
+      "bytes_iguais": true,
+      "cubo_igual": true
+    }
+  ],
+  "composto": {
+    "codigo": 1,
+    "folhas": {
+      "orcamento": {
+        "sha256": "d4356ed5e4ed00084ca5935915738f87e4db26e92e6b5daec3638cd72ba92752",
+        "correcoes": 12
+      },
+      "reforma": {
+        "sha256": "e1b9f5bc79d0e8b0d93cf3daccdc944d0395e137cc1606fef6edfadc1641ffe5",
+        "correcoes": 9
+      },
+      "habitacao": {
+        "sha256": "221247b59a06716242adcd2f2f3531259f5722243558efed0c1299f890b679e7",
+        "correcoes": 20
+      }
+    },
+    "documentos": {
+      "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html": "896402a42e77dc24c7b5d03ff041a4bf90f6128ac20ae0e28cefd22043c4e71b",
+      "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html": "7acc219df4696a93d751ce12b1253d18a775728cdf2e05131de347f34b49db76",
+      "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html": "7aab008f2821f9457d044eaa4074b560cd7a65e59cd6f7a3e711e16d92313555",
+      "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html": "fdcbbc7024c25d8429a11e016a1f49d5290d2ca6d9f73fdb6c419e00c45067c7",
+      "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    },
+    "trechos": 80,
+    "conformes": 75,
+    "nao_conformes": 5,
+    "correcoes_fora_do_ambito": [
+      {
+        "estudo": "habitacao",
+        "correcao": "C20",
+        "motivo": "Cartão do sítio"
+      }
+    ],
+    "resultados": [
+      {
+        "estudo": "orcamento",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C01",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C02",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C02",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C03",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C03",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C04",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C04",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C05",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C05",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C06",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C06",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C07",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C07",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C08",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C08",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C09",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C09",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C10",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C10",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C11",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C11",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C12",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "orcamento",
+        "correcao": "C12",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 2,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 3,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 4,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 5,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C02",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C03",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C04",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C04",
+        "lingua": "pt",
+        "trecho": 2,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C04",
+        "lingua": "pt",
+        "trecho": 3,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C04",
+        "lingua": "pt",
+        "trecho": 4,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C05",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C06",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C07",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C08",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 1,
+        "depois_ocorrencias": 0,
+        "conforme": false,
+        "paragem": "Atribuição indevida adicional: um 0 do SHA-256 associado ao MTSSS."
+      },
+      {
+        "estudo": "reforma",
+        "correcao": "C09",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C01",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C01",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C02",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C02",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C03",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C03",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C04",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C04",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C05",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C05",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C06",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": null,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C06",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": null,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C07",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C07",
+        "lingua": "pt",
+        "trecho": 2,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C07",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C07",
+        "lingua": "en",
+        "trecho": 2,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C08",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 0,
+        "conforme": false,
+        "paragem": "OG1-E: relato sem documento na mesma frase."
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C08",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 0,
+        "conforme": false,
+        "paragem": "OG1-E: relato sem documento na mesma frase."
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C09",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C09",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C10",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C10",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C11",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C11",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C12",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C12",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C13",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C13",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C14",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C14",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C15",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C15",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C16",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C16",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C17",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C17",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C18",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 0,
+        "conforme": false,
+        "paragem": "OG1-E: relato sem documento na mesma frase."
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C18",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 0,
+        "conforme": false,
+        "paragem": "OG1-E: relato sem documento na mesma frase."
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C19",
+        "lingua": "pt",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      },
+      {
+        "estudo": "habitacao",
+        "correcao": "C19",
+        "lingua": "en",
+        "trecho": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 1,
+        "conforme": true
+      }
+    ],
+    "plantas": [
+      {
+        "planta": "algarismo_trocado",
+        "estudo": "orcamento",
+        "correcao": "C01",
+        "lingua": "pt",
+        "codigo": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 0,
+        "conforme": false
+      },
+      {
+        "planta": "antes_reposto",
+        "estudo": "orcamento",
+        "correcao": "C09",
+        "lingua": "pt",
+        "codigo": 1,
+        "antes_ocorrencias": 1,
+        "depois_ocorrencias": 1,
+        "conforme": false
+      }
+    ]
+  },
+  "conferencias": {
+    "codigos": {
+      "core.compor_livros_test": 0,
+      "core.compor_hb1b_test": 0,
+      "core.forma_da_citacao_test": 0,
+      "core.derivations_test": 0,
+      "publisher.habitacao_test": 0,
+      "publisher.habitacao_hb1b_test": 0,
+      "publisher.cor3_test": 0,
+      "limites-dos-documentos": 0,
+      "livro-habitacao": 0,
+      "orcamento-composto-registos": 0,
+      "habitacao-composta": 0,
+      "habitacao-registos": 0,
+      "reforma-fontes-limites": 0,
+      "igualdade-composto": 1
+    },
+    "limites": [
+      {
+        "documento": "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html",
+        "atual": {
+          "numbers": 155,
+          "matched": 106,
+          "orphans": 0,
+          "misattributions": 2,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "anterior": {
+          "numbers": 149,
+          "matched": 99,
+          "orphans": 0,
+          "misattributions": 2,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "erros": []
+      },
+      {
+        "documento": "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).md",
+        "atual": {
+          "numbers": 392,
+          "matched": 392,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "anterior": {
+          "numbers": 353,
+          "matched": 353,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "erros": []
+      },
+      {
+        "documento": "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.md",
+        "atual": {
+          "numbers": 392,
+          "matched": 392,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "anterior": {
+          "numbers": 353,
+          "matched": 353,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "erros": []
+      },
+      {
+        "documento": "content/28 Habitacao Estudo/A casa em Portugal e na Europa.md",
+        "atual": {
+          "numbers": 322,
+          "matched": 322,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "anterior": {
+          "numbers": 276,
+          "matched": 276,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "erros": []
+      },
+      {
+        "documento": "content/28 Habitacao Estudo/Housing in Portugal and in Europe.md",
+        "atual": {
+          "numbers": 327,
+          "matched": 327,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "anterior": {
+          "numbers": 277,
+          "matched": 277,
+          "orphans": 0,
+          "misattributions": 0,
+          "undeclared": 0,
+          "undeclared_assertions": 0,
+          "failed_assertions": 0,
+          "number_adjacencies": 0
+        },
+        "erros": []
+      }
+    ],
+    "corridas_registadas_por_curto_sem_recolhas_nem_commits": 29,
+    "corridas_observadas": [
+      [
+        "cor3-fontes",
+        1
+      ],
+      [
+        "cor3-fontes",
+        0
+      ],
+      [
+        "cor3-preparar",
+        0
+      ],
+      [
+        "cor3-commit1",
+        0
+      ],
+      [
+        "cor3-orcamento-livros",
+        0
+      ],
+      [
+        "cor3-orcamento-compor",
+        0
+      ],
+      [
+        "cor3-orcamento-registos",
+        1
+      ],
+      [
+        "cor3-orcamento-fechar",
+        0
+      ],
+      [
+        "cor3-reforma-instalar",
+        1
+      ],
+      [
+        "cor3-commit2",
+        2
+      ],
+      [
+        "cor3-reforma-instalar",
+        0
+      ],
+      [
+        "cor3-reforma-reconcile",
+        2
+      ],
+      [
+        "cor3-commit2",
+        0
+      ],
+      [
+        "cor3-reforma-reconcile",
+        1
+      ],
+      [
+        "cor3-reforma-reconcile",
+        0
+      ],
+      [
+        "cor3-reforma-conferir",
+        0
+      ],
+      [
+        "cor3-reforma-atribuicoes",
+        1
+      ],
+      [
+        "cor3-reforma-afirmacoes",
+        1
+      ],
+      [
+        "cor3-reforma-conferir",
+        0
+      ],
+      [
+        "cor3-commit3",
+        0
+      ],
+      [
+        "cor3-habitacao-livro",
+        0
+      ],
+      [
+        "cor3-habitacao-compor",
+        1
+      ],
+      [
+        "cor3-habitacao-compor",
+        0
+      ],
+      [
+        "cor3-habitacao-verificar",
+        0
+      ],
+      [
+        "cor3-habitacao-registos",
+        0
+      ],
+      [
+        "cor3-composto",
+        1
+      ],
+      [
+        "cor3-commit4",
+        0
+      ],
+      [
+        "cor3-commit5",
+        0
+      ],
+      [
+        "cor3-fontes-contas",
+        1
+      ],
+      [
+        "cor3-hb1b-corrigido",
+        0
+      ],
+      [
+        "cor3-fontes-contas",
+        0
+      ],
+      [
+        "cor3-limites",
+        0
+      ]
+    ],
+    "suites_em_lote": [
+      {
+        "conferencia": "core.compor_livros_test",
+        "codigo": 0,
+        "segundos": 10.53
+      },
+      {
+        "conferencia": "core.compor_hb1b_test",
+        "codigo": 0,
+        "segundos": 0.16
+      },
+      {
+        "conferencia": "core.forma_da_citacao_test",
+        "codigo": 0,
+        "segundos": 0.19
+      },
+      {
+        "conferencia": "core.derivations_test",
+        "codigo": 0,
+        "segundos": 0.17
+      },
+      {
+        "conferencia": "publisher.habitacao_test",
+        "codigo": 0,
+        "segundos": 13.72
+      },
+      {
+        "conferencia": "publisher.habitacao_hb1b_test",
+        "codigo": 1,
+        "segundos": 0.18
+      }
+    ],
+    "plantas_composto": [
+      {
+        "planta": "algarismo_trocado",
+        "estudo": "orcamento",
+        "correcao": "C01",
+        "lingua": "pt",
+        "codigo": 1,
+        "antes_ocorrencias": 0,
+        "depois_ocorrencias": 0,
+        "conforme": false
+      },
+      {
+        "planta": "antes_reposto",
+        "estudo": "orcamento",
+        "correcao": "C09",
+        "lingua": "pt",
+        "codigo": 1,
+        "antes_ocorrencias": 1,
+        "depois_ocorrencias": 1,
+        "conforme": false
+      }
+    ],
+    "portao_integral": "Não corrido nesta passagem; reservado ao lugar de direção numa árvore limpa."
+  },
+  "balanco_linhas": {
+    "11 Seguranca Social": {
+      "novas": [
+        "desemprego-longa-duracao-idade-referencia",
+        "flexibilizacao-regras-2018",
+        "flexibilizacao-regras-2018-ano",
+        "relatorio-apresentacao-publica-dia",
+        "relatorio-comparacao-copias-dia"
+      ],
+      "alteradas": [
+        "fig81-legal-com-fs-1a",
+        "fig81-penalizacao-legal"
+      ],
+      "retiradas": []
+    },
+    "23 Habitacao": {
+      "novas": [
+        "der-hab-preco-rendimento-2015-2019-pt",
+        "der-hab-preco-rendimento-2015-2025-eu",
+        "der-hab-preco-rendimento-2015-2025-pt",
+        "der-hab-preco-rendimento-2015-2025-ro",
+        "der-hab-preco-rendimento-lt-pt-2025",
+        "hab-oe-invariantes-definicao",
+        "hab-tipsho60-a-ptir-i25-eu27_2020-2015",
+        "hab-tipsho60-a-ptir-i25-eu27_2020-2025",
+        "hab-tipsho60-a-ptir-i25-pt-2015",
+        "hab-tipsho60-a-ptir-i25-pt-2019",
+        "hab-tipsho60-a-ptir-i25-pt-2025",
+        "hab-tipsho60-a-ptir-i25-ro-2015",
+        "hab-tipsho60-a-ptir-i25-ro-2025",
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025",
+        "hab-tipsho60-a-ptir-lt-avg-pt-2025",
+        "hab-tipsho60-a-ptir-lt-avg-ro-2025"
+      ],
+      "alteradas": [
+        "der-hab-preco-rendimento-lt-eu-2024",
+        "der-hab-preco-rendimento-lt-pt-2024",
+        "der-hab-precos-reais-pt-vs-eu-2025",
+        "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025",
+        "hab-bpstat-12533724",
+        "hab-bpstat-12533735",
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
+        "hab-imprensa-feridos39",
+        "hab-imprensa-psp-ferido",
+        "hab-tespm140-a-pc-eu27_2020-2025",
+        "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
+        "hab-tipsho10-a-i15-a-avg-pt-2025",
+        "hab-tipsho10-a-rch-a-avg-eu27_2020-2025",
+        "hab-tipsho10-a-rch-a-avg-pt-2025",
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024",
+        "hab-tipsho60-a-ptir-lt-avg-pt-2024",
+        "hab-tipsho60-a-ptir-lt-avg-ro-2024"
+      ],
+      "retiradas": []
+    },
+    "27 Orcamento 2027 O que muda": {
+      "novas": [
+        "oe-2027-calendario-especialidade-final",
+        "oe-2027-quadro-3-2-introducao",
+        "oe-2027-quadro-a1-1-contribuicoes-salarios",
+        "oe-2027-quadro-a1-1-impacto-saldo",
+        "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+        "pm-q4-4-irc-2026",
+        "pm-q4-4-irc-2027",
+        "pm-q4-4-irc-variacao",
+        "pm-q4-4-irs-2026",
+        "pm-q4-4-irs-2027",
+        "pm-q4-4-irs-variacao",
+        "utao-t8-irs-salarios-pensoes"
+      ],
+      "alteradas": [
+        "oe-2027-calendario-especialidade",
+        "oe-2027-calendario-final-global"
+      ],
+      "retiradas": [
+        "der-salarios-publicos-retorno-pct",
+        "utao-salarios-irs"
+      ]
+    },
+    "28 Habitacao Estudo": {
+      "novas": [
+        "der-hab-preco-rendimento-2015-2019-pt",
+        "der-hab-preco-rendimento-2015-2025-eu",
+        "der-hab-preco-rendimento-2015-2025-pt",
+        "der-hab-preco-rendimento-2015-2025-ro",
+        "der-hab-preco-rendimento-lt-pt-2025",
+        "hab-oe-invariantes-definicao",
+        "hab-tipsho60-a-ptir-i25-eu27_2020-2015",
+        "hab-tipsho60-a-ptir-i25-eu27_2020-2025",
+        "hab-tipsho60-a-ptir-i25-pt-2015",
+        "hab-tipsho60-a-ptir-i25-pt-2019",
+        "hab-tipsho60-a-ptir-i25-pt-2025",
+        "hab-tipsho60-a-ptir-i25-ro-2015",
+        "hab-tipsho60-a-ptir-i25-ro-2025",
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025",
+        "hab-tipsho60-a-ptir-lt-avg-pt-2025",
+        "hab-tipsho60-a-ptir-lt-avg-ro-2025"
+      ],
+      "alteradas": [
+        "der-hab-precos-reais-pt-vs-eu-2025",
+        "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025",
+        "hab-bpstat-12533724",
+        "hab-bpstat-12533735",
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025",
+        "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
+        "hab-imprensa-feridos39",
+        "hab-imprensa-psp-ferido",
+        "hab-tespm140-a-pc-eu27_2020-2025",
+        "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
+        "hab-tipsho10-a-i15-a-avg-pt-2025",
+        "hab-tipsho10-a-rch-a-avg-eu27_2020-2025",
+        "hab-tipsho10-a-rch-a-avg-pt-2025",
+        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"
+      ],
+      "retiradas": [
+        "der-hab-preco-rendimento-acima-2015-eu-2024",
+        "der-hab-preco-rendimento-acima-2015-pt-2024",
+        "der-hab-preco-rendimento-lt-eu-2024",
+        "der-hab-preco-rendimento-lt-pt-2024",
+        "der-hab-preco-rendimento-pt-vs-eu-2024",
+        "hab-tipsho60-a-ptir-i15-eu27_2020-2024",
+        "hab-tipsho60-a-ptir-i15-pt-2019",
+        "hab-tipsho60-a-ptir-i15-pt-2024",
+        "hab-tipsho60-a-ptir-i15-ro-2024",
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024",
+        "hab-tipsho60-a-ptir-lt-avg-pt-2024",
+        "hab-tipsho60-a-ptir-lt-avg-ro-2024"
+      ]
+    }
+  },
+  "fontes_habitacao": {
+    "provas": 52,
+    "celulas_distintas": 36,
+    "ordens": 6,
+    "conferencias_com_contas_e_series": 65
+  },
+  "commits": [
+    {
+      "sha": "5b6bd8bf7e65ccc55d684a6c03cdf3069180320b",
+      "assunto": "COR3 1: alojar fontes e recibos das correções decididas"
+    },
+    {
+      "sha": "94e8333c3146080c97c669e7d4f8880bc903a5df",
+      "assunto": "COR3 2: instalar e compor as doze correções do Orçamento"
+    },
+    {
+      "sha": "24f8edc48062b6d770c59995dbf75f8c8bfe9a99",
+      "assunto": "COR3 3: instalar oito correções da reforma e registar a prova das fontes"
+    },
+    {
+      "sha": "8d33632dadfdf555ebbc2ced45f31b57e91fb2d0",
+      "assunto": "COR3 4: reler a habitação e compor as correções aceites pelas réguas"
+    },
+    {
+      "sha": "7580f102963fe80c6422a51fdcc7d29ee80accef",
+      "assunto": "COR3 5: provar o composto e detetar as duas plantas, com três correções paradas"
+    },
+    {
+      "sha": "364da4d47ceca3ad7ef98e111132e4fd954f8e0f",
+      "assunto": "COR3 6: conferir fontes, contas, réguas e limites dos três estudos"
+    }
+  ],
+  "chamadas_de_ferramentas": {
+    "total": 78,
+    "por_ferramenta": {
+      "exec": 78
+    },
+    "criterio": "Chamadas function_call e custom_tool_call no registo desta sessão, incluindo a chamada de fecho."
+  },
+  "tokens_used": {
+    "ultimo_registo_observado": {
+      "input_tokens": 12589205,
+      "cached_input_tokens": 12360960,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 58249,
+      "reasoning_output_tokens": 19731,
+      "total_tokens": 12647454
+    },
+    "nota": "Contagem observada antes da resposta final; não é a medição do lançador em pontos."
+  },
+  "verificacao_final": {
+    "resumos_dos_cinco_documentos": true,
+    "resumos_das_tres_folhas": true,
+    "resumo_do_guiao": true,
+    "motor_so_com_chegada_nao_versionada": true,
+    "seis_commits": true
+  }
+}

@@ -399,10 +399,12 @@ Depois:
 
 ```
 A cópia lida está
-guardada com o resumo SHA-256
-<code>555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366</code>; o ficheiro em linha a 12 de
-novembro de 2026 difere dela, no texto, só na linha do DOI.</p>
+guardada; o ficheiro em linha a 12 de novembro de 2026 difere dela, no texto, só na linha do DOI. O
+resumo SHA-256 da cópia lida é
+<code>555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366</code>.</p>
 ```
+
+Decisão do lugar de direção depois da passagem do motor (12.11.2026): a frase julgada dizia o mesmo por outra ordem, com o resumo logo a seguir a «guardada com»; nessa ordem o atribuidor do motor lia um algarismo do resumo como um número atribuído ao ministério nomeado na frase anterior. A ordem nova diz as mesmas duas coisas e passa a régua sem a mudar.
 
 Não se escreve a data em que a cópia foi descarregada: o livro-razão do sítio regista 2026-08-24 como data de alojamento («access_date_kind: hosted-copy»), não de um pedido HTTP.
 

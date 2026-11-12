@@ -1,0 +1,6 @@
+COR3 composto: 75/80 trechos conformes; 5 não conformes; 2 plantas detetadas
+reforma C08 pt 1 antes=1 depois=0 Atribuição indevida adicional: um 0 do SHA-256 associado ao MTSSS.
+habitacao C08 pt 1 antes=0 depois=0 OG1-E: relato sem documento na mesma frase.
+habitacao C08 en 1 antes=0 depois=0 OG1-E: relato sem documento na mesma frase.
+habitacao C18 pt 1 antes=0 depois=0 OG1-E: relato sem documento na mesma frase.
+habitacao C18 en 1 antes=0 depois=0 OG1-E: relato sem documento na mesma frase.
