@@ -1,0 +1,38 @@
+{
+ "excerto_alargado_da_cultura_inteiro_e_unico_na_pagina_57": {
+  "valor": "True",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "numero_da_cultura_achado_no_excerto_alargado": {
+  "valor": "True",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "excerto_alargado_do_turismo_inteiro_e_unico_na_pagina_57": {
+  "valor": "True",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "numero_do_turismo_achado_no_excerto_alargado": {
+  "valor": "True",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "excerto_do_protocolo_de_2023_inteiro_e_unico_na_pagina_da_camara": {
+  "valor": "True",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "linhas_do_livro_do_estudo_com_o_valor_34": {
+  "valor": "['evl-governo-a-financiar', 'painel-transferido']",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "ocorrencias_de_painel_transferido_no_gabarito_portugues": {
+  "valor": "10",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "linhas_do_sitio_com_a_fonte_European_Commission": {
+  "valor": "5",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ },
+ "linhas_do_sitio_com_a_fonte_Comissao_Europeia_pelo_painel_europeu": {
+  "valor": "1",
+  "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/evl-2026-11-12/medir-evl-e.py"
+ }
+}
