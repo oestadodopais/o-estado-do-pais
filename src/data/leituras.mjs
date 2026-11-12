@@ -779,18 +779,17 @@ export const LEITURAS = {
   },
 
   'evora-2027-capital-europeia-da-cultura': {
-    /* EVB: C039 do documento julgado, com a troca fechada de vocabulário
-       declarada na origem. Os anos são referências; não há medidas. */
+    /* EVB: C005 do documento julgado, sem troca de palavras.
+       O ano é uma referência; não há medidas. */
     medidas: [],
     frase: {
-      pt: ['A parte da cultura está paga pelos tetos de ', { ref: '2024' }, ' e ', { ref: '2025' }, '; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.'],
-      en: ['The culture share is paid up to the ', { ref: '2024' }, ' and ', { ref: '2025' }, " ceilings; the council's is still to be confirmed, and part of the European money depends on applications."],
+      pt: ["A associação escreve que reabriu em ", { ref: '2025' }, " o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais."],
+      en: ["The association writes that in ", { ref: '2025' }, " it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies."],
     },
     origem: {
-      onde: "studies-src/evora-2027-capital-europeia-da-cultura/pt.html:69 (C039) · studies-src/evora-2027-capital-europeia-da-cultura/en.html:69 (C039)",
-      troca: 'governo-do-concelho',
-      pt: "A parte da cultura está paga pelos tetos de 2024 e 2025; a do município está por confirmar, e parte do dinheiro europeu depende de candidaturas.",
-      en: "The culture share is paid up to the 2024 and 2025 ceilings; the municipality's is still to be confirmed, and part of the European money depends on applications.",
+      onde: "studies-src/evora-2027-capital-europeia-da-cultura/pt.html:49 (C005) · studies-src/evora-2027-capital-europeia-da-cultura/en.html:49 (C005)",
+      pt: "A associação escreve que reabriu em 2025 o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais.",
+      en: "The association writes that in 2025 it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies.",
     },
   },
   'penalizacoes-por-reforma-antecipada-2026': {

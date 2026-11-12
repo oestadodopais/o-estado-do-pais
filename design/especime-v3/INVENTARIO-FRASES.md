@@ -5646,5 +5646,7 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 
 | Classe | Texto | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A parte da cultura está paga pelos tetos de e ; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas. | evb-t | viva | EVB-T: C039, com os anos por referência e a palavra câmara no lugar de município, como declarado na origem da leitura. |
-| conteudo | The culture share is paid up to the and ceilings; the council&#39;s is still to be confirmed, and part of the European money depends on applications. | evb-t | viva | EVB-T: C039, com os anos por referência e a palavra council no lugar de municipality, como declarado na origem da leitura. |
+| conteudo | A parte da cultura está paga pelos tetos de e ; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas. | evb-t-b | retirada | EVB-T-B: substituída por C005, que identifica quem escreve e os compromissos em causa. |
+| conteudo | The culture share is paid up to the and ceilings; the council&#39;s is still to be confirmed, and part of the European money depends on applications. | evb-t-b | retirada | EVB-T-B: substituída por C005, que identifica quem escreve e os compromissos em causa. |
+| conteudo | A associação escreve que reabriu em o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais. | evb-t-b | viva | EVB-T-B: C005 literal, com o ano por referência, sem medidas nem troca de palavras. |
+| conteudo | The association writes that in it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies. | evb-t-b | viva | EVB-T-B: C005 literal, com o ano por referência, sem medidas nem troca de palavras. |
