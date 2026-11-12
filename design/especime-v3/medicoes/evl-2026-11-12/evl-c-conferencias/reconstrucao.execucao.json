@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "build:pai2-d"
+  ],
+  "codigo": 0,
+  "duracao_segundos": 31.793
+}

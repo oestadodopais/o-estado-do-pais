@@ -8,4 +8,12 @@ const {medidas=[],lang='pt'}=Astro.props;
 <style>
   .estudo-medidas { display: grid; gap: .5rem; margin-block: .75rem; }
   .estudo-medida { margin: 0; font-size: .9rem; line-height: 1.45; }
+  /* EVL: reservar a área na linha impede que o nome, ao quebrar, ocupe o
+     prolongamento invisível do selo. Vale para todas as medidas e larguras. */
+  .estudo-medida :global(a.src-chip) {
+    display: inline-flex;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
 </style>
