@@ -100,7 +100,7 @@ import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import { DEFINICOES_DAS_MEDIDAS, FIGURAS, ORIGENS_DAS_DEFINICOES, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
-  linguaDoLocalizador, linguaDoTituloDoDocumento,
+  linguaDoLocalizador, linguaDoTituloDoDocumento, linguaDaAtribuicao,
   linguaDoRotuloDaFonte,
   linguaDaFonte,
   linguaDaEdicao,
@@ -1866,7 +1866,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {/* A lista vai numa cadeia só, com o separador da casa. É o
                     portão que a confere carácter a carácter, com a sua própria
                     cópia do separador — ver DECISIONS §1.31. */}
-                <CampoDaLinha id={id} campo={campoDaAtribuicao} valor={atribuicao} lang={lang} />
+                <CampoDaLinha id={id} campo={campoDaAtribuicao} valor={atribuicao} lang={lang} lingua={linguaDaAtribuicao(atribuicao, lang)} />
               </dd>
             </>
           )

@@ -154,3 +154,12 @@ for(const lang of ['pt','en']){
  console.log(`EVL leitura ${lang}: C004 na linha ${n}; duas medidas e primeiras frases inteiras conferidas.`);
 }
 console.log(`EVL: ${plantas} plantas de palavra, número, ano e frase incompleta recusadas.`);
+
+// A atribuição inglesa declara a língua sem traduzir o nome.
+const {LINGUA_DAS_ATRIBUICOES,linguaDaAtribuicao}=await import('../../src/i18n/lingua-dos-titulos.mjs');
+const {allClaims}=await import('../../src/lib/ledger.mjs');
+const nomes=new Set(allClaims().flatMap(r=>r.attributed_to??[]));
+for(const [nome,lingua] of Object.entries(LINGUA_DAS_ATRIBUICOES)){
+ assert(nomes.has(nome));assert.equal(linguaDaAtribuicao(nome,'pt'),lingua);
+ assert.equal(linguaDaAtribuicao(nome,'en'),null);
+}

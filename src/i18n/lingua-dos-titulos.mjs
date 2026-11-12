@@ -307,7 +307,6 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
  * da medida; source_label conserva o rótulo original no motor e na prova exportada. */
 // EO1-b: lista explícita das línguas dos nomes PT e das traduções EN, conferida com as linhas.
 export const LINGUA_DOS_ROTULOS = {
-  "ECOC Expert Panel": "en",
   // EO1-e: nomes conferidos na página citada do decreto e do relatório.
   "salário mínimo (RMMG)": "pt",
   "minimum wage (RMMG)": "en",
@@ -1932,3 +1931,10 @@ Object.assign(LINGUA_DAS_EDICOES, {
   "2026-09-28": null,
   "2026-10-23": null
 });
+
+/** EVL-E: nomes de atribuição com língua declarada, conservados como na fonte. */
+export const LINGUA_DAS_ATRIBUICOES = { "ECOC Expert Panel": "en" };
+export function linguaDaAtribuicao(texto, lang = 'pt') {
+  const declarada = /** @type {Record<string,string>} */ (LINGUA_DAS_ATRIBUICOES)[texto];
+  return declarada && declarada !== lang ? declarada : null;
+}
