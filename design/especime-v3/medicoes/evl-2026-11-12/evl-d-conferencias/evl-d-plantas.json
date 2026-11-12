@@ -1,0 +1,50 @@
+[
+  {
+    "lingua": "pt",
+    "caso": "controlo",
+    "codigo_medicao": 0,
+    "recusas": 0
+  },
+  {
+    "lingua": "pt",
+    "caso": "palavra trocada",
+    "codigo_medicao": 0,
+    "recusas": 1
+  },
+  {
+    "lingua": "pt",
+    "caso": "ano trocado",
+    "codigo_medicao": 0,
+    "recusas": 1
+  },
+  {
+    "lingua": "pt",
+    "caso": "vírgula tirada",
+    "codigo_medicao": 0,
+    "recusas": 1
+  },
+  {
+    "lingua": "en",
+    "caso": "controlo",
+    "codigo_medicao": 0,
+    "recusas": 0
+  },
+  {
+    "lingua": "en",
+    "caso": "palavra trocada",
+    "codigo_medicao": 0,
+    "recusas": 1
+  },
+  {
+    "lingua": "en",
+    "caso": "ano trocado",
+    "codigo_medicao": 0,
+    "recusas": 1
+  },
+  {
+    "lingua": "en",
+    "caso": "vírgula tirada",
+    "codigo_medicao": 0,
+    "recusas": 1
+  }
+]

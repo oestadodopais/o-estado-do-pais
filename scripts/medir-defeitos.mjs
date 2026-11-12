@@ -125,6 +125,19 @@ const semEntidades = (s) =>
     .replace(/&#39;/g, "'")
     .replace(/&amp;/g, '&');
 
+/** EVL-D: a identidade lê os espaços escritos no HTML, sem os acrescentar entre
+ * nós. Um ano marcado não ganha um espaço antes da vírgula; a pontuação continua
+ * obrigatória. A extração histórica das restantes conferências não muda.
+ * @param {any} no
+ * @returns {string}
+ */
+function textoDoNomeDeclarado(no) {
+  if (no.nodeType === 3) return no.rawText;
+  const tag = String(no.rawTagName ?? '').toLowerCase();
+  if (tag === 'script' || tag === 'style') return '';
+  return (no.childNodes ?? []).map(textoDoNomeDeclarado).join('');
+}
+
 const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main', 'header', 'footer', 'body', 'html']);
 
 /**
@@ -1450,7 +1463,9 @@ for (const file of ficheiros) {
      não só onde a contagem do inventário passa. */
   for (const el of root.querySelectorAll(NOME_DECLARADO)) {
     const fonte = el.getAttribute('data-nome') ?? '';
-    const t = semEntidades(norm(texto(el)));
+    const confereIdentidade = fonte === 'serie' || fonte === 'familia'
+      || (el.hasAttribute('data-de-linha') && NOMES_POR_LINHA[fonte]);
+    const t = semEntidades(norm(confereIdentidade ? textoDoNomeDeclarado(el) : texto(el)));
     if (!Object.prototype.hasOwnProperty.call(NOMES_POR_FONTE, fonte)) {
       nomesForaDaFonte.push({
         caminho: caminho || '/',

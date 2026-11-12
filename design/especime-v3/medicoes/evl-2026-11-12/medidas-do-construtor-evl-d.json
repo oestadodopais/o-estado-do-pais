@@ -1,0 +1,153 @@
+{
+  "cabeca_inicial": "bc713591d0b90e173f08b1e670d78c303e32447c",
+  "nomes": {
+    "paginas": 9814,
+    "por_fonte": {
+      "areas": 54,
+      "regioes": 0,
+      "dominios": 1848,
+      "figuras": 412,
+      "medidas": 78,
+      "projeto": 9536,
+      "oficial": 0,
+      "cartao": 28,
+      "concelho": 9850,
+      "serie": 76,
+      "familia": 1030
+    },
+    "total": 22912,
+    "recusas_antes": [
+      {
+        "caminho": "/en/ledger/evora-2027-contribuicao-inicial-do-estado-2024",
+        "fonte": "projeto",
+        "texto": "euros of initial State contribution to the association's assets, payable in 2024 , which the 2025 accounts treat as received",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-contribuicao-inicial-do-estado-2024\" nesta edição (src/data/projeto.mjs diz «euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received»)"
+      },
+      {
+        "caminho": "/en/ledger/evora-2027-contribuicao-inicial-do-estado-2024",
+        "fonte": "projeto",
+        "texto": "euros of initial State contribution to the association's assets, payable in 2024 , which the 2025 accounts treat as received",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-contribuicao-inicial-do-estado-2024\" nesta edição (src/data/projeto.mjs diz «euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received»)"
+      },
+      {
+        "caminho": "/en/ledger/evora-2027-transferido-no-relato-ao-painel-2025",
+        "fonte": "projeto",
+        "texto": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027 's progress report, in June 2025",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-transferido-no-relato-ao-painel-2025\" nesta edição (src/data/projeto.mjs diz «million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025»)"
+      },
+      {
+        "caminho": "/en/ledger/evora-2027-transferido-no-relato-ao-painel-2025",
+        "fonte": "projeto",
+        "texto": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027 's progress report, in June 2025",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-transferido-no-relato-ao-painel-2025\" nesta edição (src/data/projeto.mjs diz «million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025»)"
+      },
+      {
+        "caminho": "/en/ledger",
+        "fonte": "projeto",
+        "texto": "euros of initial State contribution to the association's assets, payable in 2024 , which the 2025 accounts treat as received",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-contribuicao-inicial-do-estado-2024\" nesta edição (src/data/projeto.mjs diz «euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received»)"
+      },
+      {
+        "caminho": "/en/ledger",
+        "fonte": "projeto",
+        "texto": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027 's progress report, in June 2025",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-transferido-no-relato-ao-painel-2025\" nesta edição (src/data/projeto.mjs diz «million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025»)"
+      },
+      {
+        "caminho": "/livro-razao/evora-2027-contribuicao-inicial-do-estado-2024",
+        "fonte": "projeto",
+        "texto": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024 , que as contas de 2025 dão como recebida",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-contribuicao-inicial-do-estado-2024\" nesta edição (src/data/projeto.mjs diz «euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida»)"
+      },
+      {
+        "caminho": "/livro-razao/evora-2027-contribuicao-inicial-do-estado-2024",
+        "fonte": "projeto",
+        "texto": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024 , que as contas de 2025 dão como recebida",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-contribuicao-inicial-do-estado-2024\" nesta edição (src/data/projeto.mjs diz «euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida»)"
+      },
+      {
+        "caminho": "/livro-razao/evora-2027-transferido-no-relato-ao-painel-2025",
+        "fonte": "projeto",
+        "texto": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027 , em junho de 2025",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-transferido-no-relato-ao-painel-2025\" nesta edição (src/data/projeto.mjs diz «milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025»)"
+      },
+      {
+        "caminho": "/livro-razao/evora-2027-transferido-no-relato-ao-painel-2025",
+        "fonte": "projeto",
+        "texto": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027 , em junho de 2025",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-transferido-no-relato-ao-painel-2025\" nesta edição (src/data/projeto.mjs diz «milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025»)"
+      },
+      {
+        "caminho": "/livro-razao",
+        "fonte": "projeto",
+        "texto": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024 , que as contas de 2025 dão como recebida",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-contribuicao-inicial-do-estado-2024\" nesta edição (src/data/projeto.mjs diz «euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida»)"
+      },
+      {
+        "caminho": "/livro-razao",
+        "fonte": "projeto",
+        "texto": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027 , em junho de 2025",
+        "porque": "o texto marcado não é o nome da linha \"evora-2027-transferido-no-relato-ao-painel-2025\" nesta edição (src/data/projeto.mjs diz «milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025»)"
+      }
+    ],
+    "recusas_depois": [],
+    "verdes_antes": 22900,
+    "verdes_que_passaram_a_vermelhos": 0,
+    "frases_da_casa_inalteradas": true
+  },
+  "plantas": [
+    {
+      "lingua": "pt",
+      "caso": "controlo",
+      "codigo_medicao": 0,
+      "recusas": 0
+    },
+    {
+      "lingua": "pt",
+      "caso": "palavra trocada",
+      "codigo_medicao": 0,
+      "recusas": 1
+    },
+    {
+      "lingua": "pt",
+      "caso": "ano trocado",
+      "codigo_medicao": 0,
+      "recusas": 1
+    },
+    {
+      "lingua": "pt",
+      "caso": "vírgula tirada",
+      "codigo_medicao": 0,
+      "recusas": 1
+    },
+    {
+      "lingua": "en",
+      "caso": "controlo",
+      "codigo_medicao": 0,
+      "recusas": 0
+    },
+    {
+      "lingua": "en",
+      "caso": "palavra trocada",
+      "codigo_medicao": 0,
+      "recusas": 1
+    },
+    {
+      "lingua": "en",
+      "caso": "ano trocado",
+      "codigo_medicao": 0,
+      "recusas": 1
+    },
+    {
+      "lingua": "en",
+      "caso": "vírgula tirada",
+      "codigo_medicao": 0,
+      "recusas": 1
+    }
+  ],
+  "codigos": {
+    "medicao-antes": 0,
+    "medicao-depois": 0,
+    "plantas": 0
+  }
+}
