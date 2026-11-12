@@ -307,6 +307,7 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
  * da medida; source_label conserva o rótulo original no motor e na prova exportada. */
 // EO1-b: lista explícita das línguas dos nomes PT e das traduções EN, conferida com as linhas.
 export const LINGUA_DOS_ROTULOS = {
+  "ECOC Expert Panel": "en",
   // EO1-e: nomes conferidos na página citada do decreto e do relatório.
   "salário mínimo (RMMG)": "pt",
   "minimum wage (RMMG)": "en",
@@ -1019,7 +1020,6 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
   "Associação Évora 2027": "pt",
-  "ECOC Expert Panel": "en",
   "EDIA": "pt",
   "DGADR": "pt",
   "Gulbenkian": "pt",

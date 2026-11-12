@@ -2,51 +2,11 @@
   {
     "estudo": "/",
     "lingua": "en",
-    "frase": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025.",
+    "frase": "34 million euros that Évora 2027's progress report gave as already transferred in June 2025, by the European panel's summary",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "3c47927e4f6341e37c478dbd80020dbbb810e1139fd90f7207a975632f766cd6",
-    "ocorrencias": [
-      {
-        "pagina": "/en",
-        "bloco": 125,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025",
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
-      }
-    ]
-  },
-  {
-    "estudo": "/",
-    "lingua": "en",
-    "frase": "9,7 million euros received under the protocol up to the end of 2025, by the association's accounts",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "4faaba1cbf3840c283f40b9498f230188594d5818ddd6dd68de00949c42dbb2c",
-    "ocorrencias": [
-      {
-        "pagina": "/en",
-        "bloco": 123,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025"
-        ]
-      }
-    ],
-    "pelo_par": false
-  },
-  {
-    "estudo": "/",
-    "lingua": "en",
-    "frase": "34 million euros given as already transferred in the report to the European panel, in June 2025",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "9c567c87a9257fd955020d81fad6d291d38f462fe33d4c5d99e040f95a5fa2f2",
+    "sha256": "1d7c8f6ac678e51d463ac91abd9fba0ba84bc4c25d67a884c9fb5f71df8369b9",
     "ocorrencias": [
       {
         "pagina": "/en",
@@ -61,19 +21,19 @@
   },
   {
     "estudo": "/",
-    "lingua": "pt",
-    "frase": "34 milhões de euros dados como já transferidos no relato ao painel europeu, em junho de 2025",
+    "lingua": "en",
+    "frase": "9,7 million euros received under the protocol up to the end of 2025, by the accounts of the Associação Évora 2027",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "8ff1c7e229caebdabf4bab3b2f677c52afcc8197e3be300a087e7fad2fe3aec9",
+    "sha256": "c584b736b8edd68bdfce09bb87e968129cd63a5b576bf5362c11cafaba081798",
     "ocorrencias": [
       {
-        "pagina": "/",
-        "bloco": 124,
+        "pagina": "/en",
+        "bloco": 123,
         "indice": 0,
         "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
+          "evora-2027-recebido-do-protocolo-ate-2025"
         ]
       }
     ],
@@ -82,32 +42,11 @@
   {
     "estudo": "/",
     "lingua": "pt",
-    "frase": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025.",
+    "frase": "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da Associação Évora 2027",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "d610b8b24c4bd1d070e1a81d33ed49823f12c7e5b7360cc82f99c2da84dfac96",
-    "ocorrencias": [
-      {
-        "pagina": "/",
-        "bloco": 125,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025",
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
-      }
-    ],
-    "pelo_par": true
-  },
-  {
-    "estudo": "/",
-    "lingua": "pt",
-    "frase": "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da associação",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "ed99aa706493cb667e2731819682ce9423343d388a160f990e4371e5f75cdc4b",
+    "sha256": "06b8ea1eecb2e5b954d6a990b2b089ce910ae5747799c083ed93885d41c48469",
     "ocorrencias": [
       {
         "pagina": "/",
@@ -121,40 +60,20 @@
     "pelo_par": false
   },
   {
-    "estudo": "/estudos",
-    "lingua": "en",
-    "frase": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025.",
+    "estudo": "/",
+    "lingua": "pt",
+    "frase": "34 milhões de euros que o relatório de progresso de Évora 2027 dava como já transferidos em junho de 2025, pelo resumo do painel europeu",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "3c47927e4f6341e37c478dbd80020dbbb810e1139fd90f7207a975632f766cd6",
+    "sha256": "8b945db131e918605ae6e890745650dec85cf3b59711c68ebb691dab219501ee",
     "ocorrencias": [
       {
-        "pagina": "/en/studies",
-        "bloco": 7,
+        "pagina": "/",
+        "bloco": 124,
         "indice": 0,
         "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025",
           "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
-      }
-    ]
-  },
-  {
-    "estudo": "/estudos",
-    "lingua": "en",
-    "frase": "9,7 million euros received under the protocol up to the end of 2025, by the association's accounts",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "4faaba1cbf3840c283f40b9498f230188594d5818ddd6dd68de00949c42dbb2c",
-    "ocorrencias": [
-      {
-        "pagina": "/en/studies",
-        "bloco": 5,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025"
         ]
       }
     ],
@@ -163,11 +82,11 @@
   {
     "estudo": "/estudos",
     "lingua": "en",
-    "frase": "34 million euros given as already transferred in the report to the European panel, in June 2025",
+    "frase": "34 million euros that Évora 2027's progress report gave as already transferred in June 2025, by the European panel's summary",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "9c567c87a9257fd955020d81fad6d291d38f462fe33d4c5d99e040f95a5fa2f2",
+    "sha256": "1d7c8f6ac678e51d463ac91abd9fba0ba84bc4c25d67a884c9fb5f71df8369b9",
     "ocorrencias": [
       {
         "pagina": "/en/studies",
@@ -182,19 +101,19 @@
   },
   {
     "estudo": "/estudos",
-    "lingua": "pt",
-    "frase": "34 milhões de euros dados como já transferidos no relato ao painel europeu, em junho de 2025",
+    "lingua": "en",
+    "frase": "9,7 million euros received under the protocol up to the end of 2025, by the accounts of the Associação Évora 2027",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "8ff1c7e229caebdabf4bab3b2f677c52afcc8197e3be300a087e7fad2fe3aec9",
+    "sha256": "c584b736b8edd68bdfce09bb87e968129cd63a5b576bf5362c11cafaba081798",
     "ocorrencias": [
       {
-        "pagina": "/estudos",
-        "bloco": 6,
+        "pagina": "/en/studies",
+        "bloco": 5,
         "indice": 0,
         "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
+          "evora-2027-recebido-do-protocolo-ate-2025"
         ]
       }
     ],
@@ -203,32 +122,11 @@
   {
     "estudo": "/estudos",
     "lingua": "pt",
-    "frase": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025.",
+    "frase": "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da Associação Évora 2027",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "d610b8b24c4bd1d070e1a81d33ed49823f12c7e5b7360cc82f99c2da84dfac96",
-    "ocorrencias": [
-      {
-        "pagina": "/estudos",
-        "bloco": 7,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025",
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
-      }
-    ],
-    "pelo_par": true
-  },
-  {
-    "estudo": "/estudos",
-    "lingua": "pt",
-    "frase": "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da associação",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "ed99aa706493cb667e2731819682ce9423343d388a160f990e4371e5f75cdc4b",
+    "sha256": "06b8ea1eecb2e5b954d6a990b2b089ce910ae5747799c083ed93885d41c48469",
     "ocorrencias": [
       {
         "pagina": "/estudos",
@@ -242,40 +140,20 @@
     "pelo_par": false
   },
   {
-    "estudo": "colecao-municipio",
-    "lingua": "en",
-    "frase": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025.",
+    "estudo": "/estudos",
+    "lingua": "pt",
+    "frase": "34 milhões de euros que o relatório de progresso de Évora 2027 dava como já transferidos em junho de 2025, pelo resumo do painel europeu",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "3c47927e4f6341e37c478dbd80020dbbb810e1139fd90f7207a975632f766cd6",
+    "sha256": "8b945db131e918605ae6e890745650dec85cf3b59711c68ebb691dab219501ee",
     "ocorrencias": [
       {
-        "pagina": "/en/municipalities/evora",
-        "bloco": 48,
+        "pagina": "/estudos",
+        "bloco": 6,
         "indice": 0,
         "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025",
           "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
-      }
-    ]
-  },
-  {
-    "estudo": "colecao-municipio",
-    "lingua": "en",
-    "frase": "9,7 million euros received under the protocol up to the end of 2025, by the association's accounts",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "4faaba1cbf3840c283f40b9498f230188594d5818ddd6dd68de00949c42dbb2c",
-    "ocorrencias": [
-      {
-        "pagina": "/en/municipalities/evora",
-        "bloco": 46,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025"
         ]
       }
     ],
@@ -284,11 +162,11 @@
   {
     "estudo": "colecao-municipio",
     "lingua": "en",
-    "frase": "34 million euros given as already transferred in the report to the European panel, in June 2025",
+    "frase": "34 million euros that Évora 2027's progress report gave as already transferred in June 2025, by the European panel's summary",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "9c567c87a9257fd955020d81fad6d291d38f462fe33d4c5d99e040f95a5fa2f2",
+    "sha256": "1d7c8f6ac678e51d463ac91abd9fba0ba84bc4c25d67a884c9fb5f71df8369b9",
     "ocorrencias": [
       {
         "pagina": "/en/municipalities/evora",
@@ -303,19 +181,19 @@
   },
   {
     "estudo": "colecao-municipio",
-    "lingua": "pt",
-    "frase": "34 milhões de euros dados como já transferidos no relato ao painel europeu, em junho de 2025",
+    "lingua": "en",
+    "frase": "9,7 million euros received under the protocol up to the end of 2025, by the accounts of the Associação Évora 2027",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "8ff1c7e229caebdabf4bab3b2f677c52afcc8197e3be300a087e7fad2fe3aec9",
+    "sha256": "c584b736b8edd68bdfce09bb87e968129cd63a5b576bf5362c11cafaba081798",
     "ocorrencias": [
       {
-        "pagina": "/municipios/evora",
-        "bloco": 47,
+        "pagina": "/en/municipalities/evora",
+        "bloco": 46,
         "indice": 0,
         "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
+          "evora-2027-recebido-do-protocolo-ate-2025"
         ]
       }
     ],
@@ -324,32 +202,11 @@
   {
     "estudo": "colecao-municipio",
     "lingua": "pt",
-    "frase": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025.",
+    "frase": "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da Associação Évora 2027",
     "tipos": [
       "atribuicao"
     ],
-    "sha256": "d610b8b24c4bd1d070e1a81d33ed49823f12c7e5b7360cc82f99c2da84dfac96",
-    "ocorrencias": [
-      {
-        "pagina": "/municipios/evora",
-        "bloco": 48,
-        "indice": 0,
-        "linhas": [
-          "evora-2027-recebido-do-protocolo-ate-2025",
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
-      }
-    ],
-    "pelo_par": true
-  },
-  {
-    "estudo": "colecao-municipio",
-    "lingua": "pt",
-    "frase": "9,7 milhões de euros recebidos do protocolo até ao fim de 2025, pelas contas da associação",
-    "tipos": [
-      "atribuicao"
-    ],
-    "sha256": "ed99aa706493cb667e2731819682ce9423343d388a160f990e4371e5f75cdc4b",
+    "sha256": "06b8ea1eecb2e5b954d6a990b2b089ce910ae5747799c083ed93885d41c48469",
     "ocorrencias": [
       {
         "pagina": "/municipios/evora",
@@ -357,6 +214,26 @@
         "indice": 0,
         "linhas": [
           "evora-2027-recebido-do-protocolo-ate-2025"
+        ]
+      }
+    ],
+    "pelo_par": false
+  },
+  {
+    "estudo": "colecao-municipio",
+    "lingua": "pt",
+    "frase": "34 milhões de euros que o relatório de progresso de Évora 2027 dava como já transferidos em junho de 2025, pelo resumo do painel europeu",
+    "tipos": [
+      "atribuicao"
+    ],
+    "sha256": "8b945db131e918605ae6e890745650dec85cf3b59711c68ebb691dab219501ee",
+    "ocorrencias": [
+      {
+        "pagina": "/municipios/evora",
+        "bloco": 47,
+        "indice": 0,
+        "linhas": [
+          "evora-2027-transferido-no-relato-ao-painel-2025"
         ]
       }
     ],
@@ -532,9 +409,7 @@
         "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura",
         "bloco": 84,
         "indice": 1,
-        "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
+        "linhas": []
       },
       {
         "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
@@ -610,9 +485,7 @@
         "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura",
         "bloco": 84,
         "indice": 0,
-        "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
+        "linhas": []
       },
       {
         "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
@@ -686,9 +559,7 @@
         "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura",
         "bloco": 126,
         "indice": 0,
-        "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
+        "linhas": []
       },
       {
         "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
@@ -738,9 +609,7 @@
         "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
         "bloco": 84,
         "indice": 1,
-        "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
+        "linhas": []
       },
       {
         "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
@@ -870,9 +739,7 @@
         "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
         "bloco": 84,
         "indice": 0,
-        "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
+        "linhas": []
       },
       {
         "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
@@ -1002,9 +869,7 @@
         "pagina": "/estudos/evora-2027-capital-europeia-da-cultura",
         "bloco": 126,
         "indice": 0,
-        "linhas": [
-          "evora-2027-transferido-no-relato-ao-painel-2025"
-        ]
+        "linhas": []
       },
       {
         "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
