@@ -1,0 +1,36 @@
+
+> o-estado-do-pais@0.1.0 check:eo1
+> node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs && node tests/eo1/metades.mjs && node tests/eo1/definicoes.mjs
+
+EO1 portas o-que-se-discute: 2/2
+EO1 portas explicacoes/dinheiro-do-estado-2026: 1/1
+EO1 portas en/under-discussion: 2/2
+EO1 portas en/explainers/dinheiro-do-estado-2026: 1/1
+B1 estudos/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 en/studies/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 estudos/a-casa-em-portugal-e-na-europa: primeiro H2 conferido e planta recusada.
+B1 en/studies/a-casa-em-portugal-e-na-europa: primeiro H2 conferido e planta recusada.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: estudos/evora-contas-da-camara-2010-2025
++ actual - expected
+
++ [
++   'B1 leitura evora-contas-da-camara-2010-2025/pt: primeiro H2 diferente do registo julgado.'
++ ]
+- []
+
+    at file://<worktree>/tests/eo1/maquinaria.mjs:97:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'B1 leitura evora-contas-da-camara-2010-2025/pt: primeiro H2 diferente do registo julgado.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

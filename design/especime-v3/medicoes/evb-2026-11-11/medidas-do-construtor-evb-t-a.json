@@ -1,0 +1,36 @@
+{
+  "pontos": {
+    "1": "7a696ccea",
+    "2": "23bf91060"
+  },
+  "cabeca_do_dist": "23bf9106026209d6e9746deb6dd90c0ce8d4019b",
+  "codigos": {
+    "01-copias": 1,
+    "02-copias": 0,
+    "03-copias": 0,
+    "build": 130,
+    "eo1-final": 0,
+    "eo1": 1,
+    "frases-afirmacao-final": 0,
+    "frases-afirmacao": 1,
+    "frases-reais-final": 0,
+    "frases-reais": 1,
+    "leituras": 1
+  },
+  "corridas_explicitas": 11,
+  "chamadas_ferramentas_ate_relatorio": 57,
+  "corridas_lista_inteira": 0,
+  "capturas_pedidas": 0,
+  "plantas": {
+    "leitura": 72,
+    "titulo_cartao": 10,
+    "copias_anteriores": 38,
+    "eo1_maquinaria": 41
+  },
+  "limites": [
+    "check:leituras: Chromium recusado pela sandbox, Permission denied (1100).",
+    "Build interrompido para fechar a passagem; sessão terminou com 130, curto.sh imprimiu 1 e com-tranca.py registou PermissionError ao terminar o grupo.",
+    "Perfil de navegador pelo escrivão cancelado antes de arrancar; nenhuma corrida fora da sandbox."
+  ],
+  "commits": "Dois pontos de código confirmados; relatório e medidas constituem o terceiro pedido de commit."
+}

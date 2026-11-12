@@ -1,0 +1,10 @@
+EVB-T-A: ponto 1 comitado em 7a696ccea; leitura presa à unidade julgada, anos exatos e troca declarada numa lista fechada bilingue.
+As duas entradas antigas da entrada saíram; os hashes vermelhos eram do título do cartão com novo/new, agora coberto por nome, porta, língua e marcador exatos.
+Plantas: 72 recusas da leitura e 10 do título; os 38 controlos negativos anteriores das cópias continuam verdes.
+O dist imprime a leitura em seis páginas; no estudo imprime C039 com município; duas plantas positivas provam a cópia da leitura nessa rota.
+Ponto 2 comitado em 23bf91060: primeiro H2 do corpo igual ao do registo julgado; abertura antiga preservada; sucessor conferido em PT e EN.
+EO1: 41 plantas da maquinaria recusadas, incluindo os títulos trocados; código final 0.
+Prova: check:frases-afirmacao=0; check:eo1=0; check:frases-reais=0; check:leituras=1; códigos lidos dos ficheiros em evb-t-a-conferencias.
+check:leituras falhou só em ferramentas.py: bootstrap_check_in, Permission denied (1100); perfil do escrivão cancelado antes de arrancar pelo limite da passagem.
+Build interrompido: sessão 130, curto.sh 1; com-tranca.py registou PermissionError ao terminar o grupo; HTML reconstruído em 23bf91060, sem prova de build completo verde.
+Custo até este relatório: 57 chamadas de ferramentas e 11 corridas explícitas, incluindo o build; lista inteira 0; falta a prova de leituras fora da sandbox e o build completo.

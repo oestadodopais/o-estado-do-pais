@@ -1,0 +1,16 @@
+
+> o-estado-do-pais@0.1.0 check:frases-afirmacao
+> node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs && node tests/eva/textos-julgados.mjs && node tests/eva/modelos.mjs && node tests/evb/copias-julgadas.mjs
+
+adenda G: atribuições da leitura curta exigem registo; alternativas tipadas recusam e nomeiam a linha nos três campos e nas duas línguas; histórico E e F conferido
+adenda F: citações impressas PT e EN sem máscara, todas as ocorrências, palavras após números, prosa manual e modelos diferentes da fonte recusados
+adenda E: datas e valores conservam a chave; palavras exigem registo; duplicados colapsam; presença aceita datas; citações conservam os números
+adenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos
+adenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos
+índice preparado: uma recusa impede o commit no escrivão
+AUD1: contrações e verbos portugueses conferidos
+frases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos
+frases: 1942; registo: 22; por registar: 1368; recusas: 2
+excertos: corpos lidos; limpa=true; linhas lidas=21
+cobertura: frase sem registo: /|en|d24662e883b252efd0aabc77c646c15fa9df91a710f5ec7f67ea91bfe0580acc
+cobertura: frase sem registo: /|pt|3b2e3395352d5ef74fd7534749d81822a0e6f9ca3de86c36bdac88a24d0e0af0
