@@ -1,0 +1,394 @@
+{
+  "cabeca_medida": "0734e258c838e32df8cb792ed8b18c08ee387640",
+  "chamadas_de_ferramentas_ate_ao_registo": 73,
+  "registo_de_sessao_ate": "2026-11-12T19:17:45.876Z",
+  "corridas_de_conferencias": 42,
+  "execucoes_com_codigo": 51,
+  "corridas_inteiras_dos_portoes": 0,
+  "codigos": {
+    "ledger:check": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/ledger-check-final.codigo"
+    },
+    "check:cruzamento": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-cruzamento.codigo"
+    },
+    "check:series": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-series-final.codigo"
+    },
+    "check:registo": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-registo.codigo"
+    },
+    "check:cartao": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-cartao-final.codigo"
+    },
+    "check:leituras": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-leituras-escrivao.codigo"
+    },
+    "check:frases-afirmacao": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-frases-afirmacao.codigo"
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-frases-reais-final.codigo"
+    },
+    "check:voz": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-voz-final.codigo"
+    },
+    "check:voz-retiradas": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-voz-retiradas-final.codigo"
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-lingua.codigo"
+    },
+    "check:eo1": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-eo1.codigo"
+    },
+    "check:explicacoes": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-explicacoes-final.codigo"
+    },
+    "check:lugar": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-lugar.codigo"
+    },
+    "check:indice": {
+      "codigo": null,
+      "ficheiro": "cr3-conferencias/check-indice-escrivao.codigo"
+    },
+    "gate:html": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/gate-html-com-cartoes.codigo"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/typecheck-final.codigo"
+    },
+    "check:rotulos": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-rotulos-final.codigo"
+    },
+    "check:formas": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-formas.codigo"
+    },
+    "check:datas": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-datas.codigo"
+    },
+    "check:quadro": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-quadro-final.codigo"
+    },
+    "check:pais": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-pais.codigo"
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-paridade.codigo"
+    },
+    "check:indice (sem navegador)": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-indice-sem-navegador.codigo"
+    },
+    "HTML CR3": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/html-cr3-final.codigo"
+    },
+    "listas CR3": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-releituras.codigo"
+    },
+    "build:pai2-d": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/build-paginas.codigo"
+    },
+    "cartoes": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/cartoes.codigo"
+    },
+    "check:sobreposicao": {
+      "codigo": 1,
+      "ficheiro": "cr3-conferencias/check-sobreposicao-escrivao.codigo"
+    },
+    "check:largura": {
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-largura-escrivao.codigo"
+    }
+  },
+  "execucoes": [
+    {
+      "ficheiro": "cr3-conferencias/aplicacao-ensaio.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/aplicacao-published-at.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/aplicacao.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/astro-build.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/build-paginas.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/cartoes.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-cartao-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-cartao.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-cruzamento.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-datas.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-eo1.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-explicacoes-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-explicacoes.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-formas.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-frases-afirmacao.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-frases-reais-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-frases-reais.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-indice-sem-navegador.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-largura-escrivao.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-leituras-escrivao.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-leituras.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-lingua.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-lugar.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-pais.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-paridade.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-quadro-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-quadro.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-registo.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-releituras.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-rotulos-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-series-construido.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-series-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-series.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-sobreposicao-escrivao.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-voz-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-voz-retiradas-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-voz-retiradas.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-voz.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/gate-html-com-cartoes.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/gate-html-final.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/gate-html.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/html-cr3-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/html-cr3.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/ledger-check-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/ledger-check-historia.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/ledger-check.codigo",
+      "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/p1-ensaio.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/p2-ensaio.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/p4-ensaio.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/typecheck-final.codigo",
+      "codigo": 0
+    },
+    {
+      "ficheiro": "cr3-conferencias/typecheck.codigo",
+      "codigo": 0
+    }
+  ],
+  "aplicacao": {
+    "linhas": 2,
+    "aplicadas": 2,
+    "entradas_novas": 6,
+    "atualizacoes_novas": 2,
+    "bandeiras_que_sairam": 0,
+    "plantas": 28,
+    "plantas_que_morderam": 28
+  },
+  "published_at": {
+    "linhas": 2,
+    "aplicadas": 2,
+    "dias_iguais_ao_dia_utc": 2,
+    "dias": [
+      "2026-10-29"
+    ],
+    "plantas": 12,
+    "plantas_que_morderam": 12
+  },
+  "ensaio_final": {
+    "linhas": 2,
+    "aplicadas": 0,
+    "entradas_novas": 6,
+    "atualizacoes_novas": 2,
+    "bandeiras_que_sairam": 0,
+    "plantas": 30,
+    "plantas_que_morderam": 30
+  },
+  "commits_anteriores_ao_registo": [
+    "0734e258c CR3: fechar a história dos valores e escolher as plantas pelos dados",
+    "d3f144872 CR3: aplicar as duas revisões das exportações e as datas da fonte",
+    "0cc6ad0bf CR3: declarar o lugar das linhas pela geografia do pedido",
+    "8318c1768 CR3: distinguir a leitura da comparação semanal na razão do acesso"
+  ],
+  "listas": {
+    "novas_regras": [
+      "lugar-das-linhas",
+      "historias-valores"
+    ],
+    "ja_compostas_dos_dados": [
+      "correções e atualizações",
+      "o que mudou",
+      "leitura semanal e revisões pendentes",
+      "leituras das medidas e perguntas provadas"
+    ],
+    "conferidas_sem_novas_declaracoes": [
+      "inventário das frases",
+      "inventário dos rótulos",
+      "declarações de língua"
+    ],
+    "plantas_passam_a_escolher_pelos_dados": [
+      "cartão",
+      "quadro",
+      "índice"
+    ]
+  },
+  "motor_sem_alteracoes": true,
+  "habitacao_intacta": true
+}

@@ -1,0 +1,20 @@
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: correcoes-publicadas sem entrada selada",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 11 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 11 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "decimal retirado da primeira",
+      "mordeu": true,
+      "queixa": "E0 visível pt primeira: falta o valor publicado com a unidade.",
+      "memoria_isolada": true
+    }
+  ]
+}
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-11-11, construção 2026-11-12); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-11-12, sem escrever em dist/.

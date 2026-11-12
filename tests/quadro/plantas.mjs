@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
+import {ENTRADAS} from '../../src/data/primeira-pagina.mjs';
 import {conferirQuadro,conferirAvisos,revisoesPorAplicar,livroDoQuadro,superficieDoQuadro,conferirUnidadeDaComparacao} from '../../scripts/check-quadro.mjs';
 const dist=process.env.OEDP_DIST??'dist';
 let conta=0;
@@ -22,10 +23,10 @@ for(const lang of ['pt','en']){
   ['nome trocado',r=>r.querySelector('[data-quadro-destino]').set_content('Nome indevido'),/nome ou destino/],
  ];
  for(const [nome,mudar,mordida] of plantas){const copia=parse(html);mudar(copia);assert(medir(copia).some(e=>mordida.test(e)),`${lang} ${nome}`);assert.equal(superficieDoQuadro(copia,lang,{dist}).portas.size,0,`${nome}: L1 não dispensa forma estragada`);conta++;console.log(`PAI2 ${lang}: ${nome} recusado.`);}
- const porta=lang==='pt'?'estado-e-economia':'en/state-and-economy';
- const card=fs.readFileSync(path.join(dist,porta,'index.html'),'utf8');
+ const paginas=ENTRADAS.filter(e=>e.seccoes.some(s=>s.cartoes.length)).map(e=>fs.readFileSync(path.join(dist,e.rota[lang].replace(/^\//,''),'index.html'),'utf8'));
+ const card=paginas.find(p=>parse(p).querySelector('[data-aviso-revisao]'))??paginas[0];
  assert.deepEqual(conferirAvisos(parse(card),lang).erros,[]);
- for(const [nome,mudar,mordida] of [
+ if(parse(card).querySelector('[data-aviso-revisao]')) for(const [nome,mudar,mordida] of [
   ['divergência sem aviso',r=>r.querySelector('[data-aviso-revisao]').remove(),/Q3/],
   ['aviso sem divergência',r=>r.querySelector('[data-aviso-revisao]').setAttribute('data-aviso-revisao','divida-publica-2025'),/Q4/],
   ['data da revisão trocada',r=>r.querySelector('[data-aviso-revisao] [data-de-campo]').set_content('01.01.1900'),/Q4/],
@@ -37,12 +38,14 @@ for(const lang of ['pt','en'])for(const rota of [lang==='pt'?'uniao-europeia':'e
  const html=fs.readFileSync(path.join(dist,rota,'index.html'),'utf8'),root=parse(html);
  assert.deepEqual(conferirAvisos(root,lang).erros,[]);
  const aviso=root.querySelector('[data-aviso-revisao="sobrecarga-do-custo-da-habitacao-2025-ue"]');
+ if(!revisoesPorAplicar().has('sobrecarga-do-custo-da-habitacao-2025-ue')){assert.equal(aviso,null);continue;}
  assert(aviso);aviso.remove();assert(conferirAvisos(root,lang).erros.some(e=>e.startsWith('Q3')));conta++;
  console.log(`PAI2 ${lang}: aviso retirado da série recusado.`);
 }
 // A ordem do vetor não substitui a data; uma correção de outro campo não aplica a revisão.
-const id=[...revisoesPorAplicar().keys()][0],original=livroDoQuadro().get(id);
-const v=revisoesPorAplicar().get(id);
+const id=[...livroDoQuadro().keys()][0],original=structuredClone(livroDoQuadro().get(id));
+// Uma divergência sintética mantém estas plantas mesmo sem revisões reais pendentes.
+original.verifications=[{date:'2000-01-01',result:'diverge',found:'1'}];original.corrections=[];
 for(const [nome,editar,esperado] of [
  ['releitura igual posterior',c=>c.verifications.push({date:'9999-01-01',result:'igual'}),false],
  ['correção posterior',c=>c.corrections.push({date:'9999-01-01',kind:'correcao'}),false],

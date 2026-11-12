@@ -1,0 +1,20 @@
+> node tests/voz/evl-nomes.mjs && node tests/voz/evl-medidas.mjs && node tests/hb1/voz-portas.mjs && node tests/edicoes/voz.mjs && node tests/edicoes/voz-linha.mjs && node scripts/check-voz.mjs && node tests/quadro/reguas.mjs voz && node tests/voz/voz1.mjs && node tests/voz/voz2a.mjs && node scripts/leituras/conferir-pares.mjs dist design/especime-v3/medicoes/voz2a-2026-11-07/FRASES-VOZ-2A.json 2026-11-08 && node tests/voz/semana-voz1b.mjs && node tests/voz/agenda-voz1.mjs && node scripts/voz-autorreferencia.mjs && node tests/voz/coragua.mjs && node tests/eva/titulos-copiados.mjs
+
+node:fs:3090
+  binding.copyFile(
+          ^
+
+Error: ENOENT: no such file or directory, copyfile 'dist/version.json' -> '<temporario>/evl-d-nomes-z1ZDrR/version.json'
+    at Object.copyFileSync (node:fs:3090:11)
+    at file://<worktree>/tests/voz/evl-nomes.mjs:13:6
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'copyfile',
+  path: 'dist/version.json',
+  dest: '<temporario>/evl-d-nomes-z1ZDrR/version.json'
+}
+
+Node.js v22.23.1

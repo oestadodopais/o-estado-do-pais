@@ -2346,14 +2346,21 @@ function provaPeriodos() {
       }
       for (const estrago of ['retirado', 'trocado', 'aviso-com-periodo']) {
         const copia = parse(pag.html);
-        const id = estrago === 'aviso-com-periodo' ? 'desempenho-das-exportacoes-2024' : 'despesa-por-funcao-2024-gf01-pt';
+        const aviso = copia.querySelector('.livro-item [data-revisao-nome]');
+        const id = estrago === 'aviso-com-periodo'
+          ? aviso?.closest('.livro-item').getAttribute('data-linha-id') ?? 'despesa-por-funcao-2024-gf01-pt'
+          : 'despesa-por-funcao-2024-gf01-pt';
         const campo = copia.querySelector(`.livro-item[data-linha-id="${id}"] [data-de-campo="reference_date"]`);
         if (!campo) {
           falhas.push(`A planta do período ${estrago} não encontrou a data da linha ${id} em ${lang}.`);
           continue;
         }
         if (estrago === 'retirado') campo.remove();
-        else if (estrago === 'aviso-com-periodo') copia.querySelector(`.livro-item[data-linha-id="${id}"] [data-revisao-nome]`).insertAdjacentHTML('beforeend', ', '+campo.outerHTML);
+        else if (estrago === 'aviso-com-periodo') {
+          const item = copia.querySelector(`.livro-item[data-linha-id="${id}"]`);
+          // Sem revisões pendentes, a duplicação do período continua proibida.
+          (item.querySelector('[data-revisao-nome]') ?? item).insertAdjacentHTML('beforeend', ', '+campo.outerHTML);
+        }
         else campo.set_content('2026');
         const queixas = [];
         conferirPeriodosDoIndice(copia, pag, queixas);

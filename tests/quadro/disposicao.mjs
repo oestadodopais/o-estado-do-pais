@@ -4,6 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
 import {chromium} from 'playwright';
+import {parse} from 'node-html-parser';
+import {ENTRADAS} from '../../src/data/primeira-pagina.mjs';
+import {conferirAvisos} from '../../scripts/check-quadro.mjs';
 const modo=process.argv[2]??'alvos';
 assert(['alvos','sobreposicao'].includes(modo));
 const dist=path.resolve(process.env.OEDP_DIST??'dist');
@@ -48,10 +51,19 @@ async function medir(page){
 }
 let combinacoes=0,plantas=0;
 try{
- for(const largura of [390,768,1024,1280,1600])for(const rota of ['/temas/','/en/themes/','/estado-e-economia/','/en/state-and-economy/','/uniao-europeia/','/en/european-union/','/livro-razao/','/en/ledger/','/','/en/','/estudos/','/en/studies/','/livro-razao/series/sobrecarga-do-custo-da-habitacao-2025-paises','/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises']){
+ const rotas=['/temas/','/en/themes/','/estado-e-economia/','/en/state-and-economy/','/uniao-europeia/','/en/european-union/','/livro-razao/','/en/ledger/','/','/en/','/estudos/','/en/studies/','/livro-razao/series/sobrecarga-do-custo-da-habitacao-2025-paises','/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises'];
+ const ler=rota=>parse(fs.readFileSync(path.join(dist,rota.replace(/^\/|\/$/g,''),'index.html'),'utf8'));
+ // As páginas com avisos seguem as revisões pendentes, não uma medida fixa.
+ for(const e of ENTRADAS.filter(e=>e.seccoes.some(s=>s.cartoes.length)))for(const lang of ['pt','en'])if(ler(e.rota[lang]).querySelector('[data-aviso-revisao]'))rotas.push(e.rota[lang]);
+ const paginas=[...new Set(rotas)].map(rota=>{
+  const root=ler(rota),lang=rota.startsWith('/en/')?'en':'pt';
+  assert.deepEqual(conferirAvisos(root,lang).erros,[],`avisos exigidos pelos dados: ${rota}`);
+  return {rota,temAlvos:root.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a').length>0};
+ });
+ for(const largura of [390,768,1024,1280,1600])for(const {rota,temAlvos} of paginas){
   const page=await browser.newPage({viewport:{width:largura,height:1000}});
   assert.equal((await page.goto(url+rota)).status(),200,`página da prova ausente: ${rota}`);await page.evaluate(()=>document.fonts.ready);
-  const r=await medir(page);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert(r.alvos>0,`sem alvos: ${rota} a ${largura}`);combinacoes++;
+  const r=await medir(page);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert.equal(r.alvos>0,temAlvos,`alvos diferentes do HTML conferido: ${rota} a ${largura}`);combinacoes++;
   await page.close();
  }
  for(const rota of ['/temas/','/en/themes/']){

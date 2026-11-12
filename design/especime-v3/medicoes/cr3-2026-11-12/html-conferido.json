@@ -1,0 +1,191 @@
+{
+  "recibos": [
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "lingua": "pt",
+      "rota": "livro-razao/desempenho-das-exportacoes-2024/index.html",
+      "valor": "17,0",
+      "publicado": "29.10.2026",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "date": "12.11.2026",
+          "old_value": "17,1",
+          "new_value": "17,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 29.10.2026 (o carimbo do conjunto passou de 15.07.2026 a 29.10.2026); a reconferência semanal de 09.11.2026 viu a revisão."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "date": "12.11.2026",
+          "old_value": "15.09.2026",
+          "new_value": "12.11.2026",
+          "reason": "O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 15.09.2026, é a do valor 17,1."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "date": "12.11.2026",
+          "old_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1",
+          "new_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026."
+        }
+      ]
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "lingua": "pt",
+      "rota": "livro-razao/desempenho-das-exportacoes-2025/index.html",
+      "valor": "8,0",
+      "publicado": "29.10.2026",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "date": "12.11.2026",
+          "old_value": "8,2",
+          "new_value": "8,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 29.10.2026 (o carimbo do conjunto passou de 15.07.2026 a 29.10.2026); a reconferência semanal de 09.11.2026 viu a revisão."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "date": "12.11.2026",
+          "old_value": "12.08.2026",
+          "new_value": "12.11.2026",
+          "reason": "O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 12.08.2026, é a do valor 8,2."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "date": "12.11.2026",
+          "old_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2025: 8.2",
+          "new_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2025: 8.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026."
+        }
+      ]
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2024",
+      "lingua": "en",
+      "rota": "en/ledger/desempenho-das-exportacoes-2024/index.html",
+      "valor": "17,0",
+      "publicado": "29.10.2026",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "date": "12.11.2026",
+          "old_value": "17,1",
+          "new_value": "17,0",
+          "reason": "Eurostat revised Portugal's value on 29.10.2026 (the dataset stamp moved from 15.07.2026 to 29.10.2026); the weekly check of 09.11.2026 caught the revision."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "date": "12.11.2026",
+          "old_value": "15.09.2026",
+          "new_value": "12.11.2026",
+          "reason": "The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading, of 15.09.2026, is that of the value 17,1."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "date": "12.11.2026",
+          "old_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1",
+          "new_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.0",
+          "reason": "The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026."
+        }
+      ]
+    },
+    {
+      "linha": "desempenho-das-exportacoes-2025",
+      "lingua": "en",
+      "rota": "en/ledger/desempenho-das-exportacoes-2025/index.html",
+      "valor": "8,0",
+      "publicado": "29.10.2026",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "date": "12.11.2026",
+          "old_value": "8,2",
+          "new_value": "8,0",
+          "reason": "Eurostat revised Portugal's value on 29.10.2026 (the dataset stamp moved from 15.07.2026 to 29.10.2026); the weekly check of 09.11.2026 caught the revision."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "date": "12.11.2026",
+          "old_value": "12.08.2026",
+          "new_value": "12.11.2026",
+          "reason": "The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading, of 12.08.2026, is that of the value 8,2."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "date": "12.11.2026",
+          "old_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2025: 8.2",
+          "new_value": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2025: 8.0",
+          "reason": "The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026."
+        }
+      ]
+    }
+  ],
+  "semanas": [
+    {
+      "lingua": "pt",
+      "rota": "explicacoes/leitura-da-semana/index.html",
+      "frase": "Entre 06.11.2026 e 12.11.2026, 91 números foram relidos na fonte: 3 mudaram de valor e 2 mudaram de proveniência, e a fonte reviu 1, ainda com o valor de antes da revisão.",
+      "pendentes": [
+        "sobrecarga-do-custo-da-habitacao-2025-ue"
+      ],
+      "planta_omissao_recusada": true
+    },
+    {
+      "lingua": "en",
+      "rota": "en/explainers/weekly-reading/index.html",
+      "frase": "Between 06.11.2026 and 12.11.2026, 91 figures were re-read at the source: 3 changed value and 2 changed provenance, and the source revised 1, still showing the value from before the revision.",
+      "pendentes": [
+        "sobrecarga-do-custo-da-habitacao-2025-ue"
+      ],
+      "planta_omissao_recusada": true
+    }
+  ],
+  "superficies": [
+    {
+      "rota": "correcoes/index.html",
+      "linha": "desempenho-das-exportacoes-2024",
+      "valor": "17,0",
+      "lugar": "portugal",
+      "visivel": false,
+      "razao": "o registo público só mostra mudanças a partir do lançamento"
+    },
+    {
+      "rota": "correcoes/index.html",
+      "linha": "desempenho-das-exportacoes-2025",
+      "valor": "8,0",
+      "lugar": "portugal",
+      "visivel": false,
+      "razao": "o registo público só mostra mudanças a partir do lançamento"
+    },
+    {
+      "rota": "en/corrections/index.html",
+      "linha": "desempenho-das-exportacoes-2024",
+      "valor": "17,0",
+      "lugar": "portugal",
+      "visivel": false,
+      "razao": "o registo público só mostra mudanças a partir do lançamento"
+    },
+    {
+      "rota": "en/corrections/index.html",
+      "linha": "desempenho-das-exportacoes-2025",
+      "valor": "8,0",
+      "lugar": "portugal",
+      "visivel": false,
+      "razao": "o registo público só mostra mudanças a partir do lançamento"
+    }
+  ],
+  "habitacao_intacta": true
+}

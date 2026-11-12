@@ -1,0 +1,20 @@
+PAI2 en: sem anterior indevido recusado.
+PAI2 en: período trocado recusado.
+PAI2 en: selo antes do período recusado.
+PAI2 en: prosa acrescentada recusado.
+PAI2 en: unidade da comparação trocada recusado.
+PAI2 en: cabeçalho da referência trocado recusado.
+PAI2 en: nome trocado recusado.
+PAI2 en: divergência sem aviso recusado.
+PAI2 en: aviso sem divergência recusado.
+PAI2 en: data da revisão trocada recusado.
+PAI2 en: nome da revisão trocado recusado.
+PAI2 en: frase da revisão trocada recusado.
+PAI2 pt: aviso retirado da série recusado.
+PAI2 pt: aviso retirado da série recusado.
+PAI2 en: aviso retirado da série recusado.
+PAI2 en: aviso retirado da série recusado.
+PAI2: 37 plantas, controlos intactos nas duas edições.
+PAI2-C: 40 plantas no total; unidade, coordenadas e população incompatíveis recusadas, controlo reposto verde.
+PAI2 N1C temas/index.html: controlo verde; cartão copiado recusado.
+PAI2 N1C en/themes/index.html: controlo verde; cartão copiado recusado.

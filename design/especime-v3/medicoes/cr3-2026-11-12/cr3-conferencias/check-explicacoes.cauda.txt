@@ -1,0 +1,20 @@
+PAI1-B: 44 provas, código 0.
+X · a explicação: 2 explicação(ões), 292 folhas e 345 partes auditadas (178 diz, 27 leitura, 26 conta, 3 aponta, 111 liga), 13 origens usadas; 2 token(s) «maiores» conferidos nas duas edições; 8 token(s) de ramos (sinal, compara e comparaSaldos) com todos os ramos; 2 origens das explicações, 2 lidas no motor; 4 página(s) recontadas; 43 de 44 plantas em memória.
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<worktree>/dist/version.json'
+    at Object.readFileSync (node:fs:440:20)
+    at diasAceites (file://<worktree>/tests/explicacoes/semana.mjs:373:27)
+    at file://<worktree>/tests/explicacoes/semana.mjs:683:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<worktree>/dist/version.json'
+}
+
+Node.js v22.23.1

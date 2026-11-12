@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 check:series
+> node tests/series/series.mjs --prova
+
+  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 0 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 27 de 27 planta(s) morderam
+  ✗ S6 · check:series · não há dist/ construído: a S6 lê os recibos construídos, corra o build primeiro.
+  CHECK:SERIES · 1 erro(s) e 0 planta(s) que não morderam.

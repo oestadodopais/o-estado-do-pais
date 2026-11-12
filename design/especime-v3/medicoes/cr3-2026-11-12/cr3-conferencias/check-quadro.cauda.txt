@@ -1,0 +1,20 @@
+PAI2 pt: valor trocado recusado.
+PAI2 pt: sem anterior indevido recusado.
+PAI2 pt: período trocado recusado.
+PAI2 pt: selo antes do período recusado.
+PAI2 pt: prosa acrescentada recusado.
+PAI2 pt: unidade da comparação trocada recusado.
+PAI2 pt: cabeçalho da referência trocado recusado.
+PAI2 pt: nome trocado recusado.
+file://<worktree>/tests/quadro/plantas.mjs:29
+  ['divergência sem aviso',r=>r.querySelector('[data-aviso-revisao]').remove(),/Q3/],
+                                                                     ^
+
+TypeError: Cannot read properties of null (reading 'remove')
+    at file://<worktree>/tests/quadro/plantas.mjs:29:70
+    at file://<worktree>/tests/quadro/plantas.mjs:34:29
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1
