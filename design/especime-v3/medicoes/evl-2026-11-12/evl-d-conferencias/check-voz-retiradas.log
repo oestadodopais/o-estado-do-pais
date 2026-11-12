@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:voz-retiradas
+> node tests/edicoes/voz-integracao.mjs
+
+1404 retiradas conferidas em memória com a extração histórica.
+controlo atual: código lido 0; 0 retiradas conferidas; 145.138 s.
+quatro plantas em páginas distintas: código lido 1; 4 retiradas conferidas; 116.987 s.
+OG1-E K: 1404 retiradas em memória, 2 execuções reais da voz, originais intactos.

@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "check:voz-retiradas"
+  ],
+  "codigo": 0,
+  "duracao_segundos": 270.148
+}

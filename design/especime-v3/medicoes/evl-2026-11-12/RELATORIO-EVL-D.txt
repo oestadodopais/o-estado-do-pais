@@ -1,0 +1,10 @@
+1. Ponto 1: a identidade de linha, série ou família lê os nós sem espaços acrescentados; o extrator comum mantém-se intacto.
+2. Antes e depois sobre 9 814 páginas: 22 912 nomes, 12 recusas passaram a zero; os 22 900 já verdes continuaram verdes; frases da casa inalteradas.
+3. Plantas nos recibos português e inglês: palavra trocada, ano trocado e vírgula retirada recusados; dois controlos verdes, seis recusas, originais intactos.
+4. Ponto 2: duas frases antigas retiradas por substituição pelas duas primeiras frases C004; duas novas frases e quatro nomes curtos declarados.
+5. As duas contagens anteriores foram retiradas; o inventário copia do dist 4 161 afirmações, 524 calculadas e 2 767 linhas de concelhos, nas duas línguas.
+6. Reconstrução build:pai2-d=0, sobre 66240d8aa; guardados código, duração e últimas vinte linhas, sem o registo integral.
+7. Códigos lidos dos ficheiros: check:voz=0 e check:voz-retiradas=0; nada por classificar, nenhum nome recusado, nenhuma retirada rendida.
+8. Retiradas: 1 404 conferidas em memória; controlo real=0 e quatro plantas em páginas distintas recusadas com código 1; originais intactos.
+9. Ficaram para a direção o build completo, check:alvos e a lista inteira; nenhum texto de página nem ficheiro do motor mudou. Commits dos pontos 1 e 2: e3d0b066a e 66240d8aa.
+10. Orçamento até ao pedido do commit final: 44 chamadas; duas conferências pedidas, um ensaio dirigido, duas medições integrais, uma leitura do inventário e uma reconstrução; zero portões completos e zero capturas.

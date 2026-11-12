@@ -148,7 +148,10 @@
   "codigos": {
     "medicao-antes": 0,
     "medicao-depois": 0,
-    "plantas": 0
+    "plantas": 0,
+    "reconstrucao": 0,
+    "check-voz": 0,
+    "check-voz-retiradas": 0
   },
   "inventario": {
     "retiradas": [
@@ -211,5 +214,74 @@
         "texto": "4 161 afirmações · 524 de 4 161 calculadas · 2 767 de 4 161 linhas de concelhos"
       }
     ]
-  }
+  },
+  "commits": [
+    {
+      "ponto": 1,
+      "cabeca": "e3d0b066a",
+      "codigo_escrivao": 0,
+      "codigo_cliente": 3
+    },
+    {
+      "ponto": 2,
+      "cabeca": "66240d8aa",
+      "codigo_escrivao": 0,
+      "codigo_cliente": 3
+    }
+  ],
+  "nota_escrivao": "O cliente saiu com aviso de batimento atrasado; os dois resultados do escrivão e o histórico confirmaram código zero e os commits.",
+  "execucoes": [
+    {
+      "comando": [
+        "npm",
+        "run",
+        "build:pai2-d"
+      ],
+      "codigo": 0,
+      "duracao_segundos": 31.9
+    },
+    {
+      "comando": [
+        "npm",
+        "run",
+        "check:voz"
+      ],
+      "codigo": 0,
+      "duracao_segundos": 294.854
+    },
+    {
+      "comando": [
+        "npm",
+        "run",
+        "check:voz-retiradas"
+      ],
+      "codigo": 0,
+      "duracao_segundos": 270.148
+    }
+  ],
+  "prova_final": {
+    "cabeca_do_dist": "66240d8aab239423c265d7e41293d885fea2245d",
+    "por_classificar": 0,
+    "nomes_recusados": 0,
+    "retiradas_rendidas": 0,
+    "retiradas_em_memoria": 1404,
+    "plantas_de_retiradas_recusadas": 4,
+    "dist_original_preservado_pelas_plantas": true
+  },
+  "orcamento": {
+    "chamadas_ate_ao_pedido_do_commit_final": 44,
+    "conferencias_pedidas": 2,
+    "ensaio_dirigido": 1,
+    "medicoes_integrais": 2,
+    "leitura_dirigida_do_inventario": 1,
+    "reconstrucoes": 1,
+    "portoes_completos": 0,
+    "capturas": 0
+  },
+  "nao_executado": [
+    "build completo",
+    "check:alvos",
+    "lista inteira de conferências",
+    "motor"
+  ]
 }

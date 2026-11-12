@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "check:voz"
+  ],
+  "codigo": 0,
+  "duracao_segundos": 294.854
+}
