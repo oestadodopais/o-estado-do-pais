@@ -213,7 +213,7 @@ function pecasDaArea(area, claims) {
     }
     if (!['afirmação','texto'].includes(c.unit)) medidas.push({ id, materia: m.materia, linhas: [id] });
     const w = WORKS.find((x) => x.id === c.study);
-    if (w) {
+    if (w && w.estado !== 'retirado') {
       const p = trabalhos.get(w.id) ?? { id: w.id, slug: w.slug, materias: new Set(), linhas: [] };
       p.materias.add(m.materia);
       p.linhas.push(id);
@@ -226,6 +226,7 @@ function pecasDaArea(area, claims) {
     for (const id of r.estudos ?? []) {
       const w=WORKS.find(w=>w.id===id);
       if (!w) throw new Error(`Área: estudo declarado inexistente ${id}`);
+      if (w.estado === 'retirado') continue;
       const p=trabalhos.get(id) ?? {id,slug:w.slug,linhas:[],materias:new Set()};
       p.materias.add(m.materia);trabalhos.set(id,p);
     }

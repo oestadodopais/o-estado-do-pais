@@ -5,11 +5,12 @@ import fs from 'node:fs';
 import {parse} from 'node-html-parser';
 import {medirPagina,EXCECOES} from '../../scripts/voz-autorreferencia.mjs';
 let controlos=0,plantas=0;
-for(const e of EXCECOES.filter(e=>e.correcao_textual?.slug==='agua-nao-faturada')){
+for(const e of JSON.parse(fs.readFileSync('tests/ret1/excecoes-historicas.json','utf8'))){
  const html=registoParaPlantas(e.rota);
  const selector='[data-texto-estudo="agua-nao-faturada"][data-texto-data="2026-11-08"]';
  const entrada=parse(html).querySelector(selector);assert(entrada);
- assert(medirPagina(html,e.rota).permitidas.includes(e.frase),'a entrada íntegra conserva a exceção');controlos++;
+ assert(!EXCECOES.some(x=>x.frase===e.frase));
+ assert(medirPagina(html,e.rota).frases.includes(e.frase),'a entrada retirada já não beneficia da exceção');controlos++;
  const alterada=parse(html);alterada.querySelector(selector).setAttribute('data-texto-data','2026-11-07');
  assert(medirPagina(alterada.toString(),e.rota).frases.includes(e.frase),'entrada mudada recusa');plantas++;
  const fora=parse(html);fora.querySelector('main').insertAdjacentHTML('beforeend',`<p>${e.frase}</p>`);

@@ -6,7 +6,7 @@ import {DOSSIES} from '../../src/data/dossies.mjs';
 import {blocosDoDossie, leituraDoDossie, estudoDoDossie, MOBILIA_DO_DOSSIE} from '../../src/lib/dossie-leitura.mjs';
 import {registoDaEdicao} from '../../src/lib/registos.mjs';
 import {routePath} from '../../src/lib/routes.mjs';
-const ler = rota => parse(fs.readFileSync(`dist/${rota.replace(/^\//,'')}/index.html`,'utf8'));
+const ler = rota => parse(fs.readFileSync(`${process.env.OEDP_DIST ?? 'dist'}/${rota.replace(/^\//,'')}/index.html`,'utf8'));
 export function conferirLeitura(root,d,lang) {
  const erros=[], secs=leituraDoDossie(d,lang), artigo=root.querySelector('[data-dossie]');
  if(!artigo)return ['DO3: falta o dossiê'];

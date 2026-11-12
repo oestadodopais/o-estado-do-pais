@@ -48,7 +48,7 @@ try {
  for(const d of documentos)d.soPresenca=!ambito.has(d.estudo);
  provas.atualA = conferir(lista,documentos,bilingues,{aplicada:true});
  provas.atualA.saltadas=saltadas;
- assert.equal(conferirSaltadas(historica, provas.atualA.saltadas),85);
+ assert.equal(conferirSaltadas(historica, provas.atualA.saltadas),101);
 } finally { fs.rmSync(pastaEVA, {recursive:true, force:true}); }
 assert.equal(recusas(provas.atualA), 0, JSON.stringify(provas.atualA));
 // A adenda D substitui seis novas da lista inicial; as listas declaradas ficam intactas.
@@ -110,18 +110,18 @@ provas.atualB = conferirLista(B);
 assert.equal(provas.atualB.voz.length, 0);
 assert.equal(provas.atualB.numeros.length, 0);
 // As 42 entradas da água passaram para a COR-AGUA; as restantes ficam na VOZ-2B.
-assert.equal(provas.atualB.quantificadores.length, 13);
-assert.equal(provas.atualB.saltadas.length, 53);
-assert.equal(provas.corAgua.saltadas.length, 32);
+assert.equal(provas.atualB.quantificadores.length, 9);
+assert.equal(provas.atualB.saltadas.length, 70);
+assert.equal(provas.corAgua.saltadas.length, 126);
 assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas não retiradas da VOZ-2B têm de estar nas páginas declaradas');
 assert.deepEqual(provas.atualB.semPar, []);
-// REC2: oito frases sem entrada na repetição das páginas vivas, medidas após a construção.
-assert.equal(provas.atualB.semEntrada.length, 8);
+// RET1: a retirada elimina as frases sem entrada desta repetição.
+assert.equal(provas.atualB.semEntrada.length, 0);
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hig6-historica-'));
 try {
   const f = path.join(tmp, 'lista.json'); fs.writeFileSync(f, JSON.stringify(inicial));
   provas.inicialCompleta = conferirLista(f);
-  assert.equal(provas.inicialCompleta.voz.length, 6);
+  assert.equal(provas.inicialCompleta.voz.length, 4);
   assert(recusas(provas.inicialCompleta));
 } finally { fs.rmSync(tmp, {recursive:true, force:true}); }
 for (const [nome, r] of [['VOZ-2A atual', provas.atualA], ['VOZ-2B atual', provas.atualB], ['COR-AGUA', provas.corAgua], ['COR-AGUA PRR', provas.prr], ['COR-AGUA D', provas.corAguaD], ['COR-AGUA G', provas.corAguaG], ['COR-AGUA I', provas.corAguaI], ['COR-AGUA J', provas.corAguaJ], ['VOZ-2A inicial', provas.inicialCompleta]]) console.log(nome + ': ' + JSON.stringify(Object.fromEntries(Object.entries(r).map(([k,v]) => [k,v.length]))));

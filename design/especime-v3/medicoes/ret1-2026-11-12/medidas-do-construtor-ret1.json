@@ -1,0 +1,506 @@
+{
+  "contagens": {
+    "estudos": 3477,
+    "trabalhos_publicados": 5,
+    "edicoes_publicadas": 9,
+    "estudos_evora_publicados": 2
+  },
+  "cabeca_de_partida": "671041f4aedd8ebf4f1f3e0580645bb859df2733",
+  "cabeca_dist_de_partida": "e21f8138dfd3ba0638725718a4a361e2088b3afe",
+  "listas": {
+    "ledger/frases/por-registar.json": {
+      "antes": 1368,
+      "depois": 915,
+      "saidas": 453
+    },
+    "scripts/voz-excecoes.json": {
+      "antes": 33,
+      "depois": 23,
+      "saidas": 10
+    },
+    "src/data/datas-de-publicacao.json": {
+      "antes": 20,
+      "depois": 9,
+      "saidas": 11
+    },
+    "ISENCAO_VOZ2": {
+      "antes": 9,
+      "depois": 2,
+      "saidas": 7
+    }
+  },
+  "linhas_fisicas_conservadas": 81,
+  "linhas_publicas_com_estudo_retirado": 78,
+  "recibos_conferidos": 156,
+  "rotas_proprias_dos_oito": 34,
+  "redirecionamentos_texto_dos_oito": 4,
+  "medicao_l1": "prévia Astro com os dados e gabaritos da retirada; check-lugar recusou o teto anterior por folga",
+  "leituras_ocultas": [
+    "evora-quem-governou-a-camara-2009-2025",
+    "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+  ],
+  "eventos_exclusivos_ocultos": [],
+  "correcoes_de_texto_ocultas": [
+    {
+      "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "data": "2026-11-08"
+    },
+    {
+      "slug": "onde-esta-a-agua",
+      "data": "2026-11-08"
+    },
+    {
+      "slug": "agua-nao-faturada",
+      "data": "2026-11-08"
+    },
+    {
+      "slug": "alentejo-algarve",
+      "data": "2026-11-08"
+    }
+  ],
+  "listas_historicas_saltadas": {
+    "VOZ-2A": 101,
+    "VOZ-2B": 70,
+    "COR-AGUA": 126,
+    "COR-AGUA-d": 13,
+    "COR-AGUA-g": 7,
+    "COR-AGUA-i": 3,
+    "COR-AGUA-j": 3,
+    "COR-AGUA-prr": 8
+  },
+  "frases_de_paginas_vivas_que_sairam": [
+    {
+      "estudo": "/estudos",
+      "lingua": "en",
+      "sha256": "f9c41f86cb91a2ac995fb55f7df972846f0d0dd561a915dbab6f9e0a9ebc5464"
+    },
+    {
+      "estudo": "/estudos",
+      "lingua": "pt",
+      "sha256": "ab860ea8284b431bcd626a108c25479e211c764bf3247cc4797fad1bdc0389e8"
+    },
+    {
+      "estudo": "colecao-municipio",
+      "lingua": "en",
+      "sha256": "f9c41f86cb91a2ac995fb55f7df972846f0d0dd561a915dbab6f9e0a9ebc5464"
+    },
+    {
+      "estudo": "colecao-municipio",
+      "lingua": "pt",
+      "sha256": "ab860ea8284b431bcd626a108c25479e211c764bf3247cc4797fad1bdc0389e8"
+    }
+  ],
+  "frases_de_paginas_vivas_texto": [
+    {
+      "rota": "/estudos",
+      "frase": "Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de 2021–2025, 12 e 10 designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em 2025 tem 7 lugares."
+    },
+    {
+      "rota": "/en/studies",
+      "frase": "Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the 2021–2025 term, 12 and 10 portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in 2025 has 7 seats."
+    }
+  ],
+  "medicao_l1_data": "2026-11-12T21:54:48.420Z",
+  "novas_entradas_historicas_saltadas": {
+    "VOZ-2A": 16,
+    "VOZ-2B": 17,
+    "COR-AGUA": 94,
+    "COR-AGUA-d": 13,
+    "COR-AGUA-g": 7,
+    "COR-AGUA-i": 3,
+    "COR-AGUA-j": 3,
+    "COR-AGUA-prr": 8
+  },
+  "redirecionamentos": [
+    {
+      "origem": "/estudos/evora-quinze-anos-cinco-mandatos/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-quinze-anos-cinco-mandatos/documento/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-quinze-anos-cinco-mandatos/documento/2026-08-20/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-quinze-anos-cinco-mandatos/?",
+      "destino": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-quinze-anos-cinco-mandatos/texto/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-investidores-portas-abertas-2026/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-investidores-portas-abertas-2026/documento/2026-08-12/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-economia-investidores-portas-abertas-2026/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-investidores-portas-abertas-2026/texto/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-orcamentado-pago-devido-2025/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-orcamentado-pago-devido-2025/documento/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-orcamentado-pago-devido-2025/documento/2026-08-20/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-orcamentado-pago-devido-2025/?",
+      "destino": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-orcamentado-pago-devido-2025/document/?",
+      "destino": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-orcamentado-pago-devido-2025/document/2026-08-20/?",
+      "destino": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-orcamentado-pago-devido-2025/text/?",
+      "destino": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-orcamentado-pago-devido-2025/texto/?",
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/documento/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-prometido-pago-auditado-2026/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-prometido-pago-auditado-2026/documento/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-prometido-pago-auditado-2026/documento/2026-08-20/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-prometido-pago-auditado-2026/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-prometido-pago-auditado-2026/document/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-prometido-pago-auditado-2026/document/2026-08-20/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-prometido-pago-auditado-2026/text/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-prometido-pago-auditado-2026/texto/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-2027-prometido-painel-dinheiro/?",
+      "destino": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-2027-prometido-painel-dinheiro/documento/?",
+      "destino": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-2027-prometido-painel-dinheiro/documento/2026-09-16/?",
+      "destino": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-2027-prometido-painel-dinheiro/?",
+      "destino": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-2027-prometido-painel-dinheiro/document/?",
+      "destino": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-2027-prometido-painel-dinheiro/document/2026-09-16/?",
+      "destino": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-2027-prometido-painel-dinheiro/text/?",
+      "destino": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-2027-prometido-painel-dinheiro/texto/?",
+      "destino": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-quem-governou-a-camara-2009-2025/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-quem-governou-a-camara-2009-2025/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-quem-governou-a-camara-2009-2025/documento/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-quem-governou-a-camara-2009-2025/texto/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/2026-10-01/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/2026-10-01/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/text/?",
+      "destino": "/en/municipalities/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/texto/?",
+      "destino": "/municipios/evora/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/agua-nao-faturada/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/agua-nao-faturada/document/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/agua-nao-faturada/document/2026-08-12/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/agua-nao-faturada/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/agua-nao-faturada/documento/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/agua-nao-faturada/documento/2026-08-12/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/onde-esta-a-agua/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/onde-esta-a-agua/document/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/onde-esta-a-agua/document/2026-08-12/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/onde-esta-a-agua/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/onde-esta-a-agua/documento/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/onde-esta-a-agua/documento/2026-08-12/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/avaliacao-economica-regional-de-portugal-2026/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/avaliacao-economica-regional-de-portugal-2026/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/which-door-is-yours/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/which-door-is-yours/document/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/which-door-is-yours/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/alentejo-algarve/?",
+      "destino": "/en/regions/alentejo/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/alentejo-algarve/document/?",
+      "destino": "/en/regions/alentejo/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/alentejo-algarve/document/2026-08-12/?",
+      "destino": "/en/regions/alentejo/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/alentejo-algarve/?",
+      "destino": "/regioes/alentejo/",
+      "codigo": 301
+    },
+    {
+      "origem": "/en/studies/evolucao-de-portugal-desde-1981/?",
+      "destino": "/en/studies/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evolucao-de-portugal-desde-1981/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    },
+    {
+      "origem": "/estudos/evolucao-de-portugal-desde-1981/documento/?",
+      "destino": "/estudos/",
+      "codigo": 301
+    }
+  ],
+  "frases_no_html": {
+    "estudos-publicados": {
+      "pt": "Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.",
+      "en": "Eight studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them, figures without a stored copy of the source, or data the source has since revised."
+    },
+    "estudos-evora-publicados": {
+      "pt": "Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.",
+      "en": "Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source."
+    }
+  }
+}

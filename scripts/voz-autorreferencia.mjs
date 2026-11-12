@@ -12,7 +12,7 @@ import {pathToFileURL} from 'node:url';
 import {parse} from 'node-html-parser';
 import {loadClaims,provenienciaIncompleta} from '../src/lib/ledger.mjs';
 import {matchPath} from '../src/lib/routes.mjs';
-export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2B', estudos:["a-casa-em-portugal-e-na-europa", "agua-nao-faturada", "alentejo-algarve", "avaliacao-economica-regional-de-portugal-2026", "evolucao-de-portugal-desde-1981", "evora-quem-governou-a-camara-2009-2025", "onde-esta-a-agua", "orcamento-2027-o-que-muda-e-para-quem", "which-door-is-yours"], rotas:['documento','texto'], transcricoes:['estudo: unidades e índice, .texto-artigo.estudo-leitura, .texto-sumario e .estudo-sumario','dossie: unidades e índices com data-registo-unidade e data-registo-indice, conferidos pelo portão de HTML']};
+export const ISENCAO_VOZ2 = {nome:'documentos dos estudos, leitura e sumário da página de cada estudo', data:'2026-11-03', retirar:'VOZ-2B', estudos:["a-casa-em-portugal-e-na-europa", "orcamento-2027-o-que-muda-e-para-quem"], rotas:['documento','texto'], transcricoes:['estudo: unidades e índice, .texto-artigo.estudo-leitura, .texto-sumario e .estudo-sumario','dossie: unidades e índices com data-registo-unidade e data-registo-indice, conferidos pelo portão de HTML']};
 export const ISENCAO_RECIBOS = {nome:'recibos do livro-razão e séries',rotas:['linha','livro','livroConcelho','livroConcelhos','serie']};
 const isentaVoz2 = hit => (hit?.key==='documento' && Boolean(hit?.params.date)) || ISENCAO_VOZ2.estudos.includes(hit?.params.slug);
 const claims=loadClaims();

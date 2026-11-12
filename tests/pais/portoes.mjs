@@ -962,7 +962,7 @@ planta('me1-porta-do-rotulo-com-a-ancora-antiga','scripts/gate-html.mjs',[
  ['precos/index.html',r=>r.querySelector('[data-rotulo-ia="topo"] a').setAttribute('href','/metodo#politica-de-ia')]
 ],[/tem 0 porta\(s\) para a política \("\/metodo"\)/]);
 planta('me1-faixa-do-documento-com-a-ancora-antiga','scripts/gate-html.mjs',[
- ['estudos/agua-nao-faturada/documento/index.html',r=>r.querySelector('[data-oedp-rotulo-ia] a').setAttribute('href','/metodo#politica-de-ia')]
+ ['estudos/evora-contas-da-camara-2010-2025/documento/index.html',r=>r.querySelector('[data-oedp-rotulo-ia] a').setAttribute('href','/metodo#politica-de-ia')]
 ],[/a porta da política abre "\/metodo#politica-de-ia" e devia abrir "\/metodo"/]);
 /* O parágrafo que cita o marcador passa pelo seu resumo, e uma palavra mudada perde a dispensa. */
 planta('me1-marcador-num-paragrafo-mudado','scripts/gate-html.mjs',[

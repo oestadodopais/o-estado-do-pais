@@ -22,7 +22,7 @@ for(const w of PUBLISHED_WORKS)for(const lang of ['pt','en']){
 const esperados=PUBLISHED_WORKS.flatMap(w=>['pt','en'].map(lang=>({w,e:w.editions.find(e=>e.lang===lang)??w.editions[0]}))).filter(({w,e})=>e.updated&&versoesNoManifesto(w.slug,e.lang).length===1).length;
 assert.equal(controlos,esperados,'todas as páginas com uma única edição e atualização declarada');
 for(const lang of ['pt','en']){
- const slug='onde-esta-a-agua',root=ler(slug,lang),conferir=r=>conferirMudancasDoCabecalho(r,slug,lang);
+ const slug='orcamento-2027-o-que-muda-e-para-quem',root=ler(slug,lang),conferir=r=>conferirMudancasDoCabecalho(r,slug,lang);
  assert.deepEqual(conferir(root),[]);controlos++;
  planta('atualizacao-a-mais',root,r=>r.insertAdjacentHTML('beforeend',` · <span>${lang==='pt'?'atualizado a':'updated on'}</span> <time data-estudo-atualizacao datetime="2026-11-07">07.11.2026</time>`),conferir);
  const evora='orcamento-2027-o-que-muda-e-para-quem',atual=ler(evora,lang),confere=r=>conferirMudancasDoCabecalho(r,evora,lang);

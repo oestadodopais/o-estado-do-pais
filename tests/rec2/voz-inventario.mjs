@@ -9,10 +9,10 @@ import {leInventario} from '../../scripts/voz.mjs';
 import {donosRetiradosDaDescricao, separarDescricoesRetiradas, rotuloDoDossieNaNovidade} from '../../scripts/voz-inventario-retirados.mjs';
 const inventario = leInventario(process.cwd()).linhas;
 const esperadas = inventario.filter(l => l.estado === 'viva' && l.classe === 'conteudo' && WORKS.filter(w => w.estado === 'retirado').some(w => Object.values(w.description).includes(l.texto)));
-assert.equal(esperadas.length, 12);
+assert.equal(esperadas.length, 28);
 const ausentes = esperadas.map(({n, texto, classe, bloco}) => ({n, texto, classe, bloco}));
 const r = separarDescricoesRetiradas(ausentes, inventario);
-assert.equal(r.saltadas.length, 12); assert.deepEqual(r.restantes, []);
+assert.equal(r.saltadas.length, 28); assert.deepEqual(r.restantes, []);
 const viva = inventario.find(l => l.estado === 'viva' && WORKS.filter(w => w.estado !== 'retirado').some(w => Object.values(w.description).includes(l.texto)));
 assert(viva); assert.equal(separarDescricoesRetiradas([viva], inventario).restantes.length, 1);
 assert.equal(separarDescricoesRetiradas([...ausentes, viva], inventario).restantes.length, 1);
@@ -40,4 +40,4 @@ for (const lang of ['pt','en']) {
     assert(!rotuloDoDossieNaNovidade(alterado.querySelector('.pp-novidade-tipo'), lang, 'home')); plantas++;
   }
 }
-console.log(`REC2 voz: 12 descrições de retirados contadas; ${plantas} plantas recusadas, incluindo descrição publicada ausente e rótulo alterado.`);
+console.log(`REC2 voz: 28 descrições de retirados contadas; ${plantas} plantas recusadas, incluindo descrição publicada ausente e rótulo alterado.`);

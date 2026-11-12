@@ -7,7 +7,7 @@ import {spawnSync} from 'node:child_process';
 import {WORKS} from '../../src/data/studies.mjs';
 import {todosOsDocumentos} from '../../src/lib/documentos.mjs';
 const retirados = new Set(WORKS.filter(w => w.estado === 'retirado').map(w => w.slug));
-assert.equal(todosOsDocumentos().filter(d => retirados.has(d.slug)).length, 9, 'os documentos retirados conservam-se no inventário físico');
+assert.equal(todosOsDocumentos().filter(d => retirados.has(d.slug)).length, 20, 'os documentos retirados conservam-se no inventário físico');
 const datas = spawnSync(process.execPath, ['scripts/datas-de-publicacao.mjs', '--ver'], {encoding:'utf8'});
 assert.equal(datas.status, 0, datas.stderr);
 const edicoes = JSON.parse(datas.stdout).edicoes;

@@ -57,10 +57,11 @@ console.log('COR-AGUA: âmbito das dezassete linhas declarado; linha nova sem â
 // A exceção tem a frase completa do registo; nunca um fragmento ou um texto alterado.
 const {medirPagina,EXCECOES}=await import('../../scripts/voz-autorreferencia.mjs');
 for(const rota of ['/correcoes','/en/corrections']){
- const e=EXCECOES.find(e=>e.rota===rota&&e.razao.startsWith('COR-AGUA:'));
+ const e=JSON.parse(fs.readFileSync('tests/ret1/excecoes-historicas.json','utf8')).find(e=>e.rota===rota);
  assert(e);assert(medirPagina(`<p>${e.frase}</p>`,rota).frases.length,'texto sem a unidade e os selos não basta');
  const html=registoParaPlantas(rota);
- assert.equal(medirPagina(html,rota).frases.length,0);
+ assert(!EXCECOES.some(x=>x.frase===e.frase));
+ assert(medirPagina(html,rota).frases.includes(e.frase));
  assert(medirPagina(html.replace('</body>',`<p>${e.frase}</p></body>`),rota).frases.length,'a unidade válida não legitima uma cópia solta');
  const {parse}=await import('node-html-parser');
  for(const muda of [r=>r.querySelector('[data-texto-estudo="agua-nao-faturada"] [data-claim]').set_content('77'),r=>r.querySelector('[data-texto-estudo="agua-nao-faturada"] a.src-chip').setAttribute('href','/livro-razao/inexistente')]){
@@ -69,7 +70,7 @@ for(const rota of ['/correcoes','/en/corrections']){
 }
 const {primeiraEdicaoServida}=await import('../../src/lib/edicoes.mjs');
 for(const lang of ['pt','en']){
- const html=primeiraEdicaoServida('onde-esta-a-agua',lang,'2026-08-12');
- assert.equal(medirPagina(html,`${lang==='pt'?'/estudos':'/en/studies'}/onde-esta-a-agua/${lang==='pt'?'documento':'document'}/2026-08-12`).marca,false);
+ const html=primeiraEdicaoServida('orcamento-2027-o-que-muda-e-para-quem',lang,'2026-10-21');
+ assert.equal(medirPagina(html,`${lang==='pt'?'/estudos':'/en/studies'}/orcamento-2027-o-que-muda-e-para-quem/${lang==='pt'?'documento':'document'}/2026-10-21`).marca,false);
 }
 console.log('COR-AGUA: correção alterada ou com selo trocado recusada; marcas históricas apresentadas sem alterar o arquivo.');

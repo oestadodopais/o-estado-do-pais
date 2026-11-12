@@ -92,7 +92,7 @@ import { portasObrigatoriasB2 } from './portas-b2.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DIST = path.join(RAIZ, 'dist');
+const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
 
 /* ---------------------------------------------------------------------------
  * AS DUAS FAMÍLIAS DE FORA (§3 do brief)

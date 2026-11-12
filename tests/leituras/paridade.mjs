@@ -24,15 +24,15 @@ try {
   escrever('12', '12'); assert.equal(conferirParidade(dist, excecoes).erros.length, 2); provas++;
   excecoes.diferencas = [];
   assert.equal(conferirParidade(dist, excecoes).erros.length, 0); provas++;
-  const agua = path.join(dist, 'estudos/onde-esta-a-agua/documento');
-  const water = path.join(dist, 'en/studies/onde-esta-a-agua/document');
+  const agua = path.join(dist, 'estudos/orcamento-2027-o-que-muda-e-para-quem/documento');
+  const water = path.join(dist, 'en/studies/orcamento-2027-o-que-muda-e-para-quem/document');
   fs.mkdirSync(agua, {recursive:true}); fs.mkdirSync(water, {recursive:true});
   for (const [dir, valor] of [[agua, '12'], [water, '13']]) {
     fs.writeFileSync(path.join(dir, 'index.html'), '<p>' + valor + '</p>');
     fs.writeFileSync(path.join(dir, '../index.html'), '<p>' + valor + '</p>');
   }
-  assert.equal(conferirParidade(dist, excecoes).erros.filter(e => e.startsWith('onde-esta-a-agua|')).length, 2); provas++;
-  assert.throws(() => conferirParidade(dist, {...excecoes, diferencas:[{estudo:'onde-esta-a-agua', tipo:'documento', numeros}]}), /lista fechada/); provas++;
+  assert.equal(conferirParidade(dist, excecoes).erros.filter(e => e.startsWith('orcamento-2027-o-que-muda-e-para-quem|')).length, 2); provas++;
+  assert.throws(() => conferirParidade(dist, {...excecoes, diferencas:[{estudo:'orcamento-2027-o-que-muda-e-para-quem', tipo:'documento', numeros}]}), /lista fechada/); provas++;
   assert.throws(() => conferirParidade(dist, {...excecoes, razao:''}), /razão/); provas++;
   assert.throws(() => conferirParidade(dist, {...excecoes, retirar:'COR-AGUA'}), /permanente/); provas++;
   const troca = compara(['12', '21'], ['21', '12']);

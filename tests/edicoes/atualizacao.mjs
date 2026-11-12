@@ -54,9 +54,9 @@ console.log('EV3-I: arquivo de ensaio ausente da publicação, história fixa co
 // A língua da página muda os rótulos, sem inventar uma edição do documento.
 const {linhaDasEdicoes,portasDaCorrecao}=await import('../../src/lib/edicoes.mjs');
 const {conferirLinhaDasEdicoes}=await import('../../scripts/edicoes-linha-conferir.mjs');
-// REC2: o estudo vivo só em inglês conserva o caso de uma página que usa
-// outra língua nos rótulos e empresta o documento da edição existente.
-const soEn='alentejo-algarve';
+// RET1: a edição inglesa de um estudo vivo permite conferir rótulos
+// portugueses sobre portas inglesas, sem depender de uma página retirada.
+const soEn='orcamento-2027-o-que-muda-e-para-quem';
 const cabecalho=linhaDasEdicoes(soEn,'en',null,'pt');
 const conferirEmprestada=html=>conferirLinhaDasEdicoes(parse('<p>'+html+'</p>'),manifesto,soEn,'en',null,'pt');
 assert.deepEqual(conferirEmprestada(cabecalho),[]);
@@ -64,7 +64,7 @@ assert(conferirEmprestada(cabecalho.replace('corrigido a','corrected on')).lengt
 assert(conferirEmprestada(cabecalho.replaceAll('/en/studies/','/estudos/')).length);
 assert(conferirEmprestada(cabecalho.replaceAll('hreflang="en"','hreflang="pt-PT"')).length);
 const dataSoEn=manifesto.edicoes.find(e=>e.slug===soEn&&e.lang==='en').edicoes.at(-1).data;
-const portasEn=portasDaCorrecao(soEn,'pt',dataSoEn);
-assert.throws(()=>portasDaCorrecao(soEn,'pt','1900-01-01'),/sem par de versões/);
-assert.equal(portasEn.rotuloDepois,'Edição atual');assert(portasEn.depois.rota.startsWith('/en/studies/'));
+const portasEn=portasDaCorrecao(soEn,'en',dataSoEn);
+assert.throws(()=>portasDaCorrecao(soEn,'en','1900-01-01'),/sem par de versões/);
+assert.equal(portasEn.rotuloDepois,'Current edition');assert(portasEn.depois.rota.startsWith('/en/studies/'));
 console.log('VOZ-2A: cabeçalho português e portas inglesas conferidos; língua dos rótulos, rota e hreflang trocados recusados.');

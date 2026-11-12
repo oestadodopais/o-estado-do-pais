@@ -702,7 +702,7 @@ export function estudosDaEntrada(entrada, lang) {
     for (const e of ENTRADAS) { const n = m.get(e.id) ?? 0; if (n > mais) { mais = n; dona = e.id; } }
     if (dona === entrada) temas.add(tema);
   }
-  const doPais = new Set(WORKS.filter((w) => typeof w.subject !== 'string' && temas.has(String(w.tema))).map((w) => w.slug));
+  const doPais = new Set(WORKS.filter((w) => w.estado !== 'retirado' && typeof w.subject !== 'string' && temas.has(String(w.tema))).map((w) => w.slug));
   return estudosRecentes(lang).filter((e) => doPais.has(e.work.slug));
 }
 

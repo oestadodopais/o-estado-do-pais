@@ -11,7 +11,7 @@ const manifesto = JSON.parse(fs.readFileSync(path.join(origem, 'manifest.json'),
 const retirado = WORKS.find(w => w.estado === 'retirado' && manifesto.registos[`${w.slug}/pt`]);
 const semEdicao = WORKS.filter(w => w.estado !== 'retirado').flatMap(w =>
   ['pt','en'].filter(lang => !PUBLISHED_EDITIONS.some(e => e.slug === w.slug && e.lang === lang))
-    .map(lang => ({slug:w.slug, lang}))).find(e => Object.keys(manifesto.registos).some(k => k.startsWith(e.slug + '/')));
+    .map(lang => ({slug:w.slug, lang})))[0];
 assert(retirado && semEdicao);
 function correr(nome, codigo, padrao) {
   fs.writeFileSync(path.join(tmp, 'manifest.json'), JSON.stringify(manifesto));
@@ -41,7 +41,7 @@ try {
   fs.writeFileSync(ficheiro, bytes);
   // Usa uma língua real, ausente das edições publicadas deste trabalho.
   const chave = `${semEdicao.slug}/${semEdicao.lang}`;
-  const original = Object.keys(manifesto.registos).find(k => k.startsWith(semEdicao.slug + '/'));
+  const original = Object.keys(manifesto.registos).find(k => PUBLISHED_EDITIONS.some(e => `${e.slug}/${e.lang}` === k));
   manifesto.registos[chave] = structuredClone(manifesto.registos[original]);
   correr(`não retirado sem edição publicada recusado (${chave})`, 1, /REC2 contagem dos registos: .*: trabalho não retirado sem edição publicada/);
 } finally {

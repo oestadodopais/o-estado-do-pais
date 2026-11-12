@@ -22,41 +22,6 @@
       "ficheiro": "studies-src/a-casa-em-portugal-e-na-europa/en.html"
     },
     {
-      "slug": "agua-nao-faturada",
-      "lang": "pt",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/agua-nao-faturada/pt.html"
-    },
-    {
-      "slug": "agua-nao-faturada",
-      "lang": "en",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/agua-nao-faturada/en.html"
-    },
-    {
-      "slug": "alentejo-algarve",
-      "lang": "en",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/alentejo-algarve/en.html"
-    },
-    {
-      "slug": "avaliacao-economica-regional-de-portugal-2026",
-      "lang": "pt",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/avaliacao-economica-regional-de-portugal-2026/pt.html"
-    },
-    {
-      "slug": "evolucao-de-portugal-desde-1981",
-      "lang": "pt",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/evolucao-de-portugal-desde-1981/pt.html"
-    },
-    {
       "slug": "evora-2027-capital-europeia-da-cultura",
       "lang": "pt",
       "data": "2026-11-12",
@@ -89,41 +54,6 @@
       "origem": "edicao-unica"
     },
     {
-      "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
-      "lang": "pt",
-      "data": "2026-10-01",
-      "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html"
-    },
-    {
-      "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
-      "lang": "en",
-      "data": "2026-10-01",
-      "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html"
-    },
-    {
-      "slug": "evora-quem-governou-a-camara-2009-2025",
-      "lang": "pt",
-      "data": "2026-10-01",
-      "commit": "655ee2505138602f59ae0760a8e517eada70b339",
-      "ficheiro": "studies-src/evora-quem-governou-a-camara-2009-2025/pt.html"
-    },
-    {
-      "slug": "onde-esta-a-agua",
-      "lang": "pt",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/onde-esta-a-agua/pt.html"
-    },
-    {
-      "slug": "onde-esta-a-agua",
-      "lang": "en",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/onde-esta-a-agua/en.html"
-    },
-    {
       "slug": "orcamento-2027-o-que-muda-e-para-quem",
       "lang": "pt",
       "data": "2026-10-20",
@@ -143,13 +73,6 @@
       "data": "2026-08-24",
       "commit": "a3523249d2a33cd0c6db939f937fd889b39acfdf",
       "ficheiro": "studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html"
-    },
-    {
-      "slug": "which-door-is-yours",
-      "lang": "en",
-      "data": "2026-08-12",
-      "commit": "eff504f5400fa572e55bd0c5b3dae7fd8a4188da",
-      "ficheiro": "studies-src/which-door-is-yours/en.html"
     }
   ]
 }

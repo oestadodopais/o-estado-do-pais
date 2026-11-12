@@ -8,13 +8,13 @@ import {WORKS} from '../../src/data/studies.mjs';
 import {separarRetirados, conferirSaltadas, lerDocumentos, conferir, recusas, conferirPresenca} from '../../scripts/leituras/conferir-frases.mjs';
 
 const retirados = WORKS.filter(w => w.estado === 'retirado');
-assert.equal(retirados.length, 6, 'o mandato retira seis trabalhos');
+assert.equal(retirados.length, 14, 'os mandatos retiram catorze trabalhos');
 const slugs = new Set(retirados.map(w => w.slug));
 const listas = [
-  ['voz2a-2026-11-07/FRASES-VOZ-2A.json', 85],
-  ['voz2b-2026-11-07/FRASES-VOZ-2B.json', 53],
-  ['coragua-2026-11-08/FRASES-COR-AGUA.json', 32],
-  ...['d','g','i','j','prr'].map(s => [`coragua-2026-11-08/FRASES-COR-AGUA-${s}.json`, 0]),
+  ['voz2a-2026-11-07/FRASES-VOZ-2A.json', 101],
+  ['voz2b-2026-11-07/FRASES-VOZ-2B.json', 70],
+  ['coragua-2026-11-08/FRASES-COR-AGUA.json', 126],
+  ...Object.entries({d:13,g:7,i:3,j:3,prr:8}).map(([s,n]) => [`coragua-2026-11-08/FRASES-COR-AGUA-${s}.json`, n]),
 ];
 let plantas = 0;
 for (const [nome, medida] of listas) {

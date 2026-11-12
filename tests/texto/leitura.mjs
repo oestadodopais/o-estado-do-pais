@@ -82,7 +82,7 @@ async function pagina(largura = 1280) {
 }
 
 const O04 = '/estudos/evora-contas-da-camara-2010-2025';
-const O03 = '/estudos/avaliacao-economica-regional-de-portugal-2026';
+const O03 = '/estudos/evora-contas-da-camara-2010-2025';
 
 /**
  * AS OITO, e não três: a medida 4 (o transbordo) corre sobre todas as edições

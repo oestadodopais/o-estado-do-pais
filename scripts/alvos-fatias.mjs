@@ -30,7 +30,7 @@ export const FAMILIAS = [
   ['livroConcelho', { slug: 'evora' }],
   ['linha', { slug: 'evora-populacao-2025' }],
   ['estudos', null],
-  ['estudo', { slug: 'agua-nao-faturada' }],
+  ['estudo', { slug: 'evora-2027-capital-europeia-da-cultura' }],
   /* B1: a amostra de texto longo abre o corpo na rota do estudo. O nome
      «texto» identifica esta medição e conserva as conferências da leitura;
      a terceira coluna diz a rota real, sem pedir um HTML de redirecionamento. */
