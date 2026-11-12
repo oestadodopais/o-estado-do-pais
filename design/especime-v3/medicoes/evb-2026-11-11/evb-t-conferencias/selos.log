@@ -1,0 +1,15 @@
+
+> o-estado-do-pais@0.1.0 check:selos
+> node tests/selos/unidades.mjs && node tests/selos/plantas.mjs && node tests/selos/renderizacao.mjs && node tests/selos/inventario.mjs && node tests/selos/apoios.mjs && node tests/selos/cadeia.mjs && node scripts/check-selos.mjs && node tests/quadro/reguas.mjs selos && node tests/eva/cadeia.mjs
+
+SEL1: unidades, precedência e limites conferidos.
+SEL1: 18 cópias conferidas, formas novas recusadas pelo comando do build.
+SEL1: 21 edições sem medidas partidas; texto, fontes e posições conferidos.
+SEL1: inventário conserva palavras, números, nomes e pontuação; nome acessível conferido integralmente.
+SEL1-I: nove pares nos dados e no HTML de cada edição; troca dos apoios do parágrafo recusada.
+SEL1: C6 aceita a medida inteira e recusa uma fonte trocada na cópia do estudo.
+C1: dois formatos de origem conferidos e dez adulterações recusadas.
+SEL1: 9835 páginas; 0 ocorrências.
+PAI2 selos pt: controlo verde, planta recusada pela mesma função.
+PAI2 selos en: controlo verde, planta recusada pela mesma função.
+EVA e EVB C1: 279 referências com corpo conferidas; caminhos sem content/ e com .. recusados nas duas vias; resumo, linha e registo adulterados recusados.

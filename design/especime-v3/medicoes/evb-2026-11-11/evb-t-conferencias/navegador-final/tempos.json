@@ -1,0 +1,32 @@
+{
+  "cabeca": "1f5905283e10bcf3902d3899c8bcfab8daa7fb42",
+  "inicio": "2026-11-12T00:12:09.817Z",
+  "fim": "2026-11-12T00:17:22.904Z",
+  "segundos": 313.087,
+  "passos": [
+    {
+      "passo": "npm run check:leituras",
+      "cadeia": "check:leituras",
+      "inicio": "2026-11-12T00:12:09.817+00:00",
+      "fim": "2026-11-12T00:17:01.292+00:00",
+      "segundos": 291.4702512919903,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:sobreposicao",
+      "cadeia": "check:sobreposicao",
+      "inicio": "2026-11-12T00:17:01.426+00:00",
+      "fim": "2026-11-12T00:17:12.197+00:00",
+      "segundos": 10.769913124851882,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run check:largura",
+      "cadeia": "check:largura",
+      "inicio": "2026-11-12T00:17:12.342+00:00",
+      "fim": "2026-11-12T00:17:22.904+00:00",
+      "segundos": 10.562660709023476,
+      "codigo": 0
+    }
+  ]
+}

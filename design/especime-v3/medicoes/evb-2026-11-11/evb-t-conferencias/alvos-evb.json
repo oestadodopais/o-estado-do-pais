@@ -1,0 +1,216 @@
+{
+  "quando": "2026-11-11T23:45:05.843Z",
+  "larguras": [
+    390,
+    641,
+    768,
+    1023,
+    1280
+  ],
+  "celulas": [
+    {
+      "nome": "H1",
+      "passa": true,
+      "prova": "0 nó(s) em violação (0 graves) em 80 rotas × 2 larguras · nenhuma violação"
+    },
+    {
+      "nome": "H2",
+      "passa": true,
+      "prova": "fichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 58 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 34984 alvos medidos, 23679 deles com 44 px a 390, 571 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 434 são selos dentro de leitura, sinopse ou registo em prosa corrida, 0 destes no registo, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (39× a.src-chip «source · Ministério das Finanças» · 61.9×27.5 de toque (caixa 61×19); 35× a.src-chip «source · calculated» · 61.9×27.5 de toque (caixa 61×19); 26× a.src-chip «source · Ministério das Finanças» · 61.9×44.7 de toque (caixa 61×19); 19× a.src-chip «fonte · Ministério das Finanças» · 53.3×27.5 de toque (caixa 52.5×19)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 0 estão numa página de leitura, que o brief põe fora deste bloco (nenhum) e 137 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (21× a.texto-ligacao «https://www.cm-evora.pt/wp-content» · 88×88 de toque (caixa 166.5×95.3); 4× a.discussao-literal «O Orçamento do Estado para 2027 é » · 88×27.5 de toque (caixa 517.7×82.3); 4× a.discussao-literal «Ora, esta verba do PRR foi excecio» · 88×27.5 de toque (caixa 461.3×54.6); 3× a.texto-ligacao «https://www.evora2027.com/fileadmi» · 88×88 de toque (caixa 164.9×95.3)) · 8353 não medido(s)"
+    },
+    {
+      "nome": "H3",
+      "passa": true,
+      "prova": "9834 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 400 passagens"
+    },
+    {
+      "nome": "H14",
+      "passa": true,
+      "prova": "400 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título"
+    },
+    {
+      "nome": "H4",
+      "passa": true,
+      "prova": "9834 página(s) do dist/: 9803 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 31 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>"
+    },
+    {
+      "nome": "H5",
+      "passa": true,
+      "prova": "40 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel"
+    },
+    {
+      "nome": "H6",
+      "passa": true,
+      "prova": "primeira página, a 1280: 26 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)"
+    },
+    {
+      "nome": "H7",
+      "passa": true,
+      "prova": "20 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 20 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)"
+    },
+    {
+      "nome": "H8",
+      "passa": true,
+      "prova": "cartões: 5564 registo(s), 2782 da edição inglesa, 2320 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 7205 unidade(s) rendida(s), 0 diferentes do que a tabela manda"
+    },
+    {
+      "nome": "H9",
+      "passa": true,
+      "prova": "4917 página(s) inglesas lidas: 1011 com um nome de diploma, 3906 sem nenhum, 4 documento(s) alojado(s) fora da conta · 1119 nome(s): 1105 com lang=\"pt-PT\", 14 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca"
+    },
+    {
+      "nome": "H13",
+      "passa": true,
+      "prova": "/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308"
+    },
+    {
+      "nome": "H15",
+      "passa": true,
+      "prova": "pt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão"
+    },
+    {
+      "nome": "H16",
+      "passa": true,
+      "prova": "9834 página(s) do dist/: 9803 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 31 sem ela (e 31 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 400 de 400 passagens com uma porta no seu marco; 80 porta(s) a 390 e 80 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade"
+    },
+    {
+      "nome": "H10",
+      "passa": true,
+      "prova": "aria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título"
+    }
+  ],
+  "graves": 0,
+  "paginas_evb": [
+    {
+      "chave": "textoEvb/pt",
+      "familia": "textoEvb",
+      "lang": "pt",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 390,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/pt",
+      "familia": "textoEvb",
+      "lang": "pt",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 641,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/pt",
+      "familia": "textoEvb",
+      "lang": "pt",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 768,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/pt",
+      "familia": "textoEvb",
+      "lang": "pt",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1023,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/pt",
+      "familia": "textoEvb",
+      "lang": "pt",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1280,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/en",
+      "familia": "textoEvb",
+      "lang": "en",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 390,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/en",
+      "familia": "textoEvb",
+      "lang": "en",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 641,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/en",
+      "familia": "textoEvb",
+      "lang": "en",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 768,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/en",
+      "familia": "textoEvb",
+      "lang": "en",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1023,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    },
+    {
+      "chave": "textoEvb/en",
+      "familia": "textoEvb",
+      "lang": "en",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1280,
+      "h1": 1,
+      "h1Texto": [
+        "Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)"
+      ],
+      "portaExiste": true,
+      "portaEmMain": false
+    }
+  ],
+  "paginas_medidas": 400
+}

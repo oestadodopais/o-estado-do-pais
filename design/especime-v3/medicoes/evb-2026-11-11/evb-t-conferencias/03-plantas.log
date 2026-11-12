@@ -1,0 +1,74 @@
+ED1 testemunhas: 7 controlos e plantas; só a origem externa normaliza o runtime.
+ED1 primeira edição: 3 controlos e plantas; data desconhecida preservada, história e publicação alteradas recusadas.
+ED1-E história: 12 controlos e plantas; segunda atualização conserva a entrada anterior; ausência da testemunha é explícita.
+ED1 planta: controlo: passou
+ED1 planta: edição sem entrada: passou
+ED1 planta: primeira porta para o documento atual: passou
+ED1 planta: um byte da primeira edição: passou
+ED1 planta: entrada sem estudo: passou
+ED1 planta: entrada com outra data: passou
+ED1 planta: bytes servidos mudados: passou
+ED1: 139 controlos e plantas.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'ED3 linha: datas, palavras ou ordem incorretas',
++   'ED3 linha: data ou elemento incorreto 2026-11-12',
++   'ED3 linha: publicação sem edição com porta',
++   'ED3 linha: origem da data incorreta 2026-11-12',
++   'ED3 linha: data ou elemento incorreto 2026-10-01',
++   'ED3 linha: porta incorreta 2026-10-01',
++   'ED3 linha: marca data-estudo-atualizacao incorreta 2026-10-01',
++   'ED3 linha: data ou elemento incorreto 2026-11-03',
++   'ED3 linha: porta incorreta 2026-11-03',
++   'ED3 linha: marca data-estudo-atualizacao incorreta 2026-11-03',
++   'ED3 linha: data ou elemento incorreto 2026-11-06',
++   'ED3 linha: porta incorreta 2026-11-06',
++   'ED3 linha: marca data-estudo-correcao incorreta 2026-11-06',
++   'ED3 linha: data ou elemento incorreto 2026-11-07',
++   'ED3 linha: porta incorreta 2026-11-07',
++   'ED3 linha: origem da data incorreta 2026-11-07',
++   'ED3 linha: marca data-estudo-correcao incorreta 2026-11-07',
++   'ED3 linha: número de datas incorreto',
++   'ED3 linha: data repetida ou ausente'
++ ]
+- []
+
+    at file://<worktree>/tests/edicoes/voz-linha.mjs:16:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'ED3 linha: datas, palavras ou ordem incorretas',
+    'ED3 linha: data ou elemento incorreto 2026-11-12',
+    'ED3 linha: publicação sem edição com porta',
+    'ED3 linha: origem da data incorreta 2026-11-12',
+    'ED3 linha: data ou elemento incorreto 2026-10-01',
+    'ED3 linha: porta incorreta 2026-10-01',
+    'ED3 linha: marca data-estudo-atualizacao incorreta 2026-10-01',
+    'ED3 linha: data ou elemento incorreto 2026-11-03',
+    'ED3 linha: porta incorreta 2026-11-03',
+    'ED3 linha: marca data-estudo-atualizacao incorreta 2026-11-03',
+    'ED3 linha: data ou elemento incorreto 2026-11-06',
+    'ED3 linha: porta incorreta 2026-11-06',
+    'ED3 linha: marca data-estudo-correcao incorreta 2026-11-06',
+    'ED3 linha: data ou elemento incorreto 2026-11-07',
+    'ED3 linha: porta incorreta 2026-11-07',
+    'ED3 linha: origem da data incorreta 2026-11-07',
+    'ED3 linha: marca data-estudo-correcao incorreta 2026-11-07',
+    'ED3 linha: número de datas incorreto',
+    'ED3 linha: data repetida ou ausente'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

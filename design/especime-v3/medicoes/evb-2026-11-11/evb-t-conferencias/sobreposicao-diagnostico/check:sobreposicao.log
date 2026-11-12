@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 check:sobreposicao
+> node tests/documentos/sobreposicao.mjs && node tests/quadro/disposicao.mjs sobreposicao
+
+1024 /estudos/evora-2027-capital-europeia-da-cultura/documento: 1 sobreposições
+1024 /en/studies/evora-2027-capital-europeia-da-cultura/document: 1 sobreposições
+1280 /estudos/evora-2027-capital-europeia-da-cultura/documento: 1 sobreposições
+1280 /en/studies/evora-2027-capital-europeia-da-cultura/document: 1 sobreposições
+1600 /estudos/evora-2027-capital-europeia-da-cultura/documento: 1 sobreposições
+1600 /en/studies/evora-2027-capital-europeia-da-cultura/document: 1 sobreposições
+M118: 135 combinações, 6 sobreposições, 0 erros; 10.38 s; planta não pedida.

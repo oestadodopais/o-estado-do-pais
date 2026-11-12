@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 check:largura
+> node tests/largura/amostra.mjs && node tests/largura/largura.mjs --prova
+
+Amostra: família nova descoberta; todos os documentos atuais e guardados incluídos.
+{"pagina":"/livro-razao/oe-2027-saude-contrato-programa-acss/","largura":390,"documento":390,"textoOculto":{"quantidade":1,"whiteSpace":["nowrap"]}}
+{"pagina":"/en/ledger/oe-2027-saude-contrato-programa-acss/","largura":390,"documento":390,"textoOculto":{"quantidade":1,"whiteSpace":["nowrap"]}}
+PLANTA: nowrap num valor longo real recusado nas duas línguas; releitura sem planta verde.
+Largura: 76 famílias, 31 documentos, 130 páginas, 650 medidas, 0 falhas, 10.176 s.

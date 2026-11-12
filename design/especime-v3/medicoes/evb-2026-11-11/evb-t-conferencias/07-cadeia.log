@@ -1,0 +1,79 @@
+
+  28 en · 52 blocos · 198 algarismos · 198 completas · 0 do motor · 0 por resolver · 166 com resumo de origem · 32 com motivo
+  28 pt · 52 blocos · 198 algarismos · 198 completas · 0 do motor · 0 por resolver · 166 com resumo de origem · 32 com motivo
+  03 pt · 53 blocos · 411 algarismos · 0 completas · 411 do motor · 0 por resolver · 0 com resumo de origem · 411 com motivo
+  19 en · 165 blocos · 332 algarismos · 0 completas · 332 do motor · 0 por resolver · 58 com resumo de origem · 274 com motivo
+  19 pt · 165 blocos · 332 algarismos · 0 completas · 332 do motor · 0 por resolver · 58 com resumo de origem · 274 com motivo
+  14 en (retirado, só fontes conferidas) · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo
+  14 pt (retirado, só fontes conferidas) · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo
+  16 en · 198 blocos · 610 algarismos · 70 completas · 540 do motor · 0 por resolver · 295 com resumo de origem · 315 com motivo
+  16 pt · 198 blocos · 607 algarismos · 70 completas · 537 do motor · 0 por resolver · 292 com resumo de origem · 315 com motivo
+  18 en · 161 blocos · 530 algarismos · 37 completas · 493 do motor · 0 por resolver · 0 com resumo de origem · 530 com motivo
+  18 pt · 161 blocos · 530 algarismos · 37 completas · 493 do motor · 0 por resolver · 0 com resumo de origem · 530 com motivo
+  06 pt (retirado, só fontes conferidas) · 49 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver · 0 com resumo de origem · 171 com motivo
+  07 en (retirado, só fontes conferidas) · 87 blocos · 194 algarismos · 50 completas · 144 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo
+  07 pt (retirado, só fontes conferidas) · 88 blocos · 194 algarismos · 50 completas · 144 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo
+  09 pt (retirado, só fontes conferidas) · 138 blocos · 296 algarismos · 10 completas · 286 do motor · 0 por resolver · 208 com resumo de origem · 88 com motivo
+  04 en (retirado, só fontes conferidas) · 95 blocos · 324 algarismos · 11 completas · 313 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo
+  04 pt (retirado, só fontes conferidas) · 95 blocos · 324 algarismos · 12 completas · 312 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo
+  17 pt · 211 blocos · 484 algarismos · 39 completas · 445 do motor · 0 por resolver · 221 com resumo de origem · 263 com motivo
+  08 pt (retirado, só fontes conferidas) · 173 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo
+  27 en · 57 blocos · 267 algarismos · 267 completas · 0 do motor · 0 por resolver · 235 com resumo de origem · 32 com motivo
+  27 pt · 57 blocos · 267 algarismos · 267 completas · 0 do motor · 0 por resolver · 235 com resumo de origem · 32 com motivo
+
+  as oito chaves da prova, contadas aqui:
+    registos_edicoes                   12
+    registos_blocos                  1530
+    registos_algarismos              4766
+    registos_resolvidos              4766
+    registos_por_resolver               0
+    registos_com_linha_do_sitio      1183
+    registos_com_resumo_de_origem    1726
+    registos_sem_resumo_de_origem    3040
+
+  das 1183 figuras com linha do sítio, 506 imprimem o valor que a linha guarda e 677 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).
+
+  A CADEIA PARTE-SE — 106 erro(s):
+
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#7.2: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#7.4: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#9.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#9.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#9.2: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#9.3: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#10.3: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#10.8: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#15.1.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#17.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#18.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#19.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#22.2.2.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#22.2.2.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#27.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#33.1.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#37.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#41.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#46.3.2.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.1.1.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.1.2.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.1.2.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.2.1.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.2.2.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.3.1.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.3.2.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.4.1.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.4.2.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#48.4.2.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#52.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#52.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#55.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#55.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#56.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#57.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#61.0: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#61.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#61.2: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#61.3: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    ✗ C1 evora-2027-capital-europeia-da-cultura/en#63.3.1.1: o corpo integral não coincide com o ficheiro e o resumo da linha provada.
+    … e mais 66.
+

@@ -1,0 +1,63 @@
+
+> o-estado-do-pais@0.1.0 check:publicadores
+> node tests/og1e/publicadores.mjs
+
+OG1-E C publicador intacto: código 0
+OG1-E C pessoa como publicador: código 1
+OG1-E C nome inventado: código 1
+OG1-E C domínio trocado: código 1
+OG1-E C linha/pt/intacto: código 0
+OG1-E C linha/pt/pessoa: código 1
+OG1-E C linha/pt/sem título: código 1
+OG1-E C livro/pt/intacto: código 0
+OG1-E C livro/pt/pessoa: código 1
+OG1-E C livro/pt/sem título: código 1
+OG1-E C linha/en/intacto: código 0
+OG1-E C linha/en/pessoa: código 1
+OG1-E C linha/en/sem título: código 1
+OG1-E C livro/en/intacto: código 0
+OG1-E C livro/en/pessoa: código 1
+OG1-E C livro/en/sem título: código 1
+OG1-E C dois campos/pt: código 1
+OG1-E C frase errada/pt: código 1
+OG1-E C meta errada/pt: código 1
+OG1-E C meta intacta/pt: código 0
+OG1-E C motivo da correção/pt: código 0
+OG1-E C cartão de texto/pt: código 1
+OG1-E C dois campos/en: código 1
+OG1-E C frase errada/en: código 1
+OG1-E C meta errada/en: código 1
+OG1-E C meta intacta/en: código 0
+OG1-E C motivo da correção/en: código 0
+OG1-E C cartão de texto/en: código 1
+OG1-E C cartão de citação/pt: código 1
+OG1-E C título publicado/pt: código 0
+OG1-E C título inventado/pt: código 1
+OG1-E C cartão de citação/en: código 1
+OG1-E C título publicado/en: código 0
+OG1-E C título inventado/en: código 1
+OG1-E C edição guardada onde-esta-a-agua/pt: código 0
+OG1-E C edição com byte mudado onde-esta-a-agua/pt: código 1
+OG1-E C edição guardada onde-esta-a-agua/en: código 0
+OG1-E C edição com byte mudado onde-esta-a-agua/en: código 1
+OG1-E C edição guardada agua-nao-faturada/pt: código 0
+OG1-E C edição com byte mudado agua-nao-faturada/pt: código 1
+OG1-E C edição guardada agua-nao-faturada/en: código 0
+OG1-E C edição com byte mudado agua-nao-faturada/en: código 1
+OG1-E C edição guardada alentejo-algarve/en: código 0
+OG1-E C edição com byte mudado alentejo-algarve/en: código 1
+OG1-E C edição guardada evora-economia-e-dinheiro-publico-de-fora-da-camara/pt: código 0
+OG1-E C edição com byte mudado evora-economia-e-dinheiro-publico-de-fora-da-camara/pt: código 1
+OG1-E C edição guardada evora-economia-e-dinheiro-publico-de-fora-da-camara/en: código 0
+OG1-E C edição com byte mudado evora-economia-e-dinheiro-publico-de-fora-da-camara/en: código 1
+OG1-E C edição guardada orcamento-2027-o-que-muda-e-para-quem/pt: código 0
+OG1-E C edição com byte mudado orcamento-2027-o-que-muda-e-para-quem/pt: código 1
+OG1-E C edição guardada orcamento-2027-o-que-muda-e-para-quem/en: código 0
+OG1-E C edição com byte mudado orcamento-2027-o-que-muda-e-para-quem/en: código 1
+OG1-E C edição guardada a-casa-em-portugal-e-na-europa/pt: código 0
+OG1-E C edição com byte mudado a-casa-em-portugal-e-na-europa/pt: código 1
+OG1-E C edição guardada a-casa-em-portugal-e-na-europa/en: código 0
+OG1-E C edição com byte mudado a-casa-em-portugal-e-na-europa/en: código 1
+OG1-E F alcance: 21 linhas de texto alcançáveis nos dois estudos e fora da grelha.
+OG1-E C alcance: as 29 citações da habitação conservam o estudo na área; nenhuma citação entra nas medidas de qualquer área.
+OG1-E C: 157 plantas e controlos conferidos.

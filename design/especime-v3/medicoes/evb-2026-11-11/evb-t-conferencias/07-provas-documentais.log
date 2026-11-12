@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "<worktree>/design/especime-v3/medicoes/evb-2026-11-11/atravessar-provas-documentais.py", line 33, in <module>
+    file=site/f'registos/{slug}/{lang}.record.json';r=json.loads(file.read_bytes());ler(r)
+                                                                                    ~~~^^^
+  File "<worktree>/design/especime-v3/medicoes/evb-2026-11-11/atravessar-provas-documentais.py", line 31, in ler
+    if isinstance(v,(dict,list)):ler(v)
+                                 ~~~^^^
+  File "<worktree>/design/especime-v3/medicoes/evb-2026-11-11/atravessar-provas-documentais.py", line 19, in ler
+    for x in n:ler(x)
+               ~~~^^^
+  File "<worktree>/design/especime-v3/medicoes/evb-2026-11-11/atravessar-provas-documentais.py", line 31, in ler
+    if isinstance(v,(dict,list)):ler(v)
+                                 ~~~^^^
+  File "<worktree>/design/especime-v3/medicoes/evb-2026-11-11/atravessar-provas-documentais.py", line 19, in ler
+    for x in n:ler(x)
+               ~~~^^^
+  File "<worktree>/design/especime-v3/medicoes/evb-2026-11-11/atravessar-provas-documentais.py", line 25, in ler
+    b=(motor/'content'/source).read_bytes();assert sha(b)==h
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 782, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 776, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<motor>/content/content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/outubro-2026/raw/22.pdf'

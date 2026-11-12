@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:sobreposicao
+> node tests/documentos/sobreposicao.mjs && node tests/quadro/disposicao.mjs sobreposicao
+
+M118: 135 combinações, 0 sobreposições, 0 erros; 10.28 s; planta não pedida.
+PAI2 sobreposicao: 70 combinações verdes; 2 plantas recusadas; sem capturas.

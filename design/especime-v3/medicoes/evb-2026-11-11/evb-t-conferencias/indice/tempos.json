@@ -1,0 +1,16 @@
+{
+  "cabeca": "8cf22023603cf84e329e023934d598fdda45b5b7",
+  "inicio": "2026-11-11T23:45:22.038Z",
+  "fim": "2026-11-11T23:45:52.499Z",
+  "segundos": 30.461,
+  "passos": [
+    {
+      "passo": "npm run check:indice",
+      "cadeia": "check:indice",
+      "inicio": "2026-11-11T23:45:22.038+00:00",
+      "fim": "2026-11-11T23:45:52.499+00:00",
+      "segundos": 30.460916999727488,
+      "codigo": 1
+    }
+  ]
+}

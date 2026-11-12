@@ -1,0 +1,132 @@
+EVB-T: estudo de Évora 2027, edição única de lançamento
+
+Os nove pontos foram implementados e commitados. A prova por conferências está verde; falta uma corrida completa de build com código zero da cabeça final. A última corrida parou numa régua histórica, entretanto corrigida e conferida. O limite e os códigos estão descritos abaixo.
+
+1. Registos, commit 949336064.
+O motor estava limpo em 71df7b3. O exportador correu com OEDP_SITE explícito e --write. Ficaram os dois registos, os dois cortes e as duas entradas do 19. Cada língua tem 165 blocos e 332 referências. Repostos por guião o registo português de quem governou a câmara e todos os metadados alterados dos outros estudos, incluindo rh_origens do estudo das contas. Nenhuma outra entrada mudou, nem em rh_manifest_sha256. check:registo aceitou a composição.
+
+2. Documentos, commit 74ffebc9f.
+O guião atravessar-documentos.py serviu sem alteração. Os HTML raw e corrente são os bytes provados pelo motor; D5 passou. Origin_ref aponta para aa7ca6c0fa604447d43007012d6307a3760e00b2, o commit que escreveu os bytes. Cada língua tem uma única versão de 2026-11-12, sem primeira_edicao e sem natureza. Os seis ficheiros de studies-src/_edicoes saíram.
+Português: 101925 bytes; 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb.
+Inglês: 101889 bytes; ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306.
+
+3. História, commit 3d053e5a8, com a cópia fixa completada em 502874f7b.
+As duas publicações são de 2026-11-12, updated é nulo e a origem das datas é edicao-unica. O cabeçalho não imprime atualização nem correção nem ligações a edições guardadas. As seis rotas datadas têm redirecionamento permanente para o documento corrente na respetiva língua. As três correções de texto foram conservadas, sem mudança, em CORRECOES_TEXTO_ENSAIO. A linha correcoes-publicadas, as correções das linhas, a história selada e as reconferências não mudaram.
+A testemunha publicada passou para orcamento-2027-o-que-muda-e-para-quem nas plantas das edições e datas. A comparação ED3 usa também a-casa-em-portugal-e-na-europa. A prova dos publicadores OG1-E passou para o Orçamento. Onde são necessárias três ou quatro versões, os testes usam a história fixa de Évora 2027: manifesto, dados, correções e oito HTML, com quatro versões por língua, guardados apenas com os testes. O caso antes vazio de atualizacao.mjs passou a conferir a ausência pública e essa história fixa.
+As plantas recusam oito adulterações de bytes, uma correção intermédia ausente e uma primeira edição ausente. As plantas das datas e da voz da linha continuam a recusar data, origem, porta, língua e palavras trocadas. A ordem das novidades de REC1 começa agora por Évora 2027 e depois pelas contas. REC1 mediu 9835 páginas e zero entradas públicas de correções em ensaio, nas duas línguas.
+A L1 desceu de 3491 para 3485, medido depois de retirar as seis páginas de ensaio. A razão e a medição estão no ficheiro de medidas do construtor; réguas e exclusões conservadas.
+
+4. Nome, manchete e pergunta, commit 7b00f8a4b.
+Os title e description ficaram intactos. Os nomes coincidem, letra por letra, com C002; a manchete de C001 aparece no H1. A pergunta é C003, nas duas entradas verbatim. A descrição continua verdadeira: diz que o estudo examina a candidatura, o painel e o dinheiro nos atos públicos. A régua do nome prende o title ao documento; a sinopse usa a leitura, e não exige uma frase antiga da description. As transcrições do HTML estão abaixo.
+
+5. Página, commit bf78ed5b9, com as amostras e provas ligadas em 8cf220236.
+A pergunta, a resposta e o restante texto seguem a ordem do registo, sem cortar a abertura. Foram comparados integralmente 1107 blocos de texto por língua: a página e o documento julgado são iguais, depois de retirar apenas a apresentação dos selos e normalizar o espaço como a régua existente. Isto inclui os números ingleses tal como o texto julgado os imprime. Cada língua tem 33 quadros em caixas próprias, as listas, as cinco linhas do quadro das afirmações com os veredictos, a adaga, a nota, o anexo e o rodapé. A planta que retira a abertura recusa. Não há salto de nível nos títulos.
+A amostra do check:alvos inclui textoEvb nas duas línguas. A largura inclui explicitamente as duas páginas e todos os documentos; a sobreposição inclui as duas páginas e os dois documentos. A régua da largura confere os 33 quadros: caixa própria, overflow horizontal, largura dentro da página e deslocamento interno efetivo quando o quadro excede a caixa.
+
+6. Leitura, commit 4bacd92fc.
+Sem medidas. A frase é C039 com as referências { ref: '2024' } e { ref: '2025' }; nenhum outro token nem algarismo manual. O comentário explica a troca de município por câmara e de municipality por council, as palavras da casa para quem governa o concelho. A origem cita o texto do documento, sem essa troca, e a linha 69 dos dois ficheiros, medida por guião. As plantas conferem os tokens, a ausência de medidas e de algarismos manuais, o texto original e a linha. A frase não precisou de mudar o que diz. Não existe entrada deste estudo em tests/cartao/leituras-provadas.json.
+
+7. Frases e provas, commit 502874f7b.
+Duas declarações de texto julgado: resumos dos documentos e dos textos finais, quem julgou, fecho a 2026-11-11 e commit completo do motor correspondente a 71df7b3. Os textos julgados ficaram intactos. Saíram as 228 pendências do estudo e mais 14 das antigas cópias nas listas e novidades, identificadas pela régua como ausentes do HTML. A lista só encolheu, para 1370 entradas.
+A via julgada cobre 372 frases do estudo. As plantas existentes passaram também a correr para o 19: resumo adulterado, campos obrigatórios ausentes, frase alheia e número trocado recusam; sem declaração não há cobertura nova. As cópias da pergunta nas listas e do nome nas novidades ficaram presas aos mesmos bytes julgados, à língua e à porta exata; as novidades exigem também a data da edição única e o rótulo. Oito controlos e 38 adulterações de texto, número, porta, língua, data e resumo foram conferidos.
+A C1 encontrou a mesma ausência de prova auxiliar que a travessia do 16. Um guião conferiu 44 linhas e 14 corpos contra os bytes e o Git do motor, e guardou a cópia selada do livro e o mapa documental. Os dois registos estão presos por resumo. A via conserva as guardas de caminho e recusa resumo, linha ou registo adulterados. Não foi criada isenção de números no gate:html.
+A paridade encontrou diferenças em 30 blocos, já existentes nos dois documentos julgados. As traduções de citações repetem números, e algumas traduções usam palavras onde a outra língua imprime algarismos. A assinatura total e a assinatura de todos os blocos foram comparadas entre documento julgado e construção: coincidem. Há duas exceções exatas, para documento e página, presas também aos resumos dos dois HTML julgados. Campos ausentes, resumo trocado e número novo recusam.
+
+8. Voz, commit 02cec3220.
+As duas exceções da frase antiga sobre o orçamento municipal saíram. A citação inglesa do painel conservou-se; a portuguesa passou à frase julgada com a tradução entre parênteses. Entraram quatro frases de limite, duas por língua, com a classe já existente limite declarado do estudo. São seis exceções do estudo: duas citações e quatro limites. Não foi necessária classe nova nem ficou razão por decidir. O texto julgado não mudou.
+As listas históricas VOZ-2A permanecem intactas. A conferência da presença deixa de procurar as antigas frases do 19 nas suas páginas, como já fazia para o 16, conservando ocorrências ainda presentes noutros documentos. A planta histórica dos quantificadores deixa de exigir as asserções substituídas do 19; os restantes casos continuam medidos. As frases históricas usadas apenas como positivos do detetor continuam a ser plantas, sem exigir que existam na publicação.
+
+9. Sucessor, commit 8cf220236.
+O retirado evora-2027-prometido-painel-dinheiro continua a indicar o 19 como sucessor. Foram conferidos os oito redirecionamentos, quatro por língua, incluindo documento corrente, documento datado e rota antiga de texto. O destino existe, e as páginas do retirado não existem na construção. A régua dos retirados passou. O acompanhamento emCurso até ao fim de 2027 ficou intacto.
+
+Listas e decisões adicionais.
+Além das listas do mandato, mudaram as duas entradas de paridade-excecoes.json e a lista permitida de check-paridade; a lista de provas auxiliares de corpo-documental-julgado; as amostras de largura e sobreposição; a testemunha publicada do teste OG1-E. As provas novas estão ligadas às cadeias existentes de package.json, sem alargar a corrida ao verify inteiro. Os oito HTML de ensaio vivem apenas nas plantas. Nenhum dado das correções das linhas foi apagado.
+As outras entradas do manifesto dos registos ficaram iguais. Nenhum registo, corte ou documento de outro estudo mudou. O motor ficou limpo e não recebeu commit nesta passagem. Não houve push, instalação de dependências, escalada, sessões auxiliares nem capturas pedidas.
+
+Calendário e execução.
+A data de lançamento prescrita, 12.11.2026, ainda era futura na primeira construção. As réguas das novidades, da voz e do país recusaram essa data. A data do mandato e a regra contra datas futuras foram conservadas; a construção final foi programada para depois da meia-noite UTC. Não foi falsificado o carimbo da construção.
+Algumas chamadas de commit devolveram o código de falta de batimento enquanto o escrivão estava ocupado. Os resultados finais e os commits no Git foram inspecionados: os nove commits foram aceites. Os códigos dos pedidos e das chamadas ficam distinguidos nas medidas.
+
+Correção complementar, commit bd48c04ed.
+A I9 do índice conferia a origem edicao-unica no manifesto, mas ainda procurava no HTML a data antiga de entrada no Git. A comparação da página usa agora a data provada da versão única; a conferência do commit de origem permanece. A corrida estática passou, com cinco plantas de datas adulteradas recusadas.
+
+Transcrições do HTML construído.
+
+pt
+manchete: Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»
+nome: Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos
+pergunta: Évora 2027 tem o dinheiro, as obras e o programa que prometeu?
+frase_leitura: A parte da cultura está paga pelos tetos de 2024 e 2025; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.
+
+en
+manchete: Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)
+nome: Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts
+pergunta: Does Évora 2027 have the money, the works and the programme it promised?
+frase_leitura: The culture share is paid up to the 2024 and 2025 ceilings; the council's is still to be confirmed, and part of the European money depends on applications.
+
+Planta complementar das novidades.
+A edição única do 19 passou a ocupar a primeira novidade de origem gerada. A planta que escolhia a primeira origem gerada para simular uma publicação ausente deixara de alterar a seleção. Passou a escolher, na caixa composta, uma publicação gerada que esteja realmente ausente. A testemunha medida é evora-economia-e-dinheiro-publico-de-fora-da-camara. A presença depois da mudança é conferida na caixa composta. check:datas passou com a planta corrigida.
+
+Inventário adicional da voz.
+INVENTARIO-FRASES.md pediu a classificação das duas leituras novas e a reconciliação das duas leituras antigas e da data de ensaio. As leituras antigas ficaram retiradas com razão; as novas ficaram vivas, com os anos removidos da assinatura por serem referências. A declaração de 06.11.2026 saiu: marcá-la retirada proibia ocorrências legítimas da mesma data noutras páginas. REVISOES-DO-INVENTARIO.md ganhou a entrada evb-t por ler, como o contrato permite durante a construção. A leitura cruzada do diff permanece reservada ao lugar de direção antes da fusão; nenhuma revisão independente foi alegada.
+
+Moldura dos documentos.
+A largura passou em 650 medidas. A sobreposição encontrou seis colisões entre a marca do sítio e o rótulo de IA, nas duas línguas, a 1024, 1280 e 1600 píxeis. O JSON do diagnóstico identificou essas caixas. A moldura do 19 passou a usar o mesmo row-gap:2em já aplicado ao 16. Os documentos foram recompostos pelo compositor do sítio, e D5 voltou a passar. Nenhum byte do documento julgado nem a moldura dos outros estudos mudou.
+
+Conferências de apresentação.
+check:alvos: 70 combinações verdes e duas plantas recusadas; dez combinações da família textoEvb, nas duas línguas. check:largura: 76 famílias, 31 documentos, 130 páginas e 650 medidas, sem falhas; os vinte resultados das páginas e documentos do 19 ficam nas medidas, incluindo as caixas dos quadros. check:sobreposicao: depois da correção da faixa, 135 combinações, zero sobreposições e zero erros. check:indice e check:leituras terminaram com código zero. Não houve capturas.
+
+Commits complementares.
+bd48c04ed: data da edição única no índice.
+1f5905283: testemunha realmente ausente na planta das novidades.
+e1d7ba742: inventário e revisão cruzada declarada por ler.
+388d7625b: espaçamento da faixa exterior do documento.
+
+Limite da prova de construção.
+A última corrida completa de npm run build produziu o HTML da cabeça 388d7625b, passou o gate:html e parou em check:pais, numa régua de E0 que só contava CORRECOES_TEXTO. Depois de mover as três entradas do 19 para ensaio, essa régua deixara de contar a história conservada. Foi corrigida para conferir a contagem até à data selada, incluindo o ensaio, como já faz o cálculo do livro. A linha, o valor e os selos não mudaram. check:pais passou depois da correção.
+A voz e os comandos seguintes, paridade, nomes, língua, formato, navegação, sinais e discussão, passaram individualmente, tal como typecheck. Esta retoma não é apresentada como uma corrida completa com código zero: build-final.codigo conserva 1. Perto do teto de chamadas, não se repetiu outra corrida inteira. Fica por obter um build completo verde da cabeça final; a direção tem também a corrida integral reservada pelo mandato. O único ficheiro de código alterado depois da construção é a régua tests/inicio/linhas-da-casa.mjs, sem efeito no HTML.
+
+Régua da contagem histórica: commit c2b4cd657. Os novos registos foram conferidos também pelo detetor de privacidade antes de serem rastreados pelo Git.
+
+Provas por nome, códigos lidos dos ficheiros.
+build: 1; evb-t-conferencias/build-final.codigo
+check:registo: 0; evb-t-conferencias/final-check-registo.codigo
+check:documentos: 0; evb-t-conferencias/final-check-documentos.codigo
+check:edicoes: 0; evb-t-conferencias/final-check-edicoes.codigo
+check:datas: 0; evb-t-conferencias/final-check-datas.codigo
+check:indice: 0; evb-t-conferencias/indice-final/check:indice.codigo
+check:voz: 0; evb-t-conferencias/final-check-voz.codigo
+check:frases-afirmacao: 0; evb-t-conferencias/final-check-frases-afirmacao.codigo
+check:frases-reais: 0; evb-t-conferencias/08-reais-2.codigo
+check:paridade: 0; evb-t-conferencias/fecho-check-paridade.codigo
+check:lingua: 0; evb-t-conferencias/lingua.codigo
+check:selos: 0; evb-t-conferencias/selos.codigo
+check:lugar: 0; evb-t-conferencias/final-check-lugar.codigo
+check:largura: 0; evb-t-conferencias/navegador-final/check:largura.codigo
+check:sobreposicao: 0; evb-t-conferencias/sobreposicao-final/check:sobreposicao.codigo
+check:alvos: 0; evb-t-conferencias/alvos/check:alvos.codigo
+check:rec2: 0; evb-t-conferencias/final-check-rec2.codigo
+check:privacidade: 0; evb-t-conferencias/privacidade-final.codigo
+ledger:check: 0; evb-t-conferencias/final-ledger-check.codigo
+check:cruzamento com motor: 0; evb-t-conferencias/cruzamento-origem.codigo
+gate:html: 0; evb-t-conferencias/gate-html.codigo
+typecheck: 0; evb-t-conferencias/fecho-typecheck.codigo
+check:leituras: 0; evb-t-conferencias/navegador-final/check:leituras.codigo
+check:rec1: 0; evb-t-conferencias/03-rec1.codigo
+HTML final literal: 0; evb-t-conferencias/html-final.codigo
+check:pais: 0; evb-t-conferencias/final-check-pais.codigo
+check:nomes: 0; evb-t-conferencias/fecho-check-nomes.codigo
+check:formato: 0; evb-t-conferencias/fecho-check-formato.codigo
+check:navegacao: 0; evb-t-conferencias/fecho-check-navegacao.codigo
+sinais: 0; evb-t-conferencias/fecho-sinais.codigo
+check:discussao: 0; evb-t-conferencias/fecho-check-discussao.codigo
+check:publicadores: 0; evb-t-conferencias/final-check-publicadores.codigo
+privacidade dos novos registos: 0; evb-t-conferencias/privacidade-registos.codigo
+
+A cabeça final de código é c2b4cd657c0e655002b0972cbaeefc10eeab031e. O commit de fecho acrescenta o relatório e os registos. Os registos conservam também as tentativas recusadas; os códigos acima identificam as provas finais. Os resultados reais do escrivão distinguem-se dos códigos de falta de batimento devolvidos pelas chamadas.
+
+Custo observado até 2026-11-12T00:45:41.417691+00:00.
+Chamadas de ferramentas: 226. Corridas explícitas de conferências com ficheiro de código: 77, incluindo tentativas recusadas e comandos de plantas; não conta separadamente cada subteste interno nem os hooks dos commits. Perfis parciais do escrivão: 6; corridas integrais dos portões: 0; verify integral: 0. Nenhuma sessão auxiliar.
+tokens used: {"input_tokens": 27915737, "cached_input_tokens": 27623680, "cache_write_input_tokens": 0, "output_tokens": 112886, "reasoning_output_tokens": 53249, "total_tokens": 28028623}. Contador exposto até ao corte acima, incluindo a entrada em cache.
+
+Ficam por executar um build completo verde da cabeça final, a leitura cruzada do diff do inventário antes da fusão e a corrida integral do verify, que o mandato reserva a esse lugar. Não foi publicado nem enviado o ramo.

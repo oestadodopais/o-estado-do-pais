@@ -1,0 +1,28 @@
+
+> o-estado-do-pais@0.1.0 check:rec2
+> node tests/rec2/retirados.mjs && node tests/rec2/listas.mjs && node tests/rec2/amostras.mjs && node tests/rec2/titulos.mjs && node tests/rec2/publicacao.mjs && node tests/rec2/fontes.mjs && node tests/rec2/voz-inventario.mjs && node scripts/check-retirados.mjs && node tests/rec2/contagens.mjs && node tests/rec2/registos-contagem.mjs && node tests/evb/sucessor.mjs
+
+REC2 estado: controlos verdes; página, documento datado e registo retirados recusados; publicado sem página recusado.
+REC2 redirecionamentos: ausência, destino inexistente, destino manual divergente e origem construída recusados; vários sucessores levam ao município.
+REC2 ligações: páginas, mapa, ligação relativa e nota de sucessão recusados.
+voz2a-2026-11-07/FRASES-VOZ-2A.json: 85 de 182 entradas saltadas, conta conferida
+voz2b-2026-11-07/FRASES-VOZ-2B.json: 53 de 106 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA.json: 32 de 126 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-d.json: 0 de 13 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-g.json: 0 de 7 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-i.json: 0 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-j.json: 0 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-prr.json: 0 de 8 entradas saltadas, conta conferida
+REC2 listas: 16 plantas recusadas; retirados sem páginas aceites e publicados sem páginas recusados.
+REC2 amostra: as quatro plantas da moldura alteram o documento das contas nas duas línguas. A recusa pelas células mede-se no navegador.
+REC2 títulos: /estudos/evora-contas-da-camara-2010-2025/ #bloco-117, nível acessível 3; sequência sem saltos.
+REC2 títulos: /en/studies/evora-contas-da-camara-2010-2025/ #bloco-117, nível acessível 3; sequência sem saltos.
+REC2 publicação: listas sem retirados; leitura oculta; evento exclusivo sai, evento misto e linhas vivas ficam.
+REC2 fontes: 5 plantas recusadas; documentos guardados, datas retiradas e cadeia de fontes preservada.
+REC2 voz: 12 descrições de retirados contadas; 20 plantas recusadas, incluindo descrição publicada ausente e rótulo alterado.
+REC2: 6 trabalhos retirados sem páginas; os restantes têm páginas nas duas línguas.
+REC2 contagens: 13 estudos construídos, 4 de Évora; quatro frases do mandato e duas definições conferidas no HTML.
+REC2 registos: controlo intacto, incluindo os registos retirados: código 0.
+REC2 registos: figura adicional do retirado continua dispensada: código 0.
+REC2 registos: não retirado sem edição publicada recusado (evora-quem-governou-a-camara-2009-2025/en): código 1.
+EVB sucessor: oito redirecionamentos, quatro por língua, levam ao estudo publicado; dados de sucessão intactos.

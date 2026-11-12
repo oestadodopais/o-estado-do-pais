@@ -1,0 +1,37 @@
+VOZ-1: 65 plantas recusadas; factos das fontes e reversibilidade conferidos.
+VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, estudos pendentes e comentário style conservados.
+Adenda H: 17 formas novas recusadas; conjunto exato da isenção conferido.
+pares: 85 entradas de trabalhos retirados saltadas, conta conferida contra a lista
+estudos com as duas línguas: 1; blocos mudados sem par: 0; blocos mudados sem entrada na lista: 0; planta 2 (tem de ser 2: o bloco antigo e o novo), controlo 0 (tem de ser 0)
+plantas do ramo fora da lista, do bloco novo e do código: 10 de 10
+VOZ-1 B: 8 frases inteiras conferidas, incluindo uma revisão e mudanças de proveniência.
+VOZ-1 B: calendário nas duas edições; 49 plantas recusadas; dia atual e intervalo aberto incluídos; nomes, contextos e períodos das revisões conferidos.
+VOZ-1 D lugar: controlo intacto; código 0.
+✗ L1 · /agenda: /uniao-europeia ×2, porta repetida com duas grafias entre o menu e o corpo.
+✗ L1 · /en/agenda: /en/european-union ×2, porta repetida com duas grafias entre o menu e o corpo.
+VOZ-1 D lugar: planta recusada nas duas edições; código 1.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: pais: código inesperado; M2 pt: FP1: data no futuro
+M2 pt: FP1: data no futuro
+M2 en: FP1: data no futuro
+M2 en: FP1: data no futuro
+
+
+1 !== 0
+
+    at file://<worktree>/tests/voz/agenda-voz1.mjs:134:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

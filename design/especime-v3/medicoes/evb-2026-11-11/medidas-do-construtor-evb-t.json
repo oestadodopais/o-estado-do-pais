@@ -21,5 +21,351 @@
   "origem_leitura_linhas": {
     "pt": 69,
     "en": 69
-  }
+  },
+  "registos": {
+    "pt": {
+      "blocos": 165,
+      "referencias": 332,
+      "edicao_html_sha256": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb"
+    },
+    "en": {
+      "blocos": 165,
+      "referencias": 332,
+      "edicao_html_sha256": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306"
+    }
+  },
+  "pendencias_copias_retiradas": 14,
+  "pendencias_restantes": 1370,
+  "html": {
+    "pt": {
+      "manchete": "Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»",
+      "nome": "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos",
+      "pergunta": "Évora 2027 tem o dinheiro, as obras e o programa que prometeu?",
+      "frase_leitura": "A parte da cultura está paga pelos tetos de 2024 e 2025; a da câmara está por confirmar, e parte do dinheiro europeu depende de candidaturas.",
+      "blocos_literais_iguais": 1107,
+      "quadros": 33,
+      "veredictos": [
+        "Não confere com os recebimentos declarados nas contas",
+        "Não confere",
+        "O calendário de agosto de 2026 não se confirmou na primeira obra do Rossio.",
+        "Não se pode conferir",
+        "Não confere com o detalhe do próprio plano"
+      ],
+      "sha256_documento": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb"
+    },
+    "en": {
+      "manchete": "Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality's share as «Em Negociação» (under negotiation)",
+      "nome": "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts",
+      "pergunta": "Does Évora 2027 have the money, the works and the programme it promised?",
+      "frase_leitura": "The culture share is paid up to the 2024 and 2025 ceilings; the council's is still to be confirmed, and part of the European money depends on applications.",
+      "blocos_literais_iguais": 1107,
+      "quadros": 33,
+      "veredictos": [
+        "Does not match the receipts declared in the accounts",
+        "Does not match",
+        "The August 2026 timetable did not hold for the first Rossio works.",
+        "Cannot be checked",
+        "Does not match the detail of the plan itself"
+      ],
+      "sha256_documento": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306"
+    }
+  },
+  "cabeca_codigo": "c2b4cd657c0e655002b0972cbaeefc10eeab031e",
+  "motor": "71df7b3982183adc036bb37d40bc63f98480e8c2",
+  "prova_documental": {
+    "linhas": 44,
+    "corpos": 14,
+    "registos": 2
+  },
+  "paridade": {
+    "documento": 30,
+    "página": 30
+  },
+  "carimbo_construcao": {
+    "commit": "388d7625b6aee3d861117d4d90f7c9d7d4757788",
+    "ref": "evb-2026-11-11",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-11-12T00:27:29.936Z"
+  },
+  "preservacao": {
+    "outras_entradas_registos_identicas": true,
+    "ficheiros_alheios_registos_documentos_alterados": [],
+    "textos_julgados_intactos": true,
+    "motor_limpo": true,
+    "outras_entradas_documentos_identicas": true
+  },
+  "codigos": {
+    "01-commit.codigo": "0",
+    "01-export.codigo": "0",
+    "01-registo.codigo": "0",
+    "02-commit.codigo": "0",
+    "02-documentos.codigo": "0",
+    "03-build.codigo": "1",
+    "03-commit.codigo": "3",
+    "03-edicoes.codigo": "0",
+    "03-historia-fixa.codigo": "0",
+    "03-lugar.codigo": "0",
+    "03-plantas-2.codigo": "0",
+    "03-plantas.codigo": "1",
+    "03-rec1.codigo": "0",
+    "04-commit.codigo": "3",
+    "05-commit.codigo": "3",
+    "05-pagina-2.codigo": "0",
+    "05-pagina.codigo": "1",
+    "05-paridade-2.codigo": "0",
+    "05-paridade-plantas-2.codigo": "0",
+    "05-paridade-plantas.codigo": "1",
+    "05-paridade.codigo": "1",
+    "06-commit.codigo": "0",
+    "07-cadeia-2.codigo": "0",
+    "07-cadeia.codigo": "1",
+    "07-commit.codigo": "3",
+    "07-copias-plantas-2.codigo": "0",
+    "07-copias-plantas.codigo": "1",
+    "07-copias.codigo": "0",
+    "07-frases-final.codigo": "0",
+    "07-frases.codigo": "1",
+    "07-julgados-todos.codigo": "0",
+    "07-julgados.codigo": "0",
+    "07-provas-documentais-2.codigo": "0",
+    "07-provas-documentais.codigo": "1",
+    "08-commit.codigo": "0",
+    "08-reais-2.codigo": "0",
+    "08-reais.codigo": "1",
+    "08-voz-final.codigo": "1",
+    "08-voz-restantes.codigo": "1",
+    "08-voz.codigo": "1",
+    "09-commit.codigo": "3",
+    "09-retirados.codigo": "0",
+    "09-sucessor-2.codigo": "0",
+    "09-sucessor.codigo": "1",
+    "alvos/check:alvos.codigo": "0",
+    "build-antes-novidades.codigo": "1",
+    "build-final.codigo": "1",
+    "commit-contador.codigo": "0",
+    "commit-indice.codigo": "3",
+    "commit-inventario.codigo": "3",
+    "commit-moldura.codigo": "3",
+    "commit-novidades.codigo": "3",
+    "cruzamento-origem.codigo": "0",
+    "documentos-moldura.codigo": "0",
+    "fecho-check-discussao.codigo": "0",
+    "fecho-check-formato.codigo": "0",
+    "fecho-check-navegacao.codigo": "0",
+    "fecho-check-nomes.codigo": "0",
+    "fecho-check-paridade.codigo": "0",
+    "fecho-sinais.codigo": "0",
+    "fecho-typecheck.codigo": "0",
+    "final-check-datas.codigo": "0",
+    "final-check-documentos.codigo": "0",
+    "final-check-edicoes.codigo": "0",
+    "final-check-frases-afirmacao.codigo": "0",
+    "final-check-lugar.codigo": "0",
+    "final-check-pais.codigo": "0",
+    "final-check-publicadores.codigo": "0",
+    "final-check-rec2.codigo": "0",
+    "final-check-registo.codigo": "0",
+    "final-check-voz.codigo": "0",
+    "final-ledger-check.codigo": "0",
+    "final-typecheck.codigo": "0",
+    "gate-html.codigo": "0",
+    "html-fecho.codigo": "0",
+    "html-final.codigo": "0",
+    "indice/check:indice.codigo": "1",
+    "indice-estatico.codigo": "0",
+    "indice-final/check:indice.codigo": "0",
+    "indice-final-pedido.codigo": "0",
+    "lingua.codigo": "0",
+    "navegador-final/check:largura.codigo": "0",
+    "navegador-final/check:leituras.codigo": "0",
+    "navegador-final/check:sobreposicao.codigo": "1",
+    "navegador-final-pedido.codigo": "1",
+    "privacidade-final.codigo": "0",
+    "privacidade-registos.codigo": "0",
+    "privacidade.codigo": "0",
+    "selos.codigo": "0",
+    "sobreposicao-diagnostico/check:sobreposicao.codigo": "1",
+    "sobreposicao-diagnostico-pedido.codigo": "1",
+    "sobreposicao-final/check:sobreposicao.codigo": "0",
+    "sobreposicao-final-pedido.codigo": "0",
+    "typecheck.codigo": "0",
+    "voz-inventario-antes.codigo": "1",
+    "voz-pos-data-antes.codigo": "1"
+  },
+  "conferencias_explicitas_com_codigo": 77,
+  "corridas_integrais_portoes": 0,
+  "verify_integral": 0,
+  "medido_em": "2026-11-12T00:45:41.379264+00:00",
+  "provas_nomeadas": {
+    "build": {
+      "codigo": 1,
+      "ficheiro": "evb-t-conferencias/build-final.codigo"
+    },
+    "check:registo": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-registo.codigo"
+    },
+    "check:documentos": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-documentos.codigo"
+    },
+    "check:edicoes": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-edicoes.codigo"
+    },
+    "check:datas": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-datas.codigo"
+    },
+    "check:indice": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/indice-final/check:indice.codigo"
+    },
+    "check:voz": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-voz.codigo"
+    },
+    "check:frases-afirmacao": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-frases-afirmacao.codigo"
+    },
+    "check:frases-reais": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/08-reais-2.codigo"
+    },
+    "check:paridade": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-check-paridade.codigo"
+    },
+    "check:lingua": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/lingua.codigo"
+    },
+    "check:selos": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/selos.codigo"
+    },
+    "check:lugar": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-lugar.codigo"
+    },
+    "check:largura": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/navegador-final/check:largura.codigo"
+    },
+    "check:sobreposicao": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/sobreposicao-final/check:sobreposicao.codigo"
+    },
+    "check:alvos": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/alvos/check:alvos.codigo"
+    },
+    "check:rec2": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-rec2.codigo"
+    },
+    "check:privacidade": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/privacidade-final.codigo"
+    },
+    "ledger:check": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-ledger-check.codigo"
+    },
+    "check:cruzamento com motor": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/cruzamento-origem.codigo"
+    },
+    "gate:html": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/gate-html.codigo"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-typecheck.codigo"
+    },
+    "check:leituras": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/navegador-final/check:leituras.codigo"
+    },
+    "check:rec1": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/03-rec1.codigo"
+    },
+    "HTML final literal": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/html-final.codigo"
+    },
+    "check:pais": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-pais.codigo"
+    },
+    "check:nomes": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-check-nomes.codigo"
+    },
+    "check:formato": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-check-formato.codigo"
+    },
+    "check:navegacao": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-check-navegacao.codigo"
+    },
+    "sinais": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-sinais.codigo"
+    },
+    "check:discussao": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/fecho-check-discussao.codigo"
+    },
+    "check:publicadores": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/final-check-publicadores.codigo"
+    },
+    "privacidade dos novos registos": {
+      "codigo": 0,
+      "ficheiro": "evb-t-conferencias/privacidade-registos.codigo"
+    }
+  },
+  "build_completo_verde": false,
+  "limite_build": "A corrida parou em E0; régua corrigida e comandos restantes verdes por nome; falta uma corrida completa verde da cabeça final.",
+  "chamadas_ate_ao_fecho": 226,
+  "chamadas_por_ferramenta": {
+    "exec": 211,
+    "request_user_input_async": 1,
+    "sleep": 4,
+    "wait": 10
+  },
+  "tokens_used": {
+    "input_tokens": 27915737,
+    "cached_input_tokens": 27623680,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 112886,
+    "reasoning_output_tokens": 53249,
+    "total_tokens": 28028623
+  },
+  "corte_contadores": "2026-11-12T00:45:41.417691+00:00",
+  "perfis_parciais": 6,
+  "commits": [
+    "949336064 EVB 1: atravessar os registos julgados do estudo 19",
+    "74ffebc9f EVB 2: alojar os documentos julgados numa edição de lançamento",
+    "3d053e5a8 EVB 3: recomeçar a história pública e conservar as plantas das edições",
+    "7b00f8a4b EVB 4: transcrever a pergunta julgada e conservar o nome do estudo",
+    "bf78ed5b9 EVB 5: conferir o texto construído e incluir o estudo na amostra de alvos",
+    "4bacd92fc EVB 6: transcrever C039 na leitura com anos por referência",
+    "502874f7b EVB 7: provar o texto julgado, as cópias e a cadeia documental",
+    "02cec3220 EVB 8: conservar a voz julgada e retirar as frases de ensaio das provas correntes",
+    "8cf220236 EVB 9: provar o sucessor nas duas línguas e ligar as conferências da travessia",
+    "bd48c04ed EVB: conferir no índice a data provada da edição única",
+    "1f5905283 EVB: escolher uma publicação ausente na planta das novidades",
+    "e1d7ba742 EVB: reconciliar o inventário com a leitura julgada",
+    "388d7625b EVB: separar a marca e o rótulo na moldura dos documentos",
+    "c2b4cd657 EVB: conservar na prova a contagem selada das correções de ensaio"
+  ],
+  "leitura_cruzada_inventario": "por ler, reservada ao lugar de direção antes da fusão"
 }

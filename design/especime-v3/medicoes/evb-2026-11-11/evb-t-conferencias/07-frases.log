@@ -1,0 +1,36 @@
+
+> o-estado-do-pais@0.1.0 check:frases-afirmacao
+> node tests/leituras/frases-afirmacao.mjs && node scripts/check-frases-afirmacao.mjs && node tests/eva/textos-julgados.mjs && node tests/eva/modelos.mjs
+
+adenda G: atribuições da leitura curta exigem registo; alternativas tipadas recusam e nomeiam a linha nos três campos e nas duas línguas; histórico E e F conferido
+adenda F: citações impressas PT e EN sem máscara, todas as ocorrências, palavras após números, prosa manual e modelos diferentes da fonte recusados
+adenda E: datas e valores conservam a chave; palavras exigem registo; duplicados colapsam; presença aceita datas; citações conservam os números
+adenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos
+adenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos
+índice preparado: uma recusa impede o commit no escrivão
+AUD1: contrações e verbos portugueses conferidos
+frases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos
+frases: 1942; registo: 22; por registar: 1384; recusas: 22
+excertos: corpos lidos; limpa=true; linhas lidas=21
+cobertura: frase sem registo: /|en|7e97984a0ff6030fa22e917eb9a9e075c36cb8b1cd45de0ef0a535875e3a10b1
+cobertura: frase sem registo: /|pt|7b22ce1b1d5c185af03d51aa91089dfa2e138c091ff18050bbb2528915f5a39e
+cobertura: frase sem registo: /estudos|en|a96d7aec8123c5e1f7873a409f1aaeacd1765830ba9a47b95c845d6e90cd8faa
+cobertura: frase sem registo: /estudos|pt|7a0439cbd68569a5896e94469872467ad5bbe48c2b20305c95bf7bcc8978d69f
+cobertura: frase sem registo: /indice|en|a96d7aec8123c5e1f7873a409f1aaeacd1765830ba9a47b95c845d6e90cd8faa
+cobertura: frase sem registo: /indice|pt|7a0439cbd68569a5896e94469872467ad5bbe48c2b20305c95bf7bcc8978d69f
+cobertura: frase sem registo: colecao-municipio|en|a96d7aec8123c5e1f7873a409f1aaeacd1765830ba9a47b95c845d6e90cd8faa
+cobertura: frase sem registo: colecao-municipio|pt|7a0439cbd68569a5896e94469872467ad5bbe48c2b20305c95bf7bcc8978d69f
+por registar: frase já não está no dist: /|en|1631ab85936553668ba2dd3449270939f0f5bb362d1a34d9e5f38d60a71cbd9a
+por registar: frase já não está no dist: /|en|65d6d08881d0a72f81d0acd4589cf612d987dc2193f6946bdc9b9e392c706b40
+por registar: frase já não está no dist: /|pt|dce85d7b0a3e726c3e07a7eabdf53d0c4fa3ffc3717578de3a3d204c329498d4
+por registar: frase já não está no dist: /|pt|f58ea1c541fa3b9e0a1033d8d125197ee8fad4410af5ebf97ee72c42d0748485
+por registar: frase já não está no dist: /estudos|en|1631ab85936553668ba2dd3449270939f0f5bb362d1a34d9e5f38d60a71cbd9a
+por registar: frase já não está no dist: /estudos|en|e70bf178ef2dc8ba3c551ef4e7b6318dc001a95abc385c1ccfd57c26953da127
+por registar: frase já não está no dist: /estudos|pt|509bc670a4b89b1f36996df4d23abb625b93f2018e5c4cfbcf50fe00cb8f3233
+por registar: frase já não está no dist: /estudos|pt|f58ea1c541fa3b9e0a1033d8d125197ee8fad4410af5ebf97ee72c42d0748485
+por registar: frase já não está no dist: /indice|en|e70bf178ef2dc8ba3c551ef4e7b6318dc001a95abc385c1ccfd57c26953da127
+por registar: frase já não está no dist: /indice|pt|509bc670a4b89b1f36996df4d23abb625b93f2018e5c4cfbcf50fe00cb8f3233
+por registar: frase já não está no dist: colecao-municipio|en|1631ab85936553668ba2dd3449270939f0f5bb362d1a34d9e5f38d60a71cbd9a
+por registar: frase já não está no dist: colecao-municipio|en|e70bf178ef2dc8ba3c551ef4e7b6318dc001a95abc385c1ccfd57c26953da127
+por registar: frase já não está no dist: colecao-municipio|pt|509bc670a4b89b1f36996df4d23abb625b93f2018e5c4cfbcf50fe00cb8f3233
+por registar: frase já não está no dist: colecao-municipio|pt|f58ea1c541fa3b9e0a1033d8d125197ee8fad4410af5ebf97ee72c42d0748485

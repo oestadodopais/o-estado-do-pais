@@ -1,0 +1,994 @@
+{
+  "planta": false,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "rotas": [
+    "/estudos/evora-contas-da-camara-2010-2025",
+    "/en/studies/evora-contas-da-camara-2010-2025",
+    "/estudos/evora-contas-da-camara-2010-2025/documento",
+    "/en/studies/evora-contas-da-camara-2010-2025/document",
+    "/",
+    "/en/",
+    "/temas/",
+    "/en/themes/",
+    "/estudos/",
+    "/estudos/a-casa-em-portugal-e-na-europa",
+    "/en/studies/a-casa-em-portugal-e-na-europa",
+    "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+    "/estudos/evora-2027-capital-europeia-da-cultura",
+    "/en/studies/evora-2027-capital-europeia-da-cultura",
+    "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+    "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+    "/o-que-se-discute/",
+    "/en/under-discussion/",
+    "/precos/",
+    "/habitacao/",
+    "/estado-e-economia/",
+    "/lugares/",
+    "/uniao-europeia",
+    "/correcoes/",
+    "/metodo/",
+    "/livro-razao/divida-publica-2025",
+    "/en/ledger/divida-publica-2025"
+  ],
+  "duracaoSegundos": 10.280890042000001,
+  "total": 0,
+  "erros": 0,
+  "conhecidoPositivo": false,
+  "ligacoes": {
+    "index.html": 106,
+    "en/index.html": 106
+  },
+  "paginas": [
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "linhas": 2955,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "linhas": 2996,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "linhas": 2088,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "linhas": 2107,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/",
+      "linhas": 582,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/",
+      "linhas": 579,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/temas/",
+      "linhas": 1175,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/themes/",
+      "linhas": 1154,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/",
+      "linhas": 275,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1607,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1596,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "linhas": 2159,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "linhas": 5097,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "linhas": 5154,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "linhas": 4179,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "linhas": 4159,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/o-que-se-discute/",
+      "linhas": 2421,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/under-discussion/",
+      "linhas": 2512,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/precos/",
+      "linhas": 205,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/habitacao/",
+      "linhas": 316,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estado-e-economia/",
+      "linhas": 445,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/lugares/",
+      "linhas": 139,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/uniao-europeia",
+      "linhas": 763,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/correcoes/",
+      "linhas": 84,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/metodo/",
+      "linhas": 141,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/livro-razao/divida-publica-2025",
+      "linhas": 219,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/ledger/divida-publica-2025",
+      "linhas": 221,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "linhas": 2533,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "linhas": 2583,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "linhas": 1326,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "linhas": 1379,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/",
+      "linhas": 546,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/",
+      "linhas": 546,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/temas/",
+      "linhas": 1207,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/themes/",
+      "linhas": 1167,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/",
+      "linhas": 254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1371,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1387,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "linhas": 1846,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3617,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3613,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "linhas": 2486,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "linhas": 2491,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/o-que-se-discute/",
+      "linhas": 2175,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/under-discussion/",
+      "linhas": 2261,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/precos/",
+      "linhas": 205,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/habitacao/",
+      "linhas": 316,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estado-e-economia/",
+      "linhas": 445,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/lugares/",
+      "linhas": 128,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/uniao-europeia",
+      "linhas": 762,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/correcoes/",
+      "linhas": 76,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/metodo/",
+      "linhas": 122,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/livro-razao/divida-publica-2025",
+      "linhas": 207,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/ledger/divida-publica-2025",
+      "linhas": 207,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "linhas": 2514,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "linhas": 2564,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "linhas": 1229,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "linhas": 1254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/",
+      "linhas": 564,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/",
+      "linhas": 563,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/temas/",
+      "linhas": 1091,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/themes/",
+      "linhas": 1076,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/",
+      "linhas": 254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1357,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1373,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "linhas": 1832,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3605,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3601,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "linhas": 2259,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "linhas": 2273,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/o-que-se-discute/",
+      "linhas": 2178,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/under-discussion/",
+      "linhas": 2264,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/precos/",
+      "linhas": 205,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/habitacao/",
+      "linhas": 316,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estado-e-economia/",
+      "linhas": 462,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/lugares/",
+      "linhas": 129,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/uniao-europeia",
+      "linhas": 762,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/correcoes/",
+      "linhas": 76,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/metodo/",
+      "linhas": 123,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/livro-razao/divida-publica-2025",
+      "linhas": 209,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/ledger/divida-publica-2025",
+      "linhas": 212,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "linhas": 2515,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "linhas": 2566,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "linhas": 1229,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "linhas": 1254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/",
+      "linhas": 553,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/",
+      "linhas": 550,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/temas/",
+      "linhas": 1042,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/themes/",
+      "linhas": 1026,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/",
+      "linhas": 254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1357,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1373,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "linhas": 1833,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3605,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3601,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "linhas": 2259,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "linhas": 2273,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/o-que-se-discute/",
+      "linhas": 2178,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/under-discussion/",
+      "linhas": 2264,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/precos/",
+      "linhas": 214,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/habitacao/",
+      "linhas": 327,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estado-e-economia/",
+      "linhas": 486,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/lugares/",
+      "linhas": 129,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/uniao-europeia",
+      "linhas": 781,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/correcoes/",
+      "linhas": 77,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/metodo/",
+      "linhas": 124,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/livro-razao/divida-publica-2025",
+      "linhas": 209,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/ledger/divida-publica-2025",
+      "linhas": 212,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025",
+      "linhas": 2515,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025",
+      "linhas": 2566,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "linhas": 1229,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "linhas": 1254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/",
+      "linhas": 553,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/",
+      "linhas": 550,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/temas/",
+      "linhas": 1042,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/themes/",
+      "linhas": 1026,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/",
+      "linhas": 254,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1357,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1373,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "linhas": 1833,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3605,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "linhas": 3601,
+      "pseudos": 12,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "linhas": 2259,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "linhas": 2273,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/o-que-se-discute/",
+      "linhas": 2178,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/under-discussion/",
+      "linhas": 2264,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/precos/",
+      "linhas": 204,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/habitacao/",
+      "linhas": 316,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estado-e-economia/",
+      "linhas": 445,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/lugares/",
+      "linhas": 129,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/uniao-europeia",
+      "linhas": 781,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/correcoes/",
+      "linhas": 77,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/metodo/",
+      "linhas": 124,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/livro-razao/divida-publica-2025",
+      "linhas": 209,
+      "pseudos": 0,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/ledger/divida-publica-2025",
+      "linhas": 212,
+      "pseudos": 0,
+      "achados": []
+    }
+  ]
+}

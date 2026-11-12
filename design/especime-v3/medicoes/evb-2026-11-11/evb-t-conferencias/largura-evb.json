@@ -1,0 +1,2782 @@
+{
+  "ok": true,
+  "planta": false,
+  "segundos": 10.176,
+  "familias": 76,
+  "documentos": 31,
+  "paginas": 130,
+  "medidas": 650,
+  "falhas": [],
+  "resultados": [
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 390,
+      "sw": 390,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 377,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 359,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 378,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 469,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 420,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 358,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 394,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 366,
+          "overflow": "auto",
+          "desliza": true
+        }
+      ]
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 768,
+      "sw": 768,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1024,
+      "sw": 1024,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1280,
+      "sw": 1280,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1600,
+      "sw": 1600,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "largura": 390,
+      "sw": 390,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 350,
+          "conteudo": 428,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 379,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 423,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 392,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 516,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 472,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 368,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 376,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 372,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 376,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 401,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 359,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 426,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 1227,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "largura": 768,
+      "sw": 768,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 728,
+          "conteudo": 1227,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "largura": 1024,
+      "sw": 1024,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 864,
+          "conteudo": 1227,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "largura": 1280,
+      "sw": 1280,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 864,
+          "conteudo": 1227,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/en/studies/evora-2027-capital-europeia-da-cultura/document/",
+      "largura": 1600,
+      "sw": 1600,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 864,
+          "conteudo": 1227,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 390,
+      "sw": 390,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 414,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 372,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 378,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 356,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 495,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 421,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 375,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 390,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 360,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 364,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 371,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 401,
+          "overflow": "auto",
+          "desliza": true
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 354,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 354,
+          "conteudo": 382,
+          "overflow": "auto",
+          "desliza": true
+        }
+      ]
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 768,
+      "sw": 768,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1024,
+      "sw": 1024,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1280,
+      "sw": 1280,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "largura": 1600,
+      "sw": 1600,
+      "causas": [],
+      "tabelas": [],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": [
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        },
+        {
+          "caixa": true,
+          "largura": 544,
+          "conteudo": 544,
+          "overflow": "auto",
+          "desliza": false
+        }
+      ]
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "largura": 390,
+      "sw": 390,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 350,
+          "conteudo": 456,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 398,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 423,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 384,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 381,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 538,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 470,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 402,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 378,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 425,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 361,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 395,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 404,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 398,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 401,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 386,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 434,
+          "overflow": "auto"
+        },
+        {
+          "largura": 350,
+          "conteudo": 1233,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "largura": 768,
+      "sw": 768,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 728,
+          "conteudo": 1233,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "largura": 1024,
+      "sw": 1024,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 864,
+          "conteudo": 1233,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "largura": 1280,
+      "sw": 1280,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 864,
+          "conteudo": 1233,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    },
+    {
+      "pagina": "/estudos/evora-2027-capital-europeia-da-cultura/documento/",
+      "largura": 1600,
+      "sw": 1600,
+      "causas": [],
+      "tabelas": [
+        {
+          "largura": 864,
+          "conteudo": 1233,
+          "overflow": "auto"
+        }
+      ],
+      "textoOculto": {
+        "quantidade": 0,
+        "whiteSpace": []
+      },
+      "quadrosEstudo": []
+    }
+  ]
+}
