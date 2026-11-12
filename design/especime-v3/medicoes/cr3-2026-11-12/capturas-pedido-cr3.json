@@ -1,0 +1,25 @@
+{
+ "cabeca": "dbd32c4854eafab6be63f4461b51f65862bd39fc",
+ "paginas": [
+  {
+   "nome": "recibo-exportacoes-2024",
+   "pt": "/livro-razao/desempenho-das-exportacoes-2024/",
+   "en": "/en/ledger/desempenho-das-exportacoes-2024/"
+  },
+  {
+   "nome": "recibo-exportacoes-2025",
+   "pt": "/livro-razao/desempenho-das-exportacoes-2025/",
+   "en": "/en/ledger/desempenho-das-exportacoes-2025/"
+  },
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/"
+  },
+  {
+   "nome": "correcoes",
+   "pt": "/correcoes/",
+   "en": "/en/corrections/"
+  }
+ ]
+}

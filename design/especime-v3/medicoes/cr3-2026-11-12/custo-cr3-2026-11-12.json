@@ -1,0 +1,41 @@
+{
+ "bloco": "CR3 (duas revisões do Eurostat aplicadas pelo guião das releituras, e o guião a fechar o lugar e a história das linhas)",
+ "data": "2026-11-12",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "o mandato (o molde da razão do acesso, o lugar pela geografia do pedido, a aplicação das duas linhas, as listas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T18:49:39Z",
+   "fim": "2026-11-12T19:23:46Z",
+   "pontos": 2.0,
+   "pontos_antes": 23.0,
+   "pontos_depois": 25.0,
+   "turnos": 83,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda A (a conferência do molde independente; os testes com um caso fixo; a asserção dos alvos)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T20:27:32Z",
+   "fim": "2026-11-12T20:43:40Z",
+   "pontos": 1.0,
+   "pontos_antes": 25.0,
+   "pontos_depois": 26.0,
+   "turnos": 41,
+   "fonte": "a linha PONTOS do registo do lançador"
+  }
+ ],
+ "total_pontos_codex": "3 em duas passagens",
+ "reflexo_dos_gargalos": "Dentro do alvo (dois a quatro pontos). A releitura no motor e a aplicação no sítio são de guião; o construtor só entrou porque o guião parava em duas listas e num molde, que agora fecha sozinho. A linha da habitação ficou de fora porque um estudo a usa.",
+ "leituras": "Claude Opus 5.5 (leitor), a xhigh: duas leituras curtas (245 e 147 mil símbolos), cinco plantas em cinco em cada uma.",
+ "claude": "a direção, a releitura por guião no motor, o mandato, as conferências por guião e a revisão pelo Fable 5.2",
+ "medida": "duas linhas do livro com o valor revisto, seis entradas datadas, duas datas de publicação pela fonte; o guião das releituras com dois passos novos.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-12T18:47:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros."
+}

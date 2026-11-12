@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-12T20:45:03+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "CR3A-P1",
+   "ficheiro": "scripts/aplicar-releituras.py",
+   "descricao": "a conferência exige o molde «depois de» também quando a leitura é do mesmo dia da comparação",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "aa47bf954e219a67e49c9c07f8223d1ad2f11add00290d62c4d4558d4472107d",
+   "sha256_depois": "03dbff9d74861a27264b740bbeac7b3b17965d36f1c3d07ab1e8ed2e74adffb9",
+   "contexto_antes": "%d.%m.%Y\"), comparacao.strftime(\"%d.%m.%Y\")\n    anterior = datetime.strptime(r[\"acesso_antigo\"], \"%Y-%m-%d\").strftime(\"%d.%m.%Y\")\n    valor = r[\"valor_antigo\"]\n    if leitura > comparacao:\n        esperado = {\n            \"reason\": f\"O valor novo foi lido a {dia}, depois de a comparação semanal com a fonte de {painel} ter visto a revisão; a leitu",
+   "contexto_depois": "%d.%m.%Y\"), comparacao.strftime(\"%d.%m.%Y\")\n    anterior = datetime.strptime(r[\"acesso_antigo\"], \"%Y-%m-%d\").strftime(\"%d.%m.%Y\")\n    valor = r[\"valor_antigo\"]\n    if leitura >= comparacao:\n        esperado = {\n            \"reason\": f\"O valor novo foi lido a {dia}, depois de a comparação semanal com a fonte de {painel} ter visto a revisão; a leitu"
+  },
+  {
+   "id": "CR3A-P1",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bacddbad415963370d595c623403f4b43cd49c14cb1987e655d4a548cff5d95e",
+   "sha256_depois": "256870f92fda4a30bf3bbacef208b2d8020b22dcd1e03d8ec094aa7f27bdb097",
+   "contexto_antes": ".%m.%Y\"), comparacao.strftime(\"%d.%m.%Y\")\n+    anterior = datetime.strptime(r[\"acesso_antigo\"], \"%Y-%m-%d\").strftime(\"%d.%m.%Y\")\n+    valor = r[\"valor_antigo\"]\n+    if leitura > comparacao:\n+        esperado = {\n+            \"reason\": f\"O valor novo foi lido a {dia}, depois de a comparação semanal com a fonte de {painel} ter visto a revisão; a lei",
+   "contexto_depois": ".%m.%Y\"), comparacao.strftime(\"%d.%m.%Y\")\n+    anterior = datetime.strptime(r[\"acesso_antigo\"], \"%Y-%m-%d\").strftime(\"%d.%m.%Y\")\n+    valor = r[\"valor_antigo\"]\n+    if leitura >= comparacao:\n+        esperado = {\n+            \"reason\": f\"O valor novo foi lido a {dia}, depois de a comparação semanal com a fonte de {painel} ter visto a revisão; a lei"
+  },
+  {
+   "id": "CR3A-P2",
+   "ficheiro": "scripts/aplicar-releituras.py",
+   "descricao": "a paragem da leitura anterior à comparação fica invertida no ponto onde o guião escreve as razões",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "03dbff9d74861a27264b740bbeac7b3b17965d36f1c3d07ab1e8ed2e74adffb9",
+   "sha256_depois": "96a49a93807fcdec3b7170fcac48e47368e050aa949f7b5ea6928b666c1b6b5b",
+   "contexto_antes": "l: str) -> list[dict]:\n    \"\"\"As três entradas desta releitura, com as frases do modelo.\"\"\"\n    dia_iso = r[\"pedido\"][\"quando\"][:10]\n    dia = data_pt(dia_iso)\n    if datetime.strptime(dia_iso, \"%Y-%m-%d\") < datetime.strptime(data_do_painel, \"%d.%m.%Y\"):\n        raise SystemExit(f\"PARAGEM: {r['id']}: leitura anterior ao dia da comparação\")\n    nova, antiga = data_pt(r[\"carimbo_novo\"]), data_pt(r[\"carimbo_anteri",
+   "contexto_depois": "l: str) -> list[dict]:\n    \"\"\"As três entradas desta releitura, com as frases do modelo.\"\"\"\n    dia_iso = r[\"pedido\"][\"quando\"][:10]\n    dia = data_pt(dia_iso)\n    if datetime.strptime(dia_iso, \"%Y-%m-%d\") > datetime.strptime(data_do_painel, \"%d.%m.%Y\"):\n        raise SystemExit(f\"PARAGEM: {r['id']}: leitura anterior ao dia da comparação\")\n    nova, antiga = data_pt(r[\"carimbo_novo\"]), data_pt(r[\"carimbo_anteri"
+  },
+  {
+   "id": "CR3A-P2",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "256870f92fda4a30bf3bbacef208b2d8020b22dcd1e03d8ec094aa7f27bdb097",
+   "sha256_depois": "85cf9912b9dfa0c6a65c187820e55042eacd821bcde41ecbe3834b5be2f9be8e",
+   "contexto_antes": "str) -> list[dict]:\n     \"\"\"As três entradas desta releitura, com as frases do modelo.\"\"\"\n     dia_iso = r[\"pedido\"][\"quando\"][:10]\n     dia = data_pt(dia_iso)\n+    if datetime.strptime(dia_iso, \"%Y-%m-%d\") < datetime.strptime(data_do_painel, \"%d.%m.%Y\"):\n+        raise SystemExit(f\"PARAGEM: {r['id']}: leitura anterior ao dia da comparação\")\n     nova, antiga = data_pt(r[\"carimbo_novo\"]), data_pt(r[\"carimbo_ante",
+   "contexto_depois": "str) -> list[dict]:\n     \"\"\"As três entradas desta releitura, com as frases do modelo.\"\"\"\n     dia_iso = r[\"pedido\"][\"quando\"][:10]\n     dia = data_pt(dia_iso)\n+    if datetime.strptime(dia_iso, \"%Y-%m-%d\") > datetime.strptime(data_do_painel, \"%d.%m.%Y\"):\n+        raise SystemExit(f\"PARAGEM: {r['id']}: leitura anterior ao dia da comparação\")\n     nova, antiga = data_pt(r[\"carimbo_novo\"]), data_pt(r[\"carimbo_ante"
+  },
+  {
+   "id": "CR3A-P3",
+   "ficheiro": "tests/quadro/alvos-esperados.mjs",
+   "descricao": "a exceção dos alvos passa a incluir o índice dos estudos, que o brief não nomeia",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fb80f96ec1c47dfceddbeab2eec3d6c52043553e13c0d25cd68f9f2cd7307945",
+   "sha256_depois": "632173163936af73ac34f72fc1d67587fa8877f40c6b41771176f55028e495f5",
+   "contexto_antes": "* CR3-A: só esta página perdeu os avisos das duas exportações já aplicadas. */\nimport assert from 'node:assert/strict';\nimport {pathToFileURL} from 'node:url';\nconst SEM_AVISO_APOS_CR3=new Set(['/estado-e-economia/','/en/state-and-economy/']);\nexport function exigirAlvos(rota,quantos){\n assert(quantos>0 || SEM_AVISO_APOS_CR3.has(rota),`rota fixa sem alvos: ${rota}`);\n}\nif(process.argv[1] && import.me",
+   "contexto_depois": "* CR3-A: só esta página perdeu os avisos das duas exportações já aplicadas. */\nimport assert from 'node:assert/strict';\nimport {pathToFileURL} from 'node:url';\nconst SEM_AVISO_APOS_CR3=new Set(['/estado-e-economia/','/en/state-and-economy/','/estudos/']);\nexport function exigirAlvos(rota,quantos){\n assert(quantos>0 || SEM_AVISO_APOS_CR3.has(rota),`rota fixa sem alvos: ${rota}`);\n}\nif(process.argv[1] && import.me"
+  },
+  {
+   "id": "CR3A-P3",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "85cf9912b9dfa0c6a65c187820e55042eacd821bcde41ecbe3834b5be2f9be8e",
+   "sha256_depois": "fefc9ee27b7d7054fd6aba2d3b4854c99ca3f22ca331938cb4e54ef236e551f9",
+   "contexto_antes": "CR3-A: só esta página perdeu os avisos das duas exportações já aplicadas. */\n+import assert from 'node:assert/strict';\n+import {pathToFileURL} from 'node:url';\n+const SEM_AVISO_APOS_CR3=new Set(['/estado-e-economia/','/en/state-and-economy/']);\n+export function exigirAlvos(rota,quantos){\n+ assert(quantos>0 || SEM_AVISO_APOS_CR3.has(rota),`rota fixa sem alvos: ${rota}`);\n+}\n+if(process.argv[1] && impor",
+   "contexto_depois": "CR3-A: só esta página perdeu os avisos das duas exportações já aplicadas. */\n+import assert from 'node:assert/strict';\n+import {pathToFileURL} from 'node:url';\n+const SEM_AVISO_APOS_CR3=new Set(['/estado-e-economia/','/en/state-and-economy/','/estudos/']);\n+export function exigirAlvos(rota,quantos){\n+ assert(quantos>0 || SEM_AVISO_APOS_CR3.has(rota),`rota fixa sem alvos: ${rota}`);\n+}\n+if(process.argv[1] && impor"
+  },
+  {
+   "id": "CR3A-P5",
+   "ficheiro": "tests/releituras/acesso.py",
+   "descricao": "a frase literal esperada do molde novo diz a comparação de 12.11.2026, o dia da leitura; o caso fixo tem a comparação a 09.11.2026",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7939621dd2a41a98dd6339c14b344cd07341950225a5bb5dd08e7492afb09ca8",
+   "sha256_depois": "67db8a58b503a841517ca8a951fc9d99b0c81eaad20cfe86bbce3a1918e61e19",
+   "contexto_antes": "iga=\"\", bandeira_nova=\"\",\n         excerto_antigo=\"ensaio anterior\", excerto_novo=\"ensaio revisto\")\nnovo = {\n    \"reason\": \"O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 26.10.2026, é a do valor 17,1.\",\n    \"reason_en\": \"The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision",
+   "contexto_depois": "iga=\"\", bandeira_nova=\"\",\n         excerto_antigo=\"ensaio anterior\", excerto_novo=\"ensaio revisto\")\nnovo = {\n    \"reason\": \"O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 12.11.2026 ter visto a revisão; a leitura anterior, de 26.10.2026, é a do valor 17,1.\",\n    \"reason_en\": \"The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision"
+  },
+  {
+   "id": "CR3A-P5",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "fefc9ee27b7d7054fd6aba2d3b4854c99ca3f22ca331938cb4e54ef236e551f9",
+   "sha256_depois": "3b33589df9ac6ce34d96f7f7da7abf0d87a90fb440aad87b44e5d484f6aef55e",
+   "contexto_antes": "+         coordenadas={\"geo\": \"PT\"}, bandeira_antiga=\"\", bandeira_nova=\"\",\n+         excerto_antigo=\"ensaio anterior\", excerto_novo=\"ensaio revisto\")\n+novo = {\n+    \"reason\": \"O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 26.10.2026, é a do valor 17,1.\",\n+    \"reason_en\": \"The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading",
+   "contexto_depois": "+         coordenadas={\"geo\": \"PT\"}, bandeira_antiga=\"\", bandeira_nova=\"\",\n+         excerto_antigo=\"ensaio anterior\", excerto_novo=\"ensaio revisto\")\n+novo = {\n+    \"reason\": \"O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 12.11.2026 ter visto a revisão; a leitura anterior, de 26.10.2026, é a do valor 17,1.\",\n+    \"reason_en\": \"The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading"
+  },
+  {
+   "id": "CR3A-P4",
+   "ficheiro": "tests/revisoes/caso-fixo.json",
+   "descricao": "no caso fixo, a última reconferência passa a «igual»: a linha deixa de ter uma revisão por aplicar e as plantas ficam sem caso",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3eb41f545e2aa56ceb71ae4dfbd68c6837f2718c3498411a8e7147fb2f885521",
+   "sha256_depois": "dcd6f21f98385a9f51a48817599bbf8757f9bf0785a294c7e197e3286fdaf046",
+   "contexto_antes": "tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n        \"result\": \"diverge\",\n        \"by\": \"painel-semanal\",\n        \"found\": \"7.6\"\n      },\n      {\n        \"date\": \"2026-11-09\",\n        \"path\": \"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n        \"result\": \"diverge\",\n        \"by\": \"painel-semanal\",\n        \"found\": \"7.6\"\n      }\n    ]\n  },\n  \"edicoes\": {\n    \"pt\": {\n      \"rota\": \"/habitacao/\",\n      \"cartao\": \"<article cl",
+   "contexto_depois": "tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n        \"result\": \"diverge\",\n        \"by\": \"painel-semanal\",\n        \"found\": \"7.6\"\n      },\n      {\n        \"date\": \"2026-11-09\",\n        \"path\": \"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n        \"result\": \"igual\",\n        \"by\": \"painel-semanal\",\n        \"found\": \"7.6\"\n      }\n    ]\n  },\n  \"edicoes\": {\n    \"pt\": {\n      \"rota\": \"/habitacao/\",\n      \"cartao\": \"<article cl"
+  },
+  {
+   "id": "CR3A-P4",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3b33589df9ac6ce34d96f7f7da7abf0d87a90fb440aad87b44e5d484f6aef55e",
+   "sha256_depois": "80d7a0708a64ba8b968a827d2552a3d036a9d97d3c5fd62edbd5934db7a236f9",
+   "contexto_antes": "ta/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n+        \"result\": \"diverge\",\n+        \"by\": \"painel-semanal\",\n+        \"found\": \"7.6\"\n+      },\n+      {\n+        \"date\": \"2026-11-09\",\n+        \"path\": \"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n+        \"result\": \"diverge\",\n+        \"by\": \"painel-semanal\",\n+        \"found\": \"7.6\"\n+      }\n+    ]\n+  },\n+  \"edicoes\": {\n+    \"pt\": {\n+      \"rota\": \"/habitacao/\",\n+      \"cartao\": \"<ar",
+   "contexto_depois": "ta/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n+        \"result\": \"diverge\",\n+        \"by\": \"painel-semanal\",\n+        \"found\": \"7.6\"\n+      },\n+      {\n+        \"date\": \"2026-11-09\",\n+        \"path\": \"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T\",\n+        \"result\": \"igual\",\n+        \"by\": \"painel-semanal\",\n+        \"found\": \"7.6\"\n+      }\n+    ]\n+  },\n+  \"edicoes\": {\n+    \"pt\": {\n+      \"rota\": \"/habitacao/\",\n+      \"cartao\": \"<ar"
+  }
+ ]
+}

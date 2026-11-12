@@ -8,7 +8,6 @@
 
 | Ordem | Bloco | Tipo | O que o leitor recebe | Estado | Razão da posição |
 | --- | --- | --- | --- | --- | --- |
-| 4 | CR3 | conteúdo | o desempenho das exportações de Portugal de 2024 e de 2025 com o valor que o Eurostat reviu a 29.10.2026, cada um com a atualização datada no recibo; e o guião das revisões a fechar sozinho as listas em que parava | mandato escrito (12.11.2026) | corrige dois números do sítio que a fonte reviu há duas semanas; a terceira revisão (a sobrecarga do custo da habitação da União) entra com a recomposição do estudo da habitação |
 | 5 | EVC | conteúdo | os outros dois estudos de Évora (quem governou a câmara; a economia e o dinheiro de fora) auditados frase a frase por outra família e corrigidos; no primeiro, a marca «[a verificar]» que ainda se imprime sai | por mandatar (o EVA aterrou a 11.11.2026) | a regra 1: uma marca de verificação não é uma forma de publicar |
 | 7 | CAM2-A | maquinaria | nada diretamente; a primeira passagem da camada 2, só guiões: o detetor das frases com afirmação (as atribuições e as causas), o registo de cada uma no livro-razão com as linhas que a sustentam, a cobertura por régua (uma frase com afirmação sem registo recusa-se; as de hoje numa lista que só encolhe, que a AUD1 esvazia) e a M83 no `ledger:check` (o corpo alojado de cada linha que declara um documento) | mandato escrito (09.11.2026): medido no `dist/` de f362f5ccd (702 frases candidatas em português; as 795 linhas com documento têm o corpo no motor) | a §1.234 (2): tira a classe de erro que já chegou ao leitor (as frases); a AUD1, a VOZ-2B e a VOZ-3 passam por ela |
 | 8 | CAM2-B | maquinaria | nada diretamente; o juiz de outra família, com cinco plantas por lote: lê cada frase do registo contra o excerto e responde se bate; corre também sobre as frases de um mandato antes do construtor (o registo nas listas `Frases:`) | por mandatar (depois da CAM2-A) | a lição da COR-AGUA: três erros eram frases do lugar de direção, e cada um custou uma passagem |
@@ -33,6 +32,7 @@
 | --- | --- | --- |
 | EVB | conteúdo | o estudo de Évora 2027 reescrito pela norma nova e julgado frase a frase: a resposta à cabeça (os 34 milhões do relato ao painel ao lado dos 9,7 que as contas declaram recebidos, e a parte do município «Em Negociação»), cinco achados, o quadro das afirmações com veredicto, três recomendações, uma edição só de 12.11.2026; aterrou a 12.11.2026 |
 | EVL | conteúdo | o cartão do estudo de Évora 2027 com duas medidas, cada uma com o seu recibo e com o nome de quem a diz: os 9,7 milhões que as contas da associação declaram recebidos do protocolo até ao fim de 2025 e os 34 milhões que o relatório de progresso de Évora 2027 dava como já transferidos em junho de 2025; aterrou a 12.11.2026 |
+| CR3 | conteúdo | o desempenho das exportações de Portugal de 2024 e de 2025 com o valor que o Eurostat reviu a 29.10.2026 (17,0 e 8,0), cada um com a atualização datada no recibo; aterrou a 12.11.2026 |
 
 ## Saíram da fila a 11.11.2026
 

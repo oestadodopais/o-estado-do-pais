@@ -1,6 +1,6 @@
 # O estado da direção · ler primeiro em cada sessão
 
-*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 12.11.2026, 12:14 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
+*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 12.11.2026, 21:18 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
 
 ## 1. O que o financiador quer, pela ordem dele
 
@@ -45,6 +45,7 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 | **REC2** | os seis estudos de Évora substituídos deixam de ter páginas; os endereços antigos vão para o sucessor | **aterrado a 11.11.2026, 14:02 UTC**; o arquivo tem 13 estudos; a decisão é a §1.240 | nada; as questões REC2-1 a REC2-3 no bloco de higiene |
 | **EVB** | o estudo de Évora 2027 reescrito pela norma e julgado em seis voltas | **aterrado a 12.11.2026** (o motor na véspera, o sítio neste dia; cinco leituras do Opus com vinte e cinco plantas em vinte e cinco; a decisão é a §1.241; o custo em `custo-evb-2026-11-12.json`) | as questões EVB-1 a EVB-19 (a EVB-18 fechou com o EVL), a EVB-10 antes do EVC |
 | **EVL** | o cartão do estudo de Évora 2027 com duas medidas e os seus recibos | **aterrado a 12.11.2026** (duas leituras do Opus com dez plantas em dez; a decisão é a §1.242; o custo em `custo-evl-2026-11-12.json`) | as questões EVL-1 a EVL-18 (o bloco de higiene e a próxima edição do estudo); a seguir, a primeira peça no formato «um acontecimento como prova ao Estado» (a depressão Charles de 11.11.2026, com as fontes guardadas) e o EVC |
+| **CR3** | duas revisões do Eurostat (o desempenho das exportações de 2024 e de 2025) aplicadas pelo guião das releituras | **aterrado a 12.11.2026** (duas passagens do Codex, 3 pontos; duas leituras curtas do Opus com dez plantas em dez; o custo em `custo-cr3-2026-11-12.json`) | a terceira revisão (a sobrecarga do custo da habitação da União) entra com a recomposição do estudo da habitação; a automação da frescura está construída e por armar (ver a `GARGALOS.md`) |
 | **IT0** | a cadeia geral dos itens diários (hoje só serve o Orçamento) | por mandatar; sobe na fila para logo depois do EVB | mandatar; o primeiro item por volta de 18.11.2026 |
 | **EVC e FON1** | os estudos «quem governou» e «a economia e o dinheiro de fora» | auditados (54 e 62 erros reais), mas sem as fontes guardadas: metade ou mais dos números não se pode conferir | recolher e guardar as fontes (FON1); depois a cadeia inteira |
 | **Os nove estudos nacionais e regionais** | orçamento de 2027, habitação, água (dois), economia regional, «which door is yours», Alentejo e Algarve, Portugal desde 1981, reforma antecipada | por auditar | primeiro uma revisão da carteira: ficar, fundir ou retirar cada um |
@@ -68,7 +69,7 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 
 ### Em ensaio desde 11.11.2026: as decisões da manhã por correio
 
-Um passo automático lê o correio do dia e envia ao financiador as decisões do lugar de direção, tema a tema. Aprovado por ele só para 12.11.2026; fica ou sai conforme o que se medir nesse dia (se chega a horas, se as decisões são boas, quanto custa). Os pormenores de como está posto e do que conferir estão na cópia local deste ficheiro (`.claude/direcao/`), que é a que cada sessão lê primeiro.
+Um passo automático lê o correio do dia e envia ao financiador as decisões do lugar de direção, tema a tema. Aprovado por ele primeiro só para 12.11.2026 e, nesse dia, para todos os dias; mede-se em cada manhã se chega a horas, se as decisões são boas e quanto custa. Está agendada, por palavra dele, com a primeira corrida a 13.11.2026, uma sessão diária sem ninguém, que não aterra, não publica e não envia correio além do seu relatório. Os pormenores de como está posto e do que conferir estão na cópia local deste ficheiro (`.claude/direcao/`), que é a que cada sessão lê primeiro.
 
 ## 7. A rotina de cada sessão, logo de manhã
 

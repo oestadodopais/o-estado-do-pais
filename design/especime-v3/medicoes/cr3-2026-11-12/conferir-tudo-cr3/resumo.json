@@ -1,0 +1,120 @@
+{
+ "cabeca": "dbd32c4854eafab6be63f4461b51f65862bd39fc",
+ "cabeca_fim": "dbd32c4854eafab6be63f4461b51f65862bd39fc",
+ "arvore_limpa_no_inicio": true,
+ "modo": "dirigidas",
+ "inicio": "2026-11-12T20:44:20Z",
+ "fim": "2026-11-12T21:15:58Z",
+ "segundos": 1898,
+ "passos": [
+  {
+   "n": "00",
+   "passo": "build",
+   "comando": "npm run build",
+   "codigo": 0,
+   "segundos": 921,
+   "code": "00-build.code",
+   "log": "00-build.log"
+  },
+  {
+   "n": "02",
+   "passo": "check_quadro",
+   "comando": "npm run check:quadro",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "02-check_quadro.code",
+   "log": "02-check_quadro.log"
+  },
+  {
+   "n": "06",
+   "passo": "ledger_check",
+   "comando": "npm run ledger:check",
+   "codigo": 0,
+   "segundos": 30,
+   "code": "06-ledger_check.code",
+   "log": "06-ledger_check.log"
+  },
+  {
+   "n": "11",
+   "passo": "check_leituras",
+   "comando": "npm run check:leituras",
+   "codigo": 0,
+   "segundos": 296,
+   "code": "11-check_leituras.code",
+   "log": "11-check_leituras.log"
+  },
+  {
+   "n": "13",
+   "passo": "gate_html",
+   "comando": "npm run gate:html",
+   "codigo": 0,
+   "segundos": 334,
+   "code": "13-gate_html.code",
+   "log": "13-gate_html.log"
+  },
+  {
+   "n": "19",
+   "passo": "check_sobreposicao",
+   "comando": "npm run check:sobreposicao",
+   "codigo": 0,
+   "segundos": 19,
+   "code": "19-check_sobreposicao.code",
+   "log": "19-check_sobreposicao.log"
+  },
+  {
+   "n": "38",
+   "passo": "check_frases-afirmacao",
+   "comando": "npm run check:frases-afirmacao",
+   "codigo": 0,
+   "segundos": 123,
+   "code": "38-check_frases-afirmacao.code",
+   "log": "38-check_frases-afirmacao.log"
+  },
+  {
+   "n": "46",
+   "passo": "check_indice",
+   "comando": "npm run check:indice",
+   "codigo": 0,
+   "segundos": 33,
+   "code": "46-check_indice.code",
+   "log": "46-check_indice.log"
+  },
+  {
+   "n": "47",
+   "passo": "check_cartao",
+   "comando": "npm run check:cartao",
+   "codigo": 0,
+   "segundos": 48,
+   "code": "47-check_cartao.code",
+   "log": "47-check_cartao.log"
+  },
+  {
+   "n": "54",
+   "passo": "check_privacidade",
+   "comando": "npm run check:privacidade",
+   "codigo": 0,
+   "segundos": 84,
+   "code": "54-check_privacidade.code",
+   "log": "54-check_privacidade.log"
+  },
+  {
+   "n": "69",
+   "passo": "check_frases-reais",
+   "comando": "npm run check:frases-reais",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "69-check_frases-reais.code",
+   "log": "69-check_frases-reais.log"
+  },
+  {
+   "n": "71",
+   "passo": "typecheck",
+   "comando": "npm run typecheck",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "71-typecheck.code",
+   "log": "71-typecheck.log"
+  }
+ ],
+ "vermelhos": []
+}

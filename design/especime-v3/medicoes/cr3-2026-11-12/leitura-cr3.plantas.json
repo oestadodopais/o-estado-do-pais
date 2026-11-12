@@ -1,0 +1,106 @@
+{
+ "registado_em": "2026-11-12T19:40:07+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "CR3-P1",
+   "ficheiro": "ledger/claims/desempenho-das-exportacoes-2025.yml",
+   "descricao": "o valor de 2025 fica 8,1; o corpo do Eurostat guardado na releitura diz 8.0",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "504c03746f6ef99a8a951911cfd1803cd7f6ebdb5d10a8470ee88ca2b6833a71",
+   "sha256_depois": "41e5ea08d81f9f630a8890ba82a5ae7eb2ce38b16d978ec3554c83ac2862890f",
+   "contexto_antes": " indicador: indicators/convergence.md.\n\nid: \"desempenho-das-exportacoes-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"8,0\"\nunit: \"% do total OCDE e UE não-OCDE, variação em três anos\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurosta",
+   "contexto_depois": " indicador: indicators/convergence.md.\n\nid: \"desempenho-das-exportacoes-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"8,1\"\nunit: \"% do total OCDE e UE não-OCDE, variação em três anos\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurosta"
+  },
+  {
+   "id": "CR3-P1",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1abba14759e8810d2eddfda77afcd02e2858f2d5272889fd6d9ea6a23c1acf27",
+   "sha256_depois": "d1e59847be69362b6606114ada0d1c36bde5921e96c3f15489d702b7f3827293",
+   "contexto_antes": "25.yml\n@@ -6,7 +6,7 @@\n id: \"desempenho-das-exportacoes-2025\"\n \n # O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n-value: \"8,2\"\n+value: \"8,0\"\n unit: \"% do total OCDE e UE não-OCDE, variação em três anos\"\n \n # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\n@@ -17,11 +17",
+   "contexto_depois": "25.yml\n@@ -6,7 +6,7 @@\n id: \"desempenho-das-exportacoes-2025\"\n \n # O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n-value: \"8,2\"\n+value: \"8,1\"\n unit: \"% do total OCDE e UE não-OCDE, variação em três anos\"\n \n # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\n@@ -17,11 +17"
+  },
+  {
+   "id": "CR3-P2",
+   "ficheiro": "ledger/claims/desempenho-das-exportacoes-2024.yml",
+   "descricao": "a razão do acesso diz que a leitura anterior era de 15.08.2026; a linha tinha 15.09.2026",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5a44c865ab6a785964434af177677736127a0007dd49d4b30d13e9b92310c9ff",
+   "sha256_depois": "b38ad2ad096d0310b7049ee1e590265357183609c8a2f2291313a6666c9ef9e0",
+   "contexto_antes": "9-15'\n  new_value: '2026-11-12'\n  reason: O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;\n    a leitura anterior, de 15.09.2026, é a do valor 17,1.\n  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n    revision; the earlier reading, ",
+   "contexto_depois": "9-15'\n  new_value: '2026-11-12'\n  reason: O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;\n    a leitura anterior, de 15.08.2026, é a do valor 17,1.\n  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n    revision; the earlier reading, "
+  },
+  {
+   "id": "CR3-P3",
+   "ficheiro": "scripts/aplicar-releituras.py",
+   "descricao": "o guião aceita a primeira reconferência divergente em vez da última",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3953950d37433a23225939b4097e89485b2c8ac14cf9ece42716b416f9ea533d",
+   "sha256_depois": "a100a8914e321db1e59731dd2dea6074d05f0e2058109bd5f82302377d8d7af8",
+   "contexto_antes": "divergente in antes[\"verifications\"] and divergente[\"result\"] == \"diverge\" and divergente[\"by\"] == \"painel-semanal\", f\"{cid}: sem a divergência selada\"\n        assert divergente[\"date\"] == max(v[\"date\"] for v in antes[\"verifications\"]\n                                         if v[\"result\"] == \"diverge\" and v[\"by\"] == \"painel-semanal\"), f\"{cid}: não é a última reconferência divergente\"\n      ",
+   "contexto_depois": "divergente in antes[\"verifications\"] and divergente[\"result\"] == \"diverge\" and divergente[\"by\"] == \"painel-semanal\", f\"{cid}: sem a divergência selada\"\n        assert divergente[\"date\"] == min(v[\"date\"] for v in antes[\"verifications\"]\n                                         if v[\"result\"] == \"diverge\" and v[\"by\"] == \"painel-semanal\"), f\"{cid}: não é a última reconferência divergente\"\n      "
+  },
+  {
+   "id": "CR3-P3",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d1e59847be69362b6606114ada0d1c36bde5921e96c3f15489d702b7f3827293",
+   "sha256_depois": "d641ca9005cede5de368ef3ba87cae8261f861fba511eddbc3fe5216ec8e87e6",
+   "contexto_antes": " assert divergente in antes[\"verifications\"] and divergente[\"result\"] == \"diverge\" and divergente[\"by\"] == \"painel-semanal\", f\"{cid}: sem a divergência selada\"\n+        assert divergente[\"date\"] == max(v[\"date\"] for v in antes[\"verifications\"]\n+                                         if v[\"result\"] == \"diverge\" and v[\"by\"] == \"painel-semanal\"), f\"{cid}: não é a última reconferência divergente\"\n     ",
+   "contexto_depois": " assert divergente in antes[\"verifications\"] and divergente[\"result\"] == \"diverge\" and divergente[\"by\"] == \"painel-semanal\", f\"{cid}: sem a divergência selada\"\n+        assert divergente[\"date\"] == min(v[\"date\"] for v in antes[\"verifications\"]\n+                                         if v[\"result\"] == \"diverge\" and v[\"by\"] == \"painel-semanal\"), f\"{cid}: não é a última reconferência divergente\"\n     "
+  },
+  {
+   "id": "CR3-P4",
+   "ficheiro": "src/data/lugar-das-linhas.mjs",
+   "descricao": "o lugar da linha de 2024 fica a União; o pedido da releitura tem geo=PT",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "30c1bf6fbfc0cc842aa03f16eaffd074c4dbfd73abe3d94a3959d9ed6b3691c0",
+   "sha256_depois": "137beb23db23eec750f802631e429e17e5460d75b285af985fb722a0452ad3b0",
+   "contexto_antes": " dado pelo campo geo do pedido da fonte. */\n  'desempenho-das-exportacoes-2025': 'portugal',\n  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */\n  'desempenho-das-exportacoes-2024': 'portugal',\n  /* OG1-A6: proposta do Orçamento nacional e afirmações sobre essa proposta. */\n  'og1-utao-pib-2026': 'portugal',\n  'og1-utao-saldo-2026': 'portugal',\n  'og1",
+   "contexto_depois": " dado pelo campo geo do pedido da fonte. */\n  'desempenho-das-exportacoes-2025': 'portugal',\n  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */\n  'desempenho-das-exportacoes-2024': 'uniao-europeia',\n  /* OG1-A6: proposta do Orçamento nacional e afirmações sobre essa proposta. */\n  'og1-utao-pib-2026': 'portugal',\n  'og1-utao-saldo-2026': 'portugal',\n  'og1"
+  },
+  {
+   "id": "CR3-P4",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d641ca9005cede5de368ef3ba87cae8261f861fba511eddbc3fe5216ec8e87e6",
+   "sha256_depois": "34140f77c406f82c35880dcf717f20e452cb7be09ec5cf54f81f01db3c49dd09",
+   "contexto_antes": " dado pelo campo geo do pedido da fonte. */\n+  'desempenho-das-exportacoes-2025': 'portugal',\n+  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */\n+  'desempenho-das-exportacoes-2024': 'portugal',\n   /* OG1-A6: proposta do Orçamento nacional e afirmações sobre essa proposta. */\n   'og1-utao-pib-2026': 'portugal',\n   'og1-utao-saldo-2026': 'portugal',\ndif",
+   "contexto_depois": " dado pelo campo geo do pedido da fonte. */\n+  'desempenho-das-exportacoes-2025': 'portugal',\n+  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */\n+  'desempenho-das-exportacoes-2024': 'uniao-europeia',\n   /* OG1-A6: proposta do Orçamento nacional e afirmações sobre essa proposta. */\n   'og1-utao-pib-2026': 'portugal',\n   'og1-utao-saldo-2026': 'portugal',\ndif"
+  },
+  {
+   "id": "CR3-P5",
+   "ficheiro": "ledger/claims/desempenho-das-exportacoes-2025.yml",
+   "descricao": "a razão inglesa do acesso diz que o valor anterior era 8,3; era 8,2",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "41e5ea08d81f9f630a8890ba82a5ae7eb2ce38b16d978ec3554c83ac2862890f",
+   "sha256_depois": "770228c3679a609d85573d10a4dc288666fb1d16ba7b0571f2400762217b786a",
+   "contexto_antes": "he new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n    revision; the earlier reading, of 12.08.2026, is that of the value 8,2.\n- date: '2026-11-12'\n  kind: proveniencia\n  field: excerpt\n  old_value: 'Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries ",
+   "contexto_depois": "he new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n    revision; the earlier reading, of 12.08.2026, is that of the value 8,3.\n- date: '2026-11-12'\n  kind: proveniencia\n  field: excerpt\n  old_value: 'Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries "
+  },
+  {
+   "id": "CR3-P2",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff, na secção da linha",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "34140f77c406f82c35880dcf717f20e452cb7be09ec5cf54f81f01db3c49dd09",
+   "sha256_depois": "d6dd9e472bf8efe72bd8f05e543724f30f88e275b9a05a7610e5d8459e09b753",
+   "contexto_antes": "heck of 09.11.2026 caught the revision.\n+- date: '2026-11-12'\n+  kind: proveniencia\n+  field: access_date\n+  old_value: '2026-09-15'\n+  new_value: '2026-11-12'\n+  reason: O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;\n+    a leitura anterior, de 15.09.2026, é a do valor 17,1.\n+  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n+    revision; the earlier reading",
+   "contexto_depois": "heck of 09.11.2026 caught the revision.\n+- date: '2026-11-12'\n+  kind: proveniencia\n+  field: access_date\n+  old_value: '2026-09-15'\n+  new_value: '2026-11-12'\n+  reason: O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;\n+    a leitura anterior, de 15.08.2026, é a do valor 17,1.\n+  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n+    revision; the earlier reading"
+  },
+  {
+   "id": "CR3-P5",
+   "ficheiro": "diff.patch",
+   "descricao": "o mesmo no diff, na secção da linha",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d6dd9e472bf8efe72bd8f05e543724f30f88e275b9a05a7610e5d8459e09b753",
+   "sha256_depois": "80d171b6cbfb37fae5ce80764ad30c26d8f44d5d92eb3aa1d0156d90a8473ed0",
+   "contexto_antes": " foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;\n+    a leitura anterior, de 12.08.2026, é a do valor 8,2.\n+  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n+    revision; the earlier reading, of 12.08.2026, is that of the value 8,2.\n+- date: '2026-11-12'\n+  kind: proveniencia\n+  field: excerpt\n+  old_value: 'Share of exports of advanced economies — Percentage of OECD and non-OECD EU countr",
+   "contexto_depois": " foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão;\n+    a leitura anterior, de 12.08.2026, é a do valor 8,2.\n+  reason_en: The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the\n+    revision; the earlier reading, of 12.08.2026, is that of the value 8,3.\n+- date: '2026-11-12'\n+  kind: proveniencia\n+  field: excerpt\n+  old_value: 'Share of exports of advanced economies — Percentage of OECD and non-OECD EU countr"
+  }
+ ]
+}
