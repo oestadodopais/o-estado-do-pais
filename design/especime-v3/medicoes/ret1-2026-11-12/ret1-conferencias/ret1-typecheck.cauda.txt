@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/estudo-da-linha.mjs(3,39): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/lib/estudo-da-linha.mjs(3,43): error TS7006: Parameter 'lang' implicitly has an 'any' type.

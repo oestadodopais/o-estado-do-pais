@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 check:ret1
+> node tests/ret1/rotas.mjs && node tests/ret1/ligacoes.mjs && node tests/ret1/linhas.mjs && node tests/ret1/construido.mjs
+
+RET1: 76 redirecionamentos; 34 rotas construídas dos oito e quatro de texto; destinos sem cadeias.
+RET1: áreas e correções de texto sem retirados; ligações plantadas para cada retirado recusadas nas duas línguas e no mapa.
+RET1: 81 ficheiros de linhas preservados byte a byte; estudo retirado oculto no recibo; estudo desconhecido recusado.
+RET1: o endereço histórico da fonte fica literal, sem ligação para um estudo retirado; fontes externas e estudos vivos mantêm a porta.
+RET1: 156 recibos preservam o valor e omitem o campo do estudo retirado; os cinco estudos vivos têm páginas nas duas línguas.

@@ -1,0 +1,20 @@
+      «(em inglês)»
+    · design/especime-v3/INVENTARIO-FRASES.md:3646: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: euros con»
+    · design/especime-v3/INVENTARIO-FRASES.md:3647: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as c»
+    · design/especime-v3/INVENTARIO-FRASES.md:3649: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Of the recovery-plan money contracted in the municipality, the university holds more than the council: euros a»
+    · design/especime-v3/INVENTARIO-FRASES.md:3650: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, a»
+    · design/especime-v3/INVENTARIO-FRASES.md:4295: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. T»
+    · design/especime-v3/INVENTARIO-FRASES.md:4296: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na »
+    · design/especime-v3/INVENTARIO-FRASES.md:5029: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «estudo atualizado»
+    · design/especime-v3/INVENTARIO-FRASES.md:5030: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «study updated»
+    · design/especime-v3/INVENTARIO-FRASES.md:5531: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «01.10.2026»
+

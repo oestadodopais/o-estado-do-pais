@@ -1,0 +1,6 @@
+frases: 1507; registo: 28; por registar: 919; recusas: 4
+excertos: corpos lidos; limpa=true; linhas lidas=25
+por registar: frase já não está no dist: /estudos|en|f9c41f86cb91a2ac995fb55f7df972846f0d0dd561a915dbab6f9e0a9ebc5464
+por registar: frase já não está no dist: /estudos|pt|ab860ea8284b431bcd626a108c25479e211c764bf3247cc4797fad1bdc0389e8
+por registar: frase já não está no dist: colecao-municipio|en|f9c41f86cb91a2ac995fb55f7df972846f0d0dd561a915dbab6f9e0a9ebc5464
+por registar: frase já não está no dist: colecao-municipio|pt|ab860ea8284b431bcd626a108c25479e211c764bf3247cc4797fad1bdc0389e8

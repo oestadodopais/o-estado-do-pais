@@ -1,0 +1,16 @@
+REC2 ligação retirada: /estado-e-economia/ -> /estudos/avaliacao-economica-regional-de-portugal-2026
+REC2 ligação retirada: /estado-e-economia/ -> /estudos/which-door-is-yours
+REC2 ligação retirada: /en/state-and-economy/ -> /en/studies/avaliacao-economica-regional-de-portugal-2026
+REC2 ligação retirada: /en/state-and-economy/ -> /en/studies/which-door-is-yours
+REC2 ligação retirada: /livro-razao/coragua-historico-eficiencia-83/ -> https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+REC2 ligação retirada: /livro-razao/coragua-historico-eficiencia-85/ -> https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+REC2 ligação retirada: /livro-razao/coragua-historico-eficiencia-95/ -> https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+REC2 ligação retirada: /livro-razao/coragua-historico-inquerito-2021/ -> https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+REC2 ligação retirada: /livro-razao/coragua-historico-racio-maximo/ -> https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+REC2 ligação retirada: /livro-razao/coragua-historico-racio-minimo/ -> https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+REC2 ligação retirada: /en/ledger/coragua-historico-eficiencia-83/ -> https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+REC2 ligação retirada: /en/ledger/coragua-historico-eficiencia-85/ -> https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+REC2 ligação retirada: /en/ledger/coragua-historico-eficiencia-95/ -> https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+REC2 ligação retirada: /en/ledger/coragua-historico-inquerito-2021/ -> https://xn--oestadodopas-2fb.pt/estudos/agua-nao-faturada/documento/2026-08-12
+REC2 ligação retirada: /en/ledger/coragua-historico-racio-maximo/ -> https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12
+REC2 ligação retirada: /en/ledger/coragua-historico-racio-minimo/ -> https://xn--oestadodopas-2fb.pt/estudos/onde-esta-a-agua/documento/2026-08-12

@@ -1,0 +1,15 @@
+1. Oito estudos retirados sem sucessor; destino calculado pelos dados, com plantas para ausência de objeto, página inexistente e sucessores retirados ou mistos.
+2. 76 redirecionamentos permanentes, sem cadeias; cobrem as 34 rotas próprias e quatro rotas de texto dos oito. Lista integral de origem e destino: medidas-do-construtor-ret1.json, campo redirecionamentos.
+3. Varredura integral de HTML e mapas sem ligações para os 14 retirados; áreas e lugares conservam o estado vazio existente; os cinco estudos publicados mantêm-se.
+4. 81 ficheiros de linhas dos oito iguais byte a byte; 156 recibos conferidos. agua-nao-faturada-portugal-2024 mostra «26,5 %» e omite Estudo/Study, sem frase substituta; estudo desconhecido continua recusado.
+5. Saídas: por-registar 453 (1368 para 915), voz-excecoes 10 (33 para 23), datas 11 (20 para 9), isenção VOZ2 7 (9 para 2); leituras ocultas 2, correções de texto 4, eventos exclusivos 0; L1 3497 para 3479.
+6. Estudos 13 para 5 e Évora 4 para 2, histórias de atualização a 2026-11-13, sem afrouxar datas; derivação nomeia contas e cultura. A contagem interna já retirada das edições também acompanha o manifesto: 20 para 9.
+7. Construção a21a2536f77e código 0; réguas finais, tipos, alvos e navegador código 0; plantas finais da moldura recusadas. Códigos e últimas vinte linhas em ret1-conferencias; falhas intermédias preservadas.
+HTML estudos PT: Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.
+HTML estudos EN: Eight studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them, figures without a stored copy of the source, or data the source has since revised.
+HTML Évora PT: Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.
+HTML Évora EN: Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source.
+Listas históricas preservadas; novas entradas saltadas: VOZ-2A 16, VOZ-2B 17, COR-AGUA 94, adendas d/g/i/j/prr 13/7/3/3/8; totais saltados 101/70/126/13/7/3/3/8. Inventário: 14 entradas condicionais adicionais, 85 adulterações recusadas.
+Amostras renovadas para estudos publicados; plantas da lista, datas, voz, índice e moldura continuam a morder. A prévia L1 media 3477; as duas agendas do passo final explicam 3479.
+Custo até ao relatório: 240 chamadas; 81 corridas com código guardado; zero corridas inteiras dos três portões. Sete commits dos pontos e correções das réguas; o fecho das provas fica num commit separado.
+Fica para a direção a lista inteira do verify. Não houve publicação, captura nem alteração do motor, dos documentos, dos registos, das correções antigas ou dos cinco estudos vivos; o commit final acrescenta apenas provas e relatório.

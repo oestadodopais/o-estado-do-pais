@@ -1,0 +1,3 @@
+REC2 publicação: listas sem retirados; leitura oculta; evento exclusivo sai, evento misto e linhas vivas ficam.
+RET1: 81 ficheiros de linhas preservados byte a byte; estudo retirado oculto no recibo; estudo desconhecido recusado.
+RET1: o endereço histórico da fonte fica literal, sem ligação para um estudo retirado; fontes externas e estudos vivos mantêm a porta.

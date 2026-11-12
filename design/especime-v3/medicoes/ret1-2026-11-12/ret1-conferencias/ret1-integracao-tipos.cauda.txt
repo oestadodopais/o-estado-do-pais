@@ -1,0 +1,20 @@
+22:07:59   ├─ /regioes/oeste-e-vale-do-tejo/index.html (+1ms) 
+22:07:59   ├─ /regioes/acores/index.html (+1ms) 
+22:07:59   ├─ /regioes/index.html (+20ms) 
+22:07:59   ├─ /robots.txt (+1ms) 
+22:07:59   ├─ /salarios-pensoes-e-apoios/index.html (+7ms) 
+22:07:59   ├─ /sobre/index.html (+1ms) 
+22:07:59   ├─ /sugestoes/obrigado/index.html (+1ms) 
+22:07:59   ├─ /sugestoes/vazia/index.html (+0ms) 
+22:07:59   ├─ /sugestoes/limite/index.html (+0ms) 
+22:07:59   ├─ /sugestoes/nao-chegou/index.html (+0ms) 
+22:07:59   ├─ /sugestoes/index.html (+1ms) 
+22:07:59   ├─ /temas/index.html (+40ms) 
+22:07:59   ├─ /uniao-europeia/index.html (+31ms) 
+22:07:59   ├─ /index.html (+92ms) 
+22:07:59 ✓ Completed in 18.01s.
+
+22:07:59 [build] ✓ Completed in 18.62s.
+22:08:00 [@astrojs/sitemap] `sitemap-index.xml` created at `../../../../..<temporario>/ret1-integracao-dist`
+22:08:00 [build] 9798 page(s) built in 19.56s
+22:08:00 [build] Complete!

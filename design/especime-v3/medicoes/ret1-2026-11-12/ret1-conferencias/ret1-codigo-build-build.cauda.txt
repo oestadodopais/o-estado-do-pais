@@ -1,0 +1,20 @@
+PLANTA HB1-g portão do JSON diante do período antigo, hab-il-proposta (en): vermelho 1, verde 0
+HB1-g: 2 linhas que só declaram a última edição de uma página, nas duas edições (a descrição, o excerto, o JSON e a atribuição); o controlo hab-ine-iphab-homologa como estava; 20 plantas.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: DO2: porta do Estado ausente
+    at file://<worktree>/scripts/check-datas.mjs:414:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

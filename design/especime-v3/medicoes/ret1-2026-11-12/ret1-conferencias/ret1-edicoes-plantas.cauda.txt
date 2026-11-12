@@ -1,0 +1,13 @@
+ED1 planta: controlo: passou
+ED1 planta: edição sem entrada: passou
+ED1 planta: primeira porta para o documento atual: passou
+ED1 planta: um byte da primeira edição: passou
+ED1 planta: entrada sem estudo: passou
+ED1 planta: entrada com outra data: passou
+ED1 planta: bytes servidos mudados: passou
+ED1: 139 controlos e plantas.
+ED1 testemunhas: 7 controlos e plantas; só a origem externa normaliza o runtime.
+ED1 primeira edição: 3 controlos e plantas; data desconhecida preservada, história e publicação alteradas recusadas.
+ED1-E história: 12 controlos e plantas; segunda atualização conserva a entrada anterior; ausência da testemunha é explícita.
+ED1-D: controlos dos bytes das primeiras edições dos estudos publicados e 10 plantas das marcas e dos bytes; partição sem mudança do texto.
+ED1-A contagem: controlo e três plantas da definição e do apoio literal conferidos.

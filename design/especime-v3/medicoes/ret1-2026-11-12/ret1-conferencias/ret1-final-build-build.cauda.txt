@@ -1,0 +1,20 @@
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+
+  nomes oficiais · 9811 página(s) lidas, 46 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19
+  ✓ nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/edicoes/lingua.mjs && node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+ED1-A língua: edição atual sem língua recusada.
+ED1-A língua: edição anterior órfã recusada.
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+  PORTÃO DA LÍNGUA · 2 problema(s)
+
+    · a declaração de língua nomeia a edição «01.10.2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia a edição «11.11.2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+

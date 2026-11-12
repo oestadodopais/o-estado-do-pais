@@ -1,0 +1,20 @@
+  evora-2027-prometido-painel-dinheiro/pt           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-contas-da-camara-2010-2025/en               198 blocos lidos ·  198 no registo ·  862 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-contas-da-camara-2010-2025/pt               198 blocos lidos ·  198 no registo ·  862 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-e-dinheiro-publico-de-fora-da-camara/en  161 blocos lidos ·  161 no registo ·  661 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-e-dinheiro-publico-de-fora-da-camara/pt  161 blocos lidos ·  161 no registo ·  661 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·   49 no registo ·   86 unidades iguais · 18 isentas em 13 bloco(s) editado(s) · 4 apagado(s)
+  evora-orcamentado-pago-devido-2025/en              94 blocos lidos ·   87 no registo ·  181 unidades iguais · 28 isentas em 25 bloco(s) editado(s) · 7 apagado(s)
+  evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  181 unidades iguais · 29 isentas em 26 bloco(s) editado(s) · 7 apagado(s)
+  evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+  evora-quem-governou-a-camara-2009-2025/pt         211 blocos lidos ·  211 no registo · 1450 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+  orcamento-2027-o-que-muda-e-para-quem/en           57 blocos lidos ·   57 no registo ·   57 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  orcamento-2027-o-que-muda-e-para-quem/pt           57 blocos lidos ·   57 no registo ·   57 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  juntas apertadas nas contas pt                      0 · 0 imprimem um espaço
+
+  18 edições · 2318 blocos lidos · 11349 unidades · 11160 iguais carácter a carácter · 189 isentas
+  359 operações da passagem de voz: 167 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+
+EYETEXT: FALHA — 1 problema(s) em 596 conferências
+ - esta edição não tem juntas apertadas: o conhecido-positivo do espaço fantasma está velho

@@ -1,0 +1,20 @@
+HIG-5 C: {"texto": "São 1 234.", "devolve": ["1 234"]}
+HIG-5 C: {"texto": "1.234 linhas", "devolve": ["1.234"]}
+HIG-5 C: {"texto": "12.5 por cento e 123.4 também", "devolve": ["12.5", "123.4"]}
+HIG-5 C: {"texto": "1.234,5 euros", "devolve": ["1.234,5"]}
+HIG-5 C: {"texto": "1 234 casos", "devolve": ["1 234"]}
+HIG-5 C: {"texto": "4321 casos", "devolve": ["4321"]}
+HIG-5 C: {"texto": "o Claude Sonnet 5.5 e o `aterrar.py:274`, a 06.11.2026 às 16:41:50, e 2026.", "devolve": []}
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 24.624s
+
+OK
+{"pre_voo_segundos": {"livre": 0.11774045834317803, "ocupada": 0.11608754191547632}}
+....
+----------------------------------------------------------------------
+Ran 4 tests in 9.464s
+
+OK
+camada 0: 43 plantas e controlos da ligação, incluindo o pré-mandato ponta a ponta
+camada 0 na cadeia: controlo verde e 13 desligamentos recusados

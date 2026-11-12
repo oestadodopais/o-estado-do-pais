@@ -1,0 +1,20 @@
+RET1: áreas e correções de texto sem retirados; ligações plantadas para cada retirado recusadas nas duas línguas e no mapa.
+RET1: 81 ficheiros de linhas preservados byte a byte; estudo retirado oculto no recibo; estudo desconhecido recusado.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: livro-razao/agua-nao-faturada-portugal-2024/index.html: valor ausente
+    at file://<worktree>/tests/ret1/construido.mjs:16:2
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

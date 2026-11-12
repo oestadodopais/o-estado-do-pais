@@ -1,0 +1,20 @@
+PLANTA quota contratada rotulada como aprovada: RP4N-g: o rótulo da quota não corresponde ao denominador contratado
+PLANTA página na outra língua (agua-nao-faturada-portugal-2024, pt): RP4N-g: a coordenada da definição não diz página na língua pt
+PLANTA página na outra língua (penalizacao-antecipacao-um-ano-neutra, pt): RP4N-g: a coordenada da definição não diz página na língua pt
+PLANTA página na outra língua (agua-nao-faturada-portugal-2024, en): RP4N-g: a coordenada da definição não diz página na língua en
+PLANTA página na outra língua (penalizacao-antecipacao-um-ano-neutra, en): RP4N-g: a coordenada da definição não diz página na língua en
+PLANTA prazo de execução em vez de conclusão: RP4N-g: o nome e a quota não dizem o prazo de conclusão da computação
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dist/areas/economia-e-financas-publicas/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>/tests/cartao/rp4ng.mjs:56:22 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dist/areas/economia-e-financas-publicas/index.html'
+}
+
+Node.js v22.23.1

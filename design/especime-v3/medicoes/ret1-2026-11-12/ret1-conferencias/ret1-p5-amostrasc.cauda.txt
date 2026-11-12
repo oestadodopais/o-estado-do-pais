@@ -1,0 +1,20 @@
+EV3 língua: 6 marcas válidas; 12 adulterações recusadas.
+EVB história fixa: quatro versões por língua; oito adulterações de bytes, correção intermédia ausente e primeira edição ausente recusadas.
+EV3-I: arquivo de ensaio ausente da publicação, história fixa conferida.
+VOZ-2A: cabeçalho português e portas inglesas conferidos; língua dos rótulos, rota e hreflang trocados recusados.
+COR-AGUA voz: 2 controlos, 6 plantas recusadas.
+COR-AGUA: seis provas históricas e oito origens do motor; 28 plantas recusadas.
+COR-AGUA: definição adulterada e apoio inventado recusados pelas regras das famílias.
+COR-AGUA: âmbito das dezassete linhas declarado; linha nova sem âmbito recusada.
+file://<worktree>/src/lib/edicoes.mjs:45
+ const publicada=dataPublicacao(work,edicao);if(!publicada)throw Error('ED3: falta a publicação');
+                                                                 ^
+
+Error: ED3: falta a publicação
+    at linhaDasEdicoes (file://<worktree>/src/lib/edicoes.mjs:45:66)
+    at faixaDaVersao (file://<worktree>/src/lib/edicoes.mjs:72:105)
+    at comFaixaDaVersao (file://<worktree>/src/lib/edicoes.mjs:75:60)
+    at primeiraEdicaoServida (file://<worktree>/src/lib/edicoes.mjs:81:36)
+    at file://<worktree>/tests/edicoes/origens-coragua.mjs:73:13
+
+Node.js v22.23.1

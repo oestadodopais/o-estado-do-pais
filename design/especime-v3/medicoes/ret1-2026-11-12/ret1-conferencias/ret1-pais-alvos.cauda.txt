@@ -1,0 +1,20 @@
+  evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  181 unidades iguais · 29 isentas em 26 bloco(s) editado(s) · 7 apagado(s)
+  evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+  evora-quem-governou-a-camara-2009-2025/pt         211 blocos lidos ·  211 no registo · 1450 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+  orcamento-2027-o-que-muda-e-para-quem/en           57 blocos lidos ·   57 no registo ·   57 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  orcamento-2027-o-que-muda-e-para-quem/pt           57 blocos lidos ·   57 no registo ·   57 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  juntas apertadas nas pensões pt                     9 · 0 imprimem um espaço
+
+  18 edições · 2318 blocos lidos · 11349 unidades · 11160 iguais carácter a carácter · 189 isentas
+  359 operações da passagem de voz: 167 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+
+EYETEXT: PASSA — 596 conferências
+
+> o-estado-do-pais@0.1.0 check:indice-do-sitio
+> node tests/indice/indice.mjs --prova
+
+check:indice-do-sitio pt: 425 portas (424 destinos), 424 endereços do mapa conferidos, 34 rotas de leitor, 308 concelhos em 29 gavetas, 5 estudos, 0 linhas de «O que mudou».
+check:indice-do-sitio en: 425 portas (424 destinos), 424 endereços do mapa conferidos, 34 rotas de leitor, 308 concelhos em 29 gavetas, 5 estudos, 0 linhas de «O que mudou».
+check:indice-do-sitio: 39 de 40 plantas morderam.
+  ✗ A planta não mordeu: r3-celula-lista-so-num-comentario (queixas: nenhuma)

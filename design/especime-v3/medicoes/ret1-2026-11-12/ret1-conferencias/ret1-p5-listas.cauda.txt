@@ -1,0 +1,12 @@
+voz2a-2026-11-07/FRASES-VOZ-2A.json: 101 de 182 entradas saltadas, conta conferida
+voz2b-2026-11-07/FRASES-VOZ-2B.json: 70 de 106 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA.json: 126 de 126 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-d.json: 13 de 13 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-g.json: 7 de 7 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-i.json: 3 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-j.json: 3 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-prr.json: 8 de 8 entradas saltadas, conta conferida
+REC2 listas: 21 plantas recusadas; retirados sem páginas aceites e publicados sem páginas recusados.
+REC2 publicação: listas sem retirados; leitura oculta; evento exclusivo sai, evento misto e linhas vivas ficam.
+REC2 fontes: 5 plantas recusadas; documentos guardados, datas retiradas e cadeia de fontes preservada.
+REC2 voz: 28 descrições de retirados contadas; 20 plantas recusadas, incluindo descrição publicada ausente e rótulo alterado.

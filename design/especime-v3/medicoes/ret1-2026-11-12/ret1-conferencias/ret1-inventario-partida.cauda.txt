@@ -1,0 +1,8 @@
+file://<worktree>/scripts/medir-defeitos.mjs:81
+if(!fs.existsSync(ficheiroDaData))throw new Error('Falta a data da construção: version.json ausente.');
+                                        ^
+
+Error: Falta a data da construção: version.json ausente.
+    at file://<worktree>/scripts/medir-defeitos.mjs:81:41
+
+Node.js v22.23.1

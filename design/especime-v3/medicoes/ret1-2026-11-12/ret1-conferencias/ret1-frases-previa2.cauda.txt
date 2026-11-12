@@ -1,0 +1,2 @@
+frases: 1507; registo: 28; por registar: 915; recusas: 0
+excertos: corpos lidos; limpa=true; linhas lidas=25

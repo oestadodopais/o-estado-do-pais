@@ -1,0 +1,20 @@
+  R3 · as 9 portas do rodapé conferidas em 9798 página(s), com 14 planta(s) em memória.
+  H3 · a porta da privacidade em 9798 de 9798 página(s), 2 página(s) da privacidade conferida(s), 22 planta(s) em memória; a frase dos cookies no texto, conferida em 9811 página(s), 13 guião(ões) servido(s), 1 configuração e 1 função(ões): 0 achado(s); 560 etiqueta(s) das marcas da faixa da União conferidas no title.
+
+
+1 !== 0
+
+    at correr (file://<worktree>/tests/rec2/registos-contagem.mjs:21:10)
+    at file://<worktree>/tests/rec2/registos-contagem.mjs:30:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

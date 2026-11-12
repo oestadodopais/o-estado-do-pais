@@ -1,0 +1,1 @@
+{"marcas":178,"reais":60,"sinteticas":118}

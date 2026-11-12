@@ -1,0 +1,20 @@
+        · v2e-e · por ler
+        · voz-2a · por ler
+        · voz1 · por ler
+        · voz1b · por ler
+        6 exceção(ões) por exercer, e o ficheiro di-lo:
+        · «cada número desta página tem a sua fonte a um passo»
+        · «esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda s»
+        · «assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida»
+        · «Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrig»
+        · «a verificar»
+        · «planned completion date has passed with no completion recorded»
+
+PAI2 voz pt: controlo verde, planta recusada pela mesma função.
+PAI2 voz en: controlo verde, planta recusada pela mesma função.
+VOZ-1: 65 plantas recusadas; factos das fontes e reversibilidade conferidos.
+VOZ-2A: SAI, dois nomes e FICA sem exceção recusados; arquivo, estudos pendentes e comentário style conservados.
+Adenda H: 17 formas novas recusadas; conjunto exato da isenção conferido.
+pares: 101 entradas de trabalhos retirados saltadas, conta conferida contra a lista
+estudos com as duas línguas: 0; blocos mudados sem par: 0; blocos mudados sem entrada na lista: 0; planta 2 (tem de ser 2: o bloco antigo e o novo), controlo 0 (tem de ser 0)
+plantas do ramo fora da lista, do bloco novo e do código: 10 de 10
