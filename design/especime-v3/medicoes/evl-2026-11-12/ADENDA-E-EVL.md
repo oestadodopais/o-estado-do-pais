@@ -2,6 +2,7 @@
 
 Acrescenta: frases
 Medidas: medidas-evl-e.json
+Frases: frases-evl-e.json
 
 *Escrito pelo lugar de direção (Claude Fable 5.2). O construtor é o Codex `gpt-6-astra` (`high`), com rede. A worktree de arranque é a do sítio `evl-2026-11-12`; a outra pasta com escrita é a worktree do motor `evl-2026-11-12`. Uma construção normal: setenta e cinco minutos e cento e vinte chamadas; não lances sessões auxiliares. Um commit no fim de cada ponto numerado, com o assunto a começar por `EVL`, em cada repositório. O teu relatório vai para `RELATORIO-EVL-E.txt`, nesta pasta, com quinze linhas no máximo; as tuas medidas e registos para esta pasta (`medidas-do-construtor-evl-e.json`, `evl-e-conferencias/`). O registo de uma construção ou de um portão não se comita inteiro: só o código e as últimas vinte linhas.*
 
