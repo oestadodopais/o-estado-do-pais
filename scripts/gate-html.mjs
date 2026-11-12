@@ -313,6 +313,7 @@ import {
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES } from '../src/data/figuras.mjs';
 import { UNIDADES_DOS_CARTOES } from '../src/data/unidades-dos-cartoes.mjs';
+import {contarEstudosDoLugar} from './contar-estudos-do-lugar.mjs';
 import { WORKS, PUBLISHED_EDITIONS, EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
@@ -3910,12 +3911,7 @@ function contasDoPortao(claims) {
     let doc;
     try { doc = parse(fs.readFileSync(ficheiro, 'utf8')); }
     catch (erro) { throw new Error(`B1 contagem do lugar: não foi possível ler ${ficheiro}: ${erro instanceof Error ? erro.message : String(erro)}`); }
-    const tit = doc.querySelector('#trabalhos');
-    if (!tit) throw new Error(`B1 contagem do lugar: ${rota} não tem a secção #trabalhos.`);
-    const portas = tit.parentNode.querySelectorAll('a[href]').filter(a => matchPath(a.getAttribute('href'))?.key === 'estudo');
-    if (portas.some(a => matchPath(a.getAttribute('href')).lang !== lang))
-      throw new Error(`B1 contagem do lugar: ${rota} contém uma porta de estudo noutra língua.`);
-    return conta(`estudos_lugar_${lugar}_${lang}`, new Set(portas.map(a => a.getAttribute('href'))).size, 'dist');
+    return conta(`estudos_lugar_${lugar}_${lang}`, contarEstudosDoLugar(doc, rota, lang, lugar, WORKS), 'dist');
   }));
   for (const lugar of Object.keys(SUBJECTS)) PROVA_VISTA[`estudos_lugar_${lugar}`] = 'dist';
   const paginasDeLinhaPt = [...linhasConstruidas].filter((k) => k.startsWith('pt:')).length;

@@ -98,10 +98,8 @@ const ROTAS_DA_ETAPA_4 = [
   { nome: 'correcoes', pt: '/correcoes', en: '/en/corrections' },
   { nome: 'sobre', pt: '/sobre', en: '/en/about' },
   { nome: 'estudos', pt: '/estudos', en: '/en/studies' },
-  { nome: 'estudo-agua', pt: '/estudos/agua-nao-faturada', en: '/en/studies/agua-nao-faturada' },
-  /* Uma página de trabalho COM leitura publicada, para que o conjunto mostre os
-     dois estados que a página tem: `agua-nao-faturada` é a de documento alojado
-     sem leitura, e esta é a das três camadas. */
+  { nome: 'estudo-cultura', pt: '/estudos/evora-2027-capital-europeia-da-cultura', en: '/en/studies/evora-2027-capital-europeia-da-cultura' },
+  /* A amostra conserva dois estudos publicados com leitura e documento. */
   { nome: 'estudo-leitura', pt: '/estudos/evora-contas-da-camara-2010-2025', en: '/en/studies/evora-contas-da-camara-2010-2025' },
   { nome: 'marcador', pt: '/a-verificar', en: '/en/to-verify' },
   /* O 404 fotografa-se pelo ficheiro (`/404.html`) e não pelo caminho: o

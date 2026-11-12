@@ -35,7 +35,7 @@ try {
  const julgados=new Set(['evora-contas-da-camara-2010-2025','evora-2027-capital-europeia-da-cultura']);
  // As mesmas frases continuam noutros documentos: só as portas do texto substituído saem.
  const historica=JSON.parse(fs.readFileSync(A, 'utf8'));
- const {ativas, saltadas}=separarRetirados(historica);
+ const {ativas, saltadas, retirados}=separarRetirados(historica);
  const ambito=new Set(ativas.filter(f=>!julgados.has(f.estudo)).map(f=>f.estudo));
  const lista = ativas.flatMap(f => {
   if(!julgados.has(f.estudo))return [f];
@@ -46,7 +46,8 @@ try {
  const {documentos,bilingues}=lerDocumentos(lista,'dist');
  // Uma porta adicional continua a conferir só a presença, como antes da retirada.
  for(const d of documentos)d.soPresenca=!ambito.has(d.estudo);
- provas.atualA = conferir(lista,documentos,bilingues,{aplicada:true});
+ // Mantém na entrada as frases retiradas, para a régua conferir a sua exclusão.
+ provas.atualA = conferir([...lista,...historica.filter(f=>retirados.has(f.estudo))],documentos,bilingues,{aplicada:true});
  provas.atualA.saltadas=saltadas;
  assert.equal(conferirSaltadas(historica, provas.atualA.saltadas),101);
 } finally { fs.rmSync(pastaEVA, {recursive:true, force:true}); }

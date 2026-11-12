@@ -736,13 +736,7 @@ for (const [onde, lista] of [
    construção). Um ficheiro estragado tem de fechar a construção com a frase do
    que falta, e não pintar dezasseis marcadores em silêncio. */
 
-const EDICAO_BOA = {
-  slug: 'onde-esta-a-agua',
-  lang: 'pt',
-  data: '2026-08-12',
-  commit: 'eff504f5400fa572e55bd0c5b3dae7fd8a4188da',
-  ficheiro: 'studies-src/onde-esta-a-agua/pt.html',
-};
+const EDICAO_BOA = JSON.parse(fs.readFileSync('src/data/datas-de-publicacao.json', 'utf8')).edicoes.find(e => e.slug === 'orcamento-2027-o-que-muda-e-para-quem' && e.lang === 'pt');
 
 caso('eDataDeEdicao/completa', true, eDataDeEdicao(EDICAO_BOA), 'as cinco chaves, na forma.');
 caso(
@@ -766,7 +760,7 @@ caso(
 caso(
   'eDataDeEdicao/ficheiro-de-outro-trabalho',
   false,
-  eDataDeEdicao({ ...EDICAO_BOA, ficheiro: 'studies-src/agua-nao-faturada/pt.html' }),
+  eDataDeEdicao({ ...EDICAO_BOA, ficheiro: 'studies-src/a-casa-em-portugal-e-na-europa/pt.html' }),
   'o caminho tem de ser o do slug e da língua da própria linha: senão a data é de outra edição.',
 );
 caso(
@@ -842,7 +836,7 @@ caso(
   'eDatasDePublicacao/chave-repetida',
   false,
   eDatasDePublicacao({ edicoes: [EDICAO_BOA, { ...EDICAO_BOA, data: '2026-09-04' }] }),
-  'duas linhas para onde-esta-a-agua (pt): o mapa da construção guardava só a última.',
+  'duas linhas para o estudo do Orçamento (pt): o mapa da construção guardava só a última.',
 );
 caso(
   'eDatasDePublicacao/mesmo-trabalho-outra-lingua',
@@ -850,7 +844,7 @@ caso(
   eDatasDePublicacao({
     edicoes: [
       EDICAO_BOA,
-      { ...EDICAO_BOA, lang: 'en', ficheiro: 'studies-src/onde-esta-a-agua/en.html' },
+      { ...EDICAO_BOA, lang: 'en', ficheiro: 'studies-src/orcamento-2027-o-que-muda-e-para-quem/en.html' },
     ],
   }),
   'a chave é o par slug e língua: as duas edições do mesmo trabalho não são uma repetição.',
