@@ -5,17 +5,17 @@ id: "edicoes-publicadas"
 publication: withdrawn
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "20"
+value: "9"
 unit: "edições"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
-  edition: "11.11.2026"
+  edition: "13.11.2026"
 source_url: null
-access_date: "2026-11-11"
-reference_date: "2026-11-11"
+access_date: "2026-11-13"
+reference_date: "2026-11-13"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
@@ -56,3 +56,9 @@ corrections:
     new_value: "20"
     reason: "Os seis estudos de Évora de agosto e setembro de 2026, a que sucederam os quatro de outubro, saíram do arquivo."
     reason_en: "The six Évora studies of August and September 2026, succeeded by the four of October, left the archive."
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "20"
+    new_value: "9"
+    reason: "Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu."
+    reason_en: "Eight studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them, figures without a stored copy of the source, or data the source has since revised."

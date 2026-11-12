@@ -5,14 +5,14 @@ import { WORKS, PUBLISHED_WORKS, COUNTS } from '../../src/data/studies.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 const dist = process.env.OEDP_DIST ?? 'dist';
 const frases = {
-  'estudos-publicados': {
-    pt:'Os seis estudos de Évora de agosto e setembro de 2026, a que sucederam os quatro de outubro, saíram do arquivo.',
-    en:'The six Évora studies of August and September 2026, succeeded by the four of October, left the archive.',
+  "estudos-publicados": {
+    "pt": "Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.",
+    "en": "Eight studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them, figures without a stored copy of the source, or data the source has since revised."
   },
-  'estudos-evora-publicados': {
-    pt:'Os seis estudos de Évora de agosto e setembro de 2026 a que estes quatro sucederam saíram do arquivo.',
-    en:'The six Évora studies of August and September 2026 that these four succeeded have left the archive.',
-  },
+  "estudos-evora-publicados": {
+    "pt": "Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.",
+    "en": "Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source."
+  }
 };
 const definicaoEvora = {
   pt:'É o número de estudos publicados cujo objeto é o concelho de Évora.',
@@ -22,9 +22,11 @@ const claims = loadClaims();
 assert.equal(Number(claims.get('estudos-publicados').value), PUBLISHED_WORKS.length);
 assert.equal(Number(claims.get('estudos-evora-publicados').value), PUBLISHED_WORKS.filter(w => w.subject === 'evora').length);
 assert.equal(COUNTS.estudos_evora_no_arquivo, PUBLISHED_WORKS.filter(w => w.subject === 'evora').length);
-const entrada = claims.get('estudos-publicados').corrections.at(-1);
-assert.equal(entrada.date,'2026-11-11');assert.equal(entrada.kind,'atualizacao');
-assert.equal(entrada.reason,frases['estudos-publicados'].pt);assert.equal(entrada.reason_en,frases['estudos-publicados'].en);
+for(const id of Object.keys(frases)) {
+  const entrada = claims.get(id).corrections.at(-1);
+  assert.equal(entrada.date,'2026-11-13');assert.equal(entrada.kind,'atualizacao');
+  assert.equal(entrada.reason,frases[id].pt);assert.equal(entrada.reason_en,frases[id].en);
+}
 for (const lang of ['pt','en']) {
   const base = lang === 'pt' ? 'estudos' : 'en/studies';
   const construidos = WORKS.filter(w => fs.existsSync(`${dist}/${base}/${w.slug}/index.html`));

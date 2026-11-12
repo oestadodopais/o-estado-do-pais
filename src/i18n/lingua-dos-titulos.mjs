@@ -1766,6 +1766,7 @@ Object.assign(LINGUA_DAS_EDICOES, {
   "2026-10-14": null,
   "2026-10-09": null,
   "11.11.2026": null,
+  "13.11.2026": null,
   "01.10.2026": null,
   "12.08.2026": null,
   "2035-12-31": null,

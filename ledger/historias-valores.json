@@ -203,6 +203,12 @@
       "kind": "atualizacao",
       "old_value": "29",
       "new_value": "20"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "20",
+      "new_value": "9"
     }
   ],
   "estudos-evora-publicados": [
@@ -235,6 +241,12 @@
       "kind": "atualizacao",
       "old_value": "6",
       "new_value": "4"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "4",
+      "new_value": "2"
     }
   ],
   "estudos-publicados": [
@@ -261,6 +273,12 @@
       "kind": "atualizacao",
       "old_value": "19",
       "new_value": "13"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "13",
+      "new_value": "5"
     }
   ],
   "evora-prr-aprovado-2026": [

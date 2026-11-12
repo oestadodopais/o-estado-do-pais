@@ -4,24 +4,24 @@
 id: "estudos-evora-publicados"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "4"
+value: "2"
 unit: "estudos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
-  edition: "01.10.2026"
+  edition: "13.11.2026"
 source_url: null
-access_date: "2026-10-01"
-reference_date: "2026-10-01"
+access_date: "2026-11-13"
+reference_date: "2026-11-13"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Contagem dos trabalhos publicados no arquivo cujo objeto é o município de Évora: «As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação», «Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões», «A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara» e «Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos». Os seis estudos de Évora de agosto e setembro de 2026 a que estes quatro sucederam saíram do arquivo. As edições inglesas do primeiro, do terceiro e do quarto são traduções do mesmo trabalho, não estudos à parte."
-derivation_en: "Count of the published works in the archive whose subject is the municipality of Évora: «The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification», «Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões», «The economy of Évora and the public money that reaches the municipality outside the council» and «Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts». The six Évora studies of August and September 2026 that these four succeeded have left the archive. The English editions of the first, the third and the fourth are translations of the same work, not studies in their own right."
+derivation: "Contagem dos trabalhos publicados no arquivo cujo objeto é o município de Évora: «As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação» e «Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos»."
+derivation_en: "Count of the published works in the archive whose subject is the municipality of Évora: «The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification» and «Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts»."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: "estudos_evora_no_arquivo"
@@ -61,3 +61,9 @@ corrections:
     new_value: "4"
     reason: "Os seis estudos de Évora passaram a quatro: «As contas da Câmara de Évora, 2010 a 2025», «Quem governou a Câmara de Évora, 2009 a 2025», «A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara» e «Évora 2027, Capital Europeia da Cultura» sucedem aos seis de agosto e setembro, que ficam alojados como edições datadas. A contagem passa a ser a dos estudos sem sucessor."
     reason_en: "The six Évora studies became four: «The accounts of the Câmara de Évora, 2010 to 2025», «Quem governou a Câmara de Évora, 2009 a 2025», «The economy of Évora and the public money that reaches the municipality outside the council» and «Évora 2027, European Capital of Culture» succeed the six of August and September, which stay hosted as dated editions. The count becomes that of the studies with no successor."
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "4"
+    new_value: "2"
+    reason: "Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte."
+    reason_en: "Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source."
