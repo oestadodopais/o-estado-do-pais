@@ -43,6 +43,8 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  "RELATÓRIO DE ATIVIDADES E CONTAS 2025": "pt",
+  "Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert Panel": "en",
   "Edital, Empreendimento de Fins Múltiplos de Alqueva, Blocos de Rega do EFMA": "pt",
   "Anuário dos Aproveitamentos Hidroagrícolas, Campanha de Rega 2024": "pt",
   "O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave": "pt",
@@ -1016,6 +1018,8 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  "Associação Évora 2027": "pt",
+  "Comissão Europeia, pelo painel europeu": "pt",
   "EDIA": "pt",
   "DGADR": "pt",
   "Gulbenkian": "pt",
@@ -1327,6 +1331,8 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
 
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
+  // EVL: localizador do relatório inglês do painel europeu.
+  "p. 8": "en",
   // V2-e: coordenadas da resposta inglesa do Eurostat.
   "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=BE; time=2024; value[16]": "en",
   "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=EL; time=2024; value[58]": "en",
