@@ -1,6 +1,6 @@
 {
   "contagens": {
-    "estudos": 3477,
+    "estudos": 3479,
     "trabalhos_publicados": 5,
     "edicoes_publicadas": 9,
     "estudos_evora_publicados": 2
@@ -502,5 +502,18 @@
       "pt": "Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.",
       "en": "Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source."
     }
-  }
+  },
+  "l1_construcao_completa": {
+    "valor": 3479,
+    "teto_anterior": 3497,
+    "previa_incompleta": 3477,
+    "paginas_com_portas_diferentes_da_previa": [
+      "agenda/index.html",
+      "en/agenda/index.html"
+    ],
+    "causa": "A construção completa acrescenta as portas da agenda pelo guião calendario-paginas; a prévia Astro não executou esse passo.",
+    "registo": "ret1-lugar-final",
+    "cabeca": "ff9c704ce"
+  },
+  "inventario_condicional_ret1": 14
 }

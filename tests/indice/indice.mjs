@@ -452,8 +452,17 @@ export function plantasDoIndice(base) {
   const primeiraMudanca = docPt.querySelector('main [data-mudou-ambito="indice"] li');
   const linhaDaPrimeira = primeiraMudanca?.getAttribute('data-correcao-entrada') ?? '';
   const nDaPrimeira = Number(primeiraMudanca?.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') ?? -1);
-  /* A primeira porta do índice português que não está no mapa do sítio (um estudo sem leitura escrita, com noindex). */
-  const portaSemMapa = portasDoIndice(docPt, 'pt').portas.map((a) => destino(a.getAttribute('href'))).find((d) => !base.mapa.has(d)) ?? '';
+  /* RET1: todos os estudos vivos estão no mapa. A planta cria o estado noindex
+     numa cópia de um estudo vivo e prova primeiro esse controlo intacto. */
+  const portaSemMapa = portasDoIndice(docPt, 'pt').portas.map(a => destino(a.getAttribute('href'))).find(d => matchPath(d)?.key === 'estudo');
+  if (!portaSemMapa) throw new Error('I2 planta: falta um estudo publicado para a amostra.');
+  const paginaSemMapa = parse(ler(portaSemMapa));
+  paginaSemMapa.querySelectorAll('meta[name="robots"]').forEach(el => el.remove());
+  paginaSemMapa.querySelector('head').insertAdjacentHTML('beforeend', '<meta name="robots" content="noindex, follow">');
+  const mapaSemEstudo = new Set([...base.mapa].filter(d => d !== portaSemMapa));
+  const controloSemMapa = comPaginas({mapa:mapaSemEstudo}, new Map([[portaSemMapa,paginaSemMapa.toString()]]));
+  const errosSemMapa = conferirIndice(controloSemMapa).erros;
+  if (errosSemMapa.length) throw new Error(`I2 planta: controlo noindex recusado: ${errosSemMapa.join(' | ')}`);
   /* O primeiro concelho da primeira gaveta, e a página do seu distrito. */
   const primeiraGaveta = docPt.querySelector('main details');
   const concelhoTirado = destino(primeiraGaveta?.querySelector('a[href]')?.getAttribute('href') ?? '');
@@ -544,7 +553,7 @@ export function plantasDoIndice(base) {
       const lista = parse(ler(caminhoDaLista) ?? '');
       for (const a of lista.querySelectorAll('main a[href]').filter((x) => destino(x.getAttribute('href')) === portaSemMapa)) a.remove();
       const copia = lista.toString().replace('</main>', `<!-- <a href="${portaSemMapa}">${portaSemMapa}</a> --></main>`);
-      return comPaginas({}, new Map([[caminhoDaLista, copia]]));
+      return comPaginas({mapa:mapaSemEstudo}, new Map([[caminhoDaLista, copia],[portaSemMapa,paginaSemMapa.toString()]]));
     }, [new RegExp(`^I2 pt: a porta ${portaSemMapa} não está no mapa do sítio, e a lista da família não a lista\\.`), /^I5 pt: /], true],
     /* Uma construção coerente com 307 concelhos (o achado 8): o primeiro concelho da primeira gaveta sai do índice,
        das páginas construídas, do mapa do sítio e da página do seu distrito. As conferências de concordância passam

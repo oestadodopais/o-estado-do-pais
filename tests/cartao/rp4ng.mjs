@@ -50,16 +50,15 @@ assert.deepEqual(prazo(NOMES_DO_PROJETO,loadClaims()),[]);
  morde('prazo de execução em vez de conclusão',prazo(nomes,loadClaims()),'o nome e a quota não dizem');
 }
 function estudo(root,lang) {
- return root.querySelector(`a[href="/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours"]`) ? [] : ['RP4N-g: o estudo desapareceu da área depois da retirada das contagens'];
+ return root.querySelector(`a[href="/${lang==='pt'?'estudos':'en/studies'}/evora-contas-da-camara-2010-2025"]`) ? [] : ['RP4N-g: o estudo desapareceu da área depois da retirada das contagens'];
 }
 for(const lang of ['pt','en']) {
  const root=parse(fs.readFileSync(`dist/${lang==='en'?'en/':''}areas/economia-e-coesao-territorial/index.html`,'utf8'));
  assert.deepEqual(estudo(root,lang),[]);
- const links=root.querySelectorAll('a').filter(a=>a.getAttribute('href')?.includes('/which-door-is-yours'));
+ const links=root.querySelectorAll('a').filter(a=>a.getAttribute('href')?.includes('/evora-contas-da-camara-2010-2025'));
  for(const a of links)a.remove();
  morde(`estudo retirado da área (${lang})`,estudo(root,lang),'o estudo desapareceu');
- const pagina=parse(fs.readFileSync(`dist/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours/index.html`,'utf8'));
- assert(pagina.querySelector('[data-ausencia-atual]'),'o estudo tem de dizer a ausência das contagens');
+ assert(!fs.existsSync(`dist/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours/index.html`),'o estudo retirado não pode ter página');
 }
 function faixaAgua(linhas) {
  const n=Number(linhas.get('agua-nao-faturada-portugal-2024').value.replace(',','.'));

@@ -11,12 +11,12 @@ export const ESTRAGOS = [
     faz: (html) => html.replace(/--oedp-g2:#[0-9a-f]{6}/g, '--oedp-g2:#16556E'),
   },
   {
-    nome: 'texto-da-celula · tirar a regra da cor do texto das células',
+    nome: 'texto-da-celula · tornar transparente o texto das células',
     celulas: ['C2'],
     faz: (html) =>
       html.replace(
         /\[data-oedp-moldura\] th,\[data-oedp-moldura\] td\{color:[^}]*\}/,
-        '',
+        '[data-oedp-moldura] th,[data-oedp-moldura] td{color:rgba(0,0,0,0)!important}',
       ),
   },
   {

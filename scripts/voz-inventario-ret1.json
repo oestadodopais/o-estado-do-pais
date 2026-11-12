@@ -1,0 +1,155 @@
+[
+  {
+    "n": 3483,
+    "classe": "conteudo",
+    "bloco": "pp1",
+    "texto": "Portugal Economia e finanças públicas publicado a",
+    "condicao": {
+      "tipo": "entrada",
+      "entrada": "estado-e-economia"
+    }
+  },
+  {
+    "n": 3484,
+    "classe": "conteudo",
+    "bloco": "pp1",
+    "texto": "Portugal Economy and public finances published on",
+    "condicao": {
+      "tipo": "entrada",
+      "entrada": "estado-e-economia"
+    }
+  },
+  {
+    "n": 3485,
+    "classe": "conteudo",
+    "bloco": "pp1",
+    "texto": "Portugal Investimento publicado a",
+    "condicao": {
+      "tipo": "entrada",
+      "entrada": "estado-e-economia"
+    }
+  },
+  {
+    "n": 3486,
+    "classe": "conteudo",
+    "bloco": "pp1",
+    "texto": "Portugal Investment published on",
+    "condicao": {
+      "tipo": "entrada",
+      "entrada": "estado-e-economia"
+    }
+  },
+  {
+    "n": 3487,
+    "classe": "navegacao",
+    "bloco": "pp1",
+    "texto": "(em inglês)",
+    "condicao": {
+      "tipo": "entrada",
+      "entrada": "estado-e-economia"
+    }
+  },
+  {
+    "n": 3646,
+    "classe": "conteudo",
+    "bloco": "k2",
+    "texto": "Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: euros contra euros . Da soma aprovada para o concelho, % está em localizações de projeto vencidas, isto é, na parte de cada projeto que o registo atribui ao concelho cuja data prevista de conclusão já passou sem conclusão registada, e % já foi paga, e as duas partes sobrepõem-se: as localizações vencidas também receberam dinheiro.",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ]
+    }
+  },
+  {
+    "n": 3649,
+    "classe": "conteudo",
+    "bloco": "k2",
+    "texto": "Of the recovery-plan money contracted in the municipality, the university holds more than the council: euros against euros . Of the sum approved for the municipality, % sits in overdue project locations, that is, in the part of each project that the register attributes to the municipality whose planned completion date has passed with no completion recorded, and % has been paid, and the two parts overlap: the overdue locations have also received money.",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ]
+    }
+  },
+  {
+    "n": 3647,
+    "classe": "conteudo",
+    "bloco": "k2",
+    "texto": "Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de , e designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em tem lugares.",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "evora-quem-governou-a-camara-2009-2025"
+      ]
+    }
+  },
+  {
+    "n": 3650,
+    "classe": "conteudo",
+    "bloco": "k2",
+    "texto": "Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the term, and portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in has seats.",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "evora-quem-governou-a-camara-2009-2025"
+      ]
+    }
+  },
+  {
+    "n": 4295,
+    "classe": "conteudo",
+    "bloco": "rp4ng",
+    "texto": "The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date.",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "which-door-is-yours"
+      ]
+    }
+  },
+  {
+    "n": 4296,
+    "classe": "conteudo",
+    "bloco": "rp4ng",
+    "texto": "As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data.",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "which-door-is-yours"
+      ]
+    }
+  },
+  {
+    "n": 5029,
+    "classe": "conteudo",
+    "bloco": "fp3",
+    "texto": "estudo atualizado",
+    "condicao": {
+      "tipo": "novidades"
+    }
+  },
+  {
+    "n": 5030,
+    "classe": "conteudo",
+    "bloco": "fp3",
+    "texto": "study updated",
+    "condicao": {
+      "tipo": "novidades"
+    }
+  },
+  {
+    "n": 5531,
+    "classe": "conteudo",
+    "bloco": "ed2",
+    "texto": "01.10.2026",
+    "condicao": {
+      "tipo": "estudos",
+      "estudos": [
+        "evora-quem-governou-a-camara-2009-2025",
+        "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ]
+    }
+  }
+]

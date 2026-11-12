@@ -269,7 +269,7 @@ let descricoesRetiradasSaltadas = 0;
     }
     const descricoes = separarDescricoesRetiradas(d.vivas_que_nao_rendem, inventario.linhas);
     descricoesRetiradasSaltadas = descricoes.saltadas.length;
-    console.log(`  REC2 inventário: ${descricoesRetiradasSaltadas} descrições literais de trabalhos retirados saltadas; conta conferida.`);
+    console.log(`  REC2 inventário: ${descricoesRetiradasSaltadas} entradas históricas de retirados ou superfícies vazias saltadas; conta conferida.`);
     for (const l of descricoes.restantes) {
       erros.push(
         `${casa.inventario}:${l.n}: linha «viva» que não se rende em rota nenhuma. ` +
@@ -853,7 +853,7 @@ console.log(
     `autorreferência 0 · nada por classificar · ` +
     `divulgação ${rotas.reduce((n, [, r]) => n + (r.por_classe.divulgacao ?? 0), 0)} ocorrência(s) ` +
     `nas rotas medidas · ${inventario.linhas.length} linhas do inventário com bloco ` +
-    `(${casa.declaracoes ? casa.declaracoes.vivas - descricoesRetiradasSaltadas : '?'} vivas rendidas; ${descricoesRetiradasSaltadas} descrições de trabalhos retirados; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
+    `(${casa.declaracoes ? casa.declaracoes.vivas - descricoesRetiradasSaltadas : '?'} vivas rendidas; ${descricoesRetiradasSaltadas} entradas históricas dispensadas; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
     `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta}) · ` +
     `rótulos em span: ${Object.entries(voz.rotulos_em_span ?? {})
       .map(([c, n]) => `.${c} ${n}`)

@@ -409,9 +409,9 @@ const EDICOES_DAS_ENTRADAS = new Map(ENTRADAS.filter(e => !('existente' in e && 
 // DO2: as duas adulterações percorrem a mesma conferência das páginas reais.
 let plantasPortasDo2 = 0;
 for (const lang of ['pt','en']) {
-  const rota = routePath('entradaEstado',lang).replace(/\/$/,'');
+  const rota = [...EDICOES_DAS_ENTRADAS].find(([r,n]) => n > 0 && matchPath(r)?.lang === lang)?.[0];
   const original = paraPrender.find(p => p.rota === rota)?.doc;
-  assert(original, 'DO2: porta do Estado ausente');
+  assert(original, 'DO2: falta uma entrada com estudos publicados para a amostra');
   const medir = doc => {
     const inicio = falhas.length, antes = lacos, contagens = new Map(presas);
     prendeEdicoesB1(rota, doc, null, EDICOES_DAS_ENTRADAS.get(rota));

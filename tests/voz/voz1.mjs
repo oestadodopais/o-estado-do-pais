@@ -20,7 +20,7 @@ for(const [lang,rota] of [['pt','/explicacoes/dinheiro-do-estado-2026'],['en','/
  for (const marca of ['a verificar', 'verificar', 'to verify', 'verify']) {
   const raw=`<p>Nome: [${marca}].</p>`,apresentado=apresentarAusencias(raw,lang);
   assert.equal(retirarAusencias(apresentado),raw);
-  morde(`marca histórica apresentada (${lang}, ${marca})`, !medirPagina(apresentado, '/estudos/onde-esta-a-agua/documento/2026-08-12').marca);
+  morde(`marca histórica apresentada (${lang}, ${marca})`, !medirPagina(apresentado, '/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-08-12').marca);
   morde(`palavra histórica alterada (${lang}, ${marca})`,retirarAusencias(apresentado.replace('Nome','Intruso'))!==raw);
  }
  const reservado='<script>const estado="[verify]";</script><style>/* [verificar] */</style>';
@@ -33,8 +33,8 @@ for(const [lang,rota] of [['pt','/explicacoes/dinheiro-do-estado-2026'],['en','/
  root.querySelector('meta').remove();
  morde(`noindex retirado (${lang})`,conferirProtecoes(root,'/livro-razao/planta',incompleta).some(e=>e.includes('indexável')));
 }
-// COR-AGUA: a isenção da voz dos estudos não isenta as marcas de confirmação.
-for (const rota of ['/estudos/onde-esta-a-agua', '/estudos/onde-esta-a-agua/documento', '/en/studies/onde-esta-a-agua', '/en/studies/onde-esta-a-agua/document']) {
+// RET1: as marcas de confirmação continuam recusadas num estudo publicado.
+for (const rota of ['/estudos/orcamento-2027-o-que-muda-e-para-quem', '/estudos/orcamento-2027-o-que-muda-e-para-quem/documento', '/en/studies/orcamento-2027-o-que-muda-e-para-quem', '/en/studies/orcamento-2027-o-que-muda-e-para-quem/document']) {
  for (const marca of ['[verify]', '[a verificar]', '[verificar]', '[to verify]']) {
   morde(`marca num estudo (${rota}, ${marca})`, medirPagina(`<main><p>Nome: ${marca}.</p></main>`, rota).marca);
  }
