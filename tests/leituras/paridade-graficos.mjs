@@ -19,5 +19,13 @@ try {
   assert.deepEqual(conferirGraficos(raiz), {medidos:['planta'], erros:[]});
   escrever('en/studies/planta/document/index.html', {prices:[{...en.prices[0], v:1.61}, en.prices[1]]});
   assert.deepEqual(conferirGraficos(raiz).erros, [{estudo:'planta', caminho:'/prices/0/v', pt:1.348, en:1.61}]);
+  fs.writeFileSync(path.join(raiz,'estudos/planta/documento/index.html'),'<p>Sem dados.</p>');
+  fs.writeFileSync(path.join(raiz,'en/studies/planta/document/index.html'),'<p>Sem dados.</p>');
+  assert.equal(conferirGraficos(raiz,['planta']).erros.length,1,'um gráfico declarado na fonte não pode desaparecer das duas línguas');
+  assert.equal(conferirGraficos(raiz).erros.length,1,'sem conjunto independente, zero continua recusado');
+  assert.deepEqual(conferirGraficos(raiz,[]),{medidos:[],erros:[]});
+  escrever('estudos/planta/documento/index.html',pt);escrever('en/studies/planta/document/index.html',en);
+  assert.equal(conferirGraficos(raiz,[]).erros.length,1,'gráfico fora das fontes publicadas recusado');
+  assert.deepEqual(conferirGraficos(raiz,['planta']),{medidos:['planta'],erros:[]});
 } finally { fs.rmSync(raiz, {recursive:true, force:true}); }
-console.log('paridade dos gráficos: 7 plantas, incluindo alteração de um valor num estudo bilingue');
+console.log('paridade dos gráficos: 12 controlos e plantas, incluindo valor adulterado, gráfico declarado ausente e conjunto vazio conferido nas fontes');

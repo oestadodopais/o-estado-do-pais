@@ -1,4 +1,5 @@
 /** COR-AGUA: a paridade dos blocos não vê os dados que os gráficos leem. */
+import {WORKS} from '../src/data/studies.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
@@ -26,7 +27,7 @@ export function compararHtml(pt, en) {
   if (!a || !b) return {medido:true, diferencas:[{caminho:'payload', razao:'dados ausentes numa edição'}]};
   return {medido:true, diferencas:compararDados(a, b)};
 }
-export function conferirGraficos(raiz = 'dist') {
+export function conferirGraficos(raiz = 'dist', esperados = null) {
   const fontes = !fs.existsSync(path.join(raiz, 'estudos'));
   const estudos = fontes ? raiz : path.join(raiz, 'estudos');
   const erros = [], medidos = [];
@@ -38,12 +39,21 @@ export function conferirGraficos(raiz = 'dist') {
     if (r.medido) medidos.push(estudo);
     for (const diferenca of r.diferencas) erros.push({estudo, ...diferenca});
   }
-  if (!medidos.length) erros.push({razao:'nenhum estudo bilingue com dados de gráficos medido'});
+  if (esperados === null && !medidos.length) erros.push({razao:'nenhum estudo bilingue com dados de gráficos medido'});
+  if (esperados !== null) {
+    for (const estudo of esperados) if (!medidos.includes(estudo)) erros.push({estudo,razao:'gráfico declarado na fonte não foi medido'});
+    for (const estudo of medidos) if (!esperados.includes(estudo)) erros.push({estudo,razao:'gráfico medido fora do conjunto declarado nas fontes publicadas'});
+  }
   return {medidos, erros};
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {
-    const r = conferirGraficos(process.argv[2] ?? 'dist');
+    const raiz = process.argv[2] ?? 'dist';
+    const esperados = fs.existsSync(path.join(raiz,'estudos')) ? WORKS.filter(w => w.estado !== 'retirado').filter(w => {
+      const pt=path.join('studies-src',w.slug,'pt.html'),en=path.join('studies-src',w.slug,'en.html');
+      return fs.existsSync(pt) && fs.existsSync(en) && compararHtml(fs.readFileSync(pt,'utf8'),fs.readFileSync(en,'utf8')).medido;
+    }).map(w => w.slug) : null;
+    const r = conferirGraficos(raiz, esperados);
     console.log(`paridade dos gráficos: ${r.medidos.length} estudos bilingues; ${r.erros.length} diferenças`);
     for (const e of r.erros) console.error(JSON.stringify(e));
     process.exitCode = r.erros.length ? 1 : 0;
