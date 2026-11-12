@@ -1,0 +1,64 @@
+[
+  {
+    "estudo": "16 Évora Contas da Câmara",
+    "lingua": "pt",
+    "numeros": 4,
+    "achados": []
+  },
+  {
+    "estudo": "16 Évora Contas da Câmara",
+    "lingua": "en",
+    "numeros": 4,
+    "achados": []
+  },
+  {
+    "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+    "lingua": "pt",
+    "numeros": 37,
+    "achados": [
+      {
+        "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+        "lingua": "pt",
+        "unidade": "N01.R3",
+        "marcador": "⟦D:evb-forma-ed45ab2e60bf2dc525⟧",
+        "citacao": "1750000",
+        "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+        "documento_da_linha": null
+      },
+      {
+        "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+        "lingua": "pt",
+        "unidade": "N01.R3",
+        "marcador": "⟦14:alt-intern-fundo⟧",
+        "citacao": "2500359.28",
+        "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+        "documento_da_linha": null
+      }
+    ]
+  },
+  {
+    "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+    "lingua": "en",
+    "numeros": 37,
+    "achados": [
+      {
+        "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+        "lingua": "en",
+        "unidade": "N01.R3",
+        "marcador": "⟦D:evb-forma-ed45ab2e60bf2dc525⟧",
+        "citacao": "1750000",
+        "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+        "documento_da_linha": null
+      },
+      {
+        "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+        "lingua": "en",
+        "unidade": "N01.R3",
+        "marcador": "⟦14:alt-intern-fundo⟧",
+        "citacao": "2500359.28",
+        "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+        "documento_da_linha": null
+      }
+    ]
+  }
+]

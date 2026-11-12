@@ -1,0 +1,12 @@
+  a travessia contra a cópia versionada: <motor>/publisher/fixtures/site-min
+EXPORT_SITE_ROWS_TEST · a cópia versionada: FAIL — 1 problem(s)
+ - a partição do manifesto verdadeiro não fecha:
+     19 Évora 2027 Capital Europeia da Cultura · evl-governo-a-financiar: é linha do livro e o manifesto não a atravessa nem a exclui
+     19 Évora 2027 Capital Europeia da Cultura · evl-intern-fundo-citado: é linha do livro e o manifesto não a atravessa nem a exclui
+     19 Évora 2027 Capital Europeia da Cultura · evl-vagar-fundo-citado: é linha do livro e o manifesto não a atravessa nem a exclui
+  a travessia contra o sítio vivo: <sitio-principal> (a árvore principal do sítio)
+EXPORT_SITE_ROWS_TEST · o sítio vivo: FAIL — 1 problem(s)
+ - a partição do manifesto verdadeiro não fecha:
+     19 Évora 2027 Capital Europeia da Cultura · evl-governo-a-financiar: é linha do livro e o manifesto não a atravessa nem a exclui
+     19 Évora 2027 Capital Europeia da Cultura · evl-intern-fundo-citado: é linha do livro e o manifesto não a atravessa nem a exclui
+     19 Évora 2027 Capital Europeia da Cultura · evl-vagar-fundo-citado: é linha do livro e o manifesto não a atravessa nem a exclui

@@ -1,0 +1,10 @@
+1. Motor: N01.2 liga 34 à linha própria evl-governo-a-financiar, contas de 2025, página 4; excerto inteiro e único provado, PT e EN.
+2. Régua documental integrada no texto julgado e no portão: estudo 16, zero achados; estudo 19, mais duas citações em N01.R3 por língua, corrigidas por prova no XLSX alojado.
+Planta: N01.2 antiga recusada em PT e EN; 10 conferências passam. Régua final: 4 números por língua no estudo 16 e 37 no 19, zero achados.
+3. Gabaritos, contrato, livro, decisões, origem das linhas, dois registos e manifesto regenerados; texto julgado e dois HTML byte a byte preservados.
+HTML PT SHA256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb
+HTML EN SHA256: ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306
+Portão completo: código 1, uma corrida, 1330 segundos; única falha na partição das três linhas novas, corrigida; suite do exportador final 0, sem repetir o portão.
+4. Sítio: só os dois registos do 19 e as suas entradas do manifesto mudam; N01.2 sem selo, outros 13 preservados por língua; lista extraída dos registos, não do dist antigo; cinco linhas do sítio intactas.
+Códigos: registo 0, documentos 0, cruzamento com motor 0, ledger 0, texto da página 0, typecheck 0, selos 0; commits motor a4caad8, ffba3a5, dbd0a30, a0203e8.
+Custo: 54 chamadas da interface; 15 corridas explícitas de conferências, incluindo regeneração com provas e a única corrida completa; 1 travessia. Portão completo verde fica por confirmar.

@@ -1,0 +1,34 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { fileURLToPath } from 'node:url';
+import { figurasDoRegisto, pecasDoCorpo } from '../../../../src/lib/registo-html.mjs';
+import { linhaDoSitioDoEstudo } from '../../../../src/lib/cruzamento.mjs';
+const root=fileURLToPath(new URL('../../../../',import.meta.url));
+process.chdir(root);
+const pasta='design/especime-v3/medicoes/evl-2026-11-12/';
+const slug='evora-2027-capital-europeia-da-cultura';
+const manifest=JSON.parse(fs.readFileSync('registos/manifest.json','utf8'));
+const previous=JSON.parse(fs.readFileSync(pasta+'medidas-do-construtor-evl-a.json','utf8'));
+const inventory=[];
+for(const lang of ['pt','en']){
+ const key=`${slug}/${lang}`;
+ const record=JSON.parse(fs.readFileSync(`registos/${slug}/${lang}.record.json`,'utf8'));
+ const entry=manifest.registos[key];
+ const lookup=linhaDoSitioDoEstudo(entry.rh_study,entry.rh_origens??{});
+ const all=[...figurasDoRegisto(record,key)];
+ const target=all.find(f=>f.marca===`${key}#41.1`);
+ assert.equal(target.figura.row,'evl-governo-a-financiar');
+ assert.equal(lookup(target.figura.row),null);
+ const rows=all.filter(f=>lookup(f.figura.row)).map(f=>({lingua:lang,unidade:f.marca.slice(0,f.marca.lastIndexOf('.')),ocorrencia:f.marca,numero:f.figura.printed,linha:lookup(f.figura.row),linha_motor:f.figura.row}));
+ const expected=previous.selos.ocorrencias.filter(r=>r.lingua===lang&&!r.ocorrencia.endsWith('#41.1'));
+ assert.equal(rows.length,13);
+ assert.deepEqual(rows.map(r=>[r.ocorrencia,r.numero,r.linha,r.linha_motor]),expected.map(r=>[r.ocorrencia,r.numero,r.linha,r.linha_motor]));
+ const pieces=pecasDoCorpo({registo:record,chave:key,linhaDoSitio:lookup,rotuloDaPorta:'Fonte'});
+ assert(pieces.length>0);
+ inventory.push(...rows);
+ console.log(`EVL B ${lang}: 13 selos preservados; N01.2 sem selo; renderizador dos registos executado.`);
+}
+const measures=JSON.parse(fs.readFileSync(pasta+'medidas-do-construtor-evl-b.json','utf8'));
+measures.selos={origem:'Registos atualizados, com a função de resolução usada pela página; dist anterior à travessia.',ocorrencias:inventory};
+fs.writeFileSync(pasta+'medidas-do-construtor-evl-b.json',JSON.stringify(measures,null,2)+'\n');
+fs.writeFileSync(pasta+'EVL-B-selos-por-unidade.txt','Origem: registos atualizados, não o dist anterior à travessia.\nN01.2, ocorrência 41.1: sem selo nas duas línguas.\n'+inventory.map(r=>`${r.lingua} ${r.ocorrencia.split('#')[1]}: ${r.numero} → ${r.linha} [${r.linha_motor}]`).join('\n')+'\n');

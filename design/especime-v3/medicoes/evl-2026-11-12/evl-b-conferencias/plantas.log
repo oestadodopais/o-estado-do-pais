@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "<motor>/core/compor.py", line 352, in _impresso
+    return impresso(fonte.linha(rid), lingua)
+  File "<motor>/core/linhas_proprias.py", line 100, in impresso
+    conferir(linha)
+    ~~~~~~~~^^^^^^^
+  File "<motor>/core/linhas_proprias.py", line 52, in conferir
+    recusa("sem documento")
+    ~~~~~~^^^^^^^^^^^^^^^^^
+  File "<motor>/core/linhas_proprias.py", line 31, in recusa
+    raise LedgerError(f"linha própria {rid}: {motivo}")
+core.reconcile.LedgerError: linha própria evl-governo-a-financiar: sem documento
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/core/citacoes_linhas_test.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "<motor>/core/citacoes_linhas_test.py", line 38, in main
+    assert Q.inspecionar(target, bad)[1][0]['documento_da_linha'] is None
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "<motor>/core/citacoes_linhas.py", line 53, in inspecionar
+    rendered = C._MARCA_RE.sub(resolve, quote)
+  File "<motor>/core/citacoes_linhas.py", line 52, in resolve
+    return C._impresso(comp.fontes[code], lang, rid)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/compor.py", line 354, in _impresso
+    raise Recusa(str(exc)) from exc
+core.compor.Recusa: linha própria evl-governo-a-financiar: sem documento

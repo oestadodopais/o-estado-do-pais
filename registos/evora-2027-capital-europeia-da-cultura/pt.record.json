@@ -4,6 +4,9 @@
    "figures": [
     {
      "end": 56,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -67,6 +70,9 @@
     },
     {
      "end": 217,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -130,6 +136,9 @@
     },
     {
      "end": 104,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -177,6 +186,9 @@
     },
     {
      "end": 299,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -200,6 +212,9 @@
     },
     {
      "end": 436,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -980,6 +995,9 @@
       "figures": [
        {
         "end": 4,
+        "others": [
+         "evl-governo-a-financiar"
+        ],
         "printed": "34",
         "row": "painel-transferido",
         "source_digest_kind": "pdf-sem-resumo",
@@ -1176,6 +1194,9 @@
    "figures": [
     {
      "end": 140,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -1454,6 +1475,9 @@
        },
        {
         "end": 377,
+        "others": [
+         "evl-governo-a-financiar"
+        ],
         "printed": "34",
         "row": "painel-transferido",
         "source_digest_kind": "pdf-sem-resumo",
@@ -1737,24 +1761,26 @@
         "others": [
          "alt-vagar-fundo",
          "vagar-apoio-uniao",
-         "evb-forma-beb42872d4c99a5284"
+         "evb-forma-beb42872d4c99a5284",
+         "evb-forma-ed45ab2e60bf2dc525"
         ],
         "printed": "1750000",
-        "row": "evb-forma-ed45ab2e60bf2dc525",
-        "source_digest_kind": "raw-sem-manifesto",
-        "source_sha256": null,
+        "row": "evl-vagar-fundo-citado",
+        "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/82-alentejo2030-lista-operacoes-2026-06-30.xlsx",
+        "source_sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
         "start": 126,
         "value": "1750000"
        },
        {
         "end": 151,
         "others": [
+         "alt-intern-fundo",
          "intern-apoio-uniao"
         ],
         "printed": "2500359.28",
-        "row": "alt-intern-fundo",
-        "source_digest_kind": "raw-sem-manifesto",
-        "source_sha256": null,
+        "row": "evl-intern-fundo-citado",
+        "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/82-alentejo2030-lista-operacoes-2026-06-30.xlsx",
+        "source_sha256": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
         "start": 141,
         "value": "2500359.28"
        }
@@ -1785,10 +1811,13 @@
     },
     {
      "end": 77,
+     "others": [
+      "painel-transferido"
+     ],
      "printed": "34",
-     "row": "painel-transferido",
-     "source_digest_kind": "pdf-sem-resumo",
-     "source_sha256": null,
+     "row": "evl-governo-a-financiar",
+     "source_body": "19 Évora 2027 Capital Europeia da Cultura/source/42-e27-relatorio-contas-2025.pdf",
+     "source_sha256": "b461c7dee112e1edda4bf6b1b6c353a0c1b10e73407cc6a3afdaa03008286b03",
      "start": 75,
      "value": "34"
     }
@@ -3935,6 +3964,9 @@
        },
        {
         "end": 147,
+        "others": [
+         "evl-governo-a-financiar"
+        ],
         "printed": "34",
         "row": "painel-transferido",
         "source_digest_kind": "pdf-sem-resumo",
@@ -4403,6 +4435,9 @@
    "figures": [
     {
      "end": 426,
+     "others": [
+      "evl-governo-a-financiar"
+     ],
      "printed": "34",
      "row": "painel-transferido",
      "source_digest_kind": "pdf-sem-resumo",
@@ -8429,6 +8464,7 @@
         "others": [
          "alt-vagar-fundo",
          "vagar-apoio-uniao",
+         "evl-vagar-fundo-citado",
          "evb-forma-ed45ab2e60bf2dc525"
         ],
         "printed": "1.750.000,00",
@@ -8491,7 +8527,8 @@
        {
         "end": 12,
         "others": [
-         "alt-intern-fundo"
+         "alt-intern-fundo",
+         "evl-intern-fundo-citado"
         ],
         "printed": "2.500.359,28",
         "row": "intern-apoio-uniao",
@@ -8540,6 +8577,7 @@
      "others": [
       "alt-vagar-fundo",
       "vagar-apoio-uniao",
+      "evl-vagar-fundo-citado",
       "evb-forma-beb42872d4c99a5284"
      ],
      "printed": "1750000",
@@ -8564,7 +8602,8 @@
     {
      "end": 256,
      "others": [
-      "intern-apoio-uniao"
+      "intern-apoio-uniao",
+      "evl-intern-fundo-citado"
      ],
      "printed": "2500359.28",
      "row": "alt-intern-fundo",

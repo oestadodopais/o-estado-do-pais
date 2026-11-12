@@ -1,0 +1,341 @@
+{
+  "html_antes": {
+    "Évora 2027, Capital Europeia da Cultura (pt-PT).html": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb",
+    "Évora 2027, European Capital of Culture.html": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306"
+  },
+  "html_depois": {
+    "Évora 2027, Capital Europeia da Cultura (pt-PT).html": "16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb",
+    "Évora 2027, European Capital of Culture.html": "ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306"
+  },
+  "html_identicos": true,
+  "regua_inicial_apos_N01_2": [
+    {
+      "estudo": "16 Évora Contas da Câmara",
+      "lingua": "pt",
+      "numeros": 4,
+      "achados": []
+    },
+    {
+      "estudo": "16 Évora Contas da Câmara",
+      "lingua": "en",
+      "numeros": 4,
+      "achados": []
+    },
+    {
+      "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+      "lingua": "pt",
+      "numeros": 37,
+      "achados": [
+        {
+          "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+          "lingua": "pt",
+          "unidade": "N01.R3",
+          "marcador": "⟦D:evb-forma-ed45ab2e60bf2dc525⟧",
+          "citacao": "1750000",
+          "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+          "documento_da_linha": null
+        },
+        {
+          "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+          "lingua": "pt",
+          "unidade": "N01.R3",
+          "marcador": "⟦14:alt-intern-fundo⟧",
+          "citacao": "2500359.28",
+          "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+          "documento_da_linha": null
+        }
+      ]
+    },
+    {
+      "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+      "lingua": "en",
+      "numeros": 37,
+      "achados": [
+        {
+          "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+          "lingua": "en",
+          "unidade": "N01.R3",
+          "marcador": "⟦D:evb-forma-ed45ab2e60bf2dc525⟧",
+          "citacao": "1750000",
+          "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+          "documento_da_linha": null
+        },
+        {
+          "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+          "lingua": "en",
+          "unidade": "N01.R3",
+          "marcador": "⟦14:alt-intern-fundo⟧",
+          "citacao": "2500359.28",
+          "documento_esperado": "1e7f97eb4dc18e6d8715b544706887b60023767248d8a89ddc81f74bed0a4503",
+          "documento_da_linha": null
+        }
+      ]
+    }
+  ],
+  "regua_final": [
+    {
+      "estudo": "16 Évora Contas da Câmara",
+      "lingua": "pt",
+      "numeros": 4,
+      "achados": []
+    },
+    {
+      "estudo": "16 Évora Contas da Câmara",
+      "lingua": "en",
+      "numeros": 4,
+      "achados": []
+    },
+    {
+      "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+      "lingua": "pt",
+      "numeros": 37,
+      "achados": []
+    },
+    {
+      "estudo": "19 Évora 2027 Capital Europeia da Cultura",
+      "lingua": "en",
+      "numeros": 37,
+      "achados": []
+    }
+  ],
+  "selos": {
+    "origem": "Registos atualizados, com a função de resolução usada pela página; dist anterior à travessia.",
+    "ocorrencias": [
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#0",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#0.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#0",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#0.1",
+        "numero": "9,7",
+        "linha": "evora-2027-recebido-do-protocolo-ate-2025",
+        "linha_motor": "evb-ln001"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#3",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#3.0",
+        "numero": "9,7",
+        "linha": "evora-2027-recebido-do-protocolo-ate-2025",
+        "linha_motor": "evb-ln001"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#3",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#3.1",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#6.0",
+        "numero": "9,7",
+        "linha": "evora-2027-recebido-do-protocolo-ate-2025",
+        "linha_motor": "evb-ln001"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#6.1",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#6.5",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#6.7",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#22.1.0",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#22.1.0.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#25",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#25.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#36.1.2",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#36.1.2.2",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#73.1.1",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#73.1.1.3",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "pt",
+        "unidade": "evora-2027-capital-europeia-da-cultura/pt#80",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/pt#80.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#0",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#0.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#0",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#0.1",
+        "numero": "9,7",
+        "linha": "evora-2027-recebido-do-protocolo-ate-2025",
+        "linha_motor": "evb-ln001"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#3",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#3.0",
+        "numero": "9,7",
+        "linha": "evora-2027-recebido-do-protocolo-ate-2025",
+        "linha_motor": "evb-ln001"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#3",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#3.1",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#6.0",
+        "numero": "9,7",
+        "linha": "evora-2027-recebido-do-protocolo-ate-2025",
+        "linha_motor": "evb-ln001"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#6.1",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#6.6",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#6",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#6.7",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#22.1.0",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#22.1.0.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#25",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#25.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#36.1.2",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#36.1.2.2",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#73.1.1",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#73.1.1.3",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      },
+      {
+        "lingua": "en",
+        "unidade": "evora-2027-capital-europeia-da-cultura/en#80",
+        "ocorrencia": "evora-2027-capital-europeia-da-cultura/en#80.0",
+        "numero": "34",
+        "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+        "linha_motor": "painel-transferido"
+      }
+    ]
+  },
+  "codigos": {
+    "typecheck": 0,
+    "registo": 0,
+    "documentos": 0,
+    "cruzamento": 0,
+    "ledger": 0,
+    "pagina": 0,
+    "selos": 0
+  },
+  "portao": 1,
+  "ficheiros_alheios_repostos": [
+    "registos/evora-quem-governou-a-camara-2009-2025/pt.record.json"
+  ],
+  "portao_corridas": 1,
+  "portao_segundos": 1330,
+  "exportador_final": 0,
+  "conferencias_explicitas": 15,
+  "chamadas_interface": 54,
+  "ocorrencias_novas_nos_registos": 6,
+  "ocorrencias_novas_no_universo_da_particao": 0,
+  "limitacao": "Portão completo com código 1 pela partição do manifesto. Corrigida a causa e reconferida a suite isolada com código 0; sem segunda corrida completa, pelo limite da passagem.",
+  "commits_motor": [
+    "a4caad8",
+    "ffba3a5",
+    "dbd0a30",
+    "a0203e8"
+  ]
+}

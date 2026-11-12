@@ -1,0 +1,10 @@
+  a travessia contra a cópia versionada: <motor>/publisher/fixtures/site-min
+EXPORT_SITE_ROWS_TEST · a cópia versionada: FAIL — 2 problem(s)
+ - a partição do manifesto verdadeiro não fecha:
+     excluded 'evl-b-citacoes-documentais': diz 6 figuras nas edições alojadas e as suas linhas imprimem 0
+ - as figuras sem linha do sítio são 2 404 e os grupos somam 2410
+  a travessia contra o sítio vivo: <sitio-principal> (a árvore principal do sítio)
+EXPORT_SITE_ROWS_TEST · o sítio vivo: FAIL — 2 problem(s)
+ - a partição do manifesto verdadeiro não fecha:
+     excluded 'evl-b-citacoes-documentais': diz 6 figuras nas edições alojadas e as suas linhas imprimem 0
+ - as figuras sem linha do sítio são 2 404 e os grupos somam 2410
