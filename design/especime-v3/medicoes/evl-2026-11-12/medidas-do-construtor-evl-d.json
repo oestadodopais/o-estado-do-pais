@@ -149,5 +149,67 @@
     "medicao-antes": 0,
     "medicao-depois": 0,
     "plantas": 0
+  },
+  "inventario": {
+    "retiradas": [
+      {
+        "n": 5597,
+        "classe": "conteudo",
+        "bloco": "cor-agua",
+        "texto": "4 156 afirmações · 523 de 4 156 calculadas · 2 767 de 4 156 linhas de concelhos"
+      },
+      {
+        "n": 5598,
+        "classe": "conteudo",
+        "bloco": "cor-agua",
+        "texto": "4 156 claims · 523 of 4 156 calculated · 2 767 of 4 156 municipality rows"
+      },
+      {
+        "n": 5651,
+        "classe": "conteudo",
+        "bloco": "evb-t-b",
+        "texto": "A associação escreve que reabriu em o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais."
+      },
+      {
+        "n": 5652,
+        "classe": "conteudo",
+        "bloco": "evb-t-b",
+        "texto": "The association writes that in it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies."
+      }
+    ],
+    "novas": [
+      {
+        "rota": "/",
+        "texto": "No dinheiro, as contas da Associação Évora declaram milhões recebidos do protocolo de até ao fim de . Em junho de , o resumo que o painel de peritos europeus faz do relatório de progresso dava milhões como já transferidos."
+      },
+      {
+        "rota": "/",
+        "texto": "milhões de euros dados como já transferidos no relato ao painel europeu, em junho de"
+      },
+      {
+        "rota": "/",
+        "texto": "milhões de euros recebidos do protocolo até ao fim de , pelas contas da associação"
+      },
+      {
+        "rota": "/en",
+        "texto": "On the money, the accounts of the Associação Évora declare million received from the protocol up to the end of . In June , the summary that the panel of European experts makes of the progress report gave million as already transferred."
+      },
+      {
+        "rota": "/en",
+        "texto": "million euros given as already transferred in the report to the European panel, in June"
+      },
+      {
+        "rota": "/en",
+        "texto": "million euros received under the protocol up to the end of , by the association&#39;s accounts"
+      },
+      {
+        "rota": "/en/ledger",
+        "texto": "4 161 claims · 524 of 4 161 calculated · 2 767 of 4 161 municipality rows"
+      },
+      {
+        "rota": "/livro-razao",
+        "texto": "4 161 afirmações · 524 de 4 161 calculadas · 2 767 de 4 161 linhas de concelhos"
+      }
+    ]
   }
 }
