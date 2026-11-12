@@ -20,6 +20,7 @@ import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 import yaml
 
@@ -86,6 +87,51 @@ def com_entradas(texto: str, entradas: list[dict]) -> str:
     margem = primeira[:len(primeira) - len(primeira.lstrip())]
     linhas[fim:fim] = [margem + l for l in novo.split("\n")]
     return "\n".join(linhas)
+
+
+def lugar_do_pedido(r: dict) -> str:
+    geos = parse_qs(urlsplit(r["url"]).query).get("geo", [])
+    lugares = {"PT": "portugal", "EU27_2020": "uniao-europeia"}
+    if len(geos) != 1 or geos[0] not in lugares:
+        raise SystemExit(f"PARAGEM: {r['id']}: geografia desconhecida no pedido: {geos!r}")
+    if r["coordenadas"].get("geo") != geos[0]:
+        raise SystemExit(f"PARAGEM: {r['id']}: geografia do pedido contradiz as coordenadas")
+    return lugares[geos[0]]
+
+
+def com_lugar(texto: str, cid: str, lugar: str) -> str:
+    if not re.fullmatch(r"[a-z0-9-]+", cid):
+        raise SystemExit("PARAGEM: identificador de linha ilegível")
+    entradas = re.findall(r"^\s*['\"]" + re.escape(cid) + r"['\"]:\s*['\"]([^'\"]+)['\"],?\s*$", texto, re.M)
+    if entradas:
+        if entradas != [lugar]:
+            raise SystemExit(f"PARAGEM: {cid}: lugar contraditório: {entradas!r}, pedido {lugar}")
+        return texto
+    abertura = "export const LUGAR_DECLARADO_DAS_LINHAS = {\n"
+    if texto.count(abertura) != 1:
+        raise SystemExit("PARAGEM: declaração dos lugares ilegível")
+    return texto.replace(abertura, abertura + f"  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */\n  '{cid}': '{lugar}',\n", 1)
+
+
+def plantas_lugar(r: dict, texto: str) -> list[dict]:
+    lugar = lugar_do_pedido(r)
+    copia = json.loads(json.dumps(r))
+    copia["url"] = re.sub(r"([?&]geo=)[^&]*", r"\g<1>DESCONHECIDO", r["url"])
+    contraditorio = "uniao-europeia" if lugar == "portugal" else "portugal"
+    plantas = []
+    for nome, acao, razao in (
+        ("geografia desconhecida", lambda: lugar_do_pedido(copia), "geografia desconhecida"),
+        ("lugar contraditório", lambda: com_lugar(f"  '{r['id']}': '{contraditorio}',\n", r["id"], lugar), "lugar contraditório"),
+    ):
+        try:
+            acao()
+        except SystemExit as e:
+            plantas.append({"linha": r["id"], "planta": nome, "mordeu": razao in str(e), "razao": str(e)})
+        else:
+            plantas.append({"linha": r["id"], "planta": nome, "mordeu": False})
+    novo = com_lugar(texto, r["id"], lugar)
+    assert com_lugar(novo, r["id"], lugar) == novo, "o lugar não é idempotente"
+    return plantas
 
 
 def razoes(r: dict, data_do_painel: str) -> list[dict]:
@@ -349,6 +395,11 @@ def main() -> int:
 
     pedidos = {p["url"]: p for p in reg["pedidos"]}
     resultado, plantas, pendentes = [], [], []
+    lugares_destino = SITIO / "src/data/lugar-das-linhas.mjs"
+    lugares = lugares_destino.read_text(encoding="utf-8")
+    for r in reg["linhas"]:
+        plantas.extend(plantas_lugar(r, lugares))
+        lugares = com_lugar(lugares, r["id"], lugar_do_pedido(r))
     for r in reg["linhas"]:
         cid = r["id"]
         p = pedidos[r["url"]]
@@ -430,6 +481,7 @@ def main() -> int:
         "cabeca_presa": CABECA, "releitura_do_motor": RELEITURA + "/releitura.json",
         "releitura_quando": reg["quando"], "releitura_cabeca_do_motor": reg["cabeca_do_motor"],
         "linhas": resultado,
+        "lugares": {r["id"]: lugar_do_pedido(r) for r in reg["linhas"]},
         "plantas": plantas,
         "contagens": {
             "linhas": len(resultado), "aplicadas": sum(1 for x in resultado if x["aplicada"]),
@@ -441,6 +493,8 @@ def main() -> int:
     }
     if not all(p["mordeu"] for p in plantas):
         raise SystemExit("PARAGEM: uma planta da aplicação não mordeu")
+    if args.aplicar:
+        pendentes.append((lugares_destino, lugares))
     for destino, novo in pendentes:
         destino.write_text(novo, encoding="utf-8")
         assert destino.read_text(encoding="utf-8") == novo
