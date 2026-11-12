@@ -1,4 +1,7 @@
 import { routePath } from '../src/lib/routes.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
+import { slugsDasRegioes } from '../src/lib/regioes.mjs';
+import { edicaoPublicada } from '../src/data/studies.mjs';
 import { SITE_URL } from '../site.config.mjs';
 import { parse } from 'node-html-parser';
 
@@ -24,13 +27,18 @@ export function conferirPaginasDosEstudos(works, rotas) {
 }
 
 export function destinoDoRetirado(work, lang, works) {
-  if (work.estado !== 'retirado' || !work.sucedidoPor?.length) throw Error(`REC2 retirada sem sucessor: ${work.slug}`);
-  for (const s of work.sucedidoPor) {
+  if (work.estado !== 'retirado') throw Error(`REC2 trabalho não retirado: ${work.slug}`);
+  const sucessores = (work.sucedidoPor ?? []).map(s => {
     const sucessor = works.find(w => w.slug === s.slug);
-    if (!sucessor || sucessor.estado === 'retirado') throw Error(`REC2 sucessor não publicado: ${s.slug}`);
+    if (!sucessor) throw Error(`REC2 sucessor desconhecido: ${s.slug}`);
+    return sucessor;
+  }).filter(w => w.estado !== 'retirado' && (!w.editions || w.editions.some(e => edicaoPublicada(w, e))));
+  if (sucessores.length === 1) return routePath('estudo', lang, {slug:sucessores[0].slug}) + '/';
+  if (work.subject) {
+    if (MUNICIPIOS_COM_PAGINA.some(m => m.slug === work.subject)) return routePath('municipio', lang, {slug:work.subject}) + '/';
+    if (slugsDasRegioes().includes(work.subject)) return routePath('regiao', lang, {slug:work.subject}) + '/';
   }
-  return routePath(work.sucedidoPor.length > 1 ? 'municipio' : 'estudo', lang,
-    {slug:work.sucedidoPor.length > 1 ? work.subject : work.sucedidoPor[0].slug}) + '/';
+  return routePath('estudos', lang) + '/';
 }
 
 export function redirecionamentosDosRetirados(works, partida) {

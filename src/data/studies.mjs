@@ -186,6 +186,7 @@ export const WORKS = [
   {
     id: 'evora-quem-governou-a-camara-2009-2025',
     slug: 'evora-quem-governou-a-camara-2009-2025',
+    estado: 'retirado',
     tema: 'governo-e-democracia',
     subject: 'evora',
     /* Só em português, como os dois estudos de onde vem («Quinze Anos» e «Os
@@ -206,6 +207,7 @@ export const WORKS = [
   {
     id: 'evora-economia-e-dinheiro-publico-de-fora-da-camara',
     slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara',
+    estado: 'retirado',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     editions: [
@@ -480,6 +482,7 @@ export const WORKS = [
   {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
+    estado: 'retirado',
     tema: 'agua',
     // subject por preencher: o título não diz de que território trata. Se vier
     // a ser sobre Évora, a contagem estudos_evora_no_arquivo muda — e o build
@@ -505,6 +508,7 @@ export const WORKS = [
   {
     id: 'agua-nao-faturada',
     slug: 'agua-nao-faturada',
+    estado: 'retirado',
     tema: 'agua',
     editions: [
       { lang: 'pt', title: 'Água Não Faturada', date: null, updated: '2026-11-08' },
@@ -518,6 +522,7 @@ export const WORKS = [
   {
     id: 'avaliacao-economica-regional-de-portugal-2026',
     slug: 'avaliacao-economica-regional-de-portugal-2026',
+    estado: 'retirado',
     tema: 'economia-e-financas-publicas',
     editions: [
       { lang: 'pt', title: 'Avaliação Económica Regional de Portugal 2026', date: null, updated: null },
@@ -534,6 +539,7 @@ export const WORKS = [
       en: 'The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date.',
     },
     slug: 'which-door-is-yours',
+    estado: 'retirado',
     tema: 'investimento',
     editions: [
       {
@@ -551,6 +557,7 @@ export const WORKS = [
   {
     id: 'alentejo-algarve',
     slug: 'alentejo-algarve',
+    estado: 'retirado',
     subject: 'alentejo',
     tema: 'economia-e-financas-publicas',
     editions: [
@@ -564,6 +571,7 @@ export const WORKS = [
   {
     id: 'evolucao-de-portugal-desde-1981',
     slug: 'evolucao-de-portugal-desde-1981',
+    estado: 'retirado',
     tema: 'populacao',
     editions: [{ lang: 'pt', title: 'Evolução de Portugal desde 1981', date: null, updated: null }],
     description: {
