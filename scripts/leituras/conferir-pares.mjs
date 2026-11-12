@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
+import {manifestoDasEdicoes} from '../../src/lib/edicoes.mjs';
 import {WORKS} from '../../src/data/studies.mjs';
 import {separarRetirados} from './conferir-frases.mjs';
 const dist = process.argv[2] ?? 'dist';
@@ -52,6 +53,13 @@ const explicado = (l, t) => antigas[l].some(a => t.includes(a)) || /\bResearch\s
 // As composições importam frases de outros estudos da lista: no estudo da economia (a composição 18 do motor), uma mudança
 // que tem par na outra língua é a frase reescrita no estudo de origem; uma mudança sem par nunca se explica assim.
 const COMPOSICOES = new Set(['evora-economia-e-dinheiro-publico-de-fora-da-camara']);
+const declaradas = manifestoDasEdicoes().edicoes;
+const elegiveis = [...new Set(lista.map(f => f.estudo))].filter(slug => {
+  const datas = lang => declaradas.find(e => e.slug === slug && e.lang === lang)?.edicoes.map(e => e.data).filter(d => d < EDICAO) ?? [];
+  const ingles = new Set(datas('en'));
+  return datas('pt').some(d => ingles.has(d));
+});
+const contagemConferida = (vistas, esperadas) => vistas === esperadas;
 let total = 0, estudos = 0, fora = 0;
 for (const slug of [...new Set(lista.map(f => f.estudo))]) {
   const dp = path.join(dist, 'estudos', slug, 'documento'), de = path.join(dist, 'en', 'studies', slug, 'document');
@@ -75,7 +83,7 @@ for (const slug of [...new Set(lista.map(f => f.estudo))]) {
 export const codigo = (sem, fora, planta, controlo, estudos, semEntradasAtivas = false) => (sem || fora || planta !== 2 || controlo !== 0 || (!estudos && !semEntradasAtivas) ? 1 : 0);
 // As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.
 const exemplo = lista.find(f => f.classe !== 'FICA');
-const plantasFora = [!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), exemplo ? explicado(exemplo.lingua, exemplo.frase) : antigas.pt.length === 0 && antigas.en.length === 0,
+const plantasFora = [contagemConferida(0,0), !contagemConferida(0,1), !contagemConferida(1,2),!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), exemplo ? explicado(exemplo.lingua, exemplo.frase) : antigas.pt.length === 0 && antigas.en.length === 0,
   conferirEstudo(['a', 'b'], ['a', 'b', 'Isto é novo.'], ['a', 'b'], ['a', 'b']).length === 1,
   codigo(0, 1, 2, 0, 1) === 1, codigo(1, 0, 2, 0, 1) === 1, codigo(0, 0, 2, 0, 1) === 0,
   codigo(0, 0, 2, 0, 0) === 1, codigo(0, 0, 2, 0, 0, true) === 0,
@@ -83,7 +91,7 @@ const plantasFora = [!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), 
 // A planta: um par em que só o português muda tem de dar dois blocos sem par (o antigo e o novo); o mesmo par a mudar nas duas línguas, nenhum.
 const planta = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a', 'Isto entra.', 'c'], ['a', 'This enters this document.', 'c'], ['a', 'This enters this document.', 'c']).length;
 const controlo = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a', 'Isto entra.', 'c'], ['a', 'This enters this document.', 'c'], ['a', 'This enters.', 'c']).length;
-console.log(`estudos com as duas línguas: ${estudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 2: o bloco antigo e o novo), controlo ${controlo} (tem de ser 0)`);
+console.log(`pares anteriores declarados: ${elegiveis.length}; estudos com as duas línguas: ${estudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 2: o bloco antigo e o novo), controlo ${controlo} (tem de ser 0)`);
 const mordem = plantasFora.filter(Boolean).length;
 console.log(`plantas do ramo fora da lista, do bloco novo e do código: ${mordem} de ${plantasFora.length}`);
-process.exitCode = codigo(total, fora, planta, controlo, estudos, lista.length === 0) || (mordem !== plantasFora.length ? 1 : 0);
+process.exitCode = codigo(total, fora, planta, controlo, estudos, elegiveis.length === 0) || !contagemConferida(estudos,elegiveis.length) || (mordem !== plantasFora.length ? 1 : 0);
