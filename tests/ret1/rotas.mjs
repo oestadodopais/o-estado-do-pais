@@ -1,0 +1,18 @@
+import { conferirCadeias } from '../../scripts/redirecionamentos-sem-cadeias.mjs';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { WORKS } from '../../src/data/studies.mjs';
+import { rotasDePartida } from '../../scripts/retiradas-partida.mjs';
+import { redirecionamentosDosRetirados, conferirRedirecionamentos } from '../../scripts/estudos-retirados-conferir.mjs';
+const partida = rotasDePartida(), tabela = JSON.parse(fs.readFileSync('vercel.json','utf8')).routes;
+const novas = JSON.parse(fs.readFileSync('design/especime-v3/medicoes/ret1-2026-11-12/rotas-de-partida.json','utf8'));
+assert.equal(novas.estudos.flatMap(e=>e.rotas).length,34);
+const esperados = redirecionamentosDosRetirados(WORKS,partida);
+const destinos = [...new Set(esperados.map(r=>r.headers.Location))];
+assert.deepEqual(conferirRedirecionamentos(WORKS,partida,tabela,destinos),[]);
+assert.deepEqual(conferirCadeias(esperados,tabela),[]);
+assert(conferirCadeias(esperados,[...tabela,{src:destinos[0].replace(/\/$/,'')+'/?',status:301,headers:{Location:'/estudos/'}}]).length);
+for(const e of novas.estudos) for(const rota of [...e.rotas,...e.redirecionamentos_anteriores]) assert(esperados.some(r=>r.src===rota.replace(/\/$/,'')+'/?'));
+for(const slug of ['evora-os-pelouros-quem-os-teve-o-que-fizeram','evora-economia-investidores-portas-abertas-2026','evora-prometido-pago-auditado-2026']) assert(esperados.filter(r=>r.src.includes('/'+slug+'/')).every(r=>r.headers.Location.endsWith('/evora/')));
+assert(esperados.filter(r=>r.src.includes('/evora-quinze-anos-cinco-mandatos/')).every(r=>r.headers.Location.includes('/evora-contas-da-camara-2010-2025/')));
+console.log(`RET1: ${esperados.length} redirecionamentos; 34 rotas construídas dos oito e quatro de texto; destinos sem cadeias.`);

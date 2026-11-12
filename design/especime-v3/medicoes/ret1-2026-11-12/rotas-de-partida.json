@@ -1,0 +1,95 @@
+{
+  "cabeca": "671041f4aedd8ebf4f1f3e0580645bb859df2733",
+  "cabeca_dist": "e21f8138dfd3ba0638725718a4a361e2088b3afe",
+  "estudos": [
+    {
+      "slug": "evora-quem-governou-a-camara-2009-2025",
+      "rotas": [
+        "/en/studies/evora-quem-governou-a-camara-2009-2025/",
+        "/estudos/evora-quem-governou-a-camara-2009-2025/",
+        "/estudos/evora-quem-governou-a-camara-2009-2025/documento/"
+      ],
+      "redirecionamentos_anteriores": [
+        "/estudos/evora-quem-governou-a-camara-2009-2025/texto/"
+      ]
+    },
+    {
+      "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "rotas": [
+        "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+        "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/",
+        "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document/2026-10-01/",
+        "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+        "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/",
+        "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento/2026-10-01/"
+      ],
+      "redirecionamentos_anteriores": [
+        "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/text/",
+        "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/texto/"
+      ]
+    },
+    {
+      "slug": "agua-nao-faturada",
+      "rotas": [
+        "/en/studies/agua-nao-faturada/",
+        "/en/studies/agua-nao-faturada/document/",
+        "/en/studies/agua-nao-faturada/document/2026-08-12/",
+        "/estudos/agua-nao-faturada/",
+        "/estudos/agua-nao-faturada/documento/",
+        "/estudos/agua-nao-faturada/documento/2026-08-12/"
+      ],
+      "redirecionamentos_anteriores": []
+    },
+    {
+      "slug": "onde-esta-a-agua",
+      "rotas": [
+        "/en/studies/onde-esta-a-agua/",
+        "/en/studies/onde-esta-a-agua/document/",
+        "/en/studies/onde-esta-a-agua/document/2026-08-12/",
+        "/estudos/onde-esta-a-agua/",
+        "/estudos/onde-esta-a-agua/documento/",
+        "/estudos/onde-esta-a-agua/documento/2026-08-12/"
+      ],
+      "redirecionamentos_anteriores": []
+    },
+    {
+      "slug": "avaliacao-economica-regional-de-portugal-2026",
+      "rotas": [
+        "/en/studies/avaliacao-economica-regional-de-portugal-2026/",
+        "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+        "/estudos/avaliacao-economica-regional-de-portugal-2026/documento/"
+      ],
+      "redirecionamentos_anteriores": [
+        "/estudos/avaliacao-economica-regional-de-portugal-2026/texto/"
+      ]
+    },
+    {
+      "slug": "which-door-is-yours",
+      "rotas": [
+        "/en/studies/which-door-is-yours/",
+        "/en/studies/which-door-is-yours/document/",
+        "/estudos/which-door-is-yours/"
+      ],
+      "redirecionamentos_anteriores": []
+    },
+    {
+      "slug": "alentejo-algarve",
+      "rotas": [
+        "/en/studies/alentejo-algarve/",
+        "/en/studies/alentejo-algarve/document/",
+        "/en/studies/alentejo-algarve/document/2026-08-12/",
+        "/estudos/alentejo-algarve/"
+      ],
+      "redirecionamentos_anteriores": []
+    },
+    {
+      "slug": "evolucao-de-portugal-desde-1981",
+      "rotas": [
+        "/en/studies/evolucao-de-portugal-desde-1981/",
+        "/estudos/evolucao-de-portugal-desde-1981/",
+        "/estudos/evolucao-de-portugal-desde-1981/documento/"
+      ],
+      "redirecionamentos_anteriores": []
+    }
+  ]
+}
