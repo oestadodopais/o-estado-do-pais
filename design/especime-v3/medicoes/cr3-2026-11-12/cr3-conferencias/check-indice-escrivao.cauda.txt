@@ -1,0 +1,20 @@
+        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada
+  ✓ I9 · as datas dos trabalhos, e o marcador que resta
+        26 linha(s) de trabalho · 0 marcador(es) ao todo, 0 linha(s) com um e nenhuma com dois · 20 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 20 de 20 linha(s) de src/data/datas-de-publicacao.json conferidas, 4 com data da versão única e as restantes com data do git
+  ✓ I9p · as datas erradas recusam nas duas origens
+        5 de 5 plantas recusadas na própria I9
+  ✓ I10 · nenhum número novo
+        4161 linha(s) citada(s) em 33589 ocorrência(s) · 20 motivo(s) declarado(s)
+  ✓ I1p · as plantas dos localizadores recusam a origem desconhecida
+        28 plantas dos localizadores com queixa própria de I1 e o degrau conferido por I3; uma planta do nome do projeto com queixas de I3; 19 formatos anteriores conferidos.
+  ✓ I2pp · as plantas do período recusam a falta e a troca da data
+        6 de 6 plantas dos períodos a morder, em cópias dos índices construídos
+  ✓ ER1 · o código só sai da prosa depois de conferido
+        A mesma leitura do índice recusa o campo alterado, o comentário e a marca fora dele.
+  ✓ I3b · a busca filtra o livro-razão inteiro, no navegador
+        /livro-razao: 1394 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0
+  ✓ I7 · sem transbordo a 390 nas páginas de linha
+        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)
+  ✓ I11 · o espaço entre o número e a palavra, a 390
+        /lugares/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 1 de 1 apanhada(s) · /en/places/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 1 de 1 apanhada(s)
+

@@ -1,9 +1,9 @@
 {
-  "cabeca_medida": "0734e258c838e32df8cb792ed8b18c08ee387640",
-  "chamadas_de_ferramentas_ate_ao_registo": 73,
-  "registo_de_sessao_ate": "2026-11-12T19:17:45.876Z",
-  "corridas_de_conferencias": 42,
-  "execucoes_com_codigo": 51,
+  "cabeca_medida": "a313a26b95735792309e20fa369708de289dbccb",
+  "chamadas_de_ferramentas_ate_ao_registo": 78,
+  "registo_de_sessao_ate": "2026-11-12T19:21:44.523Z",
+  "corridas_de_conferencias": 44,
+  "execucoes_com_codigo": 53,
   "corridas_inteiras_dos_portoes": 0,
   "codigos": {
     "ledger:check": {
@@ -63,7 +63,7 @@
       "ficheiro": "cr3-conferencias/check-lugar.codigo"
     },
     "check:indice": {
-      "codigo": null,
+      "codigo": 0,
       "ficheiro": "cr3-conferencias/check-indice-escrivao.codigo"
     },
     "gate:html": {
@@ -119,8 +119,8 @@
       "ficheiro": "cr3-conferencias/cartoes.codigo"
     },
     "check:sobreposicao": {
-      "codigo": 1,
-      "ficheiro": "cr3-conferencias/check-sobreposicao-escrivao.codigo"
+      "codigo": 0,
+      "ficheiro": "cr3-conferencias/check-sobreposicao-escrivao-final.codigo"
     },
     "check:largura": {
       "codigo": 0,
@@ -197,6 +197,10 @@
       "codigo": 1
     },
     {
+      "ficheiro": "cr3-conferencias/check-indice-escrivao.codigo",
+      "codigo": 0
+    },
+    {
       "ficheiro": "cr3-conferencias/check-indice-sem-navegador.codigo",
       "codigo": 0
     },
@@ -259,6 +263,10 @@
     {
       "ficheiro": "cr3-conferencias/check-series.codigo",
       "codigo": 1
+    },
+    {
+      "ficheiro": "cr3-conferencias/check-sobreposicao-escrivao-final.codigo",
+      "codigo": 0
     },
     {
       "ficheiro": "cr3-conferencias/check-sobreposicao-escrivao.codigo",
@@ -362,6 +370,7 @@
     "plantas_que_morderam": 30
   },
   "commits_anteriores_ao_registo": [
+    "a313a26b9 CR3: provar os recibos e adaptar as plantas aos avisos ainda pendentes",
     "0734e258c CR3: fechar a história dos valores e escolher as plantas pelos dados",
     "d3f144872 CR3: aplicar as duas revisões das exportações e as datas da fonte",
     "0cc6ad0bf CR3: declarar o lugar das linhas pela geografia do pedido",
@@ -386,9 +395,14 @@
     "plantas_passam_a_escolher_pelos_dados": [
       "cartão",
       "quadro",
-      "índice"
+      "índice",
+      "geometria dos avisos"
     ]
   },
+  "linhas_alteradas": [
+    "ledger/claims/desempenho-das-exportacoes-2024.yml",
+    "ledger/claims/desempenho-das-exportacoes-2025.yml"
+  ],
   "motor_sem_alteracoes": true,
   "habitacao_intacta": true
 }
