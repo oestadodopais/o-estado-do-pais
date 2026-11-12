@@ -1,0 +1,176 @@
+{
+  "pontos": {
+    "1": "0337de0c1223c2fae1698a5d2d15de6a6d8fa9a1",
+    "2": "b36d5aa989eb6568185931e273f8eb2294241d61"
+  },
+  "regua": "check:frases-afirmacao -> tests/evb/texto-da-pagina.mjs",
+  "paginas": [
+    {
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "lingua": "pt",
+      "blocos": 198,
+      "paragrafos": 110,
+      "titulos": 38,
+      "itens": 38,
+      "celulas": 676,
+      "plantas": [
+        {
+          "nome": "palavra no parágrafo",
+          "recusas": 1
+        },
+        {
+          "nome": "palavra na primeira célula",
+          "recusas": 1
+        },
+        {
+          "nome": "número no texto",
+          "recusas": 1
+        },
+        {
+          "nome": "blocos fora de ordem",
+          "recusas": 4
+        }
+      ]
+    },
+    {
+      "estudo": "evora-contas-da-camara-2010-2025",
+      "lingua": "en",
+      "blocos": 198,
+      "paragrafos": 110,
+      "titulos": 38,
+      "itens": 38,
+      "celulas": 676,
+      "plantas": [
+        {
+          "nome": "palavra no parágrafo",
+          "recusas": 1
+        },
+        {
+          "nome": "palavra na primeira célula",
+          "recusas": 1
+        },
+        {
+          "nome": "número no texto",
+          "recusas": 1
+        },
+        {
+          "nome": "blocos fora de ordem",
+          "recusas": 4
+        }
+      ]
+    },
+    {
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "blocos": 165,
+      "paragrafos": 91,
+      "titulos": 38,
+      "itens": 15,
+      "celulas": 966,
+      "plantas": [
+        {
+          "nome": "palavra no parágrafo",
+          "recusas": 1
+        },
+        {
+          "nome": "palavra na primeira célula",
+          "recusas": 1
+        },
+        {
+          "nome": "número no texto",
+          "recusas": 1
+        },
+        {
+          "nome": "blocos fora de ordem",
+          "recusas": 4
+        }
+      ]
+    },
+    {
+      "estudo": "evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "blocos": 165,
+      "paragrafos": 91,
+      "titulos": 38,
+      "itens": 15,
+      "celulas": 966,
+      "plantas": [
+        {
+          "nome": "palavra no parágrafo",
+          "recusas": 1
+        },
+        {
+          "nome": "palavra na primeira célula",
+          "recusas": 1
+        },
+        {
+          "nome": "número no texto",
+          "recusas": 1
+        },
+        {
+          "nome": "blocos fora de ordem",
+          "recusas": 4
+        }
+      ]
+    }
+  ],
+  "totais": {
+    "blocos": 726,
+    "paragrafos": 402,
+    "titulos": 152,
+    "itens": 106,
+    "celulas": 3284
+  },
+  "plantas_pagina": 16,
+  "leitura": {
+    "unidade": "C005",
+    "linhas": {
+      "pt": 49,
+      "en": 49
+    },
+    "controlos_candidatos": 6,
+    "plantas_candidatas_recusadas": 54,
+    "copias_anteriores": {
+      "controlos": 8,
+      "plantas": 38
+    },
+    "titulos": {
+      "controlos": 2,
+      "plantas": 10
+    }
+  },
+  "codigos": {
+    "01-texto": 1,
+    "02-texto": 0,
+    "03-leitura": 0,
+    "04-copias-candidatas": 0,
+    "05-copias-dist": 1,
+    "06-frases-afirmacao": 1,
+    "07-lugar": 0,
+    "08-typecheck": 0,
+    "09-julgados": 0
+  },
+  "corridas_explicitas": 9,
+  "corridas_portoes_inteiros": 0,
+  "builds": 0,
+  "capturas": 0,
+  "chamadas_ferramentas_ate_escrita_do_relatorio": 22,
+  "criterio_chamadas": "Invocações de functions.exec, incluindo esta escrita; exclui chamadas internas e a verificação posterior do commit de provas.",
+  "commits_escrivao": {
+    "ponto_1": {
+      "comitar_sh": 3,
+      "resultado_escrivao": 0
+    },
+    "ponto_2": {
+      "comitar_sh": 3,
+      "resultado_escrivao": 0
+    }
+  },
+  "limites": [
+    "A primeira planta de palavra alterava uma etiqueta HTML; corrigida para alterar texto, sem diferença real entre página e registo.",
+    "O dist conserva a leitura anterior; as cópias candidatas foram ensaiadas apenas em memória.",
+    "check:frases-afirmacao: inventário com zero recusas, cadeia recusada na cópia por leitura ausente na página de entrada.",
+    "Build, conferências com navegador e confirmação das cópias após reconstruir reservados ao lugar de direção.",
+    "Leitura cruzada do diff do inventário pendente antes da fusão."
+  ]
+}

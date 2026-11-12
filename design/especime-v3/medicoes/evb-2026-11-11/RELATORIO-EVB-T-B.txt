@@ -1,0 +1,10 @@
+1. Régua integral ligada a check:frases-afirmacao, guiada pelas declarações de textos julgados, nos dois estudos e nas duas línguas.
+Comparados 726 blocos: 402 parágrafos, 152 títulos, 106 itens e 3284 células; nenhuma diferença real.
+Plantas da página: 16 recusadas; primeira tentativa corrigida porque alterava uma etiqueta, não uma palavra do texto. Normalização documentada na régua.
+2. Cartão com C005 literal em português e inglês; origem na linha 49 medida de ambos os documentos; só 2025 como referência, sem medidas nem troca.
+Inventário: duas C039 retiradas e duas C005 vivas; revisão cruzada por ler. Cópias candidatas em memória: seis controlos, 54 plantas; cópias anteriores: 38 plantas; títulos: 10.
+Códigos lidos: 02-texto=0, 03-leitura=0, 04-copias-candidatas=0, 07-lugar=0, 08-typecheck=0, 09-julgados=0.
+Códigos lidos: 01-texto=1 (planta corrigida); 05-copias-dist=1 e 06-frases-afirmacao=1 (C005 ausente do cartão no dist antigo); inventário de afirmações: zero recusas.
+Por correr: build, conferências com navegador e confirmação dos cartões reconstruídos. Não se alterou o dist, o texto julgado, os outros estudos nem o motor.
+Commits dos pontos: 0337de0c1 e b36d5aa98, confirmados no Git e pelo resultado do escrivão a zero; os dois clientes terminaram antes com código 3 por falta de batimento.
+Custos até à escrita: 22 chamadas de ferramentas; nove corridas explícitas de conferências; zero corridas integrais, builds ou capturas. Relatório e medidas no terceiro pedido de commit.
