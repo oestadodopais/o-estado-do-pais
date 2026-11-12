@@ -1,0 +1,98 @@
+{
+ "rotas_proprias_dos_oito_no_dist": {
+  "valor": "34",
+  "comando": "python3 -c \"import json;print(sum(v['rotas_proprias_total'] for v in json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json')).values()))\""
+ },
+ "ficheiros_do_dist_fora_dos_oito_com_ligacao_para_eles": {
+  "valor": "76",
+  "comando": "python3 -c \"import json;print(sum(sum(v['ficheiros_do_dist_com_ligacao'].values()) for v in json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json')).values()))\""
+ },
+ "linhas_do_livro_com_um_dos_oito_no_campo_study": {
+  "valor": "64",
+  "comando": "python3 -c \"import json;print(sum(len(v['linhas_do_livro_com_study_igual']) for v in json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json')).values()))\""
+ },
+ "trabalhos_em_studies_mjs": {
+  "valor": "19",
+  "comando": "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.WORKS.length))\""
+ },
+ "trabalhos_ja_retirados_em_studies_mjs": {
+  "valor": "6",
+  "comando": "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.WORKS.filter(w=>w.estado==='retirado').length))\""
+ },
+ "valor_da_linha_estudos-publicados": {
+  "valor": "13",
+  "comando": "python3 -c \"import re;print(re.search(r'^value: \\\"(.*)\\\"', open('ledger/claims/estudos-publicados.yml').read(), re.M).group(1))\""
+ },
+ "valor_da_linha_estudos-evora-publicados": {
+  "valor": "4",
+  "comando": "python3 -c \"import re;print(re.search(r'^value: \\\"(.*)\\\"', open('ledger/claims/estudos-evora-publicados.yml').read(), re.M).group(1))\""
+ },
+ "linhas_do_livro_de_evora-quem-governou-a-camara-2009-2025": {
+  "valor": "19",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['evora-quem-governou-a-camara-2009-2025']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_evora-quem-governou-a-camara-2009-2025": {
+  "valor": "3",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['evora-quem-governou-a-camara-2009-2025']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+  "valor": "17",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['evora-economia-e-dinheiro-publico-de-fora-da-camara']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+  "valor": "6",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['evora-economia-e-dinheiro-publico-de-fora-da-camara']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_agua-nao-faturada": {
+  "valor": "2",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['agua-nao-faturada']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_agua-nao-faturada": {
+  "valor": "6",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['agua-nao-faturada']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_onde-esta-a-agua": {
+  "valor": "0",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['onde-esta-a-agua']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_onde-esta-a-agua": {
+  "valor": "6",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['onde-esta-a-agua']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_avaliacao-economica-regional-de-portugal-2026": {
+  "valor": "21",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['avaliacao-economica-regional-de-portugal-2026']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_avaliacao-economica-regional-de-portugal-2026": {
+  "valor": "3",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['avaliacao-economica-regional-de-portugal-2026']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_which-door-is-yours": {
+  "valor": "2",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['which-door-is-yours']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_which-door-is-yours": {
+  "valor": "3",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['which-door-is-yours']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_alentejo-algarve": {
+  "valor": "2",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['alentejo-algarve']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_alentejo-algarve": {
+  "valor": "4",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['alentejo-algarve']['rotas_proprias_total'])\""
+ },
+ "linhas_do_livro_de_evolucao-de-portugal-desde-1981": {
+  "valor": "1",
+  "comando": "python3 -c \"import json;print(len(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['evolucao-de-portugal-desde-1981']['linhas_do_livro_com_study_igual']))\""
+ },
+ "rotas_proprias_de_evolucao-de-portugal-desde-1981": {
+  "valor": "3",
+  "comando": "python3 -c \"import json;print(json.load(open('design/especime-v3/medicoes/ret1-2026-11-12/RETIRADA-dos-oito.json'))['evolucao-de-portugal-desde-1981']['rotas_proprias_total'])\""
+ },
+ "objeto_de_cada_um_dos_oito": {
+  "valor": "evora-quem-governou-a-camara-2009-2025=evora; evora-economia-e-dinheiro-publico-de-fora-da-camara=evora; agua-nao-faturada=nenhum; onde-esta-a-agua=nenhum; avaliacao-economica-regional-de-portugal-2026=nenhum; which-door-is-yours=nenhum; alentejo-algarve=alentejo; evolucao-de-portugal-desde-1981=nenhum",
+  "comando": "node -e \"import('./src/data/studies.mjs').then(m=>{for(const s of ['evora-quem-governou-a-camara-2009-2025','evora-economia-e-dinheiro-publico-de-fora-da-camara','agua-nao-faturada','onde-esta-a-agua','avaliacao-economica-regional-de-portugal-2026','which-door-is-yours','alentejo-algarve','evolucao-de-portugal-desde-1981'])console.log(s+'='+(m.WORKS.find(w=>w.slug===s).subject??'nenhum'))})\""
+ }
+}
