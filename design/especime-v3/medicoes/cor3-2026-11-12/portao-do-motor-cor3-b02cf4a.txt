@@ -1,0 +1,62 @@
+O portão inteiro do motor, corrido pelo lugar de direção numa árvore limpa na cabeça b02cf4a (12.11.2026, 22:07:55 a 22:30:05 UTC): código 1.
+
+As linhas vermelhas:
+GATE  publisher.publicadores_test FAIL
+GATE  publisher.hb1_test     FAIL
+GATE  livros declarados      FAIL (36 livro(s) em 2367 JSON sob content/, 15 exceção(ões) escrita(s), 0 ilegível(eis))
+GATE  penalizacoes-2026-pt-html FAIL (ratchet) — orphans 0/0, misattrib 2/2, undeclared 0/0
+GATE  seguranca-social-relatorio FAIL (ratchet) — orphans 17/17, misattrib 88/88, undeclared 1/0
+
+O fim do registo:
+GATE: FAIL — 6 problem(s); commit blocked
+ - publisher.publicadores_test FAILED:
+ - publisher.hb1_test FAILED:
+ - livro-razão sem entregável: content/27 Orcamento 2027 O que muda/Technical Source/livros-cor3/AN/ledger.json. Um estudo com livro-razão e sem entrada em gate_ba
+ - livro-razão sem entregável: content/27 Orcamento 2027 O que muda/Technical Source/livros-cor3/PM/ledger.json. Um estudo com livro-razão e sem entrada em gate_ba
+ - penalizacoes-2026-pt-html: undeclared_assertions: 1 > baseline 0 — new unledgered/unattributed content
+ - seguranca-social-relatorio: undeclared: 1 > baseline 0 — new unledgered/unattributed content
+
+  --------------------------------------------------------------------
+  publisher.publicadores_test FAILED:
+  Traceback (most recent call last):
+    File "<frozen runpy>", line 198, in _run_module_as_main
+    File "<frozen runpy>", line 88, in _run_code
+    File "<worktree do motor>/publisher/publicadores_test.py", line 31, in <module>
+      if __name__=='__main__':main()
+                              ~~~~^^
+    File "<worktree do motor>/publisher/publicadores_test.py", line 12, in main
+      row=candidates[0];assert publicador(row)==fix['nome'];count+=1
+                               ~~~~~~~~~~^^^^^
+    File "<worktree do motor>/publisher/publicadores.py", line 17, in publicador
+      if not d:raise ValueError('OG1-E publicador: documento sem entrada: '+row['id'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ValueError: OG1-E publicador: documento sem entrada: hab-imprensa-psp-ferido
+
+  --------------------------------------------------------------------
+  publisher.hb1_test FAILED:
+  Traceback (most recent call last):
+    File "<frozen runpy>", line 198, in _run_module_as_main
+    File "<frozen runpy>", line 88, in _run_code
+    File "<worktree do motor>/publisher/hb1_test.py", line 54, in <module>
+      if __name__=='__main__':main()
+                              ~~~~^^
+    File "<worktree do motor>/publisher/hb1_test.py", line 34, in main
+      certo=f'⟦lit:{lit}@hab-tespm140-a-pc-pt-2025⟧';assert certo in text,'literal preso ausente '+lang
+                                                            ^^^^^^^^^^^^^
+  AssertionError: literal preso ausente pt
+
+  --------------------------------------------------------------------
+  livro-razão sem entregável: content/27 Orcamento 2027 O que muda/Technical Source/livros-cor3/AN/ledger.json. Um estudo com livro-razão e sem entrada em gate_baselines.json não é medido por nada. Declare-o, ou escreva-o em ledgers_without_deliverable com a razão.
+
+  --------------------------------------------------------------------
+  livro-razão sem entregável: content/27 Orcamento 2027 O que muda/Technical Source/livros-cor3/PM/ledger.json. Um estudo com livro-razão e sem entrada em gate_baselines.json não é medido por nada. Declare-o, ou escreva-o em ledgers_without_deliverable com a razão.
+
+  --------------------------------------------------------------------
+  penalizacoes-2026-pt-html: undeclared_assertions: 1 > baseline 0 — new unledgered/unattributed content
+
+  --------------------------------------------------------------------
+  seguranca-social-relatorio: undeclared: 1 > baseline 0 — new unledgered/unattributed content
+
+An unrunnable or red gate is not evidence of a clean commit (rule 14).
+gate exit 1
+fim 2026-11-12T22:30:05Z
