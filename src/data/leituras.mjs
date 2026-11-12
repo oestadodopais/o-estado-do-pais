@@ -779,107 +779,57 @@ export const LEITURAS = {
   },
 
   "evora-2027-capital-europeia-da-cultura": {
-  "mostrarMedidasNoCartao": true,
-  "medidas": [
-    {
-      "claim": "evora-2027-recebido-do-protocolo-ate-2025",
-      "nome": {
-        "pt": [
-          "milhões de euros recebidos do protocolo até ao fim de ",
-          {
-            "ref": "2025"
-          },
-          ", pelas contas da associação"
-        ],
-        "en": [
-          "million euros received under the protocol up to the end of ",
-          {
-            "ref": "2025"
-          },
-          ", by the association's accounts"
-        ]
-      }
-    },
-    {
-      "claim": "evora-2027-transferido-no-relato-ao-painel-2025",
-      "nome": {
-        "pt": [
-          "milhões de euros dados como já transferidos no relato ao painel europeu, em junho de ",
-          {
-            "ref": "2025"
-          }
-        ],
-        "en": [
-          "million euros given as already transferred in the report to the European panel, in June ",
-          {
-            "ref": "2025"
-          }
-        ]
-      }
+    mostrarMedidasNoCartao: true,
+    medidas: [
+  {
+    "claim": "evora-2027-recebido-do-protocolo-ate-2025",
+    "nome": {
+      "pt": [
+        "milhões de euros recebidos do protocolo até ao fim de ",
+        {
+          "ref": "2025"
+        },
+        ", pelas contas da Associação Évora ", {"ref":"2027"}
+      ],
+      "en": [
+        "million euros received under the protocol up to the end of ",
+        {
+          "ref": "2025"
+        },
+        ", by the accounts of the Associação Évora ", {"ref":"2027"}
+      ]
     }
-  ],
-  "frase": {
-    "pt": [
-      "No dinheiro, as contas da Associação Évora ",
-      {
-        "ref": "2027"
-      },
-      " declaram ",
-      {
-        "claim": "evora-2027-recebido-do-protocolo-ate-2025"
-      },
-      " milhões recebidos do protocolo de ",
-      {
-        "ref": "2023"
-      },
-      " até ao fim de ",
-      {
-        "ref": "2025"
-      },
-      ". Em junho de ",
-      {
-        "ref": "2025"
-      },
-      ", o resumo que o painel de peritos europeus faz do relatório de progresso dava ",
-      {
-        "claim": "evora-2027-transferido-no-relato-ao-painel-2025"
-      },
-      " milhões como já transferidos."
-    ],
-    "en": [
-      "On the money, the accounts of the Associação Évora ",
-      {
-        "ref": "2027"
-      },
-      " declare ",
-      {
-        "claim": "evora-2027-recebido-do-protocolo-ate-2025"
-      },
-      " million received from the ",
-      {
-        "ref": "2023"
-      },
-      " protocol up to the end of ",
-      {
-        "ref": "2025"
-      },
-      ". In June ",
-      {
-        "ref": "2025"
-      },
-      ", the summary that the panel of European experts makes of the progress report gave ",
-      {
-        "claim": "evora-2027-transferido-no-relato-ao-painel-2025"
-      },
-      " million as already transferred."
-    ]
   },
-  "origem": {
-    "pt": "No dinheiro, as contas da Associação Évora 2027 declaram 9,7 milhões recebidos do protocolo de 2023 até ao fim de 2025. Em junho de 2025, o resumo que o painel de peritos europeus faz do relatório de progresso dava 34 milhões como já transferidos.",
-    "en": "On the money, the accounts of the Associação Évora 2027 declare 9,7 million received from the 2023 protocol up to the end of 2025. In June 2025, the summary that the panel of European experts makes of the progress report gave 34 million as already transferred.",
-    "onde": "studies-src/evora-2027-capital-europeia-da-cultura/pt.html:48 (C004) · studies-src/evora-2027-capital-europeia-da-cultura/en.html:48 (C004)"
+  {
+    "claim": "evora-2027-transferido-no-relato-ao-painel-2025",
+    "nome": {
+      "pt": [
+        "milhões de euros que o relatório de progresso de Évora ", {"ref":"2027"}, " dava como já transferidos em junho de ",
+        {
+          "ref": "2025"
+        },
+        ", pelo resumo do painel europeu"
+      ],
+      "en": [
+        "million euros that Évora ", {"ref":"2027"}, "'s progress report gave as already transferred in June ",
+        {
+          "ref": "2025"
+        },
+        ", by the European panel's summary"
+      ]
+    }
   }
-},
+],
+    frase: {
+      pt: ["A associação escreve que reabriu em ", { ref: '2025' }, " o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais."],
+      en: ["The association writes that in ", { ref: '2025' }, " it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies."],
+    },
+    origem: {
+      onde: "studies-src/evora-2027-capital-europeia-da-cultura/pt.html:49 (C005) · studies-src/evora-2027-capital-europeia-da-cultura/en.html:49 (C005)",
+      pt: "A associação escreve que reabriu em 2025 o diálogo com a Câmara para obter o dinheiro de que precisa para honrar os compromissos com entidades artísticas, culturais, educativas e sociais.",
+      en: "The association writes that in 2025 it reopened dialogue with the Câmara to obtain the money it needs to honour its commitments to artistic, cultural, educational and social bodies.",
+    },
+  },
   'penalizacoes-por-reforma-antecipada-2026': {
     medidas: [
       {
