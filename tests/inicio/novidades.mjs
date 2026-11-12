@@ -202,9 +202,13 @@ export function plantasDasNovidades(html,lang,dist,apenasFp3=false,semAtualizaca
   ];
   const resultado=(apenasFp3?plantas.slice(0,3):plantas).map(([nome,mudar,queixa],i)=>{const fp3=i<3,do4=/DO4|dossiê|contagem sem token/.test(nome),base=fp3?cenario:do4?dossie:null,r=parse(base?.html??html);mudar(r);const erros=conferirNovidades(r,lang,dist,base?.publicacoes??publicacoesEsperadas(lang));return {nome,lang,cenario:do4?'planta':fp3?(cenario.sintetica?'planta':'real'):'real',mordeu:erros.some(e=>queixa.test(e))};});
   if(apenasFp3)return resultado;
-  const todas=dossie.publicacoes, gerada=todas.find(p=>p.origem==='publicacao.gerada');assert(gerada);
+  const todas=dossie.publicacoes;
+  // A publicação de ensaio tem de estar fora da caixa real, mesmo quando a mais
+  // recente também usa uma data gerada, como a edição única de Évora 2027.
+  const presentes=new Set(parse(dossie.html).querySelectorAll('[data-novidade]').map(n=>n.getAttribute('data-novidade')));
+  const gerada=entradasEsperadas(lang,todas).find(p=>p.origem==='publicacao.gerada'&&!presentes.has(p.id));assert(gerada);
   const fonte=todas.map(p=>p.id===gerada.id?{...p,data:todas[1].data}:p).sort((a,b)=>b.data.localeCompare(a.data)||Number(b.id.startsWith('estudo:'))-Number(a.id.startsWith('estudo:'))||a.id.localeCompare(b.id));
-  assert(fonte.slice(0,5).some(p=>p.id===gerada.id));
+  assert(entradasEsperadas(lang,fonte).slice(0,5).some(p=>p.id===gerada.id));
   const erros=conferirNovidades(parse(dossie.html),lang,dist,fonte);
   resultado.push({nome:'estudo com data gerada recente ausente',lang,mordeu:erros.some(e=>/seleção/.test(e))});
   return resultado;
