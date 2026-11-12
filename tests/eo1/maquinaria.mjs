@@ -10,7 +10,7 @@ import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
 import {SEM_AREA} from '../../src/data/areas.mjs';
 import {WORKS,PUBLISHED_WORKS} from '../../src/data/studies.mjs';
 import {sinopseEsperada,conferirSinopse} from '../../scripts/voz-pais.mjs';
-import {conferirAberturaB1} from '../../scripts/abertura-b1-do-portao.mjs';
+import {conferirAberturaB1,temAberturaJulgada} from '../../scripts/abertura-b1-do-portao.mjs';
 import {conferirPortasDeEntradaEo1} from '../../scripts/portas-eo1-do-portao.mjs';
 import {literalInteiroEo1, retirarAnosIsoladosEo1} from '../../scripts/literais-eo1-do-portao.mjs';
 const slug='orcamento-2027-o-que-muda-e-para-quem';
@@ -90,12 +90,13 @@ if(!fixtures) for(const work of PUBLISHED_WORKS) for(const edition of work.editi
  const file=`registos/${work.slug}/${lang}.record.json`;if(!fs.existsSync(file))continue;
  const record=JSON.parse(fs.readFileSync(file,'utf8'));
  const primeiro=record.blocks.find(b=>b.kind==='heading'&&Number(b.level)===2);
- if(primeiro?.text!==(lang==='pt'?'Em resumo':'In brief'))continue;
+ const julgado=temAberturaJulgada(work.slug,lang),chave=`${work.slug}/${lang}`;
+ if(!julgado&&primeiro?.text!==(lang==='pt'?'Em resumo':'In brief'))continue;
  const rota=lang==='pt'?`estudos/${work.slug}`:`en/studies/${work.slug}`;
  const root=parse(fs.readFileSync(`${dist}/${rota}/index.html`,'utf8'));
- assert.deepEqual(conferirAberturaB1(root,record,rota,lang),[],rota);
- const planta=parse(root.outerHTML);planta.querySelector('.estudo-leitura h2').set_content('Título trocado');
- assert(conferirAberturaB1(planta,record,rota,lang).length,'B1 não recusa abertura de '+rota);plantas++;
+ assert.deepEqual(conferirAberturaB1(root,record,chave,lang),[],rota);
+ const planta=parse(root.outerHTML);planta.querySelector(julgado?'.estudo-leitura h2, .estudo-texto h2':'.estudo-leitura h2').set_content('Título trocado');
+ assert(conferirAberturaB1(planta,record,chave,lang).length,'B1 não recusa abertura de '+rota);plantas++;
  aberturasConferidas.add(`${work.slug}/${lang}`);
  console.log(`B1 ${rota}: primeiro H2 conferido e planta recusada.`);
 }

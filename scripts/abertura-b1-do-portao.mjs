@@ -1,4 +1,7 @@
 /** B1: o primeiro H2 abre a leitura, mesmo depois de uma nota editorial. */
+import {lerTextosJulgados} from './textos-julgados.mjs';
+const julgados=new Set(lerTextosJulgados().map(d=>`${d.estudo}/${d.lingua}`));
+export const temAberturaJulgada = (estudo, lang) => julgados.has(`${estudo}/${lang}`);
 export function conferirAberturaB1(root, registo, chave, lang) {
   const erros = [];
   const err = mensagem => erros.push(mensagem);
@@ -7,6 +10,11 @@ export function conferirAberturaB1(root, registo, chave, lang) {
       ? ['Em resumo', 'O que este projeto conclui', 'O que podia funcionar melhor']
       : ['In brief', 'What this project concludes', 'What could work better'];
     const principais = registo.blocks.filter(b => b.kind === 'heading' && Number(b.level) === 2);
+    if(julgados.has(chave)){
+      const primeiro=root.querySelector('.estudo-leitura h2, .estudo-texto h2');
+      if(!primeiro || !principais[0] || textoTranscrito(primeiro)!==principais[0].text)
+        err(`B1 leitura ${chave}: primeiro H2 diferente do registo julgado.`);
+    }
     const leituras = root.querySelectorAll('.estudo-leitura');
     const textos = root.querySelectorAll('.estudo-texto');
     if (textos.length !== 1) err(`B1 leitura ${chave}: deve existir um corpo de texto.`);
