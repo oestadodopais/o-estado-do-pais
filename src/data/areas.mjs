@@ -712,6 +712,12 @@ export const AREAS = [
  */
 export const SEM_AREA = [
   {
+    estudos: ['evora-2027-capital-europeia-da-cultura'],
+    id: /^evora-2027-(?:transferido-no-relato-ao-painel|contribuicao-inicial-do-estado|pago-pela-cultura|pago-pelo-turismo|recebido-do-protocolo-ate)-202[45]$/,
+    assunto: 'Recebimentos e relato financeiro de Évora 2027',
+    motivo: 'As linhas distinguem os recebimentos declarados pela associação e o relato ao painel. Não medem a despesa total de um ministério.',
+  },
+  {
     estudos: ['onde-esta-a-agua', 'agua-nao-faturada'],
     id: /^(?:coragua-alqueva-alta-pressao-2026|coragua-alqueva-baixa-pressao-2026|coragua-dgadr-eficiencia-2024|coragua-ersar-encargo-mensal-2024|coragua-ersar-encargo-metro-cubico-2024|coragua-gulbenkian-inquerito-ano|coragua-gulbenkian-sem-contador|coragua-gulbenkian-universo-hectares|coragua-historico-eficiencia-83|coragua-historico-eficiencia-85|coragua-historico-eficiencia-95|coragua-historico-inquerito-2021|coragua-historico-racio-maximo|coragua-historico-racio-minimo|coragua-racio-maximo-2026|coragua-racio-minimo-2026|coragua-tc-auditoria-ano)$/,
     assunto: 'Origens documentais, cálculos e valores anteriores do registo das correções da água',

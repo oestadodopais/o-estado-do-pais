@@ -1,3 +1,4 @@
+import {FAMILIAS_EVL} from './familias-evl.mjs';
 import {FAMILIAS_OG1} from './nomes-og1.mjs';
 /**
  * O QUE É CADA NÚMERO · as frases das famílias (bloco R4, 05.10.2026, o ponto 2 do brief
@@ -14,6 +15,7 @@ import {FAMILIAS_OG1} from './nomes-og1.mjs';
  * da medida em `src/data/concelhos.mjs`.
  */
 export const FAMILIAS_DAS_LINHAS = {
+  ...FAMILIAS_EVL,
   ...FAMILIAS_OG1,
   "nato-cimeira-haia-2025": {
   "nome": {

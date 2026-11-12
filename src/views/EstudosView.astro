@@ -1,4 +1,5 @@
 ---
+import MedidasDoEstudo from '../components/MedidasDoEstudo.astro';
 import { t } from '../i18n/strings.mjs';
 import Base from '../layouts/Base.astro';
 import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
@@ -40,7 +41,8 @@ for (const e of trabalhos) {
         {/* A marca do verbatim só vale quando o resumo é a descrição, como na
             primeira página e na página de um lugar: com leitura escrita, o que
             se rende são as duas primeiras frases dela (`fichaDoEstudo`). */}
-        <p class="arquivo-desc estudo-resumo" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}>
+        <MedidasDoEstudo medidas={e.medidas} lang={lang} />
+<p class="arquivo-desc estudo-resumo" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}>
           <Frase partes={e.resumo} lang={lang} selos={true} />
         </p>
       <AvisoDaRevisao ids={linhasDosPedacos(e.resumo)} lang={lang} />

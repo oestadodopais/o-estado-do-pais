@@ -52590,6 +52590,136 @@
           ]
         }
       ]
+    },
+    {
+      "chaves": [
+        "evora-2027-transferido-no-relato-ao-painel"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025",
+          "en": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025",
+          "partes": [
+            {
+              "pt": "milhões de euros dados como já transferidos para a associação, segundo o resumo que o painel europeu faz do relatório de progresso de Évora 2027, em junho de 2025",
+              "en": "million euros given as already transferred to the association, according to the European panel's summary of Évora 2027's progress report, in June 2025",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "do Alentejo Central. €34 million has been transferred to the Association already,"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "evora-2027-contribuicao-inicial-do-estado"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida",
+          "en": "euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received",
+          "partes": [
+            {
+              "pt": "euros de contribuição inicial do Estado para o património da associação, a pagar em 2024, que as contas de 2025 dão como recebida",
+              "en": "euros of initial State contribution to the association's assets, payable in 2024, which the 2025 accounts treat as received",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "no valor de € 2.000.000 a pagar em 2024”. Inicialmente, esta contribuição foi reconhecida como rendimento diferido, tendo sido imputado ao resultado do exercício de 2024 o montante de € 76.104,78, com o objetivo de fazer face aos gastos incorridos nesse período. Contudo, tendo em consideração a natureza da referida contribuição, a qual se destina à constituição do património social da Associação, concluiu-se que a mesma deve ser reconhecida diretamente nos fundos patrimoniais. Neste contexto, procedeu-se à reclassificação do montante recebido"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "evora-2027-pago-pela-cultura"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
+          "en": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts",
+          "partes": [
+            {
+              "pt": "euros pagos em 2025 pelo gabinete do Ministério da Cultura, segundo as contas da associação",
+              "en": "euros paid in 2025 by the Ministry of Culture's office, according to the association's accounts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "contratualizados. Pago 3.750.000€ durante o ano de 2025"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "evora-2027-pago-pelo-turismo"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação",
+          "en": "euros paid in 2025 by Turismo de Portugal, according to the association's accounts",
+          "partes": [
+            {
+              "pt": "euros pagos em 2025 pelo Turismo de Portugal, segundo as contas da associação",
+              "en": "euros paid in 2025 by Turismo de Portugal, according to the association's accounts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "contratualizados. Pago 3.920.000€ durante o ano de 2025"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "evora-2027-recebido-do-protocolo-ate"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "milhões de euros que as contas da associação declaram recebidos do protocolo de 2023 até ao fim de 2025",
+          "en": "million euros that the association's accounts declare received under the 2023 protocol up to the end of 2025",
+          "partes": [
+            {
+              "pt": "milhões de euros que as contas da associação declaram recebidos do protocolo de 2023 até ao fim de 2025",
+              "en": "million euros that the association's accounts declare received under the 2023 protocol up to the end of 2025",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram. Fora da conta ficam 1 500 000 euros pagos em 2025 para a Linha do Vagar, que não são do protocolo."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "series": [

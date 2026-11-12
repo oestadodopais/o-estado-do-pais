@@ -72,7 +72,7 @@ const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
 /** @param {any} l @param {string} c */
 const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : l?.[c]);
 /** O texto de uma frase de pedaços (as cadeias e os termos de outra língua). @param {unknown} x */
-export const textoDaFrase = (x) => (Array.isArray(x) ? x.map((p) => (typeof p === 'string' ? p : p?.termo ?? '')).join('') : typeof x === 'string' ? x : '');
+export const textoDaFrase = (x) => (Array.isArray(x) ? x.map((p) => (typeof p === 'string' ? p : p?.termo ?? p?.ref ?? '')).join('') : typeof x === 'string' ? x : '');
 const curto = (/** @type {string} */ s) => (s.length > 60 ? `${s.slice(0, 57)}…` : s);
 /** Um valor do livro-razão como número, pela conta desta célula. @param {unknown} v */
 const numeroAqui = (v) => { const t = String(v ?? '').replace(/[\s\u00a0\u202f\u2009]/g, '').replace(/\u2212/g, '-').replace(',', '.'); return /^-?\d+(\.\d+)?$/.test(t) ? Number(t) : null; };
@@ -231,6 +231,7 @@ export function conferirAuditoriaDasFamilias({
   /* NENHUM ALGARISMO NAS FRASES DAS FAMÍLIAS: a declaração inteira, e as notas das medidas dos concelhos. */
   const semAlgarismo = (/** @type {unknown} */ x, /** @type {string} */ onde, eo1 = false) => {
     for (const p of Array.isArray(x) ? x : [x]) {
+      if (p && typeof p==='object' && Object.keys(p).join(',')==='ref' && /^[12]\d{3}$/.test(p.ref)) continue;
       const t = typeof p === 'string' ? p : /** @type {any} */ (p)?.termo;
       if (typeof t !== 'string') { falha(`${onde}: um pedaço que não é texto nem termo de outra língua`); continue; }
       if (eo1 ? temAlgarismoLivreEo1(t, onde.split(' · ')[0], onde.endsWith(' · en') ? 'en' : 'pt') : /\d/.test(t)) falha(`${onde}: a palavra fixa «${curto(t)}» traz um algarismo`);
@@ -629,8 +630,9 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
           if (NOMES_EO1[id] && origemDaDefinicaoConfere(p,id,lang)) {marcado=true;tokenDoComplemento=true;break;}
           if ('data-claim' in a || 'data-nonledger' in a || 'data-linha-campo' in a || 'data-verbatim' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); tokenDoComplemento=(ctx.familias[f.chave]?.complemento?.[lang]??[]).some(t=>typeof t==='object'&&((t.apoio&&`origem-${t.apoio.origem}-${t.apoio.campo}`===a['data-verbatim'])||(t.claim&&t.claim===a['data-claim'])||(t.periodo&&t.periodo===a['data-de-linha']&&a['data-de-campo']==='reference_date')||(t.excerto&&t.excerto===a['data-linha-claim']&&a['data-linha-campo']==='excerpt'))); break; }
         }
+        const anoDeclarado = n.parentNode?.matches?.('[data-nonledger="data-de-referencia"]') && (ctx.familias[f.chave]?.frase?.[lang]??[]).some(p=>p?.ref===n.text);
         const dataDoInstantaneo = ctx.familias[f.chave]?.instantaneo && n.parentNode?.matches?.('[data-nonledger="data-da-linha"][data-de-campo="document.computed_over.files.0.snapshot_date"]') && n.parentNode.getAttribute('data-de-linha') === id;
-        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo && !tokenComparado && !tokenDoComplemento)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
+        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo && !tokenComparado && !tokenDoComplemento && !anoDeclarado)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
       }
       return;
     }

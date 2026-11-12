@@ -1198,6 +1198,22 @@
           "origem": "Publicador e domínio da cópia citada no livro da água do motor, com SHA256 conferido em 08.11.2026."
         }
       ]
+    },
+    {
+      "nome": "Comissão Europeia, pelo painel europeu",
+      "aliases": [],
+      "dominios": [
+        "culture.ec.europa.eu"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "evora-2027-transferido-no-relato-ao-painel-2025",
+          "documento": "Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert Panel",
+          "endereco": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf",
+          "origem": "Relatório de monitorização do painel de peritos alojado pela Comissão Europeia; identidade do documento e página provadas na travessia EVL."
+        }
+      ]
     }
   ],
   "documentos": [

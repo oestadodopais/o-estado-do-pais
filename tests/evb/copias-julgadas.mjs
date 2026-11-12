@@ -12,12 +12,13 @@ for(const lingua of ['pt','en'])for(const tipo of ['home','estudos','indice','mu
  const rota=lingua==='pt'?{home:'/',estudos:'/estudos',indice:'/indice',municipio:'/municipios/evora'}[tipo]:{home:'/en',estudos:'/en/studies',indice:'/en/index',municipio:'/en/municipalities/evora'}[tipo];
  const root=parse(fs.readFileSync(`dist${rota==='/'?'':rota}/index.html`,'utf8'));
  const el=root.querySelector(tipo==='home'?`[data-novidade="estudo:${slug}"]`:`[data-estudo="${slug}"]`);
+ if(tipo==='home'&&!el)continue; // A lista de novidades pode estar vazia; o título do cartão é conferido abaixo.
  const conferir=(html,ds=declaracoes)=>{
   const p={rota,lingua,tipo,estudo:'colecao-teste',blocos:blocosDaPagina(`<main>${html}</main>`)},fsx=inventario([p]);
   const r=conferirTextosJulgados(ds,[p],fsx);
-  return {r,fsx,alvos:fsx.filter(f=>f.ocorrencias.some(o=>p.blocos[o.bloco].copiaJulgada))};
+  return {r,fsx,alvos:fsx.filter(f=>f.ocorrencias.some(o=>p.blocos[o.bloco].copiaJulgada && p.blocos[o.bloco].copiaJulgada.tipo!=='titulo'))};
  };
- const controlo=conferir(el.outerHTML);assert.equal(controlo.alvos.length,1);
+ const controlo=conferir(el.outerHTML);assert.equal(controlo.alvos.length,1,`${rota}: pergunta ou novidade`);
  assert(controlo.r.textos.has(chave(controlo.alvos[0])));controlos++;
  for(const mudar of [
   r=>r.querySelector('a').setAttribute('href','/outro'),
@@ -93,7 +94,7 @@ for(const lingua of ['pt','en']){
   r=>r.querySelector('a').set_content(r.querySelector('a').textContent.replace('2027','2028')),
   r=>r.querySelector('a').insertAdjacentHTML('beforeend',' Texto alheio.'),
   r=>r.querySelector('a').setAttribute('data-titulo-publicado',lingua==='pt'?'en':'pt'),
-  r=>r.querySelector('[data-estudo-novo]').set_content('Outro marcador'),
+  r=>{const m=r.querySelector('[data-estudo-novo]');if(m)m.set_content('Outro marcador');else r.querySelector('.estudo-item-titulo').insertAdjacentHTML('beforeend','<span data-estudo-novo>Outro marcador</span>');},
  ]){
   const copia=parse(el.outerHTML);mudar(copia);assert(!coberto(copia.outerHTML));plantasTitulo++;
  }

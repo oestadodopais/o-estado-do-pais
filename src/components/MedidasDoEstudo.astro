@@ -1,0 +1,11 @@
+---
+import Frase from './Frase.astro';
+const {medidas=[],lang='pt'}=Astro.props;
+---
+{medidas.length>0 && <div class="estudo-medidas" data-medidas-estudo>
+  {medidas.map(m=><p class="estudo-medida" data-medida-estudo={m.claim}><Frase partes={[{claim:m.claim},' '+m.nome[lang][0],...m.nome[lang].slice(1)]} lang={lang} selos /></p>)}
+</div>}
+<style>
+  .estudo-medidas { display: grid; gap: .5rem; margin-block: .75rem; }
+  .estudo-medida { margin: 0; font-size: .9rem; line-height: 1.45; }
+</style>

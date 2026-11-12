@@ -6,5 +6,6 @@ const {id, texto, lang='pt'}=Astro.props;
 const data=getClaim(id).document?.computed_over?.files?.[0]?.snapshot_date;
 const formatada=data?.split('-').reverse().join('.');
 const comData=formatada && texto.endsWith(formatada);
+const anosEVL=id.startsWith('evora-2027-') ? texto.split(/([12]\d{3})/) : null;
 ---
-{comData ? <>{texto.slice(0,-formatada.length)}<DataDaLinha id={id} campo="document.computed_over.files.0.snapshot_date" valor={data} lang={lang} /></> : texto}
+{comData ? <>{texto.slice(0,-formatada.length)}<DataDaLinha id={id} campo="document.computed_over.files.0.snapshot_date" valor={data} lang={lang} /></> : anosEVL ? anosEVL.map(p=>/^[12]\d{3}$/.test(p)?<span data-nonledger="data-de-referencia">{p}</span>:p) : texto}

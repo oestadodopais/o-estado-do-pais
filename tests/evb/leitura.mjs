@@ -22,3 +22,14 @@ for(const lang of ['pt','en']){
  console.log(`EVL leitura ${lang}: C004 na linha ${n}; duas medidas e primeiras frases inteiras conferidas.`);
 }
 console.log(`EVL: ${plantas} plantas de palavra, número, ano e frase incompleta recusadas.`);
+// Os anos da definição têm marca própria; a auditoria continua a prender o ano exato.
+const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
+const {errosDasFamilias}=await import('../../src/lib/o-que-e-o-numero.mjs');
+const {conferirAuditoriaDasFamilias}=await import('../cartao/familias.mjs');
+const chave='evora-2027-pago-pela-cultura';
+const alterada=structuredClone(FAMILIAS_DAS_LINHAS);
+alterada[chave].frase.pt.find(p=>p.ref).ref='2024';
+assert(conferirAuditoriaDasFamilias({familias:alterada}).erros.length);
+alterada[chave].frase.pt.find(p=>p.ref).ref='9,7';
+assert(errosDasFamilias(alterada).length);
+console.log('EVL definições: ano trocado e medição disfarçada de ano recusados.');

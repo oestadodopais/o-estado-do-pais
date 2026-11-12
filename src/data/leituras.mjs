@@ -779,6 +779,7 @@ export const LEITURAS = {
   },
 
   "evora-2027-capital-europeia-da-cultura": {
+  "mostrarMedidasNoCartao": true,
   "medidas": [
     {
       "claim": "evora-2027-recebido-do-protocolo-ate-2025",

@@ -107,7 +107,7 @@ export function conferirTextosJulgados(declaracoes, paginas, frases, {raiz='.', 
       const prova=copias.get(`${c.estudo}/${p.lingua}`);
       if(!prova||c.porta!==routePath('estudo',p.lingua,{slug:c.estudo}))return false;
       if(c.tipo==='pergunta')return ['estudos','indice','municipio'].includes(p.tipo)&&c.texto===prova.pergunta;
-      if(c.tipo==='titulo')return p.tipo==='home'&&c.lingua===p.lingua&&c.nome===prova.nome&&c.novo===(p.lingua==='pt'?'novo':'new')&&c.texto===prova.nome+' '+c.novo;
+      if(c.tipo==='titulo')return p.tipo==='home'&&c.lingua===p.lingua&&c.nome===prova.nome&&(c.novo===null||c.novo===(p.lingua==='pt'?'novo':'new'))&&c.texto===prova.nome+(c.novo?' '+c.novo:'');
       const dia=prova.data?.split('-').reverse().join('.'),rotulo=p.lingua==='pt'?'estudo':'study';
       return c.tipo==='novidade'&&p.tipo==='home'&&c.lingua===p.lingua&&c.data===prova.data&&c.dia===dia&&c.rotulo===rotulo&&c.nome===prova.nome&&c.texto===dia+rotulo+prova.nome;
     }))textos.add(chave(f));

@@ -18,6 +18,7 @@ export function fichaDoEstudo(work, lang) {
        declará-las como a abertura transcrita do documento era dizer que o
        portão compara duas coisas diferentes. */
     temLeitura: Boolean(leitura),
+    medidas: leitura && 'mostrarMedidasNoCartao' in leitura && leitura.mostrarMedidasNoCartao ? leitura.medidas : [],
     /* A PERGUNTA A QUE O ESTUDO RESPONDE (bloco E1, 01.10.2026): a da língua da
        edição que a ficha rende, transcrita da leitura de abertura do documento, com
        a chave do `verbatim.mjs` que o portão confere. Um estudo que não a declara

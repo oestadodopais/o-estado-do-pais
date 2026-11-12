@@ -278,6 +278,7 @@ export function errosDasFamilias(familias = FAMILIAS_DAS_LINHAS, doConcelho = FA
       return;
     }
     const o = /** @type {Record<string, any>} */ (parte);
+    if (o && Object.keys(o).join(',') === 'ref' && /^[12]\d{3}$/.test(o.ref)) return;
     if (o && typeof o === 'object' && typeof o.termo === 'string' && typeof o.lingua === 'string') {
       if (eo1 ? temAlgarismoLivreEo1(o.termo, onde.split(' · ')[0], onde.includes(' · en') ? 'en' : 'pt') : /\d/.test(o.termo)) erros.push(`${onde}: o termo «${o.termo}» traz um algarismo`);
       return;
