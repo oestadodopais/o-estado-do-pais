@@ -369,7 +369,7 @@ export function mudancasDoIndice(lang) {
 /** As duas portas vêm dos documentos da edição, nunca de endereços escritos à mão.
  * @param {'pt'|'en'} lang */
 function correcoesDosTextos(lang) {
-  return CORRECOES_TEXTO.map(e => {
+  return CORRECOES_TEXTO.filter(e => !WORKS.some(w => w.slug === e.slug && w.estado === 'retirado')).map(e => {
     const work = WORKS.find(w => w.slug === e.slug);
     const edicao = work?.editions.find(d => d.lang === lang) ?? (work?.editions.length === 1 ? work.editions[0] : undefined);
     const portas = portasDaCorrecao(e.slug, lang, e.data);
