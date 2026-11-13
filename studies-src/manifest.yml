@@ -697,13 +697,13 @@ edicoes:
     lang: en
     title: Housing in Portugal and in Europe
     origin: researchhub
-    origin_ref: content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 480c9a2560e790d849eef53f5c16a6d7192cb06c
+    origin_ref: content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 576067616a58edabdfd47eb5d92ea8f6c351a060
     raw_file: _raw/a-casa-em-portugal-e-na-europa.en.html
-    fetched_utc: '2026-11-13T06:06:36Z'
-    bytes_raw: 34825
-    bytes_normalized: 34825
-    sha256_raw: e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc
-    sha256_normalized: e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc
+    fetched_utc: '2026-11-13T09:49:27Z'
+    bytes_raw: 34832
+    bytes_normalized: 34832
+    sha256_raw: 97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d
+    sha256_normalized: 97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d
     edicoes:
     - data: '2026-10-29'
       sha256: b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74
@@ -712,7 +712,7 @@ edicoes:
       sha256: a9dc7ec6d6fd308f118b8fec5b544a4335fa895e7c5c3f401c56b87e9c3bce97
       file: _edicoes/a-casa-em-portugal-e-na-europa.en.2026-11-03.html
     - data: '2026-11-13'
-      sha256: e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc
+      sha256: 97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d
       file: a-casa-em-portugal-e-na-europa/en.html
     primeira_edicao:
       file: _edicoes/a-casa-em-portugal-e-na-europa.en.2026-10-29.html

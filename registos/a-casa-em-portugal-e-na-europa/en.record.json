@@ -4351,12 +4351,12 @@
      "value": "-209"
     },
     {
-     "end": 603,
+     "end": 610,
      "printed": "−303",
      "row": "der-hab-fiscal-2027",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 599,
+     "start": 606,
      "value": "-303"
     }
    ],
@@ -4414,18 +4414,18 @@
      "tipo": "literal"
     },
     {
-     "fim": 603,
+     "fim": 610,
      "id": "der-hab-fiscal-2027",
-     "inicio": 599,
+     "inicio": 606,
      "livro": "HB",
      "sha256_linha": "6ef000f8b16c77dc7449f1ca7638644c378b7c5f79400e4bc72b2a0d7e27d27d",
      "texto": "−303",
      "tipo": "valor"
     },
     {
-     "fim": 873,
+     "fim": 880,
      "id": "hab-governo-construir",
-     "inicio": 692,
+     "inicio": 699,
      "livro": "HB",
      "sha256_linha": "8692440237260316a0e28fae7ceb3892ec7f9ef18528a8c15c3aa6ce2bf0494b",
      "texto": "Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.",
@@ -4440,7 +4440,7 @@
     "der-hab-fiscal-2027",
     "hab-governo-construir"
    ],
-   "text": "The two tax measures with an impact in 2027 come from the decree-law of May 2026: «Habitação - redução IVA construção de 23% para 6% (i)», −94 million euros of impact on revenue in 2027, and «Habitação - redução IRS rendas moderadas de 25% para 10% (i)», −209 million (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still produce additional effects in 2027); −303 million together. The Council of Ministers announced the first thus in September 2025: «Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.»"
+   "text": "The two tax measures with an impact in 2027 come from the decree-law of May 2026: «Habitação - redução IVA construção de 23% para 6% (i)», −94 million euros of impact on revenue in 2027, and «Habitação - redução IRS rendas moderadas de 25% para 10% (i)», −209 million (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still producing additional effects in that year); −303 million together. The Council of Ministers announced the first thus in September 2025: «Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.»"
   },
   {
    "figures": [],

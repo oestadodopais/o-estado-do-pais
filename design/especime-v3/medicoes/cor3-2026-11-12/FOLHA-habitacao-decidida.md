@@ -728,10 +728,10 @@ Atual:
 > (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged; the report does not define the word beyond that note)
 
 Novo:
-> (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still produce additional effects in 2027)
+> (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still producing additional effects in that year)
 
 No gabarito:
-> (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «⟦lit:embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027@hab-oe-invariantes-definicao⟧», though decided in previous years, still produce additional effects in 2027)
+> (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «⟦lit:embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027@hab-oe-invariantes-definicao⟧», though decided in previous years, still producing additional effects in that year)
 
 **Instalação:** Substitui-se só o parêntese; o ⟦HB:hab-oe-legenda-invariante|cita⟧ que se lhe segue fica, e junta-se ⟦HB:hab-oe-invariantes-definicao|cita⟧. O literal contém «2027»: confirmar que o compositor o aceita dentro de um literal preso (o guia do motor recusa algarismos soltos).
 

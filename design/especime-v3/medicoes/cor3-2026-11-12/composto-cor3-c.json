@@ -1,0 +1,1682 @@
+{
+  "codigo": 0,
+  "folhas": {
+    "orcamento": {
+      "sha256": "d4356ed5e4ed00084ca5935915738f87e4db26e92e6b5daec3638cd72ba92752",
+      "correcoes": 12
+    },
+    "reforma": {
+      "sha256": "cb8cf815ad7494fa3d2a304f899356bdf19d32ff9ae327f81e646c96b9342689",
+      "correcoes": 9
+    },
+    "habitacao": {
+      "sha256": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
+      "correcoes": 20
+    }
+  },
+  "documentos": {
+    "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html": "896402a42e77dc24c7b5d03ff041a4bf90f6128ac20ae0e28cefd22043c4e71b",
+    "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html": "7acc219df4696a93d751ce12b1253d18a775728cdf2e05131de347f34b49db76",
+    "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html": "064f199e12a84a9a03ee55fdcdfa061cb78f2e713bd589adfe4d4c86921de241",
+    "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html": "fdcbbc7024c25d8429a11e016a1f49d5290d2ca6d9f73fdb6c419e00c45067c7",
+    "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
+  },
+  "trechos": 160,
+  "conformes": 160,
+  "nao_conformes": 0,
+  "correcoes_fora_do_ambito": [
+    {
+      "estudo": "habitacao",
+      "correcao": "C20",
+      "motivo": "Cartão do sítio"
+    }
+  ],
+  "resultados": [
+    {
+      "estudo": "orcamento",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C01",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C02",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C02",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C03",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C03",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C04",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C05",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C05",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C06",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C06",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C07",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C08",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C08",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C09",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C09",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C10",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C10",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C11",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C11",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C12",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C12",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 2,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 3,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 4,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 5,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C02",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C03",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 2,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 3,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 4,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C05",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C06",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C08",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C09",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C01",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C02",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C02",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C03",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C03",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C04",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C05",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C05",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C06",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": null,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C06",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": null,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 2,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "en",
+      "trecho": 2,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C08",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C08",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C09",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C09",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C10",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C10",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C11",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C11",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C12",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C12",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C13",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C13",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C14",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C14",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C15",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C15",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C16",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C16",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C17",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C17",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C18",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C18",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C19",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C19",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "motor",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C01",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C02",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C02",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C03",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C03",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C04",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C05",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C05",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C06",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C06",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C07",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C08",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C08",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C09",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C09",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C10",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C10",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C11",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C11",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C12",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "orcamento",
+      "correcao": "C12",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 2,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 3,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 4,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 5,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C02",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C03",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 2,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 3,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 4,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C05",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C06",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C08",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "reforma",
+      "correcao": "C09",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C01",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C01",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C02",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C02",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C03",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C03",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C04",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C04",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C05",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C05",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C06",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": null,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C06",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": null,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "pt",
+      "trecho": 2,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C07",
+      "lingua": "en",
+      "trecho": 2,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C08",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C08",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C09",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C09",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C10",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C10",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C11",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C11",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C12",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C12",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C13",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C13",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C14",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C14",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C15",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C15",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C16",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C16",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C17",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C17",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C18",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C18",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C19",
+      "lingua": "pt",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    },
+    {
+      "estudo": "habitacao",
+      "correcao": "C19",
+      "lingua": "en",
+      "trecho": 1,
+      "superficie": "sitio",
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 1,
+      "conforme": true
+    }
+  ],
+  "plantas": [
+    {
+      "superficie": "motor",
+      "planta": "algarismo_trocado",
+      "estudo": "orcamento",
+      "correcao": "C01",
+      "lingua": "pt",
+      "codigo": 1,
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 0,
+      "conforme": false
+    },
+    {
+      "superficie": "motor",
+      "planta": "antes_reposto",
+      "estudo": "orcamento",
+      "correcao": "C09",
+      "lingua": "pt",
+      "codigo": 1,
+      "antes_ocorrencias": 1,
+      "depois_ocorrencias": 1,
+      "conforme": false
+    },
+    {
+      "superficie": "sitio",
+      "planta": "algarismo_trocado",
+      "estudo": "orcamento",
+      "correcao": "C01",
+      "lingua": "pt",
+      "codigo": 1,
+      "antes_ocorrencias": 0,
+      "depois_ocorrencias": 0,
+      "conforme": false
+    },
+    {
+      "superficie": "sitio",
+      "planta": "antes_reposto",
+      "estudo": "orcamento",
+      "correcao": "C09",
+      "lingua": "pt",
+      "codigo": 1,
+      "antes_ocorrencias": 1,
+      "depois_ocorrencias": 1,
+      "conforme": false
+    }
+  ]
+}

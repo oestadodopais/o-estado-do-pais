@@ -1,0 +1,20 @@
+[90m        5 documento(s) lidos · 86 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
+check:conflitos · planta: dois marcadores apanhados, o título Markdown ignorado
+check:conflitos · 7067 ficheiros · 0 marcadores
+PLANTA pt: partido trocado de grupo, vermelho 1, verde 0
+PLANTA pt: partido omitido, vermelho 1, verde 0
+PLANTA pt: expansão ausente, vermelho 1, verde 0
+PLANTA pt: expansão repetida, vermelho 1, verde 0
+PLANTA en: BE depois de national leadership, vermelho 1, verde 0
+PLANTA en: partido trocado de grupo, vermelho 1, verde 0
+PLANTA en: partido omitido, vermelho 1, verde 0
+PLANTA en: expansão ausente, vermelho 1, verde 0
+PLANTA en: expansão repetida, vermelho 1, verde 0
+HB1: 8 votações, 41 expansões de siglas, 11 plantas; origem conferida.
+{"incorporaveis":8376,"proveniencia_incompleta":12,"erros":0}
+PLANTA portas iguais de Portugal e da União: recusada
+PLANTA genérico na habitação: recusada
+PLANTA genérico numa linha com série: recusada
+PLANTA porta vazia: recusada
+{"edicoes":21,"blocos":148,"portas":1292,"rotulos_do_catalogo":0,"geografias":0,"portas_de_serie_pelo_nome":16,"portas_genericas":2,"erros":0}

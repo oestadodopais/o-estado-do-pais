@@ -1104,8 +1104,8 @@
     "correcao": "C17",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
     "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
-    "depois": "(the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still produce additional effects in 2027)",
-    "literal": "(the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still produce additional effects in 2027)",
+    "depois": "(the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still producing additional effects in that year)",
+    "literal": "(the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still producing additional effects in that year)",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
     "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
   },
