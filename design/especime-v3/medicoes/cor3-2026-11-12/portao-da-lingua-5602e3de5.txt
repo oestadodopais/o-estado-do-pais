@@ -1,0 +1,49 @@
+
+  PORTÃO DA LÍNGUA · 119 problema(s)
+
+    · a unidade «Price-to-income ratio, index 2025=100» (7 linha(s)) não tem entrada em src/i18n/unidades.mjs.
+      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já escreve para a mesma coisa,
+      ou entra em UNIDADES_EM_PORTUGUES com a razão pela qual fica em português. Uma unidade nova não se traduz sozinha.
+    · o título «Guia Prático Pensão de Velhice» (3 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+    · o título «Manifestantes levam protesto até à porta da Câmara do Porto» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+    · a declaração de língua nomeia o título «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União » (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, European » (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União » (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, European » (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portug» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Portugal,» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portug» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Portugal,» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portug» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Portugal,» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roméni» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Romania, » (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roméni» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Romania, » (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igu» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igu» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igu» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · a declaração de língua nomeia o rótulo «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União », que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, European », que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portug», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Portugal,», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roméni», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Romania, », que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igu», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · a declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+    · hab-tipsho60-a-ptir-i25-eu27_2020-2015: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-i25-eu27_2020-2025: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-i25-pt-2015: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-i25-pt-2019: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-i25-pt-2025: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-i25-ro-2015: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-i25-ro-2025: name_en não tem língua inglesa declarada.
+    · hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025: name_en não tem língua inglesa declarada.
+    … e mais 79
+
