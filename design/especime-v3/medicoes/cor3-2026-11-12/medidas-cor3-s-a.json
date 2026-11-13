@@ -28,5 +28,29 @@
     "chaves_medidas": 700,
     "novas": 10,
     "causa": "Cinco linhas da reforma aparecem nos cartões das áreas nas duas línguas e não tinham as unidades declaradas."
-  }
+  },
+  "codigos": {
+    "areas": 0,
+    "livro": 0,
+    "cruzamento": 0,
+    "cartao": 0,
+    "leituras": 0,
+    "frases_afirmacao": 1,
+    "frases_compostas": 0,
+    "edicoes": 0,
+    "voz": 1,
+    "rotulos": 0,
+    "lugar": 0,
+    "indice": 1,
+    "registo": 0,
+    "tipos": 0,
+    "pais": 0
+  },
+  "builds": [
+    1,
+    1,
+    1
+  ],
+  "corridas_com_codigo_guardado": 43,
+  "chamadas_functions_exec_ate_preparacao": 117
 }

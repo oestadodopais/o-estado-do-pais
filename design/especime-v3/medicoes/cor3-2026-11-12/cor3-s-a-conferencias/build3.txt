@@ -1,0 +1,20 @@
+{"controlos":57,"plantas":41,"documentos":14,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+REC2 voz das edições: retirada sem faixa; publicação em falta continua recusada.
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 12 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-13.
+  FP1 en: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-13.
+  REC2 inventário: 42 entradas históricas de retirados ou superfícies vazias saltadas; conta conferida.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  PORTÃO DA VOZ · 8 problema(s)
+
+    · bloco por classificar em /: «Descontada a inflação, os preços das casas em Portugal subiram desde mais do que em qualquer outro país da União; % da população gasta na casa mais de quarenta por cento do rendimento, contra % na União, e o peso cai sobre quem arrenda a preços de mercado, % dos quais estão em sobrecarga; os jovens saem de casa dos pais, em média, aos anos .»
+    · bloco por classificar em /en: «Net of inflation, house prices in Portugal have risen since more than in any other country of the Union; overburdened by housing, more than forty percent of income, is % of the population, against % in the Union, and the weight falls on those renting at market prices, % of whom are overburdened; the young leave their parents&#39; home, on average, at years .»
+    · bloco por classificar em /en/housing: «Net of inflation, house prices in Portugal have risen since more than in any other country of the Union; overburdened by housing, more than forty percent of income, is % of the population, against % in the Union, and the weight falls on those renting at market prices, % of whom are overburdened; the young leave their parents&#39; home, on average, at years .»
+    · bloco por classificar em /en/ledger: «4 194 claims · 529 of 4 194 calculated · 2 767 of 4 194 municipality rows»
+    · bloco por classificar em /en/pay-pensions-and-benefits: «The penalty for retiring one year early is % or % , depending on which door the worker comes through (flexibilisation at or older with years of contributions at that age, or the flexibilisation rules in force on ), when the actuarially neutral figure estimated by the report itself, in what it calls a preliminary estimate, is % : the law misses in both directions, and is harshest on those who deviate least.»
+    · bloco por classificar em /habitacao: «Descontada a inflação, os preços das casas em Portugal subiram desde mais do que em qualquer outro país da União; % da população gasta na casa mais de quarenta por cento do rendimento, contra % na União, e o peso cai sobre quem arrenda a preços de mercado, % dos quais estão em sobrecarga; os jovens saem de casa dos pais, em média, aos anos .»
+    · bloco por classificar em /livro-razao: «4 194 afirmações · 529 de 4 194 calculadas · 2 767 de 4 194 linhas de concelhos»
+    · bloco por classificar em /salarios-pensoes-e-apoios: «A penalização por antecipar a reforma um ano é de % ou de % , consoante a porta por onde o trabalhador entra (a flexibilização com pelo menos anos e de descontos nessa idade, ou as regras da flexibilização em vigor a ), quando o valor atuarialmente neutro estimado pelo próprio relatório, numa estimativa que ele chama preliminar, é de % : a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.»
+

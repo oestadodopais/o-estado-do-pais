@@ -1,0 +1,20 @@
+
+M118: 135 combinações, 0 sobreposições, 0 erros; 10.48 s; planta não pedida.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: rota fixa sem alvos: /uniao-europeia/
+    at exigirAlvos (file://<worktree>/tests/quadro/alvos-esperados.mjs:6:2)
+    at file://<worktree>/tests/quadro/disposicao.mjs:62:3
+    at Array.map (<anonymous>)
+    at file://<worktree>/tests/quadro/disposicao.mjs:59:36 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

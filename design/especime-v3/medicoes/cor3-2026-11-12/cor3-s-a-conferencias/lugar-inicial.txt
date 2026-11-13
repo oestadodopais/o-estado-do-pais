@@ -1,0 +1,20 @@
+  8.8 · «livro-razão» nos menus e nos títulos                      0  (teto 0) ok
+  8.13 · valores selados na secção dos domínios de /               0  (teto 0) ok
+  8.14 · «Relance» e «Leitura breve» nas páginas do leitor         0  (teto 0) ok
+  8.17 · pontos dos 308 na página de um concelho                   0  (teto 0) ok
+  8.17 · páginas de concelho sem o mapa da sua unidade             0  (teto 0) ok
+  8.11 · leituras de aparelho no cabeçalho                         0  (teto 0) ok
+  8.4 · definições de painel fora da declaração                    0  (teto 0) ok
+  VOZ-1 · definição retirada do marcador reposta                   0  (teto 0) ok
+  §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok
+  §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok
+  §7.4 e 8.6, o que a régua leu: estudo 10 · texto 8 · indice 2 · edicoes 10 · primeiras_edicoes 6 · documentos_historicos 9 · linhas 10
+  as exceções, e quantas vezes cada uma foi precisa:
+      · «peça»     1 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
+      · «trabalho»    32 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+      · «trabalho»     1 · o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo
+      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa
+
+check:lugar · 1 falha(s):
+  ✗ L1 · páginas com dois destinos iguais fora da mobília: 3524, acima do teto 3520.

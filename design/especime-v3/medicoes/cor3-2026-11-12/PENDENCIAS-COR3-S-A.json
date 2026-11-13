@@ -1,0 +1,61 @@
+{
+  "codigos": {
+    "areas": 0,
+    "livro": 0,
+    "cruzamento": 0,
+    "cartao": 0,
+    "leituras": 0,
+    "frases_afirmacao": 1,
+    "frases_compostas": 0,
+    "edicoes": 0,
+    "voz": 1,
+    "rotulos": 0,
+    "lugar": 0,
+    "indice": 1,
+    "registo": 0,
+    "tipos": 0,
+    "pais": 0
+  },
+  "builds": [
+    1,
+    1,
+    1
+  ],
+  "por_fechar": {
+    "frases": "O registo exige juizo: por julgar; oito entradas continuam sem cobertura.",
+    "data_no_estudo": "Os cartões referenciam a data, mas o documento original não ganhou uma referência à linha.",
+    "indice": "I1 não reconhece Guia Prático Pensão de Velhice; p. 13 PDF como localizador do rótulo das duas linhas. I1p depende de I1 limpa.",
+    "voz": "O bloco cor3-a exige leitura cruzada do diff em REVISOES-DO-INVENTARIO.md; essa leitura não foi inventada.",
+    "build": "Não se obteve código 0. A terceira construção parou antes do registo dos seis literais atuais; a conferência dirigida seguinte parou na leitura cruzada."
+  },
+  "causas_corrigidas": [
+    "Derivação geográfica omissa nas células com várias geografias e nas contas; projeção do localizador e intervalo do calendário diferente da prova.",
+    "Comparação numérica inicial não retirava o espaço estreito dos milhares.",
+    "Famílias das duas linhas novas não declaradas.",
+    "Recibos novos ainda ausentes antes da construção.",
+    "Leitor da sinopse ignorava peças data.",
+    "Unidades de cinco linhas sem declaração; apoio ano curto demais, substituído pela data integral da fonte.",
+    "Seis entradas antigas do inventário da voz marcadas vivas; seis literais atuais por classificar.",
+    "L1 medido em 3524, contra 3520; R2 acrescentou dez chaves, sem mudar nem retirar as anteriores."
+  ],
+  "sandbox": "Leituras e frases compostas recusadas localmente com Error: listen EPERM: operation not permitted 127.0.0.1; repetidas pelo escrivão.",
+  "extra_sobreposicao": {
+    "codigo": 1,
+    "causa": "M118 mediu zero sobreposições; a causa do código final do comando composto não foi apurada nesta passagem."
+  },
+  "commits_sitio_antes_do_relatorio": [
+    "ba132a829",
+    "2ca209739",
+    "0f4325dd8",
+    "43d432f00",
+    "fc6e27452",
+    "d67585067",
+    "79f9facf9",
+    "08aacc605"
+  ],
+  "commit_motor": "631b0437",
+  "chamadas_functions_exec_ate_preparacao": 117,
+  "corridas_com_codigo_guardado": 43,
+  "portoes_integrais": 0,
+  "capturas": 0
+}

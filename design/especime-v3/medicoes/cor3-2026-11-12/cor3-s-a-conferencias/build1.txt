@@ -1,0 +1,20 @@
+
++ [
++   'B1 sinopse lista: estudos: penalizacoes-por-reforma-antecipada-2026 difere das duas primeiras frases da leitura ou da descrição.',
++   'B1 sinopse lista: en/studies: penalizacoes-por-reforma-antecipada-2026 difere das duas primeiras frases da leitura ou da descrição.'
++ ]
+- []
+
+    at file://<worktree>/tests/voz/evl-medidas.mjs:17:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'B1 sinopse lista: estudos: penalizacoes-por-reforma-antecipada-2026 difere das duas primeiras frases da leitura ou da descrição.',
+    'B1 sinopse lista: en/studies: penalizacoes-por-reforma-antecipada-2026 difere das duas primeiras frases da leitura ou da descrição.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

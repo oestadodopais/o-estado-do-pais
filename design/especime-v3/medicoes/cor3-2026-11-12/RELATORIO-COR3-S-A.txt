@@ -1,0 +1,12 @@
+COR3-S-A: passagem incompleta; não se obteve build com código 0. PENDENCIAS-COR3-S-A.json separa as paragens e os códigos.
+1. Causa: as releituras deixaram de derivar o lugar das células com várias geografias e das contas, e a prova do calendário não acompanhava o localizador com página, a cópia nova e a data final do intervalo; corrigido, país=0, nove controlos e 36 plantas.
+2. Paragem: scripts/check-frases-afirmacao.mjs exige juizo: por julgar; não se substituiu o juízo de 12.11.2026. As oito entradas sem cobertura permanecem; o mandato também não nomeia Frases: para as entradas.
+3. Atravessaram flexibilizacao-regras-2018 e flexibilizacao-regras-2018-ano; quatro peças dos cartões referenciam a data; o documento do estudo conserva os bytes e não ganhou essa referência. I1 recusa o localizador do rótulo das duas linhas.
+4. Corrigidos: leitor da sinopse sem peças data, duas famílias em falta, unidades de cinco linhas, apoio ano com três caracteres e inventário desatualizado; L1 medido 3520 para 3524 e R2 690 para 700 chaves, sem alterar as anteriores.
+Builds: 1, 1, 1. Causas sucessivas: sinopse sem data; apoio ano curto demais; seis literais atuais fora do inventário. O inventário foi atualizado, mas a voz exige a leitura cruzada do diff, que não se inventou; nova construção integral ficou por correr.
+areas=0; livro=0; cruzamento=0; cartao=0; leituras=0.
+frases_afirmacao=1; frases_compostas=0; edicoes=0; voz=1; rotulos=0.
+lugar=0; indice=1; registo=0; tipos=0; pais=0. Composto: 160/160 trechos conformes; quatro plantas detetadas.
+Leituras e frases compostas: a sandbox recusou listen EPERM em 127.0.0.1; códigos do escrivão acima. Perfil adicional: sobreposição=1, causa não apurada após M118 medir zero sobreposições. Registos: só códigos e últimas vinte linhas, sem caminhos locais.
+Commits do sítio antes do relatório: 08aacc605, 79f9facf9, d67585067, fc6e27452, 43d432f00, 0f4325dd8, 2ca209739, ba132a829; motor: 631b0437. O ponto 4 precisou de commits adicionais para fechar os vermelhos encontrados, em vez do único pedido.
+Custo: 117 chamadas de functions.exec até à preparação do relatório; 43 corridas de conferências com código guardado; zero portões integrais, zero capturas. Os passos posteriores de fecho são contados na resposta final.

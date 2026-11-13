@@ -1,1 +1,12 @@
-{"estado":"inventário corrigido; conferência por repetir","linhas_retiradas":[3652,3653,4915,4916,5664,5665],"causa":"O inventário conservava duas frases antigas da reforma, duas da habitação e duas contagens anteriores à travessia como vivas."}
+{
+  "estado": "Inventário atualizado; leitura cruzada do bloco cor3-a por fazer.",
+  "linhas_retiradas": [
+    3652,
+    3653,
+    4915,
+    4916,
+    5664,
+    5665
+  ],
+  "causa": "O inventário conservava duas frases antigas da reforma, duas da habitação e duas contagens anteriores à travessia como vivas."
+}

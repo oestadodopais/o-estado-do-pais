@@ -1,0 +1,20 @@
+  ✓ C1  0 nó(s) graves em 36 passagens · nenhuma
+  ✓ C2  filetes: 13332 medidos, 0 abaixo de 3:1 (o pior 3.55:1) · texto próprio das células: 13332 medidos, 0 abaixo de 4,5:1 (o pior 14.04:1)
+  ✓ C3  80 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  ✓ C4  36 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  ✓ C5  2 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  ✓ C6  9 de 9 verdes · 9 de 9 plantas apanhadas
+
+  o axe, regra a regra (as dezasseis páginas nos dois temas):
+        36  region [moderate]
+         8  heading-order [moderate]
+         0  region [moderate] · em tabela
+         0  heading-order [moderate] · em tabela
+
+  o que a moldura NÃO corrige, contado:
+    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)
+
+  escrito <temporario>
+
+  todas as células verdes.
+
