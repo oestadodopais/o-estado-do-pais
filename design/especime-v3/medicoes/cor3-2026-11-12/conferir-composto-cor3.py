@@ -59,6 +59,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('motor', type=Path)
     parser.add_argument('--saida', type=Path)
+    parser.add_argument('--sitio', type=Path)
     args = parser.parse_args()
     sys.path.insert(0, str(args.motor.resolve()))
     from core.reconcile import visible_text
@@ -69,6 +70,13 @@ def main():
     raw = {key: (args.motor / file).read_text() for key, file in DOCUMENTS.items()}
     docs = {key: norm(value, html=True) for key, value in raw.items()}
     entries, sheets = cases()
+    surfaces = {'motor': docs}
+    site_raw = {}
+    if args.sitio:
+        slugs = {'orcamento':'orcamento-2027-o-que-muda-e-para-quem', 'reforma':'penalizacoes-por-reforma-antecipada-2026', 'habitacao':'a-casa-em-portugal-e-na-europa'}
+        site_raw = {key:(args.sitio / 'studies-src' / slugs[key[0]] / (key[1]+'.html')).read_text() for key in DOCUMENTS}
+        surfaces['sitio'] = {key:norm(value, html=True) for key,value in site_raw.items()}
+
     def check(case, documents):
         text = documents[(case['estudo'], case['lingua'])]
         before, after = norm(case['antes']), norm(case['depois']) if case['depois'] else ''
@@ -77,30 +85,33 @@ def main():
         return dict(antes_ocorrencias=n_before, depois_ocorrencias=n_after,
                     conforme=n_before == 0 and (n_after == 1 if after else True))
     results = []
-    for case in entries:
-        result = {k: case[k] for k in ('estudo', 'correcao', 'lingua', 'trecho')}
-        result.update(check(case, docs))
-        if (case['estudo'], case['correcao']) in PARAGENS:
-            result['paragem'] = PARAGENS[(case['estudo'], case['correcao'])]
-        results.append(result)
+    for surface, documents in surfaces.items():
+        for case in entries:
+            result = {k: case[k] for k in ('estudo', 'correcao', 'lingua', 'trecho')}
+            result['superficie'] = surface
+            result.update(check(case, documents))
+            if (case['estudo'], case['correcao']) in PARAGENS:
+                result['paragem'] = PARAGENS[(case['estudo'], case['correcao'])]
+            results.append(result)
     plants = []
-    for kind, cid in [('algarismo_trocado', 'C01'), ('antes_reposto', 'C09')]:
-        case = next(c for c in entries if (c['estudo'], c['lingua'], c['correcao']) == ('orcamento', 'pt', cid))
-        assert check(case, docs)['conforme'], 'A planta exige uma frase de controlo conforme.'
-        copies = dict(docs)
-        key = ('orcamento', 'pt')
-        if kind == 'algarismo_trocado':
-            after = norm(case['depois'])
-            match = re.search(r'\d', after)
-            assert match
-            digit = str((int(match[0]) + 1) % 10)
-            altered = after[:match.start()] + digit + after[match.end():]
-            copies[key] = copies[key].replace(after, altered, 1)
-        else:
-            copies[key] += ' ' + norm(case['antes'])
-        result = check(case, copies)
-        assert not result['conforme'], 'Planta não detetada: ' + kind
-        plants.append(dict(planta=kind, estudo='orcamento', correcao=cid, lingua='pt', codigo=1, **result))
+    for surface, documents in surfaces.items():
+        for kind, cid in [('algarismo_trocado', 'C01'), ('antes_reposto', 'C09')]:
+            case = next(c for c in entries if (c['estudo'], c['lingua'], c['correcao']) == ('orcamento', 'pt', cid))
+            assert check(case, documents)['conforme'], 'A planta exige uma frase de controlo conforme.'
+            copies = dict(documents)
+            key = ('orcamento', 'pt')
+            if kind == 'algarismo_trocado':
+                after = norm(case['depois'])
+                match = re.search(r'\d', after)
+                assert match
+                digit = str((int(match[0]) + 1) % 10)
+                altered = after[:match.start()] + digit + after[match.end():]
+                copies[key] = copies[key].replace(after, altered, 1)
+            else:
+                copies[key] += ' ' + norm(case['antes'])
+            result = check(case, copies)
+            assert not result['conforme'], 'Planta não detetada: ' + kind
+            plants.append(dict(superficie=surface, planta=kind, estudo='orcamento', correcao=cid, lingua='pt', codigo=1, **result))
     failed = sum(not result['conforme'] for result in results)
     output = dict(codigo=1 if failed else 0,
                   folhas={s: dict(sha256=hashlib.sha256(text.encode()).hexdigest(), correcoes=len(sections(text))) for s, text in sheets.items()},
