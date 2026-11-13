@@ -99,14 +99,19 @@ export function conferirReferenciasSemLigacao(works, rota, html) {
       if (/^\d{2}\.\d{2}\.\d{4}$/.test(data ?? '')) el.remove();
     }
   }
-  const normalizar = s => s.normalize('NFC').replace(/\s+/g, ' ').trim().toLocaleLowerCase('pt');
+  const normalizar = s => s.normalize('NFC').replace(/\s+/g, ' ').trim();
   const texto = normalizar(root.textContent);
+  const textoSemCaixa = texto.toLocaleLowerCase('pt');
   for (const work of works) {
     if (work.estado !== 'retirado' && (work.editions ?? []).some(e => edicaoPublicada(work, e))) continue;
+    // O título conserva a caixa; o nome de uma medida pode usar as mesmas palavras.
+    const titulos = (work.editions ?? []).map(e => e.title);
     const nomes = [...Object.values(work.alcunhas ?? {}).flat(),
-      ...(work.editions ?? []).map(e => e.title),
       routePath('estudo', 'pt', {slug:work.slug}), routePath('estudo', 'en', {slug:work.slug})];
-    for (const nome of new Set(nomes.filter(Boolean))) if (texto.includes(normalizar(nome))) {
+    for (const titulo of new Set(titulos.filter(Boolean))) if (texto.includes(normalizar(titulo))) {
+      erros.push(`RET1 remissão para estudo não publicado: ${rota}: ${titulo}`);
+    }
+    for (const nome of new Set(nomes.filter(Boolean))) if (textoSemCaixa.includes(normalizar(nome).toLocaleLowerCase('pt'))) {
       erros.push(`RET1 remissão para estudo não publicado: ${rota}: ${nome}`);
     }
   }

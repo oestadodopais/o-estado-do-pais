@@ -36,3 +36,12 @@ assert.deepEqual(conferir(WORKS,'/correcoes/',`<p>${titulo}</p>`),[]);
 assert.deepEqual(conferir(WORKS,'/en/corrections/',`<p>${titulo}</p>`),[]);
 for(const rota of ['/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara','/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara'])assert(conferir(WORKS,'/',`<p>${rota}</p>`).length);
 console.log('RET1-B: remissões das contas e de Évora 2027 repostas recusadas, também dentro de ligações; endereço visível recusa; história datada e correções passam; história sem data ou fora do recibo recusa.');
+
+// RET1-C: a caixa distingue o título retirado do nome da medida do livro.
+for (const rota of ['/', '/areas/ambiente/', '/livro-razao/exemplo/', '/en/ledger/example/']) {
+ assert(conferir(WORKS, rota, '<p>Água Não Faturada</p>').length, 'O título exato de um estudo retirado recusa em qualquer página.');
+ assert.deepEqual(conferir(WORKS, rota, '<p>água não faturada</p>'), [], 'O nome da medida, em minúsculas, não é o título do estudo retirado.');
+ assert(conferir(WORKS, rota, '<p>ESTUDO DOS PELOUROS</p>').length, 'As alcunhas continuam a ignorar a caixa.');
+ assert(conferir(WORKS, rota, '<p>/ESTUDOS/EVORA-ECONOMIA-E-DINHEIRO-PUBLICO-DE-FORA-DA-CAMARA</p>').length, 'Os endereços continuam a ignorar a caixa.');
+}
+console.log('RET1-C: título Água Não Faturada recusa; água não faturada passa por ser o nome da medida; alcunhas e endereços ignoram a caixa.');
