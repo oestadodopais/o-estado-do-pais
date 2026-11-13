@@ -581,5 +581,181 @@
       "old_value": "8,2",
       "new_value": "8,0"
     }
+  ],
+  "sobrecarga-do-custo-da-habitacao-2025-ue": [
+    {
+      "date": "2026-11-12",
+      "kind": "atualizacao",
+      "old_value": "7,7",
+      "new_value": "7,6"
+    }
+  ],
+  "der-hab-preco-rendimento-lt-eu-2024": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "1,1",
+      "new_value": "1,9"
+    }
+  ],
+  "der-hab-preco-rendimento-lt-pt-2024": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "22,9",
+      "new_value": "22,2"
+    }
+  ],
+  "der-hab-precos-reais-pt-vs-eu-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "81,7",
+      "new_value": "80,8"
+    }
+  ],
+  "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "8,6",
+      "new_value": "8,7"
+    }
+  ],
+  "hab-bpstat-12533724": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "2 553,0",
+      "new_value": "2 643,0"
+    }
+  ],
+  "hab-bpstat-12533735": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "3,0",
+      "new_value": "3,01"
+    }
+  ],
+  "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "9,3",
+      "new_value": "9,2"
+    }
+  ],
+  "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "5,0",
+      "new_value": "4,6"
+    }
+  ],
+  "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "3,8",
+      "new_value": "3,7"
+    }
+  ],
+  "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "18,6",
+      "new_value": "18,5"
+    }
+  ],
+  "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "7,7",
+      "new_value": "7,6"
+    }
+  ],
+  "hab-tespm140-a-pc-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "7,7",
+      "new_value": "7,6"
+    }
+  ],
+  "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "124,75",
+      "new_value": "124,97"
+    }
+  ],
+  "hab-tipsho10-a-i15-a-avg-pt-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "206,41",
+      "new_value": "205,75"
+    }
+  ],
+  "hab-tipsho10-a-rch-a-avg-eu27_2020-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "2,9",
+      "new_value": "3,0"
+    }
+  ],
+  "hab-tipsho10-a-rch-a-avg-pt-2025": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "14,7",
+      "new_value": "14,6"
+    }
+  ],
+  "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "98,94",
+      "new_value": "98,15"
+    }
+  ],
+  "hab-tipsho60-a-ptir-lt-avg-pt-2024": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "122,92",
+      "new_value": "122,22"
+    }
+  ],
+  "hab-tipsho60-a-ptir-lt-avg-ro-2024": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "48,23",
+      "new_value": "47,13"
+    }
+  ],
+  "oe-2027-calendario-especialidade": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "18 a 23 de novembro",
+      "new_value": "18 a 20 de novembro"
+    }
+  ],
+  "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": [
+    {
+      "date": "2026-11-13",
+      "kind": "atualizacao",
+      "old_value": "18,6",
+      "new_value": "18,5"
+    }
   ]
 }

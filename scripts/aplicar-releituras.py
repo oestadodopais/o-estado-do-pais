@@ -419,7 +419,17 @@ def main() -> int:
     CABECA = reg["cabeca_do_sitio"]
     principal = subprocess.check_output(["git", "-C", str(SITIO), "rev-parse", "main"], text=True).strip()
     if CABECA != principal:
-        raise SystemExit("PARAGEM: a cabeça lida pela releitura não é main")
+        # COR3: main pode avançar por outros ficheiros. A base tem de ser
+        # antepassada, e cada linha relida tem de conservar exatamente os bytes.
+        if subprocess.run(["git", "-C", str(SITIO), "merge-base", "--is-ancestor", CABECA, principal]).returncode:
+            raise SystemExit("PARAGEM: a cabeça relida não é antepassada de main")
+        for linha in reg["linhas"]:
+            ficheiro = "ledger/claims/" + linha["id"] + ".yml"
+            atual = subprocess.check_output(["git", "-C", str(SITIO), "show", principal + ":" + ficheiro])
+            if sha(atual) != linha["linha_sha256_na_cabeca"]:
+                raise SystemExit("PARAGEM: a linha relida mudou em main: " + linha["id"])
+            if not args.published_at and (SITIO / ficheiro).read_bytes() != atual:
+                raise SystemExit("PARAGEM: a linha relida mudou na árvore de trabalho: " + linha["id"])
     if not reg["linhas"]:
         raise SystemExit("PARAGEM: nenhuma linha relida")
     for paragem in reg["paragens"]:

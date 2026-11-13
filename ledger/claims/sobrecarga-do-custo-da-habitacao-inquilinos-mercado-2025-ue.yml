@@ -6,7 +6,7 @@
 id: "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "18,6"
+value: "18,5"
 unit: "%"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
@@ -23,11 +23,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020"
-access_date: "2026-09-23"
+access_date: "2026-11-12"
+published_at: "2026-10-29"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — European Union - 27 countries (from 2020) — 2025: 18.6"
+excerpt: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — European Union - 27 countries (from 2020) — 2025: 18.5"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -42,7 +43,13 @@ attributed_to:
 
 study: "dominios-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», no mesmo quadro, regime de ocupação, unidade e período. · [note do motor] Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo EU27_2020, time 2025. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue."
+note: "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», no mesmo quadro, regime de ocupação, unidade e período. · [note do motor] Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo EU27_2020, time 2025. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 12.11.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "18,6"
+    new_value: "18,5"
+    reason: "O Eurostat reviu a mesma célula dos inquilinos a preços de mercado; o valor e o excerto foram relidos no corpo alojado."
+    reason_en: "Eurostat revised the same cell for tenants renting at market prices; the figure and excerpt were read again in the hosted body."

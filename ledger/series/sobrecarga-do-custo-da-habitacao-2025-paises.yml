@@ -149,15 +149,15 @@ pontos:
     excerto: "Housing cost overburden rate — Percentage — Sweden — 2025: 10.8"
     bandeira: null
   - geo: "EU27_2020"
-    valor: "7,7"
-    excerto: "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.7"
+    valor: "7,6"
+    excerto: "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.6"
     bandeira: null
 
 attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, rskpovth=TOTAL, age=TOTAL, sex=T, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json (sha256 f0612b1353f1c6dd…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, rskpovth=TOTAL, age=TOTAL, sex=T, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json (sha256 f0612b1353f1c6dd…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0. Agregado relido em cor3/tespm140_EU27_2020.json, sha256 be9eba8ffa56482e1a4dc82d8424fce0a9474d762c46b9ee17d4c7b4d9577086; os países conservam o corpo anterior."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
 corrections:
@@ -168,3 +168,10 @@ corrections:
     new_value: "14,7"
     reason: "Dinamarca: o Eurostat reviu o valor de 23,4 para 14,7 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026."
     reason_en: "Denmark: Eurostat revised the value from 23.4 to 14.7 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."
+  - geo: "EU27_2020"
+    date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "7,7"
+    new_value: "7,6"
+    reason: "O Eurostat reviu o agregado da União Europeia; o ponto foi relido no pedido alojado."
+    reason_en: "Eurostat revised the European Union aggregate; the point was read again in the hosted request."

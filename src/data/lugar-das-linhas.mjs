@@ -19,6 +19,31 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  'oe-2027-calendario-especialidade': 'portugal', // Calendário parlamentar do Orçamento português.
+  // COR3: âmbitos das células e contas cuja fonte reviu o valor.
+  'hab-tipsho10-a-i15-a-avg-pt-2025': 'portugal',
+  'hab-tipsho10-a-rch-a-avg-pt-2025': 'portugal',
+  'hab-tipsho10-a-rch-a-avg-eu27_2020-2025': 'uniao-europeia',
+  'hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025': 'uniao-europeia',
+  'hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025': 'uniao-europeia',
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue': 'uniao-europeia',
+  'der-hab-sobrecarga-inquilinos-pt-vs-eu-2025': 'portugal',
+  'hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025': 'uniao-europeia',
+  'hab-tipsho60-a-ptir-lt-avg-ro-2024': 'romenia',
+  'der-hab-precos-reais-pt-vs-eu-2025': 'portugal',
+  'hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025': 'uniao-europeia',
+  'hab-tipsho10-a-i15-a-avg-eu27_2020-2025': 'uniao-europeia',
+  'hab-bpstat-12533724': 'portugal',
+  'hab-ilc-lvho07c-a-pc-total-eu27_2020-2025': 'uniao-europeia',
+  'hab-tespm140-a-pc-eu27_2020-2025': 'uniao-europeia',
+  'hab-bpstat-12533735': 'portugal',
+  // COR3: as contas conservam a geografia das componentes do Eurostat.
+  'der-hab-preco-rendimento-lt-eu-2024': 'uniao-europeia',
+  'der-hab-preco-rendimento-lt-pt-2024': 'portugal',
+  'hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024': 'uniao-europeia',
+  'hab-tipsho60-a-ptir-lt-avg-pt-2024': 'portugal',
+  /* Releitura: lugar dado pelo campo geo do pedido da fonte. */
+  'sobrecarga-do-custo-da-habitacao-2025-ue': 'uniao-europeia',
   /* Releitura: lugar dado pelo campo geo do pedido da fonte. */
   'desempenho-das-exportacoes-2025': 'portugal',
   /* Releitura: lugar dado pelo campo geo do pedido da fonte. */
