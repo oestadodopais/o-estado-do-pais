@@ -1,0 +1,20 @@
+[90m    ressalvas nas pontas e ordinais (K18, UE1b)            4 · 27 · 8 planta(s) das palavras a morder[0m
+[90m    empates num extremo, em memória (K18, UE1c)            6 planta(s) a morder[0m
+[90m    a ordem do cartão (K19): cartões, com dobra, da faixa  5568 · 5092 · 42 · 7 de 7 plantas a morder[0m
+[90m    medidas com nome oficial no recibo                    11[0m
+[90m    perguntas com cada pedaço apoiado (K16)               42 (151 pedaços, 226 apoios, 155 origens seladas no motor)[0m
+[90m    leituras dos cartões nacionais (K17)                 96 em 96 cartões (49 declarações auditadas, 1159 partes, 477 apoios, 104 origens, 208 ramos recontados, 18 de 18 plantas a morder)[0m
+[90m    linhas com frase «O que é este número» (K17, R4)      4199 (48 pelo cartão, 2772 pela medida dos concelhos, 1379 pela família; 1181 entradas auditadas, 1327 partes, 1797 apoios; 1006 com todas as partes na fonte, 175 com alguma parte só da casa)[0m
+[90m      recibos com a frase conferida                       8384 de 8384 (0 com o marcador «por confirmar na fonte», 2 com a parte do sinal; 0 entradas e 0 linhas por confirmar) · 48 de 48 plantas a morder[0m
+[90m      séries no tempo com frase «o que é»                 25 (14 pela linha, 11 com frase auditada, 9 com todas as partes na fonte); recibos de série conferidos 50 de 50[0m
+[90m    medidas com grupo etário fixado na linha (K13)         17[0m
+[90m      linhas dessas medidas, todas conferidas               27[0m
+[90m      delas, na catraca declarada (I132, vazia)           0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[31m  4 defeito(s):[0m
+    K17 · recibo · pt · flexibilizacao-regras-2018-ano: o recibo não está construído
+    K17 · recibo · en · flexibilizacao-regras-2018-ano: o recibo não está construído
+    K17 · recibo · pt · flexibilizacao-regras-2018: o recibo não está construído
+    K17 · recibo · en · flexibilizacao-regras-2018: o recibo não está construído
+

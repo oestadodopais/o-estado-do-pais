@@ -25178,6 +25178,34 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "flexibilizacao-regras-2018-ano": {
+    "nome": {
+      "pt": "Ano das regras da flexibilização a que se aplica o fator de sustentabilidade",
+      "en": "Year of the flexibilisation rules to which the sustainability factor applies"
+    },
+    "frase": {
+      "pt": [
+        "É o valor de «Ano das regras da flexibilização a que se aplica o fator de sustentabilidade» no documento citado, para o período e na unidade indicados."
+      ],
+      "en": [
+        "It is the value of «Year of the flexibilisation rules to which the sustainability factor applies» in the cited document, for the stated period and unit."
+      ]
+    }
+  },
+  "flexibilizacao-regras": {
+    "nome": {
+      "pt": "Data das regras da flexibilização a que se aplica o fator de sustentabilidade",
+      "en": "Date of the flexibilisation rules to which the sustainability factor applies"
+    },
+    "frase": {
+      "pt": [
+        "É o valor de «Data das regras da flexibilização a que se aplica o fator de sustentabilidade» no documento citado, para o período e na unidade indicados."
+      ],
+      "en": [
+        "It is the value of «Date of the flexibilisation rules to which the sustainability factor applies» in the cited document, for the stated period and unit."
+      ]
+    }
+  },
   "oe-2027-calendario-especialidade-final": {
     "nome": {
       "pt": "Debate, votação na especialidade e votação final global",

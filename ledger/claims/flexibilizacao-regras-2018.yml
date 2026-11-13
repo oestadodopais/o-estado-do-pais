@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "flexibilizacao-regras-2018"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "31 de dezembro de 2018"
+unit: "data"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Data das regras da flexibilização a que se aplica o fator de sustentabilidade"
+name_source: "Guia Prático Pensão de Velhice; p. 13 PDF"
+measure: "Data das regras da flexibilização a que se aplica o fator de sustentabilidade"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Instituto da Segurança Social, I.P."
+document:
+  title: "Guia Prático Pensão de Velhice"
+  edition: "2026"
+  locator: "p. 13 do PDF"
+  source_sha256: "1e1dec11775e9453a6288f5d152516b2584fabb4f10ef7b2bbf3447ed22285f3"
+  page: 13
+  kind: "pdf"
+source_url: "https://www.seg-social.pt/ptss/pssd/documento/cmc1zt9ae00lskl2ye2zwphdb?dswid=6409"
+access_date: "2026-11-12"
+reference_date: "2018-12-31"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A menos que as regras da flexibilização em vigor a 31 de dezembro de 2018, antes da"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "penalizacoes-por-reforma-antecipada-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Data citada por inteiro no Guia Prático Pensão de Velhice, não uma contagem de 31. A forma textual conserva o excerto e não atribui a esta linha ocorrências isoladas de 31 noutros documentos. O ano usado como número tem a linha flexibilizacao-regras-2018-ano. · Cruzado de ResearchHub content/11 Seguranca Social · flexibilizacao-regras-2018."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

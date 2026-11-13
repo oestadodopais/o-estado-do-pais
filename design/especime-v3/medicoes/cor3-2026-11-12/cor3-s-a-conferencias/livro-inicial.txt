@@ -1,0 +1,20 @@
+
+[90m  bytes de controlo · 4 de 4 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
+  [32m✓[0m os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+file://<worktree>:422
+    throw new Error(`o que é cada número: ${erros.length} defeito(s):\n  ${erros.slice(0, 40).join('\n  ')}${erros.length > 40 ? `\n  … e mais ${erros.length - 40}` : ''}\n`);
+          ^
+
+Error: o que é cada número: 4 defeito(s):
+  o que é cada número · flexibilizacao-regras-2018-ano · pt: a família «flexibilizacao-regras-2018-ano» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · flexibilizacao-regras-2018-ano · en: a família «flexibilizacao-regras-2018-ano» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · flexibilizacao-regras-2018 · pt: a família «flexibilizacao-regras» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · flexibilizacao-regras-2018 · en: a família «flexibilizacao-regras» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+
+    at file://<worktree>:422:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

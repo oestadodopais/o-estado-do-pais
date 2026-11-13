@@ -41,6 +41,28 @@
       "rh_ledger_sha256": "a5493b0d9b7e57993bf28d54c4b7cf1c91f1660f3c5e903a96f755a4228c7a03",
       "rh_study": "11 Seguranca Social",
       "verifications_at_export": 0
+    },
+    "flexibilizacao-regras-2018": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-11-13",
+      "exported_row_sha256": "522c0f605b83fa1be790b887d1cb5589abca436ff0858a18e3676487bc052718",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "b0181cf36f2a11e3fb2bf0e279af53222193b4fb2f13a863e2dc63aa1e3253fd",
+      "rh_id": "flexibilizacao-regras-2018",
+      "rh_ledger_sha256": "a5493b0d9b7e57993bf28d54c4b7cf1c91f1660f3c5e903a96f755a4228c7a03",
+      "rh_study": "11 Seguranca Social",
+      "verifications_at_export": 0
+    },
+    "flexibilizacao-regras-2018-ano": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-11-13",
+      "exported_row_sha256": "036a52e9016a325edc88f36665f8e83ef8d26fdd5fe9caaae872c1688676bbac",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "8b5cc488b0630e4dc1c9d500bfad21b102d7515a8983404b5f8c191f3186813e",
+      "rh_id": "flexibilizacao-regras-2018-ano",
+      "rh_ledger_sha256": "a5493b0d9b7e57993bf28d54c4b7cf1c91f1660f3c5e903a96f755a4228c7a03",
+      "rh_study": "11 Seguranca Social",
+      "verifications_at_export": 0
     }
   }
 }

@@ -627,7 +627,7 @@ export const AREAS = [
           },
           {
             estudos: ['penalizacoes-por-reforma-antecipada-2026'],
-            id: /^(factor-sustentabilidade-|penalizacao-antecipacao-|penalizacao-legal-um-ano-antecipacao-|flexibilizacao-idade-minima$|flexibilizacao-carreira-minima$|desemprego-longa-duracao-idade-referencia$)/,
+            id: /^(factor-sustentabilidade-|penalizacao-antecipacao-|penalizacao-legal-um-ano-antecipacao-|flexibilizacao-idade-minima$|flexibilizacao-carreira-minima$|flexibilizacao-regras-2018(?:-ano)?$|desemprego-longa-duracao-idade-referencia$)/,
             razao:
               'O fator de sustentabilidade, a penalização legal, a estimativa de redução atuarialmente neutra e os requisitos de idade e carreira contributiva dizem respeito às pensões por reforma antecipada. O assunto é a segurança social. O grupo de trabalho que publicou o relatório não é nomeado na lei orgânica, e pela regra antiga estas linhas ficavam sem área.',
           },

@@ -850,8 +850,8 @@ export const LEITURAS = {
       {
         claim: 'penalizacao-antecipacao-um-ano-com-factor-2026',
         nome: {
-          pt: ["é o que a lei corta quando a pensão é calculada pelas regras da flexibilização em vigor a ", {"ref": "31 de dezembro de 2018"}],
-          en: ["is what the law cuts when the pension is calculated under the flexibilisation rules in force on ", {"ref": "31 December 2018"}],
+          pt: ["é o que a lei corta quando a pensão é calculada pelas regras da flexibilização em vigor a ", {"data": {"id": "flexibilizacao-regras-2018", "campo": "reference_date", "valor": "2018-12-31"}}],
+          en: ["is what the law cuts when the pension is calculated under the flexibilisation rules in force on ", {"data": {"id": "flexibilizacao-regras-2018", "campo": "reference_date", "valor": "2018-12-31"}}],
         },
       },
     ],
@@ -895,7 +895,7 @@ export const LEITURAS = {
         { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
         ' ou de ',
         { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
-        ", consoante a porta por onde o trabalhador entra (a flexibilização com pelo menos ", {"claim": "flexibilizacao-idade-minima"}, " anos e ", {"claim": "flexibilizacao-carreira-minima"}, " de descontos nessa idade, ou as regras da flexibilização em vigor a ", {"ref": "31 de dezembro de 2018"}, "), quando o valor atuarialmente neutro estimado pelo próprio relatório, numa estimativa que ele chama preliminar, é de ",
+        ", consoante a porta por onde o trabalhador entra (a flexibilização com pelo menos ", {"claim": "flexibilizacao-idade-minima"}, " anos e ", {"claim": "flexibilizacao-carreira-minima"}, " de descontos nessa idade, ou as regras da flexibilização em vigor a ", {"data": {"id": "flexibilizacao-regras-2018", "campo": "reference_date", "valor": "2018-12-31"}}, "), quando o valor atuarialmente neutro estimado pelo próprio relatório, numa estimativa que ele chama preliminar, é de ",
         { claim: 'penalizacao-antecipacao-um-ano-neutra' },
         ': a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.',
       ],
@@ -904,7 +904,7 @@ export const LEITURAS = {
         { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
         ' or ',
         { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
-        ", depending on which door the worker comes through (flexibilisation at ", {"claim": "flexibilizacao-idade-minima"}, " or older with ", {"claim": "flexibilizacao-carreira-minima"}, " years of contributions at that age, or the flexibilisation rules in force on ", {"ref": "31 December 2018"}, "), when the actuarially neutral figure estimated by the report itself, in what it calls a preliminary estimate, is ",
+        ", depending on which door the worker comes through (flexibilisation at ", {"claim": "flexibilizacao-idade-minima"}, " or older with ", {"claim": "flexibilizacao-carreira-minima"}, " years of contributions at that age, or the flexibilisation rules in force on ", {"data": {"id": "flexibilizacao-regras-2018", "campo": "reference_date", "valor": "2018-12-31"}}, "), when the actuarially neutral figure estimated by the report itself, in what it calls a preliminary estimate, is ",
         { claim: 'penalizacao-antecipacao-um-ano-neutra' },
         ': the law misses in both directions, and is harshest on those who deviate least.',
       ],

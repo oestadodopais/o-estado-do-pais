@@ -709,5 +709,13 @@ Object.assign(NOMES_DO_PROJETO, {
   "flexibilizacao-idade-minima": {
     "pt": "Idade mínima no regime de flexibilização",
     "en": "Minimum age under the flexibilisation scheme"
+  },
+  "flexibilizacao-regras-2018-ano": {
+    "pt": "Ano das regras da flexibilização a que se aplica o fator de sustentabilidade",
+    "en": "Year of the flexibilisation rules to which the sustainability factor applies"
+  },
+  "flexibilizacao-regras-2018": {
+    "pt": "Data das regras da flexibilização a que se aplica o fator de sustentabilidade",
+    "en": "Date of the flexibilisation rules to which the sustainability factor applies"
   }
 });
