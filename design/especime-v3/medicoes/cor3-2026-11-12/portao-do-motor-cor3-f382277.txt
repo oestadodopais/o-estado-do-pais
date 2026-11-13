@@ -1,0 +1,27 @@
+O portão inteiro do motor, corrido pelo lugar de direção numa árvore limpa na cabeça f382277 (13.11.2026, 07:10:09 a 07:30:36 UTC): código 1, três problemas.
+
+GATE: FAIL — 3 problem(s); commit blocked
+ - publisher.dominios_test FAILED:
+ - publisher.oe2027_medidas_test FAILED:
+ - publisher.dominios_series_test FAILED:
+  --------------------------------------------------------------------
+  publisher.dominios_test FAILED:
+  DOMINIOS_TEST: 35 defeito(s) plantado(s) e visto(s) vermelho(s):
+    x B2: ('sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue', '18.5')
+    x ledger.json em disco não é o que este construtor produz hoje (428188 bytes contra 403611)
+    x manifest.dominios.json em disco não é o que este construtor produz hoje (264384 bytes contra 241948)
+  DOMINIOS_TEST: FAIL — 35 de 35 defeito(s) vistos, 1 prova(s) verde(s), 3 problema(s), a corrida limpa verde antes e depois
+  --------------------------------------------------------------------
+  publisher.oe2027_medidas_test FAILED:
+  Traceback (most recent call last):
+      result = run()
+              "PM livro gémeo alterado")
+  publisher.oe1_common.Fail: PM livro gémeo alterado
+  --------------------------------------------------------------------
+  publisher.dominios_series_test FAILED:
+    x A PLANTA «um corpo alojado mexido» MORDEU COM OUTRA QUEIXA: esperava-se «não dá o resumo» e veio «VS2: sobrecarga-do-custo-da-habitacao-2025-paises: o ponto de EU27_2020 diz «7,6» e o corpo alojado escreve «7.7»»
+    x A PLANTA «o valor do ponto só numa anotação, e outro no value» MORDEU COM OUTRA QUEIXA: esperava-se «a célula 367 da resposta «9.9»» e veio «VS2: sobrecarga-do-custo-da-habitacao-2025-paises: o ponto de EU27_2020 diz «7,6» e o corpo alojado escreve «7.7»»
+  DOMINIOS_SERIES_TEST: FAIL · 2 falha(s) em 66 conferências
+An unrunnable or red gate is not evidence of a clean commit (rule 14).
+gate exit 1
+fim 2026-11-13T07:30:36Z
