@@ -71,7 +71,9 @@ export const UNIDADES_DOS_CARTOES = {
     ['flexibilizacao-regras-2018', 'data', 'date'],
     ['flexibilizacao-regras-2018-ano', 'ano', 'year'],
   ].map(([id,pt,en]) => [id, {
-    pt: [pt], en: [en], apoio: [{campo:'unit',literal:pt}],
+    pt: [pt], en: [en], apoio: [pt === 'ano'
+      ? {campo:'excerpt',literal:'31 de dezembro de 2018'}
+      : {campo:'unit',literal:pt}],
     achado: 'COR3 A: o cartão da área imprimia a unidade sem declaração; a unidade mantém a da linha atravessada.',
   }])),
   /* ------------------------------------------------ as populações (achados 1 e 9) */
