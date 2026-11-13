@@ -61,6 +61,7 @@ const UNIDADES_EUROSTAT_PT = {
   "Annual rate of change": "taxa de variação anual",
   "Annual average index, 2015=100": "índice médio anual, 2015=100",
   "Price-to-income ratio, index 2015=100": "rácio preço-rendimento, índice 2015=100",
+  "Price-to-income ratio, index 2025=100": "rácio preço-rendimento, índice 2025=100",
   "Quarterly index, 2015=100": "índice trimestral, 2015=100",
   "Number": "número",
   "Thousand": "milhares",
