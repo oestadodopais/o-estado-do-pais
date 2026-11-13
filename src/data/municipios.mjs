@@ -517,8 +517,8 @@ const EVORA = {
              pelouros data-as de outubro de 2014 e reconstrói os mapas deste mandato e
              do seguinte; o que falta aqui é a linha deste sítio, não a fonte. */
           pelourosNota: {
-            pt: ['As fontes dos pelouros registam a repartição deste mandato, e ela está no estudo de quem governou a câmara.'],
-            en: ['The portfolio sources record this term’s split, and it is in the study of who governed the council.'],
+            pt: ['A repartição dos pelouros deste mandato está por confirmar na fonte.'],
+            en: ['This term’s split of portfolios is yet to be confirmed at the source.'],
           },
         },
         {
@@ -556,8 +556,8 @@ const EVORA = {
              anterior, que é o que explica o campo vazio: as capturas começam
              depois deste mandato. */
           pelourosNota: {
-            pt: ['As fontes dos pelouros registam a repartição deste mandato, e ela está no estudo de quem governou a câmara.'],
-            en: ['The portfolio sources record this term’s split, and it is in the study of who governed the council.'],
+            pt: ['A repartição dos pelouros deste mandato está por confirmar na fonte.'],
+            en: ['This term’s split of portfolios is yet to be confirmed at the source.'],
           },
         },
         {

@@ -92,6 +92,7 @@ export const WORKS = [
 {
   id: "orcamento-2027-o-que-muda-e-para-quem",
   slug: 'orcamento-2027-o-que-muda-e-para-quem',
+  alcunhas: {"pt": ["estudo do Orçamento"], "en": ["study of the Budget", "study on the Budget"]},
   tema: "economia-e-financas-publicas",
   // Publicação no ar: fusão 6ec741c2d e aterragem de 21.10.2026, DECISIONS §1.202.
   publication: 'declared',
@@ -125,6 +126,7 @@ export const WORKS = [
 {
   id: 'a-casa-em-portugal-e-na-europa',
   slug: 'a-casa-em-portugal-e-na-europa',
+  alcunhas: {"pt": ["estudo da habitação"], "en": ["study of housing", "study on housing"]},
   tema: 'habitacao',
   publication: 'declared',
   editions: [
@@ -165,6 +167,7 @@ export const WORKS = [
   {
     id: 'evora-contas-da-camara-2010-2025',
     slug: 'evora-contas-da-camara-2010-2025',
+    alcunhas: {"pt": ["estudo das contas da Câmara de Évora", "estudo das contas"], "en": ["study of the accounts of the Câmara de Évora"]},
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     publication: 'declared',
@@ -186,6 +189,7 @@ export const WORKS = [
   {
     id: 'evora-quem-governou-a-camara-2009-2025',
     slug: 'evora-quem-governou-a-camara-2009-2025',
+    alcunhas: {"pt": ["estudo de quem governou a câmara"], "en": ["study of who governed the council"]},
     estado: 'retirado',
     tema: 'governo-e-democracia',
     subject: 'evora',
@@ -207,6 +211,7 @@ export const WORKS = [
   {
     id: 'evora-economia-e-dinheiro-publico-de-fora-da-camara',
     slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
@@ -228,6 +233,7 @@ export const WORKS = [
   {
     id: 'evora-2027-capital-europeia-da-cultura',
     slug: 'evora-2027-capital-europeia-da-cultura',
+    alcunhas: {"pt": [], "en": []},
     // H2: acompanha-se a candidatura a Capital Europeia da Cultura até ao fim de 2027.
     // A data é o horizonte do acompanhamento; o estado só muda pela ficha, não pelo relógio.
     emCurso: { razao: 'Acompanhamento da candidatura a Capital Europeia da Cultura.', ate: '2027-12-31' },
@@ -251,6 +257,7 @@ export const WORKS = [
   {
     id: 'evora-quinze-anos-cinco-mandatos',
     slug: 'evora-quinze-anos-cinco-mandatos',
+    alcunhas: {"pt": [], "en": []},
     tema: 'governo-e-democracia',
     subject: 'evora',
     /* A 01.10.2026 SUCEDERAM-LHE TRÊS ESTUDOS (bloco E1, §1.145): as finanças
@@ -277,6 +284,7 @@ export const WORKS = [
   {
     id: 'evora-economia-investidores-portas-abertas-2026',
     slug: 'evora-economia-investidores-portas-abertas-2026',
+    alcunhas: {"pt": [], "en": []},
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
@@ -293,6 +301,7 @@ export const WORKS = [
   {
     id: 'evora-orcamentado-pago-devido-2025',
     slug: 'evora-orcamentado-pago-devido-2025',
+    alcunhas: {"pt": [], "en": []},
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
@@ -322,6 +331,7 @@ export const WORKS = [
   {
     id: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
     slug: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
+    alcunhas: {"pt": ["estudo dos pelouros"], "en": []},
     tema: 'governo-e-democracia',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
@@ -369,6 +379,7 @@ export const WORKS = [
   {
     id: 'evora-prometido-pago-auditado-2026',
     slug: 'evora-prometido-pago-auditado-2026',
+    alcunhas: {"pt": [], "en": []},
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
@@ -418,6 +429,7 @@ export const WORKS = [
   {
     id: 'evora-2027-prometido-painel-dinheiro',
     slug: 'evora-2027-prometido-painel-dinheiro',
+    alcunhas: {"pt": [], "en": []},
     tema: 'cultura',
     subject: 'evora',
     /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
@@ -482,6 +494,7 @@ export const WORKS = [
   {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     tema: 'agua',
     // subject por preencher: o título não diz de que território trata. Se vier
@@ -508,6 +521,7 @@ export const WORKS = [
   {
     id: 'agua-nao-faturada',
     slug: 'agua-nao-faturada',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     tema: 'agua',
     editions: [
@@ -522,6 +536,7 @@ export const WORKS = [
   {
     id: 'avaliacao-economica-regional-de-portugal-2026',
     slug: 'avaliacao-economica-regional-de-portugal-2026',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     tema: 'economia-e-financas-publicas',
     editions: [
@@ -539,6 +554,7 @@ export const WORKS = [
       en: 'The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date.',
     },
     slug: 'which-door-is-yours',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     tema: 'investimento',
     editions: [
@@ -557,6 +573,7 @@ export const WORKS = [
   {
     id: 'alentejo-algarve',
     slug: 'alentejo-algarve',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     subject: 'alentejo',
     tema: 'economia-e-financas-publicas',
@@ -571,6 +588,7 @@ export const WORKS = [
   {
     id: 'evolucao-de-portugal-desde-1981',
     slug: 'evolucao-de-portugal-desde-1981',
+    alcunhas: {"pt": [], "en": []},
     estado: 'retirado',
     tema: 'populacao',
     editions: [{ lang: 'pt', title: 'Evolução de Portugal desde 1981', date: null, updated: null }],
@@ -590,6 +608,7 @@ export const WORKS = [
        contradição que era da nota, não da página. Nenhuma data mudou. */
     id: 'penalizacoes-por-reforma-antecipada-2026',
     slug: 'penalizacoes-por-reforma-antecipada-2026',
+    alcunhas: {"pt": [], "en": []},
     tema: 'seguranca-social-e-pensoes',
     editions: [
       {

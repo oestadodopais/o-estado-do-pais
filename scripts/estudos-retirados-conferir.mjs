@@ -70,6 +70,7 @@ export function conferirRedirecionamentos(works, partida, tabela, rotas) {
 /** Percorre todo o sítio, incluindo mapa XML e ligações relativas ou com fragmento. */
 export function conferirLigacoesRetiradas(works, rota, html) {
   const root = parse(html), erros = [];
+  erros.push(...conferirReferenciasSemLigacao(works, rota, html));
   const citacoesVivas = new Set(works.filter(w => w.estado !== 'retirado').flatMap(w => Object.values(w.verbatimDaAbertura ?? {})));
   const citacoesRetiradas = works.filter(w => w.estado === 'retirado').flatMap(w => Object.values(w.verbatimDaAbertura ?? {})).filter(k => !citacoesVivas.has(k));
   for (const el of root.querySelectorAll('[data-verbatim]')) if (citacoesRetiradas.includes(el.getAttribute('data-verbatim'))) erros.push(`REC2 citação exclusiva de estudo retirado: ${rota}`);
@@ -82,6 +83,22 @@ export function conferirLigacoesRetiradas(works, rota, html) {
     let caminho;
     try { caminho = new URL(href, new URL(rota, SITE_URL)).pathname; } catch { continue; }
     if (estudoDaRota(caminho, works)?.estado === 'retirado') erros.push(`REC2 ligação retirada: ${rota} -> ${href}`);
+  }
+  return erros;
+}
+
+/** As alcunhas são dados do trabalho; a retirada também invalida remissões sem href. */
+export function conferirReferenciasSemLigacao(works, rota, html) {
+  const root = parse(html), erros = [];
+  for (const el of root.querySelectorAll('script, style, template, [hidden], [aria-hidden="true"], a[href]')) el.remove();
+  const normalizar = s => s.normalize('NFC').replace(/\s+/g, ' ').trim().toLocaleLowerCase('pt');
+  const texto = normalizar(root.textContent);
+  for (const work of works) {
+    const nomes = Object.values(work.alcunhas ?? {}).flat();
+    if ((work.editions ?? []).some(e => edicaoPublicada(work, e))) continue;
+    for (const nome of nomes) if (texto.includes(normalizar(nome))) {
+      erros.push(`RET1 remissão sem ligação para estudo não publicado: ${rota}: ${nome}`);
+    }
   }
   return erros;
 }
