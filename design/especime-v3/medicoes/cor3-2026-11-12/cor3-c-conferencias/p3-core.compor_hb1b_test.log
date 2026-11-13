@@ -1,0 +1,20 @@
+      "planta": "data SITE published_at",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "documento.en.md.tmpl:4: literal sem linha: 21 October"
+    },
+    {
+      "planta": "atribuição inglesa alterada",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "linha de origem alterada: voto"
+    }
+  ],
+  "positivos": [
+    "cita silenciosa com prova",
+    "numeração e negrito",
+    "data do calendário PT/EN",
+    "atribuição inglesa e fallback"
+  ]
+}
+COMPOR HB1-b: PASS 20 conferências

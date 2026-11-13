@@ -608,7 +608,7 @@
     "lingua": "pt",
     "correcao": "C01",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União Europeia: o índice real está em 205,75 em 2025, com 2015 igual a cem, contra 124,97 na União, o valor mais alto dos vinte e sete.",
     "literal": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União Europeia: o índice real está em 205,75 em 2025, com 2015 igual a cem, contra 124,97 na União, o valor mais alto dos vinte e sete.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -623,11 +623,11 @@
     "lingua": "en",
     "correcao": "C01",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the European Union: the real index stands at 205.75 in 2025, with 2015 equal to one hundred, against 124.97 in the Union, the highest value of the twenty-seven.",
     "literal": "Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the European Union: the real index stands at 205.75 in 2025, with 2015 equal to one hundred, against 124.97 in the Union, the highest value of the twenty-seven.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat está em 144,34 (2015 igual a cem) contra 105,72 na União, também o valor mais alto: o rácio subiu 44,3 % desde 2015 em Portugal e 5,7 % na União.",
@@ -638,7 +638,7 @@
     "lingua": "pt",
     "correcao": "C02",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat subiu 60,8 % de 2015 a 2025 em Portugal, a maior subida dos vinte e sete, e 6,8 % na União.",
     "literal": "Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat subiu 60,8 % de 2015 a 2025 em Portugal, a maior subida dos vinte e sete, e 6,8 % na União.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -653,11 +653,11 @@
     "lingua": "en",
     "correcao": "C02",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Against household income, Eurostat's price-to-income ratio rose 60.8 % from 2015 to 2025 in Portugal, the largest rise of the twenty-seven, and 6.8 % in the Union.",
     "literal": "Against household income, Eurostat's price-to-income ratio rose 60.8 % from 2015 to 2025 in Portugal, the largest rise of the twenty-seven, and 6.8 % in the Union.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Uma casa vendida em Portugal custava 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3 846; uma renda nova, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto.",
@@ -668,7 +668,7 @@
     "lingua": "pt",
     "correcao": "C03",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "O preço mediano de uma casa vendida em Portugal foi de 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3 846; a renda mediana de um contrato novo, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto.",
     "literal": "O preço mediano de uma casa vendida em Portugal foi de 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3 846; a renda mediana de um contrato novo, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -683,11 +683,11 @@
     "lingua": "en",
     "correcao": "C03",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "The median price of a home sold in Portugal was 2,445 euros per square metre in Q2 2026, in Lisbon 5,299 and in Porto 3,846; the median rent of a new contract, in Q2 2026, 10.17 euros per square metre in the country, 17.79 in Lisbon, 14.66 in Porto.",
     "literal": "The median price of a home sold in Portugal was 2,445 euros per square metre in Q2 2026, in Lisbon 5,299 and in Porto 3,846; the median rent of a new contract, in Q2 2026, 10.17 euros per square metre in the country, 17.79 in Lisbon, 14.66 in Porto.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "E no entanto a família média portuguesa gasta na casa uma parte do rendimento menor do que a média da União (16,3 % contra 18,9 %) e a parte da população em sobrecarga, mais de quarenta por cento do rendimento na casa, é menor (6,2 % contra 7,7 %).",
@@ -698,7 +698,7 @@
     "lingua": "pt",
     "correcao": "C04",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "E no entanto a família média portuguesa gasta na casa uma parte do rendimento menor do que a média da União (16,3 % contra 18,9 %) e a parte da população em sobrecarga, mais de quarenta por cento do rendimento na casa, é menor (6,2 % contra 7,6 %).",
     "literal": "E no entanto a família média portuguesa gasta na casa uma parte do rendimento menor do que a média da União (16,3 % contra 18,9 %) e a parte da população em sobrecarga, mais de quarenta por cento do rendimento na casa, é menor (6,2 % contra 7,6 %).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -713,11 +713,11 @@
     "lingua": "en",
     "correcao": "C04",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "And yet the average Portuguese household spends on housing a smaller share of its income than the Union average (16.3 % against 18.9 %) and the share of the population overburdened, more than forty percent of income on housing, is smaller (6.2 % against 7.6 %).",
     "literal": "And yet the average Portuguese household spends on housing a smaller share of its income than the Union average (16.3 % against 18.9 %) and the share of the population overburdened, more than forty percent of income on housing, is smaller (6.2 % against 7.6 %).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "A diferença está em quem arrenda a preços de mercado: são 16,3 % da população em Portugal (20,8 % na União), e entre eles 27,2 % estão em sobrecarga, contra 18,6 % na União e 19,7 % em 2020; entre os proprietários sem empréstimo, 39,7 % da população, a sobrecarga é de 1,3 %.",
@@ -728,7 +728,7 @@
     "lingua": "pt",
     "correcao": "C05",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "A diferença está em quem arrenda a preços de mercado: são 16,3 % da população em Portugal (20,8 % na União), e entre eles 27,2 % estão em sobrecarga, contra 18,5 % na União e 19,7 % em 2020; entre os proprietários sem empréstimo, 39,7 % da população, a sobrecarga é de 1,3 %.",
     "literal": "A diferença está em quem arrenda a preços de mercado: são 16,3 % da população em Portugal (20,8 % na União), e entre eles 27,2 % estão em sobrecarga, contra 18,5 % na União e 19,7 % em 2020; entre os proprietários sem empréstimo, 39,7 % da população, a sobrecarga é de 1,3 %.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -743,11 +743,11 @@
     "lingua": "en",
     "correcao": "C05",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "The difference lies with those who rent at market prices: they are 16.3 % of the population in Portugal (20.8 % in the Union), and among them 27.2 % are overburdened, against 18.5 % in the Union and 19.7 % in 2020; among owners with no loan, 39.7 % of the population, the overburden is 1.3 %.",
     "literal": "The difference lies with those who rent at market prices: they are 16.3 % of the population in Portugal (20.8 % in the Union), and among them 27.2 % are overburdened, against 18.5 % in the Union and 19.7 % in 2020; among owners with no loan, 39.7 % of the population, the overburden is 1.3 %.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "**O que o Estado faz é pequeno ao pé do problema, e nenhum dos seus documentos mede o que faz.**",
@@ -758,7 +758,7 @@
     "lingua": "pt",
     "correcao": "C07",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "**O relatório do Orçamento conta casas e beneficiários, mas nem ele nem o comunicado do Conselho de Ministros avaliam o efeito nos preços ou nas rendas.**",
     "literal": "O relatório do Orçamento conta casas e beneficiários, mas nem ele nem o comunicado do Conselho de Ministros avaliam o efeito nos preços ou nas rendas.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -773,7 +773,7 @@
     "lingua": "pt",
     "correcao": "C07",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Nenhum dos dois documentos avalia o efeito nos preços ou nas rendas.",
     "literal": "Nenhum dos dois documentos avalia o efeito nos preços ou nas rendas.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -788,11 +788,11 @@
     "lingua": "en",
     "correcao": "C07",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "**The Budget report counts homes and beneficiaries, but neither it nor the Council of Ministers communiqué assesses the effect on prices or rents.**",
     "literal": "The Budget report counts homes and beneficiaries, but neither it nor the Council of Ministers communiqué assesses the effect on prices or rents.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "None of the documents assesses the effect on prices or rents.",
@@ -803,11 +803,11 @@
     "lingua": "en",
     "correcao": "C07",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Neither document assesses the effect on prices or rents.",
     "literal": "Neither document assesses the effect on prices or rents.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.",
@@ -818,7 +818,7 @@
     "lingua": "pt",
     "correcao": "C08",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.",
     "literal": "Os feridos da intervenção policial no Porto são pelo menos «37 feridos, dois em estado grave» segundo o movimento, «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o BE é o Bloco de Esquerda) e, pela notícia «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» segundo as contas da organização, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -833,11 +833,11 @@
     "lingua": "en",
     "correcao": "C08",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "The injured of the police intervention in Porto are at least «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the national leadership of the Left Bloc (BE) and, by the report «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case.",
     "literal": "The injured of the police intervention in Porto are at least «37 feridos, dois em estado grave» according to the movement, «35 feridos, pelo menos» according to José Soeiro, of the national leadership of the Left Bloc (BE) and, by the report «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» by the organisers' count, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Descontada a inflação, o índice dos preços de 2025 está em 206,41 contra 124,75 na União, 81,7 pontos acima, com a Finlândia no mais baixo (81,90) e Portugal no mais alto; em 2020 estava em 145,91. Só em 2025, os preços reais subiram 14,7 % em Portugal e 2,9 % na União.",
@@ -848,7 +848,7 @@
     "lingua": "pt",
     "correcao": "C09",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Descontada a inflação, o índice dos preços de 2025 está em 205,75 contra 124,97 na União, 80,8 pontos acima, com a Finlândia no mais baixo (81,90) e Portugal no mais alto; em 2020 estava em 145,91. Só em 2025, os preços reais subiram 14,6 % em Portugal e 3,0 % na União.",
     "literal": "Descontada a inflação, o índice dos preços de 2025 está em 205,75 contra 124,97 na União, 80,8 pontos acima, com a Finlândia no mais baixo (81,90) e Portugal no mais alto; em 2020 estava em 145,91. Só em 2025, os preços reais subiram 14,6 % em Portugal e 3,0 % na União.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -863,11 +863,11 @@
     "lingua": "en",
     "correcao": "C09",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Net of inflation, the 2025 price index stands at 205.75 against 124.97 in the Union, 80.8 points above, with Finland at the lowest (81.90) and Portugal at the highest; in 2020 it stood at 145.91. In 2025 alone, real prices rose 14.6 % in Portugal and 3.0 % in the Union.",
     "literal": "Net of inflation, the 2025 price index stands at 205.75 against 124.97 in the Union, 80.8 points above, with Finland at the lowest (81.90) and Portugal at the highest; in 2020 it stood at 145.91. In 2025 alone, real prices rose 14.6 % in Portugal and 3.0 % in the Union.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Face ao rendimento das famílias, o rácio preço-rendimento do Eurostat (2015 igual a cem) estava em 144,34 em Portugal em 2024 e em 105,72 na União, 38,6 pontos acima; a Roménia tem o mais baixo (55,88) e Portugal o mais alto. Em 2019 Portugal estava em 121,65. Face à média de longo prazo de cada país, que o Eurostat põe igual a cem, Portugal está em 122,92, ou seja, 22,9 % acima da sua, o valor mais alto dos vinte e sete, e a União em 98,94, 1,1 % abaixo; a Roménia é o país mais longe da sua média, mas para baixo (48,23).",
@@ -878,7 +878,7 @@
     "lingua": "pt",
     "correcao": "C10",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Face ao rendimento das famílias, o rácio preço-rendimento do Eurostat (2025 igual a cem) subiu 60,8 % em Portugal de 2015 a 2025 e 6,8 % na União; a Roménia tem a maior descida (−42,8 %) e Portugal a maior subida. Em 2019 o rácio de Portugal estava 21,7 % acima do de 2015. Face à média de longo prazo de cada país, que o Eurostat põe igual a cem, Portugal está em 136,97 em 2025, ou seja, 37,0 % acima da sua, o valor mais alto dos vinte e sete, e a União em 100,03, praticamente igual à sua; a Roménia é o país mais longe da sua média, mas para baixo (47,01).",
     "literal": "Face ao rendimento das famílias, o rácio preço-rendimento do Eurostat (2025 igual a cem) subiu 60,8 % em Portugal de 2015 a 2025 e 6,8 % na União; a Roménia tem a maior descida (−42,8 %) e Portugal a maior subida. Em 2019 o rácio de Portugal estava 21,7 % acima do de 2015. Face à média de longo prazo de cada país, que o Eurostat põe igual a cem, Portugal está em 136,97 em 2025, ou seja, 37,0 % acima da sua, o valor mais alto dos vinte e sete, e a União em 100,03, praticamente igual à sua; a Roménia é o país mais longe da sua média, mas para baixo (47,01).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -893,11 +893,11 @@
     "lingua": "en",
     "correcao": "C10",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Against household income, Eurostat's price-to-income ratio (2025 equal to one hundred) rose 60.8 % in Portugal from 2015 to 2025 and 6.8 % in the Union; Romania has the largest fall (−42.8 %) and Portugal the largest rise. In 2019 Portugal's ratio stood 21.7 % above its 2015 level. Against each country's own long-term average, which Eurostat sets equal to one hundred, Portugal stands at 136.97 in 2025, that is, 37.0 % above its own, the highest value of the twenty-seven, and the Union at 100.03, practically level with its own; Romania is the country furthest from its average, but downwards (47.01).",
     "literal": "Against household income, Eurostat's price-to-income ratio (2025 equal to one hundred) rose 60.8 % in Portugal from 2015 to 2025 and 6.8 % in the Union; Romania has the largest fall (−42.8 %) and Portugal the largest rise. In 2019 Portugal's ratio stood 21.7 % above its 2015 level. Against each country's own long-term average, which Eurostat sets equal to one hundred, Portugal stands at 136.97 in 2025, that is, 37.0 % above its own, the highest value of the twenty-seven, and the Union at 100.03, practically level with its own; Romania is the country furthest from its average, but downwards (47.01).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "E as rendas dos contratos novos: 10,17 euros por metro quadrado no 2.º trimestre de 2026, 17,79 em Lisboa, 14,66 no Porto; Lisboa custa 1,7 vezes o país.",
@@ -908,7 +908,7 @@
     "lingua": "pt",
     "correcao": "C11",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "E a renda mediana dos contratos novos: 10,17 euros por metro quadrado no 2.º trimestre de 2026, 17,79 em Lisboa, 14,66 no Porto; Lisboa custa 1,7 vezes o país.",
     "literal": "E a renda mediana dos contratos novos: 10,17 euros por metro quadrado no 2.º trimestre de 2026, 17,79 em Lisboa, 14,66 no Porto; Lisboa custa 1,7 vezes o país.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -923,11 +923,11 @@
     "lingua": "en",
     "correcao": "C11",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "And the median rent of new contracts: 10.17 euros per square metre in Q2 2026, 17.79 in Lisbon, 14.66 in Porto; Lisbon costs 1.7 times the country.",
     "literal": "And the median rent of new contracts: 10.17 euros per square metre in Q2 2026, 17.79 in Lisbon, 14.66 in Porto; Lisbon costs 1.7 times the country.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "A sobrecarga, a parte da população que gasta na casa mais de quarenta por cento do rendimento, é de 6,2 % em Portugal e de 7,7 % na União, pelo conjunto do Eurostat por regime de ocupação; a publicação principal do Eurostat da mesma medida, de que vem a série deste sítio, dá 6,3 % para Portugal e 7,7 % para a União: as duas foram atualizadas no mesmo dia, 20 de outubro de 2026, a horas diferentes, e os números desta página são os da atualização mais recente, a do conjunto por regime de ocupação.",
@@ -938,7 +938,7 @@
     "lingua": "pt",
     "correcao": "C12",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "A sobrecarga, a parte da população que gasta na casa mais de quarenta por cento do rendimento, é de 6,2 % em Portugal e de 7,6 % na União, pelo conjunto do Eurostat por regime de ocupação; outro conjunto do Eurostat com a mesma medida, de que vem a série deste sítio, dá 6,3 % para Portugal e 7,6 % para a União; os números da sobrecarga total desta página são os do conjunto por regime de ocupação.",
     "literal": "A sobrecarga, a parte da população que gasta na casa mais de quarenta por cento do rendimento, é de 6,2 % em Portugal e de 7,6 % na União, pelo conjunto do Eurostat por regime de ocupação; outro conjunto do Eurostat com a mesma medida, de que vem a série deste sítio, dá 6,3 % para Portugal e 7,6 % para a União; os números da sobrecarga total desta página são os do conjunto por regime de ocupação.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -953,11 +953,11 @@
     "lingua": "en",
     "correcao": "C12",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Overburden, the share of the population spending more than forty percent of its income on housing, is 6.2 % in Portugal and 7.6 % in the Union, by Eurostat's dataset by tenure; another Eurostat dataset with the same measure, from which this site's series comes, gives 6.3 % for Portugal and 7.6 % for the Union; the total overburden figures on this page are those of the dataset by tenure.",
     "literal": "Overburden, the share of the population spending more than forty percent of its income on housing, is 6.2 % in Portugal and 7.6 % in the Union, by Eurostat's dataset by tenure; another Eurostat dataset with the same measure, from which this site's series comes, gives 6.3 % for Portugal and 7.6 % for the Union; the total overburden figures on this page are those of the dataset by tenure.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Entre os proprietários com empréstimo a sobrecarga é de 3,0 % (5,0 % na União); entre os proprietários sem empréstimo, 1,3 % (3,8 %); entre os inquilinos a renda reduzida ou gratuita, 2,8 % (9,2 %).",
@@ -968,7 +968,7 @@
     "lingua": "pt",
     "correcao": "C13",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Entre os proprietários com empréstimo a sobrecarga é de 3,0 % (4,6 % na União); entre os proprietários sem empréstimo, 1,3 % (3,7 %); entre os inquilinos a renda reduzida ou gratuita, 2,8 % (9,2 %).",
     "literal": "Entre os proprietários com empréstimo a sobrecarga é de 3,0 % (4,6 % na União); entre os proprietários sem empréstimo, 1,3 % (3,7 %); entre os inquilinos a renda reduzida ou gratuita, 2,8 % (9,2 %).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -983,11 +983,11 @@
     "lingua": "en",
     "correcao": "C13",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Among owners with a loan the overburden is 3.0 % (4.6 % in the Union); among owners with no loan, 1.3 % (3.7 %); among tenants at reduced or free rent, 2.8 % (9.2 %).",
     "literal": "Among owners with a loan the overburden is 3.0 % (4.6 % in the Union); among owners with no loan, 1.3 % (3.7 %); among tenants at reduced or free rent, 2.8 % (9.2 %).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Entre os inquilinos a preços de mercado é de 27,2 %, contra 18,6 % na União, 8,6 pontos acima; era 19,7 % em 2020 e 35,4 % em 2015 (a Finlândia tem a mais baixa, 12,3 %, e a Roménia a mais alta, 56,0 %).",
@@ -998,7 +998,7 @@
     "lingua": "pt",
     "correcao": "C14",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Entre os inquilinos a preços de mercado é de 27,2 %, contra 18,5 % na União, 8,7 pontos acima; era 19,7 % em 2020 e 35,4 % em 2015 (a Finlândia tem a mais baixa, 12,3 %, e a Roménia a mais alta, 56,0 %).",
     "literal": "Entre os inquilinos a preços de mercado é de 27,2 %, contra 18,5 % na União, 8,7 pontos acima; era 19,7 % em 2020 e 35,4 % em 2015 (a Finlândia tem a mais baixa, 12,3 %, e a Roménia a mais alta, 56,0 %).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -1013,11 +1013,11 @@
     "lingua": "en",
     "correcao": "C14",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Among tenants at market rents it is 27.2 %, against 18.5 % in the Union, 8.7 points above; it was 19.7 % in 2020 and 35.4 % in 2015 (Finland has the lowest, 12.3 %, and Romania the highest, 56.0 %).",
     "literal": "Among tenants at market rents it is 27.2 %, against 18.5 % in the Union, 8.7 points above; it was 19.7 % in 2020 and 35.4 % in 2015 (Finland has the lowest, 12.3 %, and Romania the highest, 56.0 %).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Entre os jovens de dezasseis a vinte e nove anos, a sobrecarga é de 7,5 % (9,3 % na União; a Grécia 25,5 %, a mais alta dos vinte e seis com dados).",
@@ -1028,7 +1028,7 @@
     "lingua": "pt",
     "correcao": "C15",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Entre os jovens de dezasseis a vinte e nove anos, a sobrecarga é de 7,5 % (9,2 % na União; a Grécia 25,5 %, a mais alta dos vinte e sete).",
     "literal": "Entre os jovens de dezasseis a vinte e nove anos, a sobrecarga é de 7,5 % (9,2 % na União; a Grécia 25,5 %, a mais alta dos vinte e sete).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -1043,11 +1043,11 @@
     "lingua": "en",
     "correcao": "C15",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Among the young aged sixteen to twenty-nine, the overburden is 7.5 % (9.2 % in the Union; Greece 25.5 %, the highest of the twenty-seven).",
     "literal": "Among the young aged sixteen to twenty-nine, the overburden is 7.5 % (9.2 % in the Union; Greece 25.5 %, the highest of the twenty-seven).",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões.",
@@ -1058,7 +1058,7 @@
     "lingua": "pt",
     "correcao": "C16",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "Em agosto de 2026 as novas operações de crédito à habitação dos bancos, renegociações incluídas, somaram 2 643,0 milhões de euros, a uma taxa de 3,01 %, segundo o Banco de Portugal; o stock de crédito à habitação dos particulares era de 119 061,6 milhões.",
     "literal": "Em agosto de 2026 as novas operações de crédito à habitação dos bancos, renegociações incluídas, somaram 2 643,0 milhões de euros, a uma taxa de 3,01 %, segundo o Banco de Portugal; o stock de crédito à habitação dos particulares era de 119 061,6 milhões.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -1073,11 +1073,11 @@
     "lingua": "en",
     "correcao": "C16",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "In August 2026 the banks' new housing loan operations, renegotiations included, came to 2,643.0 million euros, at a rate of 3.01 %, according to the Bank of Portugal; the stock of housing credit to private individuals was 119,061.6 million.",
     "literal": "In August 2026 the banks' new housing loan operations, renegotiations included, came to 2,643.0 million euros, at a rate of 3.01 %, according to the Bank of Portugal; the stock of housing credit to private individuals was 119,061.6 million.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "(a marca «(i)» é a do quadro do relatório para as medidas que ele classifica como «invariante»; o relatório não define a palavra além dessa nota)",
@@ -1088,7 +1088,7 @@
     "lingua": "pt",
     "correcao": "C17",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "(a marca «(i)» é a do quadro do relatório para as medidas que ele classifica como «invariante», e que descreve, logo antes do quadro, como medidas que, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027»)",
     "literal": "(a marca «(i)» é a do quadro do relatório para as medidas que ele classifica como «invariante», e que descreve, logo antes do quadro, como medidas que, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027»)",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -1103,11 +1103,11 @@
     "lingua": "en",
     "correcao": "C17",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "(the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still producing additional effects in that year)",
     "literal": "(the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged, and which it describes, just before the table, as measures that, «embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027», though decided in previous years, still producing additional effects in that year)",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "e pela notícia «Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte» do Diário de Notícias, «39 feridos, dois deles graves» segundo as contas da organização, e «um polícia ficou ferido» segundo a PSP.",
@@ -1118,7 +1118,7 @@
     "lingua": "pt",
     "correcao": "C18",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "e pela notícia «Manifestantes levam protesto até à porta da Câmara do Porto» do Diário de Notícias, «39 feridos, dois deles graves» segundo as contas da organização, e «um polícia ficou ferido» segundo a PSP.",
     "literal": "e pela notícia «Manifestantes levam protesto até à porta da Câmara do Porto» do Diário de Notícias, «39 feridos, dois deles graves» segundo as contas da organização, e «um polícia ficou ferido» segundo a PSP.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -1133,11 +1133,11 @@
     "lingua": "en",
     "correcao": "C18",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "and by the Diário de Notícias report «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» by the organisers' count, and «um polícia ficou ferido» according to the PSP.",
     "literal": "and by the Diário de Notícias report «Manifestantes levam protesto até à porta da Câmara do Porto», «39 feridos, dois deles graves» by the organisers' count, and «um polícia ficou ferido» according to the PSP.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   },
   {
     "antes": "«Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: o índice nacional dos preços está em 301,43 com 2015 igual a cem, o que é mais do que o dobro; a frase não diz o período, e nenhuma fonte deste estudo dá a subida por cidade.",
@@ -1148,7 +1148,7 @@
     "lingua": "pt",
     "correcao": "C19",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "«Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: a frase não diz o período nem que custos mede, e por isso os números deste estudo não a confirmam nem a desmentem; o índice dos preços da habitação do Eurostat, que é do país inteiro e não de cada cidade, estava no segundo trimestre de 2026 em 301,43 com 2015 igual a cem, mais do que o triplo de 2015.",
     "literal": "«Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: a frase não diz o período nem que custos mede, e por isso os números deste estudo não a confirmam nem a desmentem; o índice dos preços da habitação do Eurostat, que é do país inteiro e não de cada cidade, estava no segundo trimestre de 2026 em 301,43 com 2015 igual a cem, mais do que o triplo de 2015.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
@@ -1163,10 +1163,10 @@
     "lingua": "en",
     "correcao": "C19",
     "folha": "design/especime-v3/medicoes/cor3-2026-11-12/FOLHA-habitacao-decidida.md",
-    "sha256_folha": "4751b585b105888101ccadc0e3f940bbbb2cf0124ad1e61023a9fd984015c204",
+    "sha256_folha": "a200b35ee1c4d67deba1590ccdb27bdc1f7843e79e430e4b64f571505be0d87c",
     "depois": "«Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: the sentence does not say the period or which costs it measures, so the numbers in this study neither confirm nor refute it; Eurostat's house price index, which is for the whole country and not for each city, stood in the second quarter of 2026 at 301.43 with 2015 equal to one hundred, more than three times its 2015 level.",
     "literal": "«Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: the sentence does not say the period or which costs it measures, so the numbers in this study neither confirm nor refute it; Eurostat's house price index, which is for the whole country and not for each city, stood in the second quarter of 2026 at 301.43 with 2015 equal to one hundred, more than three times its 2015 level.",
     "documento": "studies-src/a-casa-em-portugal-e-na-europa/en.html",
-    "sha256_documento": "e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc"
+    "sha256_documento": "97717abb16b3b13f0c3a75bf7274f46a66a207f7426c0c32479808bd6104854d"
   }
 ]
