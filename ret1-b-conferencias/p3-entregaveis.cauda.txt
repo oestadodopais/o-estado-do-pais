@@ -1,0 +1,20 @@
+
+evora-contas-camara-pt-en NOTE    3 declared divergence(s) exempt: ['cabeca-c034-55', 'cabeca-c035-59', 'pmp-2023-expurgado']
+WARN    ignored-token counts differ: 471 vs 472 — structural only, verify neither hides a figure
+EDITIONS: PASS — 601 vs 601 matched tokens, 438 rows compared, 0 drift(s)
+
+evora-contas-camara-pt-md-html NOTE    3 declared divergence(s) exempt: ['cabeca-c034-55', 'cabeca-c035-59', 'pmp-2023-expurgado']
+EDITIONS: PASS — 601 vs 601 matched tokens, 438 rows compared, 0 drift(s)
+
+evora-contas-camara-en-md-html NOTE    3 declared divergence(s) exempt: ['cabeca-c034-55', 'cabeca-c035-59', 'pmp-2023-expurgado']
+EDITIONS: PASS — 601 vs 601 matched tokens, 438 rows compared, 0 drift(s)
+
+evora-2027-capital-europeia-da-cultura-pt-en TEXTO JULGADO pt: PASS, 464 unidades
+TEXTO JULGADO en: PASS, 464 unidades
+EDITIONS: PASS, 1426 vs 1426 números por unidade, 0 drift(s)
+
+evora-2027-capital-europeia-da-cultura-pt-md-html EDITIONS: PASS — 430 vs 430 matched tokens, 162 rows compared, 0 drift(s)
+
+evora-2027-capital-europeia-da-cultura-en-md-html EDITIONS: PASS — 434 vs 434 matched tokens, 162 rows compared, 0 drift(s)
+
+RET1-B: livros idênticos à cabeça anterior aos dois pontos; entregáveis e paridade conferidos.

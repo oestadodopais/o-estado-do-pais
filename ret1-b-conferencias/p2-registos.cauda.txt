@@ -1,0 +1,4 @@
+edição                                             blocos  refs  sha    bytes  prova / blocos por género / motivos de origem
+Évora 2027, Capital Europeia da Cultura (pt-PT)       165   332   63   296061  edicao-html | heading=38 list=3 paragraph=91 table=33 | derivado=2 pdf-sem-resumo=259 raw-sem-manifesto=8 | prefixos=0 | juntas-apertadas=0 espacos-fantasma=0
+Évora 2027, European Capital of Culture               165   332   63   296016  edicao-html | heading=38 list=3 paragraph=91 table=33 | derivado=2 pdf-sem-resumo=259 raw-sem-manifesto=8 | prefixos=0 | juntas-apertadas=0 espacos-fantasma=0
+REGISTOS: WROTE — 2 records and 1 manifests

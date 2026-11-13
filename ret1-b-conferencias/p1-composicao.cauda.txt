@@ -1,0 +1,8 @@
+TEXTO JULGADO pt: PASS, 501 unidades
+TEXTO JULGADO en: PASS, 501 unidades
+COMPOR  The accounts of the Câmara de Évora, 2010 to 2025.md: 0 bloco(s) de 4 fonte(s), 610 marcador(es), 0 saída(s) declarada(s)
+COMPOR  As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md: 0 bloco(s) de 4 fonte(s), 607 marcador(es), 0 saída(s) declarada(s)
+COMPOR  livro: 516 linha(s), 21 valor(es) ignorado(s), 24 asserção(ões)
+COMPOR  decisões en: 610 figura(s), 11 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR  decisões pt: 607 figura(s), 11 não-figura(s) declarada(s), das quais 0 algarismo(s) que não são números e que o registo antigo selava, e 0 correção(ões) de selo
+COMPOR: ESCRITO
