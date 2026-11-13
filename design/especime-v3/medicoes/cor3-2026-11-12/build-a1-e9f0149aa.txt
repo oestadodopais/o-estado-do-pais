@@ -1,0 +1,22 @@
+A1: calendário parlamentar selado recusado.
+A1: oe-2027-calendario-especialidade está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho10-a-i15-a-avg-pt-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho10-a-rch-a-avg-pt-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho10-a-rch-a-avg-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: der-hab-sobrecarga-inquilinos-pt-vs-eu-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho60-a-ptir-lt-avg-ro-2024 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: der-hab-precos-reais-pt-vs-eu-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho10-a-i15-a-avg-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-bpstat-12533724 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-ilc-lvho07c-a-pc-total-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tespm140-a-pc-eu27_2020-2025 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-bpstat-12533735 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: der-hab-preco-rendimento-lt-eu-2024 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: der-hab-preco-rendimento-lt-pt-2024 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: hab-tipsho60-a-ptir-lt-avg-pt-2024 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: oe-2027-calendario-entrega está em lugar-das-linhas.mjs e não deriva lugar nenhum.
