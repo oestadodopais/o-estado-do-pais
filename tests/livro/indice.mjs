@@ -266,6 +266,17 @@ const LINHAS_DA_REGUA = loadClaims();
  */
 const LOCALIZADORES_CONHECIDOS = [
   {
+    nome: 'Guia da pensão de velhice, página das regras da flexibilização',
+    forma: /^Guia Prático Pensão de Velhice; p\. 13 PDF$/,
+    onde: 'COR3: data lida na página física do guia, com o corpo identificado',
+    confere: (onde, linha) => ['flexibilizacao-regras-2018', 'flexibilizacao-regras-2018-ano'].includes(linha?.id) &&
+      linha.name === 'Data das regras da flexibilização a que se aplica o fator de sustentabilidade' &&
+      linha.excerpt === 'A menos que as regras da flexibilização em vigor a 31 de dezembro de 2018, antes da' &&
+      linha.document?.title === 'Guia Prático Pensão de Velhice' && linha.document?.kind === 'pdf' &&
+      linha.document?.page === 13 && linha.document?.locator === 'p. 13 do PDF' &&
+      linha.document?.source_sha256 === '1e1dec11775e9453a6288f5d152516b2584fabb4f10ef7b2bbf3447ed22285f3',
+  },
+  {
     nome: 'Guia da pensão de velhice, página da idade de referência',
     forma: /^Guia Prático Pensão de Velhice; p\. 15 PDF$/,
     onde: 'COR3: frase da página física do guia, conservada no corpo do motor',
@@ -2178,6 +2189,16 @@ function provaLocalizadores() {
       for(const mudar of [l=>l.id='nato-linha-inexistente',l=>l.name_source='secção desconhecida',l=>l.reference_date='2020',l=>l.document.locator='outra secção',l=>l.name=l.document.title,l=>l.document.kind='pdf']) {
         const l=structuredClone(original);mudar(l);
         if(localizadorCompromissoNatoConfere(l.name_source,l))falhas.push('EX3: localizador HTML, período ou rótulo trocado passou');
+      }
+    }
+    for (const id of ['flexibilizacao-regras-2018', 'flexibilizacao-regras-2018-ano']) {
+      const original = LINHAS_DA_REGUA.get(id);
+      if (!original || !localizadorConhecido(original.name_source, original)) falhas.push(`COR3: localizador limpo recusado em ${id}`);
+      for (const mudar of [l => l.name_source = l.name_source.replace('13', '12'), l => l.document.page = 12,
+        l => l.document.locator = 'p. 12 do PDF', l => l.document.source_sha256 = '0'.repeat(64),
+        l => l.excerpt += ' Frase inventada.', l => l.id = 'outra-linha']) {
+        const copia = structuredClone(original); mudar(copia);
+        if (localizadorConhecido(copia.name_source, copia)) falhas.push(`COR3: localizador adulterado aceite em ${id}`);
       }
     }
     const antigos = LOCALIZADORES_CONHECIDOS.slice(7).map((formato) => {
