@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-publicadores.py", line 11, in <module>
+    assert siblings,(r['id'],'publicador novo sem prova')
+           ^^^^^^^^
+AssertionError: ('sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue', 'publicador novo sem prova')

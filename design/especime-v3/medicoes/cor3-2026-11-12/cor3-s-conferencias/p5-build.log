@@ -1,0 +1,20 @@
+  o que é cada número · pm-q4-4-irc-2027 · pt: a família «pm-q4-4-irc» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irc-2027 · en: a família «pm-q4-4-irc» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irc-variacao · pt: a família «pm-q4-4-irc-variacao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irc-variacao · en: a família «pm-q4-4-irc-variacao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irs-2026 · pt: a família «pm-q4-4-irs» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irs-2026 · en: a família «pm-q4-4-irs» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irs-2027 · pt: a família «pm-q4-4-irs» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irs-2027 · en: a família «pm-q4-4-irs» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irs-variacao · pt: a família «pm-q4-4-irs-variacao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · pm-q4-4-irs-variacao · en: a família «pm-q4-4-irs-variacao» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · utao-t8-irs-salarios-pensoes · pt: a família «utao-t8-irs-salarios-pensoes» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+  o que é cada número · utao-t8-irs-salarios-pensoes · en: a família «utao-t8-irs-salarios-pensoes» não está declarada em src/data/o-que-e-das-familias.mjs. Uma linha sem frase ou sem nome fecha a construção (bloco R4, pontos 1 e 2 do brief).
+
+    at file://<worktree>/src/lib/o-que-e-o-numero.mjs:422:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 8.800020441412926e-05, "execucao_segundos": 4.621926374733448, "codigo": 1}

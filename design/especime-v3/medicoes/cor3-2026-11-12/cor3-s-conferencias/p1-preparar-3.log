@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-preparar.py", line 12, in <module>
+    new=pt_number(row['value'])
+  File "<motor>/publisher/export_site_rows.py", line 429, in pt_number
+    neg, whole, frac = split_number(source_form)
+                       ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "<motor>/publisher/export_site_rows.py", line 414, in split_number
+    raise Fail(f"cannot read {form!r} as a number")
+publisher.export_site_rows.Fail: cannot read '2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Aprovado Contra:PS, L, PCP, BE, PAN, JPP Abstenção:CH A Favor: PSD, IL, CDS-PP' as a number

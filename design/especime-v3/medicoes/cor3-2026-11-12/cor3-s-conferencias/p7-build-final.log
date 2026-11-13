@@ -1,0 +1,20 @@
+06:13:37 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+06:13:37 [build] 9860 page(s) built in 28.68s
+06:13:37 [build] Complete!
+VOZ-1 B: portas do calendário conferíveis no HTML das páginas atuais.
+
+> o-estado-do-pais@0.1.0 stamp:version
+> node scripts/stamp-version.mjs
+
+file://<worktree>/scripts/stamp-version.mjs:62
+if (!preparar && stamp.commit !== commit) throw new Error('FP1: o carimbo preparado pertence a outra cabeça; reconstrua o sítio.');
+                                                ^
+
+Error: FP1: o carimbo preparado pertence a outra cabeça; reconstrua o sítio.
+    at file://<worktree>/scripts/stamp-version.mjs:62:49
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 0.00013587484136223793, "execucao_segundos": 72.66852520825341, "codigo": 1}

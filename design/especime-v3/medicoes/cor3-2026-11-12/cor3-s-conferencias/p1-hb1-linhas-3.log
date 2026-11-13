@@ -1,0 +1,20 @@
+
+  sítio: <worktree>
+
+  TRAVESSIA RECUSADA
+
+  hab-tipsho10-a-i15-a-avg-pt-2025: excerpt_override is not a substring of the engine excerpt. Nothing is transcribed here that the engine does not already hold.
+      override: '{"coordinates": {"freq": "A", "unit": "I15_A_AVG", "geo": "PT", "time": "2025"}, "value": "206.41", "status": null}'
+      engine:   '{"coordinates": {"freq": "A", "unit": "I15_A_AVG", "geo": "PT", "time": "2025"}, "value": "205.75", "status": null}'
+
+  Nada foi escrito. Um campo que não se conhece escreve-se "[a verificar]" no manifesto — nunca um valor plausível.
+
+HB1: linhas prendidas por outra travessia, deixadas na versão dela: oe-2027-calendario-generalidade, posicao-chega-habitacao, posicao-ps-rendas
+Traceback (most recent call last):
+  File "<worktree>/scripts/hb1-exportar-linhas.py", line 40, in <module>
+    subprocess.run([sys.executable,'-m','publisher.export_site_rows','--manifest',str(f),'--site',str(site),'--write'],cwd=a.motor,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<temporario>', '-m', 'publisher.export_site_rows', '--manifest', '<temporario>', '--site', '<worktree>', '--write']' returned non-zero exit status 1.

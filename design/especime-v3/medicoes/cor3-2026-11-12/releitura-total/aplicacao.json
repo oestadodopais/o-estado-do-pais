@@ -1,0 +1,158 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py. Não se edita à mão.",
+  "cabeca_presa": "344b4777de0caa2f497c88bb74db1a6d37a504bf",
+  "releitura_do_motor": "indicators/out/releituras/2026-11-12/releitura.json",
+  "releitura_quando": "2026-11-12T18:24:55+00:00",
+  "releitura_cabeca_do_motor": "c0b49c72fa5eb33b13ffd90390cbb72dae63095c",
+  "linhas": [
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "antes_sha256": "47a39d7aec155b6ea1935969ce613bf5a67e04b0bda891ebb3a7cd3d5e433cd0",
+      "depois_sha256": "59a315f499f00a3a4d3ac14ffb71f30815c324904cc5ca2556b7be0e0bd018ba",
+      "valor_antigo": "7,7",
+      "valor_novo": "7,6",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-11-12",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-09-17T23:00:00+0200",
+      "carimbo_novo": "2026-10-29T23:00:00+0100",
+      "entradas_novas": [
+        {
+          "date": "2026-11-12",
+          "kind": "atualizacao",
+          "old_value": "7,7",
+          "new_value": "7,6",
+          "reason": "O Eurostat reviu o valor da União a 29.10.2026 (o carimbo do conjunto passou de 17.09.2026 a 29.10.2026); a reconferência semanal de 09.11.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 29.10.2026 (the dataset stamp moved from 17.09.2026 to 29.10.2026); the weekly check of 09.11.2026 caught the revision."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-11-12",
+          "reason": "O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 15.09.2026, é a do valor 7,7.",
+          "reason_en": "The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading, of 15.09.2026, is that of the value 7,7."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.7",
+          "new_value": "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.6",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 8,
+      "aplicada": true
+    }
+  ],
+  "lugares": {
+    "sobrecarga-do-custo-da-habitacao-2025-ue": "uniao-europeia"
+  },
+  "plantas": [
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "geografia desconhecida",
+      "mordeu": true,
+      "razao": "PARAGEM: sobrecarga-do-custo-da-habitacao-2025-ue: geografia desconhecida no pedido: ['DESCONHECIDO']"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "lugar contraditório",
+      "mordeu": true,
+      "razao": "PARAGEM: sobrecarga-do-custo-da-habitacao-2025-ue: lugar contraditório: ['portugal'], pedido uniao-europeia"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "acesso: dias diferentes, molde trocado, reason",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "acesso: dias diferentes, molde trocado, reason_en",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "acesso: dias iguais, molde trocado, reason",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "acesso: dias iguais, molde trocado, reason_en",
+      "mordeu": true,
+      "razao": "a razão do acesso não distingue o dia da leitura do dia da comparação"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "história anterior contraditória",
+      "mordeu": true,
+      "razao": "PARAGEM: sobrecarga-do-custo-da-habitacao-2025-ue: história selada contraditória; não se reescreve"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    }
+  ],
+  "contagens": {
+    "linhas": 1,
+    "aplicadas": 1,
+    "entradas_novas": 3,
+    "atualizacoes_novas": 1,
+    "bandeiras_que_sairam": 0,
+    "plantas": 15,
+    "plantas_que_morderam": 15
+  }
+}

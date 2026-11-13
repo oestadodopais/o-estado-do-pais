@@ -1,0 +1,20 @@
+06:00:44   ├─ /areas/index.html (+74ms) 
+06:00:44   ├─ /correcoes/index.html06:00:44 [ERROR] Error: mudancas: a linha "oe-2027-calendario-especialidade" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+    at file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:310:21
+    at Array.map (<anonymous>)
+    at correcoesDasLinhas (file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:306:82)
+    at todasAsMudancas (file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:360:6)
+    at mudancasDoRegisto (file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:452:9)
+    at file://<worktree>/dist/.prerender/chunks/CorrecoesView_FmcfjmMQ.mjs:87:19
+    at AstroComponentInstance.RegistoCorrecoes [as factory] (file://<worktree>/dist/.prerender/chunks/Base_D1QWvu9Z.mjs:25:10)
+    at AstroComponentInstance.init (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1707:27)
+    at AstroComponentInstance.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1714:28)
+    at Object.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2369:19)
+06:00:44 [ERROR] [build] Caught error rendering /correcoes: Error: mudancas: a linha "oe-2027-calendario-especialidade" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+mudancas: a linha "oe-2027-calendario-especialidade" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+  Stack trace:
+    at file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:310:21
+    at correcoesDasLinhas (file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:306:82)
+    at mudancasDoRegisto (file://<worktree>/dist/.prerender/chunks/mudancas_DZHIeaz7.mjs:452:9)
+    at AstroComponentInstance.RegistoCorrecoes [as factory] (file://<worktree>/dist/.prerender/chunks/Base_D1QWvu9Z.mjs:25:10)
+    at AstroComponentInstance.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1714:28)

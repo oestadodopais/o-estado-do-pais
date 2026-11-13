@@ -1,0 +1,6 @@
+38 afirmações com provas e recibos, sem corpos
+Traceback (most recent call last):
+  File "<worktree>/scripts/hb1-provas.py", line 67, in <module>
+    assert atual==composto,(id,'a cópia diverge do sítio fora das releituras')
+           ^^^^^^^^^^^^^^^
+AssertionError: ('sobrecarga-do-custo-da-habitacao-2025-ue', 'a cópia diverge do sítio fora das releituras')

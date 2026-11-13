@@ -1,0 +1,18 @@
+EO1: duas edições copiadas e medidas contra os commits de origem.
+HB1: duas edições copiadas e medidas contra os commits de origem.
+HB1: duas edições copiadas e medidas contra os commits de origem.
+Traceback (most recent call last):
+  File "<worktree>/design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py", line 33, in <module>
+    raise SystemExit(R.run(a.motor,site,write=True))
+                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_records_site.py", line 521, in run
+    colhido, de_fora = colher(root, site)
+                       ~~~~~~^^^^^^^^^^^^
+  File "<motor>/publisher/export_records_site.py", line 340, in colher
+    raise Fail(
+    ...<3 lines>...
+        f"\n       Commite-os no motor e volte a correr.")
+publisher.export_records_site.Fail: 28 pt: o git vê estes ficheiros mexidos, e uma travessia de uma árvore suja escreve no sítio um commit que não contém os bytes que atravessaram:
+        M "content/28 Habitacao Estudo/A casa em Portugal e na Europa.record.json"
+        M "content/28 Habitacao Estudo/records.manifest.json"
+       Commite-os no motor e volte a correr.

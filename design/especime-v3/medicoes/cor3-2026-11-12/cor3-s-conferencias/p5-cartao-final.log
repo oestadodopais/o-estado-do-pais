@@ -1,0 +1,20 @@
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-variacao en: K17 · recibo · en · oe-2027-saude-despesa-total-consolidada-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA igualdade: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+PLANTA igualdade: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dist/version.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>/tests/linha/v2a.mjs:283:46 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dist/version.json'
+}
+
+Node.js v22.23.1

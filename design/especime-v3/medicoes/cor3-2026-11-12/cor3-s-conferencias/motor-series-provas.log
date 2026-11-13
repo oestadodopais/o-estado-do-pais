@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/series_paises_test.py", line 205, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<motor>/publisher/series_paises_test.py", line 86, in main
+    refeito = S.construir(site)
+  File "<motor>/publisher/series_paises.py", line 571, in construir
+    r = construir_serie(pt, site, paises, raiz)
+  File "<motor>/publisher/series_paises.py", line 479, in construir_serie
+    raise Fail(f"{pt}: o ponto de {lado} ({c['valor_do_ponto']}) não é, como número, a linha "
+               f"«{c['linha']}» ({c['valor_da_linha']})")
+publisher.series_paises.Fail: sobrecarga-do-custo-da-habitacao-2025: o ponto de uniao (7,6) não é, como número, a linha «sobrecarga-do-custo-da-habitacao-2025-ue» (7,7)

@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs
+
+[32m  ✓ mapa das unidades · [0m29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · nenhum mudou

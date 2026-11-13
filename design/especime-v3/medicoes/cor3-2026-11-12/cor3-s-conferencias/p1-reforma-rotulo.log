@@ -1,0 +1,20 @@
+    flexibilizacao-idade-minima                  engine value          60
+    flexibilizacao-carreira-minima               engine value          40
+    desemprego-longa-duracao-idade-referencia    engine value          62
+      sem recorte: flexibilizacao-idade-minima · no record in the vertical's snippets.json
+      sem recorte: flexibilizacao-carreira-minima · no record in the vertical's snippets.json
+      sem recorte: desemprego-longa-duracao-idade-referencia · no record in the vertical's snippets.json
+
+  recortes: 0 de 3 linha(s) com página · 0 bytes
+
+  0 nova(s) · 1 alterada(s) · 2 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 1 de 3 linha(s), 1 rótulo(s) distinto(s): 62 anos de idade
+  sem rótulo impresso: 2 de 3 linha(s), a que a página chama pelo título do documento: flexibilizacao-idade-minima, flexibilizacao-carreira-minima
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 3 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/cor3-reforma.json
+  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.cor3-reforma.json
+

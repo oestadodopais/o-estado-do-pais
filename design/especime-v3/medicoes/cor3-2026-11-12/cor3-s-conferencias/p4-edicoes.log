@@ -1,0 +1,20 @@
++   'K17 · famílias · oe-2027-calendario-final-global, parte 1 («É o valor de «Votação final global» no documento citado, …»): cita «Orçamento do Estado 2027 | Debate, votação na especialida…», que não está no campo «excerpt» da linha «oe-2027-calendario-final-global»'
++ ]
+- []
+
+    at file://<worktree>/tests/edicoes/contagem.mjs:6:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'K17 · famílias · oe-2027-calendario-especialidade, parte 1 («É o valor de «Debate e votação na especialidade» no docum…»): cita «Orçamento do Estado 2027 | Debate e votação na especialid…», que não está no campo «excerpt» da linha «oe-2027-calendario-especialidade»',
+    'K17 · famílias · oe-2027-calendario-final-global, parte 1 («É o valor de «Votação final global» no documento citado, …»): cita «Orçamento do Estado 2027 | Debate, votação na especialida…», que não está no campo «excerpt» da linha «oe-2027-calendario-final-global»'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

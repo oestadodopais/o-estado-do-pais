@@ -1,0 +1,14 @@
+repositório: 20 plantas e controlos locais
+EV3-p: datas das portas conferidas nas duas línguas; 14 adulterações recusadas.
+EV2: correção histórica conferida; página, data, origem e edição ausente recusadas nas duas línguas.
+FP2: escrita declarada no resumo aceite; data, origem e página trocadas recusadas.
+FP1-e: time com origem válida fora do contexto recusado pelo caminho do portão; controlo dentro aceite; origem inventada recusada.
+file://<worktree>/scripts/explicacoes-do-portao.mjs:57
+  if (!fs.existsSync(ficheiro)) throw new Error('EX1 · semana: não há dist/version.json, e a janela da leitura da semana confere-se contra o carimbo da construção.');
+                                      ^
+
+Error: EX1 · semana: não há dist/version.json, e a janela da leitura da semana confere-se contra o carimbo da construção.
+    at diasDaJanelaNoPortao (file://<worktree>/scripts/explicacoes-do-portao.mjs:57:39)
+    at file://<worktree>/scripts/gate-html.mjs:465:24
+
+Node.js v22.23.1

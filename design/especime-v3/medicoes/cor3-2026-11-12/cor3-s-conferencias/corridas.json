@@ -1,0 +1,757 @@
+[
+  {
+    "nome": "p1-hb1-linhas",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-preparar",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-preparar.py"
+  },
+  {
+    "nome": "p1-publicadores",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-publicadores.py"
+  },
+  {
+    "nome": "p1-preparar-2",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-preparar.py"
+  },
+  {
+    "nome": "p1-hb1-linhas-2",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-publicadores-2",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-publicadores.py"
+  },
+  {
+    "nome": "p1-publicadores-3",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-publicadores.py"
+  },
+  {
+    "nome": "p1-preparar-3",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-preparar.py"
+  },
+  {
+    "nome": "p1-documentos",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p1-hb1-linhas-3",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-documentos-2",
+    "codigo": 1,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p1-documentos-3",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p1-preparar-4",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-preparar.py"
+  },
+  {
+    "nome": "p1-hb1-linhas-4",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-notas",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-notas-reforma.py <motor>"
+  },
+  {
+    "nome": "p1-preparar-5",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-preparar.py"
+  },
+  {
+    "nome": "p1-livros-cor3",
+    "codigo": 0,
+    "comando": "python3 <motor>/content/27 Orcamento 2027 O que muda/Technical Source/cor3.py --escrever"
+  },
+  {
+    "nome": "p1-compor-orcamento",
+    "codigo": 1,
+    "comando": "python3 <motor>/core/compor.py content/27 Orcamento 2027 O que muda --escrever"
+  },
+  {
+    "nome": "p1-compor-orcamento-2",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m core.compor content/27 Orcamento 2027 O que muda --escrever"
+  },
+  {
+    "nome": "p1-preparar-6",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-preparar.py"
+  },
+  {
+    "nome": "p1-hb1-linhas-5",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-eo1-manifesto",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.eo1_export"
+  },
+  {
+    "nome": "p1-hb1-manifesto",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.hb1_export"
+  },
+  {
+    "nome": "p1-conservadas",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-conservadas.py"
+  },
+  {
+    "nome": "p1-eo1-linhas",
+    "codigo": 1,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.export_site_rows --manifest <motor>/publisher/manifest.eo1.json --site <worktree> --write"
+  },
+  {
+    "nome": "p1-hb1-linhas-6",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-hb1-manifesto-2",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.hb1_export"
+  },
+  {
+    "nome": "p1-hb1-linhas-7",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p2-releitura",
+    "codigo": 1,
+    "comando": "python3 scripts/aplicar-releituras.py --motor <motor> --releitura indicators/out/releituras/2026-11-12 --saida design/especime-v3/medicoes/cor3-2026-11-12/releitura-total --linhas sobrecarga-do-custo-da-habitacao-2025-ue --aplicar"
+  },
+  {
+    "nome": "p1-eo1-manifesto-2",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.eo1_export"
+  },
+  {
+    "nome": "p1-hb1-rotulos",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-rotulos.py <motor>"
+  },
+  {
+    "nome": "p1-eo1-linhas-2",
+    "codigo": 1,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.export_site_rows --manifest <motor>/publisher/manifest.eo1.json --site <worktree> --write"
+  },
+  {
+    "nome": "p1-eo1-manifesto-3",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.eo1_export"
+  },
+  {
+    "nome": "p6-data",
+    "codigo": 0,
+    "comando": "node tests/ret1/data-na-razao.mjs"
+  },
+  {
+    "nome": "p2-releitura-2",
+    "codigo": 0,
+    "comando": "python3 scripts/aplicar-releituras.py --motor <motor> --releitura indicators/out/releituras/2026-11-12 --saida design/especime-v3/medicoes/cor3-2026-11-12/releitura-total --linhas sobrecarga-do-custo-da-habitacao-2025-ue --aplicar"
+  },
+  {
+    "nome": "p2-publicacao",
+    "codigo": 0,
+    "comando": "python3 scripts/aplicar-releituras.py --motor <motor> --releitura indicators/out/releituras/2026-11-12 --saida design/especime-v3/medicoes/cor3-2026-11-12/releitura-total --linhas sobrecarga-do-custo-da-habitacao-2025-ue --published-at --aplicar"
+  },
+  {
+    "nome": "p1-eo1-linhas-3",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-eo1.py"
+  },
+  {
+    "nome": "p1-reforma-linhas",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-reforma.py"
+  },
+  {
+    "nome": "p1-reforma-linhas-2",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-reforma.py"
+  },
+  {
+    "nome": "p1-reforma-linhas-3",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-reforma.py"
+  },
+  {
+    "nome": "p1-reforma-linhas-4",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-reforma.py"
+  },
+  {
+    "nome": "p4-edicoes-fontes",
+    "codigo": 0,
+    "comando": "node scripts/check-edicoes.mjs --fontes"
+  },
+  {
+    "nome": "p3-cartoes",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-cartoes.py"
+  },
+  {
+    "nome": "p2-inquilinos",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.export_site_rows --manifest <motor>/publisher/manifest.dominios.json --site <worktree> --write"
+  },
+  {
+    "nome": "p1-ledger",
+    "codigo": 1,
+    "comando": "npm run ledger:check"
+  },
+  {
+    "nome": "p1-historias",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/selar-historias.mjs"
+  },
+  {
+    "nome": "p1-ledger-2",
+    "codigo": 1,
+    "comando": "npm run ledger:check"
+  },
+  {
+    "nome": "p1-reforma-linhas-5",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-reforma.py"
+  },
+  {
+    "nome": "p1-hb1-linhas-8",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-exportar-linhas.py <motor>"
+  },
+  {
+    "nome": "p1-hb1-provas",
+    "codigo": 1,
+    "comando": "python3 scripts/hb1-provas.py <motor>"
+  },
+  {
+    "nome": "p5-unidades",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-unidades.py"
+  },
+  {
+    "nome": "p5-familias",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/compor-listas.mjs"
+  },
+  {
+    "nome": "p1-ledger-3",
+    "codigo": 1,
+    "comando": "npm run ledger:check"
+  },
+  {
+    "nome": "p2-compor-habitacao",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m core.compor content/28 Habitacao Estudo --escrever"
+  },
+  {
+    "nome": "p1-hb1-provas-2",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-provas.py <motor>"
+  },
+  {
+    "nome": "p1-registos-motor",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.export_records --write"
+  },
+  {
+    "nome": "p2-series-preparar",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-series.py"
+  },
+  {
+    "nome": "p2-series",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.series_paises --site <worktree> --write"
+  },
+  {
+    "nome": "p2-series-exportar",
+    "codigo": 1,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.export_series --site <worktree> --write"
+  },
+  {
+    "nome": "p1-documentos-final",
+    "codigo": 2,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py"
+  },
+  {
+    "nome": "p1-documentos-final-2",
+    "codigo": 1,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p2-series-exportar-2",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.export_series --site <worktree> --write"
+  },
+  {
+    "nome": "motor-provas",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.cor3_declaracoes_test"
+  },
+  {
+    "nome": "motor-series-provas",
+    "codigo": 1,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.series_paises_test"
+  },
+  {
+    "nome": "p5-build",
+    "codigo": 1,
+    "comando": "npm run build"
+  },
+  {
+    "nome": "motor-series-provas-2",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.series_paises_test"
+  },
+  {
+    "nome": "p5-unidades-final",
+    "codigo": 0,
+    "comando": "npm run mapa:unidades"
+  },
+  {
+    "nome": "p1-ledger-final",
+    "codigo": 0,
+    "comando": "npm run ledger:check"
+  },
+  {
+    "nome": "p7-composto",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/conferir-composto-cor3.py <motor> --sitio . --saida design/especime-v3/medicoes/cor3-2026-11-12/composto-cor3-s.json"
+  },
+  {
+    "nome": "commit-motor",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-commit-motor.py"
+  },
+  {
+    "nome": "p5-build-2",
+    "codigo": 1,
+    "comando": "npm run build"
+  },
+  {
+    "nome": "p1-documentos-final-3",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p5-indice",
+    "codigo": 1,
+    "comando": "node tests/livro/indice.mjs"
+  },
+  {
+    "nome": "p1-registo-final",
+    "codigo": 1,
+    "comando": "npm run check:registo"
+  },
+  {
+    "nome": "p5-astro",
+    "codigo": 1,
+    "comando": "npx --no-install astro build"
+  },
+  {
+    "nome": "p5-astro-2",
+    "codigo": 1,
+    "comando": "npx --no-install astro build"
+  },
+  {
+    "nome": "p1-eo1-origens",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 <temporario>/cor3-eo1.py"
+  },
+  {
+    "nome": "p1-documentos-origens",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p5-astro-3",
+    "codigo": 1,
+    "comando": "npx --no-install astro build"
+  },
+  {
+    "nome": "p1-portas",
+    "codigo": 1,
+    "comando": "node tests/hb1/portas.mjs"
+  },
+  {
+    "nome": "p1-cruzamento",
+    "codigo": 0,
+    "comando": "npm run check:cruzamento"
+  },
+  {
+    "nome": "p4-fontes-final",
+    "codigo": 0,
+    "comando": "node scripts/check-edicoes.mjs --fontes"
+  },
+  {
+    "nome": "p1-rotulos-final",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-rotulos.py <motor>"
+  },
+  {
+    "nome": "p5-datas",
+    "codigo": 0,
+    "comando": "npm run datas"
+  },
+  {
+    "nome": "p1-eo1-origens-2",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 <temporario>/cor3-eo1.py"
+  },
+  {
+    "nome": "commit-p4",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-commit-site.py 4 regista as seis correções e distingue os dois géneros na mesma data src/data/correcoes.mjs src/components/RegistoCorrecoes.astro scripts/edicoes-conferir.mjs scripts/check-edicoes.mjs src/lib/mudancas.mjs scripts/check-pais.mjs tests/edicoes/plantas.mjs tests/edicoes/texto-html.mjs"
+  },
+  {
+    "nome": "p1-documentos-origens-2",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p1-portas-2",
+    "codigo": 0,
+    "comando": "node tests/hb1/portas.mjs"
+  },
+  {
+    "nome": "p5-unidades-hb-final",
+    "codigo": 0,
+    "comando": "python3 scripts/hb1-unidades.py"
+  },
+  {
+    "nome": "p5-medidas-datas",
+    "codigo": 0,
+    "comando": "node scripts/datas-de-publicacao.mjs"
+  },
+  {
+    "nome": "p5-astro-4",
+    "codigo": 0,
+    "comando": "npx --no-install astro build"
+  },
+  {
+    "nome": "p4-edicoes",
+    "codigo": 1,
+    "comando": "npm run check:edicoes"
+  },
+  {
+    "nome": "p3-cartao",
+    "codigo": 1,
+    "comando": "npm run check:cartao"
+  },
+  {
+    "nome": "p5-i1",
+    "codigo": 1,
+    "comando": "node tests/livro/indice.mjs"
+  },
+  {
+    "nome": "p5-lugar",
+    "codigo": 1,
+    "comando": "node scripts/check-lugar.mjs"
+  },
+  {
+    "nome": "p5-frases",
+    "codigo": 1,
+    "comando": "npm run check:frases-afirmacao"
+  },
+  {
+    "nome": "p1-documentos-ambito",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-documentos.py <motor>"
+  },
+  {
+    "nome": "p7-calendario",
+    "codigo": 0,
+    "comando": "node scripts/calendario-paginas.mjs"
+  },
+  {
+    "nome": "p5-inventario",
+    "codigo": 1,
+    "comando": "node scripts/inventario-rotulos.mjs --escrever"
+  },
+  {
+    "nome": "p4-edicoes-2",
+    "codigo": 1,
+    "comando": "npm run check:edicoes"
+  },
+  {
+    "nome": "p1-reforma-rotulo",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/travessia-linhas-reforma.py"
+  },
+  {
+    "nome": "p7-complemento-motor",
+    "codigo": 0,
+    "comando": "python3 <temporario>/cor3-commit-motor.py"
+  },
+  {
+    "nome": "commit-p1",
+    "codigo": 3,
+    "comando": "python3 <temporario>/cor3-grupo1.py"
+  },
+  {
+    "nome": "p7-build-final",
+    "codigo": 1,
+    "comando": "npm run build"
+  },
+  {
+    "nome": "p7-regua-html",
+    "codigo": 1,
+    "comando": "node scripts/gate-html.mjs"
+  },
+  {
+    "nome": "p5-inventario-final",
+    "codigo": 0,
+    "comando": "node scripts/inventario-rotulos.mjs --escrever"
+  },
+  {
+    "nome": "commit-p3",
+    "codigo": 3,
+    "comando": "python3 <temporario>/cor3-commit-site.py 3 corrige os dois cartões pelas folhas decididas src/data/leituras.mjs"
+  },
+  {
+    "nome": "p5-i1-final",
+    "codigo": 0,
+    "comando": "node tests/livro/indice.mjs"
+  },
+  {
+    "nome": "p4-edicoes-final",
+    "codigo": 1,
+    "comando": "npm run check:edicoes"
+  },
+  {
+    "nome": "p5-l1-final",
+    "codigo": 1,
+    "comando": "node scripts/check-lugar.mjs"
+  },
+  {
+    "nome": "p4-numeros-final",
+    "codigo": 0,
+    "comando": "node tests/edicoes/numeros.mjs"
+  },
+  {
+    "nome": "p5-trechos",
+    "codigo": 1,
+    "comando": "node scripts/check-frases-afirmacao.mjs"
+  },
+  {
+    "nome": "commit-p2",
+    "codigo": 3,
+    "comando": "python3 <temporario>/cor3-commit-site.py 2 aplica as duas releituras e conserva a história dos valores scripts/aplicar-releituras.py ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml ledger/cruzamentos/dominios.json ledger/cruzamentos/series.json ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises.yml ledger/series/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.yml ledger/historias-valores.json src/data/lugar-das-linhas.mjs"
+  },
+  {
+    "nome": "p5-trechos-plantas",
+    "codigo": 0,
+    "comando": "node tests/cor3/trechos.mjs"
+  },
+  {
+    "nome": "p5-pendentes",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/reduzir-pendentes.mjs"
+  },
+  {
+    "nome": "p7-frases-html",
+    "codigo": 1,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/medir-html.mjs"
+  },
+  {
+    "nome": "p5-trechos-plantas-2",
+    "codigo": 0,
+    "comando": "node tests/cor3/trechos.mjs"
+  },
+  {
+    "nome": "p5-trechos-2",
+    "codigo": 1,
+    "comando": "node scripts/check-frases-afirmacao.mjs"
+  },
+  {
+    "nome": "p7-frases-html-2",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/medir-html.mjs"
+  },
+  {
+    "nome": "p5-pendentes-final",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/reduzir-pendentes.mjs"
+  },
+  {
+    "nome": "p5-faltantes",
+    "codigo": 0,
+    "comando": "node <temporario>/cor3-faltantes.mjs"
+  },
+  {
+    "nome": "p7-composto-final",
+    "codigo": 0,
+    "comando": "python3 design/especime-v3/medicoes/cor3-2026-11-12/conferir-composto-cor3.py <motor> --sitio . --saida design/especime-v3/medicoes/cor3-2026-11-12/composto-cor3-s.json"
+  },
+  {
+    "nome": "p6-data-final",
+    "codigo": 0,
+    "comando": "node tests/ret1/data-na-razao.mjs"
+  },
+  {
+    "nome": "p5-trechos-plantas-final",
+    "codigo": 0,
+    "comando": "node tests/cor3/trechos.mjs"
+  },
+  {
+    "nome": "p5-cobertura-final",
+    "codigo": 1,
+    "comando": "node scripts/check-frases-afirmacao.mjs"
+  },
+  {
+    "nome": "p5-trechos-plantas-3",
+    "codigo": 0,
+    "comando": "node tests/cor3/trechos.mjs"
+  },
+  {
+    "nome": "p5-cobertura-3",
+    "codigo": 1,
+    "comando": "node scripts/check-frases-afirmacao.mjs"
+  },
+  {
+    "nome": "p7-calendario-plantas",
+    "codigo": 0,
+    "comando": "node tests/cor3/calendario.mjs"
+  },
+  {
+    "nome": "p5-pendentes-fecho",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/reduzir-pendentes.mjs"
+  },
+  {
+    "nome": "p7-commit",
+    "codigo": 3,
+    "comando": "python3 <temporario>/cor3-commit-site.py 7 confere os trechos dos dois lados e mede o HTML design/especime-v3/medicoes/cor3-2026-11-12/conferir-composto-cor3.py design/especime-v3/medicoes/cor3-2026-11-12/medir-html.mjs tests/cor3/calendario.mjs"
+  },
+  {
+    "nome": "p5-cobertura-fecho",
+    "codigo": 1,
+    "comando": "node scripts/check-frases-afirmacao.mjs"
+  },
+  {
+    "nome": "p5-cartao-final",
+    "codigo": 1,
+    "comando": "npm run check:cartao"
+  },
+  {
+    "nome": "p7-build-cabeca",
+    "codigo": 1,
+    "comando": "npm run build"
+  },
+  {
+    "nome": "p7-typecheck",
+    "codigo": 1,
+    "comando": "npm run typecheck"
+  },
+  {
+    "nome": "p5-i1-plantas",
+    "codigo": 0,
+    "comando": "node tests/livro/indice.mjs --prova"
+  },
+  {
+    "nome": "p7-typecheck-final",
+    "codigo": 0,
+    "comando": "npm run typecheck"
+  },
+  {
+    "nome": "p5-cartao-verificado",
+    "codigo": 0,
+    "comando": "npm run check:cartao"
+  },
+  {
+    "nome": "p7-conservadas",
+    "codigo": 0,
+    "comando": "node tests/cor3/linhas-conservadas.mjs"
+  },
+  {
+    "nome": "p4-edicoes-fecho",
+    "codigo": 0,
+    "comando": "npm run check:edicoes"
+  },
+  {
+    "nome": "p5-lugar-fecho",
+    "codigo": 0,
+    "comando": "node scripts/check-lugar.mjs"
+  },
+  {
+    "nome": "p7-html-fecho",
+    "codigo": 0,
+    "comando": "node scripts/gate-html.mjs"
+  },
+  {
+    "nome": "p7-fix-commit",
+    "codigo": 3,
+    "comando": "python3 <temporario>/cor3-commit-site.py 7 fecha os tipos e as provas das linhas conservadas src/lib/retirada-da-contagem.mjs scripts/localizadores-eo1-do-portao.mjs scripts/nomes-eo1-do-portao.mjs scripts/trechos-cor3-julgados.mjs tests/cor3/linhas-conservadas.mjs"
+  },
+  {
+    "nome": "p7-registos-plantas",
+    "codigo": 1,
+    "comando": "node tests/rec2/registos-contagem.mjs"
+  },
+  {
+    "nome": "motor-provas-fecho",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.cor3_declaracoes_test"
+  },
+  {
+    "nome": "motor-series-fecho",
+    "codigo": 0,
+    "comando": "env PYTHONPATH=<motor> python3 -m publisher.series_paises_test"
+  },
+  {
+    "nome": "p7-build-verificado",
+    "codigo": 1,
+    "comando": "npm run build"
+  },
+  {
+    "nome": "p2-quadro-datas-fecho",
+    "codigo": 0,
+    "comando": "node tests/quadro/reguas.mjs datas"
+  },
+  {
+    "nome": "p7-html-medido-final",
+    "codigo": 0,
+    "comando": "node design/especime-v3/medicoes/cor3-2026-11-12/medir-html.mjs"
+  },
+  {
+    "nome": "p7-tipos-apos-plantas",
+    "codigo": 0,
+    "comando": "npm run typecheck"
+  },
+  {
+    "nome": "p7-build-restantes",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-retomar-build.py"
+  },
+  {
+    "nome": "p7-build-restantes-final",
+    "codigo": 1,
+    "comando": "python3 <temporario>/cor3-retomar-build.py"
+  }
+]

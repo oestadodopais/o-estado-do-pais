@@ -1,0 +1,20 @@
+  [32m✓[0m 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+[33m  Dívida de proveniência: 6 afirmação(ões) com campos "[a verificar]"[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    hab-ine-calendario-juro → document.edition[0m
+[90m    hab-ine-calendario-precos-locais → document.edition[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+[90m  séries · 35 série(s) de 8607 ponto(s), 28 com marca da fonte · 25 no tempo · 12 linha(s) presa(s) à sua série · 31 planta(s), uma ou mais por regra, vistas a morder[0m
+
+[31m  AS LINHAS DE SÉRIE NÃO PASSAM · 2 erro(s):[0m
+
+    [31m✗[0m [series/sobrecarga-do-custo-da-habitacao-2025-paises.yml] S6: o ponto EU27_2020 («7,7») não é, como número, a linha «sobrecarga-do-custo-da-habitacao-2025-ue» («7,6»).
+    [31m✗[0m [series/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.yml] S6: o ponto EU27_2020 («18,6») não é, como número, a linha «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue» («18,5»).
+
+  Uma série corrige-se no motor e volta a atravessar: o sítio não a escreve à mão.
+

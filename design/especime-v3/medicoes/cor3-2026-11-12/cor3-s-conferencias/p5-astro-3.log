@@ -1,0 +1,20 @@
+06:01:24   ├─ /distritos/viseu/index.html (+1ms) 
+06:01:24   ├─ /dossies/orcamento-2027/index.html06:01:24 [ERROR] Error: linha citada sem recibo: oe-2027-prr-fim-investimento
+    at file://<worktree>/dist/.prerender/chunks/lingua-dos-titulos_DGtfobly.mjs:27902:21
+    at Array.forEach (<anonymous>)
+    at pecasDoCorpo (file://<worktree>/dist/.prerender/chunks/lingua-dos-titulos_DGtfobly.mjs:27864:17)
+    at leituraDoDossie (file://<worktree>/dist/.prerender/chunks/DossieView_BF74roeM.mjs:737:16)
+    at file://<worktree>/dist/.prerender/chunks/DossieView_BF74roeM.mjs:773:18
+    at AstroComponentInstance.DossieView [as factory] (file://<worktree>/dist/.prerender/chunks/Base_D1QWvu9Z.mjs:25:10)
+    at AstroComponentInstance.init (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1707:27)
+    at AstroComponentInstance.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1714:28)
+    at Object.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2369:19)
+    at renderChild (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1626:44)
+06:01:24 [ERROR] [build] Caught error rendering /dossies/orcamento-2027: Error: linha citada sem recibo: oe-2027-prr-fim-investimento
+linha citada sem recibo: oe-2027-prr-fim-investimento
+  Stack trace:
+    at file://<worktree>/dist/.prerender/chunks/lingua-dos-titulos_DGtfobly.mjs:27902:21
+    at pecasDoCorpo (file://<worktree>/dist/.prerender/chunks/lingua-dos-titulos_DGtfobly.mjs:27864:17)
+    at file://<worktree>/dist/.prerender/chunks/DossieView_BF74roeM.mjs:773:18
+    at AstroComponentInstance.init (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1707:27)
+    at Object.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2369:19)

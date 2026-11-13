@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-preparar.py", line 6, in <module>
+    for name,b in [('hb1',H.build()),('eo1',E.build()[0])]:
+                                            ~~~~~~~^^
+  File "<motor>/publisher/eo1_export.py", line 56, in build
+    require(r.get('name') and r.get('name_en'),'EO1-b: linha sem nome bilingue '+id)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/oe1_common.py", line 30, in require
+    raise Fail(mensagem)
+publisher.oe1_common.Fail: EO1-b: linha sem nome bilingue oe-2027-quadro-a1-1-impacto-saldo

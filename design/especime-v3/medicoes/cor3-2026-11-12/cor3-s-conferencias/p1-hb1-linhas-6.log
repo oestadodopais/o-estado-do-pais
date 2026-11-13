@@ -1,0 +1,18 @@
+
+  sítio: <worktree>
+
+  TRAVESSIA RECUSADA
+
+  der-hab-preco-rendimento-lt-eu-2024: the expression gives 1,8, and the engine row 23 Habitacao/der-hab-preco-rendimento-lt-eu-2024 says 1.9. Two computations of the same number disagree; neither is published until they do not.
+
+  Nada foi escrito. Um campo que não se conhece escreve-se "[a verificar]" no manifesto — nunca um valor plausível.
+
+HB1: linhas prendidas por outra travessia, deixadas na versão dela: oe-2027-calendario-generalidade, posicao-chega-habitacao, posicao-ps-rendas
+Traceback (most recent call last):
+  File "<worktree>/scripts/hb1-exportar-linhas.py", line 40, in <module>
+    subprocess.run([sys.executable,'-m','publisher.export_site_rows','--manifest',str(f),'--site',str(site),'--write'],cwd=a.motor,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<temporario>', '-m', 'publisher.export_site_rows', '--manifest', '<temporario>', '--site', '<worktree>', '--write']' returned non-zero exit status 1.

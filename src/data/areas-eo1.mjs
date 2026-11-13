@@ -1,5 +1,18 @@
 /** Exclusões fechadas do estudo EO1; uma linha nova exige decisão explícita. */
 export const LINHAS_SEM_AREA_EO1 = [
+  "oe-2027-calendario-especialidade-final",
+  "oe-2027-quadro-3-2-introducao",
+  "oe-2027-quadro-a1-1-contribuicoes-salarios",
+  "oe-2027-quadro-a1-1-impacto-saldo",
+  "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+  "pm-q4-4-irc-2026",
+  "pm-q4-4-irc-2027",
+  "pm-q4-4-irc-variacao",
+  "pm-q4-4-irs-2026",
+  "pm-q4-4-irs-2027",
+  "pm-q4-4-irs-variacao",
+  "utao-t8-irs-salarios-pensoes",
+
   "ce-primavera-2026-divida-2026",
   "ce-primavera-2026-divida-2027",
   "ce-primavera-2026-divida-texto-divergente",

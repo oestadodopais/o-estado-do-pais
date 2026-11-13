@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-publicadores.py", line 10, in <module>
+    assert siblings,(r['id'],'publicador novo sem prova')
+           ^^^^^^^^
+AssertionError: ('hab-ilc-lvho07c-a-pc-total-eu27_2020-2025', 'publicador novo sem prova')

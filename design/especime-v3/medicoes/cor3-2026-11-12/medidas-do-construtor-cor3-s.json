@@ -9,5 +9,795 @@
     "comando": "node scripts/check-lugar.mjs",
     "registo": "cor3-s-conferencias/p5-l1-final.log",
     "inclui_calendario": true
-  }
+  },
+  "listas": {
+    "familias_auditadas": {
+      "antes": 1148,
+      "depois": 1179,
+      "acrescentadas": 31
+    },
+    "design/especime-v3/rotulos/INVENTARIO.json": {
+      "antes": 660,
+      "depois": 690,
+      "novas": 30,
+      "retiradas": 0
+    },
+    "ledger/provas/hb1/rotulos.json": {
+      "antes": 172,
+      "depois": 183,
+      "novas": 11,
+      "retiradas": 0
+    },
+    "ledger/provas/eo1/provas.json": {
+      "antes": 256,
+      "depois": 268,
+      "novas": 12,
+      "retiradas": 0
+    },
+    "por_registar": {
+      "antes": 915,
+      "depois": 905,
+      "retiradas": 10
+    }
+  },
+  "linhas_novas": {
+    "a-casa-em-portugal-e-na-europa": [
+      "hab-tipsho60-a-ptir-i25-ro-2015",
+      "hab-tipsho60-a-ptir-i25-eu27_2020-2015",
+      "der-hab-preco-rendimento-lt-pt-2025",
+      "hab-oe-invariantes-definicao",
+      "hab-tipsho60-a-ptir-i25-pt-2015",
+      "hab-tipsho60-a-ptir-i25-pt-2025",
+      "hab-tipsho60-a-ptir-i25-pt-2019",
+      "hab-tipsho60-a-ptir-lt-avg-ro-2025",
+      "der-hab-preco-rendimento-2015-2025-pt",
+      "der-hab-preco-rendimento-2015-2025-eu",
+      "der-hab-preco-rendimento-2015-2025-ro",
+      "der-hab-preco-rendimento-2015-2019-pt",
+      "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025",
+      "hab-tipsho60-a-ptir-i25-eu27_2020-2025",
+      "hab-tipsho60-a-ptir-i25-ro-2025",
+      "hab-tipsho60-a-ptir-lt-avg-pt-2025"
+    ],
+    "orcamento-2027-o-que-muda-e-para-quem": [
+      "utao-t8-irs-salarios-pensoes",
+      "pm-q4-4-irs-2026",
+      "pm-q4-4-irs-2027",
+      "pm-q4-4-irs-variacao",
+      "oe-2027-calendario-especialidade-final",
+      "pm-q4-4-irc-2027",
+      "oe-2027-quadro-a1-1-contribuicoes-salarios",
+      "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+      "pm-q4-4-irc-variacao",
+      "oe-2027-quadro-3-2-introducao",
+      "pm-q4-4-irc-2026",
+      "oe-2027-quadro-a1-1-impacto-saldo"
+    ],
+    "penalizacoes-por-reforma-antecipada-2026": [
+      "flexibilizacao-idade-minima",
+      "desemprego-longa-duracao-idade-referencia",
+      "flexibilizacao-carreira-minima"
+    ]
+  },
+  "recibos": {
+    "sobrecarga-do-custo-da-habitacao-2025-ue": {
+      "value": "7,6",
+      "reference_date": "2025",
+      "access_date": "2026-11-12",
+      "published_at": "2026-10-29",
+      "published_at_kind": null,
+      "excerpt": "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.6",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "document": {
+        "title": "Housing cost overburden rate",
+        "edition": "tespm140",
+        "kind": "serie",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
+      },
+      "corrections": [
+        {
+          "date": "2026-11-12",
+          "kind": "atualizacao",
+          "old_value": "7,7",
+          "new_value": "7,6",
+          "reason": "O Eurostat reviu o valor da União a 29.10.2026 (o carimbo do conjunto passou de 17.09.2026 a 29.10.2026); a reconferência semanal de 09.11.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 29.10.2026 (the dataset stamp moved from 17.09.2026 to 29.10.2026); the weekly check of 09.11.2026 caught the revision."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-11-12",
+          "reason": "O valor novo foi lido a 12.11.2026, depois de a comparação semanal com a fonte de 09.11.2026 ter visto a revisão; a leitura anterior, de 15.09.2026, é a do valor 7,7.",
+          "reason_en": "The new value was read on 12.11.2026, after the weekly comparison with the source of 09.11.2026 had caught the revision; the earlier reading, of 15.09.2026, is that of the value 7,7."
+        },
+        {
+          "date": "2026-11-12",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.7",
+          "new_value": "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.6",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 12.11.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 12.11.2026."
+        }
+      ]
+    },
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": {
+      "value": "18,5",
+      "reference_date": "2025",
+      "access_date": "2026-11-12",
+      "published_at": "2026-10-29",
+      "published_at_kind": null,
+      "excerpt": "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — European Union - 27 countries (from 2020) — 2025: 18.5",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
+      "document": {
+        "title": "Housing cost overburden rate by tenure status - EU-SILC survey",
+        "edition": "tessi164",
+        "locator": null,
+        "kind": "serie",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
+      },
+      "corrections": [
+        {
+          "date": "2026-11-13",
+          "kind": "atualizacao",
+          "old_value": "18,6",
+          "new_value": "18,5",
+          "reason": "O Eurostat reviu a mesma célula dos inquilinos a preços de mercado; o valor e o excerto foram relidos no corpo alojado.",
+          "reason_en": "Eurostat revised the same cell for tenants renting at market prices; the figure and excerpt were read again in the hosted body."
+        }
+      ]
+    }
+  },
+  "codigos": {
+    "p5-trechos-plantas": 0,
+    "p1-reforma-linhas-2": 1,
+    "p5-trechos-plantas-3": 0,
+    "p2-compor-habitacao": 0,
+    "p1-eo1-manifesto": 0,
+    "p1-eo1-origens": 0,
+    "p1-documentos": 0,
+    "p1-hb1-linhas-7": 0,
+    "p5-i1-plantas": 0,
+    "p1-preparar-3": 1,
+    "p1-reforma-rotulo": 0,
+    "motor-series-fecho": 0,
+    "p1-eo1-linhas-3": 0,
+    "p7-registos-plantas": 1,
+    "p4-edicoes-final": 1,
+    "p5-cobertura-fecho": 1,
+    "motor-provas": 0,
+    "p5-unidades": 0,
+    "p1-registos-motor": 0,
+    "p2-inquilinos": 0,
+    "p5-pendentes": 0,
+    "p1-ledger-2": 1,
+    "p1-historias": 0,
+    "p1-eo1-origens-2": 0,
+    "p1-livros-cor3": 0,
+    "p7-html-fecho": 0,
+    "p1-documentos-2": 1,
+    "p5-lugar-fecho": 0,
+    "p7-regua-html": 1,
+    "p5-unidades-final": 0,
+    "p5-trechos-2": 1,
+    "p5-datas": 0,
+    "p6-data-final": 0,
+    "p7-html-medido-final": 0,
+    "commit-p2": 3,
+    "p1-eo1-manifesto-3": 0,
+    "p4-numeros-final": 0,
+    "motor-provas-fecho": 0,
+    "p1-hb1-linhas-5": 1,
+    "p4-fontes-final": 0,
+    "p5-i1": 1,
+    "p1-preparar": 1,
+    "p7-frases-html": 1,
+    "p5-inventario-final": 0,
+    "p5-pendentes-fecho": 0,
+    "p2-quadro-datas-fecho": 0,
+    "p1-preparar-5": 1,
+    "p5-indice": 1,
+    "p5-astro-3": 1,
+    "p5-build": 1,
+    "p1-hb1-rotulos": 0,
+    "p4-edicoes-fontes": 0,
+    "p1-documentos-origens": 0,
+    "p1-notas": 0,
+    "p5-inventario": 1,
+    "p2-series-preparar": 0,
+    "p1-hb1-linhas": 1,
+    "p1-documentos-origens-2": 0,
+    "p1-compor-orcamento-2": 0,
+    "p1-reforma-linhas-4": 0,
+    "p1-hb1-manifesto-2": 0,
+    "p1-publicadores-3": 0,
+    "p1-hb1-linhas-3": 1,
+    "p7-calendario-plantas": 0,
+    "p1-hb1-provas": 1,
+    "commit-p4": 0,
+    "p7-fix-commit": 3,
+    "p1-cruzamento": 0,
+    "motor-series-provas-2": 0,
+    "p7-build-cabeca": 1,
+    "p1-ledger": 1,
+    "p5-i1-final": 0,
+    "p1-documentos-final": 2,
+    "p5-familias": 0,
+    "p1-documentos-final-3": 0,
+    "p3-cartoes": 0,
+    "p1-documentos-ambito": 0,
+    "p1-registo-final": 1,
+    "p5-cobertura-final": 1,
+    "p7-commit": 3,
+    "p1-eo1-linhas-2": 1,
+    "p5-faltantes": 0,
+    "p1-preparar-2": 1,
+    "p5-astro-4": 0,
+    "p1-compor-orcamento": 1,
+    "p4-edicoes-2": 1,
+    "p4-edicoes-fecho": 0,
+    "p5-build-2": 1,
+    "p1-hb1-linhas-6": 1,
+    "p7-typecheck-final": 0,
+    "p1-conservadas": 0,
+    "p5-unidades-hb-final": 0,
+    "p7-calendario": 0,
+    "p5-trechos-plantas-final": 0,
+    "p5-lugar": 1,
+    "p5-trechos-plantas-2": 0,
+    "p7-typecheck": 1,
+    "p1-reforma-linhas-3": 1,
+    "p5-l1-final": 1,
+    "commit-p1": 3,
+    "p1-hb1-linhas-8": 0,
+    "p2-releitura-2": 0,
+    "p5-medidas-datas": 0,
+    "p7-complemento-motor": 0,
+    "p1-hb1-linhas-4": 1,
+    "commit-p3": 3,
+    "p7-build-restantes-final": 1,
+    "p1-portas-2": 0,
+    "p1-publicadores": 1,
+    "p1-eo1-manifesto-2": 0,
+    "p1-portas": 1,
+    "p7-build-restantes": 1,
+    "p2-publicacao": 0,
+    "p5-astro": 1,
+    "p1-rotulos-final": 0,
+    "p1-ledger-3": 1,
+    "p2-series-exportar": 1,
+    "p1-documentos-3": 0,
+    "p1-reforma-linhas-5": 0,
+    "p1-hb1-provas-2": 0,
+    "p7-build-final": 1,
+    "p5-cobertura-3": 1,
+    "p7-frases-html-2": 0,
+    "p1-hb1-manifesto": 0,
+    "p5-frases": 1,
+    "p4-edicoes": 1,
+    "p7-build-verificado": 1,
+    "p5-astro-2": 1,
+    "p7-composto": 0,
+    "p1-preparar-4": 0,
+    "p2-series": 0,
+    "p5-trechos": 1,
+    "p5-cartao-final": 1,
+    "p3-cartao": 1,
+    "p2-series-exportar-2": 0,
+    "p6-data": 0,
+    "p1-reforma-linhas": 1,
+    "p5-pendentes-final": 0,
+    "commit-motor": 0,
+    "p7-conservadas": 0,
+    "p1-documentos-final-2": 1,
+    "p1-preparar-6": 0,
+    "p7-composto-final": 0,
+    "p1-eo1-linhas": 1,
+    "p1-ledger-final": 0,
+    "p2-releitura": 1,
+    "p5-cartao-verificado": 0,
+    "p1-publicadores-2": 1,
+    "motor-series-provas": 1,
+    "p7-tipos-apos-plantas": 0,
+    "p1-hb1-linhas-2": 1
+  },
+  "corridas_com_codigo_guardado": 151,
+  "corridas_inteiras_dos_portoes": 0,
+  "capturas": 0,
+  "datas_de_publicacao_alteradas": 0,
+  "commits": [
+    "6e7b48ee9 COR3 7 fecha os tipos e as provas das linhas conservadas",
+    "dce4915cf COR3 7 confere os trechos dos dois lados e mede o HTML",
+    "4662355df COR3 5 declara as listas novas e prende os trechos às decisões e ao arquivo",
+    "22145c344 COR3 2 aplica as duas releituras e conserva a história dos valores",
+    "b20393cf2 COR3 3 corrige os dois cartões pelas folhas decididas",
+    "50d5f1e37 COR3 1 atravessa documentos, linhas, provas e edições anteriores",
+    "0253a28d6 COR3 4 regista as seis correções e distingue os dois géneros na mesma data",
+    "cf5cd4f2c COR3 6: imprimir uma só vez a data da razão das contagens"
+  ],
+  "motor_commits": [
+    "f382277 COR3 prepara a travessia e as releituras pontuais do sítio",
+    "d0b9c44 COR3 prepara a travessia e as releituras pontuais do sítio"
+  ],
+  "frases_no_html": {
+    "ensaio": true,
+    "correcoes": [
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "kind": "texto",
+        "lingua": "pt",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "O resumo e uma conclusão davam a dez linhas do quadro das medidas o peso de todas as medidas já em vigor, que o relatório soma noutro quadro e num valor maior; o texto dizia que nem o relatório nem a Unidade Técnica de Apoio Orçamental (UTAO) punham essas dez linhas dentro desse conjunto, e o relatório põe, e dava como cálculo da UTAO um total que é do Ministério das Finanças; duas frases davam toda a receita de IRS dos aumentos aos salários do Estado, quando as fontes a dão para salários e pensões, e a percentagem calculada sobre ela saiu; duas frases apresentavam a UTAO a dizer mais do que o seu documento escreve; duas chamavam «todas as medidas» às principais medidas do quadro; os saldos da União Europeia traziam a data de atualização do ficheiro da dívida; e a frase do Partido Comunista Português (PCP) sobre a receita do IRC estava posta ao lado do impacto das medidas, e passou a estar ao lado da receita fiscal que o relatório prevê."
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "kind": "texto_atualizado",
+        "lingua": "pt",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "O Parlamento mudou o calendário da discussão do Orçamento na especialidade, e o estudo passou a dizer as datas novas."
+      },
+      {
+        "estudo": "penalizacoes-por-reforma-antecipada-2026",
+        "kind": "texto",
+        "lingua": "pt",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "O texto chamava «justa» e «correta» à redução que o relatório calcula como atuarialmente neutra, numa estimativa que ele próprio diz preliminar, e apresentava-a como o custo da antecipação para as contas públicas, que o relatório não mede; dizia que o resultado não tinha sido noticiado, o que era falso; dizia que o relatório recomenda três coisas, quando ele enumera sete; dizia, sem fonte, que o princípio do relatório não estava em vigor e que a diferença era «apenas cobrada»; a lista de quem escapa ao fator de sustentabilidade não tinha o regime de antecipação por deficiência; e a comparação vale só para a reforma antecipada pelo regime de flexibilização, o que o estudo e o cartão passaram a dizer."
+      },
+      {
+        "estudo": "penalizacoes-por-reforma-antecipada-2026",
+        "kind": "texto_atualizado",
+        "lingua": "pt",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "O ficheiro do relatório que está em linha deixou de ser igual, byte a byte, à cópia que foi lida: mudou a linha do DOI. O estudo passou a dizê-lo."
+      },
+      {
+        "estudo": "a-casa-em-portugal-e-na-europa",
+        "kind": "texto_atualizado",
+        "lingua": "pt",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "O Eurostat e o Banco de Portugal reviram números que este estudo usa: o índice real dos preços das casas, a sobrecarga do custo da habitação na União Europeia, por regime de ocupação e nos jovens, e as novas operações de crédito à habitação de agosto. O Eurostat mudou também a base do rácio entre os preços e o rendimento e publicou mais um ano; o estudo passou a dizer a subida desse rácio entre dois anos, e a comparação com a média de longo prazo no ano mais recente."
+      },
+      {
+        "estudo": "a-casa-em-portugal-e-na-europa",
+        "kind": "texto",
+        "lingua": "pt",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "Uma conclusão dizia que o problema da habitação é o de quem entra agora no mercado, os jovens e quem chega, o que nenhum número do estudo mede, e entre os jovens a sobrecarga é menor em Portugal do que na União; o título de outra dizia que o que o Estado faz é pequeno e que nenhum documento seu o mede, quando o relatório do Orçamento conta casas e beneficiários, e o que nem ele nem o comunicado do Conselho de Ministros fazem é avaliar o efeito nos preços ou nas rendas; a frase do primeiro-ministro sobre os custos nas cidades estava posta ao lado do índice nacional dos preços como se medissem o mesmo, e o texto dizia que nenhuma fonte dava a subida por cidade, quando o Instituto Nacional de Estatística (INE) publica a variação dos preços por município; o texto dizia que o relatório do Orçamento não define «invariante», e ele descreve-o; o preço e a renda por metro quadrado apareciam sem dizer que são medianas, e o crédito novo sem dizer que inclui renegociações; e o nome de um autarca aparecia só dentro do título de uma notícia, sem nenhum ato seu, e o estudo passou a citar o outro título que o jornal dá à mesma notícia."
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "kind": "texto",
+        "lingua": "en",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "The summary and one conclusion gave ten rows of the table of measures the weight of all the measures already in force, which the report adds up in another table and at a larger figure; the text said that neither the report nor the Unidade Técnica de Apoio Orçamental (UTAO) placed those ten rows inside that set, and the report does, and it presented as UTAO's calculation a total that is the Ministry of Finance's; two sentences gave all the income-tax revenue from the increases to State wages, when the documents give it for wages and pensions, and the percentage calculated on it was removed; two sentences presented UTAO as saying more than its document writes; two called «all the measures» what are the table's main measures; the European Union balances carried the update date of the debt file; and the sentence of the Portuguese Communist Party (PCP) on corporate income tax revenue was set beside the impact of the measures, and is now set beside the tax revenue the report forecasts."
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "kind": "texto_atualizado",
+        "lingua": "en",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "Parliament changed the calendar for the detailed discussion of the Budget, and the study now gives the new dates."
+      },
+      {
+        "estudo": "penalizacoes-por-reforma-antecipada-2026",
+        "kind": "texto",
+        "lingua": "en",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "The text called «fair» and «correct» the reduction the report calculates as actuarially neutral, in an estimate the report itself calls preliminary, and presented it as the cost of early retirement to the public accounts, which the report does not measure; it said the result had not been reported in the press, which was false; it said the report recommends three things, when it lists seven; it said, with no document behind it, that the report's principle was not in force and that the difference was only charged; the list of those who escape the sustainability factor lacked the early-retirement scheme for disability; and the comparison holds only for early retirement under the flexibilisation scheme, which the study and the card now say."
+      },
+      {
+        "estudo": "penalizacoes-por-reforma-antecipada-2026",
+        "kind": "texto_atualizado",
+        "lingua": "en",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "The report file now online is no longer byte-for-byte the copy that was read: the DOI line changed. The study now says so."
+      },
+      {
+        "estudo": "a-casa-em-portugal-e-na-europa",
+        "kind": "texto_atualizado",
+        "lingua": "en",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "Eurostat and the Bank of Portugal revised figures this study uses: the real house price index, the housing cost overburden rate in the European Union, by tenure and among the young, and August's new housing loan operations. Eurostat also changed the base of the price-to-income ratio and published one more year; the study now gives the rise of that ratio between two years, and the comparison with the long-term average in the latest year."
+      },
+      {
+        "estudo": "a-casa-em-portugal-e-na-europa",
+        "kind": "texto",
+        "lingua": "en",
+        "impressa": false,
+        "motivo": "O modo de ensaio oculta o registo público",
+        "declarada": "One conclusion said that the housing problem is that of those entering the market now, the young and those who arrive, which no number in the study measures, and among the young overburden is lower in Portugal than in the Union; the heading of another said that what the State does is small and that none of its documents measures it, when the Budget report counts homes and beneficiaries, and what neither it nor the Council of Ministers communiqué does is assess the effect on prices or rents; the Prime Minister's sentence on costs in the cities was set beside the national price index as if they measured the same thing, and the text said that no document gave the rise by city, when Statistics Portugal (INE) publishes the change in prices by municipality; the text said that the Budget report does not define «invariante», and it describes it; the price and the rent per square metre appeared without saying they are medians, and the new lending without saying it includes renegotiations; and the name of a mayor appeared only inside the headline of a news report, with no act of his own, and the study now cites the other title the newspaper gives the same report."
+      }
+    ],
+    "cartoes": [
+      {
+        "estudo": "penalizacoes-por-reforma-antecipada-2026",
+        "lingua": "pt",
+        "texto": "A penalização por antecipar a reforma um ano é de 6,0 % ou de 22,6 %, consoante a porta por onde o trabalhador entra (a flexibilização com pelo menos 60 anos e 40 de descontos nessa idade, ou as regras da flexibilização em vigor a 31 de dezembro de 2018), quando o valor atuarialmente neutro estimado pelo próprio relatório, numa estimativa que ele chama preliminar, é de 8,2 %: a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.",
+        "com_selos": "A penalização por antecipar a reforma um ano é de 6,0 %fonte · Grupo de Trabalho para a Reforma da Segurança Social ou de 22,6 %fonte · Grupo de Trabalho para a Reforma da Segurança Social, consoante a porta por onde o trabalhador entra (a flexibilização com pelo menos 60 anosfonte · Grupo de Trabalho para a Reforma da Seguranca Social e 40fonte · Grupo de Trabalho para a Reforma da Seguranca Social de descontos nessa idade, ou as regras da flexibilização em vigor a 31 de dezembro de 2018), quando o valor atuarialmente neutro estimado pelo próprio relatório, numa estimativa que ele chama preliminar, é de 8,2 %fonte · Grupo de Trabalho para a Reforma da Segurança Social: a lei falha nos dois sentidos, e é mais dura com quem se desvia menos."
+      },
+      {
+        "estudo": "a-casa-em-portugal-e-na-europa",
+        "lingua": "pt",
+        "texto": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União; 6,3 % da população gasta na casa mais de quarenta por cento do rendimento, contra 7,6 % na União, e o peso cai sobre quem arrenda a preços de mercado, 27,2 % dos quais estão em sobrecarga; os jovens saem de casa dos pais, em média, aos 28,8 anos.",
+        "com_selos": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União; 6,3 %fonte · Eurostat da população gasta na casa mais de quarenta por cento do rendimento, contra 7,6 %fonte · Eurostat na União, e o peso cai sobre quem arrenda a preços de mercado, 27,2 %fonte · Eurostat dos quais estão em sobrecarga; os jovens saem de casa dos pais, em média, aos 28,8 anosfonte · Eurostat."
+      },
+      {
+        "estudo": "penalizacoes-por-reforma-antecipada-2026",
+        "lingua": "en",
+        "texto": "The penalty for retiring one year early is 6,0 % or 22,6 %, depending on which door the worker comes through (flexibilisation at 60 or older with 40 years of contributions at that age, or the flexibilisation rules in force on 31 December 2018), when the actuarially neutral figure estimated by the report itself, in what it calls a preliminary estimate, is 8,2 %: the law misses in both directions, and is harshest on those who deviate least.",
+        "com_selos": "The penalty for retiring one year early is 6,0 %source · Grupo de Trabalho para a Reforma da Segurança Social or 22,6 %source · Grupo de Trabalho para a Reforma da Segurança Social, depending on which door the worker comes through (flexibilisation at 60source · Grupo de Trabalho para a Reforma da Seguranca Social or older with 40 yearssource · Grupo de Trabalho para a Reforma da Seguranca Social of contributions at that age, or the flexibilisation rules in force on 31 December 2018), when the actuarially neutral figure estimated by the report itself, in what it calls a preliminary estimate, is 8,2 %source · Grupo de Trabalho para a Reforma da Segurança Social: the law misses in both directions, and is harshest on those who deviate least."
+      },
+      {
+        "estudo": "a-casa-em-portugal-e-na-europa",
+        "lingua": "en",
+        "texto": "Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the Union; overburdened by housing, more than forty percent of income, is 6,3 % of the population, against 7,6 % in the Union, and the weight falls on those renting at market prices, 27,2 % of whom are overburdened; the young leave their parents' home, on average, at 28,8 years.",
+        "com_selos": "Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the Union; overburdened by housing, more than forty percent of income, is 6,3 %source · Eurostat of the population, against 7,6 %source · Eurostat in the Union, and the weight falls on those renting at market prices, 27,2 %source · Eurostat of whom are overburdened; the young leave their parents' home, on average, at 28,8 yearssource · Eurostat."
+      }
+    ]
+  },
+  "composto": 160,
+  "i1_formas": {
+    "antes": 26,
+    "depois": 27
+  },
+  "nomes_unidades_familias_hb1_acrescentados": 16,
+  "chamadas_ate_a_medicao": 238,
+  "tokens_used_ate_a_medicao": {
+    "input_tokens": 34026588,
+    "cached_input_tokens": 33642624,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 129369,
+    "reasoning_output_tokens": 61201,
+    "total_tokens": 34155957
+  },
+  "conferencias_registadas": 58,
+  "conferencias_comando": [
+    "p6-data",
+    "p4-edicoes-fontes",
+    "motor-provas",
+    "motor-series-provas",
+    "p5-build",
+    "motor-series-provas-2",
+    "p7-composto",
+    "p5-build-2",
+    "p5-indice",
+    "p1-registo-final",
+    "p5-astro",
+    "p5-astro-2",
+    "p5-astro-3",
+    "p1-portas",
+    "p1-cruzamento",
+    "p4-fontes-final",
+    "commit-p4",
+    "p1-portas-2",
+    "p5-astro-4",
+    "p4-edicoes",
+    "p3-cartao",
+    "p5-i1",
+    "p5-lugar",
+    "p5-frases",
+    "p4-edicoes-2",
+    "p7-build-final",
+    "p7-regua-html",
+    "p5-i1-final",
+    "p4-edicoes-final",
+    "p5-l1-final",
+    "p4-numeros-final",
+    "p5-trechos",
+    "p5-trechos-plantas",
+    "p5-trechos-plantas-2",
+    "p5-trechos-2",
+    "p7-composto-final",
+    "p6-data-final",
+    "p5-trechos-plantas-final",
+    "p5-cobertura-final",
+    "p5-trechos-plantas-3",
+    "p5-cobertura-3",
+    "p7-calendario-plantas",
+    "p7-commit",
+    "p5-cobertura-fecho",
+    "p5-cartao-final",
+    "p7-build-cabeca",
+    "p5-i1-plantas",
+    "p5-cartao-verificado",
+    "p7-conservadas",
+    "p4-edicoes-fecho",
+    "p5-lugar-fecho",
+    "p7-html-fecho",
+    "p7-fix-commit",
+    "p7-registos-plantas",
+    "motor-provas-fecho",
+    "motor-series-fecho",
+    "p7-build-verificado",
+    "p2-quadro-datas-fecho"
+  ],
+  "pendencias": {
+    "cobertura": [
+      "/dossies/orcamento-2027|en|15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+      "/dossies/orcamento-2027|pt|15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+      "orcamento-2027-o-que-muda-e-para-quem|en|15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+      "orcamento-2027-o-que-muda-e-para-quem|en|8dfd1f8887d19ae54a5f6a2efd6e670039da9fb2f61a5dddce1592a8b0275c38",
+      "orcamento-2027-o-que-muda-e-para-quem|en|ed0a946863185cd85faa0c21d4db6d217d93b8049c4d822a6d86ef31cfd9454c",
+      "orcamento-2027-o-que-muda-e-para-quem|pt|15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+      "orcamento-2027-o-que-muda-e-para-quem|pt|4a99606829d4bad88db9c0b83e0dc2edd248cdcefec605dd21af2dc338edbc78",
+      "orcamento-2027-o-que-muda-e-para-quem|pt|d13f12b841efdab402fbabb88af71cd2509b51e149a1730b1e46b2fab3841376"
+    ],
+    "frases": [
+      {
+        "estudo": "/dossies/orcamento-2027",
+        "lingua": "en",
+        "frase": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+        "ocorrencias": [
+          {
+            "pagina": "/en/dossiers/orcamento-2027",
+            "bloco": 190,
+            "indice": 7,
+            "linhas": [
+              "pm-q2-3-r19-c2",
+              "utao-salarios-cs",
+              "utao-salarios-valor",
+              "utao-t8-irs-salarios-pensoes"
+            ]
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "/dossies/orcamento-2027",
+        "lingua": "pt",
+        "frase": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+        "ocorrencias": [
+          {
+            "pagina": "/dossies/orcamento-2027",
+            "bloco": 190,
+            "indice": 7,
+            "linhas": [
+              "pm-q2-3-r19-c2",
+              "utao-salarios-cs",
+              "utao-salarios-valor",
+              "utao-t8-irs-salarios-pensoes"
+            ]
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "lingua": "en",
+        "frase": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+        "ocorrencias": [
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+            "bloco": 337,
+            "indice": 7,
+            "linhas": [
+              "pm-q2-3-r19-c2",
+              "utao-salarios-cs",
+              "utao-salarios-valor",
+              "utao-t8-irs-salarios-pensoes"
+            ]
+          },
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document",
+            "bloco": 36,
+            "indice": 7,
+            "linhas": []
+          },
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-10-21",
+            "bloco": 36,
+            "indice": 7,
+            "linhas": []
+          },
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/2026-11-02",
+            "bloco": 36,
+            "indice": 7,
+            "linhas": []
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "lingua": "en",
+        "frase": "The Left Bloc, by the news report «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», says the Budget “dá migalhas” (gives crumbs): the phrase has no number, and the new measures for people are worth 121 million euros less in income tax through the exemption threshold and 100 million in the Solidarity Supplement for the Elderly, alongside 947 million already counted in wages.",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "8dfd1f8887d19ae54a5f6a2efd6e670039da9fb2f61a5dddce1592a8b0275c38",
+        "ocorrencias": [
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+            "bloco": 463,
+            "indice": 1,
+            "linhas": [
+              "der-oe2027-juros-variacao-cn",
+              "der-oe2027-medidas-anteriores-despesa",
+              "pm-q3-2-r13-c0",
+              "pm-q3-2-r25-c0",
+              "pm-q3-2-r9-c0"
+            ]
+          },
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document",
+            "bloco": 52,
+            "indice": 1,
+            "linhas": []
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "lingua": "en",
+        "frase": "The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 the Ministry of Finance puts at 5,411 million euros in the report's annex (table A1.1, «Quadro de políticas invariantes»); the UTAO: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB).",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "ed0a946863185cd85faa0c21d4db6d217d93b8049c4d822a6d86ef31cfd9454c",
+        "ocorrencias": [
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+            "bloco": 267,
+            "indice": 0,
+            "linhas": [
+              "oe-2027-quadro-a1-1-contribuicoes-salarios",
+              "oe-2027-quadro-a1-1-impacto-saldo",
+              "oe-2027-quadro-a1-1-irs-salarios-pensoes"
+            ]
+          },
+          {
+            "pagina": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document",
+            "bloco": 29,
+            "indice": 0,
+            "linhas": []
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "lingua": "pt",
+        "frase": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "15ad4e7f7986e1d796a2ebbdc299e20f5f533d8932c7e0f7d6b65e33a38bfe64",
+        "ocorrencias": [
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+            "bloco": 337,
+            "indice": 7,
+            "linhas": [
+              "pm-q2-3-r19-c2",
+              "utao-salarios-cs",
+              "utao-salarios-valor",
+              "utao-t8-irs-salarios-pensoes"
+            ]
+          },
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento",
+            "bloco": 36,
+            "indice": 7,
+            "linhas": []
+          },
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-10-21",
+            "bloco": 36,
+            "indice": 7,
+            "linhas": []
+          },
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/2026-11-02",
+            "bloco": 36,
+            "indice": 7,
+            "linhas": []
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "lingua": "pt",
+        "frase": "O Bloco de Esquerda, pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», diz que o Orçamento “dá migalhas”: a frase não tem número, e as medidas novas para as pessoas valem 121 milhões de euros de IRS a menos no mínimo de existência e 100 milhões no Complemento Solidário para Idosos, ao lado de 947 milhões já contados nos salários.",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "4a99606829d4bad88db9c0b83e0dc2edd248cdcefec605dd21af2dc338edbc78",
+        "ocorrencias": [
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+            "bloco": 463,
+            "indice": 1,
+            "linhas": [
+              "der-oe2027-juros-variacao-cn",
+              "der-oe2027-medidas-anteriores-despesa",
+              "pm-q3-2-r13-c0",
+              "pm-q3-2-r25-c0",
+              "pm-q3-2-r9-c0"
+            ]
+          },
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento",
+            "bloco": 52,
+            "indice": 1,
+            "linhas": []
+          }
+        ],
+        "pelo_par": false
+      },
+      {
+        "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+        "lingua": "pt",
+        "frase": "A UTAO usa a palavra «invariantes» para um conjunto maior do que as dez linhas do quadro: o cenário de políticas invariantes, as medidas já em vigor, cujo impacto adicional em 2027 o Ministério das Finanças põe em 5 411 milhões de euros no anexo do relatório (o Quadro A1.1, «Quadro de políticas invariantes»); a UTAO: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB).",
+        "tipos": [
+          "atribuicao"
+        ],
+        "sha256": "d13f12b841efdab402fbabb88af71cd2509b51e149a1730b1e46b2fab3841376",
+        "ocorrencias": [
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+            "bloco": 267,
+            "indice": 0,
+            "linhas": [
+              "oe-2027-quadro-a1-1-contribuicoes-salarios",
+              "oe-2027-quadro-a1-1-impacto-saldo",
+              "oe-2027-quadro-a1-1-irs-salarios-pensoes"
+            ]
+          },
+          {
+            "pagina": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento",
+            "bloco": 29,
+            "indice": 0,
+            "linhas": []
+          }
+        ],
+        "pelo_par": false
+      }
+    ],
+    "linhas_por_atravessar": [
+      "flexibilizacao-regras-2018",
+      "flexibilizacao-regras-2018-ano"
+    ],
+    "motivo_linhas": "A forma textual da data e a forma numérica do ano foram recusadas; não se alteraram as réguas para as dispensar.",
+    "registo_publico": "LANCAMENTO continua null; as seis entradas estão declaradas e conferidas, mas ocultas no HTML de ensaio.",
+    "verificacao_externa": "Lista inteira do verify reservada ao lugar de direção; portões e capturas não pedidos nesta passagem."
+  },
+  "cabeca_construida": "6e7b48ee91346cb2909b94568db382629d3b2790",
+  "commits_verificados": [
+    "6e7b48ee9 COR3 7 fecha os tipos e as provas das linhas conservadas",
+    "dce4915cf COR3 7 confere os trechos dos dois lados e mede o HTML",
+    "4662355df COR3 5 declara as listas novas e prende os trechos às decisões e ao arquivo",
+    "22145c344 COR3 2 aplica as duas releituras e conserva a história dos valores",
+    "b20393cf2 COR3 3 corrige os dois cartões pelas folhas decididas",
+    "50d5f1e37 COR3 1 atravessa documentos, linhas, provas e edições anteriores",
+    "0253a28d6 COR3 4 regista as seis correções e distingue os dois géneros na mesma data",
+    "cf5cd4f2c COR3 6: imprimir uma só vez a data da razão das contagens"
+  ]
 }

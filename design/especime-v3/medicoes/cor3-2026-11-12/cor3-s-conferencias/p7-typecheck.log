@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/retirada-da-contagem.mjs(12,33): error TS7006: Parameter 'entrada' implicitly has an 'any' type.
+src/lib/retirada-da-contagem.mjs(12,42): error TS7006: Parameter 'lang' implicitly has an 'any' type.

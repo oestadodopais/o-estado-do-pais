@@ -1,0 +1,20 @@
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '[der-hab-preco-rendimento-2015-2019-pt.yml] "reference_date" = "2015-2019": use AAAA, AAAA-MM, AAAA-MM-DD ou AAAA-T1 a AAAA-T4 ou "[a verificar]".',
+    '[der-hab-preco-rendimento-2015-2025-eu.yml] "reference_date" = "2015-2025": use AAAA, AAAA-MM, AAAA-MM-DD ou AAAA-T1 a AAAA-T4 ou "[a verificar]".',
+    '[der-hab-preco-rendimento-2015-2025-pt.yml] "reference_date" = "2015-2025": use AAAA, AAAA-MM, AAAA-MM-DD ou AAAA-T1 a AAAA-T4 ou "[a verificar]".',
+    '[der-hab-preco-rendimento-2015-2025-ro.yml] "reference_date" = "2015-2025": use AAAA, AAAA-MM, AAAA-MM-DD ou AAAA-T1 a AAAA-T4 ou "[a verificar]".',
+    'OG1-E publicador desemprego-longa-duracao-idade-referencia: nome fora do registo',
+    'OG1-E publicador flexibilizacao-carreira-minima: nome fora do registo',
+    'OG1-E publicador flexibilizacao-idade-minima: nome fora do registo',
+    'OG1-E publicador flexibilizacao-regras-2018-ano: nome fora do registo',
+    'OG1-E publicador flexibilizacao-regras-2018: nome fora do registo',
+    '[flexibilizacao-regras-2018.yml] valor em prosa exige texto ou afirmação, excerto integral e corpo selado.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

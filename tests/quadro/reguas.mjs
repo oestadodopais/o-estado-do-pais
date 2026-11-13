@@ -12,7 +12,14 @@ for(const lang of ['pt','en']){
  const root=parse(html),base=superficieDoQuadro(root,lang);
  assert.deepEqual(base.erros,[]);
  if(modo==='datas'){
-  const r=parse(html);r.querySelector('[data-aviso-revisao] [data-de-campo]').set_content('01.01.1900');
+  const r=parse(html),campo=r.querySelector('[data-aviso-revisao] [data-de-campo]');
+  if(campo)campo.set_content('01.01.1900');
+  else {
+   // COR3 aplicou a última revisão pendente deste quadro. Um aviso inventado
+   // continua a ser recusado, mesmo quando não existe uma data para adulterar.
+   assert.deepEqual(conferirAvisos(r,lang).erros,[]);
+   r.querySelector('main').insertAdjacentHTML('beforeend','<span data-aviso-revisao="sobrecarga-do-custo-da-habitacao-2025-ue" data-revisao-indice="0"><a><span data-de-campo="verifications.0.date">01.01.1900</span></a></span>');
+  }
   assert(conferirAvisos(r,lang).erros.some(e=>e.startsWith('Q4')));
  }else if(modo==='selos'){
   assert.deepEqual(medirPagina(html,lang).erros,[]);

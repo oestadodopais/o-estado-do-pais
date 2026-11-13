@@ -1,0 +1,20 @@
+    'evora-2027-prometido-painel-dinheiro/en',
+    'evora-2027-prometido-painel-dinheiro/pt',
+    'evora-economia-e-dinheiro-publico-de-fora-da-camara/en',
+    'evora-economia-e-dinheiro-publico-de-fora-da-camara/pt',
+    'evora-economia-investidores-portas-abertas-2026/pt',
+    'evora-orcamentado-pago-devido-2025/en',
+    'evora-orcamentado-pago-devido-2025/pt',
+    'evora-prometido-pago-auditado-2026/en',
+    'evora-prometido-pago-auditado-2026/pt',
+    'evora-quinze-anos-cinco-mandatos/pt',
+    'onde-esta-a-agua/en',
+    'onde-esta-a-agua/pt',
+    'orcamento-2027-o-que-muda-e-para-quem/en',
+    'orcamento-2027-o-que-muda-e-para-quem/pt'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

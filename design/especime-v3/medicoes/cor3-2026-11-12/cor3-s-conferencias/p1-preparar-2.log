@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-preparar.py", line 6, in <module>
+    for name,b in [('hb1',H.build()),('eo1',E.build()[0])]:
+                          ~~~~~~~^^
+  File "<motor>/publisher/hb1_export.py", line 25, in build
+    d=r['document'];source=publicador(r)
+                           ~~~~~~~~~~^^^
+  File "<motor>/publisher/publicadores.py", line 19, in publicador
+    if d['sha256'] and digest!=d['sha256']:raise ValueError('OG1-E publicador: documento mudou: '+row['id'])
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: OG1-E publicador: documento mudou: hab-tipsho10-a-i15-a-avg-pt-2025

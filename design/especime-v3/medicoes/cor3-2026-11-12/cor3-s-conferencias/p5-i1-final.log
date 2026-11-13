@@ -1,0 +1,20 @@
+        2663 rótulo(s) do livro-razão inteiro com um localizador de uma das 27 formas conhecidas ou da prova EO1 selada[0m
+  [32m✓[0m I2 · as datas ISO à vista
+[90m        0 data(s) ISO como valor · 0 em prosa por marcar · 1542 dentro de texto transcrito (a casa não edita o que transcreve) · 164 em documentos alojados e páginas de leitura (fora do âmbito do brief §2)[0m
+  [32m✓[0m I2p · o período de cada entrada dos índices é o da sua linha
+[90m        8338 período(s) conferido(s) em 8384 entrada(s) de 620 página(s) de índice[0m
+  [32m✓[0m I3 · a busca do índice é um formulário, e cobre o livro-razão inteiro
+[90m        2 índice(s) com um campo de busca dentro de um <form method="get"> · 8384 entrada(s) nos dois ficheiros do índice da busca, contra 4192 linhas do livro-razão em cada[0m
+  [32m✓[0m I4 · a palavra retirada não está no rótulo da contagem
+[90m        0 ocorrência(s) no rótulo da contagem das áreas · 15 noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)[0m
+  [32m✓[0m I5 · as contagens do índice com denominador
+[90m        as duas parcelas dizem de que total saem, nas duas edições[0m
+  [32m✓[0m I6 · o marcador com um destino só
+[90m        12 ligação(ões) em «pt» e 12 em «en», uma página cada · 22 marcador(es) dentro de um selo (excepção da Emenda 2) · 0 cadeia(s) dentro de documentos alojados, que são o texto do documento[0m
+  [32m✓[0m I8 · a página de uma unidade da Carta
+[90m        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada[0m
+  [32m✓[0m I9 · as datas dos trabalhos, e o marcador que resta
+[90m        10 linha(s) de trabalho · 0 marcador(es) ao todo, 0 linha(s) com um e nenhuma com dois · 9 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 9 de 9 linha(s) de src/data/datas-de-publicacao.json conferidas, 4 com data da versão única e as restantes com data do git[0m
+  [32m✓[0m I10 · nenhum número novo
+[90m        4192 linha(s) citada(s) em 33729 ocorrência(s) · 20 motivo(s) declarado(s)[0m
+
