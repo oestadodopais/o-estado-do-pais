@@ -1,0 +1,20 @@
+
+    at file://<worktree>/tests/voz/evl-medidas.mjs:17:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'B1 lista fechada: estudos: «estudos».',
+    'B1 lista fechada: estudos: «13.11.2026».',
+    'B1 lista fechada: estudos: «:».',
+    'B1 lista fechada: estudos: «Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.».',
+    'B1 lista fechada: en/studies: «studies».',
+    'B1 lista fechada: en/studies: «13.11.2026».',
+    'B1 lista fechada: en/studies: «:».',
+    'B1 lista fechada: en/studies: «Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised.».'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

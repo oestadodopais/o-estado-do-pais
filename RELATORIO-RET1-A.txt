@@ -1,0 +1,15 @@
+1. Notas dos dois mandatos corrigidas; alcunhas declaradas e varridas no sítio construído; frase antiga PT/EN e alcunha retirada recusam, publicada passa.
+2. Auditorias no plural nas duas linhas e no teste; as 81 linhas dos oito estudos confirmam a contagem do construtor, não a contagem curta do mandato; frase dos dois de Évora preservada.
+3. Cinco plantas da moldura, incluindo remover a regra da cor; quatro estudos bilingues inspecionados, zero com dados de gráficos, ausência justificada; plantas fixas; leituras PT/EN e atribuição com said restauradas; dois sucessores publicados exercitados; saída numérica e plantas de pares conferidas.
+3. Amostra distinta: endereço longo de Évora 2027; isenção justificada por / («explicação») e /en/ («explainer»), item dinheiro-do-estado-2026; texto, porta, item e âmbito conferidos.
+4. Índice e Évora: contagem com data, razão e recibo vindos da última entrada; evento retirada-de-estudos nos dados; entrada posterior esconde o aviso; ausência, prosa e porta adulteradas recusam.
+5. Build final: 1 por acesso a um aviso removido na planta; teste corrigido e reconferido a 0. HTML, lugar, voz e restantes conferências posteriores, tipos, frases, moldura e texto: 0. Falta repetir o build integral após essa correção; orçamento da passagem. Códigos e caudas em ret1-a-conferencias.
+1 pt: A repartição dos pelouros deste mandato está por confirmar na fonte.
+2 pt: Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.
+4 índice pt: 13.11.2026: Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.
+4 Évora pt: 13.11.2026: Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.
+1 en: This term’s split of portfolios is yet to be confirmed at the source.
+2 en: Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised.
+4 índice en: 13.11.2026: Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised.
+4 Évora en: 13.11.2026: Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source.
+Chamadas até à redação: 108; execuções registadas: 44 (incluem tentativas recusadas e verificações; corrida integral dos três portões: 0). Revisão cruzada do inventário: por ler antes da fusão. As recomendações por título «Ver também» no texto julgado de Évora 2027 ficam fora da régua das alcunhas.

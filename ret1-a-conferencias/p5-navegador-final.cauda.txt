@@ -1,0 +1,4 @@
+portões código 0
+  FIM 1d6880b0
+  check:rec2-moldura=0
+  check:ret1-texto=0

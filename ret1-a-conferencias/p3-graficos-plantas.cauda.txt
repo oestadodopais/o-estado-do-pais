@@ -1,0 +1,1 @@
+paridade dos gráficos: controlos e plantas fixas, incluindo valor adulterado, gráfico declarado ausente e zero recusado sem razão escrita

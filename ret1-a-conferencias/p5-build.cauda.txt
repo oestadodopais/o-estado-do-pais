@@ -1,0 +1,20 @@
+{"controlos":556,"plantas":1668,"catalogo":0,"nomeadas":556,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":43,"plantas":29,"documentos":8,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+REC2 voz das edições: retirada sem faixa; publicação em falta continua recusada.
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 12 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-13.
+  FP1 en: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-13.
+  REC2 inventário: 42 entradas históricas de retirados ou superfícies vazias saltadas; conta conferida.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 4 problema(s)
+[0m
+[31m    · [0mbloco por classificar em /en/municipalities/evora: «This term’s split of portfolios is yet to be confirmed at the source.»
+[31m    · [0mbloco por classificar em /municipios/evora: «A repartição dos pelouros deste mandato está por confirmar na fonte.»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3017: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «As fontes dos pelouros registam a repartição deste mandato, e ela está no estudo de quem governou a câmara.»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3018: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «The portfolio sources record this term’s split, and it is in the study of who governed the council.»
+
+{"tranca": "libertada", "espera_segundos": 0.0002393331378698349, "execucao_segundos": 676.798582624644, "codigo": 1}

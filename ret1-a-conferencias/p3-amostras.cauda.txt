@@ -1,0 +1,1 @@
+REC2 amostra: 5 plantas da moldura alteram a sua amostra nas duas línguas, incluindo a remoção da regra da cor num caso fixo. A recusa pelas células mede-se no navegador.

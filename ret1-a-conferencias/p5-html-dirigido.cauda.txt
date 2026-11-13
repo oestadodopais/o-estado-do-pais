@@ -1,0 +1,20 @@
+[90m    · a afirmação "vila-nova-de-famalicao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-foz-coa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-gaia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-poiares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-pouca-de-aguiar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-real-de-santo-antonio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-real-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-velha-de-rodao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-vicosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vimioso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vinhais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "viseu-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+
+  [32m✓[0m nenhum algarismo sem proveniência nas páginas construídas.
+[90m    prova · 95 chaves reconferidas pelo portão · 80 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 382658 ligações internas (0 relativas, 21308 âncoras) · 88 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 5584 cartões de partilha (31184 valores recalculados, 5584 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json[0m
+

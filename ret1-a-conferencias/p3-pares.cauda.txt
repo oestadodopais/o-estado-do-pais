@@ -1,0 +1,3 @@
+pares: 101 entradas de trabalhos retirados saltadas, conta conferida contra a lista
+pares anteriores declarados: 0; estudos com as duas línguas: 0; blocos mudados sem par: 0; blocos mudados sem entrada na lista: 0; planta 2 (tem de ser 2: o bloco antigo e o novo), controlo 0 (tem de ser 0)
+plantas do ramo fora da lista, do bloco novo e do código: 13 de 13

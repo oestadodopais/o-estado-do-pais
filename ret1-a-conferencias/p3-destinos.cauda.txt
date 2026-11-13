@@ -1,0 +1,5 @@
+REC2 estado: controlos verdes; página, documento datado e registo retirados recusados; publicado sem página recusado.
+REC2 redirecionamentos: ausência, destino inexistente, destino manual divergente e origem construída recusados; vários sucessores levam ao município.
+REC2 ligações: páginas, mapa, ligação relativa e nota de sucessão recusados.
+RET1 dois sucessores publicados: município ou índice nas duas línguas; escolher qualquer sucessor recusa.
+RET1 destinos: sem sucessor, objeto sem página, sucessores retirados e mistos; destinos inexistentes, retirados ou sem objeto trocados recusados.

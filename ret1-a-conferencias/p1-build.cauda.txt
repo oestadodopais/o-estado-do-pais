@@ -1,0 +1,20 @@
+REC2 redirecionamentos: ausência, destino inexistente, destino manual divergente e origem construída recusados; vários sucessores levam ao município.
+REC2 ligações: páginas, mapa, ligação relativa e nota de sucessão recusados.
+RET1 destinos: sem sucessor, objeto sem página, sucessores retirados e mistos; destinos inexistentes, retirados ou sem objeto trocados recusados.
+voz2a-2026-11-07/FRASES-VOZ-2A.json: 101 de 182 entradas saltadas, conta conferida
+voz2b-2026-11-07/FRASES-VOZ-2B.json: 70 de 106 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA.json: 126 de 126 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-d.json: 13 de 13 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-g.json: 7 de 7 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-i.json: 3 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-j.json: 3 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-prr.json: 8 de 8 entradas saltadas, conta conferida
+REC2 listas: 21 plantas recusadas; retirados sem páginas aceites e publicados sem páginas recusados.
+REC2 amostra: as quatro plantas da moldura alteram o documento das contas nas duas línguas. A recusa pelas células mede-se no navegador.
+REC2 títulos: /estudos/evora-contas-da-camara-2010-2025/ #bloco-117, nível acessível 3; sequência sem saltos.
+REC2 títulos: /en/studies/evora-contas-da-camara-2010-2025/ #bloco-117, nível acessível 3; sequência sem saltos.
+REC2 publicação: listas sem retirados; leitura oculta; evento exclusivo sai, evento misto e linhas vivas ficam.
+REC2 fontes: 5 plantas recusadas; documentos guardados, datas retiradas e cadeia de fontes preservada.
+REC2 voz: 28 descrições de retirados contadas; 20 plantas recusadas, incluindo descrição publicada ausente e rótulo alterado.
+RET1 remissão sem ligação para estudo não publicado: /estudos/evora-2027-capital-europeia-da-cultura/: estudo A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara
+RET1 remissão sem ligação para estudo não publicado: /estudos/evora-2027-capital-europeia-da-cultura/documento/: estudo A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara

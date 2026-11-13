@@ -1,0 +1,20 @@
+2 pt: Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.
+4 índice pt: 13.11.2026: Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.
+4 Évora pt: 13.11.2026: Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.
+1 en: This term’s split of portfolios is yet to be confirmed at the source.
+2 en: Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised.
+4 índice en: 13.11.2026: Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised.
+4 Évora en: 13.11.2026: Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source.
+file://<worktree>/tests/ret1/contagem-historia.mjs:26
+        aviso.textContent.replace(/\s+/g,' ').trim() === `${dataDaCasa(retirada.entrada.date,lang)}: ${retirada.entrada[lang==='pt'?'reason':'reason_en']}`;
+              ^
+
+TypeError: Cannot read properties of null (reading 'textContent')
+    at confere (file://<worktree>/tests/ret1/contagem-historia.mjs:26:15)
+    at file://<worktree>/tests/ret1/contagem-historia.mjs:34:65
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 0.00011337501928210258, "execucao_segundos": 157.91062341677025, "codigo": 1}

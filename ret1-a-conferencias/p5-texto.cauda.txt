@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:ret1-texto
+> node tests/texto/amostra-ligacao-ret1.mjs
+
+RET1 amostra /estudos/evora-2027-capital-europeia-da-cultura: 195 caracteres, 31 linhas a 390 px; retirar a quebra recusa.
+RET1 amostra /en/studies/evora-2027-capital-europeia-da-cultura: 195 caracteres, 35 linhas a 390 px; retirar a quebra recusa.

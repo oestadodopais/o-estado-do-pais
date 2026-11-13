@@ -1,0 +1,2 @@
+paridade dos gráficos: 4 estudos bilingues inspecionados; 0 com dados de gráficos; 0 diferenças
+Os documentos bilingues publicados não contêm dados de gráficos no formato payload; ausência conferida nas fontes e no HTML construído.
