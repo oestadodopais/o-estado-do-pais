@@ -1,0 +1,20 @@
++ [
++   'RET1 remissão para estudo não publicado: /estudos/evora-2027-capital-europeia-da-cultura/documento/: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara'
++ ]
+- []
+
+    at file://<worktree>/.ret1-b-html-temporario.mjs:15:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'RET1 remissão para estudo não publicado: /estudos/evora-2027-capital-europeia-da-cultura/documento/: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

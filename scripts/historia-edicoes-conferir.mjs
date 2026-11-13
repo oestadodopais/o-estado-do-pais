@@ -2,7 +2,7 @@ import {normalizeStudy} from './normalize-study.mjs';
 import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const dataValida=s=>typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s;
-export const atualizacaoUnica = (e,c) => e?.edicoes?.length===1 && e.atualizacao_texto?.data===c.data && c.kind==='texto_atualizado';
+export const atualizacaoUnica = (e,c) => e?.edicoes?.length===1 && dataValida(e.atualizacao_texto?.data) && e.atualizacao_texto.data===c.data && c.kind==='texto_atualizado';
 export const temEntrada = (e,c) => e.slug===c.slug && (e.edicoes?.slice(1).some(v=>v.data===c.data) || atualizacaoUnica(e,c));
 export function conferirHistoria({works,manifesto,correcoes,raiz}) {
  const erros=[],pares=new Set();

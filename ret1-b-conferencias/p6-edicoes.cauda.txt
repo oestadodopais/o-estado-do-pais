@@ -1,0 +1,20 @@
+
+ED1: 19 primeiras edições; 13 correções; 0 falhas.
+ED1 planta: controlo: passou
+ED1 planta: edição sem entrada: passou
+ED1 planta: primeira porta para o documento atual: passou
+ED1 planta: um byte da primeira edição: passou
+ED1 planta: entrada sem estudo: passou
+ED1 planta: entrada com outra data: passou
+ED1 planta: bytes servidos mudados: passou
+file://<worktree>/tests/edicoes/plantas.mjs:44
+ const html=`<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><span data-texto-campo="titulo">${esc((w.editions.find(e=>e.lang===lang)??(w.editions.length===1?w.editions[0]:null)).title)}</span><span data-texto-campo="frase">${fraseHtml(c,lang)}</span><a data-texto-porta="primeira" href="${portas.antes.rota}">${portas.rotuloAntes}</a><a data-texto-porta="atual" href="${portas.depois.rota}">${portas.rotuloDepois}</a></li>`;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+
+TypeError: Cannot read properties of null (reading 'rota')
+    at file://<worktree>/tests/edicoes/plantas.mjs:44:481
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

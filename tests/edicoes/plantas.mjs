@@ -41,13 +41,14 @@ const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&q
 for(const lang of ['pt','en'])for(const c of CORRECOES_TEXTO) {
  const e=manifesto.edicoes.find(e=>e.slug===c.slug&&e.lang===lang),w=WORKS.find(w=>w.slug===c.slug);
  const portas=portasDaCorrecao(c.slug,lang,c.data);
- const html=`<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><span data-texto-campo="titulo">${esc((w.editions.find(e=>e.lang===lang)??(w.editions.length===1?w.editions[0]:null)).title)}</span><span data-texto-campo="frase">${fraseHtml(c,lang)}</span><a data-texto-porta="primeira" href="${portas.antes.rota}">${portas.rotuloAntes}</a><a data-texto-porta="atual" href="${portas.depois.rota}">${portas.rotuloDepois}</a></li>`;
+ const html=`<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><span data-texto-campo="titulo">${esc((w.editions.find(e=>e.lang===lang)??(w.editions.length===1?w.editions[0]:null)).title)}</span><span data-texto-campo="frase">${fraseHtml(c,lang)}</span>${portas.antes?`<a data-texto-porta="primeira" href="${portas.antes.rota}">${portas.rotuloAntes}</a>`:""}<a data-texto-porta="atual" href="${portas.depois.rota}">${portas.rotuloDepois}</a></li>`;
  assert.deepEqual(conferirTextoHtml(parse(html),lang,WORKS,CORRECOES_TEXTO,manifesto).erros,[]);conta++;
  for(const campo of ['data','kind','titulo','frase']) {
   const copia=parse(html);copia.querySelector(`[data-texto-campo="${campo}"]`).set_content('Outra frase 999');
   assert(conferirTextoHtml(copia,lang,WORKS,CORRECOES_TEXTO,manifesto).erros.some(e=>e.includes(`campo ${campo}`)));conta++;
  }
- const copia=parse(html);copia.querySelector('[data-texto-porta="primeira"]').setAttribute('href',rotaAtual(c.slug,lang));
- assert(conferirTextoHtml(copia,lang,WORKS,CORRECOES_TEXTO,manifesto).erros.some(e=>e.includes('porta primeira')));conta++;
+ const copia=parse(html),lado=portas.antes?'primeira':'atual';copia.querySelector(`[data-texto-porta="${lado}"]`).setAttribute('href','/edicao-inexistente');
+ assert(conferirTextoHtml(copia,lang,WORKS,CORRECOES_TEXTO,manifesto).erros.some(e=>e.includes(portas.antes?'porta primeira':'porta da atualização única')));conta++;
+ if(!portas.antes){const extra=parse(html);extra.firstChild.insertAdjacentHTML('beforeend','<a data-texto-porta="primeira" href="/">Primeira edição</a>');assert(conferirTextoHtml(extra,lang,WORKS,CORRECOES_TEXTO,manifesto).erros.some(e=>e.includes('porta da atualização única')));conta++;}
 }
 console.log(`ED1: ${conta} controlos e plantas.`);

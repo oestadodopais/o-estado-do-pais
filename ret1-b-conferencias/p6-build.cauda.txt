@@ -1,0 +1,20 @@
+coragua-2026-11-08/FRASES-COR-AGUA.json: 126 de 126 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-d.json: 13 de 13 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-g.json: 7 de 7 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-i.json: 3 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-j.json: 3 de 3 entradas saltadas, conta conferida
+coragua-2026-11-08/FRASES-COR-AGUA-prr.json: 8 de 8 entradas saltadas, conta conferida
+file://<worktree>/scripts/check-paridade.mjs:18
+    for(const lang of ['pt','en'])if(e.documentos?.[lang]!==createHash('sha256').update(fs.readFileSync(`studies-src/${e.estudo}/${lang}.html`)).digest('hex'))throw Error('paridade: documento diferente do texto julgado');
+                                                                                                                                                                     ^
+
+Error: paridade: documento diferente do texto julgado
+    at validarExcecoes (file://<worktree>/scripts/check-paridade.mjs:18:166)
+    at conferirNumeros (file://<worktree>/scripts/leituras/conferir-frases.mjs:129:3)
+    at conferir (file://<worktree>/scripts/leituras/conferir-frases.mjs:261:103)
+    at file://<worktree>/tests/rec2/listas.mjs:49:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

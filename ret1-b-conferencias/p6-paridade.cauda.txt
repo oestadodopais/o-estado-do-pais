@@ -1,0 +1,10 @@
+
+> o-estado-do-pais@0.1.0 check:paridade
+> node tests/leituras/paridade.mjs && node scripts/check-paridade.mjs && node tests/leituras/paridade-graficos.mjs && node scripts/check-paridade-graficos.mjs && node tests/evb/paridade.mjs
+
+paridade: 16 provas, incluindo as seis da AUD1, diferença nova, exceção exata, alterada e caduca, e troca entre blocos
+paridade: 8 documentos e páginas; 6 exceções exatas, permanentes, com data e razão; plantas 6/6; recusas 0
+paridade dos gráficos: controlos e plantas fixas, incluindo valor adulterado, gráfico declarado ausente e zero recusado sem razão escrita
+paridade dos gráficos: 4 estudos bilingues inspecionados; 0 com dados de gráficos; 0 diferenças
+Os documentos bilingues publicados não contêm dados de gráficos no formato payload; ausência conferida nas fontes e no HTML construído.
+EVB paridade: 30 diferenças iguais ao texto julgado; três campos ausentes, resumo trocado e número novo recusados.

@@ -30,6 +30,6 @@ export function registoParaPlantas(rota) {
  const lang=rota.startsWith('/en/')?'en':'pt';
  return '<html><body><main><ol>'+CORRECOES_TEXTO.map(c=>{
   const w=WORKS.find(w=>w.slug===c.slug),e=w.editions.find(e=>e.lang===lang)??w.editions[0],p=portasDaCorrecao(c.slug,lang,c.data);
-  return `<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><p><span data-texto-campo="titulo">${esc(e.title)}</span>: <span data-texto-campo="frase">${fraseComSelos(c,lang)}</span></p><a data-texto-porta="primeira" href="${p.antes.rota}">${p.rotuloAntes}</a><a data-texto-porta="atual" href="${p.depois.rota}">${p.rotuloDepois}</a></li>`;
+  return `<li data-texto-estudo="${c.slug}" data-texto-data="${c.data}"><time datetime="${c.data}" data-texto-campo="data">${c.data.split('-').reverse().join('.')}</time><span data-texto-campo="kind">${KIND_LABELS[c.kind][lang]}</span><p><span data-texto-campo="titulo">${esc(e.title)}</span>: <span data-texto-campo="frase">${fraseComSelos(c,lang)}</span></p>${p.antes?`<a data-texto-porta="primeira" href="${p.antes.rota}">${p.rotuloAntes}</a>`:""}<a data-texto-porta="atual" href="${p.depois.rota}">${p.rotuloDepois}</a></li>`;
  }).join('')+'</ol></main></body></html>';
 }

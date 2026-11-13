@@ -1,0 +1,20 @@
+EV3-G pt: lede antiga reposta, vermelho 1.
+EV3-G en: superfície autorizada, verde 0.
+EV3-G en: lede antiga reposta, vermelho 1.
+ED1 política: cinco naturezas nos dados; história conservada; texto integral e plantas conferidos.
+COR-AGUA: seis provas históricas e oito origens do motor; 28 plantas recusadas.
+COR-AGUA: definição adulterada e apoio inventado recusados pelas regras das famílias.
+COR-AGUA: âmbito das dezassete linhas declarado; linha nova sem âmbito recusada.
+COR-AGUA: correção alterada ou com selo trocado recusada; marcas históricas apresentadas sem alterar o arquivo.
+ED1-E números: recomposição comum às mudanças do projeto; 69 plantas recusadas.
+EV3: 8 controlos e plantas da natureza, contagem, língua e integridade dos nomes.
+EV3 língua: 6 marcas válidas; 12 adulterações recusadas.
+EVB história fixa: quatro versões por língua; oito adulterações de bytes, correção intermédia ausente e primeira edição ausente recusadas.
+EV3-I: arquivo de ensaio ausente da publicação, história fixa conferida.
+VOZ-2A: cabeçalho português e portas inglesas conferidos; língua dos rótulos, rota e hreflang trocados recusados.
+ED2: 14 controlos; 37 plantas recusadas.
+ED2 B: 6 controlos; 8 plantas recusadas.
+ED3 voz: 6 controlos; 6 plantas recusadas.
+ED3: 20 controlos; 52 plantas recusadas.
+EVA edição: publicação única, datas e arquivo retirado conferidos; segunda versão e entrada viva sem versão recusadas.
+EVB edição: publicação única, três correções de ensaio intactas, seis rotas redirecionadas e acompanhamento até 2027 conservado.

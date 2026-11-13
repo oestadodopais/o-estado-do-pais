@@ -1,0 +1,20 @@
+RET1 remissão para estudo não publicado: /livro-razao/: Água Não Faturada
+RET1 remissão para estudo não publicado: /areas/ambiente-e-energia/: Água Não Faturada
+RET1 remissão para estudo não publicado: /estudos/evora-2027-capital-europeia-da-cultura/: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara
+RET1 remissão para estudo não publicado: /livro-razao/agua-nao-faturada-portugal-2024/: Água Não Faturada
+RET1 remissão para estudo não publicado: /livro-razao/coragua-historico-eficiencia-83/: /estudos/agua-nao-faturada
+RET1 remissão para estudo não publicado: /livro-razao/coragua-historico-eficiencia-85/: /estudos/agua-nao-faturada
+RET1 remissão para estudo não publicado: /livro-razao/coragua-historico-eficiencia-95/: /estudos/onde-esta-a-agua
+RET1 remissão para estudo não publicado: /livro-razao/coragua-historico-inquerito-2021/: /estudos/agua-nao-faturada
+RET1 remissão para estudo não publicado: /livro-razao/coragua-historico-racio-maximo/: /estudos/onde-esta-a-agua
+RET1 remissão para estudo não publicado: /livro-razao/coragua-historico-racio-minimo/: /estudos/onde-esta-a-agua
+RET1 remissão para estudo não publicado: /en/ledger/agua-nao-faturada-portugal-2024/: Água Não Faturada
+RET1 remissão para estudo não publicado: /en/ledger/coragua-historico-eficiencia-83/: /estudos/agua-nao-faturada
+RET1 remissão para estudo não publicado: /en/ledger/coragua-historico-eficiencia-85/: /estudos/agua-nao-faturada
+RET1 remissão para estudo não publicado: /en/ledger/coragua-historico-eficiencia-95/: /estudos/onde-esta-a-agua
+RET1 remissão para estudo não publicado: /en/ledger/coragua-historico-inquerito-2021/: /estudos/agua-nao-faturada
+RET1 remissão para estudo não publicado: /en/ledger/coragua-historico-racio-maximo/: /estudos/onde-esta-a-agua
+RET1 remissão para estudo não publicado: /en/ledger/coragua-historico-racio-minimo/: /estudos/onde-esta-a-agua
+RET1 remissão para estudo não publicado: /en/studies/evora-2027-capital-europeia-da-cultura/: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara
+RET1 remissão para estudo não publicado: /estudos/evora-2027-capital-europeia-da-cultura/documento/: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara
+RET1 remissão para estudo não publicado: /en/studies/evora-2027-capital-europeia-da-cultura/document/: A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara

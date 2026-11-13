@@ -1,0 +1,15 @@
+1. Motor, f223cb4b: saiu B024.1 nas duas línguas, com contrato, gabaritos, composição e registos; razão em MUDANCAS.json. Composição, HTML e registos: 0.
+2. Motor, 7baa5545: saiu B099.2 nas duas línguas; B099.1 conservada integralmente, incluindo os dois pontos finais. Composição, HTML e registos: 0.
+3. 56db657d: texto e composição (93 testes), publicadores e entregáveis: códigos finais 0; os dois livros e todas as restantes unidades são idênticos à partida. A invocação inicial sem testes deu 5, corrigida pelos comandos próprios.
+4. 5d66e6e3: travessia dos dois documentos e registos, com uma edição pública e testemunhas anteriores no Git; duas entradas texto_atualizado. Conferências finais de documentos, registo e edições: 0.
+5. f4669443: régua para títulos, alcunhas e endereços em todas as páginas; reposição das remissões recusa e título na história datada passa. Plantas finais: 0; conferência global: 1.
+6. Build de f4669443: 1, interrompido pelos resumos antigos da prova de paridade; resumos corrigidos sem mudar assinaturas numéricas. Paridade, edições, datas, voz, publicadores, frases, HTML pedido e typecheck: 0; build inteiro não repetido.
+HTML 16 PT: Os estudos ligados | A Capital Europeia da Cultura de 2027 e as contas da associação Évora 2027 estão no estudo Évora 2027, Capital Europeia da Cultura.
+HTML 16 EN: Linked studies | The 2027 European Capital of Culture and the accounts of the Évora 2027 association are in the study Évora 2027, European Capital of Culture.
+HTML 19 PT: O mesmo edifício, São Bento de Cástris (mosteiro na candidatura, convento no plano da associação), tem um valor em cada um destes dois documentos:
+HTML 19 EN: The same building, São Bento de Cástris (a monastery in the bid, a convent in the association's plan), has a value in each of these two documents:
+Registo evora-contas-da-camara-2010-2025, 2026-11-13, texto_atualizado: PT «Saiu a remissão para um estudo que deixou o arquivo; nenhum número nem nenhuma conclusão mudou.» EN «The reference to a study that left the archive came out; no number and no conclusion changed.»
+Registo evora-2027-capital-europeia-da-cultura, 2026-11-13, texto_atualizado: PT «Saiu a remissão para um estudo que deixou o arquivo; nenhum número nem nenhuma conclusão mudou.» EN «The reference to a study that left the archive came out; no number and no conclusion changed.»
+As entradas estão nos dados do registo, não na página pública: LANCAMENTO=null mantém a política de ensaio. O sítio declara publicadas ambas as línguas dos dois estudos.
+Por fechar: B120.R1 conserva outra remissão, fora das unidades autorizadas (quatro páginas); dezasseis ocorrências são nomes de medidas ou endereços de proveniência. Total medido: vinte recusas. Não se apagaram fontes nem se alargaram exceções.
+Custo até à escrita: 81 chamadas; 45 corridas com código, incluindo um build e zero portões integrais. Códigos e caudas em ret1-b-conferencias/. tokens used: 12081256.

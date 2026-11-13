@@ -27,6 +27,8 @@ for(const slug of ['evora-contas-da-camara-2010-2025','evora-2027-capital-europe
   const bad=structuredClone(manifesto);bad.edicoes.find(e=>e.slug===slug&&e.lang===lang).atualizacao_texto.anterior.sha256='0'.repeat(64);
   assert(conferirTestemunhas(bad,ler).erros.length);
  }
+ const semDatas=structuredClone(manifesto);for(const e of semDatas.edicoes.filter(e=>e.slug===slug))delete e.atualizacao_texto;
+ const semDataNaEntrada=CORRECOES_TEXTO.map(x=>x===c?{...x,data:undefined}:x);assert(conferirHistoria({...args,manifesto:semDatas,correcoes:semDataNaEntrada}).length);
  const sem=CORRECOES_TEXTO.filter(x=>x!==c);assert(conferirHistoria({...args,correcoes:sem}).length);
  const natureza=CORRECOES_TEXTO.map(x=>x===c?{...x,kind:'texto'}:x);assert(conferirHistoria({...args,correcoes:natureza}).length);
 }
