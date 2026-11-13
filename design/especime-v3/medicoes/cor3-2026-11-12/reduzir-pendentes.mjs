@@ -1,0 +1,3 @@
+import fs from 'node:fs';import {lerPaginas,inventario,chave} from '../../../../scripts/frases-com-afirmacao.mjs';import {conferirTrechosCor3} from '../../../../scripts/trechos-cor3-julgados.mjs';
+const p=lerPaginas('dist'),f=inventario(p),presentes=new Set(f.map(chave)),r=conferirTrechosCor3(p,f);if(r.erros.length)throw Error(r.erros.join('\n'));
+const file='ledger/frases/por-registar.json',antes=JSON.parse(fs.readFileSync(file)),depois=antes.filter(x=>presentes.has(chave(x))&&!r.textos.has(chave(x)));fs.writeFileSync(file,JSON.stringify(depois,null,2)+'\n');console.log(JSON.stringify({antes:antes.length,depois:depois.length,retiradas:antes.length-depois.length,trechos_cobertos:r.textos.size}));

@@ -777,3 +777,71 @@ export const NOMES_HB1 = {
     "en": "Budget first-reading vote"
   }
 };
+
+// COR3: declarações das linhas acrescentadas.
+Object.assign(NOMES_HB1, {
+  "der-hab-preco-rendimento-2015-2019-pt": {
+    "pt": "Subida do rácio entre os preços das casas e o rendimento",
+    "en": "Rise in the ratio of house prices to income"
+  },
+  "der-hab-preco-rendimento-2015-2025-eu": {
+    "pt": "Subida do rácio entre os preços das casas e o rendimento",
+    "en": "Rise in the ratio of house prices to income"
+  },
+  "der-hab-preco-rendimento-2015-2025-pt": {
+    "pt": "Subida do rácio entre os preços das casas e o rendimento",
+    "en": "Rise in the ratio of house prices to income"
+  },
+  "der-hab-preco-rendimento-2015-2025-ro": {
+    "pt": "Subida do rácio entre os preços das casas e o rendimento",
+    "en": "Rise in the ratio of house prices to income"
+  },
+  "der-hab-preco-rendimento-lt-pt-2025": {
+    "pt": "Rácio preço-rendimento acima da média de longo prazo",
+    "en": "Price-to-income ratio above its long-term average"
+  },
+  "hab-oe-invariantes-definicao": {
+    "pt": "Definição de políticas invariantes",
+    "en": "Definition of unchanged policies"
+  },
+  "hab-tipsho60-a-ptir-i25-eu27_2020-2015": {
+    "pt": "Preços das casas em relação ao rendimento, União Europeia",
+    "en": "House prices relative to income, European Union"
+  },
+  "hab-tipsho60-a-ptir-i25-eu27_2020-2025": {
+    "pt": "Preços das casas em relação ao rendimento, União Europeia",
+    "en": "House prices relative to income, European Union"
+  },
+  "hab-tipsho60-a-ptir-i25-pt-2015": {
+    "pt": "Preços das casas em relação ao rendimento, Portugal",
+    "en": "House prices relative to income, Portugal"
+  },
+  "hab-tipsho60-a-ptir-i25-pt-2019": {
+    "pt": "Preços das casas em relação ao rendimento, Portugal",
+    "en": "House prices relative to income, Portugal"
+  },
+  "hab-tipsho60-a-ptir-i25-pt-2025": {
+    "pt": "Preços das casas em relação ao rendimento, Portugal",
+    "en": "House prices relative to income, Portugal"
+  },
+  "hab-tipsho60-a-ptir-i25-ro-2015": {
+    "pt": "Preços das casas em relação ao rendimento, Roménia",
+    "en": "House prices relative to income, Romania"
+  },
+  "hab-tipsho60-a-ptir-i25-ro-2025": {
+    "pt": "Preços das casas em relação ao rendimento, Roménia",
+    "en": "House prices relative to income, Romania"
+  },
+  "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025": {
+    "pt": "Rácio preço-rendimento face à média de longo prazo, União Europeia",
+    "en": "Price-to-income ratio relative to the long-term average, European Union"
+  },
+  "hab-tipsho60-a-ptir-lt-avg-pt-2025": {
+    "pt": "Rácio preço-rendimento face à média de longo prazo, Portugal",
+    "en": "Price-to-income ratio relative to the long-term average, Portugal"
+  },
+  "hab-tipsho60-a-ptir-lt-avg-ro-2025": {
+    "pt": "Rácio preço-rendimento face à média de longo prazo, Roménia",
+    "en": "Price-to-income ratio relative to the long-term average, Romania"
+  }
+});

@@ -8,6 +8,7 @@ simples={
  'Annual average rate of change':('% de variação média anual','% annual average change'),
  'Annual average index, 2015=100':('índice médio anual, 2015 igual a 100','annual average index, 2015 equals 100'),
  'Quarterly index, 2015=100':('índice trimestral, 2015 igual a 100','quarterly index, 2015 equals 100'),
+ 'Price-to-income ratio, index 2025=100':('índice do rácio preços/rendimento, 2025 igual a 100','price-to-income ratio index, 2025 equals 100'),
  'Price-to-income ratio, index 2015=100':('índice do rácio preços/rendimento, 2015 igual a 100','price-to-income ratio index, 2015 equals 100'),
  'Price-to-income ratio relative to long-term average':('rácio preços/rendimento face à média de longo prazo','price-to-income ratio relative to its long-term average'),
  'Average':('idade média em anos','average age in years'),'Annual rate of change':('% de variação anual','% annual change'),
@@ -44,6 +45,8 @@ for f in sorted(Path('ledger/claims').glob('*.yml')):
   if id=='hab-ine-censos-0012517-0':par=('% dos alojamentos familiares clássicos','% of conventional family dwellings')
   elif id in {'hab-ine-iphab-homologa','hab-ine-avaliacao-homologa'}:par=('% de variação homóloga','% year-on-year change')
   elif id=='hab-ine-juro-implicito':par=('% de juro','% interest')
+  elif id.startswith('der-hab-preco-rendimento-lt-'):par=('% acima da média de longo prazo','% above the long-term average')
+  elif id.startswith('der-hab-preco-rendimento-'):par=('% de variação do rácio preços/rendimento','% change in the price-to-income ratio')
   elif id.startswith(('der-hab-inquilinos-','der-hab-proprietarios-')):par=('% da população','% of the population')
   else:raise ValueError(id)
  else:par=simples[u]

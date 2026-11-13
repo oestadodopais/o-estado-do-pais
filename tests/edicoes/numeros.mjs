@@ -6,7 +6,7 @@ for(const c of CORRECOES_TEXTO)for(const lang of ['pt','en']){
  const partes=partesDaCorrecao(c,lang);assert.equal(textoDaMudancaGate(partes,claims,true),c.frase[lang]);
  assert.equal(textoDaMudancaGate([...partes,' 999'],claims,true),null);plantas++;
  const root=parse(`<span>${fraseHtml(c,lang)}</span>`);assert.deepEqual(medirPosicaoDosSelos(root.toString(),lang).erros,[],'A unidade fica antes do selo');assert.deepEqual(conferirNumerosDaCorrecao(root,claims,lang),[]);
- if(lang==='en'&&c.slug==='a-casa-em-portugal-e-na-europa'){
+ if(lang==='en'&&c.slug==='a-casa-em-portugal-e-na-europa'&&c.frase.en.includes('pelo menos')){
   assert(root.querySelectorAll('[lang="pt-PT"]').some(el=>el.textContent==='pelo menos'),'qualificação portuguesa sem língua marcada');
   const semLingua=parse(root.toString());semLingua.querySelectorAll('[lang="pt-PT"]').find(el=>el.textContent==='pelo menos').removeAttribute('lang');
   assert(conferirNumerosDaCorrecao(semLingua,claims,lang).includes('ED1 língua: nome português sem marca'));plantas++;

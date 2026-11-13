@@ -147,11 +147,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "0ddd168c5ffc67042f396fbfafead2aa8107e6b61d6d0eda78fbce4dd9ba3a27"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
     "sha256": "14373c7aa06163dd21a3b5a40b243720d2b8d9a8075ebe733bce5702357bf3ef"
   },
   {
@@ -173,11 +168,6 @@
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
     "sha256": "24c03b352741ed9b07495b4b40a8229bcfc7bb04a588b5fcdfc2031c4b18a00a"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
-    "sha256": "2b075ee0933711915fa965c53e9b8f43a07ecf14440fc82c3e50f8cbfdae7f7b"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -352,11 +342,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "966c1a2fc7cd1df48ef180d6b22d2e01fc1d3aecfd35e7503cb36ad8aeb7bf2f"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
     "sha256": "a1bd370443af5ad9a944fc9815d5001b6e699cfd531e9c8a8822a3f8f2e82a0c"
   },
   {
@@ -487,11 +472,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "en",
-    "sha256": "f36789b7467d673c3d102c003c50b03ccd05571a34189c26c1598b30ede2802f"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "en",
     "sha256": "f5bf2dc4332080347f92b1ab5494804dd8212011adb275b715348bc0fdb46d23"
   },
   {
@@ -613,11 +593,6 @@
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
     "sha256": "5e039715b072bd4ca9095b07033d96ffa39824777e5a94574b8b4f9bedb60c56"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
-    "sha256": "6044b07129f35e1fe3bd1e7f4ab1762d235bb3b39d28be87a3a4be46970fc51a"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -782,11 +757,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "c1e50b06185f41b6f7c3c52a1c56c9223fdc0626859b530d158a1fb27b327d86"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
     "sha256": "c481e8334f749dba08eb1c6a978e1cf908857ddf9b34da8cfde01f90345098a8"
   },
   {
@@ -827,11 +797,6 @@
   {
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
-    "sha256": "dfb9a1d5bede986be19656637799935da95c1fbfebaf076ab907267098de139a"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
     "sha256": "e5fe5c1a0220646ebb0795b00e91c9f9d77639a2041af65778ea1b6367b33c70"
   },
   {
@@ -843,11 +808,6 @@
     "estudo": "/dossies/orcamento-2027",
     "lingua": "pt",
     "sha256": "e884c3346d5f9cd2d00f3d4404dc677a928ca7b8d29a5188ae9cc4392854eb0f"
-  },
-  {
-    "estudo": "/dossies/orcamento-2027",
-    "lingua": "pt",
-    "sha256": "ec88e763642295aa9dd22c5a7bf038477afcf2b4503799a008065b82d2b56ce4"
   },
   {
     "estudo": "/dossies/orcamento-2027",
@@ -3692,11 +3652,6 @@
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "en",
-    "sha256": "795e19e4b256d75eefff3a9f81b3b78357a878fcda17e757994c1383ea301907"
-  },
-  {
-    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
-    "lingua": "en",
     "sha256": "7b73f6d38c00a686f188ae92ee05ecf89f067b5720f21d1b934224f800d76370"
   },
   {
@@ -4233,11 +4188,6 @@
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",
     "lingua": "pt",
     "sha256": "779d37230f153e18b1156be1318789cf55f0800633c9f9e6530378ef291524fc"
-  },
-  {
-    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
-    "lingua": "pt",
-    "sha256": "795e19e4b256d75eefff3a9f81b3b78357a878fcda17e757994c1383ea301907"
   },
   {
     "estudo": "orcamento-2027-o-que-muda-e-para-quem",

@@ -265,6 +265,15 @@ const LINHAS_DA_REGUA = loadClaims();
  * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
+  {
+    nome: 'Guia da pensão de velhice, página da idade de referência',
+    forma: /^Guia Prático Pensão de Velhice; p\. 15 PDF$/,
+    onde: 'COR3: frase da página física do guia, conservada no corpo do motor',
+    confere: (onde, linha) => linha?.id === 'desemprego-longa-duracao-idade-referencia' &&
+      linha.name === '62 anos de idade' && linha.value === '62' &&
+      linha.excerpt === 'são 11 meses de antecipação em relação aos 62 anos de idade.' &&
+      linha.document?.page === 15 && linha.document?.source_sha256 === '1e1dec11775e9453a6288f5d152516b2584fabb4f10ef7b2bbf3447ed22285f3',
+  },
   // OE1: localizadores escritos pelos leitores nomeados em cada entrada.
   // A lista continua fechada; os quatro formatos anteriores permanecem iguais.
   {

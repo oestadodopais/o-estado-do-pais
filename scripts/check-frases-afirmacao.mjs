@@ -1,5 +1,6 @@
 /** CAM2-A: cobertura exata, registo bilingue e lista que só encolhe. */
 import fs from 'node:fs';
+import {conferirTrechosCor3} from './trechos-cor3-julgados.mjs';
 import {lerTextosJulgados,conferirTextosJulgados} from './textos-julgados.mjs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
@@ -134,9 +135,10 @@ export function conferir(dist = 'dist') {
   const pendentes = JSON.parse(fs.readFileSync(LISTA, 'utf8'));
   const r = conferirRegisto(registo, paginas, loadClaims());
   const julgados = conferirTextosJulgados(lerTextosJulgados(), paginas, frases);
+  const cor3 = conferirTrechosCor3(paginas,frases);
   const corpos = conferirCorpos(r.linhas, true);
   return {frases:frases.length, registo:registo.length, pendentes:pendentes.length, corpos,
-    erros:[...r.erros, ...julgados.erros, ...conferirCobertura(frases, new Set([...r.textos, ...julgados.textos, ...julgados.mobilia]), pendentes), ...conferirHistorico(pendentes), ...conferirPino(), ...conferirPinoModelos(), ...conferirModelos(), ...corpos.erros]};
+    erros:[...r.erros, ...julgados.erros, ...cor3.erros, ...conferirCobertura(frases, new Set([...r.textos, ...julgados.textos, ...julgados.mobilia, ...cor3.textos]), pendentes), ...conferirHistorico(pendentes), ...conferirPino(), ...conferirPinoModelos(), ...conferirModelos(), ...corpos.erros]};
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {

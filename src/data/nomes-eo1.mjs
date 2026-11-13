@@ -36,6 +36,14 @@ export const NOMES_EO1 = {
     "pt": "Reforço Complemento Solidário para Idosos (CSI)",
     "en": "Increase in the solidarity supplement for older people"
   },
+  "oe-2027-quadro-a1-1-impacto-saldo": {
+    "pt": "Impacto no saldo",
+    "en": "Impact on the balance"
+  },
+  "oe-2027-quadro-3-2-nota-i": {
+    "pt": "Quadro das medidas: definição da marca (i)",
+    "en": "Measures table: definition of mark (i)"
+  },
   "der-oe2027-medidas-anteriores-saldo": {
     "pt": "Medidas invariantes: impacto no saldo",
     "en": "Invariant measures: balance impact"
@@ -87,10 +95,6 @@ export const NOMES_EO1 = {
   "pm-q3-2-r23-c0": {
     "pt": "Acordos salariais (i)",
     "en": "Wage agreements (i)"
-  },
-  "oe-2027-quadro-3-2-nota-i": {
-    "pt": "Quadro das medidas: definição da marca (i)",
-    "en": "Measures table: definition of mark (i)"
   },
   "der-oe2027-juros-variacao-cp": {
     "pt": "Juros: variação em contabilidade pública",
@@ -332,17 +336,13 @@ export const NOMES_EO1 = {
     "pt": "UTAO: atualização salarial",
     "en": "UTAO: wage update"
   },
-  "utao-salarios-irs": {
-    "pt": "UTAO: receita de IRS da atualização salarial",
-    "en": "UTAO: income tax from the wage update"
+  "utao-t8-irs-salarios-pensoes": {
+    "pt": "IRS - Receita de incremento de salários e pensões",
+    "en": "Personal income tax - Revenue from wage and pension increases"
   },
   "utao-salarios-cs": {
     "pt": "UTAO: contribuições da atualização salarial",
     "en": "UTAO: contributions from the wage update"
-  },
-  "der-salarios-publicos-retorno-pct": {
-    "pt": "Salários públicos: receita fiscal e contributiva sobre a atualização",
-    "en": "Public wages: tax and contributions as a share of the update"
   },
   "utao-pessoal-variacao-cn": {
     "pt": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
@@ -603,6 +603,18 @@ export const NOMES_EO1 = {
   "utao-politicas-saldo": {
     "pt": "Medidas: impacto das políticas invariantes",
     "en": "Measures: unchanged-policy impact"
+  },
+  "oe-2027-quadro-3-2-introducao": {
+    "pt": "Introdução do Quadro 3.2",
+    "en": "Introduction to Table 3.2"
+  },
+  "oe-2027-quadro-a1-1-irs-salarios-pensoes": {
+    "pt": "IRS | Receita decorrente do aumento de salários e pensões",
+    "en": "Personal income tax | Revenue from wage and pension increases"
+  },
+  "oe-2027-quadro-a1-1-contribuicoes-salarios": {
+    "pt": "Contribuições sociais | Receita decorrente do aumento de salários",
+    "en": "Social contributions | Revenue from wage increases"
   },
   "utao-politicas-revisao": {
     "pt": "Medidas: revisão das políticas invariantes",
@@ -872,6 +884,30 @@ export const NOMES_EO1 = {
     "pt": "IRC e benefícios fiscais",
     "en": "Corporate income tax and tax benefits"
   },
+  "pm-q4-4-irc-2026": {
+    "pt": "IRC; 2026",
+    "en": "Corporate income tax; 2026"
+  },
+  "pm-q4-4-irc-2027": {
+    "pt": "IRC; 2027",
+    "en": "Corporate income tax; 2027"
+  },
+  "pm-q4-4-irc-variacao": {
+    "pt": "IRC; variacao",
+    "en": "Corporate income tax; change"
+  },
+  "pm-q4-4-irs-2026": {
+    "pt": "IRS; 2026",
+    "en": "Personal income tax; 2026"
+  },
+  "pm-q4-4-irs-2027": {
+    "pt": "IRS; 2027",
+    "en": "Personal income tax; 2027"
+  },
+  "pm-q4-4-irs-variacao": {
+    "pt": "IRS; variacao",
+    "en": "Personal income tax; change"
+  },
   "posicao-cds-orcamento": {
     "pt": "Posição sobre o Orçamento do Estado de 2027",
     "en": "Position on the 2027 State Budget"
@@ -1018,10 +1054,22 @@ export const NOMES_EO1 = {
   },
   "oe-2027-calendario-especialidade": {
     "pt": "Debate e votação na especialidade",
-    "en": "Committee debate and vote"
+    "en": "Detailed debate and vote"
+  },
+  "oe-2027-calendario-especialidade-final": {
+    "pt": "Debate, votação na especialidade e votação final global",
+    "en": "Detailed debate and vote and final overall vote"
   },
   "oe-2027-calendario-final-global": {
     "pt": "Votação final global",
-    "en": "Final global vote"
+    "en": "Final overall vote"
+  },
+  "utao-salarios-irs": {
+    "pt": "UTAO: receita de IRS da atualização salarial",
+    "en": "UTAO: income tax from the wage update"
+  },
+  "der-salarios-publicos-retorno-pct": {
+    "pt": "Salários públicos: receita fiscal e contributiva sobre a atualização",
+    "en": "Public wages: tax and contributions as a share of the update"
   }
 };

@@ -25,7 +25,8 @@ export function localizadorEo1Confere(onde, linha) {
       onde !== p.name_source || linha.reference_date !== (p.publication ? p.published_at : data(p.period))) return false;
   if (!p.document) return !d && Boolean(linha.derivation) && linha.check === p.derivation?.formula &&
     JSON.stringify(linha.derived_from) === JSON.stringify(p.derivation?.components);
-  return Boolean(d && d.locator === p.document.locator && d.page === p.document.page &&
+  const fisica = `${p.document.locator}; ${/\.pdf$/i.test(p.document.file??'')?'folha '+p.document.page+' do PDF':'p. '+p.document.page}`;
+  return Boolean(d && (d.locator === p.document.locator || (Number.isInteger(p.document.page) && d.locator === fisica)) && d.page === p.document.page &&
     /^[a-f0-9]{64}$/.test(d.source_sha256) && d.source_sha256 === p.document.source_sha256 &&
     d.source_sha256 === p.receipt?.sha256 && d.title === p.document.title && linha.excerpt === p.excerpt);
 }

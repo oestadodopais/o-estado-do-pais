@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "2c81389894bdb0f6c515e39574c070489e356c30",
+ "cabeca": null,
  "contas": {
-  "paginas": 9844,
+  "paginas": 9877,
   "paginas_com_cartoes": 706,
-  "cartoes": 5574,
+  "cartoes": 5604,
   "familias": {
-   "nacional": 602,
+   "nacional": 632,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 498,
+   "projeto": 528,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 1064,
+   "declaradas": 1094,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -1043,6 +1043,50 @@
     "times": 1
    }
   },
+  "nacional|en|der-hab-preco-rendimento-2015-2019-pt": {
+   "nome": {
+    "Rise in the ratio of house prices to income": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% change in the price-to-income ratio": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-2015-2025-eu": {
+   "nome": {
+    "Rise in the ratio of house prices to income": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% change in the price-to-income ratio": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-2015-2025-pt": {
+   "nome": {
+    "Rise in the ratio of house prices to income": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% change in the price-to-income ratio": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-2015-2025-ro": {
+   "nome": {
+    "Rise in the ratio of house prices to income": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% change in the price-to-income ratio": 1
+   }
+  },
   "nacional|en|der-hab-preco-rendimento-acima-2015-eu-2024": {
    "nome": {
     "Increase in prices relative to income since the base year": 1
@@ -1085,6 +1129,17 @@
    },
    "unidade": {
     "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-lt-pt-2025": {
+   "nome": {
+    "Price-to-income ratio above its long-term average": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% above the long-term average": 1
    }
   },
   "nacional|en|der-hab-preco-rendimento-pt-vs-eu-2024": {
@@ -3291,7 +3346,95 @@
     "price-to-income ratio index, 2015 equals 100": 1
    }
   },
+  "nacional|en|hab-tipsho60-a-ptir-i25-eu27_2020-2015": {
+   "nome": {
+    "House prices relative to income, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i25-eu27_2020-2025": {
+   "nome": {
+    "House prices relative to income, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i25-pt-2015": {
+   "nome": {
+    "House prices relative to income, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i25-pt-2019": {
+   "nome": {
+    "House prices relative to income, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i25-pt-2025": {
+   "nome": {
+    "House prices relative to income, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i25-ro-2015": {
+   "nome": {
+    "House prices relative to income, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i25-ro-2025": {
+   "nome": {
+    "House prices relative to income, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2025 equals 100": 1
+   }
+  },
   "nacional|en|hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025": {
    "nome": {
     "Price-to-income ratio relative to the long-term average, European Union": 1
    },
@@ -3313,7 +3456,29 @@
     "price-to-income ratio relative to its long-term average": 1
    }
   },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-pt-2025": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
   "nacional|en|hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-ro-2025": {
    "nome": {
     "Price-to-income ratio relative to the long-term average, Romania": 1
    },
@@ -4378,6 +4543,50 @@
     "vezes": 1
    }
   },
+  "nacional|pt|der-hab-preco-rendimento-2015-2019-pt": {
+   "nome": {
+    "Subida do rácio entre os preços das casas e o rendimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação do rácio preços/rendimento": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-2015-2025-eu": {
+   "nome": {
+    "Subida do rácio entre os preços das casas e o rendimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação do rácio preços/rendimento": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-2015-2025-pt": {
+   "nome": {
+    "Subida do rácio entre os preços das casas e o rendimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação do rácio preços/rendimento": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-2015-2025-ro": {
+   "nome": {
+    "Subida do rácio entre os preços das casas e o rendimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação do rácio preços/rendimento": 1
+   }
+  },
   "nacional|pt|der-hab-preco-rendimento-acima-2015-eu-2024": {
    "nome": {
     "Aumento dos preços face ao rendimento desde o ano base": 1
@@ -4420,6 +4629,17 @@
    },
    "unidade": {
     "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-lt-pt-2025": {
+   "nome": {
+    "Rácio preço-rendimento acima da média de longo prazo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% acima da média de longo prazo": 1
    }
   },
   "nacional|pt|der-hab-preco-rendimento-pt-vs-eu-2024": {
@@ -6626,7 +6846,95 @@
     "índice do rácio preços/rendimento, 2015 igual a 100": 1
    }
   },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-eu27_2020-2015": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-eu27_2020-2025": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-pt-2015": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-pt-2019": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-pt-2025": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-ro-2015": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i25-ro-2025": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2025 igual a 100": 1
+   }
+  },
   "nacional|pt|hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025": {
    "nome": {
     "Rácio preço-rendimento face à média de longo prazo, União Europeia": 1
    },
@@ -6648,7 +6956,29 @@
     "rácio preços/rendimento face à média de longo prazo": 1
    }
   },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-pt-2025": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
   "nacional|pt|hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-ro-2025": {
    "nome": {
     "Rácio preço-rendimento face à média de longo prazo, Roménia": 1
    },

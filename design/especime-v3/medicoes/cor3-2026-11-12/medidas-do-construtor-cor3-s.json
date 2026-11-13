@@ -1,0 +1,13 @@
+{
+  "contagens": {
+    "estudos": 3520
+  },
+  "l1": {
+    "anterior": 3479,
+    "atual": 3520,
+    "diferenca": 41,
+    "comando": "node scripts/check-lugar.mjs",
+    "registo": "cor3-s-conferencias/p5-l1-final.log",
+    "inclui_calendario": true
+  }
+}

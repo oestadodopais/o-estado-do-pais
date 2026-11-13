@@ -6,6 +6,12 @@
  * As observações Eurostat leem a coordenada selada em lugar-da-incorporacao.
  */
 export const LUGARES_HB1 = {
+  "der-hab-preco-rendimento-2015-2019-pt": {"pt":"Portugal","en":"Portugal"},
+  "der-hab-preco-rendimento-2015-2025-pt": {"pt":"Portugal","en":"Portugal"},
+  "der-hab-preco-rendimento-2015-2025-eu": {"pt":"União Europeia","en":"European Union"},
+  "der-hab-preco-rendimento-2015-2025-ro": {"pt":"Roménia","en":"Romania"},
+  "der-hab-preco-rendimento-lt-pt-2025": {"pt":"Portugal","en":"Portugal"},
+  "hab-oe-invariantes-definicao": {"pt":"Portugal","en":"Portugal"},
   "hab-ine-avaliacao-mediana": {"pt": "Portugal", "en": "Portugal"},
   "hab-ine-avaliacao-homologa": {"pt": "Portugal", "en": "Portugal"},
   /* HB1-b: cada diferença conserva a geografia da única componente Eurostat.

@@ -91,6 +91,11 @@
       "quem": "Codex gpt-6-astra",
       "quando": "2026-11-08",
       "o_que": "Construção COR-AGUA: definições dos recibos conferidas nos excertos, localizadores e contas das linhas seladas."
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-11-13",
+      "o_que": "COR3: famílias das linhas novas da habitação, com as definições existentes e os cálculos declarados; apoios relidos nas células revistas."
     }
   ],
   "comuns": [
@@ -29577,7 +29582,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro "
+                  "literal": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 20 de novembro"
                 }
               ]
             }
@@ -29621,7 +29626,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+                  "literal": "Este ato marca o início do processo orçamental no Parlamento, que culmina com a votação final global da iniciativa a 24 de novembro."
                 }
               ]
             }
@@ -46683,7 +46688,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (206,41 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 81,7."
+                  "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (205,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,97 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 80,8."
                 }
               ]
             }
@@ -48818,7 +48823,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,6 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,6."
+                  "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,5 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,7."
                 }
               ]
             }
@@ -52714,6 +52719,1211 @@
                   "linha": "propria",
                   "campo": "derivation",
                   "literal": "2 000 000 + 3 750 000 + 3 920 000 = 9 670 000 euros, 9,7 milhões. São a contribuição inicial do Estado e os pagamentos de 2025 da cultura e do turismo, como as contas da associação os declaram."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-hab-preco-rendimento-2015-2019-pt"
+      ],
+      "nome": {
+        "pt": "Subida do rácio entre os preços das casas e o rendimento",
+        "en": "Rise in the ratio of house prices to income"
+      },
+      "origens": [],
+      "complemento": {
+        "pt": [
+          " em ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2019-pt"
+          },
+          "."
+        ],
+        "en": [
+          " in ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2019-pt"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+          "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+              "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2019 (75,64 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015 (62,17 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 21,7."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-hab-preco-rendimento-2015-2025-eu"
+      ],
+      "nome": {
+        "pt": "Subida do rácio entre os preços das casas e o rendimento",
+        "en": "Rise in the ratio of house prices to income"
+      },
+      "origens": [],
+      "complemento": {
+        "pt": [
+          " em ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2025-eu"
+          },
+          "."
+        ],
+        "en": [
+          " in ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2025-eu"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+          "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+              "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2015 (93,65 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 6,8."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-hab-preco-rendimento-2015-2025-pt"
+      ],
+      "nome": {
+        "pt": "Subida do rácio entre os preços das casas e o rendimento",
+        "en": "Rise in the ratio of house prices to income"
+      },
+      "origens": [],
+      "complemento": {
+        "pt": [
+          " em ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2025-pt"
+          },
+          "."
+        ],
+        "en": [
+          " in ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2025-pt"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+          "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+              "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015 (62,17 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 60,8."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-hab-preco-rendimento-2015-2025-ro"
+      ],
+      "nome": {
+        "pt": "Subida do rácio entre os preços das casas e o rendimento",
+        "en": "Rise in the ratio of house prices to income"
+      },
+      "origens": [],
+      "complemento": {
+        "pt": [
+          " em ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2025-ro"
+          },
+          "."
+        ],
+        "en": [
+          " in ",
+          {
+            "periodo": "der-hab-preco-rendimento-2015-2025-ro"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+          "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O resultado é a subida, em percentagem, do rácio entre os preços das casas e o rendimento entre os dois anos indicados na conta",
+              "en": "The result is the percentage rise in the ratio of house prices to income between the two years identified in the calculation",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2015 (174,92 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: −42,8."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-hab-preco-rendimento-lt-pt-2025"
+      ],
+      "nome": {
+        "pt": "Rácio preço-rendimento acima da média de longo prazo",
+        "en": "Price-to-income ratio above its long-term average"
+      },
+      "origens": [],
+      "complemento": {
+        "pt": [
+          " em ",
+          {
+            "periodo": "der-hab-preco-rendimento-lt-pt-2025"
+          },
+          "."
+        ],
+        "en": [
+          " in ",
+          {
+            "periodo": "der-hab-preco-rendimento-lt-pt-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O resultado é a percentagem em que o rácio entre os preços das casas e o rendimento está acima da sua média de longo prazo",
+          "en": "The result is the percentage by which the ratio of house prices to income exceeds its long-term average",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O resultado é a percentagem em que o rácio entre os preços das casas e o rendimento está acima da sua média de longo prazo",
+              "en": "The result is the percentage by which the ratio of house prices to income exceeds its long-term average",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2025 (136,97 índice do rácio preço-rendimento face à média de longo prazo; Eurostat, tipsho60) menos cem, arredondado a uma casa decimal: 37,0."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-oe-invariantes-definicao"
+      ],
+      "nome": {
+        "pt": "Definição de políticas invariantes",
+        "en": "Definition of unchanged policies"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "O excerto reproduz a definição de políticas invariantes no relatório do Orçamento.",
+          "en": "The excerpt reproduces the definition of unchanged policies in the Budget report.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O excerto reproduz a definição de políticas invariantes no relatório do Orçamento.",
+              "en": "The excerpt reproduces the definition of unchanged policies in the Budget report.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-eu27_2020-2015"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, União Europeia",
+        "en": "House prices relative to income, European Union"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, União Europeia, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-eu27_2020-2015"
+          },
+          "."
+        ],
+        "en": [
+          "; here, European Union, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-eu27_2020-2015"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-eu27_2020-2025"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, União Europeia",
+        "en": "House prices relative to income, European Union"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, União Europeia, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-eu27_2020-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, European Union, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-eu27_2020-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-pt-2015"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, Portugal",
+        "en": "House prices relative to income, Portugal"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-pt-2015"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-pt-2015"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-pt-2019"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, Portugal",
+        "en": "House prices relative to income, Portugal"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-pt-2019"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-pt-2019"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-pt-2025"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, Portugal",
+        "en": "House prices relative to income, Portugal"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-pt-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-pt-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-ro-2015"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, Roménia",
+        "en": "House prices relative to income, Romania"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Roménia, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-ro-2015"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Romania, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-ro-2015"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-i25-ro-2025"
+      ],
+      "nome": {
+        "pt": "Preços das casas em relação ao rendimento, Roménia",
+        "en": "House prices relative to income, Romania"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Roménia, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-ro-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Romania, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i25-ro-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+          "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+              "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025"
+      ],
+      "nome": {
+        "pt": "Rácio preço-rendimento face à média de longo prazo, União Europeia",
+        "en": "Price-to-income ratio relative to the long-term average, European Union"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, União Europeia, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, European Union, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+          "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+              "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio"
+                },
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "If the ratio equals 100"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-lt-avg-pt-2025"
+      ],
+      "nome": {
+        "pt": "Rácio preço-rendimento face à média de longo prazo, Portugal",
+        "en": "Price-to-income ratio relative to the long-term average, Portugal"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+          "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+              "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio"
+                },
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "If the ratio equals 100"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "hab-tipsho60-a-ptir-lt-avg-ro-2025"
+      ],
+      "nome": {
+        "pt": "Rácio preço-rendimento face à média de longo prazo, Roménia",
+        "en": "Price-to-income ratio relative to the long-term average, Romania"
+      },
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Roménia, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Romania, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2025"
+          },
+          "."
+        ]
+      },
+      "folhas": [
+        {
+          "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+          "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+              "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
+              "apoios": [
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio"
+                },
+                {
+                  "origem": "hb1c-eurostat-preco-rendimento",
+                  "campo": "excerto",
+                  "literal": "If the ratio equals 100"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "desemprego-longa-duracao-idade-referencia"
+      ],
+      "nome": {
+        "pt": "Idade de referência na antecipação por desemprego de longa duração",
+        "en": "Reference age for early retirement due to long-term unemployment"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Idade de referência na antecipação por desemprego de longa duração» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Reference age for early retirement due to long-term unemployment» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Idade de referência na antecipação por desemprego de longa duração» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Reference age for early retirement due to long-term unemployment» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "são 11 meses de antecipação em relação aos 62 anos de idade."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "flexibilizacao-carreira-minima"
+      ],
+      "nome": {
+        "pt": "Carreira mínima no regime de flexibilização",
+        "en": "Minimum contribution record under the flexibilisation scheme"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Carreira mínima no regime de flexibilização» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Minimum contribution record under the flexibilisation scheme» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Carreira mínima no regime de flexibilização» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Minimum contribution record under the flexibilisation scheme» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, extração relatorio-full.txt (sha256 bfdcf39a986889dd…), p. 303 do PDF (p. 264 impressa), linha 16484 → «muito longas, flexibilização aos 60 anos com 40 anos de carreira, profissões de desgaste rápido e situações»"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "flexibilizacao-idade-minima"
+      ],
+      "nome": {
+        "pt": "Idade mínima no regime de flexibilização",
+        "en": "Minimum age under the flexibilisation scheme"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Idade mínima no regime de flexibilização» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Minimum age under the flexibilisation scheme» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Idade mínima no regime de flexibilização» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Minimum age under the flexibilisation scheme» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, extração relatorio-full.txt (sha256 bfdcf39a986889dd…), p. 303 do PDF (p. 264 impressa), linha 16484 → «muito longas, flexibilização aos 60 anos com 40 anos de carreira, profissões de desgaste rápido e situações»"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-calendario-especialidade-final"
+      ],
+      "nome": {
+        "pt": "Debate, votação na especialidade e votação final global",
+        "en": "Detailed debate and vote and final overall vote"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Debate, votação na especialidade e votação final global» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Detailed debate and vote and final overall vote» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Debate, votação na especialidade e votação final global» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Detailed debate and vote and final overall vote» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 23 e 24 de novembro"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-quadro-3-2-introducao"
+      ],
+      "nome": {
+        "pt": "Introdução do Quadro 3.2",
+        "en": "Introduction to Table 3.2"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Introdução do Quadro 3.2» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Introduction to Table 3.2» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Introdução do Quadro 3.2» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Introduction to Table 3.2» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-quadro-a1-1-contribuicoes-salarios"
+      ],
+      "nome": {
+        "pt": "Contribuições sociais | Receita decorrente do aumento de salários",
+        "en": "Social contributions | Revenue from wage increases"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Contribuições sociais | Receita decorrente do aumento de salários» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Social contributions | Revenue from wage increases» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Contribuições sociais | Receita decorrente do aumento de salários» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Social contributions | Revenue from wage increases» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Contribuições sociais | Receita decorrente do aumento de salários -471"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-quadro-a1-1-impacto-saldo"
+      ],
+      "nome": {
+        "pt": "Impacto no saldo",
+        "en": "Impact on the balance"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «Impacto no saldo» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Impact on the balance» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «Impacto no saldo» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Impact on the balance» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Impacto no saldo 5 411"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-quadro-a1-1-irs-salarios-pensoes"
+      ],
+      "nome": {
+        "pt": "IRS | Receita decorrente do aumento de salários e pensões",
+        "en": "Personal income tax | Revenue from wage and pension increases"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRS | Receita decorrente do aumento de salários e pensões» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Personal income tax | Revenue from wage and pension increases» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRS | Receita decorrente do aumento de salários e pensões» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Personal income tax | Revenue from wage and pension increases» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "IRS | Receita decorrente do aumento de salários e pensões -590"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pm-q4-4-irc-2026"
+      ],
+      "nome": {
+        "pt": "IRC; 2026",
+        "en": "Corporate income tax; 2026"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRC; 2026» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Corporate income tax; 2026» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRC; 2026» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Corporate income tax; 2026» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "- IRC 9 704 9 605 -1,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pm-q4-4-irc-2027"
+      ],
+      "nome": {
+        "pt": "IRC; 2027",
+        "en": "Corporate income tax; 2027"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRC; 2027» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Corporate income tax; 2027» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRC; 2027» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Corporate income tax; 2027» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "- IRC 9 704 9 605 -1,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pm-q4-4-irc-variacao"
+      ],
+      "nome": {
+        "pt": "IRC; variacao",
+        "en": "Corporate income tax; change"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRC; variacao» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Corporate income tax; change» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRC; variacao» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Corporate income tax; change» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "- IRC 9 704 9 605 -1,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pm-q4-4-irs-2026"
+      ],
+      "nome": {
+        "pt": "IRS; 2026",
+        "en": "Personal income tax; 2026"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRS; 2026» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Personal income tax; 2026» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRS; 2026» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Personal income tax; 2026» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "- IRS 19 706 20 385 3,4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pm-q4-4-irs-2027"
+      ],
+      "nome": {
+        "pt": "IRS; 2027",
+        "en": "Personal income tax; 2027"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRS; 2027» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Personal income tax; 2027» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRS; 2027» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Personal income tax; 2027» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "- IRS 19 706 20 385 3,4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pm-q4-4-irs-variacao"
+      ],
+      "nome": {
+        "pt": "IRS; variacao",
+        "en": "Personal income tax; change"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRS; variacao» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Personal income tax; change» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRS; variacao» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Personal income tax; change» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "- IRS 19 706 20 385 3,4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "utao-t8-irs-salarios-pensoes"
+      ],
+      "nome": {
+        "pt": "IRS - Receita de incremento de salários e pensões",
+        "en": "Personal income tax - Revenue from wage and pension increases"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor de «IRS - Receita de incremento de salários e pensões» no documento citado, para o período e na unidade indicados.",
+          "en": "It is the value of «Personal income tax - Revenue from wage and pension increases» in the cited document, for the stated period and unit.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o valor de «IRS - Receita de incremento de salários e pensões» no documento citado, para o período e na unidade indicados.",
+              "en": "It is the value of «Personal income tax - Revenue from wage and pension increases» in the cited document, for the stated period and unit.",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "IRS - Receita de incremento de salários e pensões Permanente 668 0,20 590 0,17"
                 }
               ]
             }

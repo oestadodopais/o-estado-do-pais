@@ -125,6 +125,66 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "der-hab-preco-rendimento-2015-2019-pt": {
+    "pt": [
+      "% de variação do rácio preços/rendimento"
+    ],
+    "en": [
+      "% change in the price-to-income ratio"
+    ],
+    "apoio": [
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2019 (75,64 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015 (62,17 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 21,7."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-2015-2025-eu": {
+    "pt": [
+      "% de variação do rácio preços/rendimento"
+    ],
+    "en": [
+      "% change in the price-to-income ratio"
+    ],
+    "apoio": [
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2015 (93,65 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 6,8."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-2015-2025-pt": {
+    "pt": [
+      "% de variação do rácio preços/rendimento"
+    ],
+    "en": [
+      "% change in the price-to-income ratio"
+    ],
+    "apoio": [
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015 (62,17 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 60,8."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-2015-2025-ro": {
+    "pt": [
+      "% de variação do rácio preços/rendimento"
+    ],
+    "en": [
+      "% change in the price-to-income ratio"
+    ],
+    "apoio": [
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2015 (174,92 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: −42,8."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "der-hab-preco-rendimento-acima-2015-eu-2024": {
     "pt": [
       "pontos percentuais do índice"
@@ -201,6 +261,21 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "der-hab-preco-rendimento-lt-pt-2025": {
+    "pt": [
+      "% acima da média de longo prazo"
+    ],
+    "en": [
+      "% above the long-term average"
+    ],
+    "apoio": [
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2025 (136,97 índice do rácio preço-rendimento face à média de longo prazo; Eurostat, tipsho60) menos cem, arredondado a uma casa decimal: 37,0."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "der-hab-preco-rendimento-pt-vs-eu-2024": {
     "pt": [
       "pontos de índice"
@@ -234,7 +309,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (206,41 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 81,7."
+        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (205,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,97 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 80,8."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -340,7 +415,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,6 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,6."
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,5 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,7."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -432,7 +507,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"19\": \"7\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3331\", \"reference_date\": \"2026-08-31\", \"29\": \"3609\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"2553.0\", \"status\": \"F\"}"
+        "literal": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"19\": \"7\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3331\", \"reference_date\": \"2026-08-31\", \"29\": \"3609\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"2643.0\", \"status\": \"F\"}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -455,7 +530,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.0\", \"status\": \"F\"}"
+        "literal": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.01\", \"status\": \"F\"}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -1336,7 +1411,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.3\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.2\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -1401,7 +1476,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"5.0\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"4.6\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -1447,7 +1522,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.8\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.7\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -1539,7 +1614,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.6\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.5\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -1746,7 +1821,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.6\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3343,6 +3418,29 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "hab-oe-invariantes-definicao": {
+    "pt": [
+      "texto da fonte"
+    ],
+    "en": [
+      "source text"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "texto"
+      },
+      {
+        "campo": "name",
+        "literal": "RELATÓRIO"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "hab-oe-irs-rendas-impacto": {
     "pt": [
       "milhões de euros"
@@ -4100,7 +4198,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.6\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4164,7 +4262,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"124.75\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"124.97\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4287,7 +4385,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"206.41\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"205.75\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4310,7 +4408,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"2.9\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.0\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4333,7 +4431,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.7\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.6\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4502,6 +4600,293 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "hab-tipsho60-a-ptir-i25-eu27_2020-2015": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2015"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"EU27_2020\", \"time\": \"2015\"}, \"value\": \"93.65\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-i25-eu27_2020-2025": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"100.00\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-i25-pt-2015": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"62.17\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-i25-pt-2019": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2019"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"PT\", \"time\": \"2019\"}, \"value\": \"75.64\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-i25-pt-2025": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"100.00\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-i25-ro-2015": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2015"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"RO\", \"time\": \"2015\"}, \"value\": \"174.92\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-i25-ro-2025": {
+    "pt": [
+      "índice do rácio preços/rendimento, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " igual a ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "en": [
+      "price-to-income ratio index, ",
+      {
+        "nl": "2025",
+        "motivo": "escala-de-instrumento"
+      },
+      " equals ",
+      {
+        "nl": "100",
+        "motivo": "escala-de-instrumento"
+      }
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio, index 2025=100"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"100.00\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
     "pt": [
       "rácio preços/rendimento face à média de longo prazo"
@@ -4520,7 +4905,30 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"98.94\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"98.15\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025": {
+    "pt": [
+      "rácio preços/rendimento face à média de longo prazo"
+    ],
+    "en": [
+      "price-to-income ratio relative to its long-term average"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio relative to long-term average"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, União Europeia, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"100.03\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4543,7 +4951,30 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"122.92\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"122.22\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-lt-avg-pt-2025": {
+    "pt": [
+      "rácio preços/rendimento face à média de longo prazo"
+    ],
+    "en": [
+      "price-to-income ratio relative to its long-term average"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio relative to long-term average"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"136.97\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4566,7 +4997,30 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"48.23\", \"status\": null}"
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"47.13\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-lt-avg-ro-2025": {
+    "pt": [
+      "rácio preços/rendimento face à média de longo prazo"
+    ],
+    "en": [
+      "price-to-income ratio relative to its long-term average"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio relative to long-term average"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Roménia, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"47.01\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."

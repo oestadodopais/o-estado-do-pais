@@ -695,3 +695,19 @@ function dataDoInstantaneoPRR() {
  if(!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !d.every((/** @type {{snapshot_date:string}} */ x)=>x.snapshot_date===data)) throw Error('PRR: falta uma data única do instantâneo');
  return data.split('-').reverse().join('.');
 }
+
+// COR3: definições das linhas novas do Orçamento e da reforma.
+Object.assign(NOMES_DO_PROJETO, {
+  "desemprego-longa-duracao-idade-referencia": {
+    "pt": "Idade de referência na antecipação por desemprego de longa duração",
+    "en": "Reference age for early retirement due to long-term unemployment"
+  },
+  "flexibilizacao-carreira-minima": {
+    "pt": "Carreira mínima no regime de flexibilização",
+    "en": "Minimum contribution record under the flexibilisation scheme"
+  },
+  "flexibilizacao-idade-minima": {
+    "pt": "Idade mínima no regime de flexibilização",
+    "en": "Minimum age under the flexibilisation scheme"
+  }
+});

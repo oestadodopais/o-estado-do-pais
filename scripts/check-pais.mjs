@@ -425,6 +425,7 @@ for (const [id, chave] of Object.entries(LUGAR_DECLARADO_DAS_LINHAS)) {
 }
 /** O nome e a porta de um lugar, na língua da edição, compostos aqui. */
 function nomeDoLugar(chave, lang) {
+  if (chave === 'romenia') return lang === 'pt' ? 'Roménia' : 'Romania';
   if (chave === 'uniao-europeia') return lang === 'pt' ? 'União Europeia' : 'European Union';
   if (chave === 'o-estado-do-pais') return 'O Estado do País';
   if (chave === PAIS) return ROTULOS_B1[lang].pais;
@@ -434,6 +435,7 @@ function nomeDoLugar(chave, lang) {
   return m ? (m.nome[lang] ?? m.nome.pt) : null;
 }
 function rotaDoLugar(chave, lang) {
+  if (chave === 'romenia') return routePath('linha',lang,{slug:'hab-tipsho60-a-ptir-lt-avg-ro-2024'});
   if (chave === 'uniao-europeia') return routePath('temas', lang);
   if (chave === 'o-estado-do-pais') return routePath('correcoes', lang);
   if (chave === PAIS) return routePath('home', lang);
