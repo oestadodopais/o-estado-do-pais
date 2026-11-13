@@ -3,7 +3,7 @@
 Acrescenta: linhas e frases
 Medidas: medidas-cor3-s.json
 
-*Escrito pelo lugar de direção (Claude Fable 5.2). O construtor é o Codex `gpt-6-astra` (`high`), na worktree do sítio `cor3-2026-11-12`, que está em cima da cabeça do bloco RET1; a outra pasta com escrita é a worktree do motor `cor3-2026-11-12`, na cabeça que passou o portão inteiro numa árvore limpa (o resumo está nas medidas). No motor só mudas o que a travessia exigir, e dizes o quê. Uma construção grande: cento e cinquenta minutos e duzentas e quarenta chamadas; não lances sessões auxiliares. Um commit no fim de cada ponto numerado, com o assunto a começar por `COR3`. O teu relatório vai para `RELATORIO-COR3-S.txt`, nesta pasta, com vinte linhas no máximo; as medidas e os registos para esta pasta (`medidas-do-construtor-cor3-s.json`, `cor3-s-conferencias/`), só os códigos e as últimas vinte linhas, sem caminhos da máquina. Lê primeiro `MANDATO-COR3-M.md`, `RELATORIO-COR3-M.txt` e as três folhas decididas, nesta pasta.*
+*Escrito pelo lugar de direção (Claude Fable 5.2). O construtor é o Codex `gpt-6-astra` (`high`), na worktree do sítio `cor3-2026-11-12`, que está em cima do `main` depois de o RET1 aterrar; a outra pasta com escrita é a worktree do motor `cor3-2026-11-12`, na cabeça que passou o portão inteiro numa árvore limpa (o resumo está nas medidas). No motor só mudas o que a travessia exigir, e dizes o quê. Uma construção grande: cento e cinquenta minutos e duzentas e quarenta chamadas; não lances sessões auxiliares. Um commit no fim de cada ponto numerado, com o assunto a começar por `COR3`. O teu relatório vai para `RELATORIO-COR3-S.txt`, nesta pasta, com vinte linhas no máximo; as medidas e os registos para esta pasta (`medidas-do-construtor-cor3-s.json`, `cor3-s-conferencias/`), só os códigos e as últimas vinte linhas, sem caminhos da máquina. Lê primeiro `MANDATO-COR3-M.md`, `RELATORIO-COR3-M.txt` e as três folhas decididas, nesta pasta.*
 
 ## Porquê
 
@@ -67,7 +67,9 @@ Outras medidas da mesma coisa: o Eurostat publica a sobrecarga total em dois con
 
 5. **As listas que crescem com linhas e frases novas:** as formas da I1, os blocos do livro, o teto da L1, os conjuntos dos rótulos, os nomes, as unidades e as famílias das linhas novas da habitação (`src/data/nomes-hb1.mjs`, `src/data/unidades-hb1.mjs`, `src/data/o-que-e-das-familias.mjs`), o inventário dos rótulos (`design/especime-v3/rotulos/INVENTARIO.json`), as leituras provadas do cartão (`tests/cartao/leituras-provadas.json`), `ledger/frases/por-registar.json` e `src/data/datas-de-publicacao.json`. A linha irmã com que este lugar mediu as listas foi `hab-tipsho60-a-ptir-lt-avg-pt-2024`. Cada uma cresce pelo que este bloco acrescenta e por mais nada; o relatório diz quanto.
 
-6. **A prova.** O `build` da cabeça e as conferências que cada ponto toca, cada código lido de um ficheiro. `conferir-composto-cor3.py` passa a ler também os documentos do sítio (`studies-src/` dos três estudos) e dá todos os trechos conformes, com as duas plantas a morder. No relatório: as seis frases do registo e as frases dos dois cartões como o HTML construído as imprime, nas duas edições; o que os recibos das duas linhas do sítio mostram; a lista inteira do `verify` corre-a este lugar por guião depois da tua passagem.
+6. **A razão datada ao pé das contagens** (o índice dos estudos e a página de Évora, do RET1) imprime a data duas vezes, porque o componente antepõe a data da entrada a uma razão que já a traz. O componente deixa de antepor a data quando a razão a contém; a frase da linha não muda. Planta: uma razão sem data continua a levar a data à frente.
+
+7. **A prova.** O `build` da cabeça e as conferências que cada ponto toca, cada código lido de um ficheiro. `conferir-composto-cor3.py` passa a ler também os documentos do sítio (`studies-src/` dos três estudos) e dá todos os trechos conformes, com as duas plantas a morder. No relatório: as seis frases do registo e as frases dos dois cartões como o HTML construído as imprime, nas duas edições; o que os recibos das duas linhas do sítio mostram; a lista inteira do `verify` corre-a este lugar por guião depois da tua passagem.
 
 ## O que fica como está, por decisão
 
@@ -79,4 +81,4 @@ Numa régua que proteja um número, uma fonte ou uma pessoa e só passe enfraque
 
 ## O fim
 
-Os seis pontos, cada um no seu commit, e o relatório: ponto a ponto o que ficou feito, as listas que cresceram e quanto, as frases como se imprimem, os códigos, o que ficou por correr fora da sandbox.
+Os sete pontos, cada um no seu commit, e o relatório: ponto a ponto o que ficou feito, as listas que cresceram e quanto, as frases como se imprimem, os códigos, o que ficou por correr fora da sandbox.

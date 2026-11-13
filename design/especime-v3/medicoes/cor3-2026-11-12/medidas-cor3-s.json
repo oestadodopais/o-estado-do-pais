@@ -76,7 +76,7 @@
   "comando": "python3 -c \"print(open('src/data/correcoes.mjs').read().count('a-casa-em-portugal-e-na-europa'))\""
  },
  "cabeca_do_motor_que_passou_o_portao_inteiro": {
-  "valor": "3c55339",
+  "valor": "69cce1b",
   "comando": "git -C \"$RESEARCHHUB_DIR\" rev-parse --short HEAD"
  }
 }
