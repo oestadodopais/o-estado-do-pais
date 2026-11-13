@@ -1,0 +1,8 @@
+C1: glosa inglesa corrigida; motor 57606761 e sítio 71df5b32; edição portuguesa preservada byte a byte.
+C2: 944e88ae; diferenças 250 e 375 mantidas; documento 10/30, página 86/249; paridade 0 e duas plantas do ano recusadas.
+C3: 110ae45c; identidades da folha e do documento atualizadas na prova; igualdade 0, 160/160 trechos conformes e quatro plantas recusadas.
+Build integral: sem código final no fecho, ainda em check:voz; construção iniciada sobre 944e88ae, sem mudar outras frases nem alargar bases.
+Edições, frases com afirmação, registo e tipos: códigos 0 lidos dos ficheiros; frases compostas pelo escrivão: sem código final no fecho.
+Motor: habitacao_test, habitacao_hb1b_test, cor3_test, compor_livros_test e compor_hb1b_test: cinco códigos 0; core.gate não executado.
+Incidentes: preliminar 1 por commit durante o carimbo; prova com hashes antigos corrigida; dist em reconstrução causou ausência transitória; navegador na sandbox recusou listen 127.0.0.1 com EPERM.
+Custo até este fecho: 57 chamadas; 24 comandos terminados com código, incluindo repetições; build e navegador pendentes; relatório e registos finais por comitar; limite de trinta minutos.

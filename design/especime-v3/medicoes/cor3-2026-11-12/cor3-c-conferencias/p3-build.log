@@ -1,0 +1,20 @@
+    'o rótulo da fonte «IRC; variacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «Corporate income tax; change» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «IRS; 2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «Personal income tax; 2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «IRS; 2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «Personal income tax; 2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «IRS; variacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «Personal income tax; change» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «IRS - Receita de incremento de salários e pensões» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «Personal income tax - Revenue from wage and pension increases» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'a declaração de língua nomeia o rótulo «Committee debate and vote», que nenhuma linha do livro-razão traz. A tabela declara o que existe.',
+    'a declaração de língua nomeia o rótulo «Final global vote», que nenhuma linha do livro-razão traz. A tabela declara o que existe.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 0.0008242912590503693, "execucao_segundos": 1162.5469501246698, "codigo": 1}
