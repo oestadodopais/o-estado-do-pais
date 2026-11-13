@@ -601,18 +601,18 @@ edicoes:
         sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb
         commit: 83881fe9ab00f32232d4ae0126f2a67d9bd97694
     edicoes:
-      - data: '2026-11-12'
-        sha256: 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178
-        file: evora-2027-capital-europeia-da-cultura/pt.html
-    title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos'
+    - data: '2026-11-12'
+      sha256: a0906289200862354b227c99de830226fb880162639a90796b54963e6bcd5322
+      file: evora-2027-capital-europeia-da-cultura/pt.html
+    title: 'Évora 2027: em junho de 2025, o relato ao painel dava 34 milhões transferidos; no fim desse ano, as contas declaram 9,7 recebidos do protocolo e a parte do município «Em Negociação»'
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 7baa55457d97bed620e7bb3d24dcc42250fffd48"
+    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 6587e36682ef59d1cf654baef4f20793aad0509d
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.pt.html
-    fetched_utc: '2026-11-13T02:16:17.045409Z'
-    bytes_raw: 101818
-    bytes_normalized: 101818
-    sha256_raw: 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178
-    sha256_normalized: 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178
+    fetched_utc: '2026-11-13T02:56:41Z'
+    bytes_raw: 101712
+    bytes_normalized: 101712
+    sha256_raw: a0906289200862354b227c99de830226fb880162639a90796b54963e6bcd5322
+    sha256_normalized: a0906289200862354b227c99de830226fb880162639a90796b54963e6bcd5322
   - slug: evora-2027-capital-europeia-da-cultura
     lang: en
     atualizacao_texto:
@@ -621,18 +621,18 @@ edicoes:
         sha256: ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306
         commit: 83881fe9ab00f32232d4ae0126f2a67d9bd97694
     edicoes:
-      - data: '2026-11-12'
-        sha256: 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef
-        file: evora-2027-capital-europeia-da-cultura/en.html
-    title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts'
+    - data: '2026-11-12'
+      sha256: 1eabffcbff775f20b7e85d76d699bc03c0b262c62298fee9479b18e429009763
+      file: evora-2027-capital-europeia-da-cultura/en.html
+    title: 'Évora 2027: the June 2025 report to the panel put transfers at 34 million; the year-end accounts report 9,7 million received under the protocol and list the municipality''s share as «Em Negociação» (under negotiation)'
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 7baa55457d97bed620e7bb3d24dcc42250fffd48"
+    origin_ref: content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 6587e36682ef59d1cf654baef4f20793aad0509d
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.en.html
-    fetched_utc: '2026-11-13T02:16:17.056450Z'
-    bytes_raw: 101784
-    bytes_normalized: 101784
-    sha256_raw: 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef
-    sha256_normalized: 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef
+    fetched_utc: '2026-11-13T02:56:41Z'
+    bytes_raw: 101680
+    bytes_normalized: 101680
+    sha256_raw: 1eabffcbff775f20b7e85d76d699bc03c0b262c62298fee9479b18e429009763
+    sha256_normalized: 1eabffcbff775f20b7e85d76d699bc03c0b262c62298fee9479b18e429009763
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "pt"
     edicoes:

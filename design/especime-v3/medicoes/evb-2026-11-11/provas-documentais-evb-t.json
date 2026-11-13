@@ -1,25 +1,25 @@
 {
   "estudo": "evora-2027-capital-europeia-da-cultura",
-  "commit_motor": "7baa55457d97bed620e7bb3d24dcc42250fffd48",
+  "commit_motor": "6587e36682ef59d1cf654baef4f20793aad0509d",
   "livro": {
     "file": "design/especime-v3/medicoes/evb-2026-11-11/livro-19-julgado.json",
     "sha256": "22a64c6faba1f1e23617837b2f62e128bc214825a56f075e11357bbd2f0f9ddf",
-    "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json @ 7baa55457d97bed620e7bb3d24dcc42250fffd48"
+    "origin_ref": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json @ 6587e36682ef59d1cf654baef4f20793aad0509d"
   },
   "registos": {
     "pt": {
       "edition": "Évora 2027, Capital Europeia da Cultura (pt-PT)",
       "lang": "pt-PT",
       "file": "registos/evora-2027-capital-europeia-da-cultura/pt.record.json",
-      "sha256": "eb6d4fc95cfab1f2aa127253fa52887dbcc9a8025fbe372215e6240996f42f2b",
-      "objeto_sha256": "f0ac76a6638fc626d65a58a6d38b7389cc4731ce8f420b783aa14f4ff0bb6c77"
+      "sha256": "be344cf1c72c86df41f0b6d26db6d084d3c85c9d2a8213e64c0ccd896c5c4ca4",
+      "objeto_sha256": "619185b6f08ca288cd7f0061d2a19178406e4e4e339bdd691d020d4e2c9a84f6"
     },
     "en": {
       "edition": "Évora 2027, European Capital of Culture",
       "lang": "en",
       "file": "registos/evora-2027-capital-europeia-da-cultura/en.record.json",
-      "sha256": "fc54db1cb8a17211c553ff3253944b0aa63aa1ab2c43e897b4442c615cb9c5d8",
-      "objeto_sha256": "4273ec6bc5c61b0069c159e9ba6bda87296126fc0394e8070f4cd269b4229bad"
+      "sha256": "33b0bc2074895eac8003ed5c64fdc9b3a2f8985f7ff4fdcb0f134a0b11ed7a27",
+      "objeto_sha256": "28be96538297bdaa595eacab3cc5e19d69b9be7d6c5f27445976dbbd4ff70ea0"
     }
   },
   "corpos": {
