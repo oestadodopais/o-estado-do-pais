@@ -117,7 +117,10 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
         if (suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c)))) continue;
         const titulo = tituloCitado(f.pt, 'pt', c, suporte);
         if (!titulo || !tituloCitado(f.en, 'en', c, [titulo])) erros.push(`${id}: citação ausente do excerto`);
-        else titulos.set(titulo.id, {...titulo, id: titulo.id + '#titulo', excerpt: c});
+        else {
+          const provaId = titulo.id + '#titulo-' + sha256(c).slice(0, 12);
+          titulos.set(provaId, {...titulo, id: provaId, excerpt: c});
+        }
       }
       const presa = pt.some(c => [...c].length >= 12 && suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c))));
       if (f.juizo !== 'por julgar') erros.push(`${id}: juízo tem de ficar por julgar`);

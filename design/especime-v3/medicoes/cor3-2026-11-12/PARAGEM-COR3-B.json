@@ -1,0 +1,147 @@
+{
+  "estado": "parado na paridade, sem alterar frases nem bases",
+  "codigo_build": 1,
+  "cabeca_build": "16bda0f933618cfa16c5a022b19a55eefc8bb2f4",
+  "causa": "A glosa inglesa da citação acrescentada pelo COR3 repete 2027; a base fechada da habitação só admite as duplicações de 250 e 375. Os índices das duas diferenças antigas também mudaram na página composta.",
+  "restricoes": "As frases das três folhas e as bases de tolerância ficam como estão, por decisão do mandato.",
+  "medidas": [
+    {
+      "tipo": "documento",
+      "anterior": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "250",
+            "250",
+            "375",
+            "375"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 10,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 30,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          }
+        ]
+      },
+      "atual": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "2027",
+            "250",
+            "250",
+            "375",
+            "375"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 10,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 30,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 36,
+            "soPt": [],
+            "soEn": [
+              "2027"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "página",
+      "anterior": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "250",
+            "250",
+            "375",
+            "375"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 88,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 253,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          }
+        ]
+      },
+      "atual": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "2027",
+            "250",
+            "250",
+            "375",
+            "375"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 86,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 249,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 283,
+            "soPt": [],
+            "soEn": [
+              "2027"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

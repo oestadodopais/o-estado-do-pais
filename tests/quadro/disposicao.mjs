@@ -60,12 +60,12 @@ try{
   const root=ler(rota),lang=rota.startsWith('/en/')?'en':'pt';
   assert.deepEqual(conferirAvisos(root,lang).erros,[],`avisos exigidos pelos dados: ${rota}`);
   exigirAlvos(rota,root.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a').length);
-  return {rota,temAlvos:root.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a').length>0};
+  return {rota,alvosEsperados:root.querySelectorAll('[data-quadro-destino], [data-aviso-revisao] a').length};
  });
- for(const largura of [390,768,1024,1280,1600])for(const {rota,temAlvos} of paginas){
+ for(const largura of [390,768,1024,1280,1600])for(const {rota,alvosEsperados} of paginas){
   const page=await browser.newPage({viewport:{width:largura,height:1000}});
   assert.equal((await page.goto(url+rota)).status(),200,`página da prova ausente: ${rota}`);await page.evaluate(()=>document.fonts.ready);
-  const r=await medir(page);exigirAlvos(rota,r.alvos);assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);assert.equal(r.alvos>0,temAlvos,`alvos diferentes do HTML conferido: ${rota} a ${largura}`);combinacoes++;
+  const r=await medir(page);exigirAlvos(rota,r.alvos,{esperados:alvosEsperados});assert.deepEqual(r.erros,[],`${modo} ${rota} ${largura}`);combinacoes++;
   await page.close();
  }
  for(const rota of ['/temas/','/en/themes/']){

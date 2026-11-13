@@ -1,0 +1,20 @@
+VOZ-1 B: calendário nas duas edições; 65 plantas recusadas; dia atual e intervalo aberto incluídos; nomes, contextos e períodos das revisões conferidos.
+VOZ-1 D lugar: controlo intacto; código 0.
+✗ L1 · /agenda: /uniao-europeia ×2, porta repetida com duas grafias entre o menu e o corpo.
+✗ L1 · /en/agenda: /en/european-union ×2, porta repetida com duas grafias entre o menu e o corpo.
+VOZ-1 D lugar: planta recusada nas duas edições; código 1.
+VOZ-1 D pais: controlo intacto; código 0.
+N1: menu de oito errado em agenda/index.html.
+N1: menu de oito errado em en/agenda/index.html.
+VOZ-1 D pais: planta recusada nas duas edições; código 1.
+{"paginas":9882,"marcador":0,"protecao":0,"captadas":19,"permitidas":19,"frases":0,"ledesNovas":0}
+COR-AGUA voz: 2 controlos, 6 plantas recusadas.
+EVA títulos: 16 plantas recusadas; H1 e nome em itálico conferidos no HTML das duas edições de dois estudos.
+
+> o-estado-do-pais@0.1.0 check:paridade
+> node tests/leituras/paridade.mjs && node scripts/check-paridade.mjs && node tests/leituras/paridade-graficos.mjs && node scripts/check-paridade-graficos.mjs && node tests/evb/paridade.mjs
+
+paridade: 16 provas, incluindo as seis da AUD1, diferença nova, exceção exata, alterada e caduca, e troca entre blocos
+paridade: 8 documentos e páginas; 6 exceções exatas, permanentes, com data e razão; plantas 6/6; recusas 2
+a-casa-em-portugal-e-na-europa|documento: diferença mudou; rever a exceção permanente da glosa
+a-casa-em-portugal-e-na-europa|página: diferença mudou; rever a exceção permanente da glosa
