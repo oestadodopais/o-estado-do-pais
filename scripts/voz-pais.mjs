@@ -48,6 +48,14 @@ const texto = el => {
    estudos de um lugar, cujas leituras trazem sufixos da leitura («€») e
    referências («2021–2025»), e confere-os pela mesma conta (`voz-b1.mjs`). */
 export const textoSemSelos = texto;
+/** A data da sinopse é relida na linha, não copiada da declaração do cartão. */
+export function dataDaSinopse(parte) {
+  const d=parte?.data;
+  if (!d || d.campo !== 'reference_date') return null;
+  const valor=getClaim(d.id).reference_date;
+  if (d.valor !== valor || !/^\d{4}-\d{2}-\d{2}$/.test(valor)) return null;
+  return valor.split('-').reverse().join('.');
+}
 /** @param {any} w @param {'pt'|'en'} lang */
 export function sinopseEsperada(w, lang) {
   const partes = primeirasFrases(leituraDe(w.id)?.frase[lang] ?? [w.description[lang]]);
@@ -55,6 +63,7 @@ export function sinopseEsperada(w, lang) {
      como em todos os valores do sítio (`src/lib/estudos-b1.mjs`); esta é a cópia da regra, e compara carácter a carácter. */
   return normal(partes.map(p => {
     if (typeof p === 'string') return p;
+    if (p.data) return dataDaSinopse(p) ?? '[data sem origem válida]';
     if (!p.claim) return p.ref ?? '';
     const linha = getClaim(p.claim), valor = valorNaLingua(linha, lang);
     return (p.abs === true ? valor.replace(/^[+−-]/, '') : valor) + (p.sufixo ?? (linha.unit === '%' ? ' %' : ''));
@@ -71,8 +80,8 @@ export function conferirMedidasDoEstudo(main, lang) {
     const id = el.getAttribute('data-medida-estudo');
     const medida = leitura?.mostrarMedidasNoCartao && leitura.medidas.find(m => m.claim === id);
     const nome = medida?.nome[lang];
-    const partesValidas = nome?.every(p => typeof p === 'string' || typeof p?.ref === 'string');
-    const esperado = partesValidas && normal(valorNaLingua(getClaim(id), lang) + ' ' + nome.map(p => typeof p === 'string' ? p : p.ref).join(''));
+    const partesValidas = nome?.every(p => typeof p === 'string' || typeof p?.ref === 'string' || dataDaSinopse(p) !== null);
+    const esperado = partesValidas && normal(valorNaLingua(getClaim(id), lang) + ' ' + nome.map(p => typeof p === 'string' ? p : p.ref ?? dataDaSinopse(p)).join(''));
     const valores = el.querySelectorAll('[data-claim]');
     if (!esperado || texto(el) !== esperado || valores.length !== 1 || valores[0].getAttribute('data-claim') !== id)
       erros.push(`B1 medida: ${estudo?.slug ?? '(sem estudo)'}: ${id}: texto ou linha diferente da medida declarada.`);

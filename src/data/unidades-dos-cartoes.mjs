@@ -63,6 +63,17 @@ const n = (nl) => ({ nl, motivo: 'escala-de-instrumento' });
  */
 export const UNIDADES_DOS_CARTOES = {
   ...UNIDADES_HB1,
+  // COR3 A: unidades das cinco linhas da reforma agora presentes nas áreas.
+  ...Object.fromEntries([
+    ['desemprego-longa-duracao-idade-referencia', 'anos', 'years'],
+    ['flexibilizacao-idade-minima', 'anos', 'years'],
+    ['flexibilizacao-carreira-minima', 'anos', 'years'],
+    ['flexibilizacao-regras-2018', 'data', 'date'],
+    ['flexibilizacao-regras-2018-ano', 'ano', 'year'],
+  ].map(([id,pt,en]) => [id, {
+    pt: [pt], en: [en], apoio: [{campo:'unit',literal:pt}],
+    achado: 'COR3 A: o cartão da área imprimia a unidade sem declaração; a unidade mantém a da linha atravessada.',
+  }])),
   /* ------------------------------------------------ as populações (achados 1 e 9) */
   'jovens-nem-2025': {
     pt: ['% das pessoas dos ', n('15'), ' aos ', n('29'), ' anos'],

@@ -1,0 +1,8 @@
+{
+  "ponto": 3,
+  "estado": "parcial",
+  "feito": "Duas linhas atravessadas; quatro peças dos cartões referenciam a linha de data nas duas línguas.",
+  "pendente": "O documento original da reforma conserva a data literal, mas não ganhou uma referência à linha no HTML.",
+  "regua": "scripts/check-documentos.mjs confere os bytes contra sha256_normalized; a rota serve o documento intacto, sem registo estruturado.",
+  "forma_existente": "A peça data com id, campo reference_date e valor ISO serve o cartão. Para o corpo do estudo seria necessário atravessar um registo estruturado com a data ligada à linha, preservando as frases decididas; não se substituiu essa travessia por uma alteração do HTML alojado."
+}

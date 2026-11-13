@@ -1,0 +1,32 @@
+{
+  "contagens": {
+    "estudos": 3524
+  },
+  "l1": {
+    "anterior": 3520,
+    "atual": 3524,
+    "diferenca": 4,
+    "comando": "npm run check:lugar",
+    "registo": "cor3-s-a-conferencias/lugar-inicial.txt"
+  },
+  "linhas_acrescentadas": [
+    "flexibilizacao-regras-2018",
+    "flexibilizacao-regras-2018-ano"
+  ],
+  "composto": {
+    "trechos": 160,
+    "conformes": 160,
+    "plantas_detetadas": 4
+  },
+  "build_inicial": {
+    "cabeca": "d67585067",
+    "codigo": 1,
+    "causa": "O leitor independente da sinopse ignorava as peças data."
+  },
+  "rotulos": {
+    "chaves_antes": 690,
+    "chaves_medidas": 700,
+    "novas": 10,
+    "causa": "Cinco linhas da reforma aparecem nos cartões das áreas nas duas línguas e não tinham as unidades declaradas."
+  }
+}
