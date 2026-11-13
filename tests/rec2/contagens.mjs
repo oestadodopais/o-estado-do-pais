@@ -6,8 +6,8 @@ import { loadClaims } from '../../src/lib/ledger.mjs';
 const dist = process.env.OEDP_DIST ?? 'dist';
 const frases = {
   "estudos-publicados": {
-    "pt": "Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.",
-    "en": "Eight studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them, figures without a stored copy of the source, or data the source has since revised."
+    "pt": "Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.",
+    "en": "Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised."
   },
   "estudos-evora-publicados": {
     "pt": "Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.",
