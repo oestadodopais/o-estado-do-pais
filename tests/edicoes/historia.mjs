@@ -32,7 +32,7 @@ for(const [nome,mudar,erro] of [
   mudar(c);const erros=conferirHistoria(c);if(erro)assert(erros.some(e=>e.startsWith(erro)),nome+': '+erros);else assert.deepEqual(erros,[],nome);plantas++;
  }finally{fs.rmSync(raiz,{recursive:true,force:true});}
 }
-const testemunhas=['orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-prometido-pago-auditado-2026','evora-orcamentado-pago-devido-2025','evora-2027-prometido-painel-dinheiro','evora-economia-e-dinheiro-publico-de-fora-da-camara'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang)).concat('evora-economia-investidores-portas-abertas-2026/pt', 'evora-quinze-anos-cinco-mandatos/pt', 'onde-esta-a-agua/pt', 'onde-esta-a-agua/en', 'agua-nao-faturada/pt', 'agua-nao-faturada/en', 'alentejo-algarve/en');
+const testemunhas=['orcamento-2027-o-que-muda-e-para-quem','a-casa-em-portugal-e-na-europa','evora-prometido-pago-auditado-2026','evora-orcamentado-pago-devido-2025','evora-2027-prometido-painel-dinheiro','evora-economia-e-dinheiro-publico-de-fora-da-camara'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang)).concat('penalizacoes-por-reforma-antecipada-2026/pt', 'evora-economia-investidores-portas-abertas-2026/pt', 'evora-quinze-anos-cinco-mandatos/pt', 'onde-esta-a-agua/pt', 'onde-esta-a-agua/en', 'agua-nao-faturada/pt', 'agua-nao-faturada/en', 'alentejo-algarve/en');
 assert.deepEqual(manifesto.edicoes.filter(e=>e.primeira_edicao).map(e=>e.slug+'/'+e.lang).sort(),testemunhas.sort());
 testemunhas.push(...['evora-contas-da-camara-2010-2025','evora-2027-capital-europeia-da-cultura'].flatMap(slug=>['pt','en'].map(lang=>slug+'/'+lang)));
 const bad=conferirTestemunhas(manifesto,()=>Buffer.from('outra história'));assert(bad.erros.length===testemunhas.length);plantas++;

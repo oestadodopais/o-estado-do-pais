@@ -1,11 +1,13 @@
 """Adapta a notação dos períodos ao sítio e usa o exportador comum."""
-import argparse,json,subprocess,sys,tempfile,yaml
+import argparse,json,re,subprocess,sys,tempfile,yaml
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('motor',type=Path);a=p.parse_args();site=Path.cwd()
 b=json.loads((a.motor/'publisher/manifest.hb1.json').read_text())
 for r in b['rows']:
  period=r.get('reference_date')
  if period and '-Q' in period:r['reference_date']=period.replace('-Q','-T')
+ elif period and re.fullmatch(r'\d{4}-\d{4}',period):
+  r['reference_date']=period[-4:];r['note_extra']='Período completo da fonte: '+period+'.'
  elif period and '/' in period:
   r['reference_date']=period.rsplit('/',1)[1];r['note_extra']='Período completo da fonte: '+period+'.'
  elif not period:r['reference_date']='[a verificar]'

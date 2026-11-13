@@ -15,13 +15,15 @@ name: "Posição sobre o Orçamento do Estado de 2027"
 name_source: "Título h1 integral da notícia; data editorial identificada no documento"
 status: "por confirmar na fonte primária"
 name_en: "Position on the 2027 State Budget"
+measure: "Posição sobre o Orçamento do Estado de 2027"
+measure_en: "Position on the 2027 State Budget"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "RTP"
 document:
   title: "\"Temos um bom Orçamento para 2027\", garante o CDS-PP"
   edition: "2026"
-  locator: "Título h1 integral da notícia; data editorial identificada no documento"
+  locator: "Título h1 integral da notícia; data editorial identificada no documento; p. 1"
   source_sha256: "3adc1b6717102cdbadf00a19c0b0e7cd2f2dfe5cb6b943c1175dba5b9d4b2b23"
   page: 1
   kind: "html"

@@ -6,7 +6,7 @@
 id: "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "9,3"
+value: "9,2"
 unit: "Percentage"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
@@ -25,14 +25,14 @@ document:
   title: "Housing cost overburden rate by age, sex and poverty status"
   edition: "2025"
   locator: "freq=A; unit=PC; rskpovth=TOTAL; age=Y16-29; sex=T; geo=EU27_2020; time=2025; value[10]"
-  source_sha256: "2d38a6468f55fbafc82b398efb9b1c0ee38a2d2f59cfe63b51b3078f076ea8fc"
+  source_sha256: "d9a6b98030755c8a03a7b9edab2ac75ae5577a749dddabafb6a59f78c1b8e52c"
   kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&sex=T&age=Y16-29"
-access_date: "2026-10-19"
+access_date: "2026-11-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.3\", \"status\": null}"
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.2\", \"status\": null}"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
 ressalva: "A Dinamarca não tem valor de 2025 neste conjunto."
@@ -54,4 +54,10 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula.  · Cruzado de ResearchHub content/23 Habitacao · hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "9,3"
+    new_value: "9,2"
+    reason: "A fonte reviu os valores; a linha foi relida no corpo alojado, e as contas que dependem dela foram recalculadas."
+    reason_en: "The source revised the figures; the row was read again in the hosted body, and calculations depending on it were recomputed."

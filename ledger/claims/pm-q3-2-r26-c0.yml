@@ -15,6 +15,8 @@ name: "Impacto no saldo; 2027; impacto incremental; milhões de euros"
 name_source: "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Impacto no saldo; coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)"
 status: "conferido"
 name_en: "Impact on the balance; 2027; incremental impact; million euros"
+measure: "Impacto no saldo"
+measure_en: "Impact on the balance"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

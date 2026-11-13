@@ -6,7 +6,7 @@
 id: "hab-tespm140-a-pc-eu27_2020-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "7,7"
+value: "7,6"
 unit: "Percentage"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
@@ -25,15 +25,15 @@ document:
   title: "Housing cost overburden rate"
   edition: "2025"
   locator: "freq=A; unit=PC; rskpovth=TOTAL; age=TOTAL; sex=T; geo=EU27_2020; time=2025; value[10]"
-  source_sha256: "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d"
+  source_sha256: "fe7b955ed07839cd7560a9a749872ecafcae298a5544bf0f74673949e1f772f5"
   kind: "serie"
-source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&untilTimePeriod=2025"
-access_date: "2026-10-21"
-published_at: "2026-10-20"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015"
+access_date: "2026-11-12"
+published_at: "2026-10-29"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.6\", \"status\": null}"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -51,4 +51,10 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] A publicação principal do Eurostat da sobrecarga, de que vem a série deste sítio; a União é o agregado publicado. HB1-c: selada do corpo alojado para a comparação da secção 2. · Cruzado de ResearchHub content/23 Habitacao · hab-tespm140-a-pc-eu27_2020-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "7,7"
+    new_value: "7,6"
+    reason: "A fonte reviu os valores; a linha foi relida no corpo alojado, e as contas que dependem dela foram recalculadas."
+    reason_en: "The source revised the figures; the row was read again in the hosted body, and calculations depending on it were recomputed."

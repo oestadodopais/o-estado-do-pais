@@ -191,7 +191,7 @@
         "afirmacao": true,
         "source_url": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
         "document": {
-          "title": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+          "title": "Manifestantes levam protesto até à porta da Câmara do Porto",
           "edition": null,
           "kind": "html",
           "locator": "HTML; início literal único",
@@ -201,8 +201,8 @@
         "document_checks": {
           "title": {
             "status": "conferido",
-            "text": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
-            "locator": null
+            "text": "Manifestantes levam protesto até à porta da Câmara do Porto",
+            "locator": "meta"
           },
           "published_at": {
             "status": "conferido",
@@ -576,7 +576,7 @@
         "afirmacao": true,
         "source_url": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
         "document": {
-          "title": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+          "title": "Manifestantes levam protesto até à porta da Câmara do Porto",
           "edition": null,
           "kind": "html",
           "locator": "HTML; início literal único",
@@ -586,8 +586,8 @@
         "document_checks": {
           "title": {
             "status": "conferido",
-            "text": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
-            "locator": null
+            "text": "Manifestantes levam protesto até à porta da Câmara do Porto",
+            "locator": "meta"
           },
           "published_at": {
             "status": "conferido",

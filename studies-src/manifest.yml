@@ -403,45 +403,27 @@ edicoes:
       commit: 14f9311950aa41b9322a02c0b165d29b7f8c2d9c
   - slug: penalizacoes-por-reforma-antecipada-2026
     lang: pt
-    edicoes:
-      - data: '2026-09-23'
-        sha256: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
-        file: penalizacoes-por-reforma-antecipada-2026/pt.html
-    title: "Penalizações por Reforma Antecipada em Portugal"
+    title: Penalizações por Reforma Antecipada em Portugal
     origin: researchhub
-    origin_ref: "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2"
+    origin_ref: content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ d00784c7641935cd5c619c3fdc9f99878643edd2
     raw_file: _raw/penalizacoes-por-reforma-antecipada-2026.pt.html
-    fetched_utc: 2026-09-23T13:19:42Z
-    bytes_raw: 17274
-    bytes_normalized: 17274
-    sha256_raw: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
-    sha256_normalized: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
-  # O estudo de Évora 2027, produzido no motor com as fontes fechadas de
-  # 15.09.2026 e atravessado como ficheiro nas duas edições. Sem anfitrião,
-  # sem runtime, sem normalização: os dois resumos são iguais porque os bytes
-  # são os mesmos, e cada um é o `edicao_html_sha256` que o motor prova no
-  # `records.manifest.json` do estudo, que é o que faz o D5 poder correr.
-  #
-  # REFIXADO OUTRA VEZ A 16.09.2026, à noite, e a razão é SUBSTANTIVA: o estudo
-  # ganhou no motor a LEITURA DE ABERTURA do lugar de direção, três secções a
-  # seguir ao título («Em resumo», «O que este projeto conclui», «O que podia
-  # funcionar melhor»), por decisão do diretor da mesma noite (`DECISIONS.md`
-  # §1.111, norma §4.4), e com ela uma correção na linha das ausências dos
-  # contratos da associação. O texto mudou: os registos de conteúdo passam de
-  # 119 para 130 blocos e de 182 para 190 referências por edição, e os dois
-  # `.record.json` do motor têm resumos novos. O motor escreveu estes bytes em
-  # `d768bdea4c99e06c39eaf276af7ae0f3b4901a9b`.
-  #
-  # E REFIXADO ANTES NO MESMO DIA, e a razão foi outra: a folha
-  # das duas edições não declarava papel nem tinta, e deixava a tela ao
-  # navegador com `color-scheme: light dark`. A moldura deste projeto escolhe a
-  # sua tinta pelo `data-theme` que o botão do sítio escreve, e o `color-scheme`
-  # não vê esse atributo: com o sistema em escuro e o leitor a escolher «claro»,
-  # as tabelas ficavam quase ilegíveis, e a `check:moldura` media 3 167 nós
-  # graves. O motor corrigiu a folha em `b99e2254052c773d526281704ab7405ad2becfe6`
-  # (as fichas `--paper` e `--ink` nas três guardas, como as dezasseis irmãs já
-  # faziam) e estas duas linhas passam a fixar os bytes novos. O texto não mudou:
-  # os dois `.record.json` do motor têm o mesmo resumo de antes.
+    fetched_utc: '2026-11-13T06:06:36Z'
+    bytes_raw: 18248
+    bytes_normalized: 18248
+    sha256_raw: 064f199e12a84a9a03ee55fdcdfa061cb78f2e713bd589adfe4d4c86921de241
+    sha256_normalized: 064f199e12a84a9a03ee55fdcdfa061cb78f2e713bd589adfe4d4c86921de241
+    edicoes:
+    - data: '2026-09-23'
+      sha256: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
+      file: _edicoes/penalizacoes-por-reforma-antecipada-2026.pt.2026-09-23.html
+    - data: '2026-11-13'
+      sha256: 064f199e12a84a9a03ee55fdcdfa061cb78f2e713bd589adfe4d4c86921de241
+      file: penalizacoes-por-reforma-antecipada-2026/pt.html
+    primeira_edicao:
+      date: '2026-09-23'
+      sha256: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
+      file: _edicoes/penalizacoes-por-reforma-antecipada-2026.pt.2026-09-23.html
+      commit: 0253a28d61c4cbeb3e052f55d02ecb3d96079a95
   - slug: evora-2027-prometido-painel-dinheiro
     lang: pt
     edicoes:
@@ -634,94 +616,106 @@ edicoes:
     sha256_raw: 1eabffcbff775f20b7e85d76d699bc03c0b262c62298fee9479b18e429009763
     sha256_normalized: 1eabffcbff775f20b7e85d76d699bc03c0b262c62298fee9479b18e429009763
   - slug: orcamento-2027-o-que-muda-e-para-quem
-    lang: "pt"
+    lang: pt
+    title: 'O Orçamento de 2027: o que muda e para quem'
+    origin: researchhub
+    origin_ref: content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 11bc3740bd3d78fe75fb15d943285bd84014ec11
+    raw_file: _raw/orcamento-2027-o-que-muda-e-para-quem.pt.html
+    fetched_utc: '2026-11-13T06:06:36Z'
+    bytes_raw: 49141
+    bytes_normalized: 49141
+    sha256_raw: 896402a42e77dc24c7b5d03ff041a4bf90f6128ac20ae0e28cefd22043c4e71b
+    sha256_normalized: 896402a42e77dc24c7b5d03ff041a4bf90f6128ac20ae0e28cefd22043c4e71b
     edicoes:
-      - data: '2026-10-21'
-        sha256: 97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a
-        file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html
-      - data: '2026-11-02'
-        sha256: 42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94
-        file: orcamento-2027-o-que-muda-e-para-quem/pt.html
+    - data: '2026-10-21'
+      sha256: 97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a
+      file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html
+    - data: '2026-11-02'
+      sha256: 42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94
+      file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-11-02.html
+    - data: '2026-11-13'
+      sha256: 896402a42e77dc24c7b5d03ff041a4bf90f6128ac20ae0e28cefd22043c4e71b
+      file: orcamento-2027-o-que-muda-e-para-quem/pt.html
     primeira_edicao:
       file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.pt.2026-10-21.html
       sha256: 97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a
-      date: "2026-10-21"
+      date: '2026-10-21'
       commit: c2aa011f1
-    title: "O Orçamento de 2027: o que muda e para quem"
-    origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 7cefce181f04c6e7617f5a44784b7636e1cca6b6"
-    raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-11-02T16:34:54Z"
-    bytes_raw: 47808
-    bytes_normalized: 47808
-    sha256_raw: "42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94"
-    sha256_normalized: "42c794d3174f635159b66789f0cd8a1b3476070f62580ab4af1306c6fe40ba94"
   - slug: orcamento-2027-o-que-muda-e-para-quem
-    lang: "en"
+    lang: en
+    title: 'The 2027 Budget: what changes, and for whom'
+    origin: researchhub
+    origin_ref: content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 11bc3740bd3d78fe75fb15d943285bd84014ec11
+    raw_file: _raw/orcamento-2027-o-que-muda-e-para-quem.en.html
+    fetched_utc: '2026-11-13T06:06:36Z'
+    bytes_raw: 48529
+    bytes_normalized: 48529
+    sha256_raw: 7acc219df4696a93d751ce12b1253d18a775728cdf2e05131de347f34b49db76
+    sha256_normalized: 7acc219df4696a93d751ce12b1253d18a775728cdf2e05131de347f34b49db76
     edicoes:
-      - data: '2026-10-21'
-        sha256: eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979
-        file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html
-      - data: '2026-11-02'
-        sha256: 0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a
-        file: orcamento-2027-o-que-muda-e-para-quem/en.html
+    - data: '2026-10-21'
+      sha256: eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979
+      file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html
+    - data: '2026-11-02'
+      sha256: 0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a
+      file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-11-02.html
+    - data: '2026-11-13'
+      sha256: 7acc219df4696a93d751ce12b1253d18a775728cdf2e05131de347f34b49db76
+      file: orcamento-2027-o-que-muda-e-para-quem/en.html
     primeira_edicao:
       file: _edicoes/orcamento-2027-o-que-muda-e-para-quem.en.2026-10-21.html
       sha256: eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979
-      date: "2026-10-21"
+      date: '2026-10-21'
       commit: c2aa011f1
-    title: "The 2027 Budget: what changes, and for whom"
-    origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 7cefce181f04c6e7617f5a44784b7636e1cca6b6"
-    raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-11-02T16:34:54Z"
-    bytes_raw: 47245
-    bytes_normalized: 47245
-    sha256_raw: "0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a"
-    sha256_normalized: "0629e9f35c8e7c8579a523638c7f71970ed3123077a96f84cdb695b34bedad2a"
   - slug: a-casa-em-portugal-e-na-europa
-    lang: "pt"
+    lang: pt
+    title: A casa em Portugal e na Europa
+    origin: researchhub
+    origin_ref: content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ 480c9a2560e790d849eef53f5c16a6d7192cb06c
+    raw_file: _raw/a-casa-em-portugal-e-na-europa.pt.html
+    fetched_utc: '2026-11-13T06:06:36Z'
+    bytes_raw: 35131
+    bytes_normalized: 35131
+    sha256_raw: fdcbbc7024c25d8429a11e016a1f49d5290d2ca6d9f73fdb6c419e00c45067c7
+    sha256_normalized: fdcbbc7024c25d8429a11e016a1f49d5290d2ca6d9f73fdb6c419e00c45067c7
     edicoes:
     - data: '2026-10-29'
       sha256: 1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9
       file: _edicoes/a-casa-em-portugal-e-na-europa.pt.2026-10-29.html
     - data: '2026-11-03'
       sha256: f4106b067cfacc7fd1f3a1523a57b49dd4f92e22eac2b0b929c5c819833b51ac
+      file: _edicoes/a-casa-em-portugal-e-na-europa.pt.2026-11-03.html
+    - data: '2026-11-13'
+      sha256: fdcbbc7024c25d8429a11e016a1f49d5290d2ca6d9f73fdb6c419e00c45067c7
       file: a-casa-em-portugal-e-na-europa/pt.html
     primeira_edicao:
       file: _edicoes/a-casa-em-portugal-e-na-europa.pt.2026-10-29.html
       sha256: 1cccc879db3d8595fe4341b3feb5f19ab8b50a4ea0c4ba2fd9366c4afc3056c9
       date: '2026-10-29'
       commit: 14fb8fb7b157d45dfadc1e04f428acc8d21d6155
-    title: "A casa em Portugal e na Europa"
-    origin: "researchhub"
-    origin_ref: "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ ccc647cb580c0b4d1a9fba6eb53b79a82418e6bb"
-    raw_file: "_raw/a-casa-em-portugal-e-na-europa.pt.html"
-    fetched_utc: "2026-11-03T05:20:28Z"
-    bytes_raw: 35065
-    bytes_normalized: 35065
-    sha256_raw: "f4106b067cfacc7fd1f3a1523a57b49dd4f92e22eac2b0b929c5c819833b51ac"
-    sha256_normalized: "f4106b067cfacc7fd1f3a1523a57b49dd4f92e22eac2b0b929c5c819833b51ac"
   - slug: a-casa-em-portugal-e-na-europa
-    lang: "en"
+    lang: en
+    title: Housing in Portugal and in Europe
+    origin: researchhub
+    origin_ref: content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 480c9a2560e790d849eef53f5c16a6d7192cb06c
+    raw_file: _raw/a-casa-em-portugal-e-na-europa.en.html
+    fetched_utc: '2026-11-13T06:06:36Z'
+    bytes_raw: 34825
+    bytes_normalized: 34825
+    sha256_raw: e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc
+    sha256_normalized: e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc
     edicoes:
     - data: '2026-10-29'
       sha256: b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74
       file: _edicoes/a-casa-em-portugal-e-na-europa.en.2026-10-29.html
     - data: '2026-11-03'
       sha256: a9dc7ec6d6fd308f118b8fec5b544a4335fa895e7c5c3f401c56b87e9c3bce97
+      file: _edicoes/a-casa-em-portugal-e-na-europa.en.2026-11-03.html
+    - data: '2026-11-13'
+      sha256: e9d7553aebbd48f5ed840779c1c4b24298a3d4d303f92504de9cf62eb4d81cbc
       file: a-casa-em-portugal-e-na-europa/en.html
     primeira_edicao:
       file: _edicoes/a-casa-em-portugal-e-na-europa.en.2026-10-29.html
       sha256: b72b9165433220244222f7dfdac17635b38bbe0a43c25a6b5fccade8dcff4b74
       date: '2026-10-29'
       commit: 14fb8fb7b157d45dfadc1e04f428acc8d21d6155
-    title: "Housing in Portugal and in Europe"
-    origin: "researchhub"
-    origin_ref: "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ ccc647cb580c0b4d1a9fba6eb53b79a82418e6bb"
-    raw_file: "_raw/a-casa-em-portugal-e-na-europa.en.html"
-    fetched_utc: "2026-11-03T05:20:28Z"
-    bytes_raw: 34652
-    bytes_normalized: 34652
-    sha256_raw: "a9dc7ec6d6fd308f118b8fec5b544a4335fa895e7c5c3f401c56b87e9c3bce97"
-    sha256_normalized: "a9dc7ec6d6fd308f118b8fec5b544a4335fa895e7c5c3f401c56b87e9c3bce97"

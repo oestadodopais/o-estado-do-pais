@@ -6,7 +6,7 @@
 id: "hab-tipsho10-a-rch-a-avg-pt-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "14,7"
+value: "14,6"
 unit: "Annual average rate of change"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
@@ -25,14 +25,14 @@ document:
   title: "House price index, deflated - annual data"
   edition: "2025"
   locator: "freq=A; unit=RCH_A_AVG; geo=PT; time=2025; value[560]"
-  source_sha256: "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db"
+  source_sha256: "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271"
   kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho10?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015"
-access_date: "2026-10-19"
+access_date: "2026-11-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.7\", \"status\": null}"
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.6\", \"status\": null}"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -50,4 +50,10 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula.  · Cruzado de ResearchHub content/23 Habitacao · hab-tipsho10-a-rch-a-avg-pt-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "14,7"
+    new_value: "14,6"
+    reason: "A fonte reviu os valores; a linha foi relida no corpo alojado, e as contas que dependem dela foram recalculadas."
+    reason_en: "The source revised the figures; the row was read again in the hosted body, and calculations depending on it were recomputed."

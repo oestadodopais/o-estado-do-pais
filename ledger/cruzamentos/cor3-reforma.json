@@ -1,0 +1,46 @@
+{
+  "_": [
+    "Registo de travessia — cor3-reforma. Uma entrada por linha do livro-razão que veio do",
+    "motor de investigação (ResearchHub), com o resumo criptográfico da linha de",
+    "origem e o dos bytes que aqui foram escritos.",
+    "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_site_rows.py.",
+    "Conferido a cada build por scripts/check-cruzamento.mjs — ver ledger/README.md."
+  ],
+  "exporter": "ResearchHub/publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "rows": {
+    "desemprego-longa-duracao-idade-referencia": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-11-13",
+      "exported_row_sha256": "a887f5fbe5175b97924246b23bf2eabd8d9f025c25d93ae683326b074820efff",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "cf138c82b9d7b32d6db9d57c3a925a0e1a778d348bd7e1d7f23a672b59408808",
+      "rh_id": "desemprego-longa-duracao-idade-referencia",
+      "rh_ledger_sha256": "a5493b0d9b7e57993bf28d54c4b7cf1c91f1660f3c5e903a96f755a4228c7a03",
+      "rh_study": "11 Seguranca Social",
+      "verifications_at_export": 0
+    },
+    "flexibilizacao-carreira-minima": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-11-13",
+      "exported_row_sha256": "5e3c95dd3fcd35f3c69215146daf651ddee9d328d661bd257e4bc5453484dc05",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "4ab917498e50d5f757e6c6a4b6313ca96c1dc5610ddb49bacea224530c8d23a9",
+      "rh_id": "flexibilizacao-carreira-minima",
+      "rh_ledger_sha256": "a5493b0d9b7e57993bf28d54c4b7cf1c91f1660f3c5e903a96f755a4228c7a03",
+      "rh_study": "11 Seguranca Social",
+      "verifications_at_export": 0
+    },
+    "flexibilizacao-idade-minima": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-11-13",
+      "exported_row_sha256": "7ec9e5db200e56ab9317813dc57cab6303118b43eadebfec6e418fcf2ebad865",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "4a18dd1d825acdf47394fb7ab20fbfb2630fb91b565d1e15b98dff2ff5a8f95d",
+      "rh_id": "flexibilizacao-idade-minima",
+      "rh_ledger_sha256": "a5493b0d9b7e57993bf28d54c4b7cf1c91f1660f3c5e903a96f755a4228c7a03",
+      "rh_study": "11 Seguranca Social",
+      "verifications_at_export": 0
+    }
+  }
+}

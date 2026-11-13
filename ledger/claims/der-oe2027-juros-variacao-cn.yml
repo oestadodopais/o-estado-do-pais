@@ -15,6 +15,8 @@ name: "Juros: variação em contabilidade nacional"
 name_source: "Cálculo sobre as linhas identificadas"
 status: "derivado"
 name_en: "Interest: national accounts change"
+measure: "Juros: variação em contabilidade nacional"
+measure_en: "Interest: national accounts change"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null

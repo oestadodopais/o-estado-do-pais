@@ -15,13 +15,15 @@ name: "Espanha: salário mínimo mensal em 2026"
 name_source: "Real Decreto 126/2026; artículo 1"
 status: "conferido"
 name_en: "Spain: monthly minimum wage in 2026"
+measure: "Espanha: salário mínimo mensal em 2026"
+measure_en: "Spain: monthly minimum wage in 2026"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Boletín Oficial del Estado"
 document:
   title: "Real Decreto 126/2026, de 18 de febrero, por el que se fija el salario mínimo interprofesional para 2026."
   edition: "2026"
-  locator: "Real Decreto 126/2026; artículo 1"
+  locator: "Real Decreto 126/2026; artículo 1; p. 1"
   source_sha256: "f6ee7e98dfb20f41b5235b852af6424196d405692b6cb2bdfb559b2996d40519"
   page: 1
   kind: "html"

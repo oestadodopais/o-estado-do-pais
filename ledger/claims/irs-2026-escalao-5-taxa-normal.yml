@@ -15,13 +15,15 @@ name: "IRS: taxa normal do escalão 5 na tabela anterior a setembro de 2026"
 name_source: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
 status: "conferido"
 name_en: "Income tax: normal rate of bracket 5 in the table preceding September 2026"
+measure: "IRS: taxa normal do escalão 5 na tabela anterior a setembro de 2026"
+measure_en: "Income tax: normal rate of bracket 5 in the table preceding September 2026"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "AT"
 document:
   title: "Artigo 68.º Taxas gerais"
   edition: "2026"
-  locator: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
+  locator: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12; p. 1"
   source_sha256: "7093cbd6c3364fb695032cb8674804163d844cc8eddc1b504a36ae3da32fe738"
   page: 1
   kind: "html"

@@ -15,6 +15,8 @@ name: "Habitação - redução IVA construção de 23% para 6% (i); 2027; impact
 name_source: "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Habitação - redução IVA construção de 23% para 6% (i); coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)"
 status: "conferido"
 name_en: "Housing: construction VAT cut from 23% to 6% (i); 2027; incremental impact; million euros"
+measure: "Habitação - redução IVA construção de 23% para 6% (i)"
+measure_en: "Housing: construction VAT cut from 23% to 6% (i)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

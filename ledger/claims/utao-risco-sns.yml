@@ -15,6 +15,8 @@ name: "Riscos: execução do SNS"
 name_source: "§103; p. 53 PDF (52 impressa)"
 status: "conferido"
 name_en: "Risks: national health service execution"
+measure: "Riscos: execução do SNS"
+measure_en: "Risks: national health service execution"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"

@@ -15,13 +15,15 @@ name: "Rendimentos dos trabalhadores"
 name_source: "Abertura editorial integral; data editorial 09/10/2026 - 10:09"
 status: "por confirmar na fonte primária"
 name_en: "Workers income"
+measure: "Rendimentos dos trabalhadores"
+measure_en: "Workers income"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "TV RECORD EUROPA"
 document:
   title: "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos"
   edition: "2026"
-  locator: "Abertura editorial integral; data editorial 09/10/2026 - 10:09"
+  locator: "Abertura editorial integral; data editorial 09/10/2026 - 10:09; p. 1"
   source_sha256: "238ee6aebf1b46e1b6ccbf19fd839f29e514322c9c0ddc6c9f467b22838bba5c"
   page: 1
   kind: "html"

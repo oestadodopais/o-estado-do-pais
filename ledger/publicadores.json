@@ -469,7 +469,9 @@
     },
     {
       "nome": "Grupo de Trabalho para a Reforma da Segurança Social",
-      "aliases": [],
+      "aliases": [
+        "Grupo de Trabalho para a Reforma da Seguranca Social"
+      ],
       "dominios": [
         "www.dgcp.mtsss.gov.pt"
       ],
@@ -1206,6 +1208,22 @@
           "origem": "Publicador e domínio da cópia citada no livro da água do motor, com SHA256 conferido em 08.11.2026."
         }
       ]
+    },
+    {
+      "nome": "Instituto da Segurança Social, I.P.",
+      "aliases": [],
+      "dominios": [
+        "www.seg-social.pt"
+      ],
+      "provas": [
+        {
+          "tipo": "organismo-do-documento",
+          "linha": "desemprego-longa-duracao-idade-referencia",
+          "documento": "Guia Prático Pensão de Velhice",
+          "endereco": "https://www.seg-social.pt/ptss/pssd/documento/cmc1zt9ae00lskl2ye2zwphdb?dswid=6409",
+          "origem": "Nome lido na capa da cópia alojada do Guia Prático Pensão de Velhice, página física 1."
+        }
+      ]
     }
   ],
   "documentos": [
@@ -1438,7 +1456,7 @@
     },
     {
       "url": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
-      "titulo": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+      "titulo": "Manifestantes levam protesto até à porta da Câmara do Porto",
       "nome": "Diário de Notícias",
       "rotulos": {
         "hab-imprensa-feridos39": "Diário de Notícias",
@@ -2717,6 +2735,120 @@
       "sha256": null,
       "nome": "European Commission",
       "rotulos": {}
+    },
+    {
+      "url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
+      "titulo": "Orçamento do Estado para 2027",
+      "nome": "Assembleia da República",
+      "rotulos": {
+        "oe-2027-calendario-generalidade": "Assembleia da República",
+        "oe-2027-calendario-entrega": "Assembleia da República",
+        "oe-2027-calendario-especialidade": "Assembleia da República",
+        "oe-2027-calendario-final-global": "Assembleia da República"
+      },
+      "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
+      "arquivo": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho10?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+      "titulo": "House price index, deflated - annual data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-tipsho10-a-i15-a-avg-pt-2025": "Eurostat",
+        "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": "Eurostat",
+        "hab-tipsho10-a-i15-a-avg-fi-2025": "Eurostat",
+        "hab-tipsho10-a-i15-a-avg-pt-2020": "Eurostat",
+        "hab-tipsho10-a-rch-a-avg-pt-2025": "Eurostat",
+        "hab-tipsho10-a-rch-a-avg-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
+      "arquivo": "content/23 Habitacao/source/cor3/tipsho10-vivo.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho60?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+      "titulo": "Standardised house price-to-income ratio - annual data",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-tipsho60-a-ptir-i15-pt-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-i15-eu27_2020-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-i15-ro-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-i15-pt-2019": "Eurostat",
+        "hab-tipsho60-a-ptir-lt-avg-pt-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": "Eurostat",
+        "hab-tipsho60-a-ptir-lt-avg-ro-2024": "Eurostat"
+      },
+      "sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+      "arquivo": "content/23 Habitacao/source/cor3/tipsho60-vivo.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07c?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+      "titulo": "Housing cost overburden rate by tenure status",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvho07c-a-pc-total-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-pt-2015": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-l-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-cy-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-el-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": "Eurostat",
+        "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025": "Eurostat"
+      },
+      "sha256": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
+      "arquivo": "content/23 Habitacao/source/cor3/hb1b-ilc_lvho07c-vivo.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+      "titulo": "Housing cost overburden rate",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-tespm140-a-pc-pt-2025": "Eurostat",
+        "hab-tespm140-a-pc-eu27_2020-2025": "Eurostat"
+      },
+      "sha256": "fe7b955ed07839cd7560a9a749872ecafcae298a5544bf0f74673949e1f772f5",
+      "arquivo": "content/23 Habitacao/source/cor3/hb1b-tespm140-vivo.json"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&sex=T&age=Y16-29",
+      "titulo": "Housing cost overburden rate by age, sex and poverty status",
+      "nome": "Eurostat",
+      "rotulos": {
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": "Eurostat",
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": "Eurostat",
+        "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": "Eurostat"
+      },
+      "sha256": "d9a6b98030755c8a03a7b9edab2ac75ae5577a749dddabafb6a59f78c1b8e52c",
+      "arquivo": "content/23 Habitacao/source/cor3/ilc_lvho07a-vivo.json"
+    },
+    {
+      "url": "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/07d36f662cea4b19f4b2c2cf5435771d/?lang=PT&series_ids=12533724&observation_date=2026-08-31",
+      "titulo": "Montante de novas operações de empréstimos à habitação",
+      "nome": "Banco de Portugal",
+      "rotulos": {
+        "hab-bpstat-12533724": "Banco de Portugal"
+      },
+      "sha256": "d1203b53423903c50d8378186f91e1cd969e413e7f73c20ab703a03de2b70fb9",
+      "arquivo": "content/23 Habitacao/source/cor3/bpstat-bportugal-pt-39-vivo.json"
+    },
+    {
+      "url": "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/6eaa8db94523f54733dddc22479c11a4/?lang=PT&series_ids=12533735&observation_date=2026-08-31",
+      "titulo": "Taxa de juro (TAA) de novas operações de empréstimos à habitação",
+      "nome": "Banco de Portugal",
+      "rotulos": {
+        "hab-bpstat-12533735": "Banco de Portugal"
+      },
+      "sha256": "59d0046a14b798d0b9566a8e2a81442cb0e6b26998abb144e73128184434b356",
+      "arquivo": "content/23 Habitacao/source/cor3/bpstat-bportugal-pt-38-vivo.json"
     }
   ],
   "correcoes": [

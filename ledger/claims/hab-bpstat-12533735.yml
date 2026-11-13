@@ -6,7 +6,7 @@
 id: "hab-bpstat-12533735"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "3,0"
+value: "3,01"
 unit: "Percentagem"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
@@ -22,14 +22,14 @@ document:
   title: "Taxa de juro (TAA) de novas operações de empréstimos à habitação"
   edition: "2026-08-31"
   locator: "17=2705; 18=35; 40=4264; 43=4427; 48=3777; 54=3019; 56=3118; 66=2799; 70=3327; reference_date=2026-08-31; 29=3648; 59=308; 63=349; value[283]"
-  source_sha256: "7be14fc3b6246343514b5f725129e8f93b76bb77642437d6f191d3f42c6b0cb1"
+  source_sha256: "59d0046a14b798d0b9566a8e2a81442cb0e6b26998abb144e73128184434b356"
   kind: "serie"
 source_url: "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/6eaa8db94523f54733dddc22479c11a4/?lang=PT&series_ids=12533735&observation_date=2026-08-31"
-access_date: "2026-10-19"
+access_date: "2026-11-12"
 reference_date: "2026-08-31"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.0\", \"status\": \"F\"}"
+excerpt: "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.01\", \"status\": \"F\"}"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -47,4 +47,10 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "[note do motor] A data lê-se na dimensão reference_date; não se infere pela posição inicial da série. Novas operações não são o stock. A bandeira F é conservada como código: o BPstat não a define nos corpos alojados. · Cruzado de ResearchHub content/23 Habitacao · hab-bpstat-12533735."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "3,0"
+    new_value: "3,01"
+    reason: "A fonte reviu os valores; a linha foi relida no corpo alojado, e as contas que dependem dela foram recalculadas."
+    reason_en: "The source revised the figures; the row was read again in the hosted body, and calculations depending on it were recomputed."

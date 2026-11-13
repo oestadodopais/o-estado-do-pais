@@ -15,6 +15,8 @@ name: "Medidas invariantes: receita"
 name_source: "Cálculo sobre as linhas identificadas"
 status: "derivado"
 name_en: "Invariant measures: revenue"
+measure: "Medidas invariantes: receita"
+measure_en: "Invariant measures: revenue"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null

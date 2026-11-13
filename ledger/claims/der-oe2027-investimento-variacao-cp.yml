@@ -15,6 +15,8 @@ name: "Investimento: variação em contabilidade pública"
 name_source: "Cálculo sobre as linhas identificadas"
 status: "derivado"
 name_en: "Investment: public accounting change"
+measure: "Investimento: variação em contabilidade pública"
+measure_en: "Investment: public accounting change"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null

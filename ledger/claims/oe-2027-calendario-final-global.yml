@@ -14,23 +14,25 @@ unit: "data"
 name: "Votação final global"
 name_source: "Página parlamentar, calendário da proposta"
 status: "conferido"
-name_en: "Final global vote"
+name_en: "Final overall vote"
+measure: "Votação final global"
+measure_en: "Final overall vote"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Assembleia da República"
 document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
-  locator: "Página parlamentar, calendário da proposta"
-  source_sha256: "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+  locator: "Página parlamentar, calendário da proposta; p. 1"
+  source_sha256: "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
   page: 1
   kind: "html"
 source_url: "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10"
-access_date: "2026-10-19"
+access_date: "2026-11-12"
 reference_date: "2026-11-24"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro"
+excerpt: "Este ato marca o início do processo orçamental no Parlamento, que culmina com a votação final global da iniciativa a 24 de novembro."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -41,7 +43,7 @@ check: null
 
 study: "orcamento-2027-o-que-muda-e-para-quem"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-calendario-final-global."
+note: "Cruzado de ResearchHub content/27 Orcamento 2027 O que muda/Technical Source/livros-cor3/AN · oe-2027-calendario-final-global."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

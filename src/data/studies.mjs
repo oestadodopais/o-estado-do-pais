@@ -101,13 +101,13 @@ export const WORKS = [
       lang: 'pt',
       title: "O Orçamento de 2027: o que muda e para quem",
       date: '2026-10-21',
-      updated: '2026-11-02'
+      updated: '2026-11-13'
     },
     {
       lang: 'en',
       title: "The 2027 Budget: what changes, and for whom",
       date: '2026-10-21',
-      updated: '2026-11-02'
+      updated: '2026-11-13'
     }
   ],
   pergunta: {
@@ -134,13 +134,13 @@ export const WORKS = [
       lang: 'pt',
       title: 'A casa em Portugal e na Europa',
       date: '2026-10-29',
-      updated: '2026-11-03'
+      updated: '2026-11-13'
     },
     {
       lang: 'en',
       title: 'Housing in Portugal and in Europe',
       date: '2026-10-29',
-      updated: '2026-11-03'
+      updated: '2026-11-13'
     }
   ],
   pergunta: {
@@ -615,7 +615,7 @@ export const WORKS = [
         lang: 'pt',
         title: 'Penalizações por Reforma Antecipada em Portugal',
         date: null,
-        updated: '2026-09-23',
+        updated: '2026-11-13',
       },
     ],
     description: {

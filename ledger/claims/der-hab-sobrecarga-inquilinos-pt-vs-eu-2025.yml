@@ -6,7 +6,7 @@
 id: "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "8,6"
+value: "8,7"
 unit: "pontos percentuais"
 measure: "Diferença: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025"
 measure_en: "Difference: Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025"
@@ -22,8 +22,8 @@ reference_date: "2025"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,6 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,6."
-derivation_en: "Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025 (27.2 %; Eurostat, ilc_lvho07c) minus Housing cost overburden rate, Tenant, rent at market price, European Union - 27 countries (from 2020), 2025 (18.6 %; Eurostat, ilc_lvho07c), rounded to one decimal place: 8.6."
+derivation: "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,5 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,7."
+derivation_en: "Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025 (27.2 %; Eurostat, ilc_lvho07c) minus Housing cost overburden rate, Tenant, rent at market price, European Union - 27 countries (from 2020), 2025 (18.5 %; Eurostat, ilc_lvho07c), rounded to one decimal place: 8.7."
 derived_from:
   - "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
   - "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
@@ -32,7 +32,13 @@ check: "round ( hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-ren
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] {'components': ['hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025', 'hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025'], 'formula': 'hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025', 'calculation': 'hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 = 27.2; hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025 = 18.6; resultado = 8.6', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-sobrecarga-inquilinos-pt-vs-eu-2025."
+note: "[derivation do motor] {'components': ['hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025', 'hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025'], 'formula': 'hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025', 'calculation': 'hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 = 27.2; hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025 = 18.5; resultado = 8.7', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-sobrecarga-inquilinos-pt-vs-eu-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "8,6"
+    new_value: "8,7"
+    reason: "A fonte reviu os valores; a linha foi relida no corpo alojado, e as contas que dependem dela foram recalculadas."
+    reason_en: "The source revised the figures; the row was read again in the hosted body, and calculations depending on it were recomputed."

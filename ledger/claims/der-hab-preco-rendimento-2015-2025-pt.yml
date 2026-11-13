@@ -1,0 +1,38 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-hab-preco-rendimento-2015-2025-pt"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "60,8"
+unit: "%"
+measure: "Subida do rácio preço-rendimento de 2015 a 2025, Portugal"
+measure_en: "Change in the price-to-income ratio from 2015 to 2025, Portugal"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2025 (100,00 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60) a dividir por Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015 (62,17 índice do rácio preço-rendimento, 2025 igual a cem; Eurostat, tipsho60), vezes cem menos cem, arredondado a uma casa decimal: 60,8."
+derivation_en: "Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Portugal, 2025 (100.00 price-to-income ratio index, 2025 equal to one hundred; Eurostat, tipsho60) divided by Standardised house price-to-income ratio, Price-to-income ratio, index 2025=100, Portugal, 2015 (62.17 price-to-income ratio index, 2025 equal to one hundred; Eurostat, tipsho60), times one hundred minus one hundred, rounded to one decimal place: 60.8."
+derived_from:
+  - "hab-tipsho60-a-ptir-i25-pt-2025"
+  - "hab-tipsho60-a-ptir-i25-pt-2015"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( hab-tipsho60-a-ptir-i25-pt-2025 / hab-tipsho60-a-ptir-i25-pt-2015 * 100 - 100 , 1 )"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Período completo da fonte: 2015-2025. · [derivation do motor] {'components': ['hab-tipsho60-a-ptir-i25-pt-2025', 'hab-tipsho60-a-ptir-i25-pt-2015'], 'formula': 'hab-tipsho60-a-ptir-i25-pt-2025 / hab-tipsho60-a-ptir-i25-pt-2015 * 100 - 100', 'calculation': 'hab-tipsho60-a-ptir-i25-pt-2025 = 100.00; hab-tipsho60-a-ptir-i25-pt-2015 = 62.17; resultado = 60.8492842206852179507801190', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-preco-rendimento-2015-2025-pt."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

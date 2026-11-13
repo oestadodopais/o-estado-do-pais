@@ -57,48 +57,57 @@
      "value": "79"
     },
     {
-     "end": 386,
+     "end": 420,
+     "printed": "5,411",
+     "row": "oe-2027-quadro-a1-1-impacto-saldo",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 415,
+     "value": "5 411"
+    },
+    {
+     "end": 627,
      "printed": "1,210",
      "row": "der-oe2027-medidas-anteriores-saldo",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 381,
+     "start": 622,
      "value": "-1210"
     },
     {
-     "end": 1210,
+     "end": 1246,
      "printed": "1,350",
      "row": "der-oe2027-juros-variacao-cp",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 1205,
+     "start": 1241,
      "value": "1350"
     },
     {
-     "end": 1255,
+     "end": 1291,
      "printed": "8,575",
      "row": "pm-q4-1-r21-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1250,
+     "start": 1286,
      "value": "8 575"
     },
     {
-     "end": 1294,
+     "end": 1330,
      "printed": "2,347",
      "row": "der-oe2027-investimento-variacao-cp",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 1289,
+     "start": 1325,
      "value": "-2347"
     },
     {
-     "end": 1313,
+     "end": 1349,
      "printed": "10,417",
      "row": "pm-q4-1-r27-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1307,
+     "start": 1343,
      "value": "10 417"
     }
    ],
@@ -115,13 +124,12 @@
      "tipo": "valor"
     },
     {
-     "fim": 386,
-     "id": "der-oe2027-medidas-anteriores-saldo",
-     "inicio": 381,
+     "fim": 420,
+     "id": "oe-2027-quadro-a1-1-impacto-saldo",
+     "inicio": 415,
      "livro": "PM",
-     "modificador": "abs",
-     "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
-     "texto": "1,210",
+     "sha256_linha": "5c3b3a5c1d7b26df813ed08dc66a172357d250939d8dd68d837545a061ddc6b6",
+     "texto": "5,411",
      "tipo": "valor"
     },
     {
@@ -132,42 +140,52 @@
        "livro": "PM"
       }
      ],
-     "fim": 457,
-     "inicio": 447,
+     "fim": 544,
+     "inicio": 534,
      "texto": "invariante",
      "tipo": "literal"
     },
     {
-     "fim": 526,
+     "fim": 613,
      "id": "oe-2027-quadro-3-2-nota-i",
-     "inicio": 505,
+     "inicio": 592,
      "livro": "PM",
      "sha256_linha": "0b9e73760a239977d753302ec25ea5eed13750f8ea251ced91fb6d8419abe6a2",
      "texto": "Nota: (i) invariante.",
      "tipo": "excerto"
     },
     {
-     "fim": 1210,
+     "fim": 627,
+     "id": "der-oe2027-medidas-anteriores-saldo",
+     "inicio": 622,
+     "livro": "PM",
+     "modificador": "abs",
+     "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
+     "texto": "1,210",
+     "tipo": "valor"
+    },
+    {
+     "fim": 1246,
      "id": "der-oe2027-juros-variacao-cp",
-     "inicio": 1205,
+     "inicio": 1241,
      "livro": "PM",
      "sha256_linha": "e57e1a341beeba575dc649d8ff6066d2aba9adb064d301737fd3a31b8e2b0e4c",
      "texto": "1,350",
      "tipo": "valor"
     },
     {
-     "fim": 1255,
+     "fim": 1291,
      "id": "pm-q4-1-r21-c1",
-     "inicio": 1250,
+     "inicio": 1286,
      "livro": "PM",
      "sha256_linha": "43a8d83aa35e302eae81b204aa18fd76c55ad59e8b6fd49c910dfe7095176348",
      "texto": "8,575",
      "tipo": "valor"
     },
     {
-     "fim": 1294,
+     "fim": 1330,
      "id": "der-oe2027-investimento-variacao-cp",
-     "inicio": 1289,
+     "inicio": 1325,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "da4e0c8500ad95b77581b3392620c282d5aa10f9625434a6e56625fdc4022775",
@@ -175,9 +193,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 1313,
+     "fim": 1349,
      "id": "pm-q4-1-r27-c1",
-     "inicio": 1307,
+     "inicio": 1343,
      "livro": "PM",
      "sha256_linha": "74d27f0912cc20641b4041a48c656b9ede90f87461e6c25e15e883cace380694",
      "texto": "10,417",
@@ -190,14 +208,15 @@
     "diploma-habitacao-preambulo",
     "utao-novas-medidas",
     "der-oe2027-medidas-novas-saldo",
-    "der-oe2027-medidas-anteriores-saldo",
+    "oe-2027-quadro-a1-1-impacto-saldo",
     "oe-2027-quadro-3-2-nota-i",
+    "der-oe2027-medidas-anteriores-saldo",
     "der-oe2027-juros-variacao-cp",
     "pm-q4-1-r21-c1",
     "der-oe2027-investimento-variacao-cp",
     "pm-q4-1-r27-c1"
    ],
-   "text": "The 2027 Budget changes little by itself. The three new measures the report identifies, the expected revenue from fighting fraud in the fuel sector, the update of the personal income-tax (IRS) exemption threshold (the «mínimo de existência») and the increase of the Solidarity Supplement for the Elderly (CSI), add 79 million euros to the balance. What weighs on the 2027 balance, 1,210 million euros, are the ten lines the table itself marks as «invariante» (invariant; the table's note says only that, «Nota: (i) invariante.»; the UTAO uses the same word for a larger set, in the measures section): the update of the income-tax brackets and of the specific deduction, the reduced income tax on moderate rents and the reduced value added tax (VAT, IVA in Portuguese) on housing construction, the one-point cut in corporate income tax (IRC) and the reversal of the SIFIDE (the Portuguese system of tax incentives for business research and development), the revenue that wage growth brings in income tax and in contributions, the incomes agreement, the minimum wage and the public-sector wage agreements. And what changes most in the accounts is not in the table of measures: interest on the debt rises by 1,350 million euros in public accounting, to 8,575 million, and investment falls by 2,347 million, to 10,417 million, because the Recovery and Resilience Plan (the PRR, the European post-pandemic recovery money) ends in 2026."
+   "text": "The 2027 Budget changes little by itself. The three new measures the report identifies, the expected revenue from fighting fraud in the fuel sector, the update of the personal income-tax (IRS) exemption threshold (the «mínimo de existência») and the increase of the Solidarity Supplement for the Elderly (CSI), add 79 million euros to the balance. What weighs on the 2027 balance are the measures already in force, 5,411 million euros in the report's unchanged-policy table; within them, the ten lines the table of measures marks as «invariante» (invariant; the table's note says only that, «Nota: (i) invariante.») weigh 1,210 million: the update of the income-tax brackets and of the specific deduction, the reduced income tax on moderate rents and the reduced value added tax (VAT, IVA in Portuguese) on housing construction, the one-point cut in corporate income tax (IRC) and the reversal of the SIFIDE (the Portuguese system of tax incentives for business research and development), the revenue that wage growth brings in income tax and in contributions, the incomes agreement, the minimum wage and the public-sector wage agreements. And what changes most in the accounts is not in the table of measures: interest on the debt rises by 1,350 million euros in public accounting, to 8,575 million, and investment falls by 2,347 million, to 10,417 million, because the Recovery and Resilience Plan (the PRR, the European post-pandemic recovery money) ends in 2026."
   },
   {
    "figures": [
@@ -608,12 +627,21 @@
      "value": "79"
     },
     {
-     "end": 222,
+     "end": 194,
+     "printed": "5,411",
+     "row": "oe-2027-quadro-a1-1-impacto-saldo",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 189,
+     "value": "5 411"
+    },
+    {
+     "end": 324,
      "printed": "1,210",
      "row": "der-oe2027-medidas-anteriores-saldo",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 217,
+     "start": 319,
      "value": "-1210"
     }
    ],
@@ -630,6 +658,15 @@
      "tipo": "valor"
     },
     {
+     "fim": 194,
+     "id": "oe-2027-quadro-a1-1-impacto-saldo",
+     "inicio": 189,
+     "livro": "PM",
+     "sha256_linha": "5c3b3a5c1d7b26df813ed08dc66a172357d250939d8dd68d837545a061ddc6b6",
+     "texto": "5,411",
+     "tipo": "valor"
+    },
+    {
      "apoios": [
       {
        "campo": "excerpt",
@@ -637,15 +674,15 @@
        "livro": "PM"
       }
      ],
-     "fim": 197,
-     "inicio": 187,
+     "fim": 304,
+     "inicio": 294,
      "texto": "invariante",
      "tipo": "literal"
     },
     {
-     "fim": 222,
+     "fim": 324,
      "id": "der-oe2027-medidas-anteriores-saldo",
-     "inicio": 217,
+     "inicio": 319,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
@@ -657,10 +694,11 @@
     "utao-novas-medidas",
     "utao-novas-saldo",
     "der-oe2027-medidas-novas-saldo",
+    "oe-2027-quadro-a1-1-impacto-saldo",
     "der-oe2027-medidas-anteriores-saldo",
     "oe-2027-quadro-3-2-nota-i"
    ],
-   "text": "The 2027 Budget is a continuation budget. The new measures are worth 79 million euros to the balance, by the report's table of measures and by the UTAO; the ten lines the table marks as «invariante» (invariant) weigh 1,210 million. The UTAO writes that this is the third consecutive proposal with few new measures, and reads it as a strategy of deciding measures outside the Budget, before its presentation."
+   "text": "The 2027 Budget is a continuation budget. The new measures are worth 79 million euros to the balance, by the report's table of measures and by the UTAO; the measures already in force weigh 5,411 million, by the report's unchanged-policy table, and the ten lines the table of measures marks as «invariante» (invariant), 1,210 million, are part of them. The UTAO writes that this is the third consecutive proposal with few new measures, and gives, as one of the reasons, the Government's strategy of deciding measures outside the Budget, before its presentation."
   },
   {
    "emphasis": [
@@ -994,39 +1032,39 @@
      "value": "1548"
     },
     {
-     "end": 283,
+     "end": 284,
      "printed": "1,132",
      "row": "pm-q3-2-r26-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 278,
+     "start": 279,
      "value": "-1 132"
     },
     {
-     "end": 301,
+     "end": 302,
      "printed": "23.2",
      "row": "utao-juros-variacao-pct",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 297,
+     "start": 298,
      "value": "23,2"
     },
     {
-     "end": 410,
+     "end": 411,
      "printed": "2.4",
      "row": "utao-taxa-implicita-2026",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 407,
+     "start": 408,
      "value": "2,4"
     },
     {
-     "end": 419,
+     "end": 420,
      "printed": "2.9",
      "row": "utao-taxa-implicita-2027",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 416,
+     "start": 417,
      "value": "2,9"
     }
    ],
@@ -1070,9 +1108,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 283,
+     "fim": 284,
      "id": "pm-q3-2-r26-c0",
-     "inicio": 278,
+     "inicio": 279,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "22824bcdd679d6a176f9bc2528118a60f75e10c4d1901dda5a251d6c9dcde4dc",
@@ -1080,27 +1118,27 @@
      "tipo": "valor"
     },
     {
-     "fim": 301,
+     "fim": 302,
      "id": "utao-juros-variacao-pct",
-     "inicio": 297,
+     "inicio": 298,
      "livro": "PM",
      "sha256_linha": "4a07f774ef4a521dfba52bc345f83fabd10b07c028cfe7b9f32ef2a3775bef7a",
      "texto": "23.2",
      "tipo": "valor"
     },
     {
-     "fim": 410,
+     "fim": 411,
      "id": "utao-taxa-implicita-2026",
-     "inicio": 407,
+     "inicio": 408,
      "livro": "PM",
      "sha256_linha": "3099b13622cc4f362f93eb27dbd0724cbe263b1c0367a1fdba45929f663276c0",
      "texto": "2.4",
      "tipo": "valor"
     },
     {
-     "fim": 419,
+     "fim": 420,
      "id": "utao-taxa-implicita-2027",
-     "inicio": 416,
+     "inicio": 417,
      "livro": "PM",
      "sha256_linha": "da2b53fbc0ddb6815a1c75a0744a8e9133f4cd8ddcde0d3c5775fd7081658870",
      "texto": "2.9",
@@ -1117,7 +1155,7 @@
     "utao-taxa-implicita-2026",
     "utao-taxa-implicita-2027"
    ],
-   "text": "Interest rises faster than expenditure. It grows 18.7 % in public accounting, against 2.8 % for total expenditure and 5.4 % for staff costs; in national accounts it rises 1,548 million euros, more than the cost of all the 2027 measures to the balance within the same perimeter, 1,132 million, and 23.2 % according to the UTAO, with the implicit interest rate (interest paid divided by the debt) moving from 2.4 % to 2.9 %."
+   "text": "Interest rises faster than expenditure. It grows 18.7 % in public accounting, against 2.8 % for total expenditure and 5.4 % for staff costs; in national accounts it rises 1,548 million euros, more than the cost of the main 2027 measures to the balance within the same perimeter, 1,132 million, and 23.2 % according to the UTAO, with the implicit interest rate (interest paid divided by the debt) moving from 2.4 % to 2.9 %."
   },
   {
    "emphasis": [
@@ -1156,48 +1194,39 @@
      "value": "1231"
     },
     {
-     "end": 457,
+     "end": 473,
      "printed": "590",
-     "row": "utao-salarios-irs",
-     "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+     "row": "utao-t8-irs-salarios-pensoes",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 454,
+     "start": 470,
      "value": "590"
     },
     {
-     "end": 507,
+     "end": 545,
      "printed": "471",
      "row": "utao-salarios-cs",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 504,
+     "start": 542,
      "value": "471"
     },
     {
-     "end": 538,
-     "printed": "86.2",
-     "row": "der-salarios-publicos-retorno-pct",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 534,
-     "value": "86,2"
-    },
-    {
-     "end": 610,
+     "end": 627,
      "printed": "5.4",
      "row": "pm-q4-1-r19-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 607,
+     "start": 624,
      "value": "5,4"
     },
     {
-     "end": 683,
+     "end": 700,
      "printed": "5.3",
      "row": "utao-pessoal-variacao-cn",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 680,
+     "start": 697,
      "value": "5,3"
     }
    ],
@@ -1232,36 +1261,27 @@
      "tipo": "valor"
     },
     {
-     "fim": 457,
-     "id": "utao-salarios-irs",
-     "inicio": 454,
+     "fim": 473,
+     "id": "utao-t8-irs-salarios-pensoes",
+     "inicio": 470,
      "livro": "PM",
-     "sha256_linha": "239d9131641df0a85502e69753574bdb5d48741d9d98a08b151337842798baa2",
+     "sha256_linha": "4ceea12988848130c5ead7d71ec1dc0ca6a32519033fb462ac764146e5f8edbf",
      "texto": "590",
      "tipo": "valor"
     },
     {
-     "fim": 507,
+     "fim": 545,
      "id": "utao-salarios-cs",
-     "inicio": 504,
+     "inicio": 542,
      "livro": "PM",
      "sha256_linha": "1541d100d98a0b583a86873a00605e33311c260dac268eb73821b1c10c8dc065",
      "texto": "471",
      "tipo": "valor"
     },
     {
-     "fim": 538,
-     "id": "der-salarios-publicos-retorno-pct",
-     "inicio": 534,
-     "livro": "PM",
-     "sha256_linha": "666185122283756ee9debc308d8d9c9401c4422c0119e97a099228ba50f9dbd5",
-     "texto": "86.2",
-     "tipo": "valor"
-    },
-    {
-     "fim": 610,
+     "fim": 627,
      "id": "pm-q4-1-r19-c2",
-     "inicio": 607,
+     "inicio": 624,
      "livro": "PM",
      "sha256_linha": "ae854056f49e19de58737b54b62a94b951bb49881df206c06aec2d903daaf5d6",
      "texto": "5.4",
@@ -1280,15 +1300,15 @@
        "livro": "PM"
       }
      ],
-     "fim": 674,
-     "inicio": 671,
+     "fim": 691,
+     "inicio": 688,
      "texto": "4.1",
      "tipo": "literal"
     },
     {
-     "fim": 683,
+     "fim": 700,
      "id": "utao-pessoal-variacao-cn",
-     "inicio": 680,
+     "inicio": 697,
      "livro": "PM",
      "sha256_linha": "977a35bcdbcb1de6f17813c3e51422208b19f6ba9c056d7e83b09c9981366dd7",
      "texto": "5.3",
@@ -1302,13 +1322,12 @@
     "oe-2027-remuneracoes-atualizacao-pct",
     "pm-q2-3-r19-c2",
     "utao-salarios-valor",
-    "utao-salarios-irs",
+    "utao-t8-irs-salarios-pensoes",
     "utao-salarios-cs",
-    "der-salarios-publicos-retorno-pct",
     "pm-q4-1-r19-c2",
     "utao-pessoal-variacao-cn"
    ],
-   "text": "For the State's employees, the general pay update for 2027 matches forecast inflation. The update is 2.3 %, by the report; the inflation the same report forecasts for 2027 is 2.3 %; the Public Finance Council sees a risk that inflation is underestimated in 2026 and in 2027. The rise above the general update comes from career progression, promotions and career agreements, which the UTAO includes in the 1,231 million euros of the wage update, of which 590 million return to the State in income tax and 471 million in contributions, 86.2 % of the total; with public employment stabilised, staff costs grow 5.4 % in public accounting, the perimeter of the report's table 4.1, and 5.3 % in national accounts, by the UTAO."
+   "text": "For the State's employees, the general pay update for 2027 matches forecast inflation. The update is 2.3 %, by the report; the inflation the same report forecasts for 2027 is 2.3 %; the Public Finance Council sees a risk that inflation is underestimated in 2026 and in 2027. The rise above the general update comes from career progression, promotions and career agreements, which the UTAO includes in the 1,231 million euros of the wage update, with which it associates 590 million of income-tax revenue, from wage and pension increases, and 471 million in contributions; with public employment stabilised, staff costs grow 5.4 % in public accounting, the perimeter of the report's table 4.1, and 5.3 % in national accounts, by the UTAO."
   },
   {
    "emphasis": [
@@ -1581,7 +1600,7 @@
     "utao-risco-fraude",
     "pm-q3-2-r8-c0"
    ],
-   "text": "The fuel-fraud measure, 300 million euros, could come with its calculation basis, as the UTAO asks."
+   "text": "The fuel-fraud measure, 300 million euros, could come with its calculation basis; the UTAO notes that the proposal presents no information to substantiate the estimate."
   },
   {
    "figures": [],
@@ -4042,41 +4061,181 @@
    "text": "On VAT, Livre, by the news report «Primeiro-ministro rejeita totalmente descer o IVA dos atuais 23% para 21%»: «Assim, a deputada disse que o seu partido \"apresentará esta descida já para o Orçamento do Estado 2027, de forma progressiva\".» It is a proposal outside the table of measures, and the title of the news report states the Prime Minister's answer."
   },
   {
-   "figures": [],
+   "figures": [
+    {
+     "end": 225,
+     "printed": "5,411",
+     "row": "oe-2027-quadro-a1-1-impacto-saldo",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 220,
+     "value": "5 411"
+    },
+    {
+     "end": 1330,
+     "printed": "590",
+     "row": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 1327,
+     "value": "-590"
+    },
+    {
+     "end": 1394,
+     "printed": "471",
+     "row": "oe-2027-quadro-a1-1-contribuicoes-salarios",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 1391,
+     "value": "-471"
+    }
+   ],
    "i": 29,
    "kind": "paragraph",
    "proofs": [
     {
+     "fim": 225,
+     "id": "oe-2027-quadro-a1-1-impacto-saldo",
+     "inicio": 220,
+     "livro": "PM",
+     "sha256_linha": "5c3b3a5c1d7b26df813ed08dc66a172357d250939d8dd68d837545a061ddc6b6",
+     "texto": "5,411",
+     "tipo": "valor"
+    },
+    {
      "apoios": [
       {
-       "campo": "excerpt",
-       "id": "utao-politicas-saldo",
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-impacto-saldo",
        "livro": "PM"
       },
       {
-       "campo": "excerpt",
-       "id": "utao-politicas-revisao",
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-contribuicoes-salarios",
        "livro": "PM"
       }
      ],
-     "fim": 207,
-     "inicio": 200,
-     "texto": "5411 M€",
+     "fim": 273,
+     "inicio": 269,
+     "texto": "A1.1",
      "tipo": "literal"
     },
     {
-     "fim": 743,
+     "apoios": [
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-impacto-saldo",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-contribuicoes-salarios",
+       "livro": "PM"
+      }
+     ],
+     "fim": 307,
+     "inicio": 276,
+     "texto": "Quadro de políticas invariantes",
+     "tipo": "literal"
+    },
+    {
+     "fim": 854,
      "id": "utao-politicas-saldo",
-     "inicio": 211,
+     "inicio": 322,
      "livro": "PM",
      "sha256_linha": "8d5ee0fc9961c5f2ff386c443dafb118682fab3dee3cd52fb1bfd069c471046e",
      "texto": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).",
      "tipo": "excerto"
     },
     {
-     "fim": 1492,
+     "fim": 1175,
+     "id": "oe-2027-quadro-3-2-introducao",
+     "inicio": 938,
+     "livro": "PM",
+     "sha256_linha": "99691c6212e080743a3d6061db3a15d720cb2658ffaa9b7e0765d8cb7db0cb49",
+     "texto": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.",
+     "tipo": "excerto"
+    },
+    {
+     "apoios": [
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-impacto-saldo",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-contribuicoes-salarios",
+       "livro": "PM"
+      }
+     ],
+     "fim": 1221,
+     "inicio": 1217,
+     "texto": "A1.1",
+     "tipo": "literal"
+    },
+    {
+     "apoios": [
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-impacto-saldo",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "oe-2027-quadro-a1-1-contribuicoes-salarios",
+       "livro": "PM"
+      }
+     ],
+     "fim": 1322,
+     "inicio": 1318,
+     "texto": "A1.1",
+     "tipo": "literal"
+    },
+    {
+     "fim": 1330,
+     "id": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+     "inicio": 1327,
+     "livro": "PM",
+     "modificador": "abs",
+     "sha256_linha": "586cd890f0a222833baa8baa6b2991acd37aceaa6abbf479c939f4424d4c1f48",
+     "texto": "590",
+     "tipo": "valor"
+    },
+    {
+     "fim": 1394,
+     "id": "oe-2027-quadro-a1-1-contribuicoes-salarios",
+     "inicio": 1391,
+     "livro": "PM",
+     "modificador": "abs",
+     "sha256_linha": "7a91c67336531c7818bddb157ea4cd3471c1c42095177fed4b1d22e6481bec26",
+     "texto": "471",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2079,
      "id": "utao-politicas-revisao",
-     "inicio": 923,
+     "inicio": 1510,
      "livro": "PM",
      "sha256_linha": "9c959afc851462953492ae61d139693e0a9c8c16c1900ff226b7802bb793ac1f",
      "texto": "O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).",
@@ -4084,10 +4243,14 @@
     }
    ],
    "source_rows": [
+    "oe-2027-quadro-a1-1-impacto-saldo",
     "utao-politicas-saldo",
+    "oe-2027-quadro-3-2-introducao",
+    "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+    "oe-2027-quadro-a1-1-contribuicoes-salarios",
     "utao-politicas-revisao"
    ],
-   "text": "The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 it puts at «5411 M€»: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).» Whether the table's ten lines are inside that set, neither the report nor the UTAO says. And on the revision of the unchanged-policy framework (QPI) between August and October: «O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).»"
+   "text": "The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 the Ministry of Finance puts at 5,411 million euros in the report's annex (table A1.1, «Quadro de políticas invariantes»); the UTAO: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).» The table's ten lines are inside that set. The report introduces the table thus: «No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.» And eight of the ten lines are in table A1.1 with the same amounts; in place of the two lines for the revenue that wage growth brings, table A1.1 has 590 million in income tax, from wage and pension increases, and 471 million in contributions. And on the revision of the unchanged-policy framework (QPI) between August and October: «O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).»"
   },
   {
    "figures": [],
@@ -5192,30 +5355,21 @@
     },
     {
      "end": 1623,
-     "printed": "590",
-     "row": "utao-salarios-irs",
-     "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
-     "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 1620,
-     "value": "590"
-    },
-    {
-     "end": 1663,
      "printed": "471",
      "row": "utao-salarios-cs",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 1660,
+     "start": 1620,
      "value": "471"
     },
     {
-     "end": 1694,
-     "printed": "86.2",
-     "row": "der-salarios-publicos-retorno-pct",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 1690,
-     "value": "86,2"
+     "end": 1667,
+     "printed": "590",
+     "row": "utao-t8-irs-salarios-pensoes",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/utao-oe2027-preliminar.pdf",
+     "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+     "start": 1664,
+     "value": "590"
     }
    ],
    "i": 36,
@@ -5277,35 +5431,57 @@
     },
     {
      "fim": 1623,
-     "id": "utao-salarios-irs",
-     "inicio": 1620,
-     "livro": "PM",
-     "sha256_linha": "239d9131641df0a85502e69753574bdb5d48741d9d98a08b151337842798baa2",
-     "texto": "590",
-     "tipo": "valor"
-    },
-    {
-     "fim": 1663,
      "id": "utao-salarios-cs",
-     "inicio": 1660,
+     "inicio": 1620,
      "livro": "PM",
      "sha256_linha": "1541d100d98a0b583a86873a00605e33311c260dac268eb73821b1c10c8dc065",
      "texto": "471",
      "tipo": "valor"
     },
     {
-     "fim": 1694,
-     "id": "der-salarios-publicos-retorno-pct",
-     "inicio": 1690,
+     "fim": 1667,
+     "id": "utao-t8-irs-salarios-pensoes",
+     "inicio": 1664,
      "livro": "PM",
-     "sha256_linha": "666185122283756ee9debc308d8d9c9401c4422c0119e97a099228ba50f9dbd5",
-     "texto": "86.2",
+     "sha256_linha": "4ceea12988848130c5ead7d71ec1dc0ca6a32519033fb462ac764146e5f8edbf",
+     "texto": "590",
      "tipo": "valor"
     },
     {
-     "fim": 2298,
+     "apoios": [
+      {
+       "campo": "locator",
+       "id": "utao-t8-irs-salarios-pensoes",
+       "livro": "PM"
+      }
+     ],
+     "fim": 1727,
+     "inicio": 1726,
+     "texto": "8",
+     "tipo": "literal"
+    },
+    {
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "utao-t8-irs-salarios-pensoes",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "utao-t8-irs-salarios-pensoes",
+       "livro": "PM"
+      }
+     ],
+     "fim": 1777,
+     "inicio": 1734,
+     "texto": "Receita de incremento de salários e pensões",
+     "tipo": "literal"
+    },
+    {
+     "fim": 2409,
      "id": "utao-risco-emprego",
-     "inicio": 1738,
+     "inicio": 1849,
      "livro": "PM",
      "sha256_linha": "c71b678307d9dbe51d99898da8e7e781456d3b5893efe4b645399ce8e84195cf",
      "texto": "O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).",
@@ -5319,12 +5495,11 @@
     "posicao-pcp-salarios",
     "utao-salarios",
     "utao-salarios-valor",
-    "utao-salarios-irs",
     "utao-salarios-cs",
-    "der-salarios-publicos-retorno-pct",
+    "utao-t8-irs-salarios-pensoes",
     "utao-risco-emprego"
    ],
-   "text": "For those who work for the State, the report: «Ao nível da despesa, destaca-se a massa salarial dos trabalhadores da Administração Pública (948 milhões de euros), que inclui uma atualização das remunerações em 2,3%, e o reforço do CSI, com um impacto de 100 milhões de euros.» The inflation the same report forecasts for 2027 is 2.3 %: the general update and forecast inflation are the same number; career progression, promotions and career agreements rise above it. The Public Finance Council: «Ponderados os riscos, o cenário macroeconómico subjacente à POE/2027 afigura-se globalmente como estatisticamente provável. Ainda assim, como fundamentado no presente Parecer, é de notar a existência de riscos descendentes para a previsão de crescimento do PIB real em 2027. No que respeita à inflação, destaca-se uma potencial subestimação tanto em 2026, como em 2027.» The PCP: «Em relação aos trabalhadores da Administração Pública, prevê-se uma atualização nos salários de 2,3%, valor que poderá ficar abaixo da inflação, não permitindo a valorização do poder de compra, e um aumento de apenas 15 cêntimos no valor do subsídio de alimentação.» The UTAO measures the cost and the return: «A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.» That is, of 1,231 million euros of update, 590 million come back in income tax and 471 million in contributions, 86.2 % of the total. And on public employment: «O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).»"
+   "text": "For those who work for the State, the report: «Ao nível da despesa, destaca-se a massa salarial dos trabalhadores da Administração Pública (948 milhões de euros), que inclui uma atualização das remunerações em 2,3%, e o reforço do CSI, com um impacto de 100 milhões de euros.» The inflation the same report forecasts for 2027 is 2.3 %: the general update and forecast inflation are the same number; career progression, promotions and career agreements rise above it. The Public Finance Council: «Ponderados os riscos, o cenário macroeconómico subjacente à POE/2027 afigura-se globalmente como estatisticamente provável. Ainda assim, como fundamentado no presente Parecer, é de notar a existência de riscos descendentes para a previsão de crescimento do PIB real em 2027. No que respeita à inflação, destaca-se uma potencial subestimação tanto em 2026, como em 2027.» The PCP: «Em relação aos trabalhadores da Administração Pública, prevê-se uma atualização nos salários de 2,3%, valor que poderá ficar abaixo da inflação, não permitindo a valorização do poder de compra, e um aumento de apenas 15 cêntimos no valor do subsídio de alimentação.» The UTAO measures the cost and the return: «A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.» That is, of 1,231 million euros of update, 471 million come back in contributions; the 590 million of income tax are, in the same appraisal's Tabela 8, the «Receita de incremento de salários e pensões» (revenue from wage and pension increases). And on public employment: «O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).»"
   },
   {
    "figures": [],
@@ -5822,39 +5997,93 @@
      "value": "-176"
     },
     {
-     "end": 2543,
+     "end": 2461,
+     "printed": "9,704",
+     "row": "pm-q4-4-irc-2026",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 2456,
+     "value": "9 704"
+    },
+    {
+     "end": 2470,
+     "printed": "9,605",
+     "row": "pm-q4-4-irc-2027",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 2465,
+     "value": "9 605"
+    },
+    {
+     "end": 2489,
+     "printed": "1.0",
+     "row": "pm-q4-4-irc-variacao",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 2486,
+     "value": "-1,0"
+    },
+    {
+     "end": 2530,
+     "printed": "19,706",
+     "row": "pm-q4-4-irs-2026",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 2524,
+     "value": "19 706"
+    },
+    {
+     "end": 2540,
+     "printed": "20,385",
+     "row": "pm-q4-4-irs-2027",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 2534,
+     "value": "20 385"
+    },
+    {
+     "end": 2553,
+     "printed": "3.4",
+     "row": "pm-q4-4-irs-variacao",
+     "source_body": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 2550,
+     "value": "3,4"
+    },
+    {
+     "end": 2978,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2540,
+     "start": 2975,
      "value": "300"
     },
     {
-     "end": 2608,
+     "end": 3043,
      "printed": "284",
      "row": "pm-q3-2-r12-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2605,
+     "start": 3040,
      "value": "284"
     },
     {
-     "end": 2643,
+     "end": 3078,
      "printed": "363",
      "row": "pm-q3-2-r18-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2640,
+     "start": 3075,
      "value": "363"
     },
     {
-     "end": 2689,
+     "end": 3124,
      "printed": "124",
      "row": "pm-q3-2-r16-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2686,
+     "start": 3121,
      "value": "124"
     }
    ],
@@ -5999,45 +6228,138 @@
      "tipo": "excerto"
     },
     {
-     "fim": 2410,
+     "apoios": [
+      {
+       "campo": "locator",
+       "id": "pm-q4-4-irc-2026",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "pm-q4-4-irc-2027",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "pm-q4-4-irc-variacao",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "pm-q4-4-irs-2026",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "pm-q4-4-irs-2027",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "pm-q4-4-irs-variacao",
+       "livro": "PM"
+      }
+     ],
+     "fim": 2373,
+     "inicio": 2370,
+     "texto": "4.4",
+     "tipo": "literal"
+    },
+    {
+     "fim": 2461,
+     "id": "pm-q4-4-irc-2026",
+     "inicio": 2456,
+     "livro": "PM",
+     "sha256_linha": "e58844662a3d3e93fe39b002aa9a50297f0b466db362a9c2755a1efa50a97745",
+     "texto": "9,704",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2470,
+     "id": "pm-q4-4-irc-2027",
+     "inicio": 2465,
+     "livro": "PM",
+     "sha256_linha": "4c1f7685632d5b75d613ff6a88512f14bc3fa37bad6997e253d0ee96ef48d89d",
+     "texto": "9,605",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2489,
+     "id": "pm-q4-4-irc-variacao",
+     "inicio": 2486,
+     "livro": "PM",
+     "modificador": "abs",
+     "sha256_linha": "2b41e549f2c31283dc709c2e05eeeb38413e3d1d5ada2a1c7f3a4231948a757e",
+     "texto": "1.0",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2530,
+     "id": "pm-q4-4-irs-2026",
+     "inicio": 2524,
+     "livro": "PM",
+     "sha256_linha": "8cf24fe1f05b5e5ba286939d0fc8ae1b37da4b454e3949a020e505dbbcaf0e15",
+     "texto": "19,706",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2540,
+     "id": "pm-q4-4-irs-2027",
+     "inicio": 2534,
+     "livro": "PM",
+     "sha256_linha": "51f2a0769732dc0f4e94e10a80bc1d7ad6927960656b537fd23d7a6c00dab1a7",
+     "texto": "20,385",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2553,
+     "id": "pm-q4-4-irs-variacao",
+     "inicio": 2550,
+     "livro": "PM",
+     "sha256_linha": "82a86465bdfcd7e6cc22be89cadc4c22138a9431ca6bc5306b13971e5e9fa234",
+     "texto": "3.4",
+     "tipo": "valor"
+    },
+    {
+     "fim": 2845,
      "id": "posicao-cds-orcamento",
-     "inicio": 2358,
+     "inicio": 2793,
      "livro": "PM",
      "sha256_linha": "360cdea87f03cae51c6807637a9f95d74f0c43ab53b1fd11f1be8938acdfef6f",
      "texto": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
      "tipo": "excerto"
     },
     {
-     "fim": 2543,
+     "fim": 2978,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 2540,
+     "inicio": 2975,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
      "tipo": "valor"
     },
     {
-     "fim": 2608,
+     "fim": 3043,
      "id": "pm-q3-2-r12-c0",
-     "inicio": 2605,
+     "inicio": 3040,
      "livro": "PM",
      "sha256_linha": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
      "texto": "284",
      "tipo": "valor"
     },
     {
-     "fim": 2643,
+     "fim": 3078,
      "id": "pm-q3-2-r18-c0",
-     "inicio": 2640,
+     "inicio": 3075,
      "livro": "PM",
      "sha256_linha": "f4bb472f00bbc10ac91c4a820df70fd2d3ee4580bf15377b0245f49b0ad226d2",
      "texto": "363",
      "tipo": "valor"
     },
     {
-     "fim": 2689,
+     "fim": 3124,
      "id": "pm-q3-2-r16-c0",
-     "inicio": 2686,
+     "inicio": 3121,
      "livro": "PM",
      "sha256_linha": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
      "texto": "124",
@@ -6055,12 +6377,18 @@
     "posicao-psd-impostos",
     "posicao-ps-irc",
     "posicao-pcp-irc",
+    "pm-q4-4-irc-2026",
+    "pm-q4-4-irc-2027",
+    "pm-q4-4-irc-variacao",
+    "pm-q4-4-irs-2026",
+    "pm-q4-4-irs-2027",
+    "pm-q4-4-irs-variacao",
     "posicao-cds-orcamento",
     "pm-q3-2-r8-c0",
     "pm-q3-2-r12-c0",
     "pm-q3-2-r18-c0"
    ],
-   "text": "The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect SIFIDE, 124 million, for a total of 176 million. The Prime Minister, in the Government's communication «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas»: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report on the Budget in the Assembly of the Republic (Assembleia da República, AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro, in the party's web page «OE2027: PS leva propostas à especialidade para responder ao custo de vida»: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase."
+   "text": "The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect SIFIDE, 124 million, for a total of 176 million. The Prime Minister, in the Government's communication «Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas»: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report on the Budget in the Assembly of the Republic (Assembleia da República, AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro, in the party's web page «OE2027: PS leva propostas à especialidade para responder ao custo de vida»: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» In the State tax revenue the report forecasts for 2027 (table 4.4), corporate income tax is the only tax that falls against the 2026 estimate, from 9,704 to 9,605 million euros, 1.0 %; personal income tax rises from 19,706 to 20,385 million, 3.4 %, and every other tax line in the table rises. The table compares 2027 with 2026: it shows the fall the sentence announces for next year and does not show the past fall it also speaks of. CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase."
   },
   {
    "figures": [],
@@ -6718,39 +7046,39 @@
      "value": "89,2"
     },
     {
-     "end": 718,
+     "end": 750,
      "printed": "0.7",
      "row": "europa-saldo-pt-2025",
      "source_body": "content/25 Orcamento 2027 Medidas/source/europa/saldo.json",
      "source_sha256": "9de28176be043c9e211df61cb5f541f35476edf5a37291417fa23f1848d524e5",
-     "start": 715,
+     "start": 747,
      "value": "0.7"
     },
     {
-     "end": 748,
+     "end": 780,
      "printed": "−3.1",
      "row": "europa-saldo-eu27_2020-2025",
      "source_body": "content/25 Orcamento 2027 Medidas/source/europa/saldo.json",
      "source_sha256": "9de28176be043c9e211df61cb5f541f35476edf5a37291417fa23f1848d524e5",
-     "start": 744,
+     "start": 776,
      "value": "-3.1"
     },
     {
-     "end": 786,
+     "end": 818,
      "printed": "−7.9",
      "row": "europa-saldo-ro-2025",
      "source_body": "content/25 Orcamento 2027 Medidas/source/europa/saldo.json",
      "source_sha256": "9de28176be043c9e211df61cb5f541f35476edf5a37291417fa23f1848d524e5",
-     "start": 782,
+     "start": 814,
      "value": "-7.9"
     },
     {
-     "end": 805,
+     "end": 837,
      "printed": "3.4",
      "row": "europa-saldo-cy-2025",
      "source_body": "content/25 Orcamento 2027 Medidas/source/europa/saldo.json",
      "source_sha256": "9de28176be043c9e211df61cb5f541f35476edf5a37291417fa23f1848d524e5",
-     "start": 802,
+     "start": 834,
      "value": "3.4"
     }
    ],
@@ -6866,36 +7194,36 @@
      "tipo": "valor"
     },
     {
-     "fim": 718,
+     "fim": 750,
      "id": "europa-saldo-pt-2025",
-     "inicio": 715,
+     "inicio": 747,
      "livro": "PM",
      "sha256_linha": "36e3c4bd03a247c0915fbb9905fb7d0542bcd8ec90cbf2cc334e804b774ee030",
      "texto": "0.7",
      "tipo": "valor"
     },
     {
-     "fim": 748,
+     "fim": 780,
      "id": "europa-saldo-eu27_2020-2025",
-     "inicio": 744,
+     "inicio": 776,
      "livro": "PM",
      "sha256_linha": "6d7b8d0832936027f222e609055316cabee8289d97ed7921898718da559e4e5b",
      "texto": "−3.1",
      "tipo": "valor"
     },
     {
-     "fim": 786,
+     "fim": 818,
      "id": "europa-saldo-ro-2025",
-     "inicio": 782,
+     "inicio": 814,
      "livro": "PM",
      "sha256_linha": "e6f2aeabc6e0fe78b8536cd6d7a889eaf1957e3d96bf3d29a8e8531026eb9c45",
      "texto": "−7.9",
      "tipo": "valor"
     },
     {
-     "fim": 805,
+     "fim": 837,
      "id": "europa-saldo-cy-2025",
-     "inicio": 802,
+     "inicio": 834,
      "livro": "PM",
      "sha256_linha": "c2d61f3bff1d1f2e729aaf0b3ecef4b7801beca3443bd7fa13a5956238e728c0",
      "texto": "3.4",
@@ -6920,7 +7248,7 @@
     "europa-saldo-ro-2025",
     "europa-saldo-cy-2025"
    ],
-   "text": "The European Commission, in its spring 2026 forecast, before the proposal existed, pointed to 87.6 % for 2026 and 86.0 % for 2027, 1.5 points above the Budget. The medium-term budgetary plan of October 2024 pointed to 87.2 % for 2027, 2.7 points above: the Budget is ahead of the plan. In the European Union, by Eurostat's April 2026 update, Portugal had in 2025 a debt of 89.7 % of GDP against 81.7 % in the Union, 8.0 points above, between Estonia (24.1 %) and Greece (146.1 %), and below Spain (100.7 %); the notification of September 2026 by Statistics Portugal (Instituto Nacional de Estatística, INE), more recent, gives 89.2 % for the same year, and that is the report's number. On the balance, Portugal had 0.7 % of GDP in 2025 against −3.1 % in the Union, between Romania (−7.9 %) and Cyprus (3.4 %)."
+   "text": "The European Commission, in its spring 2026 forecast, before the proposal existed, pointed to 87.6 % for 2026 and 86.0 % for 2027, 1.5 points above the Budget. The medium-term budgetary plan of October 2024 pointed to 87.2 % for 2027, 2.7 points above: the Budget is ahead of the plan. In the European Union, by Eurostat's April 2026 update, Portugal had in 2025 a debt of 89.7 % of GDP against 81.7 % in the Union, 8.0 points above, between Estonia (24.1 %) and Greece (146.1 %), and below Spain (100.7 %); the notification of September 2026 by Statistics Portugal (Instituto Nacional de Estatística, INE), more recent, gives 89.2 % for the same year, and that is the report's number. On the balance, by Eurostat's July 2026 update, Portugal had 0.7 % of GDP in 2025 against −3.1 % in the Union, between Romania (−7.9 %) and Cyprus (3.4 %)."
   },
   {
    "figures": [
@@ -7152,39 +7480,12 @@
      "value": "947"
     },
     {
-     "end": 688,
-     "printed": "176",
-     "row": "pm-q3-2-r14-c0",
-     "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 685,
-     "value": "-176"
-    },
-    {
-     "end": 732,
-     "printed": "477",
-     "row": "pm-q3-2-r9-c0",
-     "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 729,
-     "value": "-477"
-    },
-    {
-     "end": 791,
-     "printed": "1.7",
-     "row": "pm-q4-1-r11-c2",
-     "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 788,
-     "value": "1,7"
-    },
-    {
-     "end": 872,
+     "end": 658,
      "printed": "1,548",
      "row": "der-oe2027-juros-variacao-cn",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 867,
+     "start": 653,
      "value": "1548"
     }
    ],
@@ -7252,38 +7553,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 688,
-     "id": "pm-q3-2-r14-c0",
-     "inicio": 685,
-     "livro": "PM",
-     "modificador": "abs",
-     "sha256_linha": "3dca330fdf7eb79d5f11edb6a55edc807dc56fbd769f9e16a81d247921651ecb",
-     "texto": "176",
-     "tipo": "valor"
-    },
-    {
-     "fim": 732,
-     "id": "pm-q3-2-r9-c0",
-     "inicio": 729,
-     "livro": "PM",
-     "modificador": "abs",
-     "sha256_linha": "4b9df836ca146bf20674572fc84f9644740ab3f304b0050181ef7985abc49359",
-     "texto": "477",
-     "tipo": "valor"
-    },
-    {
-     "fim": 791,
-     "id": "pm-q4-1-r11-c2",
-     "inicio": 788,
-     "livro": "PM",
-     "sha256_linha": "51c5088608fde56d4ef336a1281a8d13174bf520ead05635ab97c65f38a2983d",
-     "texto": "1.7",
-     "tipo": "valor"
-    },
-    {
-     "fim": 872,
+     "fim": 658,
      "id": "der-oe2027-juros-variacao-cn",
-     "inicio": 867,
+     "inicio": 653,
      "livro": "PM",
      "sha256_linha": "958c5b4bed6ca55660042daf403866dd414b7fceaa6f00d96e3bc11173133316",
      "texto": "1,548",
@@ -7298,11 +7570,9 @@
     "pm-q3-2-r13-c0",
     "pm-q3-2-r25-c0",
     "der-oe2027-medidas-anteriores-despesa",
-    "pm-q3-2-r14-c0",
-    "pm-q4-1-r11-c2",
     "der-oe2027-juros-variacao-cn"
    ],
-   "text": "The «seis descidas consecutivas do IRS» in the Government’s communication include those the report places before 2027: personal income tax loses 477 million in 2027. The Left Bloc, by the news report «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», says the Budget “dá migalhas” (gives crumbs): the phrase has no number, and the new measures for people are worth 121 million euros less in income tax through the exemption threshold and 100 million in the Solidarity Supplement for the Elderly, alongside 947 million already counted in wages. «O único imposto cuja receita diminuiu foi o IRC»: in the table of measures, corporate income tax loses 176 million in 2027 and personal income tax 477 million; in the accounts, direct taxes as a whole grow 1.7 %. No party, in this study’s documents, speaks about interest, which rises 1,548 million euros in 2027 in national accounts, more than all the measures together cost the balance within the same perimeter."
+   "text": "The «seis descidas consecutivas do IRS» in the Government’s communication include those the report places before 2027: personal income tax loses 477 million in 2027. The Left Bloc, by the news report «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», says the Budget “dá migalhas” (gives crumbs): the phrase has no number, and the new measures for people are worth 121 million euros less in income tax through the exemption threshold and 100 million in the Solidarity Supplement for the Elderly, alongside 947 million already counted in wages. No party, in this study’s documents, speaks about interest, which rises 1,548 million euros in 2027 in national accounts, more than the report's main measures together cost the balance within the same perimeter."
   },
   {
    "figures": [],
@@ -7337,20 +7607,29 @@
      "tipo": "valor"
     },
     {
-     "fim": 127,
+     "fim": 142,
      "id": "oe-2027-calendario-especialidade",
-     "inicio": 110,
+     "inicio": 125,
      "livro": "AN",
-     "sha256_linha": "cbe3de8930a46400f2a665ef2796f4bdf5b35198483066100ebbeb385f502b4d",
-     "texto": "18 to 23 November",
+     "sha256_linha": "98721eff843034029bc4a43358c23d199c0a7811e3fc4af381c8d2abfc3e9fd4",
+     "texto": "18 to 20 November",
      "tipo": "valor"
     },
     {
-     "fim": 165,
-     "id": "oe-2027-calendario-final-global",
-     "inicio": 154,
+     "fim": 168,
+     "id": "oe-2027-calendario-especialidade-final",
+     "inicio": 150,
      "livro": "AN",
-     "sha256_linha": "6e72544b20007465cab6e727d5e0916bee2fed6c47ce71230738f7f10616a406",
+     "sha256_linha": "190f00bba5236e5af7ee3c5098eb3cb9802bfd4adc99679179ad92dca39e5a55",
+     "texto": "23 and 24 November",
+     "tipo": "valor"
+    },
+    {
+     "fim": 206,
+     "id": "oe-2027-calendario-final-global",
+     "inicio": 195,
+     "livro": "AN",
+     "sha256_linha": "8da35f8b85b703f78484e711dd067e6d46f97dfe65bee2f13ebea2472a53df08",
      "texto": "24 November",
      "tipo": "valor"
     }
@@ -7359,9 +7638,10 @@
     "oe-2027-calendario-entrega",
     "oe-2027-calendario-generalidade",
     "oe-2027-calendario-especialidade",
+    "oe-2027-calendario-especialidade-final",
     "oe-2027-calendario-final-global"
    ],
-   "text": "The proposal was delivered on 8 October; the general debate is on 27 and 28 October; the committee stage from 18 to 23 November; the final global vote on 24 November. This study reads the proposal; whatever the committee stage changes goes into a dated revision."
+   "text": "The proposal was delivered on 8 October; the general debate is on 27 and 28 October; the debate and vote on the details from 18 to 20 November and on 23 and 24 November; the final global vote on 24 November. This study reads the proposal; whatever the committee stage changes goes into a dated revision."
   },
   {
    "figures": [],
@@ -8472,37 +8752,6 @@
    "status": "derivado",
    "unit": "%",
    "value": "5,4"
-  },
-  "der-salarios-publicos-retorno-pct": {
-   "check": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 )",
-   "derivation": {
-    "calculation": "86.2",
-    "components": [
-     "utao-salarios-irs",
-     "utao-salarios-cs",
-     "utao-salarios-valor"
-    ],
-    "formula": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 )",
-    "rounding_places": 1
-   },
-   "document": null,
-   "excerpt": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 ) = 86.2",
-   "id": "der-salarios-publicos-retorno-pct",
-   "locator": "Cálculo sobre as linhas identificadas",
-   "measure": "Salários públicos: receita fiscal e contributiva sobre a atualização",
-   "measure_en": "Public wages: tax and contributions as a share of the update",
-   "medida": "Salários públicos: receita fiscal e contributiva sobre a atualização",
-   "medida_en": "Public wages: tax and contributions as a share of the update",
-   "name": "Salários públicos: receita fiscal e contributiva sobre a atualização",
-   "name_en": "Public wages: tax and contributions as a share of the update",
-   "name_source": "Cálculo sobre as linhas identificadas",
-   "note": "",
-   "period": "2027",
-   "reference_date": "2027",
-   "stage": "derivada",
-   "status": "derivado",
-   "unit": "%",
-   "value": "86,2"
   },
   "diploma-habitacao-artigo10": {
    "article": "10.º",
@@ -10755,72 +11004,97 @@
   },
   "oe-2027-calendario-especialidade": {
    "document": {
-    "file": "content/23 Habitacao/source/ar-oe2027.html",
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
     "locator": "Página parlamentar, calendário da proposta",
     "page": 1,
     "printed_page": null,
-    "source_sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
+    "source_sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
     "title": "Orçamento do Estado para 2027"
    },
-   "entity_aliases": {
-    "Assembleia da República": []
-   },
    "evidence": {
-    "file": "content/23 Habitacao/source/ar-oe2027.html",
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
     "locator": "Página parlamentar, calendário da proposta",
-    "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+    "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
    },
-   "excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ",
-   "fetched_at": "2026-10-19T13:40:07.222623+00:00",
-   "group": "calendario",
+   "excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 20 de novembro",
+   "fetched_at": "2026-11-12T21:36:47.336997+00:00",
    "id": "oe-2027-calendario-especialidade",
    "locator": "Página parlamentar, calendário da proposta",
    "measure": "Debate e votação na especialidade",
-   "measure_en": "Committee debate and vote",
+   "measure_en": "Detailed debate and vote",
    "name": "Debate e votação na especialidade",
-   "name_en": "Committee debate and vote",
+   "name_en": "Detailed debate and vote",
    "name_source": "Página parlamentar, calendário da proposta",
-   "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
-   "period": "2026-11-18/2026-11-23",
-   "reference_date": "2026-11-18/2026-11-23",
-   "source_excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ",
+   "note": "",
+   "period": "2026-11-18/2026-11-20",
+   "reference_date": "2026-11-18/2026-11-20",
+   "source_excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 20 de novembro",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
    "unit": "data",
-   "value": "18 a 23 de novembro"
+   "value": "18 a 20 de novembro"
   },
-  "oe-2027-calendario-final-global": {
+  "oe-2027-calendario-especialidade-final": {
    "document": {
-    "file": "content/23 Habitacao/source/ar-oe2027.html",
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
     "locator": "Página parlamentar, calendário da proposta",
     "page": 1,
     "printed_page": null,
-    "source_sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
+    "source_sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
     "title": "Orçamento do Estado para 2027"
    },
-   "entity_aliases": {
-    "Assembleia da República": []
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
+    "locator": "Página parlamentar, calendário da proposta",
+    "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
+   },
+   "excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 23 e 24 de novembro",
+   "fetched_at": "2026-11-12T21:36:47.336997+00:00",
+   "id": "oe-2027-calendario-especialidade-final",
+   "locator": "Página parlamentar, calendário da proposta",
+   "measure": "Debate, votação na especialidade e votação final global",
+   "measure_en": "Detailed debate and vote and final overall vote",
+   "name": "Debate, votação na especialidade e votação final global",
+   "name_en": "Detailed debate and vote and final overall vote",
+   "name_source": "Página parlamentar, calendário da proposta",
+   "note": "",
+   "period": "2026-11-23/2026-11-24",
+   "reference_date": "2026-11-23/2026-11-24",
+   "source_excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 23 e 24 de novembro",
+   "source_type": "government",
+   "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
+   "status": "conferido",
+   "unit": "data",
+   "value": "23 e 24 de novembro"
+  },
+  "oe-2027-calendario-final-global": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
+    "locator": "Página parlamentar, calendário da proposta",
+    "page": 1,
+    "printed_page": null,
+    "source_sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
+    "title": "Orçamento do Estado para 2027"
    },
    "evidence": {
-    "file": "content/23 Habitacao/source/ar-oe2027.html",
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
     "locator": "Página parlamentar, calendário da proposta",
-    "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+    "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
    },
-   "excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro",
-   "fetched_at": "2026-10-19T13:40:07.222623+00:00",
-   "group": "calendario",
+   "excerpt": "Este ato marca o início do processo orçamental no Parlamento, que culmina com a votação final global da iniciativa a 24 de novembro.",
+   "fetched_at": "2026-11-12T21:36:47.336997+00:00",
    "id": "oe-2027-calendario-final-global",
    "locator": "Página parlamentar, calendário da proposta",
    "measure": "Votação final global",
-   "measure_en": "Final global vote",
+   "measure_en": "Final overall vote",
    "name": "Votação final global",
-   "name_en": "Final global vote",
+   "name_en": "Final overall vote",
    "name_source": "Página parlamentar, calendário da proposta",
-   "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
+   "note": "",
    "period": "2026-11-24",
    "reference_date": "2026-11-24",
-   "source_excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro",
+   "source_excerpt": "Este ato marca o início do processo orçamental no Parlamento, que culmina com a votação final global da iniciativa a 24 de novembro.",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
@@ -11102,6 +11376,39 @@
    "unit": "texto",
    "value": "Concluído o ciclo extraordinário de financiamento associado ao PRR, o volume global de investimento tenderá naturalmente a abrandar face aos níveis excecionais observados nos anos anteriores."
   },
+  "oe-2027-quadro-3-2-introducao": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Texto que antecede o Quadro 3.2; p. 58 PDF",
+    "page": 58,
+    "printed_page": 42,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Texto que antecede o Quadro 3.2; p. 58 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "oe-2027-quadro-3-2-introducao",
+   "locator": "Texto que antecede o Quadro 3.2; p. 58 PDF",
+   "measure": "Introdução do Quadro 3.2",
+   "measure_en": "Introduction to Table 3.2",
+   "name": "Introdução do Quadro 3.2",
+   "name_en": "Introduction to Table 3.2",
+   "name_source": "Texto que antecede o Quadro 3.2; p. 58 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "source_excerpt": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "texto",
+   "value": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027."
+  },
   "oe-2027-quadro-3-2-nota-i": {
    "document": {
     "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
@@ -11145,6 +11452,123 @@
    },
    "unit": "texto",
    "value": "Nota: (i) invariante."
+  },
+  "oe-2027-quadro-a1-1-contribuicoes-salarios": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro A1.1. Quadro de políticas invariantes; Contribuições sociais | Receita decorrente do aumento de salários; p. 408 PDF",
+    "page": 408,
+    "printed_page": 392,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro A1.1. Quadro de políticas invariantes; Contribuições sociais | Receita decorrente do aumento de salários; p. 408 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "Contribuições sociais | Receita decorrente do aumento de salários -471",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "oe-2027-quadro-a1-1-contribuicoes-salarios",
+   "locator": "Quadro A1.1. Quadro de políticas invariantes; Contribuições sociais | Receita decorrente do aumento de salários; p. 408 PDF",
+   "measure": "Contribuições sociais | Receita decorrente do aumento de salários",
+   "measure_en": "Social contributions | Revenue from wage increases",
+   "name": "Contribuições sociais | Receita decorrente do aumento de salários",
+   "name_en": "Social contributions | Revenue from wage increases",
+   "name_source": "Quadro A1.1. Quadro de políticas invariantes; Contribuições sociais | Receita decorrente do aumento de salários; p. 408 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "selection": {
+    "end": 70,
+    "pattern": "(?P<value>\\-471)(?=\\s|$)",
+    "source_value": "-471",
+    "start": 66
+   },
+   "source_excerpt": "Contribuições sociais | Receita decorrente do aumento de salários -471",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "-471"
+  },
+  "oe-2027-quadro-a1-1-impacto-saldo": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro A1.1. Quadro de políticas invariantes; Impacto no saldo; p. 408 PDF",
+    "page": 408,
+    "printed_page": 392,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro A1.1. Quadro de políticas invariantes; Impacto no saldo; p. 408 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "Impacto no saldo 5 411",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "oe-2027-quadro-a1-1-impacto-saldo",
+   "locator": "Quadro A1.1. Quadro de políticas invariantes; Impacto no saldo; p. 408 PDF",
+   "measure": "Impacto no saldo",
+   "measure_en": "Impact on the balance",
+   "name": "Impacto no saldo",
+   "name_en": "Impact on the balance",
+   "name_source": "Quadro A1.1. Quadro de políticas invariantes; Impacto no saldo; p. 408 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "selection": {
+    "end": 22,
+    "pattern": "(?P<value>5\\ 411)(?=\\s|$)",
+    "source_value": "5 411",
+    "start": 17
+   },
+   "source_excerpt": "Impacto no saldo 5 411",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "5 411"
+  },
+  "oe-2027-quadro-a1-1-irs-salarios-pensoes": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro A1.1. Quadro de políticas invariantes; IRS | Receita decorrente do aumento de salários e pensões; p. 408 PDF",
+    "page": 408,
+    "printed_page": 392,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro A1.1. Quadro de políticas invariantes; IRS | Receita decorrente do aumento de salários e pensões; p. 408 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "IRS | Receita decorrente do aumento de salários e pensões -590",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "oe-2027-quadro-a1-1-irs-salarios-pensoes",
+   "locator": "Quadro A1.1. Quadro de políticas invariantes; IRS | Receita decorrente do aumento de salários e pensões; p. 408 PDF",
+   "measure": "IRS | Receita decorrente do aumento de salários e pensões",
+   "measure_en": "Personal income tax | Revenue from wage and pension increases",
+   "name": "IRS | Receita decorrente do aumento de salários e pensões",
+   "name_en": "Personal income tax | Revenue from wage and pension increases",
+   "name_source": "Quadro A1.1. Quadro de políticas invariantes; IRS | Receita decorrente do aumento de salários e pensões; p. 408 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "selection": {
+    "end": 62,
+    "pattern": "(?P<value>\\-590)(?=\\s|$)",
+    "source_value": "-590",
+    "start": 58
+   },
+   "source_excerpt": "IRS | Receita decorrente do aumento de salários e pensões -590",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "-590"
   },
   "oe-2027-remuneracoes-atualizacao-pct": {
    "document": {
@@ -16798,6 +17222,240 @@
    "value": "-0,1",
    "visual_checked": true
   },
+  "pm-q4-4-irc-2026": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2026; p. 72 PDF",
+    "page": 72,
+    "printed_page": 56,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2026; p. 72 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "- IRC 9 704 9 605 -1,0",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "pm-q4-4-irc-2026",
+   "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2026; p. 72 PDF",
+   "measure": "IRC; 2026",
+   "measure_en": "Corporate income tax; 2026",
+   "name": "IRC; 2026",
+   "name_en": "Corporate income tax; 2026",
+   "name_source": "Quadro 4.4. Receita fiscal do Estado; IRC; 2026; p. 72 PDF",
+   "note": "",
+   "period": "2026",
+   "reference_date": "2026",
+   "selection": {
+    "end": 11,
+    "pattern": "(?P<value>9\\ 704)(?=\\s|$)",
+    "source_value": "9 704",
+    "start": 6
+   },
+   "source_excerpt": "- IRC 9 704 9 605 -1,0",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "9 704"
+  },
+  "pm-q4-4-irc-2027": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2027; p. 72 PDF",
+    "page": 72,
+    "printed_page": 56,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2027; p. 72 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "- IRC 9 704 9 605 -1,0",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "pm-q4-4-irc-2027",
+   "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2027; p. 72 PDF",
+   "measure": "IRC; 2027",
+   "measure_en": "Corporate income tax; 2027",
+   "name": "IRC; 2027",
+   "name_en": "Corporate income tax; 2027",
+   "name_source": "Quadro 4.4. Receita fiscal do Estado; IRC; 2027; p. 72 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "selection": {
+    "end": 17,
+    "pattern": "(?P<value>9\\ 605)(?=\\s|$)",
+    "source_value": "9 605",
+    "start": 12
+   },
+   "source_excerpt": "- IRC 9 704 9 605 -1,0",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "9 605"
+  },
+  "pm-q4-4-irc-variacao": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; variacao; p. 72 PDF",
+    "page": 72,
+    "printed_page": 56,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; variacao; p. 72 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "- IRC 9 704 9 605 -1,0",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "pm-q4-4-irc-variacao",
+   "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; variacao; p. 72 PDF",
+   "measure": "IRC; variacao",
+   "measure_en": "Corporate income tax; change",
+   "name": "IRC; variacao",
+   "name_en": "Corporate income tax; change",
+   "name_source": "Quadro 4.4. Receita fiscal do Estado; IRC; variacao; p. 72 PDF",
+   "note": "",
+   "period": "2027/2026",
+   "reference_date": "2027/2026",
+   "selection": {
+    "end": 22,
+    "pattern": "(?P<value>\\-1,0)(?=\\s|$)",
+    "source_value": "-1,0",
+    "start": 18
+   },
+   "source_excerpt": "- IRC 9 704 9 605 -1,0",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "%",
+   "value": "-1,0"
+  },
+  "pm-q4-4-irs-2026": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2026; p. 72 PDF",
+    "page": 72,
+    "printed_page": 56,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2026; p. 72 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "- IRS 19 706 20 385 3,4",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "pm-q4-4-irs-2026",
+   "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2026; p. 72 PDF",
+   "measure": "IRS; 2026",
+   "measure_en": "Personal income tax; 2026",
+   "name": "IRS; 2026",
+   "name_en": "Personal income tax; 2026",
+   "name_source": "Quadro 4.4. Receita fiscal do Estado; IRS; 2026; p. 72 PDF",
+   "note": "",
+   "period": "2026",
+   "reference_date": "2026",
+   "selection": {
+    "end": 12,
+    "pattern": "(?P<value>19\\ 706)(?=\\s|$)",
+    "source_value": "19 706",
+    "start": 6
+   },
+   "source_excerpt": "- IRS 19 706 20 385 3,4",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "19 706"
+  },
+  "pm-q4-4-irs-2027": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2027; p. 72 PDF",
+    "page": 72,
+    "printed_page": 56,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2027; p. 72 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "- IRS 19 706 20 385 3,4",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "pm-q4-4-irs-2027",
+   "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2027; p. 72 PDF",
+   "measure": "IRS; 2027",
+   "measure_en": "Personal income tax; 2027",
+   "name": "IRS; 2027",
+   "name_en": "Personal income tax; 2027",
+   "name_source": "Quadro 4.4. Receita fiscal do Estado; IRS; 2027; p. 72 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "selection": {
+    "end": 19,
+    "pattern": "(?P<value>20\\ 385)(?=\\s|$)",
+    "source_value": "20 385",
+    "start": 13
+   },
+   "source_excerpt": "- IRS 19 706 20 385 3,4",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "20 385"
+  },
+  "pm-q4-4-irs-variacao": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; variacao; p. 72 PDF",
+    "page": 72,
+    "printed_page": 56,
+    "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "title": "Orçamento do Estado 2027 RELATÓRIO"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+    "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; variacao; p. 72 PDF",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+   },
+   "excerpt": "- IRS 19 706 20 385 3,4",
+   "fetched_at": "2026-10-13T18:47:56.980564+00:00",
+   "id": "pm-q4-4-irs-variacao",
+   "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; variacao; p. 72 PDF",
+   "measure": "IRS; variacao",
+   "measure_en": "Personal income tax; change",
+   "name": "IRS; variacao",
+   "name_en": "Personal income tax; change",
+   "name_source": "Quadro 4.4. Receita fiscal do Estado; IRS; variacao; p. 72 PDF",
+   "note": "",
+   "period": "2027/2026",
+   "reference_date": "2027/2026",
+   "selection": {
+    "end": 23,
+    "pattern": "(?P<value>3,4)(?=\\s|$)",
+    "source_value": "3,4",
+    "start": 20
+   },
+   "source_excerpt": "- IRS 19 706 20 385 3,4",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "%",
+   "value": "3,4"
+  },
   "pm-remuneracoes-atualizacao": {
    "document": {
     "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
@@ -18994,52 +19652,6 @@
    "unit": "milhões de euros",
    "value": "471"
   },
-  "utao-salarios-irs": {
-   "document": {
-    "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
-    "locator": "§38; p. 22 PDF (21 impressa)",
-    "page": 22,
-    "printed_page": 21,
-    "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-    "title": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
-   },
-   "entity_aliases": {
-    "Unidade Técnica de Apoio Orçamental": []
-   },
-   "evidence": {
-    "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
-    "locator": "§38; p. 22 PDF (21 impressa)",
-    "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
-   },
-   "excerpt": "A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.",
-   "fetched_at": "2026-10-19T22:23:48.082039+00:00",
-   "group": "leituras-utao",
-   "id": "utao-salarios-irs",
-   "locator": "§38; p. 22 PDF (21 impressa)",
-   "measure": "UTAO: receita de IRS da atualização salarial",
-   "measure_en": "UTAO: income tax from the wage update",
-   "medida": "UTAO: receita de IRS da atualização salarial",
-   "medida_en": "UTAO: income tax from the wage update",
-   "name": "UTAO: receita de IRS da atualização salarial",
-   "name_en": "UTAO: income tax from the wage update",
-   "name_source": "§38; p. 22 PDF (21 impressa)",
-   "note": "",
-   "period": "2027",
-   "published_at": "2026-10-19",
-   "reference_date": "2027",
-   "selection": {
-    "end": 136,
-    "pattern": "IRS \\((?P<value>590) M€",
-    "source_value": "590",
-    "start": 133
-   },
-   "source_excerpt": "A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.",
-   "source_type": "government",
-   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
-   "status": "conferido",
-   "unit": "milhões de euros",
-   "value": "590"
-  },
   "utao-salarios-valor": {
    "document": {
     "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
@@ -19126,6 +19738,45 @@
    "unit": "afirmação",
    "value": "O MF prevê um saldo orçamental de 0,0% do PIB em 2026 e de 0,1% do PIB em 2027 (Gráfico 7). Estes resultados correspondem ao quarto e ao quinto anos consecutivos com saldo positivo ou nulo, na sequência dos excedentes de 2023, 2024 e 2025. Numa perspetiva de longo prazo, o saldo orçamental médio no período 2005–2025 foi de −3,9% do PIB.",
    "value_not_numeric": true
+  },
+  "utao-t8-irs-salarios-pensoes": {
+   "document": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/utao-oe2027-preliminar.pdf",
+    "locator": "Tabela 8; coluna POE/2027 MF, M€; IRS - Receita de incremento de salários e pensões; p. 21 PDF",
+    "page": 21,
+    "printed_page": 20,
+    "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+    "title": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
+   },
+   "evidence": {
+    "file": "content/27 Orcamento 2027 O que muda/source/cor3/utao-oe2027-preliminar.pdf",
+    "locator": "Tabela 8; coluna POE/2027 MF, M€; IRS - Receita de incremento de salários e pensões; p. 21 PDF",
+    "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+   },
+   "excerpt": "IRS - Receita de incremento de salários e pensões Permanente 668 0,20 590 0,17",
+   "fetched_at": "2026-10-19T22:23:48.082039+00:00",
+   "id": "utao-t8-irs-salarios-pensoes",
+   "locator": "Tabela 8; coluna POE/2027 MF, M€; IRS - Receita de incremento de salários e pensões; p. 21 PDF",
+   "measure": "IRS - Receita de incremento de salários e pensões",
+   "measure_en": "Personal income tax - Revenue from wage and pension increases",
+   "name": "IRS - Receita de incremento de salários e pensões",
+   "name_en": "Personal income tax - Revenue from wage and pension increases",
+   "name_source": "Tabela 8; coluna POE/2027 MF, M€; IRS - Receita de incremento de salários e pensões; p. 21 PDF",
+   "note": "",
+   "period": "2027",
+   "reference_date": "2027",
+   "selection": {
+    "end": 73,
+    "pattern": "0,20 (?P<value>590) 0,17",
+    "source_value": "590",
+    "start": 70
+   },
+   "source_excerpt": "IRS - Receita de incremento de salários e pensões Permanente 668 0,20 590 0,17",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "milhões de euros",
+   "value": "590"
   },
   "utao-taxa-implicita-2026": {
    "document": {

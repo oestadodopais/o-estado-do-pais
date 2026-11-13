@@ -25,6 +25,11 @@ export function dataDeCalendarioConferida(linha) {
   if(!Number.isFinite(date.getTime())||date.toISOString().slice(0,10)!==linha.reference_date)return false;
   const meses=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
   const esperado=date.getUTCDate()+' de '+meses[date.getUTCMonth()];
+  const intervalo=String(linha.value).match(/^(\d{1,2}) a (\d{1,2}) de ([a-zç]+)$/);
+  if(intervalo){
+    const inicio=+intervalo[1],fim=+intervalo[2];
+    return inicio>=1&&inicio<=fim&&fim===date.getUTCDate()&&intervalo[3]===meses[date.getUTCMonth()]&&String(linha.excerpt).includes(linha.value);
+  }
   return linha.value===esperado&&String(linha.excerpt).includes(esperado);
 }
 
@@ -45,8 +50,10 @@ export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   const data = linha.unit === 'data' && /^(?:19|20)\d{2}-\d{2}-\d{2}$/.test(linha.reference_date ?? '');
   const formaData = (/** @type {unknown} */ v) => {
     if(typeof v !== 'string') return null;
-    const m=v.match(/^(\d{1,2})(?: de ([a-zç]+))?$/);
-    return m && +m[1]>=1 && +m[1]<=31 && (!m[2] || meses.includes(m[2])) ? v : null;
+    const m=v.match(/^(\d{1,2})(?: a (\d{1,2}))?(?: de ([a-zç]+))?$/);
+    if(!m||+m[1]<1||+m[1]>31||(m[2]&&(+m[2]<+m[1]||+m[2]>31))||(m[3]&&!meses.includes(m[3])))return null;
+    if(m[3]){const ano=+String(linha.reference_date).slice(0,4),mes=meses.indexOf(m[3]),fim=+(m[2]??m[1]);if(new Date(Date.UTC(ano,mes,fim)).getUTCMonth()!==mes)return null;}
+    return v;
   };
   const forma = data ? formaData : textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
   if(data && entradas.length){

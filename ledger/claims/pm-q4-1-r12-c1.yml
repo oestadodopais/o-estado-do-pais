@@ -15,6 +15,8 @@ name: "Impostos indiretos; 2027; orçamento; milhões de euros"
 name_source: "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Impostos indiretos; coluna 2: 2027; orçamento; milhões de euros; p. 68 PDF (52 impressa)"
 status: "conferido"
 name_en: "Indirect taxes; 2027; budget; million euros"
+measure: "Impostos indiretos"
+measure_en: "Indirect taxes"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

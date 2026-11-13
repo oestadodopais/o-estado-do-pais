@@ -15,13 +15,15 @@ name: "Salário mínimo nacional"
 name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
 status: "conferido"
 name_en: "National minimum wage"
+measure: "Salário mínimo nacional"
+measure_en: "National minimum wage"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Partido Comunista Português"
 document:
   title: "Sobre o Orçamento do Estado para 2027"
   edition: "2026"
-  locator: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+  locator: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento; p. 1"
   source_sha256: "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
   page: 1
   kind: "html"

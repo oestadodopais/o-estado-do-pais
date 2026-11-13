@@ -1,0 +1,39 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "flexibilizacao-carreira-minima"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "40"
+unit: "anos"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Grupo de Trabalho para a Reforma da Seguranca Social"
+document:
+  title: "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações"
+  edition: "2026"
+  locator: "p. 303 do PDF"
+  page: 303
+  kind: "pdf"
+source_url: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef"
+access_date: "2026-09-23"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, extração relatorio-full.txt (sha256 bfdcf39a986889dd…), p. 303 do PDF (p. 264 impressa), linha 16484 → «muito longas, flexibilização aos 60 anos com 40 anos de carreira, profissões de desgaste rápido e situações»"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "penalizacoes-por-reforma-antecipada-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Linha nova do bloco M4b (2026-09-23). A carreira do regime de flexibilização, uma das exceções que afastam o factor de sustentabilidade (p. 264). · Cruzado de ResearchHub content/11 Seguranca Social · flexibilizacao-carreira-minima."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

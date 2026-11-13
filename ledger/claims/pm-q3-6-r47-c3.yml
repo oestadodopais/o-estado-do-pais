@@ -15,6 +15,8 @@ name: "Efeito PIB; 2027; orçamento; pontos percentuais do PIB"
 name_source: "Quadro 3.6. Dívida pública; Efeito PIB; coluna 4: 2027; orçamento; pontos percentuais do PIB; p. 65 PDF (49 impressa)"
 status: "conferido"
 name_en: "GDP effect; 2027; budget; percentage points of GDP"
+measure: "Efeito PIB"
+measure_en: "GDP effect"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

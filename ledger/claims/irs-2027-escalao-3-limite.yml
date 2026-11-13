@@ -15,6 +15,8 @@ name: "IRS: limite superior do escalão 3 em 2027"
 name_source: "Artigo 68.º; p. 75 PDF"
 status: "conferido"
 name_en: "Income tax: upper limit of bracket 3 in 2027"
+measure: "IRS: limite superior do escalão 3 em 2027"
+measure_en: "Income tax: upper limit of bracket 3 in 2027"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Presidência do Conselho de Ministros"

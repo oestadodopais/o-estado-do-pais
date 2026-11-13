@@ -68,8 +68,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-be-despejos",
-        "origin_row_sha256": "6adfd620520f4367b7c5e349b72d03d5c4ac6f8625d190e96fac8979c6b8804d",
-        "exported_row_sha256": "1882ba334c707afa0c0c1c3040f36d49db5e4794087e6bb9287cf634cdfac8c6"
+        "origin_row_sha256": "e17399260f7506e5f9116b0ac947f2391768500bb561511f17c7132ef48de965",
+        "exported_row_sha256": "7a82657602afb639346ff790854c387cfd0f55fb1f0d5907e3092a4461c5be96"
       }
     },
     "hab-bpstat-12533724": {
@@ -82,17 +82,17 @@
           "title": "Montante de novas operações de empréstimos à habitação",
           "edition": "2026-08-31",
           "locator": "17=2705; 18=35; 19=7; 40=4264; 43=4427; 48=3777; 54=3019; 56=3118; 66=2799; 70=3331; reference_date=2026-08-31; 29=3609; 59=308; 63=349; value[283]",
-          "source_sha256": "310879ddfe1c89bdb360cc3d6e9250c1b1a351472e77c454b9bce7526d500f43",
+          "source_sha256": "d1203b53423903c50d8378186f91e1cd969e413e7f73c20ab703a03de2b70fb9",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"19\": \"7\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3331\", \"reference_date\": \"2026-08-31\", \"29\": \"3609\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"2553.0\", \"status\": \"F\"}",
+        "excerpt": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"19\": \"7\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3331\", \"reference_date\": \"2026-08-31\", \"29\": \"3609\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"2643.0\", \"status\": \"F\"}",
         "reference_date": "2026-08-31"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-bpstat-12533724",
-        "origin_row_sha256": "b786c2f11d7486d07d3f769e8da81c923cfec3277f1ab9675980c61778f1ace3",
-        "exported_row_sha256": "0040fb93babc82fe8058c2dd65e8938fa630fe605434bb3ba98fb78d4f7f726a"
+        "origin_row_sha256": "67450c55fd18958b969d1ef9db13b6101c52d74c4aa372e6bd4b9f7556799d03",
+        "exported_row_sha256": "5ee7acf9fd8ecd7db34d17fab3d706bd4d3c5abaaf93c6928191d75eee3ac8fe"
       }
     },
     "hab-bpstat-12533735": {
@@ -105,17 +105,17 @@
           "title": "Taxa de juro (TAA) de novas operações de empréstimos à habitação",
           "edition": "2026-08-31",
           "locator": "17=2705; 18=35; 40=4264; 43=4427; 48=3777; 54=3019; 56=3118; 66=2799; 70=3327; reference_date=2026-08-31; 29=3648; 59=308; 63=349; value[283]",
-          "source_sha256": "7be14fc3b6246343514b5f725129e8f93b76bb77642437d6f191d3f42c6b0cb1",
+          "source_sha256": "59d0046a14b798d0b9566a8e2a81442cb0e6b26998abb144e73128184434b356",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.0\", \"status\": \"F\"}",
+        "excerpt": "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.01\", \"status\": \"F\"}",
         "reference_date": "2026-08-31"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-bpstat-12533735",
-        "origin_row_sha256": "41e045a81144691dd0f972e787c79ba0b7ed5a1397ff447d339a46b861252df6",
-        "exported_row_sha256": "026df708f46f863ff63209c9b95b7a069aebd78f76d831d7ac1e48bb6b2bef6c"
+        "origin_row_sha256": "2186057a6b127136329f9e31f0294e9cd1e792efafe5ecfd85c49a5eeddfd545",
+        "exported_row_sha256": "ac966940286e0477c053201c7a52870ffb6a5c187db6932f3f4d7acdc0a53ab1"
       }
     },
     "hab-bpstat-12557378": {
@@ -183,8 +183,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-cgtp-convocatoria",
-        "origin_row_sha256": "d43cc8b3956bbd0e8bafffc42131cf2ab94e941f91a84d9323aeb03faa93a460",
-        "exported_row_sha256": "21d882abacbb470d48691e41ea77d1e9d189bf6e9dcbab5b41a296159771d778"
+        "origin_row_sha256": "e6fff68ce39d2b9ef11c60f5047e5d5872f558b908f613921c993a92470ea26c",
+        "exported_row_sha256": "f75991b98af34b4c7157f961c1fef2b703113dc88162b053389a17fb69122062"
       }
     },
     "hab-chega-reinvestimento": {
@@ -207,8 +207,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-chega-reinvestimento",
-        "origin_row_sha256": "8ad58464ec9ab1a9422617a5535841ec8abe7d7ffd9a8d1f6168f3fcd796a87f",
-        "exported_row_sha256": "f3eaf8f29876d25bd523e682d1323816dc153a8cf1cb8bf3022096f83f3bc45c"
+        "origin_row_sha256": "6353a1084fdefd806a24b7fe8e942839c1d6e75580b9cd5093274151a846a715",
+        "exported_row_sha256": "ac63e73b37a70906edaf3cadb3af5ed2a0d11d806bbd0f4d3fd7308371c26ce9"
       }
     },
     "hab-demo-pjan-eu27_2020-2025": {
@@ -371,8 +371,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-governo-arrendamento",
-        "origin_row_sha256": "900786295af0e6657f7dcd209037a3742def62cb56a7d36e9d7815e674817f82",
-        "exported_row_sha256": "e39eb19e3b72c05c32e6d78e6484d29a0d8b570c053ed46471a7a4794d819048"
+        "origin_row_sha256": "1454bb189c721f09647f281f72447540b42e09418d7c517e8e48d696a31079d2",
+        "exported_row_sha256": "b2cf21ea1384d2f816c5125a556022500b8c43dd1cad09c0de292800034faca3"
       }
     },
     "hab-governo-construir": {
@@ -394,8 +394,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-governo-construir",
-        "origin_row_sha256": "7f0b5d23924e43bad037d2aa53e968f015a06f5b152ef1425145a7e49700b186",
-        "exported_row_sha256": "7a90e7bbfc7c0d1d58624bd221291ccfce579e97cd49f3927319650366e6a7a1"
+        "origin_row_sha256": "8692440237260316a0e28fae7ceb3892ec7f9ef18528a8c15c3aa6ce2bf0494b",
+        "exported_row_sha256": "0d657806af0bacafbbd5c0735fab4f3ac38338000491abfdc41b27f222a2322b"
       }
     },
     "hab-governo-feh": {
@@ -417,8 +417,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-governo-feh",
-        "origin_row_sha256": "e2789c3a3122c3232e96fdefc47851027317e23067aa30d690300ca47eb5a2ca",
-        "exported_row_sha256": "194d18ab33bb1f005291eea565757bb5a4ea3a001c62b30d93c945fd4d467cf9"
+        "origin_row_sha256": "33ad7ee0ea459c80659df4e50f069437b7f965128e65967e24af078e39f6c42e",
+        "exported_row_sha256": "24d92c1b432583129103429dd19ec5431450c1a541461d3928b25114f844063b"
       }
     },
     "hab-il-proposta": {
@@ -440,8 +440,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-il-proposta",
-        "origin_row_sha256": "61c9e1913b4d7b1b05623f8a5c31310e9cfd011c539c29cd707d03eee24e4b78",
-        "exported_row_sha256": "f0efa5ef0d197139206a4f6b5acc9b17fbd190492fa15d0b4b6c3d8c2be0cabc"
+        "origin_row_sha256": "bad6292546edbb81294866e96bc527f81eaf082f227034f52c8ef1528c478845",
+        "exported_row_sha256": "669005d647f40ce0f30be9f3e292de055cd06edd99356bfd1dce13856fbc543d"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
@@ -914,17 +914,17 @@
           "title": "Housing cost overburden rate by age, sex and poverty status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; rskpovth=TOTAL; age=Y16-29; sex=T; geo=EU27_2020; time=2025; value[10]",
-          "source_sha256": "2d38a6468f55fbafc82b398efb9b1c0ee38a2d2f59cfe63b51b3078f076ea8fc",
+          "source_sha256": "d9a6b98030755c8a03a7b9edab2ac75ae5577a749dddabafb6a59f78c1b8e52c",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.3\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.2\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025",
-        "origin_row_sha256": "a64c09ecc15429cb4d14ce53ca67e5cd869d4d93a362debbda4b51ac2c687a80",
-        "exported_row_sha256": "8b70ca9196258407a36a05001ba5a69fcc15ff85c5f9669e0a13067227e5fb4d"
+        "origin_row_sha256": "bb0129e29bdc000511e78841faccfc3ca652cb1295da736cd8699aedac96097b",
+        "exported_row_sha256": "a220bc9f79b2117ab20e9de95848b594a89a14c6ececd9c110a943cf3823fd89"
       }
     },
     "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
@@ -960,17 +960,17 @@
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=OWN_L; geo=EU27_2020; time=2025; value[318]",
-          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+          "source_sha256": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"5.0\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"4.6\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025",
-        "origin_row_sha256": "b5befa1c48445fd78ffa2fd660c8ba70f352308b0fed4807f8d5320c58760798",
-        "exported_row_sha256": "f17a2c58d62b9e3fa0717fca5c1a2f5ad7621bc1095ee1e1247633a5c4f595ae"
+        "origin_row_sha256": "2ca5e0d4c9fbdd180ee56de655bdee9990aadb5ea8b0e3b4c85e8fd43524c93e",
+        "exported_row_sha256": "31d6057bb902912d0d657daf004f9fdb4cf454233066aba90cd5eb6ef7c4c6be"
       }
     },
     "hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
@@ -1006,17 +1006,17 @@
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=OWN_NL; geo=EU27_2020; time=2025; value[626]",
-          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+          "source_sha256": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.8\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.7\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025",
-        "origin_row_sha256": "4cdc87e7d7db2dc88a6a1b3905aa706a66132210327ec300ada8c965f2ea265b",
-        "exported_row_sha256": "c31c19989afff7e5edc1dde7b36de85f2e36816e30d91e05b9448786759eca9e"
+        "origin_row_sha256": "b3f81089854c446c8d37ad55e4eb21f6c6a8306cf9bdc24b551e7f637c14c3da",
+        "exported_row_sha256": "860d4db15a21241d09bdb6f77c9d29589306aedea065543ed966c08f49a264da"
       }
     },
     "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
@@ -1098,17 +1098,17 @@
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=EU27_2020; time=2025; value[934]",
-          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+          "source_sha256": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.6\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.5\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025",
-        "origin_row_sha256": "38f752bad540aac4780357d0d64259ec7a8f0b114aca54d021c910cb4a60e96d",
-        "exported_row_sha256": "5172e79113b5b9fab7085e2c10455c3941f1d60d3584889ad2cd8d98f8259fad"
+        "origin_row_sha256": "e76304cf630a6274bbb3112ee6b72ff6052892b53e2b9f0b1cf8e4031854d733",
+        "exported_row_sha256": "c49959f91ac57032a4de5aa0e7d3d01ef3241a4171915e00ef6943e430e455b5"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": {
@@ -1305,17 +1305,17 @@
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=TOTAL; geo=EU27_2020; time=2025; value[10]",
-          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+          "source_sha256": "af29ab2dbdd8d4975f5bb8f6e438a5af4557cc4f5cab4fa5fa4f885a504079da",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.6\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
-        "origin_row_sha256": "7f62b91a504f917585d44948825e051cfa50d1b62aac46eb6cb699bbfe23cdba",
-        "exported_row_sha256": "225c3546a0b59722c7d52c86be930e48ea0bd692c38057932b80fc7555aa0387"
+        "origin_row_sha256": "81f0b306622a1761f34c9a90909925e2be98344cd336a81a43b6a8218c0f9151",
+        "exported_row_sha256": "22ace60ab52aa9699c081f2a8eaa86f8e0939e4588af7be030a2f6da5fc3fb65"
       }
     },
     "hab-ilc-lvho07c-a-pc-total-pt-2015": {
@@ -1820,8 +1820,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-acampados",
-        "origin_row_sha256": "3cba17a054af3c36d0d0139f3aeb2015eca84456067b0689972941fc57eaccba",
-        "exported_row_sha256": "fa9567ed7fd740cceae8d0598ef1fdddd1428da03072865c7377bb07c24f67fc"
+        "origin_row_sha256": "2533d6d1e63de3a640f4581c04d06f972665403c586c2e69965580713919a6f6",
+        "exported_row_sha256": "d5ab710afebb69b61db9be1685f4807d04793e948b71e591987039f30a27843c"
       }
     },
     "hab-imprensa-amorim": {
@@ -1843,8 +1843,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-amorim",
-        "origin_row_sha256": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
-        "exported_row_sha256": "090dc91840dd35a98957b81bed9ba9cb0c6922f4ae8f88ac838a27202b6a253f"
+        "origin_row_sha256": "4d9dd80cb4265ed9c2b038523017177bb4fe4722836ed6c0f1f56697fd8cae68",
+        "exported_row_sha256": "59535e98c3361d379f57de5757b6943df757e2d5c24f0815128f1b0fe52b33e0"
       }
     },
     "hab-imprensa-assistidos": {
@@ -1866,8 +1866,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-assistidos",
-        "origin_row_sha256": "1dbc88395420b5cdb47b687973df1dd2888497214a591c4f92d5d5ab2fced012",
-        "exported_row_sha256": "ac174d9c8ca98d595595ce12ba32cff825b2cbeaba78c88ab286db220478edae"
+        "origin_row_sha256": "37a44933892db9f71fcfe0a4807761c0a864fd4bf06e7f95097e060a6972e4b7",
+        "exported_row_sha256": "84b4ccb60cf45afea75beaa7a956696c8ba4188eda2db9fc870a1e9a45b7d23f"
       }
     },
     "hab-imprensa-debate-custos": {
@@ -1889,8 +1889,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-debate-custos",
-        "origin_row_sha256": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
-        "exported_row_sha256": "e505ba54112c69227e1079b10b9c18c92a09f5611bdf889e7106c305d568a108"
+        "origin_row_sha256": "3675c44732c15f979485f6c1f2c9ba5cd912429f6ae0e43732641d6ba0c116b6",
+        "exported_row_sha256": "40218d09cb6b32a85af2514f7de821c63e7c065118e4c788931d94bccdd0b6a4"
       }
     },
     "hab-imprensa-debate-protecao": {
@@ -1912,8 +1912,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-debate-protecao",
-        "origin_row_sha256": "7c158cdf31aad80dbad95ccc8927a4598328f6773fc5114f0d9069fd3de08573",
-        "exported_row_sha256": "09a076c10798fbf7ce551d4cf4cd1d9a86abc89eac7db8e9bf3fcfc5d4c83f48"
+        "origin_row_sha256": "3057bdcaed4e4b37b36a5f1b749dfee754564458e397cc4f5736d7e4f8449d52",
+        "exported_row_sha256": "8653b48751753762bf2be7b527490da8462bb220ea2e88f55463526cb4414bce"
       }
     },
     "hab-imprensa-feridos35": {
@@ -1935,8 +1935,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-feridos35",
-        "origin_row_sha256": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
-        "exported_row_sha256": "15d053591948a91c3962eb0a6a570f63af58dfa33788f9580e77938d824cfad2"
+        "origin_row_sha256": "725087b3f050930dcaa5c32eb5d9548caf6b78690b7c91536f23951c7cf7fde2",
+        "exported_row_sha256": "bb99dc447bea92a1d29683380943bc34d2d57e2505002dee4faaf0459b2d8118"
       }
     },
     "hab-imprensa-feridos37": {
@@ -1958,8 +1958,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-feridos37",
-        "origin_row_sha256": "92de92ef35ee2792043a57f726143360f4b5f3415a007f099e0957a598ef3995",
-        "exported_row_sha256": "b791572027a8c1f1d62b0eee332f51c4be3becbcc86282d1d33f685473141ef0"
+        "origin_row_sha256": "f2f18e175f53a318d3c6ab02fdcd987c1fa7a4eb5afd93eeb2eb782587ddbfb7",
+        "exported_row_sha256": "76410f981636510998a5909d507fc709a132972c0055254263208aaf95a7eb7c"
       }
     },
     "hab-imprensa-feridos39": {
@@ -1969,7 +1969,7 @@
         "name": "39 feridos, dois deles graves",
         "name_source": "HTML; início literal único",
         "document": {
-          "title": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+          "title": "Manifestantes levam protesto até à porta da Câmara do Porto",
           "edition": "2026-10-15",
           "locator": "HTML; início literal único",
           "source_sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8",
@@ -1981,8 +1981,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-feridos39",
-        "origin_row_sha256": "fcc3408d26aaa193d8805759f6a7a3447dad39e0da5159943ea0a9f77ae167bb",
-        "exported_row_sha256": "56eb38caafc98728bad1dbf23aeaf8c7d46549e74b478b14d5f8496d495a4a03"
+        "origin_row_sha256": "399fbe36bba3bc357c6e44a4c7aea0a446f36338f40d102b951bee0fbefc14dc",
+        "exported_row_sha256": "caae4b64ca69774d715220e59ebe8c1c0245a741a735aa348328002207e6bc94"
       }
     },
     "hab-imprensa-hospital": {
@@ -2004,8 +2004,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-hospital",
-        "origin_row_sha256": "369452af95b248b1816a951a9c54508d30d0fc51a772bf7928eb1f89c9035f09",
-        "exported_row_sha256": "6f500610a847582a421342ade4d6ebe03a6b389da2b6d2678ea100f928d71ac5"
+        "origin_row_sha256": "bc67bdb3d5a40731a17c525c6850d60cd7ee50287762d5b83e08601db9ec6d11",
+        "exported_row_sha256": "d976f44da1641be406efeae53cb42e01194cb6e8d0befbc2a3e613b37e730558"
       }
     },
     "hab-imprensa-igai": {
@@ -2027,8 +2027,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-igai",
-        "origin_row_sha256": "5c4f0cf1a0521eb08c063dd37dbddc0cec37502ef2ec21b4aba6a6a79d43e2be",
-        "exported_row_sha256": "3a2fec16b5b66ae8d6b738ac24e4e6297f449c508e6f68a0f3907788885fbb65"
+        "origin_row_sha256": "176a889692726989b820bc00a50d66a8024b494784e19fb143f64a0cd94f8d38",
+        "exported_row_sha256": "28fe30bf1cc6f1e423585442584b93e4084adaf079356168ad2ee03c2495cc0b"
       }
     },
     "hab-imprensa-mai": {
@@ -2050,8 +2050,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-mai",
-        "origin_row_sha256": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
-        "exported_row_sha256": "d94c9e5d79f48ebbcf824902aa1ab0209779fee59be118d113d7d0b0958ebb12"
+        "origin_row_sha256": "2d36cb0c177e021c5307a1a4fc2ea19eeb2d901ffd476b9f0f5c194427c2fe7d",
+        "exported_row_sha256": "3e262b11837a3900cb7c0b14723f86f469d74e4a4f23bbbf62d03ebdb1dcf9f3"
       }
     },
     "hab-imprensa-manif-euronews": {
@@ -2165,8 +2165,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-pm-15",
-        "origin_row_sha256": "08eaee941ad15e25245e9d02e8dcdf679b532c2cb782c5d755c5f1c4b23ac0ef",
-        "exported_row_sha256": "6b6dd1df9691713193c28cd8e42556a71c4f2e8a5458de31d9e514a766e3279e"
+        "origin_row_sha256": "7de7091474d3c44a800966f79e481c198c99f8de51dd3bfdbc2f88ac54df84e5",
+        "exported_row_sha256": "b95e71b8c323647ad393c53cc041009ec1484122de4388cd5f4eeebc2c025646"
       }
     },
     "hab-imprensa-pm-16": {
@@ -2188,8 +2188,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-pm-16",
-        "origin_row_sha256": "ec7991af2d83c379775378290bfe610d3254288bb6019253bcaf8043ae1e9c4a",
-        "exported_row_sha256": "79c184fcb843f0a9f73e6e70febd671377a5eb77288e7c1d1b81cec1cff2d03c"
+        "origin_row_sha256": "9ab2c13b313d008e0e05fff8a3be907190c83e33828c387204c9e05896ca8a37",
+        "exported_row_sha256": "88489cca8da24b75933d5b8fa812d37f1175c827e18a668c54c2abecfaa59907"
       }
     },
     "hab-imprensa-psp-ferido": {
@@ -2199,7 +2199,7 @@
         "name": "um polícia ficou ferido",
         "name_source": "HTML; início literal único",
         "document": {
-          "title": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+          "title": "Manifestantes levam protesto até à porta da Câmara do Porto",
           "edition": "2026-10-15",
           "locator": "HTML; início literal único",
           "source_sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8",
@@ -2211,8 +2211,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-psp-ferido",
-        "origin_row_sha256": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
-        "exported_row_sha256": "51369853f044115cdcbacf6395e5c6d5125c090052ccfbf9790315a6f505c9ec"
+        "origin_row_sha256": "a6397f9e4baf2ece5b34fe77e69b1f57395625a658bdbf1e8c22de3f7f9a8ccb",
+        "exported_row_sha256": "b093dd1811c7cdcc239020294c0c149442ef512c63729d7b1da85c84d5da32de"
       }
     },
     "hab-imprensa-renda-metade": {
@@ -2657,8 +2657,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-livre-reinvestimento",
-        "origin_row_sha256": "bacbe58e2669059cf5f42c411b37d1ac4e003b234500209d13e6f536417a640b",
-        "exported_row_sha256": "a0c213679c0e147ca2415e9610d90dc15bb124d5ed6a93b1fea9972360f5ae08"
+        "origin_row_sha256": "fe8e1adf00b990b12eb83b3482455a0226f5f4af03f16cb56b22480672c7f4be",
+        "exported_row_sha256": "76a07f0c223731dcf7a439a700f5b65d92916a6e0e03c55b062f3a6e1180aa65"
       }
     },
     "hab-oe-apoio-arrendamento": {
@@ -2755,6 +2755,30 @@
         "rh_id": "hab-oe-habitacao-orcamento",
         "origin_row_sha256": "952b4769e6685476003c6a94323735d3e166f0319c8bdcab55cbcba1afe3dec8",
         "exported_row_sha256": "ba261aa0d19bdf36344bf48faa6ec88ae227252cccf3ec92d23ee4df3b594544"
+      }
+    },
+    "hab-oe-invariantes-definicao": {
+      "linha": {
+        "id": "hab-oe-invariantes-definicao",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "RELATÓRIO",
+        "name_source": "PDF p. 58; Texto que antecede o Quadro 3.2; página impressa 42",
+        "document": {
+          "title": "RELATÓRIO",
+          "edition": "2027",
+          "locator": "PDF p. 58; Texto que antecede o Quadro 3.2; página impressa 42",
+          "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+          "page": 58,
+          "kind": "pdf"
+        },
+        "excerpt": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.",
+        "reference_date": "2027"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-oe-invariantes-definicao",
+        "origin_row_sha256": "57770a0dfaac59aa5b0a4cbba2b3858355f5a13d2239c50746e7e15db81695b7",
+        "exported_row_sha256": "81d1c4fd1316c54aabcd167387d8b9d8471db6373ecf6c23f9bb705292de5ce0"
       }
     },
     "hab-oe-irs-rendas-impacto": {
@@ -2921,8 +2945,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pan-caucoes",
-        "origin_row_sha256": "e4cacc6343ce5107aac9e5f47cb98975ffb4a04ae54e884cacc1f9296765e82a",
-        "exported_row_sha256": "ad281161ca8d4f41c7daec2c2a9ab7033b488a4cf3badf08220270747cb4039d"
+        "origin_row_sha256": "cace621efdb916e56bd1b2130010b1561f9a6ff86da6add06cb1fd60ffc1a9af",
+        "exported_row_sha256": "9e5133d33aee08d804bf2f8c2003761f4606391c8193a7730cb8558709778ec5"
       }
     },
     "hab-pan-controlo": {
@@ -2945,8 +2969,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pan-controlo",
-        "origin_row_sha256": "4453c8eda0c3a402fdaf1b1eabbc5eb1d36d4da9de8f70603299aab4db0e52bf",
-        "exported_row_sha256": "37e8de618bedf23aaa2b60fd4b59c48ab018734ef8bf4db9b68df4447d7e07fd"
+        "origin_row_sha256": "062d06fd18e056295d3c25d45adc89333221f818975b029bd383a9a47fbe3c11",
+        "exported_row_sha256": "a9407e3e2b0f6f5ddcdd3acef994107455de672a437b921d5baf9901ca7aad0b"
       }
     },
     "hab-pan-tetos": {
@@ -2969,8 +2993,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pan-tetos",
-        "origin_row_sha256": "241d1ba13f4d67ed08f79136947f07d2a717f8d38a6f2a000d51e705c08de704",
-        "exported_row_sha256": "424fc32229f3464c49eae3dbb91c573b0ec0414b97bc177ee77cb328c791e833"
+        "origin_row_sha256": "e012e1cecfff519c6a1b1f08b56d57daa1662fb4fceedac1ca3a2c529816f073",
+        "exported_row_sha256": "fbb8e8f672970b5ae1f82a6a58f50ead551fab9d1cbde3ad23b6cbd70c8f46d3"
       }
     },
     "hab-pcp-rendas": {
@@ -2992,8 +3016,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pcp-rendas",
-        "origin_row_sha256": "c2a8a06499c9826f9b2ab0d8c28426fb07341b256445173a6b9c0ed3d6b3d0b9",
-        "exported_row_sha256": "1818a5d921f69015d981c84a779401622b523f5f2d82b9a5371ba00352592592"
+        "origin_row_sha256": "da18615e30b27d371916bee0a160d9f59344a96c3dd69ae1653cfc21b6becd25",
+        "exported_row_sha256": "36e486d50420924ee671896041928b168c71135ef3712eb86fdaa6a4cbcc5082"
       }
     },
     "hab-plataforma-reivindicacoes": {
@@ -3016,7 +3040,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-plataforma-reivindicacoes",
         "origin_row_sha256": "c23831518b750011097f031421cebd3176f9a6690e7d1f15aefdd5678c59f893",
-        "exported_row_sha256": "5f48fd3b7fac4f7cf1e168c1edb5ff2e68fc66ddc368cf5f41af3e2e3e2e0abb"
+        "exported_row_sha256": "ae417f0a3fd0e0fe4994eb2976a3dbddfc7b56e85b79a474a19fadd42adfde3d"
       }
     },
     "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
@@ -3337,8 +3361,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ps-mais-valias",
-        "origin_row_sha256": "716187edb6bc8911b072f19663cf6d9110b29d6dfd533179e1e9e47cc90e6502",
-        "exported_row_sha256": "9f51c6154d38031112838d0813580af7cb5b54bd775e3d31dadcdf0ec0394ae5"
+        "origin_row_sha256": "4967f25ffb905de8a8e6f58e288a946029c72202abbd1fe68913435dc33fc248",
+        "exported_row_sha256": "c8fd2ef1a758dab015108be730bb5f1b34fbac79a9955dc8e784d61885978258"
       }
     },
     "hab-ps-rendas": {
@@ -3360,8 +3384,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ps-rendas",
-        "origin_row_sha256": "8e07a6ae26e88674c0de1f1e7848b4e7aa13374c7ae42e1149b98055673cd25e",
-        "exported_row_sha256": "f81345aeb1527117d1252902355881061b7e62a816b123ed15fc76c51d186fba"
+        "origin_row_sha256": "12e30a15fc63da43414abd0a6af9ec86b39f9bdd7c799cb8af36faa3158b403f",
+        "exported_row_sha256": "1ea1479d00a3d242e2573a379c42e1bfb9091b006c95663707f1fa761fa845d6"
       }
     },
     "hab-ps-vazias": {
@@ -3383,8 +3407,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ps-vazias",
-        "origin_row_sha256": "440141ea2c05d99c424df73040c80407e6966d0bcedd12d78f8f8e749cb38b55",
-        "exported_row_sha256": "661c547c2b4d55989e4825e5eca5b5d1077ed16425a24cc5e6dee736754f4fc2"
+        "origin_row_sha256": "576289d8c62fd2473dee6a1511ae637022594fa2138807d1b0f3b00b6e40f9ba",
+        "exported_row_sha256": "8c4b3548e9f6ff4fb23cf39d453c3cc007843b98885f1eaff414fa4a8a2f22e4"
       }
     },
     "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025": {
@@ -3443,17 +3467,17 @@
           "title": "Housing cost overburden rate",
           "edition": "2025",
           "locator": "freq=A; unit=PC; rskpovth=TOTAL; age=TOTAL; sex=T; geo=EU27_2020; time=2025; value[10]",
-          "source_sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+          "source_sha256": "fe7b955ed07839cd7560a9a749872ecafcae298a5544bf0f74673949e1f772f5",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.6\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tespm140-a-pc-eu27_2020-2025",
-        "origin_row_sha256": "c4076ba7d0d71e5087fec05fa4df94d980297d02ba028fdbfce763899f09055c",
-        "exported_row_sha256": "5f96815cbfb5ee00471c26986dd4c7f5af28a09c8023eb3d402dd2a353ab98c9"
+        "origin_row_sha256": "55afb6abfff2e6fd685f3959b6c411596a2d43f966aaa1231a92bd36f7560095",
+        "exported_row_sha256": "3586640d5df9360a472f34afaab6bc2a2e3fa148078f77cf07782bc7e9785b4d"
       }
     },
     "hab-tespm140-a-pc-pt-2025": {
@@ -3489,17 +3513,17 @@
           "title": "House price index, deflated - annual data",
           "edition": "2025",
           "locator": "freq=A; unit=I15_A_AVG; geo=EU27_2020; time=2025; value[10]",
-          "source_sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
+          "source_sha256": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"124.75\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"124.97\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
-        "origin_row_sha256": "7e9be06e47a4277acdd86373bbbcd65592e6766473793951a0a6c42e0356df94",
-        "exported_row_sha256": "1d5fb751b3bd3b2c26aaf4d65b31cc1f1b401321fa8216f3da819b9fba8d50d9"
+        "origin_row_sha256": "2e6455bea8f72c8150bef795285636028c7913db627955a5a048ad4e2a79296d",
+        "exported_row_sha256": "31627a5c11db819db97de9f1b8bed45e50350edc4bd8d77faeee13b837c5a187"
       }
     },
     "hab-tipsho10-a-i15-a-avg-fi-2025": {
@@ -3558,17 +3582,17 @@
           "title": "House price index, deflated - annual data",
           "edition": "2025",
           "locator": "freq=A; unit=I15_A_AVG; geo=PT; time=2025; value[252]",
-          "source_sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
+          "source_sha256": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"206.41\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"205.75\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-i15-a-avg-pt-2025",
-        "origin_row_sha256": "f30a9a2f75e18b36e94d47895b0e71dbbf04050326f60e0428d050db63cb8fc7",
-        "exported_row_sha256": "8bb58ebe8cc597200f7fac24c5df7d5efd782b8ae3ac29723d23519c5900d04a"
+        "origin_row_sha256": "9939fcf36096b7b435cde00da0274973a206e93b534af79edea98345d9792a53",
+        "exported_row_sha256": "7cceba6f9c45c5ad189d5c97fd263ecac008e2cc73abf1b5cc8fba41e3d5f826"
       }
     },
     "hab-tipsho10-a-rch-a-avg-eu27_2020-2025": {
@@ -3581,17 +3605,17 @@
           "title": "House price index, deflated - annual data",
           "edition": "2025",
           "locator": "freq=A; unit=RCH_A_AVG; geo=EU27_2020; time=2025; value[318]",
-          "source_sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
+          "source_sha256": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"2.9\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.0\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025",
-        "origin_row_sha256": "af38e12d097a7111fd883290030019d1df354e914bbce170c96dfcf6a3525f33",
-        "exported_row_sha256": "44062e90082b0e5e13f0e634ab006acea42ea04cfbd3153da27cc6cfec576a0a"
+        "origin_row_sha256": "4d68af0398d465f05c764b5415ee436ac2e46406a50cc102727080fde412eba1",
+        "exported_row_sha256": "60a6014d064f253e697c4a3133b39ad58ce83610b9c85d7cef806d864d8f872c"
       }
     },
     "hab-tipsho10-a-rch-a-avg-pt-2025": {
@@ -3604,17 +3628,17 @@
           "title": "House price index, deflated - annual data",
           "edition": "2025",
           "locator": "freq=A; unit=RCH_A_AVG; geo=PT; time=2025; value[560]",
-          "source_sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
+          "source_sha256": "41335a1e712889be50d52593e8d27646d66f798f7ea3ed0b77f62ea0af6f8271",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.7\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.6\", \"status\": null}",
         "reference_date": "2025"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-rch-a-avg-pt-2025",
-        "origin_row_sha256": "89d3c7e027441acb7a2e8f9412e9208feb03998c08ebcb41a1a56f00984c1934",
-        "exported_row_sha256": "1b94cdcc96b76e02c49f08ddb5766e1f709800588fc7a03db25a3bdd6b86b32d"
+        "origin_row_sha256": "d730cb2b96901126079d1be84e2e4aaf1a2227097e0d673e5766c1d3e6de6361",
+        "exported_row_sha256": "1682386fc40f8b347a34888a45061bdac9d26231a2689f8ab6c9bf1cda4b2cee"
       }
     },
     "hab-tipsho60-a-ptir-i15-eu27_2020-2024": {
@@ -3709,6 +3733,167 @@
         "exported_row_sha256": "ba420a4809ae180992c34f8222db942e2da696810cab165c2cac36a6507e9ffd"
       }
     },
+    "hab-tipsho60-a-ptir-i25-eu27_2020-2015": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-eu27_2020-2015",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2015",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2015",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2015",
+          "locator": "freq=A; unit=PTIR_I25; geo=EU27_2020; time=2015; value[308]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"EU27_2020\", \"time\": \"2015\"}, \"value\": \"93.65\", \"status\": null}",
+        "reference_date": "2015"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-eu27_2020-2015",
+        "origin_row_sha256": "859242b95d0ebe6b36bcc9d3481a873b2b93dc0feb0f971f817bca3569d463ee",
+        "exported_row_sha256": "acc7ddc01ae7e8f060c0ea7495d0dab6989f28778b83c68153f8a53275fea87a"
+      }
+    },
+    "hab-tipsho60-a-ptir-i25-eu27_2020-2025": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-eu27_2020-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2025",
+          "locator": "freq=A; unit=PTIR_I25; geo=EU27_2020; time=2025; value[318]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"100.00\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-eu27_2020-2025",
+        "origin_row_sha256": "c34503f570e184d223b658e7e65076453c6d6f2953963c7dd6157fd3a6a5dea8",
+        "exported_row_sha256": "52fab5c86e543c7d1168348caa0975d89f8981ec16f658f897d675829b5e8cda"
+      }
+    },
+    "hab-tipsho60-a-ptir-i25-pt-2015": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-pt-2015",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2015",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.PT; dimension.time.category.label.2015",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2015",
+          "locator": "freq=A; unit=PTIR_I25; geo=PT; time=2015; value[550]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"62.17\", \"status\": null}",
+        "reference_date": "2015"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-pt-2015",
+        "origin_row_sha256": "24d235c5bca2d29e8b338bcb723025fe1df225d2e3f3df2764f72ad17c26f635",
+        "exported_row_sha256": "5bb028f89c2fdc5ae3f11cf115fa634a82d490ca3d3619fb1926f4da0eff77be"
+      }
+    },
+    "hab-tipsho60-a-ptir-i25-pt-2019": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-pt-2019",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2019",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.PT; dimension.time.category.label.2019",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2019",
+          "locator": "freq=A; unit=PTIR_I25; geo=PT; time=2019; value[554]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"PT\", \"time\": \"2019\"}, \"value\": \"75.64\", \"status\": null}",
+        "reference_date": "2019"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-pt-2019",
+        "origin_row_sha256": "d14db43508f3b4aa91daff2b8909801a498a5a40f2f5f1f61e1ece43d40dbffc",
+        "exported_row_sha256": "66b4bfd9f475b0d1747a09cb2ea9c50c7f77a671af45486ef320c2661c42c87a"
+      }
+    },
+    "hab-tipsho60-a-ptir-i25-pt-2025": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-pt-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2025",
+          "locator": "freq=A; unit=PTIR_I25; geo=PT; time=2025; value[560]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"100.00\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-pt-2025",
+        "origin_row_sha256": "bf702f7fecc9b0293af0f0bd8741d82b474f33a0fc2fe6461766db98aa8070d0",
+        "exported_row_sha256": "6c7ae033936d385990c125cb04c12d01e7e8ca33420dfb15846e3259d7ae72a1"
+      }
+    },
+    "hab-tipsho60-a-ptir-i25-ro-2015": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-ro-2015",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2015",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.RO; dimension.time.category.label.2015",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2015",
+          "locator": "freq=A; unit=PTIR_I25; geo=RO; time=2015; value[561]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"RO\", \"time\": \"2015\"}, \"value\": \"174.92\", \"status\": null}",
+        "reference_date": "2015"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-ro-2015",
+        "origin_row_sha256": "31410247c2de16aa5d3591495789cdc4da445247aa3d32f31af6cc36fe079075",
+        "exported_row_sha256": "2d49fe711304adfa6efb4074e55aa3bdda8be0d155b18866f9cd15f76be78d0a"
+      }
+    },
+    "hab-tipsho60-a-ptir-i25-ro-2025": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-i25-ro-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2025 igual a cem, Roménia, 2025",
+        "name_source": "label; dimension.unit.category.label.PTIR_I25; dimension.geo.category.label.RO; dimension.time.category.label.2025",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2025",
+          "locator": "freq=A; unit=PTIR_I25; geo=RO; time=2025; value[571]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I25\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"100.00\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-i25-ro-2025",
+        "origin_row_sha256": "976ed35d34fda8149447f6d19241a6dabb32f5ff21de3e215290c8b14535b809",
+        "exported_row_sha256": "d0d997f56056e11df0aa3b729d3ec83f615fc7adf51476985f3faab5f4bd71a5"
+      }
+    },
     "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024",
@@ -3718,18 +3903,41 @@
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
-          "locator": "freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2024; value[569]",
-          "source_sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2024; value[625]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"98.94\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"98.15\", \"status\": null}",
         "reference_date": "2024"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024",
-        "origin_row_sha256": "f44c0fe744a32e39f24a950ada4558ad9dd0d3c337b25ca6a9d7ffeb16b8a2e1",
-        "exported_row_sha256": "837294b1cfe35f6884eb19a14a22e20fd9379eb34b42da964a2d882c18a93c52"
+        "origin_row_sha256": "9a769b7ff9556db421cd26ca948b9a4f6feb52a330914c8f704fed45dcc59f09",
+        "exported_row_sha256": "4969c820859d076ed0c1db052c0ca8414884b692215ef7de566ac57db8940cd8"
+      }
+    },
+    "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2025",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2025; value[626]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"100.03\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025",
+        "origin_row_sha256": "f57c6a9d57a61c8a49d181a58b1709b31f395d6580bf811e4444cd117f22f383",
+        "exported_row_sha256": "de70265e696b58fbce34f92d61ed4d97f39d8348bb17a6a4ee36c390328892dd"
       }
     },
     "hab-tipsho60-a-ptir-lt-avg-pt-2024": {
@@ -3741,18 +3949,41 @@
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
-          "locator": "freq=A; unit=PTIR_LT_AVG; geo=PT; time=2024; value[789]",
-          "source_sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=PT; time=2024; value[867]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"122.92\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"122.22\", \"status\": null}",
         "reference_date": "2024"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-lt-avg-pt-2024",
-        "origin_row_sha256": "21cc23df15833b8275882aa7820157748def862a166706c245f89f52131ca481",
-        "exported_row_sha256": "89d562952d4c14a10cfd9ffb788a18a4528c1348755c0baaaf9e4d53decdba9f"
+        "origin_row_sha256": "ad1773368ef4e29355dc7db8c96ba8490412f736a46dce769b2c6b21e7e6b32d",
+        "exported_row_sha256": "82efc3a20e06a73bb34385df823736d0e14a1a2c5daeaee160d0187cdb4d84ff"
+      }
+    },
+    "hab-tipsho60-a-ptir-lt-avg-pt-2025": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-lt-avg-pt-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2025",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=PT; time=2025; value[868]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"136.97\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-lt-avg-pt-2025",
+        "origin_row_sha256": "3d1485519c4e3162f0ed7ac5f0723ec9f16aaf40bcff54c3823cebaa74bf53fc",
+        "exported_row_sha256": "eff6b1a32227d84fdddd5b31c308074c9db02f68e6923b551a83a2fe3e002f97"
       }
     },
     "hab-tipsho60-a-ptir-lt-avg-ro-2024": {
@@ -3764,18 +3995,41 @@
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
-          "locator": "freq=A; unit=PTIR_LT_AVG; geo=RO; time=2024; value[799]",
-          "source_sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=RO; time=2024; value[878]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
           "kind": "serie"
         },
-        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"48.23\", \"status\": null}",
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"47.13\", \"status\": null}",
         "reference_date": "2024"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-lt-avg-ro-2024",
-        "origin_row_sha256": "7889084e63446fe58bb6538a90229b9241a043287efe66812cb568c222109786",
-        "exported_row_sha256": "7d2b8821795b883cf947b23df0215e04650dd9bd030de976b48ebe5aec50eeaf"
+        "origin_row_sha256": "af66db8e9516172794788d6ba0fb42cb24640d030038d4902a8ad957cf12932e",
+        "exported_row_sha256": "ecb8b381c03c9b8f313c379208c760dd25d21f7a0346baf713392692edbe6dbf"
+      }
+    },
+    "hab-tipsho60-a-ptir-lt-avg-ro-2025": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-lt-avg-ro-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Roménia, 2025",
+        "name_source": "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.RO; dimension.time.category.label.2025",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2025",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=RO; time=2025; value[879]",
+          "source_sha256": "d927257f2556a0bbb279040af698ceb6b982a4656949b4b27a66e629c3b42f9c",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"47.01\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-lt-avg-ro-2025",
+        "origin_row_sha256": "98ac635e533956097f3ac3ddaaedb02cfe8dcf98748a50af936535a67cc16ffa",
+        "exported_row_sha256": "ba43e3c9b01f1be1271f1d4bd47341647857f69fdcbb18ea7d2d6403b420499f"
       }
     },
     "hab-votacao-arrendamento": {

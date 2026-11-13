@@ -15,6 +15,8 @@ name: "Saldo: revisão face ao plano de médio prazo"
 name_source: "§26; p. 15 PDF (14 impressa)"
 status: "conferido"
 name_en: "Balance: revision against medium-term plan"
+measure: "Saldo: revisão face ao plano de médio prazo"
+measure_en: "Balance: revision against medium-term plan"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"

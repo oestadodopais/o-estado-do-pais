@@ -15,6 +15,8 @@ name: "Atualização do limite do mínimo de existência; 2027; impacto incremen
 name_source: "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Atualização do limite do mínimo de existência; coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)"
 status: "conferido"
 name_en: "Updating the minimum subsistence threshold; 2027; incremental impact; million euros"
+measure: "Atualização do limite do mínimo de existência"
+measure_en: "Updating the minimum subsistence threshold"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

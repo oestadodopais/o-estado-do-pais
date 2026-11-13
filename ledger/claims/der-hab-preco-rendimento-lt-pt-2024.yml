@@ -6,7 +6,7 @@
 id: "der-hab-preco-rendimento-lt-pt-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "22,9"
+value: "22,2"
 unit: "pontos percentuais do índice"
 measure: "Distância do rácio preço-rendimento à base cem"
 measure_en: "Distance of the price-to-income ratio from the base of one hundred"
@@ -31,7 +31,13 @@ check: "round ( hab-tipsho60-a-ptir-lt-avg-pt-2024 - 100 , 1 )"
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] {'components': ['hab-tipsho60-a-ptir-lt-avg-pt-2024'], 'formula': 'hab-tipsho60-a-ptir-lt-avg-pt-2024 - 100', 'calculation': 'hab-tipsho60-a-ptir-lt-avg-pt-2024 = 122.92; resultado = 22.92', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-preco-rendimento-lt-pt-2024."
+note: "[derivation do motor] {'components': ['hab-tipsho60-a-ptir-lt-avg-pt-2024'], 'formula': 'hab-tipsho60-a-ptir-lt-avg-pt-2024 - 100', 'calculation': 'hab-tipsho60-a-ptir-lt-avg-pt-2024 = 122.22; resultado = 22.22', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-preco-rendimento-lt-pt-2024."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-13"
+    kind: "atualizacao"
+    old_value: "22,9"
+    new_value: "22,2"
+    reason: "A fonte reviu os valores; a linha foi relida no corpo alojado."
+    reason_en: "The source revised the figures; the row was read again in the hosted body."

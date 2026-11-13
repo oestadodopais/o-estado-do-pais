@@ -1701,6 +1701,420 @@
         "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
       }
     },
+    "oe-2027-quadro-a1-1-impacto-saldo": {
+      "value": "5 411",
+      "period": "2027",
+      "excerpt": "Impacto no saldo 5 411",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro A1.1. Quadro de políticas invariantes; Impacto no saldo; p. 408 PDF",
+        "page": 408,
+        "printed_page": 392
+      },
+      "derivation": null,
+      "name": "Impacto no saldo",
+      "name_en": "Impact on the balance",
+      "name_source": "Quadro A1.1. Quadro de políticas invariantes; Impacto no saldo; p. 408 PDF",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "oe-2027-quadro-3-2-nota-i": {
+      "value": "Nota: (i) invariante.",
+      "period": "2027",
+      "excerpt": "Nota: (i) invariante.",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "p. 59 PDF (43 impressa)",
+        "page": 59,
+        "printed_page": 43
+      },
+      "derivation": null,
+      "name": "Quadro das medidas: definição da marca (i)",
+      "name_en": "Measures table: definition of mark (i)",
+      "name_source": "p. 59 PDF (43 impressa)",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
     "der-oe2027-medidas-anteriores-saldo": {
       "value": "-1210",
       "period": "2027",
@@ -3656,213 +4070,6 @@
       "name_en": "Wage agreements (i); 2027; incremental impact; million euros",
       "name_source": "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Acordos salariais (i); coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)",
       "source_label": "Acordos salariais (i)",
-      "reference_date": "2027",
-      "status": "conferido",
-      "receipt": {
-        "estado": 200,
-        "ficheiro": "oe-relatorio.pdf",
-        "bytes": 25512364,
-        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
-        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
-        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
-        "cliente": "core.http.HttpClient.condicional",
-        "user_agent": "OEstadoDoPais/corredor"
-      },
-      "rights": {
-        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
-        "assessment": {
-          "publicar_corpos": false,
-          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
-          "anfitrioes": {
-            "app.parlamento.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "commission.europa.eu": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "diariodarepublica.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "ec.europa.eu": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "economy-finance.ec.europa.eu": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "executivedigest.sapo.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "files.diariodarepublica.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "folhanacional.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "info.portaldasfinancas.gov.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "iniciativaliberal.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "juntospelopovo.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "m.noticiasaominuto.com": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "nacloset.com": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "observador.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "oregioes.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "partidolivre.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "portugal.gov.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "ps.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "qa.psd.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "recordeuropa.com": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "riomaior.bloco.org": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.boe.es": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.bportugal.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.cds.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.cfp.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.dn.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.dnoticias.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.esquerda.net": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.gpeari.gov.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.pan.com.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.parlamento.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.pcp.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.psd.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.rtp.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            },
-            "www.ucp.pt": {
-              "estado": "sem autorização inferida",
-              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
-            }
-          },
-          "reutilizadas": [
-            {
-              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
-              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
-            },
-            {
-              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
-            },
-            {
-              "file": "content/23 Habitacao/source/ar-oe2027.html",
-              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
-            },
-            {
-              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
-              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
-            },
-            {
-              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
-              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
-            },
-            {
-              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
-              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
-            }
-          ]
-        },
-        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
-        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
-      }
-    },
-    "oe-2027-quadro-3-2-nota-i": {
-      "value": "Nota: (i) invariante.",
-      "period": "2027",
-      "excerpt": "Nota: (i) invariante.",
-      "document": {
-        "title": "Orçamento do Estado 2027 RELATÓRIO",
-        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-        "locator": "p. 59 PDF (43 impressa)",
-        "page": 59,
-        "printed_page": 43
-      },
-      "derivation": null,
-      "name": "Quadro das medidas: definição da marca (i)",
-      "name_en": "Measures table: definition of mark (i)",
-      "name_source": "p. 59 PDF (43 impressa)",
       "reference_date": "2027",
       "status": "conferido",
       "receipt": {
@@ -15526,22 +15733,22 @@
         "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
       }
     },
-    "utao-salarios-irs": {
+    "utao-t8-irs-salarios-pensoes": {
       "value": "590",
       "period": "2027",
-      "excerpt": "A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.",
+      "excerpt": "IRS - Receita de incremento de salários e pensões Permanente 668 0,20 590 0,17",
       "document": {
         "title": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
-        "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/utao-oe2027-preliminar.pdf",
         "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-        "locator": "§38; p. 22 PDF (21 impressa)",
-        "page": 22,
-        "printed_page": 21
+        "locator": "Tabela 8; coluna POE/2027 MF, M€; IRS - Receita de incremento de salários e pensões; p. 21 PDF",
+        "page": 21,
+        "printed_page": 20
       },
       "derivation": null,
-      "name": "UTAO: receita de IRS da atualização salarial",
-      "name_en": "UTAO: income tax from the wage update",
-      "name_source": "§38; p. 22 PDF (21 impressa)",
+      "name": "IRS - Receita de incremento de salários e pensões",
+      "name_en": "Personal income tax - Revenue from wage and pension increases",
+      "name_source": "Tabela 8; coluna POE/2027 MF, M€; IRS - Receita de incremento de salários e pensões; p. 21 PDF",
       "reference_date": "2027",
       "status": "conferido",
       "receipt": {
@@ -15550,7 +15757,7 @@
         "acedido_em": "2026-10-19T22:23:48.082039+00:00",
         "cliente": "core.http.HttpClient.condicional",
         "user_agent": "OEstadoDoPais/corredor",
-        "ficheiro": "debate/utao-oe2027-preliminar.pdf",
+        "ficheiro": "cor3/utao-oe2027-preliminar.pdf",
         "estado": 200,
         "tipo": "application/pdf",
         "segundos": 4.165,
@@ -15947,27 +16154,6 @@
         "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
         "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
       }
-    },
-    "der-salarios-publicos-retorno-pct": {
-      "value": "86,2",
-      "period": "2027",
-      "excerpt": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 ) = 86.2",
-      "document": null,
-      "derivation": {
-        "components": [
-          "utao-salarios-irs",
-          "utao-salarios-cs",
-          "utao-salarios-valor"
-        ],
-        "formula": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 )",
-        "calculation": "86.2",
-        "rounding_places": 1
-      },
-      "name": "Salários públicos: receita fiscal e contributiva sobre a atualização",
-      "name_en": "Public wages: tax and contributions as a share of the update",
-      "name_source": "Cálculo sobre as linhas identificadas",
-      "reference_date": "2027",
-      "status": "derivado"
     },
     "utao-pessoal-variacao-cn": {
       "value": "5,3",
@@ -29003,6 +29189,627 @@
         "redirecionamentos": [],
         "bytes": 2340175,
         "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "oe-2027-quadro-3-2-introducao": {
+      "value": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.",
+      "period": "2027",
+      "excerpt": "No quadro seguinte são elencadas as principais medidas de política orçamental a implementar no ano de 2027, bem como as medidas em políticas invariantes que, embora decididas em anos anteriores, ainda produzem efeitos adicionais em 2027.",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Texto que antecede o Quadro 3.2; p. 58 PDF",
+        "page": 58,
+        "printed_page": 42
+      },
+      "derivation": null,
+      "name": "Introdução do Quadro 3.2",
+      "name_en": "Introduction to Table 3.2",
+      "name_source": "Texto que antecede o Quadro 3.2; p. 58 PDF",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "oe-2027-quadro-a1-1-irs-salarios-pensoes": {
+      "value": "-590",
+      "period": "2027",
+      "excerpt": "IRS | Receita decorrente do aumento de salários e pensões -590",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro A1.1. Quadro de políticas invariantes; IRS | Receita decorrente do aumento de salários e pensões; p. 408 PDF",
+        "page": 408,
+        "printed_page": 392
+      },
+      "derivation": null,
+      "name": "IRS | Receita decorrente do aumento de salários e pensões",
+      "name_en": "Personal income tax | Revenue from wage and pension increases",
+      "name_source": "Quadro A1.1. Quadro de políticas invariantes; IRS | Receita decorrente do aumento de salários e pensões; p. 408 PDF",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "oe-2027-quadro-a1-1-contribuicoes-salarios": {
+      "value": "-471",
+      "period": "2027",
+      "excerpt": "Contribuições sociais | Receita decorrente do aumento de salários -471",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro A1.1. Quadro de políticas invariantes; Contribuições sociais | Receita decorrente do aumento de salários; p. 408 PDF",
+        "page": 408,
+        "printed_page": 392
+      },
+      "derivation": null,
+      "name": "Contribuições sociais | Receita decorrente do aumento de salários",
+      "name_en": "Social contributions | Revenue from wage increases",
+      "name_source": "Quadro A1.1. Quadro de políticas invariantes; Contribuições sociais | Receita decorrente do aumento de salários; p. 408 PDF",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
       },
       "rights": {
         "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
@@ -43023,6 +43830,1248 @@
         "raw": true
       }
     },
+    "pm-q4-4-irc-2026": {
+      "value": "9 704",
+      "period": "2026",
+      "excerpt": "- IRC 9 704 9 605 -1,0",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2026; p. 72 PDF",
+        "page": 72,
+        "printed_page": 56
+      },
+      "derivation": null,
+      "name": "IRC; 2026",
+      "name_en": "Corporate income tax; 2026",
+      "name_source": "Quadro 4.4. Receita fiscal do Estado; IRC; 2026; p. 72 PDF",
+      "reference_date": "2026",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "pm-q4-4-irc-2027": {
+      "value": "9 605",
+      "period": "2027",
+      "excerpt": "- IRC 9 704 9 605 -1,0",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; 2027; p. 72 PDF",
+        "page": 72,
+        "printed_page": 56
+      },
+      "derivation": null,
+      "name": "IRC; 2027",
+      "name_en": "Corporate income tax; 2027",
+      "name_source": "Quadro 4.4. Receita fiscal do Estado; IRC; 2027; p. 72 PDF",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "pm-q4-4-irc-variacao": {
+      "value": "-1,0",
+      "period": "2027/2026",
+      "excerpt": "- IRC 9 704 9 605 -1,0",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.4. Receita fiscal do Estado; IRC; variacao; p. 72 PDF",
+        "page": 72,
+        "printed_page": 56
+      },
+      "derivation": null,
+      "name": "IRC; variacao",
+      "name_en": "Corporate income tax; change",
+      "name_source": "Quadro 4.4. Receita fiscal do Estado; IRC; variacao; p. 72 PDF",
+      "reference_date": "2027/2026",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "pm-q4-4-irs-2026": {
+      "value": "19 706",
+      "period": "2026",
+      "excerpt": "- IRS 19 706 20 385 3,4",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2026; p. 72 PDF",
+        "page": 72,
+        "printed_page": 56
+      },
+      "derivation": null,
+      "name": "IRS; 2026",
+      "name_en": "Personal income tax; 2026",
+      "name_source": "Quadro 4.4. Receita fiscal do Estado; IRS; 2026; p. 72 PDF",
+      "reference_date": "2026",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "pm-q4-4-irs-2027": {
+      "value": "20 385",
+      "period": "2027",
+      "excerpt": "- IRS 19 706 20 385 3,4",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; 2027; p. 72 PDF",
+        "page": 72,
+        "printed_page": 56
+      },
+      "derivation": null,
+      "name": "IRS; 2027",
+      "name_en": "Personal income tax; 2027",
+      "name_source": "Quadro 4.4. Receita fiscal do Estado; IRS; 2027; p. 72 PDF",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "pm-q4-4-irs-variacao": {
+      "value": "3,4",
+      "period": "2027/2026",
+      "excerpt": "- IRS 19 706 20 385 3,4",
+      "document": {
+        "title": "Orçamento do Estado 2027 RELATÓRIO",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.4. Receita fiscal do Estado; IRS; variacao; p. 72 PDF",
+        "page": 72,
+        "printed_page": 56
+      },
+      "derivation": null,
+      "name": "IRS; variacao",
+      "name_en": "Personal income tax; change",
+      "name_source": "Quadro 4.4. Receita fiscal do Estado; IRS; variacao; p. 72 PDF",
+      "reference_date": "2027/2026",
+      "status": "conferido",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "cor3/oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
     "posicao-cds-orcamento": {
       "value": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
       "period": "2027",
@@ -50050,37 +52099,248 @@
       }
     },
     "oe-2027-calendario-especialidade": {
-      "value": "18 a 23 de novembro",
-      "period": "2026-11-18/2026-11-23",
-      "excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ",
+      "value": "18 a 20 de novembro",
+      "period": "2026-11-18/2026-11-20",
+      "excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 20 de novembro",
       "document": {
         "title": "Orçamento do Estado para 2027",
-        "file": "content/23 Habitacao/source/ar-oe2027.html",
-        "source_sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
+        "source_sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
         "locator": "Página parlamentar, calendário da proposta",
         "page": 1,
         "printed_page": null
       },
       "derivation": null,
       "name": "Debate e votação na especialidade",
-      "name_en": "Committee debate and vote",
+      "name_en": "Detailed debate and vote",
       "name_source": "Página parlamentar, calendário da proposta",
-      "reference_date": "2026-11-18/2026-11-23",
+      "reference_date": "2026-11-18/2026-11-20",
       "status": "conferido",
       "receipt": {
         "pedido": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
         "endereco_final": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
-        "acedido_em": "2026-10-19T13:40:07.222623+00:00",
+        "acedido_em": "2026-11-12T21:36:47.336997+00:00",
         "cliente": "core.http.HttpClient.condicional",
         "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "cor3/ar-calendario-oe2027.html",
         "estado": 200,
         "tipo": "text/html; charset=utf-8",
-        "segundos": 0.673,
+        "segundos": 1.041,
         "erro": null,
         "redirecionamentos": [],
-        "ficheiro": "ar-oe2027.html",
-        "bytes": 349157,
-        "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+        "bytes": 349786,
+        "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "oe-2027-calendario-especialidade-final": {
+      "value": "23 e 24 de novembro",
+      "period": "2026-11-23/2026-11-24",
+      "excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 23 e 24 de novembro",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
+        "source_sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
+        "locator": "Página parlamentar, calendário da proposta",
+        "page": 1,
+        "printed_page": null
+      },
+      "derivation": null,
+      "name": "Debate, votação na especialidade e votação final global",
+      "name_en": "Detailed debate and vote and final overall vote",
+      "name_source": "Página parlamentar, calendário da proposta",
+      "reference_date": "2026-11-23/2026-11-24",
+      "status": "conferido",
+      "receipt": {
+        "pedido": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
+        "endereco_final": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
+        "acedido_em": "2026-11-12T21:36:47.336997+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "cor3/ar-calendario-oe2027.html",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 1.041,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 349786,
+        "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
       },
       "rights": {
         "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
@@ -50263,35 +52523,35 @@
     "oe-2027-calendario-final-global": {
       "value": "24 de novembro",
       "period": "2026-11-24",
-      "excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro",
+      "excerpt": "Este ato marca o início do processo orçamental no Parlamento, que culmina com a votação final global da iniciativa a 24 de novembro.",
       "document": {
         "title": "Orçamento do Estado para 2027",
-        "file": "content/23 Habitacao/source/ar-oe2027.html",
-        "source_sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
+        "file": "content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html",
+        "source_sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801",
         "locator": "Página parlamentar, calendário da proposta",
         "page": 1,
         "printed_page": null
       },
       "derivation": null,
       "name": "Votação final global",
-      "name_en": "Final global vote",
+      "name_en": "Final overall vote",
       "name_source": "Página parlamentar, calendário da proposta",
       "reference_date": "2026-11-24",
       "status": "conferido",
       "receipt": {
         "pedido": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
         "endereco_final": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
-        "acedido_em": "2026-10-19T13:40:07.222623+00:00",
+        "acedido_em": "2026-11-12T21:36:47.336997+00:00",
         "cliente": "core.http.HttpClient.condicional",
         "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "cor3/ar-calendario-oe2027.html",
         "estado": 200,
         "tipo": "text/html; charset=utf-8",
-        "segundos": 0.673,
+        "segundos": 1.041,
         "erro": null,
         "redirecionamentos": [],
-        "ficheiro": "ar-oe2027.html",
-        "bytes": 349157,
-        "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+        "bytes": 349786,
+        "sha256": "24f91bd9b712c95f4f4ac98dcb9f2ac490a978aa9726ac0ec31879690254b801"
       },
       "rights": {
         "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
@@ -50470,6 +52730,238 @@
         "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
         "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
       }
+    },
+    "utao-salarios-irs": {
+      "value": "590",
+      "period": "2027",
+      "excerpt": "A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+        "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+        "locator": "§38; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "derivation": null,
+      "name": "UTAO: receita de IRS da atualização salarial",
+      "name_en": "UTAO: income tax from the wage update",
+      "name_source": "§38; p. 22 PDF (21 impressa)",
+      "reference_date": "2027",
+      "status": "conferido",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
+        "acedido_em": "2026-10-19T22:23:48.082039+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "debate/utao-oe2027-preliminar.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 4.165,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2340175,
+        "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Arquivo interno de prova e conferência. Nenhum corpo é publicado.",
+          "anfitrioes": {
+            "app.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "commission.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "economy-finance.ec.europa.eu": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "executivedigest.sapo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "files.diariodarepublica.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "folhanacional.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "info.portaldasfinancas.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "iniciativaliberal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "juntospelopovo.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "m.noticiasaominuto.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "nacloset.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "observador.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "oregioes.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "partidolivre.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "portugal.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "ps.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "qa.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "recordeuropa.com": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "riomaior.bloco.org": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.boe.es": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.bportugal.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cds.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.cfp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dn.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.dnoticias.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.esquerda.net": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.gpeari.gov.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pan.com.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.parlamento.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.pcp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.psd.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.rtp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            },
+            "www.ucp.pt": {
+              "estado": "sem autorização inferida",
+              "nota": "Acesso público não estabelece licença de republicação. Conservar atribuição e origem; rever direitos antes de publicar corpos."
+            }
+          },
+          "reutilizadas": [
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+              "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+            },
+            {
+              "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+              "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+            },
+            {
+              "file": "content/23 Habitacao/source/ar-oe2027.html",
+              "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/governo-investimento-2026-10-09.html",
+              "sha256": "fcc111aadd22ca48494b46944f6635426f38d37887709e65726f52f641acd930"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/pcp-paula-oe2027.html",
+              "sha256": "395be82a9d8be70bc7a8e3ed3012764af89197ee2626995b7e3d18c4b9c8fb2d"
+            },
+            {
+              "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+              "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+            }
+          ]
+        },
+        "origin_path": "content/25 Orcamento 2027 Medidas/source/direitos/avaliacao.json",
+        "sha256": "9104d1d0908b0d4a164626ac343a77845c9ef22c6ae22bf81ff998f868f075e2"
+      }
+    },
+    "der-salarios-publicos-retorno-pct": {
+      "value": "86,2",
+      "period": "2027",
+      "excerpt": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 ) = 86.2",
+      "document": null,
+      "derivation": {
+        "components": [
+          "utao-salarios-irs",
+          "utao-salarios-cs",
+          "utao-salarios-valor"
+        ],
+        "formula": "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 )",
+        "calculation": "86.2",
+        "rounding_places": 1
+      },
+      "name": "Salários públicos: receita fiscal e contributiva sobre a atualização",
+      "name_en": "Public wages: tax and contributions as a share of the update",
+      "name_source": "Cálculo sobre as linhas identificadas",
+      "reference_date": "2027",
+      "status": "derivado"
     }
   }
 }
