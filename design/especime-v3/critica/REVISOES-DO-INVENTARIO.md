@@ -993,3 +993,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | evl-d | Frase C004 nas duas línguas, quatro nomes curtos das medidas e contagens do livro; quatro declarações anteriores retiradas | por ler | Codex, 12.11.2026: formas copiadas da medição do HTML construído; leitura cruzada do diff reservada ao lugar de direção. |
 
 | evl-e | C005 reposta, C004 e quatro nomes anteriores retirados, quatro nomes com atribuição explícita | por ler | Codex, 12.11.2026: palavras da adenda E conferidas contra C005 e o HTML construído; leitura cruzada do diff reservada ao lugar de direção. |
+
+| ret1-a | Duas notas dos pelouros substituídas pela ausência prescrita | por ler | Codex, 13.11.2026: frases literais da adenda A do RET1, conferidas no HTML dos dois mandatos, nas duas línguas. Leitura cruzada do diff pendente antes da fusão. |
