@@ -8,7 +8,9 @@ export function retiradaDaContagem(linha) {
   return {entrada:ultima, indice:linha.corrections.indexOf(ultima)};
 }
 
-/** A data só precisa de prefixo quando a razão ainda não a escreve. */
+/** A data só precisa de prefixo quando a razão ainda não a escreve.
+ * @param {{date:string,reason?:string,reason_en?:string}} entrada
+ * @param {string} lang */
 export function razaoContemData(entrada, lang) {
   const data = entrada.date.split('-').reverse().join('.');
   return (entrada[lang === 'pt' ? 'reason' : 'reason_en'] ?? '').includes(data);

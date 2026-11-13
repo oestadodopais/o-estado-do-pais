@@ -35,8 +35,7 @@ export function conferirTrechosCor3(paginas,frases,{ler=f=>fs.readFileSync(f)}={
    let antes=norm(frase??''),mudou=false;const ts=transformacoes.get(k)??[];if(antes.length>20&&ts.some(r=>norm(r.literal).includes(antes)))return true;for(const r of ts){const de=norm(r.literal);if(antes.includes(de)){antes=antes.replaceAll(de,norm(r.literal_antes));mudou=true;}}
    const compacto=s=>s.replace(/\s/g,'');
    const testemunhado=ts.some(r=>compacto(r.anteriorTexto).includes(compacto(antes)));
-   const bloco=norm((p.blocos[o.bloco]?.frases??[]).join(' '));
-   return testemunhado&&(mudou||ts.some(r=>bloco.includes(norm(r.literal))));}))textos.add(chave(f));
+   return testemunhado&&mudou;}))textos.add(chave(f));
  }
  return {erros,textos};
 }

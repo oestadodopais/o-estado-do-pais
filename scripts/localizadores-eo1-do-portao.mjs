@@ -30,3 +30,6 @@ export function localizadorEo1Confere(onde, linha) {
     /^[a-f0-9]{64}$/.test(d.source_sha256) && d.source_sha256 === p.document.source_sha256 &&
     d.source_sha256 === p.receipt?.sha256 && d.title === p.document.title && linha.excerpt === p.excerpt);
 }
+
+// COR3: duas linhas conservadas no livro deixaram de ser citadas no estudo.
+export const linhaEo1Conservada = id => seladas && ['utao-salarios-irs','der-salarios-publicos-retorno-pct'].includes(id) ? provas[id] : null;

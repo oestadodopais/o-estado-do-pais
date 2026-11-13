@@ -1,8 +1,9 @@
+import {linhaEo1Conservada} from './localizadores-eo1-do-portao.mjs';
 import { NOMES_EO1 } from '../src/data/nomes-eo1.mjs';
 
 /** O nome é o da edição e os seus algarismos têm de existir na linha de origem. */
 export function conferirNomeEo1(id, lang, texto, rows) {
-  const esperado = NOMES_EO1[id]?.[lang], row = rows?.[id];
+  const esperado = NOMES_EO1[id]?.[lang], row = rows?.[id] ?? linhaEo1Conservada(id);
   if (!esperado || !row || texto !== esperado) return 'nome diferente da linha e da edição';
   const campos = [row.measure, row.measure_en, row.value, row.period, row.excerpt,
     row.document?.title, row.document?.locator].filter(v => v != null).join(' ');
