@@ -1,0 +1,12 @@
+{
+  "ponto": 2,
+  "estado": "parado pela forma do juízo",
+  "regua": "scripts/check-frases-afirmacao.mjs:107",
+  "forma_exigida": {
+    "juizo": "por julgar"
+  },
+  "juizo_pedido": "Codex Astra a xhigh leu a folha do Orçamento contra as cópias das fontes a 12.11.2026, com cinco plantas em cinco; frases escritas pelo Opus e decididas pelo lugar de direção.",
+  "causa": "O registo recusa todo o juízo diferente de por julgar; não se substituiu o juízo pedido nem se alterou a régua.",
+  "outra_exigencia": "scripts/frases-origem.mjs exige também Frases: no cabeçalho do mandato, com o ficheiro que enumera exatamente id, estudo, tipos, pt, en, linhas e razao. A adenda declara frases mas não nomeia esse ficheiro.",
+  "cobertura": "As oito entradas sem cobertura continuam identificadas em PENDENCIAS-COR3-S.json."
+}
