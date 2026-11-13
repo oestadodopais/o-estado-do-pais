@@ -1,0 +1,4 @@
+OG1-E: 1 declarações atravessadas; outros campos conservados byte a byte.
+OG1-E: 1 declarações atravessadas; outros campos conservados byte a byte.
+OG1-E: 1 declarações atravessadas; outros campos conservados byte a byte.
+OG1-E migração: controlo 0, idempotência 0, bytes alterados 1, origem alterada 1

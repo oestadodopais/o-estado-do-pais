@@ -1,0 +1,1 @@
+EXPORT_RECORDS_SITE_TEST: PASS, 8 checks (manifest not fixed, a byte changed in a record on disk, a missing cortes file, a slug the site's archive does not have, idempotence with the date held, one origin that really changed rewriting only its own entry, an orphan file named and not deleted, the clean copy accepted with D5 said edition by edition)

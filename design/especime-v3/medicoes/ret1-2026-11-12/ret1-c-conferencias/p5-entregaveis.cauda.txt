@@ -1,0 +1,20 @@
+    ev3-licenca-associacao-n1
+    ev3-licenca-associacao-n2
+    ev3-rossio-1fase-dias
+    ev3-rossio-nao-concluida
+    ev3-rossio-prr
+    ev3-ultima-noticia-en
+    ev3-ultima-noticia-longa
+  This does not block the build. It stops you saying the arithmetic is verified.
+evora-2027-capital-europeia-da-cultura-pt: entregável conferido, sem dívida nova.
+evora-2027-capital-europeia-da-cultura-pt-html: entregável conferido, sem dívida nova.
+evora-2027-capital-europeia-da-cultura-en: entregável conferido, sem dívida nova.
+evora-2027-capital-europeia-da-cultura-en-html: entregável conferido, sem dívida nova.
+TEXTO JULGADO pt: PASS, 464 unidades
+TEXTO JULGADO en: PASS, 464 unidades
+EDITIONS: PASS, 1426 vs 1426 números por unidade, 0 drift(s)
+EDITIONS: PASS — 430 vs 430 matched tokens, 162 rows compared, 0 drift(s)
+EDITIONS: PASS — 434 vs 434 matched tokens, 162 rows compared, 0 drift(s)
+TEXTO JULGADO pt: PASS, 464 unidades
+TEXTO JULGADO en: PASS, 464 unidades
+RET1-C: livro intacto; derivações, entregáveis, edições e texto julgado conferidos.

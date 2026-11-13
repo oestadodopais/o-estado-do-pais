@@ -1,0 +1,20 @@
+[90m    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-contas-da-camara-2010-2025/en" · 197 bloco(s) · 610 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-contas-da-camara-2010-2025/pt" · 197 bloco(s) · 607 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quem-governou-a-camara-2009-2025/pt" · 211 bloco(s) · 484 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate[0m
+[90m    · "orcamento-2027-o-que-muda-e-para-quem/en" · 57 bloco(s) · 267 referência(s) · o D5 correu e bate[0m
+[90m    · "orcamento-2027-o-que-muda-e-para-quem/pt" · 57 bloco(s) · 267 referência(s) · o D5 correu e bate[0m
+
+  [32m✓[0m cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+
+EVA nome: as duas edições e o H1 passam; nome inventado, linha sem itálico e linha afastada recusados.
