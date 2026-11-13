@@ -21,8 +21,8 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020"
-access_date: "2026-10-26"
-published_at: "2026-10-20"
+access_date: "2026-11-13"
+published_at: "2026-10-29"
 
 # O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
 # como a resposta os escreve. O excerto de cada ponto começa por ele.
@@ -157,7 +157,7 @@ attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, tenure=RENT_MKT, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json (sha256 0d9b29aa8751fc2a…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0. Agregado relido em cor3/tessi164_EU27_2020.json, sha256 a2cb0d6a9a9a4926c1b6204794776f3280ec2931d93ccec0be2c8bf41bf25d09; os países conservam o corpo anterior."
+note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, tenure=RENT_MKT, time=2025. Corpo alojado: corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json (sha256 3dbf23935ffea287…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
 corrections:

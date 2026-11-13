@@ -433,10 +433,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-10-26T16:30:30Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:03.663385+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "d0a5be2abea1c163b2e15fae564193ce04345ead5b3aae9b3074f624787ba9ff",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -452,10 +452,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-10-26T16:30:30Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:03.663385+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "d0a5be2abea1c163b2e15fae564193ce04345ead5b3aae9b3074f624787ba9ff",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -471,10 +471,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-10-26T16:30:30Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:03.663385+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "d0a5be2abea1c163b2e15fae564193ce04345ead5b3aae9b3074f624787ba9ff",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -490,10 +490,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-10-26T16:30:30Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:03.663385+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "d0a5be2abea1c163b2e15fae564193ce04345ead5b3aae9b3074f624787ba9ff",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -509,10 +509,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-10-26T16:30:30Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:03.663385+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "d0a5be2abea1c163b2e15fae564193ce04345ead5b3aae9b3074f624787ba9ff",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
@@ -528,10 +528,10 @@
       ],
       "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
-      "lido_em": "2026-10-26T16:30:33Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:05.303640+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "3dbf23935ffea2874b209fcc70bb4e34d3747beb2c8b75240e7101602673f2ce",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
@@ -547,10 +547,10 @@
       ],
       "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
-      "lido_em": "2026-10-26T16:30:33Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:05.303640+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "3dbf23935ffea2874b209fcc70bb4e34d3747beb2c8b75240e7101602673f2ce",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
@@ -566,10 +566,10 @@
       ],
       "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
-      "lido_em": "2026-10-26T16:30:33Z",
-      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
-      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
-      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+      "lido_em": "2026-11-13T08:33:05.303640+00:00",
+      "cliente": "core.http.HttpClient.get",
+      "sha256": "3dbf23935ffea2874b209fcc70bb4e34d3747beb2c8b75240e7101602673f2ce",
+      "motor": "content/13 Dominios/source/corredor-series-paises/cor3/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
     },
     {
       "serie": "taxa-de-desemprego-mip-2025-paises",
