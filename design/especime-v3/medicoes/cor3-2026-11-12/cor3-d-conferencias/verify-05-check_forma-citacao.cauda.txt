@@ -1,0 +1,18 @@
+
+> o-estado-do-pais@0.1.0 check:forma-citacao
+> node tests/og1e/forma-da-citacao.mjs && node tests/og1e/reguas.mjs
+
+OG1-E F cronologia antiga/pt: código 1
+OG1-E F documento partilhado/pt: código 0
+OG1-E F outro documento/pt: código 1
+OG1-E F outra frase/pt: código 1
+OG1-E F cronologia antiga/en: código 1
+OG1-E F documento partilhado/en: código 0
+OG1-E F outro documento/en: código 1
+OG1-E F outra frase/en: código 1
+OG1-E livro palavras com salientou: código 1
+OG1-E livro sem forma: código 1
+OG1-E livro fora da lista: código 1
+OG1-E livro relato: código 0
+OG1-E: 138 plantas, nas duas edições e em todas as famílias editoriais, conferidas.
+OG1-E: 14 controlos e plantas do texto lido, dos títulos, da K8 e da citação conferidos.

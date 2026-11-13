@@ -1,0 +1,20 @@
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igu» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igu» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Debate, votação na especialidade e votação final global» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Detailed debate and vote and final overall vote» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Detailed debate and vote» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Final overall vote» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Introdução do Quadro 3.2» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Introduction to Table 3.2» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Contribuições sociais | Receita decorrente do aumento de salários» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Social contributions | Revenue from wage increases» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Impacto no saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Impact on the balance» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «IRS | Receita decorrente do aumento de salários e pensões» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Personal income tax | Revenue from wage and pension increases» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «IRC; 2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    · o rótulo da fonte «Corporate income tax; 2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+    … e mais 114
+

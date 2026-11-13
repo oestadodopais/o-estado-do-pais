@@ -1,0 +1,20 @@
+REC1 troca de modo recusada: 2026-08-01 en enderecoB.
+REC1 troca de modo recusada: 2026-08-01 en metodo.
+REC1 modo 2026-08-01: controlos e plantas verdes.
+REC1 troca de modo recusada: 2099-01-01 pt politicaV.
+REC1 troca de modo recusada: 2099-01-01 pt h1.
+REC1 troca de modo recusada: 2099-01-01 pt enderecoB.
+REC1 troca de modo recusada: 2099-01-01 pt metodo.
+REC1 troca de modo recusada: 2099-01-01 en politicaV.
+REC1 troca de modo recusada: 2099-01-01 en h1.
+REC1 troca de modo recusada: 2099-01-01 en enderecoB.
+REC1 troca de modo recusada: 2099-01-01 en metodo.
+REC1 modo 2099-01-01: controlos e plantas verdes.
+REC1: 45 controlos, 132 plantas; cópias isoladas, duas línguas.
+REC1 HTML: 9882 páginas, marcas e metas conferidas.
+REC1 lista construída indice: 0 entradas, expectativa escrita conferida.
+REC1 lista construída municipios/evora: 0 entradas, expectativa escrita conferida.
+REC1 pt: 0 entradas construídas, prova e retirada conferidas.
+REC1 lista construída en/index: 0 entradas, expectativa escrita conferida.
+REC1 lista construída en/municipalities/evora: 0 entradas, expectativa escrita conferida.
+REC1 en: 0 entradas construídas, prova e retirada conferidas.

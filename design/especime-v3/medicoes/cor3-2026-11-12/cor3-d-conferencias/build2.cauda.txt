@@ -1,0 +1,20 @@
+  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (17 casam)
+sinais · 2 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+PASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.
+file://<worktree>/tests/discussao/contagem-medicos.mjs:24
+ if(auditarContagem().length)throw new Error('Controlo limpo da contagem recusado');
+                                   ^
+
+Error: Controlo limpo da contagem recusado
+    at plantasDaContagem (file://<worktree>/tests/discussao/contagem-medicos.mjs:24:36)
+    at conferirTudo (file://<worktree>/tests/discussao/itens.mjs:422:27)
+    at file://<worktree>/tests/discussao/itens.mjs:609:73
+
+Node.js v22.23.1

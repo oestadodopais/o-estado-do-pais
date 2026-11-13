@@ -1,0 +1,20 @@
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · a linha "hab-tipsho60-a-ptir-lt-avg-ro-2025" tem "document.locator" e o seu documento não está declarado português («en»).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · a linha "smi-espanha-2026" tem "document.locator" e o seu documento não está declarado português («es»).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=EU27_2020; time=2015; value[308]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-eu27_2020-2015/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=EU27_2020; time=2025; value[318]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-eu27_2020-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=PT; time=2015; value[550]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-pt-2015/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=PT; time=2019; value[554]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-pt-2019/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=PT; time=2025; value[560]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-pt-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=RO; time=2015; value[561]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-ro-2015/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_I25; geo=RO; time=2025; value[571]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-i25-ro-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2024; value[625]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2025; value[626]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_LT_AVG; geo=PT; time=2024; value[867]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-lt-avg-pt-2024/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_LT_AVG; geo=PT; time=2025; value[868]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-lt-avg-pt-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_LT_AVG; geo=RO; time=2024; value[878]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-lt-avg-ro-2024/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «freq=A; unit=PTIR_LT_AVG; geo=RO; time=2025; value[879]…» (1 ocorrência(s), ex.: dist/en/ledger/hab-tipsho60-a-ptir-lt-avg-ro-2025/index.html).
+    · localizador em português sem lang="pt-PT" na edição inglesa: «Real Decreto 126/2026; artículo 1; p. 1…» (1 ocorrência(s), ex.: dist/en/ledger/smi-espanha-2026/index.html).
+
