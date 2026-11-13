@@ -1,0 +1,20 @@
+Os documentos bilingues publicados não contêm dados de gráficos no formato payload; ausência conferida nas fontes e no HTML construído.
+EVB paridade: 30 diferenças iguais ao texto julgado; três campos ausentes, resumo trocado e número novo recusados.
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<temporario>
+    at Object.readFileSync (node:fs:440:20)
+    at conferirParidade (file://<worktree>/scripts/check-paridade.mjs:30:37)
+    at file://<worktree>/tests/cor3/paridade.mjs:38:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<temporario>
+}
+
+Node.js v22.23.1

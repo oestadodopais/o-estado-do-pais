@@ -1,0 +1,72 @@
+{
+  "medidas": [
+    {
+      "estudo": "a-casa-em-portugal-e-na-europa",
+      "tipo": "documento",
+      "numeros": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "250",
+            "250",
+            "375",
+            "375"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 10,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 30,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          }
+        ]
+      },
+      "excecao": true
+    },
+    {
+      "estudo": "a-casa-em-portugal-e-na-europa",
+      "tipo": "página",
+      "numeros": {
+        "total": {
+          "soPt": [],
+          "soEn": [
+            "250",
+            "250",
+            "375",
+            "375"
+          ]
+        },
+        "blocos": [
+          {
+            "i": 86,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          },
+          {
+            "i": 249,
+            "soPt": [],
+            "soEn": [
+              "250",
+              "375"
+            ]
+          }
+        ]
+      },
+      "excecao": true
+    }
+  ]
+}
