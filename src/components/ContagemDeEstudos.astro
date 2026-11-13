@@ -3,7 +3,7 @@ import Claim from './Claim.astro';
 import Provenance from './Provenance.astro';
 import {dataDaCasa} from '../lib/datas.mjs';
 import {getClaim} from '../lib/ledger.mjs';
-import {retiradaDaContagem} from '../lib/retirada-da-contagem.mjs';
+import {retiradaDaContagem, razaoContemData} from '../lib/retirada-da-contagem.mjs';
 const {id, lang = 'pt'} = Astro.props;
 const retirada = retiradaDaContagem(getClaim(id));
 const campo = lang === 'pt' ? 'reason' : 'reason_en';
@@ -11,8 +11,8 @@ const campo = lang === 'pt' ? 'reason' : 'reason_en';
 <div class="contagem-estudos" data-contagem-estudos={id} data-correcao-entrada={retirada ? id : undefined}>
   <p><Claim id={id} lang={lang} />{' '}{lang === 'pt' ? 'estudos' : 'studies'}{' '}<Provenance id={id} lang={lang} /></p>
   {retirada && <p class="contagem-retirada" data-contagem-retirada={id}>
-      <time datetime={retirada.entrada.date} data-correcao-claim={id} data-correcao-n={String(retirada.indice)} data-correcao-campo="date">{dataDaCasa(retirada.entrada.date,lang)}</time>
-      {': '}<span data-correcao-claim={id} data-correcao-n={String(retirada.indice)} data-correcao-campo="reason">{retirada.entrada[campo]}</span>
+      {!razaoContemData(retirada.entrada,lang) && <><time datetime={retirada.entrada.date} data-correcao-claim={id} data-correcao-n={String(retirada.indice)} data-correcao-campo="date">{dataDaCasa(retirada.entrada.date,lang)}</time>
+      {': '}</>}<span data-correcao-claim={id} data-correcao-n={String(retirada.indice)} data-correcao-campo="reason">{retirada.entrada[campo]}</span>
   </p>}
 </div>
 <style>

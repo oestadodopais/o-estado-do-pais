@@ -15,7 +15,7 @@ export function conferirContagemEstudos(root,lang,rota) {
   for(const chip of copia.querySelectorAll('.src-chip'))chip.remove();
   const ps=copia.querySelectorAll('p');
   const esperados=[`${linha.value} ${lang==='pt'?'estudos':'studies'}`];
-  if(retirada)esperados.push(`${dataDaCasa(retirada.entrada.date,lang)}: ${retirada.entrada[lang==='pt'?'reason':'reason_en']}`);
+  if(retirada){const razao=retirada.entrada[lang==='pt'?'reason':'reason_en'],data=dataDaCasa(retirada.entrada.date,lang);esperados.push(razao.includes(data)?razao:`${data}: ${razao}`);}
   if(caixa.getAttribute('data-contagem-estudos')!==id || ps.length!==esperados.length ||
       ps.some((p,i)=>normal(p.textContent)!==esperados[i]) ||
       normal(copia.textContent)!==normal(ps.map(p=>p.textContent).join('')) ||

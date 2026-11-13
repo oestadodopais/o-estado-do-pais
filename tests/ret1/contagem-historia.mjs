@@ -23,7 +23,7 @@ for (const id of ['estudos-publicados','estudos-evora-publicados']) {
       const caixa=r.querySelector(`[data-contagem-estudos="${id}"]`), aviso=caixa?.querySelector('[data-contagem-retirada]');
       return Boolean(aviso) && caixa?.querySelector(`[data-claim="${id}"]`)?.textContent === linha.value &&
         caixa?.querySelector('.src-chip')?.getAttribute('href')===routePath('linha',lang,{slug:id}) &&
-        aviso.textContent.replace(/\s+/g,' ').trim() === `${dataDaCasa(retirada.entrada.date,lang)}: ${retirada.entrada[lang==='pt'?'reason':'reason_en']}`;
+        aviso.textContent.replace(/\s+/g,' ').trim() === retirada.entrada[lang==='pt'?'reason':'reason_en'];
     };
     assert(confere(root),`${rota}: contagem, data, motivo ou recibo divergente`);
     assert.deepEqual(conferirContagemEstudos(root,lang,rota).erros,[]);

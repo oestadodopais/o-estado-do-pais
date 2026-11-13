@@ -7,3 +7,9 @@ export function retiradaDaContagem(linha) {
   if (ultima?.event !== 'retirada-de-estudos') return null;
   return {entrada:ultima, indice:linha.corrections.indexOf(ultima)};
 }
+
+/** A data só precisa de prefixo quando a razão ainda não a escreve. */
+export function razaoContemData(entrada, lang) {
+  const data = entrada.date.split('-').reverse().join('.');
+  return (entrada[lang === 'pt' ? 'reason' : 'reason_en'] ?? '').includes(data);
+}
