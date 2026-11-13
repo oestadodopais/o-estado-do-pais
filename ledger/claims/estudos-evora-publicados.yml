@@ -63,6 +63,7 @@ corrections:
     reason_en: "The six Évora studies became four: «The accounts of the Câmara de Évora, 2010 to 2025», «Quem governou a Câmara de Évora, 2009 a 2025», «The economy of Évora and the public money that reaches the municipality outside the council» and «Évora 2027, European Capital of Culture» succeed the six of August and September, which stay hosted as dated editions. The count becomes that of the studies with no successor."
   - date: "2026-11-13"
     kind: "atualizacao"
+    event: "retirada-de-estudos"
     old_value: "4"
     new_value: "2"
     reason: "Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte."

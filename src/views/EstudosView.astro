@@ -1,5 +1,6 @@
 ---
 import MedidasDoEstudo from '../components/MedidasDoEstudo.astro';
+import ContagemDeEstudos from '../components/ContagemDeEstudos.astro';
 import { t } from '../i18n/strings.mjs';
 import Base from '../layouts/Base.astro';
 import AvisoDaRevisao from '../components/AvisoDaRevisao.astro';
@@ -22,6 +23,7 @@ for (const e of trabalhos) {
 ---
 <Base lang={lang} path={path} title={r.estudos} description={r.estudos}>
   <h1 class="estudos-titulo">{r.estudos}</h1>
+  <ContagemDeEstudos id="estudos-publicados" lang={lang} />
   {/* UMA LISTA SÓ (bloco R1, 23.09.2026, I144): todos os estudos, do mais recente
       para o mais antigo, cada um com o seu lugar e o seu tema na entrada. A
       secção «Por lugar», com as contagens de cada lugar, saiu: o lugar lê-se em

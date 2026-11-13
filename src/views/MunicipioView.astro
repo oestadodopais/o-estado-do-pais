@@ -65,6 +65,7 @@ import MedidasDoEstudo from '../components/MedidasDoEstudo.astro';
 import TextoDoNome from '../components/TextoDoNome.astro';
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
+import ContagemDeEstudos from '../components/ContagemDeEstudos.astro';
 import Provenance from '../components/Provenance.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import CartaoDoLugar from '../components/lugar/CartaoDoLugar.astro';
@@ -196,6 +197,7 @@ const jsonld = {
             {r.estudosDoLugar}
           </h2>
         </div>
+        {slug === 'evora' && <ContagemDeEstudos id="estudos-evora-publicados" lang={lang} />}
         {estudos.map((e) => (
           <article class="lugar-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
             <h3 class="lugar-estudo-k">

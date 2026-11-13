@@ -57,6 +57,7 @@ corrections:
     reason_en: "The six Évora studies of August and September 2026, succeeded by the four of October, left the archive."
   - date: "2026-11-13"
     kind: "atualizacao"
+    event: "retirada-de-estudos"
     old_value: "13"
     new_value: "5"
     reason: "Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: as auditorias acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu."

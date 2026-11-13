@@ -1008,7 +1008,7 @@ export function geografiaJsonStatCofog(claim) {
  * A lista fechada apanha erros de escrita nas chaves — um "reason-en" em vez
  * de "reason_en" passaria despercebido e a edição inglesa ficaria sem motivo.
  */
-const CAMPOS_CORRECAO = ['date', 'kind', 'old_value', 'new_value', 'reason', 'reason_en'];
+const CAMPOS_CORRECAO = ['date', 'kind', 'old_value', 'new_value', 'reason', 'reason_en', 'event'];
 
 /**
  * `field` só existe — e é obrigatório — numa entrada `proveniencia`.
@@ -2640,6 +2640,11 @@ export function validateLedger() {
         }
         const aceites =
           ['proveniencia', 'correcao'].includes(String(corr.kind)) ? CAMPOS_CORRECAO_PROVENIENCIA : CAMPOS_CORRECAO;
+        if (Object.hasOwn(corr, 'event') && (corr.event !== 'retirada-de-estudos' || corr.kind !== 'atualizacao' ||
+            !['estudos_no_arquivo','estudos_evora_no_arquivo','edicoes_no_arquivo'].includes(String(c.check)) ||
+            !(Number(corr.new_value) < Number(corr.old_value)))) {
+          errors.push(`${rot}: event só admite retirada-de-estudos numa atualização que diminui uma contagem do arquivo.`);
+        }
         for (const k of Object.keys(corr)) {
           if (!aceites.includes(k)) {
             errors.push(

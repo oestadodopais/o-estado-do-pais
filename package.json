@@ -20,6 +20,7 @@
     "cartoes": "node scripts/cartoes.mjs",
     "check:nd1": "node tests/linha/ausencia-nd1.mjs",
     "check:rec2-moldura": "node tests/documentos/moldura.mjs --vermelhos",
+    "check:ret1-texto": "node tests/texto/amostra-ligacao-ret1.mjs",
     "check:rec2": "npm run check:ret1 && node tests/rec2/retirados.mjs && node tests/rec2/listas.mjs && node tests/rec2/amostras.mjs && node tests/rec2/titulos.mjs && node tests/rec2/publicacao.mjs && node tests/rec2/fontes.mjs && node tests/rec2/voz-inventario.mjs && node scripts/check-retirados.mjs && node tests/rec2/contagens.mjs && node tests/rec2/registos-contagem.mjs && node tests/evb/sucessor.mjs",
     "gate:html": "npm run check:rec2 && node scripts/check-quadro.mjs && node tests/linha/frequencia-verificacoes.mjs && node scripts/gate-html.mjs && npm run check:nd1 && node tests/eva/pagina.mjs && node tests/eva/execucao.mjs && node tests/eva/reconferencias.mjs && node tests/evb/pagina.mjs && node tests/evb/leitura.mjs",
     "check:datas": "node tests/explicacoes/revisoes.mjs --datas && node tests/inicio/novidades.mjs && node tests/inicio/datas-do-recibo.mjs && node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node tests/hb1/pagina-editada.mjs && node scripts/check-datas.mjs && node tests/quadro/reguas.mjs datas",
@@ -103,7 +104,7 @@
     "check:alvos:0": "node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs --fatia 0 && node tests/quadro/disposicao.mjs alvos",
     "check:alvos:1": "node tests/acessibilidade/alvos.mjs --fatia 1",
     "check:alvos:2": "node tests/acessibilidade/alvos.mjs --fatia 2 --juntar",
-    "check:ret1": "node tests/ret1/remissoes.mjs && node tests/ret1/inventario.mjs && node tests/ret1/lugares.mjs && node tests/ret1/rotas.mjs && node tests/ret1/ligacoes.mjs && node tests/ret1/linhas.mjs && node tests/ret1/construido.mjs"
+    "check:ret1": "node tests/ret1/contagem-historia.mjs && node tests/ret1/remissoes.mjs && node tests/ret1/inventario.mjs && node tests/ret1/lugares.mjs && node tests/ret1/rotas.mjs && node tests/ret1/ligacoes.mjs && node tests/ret1/linhas.mjs && node tests/ret1/construido.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
