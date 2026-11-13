@@ -994,4 +994,4 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 
 | evl-e | C005 reposta, C004 e quatro nomes anteriores retirados, quatro nomes com atribuição explícita | por ler | Codex, 12.11.2026: palavras da adenda E conferidas contra C005 e o HTML construído; leitura cruzada do diff reservada ao lugar de direção. |
 
-| ret1-a | Duas notas dos pelouros substituídas pela ausência prescrita | por ler | Codex, 13.11.2026: frases literais da adenda A do RET1, conferidas no HTML dos dois mandatos, nas duas línguas. Leitura cruzada do diff pendente antes da fusão. |
+| ret1-a | Duas notas dos pelouros substituídas pela ausência prescrita | lida | Codex, 13.11.2026: frases literais da adenda A do RET1, conferidas no HTML dos dois mandatos, nas duas línguas. Leitura cruzada: Claude Opus 5.5, na leitura curta das adendas de 13.11.2026 (as duas frases como o mandato as escreve, duas vezes por edição nas páginas construídas). |

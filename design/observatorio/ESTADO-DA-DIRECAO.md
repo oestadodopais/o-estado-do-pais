@@ -1,6 +1,6 @@
 # O estado da direção · ler primeiro em cada sessão
 
-*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 12.11.2026, 21:18 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
+*Escrito pelo lugar de direção (Claude Fable 5.2) a 10.11.2026, por palavra do financiador: uma sessão nova tem de saber tudo o que a anterior sabia, sem que nada fique por olhar. Este ficheiro é a fotografia; o `CLAUDE.md` são as regras; o `DECISIONS.md` é a história. **Atualiza-se no fim de cada bloco e antes de fechar uma sessão**, a secção 4 inteira e a data aqui: **estado de 13.11.2026, 04:38 UTC**. Sem travessões. O diário de trabalho com os caminhos da máquina e os comandos de retoma está fora do git, em `.claude/direcao/` na árvore principal do sítio.*
 
 ## 1. O que o financiador quer, pela ordem dele
 
@@ -33,7 +33,7 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 ## 3. O que está no ar
 
 - `main` do sítio: `740595bbb` (o EVA, 11.11.2026, no ar desde as 04:40:55 UTC), sobre `ccca806e0` (REC1 e VEL1, 10.11.2026). `master` do motor: `247e604` (MOT1, MOT2 e o EVA, com a linha de 2021 a atravessar, 11.11.2026).
-- Treze estudos vivos. Os seis de Évora substituídos deixaram de ter páginas com o REC2 (11.11.2026); os endereços antigos redirecionam para os sucessores.
+- Cinco estudos vivos desde 13.11.2026 (o RET1 tirou oito). Os seis de Évora substituídos deixaram de ter páginas com o REC2 (11.11.2026); os endereços antigos redirecionam para os sucessores.
 - **O estudo das contas da Câmara de Évora está no ar com o texto julgado** (edição única de 11.11.2026), e a linha da execução da receita de 2021 vale 87,72. **Erros conhecidos que ainda estão no ar:** nos outros estudos de Évora, 230 erros reais achados em cinco estudos auditados, com listas julgadas; nas páginas inglesas do livro, os valores na forma portuguesa (EVA-9).
 
 ## 4. Em curso, bloco a bloco (atualizar sempre)
@@ -46,6 +46,7 @@ O financiador é o primeiro leitor e tem pouca experiência técnica: fala-se-lh
 | **EVB** | o estudo de Évora 2027 reescrito pela norma e julgado em seis voltas | **aterrado a 12.11.2026** (o motor na véspera, o sítio neste dia; cinco leituras do Opus com vinte e cinco plantas em vinte e cinco; a decisão é a §1.241; o custo em `custo-evb-2026-11-12.json`) | as questões EVB-1 a EVB-19 (a EVB-18 fechou com o EVL), a EVB-10 antes do EVC |
 | **EVL** | o cartão do estudo de Évora 2027 com duas medidas e os seus recibos | **aterrado a 12.11.2026** (duas leituras do Opus com dez plantas em dez; a decisão é a §1.242; o custo em `custo-evl-2026-11-12.json`) | as questões EVL-1 a EVL-18 (o bloco de higiene e a próxima edição do estudo); a seguir, a primeira peça no formato «um acontecimento como prova ao Estado» (a depressão Charles de 11.11.2026, com as fontes guardadas) e o EVC |
 | **CR3** | duas revisões do Eurostat (o desempenho das exportações de 2024 e de 2025) aplicadas pelo guião das releituras | **aterrado a 12.11.2026** (duas passagens do Codex, 3 pontos; duas leituras curtas do Opus com dez plantas em dez; o custo em `custo-cr3-2026-11-12.json`) | a terceira revisão (a sobrecarga do custo da habitação da União) entra com a recomposição do estudo da habitação; a automação da frescura está construída e por armar (ver a `GARGALOS.md`) |
+| **RET1** | os oito estudos que as auditorias condenaram saem do que se constrói; ficam cinco | **aterrado a 13.11.2026** (quatro passagens do Codex; a leitura a frio do Opus e a leitura curta das três adendas, dez plantas em dez; a decisão §1.243; o custo em `custo-ret1-2026-11-13.json`) | conferir uma a uma as linhas do livro dos oito; reescrever os dois de Évora como peças curtas (EVC) e os outros seis pela norma nova, depois do lançamento |
 | **IT0** | a cadeia geral dos itens diários (hoje só serve o Orçamento) | por mandatar; sobe na fila para logo depois do EVB | mandatar; o primeiro item por volta de 18.11.2026 |
 | **EVC e FON1** | os estudos «quem governou» e «a economia e o dinheiro de fora» | auditados (54 e 62 erros reais), mas sem as fontes guardadas: metade ou mais dos números não se pode conferir | recolher e guardar as fontes (FON1); depois a cadeia inteira |
 | **Os nove estudos nacionais e regionais** | orçamento de 2027, habitação, água (dois), economia regional, «which door is yours», Alentejo e Algarve, Portugal desde 1981, reforma antecipada | por auditar | primeiro uma revisão da carteira: ficar, fundir ou retirar cada um |

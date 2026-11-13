@@ -1,0 +1,55 @@
+{
+ "cabeca": "b421daa1c44e4ee87b9384df2a299182edabaad4",
+ "paginas": [
+  {
+   "nome": "estudos",
+   "pt": "/estudos/",
+   "en": "/en/studies/"
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/"
+  },
+  {
+   "nome": "alentejo",
+   "pt": "/regioes/alentejo/",
+   "en": "/en/regions/alentejo/"
+  },
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/"
+  },
+  {
+   "nome": "recibo-estudos-publicados",
+   "pt": "/livro-razao/estudos-publicados/",
+   "en": "/en/ledger/estudos-publicados/"
+  },
+  {
+   "nome": "recibo-estudos-de-evora",
+   "pt": "/livro-razao/estudos-evora-publicados/",
+   "en": "/en/ledger/estudos-evora-publicados/"
+  },
+  {
+   "nome": "recibo-agua-nao-faturada",
+   "pt": "/livro-razao/agua-nao-faturada-portugal-2024/",
+   "en": "/en/ledger/agua-nao-faturada-portugal-2024/"
+  },
+  {
+   "nome": "estudo-contas-de-evora",
+   "pt": "/estudos/evora-contas-da-camara-2010-2025/",
+   "en": "/en/studies/evora-contas-da-camara-2010-2025/"
+  },
+  {
+   "nome": "estudo-evora-2027",
+   "pt": "/estudos/evora-2027-capital-europeia-da-cultura/",
+   "en": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+  },
+  {
+   "nome": "correcoes",
+   "pt": "/correcoes/",
+   "en": "/en/corrections/"
+  }
+ ]
+}

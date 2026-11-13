@@ -1,0 +1,65 @@
+{
+ "bloco": "RET1 (os oito estudos que as auditorias condenaram saem do que se constrói)",
+ "data": "2026-11-13",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "o mandato (os oito retirados sem sucessor, os redirecionamentos, as listas, as duas contagens)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T21:25:08Z",
+   "fim": "2026-11-12T23:44:24Z",
+   "pontos": 10.0,
+   "pontos_antes": 27.0,
+   "pontos_depois": 37.0,
+   "turnos": 243,
+   "fonte": "a linha PONTOS do registo do lançador; o contador é o da conta, e duas passagens do COR3 correram neste intervalo"
+  },
+  {
+   "nome": "adenda A (a frase de Évora, as auditorias no plural, as réguas repostas, a razão datada ao pé das contagens)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T00:49:13Z",
+   "fim": "2026-11-13T02:03:52Z",
+   "pontos": 4.0,
+   "pontos_antes": 37.0,
+   "pontos_depois": 41.0,
+   "turnos": 112,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda B (as duas remissões dentro de dois estudos que ficam, no motor e no sítio; a régua a ler todas as páginas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T02:07:53Z",
+   "fim": "2026-11-13T02:45:02Z",
+   "pontos": 3.0,
+   "pontos_antes": 41.0,
+   "pontos_depois": 44.0,
+   "turnos": 87,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda C (as vinte recusas da régua: uma frase, o título com as suas maiúsculas, o endereço de uma fonte retirada)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T02:51:23Z",
+   "fim": "2026-11-13T03:21:45Z",
+   "pontos": 1.0,
+   "pontos_antes": 44.0,
+   "pontos_depois": 45.0,
+   "turnos": 92,
+   "fonte": "a linha PONTOS do registo do lançador"
+  }
+ ],
+ "total_pontos_codex": "por separar: o contador é o da conta e as passagens do COR3 correram no mesmo intervalo; as duas linhas PONTOS das passagens do RET1 somam o que a conta inteira gastou nesses intervalos",
+ "reflexo_dos_gargalos": "Acima do alvo. A primeira passagem bateu no teto das 240 chamadas, com os oito últimos commits a fechar plantas e medições; o estado «retirado» ficou geral, e a próxima retirada é uma lista e uma corrida. Quatro linhas novas na GARGALOS.md.",
+ "leituras": "Claude Opus 5.5 (leitor): nove auditorias por amostra a xhigh antes do bloco (cerca de 2,3 milhões de símbolos); a leitura a frio a high (244 mil símbolos, 54 chamadas), cinco plantas em cinco; a leitura curta da adenda A.",
+ "claude": "a direção, as auditorias, o mandato, as medições, a lista inteira por guião e a revisão pelo Fable 5.2",
+ "medida": "oito estudos fora do que se constrói, 76 redirecionamentos, duas linhas de contagem com a sua história, as linhas do livro dos oito conservadas.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-12T21:23:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros."
+}

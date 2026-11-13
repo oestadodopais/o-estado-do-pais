@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-13T03:38:57+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "SC-P1",
+   "ficheiro": "src/data/correcoes.mjs",
+   "descricao": "a entrada do registo das correções do estudo das contas com a data 2026-11-12; o mandato da adenda B manda 2026-11-13",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1ff0d59c968b604a1c60d5bde13d573131cf58605ba02ffdb1f71a1fdb42d8e8",
+   "sha256_depois": "dd2452da3c61a2db2151e2ef01cca060f49cceaf8dda6c40035e54528b32ba8c",
+   "contexto_antes": ";\n}\n\n/** Correções do texto dos estudos. Uma entrada por estudo e data, com as duas línguas. */\nexport const CORRECOES_TEXTO = [\n  {\"kind\": \"texto_atualizado\", \"slug\": \"evora-contas-da-camara-2010-2025\", \"data\": \"2026-11-13\", \"frase\": {\"pt\": \"Saiu a remissão para um estudo que deixou o arquivo; nenhum número nem nenhuma conclusão mudou.\", \"en\": \"The reference to a study that left t",
+   "contexto_depois": ";\n}\n\n/** Correções do texto dos estudos. Uma entrada por estudo e data, com as duas línguas. */\nexport const CORRECOES_TEXTO = [\n  {\"kind\": \"texto_atualizado\", \"slug\": \"evora-contas-da-camara-2010-2025\", \"data\": \"2026-11-12\", \"frase\": {\"pt\": \"Saiu a remissão para um estudo que deixou o arquivo; nenhum número nem nenhuma conclusão mudou.\", \"en\": \"The reference to a study that left t"
+  },
+  {
+   "id": "SC-P2",
+   "ficheiro": "ledger/claims/estudos-publicados.yml",
+   "descricao": "a razão em inglês volta a dizer «an audit found»; a adenda A manda «the audits found», porque foram duas",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "86220a4fc5dfa67f2e54b9c633818ea4f6af0b38573d71d4fb459e17a96c9fe2",
+   "sha256_depois": "d4f61b3d28dec8b765bd1d2e495f79464f5da162d8c1054632f75d9e3492bc21",
+   "contexto_antes": "acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.\"\n    reason_en: \"Eight studies left the archive on 13.11.2026 to be rewritten: the audits found errors in them, figures without a stored copy of the source, or data the source has since revised.\"\n",
+   "contexto_depois": "acharam neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.\"\n    reason_en: \"Eight studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them, figures without a stored copy of the source, or data the source has since revised.\"\n"
+  },
+  {
+   "id": "SC-P3",
+   "ficheiro": "scripts/estudos-retirados-conferir.mjs",
+   "descricao": "a régua das remissões passa a isentar as páginas dos concelhos, onde estava a frase que a adenda A corrigiu; as exceções escritas são só o registo das correções e a história datada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "df9aa40a1deb06b3b312b8097979d1ab02fc07e9d8bf9d8e98f7e8fcffd60c9e",
+   "sha256_depois": "cf861939a6baf13a37a6fc78c2c19fa1039f9433fedb6c6269420e46d25a6fdd",
+   "contexto_antes": "script, style, template, [hidden], [aria-hidden=\"true\"]')) el.remove();\n  // Só a história datada do recibo e o registo de correções conservam nomes antigos.\n  if (/^\\/(?:correcoes|en\\/corrections)\\/?$/.test(rota)) return [];\n  if (/^\\/(?:livro-razao|en\\/ledger)\\/[^/]+\\/?$/.test(rota)) {\n    for (const el of root.querySelectorAll('.historico-entrada')) {\n      const data = el.queryS",
+   "contexto_depois": "script, style, template, [hidden], [aria-hidden=\"true\"]')) el.remove();\n  // Só a história datada do recibo e o registo de correções conservam nomes antigos.\n  if (/^\\/(?:correcoes|en\\/corrections|municipios\\/[^/]+|en\\/municipalities\\/[^/]+)\\/?$/.test(rota)) return [];\n  if (/^\\/(?:livro-razao|en\\/ledger)\\/[^/]+\\/?$/.test(rota)) {\n    for (const el of root.querySelectorAll('.historico-entrada')) {\n      const data = el.queryS"
+  },
+  {
+   "id": "SC-P4",
+   "ficheiro": "src/views/LinhaView.astro",
+   "descricao": "o bloco do endereço do recibo fica invertido: só aparece quando a fonte é uma página de um estudo retirado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "11b2bc37af9b8169657a3cd60439c03742a7920994c2405d9d28ea47900470a6",
+   "sha256_depois": "eb50892787301805720d39b24d106e19fca0cd0ee83c905b7734b41435596e4d",
+   "contexto_antes": "\nconst portaNaProva = Boolean(url && paginaDoPdf && paginaDoDocumento);\n// Um endereço de estudo retirado não é uma fonte acessível, nem se imprime como texto.\nconst temBlocoDoPedido = !enderecoDeEstudoRetirado(claim.source_url) && claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;\n\n/**\n * ---------------------------------------------------------------------------\n * A MARCA DE ÁGUA DE U",
+   "contexto_depois": "\nconst portaNaProva = Boolean(url && paginaDoPdf && paginaDoDocumento);\n// Um endereço de estudo retirado não é uma fonte acessível, nem se imprime como texto.\nconst temBlocoDoPedido = enderecoDeEstudoRetirado(claim.source_url) && claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;\n\n/**\n * ---------------------------------------------------------------------------\n * A MARCA DE ÁGUA DE U"
+  },
+  {
+   "id": "SC-P5",
+   "ficheiro": "src/data/studies.mjs",
+   "descricao": "a alcunha «estudo de quem governou a câmara» deixa de estar declarada, e a frase antiga da página de Évora passaria a régua",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "632c6a9d99822bf88b589a6425d99982a0bd72e36322f875eda6f2b35e2dcf27",
+   "sha256_depois": "445949c14c3e91078722ad422b64ad825c58642c82571e64a6cb4a81494b4de0",
+   "contexto_antes": "he accounts of the Câmara de Évora.',\n    },\n  },\n  {\n    id: 'evora-quem-governou-a-camara-2009-2025',\n    slug: 'evora-quem-governou-a-camara-2009-2025',\n    alcunhas: {\"pt\": [\"estudo de quem governou a câmara\", \"Quem governou a Câmara de Évora, 2009 a 2025\"], \"en\": [\"study of who governed the council\", \"Who governed the Câmara de Évora, 2009 to 2025\"]},\n    estado: 'retirado',\n    tema: 'governo-e-democracia',\n    ",
+   "contexto_depois": "he accounts of the Câmara de Évora.',\n    },\n  },\n  {\n    id: 'evora-quem-governou-a-camara-2009-2025',\n    slug: 'evora-quem-governou-a-camara-2009-2025',\n    alcunhas: {\"pt\": [\"Quem governou a Câmara de Évora, 2009 a 2025\"], \"en\": [\"study of who governed the council\", \"Who governed the Câmara de Évora, 2009 to 2025\"]},\n    estado: 'retirado',\n    tema: 'governo-e-democracia',\n    "
+  }
+ ]
+}

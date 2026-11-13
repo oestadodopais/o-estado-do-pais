@@ -8,8 +8,7 @@
 
 | Ordem | Bloco | Tipo | O que o leitor recebe | Estado | Razão da posição |
 | --- | --- | --- | --- | --- | --- |
-| 4 | RET1 | conteúdo | os oito estudos que a auditoria condenou saem do que se constrói, com os endereços antigos a levar ao lugar certo e as suas linhas do livro no lugar; ficam cinco estudos, e as duas contagens do arquivo dizem-no com a data | mandato escrito (12.11.2026) | o que não está verificado não fica no ar; os dois estudos de Évora voltam reescritos na forma nova, os outros seis quando forem reescritos e julgados |
-| 5 | EVC | conteúdo | os outros dois estudos de Évora (quem governou a câmara; a economia e o dinheiro de fora) auditados frase a frase por outra família e corrigidos; no primeiro, a marca «[a verificar]» que ainda se imprime sai | por mandatar (o EVA aterrou a 11.11.2026) | a regra 1: uma marca de verificação não é uma forma de publicar |
+| 5 | EVC | conteúdo | os dois estudos de Évora que saíram a 13.11.2026 (quem governou a câmara; a economia e o dinheiro de fora) voltam como duas peças mais curtas de prestação de contas, pela norma nova, com os dados na página do concelho | por mandatar (antes, recolher e guardar as fontes: o bloco FON1) | a auditoria de 08 e 09.11.2026 achou neles 54 e 62 erros; saíram com o RET1 |
 | 7 | CAM2-A | maquinaria | nada diretamente; a primeira passagem da camada 2, só guiões: o detetor das frases com afirmação (as atribuições e as causas), o registo de cada uma no livro-razão com as linhas que a sustentam, a cobertura por régua (uma frase com afirmação sem registo recusa-se; as de hoje numa lista que só encolhe, que a AUD1 esvazia) e a M83 no `ledger:check` (o corpo alojado de cada linha que declara um documento) | mandato escrito (09.11.2026): medido no `dist/` de f362f5ccd (702 frases candidatas em português; as 795 linhas com documento têm o corpo no motor) | a §1.234 (2): tira a classe de erro que já chegou ao leitor (as frases); a AUD1, a VOZ-2B e a VOZ-3 passam por ela |
 | 8 | CAM2-B | maquinaria | nada diretamente; o juiz de outra família, com cinco plantas por lote: lê cada frase do registo contra o excerto e responde se bate; corre também sobre as frases de um mandato antes do construtor (o registo nas listas `Frases:`) | por mandatar (depois da CAM2-A) | a lição da COR-AGUA: três erros eram frases do lugar de direção, e cada um custou uma passagem |
 | 9 | CAM2-C | maquinaria | nada diretamente; a régua dos instantâneos datados: cada «instantâneo de <data>» resolve num ficheiro guardado dessa data cujas somas são os valores impressos | por mandatar | a questão COR-AGUA-2 |
@@ -26,6 +25,12 @@
 | 20 | DO5 | navegação | nas listas dos dossiês do Temas, das portas e do índice, a data da peça mais recente na linha de baixo, na letra das datas, em vez de sozinha numa linha do título (a I289) | por mandatar | a mesma razão da observação do financiador sobre a caixa; um bloco pequeno, depois da OG1-E e do EV4 |
 | 21 | OG1-B5 | conteúdo | o «Resultado das Votações» do arquivo e o Diário da reunião n.º 16 no item do Orçamento; os números do primeiro-ministro de 27.10 ao lado das fontes | à espera do Parlamento (a vigia de meia em meia hora até às 20:00 UTC de cada dia) | não depende de nós; entra no dia em que a fonte sair, como a OG1-B4 entrou a 29.10 |
 | 22 | OG1-D | conteúdo | a extensão da âncora de atribuição às afirmações dos outros itens (a I279) e o segundo leitor das citações (a I277), na atualização seguinte de cada item | quando um item com afirmações for atualizado | maquinaria presa a um conteúdo; não anda sozinha |
+
+## Saíram da fila a 13.11.2026
+
+| bloco | género | o que o leitor passou a ver |
+|---|---|---|
+| RET1 | conteúdo | os oito estudos que as auditorias condenaram saíram do arquivo, com os endereços antigos a levar à página do seu lugar ou ao índice dos estudos; ficam cinco, e as duas contagens dizem-no com a data e a razão; aterrou a 13.11.2026 |
 
 ## Saíram da fila a 12.11.2026
 

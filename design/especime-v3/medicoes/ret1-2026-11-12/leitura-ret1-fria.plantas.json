@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-12T23:53:41+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "RT-P1",
+   "ficheiro": "scripts/estudos-retirados-conferir.mjs",
+   "descricao": "um retirado cujo objeto é uma região passa a ir para o índice dos estudos; o mandato manda-o para a página do objeto, e o vercel.json construído leva alentejo-algarve para a página do Alentejo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "86726e985eed15309e30704f412445739033eb2dd174cde9000bf731d94f2157",
+   "sha256_depois": "96277ebb531448b389d142e8719baa6112aff35031baa83aa8d746937887d99d",
+   "contexto_antes": "/';\n  if (work.subject) {\n    if (MUNICIPIOS_COM_PAGINA.some(m => m.slug === work.subject)) return routePath('municipio', lang, {slug:work.subject}) + '/';\n    if (slugsDasRegioes().includes(work.subject)) return routePath('regiao', lang, {slug:work.subject}) + '/';\n  }\n  return routePath('estudos', lang) + '/';\n}\n\nexport function redirecionamentosDosRetirados(works, partida) {\n  return partida.estudos.flatMap(e => {\n    c",
+   "contexto_depois": "/';\n  if (work.subject) {\n    if (MUNICIPIOS_COM_PAGINA.some(m => m.slug === work.subject)) return routePath('municipio', lang, {slug:work.subject}) + '/';\n    if (slugsDasRegioes().includes(work.subject)) return routePath('estudos', lang) + '/';\n  }\n  return routePath('estudos', lang) + '/';\n}\n\nexport function redirecionamentosDosRetirados(works, partida) {\n  return partida.estudos.flatMap(e => {\n    c"
+  },
+  {
+   "id": "RT-P2",
+   "ficheiro": "ledger/claims/estudos-evora-publicados.yml",
+   "descricao": "a razão em inglês diz «Three Évora studies»; saíram dois (4 para 2), e o mandato escreve «Two»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "85753457b74ae13f83b0082676cbbd5ecdc8d3ef8be81d0f80613bf53ce2e825",
+   "sha256_depois": "175cf1c9ad5091b1f4582e324b843e703eea6e8b115fe171793a0d0e7c72621c",
+   "contexto_antes": "\"\n    reason: \"Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.\"\n    reason_en: \"Two Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source.\"\n",
+   "contexto_depois": "\"\n    reason: \"Dois estudos de Évora saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros e números sem a cópia da fonte.\"\n    reason_en: \"Three Évora studies left the archive on 13.11.2026 to be rewritten: an audit found errors in them and figures without a stored copy of the source.\"\n"
+  },
+  {
+   "id": "RT-P3",
+   "ficheiro": "scripts/estudos-retirados-conferir.mjs",
+   "descricao": "um retirado com vários sucessores publicados passa a ir para o primeiro; o mandato manda-o para a página do objeto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "96277ebb531448b389d142e8719baa6112aff35031baa83aa8d746937887d99d",
+   "sha256_depois": "e62e63c5878119f22b42bd32d5960fd079909dbf661cb2e0a070f5ab965d3b43",
+   "contexto_antes": "or desconhecido: ${s.slug}`);\n    return sucessor;\n  }).filter(w => w.estado !== 'retirado' && (!w.editions || w.editions.some(e => edicaoPublicada(w, e))));\n  if (sucessores.length === 1) return routePath('estudo', lang, {slug:sucessores[0].slug}) + '/';\n  if (work.subject) {\n    if (MUNICIPIOS_COM_PAGINA.some(m => m.slug === work.subject)) return routePath('municipio', lang, {slug:work.subject}) + '/';\n    if ",
+   "contexto_depois": "or desconhecido: ${s.slug}`);\n    return sucessor;\n  }).filter(w => w.estado !== 'retirado' && (!w.editions || w.editions.some(e => edicaoPublicada(w, e))));\n  if (sucessores.length >= 1) return routePath('estudo', lang, {slug:sucessores[0].slug}) + '/';\n  if (work.subject) {\n    if (MUNICIPIOS_COM_PAGINA.some(m => m.slug === work.subject)) return routePath('municipio', lang, {slug:work.subject}) + '/';\n    if "
+  },
+  {
+   "id": "RT-P4",
+   "ficheiro": "src/lib/estudo-da-linha.mjs",
+   "descricao": "a função que reconhece o endereço de um estudo retirado fica invertida: diz retirado de um estudo publicado e publicado de um retirado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c39a126d284d2380a44d52216cf22bfde1ab02a695812a879512a3d2c8ee27c5",
+   "sha256_depois": "fef8fedf68de428eb91c793a14a6affd433a53e7747e7a3c9e21a32c069b0e1d",
+   "contexto_antes": " false; }\n  if (url.origin !== new URL(SITE_URL).origin) return false;\n  const slug = url.pathname.match(/^\\/(?:estudos|en\\/studies)\\/([^/]+)(?:\\/|$)/)?.[1];\n  return WORKS.some(w => w.slug === slug && w.estado === 'retirado');\n}\n",
+   "contexto_depois": " false; }\n  if (url.origin !== new URL(SITE_URL).origin) return false;\n  const slug = url.pathname.match(/^\\/(?:estudos|en\\/studies)\\/([^/]+)(?:\\/|$)/)?.[1];\n  return WORKS.some(w => w.slug === slug && w.estado !== 'retirado');\n}\n"
+  },
+  {
+   "id": "RT-P5",
+   "ficheiro": "ledger/claims/estudos-publicados.yml",
+   "descricao": "a razão em português diz «a 12.11.2026»; a entrada é de 2026-11-13 e o mandato escreve 13.11.2026",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "44305e4f03ba186392be5bd1c2eeec9c6ff2c535b2bc55e3255a681259e00010",
+   "sha256_depois": "a80c6566329e6fa7d8aae543cffd1a811e11a1210d91f7218c6afa6ddf611bf8",
+   "contexto_antes": " September 2026, succeeded by the four of October, left the archive.\"\n  - date: \"2026-11-13\"\n    kind: \"atualizacao\"\n    old_value: \"13\"\n    new_value: \"5\"\n    reason: \"Oito estudos saíram do arquivo a 13.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.\"\n    reason_en: \"Eight studies left the arc",
+   "contexto_depois": " September 2026, succeeded by the four of October, left the archive.\"\n  - date: \"2026-11-13\"\n    kind: \"atualizacao\"\n    old_value: \"13\"\n    new_value: \"5\"\n    reason: \"Oito estudos saíram do arquivo a 12.11.2026 para serem reescritos: uma auditoria achou neles erros, números sem a cópia da fonte ou dados que a fonte já reviu.\"\n    reason_en: \"Eight studies left the arc"
+  }
+ ]
+}
