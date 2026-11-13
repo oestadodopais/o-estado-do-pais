@@ -101,7 +101,7 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"voz2a-g"}, {"perfil":"voz2a-f"}, {"perfil":"ed3-navegador"}, {"perfil":"build"}, {"perfil":"voz1a"}, {"perfil":"voz1b"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"coragua-h"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2-d"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}, {"perfil":"eva-t-navegador"}, {"perfil":"eva-ta-indice"}, {"perfil":"rec2-navegador"}, {"perfil":"ret1-moldura"}, {"perfil":"rec2-a-alvos"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"cor3-b"}, {"perfil":"voz2a-g"}, {"perfil":"voz2a-f"}, {"perfil":"ed3-navegador"}, {"perfil":"build"}, {"perfil":"voz1a"}, {"perfil":"voz1b"}, {"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}, {"perfil":"do3-navegador"}, {"perfil":"coragua-h"}, {"perfil":"do4-alvos"}, {"perfil":"lar1"}, {"perfil":"lar1-largura"}, {"perfil":"lar1-b"}, {"perfil":"pai2-d"}, {"perfil":"pai2"}, {"perfil":"pai2-navegador"}, {"perfil":"eva-t-navegador"}, {"perfil":"eva-ta-indice"}, {"perfil":"rec2-navegador"}, {"perfil":"ret1-moldura"}, {"perfil":"rec2-a-alvos"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || [ "$perfil" = voz2a-g ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
@@ -112,6 +112,8 @@ fi
 # DO2-D: repetir apenas a construção completa, sem os restantes portões.
 if [ "${perfil:-}" = build ]; then
   portoes="build"
+elif [ "${perfil:-}" = cor3-b ]; then
+  portoes="check:areas ledger:check check:cruzamento check:series check:cartao check:leituras check:frases-afirmacao check:frases-compostas check:edicoes check:voz check:rotulos check:lugar check:indice check:registo check:sobreposicao typecheck"
 elif [ "${perfil:-}" = ed3-navegador ]; then
   portoes="check:cabeca check:frases-compostas"
 elif [ "${perfil:-}" = lar1-b ]; then

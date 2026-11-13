@@ -1,0 +1,20 @@
+[90m        as duas parcelas dizem de que total saem, nas duas edições[0m
+  [32m✓[0m I6p · a ausência conserva a porta e a forma
+[90m        6 plantas da ausência recusadas nas duas edições[0m
+  [32m✓[0m I6 · o marcador com um destino só
+[90m        12 ligação(ões) em «pt» e 12 em «en», uma página cada · 22 marcador(es) dentro de um selo (excepção da Emenda 2) · 0 cadeia(s) dentro de documentos alojados, que são o texto do documento[0m
+  [32m✓[0m I8 · a página de uma unidade da Carta
+[90m        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada[0m
+  [32m✓[0m I9 · as datas dos trabalhos, e o marcador que resta
+[90m        10 linha(s) de trabalho · 0 marcador(es) ao todo, 0 linha(s) com um e nenhuma com dois · 9 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 9 de 9 linha(s) de src/data/datas-de-publicacao.json conferidas, 4 com data da versão única e as restantes com data do git[0m
+  [32m✓[0m I9p · as datas erradas recusam nas duas origens
+[90m        5 de 5 plantas recusadas na própria I9[0m
+  [32m✓[0m I10 · nenhum número novo
+[90m        4194 linha(s) citada(s) em 33747 ocorrência(s) · 20 motivo(s) declarado(s)[0m
+  [32m✓[0m I1p · as plantas dos localizadores recusam a origem desconhecida
+[90m        28 plantas dos localizadores com queixa própria de I1 e o degrau conferido por I3; uma planta do nome do projeto com queixas de I3; 21 formatos anteriores conferidos.[0m
+  [32m✓[0m I2pp · as plantas do período recusam a falta e a troca da data
+[90m        12 de 12 plantas dos períodos a morder, em cópias dos índices construídos[0m
+  [32m✓[0m ER1 · o código só sai da prosa depois de conferido
+[90m        A mesma leitura do índice recusa o campo alterado, o comentário e a marca fora dele.[0m
+

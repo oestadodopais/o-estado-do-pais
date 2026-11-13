@@ -19720,14 +19720,14 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "complemento": {
       "pt": [
-        "; aqui, no mês que termina a ",
+        "; no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533724"
         },
         "."
       ],
       "en": [
-        "; here, in the month ending on ",
+        "; in the month ending on ",
         {
           "periodo": "hab-bpstat-12533724"
         },
@@ -19753,14 +19753,14 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "complemento": {
       "pt": [
-        "; aqui, no mês que termina a ",
+        "; no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533735"
         },
         "."
       ],
       "en": [
-        "; here, in the month ending on ",
+        "; in the month ending on ",
         {
           "periodo": "hab-bpstat-12533735"
         },

@@ -1,0 +1,20 @@
+    lido   RP1 ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior: 2026-07, coordenadas e metainformação conferidas
+    lido   RP1 remuneracao-bruta-mensal-media: 2026-T2, coordenadas e metainformação conferidas
+    lido   RP1 remuneracao-bruta-mensal-media-periodo-anterior: 2025-T2, coordenadas e metainformação conferidas
+    lido   RP1 pensao-media-anual-2025: 2025, coordenadas e metainformação conferidas
+    lido   RP1 pensao-media-anual-2024: 2024, coordenadas e metainformação conferidas
+    lido   RP1 beneficiarios-do-rsi-por-mil-2024: 2024, coordenadas e metainformação conferidas
+    lido   RP1 beneficiarios-do-rsi-por-mil-2023: 2023, coordenadas e metainformação conferidas
+    lido   RP1 linha-de-risco-de-pobreza-2025: coordenadas conferidas
+    lido   RP1 linha-de-risco-de-pobreza-2024: coordenadas conferidas
+    lido   RP1b ihpc-variacao-homologa: coordenadas, unidade e mês conferidos
+    lido   RP1b ihpc-variacao-homologa-periodo-anterior: coordenadas, unidade e mês conferidos
+    lido   RP1b ihpc-variacao-homologa-ue: coordenadas, unidade e mês conferidos
+
+    concelhos-2026        308 linha(s)
+    dominios-2026          40 linha(s)
+
+  content/13 Dominios/ledger.json
+  publisher/manifest.dominios.json
+  content/13 Dominios/Technical Source/limiar-3-por-cento.md
+

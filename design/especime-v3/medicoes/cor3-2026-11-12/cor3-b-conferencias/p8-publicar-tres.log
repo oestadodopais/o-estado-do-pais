@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-publicar-tres.py", line 10, in <module>
+    assert (E.ROOT/'content'/e['study']/e['record']).read_bytes()==built['bytes']
+                                        ~^^^^^^^^^^
+KeyError: 'record'

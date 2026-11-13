@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<temporario>/cor3-fetch-series.py", line 13, in <module>
+    receipt=dict(url=url,quando=datetime.now(timezone.utc).isoformat(),http=str(r.status_code),bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),cliente='core.http.HttpClient.get',user_agent=client.user_agent)
+                                                                                ^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'status_code'

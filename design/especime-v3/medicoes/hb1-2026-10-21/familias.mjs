@@ -2770,7 +2770,7 @@ export const FAMILIAS_HB1 = [
           {
             "linha": "propria",
             "campo": "derivation",
-            "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (206,41 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 81,7."
+            "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (205,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,97 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 80,8."
           }
         ]
       }
@@ -4635,7 +4635,7 @@ export const FAMILIAS_HB1 = [
           {
             "linha": "propria",
             "campo": "derivation",
-            "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,6 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,6."
+            "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,5 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,7."
           }
         ]
       }
@@ -5957,14 +5957,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, no mês que termina a ",
+        "; no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533724"
         },
         "."
       ],
       "en": [
-        "; here, in the month ending on ",
+        "; in the month ending on ",
         {
           "periodo": "hab-bpstat-12533724"
         },
@@ -6004,14 +6004,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, no mês que termina a ",
+        "; no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533735"
         },
         "."
       ],
       "en": [
-        "; here, in the month ending on ",
+        "; in the month ending on ",
         {
           "periodo": "hab-bpstat-12533735"
         },
