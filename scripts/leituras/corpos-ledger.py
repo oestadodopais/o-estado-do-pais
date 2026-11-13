@@ -50,6 +50,35 @@ def texto_do_corpo(raw):
     return normal(texto)
 
 
+def paginas_pdf(raw):
+    with tempfile.TemporaryDirectory(prefix='cam2a-quadro-') as tmp:
+        f = Path(tmp) / 'corpo.pdf'; f.write_bytes(raw)
+        texto = subprocess.run(['pdftotext', '-q', '-layout', str(f), '-'], capture_output=True, check=True, timeout=120).stdout.decode('utf-8')
+    return [normal(p) for p in texto.split('\f')]
+
+
+def excerto_pdf_confere(linha, paginas):
+    """A ordem visual do PDF; quadros selecionam cabeçalhos e uma linha na mesma página."""
+    doc = linha.get('document') or {}
+    pagina = doc.get('page')
+    if not isinstance(pagina, int) or isinstance(pagina, bool) or not 1 <= pagina <= len(paginas): return False
+    corpo = paginas[pagina - 1]
+    excerto = linha.get('excerpt') or ''
+    if normal(excerto) and normal(excerto) in corpo: return True
+    partes = excerto.splitlines()
+    if len(partes) < 3 or not partes[-1].startswith('Seleção: ') or not partes[0].strip().startswith('Quadro '): return False
+    selecao = partes[-1][len('Seleção: '):]
+    if not selecao or selecao not in doc.get('locator', ''): return False
+    pos = 0
+    for parte in partes[:-1]:
+        trecho = normal(parte)
+        if not trecho: continue
+        inicio = corpo.find(trecho, pos)
+        if inicio < 0: return False
+        pos = inicio + len(trecho)
+    return True
+
+
 def indice_completo(repo, motor, precisos):
     cabeca = git(repo, 'rev-parse', 'HEAD').decode().strip()
     cabeca_motor = git(motor, 'rev-parse', 'HEAD').decode().strip()
@@ -65,7 +94,7 @@ def indice_completo(repo, motor, precisos):
 
 
 def conferir(linhas, indice, excertos=False):
-    erros, cache = [], {}
+    erros, cache, pdfs = [], {}, {}
     for linha in linhas:
         sha = (linha.get('document') or {}).get('source_sha256')
         if sha is None: continue
@@ -79,8 +108,9 @@ def conferir(linhas, indice, excertos=False):
                 raw = git(repo, 'show', f'{cabeca}:{p}')
                 if hashlib.sha256(raw).hexdigest() != sha: raise ValueError('corpo diferente do índice')
                 cache[sha] = texto_do_corpo(raw)
+                if raw.startswith(b'%PDF'): pdfs[sha] = paginas_pdf(raw)
             excerpt = normal(linha.get('excerpt') or '')
-            if not excerpt or excerpt not in cache[sha]: erros.append(f'{linha["id"]}: excerto ausente do corpo')
+            if not excerpt or (excerpt not in cache[sha] and not (sha in pdfs and excerto_pdf_confere(linha, pdfs[sha]))): erros.append(f'{linha["id"]}: excerto ausente do corpo')
     return erros
 
 

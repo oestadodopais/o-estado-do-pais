@@ -1,3 +1,4 @@
+import '../cor3/titulos-frases.mjs';
 import './frases-adenda-g.mjs';
 import './frases-adenda-f.mjs';
 import './frases-adenda-e.mjs';

@@ -15,6 +15,17 @@ const LISTA = 'ledger/frases/por-registar.json';
 const BASE = 'd21c48f0b';
 export const SEMENTE_SHA256 = 'a00ced4b9eac3c54c57567cdb8824249fcec22dff7c9cc08ed918cd267cef1fd';
 export const citacoes = (t, lingua) => [...t.matchAll(lingua === 'pt' ? /«([^»]+)»/gu : /«([^»]+)»|“([^”]+)”|"([^"]+)"/gu)].map(m => m[1] ?? m[2] ?? m[3]);
+// Um título identificado como notícia é provado no corpo do mesmo documento.
+export function tituloCitado(frase, lingua, citacao, suporte) {
+  const marcador = lingua === 'pt' ? 'notícia «' : 'news report «';
+  return suporte.find(l => {
+    if (!/^[a-f0-9]{64}$/.test(l.document?.source_sha256 ?? '')) return false;
+    if (l.document.title === citacao && frase.includes(marcador + citacao + '»')) return true;
+    const quadro = /^Quadro ([A-Z]?\d+(?:\.\d+)+)\. ([^;]+);/.exec(l.document.locator ?? '');
+    return quadro && quadro[2] === citacao && Number.isInteger(l.document.page) &&
+      frase.includes(`${lingua === 'pt' ? 'Quadro' : 'table'} ${quadro[1]}, «${citacao}»`);
+  }) ?? null;
+}
 export const normalExcerto = t => normal(t.replace(/\u00ad/g, '').replace(/(\p{L})-\s*\n\s*(\p{L})/gu, '$1$2').replace(/[‘’]/g, "'").replace(/[“”]/g, '"'));
 export function lerRegisto(pasta = 'ledger/frases') {
   return fs.readdirSync(pasta).filter(f => f.endsWith('.json') && !['por-registar.json','textos-julgados.json'].includes(f)).sort().flatMap(f => {
@@ -66,7 +77,7 @@ export function conferirHistorico(lista, repo = '.', {base = BASE, semente = SEM
   return erros;
 }
 export function conferirRegisto(registo, paginas, livro, {medidas = 'design/especime-v3/medicoes', sementes = null} = {}) {
-  const erros = [], ids = new Set(), textos = new Set(), linhas = new Map();
+  const erros = [], ids = new Set(), textos = new Set(), linhas = new Map(), titulos = new Map();
   const impressas = new Set(paginas.flatMap(p => p.blocos.flatMap(b => b.frases.map(frase => chave({estudo:p.estudo, lingua:p.lingua, frase})))));
   for (const f of registo) {
     const id = f.id ?? '(sem id)';
@@ -102,7 +113,12 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
       if (!parEncontrado) erros.push(`${id}: pt e en sem par pelo alinhamento dos blocos`);
       const pt = citacoes(f.pt, 'pt'), en = citacoes(f.en, 'en');
       if (Boolean(pt.length) !== Boolean(en.length)) erros.push(`${id}: citação só numa edição`);
-      for (const c of pt.filter(c => [...c].length >= 12)) if (!suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c)))) erros.push(`${id}: citação ausente do excerto`);
+      for (const c of pt.filter(c => [...c].length >= 12)) {
+        if (suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c)))) continue;
+        const titulo = tituloCitado(f.pt, 'pt', c, suporte);
+        if (!titulo || !tituloCitado(f.en, 'en', c, [titulo])) erros.push(`${id}: citação ausente do excerto`);
+        else titulos.set(titulo.id, {...titulo, id: titulo.id + '#titulo', excerpt: c});
+      }
       const presa = pt.some(c => [...c].length >= 12 && suporte.some(l => normalExcerto(l.excerpt).includes(normalExcerto(c))));
       if (f.juizo !== 'por julgar') erros.push(`${id}: juízo tem de ficar por julgar`);
       if (f.origem === 'semente') {
@@ -116,7 +132,7 @@ export function conferirRegisto(registo, paginas, livro, {medidas = 'design/espe
       }
     }
   }
-  return {erros, linhas:[...linhas.values()], textos};
+  return {erros, linhas:[...linhas.values(), ...titulos.values()], textos};
 }
 export function conferirCobertura(frases, registo, pendentes) {
   const erros = [], presentes = new Set(frases.map(chave)), p = validarPendentes(pendentes);

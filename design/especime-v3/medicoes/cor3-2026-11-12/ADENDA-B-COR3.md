@@ -2,6 +2,7 @@
 
 Acrescenta: linhas e frases
 Medidas: medidas-cor3-s.json
+Frases: FRASES-COR3-B.json
 
 *Escrito pelo lugar de direção (Claude Fable 5.2). O construtor é o Codex `gpt-6-astra` (`high`), com rede, na worktree do sítio `cor3-2026-11-12`; a outra pasta com escrita é a worktree do motor `cor3-2026-11-12`, e começas por ela; depois fechas o sítio. Uma construção grande: cento e cinquenta minutos e duzentas e quarenta chamadas, e não precisas de as gastar; não lances sessões auxiliares nem corras o portão inteiro. Um commit no fim de cada ponto numerado, com `OEDP_GATE=adiado` no motor e o assunto a começar por `COR3`. O teu relatório vai para `RELATORIO-COR3-B.txt`, nesta pasta, com quinze linhas; os registos para `cor3-b-conferencias/`, nesta pasta, só os códigos e as últimas vinte linhas, sem caminhos da máquina.*
 

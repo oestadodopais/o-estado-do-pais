@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cor3-salarios-dossie",
+    "estudo": "/dossies/orcamento-2027",
+    "tipos": [
+      "atribuicao"
+    ],
+    "pt": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+    "en": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+    "linhas": [
+      "utao-salarios-valor"
+    ],
+    "razao": "Atribuição medida nas duas edições; as linhas sustentam as palavras citadas e as medidas da frase.",
+    "origem": "mandato cor3-2026-11-12/ADENDA-B-COR3.md",
+    "juizo": "por julgar"
+  },
+  {
+    "id": "cor3-salarios-estudo",
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "tipos": [
+      "atribuicao"
+    ],
+    "pt": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+    "en": "A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos.»",
+    "linhas": [
+      "utao-salarios-valor"
+    ],
+    "razao": "Atribuição medida nas duas edições; as linhas sustentam as palavras citadas e as medidas da frase.",
+    "origem": "mandato cor3-2026-11-12/ADENDA-B-COR3.md",
+    "juizo": "por julgar"
+  },
+  {
+    "id": "cor3-be-estudo",
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "tipos": [
+      "atribuicao"
+    ],
+    "pt": "O Bloco de Esquerda, pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», diz que o Orçamento “dá migalhas”: a frase não tem número, e as medidas novas para as pessoas valem 121 milhões de euros de IRS a menos no mínimo de existência e 100 milhões no Complemento Solidário para Idosos, ao lado de 947 milhões já contados nos salários.",
+    "en": "The Left Bloc, by the news report «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», says the Budget “dá migalhas” (gives crumbs): the phrase has no number, and the new measures for people are worth 121 million euros less in income tax through the exemption threshold and 100 million in the Solidarity Supplement for the Elderly, alongside 947 million already counted in wages.",
+    "linhas": [
+      "posicao-be-rendimentos",
+      "pm-q3-2-r13-c0",
+      "pm-q3-2-r25-c0",
+      "pm-q3-2-r21-c0",
+      "pm-q3-2-r22-c0",
+      "pm-q3-2-r23-c0"
+    ],
+    "razao": "Atribuição medida nas duas edições; as linhas sustentam as palavras citadas e as medidas da frase.",
+    "origem": "mandato cor3-2026-11-12/ADENDA-B-COR3.md",
+    "juizo": "por julgar"
+  },
+  {
+    "id": "cor3-invariantes-estudo",
+    "estudo": "orcamento-2027-o-que-muda-e-para-quem",
+    "tipos": [
+      "atribuicao"
+    ],
+    "pt": "A UTAO usa a palavra «invariantes» para um conjunto maior do que as dez linhas do quadro: o cenário de políticas invariantes, as medidas já em vigor, cujo impacto adicional em 2027 o Ministério das Finanças põe em 5 411 milhões de euros no anexo do relatório (o Quadro A1.1, «Quadro de políticas invariantes»); a UTAO: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB).",
+    "en": "The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 the Ministry of Finance puts at 5,411 million euros in the report's annex (table A1.1, «Quadro de políticas invariantes»); the UTAO: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB).",
+    "linhas": [
+      "oe-2027-quadro-a1-1-impacto-saldo",
+      "utao-politicas-saldo"
+    ],
+    "razao": "Atribuição medida nas duas edições; as linhas sustentam as palavras citadas e as medidas da frase.",
+    "origem": "mandato cor3-2026-11-12/ADENDA-B-COR3.md",
+    "juizo": "por julgar"
+  }
+]
