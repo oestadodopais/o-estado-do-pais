@@ -42,8 +42,8 @@ const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
        e «uma data prevista de conclusão já passada à data do instantâneo, sem data efetiva de conclusão registada»
        (`studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html`, a secção «O que significa «dentro do
        prazo» nestes dados, e o que está vencido»);
-     · o valor atuarialmente neutro e as duas portas: «Quem sai um ano antes é penalizado em 2,75 vezes o custo que
-       impõe ao sistema», «Sem o fator de sustentabilidade, a penalização é sempre inferior à neutra» e «Com o fator de
+     · o valor atuarialmente neutro e as duas portas: «Quem sai um ano antes é penalizado em 2,75 vezes a redução
+       neutra», «Sem o fator de sustentabilidade, a penalização é sempre inferior à neutra» e «Com o fator de
        sustentabilidade, a penalização de um ano é de 22,6%»
        (`studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html`). */
 import { WORKS } from './studies.mjs';
@@ -116,21 +116,29 @@ export const LEITURAS = {
   "a-casa-em-portugal-e-na-europa": {
     "medidas": [
       {
-        "claim": "hab-tipsho60-a-ptir-i15-pt-2024",
+        "claim": "der-hab-preco-rendimento-2015-2025-pt",
         "nome": {
           "pt": [
-            "é o rácio entre os preços das casas e o rendimento em Portugal, com ",
+            "é quanto subiu em Portugal, de ",
             {
               "ref": "2015"
             },
-            " igual a cem, o mais alto da União"
+            " a ",
+            {
+              "ref": "2025"
+            },
+            ", o rácio entre os preços das casas e o rendimento, a maior subida da União"
           ],
           "en": [
-            "is the ratio of house prices to income in Portugal, ",
+            "is how much the ratio of house prices to income rose in Portugal from ",
             {
               "ref": "2015"
             },
-            " equal to one hundred, the highest in the Union"
+            " to ",
+            {
+              "ref": "2025"
+            },
+            ", the largest rise in the Union"
           ]
         }
       },
@@ -178,7 +186,7 @@ export const LEITURAS = {
                       "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
                       "sufixo": " %"
                 },
-                " dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos ",
+                " dos quais estão em sobrecarga; os jovens saem de casa dos pais, em média, aos ",
                 {
                       "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
                 },
@@ -204,7 +212,7 @@ export const LEITURAS = {
                       "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
                       "sufixo": " %"
                 },
-                " of whom are overburdened, and on the young, who leave their parents' home at ",
+                " of whom are overburdened; the young leave their parents' home, on average, at ",
                 {
                       "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
                 },
@@ -842,15 +850,15 @@ export const LEITURAS = {
       {
         claim: 'penalizacao-antecipacao-um-ano-com-factor-2026',
         nome: {
-          pt: ['é o que a lei corta a quem não cabe numa das exceções'],
-          en: ['is what the law cuts from those who fall outside the exceptions'],
+          pt: ["é o que a lei corta quando a pensão é calculada pelas regras da flexibilização em vigor a ", {"ref": "31 de dezembro de 2018"}],
+          en: ["is what the law cuts when the pension is calculated under the flexibilisation rules in force on ", {"ref": "31 December 2018"}],
         },
       },
     ],
     medidasNota: {
       pt: [
         [
-          'O valor atuarialmente neutro é o corte que pagaria exatamente o custo que a antecipação impõe ao sistema. A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.',
+          "O valor atuarialmente neutro é o corte que deixaria o trabalhador financeiramente indiferente, em valor atual esperado, entre reformar-se agora ou daqui a um ano, numa estimativa que o relatório chama preliminar. A quem antecipa pelo regime de flexibilização com pelo menos ", {"claim": "flexibilizacao-idade-minima"}, " anos e ", {"claim": "flexibilizacao-carreira-minima"}, " de descontos nessa idade, a lei corta menos do que essa estimativa. As duas medidas acima são os dois extremos da mesma decisão.",
         ],
         /* O FATOR VOLTA À PÁGINA, COM O SEU SELO (I75, 27.08.2026). O valor só
            se rendia na ressalva «A comparação junta duas figuras do relatório»,
@@ -872,7 +880,7 @@ export const LEITURAS = {
       ],
       en: [
         [
-          'The actuarially neutral figure is the cut that would exactly pay for the cost the early retirement imposes on the system. For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.',
+          "The actuarially neutral figure is the cut that would leave the worker financially indifferent, in expected present value, between retiring now or a year later, in what the report calls a preliminary estimate. For those who retire early under the flexibilisation scheme aged at least ", {"claim": "flexibilizacao-idade-minima"}, " with ", {"claim": "flexibilizacao-carreira-minima"}, " years of contributions at that age, the law cuts less than that estimate. The two measures above are the two ends of the same decision.",
         ],
         [
           'The one-year cut follows from the sustainability factor, ',
@@ -887,7 +895,7 @@ export const LEITURAS = {
         { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
         ' ou de ',
         { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
-        ', consoante a porta por onde o trabalhador entra (uma das exceções que afastam o fator de sustentabilidade, ou a regra geral), quando o valor atuarialmente neutro calculado pelo próprio relatório, o corte que pagaria exatamente o custo que a antecipação impõe ao sistema, é de ',
+        ", consoante a porta por onde o trabalhador entra (a flexibilização com pelo menos ", {"claim": "flexibilizacao-idade-minima"}, " anos e ", {"claim": "flexibilizacao-carreira-minima"}, " de descontos nessa idade, ou as regras da flexibilização em vigor a ", {"ref": "31 de dezembro de 2018"}, "), quando o valor atuarialmente neutro estimado pelo próprio relatório, numa estimativa que ele chama preliminar, é de ",
         { claim: 'penalizacao-antecipacao-um-ano-neutra' },
         ': a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.',
       ],
@@ -896,15 +904,15 @@ export const LEITURAS = {
         { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
         ' or ',
         { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
-        ', depending on which door the worker comes through (one of the exceptions that set the sustainability factor aside, or the general rule), when the actuarially neutral figure calculated by the report itself, the cut that would exactly pay for the cost the early retirement imposes on the system, is ',
+        ", depending on which door the worker comes through (flexibilisation at ", {"claim": "flexibilizacao-idade-minima"}, " or older with ", {"claim": "flexibilizacao-carreira-minima"}, " years of contributions at that age, or the flexibilisation rules in force on ", {"ref": "31 December 2018"}, "), when the actuarially neutral figure estimated by the report itself, in what it calls a preliminary estimate, is ",
         { claim: 'penalizacao-antecipacao-um-ano-neutra' },
         ': the law misses in both directions, and is harshest on those who deviate least.',
       ],
     },
     origem: {
-      onde: 'content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html:110, :148, :183',
-      pt: 'Consoante a porta por onde o trabalhador entra. · A penalização legal quase nunca coincide com o custo atuarial, e falha nos dois sentidos. · A regra é mais dura com quem se desvia menos.',
-      en: 'Depending on which door the worker comes through. · The legal penalty almost never matches the actuarial cost, and misses in both directions. · The rule is harshest on those who deviate least.',
+      onde: 'content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html:112, :149, :184',
+      pt: 'Consoante a porta por onde o trabalhador entra. · A penalização legal quase nunca coincide com o valor atuarialmente neutro, e falha nos dois sentidos. · A regra é mais dura com quem se desvia menos.',
+      en: 'Depending on which door the worker comes through. · The legal penalty almost never matches the actuarially neutral figure, and misses in both directions. · The rule is harshest on those who deviate least.',
     },
   },
 };
