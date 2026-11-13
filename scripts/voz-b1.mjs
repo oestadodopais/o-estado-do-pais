@@ -1,4 +1,5 @@
 import {conferirLinhaDasEdicoes,manifestoEd2} from './edicoes-linha-conferir.mjs';
+import {conferirContagemEstudos} from './contagem-retirada-conferir.mjs';
 import { superficieDoQuadro } from './check-quadro.mjs';
 import {dataEditorialPermitida} from './datas-editoriais.mjs';
 import { conferirSuperficieDossies } from './dossies-superficie.mjs';
@@ -95,6 +96,9 @@ export function verificaB1(raiz, documentos = new Map()) {
       // Os nomes das portas HB1 são comparados à declaração por medir-defeitos.
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim], .texto-fontes [data-nome]';
       const dispensados = new Set(main.querySelectorAll(verificados));
+      const contagem=conferirContagemEstudos(main,lang,rota);
+      erros.push(...contagem.erros);
+      for(const no of contagem.nos)dispensados.add(no);
       const pai2 = superficieDoQuadro(main.parentNode, lang, {dist:path.join(raiz,'dist')});
       erros.push(...pai2.erros);
       for (const no of pai2.nos) dispensados.add(no);

@@ -5,6 +5,7 @@ import {loadClaims, validateLedger} from '../../src/lib/ledger.mjs';
 import {retiradaDaContagem} from '../../src/lib/retirada-da-contagem.mjs';
 import {dataDaCasa} from '../../src/lib/datas.mjs';
 import {routePath} from '../../src/lib/routes.mjs';
+import {conferirContagemEstudos} from '../../scripts/contagem-retirada-conferir.mjs';
 const livro=loadClaims(), todas=loadClaims({includeWithdrawn:true});
 for (const id of ['estudos-publicados','estudos-evora-publicados']) {
   const linha=livro.get(id), retirada=retiradaDaContagem(linha);
@@ -25,11 +26,15 @@ for (const id of ['estudos-publicados','estudos-evora-publicados']) {
         aviso.textContent.replace(/\s+/g,' ').trim() === `${dataDaCasa(retirada.entrada.date,lang)}: ${retirada.entrada[lang==='pt'?'reason':'reason_en']}`;
     };
     assert(confere(root),`${rota}: contagem, data, motivo ou recibo divergente`);
+    assert.deepEqual(conferirContagemEstudos(root,lang,rota).erros,[]);
     for (const mudar of [
       r=>r.querySelector('[data-contagem-retirada]').remove(),
       r=>r.querySelector('[data-contagem-retirada] a').setAttribute('href','/'),
       r=>r.querySelector('[data-contagem-retirada] a').set_content('Motivo adulterado'),
-    ]) {const copia=parse(root.toString());mudar(copia);assert(!confere(copia));}
+    ]) {const copia=parse(root.toString());mudar(copia);assert(!confere(copia));assert(conferirContagemEstudos(copia,lang,rota).erros.length);}
+    const prosa=parse(root.toString());prosa.querySelector('[data-contagem-estudos]').insertAdjacentHTML('beforeend','Prosa acrescentada');
+    assert(conferirContagemEstudos(prosa,lang,rota).erros.length);
+    assert(conferirContagemEstudos(root,lang,'/agenda').erros.length);
   }
   for (const event of ['desconhecido',null]) {
     const alterada=structuredClone(linha);alterada.corrections.at(-1).event=event;

@@ -174,6 +174,7 @@ interface CorrecaoDaLinha {
   new_value?: string | null;
   reason?: string | null;
   reason_en?: string | null;
+  event?: 'retirada-de-estudos';
   field?: CampoDeProveniencia;
 }
 
