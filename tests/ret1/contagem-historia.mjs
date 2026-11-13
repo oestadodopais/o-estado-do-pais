@@ -22,15 +22,15 @@ for (const id of ['estudos-publicados','estudos-evora-publicados']) {
     const confere = r => {
       const caixa=r.querySelector(`[data-contagem-estudos="${id}"]`), aviso=caixa?.querySelector('[data-contagem-retirada]');
       return caixa?.querySelector(`[data-claim="${id}"]`)?.textContent === linha.value &&
-        aviso?.querySelector('a')?.getAttribute('href')===routePath('linha',lang,{slug:id}) &&
+        caixa?.querySelector('.src-chip')?.getAttribute('href')===routePath('linha',lang,{slug:id}) &&
         aviso.textContent.replace(/\s+/g,' ').trim() === `${dataDaCasa(retirada.entrada.date,lang)}: ${retirada.entrada[lang==='pt'?'reason':'reason_en']}`;
     };
     assert(confere(root),`${rota}: contagem, data, motivo ou recibo divergente`);
     assert.deepEqual(conferirContagemEstudos(root,lang,rota).erros,[]);
     for (const mudar of [
       r=>r.querySelector('[data-contagem-retirada]').remove(),
-      r=>r.querySelector('[data-contagem-retirada] a').setAttribute('href','/'),
-      r=>r.querySelector('[data-contagem-retirada] a').set_content('Motivo adulterado'),
+      r=>r.querySelector('[data-contagem-estudos] .src-chip').setAttribute('href','/'),
+      r=>r.querySelector('[data-contagem-retirada]').set_content('Motivo adulterado'),
     ]) {const copia=parse(root.toString());mudar(copia);assert(!confere(copia));assert(conferirContagemEstudos(copia,lang,rota).erros.length);}
     const prosa=parse(root.toString());prosa.querySelector('[data-contagem-estudos]').insertAdjacentHTML('beforeend','Prosa acrescentada');
     assert(conferirContagemEstudos(prosa,lang,rota).erros.length);

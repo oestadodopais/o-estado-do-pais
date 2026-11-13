@@ -21,8 +21,7 @@ export function conferirContagemEstudos(root,lang,rota) {
       normal(copia.textContent)!==normal(ps.map(p=>p.textContent).join('')) ||
       caixa.querySelector('[data-claim]')?.getAttribute('data-claim')!==id ||
       !caixa.querySelectorAll('.src-chip').some(a=>a.getAttribute('href')===routePath('linha',lang,{slug:id})) ||
-      (retirada && (caixa.querySelector('[data-contagem-retirada] a')?.getAttribute('href')!==routePath('linha',lang,{slug:id}) ||
-        caixa.getAttribute('data-correcao-entrada')!==id))) erros.push('RET1 contagem, motivo, data ou recibo diferente da linha');
+      (retirada && caixa.getAttribute('data-correcao-entrada')!==id)) erros.push('RET1 contagem, motivo, data ou recibo diferente da linha');
   if(!erros.length)nos.push(caixa);
   return {erros,nos};
 }

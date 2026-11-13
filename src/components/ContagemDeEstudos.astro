@@ -4,7 +4,6 @@ import Provenance from './Provenance.astro';
 import {dataDaCasa} from '../lib/datas.mjs';
 import {getClaim} from '../lib/ledger.mjs';
 import {retiradaDaContagem} from '../lib/retirada-da-contagem.mjs';
-import {routePath} from '../lib/routes.mjs';
 const {id, lang = 'pt'} = Astro.props;
 const retirada = retiradaDaContagem(getClaim(id));
 const campo = lang === 'pt' ? 'reason' : 'reason_en';
@@ -12,15 +11,12 @@ const campo = lang === 'pt' ? 'reason' : 'reason_en';
 <div class="contagem-estudos" data-contagem-estudos={id} data-correcao-entrada={retirada ? id : undefined}>
   <p><Claim id={id} lang={lang} />{' '}{lang === 'pt' ? 'estudos' : 'studies'}{' '}<Provenance id={id} lang={lang} /></p>
   {retirada && <p class="contagem-retirada" data-contagem-retirada={id}>
-    <a href={routePath('linha',lang,{slug:id})}>
       <time datetime={retirada.entrada.date} data-correcao-claim={id} data-correcao-n={String(retirada.indice)} data-correcao-campo="date">{dataDaCasa(retirada.entrada.date,lang)}</time>
       {': '}<span data-correcao-claim={id} data-correcao-n={String(retirada.indice)} data-correcao-campo="reason">{retirada.entrada[campo]}</span>
-    </a>
   </p>}
 </div>
 <style>
   .contagem-estudos { margin-block: 1rem; }
   .contagem-estudos p { margin-block: .35rem; }
   .contagem-retirada { max-width: 70ch; font-size: .875rem; line-height: 1.5; }
-  .contagem-retirada a { display: block; min-height: 44px; padding-block: .25rem; color: inherit; text-underline-offset: .18em; }
 </style>
