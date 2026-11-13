@@ -5,6 +5,7 @@ import { CORRECOES_TEXTO } from '../src/data/correcoes.mjs';
 /** B1, peça 3. Leitor próprio do HTML, da tabela declarada e do livro.
  * A E1 usa a seleção comum das listagens, pela adenda D ao DO2; as contas dos valores continuam independentes. */
 import fs from 'node:fs';
+import {lugarDaHabitacao} from './lugar-habitacao.mjs';
 import { listagensDoInicio } from '../src/lib/listagens-do-inicio.mjs';
 import { dossieDaPeca } from '../src/lib/dossies.mjs';
 import { conferirLinhaOg1 } from './afirmacoes-og1.mjs';
@@ -230,23 +231,30 @@ const provasEo1 = JSON.parse(fs.readFileSync('ledger/provas/eo1/provas.json', 'u
 function lugarDoCalendarioParlamentar(c) {
   const p = provasEo1[c?.id];
   if (!p || !dataDeCalendarioConferida(c) || c.source !== 'Assembleia da República' ||
-      p.document?.file !== 'content/23 Habitacao/source/ar-oe2027.html' ||
+      !['content/23 Habitacao/source/ar-oe2027.html', 'content/27 Orcamento 2027 O que muda/source/cor3/ar-calendario-oe2027.html'].includes(p.document?.file) ||
       p.document.title !== 'Orçamento do Estado para 2027' ||
       c.document?.source_sha256 !== p.document.source_sha256 ||
-      c.document?.title !== p.document.title || c.document?.locator !== p.document.locator ||
+      c.document?.title !== p.document.title || c.document?.locator !== `${p.document.locator}; p. ${p.document.page}` ||
       c.document?.page !== p.document.page || c.value !== p.value || c.excerpt !== p.excerpt ||
-      c.reference_date !== p.reference_date || c.source_url !== p.receipt?.endereco_final ||
+      c.reference_date !== p.reference_date?.split('/').at(-1) || c.source_url !== p.receipt?.endereco_final ||
+      p.receipt?.estado !== 200 || p.receipt?.sha256 !== p.document.source_sha256 ||
       c.access_date !== p.receipt?.acedido_em?.slice(0,10)) return null;
   try {
     const url = new URL(c.source_url);
     return url.protocol === 'https:' && url.hostname === 'www.parlamento.pt' ? PAIS : null;
   } catch { return null; }
 }
-const entregaParlamentar = linha('oe-2027-calendario-entrega');
-if (lugarDoCalendarioParlamentar(entregaParlamentar) !== PAIS) erros.push('A1: calendário parlamentar selado recusado.');
-for (const campo of ['source_url','excerpt','reference_date','value']) {
-  const copia = structuredClone(entregaParlamentar); copia[campo] += ' adulterado';
-  if (lugarDoCalendarioParlamentar(copia) !== null) erros.push(`A1: planta do calendário (${campo}) não fechou.`);
+for (const id of ['oe-2027-calendario-entrega','oe-2027-calendario-especialidade']) {
+  const calendario = linha(id);
+  if (lugarDoCalendarioParlamentar(calendario) !== PAIS) erros.push(`A1: calendário parlamentar selado recusado: ${id}.`);
+  for (const campo of ['source_url','excerpt','reference_date','value']) {
+    const copia = structuredClone(calendario); copia[campo] += ' adulterado';
+    if (lugarDoCalendarioParlamentar(copia) !== null) erros.push(`A1: planta do calendário (${campo}) não fechou: ${id}.`);
+  }
+  for (const campo of ['locator','page','source_sha256']) {
+    const copia = structuredClone(calendario); copia.document[campo] += ' adulterado';
+    if (lugarDoCalendarioParlamentar(copia) !== null) erros.push(`A1: planta documental do calendário (${campo}) não fechou: ${id}.`);
+  }
 }
 function lugarDoTextoOrcamental(c) {
   const p = provasEfeitos[c?.id];
@@ -377,7 +385,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais, lugarOg1(c),lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c), lugarDaNoticiaHb1(c)].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarDaHabitacao(c), lugarOg1(c),lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c), lugarDaNoticiaHb1(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;

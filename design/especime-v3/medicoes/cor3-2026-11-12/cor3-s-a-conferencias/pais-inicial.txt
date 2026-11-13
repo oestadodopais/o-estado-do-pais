@@ -1,0 +1,2 @@
+A1: hab-bpstat-12533724 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+Causa: a comparação numérica inicial não retirava o espaço estreito de milhares.
