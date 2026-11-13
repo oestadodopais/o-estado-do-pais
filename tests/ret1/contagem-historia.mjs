@@ -21,7 +21,7 @@ for (const id of ['estudos-publicados','estudos-evora-publicados']) {
     const root=parse(fs.readFileSync(`${process.env.OEDP_DIST??'dist'}${rota}/index.html`,'utf8'));
     const confere = r => {
       const caixa=r.querySelector(`[data-contagem-estudos="${id}"]`), aviso=caixa?.querySelector('[data-contagem-retirada]');
-      return caixa?.querySelector(`[data-claim="${id}"]`)?.textContent === linha.value &&
+      return Boolean(aviso) && caixa?.querySelector(`[data-claim="${id}"]`)?.textContent === linha.value &&
         caixa?.querySelector('.src-chip')?.getAttribute('href')===routePath('linha',lang,{slug:id}) &&
         aviso.textContent.replace(/\s+/g,' ').trim() === `${dataDaCasa(retirada.entrada.date,lang)}: ${retirada.entrada[lang==='pt'?'reason':'reason_en']}`;
     };
