@@ -24,4 +24,5 @@ console.log(`RET1: ${Object.keys(antes).length} ficheiros de linhas preservados 
 const historica=[...publicas.values()].find(c=>enderecoDeEstudoRetirado(c.source_url));
 assert(historica);assert(!enderecoDeEstudoRetirado('https://example.test/estudos/'+historica.study));
 assert(!enderecoDeEstudoRetirado('/estudos/'+PUBLISHED_WORKS[0].slug));
-console.log('RET1: o endereço histórico da fonte fica literal, sem ligação para um estudo retirado; fontes externas e estudos vivos mantêm a porta.');
+for (const w of PUBLISHED_WORKS) for (const prefixo of ['/estudos/', '/en/studies/']) assert(!enderecoDeEstudoRetirado(prefixo+w.slug+'/documento/2026-08-12'), 'O estado do trabalho publicado mantém o endereço da fonte.');
+console.log('RET1-C: endereços retirados identificados pelos dados; fontes externas e todos os estudos publicados conservam o endereço.');

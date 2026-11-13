@@ -720,7 +720,8 @@ const temFraseDeAtribuicao = presente(claim.source) && atribuicaoPecas.length > 
    Duas âncoras para o mesmo endereço seriam o mesmo endereço escrito duas
    vezes, e é o `href` desta que o portão confere contra `source_url`. */
 const portaNaProva = Boolean(url && paginaDoPdf && paginaDoDocumento);
-const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;
+// Um endereço de estudo retirado não é uma fonte acessível, nem se imprime como texto.
+const temBlocoDoPedido = !enderecoDeEstudoRetirado(claim.source_url) && claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;
 
 /**
  * ---------------------------------------------------------------------------
