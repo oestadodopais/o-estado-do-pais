@@ -4,7 +4,7 @@ import {KIND_LABELS} from '../src/data/correcoes.mjs';
 import {loadClaims} from '../src/lib/ledger.mjs';
 import {partesDaCorrecao} from '../src/lib/texto-correcao.mjs';
 import {textoDaMudancaGate} from './texto-mudanca-gate.mjs';
-import {conferirHistoria} from './historia-edicoes-conferir.mjs';
+import {conferirHistoria,temEntrada,atualizacaoUnica} from './historia-edicoes-conferir.mjs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { parse } from 'node-html-parser';
@@ -49,7 +49,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
   }
   for (const c of correcoes) {
     const chave = `${c.slug}|${c.data}`, w = works.find(w => w.slug === c.slug);
-    if (!['texto','texto_atualizado'].includes(c.kind) || !w || !manifesto.edicoes.some(e=>e.slug===c.slug&&e.edicoes?.slice(1).some(v=>v.data===c.data)) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
+    if (!['texto','texto_atualizado'].includes(c.kind) || !w || !manifesto.edicoes.some(e=>temEntrada(e,c)) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
     vistas.add(chave);
   }
   if (paginas) for (const [rota,html] of paginas) {
@@ -74,7 +74,7 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claim
     const linguaEdicao = edicao?.lang;
     const e = manifesto.edicoes.find(e => e.slug === slug && e.lang === linguaEdicao);
     const titulo = edicao?.title;
-    if (!c || !titulo || !e?.primeira_edicao) {erros.push(`ED1 texto: entrada desconhecida ${slug}`);continue;}
+    if (!c || !titulo || (!e?.primeira_edicao&&!atualizacaoUnica(e,c))) {erros.push(`ED1 texto: entrada desconhecida ${slug}`);continue;}
     const partes=partesDaCorrecao(c,lang),frase=textoDaMudancaGate(partes,claims,true);
     if(frase===null||frase!==c.frase[lang])erros.push(`ED1 números: ${slug} frase sem origem selada`);
     const valores = {data: data.split('-').reverse().join('.'), titulo, frase:frase??c.frase[lang], kind:KIND_LABELS[c.kind]?.[lang]};
@@ -84,6 +84,12 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claim
       else {if(campo==='frase')erros.push(...conferirNumerosDaCorrecao(els[0],claims,lang));campos.push(els[0]);}
     }
     const vs=e.edicoes,i=vs.findIndex(v=>v.data===data);
+    if(i<1&&atualizacaoUnica(e,c)){
+      const portas=li.querySelectorAll('[data-texto-porta]'),porta=portas[0];
+      if(portas.length!==1||porta?.getAttribute('data-texto-porta')!=='atual'||porta?.getAttribute('href')!==rotaAtual(slug,linguaEdicao)||normal(porta?.textContent)!==(lang==='pt'?'Edição atual':'Current edition'))erros.push(`ED1 texto: ${slug} porta da atualização única`);
+      if(li.querySelectorAll('[data-texto-campo]').length!==4)erros.push(`ED1 texto: ${slug} campos a mais`);
+      continue;
+    }
     if(i<1){erros.push(`ED1 texto: ${slug} sem par de versões`);continue;}
     const rotaDaVersao=n=>n===vs.length-1?rotaAtual(slug,linguaEdicao):`${rotaAtual(slug,linguaEdicao)}/${vs[n].data}`;
     const rotuloDaVersao=n=>n===0?(lang==='pt'?'Primeira edição':'First edition'):n===vs.length-1?(lang==='pt'?'Edição atual':'Current edition'):(lang==='pt'?'Edição de ':'Edition of ')+vs[n].data.split('-').reverse().join('.');

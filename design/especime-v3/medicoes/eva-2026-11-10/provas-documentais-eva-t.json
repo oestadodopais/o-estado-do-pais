@@ -1,25 +1,25 @@
 {
   "estudo": "evora-contas-da-camara-2010-2025",
-  "commit_motor": "5925531cd50b6f0b9cafbcfbfd71350c13e61e5f",
+  "commit_motor": "7baa55457d97bed620e7bb3d24dcc42250fffd48",
   "livro": {
     "file": "design/especime-v3/medicoes/eva-2026-11-10/livro-16-julgado.json",
     "sha256": "661dfe3dd522c4f3199b3467e29592c38a93de6824b273af6b1f7c78f0323607",
-    "origin_ref": "content/16 Évora Contas da Câmara/ledger.json @ 5925531cd50b6f0b9cafbcfbfd71350c13e61e5f"
+    "origin_ref": "content/16 Évora Contas da Câmara/ledger.json @ 7baa55457d97bed620e7bb3d24dcc42250fffd48"
   },
   "registos": {
     "pt": {
       "edition": "As contas da Câmara de Évora, 2010 a 2025 (pt-PT)",
       "lang": "pt-PT",
       "file": "registos/evora-contas-da-camara-2010-2025/pt.record.json",
-      "sha256": "cad4f5047a386652750364f8b97d40f46959e168eb4ab18b3cfa13ed01fb02e9",
-      "objeto_sha256": "212e0e8c02b02105465956dbc4709b63332b5525ae820087ad6a2ba34efb2dff"
+      "sha256": "775abf6e42b395f27f39390e9d7dadad992bd71284f97c8495881f53aa450c06",
+      "objeto_sha256": "37891a66102d48f833998c9a26f40764e4b1a56eb73c4689ff9f9d5d58ad7a0a"
     },
     "en": {
       "edition": "The accounts of the Câmara de Évora, 2010 to 2025",
       "lang": "en",
       "file": "registos/evora-contas-da-camara-2010-2025/en.record.json",
-      "sha256": "59f94d5fd8f06efe7f830e034b1e5564e8d115be0630071ab23297e1527a130a",
-      "objeto_sha256": "67f16e87d525ed2a413e09b71e6100126b11d98de8551d5d1374387bd356671e"
+      "sha256": "89f55cfc6a8ce1b786643945a448de30902797a2f2d40c018048580e91513a94",
+      "objeto_sha256": "0b4e638b344de847951ef04267c3402859e8abe0e2d8c70414effbcf8e0b5975"
     }
   },
   "corpos": {

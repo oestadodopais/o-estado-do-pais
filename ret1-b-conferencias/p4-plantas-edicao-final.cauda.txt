@@ -1,0 +1,1 @@
+RET1-B: atualização de edição única com testemunha no Git; falta de registo, data, natureza e resumo adulterados recusados; uma só porta pública.

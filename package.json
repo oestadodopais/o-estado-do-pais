@@ -104,7 +104,7 @@
     "check:alvos:0": "node tests/acessibilidade/expanded-documentos.mjs && node tests/acessibilidade/alvos.mjs --fatia 0 && node tests/quadro/disposicao.mjs alvos",
     "check:alvos:1": "node tests/acessibilidade/alvos.mjs --fatia 1",
     "check:alvos:2": "node tests/acessibilidade/alvos.mjs --fatia 2 --juntar",
-    "check:ret1": "node tests/ret1/frases-construidas.mjs && node tests/ret1/contagem-historia.mjs && node tests/ret1/remissoes.mjs && node tests/ret1/inventario.mjs && node tests/ret1/lugares.mjs && node tests/ret1/rotas.mjs && node tests/ret1/ligacoes.mjs && node tests/ret1/linhas.mjs && node tests/ret1/construido.mjs"
+    "check:ret1": "node tests/ret1/atualizacao-unica.mjs && node tests/ret1/frases-construidas.mjs && node tests/ret1/contagem-historia.mjs && node tests/ret1/remissoes.mjs && node tests/ret1/inventario.mjs && node tests/ret1/lugares.mjs && node tests/ret1/rotas.mjs && node tests/ret1/ligacoes.mjs && node tests/ret1/linhas.mjs && node tests/ret1/construido.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

@@ -9,7 +9,7 @@ import {dataPublicacao} from './publicacao.mjs';
 /** @param {Buffer|string} bytes */
 export const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 /** @typedef {{data:string,sha256:string,file:string,natureza?:string}} Versao */
-/** @typedef {{slug:string,lang:Lingua,edicoes:Versao[],primeira_edicao?:{commit:string}}} Declaracao */
+/** @typedef {{slug:string,lang:Lingua,edicoes:Versao[],primeira_edicao?:{commit:string},atualizacao_texto?:{data:string}}} Declaracao */
 export function manifestoDasEdicoes(){
  if(!STUDIES_SRC_DIR)throw Error('ED1: pasta dos estudos ausente');
  return /** @type {{edicoes:Declaracao[]}} */(load(fs.readFileSync(path.join(STUDIES_SRC_DIR,'manifest.yml'),'utf8')));
@@ -27,6 +27,8 @@ export function primeirasEdicoes(){return edicoesGuardadas().filter(e=>e.indice=
 export function primeiraEdicao(slug,lang){return primeirasEdicoes().find(e=>e.slug===slug&&e.lang===lang)??null;}
 /** @param {string} slug @param {string} lang @param {string|null} publicada */
 export function mudancasDaEdicao(slug,lang,publicada=null){
+ const atualizacao=manifestoDasEdicoes().edicoes.find(e=>e.slug===slug&&e.lang===lang)?.atualizacao_texto;
+ if(atualizacao)return [{data:atualizacao.data,natureza:'atualizacao'}];
  const todas=versoesDaEdicao(slug,lang);
  if(todas.length===1&&publicada&&todas[0].data>publicada)return [{data:todas[0].data,natureza:'atualizacao'}];
  const vs=todas.slice(1);
@@ -62,6 +64,8 @@ export function portasDaCorrecao(slug,lang,data){
  const work=WORKS.find(w=>w.slug===slug);
  const linguaEdicao=work?.editions.find(e=>e.lang===lang)?.lang ?? (work?.editions.length===1?work.editions[0].lang:lang);
  const vs=versoesDaEdicao(slug,linguaEdicao),i=vs.findIndex(v=>v.data===data);
+ const unica=manifestoDasEdicoes().edicoes.find(e=>e.slug===slug&&e.lang===linguaEdicao)?.atualizacao_texto;
+ if(vs.length===1&&unica?.data===data)return {antes:null,depois:vs[0],rotuloAntes:'',rotuloDepois:lang==='pt'?'Edição atual':'Current edition'};
  if(i<1)throw Error(`ED1: correção sem par de versões: ${slug}/${lang}/${data}`);
  const label=(/** @type {number} */ n)=>n===0?(lang==='pt'?'Primeira edição':'First edition'):n===vs.length-1?(lang==='pt'?'Edição atual':'Current edition'):(lang==='pt'?'Edição de ':'Edition of ')+dataDaCasa(vs[n].data);
  return {antes:vs[i-1],depois:vs[i],rotuloAntes:label(i-1),rotuloDepois:label(i)};

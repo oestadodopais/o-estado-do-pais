@@ -11,10 +11,10 @@ import {NOMES_EV3,marcarNomesEv3,retirarNomesEv3} from '../../src/lib/nomes-ev3.
 const manifesto=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const args={works:WORKS,manifesto,correcoes:CORRECOES_TEXTO,raiz:'studies-src'};
 assert.deepEqual(conferirHistoria(args),[]);
-const atualizacao=CORRECOES_TEXTO.find(e=>e.kind==='texto_atualizado');assert(atualizacao);
+const atualizacao=CORRECOES_TEXTO.find(e=>e.kind==='texto_atualizado'&&e.data!=='2026-11-13');assert(atualizacao);
 const sem=CORRECOES_TEXTO.filter(e=>e!==atualizacao);
 assert.equal(contagemDasCorrecoesNoPortao(0,CORRECOES_TEXTO),contagemDasCorrecoesNoPortao(0,sem));
-const contaComoCorrecao=structuredClone(CORRECOES_TEXTO);contaComoCorrecao.find(e=>e.kind==='texto_atualizado').kind='texto';
+const contaComoCorrecao=structuredClone(CORRECOES_TEXTO);contaComoCorrecao.find(e=>e.kind==='texto_atualizado'&&e.data!=='2026-11-13').kind='texto';
 assert(conferirHistoria({...args,correcoes:contaComoCorrecao}).some(e=>e.startsWith('ED1 entrada:')));
 const escondeCorrecao=structuredClone(CORRECOES_TEXTO);escondeCorrecao.find(e=>e.kind==='texto').kind='texto_atualizado';
 assert(conferirHistoria({...args,correcoes:escondeCorrecao}).some(e=>e.startsWith('ED1 entrada:')));

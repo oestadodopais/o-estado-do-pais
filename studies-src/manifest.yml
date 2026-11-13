@@ -492,34 +492,44 @@ edicoes:
       commit: 14f9311950aa41b9322a02c0b165d29b7f8c2d9c
   - slug: evora-contas-da-camara-2010-2025
     lang: pt
+    atualizacao_texto:
+      data: '2026-11-13'
+      anterior:
+        sha256: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
+        commit: 83881fe9ab00f32232d4ae0126f2a67d9bd97694
     edicoes:
       - data: '2026-11-11'
-        sha256: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
+        sha256: ef8ef71b626a10b6de2c9260067e2e872f177ab8086ad726af11ff4c92c715dc
         file: evora-contas-da-camara-2010-2025/pt.html
     title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação'
     origin: researchhub
-    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ d490827259544a24b050a773f5d691cbeaff340d"
+    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ f223cb4b5f43682071cd7acae788e92e64dbc745"
     raw_file: _raw/evora-contas-da-camara-2010-2025.pt.html
-    fetched_utc: '2026-11-10T23:28:08.156990Z'
-    bytes_raw: 64830
-    bytes_normalized: 64830
-    sha256_raw: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
-    sha256_normalized: e1cfc7392bdaa4b944cdda6d5310c0b00204685e51f79669d7bd42a0a74c4332
+    fetched_utc: '2026-11-13T02:16:16.954290Z'
+    bytes_raw: 64689
+    bytes_normalized: 64689
+    sha256_raw: ef8ef71b626a10b6de2c9260067e2e872f177ab8086ad726af11ff4c92c715dc
+    sha256_normalized: ef8ef71b626a10b6de2c9260067e2e872f177ab8086ad726af11ff4c92c715dc
   - slug: evora-contas-da-camara-2010-2025
     lang: en
+    atualizacao_texto:
+      data: '2026-11-13'
+      anterior:
+        sha256: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
+        commit: 83881fe9ab00f32232d4ae0126f2a67d9bd97694
     edicoes:
       - data: '2026-11-11'
-        sha256: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
+        sha256: daa8da28e7ee7d980ed9ebe7abf66240ce224f0589378e3342e837217f4a2558
         file: evora-contas-da-camara-2010-2025/en.html
     title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification'
     origin: researchhub
-    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ d490827259544a24b050a773f5d691cbeaff340d"
+    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ f223cb4b5f43682071cd7acae788e92e64dbc745"
     raw_file: _raw/evora-contas-da-camara-2010-2025.en.html
-    fetched_utc: '2026-11-10T23:28:08.172822Z'
-    bytes_raw: 64676
-    bytes_normalized: 64676
-    sha256_raw: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
-    sha256_normalized: 50a24a0160b1c86e69bdcbea4f8a7c2c0f8cd47871d129215dddab12083ee651
+    fetched_utc: '2026-11-13T02:16:16.965190Z'
+    bytes_raw: 64526
+    bytes_normalized: 64526
+    sha256_raw: daa8da28e7ee7d980ed9ebe7abf66240ce224f0589378e3342e837217f4a2558
+    sha256_normalized: daa8da28e7ee7d980ed9ebe7abf66240ce224f0589378e3342e837217f4a2558
   - slug: evora-quem-governou-a-camara-2009-2025
     lang: pt
     edicoes:
@@ -585,34 +595,44 @@ edicoes:
       commit: 14f9311950aa41b9322a02c0b165d29b7f8c2d9c
   - slug: evora-2027-capital-europeia-da-cultura
     lang: pt
+    atualizacao_texto:
+      data: '2026-11-13'
+      anterior:
+        sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb
+        commit: 83881fe9ab00f32232d4ae0126f2a67d9bd97694
     edicoes:
       - data: '2026-11-12'
-        sha256: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb
+        sha256: 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178
         file: evora-2027-capital-europeia-da-cultura/pt.html
     title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos'
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ aa7ca6c0fa604447d43007012d6307a3760e00b2"
+    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 7baa55457d97bed620e7bb3d24dcc42250fffd48"
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.pt.html
-    fetched_utc: '2026-11-11T23:07:49.650587Z'
-    bytes_raw: 101925
-    bytes_normalized: 101925
-    sha256_raw: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb
-    sha256_normalized: 16cc2b69faaf6ba624fb6a3d91e3a057444d7bb5890e8f43d809550660147bbb
+    fetched_utc: '2026-11-13T02:16:17.045409Z'
+    bytes_raw: 101818
+    bytes_normalized: 101818
+    sha256_raw: 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178
+    sha256_normalized: 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178
   - slug: evora-2027-capital-europeia-da-cultura
     lang: en
+    atualizacao_texto:
+      data: '2026-11-13'
+      anterior:
+        sha256: ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306
+        commit: 83881fe9ab00f32232d4ae0126f2a67d9bd97694
     edicoes:
       - data: '2026-11-12'
-        sha256: ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306
+        sha256: 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef
         file: evora-2027-capital-europeia-da-cultura/en.html
     title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts'
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ aa7ca6c0fa604447d43007012d6307a3760e00b2"
+    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 7baa55457d97bed620e7bb3d24dcc42250fffd48"
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.en.html
-    fetched_utc: '2026-11-11T23:07:49.664491Z'
-    bytes_raw: 101889
-    bytes_normalized: 101889
-    sha256_raw: ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306
-    sha256_normalized: ddc1b895165dd56b24f33e34887a69807fa4360b148105d511f71aa0727de306
+    fetched_utc: '2026-11-13T02:16:17.056450Z'
+    bytes_raw: 101784
+    bytes_normalized: 101784
+    sha256_raw: 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef
+    sha256_normalized: 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "pt"
     edicoes:

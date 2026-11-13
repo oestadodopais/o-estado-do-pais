@@ -16,6 +16,8 @@ export function rotasNoManifesto(slug,lang,manifesto=manifestoEd2){
  return vs.map((v,i)=>base+(i===vs.length-1?'':'/'+v.data));
 }
 export function mudancasNoManifesto(slug,lang,manifesto=manifestoEd2){
+ const unica=manifesto.edicoes.find(e=>e.slug===slug&&e.lang===lang)?.atualizacao_texto;
+ if(unica)return [{data:unica.data,natureza:'atualizacao'}];
  const todas=versoesNoManifesto(slug,lang,manifesto),publicada=publicacaoNoPortao(slug,lang);
  if(todas.length===1&&publicada&&todas[0].data>publicada)return [{data:todas[0].data,natureza:'atualizacao'}];
  const vs=todas.slice(1);

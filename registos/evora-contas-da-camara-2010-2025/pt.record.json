@@ -9865,17 +9865,11 @@
    "figures": [],
    "i": 133,
    "kind": "paragraph",
-   "text": "As decisões com autor, e as eleições que decidiram quem as tomou, estão no estudo Quem governou a Câmara de Évora, 2009 a 2025."
-  },
-  {
-   "figures": [],
-   "i": 134,
-   "kind": "paragraph",
    "text": "A Capital Europeia da Cultura de 2027 e as contas da associação Évora 2027 estão no estudo Évora 2027, Capital Europeia da Cultura."
   },
   {
    "figures": [],
-   "i": 135,
+   "i": 134,
    "kind": "heading",
    "level": 2,
    "text": "Os limites"
@@ -9892,87 +9886,87 @@
      "value": "10396322.56"
     }
    ],
-   "i": 136,
+   "i": 135,
    "kind": "paragraph",
    "text": "Quase tudo o que aqui se lê é o relato da própria câmara sobre o seu ano. Na certificação e na dívida, as vozes de fora são o auditor, que certificou 2025, e a série do regulador, que chega a 2024. O ano de 2025 teve dois executivos: a mudança foi a 31 de outubro. Os valores de 2024 das contas do município vêm das colunas comparativas das contas de 2025. A razão da não aprovação das contas de 2024 é a que a câmara escreve em 2026. A demonstração de 2025 regista €10 396 322,56 de despesas por pagar de períodos anteriores; entre os documentos lidos não há uma prestação de contas de 2024. Os valores com † vêm de uma digitalização degradada do plano de 2026. Este estudo não apura o que a associação Évora 2027 recebeu: os valores são os das contas e do plano do município."
   },
   {
    "figures": [],
-   "i": 137,
+   "i": 136,
    "kind": "heading",
    "level": 2,
    "text": "Como ler os quadros e as séries"
   },
   {
    "figures": [],
-   "i": 138,
+   "i": 137,
    "kind": "paragraph",
    "text": "A tabela nacional de dívida da apresentação do Anuário Financeiro dos Municípios Portugueses 2024 acaba no ano de contas de 2023; o ficheiro por município da DGAL chega a 2024. O Anuário é uma publicação académica (CICF/IPCA, com a ordem dos contabilistas); a sua tabela nacional usa dados da DGAL. Segundo o registo da recolha de 10 de agosto de 2026, só a apresentação das conclusões foi encontrada em acesso livre."
   },
   {
    "figures": [],
-   "i": 139,
+   "i": 138,
    "kind": "paragraph",
    "text": "«Dívida» não quer dizer a mesma coisa em cada ano da tabela. Até 2013, o regime legal usava o endividamento líquido municipal. Com a lei das finanças locais de 2013, em vigor desde 1 de janeiro de 2014, a medida passou a ser a dívida total de operações orçamentais, que inclui a quota-parte do município nas entidades em que participa. O município publica ainda um terceiro valor, a dívida global apurada, e um quarto, a dívida orçamental sem as entidades participadas. Durante vários anos, dois ou três destes conceitos coexistem no mesmo relatório com valores diferentes."
   },
   {
    "figures": [],
-   "i": 140,
+   "i": 139,
    "kind": "paragraph",
    "text": "O sistema contabilístico mudou por baixo da série. O município manteve as suas contas em POCAL na primeira parte do período e em SNC-AP na parte final. O relatório de 2021 diz, pelas suas próprias palavras, que o novo sistema faz os resultados parecerem piores do que o antigo, por causa da forma como trata as depreciações e amortizações. Os resultados antes e depois da transição não formam, por isso, uma série contínua, e a coluna do resultado da tabela das finanças deve ser lida como duas."
   },
   {
    "figures": [],
-   "i": 141,
+   "i": 140,
    "kind": "paragraph",
    "text": "Na recolha de 10 de agosto de 2026 não se obteve texto do dossiê digitalizado de 2020, por extração direta e sem reconhecimento de carateres, nem se encontraram as contas de 2024 nas páginas do município consultadas. Os valores de 2020 e de 2024 das contas do município vêm, por isso, de relatórios posteriores: das colunas comparativas ou do texto."
   },
   {
    "figures": [],
-   "i": 142,
+   "i": 141,
    "kind": "paragraph",
    "text": "Um asterisco nas tabelas significa que o valor vem da coluna comparativa de um relatório posterior, e não de um documento do seu próprio ano. É o mesmo município a reportar, mas num relatório posterior, por vezes escrito por outro executivo. No caso de 2024, as contas do próprio ano foram rejeitadas. Cinco anos levam-no, no todo ou em parte."
   },
   {
    "figures": [],
-   "i": 143,
+   "i": 142,
    "kind": "paragraph",
    "text": "Uma adaga significa que o valor vem de uma digitalização degradada. Só aparece nos valores do plano de 2026. É um marcador da mesma família do asterisco. O corpo do relatório do plano extrai com limpeza; os seus anexos, o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos, são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor tirado dessa camada leva uma adaga. As linhas que não foi possível recuperar ficaram de fora; são lacunas, e não zeros."
   },
   {
    "figures": [],
-   "i": 144,
+   "i": 143,
    "kind": "heading",
    "level": 3,
    "text": "A tabela das finanças, 2010 a 2025"
   },
   {
    "figures": [],
-   "i": 145,
+   "i": 144,
    "kind": "paragraph",
    "text": "As fronteiras de mandato estão marcadas na tabela, mas os valores são anuais: 2013, 2017, 2021 e 2025 têm cada um dois executivos, e a tabela não reparte o ano entre eles. Os valores marcados com asterisco vêm da coluna comparativa de um relatório posterior. Um travessão significa que a tabela não tem o valor, e não que seja zero. Os resultados estão impressos como prejuízos, salvo quando levam sinal positivo."
   },
   {
    "figures": [],
-   "i": 146,
+   "i": 145,
    "kind": "paragraph",
    "text": "A coluna da receita não tem o mesmo conceito ao longo de todo o período. Para 2010 a 2014 é a receita orçamental recebida tal como a demonstração de fluxos de caixa a imprime; a partir de 2015 é o total do quadro de execução orçamental, que na maioria desses anos inclui explicitamente o saldo de gerência transitado do ano anterior. Quando o total da execução da receita inclui o saldo da gerência anterior, excede a cobrança do próprio ano no valor desse saldo."
   },
   {
    "figures": [],
-   "i": 147,
+   "i": 146,
    "kind": "paragraph",
    "text": "Três dos anos da coluna da receita levam grandes empréstimos. Os valores de 2013 levam as tranches do programa de apoio, os de 2016 o empréstimo de saneamento financeiro, os de 2019 o empréstimo de substituição. Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau."
   },
   {
    "figures": [],
-   "i": 148,
+   "i": 147,
    "kind": "paragraph",
    "text": "A coluna do resultado são duas séries, e não uma, por causa da transição de POCAL para SNC-AP, e nela aparece apenas um ano positivo."
   },
   {
    "figures": [],
-   "i": 149,
+   "i": 148,
    "kind": "paragraph",
    "text": "Na extração de 10 de agosto de 2026 não se obteve texto utilizável dos relatórios de gestão de 2010 a 2014; não se fez reconhecimento de carateres. Dos primeiros anos leram-se as demonstrações de fluxos de caixa e de resultados publicadas em separado; 2010 e 2011 têm, na tabela das finanças, três colunas preenchidas e quatro por preencher."
   },
@@ -10009,32 +10003,32 @@
      "value": "1 984 259"
     }
    ],
-   "i": 150,
+   "i": 149,
    "kind": "paragraph",
    "text": "Um número da tabela precisa de levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011: €1 712 963. O relatório escreve a subtração dos dois e apresenta como valor corrigido um prejuízo de €1 984 259, mas a subtração que imprime não dá esse valor. Os dois resultados são do próprio município: a tabela usa o primeiro, o resultado líquido do exercício, porque é o que as contas registam e é a mesma medida dos outros anos; o corrigido fica como o relatório o escreve, sem uma conta que o explique."
   },
   {
    "figures": [],
-   "i": 151,
+   "i": 150,
    "kind": "paragraph",
    "text": "Dois anos do mandato de 2017 a 2021 são os da pandemia, e os valores de 2020 na tabela das finanças levam todos o asterisco comparativo, porque o dossiê de 2020 publicado não tem texto."
   },
   {
    "figures": [],
-   "i": 152,
+   "i": 151,
    "kind": "paragraph",
    "text": "As contas de 2025 ficam a cavalo da mudança de executivo: cobrem um ano em que o executivo eleito em 2021 governou até 2025-10-31 e o seguinte a partir dessa data. Estão impressas na tabela das finanças como um ano inteiro, porque é assim que existem, e não são atribuídas nem a um mandato nem ao outro."
   },
   {
    "figures": [],
-   "i": 153,
+   "i": 152,
    "kind": "heading",
    "level": 3,
    "text": "O pessoal"
   },
   {
    "figures": [],
-   "i": 154,
+   "i": 153,
    "kind": "paragraph",
    "text": "Os relatórios de gestão de 2022 e de 2023 imprimem cada um uma série de efetivos, e o de 2023 prolonga-a por mais um ano. Até 2023, a tabela do pessoal é a versão do relatório de 2023, que reimprime sem alteração cada ano anterior da tabela do relatório de 2022."
   },
@@ -10050,7 +10044,7 @@
      "value": "3"
     }
    ],
-   "i": 155,
+   "i": 154,
    "kind": "paragraph",
    "text": "As linhas de 2024 e de 2025 vêm do Quadro 3 da Prestação de Contas 2025, que reimprime sem alteração os anos de 2012 a 2023."
   },
@@ -10191,7 +10185,7 @@
      "value": "19"
     }
    ],
-   "i": 156,
+   "i": 155,
    "kind": "paragraph",
    "text": "Os mesmos relatórios desagregam o total por grupo profissional. No final de 2022: 22 dirigentes, 142 técnicos superiores, 243 assistentes técnicos, 819 assistentes operacionais, 9 na informática e 94 noutras situações. No final de 2023: 21 dirigentes, 215 técnicos superiores, 261 assistentes técnicos, 812 assistentes operacionais, 10 na informática e 19 noutras situações."
   },
@@ -10217,31 +10211,31 @@
      "value": "201"
     }
    ],
-   "i": 157,
+   "i": 156,
    "kind": "paragraph",
    "text": "As mesmas páginas deixam uma diferença por explicar. O relatório de 2022 diz que saíram 203 trabalhadores nesse ano e, na mesma página, nomeia as maiores saídas por carreira; essas cinco parcelas somam 201. O relatório não diz em que carreiras saíram os outros dois. A lista equivalente do relatório de 2023 soma o total que declara."
   },
   {
    "figures": [],
-   "i": 158,
+   "i": 157,
    "kind": "paragraph",
    "text": "Há ainda uma diferença entre os dois relatórios de natureza puramente tipográfica: o relatório de 2022 imprime a sua própria célula de efetivos de 2022 sem o espaço de milhar que usa nas restantes linhas do mesmo quadro, e a reimpressão do relatório de 2023 repõe-no. O valor é idêntico nos dois, e não houve reexpressão de ano algum da série entre eles."
   },
   {
    "figures": [],
-   "i": 159,
+   "i": 158,
    "kind": "heading",
    "level": 3,
    "text": "A dívida herdada, ano a ano"
   },
   {
    "figures": [],
-   "i": 160,
+   "i": 159,
    "kind": "paragraph",
    "text": "As parcelas que compuseram essa reexpressão foram registadas ano a ano:"
   },
   {
-   "i": 161,
+   "i": 160,
    "kind": "table",
    "rows": [
     [
@@ -10418,7 +10412,7 @@
      "value": "1 680 443"
     }
    ],
-   "i": 162,
+   "i": 161,
    "kind": "paragraph",
    "text": "O relatório de 2017 refere o registo, na empresa municipal de habitação, de uma dívida de €1 680 443 ao instituto nacional da habitação, resultante da compra pelo município, em 2004, de cinquenta e quatro fogos, e diz que seria refletida apenas nas contas consolidadas."
   },
@@ -10435,18 +10429,18 @@
      "value": "26 117 439"
     }
    ],
-   "i": 163,
+   "i": 162,
    "kind": "paragraph",
    "text": "A comparação que as contas fazem com a lei é a do teto. No fim de 2015 o município estava em incumprimento em €26 117 439."
   },
   {
    "figures": [],
-   "i": 164,
+   "i": 163,
    "kind": "paragraph",
    "text": "Os dois valores do fim de 2015 vêm de relatórios diferentes, e nenhum deles explica o outro:"
   },
   {
-   "i": 165,
+   "i": 164,
    "kind": "table",
    "rows": [
     [
@@ -10520,13 +10514,13 @@
   },
   {
    "figures": [],
-   "i": 166,
+   "i": 165,
    "kind": "paragraph",
    "text": "O segundo é o que o município escreveu nesse ano; o primeiro aparece a partir do relatório de 2018, na série que o relatório de 2021 reimprime. Fica por saber qual dos dois é a medida final: os relatórios não dizem que o valor de 2015 foi reexpresso."
   },
   {
    "figures": [],
-   "i": 167,
+   "i": 166,
    "kind": "heading",
    "level": 3,
    "text": "As faturas à espera de pagamento"
@@ -10543,25 +10537,25 @@
      "value": "10396322.56"
     }
    ],
-   "i": 168,
+   "i": 167,
    "kind": "paragraph",
    "text": "No quadro das faturas à espera de pagamento, 2024 não tem valor: as contas de 2024 não se encontraram nas páginas do município consultadas a 10 de agosto de 2026. A demonstração de 2025 regista €10 396 322,56 de despesas por pagar de períodos anteriores; os documentos lidos não dizem se é a mesma medida."
   },
   {
    "figures": [],
-   "i": 169,
+   "i": 168,
    "kind": "heading",
    "level": 3,
    "text": "Os dois prazos médios de pagamento de 2022"
   },
   {
    "figures": [],
-   "i": 170,
+   "i": 169,
    "kind": "paragraph",
    "text": "O mesmo ano de 2022 tem dois prazos médios de pagamento nos documentos do município:"
   },
   {
-   "i": 171,
+   "i": 170,
    "kind": "table",
    "rows": [
     [
@@ -10634,25 +10628,25 @@
   },
   {
    "figures": [],
-   "i": 172,
+   "i": 171,
    "kind": "paragraph",
    "text": "O relatório de 2023 explica a diferença: o valor do próprio ano é o calculado pela câmara, e os dos anos fechados são os que o regulador publica depois."
   },
   {
    "figures": [],
-   "i": 173,
+   "i": 172,
    "kind": "heading",
    "level": 3,
    "text": "O que «dívida» quer dizer em cada ano"
   },
   {
    "figures": [],
-   "i": 174,
+   "i": 173,
    "kind": "paragraph",
    "text": "O quadro distingue o regime legal dos primeiros anos das medidas usadas na série."
   },
   {
-   "i": 175,
+   "i": 174,
    "kind": "table",
    "rows": [
     [
@@ -10711,12 +10705,12 @@
   },
   {
    "figures": [],
-   "i": 176,
+   "i": 175,
    "kind": "paragraph",
    "text": "Há anos com mais do que um valor. Para 2014, três:"
   },
   {
-   "i": 177,
+   "i": 176,
    "kind": "table",
    "rows": [
     [
@@ -10876,13 +10870,13 @@
      "value": "60 282 480,38"
     }
    ],
-   "i": 178,
+   "i": 177,
    "kind": "paragraph",
    "text": "Para 2015 o mesmo relatório imprime €77 198 306 no conceito da lei das finanças e €74 882 512 como dívida apurada: uma diferença da quota-parte das entidades participadas. Para 2020 o relatório imprime o total em €60 481 588* e a componente do próprio município em dois sítios que não coincidem: €60 282 480,32 num quadro e €60 282 480,38 noutro, a seis cêntimos de distância. O prazo médio de pagamento de 2022 também tem dois valores, comparados no quadro dos dois prazos de 2022."
   },
   {
    "figures": [],
-   "i": 179,
+   "i": 178,
    "kind": "heading",
    "level": 3,
    "text": "Os livros, em resumo"
@@ -10969,7 +10963,7 @@
      "value": "70 720 012"
     }
    ],
-   "i": 180,
+   "i": 179,
    "kind": "paragraph",
    "text": "O ativo total é de €212 967 096; o passivo total, €63 735 757; o património líquido, €149 231 339. O resultado do exercício é um prejuízo de €2 443 292, contra um prejuízo de €4 591 039* no ano anterior: caiu para pouco mais de metade. Antes de depreciações e financiamento o ano é positivo em €6 248 696. Os rendimentos totais em acréscimo foram €68 276 720 contra €70 720 012 de gastos."
   },
@@ -10985,25 +10979,25 @@
      "value": "6 151 351"
     }
    ],
-   "i": 181,
+   "i": 180,
    "kind": "paragraph",
    "text": "A regra de equilíbrio orçamental da lei das finanças é cumprida, como em cada um dos anos da janela de quatro anos do relatório. Em 2025, o relatório apura um saldo de €6 151 351, depois de aplicar saldo de gerência e de lhe somar uma parcela das receitas correntes."
   },
   {
    "figures": [],
-   "i": 182,
+   "i": 181,
    "kind": "heading",
    "level": 3,
    "text": "Os totais do plano de 2026"
   },
   {
    "figures": [],
-   "i": 183,
+   "i": 182,
    "kind": "paragraph",
    "text": "O plano discorda de si próprio em dois sítios."
   },
   {
-   "i": 184,
+   "i": 183,
    "items": [
     {
      "figures": [],
@@ -11035,12 +11029,12 @@
      "value": "8 653 390†"
     }
    ],
-   "i": 185,
+   "i": 184,
    "kind": "paragraph",
    "text": "O texto corrido dá €8 053 390, e as sete linhas do quadro somam exatamente isso. A linha de total do próprio quadro imprime €8 653 390†."
   },
   {
-   "i": 186,
+   "i": 185,
    "items": [
     {
      "figures": [],
@@ -11071,19 +11065,19 @@
      "value": "5 946 901"
     }
    ],
-   "i": 187,
+   "i": 186,
    "kind": "paragraph",
    "text": "O texto dá €5 945 901, que é o que somam as duas linhas de intervenção do eixo no quadro; a linha de total desse mesmo quadro imprime €5 946 901 para o eixo."
   },
   {
    "figures": [],
-   "i": 188,
+   "i": 187,
    "kind": "heading",
    "level": 2,
    "text": "Fontes e lacunas"
   },
   {
-   "i": 189,
+   "i": 188,
    "items": [
     {
      "figures": [],
@@ -11103,12 +11097,12 @@
   },
   {
    "figures": [],
-   "i": 190,
+   "i": 189,
    "kind": "paragraph",
    "text": "O regime legal da dívida municipal mudou a 1 de janeiro de 2014."
   },
   {
-   "i": 191,
+   "i": 190,
    "items": [
     {
      "figures": [],
@@ -11120,12 +11114,12 @@
   },
   {
    "figures": [],
-   "i": 192,
+   "i": 191,
    "kind": "paragraph",
    "text": "Segundo o registo da recolha de 10 de agosto de 2026, só a apresentação das conclusões foi encontrada em acesso livre."
   },
   {
-   "i": 193,
+   "i": 192,
    "items": [
     {
      "figures": [],
@@ -11151,12 +11145,12 @@
      "value": "3"
     }
    ],
-   "i": 194,
+   "i": 193,
    "kind": "paragraph",
    "text": "O Quadro 3 da Prestação de Contas 2025 leva a série de efetivos a 2025."
   },
   {
-   "i": 195,
+   "i": 194,
    "items": [
     {
      "figures": [],
@@ -11168,13 +11162,13 @@
   },
   {
    "figures": [],
-   "i": 196,
+   "i": 195,
    "kind": "paragraph",
    "text": "O corpo do relatório extrai com limpeza; os anexos de investimentos são uma digitalização degradada, e cada valor deles recuperado leva aqui uma adaga."
   },
   {
    "figures": [],
-   "i": 197,
+   "i": 196,
    "kind": "paragraph",
    "text": "Lacunas. A extração de 10 de agosto de 2026 deixou lacunas e obrigou a usar comparativos de relatórios posteriores. Em 2011, a tabela das finanças também não tem o pessoal nem a aquisição de bens de capital, porque não se somaram as parcelas do mapa de fluxos de caixa. Na pesquisa de 10 de agosto de 2026 não se encontraram documentos de contas de 2024 nas páginas do município consultadas. A série de efetivos começa em 2012, porque é aí que começa o quadro dos próprios relatórios. A leitura dos anexos de investimentos do plano de 2026 é parcial; os valores lidos estão marcados."
   }

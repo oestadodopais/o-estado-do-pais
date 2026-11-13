@@ -1,0 +1,20 @@
+  07 pt  → evora-orcamentado-pago-devido-2025/pt                   blocos  88 · refs 194 · edicao-html            · o D5 corre e bate
+  09 pt  → evora-os-pelouros-quem-os-teve-o-que-fizeram/pt         blocos 138 · refs 296 · edicao-html            · o D5 corre e bate
+  04 en  → evora-prometido-pago-auditado-2026/en                   blocos  95 · refs 324 · render-sem-graficos    · o D5 corre e bate
+  04 pt  → evora-prometido-pago-auditado-2026/pt                   blocos  95 · refs 324 · render-sem-graficos    · o D5 corre e bate
+  17 pt  → evora-quem-governou-a-camara-2009-2025/pt               blocos 211 · refs 484 · edicao-html            · o D5 corre e NÃO bate: o motor prova 6ae4b9ae0262ad4d7f62d4766a9b4a0d477a06908d5b4e6da082573f7782e26e e o sítio aloja f65b11cc5c0501d31c1ada5a884cc6e001ba1e2d521558dc88893e67b8ba0d1b. Republique os bytes do documento
+  08 pt  → evora-quinze-anos-cinco-mandatos/pt                     blocos 173 · refs 682 · edicao-html            · o D5 corre e bate
+  27 en  → orcamento-2027-o-que-muda-e-para-quem/en                blocos  57 · refs 267 · edicao-html            · o D5 corre e bate
+  27 pt  → orcamento-2027-o-que-muda-e-para-quem/pt                blocos  57 · refs 267 · edicao-html            · o D5 corre e bate
+
+  «03 en»: sem edição alojada no sítio
+  «06 en»: sem edição alojada no sítio
+  «08 en»: sem edição alojada no sítio
+  «09 en»: sem edição alojada no sítio
+
+  D5 corre em 15 edição(ões) e não corre em 6: avaliacao-economica-regional-de-portugal-2026/pt, evora-2027-capital-europeia-da-cultura/en, evora-2027-capital-europeia-da-cultura/pt, evora-contas-da-camara-2010-2025/en, evora-contas-da-camara-2010-2025/pt, evora-quem-governou-a-camara-2009-2025/pt
+  0 nova(s) · 5 alterada(s) · 16 inalterada(s)
+
+  Escritos 42 ficheiro(s) em <worktree>/registos
+  Registo de travessia em <worktree>/registos/manifest.json
+

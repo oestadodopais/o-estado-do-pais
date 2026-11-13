@@ -1,0 +1,2 @@
+evora-2027-capital-europeia-da-cultura/pt: 101818 bytes; sha256 2255edec63e01cca7a5f7c691c3f3c44e8711f86778071c616eb498e045fa178; origem 7baa55457d97bed620e7bb3d24dcc42250fffd48
+evora-2027-capital-europeia-da-cultura/en: 101784 bytes; sha256 80ecef0e79f6b2c15b3f5c8c331d670f2ab723d1cf763761b3ad8ead7c1a7eef; origem 7baa55457d97bed620e7bb3d24dcc42250fffd48

@@ -71,6 +71,8 @@ export function renderizacoesAceites(kind) {
 
 /** Correções do texto dos estudos. Uma entrada por estudo e data, com as duas línguas. */
 export const CORRECOES_TEXTO = [
+  {"kind": "texto_atualizado", "slug": "evora-contas-da-camara-2010-2025", "data": "2026-11-13", "frase": {"pt": "Saiu a remissão para um estudo que deixou o arquivo; nenhum número nem nenhuma conclusão mudou.", "en": "The reference to a study that left the archive came out; no number and no conclusion changed."}},
+  {"kind": "texto_atualizado", "slug": "evora-2027-capital-europeia-da-cultura", "data": "2026-11-13", "frase": {"pt": "Saiu a remissão para um estudo que deixou o arquivo; nenhum número nem nenhuma conclusão mudou.", "en": "The reference to a study that left the archive came out; no number and no conclusion changed."}},
   { kind: 'texto', slug: 'orcamento-2027-o-que-muda-e-para-quem', data: '2026-11-02', frase: {
     pt: "Cinco citações apresentavam o primeiro-ministro e o Partido Socialista (PS) a dizer palavras que são o relato da comunicação do Governo e da página do partido; passaram a nomear esse documento, e uma frase sobre o emprego público deixou de apresentar a Unidade Técnica de Apoio Orçamental (UTAO) com os dados da Direção-Geral da Administração e do Emprego Público (DGAEP).",
     en: "Five quotations presented the Prime Minister and the Socialist Party (Partido Socialista, PS) as saying words that are the account given by the Government's communication and by the party's web page; they now name that document, and a sentence on public employment no longer presents the Unidade Técnica de Apoio Orçamental (UTAO) as using the data of the Directorate-General for Administration and Public Employment (DGAEP).",
