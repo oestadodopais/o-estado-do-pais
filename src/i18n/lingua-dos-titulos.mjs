@@ -1066,6 +1066,8 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  "Instituto da Segurança Social, I.P.": "pt",
+  "Grupo de Trabalho para a Reforma da Seguranca Social": "pt",
   "Associação Évora 2027": "pt",
   "EDIA": "pt",
   "DGADR": "pt",
@@ -1377,6 +1379,20 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
 
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
+  "freq=A; unit=PTIR_I25; geo=EU27_2020; time=2015; value[308]": "en",
+  "freq=A; unit=PTIR_I25; geo=EU27_2020; time=2025; value[318]": "en",
+  "freq=A; unit=PTIR_I25; geo=PT; time=2015; value[550]": "en",
+  "freq=A; unit=PTIR_I25; geo=PT; time=2019; value[554]": "en",
+  "freq=A; unit=PTIR_I25; geo=PT; time=2025; value[560]": "en",
+  "freq=A; unit=PTIR_I25; geo=RO; time=2015; value[561]": "en",
+  "freq=A; unit=PTIR_I25; geo=RO; time=2025; value[571]": "en",
+  "freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2024; value[625]": "en",
+  "freq=A; unit=PTIR_LT_AVG; geo=EU27_2020; time=2025; value[626]": "en",
+  "freq=A; unit=PTIR_LT_AVG; geo=PT; time=2024; value[867]": "en",
+  "freq=A; unit=PTIR_LT_AVG; geo=PT; time=2025; value[868]": "en",
+  "freq=A; unit=PTIR_LT_AVG; geo=RO; time=2024; value[878]": "en",
+  "freq=A; unit=PTIR_LT_AVG; geo=RO; time=2025; value[879]": "en",
+  "Real Decreto 126/2026; artículo 1; p. 1": "es",
   // EVL: localizador do relatório inglês do painel europeu.
   "p. 8": "en",
   // V2-e: coordenadas da resposta inglesa do Eurostat.
