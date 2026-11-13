@@ -101,6 +101,7 @@ const PORTUGAL = 'portugal';
  * @returns {{ chave: string, nome: string, rota: string }}
  */
 function lugarPorChave(chave, lang) {
+  if (chave === 'romenia') return {chave, nome:lang==='pt'?'Roménia':'Romania', rota:routePath('linha',lang,{slug:'hab-tipsho60-a-ptir-lt-avg-ro-2024'})};
   if (chave === 'uniao-europeia') {
     return { chave, nome: lang === 'pt' ? 'União Europeia' : 'European Union', rota: routePath('temas', lang) };
   }
@@ -378,7 +379,7 @@ function correcoesDosTextos(lang) {
       primeira: portas.antes?.rota??null, atual: portas.depois.rota, rotuloPrimeira: portas.rotuloAntes, rotuloAtual: portas.rotuloDepois,
       dataPrimeira: portas.antes?.data??null, dataAtual: portas.depois.data,
       lugar: lugarPorChave(typeof work.subject === 'string' ? work.subject : PORTUGAL, lang),
-      chaveDaMudanca: `texto|${e.slug}|${e.data}`};
+      chaveDaMudanca: `texto|${e.slug}|${e.data}|${e.kind}`};
   });
 }
 

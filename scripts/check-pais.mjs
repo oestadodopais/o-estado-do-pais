@@ -453,13 +453,13 @@ function chaveDaMudanca(li) {
     const par = li.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '';
     return { tipo, chave: `publicacao|${par.split('/')[0]}`, claim: null, slug: par.split('/')[0], edicao: par.split('/')[1] };
   }
-  if (tipo === 'texto') return {tipo, chave: `texto|${li.getAttribute('data-texto-estudo')}|${li.getAttribute('data-texto-data')}`, slug: li.getAttribute('data-texto-estudo'), claim: null};
+  if (tipo === 'texto') return {tipo, chave: `texto|${li.getAttribute('data-texto-estudo')}|${li.getAttribute('data-texto-data')}|${li.getAttribute('data-texto-kind')}`, slug: li.getAttribute('data-texto-estudo'), claim: null};
   if (tipo === 'projeto') return { tipo, chave: `projeto|${li.getAttribute('data-mudanca-id')}`, claim: null };
   return { tipo: null, chave: null, claim: null };
 }
-const chavesDeTodasAsMudancas = new Set([...chavesDoLivro, ...CORRECOES_TEXTO.map(c=>`texto|${c.slug}|${c.data}`), ...PUBLISHED_WORKS.map(w=>`publicacao|${w.slug}`), ...MUDANCAS_DO_PROJETO.map(m=>`projeto|${m.id}`)]);
+const chavesDeTodasAsMudancas = new Set([...chavesDoLivro, ...CORRECOES_TEXTO.map(c=>`texto|${c.slug}|${c.data}|${c.kind}`), ...PUBLISHED_WORKS.map(w=>`publicacao|${w.slug}`), ...MUDANCAS_DO_PROJETO.map(m=>`projeto|${m.id}`)]);
 const chavesDoRegistoNaLingua = lang => new Set([
-  ...CORRECOES_TEXTO.filter(c => desdeOLancamento(c.data)).map(c => `texto|${c.slug}|${c.data}`),
+  ...CORRECOES_TEXTO.filter(c => desdeOLancamento(c.data)).map(c => `texto|${c.slug}|${c.data}|${c.kind}`),
   ...chavesDoLivroDesdeLancamento,
   ...PUBLISHED_WORKS.filter(w => desdeOLancamento((w.publication === 'declared' ? (w.editions.find(e=>e.lang===lang)??w.editions[0]).date : datas.find(d=>d.slug===w.slug && d.lang===(w.editions.find(e=>e.lang===lang)??w.editions[0]).lang)?.data) ?? '')).map(w => `publicacao|${w.slug}`),
   ...MUDANCAS_DO_PROJETO.filter(m => desdeOLancamento(m.data)).map(m => `projeto|${m.id}`),

@@ -48,7 +48,7 @@ export function conferirEdicoes({works, manifesto, correcoes, raiz, paginas = nu
     }
   }
   for (const c of correcoes) {
-    const chave = `${c.slug}|${c.data}`, w = works.find(w => w.slug === c.slug);
+    const chave = `${c.slug}|${c.data}|${c.kind}`, w = works.find(w => w.slug === c.slug);
     if (!['texto','texto_atualizado'].includes(c.kind) || !w || !manifesto.edicoes.some(e=>temEntrada(e,c)) || !c.frase?.pt || !c.frase?.en || vistas.has(chave)) erros.push(`ED1 órfã: ${chave}`);
     vistas.add(chave);
   }
@@ -69,7 +69,7 @@ export function conferirTextoHtml(root, lang, works, correcoes, manifesto, claim
   const erros = [], campos = [];
   for (const li of root.querySelectorAll('[data-texto-estudo]')) {
     const slug = li.getAttribute('data-texto-estudo'), data = li.getAttribute('data-texto-data');
-    const c = correcoes.find(c => c.slug === slug && c.data === data), w = works.find(w => w.slug === slug);
+    const c = correcoes.find(c => c.slug === slug && c.data === data && c.kind === li.getAttribute('data-texto-kind')), w = works.find(w => w.slug === slug);
     const edicao = w?.editions.find(d => d.lang === lang) ?? (w?.editions.length === 1 ? w.editions[0] : undefined);
     const linguaEdicao = edicao?.lang;
     const e = manifesto.edicoes.find(e => e.slug === slug && e.lang === linguaEdicao);

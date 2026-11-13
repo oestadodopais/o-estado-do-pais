@@ -165,6 +165,7 @@ const palavraRevisoes =
             class="registo-mudanca"
             data-mudanca={e.tipo}
             data-texto-estudo={e.tipo === 'texto' ? e.slug : undefined}
+            data-texto-kind={e.tipo === 'texto' ? e.kind : undefined}
             data-texto-data={e.tipo === 'texto' ? e.data : undefined}
             data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined}
             data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}
