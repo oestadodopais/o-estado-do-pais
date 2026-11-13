@@ -34,6 +34,12 @@ if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
 fi
 mkdir -p "$O" || exit 9
 O="$(cd "$O" && pwd)"
+# COR3-D: a lista inteira corre pelo escrivão, com um código por passo.
+# O perfil fechado usa o guião comum, que toma e liberta a sua própria tranca.
+if [ -f "$O/selecao.json" ] && python3 -c 'import json,sys; sys.exit(json.load(open(sys.argv[1])) != {"perfil":"cor3-d-verify"})' "$O/selecao.json"; then
+  [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
+  exec sh scripts/leituras/conferir-tudo.sh "$W" "$O/passos"
+fi
 # A tranca vive em /tmp desde 13.10.2026 (M79, §1.190): dentro do Git comum, fora da raiz gravável da
 # worktree, cada corrida do construtor pedia uma escalada à sandbox do Codex, e cada escalada custava uma
 # revisão automática inteira. Continua a ser uma só por máquina: todas as worktrees partilham o mesmo /tmp.

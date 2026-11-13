@@ -40,6 +40,17 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert r.returncode == 9 and 'árvore suja' in r.stderr
     assert not (p / 'suja/build.codigo').exists() and not (comum / 'oedp-construcao.lock').exists()
     casos.append({'planta': 'árvore suja recusada antes da tranca e dos portões', 'codigo': r.returncode, 'mensagem': r.stderr.strip()})
+    # COR3-D: delega a lista inteira, preserva a falha e não toma duas trancas.
+    conferir = p / 'scripts/leituras/conferir-tudo.sh'
+    conferir.write_text('#!/bin/sh\n[ ! -e "$OEDP_TRANCA" ] || exit 8\n'
+                        'echo "$*" >> "$CHAMADAS"\nexit 7\n')
+    (p / 'cor3-d').mkdir()
+    (p / 'cor3-d/selecao.json').write_text(json.dumps({'perfil': 'cor3-d-verify'}))
+    r = correr('cor3-d')
+    assert r.returncode == 7, r.stderr
+    assert (p / 'chamadas').read_text().strip().endswith('/cor3-d/passos')
+    assert not (comum / 'oedp-construcao.lock').exists()
+    casos.append({'planta': 'COR3-D delega a lista e conserva o código vermelho', 'codigo': r.returncode})
     for nome, conteudo, esperado in [('lar1', {'perfil': 'lar1'}, 1), ('v2d', {'perfil': 'v2d'}, 1), ('v2c', {'perfil': 'v2c'}, 1), ('perfil-invalido', {'perfil': 'outro'}, 9)]:
         (p / nome).mkdir()
         (p / nome / 'selecao.json').write_text(json.dumps(conteudo))
