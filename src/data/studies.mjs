@@ -189,7 +189,7 @@ export const WORKS = [
   {
     id: 'evora-quem-governou-a-camara-2009-2025',
     slug: 'evora-quem-governou-a-camara-2009-2025',
-    alcunhas: {"pt": ["estudo de quem governou a câmara"], "en": ["study of who governed the council"]},
+    alcunhas: {"pt": ["estudo de quem governou a câmara", "Quem governou a Câmara de Évora, 2009 a 2025"], "en": ["study of who governed the council", "Who governed the Câmara de Évora, 2009 to 2025"]},
     estado: 'retirado',
     tema: 'governo-e-democracia',
     subject: 'evora',

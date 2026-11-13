@@ -90,14 +90,24 @@ export function conferirLigacoesRetiradas(works, rota, html) {
 /** As alcunhas são dados do trabalho; a retirada também invalida remissões sem href. */
 export function conferirReferenciasSemLigacao(works, rota, html) {
   const root = parse(html), erros = [];
-  for (const el of root.querySelectorAll('script, style, template, [hidden], [aria-hidden="true"], a[href]')) el.remove();
+  for (const el of root.querySelectorAll('head, script, style, template, [hidden], [aria-hidden="true"]')) el.remove();
+  // Só a história datada do recibo e o registo de correções conservam nomes antigos.
+  if (/^\/(?:correcoes|en\/corrections)\/?$/.test(rota)) return [];
+  if (/^\/(?:livro-razao|en\/ledger)\/[^/]+\/?$/.test(rota)) {
+    for (const el of root.querySelectorAll('.historico-entrada')) {
+      const data = el.querySelector('[data-correcao-campo="date"]')?.textContent.trim();
+      if (/^\d{2}\.\d{2}\.\d{4}$/.test(data ?? '')) el.remove();
+    }
+  }
   const normalizar = s => s.normalize('NFC').replace(/\s+/g, ' ').trim().toLocaleLowerCase('pt');
   const texto = normalizar(root.textContent);
   for (const work of works) {
-    const nomes = Object.values(work.alcunhas ?? {}).flat();
-    if ((work.editions ?? []).some(e => edicaoPublicada(work, e))) continue;
-    for (const nome of nomes) if (texto.includes(normalizar(nome))) {
-      erros.push(`RET1 remissão sem ligação para estudo não publicado: ${rota}: ${nome}`);
+    if (work.estado !== 'retirado' && (work.editions ?? []).some(e => edicaoPublicada(work, e))) continue;
+    const nomes = [...Object.values(work.alcunhas ?? {}).flat(),
+      ...(work.editions ?? []).map(e => e.title),
+      routePath('estudo', 'pt', {slug:work.slug}), routePath('estudo', 'en', {slug:work.slug})];
+    for (const nome of new Set(nomes.filter(Boolean))) if (texto.includes(normalizar(nome))) {
+      erros.push(`RET1 remissão para estudo não publicado: ${rota}: ${nome}`);
     }
   }
   return erros;
