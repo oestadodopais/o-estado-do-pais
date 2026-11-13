@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": null,
+ "cabeca": "fc6e27452a5c2186fc64d3404039f8bc33db08ae",
  "contas": {
-  "paginas": 9877,
+  "paginas": 9881,
   "paginas_com_cartoes": 706,
-  "cartoes": 5604,
+  "cartoes": 5614,
   "familias": {
-   "nacional": 632,
+   "nacional": 642,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 528,
+   "projeto": 538,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 1094,
+   "declaradas": 1104,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -1270,6 +1270,17 @@
     "% of people working or looking for work": 2
    }
   },
+  "nacional|en|desemprego-longa-duracao-idade-referencia": {
+   "nome": {
+    "Reference age for early retirement due to long-term unemployment": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "years": 1
+   }
+  },
   "nacional|en|despesa-em-id-2024": {
    "nome": {
     "Spending on research and development": 2
@@ -2022,6 +2033,50 @@
    },
    "unidade": {
     "pension multiplier": 1
+   }
+  },
+  "nacional|en|flexibilizacao-carreira-minima": {
+   "nome": {
+    "Minimum contribution record under the flexibilisation scheme": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "years": 1
+   }
+  },
+  "nacional|en|flexibilizacao-idade-minima": {
+   "nome": {
+    "Minimum age under the flexibilisation scheme": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "years": 1
+   }
+  },
+  "nacional|en|flexibilizacao-regras-2018": {
+   "nome": {
+    "Date of the flexibilisation rules to which the sustainability factor applies": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "date": 1
+   }
+  },
+  "nacional|en|flexibilizacao-regras-2018-ano": {
+   "nome": {
+    "Year of the flexibilisation rules to which the sustainability factor applies": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "year": 1
    }
   },
   "nacional|en|fluxo-de-credito-as-empresas-2025": {
@@ -4770,6 +4825,17 @@
     "% de quem trabalha ou procura trabalho": 2
    }
   },
+  "nacional|pt|desemprego-longa-duracao-idade-referencia": {
+   "nome": {
+    "Idade de referência na antecipação por desemprego de longa duração": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "anos": 1
+   }
+  },
   "nacional|pt|despesa-em-id-2024": {
    "nome": {
     "Despesa em investigação e desenvolvimento": 2
@@ -5522,6 +5588,50 @@
    },
    "unidade": {
     "multiplicador da pensão": 1
+   }
+  },
+  "nacional|pt|flexibilizacao-carreira-minima": {
+   "nome": {
+    "Carreira mínima no regime de flexibilização": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "anos": 1
+   }
+  },
+  "nacional|pt|flexibilizacao-idade-minima": {
+   "nome": {
+    "Idade mínima no regime de flexibilização": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "anos": 1
+   }
+  },
+  "nacional|pt|flexibilizacao-regras-2018": {
+   "nome": {
+    "Data das regras da flexibilização a que se aplica o fator de sustentabilidade": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "data": 1
+   }
+  },
+  "nacional|pt|flexibilizacao-regras-2018-ano": {
+   "nome": {
+    "Ano das regras da flexibilização a que se aplica o fator de sustentabilidade": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "ano": 1
    }
   },
   "nacional|pt|fluxo-de-credito-as-empresas-2025": {
