@@ -19,7 +19,9 @@
  *   4. o transbordo horizontal a 320, 390, 768, 1024 e 1280, nas OITO edições
  *      que têm registo (a lista sai do registo de travessia, não daqui);
  *   5. as tabelas a rolarem dentro da sua caixa, e não a empurrarem a página;
- *   6. a ligação mais longa do 03 pt (o endereço como etiqueta) a quebrar.
+ *   A antiga sexta amostra saiu no RET1-A: repetia O04 e procurava
+ *   .texto-ligacao, que já não existe nas páginas dos estudos publicados.
+ *   O transbordo continua medido em todas as edições no ponto 4.
  *
  *   node tests/texto/leitura.mjs
  */
@@ -82,7 +84,6 @@ async function pagina(largura = 1280) {
 }
 
 const O04 = '/estudos/evora-contas-da-camara-2010-2025';
-const O03 = '/estudos/evora-contas-da-camara-2010-2025';
 
 /**
  * AS OITO, e não três: a medida 4 (o transbordo) corre sobre todas as edições
@@ -239,25 +240,6 @@ for (const { chave, rota } of AS_OITO) {
   });
   conta('a 390 as tabelas rolam dentro da sua caixa', m.rolam > 0, `${m.rolam} de ${m.caixas} caixas rolam`);
   conta('a 390 a coluna do aparelho passa para baixo do corpo', m.aparelhoPorBaixo);
-  await p.__contexto.close();
-}
-
-/* 6 · A LIGAÇÃO MAIS LONGA DO 03 pt, que leva o endereço por etiqueta. */
-{
-  const p = await pagina(390);
-  await p.goto(base + O03, { waitUntil: 'networkidle' });
-  const m = await p.evaluate(() => {
-    const ligacoes = [...document.querySelectorAll('.texto-artigo .texto-ligacao')];
-    const maior = ligacoes.sort((a, b) => b.textContent.length - a.textContent.length)[0];
-    const r = maior.getBoundingClientRect();
-    return {
-      caracteres: maior.textContent.length,
-      quebra: getComputedStyle(maior).overflowWrap,
-      linhas: maior.getClientRects().length,
-      cabe: Math.round(r.right) <= window.innerWidth + 1,
-    };
-  });
-  conta('a etiqueta mais longa do 03 pt quebra e não corta', m.quebra === 'anywhere' && m.linhas > 1 && m.cabe, `${m.caracteres} caracteres em ${m.linhas} linhas · overflow-wrap: ${m.quebra}`);
   await p.__contexto.close();
 }
 

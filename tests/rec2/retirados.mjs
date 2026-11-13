@@ -57,4 +57,21 @@ for (const lang of ['pt','en']) {
   assert(conferirRedirecionamentos(arquivo,p,tabela,['/municipios/evora']).some(e=>e.includes('redirecionamento')));
 }
 assert.throws(()=>destinoDoRetirado({...semSucessor,sucedidoPor:[{slug:'desconhecido'}]},'pt',[]),/desconhecido/);
+// Dois sucessores publicados: nenhum deles pode ser escolhido arbitrariamente.
+for (const lang of ['pt','en']) for (const subject of ['evora', null]) {
+  const vivos = ['primeiro','segundo'].map(slug=>({slug,publication:'declared',editions:[{lang,date:'2026-11-13'}]}));
+  const antigo = {slug:'antigo',estado:'retirado',subject,sucedidoPor:vivos.map(w=>({slug:w.slug}))};
+  const destino = subject ? (lang==='pt'?'/municipios/evora/':'/en/municipalities/evora/') : (lang==='pt'?'/estudos/':'/en/studies/');
+  const arquivo = [antigo,...vivos], rota = lang==='pt'?'/estudos/antigo/':'/en/studies/antigo/';
+  const p = {estudos:[{slug:'antigo',rotas:[rota],redirecionamentos_anteriores:[]}]};
+  const tabela = [{src:rota.slice(0,-1)+'/?',status:301,headers:{Location:destino}},{handle:'filesystem'}];
+  assert.equal(destinoDoRetirado(antigo,lang,arquivo),destino);
+  assert.deepEqual(conferirRedirecionamentos(arquivo,p,tabela,[destino]),[]);
+  for (const w of vivos) {
+    const adulterada=structuredClone(tabela);
+    adulterada[0].headers.Location=`/${lang==='pt'?'estudos':'en/studies'}/${w.slug}/`;
+    assert(conferirRedirecionamentos(arquivo,p,adulterada,[destino,adulterada[0].headers.Location]).some(e=>e.includes('redirecionamento')));
+  }
+}
+console.log('RET1 dois sucessores publicados: município ou índice nas duas línguas; escolher qualquer sucessor recusa.');
 console.log('RET1 destinos: sem sucessor, objeto sem página, sucessores retirados e mistos; destinos inexistentes, retirados ou sem objeto trocados recusados.');

@@ -196,7 +196,7 @@ const PALETA = paletaDaCasa();
  * Cada estrago: o que faz ao HTML servido, e que células tem de fazer cair.
  * @type {{ nome: string, celulas: string[], faz: (html: string, rota: string) => string }[]}
  */
-import { ESTRAGOS } from './moldura-plantas.mjs';
+import { ESTRAGOS, textoDasCelulasPassa } from './moldura-plantas.mjs';
 
 /* -------------------------------------------------------------- o servidor */
 
@@ -609,7 +609,7 @@ function avalia(p) {
      é a que se pensa. Falha, e diz o que contou. */
   conta(
     'C2',
-    filetes.length > 0 && celulasTexto.length > 0 && filetesMaus.length === 0 && textoMau.length === 0,
+    filetes.length > 0 && filetesMaus.length === 0 && textoDasCelulasPassa(celulasTexto),
     `filetes: ${filetes.length} medidos, ${filetesMaus.length} abaixo de 3:1 ` +
       `(o pior ${min(filetes).toFixed(2)}:1) · texto próprio das células: ` +
       `${celulasTexto.length} medidos, ${textoMau.length} abaixo de 4,5:1 ` +
@@ -777,6 +777,23 @@ if (VERMELHOS) {
       path.join(DIST, 'estudos', 'evora-contas-da-camara-2010-2025', 'documento', 'index.html'),
       'utf8',
     );
+    if (estrago.amostra) {
+      const fixa = estrago.amostra(amostra), alterada = estrago.faz(fixa);
+      const ctx = await nav.newContext({viewport:{width:390,height:900},colorScheme:'light'});
+      const pagina = await ctx.newPage();
+      await pagina.setContent(fixa);
+      const antes = await pagina.evaluate(medeNaPagina);
+      await pagina.setContent(alterada);
+      const depois = await pagina.evaluate(medeNaPagina);
+      await ctx.close();
+      const mudou = fixa !== alterada;
+      const verdesAntes = textoDasCelulasPassa(antes.celulas) ? ['C2'] : [];
+      const caiu = !textoDasCelulasPassa(depois.celulas) && depois.celulas.length > 0 ? ['C2'] : [];
+      const bom = mudou && verdesAntes.length > 0 && caiu.length > 0;
+      plantas.push({nome:estrago.nome,celulas:estrago.celulas,mudou,caiu,nomeadas:caiu,verdesAntes,bom});
+      console.log(`    ${bom ? verde('✓') : vermelho('✗')} ${estrago.nome}: C2 antes=${verdesAntes.length}, depois=${caiu.length}`);
+      continue;
+    }
     const mudou = estrago.faz(amostra, '/estudos/evora-contas-da-camara-2010-2025/documento/') !== amostra;
     ESTRAGO = estrago.faz;
     const depois = await passagem();

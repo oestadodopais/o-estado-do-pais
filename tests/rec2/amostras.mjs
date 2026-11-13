@@ -8,7 +8,8 @@ assert.notEqual(WORKS.find(w => w.slug === slug)?.estado, 'retirado');
 for (const lang of ['pt','en']) {
   const html = documentoDaHistoriaServido(slug, lang);
   for (const estrago of ESTRAGOS) {
-    assert.notEqual(estrago.faz(html), html, `${lang}: ${estrago.nome} não mudou a nova amostra`);
+    const amostra = estrago.amostra ? estrago.amostra(html) : html;
+    assert.notEqual(estrago.faz(amostra), amostra, `${lang}: ${estrago.nome} não mudou a nova amostra`);
   }
 }
-console.log('REC2 amostra: as quatro plantas da moldura alteram o documento das contas nas duas línguas. A recusa pelas células mede-se no navegador.');
+console.log(`REC2 amostra: ${ESTRAGOS.length} plantas da moldura alteram a sua amostra nas duas línguas, incluindo a remoção da regra da cor num caso fixo. A recusa pelas células mede-se no navegador.`);

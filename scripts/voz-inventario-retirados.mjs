@@ -28,6 +28,9 @@ export function rotuloDoDossieNaNovidade(el, lang, rotaKey) {
   const item = el.parentNode, id = item?.getAttribute('data-novidade');
   if (item?.rawTagName !== 'li' || item.querySelectorAll('.pp-novidade-tipo').length !== 1) return false;
   if (id?.startsWith('explicacao:')) {
+    // RET1-A: / e /en/ mostram dinheiro-do-estado-2026 com os rótulos
+    // «explicação» e «explainer». A saída dos estudos retirados trouxe este
+    // item às novidades; só o rótulo literal junto da sua porta é dispensado.
     const slug = id.slice('explicacao:'.length);
     return el.textContent === FP1[lang]?.explicacao && EXPLICACOES.some(e => e.slug === slug && e.publicado) &&
       item.querySelector('a[data-novidade-porta]')?.getAttribute('href') === routePath('explicacao',lang,{slug});

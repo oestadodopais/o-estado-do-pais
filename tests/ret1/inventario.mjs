@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import lista from '../../scripts/voz-inventario-ret1.json' with {type:'json'};
 import {entradaRetiradaRet1} from '../../scripts/voz-inventario-ret1.mjs';
 import {leInventario} from '../../scripts/voz.mjs';
@@ -21,6 +22,11 @@ assert(!entradaRetiradaRet1({estado:'viva',n:0,classe:'conteudo',texto:'Frase de
 console.log(`RET1 inventário: 14 entradas condicionadas; ${plantas} adulterações recusadas, incluindo estudo republicado, entrada com estudo e novidade atualizada.`);
 
 for(const lang of ['pt','en']) {
+ const pagina=parse(fs.readFileSync(`${process.env.OEDP_DIST??'dist'}/${lang==='pt'?'':'en/'}index.html`,'utf8'));
+ const rotulo=pagina.querySelector('[data-novidade="explicacao:dinheiro-do-estado-2026"] .pp-novidade-tipo');
+ assert(rotulo,`falta o caso vivo que justifica a isenção em ${lang}`);
+ assert.equal(rotulo.textContent,lang==='pt'?'explicação':'explainer');
+ assert(rotuloDoDossieNaNovidade(rotulo,lang,'home'));
  const html=`<main><section data-novidades><li data-novidade="explicacao:dinheiro-do-estado-2026"><span class="pp-novidade-tipo">${lang==='pt'?'explicação':'explainer'}</span><a data-novidade-porta href="/${lang==='pt'?'explicacoes':'en/explainers'}/dinheiro-do-estado-2026"></a></li></section></main>`;
  const confere = root => rotuloDoDossieNaNovidade(root.querySelector('.pp-novidade-tipo'),lang,'home');
  assert(confere(parse(html)));

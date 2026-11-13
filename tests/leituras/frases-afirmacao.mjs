@@ -15,7 +15,17 @@ import {semear} from '../../scripts/gerar-frases-afirmacao.mjs';
 import {dividir, conferirPartes} from '../../scripts/verify-partes.mjs';
 const casos = JSON.parse(fs.readFileSync('tests/leituras/frases-afirmacao-reais.json', 'utf8'));
 for (const l of ['pt','en']) for (const positivo of [true,false]) assert(casos.filter(c=>c.lingua===l && c.apanha===positivo).length>=5);
-for (const c of casos) assert.equal(Boolean(tiposDaFrase(c.frase,c.lingua).length),c.apanha,c.frase);
+for (const c of casos) {
+  const tipos = tiposDaFrase(c.frase,c.lingua);
+  assert.equal(Boolean(tipos.length),c.apanha,c.frase);
+  for (const tipo of c.classes ?? []) assert(tipos.includes(tipo),`${c.razao}: falta a classe ${tipo}`);
+  if (c.fixa) {
+    const origem = JSON.parse(execFileSync('git',['show',c.origem],{encoding:'utf8'}));
+    assert(origem.some(o=>o.frase===c.frase && o.pagina===c.pagina),'amostra fixa sem origem');
+  }
+}
+for (const lang of ['pt','en']) assert(casos.some(c=>c.lingua===lang && c.classes?.includes('leitura')),`leitura marcada ${lang}`);
+assert(casos.some(c=>c.classes?.includes('atribuicao') && /\bsaid\b/.test(c.frase)),'atribuição com said');
 const isoladas=JSON.parse(fs.readFileSync('tests/leituras/frases-marcas-plantas.json','utf8'));
 assert.equal(isoladas.length,MARCAS.length);
 for(const m of MARCAS) {const c=isoladas.find(c=>c.marca===m.id);assert(c,m.id);assert.deepEqual(marcasDaFrase(c.frase,c.lingua),[m.id],m.id);}

@@ -59,7 +59,7 @@ const elegiveis = [...new Set(lista.map(f => f.estudo))].filter(slug => {
   const ingles = new Set(datas('en'));
   return datas('pt').some(d => ingles.has(d));
 });
-const contagemConferida = (vistas, esperadas) => vistas === esperadas;
+export const contagemConferida = (vistas, esperadas) => vistas === esperadas;
 let total = 0, estudos = 0, fora = 0;
 for (const slug of [...new Set(lista.map(f => f.estudo))]) {
   const dp = path.join(dist, 'estudos', slug, 'documento'), de = path.join(dist, 'en', 'studies', slug, 'document');
@@ -83,7 +83,12 @@ for (const slug of [...new Set(lista.map(f => f.estudo))]) {
 export const codigo = (sem, fora, planta, controlo, estudos, semEntradasAtivas = false) => (sem || fora || planta !== 2 || controlo !== 0 || (!estudos && !semEntradasAtivas) ? 1 : 0);
 // As plantas do ramo das mudanças fora da lista, do bloco novo e do código: cada uma tem de morder.
 const exemplo = lista.find(f => f.classe !== 'FICA');
-const plantasFora = [contagemConferida(0,0), !contagemConferida(0,1), !contagemConferida(1,2),!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), exemplo ? explicado(exemplo.lingua, exemplo.frase) : antigas.pt.length === 0 && antigas.en.length === 0,
+const casosContagem = [
+  {vistas:['um','dois'], declaradas:['um','dois'], aceita:true},
+  {vistas:[], declaradas:['um'], aceita:false},
+  {vistas:['um'], declaradas:['um','dois'], aceita:false},
+];
+const plantasFora = [...casosContagem.map(c=>contagemConferida(c.vistas.length,c.declaradas.length) === c.aceita),!explicado('pt', 'Uma frase que nenhuma entrada nomeia.'), exemplo ? explicado(exemplo.lingua, exemplo.frase) : antigas.pt.length === 0 && antigas.en.length === 0,
   conferirEstudo(['a', 'b'], ['a', 'b', 'Isto é novo.'], ['a', 'b'], ['a', 'b']).length === 1,
   codigo(0, 1, 2, 0, 1) === 1, codigo(1, 0, 2, 0, 1) === 1, codigo(0, 0, 2, 0, 1) === 0,
   codigo(0, 0, 2, 0, 0) === 1, codigo(0, 0, 2, 0, 0, true) === 0,
@@ -94,4 +99,9 @@ const controlo = conferirEstudo(['a', 'Isto entra neste documento.', 'c'], ['a',
 console.log(`pares anteriores declarados: ${elegiveis.length}; estudos com as duas línguas: ${estudos}; blocos mudados sem par: ${total}; blocos mudados sem entrada na lista: ${fora}; planta ${planta} (tem de ser 2: o bloco antigo e o novo), controlo ${controlo} (tem de ser 0)`);
 const mordem = plantasFora.filter(Boolean).length;
 console.log(`plantas do ramo fora da lista, do bloco novo e do código: ${mordem} de ${plantasFora.length}`);
-process.exitCode = codigo(total, fora, planta, controlo, estudos, elegiveis.length === 0) || !contagemConferida(estudos,elegiveis.length) || (mordem !== plantasFora.length ? 1 : 0);
+export const codigoFinal = (base, vistas, esperadas, mordem, totalPlantas) =>
+  base !== 0 || !contagemConferida(vistas,esperadas) || mordem !== totalPlantas ? 1 : 0;
+for (const [entrada, esperado] of [[[0,2,2,3,3],0],[[0,1,2,3,3],1],[[0,2,2,2,3],1],[[1,2,2,3,3],1]]) {
+  if (codigoFinal(...entrada) !== esperado) throw Error('pares: planta do código final não pegou');
+}
+process.exitCode = codigoFinal(codigo(total, fora, planta, controlo, estudos, elegiveis.length === 0), estudos, elegiveis.length, mordem, plantasFora.length);
