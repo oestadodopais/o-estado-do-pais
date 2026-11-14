@@ -353,24 +353,26 @@ def robots_permite(url: str, raiz: Path, transporte=transporte_curl, resolver=re
     return True, "unreachable branch"
 
 
-def seguir(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns) -> tuple[Resposta, str]:
+def seguir(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns) -> tuple[Resposta | None, str, int]:
     """Follow redirects here, at most five, with HEAD requests. At every hop, the first
     included: an https or http address, a host whose every address is public, and its
-    robots.txt obeyed. Returns the last answer and the final address."""
+    robots.txt obeyed. Returns (the last answer, the address it answered for, the hops
+    used); the answer is None when the server does not answer HEAD (an error, 405 or
+    501), and the caller then goes on with GET from that address."""
     for salto in range(MAX_SALTOS + 1):
         endereco_publico(url, resolver)
         permite, razao = robots_permite(url, raiz, transporte, resolver)
         if not permite:
             raise ErroDaLoja(f"refused: {razao}")
         r, _ = _um_pedido(url, raiz, transporte, resolver, "HEAD")
-        if r.saida != 0:
-            raise ErroDaLoja(f"{url} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
+        if r.saida != 0 or r.http in (405, 501):
+            return None, url, salto
         if r.http in REDIRECOES and r.redirecao:
             if salto == MAX_SALTOS:
                 raise ErroDaLoja(f"refused: {url} redirects more than five times")
             url = urllib.parse.urljoin(url, r.redirecao)
             continue
-        return r, url
+        return r, url, salto
     raise ErroDaLoja("unreachable branch")
 
 
@@ -387,27 +389,41 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
            resolver=resolver_dns) -> str:
     """Fetch, store, and return the table to paste. Raises ErroDaLoja; a refusal stores nothing.
 
-    The redirects are followed here (see `seguir`); the rights record of the final host
-    (`direitos_de(host)` returns it or raises) is checked before the document is
-    downloaded, and the document is then fetched at that final address with redirects
-    off. With `termos`, the address is a publisher's terms page: no record is asked for,
+    The redirects are followed here (see `seguir`); the rights record of the host
+    (`direitos_de(host)` returns it or raises) is checked before every GET, so before the
+    document is downloaded; curl itself never follows a redirect. With `termos`, the address is a publisher's terms page: no record is asked for,
     and the printed table is the beginning of one.
     """
-    r_head, final = seguir(url, raiz, transporte, resolver)
-    if r_head.http not in (405, 501) and not 200 <= r_head.http <= 299:
+    r_head, final, saltos = seguir(url, raiz, transporte, resolver)
+    if r_head is not None and not 200 <= r_head.http <= 299:
         raise ErroDaLoja(f"refused: {final} answered {r_head.http}")
-    host_final = urllib.parse.urlsplit(final).hostname or ""
-    if not termos and direitos_de is not None:
-        direitos_de(host_final)
     temporario = _temporario(raiz)
     try:
-        r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario)
-        if r.saida != 0:
-            raise ErroDaLoja(f"{final} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
-        if r.http in REDIRECOES:
-            raise ErroDaLoja(f"refused: {final} redirects when fetched where it did not when asked; nothing stored")
-        if not 200 <= r.http <= 299:
-            raise ErroDaLoja(f"refused: {final} answered {r.http}")
+        # GET from the last address HEAD reached. Before every GET, the rights record of
+        # that host is checked, so no document is downloaded from a host without one;
+        # a redirect met here (a server that does not answer HEAD) is followed with the
+        # same checks as above, within the same five hops.
+        while True:
+            host_final = urllib.parse.urlsplit(final).hostname or ""
+            if not termos and direitos_de is not None:
+                direitos_de(host_final)
+            temporario.unlink(missing_ok=True)
+            r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario)
+            if r.saida != 0:
+                raise ErroDaLoja(f"{final} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
+            if r.http in REDIRECOES and r.redirecao:
+                if saltos >= MAX_SALTOS:
+                    raise ErroDaLoja(f"refused: {final} redirects more than five times")
+                saltos += 1
+                final = urllib.parse.urljoin(final, r.redirecao)
+                endereco_publico(final, resolver)
+                permite, razao = robots_permite(final, raiz, transporte, resolver)
+                if not permite:
+                    raise ErroDaLoja(f"refused: {razao}")
+                continue
+            if not 200 <= r.http <= 299:
+                raise ErroDaLoja(f"refused: {final} answered {r.http}")
+            break
         sha = hashlib.sha256(dados).hexdigest()
         destino = caminho_da_copia(raiz, sha)
         destino.parent.mkdir(parents=True, exist_ok=True)

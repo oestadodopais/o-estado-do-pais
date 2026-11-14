@@ -278,11 +278,13 @@ class Item09TextoDoLeitorJulgado(unittest.TestCase):
 class SitioFalso:
     """A site held in memory: url -> (http, body, redirect). Records every request."""
 
-    def __init__(self, paginas, enderecos):
-        self.paginas, self.enderecos, self.pedidos = paginas, enderecos, []
+    def __init__(self, paginas, enderecos, sem_head=()):
+        self.paginas, self.enderecos, self.pedidos, self.sem_head = paginas, enderecos, [], set(sem_head)
 
     def transporte(self, url, destino, metodo="GET", endereco=None):
         self.pedidos.append((metodo, url, endereco))
+        if metodo == "HEAD" and url in self.sem_head:
+            return fontes.Resposta(52, 0, url, "", 0, "curl: (52) Empty reply from server", "")
         http, corpo, redirecao = self.paginas.get(url, (404, b"", ""))
         if metodo == "GET" and corpo:
             destino.write_bytes(corpo)
@@ -324,6 +326,18 @@ class Item10Redirecoes(unittest.TestCase):
         self.assertEqual(len(self.guardados()), 1)
         gets = [p for p in s.pedidos if p[0] == "GET" and not p[1].endswith("/robots.txt")]
         self.assertEqual(gets, [("GET", "https://fim.invalid/doc", "93.184.216.34")])
+
+    def test_sem_head_vai_por_get_com_os_direitos_antes(self):
+        s = self.site({"https://fim.invalid/doc": (200, b"documento", "")})
+        s.sem_head = {"https://fim.invalid/doc"}
+        self.assertIn('url_final = "https://fim.invalid/doc"', self.buscar(s, "https://fim.invalid/doc"))
+        s = self.site({"https://a.invalid/x": (302, b"", "https://fim.invalid/doc"),
+                       "https://fim.invalid/doc": (200, b"documento", "")})
+        s.sem_head = {"https://a.invalid/x"}
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            self.buscar(s, "https://a.invalid/x")
+        self.assertIn("a.invalid has no rights record", str(e.exception))
+        self.assertFalse([p for p in s.pedidos if p[0] == "GET" and not p[1].endswith("/robots.txt")])
 
     def test_planta_salto_para_endereco_privado(self):
         s = self.site({"https://a.invalid/x": (302, b"", "https://interno.invalid/y")},
