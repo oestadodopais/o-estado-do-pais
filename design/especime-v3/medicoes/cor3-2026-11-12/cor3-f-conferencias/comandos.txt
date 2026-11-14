@@ -1,0 +1,6 @@
+As cinco corridas de prova da adenda F, na worktree do sítio com o `dist/` construído na cabeça b44d7f4a2 e a conferência já corrigida (a árvore que o commit 9d66aa843 guarda), a 14.11.2026: as quatro da conferência às 12:19 UTC e a da cadeia inteira de 12:16 a 12:17 UTC (as horas dos ficheiros que escreveram):
+maquina-com-motor: RESEARCHHUB_DIR=<worktree limpa do motor em 5760676> node tests/cor3/titulos-frases.mjs
+maquina-sem-motor: env -u RESEARCHHUB_DIR node tests/cor3/titulos-frases.mjs
+github-sem-motor: env -u RESEARCHHUB_DIR GITHUB_ACTIONS=true node tests/cor3/titulos-frases.mjs
+github-com-motor: GITHUB_ACTIONS=true RESEARCHHUB_DIR=<worktree limpa do motor em 5760676> node tests/cor3/titulos-frases.mjs
+cadeia-como-o-github: env -u RESEARCHHUB_DIR GITHUB_ACTIONS=true npm run check:frases-afirmacao

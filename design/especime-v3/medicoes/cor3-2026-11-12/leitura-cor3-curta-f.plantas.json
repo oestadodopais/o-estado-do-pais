@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T12:22:21+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "CG-P1",
+   "ficheiro": "tests/cor3/titulos-frases.mjs",
+   "descricao": "a conferência deixa de exigir que a corrida seja a do GitHub: sem o motor, o controlo do corpo fica por correr em qualquer máquina",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c0d6f02592821f78516d11cf66c2f428687ff01251fc2f1fd3a1036122068ce1",
+   "sha256_depois": "27347747c51c59720906ee3746325290d696c2c95ab2aae798fad4e34df92dc1",
+   "contexto_antes": "RESEARCHHUB_DIR, o controlo do corpo\n// fica por correr e di-lo; em qualquer outra máquina continua a exigir o corpo (a aterragem e a lista inteira correm-no).\nconst semMotorNoGitHub = process.env.GITHUB_ACTIONS === 'true' && !process.env.RESEARCHHUB_DIR\n  && limpa.estado === 'não leu os corpos: RESEARCHHUB_DIR ausente';\nif (semMotorNoGitHub) {\n  console.log('COR3-B: contexto, título e resumo recusados; a prova",
+   "contexto_depois": "RESEARCHHUB_DIR, o controlo do corpo\n// fica por correr e di-lo; em qualquer outra máquina continua a exigir o corpo (a aterragem e a lista inteira correm-no).\nconst semMotorNoGitHub = !process.env.RESEARCHHUB_DIR\n  && limpa.estado === 'não leu os corpos: RESEARCHHUB_DIR ausente';\nif (semMotorNoGitHub) {\n  console.log('COR3-B: contexto, título e resumo recusados; a prova"
+  },
+  {
+   "id": "CG-P2",
+   "ficheiro": "tests/cor3/titulos-frases.mjs",
+   "descricao": "o controlo do corpo aceita zero linhas lidas: deixa de exigir que o corpo tenha sido lido",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "27347747c51c59720906ee3746325290d696c2c95ab2aae798fad4e34df92dc1",
+   "sha256_depois": "131387677e8033eec91b0c00e8f315821d0e49e1c9df90a8ae14eaca0e0b195f",
+   "contexto_antes": "log('COR3-B: contexto, título e resumo recusados; a prova do título no corpo alojado não correu aqui (sem motor) e corre na máquina da aterragem.');\n} else {\n  assert(limpa.limpa && limpa.lidas === 1, 'o controlo exige o corpo alojado');\n  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.'};\n  assert(conferirCorpos([inventada], true).erros.some(e => e.includes('excerto ausen",
+   "contexto_depois": "log('COR3-B: contexto, título e resumo recusados; a prova do título no corpo alojado não correu aqui (sem motor) e corre na máquina da aterragem.');\n} else {\n  assert(limpa.limpa || limpa.lidas >= 0, 'o controlo exige o corpo alojado');\n  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.'};\n  assert(conferirCorpos([inventada], true).erros.some(e => e.includes('excerto ausen"
+  },
+  {
+   "id": "CG-P3",
+   "ficheiro": "tests/cor3/titulos-frases.mjs",
+   "descricao": "a planta das palavras inventadas passa com a lista de erros vazia (every em vez de some)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "131387677e8033eec91b0c00e8f315821d0e49e1c9df90a8ae14eaca0e0b195f",
+   "sha256_depois": "9525a7eeb8c4b4cb3047a9e27f53043a01438255beaa87672c87048bc2cdcc3d",
+   "contexto_antes": "e {\n  assert(limpa.limpa || limpa.lidas >= 0, 'o controlo exige o corpo alojado');\n  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.'};\n  assert(conferirCorpos([inventada], true).erros.some(e => e.includes('excerto ausente do corpo')));\n  console.log('COR3-B: título bilingue provado no corpo; contexto, título, resumo e palavras inventadas recusados.');\n}\n\nconst quadro = loadClaims().get('oe-20",
+   "contexto_depois": "e {\n  assert(limpa.limpa || limpa.lidas >= 0, 'o controlo exige o corpo alojado');\n  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.'};\n  assert(conferirCorpos([inventada], true).erros.every(e => e.includes('excerto ausente do corpo')));\n  console.log('COR3-B: título bilingue provado no corpo; contexto, título, resumo e palavras inventadas recusados.');\n}\n\nconst quadro = loadClaims().get('oe-20"
+  },
+  {
+   "id": "CG-P4",
+   "ficheiro": "tests/cor3/titulos-frases.mjs",
+   "descricao": "no ramo em que o controlo do corpo não corre, a mensagem diz que o título foi provado no corpo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9525a7eeb8c4b4cb3047a9e27f53043a01438255beaa87672c87048bc2cdcc3d",
+   "sha256_depois": "8e34555b5e7b9af32a054bc3374923cfb8bc311f3a0f26f5bde3821b8dbc1fdb",
+   "contexto_antes": "correm-no).\nconst semMotorNoGitHub = !process.env.RESEARCHHUB_DIR\n  && limpa.estado === 'não leu os corpos: RESEARCHHUB_DIR ausente';\nif (semMotorNoGitHub) {\n  console.log('COR3-B: contexto, título e resumo recusados; a prova do título no corpo alojado não correu aqui (sem motor) e corre na máquina da aterragem.');\n} else {\n  assert(limpa.limpa || limpa.lidas >= 0, 'o controlo exige o corpo alojado');\n  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.",
+   "contexto_depois": "correm-no).\nconst semMotorNoGitHub = !process.env.RESEARCHHUB_DIR\n  && limpa.estado === 'não leu os corpos: RESEARCHHUB_DIR ausente';\nif (semMotorNoGitHub) {\n  console.log('COR3-B: título bilingue provado no corpo; contexto, título, resumo e palavras inventadas recusados.');\n} else {\n  assert(limpa.limpa || limpa.lidas >= 0, 'o controlo exige o corpo alojado');\n  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas."
+  },
+  {
+   "id": "CG-P5",
+   "ficheiro": "design/especime-v3/medicoes/cor3-2026-11-12/cor3-f-conferencias/maquina-sem-motor.codigo",
+   "descricao": "o código registado da corrida na máquina sem o motor passa a 0; a corrida deu 1, e é essa recusa que prova que a conferência não salta fora do GitHub",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+   "sha256_depois": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+   "contexto_antes": "1\n",
+   "contexto_depois": "0\n"
+  }
+ ]
+}

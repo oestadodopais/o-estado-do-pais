@@ -45,3 +45,18 @@ Fora das plantas, nenhum achado sobre uma frase, um número ou uma fonte. Um Maj
 ## O fecho
 
 A lista inteira correu por guião na cabeça `93b4412d7`, de 10:18 a 11:18 UTC de 14.11.2026: 71 passos, todos a zero, a árvore limpa no início e a mesma cabeça no fim. No motor, o portão inteiro passou numa árvore limpa na cabeça `5760676`.
+
+## A aterragem recusada, a adenda F e a sua leitura (14.11.2026)
+
+A primeira aterragem parou antes de tocar em `main`: a corrida `portão` do GitHub na cabeça `b44d7f4a2` ficou vermelha numa só conferência, `tests/cor3/titulos-frases.mjs`, que exigia o corpo alojado de um documento numa corrida que não tem o motor. O ramo nunca tinha corrido no GitHub. Este lugar corrigiu a conferência (a adenda F, commit `9d66aa843`): o controlo do corpo só fica por correr na corrida do GitHub, sem o motor, e di-lo; em qualquer outra máquina recusa sem o corpo.
+
+Quem corrigiu foi o Claude, e por isso leu o Codex `gpt-6-astra`, a `xhigh`, de 12:22:46 a 12:27:07 UTC, sem correr nada, só a ler o código. **Cinco plantas em cinco, pelo que fazem:**
+
+- CG-P1: o salto sem a condição da corrida do GitHub;
+- CG-P2: o controlo do corpo a aceitar zero linhas lidas;
+- CG-P3: a planta das palavras inventadas a passar com a lista de erros vazia;
+- CG-P4: a mensagem do ramo que não corre a dizer o título provado;
+- CG-P5: o código registado da corrida sem o motor trocado de 1 para 0.
+
+Fora das plantas, nenhum Blocking e nenhum Major. Um Minor: os registos das cinco corridas de prova não diziam o comando nem as variáveis de cada uma; ficam agora em `cor3-f-conferencias/comandos.txt`. O leitor confirmou que as recusas do contexto, do título inventado e do resumo em falta ficam fora da condição, nas duas línguas, e notou o que o pacote não podia mostrar: que `GITHUB_ACTIONS` vem do executor do GitHub e não do ficheiro da corrida, e que a aterragem corre a conferência com o motor. As duas coisas leem-se do recibo da aterragem: o passo `frases-afirmacao` na máquina, com o motor, e a corrida do GitHub na cabeça que aterra.
+
