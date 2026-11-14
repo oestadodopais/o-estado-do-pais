@@ -1,0 +1,118 @@
+{
+  "ledger:check": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/ledger.codigo"
+  },
+  "check:cruzamento --with-origin": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/cruzamento-origem.codigo"
+  },
+  "check:series": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/check-series.codigo"
+  },
+  "check:cartao": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/cartao-2.codigo"
+  },
+  "check:areas": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/check-areas.codigo"
+  },
+  "check:edicoes": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/edicoes-3.codigo"
+  },
+  "check:frases-afirmacao": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/check-frases-afirmacao.codigo"
+  },
+  "check:frases-afirmacao GitHub sem motor": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/frases-github-final.codigo"
+  },
+  "check:frases-reais": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/check-frases-reais.codigo"
+  },
+  "check:registo": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/check-registo.codigo"
+  },
+  "check:rotulos": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/rotulos-2.codigo"
+  },
+  "check:lugar": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/lugar-2.codigo"
+  },
+  "typecheck": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/typecheck-final.codigo"
+  },
+  "check:datas": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/datas-zer0.codigo"
+  },
+  "HTML ZER0": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/html-encerramento.codigo"
+  },
+  "motor SGMAI": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-sgmai-16.codigo"
+  },
+  "motor PRR": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-prr-final.codigo"
+  },
+  "motor exportador": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-export-worktree.codigo"
+  },
+  "motor registos": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-records-test-final.codigo"
+  },
+  "motor compositor": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-compor-test.codigo"
+  },
+  "motor bases existentes": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-ratchet-final.codigo"
+  },
+  "motor cópia de teste": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/motor-fixtures-check.codigo"
+  },
+  "incorporar estático": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/incorporar-estatico-final.codigo"
+  },
+  "build": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/build-verificado.codigo"
+  },
+  "check:voz": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/voz-3.codigo"
+  },
+  "check:indice": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/navegador-indice.codigo"
+  },
+  "check:incorporar": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/navegador-incorporar.codigo"
+  },
+  "inventário de voz": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/voz-inventario-2.codigo"
+  },
+  "check:lingua": {
+    "codigo": 0,
+    "ficheiro": "zer0-conferencias/fecho-lingua-2.codigo"
+  }
+}

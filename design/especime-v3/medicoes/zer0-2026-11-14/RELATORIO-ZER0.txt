@@ -1,0 +1,20 @@
+ZER0, 14.11.2026: oito commits no sítio e este nono de fecho, necessário para conferir o navegador sobre árvore limpa; três commits no motor. Sem publicação.
+1. Z1: retirada a segunda frase das regiões nas duas edições; primeira frase conservada.
+2. Z6: rótulo completo da água em baixa, com Portugal continental, no cartão, título e migalha, em PT e EN.
+3. Z7: 18 linhas retiradas, conservadas no disco; 36 recibos deixam a publicação; população de Évora de 2021 permanece.
+4. Datas: última releitura só se mostra depois da leitura; plantas recusam a data anterior reposta e a posterior omitida.
+5. Z2: quatro nomes, cinco descrições e duas aritméticas do PRR corrigidos nas duas edições, sem alterar valores.
+6. Z3: empréstimo de 32 166 372,20 para 32 166 373,20 euros; página e recorte 99; correção bilingue de 14.11.2026; SHA-256 dos anexos confirmado.
+7. Z5: dez objetos eleitorais literais e respetivos caminhos conferidos; duas somas deixam de fingir uma citação e ganham as descrições decididas; doze revisões de proveniência.
+8. Prova: 64 verificações no HTML das duas edições; índices e descargas sem as 18 linhas; restantes valores com o mesmo resumo; 5 614 cartões antes e depois.
+Livro: 4 199 linhas no disco antes e depois; publicadas 4 194→4 176; retiradas 5→23; calculadas 529→526; concelhos 2 767→2 767; Método, campos por confirmar, 6→7.
+Listas: L1 3 524→3 490; leituras provadas 1 181→1 181; frases pendentes 905→905; inventário: quatro entradas retiradas e quatro novas; rótulos, 700 chaves antes e depois; unidades 87→85, títulos 245→239, fontes 68→64, edições 145→142.
+RET1: 81 linhas continuam fixadas; 36 resumos autorizados atualizados; histórias das doze linhas, dez de 0→1 e duas de 7→8; correção do empréstimo 0→1.
+Motor: cinco corpos oficiais alojados; duas somas finais conferidas; documentos retirados 08 e 17 recompostos; ligações anteriores preservadas e valores conferidos; não atravessaram como estudos publicados.
+Cópia de teste do motor: 112→118 ficheiros, 799 750→923 611 bytes; coerência e frescura conferidas; bases de tolerância intactas.
+Códigos 0: build, ledger, cruzamento com origem, series, cartao, areas, incorporar, edicoes, frases-afirmacao com motor e em modo GitHub sem motor, frases-reais, registo, rotulos, lugar, indice, voz, typecheck e datas.
+Motor a 0: SGMAI (16), PRR (7), exportador (119 em cada cópia), registos (34), compositor (23), bases dos documentos alterados e cópia de teste; portão integral não executado.
+As correções de texto dos dois estudos da água ficaram intactas; as formas antigas só permanecem no histórico de correção exigido. Medidas e códigos em medidas-construcao.json e zer0-conferencias/.
+Pendência antes da fusão: leitura cruzada do diff do inventário, registada como «por ler»; a folha já fora julgada. Correções construídas; navegador conferido pelo escrivão; planta de incorporação corrigida sem retirar a prova da data.
+Chamadas e execuções: 239 chamadas medidas até à redação deste relatório; 123 execuções com código registado, incluindo tentativas recusadas e commits; 0 corridas integrais dos portões.
+tokens used: 34734307 (total observado no registo da sessão até à redação).

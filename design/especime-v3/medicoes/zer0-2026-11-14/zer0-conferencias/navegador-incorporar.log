@@ -1,0 +1,20 @@
+        "codigo": "ERR_ASSERTION",
+        "mensagem": "ER1 navegador: a recusa só por excerpt alterou o parágrafo colado."
+      }
+    },
+    {
+      "lang": "en",
+      "modo": "recusado-com-campo-source_url",
+      "campo": "source_url",
+      "linha": "custo-unitario-do-trabalho-2024-recusado-endereco",
+      "jsonComCampo": true,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"17,9\" data-oedp-lido=\"2026-11-09\"><a href=\"http://127.0.0.1:55539/en/ledger/custo-unitario-do-trabalho-2024-recusado-endereco\">Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 <span lang=\"en\">three-year change, %</span></a> · <span lang=\"en\">Eurostat</span>, read on 09.11.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\"http://127.0.0.1:55539/en/ledger/custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-atualizado=\"\">This number was updated on 05.10.2026</a></p>",
+      "falha": {
+        "codigo": "ERR_ASSERTION",
+        "mensagem": "ER1 navegador: a recusa só por source_url alterou o parágrafo colado."
+      }
+    }
+  ]
+}
