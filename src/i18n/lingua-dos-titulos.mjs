@@ -47,12 +47,6 @@ export const LINGUA_DOS_TITULOS = {
   "Manifestantes levam protesto até à porta da Câmara do Porto": "pt",
   "RELATÓRIO DE ATIVIDADES E CONTAS 2025": "pt",
   "Évora European Capital of Culture 2027 Second Monitoring Meeting Report by the ECOC Expert Panel": "en",
-  "Edital, Empreendimento de Fins Múltiplos de Alqueva, Blocos de Rega do EFMA": "pt",
-  "Anuário dos Aproveitamentos Hidroagrícolas, Campanha de Rega 2024": "pt",
-  "O uso da água em Portugal: olhar, compreender e actuar com os protagonistas chave": "pt",
-  "Edição anterior do estudo agua-nao-faturada": "pt",
-  "Edição anterior do estudo onde-esta-a-agua": "pt",
-  "Relatório 4/2016, 2.ª Secção": "pt",
   "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027": "pt",
   "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se": "pt",
   "Guião de Votações: votações a efetuar em 28-10-2026, versão 2": "pt",
@@ -1069,9 +1063,6 @@ export const LINGUA_DAS_FONTES = {
   "Instituto da Segurança Social, I.P.": "pt",
   "Grupo de Trabalho para a Reforma da Seguranca Social": "pt",
   "Associação Évora 2027": "pt",
-  "EDIA": "pt",
-  "DGADR": "pt",
-  "Gulbenkian": "pt",
   'DNOTICIAS.PT': 'pt',
   'PAN': 'pt',
   'Sindicato da Hotelaria do Sul': 'pt',
@@ -1128,7 +1119,6 @@ export const LINGUA_DAS_FONTES = {
   'Marques, Cruz & Associados': 'pt',
   ERSAR: 'pt',
   'CICF/IPCA — Anuário Financeiro dos Municípios Portugueses': 'pt',
-  PORDATA: 'pt',
   'Conselho das Finanças Públicas': 'pt',
   'Diário da República': 'pt',
   /* A casa, que se cita a si própria pelo nome que tem. */
@@ -1200,9 +1190,6 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
-  "RASARP 2025, volume 1": "pt",
-  "março de 2020": "pt",
-  "Relatório 4/2016, 2.ª Secção": "pt",
   "2026-10-28": null,
   "2026-10-29": null,
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.

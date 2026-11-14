@@ -1,0 +1,20 @@
+VOZ-1 E: revisão de proveniência sem porta no recibo (en): recusada; V2B integração: presença ou ausência errada em en/ledger/divida-publica-2025/index.html
+VOZ-1 E: revisão de proveniência sem história (en): recusada; REC1 proveniência: divida-publica-2025/1/old_value ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com old_value alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/old_value ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com new_value alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/new_value ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com reason alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/reason ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com date alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/date ausente ou diferente no recibo (en)
+VOZ-1 E: revisão de proveniência com kind alterado (en): recusada; REC1 proveniência: divida-publica-2025/1/kind ausente ou diferente no recibo (en)
+VOZ-1 E: medida adicional na revisão no recibo (en): recusada; V2B integração: presença ou ausência errada em en/ledger/divida-publica-2024/index.html
+VOZ-1 E: nome fora da revisão no recibo (en): recusada; V2B integração: presença ou ausência errada em en/ledger/divida-publica-2024/index.html
+VOZ-1 E: medida adicional na revisão no recibo (en): recusada; V2B integração: presença ou ausência errada em en/ledger/divida-publica-2025-ue/index.html
+VOZ-1 E: nome fora da revisão no recibo (en): recusada; V2B integração: presença ou ausência errada em en/ledger/divida-publica-2025-ue/index.html
+OG1: 16 âncoras conferidas no corpo alojado.
+OG1 pt: planta de data trocada e planta de partido trocado recusadas.
+OG1 pt: planta de frase alterada e planta de nota de modo trocada recusadas.
+OG1 pt: planta do bloco da citação alterado recusada.
+OG1 en: planta de data trocada e planta de partido trocado recusadas.
+OG1 en: planta de frase alterada e planta de nota de modo trocada recusadas.
+OG1 en: planta do bloco da citação alterado recusada.
+PASS: 859 conferências OG1 das formas, fontes e recibos nas duas edições.
+{"tranca": "libertada", "espera_segundos": 0.00015295809134840965, "execucao_segundos": 2149.6496906671673, "codigo": 0}

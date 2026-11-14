@@ -1,0 +1,1 @@
+EXCERPTS_TEST: PASS — 9 checks (mid-number, mid-word, sentence end, already on a boundary, past the end, no space forward, the budget respected, never shrinks past the start, the old cut reproduced)

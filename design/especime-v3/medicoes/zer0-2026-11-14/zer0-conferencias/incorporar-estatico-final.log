@@ -1,0 +1,20 @@
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.periodoEmFalta-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.atualizado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.atualizado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+      "mordeu": true
+    }
+  ]
+}

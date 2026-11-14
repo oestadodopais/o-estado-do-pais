@@ -56,6 +56,8 @@ for(const l of z5.split('\n').filter(l=>l.startsWith('| `evora-'))){
  for(const id of ids)for(const lang of ['pt','en']){assert.equal(livro.get(id).excerpt,esperado);prova(recibo(id,lang),esperado,`Z5 excerto ${id} ${lang}`);assert(livro.get(id).document.locator.includes('$.'));}
 }
 for(const [j,lang] of ['pt','en'].entries()){
+ const metodo=html(routePath('metodo',lang)).querySelector('[data-prova="divida"]');
+ assert.equal(Number(metodo.textContent),medidas.metodoDivida.depois);alvos++;
  const linha=sec('Z6').split('\n').filter(l=>l.startsWith('- Hoje'))[j], [velha,nova]=frases(linha),r=recibo('agua-nao-faturada-portugal-2024',lang);
  prova(r.querySelector('h1'),nova,`Z6 título ${lang}`);prova(r.querySelector('nav.caminho'),nova,`Z6 migalha ${lang}`);
  prova(html(routePath('area',lang,{slug:'ambiente-e-energia'})),nova,`Z6 área ${lang}`);

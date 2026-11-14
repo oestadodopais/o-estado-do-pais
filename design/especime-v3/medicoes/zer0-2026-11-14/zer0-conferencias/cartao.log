@@ -1,0 +1,20 @@
+AssertionError [ERR_ASSERTION]: en/ledger/evora-prr-municipio-contratado/index.html
++ actual - expected
+
++ [
++   'RP4N-h: marca fora da língua da edição (en, texto fora do componente)'
++ ]
+- []
+
+    at file://<worktree> {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'RP4N-h: marca fora da língua da edição (en, texto fora do componente)'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

@@ -1,0 +1,20 @@
+  File "<worktree>", line 1167, in build_record
+    record, voz_stats = voz.para_o_exportador(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        root, edition, record, ops_file, proof_html=proof_html,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ledger_path=ledger_path, baseline=matched, nao_figuras=stats["nao_figuras"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 1402, in para_o_exportador
+    depois, contagens, _relatorio, _ops = aplicar(root, edition, record, data,
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                  proof_html, allowed, baseline, nao_figuras)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 1337, in aplicar
+    anchored = anchor(antes, data)
+  File "<worktree>", line 616, in anchor
+    raise Fail(
+    ...<3 lines>...
+           if hits else ""))
+publisher.voz.Fail: 08 en b164 f1 (substituicao): a frase ancora 0 vezes no registo e tem de ancorar exatamente uma.
+     frase: "The PS mandate of 2009–2013 owns the period's largest decision — entering the PAEL, €32 166 372 — and the record of its own years is the thinnest in this document: the reports that would tell its side are the illegible ones."

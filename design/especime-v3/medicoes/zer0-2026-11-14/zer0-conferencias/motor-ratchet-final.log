@@ -1,0 +1,7 @@
+evora-mandates-15y {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-mandates-15y-html {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-mandates-15y-pt {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-mandates-15y-pt-html {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-quem-governou-pt {'numbers': 926, 'matched': 485, 'orphans': 0, 'misattributions': 15, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-quem-governou-pt-html {'numbers': 912, 'matched': 485, 'orphans': 0, 'misattributions': 19, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+PASS, 6 documentos nas bases existentes, sem alteração das tolerâncias.

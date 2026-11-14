@@ -1,0 +1,20 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ null
+- 'O rácio entre o encargo médio de um utilizador doméstico por metro cúbico, ao consumo de referência da ERSAR, e a tarifa do Alqueva para a rega nos blocos de rega passou de 27 a 53 vezes para 19 a 35 vezes, com o nível médio de encargos da ERSAR de 2024 e as tarifas do Alqueva de 2026, que a edição inglesa dizia não encontradas e estão no edital da EDIA; o encargo de conservação passou aos valores do mesmo edital; a auditoria do Tribunal de Contas de 2016 entrou na edição inglesa; o total nacional de barragens do resumo dos planos de bacia entrou na edição portuguesa; os valores de um boletim semanal da APA que já não se consegue ler saíram, com as marcas de valor por confirmar; a eficiência na adução e distribuição dos aproveitamentos hidroagrícolas passou ao valor da DGADR, 76 %, sem a média ponderada de cerca de 95 %; e os 71 % de agricultores sem contador passaram a dizer de que inquérito são e a quem se aplicam.'
+
+    at file://<worktree> {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 'O rácio entre o encargo médio de um utilizador doméstico por metro cúbico, ao consumo de referência da ERSAR, e a tarifa do Alqueva para a rega nos blocos de rega passou de 27 a 53 vezes para 19 a 35 vezes, com o nível médio de encargos da ERSAR de 2024 e as tarifas do Alqueva de 2026, que a edição inglesa dizia não encontradas e estão no edital da EDIA; o encargo de conservação passou aos valores do mesmo edital; a auditoria do Tribunal de Contas de 2016 entrou na edição inglesa; o total nacional de barragens do resumo dos planos de bacia entrou na edição portuguesa; os valores de um boletim semanal da APA que já não se consegue ler saíram, com as marcas de valor por confirmar; a eficiência na adução e distribuição dos aproveitamentos hidroagrícolas passou ao valor da DGADR, 76 %, sem a média ponderada de cerca de 95 %; e os 71 % de agricultores sem contador passaram a dizer de que inquérito são e a quem se aplicam.',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

@@ -27,7 +27,7 @@ function conferir(root,c,lang) {
  if(presente(c.published_at))esperadas.push({rotulo:paginaSoComEdicao(c)?t(lang).livro.linha.editadoEmK:r.publicados,campo:'published_at',valor:c.published_at});
  if(presente(c.access_date)&&c.access_date_kind!=='hosted-copy')esperadas.push({rotulo:r.lidos,campo:'access_date',valor:c.access_date});
  const ultima=(c.verifications??[]).map((v,n)=>({...v,n})).filter(v=>v.by==='painel-semanal').sort((a,b)=>b.date.localeCompare(a.date)||b.n-a.n)[0];
- if(ultima&&!(presente(c.access_date)&&c.access_date_kind!=='hosted-copy'&&String(c.access_date).slice(0,10)===ultima.date.slice(0,10)))esperadas.push({rotulo:r.ultima,campo:`verifications.${ultima.n}.date`,valor:ultima.date});
+ if(ultima&&presente(c.access_date)&&ultima.date.slice(0,10)>String(c.access_date).slice(0,10))esperadas.push({rotulo:r.ultima,campo:`verifications.${ultima.n}.date`,valor:ultima.date});
  if(ultima&&!eDerivada(c))esperadas.push({rotulo:r.proxima,campo:'calendario.proxima-segunda',valor:dia});
  const linhas=cabeca.querySelectorAll('p');
  if(linhas.length!==esperadas.length)erros.push('FP1-b: presença dos campos diferente da linha');
@@ -58,6 +58,8 @@ for(const lang of ['pt','en']) {
   if((c.verifications??[]).some(v=>v.by==='painel-semanal'))comPainel++;
   if(root.querySelector('[data-recibo-datas] [data-de-campo^="verifications."]'))amostras.painel??={html,c,lang};
   if(root.querySelector('[data-recibo-datas] [data-data-origem="calendario.proxima-segunda"]'))amostras.calendario??={html,c,lang};
+  const ultima=(c.verifications??[]).filter(v=>v.by==='painel-semanal').sort((a,b)=>b.date.localeCompare(a.date))[0];
+  if(ultima&&presente(c.access_date)&&ultima.date.slice(0,10)<String(c.access_date).slice(0,10))amostras['anterior-'+lang]??={html,c,lang};
   if(eDerivada(c))amostras.derivada??={html,c,lang};
   if(!(c.verifications??[]).length)amostras.semReleituras??={html,c,lang};
  }
@@ -76,6 +78,12 @@ for(const [nome,chave,mudar,queixa] of [
  ['releitura do painel retirada','painel',r=>r.querySelector('[data-recibo-datas] [data-de-campo^="verifications."]').parentNode.remove(),/presença/],
 ]) {
  const a=amostras[chave];assert(a,`controlo da planta ${nome}`);const r=parse(a.html);mudar(r);const erros=conferir(r,a.c,a.lang);const mordeu=erros.some(e=>queixa.test(e));assert(mordeu,nome);plantas.push({nome,mordeu});
+}
+for(const lang of ['pt','en']) {
+ const a=amostras['anterior-'+lang];assert(a,`releitura anterior ${lang}`);
+ const r=parse(a.html);r.querySelector('[data-recibo-datas]').insertAdjacentHTML('beforeend',`<p><span data-voz>${FP1[lang].ultima}</span><span>01.01.2000</span></p>`);
+ assert(conferir(r,a.c,lang).some(e=>e.includes('presença')));
+ plantas.push({nome:`releitura anterior reposta ${lang}`,mordeu:true});
 }
 // Fronteiras do calendário e da marca, apenas dados de ensaio.
 for(const [entrada,esperada] of [['2026-10-25','2026-10-26'],['2026-10-26','2026-11-02'],['2026-12-31','2027-01-04']])assert.equal(proximaLeitura(entrada),esperada);

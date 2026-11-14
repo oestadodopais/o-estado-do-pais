@@ -1,0 +1,20 @@
+    '        }\n' +
+    '      ]\n' +
+    '    },\n' +
+    '    {\n' +
+    '      "pt": "Está ao nível da média da União Europeia.",\n' +
+    '      "en": "Level with the European Union average.",\n' +
+    '      "partes": [\n' +
+    '        {\n' +
+    '          "pt": "Está ao nível da média da União Europeia.",\n' +
+    '          "en": "Level with the European Union average.",\n' +
+    '          "classe": "conta"\n' +
+    '        }\n' +
+    '      ]\n' +
+    '    },\n' +
+    '    {\n' +
+    '      "pt": "Pesa mais do que'... 1044601 more characters,
+  stderr: ''
+}
+
+Node.js v22.23.1

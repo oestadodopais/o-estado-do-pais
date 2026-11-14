@@ -1,0 +1,15 @@
+
+> o-estado-do-pais@0.1.0 check:lugar
+> node scripts/check-lugar.mjs && node tests/edicoes/lugar.mjs && node tests/quadro/reguas.mjs l1
+
+file://<worktree>
+if (!Number.isInteger(TETO_B1.l1_paginas) || TETO_B1.l1_paginas < 0 || MEDICAO_B1.contagens.estudos !== TETO_B1.l1_paginas)
+                                                                                            ^
+
+TypeError: Cannot read properties of undefined (reading 'estudos')
+    at file://<worktree>
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

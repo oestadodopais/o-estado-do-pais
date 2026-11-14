@@ -1,0 +1,20 @@
+[90m    · o ledger.json de "20 Orcamento do Estado" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+[90m    · o ledger.json de "30 Orcamento 2027 Generalidade" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+[90m    · o ledger.json de "15 Orcamento do Estado 2027" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+[90m    · o ledger.json de "24 Orcamento 2027 Analise" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+
+[31m  A TRAVESSIA NÃO CONFERE — 1 erro(s):[0m
+
+    [31m✗[0m --with-origin: 10 linha(s) já não são a linha do motor que atravessou:
+        evora-camara-lugares ← 08 Évora Mandates/el2025-seats-total (evora.json)
+        evora-camara-mandatos-cdu-2013 ← 08 Évora Mandates/el2013-pcp-pev-seats (evora.json)
+        evora-camara-mandatos-cdu-2017 ← 08 Évora Mandates/el2017-pcp-pev-seats (evora.json)
+        evora-camara-mandatos-cdu-2021 ← 08 Évora Mandates/el2021-pcp-pev-seats (evora.json)
+        evora-camara-mandatos-ps-2009 ← 08 Évora Mandates/el2009-ps-seats (evora.json)
+        evora-camara-mandatos-ps-2025 ← 08 Évora Mandates/el2025-ps-seats (evora.json)
+        evora-executivo-2025-ad ← 08 Évora Mandates/exec2025-ad-seats (evora.json)
+        evora-executivo-2025-cdu ← 08 Évora Mandates/exec2025-cdu-seats (evora.json)
+        evora-executivo-2025-chega ← 08 Évora Mandates/exec2025-chega-seats (evora.json)
+        evora-executivo-2025-ps ← 08 Évora Mandates/exec2025-ps-seats (evora.json)
+        Volte a cruzar: python3 publisher/export_site_rows.py --write
+

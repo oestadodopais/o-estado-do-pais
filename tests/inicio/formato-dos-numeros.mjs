@@ -247,12 +247,15 @@ export const PLANTAS_DO_FORMATO = [
  */
 export function plantasDoFormato(dist, conferir = conferirFormatoDaPagina) {
   // Um ano declarado conserva quatro algarismos; um montante não ganha essa exceção.
-  const ano = [...ANOS_DECLARADOS][0];
-  assert(ano);
+  const ano = ['planta-ano-zer0', '2026'];
+  assert(!ANOS_DECLARADOS.has(ano[0]));
+  ANOS_DECLARADOS.set(...ano);
+  try {
   assert.equal(conferir(`<span data-claim="${ano[0]}">${ano[1]}</span>`, 'planta-ano').desvios.length, 0);
   assert(conferir('<span data-claim="remuneracao-bruta-mensal-media">2019</span>', 'planta-milhares').desvios.some(d => d.regra === 'F1'));
   assert(conferir(`<span data-claim="${ano[0]}">9876</span>`, 'planta-ano-trocado').desvios.some(d => d.regra === 'F1'));
   assert(conferir(`<span data-claim="${ano[0]}">${ano[1][0]}\u00a0${ano[1].slice(1)}</span>`, 'planta-ano-agrupado').desvios.some(d => d.regra === 'F1'));
+  } finally { ANOS_DECLARADOS.delete(ano[0]); }
   const ler = (rel) => fs.readFileSync(path.join(dist, rel), 'utf8');
   return PLANTAS_DO_FORMATO.map((p) => {
     const limpo = conferir(ler(p.rel), p.rel).desvios;

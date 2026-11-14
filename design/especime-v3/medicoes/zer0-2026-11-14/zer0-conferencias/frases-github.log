@@ -1,0 +1,20 @@
+> o-estado-do-pais@0.1.0 check:frases-afirmacao
+> node tests/evb/texto-da-pagina.mjs && node tests/leituras/frases-afirmacao.mjs && node tests/cor3/trechos.mjs && node scripts/check-frases-afirmacao.mjs && node tests/eva/textos-julgados.mjs && node tests/eva/modelos.mjs && node tests/evb/copias-julgadas.mjs
+
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dist/estudos/evora-contas-da-camara-2010-2025/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dist/estudos/evora-contas-da-camara-2010-2025/index.html'
+}
+
+Node.js v22.23.1

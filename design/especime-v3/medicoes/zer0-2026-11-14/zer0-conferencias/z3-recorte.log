@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<worktree>", line 513, in build
+    ids = curated_ids(ledger_path, editions)
+  File "<worktree>", line 448, in curated_ids
+    raise ValueError("every edition must name the same sections, in the same order")
+ValueError: every edition must name the same sections, in the same order

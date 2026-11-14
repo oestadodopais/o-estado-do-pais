@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<worktree>", line 2497, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<worktree>", line 2453, in main
+    resultados.append(corrida("a cópia versionada"))
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 432, in corrida
+    rows = X.build_rows(m, copy.deepcopy(base_ledgers), [])
+  File "<worktree>", line 2944, in build_rows
+    build_crops(out, report)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "<worktree>", line 1900, in build_crops
+    raise Fail(f"{sid}: the crop was taken from page {registada} of "
+               f"{snippet.get('pdf')!r} and the row declares document.page {pagina}. "
+               f"A crop of another page is not this row's proof.")
+publisher.export_site_rows.Fail: evora-pael-emprestimo: the crop was taken from page 84 of '2016_relatorio_gestao.pdf' and the row declares document.page 99. A crop of another page is not this row's proof.
+  a travessia contra a cópia versionada: <worktree>

@@ -1,0 +1,20 @@
+  ],
+  pid: 23833,
+  stdout: '',
+  stderr: 'node:fs:440\n' +
+    '    return binding.readFileUtf8(path, stringToFlags(options.flag));\n' +
+    '                   ^\n' +
+    '\n' +
+    "Error: ENOENT: no such file or directory, open '<worktree>'\n" +
+    '    at Object.readFileSync (node:fs:440:20)\n' +
+    '    at file://<worktree> {\n' +
+    '  errno: -2,\n' +
+    "  code: 'ENOENT',\n" +
+    "  syscall: 'open',\n" +
+    "  path: '<worktree>'\n" +
+    '}\n' +
+    '\n' +
+    'Node.js v22.23.1\n'
+}
+
+Node.js v22.23.1

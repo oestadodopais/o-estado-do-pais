@@ -1,0 +1,20 @@
+AssertionError [ERR_ASSERTION]: linha alterada: coragua-alqueva-alta-pressao-2026.yml
++ actual - expected
+
++ 'd746461c5f645df04ba4fa428603f8ef2b86b678fda0b9f8c81bfc0b1164bf3d'
+- '0f484bd05d39ee85109a4500f3d3387613df53656533cc6bd9737c21b518e96d'
+
+    at file://<worktree>
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'd746461c5f645df04ba4fa428603f8ef2b86b678fda0b9f8c81bfc0b1164bf3d',
+  expected: '0f484bd05d39ee85109a4500f3d3387613df53656533cc6bd9737c21b518e96d',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 0.00017787516117095947, "execucao_segundos": 238.44420208362862, "codigo": 1}

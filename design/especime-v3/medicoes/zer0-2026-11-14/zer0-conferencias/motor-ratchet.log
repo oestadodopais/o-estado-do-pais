@@ -1,0 +1,9 @@
+['datasets', 'ledgers_without_deliverable', 'deliverables', 'editions']
+evora-mandates-15y {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-mandates-15y-html {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-mandates-15y-pt {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-mandates-15y-pt-html {'numbers': 1118, 'matched': 682, 'orphans': 0, 'misattributions': 0, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} []
+evora-quem-governou-pt {'numbers': 926, 'matched': 485, 'orphans': 0, 'misattributions': 15, 'undeclared': 0, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} ['misattributions: 15 > baseline 0 — new unledgered/unattributed content']
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+AssertionError

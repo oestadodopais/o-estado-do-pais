@@ -1,0 +1,20 @@
+                                   by_value, by_id, stats, digestos, decisoes,
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   f"{i}.t{r}.{cc}"))
+                                   ^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 594, in _render_unit
+    out: dict = {"figures": _figures(text, context, by_value, by_id, digestos, minhas,
+                            ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     chave, tally),
+                                     ^^^^^^^^^^^^^
+  File "<worktree>", line 550, in _figures
+    figure.update(source_provenance(row, digestos))
+                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<worktree>", line 445, in source_provenance
+    resumo, onde = resolver_em(digest, digestos)
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 162, in resolver_em
+    raise Fail(f"o prefixo {prefixo!r} resolve para {len(achados)} resumo(s) "
+    ...<3 lines>...
+               f"abreviatura tem de crescer, não de se escolher uma.")
+publisher.digerir_raw.Fail: o prefixo '76c10536ad896887' resolve para 0 resumo(s) distinto(s) nos digestos dos 1 estudos. Zero quer dizer que o ficheiro em bruto não está digerido; dois querem dizer que dezasseis hexadecimais não chegam para o nomear, e nesse caso a abreviatura tem de crescer, não de se escolher uma.

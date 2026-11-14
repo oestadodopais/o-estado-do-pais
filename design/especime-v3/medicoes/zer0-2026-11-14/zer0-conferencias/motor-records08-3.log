@@ -1,0 +1,20 @@
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<worktree>", line 1167, in build_record
+    record, voz_stats = voz.para_o_exportador(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        root, edition, record, ops_file, proof_html=proof_html,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ledger_path=ledger_path, baseline=matched, nao_figuras=stats["nao_figuras"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 1402, in para_o_exportador
+    depois, contagens, _relatorio, _ops = aplicar(root, edition, record, data,
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                  proof_html, allowed, baseline, nao_figuras)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<worktree>", line 1340, in aplicar
+    titulos = check_titulos(root, anchored)
+  File "<worktree>", line 1099, in check_titulos
+    raise Fail(
+    ...<2 lines>...
+        f"companheiro nomeia-se pelo título que existe, ou não se nomeia.")
+publisher.voz.Fail: TÍTULO b1 f3: o `depois` nomeia em itálico 'Évora — Budgeted, Paid, Owed 2025', que não é o título de nenhuma edição deste motor. Um companheiro nomeia-se pelo título que existe, ou não se nomeia.

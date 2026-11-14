@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/releitura-posterior.mjs(2,44): error TS7006: Parameter 'leitura' implicitly has an 'any' type.
+src/lib/releitura-posterior.mjs(2,53): error TS7006: Parameter 'releitura' implicitly has an 'any' type.
+src/lib/releitura-posterior.mjs(3,15): error TS7006: Parameter 'valor' implicitly has an 'any' type.

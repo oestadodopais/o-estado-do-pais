@@ -1,0 +1,20 @@
+  actual: [
+    'ED1 números: onde-esta-a-agua frase sem origem selada',
+    'ED1 números: data sem campo e selo correspondentes',
+    'ED1 números: data sem campo e selo correspondentes',
+    'ED1 números: data sem campo e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: valor sem linha e selo correspondentes',
+    'ED1 números: algarismo sem valor ou data selada'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

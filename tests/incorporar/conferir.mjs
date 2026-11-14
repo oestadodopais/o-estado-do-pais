@@ -68,7 +68,8 @@ const mensagemLeitura = 'ER1 código: falta a leitura literal do campo.';
 assert(conferirCodigo(parse(inteiro), rota).includes(mensagemLeitura));
 resultados.plantas.push({nome:'leitura-nao-literal',mensagem:mensagemLeitura,mordeu:true});
 for (const lang of ['pt', 'en']) {
-  const sem = linhas.find(x => /\[a verificar\]/i.test(x.access_date ?? ''));
+  const sem = linhas.find(x => !provenienciaConfirmada(x));
+  assert(sem, 'A planta precisa de uma linha publicada com proveniência por confirmar.');
   const caminho = routePath('linha', lang, {slug:sem.id});
   const html = fs.readFileSync(`${dist}${caminho}/index.html`, 'utf8');
   for (const [nome, muda, mensagem] of [

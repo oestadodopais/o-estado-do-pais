@@ -1,0 +1,20 @@
+  FP1 pt: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-14.
+  FP1 en: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-14.
+  REC2 inventário: 42 entradas históricas de retirados ou superfícies vazias saltadas; conta conferida.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 8 problema(s)
+[0m
+[31m    · [0mbloco por classificar em /en/ledger: «4 176 claims · 526 of 4 176 calculated · 2 767 of 4 176 municipality rows»
+[31m    · [0mbloco por classificar em /en/regions: «The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average.»
+[31m    · [0mbloco por classificar em /livro-razao: «4 176 afirmações · 526 de 4 176 calculadas · 2 767 de 4 176 linhas de concelhos»
+[31m    · [0mbloco por classificar em /regioes: «O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27.»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:286: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da U»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:301: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 ave»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5682: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «4 194 claims · 529 of 4 194 calculated · 2 767 of 4 194 municipality rows»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5684: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «4 194 afirmações · 529 de 4 194 calculadas · 2 767 de 4 194 linhas de concelhos»
+

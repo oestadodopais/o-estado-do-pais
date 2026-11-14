@@ -80,5 +80,76 @@
   "L1": {
     "antes": 3524,
     "depois": 3490
+  },
+  "contagens": {
+    "estudos": 3490
+  },
+  "rotulos": {
+    "paginas": {
+      "antes": 9881,
+      "depois": 9845
+    },
+    "cartoes": {
+      "antes": 5614,
+      "depois": 5614
+    },
+    "chaves": {
+      "antes": 700,
+      "depois": 700
+    }
+  },
+  "RET1": {
+    "linhasFixadas": 81,
+    "resumosAtualizados": 36
+  },
+  "calculadas": {
+    "antes": 529,
+    "depois": 526
+  },
+  "municipios": {
+    "antes": 2767,
+    "depois": 2767
+  },
+  "metodoDivida": {
+    "antes": 6,
+    "depois": 7
+  },
+  "comandos": {
+    "livro_e_valores": "node design/especime-v3/medicoes/zer0-2026-11-14/conferir-zer0.mjs",
+    "rotulos": "node scripts/inventario-rotulos.mjs --prova",
+    "L1": "npm run check:lugar",
+    "historias": "node scripts/check-ledger.mjs",
+    "leituras": "npm run check:cartao",
+    "RET1": "node tests/ret1/linhas.mjs",
+    "frases": "node scripts/check-frases-afirmacao.mjs --so-lista",
+    "metodo": "prova(lang).divida, com loadClaims e provenienciaIncompleta; antes reconstituído com os excertos e a publicação de 2f0f5f2f8"
+  },
+  "fixturesMotor": {
+    "ficheiros": {
+      "antes": 112,
+      "depois": 118
+    },
+    "bytes": {
+      "antes": 799750,
+      "depois": 923611
+    }
+  },
+  "listasDeLingua": {
+    "UNIDADES": {
+      "antes": 87,
+      "depois": 85
+    },
+    "LINGUA_DOS_TITULOS": {
+      "antes": 245,
+      "depois": 239
+    },
+    "LINGUA_DAS_FONTES": {
+      "antes": 68,
+      "depois": 64
+    },
+    "LINGUA_DAS_EDICOES": {
+      "antes": 145,
+      "depois": 142
+    }
   }
 }

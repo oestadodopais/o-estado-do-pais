@@ -1,0 +1,20 @@
++   '[evora-pael-emprestimo.yml] história do valor: a lista tem 1 entradas e o registo sela 0.'
++ ]
+- []
+
+    at file://<worktree>
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '[evora-pael-emprestimo.yml] história do valor: a lista tem 1 entradas e o registo sela 0.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
+{"tranca": "libertada", "espera_segundos": 8.65827314555645e-05, "execucao_segundos": 1.1376105421222746, "codigo": 1}

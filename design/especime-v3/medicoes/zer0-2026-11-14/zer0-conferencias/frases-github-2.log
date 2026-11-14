@@ -1,0 +1,19 @@
+
+> o-estado-do-pais@0.1.0 check:frases-afirmacao
+> node tests/evb/texto-da-pagina.mjs && node tests/leituras/frases-afirmacao.mjs && node tests/cor3/trechos.mjs && node scripts/check-frases-afirmacao.mjs && node tests/eva/textos-julgados.mjs && node tests/eva/modelos.mjs && node tests/evb/copias-julgadas.mjs
+
+evora-contas-da-camara-2010-2025/pt: 197 blocos, 109 parágrafos, 38 títulos, 38 itens, 676 células; 4 plantas recusadas.
+evora-contas-da-camara-2010-2025/en: 197 blocos, 109 parágrafos, 38 títulos, 38 itens, 676 células; 4 plantas recusadas.
+evora-2027-capital-europeia-da-cultura/pt: 165 blocos, 91 parágrafos, 38 títulos, 15 itens, 966 células; 4 plantas recusadas.
+evora-2027-capital-europeia-da-cultura/en: 165 blocos, 91 parágrafos, 38 títulos, 15 itens, 966 células; 4 plantas recusadas.
+COR3-B: contexto, título e resumo recusados; a prova do título no corpo alojado não correu aqui (sem motor) e corre na máquina da aterragem.
+adenda G: atribuições da leitura curta exigem registo; alternativas tipadas recusam e nomeiam a linha nos três campos e nas duas línguas; histórico E e F conferido
+adenda F: citações impressas PT e EN sem máscara, todas as ocorrências, palavras após números, prosa manual e modelos diferentes da fonte recusados
+adenda E: datas e valores conservam a chave; palavras exigem registo; duplicados colapsam; presença aceita datas; citações conservam os números
+adenda D: negativos, atribuições preservadas, cobertura pelo par nos dois sentidos e reparação histórica tardia conferidos
+adenda C: pino, mandato, juízo, índice preparado, corte, coleção e tipos conferidos
+índice preparado: uma recusa impede o commit no escrivão
+AUD1: contrações e verbos portugueses conferidos
+frases-afirmacao: 20 plantas reais; 24 estragos recusados; semente, vizinhança, histórico e cadeia conferidos
+COR3: controlo literal verde; algarismo, folha, documento e trecho não decidido recusados.
+frases: página da coleção ausente: /
