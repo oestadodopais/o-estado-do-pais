@@ -28,6 +28,7 @@ class Contexto:
     pecas: list = field(default_factory=list)  # the pieces in this build
     metodo: str | None = None  # the Markdown of paginas/metodo.md
     previa: bool = False  # a preview lists drafts too; it is never deployed
+    direitos: dict = field(default_factory=dict)  # host -> rights record
 
     def listada(self, peca) -> bool:
         return peca.publicada or (self.previa and peca.estado == "rascunho")
@@ -153,6 +154,7 @@ def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta
 <link rel="manifest" href="/manifest.webmanifest">
 </head>
 <body>
+<a class="saltar" href="#conteudo">{e(ctx.t("saltar"))}</a>
 <div class="wrap">
 <header class="cabecalho">
 <p class="rotulo-ia-linha">{e(ctx.t("ia_linha"))} <a href="/metodo/">{e(ctx.t("ia_ligacao"))}</a></p>
@@ -298,7 +300,7 @@ def _registo(ctx, peca) -> str:
             "<tr>"
             f'<td>{e(ctx.t("lugar_" + str(l.get("lugar"))))}</td>'
             f'<td>{e(ctx.t("familia_" + str(l.get("familia"))))}</td>'
-            f'<td class="mono">{e(str(l.get("plantas_apanhadas")))}/{e(str(l.get("plantas_postas")))}</td>'
+            f'<td class="mono">{e(ctx.t("plantas_formato", apanhadas=l.get("plantas_apanhadas"), postas=l.get("plantas_postas")))}</td>'
             f'<td class="mono">{e(str(l.get("achados")))}</td>'
             f'<td>{e(ctx.t("v_" + str(l.get("veredicto"))))}</td>'
             f'<td class="mono">{"" if minutos is None else minutos}</td>'
@@ -427,28 +429,42 @@ def pagina_do_tema(ctx: Contexto, tema: str) -> str:
 
 def pagina_do_metodo(ctx: Contexto) -> str:
     prosa = markdown_com_referencias(None, ctx.metodo or "")
+    publicas = [p for p in ctx.pecas if p.publicada or p.estado == "retirada"]
     lugares: dict[str, dict] = {}
-    for p in ctx.pecas:
-        if not p.publicada and p.estado != "retirada":
-            continue
+    for p in publicas:
         for l in p.registo.get("leitura", []):
-            d = lugares.setdefault(str(l.get("lugar")), {"postas": 0, "apanhadas": 0, "achados": 0})
+            d = lugares.setdefault(str(l.get("lugar")), {"leituras": 0, "postas": 0, "apanhadas": 0, "adotados": 0, "falhas": 0})
+            d["leituras"] += 1
             d["postas"] += int(l.get("plantas_postas", 0))
             d["apanhadas"] += int(l.get("plantas_apanhadas", 0))
-            d["achados"] += int(l.get("achados", 0))
+            d["adotados"] += int(l.get("adotados", 0))
+    correcoes = [c for p in publicas for c in p.registo.get("correcao", []) if isinstance(c, dict)]
+    for c in correcoes:
+        if c.get("especie") == "correcao" and c.get("causa") in lugares:
+            lugares[c["causa"]]["falhas"] += 1
     equipa = ""
     if lugares:
         ordem = ("numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes")
         linhas = "".join(
-            f'<tr><td>{e(ctx.t("lugar_" + k))}</td><td class="mono">{d["apanhadas"]}/{d["postas"]}</td><td class="mono">{d["achados"]}</td></tr>'
+            f'<tr><td>{e(ctx.t("lugar_" + k))}</td><td class="mono">{d["leituras"]}</td>'
+            f'<td class="mono">{e(ctx.t("plantas_formato", apanhadas=d["apanhadas"], postas=d["postas"]))}</td>'
+            f'<td class="mono">{d["adotados"]}</td><td class="mono">{d["falhas"]}</td></tr>'
             for k in ordem if (d := lugares.get(k))
         )
-        cab = "".join(f'<th scope="col">{e(ctx.t(k))}</th>' for k in ("c_leitura", "c_plantas", "c_achados"))
+        cab = "".join(f'<th scope="col">{e(ctx.t(k))}</th>' for k in ("e_lugar", "e_leituras", "c_plantas", "e_adotados", "e_falhas"))
         equipa = f'<div class="tabela"><table><thead><tr>{cab}</tr></thead><tbody>{linhas}</tbody></table></div>'
+    contagens = (
+        ("n_publicadas", sum(1 for p in publicas if p.publicada)),
+        ("n_correcoes", sum(1 for c in correcoes if c.get("especie") == "correcao")),
+        ("n_atualizacoes", sum(1 for c in correcoes if c.get("especie") == "atualizacao")),
+        ("n_retiradas", sum(1 for p in publicas if p.estado == "retirada")),
+    )
+    dl = "".join(f'<dt>{e(ctx.t(k))}</dt><dd class="mono">{n}</dd>' for k, n in contagens)
     corpo = (
         f'<h1 class="pagina-titulo">{e(ctx.t("nav_metodo"))}</h1>'
         f'<div class="texto">{prosa}</div>'
-        f'<section class="equipa"><h2>{e(ctx.t("equipa_titulo"))}</h2>{equipa}<p>{e(ctx.t("sem_auditoria"))}</p></section>'
+        f'<section class="equipa"><h2>{e(ctx.t("equipa_titulo"))}</h2>{equipa}<dl class="contagens">{dl}</dl></section>'
+        f'<section class="taxa"><h2>{e(ctx.t("taxa_titulo"))}</h2><p>{e(ctx.t("sem_auditoria"))}</p></section>'
     )
     return pagina(ctx, f"{ctx.t('nav_metodo')} · {ctx.t('nome')}", corpo)
 

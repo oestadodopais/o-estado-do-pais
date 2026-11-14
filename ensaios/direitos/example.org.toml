@@ -1,0 +1,9 @@
+# A rights record for the test sources only. Every value is invented for the tests.
+editor = "Editor de ensaio"
+termos_url = "https://example.org/ensaio/termos"
+termos_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+lido_em = "2026-11-16T08:00:00Z"
+guardar = "sim"
+excerto_max = 200
+credito = "Editor de ensaio"
+duvidas = []

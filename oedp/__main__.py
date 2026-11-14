@@ -10,6 +10,7 @@ from pathlib import Path
 from . import conferir as conf
 from . import construir as build
 from . import datas, fontes, forma, noar, registo
+from . import direitos as rights
 from .peca import ID_PECA, ErroDeForma, impressoes, ler, pecas_em
 
 REPO = Path(__file__).resolve().parent.parent
@@ -64,8 +65,10 @@ def cmd_fonte(a) -> int:
     raiz = _loja_ou_falha()
     if raiz is None:
         return 2
+    pasta = Path(a.direitos) if a.direitos else REPO / "direitos"
+    direitos_de = None if a.termos else rights.para_buscar(pasta)
     try:
-        print(fontes.buscar(a.url, raiz), end="")
+        print(fontes.buscar(a.url, raiz, direitos_de=direitos_de, termos=a.termos), end="")
     except fontes.ErroDaLoja as e:
         print(str(e), file=sys.stderr)
         return 1
@@ -161,7 +164,7 @@ def _conferir_como_publicada(peca, ctx):
     loja = fontes.loja()
     return [conf.check1(peca), conf.check2(peca, loja), conf.check3(peca), conf.check4(peca, pagina),
             conf.check5(peca), conf.check6(peca), conf.check7(peca), conf.check8_peca(peca),
-            conf.check9_peca(peca, pagina)]
+            conf.check9_peca(peca, pagina, ctx.direitos)]
 
 
 def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple[bool, list]:
@@ -240,6 +243,8 @@ def principal(argv=None) -> int:
 
     s = sub.add_parser("fonte")
     s.add_argument("url")
+    s.add_argument("--termos", action="store_true", help="the address is a publisher's terms page; begins a rights record")
+    s.add_argument("--direitos", help="the folder of rights records (default: direitos/)")
     s.set_defaults(f=cmd_fonte)
 
     s = sub.add_parser("texto")

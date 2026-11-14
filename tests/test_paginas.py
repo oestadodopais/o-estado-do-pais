@@ -32,10 +32,15 @@ def tabela_dos_textos() -> dict:
 
 
 class Textos(unittest.TestCase):
+    def test_o_manifesto_da_aplicacao_sem_o_comentario_antigo(self):
+        dados = json.loads((REPO / "public" / "manifest.webmanifest").read_text(encoding="utf-8"))
+        self.assertNotIn("_", dados)
+        self.assertEqual(dados["name"], "O Estado do País")
+
     def test_textos_toml_e_a_tabela_da_especificacao(self):
         esperado = tabela_dos_textos()
         real = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
-        self.assertEqual(len(esperado), 67)
+        self.assertEqual(len(esperado), 78)
         self.assertEqual(real, esperado)
 
 
@@ -103,6 +108,8 @@ class CincoPaginas(unittest.TestCase):
             self.assertIn('Texto gerado e editado por inteligência artificial. Nenhuma pessoa o revê antes de ser publicado. <a href="/metodo/">Como é feito</a>', html)
             self.assertLess(html.index("rotulo-ia-linha"), html.index("wordmark"), "the AI line sits above the name")
             self.assertNotIn("<script", html)
+            self.assertRegex(html, r'<body>\n<a class="saltar" href="#conteudo">Saltar para o texto</a>\n')
+            self.assertIn('<main id="conteudo">', html)
             self.assertNotIn("sitemap", html)
 
     def test_a_pagina_da_peca_leva_a_impressao(self):
@@ -114,9 +121,21 @@ class CincoPaginas(unittest.TestCase):
         self.assertIn(f"<code>{peca.impressao}</code>", html)
         self.assertIn("Publicada a 16 de novembro de 2026, às 10h40.", html)
         self.assertIn("Da encomenda à publicação: 2 h 40 min.", html)
+        self.assertIn('<td class="mono">3 de 3</td>', html)
+        self.assertNotRegex(html, r">\d+/\d+<")
         ordem = re.findall(r'<details class="recibo" id="r-([a-z_]+)"', html)
         self.assertEqual(ordem, ["indice", "diferenca", "indice_anterior", "total", "terco", "declaracao", "despacho", "proxima"])
         self.assertLess(html.index('class="correcoes-da-peca"'), html.index('class="texto"'))
+
+    def test_o_registo_da_equipa_no_metodo(self):
+        html = self.ler("metodo/index.html")
+        for chave in ("Lugar", "Leituras", "Erros plantados apanhados", "Achados reais adotados", "Falhas apontadas por correções"):
+            self.assertIn(f'<th scope="col">{chave}</th>', html)
+        # juiz: two readings, 3 of 3 and 2 of 2, one finding adopted, one miss named by the correction's causa
+        self.assertIn('<tr><td>Juiz</td><td class="mono">2</td><td class="mono">5 de 5</td><td class="mono">1</td><td class="mono">1</td></tr>', html)
+        self.assertIn('<dt>Peças publicadas</dt><dd class="mono">1</dd><dt>Correções</dt><dd class="mono">1</dd>'
+                      '<dt>Atualizações</dt><dd class="mono">0</dd><dt>Peças retiradas</dt><dd class="mono">0</dd>', html)
+        self.assertIn('<h2>Taxa de erro medida</h2><p>Ainda não houve auditoria.</p>', html)
 
     def test_manifesto_lista_cada_ficheiro(self):
         man = json.loads(self.ler("manifesto.json"))["ficheiros"]

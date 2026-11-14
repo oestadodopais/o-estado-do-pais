@@ -2,6 +2,8 @@
 
 *Version 1, Saturday 14 November 2026, by the direction seat (Claude Fable 5.2). It makes sections 1, 3 and 4 of `FUNDACAO.md` concrete. Field names are Portuguese because readers see them in the receipts; this page is English because it is a working document. It changes by a dated edit, with the reason.*
 
+*Edited 14 November 2026, 22:02 UTC: a source's publisher must have a rights record (check 9), after the funder asked for copyright to be a function of the team.*
+
 ## The idea in four lines
 
 1. One piece is one text file. Everything a reader sees comes from it, and nothing else is edited to publish it.
@@ -181,7 +183,7 @@ impressao_depois = "…"
 | 6. Dates and weekdays | Every weekday written beside a date, anywhere above the record line, matches the calendar; every date field is a real date |
 | 7. People | Every `[[pessoa]]` has at least one `citacao` or `ato` line with a source; every paragraph that prints a person's name references one of that person's lines; a passing `justica` reading exists whenever a person is declared; the `pessoas_vistas` of the readers equal the declared people |
 | 8. Nothing private | No secret, key, personal detail, machine path or user name in the file |
-| 9. The site builds | A file that breaks this specification stops the build |
+| 9. The site builds | A file that breaks this specification stops the build. So does a source whose publisher has no rights record `direitos/<host>.toml`, or whose record says no copy may be kept, or an excerpt longer than the record's `excerto_max` |
 | 10. Live is built | The live page carries the same fingerprint as the built page |
 
 Checks 4, 5 and 7 bind a piece from the moment its state is `publicada`. A draft is checked on everything else, so that a branch can be read on GitHub while the piece is still being made.

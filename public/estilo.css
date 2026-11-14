@@ -3,8 +3,7 @@
    texto.css: the colour tokens, the three typefaces hosted here (licences and
    provenance in design/especime-v3/TIPOS.md), the measure and the reading size.
    Only what these pages use. The dark palette follows the reader's system
-   setting, as the holding page does: the theme switch has no fixed words in
-   textos.toml, so it is not built. */
+   setting, as the holding page does; the pages carry no script. */
 
 @font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
@@ -84,6 +83,8 @@ code { font-size: 13px; overflow-wrap: anywhere; }
   margin: 0;
 }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+.saltar { position: absolute; left: -9999px; top: 0; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 10px 16px; z-index: 20; }
+.saltar:focus { left: var(--gutter); top: 10px; }
 
 /* ------------------------------------------------------------ the top of every page */
 .cabecalho { padding-top: 10px; }
@@ -208,8 +209,12 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
 .impressao code { display: block; margin-top: 4px; }
 
 /* ------------------------------------------------------------ method and corrections */
-.equipa, .erro, .correcoes-lista { margin-top: clamp(28px, 4vw, 44px); max-width: 68ch; }
-.equipa > p, .erro > p { margin-top: 12px; }
+.equipa, .taxa, .erro, .correcoes-lista { margin-top: clamp(28px, 4vw, 44px); max-width: 68ch; }
+.taxa h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; margin-bottom: 12px; }
+.erro > p { margin-top: 12px; }
+.contagens { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; margin: 18px 0 0; max-width: 28rem; }
+.contagens dt { color: var(--muted); }
+.contagens dd { margin: 0; text-align: right; }
 .correcao-peca { font-size: 18px; }
 
 /* ------------------------------------------------------------ footer */

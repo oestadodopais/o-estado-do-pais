@@ -13,7 +13,7 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
-from . import datas, derivacoes, fontes, forma, numeros, privacidade
+from . import datas, derivacoes, direitos, fontes, forma, numeros, privacidade
 from .peca import ErroDeForma, Peca, ler, paragrafos, referencias, sem_referencias, textos_do_leitor
 
 PASSOU, FALHOU, NAO_CORRIDO, NAO_VINCULA = "passed", "failed", "not run here", "not binding"
@@ -370,8 +370,9 @@ def check8_arvore(repo: Path, ambiente: dict | None = None) -> Resultado:
 # --------------------------------------------------------------------------- 9
 
 
-def check9_peca(peca: Peca, pagina_ou_erro) -> Resultado:
+def check9_peca(peca: Peca, pagina_ou_erro, registos: dict | None = None) -> Resultado:
     razoes = forma.erros(peca, peca.caminho)
+    razoes += direitos.erros_da_peca(peca, registos or {})
     if isinstance(pagina_ou_erro, Exception):
         razoes.append(f"the piece page does not build: {pagina_ou_erro}")
     return _r(9, peca.id, razoes)
@@ -425,6 +426,6 @@ def conferir_peca(caminho: Path, contexto, loja: Path | None) -> list[Resultado]
         check6(peca),
         check7(peca),
         check8_peca(peca),
-        check9_peca(peca, pagina),
+        check9_peca(peca, pagina, contexto.direitos),
     ]
     return resultados

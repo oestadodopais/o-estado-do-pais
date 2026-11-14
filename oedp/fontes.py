@@ -17,13 +17,15 @@ import io
 import os
 import re
 import unicodedata
-import urllib.error
+import json
+import secrets
+import shutil
+import subprocess
 import urllib.parse
-import urllib.request
-import urllib.robotparser
+from dataclasses import dataclass
 from pathlib import Path
 
-AGENTE = "OEstadoDoPais-fonte/1"
+AGENTE = "OEstadoDoPais/1 (publicacao; leitura de fontes oficiais)"
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 
 
@@ -149,64 +151,188 @@ def procurar(excerto: str, paginas: list[str], pagina_pedida: int | None) -> int
     return None
 
 
-# --------------------------------------------------------------------------- fetching
+# --------------------------------------------------------------------------- fetching, through curl
+#
+# The fetch runs `curl` as a subprocess, with an argument list and never a shell:
+# this machine's Python has no certificate store, and its connection to the
+# statistics office times out where curl's does not (measured by the direction
+# seat, 14 November 2026). A transport is a function (url, file) -> Resposta, so
+# the tests give a fake one and never touch the network.
 
 
-def _pedir(url: str, abrir=urllib.request.urlopen):
-    pedido = urllib.request.Request(url, headers={"User-Agent": AGENTE})
-    return abrir(pedido, timeout=60)
+@dataclass
+class Resposta:
+    saida: int  # curl's exit code; 0 when the transfer completed
+    http: int
+    final: str
+    tipo: str
+    tamanho: int
+    erro: str = ""
 
 
-def robots_permite(url: str, abrir=urllib.request.urlopen) -> tuple[bool, str]:
+def transporte_curl(url: str, destino: Path) -> Resposta:
+    curl = shutil.which("curl")
+    if curl is None:
+        raise ErroDaLoja("curl is not installed here, and fonte fetches only through curl")
+    args = [
+        curl, "--silent", "--show-error", "--location", "--max-redirs", "5", "--max-time", "120",
+        "--max-filesize", "104857600", "--proto", "=https,http", "--proto-redir", "=https,http",
+        "--user-agent", AGENTE, "--output", str(destino), "--write-out", "%{json}", url,
+    ]
+    try:
+        r = subprocess.run(args, capture_output=True, text=True, timeout=180)
+    except subprocess.TimeoutExpired:
+        raise ErroDaLoja(f"{url}: curl did not finish in 180 seconds") from None
+    try:
+        dados = json.loads(r.stdout) if r.stdout.strip() else {}
+    except json.JSONDecodeError:
+        dados = {}
+    tamanho = destino.stat().st_size if destino.exists() else 0
+    return Resposta(
+        saida=r.returncode,
+        http=int(dados.get("http_code") or 0),
+        final=str(dados.get("url_effective") or url),
+        tipo=str(dados.get("content_type") or "").split(";")[0].strip(),
+        tamanho=int(dados.get("size_download") or tamanho),
+        erro=(r.stderr or str(dados.get("errormsg") or "")).strip(),
+    )
+
+
+# robots.txt, as RFC 9309 says (sections 2.2 and 2.3.1): a file fetched with
+# success is obeyed, for the agent's own product token and otherwise for `*`, the
+# longest matching rule winning and `allow` winning a tie; a 4xx answer means the
+# file is unavailable and anything may be fetched; a 5xx answer or a network error
+# means complete disallow. More than five redirects: unavailable (2.3.1.2).
+TOKEN = AGENTE.split("/")[0].lower()
+
+
+def _grupos(texto: str) -> dict[str, list[tuple[str, str]]]:
+    grupos: dict[str, list[tuple[str, str]]] = {}
+    agentes: list[str] = []
+    em_regras = False
+    for linha in texto.splitlines():
+        linha = linha.split("#", 1)[0].strip()
+        if ":" not in linha:
+            continue
+        chave, valor = (x.strip() for x in linha.split(":", 1))
+        chave = chave.lower()
+        if chave == "user-agent":
+            if em_regras:
+                agentes, em_regras = [], False
+            agentes.append(valor.lower())
+            for a in agentes:
+                grupos.setdefault(a, [])
+        elif chave in ("allow", "disallow") and agentes:
+            em_regras = True
+            for a in agentes:
+                grupos[a].append((chave, valor))
+    return grupos
+
+
+def _casa(padrao: str, caminho: str) -> bool:
+    if not padrao:
+        return False
+    fim = padrao.endswith("$")
+    corpo = re.escape(padrao[:-1] if fim else padrao).replace(r"\*", ".*")
+    return re.match(corpo + ("$" if fim else ""), caminho) is not None
+
+
+def robots_decide(texto: str, url: str) -> bool:
+    """Whether the rules of a robots.txt let this agent fetch `url`."""
+    grupos = _grupos(texto)
+    regras = grupos.get(TOKEN)
+    if regras is None:
+        regras = grupos.get("*", [])
+    partes = urllib.parse.urlsplit(url)
+    caminho = (partes.path or "/") + ("?" + partes.query if partes.query else "")
+    if caminho == "/robots.txt":
+        return True
+    melhor = None
+    for tipo, padrao in regras:
+        if _casa(padrao, caminho):
+            peso = len(padrao)
+            if melhor is None or peso > melhor[0] or (peso == melhor[0] and tipo == "allow"):
+                melhor = (peso, tipo)
+    return melhor is None or melhor[1] == "allow"
+
+
+def robots_permite(url: str, raiz: Path, transporte=transporte_curl) -> tuple[bool, str]:
     partes = urllib.parse.urlsplit(url)
     endereco = f"{partes.scheme}://{partes.netloc}/robots.txt"
-    leitor = urllib.robotparser.RobotFileParser(endereco)
+    temporario = _temporario(raiz)
     try:
-        with _pedir(endereco, abrir) as r:
-            leitor.parse(_descodificar(r.read()).splitlines())
-    except urllib.error.HTTPError as e:
-        if e.code in (401, 403):
-            return False, f"{endereco} answered {e.code}, which closes the host"
-        if 400 <= e.code < 500:
-            return True, f"{endereco} answered {e.code}: no rules"
-        return False, f"{endereco} answered {e.code}; the rules cannot be read, so the host is not fetched"
-    except (urllib.error.URLError, OSError) as e:
-        return False, f"{endereco} could not be read ({e}); the host is not fetched"
-    if leitor.can_fetch(AGENTE, url):
-        return True, f"{endereco} allows it"
-    return False, f"{endereco} closes this address to {AGENTE}"
+        r = transporte(endereco, temporario)
+        texto = _descodificar(temporario.read_bytes()) if temporario.exists() else ""
+    finally:
+        temporario.unlink(missing_ok=True)
+    if r.saida == 47:
+        return True, f"{endereco} redirects more than five times: unavailable, so no rules (RFC 9309, 2.3.1.2)"
+    if r.saida != 0 or r.http == 0:
+        return False, f"{endereco} could not be reached ({r.erro or 'curl exit ' + str(r.saida)}): complete disallow (RFC 9309, 2.3.1.4)"
+    if 500 <= r.http <= 599:
+        return False, f"{endereco} answered {r.http}: complete disallow (RFC 9309, 2.3.1.4)"
+    if 400 <= r.http <= 499:
+        return True, f"{endereco} answered {r.http}: unavailable, so no rules (RFC 9309, 2.3.1.3)"
+    if 200 <= r.http <= 299:
+        if robots_decide(texto, url):
+            return True, f"{endereco} allows it"
+        return False, f"{endereco} closes this address to {TOKEN}"
+    return False, f"{endereco} answered {r.http}, which is not a success: complete disallow"
+
+
+def _temporario(raiz: Path) -> Path:
+    Path(raiz).mkdir(parents=True, exist_ok=True)
+    return Path(raiz) / f".parcial-{os.getpid()}-{secrets.token_hex(6)}"
 
 
 def _toml_texto(v: str) -> str:
     return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def buscar(url: str, raiz: Path, abrir=urllib.request.urlopen) -> str:
-    """Fetch, store, and return the [[fonte]] table to paste. Raises ErroDaLoja."""
-    permite, razao = robots_permite(url, abrir)
+def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, termos: bool = False) -> str:
+    """Fetch, store, and return the table to paste. Raises ErroDaLoja; a refusal stores nothing.
+
+    `direitos_de(host)` returns the rights record of a host or raises ErroDaLoja.
+    With `termos`, the address is a publisher's terms page: no record is asked for,
+    and the printed table is the beginning of one.
+    """
+    if not termos and direitos_de is not None:
+        direitos_de(urllib.parse.urlsplit(url).hostname or "")
+    permite, razao = robots_permite(url, raiz, transporte)
     if not permite:
         raise ErroDaLoja(f"refused: {razao}")
+    temporario = _temporario(raiz)
     try:
-        with _pedir(url, abrir) as r:
-            dados = r.read()
-            final = r.geturl()
-            estado = r.status
-            tipo = (r.headers.get("Content-Type") or "").split(";")[0].strip()
-    except urllib.error.HTTPError as e:
-        raise ErroDaLoja(f"{url} answered {e.code}") from None
-    except (urllib.error.URLError, OSError) as e:
-        raise ErroDaLoja(f"{url} could not be fetched ({e})") from None
-    sha = guardar(raiz, dados)
+        r = transporte(url, temporario)
+        if r.saida != 0:
+            raise ErroDaLoja(f"{url} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
+        if not 200 <= r.http <= 299:
+            raise ErroDaLoja(f"refused: {url} answered {r.http}")
+        host_final = urllib.parse.urlsplit(r.final).hostname or ""
+        if not termos and direitos_de is not None:
+            direitos_de(host_final)
+        dados = temporario.read_bytes()
+        sha = hashlib.sha256(dados).hexdigest()
+        destino = caminho_da_copia(raiz, sha)
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        temporario.replace(destino)
+    finally:
+        temporario.unlink(missing_ok=True)
     lido = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if termos:
+        campos = [("editor", '""'), ("termos_url", _toml_texto(r.final)), ("termos_sha256", _toml_texto(sha)),
+                  ("lido_em", _toml_texto(lido)), ("guardar", '""'), ("excerto_max", "0"),
+                  ("credito", '""'), ("duvidas", "[]")]
+        return f"# direitos/{host_final}.toml\n" + "".join(f"{k} = {v}\n" for k, v in campos)
     campos = [
         ("id", '""'),
         ("titulo", '""'),
         ("editor", '""'),
         ("url", _toml_texto(url)),
-        ("url_final", _toml_texto(final)),
+        ("url_final", _toml_texto(r.final)),
         ("lido_em", _toml_texto(lido)),
-        ("http", str(estado)),
-        ("tipo_conteudo", _toml_texto(tipo)),
+        ("http", str(r.http)),
+        ("tipo_conteudo", _toml_texto(r.tipo)),
         ("bytes", str(len(dados))),
         ("sha256", _toml_texto(sha)),
         ("publicado_em", '""'),

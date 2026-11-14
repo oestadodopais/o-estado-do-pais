@@ -196,6 +196,25 @@ class Check9(Limpa):
         self.assertTrue(any("vercel.json is missing" in x for x in conf.check9_vercel(pasta)))
         self.assertEqual(conf.check9_vercel(REPO), [])
 
+    def _direitos(self, mudar):
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        registo = p.pasta / "direitos" / "example.org.toml"
+        mudar(registo)
+        return p.resultados()
+
+    def test_planta_fonte_sem_registo_de_direitos(self):
+        r = self._direitos(lambda f: f.unlink())
+        self.falha(r, 9, "fonte doc_pdf: the host example.org of its url_final has no rights record direitos/example.org.toml")
+
+    def test_planta_registo_que_diz_nao(self):
+        r = self._direitos(lambda f: f.write_text(f.read_text(encoding="utf-8").replace('guardar = "sim"', 'guardar = "nao"'), encoding="utf-8"))
+        self.falha(r, 9, 'fonte doc_pdf: the rights record of example.org says guardar = "nao"')
+
+    def test_planta_excerto_mais_longo_do_que_o_registo_deixa(self):
+        r = self._direitos(lambda f: f.write_text(f.read_text(encoding="utf-8").replace("excerto_max = 200", "excerto_max = 60"), encoding="utf-8"))
+        self.falha(r, 9, "terco: the excerpt has 65 characters; the rights record of example.org allows 60")
+
     def test_sem_a_pagina_do_metodo_nenhuma_peca_se_publica(self):
         p = Plantada()
         self.addCleanup(p.apagar)

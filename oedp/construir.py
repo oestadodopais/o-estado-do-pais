@@ -19,6 +19,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from . import conferir as conf
+from . import direitos as rights
 from . import privacidade
 from .forma import erros_do_corpo
 from .paginas import (
@@ -70,8 +71,10 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     metodo = metodo_f.read_text(encoding="utf-8") if metodo_f.is_file() else None
     if metodo is not None:
         erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "\n## A leitura deste projeto\n## A objeção mais forte\n## O que seguir\n")]
+    registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
+    erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,
-                   metodo=metodo, previa=previa)
+                   metodo=metodo, previa=previa, direitos=registos)
     return ctx, erros
 
 

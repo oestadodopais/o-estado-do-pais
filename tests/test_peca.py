@@ -140,38 +140,113 @@ class Fontes(unittest.TestCase):
         self.assertEqual(fontes.texto_por_pagina(b"a;b\n1,5;2\n"), ["a;b 1,5;2"])
         self.assertEqual(fontes.texto_por_pagina(b'{"x": "p\xc3\xa1gina"}'), ['{"x": "página"}'])
 
-    def test_robots_fechado_recusa_sem_rede(self):
-        class Resposta(io.BytesIO):
-            def __init__(self, dados, url):
-                super().__init__(dados)
-                self.url, self.status, self.headers = url, 200, {"Content-Type": "text/html"}
-
-            def geturl(self):
-                return self.url
-
-        def abrir(pedido, timeout=0):
-            self.assertIn("OEstadoDoPais", pedido.get_header("User-agent"))
-            if pedido.full_url.endswith("/robots.txt"):
-                return Resposta(b"User-agent: *\nDisallow: /privado/\n", pedido.full_url)
-            return Resposta(b"<html><body>ok</body></html>", pedido.full_url)
+    def test_robots_e_direitos_com_um_transporte_falso(self):
+        from oedp import direitos
 
         loja = Path(tempfile.mkdtemp(prefix="oedp-loja-"))
         self.addCleanup(shutil.rmtree, loja, True)
-        with self.assertRaises(fontes.ErroDaLoja) as e:
-            fontes.buscar("https://ensaio.invalid/privado/x.pdf", loja, abrir)
-        self.assertIn("closes this address", str(e.exception))
-        def sem_ligacao(pedido, timeout=0):
-            if pedido.full_url.endswith("/robots.txt"):
-                return Resposta(b"", pedido.full_url)
-            raise OSError("timed out")
+        pasta = Path(tempfile.mkdtemp(prefix="oedp-direitos-"))
+        self.addCleanup(shutil.rmtree, pasta, True)
+        registo_ok = (ENSAIOS / "direitos" / "example.org.toml").read_text(encoding="utf-8")
+        (pasta / "ensaio.invalid.toml").write_text(registo_ok, encoding="utf-8")
+        (pasta / "fechado.invalid.toml").write_text(registo_ok.replace('guardar = "sim"', 'guardar = "nao"'), encoding="utf-8")
+        direitos_de = direitos.para_buscar(pasta)
+        respostas = {}
 
-        with self.assertRaises(fontes.ErroDaLoja) as e:
-            fontes.buscar("https://ensaio.invalid/publico/x.html", loja, sem_ligacao)
-        self.assertIn("could not be fetched", str(e.exception))
-        tabela = fontes.buscar("https://ensaio.invalid/publico/x.html", loja, abrir)
-        self.assertIn('sha256 = "', tabela)
-        self.assertEqual(len(list(loja.rglob("*"))), 3)  # sha256/, sha256/xx/, the copy
+        def falso(url, destino):
+            saida, http, corpo, final = respostas.get(url, (0, 404, b"", url))
+            if corpo:
+                destino.write_bytes(corpo)
+            return fontes.Resposta(saida, http, final, "text/html", len(corpo), "erro de ensaio" if saida else "")
 
+        def buscar(url):
+            return fontes.buscar(url, loja, direitos_de=direitos_de, transporte=falso)
+
+        def vazia():
+            return [p for p in loja.rglob("*") if p.is_file()]
+
+        base = "https://ensaio.invalid"
+        respostas[base + "/robots.txt"] = (0, 200, b"User-agent: *\nDisallow: /privado/\n", base + "/robots.txt")
+        respostas[base + "/publico/x.html"] = (0, 200, b"<html><body>ok</body></html>", base + "/publico/x.html")
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            buscar(base + "/privado/x.pdf")
+        self.assertIn("closes this address to oestadodopais", str(e.exception))
+        self.assertEqual(vazia(), [])
+        tabela = buscar(base + "/publico/x.html")
+        self.assertIn('http = 200', tabela)
+        self.assertEqual(len(vazia()), 1)
+        # RFC 9309, 2.3.1.3 and 2.3.1.4: 4xx means no rules; 5xx or a network error means complete disallow
+        respostas[base + "/robots.txt"] = (0, 404, b"", base + "/robots.txt")
+        self.assertTrue(fontes.robots_permite(base + "/privado/x", loja, falso)[0])
+        respostas[base + "/robots.txt"] = (0, 503, b"", base + "/robots.txt")
+        self.assertFalse(fontes.robots_permite(base + "/publico/x", loja, falso)[0])
+        respostas[base + "/robots.txt"] = (7, 0, b"", base + "/robots.txt")
+        self.assertFalse(fontes.robots_permite(base + "/publico/x", loja, falso)[0])
+        respostas[base + "/robots.txt"] = (47, 301, b"", base + "/robots.txt")
+        self.assertTrue(fontes.robots_permite(base + "/publico/x", loja, falso)[0])
+        # the document itself refused: reported, nothing stored
+        respostas[base + "/robots.txt"] = (0, 404, b"", base + "/robots.txt")
+        respostas[base + "/recusado.pdf"] = (0, 403, b"<html>no</html>", base + "/recusado.pdf")
+        antes = vazia()
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            buscar(base + "/recusado.pdf")
+        self.assertIn("answered 403", str(e.exception))
+        self.assertEqual(vazia(), antes)
+        # rights: no record, a record that says nao, and a redirect to a host with no record
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            fontes.buscar("https://sem-registo.invalid/x", loja, direitos_de=direitos_de, transporte=falso)
+        self.assertIn("sem-registo.invalid has no rights record", str(e.exception))
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            fontes.buscar("https://fechado.invalid/x", loja, direitos_de=direitos_de, transporte=falso)
+        self.assertIn('says guardar = "nao"', str(e.exception))
+        respostas[base + "/salta"] = (0, 200, b"outro", "https://outro.invalid/y")
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            buscar(base + "/salta")
+        self.assertIn("outro.invalid has no rights record", str(e.exception))
+        self.assertEqual(vazia(), antes)
+        # --termos begins a record for a host that has none
+        respostas["https://sem-registo.invalid/robots.txt"] = (0, 404, b"", "https://sem-registo.invalid/robots.txt")
+        respostas["https://sem-registo.invalid/termos"] = (0, 200, b"termos de ensaio", "https://sem-registo.invalid/termos")
+        inicio = fontes.buscar("https://sem-registo.invalid/termos", loja, transporte=falso, termos=True)
+        self.assertTrue(inicio.startswith("# direitos/sem-registo.invalid.toml\n"))
+        self.assertIn('guardar = ""', inicio)
+
+    def test_curl_com_lista_de_argumentos_e_sem_curl_recusa(self):
+        from unittest import mock
+
+        loja = Path(tempfile.mkdtemp(prefix="oedp-loja-"))
+        self.addCleanup(shutil.rmtree, loja, True)
+        visto = {}
+
+        def correr(args, **kw):
+            visto["args"], visto["kw"] = args, kw
+            return subprocess.CompletedProcess(args, 0, '{"http_code":200,"url_effective":"https://e.invalid/","content_type":"text/html; charset=utf-8","size_download":0}', "")
+
+        with mock.patch.object(fontes.shutil, "which", return_value="/usr/bin/curl"), mock.patch.object(fontes.subprocess, "run", correr):
+            r = fontes.transporte_curl("https://e.invalid/", loja / "t")
+        self.assertIsInstance(visto["args"], list)
+        self.assertNotIn("shell", visto["kw"])
+        for opcao in ("--silent", "--show-error", "--location", "--max-redirs", "--max-time", "--max-filesize",
+                      "--proto", "--proto-redir", "--user-agent", "--output", "--write-out"):
+            self.assertIn(opcao, visto["args"])
+        self.assertNotIn("--insecure", visto["args"])
+        self.assertNotIn("-k", visto["args"])
+        self.assertEqual(visto["args"][visto["args"].index("--write-out") + 1], "%{json}")
+        self.assertEqual(visto["args"][visto["args"].index("--proto") + 1], "=https,http")
+        self.assertEqual((r.http, r.tipo), (200, "text/html"))
+        with mock.patch.object(fontes.shutil, "which", return_value=None):
+            with self.assertRaises(fontes.ErroDaLoja) as e:
+                fontes.transporte_curl("https://e.invalid/", loja / "t")
+        self.assertIn("curl is not installed", str(e.exception))
+
+    def test_regras_de_robots(self):
+        t = "User-agent: *\nDisallow: /privado/\nAllow: /privado/sim\n\nUser-agent: OEstadoDoPais\nDisallow: /so-a-nos\n"
+        self.assertTrue(fontes.robots_decide(t, "https://x/privado/a"))  # the agent's own group replaces *
+        self.assertFalse(fontes.robots_decide(t, "https://x/so-a-nos/a"))
+        t2 = "User-agent: *\nDisallow: /privado/\nAllow: /privado/sim\nDisallow: /*.pdf$\n"
+        self.assertTrue(fontes.robots_decide(t2, "https://x/privado/sim"))  # the longest match wins
+        self.assertFalse(fontes.robots_decide(t2, "https://x/a.pdf"))
+        self.assertTrue(fontes.robots_decide(t2, "https://x/a.pdfx"))
 
 if __name__ == "__main__":
     unittest.main()

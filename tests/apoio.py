@@ -19,7 +19,7 @@ class Plantada:
 
     def __init__(self, trocas: list[tuple[str, str]] = (), so_acima_do_registo: bool = False):
         self.pasta = Path(tempfile.mkdtemp(prefix="oedp-ensaio-"))
-        for sub in ("pecas", "mesas", "paginas"):
+        for sub in ("pecas", "mesas", "paginas", "direitos"):
             shutil.copytree(ENSAIOS / sub, self.pasta / sub)
         self.peca = self.pasta / "pecas" / "2026" / PECA.name
         texto = self.peca.read_text(encoding="utf-8")

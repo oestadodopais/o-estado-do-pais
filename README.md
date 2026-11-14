@@ -11,7 +11,7 @@ Python 3.12 or later. `python3 -m pip install -r requirements.txt`, then:
 | Command | What it does |
 |---|---|
 | `python3 -m oedp nova <id> --tipo diario\|artigo\|estudo` | Creates `pecas/<year>/<id>.md` with its four sections |
-| `python3 -m oedp fonte <url>` | Fetches the address (respecting `robots.txt`), stores the copy under its SHA-256 in `$OEDP_FONTES`, prints the `[[fonte]]` table |
+| `python3 -m oedp fonte <url>` | Fetches the address through `curl` (obeying `robots.txt` as RFC 9309 says, and only for a host with a rights record in `direitos/`), stores the copy under its SHA-256 in `$OEDP_FONTES`, prints the `[[fonte]]` table. `--termos` stores a publisher's terms page and prints the start of its rights record |
 | `python3 -m oedp texto <sha256>` | Prints a stored copy's text as check 2 reads it, page by page for a PDF |
 | `python3 -m oedp impressao <piece>` | Prints the piece's and the fact sheet's fingerprints |
 | `python3 -m oedp registar <piece> passo\|leitura\|correcao --…` | Appends one table to the record |
@@ -25,6 +25,7 @@ Python 3.12 or later. `python3 -m pip install -r requirements.txt`, then:
 repository. `PRIVACIDADE_PROIBIDOS` holds the strings check 8 refuses (one per line).
 
 Folders: `oedp/` the code; `pecas/` the pieces; `mesas/` one file per desk;
+`direitos/` one rights record per publisher's host;
 `paginas/` the Method prose; `public/` the stylesheet, typefaces and icons;
 `ensaios/` the test piece (invented figures), its store and the holding page;
 `tests/` the tests, including one planted failure for each check.
