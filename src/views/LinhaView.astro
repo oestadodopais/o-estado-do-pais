@@ -1,4 +1,5 @@
 ---
+import {portaDaReleitura} from "../lib/porta-da-releitura.mjs";
 /**
  * A página de uma linha do livro-razão.
  *
@@ -1727,9 +1728,12 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                         contra OUTRA coisa — uma cópia arquivada, outro caminho
                         —, a porta fica, porque aí ela leva a um sítio que a
                         página não tem em mais lado nenhum; e a linha ao lado já
-                        diz que cópia foi (`contraCopiaArquivadaK`). */}
+                        diz que cópia foi (`contraCopiaArquivadaK`).
+                        Se só mudou a página citada no mesmo documento, repetir
+                        a leitura abre a página atual; o registo histórico mantém
+                        o caminho que foi lido nessa data. */}
                     {v.path !== claim.source_url && (
-                      <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
+                      <a class="ligacao-externa" href={portaDaReleitura(claim, v)} rel="noopener noreferrer external">
                         {s.livro.linha.verificacaoPorta} →
                       </a>
                     )}
