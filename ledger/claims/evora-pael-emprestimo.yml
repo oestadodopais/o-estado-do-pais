@@ -6,7 +6,7 @@
 id: "evora-pael-emprestimo"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "32 166 372,20"
+value: "32 166 373,20"
 unit: "euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -14,19 +14,19 @@ source: "Município de Évora"
 document:
   title: "Relatório de Gestão 2016"
   edition: "2016"
-  locator: "Relatorio_Gestão_2016.pdf, p. 84"
-  page: 84
+  locator: "Relatorio_Gestão_2016.pdf, p. 99"
+  page: 99
   kind: "pdf"
   crop:
     asset: "recortes/evora-pael-emprestimo.webp"
-    sha256: "a472b7ef0d5afbd0d14eb5b0f5a2ac4c856b4e450d819f51c8289be30c920f6e"
-    page: 84
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=84"
+    sha256: "cf12173472683860195b15b304fa834568192e6808723fd7c9a5ddc29a186018"
+    page: 99
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=99"
 access_date: "2026-08-10"
 reference_date: "2013"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "do total de empréstimo no montante de 32.166.372,20 €): Quadro 18 – Evolução da Dívida à AdCA/AdLVT Sistema Multimunicipal 31-12-2013 31-12-2014 31-12-2015 31-12-2016 Águas do Centro Alentejo, S.A. (AdCA)"
+excerpt: "empréstimo PAEL, Programa de Apoio à Economia Local, contraído no ano 2013, no valor de 32.166.373,20 €"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -41,10 +41,16 @@ attributed_to:
 
 study: "evora-quem-governou-a-camara-2009-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] the source prints 32.166.372,20; printed here to the nearest euro · Cruzado de ResearchHub content/08 Évora Mandates · pael-total."
+note: "[derivation do motor] the source prints 32.166.373,20; printed here to the nearest euro · Cruzado de ResearchHub content/08 Évora Mandates · pael-total."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-14"
+    kind: "correcao"
+    old_value: "32 166 372,20"
+    new_value: "32 166 373,20"
+    reason: "A página 84 do Relatório de Gestão de 2016, que a linha citava, imprime 32.166.372,20 €; a página 99 do mesmo relatório imprime 32.166.373,20 €, um euro acima, e é esse o capital contratado que o mapa dos empréstimos do município regista (Anexos ao Relatório de Gestão de 2016, página 193, a 68.ª do ficheiro). A linha passa a esse valor e cita a página 99."
+    reason_en: "Page 84 of the 2016 Management Report, which the row cited, prints €32,166,372.20; page 99 of the same report prints €32,166,373.20, one euro more, and that is the contracted capital recorded in the municipality’s statement of loans (Annexes to the 2016 Management Report, page 193, the 68th of the file). The row now carries that figure and cites page 99."
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.
