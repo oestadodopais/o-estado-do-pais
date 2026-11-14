@@ -1968,7 +1968,7 @@ export const STRINGS = {
            a linha «Sem JavaScript, a régua mostra Portugal». Fica a frase que
            diz o que o índice compara, que é o que a régua É. */
         significadoV:
-          'O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais.',
+          'O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27.',
       },
 
 
@@ -3984,7 +3984,7 @@ export const STRINGS = {
         svgDescricao:
           'A horizontal scale with the EU-27 average marked at 100. Each selected region appears as a marker on the rule, with its value.',
         significadoV:
-          'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more.',
+          'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average.',
       },
 
 
