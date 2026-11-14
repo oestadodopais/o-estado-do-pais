@@ -85,8 +85,12 @@ def _comparavel(texto: str) -> str:
 
 
 def achados_em(nome: str, dados: bytes, proibidas: list[str]) -> list[str]:
-    """Reasons this file fails check 8. The forbidden strings themselves are never printed."""
-    texto = dados.decode("utf-8", errors="replace")
+    """Reasons this file fails check 8. The forbidden strings themselves are never printed.
+
+    HTML entities, named and numbered, are decoded first (`&commat;` is an `@`), and the
+    raw text is searched too, so neither form hides from the other."""
+    bruto = dados.decode("utf-8", errors="replace")
+    texto = bruto + "\n" + html.unescape(bruto)
     razoes = []
     for m in CAMINHO.finditer(texto):
         if m["nome"].casefold() not in CONTAS_GENERICAS:

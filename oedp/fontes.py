@@ -14,7 +14,9 @@ import hashlib
 import html
 import html.parser
 import io
+import ipaddress
 import os
+import socket
 import re
 import unicodedata
 import json
@@ -33,9 +35,22 @@ class ErroDaLoja(Exception):
     pass
 
 
+REPO = Path(__file__).resolve().parent.parent
+
+
 def loja() -> Path | None:
+    """The private store named by OEDP_FONTES, or None when unset.
+
+    It must resolve to a folder outside this repository's tree: copies of sources
+    never enter the repository, and a store under `public/` would be published."""
     valor = os.environ.get("OEDP_FONTES", "").strip()
-    return Path(valor) if valor else None
+    if not valor:
+        return None
+    caminho = Path(valor).expanduser().resolve()
+    if caminho == REPO or caminho.is_relative_to(REPO):
+        raise ErroDaLoja(f"refused: OEDP_FONTES resolves inside the repository ({caminho.relative_to(REPO).as_posix() or '.'}); "
+                         "the store of sources must live outside it")
+    return caminho
 
 
 def caminho_da_copia(raiz: Path, sha256: str) -> Path:
@@ -168,17 +183,26 @@ class Resposta:
     tipo: str
     tamanho: int
     erro: str = ""
+    redirecao: str = ""  # where a 3xx answer points, as curl reads it
 
 
-def transporte_curl(url: str, destino: Path) -> Resposta:
+def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str | None = None) -> Resposta:
+    """One request, redirects off. `endereco` pins the address curl connects to."""
     curl = shutil.which("curl")
     if curl is None:
         raise ErroDaLoja("curl is not installed here, and fonte fetches only through curl")
     args = [
-        curl, "--silent", "--show-error", "--location", "--max-redirs", "5", "--max-time", "120",
-        "--max-filesize", "104857600", "--proto", "=https,http", "--proto-redir", "=https,http",
-        "--user-agent", AGENTE, "--output", str(destino), "--write-out", "%{json}", url,
+        curl, "--silent", "--show-error", "--max-time", "120", "--max-filesize", "104857600",
+        "--proto", "=https,http", "--user-agent", AGENTE, "--output", str(destino), "--write-out", "%{json}",
     ]
+    if metodo == "HEAD":
+        args.append("--head")
+    if endereco:
+        partes = urllib.parse.urlsplit(url)
+        porta = partes.port or (443 if partes.scheme == "https" else 80)
+        alvo = f"[{endereco}]" if ":" in endereco else endereco
+        args += ["--resolve", f"{partes.hostname}:{porta}:{alvo}"]
+    args.append(url)
     try:
         r = subprocess.run(args, capture_output=True, text=True, timeout=180)
     except subprocess.TimeoutExpired:
@@ -195,7 +219,39 @@ def transporte_curl(url: str, destino: Path) -> Resposta:
         tipo=str(dados.get("content_type") or "").split(";")[0].strip(),
         tamanho=int(dados.get("size_download") or tamanho),
         erro=(r.stderr or str(dados.get("errormsg") or "")).strip(),
+        redirecao=str(dados.get("redirect_url") or ""),
     )
+
+
+def resolver_dns(host: str, porta: int) -> list[str]:
+    return sorted({info[4][0] for info in socket.getaddrinfo(host, porta, type=socket.SOCK_STREAM)})
+
+
+def endereco_publico(url: str, resolver=resolver_dns) -> str:
+    """The address to connect to, after checking the scheme and that every address the
+    host resolves to is public. Raises ErroDaLoja otherwise."""
+    partes = urllib.parse.urlsplit(url)
+    if partes.scheme not in ("https", "http"):
+        raise ErroDaLoja(f"refused: {url} is not an https or http address")
+    if not partes.hostname:
+        raise ErroDaLoja(f"refused: {url} has no host")
+    porta = partes.port or (443 if partes.scheme == "https" else 80)
+    try:
+        enderecos = resolver(partes.hostname, porta)
+    except OSError as e:
+        raise ErroDaLoja(f"refused: {partes.hostname} could not be resolved ({e})") from None
+    if not enderecos:
+        raise ErroDaLoja(f"refused: {partes.hostname} resolves to no address")
+    for a in enderecos:
+        ip = ipaddress.ip_address(a.split("%")[0])
+        if (not ip.is_global or ip.is_loopback or ip.is_private or ip.is_link_local or ip.is_reserved
+                or ip.is_multicast or ip.is_unspecified):
+            raise ErroDaLoja(f"refused: {partes.hostname} resolves to {a}, which is not a public address")
+    return enderecos[0]
+
+
+REDIRECOES = (301, 302, 303, 307, 308)
+MAX_SALTOS = 5
 
 
 # robots.txt, as RFC 9309 says (sections 2.2 and 2.3.1): a file fetched with
@@ -256,28 +312,66 @@ def robots_decide(texto: str, url: str) -> bool:
     return melhor is None or melhor[1] == "allow"
 
 
-def robots_permite(url: str, raiz: Path, transporte=transporte_curl) -> tuple[bool, str]:
+def _um_pedido(url: str, raiz: Path, transporte, resolver, metodo: str = "GET", guardar_em: Path | None = None):
+    """One request to a checked public address. Returns (answer, bytes); the bytes are
+    kept in `guardar_em` when given, and otherwise discarded."""
+    endereco = endereco_publico(url, resolver)
+    temporario = guardar_em or _temporario(raiz)
+    try:
+        r = transporte(url, temporario, metodo, endereco)
+        dados = temporario.read_bytes() if temporario.exists() else b""
+    finally:
+        if guardar_em is None:
+            temporario.unlink(missing_ok=True)
+    return r, dados
+
+
+def robots_permite(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns) -> tuple[bool, str]:
     partes = urllib.parse.urlsplit(url)
     endereco = f"{partes.scheme}://{partes.netloc}/robots.txt"
-    temporario = _temporario(raiz)
-    try:
-        r = transporte(endereco, temporario)
-        texto = _descodificar(temporario.read_bytes()) if temporario.exists() else ""
-    finally:
-        temporario.unlink(missing_ok=True)
-    if r.saida == 47:
-        return True, f"{endereco} redirects more than five times: unavailable, so no rules (RFC 9309, 2.3.1.2)"
-    if r.saida != 0 or r.http == 0:
-        return False, f"{endereco} could not be reached ({r.erro or 'curl exit ' + str(r.saida)}): complete disallow (RFC 9309, 2.3.1.4)"
-    if 500 <= r.http <= 599:
-        return False, f"{endereco} answered {r.http}: complete disallow (RFC 9309, 2.3.1.4)"
-    if 400 <= r.http <= 499:
-        return True, f"{endereco} answered {r.http}: unavailable, so no rules (RFC 9309, 2.3.1.3)"
-    if 200 <= r.http <= 299:
-        if robots_decide(texto, url):
-            return True, f"{endereco} allows it"
-        return False, f"{endereco} closes this address to {TOKEN}"
-    return False, f"{endereco} answered {r.http}, which is not a success: complete disallow"
+    for salto in range(MAX_SALTOS + 1):
+        try:
+            r, dados = _um_pedido(endereco, raiz, transporte, resolver)
+        except ErroDaLoja as e:
+            return False, f"{endereco}: {e}"
+        if r.saida != 0 or r.http == 0:
+            return False, f"{endereco} could not be reached ({r.erro or 'curl exit ' + str(r.saida)}): complete disallow (RFC 9309, 2.3.1.4)"
+        if r.http in REDIRECOES and r.redirecao:
+            if salto == MAX_SALTOS:
+                return True, f"{endereco} redirects more than five times: unavailable, so no rules (RFC 9309, 2.3.1.2)"
+            endereco = urllib.parse.urljoin(endereco, r.redirecao)
+            continue
+        if 500 <= r.http <= 599:
+            return False, f"{endereco} answered {r.http}: complete disallow (RFC 9309, 2.3.1.4)"
+        if 400 <= r.http <= 499:
+            return True, f"{endereco} answered {r.http}: unavailable, so no rules (RFC 9309, 2.3.1.3)"
+        if 200 <= r.http <= 299:
+            if robots_decide(_descodificar(dados), url):
+                return True, f"{endereco} allows it"
+            return False, f"{endereco} closes this address to {TOKEN}"
+        return False, f"{endereco} answered {r.http}, which is not a success: complete disallow"
+    return True, "unreachable branch"
+
+
+def seguir(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns) -> tuple[Resposta, str]:
+    """Follow redirects here, at most five, with HEAD requests. At every hop, the first
+    included: an https or http address, a host whose every address is public, and its
+    robots.txt obeyed. Returns the last answer and the final address."""
+    for salto in range(MAX_SALTOS + 1):
+        endereco_publico(url, resolver)
+        permite, razao = robots_permite(url, raiz, transporte, resolver)
+        if not permite:
+            raise ErroDaLoja(f"refused: {razao}")
+        r, _ = _um_pedido(url, raiz, transporte, resolver, "HEAD")
+        if r.saida != 0:
+            raise ErroDaLoja(f"{url} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
+        if r.http in REDIRECOES and r.redirecao:
+            if salto == MAX_SALTOS:
+                raise ErroDaLoja(f"refused: {url} redirects more than five times")
+            url = urllib.parse.urljoin(url, r.redirecao)
+            continue
+        return r, url
+    raise ErroDaLoja("unreachable branch")
 
 
 def _temporario(raiz: Path) -> Path:
@@ -289,29 +383,31 @@ def _toml_texto(v: str) -> str:
     return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, termos: bool = False) -> str:
+def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, termos: bool = False,
+           resolver=resolver_dns) -> str:
     """Fetch, store, and return the table to paste. Raises ErroDaLoja; a refusal stores nothing.
 
-    `direitos_de(host)` returns the rights record of a host or raises ErroDaLoja.
-    With `termos`, the address is a publisher's terms page: no record is asked for,
+    The redirects are followed here (see `seguir`); the rights record of the final host
+    (`direitos_de(host)` returns it or raises) is checked before the document is
+    downloaded, and the document is then fetched at that final address with redirects
+    off. With `termos`, the address is a publisher's terms page: no record is asked for,
     and the printed table is the beginning of one.
     """
+    r_head, final = seguir(url, raiz, transporte, resolver)
+    if r_head.http not in (405, 501) and not 200 <= r_head.http <= 299:
+        raise ErroDaLoja(f"refused: {final} answered {r_head.http}")
+    host_final = urllib.parse.urlsplit(final).hostname or ""
     if not termos and direitos_de is not None:
-        direitos_de(urllib.parse.urlsplit(url).hostname or "")
-    permite, razao = robots_permite(url, raiz, transporte)
-    if not permite:
-        raise ErroDaLoja(f"refused: {razao}")
+        direitos_de(host_final)
     temporario = _temporario(raiz)
     try:
-        r = transporte(url, temporario)
+        r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario)
         if r.saida != 0:
-            raise ErroDaLoja(f"{url} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
+            raise ErroDaLoja(f"{final} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
+        if r.http in REDIRECOES:
+            raise ErroDaLoja(f"refused: {final} redirects when fetched where it did not when asked; nothing stored")
         if not 200 <= r.http <= 299:
-            raise ErroDaLoja(f"refused: {url} answered {r.http}")
-        host_final = urllib.parse.urlsplit(r.final).hostname or ""
-        if not termos and direitos_de is not None:
-            direitos_de(host_final)
-        dados = temporario.read_bytes()
+            raise ErroDaLoja(f"refused: {final} answered {r.http}")
         sha = hashlib.sha256(dados).hexdigest()
         destino = caminho_da_copia(raiz, sha)
         destino.parent.mkdir(parents=True, exist_ok=True)
@@ -320,7 +416,7 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
         temporario.unlink(missing_ok=True)
     lido = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     if termos:
-        campos = [("editor", '""'), ("termos_url", _toml_texto(r.final)), ("termos_sha256", _toml_texto(sha)),
+        campos = [("editor", '""'), ("termos_url", _toml_texto(final)), ("termos_sha256", _toml_texto(sha)),
                   ("lido_em", _toml_texto(lido)), ("guardar", '""'), ("excerto_max", "0"),
                   ("credito", '""'), ("duvidas", "[]")]
         return f"# direitos/{host_final}.toml\n" + "".join(f"{k} = {v}\n" for k, v in campos)
@@ -329,7 +425,7 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
         ("titulo", '""'),
         ("editor", '""'),
         ("url", _toml_texto(url)),
-        ("url_final", _toml_texto(r.final)),
+        ("url_final", _toml_texto(final)),
         ("lido_em", _toml_texto(lido)),
         ("http", str(r.http)),
         ("tipo_conteudo", _toml_texto(r.tipo)),

@@ -1,0 +1,22 @@
+# The record of textos.toml for the test site only. The readings are invented for the tests.
+
+[[passo]]
+nome = "escrita"
+lugar = "redator"
+familia = "anthropic"
+modelo = "modelo-de-ensaio"
+inicio = "2026-11-15T09:00:00Z"
+fim = "2026-11-15T09:30:00Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "modelo-de-ensaio"
+inicio = "2026-11-15T10:00:00Z"
+fim = "2026-11-15T10:20:00Z"
+impressao = "4cbaa1d4a96796816cca67ec978ab8ddb603b002de2ab6272ce29615fb7fa6dc"
+plantas_postas = 2
+plantas_apanhadas = 2
+achados = 0
+adotados = 0
+veredicto = "passa"

@@ -37,10 +37,47 @@ class ErroDoRegisto(Exception):
     pass
 
 
+def _acrescentar_a_texto(caminho: Path, antes: bytes, nome: str, campos: dict) -> str:
+    """Append to the record of paginas/metodo.md or to textos.registo.toml."""
+    import tomllib
+
+    from . import julgados
+
+    if nome not in ("passo", "leitura"):
+        raise ErroDoRegisto(f"the record of {caminho.name} takes passo and leitura tables only")
+    if caminho.name != "textos.registo.toml":
+        try:
+            julgados.separar(antes)
+        except julgados.ErroDoJulgado as e:
+            raise ErroDoRegisto(f"{caminho.name}: {e}") from None
+    texto = tabela(nome, campos)
+    if antes and not antes.endswith(b"\n"):
+        texto = "\n" + texto
+    exigidos, opcionais = forma.CAMPOS_REGISTO[nome]
+    erros: list[str] = []
+    novo = tomllib.loads(texto)[nome][-1]
+    forma._tabela(f"[[{nome}]]", novo, exigidos, opcionais, erros)
+    for (tab, campo), permitidos in forma.VALORES.items():
+        if tab == nome and campo in campos and campos.get(campo) not in permitidos:
+            erros.append(f"{campo} {campos[campo]!r} is not one of {', '.join(sorted(permitidos))}")
+    if erros:
+        raise ErroDoRegisto("; ".join(erros))
+    with open(caminho, "ab") as f:
+        f.write(texto.encode("utf-8"))
+    if not caminho.read_bytes().startswith(antes):
+        raise ErroDoRegisto("the file changed above the new table; this must never happen")
+    return texto
+
+
 def acrescentar(caminho: Path, nome: str, campos: dict) -> str:
-    """Append one [[nome]] table; returns the text appended."""
+    """Append one [[nome]] table; returns the text appended.
+
+    The file is a piece, paginas/metodo.md (a record after its text) or
+    textos.registo.toml (the record of textos.toml)."""
     caminho = Path(caminho)
     antes = caminho.read_bytes()
+    if caminho.name == "textos.registo.toml" or not antes.startswith(b"+++ cabeca\n"):
+        return _acrescentar_a_texto(caminho, antes, nome, campos)
     peca = ler_bytes(antes, caminho)  # raises if the file is not a piece
     texto = tabela(nome, campos)
     if not antes.endswith(b"\n"):

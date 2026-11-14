@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from . import datas, derivacoes, direitos, fontes, forma, numeros, privacidade
-from .peca import ErroDeForma, Peca, ler, paragrafos, referencias, sem_referencias, textos_do_leitor
+from .peca import MARCAS, ErroDeForma, Peca, impressoes, ler, ler_bytes, lido, paragrafos, referencias, sem_referencias, textos_do_leitor
 
 PASSOU, FALHOU, NAO_CORRIDO, NAO_VINCULA = "passed", "failed", "not run here", "not binding"
 NOMES = {
@@ -53,8 +53,8 @@ def _r(n, alvo, razoes, notas=None, estado=None):
 
 
 def _vinculo(n, peca: Peca, razoes, notas=None):
-    """Checks 4, 5 and 7 bind a published piece; on a draft they only report."""
-    if peca.publicada:
+    """Checks 4, 5 and 7 bind a piece once published, and still when withdrawn; on a draft they only report."""
+    if peca.vinculada:
         return _r(n, peca.id, razoes, notas)
     aviso = [f"the piece is {peca.estado}, so this check does not bind yet"]
     if razoes:
@@ -173,6 +173,10 @@ def check3(peca: Peca) -> Resultado:
     for lid, l in peca.linhas.items():
         if l.get("tipo") != "derivado":
             continue
+        espacos = derivacoes.erros_de_espacamento(str(l.get("calculo", "")))
+        if espacos:
+            razoes.extend(f"{lid}: {x}" for x in espacos)
+            continue
         toks = derivacoes.simbolos(str(l.get("calculo", "")))
         if "round" in toks and derivacoes.arredondamento_exterior(toks) is None:
             razoes.append(f"{lid}: round may appear only once and only as the outermost step of calculo")
@@ -200,7 +204,72 @@ def _leituras(peca, lugar):
     return [l for l in peca.registo.get("leitura", []) if l.get("lugar") == lugar]
 
 
-def check4(peca: Peca, pagina: str | None) -> Resultado:
+REGISTO = MARCAS[3].encode()
+
+
+def _registo_de(bruto: bytes) -> bytes:
+    """The bytes after the line `+++ registo`."""
+    i = bruto.find(b"\n" + REGISTO + b"\n")
+    return bruto[i + len(REGISTO) + 2 :] if i >= 0 else b""
+
+
+def ref_main(repo: Path) -> str | None:
+    """`origin/main` or `main`, whichever this clone has; None when neither is at hand."""
+    for ref in ("origin/main", "main"):
+        r = subprocess.run(["git", "-C", str(repo), "rev-parse", "--verify", "--quiet", ref + "^{commit}"],
+                           capture_output=True)
+        if r.returncode == 0:
+            return ref
+    return None
+
+
+def anterior_em_main(repo: Path, caminho: Path):
+    """("absent" | "here", bytes on main) or ("unavailable", None).
+
+    Only the repository's own pieces, under `pecas/`, have a history to keep: a file
+    anywhere else (the test pieces under `ensaios/`, a copy in a temporary folder) is
+    never published, and is treated as absent from main without asking for it."""
+    try:
+        relativo = Path(caminho).resolve().relative_to(Path(repo).resolve())
+    except ValueError:
+        return "absent", None
+    if relativo.parts[:1] != ("pecas",):
+        return "absent", None
+    ref = ref_main(repo)
+    if ref is None:
+        return "unavailable", None
+    relativo = relativo.as_posix()
+    r = subprocess.run(["git", "-C", str(repo), "show", f"{ref}:{relativo}"], capture_output=True)
+    return ("here", r.stdout) if r.returncode == 0 else ("absent", None)
+
+
+def historia(peca: Peca, anterior) -> tuple[list[str], bool]:
+    """(reasons, whether main was at hand). The record only grows; a published piece
+    changed above the record line carries a [[correcao]] from the old fingerprint to the new."""
+    estado, bruto = anterior
+    if estado == "unavailable":
+        return [], False
+    if estado == "absent" or bruto is None:
+        return [], True
+    razoes = []
+    antes_registo = _registo_de(bruto)
+    if not _registo_de(peca.bruto).startswith(antes_registo):
+        razoes.append("the record on main is not the beginning of the record now: a table was removed or changed")
+    try:
+        imp_antes, _ = impressoes(bruto)
+        antes = ler_bytes(bruto, peca.caminho)
+    except ErroDeForma:
+        return razoes + ["the file on main is not a piece, so its history cannot be compared"], True
+    if antes.vinculada and imp_antes != peca.impressao:
+        ligadas = [c for c in peca.registo.get("correcao", [])
+                   if c.get("impressao_antes") == imp_antes and c.get("impressao_depois") == peca.impressao]
+        if not ligadas:
+            razoes.append(f"the piece was published on main as {imp_antes[:12]}… and changed above the record line, "
+                          f"but no [[correcao]] joins {imp_antes[:12]}… to {peca.impressao[:12]}…")
+    return razoes, True
+
+
+def check4(peca: Peca, pagina: str | None, anterior=("unavailable", None)) -> Resultado:
     razoes = []
     passadas = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa"]
     if not passadas:
@@ -215,7 +284,15 @@ def check4(peca: Peca, pagina: str | None) -> Resultado:
             razoes.append("the built page carries no fingerprint")
         elif m.group(1) != peca.impressao:
             razoes.append(f"the built page carries {m.group(1)}, not {peca.impressao}")
-    return _vinculo(4, peca, razoes)
+    razoes_hist, havia_main = historia(peca, anterior)
+    nota_main = [] if havia_main else ["history against main: not run here, main is not at hand"]
+    if peca.vinculada:
+        if not havia_main:
+            razoes.append("main is not at hand, so the record cannot be proved to have only grown")
+        return _r(4, peca.id, razoes + razoes_hist)
+    if razoes_hist:  # a cut record never passes, whatever the state
+        return _r(4, peca.id, razoes_hist)
+    return _vinculo(4, peca, razoes, nota_main)
 
 
 def _uma_leitura(peca, lugar, impressao, familias_produtoras, nome_do_que_le) -> list[str]:
@@ -269,7 +346,7 @@ def check6(peca: Peca) -> Resultado:
         ano = int(peca.id[:4])
     except ValueError:
         return _r(6, peca.id or "?", ["the id has no year to read dates against"])
-    textos = [(o, t) for o, t in textos_do_leitor(peca)]
+    textos = [(o, lido(peca, t)) for o, t in textos_do_leitor(peca)]
     enc = peca.cabeca.get("encomenda")
     if isinstance(enc, dict):
         textos += [(f"encomenda.{k}", v) for k, v in enc.items() if isinstance(v, str)]
@@ -309,7 +386,7 @@ def check7(peca: Peca) -> Resultado:
         nomes = [n for n in (p.get("nome"), p.get("nome_curto")) if isinstance(n, str) and n.strip()]
         for onde, texto in textos_do_leitor(peca):
             for bloco in paragrafos(texto):
-                if not any(n in bloco for n in nomes):
+                if not any(n in lido(peca, bloco) for n in nomes):
                     continue
                 ids = {i for r in referencias(bloco) for i in r.ids}
                 if not ids & set(p.get("linhas", [])):
@@ -361,6 +438,35 @@ def ficheiros_seguidos(repo: Path) -> list[tuple[str, bytes]]:
     return lista
 
 
+def segredo_so_no_passo(texto: str) -> list[str]:
+    """The workflow gives PRIVACIDADE_PROIBIDOS only to the step that runs the checks."""
+    linhas = texto.splitlines()
+    usos = [i for i, l in enumerate(linhas) if "secrets.PRIVACIDADE_PROIBIDOS" in l]
+    if not usos:
+        return ["the workflow never gives PRIVACIDADE_PROIBIDOS to the checks"]
+    erros = []
+    for i in usos:
+        recuo = len(linhas[i]) - len(linhas[i].lstrip())
+        # walk up to the line that opens this step ("- name:" or "- uses:") at a smaller indent
+        passo = None
+        for j in range(i - 1, -1, -1):
+            l = linhas[j]
+            if l.lstrip().startswith("- ") and len(l) - len(l.lstrip()) < recuo:
+                passo = j
+                break
+            if l.strip() and len(l) - len(l.lstrip()) < recuo - 6:
+                break
+        if passo is None:
+            erros.append(f"line {i + 1}: the secret is given outside a step (to the whole job or workflow)")
+            continue
+        fim = next((k for k in range(passo + 1, len(linhas))
+                    if linhas[k].lstrip().startswith("- ") and len(linhas[k]) - len(linhas[k].lstrip()) <= len(linhas[passo]) - len(linhas[passo].lstrip())), len(linhas))
+        bloco = "\n".join(linhas[passo:fim])
+        if "run: python3 -m oedp tudo" not in bloco:
+            erros.append(f"line {i + 1}: the secret is given to a step that does not run the checks")
+    return erros
+
+
 def check8_arvore(repo: Path, ambiente: dict | None = None) -> Resultado:
     try:
         ficheiros = ficheiros_seguidos(repo)
@@ -368,6 +474,9 @@ def check8_arvore(repo: Path, ambiente: dict | None = None) -> Resultado:
         return _r(8, "tracked files", [f"git could not list the tracked files ({e})"])
     r = privacidade.conferir(ficheiros, ambiente)
     razoes = list(r.razoes) + ([r.falha_da_lista] if r.falha_da_lista else [])
+    fluxo = Path(repo) / ".github" / "workflows" / "portao.yml"
+    if fluxo.is_file():
+        razoes += [f"portao.yml: {x}" for x in segredo_so_no_passo(fluxo.read_text(encoding="utf-8"))]
     return _r(8, "tracked files", razoes, [f"{r.vistos} files read"] + ([r.nota] if r.nota else []))
 
 
@@ -402,8 +511,23 @@ def check9_vercel(repo: Path) -> list[str]:
 # --------------------------------------------------------------------------- one piece, all checks
 
 
-def conferir_peca(caminho: Path, contexto, loja: Path | None) -> list[Resultado]:
-    """Every check for one piece file. `contexto` is the site context for rendering."""
+RETIDO = "messages withheld: this file fails check 8, so no other check repeats its text in a public log"
+REPO = Path(__file__).resolve().parent.parent
+
+
+def reter_se_privado(resultados: list) -> list:
+    """When a file fails check 8, the other checks' messages about it are replaced by one line."""
+    if any(r.verificacao == 8 and r.estado == FALHOU for r in resultados):
+        for r in resultados:
+            if r.verificacao != 8:
+                r.razoes = [RETIDO] if r.razoes else []
+                r.notas = []
+    return resultados
+
+
+def conferir_peca(caminho: Path, contexto, loja: Path | None, anterior=None) -> list[Resultado]:
+    """Every check for one piece file. `contexto` is the site context for rendering;
+    `anterior` is the file on main as anterior_em_main gives it (looked up when None)."""
     from . import paginas
 
     caminho = Path(caminho)
@@ -416,7 +540,9 @@ def conferir_peca(caminho: Path, contexto, loja: Path | None) -> list[Resultado]
             dados = caminho.read_bytes()
             p8 = privacidade.conferir([(caminho.name, dados)])
             r.append(_r(8, alvo, p8.razoes + ([p8.falha_da_lista] if p8.falha_da_lista else []), [p8.nota] if p8.nota else []))
-        return r
+        return reter_se_privado(r)
+    if anterior is None:
+        anterior = anterior_em_main(REPO, caminho)
     try:
         pagina = paginas.pagina_da_peca(peca, contexto)
     except Exception as e:  # the page failing to build is check 9's finding
@@ -425,11 +551,11 @@ def conferir_peca(caminho: Path, contexto, loja: Path | None) -> list[Resultado]
         check1(peca),
         check2(peca, loja),
         check3(peca),
-        check4(peca, None if isinstance(pagina, Exception) else pagina),
+        check4(peca, None if isinstance(pagina, Exception) else pagina, anterior),
         check5(peca),
         check6(peca),
         check7(peca),
         check8_peca(peca),
         check9_peca(peca, pagina, contexto.direitos),
     ]
-    return resultados
+    return reter_se_privado(resultados)

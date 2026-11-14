@@ -20,7 +20,7 @@ from pathlib import Path
 
 from . import conferir as conf
 from . import direitos as rights
-from . import privacidade
+from . import julgados, privacidade
 from .forma import erros_do_corpo
 from .paginas import (
     Contexto,
@@ -68,13 +68,24 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     sitio = tomllib.loads((Path(repo) / "sitio.toml").read_text(encoding="utf-8"))
     mesas, erros = ler_mesas(raiz)
     metodo_f = Path(raiz) / "paginas" / "metodo.md"
-    metodo = metodo_f.read_text(encoding="utf-8") if metodo_f.is_file() else None
-    if metodo is not None:
-        erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "\n## A leitura deste projeto\n## A objeção mais forte\n## O que seguir\n")]
+    metodo, julgamento = None, []
+    if metodo_f.is_file():
+        try:
+            metodo, registo_m, impressao_m = julgados.metodo(metodo_f)
+        except julgados.ErroDoJulgado as e:
+            erros.append(f"paginas/metodo.md: {e}")
+        else:
+            erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "\n## A leitura deste projeto\n## A objeção mais forte\n## O que seguir\n")]
+            julgamento += julgados.erros_de_julgamento("paginas/metodo.md", registo_m, impressao_m)
+    try:
+        registo_t, impressao_t, _ = julgados.textos(repo, raiz)
+        julgamento += julgados.erros_de_julgamento("textos.toml", registo_t, impressao_t)
+    except julgados.ErroDoJulgado as e:
+        erros.append(str(e))
     registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
     erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,
-                   metodo=metodo, previa=previa, direitos=registos)
+                   metodo=metodo, previa=previa, direitos=registos, julgamento=julgamento)
     return ctx, erros
 
 
@@ -183,6 +194,9 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
                 c.resultados.append(r)
                 if r.estado == conf.FALHOU:
                     c.falha(r.linha())
+    if not com_rascunhos and any(p.publicada for p in incluidas):
+        for x in ctx.julgamento:
+            c.falha(f"check  4 (the published text is the judged text) · reader's text outside pieces: {x}")
     if not c.ok:
         c.mensagens.insert(0, "the build stops: a piece it would include fails a check")
         return c
@@ -212,10 +226,16 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
         publico = repo / "public"
         for nome in ACTIVOS:
             origem = publico / nome
+            # No symbolic link is followed: a link under public/ could publish whatever it points to.
+            ligacoes = [origem] if origem.is_symlink() else [p for p in origem.rglob("*") if p.is_symlink()] if origem.is_dir() else []
+            if ligacoes:
+                for p in ligacoes:
+                    c.falha(f"check 9: {p.relative_to(repo).as_posix()} is a symbolic link, and the build does not follow links")
+                continue
             if origem.is_dir():
-                shutil.copytree(origem, estatica / nome)
+                shutil.copytree(origem, estatica / nome, symlinks=True)
             elif origem.is_file():
-                shutil.copy2(origem, estatica / nome)
+                shutil.copy2(origem, estatica / nome, follow_symlinks=False)
             else:
                 c.falha(f"check 9: public/{nome} is missing")
 

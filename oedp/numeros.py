@@ -22,7 +22,7 @@ ESCALAS = (
 )
 _ESC_RE = "|".join(re.escape(n).replace("\\ ", "[" + ESPACOS + "]+") for n, _ in ESCALAS)
 FIGURA = re.compile(
-    r"(?P<sinal>[-−+])?(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?"
+    r"(?:(?P<sinal>[-−+])[" + ESPACOS + r"]*)?(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?"
     r"(?:[" + ESPACOS + r"]+(?P<escala>" + _ESC_RE + r")(?![\w]))?",
 )
 ESCALA_INICIAL = re.compile(r"\s*(?P<escala>" + _ESC_RE + r")(?![\w])")
@@ -97,9 +97,12 @@ def formas_impressas(valor: str) -> set[str]:
     return formas
 
 
+# A whole number as a source prints it: thousands groups (space, point or comma) and
+# decimals. The longest reading wins, so `234` is not found inside `1 234 567`, nor
+# `4,7` inside `104,7`.
+NUMERO_INTEIRO = re.compile(r"(?<![\d.,])(?:\d{1,3}(?:[ .,]\d{3})+(?:[.,]\d+)?|\d+(?:[.,]\d+)?)(?![\d])")
+
+
 def contem_figura(excerto_normalizado: str, valor: str) -> bool:
-    for forma in formas_impressas(valor):
-        padrao = r"(?<!\d)(?<!\d[.,])" + re.escape(forma) + r"(?!\d)(?![.,]\d)"
-        if re.search(padrao, excerto_normalizado):
-            return True
-    return False
+    formas = formas_impressas(valor)
+    return any(m.group(0) in formas for m in NUMERO_INTEIRO.finditer(excerto_normalizado))

@@ -30,6 +30,7 @@ class Contexto:
     metodo: str | None = None  # the Markdown of paginas/metodo.md
     previa: bool = False  # a preview lists drafts too; it is never deployed
     direitos: dict = field(default_factory=dict)  # host -> rights record
+    julgamento: list = field(default_factory=list)  # why the Method prose or the fixed sentences are not judged
 
     def listada(self, peca) -> bool:
         return peca.publicada or (self.previa and peca.estado == "rascunho")
@@ -172,7 +173,8 @@ def markdown_com_referencias(peca: Peca | None, texto: str, modo: str = "aqui", 
 def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta: str = "") -> str:
     robots = "" if ctx.lancamento else '<meta name="robots" content="noindex, nofollow">\n'
     nome = e(ctx.t("nome"))
-    marca = f'<h1 class="wordmark">{nome}</h1>' if inicio else f'<p class="wordmark">{nome}</p>'
+    # The name links to the front page on every page, and is the one link not underlined.
+    marca = f'<h1 class="wordmark"><a href="/">{nome}</a></h1>' if inicio else f'<p class="wordmark"><a href="/">{nome}</a></p>'
     return f"""<!doctype html>
 <html lang="pt-PT">
 <head>

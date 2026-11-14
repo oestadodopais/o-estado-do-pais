@@ -62,6 +62,11 @@ class Peca:
     def publicada(self) -> bool:
         return self.estado == "publicada"
 
+    @property
+    def vinculada(self) -> bool:
+        """Published or withdrawn: its title and record are public, so checks 4, 5 and 7 bind."""
+        return self.estado in ("publicada", "retirada")
+
     def ultimo_estado(self) -> dict | None:
         estados = self.registo.get("estado", [])
         return estados[-1] if estados else None
@@ -189,6 +194,25 @@ def sem_referencias(texto: str) -> str:
         pos = r.fim
     partes.append(texto[pos:])
     return "".join(partes)
+
+
+def lido(peca: "Peca", texto: str) -> str:
+    """The text as a reader reads it: each reference replaced by what it prints (a line's
+    mostra or quotation, or the tied words), and emphasis marks taken out."""
+    partes, pos = [], 0
+    for r in referencias(texto):
+        partes.append(texto[pos : r.inicio])
+        if r.forma == "ligada":
+            partes.append(r.palavras)
+        else:
+            linha = peca.linhas.get(r.ids[0], {})
+            if linha.get("tipo") == "citacao":
+                partes.append("«" + str(linha.get("excerto", "")).strip() + "»")
+            else:
+                partes.append(str(linha.get("mostra", "")))
+        pos = r.fim
+    partes.append(texto[pos:])
+    return re.sub(r"[*_]+", "", "".join(partes))
 
 
 def textos_do_leitor(peca: Peca) -> list[tuple[str, str]]:

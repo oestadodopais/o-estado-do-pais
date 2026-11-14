@@ -11,7 +11,7 @@ from pathlib import Path
 
 from . import datas
 from .derivacoes import LITERAL
-from .peca import ID_LINHA, ID_PECA, Peca, referencias
+from .peca import ID_LINHA, ID_PECA, Peca, referencias, sem_referencias
 
 FECHO = ("A leitura deste projeto", "A objeção mais forte", "O que seguir")
 TIPOS_PECA = {"diario", "artigo", "estudo"}
@@ -109,6 +109,24 @@ def erros_do_corpo(corpo: str) -> list[str]:
     return erros
 
 
+ASPAS = "«»“”„‟\"‹›"
+
+
+def erros_do_texto(texto: str, linha_unica: bool) -> list[str]:
+    """Outside references: no quotation mark (a quotation is printed from a citacao
+    line) and no inline code; in titulo and entrada, no raw HTML either."""
+    resto = sem_referencias(texto)
+    erros = []
+    aspas = sorted({c for c in resto if c in ASPAS})
+    if aspas:
+        erros.append("a quotation mark (" + " ".join(aspas) + ") outside a reference; a quotation is printed from a citacao line")
+    if "`" in resto:
+        erros.append("inline code, which the specification does not allow")
+    if linha_unica and re.search(r"<[A-Za-z/!?]", texto):
+        erros.append("raw HTML, which the specification does not allow")
+    return erros
+
+
 def _restos_de_referencia(texto: str) -> list[str]:
     """Braces left after the well-formed references are taken out."""
     partes, pos = [], 0
@@ -157,8 +175,11 @@ def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
 
     e.extend(erros_do_corpo(peca.corpo))
     for onde, texto in (("titulo", c.get("titulo", "")), ("entrada", c.get("entrada", "")), ("corpo", peca.corpo)):
-        if isinstance(texto, str) and _restos_de_referencia(texto):
+        if not isinstance(texto, str):
+            continue
+        if _restos_de_referencia(texto):
             e.append(f"{onde}: a brace that is not part of a well-formed reference")
+        e.extend(f"{onde}: {x}" for x in erros_do_texto(texto, onde != "corpo"))
 
     f = peca.folha
     for k in f:

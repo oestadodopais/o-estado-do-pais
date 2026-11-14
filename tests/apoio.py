@@ -14,6 +14,14 @@ LOJA = ENSAIOS / "fontes"
 PECA = ENSAIOS / "pecas" / "2026" / "2026-11-16-peca-de-ensaio.md"
 
 
+def loja_fora_do_repositorio(caso) -> Path:
+    """A copy of the test store in a temporary folder: OEDP_FONTES may not point inside the repository."""
+    pasta = Path(tempfile.mkdtemp(prefix="oedp-loja-"))
+    caso.addCleanup(shutil.rmtree, pasta, True)
+    shutil.copytree(LOJA, pasta, dirs_exist_ok=True)
+    return pasta
+
+
 class Plantada:
     """A copy of the test site (piece, desk, method) in a temporary folder."""
 
@@ -21,6 +29,7 @@ class Plantada:
         self.pasta = Path(tempfile.mkdtemp(prefix="oedp-ensaio-"))
         for sub in ("pecas", "mesas", "paginas", "direitos"):
             shutil.copytree(ENSAIOS / sub, self.pasta / sub)
+        shutil.copy2(ENSAIOS / "textos.registo.toml", self.pasta / "textos.registo.toml")
         self.peca = self.pasta / "pecas" / "2026" / PECA.name
         texto = self.peca.read_text(encoding="utf-8")
         for antes, depois in trocas:

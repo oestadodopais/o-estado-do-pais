@@ -159,6 +159,15 @@ def canonica(v: Decimal) -> str:
         return format(v.normalize(), "f")
 
 
+_SIMBOLO = re.compile(r"(?:-?\d+(?:\.\d+)?|[a-z][a-z0-9_]*|[-+*/(),])\Z", re.ASCII)
+
+
+def erros_de_espacamento(expr: str) -> list[str]:
+    """The piece file's grammar: every token separated by spaces (`round(0.5,0)` is refused)."""
+    return [f"{t!r} is not one token: in calculo every token is separated by spaces"
+            for t in str(expr).split() if not _SIMBOLO.match(t)]
+
+
 def arredondamento_exterior(toks: list[str]) -> int | None:
     """The places of a `round ( x , n )` that wraps the whole expression, or None.
 

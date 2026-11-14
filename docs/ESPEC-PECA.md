@@ -4,6 +4,8 @@
 
 *Edited 14 November 2026, 22:02 UTC: a source's publisher must have a rights record (check 9), after the funder asked for copyright to be a function of the team.*
 
+*Edited 14 November 2026, 22:34 UTC, after the code and security reading (`blocos/esq1/leitura/LEITURA-CODEX.md`): a withdrawn piece stays bound by checks 4, 5 and 7; check 4 also proves against `main` that the record only grows, because a record that scripts only append to could still be cut by hand; and no quotation mark may be typed in the text, so that a quotation can only come from a line.*
+
 ## The idea in four lines
 
 1. One piece is one text file. Everything a reader sees comes from it, and nothing else is edited to publish it.
@@ -40,7 +42,7 @@ Markdown, limited to: paragraphs, `##` and `###` headings, lists, emphasis, and 
 
 **References.** `{id}` prints a line: the `mostra` of a `valor` or `derivado` line, or the words of a `citacao` line between «». `[words]{id}` or `[words]{id1, id2}` ties the words to one or more lines of any kind; the words are the writer's, and the judge reads them against those lines. Both forms link to the line's receipt. They may also be used in `titulo` and `entrada`.
 
-**The digits rule.** Take the references out of `titulo`, `entrada` and `corpo`: no digit may remain. Every figure, year, date and ordinal a reader sees is either printed from a line or sits inside words tied to a line.
+**The digits rule, and the quotation rule.** Take the references out of `titulo`, `entrada` and `corpo`: no digit may remain, and no quotation mark of any kind («», “”, ""): a quotation reaches the page only by being printed from a `citacao` line. Every figure, year, date and ordinal a reader sees is either printed from a line or sits inside words tied to a line.
 
 **The three closing headings,** required in every piece, in this order and with these exact words: `## A leitura deste projeto` (what the project thinks), `## A objeção mais forte` (the strongest objection, answered or conceded), `## O que seguir` (what will confirm or undo the reading).
 
@@ -178,7 +180,7 @@ impressao_depois = "…"
 | 1. Every figure resolves | Every reference names a line; the digits rule holds; every `mostra` equals its `valor` at the precision shown (a `mostra` with no digit must be marked `mostra_livre` and is left to the numbers editor) |
 | 2. Every excerpt is in its stored source | Each `fonte.sha256` is in the store and the copy hashes to it; each `excerto` is found in the text of that copy; each `valor` line's excerpt holds the figure |
 | 3. Every derived figure recomputes | Each `calculo` gives its `valor` exactly |
-| 4. The published text is the judged text | The piece's fingerprint equals the `impressao` of its last passing `juiz` reading, and the built page carries it |
+| 4. The published text is the judged text | The piece's fingerprint equals the `impressao` of its last passing `juiz` reading, and the built page carries it. The record only grows: what the record holds on `main` is the beginning of what it holds now; and a published piece changed above the record line carries a new judge's reading and a `[[correcao]]` joining the old fingerprint to the new |
 | 5. Verified and judged by the other family | A passing `numeros` reading on the current fact sheet and a passing `juiz` reading on the current piece, each of a different `familia` from the steps that produced what they read, each with at least one plant and all plants caught |
 | 6. Dates and weekdays | Every weekday written beside a date, anywhere above the record line, matches the calendar; every date field is a real date |
 | 7. People | Every `[[pessoa]]` has at least one `citacao` or `ato` line with a source; every paragraph that prints a person's name references one of that person's lines; a passing `justica` reading exists whenever a person is declared; the `pessoas_vistas` of the readers equal the declared people |
@@ -186,4 +188,4 @@ impressao_depois = "…"
 | 9. The site builds | A file that breaks this specification stops the build. So does a source whose publisher has no rights record `direitos/<host>.toml`, or whose record says no copy may be kept, or an excerpt longer than the record's `excerto_max` |
 | 10. Live is built | The live page carries the same fingerprint as the built page |
 
-Checks 4, 5 and 7 bind a piece from the moment its state is `publicada`. A draft is checked on everything else, so that a branch can be read on GitHub while the piece is still being made.
+Checks 4, 5 and 7 bind a piece from the moment its state is `publicada`, and go on binding it when it is withdrawn, because its title and its record stay public. A draft is checked on everything else, so that a branch can be read on GitHub while the piece is still being made.

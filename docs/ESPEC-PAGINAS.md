@@ -6,6 +6,8 @@
 
 *Edited 14 November 2026, 22:18 UTC, after the designer's reading of the built pages (`blocos/esq1/LEITURA-DESENHADOR.md`, thirteen findings, all adopted except the palette of the holding page, which was a quick page and not the identity): a computed figure's receipt shows arithmetic a reader can follow, not the expression the script evaluates; a printed figure never breaks between its number and its unit; a link to a receipt looks the same wherever it is; a receipt leads back to the text; the record says when each reading was made.*
 
+*Edited 14 November 2026, 22:34 UTC, after the code and security reading (`blocos/esq1/leitura/LEITURA-CODEX.md`): the Method prose and the fixed sentences carry a record of their own judgment, since a rule that they are "judged like a piece" with nothing to enforce it was only a wish; and the name at the top is the one link that is not underlined.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -15,7 +17,7 @@
 - **Hidden from search engines** until the funder says otherwise: every page carries `noindex, nofollow`, and there is no sitemap. One setting turns this, and it is his.
 - **Plain pages.** Semantic HTML, one `h1`, a skip link (`saltar`), visible focus. Light and dark palettes follow the reader's system setting. **No script at all:** receipts and the record open with `<details>`.
 - **Figures.** A printed line (`{id}`) never breaks between its number and its unit. Inside tied words, a number stays with the word that follows it. Numerals are lining numerals everywhere, the title included. The figure face (Bitter) is for numeric values in the receipts only; a receipt summary that is a sentence is in the prose face.
-- **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included. Labels are never smaller than 12 px.
+- **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included, with one exception: the name at the top of every page is a link to the front page and is not underlined. Labels are never smaller than 12 px.
 - **The name** has one size on every page at a given width.
 - **The look is the old site's:** its colour tokens, its three typefaces (Spectral for prose and the name, Spectral SC for labels, Bitter for figures), its measure and reading size, its name set in type. Only the styles these five pages use are carried over.
 - **The builder writes no reader's sentence.** Every fixed sentence is in the table at the end of this page and lives in one file, `textos.toml`. Those sentences are judged once by the other family, as a piece is, before the first publication.
@@ -53,7 +55,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 
 ## 4. Method · `/metodo/`
 
-- The prose comes from `paginas/metodo.md`. It is reader's text: it is written and judged like a piece. Until that file exists the Method page is not built, and because every page links to it, no piece can be published before it exists.
+- The prose comes from `paginas/metodo.md`. It is reader's text: it is written and judged like a piece, and the file carries its own record after a line `+++ registo` (its fingerprint is the SHA-256 of the bytes before that line). The fixed sentences are judged the same way, with their record in `textos.registo.toml` beside `textos.toml`. No piece is built as published unless both have a passing judge's reading on their current fingerprint. Until that file exists the Method page is not built, and because every page links to it, no piece can be published before it exists.
 - After the prose, computed: under `equipa_titulo`, the team's record (one row per seat, columns `e_lugar`, `e_leituras`, `c_plantas`, `e_adotados`, `e_falhas`: readings, plants caught of plants put, real findings adopted, misses named by the `causa` of corrections); the four counts `n_publicadas`, `n_correcoes`, `n_atualizacoes`, `n_retiradas`; and under `taxa_titulo` the measured error rate, or `sem_auditoria`.
 
 ## 5. Corrections · `/correcoes/`

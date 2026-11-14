@@ -54,8 +54,20 @@ def cmd_nova(a) -> int:
     return 0
 
 
+class Recusa(Exception):
+    pass
+
+
+def _loja() -> Path | None:
+    """OEDP_FONTES, refused with the reason when it lies inside the repository."""
+    try:
+        return fontes.loja()
+    except fontes.ErroDaLoja as e:
+        raise Recusa(str(e)) from None
+
+
 def _loja_ou_falha():
-    raiz = fontes.loja()
+    raiz = _loja()
     if raiz is None:
         print("refused: OEDP_FONTES is not set; it names the private store of sources", file=sys.stderr)
     return raiz
@@ -161,13 +173,14 @@ def _conferir_como_publicada(peca, ctx):
     from . import paginas
 
     pagina = paginas.pagina_da_peca(peca, ctx)
-    loja = fontes.loja()
+    loja = _loja()
     return [conf.check1(peca), conf.check2(peca, loja), conf.check3(peca), conf.check4(peca, pagina),
             conf.check5(peca), conf.check6(peca), conf.check7(peca), conf.check8_peca(peca),
             conf.check9_peca(peca, pagina, ctx.direitos)]
 
 
 def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple[bool, list]:
+    loja = _loja()
     pecas = []
     for c in alvos:
         try:
@@ -177,12 +190,18 @@ def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple
     ctx, erros_do_sitio = build.contexto(REPO, raiz, [p for p in pecas if p.estado in ("publicada", "retirada")])
     resultados = []
     for c in alvos:
-        resultados += conf.conferir_peca(c, ctx, fontes.loja())
+        resultados += conf.conferir_peca(c, ctx, loja)
     resultados.append(conf.check8_arvore(REPO))
     vercel = conf.check9_vercel(REPO)
     resultados.append(conf._r(9, "vercel.json", vercel))
     if erros_do_sitio:
         resultados.append(conf._r(9, "desk and method files", erros_do_sitio))
+    alvo = "reader's text outside pieces"
+    if any(p.publicada for p in pecas):
+        resultados.append(conf._r(4, alvo, ctx.julgamento))
+    else:
+        resultados.append(conf.Resultado(4, alvo, conf.NAO_VINCULA, [], ["no published piece, so this does not bind yet"]
+                                         + (["would fail once a piece is published: " + "; ".join(ctx.julgamento)] if ctx.julgamento else [])))
     resultados.append(conf.Resultado(10, "live site", conf.NAO_CORRIDO,
                                      ["it needs the live address: run `python3 -m oedp no-ar <address>` after publishing"], []))
     for r in resultados:
@@ -200,7 +219,7 @@ def cmd_conferir(a) -> int:
 
 
 def cmd_construir(a) -> int:
-    c = build.construir(REPO, saida=Path(a.saida) if a.saida else None, com_rascunhos=a.com_rascunhos, loja=fontes.loja())
+    c = build.construir(REPO, saida=Path(a.saida) if a.saida else None, com_rascunhos=a.com_rascunhos, loja=_loja())
     for m in c.mensagens:
         print(m)
     print("check  9 (the site builds) · site: " + ("passed" if c.ok else "failed"))
@@ -290,7 +309,11 @@ def principal(argv=None) -> int:
     s.set_defaults(f=cmd_tudo)
 
     a = p.parse_args(argv)
-    return a.f(a)
+    try:
+        return a.f(a)
+    except Recusa as e:
+        print(str(e), file=sys.stderr)
+        return 2
 
 
 if __name__ == "__main__":

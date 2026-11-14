@@ -11,18 +11,18 @@ Python 3.12 or later. `python3 -m pip install -r requirements.txt`, then:
 | Command | What it does |
 |---|---|
 | `python3 -m oedp nova <id> --tipo diario\|artigo\|estudo` | Creates `pecas/<year>/<id>.md` with its four sections |
-| `python3 -m oedp fonte <url>` | Fetches the address through `curl` (obeying `robots.txt` as RFC 9309 says, and only for a host with a rights record in `direitos/`), stores the copy under its SHA-256 in `$OEDP_FONTES`, prints the `[[fonte]]` table. `--termos` stores a publisher's terms page and prints the start of its rights record |
+| `python3 -m oedp fonte <url>` | Fetches the address through `curl`, following at most five redirects itself and refusing any hop that is not public or that its `robots.txt` (RFC 9309) closes; the final host must have a rights record in `direitos/`. Stores the copy under its SHA-256 in `$OEDP_FONTES`, prints the `[[fonte]]` table. `--termos` stores a publisher's terms page and prints the start of its rights record |
 | `python3 -m oedp texto <sha256>` | Prints a stored copy's text as check 2 reads it, page by page for a PDF |
 | `python3 -m oedp impressao <piece>` | Prints the piece's and the fact sheet's fingerprints |
-| `python3 -m oedp registar <piece> passo\|leitura\|correcao --…` | Appends one table to the record |
+| `python3 -m oedp registar <file> passo\|leitura\|correcao --…` | Appends one table to the record of a piece, of `paginas/metodo.md` or of `textos.toml` (`textos.registo.toml`) |
 | `python3 -m oedp estado <piece> publicada\|retirada\|rascunho --razao …` | Appends one `[[estado]]` table (refuses to publish a piece that would fail) |
 | `python3 -m oedp conferir [<piece> …]` | Runs the checks; exit 0 only if nothing failed |
 | `python3 -m oedp construir [--com-rascunhos] [--saida <folder>]` | Builds `.vercel/output/` (or a preview in `.previa/`, never deployed) |
 | `python3 -m oedp no-ar <address>` | Check 10: the live site against the build, file by file |
 | `python3 -m oedp tudo` | `conferir`, `construir` and the tests |
 
-`OEDP_FONTES` names the private store of source copies; copies never enter this
-repository. `PRIVACIDADE_PROIBIDOS` holds the strings check 8 refuses (one per line).
+`OEDP_FONTES` names the private store of source copies, outside this repository's
+tree (the commands refuse a store inside it); copies never enter this repository. `PRIVACIDADE_PROIBIDOS` holds the strings check 8 refuses (one per line).
 
 Folders: `oedp/` the code; `pecas/` the pieces; `mesas/` one file per desk;
 `direitos/` one rights record per publisher's host;
@@ -31,4 +31,13 @@ Folders: `oedp/` the code; `pecas/` the pieces; `mesas/` one file per desk;
 `tests/` the tests, including one planted failure for each check.
 
 Publishing on push is switched off in `vercel.json`. The GitHub workflow's job
-`portao` runs `tudo` on every push.
+`portao` runs `tudo` on every push, with `main` fetched so that check 4 can prove
+that every record only grew.
+
+## Limits
+
+The workflow that checks a commit is part of that commit, so a commit could replace
+the gate and keep the job's name `portao`, and the check `main` requires would still
+pass. That is true of any gate that lives in its own repository. The control is that
+a change to the gate is a change to code, and every change to code is read by the
+other model family before it is merged.

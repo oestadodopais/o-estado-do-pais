@@ -16,7 +16,7 @@ from unittest import mock
 from oedp import conferir as conf
 from oedp import construir as build
 from oedp import noar, privacidade
-from tests.apoio import LOJA, REPO, Plantada
+from tests.apoio import LOJA, REPO, Plantada, loja_fora_do_repositorio
 
 
 class Limpa(unittest.TestCase):
@@ -237,7 +237,7 @@ class Check9(Limpa):
 
         p = Plantada([('mostra = "104,7 pontos"', 'mostra = "104,8 pontos"')])
         self.addCleanup(p.apagar)
-        env = dict(os.environ, OEDP_FONTES=str(LOJA))
+        env = dict(os.environ, OEDP_FONTES=str(loja_fora_do_repositorio(self)))
         r = subprocess.run([sys.executable, "-m", "oedp", "conferir", str(p.peca)], cwd=REPO, capture_output=True, text=True, env=env)
         self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
         self.assertIn("check  1 (every figure resolves) · 2026-11-16-peca-de-ensaio: failed", r.stdout)
@@ -259,8 +259,14 @@ class Check10(unittest.TestCase):
         c = build.construir(REPO, raiz=REPO / "ensaios", saida=self.saida, loja=LOJA)
         self.assertTrue(c.ok, c.mensagens)
         self.estatica = self.saida / "static"
-        self.vivo = {"https://ensaio.invalid/" + f.relative_to(self.estatica).as_posix(): f.read_bytes()
-                     for f in self.estatica.rglob("*") if f.is_file()}
+        self.vivo = {}
+        for f in self.estatica.rglob("*"):
+            if f.is_file():
+                nome = f.relative_to(self.estatica).as_posix()
+                self.vivo["https://ensaio.invalid/" + nome] = f.read_bytes()
+                publico = noar.endereco_publico(nome)
+                if publico is not None:
+                    self.vivo["https://ensaio.invalid/" + publico] = f.read_bytes()
 
     def buscar(self, url):
         if url not in self.vivo:
@@ -271,8 +277,9 @@ class Check10(unittest.TestCase):
         self.assertEqual(noar.conferir("https://ensaio.invalid", self.estatica, self.buscar), [])
 
     def test_planta_pagina_no_ar_diferente(self):
-        chave = "https://ensaio.invalid/pecas/2026-11-16-peca-de-ensaio/index.html"
-        self.vivo[chave] = self.vivo[chave].replace(b"concede-a", b"aceita-a")
+        for chave in ("https://ensaio.invalid/pecas/2026-11-16-peca-de-ensaio/index.html",
+                      "https://ensaio.invalid/pecas/2026-11-16-peca-de-ensaio/"):
+            self.vivo[chave] = self.vivo[chave].replace(b"concede-a", b"aceita-a")
         razoes = noar.conferir("https://ensaio.invalid", self.estatica, self.buscar)
         self.assertTrue(any(r.startswith("pecas/2026-11-16-peca-de-ensaio/index.html: live SHA-256") for r in razoes), razoes)
 

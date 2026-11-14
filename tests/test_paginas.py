@@ -193,7 +193,8 @@ class CincoPaginas(unittest.TestCase):
         self.assertGreaterEqual(min(tamanhos), 12)
         self.assertNotIn("oldstyle-nums", css)
         self.assertIn("lining-nums proportional-nums", css)
-        self.assertNotRegex(css, r"text-decoration(?:-line)?:\s*none")
+        # the one exception: the name at the top, a link to the front page, not underlined
+        self.assertEqual(re.findall(r"([^{}\n]+)\{[^}]*text-decoration(?:-line)?:\s*none", css), [".wordmark a "])
         self.assertIn("a.ref, a.ligada { text-decoration-line: underline; text-decoration-style: dotted;", css)
         self.assertEqual(len(re.findall(r"\.wordmark\s*\{[^}]*font-size", css)), 1)
         self.assertNotIn("masthead-compact", css)

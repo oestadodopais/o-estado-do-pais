@@ -18,8 +18,6 @@ jobs:
   portao:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
-    env:
-      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -29,5 +27,11 @@ jobs:
           python-version: '3.12'
       - name: Dependencies
         run: python3 -m pip install -r requirements.txt
+      # Check 4 proves against main that a piece's record only grows.
+      - name: Main, for the history of the records
+        run: git fetch --no-tags --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+      # The secret is given to this step only, not to the one that installs dependencies.
       - name: Checks, build and tests
+        env:
+          PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
         run: python3 -m oedp tudo
