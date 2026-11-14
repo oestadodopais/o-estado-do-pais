@@ -11632,12 +11632,12 @@
       "instantaneo": true,
       "folhas": [
         {
-          "pt": "São as verbas contratadas do Plano de Recuperação e Resiliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, pela listagem de entidades do plano.",
-          "en": "These are Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, from the plan’s list of entities.",
+          "pt": "São as verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.",
+          "en": "These are the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.",
           "partes": [
             {
-              "pt": "São as verbas contratadas do Plano de Recuperação e Resiliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho",
-              "en": "These are Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality",
+              "pt": "São as verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.",
+              "en": "These are the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.",
               "classe": "diz",
               "apoios": [
                 {
@@ -11659,14 +11659,7 @@
                   "ficheiro": "entidades",
                   "campo": "localizacao_sede",
                   "literal": "Évora"
-                }
-              ]
-            },
-            {
-              "pt": ", pela listagem de entidades do plano.",
-              "en": ", from the plan’s list of entities.",
-              "classe": "diz",
-              "apoios": [
+                },
                 {
                   "linha": "propria",
                   "campo": "document.title",
@@ -11686,12 +11679,12 @@
       "instantaneo": true,
       "folhas": [
         {
-          "pt": "São as verbas pagas do Plano de Recuperação e Resiliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, pela listagem de entidades do plano.",
-          "en": "These are Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, from the plan’s list of entities.",
+          "pt": "São as verbas do Plano de Recuperação e Resiliência pagas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.",
+          "en": "These are the Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.",
           "partes": [
             {
-              "pt": "São as verbas pagas do Plano de Recuperação e Resiliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho",
-              "en": "These are Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality",
+              "pt": "São as verbas do Plano de Recuperação e Resiliência pagas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.",
+              "en": "These are the Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.",
               "classe": "diz",
               "apoios": [
                 {
@@ -11713,14 +11706,7 @@
                   "ficheiro": "entidades",
                   "campo": "localizacao_sede",
                   "literal": "Évora"
-                }
-              ]
-            },
-            {
-              "pt": ", pela listagem de entidades do plano.",
-              "en": ", from the plan’s list of entities.",
-              "classe": "diz",
-              "apoios": [
+                },
                 {
                   "linha": "propria",
                   "campo": "document.title",
@@ -11740,12 +11726,12 @@
       "instantaneo": true,
       "folhas": [
         {
-          "pt": "São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência.",
-          "en": "These are funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities.",
+          "pt": "São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+          "en": "These are the funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, in projects with a completion deadline before the snapshot and no completion recorded.",
           "partes": [
             {
-              "pt": "São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada",
-              "en": "These are funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, with a completion deadline before the snapshot and no completion recorded",
+              "pt": "São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+              "en": "These are the funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, in projects with a completion deadline before the snapshot and no completion recorded.",
               "classe": "diz",
               "apoios": [
                 {
@@ -11777,14 +11763,7 @@
                   "ficheiro": "projetos",
                   "campo": "cabecalho",
                   "literal": "dt_efetiva_conclusao"
-                }
-              ]
-            },
-            {
-              "pt": ", pela listagem de entidades do Plano de Recuperação e Resiliência.",
-              "en": ", from the Recovery and Resilience Plan’s list of entities.",
-              "classe": "diz",
-              "apoios": [
+                },
                 {
                   "linha": "propria",
                   "campo": "document.title",
@@ -11850,12 +11829,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho que já foi paga.",
-          "en": "It is the share of Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality that has already been paid.",
+          "pt": "É a parte já paga das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.",
+          "en": "It is the share already paid of the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.",
           "partes": [
             {
-              "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho que já foi paga.",
-              "en": "It is the share of Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality that has already been paid.",
+              "pt": "É a parte já paga das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.",
+              "en": "It is the share already paid of the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.",
               "classe": "diz",
               "apoios": [
                 {
@@ -11876,12 +11855,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a parte das verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
-          "en": "It is the share of funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
+          "pt": "Do total de verbas contratadas nos registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, esta é a percentagem correspondente a projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+          "en": "Of all funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, this is the percentage corresponding to projects with a completion deadline before the snapshot and no completion recorded.",
           "partes": [
             {
-              "pt": "É a parte das verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
-              "en": "It is the share of funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
+              "pt": "Do total de verbas contratadas nos registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, esta é a percentagem correspondente a projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+              "en": "Of all funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, this is the percentage corresponding to projects with a completion deadline before the snapshot and no completion recorded.",
               "classe": "diz",
               "apoios": [
                 {

@@ -1230,10 +1230,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-aprovado": {
     "frase": {
       "pt": [
-        "São as verbas contratadas do Plano de Recuperação e Resiliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, pela listagem de entidades do plano."
+        "São as verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho."
       ],
       "en": [
-        "These are Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, from the plan’s list of entities."
+        "These are the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality."
       ]
     },
     "instantaneo": true
@@ -1241,10 +1241,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-execucao": {
     "frase": {
       "pt": [
-        "É a parte das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho que já foi paga."
+        "É a parte já paga das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho."
       ],
       "en": [
-        "It is the share of Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality that has already been paid."
+        "It is the share already paid of the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality."
       ]
     }
   },
@@ -1261,10 +1261,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-pago": {
     "frase": {
       "pt": [
-        "São as verbas pagas do Plano de Recuperação e Resiliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, pela listagem de entidades do plano."
+        "São as verbas do Plano de Recuperação e Resiliência pagas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho."
       ],
       "en": [
-        "These are Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, from the plan’s list of entities."
+        "These are the Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality."
       ]
     },
     "instantaneo": true
@@ -1282,10 +1282,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-vencido-aprovado": {
     "frase": {
       "pt": [
-        "São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência."
+        "São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada."
       ],
       "en": [
-        "These are funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities."
+        "These are the funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, in projects with a completion deadline before the snapshot and no completion recorded."
       ]
     },
     "instantaneo": true
@@ -1293,10 +1293,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-vencido-quota": {
     "frase": {
       "pt": [
-        "É a parte das verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada."
+        "Do total de verbas contratadas nos registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, esta é a percentagem correspondente a projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada."
       ],
       "en": [
-        "It is the share of funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality in projects with a completion deadline before the snapshot and no completion recorded."
+        "Of all funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, this is the percentage corresponding to projects with a completion deadline before the snapshot and no completion recorded."
       ]
     }
   },
