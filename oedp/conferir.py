@@ -173,6 +173,10 @@ def check3(peca: Peca) -> Resultado:
     for lid, l in peca.linhas.items():
         if l.get("tipo") != "derivado":
             continue
+        toks = derivacoes.simbolos(str(l.get("calculo", "")))
+        if "round" in toks and derivacoes.arredondamento_exterior(toks) is None:
+            razoes.append(f"{lid}: round may appear only once and only as the outermost step of calculo")
+            continue
         try:
             obtido = derivacoes.avaliar(str(l.get("calculo", "")), valores, proprio=lid)
             querido = derivacoes.numero(str(l.get("valor", "")))

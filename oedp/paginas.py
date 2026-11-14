@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime as dt
 import html
+import re
 from dataclasses import dataclass, field
 from decimal import ROUND_HALF_UP, Decimal
 
@@ -86,21 +87,49 @@ def _ligacao(peca: Peca, lid: str, modo: str) -> str | None:
     return f"#r-{lid}"
 
 
-def _html_da_referencia(peca: Peca, r, modo: str) -> str:
-    texto = _impressa(peca, r.ids[0]) if r.forma == "simples" else r.palavras
+NBSP = "\u00a0"
+# A number (with its thousands groups and decimals) and the space after it.
+_NUMERO_E_ESPACO = re.compile(r"(\d{1,3}(?:[ \u00a0\u202f]\d{3})+|\d+)((?:[.,]\d+)*)(?:\.º|º|ª)?[ \u00a0\u202f](?=\S)")
+
+
+def sem_quebra(texto: str, linha_impressa: bool) -> str:
+    """A printed line never breaks; inside tied words a number stays with the next word."""
+    if linha_impressa:
+        return re.sub(r"[ \u202f]", NBSP, texto)
+
+    def junta(m):
+        return m.group(0).replace(" ", NBSP).replace("\u202f", NBSP)
+
+    return _NUMERO_E_ESPACO.sub(junta, texto)
+
+
+def _html_da_referencia(peca: Peca, r, modo: str, primeiros: set | None = None) -> str:
+    simples = r.forma == "simples"
+    texto = _impressa(peca, r.ids[0]) if simples else r.palavras
+    numero = simples and peca.linhas[r.ids[0]].get("tipo") in ("valor", "derivado")
+    texto = sem_quebra(texto, numero)
     destino = _ligacao(peca, r.ids[0], modo)
-    classe = "ref" if r.forma == "simples" else "ligada"
+    classe = "ref" if simples else "ligada"
     if destino is None:
         return e(texto)
-    return f'<a class="{classe}" href="{e(destino)}">{e(texto)}</a>'
+    # The first use of each line carries the anchor its receipt's `r_voltar` leads back to.
+    ancoras = []
+    if primeiros is not None:
+        for lid in r.ids:
+            if lid not in primeiros:
+                primeiros.add(lid)
+                ancoras.append(f"u-{lid}")
+    proprio = f' id="{ancoras[0]}"' if ancoras and ancoras[0] == f"u-{r.ids[0]}" else ""
+    extra = "".join(f'<span id="{a}"></span>' for a in ancoras if f' id="{a}"' != proprio)
+    return f'{extra}<a class="{classe}" href="{e(destino)}"{proprio}>{e(texto)}</a>'
 
 
-def em_linha(peca: Peca, texto: str, modo: str = "aqui") -> str:
+def em_linha(peca: Peca, texto: str, modo: str = "aqui", primeiros: set | None = None) -> str:
     """A one-line field (titulo, entrada) as HTML."""
     partes, pos = [], 0
     for r in referencias(texto):
         partes.append(e(texto[pos : r.inicio]))
-        partes.append(_html_da_referencia(peca, r, modo))
+        partes.append(_html_da_referencia(peca, r, modo, primeiros))
         pos = r.fim
     partes.append(e(texto[pos:]))
     return "".join(partes)
@@ -117,12 +146,12 @@ def texto_simples(peca: Peca, texto: str) -> str:
     return "".join(partes)
 
 
-def markdown_com_referencias(peca: Peca | None, texto: str, modo: str = "aqui") -> str:
+def markdown_com_referencias(peca: Peca | None, texto: str, modo: str = "aqui", primeiros: set | None = None) -> str:
     trocas = {}
     partes, pos = [], 0
     for n, r in enumerate(referencias(texto) if peca else []):
         marca = _MARCA.format("abcdefghijklmnopqrstuvwxy"[n % 25] * (n // 25 + 1))
-        trocas[marca] = _html_da_referencia(peca, r, modo)
+        trocas[marca] = _html_da_referencia(peca, r, modo, primeiros)
         partes.append(texto[pos : r.inicio])
         partes.append(marca)
         pos = r.fim
@@ -139,7 +168,7 @@ def markdown_com_referencias(peca: Peca | None, texto: str, modo: str = "aqui") 
 def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta: str = "") -> str:
     robots = "" if ctx.lancamento else '<meta name="robots" content="noindex, nofollow">\n'
     nome = e(ctx.t("nome"))
-    marca = f'<h1 class="wordmark">{nome}</h1>' if inicio else f'<p class="wordmark"><a href="/">{nome}</a></p>'
+    marca = f'<h1 class="wordmark">{nome}</h1>' if inicio else f'<p class="wordmark">{nome}</p>'
     return f"""<!doctype html>
 <html lang="pt-PT">
 <head>
@@ -158,7 +187,7 @@ def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta
 <div class="wrap">
 <header class="cabecalho">
 <p class="rotulo-ia-linha">{e(ctx.t("ia_linha"))} <a href="/metodo/">{e(ctx.t("ia_ligacao"))}</a></p>
-<div class="masthead{'' if inicio else ' masthead-compact'}">{marca}</div>
+<div class="masthead">{marca}</div>
 <nav class="menu">
 <a href="/">{e(ctx.t("nav_inicio"))}</a>
 <a href="/metodo/">{e(ctx.t("nav_metodo"))}</a>
@@ -237,35 +266,75 @@ def _excerto(ctx, linha) -> str:
     return f'<dt>{e(ctx.t("r_excerto"))}</dt><dd><blockquote class="excerto">{e(str(linha.get("excerto", "")).strip())}</blockquote></dd>'
 
 
-def _conta(peca, linha) -> str:
-    partes = []
-    for t in derivacoes.simbolos(str(linha.get("calculo", ""))):
+SINAIS = {"+": "+", "-": "\u2212", "*": "\u00d7", "/": "\u00f7"}
+
+
+def _conta(ctx, peca, linha) -> str:
+    """The calculation as arithmetic a reader can follow; the expression itself is never printed.
+
+    `round ( x , n )` may only be the outermost step (check 3), so it is taken off and
+    said in words after the result: «104,7 − 102,3 = 2,4 (arredondado a uma casa decimal)».
+    """
+    toks = derivacoes.simbolos(str(linha.get("calculo", "")))
+    casas = derivacoes.arredondamento_exterior(toks)
+    if casas is not None:
+        toks = toks[2:-3]
+    texto, cola = "", True  # cola: no space before the next part
+    for i, t in enumerate(toks):
+        anterior = toks[i - 1] if i else None
+        unario = t == "-" and (anterior is None or anterior in ("(", "+", "-", "*", "/"))
+        if t == ")":
+            texto += ")"
+            cola = False
+            continue
         if t in peca.linhas:
-            partes.append(f'<a href="#r-{e(t)}">{e(numeros.portugues(peca.linhas[t].get("valor", "")))}</a>')
+            parte = f'<a href="#r-{e(t)}">{e(numeros.portugues(peca.linhas[t].get("valor", "")))}</a>'
         elif derivacoes.LITERAL.match(t):
-            partes.append(e(numeros.portugues(t)))
+            parte = e(numeros.portugues(t))
+        elif unario:
+            parte = "\u2212"
         else:
-            partes.append(e(t))
-    return " ".join(partes) + " = " + e(numeros.portugues(str(linha.get("valor", ""))))
+            parte = SINAIS.get(t, e(t))
+        texto += ("" if cola else " ") + parte
+        cola = t == "(" or unario
+    resultado = f"{texto}\u00a0= {e(numeros.portugues(str(linha.get('valor', ''))))}"
+    if casas is not None:
+        chave = "r_arred_0" if casas == 0 else "r_arred_1" if casas == 1 else "r_arred_n"
+        resultado += f" ({e(ctx.t(chave, n=casas))})"
+    return resultado
 
 
-def _recibo(ctx, peca, lid) -> str:
+def _volta(peca, lid, usadas) -> str:
+    """Where `r_voltar` leads: the first use in the text; for a line used only as an
+    input, the receipt of the first computed figure that uses it; else the text's top."""
+    if lid in usadas:
+        return f"#u-{lid}"
+    for outro, l in peca.linhas.items():
+        if l.get("tipo") == "derivado" and lid in derivacoes.ids_em(str(l.get("calculo", ""))):
+            return f"#r-{outro}"
+    return "#conteudo"
+
+
+def _recibo(ctx, peca, lid, usadas=()) -> str:
     l = peca.linhas[lid]
     tipo = l.get("tipo")
+    sinal = ""
+    figura = tipo in ("valor", "derivado") and re.search(r"\d", str(l.get("mostra", "")))
     if tipo == "valor":
-        resumo = e(str(l.get("mostra", "")))
+        resumo = e(sem_quebra(str(l.get("mostra", "")), True))
+        if l.get("provisorio"):
+            sinal = f'<p class="sinal">{e(ctx.t("r_provisorio"))}</p>'
         antes_excerto, depois_excerto = _fonte_dl(ctx, peca, l)
         dl = (
             f'<dt>{e(ctx.t("r_mede"))}</dt><dd>{e(str(l.get("mede", "")))}</dd>'
             f'<dt>{e(ctx.t("r_populacao"))}</dt><dd>{e(str(l.get("populacao", "")))}</dd>'
             f'<dt>{e(ctx.t("r_periodo"))}</dt><dd>{e(str(l.get("periodo", "")))}</dd>'
-            + (f'<dd class="provisorio">{e(ctx.t("r_provisorio"))}</dd>' if l.get("provisorio") else "")
             + antes_excerto + _excerto(ctx, l) + depois_excerto
         )
     elif tipo == "derivado":
-        resumo = e(str(l.get("mostra", "")))
+        resumo = e(sem_quebra(str(l.get("mostra", "")), True))
         dl = (
-            f'<dt>{e(ctx.t("r_conta"))}</dt><dd class="conta">{_conta(peca, l)}</dd>'
+            f'<dt>{e(ctx.t("r_conta"))}</dt><dd class="conta">{_conta(ctx, peca, l)}</dd>'
             f'<dt>{e(ctx.t("r_compara"))}</dt><dd>{e(str(l.get("compara", "")))}</dd>'
         )
     elif tipo == "citacao":
@@ -289,16 +358,24 @@ def _recibo(ctx, peca, lid) -> str:
             + f'<dt>{e(ctx.t("r_quando"))}</dt><dd>{e(datas.por_extenso(quando) if quando else "")}</dd>'
             + depois_excerto
         )
-    return f'<details class="recibo" id="r-{e(lid)}"><summary>{resumo}</summary><dl>{dl}</dl></details>'
+    classe = ' class="figura"' if figura else ""
+    voltar = f'<p class="voltar"><a href="{_volta(peca, lid, usadas)}">{e(ctx.t("r_voltar"))}</a></p>'
+    return (f'<details class="recibo" id="r-{e(lid)}"><summary><span{classe}>{resumo}</span></summary>'
+            f'{sinal}<dl>{dl}</dl>{voltar}</details>')
 
 
 def _registo(ctx, peca) -> str:
     linhas = []
-    for l in peca.registo.get("leitura", []):
+    # In the order the readings were made: by the time each ended, then as recorded.
+    leituras = sorted(peca.registo.get("leitura", []), key=lambda l: str(l.get("fim", "")))
+    for l in leituras:
         minutos = _minutos(l.get("inicio"), l.get("fim"))
+        fim = _instante(l.get("fim"))
+        quando = (f'{e(datas.por_extenso(datas.em_lisboa(fim).date()))}<br>{e(datas.hora(fim))}' if fim else "")
         linhas.append(
             "<tr>"
-            f'<td>{e(ctx.t("lugar_" + str(l.get("lugar"))))}</td>'
+            f'<td class="quando">{quando}</td>'
+            f'<td class="lugar">{e(ctx.t("lugar_" + str(l.get("lugar"))))}</td>'
             f'<td>{e(ctx.t("familia_" + str(l.get("familia"))))}</td>'
             f'<td class="mono">{e(ctx.t("plantas_formato", apanhadas=l.get("plantas_apanhadas"), postas=l.get("plantas_postas")))}</td>'
             f'<td class="mono">{e(str(l.get("achados")))}</td>'
@@ -308,7 +385,7 @@ def _registo(ctx, peca) -> str:
         )
     tabela = ""
     if linhas:
-        cab = "".join(f'<th scope="col">{e(ctx.t(k))}</th>' for k in ("c_leitura", "c_familia", "c_plantas", "c_achados", "c_veredicto", "c_minutos"))
+        cab = "".join(f'<th scope="col">{e(ctx.t(k))}</th>' for k in ("c_quando", "c_leitura", "c_familia", "c_plantas", "c_achados", "c_veredicto", "c_minutos"))
         tabela = f'<div class="tabela"><table><thead><tr>{cab}</tr></thead><tbody>{"".join(linhas)}</tbody></table></div>'
     tempo = ""
     encomenda = next((p for p in peca.registo.get("passo", []) if p.get("nome") == "encomenda"), None)
@@ -346,18 +423,20 @@ def pagina_da_peca(peca: Peca, ctx: Contexto) -> str:
     correcoes = "".join(_bloco_de_correcao(ctx, c) for c in _correcoes(ctx, peca))
     ordem = ordem_de_uso(peca)
     ordem += [lid for lid in peca.linhas if lid not in ordem]
-    recibos = "".join(_recibo(ctx, peca, lid) for lid in ordem if lid in peca.linhas)
+    usadas = set(ordem_de_uso(peca))
+    recibos = "".join(_recibo(ctx, peca, lid, usadas) for lid in ordem if lid in peca.linhas)
+    primeiros: set = set()
     corpo = (
         '<article class="peca">'
         '<header class="peca-cabeca">'
         f'<p class="eyebrow">{e(_tipo(ctx, peca))}</p>'
-        f'<h1 class="peca-titulo">{em_linha(peca, str(peca.cabeca.get("titulo", "")))}</h1>'
-        f'<p class="entrada">{em_linha(peca, str(peca.cabeca.get("entrada", "")))}</p>'
+        f'<h1 class="peca-titulo">{em_linha(peca, str(peca.cabeca.get("titulo", "")), primeiros=primeiros)}</h1>'
+        f'<p class="entrada">{em_linha(peca, str(peca.cabeca.get("entrada", "")), primeiros=primeiros)}</p>'
         f"{linha_pub}"
         + (f'<p class="temas">{temas}</p>' if temas else "")
         + "</header>"
         + (f'<section class="correcoes-da-peca">{correcoes}</section>' if correcoes else "")
-        + f'<div class="texto">{markdown_com_referencias(peca, peca.corpo)}</div>'
+        + f'<div class="texto">{markdown_com_referencias(peca, peca.corpo, primeiros=primeiros)}</div>'
         + (f'<section class="recibos" id="recibos"><h2>{e(ctx.t("recibos_titulo"))}</h2><p>{e(ctx.t("recibos_intro"))}</p>{recibos}</section>' if recibos else "")
         + _registo(ctx, peca)
         + "</article>"

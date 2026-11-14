@@ -89,6 +89,12 @@ class Check3(Limpa):
         self.assertEqual(r[1].estado, conf.PASSOU, "the plant must break check 3 and not check 1")
 
 
+class Check3Arredondamento(Limpa):
+    def test_planta_round_que_nao_e_o_passo_exterior(self):
+        r = self.plantar([('calculo = "round ( indice - indice_anterior , 1 )"', 'calculo = "round ( indice , 1 ) - indice_anterior"')])
+        self.falha(r, 3, "diferenca: round may appear only once and only as the outermost step of calculo")
+
+
 class Check4(Limpa):
     def test_planta_texto_mudado_depois_do_juiz(self):
         r = self.plantar([("Este ensaio concede-a.", "Este ensaio aceita-a.")])

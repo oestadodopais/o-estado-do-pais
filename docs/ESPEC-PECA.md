@@ -116,7 +116,7 @@ cargo = "…"                     # the public role at the time of the act
 linhas = ["ministro_declaracao"]   # the citacao and ato lines beside which the person is named
 ```
 
-`calculo` uses the grammar the engine already proved: decimal numbers, line ids, `+ - * /`, parentheses and `round ( x , n )`, every token separated by spaces; exact decimal arithmetic; `round` rounds half up; the result must equal `valor` exactly.
+`calculo` uses the grammar the engine already proved: decimal numbers, line ids, `+ - * /`, parentheses and `round ( x , n )`, every token separated by spaces; exact decimal arithmetic; `round` rounds half up; the result must equal `valor` exactly. `round` may appear only once and only as the outermost step (edited 14 November 2026, 22:18 UTC: the receipt shows the calculation to a reader as arithmetic followed by the rounding in words, and a rounding in the middle cannot be shown that way; a calculation that needs one is split into two `derivado` lines).
 
 A verbal comparison ("more than", "the highest since") is a comparison: it needs a `derivado` line, and the words are tied to it.
 

@@ -159,6 +159,25 @@ def canonica(v: Decimal) -> str:
         return format(v.normalize(), "f")
 
 
+def arredondamento_exterior(toks: list[str]) -> int | None:
+    """The places of a `round ( x , n )` that wraps the whole expression, or None.
+
+    The piece file allows `round` only once and only as the outermost step
+    (docs/ESPEC-PECA.md, edit of 14 November 2026, 22:18 UTC): the receipt shows the
+    arithmetic and then the rounding in words, which a rounding in the middle cannot be.
+    """
+    if len(toks) < 6 or toks[0] != "round" or toks[1] != "(" or toks[-1] != ")" or toks[-3] != ",":
+        return None
+    if toks.count("round") != 1 or not _CASAS.match(toks[-2]):
+        return None
+    profundidade = 0
+    for i, t in enumerate(toks[1:], 1):
+        profundidade += {"(": 1, ")": -1}.get(t, 0)
+        if profundidade == 0 and i != len(toks) - 1:
+            return None
+    return int(toks[-2])
+
+
 def ids_em(expr: str) -> list[str]:
     """The line ids an expression names, in order."""
     return [t for t in simbolos(expr) if re.fullmatch(r"[a-z][a-z0-9_]*", t) and t != "round"]

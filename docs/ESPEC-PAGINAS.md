@@ -4,14 +4,19 @@
 
 *Edited 14 November 2026, 22:02 UTC, after the first build: the builder found sentences this page asked for and did not supply (the skip link, the labels of the Method page's record), and they are added to the table; the theme switch is dropped, so the pages carry no script at all and the dark palette follows the reader's own system setting, as the holding page does (one thing fewer to break, and nothing a reader needs is lost); the forms `10h40` and «3 de 3» are fixed; a desk file's first line is its name; a source's publisher must have a rights record.*
 
+*Edited 14 November 2026, 22:18 UTC, after the designer's reading of the built pages (`blocos/esq1/LEITURA-DESENHADOR.md`, thirteen findings, all adopted except the palette of the holding page, which was a quick page and not the identity): a computed figure's receipt shows arithmetic a reader can follow, not the expression the script evaluates; a printed figure never breaks between its number and its unit; a link to a receipt looks the same wherever it is; a receipt leads back to the text; the record says when each reading was made.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
-- **Nothing without data.** A block with nothing to show is not printed: no empty table, no "coming soon".
+- **Nothing without data.** A block with nothing to show is not printed: no empty table, no "coming soon", and no rule or space where the block would have been.
 - **The AI line** sits at the top of every page, above the name: the sentence `ia_linha` and the link `ia_ligacao` to `/metodo/`.
 - **Portuguese only** (`lang="pt-PT"`), Acordo Ortográfico, no dashes as punctuation. Dates as «16 de novembro de 2026»; hours in Lisbon time, as `10h40`.
 - **Hidden from search engines** until the funder says otherwise: every page carries `noindex, nofollow`, and there is no sitemap. One setting turns this, and it is his.
 - **Plain pages.** Semantic HTML, one `h1`, a skip link (`saltar`), visible focus. Light and dark palettes follow the reader's system setting. **No script at all:** receipts and the record open with `<details>`.
+- **Figures.** A printed line (`{id}`) never breaks between its number and its unit. Inside tied words, a number stays with the word that follows it. Numerals are lining numerals everywhere, the title included. The figure face (Bitter) is for numeric values in the receipts only; a receipt summary that is a sentence is in the prose face.
+- **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included. Labels are never smaller than 12 px.
+- **The name** has one size on every page at a given width.
 - **The look is the old site's:** its colour tokens, its three typefaces (Spectral for prose and the name, Spectral SC for labels, Bitter for figures), its measure and reading size, its name set in type. Only the styles these five pages use are carried over.
 - **The builder writes no reader's sentence.** Every fixed sentence is in the table at the end of this page and lives in one file, `textos.toml`. Those sentences are judged once by the other family, as a piece is, before the first publication.
 
@@ -35,10 +40,12 @@ In order:
 3. The text. A printed line and tied words are links to their receipt lower on the same page.
 4. **The receipts** (`recibos_titulo`), one per line of the fact sheet, in the order of first use in the text:
    - `valor`: what the reader sees, then what it measures, whom it covers, the period, "provisional" when it is, the source's title and publisher, where in the document, the excerpt, the date read, and a link that opens the source.
-   - `derivado`: what the reader sees, the calculation written out with the values of its inputs, why the inputs may be compared, and links to the receipts of its inputs.
+   - `derivado`: what the reader sees; the calculation as arithmetic a reader can follow (`r_conta`): each input shown as its number in Portuguese form and linked to its own receipt, the signs + − × ÷ and parentheses, then = and the result, then in words how it was rounded (`r_arred_0`, `r_arred_1` or `r_arred_n`), for example «104,7 − 102,3 = 2,4 (arredondado a uma casa decimal)»; and why the inputs may be compared. The expression of `calculo` itself is never printed.
+   - A provisional value is flagged on a line of its own, set as a label, never beside the period.
+   - Every receipt ends with `r_voltar`, a link back to the place in the text where the line is first used.
    - `citacao`: the words, who said them and in what role, when, the source, where, and the link.
    - `ato`: what the document establishes, the excerpt, the source, where, the date, and the link.
-5. **The record** (`registo_titulo`): one row per reading (the seat, the model family, plants caught of plants put in the form `plantas_formato`, real findings, verdict, minutes), then the time from commission to publication, then the piece's fingerprint.
+5. **The record** (`registo_titulo`): one row per reading, in the order they were made (when, as date and hour; the seat; the model family; plants caught of plants put in the form `plantas_formato`; real findings; verdict; minutes). The table fits a phone: it may scroll inside its own box, and the seat's name does not break over more than two lines on a desktop. Then the time from commission to publication, then the piece's fingerprint, which wraps on a narrow screen.
 
 Words tied to several lines link to the receipt of the first; the others are reached in the receipts.
 
@@ -81,6 +88,9 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `r_mede`, `r_populacao`, `r_periodo`, `r_provisorio` | O que mede · A quem se refere · Período · Valor provisório |
 | `r_fonte`, `r_onde`, `r_excerto`, `r_lido`, `r_abrir` | Fonte · Onde está · Excerto · Lido a · Abrir a fonte |
 | `r_conta`, `r_compara` | Conta · Porque se pode comparar |
+| `r_arred_0`, `r_arred_1`, `r_arred_n` | arredondado à unidade · arredondado a uma casa decimal · arredondado a {n} casas decimais |
+| `r_voltar` | Voltar ao texto |
+| `c_quando` | Quando |
 | `r_quem`, `r_quando`, `r_estabelece` | Quem disse · Quando · O que o documento estabelece |
 | `registo_titulo` | O registo desta peça |
 | `registo_intro` | Quem leu esta peça antes de ser publicada e o que encontrou. Os erros plantados são erros postos de propósito no texto entregue a cada leitor, para medir se a leitura os apanha. |

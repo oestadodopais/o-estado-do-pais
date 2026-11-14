@@ -40,7 +40,7 @@ class Textos(unittest.TestCase):
     def test_textos_toml_e_a_tabela_da_especificacao(self):
         esperado = tabela_dos_textos()
         real = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
-        self.assertEqual(len(esperado), 78)
+        self.assertEqual(len(esperado), 83)
         self.assertEqual(real, esperado)
 
 
@@ -136,6 +136,67 @@ class CincoPaginas(unittest.TestCase):
         self.assertIn('<dt>Peças publicadas</dt><dd class="mono">1</dd><dt>Correções</dt><dd class="mono">1</dd>'
                       '<dt>Atualizações</dt><dd class="mono">0</dd><dt>Peças retiradas</dt><dd class="mono">0</dd>', html)
         self.assertIn('<h2>Taxa de erro medida</h2><p>Ainda não houve auditoria.</p>', html)
+
+    def test_a_conta_e_aritmetica_e_nunca_a_expressao(self):
+        html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
+        self.assertIn('<dd class="conta"><a href="#r-indice">104,7</a> \u2212 <a href="#r-indice_anterior">102,3</a>'
+                      '\u00a0= 2,4 (arredondado a uma casa decimal)</dd>', html)
+        self.assertNotIn("round", html)
+        self.assertNotIn("indice - indice_anterior", html)
+
+    def test_a_conta_com_outras_formas(self):
+        from types import SimpleNamespace
+        from oedp import paginas
+
+        ctx = paginas.Contexto(textos=tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8")))
+        peca = SimpleNamespace(linhas={"a": {"valor": "30800"}, "b": {"valor": "39900"}})
+        conta = lambda c, v: paginas._conta(ctx, peca, {"calculo": c, "valor": v})
+        self.assertEqual(conta("round ( a / b * 100 , 0 )", "77"),
+                         '<a href="#r-a">30800</a> \u00f7 <a href="#r-b">39900</a> \u00d7 100\u00a0= 77 (arredondado à unidade)')
+        self.assertEqual(conta("( a + b ) / 2", "35350"),
+                         '(<a href="#r-a">30800</a> + <a href="#r-b">39900</a>) \u00f7 2\u00a0= 35350')
+        self.assertEqual(conta("round ( - a + b , 2 )", "9100.00"),
+                         '\u2212<a href="#r-a">30800</a> + <a href="#r-b">39900</a>\u00a0= 9100,00 (arredondado a 2 casas decimais)')
+
+    def test_uma_linha_impressa_nao_parte(self):
+        html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
+        self.assertIn('>1,2\u00a0milhões\u00a0de\u00a0euros</a>', html)
+        self.assertIn('>um\u00a0terço</a>', html)
+        self.assertIn("segunda-feira, 16\u00a0de novembro</a>", html)
+        self.assertIn("16\u00a0de fevereiro de 2027</a>", html)
+
+    def test_o_sinal_de_provisorio_e_o_regresso_ao_texto(self):
+        html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
+        self.assertIn('<summary><span class="figura">104,7\u00a0pontos</span></summary><p class="sinal">Valor provisório</p><dl>', html)
+        self.assertNotIn('class="provisorio"', html)
+        self.assertIn('<summary><span>O despacho de ensaio foi assinado pela ministra de ensaio.</span></summary>', html)
+        recibos = re.findall(r'<details class="recibo" id="r-([a-z_]+)">.*?</details>', html, re.S)
+        self.assertEqual(len(recibos), 8)
+        for lid in recibos:
+            self.assertIn(f'<p class="voltar"><a href="#u-{lid}">Voltar ao texto</a></p></details>', html)
+        self.assertIn('<h1 class="peca-titulo">Peça de ensaio com números inventados: o índice de ensaio subiu para '
+                      '<a class="ref" href="#r-indice" id="u-indice">', html)
+
+    def test_o_registo_diz_quando_e_segue_a_ordem(self):
+        html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
+        self.assertIn('<thead><tr><th scope="col">Quando</th><th scope="col">Leitura</th>', html)
+        quando = re.findall(r'<td class="quando">([^<]+)<br>([^<]+)</td>', html)
+        self.assertEqual([h for _, h in quando], ["9h05", "10h10", "10h25", "11h06", "11h12"])
+        self.assertEqual(quando[0][0], "16 de novembro de 2026")
+
+    def test_a_folha_de_estilo_cumpre_as_regras_do_desenho(self):
+        css = (REPO / "public" / "estilo.css").read_text(encoding="utf-8")
+        tamanhos = [float(x) for x in re.findall(r"font-size:\s*(?:clamp\()?\s*([0-9.]+)px", css)]
+        self.assertTrue(tamanhos)
+        self.assertGreaterEqual(min(tamanhos), 12)
+        self.assertNotIn("oldstyle-nums", css)
+        self.assertIn("lining-nums proportional-nums", css)
+        self.assertNotRegex(css, r"text-decoration(?:-line)?:\s*none")
+        self.assertIn("a.ref, a.ligada { text-decoration-line: underline; text-decoration-style: dotted;", css)
+        self.assertEqual(len(re.findall(r"\.wordmark\s*\{[^}]*font-size", css)), 1)
+        self.assertNotIn("masthead-compact", css)
+        self.assertIn("main > .dia-bloco:first-child { border-top: 0; padding-top: 0; }", css)
+        self.assertIn('<main id="conteudo">\n<section class="dia-bloco">', self.ler("index.html"))
 
     def test_manifesto_lista_cada_ficheiro(self):
         man = json.loads(self.ler("manifesto.json"))["ficheiros"]
