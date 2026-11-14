@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-13T11:50:41+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "CF-P1",
+   "ficheiro": "studies-src/a-casa-em-portugal-e-na-europa/pt.html",
+   "descricao": "o resumo do estudo da habitação diz «a segunda maior subida dos vinte e sete»; no tipsho60 a subida de Portugal de 2015 a 2025 é a maior, e a folha decidida escreve «a maior subida»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fdcbbc7024c25d8429a11e016a1f49d5290d2ca6d9f73fdb6c419e00c45067c7",
+   "sha256_depois": "4732593787fce370620e3f692ccd6fad447517492039e1945f4bb232e2128199",
+   "contexto_antes": "eis Estados-membros com dados trimestrais. Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat subiu 60,8 % de 2015 a 2025 em Portugal, a maior subida dos vinte e sete, e 6,8 % na União. O preço mediano de uma casa vendida em Portugal foi de 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3",
+   "contexto_depois": "eis Estados-membros com dados trimestrais. Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat subiu 60,8 % de 2015 a 2025 em Portugal, a segunda maior subida dos vinte e sete, e 6,8 % na União. O preço mediano de uma casa vendida em Portugal foi de 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3"
+  },
+  {
+   "id": "CF-P2",
+   "ficheiro": "studies-src/orcamento-2027-o-que-muda-e-para-quem/en.html",
+   "descricao": "a edição inglesa do Orçamento diz que o IRS sobe 4.3 %; o Quadro 4.4 do relatório e a folha decidida dizem 3.4",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7acc219df4696a93d751ce12b1253d18a775728cdf2e05131de347f34b49db76",
+   "sha256_depois": "88b64f62a8bd820ce87d7ecaf2be0e0c1b4c09adf0acdff366d7bcd1552bd973",
+   "contexto_antes": " for 2027 (table 4.4), corporate income tax is the only tax that falls against the 2026 estimate, from 9,704 to 9,605 million euros, 1.0 %; personal income tax rises from 19,706 to 20,385 million, 3.4 %, and every other tax line in the table rises. The table compares 2027 with 2026: it shows the fall the sentence announces for next year and does not show the pa",
+   "contexto_depois": " for 2027 (table 4.4), corporate income tax is the only tax that falls against the 2026 estimate, from 9,704 to 9,605 million euros, 1.0 %; personal income tax rises from 19,706 to 20,385 million, 4.3 %, and every other tax line in the table rises. The table compares 2027 with 2026: it shows the fall the sentence announces for next year and does not show the pa"
+  },
+  {
+   "id": "CF-P3",
+   "ficheiro": "src/data/leituras.mjs",
+   "descricao": "o cartão inglês da habitação perde «on average»; a linha é a idade média estimada de saída de casa dos pais, e a folha decidida escreve «on average»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "930363256b7eb56f3b102530c5c381c615fe7252a461d47e84030ffbc4396b7b",
+   "sha256_depois": "639d3e921b0e59d1aa32f141e9a4dfd1b6e84a0c8df0ad079c4cf1e70051bab5",
+   "contexto_antes": "ao-inquilinos-mercado-2025\",\n                      \"sufixo\": \" %\"\n                },\n                \" of whom are overburdened; the young leave their parents' home, on average, at \",\n                {\n                      \"claim\": \"hab-yth-demo-030-a-avg-t-pt-2025\"\n                },\n                \" years.\"\n          ]\n    },\n    \"orig",
+   "contexto_depois": "ao-inquilinos-mercado-2025\",\n                      \"sufixo\": \" %\"\n                },\n                \" of whom are overburdened; the young leave their parents' home at \",\n                {\n                      \"claim\": \"hab-yth-demo-030-a-avg-t-pt-2025\"\n                },\n                \" years.\"\n          ]\n    },\n    \"orig"
+  },
+  {
+   "id": "CF-P4",
+   "ficheiro": "src/data/correcoes.mjs",
+   "descricao": "a entrada do registo das correções da habitação diz as operações de crédito «de setembro»; as linhas relidas do Banco de Portugal são de agosto, e o mandato escreve «de agosto»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "32b8492cc9aaf280bee3a2a6e5c376a9c2a556221a84ea13adf8b7b65b40025c",
+   "sha256_depois": "b45635e328cba5db5759aa7c0baff3fabcd3e4c67fba4a41bead4faae0f7ed9a",
+   "contexto_antes": "udo usa: o índice real dos preços das casas, a sobrecarga do custo da habitação na União Europeia, por regime de ocupação e nos jovens, e as novas operações de crédito à habitação de agosto. O Eurostat mudou também a base do rácio entre os preços e o rendimento e publicou mais um ano; o estudo passou a dizer a subida desse rácio entre dois anos, e",
+   "contexto_depois": "udo usa: o índice real dos preços das casas, a sobrecarga do custo da habitação na União Europeia, por regime de ocupação e nos jovens, e as novas operações de crédito à habitação de setembro. O Eurostat mudou também a base do rácio entre os preços e o rendimento e publicou mais um ano; o estudo passou a dizer a subida desse rácio entre dois anos, e"
+  },
+  {
+   "id": "CF-P5",
+   "ficheiro": "src/i18n/unidades.mjs",
+   "descricao": "a unidade nova do rácio traduzida com a base antiga («índice 2015=100»); a unidade da fonte é «index 2025=100»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4840d359c92dd11d3138b1ef8b1334d788b81219550f1080fea8839914e495bc",
+   "sha256_depois": "b477d1abda02801145297d2d5fc17240345eb376648c1e8a57b47c8ecaa72eb5",
+   "contexto_antes": "100\",\n  \"Price-to-income ratio, index 2015=100\": \"rácio preço-rendimento, índice 2015=100\",\n  \"Price-to-income ratio, index 2025=100\": \"rácio preço-rendimento, índice 2025=100\",\n  \"Quarterly index, 2015=100\": \"índice trimestral, 2015=100\",\n  \"Number\": \"número\",\n  \"Thousand\": \"milhares\",\n  \"Price-to-income ratio relative to long-term ",
+   "contexto_depois": "100\",\n  \"Price-to-income ratio, index 2015=100\": \"rácio preço-rendimento, índice 2015=100\",\n  \"Price-to-income ratio, index 2025=100\": \"rácio preço-rendimento, índice 2015=100\",\n  \"Quarterly index, 2015=100\": \"índice trimestral, 2015=100\",\n  \"Number\": \"número\",\n  \"Thousand\": \"milhares\",\n  \"Price-to-income ratio relative to long-term "
+  }
+ ]
+}

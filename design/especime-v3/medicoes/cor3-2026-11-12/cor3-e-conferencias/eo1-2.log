@@ -1,0 +1,20 @@
+B1 estudos/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+EO1-b maquinaria: PASS; 38 plantas recusadas.
+EO1: 268 localizadores, nomes e períodos conferidos em todas as linhas, com alterações rejeitadas.
+EO1 pt: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1 en: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1: PASS 114 unidades do HTML, provas e três plantas por edição.
+
+  língua ✓ 88 unidade(s) do livro-razão (86 das linhas, 14 das séries): 87 traduzida(s), 1 em português com razão escrita («factor») · 3512 localizador(es), todos dentro de documento português · 245 título(s) de documento com língua declarada (181 pt, 63 en) · 954 rótulo(s) da fonte com língua declarada (566 pt, 388 en) · 68 organismo(s) com língua declarada (64 pt, 3 en) · 145 edição(ões) com língua declarada (28 pt, 0 en, 117 sem língua)
+        9864 página(s) lidas · unidades em «en»: 10582 (10580 traduzidas, 2 em português, todas com marca) · títulos com marca de língua: 7875 de 15745 rendidos · rótulos da fonte com marca de língua: 8620 de 18270 rendidos · organismos rendidos: 21944 (10940 de língua contrária: 10065 em «en» e 875 em «pt», 10940 com a marca certa) · edições rendidas: 11633 (3860 de língua contrária: 3860 em «en» e 0 em «pt», 3860 com a marca certa, 3907 sem língua nenhuma e sem marca) · localizadores em «en»: 3275 com marca · leis em «en»: 1102 com marca, 13 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 16 à vista e 0 no oculto, todos com marca · rótulo de IA: 19728 linha(s) na língua da página · atributos repetidos: nenhum
+        13 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.
+
+EO1-b: positivo real e cinco plantas de nome, língua, edição, campo e declaração; todas recusadas e controlo reposto.
+EO1-d recibos: 58 conferidos; 8 plantas de estado recusadas; controlo código 0.
+der-oe2027-medidas-anteriores-receita: 7 parcelas conferidas nas duas definições.
+der-oe2027-medidas-anteriores-despesa: 3 parcelas conferidas nas duas definições.
+der-oe2027-medidas-anteriores-saldo: 10 parcelas conferidas nas duas definições.
+EO1-e definições: controlo sem planta, anos e escalões válidos, restantes algarismos livres recusados.

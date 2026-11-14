@@ -1,0 +1,20 @@
+PLANTA linha retirada no JSON do conjunto: RP4N-e: uma linha retirada chegou a uma página: avisos-pt2030-abertos
+PLANTA separador final solto (pt): RP4N-f: o caminho termina num separador sem destino
+PLANTA separador final solto (en): RP4N-f: o caminho termina num separador sem destino
+PLANTA excerto alheio acrescentado pela segunda fonte (pt): K17 · recibo · pt · custo-do-stock-da-divida-direta-2025: as origens visíveis não são a lista explícita da família
+PLANTA excerto alheio acrescentado pela segunda fonte (en): K17 · recibo · en · custo-do-stock-da-divida-direta-2025: as origens visíveis não são a lista explícita da família
+PLANTA ausência omitida em meta[name="description"] (pt): HIG-5: meta[name="description"] omite a oração dos campos da proveniência por confirmar (pt)
+PLANTA ausência omitida em meta[property="og:description"] (pt): HIG-5: meta[property="og:description"] omite a oração dos campos da proveniência por confirmar (pt)
+PLANTA marcador nos metadados name="description" (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marcador nos metadados property="og:description" (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA legenda indistinta rp4n-mapa-ministerios (pt): K17 · recibo · pt · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios
+PLANTA legenda indistinta rp4n-total-ministerios (pt): K17 · recibo · pt · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios
+PLANTA legenda indistinta rp4n-consolidada-ministerios (pt): K17 · recibo · pt · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios
+PLANTA ausência omitida em meta[name="description"] (en): HIG-5: meta[name="description"] omite a oração dos campos da proveniência por confirmar (en)
+PLANTA ausência omitida em meta[property="og:description"] (en): HIG-5: meta[property="og:description"] omite a oração dos campos da proveniência por confirmar (en)
+PLANTA marcador nos metadados name="description" (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marcador nos metadados property="og:description" (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA legenda indistinta rp4n-mapa-ministerios (en): K17 · recibo · en · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios
+PLANTA legenda indistinta rp4n-total-ministerios (en): K17 · recibo · en · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios
+PLANTA legenda indistinta rp4n-consolidada-ministerios (en): K17 · recibo · en · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios
+RP4N-e: PASS, 70 plantas e auditoria íntegra

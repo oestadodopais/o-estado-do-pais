@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T10:53:27+00:00",
+ "copia": "<pasta da corrida>/pacote",
+ "plantas": [
+  {
+   "id": "CC-P1",
+   "ficheiro": "src/lib/lugar-da-incorporacao.mjs",
+   "descricao": "a guarda do país da célula deixa de comparar o país com o lugar da linha; a adenda E manda recusar uma célula cujo país não é o do lugar, haja ou não declaração",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f95f66a507ef7c8147e85e5949c775df5082995d4a524245c9d2ee8f096c737c",
+   "sha256_depois": "2472cd41ee03f48acdbdfeda3f1089dc9fad16c277f23828f983028282768834",
+   "contexto_antes": "= url.searchParams.getAll('geo');\n      const nome = geo === 'EU27_2020' ? (lang === 'pt' ? 'União Europeia' : 'European Union') : nomeDoPais(geo, lang);\n      if (localizada !== geo || (geos.length && !geos.includes(geo)) || lugar.nome !== nome)\n        throw Error(`ER1 lugar: a coordenada de ${c.id} diverge do lugar, do localizador ou do pedido.`);\n    }\n  }\n  return lugar;\n}\n\n/** @param {any} c @para",
+   "contexto_depois": "= url.searchParams.getAll('geo');\n      const nome = geo === 'EU27_2020' ? (lang === 'pt' ? 'União Europeia' : 'European Union') : nomeDoPais(geo, lang);\n      if (localizada !== geo || (geos.length && !geos.includes(geo)))\n        throw Error(`ER1 lugar: a coordenada de ${c.id} diverge do lugar, do localizador ou do pedido.`);\n    }\n  }\n  return lugar;\n}\n\n/** @param {any} c @para"
+  },
+  {
+   "id": "CC-P2",
+   "ficheiro": "tests/leituras/frases-reais.mjs",
+   "descricao": "a contagem fixada das entradas saltadas da VOZ-2B passa a 76; são 70 retiradas e 5 substituídas, 75",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "074df7809c92528da58960be3d7aba4d0c726666090d21357956383b01e83e27",
+   "sha256_depois": "3031caf27018be97045841096546713fa371f14932826d2b4e234f3d6b4bb072",
+   "contexto_antes": "lB.numeros.length, 0);\n// As 42 entradas da água passaram para a COR-AGUA; as restantes ficam na VOZ-2B.\nassert.equal(provas.atualB.quantificadores.length, 6);\nassert.equal(provas.atualB.saltadas.length, 75);\nassert.equal(provas.corAgua.saltadas.length, 126);\nassert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas não retiradas da VOZ-2B têm de estar nas p",
+   "contexto_depois": "lB.numeros.length, 0);\n// As 42 entradas da água passaram para a COR-AGUA; as restantes ficam na VOZ-2B.\nassert.equal(provas.atualB.quantificadores.length, 6);\nassert.equal(provas.atualB.saltadas.length, 76);\nassert.equal(provas.corAgua.saltadas.length, 126);\nassert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas não retiradas da VOZ-2B têm de estar nas p"
+  },
+  {
+   "id": "CC-P3",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "o excerto da origem nova diz o rendimento «per household»; a descrição selada do Eurostat diz «per head of population»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "76a8405f2b926451fd226ca4c2aa2ee84bb1a97e403ea482ea540cb2541c45aa",
+   "sha256_depois": "e68940655582e2ce4b3332c57feeed7e12dedb5e7300b4fa91c053373acb2d58",
+   "contexto_antes": "U&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015\",\n    \"lido\": \"2026-10-19\",\n    \"excerto\": \"House prices are provided by Eurostat, and income is calculated as adjusted household gross disposable income (B7G) per head of population based on Eurostat data.\",\n    \"selo\": {\n      \"motor\": \"content/23 Habitacao/source/eurostat/tipsho60.json\",\n      \"campo\": \"extension.description\",\n      \"hora\": \"2026-10-19T13:38:53Z\"",
+   "contexto_depois": "U&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015\",\n    \"lido\": \"2026-10-19\",\n    \"excerto\": \"House prices are provided by Eurostat, and income is calculated as adjusted household gross disposable income (B7G) per household based on Eurostat data.\",\n    \"selo\": {\n      \"motor\": \"content/23 Habitacao/source/eurostat/tipsho60.json\",\n      \"campo\": \"extension.description\",\n      \"hora\": \"2026-10-19T13:38:53Z\""
+  },
+  {
+   "id": "CC-P4",
+   "ficheiro": "scripts/hb1-familias.py",
+   "descricao": "o gerador volta a dar às linhas de índice de ano base a origem com a descrição inteira, que traz a frase da média de longo prazo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "402c74fd0a4bda65d101c5e4e39c3b995e92923ec838d5a4bf3d10e417f0b8de",
+   "sha256_depois": "91ababb10a3c85a90fb9eadc0a0ea3be63c2e73954a5d8407c9c15c6ac906041",
+   "contexto_antes": " average',['is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio','If the ratio equals 100']),\n ('tipsho60',None,'hb1c-eurostat-preco-rendimento-rendimento','O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem','The ratio of hous",
+   "contexto_depois": " average',['is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio','If the ratio equals 100']),\n ('tipsho60',None,'hb1c-eurostat-preco-rendimento','O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem','The ratio of hous"
+  },
+  {
+   "id": "CC-P5",
+   "ficheiro": "scripts/nomes-eo1-do-portao.mjs",
+   "descricao": "uma das duas linhas conservadas do Orçamento deixa de entregar a sua prova selada ao portão",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ba3a482e7972814aa4c2d895099b157779a8479f6fce6608ce4b68245f5c0ace",
+   "sha256_depois": "6d3214d9b001244e19554cb5bfe0d11d36a7a5577bb45ff88f1e5308022658af",
+   "contexto_antes": "* As linhas conservadas entregam a prova selada explicitamente ao portão. */\nexport function provasDosNomesEo1(rows) {\n  const conservadas = Object.fromEntries(['utao-salarios-irs', 'der-salarios-publicos-retorno-pct']\n    .map(id => [id, linhaEo1Conservada(id)]).filter(([, row]) => row));\n  return {...conservadas, ...rows};\n}\n",
+   "contexto_depois": "* As linhas conservadas entregam a prova selada explicitamente ao portão. */\nexport function provasDosNomesEo1(rows) {\n  const conservadas = Object.fromEntries(['utao-salarios-irs']\n    .map(id => [id, linhaEo1Conservada(id)]).filter(([, row]) => row));\n  return {...conservadas, ...rows};\n}\n"
+  }
+ ]
+}

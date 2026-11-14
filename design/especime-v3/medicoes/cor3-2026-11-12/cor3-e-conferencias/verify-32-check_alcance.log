@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 check:alcance
+> node tests/dominio/alcance.mjs
+
+  0 porta(s) · 1 página(s) nova(s) · 619 linhas citadas · 309 das 348 da §1.90
+  1 porta(s) · 980 página(s) nova(s) · 3877 linhas citadas · 348 das 348 da §1.90
+  2 porta(s) · 5913 página(s) nova(s) · 4194 linhas citadas · 348 das 348 da §1.90
+  3 porta(s) · 8889 página(s) nova(s) · 4194 linhas citadas · 348 das 348 da §1.90
+
+  as 348 linhas da §1.90 alcançam-se a partir de /lugares/ em 3 porta(s)
+

@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 check:projecao-portoes
+> node tests/hb1/projecao-portoes.mjs
+
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Html, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-2025-ue: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025: valor recusado, releitura aceite.
+PAI1-C: conferirProjecaoHb1Cadeia, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue: valor recusado, releitura aceite.
+PAI1-C: dois controlos e dezasseis plantas nos leitores reais, código 0.

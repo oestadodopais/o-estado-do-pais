@@ -1,0 +1,10 @@
+
+> o-estado-do-pais@0.1.0 check:fontes
+> node tests/linha/sem-resposta.mjs
+
+REC1 fontes: 11 plantas de mapa e meta recusadas nos dois modos.
+  8388 página(s) de linha lidas em <worktree>/dist, nas duas edições (4194 linha(s) × 2).
+  6 linha(s) devem mostrar o estado da fonte · 4188 não devem · 6 de proveniência incompleta, fora do mapa e com noindex.
+  endereços em falha: 2 · anfitriões em falha: 1
+
+FONTES: PASS — 25164 conferências (o estado e a sua ausência em cada página das duas edições, e o mapa do sítio)

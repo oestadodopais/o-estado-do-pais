@@ -1,0 +1,12 @@
+COR3-E: motor sem alterações de código; cabeça conferida do sítio 93b4412d7.
+Build final: código 0; carimbo do dist igual à cabeça; primeiro build também a zero.
+Lista inteira às 10:50 UTC: 37/71 passos concluídos; vermelhos: nenhum entre os concluídos; em curso: 38-check_frases-afirmacao; 34 sem código final.
+Incorporação: sim, a guarda ficou mais fraca ao devolver o lugar declarado antes de conferir a célula; reposta a comparação do país com o lugar, o localizador e o pedido, com e sem declaração; conferir.mjs a zero.
+EO1: o recurso implícito às provas conservadas aceitava nomes sem provas fornecidas; utao-salarios-irs e der-salarios-publicos-retorno-pct recebem agora as provas seladas explicitamente; ausência recusada; check:eo1 a zero.
+Definição: 11 entradas (4 da base 2015 e 7 da base 2025) com apoios renovados; régua pela unidade, três trocas recusadas e seis recibos HTML conferidos nas duas línguas.
+Gerador HB1: corrigida a origem do índice de ano base para não voltar a introduzir a descrição da média de longo prazo; a origem desta última conserva-se.
+VOZ-2B: V007/V119 por habitação C19, V116 por habitação C12 e V106/V304 por Orçamento C11; 75 saltadas = 70 + 5; 6 quantificadores = 9 - 3; quatro sucessoras provadas e quatro alterações recusadas; check:frases-reais a zero.
+Composto COR3: 160/160 trechos conformes nos dois lados, quatro plantas detetadas; folhas decididas e mandatos sem alterações.
+Cinco commits de correção: 3596694f0, 4c0ad1751, fbe182856, b57f6ff8b e 93b4412d7; relatório e registos por comitar para conservar a cabeça durante a lista.
+Incompleto no fecho do orçamento: a primeira construção antecipada consumiu 980 s e obrigou à repetição; interrupção recusada pela sandbox (operation not permitted); lista ainda no escrivão, saída em <temporario>/cor3-e/verify-limpo/passos.
+Custo até ao relatório: 102 chamadas de ferramentas; 2 builds, 16 corridas dirigidas, 1 lista inteira iniciada; 1 pedido da lista recusado antes de correr qualquer passo.

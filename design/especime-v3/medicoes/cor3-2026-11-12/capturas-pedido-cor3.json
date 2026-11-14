@@ -1,0 +1,55 @@
+{
+ "cabeca": "93b4412d7db8a1df2b54b067878a3fd51bcbfb5a",
+ "paginas": [
+  {
+   "nome": "estudos",
+   "pt": "/estudos/",
+   "en": "/en/studies/"
+  },
+  {
+   "nome": "estudo-orcamento",
+   "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+   "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/"
+  },
+  {
+   "nome": "estudo-reforma",
+   "pt": "/estudos/penalizacoes-por-reforma-antecipada-2026/",
+   "en": "/en/studies/penalizacoes-por-reforma-antecipada-2026/"
+  },
+  {
+   "nome": "estudo-habitacao",
+   "pt": "/estudos/a-casa-em-portugal-e-na-europa/",
+   "en": "/en/studies/a-casa-em-portugal-e-na-europa/"
+  },
+  {
+   "nome": "dossie-orcamento",
+   "pt": "/dossies/orcamento-2027/",
+   "en": "/en/dossiers/orcamento-2027/"
+  },
+  {
+   "nome": "recibo-sobrecarga-ue",
+   "pt": "/livro-razao/sobrecarga-do-custo-da-habitacao-2025-ue/",
+   "en": "/en/ledger/sobrecarga-do-custo-da-habitacao-2025-ue/"
+  },
+  {
+   "nome": "recibo-inquilinos-ue",
+   "pt": "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue/",
+   "en": "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue/"
+  },
+  {
+   "nome": "inicio",
+   "pt": "/",
+   "en": "/en/"
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/"
+  },
+  {
+   "nome": "habitacao",
+   "pt": "/habitacao/",
+   "en": "/en/housing/"
+  }
+ ]
+}

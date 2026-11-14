@@ -1,0 +1,15 @@
+
+> o-estado-do-pais@0.1.0 check:frases-reais
+> node tests/leituras/frases-reais.mjs
+
+COR3 VOZ-2B: 5 entradas substituídas; 4 parágrafos sucessores provados; 4 alterações recusadas.
+VOZ-2A atual: {"saltadas":101,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+VOZ-2B atual: {"saltadas":75,"voz":0,"numeros":0,"quantificadores":6,"presenca":0,"semPar":0,"semEntrada":0}
+COR-AGUA: {"saltadas":126,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+COR-AGUA PRR: {"saltadas":8,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+COR-AGUA D: {"saltadas":13,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+COR-AGUA G: {"saltadas":7,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+COR-AGUA I: {"saltadas":3,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+COR-AGUA J: {"saltadas":3,"voz":0,"numeros":0,"quantificadores":0,"presenca":0,"semPar":0,"semEntrada":0}
+VOZ-2A inicial: {"saltadas":88,"voz":4,"numeros":0,"quantificadores":3,"presenca":68,"semPar":0,"semEntrada":7}
+pré-G: 4 entradas sem campo; 3 entradas novas, 3 frases distintas

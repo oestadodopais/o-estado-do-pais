@@ -1,0 +1,17 @@
+
+> o-estado-do-pais@0.1.0 check:mapa
+> node scripts/check-mapa.mjs
+
+
+  ✓ R1 · os resumos de mapa/ batem com o manifesto
+  ✓ R2 · a junção: 308 concelhos, uma vez cada, com os slugs da Carta
+  ✓ R3 · cada página de distrito com tantas ligações quantos concelhos
+  ✓ R4 · a página dos lugares com 29 ligações de área, e mais nenhuma página com elas
+  ✓ R5 · nenhuma ligação debaixo de role="img"
+  ✓ R6 · a atribuição da DGT onde o mapa está
+  ✓ R7 · a colação portuguesa nos artefactos e nas listas construídas
+  ✓ R8 · os 29 ficheiros do segundo nível são os artefactos
+  ✓ R9 · as páginas que o mapa promete estão todas construídas
+
+  mapa · 30 ficheiros conferidos · 29 unidades · 308 concelhos, uma vez cada · 680 páginas prometidas e construídas (58 de unidade e 616 de concelho, nas duas edições)
+

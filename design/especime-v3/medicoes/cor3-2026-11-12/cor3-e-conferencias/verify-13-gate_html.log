@@ -1,0 +1,20 @@
+    prova · 95 chaves reconferidas pelo portão · 80 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 385296 ligações internas (0 relativas, 21486 âncoras) · 88 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 5716 cartões de partilha (31936 valores recalculados, 5716 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json
+
+
+> o-estado-do-pais@0.1.0 check:nd1
+> node tests/linha/ausencia-nd1.mjs
+
+{"depois":0,"paginas":9882,"recibos":24,"plantas":[{"planta":"titulo","codigo":1},{"planta":"unidade","codigo":1},{"planta":"frase","codigo":1},{"planta":"marca","codigo":1},{"planta":"fonte-na-calculada-pt","codigo":1},{"planta":"fonte-na-calculada-en","codigo":1}]}
+EVA pt: ordem completa, 29 quadros em caixas próprias, adagas e abertura contínua; parágrafo retirado recusado.
+EVA en: ordem completa, 29 quadros em caixas próprias, adagas e abertura contínua; parágrafo retirado recusado.
+EVA execução: comparação entre totais provada; unidade, fonte, período, endereço, identidade, valor, documento, página, resumo, receita corrente e ordem trocados recusados.
+Fonte anterior no HTML: 2 recibos, pt/evora-execucao-da-receita-2021, en/evora-execucao-da-receita-2021.
+EVA reconferências: 18 plantas recusadas; frases originais e limite da correção conferidos; 5272 recibos construídos conferidos.
+EVB pt: manchete, nome, pergunta, ordem, listas, 33 quadros, cinco veredictos, adaga, rodapé e títulos; abertura retirada recusada.
+EVB en: manchete, nome, pergunta, ordem, listas, 33 quadros, cinco veredictos, adaga, rodapé e títulos; abertura retirada recusada.
+EVB leitura pt: C005 na linha 49, um ano por referência, sem números de linha nem troca de palavras.
+EVB leitura en: C005 na linha 49, um ano por referência, sem números de linha nem troca de palavras.
+EVL definições: ano trocado e medição disfarçada de ano recusados.
+EVL leitura pt: C004 na linha 48; duas medidas e primeiras frases inteiras conferidas.
+EVL leitura en: C004 na linha 48; duas medidas e primeiras frases inteiras conferidas.
+EVL: 8 plantas de palavra, número, ano e frase incompleta recusadas.

@@ -1,0 +1,113 @@
+{
+ "bloco": "COR3 (as correções julgadas de três estudos publicados: o Orçamento de 2027, a reforma antecipada, a habitação)",
+ "data": "2026-11-13",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "o mandato do motor (as fontes, as três folhas instaladas, a prova de igualdade)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T21:34:06Z",
+   "fim": "2026-11-12T22:04:41Z",
+   "pontos": 6.0,
+   "pontos_antes": 28.0,
+   "pontos_depois": 34.0,
+   "turnos": 80,
+   "fonte": "a linha PONTOS do registo do lançador; o contador é o da conta, e a passagem do RET1 corria neste intervalo"
+  },
+  {
+   "nome": "adenda A do motor (os seis vermelhos do portão inteiro)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-12T22:32:47Z",
+   "fim": "2026-11-12T22:38:45Z",
+   "pontos": 1.0,
+   "pontos_antes": 35.0,
+   "pontos_depois": 36.0,
+   "turnos": 20,
+   "fonte": "a linha PONTOS do registo do lançador; o RET1 corria ao lado"
+  },
+  {
+   "nome": "o mandato do sítio (a travessia, as duas linhas relidas, os cartões, o registo, as listas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T05:18:24Z",
+   "fim": "2026-11-13T07:09:40Z",
+   "pontos": 7.0,
+   "pontos_antes": 45.0,
+   "pontos_depois": 52.0,
+   "turnos": 243,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda A do sítio (a conferência das áreas, as datas da reforma, cinco vermelhos do build)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T07:20:58Z",
+   "fim": "2026-11-13T08:27:03Z",
+   "pontos": 3.0,
+   "pontos_antes": 53.0,
+   "pontos_depois": 56.0,
+   "turnos": 120,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda B (os três vermelhos do portão do motor pelo caminho dos domínios; as frases com afirmação; o localizador)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T08:29:17Z",
+   "fim": "2026-11-13T09:45:29Z",
+   "pontos": 4.0,
+   "pontos_antes": 56.0,
+   "pontos_depois": 60.0,
+   "turnos": 173,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda C (a glosa inglesa da C17; a base da paridade)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T09:46:41Z",
+   "fim": "2026-11-13T10:16:44Z",
+   "pontos": 2.0,
+   "pontos_antes": 60.0,
+   "pontos_depois": 62.0,
+   "turnos": 1,
+   "fonte": "a linha PONTOS do registo do lançador, que conta um só turno e outra sessão no intervalo; o número de turnos não é de fiar"
+  },
+  {
+   "nome": "adenda D (o portão da língua, o build a zero, a lista inteira pelo escrivão)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-13T10:36:03Z",
+   "fim": "2026-11-13T11:45:07Z",
+   "pontos": 2.0,
+   "pontos_antes": 62.0,
+   "pontos_depois": 64.0,
+   "turnos": 108,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda E (a guarda do país de uma célula, a prova dos nomes do Orçamento, as cinco entradas sucedidas, o gerador das famílias)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-14T09:39:15Z",
+   "fim": "2026-11-14T10:51:06Z",
+   "pontos": 2.0,
+   "pontos_antes": 64.0,
+   "pontos_depois": 66.0,
+   "turnos": 103,
+   "fonte": "a linha PONTOS do registo do lançador"
+  }
+ ],
+ "total_pontos_codex": "as linhas PONTOS somam 27 em oito passagens; a primeira (6) correu ao lado do RET1 e o contador é o da conta, pelo que a parte do bloco é menor e fica por separar",
+ "reflexo_dos_gargalos": "Muito acima do alvo. O texto ficou certo à segunda passagem; as outras seis foram por listas e réguas partilhadas, uma de cada vez. Quatro linhas novas na GARGALOS.md, e a decisão de 13.11.2026 de fazer de cada peça um ficheiro de dados que não toca em listas.",
+ "leituras": "Claude Opus 5.5: três folhas de correções montadas a high; a leitura a frio e a leitura curta da adenda E a xhigh, cinco plantas em cinco em cada uma. Codex Astra a xhigh: três juízos das folhas, quinze plantas em quinze.",
+ "claude": "a direção, as decisões de cada correção, os mandatos, os portões do motor numa árvore limpa, a lista inteira por guião e a revisão pelo Fable 5.2",
+ "medida": "41 correções em três estudos; 31 linhas novas do livro, 23 relidas; duas linhas do sítio revistas pela fonte; dois cartões; seis entradas do registo das correções.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-12T21:33:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros."
+}
