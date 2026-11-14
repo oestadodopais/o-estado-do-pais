@@ -1,0 +1,1 @@
+COR3-B: contexto, título e resumo recusados; a prova do título no corpo alojado não correu aqui (sem motor) e corre na máquina da aterragem.

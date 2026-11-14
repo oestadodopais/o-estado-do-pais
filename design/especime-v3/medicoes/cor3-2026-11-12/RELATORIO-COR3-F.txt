@@ -1,0 +1,9 @@
+COR3-F: uma correção dirigida do lugar de direção a uma conferência; nenhuma página, linha ou frase mudou.
+A causa: a corrida `portão` do GitHub na cabeça b44d7f4a2 ficou vermelha só em `npm run check:frases-afirmacao`, em tests/cor3/titulos-frases.mjs, com «o controlo exige o corpo alojado»; as outras partes passaram.
+Porquê só agora: a conferência nasceu neste bloco e o ramo nunca tinha corrido no GitHub; na máquina, com o motor, passou sempre.
+O que mudou: o controlo do corpo fica por correr só na corrida do GitHub, sem RESEARCHHUB_DIR e com o estado «não leu os corpos: RESEARCHHUB_DIR ausente», e di-lo; em qualquer outro caso recusa sem o corpo, como antes.
+As recusas do contexto, do título inventado e do resumo em falta correm em todo o lado, antes do controlo do corpo.
+Provas, com o código de cada uma em cor3-f-conferencias/: máquina com motor 0; máquina sem motor 1 (pela mensagem do corpo); como o GitHub sem motor 0 (a dizer que não correu); como o GitHub com motor 0.
+A cadeia inteira de check:frases-afirmacao, corrida como o GitHub a corre, sem o motor: 0.
+O que não mudou: a aterragem e a lista inteira continuam a correr a conferência na máquina, com o motor.
+Por fazer, fora desta correção: publicar o ramo de um bloco no GitHub na primeira passagem, para a corrida de lá dizer isto antes do fecho (uma linha na GARGALOS).

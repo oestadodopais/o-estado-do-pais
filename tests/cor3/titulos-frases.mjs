@@ -15,10 +15,18 @@ for (const [lingua, contexto] of [['pt', 'pela notícia'], ['en', 'by the news r
 const prova = {...linha, id: linha.id + '#titulo', excerpt: titulo};
 const limpa = conferirCorpos([prova], true);
 assert.equal(limpa.erros.length, 0);
-assert(limpa.limpa && limpa.lidas === 1, 'o controlo exige o corpo alojado');
-const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.'};
-assert(conferirCorpos([inventada], true).erros.some(e => e.includes('excerto ausente do corpo')));
-console.log('COR3-B: título bilingue provado no corpo; contexto, título, resumo e palavras inventadas recusados.');
+// Os corpos alojados vivem no motor, que a corrida do GitHub não tem: só aí, e só sem RESEARCHHUB_DIR, o controlo do corpo
+// fica por correr e di-lo; em qualquer outra máquina continua a exigir o corpo (a aterragem e a lista inteira correm-no).
+const semMotorNoGitHub = process.env.GITHUB_ACTIONS === 'true' && !process.env.RESEARCHHUB_DIR
+  && limpa.estado === 'não leu os corpos: RESEARCHHUB_DIR ausente';
+if (semMotorNoGitHub) {
+  console.log('COR3-B: contexto, título e resumo recusados; a prova do título no corpo alojado não correu aqui (sem motor) e corre na máquina da aterragem.');
+} else {
+  assert(limpa.limpa && limpa.lidas === 1, 'o controlo exige o corpo alojado');
+  const inventada = {...prova, excerpt: titulo + ' Palavras inventadas.'};
+  assert(conferirCorpos([inventada], true).erros.some(e => e.includes('excerto ausente do corpo')));
+  console.log('COR3-B: título bilingue provado no corpo; contexto, título, resumo e palavras inventadas recusados.');
+}
 
 const quadro = loadClaims().get('oe-2027-quadro-a1-1-impacto-saldo');
 for (const [lingua, contexto] of [['pt', 'Quadro'], ['en', 'table']]) {
