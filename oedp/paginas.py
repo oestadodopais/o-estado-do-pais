@@ -140,7 +140,11 @@ def texto_simples(peca: Peca, texto: str) -> str:
     partes, pos = [], 0
     for r in referencias(texto):
         partes.append(texto[pos : r.inicio])
-        partes.append(_impressa(peca, r.ids[0]) if r.forma == "simples" else r.palavras)
+        if r.forma == "simples":
+            numero = peca.linhas[r.ids[0]].get("tipo") in ("valor", "derivado")
+            partes.append(sem_quebra(_impressa(peca, r.ids[0]), numero))
+        else:
+            partes.append(sem_quebra(r.palavras, False))
         pos = r.fim
     partes.append(texto[pos:])
     return "".join(partes)
@@ -525,7 +529,7 @@ def pagina_do_metodo(ctx: Contexto) -> str:
     if lugares:
         ordem = ("numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes")
         linhas = "".join(
-            f'<tr><td>{e(ctx.t("lugar_" + k))}</td><td class="mono">{d["leituras"]}</td>'
+            f'<tr><td class="lugar">{e(ctx.t("lugar_" + k))}</td><td class="mono">{d["leituras"]}</td>'
             f'<td class="mono">{e(ctx.t("plantas_formato", apanhadas=d["apanhadas"], postas=d["postas"]))}</td>'
             f'<td class="mono">{d["adotados"]}</td><td class="mono">{d["falhas"]}</td></tr>'
             for k in ordem if (d := lugares.get(k))

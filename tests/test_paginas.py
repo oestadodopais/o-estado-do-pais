@@ -132,7 +132,7 @@ class CincoPaginas(unittest.TestCase):
         for chave in ("Lugar", "Leituras", "Erros plantados apanhados", "Achados reais adotados", "Falhas apontadas por correções"):
             self.assertIn(f'<th scope="col">{chave}</th>', html)
         # juiz: two readings, 3 of 3 and 2 of 2, one finding adopted, one miss named by the correction's causa
-        self.assertIn('<tr><td>Juiz</td><td class="mono">2</td><td class="mono">5 de 5</td><td class="mono">1</td><td class="mono">1</td></tr>', html)
+        self.assertIn('<tr><td class="lugar">Juiz</td><td class="mono">2</td><td class="mono">5 de 5</td><td class="mono">1</td><td class="mono">1</td></tr>', html)
         self.assertIn('<dt>Peças publicadas</dt><dd class="mono">1</dd><dt>Correções</dt><dd class="mono">1</dd>'
                       '<dt>Atualizações</dt><dd class="mono">0</dd><dt>Peças retiradas</dt><dd class="mono">0</dd>', html)
         self.assertIn('<h2>Taxa de erro medida</h2><p>Ainda não houve auditoria.</p>', html)
@@ -164,6 +164,8 @@ class CincoPaginas(unittest.TestCase):
         self.assertIn('>um\u00a0terço</a>', html)
         self.assertIn("segunda-feira, 16\u00a0de novembro</a>", html)
         self.assertIn("16\u00a0de fevereiro de 2027</a>", html)
+        for nome in ("index.html", "temas/ensaio/index.html"):
+            self.assertIn("subiu para 104,7\u00a0pontos</a>", self.ler(nome))
 
     def test_o_sinal_de_provisorio_e_o_regresso_ao_texto(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")

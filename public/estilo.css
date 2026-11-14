@@ -208,7 +208,7 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
   .recibo dd { margin-bottom: 8px; }
 }
 .registo { margin-top: clamp(32px, 4vw, 48px); border-top: 1.5px solid var(--ink); padding-top: 8px; max-width: 980px; }
-.registo td.lugar { min-width: 10.5em; }
+td.lugar { min-width: 10.5em; }
 .registo td.quando { white-space: nowrap; }
 .registo > summary h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; }
 .registo > p { margin-top: 12px; max-width: var(--measure); }
