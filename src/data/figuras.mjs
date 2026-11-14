@@ -837,6 +837,20 @@ export const ORIGENS_HB1C = {
       "sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6"
     }
   },
+  "hb1c-eurostat-preco-rendimento-rendimento": {
+    "publicador": "Eurostat",
+    "documento": "Standardised house price-to-income ratio - annual data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho60?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+    "lido": "2026-10-19",
+    "excerto": "House prices are provided by Eurostat, and income is calculated as adjusted household gross disposable income (B7G) per head of population based on Eurostat data.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/tipsho60.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:53Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6"
+    }
+  },
   "hb1c-eurostat-saida": {
     "publicador": "Eurostat",
     "documento": "Estimated average age of young persons leaving the parental household",

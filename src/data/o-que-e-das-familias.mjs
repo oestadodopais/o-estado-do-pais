@@ -23889,7 +23889,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i15-pt-2019": {
@@ -23922,7 +23922,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i15-pt-2024": {
@@ -23955,7 +23955,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i15-ro-2024": {
@@ -23988,7 +23988,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
@@ -24832,7 +24832,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i25-eu27_2020-2025": {
@@ -24865,7 +24865,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i25-pt-2015": {
@@ -24898,7 +24898,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i25-pt-2019": {
@@ -24931,7 +24931,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i25-pt-2025": {
@@ -24964,7 +24964,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i25-ro-2015": {
@@ -24997,7 +24997,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-i25-ro-2025": {
@@ -25030,7 +25030,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ]
   },
   "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2025": {
