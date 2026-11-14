@@ -86,7 +86,8 @@ a.ref, a.ligada { text-decoration-line: underline; text-decoration-style: dotted
   display: block;
   margin: 0;
 }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+/* The reading column is centred in the page at every width, as on the holding page. */
+.wrap { max-width: calc(68ch + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
 .saltar { position: absolute; left: -9999px; top: 0; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 10px 16px; z-index: 20; }
 .saltar:focus { left: var(--gutter); top: 10px; }
 
@@ -136,6 +137,7 @@ a.ref, a.ligada { text-decoration-line: underline; text-decoration-style: dotted
   white-space: nowrap;
 }
 .menu a:hover { color: var(--ink); }
+.menu [aria-current='page'] { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--ink); }
 
 main { padding-top: clamp(24px, 3.4vw, 40px); min-height: 40vh; }
 .pagina-titulo { margin-bottom: 18px; }
@@ -177,7 +179,8 @@ main > .dia-bloco:first-child { border-top: 0; padding-top: 0; }
 .texto ul { padding-left: 1.2em; }
 .tabela { overflow-x: auto; margin-top: 1em; }
 table { border-collapse: collapse; font-size: 15px; min-width: 100%; }
-th, td { text-align: left; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th, td { text-align: left; padding: 8px 24px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th:last-child, td:last-child { padding-right: 0; }
 th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); border-bottom-color: var(--rule-strong); }
 .correcoes-da-peca { margin-bottom: 26px; }
 .correcao { border-left: 2px solid var(--ink); padding: 6px 0 10px 14px; margin-bottom: 14px; max-width: var(--measure); }
@@ -209,7 +212,15 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
   .recibo dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .recibo dd { margin-bottom: 8px; }
 }
-.registo { margin-top: clamp(32px, 4vw, 48px); border-top: 1.5px solid var(--ink); padding-top: 8px; max-width: 980px; }
+/* The record's box is wider than the column, and centred on it like the column on the page. */
+.registo {
+  --largura: min(980px, calc(100vw - 2 * var(--gutter)));
+  width: var(--largura);
+  margin-inline: calc((100% - var(--largura)) / 2);
+  margin-top: clamp(32px, 4vw, 48px);
+  border-top: 1.5px solid var(--ink);
+  padding-top: 8px;
+}
 td.lugar { min-width: 10.5em; }
 .registo td.quando { white-space: nowrap; }
 .registo > summary h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; }
@@ -220,9 +231,23 @@ td.lugar { min-width: 10.5em; }
 .equipa, .taxa, .erro, .correcoes-lista { margin-top: clamp(28px, 4vw, 44px); max-width: 68ch; }
 .taxa h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; margin-bottom: 12px; }
 .erro > p { margin-top: 12px; }
-.contagens { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; margin: 18px 0 0; max-width: 28rem; }
+.numeros { margin-top: clamp(28px, 4vw, 44px); }
+.numeros h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; margin-bottom: 12px; }
+.contagens { display: grid; grid-template-columns: auto auto; justify-content: start; gap: 6px 24px; margin: 0; }
 .contagens dt { color: var(--muted); }
 .contagens dd { margin: 0; text-align: right; }
+
+/* On a phone a table is a list: each row a block, each value under its column's label
+   (the label travels with the value in data-rotulo), so no figure starts out of sight. */
+@media (max-width: 599px) {
+  .tabela { overflow-x: visible; }
+  .tabela table, .tabela tbody, .tabela tr, .tabela td { display: block; width: auto; min-width: 0; }
+  .tabela thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .tabela tr { border-bottom: 1px solid var(--rule); padding: 10px 0; }
+  .tabela td { border: 0; padding: 2px 0; }
+  .tabela td::before { content: attr(data-rotulo); display: block; font-family: var(--f-versal); font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); }
+  .registo td.quando { white-space: normal; }
+}
 .correcao-peca { font-size: 18px; }
 
 /* ------------------------------------------------------------ footer */

@@ -125,8 +125,13 @@ def ligacoes_partidas(estatica: Path) -> list[str]:
                 alvo = _alvo(estatica, (p.parent.relative_to(estatica) / caminho).as_posix())
             if alvo is None:
                 erros.append(f"{nome}: the link {href} leads to no built file")
+            elif alvo == p and not ancora:
+                erros.append(f"{nome}: the link {href} leads to the page itself; a page does not link to itself")
             elif ancora and alvo.suffix == ".html" and ancora not in ids.get(alvo, set()):
                 erros.append(f"{nome}: the anchor #{ancora} of {href} is not on that page")
+        for tabela in re.findall(r'<div class="tabela">.*?</div>', p.read_text(encoding="utf-8"), re.S):
+            if re.search(r"<td(?![^>]*\bdata-rotulo=)", tabela):
+                erros.append(f"{nome}: a value of a table carries no data-rotulo, so on a phone it would sit under no label")
     for css in sorted(estatica.rglob("*.css")):
         for url in _URL_CSS.findall(css.read_text(encoding="utf-8")):
             if url.startswith("data:"):

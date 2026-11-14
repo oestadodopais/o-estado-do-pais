@@ -184,6 +184,7 @@ class Resposta:
     tamanho: int
     erro: str = ""
     redirecao: str = ""  # where a 3xx answer points, as curl reads it
+    nota: str = ""  # said to the caller, e.g. that the request was tried again over HTTP/1.1
 
 
 def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str | None = None) -> Resposta:
@@ -202,11 +203,21 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
         porta = partes.port or (443 if partes.scheme == "https" else 80)
         alvo = f"[{endereco}]" if ":" in endereco else endereco
         args += ["--resolve", f"{partes.hostname}:{porta}:{alvo}"]
-    args.append(url)
-    try:
-        r = subprocess.run(args, capture_output=True, text=True, timeout=180)
-    except subprocess.TimeoutExpired:
-        raise ErroDaLoja(f"{url}: curl did not finish in 180 seconds") from None
+    def correr(lista):
+        try:
+            return subprocess.run(lista + [url], capture_output=True, text=True, timeout=180)
+        except subprocess.TimeoutExpired:
+            raise ErroDaLoja(f"{url}: curl did not finish in 180 seconds") from None
+
+    r = correr(args)
+    nota = ""
+    # A failure of transport (not a bad address, not a size limit) is tried once more over
+    # HTTP/1.1: some hosts fail over HTTP/2 ("Invalid HTTP header field was received").
+    if r.returncode not in (0, 1, 3, 6, 47, 63):
+        primeiro = (r.stderr or "").strip() or f"curl exit {r.returncode}"
+        r = correr(args + ["--http1.1"])
+        nota = f"{url}: curl failed ({primeiro}); tried once more with --http1.1, which " + (
+            "succeeded" if r.returncode == 0 else f"failed too (curl exit {r.returncode})")
     try:
         dados = json.loads(r.stdout) if r.stdout.strip() else {}
     except json.JSONDecodeError:
@@ -220,6 +231,7 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
         tamanho=int(dados.get("size_download") or tamanho),
         erro=(r.stderr or str(dados.get("errormsg") or "")).strip(),
         redirecao=str(dados.get("redirect_url") or ""),
+        nota=nota,
     )
 
 
@@ -385,8 +397,19 @@ def _toml_texto(v: str) -> str:
     return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
+MINIMO = 512  # bytes; a smaller answer is usually an error page served with 200
+
+
+def resumo_da_copia(dados: bytes, tipo: str) -> str:
+    try:
+        inicio = (texto_por_pagina(dados) or [""])[0][:100]
+    except Exception as e:  # a copy whose text cannot be read is still described
+        inicio = f"(text not readable: {e})"
+    return f"{len(dados)} bytes, type {tipo or '(none given)'}; its text begins: «{inicio}»"
+
+
 def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, termos: bool = False,
-           resolver=resolver_dns) -> str:
+           resolver=resolver_dns, pequeno: bool = False, avisos: list | None = None) -> str:
     """Fetch, store, and return the table to paste. Raises ErroDaLoja; a refusal stores nothing.
 
     The redirects are followed here (see `seguir`); the rights record of the host
@@ -409,6 +432,8 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
                 direitos_de(host_final)
             temporario.unlink(missing_ok=True)
             r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario)
+            if r.nota and avisos is not None:
+                avisos.append(r.nota)
             if r.saida != 0:
                 raise ErroDaLoja(f"{final} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
             if r.http in REDIRECOES and r.redirecao:
@@ -424,6 +449,11 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
             if not 200 <= r.http <= 299:
                 raise ErroDaLoja(f"refused: {final} answered {r.http}")
             break
+        if len(dados) < MINIMO and not pequeno:
+            raise ErroDaLoja(f"refused: {final} answered 200 with only {resumo_da_copia(dados, r.tipo)}; "
+                             f"nothing stored (give --pequeno if this really is the document)")
+        if avisos is not None:
+            avisos.append("stored: " + resumo_da_copia(dados, r.tipo))
         sha = hashlib.sha256(dados).hexdigest()
         destino = caminho_da_copia(raiz, sha)
         destino.parent.mkdir(parents=True, exist_ok=True)

@@ -170,12 +170,31 @@ def markdown_com_referencias(peca: Peca | None, texto: str, modo: str = "aqui", 
 # --------------------------------------------------------------------------- the frame of every page
 
 
-def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta: str = "") -> str:
+_LIGACAO = re.compile(r'<a ((?:[^>]*? )?)href="([^"#]*)"([^>]*)>(.*?)</a>', re.S)
+
+
+def sem_ligacoes_a_si(html_da_pagina: str, aqui: str | None) -> str:
+    """A page does not link to itself: a link to its own address (without an anchor)
+    becomes plain text, marked as the current page."""
+    if aqui is None:
+        return html_da_pagina
+
+    def troca(m):
+        if m.group(2) != aqui:
+            return m.group(0)
+        return f'<span aria-current="page">{m.group(4)}</span>'
+
+    return _LIGACAO.sub(troca, html_da_pagina)
+
+
+def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta: str = "", aqui: str | None = None) -> str:
+    """The frame of every page; `aqui` is the page's own public address."""
     robots = "" if ctx.lancamento else '<meta name="robots" content="noindex, nofollow">\n'
     nome = e(ctx.t("nome"))
-    # The name links to the front page on every page, and is the one link not underlined.
-    marca = f'<h1 class="wordmark"><a href="/">{nome}</a></h1>' if inicio else f'<p class="wordmark"><a href="/">{nome}</a></p>'
-    return f"""<!doctype html>
+    # The name links to the front page on every other page, the one link not underlined;
+    # on the front page it is not a link.
+    marca = f'<h1 class="wordmark">{nome}</h1>' if inicio else f'<p class="wordmark"><a href="/">{nome}</a></p>'
+    return sem_ligacoes_a_si(f"""<!doctype html>
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
@@ -210,7 +229,7 @@ def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta
 </div>
 </body>
 </html>
-"""
+""", "/" if inicio else aqui)
 
 
 _ENDERECO = "correcoes" + "@" + "oestadodopais.pt"
@@ -244,7 +263,19 @@ def _data_de(texto) -> str:
 
 
 def _bloco_de_correcao(ctx, c, peca=None) -> str:
-    peca_html = f'<p class="correcao-peca"><a href="/pecas/{e(peca.id)}/">{e(texto_simples(peca, peca.cabeca.get("titulo", "")))}</a></p>' if peca else ""
+    """On the piece page (§3.2): the kind, the date, the reason, before, now. On the
+    Corrections page (§5, with `peca`): the date, the kind, the piece, before, now, the reason."""
+    if peca is not None:
+        return (
+            '<div class="correcao">'
+            f'<p class="eyebrow">{e(_data_de(c.get("em")))} · {e(ctx.t("especie_" + str(c.get("especie"))))}</p>'
+            f'<p class="correcao-peca"><a href="/pecas/{e(peca.id)}/">{e(texto_simples(peca, peca.cabeca.get("titulo", "")))}</a></p>'
+            f'<p><span class="rotulo">{e(ctx.t("antes"))}</span> {e(str(c.get("antes", "")))}</p>'
+            f'<p><span class="rotulo">{e(ctx.t("agora"))}</span> {e(str(c.get("depois", "")))}</p>'
+            f'<p>{e(str(c.get("razao", "")))}</p>'
+            "</div>"
+        )
+    peca_html = ""
     return (
         '<div class="correcao">'
         f'<p class="eyebrow">{e(ctx.t("especie_" + str(c.get("especie"))))} · {e(_data_de(c.get("em")))}</p>'
@@ -325,7 +356,7 @@ def _recibo(ctx, peca, lid, usadas=()) -> str:
     l = peca.linhas[lid]
     tipo = l.get("tipo")
     sinal = ""
-    figura = tipo in ("valor", "derivado") and re.search(r"\d", str(l.get("mostra", "")))
+    figura = tipo in ("valor", "derivado")  # every mostra, a mostra_livre one included
     if tipo == "valor":
         resumo = e(sem_quebra(str(l.get("mostra", "")), True))
         if l.get("provisorio"):
@@ -370,6 +401,11 @@ def _recibo(ctx, peca, lid, usadas=()) -> str:
             f'{sinal}<dl>{dl}</dl>{voltar}</details>')
 
 
+def _r(ctx, chave: str) -> str:
+    """The column's label on each value, so that on a phone the value sits under it."""
+    return f' data-rotulo="{e(ctx.t(chave))}"'
+
+
 def _registo(ctx, peca) -> str:
     linhas = []
     # In the order the readings were made: by the time each ended, then as recorded.
@@ -380,13 +416,13 @@ def _registo(ctx, peca) -> str:
         quando = (f'{e(datas.por_extenso(datas.em_lisboa(fim).date()))}<br>{e(datas.hora(fim))}' if fim else "")
         linhas.append(
             "<tr>"
-            f'<td class="quando">{quando}</td>'
-            f'<td class="lugar">{e(ctx.t("lugar_" + str(l.get("lugar"))))}</td>'
-            f'<td>{e(ctx.t("familia_" + str(l.get("familia"))))}</td>'
-            f'<td class="mono">{e(ctx.t("plantas_formato", apanhadas=l.get("plantas_apanhadas"), postas=l.get("plantas_postas")))}</td>'
-            f'<td class="mono">{e(str(l.get("achados")))}</td>'
-            f'<td>{e(ctx.t("v_" + str(l.get("veredicto"))))}</td>'
-            f'<td class="mono">{"" if minutos is None else minutos}</td>'
+            f'<td class="quando"{_r(ctx, "c_quando")}>{quando}</td>'
+            f'<td class="lugar"{_r(ctx, "c_leitura")}>{e(ctx.t("lugar_" + str(l.get("lugar"))))}</td>'
+            f'<td{_r(ctx, "c_familia")}>{e(ctx.t("familia_" + str(l.get("familia"))))}</td>'
+            f'<td class="mono"{_r(ctx, "c_plantas")}>{e(ctx.t("plantas_formato", apanhadas=l.get("plantas_apanhadas"), postas=l.get("plantas_postas")))}</td>'
+            f'<td class="mono"{_r(ctx, "c_achados")}>{e(str(l.get("achados")))}</td>'
+            f'<td{_r(ctx, "c_veredicto")}>{e(ctx.t("v_" + str(l.get("veredicto"))))}</td>'
+            f'<td class="mono"{_r(ctx, "c_minutos")}>{"" if minutos is None else minutos}</td>'
             "</tr>"
         )
     tabela = ""
@@ -420,7 +456,7 @@ def pagina_da_peca(peca: Peca, ctx: Contexto) -> str:
             f'<p>{e(str(est.get("razao", "")))}</p>'
             f"{_registo(ctx, peca)}</article>"
         )
-        return pagina(ctx, f"{titulo_simples} · {ctx.t('nome')}", corpo, meta=meta)
+        return pagina(ctx, f"{titulo_simples} · {ctx.t('nome')}", corpo, meta=meta, aqui=f"/pecas/{peca.id}/")
     publ = publicada_em(peca)
     linha_pub = ""
     if publ:
@@ -447,7 +483,7 @@ def pagina_da_peca(peca: Peca, ctx: Contexto) -> str:
         + _registo(ctx, peca)
         + "</article>"
     )
-    return pagina(ctx, f"{titulo_simples} · {ctx.t('nome')}", corpo, meta=meta)
+    return pagina(ctx, f"{titulo_simples} · {ctx.t('nome')}", corpo, meta=meta, aqui=f"/pecas/{peca.id}/")
 
 
 # --------------------------------------------------------------------------- lists of pieces
@@ -498,7 +534,7 @@ def pagina_do_tema(ctx: Contexto, tema: str) -> str:
         if texto:
             seguir.append(
                 '<div class="seguir">'
-                f"{markdown_com_referencias(p, texto, modo='noutra')}"
+                f"{markdown_com_referencias(p, texto, modo='texto')}"
                 f'<p class="seguir-peca"><a href="/pecas/{e(p.id)}/">{e(texto_simples(p, str(p.cabeca.get("titulo", ""))))}</a></p>'
                 "</div>"
             )
@@ -506,7 +542,7 @@ def pagina_do_tema(ctx: Contexto, tema: str) -> str:
     if seguir:
         corpo += f'<section class="seguir-bloco"><h2>{e(ctx.t("seguir_titulo"))}</h2>{"".join(seguir)}</section>'
     corpo += f'<section class="tema-pecas"><p class="intro">{e(ctx.t("tema_intro"))}</p>{"".join(_item(ctx, p) for p in pecas)}</section>'
-    return pagina(ctx, f"{ctx.mesas[tema]} · {ctx.t('nome')}", corpo)
+    return pagina(ctx, f"{ctx.mesas[tema]} · {ctx.t('nome')}", corpo, aqui=f"/temas/{tema}/")
 
 
 # --------------------------------------------------------------------------- method, corrections, 404
@@ -531,9 +567,9 @@ def pagina_do_metodo(ctx: Contexto) -> str:
     if lugares:
         ordem = ("numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes")
         linhas = "".join(
-            f'<tr><td class="lugar">{e(ctx.t("lugar_" + k))}</td><td class="mono">{d["leituras"]}</td>'
-            f'<td class="mono">{e(ctx.t("plantas_formato", apanhadas=d["apanhadas"], postas=d["postas"]))}</td>'
-            f'<td class="mono">{d["adotados"]}</td><td class="mono">{d["falhas"]}</td></tr>'
+            f'<tr><td class="lugar"{_r(ctx, "e_lugar")}>{e(ctx.t("lugar_" + k))}</td><td class="mono"{_r(ctx, "e_leituras")}>{d["leituras"]}</td>'
+            f'<td class="mono"{_r(ctx, "c_plantas")}>{e(ctx.t("plantas_formato", apanhadas=d["apanhadas"], postas=d["postas"]))}</td>'
+            f'<td class="mono"{_r(ctx, "e_adotados")}>{d["adotados"]}</td><td class="mono"{_r(ctx, "e_falhas")}>{d["falhas"]}</td></tr>'
             for k in ordem if (d := lugares.get(k))
         )
         cab = "".join(f'<th scope="col">{e(ctx.t(k))}</th>' for k in ("e_lugar", "e_leituras", "c_plantas", "e_adotados", "e_falhas"))
@@ -548,10 +584,11 @@ def pagina_do_metodo(ctx: Contexto) -> str:
     corpo = (
         f'<h1 class="pagina-titulo">{e(ctx.t("nav_metodo"))}</h1>'
         f'<div class="texto">{prosa}</div>'
-        f'<section class="equipa"><h2>{e(ctx.t("equipa_titulo"))}</h2>{equipa}<dl class="contagens">{dl}</dl></section>'
-        f'<section class="taxa"><h2>{e(ctx.t("taxa_titulo"))}</h2><p>{e(ctx.t("sem_auditoria"))}</p></section>'
+        f'<section class="numeros"><h2>{e(ctx.t("numeros_titulo"))}</h2><dl class="contagens">{dl}</dl></section>'
+        + (f'<section class="equipa"><h2>{e(ctx.t("equipa_titulo"))}</h2>{equipa}</section>' if equipa else "")
+        + f'<section class="taxa"><h2>{e(ctx.t("taxa_titulo"))}</h2><p>{e(ctx.t("sem_auditoria"))}</p></section>'
     )
-    return pagina(ctx, f"{ctx.t('nav_metodo')} · {ctx.t('nome')}", corpo)
+    return pagina(ctx, f"{ctx.t('nav_metodo')} · {ctx.t('nome')}", corpo, aqui="/metodo/")
 
 
 def pagina_das_correcoes(ctx: Contexto) -> str:
@@ -567,7 +604,7 @@ def pagina_das_correcoes(ctx: Contexto) -> str:
         f'<section class="erro"><h2>{e(ctx.t("erro_titulo"))}</h2><p>{_com_endereco(ctx.t("erro_como"))}</p></section>'
         f'<section class="correcoes-lista">{lista}</section>'
     )
-    return pagina(ctx, f"{ctx.t('nav_correcoes')} · {ctx.t('nome')}", corpo)
+    return pagina(ctx, f"{ctx.t('nav_correcoes')} · {ctx.t('nome')}", corpo, aqui="/correcoes/")
 
 
 def pagina_404(ctx: Contexto) -> str:

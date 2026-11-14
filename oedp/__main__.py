@@ -79,9 +79,15 @@ def cmd_fonte(a) -> int:
         return 2
     pasta = Path(a.direitos) if a.direitos else REPO / "direitos"
     direitos_de = None if a.termos else rights.para_buscar(pasta)
+    avisos: list[str] = []
     try:
-        print(fontes.buscar(a.url, raiz, direitos_de=direitos_de, termos=a.termos), end="")
+        tabela = fontes.buscar(a.url, raiz, direitos_de=direitos_de, termos=a.termos, pequeno=a.pequeno, avisos=avisos)
+        for x in avisos:
+            print(x, file=sys.stderr)
+        print(tabela, end="")
     except fontes.ErroDaLoja as e:
+        for x in avisos:
+            print(x, file=sys.stderr)
         print(str(e), file=sys.stderr)
         return 1
     return 0
@@ -176,11 +182,14 @@ def _conferir_como_publicada(peca, ctx):
     loja = _loja()
     return [conf.check1(peca), conf.check2(peca, loja), conf.check3(peca), conf.check4(peca, pagina),
             conf.check5(peca), conf.check6(peca), conf.check7(peca), conf.check8_peca(peca),
-            conf.check9_peca(peca, pagina, ctx.direitos)]
+            conf.check9_peca(peca, pagina, ctx.direitos, loja)]
 
 
 def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple[bool, list]:
     loja = _loja()
+    # A file named on the command line that is not a piece is read by check 8 only.
+    nomeados = list(alvos)
+    alvos = [c for c in nomeados if not Path(c).is_file() or b"+++ cabeca" in Path(c).read_bytes()]
     pecas = []
     for c in alvos:
         try:
@@ -191,7 +200,7 @@ def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple
     resultados = []
     for c in alvos:
         resultados += conf.conferir_peca(c, ctx, loja)
-    resultados.append(conf.check8_arvore(REPO))
+    resultados.append(conf.check8_arvore(REPO, extras=nomeados))
     vercel = conf.check9_vercel(REPO)
     resultados.append(conf._r(9, "vercel.json", vercel))
     if erros_do_sitio:
@@ -264,6 +273,7 @@ def principal(argv=None) -> int:
     s.add_argument("url")
     s.add_argument("--termos", action="store_true", help="the address is a publisher's terms page; begins a rights record")
     s.add_argument("--direitos", help="the folder of rights records (default: direitos/)")
+    s.add_argument("--pequeno", action="store_true", help="store an answer smaller than 512 bytes")
     s.set_defaults(f=cmd_fonte)
 
     s = sub.add_parser("texto")

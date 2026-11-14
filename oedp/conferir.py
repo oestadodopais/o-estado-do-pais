@@ -427,14 +427,22 @@ def check8_peca(peca: Peca) -> Resultado:
     return _r(8, peca.id, razoes, [r.nota] if r.nota else [])
 
 
-def ficheiros_seguidos(repo: Path) -> list[tuple[str, bytes]]:
-    nomes = subprocess.run(["git", "-C", str(repo), "ls-files", "-z"], check=True, capture_output=True).stdout
+def ficheiros_seguidos(repo: Path, extras=()) -> list[tuple[str, bytes]]:
+    """Tracked files, untracked files that git does not ignore (a new piece or record is
+    read before it is committed), and any file named on the command line."""
+    nomes = set()
+    for args in (["ls-files", "-z"], ["ls-files", "-z", "--others", "--exclude-standard"]):
+        saida = subprocess.run(["git", "-C", str(repo), *args], check=True, capture_output=True).stdout
+        nomes |= {n for n in saida.decode().split("\0") if n}
     lista = []
-    for nome in nomes.decode().split("\0"):
-        if nome:
-            p = Path(repo) / nome
-            if p.is_file():
-                lista.append((nome, p.read_bytes()))
+    for nome in sorted(nomes):
+        p = Path(repo) / nome
+        if p.is_file():
+            lista.append((nome, p.read_bytes()))
+    for extra in extras:
+        p = Path(extra)
+        if p.is_file():
+            lista.append((str(extra), p.read_bytes()))
     return lista
 
 
@@ -467,9 +475,9 @@ def segredo_so_no_passo(texto: str) -> list[str]:
     return erros
 
 
-def check8_arvore(repo: Path, ambiente: dict | None = None) -> Resultado:
+def check8_arvore(repo: Path, ambiente: dict | None = None, extras=()) -> Resultado:
     try:
-        ficheiros = ficheiros_seguidos(repo)
+        ficheiros = ficheiros_seguidos(repo, extras)
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
         return _r(8, "tracked files", [f"git could not list the tracked files ({e})"])
     r = privacidade.conferir(ficheiros, ambiente)
@@ -483,9 +491,16 @@ def check8_arvore(repo: Path, ambiente: dict | None = None) -> Resultado:
 # --------------------------------------------------------------------------- 9
 
 
-def check9_peca(peca: Peca, pagina_ou_erro, registos: dict | None = None) -> Resultado:
+def check9_peca(peca: Peca, pagina_ou_erro, registos: dict | None = None, loja: Path | None = None) -> Resultado:
     razoes = forma.erros(peca, peca.caminho)
     razoes += direitos.erros_da_peca(peca, registos or {})
+    apoio, em_falta = direitos.apoios_da_peca(peca, registos or {}, loja)
+    razoes += apoio
+    if em_falta:
+        if peca.vinculada:
+            razoes += em_falta
+        elif not razoes and not isinstance(pagina_ou_erro, Exception):
+            return Resultado(9, peca.id, NAO_CORRIDO, em_falta, [])
     if isinstance(pagina_ou_erro, Exception):
         razoes.append(f"the piece page does not build: {pagina_ou_erro}")
     return _r(9, peca.id, razoes)
@@ -556,6 +571,6 @@ def conferir_peca(caminho: Path, contexto, loja: Path | None, anterior=None) -> 
         check6(peca),
         check7(peca),
         check8_peca(peca),
-        check9_peca(peca, pagina, contexto.direitos),
+        check9_peca(peca, pagina, contexto.direitos, loja),
     ]
     return reter_se_privado(resultados)

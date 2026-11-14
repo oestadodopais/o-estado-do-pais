@@ -275,6 +275,9 @@ class Item09TextoDoLeitorJulgado(unittest.TestCase):
 # --------------------------------------------------------------------------- 10
 
 
+DOCUMENTO = b"documento de ensaio " * 30  # more than 512 bytes, like a real document
+
+
 class SitioFalso:
     """A site held in memory: url -> (http, body, redirect). Records every request."""
 
@@ -320,7 +323,7 @@ class Item10Redirecoes(unittest.TestCase):
 
     def test_segue_e_guarda_no_fim(self):
         s = self.site({"https://a.invalid/x": (302, b"", "https://fim.invalid/doc"),
-                       "https://fim.invalid/doc": (200, b"documento", "")})
+                       "https://fim.invalid/doc": (200, DOCUMENTO, "")})
         tabela = self.buscar(s, "https://a.invalid/x")
         self.assertIn('url_final = "https://fim.invalid/doc"', tabela)
         self.assertEqual(len(self.guardados()), 1)
@@ -328,11 +331,11 @@ class Item10Redirecoes(unittest.TestCase):
         self.assertEqual(gets, [("GET", "https://fim.invalid/doc", "93.184.216.34")])
 
     def test_sem_head_vai_por_get_com_os_direitos_antes(self):
-        s = self.site({"https://fim.invalid/doc": (200, b"documento", "")})
+        s = self.site({"https://fim.invalid/doc": (200, DOCUMENTO, "")})
         s.sem_head = {"https://fim.invalid/doc"}
         self.assertIn('url_final = "https://fim.invalid/doc"', self.buscar(s, "https://fim.invalid/doc"))
         s = self.site({"https://a.invalid/x": (302, b"", "https://fim.invalid/doc"),
-                       "https://fim.invalid/doc": (200, b"documento", "")})
+                       "https://fim.invalid/doc": (200, DOCUMENTO, "")})
         s.sem_head = {"https://a.invalid/x"}
         with self.assertRaises(fontes.ErroDaLoja) as e:
             self.buscar(s, "https://a.invalid/x")
@@ -362,7 +365,7 @@ class Item10Redirecoes(unittest.TestCase):
     def test_planta_robots_do_segundo_salto(self):
         s = self.site({"https://a.invalid/x": (302, b"", "https://fim.invalid/doc"),
                        "https://fim.invalid/robots.txt": (200, b"User-agent: *\nDisallow: /\n", ""),
-                       "https://fim.invalid/doc": (200, b"documento", "")})
+                       "https://fim.invalid/doc": (200, DOCUMENTO, "")})
         with self.assertRaises(fontes.ErroDaLoja) as e:
             self.buscar(s, "https://a.invalid/x")
         self.assertIn("https://fim.invalid/robots.txt closes this address", str(e.exception))
@@ -370,7 +373,7 @@ class Item10Redirecoes(unittest.TestCase):
 
     def test_planta_direitos_do_fim_antes_de_descarregar(self):
         s = self.site({"https://a.invalid/x": (302, b"", "https://b.invalid/doc"),
-                       "https://b.invalid/doc": (200, b"documento", "")})
+                       "https://b.invalid/doc": (200, DOCUMENTO, "")})
         with self.assertRaises(fontes.ErroDaLoja) as e:
             self.buscar(s, "https://a.invalid/x")
         self.assertIn("b.invalid has no rights record", str(e.exception))
@@ -455,7 +458,7 @@ class Item13ONome(unittest.TestCase):
     def test_o_nome_leva_a_primeira_pagina(self):
         ctx = paginas.Contexto(textos=tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8")))
         self.assertIn('<p class="wordmark"><a href="/">O Estado do País</a></p>', paginas.pagina_404(ctx))
-        self.assertIn('<h1 class="wordmark"><a href="/">O Estado do País</a></h1>', paginas.pagina_inicial(ctx))
+        self.assertIn('<h1 class="wordmark">O Estado do País</h1>', paginas.pagina_inicial(ctx))
 
 
 # --------------------------------------------------------------------------- the five planted in the reader's copy

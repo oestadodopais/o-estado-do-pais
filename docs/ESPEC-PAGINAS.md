@@ -8,6 +8,8 @@
 
 *Edited 14 November 2026, 22:34 UTC, after the code and security reading (`blocos/esq1/leitura/LEITURA-CODEX.md`): the Method prose and the fixed sentences carry a record of their own judgment, since a rule that they are "judged like a piece" with nothing to enforce it was only a wish; and the name at the top is the one link that is not underlined.*
 
+*Edited 14 November 2026, 22:40 UTC, after the designer's second reading (`blocos/esq1/LEITURA-DESENHADOR-2.md`: eleven of its thirteen first findings fixed, eight new ones, all adopted): the record's opening sentence said the readings came before publication, which is untrue of a reading made for a correction, and is rewritten; on a phone a table becomes a list, so no figure starts out of sight; the Method page's counts are a block of their own; the reading column is centred.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -18,7 +20,10 @@
 - **Plain pages.** Semantic HTML, one `h1`, a skip link (`saltar`), visible focus. Light and dark palettes follow the reader's system setting. **No script at all:** receipts and the record open with `<details>`.
 - **Figures.** A printed line (`{id}`) never breaks between its number and its unit. Inside tied words, a number stays with the word that follows it. Numerals are lining numerals everywhere, the title included. The figure face (Bitter) is for numeric values in the receipts only; a receipt summary that is a sentence is in the prose face.
 - **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included, with one exception: the name at the top of every page is a link to the front page and is not underlined. Labels are never smaller than 12 px.
-- **The name** has one size on every page at a given width.
+- **The name** has one size on every page at a given width. On the front page it is not a link.
+- **The column.** The reading column is centred in the page at every width, and so is a box wider than it.
+- **Tables on a phone.** Below 600 px a table (the record, the team's record) is shown as a list: each row a block, each value under its column's label. Nothing a reader needs starts out of sight, and nothing is cut at the edge of a box. On a desktop, columns are at least 24 px apart.
+- **A page does not link to itself.**
 - **The look is the old site's:** its colour tokens, its three typefaces (Spectral for prose and the name, Spectral SC for labels, Bitter for figures), its measure and reading size, its name set in type. Only the styles these five pages use are carried over.
 - **The builder writes no reader's sentence.** Every fixed sentence is in the table at the end of this page and lives in one file, `textos.toml`. Those sentences are judged once by the other family, as a piece is, before the first publication.
 
@@ -31,7 +36,7 @@
 ## 2. Topic thread · `/temas/<tema>/`
 
 - A thread exists when a desk file `mesas/<tema>.md` exists and at least one piece of that thread is published. The thread's name is the desk file's first line, `# <name>`.
-- In order: the name; the thread's indicators, if any; under `seguir_titulo`, the `O que seguir` paragraph of each published piece, most recent first, each linked to its piece; then every published piece of the thread, most recent first.
+- In order: the name; the thread's indicators, if any; under `seguir_titulo`, the `O que seguir` paragraph of each published piece, most recent first, each linked to its piece (inside those paragraphs printed lines and tied words are plain text: the receipts are on the piece's page); then every published piece of the thread, most recent first.
 
 ## 3. Piece page · `/pecas/<id>/`
 
@@ -56,7 +61,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 ## 4. Method · `/metodo/`
 
 - The prose comes from `paginas/metodo.md`. It is reader's text: it is written and judged like a piece, and the file carries its own record after a line `+++ registo` (its fingerprint is the SHA-256 of the bytes before that line). The fixed sentences are judged the same way, with their record in `textos.registo.toml` beside `textos.toml`. No piece is built as published unless both have a passing judge's reading on their current fingerprint. Until that file exists the Method page is not built, and because every page links to it, no piece can be published before it exists.
-- After the prose, computed: under `equipa_titulo`, the team's record (one row per seat, columns `e_lugar`, `e_leituras`, `c_plantas`, `e_adotados`, `e_falhas`: readings, plants caught of plants put, real findings adopted, misses named by the `causa` of corrections); the four counts `n_publicadas`, `n_correcoes`, `n_atualizacoes`, `n_retiradas`; and under `taxa_titulo` the measured error rate, or `sem_auditoria`.
+- After the prose, computed: first, under `numeros_titulo`, the four counts `n_publicadas`, `n_correcoes`, `n_atualizacoes`, `n_retiradas`, as a block of their own; then under `equipa_titulo`, the team's record (one row per seat, columns `e_lugar`, `e_leituras`, `c_plantas`, `e_adotados`, `e_falhas`: readings, plants caught of plants put, real findings adopted, misses named by the `causa` of corrections); and under `taxa_titulo` the measured error rate, or `sem_auditoria`.
 
 ## 5. Corrections · `/correcoes/`
 
@@ -95,7 +100,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `c_quando` | Quando |
 | `r_quem`, `r_quando`, `r_estabelece` | Quem disse · Quando · O que o documento estabelece |
 | `registo_titulo` | O registo desta peça |
-| `registo_intro` | Quem leu esta peça antes de ser publicada e o que encontrou. Os erros plantados são erros postos de propósito no texto entregue a cada leitor, para medir se a leitura os apanha. |
+| `registo_intro` | Quem leu esta peça, quando, e o que encontrou. Os erros plantados são erros postos de propósito no texto entregue a cada leitor, para medir se a leitura os apanha. |
 | `c_leitura`, `c_familia`, `c_plantas`, `c_achados`, `c_veredicto`, `c_minutos` | Leitura · Família de modelos · Erros plantados apanhados · Achados reais · Veredicto · Minutos |
 | `v_passa`, `v_nao_passa`, `v_levanta` | passa · não passa · levanta |
 | `lugar_numeros`, `lugar_oposto`, `lugar_especialista`, `lugar_leitor`, `lugar_justica`, `lugar_juiz`, `lugar_correcoes` | Editor de números · Leitor do contraditório · Especialista · Leitor comum · Defesa das pessoas nomeadas · Juiz · Editor de correções |
@@ -110,6 +115,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `erro_titulo` | Como apontar um erro |
 | `erro_como` | Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. |
 | `sem_correcoes` | Ainda não há correções nem atualizações. |
+| `numeros_titulo` | Em números |
 | `equipa_titulo` | A equipa e o seu registo |
 | `sem_auditoria` | Ainda não houve auditoria. |
 | `saltar` | Saltar para o texto |

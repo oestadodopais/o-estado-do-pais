@@ -20,3 +20,16 @@ plantas_apanhadas = 2
 achados = 0
 adotados = 0
 veredicto = "passa"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "modelo-de-ensaio"
+inicio = "2026-11-15T12:00:00Z"
+fim = "2026-11-15T12:10:00Z"
+impressao = "b7f5cac4576f606f43b37f2d276054c6bcf3895006faa51b1525f259c9fe60bf"
+plantas_postas = 1
+plantas_apanhadas = 1
+achados = 0
+adotados = 0
+veredicto = "passa"
