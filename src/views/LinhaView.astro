@@ -43,6 +43,7 @@
  * algarismos, e nenhum entra por dispensa.
  */
 import Base from '../layouts/Base.astro';
+import { releituraPosteriorALeitura } from '../lib/releitura-posterior.mjs';
 import { fraseDaReconferencia } from '../lib/fontes-anteriores.mjs';
 import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
 import provasOg1 from '../../ledger/provas/og1a/provas.json';
@@ -865,7 +866,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       {!paginaEditada && periodoDoRecibo && <p><span data-voz>{fp1.dados}</span>{' '}<DataDaLinha id={id} campo={periodoDoRecibo.campo} valor={periodoDoRecibo.valor} lang={lang} /></p>}
       {presente(claim.published_at) && <p><span data-voz>{paginaEditada ? s.livro.linha.editadoEmK : fp1.publicados}</span>{' '}<CampoDaLinha id={id} campo="published_at" valor={claim.published_at} lang={lang} /></p>}
       {presente(claim.access_date) && claim.access_date_kind !== 'hosted-copy' && <p><span data-voz>{fp1.lidos}</span>{' '}<CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} /></p>}
-      {ultimaReleituraDoPainel && !(presente(claim.access_date) && claim.access_date_kind !== 'hosted-copy' && String(claim.access_date).slice(0,10) === ultimaReleituraDoPainel.date.slice(0,10)) && <p><span data-voz>{fp1.ultima}</span>{' '}<CampoDaLinha id={id} campo={`verifications.${ultimaReleituraDoPainel.__n}.date`} valor={ultimaReleituraDoPainel.date} lang={lang} /></p>}
+      {ultimaReleituraDoPainel && releituraPosteriorALeitura(claim.access_date, ultimaReleituraDoPainel.date) && <p><span data-voz>{fp1.ultima}</span>{' '}<CampoDaLinha id={id} campo={`verifications.${ultimaReleituraDoPainel.__n}.date`} valor={ultimaReleituraDoPainel.date} lang={lang} /></p>}
       {proxima && <p><span data-voz>{fp1.proxima}</span>{' '}<time datetime={proxima} data-nonledger="data-editorial" data-data-origem="calendario.proxima-segunda">{dataDaCasa(proxima)}</time></p>}
     </div>
     {ressalvaPublicada && (
