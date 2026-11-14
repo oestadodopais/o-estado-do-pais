@@ -1,0 +1,20 @@
+17:30:51   ├─ /regioes/oeste-e-vale-do-tejo/index.html (+0ms) 
+17:30:51   ├─ /regioes/acores/index.html (+1ms) 
+17:30:51   ├─ /regioes/index.html (+22ms) 
+17:30:51   ├─ /robots.txt (+1ms) 
+17:30:51   ├─ /salarios-pensoes-e-apoios/index.html (+7ms) 
+17:30:51   ├─ /sobre/index.html (+1ms) 
+17:30:51   ├─ /sugestoes/obrigado/index.html (+1ms) 
+17:30:51   ├─ /sugestoes/vazia/index.html (+0ms) 
+17:30:51   ├─ /sugestoes/limite/index.html (+0ms) 
+17:30:51   ├─ /sugestoes/nao-chegou/index.html (+0ms) 
+17:30:51   ├─ /sugestoes/index.html (+1ms) 
+17:30:51   ├─ /temas/index.html (+37ms) 
+17:30:51   ├─ /uniao-europeia/index.html (+29ms) 
+17:30:51   ├─ /index.html (+90ms) 
+17:30:51 ✓ Completed in 26.61s.
+
+17:30:51 [build] ✓ Completed in 27.05s.
+17:30:52 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+17:30:52 [build] 9828 page(s) built in 29.92s
+17:30:52 [build] Complete!

@@ -5688,7 +5688,7 @@ As formas completas do cabeçalho e da faixa são geradas do manifesto e da publ
 
 | Classe | Frase | Origem | Estado | Razão |
 |---|---|---|---|---|
-| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. | zer0 | viva | ZER0: frase decidida ou contagem medida na construção de 14.11.2026. |
-| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. | zer0 | viva | ZER0: frase decidida ou contagem medida na construção de 14.11.2026. |
+| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Cem é a média da UE-27: abaixo de cem, o PIB per capita do território é menor do que essa média; acima de cem, é maior. | zer0 | viva | ZER0 A6: explicação literal da folha decidida da adenda A, de 14.11.2026. |
+| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. One hundred is the EU-27 average: below one hundred, the territory’s GDP per capita is lower than that average; above one hundred, it is higher. | zer0 | viva | ZER0 A6: explicação literal da folha decidida da adenda A, de 14.11.2026. |
 | conteudo | 4 176 claims · 526 of 4 176 calculated · 2 767 of 4 176 municipality rows | zer0 | viva | ZER0: frase decidida ou contagem medida na construção de 14.11.2026. |
 | conteudo | 4 176 afirmações · 526 de 4 176 calculadas · 2 767 de 4 176 linhas de concelhos | zer0 | viva | ZER0: frase decidida ou contagem medida na construção de 14.11.2026. |

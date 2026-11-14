@@ -1,0 +1,20 @@
+EVL-C: 4 controlos verdes; 20 plantas recusadas nas duas páginas e línguas.
+{"controlos":550,"plantas":1650,"catalogo":0,"nomeadas":550,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+{"controlos":57,"plantas":41,"documentos":14,"retiradas_isoladas_recusadas":true,"politica_voz_e_L3":0}
+REC2 voz das edições: retirada sem faixa; publicação em falta continua recusada.
+ED3 voz: 6 controlos; 6 plantas recusadas.
+  B1: 12 páginas pela lista fechada; 8 temas conferidos.
+  FP1 pt: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-14.
+  FP1 en: marca novo exigida, há estudo com 0 a 7 dias em 2026-11-14.
+  REC2 inventário: 42 entradas históricas de retirados ou superfícies vazias saltadas; conta conferida.
+  EX1: 14 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  PORTÃO DA VOZ · 4 problema(s)
+
+    · bloco por classificar em /en/regions: «The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. One hundred is the EU-27 average: below one hundred, the territory’s GDP per capita is lower than that average; above one hundred, it is higher.»
+    · bloco por classificar em /regioes: «O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Cem é a média da UE-27: abaixo de cem, o PIB per capita do território é menor do que essa média; acima de cem, é maior.»
+    · design/especime-v3/INVENTARIO-FRASES.md:5691: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da U»
+    · design/especime-v3/INVENTARIO-FRASES.md:5692: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 ave»
+

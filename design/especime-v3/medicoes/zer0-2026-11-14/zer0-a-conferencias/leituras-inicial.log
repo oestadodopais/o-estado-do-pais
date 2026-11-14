@@ -1,0 +1,20 @@
+----------------------------------------------------------------------
+Ran 6 tests in 22.093s
+
+OK
+check:leituras · tests/leituras/vel1_sobreposicao.py · código 0
+.
+----------------------------------------------------------------------
+Ran 1 test in 9.255s
+
+OK
+check:leituras · tests/leituras/vel1_vigia.py · código 0
+................
+----------------------------------------------------------------------
+Ran 16 tests in 41.562s
+
+OK
+check:leituras · tests/leituras/vel1_workflow.py · código 0
+{"juntar_importa":["scripts/verify-partes.mjs","scripts/alvos-fatias.mjs","scripts/verify-depois-do-build.mjs","scripts/leituras/tempos.mjs"],"bytes":57144,"arvore_esparsa":"união verde sem src, tests ou dependências instaladas"}
+VEL1 workflow: plano dinâmico, árvore esparsa e cache conferidos; 192 combinações do portao e dispensa sem endereço provadas
+VEL1 cache: versão real aceite; vazia, nula e ausente recusadas nos dois trabalhos

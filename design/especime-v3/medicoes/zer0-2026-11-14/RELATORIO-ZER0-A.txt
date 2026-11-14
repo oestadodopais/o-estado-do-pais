@@ -1,0 +1,12 @@
+ZER0 A1: dez descrições literais conferidas nos recibos; antigas ausentes; preservados os sufixos de instantâneo das três famílias que já os tinham.
+ZER0 A2: a caixa das regiões explica cem e os valores abaixo/acima; frase literal nas duas edições e inventário atualizado.
+ZER0 A3: uma linha publicada abria outra página; o empréstimo passa de 84 para 99 na porta de repetir a leitura. Histórico intacto; planta recusada.
+ZER0 A4: excerto e razões independentes da linha, copiados da folha; seis frases da adenda conferidas; duas plantas com dois euros recusadas.
+Cartões, antes/depois: famílias 1181/1181; folhas 1117/1117; partes 1326/1323. Todos os apoios documentais preservados.
+Inventários, antes/depois: prosa 2689/2689 (vivas 1180/1180); afirmações 1554/1554; rótulos 700/700, sem diferenças.
+Códigos finais: build=0; check:cartao=0; check:leituras=0; check:frases-afirmacao com motor=0 e GitHub=0; check:frases-reais=0.
+Códigos finais: check:rotulos=0; check:voz=0; ledger:check=0; check:incorporar=0; typecheck=0; conferir-zer0=0; índice, sobreposição e largura=0.
+Tentativas anteriores: voz/build recusaram o inventário antigo; leituras na sandbox falhou com Permission denied (1100), resolvido pelo escrivão.
+Motor sem alterações. Valores e histórico preservados; guião final: 70 alvos, 9846 páginas, duas edições. Registos: códigos e últimas vinte linhas.
+34 execuções explícitas de prova/medição, incluindo tentativas; um pedido de build recusado antes de arrancar; zero verify completo e zero core.gate.
+104 chamadas de ferramentas até à escrita deste relatório; o commit e a sua confirmação ficam contados na resposta final.
