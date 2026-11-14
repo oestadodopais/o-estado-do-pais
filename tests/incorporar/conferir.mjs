@@ -155,6 +155,13 @@ for (const lang of ['pt','en']) {
   alterada.excerpt = JSON.stringify(excerto);
   assert.throws(() => lugarDaIncorporacao(alterada, lang), /coordenada.*diverge/);
   resultados.plantas.push({nome:'hb1-coordenada-divergente-'+lang,mordeu:true});
+  const semDeclaracao = {...original, id:'celula-sem-declaracao'};
+  assert.equal(lugarDaIncorporacao(semDeclaracao, lang).nome, 'Portugal');
+  semDeclaracao.excerpt = alterada.excerpt;
+  assert.throws(() => lugarDaIncorporacao(semDeclaracao, lang), /coordenada.*diverge/);
+  const lugarTrocado = structuredClone(alterada);
+  lugarTrocado.document.locator = lugarTrocado.document.locator.replace('geo=PT', 'geo=FI');
+  assert.throws(() => lugarDaIncorporacao(lugarTrocado, lang), /coordenada.*diverge/);
 }
 const caminhos = [`/livro-razao/${c.id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', '/', `/livro-razao/${c.id}`];
 const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));

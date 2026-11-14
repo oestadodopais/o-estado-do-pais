@@ -63,6 +63,25 @@ const APURAMENTOS_DO_PAIS = new Set(['municipios-portugal-caop-2025',
 
 /** @param {any} c @param {'pt'|'en'} lang @returns {{nome:string}} */
 export function lugarDaIncorporacao(c, lang) {
+  const lugar = lugarDeclaradoDaIncorporacao(c, lang);
+  let url;
+  try { url = new URL(c.source_url); } catch { return lugar; }
+  if (url.hostname === 'ec.europa.eu' && url.pathname.includes('/eurostat/')) {
+    let geo;
+    try { geo = JSON.parse(c.excerpt).coordinates?.geo; } catch { return lugar; }
+    if (geo) {
+      const localizada = c.document?.locator?.match(/(?:^|;\s*)geo=([^;]+)(?:;|$)/)?.[1];
+      const geos = url.searchParams.getAll('geo');
+      const nome = geo === 'EU27_2020' ? (lang === 'pt' ? 'União Europeia' : 'European Union') : nomeDoPais(geo, lang);
+      if (localizada !== geo || (geos.length && !geos.includes(geo)) || lugar.nome !== nome)
+        throw Error(`ER1 lugar: a coordenada de ${c.id} diverge do lugar, do localizador ou do pedido.`);
+    }
+  }
+  return lugar;
+}
+
+/** @param {any} c @param {'pt'|'en'} lang @returns {{nome:string}} */
+function lugarDeclaradoDaIncorporacao(c, lang) {
   const f = familiaDaLinha(c.id);
   if (f.tipo === 'concelho') return { nome: f.concelho.nome[lang] };
   const excecao = /** @type {Record<string, any>} */ (EXCECOES)[c.id];
