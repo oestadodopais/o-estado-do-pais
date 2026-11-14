@@ -5,6 +5,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {conferirTrechosCor3} from '../../scripts/trechos-cor3-julgados.mjs';
+import {chave} from '../../scripts/frases-com-afirmacao.mjs';
 import {recusaVoz, conferirLista, conferir, lerDocumentos, recusas, conferirQuantificadores, separarRetirados, conferirSaltadas} from '../../scripts/leituras/conferir-frases.mjs';
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 process.chdir(raiz);
@@ -107,12 +109,48 @@ assert.equal(recusas(provas.corAguaD),0,JSON.stringify(provas.corAguaD));
 assert.equal(recusas(provas.corAgua), 0, JSON.stringify(provas.corAgua));
 provas.prr = conferirLista('design/especime-v3/medicoes/coragua-2026-11-08/FRASES-COR-AGUA-prr.json', 'dist', {aplicada:true});
 assert.equal(recusas(provas.prr), 0, JSON.stringify(provas.prr));
-provas.atualB = conferirLista(B);
+// COR3: cinco entradas históricas substituídas pelas correções julgadas.
+// A lista VOZ-2B fica intacta, como as listas anteriores da EVA e da EVB.
+const saltadasCor3 = [
+ {id:'V007', razao:'COR3 habitação C19: comparação dos preços nacionais com custos por cidade corrigida.'},
+ {id:'V106', razao:'COR3 Orçamento C11: comparação do encargo dos juros com as medidas corrigida.'},
+ {id:'V116', razao:'COR3 habitação C12: sobrecarga da União e alegação de atualização mais recente corrigidas.'},
+ {id:'V119', razao:'COR3 habitação C19: comparação dos preços nacionais com custos por cidade corrigida.'},
+ {id:'V304', razao:'COR3 Orçamento C11: comparação do encargo dos juros com as medidas corrigida.'},
+];
+const historicaB = JSON.parse(fs.readFileSync(B, 'utf8'));
+const idsCor3 = new Set(saltadasCor3.map(f => f.id));
+assert.equal(historicaB.filter(f => idsCor3.has(f.id)).length, 5);
+const listaB = historicaB.filter(f => !idsCor3.has(f.id));
+const {documentos:documentosB, bilingues:bilinguesB} = lerDocumentos(listaB, 'dist');
+provas.atualB = conferir(listaB, documentosB, bilinguesB);
+// Quatro parágrafos sucessores ainda têm marcas de voz. Só saem da lista
+// histórica se a régua COR3 os provar contra a decisão e os documentos selados.
+const sucessorasCor3 = provas.atualB.semEntrada;
+assert.equal(sucessorasCor3.length, 4);
+function provarSucessorasCor3(frases) {
+ const paginas = frases.map((f, i) => ({estudo:f.estudo, lingua:f.lingua, rota:'cor3-' + i, blocos:[{frases:[f.frase]}]}));
+ const entradas = frases.map((f, i) => ({...f, ocorrencias:[{pagina:paginas[i].rota, bloco:0, indice:0}]}));
+ return conferirTrechosCor3(paginas, entradas);
+}
+const julgadasCor3 = provarSucessorasCor3(sucessorasCor3);
+assert.deepEqual(julgadasCor3.erros, []);
+provas.atualB.semEntrada = sucessorasCor3.filter(f => !julgadasCor3.textos.has(chave(f)));
+for (const f of sucessorasCor3) {
+ const alterada = {...f, frase:f.frase.replace(/\d/, n => String((Number(n) + 1) % 10))};
+ assert.equal(provarSucessorasCor3([alterada]).textos.size, 0, 'sucessora COR3 com algarismo alterado aceite');
+}
+console.log('COR3 VOZ-2B: 5 entradas substituídas; 4 parágrafos sucessores provados; 4 alterações recusadas.');
+// 70 retiradas + 5 substituídas = 75 saltadas; nenhuma entrada desaparece sem razão.
+assert.equal(conferirSaltadas(historicaB, provas.atualB.saltadas), 70);
+provas.atualB.saltadas.push(...saltadasCor3);
+// 9 quantificadores históricos menos V007, V119 e V304 = 6 ainda ativos.
+assert.deepEqual(quant(historicaB.filter(f => idsCor3.has(f.id))).map(f => f.id).sort(), ['V007','V119','V304']);
 assert.equal(provas.atualB.voz.length, 0);
 assert.equal(provas.atualB.numeros.length, 0);
 // As 42 entradas da água passaram para a COR-AGUA; as restantes ficam na VOZ-2B.
-assert.equal(provas.atualB.quantificadores.length, 9);
-assert.equal(provas.atualB.saltadas.length, 70);
+assert.equal(provas.atualB.quantificadores.length, 6);
+assert.equal(provas.atualB.saltadas.length, 75);
 assert.equal(provas.corAgua.saltadas.length, 126);
 assert.equal(provas.atualB.presenca.length, 0, 'Todas as entradas não retiradas da VOZ-2B têm de estar nas páginas declaradas');
 assert.deepEqual(provas.atualB.semPar, []);
