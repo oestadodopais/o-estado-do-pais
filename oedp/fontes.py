@@ -417,6 +417,15 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
     document is downloaded; curl itself never follows a redirect. With `termos`, the address is a publisher's terms page: no record is asked for,
     and the printed table is the beginning of one.
     """
+    if avisos is not None:  # every request's note (a retry over HTTP/1.1) reaches the caller
+        base = transporte
+
+        def transporte(u, destino, metodo="GET", endereco=None):
+            r = base(u, destino, metodo, endereco)
+            if r.nota:
+                avisos.append(r.nota)
+            return r
+
     r_head, final, saltos = seguir(url, raiz, transporte, resolver)
     if r_head is not None and not 200 <= r_head.http <= 299:
         raise ErroDaLoja(f"refused: {final} answered {r_head.http}")
@@ -432,8 +441,6 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
                 direitos_de(host_final)
             temporario.unlink(missing_ok=True)
             r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario)
-            if r.nota and avisos is not None:
-                avisos.append(r.nota)
             if r.saida != 0:
                 raise ErroDaLoja(f"{final} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
             if r.http in REDIRECOES and r.redirecao:

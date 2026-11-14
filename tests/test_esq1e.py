@@ -59,6 +59,24 @@ class Item02Http11(unittest.TestCase):
         self.assertEqual(r.saida, 0)
         self.assertIn("tried once more with --http1.1, which succeeded", r.nota)
 
+    def test_as_notas_de_todos_os_pedidos_chegam_a_quem_chama(self):
+        loja = Path(tempfile.mkdtemp(prefix="oedp-loja-"))
+        self.addCleanup(shutil.rmtree, loja, True)
+        corpo = b"documento de ensaio " * 30
+        s = SitioFalso({"https://fim.invalid/doc": (200, corpo, "")}, {"fim.invalid": PUBLICO})
+        base = s.transporte
+
+        def com_nota(url, destino, metodo="GET", endereco=None):
+            r = base(url, destino, metodo, endereco)
+            r.nota = f"{metodo} {url}: tried once more with --http1.1, which succeeded"
+            return r
+
+        avisos = []
+        fontes.buscar("https://fim.invalid/doc", loja, None, com_nota, False, s.resolver, avisos=avisos)
+        self.assertIn("GET https://fim.invalid/robots.txt: tried once more with --http1.1, which succeeded", avisos)
+        self.assertIn("HEAD https://fim.invalid/doc: tried once more with --http1.1, which succeeded", avisos)
+        self.assertIn("GET https://fim.invalid/doc: tried once more with --http1.1, which succeeded", avisos)
+
     def test_um_endereco_que_nao_resolve_nao_e_tentado_outra_vez(self):
         chamadas = []
 
